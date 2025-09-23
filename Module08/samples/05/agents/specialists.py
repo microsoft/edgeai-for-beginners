@@ -1,15 +1,36 @@
+import os
 import requests
-BASE_URL = "http://localhost:8000"
-MODEL = "phi-4-mini"
-headers = {"Content-Type": "application/json", "Authorization": "Bearer local-key"}
+
+
+foundry_model = os.environ.get("FOUNDRY_MODEL")
+
+if foundry_model:
+    from foundry_local import FoundryLocalManager
+
+    # Create a FoundryLocalManager instance. This will start the Foundry
+    # Local service if it is not already running and load the specified model.
+    manager = FoundryLocalManager(foundry_model)
+    model_info = manager.get_model_info(foundry_model)
+    MODEL = model_info.id if model_info else foundry_model
+    BASE_URL = manager.endpoint
+    API_KEY = manager.api_key
+else:
+    # OpenAI-compatible path
+    BASE_URL = os.environ.get("BASE_URL", "http://localhost:8000/v1")
+    MODEL = os.environ.get("MODEL", "phi-4-mini")
+    API_KEY = os.environ.get("API_KEY", "")
+
+HEADERS = {"Content-Type": "application/json"}
+if API_KEY:
+    HEADERS["Authorization"] = f"Bearer {API_KEY}"
 
 def chat(messages, max_tokens=300, temperature=0.4):
-    r = requests.post(f"{BASE_URL}/v1/chat/completions", json={
+    r = requests.post(f"{BASE_URL}/chat/completions", json={
         "model": MODEL,
         "messages": messages,
         "max_tokens": max_tokens,
         "temperature": temperature
-    }, headers=headers, timeout=60)
+    }, headers=HEADERS, timeout=60)
     r.raise_for_status()
     return r.json()["choices"][0]["message"]["content"]
 

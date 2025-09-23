@@ -1,3 +1,4 @@
+import json
 from .specialists import RetrievalAgent, ReasoningAgent, ExecutionAgent
 
 class Coordinator:
@@ -21,4 +22,4 @@ if __name__ == "__main__":
     # Ensure: foundry model run phi-4-mini
     coord = Coordinator()
     result = coord.handle("Create a plan to onboard 5 new customers this month")
-    print(result)
+    print(json.dumps(result, indent=2))
