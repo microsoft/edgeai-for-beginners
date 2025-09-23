@@ -245,10 +245,9 @@ curl http://localhost:8000/v1/models
 ### Router configuration (Session 6)
 The router performs a quick health check and supports env-based config:
 ```cmd
-set BASE_URL=http://localhost:8000
 set GENERAL_MODEL=phi-4-mini
-set REASONING_MODEL=deepseek-r1-distill-qwen-7b
-set CODE_MODEL=qwen2.5-7b-instruct
+set REASONING_MODEL=deepseek-r1-7b
+set CODE_MODEL=qwen2.5-7b
 REM Or provide a full JSON registry
 set TOOL_REGISTRY={"general":{"model":"phi-4-mini"}}
 python samples\06\router.py "Pick the best model for code refactoring"

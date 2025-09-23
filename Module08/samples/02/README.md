@@ -12,9 +12,7 @@ pip install -r requirements.txt
 ## Run
 Foundry Local (default):
 ```cmd
-set BASE_URL=http://localhost:8000
-set MODEL=phi-4-mini
-set API_KEY=
+set FOUNDRY_MODEL=phi-4-mini
 python samples\02\sdk_quickstart.py
 ```
 
