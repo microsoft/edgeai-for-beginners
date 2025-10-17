@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "48d0fb38be925084a6ebd957d4b045e5",
-  "translation_date": "2025-10-09T16:50:54+00:00",
+  "original_hash": "8b994c57f1207012e4d7f58b7c0d1ae7",
+  "translation_date": "2025-10-17T09:53:13+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "vi"
 }
 -->
 # EdgeAI cho Người Mới Bắt Đầu - Workshop
 
-> **Lộ Trình Học Thực Hành để Xây Dựng Ứng Dụng Edge AI Sẵn Sàng Sản Xuất**
+> **Lộ trình học thực hành để xây dựng ứng dụng Edge AI sẵn sàng sản xuất**
 >
-> Làm chủ triển khai AI cục bộ với Microsoft Foundry Local, từ hoàn thành trò chuyện đầu tiên đến điều phối đa tác nhân trong 6 buổi học tiến bộ.
+> Làm chủ triển khai AI cục bộ với Microsoft Foundry Local, từ hoàn thành chat đầu tiên đến điều phối đa tác nhân trong 6 buổi học tiến bộ.
 
 ---
 
@@ -29,17 +29,17 @@ Các tổ chức trên toàn thế giới đang chuyển từ AI phụ thuộc v
 2. **Hiệu suất** - Loại bỏ độ trễ mạng (50-500ms cục bộ so với 500-2000ms vòng lặp đám mây)
 3. **Kiểm soát chi phí** - Loại bỏ chi phí API theo token và mở rộng quy mô mà không cần chi phí đám mây
 
-**Nhưng Edge AI thì khác biệt**
+**Nhưng Edge AI thì khác**
 
 Chạy AI tại chỗ yêu cầu các kỹ năng mới:
-- Lựa chọn và tối ưu hóa mô hình cho các hạn chế về tài nguyên
+- Lựa chọn và tối ưu hóa mô hình cho các hạn chế tài nguyên
 - Quản lý dịch vụ cục bộ và tăng tốc phần cứng
-- Kỹ thuật gợi ý cho các mô hình nhỏ hơn
-- Mô hình triển khai sản xuất cho các thiết bị biên
+- Kỹ thuật prompt cho các mô hình nhỏ hơn
+- Mẫu triển khai sản xuất cho các thiết bị biên
 
 **Workshop này cung cấp những kỹ năng đó**
 
-Trong 6 buổi học tập trung (~3 giờ tổng cộng), bạn sẽ tiến từ "Hello World" đến triển khai các hệ thống đa tác nhân sẵn sàng sản xuất - tất cả đều chạy cục bộ trên máy của bạn.
+Trong 6 buổi học tập trung (~3 giờ tổng cộng), bạn sẽ tiến từ "Hello World" đến triển khai hệ thống đa tác nhân sẵn sàng sản xuất - tất cả đều chạy cục bộ trên máy của bạn.
 
 ---
 
@@ -52,11 +52,11 @@ Khi hoàn thành workshop này, bạn sẽ có thể:
    - Cài đặt và cấu hình Microsoft Foundry Local
    - Lựa chọn mô hình phù hợp cho triển khai biên
    - Quản lý vòng đời mô hình (tải xuống, tải lên, lưu trữ)
-   - Giám sát sử dụng tài nguyên và tối ưu hóa hiệu suất
+   - Theo dõi sử dụng tài nguyên và tối ưu hóa hiệu suất
 
 2. **Xây dựng Ứng dụng AI**
-   - Triển khai hoàn thành trò chuyện tương thích OpenAI cục bộ
-   - Thiết kế gợi ý hiệu quả cho Small Language Models
+   - Triển khai hoàn thành chat tương thích OpenAI cục bộ
+   - Thiết kế prompt hiệu quả cho Small Language Models
    - Xử lý phản hồi streaming để cải thiện UX
    - Tích hợp mô hình cục bộ vào các ứng dụng hiện có
 
@@ -69,20 +69,20 @@ Khi hoàn thành workshop này, bạn sẽ có thể:
 4. **Tối ưu hóa Hiệu suất Mô hình**
    - Đánh giá nhiều mô hình cho trường hợp sử dụng của bạn
    - Đo lường độ trễ, thông lượng và thời gian token đầu tiên
-   - Lựa chọn mô hình tối ưu dựa trên sự cân bằng giữa tốc độ/chất lượng
-   - So sánh SLM và LLM trong các tình huống thực tế
+   - Lựa chọn mô hình tối ưu dựa trên sự cân bằng tốc độ/chất lượng
+   - So sánh trade-offs giữa SLM và LLM trong các tình huống thực tế
 
 5. **Điều phối Hệ thống Đa Tác Nhân**
-   - Thiết kế các tác nhân chuyên biệt cho các nhiệm vụ khác nhau
+   - Thiết kế tác nhân chuyên biệt cho các nhiệm vụ khác nhau
    - Triển khai quản lý bộ nhớ và ngữ cảnh của tác nhân
-   - Điều phối các tác nhân trong quy trình làm việc phức tạp
-   - Định tuyến yêu cầu một cách thông minh qua nhiều mô hình
+   - Điều phối tác nhân trong các quy trình phức tạp
+   - Định tuyến yêu cầu thông minh qua nhiều mô hình
 
-6. **Triển khai Giải pháp Sẵn Sàng Sản Xuất**
+6. **Triển khai Giải pháp Sẵn sàng Sản xuất**
    - Triển khai xử lý lỗi và logic thử lại
-   - Giám sát sử dụng token và tài nguyên hệ thống
-   - Xây dựng kiến trúc mở rộng với mô hình như công cụ
-   - Lập kế hoạch đường dẫn chuyển đổi từ biên sang kết hợp (biên + đám mây)
+   - Theo dõi sử dụng token và tài nguyên hệ thống
+   - Xây dựng kiến trúc mở rộng với mẫu model-as-tools
+   - Lập kế hoạch đường dẫn di chuyển từ biên sang hybrid (biên + đám mây)
 
 ---
 
@@ -90,14 +90,14 @@ Khi hoàn thành workshop này, bạn sẽ có thể:
 
 ### Những gì bạn sẽ xây dựng
 
-Kết thúc workshop này, bạn sẽ tạo được:
+Kết thúc workshop này, bạn sẽ tạo ra:
 
 | Buổi học | Thành phẩm | Kỹ năng thể hiện |
 |----------|------------|------------------|
-| **1** | Ứng dụng trò chuyện với streaming | Cài đặt dịch vụ, hoàn thành cơ bản, UX streaming |
+| **1** | Ứng dụng chat với streaming | Cài đặt dịch vụ, hoàn thành cơ bản, UX streaming |
 | **2** | Hệ thống RAG với đánh giá | Embeddings, tìm kiếm ngữ nghĩa, chỉ số chất lượng |
 | **3** | Bộ công cụ đánh giá đa mô hình | Đo lường hiệu suất, so sánh mô hình |
-| **4** | Bộ so sánh SLM và LLM | Phân tích sự đánh đổi, chiến lược tối ưu hóa |
+| **4** | Bộ so sánh SLM và LLM | Phân tích trade-offs, chiến lược tối ưu hóa |
 | **5** | Bộ điều phối đa tác nhân | Thiết kế tác nhân, quản lý bộ nhớ, điều phối |
 | **6** | Hệ thống định tuyến thông minh | Phát hiện ý định, lựa chọn mô hình, khả năng mở rộng |
 
@@ -106,10 +106,10 @@ Kết thúc workshop này, bạn sẽ tạo được:
 | Mức độ kỹ năng | Buổi 1-2 | Buổi 3-4 | Buổi 5-6 |
 |----------------|----------|----------|----------|
 | **Người mới bắt đầu** | ✅ Cài đặt & cơ bản | ⚠️ Thách thức | ❌ Quá nâng cao |
-| **Trung cấp** | ✅ Xem nhanh | ✅ Học cốt lõi | ⚠️ Mục tiêu cao |
-| **Nâng cao** | ✅ Dễ dàng vượt qua | ✅ Tinh chỉnh | ✅ Mô hình sản xuất |
+| **Trung cấp** | ✅ Ôn tập nhanh | ✅ Học cốt lõi | ⚠️ Mục tiêu mở rộng |
+| **Nâng cao** | ✅ Dễ dàng vượt qua | ✅ Tinh chỉnh | ✅ Mẫu sản xuất |
 
-### Kỹ năng sẵn sàng cho sự nghiệp
+### Kỹ năng sẵn sàng nghề nghiệp
 
 **Sau workshop này, bạn sẽ sẵn sàng để:**
 
@@ -121,17 +121,17 @@ Kết thúc workshop này, bạn sẽ tạo được:
 ✅ **Tối ưu hóa cho Môi trường Biên**
 - Thiết bị IoT với tài nguyên hạn chế
 - Ứng dụng di động ưu tiên offline
-- Hệ thống thời gian thực với độ trễ thấp
+- Hệ thống thời gian thực độ trễ thấp
 
 ✅ **Thiết kế Kiến trúc Thông minh**
-- Hệ thống đa tác nhân cho quy trình làm việc phức tạp
-- Triển khai kết hợp biên-đám mây
+- Hệ thống đa tác nhân cho quy trình phức tạp
+- Triển khai hybrid biên-đám mây
 - Hạ tầng AI tối ưu chi phí
 
 ✅ **Dẫn dắt Các Sáng kiến Edge AI**
-- Đánh giá tính khả thi của Edge AI cho các dự án
+- Đánh giá tính khả thi của Edge AI cho dự án
 - Lựa chọn mô hình và framework phù hợp
-- Thiết kế các giải pháp AI cục bộ có khả năng mở rộng
+- Kiến trúc giải pháp AI cục bộ mở rộng
 
 ---
 
@@ -140,11 +140,11 @@ Kết thúc workshop này, bạn sẽ tạo được:
 ### Tổng quan buổi học (6 buổi × 30 phút = 3 giờ)
 
 | Buổi học | Chủ đề | Trọng tâm | Thời lượng |
-|----------|--------|----------|------------|
-| **1** | Bắt đầu với Foundry Local | Cài đặt, xác thực, hoàn thành đầu tiên | 30 phút |
-| **2** | Xây dựng Giải pháp AI với RAG | Kỹ thuật gợi ý, embeddings, đánh giá | 30 phút |
-| **3** | Mô hình Mã Nguồn Mở | Tìm kiếm mô hình, đánh giá, lựa chọn | 30 phút |
-| **4** | Mô hình Tiên Tiến | SLM vs LLM, tối ưu hóa, framework | 30 phút |
+|----------|--------|----------|-----------|
+| **1** | Bắt đầu với Foundry Local | Cài đặt, xác minh, hoàn thành đầu tiên | 30 phút |
+| **2** | Xây dựng Giải pháp AI với RAG | Kỹ thuật prompt, embeddings, đánh giá | 30 phút |
+| **3** | Mô hình Mã nguồn Mở | Khám phá mô hình, đánh giá, lựa chọn | 30 phút |
+| **4** | Mô hình Tiên tiến | SLM vs LLM, tối ưu hóa, framework | 30 phút |
 | **5** | Tác nhân AI | Thiết kế tác nhân, điều phối, bộ nhớ | 30 phút |
 | **6** | Mô hình như Công cụ | Định tuyến, chuỗi, chiến lược mở rộng | 30 phút |
 
@@ -152,12 +152,12 @@ Kết thúc workshop này, bạn sẽ tạo được:
 
 ## 🚀 Bắt đầu nhanh
 
-### Yêu cầu
+### Yêu cầu trước
 
 **Yêu cầu hệ thống:**
 - **Hệ điều hành**: Windows 10/11, macOS 11+, hoặc Linux (Ubuntu 20.04+)
 - **RAM**: Tối thiểu 8GB, khuyến nghị 16GB+
-- **Dung lượng lưu trữ**: 10GB+ trống cho các mô hình
+- **Dung lượng lưu trữ**: 10GB+ trống cho mô hình
 - **CPU**: Bộ xử lý hiện đại hỗ trợ AVX2
 - **GPU** (tùy chọn): Tương thích CUDA hoặc Qualcomm NPU để tăng tốc
 
@@ -186,6 +186,42 @@ brew install foundrylocal
 ```bash
 foundry --version
 foundry service status
+```
+
+**Đảm bảo Azure AI Foundry Local đang chạy với cổng cố định**
+
+```bash
+# Set FoundryLocal to use port 58123 (default)
+foundry service set --port 58123 --show
+
+# Or use a different port
+foundry service set --port 58000 --show
+```
+
+**Xác minh hoạt động:**
+```bash
+# Check service status
+foundry service status
+
+# Test the endpoint
+curl http://127.0.0.1:58123/v1/models
+```
+**Tìm mô hình khả dụng**
+Để xem mô hình nào khả dụng trong phiên bản Foundry Local của bạn, bạn có thể truy vấn endpoint mô hình:
+
+```bash
+# cmd/bash/powershell
+foundry model list
+```
+
+Sử dụng Web Endpoint 
+
+```bash
+# Windows PowerShell
+powershell -Command "Invoke-RestMethod -Uri 'http://127.0.0.1:58123/v1/models' -Method Get"
+
+# Or using curl (if available)
+curl http://127.0.0.1:58123/v1/models
 ```
 
 #### 2. Clone Repository & Cài đặt Dependencies
@@ -231,7 +267,7 @@ Các ví dụ thực hành tiến bộ minh họa từng khái niệm:
 
 | Buổi học | Mẫu | Mô tả | Thời gian chạy |
 |----------|------|-------|----------------|
-| 1 | [`chat_bootstrap.py`](../../../Workshop/samples/session01/chat_bootstrap.py) | Trò chuyện cơ bản & streaming | ~30s |
+| 1 | [`chat_bootstrap.py`](../../../Workshop/samples/session01/chat_bootstrap.py) | Chat cơ bản & streaming | ~30s |
 | 2 | [`rag_pipeline.py`](../../../Workshop/samples/session02/rag_pipeline.py) | RAG với embeddings | ~45s |
 | 2 | [`rag_eval_ragas.py`](../../../Workshop/samples/session02/rag_eval_ragas.py) | Đánh giá chất lượng RAG | ~60s |
 | 3 | [`benchmark_oss_models.py`](../../../Workshop/samples/session03/benchmark_oss_models.py) | Đánh giá đa mô hình | ~2-3m |
@@ -246,7 +282,7 @@ Khám phá tương tác với giải thích và hình ảnh hóa:
 
 | Buổi học | Notebook | Mô tả | Độ khó |
 |----------|----------|-------|--------|
-| 1 | [`session01_chat_bootstrap.ipynb`](./notebooks/session01_chat_bootstrap.ipynb) | Cơ bản trò chuyện & streaming | ⭐ Người mới bắt đầu |
+| 1 | [`session01_chat_bootstrap.ipynb`](./notebooks/session01_chat_bootstrap.ipynb) | Cơ bản về chat & streaming | ⭐ Người mới bắt đầu |
 | 2 | [`session02_rag_pipeline.ipynb`](./notebooks/session02_rag_pipeline.ipynb) | Xây dựng hệ thống RAG | ⭐⭐ Trung cấp |
 | 2 | [`session02_rag_eval_ragas.ipynb`](./notebooks/session02_rag_eval_ragas.ipynb) | Đánh giá chất lượng RAG | ⭐⭐ Trung cấp |
 | 3 | [`session03_benchmark_oss_models.ipynb`](./notebooks/session03_benchmark_oss_models.ipynb) | Đánh giá mô hình | ⭐⭐ Trung cấp |
@@ -262,11 +298,11 @@ Hướng dẫn và tham khảo toàn diện:
 | Tài liệu | Mô tả | Sử dụng khi |
 |---------|-------|------------|
 | [QUICK_START.md](./QUICK_START.md) | Hướng dẫn cài đặt nhanh | Bắt đầu từ đầu |
-| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Bảng cheat lệnh & API | Cần câu trả lời nhanh |
-| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | Mẫu & ví dụ SDK | Viết mã |
+| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Cheat sheet lệnh & API | Cần câu trả lời nhanh |
+| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | Mẫu SDK & ví dụ | Viết mã |
 | [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Hướng dẫn biến môi trường | Cấu hình mẫu |
 | [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Cải tiến mẫu mới nhất | Hiểu thay đổi |
-| [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Hướng dẫn chuyển đổi | Nâng cấp mã |
+| [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Hướng dẫn di chuyển | Nâng cấp mã |
 | [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Vấn đề thường gặp & cách khắc phục | Gỡ lỗi vấn đề |
 
 ---
@@ -274,41 +310,42 @@ Hướng dẫn và tham khảo toàn diện:
 ## 🎓 Khuyến nghị Lộ trình Học tập
 
 ### Dành cho Người Mới Bắt Đầu (3-4 giờ)
-1. ✅ Buổi 1: Bắt đầu (tập trung vào cài đặt và trò chuyện cơ bản)
-2. ✅ Buổi 2: RAG cơ bản (bỏ qua đánh giá ban đầu)
+1. ✅ Buổi 1: Bắt đầu (tập trung vào cài đặt và chat cơ bản)
+2. ✅ Buổi 2: Cơ bản về RAG (bỏ qua đánh giá ban đầu)
 3. ✅ Buổi 3: Đánh giá đơn giản (chỉ 2 mô hình)
-4. ⏭️ Bỏ qua Buổi 4-6 lúc này
+4. ⏭️ Bỏ qua Buổi 4-6 lúc đầu
 5. 🔄 Quay lại Buổi 4-6 sau khi xây dựng ứng dụng đầu tiên
 
 ### Dành cho Nhà Phát Triển Trung Cấp (3 giờ)
-1. ⚡ Buổi 1: Xác thực cài đặt nhanh
+1. ⚡ Buổi 1: Xác minh cài đặt nhanh
 2. ✅ Buổi 2: Hoàn thành pipeline RAG với đánh giá
 3. ✅ Buổi 3: Bộ đánh giá đầy đủ
 4. ✅ Buổi 4: Tối ưu hóa mô hình
-5. ✅ Buổi 5-6: Tập trung vào các mẫu kiến trúc
+5. ✅ Buổi 5-6: Tập trung vào mẫu kiến trúc
 
 ### Dành cho Người Thực Hành Nâng Cao (2-3 giờ)
-1. ⚡ Buổi 1-3: Xem nhanh và xác thực
+1. ⚡ Buổi 1-3: Ôn tập và xác minh nhanh
 2. ✅ Buổi 4: Tìm hiểu sâu về tối ưu hóa
 3. ✅ Buổi 5: Kiến trúc đa tác nhân
 4. ✅ Buổi 6: Mẫu sản xuất và mở rộng
-5. 🚀 Mở rộng: Xây dựng logic định tuyến tùy chỉnh và triển khai kết hợp
+5. 🚀 Mở rộng: Xây dựng logic định tuyến tùy chỉnh và triển khai hybrid
 
 ---
 
-## Gói Buổi Học Workshop (Labs Tập Trung 30 Phút)
+## Bộ Buổi Học Workshop (Labs Tập Trung 30 Phút)
 
-Nếu bạn đang theo định dạng workshop 6 buổi cô đọng, hãy sử dụng các hướng dẫn chuyên dụng này (mỗi hướng dẫn tương ứng và bổ sung cho tài liệu module rộng hơn ở trên):
+Nếu bạn theo định dạng workshop 6 buổi cô đọng, hãy sử dụng các hướng dẫn chuyên dụng này (mỗi hướng dẫn tương ứng và bổ sung cho tài liệu module rộng hơn ở trên):
 
 | Buổi Workshop | Hướng dẫn | Trọng tâm cốt lõi |
 |---------------|-----------|-------------------|
-| 1 | [Session01-GettingStartedFoundryLocal](./Session01-GettingStartedFoundryLocal.md) | Cài đặt, xác thực, chạy phi & GPT-OSS-20B, tăng tốc |
-| 2 | [Session02-BuildAISolutionsRAG](./Session02-BuildAISolutionsRAG.md) | Kỹ thuật gợi ý, mẫu RAG, CSV & tài liệu nền tảng, chuyển đổi |
+| 1 | [Session01-GettingStartedFoundryLocal](./Session01-GettingStartedFoundryLocal.md) | Cài đặt, xác minh, chạy phi & GPT-OSS-20B, tăng tốc |
+| 2 | [Session02-BuildAISolutionsRAG](./Session02-BuildAISolutionsRAG.md) | Kỹ thuật prompt, mẫu RAG, CSV & tài liệu grounding, di chuyển |
 | 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Tích hợp Hugging Face, đánh giá, lựa chọn mô hình |
-| 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM vs LLM, WebGPU, Chainlit RAG, tăng tốc ONNX |
-| 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Vai trò tác nhân, bộ nhớ, công cụ, điều phối |
-| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Định tuyến, chuỗi, lộ trình mở rộng đến Azure |
-Mỗi tệp phiên bao gồm: tóm tắt, mục tiêu học tập, quy trình demo 30 phút, dự án khởi đầu, danh sách kiểm tra xác thực, xử lý sự cố và tham chiếu đến Foundry Local Python SDK chính thức.
+| 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM so với LLM, WebGPU, Chainlit RAG, tăng tốc ONNX |
+| 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Vai trò của agent, bộ nhớ, công cụ, điều phối |
+| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Định tuyến, chuỗi, mở rộng trên Azure |
+
+Mỗi tệp phiên bao gồm: tóm tắt, mục tiêu học tập, luồng demo 30 phút, dự án khởi đầu, danh sách kiểm tra xác thực, xử lý sự cố và tham chiếu đến Foundry Local Python SDK chính thức.
 
 ### Mẫu Script
 
@@ -343,56 +380,56 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 |   | `samples/session02/rag_eval_ragas.py` | Đánh giá RAG với các chỉ số ragas |
 | 3 | `samples/session03/benchmark_oss_models.py` | Đánh giá độ trễ & thông lượng đa mô hình |
 | 4 | `samples/session04/model_compare.py` | So sánh SLM và LLM (độ trễ & kết quả mẫu) |
-| 5 | `samples/session05/agents_orchestrator.py` | Quy trình nghiên cứu hai agent → biên tập |
+| 5 | `samples/session05/agents_orchestrator.py` | Pipeline nghiên cứu → biên tập của hai agent |
 | 6 | `samples/session06/models_router.py` | Demo định tuyến dựa trên ý định |
 |   | `samples/session06/models_pipeline.py` | Chuỗi lập kế hoạch/thực hiện/tinh chỉnh nhiều bước |
 
-### Biến Môi Trường (Chung Cho Các Mẫu)
+### Biến Môi Trường (Chung cho các mẫu)
 
 | Biến | Mục đích | Ví dụ |
 |------|----------|-------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias mô hình đơn mặc định cho các mẫu cơ bản | `phi-4-mini` |
-| `SLM_ALIAS` / `LLM_ALIAS` | Mô hình SLM rõ ràng so với mô hình lớn hơn để so sánh | `phi-4-mini` / `gpt-oss-20b` |
+| `SLM_ALIAS` / `LLM_ALIAS` | SLM rõ ràng so với mô hình lớn hơn để so sánh | `phi-4-mini` / `gpt-oss-20b` |
 | `BENCH_MODELS` | Danh sách alias để đánh giá | `qwen2.5-0.5b,gemma-2-2b,mistral-7b` |
-| `BENCH_ROUNDS` | Số lần lặp lại đánh giá cho mỗi mô hình | `3` |
+| `BENCH_ROUNDS` | Số lần lặp lại đánh giá mỗi mô hình | `3` |
 | `BENCH_PROMPT` | Prompt sử dụng trong đánh giá | `Explain retrieval augmented generation briefly.` |
 | `EMBED_MODEL` | Mô hình embedding của sentence-transformers | `sentence-transformers/all-MiniLM-L6-v2` |
 | `RAG_QUESTION` | Ghi đè câu hỏi kiểm tra cho pipeline RAG | `Why use RAG with local inference?` |
-| `AGENT_QUESTION` | Ghi đè câu hỏi pipeline agent | `Explain why edge AI matters for compliance.` |
+| `AGENT_QUESTION` | Ghi đè câu hỏi pipeline của agent | `Explain why edge AI matters for compliance.` |
 | `AGENT_MODEL_PRIMARY` | Alias mô hình cho agent nghiên cứu | `phi-4-mini` |
 | `AGENT_MODEL_EDITOR` | Alias mô hình cho agent biên tập (có thể khác) | `gpt-oss-20b` |
-| `SHOW_USAGE` | Khi `1`, in mức sử dụng token cho mỗi lần hoàn thành | `1` |
+| `SHOW_USAGE` | Khi `1`, in mức sử dụng token mỗi lần hoàn thành | `1` |
 | `RETRY_ON_FAIL` | Khi `1`, thử lại một lần khi gặp lỗi chat tạm thời | `1` |
 | `RETRY_BACKOFF` | Số giây chờ trước khi thử lại | `1.0` |
 
-Nếu một biến không được thiết lập, các script sẽ sử dụng giá trị mặc định hợp lý. Đối với các demo mô hình đơn, bạn thường chỉ cần `FOUNDRY_LOCAL_ALIAS`.
+Nếu một biến không được đặt, các script sẽ sử dụng giá trị mặc định hợp lý. Đối với các demo mô hình đơn, bạn thường chỉ cần `FOUNDRY_LOCAL_ALIAS`.
 
 ### Module Tiện Ích
 
 Tất cả các mẫu hiện chia sẻ một helper `samples/workshop_utils.py` cung cấp:
 
-* Tạo `FoundryLocalManager` + client OpenAI được lưu cache
-* Helper `chat_once()` với tùy chọn thử lại + in mức sử dụng
+* Tạo `FoundryLocalManager` được cache + client OpenAI
+* Helper `chat_once()` với tùy chọn retry + in mức sử dụng
 * Báo cáo mức sử dụng token đơn giản (kích hoạt qua `SHOW_USAGE=1`)
 
 Điều này giảm sự trùng lặp và làm nổi bật các thực hành tốt nhất để điều phối mô hình cục bộ hiệu quả.
 
-## Các Nâng Cấp Tùy Chọn (Xuyên Suốt Các Phiên)
+## Nâng Cấp Tùy Chọn (Xuyên Suốt Các Phiên)
 
 | Chủ đề | Nâng cấp | Phiên | Env / Toggle |
-|--------|----------|-------|-------------|
-| Tính xác định | Nhiệt độ cố định + bộ prompt ổn định | 1–6 | Thiết lập `temperature=0`, `top_p=1` |
+|--------|----------|-------|--------------|
+| Tính xác định | Nhiệt độ cố định + bộ prompt ổn định | 1–6 | Đặt `temperature=0`, `top_p=1` |
 | Hiển thị mức sử dụng token | Dạy chi phí/hiệu quả nhất quán | 1–6 | `SHOW_USAGE=1` |
 | Streaming Token Đầu Tiên | Chỉ số độ trễ cảm nhận | 1,3,4,6 | `BENCH_STREAM=1` (đánh giá) |
-| Khả năng thử lại | Xử lý khởi động lạnh tạm thời | Tất cả | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
+| Khả năng chịu lỗi khi thử lại | Xử lý khởi động lạnh tạm thời | Tất cả | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
 | Agent Đa Mô Hình | Chuyên môn hóa vai trò không đồng nhất | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
-| Định tuyến thích ứng | Ý định + logic chi phí | 6 | Mở rộng router với logic leo thang |
+| Định tuyến thích ứng | Ý định + heuristic chi phí | 6 | Mở rộng router với logic leo thang |
 | Bộ nhớ vector | Ghi nhớ ngữ nghĩa dài hạn | 2,5,6 | Tích hợp FAISS/Chroma embedding index |
-| Xuất Trace | Kiểm toán & đánh giá | 2,5,6 | Thêm dòng JSON cho mỗi bước |
-| Rubric Chất lượng | Theo dõi định tính | 3–6 | Prompt chấm điểm thứ cấp |
+| Xuất Trace | Kiểm toán & đánh giá | 2,5,6 | Thêm các dòng JSON mỗi bước |
+| Rubric Chất Lượng | Theo dõi định tính | 3–6 | Prompt chấm điểm thứ cấp |
 | Kiểm tra nhanh | Xác thực trước workshop nhanh | Tất cả | `python Workshop/tests/smoke.py` |
 
-### Bắt Đầu Nhanh Có Tính Xác Định
+### Khởi Động Nhanh Tính Xác Định
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -404,13 +441,13 @@ Kỳ vọng số lượng token ổn định qua các đầu vào giống hệt 
 
 ### Đánh Giá RAG (Phiên 2)
 
-Sử dụng `rag_eval_ragas.py` để tính toán mức độ liên quan của câu trả lời, độ chính xác và độ chính xác ngữ cảnh trên một tập dữ liệu tổng hợp nhỏ:
+Sử dụng `rag_eval_ragas.py` để tính mức độ liên quan của câu trả lời, độ chính xác và độ chính xác ngữ cảnh trên một tập dữ liệu tổng hợp nhỏ:
 
 ```powershell
 python samples/session02/rag_eval_ragas.py
 ```
 
-Mở rộng bằng cách cung cấp một JSONL lớn hơn gồm các câu hỏi, ngữ cảnh và sự thật cơ bản, sau đó chuyển đổi thành một `Dataset` của Hugging Face.
+Mở rộng bằng cách cung cấp một JSONL lớn hơn gồm các câu hỏi, ngữ cảnh và sự thật cơ bản, sau đó chuyển đổi sang `Dataset` của Hugging Face.
 
 ## Phụ Lục Độ Chính Xác Lệnh CLI
 
@@ -419,22 +456,22 @@ Workshop chỉ sử dụng các lệnh CLI Foundry Local hiện được tài li
 ### Các Lệnh Ổn Định Được Tham Chiếu
 
 | Danh mục | Lệnh | Mục đích |
-|----------|------|---------|
-| Core | `foundry --version` | Hiển thị phiên bản đã cài đặt |
-| Core | `foundry init` | Khởi tạo cấu hình |
-| Dịch vụ | `foundry service start` | Bắt đầu dịch vụ cục bộ (nếu không tự động) |
+|----------|------|----------|
+| Cốt lõi | `foundry --version` | Hiển thị phiên bản đã cài đặt |
+| Cốt lõi | `foundry init` | Khởi tạo cấu hình |
+| Dịch vụ | `foundry service start` | Khởi động dịch vụ cục bộ (nếu không tự động) |
 | Dịch vụ | `foundry status` | Hiển thị trạng thái dịch vụ |
 | Mô hình | `foundry model list` | Liệt kê danh mục / các mô hình có sẵn |
 | Mô hình | `foundry model download <alias>` | Tải trọng lượng mô hình vào cache |
-| Mô hình | `foundry model run <alias>` | Khởi chạy (tải) một mô hình cục bộ; kết hợp với `--prompt` cho one-shot |
+| Mô hình | `foundry model run <alias>` | Khởi chạy (tải) một mô hình cục bộ; kết hợp với `--prompt` cho một lần |
 | Mô hình | `foundry model unload <alias>` / `foundry model stop <alias>` | Dỡ một mô hình khỏi bộ nhớ (nếu được hỗ trợ) |
 | Cache | `foundry cache list` | Liệt kê các mô hình đã cache (đã tải xuống) |
-| Hệ thống | `foundry system info` | Snapshot khả năng phần cứng & tăng tốc |
+| Hệ thống | `foundry system info` | Ảnh chụp nhanh khả năng phần cứng & tăng tốc |
 | Hệ thống | `foundry system gpu-info` | Thông tin chẩn đoán GPU |
 | Cấu hình | `foundry config list` | Hiển thị giá trị cấu hình hiện tại |
 | Cấu hình | `foundry config set <key> <value>` | Cập nhật cấu hình |
 
-### Mẫu Prompt One‑Shot
+### Mẫu Prompt Một Lần
 
 Thay vì lệnh con `model chat` đã bị loại bỏ, sử dụng:
 
@@ -442,14 +479,14 @@ Thay vì lệnh con `model chat` đã bị loại bỏ, sử dụng:
 foundry model run <alias> --prompt "Your question here"
 ```
 
-Lệnh này thực hiện một chu kỳ prompt/response duy nhất rồi thoát.
+Điều này thực hiện một chu kỳ prompt/response duy nhất rồi thoát.
 
-### Các Mẫu Bị Loại Bỏ / Tránh Sử Dụng
+### Các Mẫu Bị Loại Bỏ / Tránh
 
 | Bị loại bỏ / Không được tài liệu hóa | Thay thế / Hướng dẫn |
 |-------------------------------------|----------------------|
 | `foundry model chat <model> "..."` | `foundry model run <model> --prompt "..."` |
-| `foundry model list --running` | Sử dụng `foundry model list` thông thường + hoạt động gần đây / logs |
+| `foundry model list --running` | Sử dụng `foundry model list` thông thường + hoạt động gần đây / log |
 | `foundry model list --cached` | `foundry cache list` |
 | `foundry model stats <model>` | Sử dụng script đánh giá Python + công cụ hệ điều hành (Task Manager / `nvidia-smi`) |
 | `foundry model benchmark ...` | `samples/session03/benchmark_oss_models.py` |
@@ -457,18 +494,18 @@ Lệnh này thực hiện một chu kỳ prompt/response duy nhất rồi thoát
 ### Đánh Giá & Telemetry
 
 - Độ trễ, p95, token/giây: `samples/session03/benchmark_oss_models.py`
-- Độ trễ token đầu tiên (streaming): thiết lập `BENCH_STREAM=1`
-- Sử dụng tài nguyên: công cụ giám sát hệ điều hành (Task Manager, Activity Monitor, `nvidia-smi`) + `foundry system info`.
+- Độ trễ token đầu tiên (streaming): đặt `BENCH_STREAM=1`
+- Sử dụng tài nguyên: công cụ hệ điều hành (Task Manager, Activity Monitor, `nvidia-smi`) + `foundry system info`.
 
-Khi các lệnh telemetry CLI mới ổn định upstream, chúng có thể được tích hợp với các chỉnh sửa tối thiểu vào các markdown của phiên.
+Khi các lệnh telemetry CLI mới ổn định upstream, chúng có thể được tích hợp với các chỉnh sửa tối thiểu vào các tệp markdown của phiên.
 
-### Tự Động Kiểm Tra Lỗi Lệnh CLI
+### Lint Guard Tự Động
 
-Một linter tự động ngăn chặn việc tái sử dụng các mẫu CLI đã bị loại bỏ bên trong các khối mã của tệp markdown:
+Một linter tự động ngăn chặn việc tái giới thiệu các mẫu CLI bị loại bỏ bên trong các khối mã của tệp markdown:
 
 Script: `Workshop/scripts/lint_markdown_cli.py`
 
-Các mẫu bị loại bỏ sẽ bị chặn bên trong các khối mã.
+Các mẫu bị loại bỏ bị chặn bên trong các khối mã.
 
 Các thay thế được khuyến nghị:
 | Bị loại bỏ | Thay thế |
@@ -495,22 +532,22 @@ chmod +x .git/hooks/pre-commit
 
 ## Bảng Di Chuyển Nhanh CLI → SDK
 
-| Nhiệm vụ | Lệnh CLI Một Dòng | Tương đương SDK (Python) | Ghi chú |
-|----------|-------------------|--------------------------|---------|
+| Nhiệm vụ | CLI One-Liner | Tương đương SDK (Python) | Ghi chú |
+|----------|---------------|--------------------------|---------|
 | Chạy một mô hình một lần (prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK tự động khởi động dịch vụ & cache |
 | Tải xuống (cache) mô hình | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # triggers download/load` | Manager chọn biến thể tốt nhất nếu alias ánh xạ đến nhiều bản dựng |
 | Liệt kê danh mục | `foundry model list` | `# use manager for each alias or maintain known list` | CLI tổng hợp; SDK hiện tại khởi tạo từng alias |
 | Liệt kê các mô hình đã cache | `foundry cache list` | `manager.list_cached_models()` | Sau khi khởi tạo manager (bất kỳ alias nào) |
 | Kích hoạt tăng tốc GPU | `foundry config set compute.onnx.enable_gpu true` | `# CLI action; SDK assumes config already applied` | Cấu hình là hiệu ứng bên ngoài |
-| Lấy URL endpoint | (ngầm định) | `manager.endpoint` | Dùng để tạo client tương thích OpenAI |
-| Làm nóng một mô hình | `foundry model run <alias>` rồi prompt đầu tiên | `chat_once(alias, messages=[...])` (utility) | Các tiện ích xử lý độ trễ khởi động lạnh ban đầu |
+| Lấy URL endpoint | (ngầm định) | `manager.endpoint` | Sử dụng để tạo client tương thích OpenAI |
+| Làm nóng một mô hình | `foundry model run <alias>` sau đó prompt đầu tiên | `chat_once(alias, messages=[...])` (tiện ích) | Các tiện ích xử lý khởi động lạnh ban đầu |
 | Đo độ trễ | `python benchmark_oss_models.py` | `import benchmark_oss_models` (hoặc script xuất mới) | Ưu tiên script để có các chỉ số nhất quán |
-| Dừng / dỡ mô hình | `foundry model unload <alias>` | (Không được cung cấp – khởi động lại dịch vụ / quy trình) | Thường không cần thiết cho luồng workshop |
+| Dừng / dỡ mô hình | `foundry model unload <alias>` | (Không được hiển thị – khởi động lại dịch vụ / quy trình) | Thường không cần thiết cho luồng workshop |
 | Lấy mức sử dụng token | (xem output) | `resp.usage.total_tokens` | Được cung cấp nếu backend trả về đối tượng usage |
 
 ## Xuất Markdown Đánh Giá
 
-Sử dụng script `Workshop/scripts/export_benchmark_markdown.py` để chạy một đánh giá mới (logic giống như `samples/session03/benchmark_oss_models.py`) và xuất một bảng Markdown thân thiện với GitHub cùng JSON thô.
+Sử dụng script `Workshop/scripts/export_benchmark_markdown.py` để chạy một đánh giá mới (logic giống như `samples/session03/benchmark_oss_models.py`) và xuất một bảng Markdown thân thiện với GitHub cùng với JSON thô.
 
 ### Ví dụ
 
@@ -524,9 +561,9 @@ Các tệp được tạo:
 | `benchmark_report.md` | Bảng Markdown + gợi ý diễn giải |
 | `benchmark_report.json` | Mảng số liệu thô (dùng để so sánh / theo dõi xu hướng) |
 
-Thiết lập `BENCH_STREAM=1` trong môi trường để bao gồm độ trễ token đầu tiên nếu được hỗ trợ.
+Đặt `BENCH_STREAM=1` trong môi trường để bao gồm độ trễ token đầu tiên nếu được hỗ trợ.
 
 ---
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, chúng tôi khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

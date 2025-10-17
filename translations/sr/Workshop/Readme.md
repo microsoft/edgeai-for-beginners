@@ -1,175 +1,175 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "48d0fb38be925084a6ebd957d4b045e5",
-  "translation_date": "2025-10-08T14:11:40+00:00",
+  "original_hash": "8b994c57f1207012e4d7f58b7c0d1ae7",
+  "translation_date": "2025-10-17T10:11:12+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "sr"
 }
 -->
-# EdgeAI за почетнике - радионица
+# EdgeAI за почетнике - Radionica
 
-> **Практични пут учења за изградњу Edge AI апликација спремних за производњу**
+> **Praktični vodič za izgradnju proizvodno spremnih Edge AI aplikacija**
 >
-> Савладајте локално постављање AI уз Microsoft Foundry Local, од првог завршетка разговора до оркестрације више агената у 6 прогресивних сесија.
+> Savladajte lokalno postavljanje veštačke inteligencije uz Microsoft Foundry Local, od prve chat interakcije do orkestracije više agenata u 6 progresivnih sesija.
 
 ---
 
-## 🎯 Увод
+## 🎯 Uvod
 
-Добродошли на **EdgeAI за почетнике радионицу** - ваш практични водич за изградњу интелигентних апликација које раде искључиво на локалном хардверу. Ова радионица претвара теоријске концепте Edge AI у стварне вештине кроз прогресивно изазовне вежбе уз Microsoft Foundry Local и Small Language Models (SLMs).
+Dobrodošli na **EdgeAI za početnike radionicu** - vaš praktični vodič za izgradnju inteligentnih aplikacija koje se u potpunosti pokreću na lokalnom hardveru. Ova radionica pretvara teorijske koncepte Edge AI u stvarne veštine kroz postepeno izazovne vežbe koristeći Microsoft Foundry Local i male jezičke modele (SLM).
 
-### Зашто ова радионица?
+### Zašto ova radionica?
 
-**Револуција Edge AI је стигла**
+**Revolucija Edge AI je počela**
 
-Организације широм света прелазе са AI зависног од облака на edge рачунарство из три кључна разлога:
+Organizacije širom sveta prelaze sa AI zavisnog od oblaka na edge computing iz tri ključna razloga:
 
-1. **Приватност и усаглашеност** - Обрада осетљивих података локално без преноса у облак (HIPAA, GDPR, финансијски прописи)
-2. **Перформансе** - Елиминисање кашњења у мрежи (50-500ms локално наспрам 500-2000ms облак)
-3. **Контрола трошкова** - Уклањање трошкова по токену API-ја и скалирање без трошкова облака
+1. **Privatnost i usklađenost** - Obrada osetljivih podataka lokalno, bez prenosa u oblak (HIPAA, GDPR, finansijski propisi)
+2. **Performanse** - Eliminacija mrežnog kašnjenja (50-500ms lokalno naspram 500-2000ms povratnog puta u oblaku)
+3. **Kontrola troškova** - Uklanjanje troškova po tokenu API-ja i skaliranje bez troškova oblaka
 
-**Али Edge AI је другачији**
+**Ali Edge AI je drugačiji**
 
-Покретање AI-а на локалним уређајима захтева нове вештине:
-- Избор и оптимизација модела за ограничене ресурсе
-- Управљање локалним сервисима и хардверска убрзања
-- Инжењеринг упита за мање моделе
-- Шаблони за производну имплементацију на edge уређајима
+Pokretanje AI na lokalnim uređajima zahteva nove veštine:
+- Izbor i optimizacija modela za ograničene resurse
+- Upravljanje lokalnim servisima i ubrzanje hardvera
+- Inženjering upita za manje modele
+- Obrasci za proizvodno postavljanje na edge uređajima
 
-**Ова радионица пружа те вештине**
+**Ova radionica pruža te veštine**
 
-У 6 фокусираних сесија (~3 сата укупно), напредоваћете од "Hello World" до постављања система са више агената спремних за производњу - све локално на вашем рачунару.
-
----
-
-## 📚 Циљеви учења
-
-Завршетком ове радионице, бићете у могућности да:
-
-### Основне компетенције
-1. **Поставите и управљате локалним AI сервисима**
-   - Инсталирате и конфигуришете Microsoft Foundry Local
-   - Изаберете одговарајуће моделе за edge постављање
-   - Управљате животним циклусом модела (преузимање, учитавање, кеширање)
-   - Пратите коришћење ресурса и оптимизујете перформансе
-
-2. **Изградите апликације засноване на AI**
-   - Имплементирате OpenAI-компатибилне завршетке разговора локално
-   - Дизајнирате ефикасне упите за Small Language Models
-   - Рукујете стриминг одговорима за бољи UX
-   - Интегришете локалне моделе у постојеће апликације
-
-3. **Креирате RAG (Retrieval Augmented Generation) системе**
-   - Изградите семантичко претраживање уз помоћ уграђивања
-   - Заснујете одговоре LLM-а на знању специфичном за домен
-   - Оцените квалитет RAG-а уз индустријске стандарде
-   - Скалирајте од прототипа до производње
-
-4. **Оптимизујете перформансе модела**
-   - Тестирате више модела за ваш случај употребе
-   - Мерите кашњење, пропусност и време првог токена
-   - Изаберете оптималне моделе на основу компромиса брзина/квалитет
-   - Упоредите SLM и LLM компромисе у стварним сценаријима
-
-5. **Оркестрирате системе са више агената**
-   - Дизајнирате специјализоване агенте за различите задатке
-   - Имплементирате меморију агента и управљање контекстом
-   - Координирате агенте у сложеним токовима рада
-   - Паметно усмеравате захтеве преко више модела
-
-6. **Поставите решења спремна за производњу**
-   - Имплементирате руковање грешкама и логику поновног покушаја
-   - Пратите коришћење токена и системске ресурсе
-   - Изградите скалабилне архитектуре уз шаблоне модела као алата
-   - Планирате миграционе путеве од edge до хибридних (edge + облак)
+U 6 fokusiranih sesija (~3 sata ukupno), napredovaćete od "Hello World" do postavljanja proizvodno spremnih sistema sa više agenata - sve lokalno na vašem računaru.
 
 ---
 
-## 🎓 Резултати учења
+## 📚 Ciljevi učenja
 
-### Шта ћете изградити
+Završetkom ove radionice, moći ćete:
 
-До краја ове радионице, креираћете:
+### Osnovne kompetencije
+1. **Postavljanje i upravljanje lokalnim AI servisima**
+   - Instalacija i konfiguracija Microsoft Foundry Local
+   - Izbor odgovarajućih modela za edge postavljanje
+   - Upravljanje životnim ciklusom modela (preuzimanje, učitavanje, keširanje)
+   - Praćenje korišćenja resursa i optimizacija performansi
 
-| Сесија | Испорука | Демонстриране вештине |
+2. **Izgradnja aplikacija sa AI podrškom**
+   - Implementacija lokalnih chat interakcija kompatibilnih sa OpenAI
+   - Dizajniranje efektivnih upita za male jezičke modele
+   - Upravljanje strimovanjem odgovora za bolji korisnički doživljaj
+   - Integracija lokalnih modela u postojeće aplikacije
+
+3. **Kreiranje RAG (Retrieval Augmented Generation) sistema**
+   - Izgradnja semantičke pretrage sa ugrađenim podacima
+   - Utemeljenje odgovora LLM-a u specifičnom znanju domena
+   - Evaluacija kvaliteta RAG-a koristeći industrijske standarde
+   - Skaliranje od prototipa do proizvodnje
+
+4. **Optimizacija performansi modela**
+   - Benchmarking više modela za vaš slučaj upotrebe
+   - Merenje kašnjenja, propusnosti i vremena prvog tokena
+   - Izbor optimalnih modela na osnovu kompromisa brzine/kvaliteta
+   - Poređenje SLM i LLM kompromisa u stvarnim scenarijima
+
+5. **Orkestracija sistema sa više agenata**
+   - Dizajniranje specijalizovanih agenata za različite zadatke
+   - Implementacija memorije agenata i upravljanje kontekstom
+   - Koordinacija agenata u složenim radnim tokovima
+   - Pametno usmeravanje zahteva između više modela
+
+6. **Postavljanje proizvodno spremnih rešenja**
+   - Implementacija logike za rukovanje greškama i ponovnim pokušajima
+   - Praćenje korišćenja tokena i sistemskih resursa
+   - Izgradnja skalabilnih arhitektura sa obrascima modela-kao-alata
+   - Planiranje migracionih puteva od edge do hibridnih (edge + oblak)
+
+---
+
+## 🎓 Ishodi učenja
+
+### Šta ćete izgraditi
+
+Do kraja ove radionice, kreiraćete:
+
+| Sesija | Rezultat | Demonstrirane veštine |
 |--------|----------|-----------------------|
-| **1** | Апликација за разговор са стримингом | Постављање сервиса, основни завршетци, UX стриминга |
-| **2** | RAG систем са евалуацијом | Уграђивања, семантичко претраживање, метрике квалитета |
-| **3** | Суита за тестирање више модела | Мерење перформанси, поређење модела |
-| **4** | Поређење SLM и LLM | Анализа компромиса, стратегије оптимизације |
-| **5** | Оркестратор са више агената | Дизајн агента, управљање меморијом, координација |
-| **6** | Систем за паметно усмеравање | Детекција намере, избор модела, скалабилност |
+| **1** | Chat aplikacija sa strimovanjem | Postavljanje servisa, osnovne interakcije, UX strimovanja |
+| **2** | RAG sistem sa evaluacijom | Ugrađeni podaci, semantička pretraga, metrički kvalitet |
+| **3** | Benchmarking više modela | Merenje performansi, poređenje modela |
+| **4** | Poređenje SLM i LLM | Analiza kompromisa, strategije optimizacije |
+| **5** | Orkestrator sa više agenata | Dizajn agenata, upravljanje memorijom, koordinacija |
+| **6** | Sistem za inteligentno usmeravanje | Detekcija namere, izbor modela, skalabilnost |
 
-### Матрица компетенција
+### Matrica kompetencija
 
-| Ниво вештине | Сесија 1-2 | Сесија 3-4 | Сесија 5-6 |
+| Nivo veštine | Sesija 1-2 | Sesija 3-4 | Sesija 5-6 |
 |--------------|------------|------------|------------|
-| **Почетник** | ✅ Постављање и основе | ⚠️ Изазовно | ❌ Превише напредно |
-| **Средњи ниво** | ✅ Брзи преглед | ✅ Основно учење | ⚠️ Циљеви за напредак |
-| **Напредни** | ✅ Лако пролазе | ✅ Унапређење | ✅ Шаблони за производњу |
+| **Početnik** | ✅ Postavljanje i osnove | ⚠️ Izazovno | ❌ Previše napredno |
+| **Srednji nivo** | ✅ Brzi pregled | ✅ Osnovno učenje | ⚠️ Ciljevi za napredak |
+| **Napredni** | ✅ Lako prolazi | ✅ Usavršavanje | ✅ Obrasci za proizvodnju |
 
-### Вештине спремне за каријеру
+### Veštine spremne za karijeru
 
-**Након ове радионице, бићете спремни да:**
+**Nakon ove radionice, bićete spremni da:**
 
-✅ **Изградите апликације са приоритетом приватности**
-- Апликације за здравство које локално обрађују PHI/PII
-- Финансијске услуге са захтевима за усаглашеност
-- Владине системе са потребама за суверенитетом података
+✅ **Izgradite aplikacije sa prioritetom privatnosti**
+- Zdravstvene aplikacije koje lokalno obrađuju PHI/PII
+- Finansijske usluge sa zahtevima za usklađenost
+- Vladini sistemi sa potrebama za suverenitetom podataka
 
-✅ **Оптимизујете за Edge окружења**
-- IoT уређаје са ограниченим ресурсима
-- Мобилне апликације које раде офлајн
-- Системе у реалном времену са ниским кашњењем
+✅ **Optimizujete za edge okruženja**
+- IoT uređaji sa ograničenim resursima
+- Mobilne aplikacije koje rade offline
+- Sistemi u realnom vremenu sa niskim kašnjenjem
 
-✅ **Дизајнирате интелигентне архитектуре**
-- Системе са више агената за сложене токове рада
-- Хибридне edge-cloud поставке
-- Инфраструктуру AI-а оптимизовану за трошкове
+✅ **Dizajnirate inteligentne arhitekture**
+- Sistemi sa više agenata za složene radne tokove
+- Hibridna edge-cloud postavljanja
+- AI infrastruktura optimizovana za troškove
 
-✅ **Водите Edge AI иницијативе**
-- Процените изводљивост Edge AI-а за пројекте
-- Изаберете одговарајуће моделе и оквире
-- Архитектурате скалабилна локална AI решења
-
----
-
-## 🗺️ Структура радионице
-
-### Преглед сесија (6 сесија × 30 минута = 3 сата)
-
-| Сесија | Тема | Фокус | Трајање |
-|--------|------|-------|---------|
-| **1** | Почетак рада са Foundry Local | Инсталација, валидација, први завршетци | 30 мин |
-| **2** | Изградња AI решења са RAG | Инжењеринг упита, уграђивања, евалуација | 30 мин |
-| **3** | Модели отвореног кода | Откривање модела, тестирање, избор | 30 мин |
-| **4** | Најсавременији модели | SLM наспрам LLM, оптимизација, оквири | 30 мин |
-| **5** | Агенти засновани на AI | Дизајн агента, оркестрација, меморија | 30 мин |
-| **6** | Модели као алати | Усмеравање, повезивање, стратегије скалирања | 30 мин |
+✅ **Vodite Edge AI inicijative**
+- Procena izvodljivosti Edge AI za projekte
+- Izbor odgovarajućih modela i okvira
+- Arhitektura skalabilnih lokalnih AI rešenja
 
 ---
 
-## 🚀 Брзи почетак
+## 🗺️ Struktura radionice
 
-### Предуслови
+### Pregled sesija (6 sesija × 30 minuta = 3 sata)
 
-**Системски захтеви:**
-- **OS**: Windows 10/11, macOS 11+, или Linux (Ubuntu 20.04+)
-- **RAM**: Минимум 8GB, препоручено 16GB+
-- **Складиште**: 10GB+ слободног простора за моделе
-- **CPU**: Модеран процесор са подршком за AVX2
-- **GPU** (опционо): CUDA-компатибилан или Qualcomm NPU за убрзање
+| Sesija | Tema | Fokus | Trajanje |
+|--------|------|-------|----------|
+| **1** | Početak sa Foundry Local | Instalacija, validacija, prve interakcije | 30 min |
+| **2** | Izgradnja AI rešenja sa RAG | Inženjering upita, ugrađeni podaci, evaluacija | 30 min |
+| **3** | Open Source modeli | Otkrivanje modela, benchmarking, izbor | 30 min |
+| **4** | Najnoviji modeli | SLM vs LLM, optimizacija, okviri | 30 min |
+| **5** | Agenti sa AI podrškom | Dizajn agenata, orkestracija, memorija | 30 min |
+| **6** | Modeli kao alati | Usmeravanje, povezivanje, strategije skaliranja | 30 min |
 
-**Софтверски захтеви:**
-- **Python 3.8+** ([Преузми](https://www.python.org/downloads/))
-- **Microsoft Foundry Local** ([Водич за инсталацију](../../../Workshop))
-- **Git** ([Преузми](https://git-scm.com/downloads))
-- **Visual Studio Code** (препоручено) ([Преузми](https://code.visualstudio.com/))
+---
 
-### Постављање у 3 корака
+## 🚀 Brzi početak
 
-#### 1. Инсталирајте Foundry Local
+### Preduslovi
+
+**Sistemski zahtevi:**
+- **OS**: Windows 10/11, macOS 11+, ili Linux (Ubuntu 20.04+)
+- **RAM**: Minimum 8GB, preporučeno 16GB+
+- **Skladište**: 10GB+ slobodnog prostora za modele
+- **CPU**: Moderni procesor sa podrškom za AVX2
+- **GPU** (opciono): CUDA-kompatibilan ili Qualcomm NPU za ubrzanje
+
+**Softverski zahtevi:**
+- **Python 3.8+** ([Preuzmi](https://www.python.org/downloads/))
+- **Microsoft Foundry Local** ([Vodič za instalaciju](../../../Workshop))
+- **Git** ([Preuzmi](https://git-scm.com/downloads))
+- **Visual Studio Code** (preporučeno) ([Preuzmi](https://code.visualstudio.com/))
+
+### Postavljanje u 3 koraka
+
+#### 1. Instalirajte Foundry Local
 
 **Windows:**
 ```powershell
@@ -182,13 +182,49 @@ brew tap microsoft/foundrylocal
 brew install foundrylocal
 ```
 
-**Потврдите инсталацију:**
+**Proverite instalaciju:**
 ```bash
 foundry --version
 foundry service status
 ```
 
-#### 2. Клонирајте репозиторијум и инсталирајте зависности
+**Uverite se da Azure AI Foundry Local radi sa fiksnim portom**
+
+```bash
+# Set FoundryLocal to use port 58123 (default)
+foundry service set --port 58123 --show
+
+# Or use a different port
+foundry service set --port 58000 --show
+```
+
+**Proverite funkcionalnost:**
+```bash
+# Check service status
+foundry service status
+
+# Test the endpoint
+curl http://127.0.0.1:58123/v1/models
+```
+**Pronalaženje dostupnih modela**
+Da biste videli koji modeli su dostupni u vašem Foundry Local instance, možete upitati endpoint modela:
+
+```bash
+# cmd/bash/powershell
+foundry model list
+```
+
+Korišćenje web endpointa 
+
+```bash
+# Windows PowerShell
+powershell -Command "Invoke-RestMethod -Uri 'http://127.0.0.1:58123/v1/models' -Method Get"
+
+# Or using curl (if available)
+curl http://127.0.0.1:58123/v1/models
+```
+
+#### 2. Klonirajte repozitorijum i instalirajte zavisnosti
 
 ```bash
 # Clone repository
@@ -208,7 +244,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### 3. Покрените ваш први пример
+#### 3. Pokrenite svoj prvi primer
 
 ```bash
 # Start Foundry Local and load a model
@@ -219,96 +255,101 @@ cd samples/session01
 python chat_bootstrap.py "What is edge AI?"
 ```
 
-**✅ Успех!** Требало би да видите стриминг одговор о Edge AI-у.
+**✅ Uspešno!** Trebalo bi da vidite strimovani odgovor o Edge AI.
 
 ---
 
-## 📦 Ресурси радионице
+## 📦 Resursi radionice
 
-### Python примери
+### Python primeri
 
-Прогресивни практични примери који демонстрирају сваки концепт:
+Progresivni praktični primeri koji demonstriraju svaki koncept:
 
-| Сесија | Пример | Опис | Време извршења |
-|--------|--------|------|----------------|
-| 1 | [`chat_bootstrap.py`](../../../Workshop/samples/session01/chat_bootstrap.py) | Основни и стриминг разговор | ~30с |
-| 2 | [`rag_pipeline.py`](../../../Workshop/samples/session02/rag_pipeline.py) | RAG са уграђивањем | ~45с |
-| 2 | [`rag_eval_ragas.py`](../../../Workshop/samples/session02/rag_eval_ragas.py) | Евалуација квалитета RAG-а | ~60с |
-| 3 | [`benchmark_oss_models.py`](../../../Workshop/samples/session03/benchmark_oss_models.py) | Тестирање више модела | ~2-3м |
-| 4 | [`model_compare.py`](../../../Workshop/samples/session04/model_compare.py) | Поређење SLM и LLM | ~45с |
-| 5 | [`agents_orchestrator.py`](../../../Workshop/samples/session05/agents_orchestrator.py) | Систем са више агената | ~60с |
-| 6 | [`models_router.py`](../../../Workshop/samples/session06/models_router.py) | Усмеравање засновано на намери | ~45с |
-| 6 | [`models_pipeline.py`](../../../Workshop/samples/session06/models_pipeline.py) | Вишестепена оркестрација | ~60с |
+| Sesija | Primer | Opis | Vreme izvršavanja |
+|--------|--------|------|-------------------|
+| 1 | [`chat_bootstrap.py`](../../../Workshop/samples/session01/chat_bootstrap.py) | Osnovni & strimovani chat | ~30s |
+| 2 | [`rag_pipeline.py`](../../../Workshop/samples/session02/rag_pipeline.py) | RAG sa ugrađenim podacima | ~45s |
+| 2 | [`rag_eval_ragas.py`](../../../Workshop/samples/session02/rag_eval_ragas.py) | Evaluacija kvaliteta RAG-a | ~60s |
+| 3 | [`benchmark_oss_models.py`](../../../Workshop/samples/session03/benchmark_oss_models.py) | Benchmarking više modela | ~2-3m |
+| 4 | [`model_compare.py`](../../../Workshop/samples/session04/model_compare.py) | Poređenje SLM i LLM | ~45s |
+| 5 | [`agents_orchestrator.py`](../../../Workshop/samples/session05/agents_orchestrator.py) | Sistem sa više agenata | ~60s |
+| 6 | [`models_router.py`](../../../Workshop/samples/session06/models_router.py) | Usmeravanje na osnovu namere | ~45s |
+| 6 | [`models_pipeline.py`](../../../Workshop/samples/session06/models_pipeline.py) | Višestepena pipeline | ~60s |
 
-### Jupyter бележнице
+### Jupyter beležnice
 
-Интерактивно истраживање са објашњењима и визуализацијама:
+Interaktivno istraživanje sa objašnjenjima i vizualizacijama:
 
-| Сесија | Бележница | Опис | Тежина |
-|--------|----------|------|--------|
-| 1 | [`session01_chat_bootstrap.ipynb`](./notebooks/session01_chat_bootstrap.ipynb) | Основе разговора и стриминг | ⭐ Почетник |
-| 2 | [`session02_rag_pipeline.ipynb`](./notebooks/session02_rag_pipeline.ipynb) | Изградња RAG система | ⭐⭐ Средњи ниво |
-| 2 | [`session02_rag_eval_ragas.ipynb`](./notebooks/session02_rag_eval_ragas.ipynb) | Евалуација квалитета RAG-а | ⭐⭐ Средњи ниво |
-| 3 | [`session03_benchmark_oss_models.ipynb`](./notebooks/session03_benchmark_oss_models.ipynb) | Тестирање модела | ⭐⭐ Средњи ниво |
-| 4 | [`session04_model_compare.ipynb`](./notebooks/session04_model_compare.ipynb) | Поређење модела | ⭐⭐ Средњи ниво |
-| 5 | [`session05_agents_orchestrator.ipynb`](./notebooks/session05_agents_orchestrator.ipynb) | Оркестрација агента | ⭐⭐⭐ Напредно |
-| 6 | [`session06_models_router.ipynb`](./notebooks/session06_models_router.ipynb) | Усмеравање намере | ⭐⭐⭐ Напредно |
-| 6 | [`session06_models_pipeline.ipynb`](./notebooks/session06_models_pipeline.ipynb) | Оркестрација токова | ⭐⭐⭐ Напредно |
+| Sesija | Beležnica | Opis | Težina |
+|--------|-----------|------|--------|
+| 1 | [`session01_chat_bootstrap.ipynb`](./notebooks/session01_chat_bootstrap.ipynb) | Osnove chata & strimovanje | ⭐ Početnik |
+| 2 | [`session02_rag_pipeline.ipynb`](./notebooks/session02_rag_pipeline.ipynb) | Izgradnja RAG sistema | ⭐⭐ Srednji nivo |
+| 2 | [`session02_rag_eval_ragas.ipynb`](./notebooks/session02_rag_eval_ragas.ipynb) | Evaluacija kvaliteta RAG-a | ⭐⭐ Srednji nivo |
+| 3 | [`session03_benchmark_oss_models.ipynb`](./notebooks/session03_benchmark_oss_models.ipynb) | Benchmarking modela | ⭐⭐ Srednji nivo |
+| 4 | [`session04_model_compare.ipynb`](./notebooks/session04_model_compare.ipynb) | Poređenje modela | ⭐⭐ Srednji nivo |
+| 5 | [`session05_agents_orchestrator.ipynb`](./notebooks/session05_agents_orchestrator.ipynb) | Orkestracija agenata | ⭐⭐⭐ Napredno |
+| 6 | [`session06_models_router.ipynb`](./notebooks/session06_models_router.ipynb) | Usmeravanje na osnovu namere | ⭐⭐⭐ Napredno |
+| 6 | [`session06_models_pipeline.ipynb`](./notebooks/session06_models_pipeline.ipynb) | Orkestracija pipeline-a | ⭐⭐⭐ Napredno |
 
-### Документација
+### Dokumentacija
 
-Свеобухватни водичи и референце:
+Sveobuhvatni vodiči i reference:
 
-| Документ | Опис | Када користити |
-|----------|------|---------------|
-| [QUICK_START.md](./QUICK_START.md) | Водич за брзо постављање | Почетак од нуле |
-| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Листа команди и API-а | Потребни брзи одговори |
-| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | Шаблони и примери SDK-а | Писање кода |
-| [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Водич за конфигурацију променљивих окружења | Конфигурисање примера |
-| [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Најновија побољшања примера | Разумевање промена |
-| [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Водич за миграцију | Надоградња кода |
-| [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Уобичајени проблеми и решења | Решавање проблема |
-
----
-
-## 🎓 Препоруке за пут учења
-
-### За почетнике (3-4 сата)
-1. ✅ Сесија 1: Почетак рада (фокус на постављање и основни разговор)
-2. ✅ Сесија 2: Основе RAG-а (прескочите евалуацију у почетку)
-3. ✅ Сесија 3: Једноставно тестирање (само 2 модела)
-4. ⏭️ Прескочите сесије 4-6 за сада
-5. 🔄 Вратите се на сесије 4-6 након изградње прве апликације
-
-### За програмере средњег нивоа (3 сата)
-1. ⚡ Сесија 1: Брза валидација постављања
-2. ✅ Сесија 2: Комплетан RAG ток са евалуацијом
-3. ✅ Сесија 3: Комплетна суита за тестирање
-4. ✅ Сесија 4: Оптимизација модела
-5. ✅ Сесије 5-6: Фокус на архитектонске шаблоне
-
-### За напредне практичаре (2-3 сата)
-1. ⚡ Сесије 1-3: Брзи преглед и валидација
-2. ✅ Сесија 4: Дубинска оптимизација
-3. ✅ Сесија 5: Архитектура са више агената
-4. ✅ Сесија 6: Шаблони за производњу и скалирање
-5. 🚀 Проширите: Изградите прилагођену логику усмеравања и хибридне поставке
+| Dokument | Opis | Koristite kada |
+|----------|------|----------------|
+| [QUICK_START.md](./QUICK_START.md) | Vodič za brzo postavljanje | Početak od nule |
+| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Komande & API vodič | Potrebni brzi odgovori |
+| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | SDK obrasci & primeri | Pisanje koda |
+| [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Vodič za konfiguraciju okruženja | Konfigurisanje primera |
+| [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Najnovija poboljšanja primera | Razumevanje promena |
+| [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Vodič za migraciju | Ažuriranje koda |
+| [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Uobičajeni problemi & rešenja | Otklanjanje problema |
 
 ---
 
-## Пакет сесија радионице (Фокусиране лабораторије од 30 минута)
+## 🎓 Preporuke za put učenja
 
-Ако пратите кондензовани формат радионице од 6 сесија, користите ове посебне водиче (сваки се мапира и допуњује шире модуле документације изнад):
+### Za početnike (3-4 sata)
+1. ✅ Sesija 1: Početak (fokus na postavljanje i osnovni chat)
+2. ✅ Sesija 2: Osnove RAG-a (preskočite evaluaciju za početak)
+3. ✅ Sesija 3: Jednostavno benchmarking (samo 2 modela)
+4. ⏭️ Preskočite sesije 4-6 za sada
+5. 🔄 Vratite se na sesije 4-6 nakon izgradnje prve aplikacije
 
-| Сесија радионице | Водич | Основни фокус |
-|------------------|-------|---------------|
-| 1 | [Session01-GettingStartedFoundryLocal](./Session01-GettingStartedFoundryLocal.md) | Инсталација, валидација, покретање phi & GPT-OSS-20B, убрзање |
-| 2 | [Session02-BuildAIS
-Сваки фајл сесије укључује: апстракт, циљеве учења, ток демонстрације од 30 минута, почетни пројекат, контролну листу за валидацију, решавање проблема и референце на званични Foundry Local Python SDK.
+### Za programere srednjeg nivoa (3 sata)
+1. ⚡ Sesija 1: Brza validacija postavljanja
+2. ✅ Sesija 2: Kompletan RAG pipeline sa evaluacijom
+3. ✅ Sesija 3: Kompletan benchmarking suite
+4. ✅ Sesija 4: Optimizacija modela
+5. ✅ Sesije 5-6: Fokus na arhitekturne obrasce
 
-### Пример скрипти
+### Za napredne praktičare (2-3 sata)
+1. ⚡ Sesije 1-3: Brzi pregled i validacija
+2. ✅ Sesija 4: Dubinska optimizacija
+3. ✅ Sesija 5: Arhitektura sa više agenata
+4. ✅ Sesija 6: Obrasci za proizvodnju i skaliranje
+5. 🚀 Proširenje: Izgradnja prilagođene logike usmeravanja i hibridnih postavljanja
 
-Инсталирање зависности за радионицу (Windows):
+---
+
+## Paket sesija radionice (Fokusirane laboratorije od 30 minuta)
+
+Ako pratite sažeti format radionice od 6 sesija, koristite ove posvećene vodiče (svaki se mapira i dopunjuje šire module dokumentacije iznad):
+
+| Sesija radionice | Vodič | Glavni fokus |
+|------------------|-------|-------------|
+| 1 | [Session01-GettingStartedFoundryLocal](./Session01-GettingStartedFoundryLocal.md) | Instalacija, validacija, pokretanje phi & GPT-OSS-20B, ubrzanje |
+| 2 | [Session02-BuildAISolutionsRAG](./Session02-BuildAISolutionsRAG.md) | Inženjering upita, RAG obrasci, CSV & dokumenti, migracija |
+| 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Integracija Hugging Face, benchmarking, izbor modela |
+| 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM naspram LLM, WebGPU, Chainlit RAG, ONNX ubrzanje |
+| 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Uloge agenata, memorija, alati, orkestracija |
+| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Usmeravanje, povezivanje, skaliranje na Azure |
+
+Svaka datoteka sesije uključuje: apstrakt, ciljeve učenja, 30-minutni demo tok, početni projekat, kontrolnu listu za validaciju, rešavanje problema i reference na zvanični Foundry Local Python SDK.
+
+### Primer skripti
+
+Instalacija zavisnosti za radionicu (Windows):
 
 ```powershell
 cd Workshop
@@ -326,69 +367,69 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Ако покрећете Foundry Local сервис на другом (Windows) рачунару или виртуелној машини са macOS-а, извозите крајњу тачку:
+Ako pokrećete Foundry Local servis na drugom (Windows) računaru ili VM sa macOS-a, izvezite endpoint:
 
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
-| Сесија | Скрипта(е) | Опис |
+| Sesija | Skripta(e) | Opis |
 |--------|------------|------|
-| 1 | `samples/session01/chat_bootstrap.py` | Покретање сервиса и стриминг чет |
-| 2 | `samples/session02/rag_pipeline.py` | Минимални RAG (ембединг у меморији) |
-|   | `samples/session02/rag_eval_ragas.py` | Евалуација RAG-а са метрикама ragas |
-| 3 | `samples/session03/benchmark_oss_models.py` | Бенчмарк за латенцију и пропусност више модела |
-| 4 | `samples/session04/model_compare.py` | Поређење SLM и LLM (латенција и пример излаз) |
-| 5 | `samples/session05/agents_orchestrator.py` | Истраживање са два агента → уређивачки процес |
-| 6 | `samples/session06/models_router.py` | Демонстрација рутирања заснованог на намери |
-|   | `samples/session06/models_pipeline.py` | Ланац планирања/извршења/усавршавања у више корака |
+| 1 | `samples/session01/chat_bootstrap.py` | Pokretanje servisa i streaming četa |
+| 2 | `samples/session02/rag_pipeline.py` | Minimalni RAG (ugrađeni podaci u memoriji) |
+|   | `samples/session02/rag_eval_ragas.py` | Evaluacija RAG-a sa metrikama ragas |
+| 3 | `samples/session03/benchmark_oss_models.py` | Benchmarking latencije i propusnosti za više modela |
+| 4 | `samples/session04/model_compare.py` | Poređenje SLM i LLM (latencija i uzorci izlaza) |
+| 5 | `samples/session05/agents_orchestrator.py` | Istraživački → urednički pipeline sa dva agenta |
+| 6 | `samples/session06/models_router.py` | Demo usmeravanja zasnovanog na nameri |
+|   | `samples/session06/models_pipeline.py` | Višestepeni lanac planiranja/izvršavanja/rafiniranja |
 
-### Променљиве окружења (заједничке за све примере)
+### Promenljive okruženja (zajedničke za sve primere)
 
-| Променљива | Сврха | Пример |
-|------------|-------|--------|
-| `FOUNDRY_LOCAL_ALIAS` | Подразумевани алијас за један модел за основне примере | `phi-4-mini` |
-| `SLM_ALIAS` / `LLM_ALIAS` | Експлицитни SLM у односу на већи модел за поређење | `phi-4-mini` / `gpt-oss-20b` |
-| `BENCH_MODELS` | Листа алијаса модела за бенчмарк | `qwen2.5-0.5b,gemma-2-2b,mistral-7b` |
-| `BENCH_ROUNDS` | Понављања бенчмарка по моделу | `3` |
-| `BENCH_PROMPT` | Промпт коришћен у бенчмарку | `Explain retrieval augmented generation briefly.` |
-| `EMBED_MODEL` | Модел за ембединг реченица | `sentence-transformers/all-MiniLM-L6-v2` |
-| `RAG_QUESTION` | Замена тест упита за RAG процес | `Why use RAG with local inference?` |
-| `AGENT_QUESTION` | Замена упита за процес агената | `Explain why edge AI matters for compliance.` |
-| `AGENT_MODEL_PRIMARY` | Алијас модела за истраживачког агента | `phi-4-mini` |
-| `AGENT_MODEL_EDITOR` | Алијас модела за уређивачког агента (може бити различит) | `gpt-oss-20b` |
-| `SHOW_USAGE` | Када је `1`, приказује употребу токена по завршетку | `1` |
-| `RETRY_ON_FAIL` | Када је `1`, поново покушава на привременим грешкама у чету | `1` |
-| `RETRY_BACKOFF` | Секунде чекања пре поновног покушаја | `1.0` |
+| Promenljiva | Svrha | Primer |
+|-------------|-------|--------|
+| `FOUNDRY_LOCAL_ALIAS` | Podrazumevani alias za jedan model za osnovne primere | `phi-4-mini` |
+| `SLM_ALIAS` / `LLM_ALIAS` | Eksplicitni SLM naspram većeg modela za poređenje | `phi-4-mini` / `gpt-oss-20b` |
+| `BENCH_MODELS` | Lista aliasa za benchmarking odvojena zarezima | `qwen2.5-0.5b,gemma-2-2b,mistral-7b` |
+| `BENCH_ROUNDS` | Broj ponavljanja benchmarka po modelu | `3` |
+| `BENCH_PROMPT` | Prompt korišćen u benchmarkingu | `Explain retrieval augmented generation briefly.` |
+| `EMBED_MODEL` | Model za ugrađivanje rečenica-transformera | `sentence-transformers/all-MiniLM-L6-v2` |
+| `RAG_QUESTION` | Prepisivanje testnog upita za RAG pipeline | `Why use RAG with local inference?` |
+| `AGENT_QUESTION` | Prepisivanje upita za pipeline agenata | `Explain why edge AI matters for compliance.` |
+| `AGENT_MODEL_PRIMARY` | Alias modela za istraživačkog agenta | `phi-4-mini` |
+| `AGENT_MODEL_EDITOR` | Alias modela za uredničkog agenta (može se razlikovati) | `gpt-oss-20b` |
+| `SHOW_USAGE` | Kada je `1`, štampa potrošnju tokena po završetku | `1` |
+| `RETRY_ON_FAIL` | Kada je `1`, ponovo pokušava jednom u slučaju grešaka u četu | `1` |
+| `RETRY_BACKOFF` | Sekunde čekanja pre ponovnog pokušaja | `1.0` |
 
-Ако променљива није постављена, скрипте се ослањају на разумне подразумеване вредности. За демонстрације са једним моделом обично је потребан само `FOUNDRY_LOCAL_ALIAS`.
+Ako promenljiva nije postavljena, skripte se oslanjaju na razumne podrazumevane vrednosti. Za demonstracije sa jednim modelom obično je potrebna samo `FOUNDRY_LOCAL_ALIAS`.
 
-### Помоћни модул
+### Modul za pomoć
 
-Сви примери сада деле помоћни `samples/workshop_utils.py` који пружа:
+Svi primeri sada dele pomoćni `samples/workshop_utils.py` koji pruža:
 
-* Кеширано креирање `FoundryLocalManager` + OpenAI клијента
-* Помоћну функцију `chat_once()` са опционим поновним покушајем + приказом употребе
-* Једноставно извештавање о употреби токена (омогућено преко `SHOW_USAGE=1`)
+* Keširani `FoundryLocalManager` + kreiranje OpenAI klijenta
+* Pomoćnu funkciju `chat_once()` sa opcionalnim ponovnim pokušajem + štampanjem potrošnje
+* Jednostavno izveštavanje o potrošnji tokena (omogućite preko `SHOW_USAGE=1`)
 
-Ово смањује дуплирање и истиче најбоље праксе за ефикасну оркестрацију локалних модела.
+Ovo smanjuje duplikaciju i ističe najbolje prakse za efikasnu lokalnu orkestraciju modela.
 
-## Опциона побољшања (за све сесије)
+## Opcionalna poboljšanja (među sesijama)
 
-| Тема | Побољшање | Сесије | Окружење / Прекидач |
-|------|-----------|--------|--------------------|
-| Детерминизам | Фиксна температура + стабилни сетови промптова | 1–6 | Поставите `temperature=0`, `top_p=1` |
-| Видљивост употребе токена | Конзистентно учење о трошковима/ефикасности | 1–6 | `SHOW_USAGE=1` |
-| Стриминг првог токена | Метрика перципиране латенције | 1,3,4,6 | `BENCH_STREAM=1` (бенчмарк) |
-| Отпорност на грешке | Обрађује привремене грешке при хладном старту | Све | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
-| Агенти са више модела | Специјализација улога | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
-| Адаптивно рутирање | Намера + хеуристике трошкова | 6 | Проширите рутер логиком ескалације |
-| Векторска меморија | Дугорочно семантичко памћење | 2,5,6 | Интегришите FAISS/Chroma ембединг индекс |
-| Извоз трагова | Аудитинг и евалуација | 2,5,6 | Додајте JSON линије по кораку |
-| Квалитативне рубрике | Квалитативно праћење | 3–6 | Секундарни промптови за оцењивање |
-| Брзи тестови | Брза валидација пре радионице | Све | `python Workshop/tests/smoke.py` |
+| Tema | Poboljšanje | Sesije | Okruženje / Prekidač |
+|------|-------------|--------|----------------------|
+| Determinizam | Fiksirana temperatura + stabilni setovi promptova | 1–6 | Postavite `temperature=0`, `top_p=1` |
+| Vidljivost potrošnje tokena | Dosledno podučavanje o troškovima/efikasnosti | 1–6 | `SHOW_USAGE=1` |
+| Streaming prvog tokena | Metrička latencija percepcije | 1,3,4,6 | `BENCH_STREAM=1` (benchmark) |
+| Otpornost na greške | Rukovanje prolaznim greškama pri hladnom startu | Sve | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
+| Multi-model agenti | Specijalizacija heterogenih uloga | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
+| Adaptivno usmeravanje | Namera + heuristika troškova | 6 | Proširite usmerivač logikom eskalacije |
+| Vektorska memorija | Dugoročno semantičko pamćenje | 2,5,6 | Integracija FAISS/Chroma indeksa ugrađivanja |
+| Izvoz tragova | Revizija i evaluacija | 2,5,6 | Dodavanje JSON linija po koraku |
+| Kvalitativni kriterijumi | Praćenje kvaliteta | 3–6 | Sekundarni promptovi za ocenjivanje |
+| Testovi validacije | Brza validacija pre radionice | Sve | `python Workshop/tests/smoke.py` |
 
-### Брзи старт са детерминизмом
+### Deterministički brzi početak
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -396,133 +437,133 @@ set SHOW_USAGE=1
 python Workshop\tests\smoke.py
 ```
 
-Очекујте стабилан број токена кроз поновљене идентичне уносе.
+Očekujte stabilan broj tokena kroz ponovljene identične ulaze.
 
-### Евалуација RAG-а (Сесија 2)
+### Evaluacija RAG-a (Sesija 2)
 
-Користите `rag_eval_ragas.py` за израчунавање релевантности одговора, веродостојности и прецизности контекста на малом синтетичком сету података:
+Koristite `rag_eval_ragas.py` za izračunavanje relevantnosti odgovora, verodostojnosti i preciznosti konteksta na malom sintetičkom datasetu:
 
 ```powershell
 python samples/session02/rag_eval_ragas.py
 ```
 
-Проширите додавањем већег JSONL-а са питањима, контекстима и тачним одговорима, а затим конвертујте у Hugging Face `Dataset`.
+Proširite dodavanjem većeg JSONL-a sa pitanjima, kontekstima i istinitim podacima, zatim konvertovanjem u Hugging Face `Dataset`.
 
-## Додатак за тачност CLI команди
+## Dodatak tačnosti CLI komandi
 
-Радионица намерно користи само тренутно документоване / стабилне Foundry Local CLI команде.
+Radionica namerno koristi samo trenutno dokumentovane/stabilne Foundry Local CLI komande.
 
-### Референциране стабилне команде
+### Referencirane stabilne komande
 
-| Категорија | Команда | Сврха |
+| Kategorija | Komanda | Svrha |
 |------------|---------|-------|
-| Основно | `foundry --version` | Приказује инсталирану верзију |
-| Основно | `foundry init` | Иницијализује конфигурацију |
-| Сервис | `foundry service start` | Покреће локални сервис (ако није аутоматски) |
-| Сервис | `foundry status` | Приказује статус сервиса |
-| Модели | `foundry model list` | Листа каталога / доступних модела |
-| Модели | `foundry model download <alias>` | Преузима тежине модела у кеш |
-| Модели | `foundry model run <alias>` | Покреће (учитава) модел локално; комбинујте са `--prompt` за једнократни |
-| Модели | `foundry model unload <alias>` / `foundry model stop <alias>` | Уклања модел из меморије (ако је подржано) |
-| Кеш | `foundry cache list` | Листа кешираних (преузетих) модела |
-| Систем | `foundry system info` | Снимак хардверских и акцелерационих могућности |
-| Систем | `foundry system gpu-info` | Дијагностичке информације о GPU-у |
-| Конфигурација | `foundry config list` | Приказује тренутне вредности конфигурације |
-| Конфигурација | `foundry config set <key> <value>` | Ажурира конфигурацију |
+| Osnovno | `foundry --version` | Prikazuje instaliranu verziju |
+| Osnovno | `foundry init` | Inicijalizuje konfiguraciju |
+| Servis | `foundry service start` | Pokreće lokalni servis (ako nije automatski) |
+| Servis | `foundry status` | Prikazuje status servisa |
+| Modeli | `foundry model list` | Lista katalog/dostupne modele |
+| Modeli | `foundry model download <alias>` | Preuzima težine modela u keš |
+| Modeli | `foundry model run <alias>` | Pokreće (učitava) model lokalno; kombinujte sa `--prompt` za jednokratni |
+| Modeli | `foundry model unload <alias>` / `foundry model stop <alias>` | Uklanja model iz memorije (ako je podržano) |
+| Keš | `foundry cache list` | Lista keširanih (preuzetih) modela |
+| Sistem | `foundry system info` | Snimak hardverskih i akceleracionih mogućnosti |
+| Sistem | `foundry system gpu-info` | Dijagnostičke informacije o GPU-u |
+| Konfiguracija | `foundry config list` | Prikazuje trenutne vrednosti konfiguracije |
+| Konfiguracija | `foundry config set <key> <value>` | Ažurira konfiguraciju |
 
-### Шаблон за једнократни промпт
+### Jednokratni prompt obrazac
 
-Уместо застареле `model chat` подкоманде, користите:
+Umesto zastarele `model chat` podkomande, koristite:
 
 ```powershell
 foundry model run <alias> --prompt "Your question here"
 ```
 
-Ово извршава један циклус промпт/одговор, а затим излази.
+Ovo izvršava jedan ciklus prompt/odgovor, zatim izlazi.
 
-### Уклоњени / избегнути шаблони
+### Uklonjeni / izbegnuti obrasci
 
-| Застарело / Недокументовано | Замена / Упутство |
-|-----------------------------|-------------------|
+| Zastarelo / Nedokumentovano | Zamena / Preporuka |
+|-----------------------------|--------------------|
 | `foundry model chat <model> "..."` | `foundry model run <model> --prompt "..."` |
-| `foundry model list --running` | Користите обичан `foundry model list` + недавне активности / логове |
+| `foundry model list --running` | Koristite običan `foundry model list` + nedavne aktivnosti / logove |
 | `foundry model list --cached` | `foundry cache list` |
-| `foundry model stats <model>` | Користите Python скрипту за бенчмарк + алате ОС-а (Task Manager / `nvidia-smi`) |
+| `foundry model stats <model>` | Koristite Python skriptu za benchmarking + OS alate (Task Manager / `nvidia-smi`) |
 | `foundry model benchmark ...` | `samples/session03/benchmark_oss_models.py` |
 
-### Бенчмарк и телеметрија
+### Benchmarking i telemetrija
 
-- Латенција, p95, токени/секунда: `samples/session03/benchmark_oss_models.py`
-- Латенција првог токена (стриминг): поставите `BENCH_STREAM=1`
-- Употреба ресурса: Монитори ОС-а (Task Manager, Activity Monitor, `nvidia-smi`) + `foundry system info`.
+- Latencija, p95, tokeni/sec: `samples/session03/benchmark_oss_models.py`
+- Latencija prvog tokena (streaming): postavite `BENCH_STREAM=1`
+- Korišćenje resursa: OS monitori (Task Manager, Activity Monitor, `nvidia-smi`) + `foundry system info`.
 
-Како нове CLI телеметријске команде постану стабилне, могу се укључити уз минималне измене у markdown фајловима сесије.
+Kako nove CLI telemetrijske komande postanu stabilne, mogu se lako integrisati u markdown datoteke sesija.
 
-### Аутоматска провера синтаксе
+### Automatska provera sintakse
 
-Аутоматски алат за проверу синтаксе спречава поновно увођење застарелих CLI шаблона унутар ограђених блокова кода у markdown фајловима:
+Automatski linter sprečava ponovno uvođenje zastarelih CLI obrazaca unutar blokova koda u markdown datotekama:
 
-Скрипта: `Workshop/scripts/lint_markdown_cli.py`
+Skripta: `Workshop/scripts/lint_markdown_cli.py`
 
-Застарели шаблони су блокирани унутар ограда кода.
+Zastareli obrasci su blokirani unutar kodnih blokova.
 
-Препоручене замене:
-| Застарело | Замена |
+Preporučene zamene:
+| Zastarelo | Zamena |
 |-----------|--------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
 | `model list --running` | `model list` |
 | `model list --cached` | `cache list` |
-| `model stats` | Скрипта за бенчмарк + алати система |
+| `model stats` | Skripta za benchmarking + sistemski alati |
 | `model benchmark` | `samples/session03/benchmark_oss_models.py` |
 | `model list --available` | `model list` |
 
-Покрените локално:
+Pokrenite lokalno:
 ```powershell
 python Workshop\scripts\lint_markdown_cli.py --verbose
 ```
 
-GitHub Action: `.github/workflows/markdown-cli-lint.yml` се покреће на сваком push-у и PR-у.
+GitHub akcija: `.github/workflows/markdown-cli-lint.yml` se pokreće pri svakom push-u i PR-u.
 
-Опциони pre-commit hook:
+Opcionalni pre-commit hook:
 ```bash
 echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
 
-## Брза табела миграције CLI → SDK
+## Brza migraciona tabela CLI → SDK
 
-| Задатак | CLI једнолинијски | SDK (Python) еквивалент | Напомене |
-|---------|-------------------|-------------------------|----------|
-| Покрените модел једном (промпт) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK аутоматски покреће сервис и кеширање |
-| Преузимање (кеширање) модела | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # triggers download/load` | Manager бира најбољу варијанту ако алијас одговара више изграђених модела |
-| Листа каталога | `foundry model list` | `# користите manager за сваки алијас или одржавајте познату листу` | CLI агрегира; SDK тренутно по алијасу |
-| Листа кешираних модела | `foundry cache list` | `manager.list_cached_models()` | Након иницијализације менаџера (било који алијас) |
-| Омогућите GPU акцелерацију | `foundry config set compute.onnx.enable_gpu true` | `# CLI акција; SDK претпоставља да је конфигурација већ примењена` | Конфигурација је спољни ефекат |
-| Добијање URL-а крајње тачке | (имплицитно) | `manager.endpoint` | Користи се за креирање OpenAI-компатибилног клијента |
-| Загревање модела | `foundry model run <alias>` затим први промпт | `chat_once(alias, messages=[...])` (помоћна функција) | Помоћне функције обрађују почетну латенцију хладног старта |
-| Мерење латенције | `python benchmark_oss_models.py` | `import benchmark_oss_models` (или нова скрипта за извоз) | Преферирајте скрипту за конзистентне метрике |
-| Заустављање / уклањање модела | `foundry model unload <alias>` | (Није изложено – поново покрените сервис / процес) | Обично није потребно за ток радионице |
-| Приказ употребе токена | (погледајте излаз) | `resp.usage.total_tokens` | Обезбеђено ако backend врати објекат употребе |
+| Zadatak | CLI Jednolinijski | SDK (Python) Ekvivalent | Napomene |
+|---------|--------------------|-------------------------|----------|
+| Pokreni model jednom (prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK automatski pokreće servis i keširanje |
+| Preuzmi (keširaj) model | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # pokreće preuzimanje/učitavanje` | Manager bira najbolju varijantu ako alias mapira na više verzija |
+| Lista kataloga | `foundry model list` | `# koristite manager za svaki alias ili održavajte poznatu listu` | CLI agregira; SDK trenutno po alias instanciranju |
+| Lista keširanih modela | `foundry cache list` | `manager.list_cached_models()` | Nakon inicijalizacije managera (bilo koji alias) |
+| Omogući GPU ubrzanje | `foundry config set compute.onnx.enable_gpu true` | `# CLI akcija; SDK pretpostavlja da je konfiguracija već primenjena` | Konfiguracija je eksterni efekat |
+| Dobij URL endpointa | (implicitno) | `manager.endpoint` | Koristi se za kreiranje OpenAI-kompatibilnog klijenta |
+| Zagrej model | `foundry model run <alias>` zatim prvi prompt | `chat_once(alias, messages=[...])` (pomoćna funkcija) | Pomoćne funkcije rukovode početnom latencijom hladnog starta |
+| Izmeri latenciju | `python benchmark_oss_models.py` | `import benchmark_oss_models` (ili nova skripta za izvoz) | Preferirajte skriptu za dosledne metrike |
+| Zaustavi / ukloni model | `foundry model unload <alias>` | (Nije izloženo – ponovo pokrenite servis/proces) | Obično nije potrebno za tok radionice |
+| Prikupi potrošnju tokena | (pogledajte izlaz) | `resp.usage.total_tokens` | Dostupno ako backend vraća objekat potrošnje |
 
-## Извоз бенчмарка у Markdown
+## Izvoz benchmarka u Markdown
 
-Користите скрипту `Workshop/scripts/export_benchmark_markdown.py` за покретање свежег бенчмарка (исти логика као `samples/session03/benchmark_oss_models.py`) и генерисање GitHub-пријатељске Markdown табеле плус сировог JSON-а.
+Koristite skriptu `Workshop/scripts/export_benchmark_markdown.py` za pokretanje svežeg benchmarka (ista logika kao `samples/session03/benchmark_oss_models.py`) i emitovanje GitHub-prijateljske Markdown tabele plus sirovog JSON-a.
 
-### Пример
+### Primer
 
 ```powershell
 python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
-Генерисани фајлови:
-| Фајл | Садржај |
-|------|--------|
-| `benchmark_report.md` | Markdown табела + савети за интерпретацију |
-| `benchmark_report.json` | Сирови низ метрика (за поређење / праћење трендова) |
+Generisane datoteke:
+| Datoteka | Sadržaj |
+|----------|---------|
+| `benchmark_report.md` | Markdown tabela + saveti za interpretaciju |
+| `benchmark_report.json` | Sirovi niz metrika (za praćenje razlika/trendova) |
 
-Поставите `BENCH_STREAM=1` у окружењу да укључите латенцију првог токена ако је подржано.
+Postavite `BENCH_STREAM=1` u okruženju da uključite latenciju prvog tokena ako je podržano.
 
 ---
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем услуге за превођење помоћу вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да обезбедимо тачност, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитативним извором. За критичне информације препоручује се професионални превод од стране људи. Не преузимамо одговорност за било каква погрешна тумачења или неспоразуме који могу настати услед коришћења овог превода.
+Овај документ је преведен помоћу услуге за превођење уз помоћ вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да обезбедимо тачност, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитативним извором. За критичне информације препоручује се професионални превод од стране људи. Не преузимамо одговорност за било каква погрешна тумачења или неспоразуме који могу настати услед коришћења овог превода.

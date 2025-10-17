@@ -1,45 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "48d0fb38be925084a6ebd957d4b045e5",
-  "translation_date": "2025-10-09T21:26:14+00:00",
+  "original_hash": "8b994c57f1207012e4d7f58b7c0d1ae7",
+  "translation_date": "2025-10-17T10:02:57+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "cs"
 }
 -->
-# EdgeAI pro začátečníky - Workshop
+# EdgeAI pro začátečníky - workshop
 
-> **Praktická cesta k vytváření produkčně připravených Edge AI aplikací**
+> **Praktická cesta k vytvoření produkčně připravených Edge AI aplikací**
 >
-> Ovládněte nasazení lokální AI s Microsoft Foundry Local, od prvního chatovacího dokončení po orchestraci více agentů v šesti postupných lekcích.
+> Ovládněte lokální nasazení AI pomocí Microsoft Foundry Local, od prvního chatovacího dokončení až po orchestraci více agentů v 6 postupných lekcích.
 
 ---
 
 ## 🎯 Úvod
 
-Vítejte na **workshopu EdgeAI pro začátečníky** – vašem praktickém průvodci pro vytváření inteligentních aplikací, které běží výhradně na lokálním hardwaru. Tento workshop přetváří teoretické koncepty Edge AI do reálných dovedností prostřednictvím postupně náročnějších cvičení s využitím Microsoft Foundry Local a malých jazykových modelů (SLM).
+Vítejte na **workshopu EdgeAI pro začátečníky** - praktickém průvodci pro vytváření inteligentních aplikací, které běží výhradně na lokálním hardwaru. Tento workshop přeměňuje teoretické koncepty Edge AI na reálné dovednosti prostřednictvím postupně náročnějších cvičení s využitím Microsoft Foundry Local a malých jazykových modelů (SLM).
 
 ### Proč tento workshop?
 
 **Revoluce Edge AI je tady**
 
-Organizace po celém světě přecházejí z cloudově závislé AI na edge computing ze tří klíčových důvodů:
+Organizace po celém světě přecházejí od AI závislé na cloudu k edge computingu ze tří klíčových důvodů:
 
-1. **Soukromí a shoda s předpisy** – Zpracovávejte citlivá data lokálně bez přenosu do cloudu (HIPAA, GDPR, finanční regulace)
-2. **Výkon** – Eliminujte síťovou latenci (50–500 ms lokálně vs. 500–2000 ms při přenosu do cloudu)
-3. **Kontrola nákladů** – Odstraňte náklady na API za token a škálujte bez výdajů na cloud
+1. **Soukromí a dodržování předpisů** - Zpracování citlivých dat lokálně bez přenosu do cloudu (HIPAA, GDPR, finanční regulace)
+2. **Výkon** - Eliminace síťové latence (50-500 ms lokálně vs. 500-2000 ms cloudový přenos)
+3. **Kontrola nákladů** - Odstranění nákladů na API za token a škálování bez výdajů na cloud
 
 **Ale Edge AI je jiná**
 
-Provozování AI na místě vyžaduje nové dovednosti:
+Provoz AI na místě vyžaduje nové dovednosti:
 - Výběr a optimalizace modelů pro omezené zdroje
 - Správa lokálních služeb a hardwarová akcelerace
 - Návrh promptů pro menší modely
-- Vzory nasazení pro zařízení na okraji sítě
+- Vzory nasazení pro produkci na edge zařízeních
 
-**Tento workshop vás tyto dovednosti naučí**
+**Tento workshop vám tyto dovednosti poskytne**
 
-Během 6 zaměřených lekcí (~3 hodiny celkem) postoupíte od „Hello World“ k nasazení produkčně připravených systémů s více agenty – vše běžící lokálně na vašem zařízení.
+Během 6 zaměřených lekcí (~3 hodiny celkem) postoupíte od "Hello World" k nasazení produkčně připravených systémů s více agenty - vše běžící lokálně na vašem zařízení.
 
 ---
 
@@ -47,91 +47,91 @@ Během 6 zaměřených lekcí (~3 hodiny celkem) postoupíte od „Hello World�
 
 Po absolvování tohoto workshopu budete schopni:
 
-### Klíčové dovednosti
-1. **Nasazení a správa lokálních AI služeb**
-   - Instalace a konfigurace Microsoft Foundry Local
-   - Výběr vhodných modelů pro nasazení na okraji
-   - Správa životního cyklu modelů (stahování, načítání, ukládání do mezipaměti)
-   - Monitorování využití zdrojů a optimalizace výkonu
+### Klíčové kompetence
+1. **Nasadit a spravovat lokální AI služby**
+   - Instalovat a konfigurovat Microsoft Foundry Local
+   - Vybrat vhodné modely pro nasazení na edge
+   - Spravovat životní cyklus modelů (stahování, načítání, ukládání do mezipaměti)
+   - Monitorovat využití zdrojů a optimalizovat výkon
 
-2. **Vytváření aplikací poháněných AI**
-   - Implementace OpenAI-kompatibilních chatovacích dokončení lokálně
-   - Návrh efektivních promptů pro malé jazykové modely
-   - Zpracování streamovaných odpovědí pro lepší uživatelský zážitek
-   - Integrace lokálních modelů do stávajících aplikací
+2. **Vytvářet aplikace poháněné AI**
+   - Implementovat chatovací dokončení kompatibilní s OpenAI lokálně
+   - Navrhovat efektivní prompty pro malé jazykové modely
+   - Zpracovávat streamované odpovědi pro lepší uživatelskou zkušenost
+   - Integrovat lokální modely do existujících aplikací
 
-3. **Vytváření systémů RAG (Retrieval Augmented Generation)**
-   - Budování sémantického vyhledávání s využitím embeddingů
-   - Ukotvení odpovědí LLM v doménově specifických znalostech
-   - Hodnocení kvality RAG pomocí průmyslových standardů
-   - Škálování od prototypu k produkci
+3. **Vytvářet systémy RAG (Retrieval Augmented Generation)**
+   - Vytvářet sémantické vyhledávání pomocí embeddingů
+   - Zakotvit odpovědi LLM v doménově specifických znalostech
+   - Hodnotit kvalitu RAG pomocí průmyslových standardních metrik
+   - Škálovat od prototypu k produkci
 
-4. **Optimalizace výkonu modelů**
-   - Benchmarking více modelů pro váš případ použití
-   - Měření latence, propustnosti a času prvního tokenu
-   - Výběr optimálních modelů na základě kompromisů mezi rychlostí a kvalitou
-   - Porovnání kompromisů mezi SLM a LLM v reálných scénářích
+4. **Optimalizovat výkon modelů**
+   - Provádět benchmarky různých modelů pro váš případ použití
+   - Měřit latenci, propustnost a čas prvního tokenu
+   - Vybrat optimální modely na základě kompromisů mezi rychlostí a kvalitou
+   - Porovnávat kompromisy mezi SLM a LLM v reálných scénářích
 
 5. **Orchestraci systémů s více agenty**
-   - Návrh specializovaných agentů pro různé úkoly
-   - Implementace paměti agentů a správy kontextu
-   - Koordinace agentů v komplexních pracovních postupech
-   - Inteligentní směrování požadavků mezi více modely
+   - Navrhovat specializované agenty pro různé úkoly
+   - Implementovat paměť agentů a správu kontextu
+   - Koordinovat agenty v komplexních pracovních postupech
+   - Inteligentně směrovat požadavky mezi více modely
 
-6. **Nasazení produkčně připravených řešení**
-   - Implementace zpracování chyb a logiky opakování
-   - Monitorování využití tokenů a systémových zdrojů
-   - Vytváření škálovatelných architektur s využitím vzorů model-as-tools
-   - Plánování migračních cest z okraje na hybridní řešení (okraj + cloud)
+6. **Nasadit produkčně připravená řešení**
+   - Implementovat zpracování chyb a logiku opakování
+   - Monitorovat využití tokenů a systémových zdrojů
+   - Vytvářet škálovatelné architektury s modely jako nástroji
+   - Plánovat migrační cesty z edge na hybridní (edge + cloud)
 
 ---
 
-## 🎓 Výstupy učení
+## 🎓 Výsledky učení
 
 ### Co vytvoříte
 
-Na konci tohoto workshopu budete mít vytvořeno:
+Na konci tohoto workshopu budete mít:
 
 | Lekce | Výstup | Demonstrované dovednosti |
 |-------|--------|--------------------------|
-| **1** | Chatovací aplikace se streamováním | Nastavení služby, základní dokončení, UX streamování |
-| **2** | RAG systém s hodnocením | Embeddingy, sémantické vyhledávání, metriky kvality |
+| **1** | Chatovací aplikace se streamováním | Nastavení služby, základní dokončení, streamování UX |
+| **2** | RAG systém s hodnocením | Embeddingy, sémantické vyhledávání, kvalitativní metriky |
 | **3** | Sada benchmarků pro více modelů | Měření výkonu, porovnání modelů |
 | **4** | Porovnání SLM vs LLM | Analýza kompromisů, optimalizační strategie |
 | **5** | Orchestrátor s více agenty | Návrh agentů, správa paměti, koordinace |
 | **6** | Inteligentní směrovací systém | Detekce záměru, výběr modelu, škálovatelnost |
 
-### Matice dovedností
+### Matice kompetencí
 
 | Úroveň dovedností | Lekce 1-2 | Lekce 3-4 | Lekce 5-6 |
 |-------------------|-----------|-----------|-----------|
-| **Začátečník** | ✅ Nastavení a základy | ⚠️ Náročné | ❌ Příliš pokročilé |
-| **Středně pokročilý** | ✅ Rychlé zopakování | ✅ Klíčové učení | ⚠️ Cíle pro pokročilé |
-| **Pokročilý** | ✅ Snadno zvládnutelné | ✅ Zjemnění dovedností | ✅ Produkční vzory |
+| **Začátečník** | ✅ Nastavení & základy | ⚠️ Náročné | ❌ Příliš pokročilé |
+| **Středně pokročilý** | ✅ Rychlý přehled | ✅ Klíčové učení | ⚠️ Cíle pro pokročilé |
+| **Pokročilý** | ✅ Snadno zvládnutelné | ✅ Zjemnění | ✅ Produkční vzory |
 
-### Kariérní dovednosti
+### Dovednosti připravené pro kariéru
 
 **Po tomto workshopu budete připraveni:**
 
-✅ **Vytvářet aplikace s důrazem na soukromí**
+✅ **Vytvářet aplikace zaměřené na soukromí**
 - Zdravotnické aplikace zpracovávající PHI/PII lokálně
-- Finanční služby splňující regulační požadavky
+- Finanční služby s požadavky na dodržování předpisů
 - Vládní systémy s potřebou datové suverenity
 
-✅ **Optimalizovat pro prostředí na okraji**
+✅ **Optimalizovat pro edge prostředí**
 - IoT zařízení s omezenými zdroji
 - Mobilní aplikace s prioritou offline režimu
-- Systémy s nízkou latencí v reálném čase
+- Systémy v reálném čase s nízkou latencí
 
 ✅ **Navrhovat inteligentní architektury**
 - Systémy s více agenty pro komplexní pracovní postupy
-- Hybridní nasazení okraj-cloud
+- Hybridní nasazení edge-cloud
 - Nákladově optimalizovaná AI infrastruktura
 
 ✅ **Vést iniciativy Edge AI**
 - Hodnotit proveditelnost Edge AI pro projekty
 - Vybrat vhodné modely a frameworky
-- Navrhnout škálovatelná lokální AI řešení
+- Navrhovat škálovatelné lokální AI řešení
 
 ---
 
@@ -139,31 +139,31 @@ Na konci tohoto workshopu budete mít vytvořeno:
 
 ### Přehled lekcí (6 lekcí × 30 minut = 3 hodiny)
 
-| Lekce | Téma | Zaměření | Doba trvání |
-|-------|------|----------|-------------|
-| **1** | Začínáme s Foundry Local | Instalace, ověření, první dokončení | 30 min |
+| Lekce | Téma | Zaměření | Délka |
+|-------|------|----------|-------|
+| **1** | Začínáme s Foundry Local | Instalace, validace, první dokončení | 30 min |
 | **2** | Vytváření AI řešení s RAG | Návrh promptů, embeddingy, hodnocení | 30 min |
-| **3** | Open Source modely | Objevování modelů, benchmarking, výběr | 30 min |
-| **4** | Nejmodernější modely | SLM vs LLM, optimalizace, frameworky | 30 min |
-| **5** | AI pohánění agenti | Návrh agentů, orchestrace, paměť | 30 min |
+| **3** | Open Source modely | Objevování modelů, benchmarky, výběr | 30 min |
+| **4** | Pokročilé modely | SLM vs LLM, optimalizace, frameworky | 30 min |
+| **5** | Agenti pohánění AI | Návrh agentů, orchestrace, paměť | 30 min |
 | **6** | Modely jako nástroje | Směrování, řetězení, strategie škálování | 30 min |
 
 ---
 
 ## 🚀 Rychlý start
 
-### Požadavky
+### Předpoklady
 
-**Systémové požadavky:**
+**Požadavky na systém:**
 - **OS**: Windows 10/11, macOS 11+ nebo Linux (Ubuntu 20.04+)
 - **RAM**: Minimálně 8 GB, doporučeno 16 GB+
 - **Úložiště**: 10 GB+ volného místa pro modely
 - **CPU**: Moderní procesor s podporou AVX2
 - **GPU** (volitelné): CUDA-kompatibilní nebo Qualcomm NPU pro akceleraci
 
-**Softwarové požadavky:**
+**Požadavky na software:**
 - **Python 3.8+** ([Stáhnout](https://www.python.org/downloads/))
-- **Microsoft Foundry Local** ([Průvodce instalací](../../../Workshop))
+- **Microsoft Foundry Local** ([Instalační příručka](../../../Workshop))
 - **Git** ([Stáhnout](https://git-scm.com/downloads))
 - **Visual Studio Code** (doporučeno) ([Stáhnout](https://code.visualstudio.com/))
 
@@ -186,6 +186,42 @@ brew install foundrylocal
 ```bash
 foundry --version
 foundry service status
+```
+
+**Ujistěte se, že Azure AI Foundry Local běží s pevně nastaveným portem**
+
+```bash
+# Set FoundryLocal to use port 58123 (default)
+foundry service set --port 58123 --show
+
+# Or use a different port
+foundry service set --port 58000 --show
+```
+
+**Ověření funkčnosti:**
+```bash
+# Check service status
+foundry service status
+
+# Test the endpoint
+curl http://127.0.0.1:58123/v1/models
+```
+**Zjištění dostupných modelů**
+Chcete-li zjistit, které modely jsou dostupné ve vaší instanci Foundry Local, můžete dotazovat endpoint modelů:
+
+```bash
+# cmd/bash/powershell
+foundry model list
+```
+
+Použití webového endpointu 
+
+```bash
+# Windows PowerShell
+powershell -Command "Invoke-RestMethod -Uri 'http://127.0.0.1:58123/v1/models' -Method Get"
+
+# Or using curl (if available)
+curl http://127.0.0.1:58123/v1/models
 ```
 
 #### 2. Klonování repozitáře a instalace závislostí
@@ -231,7 +267,7 @@ Postupné praktické ukázky demonstrující každý koncept:
 
 | Lekce | Příklad | Popis | Doba běhu |
 |-------|---------|-------|-----------|
-| 1 | [`chat_bootstrap.py`](../../../Workshop/samples/session01/chat_bootstrap.py) | Základní a streamovací chat | ~30s |
+| 1 | [`chat_bootstrap.py`](../../../Workshop/samples/session01/chat_bootstrap.py) | Základní & streamovací chat | ~30s |
 | 2 | [`rag_pipeline.py`](../../../Workshop/samples/session02/rag_pipeline.py) | RAG s embeddingy | ~45s |
 | 2 | [`rag_eval_ragas.py`](../../../Workshop/samples/session02/rag_eval_ragas.py) | Hodnocení kvality RAG | ~60s |
 | 3 | [`benchmark_oss_models.py`](../../../Workshop/samples/session03/benchmark_oss_models.py) | Benchmarking více modelů | ~2-3m |
@@ -242,12 +278,12 @@ Postupné praktické ukázky demonstrující každý koncept:
 
 ### Jupyter Notebooks
 
-Interaktivní průzkum s vysvětleními a vizualizacemi:
+Interaktivní průzkum s vysvětlením a vizualizacemi:
 
 | Lekce | Notebook | Popis | Obtížnost |
 |-------|----------|-------|-----------|
-| 1 | [`session01_chat_bootstrap.ipynb`](./notebooks/session01_chat_bootstrap.ipynb) | Základy chatu a streamování | ⭐ Začátečník |
-| 2 | [`session02_rag_pipeline.ipynb`](./notebooks/session02_rag_pipeline.ipynb) | Vytvoření systému RAG | ⭐⭐ Středně pokročilý |
+| 1 | [`session01_chat_bootstrap.ipynb`](./notebooks/session01_chat_bootstrap.ipynb) | Základy chatu & streamování | ⭐ Začátečník |
+| 2 | [`session02_rag_pipeline.ipynb`](./notebooks/session02_rag_pipeline.ipynb) | Vytvoření RAG systému | ⭐⭐ Středně pokročilý |
 | 2 | [`session02_rag_eval_ragas.ipynb`](./notebooks/session02_rag_eval_ragas.ipynb) | Hodnocení kvality RAG | ⭐⭐ Středně pokročilý |
 | 3 | [`session03_benchmark_oss_models.ipynb`](./notebooks/session03_benchmark_oss_models.ipynb) | Benchmarking modelů | ⭐⭐ Středně pokročilý |
 | 4 | [`session04_model_compare.ipynb`](./notebooks/session04_model_compare.ipynb) | Porovnání modelů | ⭐⭐ Středně pokročilý |
@@ -257,38 +293,38 @@ Interaktivní průzkum s vysvětleními a vizualizacemi:
 
 ### Dokumentace
 
-Komplexní průvodce a referenční materiály:
+Komplexní příručky a reference:
 
 | Dokument | Popis | Použít kdy |
 |----------|-------|------------|
-| [QUICK_START.md](./QUICK_START.md) | Průvodce rychlým nastavením | Začínáte od nuly |
-| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Přehled příkazů a API | Potřebujete rychlé odpovědi |
-| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | Vzory a příklady SDK | Píšete kód |
-| [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Průvodce proměnnými prostředí | Konfigurace příkladů |
-| [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Nejnovější vylepšení příkladů | Pochopení změn |
-| [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Průvodce migrací | Aktualizace kódu |
-| [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Běžné problémy a opravy | Řešení problémů |
+| [QUICK_START.md](./QUICK_START.md) | Rychlý průvodce nastavením | Začínáte od nuly |
+| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Přehled příkazů & API | Potřebujete rychlé odpovědi |
+| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | Vzory & příklady SDK | Píšete kód |
+| [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Příručka proměnných prostředí | Konfigurace příkladů |
+| [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Nejnovější vylepšení příkladů | Porozumění změnám |
+| [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Příručka migrace | Aktualizace kódu |
+| [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Běžné problémy & opravy | Řešení problémů |
 
 ---
 
-## 🎓 Doporučení pro učební cestu
+## 🎓 Doporučení pro cestu učení
 
 ### Pro začátečníky (3-4 hodiny)
 1. ✅ Lekce 1: Začínáme (zaměřte se na nastavení a základní chat)
 2. ✅ Lekce 2: Základy RAG (zpočátku přeskočte hodnocení)
-3. ✅ Lekce 3: Jednoduchý benchmarking (pouze 2 modely)
-4. ⏭️ Lekce 4-6 zatím přeskočte
+3. ✅ Lekce 3: Jednoduché benchmarky (pouze 2 modely)
+4. ⏭️ Přeskočte lekce 4-6 prozatím
 5. 🔄 Vraťte se k lekcím 4-6 po vytvoření první aplikace
 
 ### Pro středně pokročilé vývojáře (3 hodiny)
 1. ⚡ Lekce 1: Rychlé ověření nastavení
 2. ✅ Lekce 2: Kompletní pipeline RAG s hodnocením
-3. ✅ Lekce 3: Kompletní sada benchmarků
+3. ✅ Lekce 3: Plná sada benchmarků
 4. ✅ Lekce 4: Optimalizace modelů
 5. ✅ Lekce 5-6: Zaměřte se na architektonické vzory
 
 ### Pro pokročilé odborníky (2-3 hodiny)
-1. ⚡ Lekce 1-3: Rychlé zopakování a ověření
+1. ⚡ Lekce 1-3: Rychlý přehled a ověření
 2. ✅ Lekce 4: Hlubší ponor do optimalizace
 3. ✅ Lekce 5: Architektura s více agenty
 4. ✅ Lekce 6: Produkční vzory a škálování
@@ -298,17 +334,18 @@ Komplexní průvodce a referenční materiály:
 
 ## Balíček workshopových lekcí (zaměřené 30minutové laboratoře)
 
-Pokud sledujete zhuštěný formát workshopu o 6 lekcích, použijte tyto specializované průvodce (každý odpovídá a doplňuje širší modulovou dokumentaci výše):
+Pokud sledujete zhuštěný formát workshopu o 6 lekcích, použijte tyto dedikované příručky (každá odpovídá a doplňuje širší modulovou dokumentaci výše):
 
-| Workshopová lekce | Průvodce | Hlavní zaměření |
+| Workshopová lekce | Příručka | Hlavní zaměření |
 |-------------------|----------|-----------------|
-| 1 | [Session01-GettingStartedFoundryLocal](./Session01-GettingStartedFoundryLocal.md) | Instalace, ověření, spuštění phi & GPT-OSS-20B, akcelerace |
-| 2 | [Session02-BuildAISolutionsRAG](./Session02-BuildAISolutionsRAG.md) | Návrh promptů, vzory RAG, ukotvení CSV a dokumentů, migrace |
-| 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Integrace Hugging Face, benchmarking, výběr modelů |
-| 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM vs LLM, WebGPU, Chainlit RAG, akcelerace ONNX |
+| 1 | [Session01-GettingStartedFoundryLocal](./Session01-GettingStartedFoundryLocal.md) | Instalace, validace, spuštění phi & GPT-OSS-20B, akcelerace |
+| 2 | [Session02-BuildAISolutionsRAG](./Session02-BuildAISolutionsRAG.md) | Návrh promptů, vzory RAG, CSV & zakotvení dokumentů, migrace |
+| 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Integrace Hugging Face, benchmarky, výběr modelů |
+| 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM vs LLM, WebGPU, Chainlit RAG, ONNX akcelerace |
 | 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Role agentů, paměť, nástroje, orchestrace |
-| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Směrování, řetězení, cesta ke škálování na Azure |
-Každý soubor relace obsahuje: abstrakt, výukové cíle, 30minutový průběh ukázky, startovací projekt, kontrolní seznam validace, řešení problémů a odkazy na oficiální Foundry Local Python SDK.
+| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Směrování, řetězení, škálování na Azure |
+
+Každý soubor relace obsahuje: abstrakt, vzdělávací cíle, 30minutový demo průběh, startovací projekt, kontrolní seznam validace, řešení problémů a odkazy na oficiální Foundry Local Python SDK.
 
 ### Ukázkové skripty
 
@@ -330,7 +367,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Pokud běží služba Foundry Local na jiném (Windows) stroji nebo VM z macOS, exportujte endpoint:
+Pokud běží služba Foundry Local na jiném (Windows) počítači nebo virtuálním stroji z macOS, exportujte endpoint:
 
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
@@ -339,13 +376,13 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 | Relace | Skript(y) | Popis |
 |--------|-----------|-------|
 | 1 | `samples/session01/chat_bootstrap.py` | Bootstrap služby & streamovací chat |
-| 2 | `samples/session02/rag_pipeline.py` | Minimalistický RAG (embeddings v paměti) |
+| 2 | `samples/session02/rag_pipeline.py` | Minimální RAG (v paměti) |
 |   | `samples/session02/rag_eval_ragas.py` | Hodnocení RAG pomocí metrik ragas |
-| 3 | `samples/session03/benchmark_oss_models.py` | Benchmarking latence & propustnosti více modelů |
+| 3 | `samples/session03/benchmark_oss_models.py` | Benchmarking latence a propustnosti více modelů |
 | 4 | `samples/session04/model_compare.py` | Porovnání SLM vs LLM (latence & ukázkový výstup) |
-| 5 | `samples/session05/agents_orchestrator.py` | Výzkumný → redakční pipeline dvou agentů |
+| 5 | `samples/session05/agents_orchestrator.py` | Výzkumný → redakční pipeline se dvěma agenty |
 | 6 | `samples/session06/models_router.py` | Demo směrování na základě záměru |
-|   | `samples/session06/models_pipeline.py` | Vícekrokový plán/realizace/zlepšení řetězec |
+|   | `samples/session06/models_pipeline.py` | Vícekrokový řetězec plánování/vykonávání/zdokonalování |
 
 ### Proměnné prostředí (společné pro všechny ukázky)
 
@@ -356,14 +393,14 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 | `BENCH_MODELS` | Seznam aliasů modelů pro benchmarking | `qwen2.5-0.5b,gemma-2-2b,mistral-7b` |
 | `BENCH_ROUNDS` | Opakování benchmarku na model | `3` |
 | `BENCH_PROMPT` | Prompt použitý při benchmarkingu | `Explain retrieval augmented generation briefly.` |
-| `EMBED_MODEL` | Sentence-transformers embedding model | `sentence-transformers/all-MiniLM-L6-v2` |
+| `EMBED_MODEL` | Model pro embedding sentence-transformers | `sentence-transformers/all-MiniLM-L6-v2` |
 | `RAG_QUESTION` | Přepsání testovacího dotazu pro RAG pipeline | `Why use RAG with local inference?` |
 | `AGENT_QUESTION` | Přepsání dotazu pro pipeline agentů | `Explain why edge AI matters for compliance.` |
 | `AGENT_MODEL_PRIMARY` | Alias modelu pro výzkumného agenta | `phi-4-mini` |
 | `AGENT_MODEL_EDITOR` | Alias modelu pro redakčního agenta (může se lišit) | `gpt-oss-20b` |
 | `SHOW_USAGE` | Pokud `1`, tiskne využití tokenů na dokončení | `1` |
-| `RETRY_ON_FAIL` | Pokud `1`, jednou se pokusí znovu při přechodných chybách chatu | `1` |
-| `RETRY_BACKOFF` | Sekundy čekání před opakováním | `1.0` |
+| `RETRY_ON_FAIL` | Pokud `1`, jednou se pokusí o opětovné spuštění při chybě | `1` |
+| `RETRY_BACKOFF` | Počet sekund čekání před opětovným spuštěním | `1.0` |
 
 Pokud není proměnná nastavena, skripty se vrátí k rozumným výchozím hodnotám. Pro ukázky s jedním modelem obvykle stačí pouze `FOUNDRY_LOCAL_ALIAS`.
 
@@ -372,7 +409,7 @@ Pokud není proměnná nastavena, skripty se vrátí k rozumným výchozím hodn
 Všechny ukázky nyní sdílejí pomocný modul `samples/workshop_utils.py`, který poskytuje:
 
 * Vytvoření cache `FoundryLocalManager` + klienta OpenAI
-* Pomocnou funkci `chat_once()` s volitelným opakováním + tiskem využití
+* Pomocnou funkci `chat_once()` s volitelným opětovným spuštěním + tiskem využití
 * Jednoduché hlášení využití tokenů (aktivace přes `SHOW_USAGE=1`)
 
 To snižuje duplicitu a zdůrazňuje osvědčené postupy pro efektivní orchestraci lokálních modelů.
@@ -381,16 +418,16 @@ To snižuje duplicitu a zdůrazňuje osvědčené postupy pro efektivní orchest
 
 | Téma | Vylepšení | Relace | Env / Přepínač |
 |------|-----------|--------|---------------|
-| Determinismus | Fixní teplota + stabilní sady promptů | 1–6 | Nastavte `temperature=0`, `top_p=1` |
+| Determinismus | Pevná teplota + stabilní sady promptů | 1–6 | Nastavit `temperature=0`, `top_p=1` |
 | Viditelnost využití tokenů | Konzistentní výuka nákladů/efektivity | 1–6 | `SHOW_USAGE=1` |
 | Streamování prvního tokenu | Metrika vnímané latence | 1,3,4,6 | `BENCH_STREAM=1` (benchmark) |
-| Odolnost při opakování | Řeší přechodné studené starty | Vše | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
-| Multi-modeloví agenti | Specializace rolí | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
-| Adaptivní směrování | Záměr + heuristika nákladů | 6 | Rozšíření routeru o logiku eskalace |
+| Odolnost při opětovném spuštění | Řeší přechodné problémy při studeném startu | Všechny | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
+| Multi-modeloví agenti | Specializace rolí heterogenních modelů | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
+| Adaptivní směrování | Záměr + heuristiky nákladů | 6 | Rozšíření směrovače o logiku eskalace |
 | Vektorová paměť | Dlouhodobé sémantické vybavení | 2,5,6 | Integrace FAISS/Chroma embedding indexu |
 | Export trasování | Auditování & hodnocení | 2,5,6 | Přidání JSON řádků na krok |
-| Kvalitativní rubriky | Kvalitativní sledování | 3–6 | Sekundární scoring promptů |
-| Smoke testy | Rychlá validace před workshopem | Vše | `python Workshop/tests/smoke.py` |
+| Kvalitativní rubriky | Sledování kvality | 3–6 | Sekundární scoring prompty |
+| Smoke testy | Rychlá validace před workshopem | Všechny | `python Workshop/tests/smoke.py` |
 
 ### Deterministický rychlý start
 
@@ -404,19 +441,19 @@ Očekávejte stabilní počty tokenů při opakovaných identických vstupech.
 
 ### Hodnocení RAG (Relace 2)
 
-Použijte `rag_eval_ragas.py` pro výpočet relevance odpovědí, věrnosti a přesnosti kontextu na malém syntetickém datasetu:
+Použijte `rag_eval_ragas.py` k výpočtu relevance odpovědí, věrnosti a přesnosti kontextu na malém syntetickém datasetu:
 
 ```powershell
 python samples/session02/rag_eval_ragas.py
 ```
 
-Rozšiřte dodáním většího JSONL souboru otázek, kontextů a pravdivých odpovědí, poté konvertujte na Hugging Face `Dataset`.
+Rozšiřte dodáním většího JSONL souboru s otázkami, kontexty a pravdivými odpověďmi, poté konvertujte na dataset Hugging Face.
 
-## Příloha přesnosti CLI příkazů
+## Příloha přesnosti příkazů CLI
 
-Workshop záměrně používá pouze aktuálně dokumentované / stabilní CLI příkazy Foundry Local.
+Workshop záměrně používá pouze aktuálně dokumentované / stabilní příkazy Foundry Local CLI.
 
-### Stabilní příkazy použité
+### Odkazované stabilní příkazy
 
 | Kategorie | Příkaz | Účel |
 |-----------|--------|------|
@@ -426,15 +463,15 @@ Workshop záměrně používá pouze aktuálně dokumentované / stabilní CLI p
 | Služba | `foundry status` | Zobrazení stavu služby |
 | Modely | `foundry model list` | Seznam katalogu / dostupných modelů |
 | Modely | `foundry model download <alias>` | Stažení váhy modelu do cache |
-| Modely | `foundry model run <alias>` | Spuštění (nahrání) modelu lokálně; kombinace s `--prompt` pro jednorázové použití |
+| Modely | `foundry model run <alias>` | Spuštění (načtení) modelu lokálně; kombinace s `--prompt` pro jednorázové spuštění |
 | Modely | `foundry model unload <alias>` / `foundry model stop <alias>` | Vyložení modelu z paměti (pokud je podporováno) |
-| Cache | `foundry cache list` | Seznam cacheovaných (stažených) modelů |
-| Systém | `foundry system info` | Snímek hardwarových & akceleračních schopností |
+| Cache | `foundry cache list` | Seznam uložených (stažených) modelů |
+| Systém | `foundry system info` | Snímek hardwarových a akceleračních schopností |
 | Systém | `foundry system gpu-info` | Diagnostické informace o GPU |
 | Konfigurace | `foundry config list` | Zobrazení aktuálních hodnot konfigurace |
 | Konfigurace | `foundry config set <key> <value>` | Aktualizace konfigurace |
 
-### Jednorázový prompt vzor
+### Vzorový jednorázový prompt
 
 Namísto zastaralého podpříkazu `model chat` použijte:
 
@@ -442,14 +479,14 @@ Namísto zastaralého podpříkazu `model chat` použijte:
 foundry model run <alias> --prompt "Your question here"
 ```
 
-Tím se provede jednorázový cyklus prompt/odpověď a poté se ukončí.
+Tím se provede jeden cyklus prompt/odpověď a poté se ukončí.
 
 ### Odstraněné / vyhnuté vzory
 
-| Zastaralé / Nedokumentované | Náhrada / Doporučení |
+| Zastaralé / nedokumentované | Náhrada / Doporučení |
 |-----------------------------|----------------------|
 | `foundry model chat <model> "..."` | `foundry model run <model> --prompt "..."` |
-| `foundry model list --running` | Použijte prosté `foundry model list` + nedávná aktivita / logy |
+| `foundry model list --running` | Použijte jednoduchý `foundry model list` + nedávná aktivita / logy |
 | `foundry model list --cached` | `foundry cache list` |
 | `foundry model stats <model>` | Použijte benchmarkovací Python skript + nástroje OS (Správce úloh / `nvidia-smi`) |
 | `foundry model benchmark ...` | `samples/session03/benchmark_oss_models.py` |
@@ -457,18 +494,18 @@ Tím se provede jednorázový cyklus prompt/odpověď a poté se ukončí.
 ### Benchmarking & Telemetrie
 
 - Latence, p95, tokeny/sec: `samples/session03/benchmark_oss_models.py`
-- Latence prvního tokenu (streamování): nastavte `BENCH_STREAM=1`
+- Latence prvního tokenu (streamování): nastavit `BENCH_STREAM=1`
 - Využití zdrojů: OS monitory (Správce úloh, Activity Monitor, `nvidia-smi`) + `foundry system info`.
 
-Jakmile se nové CLI telemetrické příkazy stabilizují upstream, mohou být začleněny s minimálními úpravami do markdownů relací.
+Jakmile nové telemetrické příkazy CLI stabilizují upstream, mohou být začleněny s minimálními úpravami do markdownů relací.
 
-### Automatická kontrola linterem
+### Automatická kontrola linteru
 
-Automatický linter zabraňuje opětovnému zavedení zastaralých CLI vzorů uvnitř ohraničených bloků kódu v markdown souborech:
+Automatický linter zabraňuje opětovnému zavedení zastaralých CLI vzorů uvnitř bloků kódu v markdown souborech:
 
 Skript: `Workshop/scripts/lint_markdown_cli.py`
 
-Zastaralé vzory jsou blokovány uvnitř ohraničených bloků kódu.
+Zastaralé vzory jsou blokovány uvnitř bloků kódu.
 
 Doporučené náhrady:
 | Zastaralé | Náhrada |
@@ -480,7 +517,7 @@ Doporučené náhrady:
 | `model benchmark` | `samples/session03/benchmark_oss_models.py` |
 | `model list --available` | `model list` |
 
-Spusťte lokálně:
+Spuštění lokálně:
 ```powershell
 python Workshop\scripts\lint_markdown_cli.py --verbose
 ```
@@ -495,22 +532,22 @@ chmod +x .git/hooks/pre-commit
 
 ## Rychlá tabulka migrace CLI → SDK
 
-| Úkol | CLI Jednorázový příkaz | SDK (Python) Ekvivalent | Poznámky |
+| Úkol | Jednorázový příkaz CLI | Ekvivalent SDK (Python) | Poznámky |
 |------|------------------------|-------------------------|----------|
 | Spuštění modelu jednou (prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK automaticky inicializuje službu & cache |
 | Stažení (cache) modelu | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # triggers download/load` | Manager vybírá nejlepší variantu, pokud alias mapuje na více buildů |
-| Seznam katalogu | `foundry model list` | `# použijte manager pro každý alias nebo udržujte známý seznam` | CLI agreguje; SDK aktuálně instancuje per-alias |
-| Seznam cacheovaných modelů | `foundry cache list` | `manager.list_cached_models()` | Po inicializaci manageru (jakýkoli alias) |
-| Aktivace GPU akcelerace | `foundry config set compute.onnx.enable_gpu true` | `# CLI akce; SDK předpokládá, že konfigurace již byla aplikována` | Konfigurace je externí vedlejší efekt |
+| Seznam katalogu | `foundry model list` | `# use manager for each alias or maintain known list` | CLI agreguje; SDK aktuálně instancuje per-alias |
+| Seznam uložených modelů | `foundry cache list` | `manager.list_cached_models()` | Po inicializaci manageru (jakýkoli alias) |
+| Aktivace GPU akcelerace | `foundry config set compute.onnx.enable_gpu true` | `# CLI action; SDK assumes config already applied` | Konfigurace je externí vedlejší efekt |
 | Získání URL endpointu | (implicitní) | `manager.endpoint` | Používá se k vytvoření klienta kompatibilního s OpenAI |
-| Zahřátí modelu | `foundry model run <alias>` a poté první prompt | `chat_once(alias, messages=[...])` (utility) | Utility řeší počáteční studenou latenci zahřátí |
-| Měření latence | `python benchmark_oss_models.py` | `import benchmark_oss_models` (nebo nový exportní skript) | Preferujte skript pro konzistentní metriky |
+| Zahřátí modelu | `foundry model run <alias>` poté první prompt | `chat_once(alias, messages=[...])` (utility) | Utility řeší počáteční latenci při studeném startu |
+| Měření latence | `python benchmark_oss_models.py` | `import benchmark_oss_models` (nebo nový exportovací skript) | Preferujte skript pro konzistentní metriky |
 | Zastavení / vyložení modelu | `foundry model unload <alias>` | (Není vystaveno – restartujte službu / proces) | Typicky není vyžadováno pro průběh workshopu |
 | Získání využití tokenů | (zobrazení výstupu) | `resp.usage.total_tokens` | Poskytováno, pokud backend vrací objekt využití |
 
 ## Export benchmarků do Markdownu
 
-Použijte skript `Workshop/scripts/export_benchmark_markdown.py` pro spuštění čerstvého benchmarku (stejná logika jako `samples/session03/benchmark_oss_models.py`) a generování tabulky Markdown přátelské GitHubu plus surového JSON.
+Použijte skript `Workshop/scripts/export_benchmark_markdown.py` k provedení čerstvého benchmarku (stejná logika jako `samples/session03/benchmark_oss_models.py`) a vytvoření tabulky Markdown přátelské k GitHubu plus surového JSON.
 
 ### Příklad
 
@@ -521,12 +558,12 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 Generované soubory:
 | Soubor | Obsah |
 |--------|-------|
-| `benchmark_report.md` | Tabulka Markdown + interpretační tipy |
+| `benchmark_report.md` | Tabulka Markdown + interpretace |
 | `benchmark_report.json` | Surové pole metrik (pro porovnání / sledování trendů) |
 
-Nastavte `BENCH_STREAM=1` v prostředí pro zahrnutí latence prvního tokenu, pokud je podporována.
+Nastavte `BENCH_STREAM=1` v prostředí pro zahrnutí latence prvního tokenu, pokud je podporováno.
 
 ---
 
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace doporučujeme profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.

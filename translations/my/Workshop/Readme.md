@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "48d0fb38be925084a6ebd957d4b045e5",
-  "translation_date": "2025-10-08T12:11:16+00:00",
+  "original_hash": "8b994c57f1207012e4d7f58b7c0d1ae7",
+  "translation_date": "2025-10-17T10:16:43+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "my"
 }
 -->
-# EdgeAI အတွက် အခြေခံသင်တန်း - Workshop
+# EdgeAI အတွက် မူလတန်း - အလုပ်ရုံဆွေးနွေးပွဲ
 
-> **ထုတ်လုပ်မှုအဆင့် Edge AI အက်ပလီကေးရှင်းများ တည်ဆောက်ရန် လက်တွေ့လေ့လာရေးလမ်းကြောင်း**
+> **ထုတ်လုပ်မှုအဆင်သင့် Edge AI အက်ပလီကေးရှင်းများ တည်ဆောက်ရန် လက်တွေ့လေ့လာမှုလမ်းကြောင်း**
 >
 > Microsoft Foundry Local ကို အသုံးပြု၍ ပထမဆုံး chat completion မှ multi-agent orchestration အထိ ၆ ခုသော အဆင့်ဆင့် session များတွင် ဒေသခံ AI deployment ကို ကျွမ်းကျင်ပါ။
 
@@ -17,91 +17,91 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 အကျဉ်းချုပ်
 
-**EdgeAI အတွက် အခြေခံသင်တန်း Workshop** သို့ ကြိုဆိုပါသည်။ ဒေသခံ hardware ပေါ်တွင် အပြည့်အဝ လည်ပတ်နိုင်သော ဉာဏ်ရည်ရှိသော အက်ပလီကေးရှင်းများ တည်ဆောက်ရန် လက်တွေ့လမ်းညွှန်ဖြစ်သည်။ ဒီ workshop သည် Microsoft Foundry Local နှင့် Small Language Models (SLMs) ကို အသုံးပြု၍ Edge AI အယူအဆများကို လက်တွေ့ကျကျ ကျွမ်းကျင်မှုများအဖြစ် ပြောင်းလဲပေးပါသည်။
+**EdgeAI အတွက် မူလတန်း အလုပ်ရုံဆွေးနွေးပွဲ** သို့ ကြိုဆိုပါသည်။ ဒေသခံ hardware ပေါ်တွင် အပြည့်အဝ လည်ပတ်နိုင်သော ဉာဏ်ရည်ရှိသော အက်ပလီကေးရှင်းများ တည်ဆောက်ရန် လက်တွေ့လမ်းညွှန်ဖြစ်သည်။ ဒီအလုပ်ရုံဆွေးနွေးပွဲသည် Microsoft Foundry Local နှင့် Small Language Models (SLMs) ကို အသုံးပြု၍ Edge AI အကြောင်းအရာများကို လက်တွေ့ကျကျ အတတ်ပညာများအဖြစ် ပြောင်းလဲပေးသည်။
 
-### ဒီ Workshop ကို ဘာကြောင့် လိုအပ်သလဲ?
+### ဒီအလုပ်ရုံဆွေးနွေးပွဲကို ဘာကြောင့် လိုအပ်သလဲ?
 
-**Edge AI တိုးတက်မှုက စတင်နေပြီ**
+**Edge AI တိုးတက်မှုကာလ ရောက်ရှိနေပြီ**
 
 ကမ္ဘာတစ်ဝှမ်းရှိ အဖွဲ့အစည်းများသည် cloud မှာ အခြေခံထားသော AI မှ edge computing သို့ ပြောင်းလဲနေကြသည်။ အဓိကအကြောင်းရင်း ၃ ခုမှာ -
 
-1. **Privacy & Compliance** - အရေးကြီးသော ဒေတာများကို cloud သို့ ပို့ဆောင်ခြင်းမရှိဘဲ ဒေသတွင်ပင် လုပ်ဆောင်ခြင်း (HIPAA, GDPR, ငွေကြေးဆိုင်ရာ စည်းမျဉ်းများ)
-2. **Performance** - network latency ကို ဖယ်ရှားခြင်း (ဒေသတွင် 50-500ms vs cloud round-trip 500-2000ms)
-3. **Cost Control** - per-token API ကုန်ကျစရိတ်များကို ဖယ်ရှားပြီး cloud ကုန်ကျစရိတ်မရှိဘဲ scale လုပ်နိုင်ခြင်း
+1. **Privacy & Compliance** - အရေးကြီးသော ဒေတာများကို cloud သို့ ပို့ဆောင်ခြင်းမရှိဘဲ ဒေသတွင်းတွင် လုပ်ဆောင်ခြင်း (HIPAA, GDPR, ငွေကြေးဆိုင်ရာ စည်းမျဉ်းများ)
+2. **Performance** - network latency ကို ဖယ်ရှားခြင်း (ဒေသတွင်း 50-500ms vs cloud round-trip 500-2000ms)
+3. **Cost Control** - per-token API ကုန်ကျစရိတ်များကို ဖယ်ရှားပြီး cloud ကုန်ကျစရိတ်မရှိဘဲ scale လုပ်ခြင်း
 
 **Edge AI သည် ကွဲပြားခြားနားသည်**
 
-On-premises AI ကို လည်ပတ်ရန် ကျွမ်းကျင်မှုအသစ်များ လိုအပ်သည် -
-- အရင်းအမြစ်ကန့်သတ်ချက်များအတွက် မော်ဒယ်ရွေးချယ်ခြင်းနှင့် optimization
-- ဒေသခံ service စီမံခန့်ခွဲမှုနှင့် hardware acceleration
-- Smaller models အတွက် prompt engineering
-- Edge devices အတွက် production deployment patterns
+AI ကို on-premises တွင် လည်ပတ်ရန် အသစ်သော ကျွမ်းကျင်မှုများ လိုအပ်သည် -
+- အရင်းအမြစ်ကန့်သတ်မှုများအတွက် မော်ဒယ်ရွေးချယ်ခြင်းနှင့် အဆင့်မြှင့်တင်ခြင်း
+- ဒေသတွင်း service စီမံခန့်ခွဲမှုနှင့် hardware acceleration
+- မော်ဒယ်အသေးစားများအတွက် prompt engineering
+- edge devices များအတွက် ထုတ်လုပ်မှု deployment ပုံစံများ
 
-**ဒီ Workshop သည် အဆိုပါ ကျွမ်းကျင်မှုများကို ပေးစွမ်းသည်**
+**ဒီအလုပ်ရုံဆွေးနွေးပွဲသည် အတတ်ပညာများကို ပေးစွမ်းသည်**
 
-6 ခုသော အဓိက session များ (~3 နာရီ စုစုပေါင်း) တွင် "Hello World" မှ production-ready multi-agent systems ကို သင်တန်းသား၏ စက်ပေါ်တွင် ဒေသခံအဖြစ် လည်ပတ်စေမည်။
+6 ခုသော အဓိက session များ (~3 နာရီ စုစုပေါင်း) တွင် "Hello World" မှ multi-agent systems များကို ထုတ်လုပ်မှုအဆင်သင့်အဖြစ် deploy လုပ်ခြင်းအထိ တိုးတက်မှုရှိမည် - အားလုံးကို သင့်စက်ပေါ်တွင် ဒေသတွင်းတွင် လည်ပတ်စေမည်။
 
 ---
 
-## 📚 သင်ယူရမည့် ရည်မှန်းချက်များ
+## 📚 လေ့လာမှုရည်မှန်းချက်များ
 
-ဒီ workshop ကို ပြီးမြောက်ပါက သင်တန်းသားသည် အောက်ပါများကို လုပ်ဆောင်နိုင်မည်ဖြစ်သည် -
+ဒီအလုပ်ရုံဆွေးနွေးပွဲကို ပြီးမြောက်ပြီးနောက် သင်သည် အောက်ပါအတတ်ပညာများကို ရရှိမည် -
 
-### အဓိက ကျွမ်းကျင်မှုများ
-1. **ဒေသခံ AI Services ကို Deploy နှင့် စီမံခန့်ခွဲခြင်း**
-   - Microsoft Foundry Local ကို install နှင့် configure လုပ်ခြင်း
-   - Edge deployment အတွက် သင့်လျော်သော မော်ဒယ်များ ရွေးချယ်ခြင်း
-   - မော်ဒယ် lifecycle ကို စီမံခန့်ခွဲခြင်း (download, load, cache)
-   - အရင်းအမြစ်အသုံးပြုမှုကို စောင့်ကြည့်ပြီး performance ကို optimize လုပ်ခြင်း
+### အဓိကကျွမ်းကျင်မှုများ
+1. **ဒေသတွင်း AI Services များကို Deploy နှင့် စီမံခန့်ခွဲခြင်း**
+   - Microsoft Foundry Local ကို ထည့်သွင်းပြီး configure လုပ်ခြင်း
+   - edge deployment အတွက် သင့်လျော်သော မော်ဒယ်များကို ရွေးချယ်ခြင်း
+   - မော်ဒယ်၏ lifecycle ကို စီမံခန့်ခွဲခြင်း (download, load, cache)
+   - အရင်းအမြစ်အသုံးပြုမှုကို စောင့်ကြည့်ပြီး performance ကို အဆင့်မြှင့်တင်ခြင်း
 
-2. **AI-Powered Applications တည်ဆောက်ခြင်း**
-   - OpenAI-compatible chat completions ကို ဒေသတွင် လုပ်ဆောင်ခြင်း
+2. **AI-Powered Applications များ တည်ဆောက်ခြင်း**
+   - OpenAI-compatible chat completions ကို ဒေသတွင်းတွင် အကောင်အထည်ဖော်ခြင်း
    - Small Language Models အတွက် ထိရောက်သော prompts ကို ဒီဇိုင်းဆွဲခြင်း
    - UX အတွက် streaming responses ကို ကိုင်တွယ်ခြင်း
-   - ဒေသခံမော်ဒယ်များကို ရှိပြီးသား အက်ပလီကေးရှင်းများနှင့် ပေါင်းစပ်ခြင်း
+   - ဒေသတွင်းမော်ဒယ်များကို ရှိပြီးသား အက်ပလီကေးရှင်းများနှင့် ပေါင်းစပ်ခြင်း
 
-3. **RAG (Retrieval Augmented Generation) Systems တည်ဆောက်ခြင်း**
-   - Embeddings ဖြင့် semantic search တည်ဆောက်ခြင်း
-   - LLM responses ကို domain-specific knowledge တွင် အခြေခံခြင်း
+3. **RAG (Retrieval Augmented Generation) Systems များ ဖန်တီးခြင်း**
+   - embeddings ဖြင့် semantic search တည်ဆောက်ခြင်း
+   - domain-specific knowledge တွင် LLM responses ကို အခြေခံခြင်း
    - RAG quality ကို စက်မှုစံချိန်များဖြင့် အကဲဖြတ်ခြင်း
-   - Prototype မှ production သို့ scale လုပ်ခြင်း
+   - prototype မှ production သို့ scale လုပ်ခြင်း
 
-4. **မော်ဒယ် performance ကို optimize လုပ်ခြင်း**
+4. **မော်ဒယ် performance ကို အဆင့်မြှင့်တင်ခြင်း**
    - သင့်အသုံးအတွက် မော်ဒယ်များကို benchmark လုပ်ခြင်း
-   - latency, throughput, နှင့် first-token time ကို တိုင်းတာခြင်း
-   - speed/quality tradeoffs အပေါ် အကောင်းဆုံး မော်ဒယ်များ ရွေးချယ်ခြင်း
-   - SLM vs LLM trade-offs ကို လက်တွေ့အခြေအနေများတွင် နှိုင်းယှဉ်ခြင်း
+   - latency, throughput, first-token time ကို တိုင်းတာခြင်း
+   - speed/quality tradeoffs အပေါ် အကောင်းဆုံး မော်ဒယ်များကို ရွေးချယ်ခြင်း
+   - SLM နှင့် LLM trade-offs ကို လက်တွေ့အခြေအနေများတွင် နှိုင်းယှဉ်ခြင်း
 
-5. **Multi-Agent Systems ကို စီမံခန့်ခွဲခြင်း**
-   - အလုပ်အမျိုးမျိုးအတွက် အထူး agent များ ဒီဇိုင်းဆွဲခြင်း
-   - Agent memory နှင့် context ကို စီမံခန့်ခွဲခြင်း
-   - ရှုပ်ထွေးသော workflow များတွင် agent များကို coordinate လုပ်ခြင်း
-   - မော်ဒယ်များအကြား requests ကို အကျိုးရှိစွာ route လုပ်ခြင်း
+5. **Multi-Agent Systems များကို Orchestrate လုပ်ခြင်း**
+   - အလုပ်အမျိုးမျိုးအတွက် agent များကို ဒီဇိုင်းဆွဲခြင်း
+   - agent memory နှင့် context management ကို အကောင်အထည်ဖော်ခြင်း
+   - အလုပ်အဆင့်များတွင် agent များကို စီမံခန့်ခွဲခြင်း
+   - မော်ဒယ်များအကြား requests များကို အဆင်ပြေစွာ route လုပ်ခြင်း
 
-6. **Production-Ready Solutions ကို Deploy လုပ်ခြင်း**
-   - Error handling နှင့် retry logic ကို implement လုပ်ခြင်း
-   - Token usage နှင့် system resources ကို စောင့်ကြည့်ခြင်း
-   - Model-as-tools patterns ဖြင့် scalable architectures တည်ဆောက်ခြင်း
-   - Edge မှ hybrid (edge + cloud) သို့ ပြောင်းလဲမှုလမ်းကြောင်းများကို စီစဉ်ခြင်း
+6. **ထုတ်လုပ်မှုအဆင်သင့်ဖြေရှင်းချက်များကို Deploy လုပ်ခြင်း**
+   - error handling နှင့် retry logic ကို အကောင်အထည်ဖော်ခြင်း
+   - token usage နှင့် system resources ကို စောင့်ကြည့်ခြင်း
+   - model-as-tools patterns ဖြင့် scalable architectures တည်ဆောက်ခြင်း
+   - edge မှ hybrid (edge + cloud) သို့ ပြောင်းလဲမှုလမ်းကြောင်းများကို စီစဉ်ခြင်း
 
 ---
 
-## 🎓 သင်ယူရမည့် ရလဒ်များ
+## 🎓 လေ့လာမှုရလဒ်များ
 
-### သင်တန်းသား တည်ဆောက်မည့် အရာများ
+### သင်တည်ဆောက်မည့်အရာများ
 
-Workshop ပြီးဆုံးချိန်တွင် သင်တန်းသားသည် အောက်ပါများကို တည်ဆောက်ထားမည်ဖြစ်သည် -
+ဒီအလုပ်ရုံဆွေးနွေးပွဲအဆုံးတွင် သင်သည် အောက်ပါအရာများကို ဖန်တီးထားမည် -
 
 | Session | Deliverable | Skills Demonstrated |
 |---------|-------------|---------------------|
-| **1** | Streaming ဖြင့် chat application | Service setup, basic completions, streaming UX |
+| **1** | streaming ဖြင့် chat application | Service setup, basic completions, streaming UX |
 | **2** | RAG system with evaluation | Embeddings, semantic search, quality metrics |
 | **3** | Multi-model benchmark suite | Performance measurement, model comparison |
 | **4** | SLM vs LLM comparator | Trade-off analysis, optimization strategies |
 | **5** | Multi-agent orchestrator | Agent design, memory management, coordination |
 | **6** | Intelligent routing system | Intent detection, model selection, scalability |
 
-### ကျွမ်းကျင်မှု အဆင့်ဇယား
+### ကျွမ်းကျင်မှု Matrix
 
 | Skill Level | Session 1-2 | Session 3-4 | Session 5-6 |
 |-------------|-------------|-------------|-------------|
@@ -109,33 +109,33 @@ Workshop ပြီးဆုံးချိန်တွင် သင်တန်�
 | **Intermediate** | ✅ Quick review | ✅ Core learning | ⚠️ Stretch goals |
 | **Advanced** | ✅ Breeze through | ✅ Refinement | ✅ Production patterns |
 
-### အလုပ်အကိုင်အတွက် အသင့်ဖြစ်သော ကျွမ်းကျင်မှုများ
+### အလုပ်အကိုင်အတွက် အသင့်ဖြစ်သော အတတ်ပညာများ
 
-**ဒီ workshop ပြီးဆုံးပါက သင်တန်းသားသည် အောက်ပါများကို လုပ်ဆောင်နိုင်မည် -**
+**ဒီအလုပ်ရုံဆွေးနွေးပွဲပြီးနောက် သင်သည် အောက်ပါအတတ်ပညာများကို ရရှိမည် -**
 
 ✅ **Privacy-First Applications တည်ဆောက်ခြင်း**
-- PHI/PII ကို ဒေသတွင် လုပ်ဆောင်သော Healthcare apps
-- Compliance လိုအပ်ချက်များနှင့် ငွေကြေးဆိုင်ရာ ဝန်ဆောင်မှုများ
-- ဒေတာအာဏာပိုင်အခြေခံသော အစိုးရစနစ်များ
+- PHI/PII ကို ဒေသတွင်းတွင် ကိုင်တွယ်သော ကျန်းမာရေးအက်ပလီကေးရှင်းများ
+- စည်းမျဉ်းများနှင့် ကိုက်ညီသော ငွေကြေးဆိုင်ရာ ဝန်ဆောင်မှုများ
+- ဒေတာအာဏာပိုင်မှုလိုအပ်သော အစိုးရစနစ်များ
 
-✅ **Edge Environments အတွက် Optimize လုပ်ခြင်း**
+✅ **Edge ပတ်ဝန်းကျင်များအတွက် အဆင့်မြှင့်တင်ခြင်း**
 - အရင်းအမြစ်ကန့်သတ်ထားသော IoT devices
 - Offline-first mobile applications
 - Low-latency real-time systems
 
-✅ **Intelligent Architectures ကို ဒီဇိုင်းဆွဲခြင်း**
-- ရှုပ်ထွေးသော workflow များအတွက် Multi-agent systems
+✅ **ဉာဏ်ရည်ရှိသော Architectures ကို ဒီဇိုင်းဆွဲခြင်း**
+- အလုပ်အဆင့်များအတွက် Multi-agent systems
 - Hybrid edge-cloud deployments
-- ကုန်ကျစရိတ်ကို optimize လုပ်ထားသော AI infrastructure
+- ကုန်ကျစရိတ်အဆင့်မြှင့်တင်ထားသော AI infrastructure
 
-✅ **Edge AI Initiatives ကို ဦးဆောင်ခြင်း**
+✅ **Edge AI Initiatives များကို ဦးဆောင်ခြင်း**
 - Project များအတွက် Edge AI feasibility ကို အကဲဖြတ်ခြင်း
 - သင့်လျော်သော မော်ဒယ်များနှင့် frameworks ကို ရွေးချယ်ခြင်း
-- Scalable local AI solutions ကို architect လုပ်ခြင်း
+- Scalable local AI solutions ကို Architect လုပ်ခြင်း
 
 ---
 
-## 🗺️ Workshop ဖွဲ့စည်းမှု
+## 🗺️ အလုပ်ရုံဆွေးနွေးပွဲဖွဲ့စည်းမှု
 
 ### Session အကျဉ်းချုပ် (6 Sessions × 30 မိနစ် = 3 နာရီ)
 
@@ -156,16 +156,16 @@ Workshop ပြီးဆုံးချိန်တွင် သင်တန်�
 
 **System Requirements:**
 - **OS**: Windows 10/11, macOS 11+, or Linux (Ubuntu 20.04+)
-- **RAM**: အနည်းဆုံး 8GB, အကြံပြု 16GB+
+- **RAM**: အနည်းဆုံး 8GB, အကြံပြုချက် 16GB+
 - **Storage**: မော်ဒယ်များအတွက် အခမဲ့နေရာ 10GB+
 - **CPU**: AVX2 support ပါသော နောက်ဆုံးပေါ် processor
-- **GPU** (optional): CUDA-compatible သို့မဟုတ် Qualcomm NPU acceleration
+- **GPU** (optional): CUDA-compatible သို့မဟုတ် Qualcomm NPU acceleration အတွက်
 
 **Software Requirements:**
 - **Python 3.8+** ([Download](https://www.python.org/downloads/))
 - **Microsoft Foundry Local** ([Installation Guide](../../../Workshop))
 - **Git** ([Download](https://git-scm.com/downloads))
-- **Visual Studio Code** (အကြံပြု) ([Download](https://code.visualstudio.com/))
+- **Visual Studio Code** (recommended) ([Download](https://code.visualstudio.com/))
 
 ### 3 ခြေလှမ်းဖြင့် Setup
 
@@ -186,6 +186,42 @@ brew install foundrylocal
 ```bash
 foundry --version
 foundry service status
+```
+
+**Azure AI Foundry Local ကို fixed port ဖြင့် လည်ပတ်နေသည်ကို သေချာပါ**
+
+```bash
+# Set FoundryLocal to use port 58123 (default)
+foundry service set --port 58123 --show
+
+# Or use a different port
+foundry service set --port 58000 --show
+```
+
+**Verify လုပ်ပါ:**
+```bash
+# Check service status
+foundry service status
+
+# Test the endpoint
+curl http://127.0.0.1:58123/v1/models
+```
+**ရရှိနိုင်သော မော်ဒယ်များကို ရှာဖွေခြင်း**
+Foundry Local instance တွင် ရရှိနိုင်သော မော်ဒယ်များကို models endpoint မှ query လုပ်နိုင်သည်:
+
+```bash
+# cmd/bash/powershell
+foundry model list
+```
+
+Web Endpoint ကို အသုံးပြုခြင်း 
+
+```bash
+# Windows PowerShell
+powershell -Command "Invoke-RestMethod -Uri 'http://127.0.0.1:58123/v1/models' -Method Get"
+
+# Or using curl (if available)
+curl http://127.0.0.1:58123/v1/models
 ```
 
 #### 2. Repository ကို Clone လုပ်ပြီး Dependencies ကို Install လုပ်ပါ
@@ -219,15 +255,15 @@ cd samples/session01
 python chat_bootstrap.py "What is edge AI?"
 ```
 
-**✅ Success!** Edge AI အကြောင်း streaming response ကို တွေ့ရမည်။
+**✅ အောင်မြင်မှု!** သင်သည် edge AI အကြောင်း streaming response ကို မြင်ရမည်။
 
 ---
 
-## 📦 Workshop Resources
+## 📦 အလုပ်ရုံဆွေးနွေးပွဲ Resources
 
 ### Python Samples
 
-အဓိကအယူအဆများကို သရုပ်ပြသော လက်တွေ့လေ့လာရေး ဥပမာများ -
+အဓိကအကြောင်းအရာများကို ဖော်ပြသည့် လက်တွေ့လေ့လာမှုများ -
 
 | Session | Sample | Description | Run Time |
 |---------|--------|-------------|----------|
@@ -271,48 +307,37 @@ python chat_bootstrap.py "What is edge AI?"
 
 ---
 
-## 🎓 သင်ယူရေးလမ်းကြောင်း အကြံပြုချက်များ
+## 🎓 လေ့လာမှုလမ်းကြောင်း အကြံပြုချက်များ
 
-### Beginner များအတွက် (3-4 နာရီ)
-1. ✅ Session 1: စတင်ခြင်း (setup နှင့် basic chat အပေါ် အာရုံစိုက်ပါ)
-2. ✅ Session 2: RAG Basics (evaluation ကို စတင်ချိန်တွင် ကျော်သွားပါ)
+### မူလတန်း (3-4 နာရီ)
+1. ✅ Session 1: စတင်ခြင်း (setup နှင့် basic chat ကို အဓိကထား)
+2. ✅ Session 2: RAG Basics (evaluation ကို စတင်မှာ ကျော်သွားပါ)
 3. ✅ Session 3: ရိုးရှင်းသော Benchmarking (မော်ဒယ် 2 ခုသာ)
 4. ⏭️ Session 4-6 ကို ယာယီ ကျော်သွားပါ
 5. 🔄 ပထမဆုံး application တည်ဆောက်ပြီးနောက် Session 4-6 သို့ ပြန်လာပါ
 
-### Intermediate Developer များအတွက် (3 နာရီ)
-1. ⚡ Session 1: Setup validation ကို အမြန်ပြုလုပ်ပါ
-2. ✅ Session 2: RAG pipeline ကို evaluation ဖြင့် ပြည့်စုံစွာ ပြုလုပ်ပါ
-3. ✅ Session 3: Benchmarking suite အပြည့်အစုံ
-4. ✅ Session 4: Model optimization
-5. ✅ Session 5-6: Architecture patterns အပေါ် အာရုံစိုက်ပါ
+### အလယ်အလတ် Developer များအတွက် (3 နာရီ)
+1. ⚡ Session 1: Setup validation ကို အမြန်လုပ်ပါ
+2. ✅ Session 2: RAG pipeline ကို evaluation ဖြင့် ပြည့်စုံစွာ ပြီးမြောက်ပါ
+3. ✅ Session 3: Benchmarking suite အပြည့်
+4. ✅ Session 4: မော်ဒယ် optimization
+5. ✅ Session 5-6: Architecture patterns ကို အဓိကထား
 
-### Advanced Practitioners များအတွက် (2-3 နာရီ)
-1. ⚡ Session 1-3: အမြန်ပြုလုပ်ပြီး validation
+### ကျွမ်းကျင် Practitioner များအတွက် (2-3 နာရီ)
+1. ⚡ Session 1-3: အမြန် review နှင့် validation
 2. ✅ Session 4: Optimization deep-dive
 3. ✅ Session 5: Multi-agent architecture
 4. ✅ Session 6: Production patterns နှင့် scaling
-5. 🚀 Extend: Custom routing logic နှင့် hybrid deployments တည်ဆောက်ပါ
+5. 🚀 Extend:
+| 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM နှင့် LLM, WebGPU, Chainlit RAG, ONNX acceleration |
+| 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Agent အခန်းကဏ္ဍများ, မှတ်ဉာဏ်, ကိရိယာများ, စီမံခန့်ခွဲမှု |
+| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Routing, chaining, Azure သို့သွားသော scale လမ်းကြောင်း |
 
----
-
-## Workshop Session Pack (30 မိနစ် အချိန်တို Labs)
-
-Condensed 6-session workshop format ကို လိုက်နာပါက အောက်ပါ dedicated guides များကို အသုံးပြုပါ (တစ်ခုချင်းစီသည် module docs များနှင့် အပြည့်အဝ လိုက်ဖက်သည်) -
-
-| Workshop Session | Guide | Core Focus |
-|------------------|-------|------------|
-| 1 | [Session01-GettingStartedFoundryLocal](./Session01-GettingStartedFoundryLocal.md) | Install, validate, run phi & GPT-OSS-20B, acceleration |
-| 2 | [Session02-BuildAISolutionsRAG](./Session02-BuildAISolutionsRAG.md) | Prompt engineering, RAG patterns, CSV & document grounding, migration |
-| 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Hugging Face integration, benchmarking, model selection |
-| 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM vs LLM, WebGPU, Chainlit RAG, ONNX acceleration |
-| 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Agent roles, memory, tools, orchestration |
-| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Routing, chaining, scaling path to Azure |
-တစ်ခုချင်းစီသော session ဖိုင်တွင် ပါဝင်သောအရာများမှာ- အကျဉ်းချုပ်၊ သင်ယူရမည့်ရည်မှန်းချက်များ၊ ၃၀ မိနစ်အတွင်း ပြသမှုစဉ်၊ စတင်ရန်ပရိုဂရမ်၊ အတည်ပြုစာရင်း၊ ပြဿနာဖြေရှင်းခြင်းနှင့် Foundry Local Python SDK အတည်ပြုချက်များကို ရည်ညွှန်းခြင်းတို့ဖြစ်ပါသည်။
+Session ဖိုင်တစ်ခုစီတွင် ပါဝင်သည် - အကျဉ်းချုပ်, သင်ယူရမည့်ရည်ရွယ်ချက်များ, ၃၀ မိနစ်အတွင်း demo flow, starter project, validation checklist, troubleshooting, နှင့် Foundry Local Python SDK အတွက်ရင်းနှီးသောအရင်းအမြစ်များ။
 
 ### နမူနာ Scripts
 
-Workshop အတွက်လိုအပ်သော dependencies များကို ထည့်သွင်းရန် (Windows):
+Workshop အတွက်လိုအပ်သော dependencies ကို install လုပ်ရန် (Windows):
 
 ```powershell
 cd Workshop
@@ -330,7 +355,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Foundry Local service ကို macOS မှ Windows သို့မဟုတ် VM တစ်ခုအခြားတွင် လည်ပတ်နေစဉ် endpoint ကို export လုပ်ရန်:
+Foundry Local service ကို macOS မှ Windows မျက်နှာပြင်သို့ (သို့) VM မှ run လုပ်နေပါက endpoint ကို export လုပ်ပါ:
 
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
@@ -340,57 +365,57 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 |---------|-----------|-------------|
 | 1 | `samples/session01/chat_bootstrap.py` | Bootstrap service & streaming chat |
 | 2 | `samples/session02/rag_pipeline.py` | အနည်းဆုံး RAG (in-memory embeddings) |
-|   | `samples/session02/rag_eval_ragas.py` | RAG အကဲဖြတ်မှု ragas metrics ဖြင့် |
+|   | `samples/session02/rag_eval_ragas.py` | RAG ကို ragas metrics ဖြင့်အကဲဖြတ်ခြင်း |
 | 3 | `samples/session03/benchmark_oss_models.py` | Multi-model latency & throughput benchmarking |
-| 4 | `samples/session04/model_compare.py` | SLM နှင့် LLM နှိုင်းယှဉ်မှု (latency & sample output) |
-| 5 | `samples/session05/agents_orchestrator.py` | Two‑agent research → editorial pipeline |
+| 4 | `samples/session04/model_compare.py` | SLM နှင့် LLM ကို (latency & sample output) နှိုင်းယှဉ်ခြင်း |
+| 5 | `samples/session05/agents_orchestrator.py` | Two-agent research → editorial pipeline |
 | 6 | `samples/session06/models_router.py` | Intent-based routing demo |
 |   | `samples/session06/models_pipeline.py` | Multi-step plan/execute/refine chain |
 
-### ပတ်ဝန်းကျင် Variables (နမူနာများအတွက် အများအားဖြင့်)
+### Environment Variables (Samples အားလုံးတွင်တူညီ)
 
 | Variable | ရည်ရွယ်ချက် | နမူနာ |
 |----------|---------|---------|
-| `FOUNDRY_LOCAL_ALIAS` | အခြေခံနမူနာများအတွက် ပုံမှန် single model alias | `phi-4-mini` |
-| `SLM_ALIAS` / `LLM_ALIAS` | SLM နှင့် LLM ကြီးကြီးမားမားများကို နှိုင်းယှဉ်ရန် | `phi-4-mini` / `gpt-oss-20b` |
-| `BENCH_MODELS` | Benchmark အတွက် aliases များကို comma ဖြင့် ဖော်ပြရန် | `qwen2.5-0.5b,gemma-2-2b,mistral-7b` |
-| `BENCH_ROUNDS` | Model တစ်ခုစီအတွက် Benchmark ပြန်လည်လုပ်ဆောင်မှု | `3` |
-| `BENCH_PROMPT` | Benchmarking တွင် အသုံးပြုသော Prompt | `Explain retrieval augmented generation briefly.` |
+| `FOUNDRY_LOCAL_ALIAS` | အခြေခံနမူနာများအတွက် default single model alias | `phi-4-mini` |
+| `SLM_ALIAS` / `LLM_ALIAS` | SLM နှင့် LLM model ကိုရှင်းလင်းစွာနှိုင်းယှဉ်ရန် | `phi-4-mini` / `gpt-oss-20b` |
+| `BENCH_MODELS` | Benchmark လုပ်ရန် aliases များစာရင်း | `qwen2.5-0.5b,gemma-2-2b,mistral-7b` |
+| `BENCH_ROUNDS` | Model တစ်ခုစီအတွက် benchmark repetitions | `3` |
+| `BENCH_PROMPT` | Benchmarking အတွက်အသုံးပြုသော prompt | `Explain retrieval augmented generation briefly.` |
 | `EMBED_MODEL` | Sentence-transformers embedding model | `sentence-transformers/all-MiniLM-L6-v2` |
-| `RAG_QUESTION` | RAG pipeline အတွက် စမ်းသပ်မေးခွန်းကို override လုပ်ရန် | `Why use RAG with local inference?` |
-| `AGENT_QUESTION` | Agents pipeline query ကို override လုပ်ရန် | `Explain why edge AI matters for compliance.` |
-| `AGENT_MODEL_PRIMARY` | Research agent အတွက် Model alias | `phi-4-mini` |
-| `AGENT_MODEL_EDITOR` | Editor agent အတွက် Model alias (ကွဲပြားနိုင်သည်) | `gpt-oss-20b` |
-| `SHOW_USAGE` | `1` ဖြစ်ပါက, token အသုံးပြုမှုကို ပြသမည် | `1` |
-| `RETRY_ON_FAIL` | `1` ဖြစ်ပါက, transient chat errors တွင် တစ်ကြိမ်ပြန်လည်ကြိုးစားမည် | `1` |
-| `RETRY_BACKOFF` | ပြန်လည်ကြိုးစားမည့်အချိန် (စက္ကန့်) | `1.0` |
+| `RAG_QUESTION` | RAG pipeline အတွက် test query ကို override | `Why use RAG with local inference?` |
+| `AGENT_QUESTION` | Agents pipeline query ကို override | `Explain why edge AI matters for compliance.` |
+| `AGENT_MODEL_PRIMARY` | Research agent အတွက် model alias | `phi-4-mini` |
+| `AGENT_MODEL_EDITOR` | Editor agent အတွက် model alias (ကွဲပြားနိုင်သည်) | `gpt-oss-20b` |
+| `SHOW_USAGE` | `1` ဖြစ်ပါက completion တစ်ခုစီအတွက် token usage ကို print လုပ်သည် | `1` |
+| `RETRY_ON_FAIL` | `1` ဖြစ်ပါက transient chat errors တွင်တစ်ကြိမ် retry လုပ်သည် | `1` |
+| `RETRY_BACKOFF` | Retry မလုပ်မီ seconds | `1.0` |
 
-Variable များကို မသတ်မှတ်ထားပါက, scripts များသည် ပုံမှန် default များကို fallback လုပ်ပါမည်။ Single‑model demos များအတွက် သင်သည် `FOUNDRY_LOCAL_ALIAS` ကိုသာ လိုအပ်ပါသည်။
+Variable မရှိပါက script များသည် default ကို fallback လုပ်သည်။ Single-model demos အတွက် `FOUNDRY_LOCAL_ALIAS` သာလိုအပ်သည်။
 
 ### Utility Module
 
-နမူနာအားလုံးသည် ယခု `samples/workshop_utils.py` helper ကို မျှဝေထားပြီး:
+နမူနာအားလုံးသည် `samples/workshop_utils.py` helper ကိုမျှဝေထားပြီး:
 
-* Cached `FoundryLocalManager` + OpenAI client ဖန်တီးခြင်း
-* `chat_once()` helper (optional retry + usage printing ပါဝင်သည်)
-* ရိုးရှင်းသော token usage အစီရင်ခံချက် (enable via `SHOW_USAGE=1`)
+* Cached `FoundryLocalManager` နှင့် OpenAI client ဖန်တီးခြင်း
+* `chat_once()` helper (optional retry နှင့် usage printing ပါဝင်သည်)
+* Simple token usage reporting (`SHOW_USAGE=1` ဖြင့် enable လုပ်ပါ)
 
-ဤအရာသည် ထပ်တူထပ်မျှဖြစ်မှုများကို လျှော့ချပြီး, efficient local model orchestration အတွက် အကောင်းဆုံးလေ့ကျင့်မှုများကို အထူးပြုထားသည်။
+ဤသည်သည် duplication ကိုလျှော့ချပြီး efficient local model orchestration အတွက်အကောင်းဆုံးအလေ့အကျင့်များကိုဖော်ပြသည်။
 
-## Optional Enhancements (Cross-Session)
+## Optional Enhancements (Session များအနှံ့)
 
-| အဓိကအကြောင်းအရာ | တိုးတက်မှု | Sessions | Env / Toggle |
-|--------------------|-----------|----------|--------------|
-| Determinism | Fixed temperature + stable prompt sets | 1–6 | Set `temperature=0`, `top_p=1` |
-| Token Usage Visibility | အကျိုးကျေးဇူး/ထိရောက်မှု သင်ကြားမှု | 1–6 | `SHOW_USAGE=1` |
+| Theme | Enhancement | Sessions | Env / Toggle |
+|-------|-------------|----------|--------------|
+| Determinism | Fixed temperature + stable prompt sets | 1–6 | `temperature=0`, `top_p=1` ကို set လုပ်ပါ |
+| Token Usage Visibility | Cost/efficiency သင်ကြားမှုကိုတိုးတက်စေသည် | 1–6 | `SHOW_USAGE=1` |
 | Streaming First Token | Perceived latency metric | 1,3,4,6 | `BENCH_STREAM=1` (benchmark) |
-| Retry Resilience | Transient cold-start ကို ကိုင်တွယ်ခြင်း | All | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
+| Retry Resilience | Transient cold-start ကို handle လုပ်သည် | All | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
 | Multi-Model Agents | Heterogeneous role specialization | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
-| Adaptive Routing | Intent + cost heuristics | 6 | Extend router with escalation logic |
-| Vector Memory | Long-term semantic recall | 2,5,6 | Integrate FAISS/Chroma embedding index |
-| Trace Export | Auditing & evaluation | 2,5,6 | Append JSON lines per step |
+| Adaptive Routing | Intent + cost heuristics | 6 | Router ကို escalation logic ဖြင့်တိုးချဲ့ပါ |
+| Vector Memory | Long-term semantic recall | 2,5,6 | FAISS/Chroma embedding index ကိုထည့်သွင်းပါ |
+| Trace Export | Auditing & evaluation | 2,5,6 | JSON lines ကိုတစ်ဆင့်ချင်း append လုပ်ပါ |
 | Quality Rubrics | Qualitative tracking | 3–6 | Secondary scoring prompts |
-| Smoke Tests | Workshop မတိုင်မီ အတည်ပြုမှု | All | `python Workshop/tests/smoke.py` |
+| Smoke Tests | Workshop မတိုင်မီ validation လုပ်ရန် | All | `python Workshop/tests/smoke.py` |
 
 ### Deterministic Quick Start
 
@@ -400,77 +425,77 @@ set SHOW_USAGE=1
 python Workshop\tests\smoke.py
 ```
 
-တူညီသော input များကို ထပ်ခါတလဲလဲ ထည့်သွင်းခြင်းဖြင့် တည်ငြိမ်သော token အရေအတွက်ကို မျှော်လင့်ပါ။
+တူညီသော input များကိုထပ်ခါတလဲလဲ run လုပ်ပါက stable token count များကိုမျှော်လင့်ပါ။
 
-### RAG အကဲဖြတ်မှု (Session 2)
+### RAG Evaluation (Session 2)
 
-`rag_eval_ragas.py` ကို အသုံးပြု၍ အလွန်သေးငယ်သော synthetic dataset တွင် အဖြေတိကျမှု၊ သစ္စာရှိမှုနှင့် အကြောင်းအရာတိကျမှုတို့ကိုတွက်ချက်ပါ:
+`rag_eval_ragas.py` ကိုအသုံးပြု၍ tiny synthetic dataset အပေါ် relevancy, faithfulness, နှင့် context precision ကိုအကဲဖြတ်ပါ:
 
 ```powershell
 python samples/session02/rag_eval_ragas.py
 ```
 
-မေးခွန်းများ၊ အကြောင်းအရာများနှင့် ground truths များပါဝင်သော JSONL ကြီးကို ထည့်သွင်းခြင်းဖြင့် တိုးချဲ့ပြီး, ထို့နောက် Hugging Face `Dataset` သို့ ပြောင်းလဲပါ။
+မေးခွန်းများ, contexts, နှင့် ground truths များပါဝင်သော JSONL ကိုထည့်သွင်းပြီး Hugging Face `Dataset` သို့ convert လုပ်ပါ။
 
 ## CLI Command Accuracy Appendix
 
-Workshop သည် လက်ရှိ မှတ်တမ်းတင်ထားသော / တည်ငြိမ်သော Foundry Local CLI commands များကိုသာ အသုံးပြုသည်။
+Workshop သည် Foundry Local CLI commands တွင်လက်ရှိ document လုပ်ထားသော / stable commands များကိုသာအသုံးပြုသည်။
 
 ### Stable Commands Referenced
 
-| အမျိုးအစား | Command | ရည်ရွယ်ချက် |
-|-------------|---------|-------------|
-| Core | `foundry --version` | ထည့်သွင်းထားသော version ကို ပြရန် |
-| Core | `foundry init` | Configuration ကို စတင်ရန် |
-| Service | `foundry service start` | Local service ကို စတင်ရန် (မစတင်ထားပါက) |
-| Service | `foundry status` | Service status ကို ပြရန် |
-| Models | `foundry model list` | Catalog / ရနိုင်သော models များကို ပြရန် |
-| Models | `foundry model download <alias>` | Model weights များကို cache ထဲသို့ ဒေါင်းလုပ်လုပ်ရန် |
-| Models | `foundry model run <alias>` | Model တစ်ခုကို locally စတင်ရန်; `--prompt` နှင့်ပေါင်းစပ်၍ တစ်ကြိမ်ပြုလုပ်ရန် |
-| Models | `foundry model unload <alias>` / `foundry model stop <alias>` | Model တစ်ခုကို memory မှ Unload လုပ်ရန် (ထောက်ပံ့မှုရှိပါက) |
-| Cache | `foundry cache list` | Cached (downloaded) models များကို ပြရန် |
+| Category | Command | ရည်ရွယ်ချက် |
+|----------|---------|---------|
+| Core | `foundry --version` | Installed version ကိုပြပါ |
+| Core | `foundry init` | Configuration ကို initialize လုပ်ပါ |
+| Service | `foundry service start` | Local service ကိုစတင်ပါ (auto မဟုတ်ပါက) |
+| Service | `foundry status` | Service status ကိုပြပါ |
+| Models | `foundry model list` | Catalog / available models ကိုစာရင်းပြပါ |
+| Models | `foundry model download <alias>` | Model weights ကို cache ထဲသို့ download လုပ်ပါ |
+| Models | `foundry model run <alias>` | Model ကို locally launch (load) လုပ်ပါ; `--prompt` နှင့်ပေါင်းစပ်၍ one-shot |
+| Models | `foundry model unload <alias>` / `foundry model stop <alias>` | Model ကို memory မှ unload လုပ်ပါ (supported ဖြစ်ပါက) |
+| Cache | `foundry cache list` | Cached (downloaded) models ကိုစာရင်းပြပါ |
 | System | `foundry system info` | Hardware & acceleration capabilities snapshot |
 | System | `foundry system gpu-info` | GPU diagnostic info |
-| Config | `foundry config list` | လက်ရှိ config တန်ဖိုးများကို ပြရန် |
-| Config | `foundry config set <key> <value>` | Configuration ကို ပြောင်းရန် |
+| Config | `foundry config list` | လက်ရှိ config values ကိုပြပါ |
+| Config | `foundry config set <key> <value>` | Configuration ကို update လုပ်ပါ |
 
-### One‑Shot Prompt Pattern
+### One-Shot Prompt Pattern
 
-`model chat` subcommand ကို မသုံးတော့ဘဲ, အစား:
+`model chat` subcommand ကိုမသုံးတော့ဘဲ:
 
 ```powershell
 foundry model run <alias> --prompt "Your question here"
 ```
 
-ဤသည်သည် prompt/response cycle တစ်ခုကို ပြုလုပ်ပြီးနောက် ထွက်သွားမည်။
+ဤသည်သည် prompt/response cycle တစ်ခုကို run လုပ်ပြီးထွက်သွားသည်။
 
-### ဖယ်ရှားထားသော / မသုံးသင့်သော Pattern များ
+### Removed / Avoided Patterns
 
-| ဖယ်ရှားထားသော / မမှတ်တမ်းတင်ထားသော | အစားထိုးမှု / လမ်းညွှန်ချက် |
-|-------------------------------------|-----------------------------|
+| Deprecated / Undocumented | Replacement / Guidance |
+|---------------------------|------------------------|
 | `foundry model chat <model> "..."` | `foundry model run <model> --prompt "..."` |
-| `foundry model list --running` | `model list` + recent activity / logs ကို အသုံးပြုပါ |
-| `foundry model list --cached` | `cache list` |
-| `foundry model stats <model>` | Benchmark Python script + OS tools (Task Manager / `nvidia-smi`) ကို အသုံးပြုပါ |
+| `foundry model list --running` | `foundry model list` + recent activity / logs ကိုအသုံးပြုပါ |
+| `foundry model list --cached` | `foundry cache list` |
+| `foundry model stats <model>` | Benchmark Python script + OS tools (Task Manager / `nvidia-smi`) ကိုအသုံးပြုပါ |
 | `foundry model benchmark ...` | `samples/session03/benchmark_oss_models.py` |
 
 ### Benchmarking & Telemetry
 
 - Latency, p95, tokens/sec: `samples/session03/benchmark_oss_models.py`
-- First‑token latency (streaming): `BENCH_STREAM=1` ကို environment တွင် သတ်မှတ်ပါ
-- Resource usage: OS monitors (Task Manager, Activity Monitor, `nvidia-smi`) + `foundry system info` ကို အသုံးပြုပါ။
+- First-token latency (streaming): `BENCH_STREAM=1` ကို set လုပ်ပါ
+- Resource usage: OS monitors (Task Manager, Activity Monitor, `nvidia-smi`) + `foundry system info` ကိုအသုံးပြုပါ။
 
-CLI telemetry commands အသစ်များကို upstream တွင် တည်ငြိမ်လာသည်နှင့်အမျှ, session markdown များတွင် အလွယ်တကူ ထည့်သွင်းနိုင်ပါသည်။
+CLI telemetry commands များ upstream တွင် stable ဖြစ်လာသည်နှင့်အမျှ session markdowns တွင်အလွယ်တကူထည့်သွင်းနိုင်သည်။
 
 ### Automated Lint Guard
 
-Automated linter တစ်ခုသည် markdown ဖိုင်များ၏ fenced code blocks အတွင်း deprecated CLI patterns များ ပြန်လည်ထည့်သွင်းခြင်းကို တားဆီးပေးသည်:
+Automated linter သည် markdown ဖိုင်များ၏ fenced code blocks အတွင်း deprecated CLI patterns များပြန်လည်ထည့်သွင်းခြင်းကိုကာကွယ်သည်:
 
 Script: `Workshop/scripts/lint_markdown_cli.py`
 
-Deprecated patterns များကို fenced code fences အတွင်းတွင် တားဆီးထားသည်။
+Deprecated patterns များကို code fences အတွင်း blocked လုပ်သည်။
 
-အစားထိုးမှုများအတွက် အကြံပြုချက်များ:
+အကြံပြုထားသောအစားထိုးများ:
 | Deprecated | Replacement |
 |------------|-------------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
@@ -480,12 +505,12 @@ Deprecated patterns များကို fenced code fences အတွင်း�
 | `model benchmark` | `samples/session03/benchmark_oss_models.py` |
 | `model list --available` | `model list` |
 
-Local တွင် run လုပ်ရန်:
+Local မှ run လုပ်ပါ:
 ```powershell
 python Workshop\scripts\lint_markdown_cli.py --verbose
 ```
 
-GitHub Action: `.github/workflows/markdown-cli-lint.yml` သည် push & PR တိုင်းတွင် run လုပ်သည်။
+GitHub Action: `.github/workflows/markdown-cli-lint.yml` သည် push & PR တစ်ခုစီတွင် run လုပ်သည်။
 
 Optional pre-commit hook:
 ```bash
@@ -495,22 +520,22 @@ chmod +x .git/hooks/pre-commit
 
 ## Quick CLI → SDK Migration Table
 
-| Task | CLI One-Liner | SDK (Python) Equivalent | မှတ်ချက်များ |
-|------|---------------|-------------------------|---------------|
-| Run a model once (prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK သည် service & caching ကို အလိုအလျောက် bootstrap လုပ်သည် |
-| Download (cache) model | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # triggers download/load` | Manager သည် alias ကို map လုပ်ထားသော build များအနက် အကောင်းဆုံးကို ရွေးချယ်သည် |
-| List catalog | `foundry model list` | `# use manager for each alias or maintain known list` | CLI သည် aggregate လုပ်သည်; SDK သည် လက်ရှိအခြေအနေတွင် per-alias instantiation ကိုသာ ထောက်ပံ့သည် |
-| List cached models | `foundry cache list` | `manager.list_cached_models()` | Manager ကို initialize ပြီးနောက် |
-| Enable GPU acceleration | `foundry config set compute.onnx.enable_gpu true` | `# CLI action; SDK assumes config already applied` | Configuration သည် အပြင်ဘက် side effect ဖြစ်သည် |
-| Get endpoint URL | (implicit) | `manager.endpoint` | OpenAI-compatible client ဖန်တီးရန် အသုံးပြုသည် |
-| Warm a model | `foundry model run <alias>` then first prompt | `chat_once(alias, messages=[...])` (utility) | Utilities များသည် initial cold latency warmup ကို ကိုင်တွယ်သည် |
-| Measure latency | `python benchmark_oss_models.py` | `import benchmark_oss_models` (or new exporter script) | Consistent metrics အတွက် script ကို သုံးရန် အကြံပြုသည် |
-| Stop / unload model | `foundry model unload <alias>` | (Not exposed – restart service / process) | Workshop flow အတွက် မလိုအပ်ပါ |
-| Retrieve token usage | (view output) | `resp.usage.total_tokens` | Backend သည် usage object ကို ပြန်ပေးပါက ရရှိသည် |
+| Task | CLI One-Liner | SDK (Python) Equivalent | Notes |
+|------|---------------|-------------------------|-------|
+| Run a model once (prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK သည် service & caching ကို auto bootstrap လုပ်သည် |
+| Download (cache) model | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # triggers download/load` | Manager သည် alias များအတွက်အကောင်းဆုံး variant ကိုရွေးချယ်သည် |
+| List catalog | `foundry model list` | `# manager ကို alias တစ်ခုစီအတွက်အသုံးပြုပါ သို့မဟုတ် known list ကို maintain လုပ်ပါ` | CLI သည် aggregate လုပ်သည်; SDK သည်လက်ရှိအခြေအနေတွင် per-alias instantiation |
+| List cached models | `foundry cache list` | `manager.list_cached_models()` | Manager init (alias တစ်ခု) ပြီးနောက် |
+| Enable GPU acceleration | `foundry config set compute.onnx.enable_gpu true` | `# CLI action; SDK သည် config ကိုအသုံးပြုထားသည်ဟုယူဆသည်` | Configuration သည် external side effect ဖြစ်သည် |
+| Get endpoint URL | (implicit) | `manager.endpoint` | OpenAI-compatible client ဖန်တီးရန်အသုံးပြုသည် |
+| Warm a model | `foundry model run <alias>` then first prompt | `chat_once(alias, messages=[...])` (utility) | Utilities သည် initial cold latency warmup ကို handle လုပ်သည် |
+| Measure latency | `python benchmark_oss_models.py` | `import benchmark_oss_models` (သို့မဟုတ် new exporter script) | Consistent metrics အတွက် script ကို prefer လုပ်ပါ |
+| Stop / unload model | `foundry model unload <alias>` | (Not exposed – service / process ကို restart လုပ်ပါ) | Workshop flow အတွက်မလိုအပ်ပါ |
+| Retrieve token usage | (view output) | `resp.usage.total_tokens` | Backend သည် usage object ကို return လုပ်ပါကပေးသည် |
 
 ## Benchmark Markdown Export
 
-`Workshop/scripts/export_benchmark_markdown.py` script ကို အသုံးပြု၍ (logic သည် `samples/session03/benchmark_oss_models.py` နှင့် တူသည်) အသစ်သော benchmark ကို run လုပ်ပြီး GitHub-friendly Markdown table နှင့် raw JSON ကို ထုတ်ပေးပါ။
+`Workshop/scripts/export_benchmark_markdown.py` script ကိုအသုံးပြု၍ (logic သည် `samples/session03/benchmark_oss_models.py` နှင့်တူသည်) GitHub-friendly Markdown table နှင့် raw JSON ကို emit လုပ်ပါ။
 
 ### နမူနာ
 
@@ -518,15 +543,15 @@ chmod +x .git/hooks/pre-commit
 python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
-ထုတ်လုပ်ထားသော ဖိုင်များ:
-| ဖိုင် | အကြောင်းအရာ |
-|------|---------------|
-| `benchmark_report.md` | Markdown table + အဓိပ္ပါယ်ဖော်ပြချက် |
-| `benchmark_report.json` | Raw metrics array (for diffing / trend tracking) |
+ဖန်တီးထားသောဖိုင်များ:
+| File | Contents |
+|------|----------|
+| `benchmark_report.md` | Markdown table + interpretation hints |
+| `benchmark_report.json` | Raw metrics array (diffing / trend tracking အတွက်) |
 
-Environment တွင် `BENCH_STREAM=1` ကို သတ်မှတ်ထားပါက, first-token latency ကို ထည့်သွင်းပါမည်။
+Environment တွင် `BENCH_STREAM=1` ကို set လုပ်၍ first-token latency ကိုထည့်သွင်းပါ (supported ဖြစ်ပါက)။
 
 ---
 
 **အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော ရင်းမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားယူမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာပိုင်အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွတ်များ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
