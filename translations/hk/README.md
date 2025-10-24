@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "cd9cb76aab17c30bfb19ef73060c5fb0",
-  "translation_date": "2025-10-11T10:23:03+00:00",
+  "original_hash": "8f958250b0b94976c721e6cbdc541581",
+  "translation_date": "2025-10-24T09:14:57+00:00",
   "source_file": "README.md",
   "language_code": "hk"
 }
 -->
-# EdgeAI 初學者指南
+# 初學者的邊緣人工智能課程
 
 ![課程封面圖片](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.hk.png)
 
@@ -26,7 +26,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **Fork 此倉庫**：點擊 [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Clone 此倉庫**：`git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**加入 Azure AI Foundry Discord，與專家及其他開發者交流**](https://discord.com/invite/ByRwuEEgH4)
+3. [**加入 Azure AI Foundry Discord，與專家和其他開發者交流**](https://discord.com/invite/ByRwuEEgH4)
 
 ### 🌐 多語言支持
 
@@ -38,73 +38,73 @@ CO_OP_TRANSLATOR_METADATA:
 
 **如果您希望支持其他翻譯語言，請參考 [此處](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 
-## 簡介
+## 課程介紹
 
-歡迎來到 **EdgeAI 初學者指南**——這是一個全面的旅程，帶您進入邊緣人工智能的變革性世界。本課程將強大的 AI 能力與邊緣設備上的實際部署相結合，幫助您直接在數據生成和決策需要的地方發揮 AI 的潛力。
+歡迎來到 **初學者的邊緣人工智能課程**——這是一個全面的學習旅程，帶您進入邊緣人工智能的變革世界。本課程旨在將強大的人工智能能力與實際的邊緣設備部署相結合，幫助您直接在數據生成和決策需要的地方發揮人工智能的潛力。
 
-### 您將掌握的內容
+### 您將掌握的技能
 
-本課程涵蓋從基礎概念到生產級實施的所有內容，包括：
-- **小型語言模型 (SLMs)**，專為邊緣部署優化
+本課程將帶您從基礎概念到生產就緒的實施，涵蓋以下內容：
+- **小型語言模型（SLMs）**，專為邊緣部署而優化
 - **硬件感知優化**，適用於多種平台
 - **實時推理**，具備隱私保護功能
-- **生產部署**策略，適用於企業應用
+- **生產部署**，適用於企業應用
 
-### 為什麼邊緣 AI 很重要
+### 為什麼邊緣人工智能重要
 
-邊緣 AI 代表了一種解決現代關鍵挑戰的範式轉變：
-- **隱私與安全**：在本地處理敏感數據，避免雲端暴露
+邊緣人工智能代表了一種解決現代關鍵挑戰的全新模式：
+- **隱私與安全**：在本地處理敏感數據，避免暴露於雲端
 - **實時性能**：消除網絡延遲，適用於時間敏感的應用
 - **成本效益**：降低帶寬和雲計算成本
-- **運營韌性**：在網絡中斷期間保持功能
-- **合規性**：滿足數據主權要求
+- **運行穩定性**：在網絡中斷期間仍能保持功能
+- **法規合規性**：滿足數據主權要求
 
-### 邊緣 AI
+### 邊緣人工智能
 
-邊緣 AI 是指在硬件上本地運行 AI 算法和語言模型，靠近數據生成的地方，而不依賴雲端資源進行推理。它能降低延遲、增強隱私並支持實時決策。
+邊緣人工智能是指在硬件上本地運行人工智能算法和語言模型，直接在數據生成的地方進行推理，而不依賴雲端資源。它能減少延遲、增強隱私並實現實時決策。
 
 ### 核心原則：
-- **設備端推理**：AI 模型在邊緣設備（手機、路由器、微控制器、工業 PC）上運行
-- **離線能力**：無需持續的互聯網連接即可運行
+- **設備端推理**：人工智能模型在邊緣設備（如手機、路由器、微控制器、工業PC）上運行
+- **離線功能**：無需持續的網絡連接即可運行
 - **低延遲**：即時響應，適合實時系統
-- **數據主權**：將敏感數據保留在本地，提高安全性和合規性
+- **數據主權**：保持敏感數據本地化，提高安全性和合規性
 
-### 小型語言模型 (SLMs)
+### 小型語言模型（SLMs）
 
-像 Phi-4、Mistral-7B 和 Gemma 這樣的 SLM 是大型 LLM 的優化版本——通過訓練或蒸餾實現：
+像 Phi-4、Mistral-7B 和 Gemma 這樣的 SLM 是經過優化的較大 LLM 的版本——通過訓練或蒸餾來實現：
 - **減少內存佔用**：有效利用有限的邊緣設備內存
 - **降低計算需求**：針對 CPU 和邊緣 GPU 性能進行優化
-- **更快的啟動時間**：快速初始化，適合響應式應用
+- **更快的啟動時間**：快速初始化以支持響應式應用
 
-它們在滿足以下限制的同時解鎖強大的 NLP 功能：
+它們在滿足以下限制的同時，解鎖了強大的自然語言處理能力：
 - **嵌入式系統**：物聯網設備和工業控制器
 - **移動設備**：具備離線功能的智能手機和平板電腦
 - **物聯網設備**：資源有限的傳感器和智能設備
-- **邊緣服務器**：資源有限的本地處理單元
+- **邊緣服務器**：具有有限 GPU 資源的本地處理單元
 - **個人電腦**：桌面和筆記本電腦的部署場景
 
 ## 課程模組與導航
 
 | 模組 | 主題 | 重點領域 | 主要內容 | 等級 | 時長 |
 |------|------|----------|----------|------|------|
-| [📖 00 ](./introduction.md) | [邊緣 AI 簡介](./introduction.md) | 基礎與背景 | 邊緣 AI 概述 • 行業應用 • SLM 簡介 • 學習目標 | 初學者 | 1-2 小時 |
-| [📚 01](../../Module01) | [邊緣 AI 基礎](./Module01/README.md) | 雲端與邊緣 AI 比較 | 邊緣 AI 基礎 • 真實案例研究 • 實施指南 • 邊緣部署 | 初學者 | 3-4 小時 |
+| [📖 00 ](./introduction.md) | [邊緣人工智能介紹](./introduction.md) | 基礎與背景 | 邊緣人工智能概述 • 行業應用 • SLM 介紹 • 學習目標 | 初學者 | 1-2 小時 |
+| [📚 01](../../Module01) | [邊緣人工智能基礎](./Module01/README.md) | 雲端與邊緣人工智能比較 | 邊緣人工智能基礎 • 實際案例研究 • 實施指南 • 邊緣部署 | 初學者 | 3-4 小時 |
 | [🧠 02](../../Module02) | [SLM 模型基礎](./Module02/README.md) | 模型家族與架構 | Phi 家族 • Qwen 家族 • Gemma 家族 • BitNET • μModel • Phi-Silica | 初學者 | 4-5 小時 |
 | [🚀 03](../../Module03) | [SLM 部署實踐](./Module03/README.md) | 本地與雲端部署 | 高級學習 • 本地環境 • 雲端部署 | 中級 | 4-5 小時 |
-| [⚙️ 04](../../Module04) | [模型優化工具包](./Module04/README.md) | 跨平台優化 | 簡介 • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • 工作流程綜合 | 中級 | 5-6 小時 |
-| [🔧 05](../../Module05) | [SLMOps 生產](./Module05/README.md) | 生產運營 | SLMOps 簡介 • 模型蒸餾 • 微調 • 生產部署 | 高級 | 5-6 小時 |
-| [🤖 06](../../Module06) | [AI 代理與功能調用](./Module06/README.md) | 代理框架與 MCP | 代理簡介 • 功能調用 • 模型上下文協議 | 高級 | 4-5 小時 |
-| [💻 07](../../Module07) | [平台實施](./Module07/README.md) | 跨平台示例 | AI 工具包 • Foundry Local • Windows 開發 | 高級 | 3-4 小時 |
-| [🏭 08](../../Module08) | [Foundry Local 工具包](./Module08/README.md) | 生產級示例 | 示例應用（詳情見下文） | 專家 | 8-10 小時 |
+| [⚙️ 04](../../Module04) | [模型優化工具包](./Module04/README.md) | 跨平台優化 | 介紹 • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • 工作流程綜合 | 中級 | 5-6 小時 |
+| [🔧 05](../../Module05) | [SLMOps 生產](./Module05/README.md) | 生產運營 | SLMOps 介紹 • 模型蒸餾 • 微調 • 生產部署 | 高級 | 5-6 小時 |
+| [🤖 06](../../Module06) | [人工智能代理與功能調用](./Module06/README.md) | 代理框架與 MCP | 代理介紹 • 功能調用 • 模型上下文協議 | 高級 | 4-5 小時 |
+| [💻 07](../../Module07) | [平台實施](./Module07/README.md) | 跨平台範例 | AI 工具包 • Foundry Local • Windows 開發 | 高級 | 3-4 小時 |
+| [🏭 08](../../Module08) | [Foundry Local 工具包](./Module08/README.md) | 生產就緒範例 | 範例應用（詳情見下文） | 專家 | 8-10 小時 |
 
-### 🏭 **模組 08：示例應用**
+### 🏭 **模組 08：範例應用**
 
 - [01: REST 聊天快速入門](./Module08/samples/01/README.md)
 - [02: OpenAI SDK 集成](./Module08/samples/02/README.md)
 - [03: 模型發現與基準測試](./Module08/samples/03/README.md)
 - [04: Chainlit RAG 應用](./Module08/samples/04/README.md)
-- [05: 多代理協作](./Module08/samples/05/README.md)
-- [06: 模型工具路由器](./Module08/samples/06/README.md)
+- [05: 多代理協調](./Module08/samples/05/README.md)
+- [06: 作為工具的模型路由器](./Module08/samples/06/README.md)
 - [07: 直接 API 客戶端](./Module08/samples/07/README.md)
 - [08: Windows 11 聊天應用](./Module08/samples/08/README.md)
 - [09: 高級多代理系統](./Module08/samples/09/README.md)
@@ -112,20 +112,20 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 🎓 **工作坊：實踐學習路徑**
 
-全面的實踐工作坊材料，包含生產級實施：
+全面的實踐工作坊材料，包含生產就緒的實施：
 
 - **[工作坊指南](./Workshop/Readme.md)** - 完整的學習目標、成果和資源導航
-- **Python 示例**（6 節課） - 更新最佳實踐、錯誤處理和全面文檔
-- **Jupyter 筆記本**（8 個互動式） - 分步教程，包含基準測試和性能監控
-- **課程指南** - 每節工作坊課程的詳細 Markdown 指南
+- **Python 範例**（6 場課程）- 更新最佳實踐、錯誤處理和全面文檔
+- **Jupyter 筆記本**（8 個互動式）- 步驟教學，包含基準測試和性能監控
+- **課程指南** - 每場工作坊課程的詳細 Markdown 指南
 - **驗證工具** - 用於驗證代碼質量和運行煙霧測試的腳本
 
 **您將構建的內容：**
-- 支持流式傳輸的本地 AI 聊天應用
-- 帶有質量評估的 RAG 管道（RAGAS）
+- 支持流媒體的本地 AI 聊天應用
+- 帶有質量評估（RAGAS）的 RAG 管道
 - 多模型基準測試和比較工具
-- 多代理協作系統
-- 基於任務選擇的智能模型路由
+- 多代理協調系統
+- 智能模型路由，基於任務選擇
 
 ### 📊 **學習路徑摘要**
 - **總時長**：36-45 小時
@@ -137,43 +137,43 @@ CO_OP_TRANSLATOR_METADATA:
 ## 您將構建的內容
 
 ### 🎯 核心能力
-- **邊緣 AI 架構**：設計本地優先的 AI 系統，並與雲端集成
-- **模型優化**：量化和壓縮模型以進行邊緣部署（提升 85% 的速度，減少 75% 的大小）
+- **邊緣人工智能架構**：設計本地優先的人工智能系統，並與雲端集成
+- **模型優化**：量化和壓縮模型以進行邊緣部署（提升速度 85%，減少大小 75%）
 - **多平台部署**：Windows、移動設備、嵌入式系統和雲邊緣混合系統
-- **生產運營**：監控、擴展及維護生產中的邊緣 AI
+- **生產運營**：監控、擴展及維護生產中的邊緣AI
 
 ### 🏗️ 實用項目
-- **Foundry 本地聊天應用**：Windows 11 原生應用，支持模型切換
-- **多代理系統**：協調器與專家代理，用於處理複雜工作流程  
-- **RAG 應用**：本地文檔處理，結合向量搜索
-- **模型路由器**：基於任務分析的智能模型選擇
-- **API 框架**：支持流式傳輸及健康監控的生產級客戶端
-- **跨平台工具**：LangChain/Semantic Kernel 集成模式
+- **Foundry本地聊天應用**：Windows 11原生應用，支持模型切換
+- **多代理系統**：協調器與專家代理，用於複雜工作流程
+- **RAG應用**：本地文件處理，結合向量搜索
+- **模型路由器**：根據任務分析智能選擇模型
+- **API框架**：具備流式傳輸及健康監控的生產級客戶端
+- **跨平台工具**：LangChain/Semantic Kernel整合模式
 
 ### 🏢 行業應用
 **製造業** • **醫療保健** • **自動駕駛車輛** • **智慧城市** • **移動應用**
 
 ## 快速入門
 
-**推薦學習路徑**（總計 20-30 小時）：
+**推薦學習路徑**（總計20-30小時）：
 
-0. **📖 介紹** ([Introduction.md](./introduction.md))：邊緣 AI 基礎 + 行業背景 + 學習框架
-1. **📚 基礎**（模塊 01-02）：邊緣 AI 概念 + SLM 模型家族
-2. **⚙️ 優化**（模塊 03-04）：部署 + 量化框架  
-3. **🚀 生產**（模塊 05-06）：SLMOps + AI 代理 + 函數調用
-4. **💻 實施**（模塊 07-08）：平台示例 + Foundry 本地工具包
+0. **📖 簡介** ([Introduction.md](./introduction.md))：邊緣AI基礎 + 行業背景 + 學習框架
+1. **📚 基礎**（模組01-02）：邊緣AI概念 + SLM模型家族
+2. **⚙️ 優化**（模組03-04）：部署 + 量化框架
+3. **🚀 生產**（模組05-06）：SLMOps + AI代理 + 函數調用
+4. **💻 實施**（模組07-08）：平台範例 + Foundry本地工具包
 
-每個模塊都包含理論、實操練習及生產級代碼示例。
+每個模組包含理論、實操練習及生產級代碼範例。
 
 ## 職業影響
 
-**技術職位**：邊緣 AI 解決方案架構師 • 機器學習工程師（邊緣） • IoT AI 開發者 • 移動 AI 開發者
+**技術職位**：邊緣AI解決方案架構師 • 機器學習工程師（邊緣） • IoT AI開發者 • 移動AI開發者
 
-**行業領域**：製造業 4.0 • 醫療技術 • 自動化系統 • 金融科技 • 消費電子
+**行業領域**：製造業4.0 • 醫療技術 • 自動化系統 • 金融科技 • 消費電子
 
-**作品集項目**：多代理系統 • 生產級 RAG 應用 • 跨平台部署 • 性能優化
+**作品集項目**：多代理系統 • 生產級RAG應用 • 跨平台部署 • 性能優化
 
-## 資源庫結構
+## 資源結構
 
 ```
 edgeai-for-beginners/
@@ -192,40 +192,56 @@ edgeai-for-beginners/
 
 ✅ **漸進式學習**：理論 → 實踐 → 生產部署  
 ✅ **真實案例研究**：Microsoft、日本航空、企業實施案例  
-✅ **實操示例**：50+ 範例，10 個全面的 Foundry 本地演示  
-✅ **性能重點**：提升速度 85%，減少大小 75%  
+✅ **實操範例**：50+範例，10個全面的Foundry本地演示  
+✅ **性能專注**：提升速度85%，減少大小75%  
 ✅ **多平台支持**：Windows、移動端、嵌入式、雲邊緣混合  
-✅ **生產就緒**：監控、擴展、安全性及合規框架
+✅ **生產準備**：監控、擴展、安全性及合規框架
 
-📖 **[學習指南](STUDY_GUIDE.md)**：結構化的 20 小時學習路徑，包含時間分配指導及自我評估工具。
+📖 **[學習指南](STUDY_GUIDE.md)**：結構化的20小時學習路徑，包含時間分配指導及自我評估工具。
 
 ---
 
-**邊緣 AI 代表了 AI 部署的未來**：本地優先、隱私保護、高效。掌握這些技能，打造下一代智能應用。
+**邊緣AI代表了AI部署的未來**：本地優先、隱私保護、高效。掌握這些技能，打造下一代智能應用。
 
 ## 其他課程
 
 我們的團隊還提供其他課程！查看以下內容：
 
-- [MCP 初學者課程](https://github.com/microsoft/mcp-for-beginners)
-- [AI 代理初學者課程](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [使用 .NET 的生成式 AI 初學者課程](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-- [使用 JavaScript 的生成式 AI 初學者課程](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
-- [生成式 AI 初學者課程](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [機器學習初學者課程](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-- [數據科學初學者課程](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI 初學者課程](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [網絡安全初學者課程](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
-- [Web 開發初學者課程](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [IoT 初學者課程](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [XR 開發初學者課程](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [掌握 GitHub Copilot 用於 AI 配對編程](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [掌握 GitHub Copilot 用於 C#/.NET 開發者](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [選擇你的 Copilot 冒險](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+### Azure / Edge / MCP / Agents
+[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+
+---
+
+### 生成式AI系列
+[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+
+---
+
+### 核心學習
+[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+
+---
+
+### Copilot系列
+[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 ## 獲取幫助
 
-如果您遇到困難或有關於構建 AI 應用的問題，請加入：
+如果您遇到困難或對構建AI應用有任何疑問，請加入：
 
 [![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
@@ -236,4 +252,4 @@ edgeai-for-beginners/
 ---
 
 **免責聲明**：  
-本文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。
+此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "cd9cb76aab17c30bfb19ef73060c5fb0",
-  "translation_date": "2025-10-11T10:15:11+00:00",
+  "original_hash": "8f958250b0b94976c721e6cbdc541581",
+  "translation_date": "2025-10-24T09:03:51+00:00",
   "source_file": "README.md",
   "language_code": "en"
 }
@@ -22,11 +22,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-Follow these steps to start using these resources:
+Follow these steps to get started using these resources:
 
 1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)  
 2. **Clone the Repository**: `git clone https://github.com/microsoft/edgeai-for-beginners.git`  
-3. [**Join The Azure AI Foundry Discord and connect with experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)  
+3. [**Join The Azure AI Foundry Discord and meet experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)  
 
 ### 🌐 Multi-Language Support
 
@@ -34,52 +34,52 @@ Follow these steps to start using these resources:
 
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
-**If you'd like additional translations, supported languages are listed [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md).**
+**If you wish to have additional translations languages supported are listed [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 
 ## Introduction
 
-Welcome to **EdgeAI for Beginners** – your complete guide to exploring the transformative world of Edge Artificial Intelligence. This course connects powerful AI capabilities with practical deployment on edge devices, enabling you to leverage AI directly where data is generated and decisions are made.
+Welcome to **EdgeAI for Beginners** – your complete guide to exploring the revolutionary field of Edge Artificial Intelligence. This course connects the power of AI with practical applications on edge devices, enabling you to utilize AI directly where data is created and decisions are made.
 
 ### What You'll Learn
 
-This course takes you from foundational concepts to production-ready implementations, covering:
-- **Small Language Models (SLMs)** optimized for edge deployment  
-- **Hardware-aware optimization** across various platforms  
-- **Real-time inference** with privacy-preserving features  
-- **Production deployment** strategies for enterprise applications  
+This course will guide you from the basics to advanced implementations, including:
+- **Small Language Models (SLMs)** tailored for edge deployment  
+- **Hardware-aware optimization** for various platforms  
+- **Real-time inference** with enhanced privacy features  
+- **Strategies for production deployment** in enterprise environments  
 
-### Why EdgeAI Is Important
+### Why EdgeAI is Important
 
-Edge AI is a game-changer that addresses key modern challenges:
-- **Privacy & Security**: Process sensitive data locally without exposing it to the cloud  
-- **Real-time Performance**: Avoid network latency for time-critical applications  
+Edge AI is a game-changer that addresses key challenges of today:  
+- **Privacy & Security**: Process sensitive data locally without relying on the cloud  
+- **Real-time Performance**: Avoid network delays for time-sensitive applications  
 - **Cost Efficiency**: Save on bandwidth and cloud computing costs  
-- **Resilient Operations**: Ensure functionality during network outages  
-- **Regulatory Compliance**: Meet data sovereignty requirements  
+- **Resilient Operations**: Ensure functionality even during network disruptions  
+- **Regulatory Compliance**: Adhere to data sovereignty regulations  
 
 ### Edge AI
 
-Edge AI involves running AI algorithms and language models locally on hardware, close to where data is generated, without relying on cloud resources for inference. This approach reduces latency, enhances privacy, and enables real-time decision-making.
+Edge AI involves running AI algorithms and language models directly on hardware near the data source, eliminating the need for cloud-based inference. This approach reduces latency, improves privacy, and enables instant decision-making.
 
 ### Core Principles:
-- **On-device inference**: AI models operate on edge devices (phones, routers, microcontrollers, industrial PCs)  
-- **Offline capability**: Functions without constant internet connectivity  
-- **Low latency**: Provides immediate responses for real-time systems  
-- **Data sovereignty**: Keeps sensitive data local, improving security and compliance  
+- **On-device inference**: AI models operate on edge devices like phones, routers, microcontrollers, and industrial PCs  
+- **Offline capability**: Functions without constant internet access  
+- **Low latency**: Provides immediate responses for real-time applications  
+- **Data sovereignty**: Keeps sensitive data local, enhancing security and compliance  
 
 ### Small Language Models (SLMs)
 
-SLMs like Phi-4, Mistral-7B, and Gemma are optimized versions of larger LLMs—trained or distilled for:
-- **Reduced memory footprint**: Efficient use of limited edge device memory  
-- **Lower compute demand**: Optimized for CPU and edge GPU performance  
-- **Faster startup times**: Quick initialization for responsive applications  
+SLMs such as Phi-4, Mistral-7B, and Gemma are streamlined versions of larger LLMs, designed for:  
+- **Reduced memory usage**: Efficiently utilize limited memory on edge devices  
+- **Lower computational requirements**: Optimized for CPUs and edge GPUs  
+- **Faster initialization**: Quick startup for responsive applications  
 
-These models enable powerful NLP capabilities while meeting the constraints of:
+These models enable powerful NLP functionalities while meeting the constraints of:  
 - **Embedded systems**: IoT devices and industrial controllers  
 - **Mobile devices**: Smartphones and tablets with offline capabilities  
 - **IoT Devices**: Sensors and smart devices with limited resources  
-- **Edge servers**: Local processing units with limited GPU resources  
-- **Personal Computers**: Desktop and laptop deployment scenarios  
+- **Edge servers**: Local processing units with restricted GPU resources  
+- **Personal Computers**: Deployment on desktops and laptops  
 
 ## Course Modules & Navigation
 
@@ -155,7 +155,7 @@ Comprehensive hands-on workshop materials with production-ready implementations:
 
 **Recommended Learning Path** (20-30 hours total):
 
-0. **📖 Introduction** ([Introduction.md](./introduction.md)): EdgeAI fundamentals + industry context + learning framework
+0. **📖 Introduction** ([Introduction.md](./introduction.md)): EdgeAI basics + industry context + learning framework
 1. **📚 Foundation** (Modules 01-02): EdgeAI concepts + SLM model families
 2. **⚙️ Optimization** (Modules 03-04): Deployment + quantization frameworks  
 3. **🚀 Production** (Modules 05-06): SLMOps + AI agents + function calling
@@ -205,21 +205,39 @@ edgeai-for-beginners/
 
 Our team produces other courses! Check out:
 
-- [MCP for Beginners](https://github.com/microsoft/mcp-for-beginners)
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
-- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
-- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+<!-- CO-OP TRANSLATOR OTHER COURSES START -->
+### Azure / Edge / MCP / Agents
+[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+
+---
+ 
+### Generative AI Series
+[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+
+---
+ 
+### Core Learning
+[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+
+---
+ 
+### Copilot Series
+[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+<!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
 ## Getting Help
 
@@ -234,4 +252,4 @@ If you have product feedback or errors while building visit:
 ---
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
