@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "cd9cb76aab17c30bfb19ef73060c5fb0",
-  "translation_date": "2025-10-11T10:44:37+00:00",
+  "original_hash": "8f958250b0b94976c721e6cbdc541581",
+  "translation_date": "2025-10-24T09:49:23+00:00",
   "source_file": "README.md",
   "language_code": "tl"
 }
@@ -25,12 +25,12 @@ CO_OP_TRANSLATOR_METADATA:
 Sundin ang mga hakbang na ito upang magsimula sa paggamit ng mga resources na ito:
 
 1. **I-fork ang Repository**: I-click [![Mga fork sa GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **I-clone ang Repository**: `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+2. **I-clone ang Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Sumali sa Azure AI Foundry Discord at makipag-ugnayan sa mga eksperto at kapwa developer**](https://discord.com/invite/ByRwuEEgH4)
 
 ### 🌐 Suporta sa Multi-Language
 
-#### Sinusuportahan sa pamamagitan ng GitHub Action (Automated at Laging Napapanahon)
+#### Sinusuportahan sa pamamagitan ng GitHub Action (Automated & Laging Napapanahon)
 
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](./README.md) | [Tamil](../ta/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
@@ -38,31 +38,31 @@ Sundin ang mga hakbang na ito upang magsimula sa paggamit ng mga resources na it
 
 ## Panimula
 
-Maligayang pagdating sa **EdgeAI para sa mga Baguhan** – ang iyong komprehensibong paglalakbay sa makabagong mundo ng Edge Artificial Intelligence. Ang kursong ito ay nag-uugnay sa makapangyarihang kakayahan ng AI at praktikal na deployment sa mga edge device, na nagbibigay-daan sa iyo upang magamit ang potensyal ng AI direkta kung saan nalilikha ang data at kinakailangan ang mga desisyon.
+Maligayang pagdating sa **EdgeAI para sa mga Baguhan** – ang iyong komprehensibong paglalakbay sa makabagong mundo ng Edge Artificial Intelligence. Ang kursong ito ay nag-uugnay sa makapangyarihang kakayahan ng AI at praktikal na deployment sa mga edge device, na nagbibigay-daan sa iyo upang magamit ang potensyal ng AI kung saan mismo nagmumula ang data at kinakailangan ang mga desisyon.
 
-### Mga Matututunan Mo
+### Ano ang Iyong Matututunan
 
 Ang kursong ito ay magdadala sa iyo mula sa mga pangunahing konsepto hanggang sa mga handa nang ipatupad na solusyon, kabilang ang:
 - **Small Language Models (SLMs)** na na-optimize para sa edge deployment
 - **Hardware-aware optimization** sa iba't ibang platform
-- **Real-time inference** na may kakayahang magpanatili ng privacy
-- **Mga estratehiya sa production deployment** para sa mga aplikasyon ng enterprise
+- **Real-time inference** na may kakayahang magpreserba ng privacy
+- **Production deployment** na mga estratehiya para sa mga aplikasyon ng negosyo
 
 ### Bakit Mahalaga ang EdgeAI
 
 Ang Edge AI ay nagdadala ng pagbabago na tumutugon sa mga kritikal na hamon sa modernong panahon:
-- **Privacy at Seguridad**: Iproseso ang sensitibong data nang lokal nang hindi kinakailangang ipadala sa cloud
+- **Privacy at Seguridad**: Iproseso ang sensitibong data nang lokal nang hindi inilalantad sa cloud
 - **Real-time na Performance**: Tanggalin ang network latency para sa mga time-critical na aplikasyon
-- **Pagiging Makatipid**: Bawasan ang bandwidth at gastos sa cloud computing
-- **Resilient na Operasyon**: Panatilihin ang functionality kahit may network outages
-- **Pagsunod sa Regulasyon**: Tugunan ang mga kinakailangan sa data sovereignty
+- **Pagiging Mura**: Bawasan ang bandwidth at gastos sa cloud computing
+- **Resilient Operations**: Panatilihin ang functionality kahit may network outages
+- **Regulatory Compliance**: Tugunan ang mga kinakailangan sa data sovereignty
 
 ### Edge AI
 
-Ang Edge AI ay tumutukoy sa pagpapatakbo ng mga AI algorithm at language models nang lokal sa hardware, malapit sa kung saan nalilikha ang data, nang hindi umaasa sa cloud resources para sa inference. Binabawasan nito ang latency, pinapahusay ang privacy, at nagbibigay-daan sa real-time na paggawa ng desisyon.
+Ang Edge AI ay tumutukoy sa pagpapatakbo ng mga AI algorithm at language models nang lokal sa hardware, malapit sa kung saan nagmumula ang data, nang hindi umaasa sa cloud resources para sa inference. Binabawasan nito ang latency, pinapahusay ang privacy, at nagbibigay-daan sa real-time na paggawa ng desisyon.
 
 ### Mga Pangunahing Prinsipyo:
-- **On-device inference**: Ang mga AI model ay tumatakbo sa mga edge device (mga telepono, router, microcontroller, industrial PC)
+- **On-device inference**: Ang mga AI model ay tumatakbo sa mga edge device (mga telepono, router, microcontroller, industrial PCs)
 - **Offline capability**: Gumagana nang walang tuloy-tuloy na koneksyon sa internet
 - **Mababang latency**: Agarang tugon na angkop para sa mga real-time na sistema
 - **Data sovereignty**: Pinapanatili ang sensitibong data nang lokal, pinapabuti ang seguridad at pagsunod sa regulasyon
@@ -74,8 +74,8 @@ Ang mga SLM tulad ng Phi-4, Mistral-7B, at Gemma ay mga na-optimize na bersyon n
 - **Mas mababang compute demand**: Na-optimize para sa CPU at edge GPU performance
 - **Mas mabilis na startup times**: Mabilis na initialization para sa mga responsive na aplikasyon
 
-Binubuksan nila ang makapangyarihang kakayahan ng NLP habang natutugunan ang mga limitasyon ng:
-- **Embedded systems**: Mga IoT device at industrial controller
+Binubuksan nila ang makapangyarihang kakayahan ng NLP habang tinutugunan ang mga limitasyon ng:
+- **Embedded systems**: Mga IoT device at industrial controllers
 - **Mobile devices**: Mga smartphone at tablet na may offline capabilities
 - **IoT Devices**: Mga sensor at smart device na may limitadong resources
 - **Edge servers**: Mga lokal na processing unit na may limitadong GPU resources
@@ -87,13 +87,13 @@ Binubuksan nila ang makapangyarihang kakayahan ng NLP habang natutugunan ang mga
 |--------|-------|----------------|-----------------------|-------|-------|
 | [📖 00 ](./introduction.md) | [Panimula sa EdgeAI](./introduction.md) | Pundasyon at Konteksto | EdgeAI Overview • Mga Aplikasyon sa Industriya • Panimula sa SLM • Mga Layunin sa Pag-aaral | Baguhan | 1-2 oras |
 | [📚 01](../../Module01) | [Mga Pangunahing Kaalaman sa EdgeAI](./Module01/README.md) | Paghahambing ng Cloud vs Edge AI | Mga Pangunahing Kaalaman sa EdgeAI • Mga Real World Case Studies • Gabay sa Implementasyon • Edge Deployment | Baguhan | 3-4 oras |
-| [🧠 02](../../Module02) | [Mga Pundasyon ng SLM Model](./Module02/README.md) | Mga pamilya ng model at arkitektura | Phi Family • Qwen Family • Gemma Family • BitNET • μModel • Phi-Silica | Baguhan | 4-5 oras |
+| [🧠 02](../../Module02) | [Mga Pundasyon ng SLM Model](./Module02/README.md) | Mga pamilya ng modelo at arkitektura | Phi Family • Qwen Family • Gemma Family • BitNET • μModel • Phi-Silica | Baguhan | 4-5 oras |
 | [🚀 03](../../Module03) | [Praktika sa SLM Deployment](./Module03/README.md) | Lokal at cloud deployment | Advanced Learning • Lokal na Kapaligiran • Cloud Deployment | Intermediate | 4-5 oras |
 | [⚙️ 04](../../Module04) | [Toolkit sa Model Optimization](./Module04/README.md) | Cross-platform optimization | Panimula • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Workflow Synthesis | Intermediate | 5-6 oras |
 | [🔧 05](../../Module05) | [SLMOps Production](./Module05/README.md) | Mga operasyon sa produksyon | Panimula sa SLMOps • Model Distillation • Fine-tuning • Production Deployment | Advanced | 5-6 oras |
 | [🤖 06](../../Module06) | [AI Agents at Function Calling](./Module06/README.md) | Mga framework ng agent at MCP | Panimula sa Agent • Function Calling • Model Context Protocol | Advanced | 4-5 oras |
 | [💻 07](../../Module07) | [Implementasyon ng Platform](./Module07/README.md) | Mga halimbawa ng cross-platform | AI Toolkit • Foundry Local • Windows Development | Advanced | 3-4 oras |
-| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Mga halimbawa na handa para sa produksyon | Mga sample na aplikasyon (tingnan ang mga detalye sa ibaba) | Eksperto | 8-10 oras |
+| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Mga halimbawa na handa sa produksyon | Mga sample na aplikasyon (tingnan ang mga detalye sa ibaba) | Eksperto | 8-10 oras |
 
 ### 🏭 **Module 08: Mga Sample na Aplikasyon**
 
@@ -110,20 +110,20 @@ Binubuksan nila ang makapangyarihang kakayahan ng NLP habang natutugunan ang mga
 
 ### 🎓 **Workshop: Hands-On Learning Path**
 
-Komprehensibong materyales para sa hands-on workshop na may mga implementasyong handa para sa produksyon:
+Komprehensibong mga materyales para sa hands-on workshop na may mga implementasyong handa sa produksyon:
 
-- **[Workshop Guide](./Workshop/Readme.md)** - Kumpletong mga layunin sa pag-aaral, mga resulta, at navigation ng resources
-- **Python Samples** (6 sessions) - Na-update gamit ang best practices, error handling, at komprehensibong dokumentasyon
+- **[Gabay sa Workshop](./Workshop/Readme.md)** - Kumpletong mga layunin sa pag-aaral, mga resulta, at navigation ng resources
+- **Python Samples** (6 na sesyon) - Na-update gamit ang pinakamahusay na mga kasanayan, error handling, at komprehensibong dokumentasyon
 - **Jupyter Notebooks** (8 interactive) - Step-by-step na mga tutorial na may benchmarks at performance monitoring
-- **Session Guides** - Detalyadong markdown guides para sa bawat session ng workshop
-- **Validation Tools** - Mga script para i-verify ang kalidad ng code at magsagawa ng smoke tests
+- **Mga Gabay sa Sesyon** - Detalyadong markdown na mga gabay para sa bawat sesyon ng workshop
+- **Mga Validation Tools** - Mga script upang i-verify ang kalidad ng code at magpatakbo ng smoke tests
 
 **Ano ang Iyong Itatayo:**
 - Lokal na AI chat applications na may streaming support
 - RAG pipelines na may quality evaluation (RAGAS)
 - Mga tool para sa benchmarking at paghahambing ng multi-model
 - Mga sistema ng multi-agent orchestration
-- Intelligent model routing na may task-based selection
+- Matalinong model routing na may task-based selection
 
 ### 📊 **Buod ng Learning Path**
 - **Kabuuang Tagal**: 36-45 oras
@@ -136,38 +136,38 @@ Komprehensibong materyales para sa hands-on workshop na may mga implementasyong 
 
 ### 🎯 Mga Pangunahing Kakayahan
 - **Arkitektura ng Edge AI**: Magdisenyo ng mga lokal-first na AI system na may cloud integration
-- **Model Optimization**: I-quantize at i-compress ang mga model para sa edge deployment (85% speed boost, 75% size reduction)
+- **Model Optimization**: I-quantize at i-compress ang mga modelo para sa edge deployment (85% speed boost, 75% size reduction)
 - **Multi-Platform Deployment**: Windows, mobile, embedded, at cloud-edge hybrid systems
-- **Mga Operasyon sa Produksyon**: Pagmomonitor, pag-scale, at pagpapanatili ng edge AI sa produksyon
+- **Mga Operasyon sa Produksyon**: Pagsubaybay, pag-scale, at pagpapanatili ng edge AI sa produksyon
 
 ### 🏗️ Praktikal na Mga Proyekto
 - **Foundry Local Chat Apps**: Windows 11 native application na may kakayahang magpalit ng modelo
-- **Multi-Agent Systems**: Coordinator na may mga espesyalistang ahente para sa masalimuot na workflows  
+- **Multi-Agent Systems**: Coordinator na may mga espesyalistang ahente para sa masalimuot na mga workflow  
 - **RAG Applications**: Lokal na pagproseso ng dokumento gamit ang vector search
 - **Model Routers**: Matalinong pagpili sa pagitan ng mga modelo batay sa pagsusuri ng gawain
 - **API Frameworks**: Mga kliyenteng handa para sa produksyon na may streaming at health monitoring
 - **Cross-Platform Tools**: Mga pattern ng integrasyon ng LangChain/Semantic Kernel
 
 ### 🏢 Mga Aplikasyon sa Industriya
-**Paggawa** • **Healthcare** • **Autonomous Vehicles** • **Smart Cities** • **Mobile Apps**
+**Paggawa** • **Kalusugan** • **Autonomous na Sasakyan** • **Smart Cities** • **Mobile Apps**
 
 ## Mabilisang Simula
 
-**Inirerekomendang Landas ng Pag-aaral** (20-30 oras kabuuan):
+**Inirerekomendang Landas ng Pag-aaral** (Kabuuang 20-30 oras):
 
-0. **📖 Panimula** ([Introduction.md](./introduction.md)): Pundasyon ng EdgeAI + konteksto ng industriya + balangkas ng pag-aaral
+0. **📖 Panimula** ([Introduction.md](./introduction.md)): EdgeAI na pundasyon + konteksto ng industriya + balangkas ng pag-aaral
 1. **📚 Pundasyon** (Modules 01-02): Mga konsepto ng EdgeAI + mga pamilya ng modelo ng SLM
-2. **⚙️ Pag-optimize** (Modules 03-04): Deployment + mga balangkas ng quantization  
-3. **🚀 Produksyon** (Modules 05-06): SLMOps + mga AI agent + pagtawag ng function
-4. **💻 Implementasyon** (Modules 07-08): Mga sample ng platform + toolkit ng Foundry Local
+2. **⚙️ Pag-optimize** (Modules 03-04): Deployment + mga framework ng quantization  
+3. **🚀 Produksyon** (Modules 05-06): SLMOps + AI agents + function calling
+4. **💻 Implementasyon** (Modules 07-08): Mga sample ng platform + Foundry Local toolkit
 
-Ang bawat module ay may kasamang teorya, mga praktikal na ehersisyo, at mga sample ng code na handa para sa produksyon.
+Ang bawat module ay may kasamang teorya, praktikal na mga ehersisyo, at mga sample ng code na handa para sa produksyon.
 
 ## Epekto sa Karera
 
 **Mga Teknikal na Posisyon**: EdgeAI Solutions Architect • ML Engineer (Edge) • IoT AI Developer • Mobile AI Developer
 
-**Mga Sektor ng Industriya**: Manufacturing 4.0 • Healthcare Tech • Autonomous Systems • FinTech • Consumer Electronics
+**Mga Sektor ng Industriya**: Manufacturing 4.0 • Teknolohiya sa Kalusugan • Autonomous Systems • FinTech • Consumer Electronics
 
 **Mga Proyekto sa Portfolio**: Multi-agent systems • Mga RAG app para sa produksyon • Cross-platform deployment • Pag-optimize ng performance
 
@@ -188,38 +188,54 @@ edgeai-for-beginners/
 
 ## Mga Highlight ng Kurso
 
-✅ **Progresibong Pag-aaral**: Teorya → Praktika → Deployment sa produksyon  
+✅ **Progressive Learning**: Teorya → Praktika → Deployment sa produksyon  
 ✅ **Mga Tunay na Kaso**: Microsoft, Japan Airlines, mga implementasyon sa enterprise  
 ✅ **Mga Praktikal na Sample**: 50+ na halimbawa, 10 komprehensibong demo ng Foundry Local  
-✅ **Pokús sa Performance**: 85% na pagpapabilis, 75% na pagbabawas ng laki  
+✅ **Pagtuon sa Performance**: 85% na pagpapabuti sa bilis, 75% na pagbawas sa laki  
 ✅ **Multi-Platform**: Windows, mobile, embedded, cloud-edge hybrid  
-✅ **Handa para sa Produksyon**: Pagmomonitor, pag-scale, seguridad, mga balangkas ng pagsunod
+✅ **Handa para sa Produksyon**: Pagsubaybay, pag-scale, seguridad, mga framework ng pagsunod
 
-📖 **[Available ang Gabay sa Pag-aaral](STUDY_GUIDE.md)**: Nakabalangkas na 20-oras na landas ng pag-aaral na may gabay sa alokasyon ng oras at mga tool para sa self-assessment.
+📖 **[Available ang Gabay sa Pag-aaral](STUDY_GUIDE.md)**: Nakabalangkas na 20-oras na landas ng pag-aaral na may gabay sa alokasyon ng oras at mga tool sa self-assessment.
 
 ---
 
-**Ang EdgeAI ang kinabukasan ng AI deployment**: lokal muna, pinapanatili ang privacy, at mahusay. Masterin ang mga kasanayang ito upang makabuo ng susunod na henerasyon ng mga intelligent na aplikasyon.
+**Ang EdgeAI ang kinabukasan ng pag-deploy ng AI**: lokal muna, pinapanatili ang privacy, at mahusay. Masterin ang mga kasanayang ito upang makabuo ng susunod na henerasyon ng mga intelligent na aplikasyon.
 
 ## Iba Pang Mga Kurso
 
 Ang aming koponan ay gumagawa ng iba pang mga kurso! Tingnan:
 
-- [MCP para sa Mga Baguhan](https://github.com/microsoft/mcp-for-beginners)
-- [AI Agents Para sa Mga Baguhan](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Generative AI para sa Mga Baguhan gamit ang .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-- [Generative AI para sa Mga Baguhan gamit ang JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
-- [Generative AI para sa Mga Baguhan](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [ML para sa Mga Baguhan](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-- [Data Science para sa Mga Baguhan](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI para sa Mga Baguhan](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [Cybersecurity para sa Mga Baguhan](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
-- [Web Dev para sa Mga Baguhan](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [IoT para sa Mga Baguhan](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [XR Development para sa Mga Baguhan](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot para sa AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot para sa C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+### Azure / Edge / MCP / Agents
+[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+
+---
+
+### Generative AI Series
+[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+
+---
+
+### Core Learning
+[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+
+---
+
+### Copilot Series
+[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 ## Pagkuha ng Tulong
 
@@ -227,11 +243,11 @@ Kung ikaw ay nahihirapan o may mga tanong tungkol sa paggawa ng AI apps, sumali 
 
 [![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
-Kung mayroon kang feedback sa produkto o mga error habang gumagawa, bisitahin:
+Kung may feedback sa produkto o mga error habang gumagawa, bisitahin:
 
 [![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, pakitandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na mapagkakatiwalaang pinagmulan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.

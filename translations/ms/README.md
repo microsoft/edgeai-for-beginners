@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "cd9cb76aab17c30bfb19ef73060c5fb0",
-  "translation_date": "2025-10-11T10:43:47+00:00",
+  "original_hash": "8f958250b0b94976c721e6cbdc541581",
+  "translation_date": "2025-10-24T09:48:15+00:00",
   "source_file": "README.md",
   "language_code": "ms"
 }
@@ -32,41 +32,39 @@ Ikuti langkah-langkah ini untuk mula menggunakan sumber ini:
 
 #### Disokong melalui GitHub Action (Automatik & Sentiasa Terkini)
 
-<!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
 [Arab](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgaria](../bg/README.md) | [Burma (Myanmar)](../my/README.md) | [Cina (Ringkas)](../zh/README.md) | [Cina (Tradisional, Hong Kong)](../hk/README.md) | [Cina (Tradisional, Macau)](../mo/README.md) | [Cina (Tradisional, Taiwan)](../tw/README.md) | [Croatia](../hr/README.md) | [Czech](../cs/README.md) | [Denmark](../da/README.md) | [Belanda](../nl/README.md) | [Estonia](../et/README.md) | [Finland](../fi/README.md) | [Perancis](../fr/README.md) | [Jerman](../de/README.md) | [Greek](../el/README.md) | [Ibrani](../he/README.md) | [Hindi](../hi/README.md) | [Hungary](../hu/README.md) | [Indonesia](../id/README.md) | [Itali](../it/README.md) | [Jepun](../ja/README.md) | [Korea](../ko/README.md) | [Lithuania](../lt/README.md) | [Melayu](./README.md) | [Marathi](../mr/README.md) | [Nepal](../ne/README.md) | [Norway](../no/README.md) | [Parsi (Farsi)](../fa/README.md) | [Poland](../pl/README.md) | [Portugis (Brazil)](../br/README.md) | [Portugis (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romania](../ro/README.md) | [Rusia](../ru/README.md) | [Serbia (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenia](../sl/README.md) | [Sepanyol](../es/README.md) | [Swahili](../sw/README.md) | [Sweden](../sv/README.md) | [Tagalog (Filipina)](../tl/README.md) | [Tamil](../ta/README.md) | [Thai](../th/README.md) | [Turki](../tr/README.md) | [Ukraine](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnam](../vi/README.md)
-<!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Jika anda ingin menambah sokongan bahasa terjemahan, senarai bahasa yang disokong boleh didapati [di sini](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Jika anda ingin menambah sokongan terjemahan bahasa tambahan, senarai bahasa yang disokong boleh didapati [di sini](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 
 ## Pengenalan
 
-Selamat datang ke **EdgeAI untuk Pemula** – perjalanan komprehensif anda ke dunia transformasi Kecerdasan Buatan Edge. Kursus ini merapatkan jurang antara keupayaan AI yang hebat dan penerapan praktikal di peranti edge, membolehkan anda memanfaatkan potensi AI secara langsung di tempat data dihasilkan dan keputusan perlu dibuat.
+Selamat datang ke **EdgeAI untuk Pemula** – perjalanan komprehensif anda ke dunia transformasi Kecerdasan Buatan Edge. Kursus ini merapatkan jurang antara keupayaan AI yang hebat dan pelaksanaan praktikal di peranti edge, membolehkan anda memanfaatkan potensi AI secara langsung di tempat data dihasilkan dan keputusan perlu dibuat.
 
 ### Apa yang Akan Anda Kuasai
 
-Kursus ini membawa anda dari konsep asas hingga pelaksanaan sedia pengeluaran, meliputi:
-- **Model Bahasa Kecil (SLM)** yang dioptimumkan untuk penerapan edge
+Kursus ini membawa anda dari konsep asas ke pelaksanaan sedia pengeluaran, meliputi:
+- **Model Bahasa Kecil (SLM)** yang dioptimumkan untuk pelaksanaan di edge
 - **Pengoptimuman berasaskan perkakasan** di pelbagai platform
 - **Inferens masa nyata** dengan keupayaan melindungi privasi
-- **Strategi penerapan pengeluaran** untuk aplikasi perusahaan
+- **Strategi pelaksanaan pengeluaran** untuk aplikasi perusahaan
 
-### Kenapa EdgeAI Penting
+### Mengapa EdgeAI Penting
 
 Edge AI mewakili perubahan paradigma yang menangani cabaran moden yang kritikal:
 - **Privasi & Keselamatan**: Memproses data sensitif secara tempatan tanpa pendedahan kepada awan
-- **Prestasi Masa Nyata**: Menghapuskan latensi rangkaian untuk aplikasi yang kritikal masa
+- **Prestasi Masa Nyata**: Menghapuskan kelewatan rangkaian untuk aplikasi yang kritikal masa
 - **Kecekapan Kos**: Mengurangkan penggunaan jalur lebar dan perbelanjaan pengkomputeran awan
 - **Operasi Tahan Lasak**: Mengekalkan fungsi semasa gangguan rangkaian
 - **Pematuhan Peraturan**: Memenuhi keperluan kedaulatan data
 
 ### Edge AI
 
-Edge AI merujuk kepada menjalankan algoritma AI dan model bahasa secara tempatan pada perkakasan, dekat dengan tempat data dihasilkan tanpa bergantung kepada sumber awan untuk inferens. Ia mengurangkan latensi, meningkatkan privasi, dan membolehkan pembuatan keputusan masa nyata.
+Edge AI merujuk kepada pelaksanaan algoritma AI dan model bahasa secara tempatan pada perkakasan, berhampiran dengan tempat data dihasilkan tanpa bergantung kepada sumber awan untuk inferens. Ia mengurangkan kelewatan, meningkatkan privasi, dan membolehkan pembuatan keputusan masa nyata.
 
-### Prinsip Utama:
+### Prinsip Asas:
 - **Inferens pada peranti**: Model AI dijalankan pada peranti edge (telefon, router, mikrokontroler, PC industri)
 - **Keupayaan luar talian**: Berfungsi tanpa sambungan internet yang berterusan
-- **Latensi rendah**: Respons segera sesuai untuk sistem masa nyata
+- **Kelewatan rendah**: Respons segera sesuai untuk sistem masa nyata
 - **Kedaulatan data**: Menyimpan data sensitif secara tempatan, meningkatkan keselamatan dan pematuhan
 
 ### Model Bahasa Kecil (SLM)
@@ -74,33 +72,33 @@ Edge AI merujuk kepada menjalankan algoritma AI dan model bahasa secara tempatan
 SLM seperti Phi-4, Mistral-7B, dan Gemma adalah versi dioptimumkan daripada LLM yang lebih besar—dilatih atau disuling untuk:
 - **Jejak memori yang dikurangkan**: Penggunaan memori peranti edge yang terhad dengan cekap
 - **Permintaan pengkomputeran yang lebih rendah**: Dioptimumkan untuk prestasi CPU dan GPU edge
-- **Masa permulaan yang lebih pantas**: Inisialisasi cepat untuk aplikasi yang responsif
+- **Masa permulaan yang lebih pantas**: Permulaan pantas untuk aplikasi yang responsif
 
 Mereka membuka keupayaan NLP yang hebat sambil memenuhi kekangan:
 - **Sistem terbenam**: Peranti IoT dan pengawal industri
 - **Peranti mudah alih**: Telefon pintar dan tablet dengan keupayaan luar talian
 - **Peranti IoT**: Sensor dan peranti pintar dengan sumber terhad
 - **Pelayan edge**: Unit pemprosesan tempatan dengan sumber GPU terhad
-- **Komputer Peribadi**: Senario penerapan desktop dan laptop
+- **Komputer Peribadi**: Senario pelaksanaan pada desktop dan komputer riba
 
 ## Modul Kursus & Navigasi
 
-| Modul | Topik | Kawasan Fokus | Kandungan Utama | Tahap | Tempoh |
+| Modul | Topik | Fokus Kawasan | Kandungan Utama | Tahap | Tempoh |
 |-------|-------|---------------|-----------------|-------|--------|
 | [📖 00 ](./introduction.md) | [Pengenalan kepada EdgeAI](./introduction.md) | Asas & Konteks | Gambaran Keseluruhan EdgeAI • Aplikasi Industri • Pengenalan SLM • Objektif Pembelajaran | Pemula | 1-2 jam |
-| [📚 01](../../Module01) | [Asas EdgeAI](./Module01/README.md) | Perbandingan Cloud vs Edge AI | Asas EdgeAI • Kajian Kes Dunia Nyata • Panduan Pelaksanaan • Penerapan Edge | Pemula | 3-4 jam |
+| [📚 01](../../Module01) | [Asas EdgeAI](./Module01/README.md) | Perbandingan Cloud vs Edge AI | Asas EdgeAI • Kajian Kes Dunia Sebenar • Panduan Pelaksanaan • Pelaksanaan Edge | Pemula | 3-4 jam |
 | [🧠 02](../../Module02) | [Asas Model SLM](./Module02/README.md) | Keluarga model & seni bina | Keluarga Phi • Keluarga Qwen • Keluarga Gemma • BitNET • μModel • Phi-Silica | Pemula | 4-5 jam |
-| [🚀 03](../../Module03) | [Amalan Penerapan SLM](./Module03/README.md) | Penerapan tempatan & awan | Pembelajaran Lanjutan • Persekitaran Tempatan • Penerapan Awan | Pertengahan | 4-5 jam |
-| [⚙️ 04](../../Module04) | [Toolkit Pengoptimuman Model](./Module04/README.md) | Pengoptimuman merentas platform | Pengenalan • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sintesis Aliran Kerja | Pertengahan | 5-6 jam |
-| [🔧 05](../../Module05) | [SLMOps Pengeluaran](./Module05/README.md) | Operasi pengeluaran | Pengenalan SLMOps • Penyulingan Model • Penalaan Halus • Penerapan Pengeluaran | Lanjutan | 5-6 jam |
+| [🚀 03](../../Module03) | [Amalan Pelaksanaan SLM](./Module03/README.md) | Pelaksanaan tempatan & awan | Pembelajaran Lanjutan • Persekitaran Tempatan • Pelaksanaan Awan | Pertengahan | 4-5 jam |
+| [⚙️ 04](../../Module04) | [Alat Pengoptimuman Model](./Module04/README.md) | Pengoptimuman merentas platform | Pengenalan • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sintesis Aliran Kerja | Pertengahan | 5-6 jam |
+| [🔧 05](../../Module05) | [Pengeluaran SLMOps](./Module05/README.md) | Operasi pengeluaran | Pengenalan SLMOps • Penyulingan Model • Penalaan Halus • Pelaksanaan Pengeluaran | Lanjutan | 5-6 jam |
 | [🤖 06](../../Module06) | [Ejen AI & Panggilan Fungsi](./Module06/README.md) | Rangka kerja ejen & MCP | Pengenalan Ejen • Panggilan Fungsi • Protokol Konteks Model | Lanjutan | 4-5 jam |
-| [💻 07](../../Module07) | [Pelaksanaan Platform](./Module07/README.md) | Sampel merentas platform | Toolkit AI • Foundry Tempatan • Pembangunan Windows | Lanjutan | 3-4 jam |
-| [🏭 08](../../Module08) | [Toolkit Foundry Tempatan](./Module08/README.md) | Sampel sedia pengeluaran | Aplikasi sampel (lihat butiran di bawah) | Pakar | 8-10 jam |
+| [💻 07](../../Module07) | [Pelaksanaan Platform](./Module07/README.md) | Sampel merentas platform | Alat AI • Foundry Local • Pembangunan Windows | Lanjutan | 3-4 jam |
+| [🏭 08](../../Module08) | [Alat Foundry Local](./Module08/README.md) | Sampel sedia pengeluaran | Aplikasi sampel (lihat butiran di bawah) | Pakar | 8-10 jam |
 
 ### 🏭 **Modul 08: Aplikasi Sampel**
 
-- [01: Permulaan Cepat REST Chat](./Module08/samples/01/README.md)
-- [02: Integrasi SDK OpenAI](./Module08/samples/02/README.md)
+- [01: REST Chat Quickstart](./Module08/samples/01/README.md)
+- [02: Integrasi OpenAI SDK](./Module08/samples/02/README.md)
 - [03: Penemuan & Penanda Aras Model](./Module08/samples/03/README.md)
 - [04: Aplikasi Chainlit RAG](./Module08/samples/04/README.md)
 - [05: Orkestrasi Multi-Ejen](./Module08/samples/05/README.md)
@@ -118,14 +116,14 @@ Bahan bengkel praktikal yang komprehensif dengan pelaksanaan sedia pengeluaran:
 - **Sampel Python** (6 sesi) - Dikemas kini dengan amalan terbaik, pengendalian ralat, dan dokumentasi komprehensif
 - **Jupyter Notebooks** (8 interaktif) - Tutorial langkah demi langkah dengan penanda aras dan pemantauan prestasi
 - **Panduan Sesi** - Panduan markdown terperinci untuk setiap sesi bengkel
-- **Alat Pengesahan** - Skrip untuk mengesahkan kualiti kod dan menjalankan ujian awal
+- **Alat Pengesahan** - Skrip untuk mengesahkan kualiti kod dan menjalankan ujian pantas
 
 **Apa yang Akan Anda Bina:**
 - Aplikasi chat AI tempatan dengan sokongan penstriman
 - Saluran RAG dengan penilaian kualiti (RAGAS)
 - Alat penanda aras dan perbandingan multi-model
 - Sistem orkestrasi multi-ejen
-- Penghala model pintar dengan pemilihan berasaskan tugas
+- Penghala model pintar dengan pemilihan berdasarkan tugas
 
 ### 📊 **Ringkasan Laluan Pembelajaran**
 - **Jumlah Tempoh**: 36-45 jam
@@ -136,10 +134,10 @@ Bahan bengkel praktikal yang komprehensif dengan pelaksanaan sedia pengeluaran:
 
 ## Apa yang Akan Anda Bina
 
-### 🎯 Kecekapan Teras
-- **Seni Bina Edge AI**: Reka sistem AI tempatan dengan integrasi awan
-- **Pengoptimuman Model**: Kuantisasi dan pemampatan model untuk penerapan edge (peningkatan kelajuan 85%, pengurangan saiz 75%)
-- **Penerapan Multi-Platform**: Windows, mudah alih, terbenam, dan sistem hibrid awan-edge
+### 🎯 Kompetensi Teras
+- **Arkitektur Edge AI**: Reka sistem AI berasaskan tempatan dengan integrasi awan
+- **Pengoptimuman Model**: Kuantifikasi dan pemampatan model untuk pelaksanaan di edge (peningkatan kelajuan 85%, pengurangan saiz 75%)
+- **Pelaksanaan Multi-Platform**: Windows, mudah alih, terbenam, dan sistem hibrid awan-edge
 - **Operasi Pengeluaran**: Memantau, menskalakan, dan menyelenggara AI tepi dalam pengeluaran
 
 ### 🏗️ Projek Praktikal
@@ -148,7 +146,7 @@ Bahan bengkel praktikal yang komprehensif dengan pelaksanaan sedia pengeluaran:
 - **Aplikasi RAG**: Pemprosesan dokumen tempatan dengan carian vektor
 - **Router Model**: Pemilihan pintar antara model berdasarkan analisis tugas
 - **Kerangka API**: Klien siap pengeluaran dengan penstriman dan pemantauan kesihatan
-- **Alat Lintas Platform**: Corak integrasi LangChain/Semantic Kernel
+- **Alat Lintas Platform**: Pola integrasi LangChain/Semantic Kernel
 
 ### 🏢 Aplikasi Industri
 **Pembuatan** • **Kesihatan** • **Kenderaan Autonomi** • **Bandar Pintar** • **Aplikasi Mudah Alih**
@@ -159,19 +157,19 @@ Bahan bengkel praktikal yang komprehensif dengan pelaksanaan sedia pengeluaran:
 
 0. **📖 Pengenalan** ([Introduction.md](./introduction.md)): Asas EdgeAI + konteks industri + kerangka pembelajaran
 1. **📚 Asas** (Modul 01-02): Konsep EdgeAI + keluarga model SLM
-2. **⚙️ Pengoptimuman** (Modul 03-04): Kerangka pengeluaran + kuantisasi  
-3. **🚀 Pengeluaran** (Modul 05-06): SLMOps + ejen AI + pemanggilan fungsi
+2. **⚙️ Pengoptimuman** (Modul 03-04): Penggunaan + kerangka kuantisasi  
+3. **🚀 Pengeluaran** (Modul 05-06): SLMOps + ejen AI + panggilan fungsi
 4. **💻 Pelaksanaan** (Modul 07-08): Sampel platform + alat Foundry Local
 
-Setiap modul merangkumi teori, latihan praktikal, dan sampel kod siap pengeluaran.
+Setiap modul termasuk teori, latihan praktikal, dan sampel kod siap pengeluaran.
 
 ## Impak Kerjaya
 
-**Peranan Teknikal**: Arkitek Penyelesaian EdgeAI • Jurutera ML (Edge) • Pembangun AI IoT • Pembangun AI Mudah Alih
+**Peranan Teknikal**: Arkitek Penyelesaian EdgeAI • Jurutera ML (Edge) • Pembangun IoT AI • Pembangun AI Mudah Alih
 
 **Sektor Industri**: Pembuatan 4.0 • Teknologi Kesihatan • Sistem Autonomi • FinTech • Elektronik Pengguna
 
-**Projek Portfolio**: Sistem multi-ejen • Aplikasi RAG pengeluaran • Pengeluaran lintas platform • Pengoptimuman prestasi
+**Projek Portfolio**: Sistem multi-ejen • Aplikasi RAG pengeluaran • Penggunaan lintas platform • Pengoptimuman prestasi
 
 ## Struktur Repositori
 
@@ -190,50 +188,66 @@ edgeai-for-beginners/
 
 ## Sorotan Kursus
 
-✅ **Pembelajaran Progresif**: Teori → Praktik → Pengeluaran  
+✅ **Pembelajaran Progresif**: Teori → Praktikal → Penggunaan pengeluaran  
 ✅ **Kajian Kes Sebenar**: Microsoft, Japan Airlines, pelaksanaan perusahaan  
 ✅ **Sampel Praktikal**: 50+ contoh, 10 demo Foundry Local yang komprehensif  
 ✅ **Fokus Prestasi**: Peningkatan kelajuan 85%, pengurangan saiz 75%  
 ✅ **Multi-Platform**: Windows, mudah alih, tertanam, hibrid awan-tepi  
-✅ **Siap Pengeluaran**: Pemantauan, penskalaan, keselamatan, kerangka pematuhan
+✅ **Siap Pengeluaran**: Pemantauan, penskalaan, kerangka keselamatan, pematuhan
 
 📖 **[Panduan Pembelajaran Tersedia](STUDY_GUIDE.md)**: Laluan pembelajaran 20 jam yang terstruktur dengan panduan peruntukan masa dan alat penilaian kendiri.
 
 ---
 
-**EdgeAI mewakili masa depan pengeluaran AI**: tempatan dahulu, melindungi privasi, dan cekap. Kuasai kemahiran ini untuk membina aplikasi pintar generasi seterusnya.
+**EdgeAI mewakili masa depan penggunaan AI**: tempatan dahulu, melindungi privasi, dan cekap. Kuasai kemahiran ini untuk membina generasi seterusnya aplikasi pintar.
 
 ## Kursus Lain
 
 Pasukan kami menghasilkan kursus lain! Lihat:
 
-- [MCP untuk Pemula](https://github.com/microsoft/mcp-for-beginners)
-- [Ejen AI untuk Pemula](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI Generatif untuk Pemula menggunakan .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-- [AI Generatif untuk Pemula menggunakan JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
-- [AI Generatif untuk Pemula](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [ML untuk Pemula](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-- [Sains Data untuk Pemula](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI untuk Pemula](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [Keselamatan Siber untuk Pemula](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
-- [Pembangunan Web untuk Pemula](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [IoT untuk Pemula](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [Pembangunan XR untuk Pemula](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Menguasai GitHub Copilot untuk Pengaturcaraan Berpasangan AI](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Menguasai GitHub Copilot untuk Pembangun C#/.NET](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [Pilih Pengembaraan Copilot Anda Sendiri](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+### Azure / Edge / MCP / Ejen
+[![AZD untuk Pemula](https://img.shields.io/badge/AZD%20untuk%20Pemula-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Edge AI untuk Pemula](https://img.shields.io/badge/Edge%20AI%20untuk%20Pemula-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![MCP untuk Pemula](https://img.shields.io/badge/MCP%20untuk%20Pemula-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Ejen AI untuk Pemula](https://img.shields.io/badge/Ejen%20AI%20untuk%20Pemula-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+
+---
+
+### Siri AI Generatif
+[![AI Generatif untuk Pemula](https://img.shields.io/badge/AI%20Generatif%20untuk%20Pemula-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI Generatif (.NET)](https://img.shields.io/badge/AI%20Generatif%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+[![AI Generatif (Java)](https://img.shields.io/badge/AI%20Generatif%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+[![AI Generatif (JavaScript)](https://img.shields.io/badge/AI%20Generatif%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+
+---
+
+### Pembelajaran Teras
+[![ML untuk Pemula](https://img.shields.io/badge/ML%20untuk%20Pemula-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+[![Sains Data untuk Pemula](https://img.shields.io/badge/Sains%20Data%20untuk%20Pemula-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI untuk Pemula](https://img.shields.io/badge/AI%20untuk%20Pemula-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+[![Keselamatan Siber untuk Pemula](https://img.shields.io/badge/Keselamatan%20Siber%20untuk%20Pemula-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![Pembangunan Web untuk Pemula](https://img.shields.io/badge/Pembangunan%20Web%20untuk%20Pemula-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+[![IoT untuk Pemula](https://img.shields.io/badge/IoT%20untuk%20Pemula-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+[![Pembangunan XR untuk Pemula](https://img.shields.io/badge/Pembangunan%20XR%20untuk%20Pemula-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+
+---
+
+### Siri Copilot
+[![Copilot untuk Pengaturcaraan Berpasangan AI](https://img.shields.io/badge/Copilot%20untuk%20Pengaturcaraan%20Berpasangan%20AI-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+[![Copilot untuk C#/.NET](https://img.shields.io/badge/Copilot%20untuk%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+[![Pengembaraan Copilot](https://img.shields.io/badge/Pengembaraan%20Copilot-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 ## Mendapatkan Bantuan
 
-Jika anda menghadapi masalah atau mempunyai soalan tentang membina aplikasi AI, sertai:
+Jika anda menghadapi masalah atau mempunyai sebarang soalan tentang membina aplikasi AI, sertai:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Discord Azure AI Foundry](https://img.shields.io/badge/Discord-Komuniti_Discord_Azure_AI_Foundry-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
-Jika anda mempunyai maklum balas produk atau menghadapi ralat semasa membina, lawati:
+Jika anda mempunyai maklum balas produk atau mengalami kesilapan semasa membina, lawati:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Forum Pembangun Azure AI Foundry](https://img.shields.io/badge/GitHub-Forum_Pembangun_Azure_AI_Foundry-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
