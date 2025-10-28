@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Session 4 Sample: Compare SLM vs LLM responses and latency.
 
+Usage:
+    From inside the Workshop/Samples directory, run:
+        python -m session04.model_compare
+
 Environment Variables:
   SLM_ALIAS=phi-4-mini              # Small language model
   LLM_ALIAS=qwen2.5-7b              # Larger language model
@@ -16,14 +20,14 @@ import sys
 import time
 import json
 from typing import Tuple, Optional
-from workshop_utils import get_client, chat_once
+from utils.workshop_utils import get_client, chat_once
 
 SLM = os.getenv("SLM_ALIAS", "phi-4-mini")
 LLM = os.getenv("LLM_ALIAS", "qwen2.5-7b")
 PROMPT = os.getenv("COMPARE_PROMPT", "List 5 benefits of local AI inference.")
 ENDPOINT = os.getenv("FOUNDRY_LOCAL_ENDPOINT")
 
-print(f"[INFO] Comparing models:")
+print("[INFO] Comparing models:")
 print(f"  SLM: {SLM}")
 print(f"  LLM: {LLM}")
 print(f"  Prompt: {PROMPT[:50]}..." if len(PROMPT) > 50 else f"  Prompt: {PROMPT}")

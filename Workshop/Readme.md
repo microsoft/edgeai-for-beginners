@@ -242,8 +242,8 @@ pip install -r requirements.txt
 foundry model run phi-4-mini
 
 # Run the chat bootstrap sample
-cd samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 **✅ Success!** You should see a streaming response about edge AI.
@@ -381,7 +381,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 |----------|---------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Default single model alias for basic samples | `phi-4-mini` |
 | `SLM_ALIAS` / `LLM_ALIAS` | Explicit SLM vs larger model for comparison | `phi-4-mini` / `gpt-oss-20b` |
-| `BENCH_MODELS` | Comma list of aliases to benchmark | `qwen2.5-0.5b,gemma-2-2b,mistral-7b` |
+| `BENCH_MODELS` | Comma list of aliases to benchmark | `qwen2.5-0.5b,mistral-7b` |
 | `BENCH_ROUNDS` | Benchmark repetitions per model | `3` |
 | `BENCH_PROMPT` | Prompt used in benchmarking | `Explain retrieval augmented generation briefly.` |
 | `EMBED_MODEL` | Sentence-transformers embedding model | `sentence-transformers/all-MiniLM-L6-v2` |
@@ -435,7 +435,8 @@ Expect stable token counts across repeated identical inputs.
 Use `rag_eval_ragas.py` to compute answer relevancy, faithfulness, and context precision on a tiny synthetic dataset:
 
 ```powershell
-python samples/session02/rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 Extend by supplying a larger JSONL of questions, contexts, and ground truths, then converting to a Hugging Face `Dataset`.
@@ -532,7 +533,7 @@ chmod +x .git/hooks/pre-commit
 | Enable GPU acceleration | `foundry config set compute.onnx.enable_gpu true` | `# CLI action; SDK assumes config already applied` | Configuration is external side effect |
 | Get endpoint URL | (implicit) | `manager.endpoint` | Used to create OpenAI-compatible client |
 | Warm a model | `foundry model run <alias>` then first prompt | `chat_once(alias, messages=[...])` (utility) | Utilities handle initial cold latency warmup |
-| Measure latency | `python benchmark_oss_models.py` | `import benchmark_oss_models` (or new exporter script) | Prefer script for consistent metrics |
+| Measure latency | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (or new exporter script) | Prefer script for consistent metrics |
 | Stop / unload model | `foundry model unload <alias>` | (Not exposed – restart service / process) | Typically not required for workshop flow |
 | Retrieve token usage | (view output) | `resp.usage.total_tokens` | Provided if backend returns usage object |
 
@@ -543,7 +544,7 @@ Use the script `Workshop/scripts/export_benchmark_markdown.py` to run a fresh be
 ### Example
 
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 Generated files:
@@ -553,4 +554,3 @@ Generated files:
 | `benchmark_report.json` | Raw metrics array (for diffing / trend tracking) |
 
 Set `BENCH_STREAM=1` in the environment to include first-token latency if supported.
-

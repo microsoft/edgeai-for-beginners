@@ -9,6 +9,10 @@ Steps:
 
 Produces a JSON-like result with retrieved doc ids and answer text.
 
+Usage:
+    From inside the Workshop/Samples directory, run:
+        python -m session02.rag_pipeline
+
 Environment Variables:
   FOUNDRY_LOCAL_ALIAS=phi-4-mini           # Model for generation
   EMBED_MODEL=sentence-transformers/...    # Embedding model
@@ -22,8 +26,7 @@ from __future__ import annotations
 import os
 import sys
 from typing import List, Dict, Any
-import numpy as np
-from workshop_utils import get_client, chat_once
+from utils.workshop_utils import get_client, chat_once
 
 try:
     from sentence_transformers import SentenceTransformer
