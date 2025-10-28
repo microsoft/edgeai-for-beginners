@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T12:54:58+00:00",
+  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
+  "translation_date": "2025-10-28T17:21:39+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "sv"
 }
 -->
-# Session 1: Kom igång med Foundry Local
+# Session 1: Komma igång med Foundry Local
 
 ## Sammanfattning
 
@@ -77,11 +77,11 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Om inbyggda macOS-binära filer ännu inte är tillgängliga kan du fortfarande: 
+Om inbyggda macOS-binarier ännu inte är tillgängliga kan du fortfarande: 
 1. Använda en Windows 11 ARM/Intel VM (Parallels / UTM) och följa Windows-stegen. 
 2. Köra modeller via container (om containerbild publiceras) och ställa in `FOUNDRY_LOCAL_ENDPOINT` till den exponerade porten. 
 
-**Skapa Python-virtuellt miljö (plattformoberoende)**
+**Skapa Python-virtuell miljö (plattformoberoende)**
 
 Windows PowerShell:
 ```powershell
@@ -126,7 +126,7 @@ py -m venv .venv
 pip install foundry-local-sdk openai requests
 ```
 
-### SDK-bootstrapping (rekommenderas)
+### SDK Bootstrapping (Rekommenderas)
 
 Istället för att manuellt starta tjänsten och köra modeller kan **Foundry Local Python SDK** bootstrap allt:
 
@@ -160,32 +160,7 @@ print(resp.choices[0].message.content)
 
 Om du föredrar explicit kontroll kan du fortfarande använda CLI + OpenAI-klienten som visas senare.
 
-### 2. Aktivera GPU-acceleration (5 minuter)
-
-#### Steg 2.1: Kontrollera hårdvarukapacitet
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Steg 2.2: Konfigurera hårdvaruacceleration
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Kör modeller lokalt via CLI (10 minuter)
+### 2. Kör modeller lokalt via CLI (10 minuter)
 
 #### Steg 3.1: Distribuera Phi-4-modellen
 
@@ -367,7 +342,7 @@ print()
 
 ## Felsökning av vanliga problem
 
-### Problem 1: "Foundry-kommandot hittades inte"
+### Problem 1: "Foundry command not found"
 
 **Lösning:**
 ```powershell
@@ -376,7 +351,7 @@ print()
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Problem 2: "Modellen kunde inte laddas"
+### Problem 2: "Model failed to load"
 
 **Lösning:**
 ```powershell
@@ -390,7 +365,7 @@ foundry model run phi-4-mini
 dir "$env:USERPROFILE\.foundry\models"
 ```
 
-### Problem 3: "Anslutning nekad på localhost:5273"
+### Problem 3: "Connection refused on localhost:5273"
 
 **Lösning:**
 ```powershell
@@ -409,7 +384,7 @@ netstat -an | findstr 5273
 ### 1. Strategi för modellval
 
 - **Phi-4-mini**: Bäst för allmänna uppgifter, lägre minnesanvändning
-- **Qwen2.5-0.5b**: Snabbaste inferens, minimala resurser
+- **Qwen2.5-0.5b**: Snabbast inferens, minimala resurser
 - **GPT-OSS-20B**: Högsta kvalitet, kräver mer resurser
 - **DeepSeek-Coder**: Optimerad för programmeringsuppgifter
 
@@ -444,15 +419,15 @@ python Workshop\samples\session03\benchmark_oss_models.py
 
 | Förbättring | Vad | Hur |
 |-------------|-----|-----|
-| Delade verktyg | Ta bort duplicerad klient-/bootstrap-logik | Använd `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Synlighet för tokenanvändning | Lär ut kostnads-/effektivitetstänk tidigt | Ställ in `SHOW_USAGE=1` för att skriva ut prompt/completion/totala tokens |
+| Delade verktyg | Ta bort duplicerad klient/bootstrap-logik | Använd `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Synlighet för tokenanvändning | Lär ut kostnads-/effektivitetstänkande tidigt | Ställ in `SHOW_USAGE=1` för att skriva ut prompt/completion/totala tokens |
 | Deterministiska jämförelser | Stabil benchmarking och regressionskontroller | Använd `temperature=0`, `top_p=1`, konsekvent prompttext |
-| Första-token-latens | Upplevd responsivitet | Anpassa benchmark-skript med streaming (`BENCH_STREAM=1`) |
-| Återförsök vid tillfälliga fel | Resilienta demos vid kallstart | `RETRY_ON_FAIL=1` (standard) och justera `RETRY_BACKOFF` |
+| Första-token latens | Upplevd responsivitet | Anpassa benchmark-skript med streaming (`BENCH_STREAM=1`) |
+| Försök igen vid tillfälliga fel | Robust demo vid kallstart | `RETRY_ON_FAIL=1` (standard) & justera `RETRY_BACKOFF` |
 | Röktestning | Snabb kontroll av nyckelflöden | Kör `python Workshop/tests/smoke.py` före en workshop |
 | Modellaliasprofiler | Snabbt byta modelluppsättning mellan maskiner | Underhåll `.env` med `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Cacheeffektivitet | Undvik upprepade uppvärmningar i multi-sample-körning | Verktyg cachear managers; återanvänd över skript/notebooks |
-| Första körning uppvärmning | Minska p95-latensspikar | Skicka en liten prompt efter `FoundryLocalManager`-skapande |
+| Cacheeffektivitet | Undvik upprepade uppvärmningar vid körning av flera exempel | Verktyg för cachehantering; återanvänd över skript/anteckningsböcker |
+| Första körningens uppvärmning | Minska p95 latensspikar | Skicka en liten prompt efter `FoundryLocalManager`-skapande |
 
 Exempel på deterministisk varm baslinje (PowerShell):
 
@@ -470,7 +445,7 @@ Du bör se liknande output och identiska tokenräkningar vid andra körningen, v
 Efter att ha avslutat denna session:
 
 1. **Utforska Session 2**: Bygg AI-lösningar med Azure AI Foundry RAG
-2. **Prova olika modeller**: Experimentera med Qwen, DeepSeek och andra modelfamiljer
+2. **Prova olika modeller**: Experimentera med Qwen, DeepSeek och andra modellfamiljer
 3. **Optimera prestanda**: Finjustera inställningar för din specifika hårdvara
 4. **Bygg egna applikationer**: Använd Foundry Local SDK i dina egna projekt
 
@@ -482,9 +457,9 @@ Efter att ha avslutat denna session:
 - [Modellkatalog](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Exempelkod
-- [Module08 Exempel 01](./samples/01/README.md) - REST Chat Quickstart
-- [Module08 Exempel 02](./samples/02/README.md) - OpenAI SDK Integration
-- [Module08 Exempel 03](./samples/03/README.md) - Modellupptäckt och benchmarking
+- [Module08 Sample 01](./samples/01/README.md) - REST Chat Quickstart
+- [Module08 Sample 02](./samples/02/README.md) - OpenAI SDK Integration
+- [Module08 Sample 03](./samples/03/README.md) - Modellupptäckt och benchmarking
 
 ### Community
 - [Foundry Local GitHub Diskussioner](https://github.com/microsoft/Foundry-Local/discussions)
@@ -493,10 +468,10 @@ Efter att ha avslutat denna session:
 ---
 
 **Sessionens längd**: 30 minuter praktiskt + 15 minuter Q&A  
-**Svårighetsnivå**: Nybörjare  
-**Förkunskapskrav**: Windows 11, Python 3.10+, Administratörsbehörighet
+**Svårighetsgrad**: Nybörjare  
+**Förkunskaper**: Windows 11, Python 3.10+, Administratörsbehörighet  
 
-## Exempelscenario och workshopkartläggning
+## Exempelscenario & Workshopkartläggning
 
 | Workshop-skript / Notebook | Scenario | Mål | Exempelinput | Dataset behövs |
 |----------------------------|----------|-----|--------------|----------------|
@@ -504,9 +479,9 @@ Efter att ha avslutat denna session:
 | Anpassningskodblock för snabbstart | Utvecklare som migrerar ett befintligt OpenAI-skript till Foundry Local | Visa drop-in-kompatibilitet | "Ge två fördelar med lokal inferens." | Endast inline-prompt |
 
 ### Scenarionarrativ
-Säkerhets- och efterlevnadsgruppen måste validera om känslig prototypdata kan bearbetas lokalt. De kör bootstrap-skriptet med flera prompter (sekretess, latens, kostnad) med deterministiskt läge `temperature=0` för att fånga baslinjeutdata för senare jämförelse (Session 3 benchmarking och Session 4 SLM vs LLM-kontrast).
+Säkerhets- och efterlevnadsgruppen måste validera om känslig prototypdata kan bearbetas lokalt. De kör bootstrap-skriptet med flera prompter (sekretess, latens, kostnad) med deterministiskt läge temperature=0 för att fånga baslinjeutdata för senare jämförelse (Session 3 benchmarking och Session 4 SLM vs LLM-kontrast).
 
-### Minimal promptuppsättning JSON (valfritt)
+### Minimal Prompt Set JSON (valfritt)
 ```json
 [
     "List two benefits of local inference.",
@@ -515,9 +490,9 @@ Säkerhets- och efterlevnadsgruppen måste validera om känslig prototypdata kan
 ]
 ```
 
-Använd denna lista för att skapa en reproducerbar utvärderingsloop eller för att initiera ett framtida regressions-testverktyg.
+Använd denna lista för att skapa en reproducerbar utvärderingsloop eller för att initiera ett framtida regressionsprov.
 
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

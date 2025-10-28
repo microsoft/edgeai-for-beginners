@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T10:45:06+00:00",
+  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
+  "translation_date": "2025-10-28T17:19:45+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "it"
 }
@@ -27,9 +27,9 @@ Alla fine di questa sessione, sarai in grado di:
 foundry model run phi-4-mini --prompt "Ciao, presentati"
 
 - Windows 11 (22H2 o successivo)
-# Elenca i modelli disponibili nel catalogo (i modelli caricati appaiono dopo l'esecuzione)
+# Elenco dei modelli disponibili nel catalogo (i modelli caricati appaiono dopo l'esecuzione)
 foundry model list
-## NOTA: Attualmente non esiste un flag dedicato `--running`; per vedere quali sono caricati, avvia una chat o ispeziona i log del servizio.
+## NOTE: Attualmente non esiste un flag dedicato `--running`; per vedere quali sono caricati, avvia una chat o ispeziona i log del servizio.
 - Python 3.10+ installato
 - Visual Studio Code con estensione Python
 - Privilegi di amministratore per l'installazione
@@ -49,9 +49,9 @@ foundry model run gpt-oss-20b --prompt "Spiega l'edge AI in termini semplici"
 
 ## Flusso Demo (30 minuti)
 
-### 1. Installa Foundry Local e Verifica la Configurazione CLI (10 minuti)
+### 1. Installare Foundry Local e Verificare la Configurazione CLI (10 minuti)
 
-# Elenca i modelli memorizzati nella cache
+# Elenco dei modelli memorizzati nella cache
 foundry cache list
 
 ```powershell
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (Anteprima / Se Supportato)**
 
-Se è fornito un pacchetto nativo per macOS (controlla la documentazione ufficiale per le ultime novità):
+Se è disponibile un pacchetto nativo per macOS (controlla la documentazione ufficiale per le ultime novità):
 
 ```bash
 # Homebrew (if/when available)
@@ -81,7 +81,7 @@ Se i binari nativi per macOS non sono ancora disponibili, puoi comunque:
 1. Utilizzare una VM Windows 11 ARM/Intel (Parallels / UTM) e seguire i passaggi per Windows. 
 2. Eseguire i modelli tramite container (se l'immagine del container è pubblicata) e impostare `FOUNDRY_LOCAL_ENDPOINT` sulla porta esposta. 
 
-**Crea un Ambiente Virtuale Python (Cross‑Platform)**
+**Creare un Ambiente Virtuale Python (Cross‑Platform)**
 
 Windows PowerShell:
 ```powershell
@@ -101,7 +101,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-#### Passo 1.2: Verifica dell'Installazione
+#### Passo 1.2: Verificare l'Installazione
 
 ```powershell
 # Check version
@@ -114,7 +114,7 @@ foundry init
 foundry --help
 ```
 
-#### Passo 1.3: Configura l'Ambiente
+#### Passo 1.3: Configurare l'Ambiente
 
 ```powershell
 # Set up Python environment for Module08
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### Bootstrapping SDK (Consigliato)
 
-Invece di avviare manualmente il servizio ed eseguire i modelli, il **Foundry Local Python SDK** può avviare tutto automaticamente:
+Invece di avviare manualmente il servizio e eseguire i modelli, il **Foundry Local Python SDK** può avviare tutto automaticamente:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -158,36 +158,11 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Se preferisci un controllo esplicito, puoi comunque utilizzare la CLI + client OpenAI come mostrato più avanti.
+Se preferisci un controllo esplicito, puoi comunque utilizzare la CLI + client OpenAI come mostrato in seguito.
 
-### 2. Abilita l'Accelerazione GPU (5 minuti)
+### 2. Eseguire Modelli Localmente tramite CLI (10 minuti)
 
-#### Passo 2.1: Controlla le Capacità Hardware
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Passo 2.2: Configura l'Accelerazione Hardware
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Esegui Modelli Localmente tramite CLI (10 minuti)
-
-#### Passo 3.1: Distribuisci il Modello Phi-4
+#### Passo 3.1: Distribuire il Modello Phi-4
 
 ```powershell
 # Download and run phi-4-mini
@@ -199,7 +174,7 @@ foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 # NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
 ```
 
-#### Passo 3.2: Distribuisci GPT-OSS-20B
+#### Passo 3.2: Distribuire GPT-OSS-20B
 
 ```powershell
 # Download and run GPT-OSS-20B
@@ -209,7 +184,7 @@ foundry model run gpt-oss-20b
 foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 ```
 
-#### Passo 3.3: Carica Modelli Aggiuntivi
+#### Passo 3.3: Caricare Modelli Aggiuntivi
 
 ```powershell
 # Download Qwen model family
@@ -223,9 +198,9 @@ foundry model download deepseek-coder-1.3b
 foundry cache list
 ```
 
-### 4. Progetto Iniziale: Adatta 01-run-phi per Foundry Local (5 minuti)
+### 4. Progetto Iniziale: Adattare 01-run-phi per Foundry Local (5 minuti)
 
-#### Passo 4.1: Crea un'Applicazione di Chat di Base
+#### Passo 4.1: Creare un'Applicazione di Chat di Base
 
 Crea `samples/01-foundry-quickstart/chat_quickstart.py` (aggiornato per utilizzare il manager se disponibile):
 
@@ -297,7 +272,7 @@ if __name__ == "__main__":
     main()
 ```
 
-#### Passo 4.2: Testa l'Applicazione
+#### Passo 4.2: Testare l'Applicazione
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -410,7 +385,7 @@ netstat -an | findstr 5273
 
 - **Phi-4-mini**: Ideale per compiti generali, utilizzo di memoria ridotto
 - **Qwen2.5-0.5b**: Inferenza più veloce, risorse minime
-- **GPT-OSS-20B**: Qualità massima, richiede più risorse
+- **GPT-OSS-20B**: Qualità più alta, richiede più risorse
 - **DeepSeek-Coder**: Ottimizzato per compiti di programmazione
 
 ### 2. Ottimizzazione Hardware
@@ -445,14 +420,14 @@ python Workshop\samples\session03\benchmark_oss_models.py
 | Miglioramento | Cosa | Come |
 |---------------|------|------|
 | Utilità Condivise | Rimuovi logica duplicata client/bootstrap | Usa `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Visibilità sull'Uso dei Token | Insegna il pensiero su costi/efficienza fin dall'inizio | Imposta `SHOW_USAGE=1` per stampare token prompt/completion/total |
+| Visibilità sull'Uso dei Token | Insegna il pensiero su costi/efficienza | Imposta `SHOW_USAGE=1` per stampare prompt/completion/token totali |
 | Confronti Deterministici | Benchmarking stabile e controlli di regressione | Usa `temperature=0`, `top_p=1`, testo del prompt coerente |
 | Latenza del Primo Token | Metrica di reattività percepita | Adatta script di benchmark con streaming (`BENCH_STREAM=1`) |
-| Retry su Errori Transitori | Demo resilienti al primo avvio | `RETRY_ON_FAIL=1` (default) e regola `RETRY_BACKOFF` |
+| Retry su Errori Transitori | Demo resilienti al primo avvio | `RETRY_ON_FAIL=1` (default) & regola `RETRY_BACKOFF` |
 | Test di Fumo | Controllo rapido su flussi chiave | Esegui `python Workshop/tests/smoke.py` prima di un workshop |
 | Profili Alias Modello | Cambia rapidamente set di modelli tra macchine | Mantieni `.env` con `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Efficienza della Cache | Evita riscaldamenti ripetuti in esecuzioni multi-sample | Utilità cache manager; riutilizza tra script/notebook |
-| Riscaldamento al Primo Avvio | Riduci picchi di latenza p95 | Esegui un prompt minimo dopo la creazione di `FoundryLocalManager` |
+| Efficienza della Cache | Evita ripetuti warmup in esecuzioni multi-sample | Utilità cache manager; riutilizza tra script/notebook |
+| Warmup al Primo Avvio | Riduci picchi di latenza p95 | Esegui un prompt minimo dopo la creazione di `FoundryLocalManager` |
 
 Esempio di baseline deterministico caldo (PowerShell):
 
@@ -463,7 +438,7 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Dovresti vedere un output simile e conteggi di token identici alla seconda esecuzione, confermando il determinismo.
+Dovresti vedere output simile e conteggi di token identici alla seconda esecuzione, confermando la determinazione.
 
 ## Prossimi Passi
 
@@ -482,7 +457,7 @@ Dopo aver completato questa sessione:
 - [Catalogo Modelli](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Codice di Esempio
-- [Modulo08 Esempio 01](./samples/01/README.md) - Quickstart REST Chat
+- [Modulo08 Esempio 01](./samples/01/README.md) - Quickstart Chat REST
 - [Modulo08 Esempio 02](./samples/02/README.md) - Integrazione SDK OpenAI
 - [Modulo08 Esempio 03](./samples/03/README.md) - Scoperta e Benchmarking Modelli
 
@@ -498,13 +473,13 @@ Dopo aver completato questa sessione:
 
 ## Scenario di Esempio e Mappatura Workshop
 
-| Script / Notebook Workshop | Scenario | Obiettivo | Input di Esempio | Dataset Necessario |
-|----------------------------|----------|-----------|------------------|--------------------|
+| Script / Notebook del Workshop | Scenario | Obiettivo | Input di Esempio | Dataset Necessario |
+|--------------------------------|----------|-----------|------------------|--------------------|
 | `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Team IT interno che valuta l'inferenza on‑device per un portale di valutazione della privacy | Dimostrare che SLM locale risponde con latenza sub‑secondo su prompt standard | "Elenca due vantaggi dell'inferenza locale." | Nessuno (prompt singolo) |
-| Blocco di codice adattamento Quickstart | Sviluppatore che migra uno script OpenAI esistente a Foundry Local | Mostrare compatibilità immediata | "Elenca due vantaggi dell'inferenza locale." | Solo prompt inline |
+| Codice di adattamento quickstart | Sviluppatore che migra uno script OpenAI esistente a Foundry Local | Mostrare compatibilità immediata | "Dai due vantaggi dell'inferenza locale." | Solo prompt inline |
 
 ### Narrazione dello Scenario
-Il team di sicurezza e conformità deve validare se i dati sensibili del prototipo possono essere elaborati localmente. Eseguono lo script bootstrap con diversi prompt (privacy, latenza, costo) utilizzando una modalità deterministica temperature=0 per catturare output di base per confronti futuri (benchmarking Sessione 3 e contrasto SLM vs LLM Sessione 4).
+Il team sicurezza e conformità deve validare se i dati sensibili del prototipo possono essere elaborati localmente. Eseguono lo script bootstrap con diversi prompt (privacy, latenza, costo) utilizzando una modalità deterministica temperature=0 per catturare output di base per confronti futuri (benchmarking Sessione 3 e contrasto SLM vs LLM Sessione 4).
 
 ### Set di Prompt Minimi JSON (opzionale)
 ```json
@@ -515,9 +490,9 @@ Il team di sicurezza e conformità deve validare se i dati sensibili del prototi
 ]
 ```
 
-Usa questa lista per creare un ciclo di valutazione riproducibile o per avviare un futuro framework di test di regressione.
+Usa questa lista per creare un ciclo di valutazione riproducibile o per avviare un futuro test di regressione.
 
 ---
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un traduttore umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.

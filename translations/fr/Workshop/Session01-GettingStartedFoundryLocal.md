@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-08T19:12:46+00:00",
+  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
+  "translation_date": "2025-10-28T17:12:35+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "fr"
 }
@@ -42,7 +42,7 @@ foundry model run gpt-oss-20b --prompt "Expliquez l'IA de périphérie en termes
 | Variable | Objectif | Exemple |
 |----------|----------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias préféré du modèle (le catalogue sélectionne automatiquement la meilleure variante) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | Remplacer le point de terminaison (sinon auto depuis le gestionnaire) | `http://localhost:5273/v1` |
+| `FOUNDRY_LOCAL_ENDPOINT` | Remplacer l'endpoint (sinon auto depuis le gestionnaire) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Activer la démonstration de streaming | `true` |
 
 > Si `FOUNDRY_LOCAL_ENDPOINT=auto` (ou non défini), nous le dérivons du gestionnaire SDK.
@@ -160,32 +160,7 @@ print(resp.choices[0].message.content)
 
 Si vous préférez un contrôle explicite, vous pouvez toujours utiliser le CLI + client OpenAI comme montré plus tard.
 
-### 2. Activer l'accélération GPU (5 minutes)
-
-#### Étape 2.1 : Vérifier les capacités matérielles
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Étape 2.2 : Configurer l'accélération matérielle
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Exécuter des modèles localement via CLI (10 minutes)
+### 2. Exécuter des modèles localement via CLI (10 minutes)
 
 #### Étape 3.1 : Déployer le modèle Phi-4
 
@@ -404,7 +379,7 @@ foundry service start
 netstat -an | findstr 5273
 ```
 
-## Conseils d'optimisation des performances
+## Conseils pour optimiser les performances
 
 ### 1. Stratégie de sélection des modèles
 
@@ -442,9 +417,9 @@ python Workshop\samples\session03\benchmark_oss_models.py
 
 ### Améliorations optionnelles
 
-| Amélioration | Objectif | Comment |
-|--------------|----------|--------|
-| Utilitaires partagés | Éliminer la logique client/bootstrap dupliquée | Utiliser `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Amélioration | Quoi | Comment |
+|--------------|------|--------|
+| Utilitaires partagés | Supprimer la logique client/bootstrap dupliquée | Utiliser `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
 | Visibilité de l'utilisation des tokens | Enseigner la réflexion sur les coûts/efficacité dès le début | Définir `SHOW_USAGE=1` pour afficher les tokens de prompt/completion/total |
 | Comparaisons déterministes | Benchmarking stable et vérifications de régression | Utiliser `temperature=0`, `top_p=1`, texte de prompt cohérent |
 | Latence du premier token | Indicateur de réactivité perçue | Adapter le script de benchmark avec streaming (`BENCH_STREAM=1`) |
@@ -470,7 +445,7 @@ Vous devriez voir une sortie similaire et des comptes de tokens identiques lors 
 Après avoir terminé cette session :
 
 1. **Explorer la session 2** : Construire des solutions IA avec Azure AI Foundry RAG
-2. **Essayer différents modèles** : Expérimenter avec Qwen, DeepSeek et d'autres familles de modèles
+2. **Essayer différents modèles** : Expérimenter avec Qwen, DeepSeek et autres familles de modèles
 3. **Optimiser les performances** : Affiner les paramètres pour votre matériel spécifique
 4. **Créer des applications personnalisées** : Utiliser le SDK Foundry Local dans vos propres projets
 
@@ -504,7 +479,7 @@ Après avoir terminé cette session :
 | Bloc de code d'adaptation rapide | Développeur migrant un script OpenAI existant vers Foundry Local | Montrer la compatibilité immédiate | "Donnez deux avantages de l'inférence locale." | Prompt en ligne uniquement |
 
 ### Narratif du scénario
-L'équipe de sécurité et conformité doit valider si des données prototypes sensibles peuvent être traitées localement. Ils exécutent le script bootstrap avec plusieurs prompts (confidentialité, latence, coût) en mode déterministe `temperature=0` pour capturer des sorties de base à comparer ultérieurement (benchmarking de la session 3 et contraste SLM vs LLM de la session 4).
+L'équipe sécurité et conformité doit valider si des données prototypes sensibles peuvent être traitées localement. Ils exécutent le script bootstrap avec plusieurs prompts (confidentialité, latence, coût) en mode déterministe `temperature=0` pour capturer des sorties de base à comparer ultérieurement (benchmarking session 3 et contraste SLM vs LLM session 4).
 
 ### Ensemble minimal de prompts JSON (optionnel)
 ```json
@@ -515,9 +490,9 @@ L'équipe de sécurité et conformité doit valider si des données prototypes s
 ]
 ```
 
-Utilisez cette liste pour créer une boucle d'évaluation reproductible ou pour alimenter un futur test de régression.
+Utilisez cette liste pour créer une boucle d'évaluation reproductible ou pour alimenter un futur outil de test de régression.
 
 ---
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.

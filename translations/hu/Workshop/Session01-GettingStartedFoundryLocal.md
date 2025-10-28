@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T21:16:18+00:00",
+  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
+  "translation_date": "2025-10-28T17:25:45+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "hu"
 }
@@ -11,25 +11,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Összefoglaló
 
-Indítsd el utadat a Foundry Local használatával, telepítsd és konfiguráld Windows 11-en. Tanuld meg a CLI beállítását, a hardveres gyorsítás engedélyezését, valamint a modellek gyors helyi inferenciához történő gyorsítótárazását. Ez a gyakorlati szekció bemutatja, hogyan futtathatók modellek, mint például Phi, Qwen, DeepSeek és GPT-OSS-20B reprodukálható CLI parancsokkal.
+Indítsd el az utadat a Foundry Local használatával, telepítsd és konfiguráld Windows 11-en. Tanuld meg a CLI beállítását, a hardveres gyorsítás engedélyezését, valamint a modellek gyors helyi futtatásához szükséges gyorsítótárazást. Ez a gyakorlati szekció bemutatja, hogyan futtathatók modellek, mint például Phi, Qwen, DeepSeek és GPT-OSS-20B reprodukálható CLI parancsok segítségével.
 
 ## Tanulási célok
 
 A szekció végére képes leszel:
 
-- **Telepítés és konfiguráció**: Állítsd be a Foundry Local-t Windows 11-en optimális teljesítménybeállításokkal
-- **CLI műveletek elsajátítása**: Használd a Foundry Local CLI-t modellek kezelésére és telepítésére
-- **Hardveres gyorsítás engedélyezése**: Konfiguráld a GPU gyorsítást az ONNXRuntime vagy a WebGPU segítségével
-- **Több modell telepítése**: Futtasd helyben a phi-4, GPT-OSS-20B, Qwen és DeepSeek modelleket
-- **Első alkalmazásod elkészítése**: Alakítsd át a meglévő mintákat a Foundry Local Python SDK használatára
+- **Telepítés és konfigurálás**: A Foundry Local beállítása Windows 11-en optimális teljesítménybeállításokkal
+- **CLI műveletek elsajátítása**: A Foundry Local CLI használata modellek kezelésére és telepítésére
+- **Hardveres gyorsítás engedélyezése**: GPU gyorsítás konfigurálása ONNXRuntime vagy WebGPU segítségével
+- **Több modell telepítése**: Phi-4, GPT-OSS-20B, Qwen és DeepSeek modellek helyi futtatása
+- **Első alkalmazásod elkészítése**: Meglévő minták adaptálása a Foundry Local Python SDK használatával
 
-# Modell tesztelése (nem interaktív egyszeri kérdés)
-foundry model run phi-4-mini --prompt "Hello, mutatkozz be"
+# Modell tesztelése (nem interaktív, egyetlen prompt)
+foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 
 - Windows 11 (22H2 vagy újabb)
 # Elérhető katalógusmodellek listázása (a betöltött modellek a futtatás után jelennek meg)
 foundry model list
-## MEGJEGYZÉS: Jelenleg nincs dedikált `--running` zászló; a betöltött modellek megtekintéséhez indíts el egy csevegést vagy vizsgáld meg a szolgáltatás naplóit.
+## MEGJEGYZÉS: Jelenleg nincs dedikált `--running` flag; a betöltött modellek megtekintéséhez indíts el egy chatet vagy vizsgáld meg a szolgáltatás naplóit.
 - Python 3.10+ telepítve
 - Visual Studio Code Python kiterjesztéssel
 - Adminisztrátori jogosultságok a telepítéshez
@@ -38,10 +38,10 @@ foundry model list
 
 Hozz létre egy `.env` fájlt (vagy állítsd be a shellben), hogy a szkriptek hordozhatóak legyenek:
 # Válaszok összehasonlítása (nem interaktív)
-foundry model run gpt-oss-20b --prompt "Magyarázd el egyszerűen, mi az edge AI"
+foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 | Változó | Cél | Példa |
 |---------|-----|-------|
-| `FOUNDRY_LOCAL_ALIAS` | Előnyben részesített modell alias (a katalógus automatikusan kiválasztja a legjobb változatot) | `phi-3.5-mini` |
+| `FOUNDRY_LOCAL_ALIAS` | Preferált modell alias (a katalógus automatikusan kiválasztja a legjobb változatot) | `phi-3.5-mini` |
 | `FOUNDRY_LOCAL_ENDPOINT` | Végpont felülírása (egyébként automatikusan a menedzserből) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Streaming demó engedélyezése | `true` |
 
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (Előzetes / Ha támogatott)**
 
-Ha natív macOS csomag elérhető (ellenőrizd a hivatalos dokumentációt a legfrissebb verzióért):
+Ha natív macOS csomag elérhető (ellenőrizd a hivatalos dokumentációt a legfrissebb információkért):
 
 ```bash
 # Homebrew (if/when available)
@@ -77,11 +77,11 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Ha a macOS natív binárisok még nem elérhetők, akkor:
+Ha a macOS natív binárisok még nem elérhetők, akkor a következőket teheted: 
 1. Használj Windows 11 ARM/Intel VM-et (Parallels / UTM) és kövesd a Windows lépéseit. 
-2. Futtass modelleket konténeren keresztül (ha konténerkép elérhető), és állítsd be a `FOUNDRY_LOCAL_ENDPOINT`-ot a kitetett portra.
+2. Futtass modelleket konténeren keresztül (ha konténerkép elérhető), és állítsd be a `FOUNDRY_LOCAL_ENDPOINT`-ot az expozált portra. 
 
-**Python virtuális környezet létrehozása (platformfüggetlen)**
+**Python virtuális környezet létrehozása (Platformfüggetlen)**
 
 Windows PowerShell:
 ```powershell
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### SDK Bootstrapping (Ajánlott)
 
-A szolgáltatás kézi indítása és modellek futtatása helyett a **Foundry Local Python SDK** mindent automatikusan elindíthat:
+A szolgáltatás manuális indítása és a modellek futtatása helyett a **Foundry Local Python SDK** mindent automatikusan elindíthat:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -158,34 +158,9 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Ha inkább explicit irányítást szeretnél, továbbra is használhatod a CLI-t + OpenAI klienst, ahogy később bemutatjuk.
+Ha inkább explicit kontrollt szeretnél, továbbra is használhatod a CLI-t + OpenAI klienst, ahogy később bemutatjuk.
 
-### 2. GPU gyorsítás engedélyezése (5 perc)
-
-#### 2.1 lépés: Hardver képességek ellenőrzése
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### 2.2 lépés: Hardveres gyorsítás konfigurálása
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Modellek helyi futtatása CLI-n keresztül (10 perc)
+### 2. Modellek helyi futtatása CLI-n keresztül (10 perc)
 
 #### 3.1 lépés: Phi-4 modell telepítése
 
@@ -225,7 +200,7 @@ foundry cache list
 
 ### 4. Kezdő projekt: 01-run-phi adaptálása Foundry Local-hoz (5 perc)
 
-#### 4.1 lépés: Alapvető csevegőalkalmazás létrehozása
+#### 4.1 lépés: Alap chat alkalmazás létrehozása
 
 Hozz létre `samples/01-foundry-quickstart/chat_quickstart.py` fájlt (frissítve a menedzser használatára, ha elérhető):
 
@@ -297,7 +272,7 @@ if __name__ == "__main__":
     main()
 ```
 
-#### 4.2 lépés: Alkalmazás tesztelése
+#### 4.2 lépés: Az alkalmazás tesztelése
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -314,8 +289,8 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 ### 1. Foundry Local architektúra
 
-- **Helyi inferencia motor**: Teljesen a saját eszközödön futtatja a modelleket
-- **OpenAI SDK kompatibilitás**: Zökkenőmentes integráció a meglévő OpenAI kóddal
+- **Helyi inferencia motor**: Teljes mértékben az eszközön futtatja a modelleket
+- **OpenAI SDK kompatibilitás**: Zökkenőmentes integráció meglévő OpenAI kóddal
 - **Modellek kezelése**: Modellek letöltése, gyorsítótárazása és hatékony futtatása
 - **Hardver optimalizálás**: GPU, NPU és CPU gyorsítás kihasználása
 
@@ -404,9 +379,9 @@ foundry service start
 netstat -an | findstr 5273
 ```
 
-## Teljesítmény optimalizálási tippek
+## Teljesítményoptimalizálási tippek
 
-### 1. Modell kiválasztási stratégia
+### 1. Modellválasztási stratégia
 
 - **Phi-4-mini**: Általános feladatokra a legjobb, alacsony memóriahasználat
 - **Qwen2.5-0.5b**: Leggyorsabb inferencia, minimális erőforrásigény
@@ -426,7 +401,7 @@ foundry config set model.cache.max_size 10GB
 foundry config set model.preload false
 ```
 
-### 3. Teljesítmény figyelése
+### 3. Teljesítmény monitorozása
 
 ```powershell
 # Performance & latency measurement
@@ -444,17 +419,17 @@ python Workshop\samples\session03\benchmark_oss_models.py
 
 | Fejlesztés | Mi ez | Hogyan |
 |------------|-------|--------|
-| Megosztott segédprogramok | Távolítsd el a duplikált kliens/indítási logikát | Használd a `Workshop/samples/workshop_utils.py` fájlt (`get_client`, `chat_once`) |
-| Tokenhasználat láthatósága | Tanítsd meg a költség/hatékonyság gondolkodást korán | Állítsd be a `SHOW_USAGE=1` értéket, hogy megjelenítse a prompt/kitöltés/összes token számát |
-| Determinisztikus összehasonlítások | Stabil benchmarking és regressziós ellenőrzések | Használj `temperature=0`, `top_p=1`, következetes prompt szöveget |
-| Első token késleltetés | Érzékelt válaszidő metrika | Alkalmazd a benchmark szkriptet streaminggel (`BENCH_STREAM=1`) |
-| Újrapróbálkozás átmeneti hibák esetén | Ellenálló demók hideg indításkor | `RETRY_ON_FAIL=1` (alapértelmezett) és állítsd be a `RETRY_BACKOFF` értéket |
-| Gyors tesztelés | Gyors ellenőrzés kulcsfontosságú folyamatokon | Futtasd a `python Workshop/tests/smoke.py` szkriptet workshop előtt |
-| Modell alias profilok | Gyorsan váltogatható modellkészlet gépek között | Tarts fenn `.env` fájlt `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` értékekkel |
-| Gyorsítótárazási hatékonyság | Kerüld el az ismételt bemelegítéseket több minta futtatásakor | Segédprogramok gyorsítótár menedzsereket; használd újra szkriptek/notebookok között |
-| Első futtatás bemelegítése | Csökkentsd a p95 késleltetési csúcsokat | Indíts egy apró promptot a `FoundryLocalManager` létrehozása után |
+| Megosztott segédprogramok | Duplikált kliens/bootstrap logika eltávolítása | Használj `Workshop/samples/workshop_utils.py` fájlt (`get_client`, `chat_once`) |
+| Tokenhasználat láthatósága | Korai költség/hatékonyság tanítás | Állítsd be `SHOW_USAGE=1`-et, hogy megjelenítse a prompt/completion/összes tokeneket |
+| Determinisztikus összehasonlítások | Stabil benchmarking és regresszió ellenőrzések | Használj `temperature=0`, `top_p=1`, következetes prompt szöveget |
+| Első token késleltetés | Érzékelt válaszidő metrika | Adaptáld a benchmark szkriptet streaminggel (`BENCH_STREAM=1`) |
+| Újrapróbálkozás átmeneti hibák esetén | Ellenálló demók hideg indításkor | `RETRY_ON_FAIL=1` (alapértelmezett) és állítsd be `RETRY_BACKOFF`-ot |
+| Gyors tesztelés | Gyors ellenőrzés kulcsfolyamatokon | Futtasd `python Workshop/tests/smoke.py`-t workshop előtt |
+| Modell alias profilok | Gyors modellváltás gépek között | Tarts `.env` fájlt `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` beállításokkal |
+| Gyorsítótárazási hatékonyság | Többszörös minta futtatásnál elkerüli az ismételt bemelegítést | Segédprogramok cache menedzserek; újrahasználható szkriptek/notebookok között |
+| Első futtatás bemelegítése | Csökkenti a p95 késleltetési csúcsokat | Indíts egy apró promptot a `FoundryLocalManager` létrehozása után |
 
-Példa determinisztikus meleg alapvonalra (PowerShell):
+Példa determinisztikus meleg alap (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -463,7 +438,7 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Hasonló kimenetet és azonos token számokat kell látnod a második futtatáskor, megerősítve a determinisztikusságot.
+Hasonló kimenetet és azonos token számokat kell látnod a második futtatásnál, megerősítve a determinisztikusságot.
 
 ## Következő lépések
 
@@ -481,10 +456,10 @@ A szekció befejezése után:
 - [Foundry Local Telepítési Útmutató](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 - [Modellek Katalógusa](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
-### Példakód
-- [Module08 Példa 01](./samples/01/README.md) - REST Chat Gyorsindítás
-- [Module08 Példa 02](./samples/02/README.md) - OpenAI SDK Integráció
-- [Module08 Példa 03](./samples/03/README.md) - Modell Felfedezés és Benchmarking
+### Mintakód
+- [Module08 Minta 01](./samples/01/README.md) - REST Chat Gyorsindítás
+- [Module08 Minta 02](./samples/02/README.md) - OpenAI SDK Integráció
+- [Module08 Minta 03](./samples/03/README.md) - Modell Felfedezés és Benchmarking
 
 ### Közösség
 - [Foundry Local GitHub Beszélgetések](https://github.com/microsoft/Foundry-Local/discussions)
@@ -498,15 +473,15 @@ A szekció befejezése után:
 
 ## Példa szcenárió és workshop térkép
 
-| Workshop szkript / Notebook | Szcenárió | Cél | Példa bemenet(ek) | Szükséges adatállomány |
+| Workshop szkript / notebook | Szcenárió | Cél | Példa bemenet(ek) | Szükséges adatállomány |
 |-----------------------------|-----------|-----|-------------------|------------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Belső IT csapat, amely az eszközön történő inferenciát értékeli egy adatvédelmi értékelési portálhoz | Bizonyítsd, hogy a helyi SLM szubmásodperces késleltetéssel válaszol standard kérdésekre | "Sorolj fel két előnyt a helyi inferenciával kapcsolatban." | Nincs (egyszeri kérdés) |
-| Gyorsindítás adaptációs kódblokk | Fejlesztő, aki egy meglévő OpenAI szkriptet migrál Foundry Local-ra | Mutasd be a kompatibilitást | "Sorolj fel két előnyt a helyi inferenciával kapcsolatban." | Csak inline kérdés |
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Belső IT csapat értékeli az eszközön történő inferenciát egy adatvédelmi portálhoz | Bizonyítsd, hogy a helyi SLM szubszekundum késleltetéssel válaszol standard promptokra | "Sorolj fel két előnyt a helyi inferenciával kapcsolatban." | Nincs (egyetlen prompt) |
+| Gyorsindítás adaptációs kódblokk | Fejlesztő migrálja egy meglévő OpenAI szkriptet Foundry Local-ra | Mutasd meg a kompatibilitást | "Sorolj fel két előnyt a helyi inferenciával kapcsolatban." | Csak inline prompt |
 
 ### Szcenárió narratíva
-A biztonsági és megfelelőségi csapatnak validálnia kell, hogy érzékeny prototípusadatok helyben feldolgozhatók-e. Futtatják a bootstrap szkriptet több kérdéssel (adatvédelem, késleltetés, költség) determinisztikus `temperature=0` módban, hogy rögzítsék az alapvető kimeneteket későbbi összehasonlításhoz (3. szekció benchmarking és 4. szekció SLM vs LLM kontraszt).
+A biztonsági és megfelelőségi csapatnak validálnia kell, hogy érzékeny prototípus adatok helyben feldolgozhatók-e. Futtatják a bootstrap szkriptet több prompttal (adatvédelem, késleltetés, költség) determinisztikus `temperature=0` módban, hogy rögzítsék az alapvető kimeneteket későbbi összehasonlításhoz (3. szekció benchmarking és 4. szekció SLM vs LLM kontraszt).
 
-### Minimális kérdéskészlet JSON (opcionális)
+### Minimális prompt készlet JSON (opcionális)
 ```json
 [
     "List two benefits of local inference.",
@@ -515,9 +490,9 @@ A biztonsági és megfelelőségi csapatnak validálnia kell, hogy érzékeny pr
 ]
 ```
 
-Használd ezt a listát reprodukálható értékelési ciklus létrehozásához vagy egy jövőbeli regressziós tesztelési keret előkészítéséhez.
+Használd ezt a listát reprodukálható értékelési ciklus létrehozásához vagy egy jövőbeli regressziós teszt keret magjának.
 
 ---
 
 **Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével került lefordításra. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

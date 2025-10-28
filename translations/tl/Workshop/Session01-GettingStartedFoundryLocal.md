@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T19:18:22+00:00",
+  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
+  "translation_date": "2025-10-28T17:24:58+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "tl"
 }
@@ -18,18 +18,18 @@ Simulan ang iyong paglalakbay sa Foundry Local sa pamamagitan ng pag-install at 
 Sa pagtatapos ng sesyon na ito, magagawa mo ang sumusunod:
 
 - **Mag-install at Mag-configure**: I-set up ang Foundry Local sa Windows 11 gamit ang optimal na performance settings
-- **Master CLI Operations**: Gamitin ang Foundry Local CLI para sa pamamahala at deployment ng modelo
+- **Masterin ang CLI Operations**: Gamitin ang Foundry Local CLI para sa pamamahala at deployment ng modelo
 - **Paganahin ang Hardware Acceleration**: I-configure ang GPU acceleration gamit ang ONNXRuntime o WebGPU
-- **Mag-deploy ng Maraming Modelo**: Patakbuhin ang phi-4, GPT-OSS-20B, Qwen, at DeepSeek na mga modelo nang lokal
-- **Gumawa ng Unang App**: I-adapt ang mga umiiral na sample upang magamit ang Foundry Local Python SDK
+- **Mag-deploy ng Maramihang Modelo**: Patakbuhin ang phi-4, GPT-OSS-20B, Qwen, at DeepSeek na mga modelo nang lokal
+- **Bumuo ng Iyong Unang App**: I-adapt ang mga umiiral na sample upang magamit ang Foundry Local Python SDK
 
 # Subukan ang modelo (non-interactive single prompt)
 foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 
 - Windows 11 (22H2 o mas bago)
-# Ilista ang mga available na modelo sa catalog (ang mga loaded na modelo ay lilitaw kapag pinatakbo)
+# Ilista ang mga available na modelo sa catalog (lumalabas ang mga loaded na modelo kapag na-run na)
 foundry model list
-## NOTE: Sa kasalukuyan, walang dedikadong `--running` flag; upang makita kung alin ang loaded, mag-initiate ng chat o suriin ang service logs.
+## NOTE: Sa kasalukuyan, walang dedikadong `--running` flag; upang makita kung alin ang loaded, mag-initiate ng chat o i-inspect ang service logs.
 - Nakainstall ang Python 3.10+
 - Visual Studio Code na may Python extension
 - Administrator privileges para sa pag-install
@@ -40,14 +40,14 @@ Gumawa ng `.env` (o i-set sa shell) upang gawing portable ang mga script:
 # Ihambing ang mga sagot (non-interactive)
 foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 | Variable | Layunin | Halimbawa |
-|----------|---------|---------|
-| `FOUNDRY_LOCAL_ALIAS` | Preferred na alias ng modelo (ang catalog ay auto-select ng pinakamahusay na variant) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | Override endpoint (kung hindi, auto mula sa manager) | `http://localhost:5273/v1` |
+|----------|---------|-----------|
+| `FOUNDRY_LOCAL_ALIAS` | Preferred na alias ng modelo (ang catalog ay awtomatikong pumipili ng pinakamahusay na variant) | `phi-3.5-mini` |
+| `FOUNDRY_LOCAL_ENDPOINT` | Override endpoint (kung hindi, awtomatikong mula sa manager) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Paganahin ang streaming demo | `true` |
 
-> Kung `FOUNDRY_LOCAL_ENDPOINT=auto` (o unset) ito ay derived mula sa SDK manager.
+> Kung `FOUNDRY_LOCAL_ENDPOINT=auto` (o hindi naka-set), kukunin ito mula sa SDK manager.
 
-## Demo Flow (30 minuto)
+## Daloy ng Demo (30 minuto)
 
 ### 1. I-install ang Foundry Local at I-verify ang CLI Setup (10 minuto)
 
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (Preview / Kung Suportado)**
 
-Kung may native na macOS package na ibinigay (suriin ang opisyal na dokumentasyon para sa pinakabago):
+Kung may native na macOS package (tingnan ang opisyal na dokumento para sa pinakabago):
 
 ```bash
 # Homebrew (if/when available)
@@ -77,9 +77,9 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Kung ang macOS native binaries ay hindi pa available, maaari mo pa ring:
-1. Gumamit ng Windows 11 ARM/Intel VM (Parallels / UTM) at sundin ang mga hakbang sa Windows.
-2. Patakbuhin ang mga modelo gamit ang container (kung may published na container image) at i-set ang `FOUNDRY_LOCAL_ENDPOINT` sa exposed na port.
+Kung ang macOS native binaries ay hindi pa available, maaari mo pa ring gawin ang sumusunod: 
+1. Gumamit ng Windows 11 ARM/Intel VM (Parallels / UTM) at sundin ang mga hakbang sa Windows. 
+2. Patakbuhin ang mga modelo gamit ang container (kung may published na container image) at i-set ang `FOUNDRY_LOCAL_ENDPOINT` sa exposed na port. 
 
 **Gumawa ng Python Virtual Environment (Cross‑Platform)**
 
@@ -160,32 +160,7 @@ print(resp.choices[0].message.content)
 
 Kung mas gusto mo ang explicit na kontrol, maaari mo pa ring gamitin ang CLI + OpenAI client tulad ng ipinakita sa ibang bahagi.
 
-### 2. Paganahin ang GPU Acceleration (5 minuto)
-
-#### Hakbang 2.1: Suriin ang Hardware Capabilities
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Hakbang 2.2: I-configure ang Hardware Acceleration
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Patakbuhin ang Mga Modelo Lokal gamit ang CLI (10 minuto)
+### 2. Patakbuhin ang Mga Modelo Lokal gamit ang CLI (10 minuto)
 
 #### Hakbang 3.1: I-deploy ang Phi-4 Model
 
@@ -312,11 +287,11 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 ## Mga Pangunahing Konseptong Tinalakay
 
-### 1. Foundry Local Architecture
+### 1. Arkitektura ng Foundry Local
 
 - **Local Inference Engine**: Pinapatakbo ang mga modelo nang buo sa iyong device
 - **OpenAI SDK Compatibility**: Seamless na integrasyon sa umiiral na OpenAI code
-- **Model Management**: Mag-download, mag-cache, at magpatakbo ng maraming modelo nang epektibo
+- **Pamamahala ng Modelo**: I-download, i-cache, at patakbuhin ang maramihang mga modelo nang epektibo
 - **Hardware Optimization**: Gamitin ang GPU, NPU, at CPU acceleration
 
 ### 2. CLI Command Reference
@@ -404,7 +379,7 @@ foundry service start
 netstat -an | findstr 5273
 ```
 
-## Mga Tip sa Performance Optimization
+## Mga Tip sa Pag-optimize ng Performance
 
 ### 1. Estratehiya sa Pagpili ng Modelo
 
@@ -443,14 +418,14 @@ python Workshop\samples\session03\benchmark_oss_models.py
 ### Opsyonal na Mga Pagpapahusay
 
 | Pagpapahusay | Ano | Paano |
-|-------------|------|-----|
+|-------------|-----|-------|
 | Shared Utilities | Tanggalin ang duplicate na client/bootstrap logic | Gamitin ang `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Token Usage Visibility | Turuan ang cost/efficiency thinking nang maaga | I-set ang `SHOW_USAGE=1` upang i-print ang prompt/completion/total tokens |
+| Visibility ng Token Usage | Turuan ang cost/efficiency thinking nang maaga | I-set ang `SHOW_USAGE=1` upang ipakita ang prompt/completion/total tokens |
 | Deterministic Comparisons | Stable na benchmarking at regression checks | Gamitin ang `temperature=0`, `top_p=1`, consistent na prompt text |
 | First-Token Latency | Sukatin ang perceived responsiveness | I-adapt ang benchmark script gamit ang streaming (`BENCH_STREAM=1`) |
-| Retry on Transient Errors | Resilient na demos sa cold start | `RETRY_ON_FAIL=1` (default) at i-adjust ang `RETRY_BACKOFF` |
-| Smoke Testing | Mabilis na sanity check sa mga key flow | Patakbuhin ang `python Workshop/tests/smoke.py` bago ang workshop |
-| Model Alias Profiles | Mabilis na mag-pivot ng model set sa pagitan ng mga machine | Panatilihin ang `.env` na may `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
+| Retry on Transient Errors | Resilient na demo sa cold start | `RETRY_ON_FAIL=1` (default) at i-adjust ang `RETRY_BACKOFF` |
+| Smoke Testing | Mabilis na sanity check sa mga pangunahing flow | Patakbuhin ang `python Workshop/tests/smoke.py` bago ang workshop |
+| Model Alias Profiles | Mabilis na pag-pivot ng model set sa pagitan ng mga makina | Panatilihin ang `.env` na may `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
 | Caching Efficiency | Iwasan ang paulit-ulit na warmups sa multi-sample run | Utilities cache managers; i-reuse sa mga script/notebooks |
 | First Run Warmup | Bawasan ang p95 latency spikes | Magpatakbo ng maliit na prompt pagkatapos ng `FoundryLocalManager` creation |
 
@@ -463,16 +438,16 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Dapat mong makita ang katulad na output at identical na token counts sa pangalawang run, na nagpapatunay ng determinism.
+Makikita mo ang katulad na output at pare-parehong bilang ng token sa pangalawang run, na nagpapatunay ng determinism.
 
 ## Mga Susunod na Hakbang
 
 Pagkatapos makumpleto ang sesyon na ito:
 
-1. **I-explore ang Session 2**: Gumawa ng AI solutions gamit ang Azure AI Foundry RAG
+1. **I-explore ang Session 2**: Bumuo ng AI solutions gamit ang Azure AI Foundry RAG
 2. **Subukan ang Iba't Ibang Modelo**: Mag-eksperimento sa Qwen, DeepSeek, at iba pang pamilya ng modelo
-3. **I-optimize ang Performance**: Fine-tune ang mga setting para sa iyong partikular na hardware
-4. **Gumawa ng Custom Applications**: Gamitin ang Foundry Local SDK sa iyong sariling mga proyekto
+3. **I-optimize ang Performance**: I-fine-tune ang mga setting para sa iyong partikular na hardware
+4. **Bumuo ng Custom na Mga Application**: Gamitin ang Foundry Local SDK sa iyong sariling mga proyekto
 
 ## Karagdagang Mga Mapagkukunan
 
@@ -496,15 +471,15 @@ Pagkatapos makumpleto ang sesyon na ito:
 **Antas ng Kahirapan**: Baguhan  
 **Mga Kinakailangan**: Windows 11, Python 3.10+, Administrator access  
 
-## Sample Scenario at Workshop Mapping
+## Sample Scenario & Workshop Mapping
 
 | Workshop Script / Notebook | Scenario | Layunin | Halimbawa ng Input(s) | Dataset na Kailangan |
-|----------------------------|----------|------|------------------|----------------|
+|----------------------------|----------|---------|-----------------------|----------------------|
 | `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internal IT team na nag-evaluate ng on‑device inference para sa privacy assessment portal | Patunayan na ang lokal na SLM ay tumutugon sa sub‑second latency sa standard prompts | "List two benefits of local inference." | Wala (single prompt) |
 | Quickstart adaptation code block | Developer na nagmamigrate ng umiiral na OpenAI script sa Foundry Local | Ipakita ang drop‑in compatibility | "Give two benefits of local inference." | Inline prompt lamang |
 
-### Scenario Narrative
-Ang security & compliance squad ay kailangang mag-validate kung ang sensitibong prototype data ay maaaring ma-proseso nang lokal. Pinapatakbo nila ang bootstrap script gamit ang ilang prompt (privacy, latency, cost) gamit ang deterministic na temperature=0 mode upang makuha ang baseline outputs para sa susunod na comparison (Session 3 benchmarking at Session 4 SLM vs LLM contrast).
+### Narrative ng Scenario
+Ang security & compliance squad ay kailangang mag-validate kung ang sensitibong prototype data ay maaaring iproseso nang lokal. Pinapatakbo nila ang bootstrap script gamit ang ilang prompt (privacy, latency, cost) gamit ang deterministic na temperature=0 mode upang makuha ang baseline outputs para sa susunod na comparison (Session 3 benchmarking at Session 4 SLM vs LLM contrast).
 
 ### Minimal Prompt Set JSON (opsyonal)
 ```json
@@ -520,4 +495,4 @@ Gamitin ang listahan na ito upang gumawa ng reproducible evaluation loop o upang
 ---
 
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, pakitandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na mapagkakatiwalaang pinagmulan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.

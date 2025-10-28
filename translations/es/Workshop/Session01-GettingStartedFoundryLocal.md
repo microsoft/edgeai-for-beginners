@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-08T20:45:13+00:00",
+  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
+  "translation_date": "2025-10-28T17:12:53+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "es"
 }
@@ -11,17 +11,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Resumen
 
-Comienza tu experiencia con Foundry Local instalándolo y configurándolo en Windows 11. Aprende a configurar la CLI, habilitar la aceleración por hardware y almacenar modelos en caché para una inferencia local rápida. Esta sesión práctica te guiará en la ejecución de modelos como Phi, Qwen, DeepSeek y GPT-OSS-20B utilizando comandos reproducibles en la CLI.
+Comienza tu experiencia con Foundry Local instalándolo y configurándolo en Windows 11. Aprende a configurar la CLI, habilitar la aceleración por hardware y almacenar modelos en caché para una inferencia local rápida. Esta sesión práctica te guiará en la ejecución de modelos como Phi, Qwen, DeepSeek y GPT-OSS-20B utilizando comandos CLI reproducibles.
 
 ## Objetivos de Aprendizaje
 
 Al finalizar esta sesión, podrás:
 
 - **Instalar y Configurar**: Configurar Foundry Local en Windows 11 con ajustes de rendimiento óptimos.
-- **Dominar Operaciones en CLI**: Usar la CLI de Foundry Local para la gestión y despliegue de modelos.
+- **Dominar Operaciones CLI**: Usar la CLI de Foundry Local para la gestión y despliegue de modelos.
 - **Habilitar Aceleración por Hardware**: Configurar aceleración GPU con ONNXRuntime o WebGPU.
-- **Desplegar Múltiples Modelos**: Ejecutar los modelos phi-4, GPT-OSS-20B, Qwen y DeepSeek localmente.
-- **Crear Tu Primera Aplicación**: Adaptar ejemplos existentes para usar el SDK de Python de Foundry Local.
+- **Desplegar Múltiples Modelos**: Ejecutar modelos phi-4, GPT-OSS-20B, Qwen y DeepSeek localmente.
+- **Construir Tu Primera Aplicación**: Adaptar ejemplos existentes para usar el SDK de Python de Foundry Local.
 
 # Probar el modelo (único mensaje no interactivo)
 foundry model run phi-4-mini --prompt "Hola, preséntate"
@@ -38,18 +38,18 @@ foundry model list
 
 Crea un archivo `.env` (o configúralo en la terminal) para hacer que los scripts sean portátiles:
 # Comparar respuestas (no interactivo)
-foundry model run gpt-oss-20b --prompt "Explica la inteligencia artificial en el borde en términos simples"
+foundry model run gpt-oss-20b --prompt "Explica la IA en el borde en términos simples"
 | Variable | Propósito | Ejemplo |
 |----------|-----------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias preferido del modelo (el catálogo selecciona automáticamente la mejor variante) | `phi-3.5-mini` |
 | `FOUNDRY_LOCAL_ENDPOINT` | Sobrescribir el endpoint (de lo contrario, se selecciona automáticamente desde el gestor) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Habilitar demostración de streaming | `true` |
 
-> Si `FOUNDRY_LOCAL_ENDPOINT=auto` (o no está configurado), se deriva del gestor del SDK.
+> Si `FOUNDRY_LOCAL_ENDPOINT=auto` (o no configurado), se deriva del gestor del SDK.
 
 ## Flujo de Demostración (30 minutos)
 
-### 1. Instalar Foundry Local y Verificar Configuración de CLI (10 minutos)
+### 1. Instalar Foundry Local y Verificar Configuración de la CLI (10 minutos)
 
 # Listar modelos en caché
 foundry cache list
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (Vista previa / Si es compatible)**
 
-Si se proporciona un paquete nativo para macOS (consulta la documentación oficial para las últimas novedades):
+Si se proporciona un paquete nativo para macOS (consulta la documentación oficial para las últimas actualizaciones):
 
 ```bash
 # Homebrew (if/when available)
@@ -79,7 +79,7 @@ sudo ./install.sh
 
 Si aún no hay binarios nativos para macOS disponibles, puedes:
 1. Usar una VM de Windows 11 ARM/Intel (Parallels / UTM) y seguir los pasos de Windows.
-2. Ejecutar modelos mediante contenedores (si se publica una imagen de contenedor) y configurar `FOUNDRY_LOCAL_ENDPOINT` al puerto expuesto.
+2. Ejecutar modelos mediante un contenedor (si se publica una imagen de contenedor) y configurar `FOUNDRY_LOCAL_ENDPOINT` al puerto expuesto.
 
 **Crear Entorno Virtual de Python (Multiplataforma)**
 
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### Inicialización del SDK (Recomendado)
 
-En lugar de iniciar manualmente el servicio y ejecutar modelos, el **SDK de Python de Foundry Local** puede inicializar todo automáticamente:
+En lugar de iniciar manualmente el servicio y ejecutar modelos, el **SDK de Python de Foundry Local** puede inicializar todo:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -160,32 +160,7 @@ print(resp.choices[0].message.content)
 
 Si prefieres un control explícito, aún puedes usar la CLI + cliente OpenAI como se muestra más adelante.
 
-### 2. Habilitar Aceleración GPU (5 minutos)
-
-#### Paso 2.1: Verificar Capacidades de Hardware
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Paso 2.2: Configurar Aceleración por Hardware
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Ejecutar Modelos Localmente mediante CLI (10 minutos)
+### 2. Ejecutar Modelos Localmente mediante CLI (10 minutos)
 
 #### Paso 3.1: Desplegar el Modelo Phi-4
 
@@ -227,7 +202,7 @@ foundry cache list
 
 #### Paso 4.1: Crear Aplicación Básica de Chat
 
-Crea `samples/01-foundry-quickstart/chat_quickstart.py` (actualizado para usar el gestor si está disponible):
+Crear `samples/01-foundry-quickstart/chat_quickstart.py` (actualizado para usar el gestor si está disponible):
 
 ```python
 #!/usr/bin/env python3
@@ -315,7 +290,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 ### 1. Arquitectura de Foundry Local
 
 - **Motor de Inferencia Local**: Ejecuta modelos completamente en tu dispositivo.
-- **Compatibilidad con SDK de OpenAI**: Integración fluida con código existente de OpenAI.
+- **Compatibilidad con el SDK de OpenAI**: Integración fluida con el código existente de OpenAI.
 - **Gestión de Modelos**: Descargar, almacenar en caché y ejecutar múltiples modelos de manera eficiente.
 - **Optimización de Hardware**: Aprovechar la aceleración de GPU, NPU y CPU.
 
@@ -331,7 +306,7 @@ foundry model unload <name>    # Unload from memory
 foundry config list            # Current configuration
 ```
 
-### 3. Integración con SDK de Python
+### 3. Integración del SDK de Python
 
 ```python
 # Basic client setup
@@ -376,7 +351,7 @@ print()
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Problema 2: "El modelo no se cargó"
+### Problema 2: "El modelo no se pudo cargar"
 
 **Solución:**
 ```powershell
@@ -404,11 +379,11 @@ foundry service start
 netstat -an | findstr 5273
 ```
 
-## Consejos para Optimización de Rendimiento
+## Consejos para Optimizar el Rendimiento
 
 ### 1. Estrategia de Selección de Modelos
 
-- **Phi-4-mini**: Ideal para tareas generales, menor uso de memoria.
+- **Phi-4-mini**: Mejor para tareas generales, menor uso de memoria.
 - **Qwen2.5-0.5b**: Inferencia más rápida, recursos mínimos.
 - **GPT-OSS-20B**: Máxima calidad, requiere más recursos.
 - **DeepSeek-Coder**: Optimizado para tareas de programación.
@@ -426,7 +401,7 @@ foundry config set model.cache.max_size 10GB
 foundry config set model.preload false
 ```
 
-### 3. Monitoreo de Rendimiento
+### 3. Monitoreo del Rendimiento
 
 ```powershell
 # Performance & latency measurement
@@ -445,14 +420,14 @@ python Workshop\samples\session03\benchmark_oss_models.py
 | Mejora | Qué | Cómo |
 |--------|-----|------|
 | Utilidades Compartidas | Eliminar lógica duplicada de cliente/inicialización | Usar `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Visibilidad de Uso de Tokens | Enseñar sobre costos/eficiencia desde el principio | Configurar `SHOW_USAGE=1` para imprimir tokens de prompt/completado/total |
-| Comparaciones Deterministas | Benchmarking estable y pruebas de regresión | Usar `temperature=0`, `top_p=1`, texto de prompt consistente |
-| Latencia del Primer Token | Métrica de percepción de respuesta | Adaptar script de benchmark con streaming (`BENCH_STREAM=1`) |
-| Reintento en Errores Transitorios | Demos resilientes en arranque frío | `RETRY_ON_FAIL=1` (por defecto) y ajustar `RETRY_BACKOFF` |
+| Visibilidad del Uso de Tokens | Enseñar sobre costos/eficiencia desde el principio | Configurar `SHOW_USAGE=1` para imprimir tokens de entrada/completados/totales |
+| Comparaciones Deterministas | Pruebas de rendimiento y regresión estables | Usar `temperature=0`, `top_p=1`, texto de mensaje consistente |
+| Latencia del Primer Token | Métrica de respuesta percibida | Adaptar script de prueba con streaming (`BENCH_STREAM=1`) |
+| Reintento en Errores Transitorios | Demostraciones resilientes en inicio frío | `RETRY_ON_FAIL=1` (por defecto) y ajustar `RETRY_BACKOFF` |
 | Pruebas de Fumado | Verificación rápida de flujos clave | Ejecutar `python Workshop/tests/smoke.py` antes de un taller |
 | Perfiles de Alias de Modelos | Cambiar rápidamente el conjunto de modelos entre máquinas | Mantener `.env` con `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Eficiencia de Caché | Evitar calentamientos repetidos en ejecuciones de múltiples muestras | Utilidades de gestores de caché; reutilizar entre scripts/cuadernos |
-| Calentamiento en Primera Ejecución | Reducir picos de latencia p95 | Ejecutar un prompt pequeño después de la creación de `FoundryLocalManager` |
+| Eficiencia de Caché | Evitar calentamientos repetidos en ejecuciones múltiples | Utilidades de gestores de caché; reutilizar entre scripts/cuadernos |
+| Calentamiento en la Primera Ejecución | Reducir picos de latencia p95 | Ejecutar un mensaje pequeño después de crear `FoundryLocalManager` |
 
 Ejemplo de base cálida determinista (PowerShell):
 
@@ -463,13 +438,13 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Deberías ver una salida similar y conteos de tokens idénticos en la segunda ejecución, confirmando determinismo.
+Deberías ver una salida similar y conteos de tokens idénticos en la segunda ejecución, confirmando la determinación.
 
 ## Próximos Pasos
 
 Después de completar esta sesión:
 
-1. **Explora la Sesión 2**: Construir soluciones de IA con Azure AI Foundry RAG.
+1. **Explora la Sesión 2**: Construye soluciones de IA con Azure AI Foundry RAG.
 2. **Prueba Diferentes Modelos**: Experimenta con Qwen, DeepSeek y otras familias de modelos.
 3. **Optimiza el Rendimiento**: Ajusta configuraciones para tu hardware específico.
 4. **Construye Aplicaciones Personalizadas**: Usa el SDK de Foundry Local en tus propios proyectos.
@@ -482,9 +457,9 @@ Después de completar esta sesión:
 - [Catálogo de Modelos](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Código de Ejemplo
-- [Módulo08 Ejemplo 01](./samples/01/README.md) - Inicio Rápido de REST Chat
+- [Módulo08 Ejemplo 01](./samples/01/README.md) - Inicio rápido de chat REST
 - [Módulo08 Ejemplo 02](./samples/02/README.md) - Integración con SDK de OpenAI
-- [Módulo08 Ejemplo 03](./samples/03/README.md) - Descubrimiento y Benchmarking de Modelos
+- [Módulo08 Ejemplo 03](./samples/03/README.md) - Descubrimiento y evaluación de modelos
 
 ### Comunidad
 - [Discusiones en GitHub de Foundry Local](https://github.com/microsoft/Foundry-Local/discussions)
@@ -492,21 +467,21 @@ Después de completar esta sesión:
 
 ---
 
-**Duración de la Sesión**: 30 minutos prácticos + 15 minutos de preguntas y respuestas  
+**Duración de la Sesión**: 30 minutos de práctica + 15 minutos de preguntas y respuestas  
 **Nivel de Dificultad**: Principiante  
 **Requisitos Previos**: Windows 11, Python 3.10+, acceso de administrador  
 
 ## Escenario de Ejemplo y Mapeo del Taller
 
 | Script / Cuaderno del Taller | Escenario | Objetivo | Ejemplo de Entrada(s) | Dataset Necesario |
-|------------------------------|-----------|----------|-----------------------|-------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Equipo interno de TI evaluando inferencia en dispositivo para un portal de evaluación de privacidad | Demostrar que SLM local responde con latencia inferior al segundo en prompts estándar | "Menciona dos beneficios de la inferencia local." | Ninguno (único prompt) |
-| Código de adaptación de inicio rápido | Desarrollador migrando un script existente de OpenAI a Foundry Local | Mostrar compatibilidad directa | "Menciona dos beneficios de la inferencia local." | Solo prompt en línea |
+|------------------------------|-----------|----------|------------------------|-------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Equipo interno de TI evaluando la inferencia en el dispositivo para un portal de evaluación de privacidad | Demostrar que SLM local responde con latencia inferior al segundo en mensajes estándar | "Menciona dos beneficios de la inferencia local." | Ninguno (mensaje único) |
+| Bloque de código de adaptación de inicio rápido | Desarrollador migrando un script existente de OpenAI a Foundry Local | Mostrar compatibilidad directa | "Menciona dos beneficios de la inferencia local." | Solo mensaje en línea |
 
 ### Narrativa del Escenario
-El equipo de seguridad y cumplimiento debe validar si los datos sensibles de prototipos pueden procesarse localmente. Ejecutan el script de inicialización con varios prompts (privacidad, latencia, costo) utilizando un modo determinista con `temperature=0` para capturar resultados base para comparación posterior (benchmarking en la Sesión 3 y contraste SLM vs LLM en la Sesión 4).
+El equipo de seguridad y cumplimiento debe validar si los datos sensibles de prototipos pueden procesarse localmente. Ejecutan el script de inicialización con varios mensajes (privacidad, latencia, costo) utilizando un modo determinista con temperatura=0 para capturar resultados base para comparaciones posteriores (evaluación en la Sesión 3 y contraste SLM vs LLM en la Sesión 4).
 
-### Conjunto Mínimo de Prompts en JSON (opcional)
+### Conjunto Mínimo de Mensajes en JSON (opcional)
 ```json
 [
     "List two benefits of local inference.",
@@ -515,9 +490,9 @@ El equipo de seguridad y cumplimiento debe validar si los datos sensibles de pro
 ]
 ```
 
-Usa esta lista para crear un bucle de evaluación reproducible o para sembrar un futuro marco de pruebas de regresión.
+Usa esta lista para crear un bucle de evaluación reproducible o para iniciar un futuro sistema de pruebas de regresión.
 
 ---
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.

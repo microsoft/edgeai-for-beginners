@@ -1,51 +1,51 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T16:45:30+00:00",
+  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
+  "translation_date": "2025-10-28T17:23:54+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "vi"
 }
 -->
-# Phiên 1: Bắt đầu với Foundry Local
+# Buổi 1: Bắt đầu với Foundry Local
 
 ## Tóm tắt
 
-Khởi đầu hành trình của bạn với Foundry Local bằng cách cài đặt và cấu hình trên Windows 11. Tìm hiểu cách thiết lập CLI, kích hoạt tăng tốc phần cứng, và lưu trữ mô hình để suy luận nhanh tại chỗ. Phiên thực hành này hướng dẫn cách chạy các mô hình như Phi, Qwen, DeepSeek, và GPT-OSS-20B bằng các lệnh CLI có thể tái sử dụng.
+Khởi đầu hành trình của bạn với Foundry Local bằng cách cài đặt và cấu hình trên Windows 11. Tìm hiểu cách thiết lập CLI, kích hoạt tăng tốc phần cứng và lưu trữ mô hình để suy luận nhanh tại chỗ. Buổi thực hành này hướng dẫn cách chạy các mô hình như Phi, Qwen, DeepSeek và GPT-OSS-20B bằng các lệnh CLI có thể tái sử dụng.
 
 ## Mục tiêu học tập
 
-Sau khi hoàn thành phiên này, bạn sẽ:
+Sau buổi học này, bạn sẽ:
 
 - **Cài đặt và cấu hình**: Thiết lập Foundry Local trên Windows 11 với các cài đặt hiệu suất tối ưu
 - **Thành thạo thao tác CLI**: Sử dụng Foundry Local CLI để quản lý và triển khai mô hình
 - **Kích hoạt tăng tốc phần cứng**: Cấu hình tăng tốc GPU với ONNXRuntime hoặc WebGPU
-- **Triển khai nhiều mô hình**: Chạy các mô hình phi-4, GPT-OSS-20B, Qwen, và DeepSeek tại chỗ
-- **Xây dựng ứng dụng đầu tiên**: Tùy chỉnh các mẫu hiện có để sử dụng Foundry Local Python SDK
+- **Triển khai nhiều mô hình**: Chạy các mô hình phi-4, GPT-OSS-20B, Qwen và DeepSeek tại chỗ
+- **Xây dựng ứng dụng đầu tiên**: Điều chỉnh các mẫu hiện có để sử dụng Foundry Local Python SDK
 
 # Kiểm tra mô hình (một lần nhắc không tương tác)
-foundry model run phi-4-mini --prompt "Xin chào, hãy giới thiệu về bạn"
+foundry model run phi-4-mini --prompt "Xin chào, hãy giới thiệu về bản thân"
 
 - Windows 11 (22H2 hoặc mới hơn)
-# Liệt kê các mô hình trong danh mục (các mô hình đã tải sẽ xuất hiện sau khi chạy)
+# Liệt kê các mô hình trong danh mục (các mô hình đã tải xuất hiện sau khi chạy)
 foundry model list
-## LƯU Ý: Hiện tại không có cờ `--running` chuyên dụng; để xem mô hình nào đã tải, hãy bắt đầu một cuộc trò chuyện hoặc kiểm tra nhật ký dịch vụ.
+## NOTE: Hiện tại không có cờ `--running` chuyên dụng; để xem mô hình nào đã tải, hãy bắt đầu một cuộc trò chuyện hoặc kiểm tra nhật ký dịch vụ.
 - Python 3.10+ đã cài đặt
-- Visual Studio Code với tiện ích mở rộng Python
+- Visual Studio Code với phần mở rộng Python
 - Quyền quản trị viên để cài đặt
 
 ### (Tùy chọn) Biến môi trường
 
-Tạo một tệp `.env` (hoặc thiết lập trong shell) để làm cho các script có thể di chuyển:
+Tạo `.env` (hoặc thiết lập trong shell) để làm cho các script có thể di chuyển:
 # So sánh phản hồi (không tương tác)
 foundry model run gpt-oss-20b --prompt "Giải thích AI biên một cách đơn giản"
 | Biến | Mục đích | Ví dụ |
 |------|----------|-------|
-| `FOUNDRY_LOCAL_ALIAS` | Bí danh mô hình ưu tiên (danh mục tự động chọn biến thể tốt nhất) | `phi-3.5-mini` |
+| `FOUNDRY_LOCAL_ALIAS` | Bí danh mô hình ưa thích (danh mục tự động chọn biến thể tốt nhất) | `phi-3.5-mini` |
 | `FOUNDRY_LOCAL_ENDPOINT` | Ghi đè điểm cuối (nếu không sẽ tự động từ trình quản lý) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Kích hoạt demo streaming | `true` |
 
-> Nếu `FOUNDRY_LOCAL_ENDPOINT=auto` (hoặc không đặt), chúng tôi sẽ lấy từ trình quản lý SDK.
+> Nếu `FOUNDRY_LOCAL_ENDPOINT=auto` (hoặc không được thiết lập), chúng tôi sẽ lấy từ trình quản lý SDK.
 
 ## Quy trình demo (30 phút)
 
@@ -77,9 +77,9 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Nếu các tệp nhị phân gốc macOS chưa có sẵn, bạn vẫn có thể: 
+Nếu các tệp nhị phân gốc của macOS chưa có sẵn, bạn vẫn có thể: 
 1. Sử dụng VM Windows 11 ARM/Intel (Parallels / UTM) và làm theo các bước trên Windows. 
-2. Chạy mô hình qua container (nếu hình ảnh container được xuất bản) và đặt `FOUNDRY_LOCAL_ENDPOINT` tới cổng được mở.
+2. Chạy mô hình qua container (nếu hình ảnh container được xuất bản) và thiết lập `FOUNDRY_LOCAL_ENDPOINT` tới cổng được mở.
 
 **Tạo môi trường ảo Python (Đa nền tảng)**
 
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### Khởi động SDK (Khuyến nghị)
 
-Thay vì khởi động dịch vụ và chạy mô hình thủ công, **Foundry Local Python SDK** có thể tự động khởi động mọi thứ:
+Thay vì khởi động dịch vụ và chạy mô hình thủ công, **Foundry Local Python SDK** có thể khởi động mọi thứ:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -158,34 +158,9 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Nếu bạn muốn kiểm soát rõ ràng, bạn vẫn có thể sử dụng CLI + client OpenAI như được trình bày sau.
+Nếu bạn thích kiểm soát rõ ràng, bạn vẫn có thể sử dụng CLI + OpenAI client như được trình bày sau.
 
-### 2. Kích hoạt tăng tốc GPU (5 phút)
-
-#### Bước 2.1: Kiểm tra khả năng phần cứng
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Bước 2.2: Cấu hình tăng tốc phần cứng
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Chạy mô hình tại chỗ qua CLI (10 phút)
+### 2. Chạy mô hình tại chỗ qua CLI (10 phút)
 
 #### Bước 3.1: Triển khai mô hình Phi-4
 
@@ -223,7 +198,7 @@ foundry model download deepseek-coder-1.3b
 foundry cache list
 ```
 
-### 4. Dự án khởi đầu: Tùy chỉnh 01-run-phi cho Foundry Local (5 phút)
+### 4. Dự án khởi đầu: Điều chỉnh 01-run-phi cho Foundry Local (5 phút)
 
 #### Bước 4.1: Tạo ứng dụng trò chuyện cơ bản
 
@@ -314,10 +289,10 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 ### 1. Kiến trúc Foundry Local
 
-- **Công cụ suy luận tại chỗ**: Chạy mô hình hoàn toàn trên thiết bị của bạn
+- **Công cụ suy luận tại chỗ**: Chạy các mô hình hoàn toàn trên thiết bị của bạn
 - **Tương thích SDK OpenAI**: Tích hợp liền mạch với mã OpenAI hiện có
-- **Quản lý mô hình**: Tải xuống, lưu trữ, và chạy nhiều mô hình một cách hiệu quả
-- **Tối ưu hóa phần cứng**: Tận dụng GPU, NPU, và CPU để tăng tốc
+- **Quản lý mô hình**: Tải xuống, lưu trữ và chạy nhiều mô hình một cách hiệu quả
+- **Tối ưu hóa phần cứng**: Tận dụng GPU, NPU và CPU để tăng tốc
 
 ### 2. Tham khảo lệnh CLI
 
@@ -408,10 +383,10 @@ netstat -an | findstr 5273
 
 ### 1. Chiến lược chọn mô hình
 
-- **Phi-4-mini**: Tốt nhất cho các tác vụ chung, sử dụng ít bộ nhớ
+- **Phi-4-mini**: Tốt nhất cho các nhiệm vụ chung, sử dụng ít bộ nhớ
 - **Qwen2.5-0.5b**: Suy luận nhanh nhất, tài nguyên tối thiểu
 - **GPT-OSS-20B**: Chất lượng cao nhất, yêu cầu nhiều tài nguyên hơn
-- **DeepSeek-Coder**: Tối ưu hóa cho các tác vụ lập trình
+- **DeepSeek-Coder**: Tối ưu hóa cho các nhiệm vụ lập trình
 
 ### 2. Tối ưu hóa phần cứng
 
@@ -442,19 +417,19 @@ python Workshop\samples\session03\benchmark_oss_models.py
 
 ### Nâng cấp tùy chọn
 
-| Nâng cấp | Nội dung | Cách thực hiện |
-|----------|----------|----------------|
+| Nâng cấp | Là gì | Cách thực hiện |
+|----------|-------|---------------|
 | Tiện ích chia sẻ | Loại bỏ logic client/bootstrap trùng lặp | Sử dụng `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Hiển thị sử dụng token | Dạy tư duy về chi phí/hiệu quả từ sớm | Đặt `SHOW_USAGE=1` để in token nhắc/hoàn thành/tổng cộng |
+| Hiển thị sử dụng token | Dạy tư duy về chi phí/hiệu quả sớm | Thiết lập `SHOW_USAGE=1` để in token nhắc/hoàn thành/tổng cộng |
 | So sánh xác định | Kiểm tra hiệu suất ổn định & hồi quy | Sử dụng `temperature=0`, `top_p=1`, văn bản nhắc nhất quán |
-| Độ trễ token đầu tiên | Chỉ số phản hồi cảm nhận | Điều chỉnh script benchmark với streaming (`BENCH_STREAM=1`) |
+| Độ trễ token đầu tiên | Chỉ số cảm nhận độ phản hồi | Điều chỉnh script benchmark với streaming (`BENCH_STREAM=1`) |
 | Thử lại khi lỗi thoáng qua | Demo bền bỉ khi khởi động lạnh | `RETRY_ON_FAIL=1` (mặc định) & điều chỉnh `RETRY_BACKOFF` |
 | Kiểm tra nhanh | Kiểm tra nhanh các luồng chính | Chạy `python Workshop/tests/smoke.py` trước một workshop |
 | Hồ sơ bí danh mô hình | Chuyển đổi nhanh bộ mô hình giữa các máy | Duy trì `.env` với `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Hiệu quả lưu trữ | Tránh khởi động lại nhiều lần trong một lần chạy mẫu | Tiện ích lưu trữ trình quản lý; tái sử dụng giữa các script/notebook |
+| Hiệu quả lưu trữ | Tránh khởi động lại nhiều lần trong lần chạy nhiều mẫu | Tiện ích quản lý lưu trữ; tái sử dụng giữa các script/notebook |
 | Khởi động lần đầu | Giảm đột biến độ trễ p95 | Gửi một nhắc nhỏ sau khi tạo `FoundryLocalManager` |
 
-Ví dụ khởi động xác định cơ bản (PowerShell):
+Ví dụ khởi động cơ bản xác định (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -463,14 +438,14 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Bạn sẽ thấy đầu ra tương tự & số lượng token giống hệt nhau trong lần chạy thứ hai, xác nhận tính xác định.
+Bạn sẽ thấy đầu ra tương tự & số lượng token giống nhau trong lần chạy thứ hai, xác nhận tính xác định.
 
-## Các bước tiếp theo
+## Bước tiếp theo
 
-Sau khi hoàn thành phiên này:
+Sau khi hoàn thành buổi học này:
 
-1. **Khám phá Phiên 2**: Xây dựng giải pháp AI với Azure AI Foundry RAG
-2. **Thử các mô hình khác nhau**: Thử nghiệm với Qwen, DeepSeek, và các dòng mô hình khác
+1. **Khám phá Buổi 2**: Xây dựng giải pháp AI với Azure AI Foundry RAG
+2. **Thử các mô hình khác nhau**: Thử nghiệm với Qwen, DeepSeek và các dòng mô hình khác
 3. **Tối ưu hóa hiệu suất**: Tinh chỉnh cài đặt cho phần cứng cụ thể của bạn
 4. **Xây dựng ứng dụng tùy chỉnh**: Sử dụng Foundry Local SDK trong các dự án của riêng bạn
 
@@ -482,7 +457,7 @@ Sau khi hoàn thành phiên này:
 - [Danh mục mô hình](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Mã mẫu
-- [Mẫu Module08 01](./samples/01/README.md) - Khởi động nhanh REST Chat
+- [Mẫu Module08 01](./samples/01/README.md) - Khởi đầu trò chuyện REST
 - [Mẫu Module08 02](./samples/02/README.md) - Tích hợp SDK OpenAI
 - [Mẫu Module08 03](./samples/03/README.md) - Khám phá & đánh giá mô hình
 
@@ -492,21 +467,21 @@ Sau khi hoàn thành phiên này:
 
 ---
 
-**Thời lượng phiên**: 30 phút thực hành + 15 phút hỏi đáp  
+**Thời lượng buổi học**: 30 phút thực hành + 15 phút hỏi đáp  
 **Mức độ khó**: Người mới bắt đầu  
 **Yêu cầu trước**: Windows 11, Python 3.10+, quyền quản trị viên
 
 ## Kịch bản mẫu & ánh xạ workshop
 
-| Script / Notebook Workshop | Kịch bản | Mục tiêu | Ví dụ đầu vào | Dataset cần thiết |
-|----------------------------|----------|----------|---------------|-------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Đội IT nội bộ đánh giá suy luận tại chỗ cho cổng đánh giá bảo mật | Chứng minh SLM tại chỗ phản hồi với độ trễ dưới một giây trên các nhắc chuẩn | "Liệt kê hai lợi ích của suy luận tại chỗ." | Không có (một lần nhắc) |
-| Mã khởi động nhanh tùy chỉnh | Nhà phát triển chuyển đổi script OpenAI hiện có sang Foundry Local | Hiển thị khả năng tương thích dễ dàng | "Đưa ra hai lợi ích của suy luận tại chỗ." | Chỉ nhắc nội tuyến |
+| Script / Notebook Workshop | Kịch bản | Mục tiêu | Ví dụ đầu vào | Bộ dữ liệu cần thiết |
+|----------------------------|----------|----------|---------------|----------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Đội IT nội bộ đánh giá suy luận tại chỗ cho cổng đánh giá quyền riêng tư | Chứng minh SLM tại chỗ phản hồi trong độ trễ dưới một giây với các nhắc chuẩn | "Liệt kê hai lợi ích của suy luận tại chỗ." | Không có (một lần nhắc) |
+| Khối mã điều chỉnh khởi đầu nhanh | Nhà phát triển chuyển đổi script OpenAI hiện có sang Foundry Local | Hiển thị khả năng tương thích thả vào | "Đưa ra hai lợi ích của suy luận tại chỗ." | Chỉ nhắc nội tuyến |
 
 ### Tường thuật kịch bản
-Đội bảo mật & tuân thủ cần xác nhận liệu dữ liệu nguyên mẫu nhạy cảm có thể được xử lý tại chỗ hay không. Họ chạy script khởi động với một số nhắc (bảo mật, độ trễ, chi phí) sử dụng chế độ xác định `temperature=0` để ghi lại đầu ra cơ bản cho so sánh sau này (đánh giá Phiên 3 và đối chiếu SLM vs LLM trong Phiên 4).
+Đội bảo mật & tuân thủ phải xác nhận liệu dữ liệu nguyên mẫu nhạy cảm có thể được xử lý tại chỗ hay không. Họ chạy script khởi động với một số nhắc (quyền riêng tư, độ trễ, chi phí) sử dụng chế độ xác định `temperature=0` để ghi lại đầu ra cơ bản cho so sánh sau này (đánh giá hiệu suất Buổi 3 và so sánh SLM với LLM Buổi 4).
 
-### Bộ nhắc tối thiểu JSON (tùy chọn)
+### JSON bộ nhắc tối thiểu (tùy chọn)
 ```json
 [
     "List two benefits of local inference.",
@@ -520,4 +495,4 @@ Sử dụng danh sách này để tạo vòng lặp đánh giá có thể tái s
 ---
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

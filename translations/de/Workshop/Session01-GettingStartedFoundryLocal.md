@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-08T20:45:44+00:00",
+  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
+  "translation_date": "2025-10-28T17:13:12+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "de"
 }
 -->
-# Sitzung 1: Einführung in Foundry Local
+# Sitzung 1: Einstieg in Foundry Local
 
 ## Zusammenfassung
 
-Starten Sie Ihre Reise mit Foundry Local, indem Sie es unter Windows 11 installieren und konfigurieren. Lernen Sie, wie Sie die CLI einrichten, Hardware-Beschleunigung aktivieren und Modelle für schnelle lokale Inferenz zwischenspeichern. Diese praktische Sitzung führt Sie durch die Ausführung von Modellen wie Phi, Qwen, DeepSeek und GPT-OSS-20B mit reproduzierbaren CLI-Befehlen.
+Beginnen Sie Ihre Reise mit Foundry Local, indem Sie es unter Windows 11 installieren und konfigurieren. Lernen Sie, wie Sie die CLI einrichten, Hardware-Beschleunigung aktivieren und Modelle für schnelle lokale Inferenz zwischenspeichern. Diese praktische Sitzung zeigt, wie Modelle wie Phi, Qwen, DeepSeek und GPT-OSS-20B mit reproduzierbaren CLI-Befehlen ausgeführt werden.
 
 ## Lernziele
 
@@ -23,13 +23,13 @@ Am Ende dieser Sitzung werden Sie:
 - **Mehrere Modelle bereitstellen**: Modelle wie phi-4, GPT-OSS-20B, Qwen und DeepSeek lokal ausführen
 - **Ihre erste App erstellen**: Bestehende Beispiele anpassen, um das Foundry Local Python SDK zu verwenden
 
-# Modell testen (nicht interaktiv, Einzel-Prompt)
+# Modell testen (nicht-interaktive Einzelaufforderung)
 foundry model run phi-4-mini --prompt "Hallo, stell dich vor"
 
 - Windows 11 (22H2 oder später)
 # Verfügbare Katalogmodelle auflisten (geladene Modelle erscheinen nach dem Ausführen)
 foundry model list
-## HINWEIS: Es gibt derzeit keine dedizierte `--running`-Flagge; um zu sehen, welche geladen sind, starten Sie einen Chat oder prüfen Sie die Servicelogs.
+## HINWEIS: Es gibt derzeit kein dediziertes `--running`-Flag; um zu sehen, welche geladen sind, starten Sie einen Chat oder prüfen Sie die Servicelogs.
 - Python 3.10+ installiert
 - Visual Studio Code mit Python-Erweiterung
 - Administratorrechte für die Installation
@@ -37,7 +37,7 @@ foundry model list
 ### (Optional) Umgebungsvariablen
 
 Erstellen Sie eine `.env`-Datei (oder setzen Sie sie in der Shell), um Skripte portabel zu machen:
-# Antworten vergleichen (nicht interaktiv)
+# Antworten vergleichen (nicht-interaktiv)
 foundry model run gpt-oss-20b --prompt "Erkläre Edge AI in einfachen Worten"
 | Variable | Zweck | Beispiel |
 |----------|-------|----------|
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (Vorschau / falls unterstützt)**
 
-Falls ein natives macOS-Paket bereitgestellt wird (prüfen Sie die offiziellen Dokumente für die neuesten Informationen):
+Falls ein natives macOS-Paket bereitgestellt wird (offizielle Dokumentation für die neuesten Informationen prüfen):
 
 ```bash
 # Homebrew (if/when available)
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### SDK-Bootstrapping (empfohlen)
 
-Anstatt den Dienst manuell zu starten und Modelle auszuführen, kann das **Foundry Local Python SDK** alles automatisch starten:
+Anstatt den Service manuell zu starten und Modelle auszuführen, kann das **Foundry Local Python SDK** alles automatisch starten:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -158,34 +158,9 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Falls Sie lieber die Kontrolle behalten möchten, können Sie weiterhin die CLI + OpenAI-Client wie später gezeigt verwenden.
+Falls Sie die Kontrolle bevorzugen, können Sie weiterhin die CLI + OpenAI-Client wie später gezeigt verwenden.
 
-### 2. GPU-Beschleunigung aktivieren (5 Minuten)
-
-#### Schritt 2.1: Hardware-Fähigkeiten überprüfen
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Schritt 2.2: Hardware-Beschleunigung konfigurieren
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Modelle lokal über CLI ausführen (10 Minuten)
+### 2. Modelle lokal über CLI ausführen (10 Minuten)
 
 #### Schritt 3.1: Phi-4-Modell bereitstellen
 
@@ -227,7 +202,7 @@ foundry cache list
 
 #### Schritt 4.1: Basis-Chat-Anwendung erstellen
 
-Erstellen Sie `samples/01-foundry-quickstart/chat_quickstart.py` (aktualisiert zur Verwendung des Managers, falls verfügbar):
+Erstellen Sie `samples/01-foundry-quickstart/chat_quickstart.py` (aktualisiert zur Nutzung des Managers, falls verfügbar):
 
 ```python
 #!/usr/bin/env python3
@@ -390,7 +365,7 @@ foundry model run phi-4-mini
 dir "$env:USERPROFILE\.foundry\models"
 ```
 
-### Problem 3: "Verbindung verweigert auf localhost:5273"
+### Problem 3: "Verbindung zu localhost:5273 verweigert"
 
 **Lösung:**
 ```powershell
@@ -444,17 +419,17 @@ python Workshop\samples\session03\benchmark_oss_models.py
 
 | Verbesserung | Was | Wie |
 |--------------|-----|-----|
-| Gemeinsame Utilities | Entfernen von doppelter Client-/Bootstrapping-Logik | Verwenden Sie `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Token-Nutzungsanzeige | Frühzeitig Kosten-/Effizienzdenken fördern | Setzen Sie `SHOW_USAGE=1`, um Prompt-/Completion-/Gesamttoken anzuzeigen |
+| Gemeinsame Utilities | Duplizierte Client-/Bootstrapping-Logik entfernen | Verwenden Sie `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Token-Nutzungsanzeige | Kosten-/Effizienzdenken früh vermitteln | Setzen Sie `SHOW_USAGE=1`, um Prompt-/Completion-/Gesamttoken anzuzeigen |
 | Deterministische Vergleiche | Stabile Benchmarking- und Regressionstests | Verwenden Sie `temperature=0`, `top_p=1`, konsistenten Prompt-Text |
-| First-Token-Latenz | Wahrgenommene Reaktionszeit messen | Benchmark-Skript mit Streaming anpassen (`BENCH_STREAM=1`) |
+| Erste-Token-Latenz | Wahrgenommene Reaktionszeit messen | Benchmark-Skript mit Streaming anpassen (`BENCH_STREAM=1`) |
 | Wiederholungen bei vorübergehenden Fehlern | Resiliente Demos bei Kaltstart | `RETRY_ON_FAIL=1` (Standard) & `RETRY_BACKOFF` anpassen |
 | Smoke-Tests | Schnelle Überprüfung wichtiger Abläufe | Führen Sie `python Workshop/tests/smoke.py` vor einem Workshop aus |
-| Modellalias-Profile | Schnelles Wechseln zwischen Modellsets auf verschiedenen Maschinen | `.env` mit `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` pflegen |
-| Caching-Effizienz | Wiederholte Warmups bei Multi-Sample-Läufen vermeiden | Utilities-Cache-Manager; Wiederverwendung über Skripte/Notebooks hinweg |
+| Modell-Alias-Profile | Schnelles Wechseln zwischen Modellsätzen auf verschiedenen Maschinen | `.env` mit `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` pflegen |
+| Caching-Effizienz | Wiederholte Warmups bei mehreren Beispielausführungen vermeiden | Utilities-Cache-Manager; Wiederverwendung über Skripte/Notebooks hinweg |
 | Warmup beim ersten Lauf | Reduzierung von p95-Latenzspitzen | Kleinen Prompt nach Erstellung von `FoundryLocalManager` ausführen |
 
-Beispiel für deterministische Warm-Baseline (PowerShell):
+Beispiel für deterministische Warmup-Basis (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -498,10 +473,10 @@ Nach Abschluss dieser Sitzung:
 
 ## Beispiel-Szenario & Workshop-Zuordnung
 
-| Workshop-Skript / Notebook | Szenario | Ziel | Beispiel-Eingaben | Benötigter Datensatz |
-|----------------------------|----------|------|-------------------|-----------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internes IT-Team bewertet On-Device-Inferenz für ein Datenschutzbewertungsportal | Nachweisen, dass lokale SLM innerhalb von Sub-Sekunden-Latenz auf Standard-Prompts reagiert | "Nenne zwei Vorteile der lokalen Inferenz." | Keiner (Einzel-Prompt) |
-| Quickstart-Anpassungscodeblock | Entwickler migriert ein bestehendes OpenAI-Skript zu Foundry Local | Drop-in-Kompatibilität demonstrieren | "Nenne zwei Vorteile der lokalen Inferenz." | Nur Inline-Prompt |
+| Workshop-Skript / Notebook | Szenario | Ziel | Beispiel-Eingaben | Benötigtes Dataset |
+|----------------------------|----------|------|-------------------|--------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internes IT-Team bewertet On-Device-Inferenz für ein Datenschutzbewertungsportal | Lokale SLM-Antworten innerhalb von Sub-Sekunden-Latenz auf Standard-Prompts nachweisen | "Nennen Sie zwei Vorteile der lokalen Inferenz." | Keines (Einzelaufforderung) |
+| Quickstart-Anpassungscodeblock | Entwickler migriert ein bestehendes OpenAI-Skript zu Foundry Local | Drop-in-Kompatibilität zeigen | "Nennen Sie zwei Vorteile der lokalen Inferenz." | Nur Inline-Prompt |
 
 ### Szenario-Erzählung
 Das Sicherheits- und Compliance-Team muss validieren, ob sensible Prototypdaten lokal verarbeitet werden können. Sie führen das Bootstrap-Skript mit mehreren Prompts (Datenschutz, Latenz, Kosten) im deterministischen Modus `temperature=0` aus, um Basis-Ausgaben für spätere Vergleiche (Session 3 Benchmarking und Session 4 SLM vs LLM Kontrast) zu erfassen.
@@ -515,7 +490,7 @@ Das Sicherheits- und Compliance-Team muss validieren, ob sensible Prototypdaten 
 ]
 ```
 
-Verwenden Sie diese Liste, um eine reproduzierbare Evaluationsschleife zu erstellen oder einen zukünftigen Regressionstest-Harness zu initialisieren.
+Verwenden Sie diese Liste, um eine reproduzierbare Bewertungsrunde zu erstellen oder einen zukünftigen Regressionstest-Harness zu starten.
 
 ---
 
