@@ -3,6 +3,10 @@
 
 Demonstrates coordinating multiple specialized agents using different models.
 
+Usage:
+    From inside the Workshop/Samples directory, run:
+        python -m session05.agents_orchestrator
+
 Environment Variables:
   AGENT_MODEL_PRIMARY=phi-4-mini     # Primary agent model
   AGENT_MODEL_EDITOR=phi-4-mini      # Editor agent model
@@ -17,13 +21,13 @@ from dataclasses import dataclass, field
 from typing import List, Dict, Optional
 import os
 import sys
-from workshop_utils import get_client, chat_once
+from utils.workshop_utils import get_client, chat_once
 
 PRIMARY_ALIAS = os.getenv("AGENT_MODEL_PRIMARY", os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini"))
 EDITOR_ALIAS = os.getenv("AGENT_MODEL_EDITOR", PRIMARY_ALIAS)
 ENDPOINT = os.getenv("FOUNDRY_LOCAL_ENDPOINT")
 
-print(f"[INFO] Initializing multi-agent orchestrator")
+print("[INFO] Initializing multi-agent orchestrator")
 print(f"  Primary agent model: {PRIMARY_ALIAS}")
 print(f"  Editor agent model: {EDITOR_ALIAS}")
 

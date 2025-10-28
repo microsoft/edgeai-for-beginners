@@ -2,7 +2,8 @@
 """Session 1 Sample: Foundry Local bootstrap + basic & streaming chat.
 
 Usage:
-  python chat_bootstrap.py "Your question here"
+  From inside the Workshop/Samples directory, run:
+    python -m session01.chat_bootstrap "Your question here"
 
 Environment Variables (optional):
   FOUNDRY_LOCAL_ALIAS=phi-4-mini      # Model alias to use
@@ -22,7 +23,7 @@ This script demonstrates:
 from __future__ import annotations
 import os
 import sys
-from workshop_utils import get_client, chat_once
+from utils.workshop_utils import get_client, chat_once
 
 alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")

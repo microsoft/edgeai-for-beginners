@@ -4,6 +4,10 @@
 Extends simple latency measurement with optional warmup, token/sec stats,
 and (optional) streaming first-token latency.
 
+Usage:
+    From inside the Workshop/Samples directory, run:
+        python -m session03.benchmark_oss_models
+
 Environment Variables:
   BENCH_MODELS=model1,model2         # Comma-separated model aliases
   BENCH_ROUNDS=3                     # Number of benchmark iterations
@@ -22,16 +26,15 @@ import sys
 import time
 import statistics
 import json
-from typing import List, Optional
 
 try:
     import numpy as _np  # optional for precise percentile
 except ImportError:  # pragma: no cover
     _np = None
 
-from workshop_utils import get_client, chat_once
+from utils.workshop_utils import get_client, chat_once
 
-MODELS = os.getenv("BENCH_MODELS", "phi-4-mini,qwen2.5-0.5b,gemma-2-2b").split(",")
+MODELS = os.getenv("BENCH_MODELS", "phi-4-mini,qwen2.5-0.5b").split(",")
 ROUNDS = int(os.getenv("BENCH_ROUNDS", "3"))
 PROMPT = os.getenv("BENCH_PROMPT", "Explain retrieval augmented generation briefly.")
 MEASURE_STREAM = os.getenv("BENCH_STREAM", "0") == "1"
@@ -72,7 +75,6 @@ def run_round(alias: str):
     
     # Optional streaming measurement (one-off) when MEASURE_STREAM enabled
     if MEASURE_STREAM:
-        import openai  # type: ignore
         _, client, model_id = get_client(alias, endpoint=ENDPOINT)
         t0 = time.time()
         stream = client.chat.completions.create(

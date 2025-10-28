@@ -395,15 +395,16 @@ foundry config set model.preload false
 ### 3. Monitoring Performance
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Optional Enhancements

@@ -241,9 +241,10 @@ The compliance documentation team needs fast internal briefs sourced from local 
 
 ### Example Multi-Model Environment
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ### Trace Structure (Optional)

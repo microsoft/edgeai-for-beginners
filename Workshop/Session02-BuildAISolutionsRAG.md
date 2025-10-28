@@ -946,7 +946,7 @@ After completing this session:
 2. **Build Production RAG**: Implement with Chainlit (Sample 04)
 3. **Advanced Vector Search**: Integrate with Chroma or Pinecone
 4. **Cloud Migration**: Deploy to Azure AI Foundry
-5. **Evaluate RAG Quality**: Run `python Workshop/samples/session02/rag_eval_ragas.py` to measure answer_relevancy, faithfulness, and context_precision using ragas
+5. **Evaluate RAG Quality**: Run `cd Workkshop/samples;python -m session02.rag_eval_ragas` to measure answer_relevancy, faithfulness, and context_precision using ragas
 
 ### Optional Enhancements
 

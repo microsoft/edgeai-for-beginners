@@ -34,8 +34,8 @@ nano .env     # macOS/Linux
 
 **For Python Scripts:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -80,7 +80,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Session 03: Benchmarking
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Models to benchmark |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Models to benchmark |
 | `BENCH_ROUNDS` | `3` | Iterations per model |
 | `BENCH_PROMPT` | Pre-configured | Test prompt |
 | `BENCH_STREAM` | `0` | Measure first-token latency |
@@ -131,7 +131,7 @@ SHOW_USAGE=0
 
 ### Benchmarking Setup
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -295,19 +295,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Symptoms:**
 - "Module not found" errors
-- "Cannot import workshop_utils"
 
 **Solutions:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Testing Configuration

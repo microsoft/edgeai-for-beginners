@@ -15,8 +15,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -225,33 +225,31 @@ python scripts/test_samples.py --quick
 
 ### Benchmark Models
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG Pipeline
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Multi-Agent System
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Quick Help**: Run any sample with `--help` or check the docstring:
+**Quick Help**: Run any sample with `--help` from the `samples` directory or check the docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---

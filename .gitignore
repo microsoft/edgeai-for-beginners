@@ -413,3 +413,11 @@ FodyWeavers.xsd
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Virtual environment folder
+.venv/
+.venv
+env/
+env.bak/
+venv/
+venv.bak/

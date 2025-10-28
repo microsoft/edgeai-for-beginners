@@ -214,11 +214,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
