@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T21:15:32+00:00",
+  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
+  "translation_date": "2025-10-28T17:12:18+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "en"
 }
@@ -11,17 +11,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstract
 
-Begin your journey with Foundry Local by installing and configuring it on Windows 11. Learn how to set up the CLI, enable hardware acceleration, and cache models for fast local inference. This hands-on session will guide you through running models like Phi, Qwen, DeepSeek, and GPT-OSS-20B using reproducible CLI commands.
+Begin your journey with Foundry Local by installing and configuring it on Windows 11. Learn how to set up the CLI, enable hardware acceleration, and cache models for fast local inference. This hands-on session guides you through running models like Phi, Qwen, DeepSeek, and GPT-OSS-20B using reproducible CLI commands.
 
 ## Learning Objectives
 
 By the end of this session, you will:
 
-- **Install and Configure**: Set up Foundry Local on Windows 11 with optimal performance settings.
-- **Master CLI Operations**: Use Foundry Local CLI for model management and deployment.
-- **Enable Hardware Acceleration**: Configure GPU acceleration with ONNXRuntime or WebGPU.
-- **Deploy Multiple Models**: Run phi-4, GPT-OSS-20B, Qwen, and DeepSeek models locally.
-- **Build Your First App**: Adapt existing samples to use the Foundry Local Python SDK.
+- **Install and Configure**: Set up Foundry Local on Windows 11 with optimal performance settings
+- **Master CLI Operations**: Use Foundry Local CLI for model management and deployment
+- **Enable Hardware Acceleration**: Configure GPU acceleration with ONNXRuntime or WebGPU
+- **Deploy Multiple Models**: Run phi-4, GPT-OSS-20B, Qwen, and DeepSeek models locally
+- **Build Your First App**: Adapt existing samples to use Foundry Local Python SDK
 
 # Test the model (non-interactive single prompt)
 foundry model run phi-4-mini --prompt "Hello, introduce yourself"
@@ -160,32 +160,7 @@ print(resp.choices[0].message.content)
 
 If you prefer explicit control you can still use the CLI + OpenAI client as shown later.
 
-### 2. Enable GPU Acceleration (5 minutes)
-
-#### Step 2.1: Check Hardware Capabilities
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Step 2.2: Configure Hardware Acceleration
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Run Models Locally via CLI (10 minutes)
+### 2. Run Models Locally via CLI (10 minutes)
 
 #### Step 3.1: Deploy Phi-4 Model
 
@@ -314,10 +289,10 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 ### 1. Foundry Local Architecture
 
-- **Local Inference Engine**: Runs models entirely on your device.
-- **OpenAI SDK Compatibility**: Seamless integration with existing OpenAI code.
-- **Model Management**: Download, cache, and run multiple models efficiently.
-- **Hardware Optimization**: Leverage GPU, NPU, and CPU acceleration.
+- **Local Inference Engine**: Runs models entirely on your device
+- **OpenAI SDK Compatibility**: Seamless integration with existing OpenAI code
+- **Model Management**: Download, cache, and run multiple models efficiently
+- **Hardware Optimization**: Leverage GPU, NPU, and CPU acceleration
 
 ### 2. CLI Command Reference
 
@@ -408,10 +383,10 @@ netstat -an | findstr 5273
 
 ### 1. Model Selection Strategy
 
-- **Phi-4-mini**: Best for general tasks, lower memory usage.
-- **Qwen2.5-0.5b**: Fastest inference, minimal resources.
-- **GPT-OSS-20B**: Highest quality, requires more resources.
-- **DeepSeek-Coder**: Optimized for programming tasks.
+- **Phi-4-mini**: Best for general tasks, lower memory usage
+- **Qwen2.5-0.5b**: Fastest inference, minimal resources
+- **GPT-OSS-20B**: Highest quality, requires more resources
+- **DeepSeek-Coder**: Optimized for programming tasks
 
 ### 2. Hardware Optimization
 
@@ -469,10 +444,10 @@ You should see similar output & identical token counts on the second run, confir
 
 After completing this session:
 
-1. **Explore Session 2**: Build AI solutions with Azure AI Foundry RAG.
-2. **Try Different Models**: Experiment with Qwen, DeepSeek, and other model families.
-3. **Optimize Performance**: Fine-tune settings for your specific hardware.
-4. **Build Custom Applications**: Use the Foundry Local SDK in your own projects.
+1. **Explore Session 2**: Build AI solutions with Azure AI Foundry RAG
+2. **Try Different Models**: Experiment with Qwen, DeepSeek, and other model families
+3. **Optimize Performance**: Fine-tune settings for your specific hardware
+4. **Build Custom Applications**: Use the Foundry Local SDK in your own projects
 
 ## Additional Resources
 
@@ -520,4 +495,4 @@ Use this list to create a reproducible evaluation loop or to seed a future regre
 ---
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.

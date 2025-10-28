@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T19:17:52+00:00",
+  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
+  "translation_date": "2025-10-28T17:24:37+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "ms"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrak
 
-Mulakan perjalanan anda dengan Foundry Local dengan memasang dan mengkonfigurasinya pada Windows 11. Pelajari cara menyediakan CLI, mengaktifkan pecutan perkakasan, dan menyimpan model untuk inferens tempatan yang pantas. Sesi praktikal ini menunjukkan cara menjalankan model seperti Phi, Qwen, DeepSeek, dan GPT-OSS-20B menggunakan arahan CLI yang boleh diulang.
+Mulakan perjalanan anda dengan Foundry Local dengan memasang dan mengkonfigurasinya pada Windows 11. Pelajari cara menyediakan CLI, mengaktifkan pecutan perkakasan, dan cache model untuk inferens tempatan yang pantas. Sesi praktikal ini menunjukkan cara menjalankan model seperti Phi, Qwen, DeepSeek, dan GPT-OSS-20B menggunakan arahan CLI yang boleh diulang.
 
 ## Objektif Pembelajaran
 
@@ -29,7 +29,7 @@ foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 - Windows 11 (22H2 atau lebih baru)
 # Senaraikan model katalog yang tersedia (model yang dimuatkan muncul selepas dijalankan)
 foundry model list
-## NOTE: Tiada flag `--running` khusus buat masa ini; untuk melihat model yang dimuatkan, mulakan chat atau periksa log perkhidmatan.
+## NOTE: Tiada flag `--running` khusus buat masa ini; untuk melihat yang dimuatkan, mulakan chat atau periksa log perkhidmatan.
 - Python 3.10+ dipasang
 - Visual Studio Code dengan sambungan Python
 - Keistimewaan pentadbir untuk pemasangan
@@ -43,15 +43,15 @@ foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 |--------------|--------|--------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias model pilihan (katalog secara automatik memilih varian terbaik) | `phi-3.5-mini` |
 | `FOUNDRY_LOCAL_ENDPOINT` | Ganti endpoint (jika tidak, auto dari pengurus) | `http://localhost:5273/v1` |
-| `FOUNDRY_LOCAL_STREAM` | Aktifkan demo penstriman | `true` |
+| `FOUNDRY_LOCAL_STREAM` | Aktifkan demo streaming | `true` |
 
-> Jika `FOUNDRY_LOCAL_ENDPOINT=auto` (atau tidak ditetapkan), ia akan diperoleh daripada pengurus SDK.
+> Jika `FOUNDRY_LOCAL_ENDPOINT=auto` (atau tidak ditetapkan) ia akan diperoleh daripada pengurus SDK.
 
 ## Aliran Demo (30 minit)
 
 ### 1. Pasang Foundry Local dan Sahkan Persediaan CLI (10 minit)
 
-# Senaraikan model yang disimpan
+# Senaraikan model yang di-cache
 foundry cache list
 
 ```powershell
@@ -79,7 +79,7 @@ sudo ./install.sh
 
 Jika binari asli macOS belum tersedia, anda masih boleh: 
 1. Gunakan VM Windows 11 ARM/Intel (Parallels / UTM) dan ikuti langkah Windows. 
-2. Jalankan model melalui kontena (jika imej kontena diterbitkan) dan tetapkan `FOUNDRY_LOCAL_ENDPOINT` ke port yang didedahkan. 
+2. Jalankan model melalui container (jika imej container diterbitkan) dan tetapkan `FOUNDRY_LOCAL_ENDPOINT` ke port yang didedahkan. 
 
 **Buat Persekitaran Maya Python (Merentas Platform)**
 
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### Bootstrapping SDK (Disyorkan)
 
-Daripada memulakan perkhidmatan secara manual & menjalankan model, **Foundry Local Python SDK** boleh memulakan semuanya:
+Daripada memulakan perkhidmatan secara manual & menjalankan model, **Foundry Local Python SDK** boleh bootstrap semuanya:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -160,32 +160,7 @@ print(resp.choices[0].message.content)
 
 Jika anda lebih suka kawalan eksplisit, anda masih boleh menggunakan CLI + klien OpenAI seperti yang ditunjukkan kemudian.
 
-### 2. Aktifkan Pecutan GPU (5 minit)
-
-#### Langkah 2.1: Periksa Keupayaan Perkakasan
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Langkah 2.2: Konfigurasi Pecutan Perkakasan
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Jalankan Model Secara Tempatan melalui CLI (10 minit)
+### 2. Jalankan Model Secara Tempatan melalui CLI (10 minit)
 
 #### Langkah 3.1: Sebarkan Model Phi-4
 
@@ -316,7 +291,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 - **Enjin Inferens Tempatan**: Menjalankan model sepenuhnya pada peranti anda
 - **Keserasian SDK OpenAI**: Integrasi lancar dengan kod OpenAI sedia ada
-- **Pengurusan Model**: Muat turun, simpan, dan jalankan pelbagai model dengan cekap
+- **Pengurusan Model**: Muat turun, cache, dan jalankan pelbagai model dengan cekap
 - **Pengoptimuman Perkakasan**: Manfaatkan pecutan GPU, NPU, dan CPU
 
 ### 2. Rujukan Arahan CLI
@@ -365,7 +340,7 @@ for chunk in stream:
 print()
 ```
 
-## Penyelesaian Masalah Umum
+## Menyelesaikan Masalah Biasa
 
 ### Isu 1: "Foundry command not found"
 
@@ -445,13 +420,13 @@ python Workshop\samples\session03\benchmark_oss_models.py
 | Peningkatan | Apa | Bagaimana |
 |-------------|-----|----------|
 | Utiliti Berkongsi | Buang logik klien/bootstrap yang berulang | Gunakan `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Kebolehlihatan Penggunaan Token | Ajarkan pemikiran kos/kecekapan lebih awal | Tetapkan `SHOW_USAGE=1` untuk mencetak token prompt/penyelesaian/total |
+| Penglihatan Penggunaan Token | Ajarkan pemikiran kos/kecekapan lebih awal | Tetapkan `SHOW_USAGE=1` untuk mencetak prompt/penyelesaian/total token |
 | Perbandingan Deterministik | Penanda aras stabil & pemeriksaan regresi | Gunakan `temperature=0`, `top_p=1`, teks prompt yang konsisten |
-| Latensi Token Pertama | Metrik responsif yang dirasakan | Sesuaikan skrip penanda aras dengan penstriman (`BENCH_STREAM=1`) |
-| Ulangi pada Ralat Sementara | Demo tahan lasak pada permulaan sejuk | `RETRY_ON_FAIL=1` (lalai) & sesuaikan `RETRY_BACKOFF` |
+| Latensi Token Pertama | Metrik responsif yang dirasakan | Sesuaikan skrip penanda aras dengan streaming (`BENCH_STREAM=1`) |
+| Ulang pada Kesalahan Sementara | Demo tahan lasak pada permulaan sejuk | `RETRY_ON_FAIL=1` (lalai) & sesuaikan `RETRY_BACKOFF` |
 | Ujian Asap | Sanity cepat merentas aliran utama | Jalankan `python Workshop/tests/smoke.py` sebelum bengkel |
 | Profil Alias Model | Berpindah set model dengan cepat antara mesin | Kekalkan `.env` dengan `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Kecekapan Caching | Elakkan pemanasan berulang dalam larian multi-sampel | Pengurus cache utiliti; gunakan semula merentas skrip/notebook |
+| Kecekapan Cache | Elakkan pemanasan berulang dalam larian multi-sampel | Pengurus cache utiliti; gunakan semula merentas skrip/notebook |
 | Pemanasan Larian Pertama | Kurangkan lonjakan latensi p95 | Jalankan prompt kecil selepas penciptaan `FoundryLocalManager` |
 
 Contoh asas hangat deterministik (PowerShell):
@@ -471,20 +446,20 @@ Selepas melengkapkan sesi ini:
 
 1. **Terokai Sesi 2**: Bina penyelesaian AI dengan Azure AI Foundry RAG
 2. **Cuba Model Berbeza**: Eksperimen dengan Qwen, DeepSeek, dan keluarga model lain
-3. **Optimumkan Prestasi**: Laraskan tetapan untuk perkakasan khusus anda
+3. **Optimumkan Prestasi**: Laraskan tetapan untuk perkakasan spesifik anda
 4. **Bina Aplikasi Tersuai**: Gunakan Foundry Local SDK dalam projek anda sendiri
 
 ## Sumber Tambahan
 
 ### Dokumentasi
-- [Rujukan SDK Python Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
+- [Rujukan Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Panduan Pemasangan Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 - [Katalog Model](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
-### Kod Contoh
-- [Modul08 Sampel 01](./samples/01/README.md) - REST Chat Quickstart
-- [Modul08 Sampel 02](./samples/02/README.md) - Integrasi SDK OpenAI
-- [Modul08 Sampel 03](./samples/03/README.md) - Penemuan & Penanda Aras Model
+### Kod Sampel
+- [Module08 Sample 01](./samples/01/README.md) - REST Chat Quickstart
+- [Module08 Sample 02](./samples/02/README.md) - Integrasi SDK OpenAI
+- [Module08 Sample 03](./samples/03/README.md) - Penemuan & Penanda Aras Model
 
 ### Komuniti
 - [Perbincangan GitHub Foundry Local](https://github.com/microsoft/Foundry-Local/discussions)
@@ -492,15 +467,15 @@ Selepas melengkapkan sesi ini:
 
 ---
 
-**Tempoh Sesi**: 30 minit praktikal + 15 minit Q&A  
-**Tahap Kesukaran**: Pemula  
-**Prasyarat**: Windows 11, Python 3.10+, akses Pentadbir  
+**Tempoh Sesi**: 30 minit praktikal + 15 minit Q&A
+**Tahap Kesukaran**: Pemula
+**Prasyarat**: Windows 11, Python 3.10+, akses Pentadbir
 
-## Senario Contoh & Pemetaan Bengkel
+## Senario Sampel & Pemetaan Bengkel
 
-| Skrip / Notebook Bengkel | Senario | Matlamat | Input Contoh | Dataset Diperlukan |
-|--------------------------|---------|---------|--------------|--------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Pasukan IT dalaman menilai inferens pada peranti untuk portal penilaian privasi | Buktikan SLM tempatan memberi respons dalam latensi sub-saat pada prompt standard | "Senaraikan dua manfaat inferens tempatan." | Tiada (prompt tunggal) |
+| Skrip Bengkel / Notebook | Senario | Matlamat | Input Contoh | Dataset Diperlukan |
+|--------------------------|---------|---------|-------------|--------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Pasukan IT dalaman menilai inferens pada peranti untuk portal penilaian privasi | Buktikan SLM tempatan bertindak balas dalam latensi sub-saat pada prompt standard | "Senaraikan dua manfaat inferens tempatan." | Tiada (prompt tunggal) |
 | Kod adaptasi quickstart | Pembangun memindahkan skrip OpenAI sedia ada ke Foundry Local | Tunjukkan keserasian drop-in | "Berikan dua manfaat inferens tempatan." | Hanya prompt dalam talian |
 
 ### Naratif Senario
@@ -515,9 +490,9 @@ Pasukan keselamatan & pematuhan mesti mengesahkan sama ada data prototaip sensit
 ]
 ```
 
-Gunakan senarai ini untuk mencipta gelung penilaian yang boleh diulang atau untuk memulakan rangka ujian regresi masa depan.
+Gunakan senarai ini untuk mencipta gelung penilaian yang boleh diulang atau untuk memulakan harness ujian regresi masa depan.
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

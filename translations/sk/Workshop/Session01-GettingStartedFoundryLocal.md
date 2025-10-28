@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-08T15:18:19+00:00",
+  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
+  "translation_date": "2025-10-28T17:26:31+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "sk"
 }
@@ -11,16 +11,16 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrakt
 
-Začnite svoju cestu s Foundry Local inštaláciou a konfiguráciou na Windows 11. Naučte sa nastaviť CLI, povoliť hardvérovú akceleráciu a ukladať modely do cache pre rýchle lokálne inferencie. Táto praktická relácia vás prevedie spustením modelov ako Phi, Qwen, DeepSeek a GPT-OSS-20B pomocou reprodukovateľných CLI príkazov.
+Začnite svoju cestu s Foundry Local inštaláciou a konfiguráciou na Windows 11. Naučte sa nastaviť CLI, povoliť hardvérovú akceleráciu a ukladať modely do cache pre rýchle lokálne inferencie. Táto praktická relácia vás prevedie spustením modelov ako Phi, Qwen, DeepSeek a GPT-OSS-20B pomocou reprodukovateľných príkazov CLI.
 
 ## Ciele učenia
 
 Na konci tejto relácie budete schopní:
 
 - **Inštalovať a konfigurovať**: Nastaviť Foundry Local na Windows 11 s optimálnymi nastaveniami výkonu
-- **Ovládať CLI operácie**: Používať Foundry Local CLI na správu a nasadenie modelov
-- **Povoliť hardvérovú akceleráciu**: Konfigurovať GPU akceleráciu pomocou ONNXRuntime alebo WebGPU
-- **Nasadiť viacero modelov**: Spustiť modely phi-4, GPT-OSS-20B, Qwen a DeepSeek lokálne
+- **Ovládať operácie CLI**: Používať Foundry Local CLI na správu a nasadenie modelov
+- **Povoliť hardvérovú akceleráciu**: Konfigurovať akceleráciu GPU pomocou ONNXRuntime alebo WebGPU
+- **Nasadiť viacero modelov**: Lokálne spustiť modely phi-4, GPT-OSS-20B, Qwen a DeepSeek
 - **Vytvoriť svoju prvú aplikáciu**: Prispôsobiť existujúce vzorky na použitie Foundry Local Python SDK
 
 # Testovanie modelu (neinteraktívny jednorazový prompt)
@@ -29,23 +29,23 @@ foundry model run phi-4-mini --prompt "Ahoj, predstav sa"
 - Windows 11 (22H2 alebo novší)
 # Zoznam dostupných modelov v katalógu (načítané modely sa zobrazia po spustení)
 foundry model list
-## NOTE: Momentálne neexistuje dedikovaný flag `--running`; na zistenie, ktoré modely sú načítané, začnite chat alebo skontrolujte logy služby.
+## NOTE: Momentálne neexistuje dedikovaný `--running` flag; na zistenie, ktoré modely sú načítané, začnite chat alebo skontrolujte logy služby.
 - Nainštalovaný Python 3.10+
-- Visual Studio Code s rozšírením pre Python
+- Visual Studio Code s rozšírením Python
 - Administrátorské práva na inštaláciu
 
 ### (Voliteľné) Premenné prostredia
 
-Vytvorte `.env` (alebo nastavte v shelli) na zjednodušenie prenosnosti skriptov:
+Vytvorte `.env` (alebo nastavte v shelli) na zjednodušenie prenosu skriptov:
 # Porovnanie odpovedí (neinteraktívne)
 foundry model run gpt-oss-20b --prompt "Vysvetli edge AI jednoduchými slovami"
 | Premenná | Účel | Príklad |
-|----------|------|---------|
+|----------|-------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Preferovaný alias modelu (katalóg automaticky vyberie najlepšiu variantu) | `phi-3.5-mini` |
 | `FOUNDRY_LOCAL_ENDPOINT` | Prekrytie endpointu (inak automaticky z manažéra) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Povoliť streaming demo | `true` |
 
-> Ak je `FOUNDRY_LOCAL_ENDPOINT=auto` (alebo nenastavený), odvodíme ho z SDK manažéra.
+> Ak je `FOUNDRY_LOCAL_ENDPOINT=auto` (alebo nenastavený), odvodíme ho z manažéra SDK.
 
 ## Demo priebeh (30 minút)
 
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### SDK Bootstrapping (Odporúčané)
 
-Namiesto manuálneho spúšťania služby a modelov môže **Foundry Local Python SDK** bootstrapovať všetko:
+Namiesto manuálneho spúšťania služby a modelov môže **Foundry Local Python SDK** všetko automaticky nastaviť:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -158,34 +158,9 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Ak preferujete explicitnú kontrolu, stále môžete použiť CLI + OpenAI klient, ako je ukázané neskôr.
+Ak preferujete explicitnú kontrolu, stále môžete použiť CLI + OpenAI klienta, ako je uvedené neskôr.
 
-### 2. Povolenie GPU akcelerácie (5 minút)
-
-#### Krok 2.1: Skontrolujte hardvérové schopnosti
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Krok 2.2: Konfigurácia hardvérovej akcelerácie
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Spustenie modelov lokálne cez CLI (10 minút)
+### 2. Spustenie modelov lokálne cez CLI (10 minút)
 
 #### Krok 3.1: Nasadenie modelu Phi-4
 
@@ -314,12 +289,12 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 ### 1. Architektúra Foundry Local
 
-- **Lokálny inferenčný engine**: Spúšťa modely výhradne na vašom zariadení
+- **Lokálny inferenčný engine**: Spúšťa modely úplne na vašom zariadení
 - **Kompatibilita s OpenAI SDK**: Bezproblémová integrácia s existujúcim OpenAI kódom
 - **Správa modelov**: Efektívne sťahovanie, ukladanie do cache a spúšťanie viacerých modelov
 - **Optimalizácia hardvéru**: Využitie GPU, NPU a CPU akcelerácie
 
-### 2. Referencia CLI príkazov
+### 2. Referencia príkazov CLI
 
 ```powershell
 # Core Commands
@@ -444,17 +419,17 @@ python Workshop\samples\session03\benchmark_oss_models.py
 
 | Vylepšenie | Čo | Ako |
 |------------|----|-----|
-| Zdieľané utility | Odstránenie duplicity klient/bootstrap logiky | Použite `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Viditeľnosť používania tokenov | Naučte sa myslenie o nákladoch/efektivite už na začiatku | Nastavte `SHOW_USAGE=1` na zobrazenie prompt/completion/celkových tokenov |
+| Zdieľané utility | Odstránenie duplicity klienta/bootstrap logiky | Použite `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Viditeľnosť používania tokenov | Naučte sa premýšľať o nákladoch/efektivite | Nastavte `SHOW_USAGE=1` na zobrazenie prompt/completion/celkových tokenov |
 | Deterministické porovnania | Stabilné benchmarky a regresné kontroly | Použite `temperature=0`, `top_p=1`, konzistentný text promptu |
 | Latencia prvého tokenu | Metrika vnímaného výkonu | Prispôsobte benchmark skript so streamingom (`BENCH_STREAM=1`) |
 | Opakovanie pri prechodných chybách | Odolné demo pri studenom štarte | `RETRY_ON_FAIL=1` (predvolené) a upravte `RETRY_BACKOFF` |
-| Smoke testovanie | Rýchla kontrola kľúčových tokov | Spustite `python Workshop/tests/smoke.py` pred workshopom |
-| Profily aliasov modelov | Rýchle prepínanie sady modelov medzi strojmi | Udržujte `.env` s `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Efektivita cache | Vyhnite sa opakovaným zahrievaniam pri viacerých vzorkách | Utility cache manažérov; opätovné použitie naprieč skriptmi/notebookmi |
-| Zahrievanie pri prvom spustení | Zníženie p95 latencie | Spustite malý prompt po vytvorení `FoundryLocalManager`
+| Rýchle testovanie | Rýchla kontrola kľúčových tokov | Spustite `python Workshop/tests/smoke.py` pred workshopom |
+| Profily aliasov modelov | Rýchle prepínanie modelov medzi zariadeniami | Udržujte `.env` s `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
+| Efektivita cache | Vyhnite sa opakovaným zahrievaniam pri viacerých vzorkách | Utility cache manažérov; opätovné použitie v skriptoch/notebookoch |
+| Zahriatie pri prvom spustení | Zníženie p95 latencie | Spustite malý prompt po vytvorení `FoundryLocalManager`
 
-Príklad deterministického zahrievacieho baseline (PowerShell):
+Príklad deterministického zahriatia (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -472,39 +447,39 @@ Po dokončení tejto relácie:
 1. **Preskúmajte reláciu 2**: Vytváranie AI riešení s Azure AI Foundry RAG
 2. **Vyskúšajte rôzne modely**: Experimentujte s Qwen, DeepSeek a ďalšími rodinami modelov
 3. **Optimalizujte výkon**: Jemne doladte nastavenia pre váš konkrétny hardvér
-4. **Vytvorte vlastné aplikácie**: Použite Foundry Local SDK vo svojich projektoch
+4. **Vytvorte vlastné aplikácie**: Použite Foundry Local SDK vo svojich vlastných projektoch
 
 ## Dodatočné zdroje
 
 ### Dokumentácia
-- [Referenčný manuál Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [Príručka inštalácie Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
-- [Katalóg modelov](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
+- [Foundry Local Python SDK Reference](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
+- [Foundry Local Installation Guide](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
+- [Model Catalog](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Ukážkový kód
-- [Modul08 Ukážka 01](./samples/01/README.md) - REST Chat Quickstart
-- [Modul08 Ukážka 02](./samples/02/README.md) - Integrácia OpenAI SDK
-- [Modul08 Ukážka 03](./samples/03/README.md) - Objavovanie modelov a benchmarking
+- [Module08 Sample 01](./samples/01/README.md) - REST Chat Quickstart
+- [Module08 Sample 02](./samples/02/README.md) - OpenAI SDK Integration
+- [Module08 Sample 03](./samples/03/README.md) - Model Discovery & Benchmarking
 
 ### Komunita
-- [Diskusie na GitHub Foundry Local](https://github.com/microsoft/Foundry-Local/discussions)
-- [Komunita Azure AI](https://techcommunity.microsoft.com/category/artificialintelligence)
+- [Foundry Local GitHub Discussions](https://github.com/microsoft/Foundry-Local/discussions)
+- [Azure AI Community](https://techcommunity.microsoft.com/category/artificialintelligence)
 
 ---
 
-**Trvanie relácie**: 30 minút prakticky + 15 minút Q&A  
+**Trvanie relácie**: 30 minút prakticky + 15 minút otázky a odpovede  
 **Úroveň obtiažnosti**: Začiatočník  
-**Predpoklady**: Windows 11, Python 3.10+, Administrátorský prístup
+**Predpoklady**: Windows 11, Python 3.10+, Administrátorský prístup  
 
 ## Ukážkový scenár a mapovanie workshopu
 
-| Skript workshopu / Notebook | Scenár | Cieľ | Príklad vstupu | Potrebný dataset |
-|-----------------------------|--------|------|----------------|------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Interný IT tím hodnotí inferenciu na zariadení pre portál na posúdenie ochrany súkromia | Dokázať, že lokálny SLM odpovedá v sub-sekundovej latencii na štandardné prompty | "Uveďte dve výhody lokálnej inferencie." | Žiadny (jednorazový prompt) |
+| Skript / Notebook workshopu | Scenár | Cieľ | Príklad vstupov | Potrebná dátová sada |
+|-----------------------------|--------|------|-----------------|----------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Interný IT tím hodnotí inferenciu na zariadení pre portál na posúdenie ochrany súkromia | Dokázať, že lokálny SLM reaguje s latenciou pod sekundu na štandardné prompty | "Uveďte dve výhody lokálnej inferencie." | Žiadna (jednorazový prompt) |
 | Kódový blok adaptácie Quickstart | Vývojár migrujúci existujúci OpenAI skript na Foundry Local | Ukázať kompatibilitu | "Uveďte dve výhody lokálnej inferencie." | Iba inline prompt |
 
 ### Naratív scenára
-Tím pre bezpečnosť a súlad musí overiť, či je možné spracovať citlivé prototypové dáta lokálne. Spúšťajú bootstrap skript s niekoľkými promptmi (súkromie, latencia, náklady) pomocou deterministického režimu temperature=0 na zachytenie základných výstupov pre neskoršie porovnanie (benchmarking v relácii 3 a kontrast SLM vs LLM v relácii 4).
+Tím pre bezpečnosť a súlad musí overiť, či je možné spracovať citlivé prototypové údaje lokálne. Spúšťajú bootstrap skript s niekoľkými promptmi (súkromie, latencia, náklady) pomocou deterministického režimu temperature=0 na zachytenie základných výstupov pre neskoršie porovnanie (benchmarking relácie 3 a kontrast SLM vs LLM relácie 4).
 
 ### Minimálny JSON prompt set (voliteľné)
 ```json
@@ -519,5 +494,5 @@ Použite tento zoznam na vytvorenie reprodukovateľnej evaluačnej slučky alebo
 
 ---
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, upozorňujeme, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
