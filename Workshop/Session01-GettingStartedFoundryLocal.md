@@ -151,32 +151,7 @@ print(resp.choices[0].message.content)
 
 If you prefer explicit control you can still use the CLI + OpenAI client as shown later.
 
-### 2. Enable GPU Acceleration (5 minutes)
-
-#### Step 2.1: Check Hardware Capabilities
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Step 2.2: Configure Hardware Acceleration
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Run Models Locally via CLI (10 minutes)
+### 2. Run Models Locally via CLI (10 minutes)
 
 #### Step 3.1: Deploy Phi-4 Model
 
