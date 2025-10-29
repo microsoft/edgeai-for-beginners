@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-08T19:25:59+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T20:54:59+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ja"
 }
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -37,7 +37,7 @@ python chat_bootstrap.py "What is edge AI?"
 | 01 | `chat_bootstrap.py` | 基本的なチャット + ストリーミング | 約30秒 |
 | 02 | `rag_pipeline.py` | 埋め込みを使用したRAG | 約45秒 |
 | 02 | `rag_eval_ragas.py` | RAG評価 | 約60秒 |
-| 03 | `benchmark_oss_models.py` | モデルのベンチマーク | 約2分 |
+| 03 | `benchmark_oss_models.py` | モデルベンチマーク | 約2分 |
 | 04 | `model_compare.py` | SLMとLLMの比較 | 約45秒 |
 | 05 | `agents_orchestrator.py` | マルチエージェントシステム | 約60秒 |
 | 06 | `models_router.py` | インテントルーティング | 約45秒 |
@@ -143,7 +143,7 @@ set BENCH_ROUNDS=1
 
 ---
 
-## 📖 共通パターン
+## 📖 よくあるパターン
 
 ### 基本的なチャット
 ```python
@@ -197,7 +197,7 @@ for chunk in stream:
 | モデル | サイズ | 最適用途 | スピード |
 |--------|--------|----------|----------|
 | `qwen2.5-0.5b` | 0.5B | 高速分類 | ⚡⚡⚡ |
-| `qwen2.5-coder-0.5b` | 0.5B | 簡単なコード生成 | ⚡⚡⚡ |
+| `qwen2.5-coder-0.5b` | 0.5B | 素早いコード生成 | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | 創造的な文章作成 | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | コード、リファクタリング | ⚡⚡ |
 | `phi-4-mini` | 4B | 一般用途、要約 | ⚡⚡ |
@@ -216,11 +216,11 @@ for chunk in stream:
 
 ## 💡 ヒント
 
-1. **クライアントをキャッシュする**: `workshop_utils`が自動でキャッシュします
-2. **小さいモデルを使用する**: テストには`qwen2.5-0.5b`を使用
-3. **使用状況統計を有効化する**: `SHOW_USAGE=1`を設定してトークンを追跡
+1. **クライアントのキャッシュ**: `workshop_utils`が自動でキャッシュします
+2. **小型モデルを使用**: テストには`qwen2.5-0.5b`を使用
+3. **使用状況統計を有効化**: `SHOW_USAGE=1`を設定してトークンを追跡
 4. **バッチ処理**: 複数のプロンプトを順次処理
-5. **max_tokensを下げる**: レイテンシを減らして迅速な応答を得る
+5. **max_tokensを減らす**: クイックレスポンスのためにレイテンシを削減
 
 ---
 
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### モデルのベンチマーク
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAGパイプライン
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### マルチエージェントシステム
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**クイックヘルプ**: 任意のサンプルを`--help`で実行するか、ドックストリングを確認してください:
+**クイックヘルプ**: `samples`ディレクトリから任意のサンプルを`--help`で実行するか、ドックストリングを確認してください:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解について、当方は責任を負いません。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤認について、当方は一切の責任を負いません。

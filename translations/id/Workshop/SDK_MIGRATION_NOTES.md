@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T19:31:08+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:39:34+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "id"
 }
 -->
-# Catatan Migrasi Foundry Local SDK
+# Catatan Migrasi SDK Lokal Foundry
 
 ## Ikhtisar
 
@@ -48,7 +48,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### Sesi 02: RAG Evaluation (`rag_eval_ragas.py`)
 - Model default diperbarui
 - Menambahkan konfigurasi endpoint
-- Penanganan kesalahan yang ditingkatkan
+- Penanganan kesalahan ditingkatkan
 
 #### Sesi 03: Benchmarking (`benchmark_oss_models.py`)
 - Daftar model default diperbarui untuk menyertakan `phi-4-mini`
@@ -75,7 +75,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### Sesi 06: Pipeline (`models_pipeline.py`)
 - Dokumentasi fungsi yang komprehensif ditambahkan
 - Dokumentasi langkah demi langkah ditingkatkan
-- Penanganan kesalahan yang ditingkatkan
+- Penanganan kesalahan ditingkatkan
 
 ### Skrip
 
@@ -83,7 +83,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Menambahkan dukungan override endpoint
 - Model default diperbarui
 - Dokumentasi fungsi ditingkatkan
-- Penanganan kesalahan yang lebih baik
+- Penanganan kesalahan ditingkatkan
 
 #### CLI Linter (`lint_markdown_cli.py`)
 - Menambahkan tautan referensi SDK
@@ -91,7 +91,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### Pengujian
 
-#### Pengujian Awal (`smoke.py`)
+#### Pengujian Smoke (`smoke.py`)
 - Menambahkan dukungan override endpoint
 - Dokumentasi ditingkatkan
 - Dokumentasi kasus pengujian ditingkatkan
@@ -102,7 +102,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 Semua contoh sekarang mendukung variabel lingkungan berikut:
 
 ### Konfigurasi Inti
-- `FOUNDRY_LOCAL_ALIAS` - Alias model yang digunakan (default bervariasi tergantung contoh)
+- `FOUNDRY_LOCAL_ALIAS` - Alias model yang digunakan (default bervariasi berdasarkan contoh)
 - `FOUNDRY_LOCAL_ENDPOINT` - Override endpoint layanan (opsional)
 - `SHOW_USAGE` - Menampilkan statistik penggunaan token (default: "0")
 - `RETRY_ON_FAIL` - Mengaktifkan logika retry (default: "1")
@@ -111,8 +111,8 @@ Semua contoh sekarang mendukung variabel lingkungan berikut:
 ### Khusus Contoh
 - `EMBED_MODEL` - Model embedding untuk contoh RAG
 - `BENCH_MODELS` - Model yang dipisahkan dengan koma untuk benchmarking
-- `BENCH_ROUNDS` - Jumlah putaran benchmark
-- `BENCH_PROMPT` - Prompt uji untuk benchmark
+- `BENCH_ROUNDS` - Jumlah putaran benchmarking
+- `BENCH_PROMPT` - Prompt uji untuk benchmarking
 - `BENCH_STREAM` - Mengukur latensi token pertama
 - `RAG_QUESTION` - Pertanyaan uji untuk contoh RAG
 - `AGENT_MODEL_PRIMARY` - Model agen utama
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -237,22 +238,22 @@ python -m Workshop.tests.smoke
 
 - **Repositori Utama**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Dokumentasi API**: Lihat repositori SDK untuk dokumentasi API terbaru
+- **Dokumentasi API**: Periksa repositori SDK untuk dokumentasi API terbaru
 
 ## Perubahan yang Mengganggu
 
 ### Tidak Ada yang Diharapkan
-Semua perubahan kompatibel dengan versi sebelumnya. Pembaruan terutama:
+Semua perubahan kompatibel dengan versi sebelumnya. Pembaruan ini terutama:
 - Menambahkan fitur opsional baru (override endpoint)
 - Meningkatkan penanganan kesalahan
 - Meningkatkan dokumentasi
-- Memperbarui nama model default sesuai rekomendasi terkini
+- Memperbarui nama model default sesuai rekomendasi terbaru
 
 ### Peningkatan Opsional
 Anda mungkin ingin memperbarui kode Anda untuk menggunakan:
 - `FOUNDRY_LOCAL_ENDPOINT` untuk kontrol endpoint eksplisit
 - `SHOW_USAGE=1` untuk visibilitas penggunaan token
-- Model default yang diperbarui (`phi-4-mini` menggantikan `phi-3.5-mini`)
+- Model default yang diperbarui (`phi-4-mini` alih-alih `phi-3.5-mini`)
 
 ## Masalah Umum & Solusi
 
@@ -307,10 +308,10 @@ Pembaruan ini kompatibel dengan:
 ---
 
 **Terakhir Diperbarui**: 2025-01-08  
-**Pemelihara**: Tim EdgeAI Workshop  
+**Pemelihara**: Tim Workshop EdgeAI  
 **Versi SDK**: Foundry Local SDK (terbaru 0.7.117+67073234e7)
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang timbul dari penggunaan terjemahan ini.

@@ -1,32 +1,32 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T21:35:00+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T22:57:55+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "hu"
 }
 -->
-# 6. szekció: Foundry Local – Modellek mint eszközök
+# 6. ülés: Foundry Local – Modellek mint eszközök
 
 ## Összefoglaló
 
-Kezeld a modelleket összetett eszközökként egy helyi AI operációs rétegben. Ebben a szekcióban bemutatjuk, hogyan lehet láncolni több specializált SLM/LLM hívást, szelektíven irányítani a feladatokat, és egy egységes SDK felületet biztosítani az alkalmazások számára. Készíteni fogsz egy könnyű modellirányítót + feladattervezőt, integrálod egy alkalmazás szkriptbe, és felvázolod az Azure AI Foundry-hoz való skálázási útvonalat a termelési munkaterhelésekhez.
+Kezeld a modelleket összetett eszközökként egy helyi AI operációs rétegben. Ez az ülés bemutatja, hogyan lehet láncolni több specializált SLM/LLM hívást, szelektíven irányítani a feladatokat, és egy egységes SDK felületet biztosítani az alkalmazások számára. Készíteni fogsz egy könnyű modellirányítót + feladat-tervezőt, integrálod egy alkalmazás szkriptbe, és felvázolod a skálázási utat az Azure AI Foundry felé a termelési munkaterhelésekhez.
 
 ## Tanulási célok
 
-- **Koncepcionáld** a modelleket atomikus eszközökként deklarált képességekkel
-- **Irányítsd** a kéréseket szándék / heurisztikus pontozás alapján
-- **Láncold** az eredményeket több lépéses feladatok során (bontás → megoldás → finomítás)
-- **Integráld** egy egységes kliens API-t a downstream alkalmazásokhoz
-- **Skálázd** a tervezést a felhőbe (ugyanaz az OpenAI-kompatibilis szerződés)
+- **Modellek elképzelése** mint deklarált képességekkel rendelkező atomikus eszközök
+- **Kérések irányítása** szándék / heurisztikus pontozás alapján
+- **Láncolás** több lépéses feladatok között (bontás → megoldás → finomítás)
+- **Egységes kliens API integrálása** a downstream alkalmazásokhoz
+- **Skálázás** tervezése felhőbe (ugyanaz az OpenAI-kompatibilis szerződés)
 
 ## Előfeltételek
 
-- Az 1–5. szekciók teljesítése
-- Több helyi modell cache-ben (pl. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- 1–5. ülések elvégzése
+- Több helyi modell gyorsítótárazva (pl. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Keresztplatform környezeti snippet
+### Keresztplatform környezet snippet
 
 Windows PowerShell:
 ```powershell
@@ -50,7 +50,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Bemutató folyamat (30 perc)
+## Bemutató menete (30 perc)
 
 ### 1. Eszköz képességeinek deklarálása (5 perc)
 
@@ -74,7 +74,7 @@ CATALOG = {
 ```
 
 
-### 2. Szándékfelismerés és irányítás (8 perc)
+### 2. Szándék felismerés és irányítás (8 perc)
 
 Hozd létre a `samples/06-tools/router.py` fájlt:
 
@@ -133,7 +133,7 @@ if __name__ == "__main__":
 ```
 
 
-### 3. Többlépcsős feladatláncolás (7 perc)
+### 3. Többlépéses feladatláncolás (7 perc)
 
 Hozd létre a `samples/06-tools/pipeline.py` fájlt:
 
@@ -176,20 +176,20 @@ if __name__ == '__main__':
 ```
 
 
-### 4. Kezdő projekt: Alkalmazd a `06-models-as-tools` szkriptet (5 perc)
+### 4. Kezdő projekt: Adaptáld a `06-models-as-tools` fájlt (5 perc)
 
 Fejlesztések:
 - Streaming token támogatás hozzáadása (progresszív UI frissítés)
 - Bizalmi pontozás hozzáadása: lexikai átfedés vagy prompt rubrika
-- Trace JSON exportálása (szándék → modell → késleltetés → tokenhasználat)
-- Cache újrahasználat megvalósítása ismétlődő al-lépésekhez
+- Trace JSON exportálása (szándék → modell → késleltetés → token használat)
+- Gyorsítótár újrahasználat megvalósítása ismételt al-lépésekhez
 
-### 5. Skálázási útvonal az Azure-hoz (5 perc)
+### 5. Skálázási út az Azure felé (5 perc)
 
 | Réteg | Helyi (Foundry) | Felhő (Azure AI Foundry) | Átmeneti stratégia |
 |-------|-----------------|--------------------------|---------------------|
 | Irányítás | Heurisztikus Python | Tartós mikroszolgáltatás | API konténerizálása és telepítése |
-| Modellek | Cache-elt SLM-ek | Kezelt telepítések | Helyi nevek leképezése telepítési azonosítókra |
+| Modellek | SLM-ek gyorsítótárazva | Kezelt telepítések | Helyi nevek leképezése telepítési azonosítókra |
 | Megfigyelhetőség | CLI statisztikák/kézi | Központi naplózás és metrikák | Strukturált trace események hozzáadása |
 | Biztonság | Csak helyi hoszt | Azure hitelesítés / hálózat | Kulcstár bevezetése titkokhoz |
 | Költség | Eszköz erőforrás | Fogyasztás alapú számlázás | Költségkorlátok hozzáadása |
@@ -203,36 +203,36 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Várható szándék-alapú modellválasztás és végső finomított eredmény.
+Várható szándék-alapú modellválasztás és végső finomított kimenet.
 
 ## Hibakeresés
 
 | Probléma | Ok | Megoldás |
-|---------|-------|-----|
+|----------|----|----------|
 | Minden feladat ugyanahhoz a modellhez irányítva | Gyenge szabályok | INTENT_RULES regex készlet gazdagítása |
-| A pipeline középső lépésnél elakad | Hiányzó modell betöltve | Futtasd: `foundry model run <model>` |
-| Alacsony kimeneti koherencia | Nincs finomítási fázis | Összegzés/validációs pass hozzáadása |
+| A pipeline középen elakad | Hiányzó modell betöltve | Futtasd a `foundry model run <model>` parancsot |
+| Alacsony kimeneti összhang | Nincs finomítási fázis | Összegzés/validációs lépés hozzáadása |
 
-## Hivatkozások
+## Referenciák
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Azure AI Foundry dokumentáció: https://learn.microsoft.com/azure/ai-foundry
-- Prompt minőségi minták: Lásd 2. szekció
+- Prompt minőségi minták: Lásd 2. ülés
 
 ---
 
-**Szekció időtartama**: 30 perc  
+**Ülés időtartama**: 30 perc  
 **Nehézségi szint**: Haladó
 
 ## Példa forgatókönyv és workshop térkép
 
-| Workshop szkriptek / jegyzetfüzetek | Forgatókönyv | Cél | Adatkészlet / katalógus forrás |
-|------------------------------|----------|-----------|---------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Fejlesztői asszisztens vegyes szándékú promptok kezelésére (refaktorálás, összegzés, osztályozás) | Heurisztikus szándék → modell alias irányítás tokenhasználattal | Inline `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Többlépcsős tervezés és finomítás komplex kódolási segítségnyújtási feladathoz | Bontás → specializált végrehajtás → összegzés finomítási lépés | Ugyanaz a `CATALOG`; lépések a terv kimenetéből származnak |
+| Workshop szkriptek / jegyzetfüzetek | Forgatókönyv | Célkitűzés | Adatkészlet / katalógus forrás |
+|------------------------------------|--------------|------------|-------------------------------|
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Fejlesztői asszisztens vegyes szándékú promptok kezelésére (refaktorálás, összegzés, osztályozás) | Heurisztikus szándék → modell alias irányítás token használattal | Inline `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Többlépéses tervezés és finomítás komplex kódolási segítségnyújtási feladathoz | Bontás → specializált végrehajtás → összegzés finomítási lépés | Ugyanaz a `CATALOG`; lépések a terv kimenetéből származnak |
 
 ### Forgatókönyv narratíva
-Egy mérnöki produktivitási eszköz heterogén feladatokat kap: kód refaktorálása, architektúra jegyzetek összegzése, visszajelzések osztályozása. A késleltetés és erőforrás-használat minimalizálása érdekében egy kis általános modell tervez és összegzi, egy kódra specializált modell kezeli a refaktorálást, és egy könnyű osztályozásra képes modell címkézi a visszajelzéseket. A pipeline szkript bemutatja a láncolást + finomítást; az irányító szkript az adaptív egypromptos irányítást izolálja.
+Egy mérnöki produktivitási eszköz heterogén feladatokat kap: kód refaktorálása, architekturális jegyzetek összegzése, visszajelzések osztályozása. A késleltetés és az erőforrás-felhasználás minimalizálása érdekében egy kis általános modell tervez és összegzi, egy kódra specializált modell kezeli a refaktorálást, és egy könnyű osztályozásra képes modell címkézi a visszajelzéseket. A pipeline szkript bemutatja a láncolást + finomítást; az irányító szkript az adaptív egyetlen prompt irányítást izolálja.
 
 ### Katalógus pillanatkép
 ```python
@@ -269,21 +269,21 @@ trace.append({
 
 
 ### Eszkalációs heurisztika (ötlet)
-Ha a terv kulcsszavakat tartalmaz, mint "optimalizálás", "biztonság", vagy a lépéshossz > 280 karakter → eszkaláld nagyobb modellre (pl. `gpt-oss-20b`) csak arra a lépésre.
+Ha a terv kulcsszavakat tartalmaz, mint "optimalizálás", "biztonság", vagy a lépés hossza > 280 karakter → eszkalálás nagyobb modellre (pl. `gpt-oss-20b`) csak arra a lépésre.
 
 ### Opcionális fejlesztések
 
 | Terület | Fejlesztés | Érték | Tipp |
-|------|-------------|-------|------|
-| Cache-elés | Újrahasznosítás kezelő + kliens objektumokkal | Alacsonyabb késleltetés, kevesebb overhead | Használd: `workshop_utils.get_client` |
-| Használati metrikák | Tokenek és lépésenkénti késleltetés rögzítése | Profilozás és optimalizálás | Időzítsd minden irányított hívást; tárold trace listában |
-| Adaptív irányítás | Bizalom / költség tudatos | Jobb minőség-költség kompromisszum | Pontozás hozzáadása: ha a prompt > N karakter vagy regex illeszkedik a domainre → eszkaláld nagyobb modellre |
+|---------|------------|-------|------|
+| Gyorsítótárazás | Újrahasználható manager + kliens objektumok | Alacsonyabb késleltetés, kevesebb terhelés | Használj `workshop_utils.get_client` |
+| Használati metrikák | Tokenek és lépésenkénti késleltetés rögzítése | Profilozás és optimalizálás | Mérd az egyes irányított hívásokat; tárold a trace listában |
+| Adaptív irányítás | Bizalom / költség tudatos | Jobb minőség-költség arány | Pontozás hozzáadása: ha a prompt > N karakter vagy regex illeszkedik a domainhez → eszkalálás nagyobb modellre |
 | Dinamikus képesség-regisztráció | Katalógus hot reload | Újratelepítés nélküli frissítés | Töltsd be a `catalog.json` fájlt futásidőben; figyeld a fájl időbélyegét |
-| Visszaesési stratégia | Robusztusság hibák esetén | Magasabb rendelkezésre állás | Próbáld meg az elsődlegest → kivétel esetén fallback alias |
-| Streaming pipeline | Korai visszajelzés | UX javítás | Streameld minden lépést és puffereld a végső finomítási bemenetet |
-| Vektor szándék beágyazások | Finomabb irányítás | Magasabb szándék pontosság | Beágyazd a promptot, klaszterezd és térképezd a centroidot → képesség |
+| Visszaesési stratégia | Hiba esetén robusztusság | Magasabb rendelkezésre állás | Próbáld meg az elsődlegest → hiba esetén tartalék alias |
+| Streaming pipeline | Korai visszajelzés | UX javítás | Streameld az egyes lépéseket és puffereld a végső finomítási bemenetet |
+| Vektor szándék beágyazások | Finomabb irányítás | Magasabb szándék pontosság | Ágyazd be a promptot, klaszterezd és térképezd a centroidot → képesség |
 | Trace exportálás | Auditálható lánc | Megfelelőség/jelentéskészítés | JSON sorok kibocsátása: lépés, szándék, modell, késleltetés_ms, tokenek |
-| Költség szimuláció | Felhő előtti becslés | Költségtervezés | Hozzárendelj feltételezett költséget/token modellenként és összesítsd feladatonként |
+| Költség szimuláció | Felhő előzetes becslés | Költségtervezés | Rendelj jelképes költséget/token modellenként és összesítsd feladatonként |
 | Determinisztikus mód | Reprodukálhatóság | Stabil benchmarking | Környezet: `temperature=0`, fix lépésszám |
 
 #### Trace struktúra példa
@@ -323,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Fokozatosan iterálj – kerüld a túlzott mérnöki munkát a korai prototípusoknál.
-
 ---
 
 **Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével került lefordításra. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

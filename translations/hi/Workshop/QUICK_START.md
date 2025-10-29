@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T21:38:36+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T21:00:24+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "hi"
 }
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### सत्र 01: बेसिक चैट
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **एनवायरनमेंट वेरिएबल्स:**
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### सत्र 02: RAG पाइपलाइन
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **एनवायरनमेंट वेरिएबल्स:**
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### सत्र 02: RAG मूल्यांकन (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **नोट**: अतिरिक्त डिपेंडेंसी की आवश्यकता है, जिसे `requirements.txt` के माध्यम से इंस्टॉल किया जा सकता है
@@ -85,25 +86,25 @@ python rag_eval_ragas.py
 ### सत्र 03: बेंचमार्किंग
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **एनवायरनमेंट वेरिएबल्स:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**आउटपुट**: JSON जिसमें लेटेंसी, थ्रूपुट, और फर्स्ट-टोकन मेट्रिक्स शामिल हैं
+**आउटपुट**: लेटेंसी, थ्रूपुट, और फर्स्ट-टोकन मेट्रिक्स के साथ JSON
 
 ### सत्र 04: मॉडल तुलना
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **एनवायरनमेंट वेरिएबल्स:**
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### सत्र 05: मल्टी-एजेंट ऑर्केस्ट्रेशन
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **एनवायरनमेंट वेरिएबल्स:**
@@ -130,19 +131,19 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### सत्र 06: मॉडल राउटर
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**टेस्ट राउटिंग लॉजिक** विभिन्न इंटेंट्स (कोड, सारांश, वर्गीकरण) के साथ
+**रूटिंग लॉजिक का परीक्षण करें** विभिन्न इंटेंट्स (कोड, सारांश, वर्गीकरण) के साथ
 
 ### सत्र 06: पाइपलाइन
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**जटिल मल्टी-स्टेप पाइपलाइन** जिसमें योजना, निष्पादन, और सुधार शामिल है
+**जटिल मल्टी-स्टेप पाइपलाइन** जिसमें योजना, निष्पादन, और सुधार शामिल हैं
 
 ## स्क्रिप्ट्स
 
@@ -159,13 +160,13 @@ python export_benchmark_markdown.py \
 
 **आउटपुट**: मार्कडाउन टेबल + JSON मेट्रिक्स
 
-### मार्कडाउन CLI पैटर्न्स की लिंटिंग
+### Markdown CLI पैटर्न्स की जांच करें
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**उद्देश्य**: दस्तावेज़ में पुराने CLI पैटर्न्स का पता लगाना
+**उद्देश्य**: डाक्यूमेंटेशन में पुराने CLI पैटर्न्स का पता लगाना
 
 ## परीक्षण
 
@@ -193,7 +194,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### मॉड्यूल इंपोर्ट त्रुटियाँ
+### मॉड्यूल इंपोर्ट त्रुटियां
 
 ```bash
 # Ensure virtual environment is activated
@@ -204,7 +205,7 @@ source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### कनेक्शन त्रुटियाँ
+### कनेक्शन त्रुटियां
 
 ```bash
 # Check endpoint
@@ -229,18 +230,18 @@ foundry model run phi-4-mini
 ### कोर कॉन्फ़िगरेशन
 | वेरिएबल | डिफ़ॉल्ट | विवरण |
 |----------|---------|-------------|
-| `FOUNDRY_LOCAL_ALIAS` | अलग-अलग | उपयोग करने के लिए मॉडल उपनाम |
-| `FOUNDRY_LOCAL_ENDPOINT` | ऑटो | सेवा एंडपॉइंट ओवरराइड करें |
-| `SHOW_USAGE` | `0` | टोकन उपयोग आँकड़े दिखाएँ |
+| `FOUNDRY_LOCAL_ALIAS` | अलग-अलग | उपयोग करने के लिए मॉडल का उपनाम |
+| `FOUNDRY_LOCAL_ENDPOINT` | ऑटो | सेवा एंडपॉइंट को ओवरराइड करें |
+| `SHOW_USAGE` | `0` | टोकन उपयोग आँकड़े दिखाएं |
 | `RETRY_ON_FAIL` | `1` | पुनः प्रयास लॉजिक सक्षम करें |
-| `RETRY_BACKOFF` | `1.0` | प्रारंभिक पुनः प्रयास विलंब (सेकंड) |
+| `RETRY_BACKOFF` | `1.0` | प्रारंभिक पुनः प्रयास विलंब (सेकंड में) |
 
 ### सत्र-विशिष्ट
 | वेरिएबल | डिफ़ॉल्ट | विवरण |
 |----------|---------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | एम्बेडिंग मॉडल |
-| `RAG_QUESTION` | सैंपल देखें | RAG टेस्ट प्रश्न |
-| `BENCH_MODELS` | अलग-अलग | कॉमा सेपरेटेड मॉडल्स |
+| `RAG_QUESTION` | सैंपल देखें | RAG परीक्षण प्रश्न |
+| `BENCH_MODELS` | अलग-अलग | कॉमा से अलग किए गए मॉडल |
 | `BENCH_ROUNDS` | `3` | बेंचमार्क पुनरावृत्तियाँ |
 | `BENCH_PROMPT` | सैंपल देखें | बेंचमार्क प्रॉम्प्ट |
 | `BENCH_STREAM` | `0` | फर्स्ट-टोकन लेटेंसी मापें |
@@ -262,7 +263,7 @@ foundry model run phi-4-mini
 - **deepseek-coder-1.3b** - कोड जनरेशन
 - **qwen2.5-7b** - उच्च गुणवत्ता वाले उत्तर
 
-## SDK दस्तावेज़
+## SDK डाक्यूमेंटेशन
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
@@ -271,15 +272,15 @@ foundry model run phi-4-mini
 
 1. सेवा की स्थिति जांचें: `foundry service status`
 2. लॉग देखें: Foundry Local सेवा लॉग जांचें
-3. SDK दस्तावेज़ देखें: https://github.com/microsoft/Foundry-Local
+3. SDK डाक्यूमेंट्स देखें: https://github.com/microsoft/Foundry-Local
 4. सैंपल कोड की समीक्षा करें: सभी सैंपल्स में विस्तृत डॉकस्ट्रिंग्स हैं
 
 ## अगले कदम
 
-1. सभी वर्कशॉप सत्र क्रम में पूरा करें
+1. सभी वर्कशॉप सत्रों को क्रम में पूरा करें
 2. विभिन्न मॉडल्स के साथ प्रयोग करें
-3. अपने उपयोग मामलों के लिए सैंपल्स संशोधित करें
-4. `SDK_MIGRATION_NOTES.md` की समीक्षा करें उन्नत पैटर्न्स के लिए
+3. अपने उपयोग मामलों के लिए सैंपल्स को संशोधित करें
+4. उन्नत पैटर्न्स के लिए `SDK_MIGRATION_NOTES.md` की समीक्षा करें
 
 ---
 
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **अस्वीकरण**:  
-यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता सुनिश्चित करने का प्रयास करते हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियां या अशुद्धियां हो सकती हैं। मूल भाषा में उपलब्ध मूल दस्तावेज़ को प्रामाणिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम उत्तरदायी नहीं हैं।
+यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयास करते हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियां या अशुद्धियां हो सकती हैं। मूल भाषा में दस्तावेज़ को आधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम जिम्मेदार नहीं हैं।

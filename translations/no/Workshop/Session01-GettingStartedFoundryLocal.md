@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:22:18+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T22:13:18+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "no"
 }
@@ -21,13 +21,13 @@ Ved slutten av denne sesjonen vil du:
 - **Beherske CLI-operasjoner**: Bruke Foundry Local CLI for modelladministrasjon og distribusjon
 - **Aktivere maskinvareakselerasjon**: Konfigurere GPU-akselerasjon med ONNXRuntime eller WebGPU
 - **Distribuere flere modeller**: Kjøre phi-4, GPT-OSS-20B, Qwen og DeepSeek-modeller lokalt
-- **Bygge din første app**: Tilpasse eksisterende eksempler til å bruke Foundry Local Python SDK
+- **Bygge din første app**: Tilpasse eksisterende eksempler for å bruke Foundry Local Python SDK
 
 # Test modellen (ikke-interaktiv enkeltprompt)
-foundry model run phi-4-mini --prompt "Hei, introduser deg selv"
+foundry model run phi-4-mini --prompt "Hei, kan du introdusere deg selv?"
 
 - Windows 11 (22H2 eller nyere)
-# Liste over tilgjengelige katalogmodeller (lastede modeller vises etter kjøring)
+# Liste tilgjengelige katalogmodeller (lastede modeller vises etter kjøring)
 foundry model list
 ## NOTE: Det finnes for øyeblikket ingen dedikert `--running` flagg; for å se hvilke som er lastet, start en chat eller inspiser tjenestelogger.
 - Python 3.10+ installert
@@ -51,7 +51,7 @@ foundry model run gpt-oss-20b --prompt "Forklar edge AI på en enkel måte"
 
 ### 1. Installer Foundry Local og verifiser CLI-oppsett (10 minutter)
 
-# Liste over cachede modeller
+# Liste cachede modeller
 foundry cache list
 
 ```powershell
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (Forhåndsvisning / Hvis støttet)**
 
-Hvis en innfødt macOS-pakke er tilgjengelig (sjekk offisiell dokumentasjon for siste versjon):
+Hvis en innfødt macOS-pakke er tilgjengelig (sjekk offisiell dokumentasjon for siste nytt):
 
 ```bash
 # Homebrew (if/when available)
@@ -351,7 +351,7 @@ print()
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Problem 2: "Modellen kunne ikke lastes"
+### Problem 2: "Modellen klarte ikke å laste"
 
 **Løsning:**
 ```powershell
@@ -383,7 +383,7 @@ netstat -an | findstr 5273
 
 ### 1. Strategi for modellvalg
 
-- **Phi-4-mini**: Best for generelle oppgaver, lavt minneforbruk
+- **Phi-4-mini**: Best for generelle oppgaver, lavere minnebruk
 - **Qwen2.5-0.5b**: Raskest inferens, minimale ressurser
 - **GPT-OSS-20B**: Høyeste kvalitet, krever mer ressurser
 - **DeepSeek-Coder**: Optimalisert for programmeringsoppgaver
@@ -404,15 +404,16 @@ foundry config set model.preload false
 ### 3. Overvåking av ytelse
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Valgfrie forbedringer
@@ -424,10 +425,10 @@ python Workshop\samples\session03\benchmark_oss_models.py
 | Deterministiske sammenligninger | Stabil benchmarking og regresjonstester | Bruk `temperature=0`, `top_p=1`, konsistent prompttekst |
 | Første-token-latens | Oppfattet responsivitet | Tilpass benchmark-skript med streaming (`BENCH_STREAM=1`) |
 | Gjenta ved midlertidige feil | Robust demo ved kaldstart | `RETRY_ON_FAIL=1` (standard) og juster `RETRY_BACKOFF` |
-| Røyktesting | Rask sjekk av nøkkelfunksjoner | Kjør `python Workshop/tests/smoke.py` før en workshop |
+| Røyktesting | Rask sanity-sjekk på nøkkelflyter | Kjør `python Workshop/tests/smoke.py` før en workshop |
 | Modellaliasprofiler | Raskt bytte av modellsett mellom maskiner | Vedlikehold `.env` med `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
 | Cache-effektivitet | Unngå gjentatte oppvarminger i multi-sample kjøring | Verktøy cache-managers; gjenbruk på tvers av skript/notebooks |
-| Første kjøring oppvarming | Reduser p95-latensspikes | Send en liten prompt etter `FoundryLocalManager`-opprettelse |
+| Oppvarming ved første kjøring | Reduser p95-latens | Kjør en liten prompt etter opprettelse av `FoundryLocalManager` |
 
 Eksempel på deterministisk varm baseline (PowerShell):
 
@@ -457,31 +458,31 @@ Etter å ha fullført denne sesjonen:
 - [Modellkatalog](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Eksempelkode
-- [Module08 Eksempel 01](./samples/01/README.md) - REST Chat Quickstart
-- [Module08 Eksempel 02](./samples/02/README.md) - OpenAI SDK-integrasjon
-- [Module08 Eksempel 03](./samples/03/README.md) - Modelloppdagelse og benchmarking
+- [Module08 Sample 01](./samples/01/README.md) - REST Chat Quickstart
+- [Module08 Sample 02](./samples/02/README.md) - OpenAI SDK-integrasjon
+- [Module08 Sample 03](./samples/03/README.md) - Modelloppdagelse og benchmarking
 
-### Fellesskap
+### Felleskap
 - [Foundry Local GitHub Diskusjoner](https://github.com/microsoft/Foundry-Local/discussions)
 - [Azure AI Community](https://techcommunity.microsoft.com/category/artificialintelligence)
 
 ---
 
-**Varighet for sesjonen**: 30 minutter praktisk + 15 minutter Q&A  
-**Vanskelighetsgrad**: Nybegynner  
+**Varighet på sesjonen**: 30 minutter praktisk + 15 minutter Q&A  
+**Vanskelighetsnivå**: Nybegynner  
 **Forutsetninger**: Windows 11, Python 3.10+, Administratorrettigheter  
 
 ## Eksempelscenario og workshopkartlegging
 
 | Workshop-skript / Notebook | Scenario | Mål | Eksempelinput | Dataset nødvendig |
 |----------------------------|----------|-----|---------------|-------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internt IT-team som evaluerer on-device inferens for en personvernvurderingsportal | Bevise at lokal SLM svarer innen sub-sekund latens på standardprompter | "List opp to fordeler med lokal inferens." | Ingen (enkeltprompt) |
-| Quickstart-tilpasningskodeblokk | Utvikler som migrerer et eksisterende OpenAI-skript til Foundry Local | Vise drop-in-kompatibilitet | "Gi to fordeler med lokal inferens." | Kun inline-prompt |
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internt IT-team som evaluerer lokal inferens for en personvernvurderingsportal | Bevise at lokal SLM svarer innen sub-sekund latens på standardprompter | "List opp to fordeler med lokal inferens." | Ingen (enkeltprompt) |
+| Tilpasningskodeblokk for hurtigstart | Utvikler som migrerer et eksisterende OpenAI-skript til Foundry Local | Vise drop-in-kompatibilitet | "Gi to fordeler med lokal inferens." | Kun inline-prompt |
 
 ### Scenariofortelling
 Sikkerhets- og samsvarsgruppen må validere om sensitiv prototypedata kan behandles lokalt. De kjører bootstrap-skriptet med flere promter (personvern, latens, kostnad) ved bruk av deterministisk temperatur=0-modus for å fange baseline-utdata for senere sammenligning (Sesjon 3 benchmarking og Sesjon 4 SLM vs LLM-kontrast).
 
-### Minimal prompt-set JSON (valgfritt)
+### Minimal prompt-sett JSON (valgfritt)
 ```json
 [
     "List two benefits of local inference.",
@@ -490,9 +491,9 @@ Sikkerhets- og samsvarsgruppen må validere om sensitiv prototypedata kan behand
 ]
 ```
 
-Bruk denne listen for å opprette en reproducerbar evalueringssløyfe eller for å så en fremtidig regresjonstest-harness.
+Bruk denne listen for å lage en reproducerbar evalueringssløyfe eller for å forberede en fremtidig regresjonstest-harness.
 
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

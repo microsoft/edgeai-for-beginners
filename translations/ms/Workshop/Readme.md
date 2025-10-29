@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8b994c57f1207012e4d7f58b7c0d1ae7",
-  "translation_date": "2025-10-17T09:56:00+00:00",
+  "original_hash": "45923ada94573fee7c82cc4f0c3bb344",
+  "translation_date": "2025-10-28T22:41:53+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "ms"
 }
@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Selamat datang ke **Bengkel EdgeAI untuk Pemula** - panduan praktikal anda untuk membina aplikasi pintar yang berjalan sepenuhnya pada perkakasan tempatan. Bengkel ini mengubah konsep teori Edge AI menjadi kemahiran dunia nyata melalui latihan yang semakin mencabar menggunakan Microsoft Foundry Local dan Small Language Models (SLMs).
 
-### Mengapa Bengkel Ini?
+### Kenapa Bengkel Ini?
 
 **Revolusi Edge AI Telah Bermula**
 
@@ -32,7 +32,7 @@ Organisasi di seluruh dunia sedang beralih daripada AI bergantung kepada awan ke
 **Tetapi Edge AI Berbeza**
 
 Menjalankan AI secara tempatan memerlukan kemahiran baru:
-- Pemilihan dan pengoptimuman model untuk kekangan sumber
+- Pemilihan model dan pengoptimuman untuk kekangan sumber
 - Pengurusan perkhidmatan tempatan dan pecutan perkakasan
 - Kejuruteraan prompt untuk model yang lebih kecil
 - Corak pengeluaran untuk peranti edge
@@ -56,32 +56,32 @@ Dengan menyelesaikan bengkel ini, anda akan dapat:
 
 2. **Membina Aplikasi Berkuasa AI**
    - Laksanakan penyelesaian chat yang serasi dengan OpenAI secara tempatan
-   - Reka bentuk prompt yang berkesan untuk Small Language Models
+   - Reka bentuk prompt yang efektif untuk Small Language Models
    - Tangani respons streaming untuk UX yang lebih baik
    - Integrasi model tempatan ke dalam aplikasi sedia ada
 
 3. **Mencipta Sistem RAG (Retrieval Augmented Generation)**
    - Bina carian semantik dengan embeddings
-   - Dasarkan respons LLM pada pengetahuan khusus domain
+   - Asaskan respons LLM dalam pengetahuan khusus domain
    - Nilai kualiti RAG dengan metrik standard industri
    - Skala dari prototaip ke pengeluaran
 
 4. **Optimalkan Prestasi Model**
-   - Uji penanda aras pelbagai model untuk kes penggunaan anda
+   - Benchmark pelbagai model untuk kes penggunaan anda
    - Ukur latensi, throughput, dan masa token pertama
-   - Pilih model yang optimum berdasarkan kompromi kelajuan/kualiti
+   - Pilih model yang optimal berdasarkan kompromi kelajuan/kualiti
    - Bandingkan kompromi SLM vs LLM dalam senario sebenar
 
 5. **Orkestrasi Sistem Multi-Agent**
    - Reka bentuk agen khusus untuk tugas yang berbeza
    - Laksanakan memori agen dan pengurusan konteks
    - Koordinasi agen dalam aliran kerja yang kompleks
-   - Laluan permintaan secara pintar di antara pelbagai model
+   - Lalukan permintaan dengan bijak merentasi pelbagai model
 
 6. **Melancarkan Penyelesaian Sedia Pengeluaran**
-   - Laksanakan pengendalian kesilapan dan logik ulang
+   - Laksanakan pengendalian kesalahan dan logik ulang
    - Pantau penggunaan token dan sumber sistem
-   - Bina seni bina yang boleh diskala dengan corak model-sebagai-alat
+   - Bina seni bina yang boleh diskalakan dengan corak model-as-tools
    - Rancang laluan migrasi dari edge ke hibrid (edge + awan)
 
 ---
@@ -90,23 +90,23 @@ Dengan menyelesaikan bengkel ini, anda akan dapat:
 
 ### Apa yang Akan Anda Bina
 
-Menjelang akhir bengkel ini, anda akan menghasilkan:
+Menjelang akhir bengkel ini, anda akan mencipta:
 
 | Sesi | Hasil | Kemahiran Ditunjukkan |
 |------|-------|------------------------|
 | **1** | Aplikasi chat dengan streaming | Persediaan perkhidmatan, penyelesaian asas, UX streaming |
 | **2** | Sistem RAG dengan penilaian | Embeddings, carian semantik, metrik kualiti |
-| **3** | Suite penanda aras multi-model | Pengukuran prestasi, perbandingan model |
+| **3** | Suite benchmark multi-model | Pengukuran prestasi, perbandingan model |
 | **4** | Perbandingan SLM vs LLM | Analisis kompromi, strategi pengoptimuman |
 | **5** | Orkestrator multi-agent | Reka bentuk agen, pengurusan memori, koordinasi |
-| **6** | Sistem laluan pintar | Pengesanan niat, pemilihan model, skalabiliti |
+| **6** | Sistem penghalaan pintar | Pengesanan niat, pemilihan model, skalabiliti |
 
 ### Matriks Kompetensi
 
 | Tahap Kemahiran | Sesi 1-2 | Sesi 3-4 | Sesi 5-6 |
 |-----------------|----------|----------|----------|
 | **Pemula** | ✅ Persediaan & asas | ⚠️ Mencabar | ❌ Terlalu maju |
-| **Pertengahan** | ✅ Tinjauan pantas | ✅ Pembelajaran teras | ⚠️ Sasaran regangan |
+| **Pertengahan** | ✅ Ulasan pantas | ✅ Pembelajaran teras | ⚠️ Sasaran lebih tinggi |
 | **Mahir** | ✅ Mudah | ✅ Penambahbaikan | ✅ Corak pengeluaran |
 
 ### Kemahiran Sedia Kerjaya
@@ -114,13 +114,13 @@ Menjelang akhir bengkel ini, anda akan menghasilkan:
 **Selepas bengkel ini, anda akan bersedia untuk:**
 
 ✅ **Membina Aplikasi Berorientasikan Privasi**
-- Aplikasi penjagaan kesihatan yang mengendalikan PHI/PII secara tempatan
+- Aplikasi kesihatan yang mengendalikan PHI/PII secara tempatan
 - Perkhidmatan kewangan dengan keperluan pematuhan
 - Sistem kerajaan dengan keperluan kedaulatan data
 
 ✅ **Optimalkan untuk Persekitaran Edge**
 - Peranti IoT dengan sumber terhad
-- Aplikasi mudah alih yang berorientasikan offline
+- Aplikasi mudah alih yang mengutamakan offline
 - Sistem masa nyata dengan latensi rendah
 
 ✅ **Reka Bentuk Seni Bina Pintar**
@@ -129,9 +129,9 @@ Menjelang akhir bengkel ini, anda akan menghasilkan:
 - Infrastruktur AI yang dioptimumkan kos
 
 ✅ **Memimpin Inisiatif Edge AI**
-- Menilai kebolehlaksanaan Edge AI untuk projek
+- Nilai kebolehlaksanaan Edge AI untuk projek
 - Pilih model dan rangka kerja yang sesuai
-- Reka bentuk penyelesaian AI tempatan yang boleh diskala
+- Reka bentuk penyelesaian AI tempatan yang boleh diskalakan
 
 ---
 
@@ -143,10 +143,10 @@ Menjelang akhir bengkel ini, anda akan menghasilkan:
 |------|-------|-------|--------|
 | **1** | Bermula dengan Foundry Local | Pasang, sahkan, penyelesaian pertama | 30 min |
 | **2** | Membina Penyelesaian AI dengan RAG | Kejuruteraan prompt, embeddings, penilaian | 30 min |
-| **3** | Model Sumber Terbuka | Penemuan model, penanda aras, pemilihan | 30 min |
+| **3** | Model Sumber Terbuka | Penemuan model, benchmarking, pemilihan | 30 min |
 | **4** | Model Terkini | SLM vs LLM, pengoptimuman, rangka kerja | 30 min |
 | **5** | Agen Berkuasa AI | Reka bentuk agen, orkestrasi, memori | 30 min |
-| **6** | Model sebagai Alat | Laluan, rantai, strategi skalabiliti | 30 min |
+| **6** | Model sebagai Alat | Penghalaan, rantai, strategi skalabiliti | 30 min |
 
 ---
 
@@ -156,8 +156,8 @@ Menjelang akhir bengkel ini, anda akan menghasilkan:
 
 **Keperluan Sistem:**
 - **OS**: Windows 10/11, macOS 11+, atau Linux (Ubuntu 20.04+)
-- **RAM**: Minimum 8GB, disarankan 16GB+
-- **Storan**: Ruang bebas 10GB+ untuk model
+- **RAM**: Minimum 8GB, disyorkan 16GB+
+- **Storan**: Ruang kosong 10GB+ untuk model
 - **CPU**: Pemproses moden dengan sokongan AVX2
 - **GPU** (pilihan): Serasi CUDA atau Qualcomm NPU untuk pecutan
 
@@ -165,7 +165,7 @@ Menjelang akhir bengkel ini, anda akan menghasilkan:
 - **Python 3.8+** ([Muat Turun](https://www.python.org/downloads/))
 - **Microsoft Foundry Local** ([Panduan Pemasangan](../../../Workshop))
 - **Git** ([Muat Turun](https://git-scm.com/downloads))
-- **Visual Studio Code** (disarankan) ([Muat Turun](https://code.visualstudio.com/))
+- **Visual Studio Code** (disyorkan) ([Muat Turun](https://code.visualstudio.com/))
 
 ### Persediaan dalam 3 Langkah
 
@@ -251,8 +251,8 @@ pip install -r requirements.txt
 foundry model run phi-4-mini
 
 # Run the chat bootstrap sample
-cd samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 **✅ Berjaya!** Anda sepatutnya melihat respons streaming tentang edge AI.
@@ -270,11 +270,11 @@ Contoh praktikal progresif yang menunjukkan setiap konsep:
 | 1 | [`chat_bootstrap.py`](../../../Workshop/samples/session01/chat_bootstrap.py) | Chat asas & streaming | ~30s |
 | 2 | [`rag_pipeline.py`](../../../Workshop/samples/session02/rag_pipeline.py) | RAG dengan embeddings | ~45s |
 | 2 | [`rag_eval_ragas.py`](../../../Workshop/samples/session02/rag_eval_ragas.py) | Penilaian kualiti RAG | ~60s |
-| 3 | [`benchmark_oss_models.py`](../../../Workshop/samples/session03/benchmark_oss_models.py) | Penanda aras multi-model | ~2-3m |
+| 3 | [`benchmark_oss_models.py`](../../../Workshop/samples/session03/benchmark_oss_models.py) | Benchmarking multi-model | ~2-3m |
 | 4 | [`model_compare.py`](../../../Workshop/samples/session04/model_compare.py) | Perbandingan SLM vs LLM | ~45s |
 | 5 | [`agents_orchestrator.py`](../../../Workshop/samples/session05/agents_orchestrator.py) | Sistem multi-agent | ~60s |
-| 6 | [`models_router.py`](../../../Workshop/samples/session06/models_router.py) | Laluan berdasarkan niat | ~45s |
-| 6 | [`models_pipeline.py`](../../../Workshop/samples/session06/models_pipeline.py) | Rangkaian berbilang langkah | ~60s |
+| 6 | [`models_router.py`](../../../Workshop/samples/session06/models_router.py) | Penghalaan berdasarkan niat | ~45s |
+| 6 | [`models_pipeline.py`](../../../Workshop/samples/session06/models_pipeline.py) | Pipeline multi-langkah | ~60s |
 
 ### Jupyter Notebooks
 
@@ -285,11 +285,11 @@ Eksplorasi interaktif dengan penjelasan dan visualisasi:
 | 1 | [`session01_chat_bootstrap.ipynb`](./notebooks/session01_chat_bootstrap.ipynb) | Asas chat & streaming | ⭐ Pemula |
 | 2 | [`session02_rag_pipeline.ipynb`](./notebooks/session02_rag_pipeline.ipynb) | Bina sistem RAG | ⭐⭐ Pertengahan |
 | 2 | [`session02_rag_eval_ragas.ipynb`](./notebooks/session02_rag_eval_ragas.ipynb) | Nilai kualiti RAG | ⭐⭐ Pertengahan |
-| 3 | [`session03_benchmark_oss_models.ipynb`](./notebooks/session03_benchmark_oss_models.ipynb) | Penanda aras model | ⭐⭐ Pertengahan |
+| 3 | [`session03_benchmark_oss_models.ipynb`](./notebooks/session03_benchmark_oss_models.ipynb) | Benchmarking model | ⭐⭐ Pertengahan |
 | 4 | [`session04_model_compare.ipynb`](./notebooks/session04_model_compare.ipynb) | Perbandingan model | ⭐⭐ Pertengahan |
 | 5 | [`session05_agents_orchestrator.ipynb`](./notebooks/session05_agents_orchestrator.ipynb) | Orkestrasi agen | ⭐⭐⭐ Mahir |
-| 6 | [`session06_models_router.ipynb`](./notebooks/session06_models_router.ipynb) | Laluan niat | ⭐⭐⭐ Mahir |
-| 6 | [`session06_models_pipeline.ipynb`](./notebooks/session06_models_pipeline.ipynb) | Orkestrasi rangkaian | ⭐⭐⭐ Mahir |
+| 6 | [`session06_models_router.ipynb`](./notebooks/session06_models_router.ipynb) | Penghalaan niat | ⭐⭐⭐ Mahir |
+| 6 | [`session06_models_pipeline.ipynb`](./notebooks/session06_models_pipeline.ipynb) | Orkestrasi pipeline | ⭐⭐⭐ Mahir |
 
 ### Dokumentasi
 
@@ -298,8 +298,8 @@ Panduan dan rujukan yang komprehensif:
 | Dokumen | Penerangan | Gunakan Apabila |
 |---------|------------|-----------------|
 | [QUICK_START.md](./QUICK_START.md) | Panduan persediaan pantas | Bermula dari awal |
-| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Lembaran cheat perintah & API | Memerlukan jawapan pantas |
-| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | Corak & contoh SDK | Menulis kod |
+| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Lembaran rujukan perintah & API | Perlukan jawapan pantas |
+| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | Corak SDK & contoh | Menulis kod |
 | [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Panduan pembolehubah persekitaran | Konfigurasi sampel |
 | [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Penambahbaikan sampel terkini | Memahami perubahan |
 | [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Panduan migrasi | Meningkatkan kod |
@@ -311,24 +311,24 @@ Panduan dan rujukan yang komprehensif:
 
 ### Untuk Pemula (3-4 jam)
 1. ✅ Sesi 1: Bermula (fokus pada persediaan dan chat asas)
-2. ✅ Sesi 2: Asas RAG (abaikan penilaian pada mulanya)
-3. ✅ Sesi 3: Penanda aras mudah (2 model sahaja)
-4. ⏭️ Abaikan Sesi 4-6 buat masa ini
+2. ✅ Sesi 2: Asas RAG (langkau penilaian pada awalnya)
+3. ✅ Sesi 3: Benchmarking mudah (2 model sahaja)
+4. ⏭️ Langkau Sesi 4-6 buat masa ini
 5. 🔄 Kembali ke Sesi 4-6 selepas membina aplikasi pertama
 
 ### Untuk Pembangun Pertengahan (3 jam)
 1. ⚡ Sesi 1: Pengesahan persediaan pantas
-2. ✅ Sesi 2: Lengkapkan rangkaian RAG dengan penilaian
-3. ✅ Sesi 3: Suite penanda aras penuh
+2. ✅ Sesi 2: Lengkapkan pipeline RAG dengan penilaian
+3. ✅ Sesi 3: Suite benchmarking penuh
 4. ✅ Sesi 4: Pengoptimuman model
 5. ✅ Sesi 5-6: Fokus pada corak seni bina
 
 ### Untuk Pengamal Mahir (2-3 jam)
-1. ⚡ Sesi 1-3: Tinjauan pantas dan pengesahan
+1. ⚡ Sesi 1-3: Ulasan dan pengesahan pantas
 2. ✅ Sesi 4: Pengoptimuman mendalam
 3. ✅ Sesi 5: Seni bina multi-agent
 4. ✅ Sesi 6: Corak pengeluaran dan skalabiliti
-5. 🚀 Tambahan: Bina logik laluan tersuai dan pelancaran hibrid
+5. 🚀 Tambahan: Bina logik penghalaan tersuai dan pelancaran hibrid
 
 ---
 
@@ -339,13 +339,13 @@ Jika anda mengikuti format bengkel 6 sesi yang dipadatkan, gunakan panduan khusu
 | Sesi Bengkel | Panduan | Fokus Teras |
 |--------------|---------|-------------|
 | 1 | [Session01-GettingStartedFoundryLocal](./Session01-GettingStartedFoundryLocal.md) | Pasang, sahkan, jalankan phi & GPT-OSS-20B, pecutan |
-| 2 | [Session02-BuildAISolutionsRAG](./Session02-BuildAISolutionsRAG.md) | Kejuruteraan prompt, corak RAG, CSV & dokumen grounding, migrasi |
-| 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Integrasi Hugging Face, penanda aras, pemilihan model |
+| 2 | [Session02-BuildAISolutionsRAG](./Session02-BuildAISolutionsRAG.md) | Kejuruteraan prompt, corak RAG, asas CSV & dokumen, migrasi |
+| 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Integrasi Hugging Face, benchmarking, pemilihan model |
 | 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM vs LLM, WebGPU, Chainlit RAG, ONNX acceleration |
 | 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Peranan ejen, memori, alat, orkestrasi |
-| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Penghalaan, penggabungan, laluan penskalaan ke Azure |
+| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Penghalaan, rantai, laluan penskalaan ke Azure |
 
-Setiap fail sesi termasuk: abstrak, objektif pembelajaran, aliran demo 30 minit, projek permulaan, senarai semak pengesahan, penyelesaian masalah, dan rujukan kepada SDK Python Foundry Local rasmi.
+Setiap fail sesi termasuk: abstrak, objektif pembelajaran, aliran demo 30 minit, projek permulaan, senarai semak pengesahan, penyelesaian masalah, dan rujukan kepada Foundry Local Python SDK rasmi.
 
 ### Skrip Contoh
 
@@ -382,7 +382,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 | 4 | `samples/session04/model_compare.py` | Perbandingan SLM vs LLM (kependaman & output sampel) |
 | 5 | `samples/session05/agents_orchestrator.py` | Penyelidikan dua ejen → saluran editorial |
 | 6 | `samples/session06/models_router.py` | Demo penghalaan berdasarkan niat |
-|   | `samples/session06/models_pipeline.py` | Rantaian rancangan/laksana/perbaiki pelbagai langkah |
+|   | `samples/session06/models_pipeline.py` | Rantai rancangan/laksana/perbaiki pelbagai langkah |
 
 ### Pembolehubah Persekitaran (Umum untuk Semua Sampel)
 
@@ -390,7 +390,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 |--------------|--------|--------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias model tunggal lalai untuk sampel asas | `phi-4-mini` |
 | `SLM_ALIAS` / `LLM_ALIAS` | SLM eksplisit vs model lebih besar untuk perbandingan | `phi-4-mini` / `gpt-oss-20b` |
-| `BENCH_MODELS` | Senarai alias untuk penanda aras | `qwen2.5-0.5b,gemma-2-2b,mistral-7b` |
+| `BENCH_MODELS` | Senarai alias untuk penanda aras | `qwen2.5-0.5b,mistral-7b` |
 | `BENCH_ROUNDS` | Ulangan penanda aras setiap model | `3` |
 | `BENCH_PROMPT` | Prompt yang digunakan dalam penanda aras | `Explain retrieval augmented generation briefly.` |
 | `EMBED_MODEL` | Model embedding sentence-transformers | `sentence-transformers/all-MiniLM-L6-v2` |
@@ -402,15 +402,15 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 | `RETRY_ON_FAIL` | Apabila `1`, cuba semula sekali pada ralat sembang sementara | `1` |
 | `RETRY_BACKOFF` | Saat untuk menunggu sebelum cuba semula | `1.0` |
 
-Jika pembolehubah tidak ditetapkan, skrip akan kembali kepada tetapan lalai yang munasabah. Untuk demo model tunggal, anda biasanya hanya memerlukan `FOUNDRY_LOCAL_ALIAS`.
+Jika pembolehubah tidak ditetapkan, skrip akan kembali kepada tetapan lalai yang munasabah. Untuk demo model tunggal, biasanya hanya perlu `FOUNDRY_LOCAL_ALIAS`.
 
 ### Modul Utiliti
 
 Semua sampel kini berkongsi pembantu `samples/workshop_utils.py` yang menyediakan:
 
 * Penciptaan cache `FoundryLocalManager` + klien OpenAI
-* Pembantu `chat_once()` dengan pilihan cuba semula + pencetakan penggunaan
-* Pelaporan penggunaan token yang mudah (aktifkan melalui `SHOW_USAGE=1`)
+* Pembantu `chat_once()` dengan pilihan cuba semula + cetakan penggunaan
+* Laporan penggunaan token yang mudah (aktifkan melalui `SHOW_USAGE=1`)
 
 Ini mengurangkan pengulangan dan menonjolkan amalan terbaik untuk orkestrasi model tempatan yang cekap.
 
@@ -419,7 +419,7 @@ Ini mengurangkan pengulangan dan menonjolkan amalan terbaik untuk orkestrasi mod
 | Tema | Penambahbaikan | Sesi | Env / Togol |
 |------|----------------|------|-------------|
 | Ketentuan | Suhu tetap + set prompt stabil | 1–6 | Tetapkan `temperature=0`, `top_p=1` |
-| Penglihatan Penggunaan Token | Pengajaran kos/kecekapan yang konsisten | 1–6 | `SHOW_USAGE=1` |
+| Keterlihatan Penggunaan Token | Pengajaran kos/kecekapan yang konsisten | 1–6 | `SHOW_USAGE=1` |
 | Penstriman Token Pertama | Metrik kependaman yang dirasakan | 1,3,4,6 | `BENCH_STREAM=1` (penanda aras) |
 | Ketahanan Cuba Semula | Menangani permulaan sejuk sementara | Semua | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
 | Ejen Pelbagai Model | Pengkhususan peranan heterogen | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
@@ -427,9 +427,9 @@ Ini mengurangkan pengulangan dan menonjolkan amalan terbaik untuk orkestrasi mod
 | Memori Vektor | Ingatan semantik jangka panjang | 2,5,6 | Integrasi indeks embedding FAISS/Chroma |
 | Eksport Jejak | Audit & penilaian | 2,5,6 | Tambah baris JSON setiap langkah |
 | Rubrik Kualiti | Penjejakan kualitatif | 3–6 | Prompt penilaian sekunder |
-| Ujian Asap | Pengesahan pra-bengkel cepat | Semua | `python Workshop/tests/smoke.py` |
+| Ujian Asap | Pengesahan pra-bengkel pantas | Semua | `python Workshop/tests/smoke.py` |
 
-### Permulaan Cepat yang Deterministik
+### Permulaan Pantas Deterministik
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -437,14 +437,15 @@ set SHOW_USAGE=1
 python Workshop\tests\smoke.py
 ```
 
-Jangkakan kiraan token yang stabil merentasi input yang sama berulang.
+Jangkakan kiraan token yang stabil merentas input yang sama berulang.
 
 ### Penilaian RAG (Sesi 2)
 
 Gunakan `rag_eval_ragas.py` untuk mengira relevansi jawapan, kesetiaan, dan ketepatan konteks pada dataset sintetik kecil:
 
 ```powershell
-python samples/session02/rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 Kembangkan dengan membekalkan JSONL yang lebih besar bagi soalan, konteks, dan kebenaran asas, kemudian menukarnya kepada `Dataset` Hugging Face.
@@ -457,23 +458,23 @@ Bengkel ini sengaja menggunakan hanya perintah CLI Foundry Local yang didokument
 
 | Kategori | Perintah | Tujuan |
 |----------|----------|--------|
-| Teras | `foundry --version` | Paparkan versi yang dipasang |
+| Teras | `foundry --version` | Tunjukkan versi yang dipasang |
 | Teras | `foundry init` | Mulakan konfigurasi |
 | Perkhidmatan | `foundry service start` | Mulakan perkhidmatan tempatan (jika tidak automatik) |
-| Perkhidmatan | `foundry status` | Paparkan status perkhidmatan |
+| Perkhidmatan | `foundry status` | Tunjukkan status perkhidmatan |
 | Model | `foundry model list` | Senaraikan katalog / model yang tersedia |
-| Model | `foundry model download <alias>` | Muat turun berat model ke cache |
+| Model | `foundry model download <alias>` | Muat turun berat model ke dalam cache |
 | Model | `foundry model run <alias>` | Lancarkan (muat) model secara tempatan; gabungkan dengan `--prompt` untuk satu kali |
 | Model | `foundry model unload <alias>` / `foundry model stop <alias>` | Nyahmuat model dari memori (jika disokong) |
 | Cache | `foundry cache list` | Senaraikan model yang di-cache (dimuat turun) |
 | Sistem | `foundry system info` | Snapshot keupayaan perkakasan & pecutan |
 | Sistem | `foundry system gpu-info` | Maklumat diagnostik GPU |
-| Konfigurasi | `foundry config list` | Paparkan nilai konfigurasi semasa |
+| Konfigurasi | `foundry config list` | Tunjukkan nilai konfigurasi semasa |
 | Konfigurasi | `foundry config set <key> <value>` | Kemas kini konfigurasi |
 
 ### Corak Prompt Satu Kali
 
-Daripada subperintah `model chat` yang tidak lagi digunakan, gunakan:
+Sebagai ganti subperintah `model chat` yang tidak lagi digunakan, gunakan:
 
 ```powershell
 foundry model run <alias> --prompt "Your question here"
@@ -483,10 +484,10 @@ Ini melaksanakan satu kitaran prompt/respons kemudian keluar.
 
 ### Corak yang Dihapus / Dielakkan
 
-| Tidak Digunakan / Tidak Didokumentasikan | Penggantian / Panduan |
-|------------------------------------------|------------------------|
+| Tidak Lagi Digunakan / Tidak Didokumentasikan | Penggantian / Panduan |
+|----------------------------------------------|-----------------------|
 | `foundry model chat <model> "..."` | `foundry model run <model> --prompt "..."` |
-| `foundry model list --running` | Gunakan `foundry model list` biasa + aktiviti / log terkini |
+| `foundry model list --running` | Gunakan `foundry model list` biasa + aktiviti terkini / log |
 | `foundry model list --cached` | `foundry cache list` |
 | `foundry model stats <model>` | Gunakan skrip penanda aras Python + alat OS (Task Manager / `nvidia-smi`) |
 | `foundry model benchmark ...` | `samples/session03/benchmark_oss_models.py` |
@@ -495,21 +496,21 @@ Ini melaksanakan satu kitaran prompt/respons kemudian keluar.
 
 - Kependaman, p95, token/saat: `samples/session03/benchmark_oss_models.py`
 - Kependaman token pertama (penstriman): tetapkan `BENCH_STREAM=1`
-- Penggunaan sumber: monitor OS (Task Manager, Activity Monitor, `nvidia-smi`) + `foundry system info`.
+- Penggunaan sumber: pemantau OS (Task Manager, Activity Monitor, `nvidia-smi`) + `foundry system info`.
 
-Apabila perintah telemetri CLI baru stabil di hulu, ia boleh dimasukkan dengan pengeditan minimum pada markdown sesi.
+Apabila perintah telemetri CLI baru stabil di hulu, ia boleh dimasukkan dengan suntingan minimum pada markdown sesi.
 
 ### Penjaga Lint Automatik
 
-Lint automatik menghalang pengenalan semula corak CLI yang tidak digunakan dalam blok kod berpagar fail markdown:
+Lint automatik menghalang pengenalan semula corak CLI yang tidak lagi digunakan di dalam blok kod berpagar fail markdown:
 
 Skrip: `Workshop/scripts/lint_markdown_cli.py`
 
-Corak yang tidak digunakan disekat dalam pagar kod.
+Corak yang tidak lagi digunakan disekat di dalam pagar kod.
 
 Penggantian yang disyorkan:
-| Tidak Digunakan | Penggantian |
-|-----------------|-------------|
+| Tidak Lagi Digunakan | Penggantian |
+|----------------------|-------------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
 | `model list --running` | `model list` |
 | `model list --cached` | `cache list` |
@@ -530,29 +531,29 @@ echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
 
-## Jadual Migrasi CLI → SDK Cepat
+## Jadual Migrasi Pantas CLI → SDK
 
 | Tugas | Perintah CLI Satu Baris | Setara SDK (Python) | Nota |
-|-------|--------------------------|---------------------|------|
+|-------|-------------------------|---------------------|------|
 | Jalankan model sekali (prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK secara automatik memulakan perkhidmatan & cache |
 | Muat turun (cache) model | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # triggers download/load` | Pengurus memilih varian terbaik jika alias memetakan kepada pelbagai binaan |
-| Senaraikan katalog | `foundry model list` | `# gunakan pengurus untuk setiap alias atau kekalkan senarai yang diketahui` | CLI mengagregatkan; SDK pada masa ini setiap alias |
+| Senaraikan katalog | `foundry model list` | `# gunakan pengurus untuk setiap alias atau mengekalkan senarai yang diketahui` | CLI mengagregatkan; SDK pada masa ini setiap alias |
 | Senaraikan model yang di-cache | `foundry cache list` | `manager.list_cached_models()` | Selepas pengurus dimulakan (mana-mana alias) |
 | Aktifkan pecutan GPU | `foundry config set compute.onnx.enable_gpu true` | `# tindakan CLI; SDK menganggap konfigurasi telah diterapkan` | Konfigurasi adalah kesan sampingan luaran |
 | Dapatkan URL titik akhir | (implisit) | `manager.endpoint` | Digunakan untuk mencipta klien yang serasi dengan OpenAI |
 | Panaskan model | `foundry model run <alias>` kemudian prompt pertama | `chat_once(alias, messages=[...])` (utiliti) | Utiliti menangani pemanasan kependaman permulaan sejuk awal |
-| Ukur kependaman | `python benchmark_oss_models.py` | `import benchmark_oss_models` (atau skrip pengeksport baru) | Lebih suka skrip untuk metrik yang konsisten |
+| Ukur kependaman | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (atau skrip eksport baru) | Lebih suka skrip untuk metrik yang konsisten |
 | Hentikan / nyahmuat model | `foundry model unload <alias>` | (Tidak didedahkan – mulakan semula perkhidmatan / proses) | Biasanya tidak diperlukan untuk aliran bengkel |
 | Dapatkan penggunaan token | (lihat output) | `resp.usage.total_tokens` | Disediakan jika backend mengembalikan objek penggunaan |
 
 ## Eksport Markdown Penanda Aras
 
-Gunakan skrip `Workshop/scripts/export_benchmark_markdown.py` untuk menjalankan penanda aras baru (logik yang sama seperti `samples/session03/benchmark_oss_models.py`) dan menghasilkan jadual Markdown mesra GitHub serta JSON mentah.
+Gunakan skrip `Workshop/scripts/export_benchmark_markdown.py` untuk menjalankan penanda aras baru (logik yang sama seperti `samples/session03/benchmark_oss_models.py`) dan mengeluarkan jadual Markdown mesra GitHub serta JSON mentah.
 
 ### Contoh
 
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 Fail yang dijana:

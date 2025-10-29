@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T10:40:18+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T21:38:10+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "it"
 }
@@ -28,7 +28,7 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. Configura l'Ambiente
+### 2. Configurazione dell'Ambiente
 
 Il file `.env` è già configurato con valori predefiniti sensati. La maggior parte degli utenti non avrà bisogno di modificare nulla.
 
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Per Script Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -89,12 +89,12 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sessione 03: Benchmarking
 | Variabile | Predefinito | Scopo |
 |-----------|-------------|-------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modelli da confrontare |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modelli da confrontare |
 | `BENCH_ROUNDS` | `3` | Iterazioni per modello |
 | `BENCH_PROMPT` | Preconfigurato | Prompt di test |
 | `BENCH_STREAM` | `0` | Misura la latenza del primo token |
 
-#### Sessione 04: Confronto tra Modelli
+#### Sessione 04: Confronto Modelli
 | Variabile | Predefinito | Scopo |
 |-----------|-------------|-------|
 | `SLM_ALIAS` | `phi-4-mini` | Modello linguistico piccolo |
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Configurazione per Benchmarking
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -157,7 +157,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ```
 
-## Modelli Consigliati
+## Modelli Raccomandati
 
 ### Per Caso d'Uso
 
@@ -174,7 +174,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Generazione di Codice:**
 - `deepseek-coder-1.3b` - Specializzato per il codice
-- `phi-4-mini` - Generico per la programmazione
+- `phi-4-mini` - Generico per il coding
 
 ### Per Disponibilità di Risorse
 
@@ -239,7 +239,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ### Variabili d'Ambiente Non Caricate
 
 **Sintomi:**
-- Gli script utilizzano modelli errati
+- Gli script utilizzano modelli sbagliati
 - Errori di connessione
 - Variabili non riconosciute
 
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Sintomi:**
 - Errori "Modulo non trovato"
-- "Impossibile importare workshop_utils"
 
 **Soluzioni:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Test della Configurazione
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un traduttore umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatizzate possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.

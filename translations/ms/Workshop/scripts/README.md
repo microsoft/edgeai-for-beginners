@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-09T19:32:29+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T22:43:54+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "ms"
 }
@@ -14,17 +14,17 @@ Direktori ini mengandungi skrip automasi dan sokongan yang digunakan untuk menge
 ## Kandungan
 
 | Fail | Tujuan |
-|------|--------|
+|------|---------|
 | `lint_markdown_cli.py` | Memeriksa blok kod markdown untuk corak arahan Foundry Local CLI yang telah usang. |
 | `export_benchmark_markdown.py` | Menjalankan penanda aras kependaman pelbagai model dan menghasilkan laporan dalam format Markdown + JSON. |
 
 ## 1. Pemeriksa Corak Markdown CLI
 
-`lint_markdown_cli.py` mengimbas semua fail `.md` bukan terjemahan untuk corak Foundry Local CLI yang tidak dibenarkan **dalam blok kod berpagar** (``` ... ```). Prosa maklumat masih boleh menyebut arahan yang telah usang untuk konteks sejarah.
+`lint_markdown_cli.py` mengimbas semua fail `.md` bukan terjemahan untuk corak Foundry Local CLI yang tidak dibenarkan **di dalam blok kod berpagar** (``` ... ```). Prosa maklumat masih boleh menyebut arahan yang telah usang untuk konteks sejarah.
 
 ### Corak Usang (Disekat Dalam Blok Kod)
 
-Pemeriksa ini menyekat corak CLI yang telah usang. Gunakan alternatif moden sebagai gantinya.
+Pemeriksa ini menyekat corak CLI yang telah usang. Gunakan alternatif yang lebih moden.
 
 ### Penggantian Diperlukan
 | Usang | Gunakan Sebaliknya |
@@ -43,7 +43,7 @@ Pemeriksa ini menyekat corak CLI yang telah usang. Gunakan alternatif moden seba
 | 1 | Satu atau lebih corak usang ditemui |
 
 ### Menjalankan Secara Tempatan
-Dari akar repositori (disyorkan):
+Dari akar repositori (disarankan):
 
 Windows (PowerShell):
 ```powershell
@@ -55,19 +55,19 @@ macOS / Linux:
 python Workshop/scripts/lint_markdown_cli.py --verbose
 ```
 
-### Cangkuk Pra-Komit (Pilihan)
+### Cangkuk Pra-Komitan (Pilihan)
 ```bash
 echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
-Ini menyekat komit yang memperkenalkan corak usang.
+Ini menyekat komitmen yang memperkenalkan corak usang.
 
 ### Integrasi CI
-Aliran kerja GitHub Action (`.github/workflows/markdown-cli-lint.yml`) menjalankan pemeriksa pada setiap push dan permintaan tarik ke cabang `main` dan `Reactor`. Kerja yang gagal mesti diperbaiki sebelum digabungkan.
+Aliran kerja GitHub Action (`.github/workflows/markdown-cli-lint.yml`) menjalankan pemeriksa pada setiap push dan permintaan tarik ke cabang `main` dan `Reactor`. Tugas yang gagal mesti diperbaiki sebelum digabungkan.
 
 ### Menambah Corak Usang Baru
 1. Buka `lint_markdown_cli.py`.
-2. Tambahkan tuple `(regex, suggestion)` ke senarai `DEPRECATED`. Gunakan string mentah dan sertakan sempadan perkataan `\b` di mana sesuai.
+2. Tambahkan tuple `(regex, suggestion)` ke senarai `DEPRECATED`. Gunakan string mentah dan sertakan sempadan perkataan `\b` jika sesuai.
 3. Jalankan pemeriksa secara tempatan untuk mengesahkan pengesanan.
 4. Komit dan push; CI akan menguatkuasakan peraturan baru.
 
@@ -77,20 +77,20 @@ DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental
 ```
 
 ### Membenarkan Sebutan Penjelasan
-Oleh kerana hanya blok kod berpagar yang dikuatkuasakan, anda boleh menerangkan arahan usang dalam teks naratif dengan selamat. Jika anda *perlu* menunjukkannya dalam blok berpagar untuk perbandingan, tambahkan blok berpagar **tanpa** tanda backtick tiga kali (contohnya, indentasi atau petikan) atau tulis semula dalam bentuk pseudo.
+Oleh kerana hanya blok kod berpagar yang dikuatkuasakan, anda boleh menerangkan arahan yang telah usang dalam teks naratif dengan selamat. Jika anda *perlu* menunjukkannya di dalam blok berpagar untuk perbandingan, tambahkan blok berpagar **tanpa** tanda backtick tiga (contohnya, indentasi atau petikan) atau tulis semula dalam bentuk pseudo.
 
 ### Melangkau Fail Tertentu (Lanjutan)
 Jika diperlukan, bungkus contoh warisan dalam fail berasingan di luar repositori atau tukar nama dengan sambungan yang berbeza semasa draf. Langkauan yang disengajakan untuk salinan terjemahan adalah automatik (laluan yang mengandungi `translations`).
 
 ### Penyelesaian Masalah
 | Isu | Punca | Penyelesaian |
-|-----|-------|-------------|
+|-----|-------|--------------|
 | Pemeriksa menandakan baris yang anda kemas kini | Regex terlalu luas | Persempit corak dengan sempadan perkataan tambahan (`\b`) atau penanda |
 | CI gagal tetapi lulus secara tempatan | Versi Python berbeza atau perubahan tidak dikomit | Jalankan semula secara tempatan, pastikan pokok kerja bersih, periksa versi Python aliran kerja (3.11) |
-| Perlu memintas sementara | Pembetulan kecemasan | Terapkan pembetulan segera selepas itu; pertimbangkan menggunakan cabang sementara dan PR susulan (elakkan menambah suis pintasan) |
+| Perlu memintas sementara | Pembetulan kecemasan | Lakukan pembetulan segera selepas itu; pertimbangkan menggunakan cabang sementara dan PR susulan (elakkan menambah suis pintasan) |
 
 ### Rasional
-Menjaga dokumentasi sejajar dengan permukaan CLI stabil *semasa* mencegah geseran bengkel, mengelakkan kekeliruan peserta, dan memusatkan pengukuran prestasi melalui skrip Python yang diselenggara daripada subkomando CLI yang berubah.
+Menjaga dokumentasi sejajar dengan permukaan CLI stabil *semasa* mengelakkan geseran bengkel, mengelakkan kekeliruan peserta, dan memusatkan pengukuran prestasi melalui skrip Python yang dikekalkan daripada subkomando CLI yang berubah-ubah.
 
 ---
 Diselenggara sebagai sebahagian daripada alat kualiti bengkel. Untuk penambahbaikan (contohnya, cadangan pembetulan automatik atau penjanaan laporan HTML), buka isu atau serahkan PR.
@@ -161,7 +161,7 @@ python scripts/test_samples.py --verbose
 - ✅ Prestasi (masa pelaksanaan)
 
 ### Pembolehubah Persekitaran
-- `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Model untuk digunakan semasa ujian
+- `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Model yang digunakan untuk ujian
 - `TEST_TIMEOUT=30` - Had masa setiap contoh dalam saat
 
 ### Kegagalan Dijangka
@@ -178,23 +178,23 @@ pip install sentence-transformers ragas datasets
 
 Skrip: `export_benchmark_markdown.py`
 
-Menjana jadual prestasi yang boleh dihasilkan semula untuk satu set model.
+Menjana jadual prestasi yang boleh diulang untuk satu set model.
 
 ### Penggunaan
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Output
 | Fail | Penerangan |
 |------|------------|
 | `benchmark_report.md` | Jadual Markdown (avg, p95, tokens/sec, token pertama pilihan) |
-| `benchmark_report.json` | Susunan metrik mentah untuk perbezaan & sejarah |
+| `benchmark_report.json` | Array metrik mentah untuk perbezaan & sejarah |
 
 ### Pilihan
 | Bendera | Penerangan | Lalai |
-|--------|------------|-------|
-| `--models` | Alias model yang dipisahkan koma | (diperlukan) |
+|---------|------------|-------|
+| `--models` | Alias model yang dipisahkan dengan koma | (diperlukan) |
 | `--prompt` | Prompt yang digunakan setiap pusingan | (diperlukan) |
 | `--rounds` | Pusingan setiap model | 3 |
 | `--output` | Fail output Markdown | `benchmark_report.md` |
@@ -204,11 +204,11 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 Pembolehubah persekitaran `BENCH_STREAM=1` menambah pengukuran kependaman token pertama.
 
 ### Nota
-- Menggunakan semula `workshop_utils` untuk pemulaan model & caching yang konsisten.
+- Menggunakan semula `workshop_utils` untuk bootstrap model & caching yang konsisten.
 - Jika dijalankan dari direktori kerja yang berbeza, skrip cuba laluan sandaran untuk mencari `workshop_utils`.
 - Untuk perbandingan GPU: jalankan sekali, aktifkan pecutan melalui konfigurasi CLI, jalankan semula dan bandingkan JSON.
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

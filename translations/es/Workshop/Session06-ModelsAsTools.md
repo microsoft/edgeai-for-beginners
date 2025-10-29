@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-08T20:54:36+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T20:07:37+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "es"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Resumen
 
-Trata los modelos como herramientas componibles dentro de una capa operativa de IA local. Esta sesión muestra cómo encadenar múltiples llamadas especializadas a SLM/LLM, enrutar tareas de manera selectiva y exponer una superficie unificada de SDK para aplicaciones. Construirás un enrutador de modelos ligero + planificador de tareas, lo integrarás en un script de aplicación y delinearás el camino de escalado hacia Azure AI Foundry para cargas de trabajo en producción.
+Trata los modelos como herramientas componibles dentro de una capa operativa de IA local. Esta sesión muestra cómo encadenar múltiples llamadas especializadas a SLM/LLM, enrutar tareas de manera selectiva y exponer una superficie unificada de SDK a las aplicaciones. Construirás un enrutador de modelos ligero + planificador de tareas, lo integrarás en un script de aplicación y delinearás el camino de escalado hacia Azure AI Foundry para cargas de trabajo en producción.
 
 ## Objetivos de Aprendizaje
 
@@ -24,7 +24,7 @@ Trata los modelos como herramientas componibles dentro de una capa operativa de 
 ## Prerrequisitos
 
 - Haber completado las sesiones 1–5
-- Tener varios modelos locales en caché (por ejemplo, `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- Tener múltiples modelos locales almacenados en caché (por ejemplo, `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
 ### Fragmento de Entorno Multiplataforma
 
@@ -189,7 +189,7 @@ Mejoras:
 | Capa | Local (Foundry) | Nube (Azure AI Foundry) | Estrategia de Transición |
 |------|-----------------|-------------------------|--------------------------|
 | Enrutamiento | Python heurístico | Microservicio duradero | Contenerizar y desplegar API |
-| Modelos | SLMs en caché | Despliegues gestionados | Mapear nombres locales a IDs de despliegue |
+| Modelos | SLMs almacenados en caché | Despliegues gestionados | Mapear nombres locales a IDs de despliegue |
 | Observabilidad | Estadísticas CLI/manual | Registro centralizado y métricas | Agregar eventos de trazas estructuradas |
 | Seguridad | Solo host local | Autenticación/redes de Azure | Introducir Key Vault para secretos |
 | Costos | Recursos del dispositivo | Facturación por consumo | Agregar límites presupuestarios |
@@ -203,9 +203,9 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Se espera selección de modelo basada en intención y salida final refinada.
+Esperar selección de modelo basada en intención y salida final refinada.
 
-## Solución de Problemas
+## Resolución de Problemas
 
 | Problema | Causa | Solución |
 |----------|-------|----------|
@@ -229,14 +229,12 @@ Se espera selección de modelo basada en intención y salida final refinada.
 | Scripts / Notebooks del Taller | Escenario | Objetivo | Fuente de Dataset / Catálogo |
 |--------------------------------|-----------|----------|------------------------------|
 | `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Asistente de desarrollo manejando indicaciones de intención mixta (refactorizar, resumir, clasificar) | Enrutamiento heurístico de intención → alias de modelo con uso de tokens | `CATALOG` en línea + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planificación y refinamiento de múltiples pasos para una tarea compleja de asistencia en codificación | Descomponer → ejecución especializada → paso de refinamiento de resumen | Mismo `CATALOG`; pasos derivados de la salida del plan |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planificación y refinamiento de múltiples pasos para una tarea compleja de asistencia de codificación | Descomponer → ejecución especializada → paso de refinamiento de resumen | Mismo `CATALOG`; pasos derivados de la salida del plan |
 
 ### Narrativa del Escenario
-
-Una herramienta de productividad para ingeniería recibe tareas heterogéneas: refactorizar código, resumir notas arquitectónicas, clasificar comentarios. Para minimizar la latencia y el uso de recursos, un modelo pequeño y general planifica y resume, un modelo especializado en código maneja la refactorización, y un modelo ligero capaz de clasificación etiqueta los comentarios. El script de la tubería demuestra encadenamiento + refinamiento; el script del enrutador aísla el enrutamiento adaptativo de una sola indicación.
+Una herramienta de productividad para ingenieros recibe tareas heterogéneas: refactorizar código, resumir notas arquitectónicas, clasificar comentarios. Para minimizar la latencia y el uso de recursos, un modelo pequeño y general planifica y resume, un modelo especializado en código maneja la refactorización, y un modelo ligero capaz de clasificación etiqueta los comentarios. El script de la tubería demuestra encadenamiento + refinamiento; el script del enrutador aísla el enrutamiento adaptativo de una sola indicación.
 
 ### Instantánea del Catálogo
-
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -247,7 +245,6 @@ CATALOG = {
 
 
 ### Ejemplos de Indicaciones de Prueba
-
 ```json
 [
     "Refactor this Python function for readability",
@@ -259,7 +256,6 @@ CATALOG = {
 
 
 ### Extensión de Trazas (Opcional)
-
 Agregar líneas JSON de trazas por paso para `models_pipeline.py`:
 ```python
 trace.append({
@@ -273,8 +269,7 @@ trace.append({
 
 
 ### Heurística de Escalamiento (Idea)
-
-Si el plan contiene palabras clave como "optimizar", "seguridad" o la longitud del paso > 280 caracteres → escalar a un modelo más grande (por ejemplo, `gpt-oss-20b`) solo para ese paso.
+Si el plan contiene palabras clave como "optimizar", "seguridad", o la longitud del paso > 280 caracteres → escalar a un modelo más grande (por ejemplo, `gpt-oss-20b`) solo para ese paso.
 
 ### Mejoras Opcionales
 
@@ -282,11 +277,11 @@ Si el plan contiene palabras clave como "optimizar", "seguridad" o la longitud d
 |------|--------|-------|-------|
 | Caché | Reutilizar objetos de gestor + cliente | Menor latencia, menos sobrecarga | Usar `workshop_utils.get_client` |
 | Métricas de Uso | Capturar tokens y latencia por paso | Perfilado y optimización | Cronometrar cada llamada enrutada; almacenar en lista de trazas |
-| Enrutamiento Adaptativo | Conciencia de confianza/costo | Mejor equilibrio calidad-costo | Agregar puntuación: si la indicación > N caracteres o el regex coincide con el dominio → escalar a un modelo más grande |
-| Registro Dinámico de Capacidades | Recarga dinámica del catálogo | Sin necesidad de reinicio/despliegue | Cargar `catalog.json` en tiempo de ejecución; observar la marca de tiempo del archivo |
+| Enrutamiento Adaptativo | Consciente de confianza/costo | Mejor equilibrio calidad-costo | Agregar puntuación: si la indicación > N caracteres o el regex coincide con el dominio → escalar a un modelo más grande |
+| Registro Dinámico de Capacidades | Recarga dinámica del catálogo | Sin reinicio ni redepliegue | Cargar `catalog.json` en tiempo de ejecución; observar la marca de tiempo del archivo |
 | Estrategia de Respaldo | Robustez ante fallos | Mayor disponibilidad | Intentar primario → en caso de excepción, alias de respaldo |
 | Tubería de Transmisión | Retroalimentación temprana | Mejora de UX | Transmitir cada paso y almacenar en búfer la entrada final de refinamiento |
-| Embeddings de Intención Vectorial | Enrutamiento más matizado | Mayor precisión de intención | Embeder indicación, agrupar y mapear centroides → capacidad |
+| Embeddings de Intención Vectorial | Enrutamiento más matizado | Mayor precisión de intención | Incrustar indicación, agrupar y mapear centroides → capacidad |
 | Exportación de Trazas | Cadena auditable | Cumplimiento/informes | Emitir líneas JSON: paso, intención, modelo, latencia_ms, tokens |
 | Simulación de Costos | Estimación previa a la nube | Planificación presupuestaria | Asignar costo nocional/token por modelo y agregar por tarea |
 | Modo Determinista | Reproducibilidad | Benchmarking estable | Entorno: `temperature=0`, número fijo de pasos |
@@ -328,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Itera gradualmente—evita sobreingeniería en prototipos iniciales.
-
 ---
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.

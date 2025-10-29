@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:13:12+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T20:09:54+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "de"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Zusammenfassung
 
-Beginnen Sie Ihre Reise mit Foundry Local, indem Sie es unter Windows 11 installieren und konfigurieren. Lernen Sie, wie Sie die CLI einrichten, Hardware-Beschleunigung aktivieren und Modelle für schnelle lokale Inferenz zwischenspeichern. Diese praktische Sitzung zeigt, wie Modelle wie Phi, Qwen, DeepSeek und GPT-OSS-20B mit reproduzierbaren CLI-Befehlen ausgeführt werden.
+Beginnen Sie Ihre Reise mit Foundry Local, indem Sie es auf Windows 11 installieren und konfigurieren. Lernen Sie, wie Sie die CLI einrichten, Hardware-Beschleunigung aktivieren und Modelle für schnelle lokale Inferenz zwischenspeichern. Diese praktische Sitzung zeigt, wie Modelle wie Phi, Qwen, DeepSeek und GPT-OSS-20B mit reproduzierbaren CLI-Befehlen ausgeführt werden.
 
 ## Lernziele
 
 Am Ende dieser Sitzung werden Sie:
 
-- **Installieren und Konfigurieren**: Foundry Local unter Windows 11 mit optimalen Leistungseinstellungen einrichten
+- **Installieren und Konfigurieren**: Foundry Local auf Windows 11 mit optimalen Leistungseinstellungen einrichten
 - **CLI-Operationen meistern**: Foundry Local CLI für Modellverwaltung und -bereitstellung nutzen
 - **Hardware-Beschleunigung aktivieren**: GPU-Beschleunigung mit ONNXRuntime oder WebGPU konfigurieren
 - **Mehrere Modelle bereitstellen**: Modelle wie phi-4, GPT-OSS-20B, Qwen und DeepSeek lokal ausführen
@@ -29,7 +29,7 @@ foundry model run phi-4-mini --prompt "Hallo, stell dich vor"
 - Windows 11 (22H2 oder später)
 # Verfügbare Katalogmodelle auflisten (geladene Modelle erscheinen nach dem Ausführen)
 foundry model list
-## HINWEIS: Es gibt derzeit kein dediziertes `--running`-Flag; um zu sehen, welche geladen sind, starten Sie einen Chat oder prüfen Sie die Servicelogs.
+## NOTE: Derzeit gibt es kein dediziertes `--running`-Flag; um zu sehen, welche geladen sind, starten Sie einen Chat oder überprüfen Sie die Servicelogs.
 - Python 3.10+ installiert
 - Visual Studio Code mit Python-Erweiterung
 - Administratorrechte für die Installation
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (Vorschau / falls unterstützt)**
 
-Falls ein natives macOS-Paket bereitgestellt wird (offizielle Dokumentation für die neuesten Informationen prüfen):
+Falls ein nativer macOS-Paket bereitgestellt wird (offizielle Dokumentation für die neuesten Informationen prüfen):
 
 ```bash
 # Homebrew (if/when available)
@@ -81,7 +81,7 @@ Falls native macOS-Binärdateien noch nicht verfügbar sind, können Sie dennoch
 1. Eine Windows 11 ARM/Intel VM (Parallels / UTM) verwenden und die Windows-Schritte befolgen. 
 2. Modelle über Container ausführen (falls Container-Image veröffentlicht) und `FOUNDRY_LOCAL_ENDPOINT` auf den freigegebenen Port setzen. 
 
-**Python-Virtual-Environment erstellen (plattformübergreifend)**
+**Python-Virtual Environment erstellen (plattformübergreifend)**
 
 Windows PowerShell:
 ```powershell
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### SDK-Bootstrapping (empfohlen)
 
-Anstatt den Service manuell zu starten und Modelle auszuführen, kann das **Foundry Local Python SDK** alles automatisch starten:
+Anstatt den Dienst manuell zu starten und Modelle auszuführen, kann das **Foundry Local Python SDK** alles bootstrappen:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -158,7 +158,7 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Falls Sie die Kontrolle bevorzugen, können Sie weiterhin die CLI + OpenAI-Client wie später gezeigt verwenden.
+Falls Sie lieber explizite Kontrolle haben möchten, können Sie weiterhin die CLI + OpenAI-Client wie später gezeigt verwenden.
 
 ### 2. Modelle lokal über CLI ausführen (10 Minuten)
 
@@ -202,7 +202,7 @@ foundry cache list
 
 #### Schritt 4.1: Basis-Chat-Anwendung erstellen
 
-Erstellen Sie `samples/01-foundry-quickstart/chat_quickstart.py` (aktualisiert zur Nutzung des Managers, falls verfügbar):
+Erstellen Sie `samples/01-foundry-quickstart/chat_quickstart.py` (aktualisiert, um den Manager zu verwenden, falls verfügbar):
 
 ```python
 #!/usr/bin/env python3
@@ -404,32 +404,33 @@ foundry config set model.preload false
 ### 3. Leistung überwachen
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Optionale Verbesserungen
 
 | Verbesserung | Was | Wie |
 |--------------|-----|-----|
-| Gemeinsame Utilities | Duplizierte Client-/Bootstrapping-Logik entfernen | Verwenden Sie `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Token-Nutzungsanzeige | Kosten-/Effizienzdenken früh vermitteln | Setzen Sie `SHOW_USAGE=1`, um Prompt-/Completion-/Gesamttoken anzuzeigen |
+| Gemeinsame Utilities | Entfernen von doppelter Client-/Bootstrapping-Logik | Verwenden Sie `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Token-Nutzungsanzeige | Frühzeitiges Lernen von Kosten-/Effizienzdenken | Setzen Sie `SHOW_USAGE=1`, um Prompt-/Completion-/Gesamttoken anzuzeigen |
 | Deterministische Vergleiche | Stabile Benchmarking- und Regressionstests | Verwenden Sie `temperature=0`, `top_p=1`, konsistenten Prompt-Text |
-| Erste-Token-Latenz | Wahrgenommene Reaktionszeit messen | Benchmark-Skript mit Streaming anpassen (`BENCH_STREAM=1`) |
-| Wiederholungen bei vorübergehenden Fehlern | Resiliente Demos bei Kaltstart | `RETRY_ON_FAIL=1` (Standard) & `RETRY_BACKOFF` anpassen |
+| Erste-Token-Latenz | Wahrgenommene Reaktionszeit-Metrik | Benchmark-Skript mit Streaming anpassen (`BENCH_STREAM=1`) |
+| Wiederholung bei vorübergehenden Fehlern | Resiliente Demos bei Kaltstart | `RETRY_ON_FAIL=1` (Standard) & `RETRY_BACKOFF` anpassen |
 | Smoke-Tests | Schnelle Überprüfung wichtiger Abläufe | Führen Sie `python Workshop/tests/smoke.py` vor einem Workshop aus |
-| Modell-Alias-Profile | Schnelles Wechseln zwischen Modellsätzen auf verschiedenen Maschinen | `.env` mit `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` pflegen |
-| Caching-Effizienz | Wiederholte Warmups bei mehreren Beispielausführungen vermeiden | Utilities-Cache-Manager; Wiederverwendung über Skripte/Notebooks hinweg |
+| Modell-Alias-Profile | Schnelles Wechseln des Modellsatzes zwischen Maschinen | `.env` mit `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` pflegen |
+| Caching-Effizienz | Vermeidung wiederholter Warmups bei Multi-Sample-Ausführung | Utilities-Cache-Manager; Wiederverwendung über Skripte/Notebooks hinweg |
 | Warmup beim ersten Lauf | Reduzierung von p95-Latenzspitzen | Kleinen Prompt nach Erstellung von `FoundryLocalManager` ausführen |
 
-Beispiel für deterministische Warmup-Basis (PowerShell):
+Beispiel für eine deterministische Warm-Basislinie (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -458,7 +459,7 @@ Nach Abschluss dieser Sitzung:
 
 ### Beispielcode
 - [Modul08 Beispiel 01](./samples/01/README.md) - REST Chat Quickstart
-- [Modul08 Beispiel 02](./samples/02/README.md) - OpenAI SDK Integration
+- [Modul08 Beispiel 02](./samples/02/README.md) - OpenAI SDK-Integration
 - [Modul08 Beispiel 03](./samples/03/README.md) - Modellentdeckung & Benchmarking
 
 ### Community
@@ -469,14 +470,14 @@ Nach Abschluss dieser Sitzung:
 
 **Sitzungsdauer**: 30 Minuten Praxis + 15 Minuten Q&A  
 **Schwierigkeitsgrad**: Anfänger  
-**Voraussetzungen**: Windows 11, Python 3.10+, Administratorzugriff
+**Voraussetzungen**: Windows 11, Python 3.10+, Administratorzugriff  
 
 ## Beispiel-Szenario & Workshop-Zuordnung
 
-| Workshop-Skript / Notebook | Szenario | Ziel | Beispiel-Eingaben | Benötigtes Dataset |
-|----------------------------|----------|------|-------------------|--------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internes IT-Team bewertet On-Device-Inferenz für ein Datenschutzbewertungsportal | Lokale SLM-Antworten innerhalb von Sub-Sekunden-Latenz auf Standard-Prompts nachweisen | "Nennen Sie zwei Vorteile der lokalen Inferenz." | Keines (Einzelaufforderung) |
-| Quickstart-Anpassungscodeblock | Entwickler migriert ein bestehendes OpenAI-Skript zu Foundry Local | Drop-in-Kompatibilität zeigen | "Nennen Sie zwei Vorteile der lokalen Inferenz." | Nur Inline-Prompt |
+| Workshop-Skript / Notebook | Szenario | Ziel | Beispiel-Eingaben | Benötigter Datensatz |
+|----------------------------|----------|------|-------------------|-----------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internes IT-Team bewertet On-Device-Inferenz für ein Datenschutzbewertungsportal | Nachweis, dass lokale SLM innerhalb von Sub-Sekunden-Latenz auf Standard-Prompts reagiert | "Nennen Sie zwei Vorteile der lokalen Inferenz." | Keiner (Einzelaufforderung) |
+| Quickstart-Anpassungscodeblock | Entwickler migriert ein bestehendes OpenAI-Skript zu Foundry Local | Zeigt Drop-in-Kompatibilität | "Nennen Sie zwei Vorteile der lokalen Inferenz." | Nur Inline-Prompt |
 
 ### Szenario-Erzählung
 Das Sicherheits- und Compliance-Team muss validieren, ob sensible Prototypdaten lokal verarbeitet werden können. Sie führen das Bootstrap-Skript mit mehreren Prompts (Datenschutz, Latenz, Kosten) im deterministischen Modus `temperature=0` aus, um Basis-Ausgaben für spätere Vergleiche (Session 3 Benchmarking und Session 4 SLM vs LLM Kontrast) zu erfassen.
@@ -490,7 +491,7 @@ Das Sicherheits- und Compliance-Team muss validieren, ob sensible Prototypdaten 
 ]
 ```
 
-Verwenden Sie diese Liste, um eine reproduzierbare Bewertungsrunde zu erstellen oder einen zukünftigen Regressionstest-Harness zu starten.
+Verwenden Sie diese Liste, um eine reproduzierbare Bewertungsrunde zu erstellen oder einen zukünftigen Regressionstest-Harness zu initialisieren.
 
 ---
 

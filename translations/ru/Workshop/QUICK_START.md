@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T06:40:43+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T20:12:57+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "ru"
 }
 -->
-# Краткое руководство по началу работы с воркшопом
+# Краткое руководство по началу работы с мастерской
 
 ## Предварительные требования
 
 ### 1. Установите Foundry Local
 
-Следуйте официальному руководству по установке:  
+Следуйте официальному руководству по установке:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -29,7 +29,7 @@ foundry service status
 
 ### 2. Установите зависимости Python
 
-Из директории воркшопа:
+Из директории мастерской:
 
 ```bash
 # Create virtual environment (recommended)
@@ -45,16 +45,16 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Запуск примеров воркшопа
+## Запуск примеров мастерской
 
-### Сессия 01: Базовый чат
+### Сессия 01: Основы чата
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
-**Переменные окружения:**  
+**Переменные окружения:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
@@ -63,11 +63,11 @@ set SHOW_USAGE=1
 ### Сессия 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
-**Переменные окружения:**  
+**Переменные окружения:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set RAG_QUESTION="Why use RAG with local inference?"
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Сессия 02: Оценка RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Примечание**: Требуются дополнительные зависимости, установленные через `requirements.txt`
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### Сессия 03: Бенчмаркинг
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
-**Переменные окружения:**  
+**Переменные окружения:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,11 +103,11 @@ set BENCH_STREAM=1
 ### Сессия 04: Сравнение моделей
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
-**Переменные окружения:**  
+**Переменные окружения:**
 ```bash
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
@@ -116,11 +117,11 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Сессия 05: Оркестрация мульти-агентов
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
-**Переменные окружения:**  
+**Переменные окружения:**
 ```bash
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=phi-4-mini
@@ -130,23 +131,23 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Сессия 06: Маршрутизатор моделей
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Тестирует логику маршрутизации** для нескольких намерений (код, резюмирование, классификация)
+**Тестирует логику маршрутизации** с несколькими намерениями (код, резюмирование, классификация)
 
 ### Сессия 06: Конвейер
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Сложный многоэтапный конвейер** с планированием, выполнением и уточнением
 
 ## Скрипты
 
-### Экспорт отчета о бенчмарке
+### Экспорт отчета о бенчмаркинге
 
 ```bash
 cd Workshop/scripts
@@ -157,9 +158,9 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**Вывод**: Таблица в формате Markdown + метрики в формате JSON
+**Вывод**: Таблица в формате Markdown + метрики JSON
 
-### Проверка CLI шаблонов в Markdown
+### Проверка CLI шаблонов Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -169,7 +170,7 @@ python lint_markdown_cli.py --verbose
 
 ## Тестирование
 
-### Smoke-тесты
+### Тесты на дым
 
 ```bash
 cd Workshop
@@ -228,66 +229,66 @@ foundry model run phi-4-mini
 
 ### Основная конфигурация
 | Переменная | Значение по умолчанию | Описание |
-|------------|-----------------------|----------|
+|------------|------------------------|----------|
 | `FOUNDRY_LOCAL_ALIAS` | Различается | Псевдоним модели для использования |
 | `FOUNDRY_LOCAL_ENDPOINT` | Авто | Переопределение конечной точки сервиса |
-| `SHOW_USAGE` | `0` | Показ статистики использования токенов |
-| `RETRY_ON_FAIL` | `1` | Включение логики повторных попыток |
-| `RETRY_BACKOFF` | `1.0` | Начальная задержка перед повторной попыткой (в секундах) |
+| `SHOW_USAGE` | `0` | Показать статистику использования токенов |
+| `RETRY_ON_FAIL` | `1` | Включить логику повторных попыток |
+| `RETRY_BACKOFF` | `1.0` | Начальная задержка повторной попытки (в секундах) |
 
-### Для конкретных сессий
+### Специфичные для сессии
 | Переменная | Значение по умолчанию | Описание |
-|------------|-----------------------|----------|
+|------------|------------------------|----------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Модель для создания эмбеддингов |
 | `RAG_QUESTION` | См. пример | Тестовый вопрос для RAG |
-| `BENCH_MODELS` | Различается | Список моделей через запятую |
-| `BENCH_ROUNDS` | `3` | Количество итераций бенчмарка |
-| `BENCH_PROMPT` | См. пример | Запрос для бенчмарка |
+| `BENCH_MODELS` | Различается | Модели через запятую |
+| `BENCH_ROUNDS` | `3` | Итерации бенчмаркинга |
+| `BENCH_PROMPT` | См. пример | Запрос для бенчмаркинга |
 | `BENCH_STREAM` | `0` | Измерение задержки первого токена |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Основная модель агента |
-| `AGENT_MODEL_EDITOR` | Primary | Модель агента-редактора |
-| `SLM_ALIAS` | `phi-4-mini` | Модель малого языка |
-| `LLM_ALIAS` | `qwen2.5-7b` | Модель большого языка |
+| `AGENT_MODEL_EDITOR` | Основная | Модель редактора агента |
+| `SLM_ALIAS` | `phi-4-mini` | Малая языковая модель |
+| `LLM_ALIAS` | `qwen2.5-7b` | Большая языковая модель |
 | `COMPARE_PROMPT` | См. пример | Запрос для сравнения |
 
 ## Рекомендуемые модели
 
 ### Разработка и тестирование
 - **phi-4-mini** - Сбалансированное качество и скорость
-- **qwen2.5-0.5b** - Очень быстрая для классификации
+- **qwen2.5-0.5b** - Очень быстро для классификации
 - **gemma-2-2b** - Хорошее качество, умеренная скорость
 
 ### Производственные сценарии
-- **phi-4-mini** - Универсальная модель
+- **phi-4-mini** - Универсальное назначение
 - **deepseek-coder-1.3b** - Генерация кода
 - **qwen2.5-7b** - Высококачественные ответы
 
 ## Документация SDK
 
-- **Foundry Local**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Получение помощи
 
-1. Проверьте статус сервиса: `foundry service status`  
-2. Просмотрите логи: Проверьте логи сервиса Foundry Local  
-3. Ознакомьтесь с документацией SDK: https://github.com/microsoft/Foundry-Local  
+1. Проверьте статус сервиса: `foundry service status`
+2. Просмотрите логи: Проверьте логи сервиса Foundry Local
+3. Ознакомьтесь с документацией SDK: https://github.com/microsoft/Foundry-Local
 4. Изучите примеры кода: Все примеры содержат подробные комментарии
 
 ## Следующие шаги
 
-1. Пройдите все сессии воркшопа по порядку  
-2. Экспериментируйте с различными моделями  
-3. Модифицируйте примеры под свои задачи  
-4. Ознакомьтесь с `SDK_MIGRATION_NOTES.md` для изучения сложных шаблонов
+1. Пройдите все сессии мастерской по порядку
+2. Экспериментируйте с различными моделями
+3. Модифицируйте примеры под свои задачи
+4. Ознакомьтесь с `SDK_MIGRATION_NOTES.md` для сложных шаблонов
 
 ---
 
-**Последнее обновление**: 08.01.2025  
-**Версия воркшопа**: Последняя  
-**SDK**: Foundry Local Python SDK  
+**Последнее обновление**: 2025-01-08  
+**Версия мастерской**: Последняя  
+**SDK**: Foundry Local Python SDK
 
 ---
 
 **Отказ от ответственности**:  
-Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия обеспечить точность, автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его родном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется профессиональный перевод человеком. Мы не несем ответственности за любые недоразумения или неправильные интерпретации, возникшие в результате использования данного перевода.
+Этот документ был переведен с использованием сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия обеспечить точность, автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его родном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется профессиональный перевод человеком. Мы не несем ответственности за любые недоразумения или неправильные интерпретации, возникшие в результате использования данного перевода.

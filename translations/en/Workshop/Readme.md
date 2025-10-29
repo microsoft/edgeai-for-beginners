@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8b994c57f1207012e4d7f58b7c0d1ae7",
-  "translation_date": "2025-10-17T09:02:20+00:00",
+  "original_hash": "45923ada94573fee7c82cc4f0c3bb344",
+  "translation_date": "2025-10-28T19:58:26+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "en"
 }
@@ -11,33 +11,33 @@ CO_OP_TRANSLATOR_METADATA:
 
 > **Hands-On Learning Path for Building Production-Ready Edge AI Applications**
 >
-> Master local AI deployment with Microsoft Foundry Local, from first chat completion to multi-agent orchestration in 6 progressive sessions.
+> Master local AI deployment with Microsoft Foundry Local, from initial chat completion to multi-agent orchestration in 6 progressive sessions.
 
 ---
 
 ## 🎯 Introduction
 
-Welcome to the **EdgeAI for Beginners Workshop** - your practical, hands-on guide to building intelligent applications that run entirely on local hardware. This workshop turns theoretical Edge AI concepts into practical skills through progressively challenging exercises using Microsoft Foundry Local and Small Language Models (SLMs).
+Welcome to the **EdgeAI for Beginners Workshop** - a practical, hands-on guide to creating intelligent applications that operate entirely on local hardware. This workshop turns theoretical concepts of Edge AI into practical skills through progressively challenging exercises using Microsoft Foundry Local and Small Language Models (SLMs).
 
 ### Why This Workshop?
 
 **The Edge AI Revolution is Here**
 
-Organizations worldwide are transitioning from cloud-dependent AI to edge computing for three key reasons:
+Organizations around the world are transitioning from cloud-based AI to edge computing for three key reasons:
 
-1. **Privacy & Compliance** - Process sensitive data locally without transmitting it to the cloud (HIPAA, GDPR, financial regulations)
-2. **Performance** - Eliminate network latency (50-500ms locally vs 500-2000ms cloud round-trip)
-3. **Cost Control** - Avoid per-token API costs and scale without cloud expenses
+1. **Privacy & Compliance** - Process sensitive data locally without transmitting it to the cloud (e.g., HIPAA, GDPR, financial regulations).
+2. **Performance** - Eliminate network latency (50-500ms locally vs. 500-2000ms for cloud round-trip).
+3. **Cost Control** - Avoid per-token API costs and scale without cloud expenses.
 
 **But Edge AI is Different**
 
-Running AI on-premises requires new skills:
-- Selecting and optimizing models for resource constraints
-- Managing local services and hardware acceleration
-- Crafting prompts for smaller models
-- Deploying production-ready solutions on edge devices
+Running AI on local systems requires new skills:
+- Selecting and optimizing models for resource constraints.
+- Managing local services and hardware acceleration.
+- Crafting effective prompts for smaller models.
+- Implementing production deployment strategies for edge devices.
 
-**This Workshop Delivers Those Skills**
+**This Workshop Provides Those Skills**
 
 In 6 focused sessions (~3 hours total), you'll progress from "Hello World" to deploying production-ready multi-agent systems - all running locally on your machine.
 
@@ -49,40 +49,40 @@ By completing this workshop, you will be able to:
 
 ### Core Competencies
 1. **Deploy and Manage Local AI Services**
-   - Install and configure Microsoft Foundry Local
-   - Select suitable models for edge deployment
-   - Manage model lifecycle (download, load, cache)
-   - Monitor resource usage and optimize performance
+   - Install and configure Microsoft Foundry Local.
+   - Choose suitable models for edge deployment.
+   - Manage the model lifecycle (download, load, cache).
+   - Monitor resource usage and optimize performance.
 
 2. **Build AI-Powered Applications**
-   - Implement OpenAI-compatible chat completions locally
-   - Design effective prompts for Small Language Models
-   - Handle streaming responses for improved user experience
-   - Integrate local models into existing applications
+   - Implement OpenAI-compatible chat completions locally.
+   - Design effective prompts for Small Language Models.
+   - Handle streaming responses for improved user experience.
+   - Integrate local models into existing applications.
 
 3. **Create RAG (Retrieval Augmented Generation) Systems**
-   - Build semantic search using embeddings
-   - Ground LLM responses in domain-specific knowledge
-   - Evaluate RAG quality using industry-standard metrics
-   - Scale from prototype to production
+   - Build semantic search using embeddings.
+   - Ground LLM responses in domain-specific knowledge.
+   - Evaluate RAG quality using industry-standard metrics.
+   - Scale from prototype to production.
 
 4. **Optimize Model Performance**
-   - Benchmark multiple models for your use case
-   - Measure latency, throughput, and first-token time
-   - Select optimal models based on speed/quality tradeoffs
-   - Compare SLM vs LLM trade-offs in real-world scenarios
+   - Benchmark multiple models for your use case.
+   - Measure latency, throughput, and first-token time.
+   - Select optimal models based on speed/quality tradeoffs.
+   - Compare SLM vs. LLM trade-offs in real-world scenarios.
 
 5. **Orchestrate Multi-Agent Systems**
-   - Design specialized agents for different tasks
-   - Implement agent memory and context management
-   - Coordinate agents in complex workflows
-   - Route requests intelligently across multiple models
+   - Design specialized agents for different tasks.
+   - Implement agent memory and context management.
+   - Coordinate agents in complex workflows.
+   - Route requests intelligently across multiple models.
 
 6. **Deploy Production-Ready Solutions**
-   - Implement error handling and retry logic
-   - Monitor token usage and system resources
-   - Build scalable architectures with model-as-tools patterns
-   - Plan migration paths from edge to hybrid (edge + cloud)
+   - Implement error handling and retry logic.
+   - Monitor token usage and system resources.
+   - Build scalable architectures using model-as-tools patterns.
+   - Plan migration paths from edge to hybrid (edge + cloud).
 
 ---
 
@@ -97,7 +97,7 @@ By the end of this workshop, you will have created:
 | **1** | Chat application with streaming | Service setup, basic completions, streaming UX |
 | **2** | RAG system with evaluation | Embeddings, semantic search, quality metrics |
 | **3** | Multi-model benchmark suite | Performance measurement, model comparison |
-| **4** | SLM vs LLM comparator | Trade-off analysis, optimization strategies |
+| **4** | SLM vs. LLM comparator | Trade-off analysis, optimization strategies |
 | **5** | Multi-agent orchestrator | Agent design, memory management, coordination |
 | **6** | Intelligent routing system | Intent detection, model selection, scalability |
 
@@ -114,24 +114,24 @@ By the end of this workshop, you will have created:
 **After this workshop, you'll be prepared to:**
 
 ✅ **Build Privacy-First Applications**
-- Healthcare apps handling PHI/PII locally
-- Financial services with compliance requirements
-- Government systems with data sovereignty needs
+- Healthcare apps handling PHI/PII locally.
+- Financial services with compliance requirements.
+- Government systems with data sovereignty needs.
 
 ✅ **Optimize for Edge Environments**
-- IoT devices with limited resources
-- Offline-first mobile applications
-- Low-latency real-time systems
+- IoT devices with limited resources.
+- Offline-first mobile applications.
+- Low-latency real-time systems.
 
 ✅ **Design Intelligent Architectures**
-- Multi-agent systems for complex workflows
-- Hybrid edge-cloud deployments
-- Cost-optimized AI infrastructure
+- Multi-agent systems for complex workflows.
+- Hybrid edge-cloud deployments.
+- Cost-optimized AI infrastructure.
 
 ✅ **Lead Edge AI Initiatives**
-- Evaluate Edge AI feasibility for projects
-- Select appropriate models and frameworks
-- Architect scalable local AI solutions
+- Evaluate Edge AI feasibility for projects.
+- Select appropriate models and frameworks.
+- Architect scalable local AI solutions.
 
 ---
 
@@ -144,7 +144,7 @@ By the end of this workshop, you will have created:
 | **1** | Getting Started with Foundry Local | Install, validate, first completions | 30 min |
 | **2** | Building AI Solutions with RAG | Prompt engineering, embeddings, evaluation | 30 min |
 | **3** | Open Source Models | Model discovery, benchmarking, selection | 30 min |
-| **4** | Cutting Edge Models | SLM vs LLM, optimization, frameworks | 30 min |
+| **4** | Cutting Edge Models | SLM vs. LLM, optimization, frameworks | 30 min |
 | **5** | AI-Powered Agents | Agent design, orchestration, memory | 30 min |
 | **6** | Models as Tools | Routing, chaining, scaling strategies | 30 min |
 
@@ -156,10 +156,10 @@ By the end of this workshop, you will have created:
 
 **System Requirements:**
 - **OS**: Windows 10/11, macOS 11+, or Linux (Ubuntu 20.04+)
-- **RAM**: 8GB minimum, 16GB+ recommended
-- **Storage**: 10GB+ free space for models
-- **CPU**: Modern processor with AVX2 support
-- **GPU** (optional): CUDA-compatible or Qualcomm NPU for acceleration
+- **RAM**: 8GB minimum, 16GB+ recommended.
+- **Storage**: 10GB+ free space for models.
+- **CPU**: Modern processor with AVX2 support.
+- **GPU** (optional): CUDA-compatible or Qualcomm NPU for acceleration.
 
 **Software Requirements:**
 - **Python 3.8+** ([Download](https://www.python.org/downloads/))
@@ -251,8 +251,8 @@ pip install -r requirements.txt
 foundry model run phi-4-mini
 
 # Run the chat bootstrap sample
-cd samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 **✅ Success!** You should see a streaming response about edge AI.
@@ -271,7 +271,7 @@ Progressive hands-on examples demonstrating each concept:
 | 2 | [`rag_pipeline.py`](../../../Workshop/samples/session02/rag_pipeline.py) | RAG with embeddings | ~45s |
 | 2 | [`rag_eval_ragas.py`](../../../Workshop/samples/session02/rag_eval_ragas.py) | RAG quality evaluation | ~60s |
 | 3 | [`benchmark_oss_models.py`](../../../Workshop/samples/session03/benchmark_oss_models.py) | Multi-model benchmarking | ~2-3m |
-| 4 | [`model_compare.py`](../../../Workshop/samples/session04/model_compare.py) | SLM vs LLM comparison | ~45s |
+| 4 | [`model_compare.py`](../../../Workshop/samples/session04/model_compare.py) | SLM vs. LLM comparison | ~45s |
 | 5 | [`agents_orchestrator.py`](../../../Workshop/samples/session05/agents_orchestrator.py) | Multi-agent system | ~60s |
 | 6 | [`models_router.py`](../../../Workshop/samples/session06/models_router.py) | Intent-based routing | ~45s |
 | 6 | [`models_pipeline.py`](../../../Workshop/samples/session06/models_pipeline.py) | Multi-step pipeline | ~60s |
@@ -390,7 +390,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 |----------|---------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Default single model alias for basic samples | `phi-4-mini` |
 | `SLM_ALIAS` / `LLM_ALIAS` | Explicit SLM vs larger model for comparison | `phi-4-mini` / `gpt-oss-20b` |
-| `BENCH_MODELS` | Comma list of aliases to benchmark | `qwen2.5-0.5b,gemma-2-2b,mistral-7b` |
+| `BENCH_MODELS` | Comma list of aliases to benchmark | `qwen2.5-0.5b,mistral-7b` |
 | `BENCH_ROUNDS` | Benchmark repetitions per model | `3` |
 | `BENCH_PROMPT` | Prompt used in benchmarking | `Explain retrieval augmented generation briefly.` |
 | `EMBED_MODEL` | Sentence-transformers embedding model | `sentence-transformers/all-MiniLM-L6-v2` |
@@ -444,7 +444,8 @@ Expect stable token counts across repeated identical inputs.
 Use `rag_eval_ragas.py` to compute answer relevancy, faithfulness, and context precision on a tiny synthetic dataset:
 
 ```powershell
-python samples/session02/rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 Extend by supplying a larger JSONL of questions, contexts, and ground truths, then converting to a Hugging Face `Dataset`.
@@ -541,7 +542,7 @@ chmod +x .git/hooks/pre-commit
 | Enable GPU acceleration | `foundry config set compute.onnx.enable_gpu true` | `# CLI action; SDK assumes config already applied` | Configuration is external side effect |
 | Get endpoint URL | (implicit) | `manager.endpoint` | Used to create OpenAI-compatible client |
 | Warm a model | `foundry model run <alias>` then first prompt | `chat_once(alias, messages=[...])` (utility) | Utilities handle initial cold latency warmup |
-| Measure latency | `python benchmark_oss_models.py` | `import benchmark_oss_models` (or new exporter script) | Prefer script for consistent metrics |
+| Measure latency | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (or new exporter script) | Prefer script for consistent metrics |
 | Stop / unload model | `foundry model unload <alias>` | (Not exposed – restart service / process) | Typically not required for workshop flow |
 | Retrieve token usage | (view output) | `resp.usage.total_tokens` | Provided if backend returns usage object |
 
@@ -552,7 +553,7 @@ Use the script `Workshop/scripts/export_benchmark_markdown.py` to run a fresh be
 ### Example
 
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 Generated files:

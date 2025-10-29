@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T14:02:14+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T23:19:35+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "sr"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Преглед
 
-Примери из радионице користе променљиве окружења за конфигурацију, централизоване у `.env` датотеци на корену репозиторијума. Ово омогућава лаку прилагодбу без измене кода.
+Примери из радионице користе променљиве окружења за конфигурацију, централизоване у `.env` датотеци на корену репозиторијума. Ово омогућава лако прилагођавање без измене кода.
 
 ## Брзи почетак
 
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **За Python скрипте:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -65,9 +65,9 @@ python chat_bootstrap.py
 | `PYTHONPATH` | Путање радионице | Путања за претрагу Python модула |
 
 **Када поставити FOUNDRY_LOCAL_ENDPOINT:**
-- Удаљена инстанца Foundry Local
+- Далеко инстанцирање Foundry Local-а
 - Прилагођена конфигурација порта
-- Раздвајање развојног и продукцијског окружења
+- Раздвајање развоја и продукције
 
 **Пример:**
 ```bash
@@ -80,18 +80,18 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 ### Променљиве специфичне за сесију
 
-#### Сесија 02: RAG Пипелин
+#### Сесија 02: RAG Пипелине
 | Променљива | Подразумевано | Сврха |
 |------------|---------------|-------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Модел за уграђивање |
-| `RAG_QUESTION` | Предефинисано | Тест питање |
+| `RAG_QUESTION` | Предконфигурисано | Тест питање |
 
 #### Сесија 03: Бенчмаркинг
 | Променљива | Подразумевано | Сврха |
 |------------|---------------|-------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Модели за бенчмаркинг |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Модели за бенчмаркинг |
 | `BENCH_ROUNDS` | `3` | Итерације по моделу |
-| `BENCH_PROMPT` | Предефинисано | Тест упит |
+| `BENCH_PROMPT` | Предконфигурисано | Тест упит |
 | `BENCH_STREAM` | `0` | Мерење кашњења првог токена |
 
 #### Сесија 04: Поређење модела
@@ -99,7 +99,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |------------|---------------|-------|
 | `SLM_ALIAS` | `phi-4-mini` | Мали језички модел |
 | `LLM_ALIAS` | `qwen2.5-7b` | Велики језички модел |
-| `COMPARE_PROMPT` | Предефинисано | Упит за поређење |
+| `COMPARE_PROMPT` | Предконфигурисано | Упит за поређење |
 | `COMPARE_RETRIES` | `2` | Покушаји поновног покушаја |
 
 #### Сесија 05: Оркестрација више агената
@@ -107,15 +107,15 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |------------|---------------|-------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Модел истраживачког агента |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Модел уредничког агента |
-| `AGENT_QUESTION` | Предефинисано | Тест питање |
+| `AGENT_QUESTION` | Предконфигурисано | Тест питање |
 
 ### Конфигурација поузданости
 
 | Променљива | Подразумевано | Сврха |
 |------------|---------------|-------|
-| `SHOW_USAGE` | `1` | Приказ потрошње токена |
+| `SHOW_USAGE` | `1` | Испис коришћења токена |
 | `RETRY_ON_FAIL` | `1` | Омогућава логику поновног покушаја |
-| `RETRY_BACKOFF` | `1.0` | Кашњење при поновном покушају (секунде) |
+| `RETRY_BACKOFF` | `1.0` | Кашњење пре поновног покушаја (секунде) |
 
 ## Уобичајене конфигурације
 
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Бенчмаркинг конфигурација
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -151,7 +151,7 @@ AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
 ```
 
-### Удаљени развој
+### Далеко развојно окружење
 ```bash
 FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -159,7 +159,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ## Препоручени модели
 
-### Према случају употребе
+### Према намени
 
 **Општа намена:**
 - `phi-4-mini` - Балансиран квалитет и брзина
@@ -300,23 +300,20 @@ foundry model run phi-4-mini
 FOUNDRY_LOCAL_ALIAS=<available-model>
 ```
 
-### Грешке при увозу
+### Грешке у увозу
 
 **Симптоми:**
 - Грешке "Module not found"
-- "Cannot import workshop_utils"
 
 **Решења:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Тестирање конфигурације
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## Најбоље праксе за безбедност
 
-### 1. Никада не комитујте тајне
+### 1. Никада не објављујте тајне
 
 ```bash
 # .gitignore should include:
@@ -377,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Користите одвојене `.env` датотеке
+### 2. Користите одвојене .env датотеке
 
 ```bash
 .env              # Default configuration
@@ -406,7 +403,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Главни репозиторијум**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API документација**: Проверите SDK репозиторијум за најновије информације
+- **API документација**: Погледајте SDK репозиторијум за најновије информације
 
 ## Додатни ресурси
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Одрицање од одговорности**:  
-Овај документ је преведен помоћу услуге за превођење уз помоћ вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да обезбедимо тачност, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати меродавним извором. За критичне информације препоручује се професионални превод од стране људског преводиоца. Не преузимамо одговорност за било каква погрешна тумачења или неспоразуме који могу произаћи из коришћења овог превода.
+Овај документ је преведен помоћу услуге за превођење уз помоћ вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да обезбедимо тачност, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на изворном језику треба сматрати меродавним извором. За критичне информације препоручује се професионални превод од стране људи. Не преузимамо одговорност за било каква погрешна тумачења или неспоразуме који могу настати услед коришћења овог превода.

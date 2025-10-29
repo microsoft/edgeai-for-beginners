@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82e20fdeebffdf75eecdf5cdfb02b65c",
-  "translation_date": "2025-10-08T15:21:16+00:00",
+  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
+  "translation_date": "2025-10-28T23:10:52+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "ro"
 }
@@ -11,26 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Rezumat
 
-Explorați cum să construiți fluxuri de lucru GenAI acționabile utilizând Foundry Local și Azure AI Foundry. Învățați tehnici avansate de inginerie a prompturilor, integrați date structurate și orchestrați sarcini cu ajutorul unor fluxuri de lucru reproductibile. Deși accentul este pus pe Generarea-Augmentată prin Recuperare (RAG) pentru întrebări și răspunsuri pe documente și date, modelele se generalizează pentru designul soluțiilor GenAI mai largi.
+Descoperă cum să construiești fluxuri de lucru GenAI practice utilizând Foundry Local și Azure AI Foundry. Învață tehnici avansate de inginerie a prompturilor, integrează date structurate și orchestrează sarcini cu ajutorul unor pipeline-uri reproductibile. Deși accentul este pus pe Generarea Augmentată de Recuperare (RAG) pentru întrebări și răspunsuri pe documente și date, modelele pot fi generalizate pentru designul soluțiilor GenAI mai largi.
 
-## Obiective de Învățare
+## Obiective de învățare
 
-La finalul acestei sesiuni, veți:
+La finalul acestei sesiuni, vei putea:
 
-- **Stăpâni Ingineria Prompturilor**: Concepeți prompturi de sistem eficiente și strategii de fundamentare
-- **Implementați Modele RAG**: Construiți sisteme de întrebări și răspunsuri bazate pe documente cu căutare vectorială
-- **Integrați Date Structurate**: Lucrați cu date CSV, JSON și tabelare în fluxurile de lucru AI
-- **Construiți RAG de Producție**: Creați aplicații RAG scalabile cu Chainlit
-- **Conectați Local la Cloud**: Înțelegeți căile de migrare de la Foundry Local la Azure AI Foundry
+- **Stăpâni Ingineria Prompturilor**: Concepe prompturi de sistem eficiente și strategii de fundamentare
+- **Implementa Modele RAG**: Construiește sisteme de întrebări și răspunsuri bazate pe documente cu căutare vectorială
+- **Integra Date Structurate**: Lucrează cu date CSV, JSON și tabelare în fluxurile de lucru AI
+- **Construiește RAG pentru Producție**: Creează aplicații RAG scalabile cu Chainlit
+- **Conectează Local la Cloud**: Înțelege căile de migrare de la Foundry Local la Azure AI Foundry
 
-## Cerințe Prealabile
+## Cerințe preliminare
 
 - Finalizarea Sesiunii 1 (configurarea Foundry Local)
-- Înțelegerea de bază a bazelor de date vectoriale și a încorporărilor
+- Înțelegerea de bază a bazelor de date vectoriale și a embedding-urilor
 - Experiență în programarea Python
 - Familiaritate cu conceptele de procesare a documentelor
 
-### Ghid Rapid pentru Mediu Cross-Platform (Windows & macOS)
+### Ghid rapid pentru medii cross-platform (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -48,15 +48,15 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Dacă binarele Foundry Local pentru macOS nu sunt încă disponibile în mediul dvs., rulați serviciul pe o mașină virtuală Windows sau container și setați:
+Dacă binarele Foundry Local pentru macOS nu sunt disponibile încă în mediul tău, rulează serviciul pe o mașină virtuală Windows sau container și setează:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Validare: Verificarea Mediului Foundry Local
+## Validare: Verificarea mediului Foundry Local
 
-Înainte de a începe demonstrațiile, validați mediul local:
+Înainte de a începe demonstrațiile, validează mediul local:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -65,15 +65,15 @@ foundry model run phi-4-mini   # Start baseline SLM
 curl http://localhost:5273/v1/models  # Validate API (should list running model)
 ```
 
-Dacă ultima comandă eșuează, porniți (sau reporniți) serviciul: `foundry service start`.
+Dacă ultima comandă eșuează, pornește (sau repornește) serviciul: `foundry service start`.
 
-## Fluxul Demonstrației (30 minute)
+## Fluxul demonstrației (30 minute)
 
-### 1. Prompturi de Sistem și Strategii de Fundamentare (10 minute)
+### 1. Prompturi de sistem și strategii de fundamentare (10 minute)
 
-#### Pasul 1.1: Ingineria Avansată a Prompturilor
+#### Pasul 1.1: Ingineria avansată a prompturilor
 
-Creați `samples/02-rag-solutions/prompt_engineering.py`:
+Creează `samples/02-rag-solutions/prompt_engineering.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### Pasul 1.2: Testați Strategiile de Fundamentare
+#### Pasul 1.2: Testează strategiile de fundamentare
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -217,11 +217,11 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### 2. Integrarea Datelor Tabelare cu Prompturi (Întrebări și Răspunsuri CSV) (10 minute)
+### 2. Integrarea datelor tabelare cu prompturi (Întrebări și răspunsuri pe CSV) (10 minute)
 
-#### Pasul 2.1: Integrarea Datelor CSV
+#### Pasul 2.1: Integrarea datelor CSV
 
-Creați `samples/02-rag-solutions/csv_qa_system.py`:
+Creează `samples/02-rag-solutions/csv_qa_system.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -433,7 +433,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### Pasul 2.2: Testați Sistemul de Întrebări și Răspunsuri CSV
+#### Pasul 2.2: Testează sistemul de întrebări și răspunsuri pe CSV
 
 ```powershell
 # Run the CSV Q&A demo
@@ -441,11 +441,11 @@ python samples/02-rag-solutions/csv_qa_system.py
 ```
 
 
-### 3. Proiect de Start: Adaptarea 02-grounding-data (5 minute)
+### 3. Proiect de început: Adaptarea 02-grounding-data (5 minute)
 
-#### Pasul 3.1: Sistem RAG Îmbunătățit pentru Documente
+#### Pasul 3.1: Sistem RAG îmbunătățit pentru documente
 
-Creați `samples/02-rag-solutions/document_rag.py`:
+Creează `samples/02-rag-solutions/document_rag.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -661,11 +661,11 @@ if __name__ == "__main__":
 ```
 
 
-### 4. Arătați Calea de Migrare CLI către Azure (5 minute)
+### 4. Prezintă calea de migrare CLI către Azure (5 minute)
 
-#### Pasul 4.1: Prezentare Generală a Strategiei de Migrare
+#### Pasul 4.1: Prezentare generală a strategiei de migrare
 
-Creați `samples/02-rag-solutions/migration_guide.py`:
+Creează `samples/02-rag-solutions/migration_guide.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -869,7 +869,7 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-#### Pasul 4.2: Testați Modelele de Migrare
+#### Pasul 4.2: Testează modelele de migrare
 
 ```powershell
 # Run the migration demo
@@ -877,39 +877,39 @@ python samples/02-rag-solutions/migration_guide.py
 ```
 
 
-## Concepte Cheie Acoperite
+## Concepte cheie abordate
 
-### 1. Ingineria Avansată a Prompturilor
+### 1. Ingineria avansată a prompturilor
 
-- **Prompturi de Sistem**: Persoane experte specifice domeniului
-- **Strategii de Fundamentare**: Tehnici de integrare a contextului
-- **Controlul Temperaturii**: Echilibrarea creativității vs consistența
-- **Gestionarea Tokenilor**: Utilizarea eficientă a contextului
+- **Prompturi de sistem**: Personaje experte specifice domeniului
+- **Strategii de fundamentare**: Tehnici de integrare a contextului
+- **Controlul temperaturii**: Echilibrarea creativității vs consistenței
+- **Gestionarea token-urilor**: Utilizarea eficientă a contextului
 
-### 2. Integrarea Datelor Structurate
+### 2. Integrarea datelor structurate
 
-- **Procesarea CSV**: Integrarea Pandas cu modele AI
-- **Analiza Statistică**: Rezumarea automată a datelor
-- **Crearea Contextului**: Generarea dinamică a contextului bazat pe interogări
-- **Suport Multi-format**: JSON, CSV și date tabelare
+- **Procesarea CSV**: Integrarea Pandas cu modelele AI
+- **Analiză statistică**: Rezumarea automată a datelor
+- **Crearea contextului**: Generarea dinamică a contextului pe baza întrebărilor
+- **Suport multi-format**: Date JSON, CSV și tabelare
 
-### 3. Modele de Implementare RAG
+### 3. Modele de implementare RAG
 
-- **Căutare Vectorială**: TF-IDF și similaritatea cosinusului
-- **Recuperarea Documentelor**: Scorarea relevanței și clasificarea
-- **Combinarea Contextului**: Sinteza multi-document
-- **Generarea Răspunsurilor**: Crearea răspunsurilor fundamentate
+- **Căutare vectorială**: TF-IDF și similaritate cosinus
+- **Recuperarea documentelor**: Scorarea relevanței și clasificarea
+- **Combinarea contextului**: Sinteza mai multor documente
+- **Generarea răspunsurilor**: Crearea răspunsurilor fundamentate
 
-### 4. Strategii de Migrare în Cloud
+### 4. Strategii de migrare în cloud
 
-- **API-uri Unificate**: Cod unic pentru local și cloud
-- **Abstracția Mediului**: Implementare bazată pe configurație
-- **Flux de Dezvoltare**: Local → Staging → Producție
-- **Optimizarea Costurilor**: Dezvoltare locală, producție în cloud
+- **API-uri unificate**: O singură bază de cod pentru local și cloud
+- **Abstractizarea mediului**: Implementare bazată pe configurație
+- **Flux de lucru de dezvoltare**: Local → Staging → Producție
+- **Optimizarea costurilor**: Dezvoltare locală, producție în cloud
 
-## Considerații pentru Producție
+## Considerații pentru producție
 
-### 1. Optimizarea Performanței
+### 1. Optimizarea performanței
 
 ```python
 # Optimize for production RAG
@@ -923,7 +923,7 @@ rag_config = {
 }
 ```
 
-### 2. Gestionarea Erorilor
+### 2. Gestionarea erorilor
 
 ```python
 # Robust error handling
@@ -940,7 +940,7 @@ except Exception as e:
     logger.error(f"RAG system error: {e}")
 ```
 
-### 3. Monitorizare și Observabilitate
+### 3. Monitorizare și observabilitate
 
 ```python
 # Track RAG performance
@@ -953,32 +953,32 @@ metrics = {
 ```
 
 
-## Pași Următori
+## Pași următori
 
 După finalizarea acestei sesiuni:
 
-1. **Explorați Sesiunea 3**: Modele Open-Source în Foundry Local
-2. **Construiți RAG de Producție**: Implementați cu Chainlit (Exemplu 04)
-3. **Căutare Vectorială Avansată**: Integrați cu Chroma sau Pinecone
-4. **Migrare în Cloud**: Implementați în Azure AI Foundry
-5. **Evaluați Calitatea RAG**: Rulați `python Workshop/samples/session02/rag_eval_ragas.py` pentru a măsura relevanța răspunsurilor, fidelitatea și precizia contextului folosind ragas
+1. **Explorează Sesiunea 3**: Modele open-source în Foundry Local
+2. **Construiește RAG pentru producție**: Implementare cu Chainlit (Exemplu 04)
+3. **Căutare vectorială avansată**: Integrare cu Chroma sau Pinecone
+4. **Migrare în cloud**: Implementare pe Azure AI Foundry
+5. **Evaluează calitatea RAG**: Rulează `cd Workkshop/samples;python -m session02.rag_eval_ragas` pentru a măsura relevanța răspunsurilor, fidelitatea și precizia contextului folosind ragas
 
-### Îmbunătățiri Opționale
+### Îmbunătățiri opționale
 
 | Categorie | Îmbunătățire | Motivare | Direcție |
-|-----------|-------------|----------|----------|
-| Recuperare | Înlocuiți TF-IDF cu stocare vectorială (FAISS / Chroma) | Recunoaștere semantică mai bună și scalabilitate | Fragmentați documentele (500–800 caractere), încorporați, persistați indexul |
-| Index Hibrid | Filtrare semantică + cuvinte cheie | Îmbunătățește precizia pentru interogări numerice / cod | Filtrați după cuvinte cheie, apoi clasificați după similaritatea cosinusului |
-| Încorporări | Evaluați mai multe modele de încorporare | Optimizare relevanță vs viteză | A/B: MiniLM vs E5-small vs encoder găzduit local |
-| Cache | Cache pentru încorporări și rezultate de recuperare | Reducerea latenței interogărilor repetate | Cache simplu pe disc / sqlite cu cheie hash |
-| Evaluare | Extindeți dataset-ul ragas | Calitate semnificativă statistic | Creați 50–100 Q/A + contexte; stratificați pe subiect |
-| Metrice | Urmăriți timpii de recuperare și generare | Profilarea performanței | Capturați `retrieval_ms`, `gen_ms`, `tokens` per apel |
-| Măsuri de Siguranță | Adăugați fallback pentru halucinații | Răspunsuri mai sigure | Dacă fidelitatea < prag → răspuns: "Context insuficient." |
-| Fallback | Cascade local → model Azure | Creștere hibridă a calității | La încredere scăzută, direcționați către cloud prin același API OpenAI |
-| Determinism | Rulări de comparație stabile | Seturi de evaluare repetabile | Fixați seed-ul, `temperature=0`, dezactivați aleatorietatea samplerului |
-| Monitorizare | Persistați istoricul rulărilor de evaluare | Detectarea regresiilor | Adăugați linii JSON cu timestamp + diferențe de metrici |
+|-----------|--------------|----------|----------|
+| Recuperare | Înlocuiește TF-IDF cu un magazin vectorial (FAISS / Chroma) | Recunoaștere semantică mai bună și scalabilitate | Fragmentare documente (500–800 caractere), încorporare, indexare persistentă |
+| Index hibrid | Filtrare duală semantică + cuvinte cheie | Îmbunătățește precizia pentru interogări numerice / cod | Filtrare după cuvinte cheie, apoi clasificare după similaritatea cosinus |
+| Embedding-uri | Evaluează mai multe modele de embedding | Optimizează relevanța vs viteză | A/B: MiniLM vs E5-small vs encoder găzduit local |
+| Caching | Cache pentru embedding-uri și rezultate de recuperare | Reduce latența interogărilor repetate | Simplu pe disc, pickle / sqlite cu cheie hash |
+| Evaluare | Extinde setul de date ragas | Calitate semnificativă statistic | Curatează 50–100 întrebări/răspunsuri + contexte; stratificare pe subiect |
+| Metrice | Monitorizează timpii de recuperare și generare | Profilarea performanței | Captură `retrieval_ms`, `gen_ms`, `tokens` per apel |
+| Măsuri de siguranță | Adaugă fallback pentru halucinații | Răspunsuri mai sigure | Dacă fidelitatea < prag → răspuns: "Context insuficient." |
+| Fallback | Cascade local → model Azure | Creștere hibridă a calității | La încredere scăzută, redirecționează către cloud prin același API OpenAI |
+| Determinism | Rulări de comparație stabile | Seturi de evaluare repetabile | Fixează seed-ul, `temperature=0`, dezactivează aleatoritatea samplerului |
+| Monitorizare | Persistă istoricul rulărilor de evaluare | Detectarea regresiilor | Adaugă linii JSON cu timestamp + metrici delta |
 
-#### Exemplu: Adăugarea Timpului de Recuperare
+#### Exemplu: Adăugarea timpului de recuperare
 
 ```python
 import time
@@ -992,14 +992,14 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 ```
 
 
-#### Scalarea Evaluării cu ragas
+#### Scalarea evaluării cu ragas
 
-1. Asamblați un JSONL cu câmpuri: `question`, `answer`, `contexts`, `ground_truths` (listă)
-2. Convertiți în `Dataset.from_list(list_of_dicts)`
-3. Rulați `evaluate(dataset, metrics=[...])`
-4. Stocați metricele (CSV/JSON) pentru analiza tendințelor.
+1. Asamblează un JSONL cu câmpurile: `question`, `answer`, `contexts`, `ground_truths` (listă)
+2. Convertește în `Dataset.from_list(list_of_dicts)`
+3. Rulează `evaluate(dataset, metrics=[...])`
+4. Stochează metricile (CSV/JSON) pentru analiza tendințelor.
 
-#### Ghid Rapid pentru Stocare Vectorială (FAISS)
+#### Ghid rapid pentru magazinul vectorial (FAISS)
 
 ```python
 import faiss, numpy as np
@@ -1008,9 +1008,9 @@ index.add(embeddings)  # embeddings = np.array([...]) normalized
 D, I = index.search(query_vec, k)
 ```
 
-Pentru persistența pe disc utilizați `faiss.write_index(index, "kb.index")`.
+Pentru persistența pe disc, folosește `faiss.write_index(index, "kb.index")`.
 
-## Resurse Suplimentare
+## Resurse suplimentare
 
 ### Documentație
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
@@ -1018,29 +1018,29 @@ Pentru persistența pe disc utilizați `faiss.write_index(index, "kb.index")`.
 - [Ghid de Inginerie a Prompturilor](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
 - [Documentație Evaluare Ragas](https://docs.ragas.io)
 
-### Cod Exemplu
+### Cod exemplu
 - [Exemplu Modul08 04](./samples/04/README.md) - Aplicație RAG Chainlit
 - [Sistem Multi-Agent Avansat](./samples/09/README.md) - Modele de coordonare a agenților
 
 ---
 
-**Durata Sesiunii**: 30 minute practică + 15 minute întrebări și răspunsuri  
-**Nivel de Dificultate**: Intermediar  
-**Cerințe Prealabile**: Sesiunea 1 finalizată, cunoștințe de bază Python  
+**Durata sesiunii**: 30 minute practică + 15 minute întrebări și răspunsuri  
+**Nivel de dificultate**: Intermediar  
+**Cerințe preliminare**: Sesiunea 1 finalizată, cunoștințe de bază în Python  
 
-## Scenariu Exemplu & Mapare Workshop
+## Scenariu exemplu și maparea workshop-ului
 
-| Script / Notebook Workshop | Scenariu | Obiectiv | Dataset / Sursă Principală | Exemplu Întrebare |
-|----------------------------|----------|----------|----------------------------|-------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Bază de cunoștințe pentru suport intern, răspunzând la întrebări frecvente despre confidențialitate + performanță | RAG minim în memorie cu încorporări | Lista `DOCS` din script (5 pasaje scurte) | De ce să folosiți RAG cu inferență locală? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analist de calitate stabilind metricele de fidelitate ale recuperării de bază | Calculați metricele ragas pe un dataset sintetic mic | Arrays `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Ce avantaj oferă inferența locală? |
-| `prompt_engineering.py` (avansat) | SME domeniu creând prompturi fundamentate pentru mai multe verticale | Comparați prompturile de sistem ale domeniului & impactul tokenilor | Dict `contexts` inline | Cum gestionează Foundry Local cache-ul modelului? |
-| `csv_qa_system.py` | Operațiuni de vânzări explorând analize interactive pe exporturi | Rezumați & interogați un mic segment de vânzări | `sample_sales_data.csv` generat (10 rânduri) | Care produs are cea mai mare medie a sumei vânzărilor? |
-| `document_rag.py` | Echipa de produs explorând RAG pentru wiki intern | Recuperați + citați documente relevante | Lista `create_sample_knowledge_base()` | Care sunt beneficiile AI Edge? |
-| `migration_guide.py` | Arhitect pregătind planul de migrare în cloud | Demonstrați paritatea API local→Azure | Prompturi de test statice | Explicați beneficiile AI Edge în 2–3 propoziții. |
+| Script / Notebook Workshop | Scenariu | Obiectiv | Set de date / Sursă principală | Exemplu de întrebare |
+|----------------------------|----------|----------|-------------------------------|----------------------|
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Bază de cunoștințe internă pentru suport, răspunzând la întrebări frecvente despre confidențialitate + performanță | RAG minim în memorie cu embedding-uri | Lista `DOCS` din script (5 pasaje scurte) | De ce să folosești RAG cu inferență locală? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analist de calitate care stabilește metrici de fidelitate pentru recuperare | Calculează metricile ragas pe un set de date sintetic mic | Array-uri `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Ce avantaj oferă inferența locală? |
+| `prompt_engineering.py` (avansat) | Expert în domeniu care creează prompturi fundamentate pentru diverse verticale | Compară prompturi de sistem pe domenii și impactul token-urilor | Dict `contexts` inline | Cum gestionează Foundry Local caching-ul modelului? |
+| `csv_qa_system.py` | Operațiuni de vânzări explorând analize interactive pe exporturi | Rezumă și interoghează un mic eșantion de vânzări | `sample_sales_data.csv` generat (10 rânduri) | Care produs are cea mai mare medie a vânzărilor? |
+| `document_rag.py` | Echipa de produs explorează RAG pentru wiki intern | Recuperează + citează documente relevante | Lista `create_sample_knowledge_base()` | Care sunt beneficiile AI Edge? |
+| `migration_guide.py` | Arhitect care pregătește planul de migrare în cloud | Demonstrează paritatea API local→Azure | Prompturi de test statice | Explică beneficiile AI Edge în 2–3 propoziții. |
 
-### Fragmente de Dataset
-Lista de documente pipeline RAG inline:
+### Fragmente de seturi de date
+Lista de documente RAG inline:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1051,7 +1051,7 @@ DOCS = [
 ]
 ```
 
-Tupluri de adevăr evaluare ragas:
+Tupluri de adevăr pentru evaluarea ragas:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1061,13 +1061,13 @@ GROUND_TRUTH = [
 ```
 
 
-### Narațiunea Scenariului
-Grupul de inginerie suport dorește un prototip rapid pentru a răspunde la întrebări frecvente interne fără a expune datele clienților extern. Artefactele Sesiunii 2 progresează de la un RAG minim efemer (fără persistență) → Întrebări și Răspunsuri CSV structurate → recuperarea documentelor cu citare → evaluare obiectivă a calității (ragas) → o strategie de migrare pregătită pentru staging Azure.
+### Narațiunea scenariului
+Grupul de inginerie de suport dorește un prototip rapid pentru a răspunde la întrebări frecvente interne fără a expune datele clienților extern. Artefactele Sesiunii 2 progresează de la un RAG minim efemer (fără persistență) → întrebări și răspunsuri pe CSV structurat → recuperarea documentelor cu citare → evaluare obiectivă a calității (ragas) → o strategie de migrare pregătită pentru staging Azure.
 
-### Căi de Extindere
-Utilizați tabelul Îmbunătățiri Opționale pentru a evolua: înlocuiți TF‑IDF cu FAISS/Chroma, măriți corpusul de evaluare (50–100 Q/A), adăugați escaladare fallback către un model mai mare când fidelitatea < prag.
+### Căi de extindere
+Folosește tabelul Îmbunătățiri Opționale pentru a evolua: înlocuiește TF-IDF cu FAISS/Chroma, mărește corpusul de evaluare (50–100 întrebări/răspunsuri), adaugă escaladare fallback către un model mai mare când fidelitatea < prag.
 
 ---
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de oameni. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T08:01:57+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T20:37:56+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "mo"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概述
 
-Workshop 示例使用環境變數進行配置，集中存放於存儲庫根目錄的 `.env` 文件中。這使得用戶可以輕鬆自定義配置，而無需修改代碼。
+Workshop 範例使用環境變數進行配置，集中存放於存儲庫根目錄的 `.env` 文件中。這使得用戶可以輕鬆自定義配置，而無需修改程式碼。
 
 ## 快速開始
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. 配置環境
 
-`.env` 文件已預設為合理的默認值。大多數用戶無需更改任何內容。
+`.env` 文件已預設配置好合理的默認值。大多數使用者無需進行更改。
 
 **可選**：檢查並自定義設置：
 ```bash
@@ -43,12 +43,12 @@ nano .env     # macOS/Linux
 
 **針對 Python 腳本：**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
-**針對 Notebook：**
+**針對筆記本：**
 ```python
 # Restart kernel after .env changes
 # Variables are loaded when cells execute
@@ -60,16 +60,16 @@ python chat_bootstrap.py
 
 | 變數 | 默認值 | 描述 |
 |------|--------|------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | 示例的默認模型 |
-| `FOUNDRY_LOCAL_ENDPOINT` | （空） | 覆蓋服務端點 |
-| `PYTHONPATH` | Workshop 路徑 | Python 模塊搜索路徑 |
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | 範例的默認模型 |
+| `FOUNDRY_LOCAL_ENDPOINT` | (空) | 覆蓋服務端點 |
+| `PYTHONPATH` | Workshop 路徑 | Python 模組搜索路徑 |
 
 **何時設置 FOUNDRY_LOCAL_ENDPOINT：**
-- 遠程 Foundry Local 實例
+- 遠端 Foundry Local 實例
 - 自定義端口配置
 - 開發/生產環境分離
 
-**示例：**
+**範例：**
 ```bash
 # Local custom port
 FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
@@ -89,10 +89,10 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### 會話 03：基準測試
 | 變數 | 默認值 | 用途 |
 |------|--------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | 要測試的模型 |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | 要進行基準測試的模型 |
 | `BENCH_ROUNDS` | `3` | 每個模型的迭代次數 |
 | `BENCH_PROMPT` | 預設配置 | 測試提示 |
-| `BENCH_STREAM` | `0` | 測量首字元延遲 |
+| `BENCH_STREAM` | `0` | 測量首個 token 的延遲 |
 
 #### 會話 04：模型比較
 | 變數 | 默認值 | 用途 |
@@ -113,7 +113,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 | 變數 | 默認值 | 用途 |
 |------|--------|------|
-| `SHOW_USAGE` | `1` | 顯示令牌使用情況 |
+| `SHOW_USAGE` | `1` | 顯示 token 使用情況 |
 | `RETRY_ON_FAIL` | `1` | 啟用重試邏輯 |
 | `RETRY_BACKOFF` | `1.0` | 重試延遲（秒） |
 
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### 基準測試設置
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -151,7 +151,7 @@ AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
 ```
 
-### 遠程開發
+### 遠端開發
 ```bash
 FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### 溫度與採樣（代碼中覆蓋）
+### 溫度與採樣（在代碼中覆蓋）
 
 ```python
 # In your scripts/notebooks
@@ -262,8 +262,8 @@ pwd  # Should be in Workshop or repository root
 ### 服務連接問題
 
 **症狀：**
-- "Connection refused" 錯誤
-- "Service not available"
+- "連接被拒絕" 錯誤
+- "服務不可用"
 - 超時錯誤
 
 **解決方案：**
@@ -285,8 +285,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ### 模型未找到
 
 **症狀：**
-- "Model not found" 錯誤
-- "Alias not recognized"
+- "模型未找到" 錯誤
+- "別名未被識別"
 
 **解決方案：**
 ```bash
@@ -303,20 +303,17 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### 導入錯誤
 
 **症狀：**
-- "Module not found" 錯誤
-- "Cannot import workshop_utils"
+- "模組未找到" 錯誤
 
 **解決方案：**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## 測試配置
@@ -412,15 +409,15 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - `QUICK_START.md` - 快速入門指南
 - `SDK_MIGRATION_NOTES.md` - SDK 更新詳情
-- `Workshop/samples/*/README.md` - 示例特定指南
+- `Workshop/samples/*/README.md` - 範例專屬指南
 
 ---
 
 **最後更新日期**: 2025-01-08  
 **版本**: 2.0  
-**SDK**: Foundry Local Python SDK（最新）
+**SDK**: Foundry Local Python SDK (最新版本)
 
 ---
 
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或錯誤解釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或誤釋不承擔責任。

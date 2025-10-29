@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T14:45:39+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:21:07+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "fi"
 }
@@ -17,11 +17,11 @@ Kaikki Python-tiedostot Workshop-kansiossa on päivitetty noudattamaan uusimpia 
 
 ### Ydinrakenteet (`workshop_utils.py`)
 
-#### Parannetut ominaisuudet:
-- **Endpointin ohitus**: Lisätty ympäristömuuttujan `FOUNDRY_LOCAL_ENDPOINT` tuki
+#### Parannellut ominaisuudet:
+- **Endpoint Override -tuki**: Lisätty `FOUNDRY_LOCAL_ENDPOINT` ympäristömuuttujan tuki
 - **Parannettu virheenkäsittely**: Parempi poikkeusten käsittely yksityiskohtaisilla virheilmoituksilla
-- **Tehostettu välimuisti**: Välimuistiavaimet sisältävät nyt endpointin monen endpointin skenaarioita varten
-- **Eksponentiaalinen viive**: Uudelleenyrittojen logiikka käyttää eksponentiaalista viivettä luotettavuuden parantamiseksi
+- **Parannettu välimuisti**: Välimuistiavaimet sisältävät nyt endpointin monen endpointin skenaarioita varten
+- **Eksponentiaalinen backoff**: Uudelleenyrittojen logiikka käyttää nyt eksponentiaalista backoffia luotettavuuden parantamiseksi
 - **Tyyppimerkinnät**: Lisätty kattavat tyyppivihjeet parempaa IDE-tukea varten
 
 #### Uudet ominaisuudet:
@@ -36,63 +36,63 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 ### Esimerkkisovellukset
 
 #### Istunto 01: Chat Bootstrap (`chat_bootstrap.py`)
-- Päivitetty oletusmalli `phi-3.5-mini` -> `phi-4-mini`
-- Lisätty endpointin ohitus
-- Parannettu dokumentaatio SDK-viitteillä
+- Päivitetty oletusmalli `phi-3.5-mini` mallista `phi-4-mini` malliin
+- Lisätty endpoint override -tuki
+- Parannettu dokumentaatio SDK-viittauksilla
 
-#### Istunto 02: RAG-putki (`rag_pipeline.py`)
+#### Istunto 02: RAG Pipeline (`rag_pipeline.py`)
 - Päivitetty käyttämään `phi-4-mini` oletuksena
-- Lisätty endpointin ohitus
+- Lisätty endpoint override -tuki
 - Parannettu dokumentaatio ympäristömuuttujien yksityiskohdilla
 
-#### Istunto 02: RAG-arviointi (`rag_eval_ragas.py`)
-- Päivitetty mallin oletukset
-- Lisätty endpointin konfigurointi
+#### Istunto 02: RAG Evaluation (`rag_eval_ragas.py`)
+- Päivitetty mallien oletusarvot
+- Lisätty endpoint-konfiguraatio
 - Parannettu virheenkäsittely
 
-#### Istunto 03: Mallien vertailu (`benchmark_oss_models.py`)
+#### Istunto 03: Benchmarking (`benchmark_oss_models.py`)
 - Päivitetty oletusmallilista sisältämään `phi-4-mini`
 - Lisätty kattava ympäristömuuttujien dokumentaatio
-- Parannettu funktioiden dokumentaatio
-- Lisätty endpointin ohitus kaikkialle
+- Parannettu funktiodokumentaatio
+- Lisätty endpoint override -tuki kauttaaltaan
 
 #### Istunto 04: Mallien vertailu (`model_compare.py`)
-- Päivitetty oletus-LLM `gpt-oss-20b` -> `qwen2.5-7b`
-- Lisätty endpointin konfigurointi
+- Päivitetty oletus LLM `gpt-oss-20b` mallista `qwen2.5-7b` malliin
+- Lisätty endpoint-konfiguraatio
 - Parannettu dokumentaatio
 
-#### Istunto 05: Multi-Agent Orchestration (`agents_orchestrator.py`)
-- Lisätty tyyppivihjeet (muutettu `str | None` -> `Optional[str]`)
+#### Istunto 05: Moni-agenttiorganisointi (`agents_orchestrator.py`)
+- Lisätty tyyppivihjeet (muutettu `str | None` muotoon `Optional[str]`)
 - Parannettu Agent-luokan dokumentaatio
-- Lisätty endpointin ohitus
+- Lisätty endpoint override -tuki
 - Parannettu alustamismalli
 
 #### Istunto 06: Mallien reititys (`models_router.py`)
-- Lisätty endpointin konfigurointi
+- Lisätty endpoint-konfiguraatio
 - Parannettu intentin tunnistuksen dokumentaatio
 - Parannettu reitityslogiikan dokumentaatio
 
-#### Istunto 06: Putki (`models_pipeline.py`)
-- Lisätty kattava funktioiden dokumentaatio
+#### Istunto 06: Putkisto (`models_pipeline.py`)
+- Lisätty kattava funktiodokumentaatio
 - Parannettu vaiheittainen dokumentaatio
-- Tehostettu virheenkäsittely
+- Parannettu virheenkäsittely
 
 ### Skriptit
 
 #### Benchmark Export (`export_benchmark_markdown.py`)
-- Lisätty endpointin ohitus
+- Lisätty endpoint override -tuki
 - Päivitetty oletusmallit
-- Parannettu funktioiden dokumentaatio
-- Tehostettu virheenkäsittely
+- Parannettu funktiodokumentaatio
+- Parannettu virheenkäsittely
 
 #### CLI Linter (`lint_markdown_cli.py`)
-- Lisätty SDK-viitelinkit
-- Parannettu käyttöohjeet
+- Lisätty SDK-viittauslinkit
+- Parannettu käyttöohjeiden dokumentaatio
 
 ### Testit
 
-#### Smoke Testit (`smoke.py`)
-- Lisätty endpointin ohitus
+#### Smoke Tests (`smoke.py`)
+- Lisätty endpoint override -tuki
 - Parannettu dokumentaatio
 - Parannettu testitapausten dokumentaatio
 - Parempi virheraportointi
@@ -106,21 +106,21 @@ Kaikki esimerkit tukevat nyt näitä ympäristömuuttujia:
 - `FOUNDRY_LOCAL_ENDPOINT` - Palvelun endpointin ohitus (valinnainen)
 - `SHOW_USAGE` - Näytä tokenien käyttötilastot (oletus: "0")
 - `RETRY_ON_FAIL` - Ota käyttöön uudelleenyrittämislogiikka (oletus: "1")
-- `RETRY_BACKOFF` - Alkuperäinen viive uudelleenyrittämisessä sekunteina (oletus: "1.0")
+- `RETRY_BACKOFF` - Alustava uudelleenyrittämisviive sekunneissa (oletus: "1.0")
 
-### Esimerkki-kohtaiset
+### Esimerkkikohtaiset
 - `EMBED_MODEL` - Upotusmalli RAG-esimerkeille
-- `BENCH_MODELS` - Pilkulla erotetut mallit benchmarkingille
-- `BENCH_ROUNDS` - Benchmark-kierrosten määrä
-- `BENCH_PROMPT` - Testikehotus benchmarkeille
-- `BENCH_STREAM` - Mittaa ensimmäisen tokenin viive
+- `BENCH_MODELS` - Pilkulla erotetut mallit benchmarkingia varten
+- `BENCH_ROUNDS` - Benchmarking-kierrosten määrä
+- `BENCH_PROMPT` - Testikehotus benchmarkingille
+- `BENCH_STREAM` - Ensimmäisen tokenin viiveen mittaus
 - `RAG_QUESTION` - Testikysymys RAG-esimerkeille
 - `AGENT_MODEL_PRIMARY` - Ensisijainen agenttimalli
 - `AGENT_MODEL_EDITOR` - Editor-agenttimalli
 - `SLM_ALIAS` - Pienen kielimallin alias
 - `LLM_ALIAS` - Suuren kielimallin alias
 
-## SDK:n parhaat käytännöt
+## SDK:n parhaat käytännöt toteutettu
 
 ### 1. Oikea asiakasohjelman alustaminen
 ```python
@@ -154,7 +154,7 @@ except Exception as e:
     raise RuntimeError(f"Initialization failed: {e}") from e
 ```
 
-### 4. Uudelleenyrittäminen eksponentiaalisella viiveellä
+### 4. Uudelleenyrittämislogiikka eksponentiaalisella backoffilla
 ```python
 delay = initial_delay
 for attempt in range(max_retries):
@@ -196,7 +196,7 @@ Jos luot uusia esimerkkejä tai päivität olemassa olevia:
 
 3. **Lisää kattava dokumentaatio**:
    - Ympäristömuuttujat docstringissä
-   - SDK-viitelinkki
+   - SDK-viittauslinkki
    - Käyttöesimerkit
 
 4. **Käytä tyyppivihjeitä**:
@@ -223,36 +223,37 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
 ```
 
-## SDK-dokumentaatioviitteet
+## SDK-dokumentaatioviittaukset
 
 - **Päärepository**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API-dokumentaatio**: Katso SDK-repositoryn uusimmat API-dokumentit
+- **API-dokumentaatio**: Katso SDK-repositoryn viimeisimmät API-dokumentit
 
 ## Rikkovat muutokset
 
 ### Ei odotettavissa
 Kaikki muutokset ovat taaksepäin yhteensopivia. Päivitykset pääasiassa:
-- Lisäävät uusia valinnaisia ominaisuuksia (endpointin ohitus)
+- Lisäävät uusia valinnaisia ominaisuuksia (endpoint override)
 - Parantavat virheenkäsittelyä
-- Tehostavat dokumentaatiota
+- Parantavat dokumentaatiota
 - Päivittävät oletusmallien nimet nykyisiin suosituksiin
 
 ### Valinnaiset parannukset
 Voit halutessasi päivittää koodisi käyttämään:
 - `FOUNDRY_LOCAL_ENDPOINT` endpointin hallintaan
 - `SHOW_USAGE=1` tokenien käytön näkyvyyden lisäämiseksi
-- Päivitetyt mallin oletukset (`phi-4-mini` `phi-3.5-mini` sijaan)
+- Päivitettyjä mallien oletusarvoja (`phi-4-mini` `phi-3.5-mini` sijaan)
 
 ## Yleiset ongelmat ja ratkaisut
 
@@ -283,17 +284,17 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 1. **Päivitä Module08-esimerkit**: Sovella samanlaisia malleja Module08/samples-kansioon
 2. **Lisää integraatiotestit**: Luo kattava testisarja
-3. **Suorituskykyvertailu**: Vertaa suorituskykyä ennen/jälkeen
+3. **Suorituskyvyn benchmarking**: Vertaa suorituskykyä ennen/jälkeen
 4. **Dokumentaation päivitykset**: Päivitä pääasiallinen README uusilla malleilla
 
 ## Osallistumisohjeet
 
 Kun lisäät uusia esimerkkejä:
-1. Käytä `workshop_utils.py` johdonmukaisuuden varmistamiseksi
+1. Käytä `workshop_utils.py` johdonmukaisuuden vuoksi
 2. Noudata olemassa olevien esimerkkien mallia
 3. Lisää kattavat docstringit
-4. Sisällytä SDK-viitelinkit
-5. Tue endpointin ohitusta
+4. Sisällytä SDK-viittauslinkit
+5. Tue endpoint override -toimintoa
 6. Lisää asianmukaiset tyyppivihjeet
 7. Sisällytä käyttöesimerkit docstringiin
 
@@ -313,4 +314,4 @@ Nämä päivitykset ovat yhteensopivia seuraavien kanssa:
 ---
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi katsoa ensisijaiseksi lähteeksi. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.

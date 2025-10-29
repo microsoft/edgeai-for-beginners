@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T21:13:42+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T22:55:07+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "hu"
 }
@@ -11,19 +11,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Összefoglaló
 
-Tervezd meg és irányítsd több szerepkörű AI-ügynököket a Foundry Local alacsony késleltetésű, adatvédelmet biztosító futtatókörnyezetével. Meghatározhatod az ügynökök szerepköreit, memória-stratégiákat, eszközhasználati mintákat és végrehajtási grafikonokat. A szekció bemutatja azokat a vázlatmintákat, amelyeket kiterjeszthetsz a Chainlit vagy LangGraph segítségével. A kezdő projekt kiegészíti a meglévő ügynök-architektúra mintát memória-tartóssággal és értékelési horgokkal.
+Tervezzen és irányítson több szerepkörű AI ügynököket a Foundry Local alacsony késleltetésű, adatvédelmet biztosító futtatási környezetével. Meghatározza az ügynökök szerepköreit, memória-stratégiákat, eszközhasználati mintákat és végrehajtási grafikonokat. A szekció bemutatja azokat a keretrendszereket, amelyeket kiterjeszthet a Chainlit vagy LangGraph segítségével. A kezdő projekt kiegészíti a meglévő ügynök-architektúra mintát memória-tárolással és értékelési horgokkal.
 
 ## Tanulási célok
 
-- **Szerepkörök meghatározása**: Rendszerpromptok és képességek határai
+- **Szerepkörök meghatározása**: Rendszerüzenetek és képességek határainak kijelölése
 - **Memória megvalósítása**: Rövid távú (beszélgetés), hosszú távú (vektor / fájl), átmeneti jegyzetek
-- **Munkafolyamatok vázolása**: Szekvenciális, elágazó és párhuzamos ügynöklépések
+- **Munkafolyamatok keretezése**: Szekvenciális, elágazó és párhuzamos ügynöklépések
 - **Eszközök integrálása**: Könnyű funkcióhívási minta
 - **Értékelés**: Alapvető nyomkövetés + rubrika-alapú eredményértékelés
 
 ## Előfeltételek
 
-- 1–4. szekciók elvégzése
+- Az 1–4. szekciók elvégzése
 - Python a `foundry-local-sdk`, `openai`, opcionális `chainlit` csomagokkal
 - Lokális modellek futtatása (legalább `phi-4-mini`)
 
@@ -45,17 +45,17 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Ha macOS-ről futtatod az ügynököket egy távoli Windows hosztszolgáltatás ellen:
+Ha macOS-ról futtat ügynököket távoli Windows host szolgáltatás ellen:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Bemutató folyamat (30 perc)
+## Bemutató menete (30 perc)
 
-### 1. Ügynökszerepek és memória meghatározása (7 perc)
+### 1. Ügynök szerepek és memória meghatározása (7 perc)
 
-Hozd létre a `samples/05-agents/agents_core.py` fájlt:
+Hozzon létre egy `samples/05-agents/agents_core.py` fájlt:
 
 ```python
 #!/usr/bin/env python3
@@ -122,7 +122,7 @@ if __name__ == "__main__":
 ```
 
 
-### 2. CLI vázlatminta (3 perc)
+### 2. CLI keretrendszer minta (3 perc)
 
 ```powershell
 python samples/05-agents/agents_core.py
@@ -131,7 +131,7 @@ python samples/05-agents/agents_core.py
 
 ### 3. Eszközhasználat hozzáadása (7 perc)
 
-Egészítsd ki a `samples/05-agents/tools.py` fájllal:
+Egészítse ki a `samples/05-agents/tools.py` fájllal:
 
 ```python
 from datetime import datetime
@@ -150,11 +150,11 @@ TOOLS = {
 }
 ```
 
-Módosítsd az `agents_core.py` fájlt, hogy egyszerű eszközszintaxist engedélyezzen: a felhasználó írja be `#tool:get_time`, és az ügynök az eszköz kimenetét a generálás előtt a kontextusba helyezi.
+Módosítsa az `agents_core.py` fájlt, hogy egyszerű eszközszintaxist engedélyezzen: a felhasználó beírja `#tool:get_time`, és az ügynök az eszköz kimenetét a generálás előtt a kontextusba helyezi.
 
 ### 4. Orkesztrált munkafolyamat (6 perc)
 
-Hozd létre a `samples/05-agents/orchestrator.py` fájlt:
+Hozzon létre egy `samples/05-agents/orchestrator.py` fájlt:
 
 ```python
 from agents_core import researcher, writer, Agent
@@ -185,13 +185,13 @@ if __name__ == '__main__':
 ```
 
 
-### 5. Kezdő projekt: Bővítsd a `05-agent-architecture` fájlt (7 perc)
+### 5. Kezdő projekt: A `05-agent-architecture` kiterjesztése (7 perc)
 
-Adj hozzá:
+Adja hozzá:
 1. Tartós memória réteget (pl. JSON sorok hozzáfűzése a beszélgetésekhez)
-2. Egyszerű értékelési rubrikát: tényszerűség / világosság / stílus helyőrzők
-3. Opcionális Chainlit front-endet (két fül: beszélgetés és nyomok)
-4. Opcionális LangGraph stílusú állapotgépet (ha függőséget adsz hozzá) az elágazási döntésekhez
+2. Egyszerű értékelési rubrikát: tényszerűség / érthetőség / stílus helyőrzők
+3. Opcionális Chainlit front-end (két fül: beszélgetés és nyomkövetés)
+4. Opcionális LangGraph stílusú állapotgép (ha függőséget ad hozzá) az elágazási döntésekhez
 
 ## Érvényesítési ellenőrzőlista
 
@@ -200,16 +200,16 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Várható strukturált csővezeték kimenet eszközbeillesztési megjegyzéssel.
+Várhatóan strukturált csővezeték kimenet eszközbeillesztési megjegyzéssel.
 
 ## Memória-stratégiák áttekintése
 
-| Réteg       | Cél                 | Példa               |
-|-------------|---------------------|---------------------|
-| Rövid távú  | Párbeszéd folytonossága | Utolsó N üzenet     |
-| Epizodikus  | Munkamenet visszahívása | JSON munkamenetenként |
+| Réteg       | Cél                 | Példa              |
+|-------------|---------------------|--------------------|
+| Rövid távú  | Párbeszéd folytonossága | Utolsó N üzenet    |
+| Epizodikus  | Munkamenet visszaidézése | JSON munkamenetenként |
 | Szemantikus | Hosszú távú visszakeresés | Összefoglalók vektortára |
-| Jegyzetfüzet | Gondolkodási lépések | Inline gondolatlánc (privát) |
+| Jegyzetfüzet| Gondolkodási lépések | Inline gondolatlánc (privát) |
 
 ## Értékelési horgok (Koncepcionális)
 
@@ -224,13 +224,13 @@ evaluation = {
 ```
 
 
-## Hibakeresés
+## Hibaelhárítás
 
 | Probléma            | Ok                     | Megoldás                     |
 |---------------------|------------------------|------------------------------|
 | Ismétlődő válaszok  | Túl nagy/kicsi kontextusablak | Memóriaablak paraméterének hangolása |
-| Eszköz nem hívódik meg | Hibás szintaxis         | Használj `#tool:tool_name` formátumot |
-| Lassú orkesztráció  | Több hideg modell      | Előzetes bemelegítő promptok futtatása |
+| Eszköz nem hívható  | Hibás szintaxis        | Használja a `#tool:tool_name` formátumot |
+| Lassú orkesztráció  | Több hideg modell      | Előzetes bemelegítő üzenetek futtatása |
 
 ## Hivatkozások
 
@@ -247,21 +247,25 @@ evaluation = {
 
 | Workshop szkript | Forgatókönyv | Célkitűzés | Példa prompt |
 |------------------|--------------|------------|--------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Tudáskutató bot, amely vezetői összefoglalókat készít | Két ügynökből álló csővezeték (kutatás → szerkesztői csiszolás) opcionális külön modellekkel | Magyarázd el, miért fontos az edge inference a megfelelés szempontjából. |
-| (Bővített) `tools.py` koncepció | Idő- és tokenbecslő eszközök hozzáadása | Könnyű eszközhasználati minta bemutatása | #tool:get_time |
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Tudáskutató bot, amely vezetői összefoglalókat készít | Két ügynökből álló csővezeték (kutatás → szerkesztői finomítás) opcionális külön modellekkel | Magyarázza el, miért fontos az edge inference a megfelelőség szempontjából. |
+| (Kiterjesztett) `tools.py` koncepció | Idő- és tokenbecslő eszközök hozzáadása | Könnyű eszközhasználati minta bemutatása | #tool:get_time |
 
 ### Forgatókönyv narratíva
-A megfelelési dokumentációs csapatnak gyors belső összefoglalókra van szüksége, amelyeket helyi tudásból származtatnak, anélkül hogy a vázlatokat felhőszolgáltatásokba küldenék. Egy kutató ügynök tömör tényszerű pontokat gyűjt; egy szerkesztő ügynök újrafogalmazza azokat vezetői világosság érdekében. Különböző modell aliasok rendelhetők a késleltetés optimalizálására (gyors SLM) vs stilisztikai finomítás (nagyobb modell csak szükség esetén).
+
+A megfelelőségi dokumentációs csapatnak gyors belső összefoglalókra van szüksége, amelyeket helyi tudásból szereznek, anélkül, hogy a tervezeteket felhőszolgáltatásokba küldenék. Egy kutató ügynök tömör tényeket gyűjt össze; egy szerkesztő ügynök átfogalmazza azokat vezetői érthetőség érdekében. Különböző modell aliasok rendelhetők hozzá a késleltetés optimalizálásához (gyors SLM) vs stilisztikai finomítás (csak nagyobb modell szükség esetén).
 
 ### Példa többmodellű környezet
+
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
 ### Nyomkövetési struktúra (Opcionális)
+
 ```json
 {
     "step": 1,
@@ -273,24 +277,24 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Mentsd el minden lépést JSONL fájlba későbbi rubrika-alapú értékeléshez.
+Minden lépést JSONL fájlba menthet későbbi rubrika-alapú értékeléshez.
 
 ### Opcionális fejlesztések
 
-| Téma              | Fejlesztés              | Előny                 | Megvalósítási vázlat         |
-|-------------------|-------------------------|-----------------------|-----------------------------|
+| Téma              | Fejlesztés              | Előny                  | Megvalósítási vázlat         |
+|-------------------|-------------------------|------------------------|------------------------------|
 | Többmodellű szerepek | Különböző modellek ügynökönként (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specializáció és sebesség | Alias környezeti változók kiválasztása, `chat_once` hívása szerepkör-alias szerint |
-| Strukturált nyomok | Minden aktus (eszköz, bemenet, késleltetés, tokenek) JSON nyoma | Hibakeresés és értékelés | Szótár hozzáfűzése listához; `.jsonl` írása a végén |
-| Memória tartósság | Újratölthető párbeszéd kontextus | Munkamenet folytonossága | `Agent.memory` dumpolása `sessions/<ts>.json` fájlba |
-| Eszközregisztráció | Dinamikus eszközfelfedezés | Bővíthetőség | `TOOLS` szótár karbantartása és nevek/leírás introspektálása |
+| Strukturált nyomkövetés | Minden művelet (eszköz, bemenet, késleltetés, tokenek) JSON nyomkövetése | Hibakeresés és értékelés | Szótár hozzáfűzése listához; `.jsonl` fájlba írás a végén |
+| Memória tárolása | Újratölthető párbeszéd kontextus | Munkamenet folytonossága | `Agent.memory` mentése `sessions/<ts>.json` fájlba |
+| Eszközregiszter | Dinamikus eszközfelfedezés | Bővíthetőség | `TOOLS` szótár karbantartása és nevek/leírások introspektálása |
 | Újrapróbálkozás és visszalépés | Robusztus hosszú láncok | Átmeneti hibák csökkentése | `act` becsomagolása try/except + exponenciális visszalépéssel |
-| Rubrika-alapú értékelés | Automatikus minőségi címkék | Fejlesztések nyomon követése | Másodlagos prompt a modellnek: "Értékeld a világosságot 1-5" |
-| Vektor memória | Szemantikus visszahívás | Gazdag hosszú távú kontextus | Összefoglalók beágyazása, top-k visszakeresése a rendszerüzenetbe |
-| Streaming válaszok | Gyorsabb érzékelt válasz | UX javítása | Streaming használata, amint elérhető, és részleges tokenek kiürítése |
-| Determinisztikus tesztek | Regresszió kontroll | Stabil CI | Futtatás `temperature=0`-val, fix prompt magokkal |
+| Rubrika-alapú értékelés | Automatikus minőségi címkék | Fejlődés nyomon követése | Másodlagos passz modellel: "Értékeld az érthetőséget 1-5" |
+| Vektor memória | Szemantikus visszaidézés | Gazdag hosszú távú kontextus | Összefoglalók beágyazása, top-k visszakeresése a rendszerüzenetbe |
+| Folyamatos válaszok | Gyorsabb érzékelt válaszidő | Felhasználói élmény javítása | Folyamatos válaszok használata, amint elérhető, részleges tokenek kiírása |
+| Determinisztikus tesztek | Regresszió kontroll | Stabil CI | Futtatás `temperature=0`, fix prompt magokkal |
 | Párhuzamos elágazás | Gyorsabb feltárás | Átbocsátóképesség | `concurrent.futures` használata független ügynöklépésekhez |
 
-#### Nyomrekord példa
+#### Nyomkövetési rekord példa
 
 ```python
 trace.append({
@@ -310,9 +314,9 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-Mentsd el (`answer`, `rating`) párokat, hogy történelmi minőségi grafikont építs.
+Mentse el az (`answer`, `rating`) párokat, hogy történeti minőségi grafikont készítsen.
 
 ---
 
 **Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével került lefordításra. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

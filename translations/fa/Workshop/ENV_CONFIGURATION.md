@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T21:40:02+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T20:23:19+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "fa"
 }
 -->
-# راهنمای پیکربندی محیط
+# راهنمای تنظیم محیط
 
 ## مرور کلی
 
-نمونه‌های Workshop از متغیرهای محیطی برای پیکربندی استفاده می‌کنند که در فایل `.env` در ریشه مخزن متمرکز شده‌اند. این کار امکان سفارشی‌سازی آسان را بدون نیاز به تغییر کد فراهم می‌کند.
+نمونه‌های کارگاه از متغیرهای محیطی برای تنظیمات استفاده می‌کنند که در فایل `.env` در ریشه مخزن متمرکز شده‌اند. این روش امکان سفارشی‌سازی آسان را بدون نیاز به تغییر کد فراهم می‌کند.
 
 ## شروع سریع
 
@@ -28,9 +28,9 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. پیکربندی محیط
+### 2. تنظیم محیط
 
-فایل `.env` از قبل با تنظیمات پیش‌فرض مناسب پیکربندی شده است. اکثر کاربران نیازی به تغییر چیزی ندارند.
+فایل `.env` از پیش با مقادیر پیش‌فرض مناسب تنظیم شده است. اکثر کاربران نیازی به تغییر آن ندارند.
 
 **اختیاری**: تنظیمات را بررسی و سفارشی کنید:
 ```bash
@@ -39,12 +39,12 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. اعمال پیکربندی
+### 3. اعمال تنظیمات
 
 **برای اسکریپت‌های پایتون:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -56,17 +56,17 @@ python chat_bootstrap.py
 
 ## مرجع متغیرهای محیطی
 
-### پیکربندی اصلی
+### تنظیمات اصلی
 
 | متغیر | پیش‌فرض | توضیحات |
 |-------|---------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | مدل پیش‌فرض برای نمونه‌ها |
 | `FOUNDRY_LOCAL_ENDPOINT` | (خالی) | جایگزینی نقطه پایانی سرویس |
-| `PYTHONPATH` | مسیرهای Workshop | مسیر جستجوی ماژول‌های پایتون |
+| `PYTHONPATH` | مسیرهای کارگاه | مسیر جستجوی ماژول‌های پایتون |
 
 **زمان تنظیم FOUNDRY_LOCAL_ENDPOINT:**
 - نمونه Foundry Local از راه دور
-- پیکربندی پورت سفارشی
+- تنظیمات پورت سفارشی
 - جداسازی توسعه/تولید
 
 **مثال:**
@@ -84,22 +84,22 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | متغیر | پیش‌فرض | هدف |
 |-------|---------|-----|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | مدل جاسازی |
-| `RAG_QUESTION` | از پیش پیکربندی شده | سوال آزمایشی |
+| `RAG_QUESTION` | از پیش تنظیم شده | سوال آزمایشی |
 
-#### جلسه 03: بنچمارک
+#### جلسه 03: ارزیابی
 | متغیر | پیش‌فرض | هدف |
 |-------|---------|-----|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | مدل‌های بنچمارک |
-| `BENCH_ROUNDS` | `3` | تعداد تکرارها برای هر مدل |
-| `BENCH_PROMPT` | از پیش پیکربندی شده | پیام آزمایشی |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | مدل‌های ارزیابی |
+| `BENCH_ROUNDS` | `3` | تعداد تکرار برای هر مدل |
+| `BENCH_PROMPT` | از پیش تنظیم شده | درخواست آزمایشی |
 | `BENCH_STREAM` | `0` | اندازه‌گیری تأخیر اولین توکن |
 
-#### جلسه 04: مقایسه مدل
+#### جلسه 04: مقایسه مدل‌ها
 | متغیر | پیش‌فرض | هدف |
 |-------|---------|-----|
 | `SLM_ALIAS` | `phi-4-mini` | مدل زبان کوچک |
 | `LLM_ALIAS` | `qwen2.5-7b` | مدل زبان بزرگ |
-| `COMPARE_PROMPT` | از پیش پیکربندی شده | پیام مقایسه |
+| `COMPARE_PROMPT` | از پیش تنظیم شده | درخواست مقایسه |
 | `COMPARE_RETRIES` | `2` | تعداد تلاش مجدد |
 
 #### جلسه 05: هماهنگی چند عاملی
@@ -107,17 +107,17 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |-------|---------|-----|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | مدل عامل پژوهشگر |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | مدل عامل ویرایشگر |
-| `AGENT_QUESTION` | از پیش پیکربندی شده | سوال آزمایشی |
+| `AGENT_QUESTION` | از پیش تنظیم شده | سوال آزمایشی |
 
-### پیکربندی قابلیت اطمینان
+### تنظیمات قابلیت اطمینان
 
 | متغیر | پیش‌فرض | هدف |
 |-------|---------|-----|
-| `SHOW_USAGE` | `1` | نمایش استفاده از توکن |
+| `SHOW_USAGE` | `1` | چاپ استفاده از توکن |
 | `RETRY_ON_FAIL` | `1` | فعال کردن منطق تلاش مجدد |
 | `RETRY_BACKOFF` | `1.0` | تأخیر تلاش مجدد (ثانیه) |
 
-## پیکربندی‌های رایج
+## تنظیمات رایج
 
 ### تنظیمات توسعه (تکرار سریع)
 ```bash
@@ -138,14 +138,14 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### تنظیمات بنچمارک
+### تنظیمات ارزیابی
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### تخصصی‌سازی چند عاملی
+### تخصص چند عاملی
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -162,7 +162,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ### بر اساس مورد استفاده
 
 **کاربرد عمومی:**
-- `phi-4-mini` - تعادل بین کیفیت و سرعت
+- `phi-4-mini` - تعادل کیفیت و سرعت
 
 **پاسخ‌های سریع:**
 - `qwen2.5-0.5b` - بسیار سریع، مناسب برای طبقه‌بندی
@@ -199,7 +199,7 @@ SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-14b
 ```
 
-## پیکربندی پیشرفته
+## تنظیمات پیشرفته
 
 ### نقاط پایانی سفارشی
 
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### دما و نمونه‌گیری (بازنویسی در کد)
+### دما و نمونه‌گیری (جایگزینی در کد)
 
 ```python
 # In your scripts/notebooks
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### تنظیمات ترکیبی Azure OpenAI
+### تنظیم ترکیبی Azure OpenAI
 
 ```bash
 # Use local for development
@@ -259,7 +259,7 @@ dir .env     # Windows
 pwd  # Should be in Workshop or repository root
 ```
 
-### مشکلات اتصال به سرویس
+### مشکلات اتصال سرویس
 
 **علائم:**
 - خطاهای "اتصال رد شد"
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **علائم:**
 - خطاهای "مدل پیدا نشد"
-- "Alias شناسایی نشد"
+- "نام مستعار شناسایی نشد"
 
 **راه‌حل‌ها:**
 ```bash
@@ -304,22 +304,19 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **علائم:**
 - خطاهای "ماژول پیدا نشد"
-- "نمی‌توان workshop_utils را وارد کرد"
 
 **راه‌حل‌ها:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
-## آزمایش پیکربندی
+## آزمایش تنظیمات
 
 ### بررسی بارگذاری محیط
 
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## بهترین شیوه‌های امنیتی
 
-### 1. هرگز اطلاعات محرمانه را متعهد نکنید
+### 1. هرگز اطلاعات حساس را کامیت نکنید
 
 ```bash
 # .gitignore should include:
@@ -377,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. استفاده از فایل‌های .env جداگانه
+### 2. از فایل‌های .env جداگانه استفاده کنید
 
 ```bash
 .env              # Default configuration
@@ -385,14 +382,14 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. کلیدهای API را به‌طور منظم تغییر دهید
+### 3. کلیدهای API را چرخشی کنید
 
 ```bash
 # For Azure OpenAI or other cloud services
 # Regularly rotate keys and update .env
 ```
 
-### 4. استفاده از پیکربندی خاص محیط
+### 4. از تنظیمات خاص محیط استفاده کنید
 
 ```bash
 # Development
@@ -405,14 +402,14 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## مستندات SDK
 
 - **مخزن اصلی**: https://github.com/microsoft/Foundry-Local
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **SDK پایتون**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 - **مستندات API**: برای آخرین نسخه به مخزن SDK مراجعه کنید
 
 ## منابع اضافی
 
 - `QUICK_START.md` - راهنمای شروع سریع
 - `SDK_MIGRATION_NOTES.md` - جزئیات به‌روزرسانی SDK
-- `Workshop/samples/*/README.md` - راهنماهای خاص نمونه
+- `Workshop/samples/*/README.md` - راهنماهای خاص نمونه‌ها
 
 ---
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم ترجمه‌ها دقیق باشند، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، توصیه می‌شود از ترجمه انسانی حرفه‌ای استفاده کنید. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.

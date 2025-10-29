@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T13:09:18+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T22:06:27+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "sv"
 }
@@ -11,22 +11,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Sammanfattning
 
-Behandla modeller som sammansättningsbara verktyg inom ett lokalt AI-operativlager. Den här sessionen visar hur man kan kedja flera specialiserade SLM/LLM-anrop, selektivt dirigera uppgifter och exponera en enhetlig SDK-yta för applikationer. Du kommer att bygga en lättviktig modellrouter + uppgiftsplanerare, integrera den i ett appskript och skissera skalningsvägen till Azure AI Foundry för produktionsarbetsbelastningar.
+Behandla modeller som sammansättningsbara verktyg inom ett lokalt AI-operativlager. Denna session visar hur man kan kedja flera specialiserade SLM/LLM-anrop, selektivt dirigera uppgifter och exponera en enhetlig SDK-yta för applikationer. Du kommer att bygga en lättviktig modellrouter + uppgiftsplanerare, integrera den i ett appskript och skissera vägen för skalning till Azure AI Foundry för produktionsarbetsbelastningar.
 
 ## Lärandemål
 
-- **Konceptualisera** modeller som atomära verktyg med deklarerade kapabiliteter
+- **Konceptualisera** modeller som atomära verktyg med deklarerade kapaciteter
 - **Dirigera** förfrågningar baserat på avsikt / heuristisk poängsättning
-- **Kedja** utdata över flerstegsuppgifter (bryta ner → lösa → förfina)
+- **Kedja** utdata över flerstegsuppgifter (bryt ner → lös → förfina)
 - **Integrera** en enhetlig klient-API för nedströmsapplikationer
-- **Skala** design till molnet (samma OpenAI-kompatibla kontrakt)
+- **Skala** designen till molnet (samma OpenAI-kompatibla kontrakt)
 
 ## Förkunskaper
 
-- Sessioner 1–5 slutförda
+- Sessioner 1–5 genomförda
 - Flera lokala modeller cachade (t.ex. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Plattformoberoende Miljöutdrag
+### Snippet för Plattformar
 
 Windows PowerShell:
 ```powershell
@@ -52,7 +52,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Demo-flöde (30 min)
 
-### 1. Verktygskapabilitetsdeklaration (5 min)
+### 1. Deklaration av Verktygskapacitet (5 min)
 
 Skapa `samples/06-tools/models_catalog.py`:
 
@@ -74,7 +74,7 @@ CATALOG = {
 ```
 
 
-### 2. Avsiktsdetektion & Dirigering (8 min)
+### 2. Avsiktsdetektion & Routing (8 min)
 
 Skapa `samples/06-tools/router.py`:
 
@@ -180,19 +180,19 @@ if __name__ == '__main__':
 
 Förbättringar:
 - Lägg till stöd för strömmande token (progressiv UI-uppdatering)
-- Lägg till säkerhetspoäng: lexikal överlappning eller promptmall
+- Lägg till poängsättning för förtroende: lexikal överlappning eller promptmall
 - Exportera spårnings-JSON (avsikt → modell → latens → tokenanvändning)
-- Implementera cacheåteranvändning för upprepade delsteg
+- Implementera cache-återanvändning för upprepade delsteg
 
 ### 5. Skalningsväg till Azure (5 min)
 
 | Lager | Lokalt (Foundry) | Moln (Azure AI Foundry) | Övergångsstrategi |
 |-------|------------------|-------------------------|-------------------|
-| Dirigering | Heuristisk Python | Hållbar mikrotjänst | Containerisera & distribuera API |
-| Modeller | Cachade SLM:er | Hanterade distributioner | Mappa lokala namn till distributions-ID:n |
-| Observabilitet | CLI-statistik/manuell | Central loggning & mätvärden | Lägg till strukturerade spårhändelser |
-| Säkerhet | Endast lokal värd | Azure-autentisering/nätverk | Introducera nyckelvalv för hemligheter |
-| Kostnad | Enhetsresurs | Förbrukningsfakturering | Lägg till budgetspärrar |
+| Routing | Heuristisk Python | Hållbar mikrotjänst | Containerisera & distribuera API |
+| Modeller | Cachade SLM | Hanterade distributioner | Mappa lokala namn till distributions-ID |
+| Observabilitet | CLI-statistik/manuell | Central loggning & mätvärden | Lägg till strukturerade spårningshändelser |
+| Säkerhet | Endast lokal värd | Azure-autentisering / nätverk | Introducera nyckelvalv för hemligheter |
+| Kostnad | Enhetsresurser | Konsumtionsfakturering | Lägg till budgetgränser |
 
 ## Valideringschecklista
 
@@ -221,18 +221,18 @@ Förvänta dig avsiktsbaserad modellval och slutligt förfinat resultat.
 
 ---
 
-**Sessionslängd**: 30 min  
+**Sessionens längd**: 30 min  
 **Svårighetsgrad**: Expert
 
 ## Exempelscenario & Workshopkartläggning
 
 | Workshopskript / Anteckningsböcker | Scenario | Mål | Dataset / Katalogkälla |
 |------------------------------------|----------|-----|-------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Utvecklarassistent som hanterar blandade avsiktspromptar (omstrukturera, sammanfatta, klassificera) | Heuristisk avsikt → modellaliasdirigering med tokenanvändning | Inbyggd `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Flerstegsplanering & förfining för komplex kodassistansuppgift | Bryta ner → specialiserad exekvering → sammanfattningsförfiningssteg | Samma `CATALOG`; steg härledda från planutdata |
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Utvecklarassistent som hanterar blandade avsikts-promptar (omstrukturera, sammanfatta, klassificera) | Heuristisk avsikt → modellalias-routing med tokenanvändning | Inline `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Flerstegsplanering & förfining för komplex kodassistansuppgift | Bryt ner → specialiserad exekvering → sammanfattningsförfiningssteg | Samma `CATALOG`; steg härledda från planutdata |
 
-### Scenarionarrativ
-Ett verktyg för ingenjörsproduktivitet tar emot heterogena uppgifter: omstrukturera kod, sammanfatta arkitektoniska anteckningar, klassificera feedback. För att minimera latens och resursanvändning planerar och sammanfattar en liten generell modell, en kodspecialiserad modell hanterar omstrukturering, och en lättviktsklassificeringskapabel modell märker feedback. Pipelineskriptet demonstrerar kedjning + förfining; routerskriptet isolerar adaptiv enkelpromptdirigering.
+### Scenarioberättelse
+Ett verktyg för ingenjörsproduktivitet tar emot heterogena uppgifter: omstrukturera kod, sammanfatta arkitektoniska anteckningar, klassificera feedback. För att minimera latens och resursanvändning planerar och sammanfattar en liten generell modell, en kodspecialiserad modell hanterar omstrukturering, och en lätt klassificeringskapabel modell märker feedback. Pipelineskriptet demonstrerar kedjning + förfining; routerskriptet isolerar adaptiv enkel-prompt-routing.
 
 ### Katalogöversikt
 ```python
@@ -255,7 +255,7 @@ CATALOG = {
 ```
 
 
-### Spårningstillägg (Valfritt)
+### Spårningsförlängning (Valfritt)
 Lägg till spårnings-JSON-rader per steg för `models_pipeline.py`:
 ```python
 trace.append({
@@ -276,17 +276,17 @@ Om planen innehåller nyckelord som "optimera", "säkerhet", eller steglängd > 
 | Område | Förbättring | Värde | Tips |
 |--------|-------------|-------|------|
 | Caching | Återanvänd hanterare + klientobjekt | Lägre latens, mindre overhead | Använd `workshop_utils.get_client` |
-| Användningsstatistik | Fånga tokens & latens per steg | Profilering & optimering | Tidtag varje dirigerat anrop; lagra i spårlista |
-| Adaptiv Dirigering | Säkerhets-/kostnadsmedveten | Bättre kvalitet-kostnad-avvägning | Lägg till poängsättning: om prompt > N tecken eller regex matchar domän → eskalera till större modell |
-| Dynamisk Kapabilitetsregister | Het omladdning av katalog | Ingen omstart/omdistribuering | Ladda `catalog.json` vid körning; övervaka filens tidsstämpel |
-| Fallback-strategi | Robusthet vid fel | Högre tillgänglighet | Försök primär → vid undantag fallback-alias |
-| Strömmande Pipeline | Tidig feedback | UX-förbättring | Strömma varje steg och buffra slutlig förfiningsinmatning |
-| Vektoravsiktsinbäddningar | Mer nyanserad dirigering | Högre avsiktsnoggrannhet | Bädda in prompt, klustra & mappa centroid → kapabilitet |
-| Spårexport | Auditerbar kedja | Efterlevnad/rapportering | Emittera JSON-rader: steg, avsikt, modell, latens_ms, tokens |
-| Kostnadssimulering | Förmolnberäkning | Budgetplanering | Tilldela notional kostnad/token per modell & aggregera per uppgift |
-| Deterministiskt Läge | Reproducerbarhet | Stabil benchmarking | Miljö: `temperature=0`, fast antal steg |
+| Användningsmätning | Fånga tokens & latens per steg | Profilering & optimering | Tidtag varje dirigerat anrop; lagra i spårningslista |
+| Adaptiv Routing | Medveten om förtroende / kostnad | Bättre kvalitet-kostnadsbalans | Lägg till poängsättning: om prompt > N tecken eller regex matchar domän → eskalera till större modell |
+| Dynamisk Kapacitetsregister | Hot reload-katalog | Ingen omstart eller omdistribution | Ladda `catalog.json` vid runtime; övervaka filens tidsstämpel |
+| Reservstrategi | Robusthet vid fel | Högre tillgänglighet | Försök primär → vid undantag reservalias |
+| Strömmande Pipeline | Tidig feedback | Förbättrad användarupplevelse | Strömma varje steg och buffra slutlig förfiningsinmatning |
+| Vektoravsiktsinbäddningar | Mer nyanserad routing | Högre avsiktsnoggrannhet | Bädda in prompt, klustra & mappa centroid → kapacitet |
+| Spårningsexport | Auditerbar kedja | Efterlevnad/rapportering | Emittera JSON-rader: steg, avsikt, modell, latens_ms, tokens |
+| Kostnadssimulering | Förmoln-beräkning | Budgetplanering | Tilldela nominell kostnad/token per modell & summera per uppgift |
+| Deterministiskt läge | Reproducerbarhet | Stabil benchmarking | Miljö: `temperature=0`, fast antal steg |
 
-#### Exempel på Spårstruktur
+#### Exempel på Spårningsstruktur
 
 ```python
 trace.append({
@@ -308,7 +308,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
 ```
 
 
-#### Het Omladdning av Modellkatalog
+#### Hot Reload för Modellkatalog
 
 ```python
 import json, time, os
@@ -323,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Iterera gradvis—undvik överdesign i tidiga prototyper.
-
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

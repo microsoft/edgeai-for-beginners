@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8b994c57f1207012e4d7f58b7c0d1ae7",
-  "translation_date": "2025-10-17T09:44:15+00:00",
+  "original_hash": "45923ada94573fee7c82cc4f0c3bb344",
+  "translation_date": "2025-10-28T22:05:29+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "sv"
 }
@@ -27,23 +27,23 @@ Organisationer världen över skiftar från molnbaserad AI till edge computing a
 
 1. **Integritet & Efterlevnad** - Bearbeta känslig data lokalt utan att skicka till molnet (HIPAA, GDPR, finansiella regler)
 2. **Prestanda** - Eliminera nätverksfördröjning (50-500ms lokalt jämfört med 500-2000ms molnresor)
-3. **Kostnadskontroll** - Ta bort kostnader per token för API och skala utan molnkostnader
+3. **Kostnadskontroll** - Ta bort kostnader per token för API och skala utan molnutgifter
 
 **Men Edge AI är annorlunda**
 
 Att köra AI lokalt kräver nya färdigheter:
 - Modellval och optimering för resursbegränsningar
-- Hantering av lokala tjänster och hårdvaruacceleration
+- Lokal tjänstehantering och hårdvaruacceleration
 - Prompt engineering för mindre modeller
 - Produktionsdistributionsmönster för edge-enheter
 
 **Denna workshop ger dig dessa färdigheter**
 
-Under 6 fokuserade sessioner (~3 timmar totalt) går du från "Hello World" till att distribuera produktionsklara multi-agent system - allt körs lokalt på din dator.
+På 6 fokuserade sessioner (~3 timmar totalt) går du från "Hello World" till att distribuera produktionsklara multi-agent system - allt körs lokalt på din maskin.
 
 ---
 
-## 📚 Lärandemål
+## 📚 Inlärningsmål
 
 Genom att slutföra denna workshop kommer du att kunna:
 
@@ -60,7 +60,7 @@ Genom att slutföra denna workshop kommer du att kunna:
    - Hantera strömmande svar för bättre användarupplevelse
    - Integrera lokala modeller i befintliga applikationer
 
-3. **Skapa RAG-system (Retrieval Augmented Generation)**
+3. **Skapa RAG (Retrieval Augmented Generation)-system**
    - Bygga semantisk sökning med embeddings
    - Grunda LLM-svar i domänspecifik kunskap
    - Utvärdera RAG-kvalitet med branschstandardmått
@@ -69,34 +69,34 @@ Genom att slutföra denna workshop kommer du att kunna:
 4. **Optimera modellprestanda**
    - Benchmarka flera modeller för ditt användningsområde
    - Mäta latens, genomströmning och tid för första token
-   - Välja optimala modeller baserat på hastighet/kvalitet
-   - Jämföra SLM vs LLM avvägningar i verkliga scenarier
+   - Välja optimala modeller baserat på hastighet/kvalitet-avvägningar
+   - Jämföra SLM vs LLM-avvägningar i verkliga scenarier
 
 5. **Orkestrera multi-agent system**
    - Designa specialiserade agenter för olika uppgifter
    - Implementera agentminne och kontexthantering
    - Koordinera agenter i komplexa arbetsflöden
-   - Rutta förfrågningar intelligent mellan flera modeller
+   - Rutta förfrågningar intelligent över flera modeller
 
 6. **Distribuera produktionsklara lösningar**
    - Implementera felhantering och återförsökslogik
    - Övervaka tokenanvändning och systemresurser
-   - Bygga skalbara arkitekturer med model-as-tools-mönster
+   - Bygga skalbara arkitekturer med modell-som-verktyg-mönster
    - Planera migrationsvägar från edge till hybrid (edge + moln)
 
 ---
 
-## 🎓 Läranderesultat
+## 🎓 Inlärningsresultat
 
 ### Vad du kommer att bygga
 
-I slutet av denna workshop kommer du ha skapat:
+Vid slutet av denna workshop kommer du ha skapat:
 
-| Session | Leverabel | Demonstrerade färdigheter |
-|---------|-----------|---------------------------|
-| **1** | Chattapplikation med strömning | Tjänstinstallation, grundläggande kompletteringar, strömmande UX |
+| Session | Leverans | Demonstrerade färdigheter |
+|---------|----------|---------------------------|
+| **1** | Chattapplikation med strömning | Tjänsteinstallation, grundläggande kompletteringar, strömmande UX |
 | **2** | RAG-system med utvärdering | Embeddings, semantisk sökning, kvalitetsmått |
-| **3** | Benchmarking-svit för flera modeller | Prestandamätning, modelljämförelse |
+| **3** | Multi-modell benchmark-svit | Prestandamätning, modelljämförelse |
 | **4** | SLM vs LLM-jämförelse | Avvägningsanalys, optimeringsstrategier |
 | **5** | Multi-agent orkestrator | Agentdesign, minneshantering, koordinering |
 | **6** | Intelligent routningssystem | Intent-detektion, modellval, skalbarhet |
@@ -106,7 +106,7 @@ I slutet av denna workshop kommer du ha skapat:
 | Färdighetsnivå | Session 1-2 | Session 3-4 | Session 5-6 |
 |----------------|-------------|-------------|-------------|
 | **Nybörjare** | ✅ Installation & grunder | ⚠️ Utmanande | ❌ För avancerat |
-| **Mellanliggande** | ✅ Snabb genomgång | ✅ Kärninlärning | ⚠️ Utmanande mål |
+| **Mellanliggande** | ✅ Snabb översikt | ✅ Kärninlärning | ⚠️ Utmanande mål |
 | **Avancerad** | ✅ Enkel genomgång | ✅ Förfining | ✅ Produktionsmönster |
 
 ### Karriärklara färdigheter
@@ -116,7 +116,7 @@ I slutet av denna workshop kommer du ha skapat:
 ✅ **Bygga integritetsfokuserade applikationer**
 - Hälsoappar som hanterar PHI/PII lokalt
 - Finansiella tjänster med efterlevnadskrav
-- Statliga system med krav på datasuveränitet
+- Regeringssystem med datasuveränitetsbehov
 
 ✅ **Optimera för edge-miljöer**
 - IoT-enheter med begränsade resurser
@@ -131,7 +131,7 @@ I slutet av denna workshop kommer du ha skapat:
 ✅ **Leda Edge AI-initiativ**
 - Utvärdera Edge AI:s genomförbarhet för projekt
 - Välja lämpliga modeller och ramverk
-- Designa skalbara lokala AI-lösningar
+- Arkitektera skalbara lokala AI-lösningar
 
 ---
 
@@ -141,7 +141,7 @@ I slutet av denna workshop kommer du ha skapat:
 
 | Session | Ämne | Fokus | Varaktighet |
 |---------|-------|-------|-------------|
-| **1** | Kom igång med Foundry Local | Installera, validera, första kompletteringar | 30 min |
+| **1** | Komma igång med Foundry Local | Installera, validera, första kompletteringar | 30 min |
 | **2** | Bygga AI-lösningar med RAG | Prompt engineering, embeddings, utvärdering | 30 min |
 | **3** | Öppna källkod-modeller | Modellupptäckt, benchmarking, val | 30 min |
 | **4** | Avancerade modeller | SLM vs LLM, optimering, ramverk | 30 min |
@@ -155,7 +155,7 @@ I slutet av denna workshop kommer du ha skapat:
 ### Förutsättningar
 
 **Systemkrav:**
-- **OS**: Windows 10/11, macOS 11+ eller Linux (Ubuntu 20.04+)
+- **OS**: Windows 10/11, macOS 11+, eller Linux (Ubuntu 20.04+)
 - **RAM**: Minst 8GB, rekommenderat 16GB+
 - **Lagring**: Minst 10GB ledigt utrymme för modeller
 - **CPU**: Modern processor med AVX2-stöd
@@ -182,7 +182,7 @@ brew tap microsoft/foundrylocal
 brew install foundrylocal
 ```
 
-**Verifiera installationen:**
+**Verifiera installation:**
 ```bash
 foundry --version
 foundry service status
@@ -251,11 +251,11 @@ pip install -r requirements.txt
 foundry model run phi-4-mini
 
 # Run the chat bootstrap sample
-cd samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
-**✅ Lyckat!** Du bör se ett strömmande svar om edge AI.
+**✅ Framgång!** Du bör se ett strömmande svar om edge AI.
 
 ---
 
@@ -269,9 +269,9 @@ Progressiva praktiska exempel som demonstrerar varje koncept:
 |---------|---------|-------------|--------|
 | 1 | [`chat_bootstrap.py`](../../../Workshop/samples/session01/chat_bootstrap.py) | Grundläggande & strömmande chatt | ~30s |
 | 2 | [`rag_pipeline.py`](../../../Workshop/samples/session02/rag_pipeline.py) | RAG med embeddings | ~45s |
-| 2 | [`rag_eval_ragas.py`](../../../Workshop/samples/session02/rag_eval_ragas.py) | Utvärdering av RAG-kvalitet | ~60s |
-| 3 | [`benchmark_oss_models.py`](../../../Workshop/samples/session03/benchmark_oss_models.py) | Benchmarking av flera modeller | ~2-3m |
-| 4 | [`model_compare.py`](../../../Workshop/samples/session04/model_compare.py) | SLM vs LLM-jämförelse | ~45s |
+| 2 | [`rag_eval_ragas.py`](../../../Workshop/samples/session02/rag_eval_ragas.py) | RAG kvalitetsutvärdering | ~60s |
+| 3 | [`benchmark_oss_models.py`](../../../Workshop/samples/session03/benchmark_oss_models.py) | Multi-modell benchmarking | ~2-3m |
+| 4 | [`model_compare.py`](../../../Workshop/samples/session04/model_compare.py) | SLM vs LLM jämförelse | ~45s |
 | 5 | [`agents_orchestrator.py`](../../../Workshop/samples/session05/agents_orchestrator.py) | Multi-agent system | ~60s |
 | 6 | [`models_router.py`](../../../Workshop/samples/session06/models_router.py) | Intent-baserad routing | ~45s |
 | 6 | [`models_pipeline.py`](../../../Workshop/samples/session06/models_pipeline.py) | Multi-stegs pipeline | ~60s |
@@ -298,7 +298,7 @@ Omfattande guider och referenser:
 | Dokument | Beskrivning | Använd när |
 |----------|-------------|------------|
 | [QUICK_START.md](./QUICK_START.md) | Snabbstartsguide | Börjar från början |
-| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Kommando- & API-snabbguide | Behöver snabba svar |
+| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Kommando- & API-fuskblad | Behöver snabba svar |
 | [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | SDK-mönster & exempel | Skriver kod |
 | [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Guide för miljövariabler | Konfigurerar exempel |
 | [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Senaste förbättringar av exempel | Förstå förändringar |
@@ -307,34 +307,34 @@ Omfattande guider och referenser:
 
 ---
 
-## 🎓 Rekommendationer för lärandebana
+## 🎓 Rekommendationer för inlärningsväg
 
 ### För nybörjare (3-4 timmar)
-1. ✅ Session 1: Kom igång (fokus på installation och grundläggande chatt)
-2. ✅ Session 2: RAG-grunder (hoppa över utvärdering till en början)
+1. ✅ Session 1: Komma igång (fokus på installation och grundläggande chatt)
+2. ✅ Session 2: RAG-grunder (hoppa över utvärdering initialt)
 3. ✅ Session 3: Enkel benchmarking (endast 2 modeller)
-4. ⏭️ Hoppa över sessionerna 4-6 för tillfället
+4. ⏭️ Hoppa över sessionerna 4-6 för nu
 5. 🔄 Återvänd till sessionerna 4-6 efter att ha byggt första applikationen
 
 ### För mellanliggande utvecklare (3 timmar)
-1. ⚡ Session 1: Snabb installationsvalidering
+1. ⚡ Session 1: Snabb validering av installation
 2. ✅ Session 2: Komplett RAG-pipeline med utvärdering
-3. ✅ Session 3: Fullständig benchmarking-svit
+3. ✅ Session 3: Fullständig benchmark-svit
 4. ✅ Session 4: Modelloptimering
 5. ✅ Sessionerna 5-6: Fokus på arkitekturmönster
 
-### För avancerade utövare (2-3 timmar)
+### För avancerade praktiker (2-3 timmar)
 1. ⚡ Sessionerna 1-3: Snabb genomgång och validering
-2. ✅ Session 4: Fördjupning i optimering
+2. ✅ Session 4: Djupdykning i optimering
 3. ✅ Session 5: Multi-agent arkitektur
 4. ✅ Session 6: Produktionsmönster och skalning
 5. 🚀 Utöka: Bygg anpassad routningslogik och hybriddistributioner
 
 ---
 
-## Workshop Session Pack (Fokuserade 30-minuters labb)
+## Workshop Session Pack (Fokuserade 30-minuters labbar)
 
-Om du följer det komprimerade 6-sessioners workshopformatet, använd dessa dedikerade guider (varje guide motsvarar och kompletterar de bredare modul-dokumenten ovan):
+Om du följer det komprimerade 6-sessioners workshopformatet, använd dessa dedikerade guider (varje motsvarar och kompletterar de bredare modulguiderna ovan):
 
 | Workshop Session | Guide | Kärnfokus |
 |------------------|-------|-----------|
@@ -380,29 +380,29 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 |   | `samples/session02/rag_eval_ragas.py` | RAG-utvärdering med ragas-mått |
 | 3 | `samples/session03/benchmark_oss_models.py` | Latens- och genomströmningsbenchmark för flera modeller |
 | 4 | `samples/session04/model_compare.py` | Jämförelse mellan SLM och LLM (latens & exempelutdata) |
-| 5 | `samples/session05/agents_orchestrator.py` | Två-agenters forsknings- och redigeringspipeline |
+| 5 | `samples/session05/agents_orchestrator.py` | Två-agenters forsknings- → redaktionell pipeline |
 | 6 | `samples/session06/models_router.py` | Intentbaserad routingdemo |
-|   | `samples/session06/models_pipeline.py` | Flerstegsplanering/utförande/förfiningskedja |
+|   | `samples/session06/models_pipeline.py` | Flerstegsplan/utför/förfina-kedja |
 
 ### Miljövariabler (Gemensamma för alla exempel)
 
 | Variabel | Syfte | Exempel |
 |----------|-------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Standardalias för enskild modell för grundläggande exempel | `phi-4-mini` |
-| `SLM_ALIAS` / `LLM_ALIAS` | Explicit SLM kontra större modell för jämförelse | `phi-4-mini` / `gpt-oss-20b` |
-| `BENCH_MODELS` | Kommalista med alias att benchmarka | `qwen2.5-0.5b,gemma-2-2b,mistral-7b` |
-| `BENCH_ROUNDS` | Antal benchmarkupprepningar per modell | `3` |
-| `BENCH_PROMPT` | Prompt som används vid benchmark | `Explain retrieval augmented generation briefly.` |
+| `SLM_ALIAS` / `LLM_ALIAS` | Explicit SLM vs större modell för jämförelse | `phi-4-mini` / `gpt-oss-20b` |
+| `BENCH_MODELS` | Kommalista med alias att benchmarka | `qwen2.5-0.5b,mistral-7b` |
+| `BENCH_ROUNDS` | Benchmarkrepetitioner per modell | `3` |
+| `BENCH_PROMPT` | Prompt som används vid benchmarking | `Explain retrieval augmented generation briefly.` |
 | `EMBED_MODEL` | Sentence-transformers embedding-modell | `sentence-transformers/all-MiniLM-L6-v2` |
 | `RAG_QUESTION` | Åsidosätt testfråga för RAG-pipeline | `Why use RAG with local inference?` |
 | `AGENT_QUESTION` | Åsidosätt fråga för agentpipeline | `Explain why edge AI matters for compliance.` |
 | `AGENT_MODEL_PRIMARY` | Modellalias för forskningsagent | `phi-4-mini` |
-| `AGENT_MODEL_EDITOR` | Modellalias för redigeringsagent (kan skilja sig) | `gpt-oss-20b` |
+| `AGENT_MODEL_EDITOR` | Modellalias för redaktörsagent (kan skilja sig) | `gpt-oss-20b` |
 | `SHOW_USAGE` | När `1`, skriver ut tokenanvändning per completion | `1` |
 | `RETRY_ON_FAIL` | När `1`, försök igen vid tillfälliga chattfel | `1` |
 | `RETRY_BACKOFF` | Sekunder att vänta innan nytt försök | `1.0` |
 
-Om en variabel inte är inställd, faller skripten tillbaka på rimliga standardvärden. För demos med en enda modell behöver du vanligtvis bara `FOUNDRY_LOCAL_ALIAS`.
+Om en variabel inte är inställd, faller skripten tillbaka på rimliga standardvärden. För demos med enskilda modeller behöver du vanligtvis bara `FOUNDRY_LOCAL_ALIAS`.
 
 ### Hjälpmodul
 
@@ -410,22 +410,22 @@ Alla exempel delar nu en hjälpfunktion `samples/workshop_utils.py` som tillhand
 
 * Cachad `FoundryLocalManager` + OpenAI-klientskapande
 * `chat_once()`-hjälpare med valfri retry + användningsutskrift
-* Enkel tokenanvändningsrapportering (aktivera via `SHOW_USAGE=1`)
+* Enkel rapportering av tokenanvändning (aktivera via `SHOW_USAGE=1`)
 
-Detta minskar duplicering och lyfter fram bästa praxis för effektiv lokal modellorkestrering.
+Detta minskar duplicering och framhäver bästa praxis för effektiv lokal modellorkestrering.
 
-## Valfria förbättringar (Över sessionsgränser)
+## Valfria förbättringar (Över sessioner)
 
 | Tema | Förbättring | Sessioner | Miljö / Växling |
 |------|-------------|-----------|-----------------|
 | Determinism | Fast temperatur + stabila promptuppsättningar | 1–6 | Ställ in `temperature=0`, `top_p=1` |
-| Synlighet för tokenanvändning | Konsekvent kostnads-/effektivitetsundervisning | 1–6 | `SHOW_USAGE=1` |
+| Synlighet av tokenanvändning | Konsekvent undervisning om kostnad/effektivitet | 1–6 | `SHOW_USAGE=1` |
 | Streaming av första token | Upplevd latensmätning | 1,3,4,6 | `BENCH_STREAM=1` (benchmark) |
 | Återhämtningsförmåga vid fel | Hanterar tillfälliga kallstartsfel | Alla | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
-| Multi-modellagenter | Heterogen rollspecialisering | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
+| Flermodellsagenter | Heterogen rollspecialisering | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
 | Adaptiv routing | Intent + kostnadsheuristik | 6 | Utöka router med eskaleringslogik |
 | Vektorminne | Långsiktig semantisk återkallelse | 2,5,6 | Integrera FAISS/Chroma embedding index |
-| Spårningsexport | Revision & utvärdering | 2,5,6 | Lägg till JSON-linjer per steg |
+| Spårningsexport | Revision & utvärdering | 2,5,6 | Lägg till JSON-rader per steg |
 | Kvalitetsrubriker | Kvalitativ spårning | 3–6 | Sekundära bedömningsprompter |
 | Snabbtester | Snabb validering före workshop | Alla | `python Workshop/tests/smoke.py` |
 
@@ -444,14 +444,15 @@ Förvänta dig stabila tokenantal över upprepade identiska inmatningar.
 Använd `rag_eval_ragas.py` för att beräkna svarens relevans, trovärdighet och kontextprecision på en liten syntetisk dataset:
 
 ```powershell
-python samples/session02/rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 Utöka genom att tillhandahålla en större JSONL med frågor, kontexter och sanningar, och konvertera sedan till en Hugging Face `Dataset`.
 
-## CLI-kommandon: Noggrannhetsbilaga
+## Bilaga för CLI-kommandon och noggrannhet
 
-Workshopen använder medvetet endast aktuellt dokumenterade / stabila Foundry Local CLI-kommandon.
+Workshopen använder medvetet endast för närvarande dokumenterade/stabila Foundry Local CLI-kommandon.
 
 ### Refererade stabila kommandon
 
@@ -459,12 +460,12 @@ Workshopen använder medvetet endast aktuellt dokumenterade / stabila Foundry Lo
 |----------|----------|-------|
 | Kärna | `foundry --version` | Visa installerad version |
 | Kärna | `foundry init` | Initiera konfiguration |
-| Tjänst | `foundry service start` | Starta lokal tjänst (om inte automatiskt) |
+| Tjänst | `foundry service start` | Starta lokal tjänst (om inte auto) |
 | Tjänst | `foundry status` | Visa tjänstens status |
 | Modeller | `foundry model list` | Lista katalog / tillgängliga modeller |
 | Modeller | `foundry model download <alias>` | Ladda ner modellvikter till cache |
 | Modeller | `foundry model run <alias>` | Starta (ladda) en modell lokalt; kombinera med `--prompt` för enstaka körning |
-| Modeller | `foundry model unload <alias>` / `foundry model stop <alias>` | Ladda ur en modell från minnet (om stöds) |
+| Modeller | `foundry model unload <alias>` / `foundry model stop <alias>` | Avlasta en modell från minnet (om stöds) |
 | Cache | `foundry cache list` | Lista cachade (nedladdade) modeller |
 | System | `foundry system info` | Ögonblicksbild av hårdvara & accelerationskapacitet |
 | System | `foundry system gpu-info` | Diagnostisk information om GPU |
@@ -501,11 +502,11 @@ När nya CLI-telemetrikommandon stabiliseras uppströms kan de integreras med mi
 
 ### Automatiserad linter
 
-En automatiserad linter förhindrar återinförande av föråldrade CLI-mönster inom kodblock i markdownfiler:
+En automatiserad linter förhindrar återinförande av föråldrade CLI-mönster i kodblock i markdownfiler:
 
 Skript: `Workshop/scripts/lint_markdown_cli.py`
 
-Föråldrade mönster blockeras inom kodblock.
+Föråldrade mönster blockeras i kodblock.
 
 Rekommenderade ersättningar:
 | Föråldrade | Ersättning |
@@ -524,7 +525,7 @@ python Workshop\scripts\lint_markdown_cli.py --verbose
 
 GitHub Action: `.github/workflows/markdown-cli-lint.yml` körs vid varje push & PR.
 
-Valfri pre-commit hook:
+Valfri pre-commit-hook:
 ```bash
 echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
@@ -532,34 +533,34 @@ chmod +x .git/hooks/pre-commit
 
 ## Snabb CLI → SDK-migrationstabell
 
-| Uppgift | CLI One-Liner | SDK (Python) Motsvarighet | Noteringar |
-|---------|---------------|--------------------------|------------|
+| Uppgift | CLI One-Liner | SDK (Python) Motsvarighet | Anteckningar |
+|---------|---------------|--------------------------|--------------|
 | Kör en modell en gång (prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK startar tjänst & caching automatiskt |
 | Ladda ner (cache) modell | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # triggers download/load` | Manager väljer bästa variant om aliaset mappar till flera versioner |
-| Lista katalog | `foundry model list` | `# använd manager för varje alias eller behåll känd lista` | CLI aggregerar; SDK för närvarande per-alias-instansiering |
+| Lista katalog | `foundry model list` | `# use manager for each alias or maintain known list` | CLI aggregerar; SDK för närvarande per-alias-instansiering |
 | Lista cachade modeller | `foundry cache list` | `manager.list_cached_models()` | Efter manager-initiering (valfritt alias) |
-| Aktivera GPU-acceleration | `foundry config set compute.onnx.enable_gpu true` | `# CLI-åtgärd; SDK antar att konfiguration redan är tillämpad` | Konfiguration är en extern sidoeffekt |
+| Aktivera GPU-acceleration | `foundry config set compute.onnx.enable_gpu true` | `# CLI action; SDK assumes config already applied` | Konfiguration är en extern bieffekt |
 | Hämta endpoint-URL | (implicit) | `manager.endpoint` | Används för att skapa OpenAI-kompatibel klient |
-| Värma upp en modell | `foundry model run <alias>` följt av första prompt | `chat_once(alias, messages=[...])` (hjälpfunktion) | Hjälpfunktioner hanterar initial kall latensuppvärmning |
-| Mäta latens | `python benchmark_oss_models.py` | `import benchmark_oss_models` (eller nytt exportskript) | Föredra skript för konsekventa mått |
-| Stoppa / ladda ur modell | `foundry model unload <alias>` | (Ej exponerat – starta om tjänst / process) | Vanligtvis inte nödvändigt för workshopflöde |
+| Värma upp en modell | `foundry model run <alias>` sedan första prompt | `chat_once(alias, messages=[...])` (utility) | Hjälpfunktioner hanterar initial kallstartslatensuppvärmning |
+| Mäta latens | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (eller nytt exportskript) | Föredra skript för konsekventa mått |
+| Stoppa / avlasta modell | `foundry model unload <alias>` | (Ej exponerat – starta om tjänst / process) | Vanligtvis inte nödvändigt för workshopflöde |
 | Hämta tokenanvändning | (visa output) | `resp.usage.total_tokens` | Tillhandahålls om backend returnerar användningsobjekt |
 
-## Benchmark Markdown-export
+## Benchmark Markdown Export
 
 Använd skriptet `Workshop/scripts/export_benchmark_markdown.py` för att köra en ny benchmark (samma logik som `samples/session03/benchmark_oss_models.py`) och generera en GitHub-vänlig Markdown-tabell plus rå JSON.
 
 ### Exempel
 
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 Genererade filer:
 | Fil | Innehåll |
 |-----|----------|
 | `benchmark_report.md` | Markdown-tabell + tolkningshjälp |
-| `benchmark_report.json` | Rå måttarray (för jämförelse / trendspårning) |
+| `benchmark_report.json` | Rå metrisk array (för jämförelse / trendspårning) |
 
 Ställ in `BENCH_STREAM=1` i miljön för att inkludera första-token-latens om det stöds.
 

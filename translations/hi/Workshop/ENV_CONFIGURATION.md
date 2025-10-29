@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T21:40:36+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T21:00:55+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "hi"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## अवलोकन
 
-वर्कशॉप के नमूने कॉन्फ़िगरेशन के लिए पर्यावरण वेरिएबल्स का उपयोग करते हैं, जो `.env` फ़ाइल में रिपॉजिटरी की जड़ में केंद्रीकृत हैं। यह कोड को संशोधित किए बिना आसान अनुकूलन की अनुमति देता है।
+वर्कशॉप के नमूने पर्यावरण वेरिएबल्स का उपयोग करते हैं, जो `.env` फाइल में संग्रहित होते हैं। यह कोड को संशोधित किए बिना आसान अनुकूलन की अनुमति देता है।
 
 ## त्वरित शुरुआत
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. पर्यावरण कॉन्फ़िगर करें
 
-`.env` फ़ाइल पहले से ही उचित डिफ़ॉल्ट्स के साथ कॉन्फ़िगर की गई है। अधिकांश उपयोगकर्ताओं को कुछ भी बदलने की आवश्यकता नहीं होगी।
+`.env` फाइल पहले से ही उपयुक्त डिफ़ॉल्ट सेटिंग्स के साथ कॉन्फ़िगर की गई है। अधिकांश उपयोगकर्ताओं को इसमें बदलाव करने की आवश्यकता नहीं होगी।
 
 **वैकल्पिक**: सेटिंग्स की समीक्षा करें और अनुकूलित करें:
 ```bash
@@ -41,10 +41,10 @@ nano .env     # macOS/Linux
 
 ### 3. कॉन्फ़िगरेशन लागू करें
 
-**पायथन स्क्रिप्ट्स के लिए:**
+**Python स्क्रिप्ट्स के लिए:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -61,8 +61,8 @@ python chat_bootstrap.py
 | वेरिएबल | डिफ़ॉल्ट | विवरण |
 |----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | नमूनों के लिए डिफ़ॉल्ट मॉडल |
-| `FOUNDRY_LOCAL_ENDPOINT` | (खाली) | सेवा एंडपॉइंट ओवरराइड करें |
-| `PYTHONPATH` | वर्कशॉप पथ | पायथन मॉड्यूल खोज पथ |
+| `FOUNDRY_LOCAL_ENDPOINT` | (खाली) | सेवा एंडपॉइंट को ओवरराइड करें |
+| `PYTHONPATH` | वर्कशॉप पथ | Python मॉड्यूल खोज पथ |
 
 **जब FOUNDRY_LOCAL_ENDPOINT सेट करें:**
 - रिमोट Foundry Local इंस्टेंस
@@ -84,30 +84,30 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | वेरिएबल | डिफ़ॉल्ट | उद्देश्य |
 |----------|---------|---------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | एम्बेडिंग मॉडल |
-| `RAG_QUESTION` | पूर्व-कॉन्फ़िगर किया गया | परीक्षण प्रश्न |
+| `RAG_QUESTION` | पूर्व-कॉन्फ़िगर | परीक्षण प्रश्न |
 
 #### सत्र 03: बेंचमार्किंग
 | वेरिएबल | डिफ़ॉल्ट | उद्देश्य |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | बेंचमार्क करने के लिए मॉडल |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | बेंचमार्क के लिए मॉडल्स |
 | `BENCH_ROUNDS` | `3` | प्रति मॉडल पुनरावृत्तियाँ |
-| `BENCH_PROMPT` | पूर्व-कॉन्फ़िगर किया गया | परीक्षण प्रॉम्प्ट |
-| `BENCH_STREAM` | `0` | पहले-टोकन विलंबता मापें |
+| `BENCH_PROMPT` | पूर्व-कॉन्फ़िगर | परीक्षण प्रॉम्प्ट |
+| `BENCH_STREAM` | `0` | पहले टोकन की विलंबता मापें |
 
 #### सत्र 04: मॉडल तुलना
 | वेरिएबल | डिफ़ॉल्ट | उद्देश्य |
 |----------|---------|---------|
 | `SLM_ALIAS` | `phi-4-mini` | छोटा भाषा मॉडल |
 | `LLM_ALIAS` | `qwen2.5-7b` | बड़ा भाषा मॉडल |
-| `COMPARE_PROMPT` | पूर्व-कॉन्फ़िगर किया गया | तुलना प्रॉम्प्ट |
-| `COMPARE_RETRIES` | `2` | पुनः प्रयास की संख्या |
+| `COMPARE_PROMPT` | पूर्व-कॉन्फ़िगर | तुलना प्रॉम्प्ट |
+| `COMPARE_RETRIES` | `2` | पुनः प्रयास |
 
 #### सत्र 05: मल्टी-एजेंट ऑर्केस्ट्रेशन
 | वेरिएबल | डिफ़ॉल्ट | उद्देश्य |
 |----------|---------|---------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | शोधकर्ता एजेंट मॉडल |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | संपादक एजेंट मॉडल |
-| `AGENT_QUESTION` | पूर्व-कॉन्फ़िगर किया गया | परीक्षण प्रश्न |
+| `AGENT_QUESTION` | पूर्व-कॉन्फ़िगर | परीक्षण प्रश्न |
 
 ### विश्वसनीयता कॉन्फ़िगरेशन
 
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### उत्पादन सेटअप (गुणवत्ता पर ध्यान केंद्रित)
+### उत्पादन सेटअप (गुणवत्ता पर ध्यान)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### बेंचमार्किंग सेटअप
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -157,7 +157,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ```
 
-## अनुशंसित मॉडल
+## अनुशंसित मॉडल्स
 
 ### उपयोग के मामले के अनुसार
 
@@ -239,7 +239,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ### पर्यावरण वेरिएबल्स लोड नहीं हो रहे
 
 **लक्षण:**
-- स्क्रिप्ट्स गलत मॉडल का उपयोग करती हैं
+- स्क्रिप्ट्स गलत मॉडल्स का उपयोग कर रही हैं
 - कनेक्शन त्रुटियाँ
 - वेरिएबल्स मान्यता प्राप्त नहीं
 
@@ -304,24 +304,21 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **लक्षण:**
 - "मॉड्यूल नहीं मिला" त्रुटियाँ
-- "workshop_utils आयात नहीं कर सकते"
 
 **समाधान:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## कॉन्फ़िगरेशन परीक्षण
 
-### पर्यावरण लोडिंग सत्यापित करें
+### पर्यावरण लोडिंग की पुष्टि करें
 
 ```python
 # test_env.py
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Foundry Local कनेक्शन परीक्षण करें
+### Foundry Local कनेक्शन का परीक्षण करें
 
 ```python
 # test_connection.py
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## सुरक्षा सर्वोत्तम प्रथाएँ
 
-### 1. कभी भी गुप्त जानकारी कमिट न करें
+### 1. कभी भी गुप्त जानकारी को कमिट न करें
 
 ```bash
 # .gitignore should include:
@@ -377,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. अलग-अलग .env फ़ाइलों का उपयोग करें
+### 2. अलग-अलग .env फाइल्स का उपयोग करें
 
 ```bash
 .env              # Default configuration
@@ -405,14 +402,14 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## SDK दस्तावेज़ीकरण
 
 - **मुख्य रिपॉजिटरी**: https://github.com/microsoft/Foundry-Local
-- **पायथन SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 - **API दस्तावेज़ीकरण**: नवीनतम जानकारी के लिए SDK रिपॉजिटरी देखें
 
 ## अतिरिक्त संसाधन
 
 - `QUICK_START.md` - शुरुआत करने की गाइड
 - `SDK_MIGRATION_NOTES.md` - SDK अपडेट विवरण
-- `Workshop/samples/*/README.md` - नमूना-विशिष्ट गाइड
+- `Workshop/samples/*/README.md` - नमूना-विशिष्ट गाइड्स
 
 ---
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **अस्वीकरण**:  
-यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता सुनिश्चित करने का प्रयास करते हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियां या अशुद्धियां हो सकती हैं। मूल भाषा में उपलब्ध मूल दस्तावेज़ को प्रामाणिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम उत्तरदायी नहीं हैं।
+यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयास करते हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियां या अशुद्धियां हो सकती हैं। मूल भाषा में दस्तावेज़ को आधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम जिम्मेदार नहीं हैं।

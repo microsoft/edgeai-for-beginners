@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T16:57:34+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:25:20+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "nl"
 }
 -->
-# Workshop Voorbeelden - Samenvatting van Foundry Local SDK Update
+# Workshop Voorbeelden - Overzicht van Foundry Local SDK Updates
 
 ## Overzicht
 
@@ -22,7 +22,7 @@ Alle Python-voorbeelden in de map `Workshop/samples` zijn bijgewerkt om te voldo
 ## Bijgewerkte Bestanden
 
 ### Sessie 01: Aan de Slag
-- ✅ `chat_bootstrap.py` - Basisvoorbeelden van chatten en streamen
+- ✅ `chat_bootstrap.py` - Basisvoorbeelden van chat en streaming
 
 ### Sessie 02: RAG-oplossingen
 - ✅ `rag_pipeline.py` - RAG-implementatie met embeddings
@@ -39,7 +39,7 @@ Alle Python-voorbeelden in de map `Workshop/samples` zijn bijgewerkt om te voldo
 
 ### Sessie 06: Modellen als Tools
 - ✅ `models_router.py` - Intent-gebaseerde modelroutering
-- ✅ `models_pipeline.py` - Meerdere stappen in een gerouteerde pijplijn
+- ✅ `models_pipeline.py` - Meerstaps gerouteerde pipeline
 
 ### Ondersteunende Infrastructuur
 - ✅ `workshop_utils.py` - Volgt al de beste praktijken (geen wijzigingen nodig)
@@ -55,7 +55,7 @@ Alle Python-voorbeelden in de map `Workshop/samples` zijn bijgewerkt om te voldo
 manager, client, model_id = get_client(alias)
 ```
 
-**Nu:**
+**Na:**
 ```python
 try:
     manager, client, model_id = get_client(alias, endpoint=endpoint)
@@ -77,7 +77,7 @@ except Exception as e:
 from sentence_transformers import SentenceTransformer
 ```
 
-**Nu:**
+**Na:**
 ```python
 try:
     from sentence_transformers import SentenceTransformer
@@ -96,7 +96,7 @@ except ImportError:
 **Toegevoegd aan alle voorbeelden:**
 - Documentatie van omgevingsvariabelen in docstrings
 - SDK-referentielinks
-- Gebruiksexamples
+- Voorbeelden van gebruik
 - Gedetailleerde documentatie van functies/parameters
 - Type hints voor betere ondersteuning in IDE's
 
@@ -141,7 +141,7 @@ print(json.dumps(summary, indent=2))
 ### 5. Robuuste Benchmarking
 
 **Verbeteringen in Sessie 03:**
-- Foutafhandeling per model (gaat door bij fouten)
+- Foutafhandeling per model (gaat door bij falen)
 - Gedetailleerde voortgangsrapportage
 - Correct uitgevoerde warming-up rondes
 - Ondersteuning voor meting van eerste-token latentie
@@ -165,7 +165,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ### 7. Verbeterde Modelroutering
 
 **Verbeteringen in Sessie 06:**
-- Uitgebreide documentatie voor intentiedetectie
+- Uitgebreide documentatie voor intentdetectie
 - Uitleg over modelselectie-algoritme
 - Gedetailleerde routeringslogs
 - Testoutputformattering
@@ -176,8 +176,8 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 **Verbeteringen in Sessie 05:**
 - Voortgangsrapportage per fase
 - Foutafhandeling per agent
-- Duidelijke pijplijnstructuur
-- Betere documentatie over geheugenbeheer
+- Duidelijke pipeline-structuur
+- Betere documentatie over geheugengebruik
 
 ---
 
@@ -200,92 +200,92 @@ pip install -r Workshop/requirements.txt
 
 #### Sessie 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Sessie 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Sessie 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Sessie 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Sessie 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Sessie 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
 
 ## Referentie Omgevingsvariabelen
 
-### Globaal (Alle Voorbeelden)
+### Algemeen (Alle Voorbeelden)
 | Variabele | Beschrijving | Standaard |
 |-----------|--------------|-----------|
 | `FOUNDRY_LOCAL_ALIAS` | Te gebruiken modelalias | Verschilt per voorbeeld |
 | `FOUNDRY_LOCAL_ENDPOINT` | Service endpoint overschrijven | Automatisch gedetecteerd |
-| `SHOW_USAGE` | Tokengebruik tonen | `0` |
+| `SHOW_USAGE` | Toon tokengebruik | `0` |
 | `RETRY_ON_FAIL` | Retry-logica inschakelen | `1` |
 | `RETRY_BACKOFF` | Initiële retry-vertraging | `1.0` |
 
 ### Specifiek voor Voorbeelden
 | Variabele | Gebruikt Door | Beschrijving |
-|-----------|--------------|--------------|
+|-----------|--------------|-------------|
 | `EMBED_MODEL` | Sessie 02 | Naam van embedding model |
 | `RAG_QUESTION` | Sessie 02 | Testvraag voor RAG |
 | `BENCH_MODELS` | Sessie 03 | Komma-gescheiden modellen voor benchmarking |
 | `BENCH_ROUNDS` | Sessie 03 | Aantal benchmarkrondes |
 | `BENCH_PROMPT` | Sessie 03 | Testprompt voor benchmarks |
-| `BENCH_STREAM` | Sessie 03 | Eerste-token latentie meten |
+| `BENCH_STREAM` | Sessie 03 | Meet eerste-token latentie |
 | `SLM_ALIAS` | Sessie 04 | Klein taalmodel |
 | `LLM_ALIAS` | Sessie 04 | Groot taalmodel |
 | `COMPARE_PROMPT` | Sessie 04 | Vergelijkingsprompt voor testen |
 | `AGENT_MODEL_PRIMARY` | Sessie 05 | Primair agentmodel |
 | `AGENT_MODEL_EDITOR` | Sessie 05 | Editor agentmodel |
 | `AGENT_QUESTION` | Sessie 05 | Testvraag voor agenten |
-| `PIPELINE_TASK` | Sessie 06 | Taak voor pijplijn |
+| `PIPELINE_TASK` | Sessie 06 | Taak voor pipeline |
 
 ---
 
@@ -412,7 +412,7 @@ set BENCH_ROUNDS=2
 Doorloop de testchecklist hierboven om te verifiëren dat alle voorbeelden correct werken.
 
 ### 2. Update Documentatie
-- Update sessie-markdownbestanden met nieuwe voorbeelden
+- Update markdown-bestanden van sessies met nieuwe voorbeelden
 - Voeg een probleemoplossingssectie toe aan de hoofd-README
 - Maak een snelreferentiegids
 
@@ -453,13 +453,13 @@ Volg deze patronen bij het maken van nieuwe voorbeelden:
 3. Ondersteun omgevingsvariabelen
 4. Voeg type hints en docstrings toe
 5. Zorg voor informatieve logging
-6. Voeg gebruiksvoorbeelden toe in docstrings
+6. Voeg gebruiksvoorbeelden toe in de docstring
 7. Link naar SDK-documentatie
 
 ### Updates Beoordelen
-Bij het beoordelen van updates voor voorbeelden, controleer op:
+Bij het beoordelen van updates voor voorbeelden, controleer:
 - [ ] Foutafhandeling bij alle I/O-bewerkingen
-- [ ] Type hints bij publieke functies
+- [ ] Type hints bij openbare functies
 - [ ] Uitgebreide docstrings
 - [ ] Documentatie van omgevingsvariabelen
 - [ ] Informatieve gebruikersfeedback
@@ -468,9 +468,9 @@ Bij het beoordelen van updates voor voorbeelden, controleer op:
 
 ---
 
-**Samenvatting**: Alle Python-voorbeelden in de workshop volgen nu de beste praktijken van de Foundry Local SDK met verbeterde foutafhandeling, uitgebreide documentatie en een verbeterde gebruikerservaring. Geen breaking changes - alle bestaande functionaliteit is behouden en verbeterd.
+**Samenvatting**: Alle Python-voorbeelden van de workshop volgen nu de beste praktijken van de Foundry Local SDK met verbeterde foutafhandeling, uitgebreide documentatie en een verbeterde gebruikerservaring. Geen breaking changes - alle bestaande functionaliteit is behouden en verbeterd.
 
 ---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

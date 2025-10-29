@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T20:40:32+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T20:04:33+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "es"
 }
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Sesión 01: Chat Básico
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Variables de Entorno:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Sesión 02: Pipeline RAG
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Variables de Entorno:**  
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Sesión 02: Evaluación RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Nota**: Requiere dependencias adicionales instaladas mediante `requirements.txt`
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### Sesión 03: Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Variables de Entorno:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### Sesión 04: Comparación de Modelos
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Variables de Entorno:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Sesión 05: Orquestación Multi-Agente
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Variables de Entorno:**  
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Sesión 06: Enrutador de Modelos
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **Prueba lógica de enrutamiento** con múltiples intenciones (código, resumen, clasificación)
@@ -139,7 +140,7 @@ python models_router.py
 ### Sesión 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Pipeline complejo de múltiples pasos** con planificación, ejecución y refinamiento
@@ -169,18 +170,18 @@ python lint_markdown_cli.py --verbose
 
 ## Pruebas
 
-### Pruebas Iniciales
+### Pruebas de Fumado
 
 ```bash
 cd Workshop
 python -m tests.smoke
 ```
 
-**Pruebas**: Funcionalidad básica de los ejemplos clave
+**Pruebas**: Funcionalidad básica de ejemplos clave
 
-## Resolución de Problemas
+## Solución de Problemas
 
-### Servicio No Funciona
+### Servicio No Ejecutándose
 
 ```bash
 # Check status
@@ -235,7 +236,7 @@ foundry model run phi-4-mini
 | `RETRY_ON_FAIL` | `1` | Habilitar lógica de reintento |
 | `RETRY_BACKOFF` | `1.0` | Retraso inicial de reintento (segundos) |
 
-### Específicas de Sesión
+### Específico de Sesión
 | Variable | Predeterminado | Descripción |
 |----------|----------------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Modelo de embeddings |
@@ -258,21 +259,21 @@ foundry model run phi-4-mini
 - **gemma-2-2b** - Buena calidad, velocidad moderada
 
 ### Escenarios de Producción
-- **phi-4-mini** - Uso general
+- **phi-4-mini** - Propósito general
 - **deepseek-coder-1.3b** - Generación de código
 - **qwen2.5-7b** - Respuestas de alta calidad
 
 ## Documentación del SDK
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **SDK de Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Obtener Ayuda
 
 1. Verifica el estado del servicio: `foundry service status`  
 2. Revisa los logs: Consulta los logs del servicio Foundry Local  
 3. Consulta la documentación del SDK: https://github.com/microsoft/Foundry-Local  
-4. Revisa el código de ejemplo: Todos los ejemplos tienen docstrings detallados
+4. Revisa el código de ejemplo: Todos los ejemplos tienen docstrings detallados  
 
 ## Próximos Pasos
 
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.

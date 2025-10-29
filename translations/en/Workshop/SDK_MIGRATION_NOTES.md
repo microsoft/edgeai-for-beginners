@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T21:41:47+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T19:59:39+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "en"
 }
@@ -53,27 +53,27 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### Session 03: Benchmarking (`benchmark_oss_models.py`)
 - Default model list updated to include `phi-4-mini`.
 - Added detailed documentation for environment variables.
-- Improved function documentation.
+- Enhanced function documentation.
 - Added support for endpoint override throughout.
 
 #### Session 04: Model Comparison (`model_compare.py`)
 - Default LLM updated from `gpt-oss-20b` to `qwen2.5-7b`.
 - Added endpoint configuration.
-- Enhanced documentation.
+- Improved documentation.
 
 #### Session 05: Multi-Agent Orchestration (`agents_orchestrator.py`)
-- Added type hints (e.g., changed `str | None` to `Optional[str]`).
-- Improved documentation for the Agent class.
+- Added type hints (changed `str | None` to `Optional[str]`).
+- Enhanced documentation for the Agent class.
 - Added support for endpoint override.
-- Enhanced initialization patterns.
+- Improved initialization patterns.
 
 #### Session 06: Model Router (`models_router.py`)
 - Added endpoint configuration.
-- Improved documentation for intent detection.
-- Enhanced documentation for routing logic.
+- Enhanced documentation for intent detection.
+- Improved documentation for routing logic.
 
 #### Session 06: Pipeline (`models_pipeline.py`)
-- Added comprehensive function documentation.
+- Added detailed function documentation.
 - Improved step-by-step documentation.
 - Enhanced error handling.
 
@@ -82,11 +82,11 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### Benchmark Export (`export_benchmark_markdown.py`)
 - Added support for endpoint override.
 - Updated default models.
-- Improved function documentation.
-- Enhanced error handling.
+- Enhanced function documentation.
+- Improved error handling.
 
 #### CLI Linter (`lint_markdown_cli.py`)
-- Added SDK reference links.
+- Added links to SDK references.
 - Improved usage documentation.
 
 ### Tests
@@ -95,7 +95,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Added support for endpoint override.
 - Enhanced documentation.
 - Improved test case documentation.
-- Enhanced error reporting.
+- Better error reporting.
 
 ## Environment Variables
 
@@ -181,7 +181,7 @@ for chunk in stream:
 
 ## Migration Guide for Custom Samples
 
-If you're creating new samples or updating existing ones:
+If you are creating new samples or updating existing ones:
 
 1. **Use `workshop_utils.py` helpers**:
    ```python
@@ -196,8 +196,8 @@ If you're creating new samples or updating existing ones:
 
 3. **Add comprehensive documentation**:
    - Include environment variables in the docstring.
-   - Add SDK reference links.
-   - Provide usage examples.
+   - Provide SDK reference links.
+   - Add usage examples.
 
 4. **Use type hints**:
    ```python
@@ -215,7 +215,7 @@ If you're creating new samples or updating existing ones:
 
 ## Testing
 
-All samples can be tested with:
+All samples can be tested using:
 
 ```bash
 # Set environment variables
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -243,16 +244,16 @@ python -m Workshop.tests.smoke
 
 ### None Expected
 All changes are backward compatible. The updates primarily:
-- Add new optional features (e.g., endpoint override).
+- Introduce new optional features (e.g., endpoint override).
 - Improve error handling.
 - Enhance documentation.
 - Update default model names to current recommendations.
 
 ### Optional Enhancements
-You may want to update your code to use:
+You may consider updating your code to use:
 - `FOUNDRY_LOCAL_ENDPOINT` for explicit endpoint control.
 - `SHOW_USAGE=1` for visibility into token usage.
-- Updated model defaults (`phi-4-mini` instead of `phi-3.5-mini`).
+- Updated default models (`phi-4-mini` instead of `phi-3.5-mini`).
 
 ## Common Issues & Solutions
 
@@ -264,13 +265,13 @@ foundry model run phi-4-mini
 ```
 
 ### Issue: "Model not found"
-**Solution**: Check available models:
+**Solution**: Verify available models:
 ```bash
 foundry model list
 ```
 
 ### Issue: Endpoint connection errors
-**Solution**: Verify the endpoint:
+**Solution**: Check the endpoint:
 ```bash
 # Check service status
 foundry service status
@@ -282,20 +283,20 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ## Next Steps
 
 1. **Update Module08 samples**: Apply similar patterns to Module08/samples.
-2. **Add integration tests**: Create a comprehensive test suite.
+2. **Add integration tests**: Develop a comprehensive test suite.
 3. **Performance benchmarking**: Compare performance before and after updates.
-4. **Documentation updates**: Update the main README with the new patterns.
+4. **Documentation updates**: Revise the main README with new patterns.
 
 ## Contribution Guidelines
 
 When adding new samples:
 1. Use `workshop_utils.py` for consistency.
 2. Follow the patterns in existing samples.
-3. Add comprehensive docstrings.
+3. Add detailed docstrings.
 4. Include SDK reference links.
 5. Support endpoint override.
 6. Add proper type hints.
-7. Include usage examples in the docstring.
+7. Provide usage examples in the docstring.
 
 ## Version Compatibility
 
@@ -313,4 +314,4 @@ These updates are compatible with:
 ---
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.

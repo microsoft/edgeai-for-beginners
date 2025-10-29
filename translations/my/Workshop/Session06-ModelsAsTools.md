@@ -1,32 +1,32 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-08T12:17:40+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T23:38:28+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "my"
 }
 -->
-# အစည်းအဝေး ၆: Foundry Local – ကိရိယာများအဖြစ် မော်ဒယ်များ
+# အစည်းအဝေး ၆: Foundry Local – မော်ဒယ်များကို ကိရိယာများအဖြစ် အသုံးပြုခြင်း
 
 ## အကျဉ်းချုပ်
 
-မော်ဒယ်များကို ဒေသခံ AI အလုပ်လည်ပတ်မှုအလွှာအတွင်းတွင် ပေါင်းစပ်နိုင်သော ကိရိယာများအဖြစ် သတ်မှတ်ပါ။ ဒီအစည်းအဝေးမှာ အထူးပြု SLM/LLM ခေါ်ဆိုမှုများကို ချိတ်ဆက်ခြင်း၊ တာဝန်များကို ရွေးချယ်၍ လမ်းကြောင်းသတ်မှတ်ခြင်း၊ အပလီကေးရှင်းများအတွက် SDK မျက်နှာပြင်တစ်ခုတည်းကို ဖော်ထုတ်ခြင်း စသည်တို့ကို ပြသပါမည်။ သင်သည် ပေါ့ပါးသော မော်ဒယ်လမ်းကြောင်းသတ်မှတ်သူ + တာဝန်စီမံသူတစ်ခုကို တည်ဆောက်ပြီး၊ ၎င်းကို အပလီကေးရှင်း script ထဲတွင် ပေါင်းစပ်ပြီး Azure AI Foundry သို့ ထုတ်လုပ်မှုအလုပ်များအတွက် အဆင့်မြှင့်လမ်းကြောင်းကို အကြမ်းဖျဉ်းရေးသားပါမည်။
+မော်ဒယ်များကို ဒေသခံ AI လုပ်ဆောင်မှုအလွှာအတွင်းတွင် ပေါင်းစပ်နိုင်သော ကိရိယာများအဖြစ် သတ်မှတ်ပါ။ ဒီအစည်းအဝေးမှာ အထူးပြု SLM/LLM ခေါ်ဆိုမှုများကို ချိတ်ဆက်ခြင်း၊ တာဝန်များကို ရွေးချယ်၍ လမ်းကြောင်းသတ်မှတ်ခြင်း၊ အက်ပလီကေးရှင်းများအတွက် SDK မျက်နှာပြင်ကို ပေါင်းစပ်ဖော်ထုတ်ခြင်း စသည်တို့ကို ပြသပါမည်။ သင်သည် အလွယ်တကူ မော်ဒယ်လမ်းကြောင်း + တာဝန်အစီအစဉ်ရေးဆွဲသူတစ်ခုကို တည်ဆောက်ပြီး၊ အက်ပလီကေးရှင်း script အတွင်းတွင် ပေါင်းစပ်ပြီး Azure AI Foundry သို့ ပရိုဒတ်ရှင်းလုပ်ငန်းများအတွက် အရွယ်အစားချဲ့ထွင်ခြင်းလမ်းကြောင်းကို အကြမ်းဖျင်းဖော်ပြပါမည်။
 
-## သင်ယူရမည့် ရည်မှန်းချက်များ
+## သင်ယူရမည့် ရည်ရွယ်ချက်များ
 
-- မော်ဒယ်များကို အတိအကျ သတ်မှတ်ထားသော စွမ်းရည်များနှင့်အတူ အတိအကျ သတ်မှတ်နိုင်ရန် **စိတ်ကူးပုံဖော်ခြင်း**
-- ရည်ရွယ်ချက် / ဟန်ချက်ညီမှု အဆင့်သတ်မှတ်ခြင်းအပေါ် အခြေခံ၍ **တောင်းဆိုမှုများကို လမ်းကြောင်းသတ်မှတ်ခြင်း**
-- အဆင့်များစွာသော တာဝန်များအတွက် အထွေထွေထွက်ကုန်များကို **ချိတ်ဆက်ခြင်း** (ခွဲခြမ်း → ဖြေရှင်း → ပြင်ဆင်)
-- အောက်ခြေ အပလီကေးရှင်းများအတွက် **SDK API တစ်ခုတည်းကို ပေါင်းစပ်ခြင်း**
-- Cloud သို့ **အဆင့်မြှင့်ခြင်း** (OpenAI-compatible စာချုပ်တစ်ခုတည်း)
+- **အယူအဆဖော်ဆောင်ခြင်း** မော်ဒယ်များကို အစိတ်အပိုင်းအဖြစ် သတ်မှတ်နိုင်သော ကိရိယာများအဖြစ်
+- **လမ်းကြောင်းသတ်မှတ်ခြင်း** ရည်ရွယ်ချက် / ဟေဋ္ဌာန်အဆင့်သတ်မှတ်မှုအပေါ် အခြေခံ၍ တောင်းဆိုမှုများ
+- **ချိတ်ဆက်ခြင်း** အဆင့်များစွာသော တာဝန်များအတွက် အထွေထွေထွက်ကုန်များ (ခွဲခြား → ဖြေရှင်း → ပြုပြင်)
+- **ပေါင်းစပ်ခြင်း** အောက်ခြေရှိ အက်ပလီကေးရှင်းများအတွက် client API တစ်ခုတည်း
+- **အရွယ်အစားချဲ့ထွင်ခြင်း** Cloud သို့ ဒီဇိုင်း (OpenAI-compatible contract တူညီမှု)
 
 ## ကြိုတင်လိုအပ်ချက်များ
 
-- အစည်းအဝေး ၁–၅ ပြီးစီးထားရမည်
-- ဒေသခံမော်ဒယ်များစွာကို cache ထားရမည် (ဥပမာ - `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- အစည်းအဝေး ၁–၅ ပြီးစီးထား
+- ဒေသခံမော်ဒယ်များစွာကို cache လုပ်ထား (ဥပမာ `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Cross-Platform ပတ်ဝန်းကျင် Snippet
+### Cross-Platform Environment Snippet
 
 Windows PowerShell:
 ```powershell
@@ -44,17 +44,17 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-macOS မှ Remote/VM ဝန်ဆောင်မှုကို ဝင်ရောက်ရန်:
+Remote/VM service access from macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## အတန်းသရုပ်ပြစဉ် (၃၀ မိနစ်)
+## Demo Flow (၃၀ မိနစ်)
 
-### ၁။ ကိရိယာစွမ်းရည် ကြေညာချက် (၅ မိနစ်)
+### ၁. ကိရိယာစွမ်းရည်ကြေညာချက် (၅ မိနစ်)
 
-`samples/06-tools/models_catalog.py` ဖိုင်ကို ဖန်တီးပါ:
+`samples/06-tools/models_catalog.py` ဖန်တီးပါ:
 
 ```python
 CATALOG = {
@@ -74,9 +74,9 @@ CATALOG = {
 ```
 
 
-### ၂။ ရည်ရွယ်ချက်ဖော်ထုတ်ခြင်းနှင့် လမ်းကြောင်းသတ်မှတ်ခြင်း (၈ မိနစ်)
+### ၂. ရည်ရွယ်ချက်ရှာဖွေခြင်းနှင့် လမ်းကြောင်းသတ်မှတ်ခြင်း (၈ မိနစ်)
 
-`samples/06-tools/router.py` ဖိုင်ကို ဖန်တီးပါ:
+`samples/06-tools/router.py` ဖန်တီးပါ:
 
 ```python
 #!/usr/bin/env python3
@@ -133,9 +133,9 @@ if __name__ == "__main__":
 ```
 
 
-### ၃။ အဆင့်များစွာသော တာဝန်ချိတ်ဆက်ခြင်း (၇ မိနစ်)
+### ၃. အဆင့်များစွာသော တာဝန်ချိတ်ဆက်ခြင်း (၇ မိနစ်)
 
-`samples/06-tools/pipeline.py` ဖိုင်ကို ဖန်တီးပါ:
+`samples/06-tools/pipeline.py` ဖန်တီးပါ:
 
 ```python
 #!/usr/bin/env python3
@@ -176,25 +176,25 @@ if __name__ == '__main__':
 ```
 
 
-### ၄။ စတင်မည့် ပရောဂျက်: `06-models-as-tools` ကို ပြင်ဆင်ခြင်း (၅ မိနစ်)
+### ၄. Starter Project: `06-models-as-tools` ကို အဆင့်မြှင့်တင်ခြင်း (၅ မိနစ်)
 
 တိုးတက်မှုများ:
-- Streaming token ပံ့ပိုးမှု ထည့်သွင်းပါ (UI အဆင့်ဆင့် အပ်ဒိတ်)
-- ယုံကြည်မှု အဆင့်သတ်မှတ်ခြင်း ထည့်ပါ: စကားလုံးဆိုင်ရာ တူညီမှု သို့မဟုတ် prompt စံချိန်စံညွှန်း
-- Trace JSON ကို ထုတ်ပေးပါ (ရည်ရွယ်ချက် → မော်ဒယ် → နောက်ကျမှု → token အသုံးပြုမှု)
-- အဆင့်ခွဲခြားမှုများကို ထပ်မံအသုံးပြုနိုင်ရန် cache ကို အကောင်းဆုံးအသုံးပြုပါ
+- Streaming token ပံ့ပိုးမှု ထည့်သွင်းပါ (UI အဆင့်ဆင့် update)
+- ယုံကြည်မှုအဆင့်သတ်မှတ်ခြင်း ထည့်သွင်းပါ: lexical overlap သို့မဟုတ် prompt rubric
+- trace JSON ကို export လုပ်ပါ (intent → model → latency → token usage)
+- ထပ်တလဲလဲ substeps များအတွက် cache ကို အသုံးပြုမှု ပြုလုပ်ပါ
 
-### ၅။ Azure သို့ အဆင့်မြှင့်ခြင်း လမ်းကြောင်း (၅ မိနစ်)
+### ၅. Azure သို့ အရွယ်အစားချဲ့ထွင်ခြင်းလမ်းကြောင်း (၅ မိနစ်)
 
-| အလွှာ | ဒေသခံ (Foundry) | Cloud (Azure AI Foundry) | အဆင့်မြှင့်လမ်းကြောင်း |
+| အလွှာ | ဒေသခံ (Foundry) | Cloud (Azure AI Foundry) | အပြောင်းအလဲ မဟာဗျူဟာ |
 |-------|-----------------|--------------------------|---------------------|
-| လမ်းကြောင်းသတ်မှတ်ခြင်း | Heuristic Python | တည်ငြိမ်သော microservice | API ကို containerize လုပ်ပြီး deploy လုပ်ပါ |
-| မော်ဒယ်များ | SLMs cached | စီမံခန့်ခွဲမှု deployment | ဒေသခံအမည်များကို deployment IDs သို့ map လုပ်ပါ |
-| ကြည့်ရှုမှု | CLI stats/manual | အလယ်ပိုင်း log နှင့် metrics | ဖွဲ့စည်းထားသော trace အဖြစ်အပျက်များ ထည့်ပါ |
-| လုံခြုံရေး | ဒေသခံ host သာ | Azure auth / networking | key vault ကို ထည့်သွင်းပါ |
-| ကုန်ကျစရိတ် | စက်ပစ္စည်းအရင်းအမြစ် | အသုံးပြုမှုအပေါ် အခြေခံသော ငွေတောင်းခံမှု | ဘတ်ဂျက် ကန့်သတ်ချက်များ ထည့်ပါ |
+| Routing | Heuristic Python | Durable microservice | Containerize & deploy API |
+| Models | SLMs cached | Managed deployments | Map local names to deployment IDs |
+| Observability | CLI stats/manual | Central logging & metrics | Add structured trace events |
+| Security | Local host only | Azure auth / networking | Introduce key vault for secrets |
+| Cost | Device resource | Consumption billing | Add budget guardrails |
 
-## အတည်ပြု စစ်ဆေးရန် စာရင်း
+## Validation Checklist
 
 ```powershell
 foundry model run phi-4-mini
@@ -203,36 +203,36 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-ရည်ရွယ်ချက်အပေါ် မော်ဒယ်ရွေးချယ်မှုနှင့် နောက်ဆုံး ပြင်ဆင်ထားသော ထွက်ကုန်ကို မျှော်လင့်ပါ။
+ရည်ရွယ်ချက်အပေါ် မော်ဒယ်ရွေးချယ်မှုနှင့် နောက်ဆုံး ပြုပြင်ထားသော ထွက်ကုန်ကို မျှော်လင့်ပါ။
 
-## ပြဿနာဖြေရှင်းခြင်း
+## Troubleshooting
 
 | ပြဿနာ | အကြောင်းရင်း | ဖြေရှင်းနည်း |
 |---------|-------|-----|
-| တာဝန်အားလုံးကို တစ်မျိုးတည်းသော မော်ဒယ်သို့ လမ်းကြောင်းသတ်မှတ်ထားသည် | စည်းမျဉ်းများ မခိုင်မာခြင်း | INTENT_RULES regex set ကို တိုးချဲ့ပါ |
-| Pipeline အဆင့်တစ်ခုတွင် မအောင်မြင်ခြင်း | မော်ဒယ်မတင်ထားခြင်း | `foundry model run <model>` ကို run လုပ်ပါ |
-| ထွက်ကုန်အညီအမျှမရှိခြင်း | ပြင်ဆင်မှုအဆင့်မရှိခြင်း | အကျဉ်းချုပ်/အတည်ပြုမှု အဆင့်ကို ထည့်ပါ |
+| တာဝန်အားလုံးကို တစ်မော်ဒယ်တည်းသို့ လမ်းကြောင်းသတ်မှတ် | အချက်အလက်အနည်းငယ် | INTENT_RULES regex set ကို တိုးချဲ့ပါ |
+| Pipeline အလယ်အဆင့်တွင် မအောင်မြင် | မော်ဒယ်မတင်ထား | `foundry model run <model>` ကို run လုပ်ပါ |
+| ထွက်ကုန်အညီအမျှနည်း | ပြုပြင်ခြင်းအဆင့်မရှိ | စုစည်းခြင်း/အတည်ပြုခြင်းအဆင့် ထည့်ပါ |
 
-## ကိုးကားချက်များ
+## References
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Azure AI Foundry Docs: https://learn.microsoft.com/azure/ai-foundry
-- Prompt Quality Patterns: Session 2 ကိုကြည့်ပါ
+- Prompt Quality Patterns: See Session 2
 
 ---
 
-**အစည်းအဝေး ကြာချိန်**: ၃၀ မိနစ်  
-**အဆင့်အခက်အခဲ**: ကျွမ်းကျင်
+**အစည်းအဝေးကြာမြင့်ချိန်**: ၃၀ မိနစ်  
+**အဆင့်**: ကျွမ်းကျင်
 
-## နမူနာ အခြေအနေ & အလုပ်ရုံဆွေးနွေးမှု Mapping
+## နမူနာအခြေအနေ & အလုပ်ရုံဆွေးနွေးမှု Mapping
 
-| အလုပ်ရုံဆွေးနွေးမှု Scripts / Notebooks | အခြေအနေ | ရည်မှန်းချက် | Dataset / Catalog အရင်းအမြစ် |
+| Workshop Scripts / Notebooks | အခြေအနေ | ရည်ရွယ်ချက် | Dataset / Catalog Source |
 |------------------------------|----------|-----------|---------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | ရည်ရွယ်ချက်အမျိုးမျိုးပါဝင်သော prompt များကို ကိုင်တွယ်သော Developer assistant | Heuristic ရည်ရွယ်ချက် → မော်ဒယ်အမည်လမ်းကြောင်းသတ်မှတ်ခြင်းနှင့် token အသုံးပြုမှု | Inline `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | ရှုပ်ထွေးသော coding assistance တာဝန်အတွက် အဆင့်ဆင့် စီမံခြင်းနှင့် ပြင်ဆင်ခြင်း | ခွဲခြမ်း → အထူးပြုအကောင်အထည်ဖော်မှု → အကျဉ်းချုပ်ပြင်ဆင်မှု | အတူတူသော `CATALOG`; အဆင့်များကို စီမံချက်ထွက်ကုန်မှ ဆွဲယူ |
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Developer assistant အမျိုးမျိုးသော ရည်ရွယ်ချက် prompt များကို ကိုင်တွယ်ခြင်း (refactor, summarize, classify) | Heuristic intent → model alias routing with token usage | Inline `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | အဆင့်များစွာသော အစီအစဉ်ရေးဆွဲခြင်းနှင့် ပြုပြင်ခြင်း coding assistance task အတွက် | Decompose → specialized execution → summarization refine step | အတူတူသော `CATALOG`; steps derived from plan output |
 
-### အခြေအနေ အကြောင်းအရာ
-အင်ဂျင်နီယာ ထုတ်လုပ်မှုကိရိယာတစ်ခုသည် ရည်ရွယ်ချက်အမျိုးမျိုးပါဝင်သော တာဝန်များကို လက်ခံရရှိသည်: ကုဒ်ပြုပြင်ခြင်း၊ ဖွဲ့စည်းမှုမှတ်စုများကို အကျဉ်းချုပ်ခြင်း၊ တုံ့ပြန်ချက်များကို အမျိုးအစားခွဲခြင်း။ နောက်ကျမှုနှင့် အရင်းအမြစ်အသုံးပြုမှုကို လျှော့ချရန်၊ မော်ဒယ်အသေးစားတစ်ခုက စီမံချက်ရေးဆွဲခြင်းနှင့် အကျဉ်းချုပ်ခြင်းကို လုပ်ဆောင်ပြီး၊ ကုဒ်အထူးပြုမော်ဒယ်က ပြုပြင်ခြင်းကို လုပ်ဆောင်ပြီး၊ အလေးချိန်နည်းသော အမျိုးအစားခွဲနိုင်သော မော်ဒယ်က တုံ့ပြန်ချက်များကို အမျိုးအစားခွဲသည်။ Pipeline script သည် ချိတ်ဆက်မှု + ပြင်ဆင်မှုကို ပြသပြီး၊ router script သည် တစ်ခုတည်းသော prompt လမ်းကြောင်းသတ်မှတ်မှုကို ခွဲခြားပြသသည်။
+### အခြေအနေအကြောင်းအရာ
+Engineering productivity tool တစ်ခုသည် အမျိုးမျိုးသော တာဝန်များကို လက်ခံရရှိသည်: ကုဒ်ပြုပြင်ခြင်း၊ အဆောက်အအုံမှတ်စုများကို အကျဉ်းချုပ်ခြင်း၊ အကြံပြုချက်များကို အမျိုးအစားခွဲခြင်း။ latency နှင့် အရင်းအမြစ်အသုံးပြုမှုကို လျှော့ချရန်၊ အထွေထွေမော်ဒယ်ငယ်တစ်ခုသည် အစီအစဉ်ရေးဆွဲခြင်းနှင့် အကျဉ်းချုပ်ခြင်းကို လုပ်ဆောင်ပြီး၊ ကုဒ်အထူးပြုမော်ဒယ်သည် ပြုပြင်ခြင်းကို လုပ်ဆောင်ပြီး၊ classification စွမ်းရည်ရှိသော မော်ဒယ်ငယ်တစ်ခုသည် အကြံပြုချက်များကို label လုပ်သည်။ pipeline script သည် ချိတ်ဆက်ခြင်း + ပြုပြင်ခြင်းကို ပြသပြီး၊ router script သည် adaptive single‑prompt routing ကို ခွဲခြားပြသသည်။
 
 ### Catalog Snapshot
 ```python
@@ -243,7 +243,8 @@ CATALOG = {
 }
 ```
 
-### နမူနာ စမ်းသပ်မှု Prompts
+
+### နမူနာ စမ်းသပ် Prompt များ
 ```json
 [
     "Refactor this Python function for readability",
@@ -253,8 +254,9 @@ CATALOG = {
 ]
 ```
 
+
 ### Trace Extension (Optional)
-`models_pipeline.py` အတွက် အဆင့်တစ်ခုစီ Trace JSON လိုင်းများ ထည့်ပါ:
+`models_pipeline.py` အတွက် အဆင့်တစ်ခုချင်းစီ trace JSON lines ထည့်ပါ:
 ```python
 trace.append({
     "step": step_idx,
@@ -265,23 +267,24 @@ trace.append({
 })
 ```
 
+
 ### Escalation Heuristic (Idea)
-စီမံချက်တွင် "optimize", "security" စသည့် keyword များ ပါဝင်ပါက သို့မဟုတ် အဆင့်အရှည် > 280 စာလုံးရှိပါက → အဆိုပါအဆင့်အတွက်သာ မော်ဒယ်ကြီး (ဥပမာ - `gpt-oss-20b`) သို့ အဆင့်မြှင့်ပါ။
+အစီအစဉ်တွင် "optimize", "security" စသည့် keyword များပါဝင်ပါက သို့မဟုတ် အဆင့်အရှည် > 280 characters ဖြစ်ပါက → အကြီးမော်ဒယ် (ဥပမာ `gpt-oss-20b`) သို့ escalation လုပ်ပါ။
 
-### အပိုတိုးတက်မှုများ
+### Optional Enhancements
 
-| နယ်ပယ် | တိုးတက်မှု | တန်ဖိုး | အကြံပြုချက် |
+| အပိုင်း | အဆင့်မြှင့်တင်မှု | အကျိုးကျေးဇူး | အကြံပြုချက် |
 |------|-------------|-------|------|
-| Caching | Reuse manager + client objects | နောက်ကျမှုနည်း၊ အလားအလာနည်း | `workshop_utils.get_client` ကို အသုံးပြုပါ |
-| Usage Metrics | Tokens & အဆင့်တစ်ခုစီ၏ နောက်ကျမှုကို ဖမ်းယူပါ | အရည်အသွေးမြှင့်တင်ခြင်းနှင့် အချိန်တိုင်းတာခြင်း | Routed call တစ်ခုစီကို အချိန်တိုင်းပါ; trace စာရင်းတွင် သိမ်းဆည်းပါ |
-| Adaptive Routing | ယုံကြည်မှု / ကုန်ကျစရိတ်ကို သိရှိခြင်း | အရည်အသွေး-ကုန်ကျစရိတ် အချိန်ညှိခြင်း | Scoring ထည့်ပါ: prompt > N စာလုံး သို့မဟုတ် regex domain ကို တွေ့ပါက → မော်ဒယ်ကြီးသို့ အဆင့်မြှင့်ပါ |
-| Dynamic Capability Registry | Catalog ကို hot reload လုပ်ပါ | Restart / redeploy မလိုအပ် | Runtime တွင် `catalog.json` ကို load လုပ်ပါ; ဖိုင်အချိန်တံဆိပ်ကို ကြည့်ပါ |
-| Fallback Strategy | Failures အောက်တွင် ခိုင်မာမှု | ရရှိနိုင်မှုမြင့်မား | Primary ကို စမ်းပါ → exception ဖြစ်ပါက fallback alias ကို စမ်းပါ |
-| Streaming Pipeline | အစောပိုင်းတုံ့ပြန်မှု | UX တိုးတက်မှု | အဆင့်တစ်ခုစီကို stream လုပ်ပြီး နောက်ဆုံး refine input ကို buffer လုပ်ပါ |
-| Vector Intent Embeddings | Routing ကို ပိုမိုတိကျစေခြင်း | ရည်ရွယ်ချက်တိကျမှု မြင့်မား | Prompt ကို embed လုပ်ပြီး cluster & map centroid → capability |
-| Trace Export | ချိတ်ဆက်မှုကို စစ်ဆေးနိုင်မှု | အညွှန်း/အစီရင်ခံစာရေးခြင်း | JSON လိုင်းများထုတ်ပေးပါ: step, intent, model, latency_ms, tokens |
-| Cost Simulation | Cloud မတိုင်မီ ခန့်မှန်းခြင်း | ဘတ်ဂျက်စီမံခြင်း | မော်ဒယ်တစ်ခုစီအတွက် token တစ်ခုချင်းစီ၏ ကုန်ကျစရိတ်ကို သတ်မှတ်ပြီး တာဝန်တစ်ခုစီအတွက် စုစုပေါင်းတွက်ချက်ပါ |
-| Deterministic Mode | Repro reproducibility | စံချိန်စမ်းသပ်မှု | Env: `temperature=0`, fixed steps count |
+| Caching | Reuse manager + client objects | latency လျှော့ချခြင်း၊ အလွယ်တကူ | `workshop_utils.get_client` ကို အသုံးပြုပါ |
+| Usage Metrics | tokens & per-step latency ကို ဖမ်းယူပါ | Profiling & optimization | Routed call တစ်ခုချင်းစီကို အချိန်တွက်ပါ; trace list တွင် သိမ်းဆည်းပါ |
+| Adaptive Routing | ယုံကြည်မှု / ကုန်ကျစရိတ်ကို သိရှိခြင်း | အရည်အသွေး-ကုန်ကျစရိတ် trade-off ကောင်းမွန်ခြင်း | Scoring ထည့်ပါ: prompt > N characters သို့မဟုတ် regex domain ကို တွေ့ပါက → မော်ဒယ်ကြီးသို့ escalation |
+| Dynamic Capability Registry | catalog ကို hot reload လုပ်ပါ | restart redeploy မလိုအပ် | runtime တွင် `catalog.json` ကို load လုပ်ပါ; file timestamp ကို စောင့်ကြည့်ပါ |
+| Fallback Strategy | Failures အောက်တွင် တည်ငြိမ်မှု | availability မြင့်မားခြင်း | Primary → exception ဖြစ်ပါက fallback alias |
+| Streaming Pipeline | အစောပိုင်း feedback | UX တိုးတက်မှု | အဆင့်တစ်ခုချင်းစီ stream လုပ်ပြီး နောက်ဆုံး refine input ကို buffer လုပ်ပါ |
+| Vector Intent Embeddings | Routing ပိုမိုသေချာမှု | ရည်ရွယ်ချက်တိကျမှု မြင့်မားခြင်း | Prompt ကို embed လုပ်ပြီး cluster & map centroid → capability |
+| Trace Export | Auditable chain | Compliance/reporting | JSON lines ထုတ်ပေးပါ: step, intent, model, latency_ms, tokens |
+| Cost Simulation | Pre-cloud estimation | Budget planning | မော်ဒယ်တစ်ခုချင်းစီအတွက် notional cost/token သတ်မှတ်ပြီး တာဝန်တစ်ခုချင်းစီအတွက် စုစုပေါင်း |
+| Deterministic Mode | Repro reproducibility | Stable benchmarking | Env: `temperature=0`, fixed steps count |
 
 #### Trace Structure နမူနာ
 
@@ -295,6 +298,7 @@ trace.append({
 })
 ```
 
+
 #### Adaptive Escalation Sketch
 
 ```python
@@ -302,6 +306,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
     # escalate to larger reasoning model if available
     alias = 'gpt-oss-20b'
 ```
+
 
 #### Model Catalog Hot Reload
 
@@ -318,9 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-အဆင့်ဆင့် တိုးတက်မှုများကို လုပ်ဆောင်ပါ—အစောပိုင်း prototype များကို အလွန်အမင်း အင်ဂျင်နီယာလုပ်ခြင်းမှ ရှောင်ကြဉ်ပါ။
-
 ---
 
 **အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရ အရင်းအမြစ်အဖြစ် ရှုယူသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

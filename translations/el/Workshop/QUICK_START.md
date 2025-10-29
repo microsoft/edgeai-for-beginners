@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T12:47:57+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T21:51:23+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "el"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. Εγκατάσταση του Foundry Local
 
-Ακολουθήστε τον επίσημο οδηγό εγκατάστασης:  
+Ακολουθήστε τον επίσημο οδηγό εγκατάστασης:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -50,11 +50,11 @@ pip install -r requirements.txt
 ### Συνεδρία 01: Βασική Συνομιλία
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
-**Μεταβλητές Περιβάλλοντος:**  
+**Μεταβλητές Περιβάλλοντος:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
@@ -63,11 +63,11 @@ set SHOW_USAGE=1
 ### Συνεδρία 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
-**Μεταβλητές Περιβάλλοντος:**  
+**Μεταβλητές Περιβάλλοντος:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set RAG_QUESTION="Why use RAG with local inference?"
@@ -77,36 +77,37 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Συνεδρία 02: Αξιολόγηση RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**Σημείωση**: Απαιτούνται πρόσθετες εξαρτήσεις που εγκαθίστανται μέσω `requirements.txt`
+**Σημείωση**: Απαιτούνται επιπλέον εξαρτήσεις που εγκαθίστανται μέσω του `requirements.txt`
 
-### Συνεδρία 03: Benchmarking
+### Συνεδρία 03: Αξιολόγηση Απόδοσης
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
-**Μεταβλητές Περιβάλλοντος:**  
+**Μεταβλητές Περιβάλλοντος:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Έξοδος**: JSON με μετρικές καθυστέρησης, απόδοσης και πρώτου token
+**Έξοδος**: JSON με μετρήσεις καθυστέρησης, απόδοσης και πρώτου token
 
 ### Συνεδρία 04: Σύγκριση Μοντέλων
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
-**Μεταβλητές Περιβάλλοντος:**  
+**Μεταβλητές Περιβάλλοντος:**
 ```bash
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
@@ -116,11 +117,11 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Συνεδρία 05: Ορχήστρα Πολλαπλών Πρακτόρων
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
-**Μεταβλητές Περιβάλλοντος:**  
+**Μεταβλητές Περιβάλλοντος:**
 ```bash
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=phi-4-mini
@@ -130,23 +131,23 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Συνεδρία 06: Δρομολογητής Μοντέλων
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Δοκιμάζει τη λογική δρομολόγησης** με πολλαπλές προθέσεις (κώδικας, περίληψη, ταξινόμηση)
+**Δοκιμές λογικής δρομολόγησης** με πολλαπλές προθέσεις (κώδικας, περίληψη, ταξινόμηση)
 
 ### Συνεδρία 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Σύνθετο pipeline πολλών βημάτων** με σχεδιασμό, εκτέλεση και βελτίωση
 
-## Σενάρια
+## Scripts
 
-### Εξαγωγή Αναφοράς Benchmark
+### Εξαγωγή Αναφοράς Αξιολόγησης Απόδοσης
 
 ```bash
 cd Workshop/scripts
@@ -157,7 +158,7 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**Έξοδος**: Πίνακας Markdown + μετρικές JSON
+**Έξοδος**: Πίνακας Markdown + μετρήσεις JSON
 
 ### Έλεγχος CLI Patterns Markdown
 
@@ -180,7 +181,7 @@ python -m tests.smoke
 
 ## Αντιμετώπιση Προβλημάτων
 
-### Υπηρεσία Δεν Εκτελείται
+### Υπηρεσία Δεν Λειτουργεί
 
 ```bash
 # Check status
@@ -193,7 +194,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Σφάλματα Εισαγωγής Module
+### Σφάλματα Εισαγωγής Μονάδων
 
 ```bash
 # Ensure virtual environment is activated
@@ -239,21 +240,21 @@ foundry model run phi-4-mini
 | Μεταβλητή | Προεπιλογή | Περιγραφή |
 |-----------|------------|-----------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Μοντέλο ενσωμάτωσης |
-| `RAG_QUESTION` | Βλέπε δείγμα | Ερώτηση δοκιμής RAG |
+| `RAG_QUESTION` | Δείτε το δείγμα | Ερώτηση δοκιμής RAG |
 | `BENCH_MODELS` | Διαφέρει | Μοντέλα χωρισμένα με κόμμα |
-| `BENCH_ROUNDS` | `3` | Επαναλήψεις benchmark |
-| `BENCH_PROMPT` | Βλέπε δείγμα | Ερώτημα benchmark |
+| `BENCH_ROUNDS` | `3` | Επαναλήψεις αξιολόγησης |
+| `BENCH_PROMPT` | Δείτε το δείγμα | Ερώτημα αξιολόγησης |
 | `BENCH_STREAM` | `0` | Μέτρηση καθυστέρησης πρώτου token |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Κύριο μοντέλο πράκτορα |
 | `AGENT_MODEL_EDITOR` | Κύριο | Μοντέλο πράκτορα επεξεργαστή |
 | `SLM_ALIAS` | `phi-4-mini` | Μικρό μοντέλο γλώσσας |
 | `LLM_ALIAS` | `qwen2.5-7b` | Μεγάλο μοντέλο γλώσσας |
-| `COMPARE_PROMPT` | Βλέπε δείγμα | Ερώτημα σύγκρισης |
+| `COMPARE_PROMPT` | Δείτε το δείγμα | Ερώτημα σύγκρισης |
 
 ## Συνιστώμενα Μοντέλα
 
 ### Ανάπτυξη & Δοκιμές
-- **phi-4-mini** - Ισορροπημένη ποιότητα και ταχύτητα
+- **phi-4-mini** - Ισορροπία ποιότητας και ταχύτητας
 - **qwen2.5-0.5b** - Πολύ γρήγορο για ταξινόμηση
 - **gemma-2-2b** - Καλή ποιότητα, μέτρια ταχύτητα
 
@@ -264,21 +265,21 @@ foundry model run phi-4-mini
 
 ## Τεκμηρίωση SDK
 
-- **Foundry Local**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Λήψη Βοήθειας
 
-1. Ελέγξτε την κατάσταση της υπηρεσίας: `foundry service status`  
-2. Δείτε τα logs: Ελέγξτε τα logs της υπηρεσίας Foundry Local  
-3. Ελέγξτε την τεκμηρίωση SDK: https://github.com/microsoft/Foundry-Local  
+1. Ελέγξτε την κατάσταση της υπηρεσίας: `foundry service status`
+2. Δείτε τα αρχεία καταγραφής: Ελέγξτε τα αρχεία καταγραφής της υπηρεσίας Foundry Local
+3. Ελέγξτε την τεκμηρίωση SDK: https://github.com/microsoft/Foundry-Local
 4. Ανασκόπηση δείγματος κώδικα: Όλα τα δείγματα έχουν λεπτομερή docstrings
 
 ## Επόμενα Βήματα
 
-1. Ολοκληρώστε όλες τις συνεδρίες του εργαστηρίου με τη σειρά  
-2. Πειραματιστείτε με διαφορετικά μοντέλα  
-3. Τροποποιήστε τα δείγματα για τις δικές σας περιπτώσεις χρήσης  
+1. Ολοκληρώστε όλες τις συνεδρίες του εργαστηρίου με τη σειρά
+2. Πειραματιστείτε με διαφορετικά μοντέλα
+3. Τροποποιήστε τα δείγματα για τις δικές σας περιπτώσεις χρήσης
 4. Ανασκόπηση του `SDK_MIGRATION_NOTES.md` για προηγμένα μοτίβα
 
 ---
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **Αποποίηση ευθύνης**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που καταβάλλουμε προσπάθειες για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα θα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή εσφαλμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που καταβάλλουμε προσπάθειες για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα θα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή εσφαλμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

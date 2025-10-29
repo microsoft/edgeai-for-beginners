@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82e20fdeebffdf75eecdf5cdfb02b65c",
-  "translation_date": "2025-10-09T12:58:26+00:00",
+  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
+  "translation_date": "2025-10-28T22:05:08+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "sv"
 }
@@ -17,7 +17,7 @@ Utforska hur man bygger användbara GenAI-arbetsflöden med Foundry Local och Az
 
 Efter denna session kommer du att:
 
-- **Behärska Prompt Engineering**: Utforma effektiva systemprompter och grundningsstrategier
+- **Behärska Promptteknik**: Designa effektiva systemprompter och grundningsstrategier
 - **Implementera RAG-mönster**: Bygga dokumentbaserade Q&A-system med vektorsökning
 - **Integrera strukturerad data**: Arbeta med CSV-, JSON- och tabulär data i AI-arbetsflöden
 - **Bygga produktionsklara RAG**: Skapa skalbara RAG-applikationer med Chainlit
@@ -25,7 +25,7 @@ Efter denna session kommer du att:
 
 ## Förkunskaper
 
-- Genomfört Session 1 (Foundry Local-setup)
+- Slutfört Session 1 (Foundry Local-setup)
 - Grundläggande förståelse för vektordatabaser och embeddings
 - Erfarenhet av Python-programmering
 - Kännedom om dokumentbearbetningskoncept
@@ -48,7 +48,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Om Foundry Local macOS-binära filer ännu inte är tillgängliga i din miljö, kör tjänsten på en Windows VM eller container och ställ in:
+Om Foundry Locals macOS-binära filer ännu inte är tillgängliga i din miljö, kör tjänsten på en Windows VM eller container och ställ in:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -900,7 +900,7 @@ python samples/02-rag-solutions/migration_guide.py
 - **Kombination av kontext**: Syntes av flera dokument
 - **Svarsgenerering**: Skapande av grundade svar
 
-### 4. Strategier för molnmigrering
+### 4. Molnmigrationsstrategier
 
 - **Enhetliga API:er**: En enda kodbas för lokalt och moln
 - **Miljöabstraktion**: Konfigurationsdriven distribution
@@ -940,7 +940,7 @@ except Exception as e:
     logger.error(f"RAG system error: {e}")
 ```
 
-### 3. Övervakning och insyn
+### 3. Övervakning och observabilitet
 
 ```python
 # Track RAG performance
@@ -955,28 +955,28 @@ metrics = {
 
 ## Nästa steg
 
-Efter att ha genomfört denna session:
+Efter att ha slutfört denna session:
 
 1. **Utforska Session 3**: Öppen källkod-modeller i Foundry Local
 2. **Bygg produktionsklara RAG**: Implementera med Chainlit (Exempel 04)
 3. **Avancerad vektorsökning**: Integrera med Chroma eller Pinecone
-4. **Molnmigrering**: Distribuera till Azure AI Foundry
-5. **Utvärdera RAG-kvalitet**: Kör `python Workshop/samples/session02/rag_eval_ragas.py` för att mäta answer_relevancy, faithfulness och context_precision med ragas
+4. **Molnmigration**: Distribuera till Azure AI Foundry
+5. **Utvärdera RAG-kvalitet**: Kör `cd Workshop/samples;python -m session02.rag_eval_ragas` för att mäta svarens relevans, trovärdighet och kontextprecision med ragas
 
 ### Valfria förbättringar
 
 | Kategori | Förbättring | Motivering | Riktning |
 |----------|-------------|-----------|-----------|
 | Hämtning | Ersätt TF-IDF med vektorlagring (FAISS / Chroma) | Bättre semantisk återkallelse och skalbarhet | Dela upp dokument (500–800 tecken), embedda, spara index |
-| Hybridindex | Dubbel semantisk + nyckelordsfiltrering | Förbättrar precision på numeriska / kodfrågor | Filtrera med nyckelord och rangordna med cosinuslikhet |
+| Hybridindex | Dubbel semantisk + nyckelordsfiltrering | Förbättrar precision på numeriska / kodfrågor | Filtrera efter nyckelord och rangordna sedan med cosinuslikhet |
 | Embeddings | Utvärdera flera embedding-modeller | Optimera relevans kontra hastighet | A/B: MiniLM vs E5-small vs lokalt värd encoder |
-| Caching | Cachea embeddings och hämtresultat | Lägre latens för upprepade frågor | Enkel lagring på disk med pickle / sqlite med hash-nyckel |
+| Caching | Cachea embeddings och hämtresultat | Minska latens vid upprepade frågor | Enkel lagring på disk med pickle / sqlite med hash-nyckel |
 | Utvärdering | Utöka ragas-dataset | Statistiskt meningsfull kvalitet | Kurera 50–100 Q/A + kontexter; stratifiera efter ämne |
 | Mätvärden | Spåra hämtning och genereringstider | Prestandaprofilering | Fånga `retrieval_ms`, `gen_ms`, `tokens` per anrop |
-| Säkerhetsåtgärder | Lägg till fallback för hallucinationer | Säkrare svar | Om faithfulness < tröskel → svar: "Otillräcklig kontext." |
-| Fallback | Kaskad lokalt → Azure-modell | Hybridkvalitetsförbättring | Vid låg tillförlitlighet, skicka till molnet via samma OpenAI API |
-| Determinism | Stabil jämförelse | Reproducerbara evalueringsuppsättningar | Fixera seed, `temperature=0`, inaktivera slumpmässighet i sampler |
-| Övervakning | Spara historik för evalueringskörningar | Upptäckt av regression | Lägg till JSON-rader med tidsstämpel + metrikförändringar |
+| Säkerhetsåtgärder | Lägg till fallback för hallucinationer | Säkrare svar | Om trovärdighet < tröskel → svar: "Otillräcklig kontext." |
+| Fallback | Kaskad lokalt → Azure-modell | Hybridkvalitetsförbättring | Vid låg säkerhet, dirigera till molnet via samma OpenAI API |
+| Determinism | Stabil jämförelse | Reproducerbara utvärderingsuppsättningar | Fixera seed, `temperature=0`, inaktivera slumpmässighet i sampler |
+| Övervakning | Spara historik för utvärderingskörningar | Upptäckt av regression | Lägg till JSON-rader med tidsstämpel + metrikförändringar |
 
 #### Exempel: Lägga till hämtningstid
 
@@ -994,7 +994,7 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 
 #### Skalning av utvärdering med ragas
 
-1. Sätt ihop en JSONL med fält: `question`, `answer`, `contexts`, `ground_truths` (lista)
+1. Sätt ihop en JSONL med fälten: `question`, `answer`, `contexts`, `ground_truths` (lista)
 2. Konvertera till `Dataset.from_list(list_of_dicts)`
 3. Kör `evaluate(dataset, metrics=[...])`
 4. Spara metrik (CSV/JSON) för trendanalys.
@@ -1008,7 +1008,7 @@ index.add(embeddings)  # embeddings = np.array([...]) normalized
 D, I = index.search(query_vec, k)
 ```
 
-För diskpersistens använd `faiss.write_index(index, "kb.index")`.
+För lagring på disk, använd `faiss.write_index(index, "kb.index")`.
 
 ## Ytterligare resurser
 
@@ -1025,19 +1025,19 @@ För diskpersistens använd `faiss.write_index(index, "kb.index")`.
 ---
 
 **Sessionens längd**: 30 minuter praktiskt arbete + 15 minuter Q&A  
-**Svårighetsnivå**: Medel  
-**Förkunskaper**: Session 1 genomförd, Grundläggande Python-kunskaper
+**Svårighetsgrad**: Medel  
+**Förkunskaper**: Session 1 slutförd, grundläggande kunskaper i Python
 
 ## Exempelscenario och workshopkartläggning
 
-| Workshopskript / Notebook | Scenario | Mål | Kärndataset / Källa | Exempelfråga |
+| Workshop-skript / Notebook | Scenario | Mål | Kärndataset / Källa | Exempel på fråga |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Intern kunskapsbas för att besvara frågor om integritet + prestanda | Minimal in-memory RAG med embeddings | `DOCS` lista i skriptet (5 korta avsnitt) | Varför använda RAG med lokal inferens? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kvalitetsanalytiker som etablerar baslinjemetrik för hämtningens trovärdighet | Beräkna ragas-metrik på ett litet syntetiskt dataset | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` arrays | Vilken fördel erbjuder lokal inferens? |
-| `prompt_engineering.py` (avancerad) | Domänexpert som skapar grundade prompter för flera vertikaler | Jämför domänsystemprompter och tokenpåverkan | Inline `contexts` dict | Hur hanterar Foundry Local modellcaching? |
-| `csv_qa_system.py` | Försäljningsoperationer som utforskar interaktiv analys av exporter | Sammanfatta och fråga en liten försäljningsdel | Genererat `sample_sales_data.csv` (10 rader) | Vilken produkt har högst genomsnittligt försäljningsbelopp? |
-| `document_rag.py` | Produktteam som utforskar dokument-RAG för intern wiki | Hämta + citera relevanta dokument | `create_sample_knowledge_base()` lista | Vilka är fördelarna med Edge AI? |
-| `migration_guide.py` | Arkitekt som förbereder molnmigrationsplan | Demonstrera lokal→Azure API-paritet | Statisk testprompt | Förklara fördelarna med Edge AI i 2–3 meningar. |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Intern kunskapsbas för att besvara frågor om integritet och prestanda | Minimal RAG i minnet med embeddings | `DOCS`-lista i skriptet (5 korta avsnitt) | Varför använda RAG med lokal inferens? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kvalitetsanalytiker som fastställer baslinjemetrik för hämtningens trovärdighet | Beräkna ragas-metrik på ett litet syntetiskt dataset | `DOCS`, `QUESTIONS`, `GROUND_TRUTH`-arrayer | Vilken fördel har lokal inferens? |
+| `prompt_engineering.py` (avancerad) | Domänexpert som skapar grundade prompter för flera vertikaler | Jämför domänspecifika systemprompter och tokenpåverkan | Inline `contexts`-dict | Hur hanterar Foundry Local modellcaching? |
+| `csv_qa_system.py` | Försäljningsavdelning som utforskar interaktiv analys av exportdata | Sammanfatta och fråga en liten försäljningsdel | Genererad `sample_sales_data.csv` (10 rader) | Vilken produkt har högst genomsnittlig försäljningssumma? |
+| `document_rag.py` | Produktteam som utforskar dokument-RAG för intern wiki | Hämta + citera relevanta dokument | `create_sample_knowledge_base()`-lista | Vilka är fördelarna med Edge AI? |
+| `migration_guide.py` | Arkitekt som förbereder en molnmigrationsplan | Demonstrera lokal→Azure API-paritet | Statisk testprompt | Förklara fördelarna med Edge AI i 2–3 meningar. |
 
 ### Datasetutdrag
 Inline RAG-pipeline dokumentlista:
@@ -1051,7 +1051,7 @@ DOCS = [
 ]
 ```
 
-Ragas utvärdering sanningstupler:
+Ragas utvärdering av sanningspar:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1061,13 +1061,13 @@ GROUND_TRUTH = [
 ```
 
 
-### Scenarionarrativ
-Supportteknikgruppen vill ha en snabb prototyp för att besvara interna FAQ utan att exponera kunddata externt. Session 2-artifakter går från en minimal tillfällig RAG (ingen persistens) → strukturerad CSV Q&A → dokumenthämtning med citat → objektiv kvalitetsutvärdering (ragas) → en migrationsstrategi redo för Azure staging.
+### Scenarioberättelse
+Supportteknikgruppen vill ha en snabb prototyp för att besvara interna frågor utan att exponera kunddata externt. Session 2-artefakter går från en minimal tillfällig RAG (ingen lagring) → strukturerad CSV Q&A → dokumenthämtning med citat → objektiv kvalitetsutvärdering (ragas) → en migrationsstrategi redo för Azure-staging.
 
-### Expansionsvägar
-Använd tabellen för valfria förbättringar för att utveckla: byt TF-IDF mot FAISS/Chroma, utöka utvärderingskorpusen (50–100 Q/A), lägg till fallback-eskalering till en större modell när faithfulness < tröskel.
+### Utvecklingsvägar
+Använd tabellen Valfria förbättringar för att utveckla: byt ut TF-IDF mot FAISS/Chroma, utöka utvärderingskorpuset (50–100 Q/A), lägg till fallback-eskalering till en större modell när trovärdighet < tröskel.
 
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

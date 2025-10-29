@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T16:39:16+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T22:21:42+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "nl"
 }
 -->
-# Workshop Snelle Startgids
+# Workshop Snelstartgids
 
 ## Vereisten
 
 ### 1. Installeer Foundry Local
 
-Volg de officiële installatiehandleiding:  
+Volg de officiële installatiegids:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -50,11 +50,11 @@ pip install -r requirements.txt
 ### Sessie 01: Basis Chat
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
-**Omgevingsvariabelen:**  
+**Omgevingsvariabelen:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
@@ -63,11 +63,11 @@ set SHOW_USAGE=1
 ### Sessie 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
-**Omgevingsvariabelen:**  
+**Omgevingsvariabelen:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set RAG_QUESTION="Why use RAG with local inference?"
@@ -77,36 +77,37 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Sessie 02: RAG Evaluatie (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**Opmerking**: Vereist extra afhankelijkheden geïnstalleerd via `requirements.txt`
+**Let op**: Vereist extra afhankelijkheden geïnstalleerd via `requirements.txt`
 
 ### Sessie 03: Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
-**Omgevingsvariabelen:**  
+**Omgevingsvariabelen:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Uitvoer**: JSON met latentie, doorvoer en eerste-token-metrics
+**Uitvoer**: JSON met latentie, doorvoersnelheid en eerste-token statistieken
 
 ### Sessie 04: Modelvergelijking
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
-**Omgevingsvariabelen:**  
+**Omgevingsvariabelen:**
 ```bash
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
@@ -116,11 +117,11 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Sessie 05: Multi-Agent Orchestratie
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
-**Omgevingsvariabelen:**  
+**Omgevingsvariabelen:**
 ```bash
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=phi-4-mini
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Sessie 06: Model Router
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **Test routeringslogica** met meerdere intenties (code, samenvatten, classificatie)
@@ -139,14 +140,14 @@ python models_router.py
 ### Sessie 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**Complexe meerstaps-pipeline** met planning, uitvoering en verfijning
+**Complexe meerstaps pipeline** met planning, uitvoering en verfijning
 
 ## Scripts
 
-### Benchmarkrapport exporteren
+### Exporteer Benchmarkrapport
 
 ```bash
 cd Workshop/scripts
@@ -157,15 +158,15 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**Uitvoer**: Markdown-tabel + JSON-metrics
+**Uitvoer**: Markdown tabel + JSON statistieken
 
-### Markdown CLI-patronen linten
+### Controleer Markdown CLI-patronen
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**Doel**: Verouderde CLI-patronen in documentatie detecteren
+**Doel**: Opsporen van verouderde CLI-patronen in documentatie
 
 ## Testen
 
@@ -230,10 +231,10 @@ foundry model run phi-4-mini
 | Variabele | Standaard | Beschrijving |
 |-----------|-----------|--------------|
 | `FOUNDRY_LOCAL_ALIAS` | Verschillend | Modelalias om te gebruiken |
-| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Service endpoint overschrijven |
+| `FOUNDRY_LOCAL_ENDPOINT` | Automatisch | Service endpoint overschrijven |
 | `SHOW_USAGE` | `0` | Toon tokengebruikstatistieken |
 | `RETRY_ON_FAIL` | `1` | Retry-logica inschakelen |
-| `RETRY_BACKOFF` | `1.0` | Initiële retry-vertraging (seconden) |
+| `RETRY_BACKOFF` | `1.0` | Initiële retry vertraging (seconden) |
 
 ### Sessie-specifiek
 | Variabele | Standaard | Beschrijving |
@@ -250,7 +251,7 @@ foundry model run phi-4-mini
 | `LLM_ALIAS` | `qwen2.5-7b` | Groot taalmodel |
 | `COMPARE_PROMPT` | Zie voorbeeld | Vergelijkingsprompt |
 
-## Aanbevolen modellen
+## Aanbevolen Modellen
 
 ### Ontwikkeling & Testen
 - **phi-4-mini** - Gebalanceerde kwaliteit en snelheid
@@ -264,21 +265,21 @@ foundry model run phi-4-mini
 
 ## SDK Documentatie
 
-- **Foundry Local**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Hulp krijgen
 
-1. Controleer servicestatus: `foundry service status`  
-2. Bekijk logs: Controleer Foundry Local service logs  
-3. Bekijk SDK-documentatie: https://github.com/microsoft/Foundry-Local  
+1. Controleer servicestatus: `foundry service status`
+2. Bekijk logs: Controleer Foundry Local service logs
+3. Bekijk SDK documentatie: https://github.com/microsoft/Foundry-Local
 4. Bekijk voorbeeldcode: Alle voorbeelden hebben gedetailleerde docstrings
 
 ## Volgende stappen
 
-1. Voltooi alle workshopsessies in volgorde  
-2. Experimenteer met verschillende modellen  
-3. Pas voorbeelden aan voor jouw gebruiksscenario's  
+1. Voltooi alle workshopsessies in volgorde
+2. Experimenteer met verschillende modellen
+3. Pas voorbeelden aan voor jouw gebruiksscenario's
 4. Bekijk `SDK_MIGRATION_NOTES.md` voor geavanceerde patronen
 
 ---
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

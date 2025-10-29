@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-08T19:25:49+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T20:03:18+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "fr"
 }
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -34,13 +34,13 @@ python chat_bootstrap.py "What is edge AI?"
 
 | Session | Échantillon | Objectif | Temps |
 |---------|-------------|----------|-------|
-| 01 | `chat_bootstrap.py` | Chat de base + streaming | ~30s |
+| 01 | `chat_bootstrap.py` | Chat basique + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG avec embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | Évaluation RAG | ~60s |
-| 03 | `benchmark_oss_models.py` | Benchmarking des modèles | ~2m |
+| 03 | `benchmark_oss_models.py` | Benchmarking de modèles | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Système multi-agents | ~60s |
-| 06 | `models_router.py` | Routage d'intention | ~45s |
+| 06 | `models_router.py` | Routage d'intentions | ~45s |
 | 06 | `models_pipeline.py` | Pipeline multi-étapes | ~60s |
 
 ---
@@ -145,7 +145,7 @@ set BENCH_ROUNDS=1
 
 ## 📖 Modèles courants
 
-### Chat de base
+### Chat basique
 ```python
 from workshop_utils import chat_once
 
@@ -219,7 +219,7 @@ for chunk in stream:
 1. **Cachez les clients** : `workshop_utils` gère le cache pour vous
 2. **Utilisez des modèles plus petits** : Commencez avec `qwen2.5-0.5b` pour les tests
 3. **Activez les statistiques d'utilisation** : Configurez `SHOW_USAGE=1` pour suivre les tokens
-4. **Traitement par lots** : Traitez plusieurs prompts de manière séquentielle
+4. **Traitement par lots** : Traitez plusieurs invites de manière séquentielle
 5. **Réduisez max_tokens** : Diminue la latence pour des réponses rapides
 
 ---
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Benchmark des modèles
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Pipeline RAG
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Système multi-agents
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Aide rapide** : Exécutez n'importe quel échantillon avec `--help` ou consultez le docstring :
+**Aide rapide** : Exécutez n'importe quel échantillon avec `--help` depuis le répertoire `samples` ou consultez le docstring :
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.

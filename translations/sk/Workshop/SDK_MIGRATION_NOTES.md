@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-08T15:29:11+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T23:08:17+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "sk"
 }
@@ -11,16 +11,16 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Prehľad
 
-Všetky súbory Python v priečinku Workshop boli aktualizované tak, aby nasledovali najnovšie vzory z oficiálneho [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
+Všetky súbory Python v priečinku Workshop boli aktualizované tak, aby zodpovedali najnovším vzorom z oficiálneho [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
 
 ## Zhrnutie zmien
 
 ### Základná infraštruktúra (`workshop_utils.py`)
 
 #### Vylepšené funkcie:
-- **Podpora pre prepísanie koncového bodu**: Pridaná podpora pre environmentálnu premennú `FOUNDRY_LOCAL_ENDPOINT`
+- **Podpora pre prepísanie endpointu**: Pridaná podpora pre environmentálnu premennú `FOUNDRY_LOCAL_ENDPOINT`
 - **Zlepšené spracovanie chýb**: Lepšie spracovanie výnimiek s podrobnými chybovými správami
-- **Vylepšené cachovanie**: Cache kľúče teraz zahŕňajú koncový bod pre scenáre s viacerými koncovými bodmi
+- **Vylepšené cachovanie**: Cache kľúče teraz zahŕňajú endpoint pre scenáre s viacerými endpointmi
 - **Exponenciálne oneskorenie**: Logika opakovania teraz používa exponenciálne oneskorenie pre lepšiu spoľahlivosť
 - **Typové anotácie**: Pridané komplexné typové anotácie pre lepšiu podporu IDE
 
@@ -37,40 +37,40 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### Session 01: Chat Bootstrap (`chat_bootstrap.py`)
 - Aktualizovaný predvolený model z `phi-3.5-mini` na `phi-4-mini`
-- Pridaná podpora pre prepísanie koncového bodu
+- Pridaná podpora pre prepísanie endpointu
 - Vylepšená dokumentácia s odkazmi na SDK
 
 #### Session 02: RAG Pipeline (`rag_pipeline.py`)
 - Aktualizované na používanie `phi-4-mini` ako predvoleného modelu
-- Pridaná podpora pre prepísanie koncového bodu
+- Pridaná podpora pre prepísanie endpointu
 - Zlepšená dokumentácia s podrobnosťami o environmentálnych premenných
 
 #### Session 02: RAG Evaluation (`rag_eval_ragas.py`)
 - Aktualizované predvolené modely
-- Pridaná konfigurácia koncového bodu
+- Pridaná konfigurácia endpointu
 - Vylepšené spracovanie chýb
 
 #### Session 03: Benchmarking (`benchmark_oss_models.py`)
 - Aktualizovaný zoznam predvolených modelov, vrátane `phi-4-mini`
 - Pridaná komplexná dokumentácia environmentálnych premenných
 - Zlepšená dokumentácia funkcií
-- Pridaná podpora pre prepísanie koncového bodu
+- Pridaná podpora pre prepísanie endpointu
 
 #### Session 04: Porovnanie modelov (`model_compare.py`)
 - Aktualizovaný predvolený LLM z `gpt-oss-20b` na `qwen2.5-7b`
-- Pridaná konfigurácia koncového bodu
+- Pridaná konfigurácia endpointu
 - Vylepšená dokumentácia
 
 #### Session 05: Orchestrácia viacerých agentov (`agents_orchestrator.py`)
 - Pridané typové anotácie (zmenené `str | None` na `Optional[str]`)
 - Vylepšená dokumentácia triedy Agent
-- Pridaná podpora pre prepísanie koncového bodu
+- Pridaná podpora pre prepísanie endpointu
 - Zlepšený inicializačný vzor
 
 #### Session 06: Router modelov (`models_router.py`)
-- Pridaná konfigurácia koncového bodu
+- Pridaná konfigurácia endpointu
 - Vylepšená dokumentácia detekcie zámerov
-- Zlepšená dokumentácia logiky smerovania
+- Zlepšená dokumentácia logiky routovania
 
 #### Session 06: Pipeline (`models_pipeline.py`)
 - Pridaná komplexná dokumentácia funkcií
@@ -80,7 +80,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 ### Skripty
 
 #### Export benchmarkov (`export_benchmark_markdown.py`)
-- Pridaná podpora pre prepísanie koncového bodu
+- Pridaná podpora pre prepísanie endpointu
 - Aktualizované predvolené modely
 - Vylepšená dokumentácia funkcií
 - Zlepšené spracovanie chýb
@@ -91,8 +91,8 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### Testy
 
-#### Smoke Testy (`smoke.py`)
-- Pridaná podpora pre prepísanie koncového bodu
+#### Smoke Tests (`smoke.py`)
+- Pridaná podpora pre prepísanie endpointu
 - Vylepšená dokumentácia
 - Zlepšená dokumentácia testovacích prípadov
 - Lepšie hlásenie chýb
@@ -103,7 +103,7 @@ Všetky ukážky teraz podporujú tieto environmentálne premenné:
 
 ### Základná konfigurácia
 - `FOUNDRY_LOCAL_ALIAS` - Alias modelu na použitie (predvolené sa líši podľa ukážky)
-- `FOUNDRY_LOCAL_ENDPOINT` - Prepísanie koncového bodu služby (voliteľné)
+- `FOUNDRY_LOCAL_ENDPOINT` - Prepísanie endpointu služby (voliteľné)
 - `SHOW_USAGE` - Zobrazenie štatistík používania tokenov (predvolené: "0")
 - `RETRY_ON_FAIL` - Povolenie logiky opakovania (predvolené: "1")
 - `RETRY_BACKOFF` - Počiatočné oneskorenie opakovania v sekundách (predvolené: "1.0")
@@ -116,7 +116,7 @@ Všetky ukážky teraz podporujú tieto environmentálne premenné:
 - `BENCH_STREAM` - Meranie latencie prvého tokenu
 - `RAG_QUESTION` - Testovacia otázka pre RAG ukážky
 - `AGENT_MODEL_PRIMARY` - Primárny model agenta
-- `AGENT_MODEL_EDITOR` - Editor modelu agenta
+- `AGENT_MODEL_EDITOR` - Editor model agenta
 - `SLM_ALIAS` - Alias malého jazykového modelu
 - `LLM_ALIAS` - Alias veľkého jazykového modelu
 
@@ -188,7 +188,7 @@ Ak vytvárate nové ukážky alebo aktualizujete existujúce:
    from workshop_utils import get_client, chat_once
    ```
 
-2. **Podporte prepísanie koncového bodu**:
+2. **Podporte prepísanie endpointu**:
    ```python
    endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")
    manager, client, model_id = get_client(alias, endpoint=endpoint)
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -237,20 +238,20 @@ python -m Workshop.tests.smoke
 
 - **Hlavné úložisko**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API dokumentácia**: Pozrite si najnovšiu dokumentáciu API v úložisku SDK
+- **API dokumentácia**: Skontrolujte SDK úložisko pre najnovšiu dokumentáciu API
 
-## Zmeny, ktoré môžu narušiť kompatibilitu
+## Zmeny, ktoré môžu spôsobiť problémy
 
 ### Neočakávané
 Všetky zmeny sú spätne kompatibilné. Aktualizácie primárne:
-- Pridávajú nové voliteľné funkcie (prepísanie koncového bodu)
+- Pridávajú nové voliteľné funkcie (prepísanie endpointu)
 - Zlepšujú spracovanie chýb
 - Vylepšujú dokumentáciu
 - Aktualizujú predvolené názvy modelov na aktuálne odporúčania
 
 ### Voliteľné vylepšenia
 Môžete aktualizovať svoj kód na používanie:
-- `FOUNDRY_LOCAL_ENDPOINT` pre explicitnú kontrolu koncového bodu
+- `FOUNDRY_LOCAL_ENDPOINT` pre explicitnú kontrolu endpointu
 - `SHOW_USAGE=1` pre viditeľnosť používania tokenov
 - Aktualizované predvolené modely (`phi-4-mini` namiesto `phi-3.5-mini`)
 
@@ -269,8 +270,8 @@ foundry model run phi-4-mini
 foundry model list
 ```
 
-### Problém: Chyby pripojenia ku koncovému bodu
-**Riešenie**: Overte koncový bod:
+### Problém: Chyby pripojenia k endpointu
+**Riešenie**: Overte endpoint:
 ```bash
 # Check service status
 foundry service status
@@ -281,19 +282,19 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## Ďalšie kroky
 
-1. **Aktualizujte ukážky z Module08**: Použite podobné vzory v Module08/samples
+1. **Aktualizujte ukážky Module08**: Použite podobné vzory pre Module08/samples
 2. **Pridajte integračné testy**: Vytvorte komplexný testovací balík
-3. **Benchmarking výkonu**: Porovnajte výkon pred a po aktualizácii
+3. **Benchmarking výkonu**: Porovnajte výkon pred a po
 4. **Aktualizácie dokumentácie**: Aktualizujte hlavný README s novými vzormi
 
 ## Pravidlá prispievania
 
 Pri pridávaní nových ukážok:
 1. Používajte `workshop_utils.py` pre konzistenciu
-2. Nasledujte vzor existujúcich ukážok
+2. Dodržiavajte vzor v existujúcich ukážkach
 3. Pridajte komplexné docstringy
 4. Zahrňte odkazy na SDK
-5. Podporte prepísanie koncového bodu
+5. Podporte prepísanie endpointu
 6. Pridajte správne typové anotácie
 7. Zahrňte príklady použitia v docstringu
 
@@ -312,5 +313,5 @@ Tieto aktualizácie sú kompatibilné s:
 
 ---
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

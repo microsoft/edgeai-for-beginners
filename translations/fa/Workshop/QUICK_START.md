@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T21:38:09+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T20:22:47+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "fa"
 }
 -->
-# راهنمای شروع سریع کارگاه
+# راهنمای سریع شروع کارگاه
 
 ## پیش‌نیازها
 
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### جلسه 01: چت پایه
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **متغیرهای محیطی:**
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### جلسه 02: خط لوله RAG
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **متغیرهای محیطی:**
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### جلسه 02: ارزیابی RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **توجه**: نیاز به نصب وابستگی‌های اضافی از طریق `requirements.txt` دارد
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### جلسه 03: ارزیابی عملکرد
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **متغیرهای محیطی:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### جلسه 04: مقایسه مدل‌ها
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **متغیرهای محیطی:**
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### جلسه 05: هماهنگی چند عامل
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **متغیرهای محیطی:**
@@ -127,11 +128,11 @@ set AGENT_MODEL_EDITOR=phi-4-mini
 set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ```
 
-### جلسه 06: مسیریاب مدل
+### جلسه 06: مسیریابی مدل
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **منطق مسیریابی را آزمایش می‌کند** با اهداف مختلف (کد، خلاصه‌سازی، طبقه‌بندی)
@@ -139,7 +140,7 @@ python models_router.py
 ### جلسه 06: خط لوله
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **خط لوله پیچیده چند مرحله‌ای** با برنامه‌ریزی، اجرا و اصلاح
@@ -167,7 +168,7 @@ python lint_markdown_cli.py --verbose
 
 **هدف**: شناسایی الگوهای CLI منسوخ در مستندات
 
-## آزمایش‌ها
+## آزمایش
 
 ### آزمایش‌های اولیه
 
@@ -235,7 +236,7 @@ foundry model run phi-4-mini
 | `RETRY_ON_FAIL` | `1` | فعال کردن منطق تلاش مجدد |
 | `RETRY_BACKOFF` | `1.0` | تأخیر اولیه تلاش مجدد (ثانیه) |
 
-### مخصوص جلسه
+### جلسه-محور
 | متغیر | پیش‌فرض | توضیحات |
 |-------|---------|---------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | مدل جاسازی |
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان مادری باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.

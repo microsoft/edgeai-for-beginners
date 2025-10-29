@@ -1,32 +1,32 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-11T11:59:50+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-29T00:00:52+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "et"
 }
 -->
-# Sessioon 6: Foundry Local – Mudelid kui Tööriistad
+# Sessioon 6: Foundry Local – Mudelid kui tööriistad
 
 ## Kokkuvõte
 
-Käsitle mudelid kombineeritavate tööriistadena lokaalses AI operatsioonikihis. Selles sessioonis õpid, kuidas ühendada mitmeid spetsialiseeritud SLM/LLM-kõnesid, suunata ülesandeid valikuliselt ja pakkuda rakendustele ühtset SDK-liidest. Sa lood kergekaalulise mudelite suunaja + ülesande planeerija, integreerid selle rakenduse skripti ja visandad skaleerimistee Azure AI Foundry jaoks tootmiskoormuste haldamiseks.
+Käsitle mudelid kui kombineeritavaid tööriistu lokaalses AI operatsioonikihis. Selles sessioonis näidatakse, kuidas ühendada mitmeid spetsialiseeritud SLM/LLM päringuid, suunata ülesandeid valikuliselt ja pakkuda rakendustele ühtset SDK liidest. Sa lood kerge mudelite suunaja + ülesannete planeerija, integreerid selle rakenduse skripti ja visandad skaleerimistee Azure AI Foundry jaoks tootmiskoormuste haldamiseks.
 
 ## Õpieesmärgid
 
-- **Mõtesta** mudelid kui iseseisvad tööriistad koos määratletud võimekustega
-- **Suunamine** taotluste põhjal kavatsuse/heuristilise skoori järgi
-- **Ühendamine** väljundite kaudu mitmeastmelistes ülesannetes (lahutamine → lahendamine → täpsustamine)
-- **Integreerimine** ühtse kliendi API rakenduste jaoks
-- **Skaleerimine** disain pilvele (sama OpenAI-ühilduv leping)
+- **Mõista** mudeleid kui aatomilisi tööriistu koos määratletud võimekustega
+- **Suunata** päringuid kavatsuse / heuristilise skoori alusel
+- **Ühendada** väljundeid mitmeastmelistes ülesannetes (lahutada → lahendada → täiustada)
+- **Integreerida** ühtne kliendi API allavoolu rakenduste jaoks
+- **Skaleerida** disain pilvele (sama OpenAI-ühilduv leping)
 
 ## Eeltingimused
 
 - Sessioonid 1–5 läbitud
 - Mitmed lokaalsed mudelid vahemällu salvestatud (nt `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Platvormideülene keskkonna koodinäide
+### Platvormidevaheline keskkonna koodinäide
 
 Windows PowerShell:
 ```powershell
@@ -44,13 +44,13 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Remote/VM teenuse ligipääs macOS-ist:
+Kaug-/VM-teenuse ligipääs macOS-ist:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Demo Kava (30 min)
+## Demo voog (30 min)
 
 ### 1. Tööriistade võimekuse määratlemine (5 min)
 
@@ -133,7 +133,7 @@ if __name__ == "__main__":
 ```
 
 
-### 3. Mitmeastmeline ülesande ühendamine (7 min)
+### 3. Mitmeastmeline ülesannete ühendamine (7 min)
 
 Loo `samples/06-tools/pipeline.py`:
 
@@ -188,13 +188,13 @@ Täiendused:
 
 | Kiht | Kohalik (Foundry) | Pilv (Azure AI Foundry) | Üleminekustrateegia |
 |------|-------------------|-------------------------|---------------------|
-| Suunamine | Heuristiline Python | Püsiv mikroteenus | Konteineriseeri ja juuruta API |
+| Suunamine | Heuristiline Python | Kestlik mikroteenus | Konteineriseeri ja juuruta API |
 | Mudelid | SLM-id vahemällu salvestatud | Hallatud juurutused | Kaardista kohalikud nimed juurutuse ID-dele |
 | Jälgitavus | CLI statistika/käsitsi | Keskne logimine ja mõõdikud | Lisa struktureeritud jälgimise sündmused |
 | Turvalisus | Ainult kohalik host | Azure autentimine / võrgustik | Lisa võtmehoidla saladuste jaoks |
-| Kulu | Seadme ressursid | Tarbimispõhine arveldus | Lisa eelarvepiirangud |
+| Kulud | Seadme ressursid | Tarbimispõhine arveldus | Lisa eelarvepiirangud |
 
-## Valideerimise Kontrollnimekiri
+## Valideerimise kontrollnimekiri
 
 ```powershell
 foundry model run phi-4-mini
@@ -203,38 +203,39 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Oota kavatsusepõhist mudeli valikut ja lõplikku täpsustatud väljundit.
+Oota kavatsusepõhist mudeli valikut ja lõplikku täiendatud väljundit.
 
 ## Tõrkeotsing
 
 | Probleem | Põhjus | Lahendus |
 |----------|--------|---------|
-| Kõik ülesanded suunatakse samale mudelile | Nõrgad reeglid | Rikasta INTENT_RULES regex komplekti |
+| Kõik ülesanded suunatakse samale mudelile | Nõrgad reeglid | Rikkasta INTENT_RULES regex komplekti |
 | Toru ebaõnnestub keskel | Puuduv mudel laaditud | Käivita `foundry model run <model>` |
-| Madal väljundi ühtsus | Puudub täpsustamise faas | Lisa kokkuvõtte/valideerimise samm |
+| Madal väljundi ühtsus | Puudub täiustamise faas | Lisa kokkuvõtte/valideerimise samm |
 
 ## Viited
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- Azure AI Foundry dokumentatsioon: https://learn.microsoft.com/azure/ai-foundry
-- Prompti kvaliteedimustrid: Vaata Sessiooni 2
+- Azure AI Foundry dokumendid: https://learn.microsoft.com/azure/ai-foundry
+- Prompti kvaliteedimustrid: Vaata sessiooni 2
 
 ---
 
 **Sessiooni kestus**: 30 min  
 **Raskusaste**: Ekspert
 
-## Näidistsenaarium ja Töötuba
+## Näidistsenaarium ja töötoa kaardistus
 
-| Töötuba skriptid / märkmikud | Stsenaarium | Eesmärk | Andmestik / Kataloogi allikas |
+| Töötoa skriptid / märkmikud | Stsenaarium | Eesmärk | Andmestik / kataloogi allikas |
 |-----------------------------|-------------|---------|------------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Arendaja assistent, mis käsitleb segakavatsusega prompti (refaktor, kokkuvõte, klassifitseerimine) | Heuristiline kavatsus → mudeli alias suunamine koos tokeni kasutusega | Inline `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Mitmeastmeline planeerimine ja täpsustamine keeruka koodiabi ülesande jaoks | Lahutamine → spetsialiseeritud täitmine → kokkuvõtte täpsustamise samm | Sama `CATALOG`; sammud tuletatud plaani väljundist |
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Arendaja assistent, kes käsitleb segakavatsusega prompt'e (refaktor, kokkuvõte, klassifitseerimine) | Heuristiline kavatsus → mudeli alias suunamine koos tokeni kasutusega | Sisseehitatud `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Mitmeastmeline planeerimine ja täiustamine keeruka koodiabi ülesande jaoks | Lahuta → spetsialiseeritud täitmine → kokkuvõtte täiustamise samm | Sama `CATALOG`; sammud tuletatud plaani väljundist |
 
-### Stsenaariumi Narratiiv
-Inseneri produktiivsuse tööriist saab heterogeenseid ülesandeid: koodi refaktorimine, arhitektuuriliste märkmete kokkuvõte, tagasiside klassifitseerimine. Latentsuse ja ressursikasutuse minimeerimiseks planeerib ja teeb kokkuvõtte väike üldine mudel, koodispetsialiseeritud mudel tegeleb refaktorimisega ja kerge klassifitseerimisvõimeline mudel märgistab tagasisidet. Toru skript demonstreerib ühendamist + täpsustamist; suunaja skript isoleerib kohanduva ühe prompti suunamise.
+### Stsenaariumi narratiiv
+Inseneri produktiivsuse tööriist saab heterogeenseid ülesandeid: koodi refaktorimine, arhitektuuriliste märkmete kokkuvõte, tagasiside klassifitseerimine. Latentsuse ja ressursikasutuse minimeerimiseks planeerib ja teeb kokkuvõtte väike üldine mudel, koodispetsialiseeritud mudel tegeleb refaktorimisega ja kerge klassifitseerimisvõimeline mudel märgistab tagasisidet. Toru skript demonstreerib ühendamist + täiustamist; suunaja skript eraldab kohanduva ühe prompti suunamise.
 
-### Kataloogi Hetktõmmis
+### Kataloogi hetkeseis
+
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -244,7 +245,8 @@ CATALOG = {
 ```
 
 
-### Näidistest Promptid
+### Näidis testpromptid
+
 ```json
 [
     "Refactor this Python function for readability",
@@ -255,8 +257,8 @@ CATALOG = {
 ```
 
 
-### Jälgimise Laiendus (Valikuline)
-Lisa sammupõhised jälgimise JSON read `models_pipeline.py` jaoks:
+### Jälgimise laiendus (valikuline)
+Lisa iga sammu jälgimise JSON read `models_pipeline.py` jaoks:
 ```python
 trace.append({
     "step": step_idx,
@@ -268,25 +270,25 @@ trace.append({
 ```
 
 
-### Eskaleerimise Heuristika (Idee)
+### Eskaleerimise heuristika (idee)
 Kui plaan sisaldab märksõnu nagu "optimeeri", "turvalisus" või sammu pikkus > 280 tähemärki → eskaleeri suuremale mudelile (nt `gpt-oss-20b`) ainult selle sammu jaoks.
 
-### Valikulised Täiendused
+### Valikulised täiustused
 
-| Valdkond | Täiendus | Väärtus | Vihje |
-|----------|----------|---------|------|
+| Valdkond | Täiustus | Väärtus | Vihje |
+|----------|----------|---------|-------|
 | Vahemälu | Korduvkasuta halduri + kliendi objekte | Madalam latentsus, vähem koormust | Kasuta `workshop_utils.get_client` |
-| Kasutusmõõdikud | Püüa tokenid ja sammupõhine latentsus | Profileerimine ja optimeerimine | Ajasta iga suunatud kõne; salvesta jälgimise nimekirja |
-| Kohanduv Suunamine | Usaldusväärsuse/kulu teadlik | Parem kvaliteedi-kulu tasakaal | Lisa skoorimine: kui prompt > N tähemärki või regex vastab domeenile → eskaleeri suuremale mudelile |
-| Dünaamiline Võimekuse Register | Kataloogi kuum laadimine | Ei vaja taaskäivitust ega uuesti juurutamist | Laadi `catalog.json` käitusajal; jälgi faili ajatemplit |
-| Tagavarastrateegia | Tõrgete korral vastupidavus | Suurem saadavus | Proovi esmalt → erandi korral tagavaraliides |
-| Voogedastuse Toru | Varajane tagasiside | UX-i parandus | Voogedasta iga samm ja puhverda lõplik täpsustamise sisend |
-| Vektorkavatsuse Embeddings | Täpsem suunamine | Kõrgem kavatsuse täpsus | Embed prompt, klasterda ja kaardista centroid → võimekus |
-| Jälgimise Ekspordi | Auditeeritav ühendus | Vastavus/aruandlus | Emit JSON read: samm, kavatsus, mudel, latentsus_ms, tokenid |
-| Kulusimulatsioon | Pilve-eelne hinnang | Eelarve planeerimine | Määra mudeli kohta notionaalsed kulud/token ja koonda ülesande kohta |
-| Deterministlik Režiim | Reprodutseeritavus | Stabiilne võrdlusalus | Keskkond: `temperature=0`, fikseeritud sammude arv |
+| Kasutusmõõdikud | Püüa kinni tokenid ja iga sammu latentsus | Profiilimine ja optimeerimine | Ajasta iga suunatud kõne; salvesta jälgimise loendisse |
+| Kohanduv suunamine | Usaldusväärsuse / kulu teadlik | Parem kvaliteedi-kulu tasakaal | Lisa skoorimine: kui prompt > N tähemärki või regex vastab domeenile → eskaleeri suuremale mudelile |
+| Dünaamiline võimekuse register | Kataloogi kuum laadimine | Ei vaja taaskäivitust ega uuesti juurutamist | Laadi `catalog.json` käitusajal; jälgi faili ajatemplit |
+| Tagasipöördumisstrateegia | Tõrgete korral vastupidavus | Suurem saadavus | Proovi esmalt → erandi korral tagasipöördumise alias |
+| Voogedastuse toru | Varajane tagasiside | UX-i parandus | Voogedasta iga samm ja puhverda lõplik täiustamise sisend |
+| Vektorkavatsuse sisestused | Täpsem suunamine | Kõrgem kavatsuse täpsus | Sisesta prompt, klasterda ja kaardista centroid → võimekus |
+| Jälgimise eksport | Auditeeritav ahel | Vastavus/aruandlus | Väljastage JSON read: samm, kavatsus, mudel, latentsus_ms, tokenid |
+| Kulude simulatsioon | Pilve-eelne hinnang | Eelarve planeerimine | Määrake mudeli kohta notionaalsed kulud/token ja koondage ülesande kohta |
+| Deterministlik režiim | Reprodutseeritavus | Stabiilne võrdlusanalüüs | Keskkond: `temperature=0`, fikseeritud sammude arv |
 
-#### Jälgimise Struktuuri Näide
+#### Jälgimise struktuuri näide
 
 ```python
 trace.append({
@@ -299,7 +301,7 @@ trace.append({
 ```
 
 
-#### Kohanduva Eskaleerimise Visand
+#### Kohanduva eskaleerimise visand
 
 ```python
 if len(prompt) > 280 or 'compliance' in prompt.lower():
@@ -308,7 +310,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
 ```
 
 
-#### Mudelikataloogi Kuum Laadimine
+#### Mudelikataloogi kuum laadimine
 
 ```python
 import json, time, os
@@ -323,10 +325,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Iteratsiooni järk-järgult—väldi varajaste prototüüpide üleliigset inseneritööd.
-
 ---
 
 **Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tekkida selle tõlke kasutamise tõttu.

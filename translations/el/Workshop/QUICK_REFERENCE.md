@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T13:09:40+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T21:56:45+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "el"
 }
 -->
-# Δείγματα Εργαστηρίου - Γρήγορος Οδηγός Αναφοράς
+# Δείγματα Εργαστηρίου - Γρήγορη Κάρτα Αναφοράς
 
 **Τελευταία Ενημέρωση**: 8 Οκτωβρίου 2025
 
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -34,8 +34,8 @@ python chat_bootstrap.py "What is edge AI?"
 
 | Συνεδρία | Δείγμα | Σκοπός | Χρόνος |
 |----------|--------|--------|--------|
-| 01 | `chat_bootstrap.py` | Βασική συνομιλία + streaming | ~30s |
-| 02 | `rag_pipeline.py` | RAG με embeddings | ~45s |
+| 01 | `chat_bootstrap.py` | Βασική συνομιλία + ροή | ~30s |
+| 02 | `rag_pipeline.py` | RAG με ενσωματώσεις | ~45s |
 | 02 | `rag_eval_ragas.py` | Αξιολόγηση RAG | ~60s |
 | 03 | `benchmark_oss_models.py` | Αξιολόγηση μοντέλων | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Ειδικές για Συνεδρία
+### Ειδικές για Συνεδρίες
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -177,7 +177,7 @@ except Exception as e:
     sys.exit(1)
 ```
 
-### Streaming
+### Ροή
 ```python
 stream = client.chat.completions.create(
     model=model_id,
@@ -226,7 +226,7 @@ for chunk in stream:
 
 ## 🎯 Ροές Εργασίας Δειγμάτων
 
-### Δοκιμάστε τα Όλα
+### Δοκιμή Όλων
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Αξιολόγηση Μοντέλων
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG Pipeline
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Σύστημα Πολλαπλών Πρακτόρων
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Γρήγορη Βοήθεια**: Εκτελέστε οποιοδήποτε δείγμα με `--help` ή ελέγξτε το docstring:
+**Γρήγορη Βοήθεια**: Εκτελέστε οποιοδήποτε δείγμα με `--help` από τον φάκελο `samples` ή ελέγξτε το docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Αποποίηση ευθύνης**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που καταβάλλουμε προσπάθειες για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα θα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή εσφαλμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που καταβάλλουμε προσπάθειες για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα θα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή εσφαλμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-09T14:46:09+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T22:11:48+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "da"
 }
@@ -15,24 +15,24 @@ Denne mappe indeholder automatiserings- og supportskripter, der bruges til at op
 
 | Fil | Formål |
 |-----|--------|
-| `lint_markdown_cli.py` | Kontrollerer markdown kodeblokke for forældede Foundry Local CLI-kommandoer. |
+| `lint_markdown_cli.py` | Kontrollerer markdown-kodeblokke for forældede Foundry Local CLI-kommandoer. |
 | `export_benchmark_markdown.py` | Kører multi-model latenstests og genererer Markdown + JSON-rapporter. |
 
 ## 1. Markdown CLI Pattern Linter
 
-`lint_markdown_cli.py` scanner alle ikke-oversatte `.md`-filer for forbudte Foundry Local CLI-mønstre **inden for kodeblokke** (``` ... ```). Informativ tekst kan stadig nævne forældede kommandoer for historisk kontekst.
+`lint_markdown_cli.py` scanner alle ikke-oversatte `.md`-filer for forbudte Foundry Local CLI-mønstre **inden for indhegnede kodeblokke** (``` ... ```). Informativ tekst kan stadig nævne forældede kommandoer for historisk kontekst.
 
 ### Forældede Mønstre (Blokeret i Kodeblokke)
 
 Linteren blokerer forældede CLI-mønstre. Brug moderne alternativer i stedet.
 
-### Påkrævede Erstatninger
-| Forældet | Brug i stedet |
+### Nødvendige Erstatninger
+| Forældet | Brug I stedet |
 |----------|---------------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
 | `foundry model list --running` | `foundry model list` |
 | `foundry model list --cached` | `foundry cache list` |
-| `foundry model stats` | Benchmark-script + systemværktøjer (`Task Manager`, `nvidia-smi`) |
+| `foundry model stats` | Benchmark-skript + systemværktøjer (`Task Manager`, `nvidia-smi`) |
 | `foundry model benchmark` | `samples/session03/benchmark_oss_models.py` |
 | `foundry model list --available` | `foundry model list` |
 
@@ -63,7 +63,7 @@ chmod +x .git/hooks/pre-commit
 Dette blokerer commits, der introducerer forældede mønstre.
 
 ### CI Integration
-En GitHub Action workflow (`.github/workflows/markdown-cli-lint.yml`) kører linteren ved hver push og pull request til `main` og `Reactor`-branchene. Fejlende jobs skal rettes, før de kan merges.
+En GitHub Action workflow (`.github/workflows/markdown-cli-lint.yml`) kører linteren ved hver push og pull request til `main` og `Reactor` branches. Fejlende jobs skal rettes, før de kan merges.
 
 ### Tilføjelse af Nye Forældede Mønstre
 1. Åbn `lint_markdown_cli.py`.
@@ -76,26 +76,26 @@ Eksempel på tilføjelse:
 DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental foo usage"))
 ```
 
-### Tillad Forklarende Nævnelser
-Da kun kodeblokke håndhæves, kan du sikkert beskrive forældede kommandoer i narrativ tekst. Hvis du *skal* vise dem i en blok for kontrast, brug en blok **uden** triple backticks (f.eks. indrykning eller citat) eller omskriv til pseudoform.
+### Tillad Forklarende Omtaler
+Da kun indhegnede kodeblokke håndhæves, kan du sikkert beskrive forældede kommandoer i narrativ tekst. Hvis du *skal* vise dem i en blok for kontrast, tilføj en blok **uden** triple backticks (f.eks. indrykning eller citat) eller omskriv til pseudoform.
 
 ### Spring Over Specifikke Filer (Avanceret)
-Hvis nødvendigt, placer legacy-eksempler i en separat fil uden for repoet eller omdøb med en anden filtype under udarbejdelse. Bevidste undtagelser for oversatte kopier er automatiske (stier, der indeholder `translations`).
+Hvis nødvendigt, placer legacy-eksempler i en separat fil uden for repoen eller omdøb med en anden filtype under udarbejdelse. Bevidste undtagelser for oversatte kopier er automatiske (stier, der indeholder `translations`).
 
 ### Fejlfinding
 | Problem | Årsag | Løsning |
 |---------|-------|---------|
-| Linter markerer en linje, du har opdateret | Regex for bred | Indsnævr mønsteret med yderligere ordgrænse (`\b`) eller ankre |
-| CI fejler, men lokal kørsel passerer | Forskellig Python-version eller ikke-committede ændringer | Kør igen lokalt, sørg for ren arbejdsgren, tjek workflow Python-version (3.11) |
-| Behov for midlertidig omgåelse | Nødrettelse | Anvend rettelse straks efter; overvej at bruge en midlertidig branch og opfølgende PR (undgå at tilføje bypass-switches) |
+| Linteren markerer en linje, du har opdateret | Regex for bred | Indsnævr mønsteret med yderligere ordgrænse (`\b`) eller ankre |
+| CI fejler, men lokal kørsel passerer | Forskellig Python-version eller ikke-committede ændringer | Kør lokalt igen, sørg for ren arbejdsmappe, tjek workflow Python-version (3.11) |
+| Behov for midlertidig omgåelse | Nødrettelse | Udfør rettelsen straks efter; overvej at bruge en midlertidig branch og opfølgende PR (undgå at tilføje omgåelsesmuligheder) |
 
 ### Begrundelse
-At holde dokumentationen i tråd med *nuværende* stabile CLI-overflader forhindrer workshop-friktion, undgår forvirring hos deltagere og centraliserer præstationsmåling gennem vedligeholdte Python-scripts i stedet for forældede CLI-kommandoer.
+At holde dokumentationen i tråd med den *nuværende* stabile CLI-overflade forhindrer problemer i workshoppen, undgår forvirring hos deltagerne og centraliserer præstationsmåling gennem vedligeholdte Python-skripter i stedet for forældede CLI-kommandoer.
 
 ---
-Vedligeholdes som en del af workshopens kvalitetssikringsværktøjer. For forbedringer (f.eks. auto-fixing forslag eller HTML-rapportgenerering), opret en issue eller indsend en PR.
+Vedligeholdes som en del af workshop-kvalitetsværktøjskæden. For forbedringer (f.eks. automatiske rettelsesforslag eller HTML-rapportgenerering), opret en issue eller indsend en PR.
 
-## 2. Eksempelvalideringsscript
+## 2. Eksempelvalideringsskript
 
 `validate_samples.py` validerer alle Python-eksempelfiler for syntaks, imports og overholdelse af bedste praksis.
 
@@ -116,11 +116,11 @@ python scripts/validate_samples.py --summary
 
 ### Hvad det kontrollerer
 - ✅ Python-syntaks gyldighed
-- ✅ Påkrævede imports til stede
-- ✅ Fejlhåndtering implementeret (verbose mode)
-- ✅ Brug af type hints (verbose mode)
-- ✅ Funktionsdocstrings (verbose mode)
-- ✅ SDK-referencelinks (verbose mode)
+- ✅ Nødvendige imports til stede
+- ✅ Implementering af fejlhåndtering (detaljeret tilstand)
+- ✅ Brug af type hints (detaljeret tilstand)
+- ✅ Funktionsdocstrings (detaljeret tilstand)
+- ✅ SDK-referencelinks (detaljeret tilstand)
 
 ### Miljøvariabler
 - `SKIP_IMPORT_CHECK=1` - Spring importvalidering over
@@ -132,7 +132,7 @@ python scripts/validate_samples.py --summary
 
 ## 3. Eksempel Test Runner
 
-`test_samples.py` kører smoke tests på alle eksempler for at verificere, at de kører uden fejl.
+`test_samples.py` kører test på alle eksempler for at verificere, at de kører uden fejl.
 
 ### Brug
 ```bash
@@ -150,13 +150,13 @@ python scripts/test_samples.py --verbose
 ```
 
 ### Forudsætninger
-- Foundry Local-tjeneste kører: `foundry service start`
+- Foundry Local service kører: `foundry service start`
 - Modeller indlæst: `foundry model run phi-4-mini`
 - Afhængigheder installeret: `pip install -r requirements.txt`
 
 ### Hvad det tester
 - ✅ Eksempel kan køre uden runtime-fejl
-- ✅ Påkrævet output genereres
+- ✅ Nødvendig output genereres
 - ✅ Korrekt fejlhåndtering ved fejl
 - ✅ Ydeevne (eksekveringstid)
 
@@ -172,24 +172,24 @@ pip install sentence-transformers ragas datasets
 
 ### Exit Codes
 - `0` - Alle tests bestod
-- `1` - En eller flere tests fejlede
+- `1` - Et eller flere tests fejlede
 
 ## 4. Benchmark Markdown Exporter
 
-Script: `export_benchmark_markdown.py`
+Skript: `export_benchmark_markdown.py`
 
 Genererer en reproducerbar præstationstabel for et sæt modeller.
 
 ### Brug
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Outputs
 | Fil | Beskrivelse |
 |-----|-------------|
 | `benchmark_report.md` | Markdown-tabel (gennemsnit, p95, tokens/sek, valgfri første token) |
-| `benchmark_report.json` | Rå metrikker til diffing & historik |
+| `benchmark_report.json` | Rå metrikker til sammenligning & historik |
 
 ### Valgmuligheder
 | Flag | Beskrivelse | Standard |
@@ -204,11 +204,11 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 Miljøvariabel `BENCH_STREAM=1` tilføjer måling af første token latenstid.
 
 ### Noter
-- Genbruger `workshop_utils` for konsistent modelbootstrap & caching.
-- Hvis scriptet køres fra en anden arbejdsmappe, forsøger det at finde `workshop_utils` via alternative stier.
-- For GPU-sammenligning: kør én gang, aktiver acceleration via CLI-konfiguration, kør igen og diff JSON-filen.
+- Genbruger `workshop_utils` for konsistent model bootstrap & caching.
+- Hvis kørt fra en anden arbejdsmappe, forsøger skriptet at finde `workshop_utils` via alternative stier.
+- For GPU-sammenligning: kør én gang, aktiver acceleration via CLI-konfiguration, kør igen og sammenlign JSON.
 
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

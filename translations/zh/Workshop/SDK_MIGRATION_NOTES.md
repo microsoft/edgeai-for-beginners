@@ -1,28 +1,28 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-08T16:35:56+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T20:36:41+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "zh"
 }
 -->
-# Foundry Local SDK迁移说明
+# Foundry本地SDK迁移说明
 
 ## 概述
 
-Workshop文件夹中的所有Python文件已更新，以遵循官方[Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local)的最新模式。
+Workshop文件夹中的所有Python文件已更新，以遵循官方[Foundry本地Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local)的最新模式。
 
 ## 变更摘要
 
 ### 核心基础设施 (`workshop_utils.py`)
 
 #### 增强功能：
-- **支持端点覆盖**：新增对环境变量`FOUNDRY_LOCAL_ENDPOINT`的支持
-- **改进错误处理**：更好的异常处理，提供详细的错误信息
-- **增强缓存功能**：缓存键现在包括端点，以支持多端点场景
-- **指数回退**：重试逻辑现在使用指数回退以提高可靠性
-- **类型注解**：添加了全面的类型提示，以改善IDE支持
+- **端点覆盖支持**：新增支持环境变量`FOUNDRY_LOCAL_ENDPOINT`
+- **改进的错误处理**：更好的异常处理，提供详细的错误信息
+- **增强的缓存**：缓存键现在包含端点，以支持多端点场景
+- **指数退避**：重试逻辑现在使用指数退避以提高可靠性
+- **类型注解**：添加了全面的类型提示以支持IDE
 
 #### 新功能：
 ```python
@@ -79,7 +79,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### 脚本
 
-#### 基准测试导出 (`export_benchmark_markdown.py`)
+#### 基准导出 (`export_benchmark_markdown.py`)
 - 添加端点覆盖支持
 - 更新默认模型
 - 增强函数文档
@@ -106,21 +106,21 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - `FOUNDRY_LOCAL_ENDPOINT` - 覆盖服务端点（可选）
 - `SHOW_USAGE` - 显示令牌使用统计（默认值："0"）
 - `RETRY_ON_FAIL` - 启用重试逻辑（默认值："1"）
-- `RETRY_BACKOFF` - 初始重试延迟（秒）（默认值："1.0"）
+- `RETRY_BACKOFF` - 初始重试延迟时间（秒）（默认值："1.0"）
 
 ### 示例特定
 - `EMBED_MODEL` - RAG示例的嵌入模型
 - `BENCH_MODELS` - 基准测试的逗号分隔模型
 - `BENCH_ROUNDS` - 基准测试轮数
 - `BENCH_PROMPT` - 基准测试的测试提示
-- `BENCH_STREAM` - 测量首令牌延迟
+- `BENCH_STREAM` - 测量首个令牌延迟
 - `RAG_QUESTION` - RAG示例的测试问题
 - `AGENT_MODEL_PRIMARY` - 主代理模型
 - `AGENT_MODEL_EDITOR` - 编辑代理模型
 - `SLM_ALIAS` - 小型语言模型别名
 - `LLM_ALIAS` - 大型语言模型别名
 
-## SDK最佳实践实施
+## 实施的SDK最佳实践
 
 ### 1. 正确的客户端初始化
 ```python
@@ -154,7 +154,7 @@ except Exception as e:
     raise RuntimeError(f"Initialization failed: {e}") from e
 ```
 
-### 4. 使用指数回退的重试逻辑
+### 4. 带指数退避的重试逻辑
 ```python
 delay = initial_delay
 for attempt in range(max_retries):
@@ -179,7 +179,7 @@ for chunk in stream:
         # Process chunk
 ```
 
-## 自定义示例迁移指南
+## 自定义示例的迁移指南
 
 如果您正在创建新示例或更新现有示例：
 
@@ -215,7 +215,7 @@ for chunk in stream:
 
 ## 测试
 
-所有示例可以通过以下方式进行测试：
+所有示例可以通过以下方式测试：
 
 ```bash
 # Set environment variables
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -241,7 +242,7 @@ python -m Workshop.tests.smoke
 
 ## 重大变更
 
-### 无预期重大变更
+### 无预期
 所有更改均向后兼容。更新主要包括：
 - 添加新的可选功能（端点覆盖）
 - 改进错误处理
@@ -257,7 +258,7 @@ python -m Workshop.tests.smoke
 ## 常见问题及解决方案
 
 ### 问题: "客户端初始化失败"
-**解决方案**: 确保Foundry Local服务正在运行：
+**解决方案**: 确保Foundry本地服务正在运行：
 ```bash
 foundry service start
 foundry model run phi-4-mini
@@ -279,12 +280,12 @@ foundry service status
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ```
 
-## 后续步骤
+## 下一步
 
 1. **更新Module08示例**: 将类似模式应用于Module08/samples
 2. **添加集成测试**: 创建全面的测试套件
 3. **性能基准测试**: 比较更新前后的性能
-4. **文档更新**: 更新主README以包含新模式
+4. **文档更新**: 使用新模式更新主README
 
 ## 贡献指南
 
@@ -299,18 +300,18 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## 版本兼容性
 
-这些更新兼容以下版本：
-- `foundry-local-sdk`（最新）
+这些更新与以下版本兼容：
+- `foundry-local-sdk`（最新版本）
 - `openai>=1.30.0`
 - Python 3.8+
 
 ---
 
-**最后更新**: 2025-01-08  
+**最后更新日期**: 2025-01-08  
 **维护者**: EdgeAI Workshop团队  
-**SDK版本**: Foundry Local SDK（最新0.7.117+67073234e7）
+**SDK版本**: Foundry Local SDK (最新0.7.117+67073234e7)
 
 ---
 
 **免责声明**：  
-本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
+本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。

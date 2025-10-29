@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T14:41:46+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T22:20:16+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "fi"
 }
@@ -11,17 +11,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tiivistelmä
 
-Käsittele malleja yhdisteltävinä työkaluina paikallisessa AI-toimintakerroksessa. Tässä istunnossa opit ketjuttamaan useita erikoistuneita SLM/LLM-kutsuja, reitittämään tehtäviä valikoivasti ja tarjoamaan yhtenäisen SDK-pinnan sovelluksille. Rakennat kevyen mallireitittimen + tehtäväsuunnittelijan, integroit sen sovellusskriptiin ja hahmottelet skaalautumispolun Azure AI Foundryyn tuotantokuormituksia varten.
+Käsittele malleja yhdisteltävinä työkaluina paikallisessa AI-toimintakerroksessa. Tässä istunnossa näytetään, kuinka ketjutetaan useita erikoistuneita SLM/LLM-kutsuja, ohjataan tehtäviä valikoivasti ja tarjotaan yhtenäinen SDK-pinta sovelluksille. Rakennat kevyen malliohjaimen + tehtäväsuunnittelijan, integroit sen sovellusskriptiin ja hahmottelet skaalautumispolun Azure AI Foundryyn tuotantokuormituksia varten.
 
 ## Oppimistavoitteet
 
 - **Hahmota** mallit atomisina työkaluina, joilla on määritellyt kyvykkyydet
-- **Reititä** pyynnöt aikomuksen tai heuristisen pisteytyksen perusteella
-- **Ketjuta** tulokset monivaiheisissa tehtävissä (pilko → ratkaise → viimeistele)
+- **Ohjaa** pyyntöjä aikomuksen / heuristisen pisteytyksen perusteella
+- **Ketjuta** tuloksia monivaiheisissa tehtävissä (pilko → ratkaise → tarkenna)
 - **Integroi** yhtenäinen asiakas-API jatkosovelluksille
 - **Skaalaa** suunnittelu pilveen (sama OpenAI-yhteensopiva sopimus)
 
-## Esitietovaatimukset
+## Esivaatimukset
 
 - Istunnot 1–5 suoritettu
 - Useita paikallisia malleja välimuistissa (esim. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
@@ -44,7 +44,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Etä-/VM-palveluyhteys macOS:sta:
+Etä-/VM-palvelimen käyttö macOS:sta:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -74,7 +74,7 @@ CATALOG = {
 ```
 
 
-### 2. Aikomuksen tunnistus ja reititys (8 min)
+### 2. Aikomuksen tunnistus ja ohjaus (8 min)
 
 Luo `samples/06-tools/router.py`:
 
@@ -179,19 +179,19 @@ if __name__ == '__main__':
 ### 4. Aloitusprojekti: Mukauta `06-models-as-tools` (5 min)
 
 Parannukset:
-- Lisää suoratoistotukitokenit (progressiivinen käyttöliittymäpäivitys)
-- Lisää luottamuspisteytys: leksikaalinen päällekkäisyys tai kehotteen arviointikriteeri
+- Lisää suoratoistotokenien tuki (progressiivinen käyttöliittymän päivitys)
+- Lisää luottamuspisteytys: leksikaalinen päällekkäisyys tai kehotteen arviointikriteerit
 - Vie jäljityksen JSON (aikomus → malli → viive → tokenien käyttö)
 - Toteuta välimuistin uudelleenkäyttö toistuville alavaiheille
 
 ### 5. Skaalautumispolku Azureen (5 min)
 
 | Kerros | Paikallinen (Foundry) | Pilvi (Azure AI Foundry) | Siirtymistrategia |
-|-------|-------------------------|--------------------------|-------------------|
-| Reititys | Heuristinen Python | Kestävä mikropalvelu | Kontitointi ja API:n käyttöönotto |
-| Mallit | Välimuistissa olevat SLM:t | Hallinnoidut käyttöönotot | Paikallisten nimien kartoitus käyttöönotto-ID:ihin |
+|--------|------------------------|--------------------------|-------------------|
+| Ohjaus | Heuristinen Python | Kestävä mikropalvelu | Säilöi ja ota käyttöön API |
+| Mallit | SLM:t välimuistissa | Hallinnoidut käyttöönotot | Kartta paikalliset nimet käyttöönotto-ID:ihin |
 | Havainnointi | CLI-tilastot/manuaalinen | Keskitetty lokitus ja metrikat | Lisää rakenteelliset jäljitystapahtumat |
-| Turvallisuus | Vain paikallinen isäntä | Azure-todennus / verkottuminen | Ota käyttöön avainholvi salaisuuksille |
+| Turvallisuus | Vain paikallinen isäntä | Azure-todennus / verkostoituminen | Ota käyttöön avainholvi salaisuuksille |
 | Kustannukset | Laitteiston resurssi | Kulutuslaskutus | Lisää budjettivartijat |
 
 ## Vahvistuslista
@@ -203,40 +203,38 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Odotetaan aikomukseen perustuvaa mallivalintaa ja lopullista viimeisteltyä tulosta.
+Odotetaan aikomukseen perustuvaa mallin valintaa ja lopullista tarkennettua tulosta.
 
 ## Vianetsintä
 
-| Ongelma | Syy | Korjaus |
-|---------|-----|--------|
-| Kaikki tehtävät reititetään samaan malliin | Heikot säännöt | Rikasta INTENT_RULES regex-sarja |
-| Ketju epäonnistuu keskivaiheessa | Puuttuva malli ladattu | Suorita `foundry model run <model>` |
-| Alhainen tuloksen yhtenäisyys | Ei viimeistelyvaihetta | Lisää tiivistämis-/validointivaihe |
+| Ongelma | Syynä | Korjaus |
+|---------|-------|---------|
+| Kaikki tehtävät ohjataan samaan malliin | Heikot säännöt | Rikkaampien INTENT_RULES regex-sääntöjen lisääminen |
+| Putki epäonnistuu kesken vaiheen | Puuttuva malli ladattu | Suorita `foundry model run <model>` |
+| Matala tulosten yhtenäisyys | Ei tarkennusvaihetta | Lisää tiivistämis-/tarkistusvaihe |
 
 ## Viitteet
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Azure AI Foundry -dokumentaatio: https://learn.microsoft.com/azure/ai-foundry
-- Kehotteen laatumallit: Katso istunto 2
+- Kehotelaadun mallit: Katso istunto 2
 
 ---
 
 **Istunnon kesto**: 30 min  
-**Vaikeustaso**: Asiantuntija
+**Vaikeustaso**: Vaativa
 
 ## Esimerkkiskenaario ja työpajan kartoitus
 
-| Työpajan skriptit / muistikirjat | Skenaario | Tavoite | Datasetti / katalogilähde |
-|----------------------------------|-----------|---------|---------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Kehittäjäassistentti, joka käsittelee sekalaisten aikomusten kehotteita (uudelleenjärjestely, tiivistäminen, luokittelu) | Heuristinen aikomus → mallialias-reititys tokenien käytöllä | Sisäinen `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Monivaiheinen suunnittelu ja viimeistely monimutkaisessa koodiavustustehtävässä | Pilko → erikoistunut suoritus → tiivistämisviimeistelyvaihe | Sama `CATALOG`; vaiheet johdettu suunnitelman tuloksesta |
+| Työpajan skriptit / muistikirjat | Skenaario | Tavoite | Datasetti / katalogin lähde |
+|----------------------------------|-----------|---------|-----------------------------|
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Kehittäjäassistentti, joka käsittelee sekalaisten aikomusten kehotteita (uudelleenjärjestely, tiivistäminen, luokittelu) | Heuristinen aikomus → mallin alias-ohjaus tokenien käytöllä | Sisäinen `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Monivaiheinen suunnittelu ja tarkennus monimutkaisessa koodausavustustehtävässä | Pilko → erikoistunut suoritus → tiivistämisen tarkennusvaihe | Sama `CATALOG`; vaiheet johdettu suunnitelman tuloksesta |
 
-### Skenaarion narratiivi
-
-Insinöörien tuottavuustyökalu vastaanottaa heterogeenisiä tehtäviä: koodin uudelleenjärjestely, arkkitehtuurimuistiinpanojen tiivistäminen, palautteen luokittelu. Viiveen ja resurssien käytön minimoimiseksi pieni yleismalli suunnittelee ja tiivistää, koodiin erikoistunut malli hoitaa uudelleenjärjestelyn, ja kevyt luokitteluun kykenevä malli merkitsee palautteen. Pipeline-skripti demonstroi ketjutusta + viimeistelyä; reitittimen skripti eristää mukautuvan yksittäisen kehotteen reitityksen.
+### Skenaarion kuvaus
+Tuottavuustyökalu insinööreille vastaanottaa monenlaisia tehtäviä: koodin uudelleenjärjestely, arkkitehtuurimuistiinpanojen tiivistäminen, palautteen luokittelu. Viiveen ja resurssien käytön minimoimiseksi pieni yleismalli suunnittelee ja tiivistää, koodiin erikoistunut malli hoitaa uudelleenjärjestelyn, ja kevyt luokitteluun kykenevä malli merkitsee palautteen. Putkiskripti demonstroi ketjutusta + tarkennusta; ohjausskripti eristää mukautuvan yksittäisen kehotteen ohjauksen.
 
 ### Katalogin tilannekuva
-
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -247,7 +245,6 @@ CATALOG = {
 
 
 ### Esimerkkikehotteet
-
 ```json
 [
     "Refactor this Python function for readability",
@@ -259,8 +256,7 @@ CATALOG = {
 
 
 ### Jäljityksen laajennus (valinnainen)
-
-Lisää vaihekohtaiset jäljitys JSON-rivit `models_pipeline.py`:lle:
+Lisää vaihekohtaiset jäljitys JSON-rivit `models_pipeline.py`-tiedostoon:
 ```python
 trace.append({
     "step": step_idx,
@@ -273,23 +269,22 @@ trace.append({
 
 
 ### Eskalointiheuristiikka (idea)
-
 Jos suunnitelmassa on avainsanoja kuten "optimoi", "turvallisuus" tai vaiheiden pituus > 280 merkkiä → eskaloi suurempaan malliin (esim. `gpt-oss-20b`) vain kyseistä vaihetta varten.
 
 ### Valinnaiset parannukset
 
 | Alue | Parannus | Arvo | Vinkki |
-|------|----------|------|-------|
-| Välimuisti | Uudelleenkäytä hallinta- ja asiakasobjekteja | Alhaisempi viive, vähemmän ylikuormitusta | Käytä `workshop_utils.get_client` |
-| Käyttömetriikat | Tallenna tokenit ja vaihekohtainen viive | Profilointi ja optimointi | Aika jokainen reititetty kutsu; tallenna jäljityslistaan |
-| Mukautuva reititys | Luottamus-/kustannustietoisuus | Parempi laatu-kustannus-tasapaino | Lisää pisteytys: jos kehotteen pituus > N merkkiä tai regex vastaa alaa → eskaloi suurempaan malliin |
-| Dynaaminen kyvykkyysrekisteri | Katalogin kuuma lataus | Ei uudelleenkäynnistystä tai käyttöönottoa | Lataa `catalog.json` ajonaikaisesti; tarkkaile tiedoston aikaleimaa |
-| Varautumisstrategia | Vikasietoisuus | Korkeampi saatavuus | Kokeile ensisijaista → poikkeuksen sattuessa varamallialias |
-| Suoratoistoputki | Varhainen palaute | Käyttökokemuksen parannus | Suoratoista jokainen vaihe ja puskuroi lopullinen viimeistelysyöte |
-| Vektoripohjaiset aikomusupotukset | Tarkempi reititys | Korkeampi aikomustarkkuus | Upota kehotus, klusteroi ja kartoita keskipiste → kyvykkyys |
-| Jäljityksen vienti | Ketjun auditointi | Vaatimustenmukaisuus/raportointi | Tuo JSON-rivit: vaihe, aikomus, malli, viive_ms, tokenit |
-| Kustannussimulaatio | Pilven ennakkoarviointi | Budjettisuunnittelu | Määritä mallikohtainen kustannus/token ja yhteenlaskettu tehtäväkohtainen kustannus |
-| Deterministinen tila | Toistettavuuden varmistaminen | Vakaa vertailuarviointi | Ympäristö: `temperature=0`, kiinteä vaiheiden määrä |
+|------|----------|------|--------|
+| Välimuisti | Uudelleenkäytä hallinta- ja asiakasobjekteja | Alhaisempi viive, vähemmän kuormitusta | Käytä `workshop_utils.get_client` |
+| Käyttömetriikat | Tallenna tokenit & vaihekohtainen viive | Profilointi & optimointi | Aika jokainen ohjattu kutsu; tallenna jäljityslistaan |
+| Mukautuva ohjaus | Luottamus-/kustannustietoisuus | Parempi laatu-kustannus-suhde | Lisää pisteytys: jos kehotteen pituus > N merkkiä tai regex vastaa alaa → eskaloi suurempaan malliin |
+| Dynaaminen kyvykkyysrekisteri | Katalogin kuuma lataus | Ei uudelleenkäynnistystä tai käyttöönottoa | Lataa `catalog.json` ajonaikaisesti; seuraa tiedoston aikaleimaa |
+| Varautumisstrategia | Vikasietoisuus | Parempi saatavuus | Kokeile ensisijaista → poikkeustilanteessa varalias |
+| Suoratoistoputki | Varhainen palaute | Käyttökokemuksen parannus | Suoratoista jokainen vaihe ja puskuroi lopullinen tarkennusinputti |
+| Vektoriaikomusten upotukset | Tarkempi ohjaus | Korkeampi aikomustarkkuus | Upota kehotus, klusteroi & kartoita keskipiste → kyvykkyys |
+| Jäljityksen vienti | Ketjun auditointi | Vaadittavuus/raportointi | Tuo JSON-rivit: vaihe, aikomus, malli, viive_ms, tokenit |
+| Kustannussimulaatio | Pilviarviointi | Budjetin suunnittelu | Määritä mallikohtainen kustannus/token ja yhteenlasku tehtävää kohden |
+| Deterministinen tila | Toistettavuus | Vakaa vertailu | Ympäristö: `temperature=0`, kiinteä vaiheiden määrä |
 
 #### Jäljitysrakenteen esimerkki
 
@@ -328,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Iteroi vähitellen—vältä ylikehittämistä varhaisissa prototyypeissä.
-
 ---
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.

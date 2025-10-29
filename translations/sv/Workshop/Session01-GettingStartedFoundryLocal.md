@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:21:39+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T22:04:29+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "sv"
 }
 -->
-# Session 1: Komma igång med Foundry Local
+# Session 1: Kom igång med Foundry Local
 
 ## Sammanfattning
 
@@ -15,7 +15,7 @@ Starta din resa med Foundry Local genom att installera och konfigurera det på W
 
 ## Lärandemål
 
-Efter denna session kommer du att kunna:
+I slutet av denna session kommer du att kunna:
 
 - **Installera och konfigurera**: Ställa in Foundry Local på Windows 11 med optimala prestandainställningar
 - **Behärska CLI-operationer**: Använda Foundry Local CLI för modellhantering och distribution
@@ -27,9 +27,9 @@ Efter denna session kommer du att kunna:
 foundry model run phi-4-mini --prompt "Hej, presentera dig själv"
 
 - Windows 11 (22H2 eller senare)
-# Lista tillgängliga katalogmodeller (laddade modeller visas efter körning)
+# Lista tillgängliga katalogmodeller (inlästa modeller visas efter körning)
 foundry model list
-## NOTE: Det finns för närvarande ingen dedikerad `--running` flagga; för att se vilka som är laddade, starta en chatt eller inspektera serviceloggar.
+## NOTE: Det finns för närvarande ingen dedikerad `--running` flagga; för att se vilka som är inlästa, starta en chatt eller inspektera serviceloggar.
 - Python 3.10+ installerat
 - Visual Studio Code med Python-tillägg
 - Administratörsbehörighet för installation
@@ -37,7 +37,7 @@ foundry model list
 ### (Valfritt) Miljövariabler
 
 Skapa en `.env` (eller ställ in i skalet) för att göra skript portabla:
-# Jämför svar (icke-interaktiv)
+# Jämför svar (icke-interaktivt)
 foundry model run gpt-oss-20b --prompt "Förklara edge AI på ett enkelt sätt"
 | Variabel | Syfte | Exempel |
 |----------|-------|---------|
@@ -45,7 +45,7 @@ foundry model run gpt-oss-20b --prompt "Förklara edge AI på ett enkelt sätt"
 | `FOUNDRY_LOCAL_ENDPOINT` | Åsidosätt endpoint (annars automatiskt från manager) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Aktivera streamingdemo | `true` |
 
-> Om `FOUNDRY_LOCAL_ENDPOINT=auto` (eller ej inställt) härleds det från SDK-managern.
+> Om `FOUNDRY_LOCAL_ENDPOINT=auto` (eller inte inställd) härleds det från SDK-managern.
 
 ## Demo-flöde (30 minuter)
 
@@ -77,9 +77,9 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Om inbyggda macOS-binarier ännu inte är tillgängliga kan du fortfarande: 
-1. Använda en Windows 11 ARM/Intel VM (Parallels / UTM) och följa Windows-stegen. 
-2. Köra modeller via container (om containerbild publiceras) och ställa in `FOUNDRY_LOCAL_ENDPOINT` till den exponerade porten. 
+Om macOS inbyggda binärer ännu inte är tillgängliga kan du fortfarande:
+1. Använda en Windows 11 ARM/Intel VM (Parallels / UTM) och följa Windows-stegen.
+2. Köra modeller via container (om containerbild publiceras) och ställa in `FOUNDRY_LOCAL_ENDPOINT` till den exponerade porten.
 
 **Skapa Python-virtuell miljö (plattformoberoende)**
 
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### SDK Bootstrapping (Rekommenderas)
 
-Istället för att manuellt starta tjänsten och köra modeller kan **Foundry Local Python SDK** bootstrap allt:
+Istället för att manuellt starta tjänsten och köra modeller kan **Foundry Local Python SDK** automatisera allt:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -292,7 +292,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 - **Lokal inferensmotor**: Kör modeller helt på din enhet
 - **OpenAI SDK-kompatibilitet**: Sömlös integration med befintlig OpenAI-kod
 - **Modellhantering**: Ladda ner, cachea och kör flera modeller effektivt
-- **Hårdvaruoptimering**: Utnyttja GPU, NPU och CPU-acceleration
+- **Hårdvaruoptimering**: Utnyttja GPU-, NPU- och CPU-acceleration
 
 ### 2. CLI-kommandoreferens
 
@@ -404,15 +404,16 @@ foundry config set model.preload false
 ### 3. Övervakning av prestanda
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Valfria förbättringar
@@ -420,14 +421,14 @@ python Workshop\samples\session03\benchmark_oss_models.py
 | Förbättring | Vad | Hur |
 |-------------|-----|-----|
 | Delade verktyg | Ta bort duplicerad klient/bootstrap-logik | Använd `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Synlighet för tokenanvändning | Lär ut kostnads-/effektivitetstänkande tidigt | Ställ in `SHOW_USAGE=1` för att skriva ut prompt/completion/totala tokens |
+| Synlighet för tokenanvändning | Lär ut kostnads-/effektivitetstänkande tidigt | Ställ in `SHOW_USAGE=1` för att skriva ut prompt/slutförande/totalt antal tokens |
 | Deterministiska jämförelser | Stabil benchmarking och regressionskontroller | Använd `temperature=0`, `top_p=1`, konsekvent prompttext |
-| Första-token latens | Upplevd responsivitet | Anpassa benchmark-skript med streaming (`BENCH_STREAM=1`) |
+| Första-token-latens | Upplevd responsivitet | Anpassa benchmark-skript med streaming (`BENCH_STREAM=1`) |
 | Försök igen vid tillfälliga fel | Robust demo vid kallstart | `RETRY_ON_FAIL=1` (standard) & justera `RETRY_BACKOFF` |
 | Röktestning | Snabb kontroll av nyckelflöden | Kör `python Workshop/tests/smoke.py` före en workshop |
 | Modellaliasprofiler | Snabbt byta modelluppsättning mellan maskiner | Underhåll `.env` med `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Cacheeffektivitet | Undvik upprepade uppvärmningar vid körning av flera exempel | Verktyg för cachehantering; återanvänd över skript/anteckningsböcker |
-| Första körningens uppvärmning | Minska p95 latensspikar | Skicka en liten prompt efter `FoundryLocalManager`-skapande |
+| Cacheeffektivitet | Undvik upprepade uppvärmningar vid körning av flera exempel | Verktyg för cachehantering; återanvänd över skript/notebooks |
+| Första körningens uppvärmning | Minska p95-latensspikar | Skicka en liten prompt efter att `FoundryLocalManager` skapats |
 
 Exempel på deterministisk varm baslinje (PowerShell):
 
@@ -467,7 +468,7 @@ Efter att ha avslutat denna session:
 
 ---
 
-**Sessionens längd**: 30 minuter praktiskt + 15 minuter Q&A  
+**Sessionens längd**: 30 minuter praktiskt arbete + 15 minuter Q&A  
 **Svårighetsgrad**: Nybörjare  
 **Förkunskaper**: Windows 11, Python 3.10+, Administratörsbehörighet  
 
@@ -479,9 +480,9 @@ Efter att ha avslutat denna session:
 | Anpassningskodblock för snabbstart | Utvecklare som migrerar ett befintligt OpenAI-skript till Foundry Local | Visa drop-in-kompatibilitet | "Ge två fördelar med lokal inferens." | Endast inline-prompt |
 
 ### Scenarionarrativ
-Säkerhets- och efterlevnadsgruppen måste validera om känslig prototypdata kan bearbetas lokalt. De kör bootstrap-skriptet med flera prompter (sekretess, latens, kostnad) med deterministiskt läge temperature=0 för att fånga baslinjeutdata för senare jämförelse (Session 3 benchmarking och Session 4 SLM vs LLM-kontrast).
+Säkerhets- och efterlevnadsgruppen måste validera om känslig prototypdata kan bearbetas lokalt. De kör bootstrap-skriptet med flera prompter (sekretess, latens, kostnad) med deterministiskt läge `temperature=0` för att fånga baslinjeutdata för senare jämförelse (Session 3 benchmarking och Session 4 SLM vs LLM-kontrast).
 
-### Minimal Prompt Set JSON (valfritt)
+### Minimal promptuppsättning JSON (valfritt)
 ```json
 [
     "List two benefits of local inference.",
@@ -490,7 +491,7 @@ Säkerhets- och efterlevnadsgruppen måste validera om känslig prototypdata kan
 ]
 ```
 
-Använd denna lista för att skapa en reproducerbar utvärderingsloop eller för att initiera ett framtida regressionsprov.
+Använd denna lista för att skapa en reproducerbar utvärderingsloop eller för att så ett framtida regressions-testverktyg.
 
 ---
 

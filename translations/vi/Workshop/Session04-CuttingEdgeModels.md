@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1b3c0fecfd713c2df903a0633249dc9",
-  "translation_date": "2025-10-09T16:40:51+00:00",
+  "original_hash": "d9e354c0182311726dc037a8809524e2",
+  "translation_date": "2025-10-28T22:31:29+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "vi"
 }
@@ -11,15 +11,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tóm tắt
 
-So sánh các Mô hình Ngôn ngữ Lớn (LLMs) và Mô hình Ngôn ngữ Nhỏ (SLMs) trong các kịch bản suy luận tại chỗ và trên đám mây. Tìm hiểu các mẫu triển khai sử dụng tăng tốc ONNX Runtime, thực thi WebGPU, và trải nghiệm RAG lai. Bao gồm một demo Chainlit RAG với mô hình cục bộ cùng tùy chọn khám phá OpenWebUI. Bạn sẽ điều chỉnh một dự án khởi đầu suy luận WebGPU và đánh giá khả năng của Phi so với GPT-OSS-20B cùng các đánh đổi về chi phí/hiệu suất.
+So sánh các Mô hình Ngôn ngữ Lớn (LLMs) và Mô hình Ngôn ngữ Nhỏ (SLMs) trong các kịch bản suy luận tại chỗ và trên đám mây. Tìm hiểu các mẫu triển khai tận dụng tăng tốc ONNX Runtime, thực thi WebGPU, và trải nghiệm RAG lai. Bao gồm demo Chainlit RAG với mô hình cục bộ cùng với tùy chọn khám phá OpenWebUI. Bạn sẽ điều chỉnh một khởi đầu suy luận WebGPU và đánh giá khả năng của Phi so với GPT-OSS-20B cùng các đánh đổi về chi phí/hiệu suất.
 
 ## Mục tiêu học tập
 
-- **So sánh** SLM và LLM về độ trễ, bộ nhớ, và chất lượng
+- **So sánh** SLM và LLM về độ trễ, bộ nhớ, chất lượng
 - **Triển khai** mô hình với ONNXRuntime và (nếu được hỗ trợ) WebGPU
 - **Chạy** suy luận trên trình duyệt (demo tương tác bảo vệ quyền riêng tư)
 - **Tích hợp** một pipeline Chainlit RAG với backend SLM cục bộ
-- **Đánh giá** bằng các tiêu chí nhẹ về chất lượng và chi phí
+- **Đánh giá** bằng các phương pháp nhẹ về chất lượng + chi phí
 
 ## Yêu cầu trước
 
@@ -36,7 +36,7 @@ Windows vẫn là môi trường mục tiêu chính. Đối với các nhà phá
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-3. Sử dụng các bước thiết lập môi trường Python giống như các buổi trước.
+3. Sử dụng các bước môi trường ảo Python giống như các buổi trước.
 
 Cài đặt Chainlit (cả hai nền tảng):
 ```bash
@@ -67,15 +67,16 @@ Theo dõi: độ sâu phản hồi, độ chính xác thực tế, sự phong ph
 ```powershell
 foundry config set compute.onnx.enable_gpu true
 # Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 Quan sát sự thay đổi thông lượng sau khi kích hoạt GPU so với chỉ CPU.
 
 ### 3. Suy luận WebGPU trên trình duyệt (6 phút)
 
-Điều chỉnh dự án khởi đầu `04-webgpu-inference` (tạo `samples/04-cutting-edge/webgpu_demo.html`):
+Điều chỉnh khởi đầu `04-webgpu-inference` (tạo `samples/04-cutting-edge/webgpu_demo.html`):
 
 ```html
 <!DOCTYPE html>
@@ -118,9 +119,9 @@ Quan sát sự thay đổi thông lượng sau khi kích hoạt GPU so với ch�
 
 Mở tệp trong trình duyệt; quan sát vòng lặp cục bộ với độ trễ thấp.
 
-### 4. Ứng dụng chat Chainlit RAG (7 phút)
+### 4. Ứng dụng trò chuyện Chainlit RAG (7 phút)
 
-Tối giản `samples/04-cutting-edge/chainlit_app.py`:
+`samples/04-cutting-edge/chainlit_app.py` tối giản:
 
 ```python
 #!/usr/bin/env python3
@@ -169,7 +170,7 @@ Các sản phẩm cần giao:
 - Thêm biểu đồ độ trễ (phía client) cho các tùy chọn phi và gpt-oss-20b
 - Nhúng ngữ cảnh RAG trực tiếp (textarea cho tài liệu tham khảo)
 
-## Tiêu chí đánh giá
+## Phương pháp đánh giá
 
 | Danh mục | Phi-4-mini | GPT-OSS-20B | Quan sát |
 |----------|------------|-------------|-------------|
@@ -177,7 +178,7 @@ Các sản phẩm cần giao:
 | Bộ nhớ | Thấp | Cao | Khả năng trên thiết bị |
 | Tuân thủ ngữ cảnh | Tốt | Mạnh | Mô hình lớn hơn có thể chi tiết hơn |
 | Chi phí (cục bộ) | Tối thiểu | Cao hơn (tài nguyên) | Đánh đổi năng lượng/thời gian |
-| Trường hợp sử dụng tốt nhất | Ứng dụng trên thiết bị | Lý luận sâu | Có thể pipeline lai |
+| Trường hợp sử dụng tốt nhất | Ứng dụng tại chỗ | Lý luận sâu | Có thể pipeline lai |
 
 ## Xác thực môi trường
 
@@ -187,15 +188,16 @@ foundry model list
 
 # For runtime metrics use the Python benchmark script (Session 3) and OS tools (Task Manager / nvidia-smi) instead of 'model stats'
 # Example:
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini,gpt-oss-20b
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 ## Xử lý sự cố
 
 | Triệu chứng | Nguyên nhân | Hành động |
 |---------|-------|--------|
-| Fetch trang web thất bại | CORS hoặc dịch vụ ngừng hoạt động | Sử dụng `curl` để xác minh endpoint; kích hoạt proxy CORS nếu cần |
+| Trang web không tải được | CORS hoặc dịch vụ ngừng hoạt động | Sử dụng `curl` để xác minh endpoint; kích hoạt proxy CORS nếu cần |
 | Chainlit trống | Môi trường không hoạt động | Kích hoạt venv & cài đặt lại các phụ thuộc |
 | Độ trễ cao | Mô hình vừa được tải | Khởi động với chuỗi prompt nhỏ |
 
@@ -214,14 +216,14 @@ foundry model list
 
 | Tài liệu workshop | Kịch bản | Mục tiêu | Nguồn dữ liệu / prompt |
 |--------------------|----------|-----------|----------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Đội kiến trúc đánh giá SLM và LLM cho trình tạo tóm tắt báo cáo | Định lượng độ trễ + chênh lệch sử dụng token | Biến môi trường `COMPARE_PROMPT` duy nhất |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Đội kiến trúc đánh giá SLM và LLM cho trình tạo tóm tắt báo cáo | Định lượng độ trễ + sự khác biệt sử dụng token | Biến môi trường `COMPARE_PROMPT` duy nhất |
 | `chainlit_app.py` (demo RAG) | Nguyên mẫu trợ lý kiến thức nội bộ | Cung cấp câu trả lời ngắn với truy xuất từ ngữ tối thiểu | Danh sách `DOCS` trực tiếp trong tệp |
 | `webgpu_demo.html` | Xem trước suy luận trên trình duyệt thiết bị | Hiển thị vòng lặp cục bộ với độ trễ thấp + câu chuyện UX | Chỉ prompt người dùng trực tiếp |
 
 ### Câu chuyện kịch bản
-Tổ chức sản phẩm muốn một trình tạo tóm tắt báo cáo điều hành. Một SLM nhẹ (phi‑4‑mini) tạo bản nháp tóm tắt; một LLM lớn hơn (gpt‑oss‑20b) có thể chỉ tinh chỉnh các báo cáo ưu tiên cao. Các script buổi học ghi lại các số liệu thực nghiệm về độ trễ và token để biện minh cho thiết kế lai, trong khi demo Chainlit minh họa cách truy xuất có căn cứ giữ cho câu trả lời của mô hình nhỏ chính xác. Trang khái niệm WebGPU cung cấp con đường tầm nhìn cho xử lý hoàn toàn phía client khi tăng tốc trình duyệt trưởng thành.
+Tổ chức sản phẩm muốn một trình tạo tóm tắt báo cáo điều hành. Một SLM nhẹ (phi‑4‑mini) tạo bản nháp tóm tắt; một LLM lớn hơn (gpt‑oss‑20b) có thể chỉ tinh chỉnh các báo cáo ưu tiên cao. Các script buổi học ghi lại độ trễ thực nghiệm & số liệu token để biện minh cho thiết kế lai, trong khi demo Chainlit minh họa cách truy xuất có căn cứ giữ cho câu trả lời của mô hình nhỏ chính xác. Trang khái niệm WebGPU cung cấp lộ trình tầm nhìn cho xử lý hoàn toàn phía client khi tăng tốc trình duyệt trưởng thành.
 
-### Ngữ cảnh RAG tối thiểu (Chainlit)
+### Ngữ cảnh RAG tối giản (Chainlit)
 ```python
 DOCS = [
   "Foundry Local enables local model execution with OpenAI-compatible APIs.",
@@ -230,7 +232,7 @@ DOCS = [
 ]
 ```
 
-### Quy trình lai Nháp→Tinh chỉnh (Pseudo)
+### Quy trình lai Nháp→Tinh chỉnh (Giả lập)
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":prompt}], max_tokens=280)
 if len(draft) < 600:  # heuristic: escalate only for longer briefs or flagged topics
@@ -243,27 +245,27 @@ Theo dõi cả hai thành phần độ trễ để báo cáo chi phí trung bìn
 
 ### Các cải tiến tùy chọn
 
-| Trọng tâm | Cải tiến | Lý do | Gợi ý triển khai |
+| Trọng tâm | Cải tiến | Tại sao | Gợi ý triển khai |
 |-------|------------|-----|---------------------|
 | Số liệu so sánh | Theo dõi sử dụng token + độ trễ token đầu tiên | Góc nhìn hiệu suất toàn diện | Sử dụng script benchmark nâng cao (Buổi 3) với `BENCH_STREAM=1` |
 | Pipeline lai | Nháp SLM → Tinh chỉnh LLM | Giảm độ trễ & chi phí | Tạo với phi-4-mini, tinh chỉnh tóm tắt bằng gpt-oss-20b |
 | Giao diện streaming | UX tốt hơn trong Chainlit | Phản hồi từng phần | Sử dụng `stream=True` khi streaming cục bộ được kích hoạt; tích lũy các phần |
 | Bộ nhớ đệm WebGPU | Khởi tạo JS nhanh hơn | Giảm chi phí biên dịch lại | Bộ nhớ đệm các artifact shader đã biên dịch (khả năng runtime tương lai) |
-| Bộ QA xác định | So sánh mô hình công bằng | Loại bỏ biến động | Danh sách prompt cố định + `temperature=0` cho các lần chạy đánh giá |
-| Chấm điểm đầu ra | Lăng kính chất lượng có cấu trúc | Vượt qua các nhận xét chủ quan | Thang điểm đơn giản: mạch lạc / thực tế / ngắn gọn (1–5) |
+| Bộ QA xác định | So sánh mô hình công bằng | Loại bỏ biến đổi | Danh sách prompt cố định + `temperature=0` cho các lần chạy đánh giá |
+| Chấm điểm đầu ra | Lăng kính chất lượng có cấu trúc | Vượt qua các giai thoại | Thang điểm đơn giản: mạch lạc / thực tế / ngắn gọn (1–5) |
 | Ghi chú năng lượng / tài nguyên | Thảo luận trong lớp học | Hiển thị các đánh đổi | Sử dụng các công cụ giám sát hệ điều hành (`foundry system info`, Task Manager, `nvidia-smi`) + đầu ra script benchmark |
 | Mô phỏng chi phí | Biện minh trước đám mây | Lập kế hoạch mở rộng | Ánh xạ token tới giá giả định trên đám mây cho câu chuyện TCO |
-| Phân tích độ trễ | Xác định nút thắt cổ chai | Nhắm mục tiêu tối ưu hóa | Đo lường chuẩn bị prompt, gửi yêu cầu, token đầu tiên, hoàn thành toàn bộ |
+| Phân tích độ trễ | Xác định nút thắt cổ chai | Nhắm mục tiêu tối ưu hóa | Đo lường chuẩn bị prompt, gửi yêu cầu, token đầu tiên, hoàn thành đầy đủ |
 | RAG + LLM dự phòng | Lưới an toàn chất lượng | Cải thiện các truy vấn khó | Nếu độ dài câu trả lời SLM < ngưỡng hoặc độ tin cậy thấp → nâng cấp |
 
-#### Mẫu quy trình lai Nháp/Tinh chỉnh
+#### Mẫu Nháp/Tinh chỉnh Lai
 
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], max_tokens=300, temperature=0.4)
 refine, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Improve clarity but keep facts:\n{draft}"}], max_tokens=220, temperature=0.3)
 ```
 
-#### Phác thảo phân tích độ trễ
+#### Phác thảo Phân tích Độ trễ
 
 ```python
 import time
@@ -279,4 +281,4 @@ Sử dụng khung đo lường nhất quán trên các mô hình để so sánh 
 ---
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp của con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp của con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-11T11:49:44+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T23:57:31+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "et"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Ülevaade
 
-Töötoa näidised kasutavad konfiguratsiooniks keskkonnamuutujaid, mis on koondatud `.env` faili hoidla juurkausta. See võimaldab lihtsat kohandamist ilma koodi muutmata.
+Töötoa näidised kasutavad konfiguratsiooniks keskkonnamuutujaid, mis on koondatud `.env` faili hoidla juures. See võimaldab lihtsat kohandamist ilma koodi muutmata.
 
 ## Kiire alustamine
 
@@ -28,9 +28,9 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. Keskkonna seadistamine
+### 2. Seadista keskkond
 
-`.env` fail on juba seadistatud mõistlike vaikimisi väärtustega. Enamik kasutajaid ei pea midagi muutma.
+`.env` fail on juba seadistatud mõistlike vaikeseadetega. Enamik kasutajaid ei pea midagi muutma.
 
 **Valikuline**: Vaata üle ja kohanda seadeid:
 ```bash
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Python skriptide jaoks:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -58,11 +58,11 @@ python chat_bootstrap.py
 
 ### Põhikonfiguratsioon
 
-| Muutuja | Vaikimisi | Kirjeldus |
-|---------|-----------|-----------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Vaikimisi mudel näidiste jaoks |
+| Muutuja | Vaikeseade | Kirjeldus |
+|---------|------------|-----------|
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Näidiste vaikemudel |
 | `FOUNDRY_LOCAL_ENDPOINT` | (tühi) | Teenuse lõpp-punkti ülekirjutamine |
-| `PYTHONPATH` | Töötoa teed | Python moodulite otsingutee |
+| `PYTHONPATH` | Töötoa teed | Pythoni moodulite otsingutee |
 
 **Millal seadistada FOUNDRY_LOCAL_ENDPOINT:**
 - Kaug-Fondry Local instants
@@ -81,43 +81,43 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ### Sessioonipõhised muutujad
 
 #### Sessioon 02: RAG torujuhe
-| Muutuja | Vaikimisi | Eesmärk |
-|---------|-----------|---------|
+| Muutuja | Vaikeseade | Eesmärk |
+|---------|------------|---------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding mudel |
-| `RAG_QUESTION` | Eelseadistatud | Testküsimus |
+| `RAG_QUESTION` | Eelkonfigureeritud | Testküsimus |
 
 #### Sessioon 03: Võrdlusuuring
-| Muutuja | Vaikimisi | Eesmärk |
-|---------|-----------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Mudelid võrdluseks |
+| Muutuja | Vaikeseade | Eesmärk |
+|---------|------------|---------|
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Mudelid võrdlusuuringuks |
 | `BENCH_ROUNDS` | `3` | Iteratsioonid mudeli kohta |
-| `BENCH_PROMPT` | Eelseadistatud | Testi prompt |
-| `BENCH_STREAM` | `0` | Esimese tokeni latentsuse mõõtmine |
+| `BENCH_PROMPT` | Eelkonfigureeritud | Testkäsk |
+| `BENCH_STREAM` | `0` | Esimese märgi latentsuse mõõtmine |
 
 #### Sessioon 04: Mudelite võrdlus
-| Muutuja | Vaikimisi | Eesmärk |
-|---------|-----------|---------|
+| Muutuja | Vaikeseade | Eesmärk |
+|---------|------------|---------|
 | `SLM_ALIAS` | `phi-4-mini` | Väike keelemudel |
 | `LLM_ALIAS` | `qwen2.5-7b` | Suur keelemudel |
-| `COMPARE_PROMPT` | Eelseadistatud | Võrdluse prompt |
+| `COMPARE_PROMPT` | Eelkonfigureeritud | Võrdluskäsk |
 | `COMPARE_RETRIES` | `2` | Uuesti proovimise katsed |
 
 #### Sessioon 05: Multi-agent orkestreerimine
-| Muutuja | Vaikimisi | Eesmärk |
-|---------|-----------|---------|
+| Muutuja | Vaikeseade | Eesmärk |
+|---------|------------|---------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Teaduri agendi mudel |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Toimetaja agendi mudel |
-| `AGENT_QUESTION` | Eelseadistatud | Testküsimus |
+| `AGENT_QUESTION` | Eelkonfigureeritud | Testküsimus |
 
 ### Usaldusväärsuse konfiguratsioon
 
-| Muutuja | Vaikimisi | Eesmärk |
-|---------|-----------|---------|
-| `SHOW_USAGE` | `1` | Prindi tokenite kasutus |
+| Muutuja | Vaikeseade | Eesmärk |
+|---------|------------|---------|
+| `SHOW_USAGE` | `1` | Näita märgi kasutust |
 | `RETRY_ON_FAIL` | `1` | Luba uuesti proovimise loogika |
 | `RETRY_BACKOFF` | `1.0` | Uuesti proovimise viivitus (sekundites) |
 
-## Üldised seadistused
+## Üldised konfiguratsioonid
 
 ### Arenduskeskkond (kiire iteratsioon)
 ```bash
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Tootmiskeskkond (kvaliteedi fookus)
+### Tootmiskeskkond (kvaliteedile keskendumine)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,12 +140,12 @@ SHOW_USAGE=0
 
 ### Võrdlusuuringu seadistus
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### Multi-agent spetsialiseerumine
+### Multi-agendi spetsialiseerumine
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -159,24 +159,24 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ## Soovitatud mudelid
 
-### Kasutuseesmärgi järgi
+### Kasutuse järgi
 
 **Üldotstarbeline:**
 - `phi-4-mini` - Tasakaalustatud kvaliteet ja kiirus
 
 **Kiired vastused:**
-- `qwen2.5-0.5b` - Väga kiire, sobib klassifitseerimiseks
+- `qwen2.5-0.5b` - Väga kiire, hea klassifitseerimiseks
 - `phi-4-mini` - Kiire ja hea kvaliteediga
 
 **Kõrge kvaliteet:**
 - `qwen2.5-7b` - Parim kvaliteet, suurem ressursikasutus
-- `phi-4-mini` - Hea kvaliteet, madalam ressursikasutus
+- `phi-4-mini` - Hea kvaliteet, madalamad ressursid
 
 **Koodi genereerimine:**
 - `deepseek-coder-1.3b` - Spetsialiseerunud koodile
 - `phi-4-mini` - Üldotstarbeline koodikirjutamine
 
-### Ressursikasutuse järgi
+### Ressursside kättesaadavuse järgi
 
 **Väikesed ressursid (< 8GB RAM):**
 ```bash
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### Temperatuur ja proovivõtmine (ülekirjutamine koodis)
+### Temperatuur ja valik (ülekirjutamine koodis)
 
 ```python
 # In your scripts/notebooks
@@ -236,12 +236,12 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 ## Tõrkeotsing
 
-### Keskkonnamuutujad ei laetud
+### Keskkonnamuutujad ei laadi
 
 **Sümptomid:**
 - Skriptid kasutavad valesid mudeleid
 - Ühenduse vead
-- Muutujaid ei tunnistata
+- Muutujad ei ole tunnustatud
 
 **Lahendused:**
 ```bash
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **Sümptomid:**
 - "Mudel ei leitud" vead
-- "Alias ei tunnistatud"
+- "Alias ei ole tunnustatud"
 
 **Lahendused:**
 ```bash
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Sümptomid:**
 - "Moodulit ei leitud" vead
-- "Ei saa importida workshop_utils"
 
 **Lahendused:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Konfiguratsiooni testimine
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## Turvalisuse parimad praktikad
 
-### 1. Ära kunagi salvesta saladusi
+### 1. Ära kunagi salvesta salasõnu
 
 ```bash
 # .gitignore should include:
@@ -385,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Pööra API võtmeid regulaarselt
+### 3. Pööra API võtmeid
 
 ```bash
 # For Azure OpenAI or other cloud services
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tuleneda selle tõlke kasutamisest.

@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-08T12:18:24+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T23:44:31+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "uk"
 }
 -->
-# Зразки для майстер-класу - Швидка довідка
+# Зразки для воркшопу - Швидка довідкова картка
 
 **Останнє оновлення**: 8 жовтня 2025 року
 
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -35,12 +35,12 @@ python chat_bootstrap.py "What is edge AI?"
 | Сесія | Зразок | Призначення | Час |
 |-------|--------|-------------|------|
 | 01 | `chat_bootstrap.py` | Базовий чат + стрімінг | ~30с |
-| 02 | `rag_pipeline.py` | RAG з ембеддінгами | ~45с |
+| 02 | `rag_pipeline.py` | RAG з ембедингами | ~45с |
 | 02 | `rag_eval_ragas.py` | Оцінка RAG | ~60с |
 | 03 | `benchmark_oss_models.py` | Бенчмаркінг моделей | ~2хв |
-| 04 | `model_compare.py` | SLM проти LLM | ~45с |
-| 05 | `agents_orchestrator.py` | Система з кількома агентами | ~60с |
-| 06 | `models_router.py` | Розподіл намірів | ~45с |
+| 04 | `model_compare.py` | SLM vs LLM | ~45с |
+| 05 | `agents_orchestrator.py` | Система з багатьма агентами | ~60с |
+| 06 | `models_router.py` | Роутинг намірів | ~45с |
 | 06 | `models_pipeline.py` | Багатокроковий конвеєр | ~60с |
 
 ---
@@ -102,7 +102,7 @@ python scripts/test_samples.py --verbose
 
 ---
 
-## 🐛 Вирішення проблем
+## 🐛 Виправлення помилок
 
 ### Помилка з'єднання
 ```bash
@@ -197,10 +197,10 @@ for chunk in stream:
 | Модель | Розмір | Найкраще для | Швидкість |
 |--------|--------|--------------|-----------|
 | `qwen2.5-0.5b` | 0.5B | Швидка класифікація | ⚡⚡⚡ |
-| `qwen2.5-coder-0.5b` | 0.5B | Швидка генерація коду | ⚡⚡⚡ |
+| `qwen2.5-coder-0.5b` | 0.5B | Швидке генерування коду | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Креативне письмо | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Код, рефакторинг | ⚡⚡ |
-| `phi-4-mini` | 4B | Загальні завдання, резюме | ⚡⚡ |
+| `phi-4-mini` | 4B | Загальне, резюме | ⚡⚡ |
 | `qwen2.5-7b` | 7B | Складне мислення | ⚡ |
 
 ---
@@ -209,7 +209,7 @@ for chunk in stream:
 
 - **Документація SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Швидка довідка**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Огляд оновлень**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
+- **Оновлення**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
 - **Примітки щодо міграції**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
@@ -220,11 +220,11 @@ for chunk in stream:
 2. **Використовуйте менші моделі**: Починайте з `qwen2.5-0.5b` для тестування
 3. **Увімкніть статистику використання**: Встановіть `SHOW_USAGE=1`, щоб відстежувати токени
 4. **Пакетна обробка**: Обробляйте кілька запитів послідовно
-5. **Зменшіть max_tokens**: Зменшує затримку для швидких відповідей
+5. **Зменшіть max_tokens**: Знижує затримку для швидких відповідей
 
 ---
 
-## 🎯 Зразки робочих процесів
+## 🎯 Робочі процеси зразків
 
 ### Тестування всього
 ```bash
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Бенчмаркінг моделей
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG-конвеєр
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
-### Система з кількома агентами
+### Система з багатьма агентами
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Швидка допомога**: Запустіть будь-який зразок з `--help` або перегляньте docstring:
+**Швидка допомога**: Запустіть будь-який зразок з `--help` з каталогу `samples` або перегляньте docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---

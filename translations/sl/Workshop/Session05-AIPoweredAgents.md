@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-08T12:02:12+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T23:30:35+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "sl"
 }
 -->
-# Seja 5: Hitro ustvarjanje agentov z umetno inteligenco s Foundry Local
+# Seja 5: Hitro ustvarjanje agentov, ki jih poganja AI, z Foundry Local
 
 ## Povzetek
 
-Oblikujte in usklajujte večvlogovne AI agente z uporabo Foundry Local, ki omogoča nizko zakasnitev in ohranjanje zasebnosti. Določili boste vloge agentov, strategije pomnjenja, vzorce klicanja orodij in izvedbene grafe. Seja uvaja vzorce ogrodja, ki jih lahko razširite z Chainlit ali LangGraph. Začetni projekt razširi obstoječo arhitekturo agentov z dodajanjem trajnega pomnjenja in evalvacijskih kljukic.
+Oblikujte in usklajujte večvlogovne AI agente z uporabo Foundry Local, ki omogoča nizko zakasnitev in ohranjanje zasebnosti. Določili boste vloge agentov, strategije pomnjenja, vzorce klicanja orodij in grafe izvajanja. Seja uvaja vzorce ogrodja, ki jih lahko razširite z Chainlit ali LangGraph. Začetni projekt razširi obstoječi vzorec arhitekture agenta z dodajanjem trajnega pomnjenja in kljukic za ocenjevanje.
 
 ## Cilji učenja
 
 - **Določite vloge**: Sistemski pozivi in meje zmogljivosti
 - **Implementirajte pomnjenje**: Kratkoročno (pogovor), dolgoročno (vektor / datoteka), začasne beležke
-- **Postavite ogrodje delovnih tokov**: Zaporedni, razvejani in vzporedni koraki agentov
-- **Integrirajte orodja**: Vzorec lahkega klicanja funkcij orodij
+- **Zgradite delovne tokove**: Zaporedni, razvejani in vzporedni koraki agenta
+- **Integrirajte orodja**: Vzorec lahkega klicanja funkcijskega orodja
 - **Ocenite**: Osnovno sledenje + ocenjevanje rezultatov na podlagi rubrike
 
 ## Predpogoji
@@ -27,7 +27,7 @@ Oblikujte in usklajujte večvlogovne AI agente z uporabo Foundry Local, ki omogo
 - Python z `foundry-local-sdk`, `openai`, opcijsko `chainlit`
 - Lokalni modeli v teku (vsaj `phi-4-mini`)
 
-### Koda za okolje na več platformah
+### Snippet za okolje na več platformah
 
 Windows:
 ```powershell
@@ -45,13 +45,13 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Če izvajate agente iz macOS proti oddaljeni storitvi na Windows:
+Če izvajate agente iz macOS proti oddaljeni storitvi na Windows gostitelju:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Potek demonstracije (30 min)
+## Potek predstavitve (30 min)
 
 ### 1. Določite vloge agentov in pomnjenje (7 min)
 
@@ -150,7 +150,7 @@ TOOLS = {
 }
 ```
 
-Spremenite `agents_core.py`, da omogočite preprosto sintakso orodij: uporabnik napiše `#tool:get_time`, agent pa razširi izhod orodja v kontekst pred generiranjem.
+Spremenite `agents_core.py`, da omogočite preprosto sintakso orodja: uporabnik napiše `#tool:get_time`, agent pa razširi izhod orodja v kontekst pred generiranjem.
 
 ### 4. Usklajen delovni tok (6 min)
 
@@ -189,18 +189,18 @@ if __name__ == '__main__':
 
 Dodajte:
 1. Plast trajnega pomnjenja (npr. dodajanje pogovorov v JSON linije)
-2. Preprosto evalvacijsko rubriko: dejanskost / jasnost / slog
+2. Preprosto ocenjevalno rubriko: dejanskost / jasnost / slog
 3. Opcijski Chainlit vmesnik (dva zavihka: pogovor in sledi)
-4. Opcijski LangGraph slog strojnega stanja (če dodate odvisnost) za razvejalne odločitve
+4. Opcijski LangGraph slog strojnega stanja (če dodate odvisnost) za razvejene odločitve
 
-## Preveritveni seznam za validacijo
+## Kontrolni seznam za validacijo
 
 ```powershell
 foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Pričakujte strukturiran izhod iz cevovoda z opombo o vbrizganju orodij.
+Pričakujte strukturiran izhod cevovoda z opombo o vbrizganju orodja.
 
 ## Pregled strategij pomnjenja
 
@@ -211,7 +211,7 @@ Pričakujte strukturiran izhod iz cevovoda z opombo o vbrizganju orodij.
 | Semantično | Dolgoročni priklic | Vektorska shramba povzetkov |
 | Beležka | Koraki razmišljanja | Vgrajena veriga misli (zasebno) |
 
-## Evalvacijske kljukice (konceptualno)
+## Kljukice za ocenjevanje (konceptualno)
 
 ```python
 evaluation = {
@@ -227,9 +227,9 @@ evaluation = {
 ## Odpravljanje težav
 
 | Težava | Vzrok | Rešitev |
-|--------|-------|--------|
-| Ponavljajoči odgovori | Preveliko/premajhno okno konteksta | Prilagodite parameter okna pomnjenja |
-| Orodje ni klicano | Napačna sintaksa | Uporabite format `#tool:tool_name` |
+|--------|-------|---------|
+| Ponavljajoči se odgovori | Preveliko/premajhno okno konteksta | Prilagodite parameter okna pomnjenja |
+| Orodje ni bilo uporabljeno | Napačna sintaksa | Uporabite format `#tool:tool_name` |
 | Počasna usklajenost | Več hladnih modelov | Predhodno zaženite pozive za ogrevanje |
 
 ## Reference
@@ -243,28 +243,26 @@ evaluation = {
 **Trajanje seje**: 30 min  
 **Težavnost**: Napredno
 
-## Primer scenarija in povezava z delavnico
+## Vzorec scenarija in preslikava delavnice
 
 | Skripta delavnice | Scenarij | Cilj | Primer poziva |
 |-------------------|----------|------|---------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot za raziskovanje znanja, ki ustvarja povzetke prijazne za vodstvo | Cevovod z dvema agentoma (raziskovanje → uredniško poliranje) z opcijskimi ločenimi modeli | Pojasnite, zakaj je sklepanje na robu pomembno za skladnost. |
-| (Razširjeno) koncept `tools.py` | Dodajte orodja za čas in oceno žetonov | Prikažite vzorec lahkega klicanja orodij | #tool:get_time |
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot za raziskovanje znanja, ki ustvarja povzetke za vodstvo | Cevovod z dvema agentoma (raziskovanje → uredniško poliranje) z opcijskimi ločenimi modeli | Pojasnite, zakaj je sklepanje na robu pomembno za skladnost. |
+| (Razširjen) koncept `tools.py` | Dodajte orodja za čas in oceno žetonov | Prikaz vzorca lahkega klicanja orodij | #tool:get_time |
 
-### Narativ scenarija
-
-Ekipa za skladnost dokumentacije potrebuje hitre interne povzetke, pridobljene iz lokalnega znanja, brez pošiljanja osnutkov v oblačne storitve. Raziskovalni agent zbere jedrnate dejanske točke; uredniški agent jih preoblikuje za jasnost, primerno za vodstvo. Ločeni vzdevki modelov se lahko dodelijo za optimizacijo zakasnitve (hitri SLM) proti stilističnemu poliranju (večji model le, ko je potreben).
+### Pripoved scenarija
+Ekipa za dokumentacijo skladnosti potrebuje hitre interne povzetke, pridobljene iz lokalnega znanja, brez pošiljanja osnutkov v oblačne storitve. Raziskovalni agent zbere jedrnate dejanske točke; uredniški agent jih preoblikuje za jasnost, primerno za vodstvo. Ločeni vzdevki modelov se lahko dodelijo za optimizacijo zakasnitve (hiter SLM) proti stilističnemu poliranju (večji model le, kadar je potrebno).
 
 ### Primer okolja z več modeli
-
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
 ### Struktura sledi (opcijsko)
-
 ```json
 {
     "step": 1,
@@ -281,17 +279,17 @@ Vsak korak shranite v datoteko JSONL za kasnejše ocenjevanje z rubriko.
 ### Opcijske izboljšave
 
 | Tema | Izboljšava | Prednost | Osnutek implementacije |
-|------|-----------|----------|------------------------|
-| Vloge z več modeli | Ločeni modeli za vsakega agenta (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specializacija in hitrost | Izberite okoljske spremenljivke vzdevkov, kličite `chat_once` z vzdevkom za vsako vlogo |
-| Strukturirane sledi | JSON sled vsakega dejanja (orodje, vnos, zakasnitev, žetoni) | Debug in evalvacija | Dodajte slovar v seznam; na koncu zapišite `.jsonl` |
+|------|------------|----------|-------------------------|
+| Vloge z več modeli | Ločeni modeli za vsakega agenta (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specializacija in hitrost | Izberite vzdevke okolja, pokličite `chat_once` z vzdevkom za vsako vlogo |
+| Strukturirane sledi | JSON sled vsakega dejanja (orodje, vnos, zakasnitev, žetoni) | Odpravljanje napak in ocenjevanje | Dodajte slovar na seznam; na koncu zapišite `.jsonl` |
 | Trajno pomnjenje | Ponovno naložljiv kontekst dialoga | Kontinuiteta seje | Shranite `Agent.memory` v `sessions/<ts>.json` |
-| Register orodij | Dinamično odkrivanje orodij | Razširljivost | Vzdržujte slovar `TOOLS` in pregledujte imena/opise |
-| Ponovni poskusi in odlog | Robustne dolge verige | Zmanjšanje začasnih napak | Ovijte `act` z try/except + eksponentni odlog |
+| Register orodij | Dinamično odkrivanje orodij | Razširljivost | Vzdržujte slovar `TOOLS` in preverite imena/opise |
+| Ponovni poskus in odložitev | Zanesljive dolge verige | Zmanjšanje začasnih napak | Ovijte `act` z try/except + eksponentno odložitev |
 | Ocenjevanje z rubriko | Samodejne kvalitativne oznake | Sledenje izboljšavam | Sekundarni poziv modelu: "Oceni jasnost 1-5" |
-| Vektorski spomin | Semantični priklic | Bogat dolgoročni kontekst | Vdelajte povzetke, prikličite top-k v sistemsko sporočilo |
-| Pretakanje odgovorov | Hitrejši zaznani odziv | Izboljšanje uporabniške izkušnje | Uporabite pretakanje, ko je na voljo, in sproti izpisujte delne žetone |
-| Deterministični testi | Nadzor regresij | Stabilen CI | Zaženite z `temperature=0`, fiksnimi semeni pozivov |
-| Vzporedno razvejanje | Hitrejše raziskovanje | Prepustnost | Uporabite `concurrent.futures` za neodvisne korake agentov |
+| Vektorsko pomnjenje | Semantični priklic | Bogat dolgoročni kontekst | Vdelajte povzetke, prikličite top-k v sistemsko sporočilo |
+| Pretakanje odgovorov | Hitrejši zaznani odziv | Izboljšanje uporabniške izkušnje | Uporabite pretakanje, ko je na voljo, in sproti posredujte delne žetone |
+| Deterministični testi | Nadzor regresije | Stabilen CI | Zaženite z `temperature=0`, fiksnimi semeni pozivov |
+| Vzporedno razvejanje | Hitrejše raziskovanje | Prepustnost | Uporabite `concurrent.futures` za neodvisne korake agenta |
 
 #### Primer zapisa sledi
 
@@ -306,16 +304,16 @@ trace.append({
 ```
 
 
-#### Preprost evalvacijski poziv
+#### Preprost ocenjevalni poziv
 
 ```python
 score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-Shranjujte pare (`answer`, `rating`) za gradnjo zgodovinskega grafa kakovosti.
+Shranjujte pare (`answer`, `rating`) za izdelavo zgodovinskega grafa kakovosti.
 
 ---
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.

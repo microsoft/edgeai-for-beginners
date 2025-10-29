@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-08T15:27:44+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T23:07:56+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "sk"
 }
 -->
-# Workshop Samples - Zhrnutie aktualizácie Foundry Local SDK
+# Ukážky workshopu - Zhrnutie aktualizácie Foundry Local SDK
 
 ## Prehľad
 
-Všetky Python vzorky v adresári `Workshop/samples` boli aktualizované tak, aby dodržiavali najlepšie postupy Foundry Local SDK a zabezpečili konzistentnosť naprieč workshopom.
+Všetky ukážky v Pythone v adresári `Workshop/samples` boli aktualizované tak, aby dodržiavali najlepšie postupy Foundry Local SDK a zabezpečili konzistentnosť v rámci workshopu.
 
 **Dátum**: 8. október 2025  
-**Rozsah**: 9 Python súborov v rámci 6 workshopových sekcií  
+**Rozsah**: 9 súborov v Pythone v rámci 6 workshopových sekcií  
 **Hlavné zameranie**: Spracovanie chýb, dokumentácia, vzory SDK, používateľská skúsenosť
 
 ---
@@ -22,24 +22,24 @@ Všetky Python vzorky v adresári `Workshop/samples` boli aktualizované tak, ab
 ## Aktualizované súbory
 
 ### Sekcia 01: Začíname
-- ✅ `chat_bootstrap.py` - Základné príklady chatu a streamovania
+- ✅ `chat_bootstrap.py` - Základné ukážky chatu a streamovania
 
 ### Sekcia 02: RAG riešenia
 - ✅ `rag_pipeline.py` - Implementácia RAG s embeddingami
 - ✅ `rag_eval_ragas.py` - Hodnotenie RAG pomocou metrík RAGAS
 
 ### Sekcia 03: Open Source modely
-- ✅ `benchmark_oss_models.py` - Benchmarking viacerých modelov
+- ✅ `benchmark_oss_models.py` - Porovnanie viacerých modelov
 
 ### Sekcia 04: Najmodernejšie modely
-- ✅ `model_compare.py` - Porovnanie SLM vs LLM
+- ✅ `model_compare.py` - Porovnanie SLM a LLM
 
-### Sekcia 05: AI-poháňaní agenti
+### Sekcia 05: Agenti poháňaní AI
 - ✅ `agents_orchestrator.py` - Koordinácia viacerých agentov
 
 ### Sekcia 06: Modely ako nástroje
-- ✅ `models_router.py` - Routing modelov na základe zámeru
-- ✅ `models_pipeline.py` - Viackroková routovaná pipeline
+- ✅ `models_router.py` - Smerovanie modelov na základe zámeru
+- ✅ `models_pipeline.py` - Viackroková smerovaná pipeline
 
 ### Podporná infraštruktúra
 - ✅ `workshop_utils.py` - Už dodržiava najlepšie postupy (neboli potrebné žiadne zmeny)
@@ -66,7 +66,7 @@ except Exception as e:
 ```
 
 **Výhody:**
-- Elegantné spracovanie chýb s jasnými chybovými správami
+- Elegantné spracovanie chýb s jasnými chybovými hláseniami
 - Praktické rady na riešenie problémov
 - Správne výstupné kódy pre skriptovanie
 
@@ -93,12 +93,12 @@ except ImportError:
 
 ### 3. Komplexná dokumentácia
 
-**Pridané do všetkých vzoriek:**
+**Pridané do všetkých ukážok:**
 - Dokumentácia environmentálnych premenných v docstringoch
 - Odkazy na SDK dokumentáciu
 - Príklady použitia
 - Podrobná dokumentácia funkcií/parametrov
-- Typové náznaky pre lepšiu podporu IDE
+- Typové anotácie pre lepšiu podporu v IDE
 
 **Príklad:**
 ```python
@@ -116,7 +116,7 @@ def pipeline(task: str) -> Dict[str, Any]:
     """
 ```
 
-### 4. Vylepšená spätná väzba používateľa
+### 4. Vylepšená spätná väzba používateľovi
 
 **Pridané informatívne logovanie:**
 ```python
@@ -138,16 +138,16 @@ print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
 
-### 5. Robustné benchmarkovanie
+### 5. Robustné porovnávanie výkonu
 
 **Vylepšenia v sekcii 03:**
-- Spracovanie chýb pre každý model (pokračuje pri zlyhaní)
+- Spracovanie chýb pre každý model (pokračuje po zlyhaní)
 - Podrobné hlásenie pokroku
-- Správne vykonané zahrievacie kolá
+- Správne vykonanie zahrievacích kôl
 - Podpora merania latencie prvého tokenu
 - Jasné oddelenie fáz
 
-### 6. Konzistentné typové náznaky
+### 6. Konzistentné typové anotácie
 
 **Pridané všade:**
 ```python
@@ -158,16 +158,16 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ```
 
 **Výhody:**
-- Lepšia automatická dopĺňanie v IDE
-- Skorá detekcia chýb
+- Lepšie automatické dopĺňanie v IDE
+- Včasná detekcia chýb
 - Samodokumentujúci kód
 
-### 7. Vylepšený router modelov
+### 7. Vylepšené smerovanie modelov
 
 **Vylepšenia v sekcii 06:**
 - Komplexná dokumentácia detekcie zámerov
 - Vysvetlenie algoritmu výberu modelov
-- Podrobné logy routingu
+- Podrobné logy smerovania
 - Formátovanie testovacích výstupov
 - Obnova chýb pri hromadnom testovaní
 
@@ -196,94 +196,94 @@ foundry model run qwen2.5-0.5b
 pip install -r Workshop/requirements.txt
 ```
 
-### Testovanie každej vzorky
+### Testovanie každej ukážky
 
 #### Sekcia 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Sekcia 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Sekcia 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Sekcia 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Sekcia 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Sekcia 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
 
 ## Referencia environmentálnych premenných
 
-### Globálne (všetky vzorky)
+### Globálne (všetky ukážky)
 | Premenná | Popis | Predvolená hodnota |
 |----------|-------|--------------------|
-| `FOUNDRY_LOCAL_ALIAS` | Alias modelu na použitie | Líši sa podľa vzorky |
-| `FOUNDRY_LOCAL_ENDPOINT` | Prekrytie endpointu služby | Automaticky detekované |
+| `FOUNDRY_LOCAL_ALIAS` | Alias modelu na použitie | Líši sa podľa ukážky |
+| `FOUNDRY_LOCAL_ENDPOINT` | Prekrytie koncového bodu služby | Automaticky detekované |
 | `SHOW_USAGE` | Zobraziť využitie tokenov | `0` |
 | `RETRY_ON_FAIL` | Povoliť logiku opakovania | `1` |
 | `RETRY_BACKOFF` | Počiatočné oneskorenie opakovania | `1.0` |
 
-### Špecifické pre vzorky
+### Špecifické pre ukážky
 | Premenná | Používa sa v | Popis |
 |----------|-------------|-------|
 | `EMBED_MODEL` | Sekcia 02 | Názov embedding modelu |
 | `RAG_QUESTION` | Sekcia 02 | Testovacia otázka pre RAG |
-| `BENCH_MODELS` | Sekcia 03 | Modely na benchmarkovanie, oddelené čiarkou |
-| `BENCH_ROUNDS` | Sekcia 03 | Počet benchmarkovacích kôl |
-| `BENCH_PROMPT` | Sekcia 03 | Testovací prompt pre benchmarky |
+| `BENCH_MODELS` | Sekcia 03 | Modely na porovnanie, oddelené čiarkou |
+| `BENCH_ROUNDS` | Sekcia 03 | Počet kôl porovnania |
+| `BENCH_PROMPT` | Sekcia 03 | Testovací prompt pre porovnania |
 | `BENCH_STREAM` | Sekcia 03 | Meranie latencie prvého tokenu |
 | `SLM_ALIAS` | Sekcia 04 | Malý jazykový model |
 | `LLM_ALIAS` | Sekcia 04 | Veľký jazykový model |
 | `COMPARE_PROMPT` | Sekcia 04 | Testovací prompt na porovnanie |
 | `AGENT_MODEL_PRIMARY` | Sekcia 05 | Primárny model agenta |
-| `AGENT_MODEL_EDITOR` | Sekcia 05 | Model agenta editora |
+| `AGENT_MODEL_EDITOR` | Sekcia 05 | Model agenta editoru |
 | `AGENT_QUESTION` | Sekcia 05 | Testovacia otázka pre agentov |
 | `PIPELINE_TASK` | Sekcia 06 | Úloha pre pipeline |
 
@@ -295,9 +295,9 @@ python models_pipeline.py
 
 Existujúce skripty budú naďalej fungovať. Nové funkcie sú:
 - Voliteľné environmentálne premenné
-- Vylepšené chybové správy (neporušujú funkčnosť)
+- Vylepšené chybové hlásenia (neporušujú funkčnosť)
 - Dodatočné logovanie (možno potlačiť)
-- Lepšie typové náznaky (bez dopadu na runtime)
+- Lepšie typové anotácie (bez dopadu na runtime)
 
 ---
 
@@ -329,7 +329,7 @@ print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
 
-### 4. Typové náznaky
+### 4. Typové anotácie
 ```python
 from typing import Dict, List, Optional
 
@@ -408,27 +408,27 @@ set BENCH_ROUNDS=2
 
 ## Ďalšie kroky
 
-### 1. Otestujte všetky vzorky
-Prejdite kontrolný zoznam testovania vyššie a overte, že všetky vzorky fungujú správne.
+### 1. Otestovať všetky ukážky
+Prejdite kontrolný zoznam testovania vyššie, aby ste overili správnosť všetkých ukážok.
 
-### 2. Aktualizujte dokumentáciu
-- Aktualizujte markdown súbory sekcií s novými príkladmi
-- Pridajte sekciu riešenia problémov do hlavného README
-- Vytvorte rýchlu referenčnú príručku
+### 2. Aktualizovať dokumentáciu
+- Aktualizovať markdown súbory sekcií s novými príkladmi
+- Pridať sekciu riešenia problémov do hlavného README
+- Vytvoriť rýchlu referenčnú príručku
 
-### 3. Vytvorte integračné testy
+### 3. Vytvoriť integračné testy
 ```python
 # Workshop/tests/test_samples.py
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
 
-### 4. Pridajte výkonnostné benchmarky
-Sledujte zlepšenia výkonu z vylepšení spracovania chýb.
+### 4. Pridať porovnania výkonu
+Sledovať zlepšenia výkonu z vylepšeného spracovania chýb.
 
 ### 5. Spätná väzba od používateľov
-Zbierajte spätnú väzbu od účastníkov workshopu na:
-- Jasnosť chybových správ
+Získať spätnú väzbu od účastníkov workshopu na:
+- Jasnosť chybových hlásení
 - Kompletnosť dokumentácie
 - Jednoduchosť použitia
 
@@ -445,32 +445,32 @@ Zbierajte spätnú väzbu od účastníkov workshopu na:
 
 ## Údržba
 
-### Pridávanie nových vzoriek
-Pri vytváraní nových vzoriek dodržiavajte tieto vzory:
+### Pridávanie nových ukážok
+Pri vytváraní nových ukážok dodržiavajte tieto vzory:
 
 1. Používajte `workshop_utils` na správu klientov
 2. Pridajte komplexné spracovanie chýb
 3. Zahrňte podporu environmentálnych premenných
-4. Pridajte typové náznaky a docstringy
+4. Pridajte typové anotácie a docstringy
 5. Poskytnite informatívne logovanie
 6. Zahrňte príklady použitia v docstringu
 7. Odkazujte na dokumentáciu SDK
 
 ### Kontrola aktualizácií
-Pri kontrole aktualizácií vzoriek skontrolujte:
+Pri kontrole aktualizácií ukážok skontrolujte:
 - [ ] Spracovanie chýb pri všetkých I/O operáciách
-- [ ] Typové náznaky pri verejných funkciách
+- [ ] Typové anotácie pri verejných funkciách
 - [ ] Komplexné docstringy
 - [ ] Dokumentáciu environmentálnych premenných
-- [ ] Informatívnu spätnú väzbu používateľa
+- [ ] Informatívnu spätnú väzbu používateľovi
 - [ ] Odkazy na SDK dokumentáciu
 - [ ] Konzistentný štýl kódu
 
 ---
 
-**Zhrnutie**: Všetky Python vzorky workshopu teraz dodržiavajú najlepšie postupy Foundry Local SDK s vylepšeným spracovaním chýb, komplexnou dokumentáciou a zlepšenou používateľskou skúsenosťou. Žiadne zmeny, ktoré by narušili kompatibilitu - všetka existujúca funkcionalita je zachovaná a vylepšená.
+**Zhrnutie**: Všetky ukážky v Pythone pre workshop teraz dodržiavajú najlepšie postupy Foundry Local SDK s vylepšeným spracovaním chýb, komplexnou dokumentáciou a zlepšenou používateľskou skúsenosťou. Žiadne zmeny, ktoré by narušili kompatibilitu - všetka existujúca funkcionalita je zachovaná a vylepšená.
 
 ---
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, upozorňujeme, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T19:30:47+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:47:39+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "tl"
 }
@@ -11,10 +11,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Pangkalahatang-ideya
 
-Ang lahat ng mga halimbawa ng Python sa direktoryong `Workshop/samples` ay na-update upang sumunod sa mga pinakamahusay na kasanayan ng Foundry Local SDK at tiyakin ang pagkakapare-pareho sa buong workshop.
+Ang lahat ng Python na halimbawa sa direktoryo ng `Workshop/samples` ay na-update upang sumunod sa mga pinakamahusay na kasanayan ng Foundry Local SDK at tiyakin ang pagkakapare-pareho sa buong workshop.
 
 **Petsa**: Oktubre 8, 2025  
-**Saklaw**: 9 na Python files sa 6 na sesyon ng workshop  
+**Saklaw**: 9 na Python na file sa 6 na sesyon ng workshop  
 **Pangunahing Pokus**: Pag-aasikaso ng error, dokumentasyon, mga pattern ng SDK, karanasan ng gumagamit
 
 ---
@@ -28,17 +28,17 @@ Ang lahat ng mga halimbawa ng Python sa direktoryong `Workshop/samples` ay na-up
 - ✅ `rag_pipeline.py` - Implementasyon ng RAG gamit ang embeddings
 - ✅ `rag_eval_ragas.py` - Pagsusuri ng RAG gamit ang mga sukatan ng RAGAS
 
-### Sesyon 03: Mga Open Source na Modelo
-- ✅ `benchmark_oss_models.py` - Benchmarking ng maraming modelo
+### Sesyon 03: Mga Modelong Open Source
+- ✅ `benchmark_oss_models.py` - Pagsusuri ng maraming modelo
 
-### Sesyon 04: Mga Pinakabagong Modelo
+### Sesyon 04: Mga Modelong Makabago
 - ✅ `model_compare.py` - Paghahambing ng SLM at LLM
 
-### Sesyon 05: Mga AI-Powered Agents
-- ✅ `agents_orchestrator.py` - Koordinasyon ng maraming agent
+### Sesyon 05: Mga Ahenteng Pinapagana ng AI
+- ✅ `agents_orchestrator.py` - Koordinasyon ng maraming ahente
 
-### Sesyon 06: Mga Modelo bilang Mga Tool
-- ✅ `models_router.py` - Routing ng modelo batay sa layunin
+### Sesyon 06: Mga Modelo bilang Kasangkapan
+- ✅ `models_router.py` - Pag-ruta ng modelo batay sa layunin
 - ✅ `models_pipeline.py` - Multi-step na routed pipeline
 
 ### Suportang Imprastraktura
@@ -46,7 +46,7 @@ Ang lahat ng mga halimbawa ng Python sa direktoryong `Workshop/samples` ay na-up
 
 ---
 
-## Pangunahing Pagpapabuti
+## Mga Pangunahing Pagpapabuti
 
 ### 1. Pinahusay na Pag-aasikaso ng Error
 
@@ -67,8 +67,8 @@ except Exception as e:
 
 **Mga Benepisyo:**
 - Maayos na pag-aasikaso ng error na may malinaw na mensahe ng error
-- Mga actionable na pahiwatig para sa pag-troubleshoot
-- Tamang mga exit code para sa scripting
+- Mga actionable na hint para sa troubleshooting
+- Tamang exit codes para sa scripting
 
 ### 2. Mas Maayos na Pamamahala ng Import
 
@@ -87,9 +87,9 @@ except ImportError:
 ```
 
 **Mga Benepisyo:**
-- Malinaw na gabay kapag may nawawalang dependencies
+- Malinaw na gabay kapag nawawala ang mga dependency
 - Maiiwasan ang mga hindi malinaw na error sa import
-- Madaling sundan na mga tagubilin sa pag-install
+- Mga user-friendly na tagubilin sa pag-install
 
 ### 3. Komprehensibong Dokumentasyon
 
@@ -116,29 +116,29 @@ def pipeline(task: str) -> Dict[str, Any]:
     """
 ```
 
-### 4. Pinahusay na Feedback ng Gumagamit
+### 4. Pinahusay na Feedback ng User
 
-**Idinagdag na impormatibong logging:**
+**Idinagdag na impormasyong logging:**
 ```python
 print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
 print(f"[INFO] Loaded model: {alias} -> {model_id}")
 ```
 
-**Mga indicator ng progreso:**
+**Mga tagapagpahiwatig ng progreso:**
 ```python
 print(f"[INFO] Benchmarking {alias}...")
 print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
 print(f"[INFO] Completed {alias}\n")
 ```
 
-**Naka-istrukturang output:**
+**Structured output:**
 ```python
 print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
 
-### 5. Matibay na Benchmarking
+### 5. Mas Matibay na Benchmarking
 
 **Mga pagpapabuti sa Sesyon 03:**
 - Pag-aasikaso ng error sa bawat modelo (nagpapatuloy kahit may pagkabigo)
@@ -165,23 +165,23 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ### 7. Pinahusay na Model Router
 
 **Mga pagpapabuti sa Sesyon 06:**
-- Komprehensibong dokumentasyon ng intent detection
+- Komprehensibong dokumentasyon ng pagtuklas ng layunin
 - Paliwanag ng algorithm sa pagpili ng modelo
-- Detalyadong mga log ng routing
-- Format ng output ng pagsusuri
+- Detalyadong mga log ng pag-ruta
+- Format ng output ng pagsubok
 - Pag-recover ng error sa batch testing
 
 ### 8. Multi-Agent Orchestration
 
 **Mga pagpapabuti sa Sesyon 05:**
 - Pag-uulat ng progreso sa bawat yugto
-- Pag-aasikaso ng error sa bawat agent
+- Pag-aasikaso ng error sa bawat ahente
 - Malinaw na istruktura ng pipeline
 - Mas mahusay na dokumentasyon sa pamamahala ng memorya
 
 ---
 
-## Checklist sa Pagsusuri
+## Checklist sa Pagsubok
 
 ### Mga Kinakailangan
 ```bash
@@ -200,102 +200,102 @@ pip install -r Workshop/requirements.txt
 
 #### Sesyon 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Sesyon 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Sesyon 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Sesyon 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Sesyon 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Sesyon 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
 
-## Sanggunian sa Environment Variables
+## Reference ng Environment Variables
 
-### Pangkalahatan (Lahat ng Halimbawa)
-| Variable | Paglalarawan | Default |
+### Global (Lahat ng Halimbawa)
+| Variable | Deskripsyon | Default |
 |----------|-------------|---------|
-| `FOUNDRY_LOCAL_ALIAS` | Alias ng modelong gagamitin | Nag-iiba depende sa halimbawa |
-| `FOUNDRY_LOCAL_ENDPOINT` | Override sa service endpoint | Auto-detected |
+| `FOUNDRY_LOCAL_ALIAS` | Alias ng modelo na gagamitin | Nag-iiba depende sa halimbawa |
+| `FOUNDRY_LOCAL_ENDPOINT` | Override ng service endpoint | Auto-detected |
 | `SHOW_USAGE` | Ipakita ang paggamit ng token | `0` |
 | `RETRY_ON_FAIL` | Paganahin ang retry logic | `1` |
 | `RETRY_BACKOFF` | Paunang delay sa retry | `1.0` |
 
-### Tiyak sa Halimbawa
-| Variable | Ginagamit ng | Paglalarawan |
-|----------|--------------|--------------|
+### Partikular sa Halimbawa
+| Variable | Ginagamit ng | Deskripsyon |
+|----------|--------------|-------------|
 | `EMBED_MODEL` | Sesyon 02 | Pangalan ng embedding model |
-| `RAG_QUESTION` | Sesyon 02 | Tanong sa pagsusuri ng RAG |
-| `BENCH_MODELS` | Sesyon 03 | Mga modelong i-benchmark (comma-separated) |
-| `BENCH_ROUNDS` | Sesyon 03 | Bilang ng mga benchmark round |
-| `BENCH_PROMPT` | Sesyon 03 | Prompt para sa benchmark |
+| `RAG_QUESTION` | Sesyon 02 | Tanong sa pagsubok para sa RAG |
+| `BENCH_MODELS` | Sesyon 03 | Mga modelong isusuri, hiwalay ng comma |
+| `BENCH_ROUNDS` | Sesyon 03 | Bilang ng mga round ng pagsusuri |
+| `BENCH_PROMPT` | Sesyon 03 | Prompt sa pagsubok para sa pagsusuri |
 | `BENCH_STREAM` | Sesyon 03 | Sukatin ang latency ng unang token |
 | `SLM_ALIAS` | Sesyon 04 | Maliit na modelo ng wika |
 | `LLM_ALIAS` | Sesyon 04 | Malaking modelo ng wika |
-| `COMPARE_PROMPT` | Sesyon 04 | Prompt para sa pagsusuri |
-| `AGENT_MODEL_PRIMARY` | Sesyon 05 | Pangunahing modelo ng agent |
-| `AGENT_MODEL_EDITOR` | Sesyon 05 | Modelo ng editor ng agent |
-| `AGENT_QUESTION` | Sesyon 05 | Tanong para sa mga agent |
+| `COMPARE_PROMPT` | Sesyon 04 | Prompt sa pagsubok para sa paghahambing |
+| `AGENT_MODEL_PRIMARY` | Sesyon 05 | Pangunahing modelo ng ahente |
+| `AGENT_MODEL_EDITOR` | Sesyon 05 | Modelo ng ahente para sa editor |
+| `AGENT_QUESTION` | Sesyon 05 | Tanong sa pagsubok para sa mga ahente |
 | `PIPELINE_TASK` | Sesyon 06 | Gawain para sa pipeline |
 
 ---
 
-## Mga Pagbabagong Nagdudulot ng Pagkakaiba
+## Mga Pagbabagong Nakakaapekto
 
 **Wala** - Ang lahat ng pagbabago ay backward compatible.
 
-Ang mga umiiral na script ay magpapatuloy na gumana. Ang mga bagong tampok ay:
-- Opsyonal na mga environment variable
-- Pinahusay na mga mensahe ng error (hindi nakakaapekto sa functionality)
+Ang mga umiiral na script ay patuloy na gagana. Ang mga bagong tampok ay:
+- Opsyonal na environment variables
+- Pinahusay na mga mensahe ng error (hindi nakakasira sa functionality)
 - Karagdagang logging (maaaring i-suppress)
 - Mas mahusay na type hints (walang epekto sa runtime)
 
@@ -361,7 +361,7 @@ alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
 
-### 7. Maayos na Degradasyon
+### 7. Maayos na Pagbaba ng Functionality
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -375,16 +375,16 @@ for model in models:
 
 ---
 
-## Karaniwang Isyu at Solusyon
+## Mga Karaniwang Isyu at Solusyon
 
 ### Isyu: Mga Error sa Import
-**Solusyon:** I-install ang mga nawawalang dependencies
+**Solusyon:** I-install ang mga nawawalang dependency
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
 
 ### Isyu: Mga Error sa Koneksyon
-**Solusyon:** Tiyaking tumatakbo ang Foundry Local
+**Solusyon:** Siguraduhing tumatakbo ang Foundry Local
 ```bash
 foundry service status
 foundry model run phi-4-mini
@@ -398,7 +398,7 @@ foundry model download <alias>
 ```
 
 ### Isyu: Mabagal na Performance
-**Solusyon:** Gumamit ng mas maliliit na modelo o ayusin ang mga parameter
+**Solusyon:** Gumamit ng mas maliit na mga modelo o ayusin ang mga parameter
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 set BENCH_ROUNDS=2
@@ -409,46 +409,46 @@ set BENCH_ROUNDS=2
 ## Mga Susunod na Hakbang
 
 ### 1. Subukan ang Lahat ng Halimbawa
-Sundin ang checklist sa pagsusuri sa itaas upang tiyakin na gumagana nang maayos ang lahat ng halimbawa.
+Sundan ang checklist sa pagsubok sa itaas upang tiyakin na gumagana nang tama ang lahat ng halimbawa.
 
 ### 2. I-update ang Dokumentasyon
 - I-update ang mga markdown file ng sesyon gamit ang mga bagong halimbawa
 - Magdagdag ng seksyon ng troubleshooting sa pangunahing README
 - Gumawa ng quick reference guide
 
-### 3. Gumawa ng Mga Pagsusuri sa Integrasyon
+### 3. Gumawa ng Integration Tests
 ```python
 # Workshop/tests/test_samples.py
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
 
-### 4. Magdagdag ng Mga Benchmark ng Performance
-Subaybayan ang mga pagpapabuti sa performance mula sa mga pagpapahusay sa pag-aasikaso ng error.
+### 4. Magdagdag ng Performance Benchmarks
+Subaybayan ang mga pagpapabuti sa performance mula sa mga enhancement sa pag-aasikaso ng error.
 
-### 5. Feedback ng Gumagamit
+### 5. Feedback ng User
 Kolektahin ang feedback mula sa mga kalahok ng workshop tungkol sa:
 - Kalinawan ng mga mensahe ng error
-- Kabuuan ng dokumentasyon
+- Kumpletong dokumentasyon
 - Dali ng paggamit
 
 ---
 
-## Mga Mapagkukunan
+## Mga Resources
 
 - **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Quick Reference**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Mga Tala sa Migration**: `Workshop/SDK_MIGRATION_NOTES.md`
-- **Pangunahing Repositoryo**: https://github.com/microsoft/Foundry-Local
+- **Migration Notes**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Main Repository**: https://github.com/microsoft/Foundry-Local
 
 ---
 
 ## Pagpapanatili
 
-### Pagdaragdag ng Mga Bagong Halimbawa
-Sundin ang mga pattern na ito kapag gumagawa ng mga bagong halimbawa:
+### Pagdaragdag ng Bagong Halimbawa
+Sundin ang mga pattern na ito kapag gumagawa ng bagong halimbawa:
 
-1. Gamitin ang `workshop_utils` para sa pamamahala ng kliyente
+1. Gamitin ang `workshop_utils` para sa pamamahala ng client
 2. Magdagdag ng komprehensibong pag-aasikaso ng error
 3. Isama ang suporta sa environment variable
 4. Magdagdag ng type hints at docstrings
@@ -457,20 +457,20 @@ Sundin ang mga pattern na ito kapag gumagawa ng mga bagong halimbawa:
 7. Mag-link sa dokumentasyon ng SDK
 
 ### Pagsusuri ng Mga Update
-Kapag sinusuri ang mga update sa halimbawa, tiyakin ang:
+Kapag sinusuri ang mga update sa halimbawa, suriin ang:
 - [ ] Pag-aasikaso ng error sa lahat ng I/O operations
 - [ ] Type hints sa mga pampublikong function
 - [ ] Komprehensibong docstrings
 - [ ] Dokumentasyon ng environment variable
-- [ ] Impormatibong feedback ng gumagamit
+- [ ] Impormatibong feedback ng user
 - [ ] Mga link sa reference ng SDK
-- [ ] Pare-parehong estilo ng code
+- [ ] Pare-parehong istilo ng code
 
 ---
 
-**Buod**: Ang lahat ng mga halimbawa ng Python sa Workshop ay sumusunod na ngayon sa mga pinakamahusay na kasanayan ng Foundry Local SDK na may pinahusay na pag-aasikaso ng error, komprehensibong dokumentasyon, at pinahusay na karanasan ng gumagamit. Walang mga pagbabago na nagdudulot ng pagkakaiba - ang lahat ng umiiral na functionality ay napanatili at napabuti.
+**Buod**: Ang lahat ng Python na halimbawa sa Workshop ay sumusunod na sa mga pinakamahusay na kasanayan ng Foundry Local SDK na may pinahusay na pag-aasikaso ng error, komprehensibong dokumentasyon, at mas pinahusay na karanasan ng user. Walang mga pagbabago na nakakaapekto - ang lahat ng umiiral na functionality ay napanatili at pinahusay.
 
 ---
 
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, pakitandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na pinagmulan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.

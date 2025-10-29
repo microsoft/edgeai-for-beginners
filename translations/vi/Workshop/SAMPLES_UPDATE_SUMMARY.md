@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T16:58:51+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:35:06+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "vi"
 }
 -->
-# Mẫu Workshop - Tóm tắt cập nhật SDK Foundry Local
+# Mẫu Workshop - Tóm tắt cập nhật Foundry Local SDK
 
 ## Tổng quan
 
-Tất cả các mẫu Python trong thư mục `Workshop/samples` đã được cập nhật để tuân theo các thực hành tốt nhất của SDK Foundry Local và đảm bảo tính nhất quán trong toàn bộ workshop.
+Tất cả các mẫu Python trong thư mục `Workshop/samples` đã được cập nhật để tuân theo các thực hành tốt nhất của Foundry Local SDK và đảm bảo tính nhất quán trong workshop.
 
 **Ngày**: 8 tháng 10, 2025  
 **Phạm vi**: 9 tệp Python trong 6 buổi workshop  
@@ -87,14 +87,14 @@ except ImportError:
 ```
 
 **Lợi ích:**
-- Hướng dẫn rõ ràng khi thiếu dependencies
+- Hướng dẫn rõ ràng khi thiếu phụ thuộc
 - Ngăn chặn lỗi import khó hiểu
 - Hướng dẫn cài đặt thân thiện với người dùng
 
 ### 3. Tài liệu toàn diện
 
 **Đã thêm vào tất cả các mẫu:**
-- Tài liệu về biến môi trường trong docstrings
+- Tài liệu biến môi trường trong docstrings
 - Liên kết tham khảo SDK
 - Ví dụ sử dụng
 - Tài liệu chi tiết về hàm/tham số
@@ -125,7 +125,7 @@ print(f"[INFO] Endpoint: {manager.endpoint}")
 print(f"[INFO] Loaded model: {alias} -> {model_id}")
 ```
 
-**Chỉ báo tiến độ:**
+**Chỉ báo tiến trình:**
 ```python
 print(f"[INFO] Benchmarking {alias}...")
 print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
@@ -141,8 +141,8 @@ print(json.dumps(summary, indent=2))
 ### 5. Đánh giá mạnh mẽ
 
 **Cải tiến buổi 03:**
-- Xử lý lỗi theo từng mô hình (tiếp tục khi gặp lỗi)
-- Báo cáo tiến độ chi tiết
+- Xử lý lỗi từng mô hình (tiếp tục khi gặp lỗi)
+- Báo cáo tiến trình chi tiết
 - Thực hiện đúng các vòng khởi động
 - Hỗ trợ đo lường độ trễ token đầu tiên
 - Phân tách rõ ràng các giai đoạn
@@ -158,24 +158,24 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ```
 
 **Lợi ích:**
-- Tự động hoàn thành tốt hơn trong IDE
+- Tự động hoàn thành tốt hơn trên IDE
 - Phát hiện lỗi sớm
-- Mã tự tài liệu hóa
+- Mã dễ hiểu hơn
 
-### 7. Bộ định tuyến mô hình nâng cao
+### 7. Định tuyến mô hình nâng cao
 
 **Cải tiến buổi 06:**
 - Tài liệu chi tiết về phát hiện ý định
 - Giải thích thuật toán chọn mô hình
 - Logging định tuyến chi tiết
 - Định dạng đầu ra kiểm tra
-- Khôi phục lỗi trong kiểm tra theo lô
+- Khôi phục lỗi trong kiểm tra hàng loạt
 
 ### 8. Điều phối nhiều tác nhân
 
 **Cải tiến buổi 05:**
-- Báo cáo tiến độ theo từng giai đoạn
-- Xử lý lỗi theo từng tác nhân
+- Báo cáo tiến trình từng giai đoạn
+- Xử lý lỗi từng tác nhân
 - Cấu trúc pipeline rõ ràng
 - Tài liệu quản lý bộ nhớ tốt hơn
 
@@ -183,7 +183,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 
 ## Danh sách kiểm tra kiểm thử
 
-### Điều kiện tiên quyết
+### Yêu cầu trước
 ```bash
 # Ensure Foundry Local is running
 foundry service status
@@ -200,85 +200,85 @@ pip install -r Workshop/requirements.txt
 
 #### Buổi 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Buổi 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Buổi 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Buổi 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Buổi 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Buổi 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
 
 ## Tham chiếu biến môi trường
 
-### Toàn cục (Tất cả các mẫu)
+### Toàn cầu (Tất cả các mẫu)
 | Biến | Mô tả | Mặc định |
 |------|-------|----------|
-| `FOUNDRY_LOCAL_ALIAS` | Bí danh mô hình sử dụng | Thay đổi theo mẫu |
+| `FOUNDRY_LOCAL_ALIAS` | Alias mô hình sử dụng | Thay đổi theo mẫu |
 | `FOUNDRY_LOCAL_ENDPOINT` | Ghi đè endpoint dịch vụ | Tự động phát hiện |
 | `SHOW_USAGE` | Hiển thị sử dụng token | `0` |
 | `RETRY_ON_FAIL` | Bật logic thử lại | `1` |
 | `RETRY_BACKOFF` | Độ trễ thử lại ban đầu | `1.0` |
 
-### Cụ thể theo mẫu
+### Cụ thể cho từng mẫu
 | Biến | Sử dụng bởi | Mô tả |
 |------|-------------|-------|
 | `EMBED_MODEL` | Buổi 02 | Tên mô hình embedding |
 | `RAG_QUESTION` | Buổi 02 | Câu hỏi kiểm tra cho RAG |
-| `BENCH_MODELS` | Buổi 03 | Các mô hình đánh giá, phân tách bằng dấu phẩy |
+| `BENCH_MODELS` | Buổi 03 | Các mô hình để đánh giá, phân cách bằng dấu phẩy |
 | `BENCH_ROUNDS` | Buổi 03 | Số vòng đánh giá |
 | `BENCH_PROMPT` | Buổi 03 | Prompt kiểm tra cho đánh giá |
-| `BENCH_STREAM` | Buổi 03 | Đo độ trễ token đầu tiên |
+| `BENCH_STREAM` | Buổi 03 | Đo lường độ trễ token đầu tiên |
 | `SLM_ALIAS` | Buổi 04 | Mô hình ngôn ngữ nhỏ |
 | `LLM_ALIAS` | Buổi 04 | Mô hình ngôn ngữ lớn |
 | `COMPARE_PROMPT` | Buổi 04 | Prompt kiểm tra so sánh |
@@ -311,7 +311,7 @@ from workshop_utils import get_client, chat_once
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
 
-### 2. Mẫu xử lý lỗi phù hợp
+### 2. Mẫu xử lý lỗi đúng cách
 ```python
 try:
     # Initialize client
@@ -378,7 +378,7 @@ for model in models:
 ## Các vấn đề thường gặp & giải pháp
 
 ### Vấn đề: Lỗi import
-**Giải pháp:** Cài đặt các dependencies bị thiếu
+**Giải pháp:** Cài đặt các phụ thuộc thiếu
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
@@ -390,7 +390,7 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### Vấn đề: Không tìm thấy mô hình
+### Vấn đề: Mô hình không tìm thấy
 **Giải pháp:** Kiểm tra các mô hình có sẵn
 ```bash
 foundry model ls
@@ -424,12 +424,12 @@ def test_all_samples():
 ```
 
 ### 4. Thêm đánh giá hiệu suất
-Theo dõi các cải tiến hiệu suất từ việc nâng cao xử lý lỗi.
+Theo dõi các cải tiến hiệu suất từ các cải tiến xử lý lỗi.
 
-### 5. Phản hồi người dùng
+### 5. Phản hồi từ người dùng
 Thu thập phản hồi từ người tham gia workshop về:
 - Độ rõ ràng của thông báo lỗi
-- Độ đầy đủ của tài liệu
+- Đầy đủ của tài liệu
 - Dễ sử dụng
 
 ---
@@ -437,7 +437,7 @@ Thu thập phản hồi từ người tham gia workshop về:
 ## Tài nguyên
 
 - **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Tham khảo nhanh**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Hướng dẫn tham khảo nhanh**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **Ghi chú di chuyển**: `Workshop/SDK_MIGRATION_NOTES.md`
 - **Kho chính**: https://github.com/microsoft/Foundry-Local
 
@@ -457,7 +457,7 @@ Tuân theo các mẫu này khi tạo mẫu mới:
 7. Liên kết đến tài liệu SDK
 
 ### Xem xét cập nhật
-Khi xem xét các cập nhật mẫu, kiểm tra:
+Khi xem xét cập nhật mẫu, kiểm tra:
 - [ ] Xử lý lỗi trên tất cả các thao tác I/O
 - [ ] Gợi ý kiểu dữ liệu trên các hàm công khai
 - [ ] Docstrings toàn diện
@@ -468,9 +468,9 @@ Khi xem xét các cập nhật mẫu, kiểm tra:
 
 ---
 
-**Tóm tắt**: Tất cả các mẫu Python trong Workshop hiện tuân theo các thực hành tốt nhất của SDK Foundry Local với xử lý lỗi nâng cao, tài liệu toàn diện và trải nghiệm người dùng được cải thiện. Không có thay đổi phá vỡ - tất cả chức năng hiện tại được bảo toàn và nâng cao.
+**Tóm tắt**: Tất cả các mẫu Python trong Workshop hiện tuân theo các thực hành tốt nhất của Foundry Local SDK với xử lý lỗi nâng cao, tài liệu toàn diện và trải nghiệm người dùng được cải thiện. Không có thay đổi phá vỡ - tất cả chức năng hiện tại được bảo toàn và nâng cao.
 
 ---
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

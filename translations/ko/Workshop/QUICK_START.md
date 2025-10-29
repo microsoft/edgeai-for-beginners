@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T19:08:26+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T20:56:05+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "ko"
 }
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### 세션 01: 기본 채팅
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **환경 변수:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### 세션 02: RAG 파이프라인
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **환경 변수:**  
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### 세션 02: RAG 평가 (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **참고**: `requirements.txt`를 통해 추가 종속성을 설치해야 합니다.
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### 세션 03: 벤치마킹
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **환경 변수:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### 세션 04: 모델 비교
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **환경 변수:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### 세션 05: 다중 에이전트 오케스트레이션
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **환경 변수:**  
@@ -130,16 +131,16 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### 세션 06: 모델 라우터
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**라우팅 로직 테스트**: 여러 의도 (코드, 요약, 분류)와 함께
+**라우팅 로직 테스트**: 여러 의도 (코드, 요약, 분류)
 
 ### 세션 06: 파이프라인
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **복잡한 다단계 파이프라인**: 계획, 실행, 수정 포함
@@ -159,7 +160,7 @@ python export_benchmark_markdown.py \
 
 **출력**: Markdown 테이블 + JSON 메트릭
 
-### Markdown CLI 패턴 린트
+### Markdown CLI 패턴 검사
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -240,12 +241,12 @@ foundry model run phi-4-mini
 |------|--------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | 임베딩 모델 |
 | `RAG_QUESTION` | 샘플 참조 | RAG 테스트 질문 |
-| `BENCH_MODELS` | 다양함 | 쉼표로 구분된 모델 목록 |
+| `BENCH_MODELS` | 다양함 | 쉼표로 구분된 모델 |
 | `BENCH_ROUNDS` | `3` | 벤치마크 반복 횟수 |
 | `BENCH_PROMPT` | 샘플 참조 | 벤치마크 프롬프트 |
 | `BENCH_STREAM` | `0` | 첫 번째 토큰 지연 시간 측정 |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | 주요 에이전트 모델 |
-| `AGENT_MODEL_EDITOR` | 주요 모델 | 에디터 에이전트 모델 |
+| `AGENT_MODEL_EDITOR` | 주요 | 편집기 에이전트 모델 |
 | `SLM_ALIAS` | `phi-4-mini` | 소형 언어 모델 |
 | `LLM_ALIAS` | `qwen2.5-7b` | 대형 언어 모델 |
 | `COMPARE_PROMPT` | 샘플 참조 | 비교 프롬프트 |
@@ -258,36 +259,36 @@ foundry model run phi-4-mini
 - **gemma-2-2b** - 양호한 품질, 적당한 속도
 
 ### 프로덕션 시나리오
-- **phi-4-mini** - 범용
+- **phi-4-mini** - 일반 목적
 - **deepseek-coder-1.3b** - 코드 생성
-- **qwen2.5-7b** - 높은 품질의 응답
+- **qwen2.5-7b** - 고품질 응답
 
 ## SDK 문서
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
 
 ## 도움 받기
 
 1. 서비스 상태 확인: `foundry service status`  
 2. 로그 보기: Foundry Local 서비스 로그 확인  
 3. SDK 문서 확인: https://github.com/microsoft/Foundry-Local  
-4. 샘플 코드 검토: 모든 샘플에 자세한 docstring 포함
+4. 샘플 코드 검토: 모든 샘플에 자세한 docstring 포함  
 
 ## 다음 단계
 
 1. 모든 워크숍 세션을 순서대로 완료하세요.  
 2. 다양한 모델을 실험해 보세요.  
-3. 샘플을 수정하여 자신의 사용 사례에 맞게 조정하세요.  
-4. 고급 패턴을 위해 `SDK_MIGRATION_NOTES.md`를 검토하세요.
+3. 샘플을 수정하여 사용 사례에 맞게 조정하세요.  
+4. 고급 패턴을 위해 `SDK_MIGRATION_NOTES.md`를 검토하세요.  
 
 ---
 
 **최종 업데이트**: 2025-01-08  
 **워크숍 버전**: 최신  
-**SDK**: Foundry Local Python SDK
+**SDK**: Foundry Local Python SDK  
 
 ---
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 내용이 포함될 수 있습니다. 원본 문서의 원어 버전이 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서를 해당 언어로 작성된 권위 있는 자료로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.

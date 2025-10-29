@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-08T19:26:50+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T20:03:45+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "fr"
 }
@@ -26,20 +26,20 @@ Tous les exemples Python dans le répertoire `Workshop/samples` ont été mis à
 
 ### Session 02 : Solutions RAG
 - ✅ `rag_pipeline.py` - Implémentation RAG avec embeddings
-- ✅ `rag_eval_ragas.py` - Évaluation RAG avec les métriques RAGAS
+- ✅ `rag_eval_ragas.py` - Évaluation RAG avec des métriques RAGAS
 
-### Session 03 : Modèles open source
-- ✅ `benchmark_oss_models.py` - Benchmarking multi-modèles
+### Session 03 : Modèles Open Source
+- ✅ `benchmark_oss_models.py` - Comparaison multi-modèles
 
 ### Session 04 : Modèles de pointe
-- ✅ `model_compare.py` - Comparaison SLM vs LLM
+- ✅ `model_compare.py` - Comparaison entre SLM et LLM
 
 ### Session 05 : Agents alimentés par l'IA
 - ✅ `agents_orchestrator.py` - Coordination multi-agents
 
 ### Session 06 : Modèles comme outils
 - ✅ `models_router.py` - Routage basé sur l'intention
-- ✅ `models_pipeline.py` - Pipeline multi-étapes routé
+- ✅ `models_pipeline.py` - Pipeline à étapes multiples avec routage
 
 ### Infrastructure de support
 - ✅ `workshop_utils.py` - Déjà conforme aux meilleures pratiques (aucun changement nécessaire)
@@ -67,7 +67,7 @@ except Exception as e:
 
 **Avantages :**
 - Gestion des erreurs fluide avec des messages clairs
-- Indications de dépannage exploitables
+- Conseils pratiques pour le dépannage
 - Codes de sortie appropriés pour les scripts
 
 ### 2. Meilleure gestion des imports
@@ -87,13 +87,13 @@ except ImportError:
 ```
 
 **Avantages :**
-- Instructions claires lorsque des dépendances manquent
+- Indications claires en cas de dépendances manquantes
 - Évite les erreurs d'importation cryptiques
 - Instructions d'installation conviviales
 
 ### 3. Documentation complète
 
-**Ajoutée à tous les exemples :**
+**Ajouté à tous les exemples :**
 - Documentation des variables d'environnement dans les docstrings
 - Liens de référence SDK
 - Exemples d'utilisation
@@ -116,7 +116,7 @@ def pipeline(task: str) -> Dict[str, Any]:
     """
 ```
 
-### 4. Meilleur retour utilisateur
+### 4. Retour utilisateur amélioré
 
 **Ajout de journaux informatifs :**
 ```python
@@ -143,7 +143,7 @@ print(json.dumps(summary, indent=2))
 **Améliorations de la session 03 :**
 - Gestion des erreurs par modèle (continue en cas d'échec)
 - Rapport de progression détaillé
-- Exécution correcte des tours de préchauffage
+- Tours de préchauffage correctement exécutés
 - Prise en charge de la mesure de latence du premier jeton
 - Séparation claire des étapes
 
@@ -158,18 +158,18 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ```
 
 **Avantages :**
-- Meilleure autocomplétion IDE
+- Autocomplétion améliorée dans l'IDE
 - Détection précoce des erreurs
 - Code auto-documenté
 
-### 7. Routeur de modèles amélioré
+### 7. Routage de modèles amélioré
 
 **Améliorations de la session 06 :**
 - Documentation complète de la détection d'intention
 - Explication de l'algorithme de sélection de modèles
 - Journaux détaillés de routage
-- Formatage des résultats de test
-- Récupération des erreurs dans les tests par lot
+- Formatage des résultats des tests
+- Récupération des erreurs lors des tests par lots
 
 ### 8. Orchestration multi-agents
 
@@ -181,7 +181,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 
 ---
 
-## Liste de contrôle des tests
+## Liste de vérification des tests
 
 ### Prérequis
 ```bash
@@ -200,61 +200,61 @@ pip install -r Workshop/requirements.txt
 
 #### Session 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Session 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Session 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Session 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Session 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Session 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
@@ -265,22 +265,22 @@ python models_pipeline.py
 | Variable | Description | Valeur par défaut |
 |----------|-------------|-------------------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias du modèle à utiliser | Variable selon l'exemple |
-| `FOUNDRY_LOCAL_ENDPOINT` | Remplacer le point de service | Détecté automatiquement |
+| `FOUNDRY_LOCAL_ENDPOINT` | Remplacement du point de service | Détecté automatiquement |
 | `SHOW_USAGE` | Afficher l'utilisation des jetons | `0` |
-| `RETRY_ON_FAIL` | Activer la logique de reprise | `1` |
-| `RETRY_BACKOFF` | Délai initial de reprise | `1.0` |
+| `RETRY_ON_FAIL` | Activer la logique de réessai | `1` |
+| `RETRY_BACKOFF` | Délai initial de réessai | `1.0` |
 
 ### Spécifiques aux exemples
 | Variable | Utilisée par | Description |
-|----------|-------------|-------------|
+|----------|--------------|-------------|
 | `EMBED_MODEL` | Session 02 | Nom du modèle d'embedding |
 | `RAG_QUESTION` | Session 02 | Question de test pour RAG |
-| `BENCH_MODELS` | Session 03 | Modèles à tester, séparés par des virgules |
+| `BENCH_MODELS` | Session 03 | Modèles à comparer, séparés par des virgules |
 | `BENCH_ROUNDS` | Session 03 | Nombre de tours de benchmark |
 | `BENCH_PROMPT` | Session 03 | Prompt de test pour les benchmarks |
 | `BENCH_STREAM` | Session 03 | Mesurer la latence du premier jeton |
-| `SLM_ALIAS` | Session 04 | Modèle de petite taille |
-| `LLM_ALIAS` | Session 04 | Modèle de grande taille |
+| `SLM_ALIAS` | Session 04 | Modèle de langage léger |
+| `LLM_ALIAS` | Session 04 | Modèle de langage large |
 | `COMPARE_PROMPT` | Session 04 | Prompt de test pour la comparaison |
 | `AGENT_MODEL_PRIMARY` | Session 05 | Modèle d'agent principal |
 | `AGENT_MODEL_EDITOR` | Session 05 | Modèle d'agent éditeur |
@@ -293,7 +293,7 @@ python models_pipeline.py
 
 **Aucun** - Tous les changements sont rétrocompatibles.
 
-Les scripts existants continueront de fonctionner. Les nouvelles fonctionnalités sont :
+Les scripts existants continueront de fonctionner. Les nouvelles fonctionnalités incluent :
 - Variables d'environnement optionnelles
 - Messages d'erreur améliorés (ne cassent pas la fonctionnalité)
 - Journaux supplémentaires (peuvent être supprimés)
@@ -398,7 +398,7 @@ foundry model download <alias>
 ```
 
 ### Problème : Performances lentes
-**Solution :** Utiliser des modèles plus petits ou ajuster les paramètres  
+**Solution :** Utiliser des modèles plus légers ou ajuster les paramètres  
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 set BENCH_ROUNDS=2
@@ -409,11 +409,11 @@ set BENCH_ROUNDS=2
 ## Prochaines étapes
 
 ### 1. Tester tous les exemples
-Suivre la liste de contrôle des tests ci-dessus pour vérifier que tous les exemples fonctionnent correctement.
+Suivre la liste de vérification des tests ci-dessus pour vérifier que tous les exemples fonctionnent correctement.
 
 ### 2. Mettre à jour la documentation
 - Mettre à jour les fichiers markdown des sessions avec les nouveaux exemples
-- Ajouter une section de dépannage au README principal
+- Ajouter une section de dépannage au fichier README principal
 - Créer un guide de référence rapide
 
 ### 3. Créer des tests d'intégration
@@ -424,10 +424,10 @@ def test_all_samples():
 ```
 
 ### 4. Ajouter des benchmarks de performance
-Suivre les améliorations de performance liées aux améliorations de gestion des erreurs.
+Suivre les améliorations de performance résultant des améliorations de gestion des erreurs.
 
-### 5. Retour utilisateur
-Collecter les retours des participants à l'atelier sur :
+### 5. Retour des utilisateurs
+Recueillir les retours des participants à l'atelier sur :
 - Clarté des messages d'erreur
 - Exhaustivité de la documentation
 - Facilité d'utilisation
@@ -446,7 +446,7 @@ Collecter les retours des participants à l'atelier sur :
 ## Maintenance
 
 ### Ajout de nouveaux exemples
-Suivre ces modèles lors de la création de nouveaux exemples :
+Suivez ces modèles lors de la création de nouveaux exemples :
 
 1. Utiliser `workshop_utils` pour la gestion des clients
 2. Ajouter une gestion complète des erreurs
@@ -473,4 +473,4 @@ Lors de la révision des mises à jour des exemples, vérifier :
 ---
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.

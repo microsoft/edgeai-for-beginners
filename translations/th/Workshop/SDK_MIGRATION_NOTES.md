@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T13:12:52+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:02:40+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "th"
 }
 -->
-# หมายเหตุการย้าย SDK Local Foundry
+# หมายเหตุการย้าย SDK Local ของ Foundry
 
 ## ภาพรวม
 
@@ -15,14 +15,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## สรุปการเปลี่ยนแปลง
 
-### โครงสร้างหลัก (`workshop_utils.py`)
+### โครงสร้างพื้นฐานหลัก (`workshop_utils.py`)
 
-#### คุณสมบัติที่ปรับปรุง:
-- **รองรับการกำหนดค่า Endpoint**: เพิ่มการรองรับตัวแปรสภาพแวดล้อม `FOUNDRY_LOCAL_ENDPOINT`
-- **การจัดการข้อผิดพลาดที่ดีขึ้น**: ปรับปรุงการจัดการข้อยกเว้นพร้อมข้อความแสดงข้อผิดพลาดที่ละเอียดขึ้น
-- **การแคชที่ดีขึ้น**: คีย์แคชตอนนี้รวม Endpoint เพื่อรองรับสถานการณ์หลาย Endpoint
-- **การหน่วงเวลาแบบ Exponential Backoff**: ตรรกะการลองใหม่ใช้ Exponential Backoff เพื่อเพิ่มความน่าเชื่อถือ
-- **การใส่คำอธิบายประเภท**: เพิ่มคำอธิบายประเภทที่ครอบคลุมเพื่อรองรับ IDE ได้ดีขึ้น
+#### ฟีเจอร์ที่ปรับปรุง:
+- **รองรับการแทนที่ Endpoint**: เพิ่มการรองรับตัวแปรสภาพแวดล้อม `FOUNDRY_LOCAL_ENDPOINT`
+- **การจัดการข้อผิดพลาดที่ดีขึ้น**: ปรับปรุงการจัดการข้อยกเว้นพร้อมข้อความข้อผิดพลาดที่ละเอียดขึ้น
+- **การแคชที่ปรับปรุง**: คีย์แคชตอนนี้รวม Endpoint สำหรับสถานการณ์ที่มีหลาย Endpoint
+- **Exponential Backoff**: ลอจิกการลองใหม่ใช้ Exponential Backoff เพื่อความน่าเชื่อถือที่ดีขึ้น
+- **Type Annotations**: เพิ่มคำแนะนำประเภทที่ครอบคลุมเพื่อการสนับสนุน IDE ที่ดีขึ้น
 
 #### ความสามารถใหม่:
 ```python
@@ -35,52 +35,52 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### ตัวอย่างแอปพลิเคชัน
 
-#### เซสชัน 01: การเริ่มต้นแชท (`chat_bootstrap.py`)
+#### Session 01: Chat Bootstrap (`chat_bootstrap.py`)
 - อัปเดตรุ่นเริ่มต้นจาก `phi-3.5-mini` เป็น `phi-4-mini`
-- เพิ่มการรองรับการกำหนดค่า Endpoint
+- เพิ่มการรองรับการแทนที่ Endpoint
 - ปรับปรุงเอกสารด้วยการอ้างอิง SDK
 
-#### เซสชัน 02: RAG Pipeline (`rag_pipeline.py`)
+#### Session 02: RAG Pipeline (`rag_pipeline.py`)
 - อัปเดตให้ใช้ `phi-4-mini` เป็นค่าเริ่มต้น
-- เพิ่มการรองรับการกำหนดค่า Endpoint
+- เพิ่มการรองรับการแทนที่ Endpoint
 - ปรับปรุงเอกสารด้วยรายละเอียดตัวแปรสภาพแวดล้อม
 
-#### เซสชัน 02: การประเมิน RAG (`rag_eval_ragas.py`)
+#### Session 02: RAG Evaluation (`rag_eval_ragas.py`)
 - อัปเดตรุ่นเริ่มต้น
-- เพิ่มการกำหนดค่า Endpoint
+- เพิ่มการตั้งค่า Endpoint
 - ปรับปรุงการจัดการข้อผิดพลาด
 
-#### เซสชัน 03: การวัดประสิทธิภาพ (`benchmark_oss_models.py`)
+#### Session 03: Benchmarking (`benchmark_oss_models.py`)
 - อัปเดตรายการรุ่นเริ่มต้นเพื่อรวม `phi-4-mini`
 - เพิ่มเอกสารตัวแปรสภาพแวดล้อมที่ครอบคลุม
 - ปรับปรุงเอกสารฟังก์ชัน
-- เพิ่มการรองรับการกำหนดค่า Endpoint ทั่วทั้งไฟล์
+- เพิ่มการรองรับการแทนที่ Endpoint ทั่วทั้งระบบ
 
-#### เซสชัน 04: การเปรียบเทียบรุ่น (`model_compare.py`)
-- อัปเดตรุ่น LLM เริ่มต้นจาก `gpt-oss-20b` เป็น `qwen2.5-7b`
-- เพิ่มการกำหนดค่า Endpoint
+#### Session 04: Model Comparison (`model_compare.py`)
+- อัปเดต LLM เริ่มต้นจาก `gpt-oss-20b` เป็น `qwen2.5-7b`
+- เพิ่มการตั้งค่า Endpoint
 - ปรับปรุงเอกสาร
 
-#### เซสชัน 05: การจัดการหลายตัวแทน (`agents_orchestrator.py`)
-- เพิ่มคำอธิบายประเภท (เปลี่ยน `str | None` เป็น `Optional[str]`)
+#### Session 05: Multi-Agent Orchestration (`agents_orchestrator.py`)
+- เพิ่ม Type Hints (เปลี่ยน `str | None` เป็น `Optional[str]`)
 - ปรับปรุงเอกสารคลาส Agent
-- เพิ่มการรองรับการกำหนดค่า Endpoint
-- ปรับปรุงรูปแบบการเริ่มต้นใช้งาน
+- เพิ่มการรองรับการแทนที่ Endpoint
+- ปรับปรุงรูปแบบการเริ่มต้น
 
-#### เซสชัน 06: ตัวจัดการรุ่น (`models_router.py`)
-- เพิ่มการกำหนดค่า Endpoint
-- ปรับปรุงเอกสารการตรวจจับเจตนา
-- ปรับปรุงเอกสารตรรกะการจัดเส้นทาง
+#### Session 06: Model Router (`models_router.py`)
+- เพิ่มการตั้งค่า Endpoint
+- ปรับปรุงเอกสารการตรวจจับ Intent
+- ปรับปรุงเอกสารลอจิกการกำหนดเส้นทาง
 
-#### เซสชัน 06: Pipeline (`models_pipeline.py`)
+#### Session 06: Pipeline (`models_pipeline.py`)
 - เพิ่มเอกสารฟังก์ชันที่ครอบคลุม
 - ปรับปรุงเอกสารทีละขั้นตอน
 - ปรับปรุงการจัดการข้อผิดพลาด
 
 ### สคริปต์
 
-#### การส่งออกการวัดประสิทธิภาพ (`export_benchmark_markdown.py`)
-- เพิ่มการรองรับการกำหนดค่า Endpoint
+#### Benchmark Export (`export_benchmark_markdown.py`)
+- เพิ่มการรองรับการแทนที่ Endpoint
 - อัปเดตรุ่นเริ่มต้น
 - ปรับปรุงเอกสารฟังก์ชัน
 - ปรับปรุงการจัดการข้อผิดพลาด
@@ -91,38 +91,38 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### การทดสอบ
 
-#### การทดสอบเบื้องต้น (`smoke.py`)
-- เพิ่มการรองรับการกำหนดค่า Endpoint
+#### Smoke Tests (`smoke.py`)
+- เพิ่มการรองรับการแทนที่ Endpoint
 - ปรับปรุงเอกสาร
 - ปรับปรุงเอกสารกรณีทดสอบ
-- รายงานข้อผิดพลาดได้ดีขึ้น
+- รายงานข้อผิดพลาดที่ดีขึ้น
 
 ## ตัวแปรสภาพแวดล้อม
 
 ตัวอย่างทั้งหมดตอนนี้รองรับตัวแปรสภาพแวดล้อมเหล่านี้:
 
-### การกำหนดค่าหลัก
-- `FOUNDRY_LOCAL_ALIAS` - ชื่อเรียกรุ่นที่จะใช้ (ค่าเริ่มต้นแตกต่างกันไปตามตัวอย่าง)
-- `FOUNDRY_LOCAL_ENDPOINT` - กำหนดค่า Endpoint ของบริการ (ไม่บังคับ)
-- `SHOW_USAGE` - แสดงสถิติการใช้โทเค็น (ค่าเริ่มต้น: "0")
-- `RETRY_ON_FAIL` - เปิดใช้งานตรรกะการลองใหม่ (ค่าเริ่มต้น: "1")
-- `RETRY_BACKOFF` - ความล่าช้าเริ่มต้นในการลองใหม่ในวินาที (ค่าเริ่มต้น: "1.0")
+### การตั้งค่าหลัก
+- `FOUNDRY_LOCAL_ALIAS` - Alias รุ่นที่จะใช้ (ค่าเริ่มต้นแตกต่างกันไปตามตัวอย่าง)
+- `FOUNDRY_LOCAL_ENDPOINT` - แทนที่ Endpoint บริการ (ไม่บังคับ)
+- `SHOW_USAGE` - แสดงสถิติการใช้งานโทเค็น (ค่าเริ่มต้น: "0")
+- `RETRY_ON_FAIL` - เปิดใช้งานลอจิกการลองใหม่ (ค่าเริ่มต้น: "1")
+- `RETRY_BACKOFF` - ความล่าช้าเริ่มต้นของการลองใหม่ในวินาที (ค่าเริ่มต้น: "1.0")
 
 ### เฉพาะตัวอย่าง
-- `EMBED_MODEL` - รุ่นฝังสำหรับตัวอย่าง RAG
-- `BENCH_MODELS` - รุ่นที่คั่นด้วยเครื่องหมายจุลภาคสำหรับการวัดประสิทธิภาพ
-- `BENCH_ROUNDS` - จำนวนรอบการวัดประสิทธิภาพ
-- `BENCH_PROMPT` - ข้อความทดสอบสำหรับการวัดประสิทธิภาพ
+- `EMBED_MODEL` - รุ่น Embedding สำหรับตัวอย่าง RAG
+- `BENCH_MODELS` - รุ่นที่คั่นด้วยเครื่องหมายจุลภาคสำหรับ Benchmarking
+- `BENCH_ROUNDS` - จำนวนรอบ Benchmark
+- `BENCH_PROMPT` - Prompt ทดสอบสำหรับ Benchmark
 - `BENCH_STREAM` - วัดความล่าช้าของโทเค็นแรก
 - `RAG_QUESTION` - คำถามทดสอบสำหรับตัวอย่าง RAG
-- `AGENT_MODEL_PRIMARY` - รุ่นตัวแทนหลัก
-- `AGENT_MODEL_EDITOR` - รุ่นตัวแทนแก้ไข
-- `SLM_ALIAS` - ชื่อเรียกรุ่นภาษาขนาดเล็ก
-- `LLM_ALIAS` - ชื่อเรียกรุ่นภาษาขนาดใหญ่
+- `AGENT_MODEL_PRIMARY` - รุ่น Agent หลัก
+- `AGENT_MODEL_EDITOR` - รุ่น Agent Editor
+- `SLM_ALIAS` - Alias รุ่นภาษาเล็ก
+- `LLM_ALIAS` - Alias รุ่นภาษาขนาดใหญ่
 
-## แนวทางปฏิบัติที่ดีที่สุดของ SDK ที่นำมาใช้
+## แนวปฏิบัติที่ดีที่สุดของ SDK ที่นำมาใช้
 
-### 1. การเริ่มต้นไคลเอนต์อย่างเหมาะสม
+### 1. การเริ่มต้น Client อย่างเหมาะสม
 ```python
 # Old pattern
 manager = FoundryLocalManager(alias)
@@ -154,7 +154,7 @@ except Exception as e:
     raise RuntimeError(f"Initialization failed: {e}") from e
 ```
 
-### 4. ตรรกะการลองใหม่ด้วย Exponential Backoff
+### 4. ลอจิกการลองใหม่ด้วย Exponential Backoff
 ```python
 delay = initial_delay
 for attempt in range(max_retries):
@@ -166,7 +166,7 @@ for attempt in range(max_retries):
         delay *= 2  # Exponential backoff
 ```
 
-### 5. รองรับการสตรีม
+### 5. การรองรับการสตรีม
 ```python
 stream = client.chat.completions.create(
     model=model_id,
@@ -183,12 +183,12 @@ for chunk in stream:
 
 หากคุณกำลังสร้างตัวอย่างใหม่หรืออัปเดตตัวอย่างที่มีอยู่:
 
-1. **ใช้ตัวช่วยใน `workshop_utils.py`**:
+1. **ใช้ตัวช่วย `workshop_utils.py`**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
 
-2. **รองรับการกำหนดค่า Endpoint**:
+2. **รองรับการแทนที่ Endpoint**:
    ```python
    endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")
    manager, client, model_id = get_client(alias, endpoint=endpoint)
@@ -199,7 +199,7 @@ for chunk in stream:
    - ลิงก์อ้างอิง SDK
    - ตัวอย่างการใช้งาน
 
-4. **ใช้คำอธิบายประเภท**:
+4. **ใช้ Type Hints**:
    ```python
    from typing import Optional, List, Dict, Any
    ```
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -235,29 +236,29 @@ python -m Workshop.tests.smoke
 
 ## การอ้างอิงเอกสาร SDK
 
-- **ที่เก็บหลัก**: https://github.com/microsoft/Foundry-Local
+- **Repository หลัก**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **เอกสาร API**: ตรวจสอบที่เก็บ SDK สำหรับเอกสาร API ล่าสุด
+- **เอกสาร API**: ตรวจสอบ Repository SDK สำหรับเอกสาร API ล่าสุด
 
-## การเปลี่ยนแปลงที่อาจทำให้เกิดปัญหา
+## การเปลี่ยนแปลงที่ทำให้เกิดปัญหา
 
 ### ไม่มีที่คาดไว้
-การเปลี่ยนแปลงทั้งหมดเข้ากันได้ย้อนหลัง การอัปเดตส่วนใหญ่:
-- เพิ่มคุณสมบัติใหม่ที่ไม่บังคับ (การกำหนดค่า Endpoint)
+การเปลี่ยนแปลงทั้งหมดเข้ากันได้กับเวอร์ชันก่อนหน้า การอัปเดตส่วนใหญ่:
+- เพิ่มฟีเจอร์ใหม่ที่ไม่บังคับ (การแทนที่ Endpoint)
 - ปรับปรุงการจัดการข้อผิดพลาด
 - ปรับปรุงเอกสาร
 - อัปเดตชื่อรุ่นเริ่มต้นให้เป็นคำแนะนำปัจจุบัน
 
-### การปรับปรุงที่ไม่บังคับ
+### การปรับปรุงเพิ่มเติมที่เป็นทางเลือก
 คุณอาจต้องการอัปเดตโค้ดของคุณเพื่อใช้:
 - `FOUNDRY_LOCAL_ENDPOINT` สำหรับการควบคุม Endpoint อย่างชัดเจน
-- `SHOW_USAGE=1` เพื่อดูการใช้โทเค็น
+- `SHOW_USAGE=1` เพื่อดูการใช้งานโทเค็น
 - รุ่นเริ่มต้นที่อัปเดต (`phi-4-mini` แทน `phi-3.5-mini`)
 
 ## ปัญหาทั่วไปและวิธีแก้ไข
 
-### ปัญหา: "การเริ่มต้นไคลเอนต์ล้มเหลว"
-**วิธีแก้ไข**: ตรวจสอบให้แน่ใจว่าบริการ Foundry Local กำลังทำงาน:
+### ปัญหา: "การเริ่มต้น Client ล้มเหลว"
+**วิธีแก้ไข**: ตรวจสอบให้แน่ใจว่า Foundry Local service กำลังทำงาน:
 ```bash
 foundry service start
 foundry model run phi-4-mini
@@ -282,19 +283,19 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ## ขั้นตอนถัดไป
 
 1. **อัปเดตตัวอย่าง Module08**: ใช้รูปแบบที่คล้ายกันกับ Module08/samples
-2. **เพิ่มการทดสอบการรวม**: สร้างชุดทดสอบที่ครอบคลุม
+2. **เพิ่มการทดสอบการรวม**: สร้างชุดการทดสอบที่ครอบคลุม
 3. **การวัดประสิทธิภาพ**: เปรียบเทียบประสิทธิภาพก่อน/หลัง
 4. **อัปเดตเอกสาร**: อัปเดต README หลักด้วยรูปแบบใหม่
 
 ## แนวทางการมีส่วนร่วม
 
 เมื่อเพิ่มตัวอย่างใหม่:
-1. ใช้ `workshop_utils.py` เพื่อความสม่ำเสมอ
+1. ใช้ `workshop_utils.py` เพื่อความสอดคล้อง
 2. ปฏิบัติตามรูปแบบในตัวอย่างที่มีอยู่
 3. เพิ่ม docstring ที่ครอบคลุม
 4. รวมลิงก์อ้างอิง SDK
-5. รองรับการกำหนดค่า Endpoint
-6. เพิ่มคำอธิบายประเภทที่เหมาะสม
+5. รองรับการแทนที่ Endpoint
+6. เพิ่ม Type Hints ที่เหมาะสม
 7. รวมตัวอย่างการใช้งานใน docstring
 
 ## ความเข้ากันได้ของเวอร์ชัน
@@ -313,4 +314,4 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ---
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามนุษย์ที่มีความเชี่ยวชาญ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้

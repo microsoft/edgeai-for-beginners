@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82e20fdeebffdf75eecdf5cdfb02b65c",
-  "translation_date": "2025-10-09T16:48:31+00:00",
+  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
+  "translation_date": "2025-10-28T22:33:20+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "vi"
 }
@@ -11,26 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tóm tắt
 
-Khám phá cách xây dựng các quy trình làm việc GenAI có thể hành động được bằng cách sử dụng Foundry Local và Azure AI Foundry. Tìm hiểu kỹ thuật xây dựng prompt nâng cao, tích hợp dữ liệu có cấu trúc và điều phối các tác vụ với các pipeline có thể tái sử dụng. Mặc dù trọng tâm là Tạo nội dung tăng cường truy xuất (RAG) cho tài liệu và Hỏi & Đáp dữ liệu, các mẫu này có thể áp dụng rộng rãi cho thiết kế giải pháp GenAI.
+Khám phá cách xây dựng các quy trình làm việc GenAI có thể hành động bằng cách sử dụng Foundry Local và Azure AI Foundry. Tìm hiểu kỹ thuật tạo prompt nâng cao, tích hợp dữ liệu có cấu trúc và điều phối các nhiệm vụ với các pipeline có thể tái sử dụng. Mặc dù trọng tâm là Retrieval-Augmented Generation (RAG) cho Q&A tài liệu và dữ liệu, các mẫu này có thể áp dụng rộng rãi cho thiết kế giải pháp GenAI.
 
 ## Mục tiêu học tập
 
 Sau buổi học này, bạn sẽ:
 
-- **Thành thạo kỹ thuật xây dựng Prompt**: Thiết kế các prompt hệ thống hiệu quả và chiến lược nền tảng
-- **Triển khai các mẫu RAG**: Xây dựng hệ thống Hỏi & Đáp dựa trên tài liệu với tìm kiếm vector
+- **Thành thạo kỹ thuật tạo prompt**: Thiết kế các prompt hệ thống hiệu quả và chiến lược nền tảng
+- **Triển khai mẫu RAG**: Xây dựng hệ thống Q&A dựa trên tài liệu với tìm kiếm vector
 - **Tích hợp dữ liệu có cấu trúc**: Làm việc với dữ liệu CSV, JSON và dạng bảng trong quy trình AI
 - **Xây dựng RAG sản xuất**: Tạo ứng dụng RAG có khả năng mở rộng với Chainlit
-- **Kết nối từ Local đến Cloud**: Hiểu các lộ trình di chuyển từ Foundry Local đến Azure AI Foundry
+- **Kết nối từ Local đến Cloud**: Hiểu các lộ trình di chuyển từ Foundry Local sang Azure AI Foundry
 
 ## Yêu cầu trước
 
-- Hoàn thành Buổi 1 (Cài đặt Foundry Local)
-- Hiểu biết cơ bản về cơ sở dữ liệu vector và embeddings
+- Hoàn thành Buổi 1 (cài đặt Foundry Local)
+- Hiểu cơ bản về cơ sở dữ liệu vector và embeddings
 - Kinh nghiệm lập trình Python
 - Quen thuộc với các khái niệm xử lý tài liệu
 
-### Bắt đầu nhanh trên môi trường đa nền tảng (Windows & macOS)
+### Bắt đầu nhanh môi trường đa nền tảng (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -48,15 +48,15 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Nếu các tệp nhị phân Foundry Local cho macOS chưa có trong môi trường của bạn, hãy chạy dịch vụ trên một máy ảo Windows hoặc container và thiết lập:
+Nếu các tệp nhị phân Foundry Local cho macOS chưa có trong môi trường của bạn, hãy chạy dịch vụ trên một VM hoặc container Windows và thiết lập:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Xác minh: Kiểm tra môi trường Foundry Local
+## Xác thực: Kiểm tra môi trường Foundry Local
 
-Trước khi bắt đầu các bản demo, hãy xác minh môi trường cục bộ của bạn:
+Trước khi bắt đầu các demo, hãy xác thực môi trường local của bạn:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -65,13 +65,13 @@ foundry model run phi-4-mini   # Start baseline SLM
 curl http://localhost:5273/v1/models  # Validate API (should list running model)
 ```
 
-Nếu lệnh cuối cùng không thành công, hãy khởi động (hoặc khởi động lại) dịch vụ: `foundry service start`.
+Nếu lệnh cuối cùng thất bại, hãy khởi động (hoặc khởi động lại) dịch vụ: `foundry service start`.
 
-## Quy trình Demo (30 phút)
+## Quy trình demo (30 phút)
 
 ### 1. Prompt hệ thống và chiến lược nền tảng (10 phút)
 
-#### Bước 1.1: Kỹ thuật xây dựng Prompt nâng cao
+#### Bước 1.1: Kỹ thuật tạo prompt nâng cao
 
 Tạo `samples/02-rag-solutions/prompt_engineering.py`:
 
@@ -217,7 +217,7 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### 2. Tích hợp dữ liệu dạng bảng với Prompt (Hỏi & Đáp CSV) (10 phút)
+### 2. Tích hợp dữ liệu dạng bảng với prompt (Q&A CSV) (10 phút)
 
 #### Bước 2.1: Tích hợp dữ liệu CSV
 
@@ -433,7 +433,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### Bước 2.2: Kiểm tra hệ thống Hỏi & Đáp CSV
+#### Bước 2.2: Kiểm tra hệ thống Q&A CSV
 
 ```powershell
 # Run the CSV Q&A demo
@@ -869,7 +869,7 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-#### Bước 4.2: Kiểm tra các mẫu di chuyển
+#### Bước 4.2: Kiểm tra mẫu di chuyển
 
 ```powershell
 # Run the migration demo
@@ -879,9 +879,9 @@ python samples/02-rag-solutions/migration_guide.py
 
 ## Các khái niệm chính được đề cập
 
-### 1. Kỹ thuật xây dựng Prompt nâng cao
+### 1. Kỹ thuật tạo prompt nâng cao
 
-- **Prompt hệ thống**: Các nhân vật chuyên gia theo từng lĩnh vực
+- **Prompt hệ thống**: Các persona chuyên gia theo lĩnh vực
 - **Chiến lược nền tảng**: Kỹ thuật tích hợp ngữ cảnh
 - **Kiểm soát nhiệt độ**: Cân bằng giữa sáng tạo và nhất quán
 - **Quản lý token**: Sử dụng ngữ cảnh hiệu quả
@@ -893,21 +893,21 @@ python samples/02-rag-solutions/migration_guide.py
 - **Tạo ngữ cảnh**: Tạo ngữ cảnh động dựa trên truy vấn
 - **Hỗ trợ đa định dạng**: JSON, CSV và dữ liệu dạng bảng
 
-### 3. Các mẫu triển khai RAG
+### 3. Mẫu triển khai RAG
 
 - **Tìm kiếm vector**: TF-IDF và độ tương đồng cosine
 - **Truy xuất tài liệu**: Chấm điểm và xếp hạng mức độ liên quan
 - **Kết hợp ngữ cảnh**: Tổng hợp nhiều tài liệu
-- **Tạo câu trả lời**: Tạo phản hồi có cơ sở
+- **Tạo câu trả lời**: Tạo phản hồi dựa trên ngữ cảnh
 
 ### 4. Chiến lược di chuyển lên Cloud
 
-- **API hợp nhất**: Một mã nguồn duy nhất cho cả local và cloud
+- **API hợp nhất**: Một mã nguồn cho cả local và cloud
 - **Trừu tượng hóa môi trường**: Triển khai dựa trên cấu hình
 - **Quy trình phát triển**: Local → Staging → Production
-- **Tối ưu hóa chi phí**: Phát triển cục bộ, sản xuất trên cloud
+- **Tối ưu hóa chi phí**: Phát triển local, sản xuất trên cloud
 
-## Cân nhắc khi triển khai
+## Cân nhắc khi sản xuất
 
 ### 1. Tối ưu hóa hiệu suất
 
@@ -961,22 +961,22 @@ Sau khi hoàn thành buổi học này:
 2. **Xây dựng RAG sản xuất**: Triển khai với Chainlit (Mẫu 04)
 3. **Tìm kiếm vector nâng cao**: Tích hợp với Chroma hoặc Pinecone
 4. **Di chuyển lên Cloud**: Triển khai lên Azure AI Foundry
-5. **Đánh giá chất lượng RAG**: Chạy `python Workshop/samples/session02/rag_eval_ragas.py` để đo lường answer_relevancy, faithfulness và context_precision bằng ragas
+5. **Đánh giá chất lượng RAG**: Chạy `cd Workkshop/samples;python -m session02.rag_eval_ragas` để đo lường answer_relevancy, faithfulness và context_precision bằng ragas
 
-### Cải tiến tùy chọn
+### Nâng cấp tùy chọn
 
-| Danh mục | Cải tiến | Lý do | Hướng dẫn |
+| Danh mục | Nâng cấp | Lý do | Hướng dẫn |
 |----------|----------|-------|-----------|
-| Truy xuất | Thay thế TF-IDF bằng vector store (FAISS / Chroma) | Tăng khả năng nhớ ngữ nghĩa & khả năng mở rộng | Chia nhỏ tài liệu (500–800 ký tự), nhúng, lưu trữ chỉ mục |
-| Chỉ mục lai | Lọc từ khóa + ngữ nghĩa kép | Cải thiện độ chính xác trên các truy vấn số / mã | Lọc theo từ khóa sau đó xếp hạng bằng độ tương đồng cosine |
-| Embeddings | Đánh giá nhiều mô hình embedding | Tối ưu hóa độ liên quan so với tốc độ | A/B: MiniLM vs E5-small vs bộ mã hóa cục bộ |
-| Bộ nhớ đệm | Lưu trữ kết quả nhúng & truy xuất | Giảm độ trễ truy vấn lặp lại | Lưu trữ đơn giản trên đĩa bằng pickle / sqlite với khóa băm |
-| Đánh giá | Mở rộng tập dữ liệu ragas | Đảm bảo chất lượng có ý nghĩa thống kê | Tạo 50–100 Q/A + ngữ cảnh; phân tầng theo chủ đề |
-| Thước đo | Theo dõi thời gian truy xuất & tạo | Hồ sơ hiệu suất | Ghi lại `retrieval_ms`, `gen_ms`, `tokens` mỗi lần gọi |
-| Bảo vệ | Thêm phương án dự phòng cho lỗi | Đảm bảo câu trả lời an toàn | Nếu độ tin cậy < ngưỡng → trả lời: "Không đủ ngữ cảnh." |
-| Dự phòng | Chuyển đổi từ local → mô hình Azure | Tăng cường chất lượng lai | Khi độ tin cậy thấp, chuyển sang cloud qua cùng API OpenAI |
-| Tính xác định | Chạy so sánh ổn định | Bộ dữ liệu đánh giá lặp lại | Cố định seed, `temperature=0`, tắt ngẫu nhiên của sampler |
-| Giám sát | Lưu lịch sử chạy đánh giá | Phát hiện suy giảm | Thêm dòng JSON với timestamp + chênh lệch thước đo |
+| Truy xuất | Thay TF-IDF bằng vector store (FAISS / Chroma) | Tăng khả năng hồi tưởng ngữ nghĩa & khả năng mở rộng | Chia nhỏ tài liệu (500–800 ký tự), nhúng, lưu trữ index |
+| Chỉ mục lai | Lọc kép ngữ nghĩa + từ khóa | Cải thiện độ chính xác trên truy vấn số / mã | Lọc theo từ khóa sau đó xếp hạng bằng độ tương đồng cosine |
+| Embeddings | Đánh giá nhiều mô hình embedding | Tối ưu hóa độ liên quan so với tốc độ | A/B: MiniLM vs E5-small vs encoder host local |
+| Bộ nhớ đệm | Bộ nhớ đệm embeddings & kết quả truy xuất | Giảm độ trễ truy vấn lặp lại | Bộ nhớ đệm đơn giản trên đĩa pickle / sqlite với khóa hash |
+| Đánh giá | Mở rộng tập dữ liệu ragas | Chất lượng có ý nghĩa thống kê | Tạo 50–100 Q/A + ngữ cảnh; phân tầng theo chủ đề |
+| Metrics | Theo dõi thời gian truy xuất & tạo | Hồ sơ hiệu suất | Ghi lại `retrieval_ms`, `gen_ms`, `tokens` mỗi lần gọi |
+| Bảo vệ | Thêm phương án dự phòng cho lỗi ảo tưởng | Câu trả lời an toàn hơn | Nếu faithfulness < ngưỡng → trả lời: "Không đủ ngữ cảnh." |
+| Dự phòng | Chuyển từ local → mô hình Azure | Tăng chất lượng lai | Khi độ tin cậy thấp, chuyển sang cloud qua cùng API OpenAI |
+| Tính xác định | Chạy so sánh ổn định | Bộ tập eval có thể lặp lại | Cố định seed, `temperature=0`, vô hiệu hóa sự ngẫu nhiên của sampler |
+| Giám sát | Lưu lịch sử chạy eval | Phát hiện hồi quy | Thêm dòng JSON với timestamp + metric deltas |
 
 #### Ví dụ: Thêm thời gian truy xuất
 
@@ -991,14 +991,15 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
+
 #### Mở rộng đánh giá với ragas
 
 1. Tạo một JSONL với các trường: `question`, `answer`, `contexts`, `ground_truths` (danh sách)
-2. Chuyển đổi sang `Dataset.from_list(list_of_dicts)`
+2. Chuyển đổi thành `Dataset.from_list(list_of_dicts)`
 3. Chạy `evaluate(dataset, metrics=[...])`
-4. Lưu trữ các thước đo (CSV/JSON) để phân tích xu hướng.
+4. Lưu trữ metrics (CSV/JSON) để phân tích xu hướng.
 
-#### Bắt đầu nhanh với Vector Store (FAISS)
+#### Bắt đầu nhanh Vector Store (FAISS)
 
 ```python
 import faiss, numpy as np
@@ -1013,32 +1014,32 @@ D, I = index.search(query_vec, k)
 
 ### Tài liệu
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [Mẫu RAG của Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [Hướng dẫn xây dựng Prompt](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [Mẫu RAG Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
+- [Hướng dẫn tạo prompt nâng cao](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
 - [Tài liệu đánh giá Ragas](https://docs.ragas.io)
 
 ### Mã mẫu
-- [Mẫu Module08 04](./samples/04/README.md) - Ứng dụng Chainlit RAG
-- [Hệ thống đa tác nhân nâng cao](./samples/09/README.md) - Các mẫu điều phối tác nhân
+- [Mẫu Module08 Sample 04](./samples/04/README.md) - Ứng dụng RAG với Chainlit
+- [Hệ thống đa tác nhân nâng cao](./samples/09/README.md) - Mẫu điều phối tác nhân
 
 ---
 
-**Thời lượng buổi học**: 30 phút thực hành + 15 phút Hỏi & Đáp  
+**Thời lượng buổi học**: 30 phút thực hành + 15 phút Q&A  
 **Mức độ khó**: Trung cấp  
-**Yêu cầu trước**: Hoàn thành Buổi 1, Kiến thức cơ bản về Python  
+**Yêu cầu trước**: Hoàn thành Buổi 1, kiến thức cơ bản về Python  
 
-## Kịch bản mẫu & Bản đồ Workshop
+## Kịch bản mẫu & ánh xạ workshop
 
 | Script / Notebook Workshop | Kịch bản | Mục tiêu | Tập dữ liệu / Nguồn chính | Câu hỏi ví dụ |
 |----------------------------|----------|----------|---------------------------|---------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Cơ sở tri thức hỗ trợ nội bộ trả lời các câu hỏi thường gặp về quyền riêng tư + hiệu suất | RAG tối thiểu trong bộ nhớ với embeddings | Danh sách `DOCS` trong script (5 đoạn ngắn) | Tại sao sử dụng RAG với suy luận cục bộ? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Nhà phân tích chất lượng thiết lập các thước đo độ tin cậy truy xuất cơ bản | Tính toán các thước đo ragas trên tập dữ liệu tổng hợp nhỏ | Mảng `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Lợi ích của suy luận cục bộ là gì? |
-| `prompt_engineering.py` (nâng cao) | Chuyên gia lĩnh vực tạo prompt có cơ sở cho nhiều ngành | So sánh các prompt hệ thống theo lĩnh vực & tác động token | Từ điển `contexts` nội tuyến | Foundry Local xử lý bộ nhớ đệm mô hình như thế nào? |
-| `csv_qa_system.py` | Bộ phận bán hàng khám phá phân tích tương tác trên các tệp xuất | Tóm tắt & truy vấn một phần nhỏ dữ liệu bán hàng | Tệp `sample_sales_data.csv` được tạo (10 dòng) | Sản phẩm nào có doanh số trung bình cao nhất? |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Cơ sở tri thức hỗ trợ nội bộ trả lời các câu hỏi thường gặp về quyền riêng tư + hiệu suất | RAG tối thiểu trong bộ nhớ với embeddings | Danh sách `DOCS` trong script (5 đoạn ngắn) | Tại sao sử dụng RAG với suy luận local? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Nhà phân tích chất lượng thiết lập các chỉ số cơ bản về độ trung thực của truy xuất | Tính toán các chỉ số ragas trên tập dữ liệu tổng hợp nhỏ | Mảng `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Lợi ích của suy luận local là gì? |
+| `prompt_engineering.py` (nâng cao) | Chuyên gia lĩnh vực tạo prompt nền tảng cho nhiều ngành | So sánh prompt hệ thống theo lĩnh vực & tác động của token | Từ điển `contexts` nội tuyến | Foundry Local xử lý bộ nhớ đệm mô hình như thế nào? |
+| `csv_qa_system.py` | Hoạt động bán hàng khám phá phân tích tương tác trên dữ liệu xuất | Tóm tắt & truy vấn một phần nhỏ dữ liệu bán hàng | Tệp `sample_sales_data.csv` được tạo (10 dòng) | Sản phẩm nào có doanh số trung bình cao nhất? |
 | `document_rag.py` | Đội sản phẩm khám phá RAG tài liệu cho wiki nội bộ | Truy xuất + trích dẫn tài liệu liên quan | Danh sách `create_sample_knowledge_base()` | Lợi ích của Edge AI là gì? |
 | `migration_guide.py` | Kiến trúc sư chuẩn bị kế hoạch di chuyển lên cloud | Minh họa sự tương đồng API local→Azure | Prompt kiểm tra tĩnh | Giải thích lợi ích của Edge AI trong 2–3 câu. |
 
-### Trích đoạn tập dữ liệu
+### Đoạn trích dữ liệu
 Danh sách tài liệu pipeline RAG nội tuyến:
 ```python
 DOCS = [
@@ -1050,7 +1051,7 @@ DOCS = [
 ]
 ```
 
-Cặp dữ liệu thực tế đánh giá Ragas:
+Các cặp sự thật đánh giá Ragas:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1061,12 +1062,12 @@ GROUND_TRUTH = [
 
 
 ### Tường thuật kịch bản
-Nhóm kỹ sư hỗ trợ muốn có một nguyên mẫu nhanh để trả lời các câu hỏi thường gặp nội bộ mà không tiết lộ dữ liệu khách hàng ra bên ngoài. Các tài liệu của Buổi 2 tiến triển từ một RAG tối thiểu không lưu trữ → Hỏi & Đáp CSV có cấu trúc → truy xuất tài liệu với trích dẫn → đánh giá chất lượng khách quan (ragas) → chiến lược di chuyển sẵn sàng cho giai đoạn Azure.
+Nhóm kỹ thuật hỗ trợ muốn có một nguyên mẫu nhanh để trả lời các câu hỏi thường gặp nội bộ mà không tiết lộ dữ liệu khách hàng ra bên ngoài. Các tài liệu của Buổi 2 tiến triển từ RAG tối thiểu tạm thời (không lưu trữ) → Q&A CSV có cấu trúc → truy xuất tài liệu với trích dẫn → đánh giá chất lượng khách quan (ragas) → chiến lược di chuyển sẵn sàng cho Azure staging.
 
 ### Lộ trình mở rộng
-Sử dụng bảng Cải tiến Tùy chọn để phát triển: thay TF‑IDF bằng FAISS/Chroma, mở rộng tập dữ liệu đánh giá (50–100 Q/A), thêm phương án dự phòng chuyển sang mô hình lớn hơn khi độ tin cậy < ngưỡng.
+Sử dụng bảng Nâng cấp tùy chọn để phát triển: thay TF‑IDF bằng FAISS/Chroma, mở rộng tập dữ liệu đánh giá (50–100 Q/A), thêm phương án dự phòng khi faithfulness < ngưỡng.
 
 ---
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp của con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, chúng tôi khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

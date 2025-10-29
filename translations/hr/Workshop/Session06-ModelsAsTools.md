@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-08T14:19:41+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T23:28:10+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "hr"
 }
@@ -11,15 +11,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Sažetak
 
-Tretirajte modele kao sastavljive alate unutar lokalnog AI operativnog sloja. Ova sesija pokazuje kako povezati više specijaliziranih SLM/LLM poziva, selektivno usmjeravati zadatke i izložiti objedinjenu SDK površinu aplikacijama. Izradit ćete lagani model za usmjeravanje + planer zadataka, integrirati ga u skriptu aplikacije i izložiti put skaliranja prema Azure AI Foundry za produkcijske radne opterećenja.
+Tretirajte modele kao sastavljive alate unutar lokalnog AI operativnog sloja. Ova sesija pokazuje kako povezati više specijaliziranih SLM/LLM poziva, selektivno usmjeravati zadatke i izložiti objedinjenu SDK površinu aplikacijama. Izradit ćete lagani usmjerivač modela + planer zadataka, integrirati ga u skriptu aplikacije i izložiti put skaliranja prema Azure AI Foundry za produkcijske radne opterećenja.
 
 ## Ciljevi učenja
 
 - **Konceptualizirati** modele kao osnovne alate s deklariranim sposobnostima
 - **Usmjeravati** zahtjeve na temelju namjere / heurističkog bodovanja
-- **Povezivati** izlaze kroz višekorake zadatke (razložiti → riješiti → doraditi)
+- **Povezivati** izlaze kroz zadatke u više koraka (razložiti → riješiti → doraditi)
 - **Integrirati** objedinjeni klijentski API za aplikacije
-- **Skalirati** dizajn prema oblaku (isti OpenAI-kompatibilni ugovor)
+- **Skalirati** dizajn u oblak (isti ugovor kompatibilan s OpenAI)
 
 ## Preduvjeti
 
@@ -44,13 +44,13 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Pristup udaljenom/VM servisu s macOS-a:
+Pristup udaljenoj/VM usluzi s macOS-a:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Demo tijek (30 min)
+## Tijek demonstracije (30 min)
 
 ### 1. Deklaracija sposobnosti alata (5 min)
 
@@ -133,7 +133,7 @@ if __name__ == "__main__":
 ```
 
 
-### 3. Povezivanje višekorakih zadataka (7 min)
+### 3. Povezivanje zadataka u više koraka (7 min)
 
 Kreirajte `samples/06-tools/pipeline.py`:
 
@@ -179,7 +179,7 @@ if __name__ == '__main__':
 ### 4. Početni projekt: Prilagodite `06-models-as-tools` (5 min)
 
 Poboljšanja:
-- Dodajte podršku za streaming tokena (progresivno ažuriranje UI-a)
+- Dodajte podršku za tokene u stvarnom vremenu (progresivno ažuriranje UI-a)
 - Dodajte bodovanje povjerenja: leksičko preklapanje ili rubrika upita
 - Izvezite JSON trag (namjera → model → kašnjenje → korištenje tokena)
 - Implementirajte ponovno korištenje predmemorije za ponovljene podkorake
@@ -187,14 +187,14 @@ Poboljšanja:
 ### 5. Put skaliranja prema Azure (5 min)
 
 | Sloj | Lokalno (Foundry) | Oblak (Azure AI Foundry) | Strategija prijelaza |
-|------|-------------------|--------------------------|-----------------------|
+|------|--------------------|--------------------------|-----------------------|
 | Usmjeravanje | Heuristički Python | Trajni mikroservis | Kontejnerizirajte i implementirajte API |
 | Modeli | Predmemorirani SLM-ovi | Upravljane implementacije | Mapirajte lokalna imena na ID-ove implementacije |
 | Promatranje | CLI statistika/ručno | Centralizirano logiranje i metrike | Dodajte strukturirane događaje traga |
 | Sigurnost | Samo lokalni host | Azure autentifikacija / mreža | Uvedite ključni trezor za tajne |
-| Trošak | Resursi uređaja | Naplata prema potrošnji | Dodajte ograničenja proračuna |
+| Trošak | Resursi uređaja | Naplata po potrošnji | Dodajte ograničenja proračuna |
 
-## Provjera valjanosti
+## Popis za provjeru valjanosti
 
 ```powershell
 foundry model run phi-4-mini
@@ -203,21 +203,21 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Očekujte odabir modela na temelju namjere i konačni doradeni izlaz.
+Očekujte odabir modela temeljen na namjeri i konačni doradeni izlaz.
 
 ## Rješavanje problema
 
 | Problem | Uzrok | Rješenje |
 |---------|-------|----------|
 | Svi zadaci usmjereni na isti model | Slaba pravila | Obogatite regex skup INTENT_RULES |
-| Cjevovod ne uspijeva na srednjem koraku | Nedostaje učitani model | Pokrenite `foundry model run <model>` |
+| Neuspjeh cjevovoda u srednjem koraku | Nedostaje učitani model | Pokrenite `foundry model run <model>` |
 | Niska kohezija izlaza | Nema faze dorade | Dodajte fazu sažimanja/validacije |
 
 ## Reference
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Azure AI Foundry dokumentacija: https://learn.microsoft.com/azure/ai-foundry
-- Uzorci kvalitete upita: Pogledajte Sesiju 2
+- Uzorci kvalitete upita: Pogledajte sesiju 2
 
 ---
 
@@ -228,15 +228,13 @@ Očekujte odabir modela na temelju namjere i konačni doradeni izlaz.
 
 | Skripte / Bilježnice radionice | Scenarij | Cilj | Izvor podataka / kataloga |
 |--------------------------------|----------|------|---------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Asistent za razvoj koji obrađuje upite mješovite namjere (refaktoriranje, sažimanje, klasifikacija) | Heuristička namjera → usmjeravanje aliasa modela s korištenjem tokena | Inline `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Višekorako planiranje i dorada za složeni zadatak asistencije kodiranja | Razložiti → specijalizirana izvedba → korak dorade sažimanja | Isti `CATALOG`; koraci izvedeni iz izlaza plana |
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Asistent za razvoj koji obrađuje upite mješovite namjere (refaktoriranje, sažimanje, klasifikacija) | Heurističko usmjeravanje namjere → alias modela s korištenjem tokena | Inline `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planiranje u više koraka i dorada za složeni zadatak pomoći kodiranju | Razlaganje → specijalizirana izvedba → korak dorade sažimanja | Isti `CATALOG`; koraci izvedeni iz izlaza plana |
 
 ### Narativ scenarija
-
-Alat za produktivnost inženjeringa prima heterogene zadatke: refaktoriranje koda, sažimanje arhitektonskih bilješki, klasifikacija povratnih informacija. Kako bi se minimizirala latencija i korištenje resursa, mali opći model planira i sažima, model specijaliziran za kodiranje obrađuje refaktoriranje, a lagani model sposoban za klasifikaciju označava povratne informacije. Skripta cjevovoda demonstrira povezivanje + doradu; skripta usmjerivača izolira adaptivno usmjeravanje jednim upitom.
+Alat za produktivnost inženjeringa prima heterogene zadatke: refaktoriranje koda, sažimanje bilješki o arhitekturi, klasifikacija povratnih informacija. Kako bi se smanjila latencija i korištenje resursa, mali opći model planira i sažima, model specijaliziran za kodiranje obrađuje refaktoriranje, a lagani model za klasifikaciju označava povratne informacije. Skripta cjevovoda demonstrira povezivanje + doradu; skripta usmjerivača izolira adaptivno usmjeravanje jednim upitom.
 
 ### Snimka kataloga
-
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -247,7 +245,6 @@ CATALOG = {
 
 
 ### Primjeri testnih upita
-
 ```json
 [
     "Refactor this Python function for readability",
@@ -258,9 +255,8 @@ CATALOG = {
 ```
 
 
-### Proširenje traga (Opcionalno)
-
-Dodajte JSON linije traga po koraku za `models_pipeline.py`:
+### Proširenje traga (opcionalno)
+Dodajte linije JSON traga po koraku za `models_pipeline.py`:
 ```python
 trace.append({
     "step": step_idx,
@@ -272,22 +268,21 @@ trace.append({
 ```
 
 
-### Heuristika eskalacije (Ideja)
-
-Ako plan sadrži ključne riječi poput "optimizirati", "sigurnost" ili duljina koraka > 280 znakova → eskalirajte na veći model (npr. `gpt-oss-20b`) samo za taj korak.
+### Heuristika eskalacije (ideja)
+Ako plan sadrži ključne riječi poput "optimizacija", "sigurnost" ili duljina koraka > 280 znakova → eskalirajte na veći model (npr. `gpt-oss-20b`) samo za taj korak.
 
 ### Opcionalna poboljšanja
 
 | Područje | Poboljšanje | Vrijednost | Savjet |
-|----------|-------------|------------|-------|
-| Predmemoriranje | Ponovno korištenje objekata upravitelja + klijenta | Niža latencija, manje opterećenje | Koristite `workshop_utils.get_client` |
-| Metrike korištenja | Snimite tokene i latenciju po koraku | Profiliranje i optimizacija | Mjerite svaki poziv usmjerenja; pohranite u popis traga |
+|----------|-------------|------------|--------|
+| Predmemoriranje | Ponovno korištenje objekata upravitelja + klijenta | Niža latencija, manji trošak | Koristite `workshop_utils.get_client` |
+| Metrike korištenja | Snimite tokene i kašnjenje po koraku | Profiliranje i optimizacija | Mjerite svaki poziv usmjerenja; spremite u popis traga |
 | Adaptivno usmjeravanje | Svjesno povjerenja / troškova | Bolji omjer kvalitete i troškova | Dodajte bodovanje: ako upit > N znakova ili regex odgovara domeni → eskalirajte na veći model |
 | Dinamički registar sposobnosti | Vruće učitavanje kataloga | Bez ponovnog pokretanja implementacije | Učitajte `catalog.json` u vrijeme izvođenja; pratite vremensku oznaku datoteke |
-| Strategija povratka | Robusnost u slučaju neuspjeha | Veća dostupnost | Pokušajte primarni → u slučaju iznimke povratni alias |
-| Streaming cjevovod | Rani povratni podaci | Poboljšanje korisničkog iskustva | Streamajte svaki korak i međuspremnik za konačni ulaz dorade |
+| Strategija povratka | Robusnost u slučaju neuspjeha | Veća dostupnost | Pokušajte primarno → u slučaju iznimke povratni alias |
+| Streaming cjevovod | Rani povratni podaci | Poboljšanje UX-a | Streamajte svaki korak i međuspremnik za konačni ulaz dorade |
 | Vektorske namjenske ugradnje | Preciznije usmjeravanje | Veća točnost namjere | Ugradite upit, grupirajte i mapirajte centroid → sposobnost |
-| Izvoz traga | Auditivni lanac | Sukladnost/izvještavanje | Emitirajte JSON linije: korak, namjera, model, latencija_ms, tokeni |
+| Izvoz traga | Auditivni lanac | Sukladnost/izvještavanje | Emitirajte JSON linije: korak, namjera, model, kašnjenje_ms, tokeni |
 | Simulacija troškova | Procjena prije oblaka | Planiranje proračuna | Dodijelite nominalni trošak/token po modelu i agregirajte po zadatku |
 | Deterministički način | Reproducibilnost | Stabilno testiranje | Okruženje: `temperature=0`, fiksni broj koraka |
 
@@ -328,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Postupno iterirajte—izbjegavajte pretjerano projektiranje ranih prototipova.
-
 ---
 
 **Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za nesporazume ili pogrešne interpretacije koje mogu proizaći iz korištenja ovog prijevoda.
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

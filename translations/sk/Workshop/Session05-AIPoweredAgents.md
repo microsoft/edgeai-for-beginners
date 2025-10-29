@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-08T15:17:14+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T23:05:18+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "sk"
 }
@@ -11,15 +11,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrakt
 
-Navrhnite a koordinujte AI agentov s viacerými rolami pomocou nízkolatenčného a súkromie zachovávajúceho runtime Foundry Local. Definujete role agentov, stratégie pamäte, vzory volania nástrojov a grafy vykonávania. Táto relácia predstavuje vzory štruktúry, ktoré môžete rozšíriť pomocou Chainlit alebo LangGraph. Štartovací projekt rozširuje existujúcu architektúru agentov o perzistenciu pamäte a hodnotiace háky.
+Navrhnite a koordinujte AI agentov s viacerými rolami pomocou nízkolatenčného a súkromie zachovávajúceho runtime Foundry Local. Definujete role agentov, stratégie pamäte, vzory vyvolania nástrojov a grafy vykonávania. Táto relácia predstavuje vzory štruktúry, ktoré môžete rozšíriť pomocou Chainlit alebo LangGraph. Štartovací projekt rozširuje existujúcu architektúru agentov o perzistenciu pamäte + hodnotiace háčiky.
 
 ## Ciele učenia
 
-- **Definovať role**: Systémové výzvy a hranice schopností
+- **Definovať role**: Systémové výzvy & hranice schopností
 - **Implementovať pamäť**: Krátkodobá (konverzácia), dlhodobá (vektor / súbor), dočasné poznámkové bloky
 - **Štruktúrovať pracovné postupy**: Sekvenčné, vetvené a paralelné kroky agentov
 - **Integrovať nástroje**: Jednoduchý vzor volania funkčných nástrojov
-- **Hodnotiť**: Základné sledovanie + hodnotenie výsledkov na základe rubriky
+- **Hodnotiť**: Základné sledovanie + hodnotenie výsledkov na základe kritérií
 
 ## Predpoklady
 
@@ -45,7 +45,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Ak spúšťate agentov z macOS proti vzdialenej službe na Windows hoste:
+Ak spúšťate agentov z macOS proti vzdialenej službe hostovanej na Windows:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -129,7 +129,7 @@ python samples/05-agents/agents_core.py
 ```
 
 
-### 3. Pridanie volania nástrojov (7 min)
+### 3. Pridanie vyvolania nástrojov (7 min)
 
 Rozšírte pomocou `samples/05-agents/tools.py`:
 
@@ -189,8 +189,8 @@ if __name__ == '__main__':
 
 Pridajte:
 1. Vrstvu perzistentnej pamäte (napr. pridávanie konverzácií do JSON riadkov)
-2. Jednoduchú hodnotiacu rubriku: faktickosť / jasnosť / štýlové miesta
-3. Voliteľné front-end Chainlit (dve záložky: konverzácia a sledovanie)
+2. Jednoduché hodnotiace kritériá: faktickosť / jasnosť / štýlové zástupné symboly
+3. Voliteľné front-end Chainlit (dve záložky: konverzácia & sledovanie)
 4. Voliteľný štýl LangGraph stavového stroja (ak pridávate závislosť) pre rozhodovanie vo vetvení
 
 ## Kontrolný zoznam validácie
@@ -205,13 +205,13 @@ Očakávajte štruktúrovaný výstup pipeline s poznámkou o injekcii nástroja
 ## Prehľad stratégií pamäte
 
 | Vrstva | Účel | Príklad |
-|--------|------|---------|
+|-------|---------|---------|
 | Krátkodobá | Kontinuita dialógu | Posledných N správ |
-| Epizodická | Spomienka na reláciu | JSON pre každú reláciu |
+| Epizodická | Spomienka na reláciu | JSON pre reláciu |
 | Semantická | Dlhodobé vyhľadávanie | Vektorový úložisko súhrnov |
-| Poznámkový blok | Kroky uvažovania | Inline reťaz myšlienok (súkromné) |
+| Poznámkový blok | Kroky uvažovania | Inline reťazec myšlienok (súkromné) |
 
-## Hodnotiace háky (konceptuálne)
+## Hodnotiace háčiky (Konceptuálne)
 
 ```python
 evaluation = {
@@ -227,10 +227,10 @@ evaluation = {
 ## Riešenie problémov
 
 | Problém | Príčina | Riešenie |
-|---------|---------|---------|
+|-------|------|------------|
 | Opakujúce sa odpovede | Príliš veľké/malé okno kontextu | Nastavte parameter okna pamäte |
 | Nástroj nebol vyvolaný | Nesprávna syntax | Použite formát `#tool:tool_name` |
-| Pomalá koordinácia | Viacero studených modelov | Predbežné spustenie výziev na zahriatie |
+| Pomalá koordinácia | Viacero studených modelov | Predbežné spustenie výzvových promptov |
 
 ## Referencie
 
@@ -243,21 +243,22 @@ evaluation = {
 **Trvanie relácie**: 30 min  
 **Obtiažnosť**: Pokročilá
 
-## Ukážkový scenár a mapovanie workshopu
+## Ukážkový scenár & mapovanie workshopu
 
 | Skript workshopu | Scenár | Cieľ | Príklad výzvy |
-|------------------|--------|------|---------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot na výskum znalostí produkujúci zhrnutia vhodné pre vedenie | Pipeline s dvoma agentmi (výskum → editoriálne úpravy) s voliteľnými odlišnými modelmi | Vysvetlite, prečo je inferencia na okraji dôležitá pre súlad. |
-| (Rozšírený) koncept `tools.py` | Pridanie nástrojov na odhad času a tokenov | Demonštrácia vzoru ľahkého volania nástrojov | #tool:get_time |
+|-----------------|----------|-----------|----------------|
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot na výskum znalostí produkujúci zhrnutia vhodné pre vedenie | Pipeline s dvoma agentmi (výskum → redakčné úpravy) s voliteľnými odlišnými modelmi | Vysvetlite, prečo je dôležitý edge inference pre súlad. |
+| (Rozšírený) koncept `tools.py` | Pridanie nástrojov na odhad času & tokenov | Demonštrácia jednoduchého vzoru vyvolania nástrojov | #tool:get_time |
 
 ### Naratív scenára
-Tím pre dokumentáciu súladu potrebuje rýchle interné zhrnutia získané z lokálnych znalostí bez odosielania návrhov do cloudových služieb. Agent výskumník zhromažďuje stručné faktické body; editor agent prepisuje pre jasnosť vhodnú pre vedenie. Môžu byť priradené odlišné aliasy modelov na optimalizáciu latencie (rýchly SLM) vs štýlové úpravy (väčší model len v prípade potreby).
+Tím pre dokumentáciu súladu potrebuje rýchle interné zhrnutia získané z lokálnych znalostí bez odosielania návrhov do cloudových služieb. Agent výskumník zhromažďuje stručné faktické body; agent editor prepisuje pre jasnosť vedenia. Môžu byť priradené odlišné aliasy modelov na optimalizáciu latencie (rýchly SLM) vs štýlové úpravy (väčší model len keď je potrebné).
 
 ### Príklad prostredia s viacerými modelmi
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
@@ -273,21 +274,21 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Uložte každý krok do súboru JSONL pre neskoršie hodnotenie na základe rubriky.
+Uložte každý krok do súboru JSONL pre neskoršie hodnotenie na základe kritérií.
 
 ### Voliteľné vylepšenia
 
 | Téma | Vylepšenie | Výhoda | Náčrt implementácie |
-|------|-----------|--------|---------------------|
-| Role s viacerými modelmi | Odlišné modely pre každého agenta (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Špecializácia a rýchlosť | Vyberte aliasy env premenných, volajte `chat_once` s aliasom pre každú rolu |
-| Štruktúrované sledovanie | JSON sledovanie každého aktu (nástroj, vstup, latencia, tokeny) | Debugovanie a hodnotenie | Pridajte dict do zoznamu; na konci zapíšte `.jsonl` |
+|-------|------------|---------|-----------------------|
+| Role s viacerými modelmi | Odlišné modely pre agenta (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Špecializácia & rýchlosť | Vyberte aliasy env vars, volajte `chat_once` s aliasom pre každú rolu |
+| Štruktúrované sledovanie | JSON sledovanie každého aktu (nástroj, vstup, latencia, tokeny) | Debug & hodnotenie | Pridajte dict do zoznamu; zapíšte `.jsonl` na konci |
 | Perzistencia pamäte | Znovu načítateľný kontext dialógu | Kontinuita relácie | Uložte `Agent.memory` do `sessions/<ts>.json` |
-| Registrácia nástrojov | Dynamické objavovanie nástrojov | Rozšíriteľnosť | Udržujte dict `TOOLS` a preskúmajte názvy/popisy |
-| Opakovanie a oneskorenie | Robustné dlhé reťazce | Zníženie prechodných zlyhaní | Obalte `act` s try/except + exponenciálnym oneskorením |
-| Hodnotenie na základe rubriky | Automatizované kvalitatívne označenia | Sledovanie zlepšení | Sekundárne prechádzanie modelom: "Ohodnoťte jasnosť 1-5" |
-| Vektorová pamäť | Semantická spomienka | Bohatý dlhodobý kontext | Vložte súhrny, načítajte top-k do systémovej správy |
-| Streamované odpovede | Rýchlejší vnímaný čas odozvy | Zlepšenie UX | Použite streamovanie, keď bude dostupné, a priebežne vypúšťajte čiastočné tokeny |
-| Deterministické testy | Kontrola regresie | Stabilné CI | Spustite s `temperature=0`, pevnými semienkami výziev |
+| Registrácia nástrojov | Dynamické objavovanie nástrojov | Rozšíriteľnosť | Udržujte dict `TOOLS` & preskúmajte názvy/popisy |
+| Opakovanie & zálohovanie | Robustné dlhé reťazce | Zníženie prechodných zlyhaní | Obalte `act` s try/except + exponenciálne zálohovanie |
+| Hodnotenie na základe kritérií | Automatizované kvalitatívne označenia | Sledovanie zlepšení | Sekundárne prechádzanie modelom: "Ohodnoťte jasnosť 1-5" |
+| Vektorová pamäť | Semantické vyhľadávanie | Bohatý dlhodobý kontext | Vložte súhrny, vyhľadajte top-k do systémovej správy |
+| Streamované odpovede | Rýchlejšie vnímanie odpovede | Zlepšenie UX | Použite streamovanie, keď je dostupné, a flushujte čiastočné tokeny |
+| Deterministické testy | Kontrola regresie | Stabilné CI | Spustite s `temperature=0`, pevnými semienkami promptov |
 | Paralelné vetvenie | Rýchlejšie skúmanie | Priepustnosť | Použite `concurrent.futures` pre nezávislé kroky agentov |
 
 #### Príklad záznamu sledovania
@@ -303,7 +304,7 @@ trace.append({
 ```
 
 
-#### Jednoduchá hodnotiaca výzva
+#### Jednoduchý hodnotiaci prompt
 
 ```python
 score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
@@ -314,5 +315,5 @@ Uložte páry (`answer`, `rating`) na vytvorenie historického grafu kvality.
 
 ---
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, upozorňujeme, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

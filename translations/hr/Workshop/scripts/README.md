@@ -1,48 +1,48 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-08T14:25:50+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T23:29:15+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "hr"
 }
 -->
 # Skripte za radionicu
 
-Ovaj direktorij sadrži skripte za automatizaciju i podršku koje se koriste za održavanje kvalitete i dosljednosti materijala radionice.
+Ovaj direktorij sadrži skripte za automatizaciju i podršku koje se koriste za održavanje kvalitete i dosljednosti materijala za radionicu.
 
 ## Sadržaj
 
 | Datoteka | Namjena |
 |----------|---------|
-| `lint_markdown_cli.py` | Provjerava kodne blokove u Markdownu kako bi blokirao zastarjele obrasce naredbi Foundry Local CLI. |
-| `export_benchmark_markdown.py` | Pokreće višemodelni test latencije i generira izvješća u Markdownu i JSON formatu. |
+| `lint_markdown_cli.py` | Provjerava ispravnost kodnih blokova u Markdownu kako bi se spriječilo korištenje zastarjelih naredbi Foundry Local CLI. |
+| `export_benchmark_markdown.py` | Pokreće benchmark testiranje latencije za više modela i generira izvještaje u Markdown i JSON formatu. |
 
-## 1. Provjera obrazaca Markdown CLI
+## 1. Provjera uzoraka Markdown CLI
 
-`lint_markdown_cli.py` skenira sve `.md` datoteke koje nisu prijevodi u potrazi za zabranjenim obrascima Foundry Local CLI **unutar ograničenih kodnih blokova** (``` ... ```). Informativni tekst i dalje može spominjati zastarjele naredbe radi povijesnog konteksta.
+`lint_markdown_cli.py` skenira sve `.md` datoteke koje nisu prijevodi kako bi pronašao zabranjene Foundry Local CLI uzorke **unutar ograničenih kodnih blokova** (``` ... ```). Informativni tekst i dalje može spominjati zastarjele naredbe radi povijesnog konteksta.
 
-### Zastarjeli obrasci (blokirani unutar kodnih blokova)
+### Zastarjeli uzorci (blokirani unutar kodnih blokova)
 
-Provjera blokira zastarjele CLI obrasce. Koristite moderne alternative.
+Provjera blokira zastarjele CLI uzorke. Koristite moderne alternative.
 
 ### Potrebne zamjene
-| Zastarjelo | Koristite umjesto toga |
-|------------|------------------------|
+| Zastarjelo | Koristite umjesto |
+|------------|-------------------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
 | `foundry model list --running` | `foundry model list` |
 | `foundry model list --cached` | `foundry cache list` |
-| `foundry model stats` | Skripta za testiranje + sistemski alati (`Task Manager`, `nvidia-smi`) |
+| `foundry model stats` | Skripta za benchmark + sistemski alati (`Task Manager`, `nvidia-smi`) |
 | `foundry model benchmark` | `samples/session03/benchmark_oss_models.py` |
 | `foundry model list --available` | `foundry model list` |
 
 ### Izlazni kodovi
 | Kod | Značenje |
 |-----|----------|
-| 0 | Nisu pronađene povrede |
-| 1 | Pronađen je jedan ili više zastarjelih obrazaca |
+| 0 | Nema pronađenih kršenja |
+| 1 | Pronađen je jedan ili više zastarjelih uzoraka |
 
-### Lokalno pokretanje
+### Pokretanje lokalno
 Iz korijena repozitorija (preporučeno):
 
 Windows (PowerShell):
@@ -55,45 +55,45 @@ macOS / Linux:
 python Workshop/scripts/lint_markdown_cli.py --verbose
 ```
 
-### Pre-commit Hook (Opcionalno)
+### Pre-Commit Hook (Opcionalno)
 ```bash
 echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
-Ovo blokira commitove koji uvode zastarjele obrasce.
+Ovo blokira commitove koji uvode zastarjele uzorke.
 
-### CI integracija
-GitHub Action workflow (`.github/workflows/markdown-cli-lint.yml`) pokreće provjeru pri svakom pushu i pull requestu na grane `main` i `Reactor`. Neuspjeli zadaci moraju se popraviti prije spajanja.
+### Integracija s CI
+GitHub Action workflow (`.github/workflows/markdown-cli-lint.yml`) pokreće provjeru pri svakom pushu i pull requestu na grane `main` i `Reactor`. Neuspjeli zadaci moraju se ispraviti prije spajanja.
 
-### Dodavanje novih zastarjelih obrazaca
+### Dodavanje novih zastarjelih uzoraka
 1. Otvorite `lint_markdown_cli.py`.
-2. Dodajte tuple `(regex, suggestion)` na popis `DEPRECATED`. Koristite raw string i uključite granice riječi `\b` gdje je prikladno.
+2. Dodajte tuple `(regex, suggestion)` u listu `DEPRECATED`. Koristite raw string i uključite granice riječi `\b` gdje je to prikladno.
 3. Pokrenite provjeru lokalno kako biste provjerili detekciju.
-4. Commitajte i pushajte; CI će provesti novo pravilo.
+4. Commitajte i pushajte; CI će provjeriti novo pravilo.
 
 Primjer dodavanja:
 ```python
 DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental foo usage"))
 ```
 
-### Dopuštanje objašnjavajućih spominjanja
-Budući da se provjera primjenjuje samo na ograničene kodne blokove, zastarjele naredbe možete opisati u narativnom tekstu bez problema. Ako ih *morate* prikazati unutar bloka radi kontrasta, dodajte blok **bez** trostrukih backtickova (npr. uvucite ili citirajte) ili preoblikujte u pseudo-oblik.
+### Dopuštanje objašnjenja zastarjelih naredbi
+Budući da se provjera odnosi samo na ograničene kodne blokove, možete sigurno opisati zastarjele naredbe u narativnom tekstu. Ako ih *morate* prikazati unutar kodnog bloka radi usporedbe, dodajte blok **bez** trostrukih backtickova (npr. uvucite ili citirajte) ili preoblikujte u pseudo oblik.
 
-### Preskakanje specifičnih datoteka (Napredno)
-Ako je potrebno, stavite primjere u zasebnu datoteku izvan repozitorija ili preimenujte s drugačijom ekstenzijom dok radite na nacrtu. Namjerno preskakanje za prevedene kopije je automatsko (putanje koje sadrže `translations`).
+### Preskakanje određenih datoteka (Napredno)
+Ako je potrebno, stavite primjere u zasebnu datoteku izvan repozitorija ili preimenujte s drugačijim ekstenzijama dok radite na nacrtu. Namjerno preskakanje za prevedene kopije je automatsko (putanje koje sadrže `translations`).
 
 ### Rješavanje problema
 | Problem | Uzrok | Rješenje |
 |---------|-------|----------|
-| Provjera označava liniju koju ste ažurirali | Regex preširok | Sužite obrazac dodatnom granicom riječi (`\b`) ili sidrima |
-| CI ne uspijeva, ali lokalno prolazi | Različita verzija Pythona ili necommitane promjene | Ponovno pokrenite lokalno, osigurajte čist radni direktorij, provjerite verziju Pythona u workflowu (3.11) |
-| Potrebno privremeno zaobići | Hitni popravak | Primijenite popravak odmah nakon; razmislite o korištenju privremene grane i naknadnog PR-a (izbjegavajte dodavanje prekidača za zaobilaženje) |
+| Provjera označava liniju koju ste ažurirali | Regex preširok | Sužite uzorak dodavanjem dodatne granice riječi (`\b`) ili sidra |
+| CI ne uspijeva, ali lokalno prolazi | Različita verzija Pythona ili nekompletne promjene | Ponovno pokrenite lokalno, osigurajte čisto radno okruženje, provjerite verziju Pythona u workflowu (3.11) |
+| Potrebno privremeno zaobići | Hitni popravak | Odmah primijenite popravak; razmislite o korištenju privremene grane i naknadnom PR-u (izbjegavajte dodavanje bypass opcija) |
 
-### Razlog
-Održavanje dokumentacije usklađene s *trenutnim* stabilnim CLI sučeljem sprječava probleme na radionici, izbjegava zbunjenost sudionika i centralizira mjerenje performansi kroz održavane Python skripte umjesto zastarjelih CLI podnaredbi.
+### Razlozi
+Održavanje dokumentacije usklađene s *trenutnim* stabilnim CLI sučeljem sprječava probleme na radionicama, izbjegava zbunjenost sudionika i centralizira mjerenje performansi kroz održavane Python skripte umjesto zastarjelih CLI podnaredbi.
 
 ---
-Održava se kao dio alata za kvalitetu radionice. Za poboljšanja (npr. automatsko popravljanje prijedloga ili generiranje HTML izvješća), otvorite problem ili pošaljite PR.
+Održava se kao dio alata za kvalitetu radionice. Za poboljšanja (npr. automatske zamjene prijedloga ili generiranje HTML izvještaja), otvorite problem ili pošaljite PR.
 
 ## 2. Skripta za validaciju uzoraka
 
@@ -117,22 +117,22 @@ python scripts/validate_samples.py --summary
 ### Što provjerava
 - ✅ Valjanost Python sintakse
 - ✅ Prisutnost potrebnih uvoza
-- ✅ Implementacija obrade pogrešaka (detaljni način)
-- ✅ Korištenje tipova (detaljni način)
-- ✅ Dokumentacijski stringovi funkcija (detaljni način)
-- ✅ SDK referentne poveznice (detaljni način)
+- ✅ Implementaciju rukovanja greškama (detaljan način rada)
+- ✅ Korištenje tipova (detaljan način rada)
+- ✅ Dokumentaciju funkcija (detaljan način rada)
+- ✅ Reference na SDK (detaljan način rada)
 
 ### Varijable okruženja
 - `SKIP_IMPORT_CHECK=1` - Preskoči provjeru uvoza
 - `SKIP_SYNTAX_CHECK=1` - Preskoči provjeru sintakse
 
 ### Izlazni kodovi
-- `0` - Svi uzorci prošli validaciju
-- `1` - Jedan ili više uzoraka nisu prošli
+- `0` - Svi uzorci su prošli validaciju
+- `1` - Jedan ili više uzoraka nije prošlo
 
 ## 3. Skripta za testiranje uzoraka
 
-`test_samples.py` pokreće osnovne testove na svim uzorcima kako bi provjerila da se izvršavaju bez pogrešaka.
+`test_samples.py` provodi osnovne testove na svim uzorcima kako bi se provjerilo da se izvršavaju bez grešaka.
 
 ### Upotreba
 ```bash
@@ -150,19 +150,19 @@ python scripts/test_samples.py --verbose
 ```
 
 ### Preduvjeti
-- Pokrenuta Foundry Local usluga: `foundry service start`
+- Pokrenuta usluga Foundry Local: `foundry service start`
 - Učitani modeli: `foundry model run phi-4-mini`
 - Instalirane ovisnosti: `pip install -r requirements.txt`
 
 ### Što testira
-- ✅ Uzorak se može izvršiti bez pogrešaka u izvođenju
-- ✅ Generira se potrebni izlaz
-- ✅ Ispravna obrada pogrešaka u slučaju neuspjeha
-- ✅ Performanse (vrijeme izvođenja)
+- ✅ Uzorak se može izvršiti bez grešaka u radu
+- ✅ Generira se potreban izlaz
+- ✅ Ispravno rukovanje greškama u slučaju neuspjeha
+- ✅ Performanse (vrijeme izvršavanja)
 
 ### Varijable okruženja
 - `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Model koji se koristi za testiranje
-- `TEST_TIMEOUT=30` - Timeout po uzorku u sekundama
+- `TEST_TIMEOUT=30` - Vrijeme izvršavanja po uzorku u sekundama
 
 ### Očekivani neuspjesi
 Neki testovi mogu ne uspjeti ako opcionalne ovisnosti nisu instalirane (npr. `ragas`, `sentence-transformers`). Instalirajte s:
@@ -171,10 +171,10 @@ pip install sentence-transformers ragas datasets
 ```
 
 ### Izlazni kodovi
-- `0` - Svi testovi prošli
-- `1` - Jedan ili više testova nisu prošli
+- `0` - Svi testovi su prošli
+- `1` - Jedan ili više testova nije prošlo
 
-## 4. Izvoznik za benchmark u Markdownu
+## 4. Izvoz benchmarka u Markdown
 
 Skripta: `export_benchmark_markdown.py`
 
@@ -182,7 +182,7 @@ Generira reproducibilnu tablicu performansi za skup modela.
 
 ### Upotreba
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Izlazi
@@ -195,20 +195,20 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 | Zastavica | Opis | Zadano |
 |-----------|------|--------|
 | `--models` | Alias modela odvojen zarezima | (obavezno) |
-| `--prompt` | Prompt korišten u svakom krugu | (obavezno) |
-| `--rounds` | Broj krugova po modelu | 3 |
-| `--output` | Datoteka za izlaz u Markdownu | `benchmark_report.md` |
-| `--json` | Datoteka za izlaz u JSON formatu | `benchmark_report.json` |
-| `--fail-on-empty` | Izlazni kod različit od nule ako svi benchmark testovi ne uspiju | isključeno |
+| `--prompt` | Prompt korišten u svakoj rundi | (obavezno) |
+| `--rounds` | Broj rundi po modelu | 3 |
+| `--output` | Izlazna datoteka u Markdownu | `benchmark_report.md` |
+| `--json` | Izlazna datoteka u JSON formatu | `benchmark_report.json` |
+| `--fail-on-empty` | Ne-nulti izlaz ako svi benchmark testovi ne uspiju | isključeno |
 
 Varijabla okruženja `BENCH_STREAM=1` dodaje mjerenje latencije prvog tokena.
 
 ### Napomene
-- Ponovno koristi `workshop_utils` za dosljedno pokretanje modela i predmemoriranje.
-- Ako se pokreće iz drugog radnog direktorija, skripta pokušava pronaći `workshop_utils` putem rezervnih putanja.
-- Za usporedbu GPU performansi: pokrenite jednom, omogućite ubrzanje putem CLI konfiguracije, ponovno pokrenite i usporedite JSON.
+- Koristi `workshop_utils` za dosljedno pokretanje modela i keširanje.
+- Ako se pokreće iz drugog radnog direktorija, skripta pokušava pronaći alternativne putanje za lociranje `workshop_utils`.
+- Za usporedbu GPU-a: pokrenite jednom, omogućite ubrzanje putem CLI konfiguracije, ponovno pokrenite i usporedite JSON.
 
 ---
 
-**Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane ljudskog prevoditelja. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

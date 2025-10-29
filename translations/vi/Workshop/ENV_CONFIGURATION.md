@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T16:41:54+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:31:48+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "vi"
 }
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. Cấu Hình Môi Trường
 
-Tệp `.env` đã được cấu hình với các giá trị mặc định hợp lý. Hầu hết người dùng không cần thay đổi gì.
+Tệp `.env` đã được cấu hình với các giá trị mặc định hợp lý. Hầu hết người dùng sẽ không cần thay đổi gì.
 
 **Tùy chọn**: Xem xét và tùy chỉnh cài đặt:
 ```bash
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Đối với Script Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -84,14 +84,14 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | Biến | Mặc định | Mục đích |
 |------|----------|----------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Mô hình nhúng |
-| `RAG_QUESTION` | Được cấu hình sẵn | Câu hỏi kiểm tra |
+| `RAG_QUESTION` | Được cấu hình trước | Câu hỏi kiểm tra |
 
-#### Phiên 03: Benchmarking
+#### Phiên 03: Đánh Giá Hiệu Năng
 | Biến | Mặc định | Mục đích |
 |------|----------|----------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Các mô hình để đánh giá |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Các mô hình để đánh giá |
 | `BENCH_ROUNDS` | `3` | Số vòng lặp mỗi mô hình |
-| `BENCH_PROMPT` | Được cấu hình sẵn | Lời nhắc kiểm tra |
+| `BENCH_PROMPT` | Được cấu hình trước | Lời nhắc kiểm tra |
 | `BENCH_STREAM` | `0` | Đo độ trễ token đầu tiên |
 
 #### Phiên 04: So Sánh Mô Hình
@@ -99,7 +99,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |------|----------|----------|
 | `SLM_ALIAS` | `phi-4-mini` | Mô hình ngôn ngữ nhỏ |
 | `LLM_ALIAS` | `qwen2.5-7b` | Mô hình ngôn ngữ lớn |
-| `COMPARE_PROMPT` | Được cấu hình sẵn | Lời nhắc so sánh |
+| `COMPARE_PROMPT` | Được cấu hình trước | Lời nhắc so sánh |
 | `COMPARE_RETRIES` | `2` | Số lần thử lại |
 
 #### Phiên 05: Điều Phối Đa Tác Nhân
@@ -107,7 +107,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |------|----------|----------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Mô hình tác nhân nghiên cứu |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Mô hình tác nhân biên tập |
-| `AGENT_QUESTION` | Được cấu hình sẵn | Câu hỏi kiểm tra |
+| `AGENT_QUESTION` | Được cấu hình trước | Câu hỏi kiểm tra |
 
 ### Cấu Hình Độ Tin Cậy
 
@@ -119,7 +119,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 ## Cấu Hình Thông Dụng
 
-### Cài Đặt Phát Triển (Lặp Nhanh)
+### Thiết Lập Phát Triển (Lặp Nhanh)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Cài Đặt Sản Xuất (Tập Trung Chất Lượng)
+### Thiết Lập Sản Xuất (Tập Trung Chất Lượng)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -138,9 +138,9 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Cài Đặt Đánh Giá
+### Thiết Lập Đánh Giá Hiệu Năng
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -172,7 +172,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `qwen2.5-7b` - Chất lượng tốt nhất, sử dụng tài nguyên cao hơn
 - `phi-4-mini` - Chất lượng tốt, tài nguyên thấp hơn
 
-**Tạo Mã:**
+**Sinh Mã:**
 - `deepseek-coder-1.3b` - Chuyên biệt cho mã hóa
 - `phi-4-mini` - Mã hóa mục đích chung
 
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### Cài Đặt Kết Hợp Azure OpenAI
+### Thiết Lập Kết Hợp Azure OpenAI
 
 ```bash
 # Use local for development
@@ -238,12 +238,12 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 ### Biến Môi Trường Không Được Tải
 
-**Triệu chứng:**
+**Triệu Chứng:**
 - Script sử dụng sai mô hình
 - Lỗi kết nối
 - Biến không được nhận diện
 
-**Giải pháp:**
+**Giải Pháp:**
 ```bash
 # 1. Verify .env exists in repository root
 ls -la .env  # macOS/Linux
@@ -261,12 +261,12 @@ pwd  # Should be in Workshop or repository root
 
 ### Vấn Đề Kết Nối Dịch Vụ
 
-**Triệu chứng:**
+**Triệu Chứng:**
 - Lỗi "Connection refused"
 - "Service not available"
 - Lỗi timeout
 
-**Giải pháp:**
+**Giải Pháp:**
 ```bash
 # 1. Check service status
 foundry service status
@@ -284,11 +284,11 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 ### Mô Hình Không Tìm Thấy
 
-**Triệu chứng:**
+**Triệu Chứng:**
 - Lỗi "Model not found"
 - "Alias not recognized"
 
-**Giải pháp:**
+**Giải Pháp:**
 ```bash
 # 1. List available models
 foundry model list
@@ -302,21 +302,18 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 ### Lỗi Nhập Khẩu
 
-**Triệu chứng:**
+**Triệu Chứng:**
 - Lỗi "Module not found"
-- "Cannot import workshop_utils"
 
-**Giải pháp:**
+**Giải Pháp:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Kiểm Tra Cấu Hình
@@ -410,7 +407,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ## Tài Nguyên Bổ Sung
 
-- `QUICK_START.md` - Hướng dẫn bắt đầu nhanh
+- `QUICK_START.md` - Hướng dẫn bắt đầu
 - `SDK_MIGRATION_NOTES.md` - Chi tiết cập nhật SDK
 - `Workshop/samples/*/README.md` - Hướng dẫn cụ thể cho từng mẫu
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, chúng tôi khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

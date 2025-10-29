@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T19:17:14+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T22:45:05+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "tl"
 }
@@ -11,23 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrak
 
-Magdisenyo at mag-orchestrate ng multi-role AI agents gamit ang low-latency at privacy-preserving runtime ng Foundry Local. Magtatakda ka ng mga role ng agent, memory strategies, tool invocation patterns, at execution graphs. Ang session ay nagpapakilala ng scaffolding patterns na maaari mong palawakin gamit ang Chainlit o LangGraph. Ang starter project ay nagpapalawak sa umiiral na sample ng agent architecture upang magdagdag ng memory persistence + evaluation hooks.
+Magdisenyo at mag-orchestrate ng multi-role AI agents gamit ang low-latency, privacy-preserving runtime ng Foundry Local. Magtatakda ka ng mga role ng agent, mga estratehiya sa memorya, mga pattern ng paggamit ng tool, at mga execution graph. Ang sesyon ay nagpapakilala ng mga scaffolding pattern na maaari mong palawakin gamit ang Chainlit o LangGraph. Ang starter project ay nagpapalawak sa umiiral na sample ng arkitektura ng agent upang magdagdag ng memory persistence + evaluation hooks.
 
 ## Mga Layunin sa Pagkatuto
 
-- **Tukuyin ang Mga Role**: System prompts at capability boundaries
-- **Ipatupad ang Memory**: Short-term (conversation), long-term (vector / file), ephemeral scratchpads
-- **Scaffold Workflows**: Sequential, branching, at parallel agent steps
-- **Integrate Tools**: Magaan na function tool calling pattern
-- **Evaluate**: Basic trace + rubric-driven outcome scoring
+- **Tukuyin ang mga Role**: Mga system prompt at hangganan ng kakayahan
+- **Ipatupad ang Memorya**: Panandalian (pag-uusap), pangmatagalan (vector / file), ephemeral scratchpads
+- **Mag-scaffold ng mga Workflow**: Sunod-sunod, branching, at parallel na mga hakbang ng agent
+- **Isama ang mga Tool**: Magaan na pattern ng pagtawag sa function tool
+- **Mag-evaluate**: Pangunahing trace + rubric-driven na pagmamarka ng resulta
 
 ## Mga Kinakailangan
 
 - Nakumpleto ang Sessions 1–4
-- Python na may `foundry-local-sdk`, `openai`, optional na `chainlit`
-- Lokal na mga modelo na tumatakbo (hindi bababa sa `phi-4-mini`)
+- Python na may `foundry-local-sdk`, `openai`, opsyonal na `chainlit`
+- Mga lokal na modelo na tumatakbo (hindi bababa sa `phi-4-mini`)
 
-### Cross-Platform Environment Snippet
+### Snippet ng Cross-Platform Environment
 
 Windows:
 ```powershell
@@ -45,15 +45,15 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Kung nagpapatakbo ng agents mula sa macOS laban sa remote Windows host service:
+Kung nagpapatakbo ng mga agent mula sa macOS laban sa remote Windows host service:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Demo Flow (30 min)
+## Demo Flow (30 minuto)
 
-### 1. Tukuyin ang Mga Role ng Agent at Memory (7 min)
+### 1. Tukuyin ang mga Role ng Agent at Memorya (7 minuto)
 
 Gumawa ng `samples/05-agents/agents_core.py`:
 
@@ -122,14 +122,14 @@ if __name__ == "__main__":
 ```
 
 
-### 2. CLI Scaffolding Pattern (3 min)
+### 2. Pattern ng CLI Scaffolding (3 minuto)
 
 ```powershell
 python samples/05-agents/agents_core.py
 ```
 
 
-### 3. Magdagdag ng Tool Invocation (7 min)
+### 3. Magdagdag ng Tool Invocation (7 minuto)
 
 Palawakin gamit ang `samples/05-agents/tools.py`:
 
@@ -152,7 +152,7 @@ TOOLS = {
 
 Baguhin ang `agents_core.py` upang pahintulutan ang simpleng syntax ng tool: ang user ay nagsusulat ng `#tool:get_time` at ang agent ay nagpapalawak ng output ng tool sa konteksto bago ang generation.
 
-### 4. Orchestrated Workflow (6 min)
+### 4. Orchestrated Workflow (6 minuto)
 
 Gumawa ng `samples/05-agents/orchestrator.py`:
 
@@ -185,12 +185,12 @@ if __name__ == '__main__':
 ```
 
 
-### 5. Starter Project: Palawakin ang `05-agent-architecture` (7 min)
+### 5. Starter Project: Palawakin ang `05-agent-architecture` (7 minuto)
 
 Magdagdag:
 1. Persistent memory layer (hal., JSON lines append ng mga pag-uusap)
 2. Simpleng evaluation rubric: factuality / clarity / style placeholders
-3. Opsyonal na Chainlit front-end (dalawang tab: conversation & traces)
+3. Opsyonal na Chainlit front-end (dalawang tab: pag-uusap at mga trace)
 4. Opsyonal na LangGraph style state machine (kung magdadagdag ng dependency) para sa branching decisions
 
 ## Validation Checklist
@@ -200,13 +200,13 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Asahan ang structured pipeline output na may tool injection note.
+Asahan ang structured pipeline output na may tala ng tool injection.
 
-## Memory Strategies Overview
+## Pangkalahatang-ideya ng Memory Strategies
 
 | Layer | Layunin | Halimbawa |
 |-------|---------|-----------|
-| Short-term | Pagpapatuloy ng dialogue | Huling N na mga mensahe |
+| Panandalian | Pagpapatuloy ng diyalogo | Huling N mensahe |
 | Episodic | Pag-alala sa session | JSON bawat session |
 | Semantic | Pangmatagalang retrieval | Vector store ng mga buod |
 | Scratchpad | Mga hakbang sa pag-iisip | Inline chain-of-thought (pribado) |
@@ -228,9 +228,9 @@ evaluation = {
 
 | Isyu | Sanhi | Resolusyon |
 |------|-------|-----------|
-| Paulit-ulit na sagot | Context window masyadong malaki/maliit | I-tune ang memory window parameter |
-| Tool hindi na-invoke | Mali ang syntax | Gamitin ang format na `#tool:tool_name` |
-| Mabagal na orchestration | Maraming cold models | Pre-run warmup prompts |
+| Paulit-ulit na sagot | Masyadong malaki/maliit ang context window | I-tune ang memory window parameter |
+| Hindi na-invoke ang tool | Mali ang syntax | Gamitin ang format na `#tool:tool_name` |
+| Mabagal na orchestration | Maraming cold models | Mag-pre-run ng warmup prompts |
 
 ## Mga Sanggunian
 
@@ -240,30 +240,31 @@ evaluation = {
 
 ---
 
-**Tagal ng Session**: 30 min  
+**Tagal ng Sesyon**: 30 minuto  
 **Kahirapan**: Advanced
 
-## Sample Scenario & Workshop Mapping
+## Halimbawang Scenario at Workshop Mapping
 
 | Workshop Script | Scenario | Layunin | Halimbawa ng Prompt |
 |-----------------|----------|---------|----------------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Knowledge research bot na gumagawa ng executive-friendly summaries | Two-agent pipeline (research → editorial polish) na may opsyonal na distinct models | Ipaliwanag kung bakit mahalaga ang edge inference para sa compliance. |
-| (Pinalawak) `tools.py` na konsepto | Magdagdag ng time & token estimation tools | Ipakita ang magaan na tool invocation pattern | #tool:get_time |
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot sa pananaliksik ng kaalaman na gumagawa ng mga buod na angkop para sa mga executive | Pipeline ng dalawang agent (pananaliksik → editorial polish) na may opsyonal na magkakaibang mga modelo | Ipaliwanag kung bakit mahalaga ang edge inference para sa compliance. |
+| (Pinalawak) Konsepto ng `tools.py` | Magdagdag ng mga tool para sa oras at pagtatantya ng token | Ipakita ang magaan na pattern ng paggamit ng tool | #tool:get_time |
 
-### Scenario Narrative
+### Narrative ng Scenario
 
-Ang compliance documentation team ay nangangailangan ng mabilis na internal briefs na sourced mula sa lokal na kaalaman nang hindi ipinapadala ang drafts sa cloud services. Ang researcher agent ay nangongolekta ng concise factual bullets; ang editor agent ay nagre-rewrite para sa executive clarity. Maaaring magtalaga ng distinct model aliases upang i-optimize ang latency (mabilis na SLM) vs stylistic refinement (mas malaking modelo kapag kinakailangan lamang).
+Ang koponan ng dokumentasyon para sa compliance ay nangangailangan ng mabilis na mga internal na buod na nagmumula sa lokal na kaalaman nang hindi ipinapadala ang mga draft sa cloud services. Ang isang researcher agent ay nangongolekta ng maikli at makatotohanang mga bullet; ang isang editor agent ay muling isinusulat para sa kalinawan ng mga executive. Maaaring italaga ang magkakaibang model aliases upang ma-optimize ang latency (mabilis na SLM) kumpara sa stylistic refinement (mas malaking modelo kapag kinakailangan lamang).
 
-### Halimbawa ng Multi-Model Environment
+### Halimbawang Multi-Model Environment
 
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
-### Trace Structure (Opsyonal)
+### Istruktura ng Trace (Opsyonal)
 
 ```json
 {
@@ -282,16 +283,16 @@ I-persist ang bawat hakbang sa isang JSONL file para sa rubric scoring sa hinaha
 
 | Tema | Pagpapahusay | Benepisyo | Sketch ng Implementasyon |
 |------|-------------|-----------|--------------------------|
-| Multi-Model Roles | Distinct models bawat agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specialization & bilis | Piliin ang alias env vars, tawagin ang `chat_once` gamit ang per-role alias |
-| Structured Traces | JSON trace ng bawat act(tool,input,latency,tokens) | Debug & evaluation | I-append ang dict sa isang list; isulat ang `.jsonl` sa dulo |
+| Multi-Model Roles | Magkakaibang modelo bawat agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Espesyalisasyon at bilis | Piliin ang alias env vars, tawagin ang `chat_once` gamit ang per-role alias |
+| Structured Traces | JSON trace ng bawat act(tool,input,latency,tokens) | Debug at evaluation | Magdagdag ng dict sa isang list; isulat ang `.jsonl` sa dulo |
 | Memory Persistence | Reloadable dialog context | Pagpapatuloy ng session | I-dump ang `Agent.memory` sa `sessions/<ts>.json` |
 | Tool Registry | Dynamic tool discovery | Extensibility | Panatilihin ang `TOOLS` dict at i-introspect ang mga pangalan/desc |
-| Retry & Backoff | Robust long chains | Bawasan ang transient failures | I-wrap ang `act` gamit ang try/except + exponential backoff |
+| Retry & Backoff | Matibay na long chains | Bawasan ang mga transient failures | I-wrap ang `act` gamit ang try/except + exponential backoff |
 | Rubric Scoring | Automated qualitative labels | Subaybayan ang mga pagpapabuti | Secondary pass prompting model: "Rate clarity 1-5" |
-| Vector Memory | Semantic recall | Rich long-term context | Embed summaries, i-retrieve ang top-k sa system message |
-| Streaming Replies | Mas mabilis na perceived response | UX improvement | Gamitin ang streaming kapag available at i-flush ang partial tokens |
+| Vector Memory | Semantic recall | Mayamang pangmatagalang konteksto | I-embed ang mga buod, kunin ang top-k sa system message |
+| Streaming Replies | Mas mabilis na perceived response | Pagpapabuti ng UX | Gamitin ang streaming kapag available at i-flush ang partial tokens |
 | Deterministic Tests | Regression control | Stable CI | Patakbuhin gamit ang `temperature=0`, fixed prompt seeds |
-| Parallel Branching | Mas mabilis na exploration | Throughput | Gamitin ang `concurrent.futures` para sa independent agent steps |
+| Parallel Branching | Mas mabilis na exploration | Throughput | Gamitin ang `concurrent.futures` para sa mga independent agent steps |
 
 #### Halimbawa ng Trace Record
 
@@ -318,4 +319,4 @@ I-persist ang (`answer`, `rating`) pairs upang makabuo ng historical quality gra
 ---
 
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, pakitandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.

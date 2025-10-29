@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-08T20:53:59+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T21:32:21+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "pt"
 }
@@ -11,22 +11,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Resumo
 
-Trate os modelos como ferramentas compostas dentro de uma camada operacional de IA local. Esta sessão mostra como encadear múltiplas chamadas especializadas de SLM/LLM, encaminhar tarefas seletivamente e expor uma superfície unificada de SDK para aplicações. Irá construir um roteador de modelos leve + planeador de tarefas, integrá-lo num script de aplicação e delinear o caminho de escalonamento para o Azure AI Foundry para cargas de trabalho em produção.
+Trate os modelos como ferramentas compostas dentro de uma camada operacional de IA local. Esta sessão mostra como encadear múltiplas chamadas especializadas de SLM/LLM, encaminhar tarefas seletivamente e expor uma interface unificada de SDK para aplicações. Você irá construir um roteador de modelos leve + planejador de tarefas, integrá-lo em um script de aplicação e delinear o caminho de escalonamento para o Azure AI Foundry para cargas de trabalho em produção.
 
 ## Objetivos de Aprendizagem
 
-- **Conceber** modelos como ferramentas atómicas com capacidades declaradas
+- **Conceber** modelos como ferramentas atômicas com capacidades declaradas
 - **Encaminhar** pedidos com base em intenção / pontuação heurística
-- **Encadear** saídas em tarefas de múltiplos passos (decompor → resolver → refinar)
+- **Encadear** saídas em tarefas de múltiplas etapas (decompor → resolver → refinar)
 - **Integrar** uma API de cliente unificada para aplicações downstream
-- **Escalar** o design para a cloud (mesmo contrato compatível com OpenAI)
+- **Escalar** o design para a nuvem (mesmo contrato compatível com OpenAI)
 
 ## Pré-requisitos
 
 - Sessões 1–5 concluídas
-- Múltiplos modelos locais em cache (ex.: `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- Vários modelos locais armazenados em cache (ex.: `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Fragmento de Ambiente Multiplataforma
+### Trecho de Ambiente Multiplataforma
 
 Windows PowerShell:
 ```powershell
@@ -44,13 +44,13 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Acesso remoto/VM a partir de macOS:
+Acesso remoto/serviço VM a partir de macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Fluxo de Demonstração (30 min)
+## Fluxo da Demonstração (30 min)
 
 ### 1. Declaração de Capacidade de Ferramentas (5 min)
 
@@ -74,7 +74,7 @@ CATALOG = {
 ```
 
 
-### 2. Deteção de Intenção e Encaminhamento (8 min)
+### 2. Detecção de Intenção e Encaminhamento (8 min)
 
 Crie `samples/06-tools/router.py`:
 
@@ -133,7 +133,7 @@ if __name__ == "__main__":
 ```
 
 
-### 3. Encadeamento de Tarefas de Múltiplos Passos (7 min)
+### 3. Encadeamento de Tarefas em Múltiplas Etapas (7 min)
 
 Crie `samples/06-tools/pipeline.py`:
 
@@ -179,20 +179,20 @@ if __name__ == '__main__':
 ### 4. Projeto Inicial: Adaptar `06-models-as-tools` (5 min)
 
 Melhorias:
-- Adicionar suporte a tokens em streaming (atualização progressiva da interface)
+- Adicionar suporte a streaming de tokens (atualização progressiva da interface)
 - Adicionar pontuação de confiança: sobreposição lexical ou rubrica de prompt
-- Exportar JSON de rastreio (intenção → modelo → latência → uso de tokens)
-- Implementar reutilização de cache para subpassos repetidos
+- Exportar JSON de rastreamento (intenção → modelo → latência → uso de tokens)
+- Implementar reutilização de cache para subetapas repetidas
 
-### 5. Caminho de Escalamento para Azure (5 min)
+### 5. Caminho de Escalabilidade para Azure (5 min)
 
-| Camada | Local (Foundry) | Cloud (Azure AI Foundry) | Estratégia de Transição |
+| Camada | Local (Foundry) | Nuvem (Azure AI Foundry) | Estratégia de Transição |
 |--------|-----------------|--------------------------|--------------------------|
 | Encaminhamento | Python heurístico | Microsserviço durável | Containerizar e implementar API |
-| Modelos | SLMs em cache | Implementações geridas | Mapear nomes locais para IDs de implementação |
-| Observabilidade | Estatísticas CLI/manual | Registo central e métricas | Adicionar eventos de rastreio estruturados |
+| Modelos | SLMs armazenados em cache | Implementações geridas | Mapear nomes locais para IDs de implementação |
+| Observabilidade | Estatísticas CLI/manual | Registro centralizado e métricas | Adicionar eventos de rastreamento estruturados |
 | Segurança | Apenas host local | Autenticação/rede Azure | Introduzir cofre de chaves para segredos |
-| Custo | Recursos do dispositivo | Faturação por consumo | Adicionar limites de orçamento |
+| Custo | Recursos do dispositivo | Cobrança por consumo | Adicionar limites de orçamento |
 
 ## Lista de Verificação de Validação
 
@@ -210,8 +210,8 @@ Esperar seleção de modelo baseada em intenção e saída final refinada.
 | Problema | Causa | Solução |
 |----------|-------|---------|
 | Todas as tarefas encaminhadas para o mesmo modelo | Regras fracas | Enriquecer conjunto de regex INTENT_RULES |
-| Pipeline falha a meio do passo | Modelo não carregado | Executar `foundry model run <model>` |
-| Baixa coesão de saída | Sem fase de refinamento | Adicionar passo de sumarização/validação |
+| Falha na pipeline na metade da etapa | Modelo não carregado | Executar `foundry model run <model>` |
+| Baixa coesão de saída | Sem fase de refinamento | Adicionar etapa de sumarização/validação |
 
 ## Referências
 
@@ -224,19 +224,17 @@ Esperar seleção de modelo baseada em intenção e saída final refinada.
 **Duração da Sessão**: 30 min  
 **Dificuldade**: Avançado
 
-## Cenário de Exemplo e Mapeamento de Workshop
+## Cenário de Exemplo e Mapeamento do Workshop
 
-| Scripts / Notebooks do Workshop | Cenário | Objetivo | Fonte de Dataset / Catálogo |
-|---------------------------------|---------|----------|-----------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Assistente de desenvolvimento lidando com prompts de intenção mista (refatorar, resumir, classificar) | Intenção heurística → encaminhamento de alias de modelo com uso de tokens | `CATALOG` inline + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planeamento e refinamento de múltiplos passos para tarefa complexa de assistência em codificação | Decompor → execução especializada → passo de refinamento de sumarização | Mesmo `CATALOG`; passos derivados da saída do plano |
+| Scripts / Notebooks do Workshop | Cenário | Objetivo | Fonte do Conjunto de Dados / Catálogo |
+|---------------------------------|---------|----------|---------------------------------------|
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Assistente de desenvolvedor lidando com prompts de intenção mista (refatorar, resumir, classificar) | Intenção heurística → encaminhamento de alias de modelo com uso de tokens | `CATALOG` embutido + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planeamento e refinamento em múltiplas etapas para tarefa complexa de assistência em codificação | Decompor → execução especializada → etapa de refinamento de sumarização | Mesmo `CATALOG`; etapas derivadas da saída do plano |
 
 ### Narrativa do Cenário
-
-Uma ferramenta de produtividade de engenharia recebe tarefas heterogéneas: refatorar código, resumir notas arquiteturais, classificar feedback. Para minimizar latência e uso de recursos, um modelo geral pequeno planeia e resume, um modelo especializado em código lida com a refatoração, e um modelo leve capaz de classificação rotula o feedback. O script de pipeline demonstra encadeamento + refinamento; o script de roteador isola o encaminhamento adaptativo de um único prompt.
+Uma ferramenta de produtividade de engenharia recebe tarefas heterogêneas: refatorar código, resumir notas arquiteturais, classificar feedback. Para minimizar latência e uso de recursos, um pequeno modelo geral planeja e resume, um modelo especializado em código lida com a refatoração, e um modelo leve capaz de classificação rotula o feedback. O script da pipeline demonstra encadeamento + refinamento; o script do roteador isola o encaminhamento adaptativo de um único prompt.
 
 ### Instantâneo do Catálogo
-
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -247,7 +245,6 @@ CATALOG = {
 
 
 ### Exemplos de Prompts de Teste
-
 ```json
 [
     "Refactor this Python function for readability",
@@ -258,9 +255,8 @@ CATALOG = {
 ```
 
 
-### Extensão de Rastreio (Opcional)
-
-Adicionar linhas JSON de rastreio por passo para `models_pipeline.py`:
+### Extensão de Rastreamento (Opcional)
+Adicionar linhas de JSON de rastreamento por etapa para `models_pipeline.py`:
 ```python
 trace.append({
     "step": step_idx,
@@ -272,26 +268,25 @@ trace.append({
 ```
 
 
-### Heurística de Escalamento (Ideia)
-
-Se o plano contiver palavras-chave como "otimizar", "segurança", ou o comprimento do passo for > 280 caracteres → escalar para um modelo maior (ex.: `gpt-oss-20b`) apenas para esse passo.
+### Heurística de Escalação (Ideia)
+Se o plano contiver palavras-chave como "otimizar", "segurança", ou o comprimento da etapa > 280 caracteres → escalar para um modelo maior (ex.: `gpt-oss-20b`) apenas para essa etapa.
 
 ### Melhorias Opcionais
 
 | Área | Melhoria | Valor | Dica |
 |------|----------|-------|------|
-| Cache | Reutilizar objetos de gestor + cliente | Menor latência, menos overhead | Usar `workshop_utils.get_client` |
-| Métricas de Uso | Capturar tokens e latência por passo | Perfilagem e otimização | Cronometrar cada chamada roteada; armazenar na lista de rastreio |
-| Encaminhamento Adaptativo | Confiança / custo consciente | Melhor equilíbrio qualidade-custo | Adicionar pontuação: se prompt > N caracteres ou regex corresponder ao domínio → escalar para modelo maior |
-| Registo Dinâmico de Capacidades | Catálogo de recarregamento dinâmico | Sem necessidade de reiniciar ou reimplementar | Carregar `catalog.json` em tempo de execução; monitorizar timestamp do ficheiro |
-| Estratégia de Fallback | Robustez em falhas | Maior disponibilidade | Tentar primário → em exceção fallback para alias |
-| Pipeline em Streaming | Feedback antecipado | Melhoria de UX | Transmitir cada passo e armazenar buffer para entrada de refinamento final |
+| Cache | Reutilizar objetos de gerenciador + cliente | Menor latência, menos sobrecarga | Usar `workshop_utils.get_client` |
+| Métricas de Uso | Capturar tokens e latência por etapa | Perfilamento e otimização | Cronometrar cada chamada roteada; armazenar na lista de rastreamento |
+| Encaminhamento Adaptativo | Confiança / ciente de custo | Melhor relação qualidade-custo | Adicionar pontuação: se o prompt > N caracteres ou regex corresponder ao domínio → escalar para modelo maior |
+| Registro Dinâmico de Capacidades | Catálogo de recarga dinâmica | Sem necessidade de reinício ou reimplantação | Carregar `catalog.json` em tempo de execução; monitorar carimbo de data/hora do arquivo |
+| Estratégia de Contingência | Robustez em falhas | Maior disponibilidade | Tentar primário → em caso de exceção, usar alias de contingência |
+| Pipeline de Streaming | Feedback antecipado | Melhoria de UX | Transmitir cada etapa e armazenar em buffer a entrada final de refinamento |
 | Embeddings de Intenção Vetorial | Encaminhamento mais detalhado | Maior precisão de intenção | Incorporar prompt, agrupar e mapear centróide → capacidade |
-| Exportação de Rastreio | Encadeamento auditável | Conformidade/relatórios | Emitir linhas JSON: passo, intenção, modelo, latência_ms, tokens |
-| Simulação de Custo | Estimativa pré-cloud | Planeamento de orçamento | Atribuir custo notional/token por modelo e agregar por tarefa |
-| Modo Determinístico | Reproducibilidade | Benchmarking estável | Ambiente: `temperature=0`, número fixo de passos |
+| Exportação de Rastreamento | Encadeamento auditável | Conformidade/relatórios | Emitir linhas JSON: etapa, intenção, modelo, latência_ms, tokens |
+| Simulação de Custos | Estimativa pré-nuvem | Planeamento de orçamento | Atribuir custo notional/token por modelo e agregar por tarefa |
+| Modo Determinístico | Reproducibilidade | Benchmarking estável | Ambiente: `temperature=0`, número fixo de etapas |
 
-#### Exemplo de Estrutura de Rastreio
+#### Exemplo de Estrutura de Rastreamento
 
 ```python
 trace.append({
@@ -304,7 +299,7 @@ trace.append({
 ```
 
 
-#### Esboço de Escalamento Adaptativo
+#### Esboço de Escalação Adaptativa
 
 ```python
 if len(prompt) > 280 or 'compliance' in prompt.lower():
@@ -313,7 +308,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
 ```
 
 
-#### Recarregamento Dinâmico do Catálogo de Modelos
+#### Recarga Dinâmica do Catálogo de Modelos
 
 ```python
 import json, time, os
@@ -328,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Iterar gradualmente—evitar sobreengenharia em protótipos iniciais.
-
 ---
 
-**Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, é importante notar que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+**Aviso**:  
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

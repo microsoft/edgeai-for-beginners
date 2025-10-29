@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T11:03:46+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T21:40:45+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "it"
 }
 -->
-# Workshop Samples - Scheda di Riferimento Rapido
+# Esempi di Workshop - Scheda di Riferimento Rapida
 
-**Ultimo aggiornamento**: 8 ottobre 2025
+**Ultimo Aggiornamento**: 8 ottobre 2025
 
 ---
 
@@ -24,18 +24,18 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
 
-## 📂 Panoramica dei Campioni
+## 📂 Panoramica degli Esempi
 
-| Sessione | Campione | Scopo | Tempo |
-|----------|----------|-------|-------|
+| Sessione | Esempio | Scopo | Tempo |
+|----------|---------|-------|-------|
 | 01 | `chat_bootstrap.py` | Chat di base + streaming | ~30s |
-| 02 | `rag_pipeline.py` | RAG con embedding | ~45s |
+| 02 | `rag_pipeline.py` | RAG con embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | Valutazione RAG | ~60s |
 | 03 | `benchmark_oss_models.py` | Benchmarking dei modelli | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Specifiche per Sessione
+### Specifiche per la Sessione
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -220,11 +220,11 @@ for chunk in stream:
 2. **Usa modelli più piccoli**: Inizia con `qwen2.5-0.5b` per i test
 3. **Abilita le statistiche di utilizzo**: Imposta `SHOW_USAGE=1` per monitorare i token
 4. **Elaborazione in batch**: Processa più prompt in sequenza
-5. **Riduci max_tokens**: Diminuisce la latenza per risposte rapide
+5. **Riduci max_tokens**: Riduce la latenza per risposte rapide
 
 ---
 
-## 🎯 Flussi di Lavoro Campione
+## 🎯 Flussi di Lavoro Esempio
 
 ### Test Completo
 ```bash
@@ -234,40 +234,38 @@ python scripts/test_samples.py --quick
 
 ### Benchmark dei Modelli
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Pipeline RAG
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Sistema Multi-Agente
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Aiuto Rapido**: Esegui qualsiasi campione con `--help` o controlla il docstring:
+**Aiuto Rapido**: Esegui qualsiasi esempio con `--help` dalla directory `samples` o controlla il docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**Tutti i campioni aggiornati a ottobre 2025 con le migliori pratiche del Foundry Local SDK** ✨
+**Tutti gli esempi aggiornati a ottobre 2025 con le migliori pratiche del Foundry Local SDK** ✨
 
 ---
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un esperto umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.

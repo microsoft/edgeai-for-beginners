@@ -1,22 +1,22 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-09T17:00:32+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T22:25:52+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "nl"
 }
 -->
 # Workshop Scripts
 
-Deze map bevat automatiserings- en ondersteuningsscripts die worden gebruikt om de kwaliteit en consistentie van de Workshop-materialen te waarborgen.
+Deze map bevat automatiserings- en ondersteuningsscripts die worden gebruikt om de kwaliteit en consistentie van het Workshop-materiaal te waarborgen.
 
 ## Inhoud
 
 | Bestand | Doel |
 |---------|------|
 | `lint_markdown_cli.py` | Controleert markdown-codeblokken op verouderde Foundry Local CLI-commandopatronen. |
-| `export_benchmark_markdown.py` | Voert een multi-model latentiebenchmark uit en genereert Markdown- en JSON-rapporten. |
+| `export_benchmark_markdown.py` | Voert een multi-model latentiebenchmark uit en genereert Markdown + JSON-rapporten. |
 
 ## 1. Markdown CLI Pattern Linter
 
@@ -40,10 +40,10 @@ De linter blokkeert verouderde CLI-patronen. Gebruik moderne alternatieven.
 | Code | Betekenis |
 |------|-----------|
 | 0 | Geen overtredingen gedetecteerd |
-| 1 | Eén of meer verouderde patronen gevonden |
+| 1 | Een of meer verouderde patronen gevonden |
 
 ### Lokaal Uitvoeren
-Vanaf de hoofdmap van de repository (aanbevolen):
+Vanaf de root van de repository (aanbevolen):
 
 Windows (PowerShell):
 ```powershell
@@ -63,11 +63,11 @@ chmod +x .git/hooks/pre-commit
 Dit blokkeert commits die verouderde patronen introduceren.
 
 ### CI Integratie
-Een GitHub Action workflow (`.github/workflows/markdown-cli-lint.yml`) voert de linter uit bij elke push en pull request naar de `main`- en `Reactor`-branches. Mislukte taken moeten worden opgelost voordat er wordt samengevoegd.
+Een GitHub Action workflow (`.github/workflows/markdown-cli-lint.yml`) voert de linter uit bij elke push en pull request naar de `main` en `Reactor` branches. Mislukte taken moeten worden opgelost voordat ze worden samengevoegd.
 
 ### Nieuwe Verouderde Patronen Toevoegen
 1. Open `lint_markdown_cli.py`.
-2. Voeg een tuple `(regex, suggestion)` toe aan de `DEPRECATED`-lijst. Gebruik een raw string en voeg `\b` woordgrenzen toe waar nodig.
+2. Voeg een tuple `(regex, suggestion)` toe aan de `DEPRECATED`-lijst. Gebruik een raw string en voeg waar nodig woordgrenzen (`\b`) toe.
 3. Voer de linter lokaal uit om detectie te verifiëren.
 4. Commit en push; CI zal de nieuwe regel afdwingen.
 
@@ -76,8 +76,8 @@ Voorbeeld toevoeging:
 DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental foo usage"))
 ```
 
-### Uitleg Vermelden Toegestaan
-Omdat alleen afgebakende codeblokken worden gecontroleerd, kun je verouderde commando's veilig beschrijven in verhalende tekst. Als je ze *moet* tonen binnen een blok voor contrast, gebruik dan een afgebakend blok **zonder** drievoudige backticks (bijv. inspringen of citeren) of herschrijf naar een pseudo-vorm.
+### Toelaten van Uitleggende Vermeldingen
+Omdat alleen afgebakende codeblokken worden gecontroleerd, kun je verouderde commando's veilig beschrijven in verhalende tekst. Als je ze *moet* tonen binnen een blok voor contrast, gebruik dan een afgebakend blok **zonder** drie backticks (bijv. inspringen of citeren) of herschrijf naar een pseudo-vorm.
 
 ### Specifieke Bestanden Overslaan (Geavanceerd)
 Indien nodig, plaats legacyvoorbeelden in een apart bestand buiten de repository of hernoem met een andere extensie tijdens het opstellen. Opzettelijke overslagen voor vertaalde kopieën zijn automatisch (paden met `translations`).
@@ -86,18 +86,18 @@ Indien nodig, plaats legacyvoorbeelden in een apart bestand buiten de repository
 | Probleem | Oorzaak | Oplossing |
 |----------|---------|-----------|
 | Linter markeert een regel die je hebt bijgewerkt | Regex te breed | Verfijn patroon met extra woordgrens (`\b`) of ankers |
-| CI faalt maar lokaal slaagt | Verschillende Python-versie of niet-gecommit wijzigingen | Voer lokaal opnieuw uit, zorg voor een schone werkmap, controleer workflow Python-versie (3.11) |
-| Tijdelijk omzeilen nodig | Noodfix | Pas fix onmiddellijk toe daarna; overweeg een tijdelijke branch en opvolgende PR (voorkom het toevoegen van omzeilschakelaars) |
+| CI faalt maar lokaal werkt het | Verschillende Python-versie of niet-gecommit wijzigingen | Voer lokaal opnieuw uit, zorg voor een schone werkmap, controleer de Python-versie van de workflow (3.11) |
+| Tijdelijk omzeilen nodig | Noodfix | Pas fix onmiddellijk toe; overweeg een tijdelijke branch en follow-up PR (voorkom het toevoegen van omzeilopties) |
 
 ### Reden
 Het documenteren van de *huidige* stabiele CLI-interface voorkomt frictie tijdens workshops, vermijdt verwarring bij deelnemers en centraliseert prestatiemeting via onderhouden Pythonscripts in plaats van verouderde CLI-subcommando's.
 
 ---
-Onderhouden als onderdeel van de workshopkwaliteits-toolchain. Voor verbeteringen (bijv. automatische correctiesuggesties of HTML-rapportgeneratie), open een issue of dien een PR in.
+Onderhouden als onderdeel van de workshop kwaliteits-toolchain. Voor verbeteringen (bijv. automatische correctiesuggesties of HTML-rapportgeneratie), open een issue of dien een PR in.
 
 ## 2. Validatiescript voor Voorbeelden
 
-`validate_samples.py` valideert alle Python-voorbeeldbestanden op syntax, imports en naleving van best practices.
+`validate_samples.py` controleert alle Python-voorbeeldbestanden op syntax, imports en naleving van best practices.
 
 ### Gebruik
 ```bash
@@ -128,7 +128,7 @@ python scripts/validate_samples.py --summary
 
 ### Exitcodes
 - `0` - Alle voorbeelden zijn gevalideerd
-- `1` - Eén of meer voorbeelden zijn niet geslaagd
+- `1` - Een of meer voorbeelden zijn niet gevalideerd
 
 ## 3. Testscript voor Voorbeelden
 
@@ -172,7 +172,7 @@ pip install sentence-transformers ragas datasets
 
 ### Exitcodes
 - `0` - Alle tests geslaagd
-- `1` - Eén of meer tests mislukt
+- `1` - Een of meer tests mislukt
 
 ## 4. Benchmark Markdown Exporter
 
@@ -182,33 +182,33 @@ Genereert een reproduceerbare prestatietabel voor een set modellen.
 
 ### Gebruik
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
-### Outputs
+### Uitvoer
 | Bestand | Beschrijving |
 |---------|--------------|
 | `benchmark_report.md` | Markdown-tabel (gemiddelde, p95, tokens/sec, optioneel eerste token) |
-| `benchmark_report.json` | Raw-metricsarray voor vergelijking & geschiedenis |
+| `benchmark_report.json` | Ruwe metrische array voor vergelijking & geschiedenis |
 
 ### Opties
 | Vlag | Beschrijving | Standaard |
 |------|--------------|-----------|
-| `--models` | Kommagescheiden modelaliassen | (vereist) |
-| `--prompt` | Prompt gebruikt bij elke ronde | (vereist) |
+| `--models` | Komma-gescheiden modelaliassen | (vereist) |
+| `--prompt` | Prompt gebruikt per ronde | (vereist) |
 | `--rounds` | Ronden per model | 3 |
 | `--output` | Markdown-uitvoerbestand | `benchmark_report.md` |
 | `--json` | JSON-uitvoerbestand | `benchmark_report.json` |
-| `--fail-on-empty` | Niet-nul exit als alle benchmarks falen | uitgeschakeld |
+| `--fail-on-empty` | Niet-nul exit als alle benchmarks falen | uit |
 
 Omgevingsvariabele `BENCH_STREAM=1` voegt latentiemeting van het eerste token toe.
 
 ### Opmerkingen
-- Hergebruikt `workshop_utils` voor consistente modelbootstrap & caching.
+- Hergebruikt `workshop_utils` voor consistente modelinitialisatie & caching.
 - Als het script vanuit een andere werkmap wordt uitgevoerd, probeert het padfallbacks om `workshop_utils` te vinden.
 - Voor GPU-vergelijking: voer één keer uit, schakel versnelling in via CLI-configuratie, voer opnieuw uit en vergelijk de JSON.
 
 ---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

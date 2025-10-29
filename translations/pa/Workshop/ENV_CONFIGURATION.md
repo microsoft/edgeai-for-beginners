@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T10:39:29+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T21:22:40+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "pa"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## ਝਲਕ
 
-ਵਰਕਸ਼ਾਪ ਦੇ ਨਮੂਨੇ ਸੰਰਚਨਾ ਲਈ ਵਾਤਾਵਰਣ ਵੈਰੀਏਬਲਾਂ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹਨ, ਜੋ `.env` ਫਾਈਲ ਵਿੱਚ ਰਿਪੋਜ਼ਟਰੀ ਦੇ ਰੂਟ 'ਤੇ ਕੇਂਦ੍ਰਿਤ ਕੀਤੇ ਗਏ ਹਨ। ਇਸ ਨਾਲ ਕੋਡ ਨੂੰ ਬਦਲਣ ਦੀ ਲੋੜ ਬਿਨਾਂ ਅਸਾਨੀ ਨਾਲ ਕਸਟਮਾਈਜ਼ੇਸ਼ਨ ਹੋ ਸਕਦੀ ਹੈ।
+ਵਰਕਸ਼ਾਪ ਦੇ ਨਮੂਨੇ ਸੰਰਚਨਾ ਲਈ ਵਾਤਾਵਰਣ ਵੈਰੀਏਬਲਾਂ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹਨ, ਜੋ ਰਿਪੋਜ਼ਟਰੀ ਦੇ ਰੂਟ ਵਿੱਚ `.env` ਫਾਇਲ ਵਿੱਚ ਕੇਂਦ੍ਰਿਤ ਕੀਤੇ ਗਏ ਹਨ। ਇਸ ਨਾਲ ਕੋਡ ਨੂੰ ਬਦਲਣ ਦੀ ਲੋੜ ਬਿਨਾਂ ਅਸਾਨੀ ਨਾਲ ਕਸਟਮਾਈਜ਼ੇਸ਼ਨ ਹੋ ਸਕਦੀ ਹੈ।
 
 ## ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ
 
-### 1. ਪੂਰਕ ਚੀਜ਼ਾਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ
+### 1. ਪੂਰਵ ਸ਼ਰਤਾਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ
 
 ```bash
 # Check Foundry Local is installed
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. ਵਾਤਾਵਰਣ ਸੰਰਚਨਾ ਕਰੋ
 
-`.env` ਫਾਈਲ ਪਹਿਲਾਂ ਹੀ ਸਮਝਦਾਰ ਡਿਫਾਲਟ ਨਾਲ ਸੰਰਚਿਤ ਕੀਤੀ ਗਈ ਹੈ। ਜ਼ਿਆਦਾਤਰ ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਕੁਝ ਵੀ ਬਦਲਣ ਦੀ ਲੋੜ ਨਹੀਂ ਹੋਵੇਗੀ।
+`.env` ਫਾਇਲ ਪਹਿਲਾਂ ਹੀ ਸਮਝਦਾਰ ਡਿਫਾਲਟਾਂ ਨਾਲ ਸੰਰਚਿਤ ਹੈ। ਜ਼ਿਆਦਾਤਰ ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਕੁਝ ਵੀ ਬਦਲਣ ਦੀ ਲੋੜ ਨਹੀਂ ਹੋਵੇਗੀ।
 
 **ਵਿਕਲਪਿਕ**: ਸੈਟਿੰਗਾਂ ਦੀ ਸਮੀਖਿਆ ਅਤੇ ਕਸਟਮਾਈਜ਼ ਕਰੋ:
 ```bash
@@ -41,14 +41,14 @@ nano .env     # macOS/Linux
 
 ### 3. ਸੰਰਚਨਾ ਲਾਗੂ ਕਰੋ
 
-**Python ਸਕ੍ਰਿਪਟਾਂ ਲਈ:**
+**ਪਾਈਥਨ ਸਕ੍ਰਿਪਟਾਂ ਲਈ:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
-**ਨੋਟਬੁੱਕਸ ਲਈ:**
+**ਨੋਟਬੁੱਕਾਂ ਲਈ:**
 ```python
 # Restart kernel after .env changes
 # Variables are loaded when cells execute
@@ -58,16 +58,16 @@ python chat_bootstrap.py
 
 ### ਮੁੱਖ ਸੰਰਚਨਾ
 
-| ਵੈਰੀਏਬਲ | ਡਿਫਾਲਟ | ਵੇਰਵਾ |
+| ਵੈਰੀਏਬਲ | ਡਿਫਾਲਟ | ਵਰਣਨ |
 |----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | ਨਮੂਨਿਆਂ ਲਈ ਡਿਫਾਲਟ ਮਾਡਲ |
 | `FOUNDRY_LOCAL_ENDPOINT` | (ਖਾਲੀ) | ਸੇਵਾ ਐਂਡਪੌਇੰਟ ਨੂੰ ਓਵਰਰਾਈਡ ਕਰੋ |
-| `PYTHONPATH` | ਵਰਕਸ਼ਾਪ ਪਾਥ | Python ਮੋਡਿਊਲ ਖੋਜ ਪਾਥ |
+| `PYTHONPATH` | ਵਰਕਸ਼ਾਪ ਪਾਥ | ਪਾਈਥਨ ਮੋਡਿਊਲ ਖੋਜ ਪਾਥ |
 
-**ਜਦੋਂ FOUNDRY_LOCAL_ENDPOINT ਸੈਟ ਕਰਨਾ ਹੋਵੇ:**
+**ਜਦੋਂ FOUNDRY_LOCAL_ENDPOINT ਸੈਟ ਕਰਨਾ ਹੈ:**
 - ਰਿਮੋਟ Foundry Local ਇੰਸਟੈਂਸ
 - ਕਸਟਮ ਪੋਰਟ ਸੰਰਚਨਾ
-- ਵਿਕਾਸ/ਉਤਪਾਦਨ ਵੱਖ-ਵੱਖ
+- ਵਿਕਾਸ/ਉਤਪਾਦਨ ਵੱਖਰੇ
 
 **ਉਦਾਹਰਨ:**
 ```bash
@@ -89,8 +89,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### ਸੈਸ਼ਨ 03: ਬੈਂਚਮਾਰਕਿੰਗ
 | ਵੈਰੀਏਬਲ | ਡਿਫਾਲਟ | ਉਦੇਸ਼ |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | ਬੈਂਚਮਾਰਕ ਕਰਨ ਲਈ ਮਾਡਲ |
-| `BENCH_ROUNDS` | `3` | ਪ੍ਰਤੀ ਮਾਡਲ ਦੁਹਰਾਵਾਂ |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | ਬੈਂਚਮਾਰਕ ਕਰਨ ਲਈ ਮਾਡਲ |
+| `BENCH_ROUNDS` | `3` | ਪ੍ਰਤੀ ਮਾਡਲ ਦੁਹਰਾਈਆਂ |
 | `BENCH_PROMPT` | ਪਹਿਲਾਂ ਤੋਂ ਸੰਰਚਿਤ | ਟੈਸਟ ਪ੍ਰੰਪਟ |
 | `BENCH_STREAM` | `0` | ਪਹਿਲੇ ਟੋਕਨ ਦੀ ਲੈਟੈਂਸੀ ਮਾਪੋ |
 
@@ -100,9 +100,9 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `SLM_ALIAS` | `phi-4-mini` | ਛੋਟਾ ਭਾਸ਼ਾ ਮਾਡਲ |
 | `LLM_ALIAS` | `qwen2.5-7b` | ਵੱਡਾ ਭਾਸ਼ਾ ਮਾਡਲ |
 | `COMPARE_PROMPT` | ਪਹਿਲਾਂ ਤੋਂ ਸੰਰਚਿਤ | ਤੁਲਨਾ ਪ੍ਰੰਪਟ |
-| `COMPARE_RETRIES` | `2` | ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ਾਂ |
+| `COMPARE_RETRIES` | `2` | ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ |
 
-#### ਸੈਸ਼ਨ 05: ਮਲਟੀ-ਏਜੰਟ ਆਰਕਸਟਰੈਸ਼ਨ
+#### ਸੈਸ਼ਨ 05: ਮਲਟੀ-ਏਜੰਟ ਆਰਕੇਸਟ੍ਰੇਸ਼ਨ
 | ਵੈਰੀਏਬਲ | ਡਿਫਾਲਟ | ਉਦੇਸ਼ |
 |----------|---------|---------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | ਰਿਸਰਚਰ ਏਜੰਟ ਮਾਡਲ |
@@ -119,7 +119,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 ## ਆਮ ਸੰਰਚਨਾਵਾਂ
 
-### ਵਿਕਾਸ ਸੈਟਅਪ (ਤੇਜ਼ ਦੁਹਰਾਵਾਂ)
+### ਵਿਕਾਸ ਸੈਟਅਪ (ਤੇਜ਼ ਦੁਹਰਾਈ)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### ਉਤਪਾਦਨ ਸੈਟਅਪ (ਗੁਣਵੱਤਾ ਫੋਕਸ)
+### ਉਤਪਾਦਨ ਸੈਟਅਪ (ਗੁਣਵੱਤਾ ਤੇ ਧਿਆਨ)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### ਬੈਂਚਮਾਰਕਿੰਗ ਸੈਟਅਪ
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -159,14 +159,14 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ## ਸਿਫਾਰਸ਼ੀ ਮਾਡਲ
 
-### ਵਰਤੋਂ ਦੇ ਕੇਸ ਅਨੁਸਾਰ
+### ਵਰਤੋਂ ਦੇ ਕੇਸ ਦੁਆਰਾ
 
-**ਸਧਾਰਨ ਉਦੇਸ਼:**
-- `phi-4-mini` - ਗੁਣਵੱਤਾ ਅਤੇ ਗਤੀ ਦਾ ਸੰਤੁਲਨ
+**ਆਮ ਉਦੇਸ਼:**
+- `phi-4-mini` - ਗੁਣਵੱਤਾ ਅਤੇ ਗਤੀ ਵਿੱਚ ਸੰਤੁਲਨ
 
 **ਤੇਜ਼ ਜਵਾਬ:**
 - `qwen2.5-0.5b` - ਬਹੁਤ ਤੇਜ਼, ਵਰਗੀਕਰਨ ਲਈ ਵਧੀਆ
-- `phi-4-mini` - ਗੁਣਵੱਤਾ ਨਾਲ ਤੇਜ਼
+- `phi-4-mini` - ਤੇਜ਼ ਅਤੇ ਚੰਗੀ ਗੁਣਵੱਤਾ
 
 **ਉੱਚ ਗੁਣਵੱਤਾ:**
 - `qwen2.5-7b` - ਸਭ ਤੋਂ ਵਧੀਆ ਗੁਣਵੱਤਾ, ਵਧੇਰੇ ਸਰੋਤ ਦੀ ਵਰਤੋਂ
@@ -174,9 +174,9 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **ਕੋਡ ਜਨਰੇਸ਼ਨ:**
 - `deepseek-coder-1.3b` - ਕੋਡ ਲਈ ਵਿਸ਼ੇਸ਼
-- `phi-4-mini` - ਸਧਾਰਨ ਉਦੇਸ਼ ਕੋਡਿੰਗ
+- `phi-4-mini` - ਆਮ ਉਦੇਸ਼ ਕੋਡਿੰਗ
 
-### ਸਰੋਤ ਉਪਲਬਧਤਾ ਅਨੁਸਾਰ
+### ਸਰੋਤ ਉਪਲਬਧਤਾ ਦੁਆਰਾ
 
 **ਘੱਟ ਸਰੋਤ (< 8GB RAM):**
 ```bash
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## ਉੱਚਤ ਸੰਰਚਨਾ
 
-### ਕਸਟਮ ਐਂਡਪੌਇੰਟਸ
+### ਕਸਟਮ ਐਂਡਪੌਇੰਟ
 
 ```bash
 # Development environment
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### ਤਾਪਮਾਨ ਅਤੇ ਸੈਂਪਲਿੰਗ (ਕੋਡ ਵਿੱਚ ਓਵਰਰਾਈਡ ਕਰੋ)
+### ਤਾਪਮਾਨ ਅਤੇ ਸੈਂਪਲਿੰਗ (ਕੋਡ ਵਿੱਚ ਓਵਰਰਾਈਡ)
 
 ```python
 # In your scripts/notebooks
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **ਲੱਛਣ:**
 - "ਮੋਡਿਊਲ ਨਹੀਂ ਮਿਲਿਆ" ਗਲਤੀਆਂ
-- "workshop_utils ਨੂੰ ਇੰਪੋਰਟ ਨਹੀਂ ਕਰ ਸਕਦੇ"
 
 **ਹੱਲ:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## ਸੰਰਚਨਾ ਦੀ ਜਾਂਚ
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## ਸੁਰੱਖਿਆ ਦੇ ਵਧੀਆ ਤਰੀਕੇ
 
-### 1. ਕਦੇ ਵੀ ਰਾਜ਼ ਕਮਿਟ ਨਾ ਕਰੋ
+### 1. ਰਾਜ਼ ਕਦੇ ਵੀ ਕਮਿਟ ਨਾ ਕਰੋ
 
 ```bash
 # .gitignore should include:
@@ -377,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. ਵੱਖ-ਵੱਖ .env ਫਾਈਲਾਂ ਦੀ ਵਰਤੋਂ ਕਰੋ
+### 2. ਵੱਖਰੀਆਂ .env ਫਾਇਲਾਂ ਦੀ ਵਰਤੋਂ ਕਰੋ
 
 ```bash
 .env              # Default configuration
@@ -385,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. API ਕੁੰਜੀਆਂ ਨੂੰ ਘੁੰਮਾਓ
+### 3. API ਕੁੰਜੀਆਂ ਨੂੰ ਰੋਟੇਟ ਕਰੋ
 
 ```bash
 # For Azure OpenAI or other cloud services
@@ -406,7 +403,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **ਮੁੱਖ ਰਿਪੋਜ਼ਟਰੀ**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API ਦਸਤਾਵੇਜ਼**: SDK ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਤਾਜ਼ਾ ਵੇਖੋ
+- **API ਦਸਤਾਵੇਜ਼**: ਨਵੀਂ ਜਾਣਕਾਰੀ ਲਈ SDK ਰਿਪੋਜ਼ਟਰੀ ਚੈੱਕ ਕਰੋ
 
 ## ਵਾਧੂ ਸਰੋਤ
 
@@ -417,10 +414,10 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **ਆਖਰੀ ਅਪਡੇਟ**: 2025-01-08  
-**ਵਰਜਨ**: 2.0  
+**ਸੰਸਕਰਣ**: 2.0  
 **SDK**: Foundry Local Python SDK (ਤਾਜ਼ਾ)
 
 ---
 
 **ਅਸਵੀਕਰਤੀ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀ ਹੋਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਦਿਓ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੁਚੀਤਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਇਸ ਦਸਤਾਵੇਜ਼ ਦਾ ਮੂਲ ਰੂਪ ਇਸਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀ ਹੋਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਦਿਓ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੁੱਤੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਇਸਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।

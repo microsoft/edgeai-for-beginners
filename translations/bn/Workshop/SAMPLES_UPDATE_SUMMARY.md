@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T09:40:28+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T21:09:58+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "bn"
 }
@@ -42,7 +42,7 @@ CO_OP_TRANSLATOR_METADATA:
 - ✅ `models_pipeline.py` - মাল্টি-স্টেপ রাউটেড পাইপলাইন
 
 ### সহায়ক অবকাঠামো
-- ✅ `workshop_utils.py` - ইতিমধ্যেই সেরা অনুশীলন অনুসরণ করছে (কোনো পরিবর্তন প্রয়োজন নেই)
+- ✅ `workshop_utils.py` - ইতিমধ্যেই সেরা অনুশীলন অনুসরণ করছে (কোন পরিবর্তন প্রয়োজন নেই)
 
 ---
 
@@ -66,8 +66,8 @@ except Exception as e:
 ```
 
 **সুবিধা:**
-- স্পষ্ট ত্রুটি বার্তাসহ গ্রেসফুল ত্রুটি পরিচালনা
-- কার্যকর সমস্যা সমাধানের নির্দেশনা
+- স্পষ্ট ত্রুটি বার্তাসহ সুন্দর ত্রুটি পরিচালনা
+- কার্যকরী সমস্যা সমাধানের নির্দেশনা
 - স্ক্রিপ্টিংয়ের জন্য সঠিক প্রস্থান কোড
 
 ### ২. উন্নত ইমপোর্ট ব্যবস্থাপনা
@@ -91,14 +91,14 @@ except ImportError:
 - অস্পষ্ট ইমপোর্ট ত্রুটি প্রতিরোধ
 - ব্যবহারকারী-বান্ধব ইনস্টলেশন নির্দেশনা
 
-### ৩. বিস্তৃত ডকুমেন্টেশন
+### ৩. ব্যাপক ডকুমেন্টেশন
 
 **সমস্ত নমুনায় যোগ করা হয়েছে:**
 - ডকস্ট্রিং-এ পরিবেশ ভেরিয়েবল ডকুমেন্টেশন
 - SDK রেফারেন্স লিঙ্ক
 - ব্যবহার উদাহরণ
 - বিস্তারিত ফাংশন/প্যারামিটার ডকুমেন্টেশন
-- IDE সমর্থনের জন্য টাইপ হিন্ট
+- ভালো IDE সাপোর্টের জন্য টাইপ হিন্ট
 
 **উদাহরণ:**
 ```python
@@ -143,13 +143,13 @@ print(json.dumps(summary, indent=2))
 **সেশন ০৩ উন্নতি:**
 - প্রতি-মডেল ত্রুটি পরিচালনা (ব্যর্থতার পরেও চলতে থাকে)
 - বিস্তারিত প্রগতি রিপোর্টিং
-- সঠিকভাবে উষ্ণ আপ রাউন্ড সম্পন্ন
-- প্রথম-টোকেন লেটেন্সি পরিমাপ সমর্থন
+- সঠিকভাবে ওয়ার্মআপ রাউন্ড সম্পন্ন
+- প্রথম-টোকেন লেটেন্সি পরিমাপের সমর্থন
 - ধাপগুলির স্পষ্ট বিভাজন
 
 ### ৬. সামঞ্জস্যপূর্ণ টাইপ হিন্ট
 
-**সমগ্র জুড়ে যোগ করা হয়েছে:**
+**সর্বত্র যোগ করা হয়েছে:**
 ```python
 from typing import Dict, List, Tuple, Any, Optional
 
@@ -160,12 +160,12 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 **সুবিধা:**
 - ভালো IDE অটোকমপ্লিট
 - প্রাথমিক ত্রুটি সনাক্তকরণ
-- স্ব-ডকুমেন্টিং কোড
+- স্বয়ং-ডকুমেন্টিং কোড
 
 ### ৭. উন্নত মডেল রাউটার
 
 **সেশন ০৬ উন্নতি:**
-- বিস্তৃত ইন্টেন্ট সনাক্তকরণ ডকুমেন্টেশন
+- ব্যাপক ইন্টেন্ট সনাক্তকরণ ডকুমেন্টেশন
 - মডেল নির্বাচন অ্যালগরিদম ব্যাখ্যা
 - বিস্তারিত রাউটিং লগ
 - টেস্ট আউটপুট ফরম্যাটিং
@@ -181,7 +181,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 
 ---
 
-## পরীক্ষার চেকলিস্ট
+## টেস্টিং চেকলিস্ট
 
 ### পূর্বশর্ত
 ```bash
@@ -200,61 +200,61 @@ pip install -r Workshop/requirements.txt
 
 #### সেশন ০১
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### সেশন ০২
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### সেশন ০৩
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### সেশন ০৪
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### সেশন ০৫
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### সেশন ০৬
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
@@ -263,24 +263,24 @@ python models_pipeline.py
 
 ### গ্লোবাল (সমস্ত নমুনা)
 | ভেরিয়েবল | বিবরণ | ডিফল্ট |
-|----------|-------------|---------|
-| `FOUNDRY_LOCAL_ALIAS` | ব্যবহৃত মডেল এলিয়াস | নমুনা অনুযায়ী পরিবর্তিত |
+|-----------|--------|--------|
+| `FOUNDRY_LOCAL_ALIAS` | ব্যবহৃত মডেলের নাম | নমুনা অনুযায়ী পরিবর্তনশীল |
 | `FOUNDRY_LOCAL_ENDPOINT` | সার্ভিস এন্ডপয়েন্ট ওভাররাইড করুন | স্বয়ংক্রিয়ভাবে সনাক্ত |
-| `SHOW_USAGE` | টোকেন ব্যবহার দেখান | `0` |
-| `RETRY_ON_FAIL` | পুনরায় চেষ্টা করার লজিক সক্ষম করুন | `1` |
+| `SHOW_USAGE` | টোকেন ব্যবহারের প্রদর্শন | `0` |
+| `RETRY_ON_FAIL` | পুনরায় চেষ্টা করার লজিক সক্রিয় করুন | `1` |
 | `RETRY_BACKOFF` | প্রাথমিক পুনরায় চেষ্টা বিলম্ব | `1.0` |
 
 ### নমুনা-নির্দিষ্ট
 | ভেরিয়েবল | ব্যবহৃত দ্বারা | বিবরণ |
-|----------|---------|-------------|
+|-----------|---------------|--------|
 | `EMBED_MODEL` | সেশন ০২ | এম্বেডিং মডেলের নাম |
 | `RAG_QUESTION` | সেশন ০২ | RAG-এর জন্য টেস্ট প্রশ্ন |
 | `BENCH_MODELS` | সেশন ০৩ | বেঞ্চমার্ক করার জন্য কমা-আলাদা মডেল |
 | `BENCH_ROUNDS` | সেশন ০৩ | বেঞ্চমার্ক রাউন্ডের সংখ্যা |
 | `BENCH_PROMPT` | সেশন ০৩ | বেঞ্চমার্কের জন্য টেস্ট প্রম্পট |
 | `BENCH_STREAM` | সেশন ০৩ | প্রথম-টোকেন লেটেন্সি পরিমাপ |
-| `SLM_ALIAS` | সেশন ০৪ | ছোট ভাষার মডেল |
-| `LLM_ALIAS` | সেশন ০৪ | বড় ভাষার মডেল |
+| `SLM_ALIAS` | সেশন ০৪ | ছোট ভাষা মডেল |
+| `LLM_ALIAS` | সেশন ০৪ | বড় ভাষা মডেল |
 | `COMPARE_PROMPT` | সেশন ০৪ | তুলনা টেস্ট প্রম্পট |
 | `AGENT_MODEL_PRIMARY` | সেশন ০৫ | প্রাথমিক এজেন্ট মডেল |
 | `AGENT_MODEL_EDITOR` | সেশন ০৫ | এডিটর এজেন্ট মডেল |
@@ -295,13 +295,13 @@ python models_pipeline.py
 
 বিদ্যমান স্ক্রিপ্টগুলি কাজ চালিয়ে যাবে। নতুন বৈশিষ্ট্যগুলি:
 - ঐচ্ছিক পরিবেশ ভেরিয়েবল
-- উন্নত ত্রুটি বার্তা (কার্যকারিতা নষ্ট করে না)
+- উন্নত ত্রুটি বার্তা (কার্যকারিতা ভাঙে না)
 - অতিরিক্ত লগিং (দমন করা যেতে পারে)
-- ভালো টাইপ হিন্ট (রানটাইমে কোনো প্রভাব নেই)
+- ভালো টাইপ হিন্ট (কোনও রানটাইম প্রভাব নেই)
 
 ---
 
-## বাস্তবায়িত সেরা অনুশীলন
+## সেরা অনুশীলন বাস্তবায়ন
 
 ### ১. সর্বদা Workshop Utils ব্যবহার করুন
 ```python
@@ -337,7 +337,7 @@ def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
 
-### ৫. বিস্তৃত ডকস্ট্রিং
+### ৫. ব্যাপক ডকস্ট্রিং
 ```python
 def function(arg: str) -> str:
     """Short description.
@@ -361,7 +361,7 @@ alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
 
-### ৭. গ্রেসফুল ডিগ্রেডেশন
+### ৭. সুন্দর অবনতি
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -384,7 +384,7 @@ pip install sentence-transformers ragas datasets numpy
 ```
 
 ### সমস্যা: সংযোগ ত্রুটি
-**সমাধান:** নিশ্চিত করুন যে ফাউন্ড্রি লোকাল চলছে
+**সমাধান:** নিশ্চিত করুন যে ফাউন্ড্রি লোকাল চালু আছে
 ```bash
 foundry service status
 foundry model run phi-4-mini
@@ -409,7 +409,7 @@ set BENCH_ROUNDS=2
 ## পরবর্তী পদক্ষেপ
 
 ### ১. সমস্ত নমুনা পরীক্ষা করুন
-উপরের পরীক্ষার চেকলিস্ট অনুসরণ করে নিশ্চিত করুন যে সমস্ত নমুনা সঠিকভাবে কাজ করছে।
+উপরে দেওয়া টেস্টিং চেকলিস্ট অনুসরণ করে সমস্ত নমুনা সঠিকভাবে কাজ করছে কিনা যাচাই করুন।
 
 ### ২. ডকুমেন্টেশন আপডেট করুন
 - নতুন উদাহরণ সহ সেশন মার্কডাউন ফাইল আপডেট করুন
@@ -449,18 +449,18 @@ def test_all_samples():
 নতুন নমুনা তৈরি করার সময় এই প্যাটার্নগুলি অনুসরণ করুন:
 
 1. ক্লায়েন্ট ব্যবস্থাপনার জন্য `workshop_utils` ব্যবহার করুন
-2. বিস্তৃত ত্রুটি পরিচালনা যোগ করুন
+2. ব্যাপক ত্রুটি পরিচালনা যোগ করুন
 3. পরিবেশ ভেরিয়েবল সমর্থন অন্তর্ভুক্ত করুন
 4. টাইপ হিন্ট এবং ডকস্ট্রিং যোগ করুন
 5. তথ্যপূর্ণ লগিং প্রদান করুন
 6. ডকস্ট্রিং-এ ব্যবহার উদাহরণ অন্তর্ভুক্ত করুন
-7. SDK ডকুমেন্টেশনের লিঙ্ক যোগ করুন
+7. SDK ডকুমেন্টেশনের লিঙ্ক দিন
 
-### আপডেট পর্যালোচনা করা
+### আপডেট পর্যালোচনা
 নমুনা আপডেট পর্যালোচনা করার সময় পরীক্ষা করুন:
 - [ ] সমস্ত I/O অপারেশনে ত্রুটি পরিচালনা
 - [ ] পাবলিক ফাংশনে টাইপ হিন্ট
-- [ ] বিস্তৃত ডকস্ট্রিং
+- [ ] ব্যাপক ডকস্ট্রিং
 - [ ] পরিবেশ ভেরিয়েবল ডকুমেন্টেশন
 - [ ] তথ্যপূর্ণ ব্যবহারকারী প্রতিক্রিয়া
 - [ ] SDK রেফারেন্স লিঙ্ক
@@ -468,7 +468,7 @@ def test_all_samples():
 
 ---
 
-**সারাংশ**: সমস্ত ওয়ার্কশপ পাইথন নমুনা এখন ফাউন্ড্রি লোকাল SDK-এর সেরা অনুশীলন অনুসরণ করে, উন্নত ত্রুটি পরিচালনা, বিস্তৃত ডকুমেন্টেশন এবং উন্নত ব্যবহারকারীর অভিজ্ঞতা সহ। কোনো ব্রেকিং পরিবর্তন নেই - সমস্ত বিদ্যমান কার্যকারিতা সংরক্ষিত এবং উন্নত।
+**সারাংশ**: সমস্ত ওয়ার্কশপ পাইথন নমুনা এখন ফাউন্ড্রি লোকাল SDK-এর সেরা অনুশীলন অনুসরণ করে, উন্নত ত্রুটি পরিচালনা, ব্যাপক ডকুমেন্টেশন এবং উন্নত ব্যবহারকারীর অভিজ্ঞতা সহ। কোনো ব্রেকিং পরিবর্তন নেই - সমস্ত বিদ্যমান কার্যকারিতা সংরক্ষিত এবং উন্নত করা হয়েছে।
 
 ---
 

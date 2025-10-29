@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T14:23:56+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T22:12:03+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "no"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. Installer Foundry Local
 
-Følg den offisielle installasjonsveiledningen:  
+Følg den offisielle installasjonsveiledningen:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -29,7 +29,7 @@ foundry service status
 
 ### 2. Installer Python-avhengigheter
 
-Fra Workshop-mappen:
+Fra Workshop-katalogen:
 
 ```bash
 # Create virtual environment (recommended)
@@ -50,11 +50,11 @@ pip install -r requirements.txt
 ### Sesjon 01: Grunnleggende Chat
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
-**Miljøvariabler:**  
+**Miljøvariabler:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
@@ -63,11 +63,11 @@ set SHOW_USAGE=1
 ### Sesjon 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
-**Miljøvariabler:**  
+**Miljøvariabler:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set RAG_QUESTION="Why use RAG with local inference?"
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Sesjon 02: RAG Evaluering (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Merk**: Krever ekstra avhengigheter installert via `requirements.txt`
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### Sesjon 03: Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
-**Miljøvariabler:**  
+**Miljøvariabler:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,11 +103,11 @@ set BENCH_STREAM=1
 ### Sesjon 04: Modell-sammenligning
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
-**Miljøvariabler:**  
+**Miljøvariabler:**
 ```bash
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
@@ -116,11 +117,11 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Sesjon 05: Multi-agent Orkestrering
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
-**Miljøvariabler:**  
+**Miljøvariabler:**
 ```bash
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=phi-4-mini
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Sesjon 06: Modellruter
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **Tester rutelogikk** med flere intensjoner (kode, oppsummering, klassifisering)
@@ -139,7 +140,7 @@ python models_router.py
 ### Sesjon 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Kompleks flertrinns pipeline** med planlegging, utførelse og forbedring
@@ -239,8 +240,8 @@ foundry model run phi-4-mini
 | Variabel | Standard | Beskrivelse |
 |----------|---------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding-modell |
-| `RAG_QUESTION` | Se eksempel | RAG-testspørsmål |
-| `BENCH_MODELS` | Varierer | Kommaseparerte modeller |
+| `RAG_QUESTION` | Se eksempel | RAG testspørsmål |
+| `BENCH_MODELS` | Varierer | Komma-separerte modeller |
 | `BENCH_ROUNDS` | `3` | Benchmark-iterasjoner |
 | `BENCH_PROMPT` | Se eksempel | Benchmark-prompt |
 | `BENCH_STREAM` | `0` | Mål førstetoken-latenstid |
@@ -260,34 +261,34 @@ foundry model run phi-4-mini
 ### Produksjonsscenarier
 - **phi-4-mini** - Generelt formål
 - **deepseek-coder-1.3b** - Kodegenerering
-- **qwen2.5-7b** - Høy kvalitet på svar
+- **qwen2.5-7b** - Høykvalitets svar
 
 ## SDK-dokumentasjon
 
-- **Foundry Local**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Få hjelp
 
-1. Sjekk tjenestestatus: `foundry service status`  
-2. Se logger: Sjekk Foundry Local tjenestelogger  
-3. Sjekk SDK-dokumentasjon: https://github.com/microsoft/Foundry-Local  
+1. Sjekk tjenestestatus: `foundry service status`
+2. Se logger: Sjekk Foundry Local tjenestelogger
+3. Sjekk SDK-dokumentasjon: https://github.com/microsoft/Foundry-Local
 4. Gå gjennom eksempelkode: Alle eksempler har detaljerte docstrings
 
 ## Neste steg
 
-1. Fullfør alle workshop-sesjoner i rekkefølge  
-2. Eksperimenter med forskjellige modeller  
-3. Tilpass eksempler til dine bruksområder  
+1. Fullfør alle workshop-sesjoner i rekkefølge
+2. Eksperimenter med forskjellige modeller
+3. Tilpass eksempler til dine bruksområder
 4. Gå gjennom `SDK_MIGRATION_NOTES.md` for avanserte mønstre
 
 ---
 
 **Sist oppdatert**: 2025-01-08  
-**Workshop-versjon**: Nyeste  
-**SDK**: Foundry Local Python SDK  
+**Workshop-versjon**: Siste  
+**SDK**: Foundry Local Python SDK
 
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

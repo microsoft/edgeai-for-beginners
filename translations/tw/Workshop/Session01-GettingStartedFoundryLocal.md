@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:15:52+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T20:47:49+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "tw"
 }
@@ -27,25 +27,25 @@ CO_OP_TRANSLATOR_METADATA:
 foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 
 - Windows 11 (22H2 或更高版本)
-# 列出可用的目錄模型（運行後加載的模型會出現）
+# 列出可用的目錄模型（運行後顯示已加載的模型）
 foundry model list
-## 注意：目前沒有專門的 `--running` 標誌；要查看哪些模型已加載，請啟動聊天或檢查服務日誌。
-- 已安裝 Python 3.10+
-- 安裝了 Python 擴展的 Visual Studio Code
-- 安裝需要管理員權限
+## NOTE: 目前沒有專門的 `--running` 標誌；要查看哪些模型已加載，請啟動聊天或檢查服務日誌。
+- 安裝 Python 3.10+
+- 安裝帶有 Python 擴展的 Visual Studio Code
+- 具有安裝所需的管理員權限
 
 ### （可選）環境變數
 
 創建 `.env`（或在 shell 中設置）以使腳本可移植：
 # 比較回應（非互動式）
 foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-| 變數 | 用途 | 示例 |
+| 變數 | 用途 | 範例 |
 |------|------|------|
 | `FOUNDRY_LOCAL_ALIAS` | 首選模型別名（目錄自動選擇最佳變體） | `phi-3.5-mini` |
 | `FOUNDRY_LOCAL_ENDPOINT` | 覆蓋端點（否則由管理器自動生成） | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | 啟用流式演示 | `true` |
 
-> 如果 `FOUNDRY_LOCAL_ENDPOINT=auto`（或未設置），我們將從 SDK 管理器中推導。
+> 如果 `FOUNDRY_LOCAL_ENDPOINT=auto`（或未設置），我們將從 SDK 管理器中推導出。
 
 ## 演示流程（30 分鐘）
 
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS（預覽 / 如果支持）**
 
-如果提供了原生 macOS 套件（請檢查官方文檔以獲取最新信息）：
+如果提供了原生 macOS 套件（請查看官方文檔以獲取最新資訊）：
 
 ```bash
 # Homebrew (if/when available)
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### SDK 引導（推薦）
 
-與手動啟動服務和運行模型相比，**Foundry Local Python SDK** 可以引導所有操作：
+與其手動啟動服務並運行模型，不如使用 **Foundry Local Python SDK** 引導所有操作：
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -404,15 +404,16 @@ foundry config set model.preload false
 ### 3. 監控性能
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### 可選增強功能
@@ -420,16 +421,16 @@ python Workshop\samples\session03\benchmark_oss_models.py
 | 增強功能 | 內容 | 方法 |
 |----------|------|------|
 | 共享工具 | 移除重複的客戶端/引導邏輯 | 使用 `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| 令牌使用可見性 | 提早教導成本/效率思維 | 設置 `SHOW_USAGE=1` 以打印提示/完成/總令牌 |
+| 令牌使用可見性 | 提早教授成本/效率思維 | 設置 `SHOW_USAGE=1` 以打印提示/完成/總令牌 |
 | 確定性比較 | 穩定的基準測試和回歸檢查 | 使用 `temperature=0`、`top_p=1`、一致的提示文本 |
-| 首令牌延遲 | 感知響應性指標 | 使用流式方式改編基準腳本（`BENCH_STREAM=1`） |
-| 暫時錯誤重試 | 冷啟動時的彈性演示 | `RETRY_ON_FAIL=1`（默認）並調整 `RETRY_BACKOFF` |
-| 冒煙測試 | 快速檢查關鍵流程 | 在工作坊前運行 `python Workshop/tests/smoke.py` |
+| 首令牌延遲 | 感知響應性指標 | 使用流式傳輸修改基準測試腳本（`BENCH_STREAM=1`） |
+| 暫時性錯誤重試 | 冷啟動時的演示恢復能力 | `RETRY_ON_FAIL=1`（默認）並調整 `RETRY_BACKOFF` |
+| 煙霧測試 | 快速檢查主要流程的健全性 | 在工作坊之前運行 `python Workshop/tests/smoke.py` |
 | 模型別名配置檔案 | 在機器之間快速切換模型集 | 維護 `.env`，設置 `FOUNDRY_LOCAL_ALIAS`、`SLM_ALIAS`、`LLM_ALIAS` |
 | 緩存效率 | 避免多範例運行中的重複預熱 | 工具緩存管理器；在腳本/筆記本中重用 |
-| 首次運行預熱 | 減少 p95 延遲峰值 | 在創建 `FoundryLocalManager` 後發送一個小提示 |
+| 首次運行預熱 | 減少 p95 延遲峰值 | 在創建 `FoundryLocalManager` 後發送一個小提示
 
-示例確定性預熱基線（PowerShell）：
+PowerShell 中的範例確定性預熱基線：
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -445,8 +446,8 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 完成本節後：
 
 1. **探索第 2 節**：使用 Azure AI Foundry RAG 構建 AI 解決方案
-2. **嘗試不同模型**：試驗 Qwen、DeepSeek 和其他模型系列
-3. **優化性能**：根據您的特定硬體進行設置微調
+2. **嘗試不同的模型**：試驗 Qwen、DeepSeek 和其他模型系列
+3. **優化性能**：針對您的特定硬體進行設置微調
 4. **構建自定義應用程式**：在您的項目中使用 Foundry Local SDK
 
 ## 附加資源
@@ -457,9 +458,9 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 - [模型目錄](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### 範例代碼
-- [Module08 範例 01](./samples/01/README.md) - REST 聊天快速入門
-- [Module08 範例 02](./samples/02/README.md) - OpenAI SDK 集成
-- [Module08 範例 03](./samples/03/README.md) - 模型發現與基準測試
+- [Module08 Sample 01](./samples/01/README.md) - REST 聊天快速入門
+- [Module08 Sample 02](./samples/02/README.md) - OpenAI SDK 集成
+- [Module08 Sample 03](./samples/03/README.md) - 模型發現與基準測試
 
 ### 社群
 - [Foundry Local GitHub 討論](https://github.com/microsoft/Foundry-Local/discussions)
@@ -473,13 +474,13 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 
 ## 範例場景與工作坊映射
 
-| 工作坊腳本 / 筆記本 | 場景 | 目標 | 示例輸入 | 所需數據集 |
+| 工作坊腳本 / 筆記本 | 場景 | 目標 | 範例輸入 | 所需數據集 |
 |---------------------|------|------|----------|------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | 評估設備推理的隱私評估門戶的內部 IT 團隊 | 證明本地 SLM 在標準提示下的響應時間低於一秒 | "列出本地推理的兩個優勢。" | 無（單次提示） |
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | 內部 IT 團隊評估設備上的推理以用於隱私評估門戶 | 證明本地 SLM 在標準提示下的響應時間低於一秒 | "列出本地推理的兩個優勢。" | 無（單次提示） |
 | 快速入門改編代碼塊 | 開發者將現有 OpenAI 腳本遷移到 Foundry Local | 展示即插即用的兼容性 | "列出本地推理的兩個優勢。" | 僅內嵌提示 |
 
 ### 場景敘述
-安全與合規小組必須驗證敏感原型數據是否可以在本地處理。他們使用引導腳本運行多個提示（隱私、延遲、成本），並使用確定性 `temperature=0` 模式捕獲基線輸出以供後續比較（第 3 節基準測試和第 4 節 SLM 與 LLM 對比）。
+安全與合規小組必須驗證敏感原型數據是否可以在本地處理。他們使用引導腳本運行多個提示（隱私、延遲、成本），並使用確定性 temperature=0 模式捕獲基線輸出，以供後續比較（第 3 節基準測試和第 4 節 SLM 與 LLM 對比）。
 
 ### 最小提示集 JSON（可選）
 ```json
@@ -490,9 +491,9 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 ]
 ```
 
-使用此列表創建可重現的評估循環或為未來的回歸測試框架提供種子。
+使用此列表創建可重現的評估循環或為未來的回歸測試工具提供種子。
 
 ---
 
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或誤釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

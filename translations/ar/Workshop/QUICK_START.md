@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T06:41:00+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T20:17:55+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "ar"
 }
@@ -45,13 +45,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## تشغيل أمثلة الورشة
+## تشغيل عينات الورشة
 
 ### الجلسة 01: الدردشة الأساسية
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **المتغيرات البيئية:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### الجلسة 02: خط أنابيب RAG
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **المتغيرات البيئية:**  
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### الجلسة 02: تقييم RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **ملاحظة**: يتطلب تثبيت تبعيات إضافية عبر `requirements.txt`
@@ -85,25 +86,25 @@ python rag_eval_ragas.py
 ### الجلسة 03: قياس الأداء
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **المتغيرات البيئية:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**الناتج**: JSON يحتوي على مقاييس التأخير، الإنتاجية، وأول رمز
+**الإخراج**: JSON يحتوي على مقاييس التأخير، الإنتاجية، وأول رمز
 
 ### الجلسة 04: مقارنة النماذج
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **المتغيرات البيئية:**  
@@ -113,11 +114,11 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### الجلسة 05: تنسيق متعدد الوكلاء
+### الجلسة 05: تنسيق الوكلاء المتعددين
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **المتغيرات البيئية:**  
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### الجلسة 06: موجه النماذج
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **اختبار منطق التوجيه** مع نوايا متعددة (كود، تلخيص، تصنيف)
@@ -139,7 +140,7 @@ python models_router.py
 ### الجلسة 06: خط الأنابيب
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **خط أنابيب متعدد الخطوات معقد** يتضمن التخطيط، التنفيذ، والتحسين
@@ -157,17 +158,17 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**الناتج**: جدول Markdown + مقاييس JSON
+**الإخراج**: جدول Markdown + مقاييس JSON
 
-### فحص أنماط CLI في Markdown
+### فحص أنماط CLI Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**الغرض**: اكتشاف أنماط CLI المهملة في التوثيق
+**الغرض**: اكتشاف أنماط CLI المهملة في الوثائق
 
-## الاختبارات
+## الاختبار
 
 ### اختبارات الدخان
 
@@ -176,7 +177,7 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**الاختبارات**: التحقق من الوظائف الأساسية للأمثلة الرئيسية
+**الاختبارات**: الوظائف الأساسية للعينات الرئيسية
 
 ## استكشاف الأخطاء وإصلاحها
 
@@ -193,7 +194,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### أخطاء استيراد الوحدات
+### أخطاء استيراد الوحدة
 
 ```bash
 # Ensure virtual environment is activated
@@ -239,30 +240,30 @@ foundry model run phi-4-mini
 | المتغير | الافتراضي | الوصف |
 |---------|-----------|-------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | نموذج التضمين |
-| `RAG_QUESTION` | انظر المثال | سؤال اختبار RAG |
-| `BENCH_MODELS` | يختلف | النماذج مفصولة بفواصل |
+| `RAG_QUESTION` | انظر العينة | سؤال اختبار RAG |
+| `BENCH_MODELS` | يختلف | نماذج مفصولة بفواصل |
 | `BENCH_ROUNDS` | `3` | تكرارات قياس الأداء |
-| `BENCH_PROMPT` | انظر المثال | موجه قياس الأداء |
+| `BENCH_PROMPT` | انظر العينة | موجه قياس الأداء |
 | `BENCH_STREAM` | `0` | قياس تأخير أول رمز |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | النموذج الأساسي للوكيل |
-| `AGENT_MODEL_EDITOR` | الأساسي | نموذج وكيل المحرر |
+| `AGENT_MODEL_EDITOR` | الأساسي | نموذج الوكيل المحرر |
 | `SLM_ALIAS` | `phi-4-mini` | نموذج اللغة الصغيرة |
 | `LLM_ALIAS` | `qwen2.5-7b` | نموذج اللغة الكبير |
-| `COMPARE_PROMPT` | انظر المثال | موجه المقارنة |
+| `COMPARE_PROMPT` | انظر العينة | موجه المقارنة |
 
 ## النماذج الموصى بها
 
 ### التطوير والاختبار
-- **phi-4-mini** - توازن بين الجودة والسرعة
+- **phi-4-mini** - جودة وسرعة متوازنة
 - **qwen2.5-0.5b** - سريع جدًا للتصنيف
-- **gemma-2-2b** - جودة جيدة وسرعة معتدلة
+- **gemma-2-2b** - جودة جيدة، سرعة معتدلة
 
 ### سيناريوهات الإنتاج
-- **phi-4-mini** - للأغراض العامة
-- **deepseek-coder-1.3b** - لتوليد الأكواد
+- **phi-4-mini** - متعدد الأغراض
+- **deepseek-coder-1.3b** - توليد الكود
 - **qwen2.5-7b** - استجابات عالية الجودة
 
-## توثيق SDK
+## وثائق SDK
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
@@ -271,14 +272,14 @@ foundry model run phi-4-mini
 
 1. تحقق من حالة الخدمة: `foundry service status`  
 2. عرض السجلات: تحقق من سجلات خدمة Foundry Local  
-3. تحقق من توثيق SDK: https://github.com/microsoft/Foundry-Local  
-4. مراجعة الكود التجريبي: جميع الأمثلة تحتوي على تعليقات توضيحية مفصلة  
+3. تحقق من وثائق SDK: https://github.com/microsoft/Foundry-Local  
+4. مراجعة الكود النموذجي: جميع العينات تحتوي على تعليقات توضيحية مفصلة  
 
 ## الخطوات التالية
 
 1. أكمل جميع جلسات الورشة بالترتيب  
 2. جرب نماذج مختلفة  
-3. قم بتعديل الأمثلة لتناسب حالات الاستخدام الخاصة بك  
+3. قم بتعديل العينات لتناسب حالات الاستخدام الخاصة بك  
 4. راجع `SDK_MIGRATION_NOTES.md` للحصول على أنماط متقدمة  
 
 ---
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **إخلاء المسؤولية**:  
-تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي. للحصول على معلومات حاسمة، يُوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.
+تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي. للحصول على معلومات حاسمة، يُوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.

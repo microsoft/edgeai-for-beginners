@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-08T14:20:33+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T23:28:28+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "hr"
 }
 -->
 # Uzorci radionice - Brza referentna kartica
 
-**Zadnje ažuriranje**: 8. listopada 2025.
+**Zadnje ažurirano**: 8. listopada 2025.
 
 ---
 
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -40,8 +40,8 @@ python chat_bootstrap.py "What is edge AI?"
 | 03 | `benchmark_oss_models.py` | Benchmarking modela | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Sustav s više agenata | ~60s |
-| 06 | `models_router.py` | Usmjeravanje prema namjeri | ~45s |
-| 06 | `models_pipeline.py` | Višestupanjska cjevovodna obrada | ~60s |
+| 06 | `models_router.py` | Usmjeravanje namjera | ~45s |
+| 06 | `models_pipeline.py` | Višekorakna cjevovodna obrada | ~60s |
 
 ---
 
@@ -157,7 +157,7 @@ text, usage = chat_once(
 )
 ```
 
-### Dohvati klijenta
+### Dohvaćanje klijenta
 ```python
 from workshop_utils import get_client
 
@@ -195,12 +195,12 @@ for chunk in stream:
 ## 📊 Odabir modela
 
 | Model | Veličina | Najbolje za | Brzina |
-|-------|----------|------------|--------|
+|-------|----------|-------------|--------|
 | `qwen2.5-0.5b` | 0.5B | Brza klasifikacija | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Brza generacija koda | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Kreativno pisanje | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Kodiranje, refaktoriranje | ⚡⚡ |
-| `phi-4-mini` | 4B | Općenito, sažetak | ⚡⚡ |
+| `phi-4-mini` | 4B | Općenito, sažeci | ⚡⚡ |
 | `qwen2.5-7b` | 7B | Složeno zaključivanje | ⚡ |
 
 ---
@@ -210,7 +210,7 @@ for chunk in stream:
 - **SDK dokumentacija**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Brza referenca**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **Sažetak ažuriranja**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Napomene o migraciji**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Bilješke o migraciji**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -226,7 +226,7 @@ for chunk in stream:
 
 ## 🎯 Radni tijekovi uzoraka
 
-### Testiraj sve
+### Testirajte sve
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Benchmark modela
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG cjevovod
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Sustav s više agenata
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Brza pomoć**: Pokrenite bilo koji uzorak s `--help` ili provjerite docstring:
+**Brza pomoć**: Pokrenite bilo koji uzorak s `--help` iz direktorija `samples` ili provjerite docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

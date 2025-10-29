@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T21:38:01+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T23:50:00+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "lt"
 }
 -->
-# Seminaro Pavyzdžiai - Greitos Nuorodos Kortelė
+# Dirbtuvių pavyzdžiai - Greitoji atmintinė
 
 **Paskutinį kartą atnaujinta**: 2025 m. spalio 8 d.
 
 ---
 
-## 🚀 Greitas Pradėjimas
+## 🚀 Greitas startas
 
 ```bash
 # 1. Ensure Foundry Local is running
@@ -24,13 +24,13 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
 
-## 📂 Pavyzdžių Apžvalga
+## 📂 Pavyzdžių apžvalga
 
 | Sesija | Pavyzdys | Tikslas | Laikas |
 |--------|----------|---------|-------|
@@ -38,14 +38,14 @@ python chat_bootstrap.py "What is edge AI?"
 | 02 | `rag_pipeline.py` | RAG su įterpimais | ~45s |
 | 02 | `rag_eval_ragas.py` | RAG vertinimas | ~60s |
 | 03 | `benchmark_oss_models.py` | Modelių palyginimas | ~2m |
-| 04 | `model_compare.py` | SLM vs LLM | ~45s |
-| 05 | `agents_orchestrator.py` | Daugiaveiksnių agentų sistema | ~60s |
+| 04 | `model_compare.py` | SLM prieš LLM | ~45s |
+| 05 | `agents_orchestrator.py` | Daugiaveiksnių sistemų valdymas | ~60s |
 | 06 | `models_router.py` | Ketinimų nukreipimas | ~45s |
-| 06 | `models_pipeline.py` | Daugiapakopė sistema | ~60s |
+| 06 | `models_pipeline.py` | Daugiapakopė dujotiekio sistema | ~60s |
 
 ---
 
-## 🛠️ Aplinkos Kintamieji
+## 🛠️ Aplinkos kintamieji
 
 ### Esminiai
 ```bash
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Sesijos Specifiniai
+### Specifiniai sesijai
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -84,7 +84,7 @@ set PIPELINE_TASK="Your task here"
 
 ---
 
-## ✅ Validacija ir Testavimas
+## ✅ Validacija ir testavimas
 
 ```bash
 # Validate syntax and imports
@@ -102,9 +102,9 @@ python scripts/test_samples.py --verbose
 
 ---
 
-## 🐛 Trikčių Šalinimas
+## 🐛 Trikčių šalinimas
 
-### Ryšio Klaida
+### Ryšio klaida
 ```bash
 # Check Foundry Local
 foundry service status
@@ -114,7 +114,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Importavimo Klaida
+### Importavimo klaida
 ```bash
 # Install missing dependencies
 pip install sentence-transformers ragas datasets
@@ -123,7 +123,7 @@ pip install sentence-transformers ragas datasets
 pip install -r Workshop/requirements.txt
 ```
 
-### Modelis Nerastas
+### Modelis nerastas
 ```bash
 # List available models
 foundry model ls
@@ -132,7 +132,7 @@ foundry model ls
 foundry model download phi-4-mini
 ```
 
-### Lėtas Veikimas
+### Lėtas veikimas
 ```bash
 # Use smaller model
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
@@ -143,9 +143,9 @@ set BENCH_ROUNDS=1
 
 ---
 
-## 📖 Dažniausi Šablonai
+## 📖 Dažniausi šablonai
 
-### Pagrindinis Pokalbis
+### Pagrindinis pokalbis
 ```python
 from workshop_utils import chat_once
 
@@ -157,7 +157,7 @@ text, usage = chat_once(
 )
 ```
 
-### Gauti Klientą
+### Gauti klientą
 ```python
 from workshop_utils import get_client
 
@@ -167,7 +167,7 @@ manager, client, model_id = get_client(
 )
 ```
 
-### Klaidų Tvarkymas
+### Klaidų tvarkymas
 ```python
 try:
     manager, client, model_id = get_client(alias)
@@ -192,9 +192,9 @@ for chunk in stream:
 
 ---
 
-## 📊 Modelių Pasirinkimas
+## 📊 Modelio pasirinkimas
 
-| Modelis | Dydis | Geriausiai Tinka | Greitis |
+| Modelis | Dydis | Geriausiai tinka | Greitis |
 |---------|-------|------------------|---------|
 | `qwen2.5-0.5b` | 0.5B | Greita klasifikacija | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Greitas kodo generavimas | ⚡⚡⚡ |
@@ -207,10 +207,10 @@ for chunk in stream:
 
 ## 🔗 Ištekliai
 
-- **SDK Dokumentacija**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Greita Nuoroda**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Atnaujinimų Santrauka**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migracijos Pastabos**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **SDK dokumentacija**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **Greitoji atmintinė**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Atnaujinimų santrauka**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
+- **Migracijos pastabos**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -224,43 +224,41 @@ for chunk in stream:
 
 ---
 
-## 🎯 Pavyzdinės Darbo Eigos
+## 🎯 Pavyzdinės darbo eigos
 
-### Testuokite Viską
+### Testuokite viską
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### Modelių Palyginimas
+### Modelių palyginimas
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
-### RAG Sistema
+### RAG dujotiekis
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
-### Daugiaveiksnių Agentų Sistema
+### Daugiaveiksnių sistemų valdymas
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Greita Pagalba**: Paleiskite bet kurį pavyzdį su `--help` arba peržiūrėkite docstring:
+**Greita pagalba**: Paleiskite bet kurį pavyzdį su `--help` iš `samples` katalogo arba peržiūrėkite docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -269,5 +267,5 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 
 ---
 
-**Atsakomybės atsisakymas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, kilusius dėl šio vertimo naudojimo.
+**Atsakomybės apribojimas**:  
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus interpretavimus, atsiradusius naudojant šį vertimą.

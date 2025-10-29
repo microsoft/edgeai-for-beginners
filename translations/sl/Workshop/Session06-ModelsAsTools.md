@@ -1,32 +1,32 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-08T12:15:58+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T23:33:12+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "sl"
 }
 -->
-# Seansa 6: Foundry Local – Modeli kot orodja
+# Seja 6: Foundry Local – Modeli kot orodja
 
 ## Povzetek
 
-Modeli so obravnavani kot sestavljiva orodja znotraj lokalne AI operativne plasti. V tej seansi se boste naučili, kako povezati več specializiranih klicev SLM/LLM, selektivno usmerjati naloge in aplikacijam omogočiti enotno SDK površino. Zgradili boste lahek usmerjevalnik modelov + načrtovalec nalog, ga integrirali v skripto aplikacije in začrtali pot za skaliranje na Azure AI Foundry za produkcijske obremenitve.
+Obravnavajte modele kot sestavljiva orodja znotraj lokalne AI operativne plasti. Ta seja prikazuje, kako povezati več specializiranih klicev SLM/LLM, selektivno usmerjati naloge in aplikacijam omogočiti enotno SDK površino. Zgradili boste lahek usmerjevalnik modelov + načrtovalec nalog, ga integrirali v skript aplikacije in začrtali pot za skaliranje na Azure AI Foundry za produkcijske obremenitve.
 
 ## Cilji učenja
 
-- **Razumeti** modele kot osnovna orodja z deklariranimi zmožnostmi
-- **Usmerjati** zahteve na podlagi namena / heurističnega točkovanja
-- **Povezovati** rezultate skozi večstopenjske naloge (razčleniti → rešiti → izpopolniti)
-- **Integrirati** enoten API za odjemalce za aplikacije
-- **Skalirati** zasnovo v oblak (enaka pogodba, združljiva z OpenAI)
+- **Konceptualizirajte** modele kot osnovna orodja z deklariranimi zmožnostmi
+- **Usmerjajte** zahteve na podlagi namena / heurističnega ocenjevanja
+- **Povezujte** izhode skozi večstopenjske naloge (razčlenitev → rešitev → izboljšava)
+- **Integrirajte** enoten API za odjemalce za aplikacije
+- **Skalirajte** zasnovo v oblak (isti OpenAI-kompatibilni pogodbeni okvir)
 
 ## Predpogoji
 
-- Zaključene seanse 1–5
-- Več lokalnih modelov v predpomnilniku (npr. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- Zaključene seje 1–5
+- Več lokalnih modelov predpomnjenih (npr. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Izsek za večplatformsko okolje
+### Snippet za okolje na več platformah
 
 Windows PowerShell:
 ```powershell
@@ -44,7 +44,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Dostop do oddaljene storitve/VM iz macOS:
+Oddaljen dostop/VM storitev iz macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -52,7 +52,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Potek demonstracije (30 min)
 
-### 1. Deklaracija zmožnosti orodij (5 min)
+### 1. Deklaracija zmožnosti orodja (5 min)
 
 Ustvarite `samples/06-tools/models_catalog.py`:
 
@@ -179,20 +179,20 @@ if __name__ == '__main__':
 ### 4. Začetni projekt: Prilagodite `06-models-as-tools` (5 min)
 
 Izboljšave:
-- Dodajte podporo za pretakanje tokenov (postopna posodobitev uporabniškega vmesnika)
-- Dodajte točkovanje zaupanja: leksikalno prekrivanje ali rubriko poziva
+- Dodajte podporo za pretok tokenov (progresivna posodobitev UI)
+- Dodajte ocenjevanje zaupanja: leksikalno prekrivanje ali ocenjevalni kriterij za poziv
 - Izvozite sled JSON (namen → model → zakasnitev → uporaba tokenov)
 - Implementirajte ponovno uporabo predpomnilnika za ponavljajoče se podkorake
 
-### 5. Pot do skaliranja na Azure (5 min)
+### 5. Pot za skaliranje na Azure (5 min)
 
-| Plast | Lokalno (Foundry) | Oblačno (Azure AI Foundry) | Strategija prehoda |
-|-------|-------------------|---------------------------|---------------------|
+| Plast | Lokalno (Foundry) | Oblak (Azure AI Foundry) | Strategija prehoda |
+|-------|-------------------|--------------------------|---------------------|
 | Usmerjanje | Heuristični Python | Trajnostna mikrostoritev | Kontejnerizirajte in uvedite API |
 | Modeli | Predpomnjeni SLM-ji | Upravljane uvedbe | Preslikajte lokalna imena v ID-je uvedb |
-| Opazovanje | Statistika CLI/ročna | Centralizirano beleženje in meritve | Dodajte strukturirane dogodke sledenja |
+| Opazovanje | Statistika CLI/ročna | Centralizirano beleženje in metrike | Dodajte strukturirane sledilne dogodke |
 | Varnost | Samo lokalni gostitelj | Azure avtentikacija / omrežje | Uvedite ključni trezor za skrivnosti |
-| Stroški | Viri naprave | Obračunavanje porabe | Dodajte varovalke za proračun |
+| Stroški | Viri naprave | Obračunavanje porabe | Dodajte varovalke proračuna |
 
 ## Preveritveni seznam za validacijo
 
@@ -203,36 +203,36 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Pričakujte izbiro modela na podlagi namena in končni izpopolnjeni rezultat.
+Pričakujte izbiro modela na podlagi namena in končni izboljšan izhod.
 
 ## Odpravljanje težav
 
 | Težava | Vzrok | Rešitev |
 |--------|-------|---------|
-| Vse naloge so usmerjene na isti model | Slaba pravila | Obogatite niz regex INTENT_RULES |
+| Vse naloge usmerjene na isti model | Šibka pravila | Obogatite regex niz INTENT_RULES |
 | Cevovod se ustavi na sredini koraka | Manjka naložen model | Zaženite `foundry model run <model>` |
-| Nizka kohezija rezultatov | Brez faze izpopolnjevanja | Dodajte povzetek/preverjanje |
+| Nizka kohezija izhoda | Brez faze izboljšave | Dodajte fazo povzetka/validacije |
 
 ## Reference
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Azure AI Foundry Docs: https://learn.microsoft.com/azure/ai-foundry
-- Vzorci kakovosti pozivov: Glejte seanso 2
+- Vzorci kakovosti pozivov: Glejte sejo 2
 
 ---
 
-**Trajanje seanse**: 30 min  
+**Trajanje seje**: 30 min  
 **Težavnost**: Strokovno
 
 ## Vzorec scenarija in preslikava delavnice
 
-| Skripte / Beležnice delavnice | Scenarij | Cilj | Vir podatkov / Katalog |
-|-------------------------------|----------|------|-------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Pomočnik razvijalca, ki obravnava mešane pozive glede namena (preoblikovanje, povzemanje, razvrščanje) | Heuristični namen → usmerjanje modela z uporabo tokenov | Vgrajen `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Večstopenjsko načrtovanje in izpopolnjevanje za kompleksno nalogo pomoči pri kodiranju | Razčlenitev → specializirana izvedba → korak povzetka in izpopolnjevanja | Isti `CATALOG`; koraki izpeljani iz izhoda načrta |
+| Skripti / Zvezki delavnice | Scenarij | Cilj | Vir podatkov / kataloga |
+|----------------------------|----------|------|--------------------------|
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Pomočnik razvijalca, ki obravnava mešane namenske pozive (preoblikovanje, povzetek, razvrščanje) | Heuristično usmerjanje namena → modelni alias z uporabo tokenov | Vgrajen `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Načrtovanje in izboljšanje v več korakih za kompleksno nalogo pomoči pri kodiranju | Razčlenitev → specializirana izvedba → korak povzetka in izboljšave | Isti `CATALOG`; koraki izpeljani iz izhoda načrta |
 
-### Pripoved scenarija
-Orodje za povečanje produktivnosti inženirjev prejema heterogene naloge: preoblikovanje kode, povzemanje arhitekturnih zapiskov, razvrščanje povratnih informacij. Za zmanjšanje zakasnitve in porabe virov majhen splošni model načrtuje in povzame, model, specializiran za kodo, obravnava preoblikovanje, lahek model za razvrščanje pa označuje povratne informacije. Skripta cevovoda prikazuje povezovanje + izpopolnjevanje; skripta usmerjevalnika izolira prilagodljivo usmerjanje posameznih pozivov.
+### Narativ scenarija
+Orodje za produktivnost inženirjev prejema heterogene naloge: preoblikovanje kode, povzetek arhitekturnih opomb, razvrščanje povratnih informacij. Za zmanjšanje zakasnitve in porabe virov majhen splošni model načrtuje in povzame, model specializiran za kodo obravnava preoblikovanje, lahek model za razvrščanje pa označuje povratne informacije. Skript cevovoda prikazuje povezovanje + izboljšanje; skript usmerjevalnika izolira prilagodljivo usmerjanje z enim pozivom.
 
 ### Posnetek kataloga
 ```python
@@ -255,8 +255,8 @@ CATALOG = {
 ```
 
 
-### Razširitev sledenja (neobvezno)
-Dodajte sledenje JSON po korakih za `models_pipeline.py`:
+### Razširitev sledi (neobvezno)
+Dodajte sled JSON vrstic za vsak korak v `models_pipeline.py`:
 ```python
 trace.append({
     "step": step_idx,
@@ -269,24 +269,24 @@ trace.append({
 
 
 ### Heuristika za eskalacijo (ideja)
-Če načrt vsebuje ključne besede, kot so "optimizacija", "varnost" ali dolžina koraka > 280 znakov → eskalirajte na večji model (npr. `gpt-oss-20b`) samo za ta korak.
+Če načrt vsebuje ključne besede, kot so "optimizacija", "varnost", ali dolžina koraka > 280 znakov → eskalirajte na večji model (npr. `gpt-oss-20b`) samo za ta korak.
 
 ### Neobvezne izboljšave
 
 | Področje | Izboljšava | Vrednost | Namig |
 |----------|------------|----------|-------|
-| Predpomnjenje | Ponovna uporaba upravitelja + odjemalcev | Nižja zakasnitev, manjša obremenitev | Uporabite `workshop_utils.get_client` |
-| Meritve uporabe | Zajemanje tokenov in zakasnitve po korakih | Profiliranje in optimizacija | Izmerite vsak usmerjen klic; shranite v seznam sledenja |
-| Prilagodljivo usmerjanje | Zavedanje zaupanja / stroškov | Boljša kakovost-stroškovna učinkovitost | Dodajte točkovanje: če je poziv > N znakov ali regex ustreza področju → eskalirajte na večji model |
-| Dinamični register zmožnosti | Vroče nalaganje kataloga | Brez ponovnega zagona uvedbe | Naložite `catalog.json` med izvajanjem; spremljajte časovni žig datoteke |
-| Strategija rezervnega načrta | Robustnost pri napakah | Večja razpoložljivost | Poskusite primarno → ob izjemi rezervni vzdevek |
-| Pretakanje cevovoda | Zgodnje povratne informacije | Izboljšanje uporabniške izkušnje | Pretakajte vsak korak in medpomnite končni vhod za izpopolnjevanje |
-| Vektorske vdelave namena | Bolj natančno usmerjanje | Višja natančnost namena | Vdelajte poziv, združite in preslikajte težišče → zmožnost |
-| Izvoz sledenja | Verižna revizija | Skladnost/poročanje | Oddajte JSON vrstice: korak, namen, model, zakasnitev_ms, tokeni |
-| Simulacija stroškov | Ocena pred oblakom | Načrtovanje proračuna | Dodelite notionalne stroške/token na model in jih združite po nalogi |
+| Predpomnjenje | Ponovna uporaba upravitelja + odjemalskih objektov | Nižja zakasnitev, manjša obremenitev | Uporabite `workshop_utils.get_client` |
+| Metrike uporabe | Zajemanje tokenov in zakasnitve na korak | Profiliranje in optimizacija | Časovno merite vsak usmerjen klic; shranite v seznam sledi |
+| Prilagodljivo usmerjanje | Zaupanje / stroškovna zavest | Boljša kakovostna-stroškovna uravnoteženost | Dodajte ocenjevanje: če je poziv > N znakov ali regex ustreza domeni → eskalirajte na večji model |
+| Dinamični register zmožnosti | Vroče nalaganje kataloga | Brez ponovnega zagona uvedbe | Naložite `catalog.json` med izvajanjem; spremljajte časovno oznako datoteke |
+| Strategija rezervne možnosti | Robustnost ob napakah | Večja razpoložljivost | Poskusite primarno → ob izjemi rezervni alias |
+| Cevovod za pretok | Zgodnje povratne informacije | Izboljšanje uporabniške izkušnje | Pretakajte vsak korak in medpomnilnik za končni vhod za izboljšavo |
+| Vektorske namenske vdelave | Bolj natančno usmerjanje | Višja natančnost namena | Vdelajte poziv, razvrstite in preslikajte centroid → zmožnost |
+| Izvoz sledi | Verižna revizija | Skladnost/poročanje | Oddajte JSON vrstice: korak, namen, model, zakasnitev_ms, tokeni |
+| Simulacija stroškov | Ocena pred oblakom | Načrtovanje proračuna | Dodelite domnevne stroške/token na model in jih združite na nalogo |
 | Deterministični način | Reproducibilnost | Stabilno primerjanje | Okolje: `temperature=0`, fiksno število korakov |
 
-#### Primer strukture sledenja
+#### Primer strukture sledi
 
 ```python
 trace.append({
@@ -323,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Postopoma iterirajte—izogibajte se pretiranemu inženiringu v zgodnjih prototipih.
-
 ---
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne odgovarjamo za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.

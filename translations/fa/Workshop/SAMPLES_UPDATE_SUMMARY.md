@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-08T21:56:32+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T20:26:42+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "fa"
 }
 -->
-# نمونه‌های کارگاه - خلاصه به‌روزرسانی SDK محلی Foundry
+# نمونه‌های کارگاه - خلاصه به‌روزرسانی Foundry Local SDK
 
-## نمای کلی
+## مرور کلی
 
-تمام نمونه‌های پایتون در پوشه `Workshop/samples` به‌روزرسانی شده‌اند تا از بهترین شیوه‌های SDK محلی Foundry پیروی کنند و هماهنگی در سراسر کارگاه تضمین شود.
+تمام نمونه‌های پایتون در پوشه `Workshop/samples` به‌روزرسانی شده‌اند تا از بهترین شیوه‌های Foundry Local SDK پیروی کنند و هماهنگی در سراسر کارگاه تضمین شود.
 
 **تاریخ**: ۸ اکتبر ۲۰۲۵  
 **دامنه**: ۹ فایل پایتون در ۶ جلسه کارگاه  
@@ -21,11 +21,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## فایل‌های به‌روزرسانی‌شده
 
-### جلسه ۰۱: شروع کار
+### جلسه ۰۱: شروع به کار
 - ✅ `chat_bootstrap.py` - مثال‌های پایه‌ای چت و استریم
 
 ### جلسه ۰۲: راه‌حل‌های RAG
-- ✅ `rag_pipeline.py` - پیاده‌سازی RAG با embeddings
+- ✅ `rag_pipeline.py` - پیاده‌سازی RAG با استفاده از embeddings
 - ✅ `rag_eval_ragas.py` - ارزیابی RAG با معیارهای RAGAS
 
 ### جلسه ۰۳: مدل‌های متن‌باز
@@ -38,7 +38,7 @@ CO_OP_TRANSLATOR_METADATA:
 - ✅ `agents_orchestrator.py` - هماهنگی چند عامل
 
 ### جلسه ۰۶: مدل‌ها به‌عنوان ابزار
-- ✅ `models_router.py` - مسیریابی مدل بر اساس هدف
+- ✅ `models_router.py` - مسیریابی مدل مبتنی بر هدف
 - ✅ `models_pipeline.py` - خط لوله چند مرحله‌ای مسیریابی‌شده
 
 ### زیرساخت پشتیبانی
@@ -48,7 +48,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## بهبودهای کلیدی
 
-### ۱. مدیریت خطای پیشرفته
+### ۱. بهبود مدیریت خطا
 
 **قبل:**
 ```python
@@ -66,7 +66,7 @@ except Exception as e:
 ```
 
 **مزایا:**
-- مدیریت خطای مؤثر با پیام‌های واضح
+- مدیریت خطای روان با پیام‌های خطای واضح
 - نکات قابل اجرا برای رفع مشکلات
 - کدهای خروجی مناسب برای اسکریپت‌ها
 
@@ -98,7 +98,7 @@ except ImportError:
 - لینک‌های مرجع SDK
 - مثال‌های استفاده
 - مستندسازی دقیق توابع/پارامترها
-- اشاره‌های نوع برای پشتیبانی بهتر از IDE
+- اشاره‌گرهای نوع برای پشتیبانی بهتر از IDE
 
 **مثال:**
 ```python
@@ -116,9 +116,9 @@ def pipeline(task: str) -> Dict[str, Any]:
     """
 ```
 
-### ۴. بازخورد بهتر کاربر
+### ۴. بهبود بازخورد کاربر
 
-**اضافه‌شده: گزارش‌گیری اطلاعاتی:**
+**اضافه‌شده: لاگ‌گیری اطلاعاتی:**
 ```python
 print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
@@ -141,15 +141,15 @@ print(json.dumps(summary, indent=2))
 ### ۵. ارزیابی قوی
 
 **بهبودهای جلسه ۰۳:**
-- مدیریت خطا برای هر مدل (ادامه در صورت شکست)
+- مدیریت خطا برای هر مدل (ادامه در صورت خطا)
 - گزارش‌دهی دقیق پیشرفت
-- اجرای صحیح دورهای گرم‌سازی
+- اجرای صحیح مراحل گرم‌کردن
 - پشتیبانی از اندازه‌گیری تأخیر اولین توکن
 - جداسازی واضح مراحل
 
-### ۶. اشاره‌های نوع سازگار
+### ۶. اشاره‌گرهای نوع سازگار
 
-**اضافه‌شده در سراسر:**
+**اضافه‌شده در سراسر پروژه:**
 ```python
 from typing import Dict, List, Tuple, Any, Optional
 
@@ -159,19 +159,19 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 
 **مزایا:**
 - تکمیل خودکار بهتر در IDE
-- تشخیص زودهنگام خطا
+- شناسایی زودهنگام خطاها
 - کد خودمستند
 
-### ۷. مسیریاب مدل پیشرفته
+### ۷. بهبود مسیریاب مدل
 
 **بهبودهای جلسه ۰۶:**
 - مستندسازی جامع تشخیص هدف
 - توضیح الگوریتم انتخاب مدل
-- گزارش‌های مسیریابی دقیق
+- لاگ‌های مسیریابی دقیق
 - قالب‌بندی خروجی تست
-- بازیابی خطا در تست دسته‌ای
+- بازیابی خطا در تست‌های دسته‌ای
 
-### ۸. هماهنگی چند عامل
+### ۸. هماهنگی چند عاملی
 
 **بهبودهای جلسه ۰۵:**
 - گزارش‌دهی پیشرفت مرحله به مرحله
@@ -200,61 +200,61 @@ pip install -r Workshop/requirements.txt
 
 #### جلسه ۰۱
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### جلسه ۰۲
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### جلسه ۰۳
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### جلسه ۰۴
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### جلسه ۰۵
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### جلسه ۰۶
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
@@ -264,20 +264,20 @@ python models_pipeline.py
 ### عمومی (تمام نمونه‌ها)
 | متغیر | توضیحات | پیش‌فرض |
 |----------|-------------|---------|
-| `FOUNDRY_LOCAL_ALIAS` | نام مستعار مدل برای استفاده | بسته به نمونه |
+| `FOUNDRY_LOCAL_ALIAS` | نام مستعار مدل برای استفاده | بسته به نمونه متفاوت است |
 | `FOUNDRY_LOCAL_ENDPOINT` | جایگزینی نقطه پایانی سرویس | به‌صورت خودکار شناسایی می‌شود |
 | `SHOW_USAGE` | نمایش استفاده از توکن | `0` |
 | `RETRY_ON_FAIL` | فعال‌سازی منطق تلاش مجدد | `1` |
 | `RETRY_BACKOFF` | تأخیر اولیه تلاش مجدد | `1.0` |
 
-### نمونه‌های خاص
+### مختص نمونه
 | متغیر | استفاده‌شده توسط | توضیحات |
 |----------|---------|-------------|
 | `EMBED_MODEL` | جلسه ۰۲ | نام مدل embedding |
 | `RAG_QUESTION` | جلسه ۰۲ | سوال تست برای RAG |
 | `BENCH_MODELS` | جلسه ۰۳ | مدل‌های جداشده با کاما برای ارزیابی |
 | `BENCH_ROUNDS` | جلسه ۰۳ | تعداد دورهای ارزیابی |
-| `BENCH_PROMPT` | جلسه ۰۳ | درخواست تست برای ارزیابی |
+| `BENCH_PROMPT` | جلسه ۰۳ | درخواست تست برای ارزیابی‌ها |
 | `BENCH_STREAM` | جلسه ۰۳ | اندازه‌گیری تأخیر اولین توکن |
 | `SLM_ALIAS` | جلسه ۰۴ | مدل زبان کوچک |
 | `LLM_ALIAS` | جلسه ۰۴ | مدل زبان بزرگ |
@@ -291,17 +291,17 @@ python models_pipeline.py
 
 ## تغییرات شکسته
 
-**هیچ** - تمام تغییرات با نسخه‌های قبلی سازگار هستند.
+**هیچ‌کدام** - تمام تغییرات با نسخه‌های قبلی سازگار هستند.
 
 اسکریپت‌های موجود همچنان کار خواهند کرد. ویژگی‌های جدید عبارتند از:
 - متغیرهای محیطی اختیاری
-- پیام‌های خطای پیشرفته (عملکرد را خراب نمی‌کنند)
-- گزارش‌دهی اضافی (قابل سرکوب)
-- اشاره‌های نوع بهتر (بدون تأثیر در زمان اجرا)
+- پیام‌های خطای بهبودیافته (عملکرد را مختل نمی‌کنند)
+- لاگ‌گیری اضافی (قابل غیرفعال‌سازی)
+- اشاره‌گرهای نوع بهتر (بدون تأثیر در زمان اجرا)
 
 ---
 
-## بهترین شیوه‌های اجراشده
+## بهترین شیوه‌های پیاده‌سازی‌شده
 
 ### ۱. همیشه از Workshop Utils استفاده کنید
 ```python
@@ -311,7 +311,7 @@ from workshop_utils import get_client, chat_once
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
 
-### ۲. الگوی مدیریت خطای مناسب
+### ۲. الگوی مناسب مدیریت خطا
 ```python
 try:
     # Initialize client
@@ -322,14 +322,14 @@ except Exception as e:
     sys.exit(1)
 ```
 
-### ۳. گزارش‌دهی اطلاعاتی
+### ۳. لاگ‌گیری اطلاعاتی
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
 
-### ۴. اشاره‌های نوع
+### ۴. اشاره‌گرهای نوع
 ```python
 from typing import Dict, List, Optional
 
@@ -361,7 +361,7 @@ alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
 
-### ۷. کاهش مؤثر
+### ۷. کاهش تدریجی
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -378,7 +378,7 @@ for model in models:
 ## مشکلات رایج و راه‌حل‌ها
 
 ### مشکل: خطاهای واردات
-**راه‌حل:** نصب وابستگی‌های گم‌شده
+**راه‌حل:** نصب وابستگی‌های گمشده
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
@@ -406,28 +406,28 @@ set BENCH_ROUNDS=2
 
 ---
 
-## مراحل بعدی
+## گام‌های بعدی
 
 ### ۱. تست تمام نمونه‌ها
-چک‌لیست تست بالا را اجرا کنید تا مطمئن شوید تمام نمونه‌ها به‌درستی کار می‌کنند.
+چک‌لیست تست بالا را مرور کنید تا از عملکرد صحیح تمام نمونه‌ها اطمینان حاصل کنید.
 
 ### ۲. به‌روزرسانی مستندات
-- فایل‌های markdown جلسه را با مثال‌های جدید به‌روزرسانی کنید
-- بخش رفع مشکلات را به README اصلی اضافه کنید
-- راهنمای مرجع سریع ایجاد کنید
+- فایل‌های مارک‌داون جلسات را با مثال‌های جدید به‌روزرسانی کنید.
+- بخش عیب‌یابی را به README اصلی اضافه کنید.
+- یک راهنمای مرجع سریع ایجاد کنید.
 
-### ۳. ایجاد تست‌های یکپارچه‌سازی
+### ۳. ایجاد تست‌های یکپارچه
 ```python
 # Workshop/tests/test_samples.py
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
 
-### ۴. اضافه کردن ارزیابی عملکرد
+### ۴. افزودن ارزیابی‌های عملکرد
 بهبودهای عملکرد ناشی از بهبود مدیریت خطا را پیگیری کنید.
 
-### ۵. بازخورد کاربر
-بازخورد شرکت‌کنندگان کارگاه را جمع‌آوری کنید درباره:
+### ۵. بازخورد کاربران
+بازخورد شرکت‌کنندگان کارگاه را در مورد موارد زیر جمع‌آوری کنید:
 - وضوح پیام‌های خطا
 - کامل بودن مستندات
 - سهولت استفاده
@@ -436,41 +436,41 @@ def test_all_samples():
 
 ## منابع
 
-- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **مرجع سریع**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **یادداشت‌های مهاجرت**: `Workshop/SDK_MIGRATION_NOTES.md`
-- **مخزن اصلی**: https://github.com/microsoft/Foundry-Local
+- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
+- **مرجع سریع**: `Workshop/FOUNDRY_SDK_QUICKREF.md`  
+- **یادداشت‌های مهاجرت**: `Workshop/SDK_MIGRATION_NOTES.md`  
+- **مخزن اصلی**: https://github.com/microsoft/Foundry-Local  
 
 ---
 
 ## نگهداری
 
-### اضافه کردن نمونه‌های جدید
-هنگام ایجاد نمونه‌های جدید، از این الگوها پیروی کنید:
+### افزودن نمونه‌های جدید
+هنگام ایجاد نمونه‌های جدید، این الگوها را دنبال کنید:
 
-1. از `workshop_utils` برای مدیریت کلاینت استفاده کنید
-2. مدیریت خطای جامع اضافه کنید
-3. پشتیبانی از متغیرهای محیطی اضافه کنید
-4. اشاره‌های نوع و docstrings اضافه کنید
-5. گزارش‌دهی اطلاعاتی ارائه دهید
-6. مثال‌های استفاده را در docstring اضافه کنید
-7. لینک به مستندات SDK اضافه کنید
+1. از `workshop_utils` برای مدیریت کلاینت استفاده کنید.
+2. مدیریت خطای جامع اضافه کنید.
+3. پشتیبانی از متغیرهای محیطی را اضافه کنید.
+4. اشاره‌گرهای نوع و docstrings اضافه کنید.
+5. لاگ‌گیری اطلاعاتی ارائه دهید.
+6. مثال‌های استفاده را در docstring قرار دهید.
+7. لینک به مستندات SDK را اضافه کنید.
 
 ### بررسی به‌روزرسانی‌ها
-هنگام بررسی به‌روزرسانی نمونه‌ها، بررسی کنید:
+هنگام بررسی به‌روزرسانی نمونه‌ها، موارد زیر را بررسی کنید:
 - [ ] مدیریت خطا در تمام عملیات I/O
-- [ ] اشاره‌های نوع در توابع عمومی
+- [ ] اشاره‌گرهای نوع در توابع عمومی
 - [ ] Docstrings جامع
 - [ ] مستندسازی متغیرهای محیطی
-- [ ] بازخورد اطلاعاتی کاربر
+- [ ] بازخورد اطلاعاتی به کاربر
 - [ ] لینک‌های مرجع SDK
-- [ ] سبک کد سازگار
+- [ ] سبک کدنویسی سازگار
 
 ---
 
-**خلاصه**: تمام نمونه‌های پایتون کارگاه اکنون از بهترین شیوه‌های SDK محلی Foundry پیروی می‌کنند با مدیریت خطای پیشرفته، مستندسازی جامع، و تجربه کاربری بهبود‌یافته. هیچ تغییر شکسته‌ای وجود ندارد - تمام عملکردهای موجود حفظ و بهبود یافته‌اند.
+**خلاصه**: تمام نمونه‌های پایتون کارگاه اکنون از بهترین شیوه‌های Foundry Local SDK پیروی می‌کنند و با مدیریت خطای بهبودیافته، مستندسازی جامع و تجربه کاربری بهتر به‌روزرسانی شده‌اند. هیچ تغییری که باعث اختلال شود وجود ندارد - تمام عملکردهای موجود حفظ و بهبود یافته‌اند.
 
 ---
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.

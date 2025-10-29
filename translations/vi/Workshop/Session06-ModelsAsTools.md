@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T16:56:28+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T22:34:43+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "vi"
 }
@@ -11,20 +11,20 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tóm tắt
 
-Xem các mô hình như những công cụ có thể kết hợp trong một lớp vận hành AI cục bộ. Buổi học này hướng dẫn cách liên kết nhiều cuộc gọi SLM/LLM chuyên biệt, định tuyến nhiệm vụ một cách chọn lọc, và cung cấp một giao diện SDK thống nhất cho các ứng dụng. Bạn sẽ xây dựng một bộ định tuyến mô hình nhẹ + trình lập kế hoạch nhiệm vụ, tích hợp nó vào một kịch bản ứng dụng, và phác thảo lộ trình mở rộng lên Azure AI Foundry cho khối lượng công việc sản xuất.
+Xem các mô hình như những công cụ có thể kết hợp trong một lớp vận hành AI cục bộ. Buổi học này sẽ hướng dẫn cách kết nối nhiều cuộc gọi SLM/LLM chuyên biệt, định tuyến nhiệm vụ một cách chọn lọc, và cung cấp một giao diện SDK thống nhất cho các ứng dụng. Bạn sẽ xây dựng một bộ định tuyến mô hình nhẹ + lập kế hoạch nhiệm vụ, tích hợp nó vào một kịch bản ứng dụng, và phác thảo lộ trình mở rộng lên Azure AI Foundry cho khối lượng công việc sản xuất.
 
 ## Mục tiêu học tập
 
 - **Hình dung** các mô hình như những công cụ nguyên tử với khả năng được khai báo
-- **Định tuyến** yêu cầu dựa trên ý định / điểm số theo phương pháp heuristic
-- **Liên kết** đầu ra qua các nhiệm vụ nhiều bước (phân rã → giải quyết → tinh chỉnh)
-- **Tích hợp** một API khách thống nhất cho các ứng dụng hạ nguồn
+- **Định tuyến** yêu cầu dựa trên ý định / điểm số heuristic
+- **Kết nối** đầu ra qua các nhiệm vụ nhiều bước (phân tích → giải quyết → tinh chỉnh)
+- **Tích hợp** API khách hàng thống nhất cho các ứng dụng hạ nguồn
 - **Mở rộng** thiết kế lên đám mây (hợp đồng tương thích OpenAI)
 
-## Điều kiện tiên quyết
+## Yêu cầu trước
 
 - Hoàn thành các buổi 1–5
-- Nhiều mô hình cục bộ được lưu trữ (ví dụ: `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- Lưu trữ nhiều mô hình cục bộ (ví dụ: `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
 ### Đoạn mã môi trường đa nền tảng
 
@@ -133,7 +133,7 @@ if __name__ == "__main__":
 ```
 
 
-### 3. Liên kết nhiệm vụ nhiều bước (7 phút)
+### 3. Kết nối nhiệm vụ nhiều bước (7 phút)
 
 Tạo `samples/06-tools/pipeline.py`:
 
@@ -180,19 +180,19 @@ if __name__ == '__main__':
 
 Cải tiến:
 - Thêm hỗ trợ token streaming (cập nhật giao diện người dùng theo tiến trình)
-- Thêm điểm số độ tin cậy: sự trùng lặp từ vựng hoặc tiêu chí gợi ý
+- Thêm điểm số độ tin cậy: trùng lặp từ vựng hoặc tiêu chí gợi ý
 - Xuất JSON trace (ý định → mô hình → độ trễ → sử dụng token)
-- Thực hiện tái sử dụng bộ nhớ cache cho các bước con lặp lại
+- Thực hiện tái sử dụng bộ nhớ cache cho các bước lặp lại
 
 ### 5. Lộ trình mở rộng lên Azure (5 phút)
 
 | Lớp | Cục bộ (Foundry) | Đám mây (Azure AI Foundry) | Chiến lược chuyển đổi |
 |-----|------------------|---------------------------|-----------------------|
 | Định tuyến | Python heuristic | Microservice bền vững | Đóng gói & triển khai API |
-| Mô hình | SLMs được lưu trữ | Triển khai được quản lý | Ánh xạ tên cục bộ sang ID triển khai |
-| Khả năng quan sát | Thống kê CLI/thủ công | Nhật ký & số liệu tập trung | Thêm sự kiện trace có cấu trúc |
-| Bảo mật | Chỉ host cục bộ | Xác thực mạng Azure | Thêm key vault cho thông tin bí mật |
-| Chi phí | Tài nguyên thiết bị | Thanh toán theo mức sử dụng | Thêm giới hạn ngân sách |
+| Mô hình | SLMs lưu trữ | Triển khai được quản lý | Ánh xạ tên cục bộ sang ID triển khai |
+| Khả năng quan sát | Thống kê CLI/thủ công | Nhật ký & số liệu trung tâm | Thêm sự kiện trace có cấu trúc |
+| Bảo mật | Chỉ host cục bộ | Xác thực Azure / mạng | Thêm key vault cho thông tin bảo mật |
+| Chi phí | Tài nguyên thiết bị | Thanh toán theo mức tiêu thụ | Thêm giới hạn ngân sách |
 
 ## Danh sách kiểm tra xác thực
 
@@ -203,15 +203,15 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Đảm bảo lựa chọn mô hình dựa trên ý định và đầu ra cuối cùng được tinh chỉnh.
+Kỳ vọng lựa chọn mô hình dựa trên ý định và đầu ra cuối cùng được tinh chỉnh.
 
 ## Xử lý sự cố
 
 | Vấn đề | Nguyên nhân | Cách khắc phục |
 |--------|-------------|----------------|
-| Tất cả nhiệm vụ được định tuyến đến cùng một mô hình | Quy tắc yếu | Làm phong phú tập regex INTENT_RULES |
-| Pipeline thất bại giữa bước | Mô hình chưa được tải | Chạy `foundry model run <model>` |
-| Đầu ra kém liên kết | Không có giai đoạn tinh chỉnh | Thêm bước tóm tắt/xác thực |
+| Tất cả nhiệm vụ được định tuyến đến cùng một mô hình | Quy tắc yếu | Làm phong phú bộ regex INTENT_RULES |
+| Pipeline thất bại giữa chừng | Mô hình chưa được tải | Chạy `foundry model run <model>` |
+| Đầu ra không đồng nhất | Không có giai đoạn tinh chỉnh | Thêm bước tóm tắt/xác thực |
 
 ## Tài liệu tham khảo
 
@@ -226,13 +226,13 @@ python samples/06-tools/pipeline.py
 
 ## Kịch bản mẫu & ánh xạ workshop
 
-| Kịch bản / Notebook workshop | Kịch bản | Mục tiêu | Nguồn dữ liệu / danh mục |
+| Tập lệnh Workshop / Notebook | Kịch bản | Mục tiêu | Nguồn dữ liệu / Danh mục |
 |------------------------------|----------|----------|--------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Trợ lý nhà phát triển xử lý các gợi ý ý định hỗn hợp (tái cấu trúc, tóm tắt, phân loại) | Ý định heuristic → định tuyến alias mô hình với sử dụng token | `CATALOG` nội tuyến + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Lập kế hoạch & tinh chỉnh nhiều bước cho nhiệm vụ hỗ trợ mã hóa phức tạp | Phân rã → thực thi chuyên biệt → bước tinh chỉnh tóm tắt | Cùng `CATALOG`; các bước được dẫn xuất từ đầu ra kế hoạch |
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Trợ lý phát triển xử lý các gợi ý ý định hỗn hợp (tái cấu trúc, tóm tắt, phân loại) | Ý định heuristic → định tuyến alias mô hình với sử dụng token | `CATALOG` nội tuyến + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Lập kế hoạch & tinh chỉnh nhiều bước cho nhiệm vụ hỗ trợ mã hóa phức tạp | Phân tích → thực thi chuyên biệt → bước tinh chỉnh tóm tắt | Cùng `CATALOG`; các bước được dẫn xuất từ đầu ra kế hoạch |
 
 ### Tường thuật kịch bản
-Một công cụ tăng năng suất kỹ thuật nhận các nhiệm vụ không đồng nhất: tái cấu trúc mã, tóm tắt ghi chú kiến trúc, phân loại phản hồi. Để giảm độ trễ & sử dụng tài nguyên, một mô hình nhỏ tổng quát lập kế hoạch và tóm tắt, một mô hình chuyên về mã xử lý tái cấu trúc, và một mô hình nhẹ có khả năng phân loại gắn nhãn phản hồi. Kịch bản pipeline minh họa liên kết + tinh chỉnh; kịch bản router cô lập định tuyến gợi ý đơn thích ứng.
+Một công cụ tăng năng suất kỹ thuật nhận các nhiệm vụ không đồng nhất: tái cấu trúc mã, tóm tắt ghi chú kiến trúc, phân loại phản hồi. Để giảm độ trễ & sử dụng tài nguyên, một mô hình nhỏ tổng quát lập kế hoạch và tóm tắt, một mô hình chuyên về mã xử lý tái cấu trúc, và một mô hình nhẹ có khả năng phân loại gắn nhãn phản hồi. Tập lệnh pipeline minh họa việc kết nối + tinh chỉnh; tập lệnh router cô lập định tuyến gợi ý đơn thích ứng.
 
 ### Ảnh chụp danh mục
 ```python
@@ -244,7 +244,7 @@ CATALOG = {
 ```
 
 
-### Gợi ý kiểm tra ví dụ
+### Ví dụ gợi ý kiểm tra
 ```json
 [
     "Refactor this Python function for readability",
@@ -268,38 +268,7 @@ trace.append({
 ```
 
 
-### Phương pháp heuristic leo thang (Ý tưởng)
-Nếu kế hoạch chứa các từ khóa như "tối ưu hóa", "bảo mật", hoặc độ dài bước > 280 ký tự → leo thang lên mô hình lớn hơn (ví dụ: `gpt-oss-20b`) chỉ cho bước đó.
-
-### Cải tiến tùy chọn
-
-| Khu vực | Cải tiến | Giá trị | Gợi ý |
-|---------|----------|---------|-------|
-| Bộ nhớ cache | Tái sử dụng đối tượng quản lý + khách hàng | Giảm độ trễ, ít chi phí hơn | Sử dụng `workshop_utils.get_client` |
-| Số liệu sử dụng | Thu thập token & độ trễ từng bước | Lập hồ sơ & tối ưu hóa | Đo thời gian mỗi cuộc gọi định tuyến; lưu trong danh sách trace |
-| Định tuyến thích ứng | Nhận thức độ tin cậy / chi phí | Cân bằng chất lượng-chi phí tốt hơn | Thêm điểm số: nếu gợi ý > N ký tự hoặc regex khớp với miền → leo thang lên mô hình lớn hơn |
-| Đăng ký khả năng động | Tải lại danh mục nóng | Không cần khởi động lại triển khai | Tải `catalog.json` khi runtime; theo dõi dấu thời gian tệp |
-| Chiến lược dự phòng | Độ tin cậy khi gặp lỗi | Tăng tính khả dụng | Thử chính → khi gặp ngoại lệ fallback alias |
-| Pipeline streaming | Phản hồi sớm | Cải thiện trải nghiệm người dùng | Stream từng bước và đệm đầu vào tinh chỉnh cuối cùng |
-| Vector Intent Embeddings | Định tuyến tinh tế hơn | Độ chính xác ý định cao hơn | Nhúng gợi ý, phân cụm & ánh xạ centroid → khả năng |
-| Xuất trace | Chuỗi có thể kiểm toán | Tuân thủ/báo cáo | Xuất các dòng JSON: bước, ý định, mô hình, độ trễ_ms, token |
-| Mô phỏng chi phí | Ước tính trước đám mây | Lập kế hoạch ngân sách | Gán chi phí giả định/token cho mỗi mô hình & tổng hợp theo nhiệm vụ |
-| Chế độ xác định | Tái tạo kết quả | Đánh giá chuẩn ổn định | Env: `temperature=0`, số bước cố định |
-
-#### Ví dụ cấu trúc trace
-
-```python
-trace.append({
-  "step": idx,
-  "intent": intent,
-  "alias": alias,
-  "latency_ms": round((end-start)*1000,2),
-  "tokens": getattr(usage,'total_tokens',None)
-})
-```
-
-
-#### Phác thảo leo thang thích ứng
+### Phác thảo Heuristic nâng cấp
 
 ```python
 if len(prompt) > 280 or 'compliance' in prompt.lower():
@@ -308,7 +277,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
 ```
 
 
-#### Tải lại danh mục mô hình nóng
+### Tải lại danh mục mô hình động
 
 ```python
 import json, time, os
@@ -323,10 +292,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Hãy lặp lại dần dần—tránh việc thiết kế quá mức cho các nguyên mẫu ban đầu.
-
 ---
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

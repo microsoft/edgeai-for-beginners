@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T19:12:58+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T22:40:02+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "ms"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. Pasang Foundry Local
 
-Ikuti panduan pemasangan rasmi:  
+Ikuti panduan pemasangan rasmi:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -50,11 +50,11 @@ pip install -r requirements.txt
 ### Sesi 01: Chat Asas
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
-**Pembolehubah Persekitaran:**  
+**Pembolehubah Persekitaran:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
@@ -63,11 +63,11 @@ set SHOW_USAGE=1
 ### Sesi 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
-**Pembolehubah Persekitaran:**  
+**Pembolehubah Persekitaran:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set RAG_QUESTION="Why use RAG with local inference?"
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Sesi 02: Penilaian RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Nota**: Memerlukan kebergantungan tambahan dipasang melalui `requirements.txt`
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### Sesi 03: Penanda Aras
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
-**Pembolehubah Persekitaran:**  
+**Pembolehubah Persekitaran:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,11 +103,11 @@ set BENCH_STREAM=1
 ### Sesi 04: Perbandingan Model
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
-**Pembolehubah Persekitaran:**  
+**Pembolehubah Persekitaran:**
 ```bash
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
@@ -116,11 +117,11 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Sesi 05: Orkestrasi Multi-Ejen
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
-**Pembolehubah Persekitaran:**  
+**Pembolehubah Persekitaran:**
 ```bash
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=phi-4-mini
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Sesi 06: Penghala Model
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **Menguji logik penghalaan** dengan pelbagai niat (kod, ringkasan, klasifikasi)
@@ -139,7 +140,7 @@ python models_router.py
 ### Sesi 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Pipeline pelbagai langkah yang kompleks** dengan perancangan, pelaksanaan, dan penambahbaikan
@@ -240,7 +241,7 @@ foundry model run phi-4-mini
 |--------------|-------|------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Model embedding |
 | `RAG_QUESTION` | Lihat sampel | Soalan ujian RAG |
-| `BENCH_MODELS` | Berbeza | Model yang dipisahkan dengan koma |
+| `BENCH_MODELS` | Berbeza | Model dipisahkan dengan koma |
 | `BENCH_ROUNDS` | `3` | Iterasi penanda aras |
 | `BENCH_PROMPT` | Lihat sampel | Prompt penanda aras |
 | `BENCH_STREAM` | `0` | Ukur latensi token pertama |
@@ -264,13 +265,13 @@ foundry model run phi-4-mini
 
 ## Dokumentasi SDK
 
-- **Foundry Local**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Mendapatkan Bantuan
 
-1. Semak status perkhidmatan: `foundry service status`
-2. Lihat log: Semak log perkhidmatan Foundry Local
+1. Periksa status perkhidmatan: `foundry service status`
+2. Lihat log: Periksa log perkhidmatan Foundry Local
 3. Semak dokumen SDK: https://github.com/microsoft/Foundry-Local
 4. Semak kod sampel: Semua sampel mempunyai docstring terperinci
 
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

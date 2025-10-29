@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-08T20:59:22+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T20:08:30+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "es"
 }
 -->
 # Scripts del Taller
 
-Este directorio contiene scripts de automatización y soporte utilizados para mantener la calidad y consistencia en los materiales del taller.
+Este directorio contiene scripts de automatización y soporte utilizados para mantener la calidad y consistencia en los materiales del Taller.
 
 ## Contenido
 
@@ -20,7 +20,7 @@ Este directorio contiene scripts de automatización y soporte utilizados para ma
 
 ## 1. Linter de Patrones CLI en Markdown
 
-`lint_markdown_cli.py` analiza todos los archivos `.md` que no sean traducciones para detectar patrones obsoletos de Foundry Local CLI **dentro de bloques de código delimitados** (``` ... ```). El texto informativo aún puede mencionar comandos obsoletos para contexto histórico.
+`lint_markdown_cli.py` escanea todos los archivos `.md` que no sean traducciones en busca de patrones obsoletos de Foundry Local CLI **dentro de bloques de código delimitados** (``` ... ```). La prosa informativa aún puede mencionar comandos obsoletos para contexto histórico.
 
 ### Patrones Obsoletos (Bloqueados Dentro de Bloques de Código)
 
@@ -67,7 +67,7 @@ Un flujo de trabajo de GitHub Action (`.github/workflows/markdown-cli-lint.yml`)
 
 ### Agregar Nuevos Patrones Obsoletos
 1. Abre `lint_markdown_cli.py`.
-2. Agrega una tupla `(regex, suggestion)` a la lista `DEPRECATED`. Usa una cadena sin procesar e incluye límites de palabra `\b` donde sea apropiado.
+2. Agrega una tupla `(regex, suggestion)` a la lista `DEPRECATED`. Usa una cadena raw e incluye límites de palabra `\b` donde sea apropiado.
 3. Ejecuta el linter localmente para verificar la detección.
 4. Haz commit y push; el CI aplicará la nueva regla.
 
@@ -77,23 +77,23 @@ DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental
 ```
 
 ### Permitir Menciones Explicativas
-Dado que solo se aplican restricciones a los bloques de código delimitados, puedes describir comandos obsoletos en texto narrativo sin problemas. Si *debes* mostrarlos dentro de un bloque delimitado para contraste, usa un bloque delimitado **sin** triple backticks (por ejemplo, indenta o cita) o reescribe en forma pseudo.
+Dado que solo se aplican bloques de código delimitados, puedes describir comandos obsoletos en texto narrativo de forma segura. Si *debes* mostrarlos dentro de un bloque delimitado para contraste, agrega un bloque delimitado **sin** triple backticks (por ejemplo, indenta o cita) o reescribe en forma pseudo.
 
 ### Omitir Archivos Específicos (Avanzado)
-Si es necesario, coloca ejemplos heredados en un archivo separado fuera del repositorio o renómbralo con una extensión diferente mientras lo redactas. Las omisiones intencionales para copias traducidas son automáticas (rutas que contienen `translations`).
+Si es necesario, envuelve ejemplos antiguos en un archivo separado fuera del repositorio o renómbralo con una extensión diferente mientras lo redactas. Las omisiones intencionales para copias traducidas son automáticas (rutas que contienen `translations`).
 
 ### Solución de Problemas
 | Problema | Causa | Resolución |
 |----------|-------|------------|
 | El linter marca una línea que actualizaste | Regex demasiado amplio | Ajusta el patrón con límites de palabra adicionales (`\b`) o anclajes |
-| El CI falla pero localmente pasa | Diferente versión de Python o cambios no confirmados | Reejecuta localmente, asegúrate de tener un árbol de trabajo limpio, verifica la versión de Python del flujo de trabajo (3.11) |
+| El CI falla pero localmente pasa | Diferente versión de Python o cambios no comprometidos | Reejecuta localmente, asegúrate de tener un árbol de trabajo limpio, verifica la versión de Python del flujo de trabajo (3.11) |
 | Necesitas omitir temporalmente | Corrección urgente | Aplica la corrección inmediatamente después; considera usar una rama temporal y un PR de seguimiento (evita agregar interruptores de omisión) |
 
 ### Justificación
 Mantener la documentación alineada con la superficie CLI *estable* actual evita fricciones en el taller, reduce la confusión de los participantes y centraliza la medición de rendimiento mediante scripts de Python mantenidos en lugar de comandos CLI desactualizados.
 
 ---
-Mantenido como parte de la cadena de herramientas de calidad del taller. Para mejoras (por ejemplo, sugerencias de corrección automática o generación de informes en HTML), abre un issue o envía un PR.
+Mantenido como parte de la cadena de herramientas de calidad del taller. Para mejoras (por ejemplo, sugerencias de corrección automática o generación de informes HTML), abre un issue o envía un PR.
 
 ## 2. Script de Validación de Ejemplos
 
@@ -130,7 +130,7 @@ python scripts/validate_samples.py --summary
 - `0` - Todos los ejemplos pasaron la validación
 - `1` - Uno o más ejemplos fallaron
 
-## 3. Script de Pruebas de Ejemplos
+## 3. Ejecutor de Pruebas de Ejemplos
 
 `test_samples.py` ejecuta pruebas rápidas en todos los ejemplos para verificar que se ejecuten sin errores.
 
@@ -155,7 +155,7 @@ python scripts/test_samples.py --verbose
 - Dependencias instaladas: `pip install -r requirements.txt`
 
 ### Qué prueba
-- ✅ El ejemplo se ejecuta sin errores de tiempo de ejecución
+- ✅ El ejemplo puede ejecutarse sin errores de tiempo de ejecución
 - ✅ Se genera la salida requerida
 - ✅ Manejo adecuado de errores en caso de fallos
 - ✅ Rendimiento (tiempo de ejecución)
@@ -182,33 +182,33 @@ Genera una tabla de rendimiento reproducible para un conjunto de modelos.
 
 ### Uso
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Salidas
 | Archivo | Descripción |
 |---------|-------------|
-| `benchmark_report.md` | Tabla en Markdown (promedio, p95, tokens/segundo, opcional primer token) |
+| `benchmark_report.md` | Tabla en Markdown (promedio, p95, tokens/segundo, primer token opcional) |
 | `benchmark_report.json` | Matriz de métricas en bruto para comparación y registro histórico |
 
 ### Opciones
 | Flag | Descripción | Predeterminado |
 |------|-------------|---------------|
 | `--models` | Alias de modelos separados por comas | (requerido) |
-| `--prompt` | Prompt usado en cada ronda | (requerido) |
+| `--prompt` | Prompt utilizado en cada ronda | (requerido) |
 | `--rounds` | Rondas por modelo | 3 |
 | `--output` | Archivo de salida en Markdown | `benchmark_report.md` |
 | `--json` | Archivo de salida en JSON | `benchmark_report.json` |
 | `--fail-on-empty` | Salida no cero si todos los benchmarks fallan | desactivado |
 
-La variable de entorno `BENCH_STREAM=1` agrega medición de latencia del primer token.
+La variable de entorno `BENCH_STREAM=1` agrega la medición de latencia del primer token.
 
 ### Notas
-- Reutiliza `workshop_utils` para un inicio y caché consistentes de modelos.
+- Reutiliza `workshop_utils` para un inicio y almacenamiento en caché de modelos consistente.
 - Si se ejecuta desde un directorio de trabajo diferente, el script intenta rutas alternativas para localizar `workshop_utils`.
-- Para comparación de GPU: ejecuta una vez, habilita aceleración mediante configuración CLI, vuelve a ejecutar y compara el JSON.
+- Para comparación de GPU: ejecuta una vez, habilita la aceleración mediante configuración CLI, vuelve a ejecutar y compara el JSON.
 
 ---
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.

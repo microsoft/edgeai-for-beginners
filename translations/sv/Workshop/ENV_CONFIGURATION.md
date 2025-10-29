@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T12:51:04+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:03:41+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "sv"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Översikt
 
-Workshop-exemplen använder miljövariabler för konfiguration, centraliserade i `.env`-filen vid roten av repositoryn. Detta möjliggör enkel anpassning utan att ändra kod.
+Workshop-exemplen använder miljövariabler för konfiguration, centraliserade i `.env`-filen vid roten av repositoryn. Detta möjliggör enkel anpassning utan att ändra koden.
 
 ## Snabbstart
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. Konfigurera Miljön
 
-`.env`-filen är redan konfigurerad med rimliga standardvärden. De flesta användare behöver inte ändra något.
+`.env`-filen är redan konfigurerad med rimliga standardinställningar. De flesta användare behöver inte ändra något.
 
 **Valfritt**: Granska och anpassa inställningar:
 ```bash
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **För Python-skript:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -60,8 +60,8 @@ python chat_bootstrap.py
 
 | Variabel | Standard | Beskrivning |
 |----------|---------|-------------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Standardmodell för exemplen |
-| `FOUNDRY_LOCAL_ENDPOINT` | (tom) | Åsidosätt tjänstendpunkt |
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Standardmodell för exempel |
+| `FOUNDRY_LOCAL_ENDPOINT` | (tom) | Åsidosätt tjänstendpoint |
 | `PYTHONPATH` | Workshop-sökvägar | Sökväg för Python-moduler |
 
 **När man ska ställa in FOUNDRY_LOCAL_ENDPOINT:**
@@ -83,16 +83,16 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Session 02: RAG Pipeline
 | Variabel | Standard | Syfte |
 |----------|---------|-------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Modell för embedding |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Inbäddningsmodell |
 | `RAG_QUESTION` | Förkonfigurerad | Testfråga |
 
 #### Session 03: Benchmarking
 | Variabel | Standard | Syfte |
 |----------|---------|-------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modeller att benchmarka |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modeller att benchmarka |
 | `BENCH_ROUNDS` | `3` | Iterationer per modell |
 | `BENCH_PROMPT` | Förkonfigurerad | Testprompt |
-| `BENCH_STREAM` | `0` | Mäta latens för första token |
+| `BENCH_STREAM` | `0` | Mäta fördröjning för första token |
 
 #### Session 04: Modelljämförelse
 | Variabel | Standard | Syfte |
@@ -100,9 +100,9 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `SLM_ALIAS` | `phi-4-mini` | Liten språkmodell |
 | `LLM_ALIAS` | `qwen2.5-7b` | Stor språkmodell |
 | `COMPARE_PROMPT` | Förkonfigurerad | Jämförelseprompt |
-| `COMPARE_RETRIES` | `2` | Försök vid omstart |
+| `COMPARE_RETRIES` | `2` | Försök att köra om |
 
-#### Session 05: Multi-Agent Orkestrering
+#### Session 05: Multi-Agent Orchestration
 | Variabel | Standard | Syfte |
 |----------|---------|-------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Forskaragentens modell |
@@ -114,12 +114,12 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | Variabel | Standard | Syfte |
 |----------|---------|-------|
 | `SHOW_USAGE` | `1` | Visa tokenanvändning |
-| `RETRY_ON_FAIL` | `1` | Aktivera omstartslogik |
-| `RETRY_BACKOFF` | `1.0` | Fördröjning vid omstart (sekunder) |
+| `RETRY_ON_FAIL` | `1` | Aktivera återförsökslogik |
+| `RETRY_BACKOFF` | `1.0` | Fördröjning vid återförsök (sekunder) |
 
 ## Vanliga Konfigurationer
 
-### Utvecklingsinställning (Snabb Iteration)
+### Utvecklingsinställning (Snabba Iterationer)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,12 +140,12 @@ SHOW_USAGE=0
 
 ### Benchmarking-inställning
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### Multi-Agent Specialisering
+### Specialisering för Multi-Agent
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -159,7 +159,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ## Rekommenderade Modeller
 
-### Efter Användningsområde
+### Beroende på Användningsområde
 
 **Allmänt Syfte:**
 - `phi-4-mini` - Balanserad kvalitet och hastighet
@@ -170,13 +170,13 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Hög Kvalitet:**
 - `qwen2.5-7b` - Bästa kvalitet, högre resursanvändning
-- `phi-4-mini` - Bra kvalitet, lägre resurser
+- `phi-4-mini` - Bra kvalitet, lägre resursanvändning
 
 **Kodgenerering:**
 - `deepseek-coder-1.3b` - Specialiserad för kod
 - `phi-4-mini` - Allmänt syfte för kodning
 
-### Efter Resurstillgänglighet
+### Beroende på Resurstillgång
 
 **Låga Resurser (< 8GB RAM):**
 ```bash
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### Azure OpenAI Hybridinställning
+### Azure OpenAI Hybrid Setup
 
 ```bash
 # Use local for development
@@ -259,11 +259,11 @@ dir .env     # Windows
 pwd  # Should be in Workshop or repository root
 ```
 
-### Anslutningsproblem med Tjänsten
+### Problem med Tjänsteanslutning
 
 **Symptom:**
 - Felmeddelanden "Connection refused"
-- "Service not available"
+- "Tjänsten är inte tillgänglig"
 - Timeout-fel
 
 **Lösningar:**
@@ -282,11 +282,11 @@ foundry service status | grep "Port"
 FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ```
 
-### Modell Ej Hittad
+### Modell Saknas
 
 **Symptom:**
-- Felmeddelanden "Model not found"
-- "Alias not recognized"
+- Felmeddelanden "Modell saknas"
+- "Alias känns inte igen"
 
 **Lösningar:**
 ```bash
@@ -303,25 +303,22 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Importfel
 
 **Symptom:**
-- Felmeddelanden "Module not found"
-- "Cannot import workshop_utils"
+- Felmeddelanden "Modul saknas"
 
 **Lösningar:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Testa Konfiguration
 
-### Verifiera Miljöladdning
+### Kontrollera Miljöladdning
 
 ```python
 # test_env.py
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Testa Anslutning till Foundry Local
+### Testa Foundry Local-anslutning
 
 ```python
 # test_connection.py
@@ -402,17 +399,17 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ```
 
-## SDK-dokumentation
+## SDK Dokumentation
 
 - **Huvudrepository**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API-dokumentation**: Se SDK-repository för senaste versionen
+- **API Dokumentation**: Se SDK-repositoryn för senaste versionen
 
 ## Ytterligare Resurser
 
 - `QUICK_START.md` - Kom igång-guide
 - `SDK_MIGRATION_NOTES.md` - Detaljer om SDK-uppdateringar
-- `Workshop/samples/*/README.md` - Guide för specifika exempel
+- `Workshop/samples/*/README.md` - Exempelspecifika guider
 
 ---
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

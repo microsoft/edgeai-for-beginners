@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82e20fdeebffdf75eecdf5cdfb02b65c",
-  "translation_date": "2025-10-09T16:46:27+00:00",
+  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
+  "translation_date": "2025-10-28T22:23:28+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "nl"
 }
@@ -11,26 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Samenvatting
 
-Ontdek hoe je bruikbare GenAI-workflows kunt bouwen met Foundry Local en Azure AI Foundry. Leer geavanceerde prompt engineering, integreer gestructureerde data en orkestreer taken met reproduceerbare pipelines. Hoewel de focus ligt op Retrieval-Augmented Generation (RAG) voor document- en data-Q&A, zijn de patronen toepasbaar op bredere GenAI-oplossingsontwerpen.
+Ontdek hoe je werkbare GenAI-workflows kunt bouwen met Foundry Local en Azure AI Foundry. Leer geavanceerde prompt engineering, integreer gestructureerde data en orkestreer taken met reproduceerbare pipelines. Hoewel de focus ligt op Retrieval-Augmented Generation (RAG) voor document- en data Q&A, zijn de patronen toepasbaar op bredere GenAI-oplossingsontwerpen.
 
 ## Leerdoelen
 
 Aan het einde van deze sessie kun je:
 
-- **Beheers Prompt Engineering**: Ontwerp effectieve systeemprompts en groundingstrategieën
-- **Implementeer RAG-patronen**: Bouw documentgebaseerde Q&A-systemen met vectorzoekopdrachten
-- **Integreer gestructureerde data**: Werk met CSV-, JSON- en tabeldata in AI-workflows
-- **Bouw productie-RAG**: Creëer schaalbare RAG-toepassingen met Chainlit
-- **Overbrug lokaal naar cloud**: Begrijp migratiepaden van Foundry Local naar Azure AI Foundry
+- **Prompt Engineering beheersen**: Effectieve systeemprompts en groundingstrategieën ontwerpen
+- **RAG-patronen implementeren**: Documentgebaseerde Q&A-systemen bouwen met vector search
+- **Gestructureerde data integreren**: Werken met CSV-, JSON- en tabeldata in AI-workflows
+- **Productie-RAG bouwen**: Schaalbare RAG-toepassingen maken met Chainlit
+- **Van lokaal naar cloud overbruggen**: Migratiepaden begrijpen van Foundry Local naar Azure AI Foundry
 
 ## Vereisten
 
 - Sessie 1 voltooid (Foundry Local setup)
-- Basiskennis van vectordatabases en embeddings
+- Basiskennis van vector databases en embeddings
 - Ervaring met Python-programmering
 - Bekendheid met documentverwerkingsconcepten
 
-### Cross-platform omgeving snel starten (Windows & macOS)
+### Snelstart voor cross-platform omgeving (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -54,9 +54,9 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Validatie: Foundry Local omgeving controleren
+## Validatie: Controle van Foundry Local-omgeving
 
-Controleer je lokale omgeving voordat je met de demo's begint:
+Voordat je met de demo's begint, valideer je lokale omgeving:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -71,7 +71,7 @@ Als de laatste opdracht mislukt, start (of herstart) de service: `foundry servic
 
 ### 1. Systeemprompts en groundingstrategieën (10 minuten)
 
-#### Stap 1.1: Geavanceerde prompt engineering
+#### Stap 1.1: Geavanceerde Prompt Engineering
 
 Maak `samples/02-rag-solutions/prompt_engineering.py`:
 
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### Stap 1.2: Test groundingstrategieën
+#### Stap 1.2: Test Groundingstrategieën
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -443,7 +443,7 @@ python samples/02-rag-solutions/csv_qa_system.py
 
 ### 3. Starterproject: Pas 02-grounding-data aan (5 minuten)
 
-#### Stap 3.1: Verbeterd document-RAG-systeem
+#### Stap 3.1: Verbeterd Document RAG-systeem
 
 Maak `samples/02-rag-solutions/document_rag.py`:
 
@@ -879,7 +879,7 @@ python samples/02-rag-solutions/migration_guide.py
 
 ## Belangrijke concepten behandeld
 
-### 1. Geavanceerde prompt engineering
+### 1. Geavanceerde Prompt Engineering
 
 - **Systeemprompts**: Domeinspecifieke expertpersonages
 - **Groundingstrategieën**: Technieken voor contextintegratie
@@ -895,7 +895,7 @@ python samples/02-rag-solutions/migration_guide.py
 
 ### 3. RAG-implementatiepatronen
 
-- **Vectorzoekopdracht**: TF-IDF en cosinusgelijkenis
+- **Vector search**: TF-IDF en cosinusgelijkenis
 - **Documentophaling**: Relevantiebeoordeling en rangschikking
 - **Contextcombinatie**: Synthese van meerdere documenten
 - **Antwoordgeneratie**: Gegronde responscreatie
@@ -904,8 +904,8 @@ python samples/02-rag-solutions/migration_guide.py
 
 - **Geünificeerde API's**: Eén codebase voor lokaal en cloud
 - **Omgevingsabstractie**: Configuratiegestuurde implementatie
-- **Ontwikkelworkflow**: Lokaal → Staging → Productie
-- **Kostenoptimalisatie**: Lokale ontwikkeling, cloudproductie
+- **Ontwikkelingsworkflow**: Lokaal → Staging → Productie
+- **Kostenoptimalisatie**: Lokale ontwikkeling, productie in de cloud
 
 ## Overwegingen voor productie
 
@@ -959,24 +959,24 @@ Na het voltooien van deze sessie:
 
 1. **Verken Sessie 3**: Open-source modellen in Foundry Local
 2. **Bouw productie-RAG**: Implementeer met Chainlit (Sample 04)
-3. **Geavanceerde vectorzoekopdracht**: Integreer met Chroma of Pinecone
+3. **Geavanceerde vector search**: Integreer met Chroma of Pinecone
 4. **Cloudmigratie**: Implementeer naar Azure AI Foundry
-5. **Evalueer RAG-kwaliteit**: Voer `python Workshop/samples/session02/rag_eval_ragas.py` uit om answer_relevancy, faithfulness en context_precision te meten met ragas
+5. **Evalueer RAG-kwaliteit**: Voer `cd Workkshop/samples;python -m session02.rag_eval_ragas` uit om answer_relevancy, faithfulness en context_precision te meten met ragas
 
 ### Optionele verbeteringen
 
 | Categorie | Verbetering | Reden | Richting |
 |-----------|-------------|-------|----------|
-| Ophaling | Vervang TF-IDF door vectorstore (FAISS / Chroma) | Betere semantische recall & schaalbaarheid | Chunk documenten (500–800 tekens), embed, index opslaan |
+| Ophaling | Vervang TF-IDF door vector store (FAISS / Chroma) | Betere semantische recall & schaalbaarheid | Chunk documenten (500–800 tekens), embed, index opslaan |
 | Hybride index | Dubbele semantische + trefwoordfiltering | Verbetert precisie bij numerieke / codevragen | Filter op trefwoord en rangschik op cosinusgelijkenis |
-| Embeddings | Evalueer meerdere embeddingmodellen | Optimaliseer relevantie versus snelheid | A/B: MiniLM vs E5-small vs lokaal gehoste encoder |
+| Embeddings | Evalueer meerdere embeddingmodellen | Optimaliseer relevantie vs snelheid | A/B: MiniLM vs E5-small vs lokaal gehoste encoder |
 | Caching | Cache embeddings & ophaalresultaten | Lagere latentie bij herhaalde vragen | Eenvoudige on-disk pickle / sqlite met hash key |
 | Evaluatie | Breid ragas dataset uit | Statistisch betekenisvolle kwaliteit | Curateer 50–100 Q/A + contexten; stratificeer per onderwerp |
 | Metrics | Volg ophaal- & generatietimings | Prestatieprofilering | Capture `retrieval_ms`, `gen_ms`, `tokens` per call |
-| Veiligheidsmaatregelen | Voeg fallback voor hallucinaties toe | Veiliger antwoorden | Als faithfulness < drempel → antwoord: "Onvoldoende context." |
-| Fallback | Cascade lokaal → Azure-model | Hybride kwaliteitsverbetering | Bij lage zekerheid route naar cloud via dezelfde OpenAI API |
-| Determinisme | Stabiele vergelijkingsruns | Herhaalbare eval-sets | Fix seed, `temperature=0`, schakel willekeurigheid sampler uit |
-| Monitoring | Bewaar eval-run geschiedenis | Regressiedetectie | Voeg JSON-regels toe met timestamp + metric deltas |
+| Guardrails | Voeg fallback voor hallucinaties toe | Veiliger antwoorden | Als faithfulness < drempel → antwoord: "Onvoldoende context." |
+| Fallback | Cascade lokaal → Azure-model | Hybride kwaliteitsboost | Bij lage zekerheid doorsturen naar cloud via dezelfde OpenAI API |
+| Determinisme | Stabiele vergelijkingsruns | Herhaalbare evaluatiesets | Fix seed, `temperature=0`, schakel willekeurigheid sampler uit |
+| Monitoring | Bewaar evaluatiegeschiedenis | Detectie van regressies | Voeg JSON-lijnen toe met timestamp + metric deltas |
 
 #### Voorbeeld: Ophalingstiming toevoegen
 
@@ -992,14 +992,14 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 ```
 
 
-#### Evaluatie opschalen met ragas
+#### Schaal evaluatie met ragas
 
 1. Stel een JSONL samen met velden: `question`, `answer`, `contexts`, `ground_truths` (lijst)
 2. Converteer naar `Dataset.from_list(list_of_dicts)`
 3. Voer `evaluate(dataset, metrics=[...])` uit
 4. Sla metrics op (CSV/JSON) voor trendanalyse.
 
-#### Vectorstore snel starten (FAISS)
+#### Vector Store Snelstart (FAISS)
 
 ```python
 import faiss, numpy as np
@@ -1014,32 +1014,33 @@ Voor schijfpersistentie gebruik `faiss.write_index(index, "kb.index")`.
 
 ### Documentatie
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [Azure AI Foundry RAG-patronen](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [Prompt Engineering Gids](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
-- [Ragas Evaluatiedocumentatie](https://docs.ragas.io)
+- [Azure AI Foundry RAG Patterns](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
+- [Prompt Engineering Guide](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [Ragas Evaluation Docs](https://docs.ragas.io)
 
 ### Voorbeeldcode
-- [Module08 Voorbeeld 04](./samples/04/README.md) - Chainlit RAG-toepassing
+- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG-toepassing
 - [Geavanceerd Multi-Agent Systeem](./samples/09/README.md) - Agentcoördinatiepatronen
 
 ---
 
-**Duur van de sessie**: 30 minuten hands-on + 15 minuten Q&A  
+**Sessieduur**: 30 minuten hands-on + 15 minuten Q&A  
 **Moeilijkheidsgraad**: Gemiddeld  
-**Vereisten**: Sessie 1 voltooid, Basiskennis Python
+**Vereisten**: Sessie 1 voltooid, Basiskennis Python  
 
-## Voorbeeldscenario & workshopmapping
+## Voorbeeldscenario & Workshopmapping
 
-| Workshopscript / Notebook | Scenario | Doel | Kern dataset / bron | Voorbeeldvraag |
+| Workshopscript / Notebook | Scenario | Doel | Kern dataset / Bron | Voorbeeldvraag |
 |---------------------------|----------|------|---------------------|----------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Interne support kennisbank die privacy- en prestatie-FAQ's beantwoordt | Minimale in-memory RAG met embeddings | `DOCS` lijst in script (5 korte passages) | Waarom RAG gebruiken met lokale inferentie? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kwaliteitsanalist die baseline retrieval faithfulness metrics vaststelt | Bereken ragas metrics op kleine synthetische dataset | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` arrays | Wat is het voordeel van lokale inferentie? |
-| `prompt_engineering.py` (geavanceerd) | Domein-SME die gegronde prompts maakt voor meerdere sectoren | Vergelijk domeinsysteemprompts & tokenimpact | Inline `contexts` dict | Hoe gaat Foundry Local om met modelcaching? |
-| `csv_qa_system.py` | Sales ops die interactieve analyses over exports verkent | Samenvatten & vragen stellen over kleine sales slice | Gegenereerde `sample_sales_data.csv` (10 rijen) | Welk product heeft de hoogste gemiddelde verkoopwaarde? |
-| `document_rag.py` | Productteam dat document-RAG voor interne wiki verkent | Ophalen + citeren van relevante documenten | `create_sample_knowledge_base()` lijst | Wat zijn de voordelen van Edge AI? |
-| `migration_guide.py` | Architect die cloudmigratieplan voorbereidt | Demonstreer lokaal→Azure API-pariteit | Statische testprompts | Leg de voordelen van Edge AI uit in 2–3 zinnen. |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Interne support kennisbank beantwoordt privacy + prestatie FAQ's | Minimale in-memory RAG met embeddings | `DOCS` lijst in script (5 korte passages) | Waarom RAG gebruiken met lokale inferentie? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kwaliteitsanalist stelt baseline retrieval faithfulness metrics vast | Bereken ragas metrics op kleine synthetische dataset | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` arrays | Wat is het voordeel van lokale inferentie? |
+| `prompt_engineering.py` (geavanceerd) | Domeinexpert maakt gegronde prompts voor meerdere sectoren | Vergelijk domeinsysteemprompts & tokenimpact | Inline `contexts` dict | Hoe gaat Foundry Local om met modelcaching? |
+| `csv_qa_system.py` | Sales operations verkent interactieve analyses over exports | Samenvatten & vragen stellen over kleine verkoopdata | Gegenereerde `sample_sales_data.csv` (10 rijen) | Welk product heeft de hoogste gemiddelde verkoopwaarde? |
+| `document_rag.py` | Productteam verkent document RAG voor interne wiki | Ophalen + citeren van relevante documenten | `create_sample_knowledge_base()` lijst | Wat zijn de voordelen van Edge AI? |
+| `migration_guide.py` | Architect bereidt cloudmigratieplan voor | Demonstreer lokaal→Azure API-pariteit | Statische testprompts | Leg de voordelen van Edge AI uit in 2–3 zinnen. |
 
 ### Datasetfragmenten
+
 Inline RAG-pipeline documentlijst:
 ```python
 DOCS = [
@@ -1062,12 +1063,14 @@ GROUND_TRUTH = [
 
 
 ### Scenarioverhaal
-De support engineering groep wil een snel prototype om interne FAQ's te beantwoorden zonder klantgegevens extern bloot te stellen. Sessie 2 artefacten gaan van een minimale tijdelijke RAG (geen persistentie) → gestructureerde CSV Q&A → documentophaling met citatie → objectieve kwaliteitsbeoordeling (ragas) → een migratiestrategie klaar voor Azure staging.
+
+De support engineering groep wil een snel prototype om interne FAQ's te beantwoorden zonder klantgegevens extern bloot te stellen. Sessie 2 artefacten gaan van een minimale tijdelijke RAG (geen persistentie) → gestructureerde CSV Q&A → documentophaling met citatie → objectieve kwaliteitsevaluatie (ragas) → een migratiestrategie klaar voor Azure staging.
 
 ### Uitbreidingspaden
-Gebruik de tabel Optionele verbeteringen om te evolueren: vervang TF-IDF door FAISS/Chroma, vergroot de evaluatiecorpus (50–100 Q/A), voeg fallback-escalatie toe naar een groter model wanneer faithfulness < drempel.
+
+Gebruik de tabel Optionele Verbeteringen om verder te ontwikkelen: vervang TF-IDF door FAISS/Chroma, vergroot de evaluatiecorpus (50–100 Q/A), voeg fallback-escalatie toe naar een groter model wanneer faithfulness < drempel.
 
 ---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

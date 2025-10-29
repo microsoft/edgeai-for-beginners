@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T07:00:20+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T20:21:58+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "ar"
 }
 -->
-# عينات ورشة العمل - ملخص تحديث SDK المحلي لـ Foundry
+# ملخص تحديث عينات ورشة العمل - Foundry Local SDK
 
 ## نظرة عامة
 
-تم تحديث جميع عينات Python في دليل `Workshop/samples` لتتبع أفضل الممارسات لـ Foundry Local SDK وضمان التناسق عبر ورشة العمل.
+تم تحديث جميع عينات Python في دليل `Workshop/samples` لتتبع أفضل الممارسات لـ Foundry Local SDK وضمان التناسق عبر الورشة.
 
 **التاريخ**: 8 أكتوبر 2025  
 **النطاق**: 9 ملفات Python عبر 6 جلسات ورشة عمل  
@@ -28,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 - ✅ `rag_pipeline.py` - تنفيذ RAG باستخدام التضمينات
 - ✅ `rag_eval_ragas.py` - تقييم RAG باستخدام مقاييس RAGAS
 
-### الجلسة 03: نماذج مفتوحة المصدر
+### الجلسة 03: نماذج المصدر المفتوح
 - ✅ `benchmark_oss_models.py` - قياس أداء متعدد النماذج
 
 ### الجلسة 04: نماذج متقدمة
@@ -54,7 +54,7 @@ CO_OP_TRANSLATOR_METADATA:
 ```python
 manager, client, model_id = get_client(alias)
 ```
-
+  
 **بعد:**
 ```python
 try:
@@ -64,19 +64,19 @@ except Exception as e:
     print("[INFO] Ensure Foundry Local is running: foundry service status")
     sys.exit(1)
 ```
-
+  
 **الفوائد:**
 - معالجة الأخطاء بسلاسة مع رسائل خطأ واضحة
-- نصائح قابلة للتنفيذ لاستكشاف الأخطاء وإصلاحها
+- نصائح عملية لاستكشاف الأخطاء وإصلاحها
 - رموز خروج مناسبة للبرمجة النصية
 
-### 2. إدارة أفضل للاستيراد
+### 2. إدارة الاستيراد بشكل أفضل
 
 **قبل:**
 ```python
 from sentence_transformers import SentenceTransformer
 ```
-
+  
 **بعد:**
 ```python
 try:
@@ -85,7 +85,7 @@ except ImportError:
     print("[ERROR] sentence-transformers is required. Install with: pip install sentence-transformers")
     sys.exit(1)
 ```
-
+  
 **الفوائد:**
 - إرشادات واضحة عند فقدان التبعيات
 - منع أخطاء الاستيراد الغامضة
@@ -94,11 +94,11 @@ except ImportError:
 ### 3. توثيق شامل
 
 **تمت الإضافة إلى جميع العينات:**
-- توثيق متغيرات البيئة في docstrings
+- توثيق متغيرات البيئة في التعليقات التوضيحية
 - روابط مرجعية لـ SDK
-- أمثلة الاستخدام
+- أمثلة للاستخدام
 - توثيق مفصل للوظائف/المعلمات
-- تلميحات الأنواع لدعم أفضل في IDE
+- تلميحات النوع لدعم أفضل في بيئة التطوير
 
 **مثال:**
 ```python
@@ -115,6 +115,7 @@ def pipeline(task: str) -> Dict[str, Any]:
         Exception: If any pipeline stage fails
     """
 ```
+  
 
 ### 4. تحسين ردود فعل المستخدم
 
@@ -124,30 +125,31 @@ print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
 print(f"[INFO] Loaded model: {alias} -> {model_id}")
 ```
-
+  
 **مؤشرات التقدم:**
 ```python
 print(f"[INFO] Benchmarking {alias}...")
 print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
 print(f"[INFO] Completed {alias}\n")
 ```
-
-**إخراج منظم:**
+  
+**مخرجات منظمة:**
 ```python
 print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
+  
 
 ### 5. قياس أداء قوي
 
 **تحسينات الجلسة 03:**
-- معالجة الأخطاء لكل نموذج (يستمر عند الفشل)
+- معالجة الأخطاء لكل نموذج (يستمر في حالة الفشل)
 - تقارير تقدم مفصلة
 - تنفيذ جولات الإحماء بشكل صحيح
-- دعم قياس زمن الاستجابة لأول رمز
+- دعم قياس زمن استجابة أول رمز
 - فصل واضح للمراحل
 
-### 6. تلميحات الأنواع المتسقة
+### 6. تلميحات نوع متسقة
 
 **تمت الإضافة في جميع الأنحاء:**
 ```python
@@ -156,20 +158,20 @@ from typing import Dict, List, Tuple, Any, Optional
 def run(alias: str) -> Tuple[float, str, Optional[int]]:
     """Run comparison for given model alias."""
 ```
-
+  
 **الفوائد:**
-- إكمال تلقائي أفضل في IDE
+- إكمال تلقائي أفضل في بيئة التطوير
 - اكتشاف الأخطاء مبكرًا
-- كود موثق ذاتيًا
+- كود ذاتي التوثيق
 
 ### 7. تحسين توجيه النماذج
 
 **تحسينات الجلسة 06:**
 - توثيق شامل لاكتشاف النوايا
 - شرح خوارزمية اختيار النموذج
-- سجلات توجيه مفصلة
-- تنسيق إخراج الاختبار
-- استرداد الأخطاء في اختبار الدُفعات
+- تسجيلات توجيه مفصلة
+- تنسيق مخرجات الاختبار
+- استرداد الأخطاء في اختبارات الدُفعات
 
 ### 8. تنسيق متعدد الوكلاء
 
@@ -195,67 +197,69 @@ foundry model run qwen2.5-0.5b
 # Install dependencies
 pip install -r Workshop/requirements.txt
 ```
+  
 
 ### اختبار كل عينة
 
 #### الجلسة 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
-
+  
 #### الجلسة 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
-
+  
 #### الجلسة 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
-
+  
 #### الجلسة 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
-
+  
 #### الجلسة 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
-
+  
 #### الجلسة 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
+  
 
 ---
 
@@ -265,7 +269,7 @@ python models_pipeline.py
 | المتغير | الوصف | الافتراضي |
 |---------|-------|-----------|
 | `FOUNDRY_LOCAL_ALIAS` | الاسم المستعار للنموذج المستخدم | يختلف حسب العينة |
-| `FOUNDRY_LOCAL_ENDPOINT` | تجاوز نقطة خدمة | يتم اكتشافها تلقائيًا |
+| `FOUNDRY_LOCAL_ENDPOINT` | تجاوز نقطة خدمة | يتم اكتشافه تلقائيًا |
 | `SHOW_USAGE` | عرض استخدام الرموز | `0` |
 | `RETRY_ON_FAIL` | تمكين منطق إعادة المحاولة | `1` |
 | `RETRY_BACKOFF` | تأخير إعادة المحاولة الأولي | `1.0` |
@@ -278,7 +282,7 @@ python models_pipeline.py
 | `BENCH_MODELS` | الجلسة 03 | نماذج مفصولة بفواصل لقياس الأداء |
 | `BENCH_ROUNDS` | الجلسة 03 | عدد جولات قياس الأداء |
 | `BENCH_PROMPT` | الجلسة 03 | موجه اختبار لقياس الأداء |
-| `BENCH_STREAM` | الجلسة 03 | قياس زمن الاستجابة لأول رمز |
+| `BENCH_STREAM` | الجلسة 03 | قياس زمن استجابة أول رمز |
 | `SLM_ALIAS` | الجلسة 04 | نموذج لغة صغير |
 | `LLM_ALIAS` | الجلسة 04 | نموذج لغة كبير |
 | `COMPARE_PROMPT` | الجلسة 04 | موجه اختبار المقارنة |
@@ -289,7 +293,7 @@ python models_pipeline.py
 
 ---
 
-## تغييرات كبيرة
+## تغييرات مؤثرة
 
 **لا توجد** - جميع التغييرات متوافقة مع الإصدارات السابقة.
 
@@ -297,7 +301,7 @@ python models_pipeline.py
 - متغيرات البيئة اختيارية
 - رسائل خطأ محسنة (لا تكسر الوظائف)
 - تسجيل إضافي (يمكن قمعه)
-- تلميحات الأنواع الأفضل (لا تأثير على وقت التشغيل)
+- تلميحات نوع أفضل (لا تأثير على وقت التشغيل)
 
 ---
 
@@ -310,7 +314,7 @@ from workshop_utils import get_client, chat_once
 # Provides caching, retry, and endpoint management
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
-
+  
 ### 2. نمط معالجة الأخطاء المناسب
 ```python
 try:
@@ -321,23 +325,23 @@ except Exception as e:
     print("[INFO] Check: foundry service status")
     sys.exit(1)
 ```
-
+  
 ### 3. تسجيل معلوماتي
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
-
-### 4. تلميحات الأنواع
+  
+### 4. تلميحات النوع
 ```python
 from typing import Dict, List, Optional
 
 def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
-
-### 5. Docstrings شاملة
+  
+### 5. تعليقات توضيحية شاملة
 ```python
 def function(arg: str) -> str:
     """Short description.
@@ -352,7 +356,7 @@ def function(arg: str) -> str:
         Exception: When it fails
     """
 ```
-
+  
 ### 6. دعم متغيرات البيئة
 ```python
 import os
@@ -360,7 +364,7 @@ import os
 alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
-
+  
 ### 7. تدهور سلس
 ```python
 # In benchmarks - continue on individual failures
@@ -372,37 +376,42 @@ for model in models:
         print(f"[ERROR] {model} failed: {e}")
         print(f"[INFO] Skipping {model}...")
 ```
+  
 
 ---
 
 ## المشكلات الشائعة والحلول
 
 ### المشكلة: أخطاء الاستيراد
-**الحل:** تثبيت التبعيات المفقودة
+**الحل:** تثبيت التبعيات المفقودة  
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
+  
 
 ### المشكلة: أخطاء الاتصال
-**الحل:** تأكد من تشغيل Foundry Local
+**الحل:** تأكد من تشغيل Foundry Local  
 ```bash
 foundry service status
 foundry model run phi-4-mini
 ```
+  
 
 ### المشكلة: النموذج غير موجود
-**الحل:** تحقق من النماذج المتاحة
+**الحل:** تحقق من النماذج المتاحة  
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
+  
 
 ### المشكلة: الأداء البطيء
-**الحل:** استخدم نماذج أصغر أو قم بضبط المعلمات
+**الحل:** استخدم نماذج أصغر أو قم بتعديل المعلمات  
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 set BENCH_ROUNDS=2
 ```
+  
 
 ---
 
@@ -422,12 +431,13 @@ set BENCH_ROUNDS=2
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
+  
 
 ### 4. إضافة قياسات الأداء
 تتبع تحسينات الأداء الناتجة عن تحسينات معالجة الأخطاء.
 
 ### 5. ردود فعل المستخدم
-جمع ردود الفعل من المشاركين في ورشة العمل حول:
+جمع ردود الفعل من المشاركين في الورشة حول:
 - وضوح رسائل الخطأ
 - اكتمال التوثيق
 - سهولة الاستخدام
@@ -436,10 +446,10 @@ def test_all_samples():
 
 ## الموارد
 
-- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **المرجع السريع**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **ملاحظات الترحيل**: `Workshop/SDK_MIGRATION_NOTES.md`
-- **المستودع الرئيسي**: https://github.com/microsoft/Foundry-Local
+- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
+- **المرجع السريع**: `Workshop/FOUNDRY_SDK_QUICKREF.md`  
+- **ملاحظات الترحيل**: `Workshop/SDK_MIGRATION_NOTES.md`  
+- **المستودع الرئيسي**: https://github.com/microsoft/Foundry-Local  
 
 ---
 
@@ -449,28 +459,28 @@ def test_all_samples():
 اتبع هذه الأنماط عند إنشاء عينات جديدة:
 
 1. استخدم `workshop_utils` لإدارة العميل
-2. أضف معالجة شاملة للأخطاء
+2. أضف معالجة أخطاء شاملة
 3. قم بتضمين دعم متغيرات البيئة
-4. أضف تلميحات الأنواع و docstrings
+4. أضف تلميحات النوع والتعليقات التوضيحية
 5. قدم تسجيل معلوماتي
-6. قم بتضمين أمثلة الاستخدام في docstring
-7. قم بالربط بتوثيق SDK
+6. قم بتضمين أمثلة الاستخدام في التعليقات التوضيحية
+7. قم بالربط مع توثيق SDK
 
 ### مراجعة التحديثات
 عند مراجعة تحديثات العينات، تحقق من:
 - [ ] معالجة الأخطاء في جميع عمليات الإدخال/الإخراج
-- [ ] تلميحات الأنواع في الوظائف العامة
-- [ ] Docstrings شاملة
+- [ ] تلميحات النوع في الوظائف العامة
+- [ ] تعليقات توضيحية شاملة
 - [ ] توثيق متغيرات البيئة
-- [ ] ردود فعل المستخدم المعلوماتية
+- [ ] ردود فعل معلوماتية للمستخدم
 - [ ] روابط مرجعية لـ SDK
 - [ ] نمط كود متسق
 
 ---
 
-**الملخص**: جميع عينات Python في ورشة العمل تتبع الآن أفضل الممارسات لـ Foundry Local SDK مع تحسين معالجة الأخطاء، توثيق شامل، وتجربة مستخدم محسنة. لا توجد تغييرات كبيرة - تم الحفاظ على جميع الوظائف الحالية وتحسينها.
+**الملخص**: جميع عينات Python في ورشة العمل تتبع الآن أفضل الممارسات لـ Foundry Local SDK مع تحسين معالجة الأخطاء، التوثيق الشامل، وتحسين تجربة المستخدم. لا توجد تغييرات مؤثرة - جميع الوظائف الحالية محفوظة ومحسنة.
 
 ---
 
 **إخلاء المسؤولية**:  
-تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو معلومات غير دقيقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي. للحصول على معلومات حاسمة، يُوصى بالاستعانة بترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.
+تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي. للحصول على معلومات حاسمة، يُوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.

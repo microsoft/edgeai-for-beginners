@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T21:37:48+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T23:03:14+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "cs"
 }
 -->
-# Workshop Samples - Rychlá referenční karta
+# Ukázky workshopu - Rychlá referenční karta
 
 **Poslední aktualizace**: 8. října 2025
 
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -33,15 +33,15 @@ python chat_bootstrap.py "What is edge AI?"
 ## 📂 Přehled ukázek
 
 | Sezení | Ukázka | Účel | Čas |
-|--------|--------|------|-----|
+|--------|--------|------|------|
 | 01 | `chat_bootstrap.py` | Základní chat + streamování | ~30s |
 | 02 | `rag_pipeline.py` | RAG s embeddingy | ~45s |
 | 02 | `rag_eval_ragas.py` | Hodnocení RAG | ~60s |
-| 03 | `benchmark_oss_models.py` | Benchmarking modelů | ~2m |
+| 03 | `benchmark_oss_models.py` | Porovnání modelů | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Systém s více agenty | ~60s |
-| 06 | `models_router.py` | Směrování podle záměru | ~45s |
-| 06 | `models_pipeline.py` | Vícekroková pipeline | ~60s |
+| 06 | `models_router.py` | Směrování záměrů | ~45s |
+| 06 | `models_pipeline.py` | Vícekrokový proces | ~60s |
 
 ---
 
@@ -84,7 +84,7 @@ set PIPELINE_TASK="Your task here"
 
 ---
 
-## ✅ Validace a testování
+## ✅ Ověření a testování
 
 ```bash
 # Validate syntax and imports
@@ -201,7 +201,7 @@ for chunk in stream:
 | `gemma-2-2b` | 2B | Kreativní psaní | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Kód, refaktoring | ⚡⚡ |
 | `phi-4-mini` | 4B | Obecné, shrnutí | ⚡⚡ |
-| `qwen2.5-7b` | 7B | Komplexní uvažování | ⚡ |
+| `qwen2.5-7b` | 7B | Složitější uvažování | ⚡ |
 
 ---
 
@@ -216,11 +216,11 @@ for chunk in stream:
 
 ## 💡 Tipy
 
-1. **Cache klientů**: `workshop_utils` se postará o cache
+1. **Cache klientů**: `workshop_utils` to za vás ukládá do mezipaměti
 2. **Používejte menší modely**: Začněte s `qwen2.5-0.5b` pro testování
 3. **Povolte statistiky využití**: Nastavte `SHOW_USAGE=1` pro sledování tokenů
 4. **Zpracování v dávkách**: Zpracovávejte více promptů postupně
-5. **Snižte max_tokens**: Zkrátí latenci pro rychlé odpovědi
+5. **Snižte max_tokens**: Snižuje latenci pro rychlé odpovědi
 
 ---
 
@@ -232,35 +232,33 @@ python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### Benchmarking modelů
+### Porovnání modelů
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG pipeline
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Systém s více agenty
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Rychlá pomoc**: Spusťte jakoukoli ukázku s `--help` nebo si přečtěte docstring:
+**Rychlá pomoc**: Spusťte jakoukoli ukázku s `--help` z adresáře `samples` nebo si přečtěte docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace doporučujeme profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.

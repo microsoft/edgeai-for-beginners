@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:14:54+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T20:34:15+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "zh"
 }
 -->
-# 第1节：开始使用 Foundry Local
+# 第一节：开始使用 Foundry Local
 
 ## 摘要
 
-通过在 Windows 11 上安装和配置 Foundry Local，开启您的学习之旅。学习如何设置 CLI、启用硬件加速以及缓存模型以实现快速的本地推理。本次动手实践课程将通过可复现的 CLI 命令演示运行 Phi、Qwen、DeepSeek 和 GPT-OSS-20B 等模型。
+通过在 Windows 11 上安装和配置 Foundry Local，开启您的探索之旅。学习如何设置 CLI、启用硬件加速以及缓存模型以实现快速的本地推理。本次动手实践课程将指导您使用可复现的 CLI 命令运行 Phi、Qwen、DeepSeek 和 GPT-OSS-20B 等模型。
 
 ## 学习目标
 
-在本节结束时，您将能够：
+在本节课结束时，您将能够：
 
 - **安装和配置**：在 Windows 11 上设置 Foundry Local，并优化性能设置
 - **掌握 CLI 操作**：使用 Foundry Local CLI 进行模型管理和部署
@@ -24,15 +24,15 @@ CO_OP_TRANSLATOR_METADATA:
 - **构建您的第一个应用程序**：改编现有示例以使用 Foundry Local Python SDK
 
 # 测试模型（非交互式单次提示）
-foundry model run phi-4-mini --prompt "你好，请介绍一下你自己"
+foundry model run phi-4-mini --prompt "你好，请介绍一下自己"
 
 - Windows 11 (22H2 或更高版本)
 # 列出可用的目录模型（运行后加载的模型会显示）
 foundry model list
-## NOTE: 当前没有专门的 `--running` 标志；要查看哪些模型已加载，请启动聊天或检查服务日志。
+## 注意：目前没有专门的 `--running` 标志；要查看哪些模型已加载，请启动聊天或检查服务日志。
 - 已安装 Python 3.10+
-- 安装了 Python 扩展的 Visual Studio Code
-- 安装需要管理员权限
+- Visual Studio Code 和 Python 扩展
+- 安装所需的管理员权限
 
 ### （可选）环境变量
 
@@ -45,11 +45,11 @@ foundry model run gpt-oss-20b --prompt "用简单的语言解释边缘 AI"
 | `FOUNDRY_LOCAL_ENDPOINT` | 覆盖端点（否则由管理器自动生成） | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | 启用流式演示 | `true` |
 
-> 如果 `FOUNDRY_LOCAL_ENDPOINT=auto`（或未设置），我们将从 SDK 管理器中推导出。
+> 如果 `FOUNDRY_LOCAL_ENDPOINT=auto`（或未设置），我们将从 SDK 管理器中推导出端点。
 
-## 演示流程（30分钟）
+## 演示流程（30 分钟）
 
-### 1. 安装 Foundry Local 并验证 CLI 设置（10分钟）
+### 1. 安装 Foundry Local 并验证 CLI 设置（10 分钟）
 
 # 列出缓存的模型
 foundry cache list
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### SDK 引导（推荐）
 
-与手动启动服务和运行模型相比，**Foundry Local Python SDK** 可以引导一切：
+与其手动启动服务和运行模型，不如使用 **Foundry Local Python SDK** 来引导一切：
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -160,7 +160,7 @@ print(resp.choices[0].message.content)
 
 如果您更喜欢显式控制，仍然可以使用 CLI + OpenAI 客户端，如后续所示。
 
-### 2. 通过 CLI 本地运行模型（10分钟）
+### 2. 通过 CLI 本地运行模型（10 分钟）
 
 #### 步骤 3.1：部署 Phi-4 模型
 
@@ -198,7 +198,7 @@ foundry model download deepseek-coder-1.3b
 foundry cache list
 ```
 
-### 4. 初学者项目：改编 01-run-phi 以使用 Foundry Local（5分钟）
+### 4. 初学项目：改编 01-run-phi 以使用 Foundry Local（5 分钟）
 
 #### 步骤 4.1：创建基础聊天应用程序
 
@@ -285,7 +285,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Found
 python samples/01-foundry-quickstart/chat_quickstart.py
 ```
 
-## 涵盖的关键概念
+## 涉及的关键概念
 
 ### 1. Foundry Local 架构
 
@@ -365,7 +365,7 @@ foundry model run phi-4-mini
 dir "$env:USERPROFILE\.foundry\models"
 ```
 
-### 问题 3：“localhost:5273 连接被拒绝”
+### 问题 3：“localhost:5273 上的连接被拒绝”
 
 **解决方案：**
 ```powershell
@@ -404,15 +404,16 @@ foundry config set model.preload false
 ### 3. 性能监控
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### 可选增强功能
@@ -420,14 +421,14 @@ python Workshop\samples\session03\benchmark_oss_models.py
 | 增强功能 | 内容 | 方法 |
 |----------|------|------|
 | 共享工具 | 删除重复的客户端/引导逻辑 | 使用 `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| 令牌使用可见性 | 提早培养成本/效率意识 | 设置 `SHOW_USAGE=1` 以打印提示/完成/总令牌 |
+| 令牌使用可见性 | 提前培养成本/效率意识 | 设置 `SHOW_USAGE=1` 以打印提示/完成/总令牌 |
 | 确定性比较 | 稳定的基准测试和回归检查 | 使用 `temperature=0`、`top_p=1`、一致的提示文本 |
-| 首令牌延迟 | 感知响应性指标 | 使用流式方式调整基准脚本（`BENCH_STREAM=1`） |
+| 首令牌延迟 | 感知响应性指标 | 使用流式传输调整基准脚本（`BENCH_STREAM=1`） |
 | 瞬时错误重试 | 冷启动时的弹性演示 | `RETRY_ON_FAIL=1`（默认）并调整 `RETRY_BACKOFF` |
 | 冒烟测试 | 快速验证关键流程 | 在研讨会前运行 `python Workshop/tests/smoke.py` |
 | 模型别名配置文件 | 在机器之间快速切换模型集 | 维护 `.env` 文件，包含 `FOUNDRY_LOCAL_ALIAS`、`SLM_ALIAS`、`LLM_ALIAS` |
-| 缓存效率 | 避免多样本运行中的重复预热 | 工具缓存管理器；在脚本/笔记本之间重用 |
-| 首次运行预热 | 减少 p95 延迟峰值 | 在创建 `FoundryLocalManager` 后发送一个小提示 |
+| 缓存效率 | 避免在多样本运行中重复预热 | 工具缓存管理器；在脚本/笔记本之间重用 |
+| 首次运行预热 | 减少 p95 延迟峰值 | 在创建 `FoundryLocalManager` 后发送一个小提示
 
 示例确定性预热基线（PowerShell）：
 
@@ -440,16 +441,16 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 
 您应该在第二次运行时看到类似的输出和相同的令牌计数，确认确定性。
 
-## 后续步骤
+## 下一步
 
-完成本节后：
+完成本节课程后：
 
-1. **探索第2节**：使用 Azure AI Foundry RAG 构建 AI 解决方案
+1. **探索第二节**：使用 Azure AI Foundry RAG 构建 AI 解决方案
 2. **尝试不同模型**：实验 Qwen、DeepSeek 和其他模型系列
-3. **优化性能**：根据您的特定硬件微调设置
+3. **优化性能**：根据您的具体硬件微调设置
 4. **构建自定义应用程序**：在您的项目中使用 Foundry Local SDK
 
-## 附加资源
+## 其他资源
 
 ### 文档
 - [Foundry Local Python SDK 参考](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
@@ -467,7 +468,7 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 
 ---
 
-**课程时长**：30分钟动手实践 + 15分钟问答
+**课程时长**：30 分钟动手实践 + 15 分钟问答
 **难度级别**：初学者
 **先决条件**：Windows 11、Python 3.10+、管理员权限
 
@@ -475,11 +476,11 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 
 | 研讨会脚本 / 笔记本 | 场景 | 目标 | 示例输入 | 所需数据集 |
 |---------------------|------|------|----------|------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | 内部 IT 团队评估设备上的推理以用于隐私评估门户 | 证明本地 SLM 在标准提示下的响应时间低于一秒 | "列出本地推理的两个优势。" | 无（单次提示） |
-| 快速入门改编代码块 | 开发者将现有 OpenAI 脚本迁移到 Foundry Local | 展示即插即用的兼容性 | "列出本地推理的两个优势。" | 仅内联提示 |
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | 内部 IT 团队评估设备上的推理能力，用于隐私评估门户 | 证明本地 SLM 在标准提示下的响应时间低于一秒 | “列出本地推理的两个优点。” | 无（单次提示） |
+| 快速入门改编代码块 | 开发者将现有 OpenAI 脚本迁移到 Foundry Local | 展示即插即用的兼容性 | “列出本地推理的两个优点。” | 仅内联提示 |
 
 ### 场景叙述
-安全与合规小组必须验证敏感原型数据是否可以在本地处理。他们使用引导脚本运行多个提示（隐私、延迟、成本），并使用确定性模式（temperature=0）捕获基线输出，以供后续比较（第3节基准测试和第4节 SLM 与 LLM 对比）。
+安全与合规团队必须验证敏感原型数据是否可以在本地处理。他们使用引导脚本运行多个提示（隐私、延迟、成本），并使用确定性 `temperature=0` 模式捕获基线输出，以供后续比较（第三节基准测试和第四节 SLM 与 LLM 对比）。
 
 ### 最小提示集 JSON（可选）
 ```json
@@ -495,4 +496,4 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 ---
 
 **免责声明**：  
-本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
+本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们对因使用此翻译而产生的任何误解或误读不承担责任。

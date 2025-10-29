@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T19:10:28+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T20:56:32+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "ko"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 개요
 
-워크숍 샘플은 환경 변수를 사용하여 구성되며, 이는 저장소 루트에 있는 `.env` 파일에 중앙 집중화되어 있습니다. 이를 통해 코드를 수정하지 않고도 쉽게 사용자 정의할 수 있습니다.
+워크숍 샘플은 환경 변수를 사용하여 구성되며, 이는 저장소 루트에 있는 `.env` 파일에 중앙 집중화되어 있습니다. 이를 통해 코드를 수정하지 않고도 쉽게 사용자 정의가 가능합니다.
 
 ## 빠른 시작
 
-### 1. 사전 요구 사항 확인
+### 1. 필수 조건 확인
 
 ```bash
 # Check Foundry Local is installed
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Python 스크립트의 경우:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -60,14 +60,14 @@ python chat_bootstrap.py
 
 | 변수 | 기본값 | 설명 |
 |------|--------|------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | 샘플에 사용할 기본 모델 |
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | 샘플의 기본 모델 |
 | `FOUNDRY_LOCAL_ENDPOINT` | (비어 있음) | 서비스 엔드포인트 재정의 |
 | `PYTHONPATH` | 워크숍 경로 | Python 모듈 검색 경로 |
 
-**FOUNDRY_LOCAL_ENDPOINT를 설정해야 할 경우:**
-- 원격 Foundry Local 인스턴스 사용 시
-- 사용자 지정 포트 구성 시
-- 개발/운영 환경 분리 시
+**FOUNDRY_LOCAL_ENDPOINT를 설정해야 하는 경우:**
+- 원격 Foundry Local 인스턴스
+- 사용자 지정 포트 구성
+- 개발/운영 환경 분리
 
 **예시:**
 ```bash
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### 세션 03: 벤치마킹
 | 변수 | 기본값 | 목적 |
 |------|--------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | 벤치마킹할 모델 |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | 벤치마킹할 모델 |
 | `BENCH_ROUNDS` | `3` | 모델당 반복 횟수 |
 | `BENCH_PROMPT` | 사전 구성됨 | 테스트 프롬프트 |
 | `BENCH_STREAM` | `0` | 첫 번째 토큰 지연 시간 측정 |
@@ -105,8 +105,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### 세션 05: 다중 에이전트 오케스트레이션
 | 변수 | 기본값 | 목적 |
 |------|--------|------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | 연구 에이전트 모델 |
-| `AGENT_MODEL_EDITOR` | `phi-4-mini` | 편집 에이전트 모델 |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | 연구자 에이전트 모델 |
+| `AGENT_MODEL_EDITOR` | `phi-4-mini` | 편집자 에이전트 모델 |
 | `AGENT_QUESTION` | 사전 구성됨 | 테스트 질문 |
 
 ### 신뢰성 구성
@@ -115,7 +115,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |------|--------|------|
 | `SHOW_USAGE` | `1` | 토큰 사용량 출력 |
 | `RETRY_ON_FAIL` | `1` | 재시도 로직 활성화 |
-| `RETRY_BACKOFF` | `1.0` | 재시도 지연 시간(초) |
+| `RETRY_BACKOFF` | `1.0` | 재시도 지연 시간 (초) |
 
 ## 일반적인 구성
 
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### 운영 환경 설정 (품질 중점)
+### 운영 환경 설정 (품질 중심)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### 벤치마킹 설정
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -165,34 +165,34 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - 품질과 속도의 균형
 
 **빠른 응답:**
-- `qwen2.5-0.5b` - 매우 빠르며 분류 작업에 적합
-- `phi-4-mini` - 빠르고 품질도 우수
+- `qwen2.5-0.5b` - 매우 빠르며 분류에 적합
+- `phi-4-mini` - 빠르면서도 품질이 우수
 
 **고품질:**
-- `qwen2.5-7b` - 최고의 품질, 높은 리소스 사용량
-- `phi-4-mini` - 우수한 품질, 낮은 리소스 사용량
+- `qwen2.5-7b` - 최고의 품질, 높은 자원 사용
+- `phi-4-mini` - 우수한 품질, 낮은 자원 사용
 
 **코드 생성:**
 - `deepseek-coder-1.3b` - 코드에 특화됨
-- `phi-4-mini` - 범용 코딩
+- `phi-4-mini` - 일반 목적 코딩
 
-### 리소스 가용성별
+### 자원 가용성별
 
-**저사양 (< 8GB RAM):**
+**저자원 (< 8GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
 LLM_ALIAS=phi-4-mini
 ```
 
-**중간 사양 (8-16GB RAM):**
+**중간 자원 (8-16GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-7b
 ```
 
-**고사양 (16GB+ RAM):**
+**고자원 (16GB+ RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-7b
 SLM_ALIAS=phi-4-mini
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## 고급 구성
 
-### 사용자 지정 엔드포인트
+### 사용자 정의 엔드포인트
 
 ```bash
 # Development environment
@@ -239,8 +239,8 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ### 환경 변수가 로드되지 않음
 
 **증상:**
-- 스크립트가 잘못된 모델 사용
-- 연결 오류 발생
+- 스크립트가 잘못된 모델을 사용
+- 연결 오류
 - 변수가 인식되지 않음
 
 **해결책:**
@@ -304,24 +304,21 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **증상:**
 - "모듈을 찾을 수 없음" 오류
-- "workshop_utils를 가져올 수 없음"
 
 **해결책:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## 구성 테스트
 
-### 환경 로드 확인
+### 환경 로딩 확인
 
 ```python
 # test_env.py
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## 보안 모범 사례
 
-### 1. 비밀 정보를 커밋하지 마세요
+### 1. 비밀을 커밋하지 않기
 
 ```bash
 # .gitignore should include:
@@ -385,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. API 키 주기적으로 교체
+### 3. API 키 주기적으로 변경
 
 ```bash
 # For Azure OpenAI or other cloud services
@@ -406,12 +403,12 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **메인 저장소**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API 문서**: 최신 정보는 SDK 저장소 참조
+- **API 문서**: 최신 정보는 SDK 저장소 확인
 
 ## 추가 자료
 
 - `QUICK_START.md` - 시작 가이드
-- `SDK_MIGRATION_NOTES.md` - SDK 업데이트 세부 정보
+- `SDK_MIGRATION_NOTES.md` - SDK 업데이트 세부사항
 - `Workshop/samples/*/README.md` - 샘플별 가이드
 
 ---
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전을 권위 있는 자료로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전을 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임지지 않습니다.

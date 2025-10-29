@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T21:38:24+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T21:41:43+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "pl"
 }
@@ -27,7 +27,7 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. Zainstaluj zależności Pythona
+### 2. Zainstaluj zależności Python
 
 Z katalogu warsztatowego:
 
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Sesja 01: Podstawowy czat
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Zmienne środowiskowe:**
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Sesja 02: Pipeline RAG
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Zmienne środowiskowe:**
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Sesja 02: Ocena RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Uwaga**: Wymaga dodatkowych zależności zainstalowanych za pomocą `requirements.txt`
@@ -85,25 +86,25 @@ python rag_eval_ragas.py
 ### Sesja 03: Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Zmienne środowiskowe:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Wynik**: JSON z metrykami opóźnienia, przepustowości i pierwszego tokena
+**Wynik**: JSON z metrykami opóźnienia, przepustowości i pierwszego tokenu
 
 ### Sesja 04: Porównanie modeli
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Zmienne środowiskowe:**
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Sesja 05: Orkiestracja wieloagentowa
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Zmienne środowiskowe:**
@@ -130,19 +131,19 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Sesja 06: Router modeli
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Testuje logikę routingu** z wieloma intencjami (kod, podsumowanie, klasyfikacja)
+**Testuje logikę routingu** dla wielu intencji (kod, streszczenie, klasyfikacja)
 
 ### Sesja 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**Złożony pipeline wieloetapowy** z planowaniem, wykonaniem i udoskonalaniem
+**Złożony pipeline wieloetapowy** z planowaniem, wykonaniem i udoskonaleniem
 
 ## Skrypty
 
@@ -157,7 +158,7 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**Wynik**: Tabela w formacie Markdown + metryki w JSON
+**Wynik**: Tabela w formacie Markdown + metryki JSON
 
 ### Lintowanie wzorców CLI w Markdown
 
@@ -224,16 +225,16 @@ foundry model list
 foundry model run phi-4-mini
 ```
 
-## Odniesienia do zmiennych środowiskowych
+## Odniesienie do zmiennych środowiskowych
 
 ### Konfiguracja podstawowa
 | Zmienna | Domyślna | Opis |
 |---------|----------|------|
 | `FOUNDRY_LOCAL_ALIAS` | Różne | Alias modelu do użycia |
 | `FOUNDRY_LOCAL_ENDPOINT` | Auto | Nadpisanie punktu końcowego usługi |
-| `SHOW_USAGE` | `0` | Pokaż statystyki użycia tokenów |
-| `RETRY_ON_FAIL` | `1` | Włącz logikę ponawiania |
-| `RETRY_BACKOFF` | `1.0` | Początkowe opóźnienie ponawiania (sekundy) |
+| `SHOW_USAGE` | `0` | Wyświetlanie statystyk użycia tokenów |
+| `RETRY_ON_FAIL` | `1` | Włączenie logiki ponownego próbowania |
+| `RETRY_BACKOFF` | `1.0` | Początkowe opóźnienie ponownego próbowania (sekundy) |
 
 ### Specyficzne dla sesji
 | Zmienna | Domyślna | Opis |
@@ -242,23 +243,23 @@ foundry model run phi-4-mini
 | `RAG_QUESTION` | Zobacz przykład | Pytanie testowe RAG |
 | `BENCH_MODELS` | Różne | Modele oddzielone przecinkami |
 | `BENCH_ROUNDS` | `3` | Iteracje benchmarku |
-| `BENCH_PROMPT` | Zobacz przykład | Wskazówka do benchmarku |
-| `BENCH_STREAM` | `0` | Pomiar opóźnienia pierwszego tokena |
+| `BENCH_PROMPT` | Zobacz przykład | Prompt benchmarku |
+| `BENCH_STREAM` | `0` | Pomiar opóźnienia pierwszego tokenu |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Główny model agenta |
-| `AGENT_MODEL_EDITOR` | Primary | Model agenta edytora |
+| `AGENT_MODEL_EDITOR` | Główny | Model agenta edytora |
 | `SLM_ALIAS` | `phi-4-mini` | Mały model językowy |
 | `LLM_ALIAS` | `qwen2.5-7b` | Duży model językowy |
-| `COMPARE_PROMPT` | Zobacz przykład | Wskazówka do porównania |
+| `COMPARE_PROMPT` | Zobacz przykład | Prompt porównawczy |
 
 ## Rekomendowane modele
 
 ### Rozwój i testowanie
 - **phi-4-mini** - Zrównoważona jakość i szybkość
-- **qwen2.5-0.5b** - Bardzo szybki do klasyfikacji
+- **qwen2.5-0.5b** - Bardzo szybki dla klasyfikacji
 - **gemma-2-2b** - Dobra jakość, umiarkowana szybkość
 
 ### Scenariusze produkcyjne
-- **phi-4-mini** - Ogólnego przeznaczenia
+- **phi-4-mini** - Ogólne zastosowanie
 - **deepseek-coder-1.3b** - Generowanie kodu
 - **qwen2.5-7b** - Wysokiej jakości odpowiedzi
 
@@ -272,14 +273,14 @@ foundry model run phi-4-mini
 1. Sprawdź status usługi: `foundry service status`
 2. Przejrzyj logi: Sprawdź logi usługi Foundry Local
 3. Sprawdź dokumentację SDK: https://github.com/microsoft/Foundry-Local
-4. Przejrzyj przykładowy kod: Wszystkie przykłady zawierają szczegółowe docstrings
+4. Przejrzyj przykładowy kod: Wszystkie przykłady zawierają szczegółowe opisy
 
 ## Kolejne kroki
 
 1. Ukończ wszystkie sesje warsztatowe w kolejności
 2. Eksperymentuj z różnymi modelami
 3. Dostosuj przykłady do swoich przypadków użycia
-4. Przejrzyj `SDK_MIGRATION_NOTES.md` w celu poznania zaawansowanych wzorców
+4. Przejrzyj `SDK_MIGRATION_NOTES.md` dla zaawansowanych wzorców
 
 ---
 
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego języku źródłowym powinien być uznawany za autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż staramy się zapewnić dokładność, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.

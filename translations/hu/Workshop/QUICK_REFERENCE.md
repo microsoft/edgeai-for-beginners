@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T21:37:35+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T22:58:13+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "hu"
 }
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -41,7 +41,7 @@ python chat_bootstrap.py "What is edge AI?"
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Többügynökös rendszer | ~60s |
 | 06 | `models_router.py` | Szándékirányítás | ~45s |
-| 06 | `models_pipeline.py` | Többlépcsős folyamat | ~60s |
+| 06 | `models_pipeline.py` | Többlépéses folyamat | ~60s |
 
 ---
 
@@ -195,20 +195,20 @@ for chunk in stream:
 ## 📊 Modellválasztás
 
 | Modell | Méret | Legjobb felhasználás | Sebesség |
-|--------|-------|----------------------|---------|
+|-------|-------|-----------------------|---------|
 | `qwen2.5-0.5b` | 0.5B | Gyors osztályozás | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Gyors kódgenerálás | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Kreatív írás | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Kód, refaktorálás | ⚡⚡ |
-| `phi-4-mini` | 4B | Általános, összegzés | ⚡⚡ |
-| `qwen2.5-7b` | 7B | Összetett érvelés | ⚡ |
+| `phi-4-mini` | 4B | Általános, összefoglalás | ⚡⚡ |
+| `qwen2.5-7b` | 7B | Komplex érvelés | ⚡ |
 
 ---
 
 ## 🔗 Erőforrások
 
 - **SDK Dokumentáció**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Gyors Referencia**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Gyors referencia**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **Frissítési összefoglaló**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
 - **Migrációs jegyzetek**: `Workshop/SDK_MIGRATION_NOTES.md`
 
@@ -217,9 +217,9 @@ for chunk in stream:
 ## 💡 Tippek
 
 1. **Ügyfelek gyorsítótárazása**: A `workshop_utils` automatikusan gyorsítótáraz
-2. **Használj kisebb modelleket**: Teszteléshez kezdj a `qwen2.5-0.5b` modellel
-3. **Engedélyezd a használati statisztikát**: Állítsd be `SHOW_USAGE=1` a tokenek nyomon követéséhez
-4. **Tömeges feldolgozás**: Több promptot dolgozz fel egymás után
+2. **Használj kisebb modelleket**: Kezdd a `qwen2.5-0.5b` modellel teszteléshez
+3. **Engedélyezd a használati statisztikát**: Állítsd be `SHOW_USAGE=1` a tokenek követéséhez
+4. **Batch feldolgozás**: Több prompt feldolgozása egymás után
 5. **Csökkentsd a max_tokens értéket**: Csökkenti a késleltetést gyors válaszokhoz
 
 ---
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Modellek benchmarkolása
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG folyamat
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Többügynökös rendszer
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Gyors segítség**: Futtass bármely mintát `--help` opcióval, vagy nézd meg a docstringet:
+**Gyors segítség**: Futtass bármely mintát `--help` opcióval a `samples` könyvtárból, vagy nézd meg a docstringet:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével került lefordításra. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

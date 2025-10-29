@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T21:06:42+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T22:48:31+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "sw"
 }
@@ -47,11 +47,11 @@ pip install -r requirements.txt
 
 ## Kuendesha Sampuli za Warsha
 
-### Kipindi 01: Gumzo la Msingi
+### Kipindi 01: Mazungumzo ya Msingi
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Vigezo vya Mazingira:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Kipindi 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Vigezo vya Mazingira:**  
@@ -77,33 +77,34 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Kipindi 02: Tathmini ya RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**Kumbuka**: Inahitaji mahitaji ya ziada kusakinishwa kupitia `requirements.txt`
+**Kumbuka**: Inahitaji mahitaji ya ziada yaliyosakinishwa kupitia `requirements.txt`
 
 ### Kipindi 03: Upimaji wa Utendaji
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Vigezo vya Mazingira:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Matokeo**: JSON yenye vipimo vya ucheleweshaji, kasi ya usindikaji, na kipimo cha tokeni ya kwanza
+**Matokeo**: JSON yenye vipimo vya muda wa kusubiri, kasi ya usindikaji, na kipimo cha tokeni ya kwanza
 
-### Kipindi 04: Ulinganisho wa Miundo
+### Kipindi 04: Ulinganishaji wa Miundo
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Vigezo vya Mazingira:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Kipindi 05: Uratibu wa Wakala Wengi
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Vigezo vya Mazingira:**  
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Kipindi 06: Router ya Miundo
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **Inajaribu mantiki ya uelekezaji** kwa nia mbalimbali (kodi, muhtasari, uainishaji)
@@ -139,14 +140,14 @@ python models_router.py
 ### Kipindi 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Pipeline ya hatua nyingi ngumu** yenye upangaji, utekelezaji, na uboreshaji
 
 ## Scripti
 
-### Hamisha Ripoti ya Upimaji
+### Hamisha Ripoti ya Upimaji wa Utendaji
 
 ```bash
 cd Workshop/scripts
@@ -178,7 +179,7 @@ python -m tests.smoke
 
 **Majaribio**: Utendaji wa msingi wa sampuli muhimu
 
-## Utatuzi wa Shida
+## Utatuzi wa Matatizo
 
 ### Huduma Haifanyi Kazi
 
@@ -229,26 +230,26 @@ foundry model run phi-4-mini
 ### Usanidi wa Msingi
 | Kigezo | Chaguo-msingi | Maelezo |
 |--------|--------------|----------|
-| `FOUNDRY_LOCAL_ALIAS` | Inatofautiana | Jina la muundo wa kutumia |
+| `FOUNDRY_LOCAL_ALIAS` | Inatofautiana | Jina la mfano wa kutumia |
 | `FOUNDRY_LOCAL_ENDPOINT` | Auto | Badilisha endpoint ya huduma |
 | `SHOW_USAGE` | `0` | Onyesha takwimu za matumizi ya tokeni |
 | `RETRY_ON_FAIL` | `1` | Washa mantiki ya kujaribu tena |
-| `RETRY_BACKOFF` | `1.0` | Muda wa kuchelewa wa kujaribu tena (sekunde) |
+| `RETRY_BACKOFF` | `1.0` | Muda wa kusubiri wa awali (sekunde) |
 
-### Mahususi kwa Kipindi
+### Maalum kwa Kipindi
 | Kigezo | Chaguo-msingi | Maelezo |
 |--------|--------------|----------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Muundo wa kuingiza |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Mfano wa kuingiza |
 | `RAG_QUESTION` | Tazama sampuli | Swali la majaribio ya RAG |
 | `BENCH_MODELS` | Inatofautiana | Miundo iliyotenganishwa kwa koma |
-| `BENCH_ROUNDS` | `3` | Mizunguko ya upimaji |
-| `BENCH_PROMPT` | Tazama sampuli | Maelezo ya upimaji |
-| `BENCH_STREAM` | `0` | Pima ucheleweshaji wa tokeni ya kwanza |
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Muundo wa wakala wa msingi |
-| `AGENT_MODEL_EDITOR` | Msingi | Muundo wa wakala wa mhariri |
-| `SLM_ALIAS` | `phi-4-mini` | Muundo mdogo wa lugha |
-| `LLM_ALIAS` | `qwen2.5-7b` | Muundo mkubwa wa lugha |
-| `COMPARE_PROMPT` | Tazama sampuli | Maelezo ya ulinganisho |
+| `BENCH_ROUNDS` | `3` | Mizunguko ya upimaji wa utendaji |
+| `BENCH_PROMPT` | Tazama sampuli | Maelezo ya upimaji wa utendaji |
+| `BENCH_STREAM` | `0` | Pima muda wa tokeni ya kwanza |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Mfano wa wakala wa msingi |
+| `AGENT_MODEL_EDITOR` | Msingi | Mfano wa wakala wa mhariri |
+| `SLM_ALIAS` | `phi-4-mini` | Mfano mdogo wa lugha |
+| `LLM_ALIAS` | `qwen2.5-7b` | Mfano mkubwa wa lugha |
+| `COMPARE_PROMPT` | Tazama sampuli | Maelezo ya ulinganishaji |
 
 ## Miundo Inayopendekezwa
 
@@ -259,7 +260,7 @@ foundry model run phi-4-mini
 
 ### Matukio ya Uzalishaji
 - **phi-4-mini** - Matumizi ya jumla
-- **deepseek-coder-1.3b** - Uzalishaji wa kodi
+- **deepseek-coder-1.3b** - Uundaji wa kodi
 - **qwen2.5-7b** - Majibu ya ubora wa juu
 
 ## Nyaraka za SDK
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.

@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T10:42:50+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T21:38:38+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "it"
 }
 -->
-# Sessione 5: Crea Agenti Potenziati dall'AI Velocemente con Foundry Local
+# Sessione 5: Creare Agenti AI Potenziati Velocemente con Foundry Local
 
 ## Abstract
 
-Progetta e orchestra agenti AI multi-ruolo sfruttando il runtime a bassa latenza e rispettoso della privacy di Foundry Local. Definirai i ruoli degli agenti, le strategie di memoria, i modelli di invocazione degli strumenti e i grafici di esecuzione. La sessione introduce modelli di scaffolding che puoi estendere con Chainlit o LangGraph. Il progetto iniziale estende l'architettura esistente degli agenti per aggiungere persistenza della memoria e ganci di valutazione.
+Progetta e orchestra agenti AI multi-ruolo sfruttando il runtime a bassa latenza e rispettoso della privacy di Foundry Local. Definirai i ruoli degli agenti, le strategie di memoria, i modelli di invocazione degli strumenti e i grafici di esecuzione. La sessione introduce modelli di scaffolding che puoi estendere con Chainlit o LangGraph. Il progetto iniziale estende il campione di architettura degli agenti esistente per aggiungere persistenza della memoria + ganci di valutazione.
 
 ## Obiettivi di Apprendimento
 
 - **Definire Ruoli**: Prompt di sistema e limiti di capacità
 - **Implementare Memoria**: Breve termine (conversazione), lungo termine (vettore/file), scratchpad effimeri
-- **Scaffoldare Workflow**: Passaggi sequenziali, ramificati e paralleli degli agenti
+- **Scaffold dei Workflow**: Passaggi sequenziali, ramificati e paralleli degli agenti
 - **Integrare Strumenti**: Modello leggero di chiamata di funzioni
 - **Valutare**: Traccia di base + valutazione basata su rubriche
 
@@ -27,7 +27,7 @@ Progetta e orchestra agenti AI multi-ruolo sfruttando il runtime a bassa latenza
 - Python con `foundry-local-sdk`, `openai`, opzionale `chainlit`
 - Modelli locali in esecuzione (almeno `phi-4-mini`)
 
-### Snippet per Ambiente Cross-Platform
+### Frammento di Ambiente Cross-Platform
 
 Windows:
 ```powershell
@@ -45,7 +45,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Se esegui agenti da macOS contro un servizio host remoto Windows:
+Se si eseguono agenti da macOS su un servizio host remoto Windows:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -150,6 +150,7 @@ TOOLS = {
 }
 ```
 
+
 Modifica `agents_core.py` per consentire una sintassi semplice per gli strumenti: l'utente scrive `#tool:get_time` e l'agente espande l'output dello strumento nel contesto prima della generazione.
 
 ### 4. Workflow Orchestrato (6 min)
@@ -185,13 +186,13 @@ if __name__ == '__main__':
 ```
 
 
-### 5. Progetto Iniziale: Estendi `05-agent-architecture` (7 min)
+### 5. Progetto Iniziale: Estendere `05-agent-architecture` (7 min)
 
 Aggiungi:
-1. Livello di memoria persistente (ad esempio, append di conversazioni in linee JSON)
-2. Rubrica di valutazione semplice: segnaposti per factualità, chiarezza e stile
-3. Front-end opzionale Chainlit (due tab: conversazione e tracce)
-4. Macchina a stati stile LangGraph opzionale (se aggiungi dipendenza) per decisioni ramificate
+1. Livello di memoria persistente (ad esempio, aggiunta di conversazioni in linee JSON)
+2. Rubrica di valutazione semplice: segnaposti per factualità/chiarezza/stile
+3. Front-end opzionale Chainlit (due schede: conversazione e tracce)
+4. Macchina a stati in stile LangGraph opzionale (se si aggiunge la dipendenza) per decisioni ramificate
 
 ## Checklist di Validazione
 
@@ -200,16 +201,16 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Aspettati un output della pipeline strutturato con nota di iniezione degli strumenti.
+Aspettati un output strutturato della pipeline con nota di iniezione dello strumento.
 
 ## Panoramica delle Strategie di Memoria
 
-| Livello      | Scopo               | Esempio              |
-|--------------|---------------------|----------------------|
-| Breve termine | Continuità dialogo | Ultimi N messaggi    |
-| Episodico     | Richiamo sessione  | JSON per sessione    |
-| Semantico     | Recupero lungo termine | Archivio vettoriale di riassunti |
-| Scratchpad    | Passaggi di ragionamento | Catena di pensiero inline (privata) |
+| Livello      | Scopo               | Esempio               |
+|--------------|---------------------|-----------------------|
+| Breve termine | Continuità del dialogo | Ultimi N messaggi     |
+| Episodico    | Richiamo della sessione | JSON per sessione     |
+| Semantico    | Recupero a lungo termine | Archivio vettoriale di riassunti |
+| Scratchpad   | Passaggi di ragionamento | Catena di pensieri inline (privata) |
 
 ## Ganci di Valutazione (Concettuale)
 
@@ -230,7 +231,7 @@ evaluation = {
 |---------------------|---------------------------|--------------------------------|
 | Risposte ripetitive | Finestra di contesto troppo grande/piccola | Regola il parametro della finestra di memoria |
 | Strumento non invocato | Sintassi errata          | Usa il formato `#tool:tool_name` |
-| Orchestrazione lenta | Modelli multipli freddi  | Prompt di riscaldamento pre-esecuzione |
+| Orchestrazione lenta | Modelli freddi multipli   | Prompt di riscaldamento pre-esecuzione |
 
 ## Riferimenti
 
@@ -245,19 +246,20 @@ evaluation = {
 
 ## Scenario di Esempio e Mappatura del Workshop
 
-| Script del Workshop | Scenario | Obiettivo | Prompt di Esempio |
+| Script del Workshop | Scenario | Obiettivo | Esempio di Prompt |
 |---------------------|----------|-----------|-------------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot di ricerca conoscitiva che produce riassunti adatti ai dirigenti | Pipeline a due agenti (ricerca → rifinitura editoriale) con modelli distinti opzionali | Spiega perché l'inferenza edge è importante per la conformità. |
-| (Esteso) concetto `tools.py` | Aggiungi strumenti di stima del tempo e dei token | Dimostra il modello leggero di invocazione degli strumenti | #tool:get_time |
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot di ricerca della conoscenza che produce riassunti adatti ai dirigenti | Pipeline a due agenti (ricerca → rifinitura editoriale) con modelli distinti opzionali | Spiega perché l'inferenza edge è importante per la conformità. |
+| (Esteso) concetto `tools.py` | Aggiungere strumenti di stima del tempo e dei token | Dimostrare il modello leggero di invocazione degli strumenti | #tool:get_time |
 
 ### Narrazione dello Scenario
-Il team di documentazione per la conformità necessita di briefing interni rapidi basati su conoscenze locali senza inviare bozze a servizi cloud. Un agente ricercatore raccoglie punti fattuali concisi; un agente editor riscrive per chiarezza esecutiva. Alias di modelli distinti possono essere assegnati per ottimizzare la latenza (SLM veloce) rispetto alla rifinitura stilistica (modello più grande solo quando necessario).
+Il team di documentazione sulla conformità ha bisogno di briefing interni rapidi basati su conoscenze locali senza inviare bozze ai servizi cloud. Un agente ricercatore raccoglie punti salienti e fattuali; un agente editor riformula per chiarezza esecutiva. Alias di modelli distinti possono essere assegnati per ottimizzare la latenza (SLM veloce) rispetto alla rifinitura stilistica (modello più grande solo quando necessario).
 
-### Ambiente Multi-Modello di Esempio
+### Esempio di Ambiente Multi-Modello
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
@@ -273,22 +275,22 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Persiste ogni passaggio in un file JSONL per successiva valutazione con rubriche.
+Persiste ogni passaggio in un file JSONL per una successiva valutazione con rubriche.
 
 ### Miglioramenti Opzionali
 
-| Tema              | Miglioramento              | Beneficio                     | Schizzo di Implementazione   |
-|-------------------|----------------------------|-------------------------------|------------------------------|
-| Ruoli Multi-Modello | Modelli distinti per agente (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specializzazione e velocità  | Seleziona alias variabili ambiente, chiama `chat_once` con alias per ruolo |
-| Tracce Strutturate | Traccia JSON di ogni atto (strumento, input, latenza, token) | Debug e valutazione          | Aggiungi dizionario a una lista; scrivi `.jsonl` alla fine |
-| Persistenza Memoria | Contesto dialogo ricaricabile | Continuità sessione          | Scarica `Agent.memory` in `sessions/<ts>.json` |
-| Registro Strumenti | Scoperta dinamica degli strumenti | Estensibilità                | Mantieni dizionario `TOOLS` e ispeziona nomi/descrizioni |
-| Retry & Backoff    | Catene lunghe robuste      | Riduci fallimenti transitori  | Avvolgi `act` con try/except + backoff esponenziale |
-| Valutazione con Rubrica | Etichette qualitative automatiche | Traccia miglioramenti        | Secondo passaggio con modello: "Valuta chiarezza 1-5" |
-| Memoria Vettoriale | Richiamo semantico         | Contesto ricco a lungo termine | Incorpora riassunti, recupera top-k nel messaggio di sistema |
-| Risposte in Streaming | Risposta percepita più veloce | Miglioramento UX             | Usa streaming quando disponibile e svuota token parziali |
-| Test Deterministici | Controllo regressione     | CI stabile                    | Esegui con `temperature=0`, semi di prompt fissi |
-| Ramificazione Parallela | Esplorazione più veloce | Throughput                    | Usa `concurrent.futures` per passaggi indipendenti degli agenti |
+| Tema              | Miglioramento              | Beneficio                  | Schema di Implementazione |
+|-------------------|----------------------------|----------------------------|---------------------------|
+| Ruoli Multi-Modello | Modelli distinti per agente (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specializzazione e velocità | Seleziona alias delle variabili di ambiente, chiama `chat_once` con alias per ruolo |
+| Tracce Strutturate | Traccia JSON di ogni atto (strumento, input, latenza, token) | Debug e valutazione        | Aggiungi dizionario a una lista; scrivi `.jsonl` alla fine |
+| Persistenza della Memoria | Contesto di dialogo ricaricabile | Continuità della sessione | Esporta `Agent.memory` in `sessions/<ts>.json` |
+| Registro degli Strumenti | Scoperta dinamica degli strumenti | Estensibilità              | Mantieni il dizionario `TOOLS` e ispeziona nomi/descrizioni |
+| Retry & Backoff   | Catene lunghe robuste      | Riduci errori transitori   | Avvolgi `act` con try/except + backoff esponenziale |
+| Valutazione con Rubrica | Etichette qualitative automatiche | Monitorare i miglioramenti | Secondo passaggio con modello di prompting: "Valuta chiarezza 1-5" |
+| Memoria Vettoriale | Richiamo semantico         | Contesto ricco a lungo termine | Incorpora riassunti, recupera i top-k nel messaggio di sistema |
+| Risposte in Streaming | Risposta percepita più veloce | Miglioramento UX           | Usa lo streaming quando disponibile e svuota i token parziali |
+| Test Deterministici | Controllo delle regressioni | CI stabile                 | Esegui con `temperature=0`, semi di prompt fissi |
+| Ramificazione Parallela | Esplorazione più veloce | Throughput                 | Usa `concurrent.futures` per passaggi indipendenti degli agenti |
 
 #### Esempio di Registro delle Tracce
 
@@ -315,4 +317,4 @@ Persiste coppie (`answer`, `rating`) per costruire un grafico storico della qual
 ---
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un esperto umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.

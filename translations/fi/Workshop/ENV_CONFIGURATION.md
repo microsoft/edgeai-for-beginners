@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T14:26:19+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:17:03+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "fi"
 }
 -->
-# Ympäristön Määritysohje
+# Ympäristön Konfigurointiohje
 
 ## Yleiskatsaus
 
@@ -28,9 +28,9 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. Määritä ympäristö
+### 2. Konfiguroi ympäristö
 
-`.env`-tiedosto on jo valmiiksi määritetty järkevillä oletusarvoilla. Useimpien käyttäjien ei tarvitse muuttaa mitään.
+`.env`-tiedosto on jo valmiiksi konfiguroitu järkevillä oletusasetuksilla. Useimpien käyttäjien ei tarvitse muuttaa mitään.
 
 **Valinnainen**: Tarkista ja mukauta asetuksia:
 ```bash
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Python-skripteille:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -62,7 +62,7 @@ python chat_bootstrap.py
 |----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Oletusmalli esimerkeille |
 | `FOUNDRY_LOCAL_ENDPOINT` | (tyhjä) | Ylikirjoita palvelun päätepiste |
-| `PYTHONPATH` | Workshop-polut | Python-moduulin hakupolku |
+| `PYTHONPATH` | Workshop-polut | Python-moduulien hakupolku |
 
 **Milloin asettaa FOUNDRY_LOCAL_ENDPOINT:**
 - Etäkäytössä oleva Foundry Local -instanssi
@@ -80,18 +80,18 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 ### Istuntokohtaiset muuttujat
 
-#### Istunto 02: RAG-putki
+#### Istunto 02: RAG-putkisto
 | Muuttuja | Oletus | Tarkoitus |
 |----------|---------|---------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Upotusmalli |
-| `RAG_QUESTION` | Esimääritetty | Testikysymys |
+| `RAG_QUESTION` | Esikonfiguroitu | Testikysymys |
 
-#### Istunto 03: Benchmarking
+#### Istunto 03: Vertailutestit
 | Muuttuja | Oletus | Tarkoitus |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Mallit vertailuun |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Mallit vertailutestaukseen |
 | `BENCH_ROUNDS` | `3` | Iteraatiot per malli |
-| `BENCH_PROMPT` | Esimääritetty | Testikehotus |
+| `BENCH_PROMPT` | Esikonfiguroitu | Testikehotus |
 | `BENCH_STREAM` | `0` | Ensimmäisen tokenin viiveen mittaus |
 
 #### Istunto 04: Mallivertailu
@@ -99,15 +99,15 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |----------|---------|---------|
 | `SLM_ALIAS` | `phi-4-mini` | Pieni kielimalli |
 | `LLM_ALIAS` | `qwen2.5-7b` | Suuri kielimalli |
-| `COMPARE_PROMPT` | Esimääritetty | Vertailukehotus |
-| `COMPARE_RETRIES` | `2` | Uusintayritykset |
+| `COMPARE_PROMPT` | Esikonfiguroitu | Vertailukehotus |
+| `COMPARE_RETRIES` | `2` | Uusintayritysten määrä |
 
-#### Istunto 05: Moniagenttinen orkestrointi
+#### Istunto 05: Moniagenttiorganisointi
 | Muuttuja | Oletus | Tarkoitus |
 |----------|---------|---------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Tutkija-agentin malli |
-| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Editor-agentin malli |
-| `AGENT_QUESTION` | Esimääritetty | Testikysymys |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Tutkija-agenttimalli |
+| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Editor-agenttimalli |
+| `AGENT_QUESTION` | Esikonfiguroitu | Testikysymys |
 
 ### Luotettavuuskonfiguraatio
 
@@ -138,14 +138,14 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Benchmarking-asetukset
+### Vertailutestauksen konfiguraatio
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### Moniagenttinen erikoistuminen
+### Moniagenttien erikoistuminen
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -170,7 +170,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Korkea laatu:**
 - `qwen2.5-7b` - Paras laatu, suurempi resurssien käyttö
-- `phi-4-mini` - Hyvä laatu, pienempi resurssitarve
+- `phi-4-mini` - Hyvä laatu, pienemmät resurssit
 
 **Koodin generointi:**
 - `deepseek-coder-1.3b` - Erikoistunut koodiin
@@ -234,7 +234,7 @@ AZURE_OPENAI_API_KEY=your-key-here
 AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-## Vianmääritys
+## Vianetsintä
 
 ### Ympäristömuuttujia ei ladattu
 
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Oireet:**
 - "Moduulia ei löydy" -virheet
-- "workshop_utils ei voida tuoda"
 
 **Ratkaisut:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Konfiguraation testaus
@@ -392,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. Käytä ympäristökohtaisia asetuksia
+### 4. Käytä ympäristökohtaisia konfiguraatioita
 
 ```bash
 # Development
@@ -406,7 +403,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Pääarkisto**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API-dokumentaatio**: Tarkista SDK-arkisto uusimpia varten
+- **API-dokumentaatio**: Katso SDK-arkisto viimeisimmät tiedot
 
 ## Lisäresurssit
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskääntämistä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinkäsityksistä tai tulkintavirheistä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.

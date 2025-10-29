@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-08T16:20:38+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T20:42:49+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "hk"
 }
@@ -11,23 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 摘要
 
-利用 Foundry Local 的低延遲、隱私保護運行時設計和協調多角色 AI 代理。您將定義代理角色、記憶策略、工具調用模式和執行圖。本節介紹可擴展的腳手架模式，您可以使用 Chainlit 或 LangGraph 進一步擴展。起始項目基於現有的代理架構範例，添加記憶持久化和評估掛鉤。
+利用 Foundry Local 的低延遲、保護隱私的運行環境設計和協調多角色 AI 代理。您將定義代理角色、記憶策略、工具調用模式和執行圖。本節介紹了可以通過 Chainlit 或 LangGraph 擴展的框架模式。起始項目擴展現有的代理架構範例，添加記憶持久性和評估掛鉤。
 
 ## 學習目標
 
-- **定義角色**：系統提示和能力邊界
+- **定義角色**：系統提示和能力範圍
 - **實現記憶**：短期（對話）、長期（向量/文件）、臨時便箋
 - **搭建工作流程**：順序、分支和並行代理步驟
-- **整合工具**：輕量級函數工具調用模式
-- **評估**：基本追蹤 + 基於評分標準的結果評分
+- **整合工具**：輕量化函數工具調用模式
+- **評估**：基本的追蹤 + 基於標準的結果評分
 
 ## 先決條件
 
 - 完成第一至第四節
-- Python，包含 `foundry-local-sdk`、`openai`，可選 `chainlit`
+- Python，安裝 `foundry-local-sdk`、`openai`，可選 `chainlit`
 - 本地模型運行（至少 `phi-4-mini`）
 
-### 跨平台環境片段
+### 跨平台環境代碼片段
 
 Windows:
 ```powershell
@@ -122,7 +122,7 @@ if __name__ == "__main__":
 ```
 
 
-### 2. CLI 腳手架模式（3 分鐘）
+### 2. CLI 框架模式（3 分鐘）
 
 ```powershell
 python samples/05-agents/agents_core.py
@@ -189,7 +189,7 @@ if __name__ == '__main__':
 ### 5. 起始項目：擴展 `05-agent-architecture`（7 分鐘）
 
 添加：
-1. 持久化記憶層（例如，對話的 JSON 行追加）
+1. 持久記憶層（例如，對話的 JSON 行追加）
 2. 簡單的評估標準：事實性/清晰度/風格佔位符
 3. 可選的 Chainlit 前端（兩個標籤：對話和追蹤）
 4. 可選的 LangGraph 風格狀態機（如果添加依賴）以進行分支決策
@@ -201,16 +201,16 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-預期結構化管道輸出，包含工具注入註釋。
+預期結構化的管道輸出，包含工具注入註釋。
 
 ## 記憶策略概述
 
-| 層級       | 目的           | 示例             |
-|------------|----------------|------------------|
-| 短期       | 對話連續性     | 最近 N 條消息    |
-| 情節性     | 會話回憶       | 每次會話的 JSON |
-| 語義性     | 長期檢索       | 摘要的向量存儲  |
-| 臨時便箋   | 推理步驟       | 私有的連鎖思考 |
+| 層級 | 目的 | 範例 |
+|------|------|------|
+| 短期 | 對話連續性 | 最近 N 條消息 |
+| 情節性 | 會話回憶 | 每次會話的 JSON |
+| 語義性 | 長期檢索 | 摘要的向量存儲 |
+| 便箋 | 推理步驟 | 內聯思維鏈（私密） |
 
 ## 評估掛鉤（概念）
 
@@ -227,16 +227,16 @@ evaluation = {
 
 ## 疑難排解
 
-| 問題             | 原因                 | 解決方案                     |
-|------------------|----------------------|------------------------------|
-| 重複回答         | 上下文窗口過大/過小  | 調整記憶窗口參數            |
-| 工具未調用       | 語法錯誤             | 使用 `#tool:tool_name` 格式 |
-| 協調速度慢       | 多個冷模型           | 預先運行暖啟提示            |
+| 問題 | 原因 | 解決方案 |
+|------|------|----------|
+| 答案重複 | 上下文窗口過大/過小 | 調整記憶窗口參數 |
+| 工具未調用 | 語法錯誤 | 使用 `#tool:tool_name` 格式 |
+| 協調速度慢 | 多個冷啟動模型 | 預先運行預熱提示 |
 
 ## 參考資料
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- LangGraph（可選概念）: https://github.com/langchain-ai/langgraph
+- LangGraph（可選概念）：https://github.com/langchain-ai/langgraph
 - Chainlit: https://docs.chainlit.io
 
 ---
@@ -246,19 +246,20 @@ evaluation = {
 
 ## 範例場景與工作坊映射
 
-| 工作坊腳本                                   | 場景                                   | 目標                                   | 示例提示                     |
-|---------------------------------------------|----------------------------------------|----------------------------------------|------------------------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | 知識研究機器人生成適合高管的摘要       | 雙代理管道（研究 → 編輯潤色），可選擇使用不同模型 | 解釋邊緣推理對合規的重要性。 |
-| （擴展）`tools.py` 概念                     | 添加時間和令牌估算工具                 | 展示輕量級工具調用模式                 | #tool:get_time              |
+| 工作坊腳本 | 場景 | 目標 | 範例提示 |
+|------------|------|------|----------|
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | 知識研究機器人生成適合高層的摘要 | 雙代理管道（研究 → 編輯潤色），可選擇不同模型 | 解釋為什麼邊緣推理對合規性很重要。 |
+| （擴展）`tools.py` 概念 | 添加時間和令牌估算工具 | 展示輕量化工具調用模式 | #tool:get_time |
 
 ### 場景敘述
-合規文檔團隊需要快速的內部簡報，從本地知識中獲取，而不將草稿發送到雲服務。一個研究代理收集簡潔的事實要點；一個編輯代理重寫以適合高管的清晰度。可以分配不同的模型別名以優化延遲（快速 SLM）與風格化潤色（僅在需要時使用較大模型）。
+合規文檔團隊需要快速從本地知識中獲取內部簡報，而不將草稿發送到雲端服務。一個研究代理收集簡潔的事實要點；一個編輯代理重寫以符合高層的清晰度需求。可以分配不同的模型別名以優化延遲（快速 SLM）與風格化潤色（僅在需要時使用較大的模型）。
 
-### 示例多模型環境
+### 範例多模型環境
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
@@ -274,24 +275,24 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-將每個步驟持久化到 JSONL 文件中，以便後續基於標準進行評分。
+將每個步驟保存到 JSONL 文件以供後續標準評分。
 
-### 可選增強
+### 可選增強功能
 
-| 主題             | 增強內容                     | 好處                     | 實現草圖                     |
-|------------------|------------------------------|--------------------------|------------------------------|
-| 多模型角色       | 每個代理使用不同模型（`AGENT_MODEL_PRIMARY`，`AGENT_MODEL_EDITOR`） | 專業化與速度              | 選擇別名環境變數，使用每角色別名調用 `chat_once` |
-| 結構化追蹤       | 每次行為（工具、輸入、延遲、令牌）的 JSON 追蹤 | 調試與評估                | 將字典追加到列表；在結束時寫入 `.jsonl` |
-| 記憶持久化       | 可重新加載的對話上下文       | 會話連續性               | 將 `Agent.memory` 傾倒到 `sessions/<ts>.json` |
-| 工具註冊表       | 動態工具發現                 | 可擴展性                 | 維護 `TOOLS` 字典並檢查名稱/描述 |
-| 重試與退避       | 穩健的長鏈                  | 減少瞬時故障             | 使用 try/except 包裹 `act`，並添加指數退避 |
-| 評分標準         | 自動化質量標籤               | 跟蹤改進                 | 二次通過提示模型："評分清晰度 1-5" |
-| 向量記憶         | 語義回憶                    | 豐富的長期上下文         | 嵌入摘要，檢索 top-k 到系統消息中 |
-| 流式回覆         | 更快的感知響應              | 用戶體驗改進             | 使用流式回覆（可用時），並刷新部分令牌 |
-| 確定性測試       | 回歸控制                    | 穩定的 CI                | 使用 `temperature=0`，固定提示種子運行 |
-| 並行分支         | 更快的探索                  | 吞吐量                   | 使用 `concurrent.futures` 處理獨立代理步驟 |
+| 主題 | 增強功能 | 好處 | 實施草案 |
+|------|---------|------|----------|
+| 多模型角色 | 每個代理使用不同模型（`AGENT_MODEL_PRIMARY`，`AGENT_MODEL_EDITOR`） | 專業化與速度 | 選擇別名環境變數，使用每個角色的別名調用 `chat_once` |
+| 結構化追蹤 | 每個行為（工具、輸入、延遲、令牌）的 JSON 追蹤 | 調試與評估 | 將字典追加到列表；在結尾寫入 `.jsonl` |
+| 記憶持久性 | 可重新加載的對話上下文 | 會話連續性 | 將 `Agent.memory` 傾倒到 `sessions/<ts>.json` |
+| 工具註冊表 | 動態工具發現 | 可擴展性 | 維護 `TOOLS` 字典並檢查名稱/描述 |
+| 重試與退避 | 穩健的長鏈 | 減少瞬時故障 | 用 try/except 包裹 `act`，並使用指數退避 |
+| 標準評分 | 自動化的質量標籤 | 跟蹤改進 | 二次通過提示模型："評分清晰度 1-5" |
+| 向量記憶 | 語義回憶 | 豐富的長期上下文 | 嵌入摘要，檢索 top-k 到系統消息 |
+| 流式回覆 | 更快的感知響應 | 用戶體驗改進 | 使用流式回覆並刷新部分令牌 |
+| 確定性測試 | 回歸控制 | 穩定的 CI | 使用 `temperature=0`，固定提示種子運行 |
+| 並行分支 | 更快的探索 | 提高吞吐量 | 使用 `concurrent.futures` 處理獨立的代理步驟 |
 
-#### 追蹤記錄示例
+#### 追蹤記錄範例
 
 ```python
 trace.append({
@@ -311,9 +312,9 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-持久化（`answer`，`rating`）對以構建歷史質量圖表。
+保存（`answer`，`rating`）配對以構建歷史質量圖表。
 
 ---
 
 **免責聲明**：  
-本文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。
+此文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

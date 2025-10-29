@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T11:02:09+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T21:40:33+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "it"
 }
@@ -11,12 +11,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstract
 
-Tratta i modelli come strumenti componibili all'interno di un livello operativo AI locale. Questa sessione mostra come concatenare chiamate multiple a SLM/LLM specializzati, instradare selettivamente i compiti e offrire una superficie SDK unificata alle applicazioni. Costruirai un router di modelli leggero + un pianificatore di compiti, lo integrerai in uno script applicativo e delineerai il percorso di scalabilità verso Azure AI Foundry per carichi di lavoro in produzione.
+Tratta i modelli come strumenti componibili all'interno di un livello operativo AI locale. Questa sessione mostra come concatenare più chiamate specializzate SLM/LLM, instradare selettivamente i compiti e fornire una superficie SDK unificata alle applicazioni. Costruirai un router di modelli leggero + un pianificatore di compiti, lo integrerai in uno script applicativo e delineerai il percorso di scalabilità verso Azure AI Foundry per carichi di lavoro in produzione.
 
 ## Obiettivi di Apprendimento
 
 - **Concettualizzare** i modelli come strumenti atomici con capacità dichiarate
-- **Instradare** richieste basate su intenti / punteggi euristici
+- **Instradare** le richieste basandosi sull'intento / punteggio euristico
 - **Concatenare** output attraverso compiti multi-step (decomporre → risolvere → affinare)
 - **Integrare** un'API client unificata per applicazioni downstream
 - **Scalare** il design al cloud (stesso contratto compatibile con OpenAI)
@@ -24,9 +24,9 @@ Tratta i modelli come strumenti componibili all'interno di un livello operativo 
 ## Prerequisiti
 
 - Completamento delle sessioni 1–5
-- Molteplici modelli locali memorizzati nella cache (es. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- Molteplici modelli locali memorizzati (es. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Snippet Ambiente Cross-Platform
+### Frammento Ambiente Cross-Platform
 
 Windows PowerShell:
 ```powershell
@@ -74,7 +74,7 @@ CATALOG = {
 ```
 
 
-### 2. Rilevamento Intenti & Instradamento (8 min)
+### 2. Rilevamento Intento & Instradamento (8 min)
 
 Crea `samples/06-tools/router.py`:
 
@@ -181,16 +181,16 @@ if __name__ == '__main__':
 Miglioramenti:
 - Aggiungi supporto per token in streaming (aggiornamento UI progressivo)
 - Aggiungi punteggio di fiducia: sovrapposizione lessicale o rubriche di prompt
-- Esporta JSON di traccia (intento → modello → latenza → utilizzo token)
+- Esporta traccia JSON (intento → modello → latenza → utilizzo token)
 - Implementa il riutilizzo della cache per sottopassi ripetuti
 
 ### 5. Percorso di Scalabilità verso Azure (5 min)
 
 | Livello | Locale (Foundry) | Cloud (Azure AI Foundry) | Strategia di Transizione |
-|--------|------------------|--------------------------|--------------------------|
-| Instradamento | Python euristico | Microservizio durevole | Containerizza e distribuisci API |
-| Modelli | SLM memorizzati nella cache | Deployment gestiti | Mappa i nomi locali agli ID di deployment |
-| Osservabilità | Statistiche CLI/manuale | Logging centrale & metriche | Aggiungi eventi di traccia strutturati |
+|---------|------------------|--------------------------|--------------------------|
+| Instradamento | Python euristico | Microservizio durevole | Contenere e distribuire API |
+| Modelli | SLM memorizzati | Deployment gestiti | Mappa i nomi locali agli ID di deployment |
+| Osservabilità | Statistiche CLI/manuale | Log centralizzati e metriche | Aggiungi eventi di traccia strutturati |
 | Sicurezza | Solo host locale | Autenticazione Azure / networking | Introduci key vault per segreti |
 | Costo | Risorse del dispositivo | Fatturazione a consumo | Aggiungi limiti di budget |
 
@@ -203,14 +203,14 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Aspettati selezione del modello basata su intenti e output finale affinato.
+Aspettati selezione del modello basata sull'intento e output finale affinato.
 
 ## Risoluzione dei Problemi
 
 | Problema | Causa | Soluzione |
-|----------|-------|----------|
-| Tutti i compiti instradati allo stesso modello | Regole deboli | Arricchisci il set regex INTENT_RULES |
-| La pipeline fallisce a metà passo | Modello non caricato | Esegui `foundry model run <model>` |
+|----------|-------|-----------|
+| Tutti i compiti instradati allo stesso modello | Regole deboli | Arricchisci il set di regex INTENT_RULES |
+| La pipeline si interrompe a metà | Modello non caricato | Esegui `foundry model run <model>` |
 | Bassa coesione dell'output | Nessuna fase di affinamento | Aggiungi passaggio di sintesi/validazione |
 
 ## Riferimenti
@@ -226,13 +226,13 @@ Aspettati selezione del modello basata su intenti e output finale affinato.
 
 ## Scenario di Esempio & Mappatura Workshop
 
-| Script Workshop / Notebook | Scenario | Obiettivo | Fonte Dataset / Catalogo |
+| Script / Notebook Workshop | Scenario | Obiettivo | Fonte Dataset / Catalogo |
 |----------------------------|----------|-----------|--------------------------|
 | `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Assistente per sviluppatori che gestisce prompt con intenti misti (rifattorizzare, sintetizzare, classificare) | Intento euristico → instradamento alias modello con utilizzo token | Inline `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Pianificazione multi-step & affinamento per compiti complessi di assistenza alla codifica | Decomporre → esecuzione specializzata → passaggio di sintesi e affinamento | Stesso `CATALOG`; passi derivati dall'output del piano |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Pianificazione multi-step e affinamento per compiti complessi di assistenza alla codifica | Decomposizione → esecuzione specializzata → passaggio di sintesi e affinamento | Stesso `CATALOG`; passaggi derivati dall'output del piano |
 
 ### Narrazione dello Scenario
-Uno strumento di produttività ingegneristica riceve compiti eterogenei: rifattorizzare codice, sintetizzare note architetturali, classificare feedback. Per minimizzare latenza e utilizzo delle risorse, un piccolo modello generale pianifica e sintetizza, un modello specializzato per il codice gestisce la rifattorizzazione, e un modello leggero per la classificazione etichetta il feedback. Lo script della pipeline dimostra concatenazione + affinamento; lo script del router isola l'instradamento adattivo di singoli prompt.
+Uno strumento per la produttività ingegneristica riceve compiti eterogenei: rifattorizzare codice, sintetizzare note architetturali, classificare feedback. Per minimizzare la latenza e l'uso delle risorse, un piccolo modello generale pianifica e sintetizza, un modello specializzato per il codice gestisce la rifattorizzazione, e un modello leggero capace di classificazione etichetta i feedback. Lo script della pipeline dimostra concatenazione + affinamento; lo script del router isola l'instradamento adattivo di singoli prompt.
 
 ### Snapshot del Catalogo
 ```python
@@ -256,7 +256,7 @@ CATALOG = {
 
 
 ### Estensione Traccia (Opzionale)
-Aggiungi linee JSON di traccia per ogni passo in `models_pipeline.py`:
+Aggiungi linee JSON di traccia per ogni passaggio in `models_pipeline.py`:
 ```python
 trace.append({
     "step": step_idx,
@@ -268,38 +268,7 @@ trace.append({
 ```
 
 
-### Euristica di Escalation (Idea)
-Se il piano contiene parole chiave come "ottimizzare", "sicurezza", o la lunghezza del passo > 280 caratteri → scala a un modello più grande (es. `gpt-oss-20b`) solo per quel passo.
-
-### Miglioramenti Opzionali
-
-| Area | Miglioramento | Valore | Suggerimento |
-|------|--------------|--------|-------------|
-| Caching | Riutilizza oggetti manager + client | Minore latenza, meno overhead | Usa `workshop_utils.get_client` |
-| Metriche di Utilizzo | Cattura token & latenza per passo | Profilazione & ottimizzazione | Cronometra ogni chiamata instradata; memorizza nella lista di traccia |
-| Instradamento Adattivo | Consapevole di fiducia / costo | Migliore trade-off qualità-costo | Aggiungi punteggio: se il prompt > N caratteri o regex corrisponde al dominio → scala a modello più grande |
-| Registro Dinamico delle Capacità | Catalogo hot reload | Nessun riavvio o ridistribuzione | Carica `catalog.json` a runtime; osserva timestamp del file |
-| Strategia di Fallback | Robustezza in caso di fallimenti | Maggiore disponibilità | Prova primario → su eccezione fallback alias |
-| Pipeline Streaming | Feedback anticipato | Miglioramento UX | Stream ogni passo e buffer input finale di affinamento |
-| Intent Embedding Vettoriale | Instradamento più sfumato | Maggiore accuratezza degli intenti | Incorpora prompt, cluster & mappa il centroide → capacità |
-| Esportazione Traccia | Catena auditabile | Conformità/reportistica | Emetti linee JSON: passo, intento, modello, latenza_ms, token |
-| Simulazione Costo | Stima pre-cloud | Pianificazione budget | Assegna costo notionale/token per modello & aggrega per compito |
-| Modalità Deterministica | Riproducibilità | Benchmarking stabile | Env: `temperature=0`, numero fisso di passi |
-
-#### Esempio Struttura Traccia
-
-```python
-trace.append({
-  "step": idx,
-  "intent": intent,
-  "alias": alias,
-  "latency_ms": round((end-start)*1000,2),
-  "tokens": getattr(usage,'total_tokens',None)
-})
-```
-
-
-#### Schizzo Escalation Adattiva
+### Schizzo di Escalation Euristica
 
 ```python
 if len(prompt) > 280 or 'compliance' in prompt.lower():
@@ -308,7 +277,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
 ```
 
 
-#### Hot Reload Catalogo Modelli
+### Ricaricamento Dinamico del Catalogo Modelli
 
 ```python
 import json, time, os
@@ -323,10 +292,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Itera gradualmente—evita di sovra-ingegnerizzare i prototipi iniziali.
-
 ---
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un traduttore umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.

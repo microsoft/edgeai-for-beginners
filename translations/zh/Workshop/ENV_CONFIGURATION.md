@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T16:17:53+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T20:33:34+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "zh"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概述
 
-Workshop 示例使用环境变量进行配置，集中在代码库根目录的 `.env` 文件中。这种方式允许用户轻松定制配置，而无需修改代码。
+Workshop 示例使用环境变量进行配置，集中在代码库根目录的 `.env` 文件中。这种方式可以轻松定制配置，而无需修改代码。
 
 ## 快速开始
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. 配置环境
 
-`.env` 文件已经预设了合理的默认值。大多数用户无需更改任何内容。
+`.env` 文件已预配置为合理的默认值。大多数用户无需更改任何内容。
 
 **可选**：查看并定制设置：
 ```bash
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **对于 Python 脚本：**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -61,7 +61,7 @@ python chat_bootstrap.py
 | 变量 | 默认值 | 描述 |
 |------|--------|------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | 示例的默认模型 |
-| `FOUNDRY_LOCAL_ENDPOINT` | （空） | 自定义服务端点 |
+| `FOUNDRY_LOCAL_ENDPOINT` | （空） | 覆盖服务端点 |
 | `PYTHONPATH` | Workshop 路径 | Python 模块搜索路径 |
 
 **何时设置 FOUNDRY_LOCAL_ENDPOINT：**
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### 会话 03：基准测试
 | 变量 | 默认值 | 用途 |
 |------|--------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | 要测试的模型 |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | 要测试的模型 |
 | `BENCH_ROUNDS` | `3` | 每个模型的迭代次数 |
 | `BENCH_PROMPT` | 预配置 | 测试提示 |
 | `BENCH_STREAM` | `0` | 测量首个 token 的延迟 |
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### 基准测试设置
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -262,8 +262,8 @@ pwd  # Should be in Workshop or repository root
 ### 服务连接问题
 
 **症状：**
-- "连接被拒绝" 错误
-- "服务不可用"
+- “连接被拒绝”错误
+- “服务不可用”
 - 超时错误
 
 **解决方案：**
@@ -285,8 +285,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ### 模型未找到
 
 **症状：**
-- "模型未找到" 错误
-- "别名未被识别"
+- “模型未找到”错误
+- “别名未被识别”
 
 **解决方案：**
 ```bash
@@ -303,20 +303,17 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### 导入错误
 
 **症状：**
-- "模块未找到" 错误
-- "无法导入 workshop_utils"
+- “模块未找到”错误
 
 **解决方案：**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## 测试配置
@@ -416,11 +413,11 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
-**最后更新**: 2025-01-08  
+**最后更新日期**: 2025-01-08  
 **版本**: 2.0  
 **SDK**: Foundry Local Python SDK（最新）
 
 ---
 
 **免责声明**：  
-本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
+本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:26:11+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T23:00:47+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "cs"
 }
@@ -11,25 +11,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrakt
 
-Začněte svou cestu s Foundry Local instalací a konfigurací na Windows 11. Naučte se nastavit CLI, povolit hardwarovou akceleraci a ukládat modely do mezipaměti pro rychlé lokální inferenční procesy. Toto praktické sezení vás provede spuštěním modelů jako Phi, Qwen, DeepSeek a GPT-OSS-20B pomocí reprodukovatelných příkazů CLI.
+Začněte svou cestu s Foundry Local instalací a konfigurací na Windows 11. Naučte se nastavit CLI, povolit hardwarovou akceleraci a ukládat modely do mezipaměti pro rychlé lokální inferenční operace. Toto praktické sezení vás provede spuštěním modelů jako Phi, Qwen, DeepSeek a GPT-OSS-20B pomocí reprodukovatelných CLI příkazů.
 
 ## Cíle učení
 
 Na konci tohoto sezení budete schopni:
 
 - **Instalovat a konfigurovat**: Nastavit Foundry Local na Windows 11 s optimálním výkonem
-- **Ovládnout operace CLI**: Používat Foundry Local CLI pro správu a nasazení modelů
-- **Povolit hardwarovou akceleraci**: Konfigurovat akceleraci GPU pomocí ONNXRuntime nebo WebGPU
+- **Ovládnout CLI operace**: Používat Foundry Local CLI pro správu a nasazení modelů
+- **Povolit hardwarovou akceleraci**: Konfigurovat GPU akceleraci pomocí ONNXRuntime nebo WebGPU
 - **Nasadit více modelů**: Spustit modely phi-4, GPT-OSS-20B, Qwen a DeepSeek lokálně
-- **Vytvořit svou první aplikaci**: Přizpůsobit existující vzorky pro použití Foundry Local Python SDK
+- **Vytvořit svou první aplikaci**: Přizpůsobit existující ukázky pro použití Foundry Local Python SDK
 
 # Testování modelu (neinteraktivní jednorázový prompt)
 foundry model run phi-4-mini --prompt "Ahoj, představ se"
 
 - Windows 11 (22H2 nebo novější)
-# Seznam dostupných modelů v katalogu (načtené modely se zobrazí po spuštění)
+# Seznam dostupných modelů v katalogu (načtené modely se objeví po spuštění)
 foundry model list
-## NOTE: V současné době neexistuje žádný dedikovaný příznak `--running`; pro zjištění, které modely jsou načtené, zahajte chat nebo zkontrolujte logy služby.
+## NOTE: Momentálně neexistuje dedikovaný příznak `--running`; pro zjištění, které modely jsou načtené, zahajte chat nebo zkontrolujte logy služby.
 - Nainstalovaný Python 3.10+
 - Visual Studio Code s rozšířením pro Python
 - Administrátorská práva pro instalaci
@@ -45,7 +45,7 @@ foundry model run gpt-oss-20b --prompt "Vysvětli edge AI jednoduchými slovy"
 | `FOUNDRY_LOCAL_ENDPOINT` | Přepsání endpointu (jinak automaticky z manageru) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Povolit ukázku streamování | `true` |
 
-> Pokud je `FOUNDRY_LOCAL_ENDPOINT=auto` (nebo nenastaveno), odvodíme jej z SDK manageru.
+> Pokud je `FOUNDRY_LOCAL_ENDPOINT=auto` (nebo nenastaveno), odvodíme ho z SDK manageru.
 
 ## Průběh ukázky (30 minut)
 
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (Preview / pokud podporováno)**
 
-Pokud je k dispozici nativní balíček pro macOS (zkontrolujte oficiální dokumentaci pro nejnovější informace):
+Pokud je k dispozici nativní balíček pro macOS (zkontrolujte oficiální dokumentaci pro nejnovější verzi):
 
 ```bash
 # Homebrew (if/when available)
@@ -77,11 +77,11 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Pokud nativní binární soubory pro macOS ještě nejsou dostupné, můžete:
+Pokud nativní binární soubory pro macOS zatím nejsou dostupné, můžete:
 1. Použít Windows 11 ARM/Intel VM (Parallels / UTM) a postupovat podle kroků pro Windows.
 2. Spustit modely přes kontejner (pokud je publikován obraz kontejneru) a nastavit `FOUNDRY_LOCAL_ENDPOINT` na vystavený port.
 
-**Vytvoření virtuálního prostředí Python (napříč platformami)**
+**Vytvoření Python virtuálního prostředí (napříč platformami)**
 
 Windows PowerShell:
 ```powershell
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### SDK Bootstrapping (doporučeno)
 
-Namísto ručního spouštění služby a modelů může **Foundry Local Python SDK** vše automaticky nastavit:
+Namísto ručního spuštění služby a modelů může **Foundry Local Python SDK** vše automaticky nastavit:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -292,7 +292,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 - **Lokální inferenční engine**: Spouští modely přímo na vašem zařízení
 - **Kompatibilita s OpenAI SDK**: Bezproblémová integrace s existujícím OpenAI kódem
 - **Správa modelů**: Efektivní stahování, ukládání do mezipaměti a spouštění více modelů
-- **Optimalizace hardwaru**: Využití akcelerace GPU, NPU a CPU
+- **Optimalizace hardwaru**: Využití GPU, NPU a CPU akcelerace
 
 ### 2. Referenční příkazy CLI
 
@@ -384,7 +384,7 @@ netstat -an | findstr 5273
 ### 1. Strategie výběru modelu
 
 - **Phi-4-mini**: Nejlepší pro obecné úkoly, nižší využití paměti
-- **Qwen2.5-0.5b**: Nejrychlejší inferenční proces, minimální zdroje
+- **Qwen2.5-0.5b**: Nejrychlejší inferenční operace, minimální zdroje
 - **GPT-OSS-20B**: Nejvyšší kvalita, vyžaduje více zdrojů
 - **DeepSeek-Coder**: Optimalizováno pro programovací úkoly
 
@@ -404,29 +404,30 @@ foundry config set model.preload false
 ### 3. Monitorování výkonu
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Volitelná vylepšení
 
 | Vylepšení | Co | Jak |
 |-----------|----|-----|
-| Sdílené utility | Odstranění duplicitní logiky klienta/bootstrapu | Použijte `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Viditelnost využití tokenů | Naučte se přemýšlet o nákladech/efektivitě | Nastavte `SHOW_USAGE=1` pro tisk prompt/completion/celkových tokenů |
-| Deterministické porovnání | Stabilní benchmarking a regresní kontroly | Použijte `temperature=0`, `top_p=1`, konzistentní text promptu |
-| Latence prvního tokenu | Metrika vnímané odezvy | Přizpůsobte benchmark skript se streamováním (`BENCH_STREAM=1`) |
+| Sdílené utility | Odstranění duplicitní logiky klienta/bootstrappingu | Použijte `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Viditelnost využití tokenů | Naučte se přemýšlet o nákladech/efektivitě | Nastavte `SHOW_USAGE=1` pro zobrazení prompt/completion/celkových tokenů |
+| Deterministické porovnání | Stabilní benchmarking a kontrola regresí | Použijte `temperature=0`, `top_p=1`, konzistentní text promptu |
+| Latence prvního tokenu | Metrika vnímané odezvy | Přizpůsobte benchmark skript pro streamování (`BENCH_STREAM=1`) |
 | Opakování při přechodných chybách | Odolné ukázky při studeném startu | `RETRY_ON_FAIL=1` (výchozí) a upravte `RETRY_BACKOFF` |
-| Smoke Testing | Rychlá kontrola klíčových toků | Spusťte `python Workshop/tests/smoke.py` před workshopem |
-| Profily aliasů modelů | Rychlé přepínání modelů mezi stroji | Udržujte `.env` s `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Efektivita mezipaměti | Vyhněte se opakovaným zahříváním při více vzorcích | Utility cache managerů; znovu použijte napříč skripty/notebooky |
+| Rychlé testování | Rychlá kontrola klíčových funkcí | Spusťte `python Workshop/tests/smoke.py` před workshopem |
+| Profily aliasů modelů | Rychlé přepínání mezi sadami modelů na různých strojích | Udržujte `.env` s `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
+| Efektivita mezipaměti | Vyhněte se opakovanému zahřívání při více spuštěních | Utility pro správu mezipaměti; opakované použití napříč skripty/notebooky |
 | Zahřívání při prvním spuštění | Snížení p95 latence | Spusťte malý prompt po vytvoření `FoundryLocalManager`
 
 Příklad deterministického zahřívacího základu (PowerShell):
@@ -444,9 +445,9 @@ Měli byste vidět podobný výstup a identické počty tokenů při druhém spu
 
 Po dokončení tohoto sezení:
 
-1. **Prozkoumejte Sezení 2**: Vytváření AI řešení s Azure AI Foundry RAG
+1. **Prozkoumejte sezení 2**: Vytváření AI řešení s Azure AI Foundry RAG
 2. **Vyzkoušejte různé modely**: Experimentujte s Qwen, DeepSeek a dalšími modelovými rodinami
-3. **Optimalizujte výkon**: Doladění nastavení pro váš specifický hardware
+3. **Optimalizujte výkon**: Přizpůsobte nastavení vašemu konkrétnímu hardwaru
 4. **Vytvářejte vlastní aplikace**: Použijte Foundry Local SDK ve svých vlastních projektech
 
 ## Další zdroje
@@ -467,19 +468,19 @@ Po dokončení tohoto sezení:
 
 ---
 
-**Délka sezení**: 30 minut praktické části + 15 minut Q&A  
-**Úroveň obtížnosti**: Začátečník  
-**Předpoklady**: Windows 11, Python 3.10+, Administrátorský přístup  
+**Délka sezení**: 30 minut praktické části + 15 minut Q&A
+**Úroveň obtížnosti**: Začátečník
+**Předpoklady**: Windows 11, Python 3.10+, administrátorský přístup
 
 ## Ukázkový scénář a mapování workshopu
 
-| Skript workshopu / Notebook | Scénář | Cíl | Příklad vstupů | Potřebný dataset |
+| Skript workshopu / Notebook | Scénář | Cíl | Příklad vstupu | Potřebný dataset |
 |-----------------------------|--------|-----|----------------|------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Interní IT tým hodnotící inferenci na zařízení pro portál posuzování ochrany soukromí | Prokázat, že lokální SLM odpovídá s latencí pod sekundu na standardní prompty | "Uveďte dvě výhody lokální inference." | Žádný (jednorázový prompt) |
-| Kódový blok pro adaptaci quickstartu | Vývojář migrující existující OpenAI skript na Foundry Local | Ukázat kompatibilitu | "Uveďte dvě výhody lokální inference." | Pouze inline prompt |
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Interní IT tým hodnotící inferenci na zařízení pro portál posuzování ochrany soukromí | Prokázat, že lokální SLM odpovídá s latencí pod jednu sekundu na standardní prompt | "Uveďte dvě výhody lokální inference." | Žádný (jednorázový prompt) |
+| Kódový blok pro adaptaci Quickstart | Vývojář migrující existující OpenAI skript na Foundry Local | Ukázat kompatibilitu | "Uveďte dvě výhody lokální inference." | Pouze inline prompt |
 
 ### Narativ scénáře
-Tým pro bezpečnost a shodu musí ověřit, zda lze citlivá data prototypu zpracovávat lokálně. Spouští bootstrap skript s několika prompty (soukromí, latence, náklady) pomocí deterministického režimu temperature=0, aby zachytili základní výstupy pro pozdější porovnání (benchmarking v sezení 3 a kontrast SLM vs LLM v sezení 4).
+Tým pro bezpečnost a dodržování předpisů musí ověřit, zda lze citlivá data prototypu zpracovávat lokálně. Spustí bootstrap skript s několika prompty (soukromí, latence, náklady) pomocí deterministického režimu temperature=0, aby zachytili základní výstupy pro pozdější porovnání (benchmarking v sezení 3 a kontrast SLM vs LLM v sezení 4).
 
 ### Minimální sada promptů JSON (volitelné)
 ```json
@@ -490,9 +491,9 @@ Tým pro bezpečnost a shodu musí ověřit, zda lze citlivá data prototypu zpr
 ]
 ```
 
-Použijte tento seznam k vytvoření reprodukovatelné evaluační smyčky nebo k nasazení budoucího regresního testovacího nástroje.
+Použijte tento seznam k vytvoření reprodukovatelné evaluační smyčky nebo k přípravě budoucího testovacího rámce pro regresi.
 
 ---
 
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.

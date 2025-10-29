@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T21:07:34+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T23:45:36+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "lt"
 }
 -->
-# Greito starto vadovas dirbtuvėms
+# Greito pradžios vadovas dirbtuvėms
 
 ## Reikalavimai
 
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Sesija 01: Pagrindinis pokalbis
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Aplinkos kintamieji:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Sesija 02: RAG procesas
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Aplinkos kintamieji:**  
@@ -77,33 +77,34 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Sesija 02: RAG vertinimas (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**Pastaba**: Reikalingos papildomos priklausomybės, įdiegiamos per `requirements.txt`
+**Pastaba**: Reikalingos papildomos priklausomybės, įdiegtos per `requirements.txt`
 
-### Sesija 03: Veikimo testavimas
+### Sesija 03: Testavimas
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Aplinkos kintamieji:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Rezultatas**: JSON su vėlavimo, pralaidumo ir pirmojo ženklo metrikomis
+**Rezultatas**: JSON su vėlavimo, pralaidumo ir pirmojo ženklo metrika
 
 ### Sesija 04: Modelių palyginimas
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Aplinkos kintamieji:**  
@@ -113,11 +114,11 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### Sesija 05: Daugiaveiksmė orkestracija
+### Sesija 05: Daugiaveiksmė agentų orkestracija
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Aplinkos kintamieji:**  
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Sesija 06: Modelių maršrutizatorius
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **Testuoja maršrutizavimo logiką** su keliais ketinimais (kodas, santrauka, klasifikacija)
@@ -139,14 +140,14 @@ python models_router.py
 ### Sesija 06: Procesas
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Sudėtingas daugiapakopis procesas** su planavimu, vykdymu ir tobulinimu
 
 ## Skriptai
 
-### Eksportuoti veikimo ataskaitą
+### Eksportuoti testavimo ataskaitą
 
 ```bash
 cd Workshop/scripts
@@ -157,9 +158,9 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**Rezultatas**: Markdown lentelė + JSON metrikos
+**Rezultatas**: Markdown lentelė + JSON metrika
 
-### Markdown CLI šablonų tikrinimas
+### Tikrinti Markdown CLI šablonus
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -169,14 +170,14 @@ python lint_markdown_cli.py --verbose
 
 ## Testavimas
 
-### Greitieji testai
+### Greiti testai
 
 ```bash
 cd Workshop
 python -m tests.smoke
 ```
 
-**Testai**: Pagrindinių pavyzdžių funkcionalumo patikrinimas
+**Testai**: Pagrindinė pagrindinių pavyzdžių funkcionalumo patikra
 
 ## Trikčių šalinimas
 
@@ -229,20 +230,20 @@ foundry model run phi-4-mini
 ### Pagrindinė konfigūracija
 | Kintamasis | Numatytasis | Aprašymas |
 |------------|-------------|-----------|
-| `FOUNDRY_LOCAL_ALIAS` | Kinta | Naudojamas modelio alias |
-| `FOUNDRY_LOCAL_ENDPOINT` | Automatinis | Paslaugos galinio taško perrašymas |
-| `SHOW_USAGE` | `0` | Rodyti žetonų naudojimo statistiką |
-| `RETRY_ON_FAIL` | `1` | Įjungti pakartotinio bandymo logiką |
-| `RETRY_BACKOFF` | `1.0` | Pradinis pakartotinio bandymo vėlavimas (sekundėmis) |
+| `FOUNDRY_LOCAL_ALIAS` | Skiriasi | Naudojamas modelio alias |
+| `FOUNDRY_LOCAL_ENDPOINT` | Automatiškai | Pakeisti paslaugos galinį tašką |
+| `SHOW_USAGE` | `0` | Rodyti ženklo naudojimo statistiką |
+| `RETRY_ON_FAIL` | `1` | Įjungti pakartojimo logiką |
+| `RETRY_BACKOFF` | `1.0` | Pradinė pakartojimo vėlavimo trukmė (sekundėmis) |
 
 ### Sesijai specifiniai
 | Kintamasis | Numatytasis | Aprašymas |
 |------------|-------------|-----------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Įterpimo modelis |
-| `RAG_QUESTION` | Žr. pavyzdį | RAG testo klausimas |
-| `BENCH_MODELS` | Kinta | Modeliai, atskirti kableliais |
-| `BENCH_ROUNDS` | `3` | Veikimo testų iteracijos |
-| `BENCH_PROMPT` | Žr. pavyzdį | Veikimo testo užklausa |
+| `RAG_QUESTION` | Žr. pavyzdį | RAG testavimo klausimas |
+| `BENCH_MODELS` | Skiriasi | Modeliai, atskirti kableliais |
+| `BENCH_ROUNDS` | `3` | Testavimo iteracijos |
+| `BENCH_PROMPT` | Žr. pavyzdį | Testavimo užklausa |
 | `BENCH_STREAM` | `0` | Pirmojo ženklo vėlavimo matavimas |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Pagrindinis agento modelis |
 | `AGENT_MODEL_EDITOR` | Pagrindinis | Redaktoriaus agento modelis |
@@ -254,7 +255,7 @@ foundry model run phi-4-mini
 
 ### Kūrimas ir testavimas
 - **phi-4-mini** - Subalansuota kokybė ir greitis
-- **qwen2.5-0.5b** - Labai greitas klasifikavimui
+- **qwen2.5-0.5b** - Labai greitas klasifikacijai
 - **gemma-2-2b** - Gera kokybė, vidutinis greitis
 
 ### Gamybiniai scenarijai
@@ -265,18 +266,18 @@ foundry model run phi-4-mini
 ## SDK dokumentacija
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Pagalba
 
 1. Patikrinkite paslaugos būseną: `foundry service status`  
 2. Peržiūrėkite žurnalus: Patikrinkite Foundry Local paslaugos žurnalus  
 3. Peržiūrėkite SDK dokumentaciją: https://github.com/microsoft/Foundry-Local  
-4. Peržiūrėkite pavyzdinį kodą: Visi pavyzdžiai turi išsamius komentarus  
+4. Peržiūrėkite pavyzdinį kodą: Visi pavyzdžiai turi išsamius dokumentacijos aprašymus  
 
 ## Kiti žingsniai
 
-1. Atlikite visas dirbtuvių sesijas iš eilės  
+1. Užbaikite visas dirbtuvių sesijas iš eilės  
 2. Eksperimentuokite su skirtingais modeliais  
 3. Pritaikykite pavyzdžius savo poreikiams  
 4. Peržiūrėkite `SDK_MIGRATION_NOTES.md` dėl pažangių šablonų  
@@ -289,5 +290,5 @@ foundry model run phi-4-mini
 
 ---
 
-**Atsakomybės atsisakymas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, kilusius dėl šio vertimo naudojimo.
+**Atsakomybės apribojimas**:  
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingą interpretaciją, atsiradusią naudojant šį vertimą.
