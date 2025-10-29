@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T13:13:18+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:07:13+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "sv"
 }
@@ -22,7 +22,7 @@ Alla Python-filer i Workshop-mappen har uppdaterats för att följa de senaste m
 - **Förbättrad felhantering**: Bättre undantagshantering med detaljerade felmeddelanden
 - **Förbättrad caching**: Cache-nycklar inkluderar nu endpoint för scenarier med flera endpoints
 - **Exponentiell backoff**: Återförsökslogik använder nu exponentiell backoff för bättre tillförlitlighet
-- **Typannoteringar**: Lagt till omfattande typanvisningar för bättre stöd i IDE
+- **Typannoteringar**: Lagt till omfattande typmarkeringar för bättre stöd i IDE
 
 #### Nya funktioner:
 ```python
@@ -33,7 +33,7 @@ manager, client, model_id = get_client(alias, endpoint="http://localhost:8000")
 RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 ```
 
-### Exempeltillämpningar
+### Exempelapplikationer
 
 #### Session 01: Chat Bootstrap (`chat_bootstrap.py`)
 - Uppdaterad standardmodell från `phi-3.5-mini` till `phi-4-mini`
@@ -47,28 +47,28 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### Session 02: RAG Utvärdering (`rag_eval_ragas.py`)
 - Uppdaterade standardmodeller
-- Lagt till konfiguration för endpoint
+- Lagt till endpoint-konfiguration
 - Förbättrad felhantering
 
 #### Session 03: Benchmarking (`benchmark_oss_models.py`)
 - Uppdaterad standardmodellista för att inkludera `phi-4-mini`
 - Lagt till omfattande dokumentation om miljövariabler
 - Förbättrad funktionsdokumentation
-- Lagt till stöd för att åsidosätta endpoint
+- Lagt till stöd för att åsidosätta endpoint överallt
 
 #### Session 04: Modelljämförelse (`model_compare.py`)
 - Uppdaterad standard-LLM från `gpt-oss-20b` till `qwen2.5-7b`
-- Lagt till konfiguration för endpoint
+- Lagt till endpoint-konfiguration
 - Förbättrad dokumentation
 
 #### Session 05: Multi-Agent Orchestration (`agents_orchestrator.py`)
-- Lagt till typanvisningar (ändrat `str | None` till `Optional[str]`)
+- Lagt till typmarkeringar (ändrat `str | None` till `Optional[str]`)
 - Förbättrad dokumentation för Agent-klassen
 - Lagt till stöd för att åsidosätta endpoint
 - Förbättrat initialiseringsmönster
 
 #### Session 06: Modellrouter (`models_router.py`)
-- Lagt till konfiguration för endpoint
+- Lagt till endpoint-konfiguration
 - Förbättrad dokumentation för avsiktsdetektering
 - Förbättrad dokumentation för routinglogik
 
@@ -91,7 +91,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### Tester
 
-#### Smoke Tests (`smoke.py`)
+#### Röktester (`smoke.py`)
 - Lagt till stöd för att åsidosätta endpoint
 - Förbättrad dokumentation
 - Förbättrad dokumentation för testfall
@@ -136,7 +136,7 @@ client = OpenAI(
 )
 ```
 
-### 2. Hämtning av modellinformation
+### 2. Modellinformationshämtning
 ```python
 # Proper model ID resolution
 model_info = manager.get_model_info(alias)
@@ -183,7 +183,7 @@ for chunk in stream:
 
 Om du skapar nya exempel eller uppdaterar befintliga:
 
-1. **Använd hjälpfunktioner i `workshop_utils.py`**:
+1. **Använd hjälpfunktioner från `workshop_utils.py`**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
@@ -199,7 +199,7 @@ Om du skapar nya exempel eller uppdaterar befintliga:
    - SDK-referenslänk
    - Användningsexempel
 
-4. **Använd typanvisningar**:
+4. **Använd typmarkeringar**:
    ```python
    from typing import Optional, List, Dict, Any
    ```
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -249,8 +250,8 @@ Alla ändringar är bakåtkompatibla. Uppdateringarna handlar främst om att:
 - Uppdatera standardmodellnamn till aktuella rekommendationer
 
 ### Valfria förbättringar
-Du kan vilja uppdatera din kod för att använda:
-- `FOUNDRY_LOCAL_ENDPOINT` för explicit kontroll av endpoint
+Du kanske vill uppdatera din kod för att använda:
+- `FOUNDRY_LOCAL_ENDPOINT` för explicit endpoint-kontroll
 - `SHOW_USAGE=1` för synlighet av tokenanvändning
 - Uppdaterade standardmodeller (`phi-4-mini` istället för `phi-3.5-mini`)
 
@@ -294,7 +295,7 @@ När du lägger till nya exempel:
 3. Lägg till omfattande docstrings
 4. Inkludera SDK-referenslänkar
 5. Stöd för att åsidosätta endpoint
-6. Lägg till korrekta typanvisningar
+6. Lägg till korrekta typmarkeringar
 7. Inkludera användningsexempel i docstring
 
 ## Versionskompatibilitet
@@ -313,4 +314,4 @@ Dessa uppdateringar är kompatibla med:
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

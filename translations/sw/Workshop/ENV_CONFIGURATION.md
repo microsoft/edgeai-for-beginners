@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T21:10:47+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:49:06+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "sw"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Muhtasari
 
-Mfano wa Warsha hutumia vigezo vya mazingira kwa usanidi, vilivyowekwa katika faili `.env` kwenye mzizi wa hifadhi. Hii inaruhusu ubinafsishaji rahisi bila kubadilisha msimbo.
+Mifano ya Warsha hutumia vigezo vya mazingira kwa usanidi, vilivyowekwa katikati kwenye faili `.env` katika mzizi wa hifadhi. Hii inaruhusu ubinafsishaji rahisi bila kubadilisha msimbo.
 
 ## Kuanza Haraka
 
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Kwa Script za Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -60,14 +60,14 @@ python chat_bootstrap.py
 
 | Kigezo | Chaguo-msingi | Maelezo |
 |--------|---------------|---------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Mfano wa chaguo-msingi kwa warsha |
-| `FOUNDRY_LOCAL_ENDPOINT` | (tupu) | Badilisha mwisho wa huduma |
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Mfano wa chaguo-msingi kwa mifano |
+| `FOUNDRY_LOCAL_ENDPOINT` | (tupu) | Badilisha huduma ya mwisho |
 | `PYTHONPATH` | Njia za Warsha | Njia ya utafutaji wa moduli za Python |
 
 **Wakati wa kuweka FOUNDRY_LOCAL_ENDPOINT:**
 - Kesi ya mbali ya Foundry Local
 - Usanidi wa bandari maalum
-- Tofauti ya maendeleo/uzalishaji
+- Utengano wa maendeleo/uzalishaji
 
 **Mfano:**
 ```bash
@@ -83,15 +83,15 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Kikao 02: RAG Pipeline
 | Kigezo | Chaguo-msingi | Kusudi |
 |--------|---------------|--------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Mfano wa kuweka alama |
-| `RAG_QUESTION` | Imewekwa tayari | Swali la majaribio |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Mfano wa kuweka |
+| `RAG_QUESTION` | Imewekwa awali | Swali la majaribio |
 
 #### Kikao 03: Upimaji
 | Kigezo | Chaguo-msingi | Kusudi |
 |--------|---------------|--------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Mifano ya kupima |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Mifano ya kupima |
 | `BENCH_ROUNDS` | `3` | Marudio kwa kila mfano |
-| `BENCH_PROMPT` | Imewekwa tayari | Maelekezo ya majaribio |
+| `BENCH_PROMPT` | Imewekwa awali | Maelekezo ya majaribio |
 | `BENCH_STREAM` | `0` | Pima ucheleweshaji wa tokeni ya kwanza |
 
 #### Kikao 04: Ulinganisho wa Mfano
@@ -99,15 +99,15 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |--------|---------------|--------|
 | `SLM_ALIAS` | `phi-4-mini` | Mfano mdogo wa lugha |
 | `LLM_ALIAS` | `qwen2.5-7b` | Mfano mkubwa wa lugha |
-| `COMPARE_PROMPT` | Imewekwa tayari | Maelekezo ya kulinganisha |
+| `COMPARE_PROMPT` | Imewekwa awali | Maelekezo ya kulinganisha |
 | `COMPARE_RETRIES` | `2` | Jaribio la kurudia |
 
 #### Kikao 05: Uratibu wa Wakala Wengi
 | Kigezo | Chaguo-msingi | Kusudi |
 |--------|---------------|--------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Mfano wa wakala mtafiti |
-| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Mfano wa wakala mhariri |
-| `AGENT_QUESTION` | Imewekwa tayari | Swali la majaribio |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Mfano wa wakala wa utafiti |
+| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Mfano wa wakala wa mhariri |
+| `AGENT_QUESTION` | Imewekwa awali | Swali la majaribio |
 
 ### Usanidi wa Uaminifu
 
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Usanidi wa Upimaji
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -159,22 +159,22 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ## Mifano Inayopendekezwa
 
-### Kwa Matumizi Fulani
+### Kwa Kesi ya Matumizi
 
 **Matumizi ya Kawaida:**
-- `phi-4-mini` - Ubora na kasi ya wastani
+- `phi-4-mini` - Ubora na kasi iliyosawazishwa
 
 **Majibu ya Haraka:**
 - `qwen2.5-0.5b` - Haraka sana, nzuri kwa uainishaji
 - `phi-4-mini` - Haraka na ubora mzuri
 
 **Ubora wa Juu:**
-- `qwen2.5-7b` - Ubora bora, matumizi makubwa ya rasilimali
-- `phi-4-mini` - Ubora mzuri, rasilimali ndogo
+- `qwen2.5-7b` - Ubora bora, matumizi ya rasilimali zaidi
+- `phi-4-mini` - Ubora mzuri, rasilimali za chini
 
-**Uundaji wa Msimbo:**
-- `deepseek-coder-1.3b` - Maalum kwa msimbo
-- `phi-4-mini` - Uundaji wa msimbo wa matumizi ya jumla
+**Uzalishaji wa Msimbo:**
+- `deepseek-coder-1.3b` - Imebobea kwa msimbo
+- `phi-4-mini` - Kusudi la jumla la msimbo
 
 ### Kwa Upatikanaji wa Rasilimali
 
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## Usanidi wa Juu
 
-### Mwisho Maalum
+### Huduma za Mwisho Maalum
 
 ```bash
 # Development environment
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### Joto & Sampuli (Badilisha katika Msimbo)
+### Joto & Sampuli (Badilisha kwenye Msimbo)
 
 ```python
 # In your scripts/notebooks
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### Usanidi wa Mseto wa Azure OpenAI
+### Usanidi Mseto wa Azure OpenAI
 
 ```bash
 # Use local for development
@@ -262,7 +262,7 @@ pwd  # Should be in Workshop or repository root
 ### Masuala ya Muunganisho wa Huduma
 
 **Dalili:**
-- Hitilafu za "Muunganisho umekataliwa"
+- Hitilafu za "Connection refused"
 - "Huduma haipatikani"
 - Hitilafu za muda wa kuisha
 
@@ -285,7 +285,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ### Mfano Haupatikani
 
 **Dalili:**
-- Hitilafu za "Mfano haupatikani"
+- Hitilafu za "Model not found"
 - "Alias haijatambulika"
 
 **Suluhisho:**
@@ -303,23 +303,20 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Hitilafu za Uingizaji
 
 **Dalili:**
-- Hitilafu za "Moduli haipatikaniki"
-- "Haiwezi kuingiza workshop_utils"
+- Hitilafu za "Module not found"
 
 **Suluhisho:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
-## Upimaji wa Usanidi
+## Kupima Usanidi
 
 ### Hakikisha Upakiaji wa Mazingira
 
@@ -377,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Tumia Faili Tofauti za .env
+### 2. Tumia Faili za .env Zilizotenganishwa
 
 ```bash
 .env              # Default configuration
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya kiasili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.

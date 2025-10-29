@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T21:42:32+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:58:45+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "hu"
 }
@@ -19,10 +19,10 @@ A Workshop mappában található összes Python fájl frissítve lett, hogy köv
 
 #### Fejlesztett funkciók:
 - **Végpont felülírás támogatása**: Hozzáadva a `FOUNDRY_LOCAL_ENDPOINT` környezeti változó támogatása
-- **Jobb hibakezelés**: Részletesebb hibaüzenetekkel ellátott kivételkezelés
-- **Fejlesztett gyorsítótárazás**: A gyorsítótár kulcsai most már tartalmazzák a végpontot több végpontú forgatókönyvekhez
-- **Exponenciális visszaállás**: Az újrapróbálkozási logika exponenciális visszaállást használ a megbízhatóság érdekében
-- **Típusannotációk**: Átfogó típusjelölések hozzáadva a jobb IDE támogatás érdekében
+- **Fejlettebb hibakezelés**: Jobb kivételkezelés részletes hibaüzenetekkel
+- **Fejlesztett gyorsítótárazás**: A gyorsítótár kulcsai mostantól tartalmazzák a végpontot több végpontú forgatókönyvekhez
+- **Exponenciális visszalépés**: Az újrapróbálkozási logika mostantól exponenciális visszalépést használ a megbízhatóság érdekében
+- **Típus annotációk**: Átfogó típusjelölések hozzáadva a jobb IDE támogatás érdekében
 
 #### Új képességek:
 ```python
@@ -37,24 +37,24 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### 01. szekció: Chat Bootstrap (`chat_bootstrap.py`)
 - Az alapértelmezett modell frissítve: `phi-3.5-mini` helyett `phi-4-mini`
-- Végpont felülírás támogatása hozzáadva
+- Végpont felülírás támogatás hozzáadva
 - Dokumentáció bővítése SDK hivatkozásokkal
 
 #### 02. szekció: RAG Pipeline (`rag_pipeline.py`)
 - Frissítve, hogy alapértelmezés szerint a `phi-4-mini` modellt használja
-- Végpont felülírás támogatása hozzáadva
-- Dokumentáció bővítése környezeti változó részletekkel
+- Végpont felülírás támogatás hozzáadva
+- Dokumentáció bővítése a környezeti változók részleteivel
 
 #### 02. szekció: RAG Értékelés (`rag_eval_ragas.py`)
 - Modell alapértelmezések frissítése
 - Végpont konfiguráció hozzáadva
-- Jobb hibakezelés
+- Fejlettebb hibakezelés
 
-#### 03. szekció: Benchmarking (`benchmark_oss_models.py`)
+#### 03. szekció: Teljesítménytesztelés (`benchmark_oss_models.py`)
 - Az alapértelmezett modell lista frissítése, beleértve a `phi-4-mini` modellt
 - Átfogó környezeti változó dokumentáció hozzáadva
 - Funkció dokumentáció javítása
-- Végpont felülírás támogatása mindenhol
+- Végpont felülírás támogatás hozzáadva
 
 #### 04. szekció: Modell összehasonlítás (`model_compare.py`)
 - Az alapértelmezett LLM frissítése: `gpt-oss-20b` helyett `qwen2.5-7b`
@@ -62,9 +62,9 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Dokumentáció bővítése
 
 #### 05. szekció: Többügynökös Orkesztráció (`agents_orchestrator.py`)
-- Típusjelölések hozzáadása (a `str | None` helyett `Optional[str]`)
+- Típusjelölések hozzáadása (a `str | None` módosítva `Optional[str]`-re)
 - Az Agent osztály dokumentációjának bővítése
-- Végpont felülírás támogatása hozzáadva
+- Végpont felülírás támogatás hozzáadva
 - Javított inicializálási minta
 
 #### 06. szekció: Modell Router (`models_router.py`)
@@ -75,52 +75,52 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### 06. szekció: Pipeline (`models_pipeline.py`)
 - Átfogó funkció dokumentáció hozzáadva
 - Lépésről lépésre dokumentáció javítása
-- Jobb hibakezelés
+- Fejlettebb hibakezelés
 
 ### Szkriptek
 
-#### Benchmark Export (`export_benchmark_markdown.py`)
-- Végpont felülírás támogatása hozzáadva
+#### Teljesítmény Exportálás (`export_benchmark_markdown.py`)
+- Végpont felülírás támogatás hozzáadva
 - Alapértelmezett modellek frissítése
 - Funkció dokumentáció bővítése
-- Jobb hibakezelés
+- Hibakezelés javítása
 
 #### CLI Linter (`lint_markdown_cli.py`)
-- SDK hivatkozási linkek hozzáadása
+- SDK hivatkozások hozzáadása
 - Használati dokumentáció javítása
 
 ### Tesztek
 
-#### Smoke Tesztek (`smoke.py`)
-- Végpont felülírás támogatása hozzáadva
+#### Gyors tesztek (`smoke.py`)
+- Végpont felülírás támogatás hozzáadva
 - Dokumentáció bővítése
 - Tesztesetek dokumentációjának javítása
 - Jobb hiba jelentés
 
 ## Környezeti változók
 
-Minden minta támogatja az alábbi környezeti változókat:
+Minden példa mostantól támogatja ezeket a környezeti változókat:
 
 ### Alapvető konfiguráció
-- `FOUNDRY_LOCAL_ALIAS` - Használandó modell alias (minta szerint változik)
-- `FOUNDRY_LOCAL_ENDPOINT` - Szolgáltatás végpontjának felülírása (opcionális)
-- `SHOW_USAGE` - Token használati statisztikák megjelenítése (alapértelmezett: "0")
-- `RETRY_ON_FAIL` - Újrapróbálkozási logika engedélyezése (alapértelmezett: "1")
-- `RETRY_BACKOFF` - Kezdeti újrapróbálkozási késleltetés másodpercben (alapértelmezett: "1.0")
+- `FOUNDRY_LOCAL_ALIAS` - Használandó modell alias (alapértelmezés példánként változik)
+- `FOUNDRY_LOCAL_ENDPOINT` - Szolgáltatási végpont felülírása (opcionális)
+- `SHOW_USAGE` - Tokenhasználati statisztikák megjelenítése (alapértelmezés: "0")
+- `RETRY_ON_FAIL` - Újrapróbálkozási logika engedélyezése (alapértelmezés: "1")
+- `RETRY_BACKOFF` - Kezdeti újrapróbálkozási késleltetés másodpercben (alapértelmezés: "1.0")
 
-### Minta-specifikus
-- `EMBED_MODEL` - Beágyazási modell RAG mintákhoz
-- `BENCH_MODELS` - Benchmarkinghoz használt modellek vesszővel elválasztva
-- `BENCH_ROUNDS` - Benchmark körök száma
-- `BENCH_PROMPT` - Teszt prompt benchmarkokhoz
+### Példákhoz specifikus
+- `EMBED_MODEL` - Beágyazási modell RAG példákhoz
+- `BENCH_MODELS` - Teljesítményteszteléshez használt modellek vesszővel elválasztva
+- `BENCH_ROUNDS` - Teljesítménytesztelési körök száma
+- `BENCH_PROMPT` - Tesztelő kérdés a teljesítménytesztekhez
 - `BENCH_STREAM` - Első token késleltetés mérése
-- `RAG_QUESTION` - Teszt kérdés RAG mintákhoz
+- `RAG_QUESTION` - Tesztkérdés RAG példákhoz
 - `AGENT_MODEL_PRIMARY` - Elsődleges ügynök modell
 - `AGENT_MODEL_EDITOR` - Szerkesztő ügynök modell
 - `SLM_ALIAS` - Kis nyelvi modell alias
 - `LLM_ALIAS` - Nagy nyelvi modell alias
 
-## SDK Legjobb Gyakorlatok Megvalósítva
+## Implementált SDK legjobb gyakorlatok
 
 ### 1. Helyes kliens inicializálás
 ```python
@@ -136,7 +136,7 @@ client = OpenAI(
 )
 ```
 
-### 2. Modell információ lekérése
+### 2. Modell információk lekérése
 ```python
 # Proper model ID resolution
 model_info = manager.get_model_info(alias)
@@ -154,7 +154,7 @@ except Exception as e:
     raise RuntimeError(f"Initialization failed: {e}") from e
 ```
 
-### 4. Újrapróbálkozási logika exponenciális visszaállással
+### 4. Újrapróbálkozási logika exponenciális visszalépéssel
 ```python
 delay = initial_delay
 for attempt in range(max_retries):
@@ -179,11 +179,11 @@ for chunk in stream:
         # Process chunk
 ```
 
-## Migrációs útmutató egyedi mintákhoz
+## Migrációs útmutató egyedi példákhoz
 
-Ha új mintákat hoz létre vagy meglévőket frissít:
+Ha új példákat hoz létre vagy meglévőket frissít:
 
-1. **Használja a `workshop_utils.py` segédfunkcióit**:
+1. **Használja a `workshop_utils.py` segédeszközeit**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
@@ -215,7 +215,7 @@ Ha új mintákat hoz létre vagy meglévőket frissít:
 
 ## Tesztelés
 
-Minden minta tesztelhető az alábbiakkal:
+Minden példa tesztelhető a következővel:
 
 ```bash
 # Set environment variables
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -237,21 +238,21 @@ python -m Workshop.tests.smoke
 
 - **Fő Repository**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API Dokumentáció**: Az SDK repository-ban található legfrissebb API dokumentáció
+- **API Dokumentáció**: Az SDK repository-ban található legfrissebb API dokumentációt tekintse meg
 
-## Kompatibilitást Megszakító Változások
+## Kompatibilitási problémák
 
 ### Nem várható
-Minden változás visszafelé kompatibilis. A frissítések elsősorban:
+Minden változtatás visszafelé kompatibilis. A frissítések elsősorban:
 - Új opcionális funkciókat adnak hozzá (végpont felülírás)
 - Javítják a hibakezelést
 - Bővítik a dokumentációt
-- Frissítik az alapértelmezett modell neveket az aktuális ajánlások szerint
+- Frissítik az alapértelmezett modellek neveit az aktuális ajánlások szerint
 
 ### Opcionális fejlesztések
 Érdemes lehet frissíteni a kódot az alábbiak használatára:
-- `FOUNDRY_LOCAL_ENDPOINT` az explicit végpont vezérléshez
-- `SHOW_USAGE=1` a token használat láthatóságához
+- `FOUNDRY_LOCAL_ENDPOINT` az explicit végpontvezérléshez
+- `SHOW_USAGE=1` a tokenhasználat láthatóságához
 - Frissített modell alapértelmezések (`phi-4-mini` a `phi-3.5-mini` helyett)
 
 ## Gyakori problémák és megoldások
@@ -281,25 +282,25 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## Következő lépések
 
-1. **Frissítse a Module08 mintákat**: Alkalmazzon hasonló mintákat a Module08/samples mappában
-2. **Adjon hozzá integrációs teszteket**: Hozzon létre átfogó tesztcsomagot
-3. **Teljesítmény benchmarking**: Hasonlítsa össze a frissítés előtti és utáni teljesítményt
-4. **Dokumentáció frissítések**: Frissítse a fő README-t az új mintákkal
+1. **Frissítse a Module08 példákat**: Alkalmazza a hasonló mintákat a Module08/samples mappában
+2. **Adjon hozzá integrációs teszteket**: Hozzon létre átfogó tesztkészletet
+3. **Teljesítménytesztelés**: Hasonlítsa össze a frissítés előtti és utáni teljesítményt
+4. **Dokumentáció frissítések**: Frissítse a fő README fájlt az új mintákkal
 
 ## Hozzájárulási irányelvek
 
-Új minták hozzáadásakor:
-1. Használja a `workshop_utils.py` segédfunkcióit a konzisztencia érdekében
-2. Kövesse a meglévő minták mintáját
+Új példák hozzáadásakor:
+1. Használja a `workshop_utils.py`-t a konzisztencia érdekében
+2. Kövesse a meglévő példák mintáját
 3. Adjon hozzá átfogó docstringeket
 4. Tartalmazzon SDK hivatkozási linkeket
 5. Támogassa a végpont felülírást
 6. Adjon hozzá megfelelő típusjelöléseket
 7. Tartalmazzon használati példákat a docstringben
 
-## Verzió kompatibilitás
+## Verziókompatibilitás
 
-Ezek a frissítések kompatibilisek az alábbiakkal:
+Ezek a frissítések kompatibilisek:
 - `foundry-local-sdk` (legújabb)
 - `openai>=1.30.0`
 - Python 3.8+
@@ -308,9 +309,9 @@ Ezek a frissítések kompatibilisek az alábbiakkal:
 
 **Utolsó frissítés**: 2025-01-08  
 **Karbantartó**: EdgeAI Workshop Team  
-**SDK Verzió**: Foundry Local SDK (legújabb 0.7.117+67073234e7)
+**SDK verzió**: Foundry Local SDK (legújabb 0.7.117+67073234e7)
 
 ---
 
-**Felelősségkizárás**:  
-Ezt a dokumentumot az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítószolgáltatás segítségével fordították le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Felelősség kizárása**:  
+Ezt a dokumentumot az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével fordították le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

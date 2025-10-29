@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T09:18:29+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T21:05:34+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "bn"
 }
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### সেশন ০১: বেসিক চ্যাট
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **এনভায়রনমেন্ট ভেরিয়েবল:**
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### সেশন ০২: RAG পাইপলাইন
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **এনভায়রনমেন্ট ভেরিয়েবল:**
@@ -77,21 +77,22 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### সেশন ০২: RAG ইভ্যালুয়েশন (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**নোট**: অতিরিক্ত ডিপেনডেন্সি `requirements.txt` এর মাধ্যমে ইনস্টল করতে হবে
+**নোট**: `requirements.txt` এর মাধ্যমে অতিরিক্ত ডিপেনডেন্সি ইনস্টল প্রয়োজন
 
 ### সেশন ০৩: বেঞ্চমার্কিং
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **এনভায়রনমেন্ট ভেরিয়েবল:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### সেশন ০৪: মডেল তুলনা
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **এনভায়রনমেন্ট ভেরিয়েবল:**
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### সেশন ০৫: মাল্টি-এজেন্ট অর্কেস্ট্রেশন
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **এনভায়রনমেন্ট ভেরিয়েবল:**
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### সেশন ০৬: মডেল রাউটার
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **রাউটিং লজিক পরীক্ষা করুন** বিভিন্ন ইন্টেন্ট (কোড, সারাংশ, শ্রেণীবিভাগ) সহ
@@ -139,10 +140,10 @@ python models_router.py
 ### সেশন ০৬: পাইপলাইন
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**জটিল বহু-ধাপের পাইপলাইন** পরিকল্পনা, কার্যকর এবং পরিমার্জন সহ
+**জটিল মাল্টি-স্টেপ পাইপলাইন** পরিকল্পনা, কার্যকর এবং পরিমার্জন সহ
 
 ## স্ক্রিপ্ট
 
@@ -165,7 +166,7 @@ python export_benchmark_markdown.py \
 python lint_markdown_cli.py --verbose
 ```
 
-**উদ্দেশ্য**: ডকুমেন্টেশনে পুরনো CLI প্যাটার্ন সনাক্ত করা
+**উদ্দেশ্য**: ডকুমেন্টেশনে পুরনো CLI প্যাটার্ন সনাক্ত করুন
 
 ## টেস্টিং
 
@@ -180,7 +181,7 @@ python -m tests.smoke
 
 ## সমস্যা সমাধান
 
-### সার্ভিস চালু নয়
+### সার্ভিস চালু নেই
 
 ```bash
 # Check status
@@ -228,7 +229,7 @@ foundry model run phi-4-mini
 
 ### কোর কনফিগারেশন
 | ভেরিয়েবল | ডিফল্ট | বিবরণ |
-|-----------|--------|--------|
+|-----------|--------|-------|
 | `FOUNDRY_LOCAL_ALIAS` | বিভিন্ন | ব্যবহৃত মডেল এলিয়াস |
 | `FOUNDRY_LOCAL_ENDPOINT` | অটো | সার্ভিস এন্ডপয়েন্ট ওভাররাইড করুন |
 | `SHOW_USAGE` | `0` | টোকেন ব্যবহারের পরিসংখ্যান দেখান |
@@ -237,7 +238,7 @@ foundry model run phi-4-mini
 
 ### সেশন-নির্দিষ্ট
 | ভেরিয়েবল | ডিফল্ট | বিবরণ |
-|-----------|--------|--------|
+|-----------|--------|-------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | এমবেডিং মডেল |
 | `RAG_QUESTION` | স্যাম্পল দেখুন | RAG টেস্ট প্রশ্ন |
 | `BENCH_MODELS` | বিভিন্ন | কমা-সেপারেটেড মডেল |
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **অস্বীকৃতি**:  
-এই নথিটি AI অনুবাদ পরিষেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনুবাদ করা হয়েছে। আমরা যথাসাধ্য সঠিকতা নিশ্চিত করার চেষ্টা করি, তবে অনুগ্রহ করে মনে রাখবেন যে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল ভাষায় থাকা নথিটিকে প্রামাণিক উৎস হিসেবে বিবেচনা করা উচিত। গুরুত্বপূর্ণ তথ্যের জন্য, পেশাদার মানব অনুবাদ সুপারিশ করা হয়। এই অনুবাদ ব্যবহারের ফলে কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যা হলে আমরা দায়বদ্ধ থাকব না।
+এই নথিটি AI অনুবাদ পরিষেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনুবাদ করা হয়েছে। আমরা যথাসাধ্য সঠিকতার জন্য চেষ্টা করি, তবে অনুগ্রহ করে মনে রাখবেন যে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। নথিটির মূল ভাষায় থাকা আসল সংস্করণকে প্রামাণিক উৎস হিসেবে বিবেচনা করা উচিত। গুরুত্বপূর্ণ তথ্যের জন্য, পেশাদার মানব অনুবাদ সুপারিশ করা হয়। এই অনুবাদ ব্যবহারের ফলে কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী থাকব না।

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:16:34+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T20:57:18+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "ko"
 }
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (미리보기 / 지원되는 경우)**
 
-네이티브 macOS 패키지가 제공되는 경우 (최신 공식 문서를 확인):
+네이티브 macOS 패키지가 제공되는 경우 (최신 공식 문서를 확인하세요):
 
 ```bash
 # Homebrew (if/when available)
@@ -95,7 +95,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-pip 업그레이드 및 핵심 종속성 설치:
+pip을 업그레이드하고 핵심 종속성을 설치:
 ```bash
 python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
@@ -202,7 +202,7 @@ foundry cache list
 
 #### 단계 4.1: 기본 채팅 애플리케이션 생성
 
-`samples/01-foundry-quickstart/chat_quickstart.py` 생성 (가능하면 매니저를 사용하도록 업데이트):
+`samples/01-foundry-quickstart/chat_quickstart.py` 생성 (매니저를 사용할 수 있는 경우 업데이트됨):
 
 ```python
 #!/usr/bin/env python3
@@ -404,28 +404,29 @@ foundry config set model.preload false
 ### 3. 성능 모니터링
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
-### 선택적 개선
+### 선택적 개선 사항
 
-| 개선 | 내용 | 방법 |
-|------|------|------|
+| 개선 사항 | 내용 | 방법 |
+|-----------|------|-----|
 | 공유 유틸리티 | 중복 클라이언트/부트스트랩 로직 제거 | `Workshop/samples/workshop_utils.py` 사용 (`get_client`, `chat_once`) |
 | 토큰 사용 가시성 | 비용/효율성 사고를 조기에 교육 | `SHOW_USAGE=1` 설정하여 프롬프트/완료/총 토큰 출력 |
 | 결정론적 비교 | 안정적인 벤치마킹 및 회귀 검사 | `temperature=0`, `top_p=1`, 일관된 프롬프트 텍스트 사용 |
 | 첫 번째 토큰 지연 | 인지된 응답성 메트릭 | 스트리밍을 사용하여 벤치마크 스크립트 수정 (`BENCH_STREAM=1`) |
 | 일시적 오류 재시도 | 초기 시작 시 복원력 있는 데모 | `RETRY_ON_FAIL=1` (기본값) 및 `RETRY_BACKOFF` 조정 |
-| 스모크 테스트 | 주요 흐름에 대한 빠른 점검 | 워크숍 전에 `python Workshop/tests/smoke.py` 실행 |
-| 모델 별칭 프로필 | 기기 간 모델 세트 빠르게 전환 | `.env` 유지 (`FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS`) |
+| 스모크 테스트 | 주요 흐름에 대한 빠른 검증 | 워크숍 전에 `python Workshop/tests/smoke.py` 실행 |
+| 모델 별칭 프로필 | 기기 간 모델 세트 빠르게 전환 | `.env`에 `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` 유지 |
 | 캐싱 효율성 | 다중 샘플 실행에서 반복된 웜업 방지 | 유틸리티 캐시 매니저; 스크립트/노트북 간 재사용 |
 | 첫 실행 웜업 | p95 지연 스파이크 감소 | `FoundryLocalManager` 생성 후 작은 프롬프트 실행 |
 
@@ -444,8 +445,8 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 
 이 세션을 완료한 후:
 
-1. **세션 2 탐색**: Azure AI Foundry RAG를 사용하여 AI 솔루션 구축
-2. **다양한 모델 시도**: Qwen, DeepSeek 및 기타 모델 패밀리 실험
+1. **세션 2 탐색**: Azure AI Foundry RAG로 AI 솔루션 구축
+2. **다양한 모델 시도**: Qwen, DeepSeek 및 기타 모델군 실험
 3. **성능 최적화**: 특정 하드웨어에 맞게 설정 조정
 4. **맞춤형 애플리케이션 구축**: Foundry Local SDK를 사용하여 자체 프로젝트 개발
 
@@ -467,7 +468,7 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 
 ---
 
-**세션 시간**: 30분 실습 + 15분 Q&A  
+**세션 소요 시간**: 30분 실습 + 15분 Q&A  
 **난이도**: 초급  
 **사전 요구 사항**: Windows 11, Python 3.10+, 관리자 권한
 
@@ -475,11 +476,11 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 
 | 워크숍 스크립트 / 노트북 | 시나리오 | 목표 | 예제 입력 | 필요한 데이터셋 |
 |--------------------------|----------|------|----------|----------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | 내부 IT 팀이 기기 내 추론을 평가하여 개인정보 보호 평가 포털을 위한 테스트 | 로컬 SLM이 표준 프롬프트에서 초단위 응답을 제공하는지 증명 | "로컬 추론의 두 가지 이점을 나열하세요." | 없음 (단일 프롬프트) |
-| 빠른 시작 수정 코드 블록 | 기존 OpenAI 스크립트를 Foundry Local로 마이그레이션하는 개발자 | 드롭인 호환성 증명 | "로컬 추론의 두 가지 이점을 제공하세요." | 인라인 프롬프트만 |
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | 내부 IT 팀이 기기 내 추론을 평가하여 개인정보 보호 포털을 검토 | 로컬 SLM이 표준 프롬프트에서 초단위 응답을 제공하는지 증명 | "로컬 추론의 두 가지 이점을 나열하세요." | 없음 (단일 프롬프트) |
+| 빠른 시작 수정 코드 블록 | 기존 OpenAI 스크립트를 Foundry Local로 마이그레이션하는 개발자 | 드롭인 호환성 보여주기 | "로컬 추론의 두 가지 이점을 나열하세요." | 인라인 프롬프트만 |
 
 ### 시나리오 내러티브
-보안 및 컴플라이언스 팀은 민감한 프로토타입 데이터를 로컬에서 처리할 수 있는지 검증해야 합니다. 이들은 부트스트랩 스크립트를 여러 프롬프트(개인정보 보호, 지연 시간, 비용)로 실행하며 결정론적 temperature=0 모드를 사용하여 나중에 비교를 위한 기본 출력을 캡처합니다 (세션 3 벤치마킹 및 세션 4 SLM vs LLM 대비).
+보안 및 컴플라이언스 팀은 민감한 프로토타입 데이터를 로컬에서 처리할 수 있는지 검증해야 합니다. 이들은 부트스트랩 스크립트를 여러 프롬프트(개인정보 보호, 지연 시간, 비용)로 실행하며 결정론적 temperature=0 모드를 사용하여 나중에 비교할 기준 출력을 캡처합니다 (세션 3 벤치마킹 및 세션 4 SLM vs LLM 대비).
 
 ### 최소 프롬프트 세트 JSON (선택 사항)
 ```json
@@ -490,9 +491,9 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 ]
 ```
 
-이 목록을 사용하여 재현 가능한 평가 루프를 생성하거나 향후 회귀 테스트 하네스를 시드하세요.
+이 목록을 사용하여 재현 가능한 평가 루프를 생성하거나 향후 회귀 테스트 하네스를 시드할 수 있습니다.
 
 ---
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서를 해당 언어로 작성된 권위 있는 자료로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서를 해당 언어로 작성된 상태에서 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.

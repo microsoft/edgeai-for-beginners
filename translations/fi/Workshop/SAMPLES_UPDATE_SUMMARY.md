@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T14:44:21+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:20:45+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "fi"
 }
@@ -11,34 +11,34 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Yleiskatsaus
 
-Kaikki Python-näytteet `Workshop/samples`-hakemistossa on päivitetty noudattamaan Foundry Local SDK:n parhaita käytäntöjä ja varmistamaan yhdenmukaisuus työpajan sisällä.
+Kaikki Python-näytteet `Workshop/samples` -hakemistossa on päivitetty noudattamaan Foundry Local SDK:n parhaita käytäntöjä ja varmistamaan johdonmukaisuus koko työpajassa.
 
 **Päivämäärä**: 8. lokakuuta 2025  
 **Laajuus**: 9 Python-tiedostoa 6 työpajasessiossa  
-**Pääpaino**: Virheenkäsittely, dokumentaatio, SDK-mallit, käyttäjäkokemus
+**Pääpainopiste**: Virheenkäsittely, dokumentaatio, SDK-mallit, käyttäjäkokemus
 
 ---
 
 ## Päivitetyt tiedostot
 
 ### Sessio 01: Aloittaminen
-- ✅ `chat_bootstrap.py` - Perusesimerkkejä chatista ja suoratoistosta
+- ✅ `chat_bootstrap.py` - Peruschat- ja suoratoistoesimerkit
 
 ### Sessio 02: RAG-ratkaisut
 - ✅ `rag_pipeline.py` - RAG-toteutus upotuksilla
 - ✅ `rag_eval_ragas.py` - RAG-arviointi RAGAS-metriikoilla
 
 ### Sessio 03: Avoimen lähdekoodin mallit
-- ✅ `benchmark_oss_models.py` - Usean mallin vertailu
+- ✅ `benchmark_oss_models.py` - Monimallivertailu
 
 ### Sessio 04: Huippumallit
-- ✅ `model_compare.py` - SLM:n ja LLM:n vertailu
+- ✅ `model_compare.py` - SLM vs LLM -vertailu
 
 ### Sessio 05: AI-pohjaiset agentit
 - ✅ `agents_orchestrator.py` - Moniagenttien koordinointi
 
 ### Sessio 06: Mallit työkaluina
-- ✅ `models_router.py` - Mallien reititys tarkoituksen mukaan
+- ✅ `models_router.py` - Aikomuspohjainen mallien reititys
 - ✅ `models_pipeline.py` - Monivaiheinen reititetty putkisto
 
 ### Tukirakenne
@@ -54,7 +54,7 @@ Kaikki Python-näytteet `Workshop/samples`-hakemistossa on päivitetty noudattam
 ```python
 manager, client, model_id = get_client(alias)
 ```
-  
+
 **Jälkeen:**
 ```python
 try:
@@ -64,11 +64,11 @@ except Exception as e:
     print("[INFO] Ensure Foundry Local is running: foundry service status")
     sys.exit(1)
 ```
-  
+
 **Hyödyt:**
 - Sulava virheenkäsittely selkeillä virheilmoituksilla
 - Toimintakelpoiset vianetsintävinkit
-- Oikeat poistumiskoodit skriptikäyttöön
+- Asianmukaiset poistumiskoodit skriptauksessa
 
 ### 2. Parempi tuontien hallinta
 
@@ -76,7 +76,7 @@ except Exception as e:
 ```python
 from sentence_transformers import SentenceTransformer
 ```
-  
+
 **Jälkeen:**
 ```python
 try:
@@ -85,10 +85,10 @@ except ImportError:
     print("[ERROR] sentence-transformers is required. Install with: pip install sentence-transformers")
     sys.exit(1)
 ```
-  
+
 **Hyödyt:**
-- Selkeät ohjeet puuttuvista riippuvuuksista
-- Estää vaikeaselkoiset tuontivirheet
+- Selkeät ohjeet, kun riippuvuudet puuttuvat
+- Estää kryptiset tuontivirheet
 - Käyttäjäystävälliset asennusohjeet
 
 ### 3. Kattava dokumentaatio
@@ -98,7 +98,7 @@ except ImportError:
 - SDK-viitelinkit
 - Käyttöesimerkit
 - Yksityiskohtainen funktio-/parametridokumentaatio
-- Tyyppivihjeet parempaa IDE-tukea varten
+- Tyyppivihjeet paremman IDE-tuen takaamiseksi
 
 **Esimerkki:**
 ```python
@@ -115,7 +115,6 @@ def pipeline(task: str) -> Dict[str, Any]:
         Exception: If any pipeline stage fails
     """
 ```
-  
 
 ### 4. Parannettu käyttäjäpalaute
 
@@ -125,29 +124,28 @@ print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
 print(f"[INFO] Loaded model: {alias} -> {model_id}")
 ```
-  
+
 **Edistymisen indikaattorit:**
 ```python
 print(f"[INFO] Benchmarking {alias}...")
 print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
 print(f"[INFO] Completed {alias}\n")
 ```
-  
-**Jäsennelty tulostus:**
+
+**Rakenteellinen tulostus:**
 ```python
 print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
-  
 
 ### 5. Vahva vertailu
 
 **Sessio 03 parannukset:**
-- Mallikohtainen virheenkäsittely (jatkaa epäonnistumisen jälkeen)
-- Yksityiskohtainen edistymisen raportointi
+- Mallikohtainen virheenkäsittely (jatkuu epäonnistumisen jälkeen)
+- Yksityiskohtainen edistymisraportointi
 - Lämmittelykierrokset suoritettu asianmukaisesti
 - Ensimmäisen tokenin viiveen mittaustuki
-- Selkeä vaiheiden erottelu
+- Vaiheiden selkeä erottelu
 
 ### 6. Johdonmukaiset tyyppivihjeet
 
@@ -158,25 +156,25 @@ from typing import Dict, List, Tuple, Any, Optional
 def run(alias: str) -> Tuple[float, str, Optional[int]]:
     """Run comparison for given model alias."""
 ```
-  
+
 **Hyödyt:**
 - Parempi IDE:n automaattinen täydennys
 - Varhainen virheiden havaitseminen
 - Itse dokumentoiva koodi
 
-### 7. Parannettu mallireititin
+### 7. Parannettu mallien reititys
 
 **Sessio 06 parannukset:**
-- Kattava tarkoituksen tunnistuksen dokumentaatio
+- Kattava aikomusten tunnistuksen dokumentaatio
 - Mallin valinta-algoritmin selitys
 - Yksityiskohtaiset reitityslokit
 - Testitulosten muotoilu
-- Virheiden palautus erätestauksessa
+- Virheiden korjaus erätestauksessa
 
 ### 8. Moniagenttien orkestrointi
 
 **Sessio 05 parannukset:**
-- Vaiheittainen edistymisen raportointi
+- Vaiheittainen edistymisraportointi
 - Agenttikohtainen virheenkäsittely
 - Selkeä putkistorakenne
 - Parempi muistinhallinnan dokumentaatio
@@ -197,69 +195,67 @@ foundry model run qwen2.5-0.5b
 # Install dependencies
 pip install -r Workshop/requirements.txt
 ```
-  
 
 ### Testaa jokainen näyte
 
 #### Sessio 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
-  
+
 #### Sessio 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
-  
+
 #### Sessio 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
-  
+
 #### Sessio 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
-  
+
 #### Sessio 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
-  
+
 #### Sessio 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
-  
 
 ---
 
@@ -272,22 +268,22 @@ python models_pipeline.py
 | `FOUNDRY_LOCAL_ENDPOINT` | Palvelupisteen ohitus | Automaattisesti havaittu |
 | `SHOW_USAGE` | Näytä tokenien käyttö | `0` |
 | `RETRY_ON_FAIL` | Ota käyttöön uudelleenyritto | `1` |
-| `RETRY_BACKOFF` | Alkuperäinen viive uudelleenyritossa | `1.0` |
+| `RETRY_BACKOFF` | Alustava viive uudelleenyrittämisessä | `1.0` |
 
 ### Näytekohtaiset
 | Muuttuja | Käytössä | Kuvaus |
 |----------|----------|--------|
 | `EMBED_MODEL` | Sessio 02 | Upotusmallin nimi |
 | `RAG_QUESTION` | Sessio 02 | Testikysymys RAG:lle |
-| `BENCH_MODELS` | Sessio 03 | Pilkulla erotetut mallit vertailuun |
+| `BENCH_MODELS` | Sessio 03 | Pilkulla erotetut mallit vertailua varten |
 | `BENCH_ROUNDS` | Sessio 03 | Vertailukierrosten määrä |
-| `BENCH_PROMPT` | Sessio 03 | Testikehotus vertailuun |
+| `BENCH_PROMPT` | Sessio 03 | Testikehotus vertailuille |
 | `BENCH_STREAM` | Sessio 03 | Mittaa ensimmäisen tokenin viive |
 | `SLM_ALIAS` | Sessio 04 | Pieni kielimalli |
 | `LLM_ALIAS` | Sessio 04 | Suuri kielimalli |
 | `COMPARE_PROMPT` | Sessio 04 | Vertailutestin kehotus |
 | `AGENT_MODEL_PRIMARY` | Sessio 05 | Ensisijainen agenttimalli |
-| `AGENT_MODEL_EDITOR` | Sessio 05 | Editor-agenttimalli |
+| `AGENT_MODEL_EDITOR` | Sessio 05 | Editorin agenttimalli |
 | `AGENT_QUESTION` | Sessio 05 | Testikysymys agenteille |
 | `PIPELINE_TASK` | Sessio 06 | Putkiston tehtävä |
 
@@ -297,7 +293,7 @@ python models_pipeline.py
 
 **Ei mitään** - Kaikki muutokset ovat taaksepäin yhteensopivia.
 
-Nykyiset skriptit toimivat edelleen. Uudet ominaisuudet ovat:
+Olemassa olevat skriptit toimivat edelleen. Uudet ominaisuudet ovat:
 - Valinnaiset ympäristömuuttujat
 - Parannetut virheilmoitukset (eivät riko toiminnallisuutta)
 - Lisätty lokitus (voidaan hiljentää)
@@ -314,7 +310,7 @@ from workshop_utils import get_client, chat_once
 # Provides caching, retry, and endpoint management
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
-  
+
 ### 2. Asianmukainen virheenkäsittelymalli
 ```python
 try:
@@ -325,14 +321,14 @@ except Exception as e:
     print("[INFO] Check: foundry service status")
     sys.exit(1)
 ```
-  
+
 ### 3. Informatiivinen lokitus
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
-  
+
 ### 4. Tyyppivihjeet
 ```python
 from typing import Dict, List, Optional
@@ -340,7 +336,7 @@ from typing import Dict, List, Optional
 def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
-  
+
 ### 5. Kattavat docstringit
 ```python
 def function(arg: str) -> str:
@@ -356,7 +352,7 @@ def function(arg: str) -> str:
         Exception: When it fails
     """
 ```
-  
+
 ### 6. Ympäristömuuttujien tuki
 ```python
 import os
@@ -364,7 +360,7 @@ import os
 alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
-  
+
 ### 7. Sulava heikentyminen
 ```python
 # In benchmarks - continue on individual failures
@@ -376,42 +372,37 @@ for model in models:
         print(f"[ERROR] {model} failed: {e}")
         print(f"[INFO] Skipping {model}...")
 ```
-  
 
 ---
 
 ## Yleiset ongelmat ja ratkaisut
 
 ### Ongelma: Tuontivirheet
-**Ratkaisu:** Asenna puuttuvat riippuvuudet  
+**Ratkaisu:** Asenna puuttuvat riippuvuudet
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
-  
 
 ### Ongelma: Yhteysvirheet
-**Ratkaisu:** Varmista, että Foundry Local on käynnissä  
+**Ratkaisu:** Varmista, että Foundry Local on käynnissä
 ```bash
 foundry service status
 foundry model run phi-4-mini
 ```
-  
 
 ### Ongelma: Mallia ei löydy
-**Ratkaisu:** Tarkista käytettävissä olevat mallit  
+**Ratkaisu:** Tarkista saatavilla olevat mallit
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
-  
 
 ### Ongelma: Hidas suorituskyky
-**Ratkaisu:** Käytä pienempiä malleja tai säädä parametreja  
+**Ratkaisu:** Käytä pienempiä malleja tai säädä parametreja
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 set BENCH_ROUNDS=2
 ```
-  
 
 ---
 
@@ -431,25 +422,24 @@ Käy läpi yllä oleva testauslista varmistaaksesi, että kaikki näytteet toimi
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
-  
 
 ### 4. Lisää suorituskykyvertailut
-Seuraa suorituskyvyn parannuksia virheenkäsittelyn parannuksista.
+Seuraa suorituskyvyn parannuksia virheenkäsittelyn parannusten ansiosta.
 
 ### 5. Käyttäjäpalaute
-Kerää palautetta työpajan osallistujilta:
-- Virheilmoitusten selkeydestä
-- Dokumentaation kattavuudesta
-- Käytön helppoudesta
+Kerää palautetta työpajan osallistujilta koskien:
+- Virheilmoitusten selkeyttä
+- Dokumentaation kattavuutta
+- Käytön helppoutta
 
 ---
 
 ## Resurssit
 
-- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
-- **Pikaopas**: `Workshop/FOUNDRY_SDK_QUICKREF.md`  
-- **Migraatiomuistiinpanot**: `Workshop/SDK_MIGRATION_NOTES.md`  
-- **Pääasiallinen arkisto**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **Pikaopas**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Siirtymismuistiinpanot**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Pääasiallinen arkisto**: https://github.com/microsoft/Foundry-Local
 
 ---
 
@@ -458,7 +448,7 @@ Kerää palautetta työpajan osallistujilta:
 ### Uusien näytteiden lisääminen
 Noudata näitä malleja luodessasi uusia näytteitä:
 
-1. Käytä `workshop_utils`-kirjastoa asiakashallintaan
+1. Käytä `workshop_utils` asiakashallintaan
 2. Lisää kattava virheenkäsittely
 3. Sisällytä ympäristömuuttujien tuki
 4. Lisää tyyppivihjeet ja docstringit
@@ -478,7 +468,7 @@ Kun tarkistat näytepäivityksiä, varmista seuraavat asiat:
 
 ---
 
-**Yhteenveto**: Kaikki Workshopin Python-näytteet noudattavat nyt Foundry Local SDK:n parhaita käytäntöjä parannetulla virheenkäsittelyllä, kattavalla dokumentaatiolla ja parannetulla käyttäjäkokemuksella. Ei rikkovia muutoksia - kaikki nykyinen toiminnallisuus säilytetty ja parannettu.
+**Yhteenveto**: Kaikki Workshop Python -näytteet noudattavat nyt Foundry Local SDK:n parhaita käytäntöjä parannetulla virheenkäsittelyllä, kattavalla dokumentaatiolla ja parannetulla käyttäjäkokemuksella. Ei rikkovia muutoksia - kaikki olemassa oleva toiminnallisuus säilytetty ja parannettu.
 
 ---
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82e20fdeebffdf75eecdf5cdfb02b65c",
-  "translation_date": "2025-10-09T21:20:16+00:00",
+  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
+  "translation_date": "2025-10-28T22:56:16+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "hu"
 }
@@ -11,22 +11,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Összefoglaló
 
-Fedezze fel, hogyan lehet működőképes GenAI munkafolyamatokat létrehozni a Foundry Local és az Azure AI Foundry segítségével. Tanuljon meg fejlett prompt tervezést, integráljon strukturált adatokat, és szervezze meg a feladatokat reprodukálható folyamatokkal. Bár a fókusz a Retrieval-Augmented Generation (RAG) dokumentum- és adat-alapú kérdés-válasz rendszerekre irányul, a minták általánosíthatók szélesebb GenAI megoldástervezésre.
+Fedezze fel, hogyan lehet működőképes GenAI munkafolyamatokat létrehozni a Foundry Local és az Azure AI Foundry segítségével. Tanuljon meg fejlett prompt mérnöki technikákat, integráljon strukturált adatokat, és szervezzen feladatokat reprodukálható folyamatokkal. Bár a fókusz a dokumentum- és adat-alapú kérdés-válasz rendszerek Retrieval-Augmented Generation (RAG) mintáin van, ezek a minták általánosan alkalmazhatók a GenAI megoldások tervezésére.
 
 ## Tanulási célok
 
-A szekció végére képes lesz:
+A szekció végére:
 
-- **Prompt tervezés elsajátítása**: Hatékony rendszerpromptok és alapozási stratégiák tervezése
+- **Prompt mérnöki technikák elsajátítása**: Hatékony rendszer promptok és alapozási stratégiák tervezése
 - **RAG minták megvalósítása**: Dokumentum-alapú kérdés-válasz rendszerek építése vektorkereséssel
 - **Strukturált adatok integrálása**: CSV, JSON és táblázatos adatok kezelése AI munkafolyamatokban
 - **Termelési RAG építése**: Skálázható RAG alkalmazások létrehozása Chainlit segítségével
-- **Lokális és felhő közötti híd**: Átállási utak megértése a Foundry Local és az Azure AI Foundry között
+- **Helyi és felhő közötti átmenet**: Átállási utak megértése a Foundry Local-ról az Azure AI Foundry-ra
 
 ## Előfeltételek
 
-- Az 1. szekció (Foundry Local beállítása) teljesítése
-- Alapvető ismeretek a vektordb-ről és beágyazásokról
+- Az 1. szekció (Foundry Local beállítása) elvégzése
+- Alapvető ismeretek a vektorbázisokról és beágyazásokról
 - Python programozási tapasztalat
 - Dokumentumfeldolgozási koncepciók ismerete
 
@@ -48,13 +48,13 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Ha a Foundry Local macOS binárisok még nem érhetők el a környezetében, futtassa a szolgáltatást Windows VM-en vagy konténerben, és állítsa be:
+Ha a Foundry Local macOS binárisok még nem érhetők el az Ön környezetében, futtassa a szolgáltatást Windows VM-en vagy konténerben, és állítsa be:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Validáció: Foundry Local környezet ellenőrzése
+## Érvényesítés: Foundry Local környezet ellenőrzése
 
 A demók megkezdése előtt ellenőrizze a helyi környezetet:
 
@@ -67,13 +67,13 @@ curl http://localhost:5273/v1/models  # Validate API (should list running model)
 
 Ha az utolsó parancs sikertelen, indítsa el (vagy indítsa újra) a szolgáltatást: `foundry service start`.
 
-## Demo folyamat (30 perc)
+## Demo menete (30 perc)
 
-### 1. Rendszerpromptok és alapozási stratégiák (10 perc)
+### 1. Rendszer promptok és alapozási stratégiák (10 perc)
 
-#### 1.1 lépés: Fejlett prompt tervezés
+#### 1.1 lépés: Fejlett prompt mérnöki technikák
 
-Hozza létre: `samples/02-rag-solutions/prompt_engineering.py`:
+Hozzon létre egy `samples/02-rag-solutions/prompt_engineering.py` fájlt:
 
 ```python
 #!/usr/bin/env python3
@@ -221,7 +221,7 @@ python samples/02-rag-solutions/prompt_engineering.py
 
 #### 2.1 lépés: CSV adatok integrálása
 
-Hozza létre: `samples/02-rag-solutions/csv_qa_system.py`:
+Hozzon létre egy `samples/02-rag-solutions/csv_qa_system.py` fájlt:
 
 ```python
 #!/usr/bin/env python3
@@ -445,7 +445,7 @@ python samples/02-rag-solutions/csv_qa_system.py
 
 #### 3.1 lépés: Fejlett dokumentum RAG rendszer
 
-Hozza létre: `samples/02-rag-solutions/document_rag.py`:
+Hozzon létre egy `samples/02-rag-solutions/document_rag.py` fájlt:
 
 ```python
 #!/usr/bin/env python3
@@ -661,11 +661,11 @@ if __name__ == "__main__":
 ```
 
 
-### 4. CLI-to-Azure migrációs út bemutatása (5 perc)
+### 4. CLI-to-Azure migrációs útvonal bemutatása (5 perc)
 
 #### 4.1 lépés: Migrációs stratégia áttekintése
 
-Hozza létre: `samples/02-rag-solutions/migration_guide.py`:
+Hozzon létre egy `samples/02-rag-solutions/migration_guide.py` fájlt:
 
 ```python
 #!/usr/bin/env python3
@@ -879,19 +879,19 @@ python samples/02-rag-solutions/migration_guide.py
 
 ## Főbb fogalmak
 
-### 1. Fejlett prompt tervezés
+### 1. Fejlett prompt mérnöki technikák
 
-- **Rendszerpromptok**: Domain-specifikus szakértői személyiségek
+- **Rendszer promptok**: Szakértői személyiségek adott területeken
 - **Alapozási stratégiák**: Kontextus integrációs technikák
-- **Hőmérséklet-szabályozás**: Kreativitás és konzisztencia egyensúlya
+- **Hőmérséklet szabályozás**: Kreativitás és konzisztencia egyensúlya
 - **Token kezelés**: Hatékony kontextus használat
 
 ### 2. Strukturált adatok integrációja
 
 - **CSV feldolgozás**: Pandas integráció AI modellekkel
 - **Statisztikai elemzés**: Automatikus adatösszegzés
-- **Kontextus létrehozása**: Dinamikus kontextus generálás lekérdezések alapján
-- **Többformátumú támogatás**: JSON, CSV és táblázatos adatok
+- **Kontextus létrehozása**: Dinamikus kontextus generálás kérdések alapján
+- **Több formátum támogatása**: JSON, CSV és táblázatos adatok
 
 ### 3. RAG megvalósítási minták
 
@@ -904,8 +904,8 @@ python samples/02-rag-solutions/migration_guide.py
 
 - **Egységes API-k**: Egyetlen kódbázis helyi és felhő környezethez
 - **Környezet absztrakció**: Konfiguráció-alapú telepítés
-- **Fejlesztési munkafolyamat**: Lokális → Teszt → Termelés
-- **Költségoptimalizálás**: Lokális fejlesztés, felhő termelés
+- **Fejlesztési munkafolyamat**: Helyi → Teszt → Termelés
+- **Költségoptimalizálás**: Helyi fejlesztés, felhő alapú termelés
 
 ## Termelési szempontok
 
@@ -955,28 +955,28 @@ metrics = {
 
 ## Következő lépések
 
-A szekció befejezése után:
+A szekció elvégzése után:
 
 1. **Fedezze fel a 3. szekciót**: Nyílt forráskódú modellek a Foundry Local-ban
 2. **Építsen termelési RAG rendszert**: Implementálja Chainlit segítségével (Minta 04)
 3. **Fejlett vektorkeresés**: Integrálja Chroma vagy Pinecone segítségével
-4. **Felhő migráció**: Telepítse az Azure AI Foundry-ba
-5. **Értékelje a RAG minőségét**: Futtassa `python Workshop/samples/session02/rag_eval_ragas.py` a válasz relevanciájának, hitelességének és kontextus pontosságának mérésére ragas segítségével
+4. **Felhő migráció**: Telepítse az Azure AI Foundry-ra
+5. **Értékelje a RAG minőségét**: Futtassa a `cd Workshop/samples;python -m session02.rag_eval_ragas` parancsot, hogy mérje a válasz relevanciáját, hitelességét és kontextus pontosságát ragas segítségével
 
 ### Opcionális fejlesztések
 
 | Kategória | Fejlesztés | Indoklás | Irány |
 |----------|-------------|-----------|-----------|
-| Visszakeresés | TF-IDF helyett vektortár (FAISS / Chroma) használata | Jobb szemantikai visszahívás és skálázhatóság | Dokumentumok darabolása (500–800 karakter), beágyazás, index tárolása |
-| Hibrid index | Szemantikai + kulcsszavas szűrés kombinálása | Javítja a numerikus / kód lekérdezések pontosságát | Kulcsszó alapján szűrés, majd koszinusz hasonlóság szerint rangsorolás |
-| Beágyazások | Több beágyazási modell értékelése | Relevancia és sebesség optimalizálása | A/B: MiniLM vs E5-small vs helyben futtatott kódoló |
-| Gyorsítótár | Beágyazások és visszakeresési eredmények gyorsítótárazása | Csökkenti az ismételt lekérdezések késleltetését | Egyszerű lemezen tárolt pickle / sqlite hash kulccsal |
-| Értékelés | Ragas adatállomány bővítése | Statisztikailag jelentős minőség | 50–100 Q/A + kontextusok összeállítása; témák szerint rétegezés |
+| Visszakeresés | TF-IDF cseréje vektortárral (FAISS / Chroma) | Jobb szemantikai visszakeresés és skálázhatóság | Dokumentumok darabolása (500–800 karakter), beágyazás, index tárolása |
+| Hibrid index | Kettős szemantikai + kulcsszó szűrés | Javítja a numerikus / kód lekérdezések pontosságát | Kulcsszó alapján szűrés, majd koszinusz hasonlóság szerinti rangsorolás |
+| Beágyazások | Több beágyazási modell értékelése | Relevancia és sebesség optimalizálása | A/B teszt: MiniLM vs E5-small vs helyben futtatott kódoló |
+| Gyorsítótárazás | Beágyazások és visszakeresési eredmények gyorsítótárazása | Csökkenti az ismételt lekérdezések késleltetését | Egyszerű lemezen tárolt pickle / sqlite hash kulccsal |
+| Értékelés | Ragas adatállomány bővítése | Statisztikailag jelentős minőség | 50–100 Q/A + kontextusok összeállítása; témák szerint rétegezve |
 | Metrikák | Visszakeresési és generálási idők nyomon követése | Teljesítmény profilozás | `retrieval_ms`, `gen_ms`, `tokens` rögzítése hívásonként |
-| Védőkorlátok | Hallucináció visszaesési mechanizmus hozzáadása | Biztonságosabb válaszok | Ha hitelesség < küszöb → válasz: "Nem elegendő kontextus." |
-| Visszaesés | Lokális → Azure modell kaszkád | Hibrid minőségjavítás | Alacsony bizalom esetén felhőbe irányítás ugyanazon OpenAI API-n keresztül |
+| Védőkorlátok | Hallucináció visszaesés hozzáadása | Biztonságosabb válaszok | Ha a hitelesség < küszöbérték → válasz: "Nem elegendő kontextus." |
+| Visszaesés | Helyi → Azure modell kaszkád | Hibrid minőségjavítás | Alacsony bizalom esetén átirányítás a felhőbe ugyanazon OpenAI API-n keresztül |
 | Determinizmus | Stabil összehasonlító futtatások | Ismételhető értékelési készletek | Fix seed, `temperature=0`, véletlenszerűség kikapcsolása |
-| Monitoring | Értékelési futtatások történetének tárolása | Regresszió észlelése | JSON sorok hozzáfűzése időbélyeggel + metrikai eltérésekkel |
+| Monitoring | Értékelési futtatási előzmények mentése | Regressziók észlelése | JSON sorok hozzáfűzése időbélyeggel + metrikai eltérésekkel |
 
 #### Példa: Visszakeresési idő hozzáadása
 
@@ -994,10 +994,10 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 
 #### Értékelés skálázása ragas segítségével
 
-1. JSONL összeállítása mezőkkel: `question`, `answer`, `contexts`, `ground_truths` (lista)
-2. Átalakítás `Dataset.from_list(list_of_dicts)` formátumba
-3. Futtatás `evaluate(dataset, metrics=[...])`
-4. Metrikák tárolása (CSV/JSON) trend elemzéshez.
+1. Állítson össze egy JSONL-t a következő mezőkkel: `question`, `answer`, `contexts`, `ground_truths` (lista)
+2. Konvertálja `Dataset.from_list(list_of_dicts)` formátumba
+3. Futtassa `evaluate(dataset, metrics=[...])`
+4. Tárolja a metrikákat (CSV/JSON) trend elemzéshez.
 
 #### Vektortár gyors kezdés (FAISS)
 
@@ -1015,32 +1015,32 @@ Lemez tároláshoz használja: `faiss.write_index(index, "kb.index")`.
 ### Dokumentáció
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Azure AI Foundry RAG minták](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [Prompt tervezési útmutató](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [Prompt mérnöki útmutató](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
 - [Ragas értékelési dokumentáció](https://docs.ragas.io)
 
 ### Példa kód
-- [Module08 Minta 04](./samples/04/README.md) - Chainlit RAG alkalmazás
+- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG alkalmazás
 - [Fejlett Multi-Agent rendszer](./samples/09/README.md) - Ügynök koordinációs minták
 
 ---
 
-**Szekció időtartama**: 30 perc gyakorlati + 15 perc Q&A  
-**Nehézségi szint**: Középhaladó  
-**Előfeltételek**: 1. szekció teljesítve, Alapvető Python ismeretek
+**Szekció időtartama**: 30 perc gyakorlati + 15 perc kérdések és válaszok
+**Nehézségi szint**: Középhaladó
+**Előfeltételek**: 1. szekció elvégzése, Alapvető Python ismeretek
 
-## Példa szcenárió és workshop térkép
+## Példa forgatókönyv és workshop térkép
 
-| Workshop szkript / notebook | Szcenárió | Cél | Alapvető adatállomány / forrás | Példa kérdés |
+| Workshop szkript / jegyzetfüzet | Forgatókönyv | Cél | Alapvető adatállomány / forrás | Példa kérdés |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Belső támogatási tudásbázis, amely adatvédelmi + teljesítmény GYIK-ekre válaszol | Minimális memória-alapú RAG beágyazásokkal | `DOCS` lista a szkriptben (5 rövid szakasz) | Miért érdemes RAG-t használni helyi inferenciával? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Minőségellenőr, aki alapvető visszakeresési hitelességi metrikákat állít fel | Ragas metrikák számítása kis szintetikus adatállományon | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` tömbök | Milyen előnyt kínál a helyi inferencia? |
-| `prompt_engineering.py` (fejlett) | Domain szakértő, aki több vertikumhoz készít alapozott promptokat | Domain rendszerpromptok és token hatás összehasonlítása | Inline `contexts` dict | Hogyan kezeli a Foundry Local a modell gyorsítótárazást? |
-| `csv_qa_system.py` | Értékesítési műveletek, amelyek interaktív elemzést végeznek exportokon | Kis értékesítési szelet összegzése és lekérdezése | Generált `sample_sales_data.csv` (10 sor) | Melyik terméknek van a legmagasabb átlagos értékesítési összege? |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Belső támogatási tudásbázis, amely válaszol adatvédelmi + teljesítmény GYIK-ekre | Minimális memória-alapú RAG beágyazásokkal | `DOCS` lista a szkriptben (5 rövid szövegrészlet) | Miért érdemes RAG-t használni helyi inferenciával? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Minőségellenőr, aki alapvető visszakeresési hitelességi metrikákat állít fel | Ragas metrikák számítása kis szintetikus adatállományon | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` tömbök | Milyen előnyt nyújt a helyi inferencia? |
+| `prompt_engineering.py` (fejlett) | Szakértő, aki több iparág számára készít alapozott promptokat | Összehasonlítja az iparági rendszer promptokat és token hatásokat | Beágyazott `contexts` szótár | Hogyan kezeli a Foundry Local a modell gyorsítótárazást? |
+| `csv_qa_system.py` | Értékesítési műveletek, amelyek interaktív elemzést keresnek exportok felett | Kis értékesítési szelet összegzése és lekérdezése | Generált `sample_sales_data.csv` (10 sor) | Melyik terméknek van a legmagasabb átlagos értékesítési összege? |
 | `document_rag.py` | Termékcsapat, amely dokumentum RAG-t vizsgál belső wikihez | Releváns dokumentumok visszakeresése + idézése | `create_sample_knowledge_base()` lista | Milyen előnyei vannak az Edge AI-nak? |
-| `migration_guide.py` | Architekt, aki felhő migrációs tervet készít | Lokális → Azure API párhuzam bemutatása | Statikus teszt promptok | Magyarázza el az Edge AI előnyeit 2–3 mondatban. |
+| `migration_guide.py` | Architekt, aki felhő migrációs tervet készít | Helyi→Azure API párhuzam bemutatása | Statikus teszt promptok | Magyarázza el az Edge AI előnyeit 2–3 mondatban. |
 
 ### Adatállomány részletek
-Inline RAG pipeline dokumentum lista:
+Beágyazott RAG pipeline dokumentum lista:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1051,7 +1051,7 @@ DOCS = [
 ]
 ```
 
-Ragas értékelési igazság tuple-ök:
+Ragas értékelési igazság tuple-k:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1061,13 +1061,13 @@ GROUND_TRUTH = [
 ```
 
 
-### Szcenárió narratíva
-A támogatási mérnöki csoport gyors prototípust szeretne létrehozni, amely belső GYIK-ekre válaszol anélkül, hogy ügyféladatokat külsőleg kitenne. A 2. szekció artefaktumai a minimális, átmeneti RAG-tól (nincs tárolás) → strukturált CSV Q&A → dokumentum visszakeresés idézéssel → objektív minőségértékelés (ragas) → Azure staging-re kész migrációs stratégiáig haladnak.
+### Forgatókönyv narratíva
+A támogatási mérnöki csoport gyors prototípust szeretne létrehozni, amely válaszol belső GYIK-ekre anélkül, hogy ügyféladatokat külsőleg megosztana. A 2. szekciós anyagok egy minimális, átmeneti RAG-tól (nincs tárolás) → strukturált CSV Q&A → dokumentum visszakeresés idézéssel → objektív minőségértékelés (ragas) → Azure-ra kész migrációs stratégiáig haladnak.
 
-### Bővítési utak
-Használja az Opcionális fejlesztések táblázatot a fejlődéshez: cserélje le a TF‑IDF-et FAISS/Chroma-ra, bővítse az értékelési korpuszt (50–100 Q/A), adjon hozzá visszaesési eszkalációt nagyobb modellhez, ha hitelesség < küszöb.
+### Bővítési lehetőségek
+Használja az Opcionális fejlesztések táblázatot a továbbfejlesztéshez: cserélje a TF‑IDF-et FAISS/Chroma-ra, bővítse az értékelési korpuszt (50–100 Q/A), adjon hozzá visszaesési eszkalációt nagyobb modellhez, ha a hitelesség < küszöbérték.
 
 ---
 
 **Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével került lefordításra. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

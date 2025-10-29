@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T14:44:52+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:11:34+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "da"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Alle Python-filer i Workshop-mappen er blevet opdateret til at følge de nyeste mønstre fra den officielle [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
 
-## Oversigt over ændringer
+## Ændringsoversigt
 
 ### Kerneinfrastruktur (`workshop_utils.py`)
 
@@ -46,7 +46,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Forbedret dokumentation med detaljer om miljøvariabler
 
 #### Session 02: RAG Evaluering (`rag_eval_ragas.py`)
-- Opdateret standardmodeller
+- Opdateret modelstandarder
 - Tilføjet endpoint-konfiguration
 - Forbedret fejlhåndtering
 
@@ -69,7 +69,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### Session 06: Model Router (`models_router.py`)
 - Tilføjet endpoint-konfiguration
-- Forbedret dokumentation for intent-detektion
+- Forbedret dokumentation for hensigtsdetektion
 - Forbedret dokumentation for routing-logik
 
 #### Session 06: Pipeline (`models_pipeline.py`)
@@ -94,7 +94,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### Smoke Tests (`smoke.py`)
 - Tilføjet support for endpoint-override
 - Forbedret dokumentation
-- Forbedret dokumentation for testcases
+- Forbedret testcasedokumentation
 - Bedre fejlrapportering
 
 ## Miljøvariabler
@@ -105,22 +105,22 @@ Alle eksempler understøtter nu disse miljøvariabler:
 - `FOUNDRY_LOCAL_ALIAS` - Modelalias der skal bruges (standard varierer efter eksempel)
 - `FOUNDRY_LOCAL_ENDPOINT` - Overstyring af service-endpoint (valgfrit)
 - `SHOW_USAGE` - Vis statistik for tokenforbrug (standard: "0")
-- `RETRY_ON_FAIL` - Aktiver retry-logik (standard: "1")
+- `RETRY_ON_FAIL` - Aktivér retry-logik (standard: "1")
 - `RETRY_BACKOFF` - Initial retry-forsinkelse i sekunder (standard: "1.0")
 
-### Eksempelspecifikke
-- `EMBED_MODEL` - Embedding-model til RAG-eksempler
+### Eksempelspecifik
+- `EMBED_MODEL` - Embedding-model for RAG-eksempler
 - `BENCH_MODELS` - Kommaseparerede modeller til benchmarking
 - `BENCH_ROUNDS` - Antal benchmark-runder
 - `BENCH_PROMPT` - Testprompt til benchmarks
-- `BENCH_STREAM` - Mål første-token-latens
+- `BENCH_STREAM` - Mål første-token latenstid
 - `RAG_QUESTION` - Testspørgsmål til RAG-eksempler
 - `AGENT_MODEL_PRIMARY` - Primær agentmodel
-- `AGENT_MODEL_EDITOR` - Editor-agentmodel
-- `SLM_ALIAS` - Alias for lille sproglig model
-- `LLM_ALIAS` - Alias for stor sproglig model
+- `AGENT_MODEL_EDITOR` - Editor agentmodel
+- `SLM_ALIAS` - Alias for lille sprogmodel
+- `LLM_ALIAS` - Alias for stor sprogmodel
 
-## Implementerede SDK-best practices
+## Implementerede bedste praksis for SDK
 
 ### 1. Korrekt klientinitialisering
 ```python
@@ -183,7 +183,7 @@ for chunk in stream:
 
 Hvis du opretter nye eksempler eller opdaterer eksisterende:
 
-1. **Brug `workshop_utils.py`-hjælpefunktioner**:
+1. **Brug `workshop_utils.py`-hjælpemidler**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
@@ -223,36 +223,37 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
 ```
 
-## SDK-dokumentationsreferencer
+## SDK Dokumentationsreferencer
 
 - **Hovedrepository**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API-dokumentation**: Se SDK-repository for seneste API-dokumentation
+- **API Dokumentation**: Se SDK-repository for seneste API-dokumentation
 
-## Breaking Changes
+## Brudte ændringer
 
 ### Ingen forventet
-Alle ændringer er bagudkompatible. Opdateringerne tilføjer primært:
-- Nye valgfrie funktioner (endpoint-override)
+Alle ændringer er bagudkompatible. Opdateringerne fokuserer primært på:
+- Tilføjelse af nye valgfrie funktioner (endpoint-override)
 - Forbedret fejlhåndtering
 - Forbedret dokumentation
-- Opdaterede standardmodelnavne til aktuelle anbefalinger
+- Opdatering af standardmodelnavne til aktuelle anbefalinger
 
 ### Valgfrie forbedringer
 Du kan opdatere din kode til at bruge:
 - `FOUNDRY_LOCAL_ENDPOINT` for eksplicit endpoint-kontrol
 - `SHOW_USAGE=1` for synlighed af tokenforbrug
-- Opdaterede standardmodeller (`phi-4-mini` i stedet for `phi-3.5-mini`)
+- Opdaterede modelstandarder (`phi-4-mini` i stedet for `phi-3.5-mini`)
 
 ## Almindelige problemer og løsninger
 
@@ -270,7 +271,7 @@ foundry model list
 ```
 
 ### Problem: Fejl ved endpoint-forbindelse
-**Løsning**: Verificer endpoint:
+**Løsning**: Bekræft endpoint:
 ```bash
 # Check service status
 foundry service status
@@ -283,7 +284,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 1. **Opdater Module08-eksempler**: Anvend lignende mønstre på Module08/samples
 2. **Tilføj integrationstests**: Opret omfattende test-suite
-3. **Performance-benchmarking**: Sammenlign før/efter performance
+3. **Performance benchmarking**: Sammenlign før/efter performance
 4. **Dokumentationsopdateringer**: Opdater hoved-README med nye mønstre
 
 ## Retningslinjer for bidrag
@@ -308,9 +309,9 @@ Disse opdateringer er kompatible med:
 
 **Sidst opdateret**: 2025-01-08  
 **Vedligeholder**: EdgeAI Workshop Team  
-**SDK-version**: Foundry Local SDK (seneste 0.7.117+67073234e7)
+**SDK Version**: Foundry Local SDK (seneste 0.7.117+67073234e7)
 
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at sikre nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

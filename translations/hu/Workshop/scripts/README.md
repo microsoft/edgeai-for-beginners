@@ -1,32 +1,32 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-09T21:44:23+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T22:59:05+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "hu"
 }
 -->
 # Workshop Szkriptek
 
-Ez a könyvtár automatizálási és támogatási szkripteket tartalmaz, amelyek segítenek fenntartani a Workshop anyagok minőségét és konzisztenciáját.
+Ez a könyvtár automatizálási és támogatási szkripteket tartalmaz, amelyek a Workshop anyagok minőségének és konzisztenciájának fenntartására szolgálnak.
 
 ## Tartalom
 
 | Fájl | Cél |
 |------|-----|
-| `lint_markdown_cli.py` | Ellenőrzi a markdown kódfedéseket, hogy blokkolja az elavult Foundry Local CLI parancsmintákat. |
+| `lint_markdown_cli.py` | Ellenőrzi a markdown kódfüggvényeket, hogy blokkolja az elavult Foundry Local CLI parancsmintákat. |
 | `export_benchmark_markdown.py` | Több modell késleltetési benchmarkot futtat, és Markdown + JSON jelentéseket generál. |
 
-## 1. Markdown CLI Minták Ellenőrzése
+## 1. Markdown CLI Minta Ellenőrző
 
-A `lint_markdown_cli.py` szkenneli az összes nem fordított `.md` fájlt az elavult Foundry Local CLI minták után **kódfedésekben** (``` ... ```). Az információs szöveg továbbra is említheti az elavult parancsokat történelmi kontextusban.
+A `lint_markdown_cli.py` szkenneli az összes nem fordított `.md` fájlt a nem engedélyezett Foundry Local CLI minták után **keretezett kódrészletekben** (``` ... ```). Az információs szöveg továbbra is említheti az elavult parancsokat történelmi kontextusban.
 
-### Elavult Minták (Blokkolva Kódfedésekben)
+### Elavult minták (blokkolva a kódrészletekben)
 
 Az ellenőrző blokkolja az elavult CLI mintákat. Használj modern alternatívákat helyettük.
 
-### Szükséges Helyettesítések
+### Kötelező cserék
 | Elavult | Használj helyette |
 |---------|-------------------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
@@ -36,14 +36,14 @@ Az ellenőrző blokkolja az elavult CLI mintákat. Használj modern alternatív�
 | `foundry model benchmark` | `samples/session03/benchmark_oss_models.py` |
 | `foundry model list --available` | `foundry model list` |
 
-### Kilépési Kódok
+### Kilépési kódok
 | Kód | Jelentés |
 |-----|----------|
 | 0 | Nincs észlelt szabálysértés |
 | 1 | Egy vagy több elavult minta található |
 
-### Helyi Futtatás
-A repozitórium gyökérkönyvtárából (ajánlott):
+### Helyi futtatás
+A repository gyökérkönyvtárából (ajánlott):
 
 Windows (PowerShell):
 ```powershell
@@ -60,15 +60,15 @@ python Workshop/scripts/lint_markdown_cli.py --verbose
 echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
-Ez blokkolja azokat a commitokat, amelyek elavult mintákat vezetnek be.
+Ez blokkolja az elavult mintákat bevezető commitokat.
 
 ### CI Integráció
-Egy GitHub Action munkafolyamat (`.github/workflows/markdown-cli-lint.yml`) futtatja az ellenőrzőt minden push és pull request esetén a `main` és `Reactor` ágakon. A hibás munkák javítása kötelező a merge előtt.
+Egy GitHub Action munkafolyamat (`.github/workflows/markdown-cli-lint.yml`) futtatja az ellenőrzőt minden `main` és `Reactor` ágra történő push és pull request esetén. A hibás munkák javítása kötelező a merge előtt.
 
-### Új Elavult Minták Hozzáadása
+### Új elavult minták hozzáadása
 1. Nyisd meg a `lint_markdown_cli.py` fájlt.
-2. Adj hozzá egy `(regex, suggestion)` tuple-t a `DEPRECATED` listához. Használj nyers stringet, és tartalmazz `\b` szóhatárokat, ahol szükséges.
-3. Futtasd az ellenőrzőt helyileg, hogy megbizonyosodj a felismerésről.
+2. Adj hozzá egy tuple-t `(regex, suggestion)` a `DEPRECATED` listához. Használj nyers stringet, és tartalmazz `\b` szóhatárokat, ahol szükséges.
+3. Futtasd az ellenőrzőt helyileg, hogy ellenőrizd a detektálást.
 4. Commitolj és pusholj; a CI érvényesíti az új szabályt.
 
 Példa hozzáadás:
@@ -76,28 +76,28 @@ Példa hozzáadás:
 DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental foo usage"))
 ```
 
-### Magyarázó Említések Engedélyezése
-Mivel csak a kódfedések vannak érvényesítve, az elavult parancsokat biztonságosan leírhatod narratív szövegben. Ha *muszáj* megmutatni őket egy fedésben kontrasztként, használj fedést **három backtick nélkül** (pl. behúzás vagy idézet), vagy írd át pszeudo formára.
+### Magyarázó említések engedélyezése
+Mivel csak a keretezett kódrészletek vannak érvényesítve, elavult parancsokat biztonságosan leírhatsz narratív szövegben. Ha *muszáj* megmutatni őket keretben kontrasztként, adj meg egy keretezett blokkot **három backtick nélkül** (pl. behúzás vagy idézet), vagy írd át pszeudo formára.
 
-### Specifikus Fájlok Kihagyása (Haladó)
-Ha szükséges, helyezd a régi példákat egy külön fájlba a repozitóriumon kívül, vagy nevezd át más kiterjesztéssel tervezés közben. A fordított példányok automatikus kihagyása (a `translations` útvonalakat tartalmazó fájlok) alapértelmezett.
+### Specifikus fájlok kihagyása (Haladó)
+Ha szükséges, helyezd el a régi példákat egy külön fájlban a repo-n kívül, vagy nevezd át más kiterjesztéssel a tervezés során. A fordított példányok szándékos kihagyása automatikus (az `translations` tartalmú útvonalak esetén).
 
 ### Hibakeresés
 | Probléma | Ok | Megoldás |
 |----------|----|----------|
-| Az ellenőrző megjelöl egy általad frissített sort | Regex túl általános | Szűkítsd a mintát további szóhatárral (`\b`) vagy horgonyokkal |
-| CI hibázik, de helyileg sikeres | Eltérő Python verzió vagy nem commitolt változások | Futtasd újra helyileg, győződj meg a tiszta munkafáról, ellenőrizd a munkafolyamat Python verzióját (3.11) |
-| Ideiglenes megkerülés szükséges | Sürgős javítás | Alkalmazd a javítást azonnal utána; fontold meg egy ideiglenes ág és követő PR használatát (kerüld a megkerülő kapcsolók hozzáadását) |
+| Az ellenőrző megjelöl egy általad frissített sort | Túl általános regex | Szűkítsd a mintát további szóhatárral (`\b`) vagy horgonyokkal |
+| CI hibát jelez, de helyileg nem | Eltérő Python verzió vagy nem commitolt változások | Futtasd újra helyileg, győződj meg róla, hogy tiszta a munkaterület, ellenőrizd a munkafolyamat Python verzióját (3.11) |
+| Ideiglenes megkerülés szükséges | Sürgős javítás | Azonnal alkalmazd a javítást; fontold meg egy ideiglenes branch és utólagos PR használatát (kerüld a megkerülő kapcsolók hozzáadását) |
 
 ### Indoklás
-A dokumentáció *aktuális* stabil CLI felülethez igazítása csökkenti a workshop nehézségeit, elkerüli a tanulók zavartságát, és központosítja a teljesítménymérést karbantartott Python szkripteken keresztül, a sodródó CLI alparancsok helyett.
+A dokumentáció *aktuális* stabil CLI felülethez való igazítása csökkenti a workshop frusztrációt, elkerüli a tanulók zavartságát, és központosítja a teljesítménymérést karbantartott Python szkripteken keresztül, a sodródó CLI alparancsok helyett.
 
 ---
-A workshop minőségi eszközláncának részeként karbantartva. Fejlesztésekhez (pl. automatikus javítási javaslatok vagy HTML jelentés generálás), nyiss egy hibajegyet vagy küldj be egy PR-t.
+A workshop minőségi eszközláncának részeként karbantartva. Fejlesztésekhez (pl. automatikus javítási javaslatok vagy HTML jelentés generálás), nyiss egy issue-t vagy küldj be egy PR-t.
 
-## 2. Minta Ellenőrző Szkript
+## 2. Példa Ellenőrző Szkript
 
-A `validate_samples.py` ellenőrzi az összes Python minta fájlt szintaxis, importok és legjobb gyakorlatok betartása szempontjából.
+A `validate_samples.py` ellenőrzi az összes Python példa fájlt szintaxis, importok és legjobb gyakorlatok betartása szempontjából.
 
 ### Használat
 ```bash
@@ -114,25 +114,25 @@ python scripts/validate_samples.py --verbose
 python scripts/validate_samples.py --summary
 ```
 
-### Amit ellenőriz
+### Mit ellenőriz
 - ✅ Python szintaxis érvényessége
 - ✅ Szükséges importok jelenléte
-- ✅ Hibakezelés implementációja (részletes mód)
+- ✅ Hibakezelés megvalósítása (részletes mód)
 - ✅ Típusjelölések használata (részletes mód)
 - ✅ Funkció docstringek (részletes mód)
 - ✅ SDK referencia linkek (részletes mód)
 
-### Környezeti Változók
+### Környezeti változók
 - `SKIP_IMPORT_CHECK=1` - Import ellenőrzés kihagyása
 - `SKIP_SYNTAX_CHECK=1` - Szintaxis ellenőrzés kihagyása
 
-### Kilépési Kódok
-- `0` - Minden minta megfelelt az ellenőrzésen
-- `1` - Egy vagy több minta nem felelt meg
+### Kilépési kódok
+- `0` - Minden példa megfelelt az ellenőrzésen
+- `1` - Egy vagy több példa nem felelt meg
 
-## 3. Minta Teszt Futtató
+## 3. Példa Teszt Futtató
 
-A `test_samples.py` füstteszteket futtat az összes mintán, hogy ellenőrizze, hibamentesen végrehajthatók-e.
+A `test_samples.py` füstteszteket futtat az összes példán, hogy ellenőrizze, hibamentesen végrehajthatók-e.
 
 ### Használat
 ```bash
@@ -154,23 +154,23 @@ python scripts/test_samples.py --verbose
 - Modellek betöltve: `foundry model run phi-4-mini`
 - Függőségek telepítve: `pip install -r requirements.txt`
 
-### Amit tesztel
-- ✅ A minta hibamentesen végrehajtható
-- ✅ A szükséges kimenet generálódik
+### Mit tesztel
+- ✅ A példa hibamentesen végrehajtható
+- ✅ A szükséges kimenet generálva van
 - ✅ Megfelelő hibakezelés hiba esetén
 - ✅ Teljesítmény (végrehajtási idő)
 
-### Környezeti Változók
+### Környezeti változók
 - `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Teszteléshez használt modell
 - `TEST_TIMEOUT=30` - Időtúllépés mintánként másodpercben
 
-### Várható Hibák
+### Várható hibák
 Néhány teszt sikertelen lehet, ha opcionális függőségek nincsenek telepítve (pl. `ragas`, `sentence-transformers`). Telepítés:
 ```bash
 pip install sentence-transformers ragas datasets
 ```
 
-### Kilépési Kódok
+### Kilépési kódok
 - `0` - Minden teszt sikeres
 - `1` - Egy vagy több teszt sikertelen
 
@@ -178,11 +178,11 @@ pip install sentence-transformers ragas datasets
 
 Szkript: `export_benchmark_markdown.py`
 
-Reprodukálható teljesítménytáblázatot generál modellek egy csoportjához.
+Reprodukálható teljesítménytáblázatot generál modellek számára.
 
 ### Használat
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Kimenetek
@@ -204,11 +204,11 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 A `BENCH_STREAM=1` környezeti változó hozzáadja az első token késleltetési mérést.
 
 ### Megjegyzések
-- Újrahasználja a `workshop_utils`-t a konzisztens modell bootstraphez és gyorsítótárazáshoz.
-- Ha más munkakönyvtárból futtatod, a szkript megpróbálja megtalálni a `workshop_utils`-t útvonal visszaesésekkel.
-- GPU összehasonlításhoz: futtasd egyszer, engedélyezd a gyorsítást CLI konfiguráción keresztül, futtasd újra, és hasonlítsd össze a JSON-t.
+- Újrahasználja a `workshop_utils`-t a következetes modell bootstrap és cache érdekében.
+- Ha más munkakönyvtárból futtatják, a szkript útvonal visszaeséseket próbál meg a `workshop_utils` megtalálásához.
+- GPU összehasonlításhoz: futtasd egyszer, engedélyezd a gyorsítást a CLI konfigurációval, futtasd újra, és hasonlítsd össze a JSON-t.
 
 ---
 
-**Felelősségkizárás**:  
-Ezt a dokumentumot az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítószolgáltatás segítségével fordították le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Felelősség kizárása**:  
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

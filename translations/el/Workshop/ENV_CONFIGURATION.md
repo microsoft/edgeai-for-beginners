@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T12:50:08+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T21:52:00+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "el"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Επισκόπηση
 
-Τα δείγματα του Workshop χρησιμοποιούν μεταβλητές περιβάλλοντος για τη ρύθμιση, οι οποίες είναι συγκεντρωμένες στο αρχείο `.env` στη ρίζα του αποθετηρίου. Αυτό επιτρέπει εύκολη προσαρμογή χωρίς να απαιτείται τροποποίηση του κώδικα.
+Τα δείγματα του Workshop χρησιμοποιούν μεταβλητές περιβάλλοντος για τη ρύθμιση, συγκεντρωμένες στο αρχείο `.env` στη ρίζα του αποθετηρίου. Αυτό επιτρέπει εύκολη προσαρμογή χωρίς τροποποίηση του κώδικα.
 
 ## Γρήγορη Εκκίνηση
 
@@ -32,7 +32,7 @@ foundry model run phi-4-mini
 
 Το αρχείο `.env` είναι ήδη ρυθμισμένο με λογικές προεπιλογές. Οι περισσότεροι χρήστες δεν χρειάζεται να αλλάξουν τίποτα.
 
-**Προαιρετικά**: Ελέγξτε και προσαρμόστε τις ρυθμίσεις:
+**Προαιρετικό**: Ελέγξτε και προσαρμόστε τις ρυθμίσεις:
 ```bash
 # Edit .env file
 notepad .env  # Windows
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Για Python Scripts:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -60,7 +60,7 @@ python chat_bootstrap.py
 
 | Μεταβλητή | Προεπιλογή | Περιγραφή |
 |-----------|------------|-----------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Προεπιλεγμένο μοντέλο για τα δείγματα |
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Προεπιλεγμένο μοντέλο για δείγματα |
 | `FOUNDRY_LOCAL_ENDPOINT` | (κενό) | Υπέρβαση του endpoint της υπηρεσίας |
 | `PYTHONPATH` | Διαδρομές Workshop | Διαδρομή αναζήτησης Python modules |
 
@@ -89,9 +89,9 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Συνεδρία 03: Benchmarking
 | Μεταβλητή | Προεπιλογή | Σκοπός |
 |-----------|------------|--------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Μοντέλα για benchmarking |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Μοντέλα για benchmarking |
 | `BENCH_ROUNDS` | `3` | Επαναλήψεις ανά μοντέλο |
-| `BENCH_PROMPT` | Προρυθμισμένο | Prompt δοκιμής |
+| `BENCH_PROMPT` | Προρυθμισμένο | Ερώτημα δοκιμής |
 | `BENCH_STREAM` | `0` | Μέτρηση καθυστέρησης πρώτου token |
 
 #### Συνεδρία 04: Σύγκριση Μοντέλων
@@ -99,14 +99,14 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |-----------|------------|--------|
 | `SLM_ALIAS` | `phi-4-mini` | Μικρό γλωσσικό μοντέλο |
 | `LLM_ALIAS` | `qwen2.5-7b` | Μεγάλο γλωσσικό μοντέλο |
-| `COMPARE_PROMPT` | Προρυθμισμένο | Prompt σύγκρισης |
+| `COMPARE_PROMPT` | Προρυθμισμένο | Ερώτημα σύγκρισης |
 | `COMPARE_RETRIES` | `2` | Προσπάθειες επανάληψης |
 
-#### Συνεδρία 05: Ορχήστρωση Πολλαπλών Πρακτόρων
+#### Συνεδρία 05: Ορχήστρα Πολλαπλών Πρακτόρων
 | Μεταβλητή | Προεπιλογή | Σκοπός |
 |-----------|------------|--------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Μοντέλο πράκτορα ερευνητή |
-| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Μοντέλο πράκτορα συντάκτη |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Μοντέλο ερευνητή πράκτορα |
+| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Μοντέλο πράκτορα επεξεργαστή |
 | `AGENT_QUESTION` | Προρυθμισμένο | Ερώτηση δοκιμής |
 
 ### Ρύθμιση Αξιοπιστίας
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Ρύθμιση Παραγωγής (Έμφαση στην Ποιότητα)
+### Ρύθμιση Παραγωγής (Εστίαση στην Ποιότητα)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Ρύθμιση Benchmarking
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -165,16 +165,16 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - Ισορροπία ποιότητας και ταχύτητας
 
 **Γρήγορες Απαντήσεις:**
-- `qwen2.5-0.5b` - Πολύ γρήγορο, καλό για ταξινομήσεις
+- `qwen2.5-0.5b` - Πολύ γρήγορο, καλό για ταξινόμηση
 - `phi-4-mini` - Γρήγορο με καλή ποιότητα
 
 **Υψηλή Ποιότητα:**
 - `qwen2.5-7b` - Καλύτερη ποιότητα, υψηλότερη χρήση πόρων
-- `phi-4-mini` - Καλή ποιότητα, χαμηλότερη χρήση πόρων
+- `phi-4-mini` - Καλή ποιότητα, χαμηλότεροι πόροι
 
-**Παραγωγή Κώδικα:**
+**Δημιουργία Κώδικα:**
 - `deepseek-coder-1.3b` - Εξειδικευμένο για κώδικα
-- `phi-4-mini` - Γενικής χρήσης για κώδικα
+- `phi-4-mini` - Γενική χρήση για κώδικα
 
 ### Ανά Διαθεσιμότητα Πόρων
 
@@ -234,9 +234,9 @@ AZURE_OPENAI_API_KEY=your-key-here
 AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-## Επίλυση Προβλημάτων
+## Αντιμετώπιση Προβλημάτων
 
-### Οι Μεταβλητές Περιβάλλοντος Δεν Φορτώνονται
+### Μεταβλητές Περιβάλλοντος Δεν Φορτώθηκαν
 
 **Συμπτώματα:**
 - Τα scripts χρησιμοποιούν λάθος μοντέλα
@@ -282,11 +282,11 @@ foundry service status | grep "Port"
 FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ```
 
-### Το Μοντέλο Δεν Βρέθηκε
+### Μοντέλο Δεν Βρέθηκε
 
 **Συμπτώματα:**
 - Σφάλματα "Model not found"
-- "Alias not recognized"
+- "Alias δεν αναγνωρίζεται"
 
 **Λύσεις:**
 ```bash
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Συμπτώματα:**
 - Σφάλματα "Module not found"
-- "Cannot import workshop_utils"
 
 **Λύσεις:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Δοκιμή Ρύθμισης
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## Βέλτιστες Πρακτικές Ασφαλείας
 
-### 1. Ποτέ Μην Κάνετε Commit Μυστικά
+### 1. Μην Κάνετε Commit Μυστικά
 
 ```bash
 # .gitignore should include:
@@ -385,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Περιστρέψτε Τα API Keys
+### 3. Περιστρέψτε Κλειδιά API
 
 ```bash
 # For Azure OpenAI or other cloud services

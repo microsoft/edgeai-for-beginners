@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T16:58:20+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:30:26+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "he"
 }
@@ -11,18 +11,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## סקירה כללית
 
-כל הדוגמאות ב-Python בתיקיית `Workshop/samples` עודכנו בהתאם לשיטות העבודה המומלצות של Foundry Local SDK, כדי להבטיח עקביות לאורך הסדנה.
+כל דוגמאות ה-Python בתיקיית `Workshop/samples` עודכנו בהתאם לשיטות העבודה המומלצות של Foundry Local SDK ולשמירה על עקביות בסדנה.
 
 **תאריך**: 8 באוקטובר, 2025  
 **היקף**: 9 קבצי Python ב-6 מפגשי סדנה  
-**מיקוד עיקרי**: טיפול בשגיאות, תיעוד, דפוסי SDK, חוויית משתמש
+**מיקוד עיקרי**: טיפול בשגיאות, תיעוד, תבניות SDK, חוויית משתמש
 
 ---
 
 ## קבצים מעודכנים
 
 ### מפגש 01: התחלה
-- ✅ `chat_bootstrap.py` - דוגמאות בסיסיות לצ'אט וזרימה
+- ✅ `chat_bootstrap.py` - דוגמאות בסיסיות לצ'אט וסטרימינג
 
 ### מפגש 02: פתרונות RAG
 - ✅ `rag_pipeline.py` - יישום RAG עם embeddings
@@ -48,13 +48,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## שיפורים מרכזיים
 
-### 1. טיפול משופר בשגיאות
+### 1. שיפור טיפול בשגיאות
 
 **לפני:**
 ```python
 manager, client, model_id = get_client(alias)
 ```
-  
+
 **אחרי:**
 ```python
 try:
@@ -64,9 +64,9 @@ except Exception as e:
     print("[INFO] Ensure Foundry Local is running: foundry service status")
     sys.exit(1)
 ```
-  
+
 **יתרונות:**
-- טיפול בשגיאות בצורה אלגנטית עם הודעות שגיאה ברורות
+- טיפול בשגיאות בצורה חלקה עם הודעות שגיאה ברורות
 - רמזים לפתרון בעיות
 - קודי יציאה מתאימים לסקריפטים
 
@@ -76,7 +76,7 @@ except Exception as e:
 ```python
 from sentence_transformers import SentenceTransformer
 ```
-  
+
 **אחרי:**
 ```python
 try:
@@ -85,9 +85,9 @@ except ImportError:
     print("[ERROR] sentence-transformers is required. Install with: pip install sentence-transformers")
     sys.exit(1)
 ```
-  
+
 **יתרונות:**
-- הנחיות ברורות כאשר תלות חסרה
+- הנחיות ברורות כאשר חסרים תלות
 - מניעת שגיאות ייבוא לא ברורות
 - הוראות התקנה ידידותיות למשתמש
 
@@ -95,10 +95,10 @@ except ImportError:
 
 **נוסף לכל הדוגמאות:**
 - תיעוד משתני סביבה ב-docstrings
-- קישורים למדריך SDK
+- קישורים למקורות SDK
 - דוגמאות שימוש
 - תיעוד מפורט של פונקציות/פרמטרים
-- רמזי סוג (type hints) לתמיכה טובה יותר ב-IDE
+- רמזי סוגים לתמיכה טובה יותר ב-IDE
 
 **דוגמה:**
 ```python
@@ -115,9 +115,8 @@ def pipeline(task: str) -> Dict[str, Any]:
         Exception: If any pipeline stage fails
     """
 ```
-  
 
-### 4. משוב משופר למשתמש
+### 4. משוב משתמש משופר
 
 **נוסף לוגים אינפורמטיביים:**
 ```python
@@ -125,40 +124,39 @@ print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
 print(f"[INFO] Loaded model: {alias} -> {model_id}")
 ```
-  
+
 **אינדיקטורים להתקדמות:**
 ```python
 print(f"[INFO] Benchmarking {alias}...")
 print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
 print(f"[INFO] Completed {alias}\n")
 ```
-  
+
 **פלט מובנה:**
 ```python
 print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
-  
 
 ### 5. השוואת ביצועים חזקה
 
 **שיפורים במפגש 03:**
 - טיפול בשגיאות לכל מודל (ממשיך במקרה של כשל)
 - דיווח מפורט על התקדמות
-- ביצוע נכון של סבבי חימום
+- ביצוע סבבי חימום כראוי
 - תמיכה במדידת זמן תגובה של הטוקן הראשון
 - הפרדה ברורה בין שלבים
 
-### 6. רמזי סוג עקביים
+### 6. רמזי סוגים עקביים
 
-**נוסף בכל הקוד:**
+**נוסף בכל מקום:**
 ```python
 from typing import Dict, List, Tuple, Any, Optional
 
 def run(alias: str) -> Tuple[float, str, Optional[int]]:
     """Run comparison for given model alias."""
 ```
-  
+
 **יתרונות:**
 - השלמה אוטומטית טובה יותר ב-IDE
 - זיהוי מוקדם של שגיאות
@@ -173,13 +171,13 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 - עיצוב פלט בדיקות
 - התאוששות משגיאות בבדיקות קבוצתיות
 
-### 8. תזמור סוכנים מרובים
+### 8. תיאום סוכנים מרובים
 
 **שיפורים במפגש 05:**
-- דיווח על התקדמות שלב-אחר-שלב
+- דיווח על התקדמות שלב אחר שלב
 - טיפול בשגיאות לכל סוכן
 - מבנה צינור ברור
-- תיעוד משופר של ניהול זיכרון
+- תיעוד משופר לניהול זיכרון
 
 ---
 
@@ -197,69 +195,67 @@ foundry model run qwen2.5-0.5b
 # Install dependencies
 pip install -r Workshop/requirements.txt
 ```
-  
 
 ### בדיקת כל דוגמה
 
 #### מפגש 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
-  
+
 #### מפגש 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
-  
+
 #### מפגש 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
-  
+
 #### מפגש 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
-  
+
 #### מפגש 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
-  
+
 #### מפגש 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
-  
 
 ---
 
@@ -269,23 +265,23 @@ python models_pipeline.py
 | משתנה | תיאור | ברירת מחדל |
 |-------|-------|------------|
 | `FOUNDRY_LOCAL_ALIAS` | כינוי מודל לשימוש | משתנה לפי דוגמה |
-| `FOUNDRY_LOCAL_ENDPOINT` | כתובת שירות חלופית | מזוהה אוטומטית |
+| `FOUNDRY_LOCAL_ENDPOINT` | עקיפת נקודת שירות | מזוהה אוטומטית |
 | `SHOW_USAGE` | הצגת שימוש בטוקנים | `0` |
 | `RETRY_ON_FAIL` | הפעלת לוגיקת ניסיון חוזר | `1` |
-| `RETRY_BACKOFF` | עיכוב ראשוני לניסיון חוזר | `1.0` |
+| `RETRY_BACKOFF` | עיכוב ניסיון חוזר ראשוני | `1.0` |
 
 ### ספציפי לדוגמה
 | משתנה | בשימוש על ידי | תיאור |
 |-------|---------------|-------|
 | `EMBED_MODEL` | מפגש 02 | שם מודל embedding |
 | `RAG_QUESTION` | מפגש 02 | שאלה לבדיקה ב-RAG |
-| `BENCH_MODELS` | מפגש 03 | מודלים להשוואת ביצועים (מופרדים בפסיקים) |
+| `BENCH_MODELS` | מפגש 03 | מודלים להשוואת ביצועים, מופרדים בפסיקים |
 | `BENCH_ROUNDS` | מפגש 03 | מספר סבבי השוואת ביצועים |
-| `BENCH_PROMPT` | מפגש 03 | הנחיה לבדיקה |
+| `BENCH_PROMPT` | מפגש 03 | הנחיה לבדיקה בהשוואת ביצועים |
 | `BENCH_STREAM` | מפגש 03 | מדידת זמן תגובה של הטוקן הראשון |
 | `SLM_ALIAS` | מפגש 04 | מודל שפה קטן |
 | `LLM_ALIAS` | מפגש 04 | מודל שפה גדול |
-| `COMPARE_PROMPT` | מפגש 04 | הנחיה לבדיקה השוואתית |
+| `COMPARE_PROMPT` | מפגש 04 | הנחיה לבדיקה בהשוואה |
 | `AGENT_MODEL_PRIMARY` | מפגש 05 | מודל סוכן ראשי |
 | `AGENT_MODEL_EDITOR` | מפגש 05 | מודל סוכן עורך |
 | `AGENT_QUESTION` | מפגש 05 | שאלה לבדיקה עם סוכנים |
@@ -293,29 +289,29 @@ python models_pipeline.py
 
 ---
 
-## שינויים שוברי תאימות
+## שינויים משמעותיים
 
 **אין** - כל השינויים תואמים לאחור.
 
-הסקריפטים הקיימים ימשיכו לעבוד. התכונות החדשות הן:
+סקריפטים קיימים ימשיכו לעבוד. תכונות חדשות הן:
 - משתני סביבה אופציונליים
-- הודעות שגיאה משופרות (לא שוברים פונקציונליות)
+- הודעות שגיאה משופרות (לא פוגעות בפונקציונליות)
 - לוגים נוספים (ניתן לדכא אותם)
-- רמזי סוג משופרים (אין השפעה בזמן ריצה)
+- רמזי סוגים משופרים (ללא השפעה בזמן ריצה)
 
 ---
 
 ## שיטות עבודה מומלצות שיושמו
 
-### 1. שימוש תמידי ב-Workshop Utils
+### 1. שימוש תמידי ב-workshop_utils
 ```python
 from workshop_utils import get_client, chat_once
 
 # Provides caching, retry, and endpoint management
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
-  
-### 2. דפוס טיפול בשגיאות נכון
+
+### 2. תבנית טיפול בשגיאות נכונה
 ```python
 try:
     # Initialize client
@@ -325,23 +321,23 @@ except Exception as e:
     print("[INFO] Check: foundry service status")
     sys.exit(1)
 ```
-  
+
 ### 3. לוגים אינפורמטיביים
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
-  
-### 4. רמזי סוג
+
+### 4. רמזי סוגים
 ```python
 from typing import Dict, List, Optional
 
 def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
-  
-### 5. Docstrings מקיפים
+
+### 5. docstrings מקיפים
 ```python
 def function(arg: str) -> str:
     """Short description.
@@ -356,7 +352,7 @@ def function(arg: str) -> str:
         Exception: When it fails
     """
 ```
-  
+
 ### 6. תמיכה במשתני סביבה
 ```python
 import os
@@ -364,8 +360,8 @@ import os
 alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
-  
-### 7. התדרדרות אלגנטית
+
+### 7. התמודדות עם תקלות בצורה חלקה
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -376,42 +372,37 @@ for model in models:
         print(f"[ERROR] {model} failed: {e}")
         print(f"[INFO] Skipping {model}...")
 ```
-  
 
 ---
 
 ## בעיות נפוצות ופתרונות
 
 ### בעיה: שגיאות ייבוא
-**פתרון:** התקנת תלות חסרה  
+**פתרון:** התקנת תלות חסרות
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
-  
 
 ### בעיה: שגיאות חיבור
-**פתרון:** לוודא ש-Foundry Local פועל  
+**פתרון:** לוודא ש-Foundry Local פועל
 ```bash
 foundry service status
 foundry model run phi-4-mini
 ```
-  
 
 ### בעיה: מודל לא נמצא
-**פתרון:** לבדוק אילו מודלים זמינים  
+**פתרון:** לבדוק אילו מודלים זמינים
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
-  
 
 ### בעיה: ביצועים איטיים
-**פתרון:** להשתמש במודלים קטנים יותר או להתאים פרמטרים  
+**פתרון:** להשתמש במודלים קטנים יותר או להתאים פרמטרים
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 set BENCH_ROUNDS=2
 ```
-  
 
 ---
 
@@ -431,13 +422,12 @@ set BENCH_ROUNDS=2
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
-  
 
 ### 4. הוספת השוואות ביצועים
-לעקוב אחר שיפורי ביצועים בעקבות שיפורי טיפול בשגיאות.
+מעקב אחר שיפורי ביצועים בעקבות שיפורי טיפול בשגיאות.
 
 ### 5. משוב משתמשים
-לאסוף משוב ממשתתפי הסדנה על:
+איסוף משוב ממשתתפי הסדנה על:
 - בהירות הודעות השגיאה
 - שלמות התיעוד
 - קלות השימוש
@@ -456,12 +446,12 @@ def test_all_samples():
 ## תחזוקה
 
 ### הוספת דוגמאות חדשות
-יש לעקוב אחר הדפוסים הבאים בעת יצירת דוגמאות חדשות:
+יש לעקוב אחר התבניות הבאות בעת יצירת דוגמאות חדשות:
 
-1. להשתמש ב-`workshop_utils` לניהול לקוח
-2. להוסיף טיפול מקיף בשגיאות
+1. להשתמש ב-`workshop_utils` לניהול לקוחות
+2. להוסיף טיפול שגיאות מקיף
 3. לכלול תמיכה במשתני סביבה
-4. להוסיף רמזי סוג ו-docstrings
+4. להוסיף רמזי סוגים ו-docstrings
 5. לספק לוגים אינפורמטיביים
 6. לכלול דוגמאות שימוש ב-docstring
 7. לקשר לתיעוד SDK
@@ -469,7 +459,7 @@ def test_all_samples():
 ### סקירת עדכונים
 בעת סקירת עדכוני דוגמאות, יש לבדוק:
 - [ ] טיפול בשגיאות בכל פעולות I/O
-- [ ] רמזי סוג בפונקציות ציבוריות
+- [ ] רמזי סוגים בפונקציות ציבוריות
 - [ ] docstrings מקיפים
 - [ ] תיעוד משתני סביבה
 - [ ] משוב אינפורמטיבי למשתמש
@@ -478,9 +468,9 @@ def test_all_samples():
 
 ---
 
-**סיכום**: כל דוגמאות ה-Python בסדנה כעת עומדות בשיטות העבודה המומלצות של Foundry Local SDK עם טיפול משופר בשגיאות, תיעוד מקיף וחוויית משתמש משופרת. אין שינויים שוברי תאימות - כל הפונקציונליות הקיימת נשמרה ושופרה.
+**סיכום**: כל דוגמאות ה-Python בסדנה כעת עומדות בשיטות העבודה המומלצות של Foundry Local SDK עם טיפול שגיאות משופר, תיעוד מקיף וחוויית משתמש משופרת. אין שינויים משמעותיים - כל הפונקציונליות הקיימת נשמרה ושופרה.
 
 ---
 
 **הצהרת אחריות**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור הסמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא נושאים באחריות לאי-הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. איננו אחראים לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.

@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T16:41:34+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:26:38+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "he"
 }
 -->
-# מדריך להגדרת סביבה
+# מדריך הגדרת סביבה
 
 ## סקירה כללית
 
-דוגמאות הסדנה משתמשות במשתני סביבה לצורך הגדרה, מרוכזים בקובץ `.env` שנמצא בשורש המאגר. זה מאפשר התאמה אישית קלה ללא צורך בשינוי קוד.
+דוגמאות הסדנה משתמשות במשתני סביבה לצורך הגדרה, אשר מרוכזים בקובץ `.env` שנמצא בשורש המאגר. זה מאפשר התאמה אישית קלה ללא צורך בשינוי קוד.
 
 ## התחלה מהירה
 
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **עבור סקריפטים ב-Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -61,12 +61,12 @@ python chat_bootstrap.py
 | משתנה | ברירת מחדל | תיאור |
 |-------|------------|--------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | מודל ברירת מחדל לדוגמאות |
-| `FOUNDRY_LOCAL_ENDPOINT` | (ריק) | נקודת קצה לשירות מותאם |
+| `FOUNDRY_LOCAL_ENDPOINT` | (ריק) | נקודת שירות חלופית |
 | `PYTHONPATH` | נתיבי סדנה | נתיב חיפוש למודולים ב-Python |
 
 **מתי להגדיר את FOUNDRY_LOCAL_ENDPOINT:**
 - מופע מרוחק של Foundry Local
-- הגדרת פורט מותאם
+- הגדרת פורט מותאמת אישית
 - הפרדה בין פיתוח לייצור
 
 **דוגמה:**
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### מפגש 03: ביצועי מודלים
 | משתנה | ברירת מחדל | מטרה |
 |-------|------------|-------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | מודלים להשוואה |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | מודלים לביצועי השוואה |
 | `BENCH_ROUNDS` | `3` | מספר סבבים לכל מודל |
 | `BENCH_PROMPT` | מוגדר מראש | הנחיה לבדיקה |
 | `BENCH_STREAM` | `0` | מדידת זמן תגובה לטוקן הראשון |
@@ -105,7 +105,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### מפגש 05: תזמור רב-סוכנים
 | משתנה | ברירת מחדל | מטרה |
 |-------|------------|-------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | מודל סוכן ראשי |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | מודל סוכן מחקר |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | מודל סוכן עורך |
 | `AGENT_QUESTION` | מוגדר מראש | שאלה לבדיקה |
 
@@ -114,12 +114,12 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | משתנה | ברירת מחדל | מטרה |
 |-------|------------|-------|
 | `SHOW_USAGE` | `1` | הדפסת שימוש בטוקנים |
-| `RETRY_ON_FAIL` | `1` | הפעלת לוגיקת ניסיונות חוזרים |
-| `RETRY_BACKOFF` | `1.0` | עיכוב בין ניסיונות (שניות) |
+| `RETRY_ON_FAIL` | `1` | הפעלת לוגיקת ניסיון חוזר |
+| `RETRY_BACKOFF` | `1.0` | עיכוב ניסיון חוזר (שניות) |
 
 ## הגדרות נפוצות
 
-### הגדרת פיתוח (איטרציה מהירה)
+### הגדרת פיתוח (חזרות מהירות)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### הגדרת ביצועי מודלים
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -165,12 +165,12 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - איזון בין איכות למהירות
 
 **תגובות מהירות:**
-- `qwen2.5-0.5b` - מהיר מאוד, מתאים לסיווג
+- `qwen2.5-0.5b` - מהיר מאוד, טוב לסיווג
 - `phi-4-mini` - מהיר עם איכות טובה
 
 **איכות גבוהה:**
-- `qwen2.5-7b` - איכות גבוהה ביותר, דורש משאבים רבים
-- `phi-4-mini` - איכות טובה, דורש פחות משאבים
+- `qwen2.5-7b` - איכות הטובה ביותר, שימוש גבוה במשאבים
+- `phi-4-mini` - איכות טובה, משאבים נמוכים יותר
 
 **יצירת קוד:**
 - `deepseek-coder-1.3b` - מותאם במיוחד לקוד
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## הגדרות מתקדמות
 
-### נקודות קצה מותאמות
+### נקודות שירות מותאמות אישית
 
 ```bash
 # Development environment
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### טמפרטורה ודגימה (ניתן לעקוף בקוד)
+### טמפרטורה ודגימה (הגדרה בקוד)
 
 ```python
 # In your scripts/notebooks
@@ -285,7 +285,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ### מודל לא נמצא
 
 **תסמינים:**
-- שגיאות "Model not found"
+- שגיאות "מודל לא נמצא"
 - "Alias לא מזוהה"
 
 **פתרונות:**
@@ -303,20 +303,17 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### שגיאות ייבוא
 
 **תסמינים:**
-- שגיאות "Module not found"
-- "Cannot import workshop_utils"
+- שגיאות "מודול לא נמצא"
 
 **פתרונות:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## בדיקת הגדרות
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### בדיקת חיבור ל-Foundry Local
+### בדיקת חיבור Foundry Local
 
 ```python
 # test_connection.py
@@ -366,7 +363,7 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## המלצות אבטחה
+## שיטות עבודה מומלצות לאבטחה
 
 ### 1. לעולם לא לשמור סודות
 
@@ -392,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. שימוש בהגדרות מותאמות לסביבה
+### 4. שימוש בהגדרות ייחודיות לסביבה
 
 ```bash
 # Development
@@ -412,7 +409,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - `QUICK_START.md` - מדריך התחלה מהירה
 - `SDK_MIGRATION_NOTES.md` - פרטי עדכון SDK
-- `Workshop/samples/*/README.md` - מדריכים ספציפיים לדוגמאות
+- `Workshop/samples/*/README.md` - מדריכים לדוגמאות ספציפיות
 
 ---
 
@@ -422,5 +419,5 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
-**כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור הסמכותי. למידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי בני אדם. איננו נושאים באחריות לאי-הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+**הצהרת אחריות**:  
+מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. איננו אחראים לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.

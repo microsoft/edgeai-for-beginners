@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T15:14:48+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T23:04:16+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "sk"
 }
@@ -47,11 +47,11 @@ pip install -r requirements.txt
 
 ## Spúšťanie ukážok z workshopu
 
-### Session 01: Základný chat
+### Sedenie 01: Základný chat
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Environment Variables:**  
@@ -60,11 +60,11 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
 ```
 
-### Session 02: RAG Pipeline
+### Sedenie 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Environment Variables:**  
@@ -74,24 +74,25 @@ set RAG_QUESTION="Why use RAG with local inference?"
 set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
-### Session 02: Hodnotenie RAG (Ragas)
+### Sedenie 02: Hodnotenie RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Poznámka**: Vyžaduje dodatočné závislosti nainštalované cez `requirements.txt`
 
-### Session 03: Benchmarking
+### Sedenie 03: Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Environment Variables:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -99,11 +100,11 @@ set BENCH_STREAM=1
 
 **Výstup**: JSON s metrikami latencie, priepustnosti a prvého tokenu
 
-### Session 04: Porovnanie modelov
+### Sedenie 04: Porovnanie modelov
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Environment Variables:**  
@@ -113,11 +114,11 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### Session 05: Orchestrácia viacerých agentov
+### Sedenie 05: Orchestrácia viacerých agentov
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Environment Variables:**  
@@ -127,26 +128,26 @@ set AGENT_MODEL_EDITOR=phi-4-mini
 set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ```
 
-### Session 06: Model Router
+### Sedenie 06: Modelový router
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **Testuje logiku smerovania** s viacerými zámermi (kód, sumarizácia, klasifikácia)
 
-### Session 06: Pipeline
+### Sedenie 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**Komplexný viacstupňový pipeline** s plánovaním, vykonaním a zdokonalením
+**Komplexný viacstupňový pipeline** s plánovaním, vykonávaním a zdokonaľovaním
 
 ## Skripty
 
-### Export Benchmark Report
+### Export správy o benchmarku
 
 ```bash
 cd Workshop/scripts
@@ -159,17 +160,17 @@ python export_benchmark_markdown.py \
 
 **Výstup**: Markdown tabuľka + JSON metriky
 
-### Lint Markdown CLI Patterns
+### Lintovanie vzorov CLI v Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**Účel**: Detekcia zastaraných CLI vzorov v dokumentácii
+**Účel**: Detekcia zastaraných vzorov CLI v dokumentácii
 
 ## Testovanie
 
-### Smoke Tests
+### Rýchle testy
 
 ```bash
 cd Workshop
@@ -235,17 +236,17 @@ foundry model run phi-4-mini
 | `RETRY_ON_FAIL` | `1` | Povoliť logiku opakovania |
 | `RETRY_BACKOFF` | `1.0` | Počiatočné oneskorenie opakovania (sekundy) |
 
-### Špecifické pre session
+### Špecifické pre sedenie
 | Premenná | Predvolená hodnota | Popis |
 |----------|--------------------|-------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Model na vkladanie |
-| `RAG_QUESTION` | Pozri ukážku | Testovacia otázka pre RAG |
+| `RAG_QUESTION` | Pozri ukážku | Testovacia otázka RAG |
 | `BENCH_MODELS` | Rôzne | Modely oddelené čiarkou |
 | `BENCH_ROUNDS` | `3` | Iterácie benchmarku |
-| `BENCH_PROMPT` | Pozri ukážku | Výzva pre benchmark |
+| `BENCH_PROMPT` | Pozri ukážku | Výzva benchmarku |
 | `BENCH_STREAM` | `0` | Meranie latencie prvého tokenu |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Primárny model agenta |
-| `AGENT_MODEL_EDITOR` | Primárny | Model agenta editoru |
+| `AGENT_MODEL_EDITOR` | Primárny | Model editora agenta |
 | `SLM_ALIAS` | `phi-4-mini` | Malý jazykový model |
 | `LLM_ALIAS` | `qwen2.5-7b` | Veľký jazykový model |
 | `COMPARE_PROMPT` | Pozri ukážku | Výzva na porovnanie |
@@ -260,7 +261,7 @@ foundry model run phi-4-mini
 ### Produkčné scenáre
 - **phi-4-mini** - Všeobecné použitie
 - **deepseek-coder-1.3b** - Generovanie kódu
-- **qwen2.5-7b** - Vysokokvalitné odpovede
+- **qwen2.5-7b** - Odpovede vysokej kvality
 
 ## Dokumentácia SDK
 
@@ -272,22 +273,22 @@ foundry model run phi-4-mini
 1. Skontrolujte stav služby: `foundry service status`  
 2. Prezrite si logy: Skontrolujte logy služby Foundry Local  
 3. Prezrite si dokumentáciu SDK: https://github.com/microsoft/Foundry-Local  
-4. Prezrite si ukážkový kód: Všetky ukážky obsahujú podrobné docstringy
+4. Preštudujte si ukážkový kód: Všetky ukážky majú podrobné docstringy  
 
 ## Ďalšie kroky
 
-1. Dokončite všetky session workshopu v poradí  
+1. Dokončite všetky sedenia workshopu v poradí  
 2. Experimentujte s rôznymi modelmi  
-3. Upravte ukážky pre vaše prípady použitia  
-4. Prezrite si `SDK_MIGRATION_NOTES.md` pre pokročilé vzory
+3. Upravte ukážky podľa vašich potrieb  
+4. Preštudujte si `SDK_MIGRATION_NOTES.md` pre pokročilé vzory  
 
 ---
 
-**Posledná aktualizácia**: 2025-01-08  
+**Posledná aktualizácia**: 8. január 2025  
 **Verzia workshopu**: Najnovšia  
 **SDK**: Foundry Local Python SDK
 
 ---
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, upozorňujeme, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

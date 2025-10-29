@@ -1,37 +1,37 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1b3c0fecfd713c2df903a0633249dc9",
-  "translation_date": "2025-10-09T10:39:09+00:00",
+  "original_hash": "d9e354c0182311726dc037a8809524e2",
+  "translation_date": "2025-10-28T21:46:48+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "tr"
 }
 -->
-# Oturum 4: En Yeni Modelleri Keşfedin – LLM'ler, SLM'ler ve Cihaz Üzerinde Çıkarım
+# Oturum 4: En Son Modelleri Keşfet – LLM'ler, SLM'ler ve Cihaz Üzerinde Çıkarım
 
 ## Özet
 
-Yerel ve bulut tabanlı çıkarım senaryoları için Büyük Dil Modelleri (LLM'ler) ve Küçük Dil Modelleri (SLM'ler) karşılaştırmasını yapın. ONNX Runtime hızlandırması, WebGPU çalıştırması ve hibrit RAG deneyimlerinden yararlanarak dağıtım modellerini öğrenin. Yerel bir modelle bir Chainlit RAG demosu ve isteğe bağlı bir OpenWebUI keşfi içerir. WebGPU çıkarım başlangıç projesini uyarlayacak ve Phi ile GPT-OSS-20B'nin yetenek ve maliyet/performans dengelerini değerlendireceksiniz.
+Yerel ve bulut çıkarım senaryoları için Büyük Dil Modelleri (LLM'ler) ve Küçük Dil Modelleri (SLM'ler) karşılaştırmasını yapın. ONNX Runtime hızlandırması, WebGPU yürütmesi ve hibrit RAG deneyimlerini kullanarak dağıtım modellerini öğrenin. Yerel bir modelle Chainlit RAG demosu ve isteğe bağlı OpenWebUI keşfi içerir. WebGPU çıkarım başlangıcını uyarlayacak ve Phi ile GPT-OSS-20B'nin yetenek ve maliyet/performans dengelerini değerlendireceksiniz.
 
 ## Öğrenme Hedefleri
 
-- **Karşılaştırma**: SLM ve LLM'leri gecikme, bellek ve kalite eksenlerinde karşılaştırın
-- **Dağıtım**: Modelleri ONNXRuntime ve (desteklendiği yerlerde) WebGPU ile dağıtın
-- **Çalıştırma**: Tarayıcı tabanlı çıkarım (gizliliği koruyan etkileşimli demo)
-- **Entegrasyon**: Yerel bir SLM arka ucu ile bir Chainlit RAG hattını entegre edin
-- **Değerlendirme**: Hafif kalite ve maliyet ölçütlerini kullanarak değerlendirme yapın
+- **Karşılaştır** SLM ve LLM'yi gecikme, bellek ve kalite eksenlerinde
+- **Dağıt** modelleri ONNXRuntime ve (desteklendiği yerlerde) WebGPU ile
+- **Çalıştır** tarayıcı tabanlı çıkarım (gizliliği koruyan etkileşimli demo)
+- **Entegre et** bir Chainlit RAG hattını yerel bir SLM arka ucu ile
+- **Değerlendir** hafif kalite ve maliyet ölçütlerini kullanarak
 
 ## Ön Koşullar
 
 - Oturumlar 1–3 tamamlanmış olmalı
-- `chainlit` kurulmuş olmalı (Module08 için `requirements.txt` içinde zaten mevcut)
-- WebGPU destekli bir tarayıcı (Windows 11'de Edge / Chrome'un en son sürümü)
-- Foundry Local çalışıyor olmalı (`foundry status`)
+- `chainlit` kurulmuş (Module08 için `requirements.txt` içinde zaten mevcut)
+- WebGPU destekli tarayıcı (Windows 11'de Edge / Chrome en son sürüm)
+- Foundry Local çalışıyor (`foundry status`)
 
 ### Platformlar Arası Notlar
 
-Windows birincil hedef ortam olmaya devam etmektedir. Yerel macOS ikili dosyalarını bekleyen geliştiriciler için:
-1. Foundry Local'ı bir Windows 11 VM'de (Parallels / UTM) VEYA uzak bir Windows iş istasyonunda çalıştırın.
+Windows birincil hedef ortam olmaya devam ediyor. Yerel macOS ikili dosyalarını bekleyen geliştiriciler için:
+1. Foundry Local'ı bir Windows 11 VM'de (Parallels / UTM) veya uzak bir Windows iş istasyonunda çalıştırın.
 2. Hizmeti açın (varsayılan port 5273) ve macOS'ta ayarlayın:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
@@ -60,22 +60,23 @@ foundry model run phi-4-mini   --prompt "List 5 creative IoT edge AI ideas."
 foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 ```
 
-İzlenecekler: yanıt derinliği, gerçeklik doğruluğu, stilistik zenginlik, gecikme.
+Takip edin: yanıt derinliği, gerçeklik doğruluğu, stilistik zenginlik, gecikme.
 
 ### 2. ONNX Runtime Hızlandırması (5 dakika)
 
 ```powershell
 foundry config set compute.onnx.enable_gpu true
 # Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
-GPU etkinleştirildikten sonra verimlilik değişikliklerini gözlemleyin (yalnızca CPU ile karşılaştırın).
+GPU etkinleştirildikten sonra yalnızca CPU ile karşılaştırıldığında verim değişikliklerini gözlemleyin.
 
 ### 3. Tarayıcıda WebGPU Çıkarımı (6 dakika)
 
-Başlangıç `04-webgpu-inference` dosyasını uyarlayın (oluşturun: `samples/04-cutting-edge/webgpu_demo.html`):
+Başlangıç `04-webgpu-inference` dosyasını uyarlayın (`samples/04-cutting-edge/webgpu_demo.html` oluşturun):
 
 ```html
 <!DOCTYPE html>
@@ -116,7 +117,7 @@ Başlangıç `04-webgpu-inference` dosyasını uyarlayın (oluşturun: `samples/
 </html>
 ```
 
-Dosyayı bir tarayıcıda açın; düşük gecikmeli yerel dönüşü gözlemleyin.
+Dosyayı bir tarayıcıda açın; düşük gecikmeli yerel dönüşümü gözlemleyin.
 
 ### 4. Chainlit RAG Sohbet Uygulaması (7 dakika)
 
@@ -165,19 +166,19 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ### 5. Başlangıç Projesi: `04-webgpu-inference` Uyarlayın (6 dakika)
 
 Teslimatlar:
-- Yer tutucu veri alma mantığını akış token'larıyla değiştirin (`stream=True` uç nokta varyantını etkinleştirdikten sonra kullanın)
-- Gecikme grafiği ekleyin (istemci tarafında) phi ve gpt-oss-20b geçişleri için
-- RAG bağlamını satır içi gömün (referans belgeler için metin alanı)
+- Yer tutucu fetch mantığını akışlı tokenlarla değiştirin (`stream=True` uç nokta varyantını etkinleştirdikten sonra kullanın)
+- Gecikme grafiği ekleyin (istemci tarafı) phi ve gpt-oss-20b geçişleri için
+- RAG bağlamını satır içi yerleştirin (referans belgeler için metin alanı)
 
 ## Değerlendirme Ölçütleri
 
 | Kategori | Phi-4-mini | GPT-OSS-20B | Gözlem |
-|----------|------------|-------------|--------|
+|----------|------------|-------------|-------------|
 | Gecikme (soğuk) | Hızlı | Daha yavaş | SLM hızlı ısınır |
 | Bellek | Düşük | Yüksek | Cihaz uygunluğu |
 | Bağlam uyumu | İyi | Güçlü | Daha büyük model daha ayrıntılı olabilir |
-| Maliyet (yerel) | Minimal | Daha yüksek (kaynak) | Enerji/zaman dengesi |
-| En iyi kullanım durumu | Uç uygulamalar | Derin akıl yürütme | Hibrit bir hat mümkün |
+| Maliyet (yerel) | Minimum | Daha yüksek (kaynak) | Enerji/zaman dengesi |
+| En iyi kullanım durumu | Edge uygulamaları | Derin akıl yürütme | Hibrit hat mümkün |
 
 ## Ortamı Doğrulama
 
@@ -187,19 +188,20 @@ foundry model list
 
 # For runtime metrics use the Python benchmark script (Session 3) and OS tools (Task Manager / nvidia-smi) instead of 'model stats'
 # Example:
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini,gpt-oss-20b
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 ## Sorun Giderme
 
 | Belirti | Sebep | Çözüm |
-|---------|-------|-------|
+|---------|-------|--------|
 | Web sayfası alınamıyor | CORS veya hizmet kapalı | Uç noktayı doğrulamak için `curl` kullanın; gerekirse CORS proxy'sini etkinleştirin |
-| Chainlit boş | Ortam aktif değil | Sanal ortamı etkinleştirin ve bağımlılıkları yeniden yükleyin |
+| Chainlit boş | Ortam aktif değil | Venv'i etkinleştirin ve bağımlılıkları yeniden yükleyin |
 | Yüksek gecikme | Model yeni yüklendi | Küçük bir istem dizisiyle ısıtın |
 
-## Referanslar
+## Kaynaklar
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Chainlit Belgeleri: https://docs.chainlit.io
@@ -208,18 +210,18 @@ foundry model list
 ---
 
 **Oturum Süresi**: 30 dakika  
-**Zorluk**: İleri Düzey
+**Zorluk Seviyesi**: İleri
 
-## Örnek Senaryo ve Atölye Eşlemesi
+## Örnek Senaryo ve Atölye Eşleştirmesi
 
-| Atölye Çıktıları | Senaryo | Amaç | Veri / İstem Kaynağı |
-|------------------|---------|------|-----------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Yönetici özeti oluşturucu için SLM ve LLM değerlendiren mimari ekip | Gecikme + token kullanımı farkını ölçmek | Tek `COMPARE_PROMPT` ortam değişkeni |
+| Atölye Materyalleri | Senaryo | Amaç | Veri / İstek Kaynağı |
+|--------------------|----------|-----------|----------------------|
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Yönetici özeti oluşturucu için SLM ve LLM değerlendiren mimari ekip | Gecikme ve token kullanımı farkını ölçmek | Tek `COMPARE_PROMPT` ortam değişkeni |
 | `chainlit_app.py` (RAG demo) | Dahili bilgi asistanı prototipi | Kısa yanıtları minimal sözcüksel geri alımla temellendirmek | Dosyadaki satır içi `DOCS` listesi |
-| `webgpu_demo.html` | Geleceğe yönelik cihaz üzerinde tarayıcı çıkarım önizlemesi | Düşük gecikmeli yerel dönüş + UX anlatımı göster | Yalnızca canlı kullanıcı istemi |
+| `webgpu_demo.html` | Geleceğe yönelik cihaz üzerinde tarayıcı çıkarım önizlemesi | Düşük gecikmeli yerel dönüşüm ve UX anlatımı göster | Yalnızca canlı kullanıcı isteği |
 
 ### Senaryo Anlatımı
-Ürün organizasyonu bir yönetici özet oluşturucu istiyor. Hafif bir SLM (phi-4-mini) taslak özetler oluşturur; daha büyük bir LLM (gpt-oss-20b) yalnızca yüksek öncelikli raporları iyileştirebilir. Oturum betikleri, hibrit bir tasarımı gerekçelendirmek için ampirik gecikme ve token ölçümlerini yakalar, Chainlit demosu ise küçük model yanıtlarını gerçeklere dayalı tutmanın nasıl mümkün olduğunu gösterir. WebGPU konsept sayfası, tarayıcı hızlandırması olgunlaştığında tamamen istemci tarafı işleme için bir vizyon yolu sunar.
+Ürün organizasyonu bir yönetici brifing oluşturucu istiyor. Hafif bir SLM (phi-4-mini) özetler oluşturur; daha büyük bir LLM (gpt-oss-20b) yalnızca yüksek öncelikli raporları iyileştirebilir. Oturum betikleri hibrit bir tasarımı haklı çıkarmak için ampirik gecikme ve token metriklerini yakalar, Chainlit demosu ise küçük model yanıtlarını gerçeklere dayandırmanın nasıl mümkün olduğunu gösterir. WebGPU konsept sayfası, tarayıcı hızlandırması olgunlaştığında tamamen istemci tarafı işleme için bir vizyon yolu sağlar.
 
 ### Minimal RAG Bağlamı (Chainlit)
 ```python
@@ -230,7 +232,7 @@ DOCS = [
 ]
 ```
 
-### Hibrit Taslak→İyileştirme Akışı (Sözde Kod)
+### Hibrit Taslak→İyileştirme Akışı (Pseudo)
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":prompt}], max_tokens=280)
 if len(draft) < 600:  # heuristic: escalate only for longer briefs or flagged topics
@@ -239,21 +241,21 @@ else:
     final, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Refine and polish:\n{draft}"}], max_tokens=220)
 ```
 
-Her iki gecikme bileşenini de izleyerek ortalama maliyetin karışımını raporlayın.
+Her iki gecikme bileşenini izleyerek ortalama karma maliyeti raporlayın.
 
 ### İsteğe Bağlı Geliştirmeler
 
 | Odak | Geliştirme | Neden | Uygulama İpucu |
-|------|-----------|-------|----------------|
-| Karşılaştırmalı Ölçümler | Token kullanımı + ilk token gecikmesini izleyin | Kapsamlı performans görünümü | Geliştirilmiş kıyaslama betiğini kullanın (Oturum 3) `BENCH_STREAM=1` ile |
-| Hibrit Hat | SLM taslağı → LLM iyileştirme | Gecikme ve maliyeti azaltın | Phi-4-mini ile oluşturun, özeti gpt-oss-20b ile iyileştirin |
-| Akışlı UI | Chainlit'te daha iyi UX | Kademeli geri bildirim | Yerel akış etkinleştirildiğinde `stream=True` kullanın; parçaları biriktirin |
-| WebGPU Önbellekleme | Daha hızlı JS başlatma | Derleme yükünü azaltın | Derlenmiş gölgelendirici nesnelerini önbelleğe alın (gelecekteki çalışma zamanı özelliği) |
-| Deterministik QA Seti | Adil model karşılaştırması | Değişkenliği ortadan kaldırın | Sabit istem listesi + değerlendirme çalışmaları için `temperature=0` |
+|-------|------------|-----|---------------------|
+| Karşılaştırmalı Metrikler | Token kullanımı ve ilk token gecikmesini izleyin | Kapsamlı performans görünümü | Geliştirilmiş benchmark betiğini kullanın (Oturum 3) `BENCH_STREAM=1` ile |
+| Hibrit Hat | SLM taslak → LLM iyileştirme | Gecikme ve maliyeti azaltın | Phi-4-mini ile oluşturun, özeti gpt-oss-20b ile iyileştirin |
+| Akışlı UI | Chainlit'te daha iyi UX | Artımlı geri bildirim | Yerel akış açıldığında `stream=True` kullanın; parçaları biriktirin |
+| WebGPU Önbellekleme | Daha hızlı JS başlatma | Yeniden derleme yükünü azaltın | Derlenmiş shader eserlerini önbelleğe alın (gelecekteki çalışma zamanı yeteneği) |
+| Deterministik QA Seti | Adil model karşılaştırması | Varyansı kaldırın | Sabit istek listesi + değerlendirme çalışmaları için `temperature=0` |
 | Çıktı Puanlama | Yapılandırılmış kalite lensi | Anlatıların ötesine geçin | Basit bir ölçüt: tutarlılık / gerçeklik / kısalık (1–5) |
-| Enerji / Kaynak Notları | Sınıf tartışması | Ticaret dengelerini gösterin | İşletim sistemi monitörlerini kullanın (`foundry system info`, Görev Yöneticisi, `nvidia-smi`) + kıyaslama betiği çıktıları |
-| Maliyet Simülasyonu | Bulut öncesi gerekçe | Ölçeklendirme planı | Tokenları toplam sahip olma maliyeti anlatısı için varsayımsal bulut fiyatlandırmasına eşleyin |
-| Gecikme Ayrıştırması | Darboğazları belirleyin | Optimizasyonları hedefleyin | İstem hazırlığı, istek gönderimi, ilk token, tamamlama süresi ölçümleri yapın |
+| Enerji / Kaynak Notları | Sınıf tartışması | Ticaret dengelerini gösterin | OS monitörlerini kullanın (`foundry system info`, Görev Yöneticisi, `nvidia-smi`) + benchmark betik çıktıları |
+| Maliyet Simülasyonu | Bulut öncesi gerekçe | Ölçekleme planı | Tokenleri TCO anlatısı için varsayımsal bulut fiyatlandırmasına eşleyin |
+| Gecikme Ayrıştırması | Darboğazları belirleyin | Optimizasyon hedefleri | İstek hazırlığı, istek gönderimi, ilk token, tam tamamlama sürelerini ölçün |
 | RAG + LLM Yedekleme | Kalite güvenlik ağı | Zor soruları iyileştirin | SLM yanıt uzunluğu < eşik veya düşük güven → yükseltme |
 
 #### Örnek Hibrit Taslak/İyileştirme Deseni
@@ -279,4 +281,4 @@ Adil karşılaştırmalar için modeller arasında tutarlı ölçüm yapısı ku
 ---
 
 **Feragatname**:  
-Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı bir yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dilindeki hali, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.

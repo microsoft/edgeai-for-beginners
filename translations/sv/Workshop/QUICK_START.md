@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T12:48:34+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T22:03:14+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "sv"
 }
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Session 01: Grundläggande Chat
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Miljövariabler:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Session 02: RAG-pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Miljövariabler:**  
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Session 02: RAG-utvärdering (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Obs**: Kräver ytterligare beroenden installerade via `requirements.txt`
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### Session 03: Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Miljövariabler:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### Session 04: Modelljämförelse
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Miljövariabler:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Session 05: Multi-Agent Orkestrering
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Miljövariabler:**  
@@ -130,16 +131,16 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Session 06: Modellrouter
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Testar routerlogik** med flera intentioner (kod, sammanfatta, klassificering)
+**Testar routinglogik** med flera intentioner (kod, sammanfatta, klassificering)
 
 ### Session 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Komplex pipeline i flera steg** med planering, utförande och förfining
@@ -169,7 +170,7 @@ python lint_markdown_cli.py --verbose
 
 ## Testning
 
-### Röktester
+### Snabbtester
 
 ```bash
 cd Workshop
@@ -193,7 +194,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Fel vid modulimport
+### Modulimportfel
 
 ```bash
 # Ensure virtual environment is activated
@@ -214,7 +215,7 @@ foundry service status
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ```
 
-### Modell hittades inte
+### Modell hittas inte
 
 ```bash
 # List available models
@@ -228,18 +229,18 @@ foundry model run phi-4-mini
 
 ### Grundkonfiguration
 | Variabel | Standard | Beskrivning |
-|----------|----------|-------------|
+|----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | Varierar | Modellalias att använda |
-| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Åsidosätt tjänstendpunkt |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Åsidosätt tjänstslutpunkt |
 | `SHOW_USAGE` | `0` | Visa statistik för tokenanvändning |
 | `RETRY_ON_FAIL` | `1` | Aktivera återförsökslogik |
-| `RETRY_BACKOFF` | `1.0` | Initial fördröjning vid återförsök (sekunder) |
+| `RETRY_BACKOFF` | `1.0` | Initial återförsöksfördröjning (sekunder) |
 
 ### Sessionsspecifik
 | Variabel | Standard | Beskrivning |
-|----------|----------|-------------|
+|----------|---------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Inbäddningsmodell |
-| `RAG_QUESTION` | Se exempel | Testfråga för RAG |
+| `RAG_QUESTION` | Se exempel | RAG-testfråga |
 | `BENCH_MODELS` | Varierar | Komma-separerade modeller |
 | `BENCH_ROUNDS` | `3` | Benchmark-iterationer |
 | `BENCH_PROMPT` | Se exempel | Benchmark-prompt |
@@ -270,9 +271,9 @@ foundry model run phi-4-mini
 ## Få hjälp
 
 1. Kontrollera tjänstens status: `foundry service status`  
-2. Visa loggar: Kontrollera Foundry Local-tjänstens loggar  
+2. Visa loggar: Kontrollera Foundry Locals tjänstloggar  
 3. Kontrollera SDK-dokumentation: https://github.com/microsoft/Foundry-Local  
-4. Granska exempelkod: Alla exempel har detaljerade docstrings  
+4. Granska exempel: Alla exempel har detaljerade docstrings  
 
 ## Nästa steg
 
@@ -285,9 +286,9 @@ foundry model run phi-4-mini
 
 **Senast uppdaterad**: 2025-01-08  
 **Workshopversion**: Senaste  
-**SDK**: Foundry Local Python SDK  
+**SDK**: Foundry Local Python SDK
 
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

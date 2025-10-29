@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T09:21:32+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T21:06:09+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "bn"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## সংক্ষিপ্ত বিবরণ
 
-ওয়ার্কশপের নমুনাগুলি কনফিগারেশনের জন্য পরিবেশ ভেরিয়েবল ব্যবহার করে, যা `.env` ফাইলের মাধ্যমে রিপোজিটরির মূল অংশে কেন্দ্রীভূত থাকে। এটি কোড পরিবর্তন না করেই সহজে কাস্টমাইজেশন করতে সাহায্য করে।
+ওয়ার্কশপের নমুনাগুলি কনফিগারেশনের জন্য পরিবেশ ভেরিয়েবল ব্যবহার করে, যা রিপোজিটরির মূল `.env` ফাইলে কেন্দ্রীভূত। এটি কোড পরিবর্তন না করেই সহজে কাস্টমাইজেশন করতে সাহায্য করে।
 
 ## দ্রুত শুরু
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### ২. পরিবেশ কনফিগার করুন
 
-`.env` ফাইলটি ইতিমধ্যেই যুক্তিসঙ্গত ডিফল্ট সেটিংস সহ কনফিগার করা আছে। বেশিরভাগ ব্যবহারকারীর কিছু পরিবর্তন করার প্রয়োজন হবে না।
+`.env` ফাইলটি ইতিমধ্যেই যুক্তিসঙ্গত ডিফল্ট সেটিংস সহ কনফিগার করা আছে। বেশিরভাগ ব্যবহারকারীদের কিছু পরিবর্তন করার প্রয়োজন হবে না।
 
 **ঐচ্ছিক**: সেটিংস পর্যালোচনা এবং কাস্টমাইজ করুন:
 ```bash
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **পাইথন স্ক্রিপ্টের জন্য:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -65,7 +65,7 @@ python chat_bootstrap.py
 | `PYTHONPATH` | ওয়ার্কশপ পাথ | পাইথন মডিউল অনুসন্ধান পাথ |
 
 **যখন FOUNDRY_LOCAL_ENDPOINT সেট করবেন:**
-- রিমোট Foundry Local ইনস্ট্যান্স
+- রিমোট ফাউন্ড্রি লোকাল ইনস্ট্যান্স
 - কাস্টম পোর্ট কনফিগারেশন
 - ডেভেলপমেন্ট/প্রোডাকশন আলাদা করা
 
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### সেশন ০৩: বেঞ্চমার্কিং
 | ভেরিয়েবল | ডিফল্ট | উদ্দেশ্য |
 |-----------|--------|----------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | বেঞ্চমার্ক করার মডেল |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | বেঞ্চমার্ক করার মডেল |
 | `BENCH_ROUNDS` | `3` | প্রতি মডেলের জন্য পুনরাবৃত্তি |
 | `BENCH_PROMPT` | প্রি-কনফিগারড | টেস্ট প্রম্পট |
 | `BENCH_STREAM` | `0` | প্রথম টোকেন লেটেন্সি পরিমাপ |
@@ -113,9 +113,9 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 | ভেরিয়েবল | ডিফল্ট | উদ্দেশ্য |
 |-----------|--------|----------|
-| `SHOW_USAGE` | `1` | টোকেন ব্যবহারের তথ্য দেখান |
-| `RETRY_ON_FAIL` | `1` | পুনরায় চেষ্টা করার লজিক সক্রিয় করুন |
-| `RETRY_BACKOFF` | `1.0` | পুনরায় চেষ্টা করার বিলম্ব (সেকেন্ড) |
+| `SHOW_USAGE` | `1` | টোকেন ব্যবহারের প্রিন্ট |
+| `RETRY_ON_FAIL` | `1` | পুনরায় চেষ্টা করার লজিক সক্রিয় |
+| `RETRY_BACKOFF` | `1.0` | পুনরায় চেষ্টা বিলম্ব (সেকেন্ড) |
 
 ## সাধারণ কনফিগারেশন
 
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### প্রোডাকশন সেটআপ (গুণমানের উপর জোর)
+### প্রোডাকশন সেটআপ (গুণমানের উপর ফোকাস)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### বেঞ্চমার্কিং সেটআপ
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -159,14 +159,14 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ## সুপারিশকৃত মডেল
 
-### ব্যবহারের ক্ষেত্রে অনুযায়ী
+### ব্যবহার ক্ষেত্রে অনুযায়ী
 
 **সাধারণ উদ্দেশ্য:**
-- `phi-4-mini` - গুণমান এবং গতি মধ্যে ভারসাম্যপূর্ণ
+- `phi-4-mini` - গুণমান এবং গতি ব্যালেন্সড
 
 **দ্রুত প্রতিক্রিয়া:**
 - `qwen2.5-0.5b` - খুব দ্রুত, শ্রেণীবিভাজনের জন্য ভালো
-- `phi-4-mini` - দ্রুত এবং ভালো গুণমান
+- `phi-4-mini` - ভালো গুণমান সহ দ্রুত
 
 **উচ্চ গুণমান:**
 - `qwen2.5-7b` - সেরা গুণমান, বেশি রিসোর্স ব্যবহার
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **লক্ষণ:**
 - "Module not found" ত্রুটি
-- "Cannot import workshop_utils"
 
 **সমাধান:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## কনফিগারেশন পরীক্ষা
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Foundry Local সংযোগ পরীক্ষা করুন
+### ফাউন্ড্রি লোকাল সংযোগ পরীক্ষা করুন
 
 ```python
 # test_connection.py
@@ -406,7 +403,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **মূল রিপোজিটরি**: https://github.com/microsoft/Foundry-Local
 - **পাইথন SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API ডকুমেন্টেশন**: সর্বশেষ তথ্যের জন্য SDK রিপোজিটরি দেখুন
+- **API ডকুমেন্টেশন**: সর্বশেষের জন্য SDK রিপোজিটরি দেখুন
 
 ## অতিরিক্ত সম্পদ
 
@@ -416,11 +413,11 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
-**সর্বশেষ আপডেট**: ২০২৫-০১-০৮  
+**শেষ আপডেট**: ২০২৫-০১-০৮  
 **সংস্করণ**: ২.০  
-**SDK**: Foundry Local Python SDK (সর্বশেষ)
+**SDK**: ফাউন্ড্রি লোকাল পাইথন SDK (সর্বশেষ)
 
 ---
 
 **অস্বীকৃতি**:  
-এই নথিটি AI অনুবাদ পরিষেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনুবাদ করা হয়েছে। আমরা যথাসাধ্য সঠিকতা নিশ্চিত করার চেষ্টা করি, তবে অনুগ্রহ করে মনে রাখবেন যে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল ভাষায় থাকা নথিটিকে প্রামাণিক উৎস হিসেবে বিবেচনা করা উচিত। গুরুত্বপূর্ণ তথ্যের জন্য, পেশাদার মানব অনুবাদ সুপারিশ করা হয়। এই অনুবাদ ব্যবহারের ফলে কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যা হলে আমরা দায়বদ্ধ থাকব না।
+এই নথিটি AI অনুবাদ পরিষেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনুবাদ করা হয়েছে। আমরা যথাসাধ্য সঠিকতার জন্য চেষ্টা করি, তবে অনুগ্রহ করে মনে রাখবেন যে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল ভাষায় থাকা নথিটিকে প্রামাণিক উৎস হিসেবে বিবেচনা করা উচিত। গুরুত্বপূর্ণ তথ্যের জন্য, পেশাদার মানব অনুবাদ সুপারিশ করা হয়। এই অনুবাদ ব্যবহারের ফলে কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যা হলে আমরা দায়ী থাকব না।

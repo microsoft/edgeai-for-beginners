@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:21:56+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T22:08:57+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "da"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Resumé
 
-Start din rejse med Foundry Local ved at installere og konfigurere det på Windows 11. Lær at opsætte CLI, aktivere hardwareacceleration og cache modeller for hurtig lokal inferens. Denne praktiske session guider dig gennem kørsel af modeller som Phi, Qwen, DeepSeek og GPT-OSS-20B ved hjælp af reproducerbare CLI-kommandoer.
+Start din rejse med Foundry Local ved at installere og konfigurere det på Windows 11. Lær hvordan du opsætter CLI, aktiverer hardwareacceleration og cacher modeller for hurtig lokal inferens. Denne praktiske session guider dig gennem kørsel af modeller som Phi, Qwen, DeepSeek og GPT-OSS-20B ved hjælp af reproducerbare CLI-kommandoer.
 
 ## Læringsmål
 
@@ -24,7 +24,7 @@ Ved afslutningen af denne session vil du:
 - **Bygge din første app**: Tilpasse eksisterende eksempler til at bruge Foundry Local Python SDK
 
 # Test modellen (ikke-interaktiv enkelt prompt)
-foundry model run phi-4-mini --prompt "Hej, introducer dig selv"
+foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 
 - Windows 11 (22H2 eller nyere)
 # Liste over tilgængelige katalogmodeller (indlæste modeller vises efter kørsel)
@@ -38,7 +38,7 @@ foundry model list
 
 Opret en `.env` (eller sæt i shell) for at gøre scripts bærbare:
 # Sammenlign svar (ikke-interaktiv)
-foundry model run gpt-oss-20b --prompt "Forklar edge AI på en enkel måde"
+foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 | Variabel | Formål | Eksempel |
 |----------|--------|----------|
 | `FOUNDRY_LOCAL_ALIAS` | Foretrukket modelalias (katalog vælger automatisk den bedste variant) | `phi-3.5-mini` |
@@ -47,7 +47,7 @@ foundry model run gpt-oss-20b --prompt "Forklar edge AI på en enkel måde"
 
 > Hvis `FOUNDRY_LOCAL_ENDPOINT=auto` (eller ikke sat), afleder vi det fra SDK-manageren.
 
-## Demo Flow (30 minutter)
+## Demo-forløb (30 minutter)
 
 ### 1. Installer Foundry Local og verificer CLI-opsætning (10 minutter)
 
@@ -126,7 +126,7 @@ py -m venv .venv
 pip install foundry-local-sdk openai requests
 ```
 
-### SDK Bootstrapping (Anbefalet)
+### SDK Bootstrapping (Anbefales)
 
 I stedet for manuelt at starte tjenesten og køre modeller, kan **Foundry Local Python SDK** bootstrappe alt:
 
@@ -289,12 +289,12 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 ### 1. Foundry Local Arkitektur
 
-- **Lokal inferensmotor**: Kører modeller helt på din enhed
+- **Lokal inferensmotor**: Kører modeller udelukkende på din enhed
 - **OpenAI SDK-kompatibilitet**: Problemfri integration med eksisterende OpenAI-kode
 - **Modelstyring**: Download, cache og kør flere modeller effektivt
 - **Hardwareoptimering**: Udnyt GPU-, NPU- og CPU-acceleration
 
-### 2. CLI Kommando Reference
+### 2. CLI-kommando reference
 
 ```powershell
 # Core Commands
@@ -306,7 +306,7 @@ foundry model unload <name>    # Unload from memory
 foundry config list            # Current configuration
 ```
 
-### 3. Python SDK Integration
+### 3. Python SDK-integration
 
 ```python
 # Basic client setup
@@ -381,7 +381,7 @@ netstat -an | findstr 5273
 
 ## Tips til optimering af ydeevne
 
-### 1. Modelvalgstrategi
+### 1. Strategi for modelvalg
 
 - **Phi-4-mini**: Bedst til generelle opgaver, lavt hukommelsesforbrug
 - **Qwen2.5-0.5b**: Hurtigste inferens, minimale ressourcer
@@ -404,15 +404,16 @@ foundry config set model.preload false
 ### 3. Overvågning af ydeevne
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Valgfrie forbedringer
@@ -420,14 +421,14 @@ python Workshop\samples\session03\benchmark_oss_models.py
 | Forbedring | Hvad | Hvordan |
 |------------|------|--------|
 | Delte værktøjer | Fjern duplikeret klient/bootstrap-logik | Brug `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Synlighed af tokenforbrug | Lær omkostnings-/effektivitetstankegang tidligt | Sæt `SHOW_USAGE=1` for at udskrive prompt/completion/totale tokens |
+| Synlighed af tokenforbrug | Lær om omkostninger/effektivitet tidligt | Sæt `SHOW_USAGE=1` for at udskrive prompt/completion/totale tokens |
 | Deterministiske sammenligninger | Stabil benchmarking & regressionstjek | Brug `temperature=0`, `top_p=1`, konsistent prompttekst |
-| Første-token latenstid | Opfattet responsmetrik | Tilpas benchmark-script med streaming (`BENCH_STREAM=1`) |
+| Første-token latenstid | Opfattet responsivitet | Tilpas benchmark-script med streaming (`BENCH_STREAM=1`) |
 | Genforsøg ved midlertidige fejl | Robust demo ved koldstart | `RETRY_ON_FAIL=1` (standard) & juster `RETRY_BACKOFF` |
-| Røgtest | Hurtig sanity-check på nøgleflows | Kør `python Workshop/tests/smoke.py` før en workshop |
-| Modelaliasprofiler | Hurtigt skifte mellem maskiner | Vedligehold `.env` med `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
+| Røgtest | Hurtig kontrol af nøgleflows | Kør `python Workshop/tests/smoke.py` før en workshop |
+| Modelaliasprofiler | Hurtig skift mellem maskiner | Vedligehold `.env` med `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
 | Cacheeffektivitet | Undgå gentagne opvarmninger i multi-sample kørsel | Værktøjer cache managers; genbrug på tværs af scripts/notebooks |
-| Første kørsel opvarmning | Reducer p95 latenstidspikes | Send en lille prompt efter `FoundryLocalManager` oprettelse |
+| Første kørsel opvarmning | Reducer p95 latenstid | Send en lille prompt efter `FoundryLocalManager` oprettelse |
 
 Eksempel på deterministisk varm baseline (PowerShell):
 
@@ -442,7 +443,7 @@ Du bør se lignende output og identiske tokenantal ved anden kørsel, hvilket be
 
 ## Næste skridt
 
-Efter at have afsluttet denne session:
+Efter at have gennemført denne session:
 
 1. **Udforsk Session 2**: Byg AI-løsninger med Azure AI Foundry RAG
 2. **Prøv forskellige modeller**: Eksperimenter med Qwen, DeepSeek og andre modelfamilier
@@ -453,7 +454,7 @@ Efter at have afsluttet denne session:
 
 ### Dokumentation
 - [Foundry Local Python SDK Reference](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [Foundry Local Installationsvejledning](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
+- [Foundry Local Installationsguide](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 - [Modelkatalog](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Eksempelkode
@@ -467,21 +468,21 @@ Efter at have afsluttet denne session:
 
 ---
 
-**Sessionens varighed**: 30 minutters praktisk + 15 minutters Q&A
+**Sessionens varighed**: 30 minutters praktisk arbejde + 15 minutters Q&A
 **Sværhedsgrad**: Begynder
 **Forudsætninger**: Windows 11, Python 3.10+, Administratoradgang
 
-## Eksempelscenarie & Workshop-kortlægning
+## Eksempelscenarie & Workshopkortlægning
 
 | Workshop Script / Notebook | Scenarie | Mål | Eksempelinput | Nødvendigt datasæt |
 |----------------------------|----------|-----|---------------|--------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internt IT-team evaluerer on-device inferens til en portal for privatlivsvurdering | Bevis at lokal SLM reagerer inden for sub-sekund latenstid på standardprompter | "Nævn to fordele ved lokal inferens." | Ingen (enkelt prompt) |
-| Quickstart tilpasningskodeblok | Udvikler migrerer et eksisterende OpenAI-script til Foundry Local | Vis drop-in kompatibilitet | "Nævn to fordele ved lokal inferens." | Kun inline prompt |
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internt IT-team evaluerer on-device inferens til en portal for privatlivsvurdering | Bevis at lokal SLM reagerer med sub-sekunds latenstid på standardprompter | "List two benefits of local inference." | Ingen (enkelt prompt) |
+| Quickstart tilpasningskodeblok | Udvikler migrerer et eksisterende OpenAI-script til Foundry Local | Vis drop-in kompatibilitet | "Give two benefits of local inference." | Kun inline prompt |
 
-### Scenariefortælling
-Sikkerheds- og compliance-teamet skal validere, om følsomme prototype-data kan behandles lokalt. De kører bootstrap-scriptet med flere prompter (privatliv, latenstid, omkostninger) ved hjælp af deterministisk temperatur=0 tilstand for at fange baseline-output til senere sammenligning (Session 3 benchmarking og Session 4 SLM vs LLM kontrast).
+### Scenariebeskrivelse
+Sikkerheds- og compliance-teamet skal validere, om følsomme prototype-data kan behandles lokalt. De kører bootstrap-scriptet med flere prompter (privatliv, latenstid, omkostninger) ved hjælp af en deterministisk temperature=0 tilstand for at fange baseline outputs til senere sammenligning (Session 3 benchmarking og Session 4 SLM vs LLM kontrast).
 
-### Minimal Prompt Set JSON (valgfrit)
+### Minimal prompt-sæt JSON (valgfrit)
 ```json
 [
     "List two benefits of local inference.",

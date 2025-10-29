@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:25:17+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T22:50:00+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "sw"
 }
@@ -11,38 +11,38 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Muhtasari
 
-Anza safari yako na Foundry Local kwa kuisakinisha na kuisanidi kwenye Windows 11. Jifunze jinsi ya kuanzisha CLI, kuwezesha kasi ya vifaa, na kuhifadhi modeli kwa ajili ya utabiri wa haraka wa ndani. Kipindi hiki cha vitendo kinaelezea jinsi ya kuendesha modeli kama Phi, Qwen, DeepSeek, na GPT-OSS-20B kwa kutumia amri za CLI zinazoweza kurudiwa.
+Anza safari yako na Foundry Local kwa kuisakinisha na kuisanidi kwenye Windows 11. Jifunze jinsi ya kusanidi CLI, kuwezesha kasi ya vifaa, na kuhifadhi modeli kwa ajili ya utabiri wa haraka wa ndani. Kipindi hiki cha vitendo kinaelezea jinsi ya kuendesha modeli kama Phi, Qwen, DeepSeek, na GPT-OSS-20B kwa kutumia amri za CLI zinazoweza kurudiwa.
 
 ## Malengo ya Kujifunza
 
 Mwisho wa kipindi hiki, utaweza:
 
-- **Kusakinisha na Kusanidi**: Kuanzisha Foundry Local kwenye Windows 11 na mipangilio bora ya utendaji
-- **Kumudu Operesheni za CLI**: Kutumia Foundry Local CLI kwa usimamizi na utekelezaji wa modeli
+- **Kusakinisha na Kusanidi**: Kuweka Foundry Local kwenye Windows 11 na mipangilio bora ya utendaji
+- **Kumiliki Operesheni za CLI**: Kutumia Foundry Local CLI kwa usimamizi wa modeli na utekelezaji
 - **Kuwezesha Kasi ya Vifaa**: Kusanidi kasi ya GPU kwa ONNXRuntime au WebGPU
-- **Kutekeleza Modeli Nyingi**: Kuendesha modeli phi-4, GPT-OSS-20B, Qwen, na DeepSeek kwa ndani
+- **Kutekeleza Modeli Nyingi**: Kuendesha modeli phi-4, GPT-OSS-20B, Qwen, na DeepSeek ndani ya kifaa
 - **Kujenga Programu Yako ya Kwanza**: Kubadilisha sampuli zilizopo kutumia Foundry Local Python SDK
 
-# Jaribu modeli (swali moja lisilo la maingiliano)
+# Jaribu modeli (swali moja bila mwingiliano)
 foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 
 - Windows 11 (22H2 au zaidi)
 # Orodhesha modeli za katalogi zinazopatikana (modeli zilizopakuliwa zinaonekana baada ya kuendeshwa)
 foundry model list
 ## NOTE: Kwa sasa hakuna bendera maalum ya `--running`; ili kuona ni zipi zimepakuliwa, anzisha mazungumzo au angalia kumbukumbu za huduma.
-- Python 3.10+ imewekwa
+- Python 3.10+ imesakinishwa
 - Visual Studio Code na kiendelezi cha Python
 - Haki za msimamizi kwa usakinishaji
 
 ### (Hiari) Vigezo vya Mazingira
 
-Unda `.env` (au weka kwenye shell) ili kufanya maandishi yaweze kubebeka:
-# Linganisha majibu (swali moja lisilo la maingiliano)
+Unda `.env` (au weka kwenye shell) ili kufanya maandishi yaweze kuhamishika:
+# Linganisha majibu (bila mwingiliano)
 foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 | Kigezo | Kusudi | Mfano |
 |--------|--------|-------|
-| `FOUNDRY_LOCAL_ALIAS` | Jina la modeli unalopendelea (katalogi huchagua kiotomatiki toleo bora) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | Badilisha endpoint (vinginevyo kiotomatiki kutoka kwa meneja) | `http://localhost:5273/v1` |
+| `FOUNDRY_LOCAL_ALIAS` | Jina la modeli unalopendelea (katalogi huchagua toleo bora kiotomatiki) | `phi-3.5-mini` |
+| `FOUNDRY_LOCAL_ENDPOINT` | Badilisha endpoint (vinginevyo hutolewa kiotomatiki kutoka kwa meneja) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Washa onyesho la utiririshaji | `true` |
 
 > Ikiwa `FOUNDRY_LOCAL_ENDPOINT=auto` (au haijawekwa) tunaitoa kutoka kwa meneja wa SDK.
@@ -62,9 +62,9 @@ winget install Microsoft.FoundryLocal
 # https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
 
-**macOS (Muhtasari / Ikiwa Inasaidiwa)**
+**macOS (Muonekano wa Awali / Ikiwa Inasaidiwa)**
 
-Ikiwa kifurushi cha asili cha macOS kinapatikana (angalia nyaraka rasmi kwa toleo jipya):
+Ikiwa kifurushi cha asili cha macOS kinapatikana (angalia nyaraka rasmi kwa za hivi karibuni):
 
 ```bash
 # Homebrew (if/when available)
@@ -78,10 +78,10 @@ sudo ./install.sh
 ```
 
 Ikiwa binaries za asili za macOS bado hazipatikani, bado unaweza: 
-1. Kutumia Windows 11 ARM/Intel VM (Parallels / UTM) na kufuata hatua za Windows. 
-2. Kuendesha modeli kupitia kontena (ikiwa picha ya kontena imechapishwa) na kuweka `FOUNDRY_LOCAL_ENDPOINT` kwa bandari iliyofichuliwa. 
+1. Tumia Windows 11 ARM/Intel VM (Parallels / UTM) na fuata hatua za Windows. 
+2. Endesha modeli kupitia kontena (ikiwa picha ya kontena imechapishwa) na weka `FOUNDRY_LOCAL_ENDPOINT` kwa bandari iliyofunguliwa. 
 
-**Unda Mazingira ya Virtual ya Python (Mataifa Mbalimbali)**
+**Unda Mazingira ya Virtual ya Python (Kote‑Platform)**
 
 Windows PowerShell:
 ```powershell
@@ -158,9 +158,9 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Ikiwa unapendelea udhibiti wa wazi bado unaweza kutumia CLI + mteja wa OpenAI kama inavyoonyeshwa baadaye.
+Ikiwa unapendelea udhibiti wa moja kwa moja bado unaweza kutumia CLI + mteja wa OpenAI kama inavyoonyeshwa baadaye.
 
-### 2. Endesha Modeli kwa Ndani kupitia CLI (Dakika 10)
+### 2. Endesha Modeli Ndani ya Kifaa Kupitia CLI (Dakika 10)
 
 #### Hatua ya 3.1: Tekeleza Modeli ya Phi-4
 
@@ -202,7 +202,7 @@ foundry cache list
 
 #### Hatua ya 4.1: Unda Programu ya Msingi ya Mazungumzo
 
-Unda `samples/01-foundry-quickstart/chat_quickstart.py` (iliyosasishwa kutumia meneja ikiwa inapatikana):
+Unda `samples/01-foundry-quickstart/chat_quickstart.py` (imeboreshwa kutumia meneja ikiwa inapatikana):
 
 ```python
 #!/usr/bin/env python3
@@ -289,7 +289,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 ### 1. Muundo wa Foundry Local
 
-- **Injini ya Utabiri ya Ndani**: Inaendesha modeli kabisa kwenye kifaa chako
+- **Injini ya Utabiri ya Ndani**: Inaendesha modeli kikamilifu kwenye kifaa chako
 - **Ulinganifu wa SDK ya OpenAI**: Muunganisho rahisi na msimbo wa OpenAI uliopo
 - **Usimamizi wa Modeli**: Pakua, hifadhi, na endesha modeli nyingi kwa ufanisi
 - **Uboreshaji wa Vifaa**: Tumia kasi ya GPU, NPU, na CPU
@@ -340,9 +340,9 @@ for chunk in stream:
 print()
 ```
 
-## Utatuzi wa Masuala ya Kawaida
+## Kutatua Masuala ya Kawaida
 
-### Tatizo 1: "Amri ya Foundry haikupatikana"
+### Tatizo 1: "Amri ya Foundry haijapatikana"
 
 **Suluhisho:**
 ```powershell
@@ -383,8 +383,8 @@ netstat -an | findstr 5273
 
 ### 1. Mkakati wa Uchaguzi wa Modeli
 
-- **Phi-4-mini**: Bora kwa kazi za jumla, matumizi ya chini ya kumbukumbu
-- **Qwen2.5-0.5b**: Utabiri wa haraka zaidi, rasilimali ndogo
+- **Phi-4-mini**: Bora kwa kazi za jumla, matumizi ya kumbukumbu ya chini
+- **Qwen2.5-0.5b**: Utabiri wa haraka, rasilimali ndogo
 - **GPT-OSS-20B**: Ubora wa juu zaidi, unahitaji rasilimali zaidi
 - **DeepSeek-Coder**: Imeboreshwa kwa kazi za programu
 
@@ -404,32 +404,33 @@ foundry config set model.preload false
 ### 3. Ufuatiliaji wa Utendaji
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Uboreshaji wa Hiari
 
 | Uboreshaji | Nini | Jinsi |
 |------------|------|------|
-| Huduma Zilizoshirikiwa | Ondoa mantiki ya mteja/kuanzisha marudio | Tumia `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Uonekano wa Matumizi ya Tokeni | Fundisha fikra za gharama/ufanisi mapema | Weka `SHOW_USAGE=1` ili kuchapisha tokeni za swali/jibu/jumla |
-| Ulinganisho wa Kiamua | Upimaji thabiti wa benchmarking & ukaguzi wa regression | Tumia `temperature=0`, `top_p=1`, maandishi thabiti ya swali |
-| Latency ya Tokeni ya Kwanza | Kipimo cha mwitikio kinachoonekana | Badilisha script ya benchmarking na utiririshaji (`BENCH_STREAM=1`) |
-| Jaribu tena kwa Makosa ya Muda | Onyesho lenye ustahimilivu kwenye kuanza baridi | `RETRY_ON_FAIL=1` (chaguo-msingi) & rekebisha `RETRY_BACKOFF` |
-| Upimaji wa Moshi | Ukaguzi wa haraka wa mtiririko muhimu | Endesha `python Workshop/tests/smoke.py` kabla ya warsha |
+| Huduma za Pamoja | Ondoa mantiki ya mteja/kuanzisha mara kwa mara | Tumia `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Uonekano wa Matumizi ya Tokeni | Fundisha kufikiria gharama/ufanisi mapema | Weka `SHOW_USAGE=1` ili kuchapisha tokeni za prompt/completion/total |
+| Ulinganisho wa Kiamua | Kuweka alama thabiti & ukaguzi wa regression | Tumia `temperature=0`, `top_p=1`, maandishi thabiti ya prompt |
+| Latency ya Tokeni ya Kwanza | Kipimo cha mwitikio kinachoonekana | Badilisha script ya benchmark na utiririshaji (`BENCH_STREAM=1`) |
+| Jaribu tena kwa Makosa ya Muda | Onyesho lenye nguvu kwenye mwanzo baridi | `RETRY_ON_FAIL=1` (chaguo-msingi) & rekebisha `RETRY_BACKOFF` |
+| Upimaji wa Moshi | Ukaguzi wa haraka kwenye mtiririko muhimu | Endesha `python Workshop/tests/smoke.py` kabla ya warsha |
 | Profaili za Jina la Modeli | Badilisha seti ya modeli haraka kati ya mashine | Hifadhi `.env` na `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Ufanisi wa Kuhifadhi | Epuka kuanza upya mara kwa mara katika mzunguko wa sampuli nyingi | Meneja wa hifadhi ya matumizi; tumia tena kwenye maandishi/notebooks |
-| Kuanzisha Joto la Kwanza | Punguza spikes za latency p95 | Toa swali dogo baada ya kuundwa kwa `FoundryLocalManager` |
+| Ufanisi wa Kuhifadhi | Epuka kuanza upya mara kwa mara katika uendeshaji wa sampuli nyingi | Wasimamizi wa hifadhi ya matumizi; tumia tena kwenye maandishi/daftari |
+| Kuwasha Mara ya Kwanza | Punguza milipuko ya latency ya p95 | Toa prompt ndogo baada ya kuundwa kwa `FoundryLocalManager` |
 
-Mfano wa msingi wa joto la kuamua (PowerShell):
+Mfano wa msingi wa joto thabiti (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -438,13 +439,13 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Unapaswa kuona matokeo yanayofanana & hesabu za tokeni zinazofanana kwenye mzunguko wa pili, kuthibitisha uamuzi.
+Unapaswa kuona matokeo yanayofanana & hesabu ya tokeni sawa kwenye uendeshaji wa pili, ikithibitisha uamuzi.
 
 ## Hatua Zifuatazo
 
 Baada ya kukamilisha kipindi hiki:
 
-1. **Chunguza Kipindi cha 2**: Jenga suluhisho za AI na Azure AI Foundry RAG
+1. **Gundua Kipindi cha 2**: Jenga suluhisho za AI na Azure AI Foundry RAG
 2. **Jaribu Modeli Tofauti**: Fanya majaribio na Qwen, DeepSeek, na familia nyingine za modeli
 3. **Boresha Utendaji**: Rekebisha mipangilio kwa vifaa vyako maalum
 4. **Jenga Programu za Kibinafsi**: Tumia Foundry Local SDK katika miradi yako mwenyewe
@@ -457,9 +458,9 @@ Baada ya kukamilisha kipindi hiki:
 - [Katalogi ya Modeli](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Msimbo wa Sampuli
-- [Sampuli ya Module08 01](./samples/01/README.md) - Mwongozo wa Haraka wa REST Chat
-- [Sampuli ya Module08 02](./samples/02/README.md) - Ujumuishaji wa SDK ya OpenAI
-- [Sampuli ya Module08 03](./samples/03/README.md) - Ugunduzi wa Modeli & Upimaji
+- [Mfano wa Moduli08 01](./samples/01/README.md) - Mwongozo wa Haraka wa REST Chat
+- [Mfano wa Moduli08 02](./samples/02/README.md) - Ujumuishaji wa SDK ya OpenAI
+- [Mfano wa Moduli08 03](./samples/03/README.md) - Ugunduzi wa Modeli & Uwekaji Alama
 
 ### Jamii
 - [Majadiliano ya Foundry Local GitHub](https://github.com/microsoft/Foundry-Local/discussions)
@@ -467,21 +468,21 @@ Baada ya kukamilisha kipindi hiki:
 
 ---
 
-**Muda wa Kipindi**: Dakika 30 za vitendo + Dakika 15 za Maswali na Majibu
-**Kiwango cha Ugumu**: Mwanzoni
-**Mahitaji ya Awali**: Windows 11, Python 3.10+, Haki za Msimamizi
+**Muda wa Kipindi**: Dakika 30 za vitendo + Dakika 15 za Maswali na Majibu  
+**Kiwango cha Ugumu**: Mwanzoni  
+**Mahitaji ya Awali**: Windows 11, Python 3.10+, Haki za Msimamizi  
 
-## Mfano wa Hali & Ulinganisho wa Warsha
+## Hali ya Mfano & Ulinganisho wa Warsha
 
-| Script ya Warsha / Notebook | Hali | Lengo | Mfano wa Ingizo | Dataset Inayohitajika |
-|-----------------------------|------|------|-----------------|-----------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Timu ya IT ya ndani inatathmini utabiri wa ndani kwa portal ya tathmini ya faragha | Thibitisha SLM ya ndani inajibu ndani ya latency ya sekunde ndogo kwa maswali ya kawaida | "Orodhesha faida mbili za utabiri wa ndani." | Hakuna (swali moja) |
-| Msimbo wa marekebisho ya mwongozo wa haraka | Mendelezaji anayehama script ya OpenAI iliyopo kwenda Foundry Local | Onyesha ulinganifu wa kuingiza | "Toa faida mbili za utabiri wa ndani." | Swali la ndani pekee |
+| Maandishi ya Warsha / Daftari | Hali | Lengo | Mfano wa Ingizo | Dataset Inayohitajika |
+|------------------------------|------|-------|-----------------|-----------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Timu ya IT ya ndani inatathmini utabiri wa ndani kwa portal ya tathmini ya faragha | Thibitisha SLM ya ndani inajibu ndani ya latency ya sekunde ndogo kwa maswali ya kawaida | "Taja faida mbili za utabiri wa ndani." | Hakuna (swali moja) |
+| Msimbo wa marekebisho ya mwongozo wa haraka | Mendelezaji anayehama kutoka script ya OpenAI kwenda Foundry Local | Onyesha ulinganifu wa moja kwa moja | "Taja faida mbili za utabiri wa ndani." | Prompt ya ndani tu |
 
-### Simulizi la Hali
-Kikosi cha usalama na ufuatiliaji lazima kihakiki ikiwa data nyeti ya mfano inaweza kuchakatwa kwa ndani. Wanakimbia script ya bootstrap na maswali kadhaa (faragha, latency, gharama) kwa kutumia hali ya uamuzi ya temperature=0 ili kukamata matokeo ya msingi kwa kulinganisha baadaye (upimaji wa Kipindi cha 3 na kulinganisha SLM vs LLM Kipindi cha 4).
+### Maelezo ya Hali
+Kikosi cha usalama & ufuatiliaji kinapaswa kuthibitisha ikiwa data nyeti ya mfano inaweza kuchakatwa ndani ya kifaa. Wanakimbia script ya bootstrap na maswali kadhaa (faragha, latency, gharama) wakitumia hali ya uamuzi ya temperature=0 ili kukamata matokeo ya msingi kwa kulinganisha baadaye (Uwekaji alama wa Kipindi cha 3 na Ulinganisho wa SLM vs LLM wa Kipindi cha 4).
 
-### Seti ya Swali la Kawaida JSON (hiari)
+### Seti ya Prompt Ndogo ya JSON (hiari)
 ```json
 [
     "List two benefits of local inference.",
@@ -495,4 +496,4 @@ Tumia orodha hii kuunda mzunguko wa tathmini unaoweza kurudiwa au kuanzisha mfum
 ---
 
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.

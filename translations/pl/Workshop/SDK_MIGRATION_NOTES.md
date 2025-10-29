@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-08T21:58:39+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T21:46:04+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "pl"
 }
 -->
-# Notatki dotyczące migracji Foundry Local SDK
+# Notatki dotyczące migracji lokalnego SDK Foundry
 
 ## Przegląd
 
-Wszystkie pliki Python w folderze Workshop zostały zaktualizowane, aby były zgodne z najnowszymi wzorcami z oficjalnego [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
+Wszystkie pliki Python w folderze Workshop zostały zaktualizowane, aby odpowiadać najnowszym wzorcom z oficjalnego [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
 
 ## Podsumowanie zmian
 
@@ -19,12 +19,12 @@ Wszystkie pliki Python w folderze Workshop zostały zaktualizowane, aby były zg
 
 #### Ulepszone funkcje:
 - **Obsługa nadpisywania punktu końcowego**: Dodano obsługę zmiennej środowiskowej `FOUNDRY_LOCAL_ENDPOINT`
-- **Ulepszone obsługi błędów**: Lepsze zarządzanie wyjątkami z bardziej szczegółowymi komunikatami o błędach
+- **Ulepszone zarządzanie błędami**: Lepsze obsługiwanie wyjątków z bardziej szczegółowymi komunikatami o błędach
 - **Ulepszona pamięć podręczna**: Klucze pamięci podręcznej teraz uwzględniają punkt końcowy dla scenariuszy z wieloma punktami końcowymi
-- **Eksponencjalne opóźnienie**: Logika ponawiania prób teraz wykorzystuje eksponencjalne opóźnienie dla większej niezawodności
-- **Adnotacje typów**: Dodano kompleksowe wskazówki dotyczące typów dla lepszego wsparcia IDE
+- **Eksponencjalne opóźnienie**: Logika ponownego próbowania teraz wykorzystuje eksponencjalne opóźnienie dla większej niezawodności
+- **Adnotacje typów**: Dodano kompleksowe wskazówki typów dla lepszego wsparcia IDE
 
-#### Nowe funkcjonalności:
+#### Nowe możliwości:
 ```python
 # Now supports endpoint override
 manager, client, model_id = get_client(alias, endpoint="http://localhost:8000")
@@ -35,17 +35,17 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### Przykładowe aplikacje
 
-#### Sesja 01: Inicjalizacja czatu (`chat_bootstrap.py`)
+#### Sesja 01: Chat Bootstrap (`chat_bootstrap.py`)
 - Zaktualizowano domyślny model z `phi-3.5-mini` na `phi-4-mini`
 - Dodano obsługę nadpisywania punktu końcowego
-- Ulepszono dokumentację, dodając odniesienia do SDK
+- Ulepszono dokumentację o odniesienia do SDK
 
-#### Sesja 02: Pipeline RAG (`rag_pipeline.py`)
+#### Sesja 02: RAG Pipeline (`rag_pipeline.py`)
 - Zaktualizowano domyślny model na `phi-4-mini`
 - Dodano obsługę nadpisywania punktu końcowego
-- Ulepszono dokumentację, dodając szczegóły dotyczące zmiennych środowiskowych
+- Ulepszono dokumentację o szczegóły dotyczące zmiennych środowiskowych
 
-#### Sesja 02: Ocena RAG (`rag_eval_ragas.py`)
+#### Sesja 02: RAG Evaluation (`rag_eval_ragas.py`)
 - Zaktualizowano domyślne modele
 - Dodano konfigurację punktu końcowego
 - Ulepszono obsługę błędów
@@ -54,7 +54,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Zaktualizowano domyślną listę modeli, dodając `phi-4-mini`
 - Dodano kompleksową dokumentację zmiennych środowiskowych
 - Ulepszono dokumentację funkcji
-- Dodano obsługę nadpisywania punktu końcowego
+- Dodano obsługę nadpisywania punktu końcowego w całym kodzie
 
 #### Sesja 04: Porównanie modeli (`model_compare.py`)
 - Zaktualizowano domyślny LLM z `gpt-oss-20b` na `qwen2.5-7b`
@@ -62,7 +62,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Ulepszono dokumentację
 
 #### Sesja 05: Orkiestracja wieloagentowa (`agents_orchestrator.py`)
-- Dodano wskazówki dotyczące typów (zmieniono `str | None` na `Optional[str]`)
+- Dodano wskazówki typów (zmieniono `str | None` na `Optional[str]`)
 - Ulepszono dokumentację klasy Agent
 - Dodano obsługę nadpisywania punktu końcowego
 - Ulepszono wzorzec inicjalizacji
@@ -85,7 +85,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Ulepszono dokumentację funkcji
 - Ulepszono obsługę błędów
 
-#### Linter CLI (`lint_markdown_cli.py`)
+#### CLI Linter (`lint_markdown_cli.py`)
 - Dodano linki do odniesień SDK
 - Ulepszono dokumentację użytkowania
 
@@ -99,28 +99,28 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ## Zmienne środowiskowe
 
-Wszystkie przykłady teraz obsługują następujące zmienne środowiskowe:
+Wszystkie przykłady teraz obsługują te zmienne środowiskowe:
 
 ### Podstawowa konfiguracja
-- `FOUNDRY_LOCAL_ALIAS` - Alias modelu do użycia (domyślnie różni się w zależności od przykładu)
+- `FOUNDRY_LOCAL_ALIAS` - Alias modelu do użycia (domyślny różni się w zależności od przykładu)
 - `FOUNDRY_LOCAL_ENDPOINT` - Nadpisanie punktu końcowego usługi (opcjonalne)
-- `SHOW_USAGE` - Pokaż statystyki użycia tokenów (domyślnie: "0")
-- `RETRY_ON_FAIL` - Włącz logikę ponawiania prób (domyślnie: "1")
-- `RETRY_BACKOFF` - Początkowe opóźnienie ponowienia w sekundach (domyślnie: "1.0")
+- `SHOW_USAGE` - Wyświetlanie statystyk użycia tokenów (domyślnie: "0")
+- `RETRY_ON_FAIL` - Włączenie logiki ponownego próbowania (domyślnie: "1")
+- `RETRY_BACKOFF` - Początkowe opóźnienie ponownego próbowania w sekundach (domyślnie: "1.0")
 
 ### Specyficzne dla przykładu
 - `EMBED_MODEL` - Model osadzania dla przykładów RAG
 - `BENCH_MODELS` - Modele oddzielone przecinkami do benchmarkingu
 - `BENCH_ROUNDS` - Liczba rund benchmarkingu
-- `BENCH_PROMPT` - Przykładowy prompt do benchmarków
+- `BENCH_PROMPT` - Testowy prompt dla benchmarków
 - `BENCH_STREAM` - Pomiar opóźnienia pierwszego tokena
-- `RAG_QUESTION` - Przykładowe pytanie do przykładów RAG
+- `RAG_QUESTION` - Testowe pytanie dla przykładów RAG
 - `AGENT_MODEL_PRIMARY` - Główny model agenta
-- `AGENT_MODEL_EDITOR` - Model agenta edytora
+- `AGENT_MODEL_EDITOR` - Model edytora agenta
 - `SLM_ALIAS` - Alias małego modelu językowego
 - `LLM_ALIAS` - Alias dużego modelu językowego
 
-## Najlepsze praktyki SDK
+## Najlepsze praktyki SDK wdrożone
 
 ### 1. Prawidłowa inicjalizacja klienta
 ```python
@@ -154,7 +154,7 @@ except Exception as e:
     raise RuntimeError(f"Initialization failed: {e}") from e
 ```
 
-### 4. Logika ponawiania z eksponencjalnym opóźnieniem
+### 4. Logika ponownego próbowania z eksponencjalnym opóźnieniem
 ```python
 delay = initial_delay
 for attempt in range(max_retries):
@@ -199,12 +199,12 @@ Jeśli tworzysz nowe przykłady lub aktualizujesz istniejące:
    - Link do odniesienia SDK
    - Przykłady użycia
 
-4. **Używaj wskazówek dotyczących typów**:
+4. **Używaj wskazówek typów**:
    ```python
    from typing import Optional, List, Dict, Any
    ```
 
-5. **Wdrażaj odpowiednią obsługę błędów**:
+5. **Wdroż odpowiednią obsługę błędów**:
    ```python
    try:
        result = operation()
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -239,24 +240,24 @@ python -m Workshop.tests.smoke
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 - **Dokumentacja API**: Sprawdź najnowszą dokumentację API w repozytorium SDK
 
-## Zmiany łamiące
+## Zmiany łamiące kompatybilność
 
 ### Brak oczekiwanych
 Wszystkie zmiany są wstecznie kompatybilne. Aktualizacje głównie:
 - Dodają nowe opcjonalne funkcje (nadpisywanie punktu końcowego)
 - Ulepszają obsługę błędów
-- Ulepszają dokumentację
-- Aktualizują domyślne nazwy modeli do obecnych rekomendacji
+- Poprawiają dokumentację
+- Aktualizują domyślne nazwy modeli zgodnie z bieżącymi rekomendacjami
 
 ### Opcjonalne ulepszenia
 Możesz zaktualizować swój kod, aby używać:
-- `FOUNDRY_LOCAL_ENDPOINT` do jawnej kontroli punktu końcowego
+- `FOUNDRY_LOCAL_ENDPOINT` dla jawnej kontroli punktu końcowego
 - `SHOW_USAGE=1` dla widoczności użycia tokenów
 - Zaktualizowanych domyślnych modeli (`phi-4-mini` zamiast `phi-3.5-mini`)
 
 ## Typowe problemy i rozwiązania
 
-### Problem: "Nie udało się zainicjować klienta"
+### Problem: "Nie udało się zainicjalizować klienta"
 **Rozwiązanie**: Upewnij się, że usługa Foundry Local działa:
 ```bash
 foundry service start
@@ -283,19 +284,19 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 1. **Zaktualizuj przykłady z Module08**: Zastosuj podobne wzorce do Module08/samples
 2. **Dodaj testy integracyjne**: Stwórz kompleksowy zestaw testów
-3. **Benchmarking wydajności**: Porównaj wydajność przed/po aktualizacji
-4. **Aktualizacje dokumentacji**: Zaktualizuj główny plik README o nowe wzorce
+3. **Benchmarking wydajności**: Porównaj wydajność przed i po
+4. **Aktualizacje dokumentacji**: Zaktualizuj główny README o nowe wzorce
 
 ## Wytyczne dotyczące wkładu
 
 Podczas dodawania nowych przykładów:
 1. Używaj `workshop_utils.py` dla spójności
-2. Postępuj zgodnie z wzorcem istniejących przykładów
+2. Postępuj zgodnie z wzorcem w istniejących przykładach
 3. Dodaj kompleksowe docstringi
-4. Dołącz linki do odniesień SDK
+4. Uwzględnij linki do odniesień SDK
 5. Obsługuj nadpisywanie punktu końcowego
-6. Dodaj odpowiednie wskazówki dotyczące typów
-7. Dołącz przykłady użycia w docstringu
+6. Dodaj odpowiednie wskazówki typów
+7. Uwzględnij przykłady użycia w docstringu
 
 ## Kompatybilność wersji
 
@@ -313,4 +314,4 @@ Te aktualizacje są kompatybilne z:
 ---
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego języku źródłowym powinien być uznawany za autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż staramy się zapewnić dokładność, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.

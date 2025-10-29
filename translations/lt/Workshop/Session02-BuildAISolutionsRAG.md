@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82e20fdeebffdf75eecdf5cdfb02b65c",
-  "translation_date": "2025-10-09T21:22:24+00:00",
+  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
+  "translation_date": "2025-10-28T23:47:58+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "lt"
 }
@@ -11,16 +11,16 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Santrauka
 
-Sužinokite, kaip kurti veiksmingus GenAI darbo procesus naudojant Foundry Local ir Azure AI Foundry. Išmokite pažangios užklausų inžinerijos, integruokite struktūrizuotus duomenis ir organizuokite užduotis su atkuriamais procesais. Nors pagrindinis dėmesys skiriamas Retrieval-Augmented Generation (RAG) dokumentų ir duomenų klausimų-atsakymų sistemoms, šie modeliai gali būti pritaikyti platesniam GenAI sprendimų dizainui.
+Sužinokite, kaip kurti veiksmingus GenAI darbo procesus naudojant Foundry Local ir Azure AI Foundry. Išmokite pažangų užklausų kūrimą, integruokite struktūrizuotus duomenis ir organizuokite užduotis su atkuriamais procesais. Nors pagrindinis dėmesys skiriamas Retrieval-Augmented Generation (RAG) dokumentų ir duomenų klausimų-atsakymų sistemoms, šie modeliai yra pritaikomi platesniam GenAI sprendimų dizainui.
 
 ## Mokymosi tikslai
 
-Po šios sesijos jūs:
+Šios sesijos pabaigoje jūs:
 
-- **Įvaldysite užklausų inžineriją**: Sukursite efektyvius sistemos užklausų ir konteksto strategijas
-- **Įgyvendinsite RAG modelius**: Kursite dokumentų pagrindu veikiančias klausimų-atsakymų sistemas su vektorinėmis paieškomis
+- **Įvaldysite užklausų kūrimą**: Sukursite efektyvias sistemos užklausas ir pagrindimo strategijas
+- **Įgyvendinsite RAG modelius**: Kursite dokumentais pagrįstas klausimų-atsakymų sistemas su vektorinėmis paieškomis
 - **Integruosite struktūrizuotus duomenis**: Naudosite CSV, JSON ir lentelinius duomenis AI darbo procesuose
-- **Kursite gamybinius RAG sprendimus**: Sukursite mastelio keičiamas RAG aplikacijas su Chainlit
+- **Kursite gamybinius RAG sprendimus**: Sukursite mastelio keičiamas RAG programas su Chainlit
 - **Sujungsite vietinę ir debesų aplinką**: Suprasite migracijos kelius iš Foundry Local į Azure AI Foundry
 
 ## Reikalavimai
@@ -48,7 +48,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Jei Foundry Local macOS binariniai failai dar nėra prieinami jūsų aplinkoje, paleiskite paslaugą Windows VM arba konteineryje ir nustatykite:
+Jei Foundry Local macOS binariniai failai dar nėra pasiekiami jūsų aplinkoje, paleiskite paslaugą Windows VM arba konteineryje ir nustatykite:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -67,11 +67,11 @@ curl http://localhost:5273/v1/models  # Validate API (should list running model)
 
 Jei paskutinė komanda nepavyksta, paleiskite (arba iš naujo paleiskite) paslaugą: `foundry service start`.
 
-## Demonstracijos eiga (30 minučių)
+## Demonstracijų eiga (30 minučių)
 
-### 1. Sistemos užklausos ir konteksto strategijos (10 minučių)
+### 1. Sistemos užklausos ir pagrindimo strategijos (10 minučių)
 
-#### 1.1 žingsnis: Pažangi užklausų inžinerija
+#### 1.1 žingsnis: Pažangus užklausų kūrimas
 
 Sukurkite `samples/02-rag-solutions/prompt_engineering.py`:
 
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### 1.2 žingsnis: Konteksto strategijų testavimas
+#### 1.2 žingsnis: Pagrindimo strategijų testavimas
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -217,7 +217,7 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### 2. Lentelinių duomenų integracija su užklausomis (CSV klausimų-atsakymų sistema) (10 minučių)
+### 2. Lentelinių duomenų integracija su užklausomis (CSV klausimai-atsakymai) (10 minučių)
 
 #### 2.1 žingsnis: CSV duomenų integracija
 
@@ -879,10 +879,10 @@ python samples/02-rag-solutions/migration_guide.py
 
 ## Pagrindinės aptartos sąvokos
 
-### 1. Pažangi užklausų inžinerija
+### 1. Pažangus užklausų kūrimas
 
-- **Sistemos užklausos**: Specifinės srities ekspertų personos
-- **Konteksto strategijos**: Konteksto integravimo technikos
+- **Sistemos užklausos**: Ekspertų personos, pritaikytos konkrečiam domenui
+- **Pagrindimo strategijos**: Konteksto integravimo technikos
 - **Temperatūros kontrolė**: Kūrybiškumo ir nuoseklumo balansas
 - **Tokenų valdymas**: Efektyvus konteksto naudojimas
 
@@ -895,19 +895,19 @@ python samples/02-rag-solutions/migration_guide.py
 
 ### 3. RAG įgyvendinimo modeliai
 
-- **Vektorinė paieška**: TF-IDF ir kosinusinis panašumas
+- **Vektorinė paieška**: TF-IDF ir kosinusinio panašumo metodai
 - **Dokumentų paieška**: Reikšmingumo vertinimas ir reitingavimas
-- **Konteksto derinimas**: Kelių dokumentų sintezė
+- **Konteksto derinimas**: Daugiadokumentinė sintezė
 - **Atsakymų generavimas**: Atsakymų kūrimas remiantis kontekstu
 
 ### 4. Debesų migracijos strategijos
 
 - **Vieningi API**: Vienas kodų bazės modelis vietinei ir debesų aplinkai
 - **Aplinkos abstrakcija**: Konfigūracija pagrįstas diegimas
-- **Plėtros darbo eiga**: Vietinė → Staging → Gamyba
-- **Kaštų optimizavimas**: Vietinė plėtra, gamyba debesyse
+- **Vystymo procesas**: Vietinė → Testavimo → Gamybos aplinka
+- **Kaštų optimizavimas**: Vietinis vystymas, gamyba debesyse
 
-## Gamybiniai aspektai
+## Gamybos aspektai
 
 ### 1. Našumo optimizavimas
 
@@ -955,28 +955,28 @@ metrics = {
 
 ## Kiti žingsniai
 
-Po šios sesijos:
+Baigus šią sesiją:
 
-1. **Išnagrinėkite 3 sesiją**: Atvirojo kodo modeliai Foundry Local
+1. **Išbandykite 3 sesiją**: Atvirojo kodo modeliai Foundry Local
 2. **Kurkite gamybinius RAG sprendimus**: Įgyvendinkite su Chainlit (Pavyzdys 04)
 3. **Pažangi vektorinė paieška**: Integruokite su Chroma arba Pinecone
-4. **Debesų migracija**: Diegimas Azure AI Foundry
-5. **Įvertinkite RAG kokybę**: Paleiskite `python Workshop/samples/session02/rag_eval_ragas.py`, kad įvertintumėte atsakymų aktualumą, tikslumą ir konteksto preciziškumą naudojant ragas
+4. **Debesų migracija**: Diegimas į Azure AI Foundry
+5. **Įvertinkite RAG kokybę**: Paleiskite `cd Workkshop/samples;python -m session02.rag_eval_ragas`, kad įvertintumėte atsakymų aktualumą, patikimumą ir konteksto tikslumą naudojant ragas
 
 ### Pasirinktiniai patobulinimai
 
 | Kategorija | Patobulinimas | Pagrindimas | Kryptis |
-|------------|--------------|-------------|---------|
-| Paieška | Pakeiskite TF-IDF vektorine saugykla (FAISS / Chroma) | Geresnis semantinis atpažinimas ir mastelio keitimas | Suskaidykite dokumentus (500–800 simbolių), įterpkite, išsaugokite indeksą |
-| Hibridinis indeksas | Dviguba semantinė + raktažodžių filtracija | Pagerina tikslumą skaitmeninėms / kodų užklausoms | Filtruokite pagal raktažodį, tada reitinguokite pagal kosinusinį panašumą |
+|------------|---------------|-------------|---------|
+| Paieška | Pakeiskite TF-IDF vektorinėmis saugyklomis (FAISS / Chroma) | Geresnis semantinis atpažinimas ir mastelio keitimas | Suskaidykite dokumentus (500–800 simbolių), įterpkite, išsaugokite indeksą |
+| Hibridinis indeksas | Dviguba semantinė + raktažodžių filtracija | Pagerina tikslumą skaitinių / kodų užklausų atveju | Filtruokite pagal raktažodį, tada reitinguokite pagal kosinusinį panašumą |
 | Įterpimai | Įvertinkite kelis įterpimo modelius | Optimizuokite aktualumą ir greitį | A/B: MiniLM vs E5-small vs vietinis koduotojas |
-| Talpykla | Talpinkite įterpimus ir paieškos rezultatus | Sumažinkite pakartotinių užklausų vėlavimą | Paprasta disko talpykla / sqlite su hash raktu |
+| Talpyklos | Talpyklos įterpimai ir paieškos rezultatai | Sumažina pakartotinių užklausų vėlavimą | Paprasta disko talpykla / sqlite su hash raktu |
 | Vertinimas | Išplėskite ragas duomenų rinkinį | Statistiškai reikšminga kokybė | Sukurkite 50–100 klausimų-atsakymų + kontekstų; stratifikacija pagal temą |
 | Metrikos | Stebėkite paieškos ir generavimo laikus | Našumo profilavimas | Fiksuokite `retrieval_ms`, `gen_ms`, `tokens` per užklausą |
-| Apsaugos priemonės | Pridėkite apsaugą nuo halucinacijų | Saugesni atsakymai | Jei tikslumas < slenkstis → atsakymas: "Nepakanka konteksto." |
+| Apsaugos | Pridėkite atsargines priemones nuo haliucinacijų | Saugūs atsakymai | Jei patikimumas < slenkstis → atsakymas: "Nepakanka konteksto." |
 | Atsarginis variantas | Perėjimas vietinis → Azure modelis | Hibridinis kokybės padidinimas | Esant mažam pasitikėjimui, nukreipkite į debesį per tą patį OpenAI API |
-| Determinizmas | Stabilūs palyginimo paleidimai | Pakartotiniai vertinimo rinkiniai | Fiksuokite sėklą, `temperature=0`, išjunkite atsitiktinumą |
-| Stebėjimas | Išsaugokite vertinimo paleidimų istoriją | Regresijos aptikimas | Pridėkite JSON eilutes su laiko žyma + metrikų pokyčiais |
+| Determinizmas | Stabilūs palyginimo testai | Pakartotiniai vertinimo rinkiniai | Fiksuokite sėklą, `temperature=0`, išjunkite atsitiktinumą |
+| Stebėjimas | Išsaugokite vertinimo istoriją | Regresijos aptikimas | Pridėkite JSON eilutes su laiko žyma + metrikų pokyčiais |
 
 #### Pavyzdys: Paieškos laiko pridėjimas
 
@@ -994,7 +994,7 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 
 #### Vertinimo mastelio didinimas su ragas
 
-1. Surinkite JSONL su laukais: `question`, `answer`, `contexts`, `ground_truths` (sąrašas)
+1. Sudarykite JSONL su laukais: `question`, `answer`, `contexts`, `ground_truths` (sąrašas)
 2. Konvertuokite į `Dataset.from_list(list_of_dicts)`
 3. Paleiskite `evaluate(dataset, metrics=[...])`
 4. Išsaugokite metrikas (CSV/JSON) tendencijų analizei.
@@ -1015,32 +1015,33 @@ Disko išsaugojimui naudokite `faiss.write_index(index, "kb.index")`.
 ### Dokumentacija
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Azure AI Foundry RAG modeliai](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [Užklausų inžinerijos vadovas](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [Užklausų kūrimo vadovas](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
 - [Ragas vertinimo dokumentacija](https://docs.ragas.io)
 
 ### Pavyzdinis kodas
-- [Module08 Pavyzdys 04](./samples/04/README.md) - Chainlit RAG aplikacija
-- [Pažangi daugiaveiksmė sistema](./samples/09/README.md) - Agentų koordinavimo modeliai
+- [Module08 Pavyzdys 04](./samples/04/README.md) - Chainlit RAG programa
+- [Pažangios daugiaveiksmės sistemos](./samples/09/README.md) - Agentų koordinavimo modeliai
 
 ---
 
 **Sesijos trukmė**: 30 minučių praktika + 15 minučių klausimai-atsakymai  
 **Sudėtingumo lygis**: Vidutinis  
-**Reikalavimai**: Baigta 1 sesija, pagrindinės Python žinios
+**Reikalavimai**: Baigta 1 sesija, pagrindinės Python žinios  
 
 ## Pavyzdinė situacija ir dirbtuvių susiejimas
 
-| Dirbtuvių scenarijus / užrašų knygelė | Situacija | Tikslas | Pagrindinis duomenų rinkinys / šaltinis | Pavyzdinis klausimas |
+| Dirbtuvių scenarijus / Užrašų knygelė | Situacija | Tikslas | Pagrindinis duomenų rinkinys / Šaltinis | Pavyzdinis klausimas |
 |--------------------------------------|-----------|---------|----------------------------------------|----------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Vidinės pagalbos žinių bazė, atsakanti į privatumo + našumo DUK | Minimalus RAG su įterpimais | `DOCS` sąrašas scenarijuje (5 trumpi fragmentai) | Kodėl naudoti RAG su vietine inferencija? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kokybės analitikas, nustatantis bazinius paieškos tikslumo rodiklius | Skaičiuoti ragas metrikas mažame sintetiniame duomenų rinkinyje | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` masyvai | Koks pranašumas vietinės inferencijos? |
-| `prompt_engineering.py` (pažangus) | Srities ekspertas, kuriantis kontekstines užklausas įvairioms sritims | Palyginti srities sistemos užklausas ir tokenų poveikį | Inline `contexts` žodynas | Kaip Foundry Local tvarko modelio talpyklą? |
-| `csv_qa_system.py` | Pardavimų operacijos, tyrinėjančios interaktyvią analitiką eksportuose | Apibendrinti ir užklausti mažą pardavimų duomenų dalį | Generuotas `sample_sales_data.csv` (10 eilučių) | Kuris produktas turi didžiausią vidutinę pardavimo sumą? |
-| `document_rag.py` | Produktų komanda, tyrinėjanti dokumentų RAG vidiniam wiki | Rasti + cituoti aktualius dokumentus | `create_sample_knowledge_base()` sąrašas | Kokie yra Edge AI privalumai? |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Vidinės pagalbos žinių bazė, atsakanti į privatumo + našumo DUK | Minimalus RAG su įterpimais | `DOCS` sąrašas scenarijuje (5 trumpi fragmentai) | Kodėl verta naudoti RAG su vietine analize? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kokybės analitikas, nustatantis bazinius paieškos patikimumo rodiklius | Skaičiuoti ragas metrikas mažame sintetiniame duomenų rinkinyje | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` masyvai | Koks pranašumas yra vietinė analizė? |
+| `prompt_engineering.py` (pažangus) | Domeno ekspertas, kuriantis pagrįstas užklausas įvairiems sektoriams | Palyginti domeno sistemos užklausas ir tokenų poveikį | Vidinis `contexts` žodynas | Kaip Foundry Local tvarko modelio talpyklą? |
+| `csv_qa_system.py` | Pardavimų operacijos, tiriančios interaktyvią analizę per eksportus | Apibendrinti ir užklausti mažą pardavimų duomenų dalį | Sukurtas `sample_sales_data.csv` (10 eilučių) | Kuris produktas turi didžiausią vidutinę pardavimo sumą? |
+| `document_rag.py` | Produktų komanda, tirianti dokumentų RAG vidiniam wiki | Rasti ir cituoti svarbius dokumentus | `create_sample_knowledge_base()` sąrašas | Kokie yra Edge AI privalumai? |
 | `migration_guide.py` | Architektas, rengiantis debesų migracijos planą | Pademonstruoti vietinės→Azure API lygiavertiškumą | Statinės testavimo užklausos | Paaiškinkite Edge AI privalumus 2–3 sakiniais. |
 
-### Duomenų rinkinio fragmentai
-Inline RAG pipeline dokumentų sąrašas:
+### Duomenų rinkinių fragmentai
+
+Vidinis RAG proceso dokumentų sąrašas:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1061,13 +1062,15 @@ GROUND_TRUTH = [
 ```
 
 
-### Situacijos pasakojimas
+### Situacijos aprašymas
+
 Pagalbos inžinerijos grupė nori greito prototipo, kuris atsakytų į vidinius DUK, neatskleidžiant klientų duomenų išorėje. 2 sesijos artefaktai progresuoja nuo minimalaus laikino RAG (be išsaugojimo) → struktūrizuoto CSV klausimų-atsakymų → dokumentų paieškos su citavimu → objektyvaus kokybės vertinimo (ragas) → migracijos strategijos, paruoštos Azure testavimui.
 
 ### Plėtros keliai
-Naudokite Pasirinktinių patobulinimų lentelę, kad evoliucionuotumėte: pakeiskite TF‑IDF į FAISS/Chroma, padidinkite vertinimo korpusą (50–100 klausimų-atsakymų), pridėkite atsarginį eskalavimą į didesnį modelį, kai tikslumas < slenkstis.
+
+Naudokite pasirinktinių patobulinimų lentelę, kad tobulintumėte: pakeiskite TF-IDF į FAISS/Chroma, padidinkite vertinimo korpusą (50–100 klausimų-atsakymų), pridėkite eskalacijos mechanizmą į didesnį modelį, kai patikimumas < slenkstis.
 
 ---
 
-**Atsakomybės atsisakymas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, kylančius dėl šio vertimo naudojimo.
+**Atsakomybės apribojimas**:  
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, atsiradusius dėl šio vertimo naudojimo.

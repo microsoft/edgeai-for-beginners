@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-11T11:47:51+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T23:56:57+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "et"
 }
@@ -27,7 +27,7 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. Paigalda Python'i sõltuvused
+### 2. Paigalda Python sõltuvused
 
 Töötuba kataloogist:
 
@@ -45,13 +45,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Töötuba Näidiste Käivitamine
+## Töötuba näidiste käivitamine
 
-### Sessioon 01: Põhiline Vestlus
+### Sessioon 01: Põhiline vestlus
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Keskkonnamuutujad:**  
@@ -60,11 +60,11 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
 ```
 
-### Sessioon 02: RAG Torustik
+### Sessioon 02: RAG torujuhe
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Keskkonnamuutujad:**  
@@ -74,36 +74,37 @@ set RAG_QUESTION="Why use RAG with local inference?"
 set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
-### Sessioon 02: RAG Hindamine (Ragas)
+### Sessioon 02: RAG hindamine (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**Märkus**: Vajab täiendavaid sõltuvusi, mis on paigaldatud `requirements.txt` kaudu
+**Märkus**: Vajab täiendavate sõltuvuste paigaldamist `requirements.txt` kaudu
 
 ### Sessioon 03: Võrdlusuuring
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Keskkonnamuutujad:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Väljund**: JSON koos latentsuse, läbilaskevõime ja esimese märgi mõõdikutega
+**Väljund**: JSON latentsuse, läbilaskevõime ja esimese märgi mõõdikutega
 
-### Sessioon 04: Mudelite Võrdlus
+### Sessioon 04: Mudelite võrdlus
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Keskkonnamuutujad:**  
@@ -113,11 +114,11 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### Sessioon 05: Multi-Agent Orkestreerimine
+### Sessioon 05: Multi-agent orkestreerimine
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Keskkonnamuutujad:**  
@@ -127,26 +128,26 @@ set AGENT_MODEL_EDITOR=phi-4-mini
 set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ```
 
-### Sessioon 06: Mudeli Marsruuter
+### Sessioon 06: Mudeli suunaja
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Testib marsruutimisloogikat** mitme kavatsusega (kood, kokkuvõte, klassifikatsioon)
+**Testib suunamisloogikat** mitme kavatsusega (kood, kokkuvõte, klassifikatsioon)
 
-### Sessioon 06: Torustik
+### Sessioon 06: Torujuhe
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**Kompleksne mitmeastmeline torustik** koos planeerimise, täitmise ja täiustamisega
+**Kompleksne mitmeastmeline torujuhe** koos planeerimise, täitmise ja täiendamisega
 
 ## Skriptid
 
-### Ekspordi Võrdlusuuringu Aruanne
+### Võrdlusuuringu aruande eksport
 
 ```bash
 cd Workshop/scripts
@@ -159,13 +160,13 @@ python export_benchmark_markdown.py \
 
 **Väljund**: Markdown tabel + JSON mõõdikud
 
-### Markdown CLI Mustrite Kontrollimine
+### Markdown CLI mustrite kontrollimine
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**Eesmärk**: Tuvastada vananenud CLI mustrid dokumentatsioonis
+**Eesmärk**: Tuvastada dokumentatsioonis vananenud CLI mustrid
 
 ## Testimine
 
@@ -176,11 +177,11 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**Testid**: Põhifunktsionaalsus oluliste näidiste jaoks
+**Testid**: Põhifunktsionaalsus peamiste näidiste jaoks
 
 ## Tõrkeotsing
 
-### Teenus Ei Tööta
+### Teenus ei tööta
 
 ```bash
 # Check status
@@ -193,7 +194,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Mooduli Importimise Vead
+### Mooduli importimise vead
 
 ```bash
 # Ensure virtual environment is activated
@@ -204,7 +205,7 @@ source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### Ühenduse Vead
+### Ühenduse vead
 
 ```bash
 # Check endpoint
@@ -214,7 +215,7 @@ foundry service status
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ```
 
-### Mudelit Ei Leitud
+### Mudelit ei leitud
 
 ```bash
 # List available models
@@ -224,14 +225,14 @@ foundry model list
 foundry model run phi-4-mini
 ```
 
-## Keskkonnamuutujate Viide
+## Keskkonnamuutujate viide
 
 ### Põhikonfiguratsioon
 | Muutuja | Vaikimisi | Kirjeldus |
 |---------|-----------|-----------|
 | `FOUNDRY_LOCAL_ALIAS` | Muutuv | Kasutatav mudeli alias |
-| `FOUNDRY_LOCAL_ENDPOINT` | Automaatne | Teenuse lõpp-punkti ülekirjutamine |
-| `SHOW_USAGE` | `0` | Näita märgi kasutamise statistikat |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Teenuse lõpp-punkti ülekirjutamine |
+| `SHOW_USAGE` | `0` | Näita tokeni kasutuse statistikat |
 | `RETRY_ON_FAIL` | `1` | Luba uuesti proovimise loogika |
 | `RETRY_BACKOFF` | `1.0` | Esialgne uuesti proovimise viivitus (sekundites) |
 
@@ -245,16 +246,16 @@ foundry model run phi-4-mini
 | `BENCH_PROMPT` | Vaata näidist | Võrdlusuuringu küsimus |
 | `BENCH_STREAM` | `0` | Mõõda esimese märgi latentsust |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Peamine agent mudel |
-| `AGENT_MODEL_EDITOR` | Peamine | Redaktori agent mudel |
+| `AGENT_MODEL_EDITOR` | Peamine | Toimetaja agent mudel |
 | `SLM_ALIAS` | `phi-4-mini` | Väike keelemudel |
 | `LLM_ALIAS` | `qwen2.5-7b` | Suur keelemudel |
-| `COMPARE_PROMPT` | Vaata näidist | Võrdluse küsimus |
+| `COMPARE_PROMPT` | Vaata näidist | Võrdlusküsimus |
 
-## Soovitatud Mudelid
+## Soovitatud mudelid
 
-### Arendus ja Testimine
+### Arendus ja testimine
 - **phi-4-mini** - Tasakaalustatud kvaliteet ja kiirus
-- **qwen2.5-0.5b** - Väga kiire klassifikatsiooni jaoks
+- **qwen2.5-0.5b** - Väga kiire klassifikatsiooniks
 - **gemma-2-2b** - Hea kvaliteet, mõõdukas kiirus
 
 ### Tootmistsenaariumid
@@ -262,32 +263,32 @@ foundry model run phi-4-mini
 - **deepseek-coder-1.3b** - Koodi genereerimine
 - **qwen2.5-7b** - Kõrge kvaliteediga vastused
 
-## SDK Dokumentatsioon
+## SDK dokumentatsioon
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
-## Abi Saamine
+## Abi saamine
 
 1. Kontrolli teenuse olekut: `foundry service status`  
 2. Vaata logisid: Kontrolli Foundry Local teenuse logisid  
 3. Vaata SDK dokumentatsiooni: https://github.com/microsoft/Foundry-Local  
-4. Uuri näidiskoodi: Kõigil näidistel on üksikasjalikud kommentaarid
+4. Uuri näidiskoodi: Kõigil näidistel on üksikasjalikud kommentaarid  
 
-## Järgmised Sammud
+## Järgmised sammud
 
-1. Lõpeta kõik töötuba sessioonid järjekorras  
+1. Lõpeta kõik töötoa sessioonid järjekorras  
 2. Katseta erinevaid mudeleid  
-3. Kohanda näidiseid oma kasutusjuhtude jaoks  
-4. Vaata `SDK_MIGRATION_NOTES.md` edasijõudnute mustrite jaoks
+3. Kohanda näidiseid vastavalt oma vajadustele  
+4. Vaata `SDK_MIGRATION_NOTES.md` edasijõudnute mustrite jaoks  
 
 ---
 
-**Viimati Uuendatud**: 2025-01-08  
-**Töötuba Versioon**: Viimane  
+**Viimati uuendatud**: 2025-01-08  
+**Töötoa versioon**: Viimane  
 **SDK**: Foundry Local Python SDK
 
 ---
 
 **Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tekkida selle tõlke kasutamise tõttu.

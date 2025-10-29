@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-08T15:17:57+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T23:09:51+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "ro"
 }
@@ -11,15 +11,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Rezumat
 
-Proiectează și orchestrează agenți AI cu mai multe roluri folosind runtime-ul cu latență redusă și protecție a confidențialității oferit de Foundry Local. Vei defini rolurile agenților, strategiile de memorie, modelele de invocare a instrumentelor și graficele de execuție. Sesiunea introduce modele de structurare pe care le poți extinde cu Chainlit sau LangGraph. Proiectul de început extinde exemplul de arhitectură a agenților existent pentru a adăuga persistența memoriei și cârlige de evaluare.
+Proiectează și orchestrează agenți AI cu mai multe roluri, utilizând runtime-ul Foundry Local, care oferă latență redusă și protecția confidențialității. Vei defini rolurile agenților, strategiile de memorie, modelele de invocare a instrumentelor și graficele de execuție. Sesiunea introduce modele de structurare pe care le poți extinde cu Chainlit sau LangGraph. Proiectul de început extinde arhitectura existentă a agenților pentru a adăuga persistența memoriei și cârlige de evaluare.
 
 ## Obiective de învățare
 
-- **Definirea rolurilor**: Prompturi de sistem și limitele capabilităților
-- **Implementarea memoriei**: Pe termen scurt (conversație), pe termen lung (vector / fișier), spații de lucru temporare
+- **Definirea rolurilor**: Prompteri de sistem și limitele capacităților
+- **Implementarea memoriei**: Pe termen scurt (conversație), pe termen lung (vector / fișier), scratchpad-uri efemere
 - **Structurarea fluxurilor de lucru**: Pași secvențiali, ramificați și paraleli ai agenților
-- **Integrarea instrumentelor**: Model ușor de invocare a funcțiilor
-- **Evaluare**: Trasabilitate de bază + scorare bazată pe rubrică
+- **Integrarea instrumentelor**: Model de invocare a funcțiilor ușoare
+- **Evaluare**: Urmărire de bază + scorarea rezultatelor bazată pe rubrici
 
 ## Cerințe preliminare
 
@@ -45,7 +45,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Dacă rulezi agenți de pe macOS pe un serviciu gazdă Windows la distanță:
+Dacă rulezi agenți de pe macOS împotriva unui serviciu gazdă Windows la distanță:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -150,7 +150,6 @@ TOOLS = {
 }
 ```
 
-
 Modifică `agents_core.py` pentru a permite sintaxa simplă a instrumentelor: utilizatorul scrie `#tool:get_time`, iar agentul extinde ieșirea instrumentului în context înainte de generare.
 
 ### 4. Flux de lucru orchestrat (6 min)
@@ -189,10 +188,10 @@ if __name__ == '__main__':
 ### 5. Proiect de început: Extinde `05-agent-architecture` (7 min)
 
 Adaugă:
-1. Strat de memorie persistentă (de exemplu, adăugare de linii JSON ale conversațiilor)
+1. Strat de memorie persistentă (de exemplu, adăugarea liniilor JSON ale conversațiilor)
 2. Rubrică simplă de evaluare: factualitate / claritate / stil
-3. Opțional interfață front-end Chainlit (două taburi: conversație și trasabilitate)
-4. Opțional stil LangGraph pentru mașină de stare (dacă se adaugă dependența) pentru decizii ramificate
+3. Interfață frontală opțională Chainlit (două file: conversație și urme)
+4. Mașină de stare în stil LangGraph opțională (dacă se adaugă dependența) pentru decizii ramificate
 
 ## Lista de verificare pentru validare
 
@@ -201,17 +200,16 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-
-Așteaptă ieșirea structurată a pipeline-ului cu nota de injecție a instrumentului.
+Așteaptă ieșirea structurată a conductei cu nota de injecție a instrumentului.
 
 ## Prezentare generală a strategiilor de memorie
 
-| Strat | Scop | Exemplu |
-|-------|------|---------|
-| Pe termen scurt | Continuitatea dialogului | Ultimele N mesaje |
-| Episodic | Recapitularea sesiunii | JSON per sesiune |
-| Semantic | Recuperare pe termen lung | Magazin vectorial de rezumate |
-| Scratchpad | Pași de raționament | Lanț de gânduri inline (privat) |
+| Strat       | Scop                | Exemplu               |
+|-------------|---------------------|-----------------------|
+| Pe termen scurt | Continuitatea dialogului | Ultimele N mesaje     |
+| Episodic    | Amintirea sesiunii  | JSON per sesiune      |
+| Semantic    | Recuperare pe termen lung | Stoc de vectori cu rezumate |
+| Scratchpad  | Pași de raționament | Lanț de gânduri inline (privat) |
 
 ## Cârlige de evaluare (conceptual)
 
@@ -228,11 +226,11 @@ evaluation = {
 
 ## Depanare
 
-| Problemă | Cauză | Rezolvare |
-|----------|-------|----------|
+| Problemă             | Cauză                     | Rezolvare                     |
+|----------------------|---------------------------|--------------------------------|
 | Răspunsuri repetitive | Fereastra de context prea mare/mică | Ajustează parametrul ferestrei de memorie |
-| Instrumentul nu este invocat | Sintaxă greșită | Folosește formatul `#tool:tool_name` |
-| Orchestrare lentă | Mai multe modele reci | Rulează prompturi de încălzire înainte |
+| Instrumentul nu este invocat | Sintaxă greșită            | Folosește formatul `#tool:tool_name` |
+| Orchestrare lentă    | Mai multe modele reci     | Rulează prompturi de încălzire înainte |
 
 ## Referințe
 
@@ -243,29 +241,30 @@ evaluation = {
 ---
 
 **Durata sesiunii**: 30 min  
-**Dificultate**: Avansată
+**Dificultate**: Avansat
 
 ## Scenariu exemplu și mapare workshop
 
 | Script workshop | Scenariu | Obiectiv | Exemplu de prompt |
 |-----------------|----------|----------|-------------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot de cercetare a cunoștințelor care produce rezumate prietenoase pentru executivi | Pipeline cu doi agenți (cercetare → rafinare editorială) cu modele distincte opționale | Explică de ce inferența la margine este importantă pentru conformitate. |
-| (Extins) concept `tools.py` | Adaugă instrumente de estimare a timpului și token-urilor | Demonstrează modelul ușor de invocare a instrumentelor | #tool:get_time |
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot de cercetare a cunoștințelor care produce rezumate prietenoase pentru executivi | Conductă cu doi agenți (cercetare → rafinare editorială) cu modele distincte opționale | Explică de ce inferența locală este importantă pentru conformitate. |
+| (Extins) conceptul `tools.py` | Adaugă instrumente de estimare a timpului și token-urilor | Demonstrează modelul de invocare ușoară a instrumentelor | #tool:get_time |
 
 ### Narațiunea scenariului
 
-Echipa de documentare pentru conformitate are nevoie de rezumate interne rapide, obținute din cunoștințe locale, fără a trimite schițe către servicii cloud. Un agent cercetător adună puncte factuale concise; un agent editor rescrie pentru claritate executivă. Aliasuri de modele distincte pot fi atribuite pentru optimizarea latenței (SLM rapid) versus rafinament stilistic (model mai mare doar când este necesar).
+Echipa de documentare pentru conformitate are nevoie de rezumate interne rapide, obținute din cunoștințe locale, fără a trimite schițele către servicii cloud. Un agent cercetător adună puncte factuale concise; un agent editor rescrie pentru claritate executivă. Aliasuri de modele distincte pot fi atribuite pentru a optimiza latența (SLM rapid) vs rafinarea stilistică (model mai mare doar când este necesar).
 
 ### Exemplu de mediu multi-model
 
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
-### Structura trasabilității (opțional)
+### Structura urmelor (opțional)
 
 ```json
 {
@@ -278,25 +277,24 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-
-Persistă fiecare pas într-un fișier JSONL pentru scorare ulterioară bazată pe rubrică.
+Persistă fiecare pas într-un fișier JSONL pentru scorarea ulterioară bazată pe rubrici.
 
 ### Îmbunătățiri opționale
 
-| Temă | Îmbunătățire | Beneficiu | Schiță de implementare |
-|------|-------------|----------|------------------------|
+| Temă              | Îmbunătățire            | Beneficiu              | Schiță de implementare       |
+|-------------------|-------------------------|------------------------|------------------------------|
 | Roluri multi-model | Modele distincte per agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specializare și viteză | Selectează variabile de mediu alias, apelează `chat_once` cu alias per rol |
-| Trasabilitate structurată | Trasabilitate JSON a fiecărui act(tool,input,latency,tokens) | Depanare și evaluare | Adaugă dict la o listă; scrie `.jsonl` la final |
+| Urme structurate  | Urmă JSON a fiecărui act(tool,input,latency,tokens) | Debugging și evaluare | Adaugă dict la o listă; scrie `.jsonl` la final |
 | Persistența memoriei | Context de dialog reîncărcabil | Continuitatea sesiunii | Salvează `Agent.memory` în `sessions/<ts>.json` |
-| Registru de instrumente | Descoperire dinamică a instrumentelor | Extensibilitate | Menține dict-ul `TOOLS` și inspectează numele/descrierile |
+| Registru de instrumente | Descoperire dinamică a instrumentelor | Extensibilitate | Menține dict-ul `TOOLS` și introspectează numele/descrierea |
 | Retry și Backoff | Lanțuri lungi robuste | Reducerea eșecurilor tranzitorii | Învelește `act` cu try/except + backoff exponențial |
-| Scorare rubrică | Etichete calitative automate | Urmărirea îmbunătățirilor | Prompt secundar modelului: "Evaluează claritatea 1-5" |
+| Scorarea rubricii | Etichete calitative automate | Urmărirea îmbunătățirilor | Trecere secundară promptând modelul: "Evaluează claritatea 1-5" |
 | Memorie vectorială | Recuperare semantică | Context bogat pe termen lung | Încorporează rezumate, recuperează top-k în mesajul sistemului |
-| Răspunsuri în streaming | Răspuns perceput mai rapid | Îmbunătățirea UX | Folosește streaming odată disponibil și golește token-urile parțiale |
-| Teste deterministe | Control regresie | CI stabil | Rulează cu `temperature=0`, semințe de prompt fixe |
+| Răspunsuri în flux | Răspuns perceput mai rapid | Îmbunătățirea UX | Folosește streaming odată disponibil și elimină tokenii parțiali |
+| Teste deterministe | Control regresiv | CI stabil | Rulează cu `temperature=0`, semințe de prompt fixe |
 | Ramificare paralelă | Explorare mai rapidă | Debit | Folosește `concurrent.futures` pentru pași independenți ai agenților |
 
-#### Exemplu de înregistrare trasabilitate
+#### Exemplu de înregistrare a urmelor
 
 ```python
 trace.append({
@@ -316,10 +314,9 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-
 Persistă perechile (`answer`, `rating`) pentru a construi un grafic istoric al calității.
 
 ---
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

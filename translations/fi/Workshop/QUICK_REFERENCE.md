@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T14:42:42+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T22:20:35+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "fi"
 }
 -->
-# Workshop-näytteet - Pikaopas
+# Työpajan näyteet - Pikaopas
 
 **Viimeksi päivitetty**: 8. lokakuuta 2025
 
@@ -24,13 +24,13 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
 
-## 📂 Näyteyleiskatsaus
+## 📂 Näyteiden yleiskatsaus
 
 | Istunto | Näyte | Tarkoitus | Aika |
 |---------|-------|-----------|------|
@@ -40,8 +40,8 @@ python chat_bootstrap.py "What is edge AI?"
 | 03 | `benchmark_oss_models.py` | Mallien vertailu | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Moniagenttijärjestelmä | ~60s |
-| 06 | `models_router.py` | Tarkoituksen reititys | ~45s |
-| 06 | `models_pipeline.py` | Monivaiheinen putki | ~60s |
+| 06 | `models_router.py` | Tarkoituksen ohjaus | ~45s |
+| 06 | `models_pipeline.py` | Monivaiheinen putkisto | ~60s |
 
 ---
 
@@ -197,7 +197,7 @@ for chunk in stream:
 | Malli | Koko | Paras käyttö | Nopeus |
 |-------|------|--------------|--------|
 | `qwen2.5-0.5b` | 0.5B | Nopea luokittelu | ⚡⚡⚡ |
-| `qwen2.5-coder-0.5b` | 0.5B | Nopeaan koodin luontiin | ⚡⚡⚡ |
+| `qwen2.5-coder-0.5b` | 0.5B | Nopeaan koodin generointiin | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Luova kirjoittaminen | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Koodi, refaktorointi | ⚡⚡ |
 | `phi-4-mini` | 4B | Yleinen, tiivistys | ⚡⚡ |
@@ -210,7 +210,7 @@ for chunk in stream:
 - **SDK-dokumentaatio**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Pikaopas**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **Päivitysyhteenveto**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Siirtymismuistiinpanot**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Siirtymishuomautukset**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -218,9 +218,9 @@ for chunk in stream:
 
 1. **Välimuisti asiakkaat**: `workshop_utils` hoitaa välimuistituksen puolestasi
 2. **Käytä pienempiä malleja**: Aloita `qwen2.5-0.5b`-mallilla testaukseen
-3. **Ota käyttötilastot käyttöön**: Aseta `SHOW_USAGE=1` seurataksesi tokeneita
+3. **Ota käyttötilastot käyttöön**: Aseta `SHOW_USAGE=1` seurataksesi tokenien käyttöä
 4. **Eräkäsittely**: Käsittele useita kehotteita peräkkäin
-5. **Pienennä max_tokens-arvoa**: Vähentää viivettä nopeisiin vastauksiin
+5. **Pienennä max_tokens**: Vähentää viivettä nopeampia vastauksia varten
 
 ---
 
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Mallien vertailu
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
-### RAG-putki
+### RAG-putkisto
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Moniagenttijärjestelmä
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Pika-apu**: Suorita mikä tahansa näyte `--help`-komennolla tai tarkista docstring:
+**Pika-apu**: Suorita mikä tahansa näyte `--help`-komennolla `samples`-hakemistosta tai tarkista docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---

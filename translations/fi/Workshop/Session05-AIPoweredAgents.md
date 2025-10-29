@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T14:28:25+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T22:17:35+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "fi"
 }
@@ -11,14 +11,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tiivistelmä
 
-Suunnittele ja orkestroi moniroolisia AI-agentteja hyödyntäen Foundry Localin matalan viiveen ja yksityisyyttä suojaavaa ajonaikaa. Määrität agenttien roolit, muististrategiat, työkalujen kutsumismallit ja suorituskäyrät. Istunnossa esitellään kehysmalleja, joita voit laajentaa Chainlit- tai LangGraph-työkaluilla. Aloitusprojekti laajentaa olemassa olevaa agenttiarkkitehtuurin esimerkkiä lisäämällä muistinpysyvyys ja arviointikoukut.
+Suunnittele ja orkestroi moniroolisia AI-agentteja hyödyntäen Foundry Localin matalan viiveen ja yksityisyyttä suojaavaa suoritusympäristöä. Määrität agenttien roolit, muististrategiat, työkalujen kutsumismallit ja suorituskaaviot. Istunto esittelee kehysrakenteita, joita voit laajentaa Chainlitilla tai LangGraphilla. Aloitusprojekti laajentaa olemassa olevaa agenttiarkkitehtuuriesimerkkiä lisäämällä muistinpysyvyys ja arviointikoukut.
 
 ## Oppimistavoitteet
 
 - **Määritä roolit**: Järjestelmän kehotteet ja kyvykkyyden rajat
 - **Toteuta muisti**: Lyhytaikainen (keskustelu), pitkäaikainen (vektori / tiedosto), tilapäiset muistikirjat
 - **Rakenna työnkulkuja**: Peräkkäiset, haarautuvat ja rinnakkaiset agenttivaiheet
-- **Integroi työkalut**: Kevyt funktiokutsumismalli
+- **Integroi työkalut**: Kevyt funktiotyökalujen kutsumismalli
 - **Arvioi**: Perusjälki + rubriikkipohjainen tulosten pisteytys
 
 ## Esivaatimukset
@@ -27,7 +27,7 @@ Suunnittele ja orkestroi moniroolisia AI-agentteja hyödyntäen Foundry Localin 
 - Python ja `foundry-local-sdk`, `openai`, valinnainen `chainlit`
 - Paikalliset mallit käynnissä (vähintään `phi-4-mini`)
 
-### Monialustainen ympäristön koodinpätkä
+### Monialustainen ympäristön pätkä
 
 Windows:
 ```powershell
@@ -55,7 +55,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ### 1. Määritä agenttien roolit ja muisti (7 min)
 
-Luo tiedosto `samples/05-agents/agents_core.py`:
+Luo `samples/05-agents/agents_core.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -122,7 +122,7 @@ if __name__ == "__main__":
 ```
 
 
-### 2. CLI-kehysmalli (3 min)
+### 2. CLI-kehysrakenne (3 min)
 
 ```powershell
 python samples/05-agents/agents_core.py
@@ -131,7 +131,7 @@ python samples/05-agents/agents_core.py
 
 ### 3. Lisää työkalujen kutsuminen (7 min)
 
-Laajenna tiedostolla `samples/05-agents/tools.py`:
+Laajenna `samples/05-agents/tools.py`:
 
 ```python
 from datetime import datetime
@@ -150,11 +150,11 @@ TOOLS = {
 }
 ```
 
-Muokkaa `agents_core.py` sallimaan yksinkertainen työkalusyntaksi: käyttäjä kirjoittaa `#tool:get_time` ja agentti laajentaa työkalun tuottaman sisällön kontekstiin ennen generointia.
+Muokkaa `agents_core.py` sallimaan yksinkertainen työkalusyntaksi: käyttäjä kirjoittaa `#tool:get_time` ja agentti laajentaa työkalun tuloksen kontekstiin ennen generointia.
 
 ### 4. Orkestroitu työnkulku (6 min)
 
-Luo tiedosto `samples/05-agents/orchestrator.py`:
+Luo `samples/05-agents/orchestrator.py`:
 
 ```python
 from agents_core import researcher, writer, Agent
@@ -200,16 +200,16 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Odota jäsenneltyä putkistotulosta, jossa on huomautus työkalun injektiosta.
+Odota rakenteellista putkistotulosta työkalujen injektiomerkinnällä.
 
 ## Muististrategioiden yleiskatsaus
 
 | Kerros | Tarkoitus | Esimerkki |
-|--------|----------|-----------|
+|-------|----------|----------|
 | Lyhytaikainen | Keskustelun jatkuvuus | Viimeiset N viestit |
 | Episodinen | Istunnon muistaminen | JSON per istunto |
 | Semanttinen | Pitkäaikainen haku | Yhteenvetojen vektorivarasto |
-| Muistikirja | Päättelyvaiheet | Ketjun ajatus inline (yksityinen) |
+| Muistikirja | Päättelyvaiheet | Ketjun ajatus (yksityinen) |
 
 ## Arviointikoukut (Konseptuaalinen)
 
@@ -226,8 +226,8 @@ evaluation = {
 
 ## Vianetsintä
 
-| Ongelma | Syy | Ratkaisu |
-|---------|-----|---------|
+| Ongelma | Syynä | Ratkaisu |
+|--------|-------|---------|
 | Toistuvat vastaukset | Kontekstin ikkuna liian suuri/pieni | Säädä muistikkunan parametri |
 | Työkalua ei kutsuta | Väärä syntaksi | Käytä `#tool:tool_name` -muotoa |
 | Hidas orkestrointi | Useita kylmiä malleja | Esikäynnistä lämpimät kehotteet |
@@ -247,17 +247,18 @@ evaluation = {
 
 | Työpajan skripti | Skenaario | Tavoite | Esimerkkikehote |
 |------------------|----------|---------|-----------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Tietotutkimusbot tuottaa johtajaystävällisiä yhteenvetoja | Kaksi agenttia putkistossa (tutkimus → editoriaalinen viimeistely) valinnaisilla erillisillä malleilla | Selitä, miksi reunalaskenta on tärkeää vaatimustenmukaisuudelle. |
-| (Laajennettu) `tools.py` -konsepti | Lisää aika- ja token-arviointityökalut | Näytä kevyt työkalukutsumismalli | #tool:get_time |
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Tietotutkimusbot tuottaa johtajaystävällisiä yhteenvetoja | Kaksi agenttiputkea (tutkimus → toimituksellinen viimeistely) valinnaisilla erillisillä malleilla | Selitä, miksi reunainferenssi on tärkeää vaatimustenmukaisuudelle. |
+| (Laajennettu) `tools.py` -konsepti | Lisää aika- ja token-arviointityökalut | Demonstroi kevyt työkalujen kutsumismalli | #tool:get_time |
 
 ### Skenaarion narratiivi
-Vaatimustenmukaisuusdokumentaatiotiimi tarvitsee nopeita sisäisiä tiivistelmiä, jotka on hankittu paikallisesta tiedosta ilman, että luonnoksia lähetetään pilvipalveluihin. Tutkimusagentti kerää tiiviitä faktapisteitä; editoriagentti muotoilee ne johtajille selkeäksi. Erilliset mallialiasit voidaan määrittää optimoimaan viive (nopea SLM) vs tyylillinen viimeistely (suurempi malli vain tarvittaessa).
+Vaatimustenmukaisuusdokumentaatiotiimi tarvitsee nopeita sisäisiä tiivistelmiä, jotka on kerätty paikallisesta tiedosta ilman luonnosten lähettämistä pilvipalveluihin. Tutkimusagentti kerää tiiviitä faktapisteitä; toimittajaagentti muotoilee ne johtajille selkeäksi. Erilliset mallialiasit voidaan määrittää optimoimaan viive (nopea SLM) vs tyylillinen viimeistely (suurempi malli vain tarvittaessa).
 
 ### Esimerkki monimalliympäristöstä
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
@@ -277,18 +278,18 @@ Tallenna jokainen vaihe JSONL-tiedostoon myöhempää rubriikkipisteytystä vart
 
 ### Valinnaiset parannukset
 
-| Teema | Parannus | Hyöty | Toteutuksen luonnos |
-|-------|----------|-------|---------------------|
+| Teema | Parannus | Hyöty | Toteutussuunnitelma |
+|-------|----------|-------|--------------------|
 | Monimalliroolit | Erilliset mallit per agentti (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Erikoistuminen & nopeus | Valitse alias-ympäristömuuttujat, kutsu `chat_once` roolikohtaisella aliasilla |
-| Jäsennellyt jäljet | JSON-jälki jokaisesta toiminnosta (työkalu, syöte, viive, tokenit) | Vianetsintä & arviointi | Lisää sanakirja listaan; kirjoita `.jsonl` lopussa |
+| Rakenteelliset jäljet | Jokaisen toiminnon (työkalu, syöte, viive, tokenit) JSON-jälki | Vianetsintä & arviointi | Lisää sanakirja listaan; kirjoita `.jsonl` lopussa |
 | Muistin pysyvyys | Latautuva keskustelukonteksti | Istunnon jatkuvuus | Tallenna `Agent.memory` tiedostoon `sessions/<ts>.json` |
-| Työkalurekisteri | Dynaaminen työkalujen haku | Laajennettavuus | Ylläpidä `TOOLS`-sanakirjaa ja tarkastele nimiä/kuvauksia |
-| Uudelleenkokeilu & viive | Kestävät pitkät ketjut | Vähennä tilapäisiä virheitä | Kääri `act` try/except + eksponentiaalinen viive |
-| Rubriikkipisteytys | Automaattiset laadulliset tunnisteet | Seuraa parannuksia | Toissijainen kehotusmalli: "Arvioi selkeys 1-5" |
+| Työkalurekisteri | Dynaaminen työkalujen haku | Laajennettavuus | Ylläpidä `TOOLS`-sanakirjaa ja tarkista nimet/kuvaukset |
+| Uudelleenyritä & viive | Kestävä pitkissä ketjuissa | Vähennä tilapäisiä virheitä | Kääri `act` try/except + eksponentiaalinen viive |
+| Rubriikkipisteytys | Automaattiset laadulliset merkinnät | Seuraa parannuksia | Toissijainen kehotusmalli: "Arvioi selkeys 1-5" |
 | Vektori-muisti | Semanttinen haku | Rikas pitkäaikainen konteksti | Upota yhteenvedot, hae top-k järjestelmäsanomaan |
 | Suoratoistovastaukset | Nopeampi koettu vastaus | Käyttökokemuksen parannus | Käytä suoratoistoa, kun saatavilla, ja tyhjennä osittaiset tokenit |
 | Deterministiset testit | Regressioiden hallinta | Vakaa CI | Aja `temperature=0`, kiinteät kehotteet |
-| Rinnakkaiset haarautumat | Nopeampi tutkimus | Läpäisykyky | Käytä `concurrent.futures` itsenäisiin agenttivaiheisiin |
+| Rinnakkaiset haarautumat | Nopeampi tutkimus | Läpäisykyky | Käytä `concurrent.futures` itsenäisille agenttivaiheille |
 
 #### Jälkitietueen esimerkki
 
@@ -310,9 +311,9 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-Tallenna (`answer`, `rating`) -parit rakentaaksesi historiallisen laatugraafin.
+Tallenna (`answer`, `rating`) -parit rakentaaksesi historiallisen laatukäyrän.
 
 ---
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.

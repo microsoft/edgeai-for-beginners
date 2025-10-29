@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T08:07:50+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T20:41:09+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "mo"
 }
@@ -19,25 +19,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 ---
 
-## 更新檔案
+## 更新的檔案
 
-### 課程 01：入門
-- ✅ `chat_bootstrap.py` - 基本聊天與串流範例
+### 第一課：入門
+- ✅ `chat_bootstrap.py` - 基本聊天和串流範例
 
-### 課程 02：RAG 解決方案
+### 第二課：RAG解決方案
 - ✅ `rag_pipeline.py` - 使用嵌入的RAG實現
 - ✅ `rag_eval_ragas.py` - 使用RAGAS指標進行RAG評估
 
-### 課程 03：開源模型
+### 第三課：開源模型
 - ✅ `benchmark_oss_models.py` - 多模型基準測試
 
-### 課程 04：尖端模型
+### 第四課：尖端模型
 - ✅ `model_compare.py` - SLM與LLM比較
 
-### 課程 05：AI 驅動代理
+### 第五課：AI驅動代理
 - ✅ `agents_orchestrator.py` - 多代理協調
 
-### 課程 06：模型作為工具
+### 第六課：模型作為工具
 - ✅ `models_router.py` - 基於意圖的模型路由
 - ✅ `models_pipeline.py` - 多步驟路由管道
 
@@ -54,7 +54,7 @@ CO_OP_TRANSLATOR_METADATA:
 ```python
 manager, client, model_id = get_client(alias)
 ```
-  
+
 **之後：**
 ```python
 try:
@@ -64,9 +64,9 @@ except Exception as e:
     print("[INFO] Ensure Foundry Local is running: foundry service status")
     sys.exit(1)
 ```
-  
+
 **好處：**
-- 提供清晰的錯誤訊息，實現優雅的錯誤處理
+- 優雅的錯誤處理，提供清晰的錯誤訊息
 - 可操作的故障排除提示
 - 為腳本提供正確的退出代碼
 
@@ -76,7 +76,7 @@ except Exception as e:
 ```python
 from sentence_transformers import SentenceTransformer
 ```
-  
+
 **之後：**
 ```python
 try:
@@ -85,20 +85,20 @@ except ImportError:
     print("[ERROR] sentence-transformers is required. Install with: pip install sentence-transformers")
     sys.exit(1)
 ```
-  
+
 **好處：**
-- 提供清晰的指導，當依賴項缺失時
-- 防止晦澀的匯入錯誤
-- 使用者友好的安裝指示
+- 清楚指導缺少依賴項時的操作
+- 防止難以理解的匯入錯誤
+- 友好的安裝指引
 
 ### 3. 全面的文件撰寫
 
 **新增至所有範例：**
-- 環境變數文件撰寫於docstring中
+- 文件字串中環境變數的說明
 - SDK參考連結
 - 使用範例
-- 詳細的函數/參數文件
-- 提供型別提示以增強IDE支援
+- 詳細的函數/參數說明
+- 提供型別提示以改善IDE支援
 
 **範例：**
 ```python
@@ -115,9 +115,8 @@ def pipeline(task: str) -> Dict[str, Any]:
         Exception: If any pipeline stage fails
     """
 ```
-  
 
-### 4. 改善的使用者回饋
+### 4. 改善使用者回饋
 
 **新增資訊性日誌：**
 ```python
@@ -125,29 +124,28 @@ print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
 print(f"[INFO] Loaded model: {alias} -> {model_id}")
 ```
-  
+
 **進度指示器：**
 ```python
 print(f"[INFO] Benchmarking {alias}...")
 print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
 print(f"[INFO] Completed {alias}\n")
 ```
-  
+
 **結構化輸出：**
 ```python
 print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
-  
 
 ### 5. 強大的基準測試
 
-**課程 03 改進：**
-- 每個模型的錯誤處理（失敗時繼續執行）
+**第三課改進：**
+- 每個模型的錯誤處理（失敗後繼續）
 - 詳細的進度報告
 - 正確執行暖身回合
 - 支援首字元延遲測量
-- 清晰的階段分離
+- 階段清晰分離
 
 ### 6. 一致的型別提示
 
@@ -158,24 +156,24 @@ from typing import Dict, List, Tuple, Any, Optional
 def run(alias: str) -> Tuple[float, str, Optional[int]]:
     """Run comparison for given model alias."""
 ```
-  
+
 **好處：**
-- 更好的IDE自動完成功能
+- 更好的IDE自動完成
 - 提早錯誤檢測
-- 自我文件化的程式碼
+- 自我描述的程式碼
 
 ### 7. 增強的模型路由器
 
-**課程 06 改進：**
+**第六課改進：**
 - 全面的意圖檢測文件
-- 模型選擇算法解釋
+- 模型選擇演算法解釋
 - 詳細的路由日誌
 - 測試輸出格式化
 - 批量測試中的錯誤恢復
 
 ### 8. 多代理協調
 
-**課程 05 改進：**
+**第五課改進：**
 - 階段性進度報告
 - 每個代理的錯誤處理
 - 清晰的管道結構
@@ -197,75 +195,73 @@ foundry model run qwen2.5-0.5b
 # Install dependencies
 pip install -r Workshop/requirements.txt
 ```
-  
 
 ### 測試每個範例
 
-#### 課程 01
+#### 第一課
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
-  
-#### 課程 02
+
+#### 第二課
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
-  
-#### 課程 03
+
+#### 第三課
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
-  
-#### 課程 04
+
+#### 第四課
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
-  
-#### 課程 05
+
+#### 第五課
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
-  
-#### 課程 06
+
+#### 第六課
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
-  
 
 ---
 
 ## 環境變數參考
 
-### 全域（所有範例）
+### 全域（所有範例適用）
 | 變數 | 描述 | 預設值 |
 |------|------|--------|
 | `FOUNDRY_LOCAL_ALIAS` | 使用的模型別名 | 根據範例而異 |
@@ -277,44 +273,44 @@ python models_pipeline.py
 ### 特定範例
 | 變數 | 使用範例 | 描述 |
 |------|----------|------|
-| `EMBED_MODEL` | 課程 02 | 嵌入模型名稱 |
-| `RAG_QUESTION` | 課程 02 | RAG測試問題 |
-| `BENCH_MODELS` | 課程 03 | 逗號分隔的基準測試模型 |
-| `BENCH_ROUNDS` | 課程 03 | 基準測試回合數 |
-| `BENCH_PROMPT` | 課程 03 | 基準測試提示 |
-| `BENCH_STREAM` | 課程 03 | 測量首字元延遲 |
-| `SLM_ALIAS` | 課程 04 | 小型語言模型 |
-| `LLM_ALIAS` | 課程 04 | 大型語言模型 |
-| `COMPARE_PROMPT` | 課程 04 | 比較測試提示 |
-| `AGENT_MODEL_PRIMARY` | 課程 05 | 主要代理模型 |
-| `AGENT_MODEL_EDITOR` | 課程 05 | 編輯代理模型 |
-| `AGENT_QUESTION` | 課程 05 | 代理測試問題 |
-| `PIPELINE_TASK` | 課程 06 | 管道任務 |
+| `EMBED_MODEL` | 第二課 | 嵌入模型名稱 |
+| `RAG_QUESTION` | 第二課 | RAG測試問題 |
+| `BENCH_MODELS` | 第三課 | 要進行基準測試的模型（逗號分隔） |
+| `BENCH_ROUNDS` | 第三課 | 基準測試回合數 |
+| `BENCH_PROMPT` | 第三課 | 基準測試的測試提示 |
+| `BENCH_STREAM` | 第三課 | 測量首字元延遲 |
+| `SLM_ALIAS` | 第四課 | 小型語言模型 |
+| `LLM_ALIAS` | 第四課 | 大型語言模型 |
+| `COMPARE_PROMPT` | 第四課 | 比較測試提示 |
+| `AGENT_MODEL_PRIMARY` | 第五課 | 主要代理模型 |
+| `AGENT_MODEL_EDITOR` | 第五課 | 編輯代理模型 |
+| `AGENT_QUESTION` | 第五課 | 代理測試問題 |
+| `PIPELINE_TASK` | 第六課 | 管道任務 |
 
 ---
 
 ## 重大變更
 
-**無** - 所有變更均向後兼容。
+**無** - 所有更改均向後相容。
 
-現有腳本將繼續運作。新增功能包括：
+現有腳本將繼續正常運作。新增功能包括：
 - 可選的環境變數
 - 增強的錯誤訊息（不影響功能）
-- 新增的日誌（可抑制）
+- 新增的日誌（可選擇隱藏）
 - 更好的型別提示（無運行時影響）
 
 ---
 
 ## 實施的最佳實踐
 
-### 1. 始終使用 Workshop Utils
+### 1. 始終使用Workshop Utils
 ```python
 from workshop_utils import get_client, chat_once
 
 # Provides caching, retry, and endpoint management
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
-  
+
 ### 2. 正確的錯誤處理模式
 ```python
 try:
@@ -325,14 +321,14 @@ except Exception as e:
     print("[INFO] Check: foundry service status")
     sys.exit(1)
 ```
-  
+
 ### 3. 資訊性日誌
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
-  
+
 ### 4. 型別提示
 ```python
 from typing import Dict, List, Optional
@@ -340,8 +336,8 @@ from typing import Dict, List, Optional
 def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
-  
-### 5. 全面的docstring
+
+### 5. 全面的文件字串
 ```python
 def function(arg: str) -> str:
     """Short description.
@@ -356,7 +352,7 @@ def function(arg: str) -> str:
         Exception: When it fails
     """
 ```
-  
+
 ### 6. 支援環境變數
 ```python
 import os
@@ -364,8 +360,8 @@ import os
 alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
-  
-### 7. 優雅的降級處理
+
+### 7. 優雅降級
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -376,49 +372,44 @@ for model in models:
         print(f"[ERROR] {model} failed: {e}")
         print(f"[INFO] Skipping {model}...")
 ```
-  
 
 ---
 
 ## 常見問題與解決方案
 
 ### 問題：匯入錯誤
-**解決方案：** 安裝缺失的依賴項  
+**解決方案：** 安裝缺少的依賴項
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
-  
 
-### 問題：連接錯誤
-**解決方案：** 確保 Foundry Local 正在運行  
+### 問題：連線錯誤
+**解決方案：** 確保Foundry Local正在運行
 ```bash
 foundry service status
 foundry model run phi-4-mini
 ```
-  
 
-### 問題：模型未找到
-**解決方案：** 檢查可用模型  
+### 問題：找不到模型
+**解決方案：** 檢查可用模型
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
-  
 
 ### 問題：性能緩慢
-**解決方案：** 使用較小的模型或調整參數  
+**解決方案：** 使用較小的模型或調整參數
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 set BENCH_ROUNDS=2
 ```
-  
 
 ---
 
 ## 下一步
 
 ### 1. 測試所有範例
-按照上述測試清單逐一驗證所有範例是否正常運作。
+按照上方的測試清單逐一驗證所有範例是否正常運行。
 
 ### 2. 更新文件
 - 更新課程的Markdown檔案，加入新的範例
@@ -431,13 +422,12 @@ set BENCH_ROUNDS=2
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
-  
 
-### 4. 添加性能基準測試
+### 4. 新增性能基準測試
 追蹤錯誤處理改進帶來的性能提升。
 
-### 5. 收集使用者回饋
-向工作坊參與者收集以下方面的回饋：
+### 5. 使用者回饋
+收集工作坊參與者的回饋，了解以下方面：
 - 錯誤訊息的清晰度
 - 文件的完整性
 - 使用的便利性
@@ -446,31 +436,31 @@ def test_all_samples():
 
 ## 資源
 
-- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
-- **快速參考**: `Workshop/FOUNDRY_SDK_QUICKREF.md`  
-- **遷移說明**: `Workshop/SDK_MIGRATION_NOTES.md`  
-- **主存儲庫**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **快速參考**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **遷移說明**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **主存儲庫**: https://github.com/microsoft/Foundry-Local
 
 ---
 
 ## 維護
 
-### 添加新範例
-在創建新範例時，請遵循以下模式：
+### 新增範例
+在建立新範例時，請遵循以下模式：
 
-1. 使用 `workshop_utils` 管理客戶端
-2. 添加全面的錯誤處理
+1. 使用`workshop_utils`進行客戶端管理
+2. 新增全面的錯誤處理
 3. 支援環境變數
-4. 添加型別提示與docstring
+4. 添加型別提示和文件字串
 5. 提供資訊性日誌
-6. 在docstring中包含使用範例
-7. 連結至SDK文件
+6. 在文件字串中包含使用範例
+7. 連結到SDK文件
 
-### 審查更新
-在審查範例更新時，檢查以下內容：
+### 更新審查
+在審查範例更新時，請檢查：
 - [ ] 所有I/O操作的錯誤處理
 - [ ] 公共函數的型別提示
-- [ ] 全面的docstring
+- [ ] 全面的文件字串
 - [ ] 環境變數文件
 - [ ] 資訊性使用者回饋
 - [ ] SDK參考連結
@@ -478,9 +468,9 @@ def test_all_samples():
 
 ---
 
-**摘要**：所有工作坊Python範例現已遵循Foundry Local SDK最佳實踐，並改進了錯誤處理、全面的文件撰寫以及使用者體驗。無重大變更 - 所有現有功能均已保留並增強。
+**摘要**：所有工作坊的Python範例現已遵循Foundry Local SDK的最佳實踐，並增強了錯誤處理、文件撰寫以及使用者體驗。無重大變更 - 所有現有功能均已保留並進一步提升。
 
 ---
 
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T11:03:35+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T21:36:51+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "br"
 }
 -->
-# Cartão de Referência Rápida - Exemplos do Workshop
+# Exemplos de Workshop - Cartão de Referência Rápida
 
 **Última Atualização**: 8 de outubro de 2025
 
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -197,7 +197,7 @@ for chunk in stream:
 | Modelo | Tamanho | Melhor Para | Velocidade |
 |--------|---------|-------------|------------|
 | `qwen2.5-0.5b` | 0.5B | Classificação rápida | ⚡⚡⚡ |
-| `qwen2.5-coder-0.5b` | 0.5B | Geração de código rápida | ⚡⚡⚡ |
+| `qwen2.5-coder-0.5b` | 0.5B | Geração rápida de código | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Escrita criativa | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Código, refatoração | ⚡⚡ |
 | `phi-4-mini` | 4B | Geral, resumo | ⚡⚡ |
@@ -207,7 +207,7 @@ for chunk in stream:
 
 ## 🔗 Recursos
 
-- **Documentação do SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **Documentação SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Referência Rápida**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **Resumo de Atualizações**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
 - **Notas de Migração**: `Workshop/SDK_MIGRATION_NOTES.md`
@@ -226,7 +226,7 @@ for chunk in stream:
 
 ## 🎯 Fluxos de Trabalho de Exemplos
 
-### Testar Tudo
+### Teste Tudo
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Benchmark de Modelos
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
-### Pipeline de RAG
+### Pipeline RAG
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Sistema Multiagente
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Ajuda Rápida**: Execute qualquer exemplo com `--help` ou verifique a docstring:
+**Ajuda Rápida**: Execute qualquer exemplo com `--help` no diretório `samples` ou verifique a docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

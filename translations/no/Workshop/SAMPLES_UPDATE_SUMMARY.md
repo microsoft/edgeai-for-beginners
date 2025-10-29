@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T14:43:27+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:15:45+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "no"
 }
 -->
-# Workshop Eksempler - Oppsummering av Oppdatering for Foundry Local SDK
+# Workshop Eksempler - Oppsummering av oppdatering for Foundry Local SDK
 
 ## Oversikt
 
-Alle Python-eksempler i `Workshop/samples`-mappen er oppdatert for å følge beste praksis for Foundry Local SDK og sikre konsistens på tvers av workshoppen.
+Alle Python-eksempler i `Workshop/samples`-katalogen er oppdatert for å følge beste praksis for Foundry Local SDK og sikre konsistens på tvers av workshoppen.
 
 **Dato**: 8. oktober 2025  
 **Omfang**: 9 Python-filer fordelt på 6 workshop-økter  
@@ -19,36 +19,36 @@ Alle Python-eksempler i `Workshop/samples`-mappen er oppdatert for å følge bes
 
 ---
 
-## Oppdaterte Filer
+## Oppdaterte filer
 
-### Økt 01: Kom i Gang
+### Økt 01: Komme i gang
 - ✅ `chat_bootstrap.py` - Grunnleggende eksempler på chat og streaming
 
 ### Økt 02: RAG-løsninger
-- ✅ `rag_pipeline.py` - RAG-implementasjon med embeddings
+- ✅ `rag_pipeline.py` - RAG-implementering med embeddings
 - ✅ `rag_eval_ragas.py` - RAG-evaluering med RAGAS-metrikker
 
-### Økt 03: Åpen Kildekode Modeller
+### Økt 03: Åpen kildekode-modeller
 - ✅ `benchmark_oss_models.py` - Benchmarking av flere modeller
 
-### Økt 04: Banebrytende Modeller
-- ✅ `model_compare.py` - Sammenligning av SLM og LLM
+### Økt 04: Banebrytende modeller
+- ✅ `model_compare.py` - Sammenligning mellom SLM og LLM
 
-### Økt 05: AI-drevne Agenter
+### Økt 05: AI-drevne agenter
 - ✅ `agents_orchestrator.py` - Koordinering av flere agenter
 
-### Økt 06: Modeller som Verktøy
-- ✅ `models_router.py` - Intent-basert modellruting
+### Økt 06: Modeller som verktøy
+- ✅ `models_router.py` - Modellruting basert på intensjon
 - ✅ `models_pipeline.py` - Flertrinns rutet pipeline
 
-### Støttende Infrastruktur
+### Støttende infrastruktur
 - ✅ `workshop_utils.py` - Følger allerede beste praksis (ingen endringer nødvendig)
 
 ---
 
-## Viktige Forbedringer
+## Viktige forbedringer
 
-### 1. Forbedret Feilhåndtering
+### 1. Forbedret feilhåndtering
 
 **Før:**
 ```python
@@ -68,9 +68,9 @@ except Exception as e:
 **Fordeler:**
 - Smidig feilhåndtering med tydelige feilmeldinger
 - Handlingsrettede feilsøkingshint
-- Korrekte avslutningskoder for skript
+- Korrekte exit-koder for skripting
 
-### 2. Bedre Importhåndtering
+### 2. Bedre importhåndtering
 
 **Før:**
 ```python
@@ -91,7 +91,7 @@ except ImportError:
 - Forhindrer kryptiske importfeil
 - Brukervennlige installasjonsinstruksjoner
 
-### 3. Omfattende Dokumentasjon
+### 3. Omfattende dokumentasjon
 
 **Lagt til i alle eksempler:**
 - Dokumentasjon av miljøvariabler i docstrings
@@ -116,7 +116,7 @@ def pipeline(task: str) -> Dict[str, Any]:
     """
 ```
 
-### 4. Forbedret Brukerfeedback
+### 4. Forbedret brukerfeedback
 
 **Lagt til informativ logging:**
 ```python
@@ -132,22 +132,22 @@ print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
 print(f"[INFO] Completed {alias}\n")
 ```
 
-**Strukturert utdata:**
+**Strukturert output:**
 ```python
 print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
 
-### 5. Robust Benchmarking
+### 5. Robust benchmarking
 
-**Forbedringer i Økt 03:**
+**Forbedringer i økt 03:**
 - Feilhåndtering per modell (fortsetter ved feil)
 - Detaljert fremdriftsrapportering
-- Korrekt utførelse av oppvarmingsrunder
-- Støtte for måling av første-token-latens
+- Korrekt utførte oppvarmingsrunder
+- Støtte for måling av første-token latens
 - Klar separasjon av stadier
 
-### 6. Konsistente Type Hints
+### 6. Konsistente type hints
 
 **Lagt til overalt:**
 ```python
@@ -158,30 +158,30 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ```
 
 **Fordeler:**
-- Bedre autoutfylling i IDE
+- Bedre IDE-autofullføring
 - Tidlig feildeteksjon
-- Selvforklarende kode
+- Selv-dokumenterende kode
 
-### 7. Forbedret Modellruter
+### 7. Forbedret modellruter
 
-**Forbedringer i Økt 06:**
-- Omfattende dokumentasjon av intensjonsdeteksjon
-- Forklaring av modellvalg-algoritme
+**Forbedringer i økt 06:**
+- Omfattende dokumentasjon for intensjonsdeteksjon
+- Forklaring av modellutvalg-algoritme
 - Detaljerte rutelogger
-- Testutdataformattering
-- Feilhåndtering i batch-testing
+- Formatert testoutput
+- Feilgjenoppretting i batch-testing
 
-### 8. Orkestrering av Flere Agenter
+### 8. Orkestrering av flere agenter
 
-**Forbedringer i Økt 05:**
-- Fremdriftsrapportering trinn for trinn
+**Forbedringer i økt 05:**
+- Fremdriftsrapportering steg for steg
 - Feilhåndtering per agent
 - Klar pipeline-struktur
-- Bedre dokumentasjon av minnehåndtering
+- Bedre dokumentasjon for minnehåndtering
 
 ---
 
-## Test Sjekkliste
+## Testingsjekkliste
 
 ### Forutsetninger
 ```bash
@@ -196,100 +196,100 @@ foundry model run qwen2.5-0.5b
 pip install -r Workshop/requirements.txt
 ```
 
-### Test Hvert Eksempel
+### Test hver prøve
 
 #### Økt 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Økt 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Økt 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Økt 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Økt 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Økt 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
 
-## Referanse for Miljøvariabler
+## Referanse for miljøvariabler
 
-### Globale (Alle Eksempler)
+### Globalt (alle eksempler)
 | Variabel | Beskrivelse | Standard |
 |----------|-------------|----------|
 | `FOUNDRY_LOCAL_ALIAS` | Modellalias som skal brukes | Varierer per eksempel |
-| `FOUNDRY_LOCAL_ENDPOINT` | Overstyr tjenesteendepunkt | Auto-detektert |
+| `FOUNDRY_LOCAL_ENDPOINT` | Overstyr tjenesteendepunkt | Automatisk oppdaget |
 | `SHOW_USAGE` | Vis tokenbruk | `0` |
 | `RETRY_ON_FAIL` | Aktiver retry-logikk | `1` |
 | `RETRY_BACKOFF` | Startforsinkelse for retry | `1.0` |
 
-### Eksempelspesifikke
-| Variabel | Brukt av | Beskrivelse |
-|----------|----------|-------------|
+### Eksempelspesifikt
+| Variabel | Brukes av | Beskrivelse |
+|----------|-----------|-------------|
 | `EMBED_MODEL` | Økt 02 | Navn på embedding-modell |
 | `RAG_QUESTION` | Økt 02 | Testspørsmål for RAG |
-| `BENCH_MODELS` | Økt 03 | Kommaseparerte modeller for benchmarking |
+| `BENCH_MODELS` | Økt 03 | Komma-separerte modeller for benchmarking |
 | `BENCH_ROUNDS` | Økt 03 | Antall benchmark-runder |
-| `BENCH_PROMPT` | Økt 03 | Testprompt for benchmarking |
-| `BENCH_STREAM` | Økt 03 | Mål første-token-latens |
+| `BENCH_PROMPT` | Økt 03 | Testprompt for benchmarks |
+| `BENCH_STREAM` | Økt 03 | Måle første-token latens |
 | `SLM_ALIAS` | Økt 04 | Liten språkmodell |
 | `LLM_ALIAS` | Økt 04 | Stor språkmodell |
 | `COMPARE_PROMPT` | Økt 04 | Testprompt for sammenligning |
 | `AGENT_MODEL_PRIMARY` | Økt 05 | Primær agentmodell |
-| `AGENT_MODEL_EDITOR` | Økt 05 | Redigeringsagentmodell |
+| `AGENT_MODEL_EDITOR` | Økt 05 | Editor agentmodell |
 | `AGENT_QUESTION` | Økt 05 | Testspørsmål for agenter |
 | `PIPELINE_TASK` | Økt 06 | Oppgave for pipeline |
 
 ---
 
-## Endringer som Bryter Kompatibilitet
+## Endringer som bryter kompatibilitet
 
 **Ingen** - Alle endringer er bakoverkompatible.
 
@@ -297,13 +297,13 @@ Eksisterende skript vil fortsatt fungere. Nye funksjoner er:
 - Valgfrie miljøvariabler
 - Forbedrede feilmeldinger (bryter ikke funksjonalitet)
 - Ekstra logging (kan undertrykkes)
-- Bedre type hints (ingen innvirkning på kjøretid)
+- Bedre type hints (ingen påvirkning på runtime)
 
 ---
 
-## Implementerte Beste Praksiser
+## Implementerte beste praksiser
 
-### 1. Bruk Alltid Workshop Utils
+### 1. Bruk alltid Workshop Utils
 ```python
 from workshop_utils import get_client, chat_once
 
@@ -311,7 +311,7 @@ from workshop_utils import get_client, chat_once
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
 
-### 2. Korrekt Mønster for Feilhåndtering
+### 2. Korrekt mønster for feilhåndtering
 ```python
 try:
     # Initialize client
@@ -322,14 +322,14 @@ except Exception as e:
     sys.exit(1)
 ```
 
-### 3. Informativ Logging
+### 3. Informativ logging
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
 
-### 4. Type Hints
+### 4. Type hints
 ```python
 from typing import Dict, List, Optional
 
@@ -337,7 +337,7 @@ def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
 
-### 5. Omfattende Docstrings
+### 5. Omfattende docstrings
 ```python
 def function(arg: str) -> str:
     """Short description.
@@ -353,7 +353,7 @@ def function(arg: str) -> str:
     """
 ```
 
-### 6. Støtte for Miljøvariabler
+### 6. Støtte for miljøvariabler
 ```python
 import os
 
@@ -361,7 +361,7 @@ alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
 
-### 7. Smidig Degradering
+### 7. Smidig degradering
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -375,7 +375,7 @@ for model in models:
 
 ---
 
-## Vanlige Problemer og Løsninger
+## Vanlige problemer og løsninger
 
 ### Problem: Importfeil
 **Løsning:** Installer manglende avhengigheter
@@ -390,14 +390,14 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### Problem: Modell Ikke Funnet
+### Problem: Modell ikke funnet
 **Løsning:** Sjekk tilgjengelige modeller
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
 
-### Problem: Treg Ytelse
+### Problem: Langsom ytelse
 **Løsning:** Bruk mindre modeller eller juster parametere
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
@@ -406,25 +406,25 @@ set BENCH_ROUNDS=2
 
 ---
 
-## Neste Steg
+## Neste steg
 
-### 1. Test Alle Eksempler
-Gå gjennom test-sjekklisten ovenfor for å verifisere at alle eksempler fungerer korrekt.
+### 1. Test alle eksempler
+Gå gjennom testingsjekklisten ovenfor for å verifisere at alle eksempler fungerer korrekt.
 
-### 2. Oppdater Dokumentasjon
-- Oppdater markdown-filene for øktene med nye eksempler
+### 2. Oppdater dokumentasjon
+- Oppdater markdown-filer for øktene med nye eksempler
 - Legg til feilsøkingsseksjon i hoved-README
 - Lag en hurtigreferanseguide
 
-### 3. Lag Integrasjonstester
+### 3. Lag integrasjonstester
 ```python
 # Workshop/tests/test_samples.py
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
 
-### 4. Legg til Ytelsesbenchmarking
-Spor ytelsesforbedringer fra forbedret feilhåndtering.
+### 4. Legg til ytelsesbenchmarking
+Følg opp ytelsesforbedringer fra forbedret feilhåndtering.
 
 ### 5. Brukerfeedback
 Samle tilbakemeldinger fra workshop-deltakere om:
@@ -445,7 +445,7 @@ Samle tilbakemeldinger fra workshop-deltakere om:
 
 ## Vedlikehold
 
-### Legge til Nye Eksempler
+### Legge til nye eksempler
 Følg disse mønstrene når du lager nye eksempler:
 
 1. Bruk `workshop_utils` for klienthåndtering
@@ -456,7 +456,7 @@ Følg disse mønstrene når du lager nye eksempler:
 6. Inkluder brukseksempler i docstring
 7. Lenke til SDK-dokumentasjon
 
-### Gjennomgang av Oppdateringer
+### Gjennomgang av oppdateringer
 Når du gjennomgår oppdateringer av eksempler, sjekk for:
 - [ ] Feilhåndtering på alle I/O-operasjoner
 - [ ] Type hints på offentlige funksjoner
@@ -473,4 +473,4 @@ Når du gjennomgår oppdateringer av eksempler, sjekk for:
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

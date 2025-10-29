@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T16:14:35+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T20:32:54+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "zh"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. 安装 Foundry Local
 
-请按照官方安装指南操作：  
+请参考官方安装指南：  
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -27,7 +27,7 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. 安装 Python 依赖
+### 2. 安装 Python 依赖项
 
 在工作坊目录下运行：
 
@@ -47,11 +47,11 @@ pip install -r requirements.txt
 
 ## 运行工作坊示例
 
-### 会话 01：基础聊天
+### 第01节：基础聊天
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **环境变量：**  
@@ -60,11 +60,11 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
 ```
 
-### 会话 02：RAG 流程
+### 第02节：RAG 管道
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **环境变量：**  
@@ -74,36 +74,37 @@ set RAG_QUESTION="Why use RAG with local inference?"
 set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
-### 会话 02：RAG 评估 (Ragas)
+### 第02节：RAG 评估 (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**注意**：需要通过 `requirements.txt` 安装额外依赖
+**注意**：需要通过 `requirements.txt` 安装额外的依赖项
 
-### 会话 03：性能基准测试
+### 第03节：基准测试
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **环境变量：**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**输出**：包含延迟、吞吐量和首字节时间的 JSON 数据
+**输出：** 包含延迟、吞吐量和首个 token 指标的 JSON
 
-### 会话 04：模型对比
+### 第04节：模型比较
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **环境变量：**  
@@ -113,11 +114,11 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### 会话 05：多代理编排
+### 第05节：多代理编排
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **环境变量：**  
@@ -127,22 +128,22 @@ set AGENT_MODEL_EDITOR=phi-4-mini
 set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ```
 
-### 会话 06：模型路由器
+### 第06节：模型路由器
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **测试路由逻辑**，支持多种意图（代码、摘要、分类）
 
-### 会话 06：流程
+### 第06节：管道
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**复杂的多步骤流程**，包括规划、执行和优化
+**复杂的多步骤管道**，包括规划、执行和优化
 
 ## 脚本
 
@@ -157,7 +158,7 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**输出**：Markdown 表格 + JSON 指标
+**输出：** Markdown 表格 + JSON 指标
 
 ### 检查 Markdown CLI 模式
 
@@ -165,18 +166,18 @@ python export_benchmark_markdown.py \
 python lint_markdown_cli.py --verbose
 ```
 
-**目的**：检测文档中已弃用的 CLI 模式
+**目的：** 检测文档中已弃用的 CLI 模式
 
 ## 测试
 
-### 烟雾测试
+### 冒烟测试
 
 ```bash
 cd Workshop
 python -m tests.smoke
 ```
 
-**测试**：关键示例的基本功能
+**测试：** 核心示例的基本功能
 
 ## 故障排除
 
@@ -229,33 +230,33 @@ foundry model run phi-4-mini
 ### 核心配置
 | 变量 | 默认值 | 描述 |
 |------|--------|------|
-| `FOUNDRY_LOCAL_ALIAS` | 视情况而定 | 使用的模型别名 |
+| `FOUNDRY_LOCAL_ALIAS` | 根据情况而定 | 使用的模型别名 |
 | `FOUNDRY_LOCAL_ENDPOINT` | 自动 | 覆盖服务端点 |
-| `SHOW_USAGE` | `0` | 显示令牌使用统计 |
+| `SHOW_USAGE` | `0` | 显示 token 使用统计 |
 | `RETRY_ON_FAIL` | `1` | 启用重试逻辑 |
 | `RETRY_BACKOFF` | `1.0` | 初始重试延迟（秒） |
 
-### 会话专用
+### 会话特定
 | 变量 | 默认值 | 描述 |
 |------|--------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | 嵌入模型 |
 | `RAG_QUESTION` | 见示例 | RAG 测试问题 |
-| `BENCH_MODELS` | 视情况而定 | 逗号分隔的模型列表 |
+| `BENCH_MODELS` | 根据情况而定 | 逗号分隔的模型 |
 | `BENCH_ROUNDS` | `3` | 基准测试迭代次数 |
 | `BENCH_PROMPT` | 见示例 | 基准测试提示 |
-| `BENCH_STREAM` | `0` | 测量首字节延迟 |
+| `BENCH_STREAM` | `0` | 测量首个 token 延迟 |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | 主代理模型 |
 | `AGENT_MODEL_EDITOR` | 主代理 | 编辑代理模型 |
 | `SLM_ALIAS` | `phi-4-mini` | 小型语言模型 |
 | `LLM_ALIAS` | `qwen2.5-7b` | 大型语言模型 |
-| `COMPARE_PROMPT` | 见示例 | 对比提示 |
+| `COMPARE_PROMPT` | 见示例 | 比较提示 |
 
 ## 推荐模型
 
 ### 开发与测试
-- **phi-4-mini** - 平衡质量与速度
-- **qwen2.5-0.5b** - 分类任务非常快
-- **gemma-2-2b** - 质量较好，速度适中
+- **phi-4-mini** - 质量与速度平衡
+- **qwen2.5-0.5b** - 分类速度非常快
+- **gemma-2-2b** - 质量良好，速度适中
 
 ### 生产场景
 - **phi-4-mini** - 通用用途
@@ -272,22 +273,22 @@ foundry model run phi-4-mini
 1. 检查服务状态：`foundry service status`  
 2. 查看日志：检查 Foundry Local 服务日志  
 3. 查看 SDK 文档：https://github.com/microsoft/Foundry-Local  
-4. 查看示例代码：所有示例均附有详细的文档注释  
+4. 查看示例代码：所有示例均包含详细的文档字符串  
 
 ## 下一步
 
-1. 按顺序完成所有工作坊会话  
+1. 按顺序完成所有工作坊课程  
 2. 尝试使用不同的模型  
-3. 根据您的用例修改示例  
-4. 查看 `SDK_MIGRATION_NOTES.md` 以了解高级模式  
+3. 根据您的使用场景修改示例  
+4. 查看 `SDK_MIGRATION_NOTES.md` 了解高级模式  
 
 ---
 
-**最后更新**：2025-01-08  
+**最后更新日期**：2025-01-08  
 **工作坊版本**：最新  
-**SDK**：Foundry Local Python SDK
+**SDK**：Foundry Local Python SDK  
 
 ---
 
 **免责声明**：  
-本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
+本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们对因使用此翻译而产生的任何误解或误读不承担责任。

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1b3c0fecfd713c2df903a0633249dc9",
-  "translation_date": "2025-10-08T20:41:03+00:00",
+  "original_hash": "d9e354c0182311726dc037a8809524e2",
+  "translation_date": "2025-10-28T21:29:31+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "pt"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Resumo
 
-Compare Modelos de Linguagem Grandes (LLMs) e Modelos de Linguagem Pequenos (SLMs) em cenários de inferência local vs na nuvem. Aprenda padrões de implementação utilizando aceleração do ONNX Runtime, execução com WebGPU e experiências híbridas RAG. Inclui uma demonstração Chainlit RAG com um modelo local e uma exploração opcional do OpenWebUI. Você irá adaptar um projeto inicial de inferência com WebGPU e avaliar as capacidades e os trade-offs de custo/desempenho entre Phi e GPT-OSS-20B.
+Compare Modelos de Linguagem Grandes (LLMs) e Modelos de Linguagem Pequenos (SLMs) para cenários de inferência local vs na nuvem. Aprenda padrões de implementação utilizando aceleração do ONNX Runtime, execução com WebGPU e experiências híbridas RAG. Inclui uma demonstração do Chainlit RAG com um modelo local e uma exploração opcional do OpenWebUI. Você irá adaptar um starter de inferência WebGPU e avaliar as capacidades do Phi em comparação com o GPT-OSS-20B, além de analisar os trade-offs entre custo e desempenho.
 
 ## Objetivos de Aprendizagem
 
 - **Contrastar** SLM vs LLM em termos de latência, memória e qualidade
 - **Implementar** modelos com ONNXRuntime e (quando suportado) WebGPU
-- **Executar** inferência no navegador (demonstração interativa preservando privacidade)
+- **Executar** inferência baseada em navegador (demonstração interativa que preserva a privacidade)
 - **Integrar** um pipeline Chainlit RAG com um backend SLM local
 - **Avaliar** utilizando heurísticas leves de qualidade e custo
 
@@ -30,8 +30,8 @@ Compare Modelos de Linguagem Grandes (LLMs) e Modelos de Linguagem Pequenos (SLM
 
 ### Notas de Plataforma Cruzada
 
-O Windows continua a ser o ambiente alvo principal. Para desenvolvedores macOS que aguardam binários nativos:
-1. Execute o Foundry Local numa VM com Windows 11 (Parallels / UTM) OU numa estação de trabalho remota com Windows.
+O Windows continua sendo o ambiente alvo principal. Para desenvolvedores macOS que aguardam binários nativos:
+1. Execute o Foundry Local em uma VM com Windows 11 (Parallels / UTM) OU em uma estação de trabalho remota com Windows.
 2. Exponha o serviço (porta padrão 5273) e configure no macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
@@ -67,15 +67,16 @@ Acompanhe: profundidade da resposta, precisão factual, riqueza estilística, la
 ```powershell
 foundry config set compute.onnx.enable_gpu true
 # Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 Observe mudanças na taxa de transferência após ativar GPU vs apenas CPU.
 
-### 3. Inferência com WebGPU no Navegador (6 min)
+### 3. Inferência WebGPU no Navegador (6 min)
 
-Adapte o projeto inicial `04-webgpu-inference` (crie `samples/04-cutting-edge/webgpu_demo.html`):
+Adapte o starter `04-webgpu-inference` (crie `samples/04-cutting-edge/webgpu_demo.html`):
 
 ```html
 <!DOCTYPE html>
@@ -116,11 +117,11 @@ Adapte o projeto inicial `04-webgpu-inference` (crie `samples/04-cutting-edge/we
 </html>
 ```
 
-Abra o ficheiro no navegador; observe o ciclo local de baixa latência.
+Abra o arquivo em um navegador; observe o retorno local de baixa latência.
 
 ### 4. Aplicação de Chat Chainlit RAG (7 min)
 
-`samples/04-cutting-edge/chainlit_app.py` minimalista:
+`samples/04-cutting-edge/chainlit_app.py` mínimo:
 
 ```python
 #!/usr/bin/env python3
@@ -165,18 +166,18 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ### 5. Projeto Inicial: Adaptar `04-webgpu-inference` (6 min)
 
 Entregáveis:
-- Substituir lógica de fetch por tokens em streaming (usar variante de endpoint `stream=True` quando habilitado)
+- Substituir a lógica de fetch de placeholder por tokens de streaming (use a variante de endpoint `stream=True` quando habilitada)
 - Adicionar gráfico de latência (lado do cliente) para alternar entre phi e gpt-oss-20b
-- Incorporar contexto RAG inline (área de texto para documentos de referência)
+- Incorporar contexto RAG inline (textarea para documentos de referência)
 
 ## Heurísticas de Avaliação
 
 | Categoria | Phi-4-mini | GPT-OSS-20B | Observação |
 |----------|------------|-------------|-------------|
-| Latência (frio) | Rápido | Mais lento | SLM aquece rapidamente |
-| Memória | Baixa | Alta | Viabilidade no dispositivo |
+| Latência (fria) | Rápida | Mais lenta | SLM aquece rapidamente |
+| Memória | Baixa | Alta | Viabilidade em dispositivos |
 | Adesão ao contexto | Boa | Forte | Modelo maior pode ser mais verboso |
-| Custo (local) | Mínimo | Maior (recursos) | Trade-off de energia/tempo |
+| Custo (local) | Mínimo | Maior (recursos) | Trade-off energia/tempo |
 | Melhor caso de uso | Apps locais | Raciocínio profundo | Pipeline híbrido possível |
 
 ## Validando o Ambiente
@@ -187,22 +188,23 @@ foundry model list
 
 # For runtime metrics use the Python benchmark script (Session 3) and OS tools (Task Manager / nvidia-smi) instead of 'model stats'
 # Example:
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini,gpt-oss-20b
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 ## Resolução de Problemas
 
 | Sintoma | Causa | Ação |
 |---------|-------|--------|
-| Falha ao buscar página web | CORS ou serviço indisponível | Use `curl` para verificar o endpoint; habilite proxy CORS se necessário |
+| Falha ao buscar página web | CORS ou serviço fora do ar | Use `curl` para verificar o endpoint; habilite proxy CORS se necessário |
 | Chainlit em branco | Ambiente não ativo | Ative o venv e reinstale dependências |
 | Alta latência | Modelo recém-carregado | Aqueça com sequência de prompts pequenos |
 
 ## Referências
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- Documentação Chainlit: https://docs.chainlit.io
+- Documentação do Chainlit: https://docs.chainlit.io
 - Avaliação RAG (Ragas): https://docs.ragas.io
 
 ---
@@ -213,15 +215,15 @@ foundry model list
 ## Cenário de Exemplo e Mapeamento do Workshop
 
 | Artefatos do Workshop | Cenário | Objetivo | Fonte de Dados / Prompt |
-|--------------------|----------|-----------|----------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Equipa de arquitetura avaliando SLM vs LLM para gerador de resumo executivo | Quantificar diferença de latência + uso de tokens | Única variável de ambiente `COMPARE_PROMPT` |
-| `chainlit_app.py` (demo RAG) | Protótipo de assistente de conhecimento interno | Respostas curtas fundamentadas com recuperação lexical mínima | Lista `DOCS` inline no ficheiro |
-| `webgpu_demo.html` | Prévia futurista de inferência no navegador | Mostrar ciclo local de baixa latência + narrativa UX | Apenas prompt do utilizador ao vivo |
+|------------------------|---------|----------|-------------------------|
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Equipe de arquitetura avaliando SLM vs LLM para gerador de resumo executivo | Quantificar diferença de latência + uso de tokens | Única variável de ambiente `COMPARE_PROMPT` |
+| `chainlit_app.py` (demonstração RAG) | Protótipo de assistente de conhecimento interno | Respostas curtas fundamentadas com recuperação lexical mínima | Lista `DOCS` inline no arquivo |
+| `webgpu_demo.html` | Prévia de inferência futurista no navegador | Mostrar retorno local de baixa latência + narrativa UX | Apenas prompt ao vivo do usuário |
 
 ### Narrativa do Cenário
-A equipa de produto quer um gerador de briefing executivo. Um SLM leve (phi‑4‑mini) redige resumos; um LLM maior (gpt‑oss‑20b) pode refinar apenas relatórios de alta prioridade. Os scripts da sessão capturam métricas empíricas de latência e tokens para justificar um design híbrido, enquanto a demonstração Chainlit ilustra como a recuperação fundamentada mantém as respostas do modelo pequeno factuais. A página conceitual do WebGPU fornece um caminho de visão para processamento totalmente no cliente quando a aceleração no navegador amadurecer.
+A organização de produto deseja um gerador de briefing executivo. Um SLM leve (phi‑4‑mini) cria rascunhos de resumos; um LLM maior (gpt‑oss‑20b) pode refinar apenas relatórios de alta prioridade. Os scripts da sessão capturam métricas empíricas de latência e tokens para justificar um design híbrido, enquanto a demonstração do Chainlit ilustra como a recuperação fundamentada mantém as respostas do modelo pequeno factuais. A página conceitual do WebGPU fornece um caminho de visão para processamento totalmente no cliente quando a aceleração do navegador amadurecer.
 
-### Contexto RAG Minimalista (Chainlit)
+### Contexto RAG Mínimo (Chainlit)
 ```python
 DOCS = [
   "Foundry Local enables local model execution with OpenAI-compatible APIs.",
@@ -244,19 +246,19 @@ Acompanhe ambos os componentes de latência para relatar o custo médio combinad
 ### Melhorias Opcionais
 
 | Foco | Melhoria | Porquê | Dica de Implementação |
-|-------|------------|-----|---------------------|
+|------|----------|--------|-----------------------|
 | Métricas Comparativas | Acompanhar uso de tokens + latência do primeiro token | Visão holística de desempenho | Use script de benchmark aprimorado (Sessão 3) com `BENCH_STREAM=1` |
 | Pipeline Híbrido | Rascunho SLM → Refinamento LLM | Reduzir latência e custo | Gerar com phi-4-mini, refinar resumo com gpt-oss-20b |
-| UI de Streaming | Melhor UX no Chainlit | Feedback incremental | Use `stream=True` quando streaming local for exposto; acumule pedaços |
-| Cache WebGPU | Inicialização JS mais rápida | Reduzir sobrecarga de recompilação | Cache de artefatos de shader compilados (capacidade futura de runtime) |
-| Conjunto de QA Determinístico | Comparação justa de modelos | Remover variância | Lista fixa de prompts + `temperature=0` para execuções de avaliação |
-| Pontuação de Saída | Lente estruturada de qualidade | Ir além de anedotas | Rubrica simples: coerência / factualidade / concisão (1–5) |
-| Notas de Energia / Recursos | Discussão em sala de aula | Mostrar trade-offs | Use monitores do SO (`foundry system info`, Gerenciador de Tarefas, `nvidia-smi`) + saídas de script de benchmark |
-| Emulação de Custo | Justificação pré-nuvem | Planejar escalabilidade | Mapear tokens para preços hipotéticos na nuvem para narrativa de TCO |
-| Decomposição de Latência | Identificar gargalos | Alvo de otimizações | Medir preparação de prompt, envio de pedido, primeiro token, conclusão total |
-| RAG + LLM de Retaguarda | Rede de segurança de qualidade | Melhorar consultas difíceis | Se comprimento da resposta SLM < limite ou baixa confiança → escalar |
+| UI de Streaming | Melhor UX no Chainlit | Feedback incremental | Use `stream=True` assim que o streaming local for exposto; acumule chunks |
+| Cache WebGPU | Inicialização mais rápida do JS | Reduzir sobrecarga de recompilação | Cache de artefatos de shader compilados (capacidade futura do runtime) |
+| Conjunto de QA Determinístico | Comparação justa de modelos | Remover variância | Lista de prompts fixa + `temperature=0` para execuções de avaliação |
+| Pontuação de Resultados | Lente de qualidade estruturada | Ir além de anedotas | Rubrica simples: coerência / factualidade / concisão (1–5) |
+| Notas de Energia / Recursos | Discussão em sala de aula | Mostrar trade-offs | Use monitores de SO (`foundry system info`, Gerenciador de Tarefas, `nvidia-smi`) + saídas de scripts de benchmark |
+| Emulação de Custos | Justificação pré-nuvem | Planejar escalabilidade | Mapear tokens para preços hipotéticos na nuvem para narrativa de TCO |
+| Decomposição de Latência | Identificar gargalos | Alvo de otimizações | Medir preparação de prompt, envio de requisição, primeiro token, conclusão total |
+| RAG + Recurso de Retorno LLM | Rede de segurança de qualidade | Melhorar consultas difíceis | Se comprimento da resposta SLM < limite ou baixa confiança → escalar |
 
-#### Padrão Híbrido Rascunho/Refinamento de Exemplo
+#### Exemplo de Padrão Híbrido Rascunho/Refinamento
 
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], max_tokens=300, temperature=0.4)
@@ -274,9 +276,9 @@ full_ms = (time.time()-t1)*1000
 print({"prep_ms": prep_ms, "full_gen_ms": full_ms})
 ```
 
-Use uma estrutura de medição consistente entre modelos para comparações justas.
+Use uma estrutura de medição consistente entre os modelos para comparações justas.
 
 ---
 
-**Aviso**:  
+**Aviso Legal**:  
 Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

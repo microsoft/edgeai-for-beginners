@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T06:43:07+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T20:18:23+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "ar"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## نظرة عامة
 
-تستخدم أمثلة ورشة العمل متغيرات البيئة للتكوين، ويتم تجميعها في ملف `.env` الموجود في جذر المستودع. يتيح ذلك تخصيص الإعدادات بسهولة دون الحاجة إلى تعديل الكود.
+تستخدم عينات ورشة العمل متغيرات البيئة للتكوين، ويتم تجميعها في ملف `.env` الموجود في جذر المستودع. يتيح ذلك تخصيصًا سهلاً دون الحاجة إلى تعديل الكود.
 
 ## البدء السريع
 
-### 1. التحقق من المتطلبات الأساسية
+### 1. تحقق من المتطلبات الأساسية
 
 ```bash
 # Check Foundry Local is installed
@@ -28,9 +28,9 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. تكوين البيئة
+### 2. إعداد البيئة
 
-تم تكوين ملف `.env` مسبقًا بإعدادات افتراضية مناسبة. معظم المستخدمين لن يحتاجوا إلى تغيير أي شيء.
+تم إعداد ملف `.env` بالفعل بقيم افتراضية مناسبة. معظم المستخدمين لن يحتاجوا إلى تغيير أي شيء.
 
 **اختياري**: مراجعة وتخصيص الإعدادات:
 ```bash
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **لبرامج Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -60,14 +60,14 @@ python chat_bootstrap.py
 
 | المتغير | الافتراضي | الوصف |
 |---------|-----------|-------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | النموذج الافتراضي للأمثلة |
-| `FOUNDRY_LOCAL_ENDPOINT` | (فارغ) | تجاوز نقطة نهاية الخدمة |
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | النموذج الافتراضي للعينات |
+| `FOUNDRY_LOCAL_ENDPOINT` | (فارغ) | تجاوز نقطة خدمة |
 | `PYTHONPATH` | مسارات ورشة العمل | مسار البحث عن وحدات Python |
 
-**متى يتم تعيين FOUNDRY_LOCAL_ENDPOINT:**
+**متى يتم إعداد FOUNDRY_LOCAL_ENDPOINT:**
 - مثيل Foundry Local عن بُعد
 - تكوين منفذ مخصص
-- الفصل بين التطوير والإنتاج
+- فصل بين التطوير والإنتاج
 
 **مثال:**
 ```bash
@@ -84,30 +84,30 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | المتغير | الافتراضي | الغرض |
 |---------|-----------|-------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | نموذج التضمين |
-| `RAG_QUESTION` | تم تكوينه مسبقًا | سؤال الاختبار |
+| `RAG_QUESTION` | مُعد مسبقًا | سؤال الاختبار |
 
 #### الجلسة 03: قياس الأداء
 | المتغير | الافتراضي | الغرض |
 |---------|-----------|-------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | النماذج المراد قياس أدائها |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | النماذج لقياس الأداء |
 | `BENCH_ROUNDS` | `3` | عدد التكرارات لكل نموذج |
-| `BENCH_PROMPT` | تم تكوينه مسبقًا | موجه الاختبار |
+| `BENCH_PROMPT` | مُعد مسبقًا | موجه الاختبار |
 | `BENCH_STREAM` | `0` | قياس زمن استجابة أول رمز |
 
 #### الجلسة 04: مقارنة النماذج
 | المتغير | الافتراضي | الغرض |
 |---------|-----------|-------|
-| `SLM_ALIAS` | `phi-4-mini` | نموذج اللغة الصغير |
+| `SLM_ALIAS` | `phi-4-mini` | نموذج اللغة الصغيرة |
 | `LLM_ALIAS` | `qwen2.5-7b` | نموذج اللغة الكبير |
-| `COMPARE_PROMPT` | تم تكوينه مسبقًا | موجه المقارنة |
-| `COMPARE_RETRIES` | `2` | عدد محاولات الإعادة |
+| `COMPARE_PROMPT` | مُعد مسبقًا | موجه المقارنة |
+| `COMPARE_RETRIES` | `2` | محاولات إعادة المحاولة |
 
-#### الجلسة 05: تنسيق الوكلاء المتعددين
+#### الجلسة 05: تنسيق متعدد الوكلاء
 | المتغير | الافتراضي | الغرض |
 |---------|-----------|-------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | نموذج وكيل الباحث |
-| `AGENT_MODEL_EDITOR` | `phi-4-mini` | نموذج وكيل المحرر |
-| `AGENT_QUESTION` | تم تكوينه مسبقًا | سؤال الاختبار |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | نموذج الباحث |
+| `AGENT_MODEL_EDITOR` | `phi-4-mini` | نموذج المحرر |
+| `AGENT_QUESTION` | مُعد مسبقًا | سؤال الاختبار |
 
 ### تكوين الموثوقية
 
@@ -119,7 +119,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 ## التكوينات الشائعة
 
-### إعداد التطوير (التكرار السريع)
+### إعداد التطوير (تكرار سريع)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### إعداد الإنتاج (التركيز على الجودة)
+### إعداد الإنتاج (تركيز على الجودة)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,12 +140,12 @@ SHOW_USAGE=0
 
 ### إعداد قياس الأداء
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### التخصص في الوكلاء المتعددين
+### تخصص متعدد الوكلاء
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -159,7 +159,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ## النماذج الموصى بها
 
-### حسب حالة الاستخدام
+### حسب الاستخدام
 
 **الاستخدام العام:**
 - `phi-4-mini` - توازن بين الجودة والسرعة
@@ -169,12 +169,12 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - سريع بجودة جيدة
 
 **جودة عالية:**
-- `qwen2.5-7b` - أفضل جودة، يتطلب موارد أعلى
+- `qwen2.5-7b` - أفضل جودة، استخدام موارد أعلى
 - `phi-4-mini` - جودة جيدة، موارد أقل
 
 **توليد الأكواد:**
 - `deepseek-coder-1.3b` - متخصص في الأكواد
-- `phi-4-mini` - عام لتوليد الأكواد
+- `phi-4-mini` - متعدد الاستخدامات للأكواد
 
 ### حسب توفر الموارد
 
@@ -236,7 +236,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 ## استكشاف الأخطاء وإصلاحها
 
-### لم يتم تحميل متغيرات البيئة
+### متغيرات البيئة غير محملة
 
 **الأعراض:**
 - استخدام النماذج الخاطئة في البرامج
@@ -262,7 +262,7 @@ pwd  # Should be in Workshop or repository root
 ### مشاكل اتصال الخدمة
 
 **الأعراض:**
-- أخطاء "تم رفض الاتصال"
+- أخطاء "رفض الاتصال"
 - "الخدمة غير متوفرة"
 - أخطاء انتهاء المهلة
 
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **الأعراض:**
 - أخطاء "النموذج غير موجود"
-- "لم يتم التعرف على الاسم المستعار"
+- "الاسم المستعار غير معترف به"
 
 **الحلول:**
 ```bash
@@ -303,20 +303,17 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### أخطاء الاستيراد
 
 **الأعراض:**
-- أخطاء "لم يتم العثور على الوحدة"
-- "لا يمكن استيراد workshop_utils"
+- أخطاء "الوحدة غير موجودة"
 
 **الحلول:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## اختبار التكوين
@@ -366,9 +363,9 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## أفضل الممارسات الأمنية
+## أفضل ممارسات الأمان
 
-### 1. لا تقم أبدًا بحفظ الأسرار
+### 1. لا تقم أبدًا بتضمين الأسرار
 
 ```bash
 # .gitignore should include:
@@ -392,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. استخدم تكوينًا خاصًا بالبيئة
+### 4. استخدم تكوينات خاصة بالبيئة
 
 ```bash
 # Development
@@ -404,21 +401,21 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ## وثائق SDK
 
-- **المستودع الرئيسي**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
-- **وثائق API**: تحقق من مستودع SDK للحصول على أحدث المعلومات  
+- **المستودع الرئيسي**: https://github.com/microsoft/Foundry-Local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **وثائق API**: تحقق من مستودع SDK للحصول على أحدث المعلومات
 
 ## موارد إضافية
 
-- `QUICK_START.md` - دليل البدء السريع  
-- `SDK_MIGRATION_NOTES.md` - تفاصيل تحديث SDK  
-- `Workshop/samples/*/README.md` - أدلة خاصة بالأمثلة  
+- `QUICK_START.md` - دليل البدء السريع
+- `SDK_MIGRATION_NOTES.md` - تفاصيل تحديث SDK
+- `Workshop/samples/*/README.md` - أدلة خاصة بالعينات
 
 ---
 
 **آخر تحديث**: 2025-01-08  
 **الإصدار**: 2.0  
-**SDK**: Foundry Local Python SDK (الأحدث)  
+**SDK**: Foundry Local Python SDK (الأحدث)
 
 ---
 

@@ -1,25 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-08T20:44:35+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T20:09:39+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "de"
 }
 -->
-# Sitzung 5: Schnell KI-gestützte Agenten mit Foundry Local erstellen
+# Sitzung 5: Schnelle Entwicklung KI-gestützter Agenten mit Foundry Local
 
 ## Zusammenfassung
 
-Entwerfen und orchestrieren Sie KI-Agenten mit mehreren Rollen unter Nutzung der latenzarmen und datenschutzfreundlichen Laufzeitumgebung von Foundry Local. Sie definieren Agentenrollen, Speicherstrategien, Muster für Tool-Aufrufe und Ausführungsdiagramme. Die Sitzung führt in Gerüstmuster ein, die Sie mit Chainlit oder LangGraph erweitern können. Das Starterprojekt erweitert die bestehende Agentenarchitektur um Speicherpersistenz und Evaluationshooks.
+Entwerfen und orchestrieren Sie Multi-Rollen-KI-Agenten mit der latenzarmen und datenschutzfreundlichen Laufzeitumgebung von Foundry Local. Sie definieren Agentenrollen, Speicherstrategien, Muster für Werkzeugaufrufe und Ausführungsgraphen. Die Sitzung führt in Gerüstmuster ein, die Sie mit Chainlit oder LangGraph erweitern können. Das Starterprojekt erweitert die bestehende Agentenarchitektur, um Speicherpersistenz und Bewertungsmechanismen hinzuzufügen.
 
 ## Lernziele
 
 - **Rollen definieren**: System-Prompts und Kompetenzgrenzen
-- **Speicher implementieren**: Kurzfristig (Gespräche), langfristig (Vektor / Datei), temporäre Notizblöcke
-- **Workflows strukturieren**: Sequenzielle, verzweigte und parallele Agentenschritte
-- **Tools integrieren**: Leichtgewichtige Funktionsaufrufmuster
-- **Evaluieren**: Grundlegende Nachverfolgung + ergebnisorientierte Bewertung nach Rubrik
+- **Speicher implementieren**: Kurzfristig (Konversation), langfristig (Vektor / Datei), temporäre Notizblöcke
+- **Workflows strukturieren**: Sequentielle, verzweigte und parallele Agentenschritte
+- **Werkzeuge integrieren**: Leichtgewichtige Muster für Werkzeugaufrufe
+- **Bewerten**: Grundlegende Nachverfolgung + ergebnisorientierte Bewertung mit Rubriken
 
 ## Voraussetzungen
 
@@ -27,7 +27,7 @@ Entwerfen und orchestrieren Sie KI-Agenten mit mehreren Rollen unter Nutzung der
 - Python mit `foundry-local-sdk`, `openai`, optional `chainlit`
 - Lokale Modelle laufen (mindestens `phi-4-mini`)
 
-### Plattformübergreifender Umgebungs-Schnipsel
+### Plattformübergreifender Umgebungs-Snippet
 
 Windows:
 ```powershell
@@ -45,7 +45,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Wenn Agenten von macOS aus gegen einen Remote-Windows-Host-Dienst ausgeführt werden:
+Falls Agenten von macOS aus gegen einen Remote-Windows-Hostdienst ausgeführt werden:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -129,7 +129,7 @@ python samples/05-agents/agents_core.py
 ```
 
 
-### 3. Tool-Aufrufe hinzufügen (7 Minuten)
+### 3. Werkzeugaufruf hinzufügen (7 Minuten)
 
 Erweitern Sie mit `samples/05-agents/tools.py`:
 
@@ -150,7 +150,7 @@ TOOLS = {
 }
 ```
 
-Ändern Sie `agents_core.py`, um eine einfache Tool-Syntax zu ermöglichen: Der Benutzer schreibt `#tool:get_time`, und der Agent erweitert die Tool-Ausgabe in den Kontext vor der Generierung.
+Ändern Sie `agents_core.py`, um eine einfache Werkzeugsyntax zu ermöglichen: Der Benutzer schreibt `#tool:get_time`, und der Agent erweitert die Werkzeugausgabe in den Kontext vor der Generierung.
 
 ### 4. Orchestrierter Workflow (6 Minuten)
 
@@ -185,12 +185,12 @@ if __name__ == '__main__':
 ```
 
 
-### 5. Starterprojekt: Erweiterung von `05-agent-architecture` (7 Minuten)
+### 5. Starterprojekt: Erweiterung der `05-agent-architecture` (7 Minuten)
 
 Hinzufügen:
-1. Persistente Speicherschicht (z. B. JSON-Zeilenanhang von Gesprächen)
-2. Einfache Bewertungsrubrik: Platzhalter für Faktentreue / Klarheit / Stil
-3. Optionales Chainlit-Frontend (zwei Tabs: Gespräch & Nachverfolgung)
+1. Persistente Speicherschicht (z. B. JSON-Zeilenanhang von Konversationen)
+2. Einfache Bewertungsrubrik: Platzhalter für Faktizität / Klarheit / Stil
+3. Optionales Chainlit-Frontend (zwei Tabs: Konversation & Nachverfolgungen)
 4. Optionaler LangGraph-Stil-Zustandsautomat (bei Hinzufügung der Abhängigkeit) für verzweigte Entscheidungen
 
 ## Validierungs-Checkliste
@@ -200,18 +200,18 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Erwarten Sie strukturierten Pipeline-Ausgang mit Hinweis auf Tool-Injektion.
+Erwarten Sie strukturierten Pipeline-Ausgang mit Hinweis auf Werkzeuginjektion.
 
-## Übersicht über Speicherstrategien
+## Übersicht Speicherstrategien
 
-| Ebene       | Zweck                | Beispiel              |
-|-------------|----------------------|-----------------------|
-| Kurzfristig | Gesprächskontinuität | Letzte N Nachrichten  |
-| Episodisch  | Sitzungsrückruf      | JSON pro Sitzung      |
-| Semantisch  | Langfristige Abrufbarkeit | Vektorspeicher von Zusammenfassungen |
-| Notizblock  | Argumentationsschritte | Inline-Kette von Gedanken (privat) |
+| Ebene | Zweck | Beispiel |
+|-------|-------|----------|
+| Kurzfristig | Dialogkontinuität | Letzte N Nachrichten |
+| Episodisch | Sitzungsrückruf | JSON pro Sitzung |
+| Semantisch | Langfristige Abrufbarkeit | Vektorspeicher von Zusammenfassungen |
+| Notizblock | Argumentationsschritte | Inline-Kette von Gedanken (privat) |
 
-## Evaluationshooks (Konzeptuell)
+## Bewertungshooks (Konzeptuell)
 
 ```python
 evaluation = {
@@ -226,11 +226,11 @@ evaluation = {
 
 ## Fehlerbehebung
 
-| Problem            | Ursache                     | Lösung                     |
-|--------------------|-----------------------------|----------------------------|
+| Problem | Ursache | Lösung |
+|---------|---------|--------|
 | Wiederholte Antworten | Kontextfenster zu groß/klein | Speicherfensterparameter anpassen |
-| Tool nicht aufgerufen | Falsche Syntax            | Format `#tool:tool_name` verwenden |
-| Langsame Orchestrierung | Mehrere kalte Modelle     | Warmup-Prompts vorab ausführen |
+| Werkzeug nicht aufgerufen | Falsche Syntax | Format `#tool:tool_name` verwenden |
+| Langsame Orchestrierung | Mehrere kalte Modelle | Vorab-Warmup-Prompts ausführen |
 
 ## Referenzen
 
@@ -248,16 +248,17 @@ evaluation = {
 | Workshop-Skript | Szenario | Ziel | Beispiel-Prompt |
 |-----------------|----------|------|-----------------|
 | `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Wissensforschungs-Bot, der executive-freundliche Zusammenfassungen erstellt | Zwei-Agenten-Pipeline (Forschung → redaktionelle Überarbeitung) mit optional unterschiedlichen Modellen | Erklären Sie, warum Edge-Inferenz für Compliance wichtig ist. |
-| (Erweitertes) `tools.py` Konzept | Zeit- und Token-Schätztools hinzufügen | Leichtgewichtige Tool-Aufrufmuster demonstrieren | #tool:get_time |
+| (Erweitertes) `tools.py` Konzept | Zeit- und Token-Schätzungswerkzeuge hinzufügen | Leichtgewichtiges Werkzeugaufrufmuster demonstrieren | #tool:get_time |
 
 ### Szenario-Erzählung
-Das Compliance-Dokumentationsteam benötigt schnelle interne Berichte, die aus lokalem Wissen stammen, ohne Entwürfe an Cloud-Dienste zu senden. Ein Forschungsagent sammelt prägnante Fakten; ein Redaktionsagent überarbeitet für executive Klarheit. Unterschiedliche Modell-Aliase können zugewiesen werden, um Latenz zu optimieren (schnelles SLM) vs stilistische Verfeinerung (größeres Modell nur bei Bedarf).
+Das Compliance-Dokumentationsteam benötigt schnelle interne Berichte, die aus lokalem Wissen stammen, ohne Entwürfe an Cloud-Dienste zu senden. Ein Forschungsagent sammelt prägnante Faktenpunkte; ein Redaktionsagent überarbeitet für executive Klarheit. Unterschiedliche Modell-Aliase können zugewiesen werden, um Latenz zu optimieren (schnelles SLM) vs stilistische Verfeinerung (größeres Modell nur bei Bedarf).
 
-### Beispiel für eine Multi-Modell-Umgebung
+### Beispiel für Multi-Modell-Umgebung
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
@@ -273,21 +274,21 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Speichern Sie jeden Schritt in einer JSONL-Datei für spätere Bewertung nach Rubrik.
+Speichern Sie jeden Schritt in einer JSONL-Datei für spätere Bewertungsrubriken.
 
-### Optionale Erweiterungen
+### Optionale Verbesserungen
 
-| Thema              | Erweiterung               | Vorteil                  | Implementierungsskizze       |
-|--------------------|---------------------------|--------------------------|------------------------------|
+| Thema | Verbesserung | Vorteil | Implementierungsskizze |
+|-------|-------------|---------|------------------------|
 | Multi-Modell-Rollen | Unterschiedliche Modelle pro Agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Spezialisierung & Geschwindigkeit | Alias-Umgebungsvariablen auswählen, `chat_once` mit rollenbasiertem Alias aufrufen |
-| Strukturierte Nachverfolgung | JSON-Nachverfolgung jedes Aktes (Tool, Eingabe, Latenz, Tokens) | Debugging & Bewertung | Dikt in eine Liste anhängen; `.jsonl` am Ende schreiben |
+| Strukturierte Nachverfolgungen | JSON-Nachverfolgung jedes Aktes (Werkzeug, Eingabe, Latenz, Tokens) | Debugging & Bewertung | Dikt zu einer Liste hinzufügen; `.jsonl` am Ende schreiben |
 | Speicherpersistenz | Wiederladbarer Dialogkontext | Sitzungsfortsetzung | `Agent.memory` in `sessions/<ts>.json` speichern |
-| Tool-Registry | Dynamische Tool-Erkennung | Erweiterbarkeit | `TOOLS`-Dikt pflegen & Namen/Beschreibungen introspektieren |
-| Wiederholungs- & Backoff-Strategien | Robuste lange Ketten | Reduzierung von vorübergehenden Fehlern | `act` mit try/except + exponentiellem Backoff umwickeln |
-| Bewertungsrubrik | Automatisierte qualitative Labels | Verbesserungen verfolgen | Sekundärer Durchgang mit Modell-Prompt: "Bewerten Sie Klarheit 1-5" |
+| Werkzeugregister | Dynamische Werkzeugerkennung | Erweiterbarkeit | `TOOLS`-Dikt pflegen & Namen/Beschreibungen introspektieren |
+| Wiederholungs- & Backoff-Strategien | Robuste lange Ketten | Reduzierung vorübergehender Fehler | `act` mit try/except + exponentiellem Backoff umwickeln |
+| Rubrik-Bewertung | Automatisierte qualitative Labels | Verbesserungen verfolgen | Sekundärer Durchgang, Modell auffordern: "Bewerten Sie Klarheit 1-5" |
 | Vektorspeicher | Semantischer Rückruf | Reichhaltiger Langzeitkontext | Zusammenfassungen einbetten, top-k in Systemnachricht abrufen |
 | Streaming-Antworten | Schnellere wahrgenommene Antwort | UX-Verbesserung | Streaming verwenden, sobald verfügbar, und partielle Tokens ausgeben |
-| Deterministische Tests | Regression kontrollieren | Stabiler CI | Mit `temperature=0`, festen Prompt-Samen ausführen |
+| Deterministische Tests | Regressionskontrolle | Stabile CI | Mit `temperature=0`, festen Prompt-Samen ausführen |
 | Parallele Verzweigung | Schnellere Exploration | Durchsatz | `concurrent.futures` für unabhängige Agentenschritte verwenden |
 
 #### Beispiel für Nachverfolgungsaufzeichnung

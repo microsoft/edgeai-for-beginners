@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T20:42:38+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T20:09:12+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "de"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Überblick
 
-Die Workshop-Beispiele verwenden Umgebungsvariablen für die Konfiguration, die zentral in der `.env`-Datei im Stammverzeichnis des Repositorys gespeichert sind. Dies ermöglicht eine einfache Anpassung, ohne den Code zu ändern.
+Die Workshop-Beispiele verwenden Umgebungsvariablen zur Konfiguration, die zentral in der `.env`-Datei im Stammverzeichnis des Repositorys gespeichert sind. Dies ermöglicht eine einfache Anpassung, ohne den Code zu ändern.
 
 ## Schnellstart
 
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Für Python-Skripte:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -65,8 +65,8 @@ python chat_bootstrap.py
 | `PYTHONPATH` | Workshop-Pfade | Suchpfad für Python-Module |
 
 **Wann `FOUNDRY_LOCAL_ENDPOINT` gesetzt werden sollte:**
-- Remote-Instanz von Foundry Local
-- Anpassung der Port-Konfiguration
+- Remote Foundry Local Instanz
+- Anpassung der Portkonfiguration
 - Trennung von Entwicklungs- und Produktionsumgebungen
 
 **Beispiel:**
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sitzung 03: Benchmarking
 | Variable | Standardwert | Zweck |
 |----------|--------------|-------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Zu benchmarkende Modelle |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Zu benchmarkende Modelle |
 | `BENCH_ROUNDS` | `3` | Iterationen pro Modell |
 | `BENCH_PROMPT` | Vorkonfiguriert | Test-Prompt |
 | `BENCH_STREAM` | `0` | Latenz des ersten Tokens messen |
@@ -102,7 +102,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `COMPARE_PROMPT` | Vorkonfiguriert | Vergleichs-Prompt |
 | `COMPARE_RETRIES` | `2` | Wiederholungsversuche |
 
-#### Sitzung 05: Multi-Agent-Orchestrierung
+#### Sitzung 05: Multi-Agenten-Orchestrierung
 | Variable | Standardwert | Zweck |
 |----------|--------------|-------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Modell des Forscher-Agenten |
@@ -113,7 +113,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 | Variable | Standardwert | Zweck |
 |----------|--------------|-------|
-| `SHOW_USAGE` | `1` | Token-Nutzung ausgeben |
+| `SHOW_USAGE` | `1` | Token-Nutzung anzeigen |
 | `RETRY_ON_FAIL` | `1` | Wiederholungslogik aktivieren |
 | `RETRY_BACKOFF` | `1.0` | Verzögerung bei Wiederholung (Sekunden) |
 
@@ -140,12 +140,12 @@ SHOW_USAGE=0
 
 ### Benchmarking-Setup
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### Multi-Agent-Spezialisierung
+### Multi-Agenten-Spezialisierung
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -169,7 +169,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - Schnell mit guter Qualität
 
 **Hohe Qualität:**
-- `qwen2.5-7b` - Beste Qualität, höhere Ressourcennutzung
+- `qwen2.5-7b` - Beste Qualität, höherer Ressourcenverbrauch
 - `phi-4-mini` - Gute Qualität, geringerer Ressourcenverbrauch
 
 **Code-Generierung:**
@@ -304,24 +304,21 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Symptome:**
 - Fehler "Modul nicht gefunden"
-- "Kann workshop_utils nicht importieren"
 
 **Lösungen:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Konfiguration testen
 
-### Überprüfen des Ladens der Umgebung
+### Überprüfung des Ladens der Umgebung
 
 ```python
 # test_env.py
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Verbindung zu Foundry Local testen
+### Test der Foundry Local-Verbindung
 
 ```python
 # test_connection.py
@@ -410,13 +407,13 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ## Zusätzliche Ressourcen
 
-- `QUICK_START.md` - Einstiegshilfe
+- `QUICK_START.md` - Schnellstart-Anleitung
 - `SDK_MIGRATION_NOTES.md` - Details zu SDK-Updates
 - `Workshop/samples/*/README.md` - Beispiel-spezifische Anleitungen
 
 ---
 
-**Letzte Aktualisierung**: 08.01.2025  
+**Letzte Aktualisierung**: 2025-01-08  
 **Version**: 2.0  
 **SDK**: Foundry Local Python SDK (neueste Version)
 

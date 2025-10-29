@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-09T21:43:43+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T19:59:51+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "en"
 }
 -->
 # Workshop Scripts
 
-This directory contains automation and support scripts designed to ensure quality and consistency across the Workshop materials.
+This directory contains automation and support scripts used to ensure quality and consistency across the Workshop materials.
 
 ## Contents
 
@@ -20,7 +20,7 @@ This directory contains automation and support scripts designed to ensure qualit
 
 ## 1. Markdown CLI Pattern Linter
 
-`lint_markdown_cli.py` scans all non-translation `.md` files for prohibited Foundry Local CLI patterns **within fenced code blocks** (``` ... ```). Informational text can still reference deprecated commands for historical context.
+`lint_markdown_cli.py` scans all non-translation `.md` files for disallowed Foundry Local CLI patterns **inside fenced code blocks** (``` ... ```). Informational text can still reference deprecated commands for historical context.
 
 ### Deprecated Patterns (Blocked Inside Code Fences)
 
@@ -39,8 +39,8 @@ The linter flags deprecated CLI patterns. Use updated alternatives instead.
 ### Exit Codes
 | Code | Meaning |
 |------|---------|
-| 0 | No violations found |
-| 1 | One or more deprecated patterns detected |
+| 0 | No violations detected |
+| 1 | One or more deprecated patterns found |
 
 ### Running Locally
 From the repository root (recommended):
@@ -63,11 +63,11 @@ chmod +x .git/hooks/pre-commit
 This prevents commits that introduce deprecated patterns.
 
 ### CI Integration
-A GitHub Action workflow (`.github/workflows/markdown-cli-lint.yml`) runs the linter on every push and pull request to the `main` and `Reactor` branches. Failing jobs must be resolved before merging.
+A GitHub Action workflow (`.github/workflows/markdown-cli-lint.yml`) runs the linter on every push and pull request to `main` and `Reactor` branches. Failing jobs must be resolved before merging.
 
 ### Adding New Deprecated Patterns
 1. Open `lint_markdown_cli.py`.
-2. Add a tuple `(regex, suggestion)` to the `DEPRECATED` list. Use raw strings and include `\b` word boundaries where applicable.
+2. Add a tuple `(regex, suggestion)` to the `DEPRECATED` list. Use a raw string and include `\b` word boundaries where applicable.
 3. Run the linter locally to confirm detection.
 4. Commit and push; CI will enforce the new rule.
 
@@ -77,20 +77,20 @@ DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental
 ```
 
 ### Allowing Explanatory Mentions
-Since enforcement applies only to fenced code blocks, you can safely describe deprecated commands in narrative text. If you *must* show them inside a fence for comparison, use a fenced block **without** triple backticks (e.g., indent or quote) or rewrite them in pseudo form.
+Since only fenced code blocks are enforced, you can safely describe deprecated commands in narrative text. If you *must* show them inside a fence for contrast, use a fenced block **without** triple backticks (e.g., indent or quote) or rewrite in pseudo form.
 
 ### Skipping Specific Files (Advanced)
-If necessary, place legacy examples in a separate file outside the repository or rename them with a different extension while drafting. Translated copies are automatically excluded (paths containing `translations`).
+If necessary, place legacy examples in a separate file outside the repo or rename with a different extension while drafting. Translated copies are automatically skipped (paths containing `translations`).
 
 ### Troubleshooting
 | Issue | Cause | Resolution |
 |-------|-------|-----------|
-| Linter flags a line you updated | Regex too broad | Refine the pattern with additional word boundaries (`\b`) or anchors |
-| CI fails but local passes | Different Python version or uncommitted changes | Re-run locally, ensure a clean working tree, and check the workflow Python version (3.11) |
-| Need to temporarily bypass | Emergency hotfix | Apply the fix immediately afterward; consider using a temporary branch and follow-up PR (avoid adding bypass switches) |
+| Linter flags a line you updated | Regex too broad | Refine pattern with additional word boundary (`\b`) or anchors |
+| CI fails but local passes | Different Python version or uncommitted changes | Re-run locally, ensure clean working tree, check workflow Python version (3.11) |
+| Need to temporarily bypass | Emergency hotfix | Apply fix immediately after; consider using a temporary branch and follow-up PR (avoid adding bypass switches) |
 
 ### Rationale
-Aligning documentation with the *current* stable CLI surface minimizes workshop friction, reduces learner confusion, and centralizes performance measurement through maintained Python scripts rather than outdated CLI subcommands.
+Aligning documentation with the *current* stable CLI surface reduces workshop friction, prevents learner confusion, and centralizes performance measurement through maintained Python scripts instead of outdated CLI subcommands.
 
 ---
 Maintained as part of the workshop quality toolchain. For enhancements (e.g., auto-fixing suggestions or HTML report generation), open an issue or submit a PR.
@@ -115,10 +115,10 @@ python scripts/validate_samples.py --summary
 ```
 
 ### What it checks
-- ✅ Valid Python syntax
-- ✅ Presence of required imports
-- ✅ Implementation of error handling (verbose mode)
-- ✅ Use of type hints (verbose mode)
+- ✅ Python syntax validity
+- ✅ Required imports present
+- ✅ Error handling implementation (verbose mode)
+- ✅ Type hints usage (verbose mode)
 - ✅ Function docstrings (verbose mode)
 - ✅ SDK reference links (verbose mode)
 
@@ -132,7 +132,7 @@ python scripts/validate_samples.py --summary
 
 ## 3. Sample Test Runner
 
-`test_samples.py` performs smoke tests on all samples to ensure they execute without errors.
+`test_samples.py` runs smoke tests on all samples to ensure they execute without errors.
 
 ### Usage
 ```bash
@@ -155,17 +155,17 @@ python scripts/test_samples.py --verbose
 - Dependencies installed: `pip install -r requirements.txt`
 
 ### What it tests
-- ✅ Sample executes without runtime errors
+- ✅ Sample can execute without runtime errors
 - ✅ Required output is generated
-- ✅ Proper error handling in case of failure
+- ✅ Proper error handling on failure
 - ✅ Performance (execution time)
 
 ### Environment Variables
-- `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Model used for testing
+- `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Model to use for testing
 - `TEST_TIMEOUT=30` - Timeout per sample in seconds
 
 ### Expected Failures
-Some tests may fail if optional dependencies are missing (e.g., `ragas`, `sentence-transformers`). Install them with:
+Some tests may fail if optional dependencies are not installed (e.g., `ragas`, `sentence-transformers`). Install with:
 ```bash
 pip install sentence-transformers ragas datasets
 ```
@@ -178,11 +178,11 @@ pip install sentence-transformers ragas datasets
 
 Script: `export_benchmark_markdown.py`
 
-Generates a reproducible performance table for a set of models.
+Creates a reproducible performance table for a set of models.
 
 ### Usage
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Outputs
@@ -195,20 +195,20 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 | Flag | Description | Default |
 |------|-------------|---------|
 | `--models` | Comma-separated model aliases | (required) |
-| `--prompt` | Prompt used for each round | (required) |
+| `--prompt` | Prompt used each round | (required) |
 | `--rounds` | Rounds per model | 3 |
 | `--output` | Markdown output file | `benchmark_report.md` |
 | `--json` | JSON output file | `benchmark_report.json` |
 | `--fail-on-empty` | Non-zero exit if all benchmarks fail | off |
 
-Environment variable `BENCH_STREAM=1` enables first token latency measurement.
+Environment variable `BENCH_STREAM=1` adds first token latency measurement.
 
 ### Notes
-- Utilizes `workshop_utils` for consistent model initialization and caching.
-- If executed from a different working directory, the script attempts path fallbacks to locate `workshop_utils`.
-- For GPU comparison: run once, enable acceleration via CLI config, re-run, and compare the JSON outputs.
+- Utilizes `workshop_utils` for consistent model setup & caching.
+- If run from a different working directory, the script attempts path fallbacks to locate `workshop_utils`.
+- For GPU comparison: run once, enable acceleration via CLI config, re-run and compare the JSON.
 
 ---
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.

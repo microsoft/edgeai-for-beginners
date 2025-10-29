@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T19:29:49+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T22:47:29+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "tl"
 }
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -37,15 +37,15 @@ python chat_bootstrap.py "What is edge AI?"
 | 01 | `chat_bootstrap.py` | Pangunahing chat + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG gamit ang embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | Pagsusuri ng RAG | ~60s |
-| 03 | `benchmark_oss_models.py` | Benchmarking ng modelo | ~2m |
+| 03 | `benchmark_oss_models.py` | Paghahambing ng modelo | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
-| 05 | `agents_orchestrator.py` | Multi-agent system | ~60s |
+| 05 | `agents_orchestrator.py` | Sistema ng multi-agent | ~60s |
 | 06 | `models_router.py` | Intent routing | ~45s |
 | 06 | `models_pipeline.py` | Multi-step pipeline | ~60s |
 
 ---
 
-## 🛠️ Mga Environment Variable
+## 🛠️ Mga Variable ng Kapaligiran
 
 ### Mahalaga
 ```bash
@@ -123,7 +123,7 @@ pip install sentence-transformers ragas datasets
 pip install -r Workshop/requirements.txt
 ```
 
-### Modelong Hindi Natagpuan
+### Hindi Natagpuan ang Modelo
 ```bash
 # List available models
 foundry model ls
@@ -132,7 +132,7 @@ foundry model ls
 foundry model download phi-4-mini
 ```
 
-### Mabagal na Performance
+### Mabagal na Pagganap
 ```bash
 # Use smaller model
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
@@ -194,7 +194,7 @@ for chunk in stream:
 
 ## 📊 Pagpili ng Modelo
 
-| Modelo | Sukat | Pinakamahusay Para sa | Bilis |
+| Modelo | Sukat | Pinakamainam Para sa | Bilis |
 |--------|-------|-----------------------|-------|
 | `qwen2.5-0.5b` | 0.5B | Mabilis na klasipikasyon | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Mabilis na pagbuo ng code | ⚡⚡⚡ |
@@ -216,15 +216,15 @@ for chunk in stream:
 
 ## 💡 Mga Tip
 
-1. **Cache ang mga client**: Ang `workshop_utils` ay nagka-cache para sa iyo
-2. **Gumamit ng mas maliliit na modelo**: Simulan gamit ang `qwen2.5-0.5b` para sa pagsubok
+1. **Cache clients**: Ang `workshop_utils` ay awtomatikong nagka-cache para sa iyo
+2. **Gumamit ng mas maliliit na modelo**: Simulan sa `qwen2.5-0.5b` para sa pagsubok
 3. **I-enable ang usage stats**: Itakda ang `SHOW_USAGE=1` para subaybayan ang mga token
 4. **Batch processing**: Iproseso ang maraming prompt nang sunud-sunod
-5. **Ibaba ang max_tokens**: Binabawasan ang latency para sa mabilisang tugon
+5. **Bawasan ang max_tokens**: Binabawasan ang latency para sa mabilisang tugon
 
 ---
 
-## 🎯 Mga Workflow ng Halimbawa
+## 🎯 Mga Daloy ng Halimbawa
 
 ### Subukan Lahat
 ```bash
@@ -232,35 +232,33 @@ python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### Benchmark ng Mga Modelo
+### Paghahambing ng Modelo
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG Pipeline
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
-### Multi-Agent System
+### Sistema ng Multi-Agent
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Mabilisang Tulong**: Patakbuhin ang anumang halimbawa gamit ang `--help` o tingnan ang docstring:
+**Mabilisang Tulong**: Patakbuhin ang anumang halimbawa gamit ang `--help` mula sa direktoryo ng `samples` o tingnan ang docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na pinagmulan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-08T15:26:58+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T23:12:17+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "ro"
 }
@@ -11,22 +11,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Rezumat
 
-Tratează modelele ca instrumente compozabile într-un strat operațional AI local. Această sesiune arată cum să conectezi mai multe apeluri SLM/LLM specializate, să rutezi selectiv sarcinile și să expui o suprafață SDK unificată pentru aplicații. Vei construi un router de modele ușor + un planificator de sarcini, îl vei integra într-un script de aplicație și vei schița calea de scalare către Azure AI Foundry pentru sarcini de producție.
+Tratați modelele ca instrumente compozabile într-un strat operațional AI local. Această sesiune arată cum să conectați mai multe apeluri specializate SLM/LLM, să direcționați selectiv sarcinile și să expuneți o suprafață SDK unificată aplicațiilor. Veți construi un router de modele ușor + un planificator de sarcini, îl veți integra într-un script de aplicație și veți contura calea de scalare către Azure AI Foundry pentru sarcini de producție.
 
-## Obiective de Învățare
+## Obiective de învățare
 
-- **Conceptualizează** modelele ca instrumente atomice cu capabilități declarate
-- **Rutează** cererile pe baza intenției / scorării euristice
-- **Conectează** ieșirile în sarcini multi-pas (decompoziție → rezolvare → rafinare)
-- **Integrează** un API client unificat pentru aplicațiile downstream
-- **Scalează** designul către cloud (același contract compatibil OpenAI)
+- **Conceptualizați** modelele ca instrumente atomice cu capabilități declarate
+- **Direcționați** cererile pe baza intenției / scorului euristic
+- **Conectați** ieșirile în sarcini multi-pas (decompoziție → rezolvare → rafinare)
+- **Integrați** un API client unificat pentru aplicațiile downstream
+- **Scalați** designul către cloud (același contract compatibil OpenAI)
 
-## Cerințe Prealabile
+## Cerințe preliminare
 
 - Finalizarea sesiunilor 1–5
-- Mai multe modele locale cache-uite (ex.: `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- Mai multe modele locale în cache (de exemplu, `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Fragment de Mediu Cross-Platform
+### Fragment de mediu cross-platform
 
 Windows PowerShell:
 ```powershell
@@ -52,9 +52,9 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Flux Demo (30 min)
 
-### 1. Declarația Capabilităților Instrumentelor (5 min)
+### 1. Declarația capabilităților instrumentului (5 min)
 
-Creează `samples/06-tools/models_catalog.py`:
+Creați `samples/06-tools/models_catalog.py`:
 
 ```python
 CATALOG = {
@@ -74,9 +74,9 @@ CATALOG = {
 ```
 
 
-### 2. Detectarea Intenției și Rutare (8 min)
+### 2. Detectarea intenției și direcționare (8 min)
 
-Creează `samples/06-tools/router.py`:
+Creați `samples/06-tools/router.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -133,9 +133,9 @@ if __name__ == "__main__":
 ```
 
 
-### 3. Conectarea Sarcinilor Multi-Pas (7 min)
+### 3. Conectarea sarcinilor multi-pas (7 min)
 
-Creează `samples/06-tools/pipeline.py`:
+Creați `samples/06-tools/pipeline.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -176,25 +176,25 @@ if __name__ == '__main__':
 ```
 
 
-### 4. Proiect de Start: Adaptarea `06-models-as-tools` (5 min)
+### 4. Proiect de început: Adaptarea `06-models-as-tools` (5 min)
 
 Îmbunătățiri:
-- Adaugă suport pentru streaming de tokeni (actualizare progresivă UI)
-- Adaugă scorare de încredere: suprapunere lexicală sau rubrică de prompt
-- Exportă trace JSON (intenție → model → latență → utilizare tokeni)
-- Implementează reutilizarea cache-ului pentru subpași repetați
+- Adăugați suport pentru streaming de token-uri (actualizare progresivă a interfeței)
+- Adăugați scorarea încrederii: suprapunere lexicală sau rubrică de prompt
+- Exportați JSON de urmărire (intenție → model → latență → utilizare token-uri)
+- Implementați reutilizarea cache-ului pentru subpași repetați
 
-### 5. Calea de Scalare către Azure (5 min)
+### 5. Calea de scalare către Azure (5 min)
 
-| Strat | Local (Foundry) | Cloud (Azure AI Foundry) | Strategie de Tranziție |
+| Strat | Local (Foundry) | Cloud (Azure AI Foundry) | Strategie de tranziție |
 |-------|-----------------|--------------------------|-------------------------|
-| Rutare | Python euristic | Microserviciu durabil | Containerizează și implementează API |
-| Modele | SLM-uri cache-uite | Implementări gestionate | Mapează numele locale la ID-uri de implementare |
-| Observabilitate | Statistici CLI/manual | Logare centrală & metrici | Adaugă evenimente structurate de trace |
-| Securitate | Doar host local | Autentificare Azure / rețea | Introdu key vault pentru secrete |
-| Cost | Resurse dispozitiv | Facturare consum | Adaugă limite de buget |
+| Direcționare | Python euristic | Microserviciu durabil | Containerizare și implementare API |
+| Modele | SLM-uri în cache | Implementări gestionate | Maparea numelor locale la ID-uri de implementare |
+| Observabilitate | Statistici CLI/manual | Jurnalizare centrală și metrici | Adăugarea evenimentelor structurate de urmărire |
+| Securitate | Doar gazdă locală | Autentificare Azure / rețea | Introducerea unui seif de chei pentru secrete |
+| Cost | Resurse dispozitiv | Facturare consum | Adăugarea limitelor de buget |
 
-## Lista de Verificare pentru Validare
+## Lista de verificare pentru validare
 
 ```powershell
 foundry model run phi-4-mini
@@ -203,36 +203,36 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Așteaptă selecția modelului bazată pe intenție și ieșirea finală rafinată.
+Așteptați selecția modelului bazată pe intenție și ieșirea finală rafinată.
 
 ## Depanare
 
 | Problemă | Cauză | Soluție |
 |----------|-------|---------|
-| Toate sarcinile rutate către același model | Reguli slabe | Îmbunătățește setul regex INTENT_RULES |
-| Pipeline-ul eșuează la mijlocul unui pas | Model lipsă încărcat | Rulează `foundry model run <model>` |
-| Coeziune scăzută a ieșirii | Fază de rafinare lipsă | Adaugă un pas de sumarizare/validare |
+| Toate sarcinile direcționate către același model | Reguli slabe | Îmbunătățiți setul de regex INTENT_RULES |
+| Pipeline-ul eșuează la mijlocul pasului | Model lipsă încărcat | Rulați `foundry model run <model>` |
+| Coeziune scăzută a ieșirii | Fază de rafinare lipsă | Adăugați un pas de sumarizare/validare |
 
 ## Referințe
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Documentație Azure AI Foundry: https://learn.microsoft.com/azure/ai-foundry
-- Modele de Calitate Prompt: Vezi Sesiunea 2
+- Modele de calitate pentru prompturi: Vezi Sesiunea 2
 
 ---
 
-**Durata Sesiunii**: 30 min  
+**Durata sesiunii**: 30 min  
 **Dificultate**: Expert
 
-## Scenariu Exemplu & Mapare Workshop
+## Scenariu de exemplu și mapare workshop
 
-| Scripturi / Notebook-uri Workshop | Scenariu | Obiectiv | Sursă Dataset / Catalog |
-|-----------------------------------|----------|----------|--------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Asistent pentru dezvoltatori care gestionează prompturi cu intenții mixte (refactorizare, sumarizare, clasificare) | Rutare euristică intenție → alias model cu utilizare tokeni | Inline `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planificare multi-pas & rafinare pentru o sarcină complexă de asistență la codare | Decompoziție → execuție specializată → pas de rafinare sumarizare | Același `CATALOG`; pași derivați din ieșirea planului |
+| Scripturi / Notebooks Workshop | Scenariu | Obiectiv | Sursă Dataset / Catalog |
+|--------------------------------|----------|----------|--------------------------|
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Asistent pentru dezvoltatori care gestionează prompturi cu intenții mixte (refactorizare, sumarizare, clasificare) | Intenție euristică → direcționare alias model cu utilizare token-uri | `CATALOG` inline + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planificare multi-pas și rafinare pentru sarcini complexe de asistență la codare | Decompoziție → execuție specializată → pas de rafinare sumarizare | Același `CATALOG`; pași derivați din ieșirea planului |
 
-### Narațiunea Scenariului
-Un instrument de productivitate pentru inginerie primește sarcini eterogene: refactorizare cod, sumarizare note arhitecturale, clasificare feedback. Pentru a minimiza latența și utilizarea resurselor, un model general mic planifică și sumarizează, un model specializat pe cod gestionează refactorizarea, iar un model ușor capabil de clasificare etichetează feedback-ul. Scriptul pipeline demonstrează conectarea + rafinarea; scriptul router izolează rutarea adaptivă a unui singur prompt.
+### Narațiunea scenariului
+Un instrument de productivitate pentru inginerie primește sarcini eterogene: refactorizare cod, sumarizare note arhitecturale, clasificare feedback. Pentru a minimiza latența și utilizarea resurselor, un model general mic planifică și sumarizează, un model specializat pe cod se ocupă de refactorizare, iar un model ușor capabil de clasificare etichetează feedback-ul. Scriptul pipeline demonstrează conectarea + rafinarea; scriptul router izolează direcționarea adaptivă a unui singur prompt.
 
 ### Snapshot Catalog
 ```python
@@ -244,7 +244,7 @@ CATALOG = {
 ```
 
 
-### Exemple de Prompturi de Test
+### Exemple de prompturi de test
 ```json
 [
     "Refactor this Python function for readability",
@@ -255,8 +255,8 @@ CATALOG = {
 ```
 
 
-### Extensie Trace (Opțional)
-Adaugă linii JSON de trace per-pas pentru `models_pipeline.py`:
+### Extensie de urmărire (opțional)
+Adăugați linii JSON de urmărire per-pas pentru `models_pipeline.py`:
 ```python
 trace.append({
     "step": step_idx,
@@ -268,25 +268,25 @@ trace.append({
 ```
 
 
-### Euristică de Escalare (Idee)
-Dacă planul conține cuvinte cheie precum "optimize", "security" sau lungimea pasului > 280 caractere → escaladează la un model mai mare (ex.: `gpt-oss-20b`) doar pentru acel pas.
+### Euristică de escaladare (idee)
+Dacă planul conține cuvinte cheie precum "optimize", "security" sau lungimea pasului > 280 caractere → escaladare la un model mai mare (de exemplu, `gpt-oss-20b`) doar pentru acel pas.
 
-### Îmbunătățiri Opționale
+### Îmbunătățiri opționale
 
-| Zonă | Îmbunătățire | Valoare | Indicație |
-|------|--------------|---------|-----------|
-| Cache | Reutilizarea managerului + obiectelor client | Latență mai mică, mai puțin overhead | Folosește `workshop_utils.get_client` |
-| Metrici de Utilizare | Capturarea tokenilor & latenței per-pas | Profilare & optimizare | Cronometrează fiecare apel rutat; stochează în lista de trace |
-| Rutare Adaptivă | Conștientă de încredere / cost | Compromis calitate-cost mai bun | Adaugă scorare: dacă promptul > N caractere sau regex-ul se potrivește domeniului → escaladează la un model mai mare |
-| Registru Dinamic de Capabilități | Catalog reload dinamic | Fără redeploy restart | Încarcă `catalog.json` la runtime; urmărește timestamp-ul fișierului |
-| Strategie de Fallback | Robusteză în caz de eșecuri | Disponibilitate mai mare | Încearcă primar → pe excepție fallback alias |
-| Pipeline Streaming | Feedback timpuriu | Îmbunătățire UX | Stream fiecare pas și buffer pentru intrarea finală de rafinare |
-| Embedding-uri Vectoriale de Intenție | Rutare mai nuanțată | Acuratețe mai mare a intenției | Embedează promptul, grupează & mapează centroidul → capabilitate |
-| Export Trace | Lanț auditabil | Conformitate/raportare | Emet JSON linii: pas, intenție, model, latență_ms, tokeni |
-| Simulare Cost | Estimare pre-cloud | Planificare buget | Atribuie cost noțional/token per model & agregă per sarcină |
-| Mod Determinist | Reproducibilitate | Benchmarking stabil | Env: `temperature=0`, număr fix de pași |
+| Zonă | Îmbunătățire | Valoare | Indiciu |
+|------|--------------|---------|---------|
+| Cache | Reutilizarea managerului + obiectelor client | Latență mai mică, mai puțin overhead | Utilizați `workshop_utils.get_client` |
+| Metrici de utilizare | Capturați token-uri și latența per-pas | Profilare și optimizare | Cronometrați fiecare apel direcționat; stocați în lista de urmărire |
+| Direcționare adaptivă | Conștient de încredere / cost | Compromis calitate-cost mai bun | Adăugați scorare: dacă promptul > N caractere sau regex-ul se potrivește domeniului → escaladare la model mai mare |
+| Registru dinamic de capabilități | Catalog reîncărcabil dinamic | Fără redeploy la restart | Încărcați `catalog.json` la runtime; urmăriți timestamp-ul fișierului |
+| Strategie de fallback | Robusteză în caz de eșecuri | Disponibilitate mai mare | Încercați primar → pe excepție fallback alias |
+| Pipeline streaming | Feedback timpuriu | Îmbunătățire UX | Stream fiecare pas și buffer pentru intrarea finală de rafinare |
+| Vectori de intenție | Direcționare mai nuanțată | Precizie mai mare a intenției | Embed prompt, cluster și mapare centroid → capabilitate |
+| Export de urmărire | Lanț auditabil | Conformitate/raportare | Emiteți linii JSON: pas, intenție, model, latență_ms, token-uri |
+| Simulare cost | Estimare pre-cloud | Planificare buget | Atribuiți costuri notionale/token per model și agregați per sarcină |
+| Mod determinist | Reproducibilitate | Benchmarking stabil | Env: `temperature=0`, număr fix de pași |
 
-#### Exemplu Structură Trace
+#### Exemplu de structură de urmărire
 
 ```python
 trace.append({
@@ -299,7 +299,7 @@ trace.append({
 ```
 
 
-#### Schiță Escalare Adaptivă
+#### Schiță de escaladare adaptivă
 
 ```python
 if len(prompt) > 280 or 'compliance' in prompt.lower():
@@ -308,7 +308,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
 ```
 
 
-#### Reload Dinamic Catalog Model
+#### Reîncărcare dinamică a catalogului de modele
 
 ```python
 import json, time, os
@@ -323,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Iterează treptat—evită supra-ingineria prototipurilor timpurii.
-
 ---
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de oameni. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

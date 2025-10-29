@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T19:15:02+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:40:29+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "ms"
 }
 -->
 # Panduan Konfigurasi Persekitaran
 
-## Gambaran Umum
+## Gambaran Keseluruhan
 
 Contoh Workshop menggunakan pembolehubah persekitaran untuk konfigurasi, yang disentralisasi dalam fail `.env` di akar repositori. Ini membolehkan penyesuaian mudah tanpa mengubah kod.
 
-## Permulaan Cepat
+## Permulaan Pantas
 
 ### 1. Sahkan Prasyarat
 
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Untuk Skrip Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sesi 03: Penanda Aras
 | Pembolehubah | Lalai | Tujuan |
 |--------------|-------|--------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Model untuk penanda aras |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Model untuk penanda aras |
 | `BENCH_ROUNDS` | `3` | Iterasi setiap model |
 | `BENCH_PROMPT` | Pra-konfigurasi | Prompt ujian |
 | `BENCH_STREAM` | `0` | Ukur latensi token pertama |
@@ -119,7 +119,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 ## Konfigurasi Biasa
 
-### Persediaan Pembangunan (Iterasi Cepat)
+### Tetapan Pembangunan (Iterasi Pantas)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Persediaan Pengeluaran (Fokus Kualiti)
+### Tetapan Pengeluaran (Fokus Kualiti)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -138,9 +138,9 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Persediaan Penanda Aras
+### Tetapan Penanda Aras
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -165,7 +165,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - Keseimbangan kualiti dan kelajuan
 
 **Respons Pantas:**
-- `qwen2.5-0.5b` - Sangat pantas, sesuai untuk klasifikasi
+- `qwen2.5-0.5b` - Sangat pantas, baik untuk klasifikasi
 - `phi-4-mini` - Pantas dengan kualiti baik
 
 **Kualiti Tinggi:**
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### Persediaan Hibrid Azure OpenAI
+### Tetapan Hibrid Azure OpenAI
 
 ```bash
 # Use local for development
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Gejala:**
 - Ralat "Module not found"
-- "Tidak dapat mengimport workshop_utils"
 
 **Penyelesaian:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Ujian Konfigurasi
@@ -410,17 +407,17 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ## Sumber Tambahan
 
-- `QUICK_START.md` - Panduan permulaan
+- `QUICK_START.md` - Panduan memulakan
 - `SDK_MIGRATION_NOTES.md` - Butiran kemas kini SDK
 - `Workshop/samples/*/README.md` - Panduan khusus contoh
 
 ---
 
-**Kemas Kini Terakhir**: 2025-01-08  
+**Tarikh Dikemas Kini**: 2025-01-08  
 **Versi**: 2.0  
 **SDK**: Foundry Local Python SDK (terkini)
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

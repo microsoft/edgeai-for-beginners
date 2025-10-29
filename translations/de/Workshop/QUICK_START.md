@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T20:40:48+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T20:08:44+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "de"
 }
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Sitzung 01: Basis-Chat
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Umgebungsvariablen:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Sitzung 02: RAG-Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Umgebungsvariablen:**  
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Sitzung 02: RAG-Auswertung (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Hinweis**: Erfordert zusätzliche Abhängigkeiten, die über `requirements.txt` installiert werden.
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### Sitzung 03: Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Umgebungsvariablen:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### Sitzung 04: Modellvergleich
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Umgebungsvariablen:**  
@@ -113,11 +114,11 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### Sitzung 05: Multi-Agent-Orchestrierung
+### Sitzung 05: Multi-Agenten-Orchestrierung
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Umgebungsvariablen:**  
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Sitzung 06: Modell-Router
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **Testet Routing-Logik** mit mehreren Intentionen (Code, Zusammenfassung, Klassifikation)
@@ -139,7 +140,7 @@ python models_router.py
 ### Sitzung 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Komplexe mehrstufige Pipeline** mit Planung, Ausführung und Verfeinerung
@@ -159,7 +160,7 @@ python export_benchmark_markdown.py \
 
 **Ausgabe**: Markdown-Tabelle + JSON-Metriken
 
-### Markdown-CLI-Muster prüfen
+### Markdown CLI-Muster überprüfen
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -230,7 +231,7 @@ foundry model run phi-4-mini
 | Variable | Standardwert | Beschreibung |
 |----------|--------------|--------------|
 | `FOUNDRY_LOCAL_ALIAS` | Variiert | Zu verwendender Modellalias |
-| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Dienst-Endpunkt überschreiben |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Service-Endpunkt überschreiben |
 | `SHOW_USAGE` | `0` | Token-Nutzungsstatistiken anzeigen |
 | `RETRY_ON_FAIL` | `1` | Wiederholungslogik aktivieren |
 | `RETRY_BACKOFF` | `1.0` | Anfangsverzögerung bei Wiederholung (Sekunden) |
@@ -238,9 +239,9 @@ foundry model run phi-4-mini
 ### Sitzungsbezogen
 | Variable | Standardwert | Beschreibung |
 |----------|--------------|--------------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Einbettungsmodell |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding-Modell |
 | `RAG_QUESTION` | Siehe Beispiel | RAG-Testfrage |
-| `BENCH_MODELS` | Variiert | Kommagetrennte Modelle |
+| `BENCH_MODELS` | Variiert | Komma-separierte Modelle |
 | `BENCH_ROUNDS` | `3` | Benchmark-Wiederholungen |
 | `BENCH_PROMPT` | Siehe Beispiel | Benchmark-Eingabeaufforderung |
 | `BENCH_STREAM` | `0` | Latenz des ersten Tokens messen |
@@ -248,7 +249,7 @@ foundry model run phi-4-mini
 | `AGENT_MODEL_EDITOR` | Primär | Editor-Agentenmodell |
 | `SLM_ALIAS` | `phi-4-mini` | Kleines Sprachmodell |
 | `LLM_ALIAS` | `qwen2.5-7b` | Großes Sprachmodell |
-| `COMPARE_PROMPT` | Siehe Beispiel | Vergleichsaufforderung |
+| `COMPARE_PROMPT` | Siehe Beispiel | Vergleichseingabeaufforderung |
 
 ## Empfohlene Modelle
 
@@ -270,20 +271,20 @@ foundry model run phi-4-mini
 ## Hilfe erhalten
 
 1. Dienststatus prüfen: `foundry service status`  
-2. Protokolle anzeigen: Foundry Local-Dienstprotokolle überprüfen  
+2. Protokolle anzeigen: Überprüfen Sie die Foundry Local-Dienstprotokolle  
 3. SDK-Dokumentation prüfen: https://github.com/microsoft/Foundry-Local  
-4. Beispielcode überprüfen: Alle Beispiele enthalten ausführliche Docstrings
+4. Beispielcode überprüfen: Alle Beispiele enthalten detaillierte Docstrings  
 
 ## Nächste Schritte
 
-1. Alle Workshop-Sitzungen der Reihe nach abschließen  
-2. Mit verschiedenen Modellen experimentieren  
-3. Beispiele für Ihre Anwendungsfälle anpassen  
-4. `SDK_MIGRATION_NOTES.md` für fortgeschrittene Muster überprüfen  
+1. Schließen Sie alle Workshop-Sitzungen der Reihe nach ab  
+2. Experimentieren Sie mit verschiedenen Modellen  
+3. Passen Sie Beispiele an Ihre Anwendungsfälle an  
+4. Überprüfen Sie `SDK_MIGRATION_NOTES.md` für fortgeschrittene Muster  
 
 ---
 
-**Letzte Aktualisierung**: 08.01.2025  
+**Zuletzt aktualisiert**: 08.01.2025  
 **Workshop-Version**: Aktuell  
 **SDK**: Foundry Local Python SDK
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T21:06:59+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T22:53:58+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "hu"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. Telepítse a Foundry Local-t
 
-Kövesse az hivatalos telepítési útmutatót:  
+Kövesse a hivatalos telepítési útmutatót:  
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### 01. szekció: Alapvető Chat
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Környezeti változók:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### 02. szekció: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Környezeti változók:**  
@@ -77,33 +77,34 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### 02. szekció: RAG Értékelés (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**Megjegyzés**: További függőségek szükségesek, telepítse a `requirements.txt` fájlból.
+**Megjegyzés**: További függőségek szükségesek, telepítve a `requirements.txt` fájlon keresztül
 
 ### 03. szekció: Teljesítménytesztelés
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Környezeti változók:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Kimenet**: JSON, amely tartalmazza a késleltetést, áteresztőképességet és az első token metrikáit.
+**Kimenet**: JSON, amely tartalmazza a késleltetést, áteresztőképességet és az első token metrikáit
 
 ### 04. szekció: Modell összehasonlítás
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Környezeti változók:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### 05. szekció: Többügynökös Orkesztráció
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Környezeti változók:**  
@@ -130,19 +131,19 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### 06. szekció: Modell Router
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Teszteli az útválasztási logikát** több szándékkal (kód, összefoglalás, osztályozás).
+**Teszteli az útválasztási logikát** több szándékkal (kód, összefoglalás, osztályozás)
 
 ### 06. szekció: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**Komplex több lépéses pipeline** tervezéssel, végrehajtással és finomítással.
+**Komplex több lépéses pipeline** tervezéssel, végrehajtással és finomítással
 
 ## Szkriptek
 
@@ -159,7 +160,7 @@ python export_benchmark_markdown.py \
 
 **Kimenet**: Markdown táblázat + JSON metrikák
 
-### Markdown CLI minták lintelése
+### Markdown CLI minták ellenőrzése
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -169,16 +170,16 @@ python lint_markdown_cli.py --verbose
 
 ## Tesztelés
 
-### Smoke tesztek
+### Gyors tesztek
 
 ```bash
 cd Workshop
 python -m tests.smoke
 ```
 
-**Teszteli**: Kulcsfontosságú minták alapvető funkcionalitását
+**Tesztelés**: Kulcsfontosságú minták alapvető funkcionalitása
 
-## Hibaelhárítás
+## Hibakeresés
 
 ### Szolgáltatás nem fut
 
@@ -229,8 +230,8 @@ foundry model run phi-4-mini
 ### Alapvető konfiguráció
 | Változó | Alapértelmezett | Leírás |
 |---------|-----------------|--------|
-| `FOUNDRY_LOCAL_ALIAS` | Változó | Használt modell alias |
-| `FOUNDRY_LOCAL_ENDPOINT` | Automatikus | Szolgáltatás végpont felülírása |
+| `FOUNDRY_LOCAL_ALIAS` | Változó | Használandó modell alias |
+| `FOUNDRY_LOCAL_ENDPOINT` | Automatikus | Szolgáltatás végpontjának felülírása |
 | `SHOW_USAGE` | `0` | Token használati statisztikák megjelenítése |
 | `RETRY_ON_FAIL` | `1` | Újrapróbálkozási logika engedélyezése |
 | `RETRY_BACKOFF` | `1.0` | Kezdeti újrapróbálkozási késleltetés (másodpercben) |
@@ -243,12 +244,12 @@ foundry model run phi-4-mini
 | `BENCH_MODELS` | Változó | Modellnevek vesszővel elválasztva |
 | `BENCH_ROUNDS` | `3` | Teljesítményteszt iterációk |
 | `BENCH_PROMPT` | Lásd minta | Teljesítményteszt prompt |
-| `BENCH_STREAM` | `0` | Első token késleltetés mérése |
+| `BENCH_STREAM` | `0` | Első token késleltetésének mérése |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Elsődleges ügynök modell |
 | `AGENT_MODEL_EDITOR` | Elsődleges | Szerkesztő ügynök modell |
 | `SLM_ALIAS` | `phi-4-mini` | Kis nyelvi modell |
 | `LLM_ALIAS` | `qwen2.5-7b` | Nagy nyelvi modell |
-| `COMPARE_PROMPT` | Lásd minta | Összehasonlítás prompt |
+| `COMPARE_PROMPT` | Lásd minta | Összehasonlító prompt |
 
 ## Ajánlott modellek
 
@@ -257,7 +258,7 @@ foundry model run phi-4-mini
 - **qwen2.5-0.5b** - Nagyon gyors osztályozáshoz
 - **gemma-2-2b** - Jó minőség, mérsékelt sebesség
 
-### Éles környezet
+### Gyártási forgatókönyvek
 - **phi-4-mini** - Általános célú
 - **deepseek-coder-1.3b** - Kódgenerálás
 - **qwen2.5-7b** - Magas minőségű válaszok
@@ -272,7 +273,7 @@ foundry model run phi-4-mini
 1. Ellenőrizze a szolgáltatás állapotát: `foundry service status`  
 2. Nézze meg a naplókat: Ellenőrizze a Foundry Local szolgáltatás naplóit  
 3. Nézze meg az SDK dokumentációt: https://github.com/microsoft/Foundry-Local  
-4. Tekintse át a mintakódot: Minden minta részletes docstringeket tartalmaz
+4. Tekintse át a mintakódokat: Minden minta részletes docstringekkel rendelkezik
 
 ## Következő lépések
 
@@ -289,5 +290,5 @@ foundry model run phi-4-mini
 
 ---
 
-**Felelősségi nyilatkozat**:  
-Ezt a dokumentumot az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítószolgáltatás segítségével fordították le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+**Felelősség kizárása**:  
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

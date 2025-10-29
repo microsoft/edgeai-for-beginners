@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:23:01+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T22:22:51+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "nl"
 }
@@ -18,10 +18,10 @@ Begin je reis met Foundry Local door het te installeren en configureren op Windo
 Aan het einde van deze sessie kun je:
 
 - **Installeren en Configureren**: Foundry Local instellen op Windows 11 met optimale prestatie-instellingen
-- **CLI Operaties Beheersen**: Foundry Local CLI gebruiken voor modelbeheer en implementatie
-- **Hardwareversnelling Inschakelen**: GPU-versnelling configureren met ONNXRuntime of WebGPU
-- **Meerdere Modellen Implementeren**: Modellen zoals phi-4, GPT-OSS-20B, Qwen en DeepSeek lokaal uitvoeren
-- **Je Eerste App Bouwen**: Bestaande voorbeelden aanpassen om de Foundry Local Python SDK te gebruiken
+- **Beheers CLI-operaties**: Foundry Local CLI gebruiken voor modelbeheer en implementatie
+- **Hardwareversnelling inschakelen**: GPU-versnelling configureren met ONNXRuntime of WebGPU
+- **Meerdere modellen implementeren**: Modellen zoals phi-4, GPT-OSS-20B, Qwen en DeepSeek lokaal uitvoeren
+- **Je eerste app bouwen**: Bestaande voorbeelden aanpassen om de Foundry Local Python SDK te gebruiken
 
 # Test het model (niet-interactieve enkele prompt)
 foundry model run phi-4-mini --prompt "Hallo, stel jezelf voor"
@@ -37,7 +37,7 @@ foundry model list
 ### (Optioneel) Omgevingsvariabelen
 
 Maak een `.env` (of stel in shell) om scripts draagbaar te maken:
-# Vergelijk antwoorden (niet-interactief)
+# Vergelijk reacties (niet-interactief)
 foundry model run gpt-oss-20b --prompt "Leg edge AI uit in eenvoudige termen"
 | Variabele | Doel | Voorbeeld |
 |-----------|------|----------|
@@ -62,7 +62,7 @@ winget install Microsoft.FoundryLocal
 # https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
 
-**macOS (Preview / Indien Ondersteund)**
+**macOS (Preview / Indien ondersteund)**
 
 Als een native macOS-pakket beschikbaar is (controleer officiële documentatie voor de nieuwste versie):
 
@@ -77,11 +77,11 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Als native macOS-binaries nog niet beschikbaar zijn, kun je alsnog: 
+Als native macOS-binaries nog niet beschikbaar zijn, kun je nog steeds: 
 1. Een Windows 11 ARM/Intel VM gebruiken (Parallels / UTM) en de Windows-stappen volgen. 
 2. Modellen uitvoeren via een container (indien containerafbeelding gepubliceerd) en `FOUNDRY_LOCAL_ENDPOINT` instellen op de blootgestelde poort. 
 
-**Python Virtuele Omgeving Maken (Platformonafhankelijk)**
+**Python Virtuele Omgeving maken (Platformonafhankelijk)**
 
 Windows PowerShell:
 ```powershell
@@ -101,7 +101,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-#### Stap 1.2: Installatie Verifiëren
+#### Stap 1.2: Installatie verifiëren
 
 ```powershell
 # Check version
@@ -114,7 +114,7 @@ foundry init
 foundry --help
 ```
 
-#### Stap 1.3: Omgeving Configureren
+#### Stap 1.3: Omgeving configureren
 
 ```powershell
 # Set up Python environment for Module08
@@ -158,11 +158,11 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Als je liever expliciete controle hebt, kun je nog steeds de CLI + OpenAI-client gebruiken zoals later wordt getoond.
+Als je de voorkeur geeft aan expliciete controle, kun je nog steeds de CLI + OpenAI-client gebruiken zoals later wordt getoond.
 
-### 2. Modellen Lokaal Uitvoeren via CLI (10 minuten)
+### 2. Modellen lokaal uitvoeren via CLI (10 minuten)
 
-#### Stap 3.1: Phi-4 Model Implementeren
+#### Stap 3.1: Phi-4 Model implementeren
 
 ```powershell
 # Download and run phi-4-mini
@@ -174,7 +174,7 @@ foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 # NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
 ```
 
-#### Stap 3.2: GPT-OSS-20B Implementeren
+#### Stap 3.2: GPT-OSS-20B implementeren
 
 ```powershell
 # Download and run GPT-OSS-20B
@@ -184,7 +184,7 @@ foundry model run gpt-oss-20b
 foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 ```
 
-#### Stap 3.3: Extra Modellen Laden
+#### Stap 3.3: Extra modellen laden
 
 ```powershell
 # Download Qwen model family
@@ -200,7 +200,7 @@ foundry cache list
 
 ### 4. Starter Project: Pas 01-run-phi aan voor Foundry Local (5 minuten)
 
-#### Stap 4.1: Basis Chatapplicatie Maken
+#### Stap 4.1: Basis chatapplicatie maken
 
 Maak `samples/01-foundry-quickstart/chat_quickstart.py` (bijgewerkt om de manager te gebruiken indien beschikbaar):
 
@@ -272,7 +272,7 @@ if __name__ == "__main__":
     main()
 ```
 
-#### Stap 4.2: Test de Applicatie
+#### Stap 4.2: Test de applicatie
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -289,12 +289,12 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 ### 1. Foundry Local Architectuur
 
-- **Lokale Inferentie-Engine**: Voert modellen volledig op je apparaat uit
+- **Lokale Inferentie Engine**: Voert modellen volledig op je apparaat uit
 - **OpenAI SDK Compatibiliteit**: Naadloze integratie met bestaande OpenAI-code
 - **Modelbeheer**: Download, cache en voer meerdere modellen efficiënt uit
 - **Hardwareoptimalisatie**: Maak gebruik van GPU-, NPU- en CPU-versnelling
 
-### 2. CLI Commandoreferentie
+### 2. CLI Command Referentie
 
 ```powershell
 # Core Commands
@@ -401,18 +401,19 @@ foundry config set model.cache.max_size 10GB
 foundry config set model.preload false
 ```
 
-### 3. Prestaties Monitoren
+### 3. Prestaties monitoren
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Optionele Verbeteringen
@@ -420,14 +421,14 @@ python Workshop\samples\session03\benchmark_oss_models.py
 | Verbetering | Wat | Hoe |
 |-------------|-----|-----|
 | Gedeelde Hulpprogramma's | Verwijder dubbele client/bootstrap-logica | Gebruik `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Zichtbaarheid Tokengebruik | Leer kosten/efficiëntie vroeg | Stel `SHOW_USAGE=1` in om prompt/completion/totaal tokens af te drukken |
+| Zichtbaarheid van Tokengebruik | Leer kosten/efficiëntie vroeg begrijpen | Stel `SHOW_USAGE=1` in om prompt/completion/totaal tokens af te drukken |
 | Deterministische Vergelijkingen | Stabiele benchmarking & regressiecontroles | Gebruik `temperature=0`, `top_p=1`, consistente prompttekst |
-| Eerste-Token Latentie | Waargenomen responsiviteitsmetriek | Pas benchmarkscript aan met streaming (`BENCH_STREAM=1`) |
+| Eerste-Tokens Latentie | Waargenomen responsiviteitsmetriek | Pas benchmarkscript aan met streaming (`BENCH_STREAM=1`) |
 | Herhalen bij Tijdelijke Fouten | Veerkrachtige demo's bij koude start | `RETRY_ON_FAIL=1` (standaard) & pas `RETRY_BACKOFF` aan |
 | Smoke Testing | Snelle controle over belangrijke flows | Voer `python Workshop/tests/smoke.py` uit vóór een workshop |
-| Modelalias Profielen | Snel schakelen tussen machines | Behoud `.env` met `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Cache-efficiëntie | Vermijd herhaalde opwarmingen in multi-sample run | Hulpprogramma's cachemanagers; hergebruik tussen scripts/notebooks |
-| Eerste Run Opwarming | Verminder p95 latentiepieken | Voer een kleine prompt uit na `FoundryLocalManager` creatie |
+| Model Alias Profielen | Snel schakelen tussen modelsets op verschillende machines | Behoud `.env` met `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
+| Cache Efficiëntie | Vermijd herhaalde opwarmingen in multi-sample runs | Hulpprogramma's cachemanagers; hergebruik tussen scripts/notebooks |
+| Eerste Run Opwarming | Verminder p95 latentiepieken | Voer een kleine prompt uit na het maken van `FoundryLocalManager` |
 
 Voorbeeld deterministische warme basislijn (PowerShell):
 
@@ -447,7 +448,7 @@ Na het voltooien van deze sessie:
 1. **Verken Sessie 2**: Bouw AI-oplossingen met Azure AI Foundry RAG
 2. **Probeer Verschillende Modellen**: Experimenteer met Qwen, DeepSeek en andere modelfamilies
 3. **Optimaliseer Prestaties**: Pas instellingen aan voor jouw specifieke hardware
-4. **Bouw Eigen Applicaties**: Gebruik de Foundry Local SDK in je eigen projecten
+4. **Bouw Aangepaste Applicaties**: Gebruik de Foundry Local SDK in je eigen projecten
 
 ## Aanvullende Bronnen
 
@@ -473,13 +474,13 @@ Na het voltooien van deze sessie:
 
 ## Voorbeeldscenario & Workshop Mapping
 
-| Workshop Script / Notebook | Scenario | Doel | Voorbeeldinput(s) | Nodige Dataset |
-|----------------------------|----------|------|-------------------|----------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Intern IT-team evalueert on-device inferentie voor een privacy-assessmentportaal | Bewijs dat lokale SLM binnen sub-seconde latentie reageert op standaardprompts | "Noem twee voordelen van lokale inferentie." | Geen (enkele prompt) |
-| Quickstart aanpassingscodeblok | Ontwikkelaar migreert een bestaande OpenAI-script naar Foundry Local | Toon drop-in compatibiliteit | "Noem twee voordelen van lokale inferentie." | Alleen inline prompt |
+| Workshop Script / Notebook | Scenario | Doel | Voorbeeldinvoer(s) | Vereiste Dataset |
+|----------------------------|----------|------|--------------------|------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Intern IT-team evalueert on-device inferentie voor een privacybeoordelingsportaal | Bewijs dat lokale SLM binnen sub-seconde latentie reageert op standaard prompts | "Noem twee voordelen van lokale inferentie." | Geen (enkele prompt) |
+| Quickstart aanpassingscodeblok | Ontwikkelaar die een bestaand OpenAI-script migreert naar Foundry Local | Toon drop-in compatibiliteit | "Noem twee voordelen van lokale inferentie." | Alleen inline prompt |
 
-### Scenarioverhaal
-Het beveiligings- en compliance-team moet valideren of gevoelige prototypegegevens lokaal kunnen worden verwerkt. Ze voeren het bootstrap-script uit met verschillende prompts (privacy, latentie, kosten) met een deterministische temperatuur=0 modus om basisuitvoer vast te leggen voor latere vergelijking (Sessie 3 benchmarking en Sessie 4 SLM vs LLM contrast).
+### Scenario Narratief
+Het beveiligings- en compliance-team moet valideren of gevoelige prototypegegevens lokaal kunnen worden verwerkt. Ze voeren het bootstrap-script uit met verschillende prompts (privacy, latentie, kosten) met een deterministische temperature=0 modus om basisuitvoer vast te leggen voor latere vergelijking (Sessie 3 benchmarking en Sessie 4 SLM vs LLM contrast).
 
 ### Minimale Prompt Set JSON (optioneel)
 ```json
@@ -490,9 +491,9 @@ Het beveiligings- en compliance-team moet valideren of gevoelige prototypegegeve
 ]
 ```
 
-Gebruik deze lijst om een reproduceerbare evaluatielus te maken of om een toekomstige regressietestharnas te voeden.
+Gebruik deze lijst om een reproduceerbare evaluatielus te maken of om een toekomstige regressietestomgeving te voeden.
 
 ---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

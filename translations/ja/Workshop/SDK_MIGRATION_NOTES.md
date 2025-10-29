@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-08T19:28:59+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T20:55:28+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "ja"
 }
@@ -11,20 +11,20 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概要
 
-Workshopフォルダー内のすべてのPythonファイルが、公式の[Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local)の最新パターンに従って更新されました。
+Workshopフォルダ内のすべてのPythonファイルが、公式の[Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local)の最新パターンに従って更新されました。
 
-## 変更概要
+## 変更点の概要
 
 ### コアインフラストラクチャ (`workshop_utils.py`)
 
-#### 強化された機能:
+#### 機能強化:
 - **エンドポイントオーバーライドのサポート**: `FOUNDRY_LOCAL_ENDPOINT`環境変数のサポートを追加
-- **エラー処理の改善**: 詳細なエラーメッセージを伴う例外処理の向上
-- **キャッシュの強化**: マルチエンドポイントシナリオに対応するため、キャッシュキーにエンドポイントを含むよう変更
+- **エラーハンドリングの改善**: 詳細なエラーメッセージを含む例外処理の改善
+- **キャッシュ機能の強化**: マルチエンドポイントシナリオに対応するため、キャッシュキーにエンドポイントを含むよう変更
 - **指数バックオフ**: 信頼性向上のため、リトライロジックに指数バックオフを採用
-- **型アノテーション**: IDEサポートを向上させるための包括的な型ヒントを追加
+- **型アノテーション**: IDEサポートを向上させるため、包括的な型ヒントを追加
 
-#### 新しい機能:
+#### 新機能:
 ```python
 # Now supports endpoint override
 manager, client, model_id = get_client(alias, endpoint="http://localhost:8000")
@@ -38,7 +38,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### セッション01: チャットブートストラップ (`chat_bootstrap.py`)
 - デフォルトモデルを`phi-3.5-mini`から`phi-4-mini`に更新
 - エンドポイントオーバーライドのサポートを追加
-- SDK参照を含むドキュメントを強化
+- SDKリファレンスを含むドキュメントを強化
 
 #### セッション02: RAGパイプライン (`rag_pipeline.py`)
 - デフォルトモデルを`phi-4-mini`に更新
@@ -48,13 +48,13 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### セッション02: RAG評価 (`rag_eval_ragas.py`)
 - モデルのデフォルトを更新
 - エンドポイント設定を追加
-- エラー処理を強化
+- エラーハンドリングを強化
 
 #### セッション03: ベンチマーク (`benchmark_oss_models.py`)
 - デフォルトモデルリストに`phi-4-mini`を追加
 - 包括的な環境変数ドキュメントを追加
 - 関数ドキュメントを改善
-- 全体にエンドポイントオーバーライドのサポートを追加
+- 全体でエンドポイントオーバーライドのサポートを追加
 
 #### セッション04: モデル比較 (`model_compare.py`)
 - デフォルトLLMを`gpt-oss-20b`から`qwen2.5-7b`に更新
@@ -75,7 +75,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### セッション06: パイプライン (`models_pipeline.py`)
 - 包括的な関数ドキュメントを追加
 - ステップごとのドキュメントを改善
-- エラー処理を強化
+- エラーハンドリングを強化
 
 ### スクリプト
 
@@ -83,10 +83,10 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - エンドポイントオーバーライドのサポートを追加
 - デフォルトモデルを更新
 - 関数ドキュメントを強化
-- エラー処理を改善
+- エラーハンドリングを改善
 
 #### CLIリンター (`lint_markdown_cli.py`)
-- SDK参照リンクを追加
+- SDKリファレンスリンクを追加
 - 使用方法のドキュメントを改善
 
 ### テスト
@@ -99,22 +99,22 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ## 環境変数
 
-すべてのサンプルが以下の環境変数をサポートします:
+すべてのサンプルは以下の環境変数をサポートします:
 
 ### コア設定
-- `FOUNDRY_LOCAL_ALIAS` - 使用するモデルエイリアス（サンプルごとにデフォルトが異なる）
-- `FOUNDRY_LOCAL_ENDPOINT` - サービスエンドポイントのオーバーライド（オプション）
+- `FOUNDRY_LOCAL_ALIAS` - 使用するモデルエイリアス（サンプルによってデフォルト値が異なる）
+- `FOUNDRY_LOCAL_ENDPOINT` - サービスエンドポイントのオーバーライド（任意）
 - `SHOW_USAGE` - トークン使用統計を表示（デフォルト: "0"）
 - `RETRY_ON_FAIL` - リトライロジックを有効化（デフォルト: "1"）
-- `RETRY_BACKOFF` - 初期リトライ遅延時間（秒）（デフォルト: "1.0"）
+- `RETRY_BACKOFF` - リトライの初期遅延時間（秒）（デフォルト: "1.0"）
 
 ### サンプル固有
 - `EMBED_MODEL` - RAGサンプル用の埋め込みモデル
 - `BENCH_MODELS` - ベンチマーク用のカンマ区切りモデル
 - `BENCH_ROUNDS` - ベンチマークラウンド数
-- `BENCH_PROMPT` - ベンチマーク用のテストプロンプト
+- `BENCH_PROMPT` - ベンチマーク用テストプロンプト
 - `BENCH_STREAM` - 最初のトークンのレイテンシを測定
-- `RAG_QUESTION` - RAGサンプル用のテスト質問
+- `RAG_QUESTION` - RAGサンプル用テスト質問
 - `AGENT_MODEL_PRIMARY` - プライマリエージェントモデル
 - `AGENT_MODEL_EDITOR` - エディターエージェントモデル
 - `SLM_ALIAS` - 小型言語モデルエイリアス
@@ -143,7 +143,7 @@ model_info = manager.get_model_info(alias)
 model_id = model_info.id
 ```
 
-### 3. エラー処理
+### 3. エラーハンドリング
 ```python
 # Comprehensive error handling
 try:
@@ -181,9 +181,9 @@ for chunk in stream:
 
 ## カスタムサンプルの移行ガイド
 
-新しいサンプルを作成する場合や既存のものを更新する場合:
+新しいサンプルを作成する場合や既存のサンプルを更新する場合:
 
-1. **`workshop_utils.py`ヘルパーを使用**:
+1. **`workshop_utils.py`のヘルパーを使用**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
@@ -195,16 +195,16 @@ for chunk in stream:
    ```
 
 3. **包括的なドキュメントを追加**:
-   - 環境変数をドキュメントに記載
-   - SDK参照リンクを追加
-   - 使用例を記載
+   - ドキュメント文字列に環境変数を記載
+   - SDKリファレンスリンク
+   - 使用例
 
 4. **型ヒントを使用**:
    ```python
    from typing import Optional, List, Dict, Any
    ```
 
-5. **適切なエラー処理を実装**:
+5. **適切なエラーハンドリングを実装**:
    ```python
    try:
        result = operation()
@@ -223,54 +223,55 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
 ```
 
-## SDKドキュメント参照
+## SDKドキュメントリファレンス
 
 - **メインリポジトリ**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 - **APIドキュメント**: 最新のAPIドキュメントはSDKリポジトリを確認してください
 
-## 破壊的変更
+## 互換性を壊す変更点
 
 ### 予期される変更なし
 すべての変更は後方互換性があります。更新内容は主に以下を含みます:
 - 新しいオプション機能の追加（エンドポイントオーバーライド）
-- エラー処理の改善
+- エラーハンドリングの改善
 - ドキュメントの強化
-- 推奨されるデフォルトモデル名の更新
+- 推奨される最新モデル名への更新
 
 ### オプションの強化
-以下のコード更新を検討してください:
-- 明示的なエンドポイント制御のため`FOUNDRY_LOCAL_ENDPOINT`を使用
-- トークン使用状況の可視化のため`SHOW_USAGE=1`を使用
-- 更新されたモデルデフォルト（`phi-3.5-mini`ではなく`phi-4-mini`）
+コードを以下のように更新することを検討してください:
+- 明示的なエンドポイント制御のための`FOUNDRY_LOCAL_ENDPOINT`
+- トークン使用状況の可視化のための`SHOW_USAGE=1`
+- 最新のモデルデフォルト（`phi-3.5-mini`ではなく`phi-4-mini`）
 
 ## よくある問題と解決策
 
-### 問題: "クライアント初期化に失敗しました"
-**解決策**: Foundry Localサービスが稼働していることを確認:
+### 問題: "クライアントの初期化に失敗しました"
+**解決策**: Foundry Localサービスが稼働していることを確認してください:
 ```bash
 foundry service start
 foundry model run phi-4-mini
 ```
 
 ### 問題: "モデルが見つかりません"
-**解決策**: 利用可能なモデルを確認:
+**解決策**: 利用可能なモデルを確認してください:
 ```bash
 foundry model list
 ```
 
 ### 問題: エンドポイント接続エラー
-**解決策**: エンドポイントを確認:
+**解決策**: エンドポイントを確認してください:
 ```bash
 # Check service status
 foundry service status
@@ -284,23 +285,23 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 1. **Module08サンプルを更新**: Module08/samplesに同様のパターンを適用
 2. **統合テストを追加**: 包括的なテストスイートを作成
 3. **パフォーマンスベンチマーク**: 更新前後のパフォーマンスを比較
-4. **ドキュメントの更新**: 新しいパターンをメインREADMEに反映
+4. **ドキュメントの更新**: 新しいパターンを含むメインREADMEを更新
 
 ## 貢献ガイドライン
 
-新しいサンプルを追加する際:
-1. 一貫性のため`workshop_utils.py`を使用
+新しいサンプルを追加する際には:
+1. 一貫性を保つために`workshop_utils.py`を使用
 2. 既存のサンプルのパターンに従う
-3. 包括的なドキュメントを追加
-4. SDK参照リンクを含める
+3. 包括的なドキュメント文字列を追加
+4. SDKリファレンスリンクを含める
 5. エンドポイントオーバーライドをサポート
 6. 適切な型ヒントを追加
-7. ドキュメントに使用例を含める
+7. ドキュメント文字列に使用例を含める
 
 ## バージョン互換性
 
-これらの更新は以下に対応しています:
-- `foundry-local-sdk`（最新）
+これらの更新は以下に互換性があります:
+- `foundry-local-sdk` (最新)
 - `openai>=1.30.0`
 - Python 3.8+
 
@@ -313,4 +314,4 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ---
 
 **免責事項**:  
-この文書は、AI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてお考えください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解釈について、当方は一切の責任を負いません。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤認について、当方は責任を負いません。

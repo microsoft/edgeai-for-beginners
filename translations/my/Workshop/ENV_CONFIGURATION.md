@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T12:01:24+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T23:35:06+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "my"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## အကျဉ်းချုပ်
 
-Workshop ရဲ့ နမူနာတွေဟာ `.env` ဖိုင်ထဲမှာ စုစည်းထားတဲ့ ပတ်ဝန်းကျင် variable တွေကို အသုံးပြုပြီး ဖွဲ့စည်းထားပါတယ်။ ဒါဟာ code ကို ပြင်ဆင်စရာမလိုဘဲ အလွယ်တကူ အတိအကျပြင်ဆင်နိုင်စေပါတယ်။
+Workshop နမူနာများသည် `.env` ဖိုင်တွင် စုစည်းထားသော ပတ်ဝန်းကျင်အပြောင်းအလဲများကို အသုံးပြုသည်။ ၎င်းသည် ကုဒ်ကို ပြင်ဆင်ရန်မလိုဘဲ လွယ်ကူစွာစိတ်ကြိုက်ပြင်ဆင်နိုင်စေသည်။
 
-## အမြန်စတင်ရန်
+## အမြန်စတင်ခြင်း
 
 ### 1. လိုအပ်ချက်များကို စစ်ဆေးပါ
 
@@ -30,9 +30,9 @@ foundry model run phi-4-mini
 
 ### 2. ပတ်ဝန်းကျင်ကို ဖွဲ့စည်းပါ
 
-`.env` ဖိုင်ကို အလိုအလျောက် သင့်တော်တဲ့ default တွေဖြင့် ဖွဲ့စည်းထားပြီးသားဖြစ်ပါတယ်။ အသုံးပြုသူအများစုအတွက် ဘာမှ ပြင်ဆင်စရာမလိုပါဘူး။
+`.env` ဖိုင်ကို အဆင်ပြေသော ပုံစံများဖြင့် ရှိပြီးသားဖြစ်သည်။ အသုံးပြုသူအများစုသည် ဘာမှ ပြောင်းလဲရန်မလိုအပ်ပါ။
 
-**Optional**: Setting တွေကို ပြန်လည်သုံးသပ်ပြီး အတိအကျပြင်ဆင်ပါ:
+**အလိုအလျောက်**: ဆက်တင်များကို ပြန်လည်သုံးသပ်ပြီး စိတ်ကြိုက်ပြင်ဆင်ပါ:
 ```bash
 # Edit .env file
 notepad .env  # Windows
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Python Scripts အတွက်:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -54,15 +54,15 @@ python chat_bootstrap.py
 # Variables are loaded when cells execute
 ```
 
-## ပတ်ဝန်းကျင် Variable Reference
+## ပတ်ဝန်းကျင်အပြောင်းအလဲများကို ရည်ညွှန်းခြင်း
 
 ### အဓိကဖွဲ့စည်းမှု
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | နမူနာများအတွက် default model |
-| `FOUNDRY_LOCAL_ENDPOINT` | (အလွတ်) | service endpoint ကို override လုပ်ရန် |
-| `PYTHONPATH` | Workshop paths | Python module ရှာဖွေမှုလမ်းကြောင်း |
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | နမူနာများအတွက် ပုံမှန်မော်ဒယ် |
+| `FOUNDRY_LOCAL_ENDPOINT` | (အလွတ်) | ဝန်ဆောင်မှု endpoint ကို ပြောင်းလဲရန် |
+| `PYTHONPATH` | Workshop လမ်းကြောင်းများ | Python module ရှာဖွေမှုလမ်းကြောင်း |
 
 **FOUNDRY_LOCAL_ENDPOINT ကို သတ်မှတ်ရန်အချိန်:**
 - Remote Foundry Local instance
@@ -83,41 +83,41 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Session 02: RAG Pipeline
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding model |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding မော်ဒယ် |
 | `RAG_QUESTION` | Pre-configured | စမ်းသပ်မေးခွန်း |
 
 #### Session 03: Benchmarking
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Benchmark လုပ်မည့် models |
-| `BENCH_ROUNDS` | `3` | Model တစ်ခုချင်းစီအတွက် iteration အရေအတွက် |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Benchmark ပြုလုပ်ရန် မော်ဒယ်များ |
+| `BENCH_ROUNDS` | `3` | မော်ဒယ်တစ်ခုစီအတွက် iteration အရေအတွက် |
 | `BENCH_PROMPT` | Pre-configured | စမ်းသပ် prompt |
-| `BENCH_STREAM` | `0` | First-token latency ကိုတိုင်းတာရန် |
+| `BENCH_STREAM` | `0` | ပထမဆုံး token latency ကို တိုင်းတာရန် |
 
 #### Session 04: Model Comparison
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `SLM_ALIAS` | `phi-4-mini` | Small language model |
-| `LLM_ALIAS` | `qwen2.5-7b` | Large language model |
+| `SLM_ALIAS` | `phi-4-mini` | သေးငယ်သော ဘာသာစကားမော်ဒယ် |
+| `LLM_ALIAS` | `qwen2.5-7b` | ကြီးမားသော ဘာသာစကားမော်ဒယ် |
 | `COMPARE_PROMPT` | Pre-configured | နှိုင်းယှဉ်မှု prompt |
-| `COMPARE_RETRIES` | `2` | ပြန်လည်ကြိုးစားမှုအရေအတွက် |
+| `COMPARE_RETRIES` | `2` | ပြန်လည်ကြိုးစားမှုအကြိမ်ရေ |
 
 #### Session 05: Multi-Agent Orchestration
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Researcher agent model |
-| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Editor agent model |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | သုတေသနအေးဂျင့်မော်ဒယ် |
+| `AGENT_MODEL_EDITOR` | `phi-4-mini` | အယ်ဒီတာအေးဂျင့်မော်ဒယ် |
 | `AGENT_QUESTION` | Pre-configured | စမ်းသပ်မေးခွန်း |
 
 ### ယုံကြည်စိတ်ချမှုဖွဲ့စည်းမှု
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `SHOW_USAGE` | `1` | Token အသုံးပြုမှုကို print လုပ်ရန် |
-| `RETRY_ON_FAIL` | `1` | ပြန်လည်ကြိုးစားမှု logic ကို enable လုပ်ရန် |
+| `SHOW_USAGE` | `1` | Token အသုံးပြုမှုကို ပုံနှိပ်ရန် |
+| `RETRY_ON_FAIL` | `1` | ပြန်လည်ကြိုးစားမှု logic ကို ဖွင့်ရန် |
 | `RETRY_BACKOFF` | `1.0` | ပြန်လည်ကြိုးစားမှုအချိန်နှောင့်နှေးမှု (စက္ကန့်) |
 
-## အများဆုံးအသုံးပြုသောဖွဲ့စည်းမှုများ
+## ပုံမှန်ဖွဲ့စည်းမှုများ
 
 ### Development Setup (အမြန် iteration)
 ```bash
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Benchmarking Setup
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -157,24 +157,24 @@ FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ```
 
-## အကြံပြုထားသော Models
+## အကြံပြုမော်ဒယ်များ
 
 ### အသုံးပြုမှုအလိုက်
 
-**အထွေထွေအသုံးပြုမှု:**
-- `phi-4-mini` - အရည်အသွေးနှင့် အမြန်နှုန်းအချိုးကျ
+**အထွေထွေသုံးအတွက်:**
+- `phi-4-mini` - အရည်အသွေးနှင့် အမြန်နှုန်းကို ညှိထားသည်
 
-**အမြန်တုံ့ပြန်မှု:**
-- `qwen2.5-0.5b` - အလွန်မြန်ပြီး classification အတွက်ကောင်းမွန်
-- `phi-4-mini` - အမြန်နှင့် အရည်အသွေးကောင်းမွန်
+**အမြန်တုံ့ပြန်မှုအတွက်:**
+- `qwen2.5-0.5b` - အလွန်မြန်ပြီး အမျိုးအစားခွဲခြားမှုအတွက်ကောင်းသည်
+- `phi-4-mini` - အရည်အသွေးကောင်းပြီး မြန်ဆန်သည်
 
-**အရည်အသွေးမြင့်:**
+**အရည်အသွေးမြင့်မားမှုအတွက်:**
 - `qwen2.5-7b` - အရည်အသွေးအကောင်းဆုံး၊ အရင်းအမြစ်အသုံးပြုမှုများ
-- `phi-4-mini` - အရည်အသွေးကောင်းမွန်၊ အရင်းအမြစ်အသုံးပြုမှုနည်း
+- `phi-4-mini` - အရည်အသွေးကောင်းပြီး အရင်းအမြစ်နည်းပါး
 
-**Code Generation:**
-- `deepseek-coder-1.3b` - Code အတွက်အထူးပြု
-- `phi-4-mini` - အထွေထွေ coding အတွက်
+**Code Generation အတွက်:**
+- `deepseek-coder-1.3b` - Code အတွက် အထူးပြု
+- `phi-4-mini` - အထွေထွေ coding
 
 ### အရင်းအမြစ်ရရှိနိုင်မှုအလိုက်
 
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### Temperature & Sampling (Code ထဲမှာ override လုပ်ပါ)
+### Temperature & Sampling (Code တွင် Override ပြုလုပ်ရန်)
 
 ```python
 # In your scripts/notebooks
@@ -236,12 +236,12 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 ## ပြဿနာဖြေရှင်းခြင်း
 
-### ပတ်ဝန်းကျင် Variable မတင်နိုင်ခြင်း
+### ပတ်ဝန်းကျင်အပြောင်းအလဲများ မတင်နိုင်ခြင်း
 
 **လက္ခဏာများ:**
-- Scripts မှာ model မှားသုံး
-- ချိတ်ဆက်မှုအမှား
-- Variable မသိရှိ
+- Scripts မှ မော်ဒယ်များမှားယွင်းစွာအသုံးပြုခြင်း
+- ချိတ်ဆက်မှုအမှားများ
+- Variable များကို မသိရှိခြင်း
 
 **ဖြေရှင်းနည်းများ:**
 ```bash
@@ -259,12 +259,12 @@ dir .env     # Windows
 pwd  # Should be in Workshop or repository root
 ```
 
-### Service ချိတ်ဆက်မှုအခက်အခဲ
+### ဝန်ဆောင်မှုချိတ်ဆက်မှုပြဿနာများ
 
 **လက္ခဏာများ:**
-- "Connection refused" အမှား
+- "Connection refused" အမှားများ
 - "Service not available"
-- Timeout အမှား
+- Timeout အမှားများ
 
 **ဖြေရှင်းနည်းများ:**
 ```bash
@@ -282,10 +282,10 @@ foundry service status | grep "Port"
 FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ```
 
-### Model မတွေ့ရှိခြင်း
+### မော်ဒယ်မတွေ့ရှိခြင်း
 
 **လက္ခဏာများ:**
-- "Model not found" အမှား
+- "Model not found" အမှားများ
 - "Alias not recognized"
 
 **ဖြေရှင်းနည်းများ:**
@@ -303,20 +303,17 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Import အမှားများ
 
 **လက္ခဏာများ:**
-- "Module not found" အမှား
-- "Cannot import workshop_utils"
+- "Module not found" အမှားများ
 
 **ဖြေရှင်းနည်းများ:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## ဖွဲ့စည်းမှုစမ်းသပ်ခြင်း
@@ -366,9 +363,9 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## လုံခြုံရေးအကောင်းဆုံးလေ့ကျင့်မှုများ
+## လုံခြုံရေးအကောင်းဆုံးလက်တွေ့ကျမှုများ
 
-### 1. လျှို့ဝှက်ချက်များကို Commit မလုပ်ပါနှင့်
+### 1. လျှို့ဝှက်ချက်များကို မ commit လုပ်ပါနှင့်
 
 ```bash
 # .gitignore should include:
@@ -385,14 +382,14 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. API Key များကို ပြန်လည်ပြောင်းပါ
+### 3. API Key များကို ပြန်လည်ပြောင်းလဲပါ
 
 ```bash
 # For Azure OpenAI or other cloud services
 # Regularly rotate keys and update .env
 ```
 
-### 4. ပတ်ဝန်းကျင်အလိုက် Config ကို အသုံးပြုပါ
+### 4. ပတ်ဝန်းကျင်အလိုက် ဖွဲ့စည်းမှုကို အသုံးပြုပါ
 
 ```bash
 # Development
@@ -406,21 +403,21 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Main Repository**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API Documentation**: SDK repository မှာ နောက်ဆုံး version ကို ကြည့်ပါ
+- **API Documentation**: SDK repository တွင် နောက်ဆုံးပေါ်ကို ကြည့်ပါ
 
 ## အပိုဆောင်းအရင်းအမြစ်များ
 
-- `QUICK_START.md` - စတင်အသုံးပြုလမ်းညွှန်
+- `QUICK_START.md` - စတင်အသုံးပြုရန်လမ်းညွှန်
 - `SDK_MIGRATION_NOTES.md` - SDK အပ်ဒိတ်အသေးစိတ်
-- `Workshop/samples/*/README.md` - နမူနာအလိုက်လမ်းညွှန်များ
+- `Workshop/samples/*/README.md` - နမူနာအထူးပြုလမ်းညွှန်များ
 
 ---
 
 **နောက်ဆုံးအပ်ဒိတ်**: 2025-01-08  
-**Version**: 2.0  
+**ဗားရှင်း**: 2.0  
 **SDK**: Foundry Local Python SDK (latest)
 
 ---
 
 **အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားနေသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များမှ ပရော်ဖက်ရှင်နယ် ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူသားမှ ပရော်ဖက်ရှင်နယ် ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွတ်များ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

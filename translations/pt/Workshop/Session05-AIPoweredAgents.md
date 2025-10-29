@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-08T20:43:19+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T21:30:14+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "pt"
 }
@@ -11,15 +11,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Resumo
 
-Desenhe e orquestre agentes de IA com múltiplos papéis utilizando o runtime de baixa latência e preservação de privacidade do Foundry Local. Vai definir os papéis dos agentes, estratégias de memória, padrões de invocação de ferramentas e gráficos de execução. A sessão apresenta padrões de estruturação que podem ser ampliados com Chainlit ou LangGraph. O projeto inicial expande o exemplo de arquitetura de agentes existente para adicionar persistência de memória e ganchos de avaliação.
+Projete e orquestre agentes de IA com múltiplos papéis utilizando o runtime de baixa latência e preservação de privacidade do Foundry Local. Você definirá papéis dos agentes, estratégias de memória, padrões de invocação de ferramentas e gráficos de execução. A sessão apresenta padrões de estruturação que podem ser estendidos com Chainlit ou LangGraph. O projeto inicial amplia o exemplo de arquitetura de agentes existente para adicionar persistência de memória e ganchos de avaliação.
 
 ## Objetivos de Aprendizagem
 
 - **Definir Papéis**: Prompts do sistema e limites de capacidade
-- **Implementar Memória**: Curto prazo (conversação), longo prazo (vetor/ficheiro), blocos de notas efémeros
+- **Implementar Memória**: Curto prazo (conversação), longo prazo (vetor/arquivo), blocos de notas temporários
 - **Estruturar Fluxos de Trabalho**: Passos sequenciais, ramificados e paralelos dos agentes
 - **Integrar Ferramentas**: Padrão leve de chamada de funções como ferramentas
-- **Avaliar**: Traços básicos + pontuação de resultados baseada em rubricas
+- **Avaliar**: Rastreamento básico + pontuação de resultados baseada em critérios
 
 ## Pré-requisitos
 
@@ -45,15 +45,15 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Se estiver a executar agentes a partir de macOS contra um serviço remoto em Windows:
+Se executar agentes no macOS contra um serviço remoto em Windows:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Fluxo da Demonstração (30 min)
+## Fluxo de Demonstração (30 min)
 
-### 1. Definir Papéis dos Agentes e Memória (7 min)
+### 1. Definir Papéis e Memória dos Agentes (7 min)
 
 Crie `samples/05-agents/agents_core.py`:
 
@@ -131,7 +131,7 @@ python samples/05-agents/agents_core.py
 
 ### 3. Adicionar Invocação de Ferramentas (7 min)
 
-Expanda com `samples/05-agents/tools.py`:
+Estenda com `samples/05-agents/tools.py`:
 
 ```python
 from datetime import datetime
@@ -149,7 +149,6 @@ TOOLS = {
     "estimate_tokens": tool_estimate_tokens
 }
 ```
-
 
 Modifique `agents_core.py` para permitir uma sintaxe simples de ferramentas: o utilizador escreve `#tool:get_time` e o agente expande a saída da ferramenta no contexto antes da geração.
 
@@ -186,13 +185,13 @@ if __name__ == '__main__':
 ```
 
 
-### 5. Projeto Inicial: Expandir `05-agent-architecture` (7 min)
+### 5. Projeto Inicial: Estender `05-agent-architecture` (7 min)
 
 Adicione:
-1. Camada de memória persistente (por exemplo, anexar linhas JSON de conversas)
+1. Camada de memória persistente (por exemplo, anexação de linhas JSON de conversas)
 2. Rubrica de avaliação simples: placeholders de factualidade / clareza / estilo
-3. Front-end opcional Chainlit (duas abas: conversação e traços)
-4. Máquina de estados estilo LangGraph opcional (se adicionar dependência) para decisões ramificadas
+3. Front-end opcional com Chainlit (duas abas: conversação e rastreamentos)
+4. Máquina de estados no estilo LangGraph opcional (se adicionar dependência) para decisões ramificadas
 
 ## Lista de Verificação de Validação
 
@@ -201,16 +200,16 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Espere saída de pipeline estruturada com nota de injeção de ferramentas.
+Espere uma saída de pipeline estruturada com nota de injeção de ferramenta.
 
 ## Visão Geral das Estratégias de Memória
 
-| Camada       | Propósito              | Exemplo               |
-|--------------|------------------------|-----------------------|
+| Camada       | Propósito             | Exemplo               |
+|--------------|-----------------------|-----------------------|
 | Curto prazo  | Continuidade do diálogo | Últimas N mensagens   |
-| Episódica    | Recordação da sessão   | JSON por sessão       |
-| Semântica    | Recuperação a longo prazo | Armazenamento vetorial de resumos |
-| Bloco de notas | Passos de raciocínio  | Cadeia de pensamento inline (privado) |
+| Episódica    | Recordação da sessão  | JSON por sessão       |
+| Semântica    | Recuperação de longo prazo | Armazenamento vetorial de resumos |
+| Bloco de notas | Passos de raciocínio | Cadeia de pensamento inline (privado) |
 
 ## Ganchos de Avaliação (Conceito)
 
@@ -227,11 +226,11 @@ evaluation = {
 
 ## Resolução de Problemas
 
-| Problema            | Causa                     | Resolução                     |
-|---------------------|---------------------------|-------------------------------|
+| Problema            | Causa                     | Solução                        |
+|---------------------|---------------------------|--------------------------------|
 | Respostas repetitivas | Janela de contexto muito grande/pequena | Ajustar parâmetro da janela de memória |
 | Ferramenta não invocada | Sintaxe incorreta       | Usar formato `#tool:tool_name` |
-| Orquestração lenta  | Múltiplos modelos frios   | Prompts de aquecimento pré-execução |
+| Orquestração lenta  | Múltiplos modelos frios   | Executar prompts de aquecimento previamente |
 
 ## Referências
 
@@ -248,23 +247,24 @@ evaluation = {
 
 | Script do Workshop | Cenário | Objetivo | Exemplo de Prompt |
 |--------------------|---------|----------|-------------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot de pesquisa de conhecimento que produz resumos amigáveis para executivos | Pipeline de dois agentes (pesquisa → polimento editorial) com modelos distintos opcionais | Explique por que a inferência local é importante para conformidade. |
-| Conceito (expandido) `tools.py` | Adicionar ferramentas de estimativa de tempo e tokens | Demonstrar padrão leve de invocação de ferramentas | #tool:get_time |
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot de pesquisa de conhecimento que produz resumos para executivos | Pipeline de dois agentes (pesquisa → refinamento editorial) com modelos distintos opcionais | Explique por que a inferência local é importante para conformidade. |
+| (Estendido) conceito `tools.py` | Adicionar ferramentas de estimativa de tempo e tokens | Demonstrar padrão leve de invocação de ferramentas | #tool:get_time |
 
 ### Narrativa do Cenário
 
-A equipa de documentação de conformidade precisa de resumos internos rápidos, obtidos a partir de conhecimento local, sem enviar rascunhos para serviços na nuvem. Um agente pesquisador reúne pontos factuais concisos; um agente editor reescreve para clareza executiva. Aliases de modelos distintos podem ser atribuídos para otimizar latência (SLM rápido) versus refinamento estilístico (modelo maior apenas quando necessário).
+A equipa de documentação de conformidade precisa de resumos internos rápidos, baseados em conhecimento local, sem enviar rascunhos para serviços na nuvem. Um agente pesquisador reúne pontos factuais concisos; um agente editor reescreve para clareza executiva. Aliases de modelos distintos podem ser atribuídos para otimizar latência (SLM rápido) versus refinamento estilístico (modelo maior apenas quando necessário).
 
 ### Exemplo de Ambiente Multi-Modelo
 
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
-### Estrutura de Traços (Opcional)
+### Estrutura de Rastreamento (Opcional)
 
 ```json
 {
@@ -277,24 +277,24 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Persista cada passo num ficheiro JSONL para posterior pontuação com rubricas.
+Persista cada etapa em um arquivo JSONL para posterior pontuação baseada em rubrica.
 
 ### Melhorias Opcionais
 
-| Tema               | Melhoria                  | Benefício                  | Esboço de Implementação       |
-|--------------------|---------------------------|----------------------------|-------------------------------|
+| Tema              | Melhoria                  | Benefício              | Esboço de Implementação       |
+|-------------------|---------------------------|------------------------|--------------------------------|
 | Papéis Multi-Modelo | Modelos distintos por agente (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Especialização e velocidade | Selecionar variáveis de ambiente de alias, chamar `chat_once` com alias por papel |
-| Traços Estruturados | Traço JSON de cada ato (ferramenta, entrada, latência, tokens) | Depuração e avaliação       | Anexar dicionário a uma lista; escrever `.jsonl` no final |
-| Persistência de Memória | Contexto de diálogo recarregável | Continuidade da sessão      | Despejar `Agent.memory` em `sessions/<ts>.json` |
-| Registo de Ferramentas | Descoberta dinâmica de ferramentas | Extensibilidade             | Manter dicionário `TOOLS` e inspecionar nomes/descrições |
-| Retry & Backoff    | Cadeias longas robustas   | Reduzir falhas transitórias | Envolver `act` com try/except + backoff exponencial |
-| Pontuação com Rubricas | Etiquetas qualitativas automatizadas | Acompanhar melhorias        | Passagem secundária solicitando ao modelo: "Avalie clareza de 1-5" |
-| Memória Vetorial   | Recuperação semântica     | Contexto rico a longo prazo | Incorporar resumos, recuperar top-k na mensagem do sistema |
-| Respostas em Streaming | Resposta percebida mais rápida | Melhoria de UX              | Usar streaming quando disponível e descarregar tokens parciais |
-| Testes Determinísticos | Controlo de regressão   | CI estável                  | Executar com `temperature=0`, sementes de prompt fixas |
-| Ramificação Paralela | Exploração mais rápida   | Maior throughput            | Usar `concurrent.futures` para passos independentes dos agentes |
+| Rastreamentos Estruturados | Rastreamento JSON de cada ato (ferramenta, entrada, latência, tokens) | Depuração e avaliação | Anexar dict a uma lista; escrever `.jsonl` no final |
+| Persistência de Memória | Contexto de diálogo recarregável | Continuidade da sessão | Exportar `Agent.memory` para `sessions/<ts>.json` |
+| Registro de Ferramentas | Descoberta dinâmica de ferramentas | Extensibilidade | Manter dict `TOOLS` e inspecionar nomes/descrições |
+| Retry e Backoff | Cadeias longas robustas | Reduzir falhas transitórias | Envolver `act` com try/except + backoff exponencial |
+| Pontuação de Rubrica | Etiquetas qualitativas automatizadas | Acompanhar melhorias | Passagem secundária solicitando ao modelo: "Avalie clareza de 1-5" |
+| Memória Vetorial | Recuperação semântica | Contexto rico de longo prazo | Incorporar resumos, recuperar top-k na mensagem do sistema |
+| Respostas em Streaming | Resposta percebida mais rápida | Melhoria de UX | Usar streaming quando disponível e liberar tokens parciais |
+| Testes Determinísticos | Controle de regressão | CI estável | Executar com `temperature=0`, seeds de prompt fixos |
+| Ramificação Paralela | Exploração mais rápida | Maior throughput | Usar `concurrent.futures` para passos independentes dos agentes |
 
-#### Exemplo de Registo de Traços
+#### Exemplo de Registro de Rastreamento
 
 ```python
 trace.append({
@@ -314,9 +314,9 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-Persista pares (`answer`, `rating`) para construir um gráfico histórico de qualidade.
+Persista pares (`resposta`, `avaliação`) para construir um gráfico histórico de qualidade.
 
 ---
 
-**Aviso**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, é importante notar que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+**Aviso Legal**:  
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

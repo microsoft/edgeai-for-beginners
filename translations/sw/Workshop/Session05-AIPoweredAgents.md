@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T21:12:56+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T22:49:42+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "sw"
 }
@@ -11,23 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Muhtasari
 
-Buni na ratibu mawakala wa AI wenye majukumu mbalimbali kwa kutumia Foundry Local, ambayo ina muda wa majibu wa chini na inahifadhi faragha. Utatambua majukumu ya mawakala, mikakati ya kumbukumbu, mifumo ya kuitisha zana, na grafu za utekelezaji. Kipindi hiki kinaanzisha mifumo ya msingi ambayo unaweza kupanua kwa kutumia Chainlit au LangGraph. Mradi wa kuanzia unapanua sampuli ya usanifu wa mawakala iliyopo ili kuongeza uhifadhi wa kumbukumbu + ndoano za tathmini.
+Buni na ratibu mawakala wa AI wenye majukumu mbalimbali kwa kutumia mazingira ya Foundry Local yenye kasi ya chini na uhifadhi wa faragha. Utaweza kufafanua majukumu ya mawakala, mikakati ya kumbukumbu, mifumo ya kuitisha zana, na grafu za utekelezaji. Kipindi hiki kinatambulisha mifumo ya msingi ambayo unaweza kupanua kwa kutumia Chainlit au LangGraph. Mradi wa kuanzia unapanua sampuli ya usanifu wa mawakala iliyopo ili kuongeza uhifadhi wa kumbukumbu + ndoano za tathmini.
 
 ## Malengo ya Kujifunza
 
-- **Tambua Majukumu**: Maelekezo ya mfumo & mipaka ya uwezo
+- **Fafanua Majukumu**: Maelekezo ya mfumo & mipaka ya uwezo
 - **Tekeleza Kumbukumbu**: Muda mfupi (mazungumzo), muda mrefu (vector / faili), scratchpads za muda mfupi
-- **Buni Mifumo ya Kazi**: Hatua za mawakala za mfululizo, matawi, na sambamba
-- **Unganisha Zana**: Mfano mwepesi wa kuitisha zana kwa kutumia kazi
-- **Tathmini**: Ufuatiliaji wa msingi + upimaji wa matokeo kwa kutumia rubriki
+- **Panga Mifumo ya Kazi**: Hatua za mawakala za mfululizo, matawi, na sambamba
+- **Unganisha Zana**: Mfano wa kuitisha zana kwa kazi nyepesi
+- **Tathmini**: Ufuatiliaji wa msingi + alama za matokeo zinazoongozwa na rubriki
 
 ## Mahitaji ya Awali
 
 - Vipindi 1–4 vimekamilika
-- Python na `foundry-local-sdk`, `openai`, `chainlit` (hiari)
+- Python na `foundry-local-sdk`, `openai`, `chainlit` ya hiari
 - Miundo ya ndani inayoendesha (angalau `phi-4-mini`)
 
-### Kipande cha Mazingira ya Msalaba
+### Kipande cha Mazingira ya Msalaba-Jukwaa
 
 Windows:
 ```powershell
@@ -53,7 +53,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Mtiririko wa Demo (Dakika 30)
 
-### 1. Tambua Majukumu ya Mawakala & Kumbukumbu (Dakika 7)
+### 1. Fafanua Majukumu ya Mawakala & Kumbukumbu (Dakika 7)
 
 Unda `samples/05-agents/agents_core.py`:
 
@@ -131,7 +131,7 @@ python samples/05-agents/agents_core.py
 
 ### 3. Ongeza Kuitisha Zana (Dakika 7)
 
-Panua kwa kutumia `samples/05-agents/tools.py`:
+Panua na `samples/05-agents/tools.py`:
 
 ```python
 from datetime import datetime
@@ -188,10 +188,10 @@ if __name__ == '__main__':
 ### 5. Mradi wa Kuanzia: Panua `05-agent-architecture` (Dakika 7)
 
 Ongeza:
-1. Safu ya kumbukumbu ya kudumu (mfano, kuongeza mistari ya JSON ya mazungumzo)
-2. Rubriki rahisi ya tathmini: ukweli / uwazi / mitindo
-3. Chainlit ya mbele (hiari) (vichupo viwili: mazungumzo & ufuatiliaji)
-4. Mashine ya hali ya mtindo wa LangGraph (hiari ikiwa unaongeza utegemezi) kwa maamuzi ya matawi
+1. Tabaka la kumbukumbu ya kudumu (mfano, kuongeza mistari ya JSON ya mazungumzo)
+2. Rubriki rahisi ya tathmini: ukweli / uwazi / sehemu za mtindo
+3. Mbele ya hiari ya Chainlit (vichupo viwili: mazungumzo & ufuatiliaji)
+4. Mashine ya hali ya mtindo wa LangGraph ya hiari (ikiwa unaongeza utegemezi) kwa maamuzi ya matawi
 
 ## Orodha ya Ukaguzi wa Uthibitishaji
 
@@ -200,18 +200,18 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Tegemea matokeo ya mtiririko wa kazi yaliyo na maelezo ya kuingiza zana.
+Tegemea matokeo ya mtiririko wa bomba yaliyo na maelezo ya kuingiza zana.
 
 ## Muhtasari wa Mikakati ya Kumbukumbu
 
-| Safu | Kusudi | Mfano |
-|------|--------|-------|
+| Tabaka | Kusudi | Mfano |
+|-------|---------|---------|
 | Muda mfupi | Mwendelezo wa mazungumzo | Ujumbe N za mwisho |
 | Kipindi | Kumbukumbu ya kikao | JSON kwa kila kikao |
 | Semantiki | Urejeshaji wa muda mrefu | Hifadhi ya vector ya muhtasari |
 | Scratchpad | Hatua za kufikiri | Mnyororo wa mawazo wa ndani (binafsi) |
 
-## Ndoano za Tathmini (Kifupi)
+## Ndoano za Tathmini (Kifalsafa)
 
 ```python
 evaluation = {
@@ -227,10 +227,10 @@ evaluation = {
 ## Utatuzi wa Matatizo
 
 | Tatizo | Sababu | Suluhisho |
-|--------|--------|-----------|
-| Majibu yanayojirudia | Dirisha la muktadha kubwa sana/ndogo sana | Rekebisha parameta ya dirisha la kumbukumbu |
-| Zana haijaitishwa | Sintaksia isiyo sahihi | Tumia muundo `#tool:tool_name` |
-| Uratibu wa polepole | Miundo mingi baridi | Tumia maelekezo ya joto kabla ya kuanza |
+|-------|------|------------|
+| Majibu yanayojirudia | Dirisha la muktadha kubwa sana/ndogo sana | Rekebisha parameter ya dirisha la kumbukumbu |
+| Zana haijaitishwa | Sintaksia isiyo sahihi | Tumia muundo wa `#tool:tool_name` |
+| Uratibu wa polepole | Miundo mingi baridi | Endesha maelekezo ya joto kabla |
 
 ## Marejeleo
 
@@ -245,19 +245,20 @@ evaluation = {
 
 ## Mfano wa Hali & Ulinganisho wa Warsha
 
-| Script ya Warsha | Hali | Lengo | Mfano wa Maelekezo |
-|------------------|------|-------|--------------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot ya utafiti wa maarifa inayozalisha muhtasari unaofaa kwa watendaji | Mtiririko wa mawakala wawili (utafiti → uhariri wa kitaalamu) na miundo tofauti ya hiari | Eleza kwa nini utambuzi wa ukingo ni muhimu kwa kufuata sheria. |
-| (Imepanuliwa) dhana ya `tools.py` | Ongeza zana za muda & makadirio ya tokeni | Onyesha mfano mwepesi wa kuitisha zana | #tool:get_time |
+| Hati ya Warsha | Hali | Lengo | Mfano wa Maelekezo |
+|-----------------|----------|-----------|----------------|
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot ya utafiti wa maarifa inayotoa muhtasari unaofaa kwa watendaji | Bomba la mawakala wawili (utafiti → uhariri wa kitaalamu) na miundo tofauti ya hiari | Eleza kwa nini uchambuzi wa makali ni muhimu kwa kufuata sheria. |
+| (Imepanuliwa) dhana ya `tools.py` | Ongeza zana za muda & makadirio ya tokeni | Onyesha mfano wa kuitisha zana nyepesi | #tool:get_time |
 
-### Simulizi ya Hali
-Timu ya nyaraka za kufuata inahitaji muhtasari wa haraka wa ndani unaotokana na maarifa ya ndani bila kutuma rasimu kwa huduma za wingu. Wakala wa utafiti hukusanya pointi za ukweli kwa ufupi; wakala wa mhariri huandika upya kwa uwazi wa watendaji. Miundo tofauti inaweza kutengwa ili kuboresha muda wa majibu (SLM ya haraka) dhidi ya uboreshaji wa mitindo (muundo mkubwa tu inapohitajika).
+### Simulizi la Hali
+Timu ya nyaraka za kufuata inahitaji muhtasari wa haraka wa ndani uliochukuliwa kutoka kwa maarifa ya ndani bila kutuma rasimu kwa huduma za wingu. Wakala wa utafiti hukusanya pointi za ukweli kwa ufupi; wakala wa mhariri huandika upya kwa uwazi wa watendaji. Miundo tofauti ya wakala inaweza kutengwa ili kuboresha kasi (SLM ya haraka) dhidi ya uboreshaji wa mtindo (mfano mkubwa tu unahitajika).
 
 ### Mfano wa Mazingira ya Miundo Mingi
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
@@ -273,22 +274,21 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Hifadhi kila hatua kwenye faili ya JSONL kwa upimaji wa rubriki baadaye.
+Hifadhi kila hatua kwenye faili ya JSONL kwa alama za rubriki baadaye.
 
 ### Uboreshaji wa Hiari
 
 | Mada | Uboreshaji | Faida | Mfano wa Utekelezaji |
-|------|-----------|-------|---------------------|
+|-------|------------|---------|-----------------------|
 | Majukumu ya Miundo Mingi | Miundo tofauti kwa kila wakala (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Utaalamu & kasi | Chagua env vars za alias, piga `chat_once` na alias kwa kila jukumu |
-| Ufuatiliaji Ulioandaliwa | Ufuatiliaji wa JSON wa kila hatua (zana, pembejeo, muda wa majibu, tokeni) | Ufuatiliaji & tathmini | Ongeza kamusi kwenye orodha; andika `.jsonl` mwishoni |
-| Uhifadhi wa Kumbukumbu | Muktadha wa mazungumzo unaoweza kupakiwa tena | Mwendelezo wa kikao | Hifadhi `Agent.memory` kwenye `sessions/<ts>.json` |
-| Usajili wa Zana | Ugunduzi wa zana wa nguvu | Uwezo wa kupanua | Dhibiti kamusi ya `TOOLS` na angalia majina/maelezo |
-| Jaribu Tena & Rudisha Nyuma | Mnyororo mrefu wenye nguvu | Punguza kushindwa kwa muda mfupi | Funga `act` na jaribu/except + rudisha nyuma kwa kasi |
-| Upimaji wa Rubriki | Lebo za ubora za kiotomatiki | Fuatilia maboresho | Pasi ya pili ya kuomba muundo: "Pima uwazi 1-5" |
-| Kumbukumbu ya Vector | Urejeshaji wa semantiki | Muktadha wa muda mrefu wenye utajiri | Ingiza muhtasari, rejesha juu-k katika ujumbe wa mfumo |
-| Majibu ya Kutiririka | Majibu ya haraka yanayoonekana | Uboreshaji wa UX | Tumia kutiririka mara tu inapatikana na toa tokeni za sehemu |
+| Ufuatiliaji Ulioandaliwa | Ufuatiliaji wa JSON wa kila kitendo (zana, pembejeo, latency, tokeni) | Ufuatiliaji & tathmini | Ongeza dict kwenye orodha; andika `.jsonl` mwishoni |
+| Uhifadhi wa Kumbukumbu | Muktadha wa mazungumzo unaoweza kupakiwa tena | Mwendelezo wa kikao | Dumisha `Agent.memory` kwa `sessions/<ts>.json` |
+| Usajili wa Zana | Ugunduzi wa zana wa nguvu | Uwezo wa kupanua | Dumisha dict ya `TOOLS` & angalia majina/maelezo |
+| Jaribu Tena & Rudisha Nyuma | Minyororo mirefu yenye nguvu | Punguza kushindwa kwa muda mfupi | Funga `act` na jaribu/except + rudisha nyuma kwa kasi |
+| Alama za Rubriki | Lebo za ubora za kiotomatiki | Fuatilia maboresho | Pasi ya pili ya kuhamasisha mfano: "Pima uwazi 1-5" |
+| Kumbukumbu ya Vector | Urejeshaji wa semantiki | Muktadha wa muda mrefu tajiri | Ingiza muhtasari, rejesha juu-k kwa ujumbe wa mfumo |
+| Majibu ya Kutiririka | Majibu ya haraka yanayoonekana | Uboreshaji wa UX | Tumia kutiririka mara tu inapatikana na safisha tokeni za sehemu |
 | Majaribio ya Kiamua | Udhibiti wa kurudi nyuma | CI thabiti | Endesha na `temperature=0`, mbegu za maelekezo zilizowekwa |
-| Matawi Sambamba | Uchunguzi wa haraka | Uwezo wa kazi | Tumia `concurrent.futures` kwa hatua huru za wakala |
 
 #### Mfano wa Rekodi ya Ufuatiliaji
 

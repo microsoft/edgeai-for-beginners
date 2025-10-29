@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T06:59:15+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T20:31:46+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ur"
 }
 -->
-# ورکشاپ نمونے - فوری حوالہ کارڈ
+# ورکشاپ کے نمونے - فوری حوالہ کارڈ
 
 **آخری اپ ڈیٹ**: 8 اکتوبر، 2025
 
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -40,7 +40,7 @@ python chat_bootstrap.py "What is edge AI?"
 | 03 | `benchmark_oss_models.py` | ماڈل کی بینچ مارکنگ | ~2 منٹ |
 | 04 | `model_compare.py` | SLM بمقابلہ LLM | ~45 سیکنڈ |
 | 05 | `agents_orchestrator.py` | ملٹی ایجنٹ سسٹم | ~60 سیکنڈ |
-| 06 | `models_router.py` | ارادے کی روٹنگ | ~45 سیکنڈ |
+| 06 | `models_router.py` | ارادے کی رہنمائی | ~45 سیکنڈ |
 | 06 | `models_pipeline.py` | ملٹی اسٹیپ پائپ لائن | ~60 سیکنڈ |
 
 ---
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### سیشن کے مطابق
+### سیشن کے لحاظ سے مخصوص
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -102,7 +102,7 @@ python scripts/test_samples.py --verbose
 
 ---
 
-## 🐛 خرابیوں کا پتہ لگانا
+## 🐛 مسائل کا حل
 
 ### کنکشن کی خرابی
 ```bash
@@ -143,7 +143,7 @@ set BENCH_ROUNDS=1
 
 ---
 
-## 📖 عام پیٹرنز
+## 📖 عام نمونے
 
 ### بنیادی چیٹ
 ```python
@@ -167,7 +167,7 @@ manager, client, model_id = get_client(
 )
 ```
 
-### خرابیوں کا انتظام
+### خرابی کا انتظام
 ```python
 try:
     manager, client, model_id = get_client(alias)
@@ -210,7 +210,7 @@ for chunk in stream:
 - **SDK دستاویزات**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **فوری حوالہ**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **اپ ڈیٹ کا خلاصہ**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **مائیگریشن نوٹس**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **منتقلی کے نوٹس**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -226,7 +226,7 @@ for chunk in stream:
 
 ## 🎯 نمونہ ورک فلو
 
-### سب کچھ جانچیں
+### سب کچھ ٹیسٹ کریں
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
@@ -234,40 +234,38 @@ python scripts/test_samples.py --quick
 
 ### ماڈلز کی بینچ مارکنگ
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG پائپ لائن
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### ملٹی ایجنٹ سسٹم
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**فوری مدد**: کسی بھی نمونے کو `--help` کے ساتھ چلائیں یا ڈاکسٹرنگ چیک کریں:
+**فوری مدد**: کسی بھی نمونے کو `samples` ڈائریکٹری سے `--help` کے ساتھ چلائیں یا ڈاک اسٹرنگ چیک کریں:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**تمام نمونے اکتوبر 2025 میں Foundry Local SDK بہترین طریقوں کے ساتھ اپ ڈیٹ کیے گئے** ✨
+**تمام نمونے اکتوبر 2025 میں Foundry Local SDK کے بہترین طریقوں کے ساتھ اپ ڈیٹ کیے گئے ہیں** ✨
 
 ---
 
-**ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا خامیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+**ڈسکلیمر**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا غیر درستیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔

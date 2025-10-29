@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T14:25:42+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:08:10+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "da"
 }
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. Konfigurer miljøet
 
-`.env`-filen er allerede konfigureret med fornuftige standardindstillinger. De fleste brugere behøver ikke ændre noget.
+`.env`-filen er allerede konfigureret med fornuftige standardindstillinger. De fleste brugere behøver ikke at ændre noget.
 
 **Valgfrit**: Gennemgå og tilpas indstillinger:
 ```bash
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **For Python-scripts:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -56,15 +56,15 @@ python chat_bootstrap.py
 
 ## Reference for miljøvariabler
 
-### Kernekonfiguration
+### Grundlæggende konfiguration
 
 | Variabel | Standard | Beskrivelse |
 |----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Standardmodel for eksempler |
 | `FOUNDRY_LOCAL_ENDPOINT` | (tom) | Overstyr service-endpoint |
-| `PYTHONPATH` | Workshop-stier | Python-modulsøgningssti |
+| `PYTHONPATH` | Workshop-stier | Søgesti for Python-moduler |
 
-**Hvornår man skal sætte FOUNDRY_LOCAL_ENDPOINT:**
+**Hvornår skal FOUNDRY_LOCAL_ENDPOINT sættes:**
 - Fjern Foundry Local-instans
 - Tilpasset portkonfiguration
 - Adskillelse af udvikling/produktion
@@ -78,44 +78,44 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ```
 
-### Session-specifikke variabler
+### Sessionsspecifikke variabler
 
 #### Session 02: RAG Pipeline
 | Variabel | Standard | Formål |
 |----------|---------|---------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embeddingsmodel |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding-model |
 | `RAG_QUESTION` | Forudkonfigureret | Testspørgsmål |
 
 #### Session 03: Benchmarking
 | Variabel | Standard | Formål |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modeller til benchmarking |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modeller til benchmarking |
 | `BENCH_ROUNDS` | `3` | Iterationer pr. model |
 | `BENCH_PROMPT` | Forudkonfigureret | Testprompt |
-| `BENCH_STREAM` | `0` | Måling af første-token-latens |
+| `BENCH_STREAM` | `0` | Måling af første-token latenstid |
 
-#### Session 04: Model-sammenligning
+#### Session 04: Model sammenligning
 | Variabel | Standard | Formål |
 |----------|---------|---------|
-| `SLM_ALIAS` | `phi-4-mini` | Lille sproglig model |
-| `LLM_ALIAS` | `qwen2.5-7b` | Stor sproglig model |
+| `SLM_ALIAS` | `phi-4-mini` | Lille sprogmodel |
+| `LLM_ALIAS` | `qwen2.5-7b` | Stor sprogmodel |
 | `COMPARE_PROMPT` | Forudkonfigureret | Sammenligningsprompt |
-| `COMPARE_RETRIES` | `2` | Forsøgsforsøg |
+| `COMPARE_RETRIES` | `2` | Forsøg på genprøvning |
 
 #### Session 05: Multi-agent orkestrering
 | Variabel | Standard | Formål |
 |----------|---------|---------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Forsker-agentmodel |
-| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Redaktør-agentmodel |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Forsker-agent model |
+| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Redaktør-agent model |
 | `AGENT_QUESTION` | Forudkonfigureret | Testspørgsmål |
 
-### Pålidelighedskonfiguration
+### Konfiguration for pålidelighed
 
 | Variabel | Standard | Formål |
 |----------|---------|---------|
 | `SHOW_USAGE` | `1` | Udskriv tokenforbrug |
-| `RETRY_ON_FAIL` | `1` | Aktiver retry-logik |
-| `RETRY_BACKOFF` | `1.0` | Retry-forsinkelse (sekunder) |
+| `RETRY_ON_FAIL` | `1` | Aktiver genprøvningslogik |
+| `RETRY_BACKOFF` | `1.0` | Forsinkelse ved genprøvning (sekunder) |
 
 ## Almindelige konfigurationer
 
@@ -138,9 +138,9 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Benchmarking-opsætning
+### Benchmarking opsætning
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -159,7 +159,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ## Anbefalede modeller
 
-### Efter brugsscenarie
+### Efter anvendelsesområde
 
 **Generelt formål:**
 - `phi-4-mini` - Balanceret kvalitet og hastighed
@@ -174,7 +174,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Kodegenerering:**
 - `deepseek-coder-1.3b` - Specialiseret til kode
-- `phi-4-mini` - Generelt formål kodning
+- `phi-4-mini` - Generelt formål for kodning
 
 ### Efter ressource tilgængelighed
 
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### Azure OpenAI hybridopsætning
+### Azure OpenAI hybrid opsætning
 
 ```bash
 # Use local for development
@@ -259,12 +259,12 @@ dir .env     # Windows
 pwd  # Should be in Workshop or repository root
 ```
 
-### Serviceforbindelsesproblemer
+### Problemer med serviceforbindelse
 
 **Symptomer:**
-- "Connection refused"-fejl
+- "Connection refused" fejl
 - "Service ikke tilgængelig"
-- Timeout-fejl
+- Timeout fejl
 
 **Løsninger:**
 ```bash
@@ -285,7 +285,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ### Model ikke fundet
 
 **Symptomer:**
-- "Model ikke fundet"-fejl
+- "Model ikke fundet" fejl
 - "Alias ikke genkendt"
 
 **Løsninger:**
@@ -303,20 +303,17 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Importfejl
 
 **Symptomer:**
-- "Modul ikke fundet"-fejl
-- "Kan ikke importere workshop_utils"
+- "Modul ikke fundet" fejl
 
 **Løsninger:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Test af konfiguration
@@ -366,7 +363,7 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## Sikkerhedsbedste praksis
+## Sikkerhedspraksis
 
 ### 1. Aldrig commit hemmeligheder
 
@@ -412,7 +409,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - `QUICK_START.md` - Kom godt i gang guide
 - `SDK_MIGRATION_NOTES.md` - Detaljer om SDK-opdatering
-- `Workshop/samples/*/README.md` - Eksempelspecifikke guider
+- `Workshop/samples/*/README.md` - Guides specifikt for eksempler
 
 ---
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at opnå nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T06:43:20+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T20:28:08+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "ur"
 }
 -->
-# ماحول کی تشکیل کے رہنما
+# ماحول کی ترتیب کے رہنما
 
 ## جائزہ
 
-ورکشاپ کے نمونے ترتیب کے لیے ماحول کے متغیرات استعمال کرتے ہیں، جو ریپوزیٹری کی جڑ میں `.env` فائل میں مرکوز ہیں۔ یہ کوڈ میں ترمیم کیے بغیر آسان تخصیص کی اجازت دیتا ہے۔
+ورکشاپ کے نمونے ترتیب کے لیے ماحول کے متغیرات استعمال کرتے ہیں، جو ریپوزیٹری کی جڑ میں موجود `.env` فائل میں مرکوز ہیں۔ یہ کوڈ میں تبدیلی کیے بغیر آسان تخصیص کی اجازت دیتا ہے۔
 
 ## فوری آغاز
 
@@ -28,11 +28,11 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. ماحول کی تشکیل کریں
+### 2. ماحول کی ترتیب کریں
 
-`.env` فائل پہلے سے ہی معقول ڈیفالٹس کے ساتھ ترتیب دی گئی ہے۔ زیادہ تر صارفین کو کچھ تبدیل کرنے کی ضرورت نہیں ہوگی۔
+`.env` فائل پہلے سے معقول ڈیفالٹس کے ساتھ ترتیب دی گئی ہے۔ زیادہ تر صارفین کو کچھ بھی تبدیل کرنے کی ضرورت نہیں ہوگی۔
 
-**اختیاری**: ترتیبات کا جائزہ لیں اور تخصیص کریں:
+**اختیاری**: ترتیبات کا جائزہ لیں اور حسب ضرورت تبدیلی کریں:
 ```bash
 # Edit .env file
 notepad .env  # Windows
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **پائتھون اسکرپٹس کے لیے:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -56,17 +56,17 @@ python chat_bootstrap.py
 
 ## ماحول کے متغیرات کا حوالہ
 
-### بنیادی تشکیل
+### بنیادی ترتیب
 
 | متغیر | ڈیفالٹ | وضاحت |
-|-------|--------|-------|
+|-------|--------|--------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | نمونوں کے لیے ڈیفالٹ ماڈل |
 | `FOUNDRY_LOCAL_ENDPOINT` | (خالی) | سروس اینڈ پوائنٹ کو اووررائیڈ کریں |
 | `PYTHONPATH` | ورکشاپ کے راستے | پائتھون ماڈیول تلاش کا راستہ |
 
 **جب FOUNDRY_LOCAL_ENDPOINT سیٹ کریں:**
 - ریموٹ فاؤنڈری لوکل انسٹینس
-- کسٹم پورٹ کی تشکیل
+- کسٹم پورٹ کی ترتیب
 - ترقی/پیداوار کی علیحدگی
 
 **مثال:**
@@ -84,14 +84,14 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | متغیر | ڈیفالٹ | مقصد |
 |-------|--------|-------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | ایمبیڈنگ ماڈل |
-| `RAG_QUESTION` | پہلے سے تشکیل شدہ | ٹیسٹ سوال |
+| `RAG_QUESTION` | پہلے سے ترتیب شدہ | ٹیسٹ سوال |
 
 #### سیشن 03: بینچ مارکنگ
 | متغیر | ڈیفالٹ | مقصد |
 |-------|--------|-------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | بینچ مارک کرنے کے لیے ماڈلز |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | بینچ مارک کرنے کے لیے ماڈلز |
 | `BENCH_ROUNDS` | `3` | ہر ماڈل کے لیے تکرار |
-| `BENCH_PROMPT` | پہلے سے تشکیل شدہ | ٹیسٹ پرامپٹ |
+| `BENCH_PROMPT` | پہلے سے ترتیب شدہ | ٹیسٹ پرامپٹ |
 | `BENCH_STREAM` | `0` | پہلے ٹوکن کی تاخیر کی پیمائش کریں |
 
 #### سیشن 04: ماڈل کا موازنہ
@@ -99,7 +99,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |-------|--------|-------|
 | `SLM_ALIAS` | `phi-4-mini` | چھوٹا لینگویج ماڈل |
 | `LLM_ALIAS` | `qwen2.5-7b` | بڑا لینگویج ماڈل |
-| `COMPARE_PROMPT` | پہلے سے تشکیل شدہ | موازنہ پرامپٹ |
+| `COMPARE_PROMPT` | پہلے سے ترتیب شدہ | موازنہ پرامپٹ |
 | `COMPARE_RETRIES` | `2` | دوبارہ کوشش کی تعداد |
 
 #### سیشن 05: ملٹی ایجنٹ آرکسٹریشن
@@ -107,9 +107,9 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |-------|--------|-------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | ریسرچر ایجنٹ ماڈل |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | ایڈیٹر ایجنٹ ماڈل |
-| `AGENT_QUESTION` | پہلے سے تشکیل شدہ | ٹیسٹ سوال |
+| `AGENT_QUESTION` | پہلے سے ترتیب شدہ | ٹیسٹ سوال |
 
-### قابل اعتماد تشکیل
+### قابل اعتماد ترتیب
 
 | متغیر | ڈیفالٹ | مقصد |
 |-------|--------|-------|
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### بینچ مارکنگ سیٹ اپ
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -159,7 +159,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ## تجویز کردہ ماڈلز
 
-### استعمال کے کیس کے لحاظ سے
+### استعمال کے کیس کے مطابق
 
 **عام مقصد:**
 - `phi-4-mini` - معیار اور رفتار میں توازن
@@ -173,10 +173,10 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - اچھا معیار، کم وسائل
 
 **کوڈ جنریشن:**
-- `deepseek-coder-1.3b` - کوڈ کے لیے مخصوص
+- `deepseek-coder-1.3b` - کوڈ کے لیے خاص
 - `phi-4-mini` - عمومی مقصد کوڈنگ
 
-### وسائل کی دستیابی کے لحاظ سے
+### وسائل کی دستیابی کے مطابق
 
 **کم وسائل (< 8GB RAM):**
 ```bash
@@ -199,7 +199,7 @@ SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-14b
 ```
 
-## اعلی درجے کی تشکیل
+## اعلیٰ درجے کی ترتیب
 
 ### کسٹم اینڈ پوائنٹس
 
@@ -234,14 +234,14 @@ AZURE_OPENAI_API_KEY=your-key-here
 AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-## خرابیوں کا سراغ لگانا
+## مسائل کا حل
 
-### ماحول کے متغیرات لوڈ نہیں ہوئے
+### ماحول کے متغیرات لوڈ نہیں ہو رہے
 
 **علامات:**
-- اسکرپٹس غلط ماڈلز استعمال کرتے ہیں
+- اسکرپٹس غلط ماڈلز استعمال کر رہے ہیں
 - کنکشن کی غلطیاں
-- متغیرات کو تسلیم نہیں کیا گیا
+- متغیرات کو تسلیم نہیں کیا جا رہا
 
 **حل:**
 ```bash
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **علامات:**
 - "ماڈل نہیں ملا" کی غلطیاں
-- "عرف تسلیم نہیں کیا گیا"
+- "عرفیت تسلیم نہیں کیا گیا"
 
 **حل:**
 ```bash
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **علامات:**
 - "ماڈیول نہیں ملا" کی غلطیاں
-- "workshop_utils کو درآمد نہیں کر سکتا"
 
 **حل:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## ترتیب کی جانچ
@@ -412,7 +409,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - `QUICK_START.md` - شروعاتی رہنما
 - `SDK_MIGRATION_NOTES.md` - SDK اپ ڈیٹ کی تفصیلات
-- `Workshop/samples/*/README.md` - نمونے کے مخصوص رہنما
+- `Workshop/samples/*/README.md` - نمونہ مخصوص رہنما
 
 ---
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **ڈسکلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا غیر درستیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا غیر درستیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔

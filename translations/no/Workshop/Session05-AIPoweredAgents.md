@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T14:27:44+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T22:13:02+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "no"
 }
@@ -11,15 +11,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Sammendrag
 
-Design og orkestrer multirolle AI-agenter ved å bruke Foundry Locals lav-latens, personvernbevarende runtime. Du vil definere agentroller, minnestrategier, verktøykallingsmønstre og utførelsesgrafer. Sesjonen introduserer grunnleggende mønstre som kan utvides med Chainlit eller LangGraph. Startprosjektet utvider den eksisterende agentarkitekturen for å legge til minnepersistens og evalueringskroker.
+Design og orkestrer AI-agenter med flere roller ved hjelp av Foundry Locals lav-latens og personvernvennlige runtime. Du vil definere agentroller, minnestrategier, verktøyinnkallingsmønstre og utførelsesgrafer. Sesjonen introduserer rammeverksmønstre som kan utvides med Chainlit eller LangGraph. Startprosjektet utvider den eksisterende agentarkitekturen for å legge til minnepersistens og evalueringskroker.
 
 ## Læringsmål
 
 - **Definer roller**: Systemprompter og kapasitetsgrenser
-- **Implementer minne**: Kortvarig (samtale), langvarig (vektor / fil), midlertidige notater
+- **Implementer minne**: Korttidsminne (samtale), langtidsminne (vektor / fil), midlertidige notatblokker
 - **Bygg arbeidsflyter**: Sekvensielle, forgrenede og parallelle agentsteg
-- **Integrer verktøy**: Lettvektig funksjonskallingsmønster
-- **Evaluer**: Grunnleggende spor + resultatvurdering basert på rubrikk
+- **Integrer verktøy**: Lettvektig funksjonsinnkallingsmønster for verktøy
+- **Evaluer**: Grunnleggende spor + vurdering basert på rubrikkskåring
 
 ## Forutsetninger
 
@@ -27,7 +27,7 @@ Design og orkestrer multirolle AI-agenter ved å bruke Foundry Locals lav-latens
 - Python med `foundry-local-sdk`, `openai`, valgfritt `chainlit`
 - Lokale modeller i drift (minst `phi-4-mini`)
 
-### Tverrplattformmiljø Snippet
+### Snutt for tverrplattformmiljø
 
 Windows:
 ```powershell
@@ -45,13 +45,13 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Hvis agenter kjøres fra macOS mot en ekstern Windows-vertsservice:
+Hvis agenter kjøres fra macOS mot en ekstern Windows-vertsserver:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Demo Flyt (30 min)
+## Demo-flyt (30 min)
 
 ### 1. Definer agentroller og minne (7 min)
 
@@ -122,14 +122,14 @@ if __name__ == "__main__":
 ```
 
 
-### 2. CLI Grunnstruktur Mønster (3 min)
+### 2. CLI-rammeverksmønster (3 min)
 
 ```powershell
 python samples/05-agents/agents_core.py
 ```
 
 
-### 3. Legg til verktøykalling (7 min)
+### 3. Legg til verktøyinnkalling (7 min)
 
 Utvid med `samples/05-agents/tools.py`:
 
@@ -150,7 +150,8 @@ TOOLS = {
 }
 ```
 
-Endre `agents_core.py` for å tillate enkel verktøysyntaks: brukeren skriver `#tool:get_time` og agenten utvider verktøyutdata til konteksten før generering.
+
+Endre `agents_core.py` for å tillate enkel verktøysyntaks: brukeren skriver `#tool:get_time`, og agenten utvider verktøyutdata til konteksten før generering.
 
 ### 4. Orkestrert arbeidsflyt (6 min)
 
@@ -200,16 +201,16 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Forvent strukturert pipeline-utdata med notat om verktøysinnsprøytning.
+Forvent strukturert pipeline-utdata med notat om verktøyinnsprøyting.
 
 ## Oversikt over minnestrategier
 
 | Lag | Formål | Eksempel |
 |-----|--------|----------|
-| Kortvarig | Samtale kontinuitet | Siste N meldinger |
+| Korttidsminne | Samtalekontinuitet | Siste N meldinger |
 | Episodisk | Sesjonsminne | JSON per sesjon |
 | Semantisk | Langtidsminne | Vektorlager med sammendrag |
-| Notat | Resonneringssteg | Inline tankerekke (privat) |
+| Notatblokk | Resonneringssteg | Inline tankerekke (privat) |
 
 ## Evalueringskroker (Konseptuelt)
 
@@ -227,9 +228,9 @@ evaluation = {
 ## Feilsøking
 
 | Problem | Årsak | Løsning |
-|---------|-------|---------|
-| Gjentakende svar | Kontekstvindu for stort/lite | Juster minnevindusparameter |
-| Verktøy ikke kalt | Feil syntaks | Bruk `#tool:tool_name` format |
+|---------|-------|--------|
+| Gjentakende svar | Kontekstvinduet er for stort/lite | Juster parameter for minnevindu |
+| Verktøy ikke innkalt | Feil syntaks | Bruk formatet `#tool:tool_name` |
 | Langsom orkestrering | Flere kalde modeller | Forhåndskjør oppvarmingsprompter |
 
 ## Referanser
@@ -240,28 +241,29 @@ evaluation = {
 
 ---
 
-**Sesjonsvarighet**: 30 min  
+**Varighet på sesjon**: 30 min  
 **Vanskelighetsgrad**: Avansert
 
 ## Eksempelscenario og workshopkartlegging
 
-| Workshop Skript | Scenario | Mål | Eksempelprompt |
+| Workshop-skript | Scenario | Mål | Eksempelprompt |
 |-----------------|----------|-----|----------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Kunnskapsforskningsbot som produserer ledervennlige sammendrag | To-agent pipeline (forskning → redaksjonell polering) med valgfritt distinkte modeller | Forklar hvorfor edge-inferens er viktig for samsvar. |
-| (Utvidet) `tools.py` konsept | Legg til tid- og tokenestimeringsverktøy | Demonstrer lettvektig verktøykallingsmønster | #tool:get_time |
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Kunnskapsforskningsbot som lager ledelsesvennlige sammendrag | To-agent pipeline (forskning → redaksjonell polering) med valgfritt distinkte modeller | Forklar hvorfor edge-inferens er viktig for samsvar. |
+| (Utvidet) `tools.py`-konsept | Legg til verktøy for tid- og tokenestimering | Demonstrer lettvektig verktøyinnkallingsmønster | #tool:get_time |
 
 ### Scenariofortelling
-Samsvarsdokumentasjonsteamet trenger raske interne oppsummeringer hentet fra lokal kunnskap uten å sende utkast til skytjenester. En forskeragent samler konsise faktuelle punkter; en redaktøragent omskriver for lederklarhet. Distinkte modellaliaser kan tildeles for å optimalisere latens (rask SLM) vs stilistisk raffinering (større modell kun når nødvendig).
+Teamet for samsvarsdokumentasjon trenger raske interne oppsummeringer hentet fra lokal kunnskap uten å sende utkast til skytjenester. En forskeragent samler konsise faktuelle punkter; en redaktøragent omskriver for ledelsesmessig klarhet. Distinkte modellaliaser kan tildeles for å optimalisere latens (rask SLM) vs stilistisk raffinering (større modell kun når nødvendig).
 
-### Eksempel Multi-Model Miljø
+### Eksempel på miljø med flere modeller
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
-### Sporstruktur (Valgfritt)
+### Struktur for spor (valgfritt)
 ```json
 {
     "step": 1,
@@ -273,20 +275,20 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Vedvar hvert steg til en JSONL-fil for senere rubrikkvurdering.
+Lagres hvert steg til en JSONL-fil for senere rubrikkskåring.
 
 ### Valgfrie forbedringer
 
 | Tema | Forbedring | Fordel | Implementeringsskisse |
 |------|------------|--------|-----------------------|
-| Multi-Model Roller | Distinkte modeller per agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Spesialisering og hastighet | Velg alias miljøvariabler, kall `chat_once` med alias per rolle |
-| Strukturerte Spor | JSON-spor av hver handling (verktøy, input, latens, tokens) | Feilsøking og evaluering | Legg til dict i en liste; skriv `.jsonl` til slutt |
+| Roller med flere modeller | Distinkte modeller per agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Spesialisering og hastighet | Velg alias miljøvariabler, kall `chat_once` med alias per rolle |
+| Strukturerte spor | JSON-spor for hver handling (verktøy, input, latens, tokens) | Feilsøking og evaluering | Legg til dict i en liste; skriv `.jsonl` til slutt |
 | Minnepersistens | Gjenlastbar dialogkontekst | Sesjonskontinuitet | Dump `Agent.memory` til `sessions/<ts>.json` |
-| Verktøyregister | Dynamisk verktøyoppdagelse | Utvidbarhet | Vedlikehold `TOOLS` dict og inspiser navn/beskrivelse |
-| Gjentakelse og Tilbakeslag | Robust lange kjeder | Reduser midlertidige feil | Pakk `act` med try/except + eksponentiell tilbakeslag |
-| Rubrikkvurdering | Automatiserte kvalitative etiketter | Spor forbedringer | Sekundær passering som ber modellen: "Vurder klarhet 1-5" |
-| Vektorminne | Semantisk gjenkalling | Rik langtidskontekst | Bygg inn sammendrag, hent topp-k inn i systemmelding |
-| Strømmende svar | Raskere oppfattet respons | Brukeropplevelsesforbedring | Bruk strømming når tilgjengelig og flush delvise tokens |
+| Verktøyregister | Dynamisk oppdagelse av verktøy | Utvidbarhet | Vedlikehold `TOOLS`-dict og inspiser navn/beskrivelse |
+| Gjentakelse og tilbakefall | Robust lange kjeder | Reduser midlertidige feil | Pakk `act` med try/except + eksponentiell tilbakefall |
+| Rubrikkskåring | Automatiserte kvalitative etiketter | Spor forbedringer | Sekundær passering som ber modellen: "Vurder klarhet 1-5" |
+| Vektorminne | Semantisk gjenkalling | Rik langtidskontekst | Legg inn sammendrag, hent topp-k inn i systemmelding |
+| Strømmende svar | Raskere oppfattet respons | Forbedret brukeropplevelse | Bruk strømming når tilgjengelig og flush delvise tokens |
 | Deterministiske tester | Kontroll av regresjon | Stabil CI | Kjør med `temperature=0`, faste promptfrø |
 | Parallelle forgreninger | Raskere utforskning | Gjennomstrømning | Bruk `concurrent.futures` for uavhengige agentsteg |
 
@@ -310,9 +312,9 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-Vedvar (`answer`, `rating`) par for å bygge en historisk kvalitetsgraf.
+Lagres (`answer`, `rating`) par for å bygge en historisk kvalitetsgraf.
 
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

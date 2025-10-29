@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-08T12:03:48+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T23:35:44+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "my"
 }
 -->
-# အခန်း ၅: Foundry Local ဖြင့် AI အင်ဂျင်များကို အလျင်အမြန် တည်ဆောက်ခြင်း
+# အစည်းအဝေး ၅: Foundry Local ဖြင့် AI အင်ဂျင်များကို အလျင်အမြန် တည်ဆောက်ခြင်း
 
 ## အကျဉ်းချုပ်
 
-Foundry Local ၏ အနိမ့်လက်ဆွဲနှုန်းနှင့် ကိုယ်ရေးအချက်အလက်များကို ကာကွယ်ထားသော runtime ကို အသုံးပြု၍ အခန်းအနားများစွာရှိသော AI အင်ဂျင်များကို ဒီဇိုင်းဆွဲပြီး စီမံခန့်ခွဲပါ။ သင်သည် အင်ဂျင်၏ အခန်းကဏ္ဍများ၊ မှတ်ဉာဏ်နည်းလမ်းများ၊ ကိရိယာခေါ်ယူမှုပုံစံများနှင့် အကောင်အထည်ဖော်မှုဇယားများကို သတ်မှတ်မည်ဖြစ်သည်။ ဒီအခန်းတွင် Chainlit သို့မဟုတ် LangGraph ဖြင့် တိုးချဲ့နိုင်သော scaffolding ပုံစံများကို မိတ်ဆက်ပေးပါမည်။ Starter project သည် memory persistence နှင့် အကဲဖြတ်မှု hooks ထည့်သွင်းရန် ရှိပြီးသား agent architecture နမူနာကို တိုးချဲ့ပေးသည်။
+Foundry Local ၏ အနိမ့်လက်ဆွဲနှုန်းနှင့် ကိုယ်ရေးအချက်အလက်များကို ကာကွယ်ထားသော runtime ကို အသုံးပြု၍ အခန်းကဏ္ဍများစွာရှိသော AI အင်ဂျင်များကို ဒီဇိုင်းဆွဲပြီး စီမံခန့်ခွဲပါ။ အင်ဂျင်၏ အခန်းကဏ္ဍများ၊ မှတ်ဉာဏ်နည်းလမ်းများ၊ ကိရိယာခေါ်ယူမှု ပုံစံများနှင့် အကောင်အထည်ဖော်မှု ဂရပ်များကို သတ်မှတ်ပါမည်။ အစည်းအဝေးတွင် Chainlit သို့မဟုတ် LangGraph ဖြင့် တိုးချဲ့နိုင်သော scaffolding ပုံစံများကို မိတ်ဆက်ပေးပါမည်။ Starter project သည် memory persistence + evaluation hooks ထည့်သွင်းရန် ရှိပြီးသား အင်ဂျင် architecture နမူနာကို တိုးချဲ့ပေးပါသည်။
 
-## သင်ယူရမည့် ရည်မှန်းချက်များ
+## သင်ယူရမည့် ရည်ရွယ်ချက်များ
 
-- **အခန်းများ သတ်မှတ်ခြင်း**: စနစ်အကြံပေးချက်များနှင့် စွမ်းရည်ကန့်သတ်ချက်များ
-- **မှတ်ဉာဏ် အကောင်အထည်ဖော်ခြင်း**: အတိုချုပ် (စကားဝိုင်း), ရေရှည် (ဗက်တာ / ဖိုင်), ယာယီ scratchpads
-- **Workflow များကို Scaffold လုပ်ခြင်း**: အဆက်မပြတ်၊ အခွဲအခြာနှင့် အပြိုင်အဆိုင် agent အဆင့်များ
-- **ကိရိယာများ ထည့်သွင်းခြင်း**: အလွယ်တကူ function tool ခေါ်ယူမှုပုံစံ
+- **အခန်းကဏ္ဍများကို သတ်မှတ်ခြင်း**: System prompts & capability boundaries
+- **မှတ်ဉာဏ်ကို အကောင်အထည်ဖော်ခြင်း**: အတိုချုံး (စကားဝိုင်း), ရေရှည် (ဗက်တာ / ဖိုင်), အပျက်ခံ scratchpads
+- **Workflow များကို Scaffold လုပ်ခြင်း**: အဆင့်လိုက်, ချိုးဖောက်ခြင်း, နှင့် အပြိုင်အဆိုင် အင်ဂျင်အဆင့်များ
+- **ကိရိယာများကို ပေါင်းစည်းခြင်း**: အလွယ်တကူ function tool ခေါ်ယူမှု ပုံစံ
 - **အကဲဖြတ်ခြင်း**: အခြေခံ trace + rubric အခြေခံသော ရလဒ်အဆင့်သတ်မှတ်ခြင်း
 
 ## ကြိုတင်လိုအပ်ချက်များ
 
-- အခန်း ၁–၄ ပြီးစီးထား
+- အစည်းအဝေး ၁–၄ ပြီးစီးထားရမည်
 - Python နှင့် `foundry-local-sdk`, `openai`, optional `chainlit`
-- `phi-4-mini` အနည်းဆုံးဖြင့် ဒေသခံမော်ဒယ်များ လည်ပတ်နေ
+- `phi-4-mini` အနည်းဆုံးဖြင့် ဒေသခံမော်ဒယ်များ လည်ပတ်နေသည်
 
 ### Cross-Platform Environment Snippet
 
@@ -45,7 +45,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-macOS မှ Windows host service ကို remote မှာ agent များကို လည်ပတ်စေချင်ပါက:
+macOS မှ remote Windows host service ကို အသုံးပြု၍ အင်ဂျင်များကို လည်ပတ်နေပါက:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -53,7 +53,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Demo Flow (၃၀ မိနစ်)
 
-### ၁. အင်ဂျင်၏ အခန်းများနှင့် မှတ်ဉာဏ် သတ်မှတ်ခြင်း (၇ မိနစ်)
+### ၁. အင်ဂျင်၏ အခန်းကဏ္ဍများနှင့် မှတ်ဉာဏ်ကို သတ်မှတ်ခြင်း (၇ မိနစ်)
 
 `samples/05-agents/agents_core.py` ဖန်တီးပါ:
 
@@ -150,9 +150,10 @@ TOOLS = {
 }
 ```
 
-`agents_core.py` ကို ပြင်ဆင်ပြီး ကိရိယာ syntax ကို လွယ်ကူစေပါ: အသုံးပြုသူသည် `#tool:get_time` ရေးပြီး အင်ဂျင်သည် generation မတိုင်မီ context ထဲသို့ ကိရိယာ output ကို ထည့်သွင်းပါမည်။
 
-### ၄. Orchestrated Workflow (၆ မိနစ်)
+`agents_core.py` ကို ပြင်ဆင်ပြီး ကိရိယာ syntax ကို အလွယ်တကူ အသုံးပြုနိုင်ရန် ပြင်ဆင်ပါ: အသုံးပြုသူသည် `#tool:get_time` ရေးပြီး အင်ဂျင်သည် generation မတိုင်မီ context ထဲသို့ ကိရိယာ output ကို ထည့်သွင်းပါမည်။
+
+### ၄. Workflow ကို စီမံခန့်ခွဲခြင်း (၆ မိနစ်)
 
 `samples/05-agents/orchestrator.py` ဖန်တီးပါ:
 
@@ -185,33 +186,34 @@ if __name__ == '__main__':
 ```
 
 
-### ၅. Starter Project: `05-agent-architecture` ကို တိုးချဲ့ပါ (၇ မိနစ်)
+### ၅. Starter Project: `05-agent-architecture` ကို တိုးချဲ့ခြင်း (၇ မိနစ်)
 
 ထည့်သွင်းရန်:
 1. Persistent memory layer (ဥပမာ- စကားဝိုင်းများကို JSON lines append)
 2. အကဲဖြတ်မှု rubric ရိုးရှင်းသော- factuality / clarity / style placeholders
 3. Optional Chainlit front-end (tab နှစ်ခု: စကားဝိုင်း & traces)
-4. Optional LangGraph style state machine (dependency ထည့်သွင်းပါက) အခွဲအခြာဆုံးဖြတ်မှုများအတွက်
+4. Optional LangGraph style state machine (dependency ထည့်သွင်းပါက) ချိုးဖောက်မှု ဆုံးဖြတ်ချက်များအတွက်
 
-## Validation Checklist
+## အတည်ပြုမှု စစ်ဆေးမှု စာရင်း
 
 ```powershell
 foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Tool injection မှတ်ချက်ပါရှိသော structured pipeline output ကို မျှော်လင့်ပါ။
 
-## Memory Strategies Overview
+Tool injection မှတ်ချက်နှင့် structured pipeline output ကို မျှော်လင့်ပါ။
+
+## မှတ်ဉာဏ်နည်းလမ်းများ အကျဉ်းချုပ်
 
 | Layer | ရည်ရွယ်ချက် | ဥပမာ |
 |-------|-------------|-------|
-| အတိုချုပ် | စကားဝိုင်းဆက်လက်မှု | နောက်ဆုံး N မက်ဆေ့များ |
-| Episodic | အစည်းအဝေးမှတ်ဉာဏ် | JSON per session |
-| Semantic | ရေရှည်ပြန်လည်ရယူမှု | အကျဉ်းချုပ်များ၏ ဗက်တာ store |
-| Scratchpad | Reasoning အဆင့်များ | Inline chain-of-thought (private) |
+| အတိုချုံး | စကားဝိုင်း ဆက်လက်မှု | နောက်ဆုံး N မက်ဆေ့များ |
+| Episodic | အစည်းအဝေးကို မှတ်မိမှု | JSON per session |
+| Semantic | ရေရှည် ပြန်လည်ရယူမှု | အကျဉ်းချုပ်များ၏ ဗက်တာ store |
+| Scratchpad | အကြောင်းပြချက် အဆင့်များ | Inline chain-of-thought (private) |
 
-## Evaluation Hooks (အယူအဆ)
+## အကဲဖြတ်မှု Hooks (အယူအဆ)
 
 ```python
 evaluation = {
@@ -224,15 +226,15 @@ evaluation = {
 ```
 
 
-## Troubleshooting
+## ပြဿနာများ ဖြေရှင်းခြင်း
 
 | ပြဿနာ | အကြောင်းရင်း | ဖြေရှင်းနည်း |
-|-------|-------------|-------------|
-| အကြောင်းပြန်များ ထပ်နေ | Context window အကြီး/အသေး | memory window parameter ကို tune လုပ်ပါ |
-| ကိရိယာ မခေါ်ယူနိုင် | Syntax မှားနေ | `#tool:tool_name` format ကို အသုံးပြုပါ |
-| Orchestration နှေးနေ | မော်ဒယ်များ အေးနေ | warmup prompts ကို ကြို run လုပ်ပါ |
+|-------|--------------|-------------|
+| အကြောင်းပြန်များ ထပ်နေသည် | Context window အလွန်ကြီး/သေး | memory window parameter ကို tune လုပ်ပါ |
+| Tool မခေါ်ယူနိုင် | Syntax မှားနေသည် | `#tool:tool_name` format ကို အသုံးပြုပါ |
+| စီမံခန့်ခွဲမှု နှေးနေသည် | မော်ဒယ်များ အေးနေသည် | warmup prompts ကို ကြိုတင် run လုပ်ပါ |
 
-## References
+## ကိုးကားချက်များ
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - LangGraph (optional concept): https://github.com/langchain-ai/langgraph
@@ -240,24 +242,25 @@ evaluation = {
 
 ---
 
-**Session Duration**: ၃၀ မိနစ်  
+**အစည်းအဝေး ကြာမြင့်ချိန်**: ၃၀ မိနစ်  
 **အခက်အခဲအဆင့်**: အဆင့်မြင့်
 
-## နမူနာအခြေအနေနှင့် Workshop Mapping
+## နမူနာ အခြေအနေ & အလုပ်ရုံဆွေးနွေးမှု Mapping
 
-| Workshop Script | အခြေအနေ | ရည်မှန်းချက် | ဥပမာ Prompt |
-|-----------------|----------|--------------|-------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | အမှုဆောင်များအတွက် အကျဉ်းချုပ်များ ထုတ်လုပ်သော အတတ်ပညာရှာဖွေမှု bot | အင်ဂျင်နှစ်ခု pipeline (research → editorial polish) distinct models optional | Edge inference compliance အရေးကြီးမှုကို ရှင်းပြပါ။ |
-| (Extended) `tools.py` concept | အချိန်နှင့် token ခန့်မှန်းမှု tools ထည့်သွင်း | Lightweight tool invocation pattern ကို ပြသပါ | #tool:get_time |
+| Workshop Script | အခြေအနေ | ရည်ရွယ်ချက် | Prompt နမူနာ |
+|-----------------|----------|-------------|--------------|
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | အမှုဆောင်များအတွက် အကျဉ်းချုပ်များ ထုတ်လုပ်သော အသိပညာ သုတေသန bot | အင်ဂျင်နှစ်ခု pipeline (သုတေသန → စာတည်းအဆင့်မြှင့်တင်မှု) distinct models optional | Edge inference compliance အရေးကြီးမှုကို ရှင်းပြပါ။ |
+| (Extended) `tools.py` concept | အချိန် & token ခန့်မှန်းမှု tools ထည့်သွင်းခြင်း | Lightweight tool invocation pattern ကို ပြသပါ | #tool:get_time |
 
-### အခြေအနေအကြောင်းအရာ
-Compliance documentation အဖွဲ့သည် cloud services သို့ မပို့ဘဲ ဒေသခံ knowledge မှ အတွင်းရေးအကျဉ်းချုပ်များကို အလျင်အမြန်လိုအပ်သည်။ Researcher agent သည် အတိုချုပ်သော အချက်အလက်များကို စုဆောင်းပြီး editor agent သည် အမှုဆောင်များအတွက် ရှင်းလင်းမှုရှိသော စာသားများကို ပြန်ရေးသည်။ Latency (fast SLM) နှင့် stylistic refinement (အကြီးမော်ဒယ်) ကို optimize လုပ်ရန် distinct model aliases သတ်မှတ်နိုင်သည်။
+### အခြေအနေ အကြောင်းအရာ
+Compliance documentation အဖွဲ့သည် cloud services သို့ မပို့ပဲ ဒေသခံအသိပညာမှ အတွင်းရေးအကျဉ်းချုပ်များကို အလျင်အမြန် ရယူရန် လိုအပ်သည်။ Researcher agent သည် အတိုချုံးသော အချက်အလက်များကို စုဆောင်းပြီး editor agent သည် အမှုဆောင်အဆင့်အတွက် ရှင်းလင်းမှုရှိသော စာများကို ပြန်ရေးပေးသည်။ Latency (အမြန်နှုန်းမြန်သော SLM) နှင့် stylistic refinement (လိုအပ်သောအခါတွင်သာ မော်ဒယ်ကြီးကို အသုံးပြုခြင်း) အတွက် distinct model aliases များကို သတ်မှတ်နိုင်သည်။
 
-### နမူနာ Multi-Model Environment
+### Multi-Model Environment နမူနာ
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
@@ -273,24 +276,24 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-တစ်ခုချင်းစီကို JSONL ဖိုင်တွင် rubric scoring အတွက် later persist လုပ်ပါ။
+တစ်ခုချင်းစီကို JSONL ဖိုင်တွင် rubric scoring အတွက် နောက်ပိုင်းတွင် သိမ်းဆည်းပါ။
 
 ### Optional Enhancements
 
 | Theme | Enhancement | အကျိုးကျေးဇူး | Implementation Sketch |
-|-------|------------|--------------|-----------------------|
-| Multi-Model Roles | Distinct models per agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specialization & speed | alias env vars ကို ရွေးချယ်ပြီး per-role alias ဖြင့် `chat_once` ကို ခေါ်ပါ |
-| Structured Traces | act(tool,input,latency,tokens) တစ်ခုချင်း JSON trace | Debug & evaluation | dict ကို list ထဲသို့ append လုပ်ပြီး `.jsonl` ကို အဆုံးတွင် ရေးပါ |
-| Memory Persistence | Reloadable dialog context | Session continuity | `Agent.memory` ကို `sessions/<ts>.json` သို့ dump လုပ်ပါ |
-| Tool Registry | Dynamic tool discovery | Extensibility | `TOOLS` dict ကို maintain လုပ်ပြီး names/desc ကို introspect လုပ်ပါ |
-| Retry & Backoff | Robust long chains | Reduce transient failures | `act` ကို try/except + exponential backoff ဖြင့် wrap လုပ်ပါ |
-| Rubric Scoring | Automated qualitative labels | Track improvements | Secondary pass prompting model: "Rate clarity 1-5" |
-| Vector Memory | Semantic recall | Rich long-term context | အကျဉ်းချုပ်များကို embed လုပ်ပြီး top-k ကို system message ထဲသို့ retrieve လုပ်ပါ |
-| Streaming Replies | Faster perceived response | UX improvement | Streaming ကို အသုံးပြုပြီး partial tokens ကို flush လုပ်ပါ |
+|-------|------------|---------------|-----------------------|
+| Multi-Model Roles | အင်ဂျင်တစ်ခုစီအတွက် distinct models (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | အထူးပြုမှု & အမြန်နှုန်း | alias env vars ကို ရွေးချယ်ပြီး per-role alias ဖြင့် `chat_once` ကို ခေါ်ပါ |
+| Structured Traces | act(tool,input,latency,tokens) တစ်ခုချင်းစီ၏ JSON trace | Debug & အကဲဖြတ်မှု | dict ကို list ထဲသို့ ထည့်ပြီး `.jsonl` ကို နောက်ဆုံးရေးပါ |
+| Memory Persistence | ပြန်လည်ဖွင့်နိုင်သော စကားဝိုင်း context | အစည်းအဝေး ဆက်လက်မှု | `Agent.memory` ကို `sessions/<ts>.json` သို့ dump လုပ်ပါ |
+| Tool Registry | ကိရိယာများကို dynamic ရှာဖွေမှု | Extensibility | `TOOLS` dict ကို ထိန်းသိမ်းပြီး name/desc ကို စစ်ဆေးပါ |
+| Retry & Backoff | အကြာကြီး chains များကို ခိုင်မာမှုရှိစေရန် | အချိန်ပိုင်း ပြဿနာများ လျှော့ချရန် | `act` ကို try/except + exponential backoff ဖြင့် wrap လုပ်ပါ |
+| Rubric Scoring | အရည်အသွေးကို အလိုအလျောက် အမှတ်ပေးခြင်း | တိုးတက်မှုများကို စောင့်ကြည့်ရန် | "Rate clarity 1-5" ဟု model ကို prompting လုပ်ပြီး secondary pass |
+| Vector Memory | Semantic recall | ရေရှည် context အကြွယ်အို | အကျဉ်းချုပ်များကို embed လုပ်ပြီး top-k ကို system message ထဲသို့ retrieve လုပ်ပါ |
+| Streaming Replies | အမြန်ဆုံးဖြေကြားမှု | UX တိုးတက်မှု | Streaming ကို အသုံးပြုပြီး partial tokens ကို flush လုပ်ပါ |
 | Deterministic Tests | Regression control | Stable CI | `temperature=0`, fixed prompt seeds ဖြင့် run လုပ်ပါ |
-| Parallel Branching | Faster exploration | Throughput | Independent agent steps အတွက် `concurrent.futures` ကို အသုံးပြုပါ |
+| Parallel Branching | စူးစမ်းမှု အမြန်နှုန်း | Throughput | `concurrent.futures` ကို အသုံးပြု၍ အင်ဂျင်အဆင့်များကို လွတ်လပ်စွာ run လုပ်ပါ |
 
-#### Trace Record Example
+#### Trace Record နမူနာ
 
 ```python
 trace.append({
@@ -303,16 +306,16 @@ trace.append({
 ```
 
 
-#### Simple Evaluation Prompt
+#### ရိုးရှင်းသော အကဲဖြတ်မှု Prompt
 
 ```python
 score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-(`answer`, `rating`) pairs ကို persist လုပ်ပြီး historical quality graph တည်ဆောက်ပါ။
+(`answer`, `rating`) အတွဲများကို သိမ်းဆည်းပြီး အရည်အသွေးသမိုင်းကြောင်းကို တည်ဆောက်ပါ။
 
 ---
 
 **အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရ အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

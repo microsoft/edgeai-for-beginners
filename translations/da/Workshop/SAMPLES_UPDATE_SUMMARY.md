@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T14:43:00+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:11:19+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "da"
 }
@@ -29,7 +29,7 @@ Alle Python-eksempler i `Workshop/samples`-mappen er blevet opdateret for at fø
 - ✅ `rag_eval_ragas.py` - RAG-evaluering med RAGAS-metrics
 
 ### Session 03: Open Source-modeller
-- ✅ `benchmark_oss_models.py` - Benchmarking af flere modeller
+- ✅ `benchmark_oss_models.py` - Multi-model benchmarking
 
 ### Session 04: Avancerede modeller
 - ✅ `model_compare.py` - SLM vs LLM sammenligning
@@ -39,7 +39,7 @@ Alle Python-eksempler i `Workshop/samples`-mappen er blevet opdateret for at fø
 
 ### Session 06: Modeller som værktøjer
 - ✅ `models_router.py` - Intent-baseret model-routing
-- ✅ `models_pipeline.py` - Flertrins routed pipeline
+- ✅ `models_pipeline.py` - Multi-step routed pipeline
 
 ### Understøttende Infrastruktur
 - ✅ `workshop_utils.py` - Følger allerede bedste praksis (ingen ændringer nødvendige)
@@ -67,7 +67,7 @@ except Exception as e:
 
 **Fordele:**
 - Elegant fejlhåndtering med klare fejlmeddelelser
-- Handlingsorienterede fejlsøgningsforslag
+- Handlingsrettede fejlfindingstips
 - Korrekte exit-koder til scripting
 
 ### 2. Bedre Importhåndtering
@@ -88,7 +88,7 @@ except ImportError:
 
 **Fordele:**
 - Klar vejledning, når afhængigheder mangler
-- Undgår kryptiske importfejl
+- Forhindrer kryptiske importfejl
 - Brugervenlige installationsinstruktioner
 
 ### 3. Omfattende Dokumentation
@@ -96,8 +96,8 @@ except ImportError:
 **Tilføjet til alle eksempler:**
 - Dokumentation af miljøvariabler i docstrings
 - SDK-referencelinks
-- Brugs-eksempler
-- Detaljeret funktion-/parameterdokumentation
+- Brugsvejledninger
+- Detaljeret funktion/parameterdokumentation
 - Type hints for bedre IDE-support
 
 **Eksempel:**
@@ -118,7 +118,7 @@ def pipeline(task: str) -> Dict[str, Any]:
 
 ### 4. Forbedret Brugerfeedback
 
-**Tilføjet informativ logging:**
+**Tilføjet informativ logning:**
 ```python
 print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
@@ -166,8 +166,8 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 
 **Forbedringer i Session 06:**
 - Omfattende dokumentation af intent-detektion
-- Forklaring af modelvalg-algoritme
-- Detaljerede routing-logs
+- Forklaring af modeludvælgelsesalgoritme
+- Detaljerede routing-logfiler
 - Testoutput-formattering
 - Fejlgenopretning i batch-testning
 
@@ -177,7 +177,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 - Fremskridtsrapportering trin for trin
 - Fejlhåndtering pr. agent
 - Klar pipeline-struktur
-- Bedre dokumentation af hukommelsesstyring
+- Bedre dokumentation af hukommelseshåndtering
 
 ---
 
@@ -200,61 +200,61 @@ pip install -r Workshop/requirements.txt
 
 #### Session 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Session 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Session 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Session 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Session 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Session 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
@@ -264,23 +264,23 @@ python models_pipeline.py
 ### Globalt (Alle Eksempler)
 | Variabel | Beskrivelse | Standard |
 |----------|-------------|---------|
-| `FOUNDRY_LOCAL_ALIAS` | Model-alias der skal bruges | Varierer efter eksempel |
-| `FOUNDRY_LOCAL_ENDPOINT` | Overstyr service-endpoint | Auto-detekteret |
+| `FOUNDRY_LOCAL_ALIAS` | Modelalias der skal bruges | Varierer efter eksempel |
+| `FOUNDRY_LOCAL_ENDPOINT` | Overstyr serviceendpoint | Auto-detekteret |
 | `SHOW_USAGE` | Vis tokenforbrug | `0` |
 | `RETRY_ON_FAIL` | Aktiver retry-logik | `1` |
-| `RETRY_BACKOFF` | Initial retry-forsinkelse | `1.0` |
+| `RETRY_BACKOFF` | Indledende retry-forsinkelse | `1.0` |
 
-### Eksempel-specifik
+### Eksempel-specifikt
 | Variabel | Bruges af | Beskrivelse |
-|----------|---------|-------------|
+|----------|-----------|-------------|
 | `EMBED_MODEL` | Session 02 | Navn på embedding-model |
 | `RAG_QUESTION` | Session 02 | Testspørgsmål til RAG |
-| `BENCH_MODELS` | Session 03 | Komma-separerede modeller til benchmarking |
+| `BENCH_MODELS` | Session 03 | Kommaseparerede modeller til benchmarking |
 | `BENCH_ROUNDS` | Session 03 | Antal benchmark-runder |
 | `BENCH_PROMPT` | Session 03 | Testprompt til benchmarks |
 | `BENCH_STREAM` | Session 03 | Mål første-token latenstid |
-| `SLM_ALIAS` | Session 04 | Lille sproglig model |
-| `LLM_ALIAS` | Session 04 | Stor sproglig model |
+| `SLM_ALIAS` | Session 04 | Lille sprogmodel |
+| `LLM_ALIAS` | Session 04 | Stor sprogmodel |
 | `COMPARE_PROMPT` | Session 04 | Sammenligningstestprompt |
 | `AGENT_MODEL_PRIMARY` | Session 05 | Primær agentmodel |
 | `AGENT_MODEL_EDITOR` | Session 05 | Editor-agentmodel |
@@ -289,14 +289,14 @@ python models_pipeline.py
 
 ---
 
-## Breaking Changes
+## Brudte Ændringer
 
 **Ingen** - Alle ændringer er bagudkompatible.
 
 Eksisterende scripts vil fortsat fungere. Nye funktioner er:
 - Valgfrie miljøvariabler
 - Forbedrede fejlmeddelelser (bryder ikke funktionalitet)
-- Ekstra logging (kan undertrykkes)
+- Yderligere logning (kan undertrykkes)
 - Bedre type hints (ingen runtime-påvirkning)
 
 ---
@@ -322,7 +322,7 @@ except Exception as e:
     sys.exit(1)
 ```
 
-### 3. Informativ Logging
+### 3. Informativ Logning
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
@@ -390,14 +390,14 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### Problem: Model ikke fundet
+### Problem: Model Ikke Fundet
 **Løsning:** Tjek tilgængelige modeller
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
 
-### Problem: Langsom ydeevne
+### Problem: Langsom Ydeevne
 **Løsning:** Brug mindre modeller eller juster parametre
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
@@ -412,9 +412,9 @@ set BENCH_ROUNDS=2
 Gennemgå test-tjeklisten ovenfor for at verificere, at alle eksempler fungerer korrekt.
 
 ### 2. Opdater Dokumentation
-- Opdater session-markdown-filer med nye eksempler
-- Tilføj fejlsøgningssektion til hoved-README
-- Opret hurtig referenceguide
+- Opdater sessionens markdown-filer med nye eksempler
+- Tilføj fejlfinding-sektion til hoved-README
+- Opret en hurtig referenceguide
 
 ### 3. Opret Integrationstests
 ```python
@@ -423,8 +423,8 @@ def test_all_samples():
     """Run smoke tests on all samples."""
 ```
 
-### 4. Tilføj Performance Benchmarks
-Spor performanceforbedringer fra fejlhåndteringsforbedringer.
+### 4. Tilføj Ydeevne Benchmarks
+Spor ydeevneforbedringer fra fejlhåndteringsforbedringer.
 
 ### 5. Brugerfeedback
 Indsaml feedback fra workshopdeltagere om:
@@ -448,16 +448,16 @@ Indsaml feedback fra workshopdeltagere om:
 ### Tilføjelse af Nye Eksempler
 Følg disse mønstre, når du opretter nye eksempler:
 
-1. Brug `workshop_utils` til klientstyring
+1. Brug `workshop_utils` til klienthåndtering
 2. Tilføj omfattende fejlhåndtering
 3. Inkluder understøttelse af miljøvariabler
 4. Tilføj type hints og docstrings
-5. Giv informativ logging
-6. Inkluder brugs-eksempler i docstring
+5. Giv informativ logning
+6. Inkluder brugsvejledninger i docstring
 7. Link til SDK-dokumentation
 
 ### Gennemgang af Opdateringer
-Når du gennemgår opdateringer af eksempler, skal du tjekke for:
+Når du gennemgår opdateringer af eksempler, skal du kontrollere:
 - [ ] Fejlhåndtering på alle I/O-operationer
 - [ ] Type hints på offentlige funktioner
 - [ ] Omfattende docstrings
@@ -468,9 +468,9 @@ Når du gennemgår opdateringer af eksempler, skal du tjekke for:
 
 ---
 
-**Opsummering**: Alle Workshop Python-eksempler følger nu Foundry Local SDK bedste praksis med forbedret fejlhåndtering, omfattende dokumentation og forbedret brugeroplevelse. Ingen breaking changes - al eksisterende funktionalitet er bevaret og forbedret.
+**Opsummering**: Alle Workshop Python-eksempler følger nu Foundry Local SDK bedste praksis med forbedret fejlhåndtering, omfattende dokumentation og forbedret brugeroplevelse. Ingen brudte ændringer - al eksisterende funktionalitet er bevaret og forbedret.
 
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

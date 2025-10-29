@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T16:41:16+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:22:08+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "nl"
 }
@@ -13,9 +13,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 De workshopvoorbeelden maken gebruik van omgevingsvariabelen voor configuratie, gecentraliseerd in het `.env`-bestand in de hoofdmap van de repository. Dit maakt eenvoudige aanpassingen mogelijk zonder de code te wijzigen.
 
-## Snelle Start
+## Snelstartgids
 
-### 1. Controleer Vereisten
+### 1. Controleer vereisten
 
 ```bash
 # Check Foundry Local is installed
@@ -28,7 +28,7 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. Configureer de Omgeving
+### 2. Configureer de omgeving
 
 Het `.env`-bestand is al geconfigureerd met logische standaardinstellingen. De meeste gebruikers hoeven niets te wijzigen.
 
@@ -39,12 +39,12 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Pas Configuratie Toe
+### 3. Pas configuratie toe
 
 **Voor Python-scripts:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -67,7 +67,7 @@ python chat_bootstrap.py
 **Wanneer `FOUNDRY_LOCAL_ENDPOINT` instellen:**
 - Externe Foundry Local-instantie
 - Aangepaste poortconfiguratie
-- Scheiding tussen ontwikkeling en productie
+- Scheiding tussen ontwikkeling/productie
 
 **Voorbeeld:**
 ```bash
@@ -89,10 +89,10 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sessie 03: Benchmarking
 | Variabele | Standaard | Doel |
 |-----------|-----------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modellen om te benchmarken |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modellen om te benchmarken |
 | `BENCH_ROUNDS` | `3` | Iteraties per model |
 | `BENCH_PROMPT` | Vooraf geconfigureerd | Testprompt |
-| `BENCH_STREAM` | `0` | Latentie van eerste token meten |
+| `BENCH_STREAM` | `0` | Eerste-token latentie meten |
 
 #### Sessie 04: Modelvergelijking
 | Variabele | Standaard | Doel |
@@ -105,8 +105,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sessie 05: Multi-Agent Orchestratie
 | Variabele | Standaard | Doel |
 |-----------|-----------|------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Onderzoeker-agentmodel |
-| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Editor-agentmodel |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Onderzoeker-agent model |
+| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Editor-agent model |
 | `AGENT_QUESTION` | Vooraf geconfigureerd | Testvraag |
 
 ### Betrouwbaarheidsconfiguratie
@@ -114,12 +114,12 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | Variabele | Standaard | Doel |
 |-----------|-----------|------|
 | `SHOW_USAGE` | `1` | Print tokengebruik |
-| `RETRY_ON_FAIL` | `1` | Retry-logica inschakelen |
-| `RETRY_BACKOFF` | `1.0` | Vertraging bij retry (seconden) |
+| `RETRY_ON_FAIL` | `1` | Herhaal logica inschakelen |
+| `RETRY_BACKOFF` | `1.0` | Vertraging bij herhaling (seconden) |
 
-## Veelvoorkomende Configuraties
+## Veelvoorkomende configuraties
 
-### Ontwikkelomgeving (Snelle Iteratie)
+### Ontwikkelomgeving (Snelle iteratie)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -138,9 +138,9 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Benchmarking Configuratie
+### Benchmarking-instellingen
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -151,7 +151,7 @@ AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
 ```
 
-### Externe Ontwikkeling
+### Externe ontwikkeling
 ```bash
 FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -161,38 +161,38 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### Per Gebruiksscenario
 
-**Algemeen Gebruik:**
+**Algemeen gebruik:**
 - `phi-4-mini` - Gebalanceerde kwaliteit en snelheid
 
-**Snelle Reacties:**
+**Snelle reacties:**
 - `qwen2.5-0.5b` - Zeer snel, goed voor classificatie
 - `phi-4-mini` - Snel met goede kwaliteit
 
-**Hoge Kwaliteit:**
+**Hoge kwaliteit:**
 - `qwen2.5-7b` - Beste kwaliteit, hogere resourcegebruik
-- `phi-4-mini` - Goede kwaliteit, lagere resources
+- `phi-4-mini` - Goede kwaliteit, minder resources
 
 **Codegeneratie:**
 - `deepseek-coder-1.3b` - Gespecialiseerd voor code
 - `phi-4-mini` - Algemeen gebruik voor codering
 
-### Per Resourcebeschikbaarheid
+### Op basis van beschikbare resources
 
-**Weinig Resources (< 8GB RAM):**
+**Weinig resources (< 8GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
 LLM_ALIAS=phi-4-mini
 ```
 
-**Gemiddelde Resources (8-16GB RAM):**
+**Gemiddelde resources (8-16GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-7b
 ```
 
-**Hoge Resources (16GB+ RAM):**
+**Hoge resources (16GB+ RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-7b
 SLM_ALIAS=phi-4-mini
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### Azure OpenAI Hybride Configuratie
+### Azure OpenAI Hybride Setup
 
 ```bash
 # Use local for development
@@ -234,9 +234,9 @@ AZURE_OPENAI_API_KEY=your-key-here
 AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-## Problemen Oplossen
+## Problemen oplossen
 
-### Omgevingsvariabelen Niet Geladen
+### Omgevingsvariabelen niet geladen
 
 **Symptomen:**
 - Scripts gebruiken verkeerde modellen
@@ -259,10 +259,10 @@ dir .env     # Windows
 pwd  # Should be in Workshop or repository root
 ```
 
-### Verbindingsproblemen met Service
+### Verbindingsproblemen met service
 
 **Symptomen:**
-- "Connection refused"-fouten
+- Fouten zoals "Verbinding geweigerd"
 - "Service niet beschikbaar"
 - Time-out fouten
 
@@ -282,10 +282,10 @@ foundry service status | grep "Port"
 FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ```
 
-### Model Niet Gevonden
+### Model niet gevonden
 
 **Symptomen:**
-- "Model niet gevonden"-fouten
+- Fouten zoals "Model niet gevonden"
 - "Alias niet herkend"
 
 **Oplossingen:**
@@ -303,25 +303,22 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Importfouten
 
 **Symptomen:**
-- "Module niet gevonden"-fouten
-- "Kan workshop_utils niet importeren"
+- Fouten zoals "Module niet gevonden"
 
 **Oplossingen:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Configuratietests
 
-### Controleer Laden van Omgeving
+### Controleer laden van omgeving
 
 ```python
 # test_env.py
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Test Foundry Local Verbinding
+### Test verbinding met Foundry Local
 
 ```python
 # test_connection.py
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## Beveiligingsrichtlijnen
 
-### 1. Nooit Geheimen Committen
+### 1. Nooit geheimen committen
 
 ```bash
 # .gitignore should include:
@@ -377,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Gebruik Gescheiden .env-bestanden
+### 2. Gebruik aparte .env-bestanden
 
 ```bash
 .env              # Default configuration
@@ -385,14 +382,14 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Draai API-sleutels Regelmatig
+### 3. Draai API-sleutels regelmatig
 
 ```bash
 # For Azure OpenAI or other cloud services
 # Regularly rotate keys and update .env
 ```
 
-### 4. Gebruik Configuratie per Omgeving
+### 4. Gebruik omgevingsspecifieke configuratie
 
 ```bash
 # Development
@@ -408,7 +405,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 - **API Documentatie**: Bekijk de SDK-repository voor de meest recente versie
 
-## Aanvullende Bronnen
+## Aanvullende bronnen
 
 - `QUICK_START.md` - Handleiding voor beginners
 - `SDK_MIGRATION_NOTES.md` - Details over SDK-updates
@@ -416,11 +413,11 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
-**Laatst Bijgewerkt**: 2025-01-08  
+**Laatst bijgewerkt**: 2025-01-08  
 **Versie**: 2.0  
 **SDK**: Foundry Local Python SDK (laatste versie)
 
 ---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

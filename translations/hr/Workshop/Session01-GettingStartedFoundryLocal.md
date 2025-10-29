@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:27:59+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T23:25:55+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "hr"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Sažetak
 
-Započnite svoje putovanje s Foundry Local instalacijom i konfiguracijom na Windows 11. Naučite kako postaviti CLI, omogućiti hardversku akceleraciju i predmemorirati modele za brzu lokalnu inferenciju. Ova praktična sesija vodi vas kroz pokretanje modela poput Phi, Qwen, DeepSeek i GPT-OSS-20B koristeći reproducibilne CLI naredbe.
+Započnite svoje putovanje s Foundry Local instaliranjem i konfiguriranjem na Windows 11. Naučite kako postaviti CLI, omogućiti hardversku akceleraciju i predmemorirati modele za brzu lokalnu inferenciju. Ova praktična sesija vodi vas kroz pokretanje modela poput Phi, Qwen, DeepSeek i GPT-OSS-20B koristeći reproducibilne CLI naredbe.
 
 ## Ciljevi učenja
 
@@ -27,7 +27,7 @@ Na kraju ove sesije, moći ćete:
 foundry model run phi-4-mini --prompt "Pozdrav, predstavi se"
 
 - Windows 11 (22H2 ili noviji)
-# Popis dostupnih modela iz kataloga (učitani modeli se pojavljuju nakon pokretanja)
+# Popis dostupnih modela iz kataloga (učitani modeli pojavljuju se nakon pokretanja)
 foundry model list
 ## NOTE: Trenutno ne postoji namjenska oznaka `--running`; da biste vidjeli koji su učitani, pokrenite chat ili pregledajte zapisnike usluge.
 - Python 3.10+ instaliran
@@ -40,7 +40,7 @@ Kreirajte `.env` (ili postavite u shell) kako biste skripte učinili prenosivima
 # Usporedba odgovora (neinteraktivno)
 foundry model run gpt-oss-20b --prompt "Objasni edge AI jednostavnim riječima"
 | Varijabla | Svrha | Primjer |
-|----------|---------|---------|
+|----------|-------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Preferirani alias modela (katalog automatski odabire najbolju varijantu) | `phi-3.5-mini` |
 | `FOUNDRY_LOCAL_ENDPOINT` | Prekoračenje krajnje točke (inače automatski iz managera) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Omogućuje streaming demo | `true` |
@@ -77,7 +77,7 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Ako izvorni macOS binarni paketi još nisu dostupni, možete:
+Ako izvorni macOS binarni podaci još nisu dostupni, možete:
 1. Koristiti Windows 11 ARM/Intel VM (Parallels / UTM) i slijediti korake za Windows. 
 2. Pokrenuti modele putem kontejnera (ako je objavljena slika kontejnera) i postaviti `FOUNDRY_LOCAL_ENDPOINT` na izloženi port. 
 
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### SDK Bootstrapping (Preporučeno)
 
-Umjesto ručnog pokretanja usluge i modela, **Foundry Local Python SDK** može automatizirati sve:
+Umjesto ručnog pokretanja usluge i modela, **Foundry Local Python SDK** može sve pokrenuti automatski:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -200,7 +200,7 @@ foundry cache list
 
 ### 4. Početni projekt: Prilagodba 01-run-phi za Foundry Local (5 minuta)
 
-#### Korak 4.1: Kreiranje osnovne chat aplikacije
+#### Korak 4.1: Kreiranje osnovne aplikacije za chat
 
 Kreirajte `samples/01-foundry-quickstart/chat_quickstart.py` (ažurirano za korištenje managera ako je dostupan):
 
@@ -351,7 +351,7 @@ print()
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Problem 2: "Model nije učitan"
+### Problem 2: "Model nije uspio učitati"
 
 **Rješenje:**
 ```powershell
@@ -404,32 +404,33 @@ foundry config set model.preload false
 ### 3. Praćenje performansi
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Opcionalna poboljšanja
 
 | Poboljšanje | Što | Kako |
-|-------------|------|-----|
-| Zajedničke korisne funkcije | Uklonite dupliciranu logiku klijenta/bootstrappinga | Koristite `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Vidljivost korištenja tokena | Naučite razmišljanje o troškovima/učinkovitosti rano | Postavite `SHOW_USAGE=1` za ispis prompt/completion/total tokena |
-| Determinističke usporedbe | Stabilno testiranje performansi i regresije | Koristite `temperature=0`, `top_p=1`, dosljedan tekst prompta |
-| Latencija prvog tokena | Metrika percepcije odziva | Prilagodite skriptu za benchmark sa streamingom (`BENCH_STREAM=1`) |
+|-------------|-----|------|
+| Zajedničke korisničke funkcije | Uklonite dupliciranu logiku klijenta/bootstrapa | Koristite `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Vidljivost korištenja tokena | Naučite razmišljanje o troškovima/učinkovitosti | Postavite `SHOW_USAGE=1` za ispis upita/odgovora/ukupnih tokena |
+| Determinističke usporedbe | Stabilno testiranje performansi i regresije | Koristite `temperature=0`, `top_p=1`, dosljedan tekst upita |
+| Latencija prvog tokena | Metrika percepcije odziva | Prilagodite skriptu za testiranje sa streamingom (`BENCH_STREAM=1`) |
 | Ponovno pokušavanje kod privremenih grešaka | Otpornost na hladni start | `RETRY_ON_FAIL=1` (zadano) i prilagodite `RETRY_BACKOFF` |
-| Testiranje funkcionalnosti | Brza provjera ključnih tokova | Pokrenite `python Workshop/tests/smoke.py` prije radionice |
+| Brzo testiranje | Brza provjera ključnih funkcija | Pokrenite `python Workshop/tests/smoke.py` prije radionice |
 | Profili aliasa modela | Brza promjena skupa modela između uređaja | Održavajte `.env` s `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Učinkovitost predmemoriranja | Izbjegnite ponovljene zagrijavanja u višestrukim pokretanjima | Koristite predmemorirane managere; ponovno koristite između skripti/notebookova |
-| Zagrijavanje pri prvom pokretanju | Smanjite p95 latencijske skokove | Pokrenite mali prompt nakon kreiranja `FoundryLocalManager`-a |
+| Učinkovitost predmemoriranja | Izbjegnite ponovljeno zagrijavanje u višestrukim pokretanjima | Koristite alate za predmemoriranje managera; ponovno koristite u skriptama/bilježnicama |
+| Zagrijavanje pri prvom pokretanju | Smanjite p95 skokove latencije | Pokrenite mali upit nakon kreiranja `FoundryLocalManager`-a |
 
-Primjer determinističkog toplog početnog stanja (PowerShell):
+Primjer determinističkog toplog zagrijavanja (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -446,7 +447,7 @@ Nakon završetka ove sesije:
 
 1. **Istražite Sesiju 2**: Izgradite AI rješenja s Azure AI Foundry RAG
 2. **Isprobajte različite modele**: Eksperimentirajte s Qwen, DeepSeek i drugim obiteljima modela
-3. **Optimizirajte performanse**: Fino prilagodite postavke za vaš specifični hardver
+3. **Optimizirajte performanse**: Fino podesite postavke za vaš specifični hardver
 4. **Izradite prilagođene aplikacije**: Koristite Foundry Local SDK u vlastitim projektima
 
 ## Dodatni resursi
@@ -459,7 +460,7 @@ Nakon završetka ove sesije:
 ### Primjeri koda
 - [Modul08 Primjer 01](./samples/01/README.md) - REST Chat Quickstart
 - [Modul08 Primjer 02](./samples/02/README.md) - Integracija s OpenAI SDK-om
-- [Modul08 Primjer 03](./samples/03/README.md) - Otkriće modela i benchmarking
+- [Modul08 Primjer 03](./samples/03/README.md) - Otkriće modela i testiranje performansi
 
 ### Zajednica
 - [Foundry Local GitHub Rasprave](https://github.com/microsoft/Foundry-Local/discussions)
@@ -473,13 +474,13 @@ Nakon završetka ove sesije:
 
 ## Primjer scenarija i mapiranje radionice
 
-| Skripta radionice / Notebook | Scenarij | Cilj | Primjer unosa | Potrebni podaci |
-|----------------------------|----------|------|------------------|----------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Interni IT tim procjenjuje inferenciju na uređaju za portal procjene privatnosti | Dokazati da lokalni SLM odgovara unutar sub-sekundne latencije na standardne upite | "Navedite dvije prednosti lokalne inferencije." | Nema (pojedinačni upit) |
-| Kodni blok za prilagodbu Quickstart-a | Programer migrira postojeću OpenAI skriptu na Foundry Local | Prikazati kompatibilnost bez izmjena | "Navedite dvije prednosti lokalne inferencije." | Samo inline prompt |
+| Skripta radionice / Bilježnica | Scenarij | Cilj | Primjer unosa | Potrebna baza podataka |
+|-------------------------------|----------|------|---------------|------------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Interni IT tim procjenjuje inferenciju na uređaju za portal procjene privatnosti | Dokazati da lokalni SLM odgovara unutar latencije ispod sekunde na standardne upite | "Navedite dvije prednosti lokalne inferencije." | Nema (pojedinačni upit) |
+| Kodni blok za prilagodbu Quickstarta | Programer migrira postojeću OpenAI skriptu na Foundry Local | Prikazati kompatibilnost bez dodatnih prilagodbi | "Navedite dvije prednosti lokalne inferencije." | Samo inline upit |
 
 ### Narativ scenarija
-Tim za sigurnost i usklađenost mora potvrditi može li se osjetljivi prototipni podaci obrađivati lokalno. Pokreću bootstrap skriptu s nekoliko upita (privatnost, latencija, trošak) koristeći deterministički način temperature=0 kako bi zabilježili osnovne izlaze za kasniju usporedbu (benchmarking u Sesiji 3 i kontrast SLM vs LLM u Sesiji 4).
+Tim za sigurnost i usklađenost mora potvrditi može li se osjetljivi prototipni podaci obrađivati lokalno. Pokreću bootstrap skriptu s nekoliko upita (privatnost, latencija, trošak) koristeći deterministički način temperature=0 kako bi zabilježili osnovne izlaze za kasniju usporedbu (benchmarking u Sesiji 3 i kontrast SLM-a i LLM-a u Sesiji 4).
 
 ### Minimalni JSON skup upita (opcionalno)
 ```json
@@ -495,4 +496,4 @@ Koristite ovaj popis za kreiranje reproducibilne petlje evaluacije ili za inicij
 ---
 
 **Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane ljudskog prevoditelja. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T20:42:21+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T20:04:59+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "es"
 }
@@ -39,12 +39,12 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Aplicar la Configuración
+### 3. Aplicar Configuración
 
 **Para Scripts en Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sesión 03: Benchmarking
 | Variable | Predeterminado | Propósito |
 |----------|----------------|-----------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modelos para benchmarking |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modelos para benchmarking |
 | `BENCH_ROUNDS` | `3` | Iteraciones por modelo |
 | `BENCH_PROMPT` | Preconfigurado | Prompt de prueba |
 | `BENCH_STREAM` | `0` | Medir latencia del primer token |
@@ -114,8 +114,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | Variable | Predeterminado | Propósito |
 |----------|----------------|-----------|
 | `SHOW_USAGE` | `1` | Imprimir uso de tokens |
-| `RETRY_ON_FAIL` | `1` | Habilitar lógica de reintento |
-| `RETRY_BACKOFF` | `1.0` | Retraso entre reintentos (segundos) |
+| `RETRY_ON_FAIL` | `1` | Activar lógica de reintento |
+| `RETRY_BACKOFF` | `1.0` | Retraso en el reintento (segundos) |
 
 ## Configuraciones Comunes
 
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Configuración de Benchmarking
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -165,7 +165,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - Equilibrio entre calidad y velocidad
 
 **Respuestas Rápidas:**
-- `qwen2.5-0.5b` - Muy rápido, ideal para clasificación
+- `qwen2.5-0.5b` - Muy rápido, bueno para clasificación
 - `phi-4-mini` - Rápido con buena calidad
 
 **Alta Calidad:**
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Síntomas:**
 - Errores de "Módulo no encontrado"
-- "No se puede importar workshop_utils"
 
 **Soluciones:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Pruebas de Configuración
@@ -366,7 +363,7 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## Mejores Prácticas de Seguridad
+## Prácticas de Seguridad Recomendadas
 
 ### 1. Nunca Comprometer Secretos
 
@@ -406,7 +403,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Repositorio Principal**: https://github.com/microsoft/Foundry-Local
 - **SDK de Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Documentación de API**: Consultar el repositorio del SDK para la última versión
+- **Documentación de la API**: Consultar el repositorio del SDK para la última versión
 
 ## Recursos Adicionales
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.

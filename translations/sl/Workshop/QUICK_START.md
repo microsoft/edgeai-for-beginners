@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T11:58:21+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T23:29:33+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "sl"
 }
 -->
-# Hitri vodič za delavnico
+# Hiteri vodnik za delavnico
 
 ## Predpogoji
 
 ### 1. Namestite Foundry Local
 
-Sledite uradnemu vodiču za namestitev:
+Sledite uradnemu vodniku za namestitev:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -29,7 +29,7 @@ foundry service status
 
 ### 2. Namestite Python odvisnosti
 
-Iz delavniške mape:
+Iz direktorija delavnice:
 
 ```bash
 # Create virtual environment (recommended)
@@ -45,13 +45,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Zagon primerov iz delavnice
+## Zagon primerov delavnice
 
 ### Seja 01: Osnovni klepet
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Okoljske spremenljivke:**
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Seja 02: RAG cevovod
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Okoljske spremenljivke:**
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Seja 02: RAG ocenjevanje (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Opomba**: Zahteva dodatne odvisnosti, nameščene prek `requirements.txt`
@@ -85,25 +86,25 @@ python rag_eval_ragas.py
 ### Seja 03: Primerjava zmogljivosti
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Okoljske spremenljivke:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Izhod**: JSON z meritvami zakasnitve, prepustnosti in prvega žetona
+**Izhod**: JSON z meritvami zakasnitve, prepustnosti in prvega znaka
 
 ### Seja 04: Primerjava modelov
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Okoljske spremenljivke:**
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Seja 05: Orkestracija več agentov
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Okoljske spremenljivke:**
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Seja 06: Usmerjevalnik modelov
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **Testira logiko usmerjanja** z več nameni (koda, povzetek, klasifikacija)
@@ -139,7 +140,7 @@ python models_router.py
 ### Seja 06: Cevovod
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Kompleksen večstopenjski cevovod** z načrtovanjem, izvedbo in izboljšanjem
@@ -165,7 +166,7 @@ python export_benchmark_markdown.py \
 python lint_markdown_cli.py --verbose
 ```
 
-**Namen**: Zaznavanje zastarelih vzorcev CLI v dokumentaciji
+**Namen**: Zaznavanje zastarelih CLI vzorcev v dokumentaciji
 
 ## Testiranje
 
@@ -204,7 +205,7 @@ source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### Napake pri povezavi
+### Napake povezave
 
 ```bash
 # Check endpoint
@@ -224,14 +225,14 @@ foundry model list
 foundry model run phi-4-mini
 ```
 
-## Referenca okoljskih spremenljivk
+## Referenca okoljske spremenljivke
 
 ### Osnovna konfiguracija
 | Spremenljivka | Privzeto | Opis |
 |---------------|----------|------|
 | `FOUNDRY_LOCAL_ALIAS` | Različno | Uporabljeni vzdevek modela |
-| `FOUNDRY_LOCAL_ENDPOINT` | Samodejno | Prekliči končno točko storitve |
-| `SHOW_USAGE` | `0` | Prikaži statistiko uporabe žetonov |
+| `FOUNDRY_LOCAL_ENDPOINT` | Samodejno | Preklic končne točke storitve |
+| `SHOW_USAGE` | `0` | Prikaz statistike uporabe žetonov |
 | `RETRY_ON_FAIL` | `1` | Omogoči logiko ponovnega poskusa |
 | `RETRY_BACKOFF` | `1.0` | Začetna zakasnitev ponovnega poskusa (sekunde) |
 
@@ -242,8 +243,8 @@ foundry model run phi-4-mini
 | `RAG_QUESTION` | Glej primer | Testno vprašanje za RAG |
 | `BENCH_MODELS` | Različno | Modeli, ločeni z vejico |
 | `BENCH_ROUNDS` | `3` | Iteracije primerjanja zmogljivosti |
-| `BENCH_PROMPT` | Glej primer | Poziv za primerjanje zmogljivosti |
-| `BENCH_STREAM` | `0` | Merjenje zakasnitve prvega žetona |
+| `BENCH_PROMPT` | Glej primer | Poziv za primerjavo zmogljivosti |
+| `BENCH_STREAM` | `0` | Merjenje zakasnitve prvega znaka |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Primarni model agenta |
 | `AGENT_MODEL_EDITOR` | Primarni | Model agenta za urejanje |
 | `SLM_ALIAS` | `phi-4-mini` | Majhen jezikovni model |
@@ -254,7 +255,7 @@ foundry model run phi-4-mini
 
 ### Razvoj in testiranje
 - **phi-4-mini** - Uravnotežena kakovost in hitrost
-- **qwen2.5-0.5b** - Zelo hiter za klasifikacijo
+- **qwen2.5-0.5b** - Zelo hitro za klasifikacijo
 - **gemma-2-2b** - Dobra kakovost, zmerna hitrost
 
 ### Proizvodni scenariji
@@ -276,9 +277,9 @@ foundry model run phi-4-mini
 
 ## Naslednji koraki
 
-1. Dokončajte vse seje delavnice po vrsti
+1. Zaključite vse seje delavnice po vrsti
 2. Eksperimentirajte z različnimi modeli
-3. Prilagodite primere za svoje potrebe
+3. Prilagodite primere za svoje primere uporabe
 4. Preglejte `SDK_MIGRATION_NOTES.md` za napredne vzorce
 
 ---
@@ -289,5 +290,5 @@ foundry model run phi-4-mini
 
 ---
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovno človeško prevajanje. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni prevod s strani človeka. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.

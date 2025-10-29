@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T10:37:34+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T21:46:36+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "tr"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Ön Koşullar
 
-### 1. Foundry Local Kurulumu
+### 1. Foundry Local'ı Yükleyin
 
-Resmi kurulum kılavuzunu takip edin:  
+Resmi yükleme kılavuzunu takip edin:  
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -27,7 +27,7 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. Python Bağımlılıklarını Kurun
+### 2. Python Bağımlılıklarını Yükleyin
 
 Atölye dizininden:
 
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Oturum 01: Temel Sohbet
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Ortam Değişkenleri:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Oturum 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Ortam Değişkenleri:**  
@@ -77,33 +77,34 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Oturum 02: RAG Değerlendirme (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**Not**: Ek bağımlılıkların `requirements.txt` üzerinden kurulması gerekir.
+**Not**: Ek bağımlılıkların `requirements.txt` üzerinden yüklenmesi gerekir.
 
-### Oturum 03: Karşılaştırma
+### Oturum 03: Performans Testi
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Ortam Değişkenleri:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Çıktı**: JSON formatında gecikme, verimlilik ve ilk token metrikleri
+**Çıktı**: Gecikme, işlem hacmi ve ilk token metriklerini içeren JSON
 
 ### Oturum 04: Model Karşılaştırması
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Ortam Değişkenleri:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Oturum 05: Çoklu Ajan Orkestrasyonu
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Ortam Değişkenleri:**  
@@ -130,23 +131,23 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Oturum 06: Model Yönlendirici
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Yönlendirme mantığını test eder**; birden fazla niyetle (kod, özetleme, sınıflandırma)
+**Yönlendirme mantığını test eder** (kod, özetleme, sınıflandırma gibi birden fazla niyetle)
 
 ### Oturum 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**Karmaşık çok adımlı pipeline**; planlama, yürütme ve iyileştirme içerir.
+**Karmaşık çok adımlı pipeline** planlama, yürütme ve iyileştirme ile
 
 ## Betikler
 
-### Karşılaştırma Raporu Dışa Aktarma
+### Performans Testi Raporu Dışa Aktarma
 
 ```bash
 cd Workshop/scripts
@@ -169,18 +170,18 @@ python lint_markdown_cli.py --verbose
 
 ## Testler
 
-### Duman Testleri
+### Hızlı Testler
 
 ```bash
 cd Workshop
 python -m tests.smoke
 ```
 
-**Testler**: Temel örneklerin ana işlevselliği
+**Testler**: Temel örneklerin işlevselliği
 
 ## Sorun Giderme
 
-### Hizmet Çalışmıyor
+### Servis Çalışmıyor
 
 ```bash
 # Check status
@@ -226,11 +227,11 @@ foundry model run phi-4-mini
 
 ## Ortam Değişkeni Referansı
 
-### Çekirdek Yapılandırma
+### Temel Yapılandırma
 | Değişken | Varsayılan | Açıklama |
 |----------|------------|----------|
 | `FOUNDRY_LOCAL_ALIAS` | Değişken | Kullanılacak model takma adı |
-| `FOUNDRY_LOCAL_ENDPOINT` | Otomatik | Hizmet uç noktasını geçersiz kıl |
+| `FOUNDRY_LOCAL_ENDPOINT` | Otomatik | Servis uç noktasını geçersiz kıl |
 | `SHOW_USAGE` | `0` | Token kullanım istatistiklerini göster |
 | `RETRY_ON_FAIL` | `1` | Yeniden deneme mantığını etkinleştir |
 | `RETRY_BACKOFF` | `1.0` | İlk yeniden deneme gecikmesi (saniye) |
@@ -238,17 +239,17 @@ foundry model run phi-4-mini
 ### Oturuma Özel
 | Değişken | Varsayılan | Açıklama |
 |----------|------------|----------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Gömme modeli |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Gömülü model |
 | `RAG_QUESTION` | Örnek soruya bakın | RAG test sorusu |
 | `BENCH_MODELS` | Değişken | Virgülle ayrılmış modeller |
-| `BENCH_ROUNDS` | `3` | Karşılaştırma yinelemeleri |
-| `BENCH_PROMPT` | Örnek soruya bakın | Karşılaştırma istemi |
+| `BENCH_ROUNDS` | `3` | Performans testi yinelemeleri |
+| `BENCH_PROMPT` | Örnek isteme bakın | Performans testi istemi |
 | `BENCH_STREAM` | `0` | İlk token gecikmesini ölç |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Birincil ajan modeli |
 | `AGENT_MODEL_EDITOR` | Birincil | Editör ajan modeli |
 | `SLM_ALIAS` | `phi-4-mini` | Küçük dil modeli |
 | `LLM_ALIAS` | `qwen2.5-7b` | Büyük dil modeli |
-| `COMPARE_PROMPT` | Örnek soruya bakın | Karşılaştırma istemi |
+| `COMPARE_PROMPT` | Örnek isteme bakın | Karşılaştırma istemi |
 
 ## Önerilen Modeller
 
@@ -265,14 +266,14 @@ foundry model run phi-4-mini
 ## SDK Belgeleri
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
 
 ## Yardım Alma
 
-1. Hizmet durumunu kontrol edin: `foundry service status`  
-2. Günlükleri görüntüleyin: Foundry Local hizmet günlüklerini kontrol edin  
+1. Servis durumunu kontrol edin: `foundry service status`  
+2. Günlükleri görüntüleyin: Foundry Local servis günlüklerini kontrol edin  
 3. SDK belgelerine bakın: https://github.com/microsoft/Foundry-Local  
-4. Örnek kodu inceleyin: Tüm örneklerde ayrıntılı açıklamalar bulunur.
+4. Örnek kodu inceleyin: Tüm örneklerde ayrıntılı açıklamalar bulunmaktadır  
 
 ## Sonraki Adımlar
 
@@ -285,9 +286,9 @@ foundry model run phi-4-mini
 
 **Son Güncelleme**: 2025-01-08  
 **Atölye Sürümü**: En Son  
-**SDK**: Foundry Local Python SDK
+**SDK**: Foundry Local Python SDK  
 
 ---
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çeviriler hata veya yanlışlıklar içerebilir. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.

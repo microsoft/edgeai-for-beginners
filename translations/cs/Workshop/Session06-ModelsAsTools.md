@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T21:35:47+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T23:02:58+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "cs"
 }
@@ -11,20 +11,20 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrakt
 
-Považujte modely za kompozitní nástroje uvnitř lokální vrstvy AI. Toto sezení ukazuje, jak řetězit více specializovaných volání SLM/LLM, selektivně směrovat úkoly a vystavit jednotné SDK rozhraní aplikacím. Vytvoříte lehký směrovač modelů + plánovač úkolů, integrujete jej do skriptu aplikace a nastíníte cestu ke škálování na Azure AI Foundry pro produkční zátěže.
+Považujte modely za složitelné nástroje uvnitř lokální vrstvy AI. Toto sezení ukazuje, jak propojit více specializovaných SLM/LLM volání, selektivně směrovat úkoly a zpřístupnit jednotné SDK rozhraní aplikacím. Vytvoříte lehký router modelů + plánovač úkolů, integrujete jej do skriptu aplikace a nastíníte cestu ke škálování na Azure AI Foundry pro produkční zátěže.
 
 ## Cíle učení
 
 - **Pochopit** modely jako atomické nástroje s deklarovanými schopnostmi
 - **Směrovat** požadavky na základě záměru / heuristického skórování
-- **Řetězit** výstupy napříč vícekrokovými úkoly (rozložit → vyřešit → zpřesnit)
-- **Integrovat** jednotné klientské API pro aplikace
+- **Propojovat** výstupy napříč vícekrokovými úkoly (rozložit → vyřešit → zpřesnit)
+- **Integrovat** jednotné API klienta pro aplikace
 - **Škálovat** návrh do cloudu (stejný OpenAI-kompatibilní kontrakt)
 
 ## Předpoklady
 
 - Dokončené sezení 1–5
-- Více lokálních modelů uložených v cache (např. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- Více lokálních modelů uložených (např. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
 ### Ukázka prostředí napříč platformami
 
@@ -44,7 +44,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Vzdálený přístup / přístup k VM ze systému macOS:
+Vzdálený přístup / přístup k VM službě z macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -133,7 +133,7 @@ if __name__ == "__main__":
 ```
 
 
-### 3. Řetězení vícekrokových úkolů (7 min)
+### 3. Propojování vícekrokových úkolů (7 min)
 
 Vytvořte `samples/06-tools/pipeline.py`:
 
@@ -179,20 +179,20 @@ if __name__ == '__main__':
 ### 4. Startovací projekt: Adaptace `06-models-as-tools` (5 min)
 
 Vylepšení:
-- Přidejte podporu streamování tokenů (progresivní aktualizace UI)
-- Přidejte skórování důvěryhodnosti: lexikální překryv nebo rubrika promptu
-- Exportujte JSON trasování (záměr → model → latence → využití tokenů)
-- Implementujte opětovné využití cache pro opakované podkroky
+- Přidání podpory streamování tokenů (progresivní aktualizace UI)
+- Přidání skórování důvěryhodnosti: lexikální překryv nebo rubrika promptu
+- Export trace JSON (záměr → model → latence → využití tokenů)
+- Implementace opětovného využití cache pro opakované podkroky
 
 ### 5. Cesta ke škálování na Azure (5 min)
 
 | Vrstva | Lokální (Foundry) | Cloud (Azure AI Foundry) | Strategie přechodu |
 |--------|-------------------|--------------------------|---------------------|
-| Směrování | Heuristický Python | Odolný mikroslužba | Kontejnerizujte a nasazujte API |
-| Modely | SLMs uložené v cache | Spravované nasazení | Mapujte lokální názvy na ID nasazení |
-| Pozorovatelnost | CLI statistiky / manuální | Centrální logování a metriky | Přidejte strukturované události trasování |
-| Zabezpečení | Pouze lokální host | Azure autentizace / síť | Zaveďte trezor klíčů pro tajné údaje |
-| Náklady | Zdroje zařízení | Účtování spotřeby | Přidejte rozpočtové limity |
+| Směrování | Heuristický Python | Odolný mikroslužba | Kontejnerizace & nasazení API |
+| Modely | Uložené SLM | Spravované nasazení | Mapování lokálních názvů na ID nasazení |
+| Pozorovatelnost | CLI statistiky / manuální | Centrální logování & metriky | Přidání strukturovaných trace událostí |
+| Bezpečnost | Pouze lokální host | Azure autentizace / síťování | Zavedení key vault pro tajné klíče |
+| Náklady | Zdroje zařízení | Účtování spotřeby | Přidání rozpočtových limitů |
 
 ## Kontrolní seznam validace
 
@@ -209,9 +209,9 @@ Očekávejte výběr modelu na základě záměru a finální zpřesněný výst
 
 | Problém | Příčina | Řešení |
 |---------|---------|--------|
-| Všechny úkoly směrovány na stejný model | Slabá pravidla | Rozšiřte regex sadu INTENT_RULES |
+| Všechny úkoly směrovány na stejný model | Slabá pravidla | Obohaťte regex sadu INTENT_RULES |
 | Pipeline selže uprostřed kroku | Chybějící načtený model | Spusťte `foundry model run <model>` |
-| Nízká soudržnost výstupu | Chybí fáze zpřesnění | Přidejte krok sumarizace / validace |
+| Nízká soudržnost výstupu | Chybí fáze zpřesnění | Přidejte fázi sumarizace / validace |
 
 ## Reference
 
@@ -224,15 +224,15 @@ Očekávejte výběr modelu na základě záměru a finální zpřesněný výst
 **Délka sezení**: 30 min  
 **Obtížnost**: Expert
 
-## Ukázkový scénář a mapování workshopu
+## Ukázkový scénář & mapování workshopu
 
-| Skripty workshopu / Notebooky | Scénář | Cíl | Zdroj dat / katalog |
-|-------------------------------|--------|-----|----------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Asistent vývojáře zpracovávající smíšené záměry promptů (refaktorovat, sumarizovat, klasifikovat) | Heuristické směrování záměru → alias modelu s využitím tokenů | Inline `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Vícekrokové plánování a zpřesnění pro komplexní úkol asistence při kódování | Rozložit → specializované provedení → krok zpřesnění sumarizace | Stejný `CATALOG`; kroky odvozené z výstupu plánu |
+| Skripty workshopu / Notebooky | Scénář | Cíl | Zdroj datasetu / katalogu |
+|-------------------------------|--------|-----|----------------------------|
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Asistent vývojáře zpracovávající smíšené záměry promptů (refaktorování, sumarizace, klasifikace) | Heuristické směrování záměru → alias modelu s využitím tokenů | Inline `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Vícekrokové plánování & zpřesnění pro komplexní úkol asistence při kódování | Rozložit → specializované provedení → krok zpřesnění sumarizace | Stejný `CATALOG`; kroky odvozené z výstupu plánu |
 
 ### Narativ scénáře
-Nástroj pro produktivitu inženýrů přijímá heterogenní úkoly: refaktorovat kód, sumarizovat poznámky k architektuře, klasifikovat zpětnou vazbu. Pro minimalizaci latence a využití zdrojů malý obecný model plánuje a sumarizuje, model specializovaný na kód zpracovává refaktorování a lehký model schopný klasifikace označuje zpětnou vazbu. Skript pipeline demonstruje řetězení + zpřesnění; skript router izoluje adaptivní směrování jednoho promptu.
+Nástroj pro zvýšení produktivity inženýrů přijímá heterogenní úkoly: refaktorování kódu, sumarizace architektonických poznámek, klasifikace zpětné vazby. Pro minimalizaci latence & využití zdrojů malý obecný model plánuje a sumarizuje, model specializovaný na kód se stará o refaktorování a lehký model schopný klasifikace označuje zpětnou vazbu. Skript pipeline demonstruje propojení + zpřesnění; skript routeru izoluje adaptivní směrování jednoho promptu.
 
 ### Snímek katalogu
 ```python
@@ -255,8 +255,8 @@ CATALOG = {
 ```
 
 
-### Rozšíření trasování (volitelné)
-Přidejte JSON řádky trasování pro každý krok do `models_pipeline.py`:
+### Rozšíření trace (volitelné)
+Přidejte JSON řádky trace pro každý krok do `models_pipeline.py`:
 ```python
 trace.append({
     "step": step_idx,
@@ -269,24 +269,24 @@ trace.append({
 
 
 ### Heuristika eskalace (nápad)
-Pokud plán obsahuje klíčová slova jako "optimalizovat", "zabezpečení" nebo délka kroku > 280 znaků → eskalujte na větší model (např. `gpt-oss-20b`) pouze pro tento krok.
+Pokud plán obsahuje klíčová slova jako "optimalizace", "bezpečnost" nebo délka kroku > 280 znaků → eskalujte na větší model (např. `gpt-oss-20b`) pouze pro tento krok.
 
 ### Volitelná vylepšení
 
 | Oblast | Vylepšení | Hodnota | Nápověda |
 |--------|-----------|---------|----------|
-| Cache | Opětovné využití objektů správce + klienta | Nižší latence, menší režie | Použijte `workshop_utils.get_client` |
-| Metriky využití | Zachyťte tokeny a latenci na krok | Profilování a optimalizace | Časujte každé směrované volání; ukládejte do seznamu trasování |
-| Adaptivní směrování | Důvěra / náklady | Lepší kompromis kvality a nákladů | Přidejte skórování: pokud prompt > N znaků nebo regex odpovídá doméně → eskalujte na větší model |
-| Dynamický registr schopností | Hot reload katalogu | Bez restartu nasazení | Načtěte `catalog.json` za běhu; sledujte časovou značku souboru |
+| Cache | Opětovné použití objektů manažera + klienta | Nižší latence, menší režie | Použijte `workshop_utils.get_client` |
+| Metriky využití | Zachycení tokenů & latence na krok | Profilování & optimalizace | Měřte každý směrovaný hovor; ukládejte do seznamu trace |
+| Adaptivní směrování | Důvěryhodnost / nákladová efektivita | Lepší poměr kvality a nákladů | Přidejte skórování: pokud prompt > N znaků nebo regex odpovídá doméně → eskalujte na větší model |
+| Dynamický registr schopností | Hot reload katalogu | Bez restartu / znovunasazení | Načtěte `catalog.json` za běhu; sledujte časovou značku souboru |
 | Strategie zálohy | Robustnost při selhání | Vyšší dostupnost | Zkuste primární → při výjimce záložní alias |
 | Streamovací pipeline | Rychlá zpětná vazba | Zlepšení UX | Streamujte každý krok a bufferujte vstup pro finální zpřesnění |
-| Vektorové embeddingy záměru | Nuancovanější směrování | Vyšší přesnost záměru | Embedujte prompt, seskupte a mapujte centroid → schopnost |
-| Export trasování | Auditovatelné řetězení | Soulad / reportování | Emitujte JSON řádky: krok, záměr, model, latence_ms, tokeny |
-| Simulace nákladů | Odhad před cloudem | Plánování rozpočtu | Přiřaďte nominální náklady/token pro model a agregujte na úkol |
+| Vektorové embedování záměru | Jemnější směrování | Vyšší přesnost záměru | Embedujte prompt, seskupte & mapujte centroid → schopnost |
+| Export trace | Auditovatelný řetězec | Soulad / reportování | Emitujte JSON řádky: krok, záměr, model, latence_ms, tokeny |
+| Simulace nákladů | Odhad před nasazením do cloudu | Plánování rozpočtu | Přiřaďte nominální náklady/token na model & agregujte na úkol |
 | Deterministický režim | Reprodukovatelnost | Stabilní benchmarking | Env: `temperature=0`, pevný počet kroků |
 
-#### Příklad struktury trasování
+#### Příklad struktury trace
 
 ```python
 trace.append({
@@ -323,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Iterujte postupně—vyhněte se nadměrnému inženýrství u raných prototypů.
-
 ---
 
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace doporučujeme profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.

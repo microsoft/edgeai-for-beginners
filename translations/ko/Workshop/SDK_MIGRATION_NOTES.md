@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-08T19:29:25+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T20:59:54+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "ko"
 }
@@ -18,10 +18,10 @@ Workshop 폴더의 모든 Python 파일이 공식 [Foundry Local Python SDK](htt
 ### 핵심 인프라 (`workshop_utils.py`)
 
 #### 향상된 기능:
-- **엔드포인트 재정의 지원**: `FOUNDRY_LOCAL_ENDPOINT` 환경 변수를 추가하여 지원
+- **엔드포인트 오버라이드 지원**: `FOUNDRY_LOCAL_ENDPOINT` 환경 변수를 추가하여 지원
 - **개선된 오류 처리**: 상세한 오류 메시지를 포함한 예외 처리 개선
 - **향상된 캐싱**: 다중 엔드포인트 시나리오를 위해 캐시 키에 엔드포인트 포함
-- **지수적 백오프**: 신뢰성을 높이기 위해 재시도 로직에 지수적 백오프 적용
+- **지수적 백오프**: 신뢰성을 높이기 위해 지수적 백오프를 사용하는 재시도 로직 추가
 - **타입 주석**: IDE 지원을 위한 포괄적인 타입 힌트 추가
 
 #### 새로운 기능:
@@ -37,12 +37,12 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### 세션 01: 채팅 부트스트랩 (`chat_bootstrap.py`)
 - 기본 모델을 `phi-3.5-mini`에서 `phi-4-mini`로 업데이트
-- 엔드포인트 재정의 지원 추가
+- 엔드포인트 오버라이드 지원 추가
 - SDK 참조를 포함한 문서 개선
 
 #### 세션 02: RAG 파이프라인 (`rag_pipeline.py`)
 - 기본 모델을 `phi-4-mini`로 업데이트
-- 엔드포인트 재정의 지원 추가
+- 엔드포인트 오버라이드 지원 추가
 - 환경 변수 세부사항을 포함한 문서 개선
 
 #### 세션 02: RAG 평가 (`rag_eval_ragas.py`)
@@ -54,7 +54,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - 기본 모델 목록에 `phi-4-mini` 추가
 - 포괄적인 환경 변수 문서 추가
 - 함수 문서 개선
-- 전체적으로 엔드포인트 재정의 지원 추가
+- 전체적으로 엔드포인트 오버라이드 지원 추가
 
 #### 세션 04: 모델 비교 (`model_compare.py`)
 - 기본 LLM을 `gpt-oss-20b`에서 `qwen2.5-7b`로 업데이트
@@ -64,7 +64,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### 세션 05: 멀티 에이전트 오케스트레이션 (`agents_orchestrator.py`)
 - 타입 힌트 추가 (`str | None`을 `Optional[str]`로 변경)
 - 에이전트 클래스 문서 개선
-- 엔드포인트 재정의 지원 추가
+- 엔드포인트 오버라이드 지원 추가
 - 초기화 패턴 개선
 
 #### 세션 06: 모델 라우터 (`models_router.py`)
@@ -80,7 +80,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 ### 스크립트
 
 #### 벤치마크 내보내기 (`export_benchmark_markdown.py`)
-- 엔드포인트 재정의 지원 추가
+- 엔드포인트 오버라이드 지원 추가
 - 기본 모델 업데이트
 - 함수 문서 개선
 - 오류 처리 개선
@@ -92,7 +92,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 ### 테스트
 
 #### 스모크 테스트 (`smoke.py`)
-- 엔드포인트 재정의 지원 추가
+- 엔드포인트 오버라이드 지원 추가
 - 문서 개선
 - 테스트 케이스 문서 개선
 - 오류 보고 개선
@@ -103,10 +103,10 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### 핵심 구성
 - `FOUNDRY_LOCAL_ALIAS` - 사용할 모델 별칭 (샘플별 기본값 다름)
-- `FOUNDRY_LOCAL_ENDPOINT` - 서비스 엔드포인트 재정의 (선택 사항)
+- `FOUNDRY_LOCAL_ENDPOINT` - 서비스 엔드포인트 오버라이드 (선택 사항)
 - `SHOW_USAGE` - 토큰 사용 통계 표시 (기본값: "0")
 - `RETRY_ON_FAIL` - 재시도 로직 활성화 (기본값: "1")
-- `RETRY_BACKOFF` - 초기 재시도 지연 시간(초) (기본값: "1.0")
+- `RETRY_BACKOFF` - 초기 재시도 지연 시간 (초) (기본값: "1.0")
 
 ### 샘플별
 - `EMBED_MODEL` - RAG 샘플용 임베딩 모델
@@ -188,7 +188,7 @@ for chunk in stream:
    from workshop_utils import get_client, chat_once
    ```
 
-2. **엔드포인트 재정의 지원**:
+2. **엔드포인트 오버라이드 지원**:
    ```python
    endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")
    manager, client, model_id = get_client(alias, endpoint=endpoint)
@@ -215,7 +215,7 @@ for chunk in stream:
 
 ## 테스트
 
-모든 샘플은 다음 명령으로 테스트할 수 있습니다:
+모든 샘플은 다음을 사용하여 테스트할 수 있습니다:
 
 ```bash
 # Set environment variables
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -241,9 +242,9 @@ python -m Workshop.tests.smoke
 
 ## 주요 변경 사항
 
-### 예상되는 변경 없음
+### 예상 없음
 모든 변경 사항은 이전 버전과 호환됩니다. 업데이트는 주로:
-- 새로운 선택적 기능 추가 (엔드포인트 재정의)
+- 새로운 선택적 기능 추가 (엔드포인트 오버라이드)
 - 오류 처리 개선
 - 문서 개선
 - 기본 모델 이름을 최신 권장 사항으로 업데이트
@@ -293,7 +294,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 2. 기존 샘플의 패턴을 따름
 3. 포괄적인 docstring 추가
 4. SDK 참조 링크 포함
-5. 엔드포인트 재정의 지원
+5. 엔드포인트 오버라이드 지원
 6. 적절한 타입 힌트 추가
 7. docstring에 사용 예제 포함
 
@@ -313,4 +314,4 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ---
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서의 원어 버전이 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전을 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.

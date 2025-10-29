@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1b3c0fecfd713c2df903a0633249dc9",
-  "translation_date": "2025-10-09T19:13:33+00:00",
+  "original_hash": "d9e354c0182311726dc037a8809524e2",
+  "translation_date": "2025-10-28T22:36:08+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "id"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrak
 
-Bandingkan Large Language Models (LLMs) dan Small Language Models (SLMs) untuk skenario inferensi lokal vs cloud. Pelajari pola penerapan dengan akselerasi ONNX Runtime, eksekusi WebGPU, dan pengalaman hybrid RAG. Termasuk demo Chainlit RAG dengan model lokal serta eksplorasi opsional OpenWebUI. Anda akan menyesuaikan starter inferensi WebGPU dan mengevaluasi kemampuan serta trade-off biaya/kinerja antara Phi dan GPT-OSS-20B.
+Bandingkan Large Language Models (LLMs) dan Small Language Models (SLMs) untuk skenario inferensi lokal vs cloud. Pelajari pola penerapan dengan memanfaatkan akselerasi ONNX Runtime, eksekusi WebGPU, dan pengalaman hybrid RAG. Termasuk demo Chainlit RAG dengan model lokal serta eksplorasi opsional OpenWebUI. Anda akan menyesuaikan starter inferensi WebGPU dan mengevaluasi kemampuan Phi vs GPT-OSS-20B serta trade-off biaya/kinerja.
 
 ## Tujuan Pembelajaran
 
@@ -24,7 +24,7 @@ Bandingkan Large Language Models (LLMs) dan Small Language Models (SLMs) untuk s
 ## Prasyarat
 
 - Sesi 1–3 selesai
-- `chainlit` terinstal (sudah ada di `requirements.txt` untuk Module08)
+- `chainlit` terinstal (sudah ada di `requirements.txt` untuk Modul08)
 - Browser yang mendukung WebGPU (Edge / Chrome terbaru di Windows 11)
 - Foundry Local berjalan (`foundry status`)
 
@@ -67,11 +67,12 @@ Pantau: kedalaman respons, akurasi faktual, kekayaan gaya, latensi.
 ```powershell
 foundry config set compute.onnx.enable_gpu true
 # Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
-Amati perubahan throughput setelah mengaktifkan GPU dibandingkan hanya CPU.
+Amati perubahan throughput setelah mengaktifkan GPU vs hanya CPU.
 
 ### 3. Inferensi WebGPU di Browser (6 menit)
 
@@ -120,7 +121,7 @@ Buka file di browser; amati roundtrip lokal dengan latensi rendah.
 
 ### 4. Aplikasi Chat Chainlit RAG (7 menit)
 
-Minimal `samples/04-cutting-edge/chainlit_app.py`:
+`samples/04-cutting-edge/chainlit_app.py` minimal:
 
 ```python
 #!/usr/bin/env python3
@@ -164,16 +165,16 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 
 ### 5. Proyek Starter: Sesuaikan `04-webgpu-inference` (6 menit)
 
-Deliverables:
+Hasil yang diharapkan:
 - Ganti logika fetch placeholder dengan token streaming (gunakan varian endpoint `stream=True` setelah diaktifkan)
 - Tambahkan grafik latensi (client-side) untuk toggle phi vs gpt-oss-20b
-- Sematkan konteks RAG secara inline (textarea untuk dokumen referensi)
+- Sematkan konteks RAG secara langsung (textarea untuk dokumen referensi)
 
 ## Heuristik Evaluasi
 
 | Kategori | Phi-4-mini | GPT-OSS-20B | Pengamatan |
 |----------|------------|-------------|-------------|
-| Latensi (cold) | Cepat | Lebih lambat | SLM cepat memanas |
+| Latensi (dingin) | Cepat | Lebih lambat | SLM cepat memanas |
 | Memori | Rendah | Tinggi | Kelayakan perangkat |
 | Kepatuhan konteks | Baik | Kuat | Model yang lebih besar mungkin lebih verbose |
 | Biaya (lokal) | Minimal | Lebih tinggi (sumber daya) | Trade-off energi/waktu |
@@ -187,8 +188,9 @@ foundry model list
 
 # For runtime metrics use the Python benchmark script (Session 3) and OS tools (Task Manager / nvidia-smi) instead of 'model stats'
 # Example:
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini,gpt-oss-20b
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 ## Pemecahan Masalah
@@ -210,12 +212,12 @@ foundry model list
 **Durasi Sesi**: 30 menit  
 **Kesulitan**: Lanjutan
 
-## Skenario Contoh & Pemetaan Workshop
+## Contoh Skenario & Pemetaan Workshop
 
 | Artefak Workshop | Skenario | Tujuan | Sumber Data / Prompt |
 |--------------------|----------|-----------|----------------------|
 | `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Tim arsitektur mengevaluasi SLM vs LLM untuk generator ringkasan eksekutif | Kuantifikasi delta latensi + penggunaan token | Variabel lingkungan `COMPARE_PROMPT` tunggal |
-| `chainlit_app.py` (demo RAG) | Prototipe asisten pengetahuan internal | Dasarkan jawaban pendek dengan pengambilan leksikal minimal | Daftar `DOCS` inline dalam file |
+| `chainlit_app.py` (demo RAG) | Prototipe asisten pengetahuan internal | Dasarkan jawaban singkat dengan pengambilan leksikal minimal | Daftar `DOCS` langsung dalam file |
 | `webgpu_demo.html` | Pratinjau inferensi browser di perangkat masa depan | Tampilkan roundtrip lokal dengan latensi rendah + narasi UX | Hanya prompt pengguna langsung |
 
 ### Narasi Skenario
@@ -239,20 +241,20 @@ else:
     final, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Refine and polish:\n{draft}"}], max_tokens=220)
 ```
 
-Lacak kedua komponen latensi untuk melaporkan biaya rata-rata gabungan.
+Pantau kedua komponen latensi untuk melaporkan biaya rata-rata gabungan.
 
 ### Peningkatan Opsional
 
 | Fokus | Peningkatan | Mengapa | Petunjuk Implementasi |
 |-------|------------|-----|---------------------|
-| Metrik Perbandingan | Lacak penggunaan token + latensi token pertama | Pandangan kinerja holistik | Gunakan skrip benchmark yang ditingkatkan (Sesi 3) dengan `BENCH_STREAM=1` |
+| Metrik Perbandingan | Pantau penggunaan token + latensi token pertama | Pandangan kinerja holistik | Gunakan skrip benchmark yang ditingkatkan (Sesi 3) dengan `BENCH_STREAM=1` |
 | Pipeline Hybrid | Draft SLM → Refine LLM | Kurangi latensi & biaya | Buat dengan phi-4-mini, sempurnakan ringkasan dengan gpt-oss-20b |
-| UI Streaming | UX lebih baik di Chainlit | Umpan balik bertahap | Gunakan `stream=True` setelah streaming lokal diaktifkan; kumpulkan chunk |
-| Caching WebGPU | Inisialisasi JS lebih cepat | Kurangi overhead recompile | Cache artefak shader yang dikompilasi (kemampuan runtime masa depan) |
-| Set QA Deterministik | Perbandingan model yang adil | Hilangkan variansi | Daftar prompt tetap + `temperature=0` untuk evaluasi |
+| UI Streaming | UX lebih baik di Chainlit | Umpan balik bertahap | Gunakan `stream=True` setelah streaming lokal diaktifkan; kumpulkan potongan |
+| Caching WebGPU | Inisialisasi JS lebih cepat | Kurangi overhead kompilasi ulang | Cache artefak shader yang telah dikompilasi (kemampuan runtime masa depan) |
+| Set QA Deterministik | Perbandingan model yang adil | Hilangkan variasi | Daftar prompt tetap + `temperature=0` untuk evaluasi |
 | Penilaian Output | Lensa kualitas terstruktur | Melampaui anekdot | Rubrik sederhana: koherensi / faktualitas / ringkas (1–5) |
 | Catatan Energi / Sumber Daya | Diskusi kelas | Tunjukkan trade-off | Gunakan monitor OS (`foundry system info`, Task Manager, `nvidia-smi`) + output skrip benchmark |
-| Simulasi Biaya | Justifikasi pra-cloud | Rencanakan skala | Peta token ke harga cloud hipotetis untuk narasi TCO |
+| Simulasi Biaya | Justifikasi pra-cloud | Rencana skala | Peta token ke harga cloud hipotetis untuk narasi TCO |
 | Dekonstruksi Latensi | Identifikasi hambatan | Targetkan optimasi | Ukur persiapan prompt, pengiriman permintaan, token pertama, penyelesaian penuh |
 | RAG + LLM Fallback | Jaring pengaman kualitas | Tingkatkan kueri sulit | Jika panjang jawaban SLM < ambang batas atau kepercayaan rendah → eskalasi |
 
@@ -279,4 +281,4 @@ Gunakan kerangka pengukuran yang konsisten di seluruh model untuk perbandingan y
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang keliru yang timbul dari penggunaan terjemahan ini.

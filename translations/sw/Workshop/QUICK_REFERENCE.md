@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T21:37:21+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T22:52:48+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "sw"
 }
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -34,11 +34,11 @@ python chat_bootstrap.py "What is edge AI?"
 
 | Kipindi | Sampuli | Kusudi | Muda |
 |---------|--------|---------|------|
-| 01 | `chat_bootstrap.py` | Gumzo la msingi + utiririshaji | ~30s |
+| 01 | `chat_bootstrap.py` | Mazungumzo ya msingi + utiririshaji | ~30s |
 | 02 | `rag_pipeline.py` | RAG na embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | Tathmini ya RAG | ~60s |
-| 03 | `benchmark_oss_models.py` | Upimaji wa modeli | ~2m |
-| 04 | `model_compare.py` | SLM dhidi ya LLM | ~45s |
+| 03 | `benchmark_oss_models.py` | Upimaji wa mifano | ~2m |
+| 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Mfumo wa mawakala wengi | ~60s |
 | 06 | `models_router.py` | Uelekezaji wa nia | ~45s |
 | 06 | `models_pipeline.py` | Njia ya hatua nyingi | ~60s |
@@ -102,7 +102,7 @@ python scripts/test_samples.py --verbose
 
 ---
 
-## 🐛 Utatuzi wa Shida
+## 🐛 Utatuzi wa Matatizo
 
 ### Hitilafu ya Muunganisho
 ```bash
@@ -123,7 +123,7 @@ pip install sentence-transformers ragas datasets
 pip install -r Workshop/requirements.txt
 ```
 
-### Modeli Haikupatikana
+### Mfano Haujapatikana
 ```bash
 # List available models
 foundry model ls
@@ -145,7 +145,7 @@ set BENCH_ROUNDS=1
 
 ## 📖 Mifumo ya Kawaida
 
-### Gumzo la Msingi
+### Mazungumzo ya Msingi
 ```python
 from workshop_utils import chat_once
 
@@ -192,16 +192,16 @@ for chunk in stream:
 
 ---
 
-## 📊 Uchaguzi wa Modeli
+## 📊 Uchaguzi wa Mfano
 
-| Modeli | Ukubwa | Bora Kwa | Kasi |
+| Mfano | Ukubwa | Bora Kwa | Kasi |
 |-------|------|----------|-------|
 | `qwen2.5-0.5b` | 0.5B | Uainishaji wa haraka | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Uzalishaji wa haraka wa msimbo | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Uandishi wa ubunifu | ⚡⚡ |
-| `phi-3.5-mini` | 3.5B | Msimbo, marekebisho | ⚡⚡ |
-| `phi-4-mini` | 4B | Jumla, matumizi ya jumla | ⚡⚡ |
-| `qwen2.5-7b` | 7B | Ufikiri wa hali ngumu | ⚡ |
+| `phi-3.5-mini` | 3.5B | Msimbo, kurekebisha | ⚡⚡ |
+| `phi-4-mini` | 4B | Jumla, maelezo ya jumla | ⚡⚡ |
+| `qwen2.5-7b` | 7B | Ufikiri wa kina | ⚡ |
 
 ---
 
@@ -217,10 +217,10 @@ for chunk in stream:
 ## 💡 Vidokezo
 
 1. **Hifadhi wateja**: `workshop_utils` inahifadhi kwa ajili yako
-2. **Tumia modeli ndogo**: Anza na `qwen2.5-0.5b` kwa majaribio
+2. **Tumia mifano midogo**: Anza na `qwen2.5-0.5b` kwa majaribio
 3. **Wezesha takwimu za matumizi**: Weka `SHOW_USAGE=1` kufuatilia tokeni
-4. **Usindikaji wa kundi**: Shughulikia maelekezo mengi mfululizo
-5. **Punguza max_tokens**: Inapunguza ucheleweshaji kwa majibu ya haraka
+4. **Usindikaji wa kundi**: Shughulikia maelezo mengi kwa mfululizo
+5. **Punguza max_tokens**: Inapunguza muda wa kusubiri kwa majibu ya haraka
 
 ---
 
@@ -232,35 +232,33 @@ python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### Pima Modeli
+### Pima Mifano
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Njia ya RAG
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Mfumo wa Mawakala Wengi
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Msaada wa Haraka**: Endesha sampuli yoyote kwa `--help` au angalia docstring:
+**Msaada wa Haraka**: Endesha sampuli yoyote kwa `--help` kutoka kwenye saraka ya `samples` au angalia maelezo ya maandishi:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.

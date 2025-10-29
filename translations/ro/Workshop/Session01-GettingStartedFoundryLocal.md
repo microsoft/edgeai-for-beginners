@@ -1,26 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:26:52+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T23:10:07+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "ro"
 }
 -->
-# Sesiunea 1: Începeți cu Foundry Local
+# Sesiunea 1: Începutul cu Foundry Local
 
 ## Rezumat
 
-Începeți călătoria cu Foundry Local prin instalarea și configurarea acestuia pe Windows 11. Aflați cum să configurați CLI-ul, să activați accelerarea hardware și să cache-uiți modelele pentru inferență locală rapidă. Această sesiune practică vă ghidează prin rularea modelelor precum Phi, Qwen, DeepSeek și GPT-OSS-20B folosind comenzi CLI reproducibile.
+Începeți călătoria cu Foundry Local instalându-l și configurându-l pe Windows 11. Aflați cum să configurați CLI-ul, să activați accelerarea hardware și să memorați modelele pentru inferență locală rapidă. Această sesiune practică vă ghidează prin rularea modelelor precum Phi, Qwen, DeepSeek și GPT-OSS-20B folosind comenzi CLI reproducibile.
 
 ## Obiective de învățare
 
-Până la sfârșitul acestei sesiuni, veți putea:
+Până la finalul acestei sesiuni, veți putea:
 
 - **Instala și Configura**: Configurați Foundry Local pe Windows 11 cu setări optime de performanță
-- **Stăpâni Operațiunile CLI**: Utilizați CLI-ul Foundry Local pentru gestionarea și implementarea modelelor
-- **Activa Accelerarea Hardware**: Configurați accelerarea GPU cu ONNXRuntime sau WebGPU
-- **Implementa Mai Multe Modele**: Rulați modelele phi-4, GPT-OSS-20B, Qwen și DeepSeek local
+- **Stăpâniți Operațiunile CLI**: Utilizați CLI-ul Foundry Local pentru gestionarea și implementarea modelelor
+- **Activați Accelerarea Hardware**: Configurați accelerarea GPU cu ONNXRuntime sau WebGPU
+- **Implementați Mai Multe Modele**: Rulați modelele phi-4, GPT-OSS-20B, Qwen și DeepSeek local
 - **Construiți Prima Aplicație**: Adaptați exemplele existente pentru a utiliza SDK-ul Python Foundry Local
 
 # Testați modelul (prompt unic non-interactiv)
@@ -42,16 +42,16 @@ foundry model run gpt-oss-20b --prompt "Explică AI edge în termeni simpli"
 | Variabilă | Scop | Exemplu |
 |-----------|------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias preferat pentru model (catalogul selectează automat cea mai bună variantă) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | Suprascrie endpoint-ul (altfel se determină automat din manager) | `http://localhost:5273/v1` |
+| `FOUNDRY_LOCAL_ENDPOINT` | Suprascrie endpoint-ul (altfel auto din manager) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Activează demonstrația de streaming | `true` |
 
-> Dacă `FOUNDRY_LOCAL_ENDPOINT=auto` (sau nu este setat), acesta este derivat din managerul SDK.
+> Dacă `FOUNDRY_LOCAL_ENDPOINT=auto` (sau nesetat), îl derivăm din managerul SDK.
 
 ## Fluxul Demo (30 minute)
 
 ### 1. Instalați Foundry Local și Verificați Configurarea CLI (10 minute)
 
-# Listați modelele cache-uite
+# Listați modelele memorate
 foundry cache list
 
 ```powershell
@@ -62,9 +62,9 @@ winget install Microsoft.FoundryLocal
 # https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
 
-**macOS (Previzualizare / Dacă este Suportat)**
+**macOS (Previzualizare / Dacă este suportat)**
 
-Dacă este disponibil un pachet nativ macOS (verificați documentația oficială pentru cele mai recente informații):
+Dacă este disponibil un pachet macOS nativ (verificați documentația oficială pentru cele mai recente):
 
 ```bash
 # Homebrew (if/when available)
@@ -77,9 +77,9 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Dacă binarele native macOS nu sunt încă disponibile, puteți totuși: 
-1. Utilizați o mașină virtuală Windows 11 ARM/Intel (Parallels / UTM) și urmați pașii pentru Windows. 
-2. Rulați modelele prin container (dacă imaginea containerului este publicată) și setați `FOUNDRY_LOCAL_ENDPOINT` la portul expus. 
+Dacă binarele native macOS nu sunt încă disponibile, puteți totuși:
+1. Utilizați o mașină virtuală Windows 11 ARM/Intel (Parallels / UTM) și urmați pașii pentru Windows.
+2. Rulați modelele prin container (dacă imaginea containerului este publicată) și setați `FOUNDRY_LOCAL_ENDPOINT` la portul expus.
 
 **Creați un Mediu Virtual Python (Cross‑Platform)**
 
@@ -158,7 +158,7 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Dacă preferați control explicit, puteți utiliza în continuare CLI-ul + clientul OpenAI, așa cum este prezentat mai târziu.
+Dacă preferați control explicit, puteți utiliza în continuare CLI-ul + clientul OpenAI, așa cum se arată mai târziu.
 
 ### 2. Rulați Modele Local prin CLI (10 minute)
 
@@ -198,11 +198,11 @@ foundry model download deepseek-coder-1.3b
 foundry cache list
 ```
 
-### 4. Proiect de Start: Adaptați 01-run-phi pentru Foundry Local (5 minute)
+### 4. Proiect de Început: Adaptați 01-run-phi pentru Foundry Local (5 minute)
 
 #### Pasul 4.1: Creați o Aplicație de Chat de Bază
 
-Creați `samples/01-foundry-quickstart/chat_quickstart.py` (actualizat pentru a utiliza managerul dacă este disponibil):
+Creați `samples/01-foundry-quickstart/chat_quickstart.py` (actualizat pentru a utiliza managerul, dacă este disponibil):
 
 ```python
 #!/usr/bin/env python3
@@ -291,7 +291,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 - **Motor de Inferență Locală**: Rulează modelele complet pe dispozitivul dvs.
 - **Compatibilitate SDK OpenAI**: Integrare fără probleme cu codul OpenAI existent
-- **Gestionarea Modelelor**: Descărcați, cache-uiți și rulați eficient mai multe modele
+- **Gestionarea Modelelor**: Descărcați, memorați și rulați eficient mai multe modele
 - **Optimizare Hardware**: Utilizați accelerarea GPU, NPU și CPU
 
 ### 2. Referință Comenzi CLI
@@ -404,29 +404,30 @@ foundry config set model.preload false
 ### 3. Monitorizarea Performanței
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Îmbunătățiri Opționale
 
 | Îmbunătățire | Ce | Cum |
 |--------------|----|-----|
-| Utilități Partajate | Eliminarea logicii duplicate client/bootstrap | Utilizați `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Utilități Partajate | Elimină logica duplicată client/bootstrap | Utilizați `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
 | Vizibilitatea Utilizării Token-urilor | Predați gândirea cost/eficiență devreme | Setați `SHOW_USAGE=1` pentru a afișa prompt/completare/token-uri totale |
-| Comparații Deterministe | Benchmarking stabil și verificări de regresie | Utilizați `temperature=0`, `top_p=1`, text prompt consistent |
+| Comparații Deterministe | Verificări stabile de benchmarking și regresie | Utilizați `temperature=0`, `top_p=1`, text prompt consistent |
 | Latența Primului Token | Metrică de receptivitate percepută | Adaptați scriptul de benchmark cu streaming (`BENCH_STREAM=1`) |
-| Retry la Erori Tranzitorii | Demonstrații rezistente la pornire rece | `RETRY_ON_FAIL=1` (implicit) și ajustați `RETRY_BACKOFF` |
-| Testare Fum | Verificare rapidă a fluxurilor cheie | Rulați `python Workshop/tests/smoke.py` înainte de un workshop |
-| Profiluri Alias Model | Pivotare rapidă între seturi de modele pe mașini diferite | Mențineți `.env` cu `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Eficiența Cache-ului | Evitați încălzirea repetată în rulările multi-sample | Managerii de cache utilități; reutilizați între scripturi/notebook-uri |
+| Retry la Erori Tranzitorii | Demonstrații reziliente la pornire rece | `RETRY_ON_FAIL=1` (implicit) și ajustați `RETRY_BACKOFF` |
+| Testare Rapidă | Verificare rapidă a fluxurilor cheie | Rulați `python Workshop/tests/smoke.py` înainte de un workshop |
+| Profile Alias Model | Schimbare rapidă a setului de modele între mașini | Mențineți `.env` cu `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
+| Eficiența Memoriei Cache | Evitați încălzirea repetată în rulările multi-sample | Managerii de cache utilități; reutilizați între scripturi/notebook-uri |
 | Încălzirea la Prima Rulare | Reduceți vârfurile de latență p95 | Lansați un prompt mic după crearea `FoundryLocalManager`
 
 Exemplu de bază determinist cald (PowerShell):
@@ -438,7 +439,7 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Ar trebui să vedeți o ieșire similară și număr identic de token-uri la a doua rulare, confirmând determinismul.
+Ar trebui să vedeți o ieșire similară și un număr identic de token-uri la a doua rulare, confirmând determinismul.
 
 ## Pași Următori
 
@@ -457,9 +458,9 @@ După finalizarea acestei sesiuni:
 - [Catalog de Modele](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Cod Exemplu
-- [Exemplu Modulul08 01](./samples/01/README.md) - REST Chat Quickstart
-- [Exemplu Modulul08 02](./samples/02/README.md) - Integrare SDK OpenAI
-- [Exemplu Modulul08 03](./samples/03/README.md) - Descoperirea și Benchmarking-ul Modelului
+- [Exemplu Modul08 01](./samples/01/README.md) - REST Chat Quickstart
+- [Exemplu Modul08 02](./samples/02/README.md) - Integrare SDK OpenAI
+- [Exemplu Modul08 03](./samples/03/README.md) - Descoperirea și Benchmarking-ul Modelelor
 
 ### Comunitate
 - [Discuții Foundry Local pe GitHub](https://github.com/microsoft/Foundry-Local/discussions)
@@ -473,13 +474,13 @@ După finalizarea acestei sesiuni:
 
 ## Scenariu Exemplu & Mapare Workshop
 
-| Script / Notebook Workshop | Scenariu | Obiectiv | Exemplu Input-uri | Dataset Necesitat |
-|----------------------------|----------|----------|--------------------|-------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Echipa IT internă evaluează inferența pe dispozitiv pentru un portal de evaluare a confidențialității | Demonstrați că SLM local răspunde cu o latență sub o secundă la prompturi standard | "Enumerați două beneficii ale inferenței locale." | Niciunul (prompt unic) |
-| Cod de adaptare quickstart | Dezvoltator care migrează un script OpenAI existent la Foundry Local | Arătați compatibilitatea directă | "Oferiți două beneficii ale inferenței locale." | Doar prompt inline |
+| Script / Notebook Workshop | Scenariu | Obiectiv | Exemplu Input | Dataset Necesar |
+|----------------------------|----------|----------|---------------|-----------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Echipa IT internă evaluează inferența pe dispozitiv pentru un portal de evaluare a confidențialității | Demonstrați că SLM local răspunde cu latență sub o secundă la prompturi standard | "Enumerați două beneficii ale inferenței locale." | Niciunul (prompt unic) |
+| Cod adaptare quickstart | Dezvoltator care migrează un script OpenAI existent la Foundry Local | Arătați compatibilitatea directă | "Oferiți două beneficii ale inferenței locale." | Doar prompt inline |
 
 ### Narațiunea Scenariului
-Echipa de securitate și conformitate trebuie să valideze dacă datele sensibile ale prototipului pot fi procesate local. Ei rulează scriptul bootstrap cu mai multe prompturi (confidențialitate, latență, cost) folosind un mod determinist temperature=0 pentru a captura ieșirile de bază pentru comparații ulterioare (benchmarking în Sesiunea 3 și contrast SLM vs LLM în Sesiunea 4).
+Echipa de securitate și conformitate trebuie să valideze dacă datele sensibile ale prototipului pot fi procesate local. Ei rulează scriptul de bootstrap cu mai multe prompturi (confidențialitate, latență, cost) utilizând un mod determinist temperature=0 pentru a captura ieșirile de bază pentru comparații ulterioare (benchmarking în Sesiunea 3 și contrast SLM vs LLM în Sesiunea 4).
 
 ### Set Minimal de Prompturi JSON (opțional)
 ```json
@@ -490,9 +491,9 @@ Echipa de securitate și conformitate trebuie să valideze dacă datele sensibil
 ]
 ```
 
-Utilizați această listă pentru a crea un ciclu de evaluare reproducibil sau pentru a inițializa un viitor sistem de testare regresivă.
+Utilizați această listă pentru a crea un ciclu de evaluare reproducibil sau pentru a iniția un viitor mecanism de testare a regresiei.
 
 ---
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de oameni. Nu ne asumăm responsabilitatea pentru neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de oameni. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

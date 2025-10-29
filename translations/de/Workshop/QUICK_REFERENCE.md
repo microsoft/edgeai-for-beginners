@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-08T20:56:00+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T20:12:03+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "de"
 }
@@ -24,13 +24,13 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
 
-## 📂 Übersicht der Beispiele
+## 📂 Überblick über die Beispiele
 
 | Sitzung | Beispiel | Zweck | Zeit |
 |---------|----------|-------|------|
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Sitzungsbezogen
+### Sitzungs-spezifisch
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -219,8 +219,8 @@ for chunk in stream:
 1. **Clients cachen**: `workshop_utils` übernimmt das Caching für Sie
 2. **Kleinere Modelle verwenden**: Beginnen Sie mit `qwen2.5-0.5b` für Tests
 3. **Nutzungsstatistiken aktivieren**: Setzen Sie `SHOW_USAGE=1`, um Token zu verfolgen
-4. **Batch-Verarbeitung**: Verarbeiten Sie mehrere Eingaben nacheinander
-5. **max_tokens reduzieren**: Verringert die Latenz für schnelle Antworten
+4. **Batch-Verarbeitung**: Mehrere Prompts nacheinander verarbeiten
+5. **Max_tokens reduzieren**: Verringert die Latenz für schnelle Antworten
 
 ---
 
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Modelle benchmarken
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG-Pipeline
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Multi-Agent-System
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Schnelle Hilfe**: Führen Sie ein beliebiges Beispiel mit `--help` aus oder sehen Sie sich die Docstring an:
+**Schnelle Hilfe**: Führen Sie ein beliebiges Beispiel mit `--help` aus dem Verzeichnis `samples` aus oder sehen Sie sich die docstring an:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---

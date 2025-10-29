@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T10:40:36+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T21:47:08+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "tr"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Genel Bakış
 
-Atölye örnekleri, yapılandırma için depo kökünde bulunan `.env` dosyasında merkezi olarak toplanan ortam değişkenlerini kullanır. Bu, kodu değiştirmeden kolayca özelleştirme yapmanıza olanak tanır.
+Workshop örnekleri, yapılandırma için depo kökünde bulunan `.env` dosyasında merkezi olarak yer alan ortam değişkenlerini kullanır. Bu, kodu değiştirmeden kolay özelleştirme sağlar.
 
 ## Hızlı Başlangıç
 
@@ -30,9 +30,9 @@ foundry model run phi-4-mini
 
 ### 2. Ortamı Yapılandırın
 
-`.env` dosyası zaten mantıklı varsayılanlarla yapılandırılmıştır. Çoğu kullanıcı bir şey değiştirmek zorunda kalmayacaktır.
+`.env` dosyası zaten mantıklı varsayılanlarla yapılandırılmıştır. Çoğu kullanıcı herhangi bir değişiklik yapmaya ihtiyaç duymaz.
 
-**İsteğe Bağlı**: Ayarları gözden geçirin ve özelleştirin:
+**Opsiyonel**: Ayarları gözden geçirin ve özelleştirin:
 ```bash
 # Edit .env file
 notepad .env  # Windows
@@ -41,14 +41,14 @@ nano .env     # macOS/Linux
 
 ### 3. Yapılandırmayı Uygulayın
 
-**Python Scriptleri için:**
+**Python Scriptleri İçin:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
-**Notebooklar için:**
+**Notebooklar İçin:**
 ```python
 # Restart kernel after .env changes
 # Variables are loaded when cells execute
@@ -59,10 +59,10 @@ python chat_bootstrap.py
 ### Temel Yapılandırma
 
 | Değişken | Varsayılan | Açıklama |
-|----------|------------|----------|
+|----------|-----------|----------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Örnekler için varsayılan model |
 | `FOUNDRY_LOCAL_ENDPOINT` | (boş) | Servis uç noktasını geçersiz kıl |
-| `PYTHONPATH` | Atölye yolları | Python modül arama yolu |
+| `PYTHONPATH` | Workshop yolları | Python modül arama yolu |
 
 **FOUNDRY_LOCAL_ENDPOINT ne zaman ayarlanmalı:**
 - Uzaktan Foundry Local örneği
@@ -78,33 +78,33 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ```
 
-### Oturuma Özel Değişkenler
+### Oturum Bazlı Değişkenler
 
 #### Oturum 02: RAG Pipeline
 | Değişken | Varsayılan | Amaç |
-|----------|------------|------|
+|----------|-----------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Gömme modeli |
 | `RAG_QUESTION` | Önceden yapılandırılmış | Test sorusu |
 
 #### Oturum 03: Benchmarking
 | Değişken | Varsayılan | Amaç |
-|----------|------------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Karşılaştırılacak modeller |
-| `BENCH_ROUNDS` | `3` | Model başına yineleme sayısı |
+|----------|-----------|------|
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Karşılaştırılacak modeller |
+| `BENCH_ROUNDS` | `3` | Model başına iterasyonlar |
 | `BENCH_PROMPT` | Önceden yapılandırılmış | Test istemi |
 | `BENCH_STREAM` | `0` | İlk token gecikmesini ölç |
 
 #### Oturum 04: Model Karşılaştırması
 | Değişken | Varsayılan | Amaç |
-|----------|------------|------|
+|----------|-----------|------|
 | `SLM_ALIAS` | `phi-4-mini` | Küçük dil modeli |
 | `LLM_ALIAS` | `qwen2.5-7b` | Büyük dil modeli |
 | `COMPARE_PROMPT` | Önceden yapılandırılmış | Karşılaştırma istemi |
-| `COMPARE_RETRIES` | `2` | Tekrar deneme sayısı |
+| `COMPARE_RETRIES` | `2` | Yeniden deneme sayısı |
 
 #### Oturum 05: Çoklu Ajan Orkestrasyonu
 | Değişken | Varsayılan | Amaç |
-|----------|------------|------|
+|----------|-----------|------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Araştırmacı ajan modeli |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Editör ajan modeli |
 | `AGENT_QUESTION` | Önceden yapılandırılmış | Test sorusu |
@@ -112,14 +112,14 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ### Güvenilirlik Yapılandırması
 
 | Değişken | Varsayılan | Amaç |
-|----------|------------|------|
+|----------|-----------|------|
 | `SHOW_USAGE` | `1` | Token kullanımını yazdır |
 | `RETRY_ON_FAIL` | `1` | Yeniden deneme mantığını etkinleştir |
 | `RETRY_BACKOFF` | `1.0` | Yeniden deneme gecikmesi (saniye) |
 
 ## Yaygın Yapılandırmalar
 
-### Geliştirme Ayarları (Hızlı Yineleme)
+### Geliştirme Kurulumu (Hızlı İterasyon)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Üretim Ayarları (Kalite Odaklı)
+### Üretim Kurulumu (Kalite Odaklı)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -138,14 +138,14 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Benchmarking Ayarları
+### Benchmarking Kurulumu
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### Çoklu Ajan Özelleştirme
+### Çoklu Ajan Uzmanlaşması
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -165,7 +165,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - Dengeli kalite ve hız
 
 **Hızlı Yanıtlar:**
-- `qwen2.5-0.5b` - Çok hızlı, sınıflandırma için uygun
+- `qwen2.5-0.5b` - Çok hızlı, sınıflandırma için iyi
 - `phi-4-mini` - Hızlı ve iyi kalite
 
 **Yüksek Kalite:**
@@ -173,7 +173,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - İyi kalite, daha az kaynak
 
 **Kod Üretimi:**
-- `deepseek-coder-1.3b` - Kod için özelleştirilmiş
+- `deepseek-coder-1.3b` - Kod için özel
 - `phi-4-mini` - Genel amaçlı kodlama
 
 ### Kaynak Mevcudiyetine Göre
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **Belirtiler:**
 - "Model bulunamadı" hataları
-- "Alias tanınmadı"
+- "Alias tanınmıyor"
 
 **Çözümler:**
 ```bash
@@ -304,24 +304,21 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Belirtiler:**
 - "Modül bulunamadı" hataları
-- "workshop_utils içe aktarılamıyor"
 
 **Çözümler:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Yapılandırmayı Test Etme
 
-### Ortam Yüklemesini Doğrula
+### Ortam Yüklemesini Doğrulayın
 
 ```python
 # test_env.py
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Foundry Local Bağlantısını Test Et
+### Foundry Local Bağlantısını Test Edin
 
 ```python
 # test_connection.py
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## Güvenlik En İyi Uygulamaları
 
-### 1. Asla Gizli Bilgileri Commit Etmeyin
+### 1. Asla Gizli Bilgileri Yüklemeyin
 
 ```bash
 # .gitignore should include:
@@ -392,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. Ortama Özel Yapılandırma Kullanın
+### 4. Ortama Özgü Yapılandırma Kullanın
 
 ```bash
 # Development
@@ -412,7 +409,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - `QUICK_START.md` - Başlangıç kılavuzu
 - `SDK_MIGRATION_NOTES.md` - SDK güncelleme detayları
-- `Workshop/samples/*/README.md` - Örnek özel rehberler
+- `Workshop/samples/*/README.md` - Örnek bazlı kılavuzlar
 
 ---
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Feragatname**:  
-Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çeviriler hata veya yanlışlıklar içerebilir. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.

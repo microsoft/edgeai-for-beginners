@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T08:08:16+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T20:41:26+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "mo"
 }
@@ -15,12 +15,12 @@ Workshop 資料夾中的所有 Python 文件已更新，以遵循官方 [Foundry
 
 ## 變更摘要
 
-### 核心基礎設施 (`workshop_utils.py`)
+### 核心基礎架構 (`workshop_utils.py`)
 
 #### 增強功能：
 - **端點覆蓋支持**：新增 `FOUNDRY_LOCAL_ENDPOINT` 環境變數支持
-- **改進的錯誤處理**：更好的異常處理，提供詳細的錯誤訊息
-- **增強的快取功能**：快取鍵現在包含端點，以支持多端點場景
+- **改進的錯誤處理**：更詳細的錯誤訊息和例外處理
+- **增強的快取功能**：快取鍵現在包含端點以支持多端點場景
 - **指數回退**：重試邏輯現在使用指數回退以提高可靠性
 - **類型註解**：新增全面的類型提示以改善 IDE 支持
 
@@ -41,9 +41,9 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - 增強文件，加入 SDK 參考
 
 #### Session 02: RAG 管道 (`rag_pipeline.py`)
-- 更新為使用 `phi-4-mini` 作為預設模型
+- 預設模型更新為 `phi-4-mini`
 - 新增端點覆蓋支持
-- 改進文件，加入環境變數詳細資訊
+- 改進文件，加入環境變數細節
 
 #### Session 02: RAG 評估 (`rag_eval_ragas.py`)
 - 更新模型預設值
@@ -51,7 +51,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - 增強錯誤處理
 
 #### Session 03: 基準測試 (`benchmark_oss_models.py`)
-- 更新預設模型列表，加入 `phi-4-mini`
+- 預設模型列表更新，包含 `phi-4-mini`
 - 新增全面的環境變數文件
 - 改進函數文件
 - 全面新增端點覆蓋支持
@@ -63,7 +63,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### Session 05: 多代理協作 (`agents_orchestrator.py`)
 - 新增類型提示（將 `str | None` 改為 `Optional[str]`）
-- 增強 Agent 類別文件
+- 增強 Agent 類文件
 - 新增端點覆蓋支持
 - 改進初始化模式
 
@@ -110,7 +110,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### 範例特定
 - `EMBED_MODEL` - RAG 範例的嵌入模型
-- `BENCH_MODELS` - 用於基準測試的逗號分隔模型
+- `BENCH_MODELS` - 基準測試的逗號分隔模型
 - `BENCH_ROUNDS` - 基準測試輪次
 - `BENCH_PROMPT` - 基準測試的測試提示
 - `BENCH_STREAM` - 測量首 token 延遲
@@ -136,7 +136,7 @@ client = OpenAI(
 )
 ```
 
-### 2. 模型資訊檢索
+### 2. 模型信息檢索
 ```python
 # Proper model ID resolution
 model_info = manager.get_model_info(alias)
@@ -183,7 +183,7 @@ for chunk in stream:
 
 如果您正在創建新範例或更新現有範例：
 
-1. **使用 `workshop_utils.py` 的輔助工具**：
+1. **使用 `workshop_utils.py` 助手**：
    ```python
    from workshop_utils import get_client, chat_once
    ```
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -241,7 +242,7 @@ python -m Workshop.tests.smoke
 
 ## 重大變更
 
-### 預期無重大變更
+### 無預期重大變更
 所有變更均向後兼容。更新主要包括：
 - 新增可選功能（端點覆蓋）
 - 改進錯誤處理
@@ -263,7 +264,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### 問題: "找不到模型"
+### 問題: "模型未找到"
 **解決方案**: 檢查可用模型：
 ```bash
 foundry model list
@@ -281,10 +282,10 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## 下一步
 
-1. **更新 Module08 範例**：將類似模式應用於 Module08/samples
-2. **新增整合測試**：創建全面的測試套件
-3. **性能基準測試**：比較更新前後的性能
-4. **文件更新**：更新主 README，加入新模式
+1. **更新 Module08 範例**: 將相似模式應用於 Module08/samples
+2. **新增整合測試**: 創建全面的測試套件
+3. **性能基準測試**: 比較更新前後的性能
+4. **文件更新**: 更新主 README，加入新模式
 
 ## 貢獻指南
 
@@ -299,8 +300,8 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## 版本兼容性
 
-這些更新與以下版本兼容：
-- `foundry-local-sdk`（最新）
+這些更新兼容：
+- `foundry-local-sdk`（最新版本）
 - `openai>=1.30.0`
 - Python 3.8+
 
@@ -308,9 +309,9 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 **最後更新日期**: 2025-01-08  
 **維護者**: EdgeAI Workshop 團隊  
-**SDK 版本**: Foundry Local SDK（最新 0.7.117+67073234e7）
+**SDK 版本**: Foundry Local SDK (最新 0.7.117+67073234e7)
 
 ---
 
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或錯誤解釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

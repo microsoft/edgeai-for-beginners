@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T21:34:11+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T22:52:29+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "sw"
 }
@@ -11,14 +11,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Muhtasari
 
-Tumia miundo kama zana zinazoweza kuunganishwa ndani ya safu ya uendeshaji ya AI ya ndani. Kipindi hiki kinaonyesha jinsi ya kuunganisha miito mingi ya SLM/LLM maalum, kuelekeza majukumu kwa kuchagua, na kufichua SDK iliyounganishwa kwa programu. Utajenga router nyepesi ya miundo + mpangaji wa majukumu, kuijumuisha katika script ya programu, na kuonyesha njia ya kupanua hadi Azure AI Foundry kwa mzigo wa kazi wa uzalishaji.
+Tumia miundo kama zana zinazoweza kuunganishwa ndani ya safu ya uendeshaji ya AI ya ndani. Kipindi hiki kinaonyesha jinsi ya kuunganisha miito mingi ya SLM/LLM maalum, kuelekeza majukumu kwa kuchagua, na kufichua uso wa SDK uliounganishwa kwa programu. Utajenga router nyepesi ya modeli + mpangaji wa majukumu, kuunganisha kwenye script ya programu, na kuelezea njia ya kupanua hadi Azure AI Foundry kwa mzigo wa kazi wa uzalishaji.
 
 ## Malengo ya Kujifunza
 
-- **Fikiria** miundo kama zana za msingi zenye uwezo ulioelezwa
-- **Elekeza** maombi kulingana na nia / alama za kiheuristiki
+- **Fikiria** miundo kama zana za atomiki zenye uwezo ulioelezwa
+- **Elekeza** maombi kulingana na nia / alama za heuristiki
 - **Unganisha** matokeo katika majukumu ya hatua nyingi (gawanya → suluhisha → rekebisha)
-- **Jumuisha** API ya mteja iliyounganishwa kwa programu za chini
+- **Unganisha** API ya mteja iliyounganishwa kwa programu za chini
 - **Panua** muundo hadi wingu (mkataba sawa unaoendana na OpenAI)
 
 ## Mahitaji ya Awali
@@ -26,7 +26,7 @@ Tumia miundo kama zana zinazoweza kuunganishwa ndani ya safu ya uendeshaji ya AI
 - Vipindi 1–5 vimekamilika
 - Miundo mingi ya ndani imehifadhiwa (mfano, `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Kipande cha Mazingira ya Msalaba-Jukwaa
+### Kipande cha Mazingira ya Msalaba Jukwaa
 
 Windows PowerShell:
 ```powershell
@@ -44,7 +44,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Ufikiaji wa huduma ya mbali/VM kutoka macOS:
+Huduma ya ufikiaji wa mbali/VM kutoka macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -74,7 +74,7 @@ CATALOG = {
 ```
 
 
-### 2. Kugundua Nia na Uelekezaji (Dakika 8)
+### 2. Kugundua Nia & Uelekezaji (Dakika 8)
 
 Unda `samples/06-tools/router.py`:
 
@@ -176,25 +176,25 @@ if __name__ == '__main__':
 ```
 
 
-### 4. Mradi wa Kuanza: Rekebisha `06-models-as-tools` (Dakika 5)
+### 4. Mradi wa Kuanza: Badilisha `06-models-as-tools` (Dakika 5)
 
 Maboresho:
 - Ongeza msaada wa tokeni za kutiririsha (sasisho la UI la maendeleo)
-- Ongeza alama za kujiamini: mfanano wa maneno au rubriki ya maelekezo
-- Hamisha JSON ya ufuatiliaji (nia → muundo → muda wa kuchelewa → matumizi ya tokeni)
+- Ongeza alama za kujiamini: kufanana kwa leksika au rubriki ya maelezo
+- Hamisha JSON ya ufuatiliaji (nia → modeli → ucheleweshaji → matumizi ya tokeni)
 - Tekeleza matumizi ya cache kwa hatua ndogo zinazojirudia
 
 ### 5. Njia ya Kupanua hadi Azure (Dakika 5)
 
-| Safu | Ndani (Foundry) | Wingu (Azure AI Foundry) | Mkakati wa Mpito |
+| Safu | Local (Foundry) | Cloud (Azure AI Foundry) | Mkakati wa Mpito |
 |------|-----------------|--------------------------|------------------|
-| Uelekezaji | Python ya kiheuristiki | Huduma ndogo ya kudumu | Fanya kontena na peleka API |
-| Miundo | SLMs zilizohifadhiwa | Utekelezaji unaosimamiwa | Panga majina ya ndani na vitambulisho vya utekelezaji |
-| Ufuatiliaji | Takwimu za CLI/mwongozo | Kumbukumbu kuu na vipimo | Ongeza matukio ya ufuatiliaji yaliyopangwa |
-| Usalama | Mwenyeji wa ndani pekee | Uthibitishaji wa Azure / mitandao | Ongeza hifadhi ya funguo kwa siri |
-| Gharama | Rasilimali za kifaa | Malipo ya matumizi | Ongeza vizuizi vya bajeti |
+| Uelekezaji | Heuristiki Python | Huduma ndogo ya kudumu | Fanya kontena & peleka API |
+| Miundo | SLMs imehifadhiwa | Utekelezaji unaosimamiwa | Panga majina ya ndani kwa vitambulisho vya utekelezaji |
+| Ufuatiliaji | Takwimu za CLI/mwongozo | Kumbukumbu kuu & vipimo | Ongeza matukio ya ufuatiliaji yaliyopangwa |
+| Usalama | Mwenyeji wa ndani pekee | Uthibitisho wa Azure / mtandao | Tumia hifadhi ya funguo kwa siri |
+| Gharama | Rasilimali ya kifaa | Malipo ya matumizi | Ongeza vizuizi vya bajeti |
 
-## Orodha ya Uhakiki
+## Orodha ya Ukaguzi wa Uthibitishaji
 
 ```powershell
 foundry model run phi-4-mini
@@ -203,38 +203,38 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Tegemea uteuzi wa muundo kulingana na nia na matokeo ya mwisho yaliyorekebishwa.
+Tegemea uteuzi wa modeli kulingana na nia na matokeo ya mwisho yaliyorekebishwa.
 
-## Utatuzi wa Shida
+## Utatuzi wa Matatizo
 
 | Tatizo | Sababu | Suluhisho |
 |--------|--------|----------|
-| Majukumu yote yanaelekezwa kwa muundo mmoja | Sheria dhaifu | Boresha seti ya regex ya INTENT_RULES |
-| Njia ya kazi inashindwa katikati ya hatua | Muundo haujapakiwa | Endesha `foundry model run <model>` |
-| Ushirikiano wa matokeo duni | Hakuna awamu ya kurekebisha | Ongeza hatua ya muhtasari/kuthibitisha |
+| Majukumu yote yanaelekezwa kwa modeli moja | Sheria dhaifu | Boresha seti ya regex ya INTENT_RULES |
+| Njia ya kazi inashindwa katikati ya hatua | Hakuna modeli iliyopakiwa | Endesha `foundry model run <model>` |
+| Ushirikiano wa matokeo mdogo | Hakuna awamu ya kurekebisha | Ongeza hatua ya muhtasari/kuthibitisha |
 
 ## Marejeleo
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Azure AI Foundry Docs: https://learn.microsoft.com/azure/ai-foundry
-- Mifumo ya Ubora wa Maelekezo: Tazama Kipindi cha 2
+- Mifumo ya Ubora wa Maelezo: Tazama Kipindi cha 2
 
 ---
 
 **Muda wa Kipindi**: Dakika 30  
 **Ugumu**: Mtaalamu
 
-## Mfano wa Hali na Ulinganifu wa Warsha
+## Mfano wa Hali & Ulinganisho wa Warsha
 
 | Script za Warsha / Notebooks | Hali | Lengo | Chanzo cha Dataset / Katalogi |
 |------------------------------|------|-------|-------------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Msaidizi wa msanidi programu anayeshughulikia maelekezo ya nia mchanganyiko (rekebisha, fupisha, ainisha) | Nia ya kiheuristiki → uelekezaji wa alias ya muundo na matumizi ya tokeni | `CATALOG` ya ndani + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Mipango ya hatua nyingi na marekebisho kwa kazi ngumu ya msaada wa usimbaji | Gawanya → utekelezaji maalum → hatua ya muhtasari wa kurekebisha | Katalogi sawa; hatua zinatokana na matokeo ya mpango |
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Msaidizi wa msanidi programu anayeshughulikia maelezo ya nia mchanganyiko (rekebisha, muhtasari, weka daraja) | Nia ya heuristiki → uelekezaji wa alias ya modeli na matumizi ya tokeni | `CATALOG` ya ndani + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Mipango ya hatua nyingi & marekebisho kwa kazi ngumu ya msaada wa usimbaji | Gawanya → utekelezaji maalum → hatua ya muhtasari wa kurekebisha | `CATALOG` ile ile; hatua zinatokana na matokeo ya mpango |
 
-### Simulizi la Hali
-Zana ya uzalishaji wa uhandisi inapokea majukumu mchanganyiko: rekebisha msimbo, fupisha maelezo ya usanifu, ainisha maoni. Ili kupunguza muda wa kuchelewa na matumizi ya rasilimali, muundo mdogo wa jumla hupanga na kufupisha, muundo maalum wa msimbo hushughulikia marekebisho, na muundo mwepesi unaoweza kuainisha huweka lebo kwenye maoni. Script ya njia inaonyesha kuunganisha + kurekebisha; script ya router inatenga uelekezaji wa maelekezo moja.
+### Maelezo ya Hali
+Zana ya uzalishaji wa uhandisi inapokea majukumu mchanganyiko: rekebisha msimbo, fupisha maelezo ya usanifu, weka daraja maoni. Ili kupunguza ucheleweshaji & matumizi ya rasilimali, modeli ndogo ya jumla inapanga na kufupisha, modeli maalum ya msimbo inashughulikia marekebisho, na modeli nyepesi inayoweza kuainisha inaweka daraja maoni. Script ya njia inaonyesha kuunganisha + kurekebisha; script ya router inatenga uelekezaji wa nia moja.
 
-### Picha ya Katalogi
+### Muhtasari wa Katalogi
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -244,7 +244,7 @@ CATALOG = {
 ```
 
 
-### Mfano wa Maelekezo ya Mtihani
+### Mfano wa Maelezo ya Mtihani
 ```json
 [
     "Refactor this Python function for readability",
@@ -269,24 +269,24 @@ trace.append({
 
 
 ### Heuristiki ya Kupandisha (Wazo)
-Ikiwa mpango una maneno kama "boresha", "usalama", au urefu wa hatua > herufi 280 → pandisha hadi muundo mkubwa zaidi (mfano, `gpt-oss-20b`) kwa hatua hiyo pekee.
+Ikiwa mpango una maneno muhimu kama "boresha", "usalama", au urefu wa hatua > herufi 280 → pandisha hadi modeli kubwa (mfano, `gpt-oss-20b`) kwa hatua hiyo pekee.
 
 ### Maboresho ya Hiari
 
 | Eneo | Uboreshaji | Thamani | Kidokezo |
 |------|------------|---------|----------|
-| Kuhifadhi | Tumia tena meneja + vitu vya mteja | Muda wa kuchelewa chini, mzigo mdogo | Tumia `workshop_utils.get_client` |
-| Vipimo vya Matumizi | Kamatia tokeni & muda wa kuchelewa kwa kila hatua | Uwasifu na uboreshaji | Pima kila mwito uliotumwa; hifadhi kwenye orodha ya ufuatiliaji |
-| Uelekezaji wa Kurekebisha | Uelewa wa kujiamini / gharama | Ubora bora wa gharama | Ongeza alama: ikiwa maelekezo > herufi N au regex inalingana na kikoa → pandisha hadi muundo mkubwa |
-| Usajili wa Uwezo wa Kawaida | Pakiwa katalogi bila kuzima | Hakuna kuanzisha upya tena | Pakia `catalog.json` wakati wa utekelezaji; angalia timestamp ya faili |
-| Mkakati wa Akiba | Uimara chini ya kushindwa | Upatikanaji wa juu | Jaribu msingi → kwenye ubaguzi alias ya akiba |
-| Njia ya Kutiririsha | Maoni ya mapema | Uboreshaji wa UX | Tuma kila hatua na weka akiba ya pembejeo ya kurekebisha ya mwisho |
-| Nia ya Vector Embeddings | Uelekezaji wa kina zaidi | Usahihi wa nia ya juu | Weka maelekezo, cluster & panga centroid → uwezo |
-| Hamisha Ufuatiliaji | Mnyororo unaoweza kukaguliwa | Uzingatiaji/kuripoti | Tuma mistari ya JSON: hatua, nia, muundo, latency_ms, tokeni |
-| Uigaji wa Gharama | Makadirio ya kabla ya wingu | Mipango ya bajeti | Weka gharama ya dhahania/tokeni kwa kila muundo & jumlisha kwa kila kazi |
-| Hali ya Kiamua | Urejeleaji wa kurudia | Upimaji thabiti | Mazingira: `temperature=0`, idadi ya hatua iliyowekwa |
+| Kuhifadhi | Tumia meneja + vitu vya mteja | Ucheleweshaji mdogo, mzigo mdogo | Tumia `workshop_utils.get_client` |
+| Vipimo vya Matumizi | Kamatia tokeni & ucheleweshaji wa kila hatua | Uboreshaji wa wasifu | Pima kila mwito uliotumwa; hifadhi kwenye orodha ya ufuatiliaji |
+| Uelekezaji wa Adaptive | Uelewa wa kujiamini / gharama | Usawa bora wa ubora-gharama | Ongeza alama: ikiwa maelezo > herufi N au regex inalingana na uwanja → pandisha hadi modeli kubwa |
+| Usajili wa Uwezo wa Kielezo | Pakia katalogi bila kuzima | Hakuna kuanzisha upya tena | Pakia `catalog.json` wakati wa kukimbia; angalia timestamp ya faili |
+| Mkakati wa Kurejea | Uimara chini ya kushindwa | Upatikanaji wa juu | Jaribu msingi → kwenye ubaguzi alias ya kurejea |
+| Njia ya Kutiririsha | Maoni ya mapema | Uboreshaji wa UX | Tuma kila hatua na weka akiba ya pembejeo la mwisho la kurekebisha |
+| Uwekaji wa Nia ya Vector | Uelekezaji wa kina zaidi | Usahihi wa juu wa nia | Weka maelezo, cluster & panga centroid → uwezo |
+| Hamisha Ufuatiliaji | Mnyororo unaoweza kukaguliwa | Uzingatiaji/kuripoti | Tuma mistari ya JSON: hatua, nia, modeli, latency_ms, tokeni |
+| Simulizi ya Gharama | Makadirio ya kabla ya wingu | Mipango ya bajeti | Weka gharama ya dhahania/tokeni kwa modeli & jumlisha kwa kila kazi |
+| Hali ya Kiamua | Urejeleaji wa kurudia | Upimaji thabiti | Mazingira: `temperature=0`, idadi ya hatua zilizowekwa |
 
-#### Muundo wa Ufuatiliaji Mfano
+#### Mfano wa Muundo wa Ufuatiliaji
 
 ```python
 trace.append({
@@ -299,7 +299,7 @@ trace.append({
 ```
 
 
-#### Mchoro wa Kupandisha Kurekebisha
+#### Mchoro wa Kupandisha Adaptive
 
 ```python
 if len(prompt) > 280 or 'compliance' in prompt.lower():
@@ -308,7 +308,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
 ```
 
 
-#### Upakiaji Moto wa Katalogi ya Miundo
+#### Upakiaji wa Katalogi ya Modeli
 
 ```python
 import json, time, os
@@ -322,9 +322,6 @@ def get_catalog():
         last_mtime = m
     return CATALOG
 ```
-
-
-Fanya iteresheni polepole—epuka kuunda mifumo tata mapema.
 
 ---
 

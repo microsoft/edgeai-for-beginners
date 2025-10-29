@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T14:42:28+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T22:15:36+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "no"
 }
@@ -24,19 +24,19 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
 
 ## 📂 Oversikt over eksempler
 
-| Sesjon | Eksempel | Formål | Tid |
-|--------|----------|--------|-----|
+| Økt | Eksempel | Formål | Tid |
+|-----|----------|--------|-----|
 | 01 | `chat_bootstrap.py` | Grunnleggende chat + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG med embeddings | ~45s |
-| 02 | `rag_eval_ragas.py` | RAG-evaluering | ~60s |
+| 02 | `rag_eval_ragas.py` | RAG evaluering | ~60s |
 | 03 | `benchmark_oss_models.py` | Modellbenchmarking | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Multi-agent system | ~60s |
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Sesjonsspesifikke
+### Øktspesifikke
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -210,7 +210,7 @@ for chunk in stream:
 - **SDK-dokumentasjon**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Hurtigreferanse**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **Oppsummering av oppdateringer**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migreringsnotater**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Migrasjonsnotater**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Benchmark modeller
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
-### RAG-pipeline
+### RAG Pipeline
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Multi-agent system
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Hurtighjelp**: Kjør et hvilket som helst eksempel med `--help` eller sjekk docstring:
+**Hurtighjelp**: Kjør et hvilket som helst eksempel med `--help` fra `samples`-katalogen eller sjekk docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

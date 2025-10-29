@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T21:40:00+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:58:23+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "hu"
 }
@@ -32,23 +32,23 @@ A `Workshop/samples` könyvtárban található összes Python minta frissítve l
 - ✅ `benchmark_oss_models.py` - Több modell összehasonlítása
 
 ### 04. szekció: Legújabb Modellek
-- ✅ `model_compare.py` - SLM és LLM összehasonlítás
+- ✅ `model_compare.py` - SLM és LLM összehasonlítása
 
 ### 05. szekció: AI-Alapú Ügynökök
 - ✅ `agents_orchestrator.py` - Több ügynök koordinációja
 
 ### 06. szekció: Modellek Eszközként
-- ✅ `models_router.py` - Szándékalapú modellirányítás
-- ✅ `models_pipeline.py` - Többlépéses irányított folyamat
+- ✅ `models_router.py` - Szándék-alapú modellirányítás
+- ✅ `models_pipeline.py` - Többlépcsős irányított folyamat
 
 ### Támogató infrastruktúra
-- ✅ `workshop_utils.py` - Már követi a legjobb gyakorlatokat (nem szükséges változtatás)
+- ✅ `workshop_utils.py` - Már követi a legjobb gyakorlatokat (nincs szükség változtatásra)
 
 ---
 
 ## Főbb fejlesztések
 
-### 1. Fejlettebb hibakezelés
+### 1. Fejlettebb Hibakezelés
 
 **Korábban:**
 ```python
@@ -70,7 +70,7 @@ except Exception as e:
 - Cselekvésre ösztönző hibaelhárítási tippek
 - Megfelelő kilépési kódok szkriptekhez
 
-### 2. Jobb import kezelés
+### 2. Jobb Importkezelés
 
 **Korábban:**
 ```python
@@ -88,17 +88,17 @@ except ImportError:
 
 **Előnyök:**
 - Egyértelmű útmutatás hiányzó függőségek esetén
-- Rejtélyes import hibák megelőzése
+- Rejtélyes import hibák elkerülése
 - Felhasználóbarát telepítési utasítások
 
-### 3. Átfogó dokumentáció
+### 3. Átfogó Dokumentáció
 
 **Minden mintához hozzáadva:**
 - Környezeti változók dokumentációja docstringekben
 - SDK referencia linkek
 - Használati példák
 - Részletes függvény/paraméter dokumentáció
-- Típusjelzések a jobb IDE támogatás érdekében
+- Típusjelölések a jobb IDE támogatás érdekében
 
 **Példa:**
 ```python
@@ -116,9 +116,9 @@ def pipeline(task: str) -> Dict[str, Any]:
     """
 ```
 
-### 4. Javított felhasználói visszajelzés
+### 4. Javított Felhasználói Visszajelzés
 
-**Tájékoztató naplózás hozzáadva:**
+**Információs naplózás hozzáadva:**
 ```python
 print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
@@ -138,7 +138,7 @@ print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
 
-### 5. Robusztus összehasonlítás
+### 5. Robusztus Összehasonlítás
 
 **03. szekció fejlesztései:**
 - Modellenkénti hibakezelés (folytatás hiba esetén)
@@ -147,7 +147,7 @@ print(json.dumps(summary, indent=2))
 - Első token késleltetés mérésének támogatása
 - Szakaszok egyértelmű szétválasztása
 
-### 6. Következetes típusjelzések
+### 6. Egységes Típusjelölések
 
 **Mindenhol hozzáadva:**
 ```python
@@ -159,29 +159,29 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 
 **Előnyök:**
 - Jobb IDE automatikus kiegészítés
-- Korai hibaérzékelés
+- Korai hibadetektálás
 - Öndokumentáló kód
 
-### 7. Fejlesztett modellirányító
+### 7. Fejlesztett Modellirányító
 
 **06. szekció fejlesztései:**
-- Átfogó szándékérzékelési dokumentáció
+- Átfogó szándékfelismerési dokumentáció
 - Modellválasztási algoritmus magyarázata
 - Részletes irányítási naplók
-- Teszt kimeneti formázás
+- Tesztkimenet formázása
 - Hibahelyreállítás csoportos tesztelés során
 
-### 8. Több ügynök összehangolása
+### 8. Több Ügynök Orkesztrációja
 
 **05. szekció fejlesztései:**
 - Szakaszról szakaszra haladásjelentés
 - Ügynökönkénti hibakezelés
 - Egyértelmű folyamatstruktúra
-- Jobb memóriahasználati dokumentáció
+- Jobb memória-kezelési dokumentáció
 
 ---
 
-## Tesztelési ellenőrzőlista
+## Tesztelési Ellenőrzőlista
 
 ### Előfeltételek
 ```bash
@@ -196,83 +196,83 @@ foundry model run qwen2.5-0.5b
 pip install -r Workshop/requirements.txt
 ```
 
-### Minden minta tesztelése
+### Minden Minta Tesztelése
 
 #### 01. szekció
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### 02. szekció
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### 03. szekció
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### 04. szekció
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### 05. szekció
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### 06. szekció
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
 
-## Környezeti változók referencia
+## Környezeti Változók Referenciája
 
-### Globális (minden minta)
+### Globális (Minden Minta)
 | Változó | Leírás | Alapértelmezett |
-|----------|-------------|---------|
+|---------|--------|-----------------|
 | `FOUNDRY_LOCAL_ALIAS` | Használt modell alias | Mintánként változó |
 | `FOUNDRY_LOCAL_ENDPOINT` | Szolgáltatási végpont felülírása | Automatikusan észlelt |
 | `SHOW_USAGE` | Tokenhasználat megjelenítése | `0` |
 | `RETRY_ON_FAIL` | Újrapróbálkozási logika engedélyezése | `1` |
 | `RETRY_BACKOFF` | Kezdeti újrapróbálkozási késleltetés | `1.0` |
 
-### Mintaspecifikus
+### Minta-specifikus
 | Változó | Használja | Leírás |
-|----------|---------|-------------|
+|---------|-----------|--------|
 | `EMBED_MODEL` | 02. szekció | Beágyazási modell neve |
 | `RAG_QUESTION` | 02. szekció | Tesztkérdés RAG-hez |
 | `BENCH_MODELS` | 03. szekció | Összehasonlítandó modellek vesszővel elválasztva |
@@ -289,7 +289,7 @@ python models_pipeline.py
 
 ---
 
-## Kompatibilitást érintő változások
+## Jelentős Változások
 
 **Nincsenek** - Minden változás visszafelé kompatibilis.
 
@@ -297,13 +297,13 @@ A meglévő szkriptek továbbra is működnek. Az új funkciók:
 - Opcionális környezeti változók
 - Fejlettebb hibaüzenetek (nem törik meg a funkcionalitást)
 - További naplózás (elnyomható)
-- Jobb típusjelzések (nincs futásidejű hatás)
+- Jobb típusjelölések (nincs futásidejű hatás)
 
 ---
 
-## Bevezetett legjobb gyakorlatok
+## Bevezetett Legjobb Gyakorlatok
 
-### 1. Mindig használja a Workshop Utils-t
+### 1. Mindig Használja a Workshop Utils-t
 ```python
 from workshop_utils import get_client, chat_once
 
@@ -311,7 +311,7 @@ from workshop_utils import get_client, chat_once
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
 
-### 2. Megfelelő hibakezelési minta
+### 2. Megfelelő Hibakezelési Minta
 ```python
 try:
     # Initialize client
@@ -322,14 +322,14 @@ except Exception as e:
     sys.exit(1)
 ```
 
-### 3. Tájékoztató naplózás
+### 3. Információs Naplózás
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
 
-### 4. Típusjelzések
+### 4. Típusjelölések
 ```python
 from typing import Dict, List, Optional
 
@@ -337,7 +337,7 @@ def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
 
-### 5. Átfogó docstringek
+### 5. Átfogó Docstringek
 ```python
 def function(arg: str) -> str:
     """Short description.
@@ -353,7 +353,7 @@ def function(arg: str) -> str:
     """
 ```
 
-### 6. Környezeti változók támogatása
+### 6. Környezeti Változók Támogatása
 ```python
 import os
 
@@ -361,7 +361,7 @@ alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
 
-### 7. Kifinomult degradáció
+### 7. Kifinomult Degradáció
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -375,29 +375,29 @@ for model in models:
 
 ---
 
-## Gyakori problémák és megoldások
+## Gyakori Problémák és Megoldások
 
-### Probléma: Import hibák
+### Probléma: Import Hibák
 **Megoldás:** Hiányzó függőségek telepítése
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
 
-### Probléma: Kapcsolódási hibák
-**Megoldás:** Ellenőrizze, hogy a Foundry Local fut-e
+### Probléma: Kapcsolódási Hibák
+**Megoldás:** Győződjön meg róla, hogy a Foundry Local fut
 ```bash
 foundry service status
 foundry model run phi-4-mini
 ```
 
-### Probléma: Modell nem található
+### Probléma: Modell Nem Található
 **Megoldás:** Ellenőrizze az elérhető modelleket
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
 
-### Probléma: Lassú teljesítmény
+### Probléma: Lassú Teljesítmény
 **Megoldás:** Használjon kisebb modelleket vagy állítsa be a paramétereket
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
@@ -406,27 +406,27 @@ set BENCH_ROUNDS=2
 
 ---
 
-## Következő lépések
+## Következő Lépések
 
-### 1. Minden minta tesztelése
+### 1. Minden Minta Tesztelése
 Futtassa végig a fenti tesztelési ellenőrzőlistát, hogy megbizonyosodjon arról, hogy minden minta helyesen működik.
 
-### 2. Dokumentáció frissítése
+### 2. Dokumentáció Frissítése
 - Frissítse a szekció markdown fájlokat új példákkal
 - Adjon hozzá hibaelhárítási szekciót a fő README-hez
 - Készítsen gyors referencia útmutatót
 
-### 3. Integrációs tesztek létrehozása
+### 3. Integrációs Tesztek Készítése
 ```python
 # Workshop/tests/test_samples.py
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
 
-### 4. Teljesítmény összehasonlítások hozzáadása
+### 4. Teljesítmény Összehasonlítások Hozzáadása
 Kövesse nyomon a hibakezelési fejlesztésekből származó teljesítményjavulásokat.
 
-### 5. Felhasználói visszajelzés
+### 5. Felhasználói Visszajelzés
 Gyűjtsön visszajelzést a workshop résztvevőitől a következőkről:
 - Hibaüzenetek egyértelműsége
 - Dokumentáció teljessége
@@ -437,40 +437,40 @@ Gyűjtsön visszajelzést a workshop résztvevőitől a következőkről:
 ## Források
 
 - **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Gyors referencia**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Migrációs jegyzetek**: `Workshop/SDK_MIGRATION_NOTES.md`
-- **Fő tároló**: https://github.com/microsoft/Foundry-Local
+- **Gyors Referencia**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Migrációs Jegyzetek**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Fő Tároló**: https://github.com/microsoft/Foundry-Local
 
 ---
 
 ## Karbantartás
 
-### Új minták hozzáadása
+### Új Minták Hozzáadása
 Kövesse ezeket a mintákat új minták létrehozásakor:
 
 1. Használja a `workshop_utils`-t az ügyfélkezeléshez
 2. Adjon hozzá átfogó hibakezelést
 3. Támogassa a környezeti változókat
-4. Adjon hozzá típusjelzéseket és docstringeket
-5. Biztosítson tájékoztató naplózást
-6. Tartalmazzon használati példákat a docstringben
+4. Adjon hozzá típusjelöléseket és docstringeket
+5. Biztosítson információs naplózást
+6. Adjon hozzá használati példákat a docstringben
 7. Linkeljen az SDK dokumentációhoz
 
-### Frissítések áttekintése
+### Frissítések Áttekintése
 Frissítések áttekintésekor ellenőrizze:
 - [ ] Hibakezelés minden I/O műveleten
-- [ ] Típusjelzések nyilvános függvényeken
+- [ ] Típusjelölések nyilvános függvényeken
 - [ ] Átfogó docstringek
 - [ ] Környezeti változók dokumentációja
-- [ ] Tájékoztató felhasználói visszajelzés
+- [ ] Információs felhasználói visszajelzés
 - [ ] SDK referencia linkek
-- [ ] Következetes kódstílus
+- [ ] Egységes kódstílus
 
 ---
 
-**Összefoglaló**: A Workshop Python minták mostantól követik a Foundry Local SDK legjobb gyakorlatait, fejlettebb hibakezeléssel, átfogó dokumentációval és javított felhasználói élménnyel. Nincsenek kompatibilitást érintő változások - minden meglévő funkcionalitás megmaradt és továbbfejlesztett.
+**Összefoglaló**: Minden Workshop Python minta mostantól követi a Foundry Local SDK legjobb gyakorlatait, fejlettebb hibakezeléssel, átfogó dokumentációval és javított felhasználói élménnyel. Nincsenek jelentős változások - minden meglévő funkcionalitás megmaradt és továbbfejlesztett.
 
 ---
 
-**Felelősségkizárás**:  
-Ezt a dokumentumot az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével fordították le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Felelősség kizárása**:  
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

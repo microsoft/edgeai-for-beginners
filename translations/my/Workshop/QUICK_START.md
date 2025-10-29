@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T11:58:57+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T23:34:37+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "my"
 }
 -->
-# အလုပ်ရုံဆွေးနွေးပွဲ အစောပိုင်း လမ်းညွှန်
+# Workshop အမြန်စတင်ရန်လမ်းညွှန်
 
 ## ကြိုတင်လိုအပ်ချက်များ
 
-### 1. Foundry Local ကို ထည့်သွင်းပါ
+### 1. Foundry Local ကို Install လုပ်ပါ
 
-တရားဝင် ထည့်သွင်းလမ်းညွှန်ကို လိုက်နာပါ:
+အတည်ပြုထားသော Install လုပ်နည်းလမ်းညွှန်ကို လိုက်နာပါ:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -27,9 +27,9 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. Python အခြေခံလိုအပ်ချက်များ ထည့်သွင်းပါ
+### 2. Python Dependencies ကို Install လုပ်ပါ
 
-Workshop ဖိုင်တွဲမှ:
+Workshop directory မှာ:
 
 ```bash
 # Create virtual environment (recommended)
@@ -45,108 +45,109 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Workshop နမူနာများကို အလုပ်လုပ်စေခြင်း
+## Workshop Samples များကို အလုပ်လုပ်စေခြင်း
 
-### အစည်းအဝေး 01: အခြေခံ စကားပြော
+### Session 01: အခြေခံ Chat
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
-**ပတ်ဝန်းကျင် အပြောင်းအလဲများ:**
+**Environment Variables:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
 ```
 
-### အစည်းအဝေး 02: RAG ပိုက်လိုင်း
+### Session 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
-**ပတ်ဝန်းကျင် အပြောင်းအလဲများ:**
+**Environment Variables:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set RAG_QUESTION="Why use RAG with local inference?"
 set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
-### အစည်းအဝေး 02: RAG အကဲဖြတ်ခြင်း (Ragas)
+### Session 02: RAG အကဲဖြတ်ခြင်း (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**မှတ်ချက်**: `requirements.txt` မှတဆင့် ထပ်ဆင့်လိုအပ်ချက်များ ထည့်သွင်းရန် လိုအပ်သည်
+**မှတ်ချက်**: `requirements.txt` မှာ အပို Dependencies များကို Install လုပ်ရန်လိုအပ်သည်
 
-### အစည်းအဝေး 03: စမ်းသပ်မှု
+### Session 03: Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
-**ပတ်ဝန်းကျင် အပြောင်းအလဲများ:**
+**Environment Variables:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**အထွက်**: JSON ဖြင့် latency, throughput, နှင့် first-token အချက်အလက်များ
+**Output**: latency, throughput, နှင့် first-token metrics ပါသော JSON
 
-### အစည်းအဝေး 04: မော်ဒယ် နှိုင်းယှဉ်မှု
+### Session 04: Model Comparison
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
-**ပတ်ဝန်းကျင် အပြောင်းအလဲများ:**
+**Environment Variables:**
 ```bash
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### အစည်းအဝေး 05: Multi-Agent Orchestration
+### Session 05: Multi-Agent Orchestration
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
-**ပတ်ဝန်းကျင် အပြောင်းအလဲများ:**
+**Environment Variables:**
 ```bash
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=phi-4-mini
 set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ```
 
-### အစည်းအဝေး 06: မော်ဒယ် Router
+### Session 06: Model Router
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**စမ်းသပ်မှု**: အမျိုးမျိုးသော ရည်ရွယ်ချက်များ (code, summarize, classification) ဖြင့် routing logic
+**Tests routing logic** with multiple intents (code, summarize, classification)
 
-### အစည်းအဝေး 06: ပိုက်လိုင်း
+### Session 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**ရှုပ်ထွေးသော အဆင့်များစွာပါဝင်သော ပိုက်လိုင်း** - စီစဉ်ခြင်း၊ အကောင်အထည်ဖော်ခြင်း၊ ပြန်လည်တိုးတက်မှု
+**Complex multi-step pipeline** with planning, execution, and refinement
 
-## စာရွက်စာတမ်းများ
+## Scripts
 
-### စမ်းသပ်မှု အစီရင်ခံစာ ထုတ်ယူခြင်း
+### Export Benchmark Report
 
 ```bash
 cd Workshop/scripts
@@ -157,30 +158,30 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**အထွက်**: Markdown ဇယား + JSON အချက်အလက်များ
+**Output**: Markdown table + JSON metrics
 
-### Markdown CLI ပုံစံများကို Lint
+### Lint Markdown CLI Patterns
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**ရည်ရွယ်ချက်**: စာရွက်စာတမ်းများတွင် သက်တမ်းကုန် CLI ပုံစံများ ရှာဖွေခြင်း
+**ရည်ရွယ်ချက်**: Documentation တွင် မသုံးတော့သော CLI patterns များကို ရှာဖွေပါ
 
-## စမ်းသပ်မှု
+## စမ်းသပ်ခြင်း
 
-### Smoke စမ်းသပ်မှု
+### Smoke Tests
 
 ```bash
 cd Workshop
 python -m tests.smoke
 ```
 
-**စမ်းသပ်မှုများ**: အဓိက နမူနာများ၏ အခြေခံ လုပ်ဆောင်မှု
+**Tests**: အဓိက sample များ၏ အခြေခံလုပ်ဆောင်မှုများကို စမ်းသပ်ခြင်း
 
-## ပြဿနာများ ဖြေရှင်းခြင်း
+## ပြဿနာများကို ဖြေရှင်းခြင်း
 
-### ဝန်ဆောင်မှု မသွားခြင်း
+### Service မလုပ်ဆောင်ခြင်း
 
 ```bash
 # Check status
@@ -193,7 +194,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Module Import ပြဿနာများ
+### Module Import Errors
 
 ```bash
 # Ensure virtual environment is activated
@@ -204,7 +205,7 @@ source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### ချိတ်ဆက်မှု ပြဿနာများ
+### Connection Errors
 
 ```bash
 # Check endpoint
@@ -214,7 +215,7 @@ foundry service status
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ```
 
-### မော်ဒယ် မတွေ့ရှိခြင်း
+### Model မတွေ့ရှိခြင်း
 
 ```bash
 # List available models
@@ -224,70 +225,70 @@ foundry model list
 foundry model run phi-4-mini
 ```
 
-## ပတ်ဝန်းကျင် အပြောင်းအလဲ ကိုးကားချက်
+## Environment Variable Reference
 
-### အဓိက ဖွဲ့စည်းမှု
+### Core Configuration
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `FOUNDRY_LOCAL_ALIAS` | Varies | အသုံးပြုမည့် မော်ဒယ် အမည် |
-| `FOUNDRY_LOCAL_ENDPOINT` | Auto | ဝန်ဆောင်မှု endpoint ကို ပြောင်းလဲရန် |
-| `SHOW_USAGE` | `0` | Token အသုံးပြုမှု အချက်အလက် ပြရန် |
-| `RETRY_ON_FAIL` | `1` | ပြန်လည်ကြိုးစားမှု logic ဖွင့်ရန် |
-| `RETRY_BACKOFF` | `1.0` | ပြန်လည်ကြိုးစားမှု အချိန်နှောင့်နှေးမှု (စက္ကန့်) |
+| `FOUNDRY_LOCAL_ALIAS` | Varies | အသုံးပြုရန် Model alias |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Service endpoint ကို Override လုပ်ပါ |
+| `SHOW_USAGE` | `0` | Token usage stats ကို ပြပါ |
+| `RETRY_ON_FAIL` | `1` | Retry logic ကို Enable လုပ်ပါ |
+| `RETRY_BACKOFF` | `1.0` | Retry စတင်ချိန်နှောင့်နှေးမှု (စက္ကန့်) |
 
-### အစည်းအဝေးအလိုက်
+### Session-Specific
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding မော်ဒယ် |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding model |
 | `RAG_QUESTION` | See sample | RAG စမ်းသပ်မေးခွန်း |
-| `BENCH_MODELS` | Varies | Comma ဖြင့် ခွဲထားသော မော်ဒယ်များ |
-| `BENCH_ROUNDS` | `3` | စမ်းသပ်မှု အကြိမ်ရေ |
-| `BENCH_PROMPT` | See sample | စမ်းသပ်မှု prompt |
-| `BENCH_STREAM` | `0` | First-token latency ကို တိုင်းတာရန် |
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | အဓိက agent မော်ဒယ် |
-| `AGENT_MODEL_EDITOR` | Primary | Editor agent မော်ဒယ် |
+| `BENCH_MODELS` | Varies | Comma-separated models |
+| `BENCH_ROUNDS` | `3` | Benchmark iterations |
+| `BENCH_PROMPT` | See sample | Benchmark prompt |
+| `BENCH_STREAM` | `0` | First-token latency ကို တိုင်းတာပါ |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Primary agent model |
+| `AGENT_MODEL_EDITOR` | Primary | Editor agent model |
 | `SLM_ALIAS` | `phi-4-mini` | Small language model |
 | `LLM_ALIAS` | `qwen2.5-7b` | Large language model |
-| `COMPARE_PROMPT` | See sample | နှိုင်းယှဉ်မှု prompt |
+| `COMPARE_PROMPT` | See sample | Comparison prompt |
 
-## အကြံပြု မော်ဒယ်များ
+## အကြံပြုထားသော Models
 
-### ဖွံ့ဖြိုးမှုနှင့် စမ်းသပ်မှု
-- **phi-4-mini** - အရည်အသွေးနှင့် အမြန်နှုန်း အချိုးကျ
-- **qwen2.5-0.5b** - Classification အတွက် အလွန်မြန်ဆန်
-- **gemma-2-2b** - အရည်အသွေးကောင်း၊ အလတ်စား အမြန်နှုန်း
+### Development & Testing
+- **phi-4-mini** - အရည်အသွေးနှင့် အမြန်နှုန်းကို ထိန်းညှိထားသည်
+- **qwen2.5-0.5b** - Classification အတွက် အလွန်မြန်ဆန်သည်
+- **gemma-2-2b** - အရည်အသွေးကောင်းပြီး အလယ်အလတ်မြန်နှုန်းရှိသည်
 
-### ထုတ်လုပ်မှု အခြေအနေများ
-- **phi-4-mini** - အထွေထွေ ရည်ရွယ်ချက်
-- **deepseek-coder-1.3b** - Code ဖန်တီးမှု
-- **qwen2.5-7b** - အရည်အသွေးမြင့် ပြန်လည်ဖြေရှင်းမှု
+### Production Scenarios
+- **phi-4-mini** - General purpose
+- **deepseek-coder-1.3b** - Code generation
+- **qwen2.5-7b** - အရည်အသွေးမြင့်မားသော အဖြေများ
 
-## SDK စာရွက်စာတမ်း
+## SDK Documentation
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
-## အကူအညီ ရယူခြင်း
+## အကူအညီရယူခြင်း
 
-1. ဝန်ဆောင်မှု အခြေအနေ စစ်ဆေးရန်: `foundry service status`
-2. Log များ ကြည့်ရန်: Foundry Local ဝန်ဆောင်မှု log များကို စစ်ဆေးပါ
-3. SDK စာရွက်စာတမ်း ကြည့်ရန်: https://github.com/microsoft/Foundry-Local
-4. နမူနာကုဒ် ပြန်လည်ကြည့်ရန်: နမူနာများတွင် အသေးစိတ် docstring များ ပါဝင်သည်
+1. Service status ကို စစ်ဆေးပါ: `foundry service status`
+2. Log များကို ကြည့်ပါ: Foundry Local service logs ကို စစ်ဆေးပါ
+3. SDK docs ကို ကြည့်ပါ: https://github.com/microsoft/Foundry-Local
+4. Sample code ကို ပြန်လည်သုံးသပ်ပါ: Sample အားလုံးတွင် အသေးစိတ် docstrings ပါရှိသည်
 
-## နောက်တစ်ဆင့်
+## နောက်တစ်ဆင့်များ
 
-1. အလုပ်ရုံဆွေးနွေးပွဲ အစည်းအဝေးများအားလုံး အစဉ်လိုက် ပြီးမြောက်ပါ
-2. မော်ဒယ်အမျိုးမျိုးဖြင့် စမ်းသပ်ပါ
-3. သင့်ရည်ရွယ်ချက်အတွက် နမူနာများ ပြင်ဆင်ပါ
-4. `SDK_MIGRATION_NOTES.md` ကို ကြည့်ပြီး အဆင့်မြင့် ပုံစံများကို လေ့လာပါ
+1. Workshop sessions အားလုံးကို အစဉ်လိုက်ပြီး ပြီးမြောက်ပါ
+2. မတူညီသော Models များကို စမ်းသပ်ပါ
+3. သင့်အသုံးအဆောင်များအတွက် Samples များကို ပြင်ဆင်ပါ
+4. `SDK_MIGRATION_NOTES.md` ကို Advanced patterns အတွက် ပြန်လည်သုံးသပ်ပါ
 
 ---
 
-**နောက်ဆုံး အပ်ဒိတ်**: 2025-01-08  
-**Workshop ဗားရှင်း**: နောက်ဆုံး  
+**နောက်ဆုံးအပ်ဒိတ်**: 2025-01-08  
+**Workshop Version**: Latest  
 **SDK**: Foundry Local Python SDK
 
 ---
 
 **အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရ အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွတ်များ သို့မဟုတ် အနားယူမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရ အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

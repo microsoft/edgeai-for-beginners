@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T11:58:38+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T23:40:39+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "uk"
 }
 -->
 # Швидкий старт для воркшопу
 
-## Попередні умови
+## Передумови
 
 ### 1. Встановіть Foundry Local
 
-Скористайтеся офіційним посібником з установки:
+Скористайтеся офіційним посібником з встановлення:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Сесія 01: Базовий чат
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Змінні середовища:**
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Сесія 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Змінні середовища:**
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Сесія 02: Оцінка RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Примітка**: Потребує додаткових залежностей, встановлених через `requirements.txt`
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### Сесія 03: Бенчмаркінг
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Змінні середовища:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### Сесія 04: Порівняння моделей
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Змінні середовища:**
@@ -113,11 +114,11 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### Сесія 05: Оркестрація мультиагентів
+### Сесія 05: Оркестрація багатокористувацьких агентів
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Змінні середовища:**
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Сесія 06: Маршрутизатор моделей
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **Тестує логіку маршрутизації** для кількох намірів (код, резюмування, класифікація)
@@ -139,10 +140,10 @@ python models_router.py
 ### Сесія 06: Конвеєр
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**Складний багатокроковий конвеєр** з плануванням, виконанням і вдосконаленням
+**Складний багатокроковий конвеєр** з плануванням, виконанням та уточненням
 
 ## Скрипти
 
@@ -157,9 +158,9 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**Вихідні дані**: Таблиця Markdown + JSON метрики
+**Вихідні дані**: Таблиця Markdown + метрики JSON
 
-### Перевірка CLI шаблонів у Markdown
+### Перевірка CLI шаблонів Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -169,7 +170,7 @@ python lint_markdown_cli.py --verbose
 
 ## Тестування
 
-### Smoke Tests
+### Тести на дим
 
 ```bash
 cd Workshop
@@ -240,7 +241,7 @@ foundry model run phi-4-mini
 |--------|------------------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Модель для вбудовування |
 | `RAG_QUESTION` | Див. приклад | Тестове питання для RAG |
-| `BENCH_MODELS` | Змінюється | Моделі через кому |
+| `BENCH_MODELS` | Змінюється | Моделі, розділені комами |
 | `BENCH_ROUNDS` | `3` | Ітерації бенчмаркінгу |
 | `BENCH_PROMPT` | Див. приклад | Підказка для бенчмаркінгу |
 | `BENCH_STREAM` | `0` | Вимірювання затримки першого токена |
@@ -260,7 +261,7 @@ foundry model run phi-4-mini
 ### Виробничі сценарії
 - **phi-4-mini** - Універсальна модель
 - **deepseek-coder-1.3b** - Генерація коду
-- **qwen2.5-7b** - Високоякісні відповіді
+- **qwen2.5-7b** - Висока якість відповідей
 
 ## Документація SDK
 
@@ -271,15 +272,15 @@ foundry model run phi-4-mini
 
 1. Перевірте статус сервісу: `foundry service status`
 2. Перегляньте логи: Перевірте логи сервісу Foundry Local
-3. Ознайомтеся з документацією SDK: https://github.com/microsoft/Foundry-Local
-4. Перегляньте приклади коду: Усі приклади мають детальні коментарі
+3. Перегляньте документацію SDK: https://github.com/microsoft/Foundry-Local
+4. Ознайомтеся з прикладом коду: Усі приклади мають детальні коментарі
 
 ## Наступні кроки
 
 1. Завершіть усі сесії воркшопу по порядку
 2. Експериментуйте з різними моделями
-3. Модифікуйте приклади для ваших потреб
-4. Ознайомтеся з `SDK_MIGRATION_NOTES.md` для складних шаблонів
+3. Модифікуйте приклади для ваших випадків використання
+4. Перегляньте `SDK_MIGRATION_NOTES.md` для складних шаблонів
 
 ---
 

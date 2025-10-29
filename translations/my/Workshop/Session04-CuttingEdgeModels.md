@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1b3c0fecfd713c2df903a0633249dc9",
-  "translation_date": "2025-10-08T12:00:24+00:00",
+  "original_hash": "d9e354c0182311726dc037a8809524e2",
+  "translation_date": "2025-10-28T23:34:49+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "my"
 }
 -->
-# အခန်း ၄: Cutting-Edge မော်ဒယ်များကို ရှာဖွေခြင်း – LLMs, SLMs & On-Device Inference
+# အစည်းအဝေး ၄: နောက်ဆုံးပေါ်မော်ဒယ်များကို ရှာဖွေပါ – LLMs, SLMs & On-Device Inference
 
 ## အကျဉ်းချုပ်
 
-Cloud နှင့် Local inference အခြေအနေများအတွက် Large Language Models (LLMs) နှင့် Small Language Models (SLMs) ကို နှိုင်းယှဉ်ပါ။ ONNX Runtime acceleration, WebGPU execution, နှင့် hybrid RAG အတွေ့အကြုံများကို အသုံးပြု၍ deployment patterns ကို လေ့လာပါ။ Chainlit RAG demo တစ်ခုကို local model နှင့်အတူ ပြသပြီး OpenWebUI exploration ကို ရွေးချယ်နိုင်ပါသည်။ WebGPU inference starter ကို ပြင်ဆင်ပြီး Phi နှင့် GPT-OSS-20B ၏ capability နှင့် cost/performance trade-offs ကို အကဲဖြတ်ပါ။
+Local နှင့် Cloud Inference အခြေအနေများအတွက် Large Language Models (LLMs) နှင့် Small Language Models (SLMs) ကို နှိုင်းယှဉ်ပါ။ ONNX Runtime acceleration, WebGPU execution, နှင့် hybrid RAG အတွေ့အကြုံများကို အသုံးပြု၍ deployment patterns ကို သင်ယူပါ။ Chainlit RAG demo ကို local model နှင့်အတူ ပြသပြီး OpenWebUI exploration ကို ရွေးချယ်နိုင်ပါသည်။ WebGPU inference starter ကို ပြင်ဆင်ပြီး Phi နှင့် GPT-OSS-20B ၏ capability & cost/perf trade-offs ကို အကဲဖြတ်ပါ။
 
 ## သင်ယူရမည့် ရည်ရွယ်ချက်များ
 
-- **နှိုင်းယှဉ်** SLM နှင့် LLM ကို latency, memory, quality အချက်များအပေါ်
+- **နှိုင်းယှဉ်ပါ** SLM နှင့် LLM ကို latency, memory, quality axes အပေါ်
 - **Deploy** မော်ဒယ်များကို ONNXRuntime နှင့် (support ရှိသောနေရာတွင်) WebGPU ဖြင့်
 - **Run** browser-based inference (privacy-preserving interactive demo)
 - **Integrate** Chainlit RAG pipeline ကို local SLM backend နှင့်
@@ -23,8 +23,8 @@ Cloud နှင့် Local inference အခြေအနေများအတွ
 
 ## ကြိုတင်လိုအပ်ချက်များ
 
-- အခန်း ၁–၃ ကို ပြီးစီးထားရမည်
-- `chainlit` ကို install လုပ်ထားရမည် (`requirements.txt` တွင် Module08 အတွက် ရှိပြီးသား)
+- အစည်းအဝေး ၁–၃ ပြီးစီးထားရမည်
+- `chainlit` install လုပ်ထားရမည် (`requirements.txt` တွင် Module08 အတွက် ရှိပြီးသား)
 - WebGPU-capable browser (Windows 11 အတွက် Edge / Chrome latest)
 - Foundry Local running (`foundry status`)
 
@@ -32,20 +32,20 @@ Cloud နှင့် Local inference အခြေအနေများအတွ
 
 Windows သည် primary target environment ဖြစ်သည်။ macOS developer များအတွက် native binaries မရရှိသေးသည့်အခြေအနေတွင်:
 1. Foundry Local ကို Windows 11 VM (Parallels / UTM) OR remote Windows workstation တွင် run လုပ်ပါ။
-2. Service ကို expose လုပ်ပါ (default port 5273) နှင့် macOS တွင် set လုပ်ပါ:
+2. Service ကို (default port 5273) expose လုပ်ပြီး macOS တွင် set လုပ်ပါ:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-3. ယခင် session များတွင် အသုံးပြုခဲ့သော Python virtual environment အဆင့်များကို အသုံးပြုပါ။
+3. အစည်းအဝေးများတွင် အသုံးပြုခဲ့သော Python virtual environment အဆင့်များကို အသုံးပြုပါ။
 
-Chainlit install (နှစ်ခု platform အတွက်):
+Chainlit install (platform နှစ်ခုအတွက်):
 ```bash
 pip install chainlit
 ```
 
 ## Demo Flow (၃၀ မိနစ်)
 
-### ၁. Phi (SLM) နှင့် GPT-OSS-20B (LLM) ကို နှိုင်းယှဉ်ခြင်း (၆ မိနစ်)
+### ၁. Phi (SLM) နှင့် GPT-OSS-20B (LLM) ကို နှိုင်းယှဉ်ပါ (၆ မိနစ်)
 
 ```powershell
 foundry model run phi-4-mini
@@ -67,13 +67,14 @@ Track: response depth, factual accuracy, stylistic richness, latency.
 ```powershell
 foundry config set compute.onnx.enable_gpu true
 # Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
-GPU ကို enable လုပ်ပြီး CPU-only mode နှင့် throughput အပြောင်းအလဲကို ကြည့်ရှုပါ။
+GPU ကို enable လုပ်ပြီး CPU-only နှင့် throughput အပြောင်းအလဲကို ကြည့်ပါ။
 
-### ၃. WebGPU Inference ကို Browser တွင် (၆ မိနစ်)
+### ၃. WebGPU Inference in Browser (၆ မိနစ်)
 
 Starter `04-webgpu-inference` ကို ပြင်ဆင်ပါ (create `samples/04-cutting-edge/webgpu_demo.html`):
 
@@ -116,7 +117,7 @@ Starter `04-webgpu-inference` ကို ပြင်ဆင်ပါ (create `sam
 </html>
 ```
 
-File ကို browser တွင် ဖွင့်ပါ; low-latency local roundtrip ကို ကြည့်ရှုပါ။
+File ကို browser တွင်ဖွင့်ပါ; low-latency local roundtrip ကို ကြည့်ပါ။
 
 ### ၄. Chainlit RAG Chat App (၇ မိနစ်)
 
@@ -162,10 +163,10 @@ Run:
 chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ```
 
-### ၅. Starter Project: `04-webgpu-inference` ကို ပြင်ဆင်ပါ (၆ မိနစ်)
+### ၅. Starter Project: Adapt `04-webgpu-inference` (၆ မိနစ်)
 
 Deliverables:
-- Placeholder fetch logic ကို streaming tokens ဖြင့် အစားထိုးပါ (`stream=True` endpoint variant ကို enable လုပ်ပြီး အသုံးပြုပါ)
+- Placeholder fetch logic ကို streaming tokens ဖြင့် အစားထိုးပါ (`stream=True` endpoint variant ကို enable လုပ်ပြီးအသုံးပြုပါ)
 - Latency chart (client-side) ကို phi နှင့် gpt-oss-20b toggles အတွက် ထည့်ပါ
 - RAG context ကို inline ထည့်ပါ (textarea for reference docs)
 
@@ -173,11 +174,11 @@ Deliverables:
 
 | Category | Phi-4-mini | GPT-OSS-20B | Observation |
 |----------|------------|-------------|-------------|
-| Latency (cold) | Fast | Slower | SLM warms quickly |
-| Memory | Low | High | Device feasibility |
-| Context adherence | Good | Strong | Larger model may be more verbose |
-| Cost (local) | Minimal | Higher (resource) | Energy/time trade-off |
-| Best use case | Edge apps | Deep reasoning | Hybrid pipeline possible |
+| Latency (cold) | အလွန်မြန် | ပိုနှေး | SLM သည် အလွန်မြန်စွာ အပူပေးနိုင်သည် |
+| Memory | နည်း | များ | Device feasibility |
+| Context adherence | ကောင်း | အလွန်ကောင်း | Model ကြီးသည် ပို verbose ဖြစ်နိုင်သည် |
+| Cost (local) | အနည်းငယ် | ပိုများ (resource) | Energy/time trade-off |
+| Best use case | Edge apps | Deep reasoning | Hybrid pipeline ဖြစ်နိုင်သည် |
 
 ## Environment ကို Validate လုပ်ခြင်း
 
@@ -187,8 +188,9 @@ foundry model list
 
 # For runtime metrics use the Python benchmark script (Session 3) and OS tools (Task Manager / nvidia-smi) instead of 'model stats'
 # Example:
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini,gpt-oss-20b
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 ## Troubleshooting
@@ -214,12 +216,12 @@ foundry model list
 
 | Workshop Artifacts | Scenario | Objective | Data / Prompt Source |
 |--------------------|----------|-----------|----------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architecture team evaluating SLM vs LLM for executive summary generator | Quantify latency + token usage delta | Single `COMPARE_PROMPT` env var |
-| `chainlit_app.py` (RAG demo) | Internal knowledge assistant prototype | Ground short answers with minimal lexical retrieval | Inline `DOCS` list in file |
-| `webgpu_demo.html` | Futuristic on‑device browser inference preview | Show low‑latency local roundtrip + UX narrative | Live user prompt only |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architecture team evaluating SLM vs LLM for executive summary generator | Latency နှင့် token usage delta ကို တိုင်းတာပါ | Single `COMPARE_PROMPT` env var |
+| `chainlit_app.py` (RAG demo) | Internal knowledge assistant prototype | Short answers ကို minimal lexical retrieval ဖြင့် ground လုပ်ပါ | Inline `DOCS` list in file |
+| `webgpu_demo.html` | Futuristic on‑device browser inference preview | Low‑latency local roundtrip + UX narrative ကို ပြသပါ | Live user prompt only |
 
 ### Scenario Narrative
-Product org သည် executive briefing generator တစ်ခုကို လိုအပ်သည်။ Lightweight SLM (phi‑4‑mini) သည် summary များကို draft လုပ်ပြီး; အကြီးမားသော LLM (gpt‑oss‑20b) သည် high‑priority reports များကို refine လုပ်နိုင်သည်။ Session scripts တွင် latency နှင့် token metrics ကို capture လုပ်ပြီး hybrid design ကို အတည်ပြုရန် အသုံးပြုသည်။ Chainlit demo သည် grounded retrieval များက SLM model ၏ အဖြေများကို factual ဖြစ်စေသည့်ပုံကို ပြသသည်။ WebGPU concept page သည် browser acceleration mature ဖြစ်သောအခါ fully client‑side processing ၏ vision path ကို ပေးသည်။
+Product org သည် executive briefing generator ကိုလိုအပ်သည်။ Lightweight SLM (phi‑4‑mini) သည် summary များကို draft လုပ်ပြီး; LLM (gpt‑oss‑20b) သည် high‑priority reports များကိုသာ refine လုပ်နိုင်သည်။ Session scripts သည် empirical latency & token metrics ကို capture လုပ်ပြီး hybrid design ကို အတည်ပြုရန် အသုံးပြုသည်။ Chainlit demo သည် grounded retrieval သည် small model answers ကို factual ဖြစ်စေသည့်အတိုင်း ပြသသည်။ WebGPU concept page သည် browser acceleration mature ဖြစ်လာသောအခါ fully client‑side processing အတွက် vision path ကို ပေးသည်။
 
 ### Minimal RAG Context (Chainlit)
 ```python
@@ -245,16 +247,16 @@ Latency components နှစ်ခုလုံးကို track လုပ်ပ
 
 | Focus | Enhancement | Why | Implementation Hint |
 |-------|------------|-----|---------------------|
-| Comparative Metrics | Track token usage + first-token latency | Holistic perf view | Enhanced benchmark script (Session 3) ကို `BENCH_STREAM=1` ဖြင့် အသုံးပြုပါ |
-| Hybrid Pipeline | SLM draft → LLM refine | Reduce latency & cost | Phi-4-mini ဖြင့် generate လုပ်ပြီး summary ကို gpt-oss-20b ဖြင့် refine လုပ်ပါ |
-| Streaming UI | Better UX in Chainlit | Incremental feedback | Local streaming ကို expose လုပ်ပြီး `stream=True` ကို အသုံးပြုပါ; chunks များကို accumulate လုပ်ပါ |
-| WebGPU Caching | Faster JS init | Reduce recompile overhead | Compiled shader artifacts ကို cache လုပ်ပါ (runtime capability အနာဂတ်တွင်) |
-| Deterministic QA Set | Fair model comparison | Remove variance | Fixed prompt list + `temperature=0` ကို evaluation runs အတွက် အသုံးပြုပါ |
-| Output Scoring | Structured quality lens | Move beyond anecdotes | Simple rubric: coherence / factuality / brevity (1–5) |
-| Energy / Resource Notes | Classroom discussion | Show trade-offs | OS monitors (`foundry system info`, Task Manager, `nvidia-smi`) + benchmark script outputs ကို အသုံးပြုပါ |
-| Cost Emulation | Pre-cloud justification | Plan scaling | Tokens များကို hypothetical cloud pricing နှင့် mapping လုပ်ပြီး TCO narrative ကို ဖော်ဆောင်ပါ |
-| Latency Decomposition | Identify bottlenecks | Target optimizations | Prompt prep, request send, first token, full completion ကို measure လုပ်ပါ |
-| RAG + LLM Fallback | Quality safety net | Improve difficult queries | SLM answer length < threshold သို့မဟုတ် low confidence ဖြစ်ပါက → escalate လုပ်ပါ |
+| Comparative Metrics | Token usage + first-token latency ကို track လုပ်ပါ | Holistic perf view | Enhanced benchmark script (Session 3) ကို `BENCH_STREAM=1` ဖြင့် အသုံးပြုပါ |
+| Hybrid Pipeline | SLM draft → LLM refine | Latency နှင့် cost ကို လျှော့ချရန် | phi-4-mini ဖြင့် generate လုပ်ပြီး summary ကို gpt-oss-20b ဖြင့် refine လုပ်ပါ |
+| Streaming UI | Chainlit တွင် UX ကို ပိုကောင်းစေရန် | Incremental feedback | `stream=True` ကို local streaming expose လုပ်ပြီး အသုံးပြုပါ; chunks များကို စုစည်းပါ |
+| WebGPU Caching | JS init ကို ပိုမြန်စေရန် | Recompile overhead ကို လျှော့ချရန် | Compiled shader artifacts ကို cache လုပ်ပါ (runtime capability အနာဂတ်တွင်) |
+| Deterministic QA Set | Fair model comparison | Variance ကို ဖယ်ရှားရန် | Fixed prompt list + `temperature=0` ကို evaluation runs အတွက် အသုံးပြုပါ |
+| Output Scoring | Structured quality lens | Anecdotes ထက် ပိုမိုတိကျသော အကဲဖြတ်မှု | Simple rubric: coherence / factuality / brevity (1–5) |
+| Energy / Resource Notes | Classroom discussion | Trade-offs ကို ပြသရန် | OS monitors (`foundry system info`, Task Manager, `nvidia-smi`) + benchmark script outputs ကို အသုံးပြုပါ |
+| Cost Emulation | Pre-cloud justification | Scaling ကို စီမံရန် | Tokens များကို hypothetical cloud pricing နှင့် map လုပ်ပြီး TCO narrative ကို ပြုလုပ်ပါ |
+| Latency Decomposition | Bottlenecks ကို ရှာဖွေရန် | Optimizations ကို target လုပ်ရန် | Prompt prep, request send, first token, full completion ကို တိုင်းတာပါ |
+| RAG + LLM Fallback | Quality safety net | မဖြေရှင်းနိုင်သော queries များကို တိုးတက်စေရန် | SLM answer length < threshold သို့မဟုတ် low confidence ဖြစ်ပါက → escalate လုပ်ပါ |
 
 #### Example Hybrid Draft/Refine Pattern
 
@@ -274,9 +276,9 @@ full_ms = (time.time()-t1)*1000
 print({"prep_ms": prep_ms, "full_gen_ms": full_ms})
 ```
 
-Models များကို နှိုင်းယှဉ်ရာတွင် တူညီသော measurement scaffolding ကို အသုံးပြုပါ။
+Models များကို fair comparisons အတွက် consistent measurement scaffolding ကို အသုံးပြုပါ။
 
 ---
 
 **အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရ အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွတ်များ သို့မဟုတ် အနားယူမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

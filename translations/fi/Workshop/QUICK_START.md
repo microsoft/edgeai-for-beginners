@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T14:24:11+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T22:16:31+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "fi"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. Asenna Foundry Local
 
-Seuraa virallista asennusohjetta:  
+Seuraa virallista asennusopasta:  
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Istunto 01: Peruskeskustelu
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Ympäristömuuttujat:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Istunto 02: RAG-putki
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Ympäristömuuttujat:**  
@@ -77,33 +77,34 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Istunto 02: RAG-arviointi (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Huom:** Vaatii lisäriippuvuuksia, jotka asennetaan `requirements.txt`-tiedoston kautta.
 
-### Istunto 03: Suorituskyvyn vertailu
+### Istunto 03: Suorituskyvyn arviointi
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Ympäristömuuttujat:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Tuloste:** JSON, joka sisältää viive-, läpimeno- ja ensimmäisen tokenin mittarit.
+**Tuloste:** JSON, joka sisältää viive-, läpimeno- ja ensimmäisen tokenin metrikat.
 
 ### Istunto 04: Mallien vertailu
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Ympäristömuuttujat:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Istunto 05: Moniagenttinen orkestrointi
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Ympäristömuuttujat:**  
@@ -130,19 +131,19 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Istunto 06: Mallireititin
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Testaa reitityslogiikkaa** useilla intentioilla (koodi, tiivistäminen, luokittelu).
+**Testaa reitityslogiikkaa** useilla tarkoituksilla (koodi, tiivistäminen, luokittelu).
 
 ### Istunto 06: Putki
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**Monimutkainen monivaiheinen putki**, joka sisältää suunnittelun, toteutuksen ja tarkennuksen.
+**Monimutkainen monivaiheinen putki**, joka sisältää suunnittelun, toteutuksen ja hienosäädön.
 
 ## Skriptit
 
@@ -157,7 +158,7 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**Tuloste:** Markdown-taulukko + JSON-mittarit
+**Tuloste:** Markdown-taulukko + JSON-metrikat
 
 ### Markdown CLI -mallien tarkistus
 
@@ -165,11 +166,11 @@ python export_benchmark_markdown.py \
 python lint_markdown_cli.py --verbose
 ```
 
-**Tarkoitus:** Havaitse vanhentuneet CLI-mallit dokumentaatiossa.
+**Tarkoitus:** Havaitse vanhentuneet CLI-mallit dokumentaatiosta.
 
 ## Testaus
 
-### Savutestit
+### Perustestit
 
 ```bash
 cd Workshop
@@ -178,7 +179,7 @@ python -m tests.smoke
 
 **Testit:** Keskeisten esimerkkien perustoiminnallisuus.
 
-## Vianmääritys
+## Vianetsintä
 
 ### Palvelu ei käynnissä
 
@@ -241,7 +242,7 @@ foundry model run phi-4-mini
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Upotusmalli |
 | `RAG_QUESTION` | Katso esimerkki | RAG-testikysymys |
 | `BENCH_MODELS` | Vaihtelee | Pilkulla erotetut mallit |
-| `BENCH_ROUNDS` | `3` | Suorituskykytestin iteroinnit |
+| `BENCH_ROUNDS` | `3` | Suorituskykytestin toistot |
 | `BENCH_PROMPT` | Katso esimerkki | Suorituskykytestin kehotus |
 | `BENCH_STREAM` | `0` | Mittaa ensimmäisen tokenin viive |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Ensisijainen agenttimalli |
@@ -267,19 +268,19 @@ foundry model run phi-4-mini
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
-## Apua saatavilla
+## Apua
 
 1. Tarkista palvelun tila: `foundry service status`  
 2. Katso lokit: Tarkista Foundry Local -palvelun lokit  
-3. Tarkista SDK-dokumentaatio: https://github.com/microsoft/Foundry-Local  
-4. Tutki esimerkkikoodia: Kaikissa esimerkeissä on yksityiskohtaiset docstringit.
+3. Tutustu SDK-dokumentaatioon: https://github.com/microsoft/Foundry-Local  
+4. Tarkista esimerkkikoodi: Kaikissa esimerkeissä on yksityiskohtaiset kommentit.
 
 ## Seuraavat askeleet
 
 1. Suorita kaikki työpajan istunnot järjestyksessä  
-2. Kokeile eri malleja  
+2. Kokeile erilaisia malleja  
 3. Muokkaa esimerkkejä omiin käyttötarkoituksiisi  
-4. Tutustu `SDK_MIGRATION_NOTES.md`-tiedostoon edistyneitä malleja varten.
+4. Tutustu `SDK_MIGRATION_NOTES.md`-tiedostoon edistyneitä malleja varten  
 
 ---
 
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.

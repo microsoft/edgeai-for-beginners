@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T14:45:16+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:16:01+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "no"
 }
@@ -11,18 +11,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Oversikt
 
-Alle Python-filer i Workshop-mappen er oppdatert for å følge de nyeste mønstrene fra den offisielle [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
+Alle Python-filer i Workshop-mappen har blitt oppdatert for å følge de nyeste mønstrene fra den offisielle [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
 
-## Endringsoversikt
+## Endringsoppsummering
 
 ### Kjerneinfrastruktur (`workshop_utils.py`)
 
 #### Forbedrede funksjoner:
 - **Støtte for endepunkt-override**: Lagt til støtte for miljøvariabelen `FOUNDRY_LOCAL_ENDPOINT`
-- **Forbedret feilhåndtering**: Bedre unntakshåndtering med detaljerte feilmeldinger
+- **Forbedret feilhåndtering**: Bedre håndtering av unntak med detaljerte feilmeldinger
 - **Forbedret caching**: Cache-nøkler inkluderer nå endepunkt for scenarier med flere endepunkter
-- **Eksponentiell backoff**: Retry-logikk bruker nå eksponentiell backoff for bedre pålitelighet
-- **Typeannotasjoner**: Lagt til omfattende typehint for bedre støtte i IDE-er
+- **Eksponentiell tilbakefall**: Retry-logikk bruker nå eksponentiell tilbakefall for bedre pålitelighet
+- **Typeannotasjoner**: Lagt til omfattende typehint for bedre støtte i IDE
 
 #### Nye funksjoner:
 ```python
@@ -74,7 +74,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### Sesjon 06: Pipeline (`models_pipeline.py`)
 - Lagt til omfattende funksjonsdokumentasjon
-- Forbedret steg-for-steg dokumentasjon
+- Forbedret trinn-for-trinn dokumentasjon
 - Forbedret feilhåndtering
 
 ### Skript
@@ -91,7 +91,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### Tester
 
-#### Smoke-tester (`smoke.py`)
+#### Røyktester (`smoke.py`)
 - Lagt til støtte for endepunkt-override
 - Forbedret dokumentasjon
 - Forbedret dokumentasjon for testtilfeller
@@ -108,15 +108,15 @@ Alle eksempler støtter nå disse miljøvariablene:
 - `RETRY_ON_FAIL` - Aktiver retry-logikk (standard: "1")
 - `RETRY_BACKOFF` - Startforsinkelse for retry i sekunder (standard: "1.0")
 
-### Eksempelspesifikke
-- `EMBED_MODEL` - Embedding-modell for RAG-eksempler
+### Eksempelspesifikk
+- `EMBED_MODEL` - Innebyggingsmodell for RAG-eksempler
 - `BENCH_MODELS` - Kommaseparerte modeller for benchmarking
 - `BENCH_ROUNDS` - Antall benchmark-runder
 - `BENCH_PROMPT` - Testprompt for benchmarking
-- `BENCH_STREAM` - Mål latens for første token
+- `BENCH_STREAM` - Måling av første-token latens
 - `RAG_QUESTION` - Testspørsmål for RAG-eksempler
 - `AGENT_MODEL_PRIMARY` - Primær agentmodell
-- `AGENT_MODEL_EDITOR` - Editor-agentmodell
+- `AGENT_MODEL_EDITOR` - Redaktør agentmodell
 - `SLM_ALIAS` - Alias for liten språkmodell
 - `LLM_ALIAS` - Alias for stor språkmodell
 
@@ -154,7 +154,7 @@ except Exception as e:
     raise RuntimeError(f"Initialization failed: {e}") from e
 ```
 
-### 4. Retry-logikk med eksponentiell backoff
+### 4. Retry-logikk med eksponentiell tilbakefall
 ```python
 delay = initial_delay
 for attempt in range(max_retries):
@@ -179,11 +179,11 @@ for chunk in stream:
         # Process chunk
 ```
 
-## Migreringsveiledning for tilpassede eksempler
+## Migreringsveiledning for egendefinerte eksempler
 
 Hvis du lager nye eksempler eller oppdaterer eksisterende:
 
-1. **Bruk hjelpere fra `workshop_utils.py`**:
+1. **Bruk hjelpemidler fra `workshop_utils.py`**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -237,19 +238,19 @@ python -m Workshop.tests.smoke
 
 - **Hovedrepository**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API-dokumentasjon**: Sjekk SDK-repository for siste API-dokumentasjon
+- **API-dokumentasjon**: Se SDK-repository for siste API-dokumentasjon
 
-## Bruddendringer
+## Brudd på kompatibilitet
 
 ### Ingen forventet
-Alle endringer er bakoverkompatible. Oppdateringene primært:
-- Legger til nye valgfrie funksjoner (endepunkt-override)
-- Forbedrer feilhåndtering
-- Forbedrer dokumentasjon
-- Oppdaterer standard modellnavn til gjeldende anbefalinger
+Alle endringer er bakoverkompatible. Oppdateringene innebærer hovedsakelig:
+- Legge til nye valgfrie funksjoner (endepunkt-override)
+- Forbedre feilhåndtering
+- Forbedre dokumentasjon
+- Oppdatere standard modellnavn til gjeldende anbefalinger
 
 ### Valgfrie forbedringer
-Du kan oppdatere koden din til å bruke:
+Du kan vurdere å oppdatere koden din til å bruke:
 - `FOUNDRY_LOCAL_ENDPOINT` for eksplisitt kontroll over endepunkt
 - `SHOW_USAGE=1` for synlighet av tokenbruk
 - Oppdaterte standardmodeller (`phi-4-mini` i stedet for `phi-3.5-mini`)
@@ -269,7 +270,7 @@ foundry model run phi-4-mini
 foundry model list
 ```
 
-### Problem: Tilkoblingsfeil til endepunkt
+### Problem: Feil med tilkobling til endepunkt
 **Løsning**: Verifiser endepunkt:
 ```bash
 # Check service status
@@ -313,4 +314,4 @@ Disse oppdateringene er kompatible med:
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

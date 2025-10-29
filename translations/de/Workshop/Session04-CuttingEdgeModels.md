@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1b3c0fecfd713c2df903a0633249dc9",
-  "translation_date": "2025-10-08T20:41:42+00:00",
+  "original_hash": "d9e354c0182311726dc037a8809524e2",
+  "translation_date": "2025-10-28T20:08:56+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "de"
 }
 -->
-# Sitzung 4: Erkundung modernster Modelle – LLMs, SLMs & On-Device Inference
+# Sitzung 4: Erkundung modernster Modelle – LLMs, SLMs & Inferenz auf Geräten
 
 ## Zusammenfassung
 
-Vergleichen Sie Large Language Models (LLMs) und Small Language Models (SLMs) für lokale und Cloud-Inferenz-Szenarien. Lernen Sie Bereitstellungsmuster kennen, die ONNX Runtime-Beschleunigung, WebGPU-Ausführung und hybride RAG-Erfahrungen nutzen. Enthält eine Chainlit-RAG-Demo mit einem lokalen Modell sowie eine optionale Erkundung von OpenWebUI. Sie passen einen WebGPU-Inferenz-Starter an und bewerten die Fähigkeiten sowie Kosten-/Leistungsabwägungen von Phi im Vergleich zu GPT-OSS-20B.
+Vergleichen Sie Large Language Models (LLMs) und Small Language Models (SLMs) für lokale vs. Cloud-Inferenz-Szenarien. Lernen Sie Einsatzmuster kennen, die ONNX Runtime-Beschleunigung, WebGPU-Ausführung und hybride RAG-Erfahrungen nutzen. Enthält eine Chainlit RAG-Demo mit einem lokalen Modell sowie eine optionale Erkundung von OpenWebUI. Sie passen einen WebGPU-Inferenz-Starter an und bewerten die Fähigkeiten sowie Kosten-/Leistungsabwägungen von Phi vs. GPT-OSS-20B.
 
 ## Lernziele
 
 - **Vergleichen** von SLM und LLM hinsichtlich Latenz, Speicherbedarf und Qualität
 - **Bereitstellen** von Modellen mit ONNXRuntime und (wo unterstützt) WebGPU
 - **Ausführen** von browserbasierter Inferenz (datenschutzfreundliche interaktive Demo)
-- **Integrieren** einer Chainlit-RAG-Pipeline mit einem lokalen SLM-Backend
+- **Integrieren** einer Chainlit RAG-Pipeline mit einem lokalen SLM-Backend
 - **Bewerten** mit leichtgewichtigen Qualitäts- und Kostenheuristiken
 
 ## Voraussetzungen
@@ -28,24 +28,24 @@ Vergleichen Sie Large Language Models (LLMs) und Small Language Models (SLMs) f�
 - WebGPU-fähiger Browser (Edge / Chrome aktuell auf Windows 11)
 - Foundry Local läuft (`foundry status`)
 
-### Plattformübergreifende Hinweise
+### Hinweise zur plattformübergreifenden Nutzung
 
 Windows bleibt die primäre Zielumgebung. Für macOS-Entwickler, die auf native Binärdateien warten:
-1. Führen Sie Foundry Local in einer Windows 11 VM (Parallels / UTM) ODER auf einer Remote-Windows-Workstation aus.
-2. Stellen Sie den Dienst bereit (Standardport 5273) und konfigurieren Sie ihn auf macOS:
+1. Führen Sie Foundry Local in einer Windows 11-VM (Parallels / UTM) ODER auf einer Remote-Windows-Workstation aus.
+2. Stellen Sie den Dienst (Standardport 5273) bereit und konfigurieren Sie ihn auf macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-3. Verwenden Sie dieselben Schritte für die Python-Virtual-Umgebung wie in den vorherigen Sitzungen.
+3. Verwenden Sie die gleichen Schritte für die Python-virtuelle Umgebung wie in den vorherigen Sitzungen.
 
-Chainlit-Installation (beide Plattformen):
+Installation von Chainlit (beide Plattformen):
 ```bash
 pip install chainlit
 ```
 
 ## Demo-Ablauf (30 Minuten)
 
-### 1. Vergleich von Phi (SLM) und GPT-OSS-20B (LLM) (6 Minuten)
+### 1. Vergleich von Phi (SLM) vs. GPT-OSS-20B (LLM) (6 Minuten)
 
 ```powershell
 foundry model run phi-4-mini
@@ -67,11 +67,12 @@ Verfolgen: Antworttiefe, faktische Genauigkeit, stilistische Vielfalt, Latenz.
 ```powershell
 foundry config set compute.onnx.enable_gpu true
 # Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
-Beobachten Sie die Durchsatzänderungen nach Aktivierung von GPU im Vergleich zu CPU-only.
+Beobachten Sie die Durchsatzänderungen nach Aktivierung von GPU im Vergleich zu nur CPU.
 
 ### 3. WebGPU-Inferenz im Browser (6 Minuten)
 
@@ -116,9 +117,9 @@ Passen Sie den Starter `04-webgpu-inference` an (erstellen Sie `samples/04-cutti
 </html>
 ```
 
-Öffnen Sie die Datei in einem Browser; beobachten Sie die lokale Roundtrip-Latenz.
+Öffnen Sie die Datei im Browser; beobachten Sie die lokale Roundtrip-Latenz.
 
-### 4. Chainlit RAG Chat App (7 Minuten)
+### 4. Chainlit RAG Chat-App (7 Minuten)
 
 Minimal `samples/04-cutting-edge/chainlit_app.py`:
 
@@ -165,8 +166,8 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ### 5. Starter-Projekt: Anpassung von `04-webgpu-inference` (6 Minuten)
 
 Liefergegenstände:
-- Ersetzen Sie die Platzhalter-Fetch-Logik durch Streaming-Tokens (verwenden Sie die `stream=True`-Endpunktvariante, sobald aktiviert)
-- Fügen Sie ein Latenzdiagramm (clientseitig) für Phi- und GPT-OSS-20B-Umschaltungen hinzu
+- Ersetzen Sie die Platzhalter-Abruflogik durch Streaming-Tokens (verwenden Sie die Variante `stream=True`, sobald aktiviert)
+- Fügen Sie ein Latenzdiagramm (clientseitig) für Phi vs. GPT-OSS-20B-Umschaltungen hinzu
 - Betten Sie den RAG-Kontext inline ein (Textbereich für Referenzdokumente)
 
 ## Bewertungsheuristiken
@@ -174,7 +175,7 @@ Liefergegenstände:
 | Kategorie | Phi-4-mini | GPT-OSS-20B | Beobachtung |
 |-----------|------------|-------------|-------------|
 | Latenz (kalt) | Schnell | Langsamer | SLM wird schnell warm |
-| Speicher | Niedrig | Hoch | Geräte-Machbarkeit |
+| Speicher | Niedrig | Hoch | Gerätefähigkeit |
 | Kontexttreue | Gut | Stark | Größeres Modell kann ausführlicher sein |
 | Kosten (lokal) | Minimal | Höher (Ressourcen) | Energie-/Zeit-Abwägung |
 | Beste Anwendungsfälle | Edge-Apps | Tiefgründiges Denken | Hybride Pipeline möglich |
@@ -187,17 +188,18 @@ foundry model list
 
 # For runtime metrics use the Python benchmark script (Session 3) and OS tools (Task Manager / nvidia-smi) instead of 'model stats'
 # Example:
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini,gpt-oss-20b
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 ## Fehlerbehebung
 
 | Symptom | Ursache | Maßnahme |
 |---------|---------|----------|
-| Webseitenerfassung schlägt fehl | CORS oder Dienst ausgefallen | Verwenden Sie `curl`, um den Endpunkt zu überprüfen; aktivieren Sie ggf. einen CORS-Proxy |
-| Chainlit leer | Umgebung nicht aktiv | Aktivieren Sie die virtuelle Umgebung und installieren Sie die Abhängigkeiten neu |
-| Hohe Latenz | Modell gerade geladen | Wärmen Sie mit einer kleinen Prompt-Sequenz vor |
+| Webseitenauszug schlägt fehl | CORS oder Dienst nicht verfügbar | Verwenden Sie `curl`, um den Endpunkt zu überprüfen; aktivieren Sie bei Bedarf einen CORS-Proxy |
+| Chainlit leer | Umgebung nicht aktiv | Aktivieren Sie die virtuelle Umgebung und installieren Sie die Abhängigkeiten erneut |
+| Hohe Latenz | Modell gerade geladen | Erwärmen Sie es mit einer kleinen Eingabesequenz |
 
 ## Referenzen
 
@@ -207,19 +209,19 @@ foundry model list
 
 ---
 
-**Sitzungsdauer**: 30 Minuten  
+**Dauer der Sitzung**: 30 Minuten  
 **Schwierigkeitsgrad**: Fortgeschritten
 
 ## Beispiel-Szenario & Workshop-Zuordnung
 
-| Workshop-Artefakte | Szenario | Ziel | Daten / Prompt-Quelle |
+| Workshop-Artefakte | Szenario | Ziel | Daten / Eingabequelle |
 |---------------------|----------|------|-----------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architekturteam bewertet SLM vs LLM für einen Generator für Managementzusammenfassungen | Latenz- und Token-Nutzungsdifferenz quantifizieren | Einzelne `COMPARE_PROMPT` Umgebungsvariable |
-| `chainlit_app.py` (RAG-Demo) | Prototyp eines internen Wissensassistenten | Kurze Antworten mit minimaler lexikalischer Suche untermauern | Inline-`DOCS`-Liste in der Datei |
-| `webgpu_demo.html` | Zukunftsvision für browserbasierte Inferenz auf dem Gerät | Lokale Roundtrip-Latenz + UX-Narrativ zeigen | Nur Live-Benutzer-Prompt |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architekturteam bewertet SLM vs. LLM für Generator von Führungskräfte-Zusammenfassungen | Latenz- und Token-Nutzungsdifferenz quantifizieren | Einzelne Umgebungsvariable `COMPARE_PROMPT` |
+| `chainlit_app.py` (RAG-Demo) | Prototyp eines internen Wissensassistenten | Kurze Antworten mit minimaler lexikalischer Suche untermauern | Inline-`DOCS`-Liste in Datei |
+| `webgpu_demo.html` | Zukunftsvision für browserbasierte Inferenz auf Geräten | Zeigt lokale Roundtrip-Latenz + UX-Narrativ | Nur Live-Benutzereingabe |
 
 ### Szenario-Narrativ
-Die Produktorganisation möchte einen Generator für Managementzusammenfassungen. Ein leichtgewichtiges SLM (phi‑4‑mini) erstellt Entwürfe; ein größeres LLM (gpt‑oss‑20b) kann nur hochpriorisierte Berichte verfeinern. Sitzungs-Skripte erfassen empirische Latenz- und Token-Metriken, um ein hybrides Design zu rechtfertigen, während die Chainlit-Demo zeigt, wie eine fundierte Suche kleine Modellantworten faktisch hält. Die WebGPU-Konzeptseite bietet einen Vision-Pfad für vollständig clientseitige Verarbeitung, wenn die Browserbeschleunigung ausgereift ist.
+Die Produktorganisation möchte einen Generator für Führungskräfte-Briefings. Ein leichtgewichtiges SLM (phi-4-mini) erstellt Entwürfe; ein größeres LLM (gpt-oss-20b) kann nur hochpriorisierte Berichte verfeinern. Sitzungs-Skripte erfassen empirische Latenz- und Token-Metriken, um ein hybrides Design zu rechtfertigen, während die Chainlit-Demo zeigt, wie fundierte Suche kleine Modellantworten faktisch hält. Die WebGPU-Konzeptseite bietet einen Vision-Pfad für vollständig clientseitige Verarbeitung, wenn die Browserbeschleunigung ausgereift ist.
 
 ### Minimaler RAG-Kontext (Chainlit)
 ```python
@@ -245,16 +247,16 @@ Verfolgen Sie beide Latenzkomponenten, um die gemischten durchschnittlichen Kost
 
 | Fokus | Verbesserung | Warum | Implementierungshinweis |
 |-------|--------------|-------|-------------------------|
-| Vergleichende Metriken | Token-Nutzung + Latenz des ersten Tokens verfolgen | Ganzheitliche Leistungsansicht | Verwenden Sie ein erweitertes Benchmark-Skript (Sitzung 3) mit `BENCH_STREAM=1` |
+| Vergleichende Metriken | Verfolgen von Token-Nutzung + Latenz des ersten Tokens | Ganzheitliche Leistungsansicht | Verwenden Sie das erweiterte Benchmark-Skript (Sitzung 3) mit `BENCH_STREAM=1` |
 | Hybride Pipeline | SLM-Entwurf → LLM-Verfeinerung | Latenz und Kosten reduzieren | Mit phi-4-mini generieren, Zusammenfassung mit gpt-oss-20b verfeinern |
-| Streaming-UI | Bessere UX in Chainlit | Schrittweise Rückmeldung | Verwenden Sie `stream=True`, sobald lokales Streaming verfügbar ist; sammeln Sie die Chunks |
-| WebGPU-Caching | Schnellere JS-Initialisierung | Neukompilierungs-Overhead reduzieren | Kompilierte Shader-Artefakte zwischenspeichern (zukünftige Laufzeitfähigkeit) |
-| Deterministischer QA-Satz | Fairer Modellvergleich | Varianz entfernen | Feste Prompt-Liste + `temperature=0` für Bewertungsdurchläufe |
-| Output-Bewertung | Strukturierte Qualitätsbewertung | Über Anekdoten hinausgehen | Einfaches Bewertungsschema: Kohärenz / Faktizität / Kürze (1–5) |
-| Energie-/Ressourcenhinweise | Diskussion im Klassenzimmer | Trade-offs zeigen | Verwenden Sie OS-Monitore (`foundry system info`, Task-Manager, `nvidia-smi`) + Benchmark-Skript-Ausgaben |
-| Kosten-Emulation | Vor-Cloud-Rechtfertigung | Skalierungsplanung | Tokens auf hypothetische Cloud-Preise für TCO-Narrativ abbilden |
-| Latenz-Zerlegung | Engpässe identifizieren | Optimierungen anvisieren | Prompt-Vorbereitung, Anfrage senden, erstes Token, vollständige Fertigstellung messen |
-| RAG + LLM-Fallback | Qualitätssicherheitsnetz | Schwierige Anfragen verbessern | Wenn SLM-Antwortlänge < Schwellenwert oder geringe Zuversicht → eskalieren |
+| Streaming-UI | Bessere UX in Chainlit | Schrittweise Rückmeldung | Verwenden Sie `stream=True`, sobald lokales Streaming verfügbar ist; sammeln Sie die Teile |
+| WebGPU-Caching | Schnellere JS-Initialisierung | Reduzieren Sie Neukompilierungs-Overhead | Zwischenspeichern von kompilierten Shader-Artefakten (zukünftige Laufzeitfähigkeit) |
+| Deterministischer QA-Satz | Fairer Modellvergleich | Variabilität entfernen | Feste Eingabeliste + `temperature=0` für Bewertungsdurchläufe |
+| Ausgabe-Bewertung | Strukturierte Qualitätslinse | Über Anekdoten hinausgehen | Einfaches Bewertungsschema: Kohärenz / Faktizität / Kürze (1–5) |
+| Energie-/Ressourcenhinweise | Diskussion im Klassenzimmer | Trade-offs zeigen | Verwenden Sie OS-Monitore (`foundry system info`, Task-Manager, `nvidia-smi`) + Benchmark-Skriptausgaben |
+| Kosten-Emulation | Vor-Cloud-Rechtfertigung | Skalierung planen | Zuordnung von Tokens zu hypothetischen Cloud-Preisen für TCO-Narrativ |
+| Latenz-Zerlegung | Engpässe identifizieren | Optimierungen anvisieren | Messen Sie Eingabevorbereitung, Anfrageversand, erstes Token, vollständige Fertigstellung |
+| RAG + LLM-Fallback | Qualitätssicherungsnetz | Schwierige Anfragen verbessern | Wenn SLM-Antwortlänge < Schwellenwert oder geringe Sicherheit → eskalieren |
 
 #### Beispiel für hybrides Entwurf/Verfeinerungsmuster
 

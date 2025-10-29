@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-08T20:59:01+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T21:33:18+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "pt"
 }
@@ -15,12 +15,12 @@ Este diretório contém scripts de automação e suporte usados para manter a qu
 
 | Ficheiro | Finalidade |
 |----------|------------|
-| `lint_markdown_cli.py` | Verifica blocos de código Markdown para padrões obsoletos de comandos Foundry Local CLI. |
+| `lint_markdown_cli.py` | Verifica blocos de código Markdown para identificar padrões de comandos obsoletos do Foundry Local CLI. |
 | `export_benchmark_markdown.py` | Executa benchmarks de latência multi-modelo e gera relatórios em Markdown + JSON. |
 
 ## 1. Verificador de Padrões CLI em Markdown
 
-O `lint_markdown_cli.py` analisa todos os ficheiros `.md` não traduzidos em busca de padrões obsoletos do Foundry Local CLI **dentro de blocos de código delimitados** (``` ... ```). O texto informativo ainda pode mencionar comandos obsoletos para contexto histórico.
+O `lint_markdown_cli.py` analisa todos os ficheiros `.md` que não sejam traduções para identificar padrões obsoletos do Foundry Local CLI **dentro de blocos de código delimitados** (``` ... ```). Textos informativos ainda podem mencionar comandos obsoletos para contexto histórico.
 
 ### Padrões Obsoletos (Bloqueados Dentro de Blocos de Código)
 
@@ -42,7 +42,7 @@ O verificador bloqueia padrões CLI obsoletos. Utilize alternativas modernas.
 | 0 | Nenhuma violação detetada |
 | 1 | Um ou mais padrões obsoletos encontrados |
 
-### Execução Local
+### Executar Localmente
 A partir da raiz do repositório (recomendado):
 
 Windows (PowerShell):
@@ -60,16 +60,16 @@ python Workshop/scripts/lint_markdown_cli.py --verbose
 echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
-Este bloqueia commits que introduzem padrões obsoletos.
+Isto bloqueia commits que introduzem padrões obsoletos.
 
 ### Integração com CI
-Um workflow do GitHub Action (`.github/workflows/markdown-cli-lint.yml`) executa o verificador em cada push e pull request para as branches `main` e `Reactor`. Jobs com falhas devem ser corrigidos antes da fusão.
+Um workflow do GitHub Action (`.github/workflows/markdown-cli-lint.yml`) executa o verificador em cada push e pull request para as branches `main` e `Reactor`. Jobs com falhas devem ser corrigidos antes de fazer merge.
 
 ### Adicionar Novos Padrões Obsoletos
 1. Abra o ficheiro `lint_markdown_cli.py`.
 2. Adicione um tuplo `(regex, suggestion)` à lista `DEPRECATED`. Utilize uma string raw e inclua limites de palavra `\b` onde apropriado.
 3. Execute o verificador localmente para verificar a deteção.
-4. Faça commit e push; o CI aplicará a nova regra.
+4. Faça commit e push; o CI irá aplicar a nova regra.
 
 Exemplo de adição:
 ```python
@@ -77,27 +77,27 @@ DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental
 ```
 
 ### Permitir Menções Explicativas
-Como apenas blocos de código delimitados são aplicados, pode descrever comandos obsoletos em texto narrativo sem problemas. Se *precisar* de os mostrar dentro de um bloco delimitado para contraste, adicione um bloco delimitado **sem** três acentos graves (por exemplo, indentado ou citado) ou reescreva em forma pseudo.
+Como apenas blocos de código delimitados são verificados, pode descrever comandos obsoletos em texto narrativo sem problemas. Se *precisar* de os mostrar dentro de um bloco, utilize um bloco delimitado **sem** três acentos graves (por exemplo, indentação ou citação) ou reescreva em forma de pseudocódigo.
 
 ### Ignorar Ficheiros Específicos (Avançado)
-Se necessário, envolva exemplos antigos num ficheiro separado fora do repositório ou renomeie com uma extensão diferente enquanto estiver a trabalhar. Ignorar intencionalmente cópias traduzidas é automático (caminhos que contêm `translations`).
+Se necessário, coloque exemplos antigos num ficheiro separado fora do repositório ou renomeie com uma extensão diferente enquanto estiver a trabalhar. Ignorar intencionalmente cópias traduzidas é automático (caminhos que contenham `translations`).
 
 ### Resolução de Problemas
 | Problema | Causa | Resolução |
 |----------|-------|-----------|
-| O verificador sinaliza uma linha que atualizou | Regex muito amplo | Restrinja o padrão com limites de palavra adicionais (`\b`) ou âncoras |
+| O verificador sinaliza uma linha que atualizou | Regex muito abrangente | Restrinja o padrão com limites de palavra adicionais (`\b`) ou âncoras |
 | CI falha, mas localmente passa | Versão diferente do Python ou alterações não commitadas | Reexecute localmente, certifique-se de que o diretório de trabalho está limpo, verifique a versão do Python no workflow (3.11) |
-| Precisa de ignorar temporariamente | Correção urgente | Aplique a correção imediatamente após; considere usar uma branch temporária e um PR de acompanhamento (evite adicionar opções de ignorar) |
+| Necessidade de ignorar temporariamente | Correção urgente | Aplique a correção imediatamente depois; considere usar uma branch temporária e um PR de acompanhamento (evite adicionar opções de bypass) |
 
 ### Justificação
-Manter a documentação alinhada com a superfície CLI *atual* e estável evita fricção no workshop, reduz confusão para os participantes e centraliza a medição de desempenho através de scripts Python mantidos em vez de subcomandos CLI desatualizados.
+Manter a documentação alinhada com a superfície CLI *atual* e estável evita fricção no workshop, reduz confusão para os participantes e centraliza a medição de desempenho através de scripts Python mantidos, em vez de comandos CLI desatualizados.
 
 ---
 Mantido como parte da cadeia de ferramentas de qualidade do workshop. Para melhorias (por exemplo, sugestões de correção automática ou geração de relatórios em HTML), abra um issue ou envie um PR.
 
 ## 2. Script de Validação de Exemplos
 
-O `validate_samples.py` valida todos os ficheiros de exemplo Python para conformidade com sintaxe, imports e boas práticas.
+O `validate_samples.py` valida todos os ficheiros de exemplo em Python para conformidade com sintaxe, imports e boas práticas.
 
 ### Utilização
 ```bash
@@ -116,11 +116,11 @@ python scripts/validate_samples.py --summary
 
 ### O que verifica
 - ✅ Validade da sintaxe Python
-- ✅ Imports necessários presentes
+- ✅ Presença de imports necessários
 - ✅ Implementação de tratamento de erros (modo detalhado)
-- ✅ Uso de dicas de tipo (modo detalhado)
-- ✅ Docstrings de funções (modo detalhado)
-- ✅ Links de referência do SDK (modo detalhado)
+- ✅ Uso de type hints (modo detalhado)
+- ✅ Docstrings em funções (modo detalhado)
+- ✅ Links de referência para SDK (modo detalhado)
 
 ### Variáveis de Ambiente
 - `SKIP_IMPORT_CHECK=1` - Ignorar validação de imports
@@ -182,13 +182,13 @@ Gera uma tabela de desempenho reproduzível para um conjunto de modelos.
 
 ### Utilização
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Saídas
 | Ficheiro | Descrição |
 |----------|-----------|
-| `benchmark_report.md` | Tabela em Markdown (média, p95, tokens/segundo, opcional primeiro token) |
+| `benchmark_report.md` | Tabela em Markdown (média, p95, tokens/segundo, primeiro token opcional) |
 | `benchmark_report.json` | Array de métricas brutas para comparação e histórico |
 
 ### Opções
@@ -199,13 +199,13 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 | `--rounds` | Rodadas por modelo | 3 |
 | `--output` | Ficheiro de saída em Markdown | `benchmark_report.md` |
 | `--json` | Ficheiro de saída em JSON | `benchmark_report.json` |
-| `--fail-on-empty` | Saída diferente de zero se todos os benchmarks falharem | desativado |
+| `--fail-on-empty` | Saída não-zero se todos os benchmarks falharem | desativado |
 
 A variável de ambiente `BENCH_STREAM=1` adiciona medição de latência do primeiro token.
 
 ### Notas
-- Reutiliza `workshop_utils` para inicialização e cache consistentes de modelos.
-- Se executado a partir de um diretório de trabalho diferente, o script tenta caminhos alternativos para localizar `workshop_utils`.
+- Reutiliza `workshop_utils` para inicialização consistente de modelos e cache.
+- Se executado a partir de um diretório de trabalho diferente, o script tenta localizar `workshop_utils` com caminhos alternativos.
 - Para comparação de GPU: execute uma vez, ative aceleração via configuração CLI, reexecute e compare o JSON.
 
 ---

@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T13:59:25+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T23:13:33+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "bg"
 }
 -->
 # Бързо ръководство за работилницата
 
-## Предварителни условия
+## Предварителни изисквания
 
-### 1. Инсталирайте Foundry Local
+### 1. Инсталиране на Foundry Local
 
-Следвайте официалното ръководство за инсталация:  
+Следвайте официалното ръководство за инсталация:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -27,7 +27,7 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. Инсталирайте Python зависимости
+### 2. Инсталиране на Python зависимости
 
 От директорията на работилницата:
 
@@ -45,29 +45,29 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Стартиране на примерите от работилницата
+## Стартиране на примери от работилницата
 
 ### Сесия 01: Основен чат
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
-**Променливи на средата:**  
+**Променливи на средата:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
 ```
 
-### Сесия 02: RAG Пайплайн
+### Сесия 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
-**Променливи на средата:**  
+**Променливи на средата:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set RAG_QUESTION="Why use RAG with local inference?"
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Сесия 02: Оценка на RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Забележка**: Изисква допълнителни зависимости, инсталирани чрез `requirements.txt`
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### Сесия 03: Бенчмаркинг
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
-**Променливи на средата:**  
+**Променливи на средата:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,25 +103,25 @@ set BENCH_STREAM=1
 ### Сесия 04: Сравнение на модели
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
-**Променливи на средата:**  
+**Променливи на средата:**
 ```bash
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### Сесия 05: Оркестрация на много агенти
+### Сесия 05: Оркестрация с много агенти
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
-**Променливи на средата:**  
+**Променливи на средата:**
 ```bash
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=phi-4-mini
@@ -130,16 +131,16 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Сесия 06: Рутер за модели
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Тества логиката на маршрутизация** с множество намерения (код, обобщение, класификация)
+**Тества логиката за маршрутизация** с множество намерения (код, обобщение, класификация)
 
 ### Сесия 06: Пайплайн
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Комплексен многоетапен пайплайн** с планиране, изпълнение и усъвършенстване
@@ -204,7 +205,7 @@ source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### Грешки при свързване
+### Грешки при връзка
 
 ```bash
 # Check endpoint
@@ -229,7 +230,7 @@ foundry model run phi-4-mini
 ### Основна конфигурация
 | Променлива | По подразбиране | Описание |
 |------------|-----------------|----------|
-| `FOUNDRY_LOCAL_ALIAS` | Различно | Псевдоним на модела за използване |
+| `FOUNDRY_LOCAL_ALIAS` | Различно | Алиас на модела за използване |
 | `FOUNDRY_LOCAL_ENDPOINT` | Автоматично | Замяна на крайна точка на услугата |
 | `SHOW_USAGE` | `0` | Показване на статистика за използване на токени |
 | `RETRY_ON_FAIL` | `1` | Активиране на логика за повторение |
@@ -239,16 +240,16 @@ foundry model run phi-4-mini
 | Променлива | По подразбиране | Описание |
 |------------|-----------------|----------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Модел за вграждане |
-| `RAG_QUESTION` | Вижте примера | Тестов въпрос за RAG |
+| `RAG_QUESTION` | Вижте пример | Тестов въпрос за RAG |
 | `BENCH_MODELS` | Различно | Модели, разделени със запетая |
 | `BENCH_ROUNDS` | `3` | Итерации за бенчмарк |
-| `BENCH_PROMPT` | Вижте примера | Подканващ текст за бенчмарк |
+| `BENCH_PROMPT` | Вижте пример | Подканващ текст за бенчмарк |
 | `BENCH_STREAM` | `0` | Измерване на латентност за първи токен |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Основен модел на агент |
 | `AGENT_MODEL_EDITOR` | Основен | Модел на агент редактор |
 | `SLM_ALIAS` | `phi-4-mini` | Малък езиков модел |
 | `LLM_ALIAS` | `qwen2.5-7b` | Голям езиков модел |
-| `COMPARE_PROMPT` | Вижте примера | Подканващ текст за сравнение |
+| `COMPARE_PROMPT` | Вижте пример | Подканващ текст за сравнение |
 
 ## Препоръчани модели
 
@@ -264,30 +265,30 @@ foundry model run phi-4-mini
 
 ## Документация за SDK
 
-- **Foundry Local**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
-## Получаване на помощ
+## Помощ
 
-1. Проверете състоянието на услугата: `foundry service status`  
-2. Прегледайте логовете: Проверете логовете на услугата Foundry Local  
-3. Проверете документацията за SDK: https://github.com/microsoft/Foundry-Local  
+1. Проверете състоянието на услугата: `foundry service status`
+2. Прегледайте логовете: Проверете логовете на услугата Foundry Local
+3. Проверете документацията за SDK: https://github.com/microsoft/Foundry-Local
 4. Прегледайте примерния код: Всички примери имат подробни коментари
 
 ## Следващи стъпки
 
-1. Завършете всички сесии от работилницата по ред  
-2. Експериментирайте с различни модели  
-3. Модифицирайте примерите за вашите случаи на употреба  
+1. Завършете всички сесии от работилницата по ред
+2. Експериментирайте с различни модели
+3. Модифицирайте примерите според вашите нужди
 4. Прегледайте `SDK_MIGRATION_NOTES.md` за напреднали шаблони
 
 ---
 
-**Последна актуализация**: 2025-01-08  
+**Последно обновено**: 2025-01-08  
 **Версия на работилницата**: Най-нова  
 **SDK**: Foundry Local Python SDK
 
 ---
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI услуга за превод [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи може да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за недоразумения или погрешни интерпретации, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI услуга за превод [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи може да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да било недоразумения или погрешни интерпретации, произтичащи от използването на този превод.

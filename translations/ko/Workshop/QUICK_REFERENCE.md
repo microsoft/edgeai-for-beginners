@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-08T19:26:14+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T20:59:30+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ko"
 }
@@ -24,24 +24,24 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
 
 ## 📂 샘플 개요
 
-| 세션 | 샘플 | 목적 | 소요 시간 |
-|------|------|------|-----------|
-| 01 | `chat_bootstrap.py` | 기본 채팅 + 스트리밍 | 약 30초 |
-| 02 | `rag_pipeline.py` | 임베딩을 활용한 RAG | 약 45초 |
-| 02 | `rag_eval_ragas.py` | RAG 평가 | 약 60초 |
-| 03 | `benchmark_oss_models.py` | 모델 벤치마킹 | 약 2분 |
-| 04 | `model_compare.py` | SLM vs LLM 비교 | 약 45초 |
-| 05 | `agents_orchestrator.py` | 다중 에이전트 시스템 | 약 60초 |
-| 06 | `models_router.py` | 의도 라우팅 | 약 45초 |
-| 06 | `models_pipeline.py` | 다단계 파이프라인 | 약 60초 |
+| 세션 | 샘플 | 목적 | 시간 |
+|------|------|------|------|
+| 01 | `chat_bootstrap.py` | 기본 채팅 + 스트리밍 | ~30초 |
+| 02 | `rag_pipeline.py` | 임베딩을 활용한 RAG | ~45초 |
+| 02 | `rag_eval_ragas.py` | RAG 평가 | ~60초 |
+| 03 | `benchmark_oss_models.py` | 모델 벤치마킹 | ~2분 |
+| 04 | `model_compare.py` | SLM vs LLM 비교 | ~45초 |
+| 05 | `agents_orchestrator.py` | 다중 에이전트 시스템 | ~60초 |
+| 06 | `models_router.py` | 의도 라우팅 | ~45초 |
+| 06 | `models_pipeline.py` | 다단계 파이프라인 | ~60초 |
 
 ---
 
@@ -194,8 +194,8 @@ for chunk in stream:
 
 ## 📊 모델 선택
 
-| 모델 | 크기 | 최적 용도 | 속도 |
-|------|------|-----------|------|
+| 모델 | 크기 | 적합한 용도 | 속도 |
+|------|------|------------|------|
 | `qwen2.5-0.5b` | 0.5B | 빠른 분류 | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | 빠른 코드 생성 | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | 창의적 글쓰기 | ⚡⚡ |
@@ -216,9 +216,9 @@ for chunk in stream:
 
 ## 💡 팁
 
-1. **클라이언트 캐싱**: `workshop_utils`가 자동으로 캐싱합니다
-2. **작은 모델 사용**: 테스트 시 `qwen2.5-0.5b`로 시작하세요
-3. **사용 통계 활성화**: `SHOW_USAGE=1` 설정으로 토큰 사용량 추적
+1. **클라이언트 캐시 사용**: `workshop_utils`가 자동으로 캐시 처리
+2. **작은 모델 사용**: 테스트 시 `qwen2.5-0.5b`로 시작
+3. **사용 통계 활성화**: `SHOW_USAGE=1` 설정으로 토큰 추적
 4. **배치 처리**: 여러 프롬프트를 순차적으로 처리
 5. **max_tokens 줄이기**: 빠른 응답을 위해 지연 시간 감소
 
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### 모델 벤치마킹
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG 파이프라인
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### 다중 에이전트 시스템
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**빠른 도움말**: `--help`를 사용하거나 도큐먼트 문자열을 확인하여 샘플 실행:
+**빠른 도움말**: `samples` 디렉토리에서 `--help`를 사용하거나 docstring을 확인하세요:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전을 신뢰할 수 있는 권위 있는 자료로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전을 권위 있는 출처로 간주해야 합니다. 중요한 정보에 대해서는 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.

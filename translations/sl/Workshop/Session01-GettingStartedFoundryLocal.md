@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:28:22+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T23:30:52+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "sl"
 }
@@ -27,27 +27,27 @@ Do konca te seje boste:
 foundry model run phi-4-mini --prompt "Pozdravljeni, predstavite se"
 
 - Windows 11 (22H2 ali novejši)
-# Seznam razpoložljivih modelov v katalogu (naloženi modeli se prikažejo po zagonu)
+# Seznam razpoložljivih katalogskih modelov (naloženi modeli se prikažejo po zagonu)
 foundry model list
-## NOTE: Trenutno ni posebne zastavice `--running`; za ogled naloženih modelov začnite klepet ali preglejte dnevniške zapise storitve.
+## NOTE: Trenutno ni namenskega `--running` zastavka; za ogled naloženih modelov začnite klepet ali preglejte dnevnik storitev.
 - Nameščen Python 3.10+
 - Visual Studio Code z razširitvijo za Python
 - Skrbniške pravice za namestitev
 
 ### (Neobvezno) Spremenljivke okolja
 
-Ustvarite `.env` (ali nastavite v lupini), da bodo skripte prenosljive:
+Ustvarite `.env` (ali nastavite v lupini), da bodo skripti prenosljivi:
 # Primerjava odgovorov (neinteraktivno)
 foundry model run gpt-oss-20b --prompt "Razložite edge AI na preprost način"
 | Spremenljivka | Namen | Primer |
 |---------------|-------|--------|
 | `FOUNDRY_LOCAL_ALIAS` | Prednostni vzdevek modela (katalog samodejno izbere najboljšo različico) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | Preklic končne točke (sicer samodejno iz upravitelja) | `http://localhost:5273/v1` |
-| `FOUNDRY_LOCAL_STREAM` | Omogoči demo pretakanja | `true` |
+| `FOUNDRY_LOCAL_ENDPOINT` | Prepiši končno točko (sicer samodejno iz upravitelja) | `http://localhost:5273/v1` |
+| `FOUNDRY_LOCAL_STREAM` | Omogoči pretočno predstavitev | `true` |
 
-> Če je `FOUNDRY_LOCAL_ENDPOINT=auto` (ali ni nastavljeno), ga izpeljemo iz upravitelja SDK.
+> Če je `FOUNDRY_LOCAL_ENDPOINT=auto` (ali ni nastavljena), jo pridobimo iz upravitelja SDK.
 
-## Potek demonstracije (30 minut)
+## Potek predstavitve (30 minut)
 
 ### 1. Namestitev Foundry Local in preverjanje nastavitve CLI (10 minut)
 
@@ -77,9 +77,9 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Če domači binarni datoteki za macOS še nista na voljo, lahko še vedno: 
-1. Uporabite Windows 11 ARM/Intel VM (Parallels / UTM) in sledite korakom za Windows. 
-2. Izvajate modele prek kontejnerja (če je objavljena slika kontejnerja) in nastavite `FOUNDRY_LOCAL_ENDPOINT` na izpostavljeni port. 
+Če domači binarni programi za macOS še niso na voljo, lahko še vedno:
+1. Uporabite Windows 11 ARM/Intel VM (Parallels / UTM) in sledite korakom za Windows.
+2. Izvajate modele prek kontejnerja (če je objavljena slika kontejnerja) in nastavite `FOUNDRY_LOCAL_ENDPOINT` na izpostavljeni port.
 
 **Ustvarjanje virtualnega okolja za Python (Cross‑Platform)**
 
@@ -158,7 +158,7 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Če imate raje neposreden nadzor, lahko še vedno uporabite CLI + OpenAI odjemalca, kot je prikazano kasneje.
+Če imate raje eksplicitni nadzor, lahko še vedno uporabite CLI + OpenAI odjemalca, kot je prikazano kasneje.
 
 ### 2. Lokalno izvajanje modelov prek CLI (10 minut)
 
@@ -200,7 +200,7 @@ foundry cache list
 
 ### 4. Začetni projekt: Prilagoditev 01-run-phi za Foundry Local (5 minut)
 
-#### Korak 4.1: Ustvarjanje osnovne aplikacije za klepet
+#### Korak 4.1: Ustvarjanje osnovne klepetalne aplikacije
 
 Ustvarite `samples/01-foundry-quickstart/chat_quickstart.py` (posodobljeno za uporabo upravitelja, če je na voljo):
 
@@ -292,7 +292,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 - **Lokalni sklepni motor**: Izvaja modele popolnoma na vaši napravi
 - **Združljivost z OpenAI SDK**: Brezhibna integracija z obstoječo kodo OpenAI
 - **Upravljanje modelov**: Prenos, predpomnjenje in učinkovito izvajanje več modelov
-- **Optimizacija strojne opreme**: Izkoristite pospeševanje GPU, NPU in CPU
+- **Optimizacija strojne opreme**: Izkoristite GPU, NPU in CPU pospeševanje
 
 ### 2. Referenca ukazov CLI
 
@@ -342,7 +342,7 @@ print()
 
 ## Reševanje pogostih težav
 
-### Težava 1: "Ukaz Foundry ni najden"
+### Težava 1: "Foundry ukaz ni najden"
 
 **Rešitev:**
 ```powershell
@@ -386,7 +386,7 @@ netstat -an | findstr 5273
 - **Phi-4-mini**: Najboljši za splošne naloge, manjša poraba pomnilnika
 - **Qwen2.5-0.5b**: Najhitrejše sklepanje, minimalni viri
 - **GPT-OSS-20B**: Najvišja kakovost, zahteva več virov
-- **DeepSeek-Coder**: Optimizirano za programerske naloge
+- **DeepSeek-Coder**: Optimiziran za programerske naloge
 
 ### 2. Optimizacija strojne opreme
 
@@ -404,32 +404,33 @@ foundry config set model.preload false
 ### 3. Spremljanje zmogljivosti
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Neobvezne izboljšave
 
 | Izboljšava | Kaj | Kako |
 |------------|-----|------|
-| Skupne pripomočke | Odstranite podvojeno logiko odjemalca/bootstrapa | Uporabite `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Vidnost uporabe žetonov | Naučite razmišljanje o stroških/učinkovitosti zgodaj | Nastavite `SHOW_USAGE=1`, da natisnete poziv/zaključek/skupne žetone |
+| Skupne pripomočke | Odstranite podvojeno logiko odjemalca/bootstrappinga | Uporabite `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Vidnost uporabe žetonov | Naučite razmišljanje o stroških/učinkovitosti zgodaj | Nastavite `SHOW_USAGE=1`, da natisnete poziv/odgovor/skupne žetone |
 | Deterministične primerjave | Stabilno primerjanje in regresijski pregledi | Uporabite `temperature=0`, `top_p=1`, dosledno besedilo poziva |
-| Latenca prvega žetona | Merilo zaznane odzivnosti | Prilagodite skript za merjenje s pretakanjem (`BENCH_STREAM=1`) |
-| Ponovni poskus pri prehodnih napakah | Odporne demonstracije ob hladnem zagonu | `RETRY_ON_FAIL=1` (privzeto) in prilagodite `RETRY_BACKOFF` |
+| Latenca prvega žetona | Merilo zaznane odzivnosti | Prilagodite skript za merjenje s pretočnostjo (`BENCH_STREAM=1`) |
+| Ponovni poskus pri prehodnih napakah | Odporne predstavitve ob hladnem zagonu | `RETRY_ON_FAIL=1` (privzeto) in prilagodite `RETRY_BACKOFF` |
 | Testiranje delovanja | Hitro preverjanje ključnih tokov | Zaženite `python Workshop/tests/smoke.py` pred delavnico |
 | Profili vzdevkov modelov | Hitro preklapljanje med nabori modelov na različnih napravah | Vzdržujte `.env` z `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Učinkovitost predpomnjenja | Izogibanje ponovnim ogrevanjem pri večkratnem zagonu vzorcev | Pripomočki za upravljanje predpomnilnika; ponovno uporabite med skripti/zvezki |
-| Ogrevanje ob prvem zagonu | Zmanjšanje p95 konic latence | Po ustvarjanju `FoundryLocalManager` izvedite majhen poziv |
+| Učinkovitost predpomnjenja | Izogibanje ponovnemu ogrevanju pri večkratnem zagonu vzorcev | Pripomočki za upravljanje predpomnilnika; ponovno uporabite med skripti/zvezki |
+| Ogrevanje prvega zagona | Zmanjšanje p95 konic latence | Po ustvarjanju `FoundryLocalManager` izvedite majhen poziv |
 
-Primer determinističnega toplega začetka (PowerShell):
+Primer determinističnega toplega zagonskega osnova (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -438,16 +439,16 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Videti bi morali podobne rezultate in enako število žetonov pri drugem zagonu, kar potrjuje determinističnost.
+Videti bi morali podobne rezultate in identične števce žetonov pri drugem zagonu, kar potrjuje determinističnost.
 
 ## Naslednji koraki
 
 Po zaključku te seje:
 
-1. **Raziskujte sejo 2**: Gradite AI rešitve z Azure AI Foundry RAG
+1. **Raziskujte sejo 2**: Gradnja AI rešitev z Azure AI Foundry RAG
 2. **Preizkusite različne modele**: Eksperimentirajte z modeli Qwen, DeepSeek in drugimi družinami modelov
 3. **Optimizirajte zmogljivost**: Prilagodite nastavitve za vašo specifično strojno opremo
-4. **Gradite prilagojene aplikacije**: Uporabite Foundry Local SDK v svojih projektih
+4. **Zgradite prilagojene aplikacije**: Uporabite Foundry Local SDK v svojih projektih
 
 ## Dodatni viri
 
@@ -459,7 +460,7 @@ Po zaključku te seje:
 ### Vzorčna koda
 - [Modul08 Vzorec 01](./samples/01/README.md) - REST Chat Quickstart
 - [Modul08 Vzorec 02](./samples/02/README.md) - Integracija OpenAI SDK
-- [Modul08 Vzorec 03](./samples/03/README.md) - Odkritje modelov in primerjalno testiranje
+- [Modul08 Vzorec 03](./samples/03/README.md) - Odkritje modelov in primerjava zmogljivosti
 
 ### Skupnost
 - [Foundry Local GitHub Razprave](https://github.com/microsoft/Foundry-Local/discussions)
@@ -475,8 +476,8 @@ Po zaključku te seje:
 
 | Skript delavnice / Zvezek | Scenarij | Cilj | Primer vnosa | Potrebna podatkovna zbirka |
 |---------------------------|----------|------|--------------|----------------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Interna IT ekipa ocenjuje sklepanje na napravi za portal za oceno zasebnosti | Dokazati, da lokalni SLM odgovarja z latenco pod sekundo na standardne pozive | "Naštejte dve prednosti lokalnega sklepanja." | Nobena (enojni poziv) |
-| Koda za prilagoditev hitrega začetka | Razvijalec, ki migrira obstoječi OpenAI skript na Foundry Local | Prikaz združljivosti brez sprememb | "Naštejte dve prednosti lokalnega sklepanja." | Samo inline poziv |
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Interna IT ekipa ocenjuje sklepanje na napravi za portal za oceno zasebnosti | Dokazati, da lokalni SLM odgovarja z latenco pod sekundo na standardne pozive | "Naštejte dve prednosti lokalnega sklepanja." | Brez (enojni poziv) |
+| Koda za prilagoditev hitrega zagona | Razvijalec, ki migrira obstoječi OpenAI skript na Foundry Local | Pokažite združljivost brez sprememb | "Naštejte dve prednosti lokalnega sklepanja." | Samo inline poziv |
 
 ### Narativ scenarija
 Ekipa za varnost in skladnost mora potrditi, ali je mogoče občutljive prototipne podatke obdelati lokalno. Zaženejo bootstrap skript z več pozivi (zasebnost, latenca, stroški) z determinističnim načinom temperature=0, da zajamejo osnovne izhode za kasnejšo primerjavo (benchmarking v seji 3 in kontrast SLM proti LLM v seji 4).
@@ -490,9 +491,9 @@ Ekipa za varnost in skladnost mora potrditi, ali je mogoče občutljive prototip
 ]
 ```
 
-Uporabite ta seznam za ustvarjanje reproducibilne zanke ocenjevanja ali za pripravo prihodnjega regresijskega testnega orodja.
+Uporabite ta seznam za ustvarjanje reproducibilne zanke ocenjevanja ali za seme prihodnjega regresijskega testnega orodja.
 
 ---
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.

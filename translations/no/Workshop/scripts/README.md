@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-09T14:46:33+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T22:16:16+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "no"
 }
@@ -14,21 +14,21 @@ Denne katalogen inneholder automatiserings- og støtteskript som brukes for å o
 ## Innhold
 
 | Fil | Formål |
-|------|---------|
+|-----|--------|
 | `lint_markdown_cli.py` | Kontrollerer markdown-kodeblokker for å blokkere utdaterte Foundry Local CLI-kommandomønstre. |
-| `export_benchmark_markdown.py` | Utfører ytelsestester med flere modeller og genererer rapporter i Markdown + JSON. |
+| `export_benchmark_markdown.py` | Utfører ytelsestesting med flere modeller og genererer rapporter i Markdown + JSON. |
 
-## 1. Markdown CLI-mønsterkontroller
+## 1. Markdown CLI-mønsterkontroll
 
 `lint_markdown_cli.py` skanner alle ikke-oversatte `.md`-filer for ikke-tillatte Foundry Local CLI-mønstre **inne i kodeblokker** (``` ... ```). Informativ tekst kan fortsatt nevne utdaterte kommandoer for historisk kontekst.
 
 ### Utdaterte mønstre (blokkert i kodeblokker)
 
-Kontrolleren blokkerer utdaterte CLI-mønstre. Bruk moderne alternativer i stedet.
+Kontrollverktøyet blokkerer utdaterte CLI-mønstre. Bruk moderne alternativer i stedet.
 
 ### Nødvendige erstatninger
 | Utdaterte | Bruk i stedet |
-|------------|-------------|
+|-----------|---------------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
 | `foundry model list --running` | `foundry model list` |
 | `foundry model list --cached` | `foundry cache list` |
@@ -38,12 +38,12 @@ Kontrolleren blokkerer utdaterte CLI-mønstre. Bruk moderne alternativer i stede
 
 ### Avslutningskoder
 | Kode | Betydning |
-|------|---------|
+|------|-----------|
 | 0 | Ingen brudd oppdaget |
 | 1 | Ett eller flere utdaterte mønstre funnet |
 
 ### Kjøre lokalt
-Fra rotkatalogen til repoet (anbefalt):
+Fra rotkatalogen til depotet (anbefalt):
 
 Windows (PowerShell):
 ```powershell
@@ -63,12 +63,12 @@ chmod +x .git/hooks/pre-commit
 Dette blokkerer commits som introduserer utdaterte mønstre.
 
 ### CI-integrasjon
-En GitHub Action-arbeidsflyt (`.github/workflows/markdown-cli-lint.yml`) kjører kontrolleren ved hver push og pull request til `main`- og `Reactor`-grenene. Feilende jobber må fikses før merging.
+En GitHub Action-arbeidsflyt (`.github/workflows/markdown-cli-lint.yml`) kjører kontrollverktøyet ved hver push og pull request til `main`- og `Reactor`-grenene. Feilende jobber må fikses før merging.
 
 ### Legge til nye utdaterte mønstre
 1. Åpne `lint_markdown_cli.py`.
-2. Legg til en tuple `(regex, suggestion)` i listen `DEPRECATED`. Bruk en rå streng og inkluder `\b` ordgrenser der det er passende.
-3. Kjør kontrolleren lokalt for å verifisere deteksjon.
+2. Legg til en tuple `(regex, suggestion)` i listen `DEPRECATED`. Bruk en rå streng og inkluder ordgrenser `\b` der det er passende.
+3. Kjør kontrollverktøyet lokalt for å verifisere deteksjon.
 4. Commit og push; CI vil håndheve den nye regelen.
 
 Eksempel på tillegg:
@@ -77,20 +77,20 @@ DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental
 ```
 
 ### Tillate forklarende omtaler
-Siden kun kodeblokker håndheves, kan du trygt beskrive utdaterte kommandoer i narrativ tekst. Hvis du *må* vise dem i en kodeblokk for kontrast, bruk en kodeblokk **uten** triple backticks (f.eks. innrykk eller sitat) eller omskriv til pseudoform.
+Siden kun kodeblokker håndheves, kan du trygt beskrive utdaterte kommandoer i narrativ tekst. Hvis du *må* vise dem i en kodeblokk for kontrast, legg til en blokk **uten** trippel backticks (f.eks. innrykk eller sitat) eller omskriv til en pseudoform.
 
-### Hoppe over spesifikke filer (avansert)
-Hvis nødvendig, plasser eldre eksempler i en separat fil utenfor repoet eller gi dem et annet filnavn mens du jobber. Bevisste hopp over oversatte kopier er automatiske (stier som inneholder `translations`).
+### Hopp over spesifikke filer (avansert)
+Hvis nødvendig, plasser eldre eksempler i en separat fil utenfor depotet eller gi dem et annet filnavn mens du jobber med utkast. Bevisste hopp over oversatte kopier skjer automatisk (stier som inneholder `translations`).
 
 ### Feilsøking
 | Problem | Årsak | Løsning |
-|-------|-------|-----------|
-| Kontrolleren flagger en linje du oppdaterte | Regex for bred | Begrens mønsteret med ekstra ordgrense (`\b`) eller ankre |
-| CI feiler, men lokalt fungerer | Ulik Python-versjon eller ikke-committede endringer | Kjør på nytt lokalt, sørg for ren arbeidskatalog, sjekk arbeidsflytens Python-versjon (3.11) |
-| Må midlertidig omgå | Nødretting | Utfør retting umiddelbart etterpå; vurder å bruke en midlertidig gren og oppfølgende PR (unngå å legge til omgåelsesbrytere) |
+|---------|-------|---------|
+| Kontrollverktøyet flagger en linje du oppdaterte | Regex for bred | Begrens mønsteret med ekstra ordgrense (`\b`) eller anker |
+| CI feiler, men lokalt fungerer | Ulik Python-versjon eller ikke-committede endringer | Kjør på nytt lokalt, sørg for ren arbeidskopi, sjekk arbeidsflytens Python-versjon (3.11) |
+| Må midlertidig omgå | Nødretting | Utfør retting umiddelbart etterpå; vurder å bruke en midlertidig gren og oppfølgings-PR (unngå å legge til omgåelsesbrytere) |
 
 ### Begrunnelse
-Å holde dokumentasjonen i tråd med *nåværende* stabil CLI-overflate forhindrer friksjon i workshop, unngår forvirring hos deltakerne, og sentraliserer ytelsesmåling gjennom vedlikeholdte Python-skript i stedet for utdaterte CLI-underkommandoer.
+Å holde dokumentasjonen i tråd med *nåværende* stabile CLI-grensesnitt forhindrer friksjon i workshop, unngår forvirring hos deltakerne, og sentraliserer ytelsesmåling gjennom vedlikeholdte Python-skript i stedet for utdaterte CLI-underkommandoer.
 
 ---
 Vedlikeholdes som en del av workshopens kvalitetssystem. For forbedringer (f.eks. automatiske forslag eller HTML-rapportgenerering), åpne en sak eller send inn en PR.
@@ -115,7 +115,7 @@ python scripts/validate_samples.py --summary
 ```
 
 ### Hva det sjekker
-- ✅ Gyldig Python-syntaks
+- ✅ Python-syntaks gyldighet
 - ✅ Nødvendige imports til stede
 - ✅ Implementering av feilhåndtering (verbose-modus)
 - ✅ Bruk av type hints (verbose-modus)
@@ -123,16 +123,16 @@ python scripts/validate_samples.py --summary
 - ✅ SDK-referanselenker (verbose-modus)
 
 ### Miljøvariabler
-- `SKIP_IMPORT_CHECK=1` - Hopper over importvalidering
-- `SKIP_SYNTAX_CHECK=1` - Hopper over syntaksvalidering
+- `SKIP_IMPORT_CHECK=1` - Hopper over validering av imports
+- `SKIP_SYNTAX_CHECK=1` - Hopper over validering av syntaks
 
 ### Avslutningskoder
-- `0` - Alle eksempler besto validering
+- `0` - Alle eksempler bestod validering
 - `1` - Ett eller flere eksempler feilet
 
 ## 3. Eksempeltestkjører
 
-`test_samples.py` kjører røyktester på alle eksempler for å verifisere at de kjører uten feil.
+`test_samples.py` kjører enkle tester på alle eksempler for å verifisere at de kjører uten feil.
 
 ### Bruk
 ```bash
@@ -155,14 +155,14 @@ python scripts/test_samples.py --verbose
 - Avhengigheter installert: `pip install -r requirements.txt`
 
 ### Hva det tester
-- ✅ Eksempler kan kjøre uten kjøretidsfeil
+- ✅ Eksempelet kan kjøre uten kjøretidsfeil
 - ✅ Nødvendig output genereres
 - ✅ Riktig feilhåndtering ved feil
 - ✅ Ytelse (kjøretid)
 
 ### Miljøvariabler
 - `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Modell som skal brukes til testing
-- `TEST_TIMEOUT=30` - Timeout per eksempel i sekunder
+- `TEST_TIMEOUT=30` - Tidsgrense per eksempel i sekunder
 
 ### Forventede feil
 Noen tester kan feile hvis valgfrie avhengigheter ikke er installert (f.eks. `ragas`, `sentence-transformers`). Installer med:
@@ -171,8 +171,8 @@ pip install sentence-transformers ragas datasets
 ```
 
 ### Avslutningskoder
-- `0` - Alle tester besto
-- `1` - Én eller flere tester feilet
+- `0` - Alle tester bestod
+- `1` - En eller flere tester feilet
 
 ## 4. Benchmark Markdown-eksportør
 
@@ -182,24 +182,24 @@ Genererer en reproduserbar ytelsestabell for et sett med modeller.
 
 ### Bruk
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Utdata
 | Fil | Beskrivelse |
-|------|-------------|
+|-----|-------------|
 | `benchmark_report.md` | Markdown-tabell (gj.snitt, p95, tokens/sek, valgfri første token) |
-| `benchmark_report.json` | Rå metrikk-array for differensiering og historikk |
+| `benchmark_report.json` | Rå metrikker for differensiering og historikk |
 
 ### Valg
 | Flag | Beskrivelse | Standard |
-|------|-------------|---------|
+|------|-------------|----------|
 | `--models` | Komma-separerte modellaliaser | (påkrevd) |
 | `--prompt` | Prompt brukt hver runde | (påkrevd) |
 | `--rounds` | Runder per modell | 3 |
 | `--output` | Markdown-utdatafil | `benchmark_report.md` |
 | `--json` | JSON-utdatafil | `benchmark_report.json` |
-| `--fail-on-empty` | Ikke-null exit hvis alle benchmarks feiler | av |
+| `--fail-on-empty` | Ikke-null exit hvis alle tester feiler | av |
 
 Miljøvariabelen `BENCH_STREAM=1` legger til måling av første token-latens.
 
@@ -211,4 +211,4 @@ Miljøvariabelen `BENCH_STREAM=1` legger til måling av første token-latens.
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

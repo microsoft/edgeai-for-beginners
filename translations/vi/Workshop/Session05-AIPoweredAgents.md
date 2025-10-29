@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T16:44:12+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T22:32:21+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "vi"
 }
@@ -16,7 +16,7 @@ Thiết kế và điều phối các tác nhân AI đa vai trò bằng cách t�
 ## Mục tiêu học tập
 
 - **Định nghĩa vai trò**: Lời nhắc hệ thống & giới hạn khả năng
-- **Triển khai bộ nhớ**: Ngắn hạn (hội thoại), dài hạn (vector / file), bảng ghi tạm thời
+- **Triển khai bộ nhớ**: Ngắn hạn (hội thoại), dài hạn (vector / file), bảng tạm tạm thời
 - **Xây dựng quy trình làm việc**: Các bước tác nhân tuần tự, phân nhánh và song song
 - **Tích hợp công cụ**: Mẫu gọi công cụ hàm nhẹ
 - **Đánh giá**: Theo dõi cơ bản + chấm điểm kết quả dựa trên tiêu chí
@@ -25,7 +25,7 @@ Thiết kế và điều phối các tác nhân AI đa vai trò bằng cách t�
 
 - Hoàn thành các buổi 1–4
 - Python với `foundry-local-sdk`, `openai`, tùy chọn `chainlit`
-- Các mô hình chạy cục bộ (ít nhất `phi-4-mini`)
+- Các mô hình cục bộ đang chạy (ít nhất `phi-4-mini`)
 
 ### Đoạn mã môi trường đa nền tảng
 
@@ -45,7 +45,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Nếu chạy các tác nhân từ macOS với dịch vụ máy chủ từ xa trên Windows:
+Nếu chạy các tác nhân từ macOS đối với dịch vụ máy chủ Windows từ xa:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -189,10 +189,10 @@ if __name__ == '__main__':
 ### 5. Dự án khởi đầu: Mở rộng `05-agent-architecture` (7 phút)
 
 Thêm:
-1. Lớp bộ nhớ lưu trữ (ví dụ: thêm dòng JSON của các cuộc hội thoại)
+1. Lớp bộ nhớ bền vững (ví dụ: thêm dòng JSON của các cuộc hội thoại)
 2. Tiêu chí đánh giá đơn giản: các tiêu chí về tính chính xác / rõ ràng / phong cách
-3. Tùy chọn giao diện Chainlit (hai tab: hội thoại & theo dõi)
-4. Tùy chọn máy trạng thái kiểu LangGraph (nếu thêm phụ thuộc) cho các quyết định phân nhánh
+3. Giao diện front-end tùy chọn của Chainlit (hai tab: hội thoại & theo dõi)
+4. Máy trạng thái kiểu LangGraph tùy chọn (nếu thêm phụ thuộc) cho các quyết định phân nhánh
 
 ## Danh sách kiểm tra xác thực
 
@@ -201,17 +201,16 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-
-Kỳ vọng đầu ra pipeline có cấu trúc với ghi chú về việc tiêm công cụ.
+Kỳ vọng đầu ra của pipeline có cấu trúc với ghi chú về việc tiêm công cụ.
 
 ## Tổng quan về chiến lược bộ nhớ
 
 | Lớp | Mục đích | Ví dụ |
 |-----|----------|-------|
-| Ngắn hạn | Duy trì hội thoại | N tin nhắn cuối cùng |
-| Tập hợp | Ghi nhớ phiên | JSON cho mỗi phiên |
-| Ngữ nghĩa | Truy xuất dài hạn | Kho vector của các bản tóm tắt |
-| Bảng ghi tạm | Các bước suy luận | Chuỗi suy nghĩ nội tuyến (riêng tư) |
+| Ngắn hạn | Liên tục hội thoại | N tin nhắn cuối cùng |
+| Tập hợp | Nhớ lại phiên | JSON cho mỗi phiên |
+| Ngữ nghĩa | Truy xuất dài hạn | Lưu trữ vector của các bản tóm tắt |
+| Bảng tạm | Các bước suy luận | Chuỗi suy nghĩ nội tuyến (riêng tư) |
 
 ## Hook đánh giá (Khái niệm)
 
@@ -248,20 +247,21 @@ evaluation = {
 ## Kịch bản mẫu & ánh xạ workshop
 
 | Kịch bản workshop | Kịch bản | Mục tiêu | Lời nhắc ví dụ |
-|-------------------|----------|----------|----------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot nghiên cứu kiến thức tạo ra các bản tóm tắt thân thiện với lãnh đạo | Pipeline hai tác nhân (nghiên cứu → chỉnh sửa) với các mô hình tùy chọn riêng biệt | Giải thích tại sao suy luận biên lại quan trọng đối với tuân thủ. |
+|--------------------|----------|----------|----------------|
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot nghiên cứu kiến thức tạo ra các bản tóm tắt thân thiện với lãnh đạo | Pipeline hai tác nhân (nghiên cứu → chỉnh sửa) với các mô hình tùy chọn khác biệt | Giải thích tại sao suy luận biên lại quan trọng đối với tuân thủ. |
 | (Mở rộng) khái niệm `tools.py` | Thêm công cụ ước tính thời gian & token | Minh họa mẫu gọi công cụ nhẹ | #tool:get_time |
 
 ### Tường thuật kịch bản
 
-Nhóm tài liệu tuân thủ cần các bản tóm tắt nội bộ nhanh chóng được lấy từ kiến thức cục bộ mà không gửi bản nháp lên các dịch vụ đám mây. Một tác nhân nghiên cứu thu thập các gạch đầu dòng thực tế ngắn gọn; một tác nhân chỉnh sửa viết lại để rõ ràng hơn cho lãnh đạo. Các bí danh mô hình riêng biệt có thể được gán để tối ưu hóa độ trễ (SLM nhanh) so với tinh chỉnh phong cách (mô hình lớn hơn chỉ khi cần thiết).
+Nhóm tài liệu tuân thủ cần các bản tóm tắt nội bộ nhanh chóng được lấy từ kiến thức cục bộ mà không gửi bản nháp lên các dịch vụ đám mây. Một tác nhân nghiên cứu thu thập các điểm chính xác ngắn gọn; một tác nhân biên tập viết lại để rõ ràng hơn cho lãnh đạo. Các bí danh mô hình khác biệt có thể được gán để tối ưu hóa độ trễ (SLM nhanh) so với tinh chỉnh phong cách (mô hình lớn hơn chỉ khi cần thiết).
 
 ### Môi trường đa mô hình ví dụ
 
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
@@ -278,25 +278,24 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-
 Lưu từng bước vào tệp JSONL để chấm điểm tiêu chí sau này.
 
-### Các cải tiến tùy chọn
+### Cải tiến tùy chọn
 
 | Chủ đề | Cải tiến | Lợi ích | Phác thảo triển khai |
 |--------|----------|---------|-----------------------|
-| Vai trò đa mô hình | Các mô hình riêng biệt cho mỗi tác nhân (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Chuyên môn hóa & tốc độ | Chọn biến môi trường bí danh, gọi `chat_once` với bí danh theo vai trò |
+| Vai trò đa mô hình | Các mô hình khác biệt cho mỗi tác nhân (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Chuyên môn hóa & tốc độ | Chọn biến môi trường bí danh, gọi `chat_once` với bí danh theo vai trò |
 | Theo dõi có cấu trúc | Theo dõi JSON của mỗi hành động (công cụ, đầu vào, độ trễ, token) | Gỡ lỗi & đánh giá | Thêm dict vào danh sách; ghi `.jsonl` khi kết thúc |
-| Lưu trữ bộ nhớ | Ngữ cảnh hội thoại có thể tải lại | Duy trì phiên | Xuất `Agent.memory` vào `sessions/<ts>.json` |
+| Lưu trữ bộ nhớ | Ngữ cảnh hội thoại có thể tải lại | Liên tục phiên | Xuất `Agent.memory` ra `sessions/<ts>.json` |
 | Đăng ký công cụ | Khám phá công cụ động | Khả năng mở rộng | Duy trì dict `TOOLS` & kiểm tra tên/mô tả |
-| Thử lại & lùi bước | Chuỗi dài mạnh mẽ | Giảm lỗi tạm thời | Bao `act` với try/except + lùi bước theo cấp số nhân |
-| Chấm điểm tiêu chí | Nhãn định tính tự động | Theo dõi cải tiến | Lời nhắc lần thứ hai cho mô hình: "Đánh giá độ rõ ràng từ 1-5" |
-| Bộ nhớ vector | Ghi nhớ ngữ nghĩa | Ngữ cảnh dài hạn phong phú | Nhúng các bản tóm tắt, truy xuất top-k vào thông điệp hệ thống |
-| Phản hồi theo luồng | Cảm nhận phản hồi nhanh hơn | Cải thiện UX | Sử dụng luồng khi có sẵn và xả các token từng phần |
+| Thử lại & lùi lại | Chuỗi dài mạnh mẽ | Giảm lỗi tạm thời | Bao bọc `act` với try/except + lùi lại theo cấp số nhân |
+| Chấm điểm tiêu chí | Nhãn định tính tự động | Theo dõi cải tiến | Lượt thứ hai nhắc mô hình: "Đánh giá độ rõ ràng 1-5" |
+| Bộ nhớ vector | Nhớ lại ngữ nghĩa | Ngữ cảnh dài hạn phong phú | Nhúng các bản tóm tắt, truy xuất top-k vào thông điệp hệ thống |
+| Phản hồi trực tuyến | Cảm nhận phản hồi nhanh hơn | Cải thiện UX | Sử dụng phản hồi trực tuyến khi có sẵn và xả các token từng phần |
 | Kiểm tra xác định | Kiểm soát hồi quy | CI ổn định | Chạy với `temperature=0`, hạt giống lời nhắc cố định |
 | Phân nhánh song song | Khám phá nhanh hơn | Tăng thông lượng | Sử dụng `concurrent.futures` cho các bước tác nhân độc lập |
 
-#### Ví dụ ghi chép theo dõi
+#### Ví dụ ghi lại theo dõi
 
 ```python
 trace.append({
@@ -316,10 +315,9 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-
 Lưu cặp (`answer`, `rating`) để xây dựng biểu đồ chất lượng lịch sử.
 
 ---
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, chúng tôi khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp từ con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

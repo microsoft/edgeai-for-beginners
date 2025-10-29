@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-08T21:41:57+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T21:42:47+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "pl"
 }
@@ -16,8 +16,8 @@ Projektuj i organizuj wielorole agentów AI, korzystając z niskolatencyjnego, c
 ## Cele nauki
 
 - **Definiowanie ról**: Podpowiedzi systemowe i granice możliwości
-- **Implementacja pamięci**: Krótkoterminowa (rozmowa), długoterminowa (wektor / plik), tymczasowe notatniki
-- **Szkieletowanie przepływów pracy**: Kroki agentów sekwencyjne, rozgałęzione i równoległe
+- **Implementacja pamięci**: Krótkoterminowa (rozmowa), długoterminowa (wektor / plik), tymczasowe notatki
+- **Szkieletowanie przepływów pracy**: Kroki agentów sekwencyjne, rozgałęziające się i równoległe
 - **Integracja narzędzi**: Lekki wzorzec wywoływania funkcji narzędziowych
 - **Ewaluacja**: Podstawowe śledzenie + ocena wyników oparta na rubryce
 
@@ -188,10 +188,10 @@ if __name__ == '__main__':
 ### 5. Projekt startowy: Rozszerzenie `05-agent-architecture` (7 min)
 
 Dodaj:
-1. Warstwę trwałej pamięci (np. dopisywanie linii JSON rozmów)
-2. Prosta rubryka ewaluacyjna: faktyczność / klarowność / styl
+1. Warstwę trwałej pamięci (np. dodawanie linii JSON z rozmowami)
+2. Prosta rubryka ewaluacyjna: placeholdery dla faktualności / przejrzystości / stylu
 3. Opcjonalny front-end Chainlit (dwie zakładki: rozmowa i ślady)
-4. Opcjonalna maszyna stanowa w stylu LangGraph (jeśli dodano zależność) dla decyzji rozgałęzionych
+4. Opcjonalna maszyna stanów w stylu LangGraph (jeśli dodano zależność) dla decyzji rozgałęziających się
 
 ## Lista kontrolna walidacji
 
@@ -204,12 +204,12 @@ Oczekuj strukturalnego wyniku potoku z notatką o wstrzyknięciu narzędzia.
 
 ## Przegląd strategii pamięci
 
-| Warstwa       | Cel                 | Przykład               |
-|---------------|---------------------|------------------------|
-| Krótkoterminowa | Ciągłość dialogu   | Ostatnie N wiadomości  |
-| Epizodyczna    | Przypomnienie sesji | JSON na sesję          |
-| Semantyczna    | Długoterminowe wyszukiwanie | Magazyn wektorów podsumowań |
-| Notatnik       | Kroki rozumowania  | Wbudowany łańcuch myśli (prywatny) |
+| Warstwa | Cel | Przykład |
+|---------|-----|---------|
+| Krótkoterminowa | Ciągłość dialogu | Ostatnie N wiadomości |
+| Epizodyczna | Przypomnienie sesji | JSON na sesję |
+| Semantyczna | Długoterminowe wyszukiwanie | Magazyn wektorów podsumowań |
+| Notatnik | Kroki rozumowania | Wbudowany łańcuch myśli (prywatny) |
 
 ## Haki ewaluacyjne (koncepcyjne)
 
@@ -226,11 +226,11 @@ evaluation = {
 
 ## Rozwiązywanie problemów
 
-| Problem            | Przyczyna                  | Rozwiązanie                  |
-|--------------------|---------------------------|------------------------------|
+| Problem | Przyczyna | Rozwiązanie |
+|---------|----------|------------|
 | Powtarzające się odpowiedzi | Zbyt duże/małe okno kontekstu | Dostosuj parametr okna pamięci |
-| Narzędzie nie wywołane | Nieprawidłowa składnia | Użyj formatu `#tool:tool_name` |
-| Wolna orkiestracja | Wiele zimnych modeli      | Uruchom wstępne podpowiedzi |
+| Narzędzie nie zostało wywołane | Nieprawidłowa składnia | Użyj formatu `#tool:tool_name` |
+| Wolna orkiestracja | Wiele zimnych modeli | Uruchom wstępne podpowiedzi rozgrzewające |
 
 ## Źródła
 
@@ -247,21 +247,22 @@ evaluation = {
 
 | Skrypt warsztatowy | Scenariusz | Cel | Przykładowa podpowiedź |
 |--------------------|------------|-----|------------------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot badawczy wiedzy tworzący podsumowania przyjazne dla kadry kierowniczej | Potok dwóch agentów (badania → redakcja) z opcjonalnymi odrębnymi modelami | Wyjaśnij, dlaczego inferencja na krawędzi jest ważna dla zgodności. |
-| (Rozszerzony) koncept `tools.py` | Dodaj narzędzia do szacowania czasu i tokenów | Zademonstruj lekki wzorzec wywoływania narzędzi | #tool:get_time |
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot badawczy wiedzy tworzący podsumowania przyjazne dla kadry kierowniczej | Potok dwóch agentów (badania → redakcja) z opcjonalnymi odrębnymi modelami | Wyjaśnij, dlaczego wnioskowanie na krawędzi ma znaczenie dla zgodności. |
+| (Rozszerzony) koncept `tools.py` | Dodaj narzędzia do oszacowania czasu i tokenów | Zademonstruj lekki wzorzec wywoływania narzędzi | #tool:get_time |
 
 ### Narracja scenariusza
-Zespół ds. dokumentacji zgodności potrzebuje szybkich wewnętrznych streszczeń opartych na lokalnej wiedzy, bez wysyłania szkiców do usług w chmurze. Agent badawczy zbiera zwięzłe faktyczne punkty; agent redakcyjny przepisuje je dla klarowności kierowniczej. Można przypisać odrębne aliasy modeli, aby zoptymalizować opóźnienia (szybki SLM) vs. stylistyczne dopracowanie (większy model tylko w razie potrzeby).
+Zespół ds. dokumentacji zgodności potrzebuje szybkich wewnętrznych streszczeń opartych na lokalnej wiedzy, bez wysyłania szkiców do usług w chmurze. Agent badawczy zbiera zwięzłe faktyczne punkty; agent redakcyjny przepisuje je dla przejrzystości dla kadry kierowniczej. Można przypisać odrębne aliasy modeli, aby zoptymalizować opóźnienia (szybki SLM) w porównaniu z dopracowaniem stylistycznym (większy model tylko w razie potrzeby).
 
 ### Przykładowe środowisko wielomodelowe
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
-### Struktura śladów (opcjonalna)
+### Struktura śladu (opcjonalna)
 ```json
 {
     "step": 1,
@@ -273,22 +274,22 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Zapisz każdy krok do pliku JSONL w celu późniejszego oceniania rubryki.
+Zapisz każdy krok do pliku JSONL w celu późniejszego oceniania według rubryki.
 
 ### Opcjonalne ulepszenia
 
-| Temat             | Ulepszenie                 | Korzyść                     | Szkic implementacji         |
-|-------------------|---------------------------|-----------------------------|-----------------------------|
-| Role wielomodelowe | Odrębne modele na agenta (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specjalizacja i szybkość   | Wybierz aliasy zmiennych środowiskowych, wywołaj `chat_once` z aliasem dla roli |
-| Strukturalne ślady | Ślad JSON każdego aktu (narzędzie, wejście, opóźnienie, tokeny) | Debugowanie i ewaluacja    | Dodaj słownik do listy; zapisz `.jsonl` na końcu |
-| Trwałość pamięci   | Kontekst dialogu do ponownego załadowania | Ciągłość sesji             | Zapisz `Agent.memory` do `sessions/<ts>.json` |
-| Rejestr narzędzi   | Dynamiczne odkrywanie narzędzi | Rozszerzalność             | Utrzymuj słownik `TOOLS` i introspekcję nazw/opisów |
+| Temat | Ulepszenie | Korzyść | Szkic implementacji |
+|-------|------------|---------|---------------------|
+| Role wielomodelowe | Odrębne modele dla każdego agenta (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specjalizacja i szybkość | Wybierz aliasy zmiennych środowiskowych, wywołaj `chat_once` z aliasem dla każdej roli |
+| Strukturalne ślady | Ślad JSON każdego aktu (narzędzie, wejście, opóźnienie, tokeny) | Debugowanie i ewaluacja | Dodaj słownik do listy; zapisz `.jsonl` na końcu |
+| Trwałość pamięci | Możliwość ponownego załadowania kontekstu dialogu | Ciągłość sesji | Zapisz `Agent.memory` do `sessions/<ts>.json` |
+| Rejestr narzędzi | Dynamiczne odkrywanie narzędzi | Rozszerzalność | Utrzymuj słownik `TOOLS` i sprawdzaj nazwy/opisy |
 | Ponowne próby i wycofanie | Solidne długie łańcuchy | Redukcja przejściowych błędów | Owiń `act` w try/except + wykładnicze wycofanie |
-| Ocena rubryki      | Automatyczne etykiety jakościowe | Śledzenie ulepszeń         | Drugie wywołanie modelu: "Oceń klarowność 1-5" |
-| Pamięć wektorowa   | Semantyczne wyszukiwanie | Bogaty kontekst długoterminowy | Osadź podsumowania, pobierz top-k do wiadomości systemowej |
-| Strumieniowe odpowiedzi | Szybsza postrzegana reakcja | Poprawa UX                 | Użyj strumieniowania, gdy dostępne, i wypłucz częściowe tokeny |
-| Testy deterministyczne | Kontrola regresji       | Stabilne CI                 | Uruchom z `temperature=0`, ustalonymi nasionami podpowiedzi |
-| Rozgałęzienia równoległe | Szybsza eksploracja     | Przepustowość              | Użyj `concurrent.futures` dla niezależnych kroków agenta |
+| Ocena rubryki | Automatyczne etykiety jakościowe | Śledzenie ulepszeń | Drugie przejście modelu: "Oceń przejrzystość 1-5" |
+| Pamięć wektorowa | Semantyczne wyszukiwanie | Bogaty kontekst długoterminowy | Osadź podsumowania, wyszukaj top-k w wiadomości systemowej |
+| Strumieniowe odpowiedzi | Szybsze postrzeganie odpowiedzi | Poprawa UX | Użyj strumieniowania, gdy dostępne, i wypisuj częściowe tokeny |
+| Testy deterministyczne | Kontrola regresji | Stabilne CI | Uruchom z `temperature=0`, ustalonymi nasionami podpowiedzi |
+| Rozgałęzienia równoległe | Szybsza eksploracja | Przepustowość | Użyj `concurrent.futures` dla niezależnych kroków agentów |
 
 #### Przykład zapisu śladu
 
@@ -315,4 +316,4 @@ Zapisz pary (`answer`, `rating`), aby zbudować historyczny wykres jakości.
 ---
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego języku źródłowym powinien być uznawany za autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż staramy się zapewnić dokładność, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T21:10:32+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T19:57:11+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overview
 
-The Workshop samples use environment variables for configuration, centralized in the `.env` file located at the root of the repository. This setup allows for easy customization without needing to modify the code.
+The Workshop samples use environment variables for configuration, centralized in the `.env` file located at the root of the repository. This makes it easy to customize settings without altering the code.
 
 ## Quick Start
 
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **For Python Scripts:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -67,7 +67,7 @@ python chat_bootstrap.py
 **When to set FOUNDRY_LOCAL_ENDPOINT:**
 - Using a remote Foundry Local instance
 - Custom port configurations
-- Differentiating between development and production environments
+- Separating development and production environments
 
 **Example:**
 ```bash
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Session 03: Benchmarking
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Models to benchmark |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Models to benchmark |
 | `BENCH_ROUNDS` | `3` | Number of iterations per model |
 | `BENCH_PROMPT` | Pre-configured | Test prompt |
 | `BENCH_STREAM` | `0` | Measure latency for the first token |
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Benchmarking Setup
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -165,11 +165,11 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - Balanced quality and speed
 
 **Fast Responses:**
-- `qwen2.5-0.5b` - Extremely fast, ideal for classification tasks
+- `qwen2.5-0.5b` - Very fast, suitable for classification tasks
 - `phi-4-mini` - Fast with good quality
 
 **High Quality:**
-- `qwen2.5-7b` - Best quality, higher resource requirements
+- `qwen2.5-7b` - Best quality, higher resource consumption
 - `phi-4-mini` - Good quality with lower resource usage
 
 **Code Generation:**
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Symptoms:**
 - "Module not found" errors
-- "Cannot import workshop_utils" messages
 
 **Solutions:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Testing Configuration
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.

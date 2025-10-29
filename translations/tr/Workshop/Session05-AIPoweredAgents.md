@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T10:43:34+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T21:47:39+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "tr"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Özet
 
-Foundry Local’ın düşük gecikmeli, gizliliği koruyan çalışma zamanı ile çok rollü AI ajanlarını tasarlayın ve yönetin. Ajan rolleri, hafıza stratejileri, araç çağırma desenleri ve yürütme grafikleri tanımlayacaksınız. Oturum, Chainlit veya LangGraph ile genişletebileceğiniz iskele desenlerini tanıtıyor. Başlangıç projesi, mevcut ajan mimarisi örneğini hafıza kalıcılığı ve değerlendirme kancaları eklemek için genişletiyor.
+Foundry Local’ın düşük gecikmeli, gizlilik koruyucu çalışma zamanı ile çok rollü AI ajanları tasarlayın ve yönetin. Ajan rolleri, hafıza stratejileri, araç çağırma desenleri ve yürütme grafikleri tanımlayacaksınız. Oturum, Chainlit veya LangGraph ile genişletebileceğiniz iskele desenlerini tanıtır. Başlangıç projesi, mevcut ajan mimarisi örneğini hafıza kalıcılığı ve değerlendirme kancaları eklemek için genişletir.
 
 ## Öğrenme Hedefleri
 
 - **Rolleri Tanımlayın**: Sistem istemleri ve yetenek sınırları
 - **Hafızayı Uygulayın**: Kısa vadeli (konuşma), uzun vadeli (vektör / dosya), geçici not defterleri
-- **İş Akışlarını İskeleye Alın**: Sıralı, dallanma ve paralel ajan adımları
+- **İş Akışlarını Oluşturun**: Sıralı, dallanma ve paralel ajan adımları
 - **Araçları Entegre Edin**: Hafif işlev araç çağırma deseni
 - **Değerlendirin**: Temel izleme + rubrik odaklı sonuç puanlama
 
@@ -45,7 +45,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-MacOS'tan uzak bir Windows ana bilgisayar hizmetine karşı ajan çalıştırıyorsanız:
+macOS'tan uzak bir Windows ana bilgisayar hizmetine karşı ajan çalıştırıyorsanız:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -152,7 +152,7 @@ TOOLS = {
 
 `agents_core.py` dosyasını, basit araç sözdizimini destekleyecek şekilde değiştirin: kullanıcı `#tool:get_time` yazar ve ajan, araç çıktısını üretimden önce bağlama genişletir.
 
-### 4. Orkestrasyonlu İş Akışı (6 dk)
+### 4. Orkestrasyon İş Akışı (6 dk)
 
 `samples/05-agents/orchestrator.py` oluşturun:
 
@@ -204,11 +204,11 @@ Araç enjeksiyon notu ile yapılandırılmış bir boru hattı çıktısı bekle
 
 ## Hafıza Stratejileri Genel Bakış
 
-| Katman      | Amaç               | Örnek               |
-|-------------|--------------------|---------------------|
-| Kısa vadeli | Diyalog devamlılığı | Son N mesaj         |
-| Epizodik    | Oturum hatırlama    | Oturum başına JSON  |
-| Semantik    | Uzun vadeli geri çağırma | Özetlerin vektör deposu |
+| Katman | Amaç | Örnek |
+|-------|------|-------|
+| Kısa vadeli | Diyalog sürekliliği | Son N mesaj |
+| Epizodik | Oturum hatırlama | Her oturum için JSON |
+| Semantik | Uzun vadeli geri çağırma | Özetlerin vektör deposu |
 | Not Defteri | Akıl yürütme adımları | Zincirleme düşünce (özel) |
 
 ## Değerlendirme Kancaları (Kavramsal)
@@ -226,10 +226,10 @@ evaluation = {
 
 ## Sorun Giderme
 
-| Sorun              | Sebep                  | Çözüm                     |
-|--------------------|-----------------------|---------------------------|
+| Sorun | Sebep | Çözüm |
+|------|-------|-------|
 | Tekrarlayan cevaplar | Bağlam penceresi çok büyük/küçük | Hafıza pencere parametresini ayarlayın |
-| Araç çağrılmadı     | Yanlış sözdizimi       | `#tool:tool_name` formatını kullanın |
+| Araç çağrılmadı | Yanlış sözdizimi | `#tool:tool_name` formatını kullanın |
 | Yavaş orkestrasyon | Birden fazla soğuk model | Önceden çalıştırma ısınma istemlerini kullanın |
 
 ## Referanslar
@@ -241,9 +241,9 @@ evaluation = {
 ---
 
 **Oturum Süresi**: 30 dk  
-**Zorluk Seviyesi**: İleri
+**Zorluk**: İleri Düzey
 
-## Örnek Senaryo ve Atölye Eşlemesi
+## Örnek Senaryo ve Atölye Eşleştirmesi
 
 | Atölye Scripti | Senaryo | Amaç | Örnek İstem |
 |----------------|---------|------|-------------|
@@ -251,13 +251,14 @@ evaluation = {
 | (Genişletilmiş) `tools.py` konsepti | Zaman ve token tahmin araçları ekleyin | Hafif araç çağırma desenini gösterin | #tool:get_time |
 
 ### Senaryo Anlatımı
-Uyumluluk dokümantasyon ekibinin, taslakları bulut hizmetlerine göndermeden yerel bilgiden hızlı iç brifinglere ihtiyacı var. Bir araştırmacı ajan kısa ve gerçekçi maddeler toplar; bir editör ajan ise yöneticiler için açıklık sağlar. Gecikmeyi optimize etmek için farklı model takma adları atanabilir (hızlı SLM) vs stilistik düzenleme (yalnızca gerektiğinde daha büyük model).
+Uyumluluk dokümantasyon ekibinin, taslakları bulut hizmetlerine göndermeden yerel bilgiden hızlı iç özetlere ihtiyacı var. Bir araştırmacı ajan kısa ve gerçekçi maddeler toplar; bir editör ajanı ise yöneticiler için netlik sağlayacak şekilde yeniden yazar. Gecikmeyi optimize etmek için farklı model takma adları atanabilir (hızlı SLM) ve stilistik düzenleme için yalnızca gerektiğinde daha büyük model kullanılabilir.
 
 ### Örnek Çoklu Model Ortamı
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
@@ -273,22 +274,22 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Her adımı JSONL dosyasına kaydedin ve daha sonra rubrik puanlaması için kullanın.
+Her adımı daha sonra rubrik puanlaması için bir JSONL dosyasına kaydedin.
 
 ### İsteğe Bağlı Geliştirmeler
 
-| Tema              | Geliştirme            | Fayda                  | Uygulama Taslağı         |
-|-------------------|-----------------------|------------------------|--------------------------|
-| Çoklu Model Rolleri | Ajan başına farklı modeller (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Uzmanlık ve hız         | Takma ad ortam değişkenlerini seçin, rol başına takma ad ile `chat_once` çağırın |
-| Yapılandırılmış İzler | Her eylemin JSON izi (araç, giriş, gecikme, tokenler) | Hata ayıklama ve değerlendirme | Listeye sözlük ekleyin; sonunda `.jsonl` yazın |
-| Hafıza Kalıcılığı | Yeniden yüklenebilir diyalog bağlamı | Oturum devamlılığı       | `Agent.memory`'yi `sessions/<ts>.json` olarak dökün |
-| Araç Kaydı        | Dinamik araç keşfi    | Genişletilebilirlik    | `TOOLS` sözlüğünü koruyun ve adları/açıklamaları inceleyin |
-| Yeniden Deneme ve Geri Çekilme | Dayanıklı uzun zincirler | Geçici hataları azaltın | `act`'i try/except + üstel geri çekilme ile sarın |
-| Rubrik Puanlama   | Otomatik nitel etiketler | İyileştirmeleri takip edin | İkincil geçiş modelini isteme: "Açıklığı 1-5 arasında değerlendir" |
-| Vektör Hafıza     | Semantik geri çağırma | Zengin uzun vadeli bağlam | Özetleri gömün, sistem mesajına en iyi k'yi geri çağırın |
-| Akış Yanıtları    | Daha hızlı algılanan yanıt | UX iyileştirmesi        | Akış kullanılabilir olduğunda kullanın ve kısmi tokenleri temizleyin |
-| Deterministik Testler | Regresyon kontrolü   | Kararlı CI              | `temperature=0`, sabit istem tohumları ile çalıştırın |
-| Paralel Dallanma  | Daha hızlı keşif      | Verimlilik              | Bağımsız ajan adımları için `concurrent.futures` kullanın |
+| Tema | Geliştirme | Fayda | Uygulama Taslağı |
+|------|-----------|-------|------------------|
+| Çoklu Model Rolleri | Her ajan için farklı modeller (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Uzmanlaşma ve hız | Takma ad ortam değişkenlerini seçin, her rol için takma ad ile `chat_once` çağırın |
+| Yapılandırılmış İzler | Her eylemin JSON izi (araç, giriş, gecikme, tokenlar) | Hata ayıklama ve değerlendirme | Listeye sözlük ekleyin; sonunda `.jsonl` yazın |
+| Hafıza Kalıcılığı | Yeniden yüklenebilir diyalog bağlamı | Oturum sürekliliği | `Agent.memory`'yi `sessions/<ts>.json` olarak dökün |
+| Araç Kaydı | Dinamik araç keşfi | Genişletilebilirlik | `TOOLS` sözlüğünü koruyun ve adları/açıklamaları inceleyin |
+| Yeniden Deneme ve Geri Çekilme | Sağlam uzun zincirler | Geçici hataları azaltın | `act`i try/except + üstel geri çekilme ile sarın |
+| Rubrik Puanlama | Otomatik nitel etiketler | İyileştirmeleri takip edin | İkinci geçiş modeline istem: "Açıklığı 1-5 arasında değerlendir" |
+| Vektör Hafıza | Semantik geri çağırma | Zengin uzun vadeli bağlam | Özetleri gömün, sistem mesajına en iyi k'yi geri çağırın |
+| Akış Yanıtları | Algılanan yanıt süresini hızlandırır | UX iyileştirme | Akış kullanılabilir olduğunda kullanın ve kısmi tokenları temizleyin |
+| Deterministik Testler | Regresyon kontrolü | Kararlı CI | `temperature=0`, sabit istem tohumları ile çalıştırın |
+| Paralel Dallanma | Daha hızlı keşif | Verimlilik | Bağımsız ajan adımları için `concurrent.futures` kullanın |
 
 #### İz Kaydı Örneği
 
@@ -310,9 +311,9 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-Tarihsel kalite grafiği oluşturmak için (`answer`, `rating`) çiftlerini kaydedin.
+(`answer`, `rating`) çiftlerini kalıcı hale getirerek geçmiş kalite grafiği oluşturun.
 
 ---
 
 **Feragatname**:  
-Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel bir insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan herhangi bir yanlış anlama veya yanlış yorumlama durumunda sorumluluk kabul edilmez.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.

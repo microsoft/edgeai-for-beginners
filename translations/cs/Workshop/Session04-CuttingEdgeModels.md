@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1b3c0fecfd713c2df903a0633249dc9",
-  "translation_date": "2025-10-09T21:09:40+00:00",
+  "original_hash": "d9e354c0182311726dc037a8809524e2",
+  "translation_date": "2025-10-28T22:59:36+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "cs"
 }
@@ -11,24 +11,24 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrakt
 
-Porovnejte velké jazykové modely (LLM) a malé jazykové modely (SLM) pro scénáře inference na místě vs v cloudu. Naučte se vzory nasazení využívající akceleraci ONNX Runtime, provádění pomocí WebGPU a hybridní zkušenosti s RAG. Součástí je demo Chainlit RAG s lokálním modelem a volitelným průzkumem OpenWebUI. Přizpůsobíte startovací projekt pro inference pomocí WebGPU a vyhodnotíte schopnosti Phi vs GPT-OSS-20B a kompromisy mezi výkonem a náklady.
+Porovnejte velké jazykové modely (LLM) a malé jazykové modely (SLM) pro scénáře inference na místě vs v cloudu. Naučte se nasazovací vzory využívající akceleraci ONNX Runtime, WebGPU exekuci a hybridní RAG zkušenosti. Součástí je ukázka Chainlit RAG s lokálním modelem a volitelným průzkumem OpenWebUI. Přizpůsobíte startovací WebGPU inference a vyhodnotíte schopnosti Phi vs GPT-OSS-20B a kompromisy mezi náklady a výkonem.
 
 ## Cíle učení
 
-- **Porovnat** SLM vs LLM z hlediska latence, paměti a kvality
+- **Porovnat** SLM a LLM z hlediska latence, paměti a kvality
 - **Nasadit** modely pomocí ONNXRuntime a (kde je podporováno) WebGPU
-- **Spustit** inference v prohlížeči (interaktivní demo zachovávající soukromí)
+- **Spustit** inference v prohlížeči (interaktivní demo s ochranou soukromí)
 - **Integrovat** pipeline Chainlit RAG s lokálním backendem SLM
 - **Vyhodnotit** pomocí lehkých heuristik kvality a nákladů
 
 ## Předpoklady
 
 - Dokončené sezení 1–3
-- Nainstalovaný `chainlit` (již zahrnuto v `requirements.txt` pro Modul08)
-- Prohlížeč podporující WebGPU (Edge / Chrome nejnovější verze na Windows 11)
+- Nainstalovaný `chainlit` (již v `requirements.txt` pro Modul08)
+- Prohlížeč podporující WebGPU (Edge / Chrome nejnovější na Windows 11)
 - Běžící Foundry Local (`foundry status`)
 
-### Poznámky k multiplatformnímu prostředí
+### Poznámky k multiplatformnímu použití
 
 Windows zůstává primárním cílovým prostředím. Pro vývojáře na macOS, kteří čekají na nativní binární soubory:
 1. Spusťte Foundry Local ve Windows 11 VM (Parallels / UTM) NEBO na vzdálené pracovní stanici s Windows.
@@ -67,15 +67,16 @@ Sledujte: hloubku odpovědí, faktickou přesnost, stylistickou bohatost, latenc
 ```powershell
 foundry config set compute.onnx.enable_gpu true
 # Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 Pozorujte změny propustnosti po aktivaci GPU oproti pouze CPU.
 
-### 3. Inference pomocí WebGPU v prohlížeči (6 min)
+### 3. WebGPU inference v prohlížeči (6 min)
 
-Přizpůsobte startovací projekt `04-webgpu-inference` (vytvořte `samples/04-cutting-edge/webgpu_demo.html`):
+Přizpůsobte startovací `04-webgpu-inference` (vytvořte `samples/04-cutting-edge/webgpu_demo.html`):
 
 ```html
 <!DOCTYPE html>
@@ -116,11 +117,11 @@ Přizpůsobte startovací projekt `04-webgpu-inference` (vytvořte `samples/04-c
 </html>
 ```
 
-Otevřete soubor v prohlížeči; pozorujte nízkou latenci při lokálním zpracování.
+Otevřete soubor v prohlížeči; pozorujte nízkou latenci místního zpracování.
 
-### 4. Chatovací aplikace Chainlit RAG (7 min)
+### 4. Chainlit RAG Chat App (7 min)
 
-Minimalistický `samples/04-cutting-edge/chainlit_app.py`:
+Minimální `samples/04-cutting-edge/chainlit_app.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -165,19 +166,19 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ### 5. Startovací projekt: Přizpůsobení `04-webgpu-inference` (6 min)
 
 Výstupy:
-- Nahraďte logiku pro načítání dat zástupným kódem pro streamování tokenů (použijte variantu endpointu `stream=True`, jakmile bude povolena)
+- Nahraďte logiku pro načítání dat za streamování tokenů (použijte variantu endpointu `stream=True`, jakmile bude povolena)
 - Přidejte graf latence (na straně klienta) pro přepínání mezi phi a gpt-oss-20b
-- Vložte kontext RAG inline (textové pole pro referenční dokumenty)
+- Vložte kontext RAG přímo (textové pole pro referenční dokumenty)
 
 ## Heuristiky hodnocení
 
 | Kategorie | Phi-4-mini | GPT-OSS-20B | Pozorování |
 |-----------|------------|-------------|------------|
 | Latence (studený start) | Rychlá | Pomalejší | SLM se rychle zahřívá |
-| Paměť | Nízká | Vysoká | Možnost použití na zařízení |
+| Paměť | Nízká | Vysoká | Proveditelnost na zařízení |
 | Dodržování kontextu | Dobré | Silné | Větší model může být více rozvláčný |
 | Náklady (lokální) | Minimální | Vyšší (zdroje) | Kompromis energie/času |
-| Nejlepší použití | Aplikace na okraji | Hluboké uvažování | Možná hybridní pipeline |
+| Nejlepší použití | Aplikace na zařízení | Hluboké uvažování | Možná hybridní pipeline |
 
 ## Validace prostředí
 
@@ -187,15 +188,16 @@ foundry model list
 
 # For runtime metrics use the Python benchmark script (Session 3) and OS tools (Task Manager / nvidia-smi) instead of 'model stats'
 # Example:
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini,gpt-oss-20b
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 ## Řešení problémů
 
 | Příznak | Příčina | Akce |
-|--------|---------|------|
-| Selhání načtení webové stránky | CORS nebo služba nefunguje | Použijte `curl` k ověření endpointu; povolte CORS proxy, pokud je potřeba |
+|---------|---------|------|
+| Selhání načítání webové stránky | CORS nebo služba nefunguje | Použijte `curl` k ověření endpointu; povolte CORS proxy, pokud je to nutné |
 | Prázdný Chainlit | Prostředí není aktivní | Aktivujte venv a znovu nainstalujte závislosti |
 | Vysoká latence | Model právě načten | Zahřejte malou sekvencí promptů |
 
@@ -214,12 +216,12 @@ foundry model list
 
 | Artefakty workshopu | Scénář | Cíl | Zdroj dat / promptů |
 |---------------------|--------|-----|---------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Tým architektů hodnotící SLM vs LLM pro generátor výkonných souhrnů | Kvantifikace rozdílu v latenci a využití tokenů | Jediná proměnná prostředí `COMPARE_PROMPT` |
-| `chainlit_app.py` (demo RAG) | Prototyp interního asistenta znalostí | Zakotvení krátkých odpovědí s minimálním lexikálním vyhledáváním | Inline seznam `DOCS` v souboru |
-| `webgpu_demo.html` | Náhled futuristické inference v prohlížeči na zařízení | Ukázka nízké latence při lokálním zpracování + narativ UX | Pouze živý uživatelský prompt |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Tým architektů hodnotící SLM vs LLM pro generátor výkonných souhrnů | Kvantifikace rozdílu v latenci + využití tokenů | Jedna proměnná prostředí `COMPARE_PROMPT` |
+| `chainlit_app.py` (RAG demo) | Prototyp interního asistenta znalostí | Zakotvení krátkých odpovědí s minimálním lexikálním vyhledáváním | Seznam `DOCS` přímo v souboru |
+| `webgpu_demo.html` | Náhled futuristického zpracování v prohlížeči na zařízení | Ukázka nízké latence místního zpracování + narativ UX | Pouze živý uživatelský prompt |
 
 ### Narativ scénáře
-Produktový tým chce generátor výkonných souhrnů. Lehký SLM (phi‑4‑mini) vytváří návrhy souhrnů; větší LLM (gpt‑oss‑20b) může upravovat pouze zprávy s vysokou prioritou. Skripty sezení zachycují empirické metriky latence a tokenů, aby ospravedlnily hybridní design, zatímco demo Chainlit ilustruje, jak zakotvené vyhledávání udržuje odpovědi malého modelu faktické. Konceptová stránka WebGPU poskytuje vizi pro plně klientské zpracování, jakmile se zrychlení prohlížeče vyvine.
+Produktový tým chce generátor výkonných souhrnů. Lehký SLM (phi‑4‑mini) vytváří návrhy souhrnů; větší LLM (gpt‑oss‑20b) může upravovat pouze zprávy s vysokou prioritou. Skripty sezení zachycují empirické metriky latence a tokenů, aby ospravedlnily hybridní návrh, zatímco demo Chainlit ilustruje, jak zakotvené vyhledávání udržuje odpovědi malého modelu faktické. Konceptuální stránka WebGPU poskytuje vizi pro plně klientské zpracování, jakmile se zrychlení prohlížeče vyvine.
 
 ### Minimální kontext RAG (Chainlit)
 ```python
@@ -239,22 +241,22 @@ else:
     final, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Refine and polish:\n{draft}"}], max_tokens=220)
 ```
 
-Sledujte obě komponenty latence, abyste mohli hlásit průměrné náklady.
+Sledujte obě složky latence, abyste mohli hlásit průměrné náklady.
 
 ### Volitelná vylepšení
 
 | Zaměření | Vylepšení | Proč | Návrh implementace |
-|----------|-----------|------|---------------------|
-| Srovnávací metriky | Sledování využití tokenů + latence prvního tokenu | Holistický pohled na výkon | Použijte vylepšený benchmarkový skript (Sezení 3) s `BENCH_STREAM=1` |
-| Hybridní pipeline | Návrh SLM → Úprava LLM | Snížení latence a nákladů | Generujte pomocí phi-4-mini, upravte souhrn pomocí gpt-oss-20b |
+|----------|-----------|------|--------------------|
+| Srovnávací metriky | Sledování využití tokenů + latence prvního tokenu | Holistický pohled na výkon | Použijte vylepšený benchmark skript (Sezení 3) s `BENCH_STREAM=1` |
+| Hybridní pipeline | Návrh SLM → Úprava LLM | Snížení latence a nákladů | Generujte s phi-4-mini, upravte souhrn pomocí gpt-oss-20b |
 | Streaming UI | Lepší UX v Chainlit | Postupná zpětná vazba | Použijte `stream=True`, jakmile bude lokální streamování dostupné; akumulujte části |
-| WebGPU caching | Rychlejší inicializace JS | Snížení režijních nákladů na rekompilaci | Ukládejte zkompilované artefakty shaderů (budoucí schopnost runtime) |
-| Deterministická sada QA | Férové porovnání modelů | Odstranění variability | Fixní seznam promptů + `temperature=0` pro hodnotící běhy |
-| Skórování výstupů | Strukturovaný pohled na kvalitu | Překonání anekdot | Jednoduchá rubrika: koherence / faktualita / stručnost (1–5) |
-| Poznámky k energii / zdrojům | Diskuse ve třídě | Ukázka kompromisů | Použijte OS monitory (`foundry system info`, Task Manager, `nvidia-smi`) + výstupy benchmarkového skriptu |
-| Simulace nákladů | Ospravedlnění před cloudem | Plánování škálování | Mapujte tokeny na hypotetické cloudové ceny pro narativ TCO |
+| WebGPU cache | Rychlejší inicializace JS | Snížení režijních nákladů na rekompilaci | Uložte zkompilované artefakty shaderů (budoucí schopnost runtime) |
+| Deterministická sada QA | Spravedlivé srovnání modelů | Odstranění variability | Fixní seznam promptů + `temperature=0` pro hodnotící běhy |
+| Skórování výstupů | Strukturovaný pohled na kvalitu | Překonání anekdot | Jednoduchá metrika: koherence / faktualita / stručnost (1–5) |
+| Poznámky k energii / zdrojům | Diskuse ve třídě | Ukázka kompromisů | Použijte OS monitory (`foundry system info`, Správce úloh, `nvidia-smi`) + výstupy benchmark skriptů |
+| Simulace nákladů | Odůvodnění před cloudem | Plánování škálování | Mapujte tokeny na hypotetické cloudové ceny pro narativ TCO |
 | Rozklad latence | Identifikace úzkých míst | Cílené optimalizace | Měřte přípravu promptu, odeslání požadavku, první token, kompletní dokončení |
-| RAG + LLM fallback | Záchranná síť kvality | Zlepšení obtížných dotazů | Pokud délka odpovědi SLM < prahová hodnota nebo nízká důvěra → eskalace |
+| RAG + LLM záloha | Bezpečnostní síť kvality | Zlepšení obtížných dotazů | Pokud délka odpovědi SLM < prahová hodnota nebo nízká důvěra → eskalace |
 
 #### Příklad hybridního vzoru Návrh/Úprava
 
@@ -274,9 +276,9 @@ full_ms = (time.time()-t1)*1000
 print({"prep_ms": prep_ms, "full_gen_ms": full_ms})
 ```
 
-Použijte konzistentní měřicí rámec napříč modely pro férové porovnání.
+Použijte konzistentní měřicí rámec napříč modely pro spravedlivé srovnání.
 
 ---
 
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace doporučujeme profesionální lidský překlad. Nenese odpovědnost za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.

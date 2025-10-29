@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T19:14:42+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:36:23+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "id"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Ikhtisar
 
-Contoh Workshop menggunakan variabel lingkungan untuk konfigurasi, yang terpusat dalam file `.env` di akar repositori. Ini memungkinkan penyesuaian yang mudah tanpa perlu mengubah kode.
+Contoh Workshop menggunakan variabel lingkungan untuk konfigurasi, yang terpusat dalam file `.env` di root repositori. Hal ini memungkinkan penyesuaian yang mudah tanpa perlu mengubah kode.
 
 ## Panduan Cepat
 
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Untuk Skrip Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sesi 03: Benchmarking
 | Variabel | Default | Tujuan |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Model untuk benchmarking |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Model untuk benchmarking |
 | `BENCH_ROUNDS` | `3` | Iterasi per model |
 | `BENCH_PROMPT` | Sudah dikonfigurasi | Prompt uji |
 | `BENCH_STREAM` | `0` | Mengukur latensi token pertama |
@@ -113,8 +113,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 | Variabel | Default | Tujuan |
 |----------|---------|---------|
-| `SHOW_USAGE` | `1` | Cetak penggunaan token |
-| `RETRY_ON_FAIL` | `1` | Aktifkan logika ulang |
+| `SHOW_USAGE` | `1` | Menampilkan penggunaan token |
+| `RETRY_ON_FAIL` | `1` | Mengaktifkan logika ulang |
 | `RETRY_BACKOFF` | `1.0` | Penundaan ulang (detik) |
 
 ## Konfigurasi Umum
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Pengaturan Benchmarking
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -174,7 +174,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Generasi Kode:**
 - `deepseek-coder-1.3b` - Spesialisasi untuk kode
-- `phi-4-mini` - Pengkodean tujuan umum
+- `phi-4-mini` - Tujuan umum untuk pengkodean
 
 ### Berdasarkan Ketersediaan Sumber Daya
 
@@ -264,7 +264,7 @@ pwd  # Should be in Workshop or repository root
 **Gejala:**
 - Kesalahan "Connection refused"
 - "Layanan tidak tersedia"
-- Kesalahan timeout
+- Kesalahan waktu habis
 
 **Solusi:**
 ```bash
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Gejala:**
 - Kesalahan "Module not found"
-- "Tidak dapat mengimpor workshop_utils"
 
 **Solusi:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Pengujian Konfigurasi
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

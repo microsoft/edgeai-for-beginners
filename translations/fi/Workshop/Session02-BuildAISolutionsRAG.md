@@ -1,29 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82e20fdeebffdf75eecdf5cdfb02b65c",
-  "translation_date": "2025-10-09T14:32:53+00:00",
+  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
+  "translation_date": "2025-10-28T22:18:41+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "fi"
 }
 -->
-# Istunto 2: Rakenna tekoälyratkaisuja Azure AI Foundryn avulla
+# Istunto 2: Rakenna tekoälyratkaisuja Azure AI Foundrylla
 
 ## Tiivistelmä
 
-Tutustu siihen, miten rakentaa käytännöllisiä GenAI-työnkulkuja Foundry Localin ja Azure AI Foundryn avulla. Opi kehittynyttä kehotetekniikkaa, integroi jäsenneltyä dataa ja orkestroi tehtäviä toistettavilla putkistoilla. Vaikka painopiste on Retrieval-Augmented Generation (RAG) -menetelmässä dokumentti- ja data-Q&A:ta varten, mallit soveltuvat laajemmin GenAI-ratkaisujen suunnitteluun.
+Tutustu siihen, miten rakentaa toimivia GenAI-työnkulkuja Foundry Localin ja Azure AI Foundryn avulla. Opi kehittynyttä kehotetekniikkaa, integroi jäsenneltyä dataa ja orkestroi tehtäviä toistettavilla putkistoilla. Vaikka painopiste on dokumentti- ja data-Q&A:n hakuavusteisessa generoinnissa (RAG), mallit soveltuvat laajemmin GenAI-ratkaisujen suunnitteluun.
 
 ## Oppimistavoitteet
 
 Istunnon lopussa osaat:
 
-- **Hallita kehotetekniikkaa**: Suunnitella tehokkaita järjestelmäkehotteita ja kontekstistrategioita
+- **Hallita kehotetekniikkaa**: Suunnitella tehokkaita järjestelmäkehotteita ja perustelustrategioita
 - **Toteuttaa RAG-malleja**: Rakentaa dokumenttipohjaisia Q&A-järjestelmiä vektorihakuun perustuen
 - **Integroi jäsenneltyä dataa**: Työskennellä CSV-, JSON- ja taulukkodatan kanssa tekoälytyönkuluissa
-- **Rakentaa tuotantokelpoisia RAG-sovelluksia**: Luoda skaalautuvia RAG-sovelluksia Chainlitin avulla
-- **Yhdistää paikallisen ja pilven**: Ymmärtää siirtymäpolut Foundry Localista Azure AI Foundryyn
+- **Rakentaa tuotantotason RAG**: Luoda skaalautuvia RAG-sovelluksia Chainlitin avulla
+- **Yhdistää paikallisen ja pilven**: Ymmärtää siirtopolut Foundry Localista Azure AI Foundryyn
 
-## Esitiedot
+## Esivaatimukset
 
 - Istunto 1 (Foundry Local -asennus) suoritettu
 - Perustiedot vektorikannoista ja upotuksista
@@ -69,11 +69,11 @@ Jos viimeinen komento epäonnistuu, käynnistä (tai käynnistä uudelleen) palv
 
 ## Demojen kulku (30 minuuttia)
 
-### 1. Järjestelmäkehotteet ja kontekstistrategiat (10 minuuttia)
+### 1. Järjestelmäkehotteet ja perustelustrategiat (10 minuuttia)
 
 #### Vaihe 1.1: Kehittynyt kehotetekniikka
 
-Luo tiedosto `samples/02-rag-solutions/prompt_engineering.py`:
+Luo `samples/02-rag-solutions/prompt_engineering.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### Vaihe 1.2: Testaa kontekstistrategioita
+#### Vaihe 1.2: Testaa perustelustrategioita
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -221,7 +221,7 @@ python samples/02-rag-solutions/prompt_engineering.py
 
 #### Vaihe 2.1: CSV-datan integrointi
 
-Luo tiedosto `samples/02-rag-solutions/csv_qa_system.py`:
+Luo `samples/02-rag-solutions/csv_qa_system.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -445,7 +445,7 @@ python samples/02-rag-solutions/csv_qa_system.py
 
 #### Vaihe 3.1: Parannettu dokumentti-RAG-järjestelmä
 
-Luo tiedosto `samples/02-rag-solutions/document_rag.py`:
+Luo `samples/02-rag-solutions/document_rag.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -661,11 +661,11 @@ if __name__ == "__main__":
 ```
 
 
-### 4. Näytä CLI-pilvisiirtymäpolku (5 minuuttia)
+### 4. Näytä CLI-pilvisiirtopolku (5 minuuttia)
 
-#### Vaihe 4.1: Siirtymästrategian yleiskatsaus
+#### Vaihe 4.1: Siirtostrategian yleiskatsaus
 
-Luo tiedosto `samples/02-rag-solutions/migration_guide.py`:
+Luo `samples/02-rag-solutions/migration_guide.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -869,7 +869,7 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-#### Vaihe 4.2: Testaa siirtymämalleja
+#### Vaihe 4.2: Testaa siirtomalleja
 
 ```powershell
 # Run the migration demo
@@ -882,7 +882,7 @@ python samples/02-rag-solutions/migration_guide.py
 ### 1. Kehittynyt kehotetekniikka
 
 - **Järjestelmäkehotteet**: Alakohtaiset asiantuntijapersoonat
-- **Kontekstistrategiat**: Tekniikat kontekstin integroimiseksi
+- **Perustelustrategiat**: Kontekstin integrointitekniikat
 - **Lämpötilan hallinta**: Luovuuden ja johdonmukaisuuden tasapainottaminen
 - **Tokenien hallinta**: Tehokas kontekstin käyttö
 
@@ -890,7 +890,7 @@ python samples/02-rag-solutions/migration_guide.py
 
 - **CSV-käsittely**: Pandas-integraatio tekoälymallien kanssa
 - **Tilastollinen analyysi**: Automaattinen datan tiivistäminen
-- **Kontekstin luominen**: Dynaaminen kontekstin generointi kyselyiden perusteella
+- **Kontekstin luominen**: Dynaaminen kontekstin luominen kysymysten perusteella
 - **Monimuotoinen tuki**: JSON-, CSV- ja taulukkodata
 
 ### 3. RAG-toteutusmallit
@@ -898,16 +898,16 @@ python samples/02-rag-solutions/migration_guide.py
 - **Vektorihaku**: TF-IDF ja kosinisimilaarisuus
 - **Dokumenttien haku**: Relevanssin pisteytys ja järjestäminen
 - **Kontekstin yhdistäminen**: Monidokumenttien synteesi
-- **Vastausten generointi**: Kontekstiin perustuvien vastausten luominen
+- **Vastausten generointi**: Perusteltujen vastausten luominen
 
-### 4. Pilvisiirtymästrategiat
+### 4. Pilvisiirtostrategiat
 
 - **Yhtenäiset API:t**: Yksi koodipohja paikalliselle ja pilvelle
 - **Ympäristön abstraktio**: Konfiguraatiopohjainen käyttöönotto
-- **Kehitystyönkulku**: Paikallinen → Välivaihe → Tuotanto
+- **Kehitystyönkulku**: Paikallinen → Testaus → Tuotanto
 - **Kustannusoptimointi**: Paikallinen kehitys, pilvituotanto
 
-## Tuotantokelpoisuuden huomioiminen
+## Tuotantoharkinnat
 
 ### 1. Suorituskyvyn optimointi
 
@@ -958,25 +958,25 @@ metrics = {
 Kun olet suorittanut tämän istunnon:
 
 1. **Tutustu istuntoon 3**: Avoimen lähdekoodin mallit Foundry Localissa
-2. **Rakenna tuotantokelpoinen RAG**: Toteuta Chainlitin avulla (Esimerkki 04)
-3. **Kehittynyt vektorihaku**: Integroi Chroma tai Pinecone
-4. **Pilvisiirtymä**: Ota käyttöön Azure AI Foundryssä
-5. **Arvioi RAG-laatu**: Suorita `python Workshop/samples/session02/rag_eval_ragas.py` mitataksesi vastausten relevanssia, uskottavuutta ja kontekstin tarkkuutta ragas-menetelmällä
+2. **Rakenna tuotantotason RAG**: Toteuta Chainlitillä (Esimerkki 04)
+3. **Kehittynyt vektorihaku**: Integroi Chroman tai Pineconen kanssa
+4. **Pilvisiirto**: Ota käyttöön Azure AI Foundryssa
+5. **Arvioi RAG-laatua**: Suorita `cd Workkshop/samples;python -m session02.rag_eval_ragas` mitataksesi vastausten relevanssia, uskottavuutta ja kontekstin tarkkuutta ragasilla
 
 ### Valinnaiset parannukset
 
 | Kategoria | Parannus | Perustelu | Suunta |
-|-----------|----------|-----------|--------|
+|----------|-------------|-----------|-----------|
 | Haku | Korvaa TF-IDF vektorikannalla (FAISS / Chroma) | Parempi semanttinen muistaminen ja skaalautuvuus | Pilko dokumentit (500–800 merkkiä), upota, tallenna indeksi |
-| Hybridindeksi | Semanttinen + avainsanasuodatus | Parantaa tarkkuutta numeerisissa / koodikyselyissä | Suodata avainsanoilla, sitten järjestä kosinisimilaarisuuden mukaan |
+| Hybridindeksi | Semanttinen + avainsanasuodatus | Parantaa tarkkuutta numeerisissa / koodikyselyissä | Suodata avainsanalla, sitten järjestä kosinisimilaarisuuden mukaan |
 | Upotukset | Arvioi useita upotusmalleja | Optimoi relevanssi vs nopeus | A/B: MiniLM vs E5-small vs paikallisesti isännöity kooderi |
-| Välimuisti | Välimuisti upotuksille ja hakutuloksille | Alentaa toistuvien kyselyiden viivettä | Yksinkertainen levypohjainen pickle / sqlite hash-avaimella |
+| Välimuisti | Välimuisti upotuksille ja hakutuloksille | Alentaa toistuvien kyselyjen viivettä | Yksinkertainen levypohjainen pickle / sqlite hash-avaimella |
 | Arviointi | Laajenna ragas-datasettiä | Tilastollisesti merkittävä laatu | Kuratoi 50–100 Q/A + kontekstit; jaa aiheittain |
 | Mittarit | Seuraa hakujen ja generoinnin ajoituksia | Suorituskyvyn profilointi | Tallenna `retrieval_ms`, `gen_ms`, `tokens` per kutsu |
-| Turvamekanismit | Lisää hallusinaatioiden varajärjestelmä | Turvallisemmat vastaukset | Jos uskottavuus < kynnysarvo → vastaus: "Riittämätön konteksti." |
-| Varajärjestelmä | Paikallinen → Azure-malli kaskadi | Hybridi laadun parannus | Alhaisella varmuudella ohjaa pilveen samaa OpenAI API:a käyttäen |
-| Determinismi | Vakaa vertailuajo | Toistettavat arviointijoukot | Kiinnitä siemen, `temperature=0`, poista satunnaisuus näytteenottimesta |
-| Seuranta | Tallenna arviointihistorian ajot | Regressioiden havaitseminen | Lisää JSON-rivejä aikaleimalla + metristen muutosten kanssa |
+| Turvamekanismit | Lisää hallusinaatioiden varajärjestelmä | Turvallisemmat vastaukset | Jos uskottavuus < kynnys → vastaus: "Riittämätön konteksti." |
+| Varajärjestelmä | Paikallinen → Azure-malli | Hybridi laadun parantaminen | Matala luottamus ohjataan pilveen saman OpenAI API:n kautta |
+| Determinismi | Vakaa vertailuajo | Toistettavat arviointijoukot | Kiinnitä siemen, `temperature=0`, poista satunnaisuus näytteenotossa |
+| Seuranta | Tallenna arviointiajon historia | Regressioiden havaitseminen | Lisää JSON-rivejä aikaleimalla + metristen muutosten kanssa |
 
 #### Esimerkki: Hakuaikojen lisääminen
 
@@ -992,14 +992,14 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 ```
 
 
-#### Arvioinnin skaalaus ragas-menetelmällä
+#### Arvioinnin skaalaus ragasilla
 
 1. Koosta JSONL, jossa kentät: `question`, `answer`, `contexts`, `ground_truths` (lista)
 2. Muunna `Dataset.from_list(list_of_dicts)`
 3. Suorita `evaluate(dataset, metrics=[...])`
 4. Tallenna mittarit (CSV/JSON) trendianalyysiä varten.
 
-#### Vektorikannan pika-aloitus (FAISS)
+#### Vektorikannan nopea aloitus (FAISS)
 
 ```python
 import faiss, numpy as np
@@ -1026,18 +1026,18 @@ Levytallennusta varten käytä `faiss.write_index(index, "kb.index")`.
 
 **Istunnon kesto**: 30 minuuttia käytännön harjoittelua + 15 minuuttia Q&A
 **Vaikeustaso**: Keskitaso
-**Esitiedot**: Istunto 1 suoritettu, perustiedot Pythonista
+**Esivaatimukset**: Istunto 1 suoritettu, Perustiedot Pythonista
 
-## Esimerkkiskenaario ja työpajan kartoitus
+## Esimerkkiskenaario & työpajan kartoitus
 
 | Työpajan skripti / muistikirja | Skenaario | Tavoite | Keskeinen datasetti / lähde | Esimerkkikysymys |
-|-------------------------------|-----------|---------|----------------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Sisäinen tukitietokanta, joka vastaa yksityisyys- ja suorituskykykysymyksiin | Minimaalinen muistissa oleva RAG upotuksilla | `DOCS`-lista skriptissä (5 lyhyttä kappaletta) | Miksi käyttää RAG:ia paikallisen inferenssin kanssa? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Laatuanalyytikko, joka luo perustason hakujen uskottavuusmittareita | Laske ragas-mittarit pienellä synteettisellä datasetillä | `DOCS`, `QUESTIONS`, `GROUND_TRUTH`-taulukot | Mitä etua paikallinen inferenssi tarjoaa? |
-| `prompt_engineering.py` (kehittynyt) | Alakohtainen asiantuntija, joka luo kontekstiin perustuvia kehotteita eri aloille | Vertaa alakohtaisia järjestelmäkehotteita ja token-vaikutusta | Sisäinen `contexts`-sanakirja | Miten Foundry Local käsittelee mallien välimuistia? |
-| `csv_qa_system.py` | Myyntitoiminnot, jotka tutkivat interaktiivista analytiikkaa vientien perusteella | Tiivistä ja kysy pieni myyntidatan osuus | Generoitu `sample_sales_data.csv` (10 riviä) | Mikä tuote tuottaa suurimman keskimääräisen myyntimäärän? |
-| `document_rag.py` | Tuotetiimi, joka tutkii dokumentti-RAG:ia sisäistä wikiä varten | Hae ja viittaa relevantteihin dokumentteihin | `create_sample_knowledge_base()`-lista | Mitkä ovat Edge AI:n edut? |
-| `migration_guide.py` | Arkkitehti, joka valmistelee pilvisiirtymäsuunnitelmaa | Näytä paikallinen → Azure API:n yhteneväisyys | Staattiset testikehotteet | Selitä Edge AI:n edut 2–3 lauseessa. |
+|----------------------------|----------|------|-----------------------|------------------|
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Sisäinen tukitietokanta, joka vastaa yksityisyyteen + suorituskykyyn liittyviin usein kysyttyihin kysymyksiin | Minimaalinen muistissa toimiva RAG upotuksilla | `DOCS`-lista skriptissä (5 lyhyttä katkelmaa) | Miksi käyttää RAG:ia paikallisessa inferenssissä? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Laatuanalyytikko, joka määrittää peruslinjan hakujen uskottavuusmittareille | Laske ragas-mittarit pienellä synteettisellä datasetillä | `DOCS`, `QUESTIONS`, `GROUND_TRUTH`-taulukot | Mitä etua paikallisella inferenssillä on? |
+| `prompt_engineering.py` (kehittynyt) | Alakohtainen asiantuntija, joka luo perusteltuja kehotteita useille aloille | Vertaa alakohtaisia järjestelmäkehotteita ja token-vaikutusta | Sisäinen `contexts`-sanakirja | Miten Foundry Local käsittelee mallien välimuistia? |
+| `csv_qa_system.py` | Myyntitoiminnot tutkii interaktiivista analytiikkaa vientien perusteella | Tiivistä ja kysy pieni myyntidatan osuus | Luotu `sample_sales_data.csv` (10 riviä) | Mikä tuote tuottaa suurimman keskimääräisen myyntimäärän? |
+| `document_rag.py` | Tuotetiimi tutkii dokumentti-RAG:ia sisäistä wikiä varten | Hae ja viittaa relevantteihin dokumentteihin | `create_sample_knowledge_base()`-lista | Mitkä ovat Edge AI:n edut? |
+| `migration_guide.py` | Arkkitehti valmistelee pilvisiirtosuunnitelmaa | Demonstroi paikallinen→Azure API-yhteensopivuus | Staattiset testikehotteet | Selitä Edge AI:n edut 2–3 lauseessa. |
 
 ### Datasetin katkelmat
 Sisäinen RAG-putkiston dokumenttilista:
@@ -1051,7 +1051,7 @@ DOCS = [
 ]
 ```
 
-Ragas-arvioinnin totuusparit:
+Ragas-arvioinnin totuustaulukot:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1061,13 +1061,13 @@ GROUND_TRUTH = [
 ```
 
 
-### Skenaarion narratiivi
-Tukitiimi haluaa nopean prototyypin, joka vastaa sisäisiin usein kysyttyihin kysymyksiin paljastamatta asiakastietoja ulkopuolisille. Istunto 2:n artefaktit etenevät minimaalisesta väliaikaisesta RAG:ista (ei pysyvyyttä) → jäsenneltyyn CSV Q&A:han → dokumenttien hakuun viittauksilla → objektiiviseen laadun arviointiin (ragas) → siirtymäsuunnitelmaan, joka on valmis Azure-välivaiheeseen.
+### Skenaarion kuvaus
+Tukitiimi haluaa nopean prototyypin, joka vastaa sisäisiin usein kysyttyihin kysymyksiin paljastamatta asiakastietoja ulkopuolisille. Istunto 2:n tuotokset etenevät minimaalisesta väliaikaisesta RAG:sta (ei pysyvyyttä) → jäsenneltyyn CSV Q&A:han → dokumenttien hakuun viittauksilla → objektiiviseen laatuarviointiin (ragas) → siirtostrategiaan, joka on valmis Azure-testaukseen.
 
 ### Laajennuspolut
-Käytä Valinnaiset parannukset -taulukkoa kehittämiseen: vaihda TF-IDF FAISS/Chroma:an, laajenna arviointikorpusta (50–100 Q/A), lisää varajärjestelmä suuremmalle mallille, kun uskottavuus < kynnysarvo.
+Käytä Valinnaiset parannukset -taulukkoa kehittämiseen: korvaa TF-IDF FAISS/Chromalla, laajenna arviointikorpusta (50–100 Q/A), lisää varajärjestelmä suuremmalle mallille, kun uskottavuus < kynnys.
 
 ---
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.

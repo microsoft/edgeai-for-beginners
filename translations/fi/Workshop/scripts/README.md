@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-09T14:47:00+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T22:21:23+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "fi"
 }
 -->
-# Työpajan Skriptit
+# Työpajan skriptit
 
 Tämä hakemisto sisältää automaatio- ja tukiskriptejä, joita käytetään työpajamateriaalien laadun ja yhdenmukaisuuden ylläpitämiseen.
 
@@ -15,16 +15,16 @@ Tämä hakemisto sisältää automaatio- ja tukiskriptejä, joita käytetään t
 
 | Tiedosto | Tarkoitus |
 |----------|-----------|
-| `lint_markdown_cli.py` | Tarkistaa markdown-koodilohkot estääkseen vanhentuneiden Foundry Local CLI -komentomallien käytön. |
-| `export_benchmark_markdown.py` | Suorittaa monimallisen viivevertailun ja tuottaa Markdown- ja JSON-raportit. |
+| `lint_markdown_cli.py` | Tarkistaa markdown-koodilohkot vanhentuneiden Foundry Local CLI -komentomallien estämiseksi. |
+| `export_benchmark_markdown.py` | Suorittaa monimallin viivevertailun ja tuottaa Markdown- ja JSON-raportteja. |
 
 ## 1. Markdown CLI -mallien tarkistin
 
-`lint_markdown_cli.py` skannaa kaikki ei-käännetyt `.md`-tiedostot kiellettyjen Foundry Local CLI -mallien varalta **aidatuissa koodilohkoissa** (``` ... ```). Informatiivisessa tekstissä voi edelleen mainita vanhentuneita komentoja historiallisessa kontekstissa.
+`lint_markdown_cli.py` skannaa kaikki ei-käännös `.md`-tiedostot kiellettyjen Foundry Local CLI -mallien varalta **aidatuissa koodilohkoissa** (``` ... ```). Informatiivisessa tekstissä voidaan edelleen mainita vanhentuneita komentoja historiallisessa kontekstissa.
 
-### Vanhentuneet mallit (estetty koodilohkoissa)
+### Vanhentuneet mallit (estetty koodilohkojen sisällä)
 
-Tarkistin estää vanhentuneet CLI-mallit. Käytä sen sijaan nykyaikaisia vaihtoehtoja.
+Tarkistin estää vanhentuneet CLI-mallit. Käytä moderneja vaihtoehtoja niiden sijaan.
 
 ### Vaaditut korvaukset
 | Vanhentunut | Käytä sen sijaan |
@@ -32,7 +32,7 @@ Tarkistin estää vanhentuneet CLI-mallit. Käytä sen sijaan nykyaikaisia vaiht
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
 | `foundry model list --running` | `foundry model list` |
 | `foundry model list --cached` | `foundry cache list` |
-| `foundry model stats` | Vertailuskripti + järjestelmätyökalut (`Tehtävienhallinta`, `nvidia-smi`) |
+| `foundry model stats` | Vertailuskripti + järjestelmätyökalut (`Task Manager`, `nvidia-smi`) |
 | `foundry model benchmark` | `samples/session03/benchmark_oss_models.py` |
 | `foundry model list --available` | `foundry model list` |
 
@@ -60,16 +60,16 @@ python Workshop/scripts/lint_markdown_cli.py --verbose
 echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
-Tämä estää sitoumukset, jotka sisältävät vanhentuneita malleja.
+Tämä estää commitit, jotka sisältävät vanhentuneita malleja.
 
 ### CI-integraatio
-GitHub Action -työnkulku (`.github/workflows/markdown-cli-lint.yml`) suorittaa tarkistimen jokaisessa `main`- ja `Reactor`-haaraan tehdyssä push- ja pull request -toiminnossa. Epäonnistuneet työt on korjattava ennen yhdistämistä.
+GitHub Action -työnkulku (`.github/workflows/markdown-cli-lint.yml`) suorittaa tarkistimen jokaisella `main`- ja `Reactor`-haaraan tehdyllä pushilla ja pull requestilla. Epäonnistuneet työt on korjattava ennen yhdistämistä.
 
 ### Uusien vanhentuneiden mallien lisääminen
 1. Avaa `lint_markdown_cli.py`.
-2. Lisää tuple `(regex, suggestion)` `DEPRECATED`-listaan. Käytä raakaa merkkijonoa ja sisällytä `\b` sananrajat tarvittaessa.
+2. Lisää tuple `(regex, suggestion)` `DEPRECATED`-listaan. Käytä raakamerkkijonoa ja sisällytä `\b` sananrajat tarvittaessa.
 3. Suorita tarkistin paikallisesti varmistaaksesi tunnistuksen.
-4. Tee sitoumus ja push; CI valvoo uutta sääntöä.
+4. Commitoi ja puske; CI varmistaa uuden säännön.
 
 Esimerkki lisäyksestä:
 ```python
@@ -77,23 +77,23 @@ DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental
 ```
 
 ### Selittävien mainintojen salliminen
-Koska vain aidatut koodilohkot tarkistetaan, voit kuvata vanhentuneita komentoja kerronnallisessa tekstissä turvallisesti. Jos *täytyy* näyttää niitä aidatussa lohkossa kontrastin vuoksi, lisää aidattu lohko **ilman** kolmoismerkkejä (esim. sisennä tai lainaa) tai kirjoita uudelleen pseudomuotoon.
+Koska vain aidatut koodilohkot tarkistetaan, voit turvallisesti kuvata vanhentuneita komentoja kerronnallisessa tekstissä. Jos *täytyy* näyttää niitä aidatussa lohkossa vertailun vuoksi, lisää aidattu lohko **ilman** kolmoisbacktickejä (esim. sisennä tai lainaa) tai kirjoita uudelleen pseudomuotoon.
 
 ### Tiettyjen tiedostojen ohittaminen (edistynyt)
-Jos tarpeen, sijoita vanhat esimerkit erilliseen tiedostoon repo-ulkopuolelle tai nimeä uudelleen eri tiedostopäätteellä luonnostelun aikana. Tahalliset ohitukset käännetyille kopioille ovat automaattisia (polut, jotka sisältävät `translations`).
+Tarvittaessa voit sijoittaa vanhat esimerkit erilliseen tiedostoon repo ulkopuolelle tai nimetä ne eri tiedostopäätteellä luonnostelun aikana. Tahalliset ohitukset käännetyille kopioille ovat automaattisia (polut, jotka sisältävät `translations`).
 
-### Vianmääritys
-| Ongelma | Syy | Ratkaisu |
-|---------|-----|---------|
-| Tarkistin merkitsee muokkaamasi rivin | Regex liian laaja | Rajaa mallia lisäämällä sananraja (`\b`) tai ankkureita |
-| CI epäonnistuu, mutta paikallisesti toimii | Eri Python-versio tai sitouttamattomat muutokset | Suorita uudelleen paikallisesti, varmista puhdas työtila, tarkista työnkulun Python-versio (3.11) |
-| Tarve ohittaa väliaikaisesti | Kiireellinen korjaus | Tee korjaus heti sen jälkeen; harkitse väliaikaisen haaran ja jatkositoumuksen käyttöä (vältä ohituskytkimien lisäämistä) |
+### Vianetsintä
+| Ongelma | Syynä | Ratkaisu |
+|---------|-------|----------|
+| Tarkistin merkitsee rivin, jota muokkasit | Regex liian laaja | Rajaa mallia lisäämällä sananraja (`\b`) tai ankkureita |
+| CI epäonnistuu, mutta paikallisesti toimii | Eri Python-versio tai tallentamattomat muutokset | Suorita uudelleen paikallisesti, varmista puhdas työpuu, tarkista työnkulun Python-versio (3.11) |
+| Tarve ohittaa tilapäisesti | Kiireellinen korjaus | Tee korjaus heti sen jälkeen; harkitse tilapäisen haaran ja jatkotoimenpiteen PR:n käyttöä (vältä ohituskytkinten lisäämistä) |
 
 ### Perustelut
-Dokumentaation pitäminen ajan tasalla *nykyisen* vakaan CLI-pinnan kanssa vähentää työpajan kitkaa, välttää oppijoiden hämmennystä ja keskittää suorituskyvyn mittauksen ylläpidettyihin Python-skripteihin sen sijaan, että käytettäisiin vanhentuneita CLI-alikomentoja.
+Dokumentaation pitäminen ajan tasalla *nykyisen* vakaan CLI-pinnan kanssa estää työpajan kitkaa, välttää oppijoiden hämmennystä ja keskittää suorituskykymittauksen ylläpidettyjen Python-skriptien kautta sen sijaan, että käytettäisiin vanhentuneita CLI-alikomentoja.
 
 ---
-Ylläpidetään osana työpajan laatutyökaluketjua. Parannuksia varten (esim. automaattiset korjausehdotukset tai HTML-raporttien luonti) avaa issue tai lähetä PR.
+Ylläpidetään osana työpajan laatutyökaluketjua. Parannuksia varten (esim. automaattiset korjausehdotukset tai HTML-raporttien generointi), avaa issue tai lähetä PR.
 
 ## 2. Esimerkkien validointiskripti
 
@@ -115,7 +115,7 @@ python scripts/validate_samples.py --summary
 ```
 
 ### Mitä se tarkistaa
-- ✅ Python-syntaksin oikeellisuus
+- ✅ Python-syntaksin kelvollisuus
 - ✅ Vaaditut tuonnit ovat läsnä
 - ✅ Virheenkäsittelyn toteutus (yksityiskohtainen tila)
 - ✅ Tyyppivihjeiden käyttö (yksityiskohtainen tila)
@@ -155,17 +155,17 @@ python scripts/test_samples.py --verbose
 - Riippuvuudet asennettu: `pip install -r requirements.txt`
 
 ### Mitä se testaa
-- ✅ Esimerkki voidaan suorittaa ilman ajonaikaisia virheitä
-- ✅ Vaadittu tulos generoituu
+- ✅ Esimerkki voidaan suorittaa ilman ajoaikavirheitä
+- ✅ Vaadittu tulos tuotetaan
 - ✅ Oikea virheenkäsittely epäonnistumisen yhteydessä
 - ✅ Suorituskyky (suoritusaika)
 
 ### Ympäristömuuttujat
-- `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Malli, jota käytetään testauksessa
+- `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Testauksessa käytettävä malli
 - `TEST_TIMEOUT=30` - Aikaraja per esimerkki sekunneissa
 
-### Odotetut epäonnistumiset
-Jotkin testit voivat epäonnistua, jos valinnaisia riippuvuuksia ei ole asennettu (esim. `ragas`, `sentence-transformers`). Asenna ne komennolla:
+### Odotettavissa olevat epäonnistumiset
+Jotkut testit voivat epäonnistua, jos valinnaisia riippuvuuksia ei ole asennettu (esim. `ragas`, `sentence-transformers`). Asenna seuraavasti:
 ```bash
 pip install sentence-transformers ragas datasets
 ```
@@ -178,20 +178,20 @@ pip install sentence-transformers ragas datasets
 
 Skripti: `export_benchmark_markdown.py`
 
-Luo toistettavan suorituskykytaulukon mallijoukolle.
+Generoi toistettavan suorituskykytaulukon mallijoukolle.
 
 ### Käyttö
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Tulosteet
 | Tiedosto | Kuvaus |
 |----------|--------|
-| `benchmark_report.md` | Markdown-taulukko (keskiarvo, p95, tokenit/sek, valinnainen ensimmäinen token) |
+| `benchmark_report.md` | Markdown-taulukko (keskiarvo, p95, tokenit/s, valinnainen ensimmäinen token) |
 | `benchmark_report.json` | Raakametriikkataulukko vertailua ja historiaa varten |
 
-### Valinnat
+### Vaihtoehdot
 | Lippu | Kuvaus | Oletus |
 |-------|--------|--------|
 | `--models` | Pilkulla erotetut mallialiaset | (pakollinen) |
@@ -199,13 +199,13 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 | `--rounds` | Kierrokset per malli | 3 |
 | `--output` | Markdown-tulostetiedosto | `benchmark_report.md` |
 | `--json` | JSON-tulostetiedosto | `benchmark_report.json` |
-| `--fail-on-empty` | Ei-nolla poistumiskoodi, jos kaikki vertailut epäonnistuvat | pois päältä |
+| `--fail-on-empty` | Ei-nollapoistuminen, jos kaikki vertailut epäonnistuvat | pois päältä |
 
 Ympäristömuuttuja `BENCH_STREAM=1` lisää ensimmäisen tokenin viiveen mittauksen.
 
 ### Huomioita
-- Käyttää uudelleen `workshop_utils`-kirjastoa mallien yhdenmukaiseen käynnistykseen ja välimuistiin.
-- Jos suoritetaan eri työhakemistosta, skripti yrittää polkujen varajärjestelyjä löytääkseen `workshop_utils`.
+- Käyttää `workshop_utils`-kirjastoa mallien käynnistämiseen ja välimuistiin tallentamiseen.
+- Jos skriptiä ajetaan eri työhakemistosta, se yrittää löytää `workshop_utils`-polun varapolkujen avulla.
 - GPU-vertailua varten: suorita kerran, ota kiihdytys käyttöön CLI-asetuksista, suorita uudelleen ja vertaa JSON-tiedostoja.
 
 ---

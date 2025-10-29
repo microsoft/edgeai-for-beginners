@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T14:01:48+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T23:14:10+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "bg"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Общ преглед
 
-Примерите от Workshop използват променливи на средата за конфигурация, централизирани в `.env` файла в основната директория на хранилището. Това позволява лесна персонализация без промяна на кода.
+Примерите от Workshop използват променливи на средата за конфигурация, централизирани в `.env` файла в корена на хранилището. Това позволява лесно персонализиране без промяна на кода.
 
 ## Бърз старт
 
-### 1. Проверете предварителните изисквания
+### 1. Проверете предпоставките
 
 ```bash
 # Check Foundry Local is installed
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **За Python скриптове:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -65,9 +65,9 @@ python chat_bootstrap.py
 | `PYTHONPATH` | Пътища на Workshop | Път за търсене на Python модули |
 
 **Кога да зададете FOUNDRY_LOCAL_ENDPOINT:**
-- Отдалечен Foundry Local екземпляр
-- Персонализирана конфигурация на портове
-- Разделение между разработка и продукция
+- Отдалечен Foundry Local инстанс
+- Персонализирана конфигурация на порт
+- Разделяне на разработка/производство
 
 **Пример:**
 ```bash
@@ -89,8 +89,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Сесия 03: Бенчмаркинг
 | Променлива | По подразбиране | Цел |
 |------------|-----------------|-----|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Модели за бенчмаркинг |
-| `BENCH_ROUNDS` | `3` | Брой итерации на модел |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Модели за бенчмаркинг |
+| `BENCH_ROUNDS` | `3` | Итерации на модел |
 | `BENCH_PROMPT` | Предварително конфигурирано | Тестов промпт |
 | `BENCH_STREAM` | `0` | Измерване на латентност на първия токен |
 
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Настройка за продукция (фокус върху качество)
+### Настройка за производство (фокус върху качеството)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,12 +140,12 @@ SHOW_USAGE=0
 
 ### Настройка за бенчмаркинг
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### Специализация на много агенти
+### Специализация за много агенти
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -157,11 +157,11 @@ FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ```
 
-## Препоръчани модели
+## Препоръчителни модели
 
-### Според случай на употреба
+### Според предназначение
 
-**Обща цел:**
+**Общо предназначение:**
 - `phi-4-mini` - Балансирано качество и скорост
 
 **Бързи отговори:**
@@ -174,11 +174,11 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Генериране на код:**
 - `deepseek-coder-1.3b` - Специализиран за код
-- `phi-4-mini` - Универсален за кодиране
+- `phi-4-mini` - Общопредназначен за кодиране
 
 ### Според налични ресурси
 
-**Ниски ресурси (< 8GB RAM):**
+**Малко ресурси (< 8GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### Хибридна настройка с Azure OpenAI
+### Хибридна настройка на Azure OpenAI
 
 ```bash
 # Use local for development
@@ -263,7 +263,7 @@ pwd  # Should be in Workshop or repository root
 
 **Симптоми:**
 - Грешки "Connection refused"
-- "Service not available"
+- "Услугата не е налична"
 - Грешки при изчакване
 
 **Решения:**
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **Симптоми:**
 - Грешки "Model not found"
-- "Alias not recognized"
+- "Alias не е разпознат"
 
 **Решения:**
 ```bash
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Симптоми:**
 - Грешки "Module not found"
-- "Cannot import workshop_utils"
 
 **Решения:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Тестване на конфигурацията
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Тест за свързване към Foundry Local
+### Тест на връзката с Foundry Local
 
 ```python
 # test_connection.py
@@ -385,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Ротирайте API ключовете
+### 3. Редовно сменяйте API ключовете
 
 ```bash
 # For Azure OpenAI or other cloud services
@@ -406,7 +403,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Основно хранилище**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API документация**: Проверете хранилището на SDK за най-новата версия
+- **API документация**: Проверете хранилището на SDK за най-новата информация
 
 ## Допълнителни ресурси
 
@@ -418,9 +415,9 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 **Последна актуализация**: 2025-01-08  
 **Версия**: 2.0  
-**SDK**: Foundry Local Python SDK (най-нов)
+**SDK**: Foundry Local Python SDK (най-новата)
 
 ---
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI услуга за превод [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи може да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Не носим отговорност за недоразумения или погрешни интерпретации, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI услуга за превод [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи може да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да било недоразумения или погрешни интерпретации, произтичащи от използването на този превод.

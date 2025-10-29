@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-08T14:23:22+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T23:28:37+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "hr"
 }
@@ -11,21 +11,21 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Pregled
 
-Svi Python uzorci u direktoriju `Workshop/samples` ažurirani su kako bi slijedili najbolje prakse Foundry Local SDK-a i osigurali dosljednost kroz radionicu.
+Svi Python uzorci u direktoriju `Workshop/samples` ažurirani su kako bi slijedili najbolje prakse Foundry Local SDK-a i osigurali dosljednost u cijeloj radionici.
 
 **Datum**: 8. listopada 2025.  
 **Opseg**: 9 Python datoteka kroz 6 sesija radionice  
-**Glavni fokus**: Rukovanje pogreškama, dokumentacija, SDK obrasci, korisničko iskustvo
+**Primarni fokus**: Rukovanje pogreškama, dokumentacija, obrasci SDK-a, korisničko iskustvo
 
 ---
 
 ## Ažurirane datoteke
 
-### Sesija 01: Početak rada
+### Sesija 01: Početak
 - ✅ `chat_bootstrap.py` - Osnovni primjeri za chat i streaming
 
 ### Sesija 02: RAG rješenja
-- ✅ `rag_pipeline.py` - Implementacija RAG-a s ugrađenim vektorima
+- ✅ `rag_pipeline.py` - Implementacija RAG-a s ugrađivanjem
 - ✅ `rag_eval_ragas.py` - Evaluacija RAG-a s RAGAS metrikama
 
 ### Sesija 03: Open Source modeli
@@ -34,15 +34,15 @@ Svi Python uzorci u direktoriju `Workshop/samples` ažurirani su kako bi slijedi
 ### Sesija 04: Najnoviji modeli
 - ✅ `model_compare.py` - Usporedba SLM-a i LLM-a
 
-### Sesija 05: Agenti pokretani AI-jem
+### Sesija 05: Agenti pokretani umjetnom inteligencijom
 - ✅ `agents_orchestrator.py` - Koordinacija više agenata
 
 ### Sesija 06: Modeli kao alati
 - ✅ `models_router.py` - Usmjeravanje modela na temelju namjere
-- ✅ `models_pipeline.py` - Višestupanjska usmjerena cjevovodna obrada
+- ✅ `models_pipeline.py` - Višekorak cjevovod s usmjeravanjem
 
 ### Pomoćna infrastruktura
-- ✅ `workshop_utils.py` - Već slijedi najbolje prakse (nije bilo potrebno mijenjati)
+- ✅ `workshop_utils.py` - Već slijedi najbolje prakse (nije potrebno mijenjati)
 
 ---
 
@@ -54,7 +54,7 @@ Svi Python uzorci u direktoriju `Workshop/samples` ažurirani su kako bi slijedi
 ```python
 manager, client, model_id = get_client(alias)
 ```
-  
+
 **Poslije:**
 ```python
 try:
@@ -64,19 +64,19 @@ except Exception as e:
     print("[INFO] Ensure Foundry Local is running: foundry service status")
     sys.exit(1)
 ```
-  
+
 **Prednosti:**
 - Elegantno rukovanje pogreškama s jasnim porukama
-- Korisni savjeti za otklanjanje problema
-- Ispravni izlazni kodovi za skripte
+- Korisni savjeti za rješavanje problema
+- Ispravni izlazni kodovi za skriptiranje
 
-### 2. Bolje upravljanje uvozima
+### 2. Bolje upravljanje uvozom
 
 **Prije:**
 ```python
 from sentence_transformers import SentenceTransformer
 ```
-  
+
 **Poslije:**
 ```python
 try:
@@ -85,17 +85,17 @@ except ImportError:
     print("[ERROR] sentence-transformers is required. Install with: pip install sentence-transformers")
     sys.exit(1)
 ```
-  
+
 **Prednosti:**
 - Jasne upute kada nedostaju ovisnosti
 - Sprječavanje nejasnih pogrešaka pri uvozu
-- Korisnički prilagođene upute za instalaciju
+- Korisničke upute za instalaciju
 
 ### 3. Sveobuhvatna dokumentacija
 
 **Dodano svim uzorcima:**
 - Dokumentacija o varijablama okruženja u docstringovima
-- SDK referentni linkovi
+- Poveznice na SDK referencu
 - Primjeri korištenja
 - Detaljna dokumentacija funkcija/parametara
 - Tipovi podataka za bolju podršku u IDE-u
@@ -115,7 +115,6 @@ def pipeline(task: str) -> Dict[str, Any]:
         Exception: If any pipeline stage fails
     """
 ```
-  
 
 ### 4. Poboljšana povratna informacija korisnika
 
@@ -125,29 +124,28 @@ print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
 print(f"[INFO] Loaded model: {alias} -> {model_id}")
 ```
-  
+
 **Indikatori napretka:**
 ```python
 print(f"[INFO] Benchmarking {alias}...")
 print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
 print(f"[INFO] Completed {alias}\n")
 ```
-  
+
 **Strukturirani izlaz:**
 ```python
 print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
-  
 
-### 5. Robusno benchmarkiranje
+### 5. Robusno testiranje performansi
 
 **Poboljšanja u sesiji 03:**
 - Rukovanje pogreškama po modelu (nastavlja se nakon neuspjeha)
 - Detaljno izvještavanje o napretku
 - Ispravno izvršavanje zagrijavanja
 - Podrška za mjerenje latencije prvog tokena
-- Jasna razdvojenost faza
+- Jasno razdvajanje faza
 
 ### 6. Dosljedni tipovi podataka
 
@@ -158,20 +156,20 @@ from typing import Dict, List, Tuple, Any, Optional
 def run(alias: str) -> Tuple[float, str, Optional[int]]:
     """Run comparison for given model alias."""
 ```
-  
+
 **Prednosti:**
 - Bolja automatska dopuna u IDE-u
 - Rano otkrivanje pogrešaka
 - Samodokumentirajući kod
 
-### 7. Poboljšani usmjerivač modela
+### 7. Poboljšano usmjeravanje modela
 
 **Poboljšanja u sesiji 06:**
 - Sveobuhvatna dokumentacija o detekciji namjere
 - Objašnjenje algoritma za odabir modela
-- Detaljni logovi usmjeravanja
-- Formatiranje testnih izlaza
-- Oporavak od pogrešaka u batch testiranju
+- Detaljni zapisi o usmjeravanju
+- Formatiranje testnog izlaza
+- Oporavak od pogrešaka u grupnom testiranju
 
 ### 8. Orkestracija više agenata
 
@@ -183,7 +181,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 
 ---
 
-## Popis za testiranje
+## Popis za provjeru testiranja
 
 ### Preduvjeti
 ```bash
@@ -197,69 +195,67 @@ foundry model run qwen2.5-0.5b
 # Install dependencies
 pip install -r Workshop/requirements.txt
 ```
-  
 
-### Testiranje svakog uzorka
+### Testirajte svaki uzorak
 
 #### Sesija 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
-  
+
 #### Sesija 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
-  
+
 #### Sesija 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
-  
+
 #### Sesija 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
-  
+
 #### Sesija 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
-  
+
 #### Sesija 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
-  
 
 ---
 
@@ -267,40 +263,40 @@ python models_pipeline.py
 
 ### Globalno (svi uzorci)
 | Varijabla | Opis | Zadano |
-|-----------|------|--------|
+|-----------|-------|--------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias modela za korištenje | Razlikuje se po uzorku |
-| `FOUNDRY_LOCAL_ENDPOINT` | Premašivanje krajnje točke usluge | Automatski otkriveno |
+| `FOUNDRY_LOCAL_ENDPOINT` | Zamjenski krajnji servis | Automatski otkriven |
 | `SHOW_USAGE` | Prikaz potrošnje tokena | `0` |
-| `RETRY_ON_FAIL` | Omogućavanje logike ponovnog pokušaja | `1` |
+| `RETRY_ON_FAIL` | Omogućuje logiku ponovnog pokušaja | `1` |
 | `RETRY_BACKOFF` | Početno kašnjenje ponovnog pokušaja | `1.0` |
 
 ### Specifično za uzorak
-| Varijabla | Koristi se u | Opis |
-|-----------|-------------|------|
+| Varijabla | Koristi | Opis |
+|-----------|---------|------|
 | `EMBED_MODEL` | Sesija 02 | Naziv modela za ugrađivanje |
 | `RAG_QUESTION` | Sesija 02 | Testno pitanje za RAG |
-| `BENCH_MODELS` | Sesija 03 | Modeli za benchmark, odvojeni zarezom |
-| `BENCH_ROUNDS` | Sesija 03 | Broj rundi benchmarka |
-| `BENCH_PROMPT` | Sesija 03 | Testni prompt za benchmark |
+| `BENCH_MODELS` | Sesija 03 | Modeli za benchmarking, odvojeni zarezom |
+| `BENCH_ROUNDS` | Sesija 03 | Broj rundi benchmarkinga |
+| `BENCH_PROMPT` | Sesija 03 | Testni prompt za benchmarking |
 | `BENCH_STREAM` | Sesija 03 | Mjerenje latencije prvog tokena |
 | `SLM_ALIAS` | Sesija 04 | Mali jezični model |
 | `LLM_ALIAS` | Sesija 04 | Veliki jezični model |
 | `COMPARE_PROMPT` | Sesija 04 | Testni prompt za usporedbu |
 | `AGENT_MODEL_PRIMARY` | Sesija 05 | Primarni model agenta |
-| `AGENT_MODEL_EDITOR` | Sesija 05 | Model agenta za uređivanje |
+| `AGENT_MODEL_EDITOR` | Sesija 05 | Model agenta urednika |
 | `AGENT_QUESTION` | Sesija 05 | Testno pitanje za agente |
 | `PIPELINE_TASK` | Sesija 06 | Zadatak za cjevovod |
 
 ---
 
-## Prekidne promjene
+## Promjene koje prekidaju kompatibilnost
 
 **Nema** - Sve promjene su unatrag kompatibilne.
 
-Postojeći skripti nastavit će raditi. Nove značajke uključuju:
+Postojeći skripti će i dalje raditi. Nove značajke su:
 - Opcionalne varijable okruženja
-- Poboljšane poruke o pogreškama (ne narušavaju funkcionalnost)
-- Dodatno logiranje (može se potisnuti)
+- Poboljšane poruke o pogreškama (ne prekidaju funkcionalnost)
+- Dodatno logiranje (može se isključiti)
 - Bolji tipovi podataka (bez utjecaja na vrijeme izvođenja)
 
 ---
@@ -314,7 +310,7 @@ from workshop_utils import get_client, chat_once
 # Provides caching, retry, and endpoint management
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
-  
+
 ### 2. Ispravan obrazac za rukovanje pogreškama
 ```python
 try:
@@ -325,14 +321,14 @@ except Exception as e:
     print("[INFO] Check: foundry service status")
     sys.exit(1)
 ```
-  
+
 ### 3. Informativno logiranje
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
-  
+
 ### 4. Tipovi podataka
 ```python
 from typing import Dict, List, Optional
@@ -340,7 +336,7 @@ from typing import Dict, List, Optional
 def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
-  
+
 ### 5. Sveobuhvatni docstringovi
 ```python
 def function(arg: str) -> str:
@@ -356,7 +352,7 @@ def function(arg: str) -> str:
         Exception: When it fails
     """
 ```
-  
+
 ### 6. Podrška za varijable okruženja
 ```python
 import os
@@ -364,8 +360,8 @@ import os
 alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
-  
-### 7. Elegantna degradacija
+
+### 7. Elegantno degradiranje
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -376,53 +372,48 @@ for model in models:
         print(f"[ERROR] {model} failed: {e}")
         print(f"[INFO] Skipping {model}...")
 ```
-  
 
 ---
 
 ## Uobičajeni problemi i rješenja
 
 ### Problem: Pogreške pri uvozu
-**Rješenje:** Instalirajte nedostajuće ovisnosti  
+**Rješenje:** Instalirajte nedostajuće ovisnosti
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
-  
 
-### Problem: Pogreške pri povezivanju
-**Rješenje:** Provjerite je li Foundry Local pokrenut  
+### Problem: Pogreške povezivanja
+**Rješenje:** Provjerite radi li Foundry Local
 ```bash
 foundry service status
 foundry model run phi-4-mini
 ```
-  
 
 ### Problem: Model nije pronađen
-**Rješenje:** Provjerite dostupne modele  
+**Rješenje:** Provjerite dostupne modele
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
-  
 
 ### Problem: Sporo izvođenje
-**Rješenje:** Koristite manje modele ili prilagodite parametre  
+**Rješenje:** Koristite manje modele ili prilagodite parametre
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 set BENCH_ROUNDS=2
 ```
-  
 
 ---
 
 ## Sljedeći koraci
 
 ### 1. Testirajte sve uzorke
-Prođite kroz popis za testiranje iznad kako biste provjerili rade li svi uzorci ispravno.
+Prođite kroz popis za provjeru testiranja iznad kako biste provjerili rade li svi uzorci ispravno.
 
 ### 2. Ažurirajte dokumentaciju
 - Ažurirajte markdown datoteke sesija s novim primjerima
-- Dodajte odjeljak za otklanjanje problema u glavni README
+- Dodajte odjeljak za rješavanje problema u glavni README
 - Izradite vodič za brzu referencu
 
 ### 3. Izradite integracijske testove
@@ -431,10 +422,9 @@ Prođite kroz popis za testiranje iznad kako biste provjerili rade li svi uzorci
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
-  
 
-### 4. Dodajte benchmarke izvedbe
-Pratite poboljšanja izvedbe od poboljšanja rukovanja pogreškama.
+### 4. Dodajte testove performansi
+Pratite poboljšanja performansi od poboljšanja rukovanja pogreškama.
 
 ### 5. Povratne informacije korisnika
 Prikupite povratne informacije od sudionika radionice o:
@@ -446,17 +436,17 @@ Prikupite povratne informacije od sudionika radionice o:
 
 ## Resursi
 
-- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
-- **Brza referenca**: `Workshop/FOUNDRY_SDK_QUICKREF.md`  
-- **Bilješke o migraciji**: `Workshop/SDK_MIGRATION_NOTES.md`  
-- **Glavni repozitorij**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **Brza referenca**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Bilješke o migraciji**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Glavni repozitorij**: https://github.com/microsoft/Foundry-Local
 
 ---
 
 ## Održavanje
 
 ### Dodavanje novih uzoraka
-Slijedite ove obrasce pri izradi novih uzoraka:
+Slijedite ove obrasce prilikom izrade novih uzoraka:
 
 1. Koristite `workshop_utils` za upravljanje klijentima
 2. Dodajte sveobuhvatno rukovanje pogreškama
@@ -464,23 +454,23 @@ Slijedite ove obrasce pri izradi novih uzoraka:
 4. Dodajte tipove podataka i docstringove
 5. Osigurajte informativno logiranje
 6. Uključite primjere korištenja u docstring
-7. Povežite se na SDK dokumentaciju
+7. Povežite se na dokumentaciju SDK-a
 
 ### Pregled ažuriranja
-Pri pregledu ažuriranja uzoraka, provjerite:
+Prilikom pregleda ažuriranja uzoraka, provjerite:
 - [ ] Rukovanje pogreškama na svim I/O operacijama
 - [ ] Tipovi podataka na javnim funkcijama
 - [ ] Sveobuhvatni docstringovi
 - [ ] Dokumentacija o varijablama okruženja
 - [ ] Informativna povratna informacija korisnika
-- [ ] SDK referentni linkovi
+- [ ] Poveznice na SDK referencu
 - [ ] Dosljedan stil koda
 
 ---
 
-**Sažetak**: Svi Python uzorci radionice sada slijede najbolje prakse Foundry Local SDK-a s poboljšanim rukovanjem pogreškama, sveobuhvatnom dokumentacijom i poboljšanim korisničkim iskustvom. Nema prekidnih promjena - sva postojeća funkcionalnost je očuvana i poboljšana.
+**Sažetak**: Svi Python uzorci radionice sada slijede najbolje prakse Foundry Local SDK-a s poboljšanim rukovanjem pogreškama, sveobuhvatnom dokumentacijom i poboljšanim korisničkim iskustvom. Nema promjena koje prekidaju kompatibilnost - sva postojeća funkcionalnost je očuvana i poboljšana.
 
 ---
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane ljudskog prevoditelja. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.
+**Izjava o odricanju odgovornosti**:  
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

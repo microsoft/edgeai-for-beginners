@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T11:01:24+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T21:36:37+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "br"
 }
@@ -11,12 +11,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Resumo
 
-Trate os modelos como ferramentas compostas dentro de uma camada operacional de IA local. Esta sessão mostra como encadear múltiplas chamadas especializadas de SLM/LLM, roteando tarefas seletivamente e expondo uma interface unificada de SDK para aplicações. Você construirá um roteador de modelos leve + planejador de tarefas, integrará isso em um script de aplicativo e delineará o caminho de escalabilidade para o Azure AI Foundry para cargas de trabalho em produção.
+Trate os modelos como ferramentas compostas dentro de uma camada operacional de IA local. Esta sessão mostra como encadear múltiplas chamadas especializadas de SLM/LLM, roteando tarefas seletivamente e expondo uma superfície unificada de SDK para aplicações. Você construirá um roteador de modelos leve + planejador de tarefas, integrará isso em um script de aplicativo e delineará o caminho de escalabilidade para o Azure AI Foundry para cargas de trabalho em produção.
 
 ## Objetivos de Aprendizado
 
 - **Conceituar** modelos como ferramentas atômicas com capacidades declaradas
-- **Roteamento** de solicitações com base em intenção / pontuação heurística
+- **Roteamento** de solicitações com base em intenção/pontuação heurística
 - **Encadear** saídas em tarefas de múltiplas etapas (decompor → resolver → refinar)
 - **Integrar** uma API de cliente unificada para aplicações downstream
 - **Escalar** o design para a nuvem (mesmo contrato compatível com OpenAI)
@@ -44,13 +44,13 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Acesso remoto/VM a partir de macOS:
+Acesso remoto/serviço VM a partir de macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Fluxo de Demonstração (30 min)
+## Fluxo da Demonstração (30 min)
 
 ### 1. Declaração de Capacidade de Ferramentas (5 min)
 
@@ -190,7 +190,7 @@ Melhorias:
 |--------|-----------------|--------------------------|--------------------------|
 | Roteamento | Python heurístico | Microsserviço durável | Containerizar e implantar API |
 | Modelos | SLMs armazenados em cache | Implantações gerenciadas | Mapear nomes locais para IDs de implantação |
-| Observabilidade | Estatísticas CLI/manuais | Registro centralizado e métricas | Adicionar eventos de rastreamento estruturados |
+| Observabilidade | Estatísticas CLI/manual | Registro centralizado e métricas | Adicionar eventos de rastreamento estruturados |
 | Segurança | Apenas host local | Autenticação/rede Azure | Introduzir cofre de chaves para segredos |
 | Custo | Recursos do dispositivo | Cobrança por consumo | Adicionar limites de orçamento |
 
@@ -215,9 +215,9 @@ Esperar seleção de modelo baseada em intenção e saída final refinada.
 
 ## Referências
 
-- Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- SDK Foundry Local: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Documentação do Azure AI Foundry: https://learn.microsoft.com/azure/ai-foundry
-- Padrões de Qualidade de Prompt: Ver Sessão 2
+- Padrões de Qualidade de Prompt: Veja Sessão 2
 
 ---
 
@@ -228,14 +228,14 @@ Esperar seleção de modelo baseada em intenção e saída final refinada.
 
 | Scripts / Notebooks do Workshop | Cenário | Objetivo | Fonte de Dataset / Catálogo |
 |---------------------------------|---------|----------|-----------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Assistente de desenvolvedor lidando com prompts de intenção mista (refatorar, resumir, classificar) | Roteamento heurístico de intenção → alias de modelo com uso de tokens | `CATALOG` embutido + regex `RULES` |
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Assistente de desenvolvedor lidando com prompts de intenção mista (refatorar, resumir, classificar) | Roteamento de alias de modelo baseado em intenção heurística com uso de tokens | `CATALOG` embutido + regex `RULES` |
 | `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planejamento e refinamento de múltiplas etapas para tarefa complexa de assistência em codificação | Decompor → execução especializada → etapa de refinamento de sumarização | Mesmo `CATALOG`; etapas derivadas da saída do plano |
 
 ### Narrativa do Cenário
 
-Uma ferramenta de produtividade de engenharia recebe tarefas heterogêneas: refatorar código, resumir notas arquiteturais, classificar feedback. Para minimizar latência e uso de recursos, um pequeno modelo geral planeja e resume, um modelo especializado em código lida com refatoração, e um modelo leve capaz de classificação rotula o feedback. O script de pipeline demonstra encadeamento + refinamento; o script de roteador isola o roteamento adaptativo de prompt único.
+Uma ferramenta de produtividade de engenharia recebe tarefas heterogêneas: refatorar código, resumir notas arquiteturais, classificar feedback. Para minimizar latência e uso de recursos, um modelo geral pequeno planeja e resume, um modelo especializado em código lida com refatoração, e um modelo leve capaz de classificação rotula o feedback. O script de pipeline demonstra encadeamento + refinamento; o script de roteador isola o roteamento adaptativo de prompt único.
 
-### Instantâneo do Catálogo
+### Snapshot do Catálogo
 
 ```python
 CATALOG = {
@@ -282,10 +282,10 @@ Se o plano contiver palavras-chave como "otimizar", "segurança", ou comprimento
 |------|----------|-------|------|
 | Cache | Reutilizar objetos de gerenciador + cliente | Menor latência, menos sobrecarga | Usar `workshop_utils.get_client` |
 | Métricas de Uso | Capturar tokens e latência por etapa | Perfilamento e otimização | Cronometrar cada chamada roteada; armazenar na lista de rastreamento |
-| Roteamento Adaptativo | Confiança / custo consciente | Melhor equilíbrio qualidade-custo | Adicionar pontuação: se prompt > N caracteres ou regex corresponder ao domínio → escalar para modelo maior |
-| Registro Dinâmico de Capacidades | Catálogo de recarga dinâmica | Sem necessidade de reiniciar reimplantação | Carregar `catalog.json` em tempo de execução; observar timestamp do arquivo |
+| Roteamento Adaptativo | Confiança/custo consciente | Melhor equilíbrio qualidade-custo | Adicionar pontuação: se prompt > N caracteres ou regex corresponder ao domínio → escalar para modelo maior |
+| Registro Dinâmico de Capacidades | Atualização dinâmica do catálogo | Sem necessidade de reiniciar ou reimplantar | Carregar `catalog.json` em tempo de execução; monitorar timestamp do arquivo |
 | Estratégia de Fallback | Robustez em falhas | Maior disponibilidade | Tentar primário → em exceção fallback para alias |
-| Pipeline de Streaming | Feedback antecipado | Melhoria de UX | Transmitir cada etapa e armazenar em buffer entrada final de refinamento |
+| Pipeline de Streaming | Feedback antecipado | Melhoria de UX | Transmitir cada etapa e armazenar em buffer a entrada final de refinamento |
 | Embeddings de Intenção Vetorial | Roteamento mais detalhado | Maior precisão de intenção | Incorporar prompt, agrupar e mapear centróide → capacidade |
 | Exportação de Rastreamento | Encadeamento auditável | Conformidade/relatórios | Emitir linhas JSON: etapa, intenção, modelo, latência_ms, tokens |
 | Simulação de Custo | Estimativa pré-nuvem | Planejamento de orçamento | Atribuir custo notional/token por modelo e agregar por tarefa |
@@ -313,7 +313,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
 ```
 
 
-#### Recarga Dinâmica do Catálogo de Modelos
+#### Atualização Dinâmica do Catálogo de Modelos
 
 ```python
 import json, time, os
@@ -328,10 +328,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Itere gradualmente—evite superengenharia em protótipos iniciais.
-
 ---
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

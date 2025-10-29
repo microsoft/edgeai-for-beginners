@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T13:11:59+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:06:56+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "sv"
 }
 -->
-# Workshop-exempel - Sammanfattning av Foundry Local SDK-uppdatering
+# Workshop-exempel - Sammanfattning av uppdateringar för Foundry Local SDK
 
 ## Översikt
 
-Alla Python-exempel i katalogen `Workshop/samples` har uppdaterats för att följa bästa praxis för Foundry Local SDK och säkerställa konsekvens i hela workshopen.
+Alla Python-exempel i katalogen `Workshop/samples` har uppdaterats för att följa bästa praxis för Foundry Local SDK och säkerställa konsekvens över hela workshopen.
 
 **Datum**: 8 oktober 2025  
 **Omfattning**: 9 Python-filer över 6 workshop-sessioner  
@@ -28,10 +28,10 @@ Alla Python-exempel i katalogen `Workshop/samples` har uppdaterats för att föl
 - ✅ `rag_pipeline.py` - RAG-implementering med embeddings
 - ✅ `rag_eval_ragas.py` - RAG-utvärdering med RAGAS-mått
 
-### Session 03: Öppna källkodsmodeller
+### Session 03: Öppna källkod-modeller
 - ✅ `benchmark_oss_models.py` - Benchmarking av flera modeller
 
-### Session 04: Banbrytande modeller
+### Session 04: Spjutspetsmodeller
 - ✅ `model_compare.py` - Jämförelse mellan SLM och LLM
 
 ### Session 05: AI-drivna agenter
@@ -50,11 +50,11 @@ Alla Python-exempel i katalogen `Workshop/samples` har uppdaterats för att föl
 
 ### 1. Förbättrad felhantering
 
-**Tidigare:**
+**Före:**
 ```python
 manager, client, model_id = get_client(alias)
 ```
-  
+
 **Efter:**
 ```python
 try:
@@ -64,7 +64,7 @@ except Exception as e:
     print("[INFO] Ensure Foundry Local is running: foundry service status")
     sys.exit(1)
 ```
-  
+
 **Fördelar:**
 - Smidig felhantering med tydliga felmeddelanden
 - Handlingsbara felsökningsförslag
@@ -72,11 +72,11 @@ except Exception as e:
 
 ### 2. Bättre hantering av import
 
-**Tidigare:**
+**Före:**
 ```python
 from sentence_transformers import SentenceTransformer
 ```
-  
+
 **Efter:**
 ```python
 try:
@@ -85,7 +85,7 @@ except ImportError:
     print("[ERROR] sentence-transformers is required. Install with: pip install sentence-transformers")
     sys.exit(1)
 ```
-  
+
 **Fördelar:**
 - Tydlig vägledning när beroenden saknas
 - Förhindrar kryptiska importfel
@@ -93,12 +93,12 @@ except ImportError:
 
 ### 3. Omfattande dokumentation
 
-**Tillagt i alla exempel:**
+**Lagt till i alla exempel:**
 - Dokumentation av miljövariabler i docstrings
 - SDK-referenslänkar
 - Användningsexempel
-- Detaljerad funktion-/parameterdokumentation
-- Typanvisningar för bättre stöd i IDE
+- Detaljerad dokumentation av funktioner/parametrar
+- Typanvisningar för bättre IDE-stöd
 
 **Exempel:**
 ```python
@@ -115,30 +115,28 @@ def pipeline(task: str) -> Dict[str, Any]:
         Exception: If any pipeline stage fails
     """
 ```
-  
 
 ### 4. Förbättrad användarfeedback
 
-**Tillagt informativ loggning:**
+**Lagt till informativ loggning:**
 ```python
 print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
 print(f"[INFO] Loaded model: {alias} -> {model_id}")
 ```
-  
+
 **Progressindikatorer:**
 ```python
 print(f"[INFO] Benchmarking {alias}...")
 print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
 print(f"[INFO] Completed {alias}\n")
 ```
-  
+
 **Strukturerad output:**
 ```python
 print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
-  
 
 ### 5. Robust benchmarking
 
@@ -146,21 +144,21 @@ print(json.dumps(summary, indent=2))
 - Felhantering per modell (fortsätter vid fel)
 - Detaljerad progressrapportering
 - Korrekt utförda uppvärmningsrundor
-- Stöd för mätning av latens för första token
-- Tydlig separering av steg
+- Stöd för mätning av första-token latens
+- Tydlig separation av steg
 
 ### 6. Konsekventa typanvisningar
 
-**Tillagt överallt:**
+**Lagt till överallt:**
 ```python
 from typing import Dict, List, Tuple, Any, Optional
 
 def run(alias: str) -> Tuple[float, str, Optional[int]]:
     """Run comparison for given model alias."""
 ```
-  
+
 **Fördelar:**
-- Bättre autocomplete i IDE
+- Bättre IDE-autokomplettering
 - Tidig felupptäckt
 - Självdokumenterande kod
 
@@ -197,77 +195,75 @@ foundry model run qwen2.5-0.5b
 # Install dependencies
 pip install -r Workshop/requirements.txt
 ```
-  
 
 ### Testa varje exempel
 
 #### Session 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
-  
+
 #### Session 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
-  
+
 #### Session 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
-  
+
 #### Session 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
-  
+
 #### Session 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
-  
+
 #### Session 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
-  
 
 ---
 
 ## Referens för miljövariabler
 
-### Globala (Alla exempel)
-| Variabel | Beskrivning | Standardvärde |
-|----------|-------------|---------------|
+### Globala (alla exempel)
+| Variabel | Beskrivning | Standard |
+|----------|-------------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Modellalias att använda | Varierar beroende på exempel |
 | `FOUNDRY_LOCAL_ENDPOINT` | Åsidosätt tjänstendpunkt | Auto-detekterad |
 | `SHOW_USAGE` | Visa tokenanvändning | `0` |
@@ -276,16 +272,16 @@ python models_pipeline.py
 
 ### Specifika för exempel
 | Variabel | Används av | Beskrivning |
-|----------|------------|-------------|
+|----------|---------|-------------|
 | `EMBED_MODEL` | Session 02 | Namn på embedding-modell |
 | `RAG_QUESTION` | Session 02 | Testfråga för RAG |
-| `BENCH_MODELS` | Session 03 | Komma-separerade modeller att benchmarka |
-| `BENCH_ROUNDS` | Session 03 | Antal benchmarkrundor |
-| `BENCH_PROMPT` | Session 03 | Testprompt för benchmarks |
-| `BENCH_STREAM` | Session 03 | Mäta latens för första token |
+| `BENCH_MODELS` | Session 03 | Kommaseparerade modeller att benchmarka |
+| `BENCH_ROUNDS` | Session 03 | Antal benchmark-rundor |
+| `BENCH_PROMPT` | Session 03 | Testprompt för benchmarking |
+| `BENCH_STREAM` | Session 03 | Mäta första-token latens |
 | `SLM_ALIAS` | Session 04 | Liten språkmodell |
 | `LLM_ALIAS` | Session 04 | Stor språkmodell |
-| `COMPARE_PROMPT` | Session 04 | Testprompt för jämförelse |
+| `COMPARE_PROMPT` | Session 04 | Jämförelsetestprompt |
 | `AGENT_MODEL_PRIMARY` | Session 05 | Primär agentmodell |
 | `AGENT_MODEL_EDITOR` | Session 05 | Redigeringsagentmodell |
 | `AGENT_QUESTION` | Session 05 | Testfråga för agenter |
@@ -314,7 +310,7 @@ from workshop_utils import get_client, chat_once
 # Provides caching, retry, and endpoint management
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
-  
+
 ### 2. Korrekt mönster för felhantering
 ```python
 try:
@@ -325,14 +321,14 @@ except Exception as e:
     print("[INFO] Check: foundry service status")
     sys.exit(1)
 ```
-  
+
 ### 3. Informativ loggning
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
-  
+
 ### 4. Typanvisningar
 ```python
 from typing import Dict, List, Optional
@@ -340,7 +336,7 @@ from typing import Dict, List, Optional
 def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
-  
+
 ### 5. Omfattande docstrings
 ```python
 def function(arg: str) -> str:
@@ -356,7 +352,7 @@ def function(arg: str) -> str:
         Exception: When it fails
     """
 ```
-  
+
 ### 6. Stöd för miljövariabler
 ```python
 import os
@@ -364,7 +360,7 @@ import os
 alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
-  
+
 ### 7. Smidig nedgradering
 ```python
 # In benchmarks - continue on individual failures
@@ -376,42 +372,37 @@ for model in models:
         print(f"[ERROR] {model} failed: {e}")
         print(f"[INFO] Skipping {model}...")
 ```
-  
 
 ---
 
 ## Vanliga problem och lösningar
 
 ### Problem: Importfel
-**Lösning:** Installera saknade beroenden  
+**Lösning:** Installera saknade beroenden
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
-  
 
 ### Problem: Anslutningsfel
-**Lösning:** Kontrollera att Foundry Local körs  
+**Lösning:** Kontrollera att Foundry Local körs
 ```bash
 foundry service status
 foundry model run phi-4-mini
 ```
-  
 
 ### Problem: Modell hittas inte
-**Lösning:** Kontrollera tillgängliga modeller  
+**Lösning:** Kontrollera tillgängliga modeller
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
-  
 
 ### Problem: Långsam prestanda
-**Lösning:** Använd mindre modeller eller justera parametrar  
+**Lösning:** Använd mindre modeller eller justera parametrar
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 set BENCH_ROUNDS=2
 ```
-  
 
 ---
 
@@ -421,7 +412,7 @@ set BENCH_ROUNDS=2
 Gå igenom testchecklistan ovan för att verifiera att alla exempel fungerar korrekt.
 
 ### 2. Uppdatera dokumentation
-- Uppdatera sessionens markdown-filer med nya exempel
+- Uppdatera sessionsmarkdown-filer med nya exempel
 - Lägg till felsökningssektion i huvud-README
 - Skapa snabbreferensguide
 
@@ -431,25 +422,24 @@ Gå igenom testchecklistan ovan för att verifiera att alla exempel fungerar kor
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
-  
 
 ### 4. Lägg till prestandabenchmarking
-Spåra prestandaförbättringar från förbättringar i felhantering.
+Följ upp prestandaförbättringar från förbättrad felhantering.
 
 ### 5. Användarfeedback
 Samla feedback från workshopdeltagare om:
 - Tydlighet i felmeddelanden
-- Fullständighet i dokumentation
+- Dokumentationens fullständighet
 - Användarvänlighet
 
 ---
 
 ## Resurser
 
-- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
-- **Snabbreferens**: `Workshop/FOUNDRY_SDK_QUICKREF.md`  
-- **Migrationsanteckningar**: `Workshop/SDK_MIGRATION_NOTES.md`  
-- **Huvudrepository**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **Snabbreferens**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Migreringsanteckningar**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Huvudrepository**: https://github.com/microsoft/Foundry-Local
 
 ---
 
@@ -462,7 +452,7 @@ Följ dessa mönster när du skapar nya exempel:
 2. Lägg till omfattande felhantering
 3. Inkludera stöd för miljövariabler
 4. Lägg till typanvisningar och docstrings
-5. Tillhandahåll informativ loggning
+5. Ge informativ loggning
 6. Inkludera användningsexempel i docstring
 7. Länka till SDK-dokumentation
 
@@ -478,9 +468,9 @@ När du granskar uppdateringar av exempel, kontrollera:
 
 ---
 
-**Sammanfattning**: Alla Python-exempel i workshopen följer nu bästa praxis för Foundry Local SDK med förbättrad felhantering, omfattande dokumentation och förbättrad användarupplevelse. Inga störande förändringar - all befintlig funktionalitet bevarad och förbättrad.
+**Sammanfattning**: Alla Workshop Python-exempel följer nu bästa praxis för Foundry Local SDK med förbättrad felhantering, omfattande dokumentation och förbättrad användarupplevelse. Inga störande förändringar - all befintlig funktionalitet bevarad och förbättrad.
 
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen notera att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

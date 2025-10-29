@@ -1,38 +1,38 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0ab7d0dee137f224a011d9db00f0d2a2",
-  "translation_date": "2025-10-28T17:14:10+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T20:24:09+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "fa"
 }
 -->
 # جلسه ۱: شروع کار با Foundry Local
 
-## خلاصه
+## چکیده
 
-سفر خود را با Foundry Local آغاز کنید و آن را روی ویندوز ۱۱ نصب و پیکربندی کنید. یاد بگیرید چگونه CLI را تنظیم کنید، شتاب‌دهی سخت‌افزاری را فعال کنید و مدل‌ها را برای استنتاج سریع محلی ذخیره کنید. این جلسه عملی شامل اجرای مدل‌هایی مانند Phi، Qwen، DeepSeek و GPT-OSS-20B با دستورات قابل بازتولید CLI است.
+سفر خود را با Foundry Local آغاز کنید و آن را روی ویندوز ۱۱ نصب و پیکربندی کنید. یاد بگیرید چگونه CLI را تنظیم کنید، شتاب سخت‌افزاری را فعال کنید و مدل‌ها را برای استنتاج سریع محلی کش کنید. این جلسه عملی شامل اجرای مدل‌هایی مانند Phi، Qwen، DeepSeek و GPT-OSS-20B با استفاده از دستورات CLI قابل بازتولید است.
 
 ## اهداف یادگیری
 
 در پایان این جلسه، شما قادر خواهید بود:
 
-- **نصب و پیکربندی**: Foundry Local را روی ویندوز ۱۱ با تنظیمات عملکرد بهینه نصب کنید.
+- **نصب و پیکربندی**: Foundry Local را روی ویندوز ۱۱ با تنظیمات بهینه نصب کنید.
 - **تسلط بر عملیات CLI**: از CLI Foundry Local برای مدیریت و استقرار مدل‌ها استفاده کنید.
-- **فعال‌سازی شتاب‌دهی سخت‌افزاری**: شتاب‌دهی GPU را با ONNXRuntime یا WebGPU پیکربندی کنید.
+- **فعال‌سازی شتاب سخت‌افزاری**: شتاب GPU را با ONNXRuntime یا WebGPU پیکربندی کنید.
 - **استقرار چندین مدل**: مدل‌های phi-4، GPT-OSS-20B، Qwen و DeepSeek را به صورت محلی اجرا کنید.
-- **ساخت اولین اپلیکیشن**: نمونه‌های موجود را برای استفاده از Foundry Local Python SDK تطبیق دهید.
+- **ساخت اولین برنامه خود**: نمونه‌های موجود را برای استفاده از Foundry Local Python SDK تطبیق دهید.
 
 # تست مدل (پاسخ غیرتعاملی به یک درخواست)
 foundry model run phi-4-mini --prompt "سلام، خودت را معرفی کن"
 
 - ویندوز ۱۱ (نسخه 22H2 یا بالاتر)
 # لیست مدل‌های موجود در کاتالوگ (مدل‌های بارگذاری‌شده پس از اجرا ظاهر می‌شوند)
-foundry model list
-## NOTE: در حال حاضر هیچ فلگ اختصاصی `--running` وجود ندارد؛ برای مشاهده مدل‌های بارگذاری‌شده، یک چت را آغاز کنید یا لاگ‌های سرویس را بررسی کنید.
-- نصب شده Python 3.10+
-- Visual Studio Code با افزونه Python
-- دسترسی ادمین برای نصب
+foundry model list  
+## توجه: در حال حاضر هیچ فلگ اختصاصی `--running` وجود ندارد؛ برای دیدن مدل‌های بارگذاری‌شده، یک چت را شروع کنید یا لاگ‌های سرویس را بررسی کنید.
+- نصب پایتون 3.10+  
+- Visual Studio Code با افزونه پایتون  
+- دسترسی ادمین برای نصب  
 
 ### (اختیاری) متغیرهای محیطی
 
@@ -40,19 +40,19 @@ foundry model list
 # مقایسه پاسخ‌ها (غیرتعاملی)
 foundry model run gpt-oss-20b --prompt "هوش مصنوعی لبه‌ای را به زبان ساده توضیح بده"
 | متغیر | هدف | مثال |
-|-------|-----|------|
+|-------|------|------|
 | `FOUNDRY_LOCAL_ALIAS` | نام مستعار مدل ترجیحی (کاتالوگ بهترین نسخه را به طور خودکار انتخاب می‌کند) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | جایگزینی نقطه پایانی (در غیر این صورت به طور خودکار از مدیر) | `http://localhost:5273/v1` |
+| `FOUNDRY_LOCAL_ENDPOINT` | جایگزینی نقطه پایانی (در غیر این صورت به طور خودکار از مدیر گرفته می‌شود) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | فعال‌سازی دمو استریمینگ | `true` |
 
 > اگر `FOUNDRY_LOCAL_ENDPOINT=auto` (یا تنظیم نشده باشد)، از مدیر SDK استخراج می‌شود.
 
 ## جریان دمو (۳۰ دقیقه)
 
-### ۱. نصب Foundry Local و تأیید تنظیم CLI (۱۰ دقیقه)
+### ۱. نصب Foundry Local و تأیید تنظیمات CLI (۱۰ دقیقه)
 
-# لیست مدل‌های ذخیره‌شده
-foundry cache list
+# لیست مدل‌های کش‌شده
+foundry cache list  
 
 ```powershell
 # Install via winget (recommended)
@@ -61,10 +61,10 @@ winget install Microsoft.FoundryLocal
 # Or download from Microsoft Learn
 # https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
+  
+**macOS (پیش‌نمایش / در صورت پشتیبانی)**  
 
-**macOS (پیش‌نمایش / در صورت پشتیبانی)**
-
-اگر بسته بومی macOS ارائه شده باشد (برای آخرین نسخه به مستندات رسمی مراجعه کنید):
+اگر بسته بومی macOS ارائه شده است (برای آخرین اطلاعات به مستندات رسمی مراجعه کنید):  
 
 ```bash
 # Homebrew (if/when available)
@@ -76,32 +76,32 @@ curl -L -o foundry-local.tar.gz "https://download.microsoft.com/foundry-local/la
 tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
+  
+اگر باینری‌های بومی macOS هنوز در دسترس نیستند، همچنان می‌توانید:  
+1. از یک ماشین مجازی ویندوز ۱۱ ARM/Intel (Parallels / UTM) استفاده کنید و مراحل ویندوز را دنبال کنید.  
+2. مدل‌ها را از طریق کانتینر اجرا کنید (در صورت انتشار تصویر کانتینر) و `FOUNDRY_LOCAL_ENDPOINT` را به پورت باز شده تنظیم کنید.  
 
-اگر باینری‌های بومی macOS هنوز در دسترس نیستند، همچنان می‌توانید:
-1. از یک ماشین مجازی ویندوز ۱۱ ARM/Intel (Parallels / UTM) استفاده کنید و مراحل ویندوز را دنبال کنید.
-2. مدل‌ها را از طریق کانتینر اجرا کنید (در صورت انتشار تصویر کانتینر) و `FOUNDRY_LOCAL_ENDPOINT` را به پورت باز شده تنظیم کنید.
+**ایجاد محیط مجازی پایتون (چند پلتفرمی)**  
 
-**ایجاد محیط مجازی پایتون (چند پلتفرمی)**
-
-Windows PowerShell:
+Windows PowerShell:  
 ```powershell
 py -m venv .venv
  .\.venv\Scripts\Activate.ps1
 ```
-
-macOS / Linux:
+  
+macOS / Linux:  
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
-
-ارتقاء pip و نصب وابستگی‌های اصلی:
+  
+ارتقاء pip و نصب وابستگی‌های اصلی:  
 ```bash
 python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
-
-#### مرحله ۱.۲: تأیید نصب
+  
+#### مرحله ۱.۲: تأیید نصب  
 
 ```powershell
 # Check version
@@ -113,8 +113,8 @@ foundry init
 # View available commands
 foundry --help
 ```
-
-#### مرحله ۱.۳: پیکربندی محیط
+  
+#### مرحله ۱.۳: پیکربندی محیط  
 
 ```powershell
 # Set up Python environment for Module08
@@ -125,10 +125,10 @@ py -m venv .venv
 # Install Foundry Local Python SDK and dependencies
 pip install foundry-local-sdk openai requests
 ```
+  
+### بوت‌استرپینگ SDK (توصیه‌شده)  
 
-### بوت‌استرپینگ SDK (توصیه‌شده)
-
-به جای راه‌اندازی دستی سرویس و اجرای مدل‌ها، **Foundry Local Python SDK** می‌تواند همه چیز را بوت‌استرپ کند:
+به جای راه‌اندازی دستی سرویس و اجرای مدل‌ها، **Foundry Local Python SDK** می‌تواند همه چیز را بوت‌استرپ کند:  
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -157,12 +157,12 @@ resp = client.chat.completions.create(
 )
 print(resp.choices[0].message.content)
 ```
+  
+اگر کنترل صریح را ترجیح می‌دهید، همچنان می‌توانید از CLI + کلاینت OpenAI همان‌طور که در ادامه نشان داده شده استفاده کنید.  
 
-اگر ترجیح می‌دهید کنترل صریح داشته باشید، همچنان می‌توانید از CLI + کلاینت OpenAI همانطور که بعداً نشان داده شده استفاده کنید.
+### ۲. اجرای مدل‌ها به صورت محلی از طریق CLI (۱۰ دقیقه)  
 
-### ۲. اجرای مدل‌ها به صورت محلی از طریق CLI (۱۰ دقیقه)
-
-#### مرحله ۳.۱: استقرار مدل Phi-4
+#### مرحله ۳.۱: استقرار مدل Phi-4  
 
 ```powershell
 # Download and run phi-4-mini
@@ -173,8 +173,8 @@ foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 
 # NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
 ```
-
-#### مرحله ۳.۲: استقرار GPT-OSS-20B
+  
+#### مرحله ۳.۲: استقرار GPT-OSS-20B  
 
 ```powershell
 # Download and run GPT-OSS-20B
@@ -183,8 +183,8 @@ foundry model run gpt-oss-20b
 # Compare responses (one-shot prompt)
 foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 ```
-
-#### مرحله ۳.۳: بارگذاری مدل‌های اضافی
+  
+#### مرحله ۳.۳: بارگذاری مدل‌های اضافی  
 
 ```powershell
 # Download Qwen model family
@@ -197,12 +197,12 @@ foundry model download deepseek-coder-1.3b
 # List cached models
 foundry cache list
 ```
+  
+### ۴. پروژه شروع‌کننده: تطبیق 01-run-phi برای Foundry Local (۵ دقیقه)  
 
-### ۴. پروژه مقدماتی: تطبیق 01-run-phi برای Foundry Local (۵ دقیقه)
+#### مرحله ۴.۱: ایجاد برنامه چت پایه  
 
-#### مرحله ۴.۱: ایجاد اپلیکیشن چت ساده
-
-ایجاد `samples/01-foundry-quickstart/chat_quickstart.py` (به‌روزرسانی شده برای استفاده از مدیر در صورت موجود بودن):
+ایجاد `samples/01-foundry-quickstart/chat_quickstart.py` (به‌روزرسانی‌شده برای استفاده از مدیر در صورت موجود بودن):  
 
 ```python
 #!/usr/bin/env python3
@@ -271,8 +271,8 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
-#### مرحله ۴.۲: تست اپلیکیشن
+  
+#### مرحله ۴.۲: تست برنامه  
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -284,17 +284,17 @@ python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Found
 # Try interactive mode
 python samples/01-foundry-quickstart/chat_quickstart.py
 ```
+  
+## مفاهیم کلیدی پوشش داده‌شده  
 
-## مفاهیم کلیدی پوشش داده شده
+### ۱. معماری Foundry Local  
 
-### ۱. معماری Foundry Local
+- **موتور استنتاج محلی**: اجرای مدل‌ها به طور کامل روی دستگاه شما  
+- **سازگاری با OpenAI SDK**: یکپارچگی بدون درز با کد موجود OpenAI  
+- **مدیریت مدل**: دانلود، کش و اجرای چندین مدل به صورت کارآمد  
+- **بهینه‌سازی سخت‌افزار**: استفاده از شتاب GPU، NPU و CPU  
 
-- **موتور استنتاج محلی**: مدل‌ها را کاملاً روی دستگاه شما اجرا می‌کند.
-- **سازگاری با SDK OpenAI**: یکپارچگی بی‌دردسر با کد موجود OpenAI.
-- **مدیریت مدل**: دانلود، ذخیره و اجرای چندین مدل به صورت کارآمد.
-- **بهینه‌سازی سخت‌افزاری**: استفاده از شتاب‌دهی GPU، NPU و CPU.
-
-### ۲. مرجع دستورات CLI
+### ۲. مرجع دستورات CLI  
 
 ```powershell
 # Core Commands
@@ -305,8 +305,8 @@ foundry model unload <name>    # Unload from memory
 
 foundry config list            # Current configuration
 ```
-
-### ۳. یکپارچگی SDK پایتون
+  
+### ۳. یکپارچه‌سازی Python SDK  
 
 ```python
 # Basic client setup
@@ -339,21 +339,21 @@ for chunk in stream:
         print(delta.content, end="", flush=True)
 print()
 ```
+  
+## رفع مشکلات رایج  
 
-## رفع مشکلات رایج
+### مشکل ۱: "دستور Foundry پیدا نشد"  
 
-### مشکل ۱: "دستور Foundry پیدا نشد"
-
-**راه‌حل:**
+**راه‌حل:**  
 ```powershell
 # Restart PowerShell after installation
 # Or manually add to PATH
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
+  
+### مشکل ۲: "مدل بارگذاری نشد"  
 
-### مشکل ۲: "مدل بارگذاری نشد"
-
-**راه‌حل:**
+**راه‌حل:**  
 ```powershell
 # Check available memory
 foundry system info
@@ -364,10 +364,10 @@ foundry model run phi-4-mini
 # Check disk space for model cache
 dir "$env:USERPROFILE\.foundry\models"
 ```
+  
+### مشکل ۳: "اتصال به localhost:5273 رد شد"  
 
-### مشکل ۳: "اتصال به localhost:5273 رد شد"
-
-**راه‌حل:**
+**راه‌حل:**  
 ```powershell
 # Check if service is running
 foundry status
@@ -378,17 +378,17 @@ foundry service start
 # Check for port conflicts
 netstat -an | findstr 5273
 ```
+  
+## نکات بهینه‌سازی عملکرد  
 
-## نکات بهینه‌سازی عملکرد
+### ۱. استراتژی انتخاب مدل  
 
-### ۱. استراتژی انتخاب مدل
+- **Phi-4-mini**: بهترین برای وظایف عمومی، مصرف حافظه کمتر  
+- **Qwen2.5-0.5b**: سریع‌ترین استنتاج، منابع حداقلی  
+- **GPT-OSS-20B**: بالاترین کیفیت، نیازمند منابع بیشتر  
+- **DeepSeek-Coder**: بهینه‌شده برای وظایف برنامه‌نویسی  
 
-- **Phi-4-mini**: بهترین برای وظایف عمومی، مصرف حافظه کمتر.
-- **Qwen2.5-0.5b**: سریع‌ترین استنتاج، منابع حداقلی.
-- **GPT-OSS-20B**: بالاترین کیفیت، نیازمند منابع بیشتر.
-- **DeepSeek-Coder**: بهینه‌شده برای وظایف برنامه‌نویسی.
-
-### ۲. بهینه‌سازی سخت‌افزاری
+### ۲. بهینه‌سازی سخت‌افزار  
 
 ```powershell
 # Enable all acceleration options
@@ -400,36 +400,37 @@ foundry config set compute.cpu.threads auto
 foundry config set model.cache.max_size 10GB
 foundry config set model.preload false
 ```
-
-### ۳. نظارت بر عملکرد
+  
+### ۳. نظارت بر عملکرد  
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
-
-### بهبودهای اختیاری
+  
+### بهبودهای اختیاری  
 
 | بهبود | چیست | چگونه |
 |-------|------|-------|
 | ابزارهای مشترک | حذف منطق تکراری کلاینت/بوت‌استرپ | استفاده از `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| نمایش استفاده از توکن | آموزش تفکر هزینه/کارایی از ابتدا | تنظیم `SHOW_USAGE=1` برای چاپ توکن‌های درخواست/پاسخ/کل |
-| مقایسه‌های تعیین‌کننده | بررسی‌های پایداری و رگرسیون | استفاده از `temperature=0`، `top_p=1`، متن درخواست ثابت |
-| تأخیر اولین توکن | معیار پاسخگویی قابل درک | تطبیق اسکریپت بنچمارک با استریمینگ (`BENCH_STREAM=1`) |
-| تلاش مجدد در خطاهای گذرا | دموهای مقاوم در شروع سرد | `RETRY_ON_FAIL=1` (پیش‌فرض) و تنظیم `RETRY_BACKOFF` |
+| نمایش استفاده از توکن | آموزش تفکر هزینه/کارایی در مراحل اولیه | تنظیم `SHOW_USAGE=1` برای نمایش توکن‌های درخواست/پاسخ/کل |
+| مقایسه‌های قطعی | معیارگذاری پایدار و بررسی رگرسیون | استفاده از `temperature=0`، `top_p=1`، متن درخواست ثابت |
+| تأخیر اولین توکن | معیار پاسخگویی درک‌شده | تطبیق اسکریپت معیار با استریمینگ (`BENCH_STREAM=1`) |
+| تلاش مجدد در خطاهای موقت | دموهای مقاوم در شروع سرد | `RETRY_ON_FAIL=1` (پیش‌فرض) و تنظیم `RETRY_BACKOFF` |
 | تست دود | بررسی سریع جریان‌های کلیدی | اجرای `python Workshop/tests/smoke.py` قبل از کارگاه |
-| پروفایل‌های نام مستعار مدل | تغییر سریع مجموعه مدل بین ماشین‌ها | نگهداری `.env` با `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| کارایی ذخیره‌سازی | جلوگیری از گرم شدن مکرر در اجرای چند نمونه | مدیران ذخیره‌سازی ابزارها؛ استفاده مجدد در اسکریپت‌ها/دفترچه‌ها |
-| گرم شدن اولیه اجرا | کاهش نوسانات تأخیر p95 | ارسال یک درخواست کوچک پس از ایجاد `FoundryLocalManager` |
+| پروفایل‌های نام مستعار مدل | تغییر سریع مجموعه مدل بین ماشین‌ها | نگهداری `.env` با `FOUNDRY_LOCAL_ALIAS`، `SLM_ALIAS`، `LLM_ALIAS` |
+| کارایی کش | جلوگیری از گرم‌کردن‌های مکرر در اجرای چند نمونه | استفاده از مدیران کش؛ استفاده مجدد در اسکریپت‌ها/دفترچه‌ها |
+| گرم‌کردن اولیه | کاهش نوسانات تأخیر p95 | ارسال یک درخواست کوچک پس از ایجاد `FoundryLocalManager` |
 
-مثال پایه گرم تعیین‌کننده (PowerShell):
+مثال پایه گرم قطعی (PowerShell):  
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -437,51 +438,51 @@ set SHOW_USAGE=1
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference." | Out-Null
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
+  
+باید خروجی مشابهی ببینید و تعداد توکن‌های یکسانی در اجرای دوم تأیید شود که قطعی بودن را نشان می‌دهد.  
 
-شما باید خروجی مشابه و تعداد توکن‌های یکسانی در اجرای دوم مشاهده کنید که تأییدکننده تعیین‌کنندگی است.
+## گام‌های بعدی  
 
-## مراحل بعدی
+پس از اتمام این جلسه:  
 
-پس از اتمام این جلسه:
+1. **بررسی جلسه ۲**: ساخت راه‌حل‌های هوش مصنوعی با Azure AI Foundry RAG  
+2. **آزمایش مدل‌های مختلف**: آزمایش با Qwen، DeepSeek و دیگر خانواده‌های مدل  
+3. **بهینه‌سازی عملکرد**: تنظیم دقیق تنظیمات برای سخت‌افزار خاص خود  
+4. **ساخت برنامه‌های سفارشی**: استفاده از Foundry Local SDK در پروژه‌های خود  
 
-1. **بررسی جلسه ۲**: ساخت راه‌حل‌های هوش مصنوعی با Azure AI Foundry RAG.
-2. **آزمایش مدل‌های مختلف**: آزمایش با Qwen، DeepSeek و خانواده‌های مدل دیگر.
-3. **بهینه‌سازی عملکرد**: تنظیمات را برای سخت‌افزار خاص خود بهینه کنید.
-4. **ساخت اپلیکیشن‌های سفارشی**: از Foundry Local SDK در پروژه‌های خود استفاده کنید.
+## منابع اضافی  
 
-## منابع اضافی
+### مستندات  
+- [مرجع Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)  
+- [راهنمای نصب Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)  
+- [کاتالوگ مدل](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)  
 
-### مستندات
-- [مرجع Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [راهنمای نصب Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
-- [کاتالوگ مدل‌ها](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
+### کد نمونه  
+- [نمونه Module08 شماره 01](./samples/01/README.md) - شروع سریع چت REST  
+- [نمونه Module08 شماره 02](./samples/02/README.md) - یکپارچه‌سازی OpenAI SDK  
+- [نمونه Module08 شماره 03](./samples/03/README.md) - کشف مدل و معیارگذاری  
 
-### کد نمونه
-- [نمونه Module08 شماره 01](./samples/01/README.md) - شروع سریع چت REST
-- [نمونه Module08 شماره 02](./samples/02/README.md) - یکپارچگی SDK OpenAI
-- [نمونه Module08 شماره 03](./samples/03/README.md) - کشف مدل و بنچمارکینگ
-
-### جامعه
-- [بحث‌های GitHub Foundry Local](https://github.com/microsoft/Foundry-Local/discussions)
-- [جامعه هوش مصنوعی Azure](https://techcommunity.microsoft.com/category/artificialintelligence)
+### جامعه  
+- [بحث‌های GitHub Foundry Local](https://github.com/microsoft/Foundry-Local/discussions)  
+- [جامعه هوش مصنوعی Azure](https://techcommunity.microsoft.com/category/artificialintelligence)  
 
 ---
 
 **مدت زمان جلسه**: ۳۰ دقیقه عملی + ۱۵ دقیقه پرسش و پاسخ  
 **سطح دشواری**: مبتدی  
-**پیش‌نیازها**: ویندوز ۱۱، Python 3.10+، دسترسی ادمین  
+**پیش‌نیازها**: ویندوز ۱۱، پایتون 3.10+، دسترسی ادمین  
 
-## سناریوی نمونه و نقشه‌برداری کارگاه
+## سناریوی نمونه و نقشه‌برداری کارگاه  
 
-| اسکریپت / دفترچه کارگاه | سناریو | هدف | ورودی‌های نمونه | دیتاست مورد نیاز |
-|-------------------------|--------|-----|-----------------|------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | تیم IT داخلی که ارزیابی استنتاج روی دستگاه را برای یک پورتال ارزیابی حریم خصوصی انجام می‌دهد | اثبات پاسخ SLM محلی در زیر یک ثانیه تأخیر در درخواست‌های استاندارد | "دو مزیت استنتاج محلی را لیست کنید." | هیچ (فقط یک درخواست) |
-| کد تطبیق سریع شروع | توسعه‌دهنده‌ای که یک اسکریپت OpenAI موجود را به Foundry Local منتقل می‌کند | نمایش سازگاری سریع | "دو مزیت استنتاج محلی را بده." | فقط درخواست داخلی |
+| اسکریپت / دفترچه کارگاه | سناریو | هدف | ورودی‌های نمونه | داده‌های مورد نیاز |
+|-------------------------|--------|------|-----------------|-------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | تیم فناوری اطلاعات داخلی که ارزیابی استنتاج روی دستگاه را برای یک پورتال ارزیابی حریم خصوصی انجام می‌دهد | اثبات اینکه SLM محلی در پاسخ به درخواست‌های استاندارد در کمتر از یک ثانیه پاسخ می‌دهد | "دو مزیت استنتاج محلی را فهرست کنید." | هیچ (فقط یک درخواست) |
+| کد تطبیق سریع شروع | توسعه‌دهنده‌ای که یک اسکریپت OpenAI موجود را به Foundry Local منتقل می‌کند | نشان دادن سازگاری سریع | "دو مزیت استنتاج محلی را بگویید." | فقط درخواست داخلی |
 
-### روایت سناریو
-تیم امنیت و انطباق باید تأیید کند که آیا داده‌های حساس نمونه اولیه می‌توانند به صورت محلی پردازش شوند. آن‌ها اسکریپت بوت‌استرپ را با چندین درخواست (حریم خصوصی، تأخیر، هزینه) در حالت تعیین‌کننده temperature=0 اجرا می‌کنند تا خروجی‌های پایه را برای مقایسه بعدی (بنچمارکینگ جلسه ۳ و مقایسه SLM و LLM جلسه ۴) ثبت کنند.
+### روایت سناریو  
+تیم امنیت و انطباق باید تأیید کند که آیا داده‌های حساس نمونه می‌توانند به صورت محلی پردازش شوند. آن‌ها اسکریپت بوت‌استرپ را با چندین درخواست (حریم خصوصی، تأخیر، هزینه) در حالت دمای قطعی=0 اجرا می‌کنند تا خروجی‌های پایه را برای مقایسه‌های بعدی (معیارگذاری جلسه ۳ و مقایسه SLM و LLM در جلسه ۴) ثبت کنند.  
 
-### مجموعه درخواست حداقلی JSON (اختیاری)
+### مجموعه درخواست‌های حداقلی JSON (اختیاری)  
 ```json
 [
     "List two benefits of local inference.",
@@ -489,10 +490,10 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
     "Give one trade‑off when choosing an SLM over a large model."
 ]
 ```
-
-از این لیست برای ایجاد یک حلقه ارزیابی قابل بازتولید یا برای بذر یک تست رگرسیون آینده استفاده کنید.
+  
+از این لیست برای ایجاد یک حلقه ارزیابی قابل بازتولید یا برای شروع یک چارچوب تست رگرسیون آینده استفاده کنید.  
 
 ---
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان مادری باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.

@@ -1,44 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-11T12:02:07+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-29T00:01:21+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "et"
 }
 -->
-# Workshopi Näidised - Foundry Local SDK Uuenduste Kokkuvõte
+# Töötuba Näidised - Foundry Local SDK värskenduste kokkuvõte
 
 ## Ülevaade
 
-Kõik Python-näidised kataloogis `Workshop/samples` on uuendatud, et järgida Foundry Local SDK parimaid tavasid ja tagada järjepidevus kogu workshopi ulatuses.
+Kõik Python näidised kataloogis `Workshop/samples` on uuendatud, et järgida Foundry Local SDK parimaid tavasid ja tagada järjepidevus kogu töötoas.
 
 **Kuupäev**: 8. oktoober 2025  
-**Ulatus**: 9 Python-faili 6 workshopi sessioonis  
-**Peamine Fookus**: Vigade käsitlemine, dokumentatsioon, SDK mustrid, kasutajakogemus
+**Ulatus**: 9 Python faili 6 töötoa sessioonis  
+**Peamine fookus**: Vigade käsitlemine, dokumentatsioon, SDK mustrid, kasutajakogemus
 
 ---
 
-## Uuendatud Failid
+## Uuendatud failid
 
 ### Sessioon 01: Alustamine
 - ✅ `chat_bootstrap.py` - Põhilised vestluse ja voogesituse näited
 
-### Sessioon 02: RAG Lahendused
-- ✅ `rag_pipeline.py` - RAG-i rakendamine koos sisseehitustega
-- ✅ `rag_eval_ragas.py` - RAG-i hindamine RAGAS-i mõõdikutega
+### Sessioon 02: RAG lahendused
+- ✅ `rag_pipeline.py` - RAG rakendamine koos sisseehitustega
+- ✅ `rag_eval_ragas.py` - RAG hindamine RAGAS mõõdikutega
 
-### Sessioon 03: Avatud Lähtekoodiga Mudelid
+### Sessioon 03: Avatud lähtekoodiga mudelid
 - ✅ `benchmark_oss_models.py` - Mitme mudeli võrdlus
 
-### Sessioon 04: Tipptasemel Mudelid
+### Sessioon 04: Tipptasemel mudelid
 - ✅ `model_compare.py` - SLM vs LLM võrdlus
 
-### Sessioon 05: AI-põhised Agendid
+### Sessioon 05: AI-põhised agendid
 - ✅ `agents_orchestrator.py` - Mitme agendi koordineerimine
 
-### Sessioon 06: Mudelid Tööriistadena
-- ✅ `models_router.py` - Kavatsusepõhine mudelite suunamine
+### Sessioon 06: Mudelid tööriistadena
+- ✅ `models_router.py` - Kavatsusel põhinev mudelite suunamine
 - ✅ `models_pipeline.py` - Mitmeastmeline suunatud torustik
 
 ### Tugistruktuur
@@ -46,9 +46,9 @@ Kõik Python-näidised kataloogis `Workshop/samples` on uuendatud, et järgida F
 
 ---
 
-## Peamised Parandused
+## Peamised täiustused
 
-### 1. Täiustatud Vigade Käsitlemine
+### 1. Täiustatud vigade käsitlemine
 
 **Enne:**
 ```python
@@ -68,9 +68,9 @@ except Exception as e:
 **Eelised:**
 - Sujuv vigade käsitlemine selgete veateadetega
 - Tegutsemiseks vajalikud vihjed
-- Skriptide jaoks sobivad väljumiskoodid
+- Skriptide jaoks õiged väljumiskoodid
 
-### 2. Parem Impordi Haldamine
+### 2. Parem impordi haldamine
 
 **Enne:**
 ```python
@@ -88,17 +88,17 @@ except ImportError:
 
 **Eelised:**
 - Selged juhised, kui sõltuvused puuduvad
-- Väldib segaseid impordivigu
+- Välditakse segaseid impordivigu
 - Kasutajasõbralikud paigaldusjuhised
 
-### 3. Põhjalik Dokumentatsioon
+### 3. Põhjalik dokumentatsioon
 
-**Lisatud kõigile näidistele:**
+**Lisatud kõikidele näidistele:**
 - Keskkonnamuutujate dokumentatsioon docstringides
 - SDK viited
 - Kasutusnäited
-- Üksikasjalik funktsioonide/parameetrite dokumentatsioon
-- Tüüpide vihjed parema IDE toe jaoks
+- Üksikasjalik funktsiooni/parameetri dokumentatsioon
+- Tüübiviited parema IDE toe jaoks
 
 **Näide:**
 ```python
@@ -116,7 +116,7 @@ def pipeline(task: str) -> Dict[str, Any]:
     """
 ```
 
-### 4. Parendatud Kasutajate Tagasiside
+### 4. Parendatud kasutajate tagasiside
 
 **Lisatud informatiivne logimine:**
 ```python
@@ -138,16 +138,16 @@ print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
 
-### 5. Tugev Võrdlus
+### 5. Tugev võrdlus
 
-**Sessioon 03 parandused:**
-- Mudelipõhine vigade käsitlemine (jätkab ebaõnnestumise korral)
+**Sessioon 03 täiustused:**
+- Mudelitepõhine vigade käsitlemine (jätkab ebaõnnestumise korral)
 - Üksikasjalik edenemise aruandlus
 - Soojendusringid korralikult teostatud
 - Esimese märgi latentsuse mõõtmise tugi
 - Etappide selge eristamine
 
-### 6. Järjepidevad Tüüpide Vihjed
+### 6. Järjepidevad tüübiviited
 
 **Lisatud kõikjal:**
 ```python
@@ -162,18 +162,18 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 - Varajane vigade tuvastamine
 - Ise dokumenteeriv kood
 
-### 7. Täiustatud Mudelite Suunaja
+### 7. Täiustatud mudelite suunaja
 
-**Sessioon 06 parandused:**
+**Sessioon 06 täiustused:**
 - Põhjalik kavatsuste tuvastamise dokumentatsioon
 - Mudeli valiku algoritmi selgitus
 - Üksikasjalikud suunamislogid
 - Testi väljundi vormindamine
-- Vigade taastamine partiitestides
+- Vigade taastamine partii testimisel
 
-### 8. Mitme Agendi Orkestreerimine
+### 8. Mitme agendi orkestreerimine
 
-**Sessioon 05 parandused:**
+**Sessioon 05 täiustused:**
 - Etappide kaupa edenemise aruandlus
 - Agendipõhine vigade käsitlemine
 - Selge torustiku struktuur
@@ -181,7 +181,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 
 ---
 
-## Testimise Kontrollnimekiri
+## Testimise kontrollnimekiri
 
 ### Eeltingimused
 ```bash
@@ -196,86 +196,86 @@ foundry model run qwen2.5-0.5b
 pip install -r Workshop/requirements.txt
 ```
 
-### Testi Iga Näidis
+### Testi iga näidist
 
 #### Sessioon 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Sessioon 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Sessioon 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Sessioon 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Sessioon 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Sessioon 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
 
-## Keskkonnamuutujate Viited
+## Keskkonnamuutujate viited
 
-### Üldine (Kõik Näidised)
+### Üldine (kõik näidised)
 | Muutuja | Kirjeldus | Vaikimisi |
 |---------|-----------|-----------|
-| `FOUNDRY_LOCAL_ALIAS` | Kasutatav mudeli alias | Erinev näidise järgi |
+| `FOUNDRY_LOCAL_ALIAS` | Kasutatava mudeli alias | Olenevalt näidisest |
 | `FOUNDRY_LOCAL_ENDPOINT` | Teenuse lõpp-punkti ülekirjutamine | Automaatne tuvastamine |
 | `SHOW_USAGE` | Näita tokenite kasutust | `0` |
 | `RETRY_ON_FAIL` | Luba uuesti proovimise loogika | `1` |
 | `RETRY_BACKOFF` | Esialgne uuesti proovimise viivitus | `1.0` |
 
-### Näidise Spetsiifiline
+### Näidise-spetsiifiline
 | Muutuja | Kasutaja | Kirjeldus |
 |---------|----------|-----------|
-| `EMBED_MODEL` | Sessioon 02 | Sisseehituse mudeli nimi |
-| `RAG_QUESTION` | Sessioon 02 | Testküsimus RAG-i jaoks |
-| `BENCH_MODELS` | Sessioon 03 | Komaga eraldatud mudelid võrdluseks |
+| `EMBED_MODEL` | Sessioon 02 | Sisseehitatud mudeli nimi |
+| `RAG_QUESTION` | Sessioon 02 | RAG-i testküsimus |
+| `BENCH_MODELS` | Sessioon 03 | Võrdluseks kasutatavad mudelid (komaga eraldatud) |
 | `BENCH_ROUNDS` | Sessioon 03 | Võrdlusringide arv |
 | `BENCH_PROMPT` | Sessioon 03 | Testi küsimus võrdluseks |
 | `BENCH_STREAM` | Sessioon 03 | Esimese märgi latentsuse mõõtmine |
@@ -289,21 +289,21 @@ python models_pipeline.py
 
 ---
 
-## Muutused, Mis Võivad Funktsionaalsust Mõjutada
+## Muutused
 
 **Puuduvad** - Kõik muudatused on tagasiühilduvad.
 
-Olemasolevad skriptid töötavad edasi. Uued funktsioonid on:
+Olemasolevad skriptid töötavad endiselt. Uued funktsioonid on:
 - Valikulised keskkonnamuutujad
 - Täiustatud veateated (ei riku funktsionaalsust)
 - Lisatud logimine (saab maha suruda)
-- Paremad tüüpide vihjed (ei mõjuta käitusaega)
+- Paremad tüübiviited (ei mõjuta käitusaega)
 
 ---
 
-## Rakendatud Parimad Tavad
+## Rakendatud parimad tavad
 
-### 1. Kasuta Alati Workshop Utilse
+### 1. Kasuta alati Workshop Utilsi
 ```python
 from workshop_utils import get_client, chat_once
 
@@ -311,7 +311,7 @@ from workshop_utils import get_client, chat_once
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
 
-### 2. Õige Vigade Käsitlemise Muster
+### 2. Õige vigade käsitlemise muster
 ```python
 try:
     # Initialize client
@@ -322,14 +322,14 @@ except Exception as e:
     sys.exit(1)
 ```
 
-### 3. Informatiivne Logimine
+### 3. Informatiivne logimine
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
 
-### 4. Tüüpide Vihjed
+### 4. Tüübiviited
 ```python
 from typing import Dict, List, Optional
 
@@ -337,7 +337,7 @@ def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
 
-### 5. Põhjalikud Docstringid
+### 5. Põhjalikud docstringid
 ```python
 def function(arg: str) -> str:
     """Short description.
@@ -353,7 +353,7 @@ def function(arg: str) -> str:
     """
 ```
 
-### 6. Keskkonnamuutujate Tugi
+### 6. Keskkonnamuutujate tugi
 ```python
 import os
 
@@ -361,7 +361,7 @@ alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
 
-### 7. Sujuv Degradatsioon
+### 7. Sujuv degradeerumine
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -375,7 +375,7 @@ for model in models:
 
 ---
 
-## Levinud Probleemid ja Lahendused
+## Levinud probleemid ja lahendused
 
 ### Probleem: Impordivead
 **Lahendus:** Paigalda puuduvad sõltuvused
@@ -383,21 +383,21 @@ for model in models:
 pip install sentence-transformers ragas datasets numpy
 ```
 
-### Probleem: Ühenduse Vead
+### Probleem: Ühenduse vead
 **Lahendus:** Veendu, et Foundry Local töötab
 ```bash
 foundry service status
 foundry model run phi-4-mini
 ```
 
-### Probleem: Mudelit Ei Leitud
-**Lahendus:** Kontrolli saadaval olevaid mudeleid
+### Probleem: Mudelit ei leitud
+**Lahendus:** Kontrolli saadaolevaid mudeleid
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
 
-### Probleem: Aeglane Jõudlus
+### Probleem: Aeglane jõudlus
 **Lahendus:** Kasuta väiksemaid mudeleid või kohanda parameetreid
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
@@ -406,28 +406,28 @@ set BENCH_ROUNDS=2
 
 ---
 
-## Järgmised Sammud
+## Järgmised sammud
 
-### 1. Testi Kõiki Näidiseid
-Läbi testimise kontrollnimekiri, et veenduda kõigi näidiste korrektses töös.
+### 1. Testi kõiki näidiseid
+Läbi ülaltoodud testimise kontrollnimekiri, et veenduda kõigi näidiste korrektses töös.
 
-### 2. Uuenda Dokumentatsiooni
-- Uuenda sessiooni markdown-failid uute näidetega
-- Lisa tõrkeotsingu sektsioon peamisse README-sse
+### 2. Uuenda dokumentatsiooni
+- Uuenda sessiooni markdown-faile uute näidetega
+- Lisa tõrkeotsingu sektsioon peamisesse README-sse
 - Loo kiirviite juhend
 
-### 3. Loo Integratsioonitestid
+### 3. Loo integratsioonitestid
 ```python
 # Workshop/tests/test_samples.py
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
 
-### 4. Lisa Jõudluse Võrdlused
+### 4. Lisa jõudluse võrdlused
 Jälgi jõudluse parandusi vigade käsitlemise täiustustest.
 
-### 5. Kasutajate Tagasiside
-Kogu tagasisidet workshopi osalejatelt:
+### 5. Kasutajate tagasiside
+Kogu tagasisidet töötoa osalejatelt:
 - Veateadete selguse kohta
 - Dokumentatsiooni täielikkuse kohta
 - Kasutamise lihtsuse kohta
@@ -438,28 +438,28 @@ Kogu tagasisidet workshopi osalejatelt:
 
 - **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Kiirviide**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Migreerimise Märkmed**: `Workshop/SDK_MIGRATION_NOTES.md`
-- **Peamine Repositoorium**: https://github.com/microsoft/Foundry-Local
+- **Migratsiooni märkmed**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Peamine repositoorium**: https://github.com/microsoft/Foundry-Local
 
 ---
 
 ## Hooldus
 
-### Uute Näidiste Lisamine
+### Uute näidiste lisamine
 Järgi neid mustreid uute näidiste loomisel:
 
 1. Kasuta `workshop_utils` kliendi haldamiseks
 2. Lisa põhjalik vigade käsitlemine
-3. Kaasa keskkonnamuutujate tugi
-4. Lisa tüüpide vihjed ja docstringid
+3. Toeta keskkonnamuutujaid
+4. Lisa tüübiviited ja docstringid
 5. Paku informatiivset logimist
-6. Kaasa kasutusnäited docstringis
-7. Lisa viited SDK dokumentatsioonile
+6. Lisa kasutusnäited docstringi
+7. Linki SDK dokumentatsioonile
 
-### Uuenduste Ülevaatamine
+### Uuenduste ülevaatamine
 Uuenduste ülevaatamisel kontrolli:
 - [ ] Vigade käsitlemist kõigil I/O operatsioonidel
-- [ ] Tüüpide vihjeid avalikel funktsioonidel
+- [ ] Tüübiviiteid avalikel funktsioonidel
 - [ ] Põhjalikke docstringe
 - [ ] Keskkonnamuutujate dokumentatsiooni
 - [ ] Informatiivset kasutajate tagasisidet
@@ -468,7 +468,7 @@ Uuenduste ülevaatamisel kontrolli:
 
 ---
 
-**Kokkuvõte**: Kõik Workshopi Python-näidised järgivad nüüd Foundry Local SDK parimaid tavasid, pakkudes täiustatud vigade käsitlemist, põhjalikku dokumentatsiooni ja parendatud kasutajakogemust. Funktsionaalsust ei ole rikutud - kõik olemasolevad funktsioonid on säilinud ja täiustatud.
+**Kokkuvõte**: Kõik töötoa Python-näidised järgivad nüüd Foundry Local SDK parimaid tavasid, pakkudes täiustatud vigade käsitlemist, põhjalikku dokumentatsiooni ja parendatud kasutajakogemust. Muutusi, mis rikuksid olemasolevat funktsionaalsust, ei ole - kõik olemasolev funktsionaalsus on säilinud ja täiustatud.
 
 ---
 

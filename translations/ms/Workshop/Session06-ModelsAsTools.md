@@ -1,30 +1,30 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T19:28:15+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T22:42:55+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "ms"
 }
 -->
-# Sesi 6: Foundry Tempatan – Model sebagai Alat
+# Sesi 6: Foundry Local – Model Sebagai Alat
 
 ## Abstrak
 
-Anggap model sebagai alat yang boleh digabungkan dalam lapisan operasi AI tempatan. Sesi ini menunjukkan cara untuk menghubungkan beberapa panggilan SLM/LLM khusus, mengarahkan tugas secara selektif, dan mendedahkan permukaan SDK yang bersatu kepada aplikasi. Anda akan membina penghala model ringan + perancang tugas, mengintegrasikannya ke dalam skrip aplikasi, dan menggariskan laluan penskalaan ke Azure AI Foundry untuk beban kerja pengeluaran.
+Anggap model sebagai alat yang boleh digabungkan dalam lapisan operasi AI tempatan. Sesi ini menunjukkan cara untuk menghubungkan beberapa panggilan SLM/LLM khusus, mengarahkan tugas secara selektif, dan mendedahkan permukaan SDK yang disatukan kepada aplikasi. Anda akan membina router model ringan + perancang tugas, mengintegrasikannya ke dalam skrip aplikasi, dan menggariskan laluan penskalaan ke Azure AI Foundry untuk beban kerja pengeluaran.
 
 ## Objektif Pembelajaran
 
-- **Konseptualisasi** model sebagai alat atom dengan keupayaan yang diisytiharkan
+- **Konsepsikan** model sebagai alat atomik dengan keupayaan yang diisytiharkan
 - **Arahkan** permintaan berdasarkan niat / penilaian heuristik
 - **Rantai** output merentasi tugas berbilang langkah (pecahkan → selesaikan → perbaiki)
-- **Integrasi** API klien bersatu untuk aplikasi hiliran
-- **Skala** reka bentuk ke awan (kontrak serasi OpenAI yang sama)
+- **Integrasikan** API klien bersatu untuk aplikasi hiliran
+- **Skalakan** reka bentuk ke awan (kontrak serasi OpenAI yang sama)
 
 ## Prasyarat
 
-- Sesi 1–5 selesai
-- Beberapa model tempatan disimpan (contoh: `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- Sesi 1–5 telah diselesaikan
+- Beberapa model tempatan telah di-cache (contohnya, `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
 ### Petikan Persekitaran Merentas Platform
 
@@ -44,7 +44,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Akses perkhidmatan jauh/VM dari macOS:
+Akses perkhidmatan Jauh/VM dari macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -180,19 +180,19 @@ if __name__ == '__main__':
 
 Penambahbaikan:
 - Tambah sokongan token penstriman (kemas kini UI progresif)
-- Tambah penilaian keyakinan: pertindihan leksikal atau rubrik arahan
+- Tambah penilaian keyakinan: pertindihan leksikal atau rubrik prompt
 - Eksport JSON jejak (niat → model → latensi → penggunaan token)
-- Laksanakan penggunaan semula cache untuk langkah berulang
+- Laksanakan penggunaan semula cache untuk sublangkah berulang
 
 ### 5. Laluan Penskalaan ke Azure (5 minit)
 
 | Lapisan | Tempatan (Foundry) | Awan (Azure AI Foundry) | Strategi Peralihan |
 |---------|---------------------|-------------------------|---------------------|
-| Penghalaan | Python Heuristik | Perkhidmatan mikro tahan lama | Kontainerkan & gunakan API |
-| Model | SLM disimpan | Penggunaan terurus | Peta nama tempatan kepada ID penggunaan |
+| Penghalaan | Python Heuristik | Perkhidmatan mikro tahan lama | Bekas & gunakan API |
+| Model | SLMs di-cache | Penggunaan terurus | Peta nama tempatan ke ID penggunaan |
 | Pemerhatian | Statistik CLI/manual | Log pusat & metrik | Tambah acara jejak berstruktur |
-| Keselamatan | Hos tempatan sahaja | Pengesahan Azure / rangkaian | Perkenalkan peti kunci untuk rahsia |
-| Kos | Sumber peranti | Pengebilan penggunaan | Tambah pengawal bajet |
+| Keselamatan | Hanya hos tempatan | Pengesahan Azure / rangkaian | Perkenalkan peti kunci untuk rahsia |
+| Kos | Sumber peranti | Penagihan penggunaan | Tambah pengawal belanjawan |
 
 ## Senarai Semak Pengesahan
 
@@ -203,21 +203,21 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Jangkakan pemilihan model berdasarkan niat dan output akhir yang diperbaiki.
+Jangka pemilihan model berdasarkan niat dan output akhir yang diperbaiki.
 
 ## Penyelesaian Masalah
 
 | Masalah | Punca | Penyelesaian |
-|---------|-------|-------------|
+|---------|-------|--------------|
 | Semua tugas diarahkan ke model yang sama | Peraturan lemah | Perkayakan set regex INTENT_RULES |
-| Rantaian gagal di tengah langkah | Model tidak dimuatkan | Jalankan `foundry model run <model>` |
+| Saluran gagal di pertengahan langkah | Model tidak dimuatkan | Jalankan `foundry model run <model>` |
 | Kohesi output rendah | Tiada fasa pembaikan | Tambah langkah ringkasan/pengesahan |
 
 ## Rujukan
 
-- SDK Foundry Tempatan: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Dokumen Azure AI Foundry: https://learn.microsoft.com/azure/ai-foundry
-- Corak Kualiti Arahan: Lihat Sesi 2
+- Corak Kualiti Prompt: Lihat Sesi 2
 
 ---
 
@@ -226,17 +226,15 @@ Jangkakan pemilihan model berdasarkan niat dan output akhir yang diperbaiki.
 
 ## Senario Contoh & Pemetaan Bengkel
 
-| Skrip Bengkel / Buku Nota | Senario | Objektif | Sumber Dataset / Katalog |
-|---------------------------|---------|----------|--------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Pembantu pemaju menangani arahan niat bercampur (refaktor, ringkaskan, klasifikasikan) | Niat heuristik → penghalaan alias model dengan penggunaan token | `CATALOG` sebaris + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Perancangan & pembaikan berbilang langkah untuk tugas bantuan pengekodan kompleks | Pecahkan → pelaksanaan khusus → langkah pembaikan ringkasan | `CATALOG` yang sama; langkah diperoleh daripada output rancangan |
+| Skrip / Buku Nota Bengkel | Senario | Objektif | Sumber Dataset / Katalog |
+|---------------------------|---------|----------|---------------------------|
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Pembantu pemaju yang mengendalikan prompt niat campuran (refaktor, ringkasan, klasifikasi) | Penghalaan niat heuristik → alias model dengan penggunaan token | `CATALOG` sebaris + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Perancangan & pembaikan berbilang langkah untuk tugas bantuan pengekodan kompleks | Pecahkan → pelaksanaan khusus → langkah pembaikan ringkasan | `CATALOG` yang sama; langkah-langkah diperoleh daripada output pelan |
 
 ### Naratif Senario
-
-Alat produktiviti kejuruteraan menerima tugas heterogen: refaktor kod, ringkaskan nota seni bina, klasifikasikan maklum balas. Untuk meminimumkan latensi & penggunaan sumber, model kecil umum merancang dan meringkaskan, model khusus kod mengendalikan refaktor, dan model ringan yang mampu klasifikasi melabelkan maklum balas. Skrip rantaian menunjukkan penghubungan + pembaikan; skrip penghala mengasingkan penghalaan arahan adaptif tunggal.
+Alat produktiviti kejuruteraan menerima tugas heterogen: refaktor kod, ringkaskan nota seni bina, klasifikasikan maklum balas. Untuk meminimumkan latensi & penggunaan sumber, model umum kecil merancang dan meringkaskan, model khusus kod mengendalikan refaktor, dan model ringan yang mampu mengklasifikasikan melabelkan maklum balas. Skrip saluran menunjukkan rantaian + pembaikan; skrip penghala mengasingkan penghalaan prompt tunggal adaptif.
 
 ### Snapshot Katalog
-
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -246,8 +244,7 @@ CATALOG = {
 ```
 
 
-### Contoh Arahan Ujian
-
+### Contoh Prompt Ujian
 ```json
 [
     "Refactor this Python function for readability",
@@ -259,8 +256,7 @@ CATALOG = {
 
 
 ### Sambungan Jejak (Pilihan)
-
-Tambah baris JSON jejak setiap langkah untuk `models_pipeline.py`:
+Tambah baris JSON jejak per langkah untuk `models_pipeline.py`:
 ```python
 trace.append({
     "step": step_idx,
@@ -273,23 +269,22 @@ trace.append({
 
 
 ### Heuristik Eskalasi (Idea)
-
-Jika rancangan mengandungi kata kunci seperti "optimum", "keselamatan", atau panjang langkah > 280 aksara → eskalasi ke model lebih besar (contoh: `gpt-oss-20b`) untuk langkah itu sahaja.
+Jika pelan mengandungi kata kunci seperti "optimumkan", "keselamatan", atau panjang langkah > 280 aksara → eskalasi ke model lebih besar (contohnya, `gpt-oss-20b`) untuk langkah itu sahaja.
 
 ### Penambahbaikan Pilihan
 
 | Kawasan | Penambahbaikan | Nilai | Petunjuk |
-|--------|----------------|-------|---------|
+|---------|----------------|-------|----------|
 | Cache | Penggunaan semula objek pengurus + klien | Latensi lebih rendah, kurang overhead | Gunakan `workshop_utils.get_client` |
-| Metrik Penggunaan | Tangkap token & latensi setiap langkah | Profiling & pengoptimuman | Masa setiap panggilan yang diarahkan; simpan dalam senarai jejak |
-| Penghalaan Adaptif | Keyakinan / kos sedar | Perdagangan kualiti-kos lebih baik | Tambah penilaian: jika arahan > N aksara atau regex sepadan domain → eskalasi ke model lebih besar |
-| Pendaftaran Keupayaan Dinamik | Katalog muat semula panas | Tiada pengulangan semula penggunaan | Muatkan `catalog.json` semasa runtime; pantau cap masa fail |
-| Strategi Sandaran | Ketahanan di bawah kegagalan | Ketersediaan lebih tinggi | Cuba utama → pada pengecualian alias sandaran |
-| Rantaian Penstriman | Maklum balas awal | Penambahbaikan UX | Alirkan setiap langkah dan penampan input pembaikan akhir |
-| Pembenaman Niat Vektor | Penghalaan lebih bernuansa | Ketepatan niat lebih tinggi | Benamkan arahan, kumpulkan & peta centroid → keupayaan |
+| Metrik Penggunaan | Tangkap token & latensi per langkah | Profiling & pengoptimuman | Ukur setiap panggilan yang diarahkan; simpan dalam senarai jejak |
+| Penghalaan Adaptif | Keyakinan / kesedaran kos | Perdagangan kualiti-kos yang lebih baik | Tambah penilaian: jika prompt > N aksara atau regex sepadan domain → eskalasi ke model lebih besar |
+| Pendaftaran Keupayaan Dinamik | Katalog muat semula panas | Tiada keperluan untuk memulakan semula | Muatkan `catalog.json` semasa runtime; pantau cap masa fail |
+| Strategi Sandaran | Ketahanan semasa kegagalan | Ketersediaan lebih tinggi | Cuba utama → pada pengecualian alias sandaran |
+| Saluran Penstriman | Maklum balas awal | Penambahbaikan UX | Alirkan setiap langkah dan penampan input pembaikan akhir |
+| Vektor Embedding Niat | Penghalaan lebih halus | Ketepatan niat lebih tinggi | Embed prompt, kluster & peta centroid → keupayaan |
 | Eksport Jejak | Rantaian boleh diaudit | Pematuhan/pelaporan | Emit baris JSON: langkah, niat, model, latensi_ms, token |
-| Simulasi Kos | Anggaran pra-awan | Perancangan bajet | Tetapkan kos/tanda notional setiap model & agregat setiap tugas |
-| Mod Deterministik | Repro kebolehulangan | Penanda aras stabil | Persekitaran: `temperature=0`, kiraan langkah tetap |
+| Simulasi Kos | Anggaran pra-awan | Perancangan belanjawan | Tetapkan kos/tokens notional per model & agregat per tugas |
+| Mod Deterministik | Repro reprodusibiliti | Penanda aras stabil | Env: `temperature=0`, kiraan langkah tetap |
 
 #### Contoh Struktur Jejak
 
@@ -328,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Iterasi secara beransur-ansur—elakkan terlalu banyak kejuruteraan pada prototaip awal.
-
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

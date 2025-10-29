@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82e20fdeebffdf75eecdf5cdfb02b65c",
-  "translation_date": "2025-10-08T15:20:03+00:00",
+  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
+  "translation_date": "2025-10-28T23:05:55+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "sk"
 }
@@ -15,12 +15,12 @@ Preskúmajte, ako vytvárať použiteľné GenAI pracovné postupy pomocou Found
 
 ## Ciele vzdelávania
 
-Na konci tejto relácie budete:
+Na konci tejto relácie budete schopní:
 
-- **Ovládať tvorbu promptov**: Navrhovať efektívne systémové prompty a stratégie ukotvenia
-- **Implementovať RAG vzory**: Vytvárať systémy otázok a odpovedí na báze dokumentov s vektorovým vyhľadávaním
+- **Ovládnuť tvorbu promptov**: Navrhnúť efektívne systémové prompty a stratégie ukotvenia
+- **Implementovať RAG vzory**: Vytvárať systémy otázok a odpovedí na základe dokumentov s vektorovým vyhľadávaním
 - **Integrovať štruktúrované dáta**: Pracovať s CSV, JSON a tabuľkovými dátami v AI pracovných postupoch
-- **Vytvárať produkčné RAG aplikácie**: Budovať škálovateľné RAG aplikácie s Chainlit
+- **Vytvoriť produkčný RAG**: Vytvárať škálovateľné RAG aplikácie s Chainlit
 - **Prepojiť lokálne a cloudové prostredie**: Pochopiť migračné cesty z Foundry Local do Azure AI Foundry
 
 ## Predpoklady
@@ -29,7 +29,7 @@ Na konci tejto relácie budete:
 - Základné porozumenie vektorovým databázam a embeddingom
 - Skúsenosti s programovaním v Pythone
 - Znalosť konceptov spracovania dokumentov
-
+ 
 ### Rýchly štart pre multiplatformové prostredie (Windows & macOS)
 
 Windows PowerShell:
@@ -53,7 +53,6 @@ Ak vo vašom prostredí nie sú dostupné binárne súbory Foundry Local pre mac
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
-
 ## Validácia: Kontrola prostredia Foundry Local
 
 Pred začatím ukážok overte svoje lokálne prostredie:
@@ -67,7 +66,7 @@ curl http://localhost:5273/v1/models  # Validate API (should list running model)
 
 Ak posledný príkaz zlyhá, spustite (alebo reštartujte) službu: `foundry service start`.
 
-## Priebeh ukážky (30 minút)
+## Priebeh ukážok (30 minút)
 
 ### 1. Systémové prompty a stratégie ukotvenia (10 minút)
 
@@ -215,7 +214,6 @@ foundry model run phi-4-mini
 # Run the prompt engineering demo
 python samples/02-rag-solutions/prompt_engineering.py
 ```
-
 
 ### 2. Integrácia tabuľkových dát s promptmi (CSV Q&A) (10 minút)
 
@@ -433,13 +431,12 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### Krok 2.2: Testovanie CSV Q&A systému
+#### Krok 2.2: Testovanie systému CSV Q&A
 
 ```powershell
 # Run the CSV Q&A demo
 python samples/02-rag-solutions/csv_qa_system.py
 ```
-
 
 ### 3. Štartovací projekt: Adaptácia 02-grounding-data (5 minút)
 
@@ -660,10 +657,9 @@ if __name__ == "__main__":
     demo_document_rag()
 ```
 
+### 4. Ukážka cesty migrácie z CLI do Azure (5 minút)
 
-### 4. Ukážka migračnej cesty z CLI do Azure (5 minút)
-
-#### Krok 4.1: Prehľad migračnej stratégie
+#### Krok 4.1: Prehľad stratégie migrácie
 
 Vytvorte `samples/02-rag-solutions/migration_guide.py`:
 
@@ -876,29 +872,28 @@ if __name__ == "__main__":
 python samples/02-rag-solutions/migration_guide.py
 ```
 
-
 ## Pokryté kľúčové koncepty
 
 ### 1. Pokročilé techniky tvorby promptov
 
-- **Systémové prompty**: Personas špecialistov na konkrétne domény
+- **Systémové prompty**: Odborné persony špecifické pre danú oblasť
 - **Stratégie ukotvenia**: Techniky integrácie kontextu
-- **Kontrola teploty**: Vyváženie kreativity a konzistencie
+- **Kontrola teploty**: Rovnováha medzi kreativitou a konzistenciou
 - **Správa tokenov**: Efektívne využívanie kontextu
 
 ### 2. Integrácia štruktúrovaných dát
 
 - **Spracovanie CSV**: Integrácia Pandas s AI modelmi
-- **Štatistická analýza**: Automatizované sumarizovanie dát
+- **Štatistická analýza**: Automatizované zhrnutie dát
 - **Tvorba kontextu**: Dynamická generácia kontextu na základe otázok
 - **Podpora viacerých formátov**: JSON, CSV a tabuľkové dáta
 
 ### 3. Implementačné vzory RAG
 
 - **Vektorové vyhľadávanie**: TF-IDF a kosínová podobnosť
-- **Vyhľadávanie dokumentov**: Skórovanie relevancie a ranking
+- **Vyhľadávanie dokumentov**: Skórovanie relevantnosti a poradie
 - **Kombinácia kontextu**: Syntéza viacerých dokumentov
-- **Generovanie odpovedí**: Tvorba odpovedí na základe ukotveného kontextu
+- **Generovanie odpovedí**: Tvorba odpovedí na základe kontextu
 
 ### 4. Stratégie migrácie do cloudu
 
@@ -952,31 +947,30 @@ metrics = {
 }
 ```
 
-
 ## Ďalšie kroky
 
 Po dokončení tejto relácie:
 
 1. **Preskúmajte reláciu 3**: Open-Source modely vo Foundry Local
-2. **Vytvorte produkčné RAG aplikácie**: Implementujte s Chainlit (Sample 04)
+2. **Vytvorte produkčný RAG**: Implementujte s Chainlit (Sample 04)
 3. **Pokročilé vektorové vyhľadávanie**: Integrujte s Chroma alebo Pinecone
 4. **Migrácia do cloudu**: Nasadenie do Azure AI Foundry
-5. **Vyhodnoťte kvalitu RAG**: Spustite `python Workshop/samples/session02/rag_eval_ragas.py` na meranie relevancie odpovedí, vernosti a presnosti kontextu pomocou ragas
+5. **Vyhodnoťte kvalitu RAG**: Spustite `cd Workkshop/samples;python -m session02.rag_eval_ragas` na meranie relevancie odpovedí, vernosti a presnosti kontextu pomocou ragas
 
 ### Voliteľné vylepšenia
 
-| Kategória | Vylepšenie | Dôvod | Smerovanie |
+| Kategória | Vylepšenie | Dôvod | Smer |
 |----------|-------------|-----------|-----------|
-| Vyhľadávanie | Nahradiť TF-IDF vektorovým úložiskom (FAISS / Chroma) | Lepšia semantická presnosť a škálovateľnosť | Rozdeľte dokumenty (500–800 znakov), embedujte, uložte index |
-| Hybridný index | Dvojité semantické + kľúčové filtrovanie | Zlepšuje presnosť pri numerických / kódových otázkach | Filtrovanie podľa kľúčového slova, potom ranking podľa kosínovej podobnosti |
-| Embeddingy | Vyhodnotenie viacerých embedding modelov | Optimalizácia relevancie vs rýchlosti | A/B: MiniLM vs E5-small vs lokálne hostovaný encoder |
-| Caching | Cache embeddingov a výsledkov vyhľadávania | Nižšia latencia pri opakovaných otázkach | Jednoduché ukladanie na disk pomocou pickle / sqlite s hash kľúčom |
-| Vyhodnotenie | Rozšírenie datasetu ragas | Štatisticky významná kvalita | Kurátorovanie 50–100 otázok/odpovedí + kontextov; stratifikácia podľa témy |
-| Metriky | Sledovanie času vyhľadávania a generovania | Profilovanie výkonu | Zachytenie `retrieval_ms`, `gen_ms`, `tokens` na volanie |
-| Ochranné mechanizmy | Pridanie fallbacku pri halucináciách | Bezpečnejšie odpovede | Ak vernosť < prah → odpoveď: "Nedostatočný kontext." |
-| Fallback | Kaskáda lokálny → Azure model | Hybridné zlepšenie kvality | Pri nízkej dôvere presmerovanie do cloudu cez rovnaké OpenAI API |
-| Determinizmus | Stabilné porovnávacie behy | Opakovateľné eval sety | Fixovanie seed, `temperature=0`, vypnutie náhodnosti sampleru |
-| Monitoring | Ukladanie histórie eval behov | Detekcia regresie | Pridanie JSON riadkov s časovou pečiatkou + metrickými zmenami |
+| Vyhľadávanie | Nahradiť TF-IDF vektorovým úložiskom (FAISS / Chroma) | Lepšia sémantická presnosť a škálovateľnosť | Rozdelenie dokumentov (500–800 znakov), embedding, uloženie indexu |
+| Hybridný index | Dvojité sémantické + kľúčové filtrovanie | Zlepšenie presnosti pri numerických / kódových otázkach | Filtrovanie podľa kľúčového slova, potom zoradenie podľa kosínovej podobnosti |
+| Embeddingy | Vyhodnotenie viacerých embedding modelov | Optimalizácia relevantnosti vs rýchlosť | A/B: MiniLM vs E5-small vs lokálne hostovaný encoder |
+| Cache | Cache embeddingov a výsledkov vyhľadávania | Zníženie latencie opakovaných otázok | Jednoduchý diskový pickle / sqlite s hash kľúčom |
+| Hodnotenie | Rozšírenie datasetu ragas | Štatisticky významná kvalita | Kurátorovanie 50–100 otázok/odpovedí + kontextov; stratifikácia podľa témy |
+| Metriky | Sledovanie času vyhľadávania a generovania | Profilovanie výkonu | Zaznamenávanie `retrieval_ms`, `gen_ms`, `tokens` na volanie |
+| Ochranné mechanizmy | Pridanie záložného mechanizmu proti halucináciám | Bezpečnejšie odpovede | Ak vernosť < prahová hodnota → odpoveď: "Nedostatočný kontext." |
+| Záložné riešenie | Kaskáda lokálny → Azure model | Zlepšenie kvality hybridného riešenia | Pri nízkej dôvere presmerovanie na cloud cez rovnaké OpenAI API |
+| Determinizmus | Stabilné porovnávacie behy | Opakovateľné evaluačné sady | Fixácia semena, `temperature=0`, deaktivácia náhodnosti vzorkovania |
+| Monitoring | Uloženie histórie evaluačných behov | Detekcia regresie | Pridanie JSON riadkov s časovou pečiatkou + zmeny metriky |
 
 #### Príklad: Pridanie času vyhľadávania
 
@@ -991,8 +985,7 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
-
-#### Škálovanie vyhodnotenia s ragas
+#### Škálovanie hodnotenia s ragas
 
 1. Zostavte JSONL s poliami: `question`, `answer`, `contexts`, `ground_truths` (zoznam)
 2. Konvertujte na `Dataset.from_list(list_of_dicts)`
@@ -1008,14 +1001,14 @@ index.add(embeddings)  # embeddings = np.array([...]) normalized
 D, I = index.search(query_vec, k)
 ```
 
-Pre ukladanie na disk použite `faiss.write_index(index, "kb.index")`.
+Pre uloženie na disk použite `faiss.write_index(index, "kb.index")`.
 
-## Dodatočné zdroje
+## Ďalšie zdroje
 
 ### Dokumentácia
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Azure AI Foundry RAG Patterns](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [Príručka tvorby promptov](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [Príručka pre tvorbu promptov](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
 - [Ragas Evaluation Docs](https://docs.ragas.io)
 
 ### Ukážkový kód
@@ -1024,23 +1017,23 @@ Pre ukladanie na disk použite `faiss.write_index(index, "kb.index")`.
 
 ---
 
-**Trvanie relácie**: 30 minút praktická časť + 15 minút Q&A  
-**Úroveň obtiažnosti**: Stredne pokročilá  
+**Trvanie relácie**: 30 minút praktická časť + 15 minút otázky a odpovede
+**Úroveň obtiažnosti**: Stredne pokročilá
 **Predpoklady**: Dokončená relácia 1, základné znalosti Pythonu
 
 ## Ukážkový scenár a mapovanie workshopu
 
 | Skript / Notebook workshopu | Scenár | Cieľ | Základný dataset / zdroj | Príklad otázky |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Interná podpora znalostnej bázy odpovedajúca na otázky o ochrane súkromia + výkone | Minimálny RAG v pamäti s embeddingmi | `DOCS` zoznam v skripte (5 krátkych pasáží) | Prečo používať RAG s lokálnym inferenciou? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analytik kvality stanovujúci základné metriky vernosti vyhľadávania | Výpočet metrik ragas na malom syntetickom datasete | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` polia | Akú výhodu ponúka lokálna inferencia? |
-| `prompt_engineering.py` (pokročilé) | Odborník na doménu vytvárajúci ukotvené prompty pre rôzne odvetvia | Porovnanie systémových promptov pre doménu a dopadu tokenov | Inline `contexts` dict | Ako Foundry Local spracováva cache modelov? |
-| `csv_qa_system.py` | Sales ops skúmajúci interaktívnu analytiku nad exportmi | Sumarizácia a otázky na malý výrez predaja | Generovaný `sample_sales_data.csv` (10 riadkov) | Ktorý produkt má najvyššiu priemernú hodnotu predaja? |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Interná podpora znalostnej bázy odpovedajúca na otázky o ochrane súkromia + výkonnosti | Minimálny RAG v pamäti s embeddingami | `DOCS` zoznam v skripte (5 krátkych pasáží) | Prečo používať RAG s lokálnym inferenčným systémom? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analytik kvality stanovujúci základné metriky vernosti vyhľadávania | Výpočet ragas metrík na malom syntetickom datasete | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` polia | Aké výhody ponúka lokálny inferenčný systém? |
+| `prompt_engineering.py` (pokročilé) | Odborník na danú oblasť vytvárajúci ukotvené prompty pre rôzne odvetvia | Porovnanie systémových promptov pre danú oblasť a vplyv tokenov | Inline `contexts` dict | Ako Foundry Local spracováva cache modelov? |
+| `csv_qa_system.py` | Operácie predaja skúmajúce interaktívnu analýzu exportov | Zhrnutie a dotazovanie na malý výrez predajných dát | Generovaný `sample_sales_data.csv` (10 riadkov) | Ktorý produkt má najvyššiu priemernú predajnú hodnotu? |
 | `document_rag.py` | Produktový tím skúmajúci dokumentový RAG pre internú wiki | Vyhľadávanie + citovanie relevantných dokumentov | `create_sample_knowledge_base()` zoznam | Aké sú výhody Edge AI? |
-| `migration_guide.py` | Architekt pripravujúci plán migrácie do cloudu | Demonštrácia parity API lokálne→Azure | Statické testovacie prompty | Vysvetlite výhody Edge AI v 2–3 vetách. |
+| `migration_guide.py` | Architekt pripravujúci plán migrácie do cloudu | Demonštrácia parity API medzi lokálnym a Azure | Statické testovacie prompty | Vysvetlite výhody Edge AI v 2–3 vetách. |
 
 ### Úryvky datasetu
-Inline zoznam dokumentov RAG pipeline:
+Zoznam dokumentov RAG pipeline:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1051,7 +1044,7 @@ DOCS = [
 ]
 ```
 
-Ragas hodnotiace pravdivé dvojice:
+Hodnotiace pravdivé dvojice pre ragas:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1060,14 +1053,13 @@ GROUND_TRUTH = [
 ]
 ```
 
-
 ### Naratív scenára
-Skupina technickej podpory chce rýchly prototyp na odpovedanie interných FAQ bez vystavenia zákazníckych dát externému prostrediu. Artefakty relácie 2 postupujú od minimálneho efemérneho RAG (bez perzistencie) → štruktúrované CSV Q&A → vyhľadávanie dokumentov s citáciou → objektívne hodnotenie kvality (ragas) → migračná stratégia pripravená na Azure staging.
+Skupina technickej podpory chce rýchly prototyp na odpovedanie interných FAQ bez zdieľania zákazníckych dát externe. Artefakty relácie 2 postupujú od minimálneho efemérneho RAG (bez perzistencie) → štruktúrované CSV Q&A → vyhľadávanie dokumentov s citáciou → objektívne hodnotenie kvality (ragas) → migračná stratégia pripravená na Azure staging.
 
 ### Cesty rozšírenia
-Použite tabuľku voliteľných vylepšení na evolúciu: nahraďte TF‑IDF FAISS/Chroma, rozšírte eval korpus (50–100 otázok/odpovedí), pridajte fallback eskaláciu na väčší model, keď vernosť < prah.
+Použite tabuľku voliteľných vylepšení na rozvoj: nahraďte TF‑IDF FAISS/Chroma, rozšírte evaluačný korpus (50–100 otázok/odpovedí), pridajte eskaláciu na väčší model pri vernosti < prahová hodnota.
 
 ---
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

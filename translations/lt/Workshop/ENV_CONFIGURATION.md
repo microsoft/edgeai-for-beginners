@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T21:11:46+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T23:46:12+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "lt"
 }
 -->
-# Aplinkos konfigūracijos vadovas
+# Aplinkos konfigūravimo vadovas
 
 ## Apžvalga
 
-Dirbtuvių pavyzdžiai naudoja aplinkos kintamuosius konfigūracijai, kurie yra centralizuoti `.env` faile, esančiame saugyklos šaknyje. Tai leidžia lengvai pritaikyti nustatymus, nekeisdami kodo.
+Dirbtuvių pavyzdžiai naudoja aplinkos kintamuosius konfigūravimui, kurie yra centralizuoti `.env` faile, esančiame saugyklos šaknyje. Tai leidžia lengvai pritaikyti nustatymus, nekeičiant kodo.
 
-## Greitas startas
+## Greitas pradėjimas
 
 ### 1. Patikrinkite reikalavimus
 
@@ -41,10 +41,10 @@ nano .env     # macOS/Linux
 
 ### 3. Taikykite konfigūraciją
 
-**Python skriptams:**
+**Python scenarijams:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -61,13 +61,13 @@ python chat_bootstrap.py
 | Kintamasis | Numatytasis | Aprašymas |
 |------------|-------------|-----------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Numatytoji modelio versija pavyzdžiams |
-| `FOUNDRY_LOCAL_ENDPOINT` | (tuščias) | Paslaugos galinio taško pakeitimas |
+| `FOUNDRY_LOCAL_ENDPOINT` | (tuščias) | Paslaugos pabaigos taško pakeitimas |
 | `PYTHONPATH` | Dirbtuvių keliai | Python modulių paieškos kelias |
 
 **Kada nustatyti FOUNDRY_LOCAL_ENDPOINT:**
 - Nuotolinė Foundry Local instancija
-- Nestandartinė prievado konfigūracija
-- Skirtumas tarp kūrimo ir gamybos aplinkų
+- Individualus prievado konfigūravimas
+- Skirtumas tarp kūrimo/produkcijos aplinkų
 
 **Pavyzdys:**
 ```bash
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sesija 03: Testavimas
 | Kintamasis | Numatytasis | Paskirtis |
 |------------|-------------|-----------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modeliai testavimui |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modeliai testavimui |
 | `BENCH_ROUNDS` | `3` | Iteracijų skaičius kiekvienam modeliui |
 | `BENCH_PROMPT` | Iš anksto sukonfigūruota | Testavimo užklausa |
 | `BENCH_STREAM` | `0` | Pirmojo ženklo vėlavimo matavimas |
@@ -114,8 +114,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | Kintamasis | Numatytasis | Paskirtis |
 |------------|-------------|-----------|
 | `SHOW_USAGE` | `1` | Spausdinti ženklo naudojimą |
-| `RETRY_ON_FAIL` | `1` | Įjungti pakartotinio bandymo logiką |
-| `RETRY_BACKOFF` | `1.0` | Vėlavimas prieš pakartotinį bandymą (sekundėmis) |
+| `RETRY_ON_FAIL` | `1` | Įjungti bandymo logiką |
+| `RETRY_BACKOFF` | `1.0` | Bandymo vėlavimas (sekundėmis) |
 
 ## Dažnos konfigūracijos
 
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Gamybos aplinka (kokybės prioritetas)
+### Produkcijos aplinka (kokybės prioritetas)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Testavimo aplinka
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -151,7 +151,7 @@ AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
 ```
 
-### Nuotolinė plėtra
+### Nuotolinis kūrimas
 ```bash
 FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -161,7 +161,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### Pagal naudojimo atvejį
 
-**Bendros paskirties:**
+**Bendras naudojimas:**
 - `phi-4-mini` - Subalansuota kokybė ir greitis
 
 **Greiti atsakymai:**
@@ -170,11 +170,11 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Aukšta kokybė:**
 - `qwen2.5-7b` - Geriausia kokybė, didesnis resursų naudojimas
-- `phi-4-mini` - Gera kokybė, mažesni resursai
+- `phi-4-mini` - Gera kokybė, mažesnis resursų naudojimas
 
 **Kodo generavimas:**
 - `deepseek-coder-1.3b` - Specializuotas kodui
-- `phi-4-mini` - Bendros paskirties kodavimas
+- `phi-4-mini` - Bendro naudojimo kodavimas
 
 ### Pagal resursų prieinamumą
 
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## Išplėstinė konfigūracija
 
-### Nestandartiniai galiniai taškai
+### Individualūs pabaigos taškai
 
 ```bash
 # Development environment
@@ -239,7 +239,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ### Aplinkos kintamieji neįkelti
 
 **Simptomai:**
-- Skriptai naudoja neteisingus modelius
+- Scenarijai naudoja neteisingus modelius
 - Ryšio klaidos
 - Kintamieji neatpažįstami
 
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **Simptomai:**
 - Klaidos "Modelis nerastas"
-- "Alias neatpažintas"
+- "Alias nepažintas"
 
 **Sprendimai:**
 ```bash
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Simptomai:**
 - Klaidos "Modulis nerastas"
-- "Negalima importuoti workshop_utils"
 
 **Sprendimai:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Konfigūracijos testavimas
@@ -406,7 +403,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Pagrindinė saugykla**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API dokumentacija**: Žiūrėkite SDK saugyklą naujausiai informacijai
+- **API dokumentacija**: Naujausią informaciją rasite SDK saugykloje
 
 ## Papildomi ištekliai
 
@@ -422,5 +419,5 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
-**Atsakomybės atsisakymas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, kylančius dėl šio vertimo naudojimo.
+**Atsakomybės apribojimas**:  
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, atsiradusius dėl šio vertimo naudojimo.

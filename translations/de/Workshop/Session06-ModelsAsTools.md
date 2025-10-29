@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-08T20:55:16+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T20:11:49+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "de"
 }
@@ -11,22 +11,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Zusammenfassung
 
-Behandle Modelle als kombinierbare Werkzeuge innerhalb einer lokalen KI-Betriebsschicht. Diese Sitzung zeigt, wie man mehrere spezialisierte SLM/LLM-Aufrufe verknüpft, Aufgaben gezielt weiterleitet und eine einheitliche SDK-Oberfläche für Anwendungen bereitstellt. Sie werden einen leichtgewichtigen Modell-Router + Aufgabenplaner erstellen, ihn in ein App-Skript integrieren und den Skalierungspfad zur Azure AI Foundry für Produktionslasten skizzieren.
+Behandeln Sie Modelle als zusammensetzbare Werkzeuge innerhalb einer lokalen KI-Betriebsschicht. Diese Sitzung zeigt, wie man mehrere spezialisierte SLM/LLM-Aufrufe verknüpft, Aufgaben gezielt weiterleitet und eine einheitliche SDK-Oberfläche für Anwendungen bereitstellt. Sie werden einen leichtgewichtigen Modell-Router + Aufgabenplaner erstellen, ihn in ein App-Skript integrieren und den Skalierungspfad zu Azure AI Foundry für Produktionslasten skizzieren.
 
 ## Lernziele
 
-- **Modelle** als atomare Werkzeuge mit definierten Fähigkeiten konzipieren
-- **Anfragen** basierend auf Absicht / heuristischer Bewertung weiterleiten
-- **Ausgaben** über mehrstufige Aufgaben verknüpfen (zerlegen → lösen → verfeinern)
-- **Eine einheitliche Client-API** für nachgelagerte Anwendungen integrieren
-- **Design** für die Cloud skalieren (gleicher OpenAI-kompatibler Vertrag)
+- **Konzeptualisieren** von Modellen als atomare Werkzeuge mit definierten Fähigkeiten
+- **Weiterleiten** von Anfragen basierend auf Absicht / heuristischer Bewertung
+- **Verknüpfen** von Ausgaben über mehrstufige Aufgaben (zerlegen → lösen → verfeinern)
+- **Integrieren** einer einheitlichen Client-API für nachgelagerte Anwendungen
+- **Skalieren** des Designs in die Cloud (gleicher OpenAI-kompatibler Vertrag)
 
 ## Voraussetzungen
 
 - Sitzungen 1–5 abgeschlossen
 - Mehrere lokale Modelle zwischengespeichert (z. B. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Plattformübergreifender Umgebungs-Snippet
+### Plattformübergreifender Umgebungs-Schnipsel
 
 Windows PowerShell:
 ```powershell
@@ -52,7 +52,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Demo-Ablauf (30 Minuten)
 
-### 1. Deklaration der Werkzeugfähigkeiten (5 Minuten)
+### 1. Erklärung der Werkzeugfähigkeiten (5 Minuten)
 
 Erstellen Sie `samples/06-tools/models_catalog.py`:
 
@@ -180,7 +180,7 @@ if __name__ == '__main__':
 
 Verbesserungen:
 - Unterstützung für Streaming-Token hinzufügen (progressive UI-Aktualisierung)
-- Vertrauensbewertung hinzufügen: lexikalische Überlappung oder Prompt-Richtlinie
+- Vertrauensbewertung hinzufügen: lexikalische Übereinstimmung oder Prompt-Richtlinie
 - Trace-JSON exportieren (Absicht → Modell → Latenz → Token-Nutzung)
 - Cache-Wiederverwendung für wiederholte Teilaufgaben implementieren
 
@@ -203,7 +203,7 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Erwarten Sie modellbasierte Auswahl basierend auf Absicht und eine abschließend verfeinerte Ausgabe.
+Erwarten Sie eine absichtsbasierte Modellauswahl und eine abschließend verfeinerte Ausgabe.
 
 ## Fehlerbehebung
 
@@ -211,7 +211,7 @@ Erwarten Sie modellbasierte Auswahl basierend auf Absicht und eine abschließend
 |---------|---------|--------|
 | Alle Aufgaben werden an dasselbe Modell weitergeleitet | Schwache Regeln | INTENT_RULES-Regelsatz erweitern |
 | Pipeline scheitert mitten im Schritt | Fehlendes Modell geladen | Führen Sie `foundry model run <model>` aus |
-| Geringe Kohäsion der Ausgabe | Keine Verfeinerungsphase | Zusammenfassungs-/Validierungsschritt hinzufügen |
+| Niedrige Kohäsion der Ausgabe | Keine Verfeinerungsphase | Zusammenfassungs-/Validierungsschritt hinzufügen |
 
 ## Referenzen
 
@@ -228,15 +228,13 @@ Erwarten Sie modellbasierte Auswahl basierend auf Absicht und eine abschließend
 
 | Workshop-Skripte / Notebooks | Szenario | Ziel | Datensatz / Katalogquelle |
 |------------------------------|----------|------|---------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Entwicklerassistent, der gemischte Absichtsprompts verarbeitet (refaktorieren, zusammenfassen, klassifizieren) | Heuristische Absicht → Modell-Alias-Weiterleitung mit Token-Nutzung | Inline `CATALOG` + Regex `RULES` |
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Entwicklerassistent, der gemischte Absichtsprompts bearbeitet (refaktorieren, zusammenfassen, klassifizieren) | Heuristische Absicht → Modell-Alias-Weiterleitung mit Token-Nutzung | Inline `CATALOG` + Regex `RULES` |
 | `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Mehrstufige Planung & Verfeinerung für komplexe Aufgaben der Codeunterstützung | Zerlegen → spezialisierte Ausführung → Zusammenfassungs-Verfeinerungsschritt | Gleicher `CATALOG`; Schritte abgeleitet aus Plan-Ausgabe |
 
 ### Szenario-Erzählung
-
-Ein Tool zur Produktivitätssteigerung für Ingenieure erhält heterogene Aufgaben: Code refaktorieren, architektonische Notizen zusammenfassen, Feedback klassifizieren. Um Latenz und Ressourcennutzung zu minimieren, plant und fasst ein kleines allgemeines Modell zusammen, ein auf Code spezialisiertes Modell übernimmt die Refaktorisierung, und ein leichtgewichtiges Modell mit Klassifikationsfähigkeiten etikettiert Feedback. Das Pipeline-Skript demonstriert Verknüpfung + Verfeinerung; das Router-Skript isoliert adaptive Einzel-Prompt-Weiterleitung.
+Ein Tool zur Produktivitätssteigerung für Ingenieure erhält heterogene Aufgaben: Code refaktorieren, architektonische Notizen zusammenfassen, Feedback klassifizieren. Um Latenz und Ressourcenverbrauch zu minimieren, plant und fasst ein kleines allgemeines Modell zusammen, ein auf Code spezialisiertes Modell übernimmt die Refaktorisierung, und ein leichtgewichtiges Modell mit Klassifikationsfähigkeiten etikettiert Feedback. Das Pipeline-Skript demonstriert Verknüpfung + Verfeinerung; das Router-Skript isoliert adaptive Einzel-Prompt-Weiterleitung.
 
 ### Katalog-Snapshot
-
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -247,7 +245,6 @@ CATALOG = {
 
 
 ### Beispiel-Test-Prompts
-
 ```json
 [
     "Refactor this Python function for readability",
@@ -259,7 +256,6 @@ CATALOG = {
 
 
 ### Trace-Erweiterung (Optional)
-
 Fügen Sie pro Schritt Trace-JSON-Zeilen für `models_pipeline.py` hinzu:
 ```python
 trace.append({
@@ -273,23 +269,22 @@ trace.append({
 
 
 ### Eskalationsheuristik (Idee)
-
-Wenn der Plan Schlüsselwörter wie "optimieren", "Sicherheit" enthält oder die Schrittlänge > 280 Zeichen beträgt → Eskalation zu größerem Modell (z. B. `gpt-oss-20b`) nur für diesen Schritt.
+Wenn der Plan Schlüsselwörter wie "optimieren", "Sicherheit" enthält oder die Schrittlänge > 280 Zeichen beträgt → eskalieren Sie für diesen Schritt nur zu einem größeren Modell (z. B. `gpt-oss-20b`).
 
 ### Optionale Verbesserungen
 
-| Bereich | Verbesserung | Nutzen | Hinweis |
-|---------|--------------|--------|---------|
+| Bereich | Verbesserung | Wert | Hinweis |
+|---------|--------------|------|---------|
 | Caching | Wiederverwendung von Manager- + Client-Objekten | Niedrigere Latenz, weniger Overhead | Verwenden Sie `workshop_utils.get_client` |
-| Nutzungsmetriken | Tokens & Latenz pro Schritt erfassen | Profiling & Optimierung | Zeit jede weitergeleitete Anfrage; in Trace-Liste speichern |
-| Adaptive Weiterleitung | Vertrauens-/kostenbewusst | Bessere Qualitäts-Kosten-Abwägung | Bewertung hinzufügen: Wenn Prompt > N Zeichen oder Regex passt zur Domäne → Eskalation zu größerem Modell |
+| Nutzungsmetriken | Erfassen von Tokens & Latenz pro Schritt | Profilierung & Optimierung | Zeit für jeden weitergeleiteten Aufruf messen; in Trace-Liste speichern |
+| Adaptive Weiterleitung | Vertrauens-/kostenbewusst | Bessere Qualitäts-Kosten-Abwägung | Bewertung hinzufügen: Wenn Prompt > N Zeichen oder Regex passt zur Domäne → eskalieren zu größerem Modell |
 | Dynamisches Fähigkeitsregister | Katalog im laufenden Betrieb neu laden | Kein Neustart erforderlich | `catalog.json` zur Laufzeit laden; Dateizeitstempel überwachen |
-| Fallback-Strategie | Robustheit bei Fehlern | Höhere Verfügbarkeit | Primär versuchen → bei Ausnahme Fallback-Alias |
+| Fallback-Strategie | Robustheit bei Ausfällen | Höhere Verfügbarkeit | Primär versuchen → bei Ausnahme Fallback-Alias verwenden |
 | Streaming-Pipeline | Frühzeitiges Feedback | UX-Verbesserung | Jeden Schritt streamen und endgültige Verfeinerungseingabe puffern |
-| Vektor-Absichts-Einbettungen | Nuanciertere Weiterleitung | Höhere Absichtsgenauigkeit | Prompt einbetten, clustern & Cluster-Zentrum → Fähigkeit zuordnen |
+| Vektor-Absichts-Einbettungen | Nuanciertere Weiterleitung | Höhere Absichtsgenauigkeit | Prompt einbetten, clustern & Schwerpunkt → Fähigkeit zuordnen |
 | Trace-Export | Auditierbare Kette | Compliance/Reporting | JSON-Zeilen ausgeben: Schritt, Absicht, Modell, Latenz_ms, Tokens |
-| Kosten-Simulation | Vorab-Schätzung für die Cloud | Budgetplanung | Fiktive Kosten/Token pro Modell zuweisen & pro Aufgabe aggregieren |
-| Deterministischer Modus | Reproduzierbarkeit | Stabileres Benchmarking | Env: `temperature=0`, feste Schrittanzahl |
+| Kosten-Simulation | Vorabschätzung für die Cloud | Budgetplanung | Fiktive Kosten/Token pro Modell zuweisen & pro Aufgabe aggregieren |
+| Deterministischer Modus | Reproduzierbarkeit | Stabiles Benchmarking | Env: `temperature=0`, feste Schrittanzahl |
 
 #### Beispiel für Trace-Struktur
 
@@ -313,7 +308,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
 ```
 
 
-#### Hot-Reload des Modellkatalogs
+#### Hot Reload des Modellkatalogs
 
 ```python
 import json, time, os
@@ -327,9 +322,6 @@ def get_catalog():
         last_mtime = m
     return CATALOG
 ```
-
-
-Iterieren Sie schrittweise – vermeiden Sie Überengineering bei frühen Prototypen.
 
 ---
 

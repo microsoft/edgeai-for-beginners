@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82e20fdeebffdf75eecdf5cdfb02b65c",
-  "translation_date": "2025-10-09T21:18:11+00:00",
+  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
+  "translation_date": "2025-10-28T19:58:12+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "en"
 }
@@ -11,24 +11,24 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstract
 
-Learn how to create actionable GenAI workflows using Foundry Local and Azure AI Foundry. This session covers advanced prompt engineering, integrating structured data, and orchestrating tasks with reproducible pipelines. While the focus is on Retrieval-Augmented Generation (RAG) for document and data Q&A, the patterns can be applied to broader GenAI solution designs.
+Learn how to create actionable Generative AI workflows using Foundry Local and Azure AI Foundry. This session covers advanced prompt engineering, integrating structured data, and orchestrating tasks with reproducible pipelines. While the focus is on Retrieval-Augmented Generation (RAG) for document and data Q&A, the patterns can be applied to broader Generative AI solution designs.
 
 ## Learning Objectives
 
 By the end of this session, you will:
 
-- **Master Prompt Engineering**: Develop effective system prompts and grounding strategies.
-- **Implement RAG Patterns**: Build document-based Q&A systems using vector search.
-- **Integrate Structured Data**: Work with CSV, JSON, and tabular data in AI workflows.
-- **Build Production RAG**: Create scalable RAG applications with Chainlit.
-- **Bridge Local to Cloud**: Understand migration paths from Foundry Local to Azure AI Foundry.
+- **Master Prompt Engineering**: Develop effective system prompts and grounding strategies
+- **Implement RAG Patterns**: Build document-based Q&A systems using vector search
+- **Integrate Structured Data**: Utilize CSV, JSON, and tabular data in AI workflows
+- **Build Production RAG**: Develop scalable RAG applications with Chainlit
+- **Bridge Local to Cloud**: Learn migration paths from Foundry Local to Azure AI Foundry
 
 ## Prerequisites
 
-- Completion of Session 1 (Foundry Local setup).
-- Basic knowledge of vector databases and embeddings.
-- Python programming experience.
-- Familiarity with document processing concepts.
+- Completion of Session 1 (Foundry Local setup)
+- Basic knowledge of vector databases and embeddings
+- Experience with Python programming
+- Familiarity with document processing concepts
 
 ### Cross-Platform Environment Quick Start (Windows & macOS)
 
@@ -56,7 +56,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Validation: Foundry Local Environment Check
 
-Before starting the demos, validate your local environment:
+Before starting the demos, ensure your local environment is properly set up:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -884,31 +884,31 @@ python samples/02-rag-solutions/migration_guide.py
 
 ### 1. Advanced Prompt Engineering
 
-- **System Prompts**: Domain-specific expert personas.
-- **Grounding Strategies**: Techniques for integrating context.
-- **Temperature Control**: Balancing creativity and consistency.
-- **Token Management**: Efficient use of context.
+- **System Prompts**: Creating domain-specific expert personas
+- **Grounding Strategies**: Techniques for integrating context
+- **Temperature Control**: Balancing creativity and consistency
+- **Token Management**: Efficient use of context
 
 ### 2. Structured Data Integration
 
-- **CSV Processing**: Using Pandas with AI models.
-- **Statistical Analysis**: Automated data summarization.
-- **Context Creation**: Dynamic context generation based on queries.
-- **Multi-format Support**: JSON, CSV, and tabular data.
+- **CSV Processing**: Using Pandas with AI models
+- **Statistical Analysis**: Automating data summarization
+- **Context Creation**: Generating dynamic context based on queries
+- **Multi-format Support**: Handling JSON, CSV, and tabular data
 
 ### 3. RAG Implementation Patterns
 
-- **Vector Search**: TF-IDF and cosine similarity.
-- **Document Retrieval**: Relevance scoring and ranking.
-- **Context Combination**: Synthesizing information from multiple documents.
-- **Answer Generation**: Creating grounded responses.
+- **Vector Search**: Using TF-IDF and cosine similarity
+- **Document Retrieval**: Scoring and ranking relevance
+- **Context Combination**: Synthesizing information from multiple documents
+- **Answer Generation**: Producing grounded responses
 
 ### 4. Cloud Migration Strategies
 
-- **Unified APIs**: Single codebase for local and cloud environments.
-- **Environment Abstraction**: Configuration-driven deployment.
-- **Development Workflow**: Local → Staging → Production.
-- **Cost Optimization**: Local development, cloud production.
+- **Unified APIs**: Maintaining a single codebase for local and cloud environments
+- **Environment Abstraction**: Deploying configurations across different setups
+- **Development Workflow**: Transitioning from local to staging to production
+- **Cost Optimization**: Developing locally and deploying in the cloud
 
 ## Production Considerations
 
@@ -962,26 +962,26 @@ metrics = {
 
 After completing this session:
 
-1. **Explore Session 3**: Open-Source Models in Foundry Local.
-2. **Build Production RAG**: Implement with Chainlit (Sample 04).
-3. **Advanced Vector Search**: Integrate with Chroma or Pinecone.
-4. **Cloud Migration**: Deploy to Azure AI Foundry.
-5. **Evaluate RAG Quality**: Run `python Workshop/samples/session02/rag_eval_ragas.py` to measure answer relevancy, faithfulness, and context precision using ragas.
+1. **Explore Session 3**: Open-Source Models in Foundry Local
+2. **Build Production RAG**: Implement with Chainlit (Sample 04)
+3. **Advanced Vector Search**: Integrate with Chroma or Pinecone
+4. **Cloud Migration**: Deploy to Azure AI Foundry
+5. **Evaluate RAG Quality**: Run `cd Workkshop/samples;python -m session02.rag_eval_ragas` to measure answer_relevancy, faithfulness, and context_precision using ragas
 
 ### Optional Enhancements
 
-| Category       | Enhancement                          | Rationale                          | Direction                                   |
-|----------------|--------------------------------------|------------------------------------|--------------------------------------------|
-| Retrieval      | Replace TF-IDF with vector store (FAISS / Chroma) | Better semantic recall & scalability | Chunk docs (500–800 chars), embed, persist index |
-| Hybrid Index   | Dual semantic + keyword filtering    | Improves precision on numeric/code queries | Filter by keyword then rank by cosine similarity |
-| Embeddings     | Evaluate multiple embedding models   | Optimize relevance vs speed        | A/B: MiniLM vs E5-small vs locally hosted encoder |
-| Caching        | Cache embeddings & retrieval results | Lower repeated query latency       | Simple on-disk pickle/sqlite with hash key |
-| Evaluation     | Expand ragas dataset                | Statistically meaningful quality   | Curate 50–100 Q/A + contexts; stratify by topic |
-| Metrics        | Track retrieval & generation timings | Performance profiling              | Capture `retrieval_ms`, `gen_ms`, `tokens` per call |
-| Guardrails     | Add hallucination fallback          | Safer answers                      | If faithfulness < threshold → answer: "Insufficient context." |
-| Fallback       | Cascade local → Azure model         | Hybrid quality boost               | On low confidence route to cloud via same OpenAI API |
-| Determinism    | Stable comparison runs              | Repeatable eval sets               | Fix seed, `temperature=0`, disable sampler randomness |
-| Monitoring     | Persist eval run history            | Regression detection               | Append JSON lines w/ timestamp + metric deltas |
+| Category | Enhancement | Rationale | Direction |
+|----------|-------------|-----------|-----------|
+| Retrieval | Replace TF-IDF with vector store (FAISS / Chroma) | Better semantic recall & scalability | Chunk docs (500–800 chars), embed, persist index |
+| Hybrid Index | Dual semantic + keyword filtering | Improves precision on numeric / code queries | Filter by keyword then rank by cosine similarity |
+| Embeddings | Evaluate multiple embedding models | Optimize relevance vs speed | A/B: MiniLM vs E5-small vs locally hosted encoder |
+| Caching | Cache embeddings & retrieval results | Lower repeated query latency | Simple on-disk pickle / sqlite with hash key |
+| Evaluation | Expand ragas dataset | Statistically meaningful quality | Curate 50–100 Q/A + contexts; stratify by topic |
+| Metrics | Track retrieval & generation timings | Performance profiling | Capture `retrieval_ms`, `gen_ms`, `tokens` per call |
+| Guardrails | Add hallucination fallback | Safer answers | If faithfulness < threshold → answer: "Insufficient context." |
+| Fallback | Cascade local → Azure model | Hybrid quality boost | On low confidence route to cloud via same OpenAI API |
+| Determinism | Stable comparison runs | Repeatable eval sets | Fix seed, `temperature=0`, disable sampler randomness |
+| Monitoring | Persist eval run history | Regression detection | Append JSON lines w/ timestamp + metric deltas |
 
 #### Example: Adding Retrieval Timing
 
@@ -999,9 +999,9 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 
 #### Scaling Evaluation With ragas
 
-1. Assemble a JSONL with fields: `question`, `answer`, `contexts`, `ground_truths` (list).
-2. Convert to `Dataset.from_list(list_of_dicts)`.
-3. Run `evaluate(dataset, metrics=[...])`.
+1. Assemble a JSONL with fields: `question`, `answer`, `contexts`, `ground_truths` (list)
+2. Convert to `Dataset.from_list(list_of_dicts)`
+3. Run `evaluate(dataset, metrics=[...])`
 4. Store metrics (CSV/JSON) for trend analysis.
 
 #### Vector Store Quick Start (FAISS)
@@ -1024,8 +1024,8 @@ For disk persistence use `faiss.write_index(index, "kb.index")`.
 - [Ragas Evaluation Docs](https://docs.ragas.io)
 
 ### Sample Code
-- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG Application.
-- [Advanced Multi-Agent System](./samples/09/README.md) - Agent coordination patterns.
+- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG Application
+- [Advanced Multi-Agent System](./samples/09/README.md) - Agent coordination patterns
 
 ---
 
@@ -1068,12 +1068,14 @@ GROUND_TRUTH = [
 
 
 ### Scenario Narrative
+
 The support engineering group wants a rapid prototype to answer internal FAQs without exposing customer data externally. Session 2 artifacts progress from a minimal ephemeral RAG (no persistence) → structured CSV Q&A → document retrieval with citation → objective quality evaluation (ragas) → a migration strategy ready for Azure staging.
 
 ### Expansion Paths
+
 Use the Optional Enhancements table to evolve: swap TF‑IDF for FAISS/Chroma, enlarge the evaluation corpus (50–100 Q/A), add fallback escalation to a larger model when faithfulness < threshold.
 
 ---
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.

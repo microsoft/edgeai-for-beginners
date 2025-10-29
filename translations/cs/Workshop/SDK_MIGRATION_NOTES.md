@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T21:42:59+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T23:03:44+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "cs"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Přehled
 
-Všechny soubory Python ve složce Workshop byly aktualizovány podle nejnovějších vzorů z oficiálního [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
+Všechny soubory Python ve složce Workshop byly aktualizovány, aby odpovídaly nejnovějším vzorům z oficiálního [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
 
 ## Shrnutí změn
 
@@ -21,8 +21,8 @@ Všechny soubory Python ve složce Workshop byly aktualizovány podle nejnověj�
 - **Podpora přepsání endpointu**: Přidána podpora proměnné prostředí `FOUNDRY_LOCAL_ENDPOINT`
 - **Vylepšené zpracování chyb**: Lepší zpracování výjimek s podrobnými chybovými zprávami
 - **Vylepšené ukládání do mezipaměti**: Klíče mezipaměti nyní zahrnují endpoint pro scénáře s více endpointy
-- **Exponenciální zpoždění**: Logika opakování nyní používá exponenciální zpoždění pro vyšší spolehlivost
-- **Typové anotace**: Přidány komplexní typové anotace pro lepší podporu v IDE
+- **Exponenciální zpoždění**: Logika opakování nyní používá exponenciální zpoždění pro lepší spolehlivost
+- **Typové anotace**: Přidány komplexní typové nápovědy pro lepší podporu IDE
 
 #### Nové schopnosti:
 ```python
@@ -62,7 +62,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Vylepšena dokumentace
 
 #### Sezení 05: Orchestrace více agentů (`agents_orchestrator.py`)
-- Přidány typové anotace (změna `str | None` na `Optional[str]`)
+- Přidány typové nápovědy (změna z `str | None` na `Optional[str]`)
 - Vylepšena dokumentace třídy Agent
 - Přidána podpora přepsání endpointu
 - Vylepšen vzor inicializace
@@ -79,7 +79,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### Skripty
 
-#### Export benchmarků (`export_benchmark_markdown.py`)
+#### Export benchmarku (`export_benchmark_markdown.py`)
 - Přidána podpora přepsání endpointu
 - Aktualizovány výchozí modely
 - Vylepšena dokumentace funkcí
@@ -116,11 +116,11 @@ Všechny ukázky nyní podporují tyto proměnné prostředí:
 - `BENCH_STREAM` - Měření latence prvního tokenu
 - `RAG_QUESTION` - Testovací otázka pro ukázky RAG
 - `AGENT_MODEL_PRIMARY` - Primární model agenta
-- `AGENT_MODEL_EDITOR` - Editor modelu agenta
+- `AGENT_MODEL_EDITOR` - Model editoru agenta
 - `SLM_ALIAS` - Alias malého jazykového modelu
 - `LLM_ALIAS` - Alias velkého jazykového modelu
 
-## Implementované osvědčené postupy SDK
+## Nejlepší praktiky SDK
 
 ### 1. Správná inicializace klienta
 ```python
@@ -183,12 +183,12 @@ for chunk in stream:
 
 Pokud vytváříte nové ukázky nebo aktualizujete stávající:
 
-1. **Používejte pomocné funkce z `workshop_utils.py`**:
+1. **Používejte pomocníky z `workshop_utils.py`**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
 
-2. **Podporujte přepsání endpointu**:
+2. **Podpora přepsání endpointu**:
    ```python
    endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")
    manager, client, model_id = get_client(alias, endpoint=endpoint)
@@ -199,7 +199,7 @@ Pokud vytváříte nové ukázky nebo aktualizujete stávající:
    - Odkaz na SDK
    - Příklady použití
 
-4. **Používejte typové anotace**:
+4. **Používejte typové nápovědy**:
    ```python
    from typing import Optional, List, Dict, Any
    ```
@@ -215,7 +215,7 @@ Pokud vytváříte nové ukázky nebo aktualizujete stávající:
 
 ## Testování
 
-Všechny ukázky lze testovat pomocí:
+Všechny ukázky lze otestovat pomocí:
 
 ```bash
 # Set environment variables
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -237,7 +238,7 @@ python -m Workshop.tests.smoke
 
 - **Hlavní repozitář**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API dokumentace**: Podívejte se na repozitář SDK pro nejnovější dokumentaci API
+- **Dokumentace API**: Nejnovější dokumentaci API najdete v repozitáři SDK
 
 ## Změny, které mohou způsobit problémy
 
@@ -246,12 +247,12 @@ Všechny změny jsou zpětně kompatibilní. Aktualizace primárně:
 - Přidávají nové volitelné funkce (přepsání endpointu)
 - Zlepšují zpracování chyb
 - Vylepšují dokumentaci
-- Aktualizují výchozí názvy modelů podle aktuálních doporučení
+- Aktualizují výchozí názvy modelů na aktuální doporučení
 
 ### Volitelná vylepšení
 Možná budete chtít aktualizovat svůj kód na použití:
 - `FOUNDRY_LOCAL_ENDPOINT` pro explicitní kontrolu endpointu
-- `SHOW_USAGE=1` pro viditelnost využití tokenů
+- `SHOW_USAGE=1` pro zobrazení využití tokenů
 - Aktualizované výchozí modely (`phi-4-mini` místo `phi-3.5-mini`)
 
 ## Běžné problémy a jejich řešení
@@ -281,9 +282,9 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## Další kroky
 
-1. **Aktualizujte ukázky Module08**: Použijte podobné vzory pro Module08/samples
+1. **Aktualizujte ukázky z modulu 08**: Použijte podobné vzory pro ukázky v Module08/samples
 2. **Přidejte integrační testy**: Vytvořte komplexní testovací sadu
-3. **Benchmarking výkonu**: Porovnejte výkon před/po
+3. **Benchmarking výkonu**: Porovnejte výkon před/po aktualizaci
 4. **Aktualizace dokumentace**: Aktualizujte hlavní README s novými vzory
 
 ## Pokyny pro přispěvatele
@@ -294,7 +295,7 @@ Při přidávání nových ukázek:
 3. Přidejte komplexní docstringy
 4. Zahrňte odkazy na SDK
 5. Podporujte přepsání endpointu
-6. Přidejte správné typové anotace
+6. Přidejte správné typové nápovědy
 7. Zahrňte příklady použití v docstringu
 
 ## Kompatibilita verzí
@@ -306,11 +307,11 @@ Tyto aktualizace jsou kompatibilní s:
 
 ---
 
-**Poslední aktualizace**: 8. ledna 2025  
+**Poslední aktualizace**: 2025-01-08  
 **Správce**: Tým EdgeAI Workshop  
 **Verze SDK**: Foundry Local SDK (nejnovější 0.7.117+67073234e7)
 
 ---
 
-**Upozornění**:  
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme zodpovědní za jakékoli nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení**:  
+Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
