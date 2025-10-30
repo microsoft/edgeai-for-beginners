@@ -1,26 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c0cb9f7bcff2bc170532d8870a891f38",
-  "translation_date": "2025-09-17T23:29:37+00:00",
+  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
+  "translation_date": "2025-10-30T12:28:19+00:00",
   "source_file": "Module04/README.md",
   "language_code": "it"
 }
 -->
 # Capitolo 04: Conversione del Formato del Modello e Quantizzazione - Panoramica del Capitolo
 
-L'emergere dell'EdgeAI ha reso la conversione del formato del modello e la quantizzazione tecnologie essenziali per implementare capacità avanzate di machine learning su dispositivi con risorse limitate. Questo capitolo completo offre una guida dettagliata per comprendere, implementare e ottimizzare i modelli per scenari di distribuzione edge.
+L'emergere dell'EdgeAI ha reso la conversione del formato del modello e la quantizzazione tecnologie essenziali per implementare capacità avanzate di machine learning su dispositivi con risorse limitate. Questo capitolo completo offre una guida completa per comprendere, implementare e ottimizzare i modelli per scenari di distribuzione edge.
 
 ## 📚 Struttura del Capitolo e Percorso di Apprendimento
 
-Questo capitolo è organizzato in sei sezioni progressive, ciascuna costruita sulla precedente per creare una comprensione completa dell'ottimizzazione dei modelli per il calcolo edge:
+Questo capitolo è organizzato in sette sezioni progressive, ciascuna costruita sulla precedente per creare una comprensione completa dell'ottimizzazione dei modelli per il calcolo edge:
 
 ---
 
-## [Sezione 1: Fondamenti della Conversione del Formato del Modello e della Quantizzazione](./01.Introduce.md)
+## [Sezione 1: Fondamenti di Conversione del Formato del Modello e Quantizzazione](./01.Introduce.md)
 
 ### 🎯 Panoramica
-Questa sezione fondamentale stabilisce il quadro teorico per l'ottimizzazione dei modelli in ambienti di calcolo edge, coprendo i livelli di precisione della quantizzazione da 1-bit a 8-bit e le principali strategie di conversione del formato.
+Questa sezione fondamentale stabilisce il quadro teorico per l'ottimizzazione dei modelli in ambienti di calcolo edge, coprendo i limiti di quantizzazione da 1-bit a 8-bit e le principali strategie di conversione del formato.
 
 **Argomenti Chiave:**
 - Quadro di classificazione della precisione (ultra-bassa, bassa, media precisione)
@@ -38,7 +38,7 @@ Questa sezione fondamentale stabilisce il quadro teorico per l'ottimizzazione de
 ## [Sezione 2: Guida all'Implementazione di Llama.cpp](./02.Llamacpp.md)
 
 ### 🎯 Panoramica
-Un tutorial completo per implementare Llama.cpp, un potente framework C++ che consente un'inferenza efficiente di modelli di linguaggio di grandi dimensioni con configurazione minima su diverse piattaforme hardware.
+Un tutorial completo per implementare Llama.cpp, un potente framework C++ che consente un'inferenza efficiente di modelli di linguaggio di grandi dimensioni con un setup minimo su diverse configurazioni hardware.
 
 **Argomenti Chiave:**
 - Installazione su piattaforme Windows, macOS e Linux
@@ -47,7 +47,7 @@ Un tutorial completo per implementare Llama.cpp, un potente framework C++ che co
 - Integrazione con Python e strategie di distribuzione in produzione
 
 **Obiettivi di Apprendimento:**
-- Padroneggiare l'installazione multipiattaforma e la compilazione da sorgente
+- Padroneggiare l'installazione cross-platform e la compilazione da sorgente
 - Implementare tecniche di quantizzazione e ottimizzazione del modello
 - Distribuire modelli in modalità server con integrazione REST API
 
@@ -56,17 +56,17 @@ Un tutorial completo per implementare Llama.cpp, un potente framework C++ che co
 ## [Sezione 3: Suite di Ottimizzazione Microsoft Olive](./03.MicrosoftOlive.md)
 
 ### 🎯 Panoramica
-Esplorazione di Microsoft Olive, una suite di ottimizzazione dei modelli consapevole dell'hardware con oltre 40 componenti di ottimizzazione integrati, progettata per la distribuzione di modelli di livello enterprise su piattaforme hardware diverse.
+Esplorazione di Microsoft Olive, un toolkit di ottimizzazione dei modelli consapevole dell'hardware con oltre 40 componenti di ottimizzazione integrati, progettato per la distribuzione di modelli di livello enterprise su piattaforme hardware diverse.
 
 **Argomenti Chiave:**
 - Funzionalità di auto-ottimizzazione con quantizzazione dinamica e statica
 - Intelligenza consapevole dell'hardware per distribuzione su CPU, GPU e NPU
-- Supporto nativo per modelli popolari (Llama, Phi, Qwen, Gemma)
+- Supporto per modelli popolari (Llama, Phi, Qwen, Gemma) pronto all'uso
 - Integrazione aziendale con Azure ML e flussi di lavoro di produzione
 
 **Obiettivi di Apprendimento:**
-- Sfruttare l'ottimizzazione automatizzata per diverse architetture di modelli
-- Implementare strategie di distribuzione multipiattaforma
+- Sfruttare l'ottimizzazione automatizzata per varie architetture di modelli
+- Implementare strategie di distribuzione cross-platform
 - Stabilire pipeline di ottimizzazione pronte per l'azienda
 
 ---
@@ -77,8 +77,8 @@ Esplorazione di Microsoft Olive, una suite di ottimizzazione dei modelli consape
 Esplorazione completa del toolkit OpenVINO di Intel, una piattaforma open-source per distribuire soluzioni AI performanti su cloud, on-premises e ambienti edge con capacità avanzate del Neural Network Compression Framework (NNCF).
 
 **Argomenti Chiave:**
-- Distribuzione multipiattaforma con accelerazione hardware (CPU, GPU, VPU, acceleratori AI)
-- Neural Network Compression Framework (NNCF) per quantizzazione avanzata e pruning
+- Distribuzione cross-platform con accelerazione hardware (CPU, GPU, VPU, acceleratori AI)
+- Neural Network Compression Framework (NNCF) per quantizzazione e pruning avanzati
 - OpenVINO GenAI per ottimizzazione e distribuzione di modelli di linguaggio di grandi dimensioni
 - Capacità di server di modelli di livello enterprise e strategie di distribuzione scalabili
 
@@ -92,12 +92,12 @@ Esplorazione completa del toolkit OpenVINO di Intel, una piattaforma open-source
 ## [Sezione 5: Approfondimento sul Framework Apple MLX](./05.AppleMLX.md)
 
 ### 🎯 Panoramica
-Copertura completa di Apple MLX, un framework rivoluzionario progettato specificamente per il machine learning efficiente su Apple Silicon, con enfasi sulle capacità dei modelli di linguaggio di grandi dimensioni e sulla distribuzione locale.
+Copertura completa di Apple MLX, un framework rivoluzionario progettato specificamente per il machine learning efficiente su Apple Silicon, con enfasi sulle capacità dei modelli di linguaggio di grandi dimensioni e distribuzione locale.
 
 **Argomenti Chiave:**
 - Vantaggi dell'architettura di memoria unificata e Metal Performance Shaders
 - Supporto per modelli LLaMA, Mistral, Phi-3, Qwen e Code Llama
-- Fine-tuning con LoRA per personalizzazione efficiente del modello
+- Fine-tuning LoRA per personalizzazione efficiente del modello
 - Integrazione con Hugging Face e supporto per quantizzazione (4-bit e 8-bit)
 
 **Obiettivi di Apprendimento:**
@@ -110,13 +110,13 @@ Copertura completa di Apple MLX, un framework rivoluzionario progettato specific
 ## [Sezione 6: Sintesi del Flusso di Lavoro per lo Sviluppo Edge AI](./06.workflow-synthesis.md)
 
 ### 🎯 Panoramica
-Sintesi completa di tutti i framework di ottimizzazione in flussi di lavoro unificati, matrici decisionali e migliori pratiche per la distribuzione Edge AI pronta per la produzione su piattaforme e casi d'uso diversi.
+Sintesi completa di tutti i framework di ottimizzazione in flussi di lavoro unificati, matrici decisionali e migliori pratiche per la distribuzione Edge AI pronta per la produzione su piattaforme e casi d'uso diversi, inclusi mobile, desktop e ambienti cloud.
 
 **Argomenti Chiave:**
 - Architettura del flusso di lavoro unificato che integra più framework di ottimizzazione
-- Alberi decisionali per la selezione del framework e analisi dei compromessi prestazionali
+- Alberi decisionali per la selezione del framework e analisi dei compromessi di prestazione
 - Validazione della prontezza per la produzione e strategie di distribuzione complete
-- Strategie per garantire la compatibilità con hardware e architetture di modelli emergenti
+- Strategie per il futuro per hardware emergenti e architetture di modelli
 
 **Obiettivi di Apprendimento:**
 - Padroneggiare la selezione sistematica del framework basata su requisiti e vincoli
@@ -125,9 +125,27 @@ Sintesi completa di tutti i framework di ottimizzazione in flussi di lavoro unif
 
 ---
 
+## [Sezione 7: Suite di Ottimizzazione Qualcomm QNN](./07.QualcommQNN.md)
+
+### 🎯 Panoramica
+Esplorazione completa di Qualcomm QNN (Qualcomm Neural Network), un framework di inferenza AI unificato progettato per sfruttare l'architettura di calcolo eterogenea di Qualcomm, inclusi Hexagon NPU, Adreno GPU e Kryo CPU, per massime prestazioni ed efficienza energetica su dispositivi mobili e edge.
+
+**Argomenti Chiave:**
+- Calcolo eterogeneo con accesso unificato a NPU, GPU e CPU
+- Ottimizzazione consapevole dell'hardware per piattaforme Snapdragon con distribuzione intelligente del carico di lavoro
+- Tecniche avanzate di quantizzazione (INT8, INT16, precisione mista) per distribuzione mobile
+- Inferenza efficiente dal punto di vista energetico ottimizzata per dispositivi alimentati a batteria e applicazioni in tempo reale
+
+**Obiettivi di Apprendimento:**
+- Padroneggiare l'accelerazione hardware Qualcomm per la distribuzione AI mobile
+- Implementare strategie di ottimizzazione efficienti dal punto di vista energetico per il calcolo edge
+- Distribuire modelli pronti per la produzione nell'ecosistema Qualcomm con prestazioni ottimali
+
+---
+
 ## 🎯 Obiettivi di Apprendimento del Capitolo
 
-Completando questo capitolo completo, i lettori raggiungeranno:
+Al termine di questo capitolo completo, i lettori raggiungeranno:
 
 ### **Padronanza Tecnica**
 - Comprensione approfondita dei limiti di quantizzazione e delle applicazioni pratiche
@@ -135,30 +153,31 @@ Completando questo capitolo completo, i lettori raggiungeranno:
 - Competenze di distribuzione in ambienti di calcolo edge
 
 ### **Comprensione Strategica**
-- Capacità di selezione consapevole dell'hardware per l'ottimizzazione
-- Decisioni informate sui compromessi prestazionali
+- Capacità di selezione dell'ottimizzazione consapevole dell'hardware
+- Decisioni informate sui compromessi di prestazione
 - Strategie di distribuzione e monitoraggio pronte per l'azienda
 
-### **Benchmark di Prestazioni**
+### **Benchmark di Prestazione**
 
-| Framework   | Quantizzazione | Uso Memoria | Miglioramento Velocità | Caso d'Uso                  |
-|-------------|----------------|-------------|-------------------------|-----------------------------|
-| Llama.cpp   | Q4_K_M         | ~4GB        | 2-3x                   | Distribuzione multipiattaforma |
-| Olive       | INT4           | Riduzione 60-75% | 2-6x                   | Flussi di lavoro aziendali  |
-| OpenVINO    | INT8/INT4      | Riduzione 50-75% | 2-5x                   | Ottimizzazione hardware Intel |
-| MLX         | 4-bit          | ~4GB        | 2-4x                   | Ottimizzazione per Apple Silicon |
+| Framework | Quantizzazione | Utilizzo Memoria | Miglioramento Velocità | Caso d'Uso |
+|-----------|----------------|------------------|------------------------|------------|
+| Llama.cpp | Q4_K_M | ~4GB | 2-3x | Distribuzione cross-platform |
+| Olive | INT4 | Riduzione 60-75% | 2-6x | Flussi di lavoro aziendali |
+| OpenVINO | INT8/INT4 | Riduzione 50-75% | 2-5x | Ottimizzazione hardware Intel |
+| QNN | INT8/INT4 | Riduzione 50-80% | 5-15x | Mobile/edge Qualcomm |
+| MLX | 4-bit | ~4GB | 2-4x | Ottimizzazione Apple Silicon |
 
 ## 🚀 Prossimi Passi e Applicazioni Avanzate
 
 Questo capitolo fornisce una base completa per:
 - Sviluppo di modelli personalizzati per domini specifici
-- Ricerca sull'ottimizzazione Edge AI
+- Ricerca sull'ottimizzazione AI edge
 - Sviluppo di applicazioni AI commerciali
-- Distribuzioni Edge AI aziendali su larga scala
+- Distribuzioni AI edge aziendali su larga scala
 
-Le conoscenze acquisite in queste sei sezioni offrono un toolkit completo per navigare nel panorama in rapida evoluzione dell'ottimizzazione e distribuzione dei modelli Edge AI.
+Le conoscenze acquisite da queste sette sezioni offrono un toolkit completo per navigare nel panorama in rapida evoluzione dell'ottimizzazione e distribuzione dei modelli AI edge.
 
 ---
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un traduttore umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche potrebbero contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si consiglia una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.

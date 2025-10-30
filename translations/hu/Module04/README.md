@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c0cb9f7bcff2bc170532d8870a891f38",
-  "translation_date": "2025-09-18T16:51:26+00:00",
+  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
+  "translation_date": "2025-10-30T14:09:27+00:00",
   "source_file": "Module04/README.md",
   "language_code": "hu"
 }
 -->
-# 4. fejezet: Modellformátum átalakítása és kvantálás - Fejezet áttekintése
+# 4. fejezet: Modellformátum átalakítás és kvantálás - Fejezet áttekintése
 
-Az EdgeAI megjelenése a modellformátum átalakítását és kvantálását alapvető technológiákká tette a fejlett gépi tanulási képességek erőforrás-korlátozott eszközökön történő telepítéséhez. Ez az átfogó fejezet teljes útmutatót nyújt a modellek megértéséhez, megvalósításához és optimalizálásához az edge telepítési környezetekben.
+Az EdgeAI megjelenése a modellformátum átalakítást és kvantálást alapvető technológiává tette a fejlett gépi tanulási képességek erőforrás-korlátozott eszközökön történő telepítéséhez. Ez az átfogó fejezet teljes útmutatót nyújt a modellek megértéséhez, megvalósításához és optimalizálásához az edge telepítési környezetekben.
 
 ## 📚 Fejezet felépítése és tanulási útvonal
 
-Ez a fejezet hat egymásra épülő szakaszra van osztva, amelyek egymásra épülve átfogó megértést nyújtanak a modellek optimalizálásáról az edge számítástechnika számára:
+Ez a fejezet hét egymásra épülő szakaszra van osztva, amelyek egymásra épülve átfogó megértést nyújtanak a modellek optimalizálásáról az edge számítástechnika számára:
 
 ---
 
@@ -29,16 +29,16 @@ Ez az alapvető szakasz elméleti keretet biztosít a modellek optimalizálásá
 - Teljesítmény-összehasonlítások és memóriahasználati összevetések
 
 **Tanulási eredmények:**
-- Értsd meg a kvantálási határokat és osztályozásokat
-- Azonosítsd a megfelelő formátum átalakítási technikákat
-- Tanuld meg az edge telepítéshez szükséges fejlett optimalizálási stratégiákat
+- A kvantálási határok és osztályozások megértése
+- Megfelelő formátum átalakítási technikák azonosítása
+- Fejlett optimalizálási stratégiák elsajátítása edge telepítéshez
 
 ---
 
 ## [2. szakasz: Llama.cpp megvalósítási útmutató](./02.Llamacpp.md)
 
 ### 🎯 Áttekintés
-Átfogó útmutató a Llama.cpp megvalósításához, egy erőteljes C++ keretrendszerhez, amely minimális beállítással hatékony Nagy Nyelvi Modell következtetést tesz lehetővé különböző hardverkonfigurációkon.
+Átfogó útmutató a Llama.cpp megvalósításához, egy erőteljes C++ keretrendszerhez, amely lehetővé teszi a Nagy Nyelvi Modellek hatékony következtetését minimális beállítással különböző hardverkonfigurációkon.
 
 **Fő témák:**
 - Telepítés Windows, macOS és Linux platformokon
@@ -47,16 +47,16 @@ Ez az alapvető szakasz elméleti keretet biztosít a modellek optimalizálásá
 - Python integráció és termelési telepítési stratégiák
 
 **Tanulási eredmények:**
-- Sajátítsd el a többplatformos telepítést és forrásból történő építést
-- Valósítsd meg a modell kvantálási és optimalizálási technikákat
-- Telepítsd a modelleket szerver módban REST API integrációval
+- Keresztplatform telepítés és forrásból történő építés elsajátítása
+- Modell kvantálási és optimalizálási technikák megvalósítása
+- Modellek telepítése szerver módban REST API integrációval
 
 ---
 
 ## [3. szakasz: Microsoft Olive optimalizációs csomag](./03.MicrosoftOlive.md)
 
 ### 🎯 Áttekintés
-A Microsoft Olive felfedezése, egy hardver-tudatos modelloptimalizáló eszköztár, amely több mint 40 beépített optimalizációs komponenst kínál, és vállalati szintű modelltelepítést tesz lehetővé különböző hardverplatformokon.
+A Microsoft Olive felfedezése, egy hardver-tudatos modelloptimalizáló eszközkészlet, amely több mint 40 beépített optimalizációs komponenst kínál, és vállalati szintű modelltelepítést tesz lehetővé különböző hardverplatformokon.
 
 **Fő témák:**
 - Automatikus optimalizáció dinamikus és statikus kvantálással
@@ -65,34 +65,34 @@ A Microsoft Olive felfedezése, egy hardver-tudatos modelloptimalizáló eszköz
 - Vállalati integráció Azure ML-lel és termelési munkafolyamatokkal
 
 **Tanulási eredmények:**
-- Használd az automatikus optimalizációt különböző modellarchitektúrákhoz
-- Valósítsd meg a többplatformos telepítési stratégiákat
-- Hozz létre vállalati szintű optimalizációs csatornákat
+- Automatikus optimalizáció kihasználása különböző modellarchitektúrákhoz
+- Keresztplatform telepítési stratégiák megvalósítása
+- Vállalati szintű optimalizációs csatornák létrehozása
 
 ---
 
 ## [4. szakasz: OpenVINO Toolkit optimalizációs csomag](./04.openvino.md)
 
 ### 🎯 Áttekintés
-Az Intel OpenVINO eszköztárának átfogó bemutatása, egy nyílt forráskódú platform, amely fejlett AI megoldások telepítését teszi lehetővé felhőben, helyszínen és edge környezetekben, fejlett Neurális Hálózat Kompressziós Keretrendszer (NNCF) képességekkel.
+Az Intel OpenVINO eszközkészletének átfogó felfedezése, egy nyílt forráskódú platform, amely lehetővé teszi a teljesítményorientált AI megoldások telepítését felhőben, helyszínen és edge környezetekben fejlett Neural Network Compression Framework (NNCF) képességekkel.
 
 **Fő témák:**
-- Többplatformos telepítés hardvergyorsítással (CPU, GPU, VPU, AI gyorsítók)
-- Neurális Hálózat Kompressziós Keretrendszer (NNCF) fejlett kvantáláshoz és metszéshez
+- Keresztplatform telepítés hardvergyorsítással (CPU, GPU, VPU, AI gyorsítók)
+- Neural Network Compression Framework (NNCF) fejlett kvantálás és metszés érdekében
 - OpenVINO GenAI nagy nyelvi modellek optimalizálásához és telepítéséhez
 - Vállalati szintű modell szerver képességek és skálázható telepítési stratégiák
 
 **Tanulási eredmények:**
-- Sajátítsd el az OpenVINO modell átalakítási és optimalizálási munkafolyamatokat
-- Valósítsd meg fejlett kvantálási technikákat az NNCF segítségével
-- Telepítsd az optimalizált modelleket különböző hardverplatformokon Modell Szerverrel
+- OpenVINO modell átalakítási és optimalizációs munkafolyamatok elsajátítása
+- Fejlett kvantálási technikák megvalósítása NNCF segítségével
+- Optimalizált modellek telepítése különböző hardverplatformokon Modell Szerverrel
 
 ---
 
-## [5. szakasz: Apple MLX keretrendszer mélyreható bemutatása](./05.AppleMLX.md)
+## [5. szakasz: Apple MLX keretrendszer mélyreható elemzése](./05.AppleMLX.md)
 
 ### 🎯 Áttekintés
-Az Apple MLX átfogó bemutatása, egy forradalmi keretrendszer, amelyet kifejezetten hatékony gépi tanulásra terveztek Apple Siliconon, különös hangsúlyt fektetve a Nagy Nyelvi Modell képességekre és helyi telepítésre.
+Az Apple MLX átfogó bemutatása, egy forradalmi keretrendszer, amelyet kifejezetten az Apple Silicon hatékony gépi tanulására terveztek, különös hangsúlyt fektetve a Nagy Nyelvi Modellek képességeire és helyi telepítésére.
 
 **Fő témák:**
 - Egységes memóriaarchitektúra előnyei és Metal Performance Shaders
@@ -101,64 +101,83 @@ Az Apple MLX átfogó bemutatása, egy forradalmi keretrendszer, amelyet kifejez
 - Hugging Face integráció és kvantálási támogatás (4-bites és 8-bites)
 
 **Tanulási eredmények:**
-- Sajátítsd el az Apple Silicon optimalizálását LLM telepítéshez
-- Valósítsd meg a finomhangolási és modell testreszabási technikákat
-- Építs vállalati AI alkalmazásokat fokozott adatvédelmi funkciókkal
+- Apple Silicon optimalizáció elsajátítása LLM telepítéshez
+- Finomhangolási és modell testreszabási technikák megvalósítása
+- Vállalati AI alkalmazások építése fokozott adatvédelmi funkciókkal
 
 ---
 
 ## [6. szakasz: Edge AI fejlesztési munkafolyamat szintézise](./06.workflow-synthesis.md)
 
 ### 🎯 Áttekintés
-Az összes optimalizációs keretrendszer átfogó szintézise egységes munkafolyamatokba, döntési mátrixokba és legjobb gyakorlatokba a termelésre kész Edge AI telepítéshez különböző platformokon és felhasználási esetekben.
+Az összes optimalizációs keretrendszer átfogó szintézise egységes munkafolyamatokba, döntési mátrixokba és legjobb gyakorlatokba a termelésre kész Edge AI telepítéshez különböző platformokon és felhasználási esetekben, beleértve a mobil, asztali és felhő környezeteket.
 
 **Fő témák:**
 - Egységes munkafolyamat architektúra több optimalizációs keretrendszer integrálásával
 - Keretrendszer kiválasztási döntési fák és teljesítmény kompromisszumok elemzése
 - Termelési készség validálása és átfogó telepítési stratégiák
-- Jövőbiztos stratégiák feltörekvő hardverekhez és modellarchitektúrákhoz
+- Jövőbiztos stratégiák feltörekvő hardverek és modellarchitektúrák számára
 
 **Tanulási eredmények:**
-- Sajátítsd el a keretrendszer kiválasztásának szisztematikus megközelítését az igények és korlátok alapján
-- Valósítsd meg termelési szintű Edge AI csatornákat átfogó monitorozással
-- Tervezd meg az alkalmazkodó munkafolyamatokat, amelyek fejlődnek az új technológiákkal és igényekkel
+- Szisztematikus keretrendszer kiválasztás elsajátítása követelmények és korlátok alapján
+- Termelési szintű Edge AI csatornák megvalósítása átfogó monitorozással
+- Alkalmazkodó munkafolyamatok tervezése, amelyek fejlődnek az új technológiákkal és igényekkel
 
 ---
 
-## 🎯 Fejezet tanulási eredményei
+## [7. szakasz: Qualcomm QNN optimalizációs csomag](./07.QualcommQNN.md)
+
+### 🎯 Áttekintés
+A Qualcomm QNN (Qualcomm Neural Network) átfogó bemutatása, egy egységes AI következtetési keretrendszer, amely a Qualcomm heterogén számítási architektúráját használja, beleértve a Hexagon NPU-t, Adreno GPU-t és Kryo CPU-t, maximális teljesítmény és energiahatékonyság érdekében mobil és edge eszközökön.
+
+**Fő témák:**
+- Heterogén számítás egységes hozzáféréssel NPU-hoz, GPU-hoz és CPU-hoz
+- Hardver-tudatos optimalizáció Snapdragon platformokhoz intelligens munkaterhelés elosztással
+- Fejlett kvantálási technikák (INT8, INT16, vegyes pontosság) mobil telepítéshez
+- Energiatakarékos következtetés optimalizálva akkumulátoros eszközökhöz és valós idejű alkalmazásokhoz
+
+**Tanulási eredmények:**
+- Qualcomm hardvergyorsítás elsajátítása mobil AI telepítéshez
+- Energiatakarékos optimalizációs stratégiák megvalósítása edge számítástechnikához
+- Termelésre kész modellek telepítése Qualcomm ökoszisztémában optimális teljesítménnyel
+
+---
+
+## 🎯 Fejezet tanulási eredmények
 
 A fejezet elvégzése után az olvasók elérik:
 
 ### **Technikai jártasság**
-- Mély megértés a kvantálási határokról és gyakorlati alkalmazásokról
+- A kvantálási határok és gyakorlati alkalmazások mély megértése
 - Gyakorlati tapasztalat több optimalizációs keretrendszerrel
 - Termelési telepítési készségek edge számítástechnikai környezetekhez
 
 ### **Stratégiai megértés**
 - Hardver-tudatos optimalizációs kiválasztási képességek
-- Tájékozott döntéshozatal a teljesítmény kompromisszumokról
+- Tájékozott döntéshozatal teljesítmény kompromisszumokról
 - Vállalati szintű telepítési és monitorozási stratégiák
 
-### **Teljesítmény összevetések**
+### **Teljesítmény összehasonlítások**
 
 | Keretrendszer | Kvantálás | Memóriahasználat | Sebességnövekedés | Felhasználási eset |
 |---------------|-----------|------------------|-------------------|--------------------|
-| Llama.cpp     | Q4_K_M    | ~4GB            | 2-3x             | Többplatformos telepítés |
-| Olive         | INT4      | 60-75% csökkenés | 2-6x             | Vállalati munkafolyamatok |
-| OpenVINO      | INT8/INT4 | 50-75% csökkenés | 2-5x             | Intel hardver optimalizáció |
-| MLX           | 4-bites   | ~4GB            | 2-4x             | Apple Silicon optimalizáció |
+| Llama.cpp | Q4_K_M | ~4GB | 2-3x | Keresztplatform telepítés |
+| Olive | INT4 | 60-75% csökkenés | 2-6x | Vállalati munkafolyamatok |
+| OpenVINO | INT8/INT4 | 50-75% csökkenés | 2-5x | Intel hardver optimalizáció |
+| QNN | INT8/INT4 | 50-80% csökkenés | 5-15x | Qualcomm mobil/edge |
+| MLX | 4-bites | ~4GB | 2-4x | Apple Silicon optimalizáció |
 
 ## 🚀 Következő lépések és fejlett alkalmazások
 
 Ez a fejezet teljes alapot nyújt:
-- Egyedi modellek fejlesztéséhez specifikus területekre
+- Egyedi modellek fejlesztéséhez specifikus területekhez
 - Kutatáshoz az edge AI optimalizáció területén
 - Kereskedelmi AI alkalmazások fejlesztéséhez
 - Nagy léptékű vállalati edge AI telepítésekhez
 
-A fejezet hat szakaszából származó tudás átfogó eszköztárat kínál az edge AI modelloptimalizáció és telepítés gyorsan változó világának navigálásához.
+A hét szakaszban bemutatott tudás átfogó eszköztárat kínál az edge AI modelloptimalizáció és telepítés gyorsan változó területének navigálásához.
 
 ---
 
 **Felelősség kizárása**:  
-Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

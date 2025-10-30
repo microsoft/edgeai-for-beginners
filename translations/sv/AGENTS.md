@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-09T12:42:08+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T13:01:06+00:00",
   "source_file": "AGENTS.md",
   "language_code": "sv"
 }
@@ -13,17 +13,17 @@ CO_OP_TRANSLATOR_METADATA:
 > 
 > Detta dokument ger omfattande information för utvecklare, AI-agenter och bidragsgivare som arbetar med detta repository. Det täcker installation, utvecklingsarbetsflöden, testning och bästa praxis.
 > 
-> **Senast uppdaterad**: Oktober 2025 | **Dokumentversion**: 2.0
+> **Senast uppdaterad**: 30 oktober 2025 | **Dokumentversion**: 3.0
 
 ## Innehållsförteckning
 
 - [Projektöversikt](../..)
-- [Repository-struktur](../..)
+- [Repositorystruktur](../..)
 - [Förutsättningar](../..)
 - [Installationskommandon](../..)
 - [Utvecklingsarbetsflöde](../..)
 - [Testinstruktioner](../..)
-- [Kodstilsguider](../..)
+- [Riktlinjer för kodstil](../..)
 - [Riktlinjer för pull requests](../..)
 - [Översättningssystem](../..)
 - [Foundry Local-integration](../..)
@@ -35,7 +35,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Projektöversikt
 
-EdgeAI för nybörjare är ett omfattande utbildningsrepository som lär ut Edge AI-utveckling med små språkmodeller (SLMs). Kursen täcker EdgeAI-grunder, modellimplementering, optimeringstekniker och produktionsklara implementationer med Microsoft Foundry Local och olika AI-ramverk.
+EdgeAI för nybörjare är ett omfattande utbildningsrepository som lär ut Edge AI-utveckling med Small Language Models (SLMs). Kursen täcker EdgeAI-grunder, modellimplementering, optimeringstekniker och produktionsklara implementationer med Microsoft Foundry Local och olika AI-ramverk.
 
 **Nyckelteknologier:**
 - Python 3.8+ (huvudspråk för AI/ML-exempel)
@@ -48,11 +48,11 @@ EdgeAI för nybörjare är ett omfattande utbildningsrepository som lär ut Edge
 - AI-ramverk: LangChain, Semantic Kernel, Chainlit
 - Modelloptimering: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
 
-**Repository-typ:** Utbildningsinnehåll med 8 moduler och 10 omfattande exempelapplikationer
+**Repositorytyp:** Utbildningsinnehållsrepository med 8 moduler och 10 omfattande exempelapplikationer
 
-**Arkitektur:** Flermoduls lärväg med praktiska exempel som demonstrerar Edge AI-implementeringsmönster
+**Arkitektur:** Flermoduls lärandebana med praktiska exempel som demonstrerar Edge AI-implementeringsmönster
 
-## Repository-struktur
+## Repositorystruktur
 
 ```
 edgeai-for-beginners/
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -95,11 +102,11 @@ edgeai-for-beginners/
 - Grundläggande förståelse för Python-programmering
 - Bekantskap med kommandoradsgränssnitt
 - Förståelse för AI/ML-koncept (för utveckling av exempel)
-- Git-arbetsflöden och processer för pull requests
+- Git-arbetsflöden och pull request-processer
 
 ## Installationskommandon
 
-### Repository-installation
+### Repositoryinstallation
 
 ```bash
 # Clone the repository
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Python-exempelinstallation (Modul08 och Python-exempel)
+### Python-exempelinstallation (Modul08 och workshop-exempel)
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -145,7 +156,7 @@ npm run dist
 
 ### Foundry Local-installation
 
-Foundry Local krävs för att köra exemplen. Ladda ner och installera från den officiella repositoryn:
+Foundry Local krävs för att köra exemplen. Ladda ner och installera från det officiella repositoryt:
 
 **Installation:**
 - **Windows**: `winget install Microsoft.FoundryLocal`
@@ -155,7 +166,7 @@ Foundry Local krävs för att köra exemplen. Ladda ner och installera från den
 **Snabbstart:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -175,14 +186,20 @@ Detta repository innehåller främst **Markdown-utbildningsinnehåll**. Vid änd
 1. Redigera `.md`-filer i lämpliga modulkataloger
 2. Följ befintliga formateringsmönster
 3. Säkerställ att kodexempel är korrekta och testade
-4. Uppdatera motsvarande översatt innehåll vid behov (eller låt automatisering hantera det)
+4. Uppdatera motsvarande översatt innehåll om nödvändigt (eller låt automatisering hantera det)
 
 ### Utveckling av exempelapplikationer
 
-För Python-exempel (exempel 01-07, 09-10):
+För Modul08 Python-exempel (exempel 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+För workshop Python-exempel:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 För Electron-exempel (exempel 08):
@@ -215,7 +232,7 @@ npm run lint       # Check code style
 
 ### Validering av innehåll
 
-Repositoryn använder automatiserade översättningsarbetsflöden. Ingen manuell testning krävs för översättningar.
+Repositoryt använder automatiserade översättningsarbetsflöden. Ingen manuell testning krävs för översättningar.
 
 **Manuell validering för innehållsändringar:**
 1. Förhandsgranska Markdown-rendering genom att visa `.md`-filer
@@ -225,7 +242,7 @@ Repositoryn använder automatiserade översättningsarbetsflöden. Ingen manuell
 
 ### Testning av exempelapplikationer
 
-**Module08/samples/08 (Electron-app) har omfattande tester:**
+**Modul08/exempel/08 (Electron-app) har omfattande tester:**
 ```bash
 cd Module08/samples/08
 
@@ -247,13 +264,22 @@ npm test -- --coverage
 
 **Python-exempel bör testas manuellt:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
-## Kodstilsguider
+## Riktlinjer för kodstil
 
 ### Markdown-innehåll
 
@@ -284,17 +310,17 @@ npm run format      # Format with Prettier
 **Viktiga konventioner:**
 - ESLint-konfiguration tillhandahålls i exempel 08
 - Prettier för kodformatering
-- Använd modern ES6+-syntax
+- Använd modern ES6+ syntax
 - Följ befintliga mönster i kodbasen
 
 ## Riktlinjer för pull requests
 
 ### Arbetsflöde för bidrag
 
-1. **Forka repositoryn** och skapa en ny gren från `main`
-2. **Gör dina ändringar** enligt kodstilsguiderna
+1. **Forka repositoryt** och skapa en ny gren från `main`
+2. **Gör dina ändringar** enligt riktlinjerna för kodstil
 3. **Testa noggrant** med hjälp av testinstruktionerna ovan
-4. **Commit med tydliga meddelanden** enligt konventionella commit-format
+4. **Commit med tydliga meddelanden** enligt formatet för konventionella commits
 5. **Push till din fork** och skapa en pull request
 6. **Svara på feedback** från underhållare under granskningen
 
@@ -302,10 +328,10 @@ npm run format      # Format with Prettier
 
 - `feature/<modul>-<beskrivning>` - För nya funktioner eller innehåll
 - `fix/<modul>-<beskrivning>` - För buggfixar
-- `docs/<beskrivning>` - För dokumentationsförbättringar
+- `docs/<beskrivning>` - För förbättringar av dokumentation
 - `refactor/<beskrivning>` - För kodomstrukturering
 
-### Commit-meddelandeformat
+### Format för commit-meddelanden
 
 Följ [Conventional Commits](https://www.conventionalcommits.org/):
 
@@ -344,7 +370,7 @@ Alla bidragsgivare måste följa [Microsoft Open Source Code of Conduct](https:/
 - Kontrollera att länkar och bilder fungerar
 - Kontrollera stavfel och grammatiska fel
 
-**För kodändringar i exempel (Module08/samples/08):**
+**För ändringar i exempelkod (Modul08/exempel/08):**
 ```bash
 npm run lint
 npm test
@@ -359,21 +385,21 @@ npm test
 
 - Ändringar i utbildningsinnehåll granskas för noggrannhet och tydlighet
 - Kodexempel testas för funktionalitet
-- Översättningsuppdateringar hanteras automatiskt av GitHub Actions
+- Uppdateringar av översättningar hanteras automatiskt av GitHub Actions
 
 ## Översättningssystem
 
 **VIKTIGT:** Detta repository använder automatiserad översättning via GitHub Actions.
 
-- Översättningar finns i `/translations/`-katalogen (50+ språk)
-- Automatiseras via `co-op-translator.yml`-arbetsflöde
+- Översättningar finns i katalogen `/translations/` (50+ språk)
+- Automatiserad via arbetsflödet `co-op-translator.yml`
 - **REDIGERA INTE översättningsfiler manuellt** - de kommer att skrivas över
 - Redigera endast engelska källfiler i root- och modulkataloger
 - Översättningar genereras automatiskt vid push till `main`-grenen
 
 ## Foundry Local-integration
 
-De flesta Module08-exempel kräver att Microsoft Foundry Local körs.
+De flesta Modul08-exempel kräver att Microsoft Foundry Local körs.
 
 ### Installation och inställning
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -450,7 +476,7 @@ De flesta exempel använder dessa miljövariabler:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -471,9 +497,9 @@ set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 Detta repository är främst dokumentation - ingen byggprocess krävs för innehåll.
 
-### Byggprocess för exempelapplikationer
+### Byggande av exempelapplikationer
 
-**Electron-applikation (Module08/samples/08):**
+**Electron-applikation (Modul08/exempel/08):**
 ```bash
 cd Module08/samples/08
 
@@ -508,7 +534,7 @@ Ingen byggprocess - exemplen körs direkt med Python-tolk.
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -559,7 +585,7 @@ npm install
 - Låt det automatiserade översättningsarbetsflödet hantera översättningar
 - Om konflikter uppstår, slå samman `main` till din gren efter att översättningar har slagits samman
 
-#### Problem med modellnedladdning
+#### Problem med nedladdning av modeller
 **Problem:** Foundry Local misslyckas med att ladda ner modeller
 
 **Lösning:**
@@ -575,21 +601,22 @@ foundry model run <model-alias>
 
 ## Ytterligare resurser
 
-### Lärvägar
-- **Nybörjarväg:** Moduler 01-02 (7-9 timmar)
-- **Mellanväg:** Moduler 03-04 (9-11 timmar)
-- **Avancerad väg:** Moduler 05-07 (12-15 timmar)
-- **Expertväg:** Modul 08 (8-10 timmar)
+### Lärandebanor
+- **Nybörjarbana:** Moduler 01-02 (7-9 timmar)
+- **Mellanliggande bana:** Moduler 03-04 (9-11 timmar)
+- **Avancerad bana:** Moduler 05-07 (12-15 timmar)
+- **Expertbana:** Modul 08 (8-10 timmar)
+- **Praktisk workshop:** Workshopmaterial (6-8 timmar)
 
 ### Viktigt modulinnehåll
 - **Modul01:** EdgeAI-grunder och verkliga fallstudier
-- **Modul02:** Familjer och arkitekturer för små språkmodeller (SLM)
-- **Modul03:** Strategier för lokal och molnbaserad implementering
-- **Modul04:** Modelloptimering med flera ramverk
+- **Modul02:** Small Language Model (SLM)-familjer och arkitekturer
+- **Modul03:** Lokala och molnbaserade implementeringsstrategier
+- **Modul04:** Modelloptimering med flera ramverk (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
 - **Modul05:** SLMOps - produktionsdrift
 - **Modul06:** AI-agenter och funktionsanrop
 - **Modul07:** Plattformsspecifika implementationer
-- **Modul08:** Foundry Local-verktyg med 10 omfattande exempel
+- **Modul08:** Foundry Local-verktygssats med 10 omfattande exempel
 
 ### Externa beroenden
 - [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Lokal AI-modellruntime med OpenAI-kompatibel API
@@ -597,14 +624,14 @@ foundry model run <model-alias>
   - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [JavaScript SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
 - [Llama.cpp](https://github.com/ggml-org/llama.cpp) - Optimeringsramverk
-- [Microsoft Olive](https://microsoft.github.io/Olive/) - Verktyg för modelloptimering
+- [Microsoft Olive](https://microsoft.github.io/Olive/) - Modelloptimeringsverktyg
 - [OpenVINO](https://docs.openvino.ai/) - Intels optimeringsverktyg
 
 ## Projekt-specifika anteckningar
 
-### Modul08 Exempelapplikationer
+### Modul08 exempelapplikationer
 
-Repositoryn innehåller 10 omfattande exempelapplikationer:
+Repositoryt innehåller 10 omfattande exempelapplikationer:
 
 1. **01-REST Chat Quickstart** - Grundläggande OpenAI SDK-integration
 2. **02-OpenAI SDK Integration** - Avancerade SDK-funktioner
@@ -614,57 +641,68 @@ Repositoryn innehåller 10 omfattande exempelapplikationer:
 6. **06-Models-as-Tools Router** - Intelligent modellroutning
 7. **07-Direct API Client** - Låg nivå API-integration
 8. **08-Windows 11 Chat App** - Native Electron desktop-applikation
-9. **09-Advanced Multi-Agent System** - Komplex agentkoordinering
-10. **10-Foundry Tools Framework** - LangChain/Semantic Kernel-integration
+9. **09-Avancerat multi-agent system** - Komplex agentkoordinering
+10. **10-Foundry Tools Framework** - LangChain/Semantic Kernel integration
+
+### Workshop Exempelapplikationer
+
+Workshopen innehåller 6 progressiva sessioner med praktiska implementationer:
+
+1. **Session 01** - Chat-start med Foundry Local integration
+2. **Session 02** - RAG-pipeline och utvärdering med RAGAS
+3. **Session 03** - Benchmarking av open-source modeller
+4. **Session 04** - Modelljämförelse och urval
+5. **Session 05** - Orkestreringssystem för flera agenter
+6. **Session 06** - Modellroutning och pipelinehantering
 
 Varje exempel demonstrerar olika aspekter av Edge AI-utveckling med Foundry Local.
 
 ### Prestandaöverväganden
 
-- SLMs är optimerade för Edge-implementering (2-16GB RAM)
-- Lokal inferens ger svarstider på 50-500 ms  
-- Kvantiseringstekniker minskar storleken med 75% och behåller 85% av prestandan  
-- Realtidskonversationsmöjligheter med lokala modeller  
+- SLMs är optimerade för edge-distribution (2-16GB RAM)
+- Lokal inferens ger svarstider på 50-500ms
+- Kvantiseringstekniker uppnår 75% storleksreduktion med 85% prestandabehållning
+- Realtidskonversationsmöjligheter med lokala modeller
 
-### Säkerhet och integritet  
+### Säkerhet och integritet
 
-- All bearbetning sker lokalt - ingen data skickas till molnet  
-- Passar för integritetskänsliga applikationer (sjukvård, finans)  
-- Uppfyller krav på datasuveränitet  
-- Foundry Local körs helt på lokal hårdvara  
+- All bearbetning sker lokalt - ingen data skickas till molnet
+- Lämplig för integritetskänsliga applikationer (sjukvård, finans)
+- Uppfyller krav på datasuveränitet
+- Foundry Local körs helt på lokal hårdvara
 
-## Få hjälp  
+## Få hjälp
 
-### Dokumentation  
+### Dokumentation
 
-- **Huvud-README**: [README.md](README.md) - Översikt över repository och lärvägar  
-- **Studieguide**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Lärresurser och tidslinje  
-- **Support**: [SUPPORT.md](SUPPORT.md) - Hur man får hjälp  
-- **Säkerhet**: [SECURITY.md](SECURITY.md) - Rapportera säkerhetsproblem  
+- **Huvud README**: [README.md](README.md) - Översikt över repository och lärandespår
+- **Studieguide**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Läranderesurser och tidslinje
+- **Support**: [SUPPORT.md](SUPPORT.md) - Hur man får hjälp
+- **Säkerhet**: [SECURITY.md](SECURITY.md) - Rapportering av säkerhetsproblem
 
-### Communitysupport  
+### Community Support
 
-- **GitHub Issues**: [Rapportera buggar eller begär funktioner](https://github.com/microsoft/edgeai-for-beginners/issues)  
-- **GitHub Discussions**: [Ställ frågor och dela idéer](https://github.com/microsoft/edgeai-for-beginners/discussions)  
-- **Foundry Local Issues**: [Tekniska problem med Foundry Local](https://github.com/microsoft/Foundry-Local/issues)  
+- **GitHub Issues**: [Rapportera buggar eller begär funktioner](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **GitHub Discussions**: [Ställ frågor och dela idéer](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **Foundry Local Issues**: [Tekniska problem med Foundry Local](https://github.com/microsoft/Foundry-Local/issues)
 
-### Kontakt  
+### Kontakt
 
-- **Underhållare**: Se [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)  
-- **Säkerhetsproblem**: Följ ansvarsfull rapportering i [SECURITY.md](SECURITY.md)  
-- **Microsoft Support**: För företagsstöd, kontakta Microsofts kundtjänst  
+- **Underhållare**: Se [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
+- **Säkerhetsproblem**: Följ ansvarsfull rapportering i [SECURITY.md](SECURITY.md)
+- **Microsoft Support**: För företagsstöd, kontakta Microsoft kundtjänst
 
-### Ytterligare resurser  
+### Ytterligare resurser
 
-- **Microsoft Learn**: [Lärvägar för AI och maskininlärning](https://learn.microsoft.com/training/browse/?products=ai-services)  
-- **Foundry Local-dokumentation**: [Officiell dokumentation](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)  
-- **Communityexempel**: Kolla [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) för bidrag från communityn  
+- **Microsoft Learn**: [AI och maskininlärning lärandespår](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **Foundry Local Dokumentation**: [Officiell dokumentation](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **Community Exempel**: Kolla [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) för community-bidrag
 
 ---
 
-**Detta är ett utbildningsrepository som fokuserar på att lära ut utveckling av Edge AI. Det primära bidragsmönstret är att förbättra utbildningsinnehåll och lägga till/förbättra exempelapplikationer som demonstrerar Edge AI-koncept.**  
+**Detta är ett utbildningsrepository som fokuserar på att lära ut Edge AI-utveckling. Det primära bidragsmönstret är att förbättra utbildningsinnehållet och lägga till/förbättra exempelapplikationer som demonstrerar Edge AI-koncept.**
 
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

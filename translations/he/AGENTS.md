@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-09T16:27:13+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T13:26:59+00:00",
   "source_file": "AGENTS.md",
   "language_code": "he"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 > **מדריך למפתחים לתרומה ל-EdgeAI למתחילים**
 > 
-> מסמך זה מספק מידע מקיף למפתחים, סוכני AI ותורמים העובדים עם מאגר זה. הוא כולל הגדרות, תהליכי פיתוח, בדיקות והמלצות לשיטות עבודה.
+> מסמך זה מספק מידע מקיף למפתחים, סוכני AI ותורמים העובדים עם מאגר זה. הוא כולל הגדרות, תהליכי פיתוח, בדיקות והנחיות לשיטות עבודה מומלצות.
 > 
-> **עדכון אחרון**: אוקטובר 2025 | **גרסת מסמך**: 2.0
+> **עודכן לאחרונה**: 30 באוקטובר 2025 | **גרסת מסמך**: 3.0
 
 ## תוכן עניינים
 
@@ -22,7 +22,7 @@ CO_OP_TRANSLATOR_METADATA:
 - [דרישות מוקדמות](../..)
 - [פקודות הגדרה](../..)
 - [תהליך פיתוח](../..)
-- [הוראות בדיקה](../..)
+- [הנחיות בדיקה](../..)
 - [הנחיות לסגנון קוד](../..)
 - [הנחיות לבקשות משיכה](../..)
 - [מערכת תרגום](../..)
@@ -35,12 +35,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## סקירת הפרויקט
 
-EdgeAI למתחילים הוא מאגר חינוכי מקיף המלמד פיתוח Edge AI עם מודלים לשוניים קטנים (SLMs). הקורס מכסה את יסודות EdgeAI, פריסת מודלים, טכניקות אופטימיזציה ויישומים מוכנים לייצור באמצעות Microsoft Foundry Local ומגוון מסגרות AI.
+EdgeAI למתחילים הוא מאגר חינוכי מקיף המלמד פיתוח Edge AI עם מודלים לשוניים קטנים (SLMs). הקורס מכסה יסודות EdgeAI, פריסת מודלים, טכניקות אופטימיזציה ויישומים מוכנים לייצור באמצעות Microsoft Foundry Local ומסגרות AI שונות.
 
 **טכנולוגיות מרכזיות:**
 - Python 3.8+ (שפה ראשית לדוגמאות AI/ML)
 - .NET C# (דוגמאות AI/ML)
-- JavaScript/Node.js עם Electron (ליישומי שולחן עבודה)
+- JavaScript/Node.js עם Electron (לאפליקציות שולחניות)
 - Microsoft Foundry Local SDK
 - Microsoft Windows ML 
 - VSCode AI Toolkit
@@ -48,9 +48,9 @@ EdgeAI למתחילים הוא מאגר חינוכי מקיף המלמד פית�
 - מסגרות AI: LangChain, Semantic Kernel, Chainlit
 - אופטימיזציית מודלים: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
 
-**סוג המאגר:** מאגר תוכן חינוכי עם 8 מודולים ו-10 יישומים לדוגמה מקיפים
+**סוג מאגר:** מאגר תוכן חינוכי עם 8 מודולים ו-10 אפליקציות דוגמה מקיפות
 
-**ארכיטקטורה:** מסלול למידה רב-מודולי עם דוגמאות מעשיות המדגימות דפוסי פריסה של Edge AI
+**ארכיטקטורה:** מסלול למידה רב-מודולי עם דוגמאות מעשיות המדגימות דפוסי פריסת Edge AI
 
 ## מבנה המאגר
 
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -73,8 +80,8 @@ edgeai-for-beginners/
 ### כלים נדרשים
 
 - **Python 3.8+** - לדוגמאות AI/ML ומחברות
-- **Node.js 16+** - ליישום דוגמה של Electron
-- **Git** - לניהול גרסאות
+- **Node.js 16+** - לאפליקציית דוגמה של Electron
+- **Git** - לשליטה בגרסאות
 - **Microsoft Foundry Local** - להפעלת מודלים AI באופן מקומי
 
 ### כלים מומלצים
@@ -87,7 +94,7 @@ edgeai-for-beginners/
 
 - **RAM**: מינימום 8GB, מומלץ 16GB+ לתרחישים רב-מודליים
 - **אחסון**: 10GB+ שטח פנוי למודלים ותלויות
-- **מערכת הפעלה**: Windows 10/11, macOS 11+, או Linux (Ubuntu 20.04+)
+- **OS**: Windows 10/11, macOS 11+, או Linux (Ubuntu 20.04+)
 - **חומרה**: מעבד עם תמיכה ב-AVX2; GPU (CUDA, Qualcomm NPU) אופציונלי אך מומלץ
 
 ### דרישות ידע
@@ -95,7 +102,7 @@ edgeai-for-beginners/
 - הבנה בסיסית של תכנות ב-Python
 - היכרות עם ממשקי שורת פקודה
 - הבנה של מושגי AI/ML (לפיתוח דוגמאות)
-- תהליכי עבודה עם Git ותהליכי בקשות משיכה
+- תהליכי עבודה עם Git ובקשות משיכה
 
 ## פקודות הגדרה
 
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### הגדרת דוגמאות Python (מודול08 ודוגמאות Python)
+### הגדרת דוגמאות Python (מודול08 ודוגמאות סדנה)
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -150,12 +161,12 @@ Foundry Local נדרש להפעלת הדוגמאות. הורד והתקן מהמ
 **התקנה:**
 - **Windows**: `winget install Microsoft.FoundryLocal`
 - **macOS**: `brew tap microsoft/foundrylocal && brew install foundrylocal`
-- **ידני**: הורד מ-[דף ההפצה](https://github.com/microsoft/Foundry-Local/releases)
+- **ידני**: הורד מ-[דף ההפצות](https://github.com/microsoft/Foundry-Local/releases)
 
 **התחלה מהירה:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -175,14 +186,20 @@ foundry service status
 1. ערוך קבצי `.md` בתיקיות המודולים המתאימות
 2. עקוב אחר דפוסי העיצוב הקיימים
 3. ודא שדוגמאות הקוד מדויקות ונבדקו
-4. עדכן את התוכן המתורגם המתאים אם נדרש (או תן לאוטומציה לטפל בכך)
+4. עדכן את התוכן המתורגם המתאים אם יש צורך (או תן לאוטומציה לטפל בכך)
 
-### פיתוח יישומי דוגמה
+### פיתוח אפליקציות דוגמה
 
-לדוגמאות Python (דוגמאות 01-07, 09-10):
+לדוגמאות Python במודול08 (דוגמאות 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+לדוגמאות Python בסדנה:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 לדוגמת Electron (דוגמה 08):
@@ -191,7 +208,7 @@ cd Module08/samples/08
 npm run dev  # Development with hot reload
 ```
 
-### בדיקת יישומי דוגמה
+### בדיקת אפליקציות דוגמה
 
 לדוגמאות Python אין בדיקות אוטומטיות אך ניתן לאמת אותן על ידי הפעלתן:
 ```bash
@@ -211,7 +228,7 @@ npm run test:e2e   # Run end-to-end tests
 npm run lint       # Check code style
 ```
 
-## הוראות בדיקה
+## הנחיות בדיקה
 
 ### אימות תוכן
 
@@ -223,9 +240,9 @@ npm run lint       # Check code style
 3. בדוק כל קטעי קוד הכלולים בתיעוד
 4. בדוק שהתמונות נטענות כראוי
 
-### בדיקת יישומי דוגמה
+### בדיקת אפליקציות דוגמה
 
-**Module08/samples/08 (אפליקציית Electron) כוללת בדיקות מקיפות:**
+**מודול08/דוגמאות/08 (אפליקציית Electron) כוללת בדיקות מקיפות:**
 ```bash
 cd Module08/samples/08
 
@@ -247,17 +264,26 @@ npm test -- --coverage
 
 **דוגמאות Python צריכות להיבדק ידנית:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## הנחיות לסגנון קוד
 
 ### תוכן Markdown
 
-- השתמש בהיררכיית כותרות עקבית (# לכותרת, ## לסעיפים ראשיים, ### לתת-סעיפים)
+- השתמש בהיררכיית כותרות עקבית (# לכותרת, ## לסעיפים ראשיים, ### לסעיפים משנה)
 - כלול קטעי קוד עם מפרטי שפה: ```python, ```bash, ```javascript
 - עקוב אחר העיצוב הקיים לטבלאות, רשימות והדגשות
 - שמור על שורות קריאות (שאף ל-~80-100 תווים, אך לא חובה)
@@ -293,19 +319,19 @@ npm run format      # Format with Prettier
 
 1. **פצל את המאגר** ויצור ענף חדש מ-`main`
 2. **בצע את השינויים שלך** בהתאם להנחיות סגנון הקוד
-3. **בדוק היטב** באמצעות הוראות הבדיקה לעיל
-4. **בצע commit עם הודעות ברורות** בהתאם לפורמט commit מקובל
+3. **בדוק היטב** באמצעות הנחיות הבדיקה לעיל
+4. **בצע התחייבות עם הודעות ברורות** בהתאם לפורמט התחייבויות קונבנציונלי
 5. **דחף למאגר שלך** ויצור בקשת משיכה
 6. **הגב למשוב** מהמתחזקים במהלך הסקירה
 
-### מוסכמת שמות ענפים
+### מוסכמות שמות ענפים
 
 - `feature/<module>-<description>` - לתכונות או תוכן חדשים
 - `fix/<module>-<description>` - לתיקוני באגים
 - `docs/<description>` - לשיפורי תיעוד
 - `refactor/<description>` - לשינוי מבנה קוד
 
-### פורמט הודעת Commit
+### פורמט הודעת התחייבות
 
 עקוב אחר [Conventional Commits](https://www.conventionalcommits.org/):
 
@@ -344,7 +370,7 @@ fix(samples/08): resolve Electron build issue
 - ודא שהקישורים והתמונות עובדים
 - בדוק שגיאות כתיב ודקדוק
 
-**לשינויים בקוד דוגמה (Module08/samples/08):**
+**לשינויים בקוד דוגמה (מודול08/דוגמאות/08):**
 ```bash
 npm run lint
 npm test
@@ -353,7 +379,7 @@ npm test
 **לשינויים בדוגמאות Python:**
 - בדוק שהדוגמה פועלת בהצלחה
 - ודא שטיפול בשגיאות עובד
-- בדוק תאימות ל-Foundry Local
+- בדוק תאימות עם Foundry Local
 
 ### תהליך סקירה
 
@@ -366,8 +392,8 @@ npm test
 **חשוב:** מאגר זה משתמש בתרגום אוטומטי באמצעות GitHub Actions.
 
 - תרגומים נמצאים בתיקיית `/translations/` (50+ שפות)
-- מתבצע אוטומטית באמצעות תהליך `co-op-translator.yml`
-- **אין לערוך קבצי תרגום ידנית** - הם יוחלפו
+- אוטומטי באמצעות `co-op-translator.yml` workflow
+- **אל תערוך ידנית קבצי תרגום** - הם יוחלפו
 - ערוך רק קבצי מקור באנגלית בתיקיות השורש והמודולים
 - תרגומים נוצרים אוטומטית בעת דחיפה לענף `main`
 
@@ -377,7 +403,7 @@ npm test
 
 ### התקנה והגדרה
 
-**התקן את Foundry Local:**
+**התקן Foundry Local:**
 ```bash
 # Windows
 winget install Microsoft.FoundryLocal
@@ -387,7 +413,7 @@ brew tap microsoft/foundrylocal
 brew install foundrylocal
 ```
 
-**התקן את Python SDK:**
+**התקן Python SDK:**
 ```bash
 pip install foundry-local-sdk openai
 ```
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -450,7 +476,7 @@ curl http://localhost:<port>/v1/models
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -463,7 +489,7 @@ set AZURE_OPENAI_API_KEY=your-api-key
 set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-**הערה**: בעת שימוש ב-`FoundryLocalManager`, ה-SDK מטפל אוטומטית בגילוי שירותים וטעינת מודלים. כינויים למודלים (כמו `phi-3.5-mini`) מבטיחים שהגרסה הטובה ביותר נבחרת עבור החומרה שלך.
+**הערה**: בעת שימוש ב-`FoundryLocalManager`, ה-SDK מטפל אוטומטית בגילוי שירות וטעינת מודלים. כינויים למודלים (כמו `phi-3.5-mini`) מבטיחים שהגרסה הטובה ביותר נבחרת עבור החומרה שלך.
 
 ## בנייה ופריסה
 
@@ -471,9 +497,9 @@ set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 מאגר זה הוא בעיקר תיעוד - אין צורך בתהליך בנייה לתוכן.
 
-### בניית יישומי דוגמה
+### בניית אפליקציות דוגמה
 
-**אפליקציית Electron (Module08/samples/08):**
+**אפליקציית Electron (מודול08/דוגמאות/08):**
 ```bash
 cd Module08/samples/08
 
@@ -508,7 +534,7 @@ npm run pack
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -538,7 +564,7 @@ pip install -r requirements.txt
 ```
 
 #### בעיות בניית Electron
-**בעיה:** npm install או כשלים בבנייה
+**בעיה:** npm install או כשלי בנייה
 
 **פתרון:**
 ```bash
@@ -552,14 +578,14 @@ npm install
 ### בעיות תהליך עבודה (קלות)
 
 #### קונפליקטים בתהליך תרגום
-**בעיה:** בקשת תרגום מתנגשת עם השינויים שלך
+**בעיה:** קונפליקטים בבקשת תרגום עם השינויים שלך
 
 **פתרון:**
 - ערוך רק קבצי מקור באנגלית
 - תן לתהליך התרגום האוטומטי לטפל בתרגומים
-- אם מתרחשים קונפליקטים, מיזג את `main` לענף שלך לאחר שהתמזגו התרגומים
+- אם מתרחשים קונפליקטים, מיזג `main` לענף שלך לאחר שהתמזגו תרגומים
 
-#### כשלים בהורדת מודלים
+#### כשלי הורדת מודלים
 **בעיה:** Foundry Local נכשל בהורדת מודלים
 
 **פתרון:**
@@ -580,18 +606,19 @@ foundry model run <model-alias>
 - **מסלול ביניים:** מודולים 03-04 (9-11 שעות)
 - **מסלול מתקדם:** מודולים 05-07 (12-15 שעות)
 - **מסלול מומחים:** מודול 08 (8-10 שעות)
+- **סדנה מעשית:** חומרי סדנה (6-8 שעות)
 
 ### תוכן מודול מרכזי
-- **מודול01:** יסודות EdgeAI ומחקרי מקרה בעולם האמיתי
+- **מודול01:** יסודות EdgeAI ומקרי מבחן בעולם האמיתי
 - **מודול02:** משפחות מודלים לשוניים קטנים (SLM) וארכיטקטורות
 - **מודול03:** אסטרטגיות פריסה מקומיות ובענן
-- **מודול04:** אופטימיזציית מודלים עם מסגרות שונות
+- **מודול04:** אופטימיזציית מודלים עם מסגרות שונות (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
 - **מודול05:** SLMOps - תפעול בייצור
 - **מודול06:** סוכני AI וקריאת פונקציות
 - **מודול07:** יישומים ספציפיים לפלטפורמה
 - **מודול08:** ערכת כלים Foundry Local עם 10 דוגמאות מקיפות
 
-### תלות חיצונית
+### תלות חיצוניות
 - [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - זמן ריצה למודלים AI מקומיים עם API תואם OpenAI
   - [תיעוד](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
   - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
@@ -602,69 +629,80 @@ foundry model run <model-alias>
 
 ## הערות ספציפיות לפרויקט
 
-### יישומי דוגמה מודול08
+### אפליקציות דוגמה מודול08
 
-המאגר כולל 10 יישומי דוגמה מקיפים:
+המאגר כולל 10 אפליקציות דוגמה מקיפות:
 
 1. **01-REST Chat Quickstart** - אינטגרציה בסיסית של OpenAI SDK
 2. **02-OpenAI SDK Integration** - תכונות מתקדמות של SDK
 3. **03-Model Discovery & Benchmarking** - כלי השוואת מודלים
-4. **04-Chainlit RAG Application** - יצירה מוגברת על ידי אחזור
+4. **04-Chainlit RAG Application** - יצירה מוגברת על ידי אחזור מידע
 5. **05-Multi-Agent Orchestration** - תיאום סוכנים בסיסי
 6. **06-Models-as-Tools Router** - ניתוב מודלים חכם
-7. **07-Direct API Client** - אינטגרציה ברמת API נמוכה
+7. **07-Direct API Client** - אינטגרציה API ברמה נמוכה
 8. **08-Windows 11 Chat App** - אפליקציית שולחן עבודה Electron מקורית
 9. **09-Advanced Multi-Agent System** - תיאום סוכנים מורכב
-10. **10-Foundry Tools Framework** - אינטגרציה של LangChain/Semantic Kernel
+10. **10-כלי מסגרת Foundry** - אינטגרציה של LangChain/Semantic Kernel
 
-כל דוגמה מדגימה היבטים שונים של פיתוח Edge AI עם Foundry Local.
+### דוגמאות יישומים בסדנה
+
+הסדנה כוללת 6 מפגשים מתקדמים עם יישומים מעשיים:
+
+1. **מפגש 01** - אתחול צ'אט עם אינטגרציה של Foundry Local
+2. **מפגש 02** - צנרת RAG והערכה עם RAGAS
+3. **מפגש 03** - ביצוע השוואות למודלים בקוד פתוח
+4. **מפגש 04** - השוואה ובחירה של מודלים
+5. **מפגש 05** - מערכות תזמור רב-סוכנים
+6. **מפגש 06** - ניתוב מודלים וניהול צנרת
+
+כל דוגמה מציגה היבטים שונים של פיתוח AI בקצה עם Foundry Local.
 
 ### שיקולי ביצועים
 
-- מודלים לשוניים קטנים (SLMs) מותאמים לפריסה בקצה (2-16GB RAM)
-- הסקת מסקנות מקומית מספקת זמני תגובה של 50-500ms  
-- טכניקות כימות משיגות הפחתת גודל של 75% עם שמירה על 85% ביצועים  
-- יכולות שיחה בזמן אמת עם מודלים מקומיים  
+- SLMs מותאמים לפריסה בקצה (2-16GB RAM)
+- הסקת מסקנות מקומית מספקת זמני תגובה של 50-500ms
+- טכניקות כימות משיגות הפחתת גודל של 75% עם שמירה על 85% ביצועים
+- יכולות שיחה בזמן אמת עם מודלים מקומיים
 
-### אבטחה ופרטיות  
+### אבטחה ופרטיות
 
-- כל העיבוד מתבצע באופן מקומי - אין שליחת נתונים לענן  
-- מתאים ליישומים רגישים לפרטיות (בריאות, פיננסים)  
-- עומד בדרישות ריבונות נתונים  
-- Foundry Local פועל כולו על חומרה מקומית  
+- כל העיבוד מתבצע באופן מקומי - אין שליחת נתונים לענן
+- מתאים ליישומים רגישים לפרטיות (בריאות, פיננסים)
+- עומד בדרישות ריבונות נתונים
+- Foundry Local פועל כולו על חומרה מקומית
 
-## קבלת עזרה  
+## קבלת עזרה
 
-### תיעוד  
+### תיעוד
 
-- **README ראשי**: [README.md](README.md) - סקירת מאגר ונתיבי למידה  
-- **מדריך לימוד**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - משאבי למידה ולוח זמנים  
-- **תמיכה**: [SUPPORT.md](SUPPORT.md) - כיצד לקבל עזרה  
-- **אבטחה**: [SECURITY.md](SECURITY.md) - דיווח על בעיות אבטחה  
+- **README ראשי**: [README.md](README.md) - סקירת מאגר ונתיבי למידה
+- **מדריך לימוד**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - משאבי למידה ולוח זמנים
+- **תמיכה**: [SUPPORT.md](SUPPORT.md) - כיצד לקבל עזרה
+- **אבטחה**: [SECURITY.md](SECURITY.md) - דיווח על בעיות אבטחה
 
-### תמיכת קהילה  
+### תמיכה קהילתית
 
-- **בעיות בגיטהאב**: [דיווח על באגים או בקשת תכונות](https://github.com/microsoft/edgeai-for-beginners/issues)  
-- **דיונים בגיטהאב**: [שאל שאלות ושתף רעיונות](https://github.com/microsoft/edgeai-for-beginners/discussions)  
-- **בעיות Foundry Local**: [בעיות טכניות עם Foundry Local](https://github.com/microsoft/Foundry-Local/issues)  
+- **בעיות GitHub**: [דיווח על באגים או בקשת תכונות](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **דיונים ב-GitHub**: [שאל שאלות ושתף רעיונות](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **בעיות Foundry Local**: [בעיות טכניות עם Foundry Local](https://github.com/microsoft/Foundry-Local/issues)
 
-### יצירת קשר  
+### יצירת קשר
 
-- **מתחזקים**: ראה [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)  
-- **בעיות אבטחה**: עקוב אחר גילוי אחראי ב-[SECURITY.md](SECURITY.md)  
-- **תמיכת Microsoft**: עבור תמיכה ארגונית, צור קשר עם שירות הלקוחות של Microsoft  
+- **מתחזקים**: ראו [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
+- **בעיות אבטחה**: עקוב אחר גילוי אחראי ב-[SECURITY.md](SECURITY.md)
+- **תמיכת Microsoft**: לתמיכה ארגונית, צור קשר עם שירות הלקוחות של Microsoft
 
-### משאבים נוספים  
+### משאבים נוספים
 
-- **Microsoft Learn**: [נתיבי למידה של AI ולמידת מכונה](https://learn.microsoft.com/training/browse/?products=ai-services)  
-- **תיעוד Foundry Local**: [תיעוד רשמי](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)  
-- **דוגמאות קהילה**: בדוק [דיונים בגיטהאב](https://github.com/microsoft/edgeai-for-beginners/discussions) עבור תרומות קהילה  
-
----
-
-**זהו מאגר חינוכי המתמקד בהוראת פיתוח Edge AI. דפוס התרומה העיקרי הוא שיפור תוכן חינוכי והוספה/שיפור של יישומים לדוגמה שמדגימים מושגים של Edge AI.**  
+- **Microsoft Learn**: [נתיבי למידה של AI ולמידת מכונה](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **תיעוד Foundry Local**: [תיעוד רשמי](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **דוגמאות קהילתיות**: בדוק [דיונים ב-GitHub](https://github.com/microsoft/edgeai-for-beginners/discussions) עבור תרומות קהילתיות
 
 ---
 
-**כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי אדם. איננו נושאים באחריות לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+**זהו מאגר חינוכי המתמקד בהוראת פיתוח AI בקצה. דפוס התרומה העיקרי הוא שיפור תוכן חינוכי והוספה/שיפור של יישומים לדוגמה שמדגימים מושגים של AI בקצה.**
+
+---
+
+**הצהרת אחריות**:  
+מסמך זה תורגם באמצעות שירות תרגום מבוסס AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. למידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. אנו לא נושאים באחריות לכל אי הבנות או פרשנויות שגויות הנובעות משימוש בתרגום זה.

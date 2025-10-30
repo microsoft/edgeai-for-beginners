@@ -1,41 +1,41 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-09T06:32:25+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T11:02:16+00:00",
   "source_file": "AGENTS.md",
   "language_code": "ur"
 }
 -->
-# ایجنٹس.md
+# AGENTS.md
 
-> **ایج اے آئی کے لیے ابتدائی افراد کے لیے ڈیولپر گائیڈ**
+> **ایج ای آئی کے لیے ابتدائی افراد کے لیے ڈویلپر گائیڈ**
 > 
-> یہ دستاویز ان ڈویلپرز، اے آئی ایجنٹس، اور شراکت داروں کے لیے جامع معلومات فراہم کرتی ہے جو اس ریپوزٹری کے ساتھ کام کر رہے ہیں۔ اس میں سیٹ اپ، ترقیاتی ورک فلو، ٹیسٹنگ، اور بہترین طریقے شامل ہیں۔
+> یہ دستاویز ان ڈویلپرز، اے آئی ایجنٹس، اور شراکت داروں کے لیے جامع معلومات فراہم کرتی ہے جو اس ریپوزیٹری کے ساتھ کام کر رہے ہیں۔ اس میں سیٹ اپ، ترقیاتی ورک فلو، ٹیسٹنگ، اور بہترین طریقے شامل ہیں۔
 > 
-> **آخری اپ ڈیٹ**: اکتوبر 2025 | **دستاویز ورژن**: 2.0
+> **آخری اپ ڈیٹ**: 30 اکتوبر 2025 | **دستاویز ورژن**: 3.0
 
 ## فہرستِ مواد
 
 - [پروجیکٹ کا جائزہ](../..)
-- [ریپوزٹری کی ساخت](../..)
+- [ریپوزیٹری کا ڈھانچہ](../..)
 - [ضروریات](../..)
 - [سیٹ اپ کمانڈز](../..)
 - [ترقیاتی ورک فلو](../..)
-- [ٹیسٹنگ کی ہدایات](../..)
+- [ٹیسٹنگ ہدایات](../..)
 - [کوڈ اسٹائل گائیڈ لائنز](../..)
 - [پُل ریکویسٹ گائیڈ لائنز](../..)
-- [ترجمہ کا نظام](../..)
+- [ترجمہ نظام](../..)
 - [فاؤنڈری لوکل انٹیگریشن](../..)
 - [بلڈ اور ڈیپلائمنٹ](../..)
 - [عام مسائل اور ان کے حل](../..)
 - [اضافی وسائل](../..)
-- [پروجیکٹ سے متعلق نوٹس](../..)
-- [مدد حاصل کرنا](../..)
+- [پروجیکٹ کے مخصوص نوٹس](../..)
+- [مدد حاصل کریں](../..)
 
 ## پروجیکٹ کا جائزہ
 
-ایج اے آئی فار بیگنرز ایک جامع تعلیمی ریپوزٹری ہے جو چھوٹے لینگویج ماڈلز (SLMs) کے ساتھ ایج اے آئی کی ترقی سکھاتی ہے۔ کورس میں ایج اے آئی کے بنیادی اصول، ماڈل ڈیپلائمنٹ، آپٹیمائزیشن تکنیک، اور پروڈکشن کے لیے تیار عمل درآمد شامل ہیں، جو مائیکروسافٹ فاؤنڈری لوکل اور مختلف اے آئی فریم ورک استعمال کرتے ہیں۔
+ایج ای آئی فار بیگنرز ایک جامع تعلیمی ریپوزیٹری ہے جو چھوٹے لینگویج ماڈلز (SLMs) کے ساتھ ایج اے آئی ڈیولپمنٹ سکھاتی ہے۔ کورس میں ایج اے آئی کے بنیادی اصول، ماڈل ڈیپلائمنٹ، آپٹیمائزیشن تکنیک، اور پروڈکشن ریڈی امپلیمنٹیشن شامل ہیں، جو مائیکروسافٹ فاؤنڈری لوکل اور مختلف اے آئی فریم ورک استعمال کرتے ہیں۔
 
 **اہم ٹیکنالوجیز:**
 - Python 3.8+ (اے آئی/ایم ایل سیمپلز کے لیے بنیادی زبان)
@@ -45,14 +45,14 @@ CO_OP_TRANSLATOR_METADATA:
 - Microsoft Windows ML 
 - VSCode AI Toolkit
 - OpenAI SDK
-- اے آئی فریم ورک: LangChain، Semantic Kernel، Chainlit
-- ماڈل آپٹیمائزیشن: Llama.cpp، Microsoft Olive، OpenVINO، Apple MLX
+- AI فریم ورک: LangChain, Semantic Kernel, Chainlit
+- ماڈل آپٹیمائزیشن: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
 
-**ریپوزٹری کی قسم:** تعلیمی مواد کی ریپوزٹری جس میں 8 ماڈیولز اور 10 جامع سیمپل ایپلیکیشنز شامل ہیں
+**ریپوزیٹری کی قسم:** تعلیمی مواد کی ریپوزیٹری جس میں 8 ماڈیولز اور 10 جامع سیمپل ایپلیکیشنز شامل ہیں
 
 **آرکیٹیکچر:** ملٹی ماڈیول لرننگ پاتھ جس میں ایج اے آئی ڈیپلائمنٹ پیٹرنز کو عملی طور پر دکھایا گیا ہے
 
-## ریپوزٹری کی ساخت
+## ریپوزیٹری کا ڈھانچہ
 
 ```
 edgeai-for-beginners/
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -94,12 +101,12 @@ edgeai-for-beginners/
 
 - Python پروگرامنگ کی بنیادی سمجھ
 - کمانڈ لائن انٹرفیسز سے واقفیت
-- اے آئی/ایم ایل کے تصورات کی سمجھ (سیمپل ڈیولپمنٹ کے لیے)
-- Git ورک فلو اور پُل ریکویسٹ کے عمل
+- اے آئی/ایم ایل تصورات کی سمجھ (سیمپل ڈیولپمنٹ کے لیے)
+- Git ورک فلو اور پُل ریکویسٹ پروسیسز
 
 ## سیٹ اپ کمانڈز
 
-### ریپوزٹری سیٹ اپ
+### ریپوزیٹری سیٹ اپ
 
 ```bash
 # Clone the repository
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Python سیمپل سیٹ اپ (ماڈیول08 اور Python سیمپلز)
+### Python سیمپل سیٹ اپ (Module08 اور ورکشاپ سیمپلز)
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -145,7 +156,7 @@ npm run dist
 
 ### فاؤنڈری لوکل سیٹ اپ
 
-فاؤنڈری لوکل سیمپلز کو چلانے کے لیے ضروری ہے۔ آفیشل ریپوزٹری سے ڈاؤنلوڈ اور انسٹال کریں:
+فاؤنڈری لوکل سیمپلز کو چلانے کے لیے ضروری ہے۔ آفیشل ریپوزیٹری سے ڈاؤنلوڈ اور انسٹال کریں:
 
 **انسٹالیشن:**
 - **Windows**: `winget install Microsoft.FoundryLocal`
@@ -155,7 +166,7 @@ npm run dist
 **کوئیک اسٹارٹ:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -170,22 +181,28 @@ foundry service status
 
 ### مواد کی ترقی
 
-یہ ریپوزٹری بنیادی طور پر **مارک ڈاؤن تعلیمی مواد** پر مشتمل ہے۔ تبدیلیاں کرتے وقت:
+یہ ریپوزیٹری بنیادی طور پر **مارک ڈاؤن تعلیمی مواد** پر مشتمل ہے۔ تبدیلیاں کرتے وقت:
 
-1. متعلقہ ماڈیول ڈائریکٹریز میں `.md` فائلز کو ایڈٹ کریں
+1. مناسب ماڈیول ڈائریکٹریز میں `.md` فائلز کو ایڈٹ کریں
 2. موجودہ فارمیٹنگ پیٹرنز کی پیروی کریں
 3. کوڈ کے نمونے درست اور ٹیسٹ شدہ ہونے کو یقینی بنائیں
 4. اگر ضروری ہو تو متعلقہ ترجمہ شدہ مواد کو اپ ڈیٹ کریں (یا آٹومیشن کو اس کا خیال رکھنے دیں)
 
-### سیمپل ایپلیکیشن کی ترقی
+### سیمپل ایپلیکیشن ڈیولپمنٹ
 
-Python سیمپلز کے لیے (سیمپلز 01-07، 09-10):
+Module08 Python سیمپلز کے لیے (سیمپلز 01-07، 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
 ```
 
-Electron سیمپل کے لیے (سیمپل 08):
+ورکشاپ Python سیمپلز کے لیے:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
+```
+
+الیکٹران سیمپل (سیمپل 08) کے لیے:
 ```bash
 cd Module08/samples/08
 npm run dev  # Development with hot reload
@@ -193,7 +210,7 @@ npm run dev  # Development with hot reload
 
 ### سیمپل ایپلیکیشنز کی ٹیسٹنگ
 
-Python سیمپلز کے لیے خودکار ٹیسٹ نہیں ہیں لیکن انہیں چلانے سے ویلیڈیٹ کیا جا سکتا ہے:
+Python سیمپلز کے لیے آٹومیٹڈ ٹیسٹس نہیں ہیں لیکن انہیں چلانے سے ویلیڈیٹ کیا جا سکتا ہے:
 ```bash
 # Test basic chat functionality
 python samples/01/chat_quickstart.py "Hello"
@@ -203,7 +220,7 @@ set MODEL=phi-4-mini
 python samples/02/openai_sdk_client.py
 ```
 
-Electron سیمپل کے پاس ٹیسٹ انفراسٹرکچر ہے:
+الیکٹران سیمپل کے پاس ٹیسٹ انفراسٹرکچر موجود ہے:
 ```bash
 cd Module08/samples/08
 npm test           # Run unit tests
@@ -211,21 +228,21 @@ npm run test:e2e   # Run end-to-end tests
 npm run lint       # Check code style
 ```
 
-## ٹیسٹنگ کی ہدایات
+## ٹیسٹنگ ہدایات
 
 ### مواد کی ویلیڈیشن
 
-ریپوزٹری خودکار ترجمہ ورک فلو استعمال کرتی ہے۔ ترجمہ کے لیے کوئی دستی ٹیسٹنگ ضروری نہیں۔
+ریپوزیٹری آٹومیٹڈ ترجمہ ورک فلو استعمال کرتی ہے۔ ترجموں کے لیے کوئی دستی ٹیسٹنگ ضروری نہیں۔
 
 **مواد کی تبدیلیوں کے لیے دستی ویلیڈیشن:**
 1. مارک ڈاؤن رینڈرنگ کا جائزہ لیں `.md` فائلز کو پریویو کر کے
-2. تصدیق کریں کہ تمام لنکس درست ٹارگٹس کی طرف اشارہ کرتے ہیں
+2. تمام لنکس کو درست ٹارگٹس کی طرف اشارہ کرنے کی تصدیق کریں
 3. دستاویز میں شامل کوڈ کے نمونوں کو ٹیسٹ کریں
-4. چیک کریں کہ تصاویر صحیح طریقے سے لوڈ ہو رہی ہیں
+4. تصاویر کے صحیح طریقے سے لوڈ ہونے کو چیک کریں
 
-### سیمپل ایپلیکیشن کی ٹیسٹنگ
+### سیمپل ایپلیکیشنز کی ٹیسٹنگ
 
-**ماڈیول08/سیمپلز/08 (Electron ایپ) کے پاس جامع ٹیسٹنگ ہے:**
+**Module08/samples/08 (الیکٹران ایپ) کے پاس جامع ٹیسٹنگ موجود ہے:**
 ```bash
 cd Module08/samples/08
 
@@ -247,10 +264,19 @@ npm test -- --coverage
 
 **Python سیمپلز کو دستی طور پر ٹیسٹ کیا جانا چاہیے:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## کوڈ اسٹائل گائیڈ لائنز
@@ -260,13 +286,13 @@ python samples/09/multi_agent_system.py
 - مستقل ہیڈنگ ہائیرارکی استعمال کریں (# عنوان کے لیے، ## اہم سیکشنز کے لیے، ### ذیلی سیکشنز کے لیے)
 - کوڈ بلاکس میں زبان کے اسپیسفائر شامل کریں: ```python, ```bash, ```javascript
 - ٹیبلز، لسٹس، اور ایمفیسس کے لیے موجودہ فارمیٹنگ کی پیروی کریں
-- لائنز کو پڑھنے کے قابل رکھیں (تقریباً 80-100 کریکٹرز کا ہدف، لیکن سخت نہیں)
+- لائنز کو پڑھنے کے قابل رکھیں (~80-100 کریکٹرز کا ہدف رکھیں، لیکن سخت نہیں)
 - اندرونی حوالوں کے لیے ریلیٹو لنکس استعمال کریں
 
 ### Python کوڈ اسٹائل
 
 - PEP 8 کنونشنز کی پیروی کریں
-- جہاں مناسب ہو، ٹائپ ہنٹس استعمال کریں
+- جہاں مناسب ہو ٹائپ ہنٹس استعمال کریں
 - فنکشنز اور کلاسز کے لیے ڈاکسٹرنگز شامل کریں
 - معنی خیز ویریبل نام استعمال کریں
 - فنکشنز کو مرکوز اور مختصر رکھیں
@@ -291,7 +317,7 @@ npm run format      # Format with Prettier
 
 ### شراکت کا ورک فلو
 
-1. **ریپوزٹری کو فورک کریں** اور `main` سے ایک نئی برانچ بنائیں
+1. **ریپوزیٹری کو فورک کریں** اور `main` سے ایک نئی برانچ بنائیں
 2. **اپنی تبدیلیاں کریں** کوڈ اسٹائل گائیڈ لائنز کی پیروی کرتے ہوئے
 3. **اوپر دی گئی ٹیسٹنگ ہدایات کے مطابق مکمل ٹیسٹ کریں**
 4. **واضح پیغامات کے ساتھ کمیٹ کریں** کنونشنل کمیٹس فارمیٹ کی پیروی کرتے ہوئے
@@ -307,7 +333,7 @@ npm run format      # Format with Prettier
 
 ### کمیٹ میسج فارمیٹ
 
-[کنونشنل کمیٹس](https://www.conventionalcommits.org/) کی پیروی کریں:
+[Conventional Commits](https://www.conventionalcommits.org/) کی پیروی کریں:
 
 ```
 <type>(<scope>): <description>
@@ -324,7 +350,7 @@ docs(AGENTS): update Foundry Local setup instructions
 fix(samples/08): resolve Electron build issue
 ```
 
-### عنوان کا فارمیٹ
+### عنوان فارمیٹ
 ```
 [ModuleXX] Brief description of change
 ```
@@ -335,7 +361,7 @@ fix(samples/08): resolve Electron build issue
 
 ### ضابطہ اخلاق
 
-تمام شراکت داروں کو [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) کی پیروی کرنی چاہیے۔ شراکت کرنے سے پہلے [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) کا جائزہ لیں۔
+تمام شراکت داروں کو [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) کی پیروی کرنی چاہیے۔ شراکت سے پہلے [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) کا جائزہ لیں۔
 
 ### جمع کرانے سے پہلے
 
@@ -344,7 +370,7 @@ fix(samples/08): resolve Electron build issue
 - لنکس اور تصاویر کے کام کرنے کی تصدیق کریں
 - ٹائپوز اور گرامر کی غلطیوں کو چیک کریں
 
-**سیمپل کوڈ کی تبدیلیوں کے لیے (ماڈیول08/سیمپلز/08):**
+**سیمپل کوڈ کی تبدیلیوں کے لیے (Module08/samples/08):**
 ```bash
 npm run lint
 npm test
@@ -355,25 +381,25 @@ npm test
 - ایرر ہینڈلنگ کے کام کرنے کی تصدیق کریں
 - فاؤنڈری لوکل کے ساتھ مطابقت چیک کریں
 
-### ریویو کا عمل
+### ریویو پروسیس
 
-- تعلیمی مواد کی تبدیلیوں کا درستگی اور وضاحت کے لیے جائزہ لیا جاتا ہے
-- کوڈ سیمپلز کی فعالیت کے لیے ٹیسٹ کیا جاتا ہے
-- ترجمہ کی اپ ڈیٹس خودکار طور پر GitHub Actions کے ذریعے ہینڈل کی جاتی ہیں
+- تعلیمی مواد کی تبدیلیوں کو درستگی اور وضاحت کے لیے ریویو کیا جاتا ہے
+- کوڈ سیمپلز کو فعالیت کے لیے ٹیسٹ کیا جاتا ہے
+- ترجمہ اپ ڈیٹس کو GitHub Actions کے ذریعے خودکار طور پر ہینڈل کیا جاتا ہے
 
-## ترجمہ کا نظام
+## ترجمہ نظام
 
-**اہم:** یہ ریپوزٹری GitHub Actions کے ذریعے خودکار ترجمہ استعمال کرتی ہے۔
+**اہم:** یہ ریپوزیٹری GitHub Actions کے ذریعے خودکار ترجمہ استعمال کرتی ہے۔
 
-- ترجمے `/translations/` ڈائریکٹری میں ہیں (50+ زبانیں)
+- ترجمے `/translations/` ڈائریکٹری میں موجود ہیں (50+ زبانیں)
 - `co-op-translator.yml` ورک فلو کے ذریعے خودکار
 - **ترجمہ فائلز کو دستی طور پر ایڈٹ نہ کریں** - یہ اووررائٹ ہو جائیں گی
-- صرف روٹ اور ماڈیول ڈائریکٹریز میں انگریزی سورس فائلز کو ایڈٹ کریں
+- صرف روٹ اور ماڈیول ڈائریکٹریز میں موجود انگریزی سورس فائلز کو ایڈٹ کریں
 - ترجمے `main` برانچ پر پش کرنے پر خودکار طور پر جنریٹ ہوتے ہیں
 
 ## فاؤنڈری لوکل انٹیگریشن
 
-زیادہ تر ماڈیول08 سیمپلز کو Microsoft Foundry Local چلانے کی ضرورت ہوتی ہے۔
+زیادہ تر Module08 سیمپلز کے لیے Microsoft Foundry Local کا چلنا ضروری ہے۔
 
 ### انسٹالیشن اور سیٹ اپ
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -444,13 +470,13 @@ curl http://localhost:<port>/v1/models
 # Note: Port is displayed when running 'foundry service status'
 ```
 
-### سیمپلز کے لیے ماحولیات کے متغیرات
+### سیمپلز کے لیے انوائرمنٹ ویریبلز
 
-زیادہ تر سیمپلز یہ ماحولیات کے متغیرات استعمال کرتے ہیں:
+زیادہ تر سیمپلز یہ انوائرمنٹ ویریبلز استعمال کرتے ہیں:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -469,11 +495,11 @@ set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 ### مواد کی ڈیپلائمنٹ
 
-یہ ریپوزٹری بنیادی طور پر دستاویزات پر مشتمل ہے - مواد کے لیے کوئی بلڈ پروسیس ضروری نہیں۔
+یہ ریپوزیٹری بنیادی طور پر دستاویزات پر مشتمل ہے - مواد کے لیے کوئی بلڈ پروسیس ضروری نہیں۔
 
 ### سیمپل ایپلیکیشن بلڈنگ
 
-**Electron ایپلیکیشن (ماڈیول08/سیمپلز/08):**
+**الیکٹران ایپلیکیشن (Module08/samples/08):**
 ```bash
 cd Module08/samples/08
 
@@ -497,10 +523,10 @@ npm run pack
 
 > **ٹپ**: [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues) پر معلوم مسائل اور حل چیک کریں۔
 
-### اہم مسائل (بلاکنگ)
+### اہم مسائل (رکاوٹیں)
 
 #### فاؤنڈری لوکل نہیں چل رہا
-**مسئلہ:** سیمپلز کنکشن ایررز کے ساتھ ناکام ہو جاتے ہیں
+**مسئلہ:** سیمپلز کنکشن ایرر کے ساتھ ناکام ہو رہے ہیں
 
 **حل:**
 ```bash
@@ -508,7 +534,7 @@ npm run pack
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -522,7 +548,7 @@ curl http://localhost:<port>/v1/models
 
 ### عام مسائل (درمیانی)
 
-#### Python ورچوئل ماحولیات کے مسائل
+#### Python ورچوئل انوائرمنٹ کے مسائل
 **مسئلہ:** ماڈیول امپورٹ ایررز
 
 **حل:**
@@ -537,7 +563,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### Electron بلڈ کے مسائل
+#### الیکٹران بلڈ کے مسائل
 **مسئلہ:** npm انسٹال یا بلڈ کی ناکامی
 
 **حل:**
@@ -556,11 +582,11 @@ npm install
 
 **حل:**
 - صرف انگریزی سورس فائلز کو ایڈٹ کریں
-- خودکار ترجمہ ورک فلو کو ترجمہ ہینڈل کرنے دیں
+- خودکار ترجمہ ورک فلو کو ترجمے ہینڈل کرنے دیں
 - اگر تنازعات پیدا ہوں، تو ترجمے کے ضم ہونے کے بعد `main` کو اپنی برانچ میں ضم کریں
 
 #### ماڈل ڈاؤنلوڈ کی ناکامی
-**مسئلہ:** فاؤنڈری لوکل ماڈلز کو ڈاؤنلوڈ کرنے میں ناکام ہو جاتا ہے
+**مسئلہ:** فاؤنڈری لوکل ماڈلز ڈاؤنلوڈ کرنے میں ناکام ہو رہا ہے
 
 **حل:**
 ```bash
@@ -575,21 +601,22 @@ foundry model run <model-alias>
 
 ## اضافی وسائل
 
-### لرننگ پاتھ
+### لرننگ پاتھز
 - **ابتدائی پاتھ:** ماڈیولز 01-02 (7-9 گھنٹے)
 - **درمیانی پاتھ:** ماڈیولز 03-04 (9-11 گھنٹے)
 - **اعلیٰ پاتھ:** ماڈیولز 05-07 (12-15 گھنٹے)
 - **ماہر پاتھ:** ماڈیول 08 (8-10 گھنٹے)
+- **ہینڈز آن ورکشاپ:** ورکشاپ مواد (6-8 گھنٹے)
 
 ### اہم ماڈیول مواد
-- **ماڈیول01:** ایج اے آئی کے بنیادی اصول اور حقیقی دنیا کے کیس اسٹڈیز
-- **ماڈیول02:** چھوٹے لینگویج ماڈل (SLM) خاندان اور آرکیٹیکچرز
-- **ماڈیول03:** لوکل اور کلاؤڈ ڈیپلائمنٹ کی حکمت عملی
-- **ماڈیول04:** متعدد فریم ورک کے ساتھ ماڈل آپٹیمائزیشن
-- **ماڈیول05:** SLMOps - پروڈکشن آپریشنز
-- **ماڈیول06:** اے آئی ایجنٹس اور فنکشن کالنگ
-- **ماڈیول07:** پلیٹ فارم مخصوص عمل درآمد
-- **ماڈیول08:** فاؤنڈری لوکل ٹول کٹ کے ساتھ 10 جامع سیمپلز
+- **Module01:** ایج اے آئی کے بنیادی اصول اور حقیقی دنیا کے کیس اسٹڈیز
+- **Module02:** چھوٹے لینگویج ماڈلز (SLM) کے خاندان اور آرکیٹیکچرز
+- **Module03:** لوکل اور کلاؤڈ ڈیپلائمنٹ حکمت عملی
+- **Module04:** متعدد فریم ورک کے ساتھ ماڈل آپٹیمائزیشن (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
+- **Module05:** SLMOps - پروڈکشن آپریشنز
+- **Module06:** اے آئی ایجنٹس اور فنکشن کالنگ
+- **Module07:** پلیٹ فارم کے مخصوص امپلیمنٹیشنز
+- **Module08:** فاؤنڈری لوکل ٹول کٹ کے ساتھ 10 جامع سیمپلز
 
 ### بیرونی ڈیپینڈنسیز
 - [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - لوکل اے آئی ماڈل رن ٹائم OpenAI-کمپیٹیبل API کے ساتھ
@@ -597,57 +624,66 @@ foundry model run <model-alias>
   - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [JavaScript SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
 - [Llama.cpp](https://github.com/ggml-org/llama.cpp) - آپٹیمائزیشن فریم ورک
-- [Microsoft Olive](https://microsoft.github.io/Olive/) - ماڈل آپٹیمائزیشن ٹول کٹ
-- [OpenVINO](https://docs.openvino.ai/) - Intel کا آپٹیمائزیشن ٹول کٹ
+- [Microsoft Olive](https://microsoft.github.io/Olive/) - ماڈل آپٹیمائز
+10. **10-فاؤنڈری ٹولز فریم ورک** - LangChain/Semantic Kernel انضمام
 
-## پروجیکٹ سے متعلق نوٹس
+### ورکشاپ کے نمونہ ایپلیکیشنز
 
-### ماڈیول08 سیمپل ایپلیکیشنز
+ورکشاپ میں 6 ترقی پسند سیشنز شامل ہیں جن میں عملی نفاذ شامل ہیں:
 
-ریپوزٹری میں 10 جامع سیمپل ایپلیکیشنز شامل ہیں:
+1. **سیشن 01** - چیٹ بوٹ اسٹیپ اپ فاؤنڈری لوکل انضمام کے ساتھ
+2. **سیشن 02** - RAG پائپ لائن اور RAGAS کے ساتھ تشخیص
+3. **سیشن 03** - اوپن سورس ماڈلز کی بینچ مارکنگ
+4. **سیشن 04** - ماڈل کا موازنہ اور انتخاب
+5. **سیشن 05** - ملٹی ایجنٹ آرکسٹریشن سسٹمز
+6. **سیشن 06** - ماڈل روٹنگ اور پائپ لائن مینجمنٹ
 
-1. **01-REST
-- مقامی انفرینس 50-500 ملی سیکنڈ کے ردعمل وقت فراہم کرتا ہے  
-- کوانٹائزیشن تکنیکیں 75% سائز میں کمی کے ساتھ 85% کارکردگی برقرار رکھتی ہیں  
-- مقامی ماڈلز کے ساتھ حقیقی وقت کی گفتگو کی صلاحیتیں  
+ہر نمونہ فاؤنڈری لوکل کے ساتھ ایج AI کی ترقی کے مختلف پہلوؤں کو ظاہر کرتا ہے۔
 
-### سیکیورٹی اور پرائیویسی  
+### کارکردگی کے پہلو
 
-- تمام پراسیسنگ مقامی طور پر ہوتی ہے - کوئی ڈیٹا کلاؤڈ کو نہیں بھیجا جاتا  
-- پرائیویسی حساس ایپلیکیشنز (صحت، مالیات) کے لیے موزوں  
-- ڈیٹا خودمختاری کی ضروریات کو پورا کرتا ہے  
-- Foundry Local مکمل طور پر مقامی ہارڈویئر پر چلتا ہے  
+- SLMs ایج ڈپلائمنٹ کے لیے بہتر بنائے گئے ہیں (2-16GB RAM)
+- لوکل انفرنس 50-500ms کے ردعمل کا وقت فراہم کرتا ہے
+- کوانٹائزیشن تکنیک 75% سائز کی کمی کے ساتھ 85% کارکردگی برقرار رکھتی ہیں
+- لوکل ماڈلز کے ساتھ حقیقی وقت کی گفتگو کی صلاحیتیں
 
-## مدد حاصل کرنا  
+### سیکیورٹی اور پرائیویسی
 
-### دستاویزات  
+- تمام پروسیسنگ لوکل ہوتی ہے - کوئی ڈیٹا کلاؤڈ کو نہیں بھیجا جاتا
+- پرائیویسی حساس ایپلیکیشنز کے لیے موزوں (صحت، مالیات)
+- ڈیٹا خودمختاری کی ضروریات کو پورا کرتا ہے
+- فاؤنڈری لوکل مکمل طور پر لوکل ہارڈویئر پر چلتا ہے
 
-- **مین README**: [README.md](README.md) - ریپوزیٹری کا جائزہ اور سیکھنے کے راستے  
-- **مطالعہ گائیڈ**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - سیکھنے کے وسائل اور ٹائم لائن  
-- **سپورٹ**: [SUPPORT.md](SUPPORT.md) - مدد حاصل کرنے کا طریقہ  
-- **سیکیورٹی**: [SECURITY.md](SECURITY.md) - سیکیورٹی مسائل کی رپورٹنگ  
+## مدد حاصل کریں
 
-### کمیونٹی سپورٹ  
+### دستاویزات
 
-- **GitHub Issues**: [بگز رپورٹ کریں یا فیچرز کی درخواست کریں](https://github.com/microsoft/edgeai-for-beginners/issues)  
-- **GitHub Discussions**: [سوالات پوچھیں اور خیالات شیئر کریں](https://github.com/microsoft/edgeai-for-beginners/discussions)  
-- **Foundry Local Issues**: [Foundry Local کے تکنیکی مسائل](https://github.com/microsoft/Foundry-Local/issues)  
+- **مین README**: [README.md](README.md) - ریپوزیٹری کا جائزہ اور سیکھنے کے راستے
+- **مطالعہ گائیڈ**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - سیکھنے کے وسائل اور ٹائم لائن
+- **سپورٹ**: [SUPPORT.md](SUPPORT.md) - مدد حاصل کرنے کا طریقہ
+- **سیکیورٹی**: [SECURITY.md](SECURITY.md) - سیکیورٹی مسائل کی رپورٹنگ
 
-### رابطہ  
+### کمیونٹی سپورٹ
 
-- **مینٹینرز**: دیکھیں [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)  
-- **سیکیورٹی مسائل**: ذمہ دارانہ انکشاف کے لیے [SECURITY.md](SECURITY.md) پر عمل کریں  
-- **Microsoft سپورٹ**: انٹرپرائز سپورٹ کے لیے، Microsoft کسٹمر سروس سے رابطہ کریں  
+- **GitHub Issues**: [بگز رپورٹ کریں یا فیچرز کی درخواست کریں](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **GitHub Discussions**: [سوالات پوچھیں اور خیالات شیئر کریں](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **Foundry Local Issues**: [فاؤنڈری لوکل کے تکنیکی مسائل](https://github.com/microsoft/Foundry-Local/issues)
 
-### اضافی وسائل  
+### رابطہ
 
-- **Microsoft Learn**: [AI اور مشین لرننگ کے سیکھنے کے راستے](https://learn.microsoft.com/training/browse/?products=ai-services)  
-- **Foundry Local دستاویزات**: [آفیشل ڈاکس](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)  
-- **کمیونٹی سیمپلز**: کمیونٹی کی شراکت کے لیے [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) دیکھیں  
+- **مینٹینرز**: دیکھیں [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
+- **سیکیورٹی مسائل**: ذمہ دارانہ انکشاف کے لیے [SECURITY.md](SECURITY.md) پر عمل کریں
+- **Microsoft Support**: انٹرپرائز سپورٹ کے لیے، مائیکروسافٹ کسٹمر سروس سے رابطہ کریں
+
+### اضافی وسائل
+
+- **Microsoft Learn**: [AI اور مشین لرننگ کے سیکھنے کے راستے](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **Foundry Local Documentation**: [سرکاری دستاویزات](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **کمیونٹی نمونے**: کمیونٹی کی شراکت کے لیے [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) دیکھیں
 
 ---
 
-**یہ ایک تعلیمی ریپوزیٹری ہے جو Edge AI ڈیولپمنٹ سکھانے پر مرکوز ہے۔ بنیادی شراکت کا نمونہ تعلیمی مواد کو بہتر بنانا اور Edge AI تصورات کو ظاہر کرنے والے نمونہ ایپلیکیشنز کو شامل/بہتر کرنا ہے۔**  
+**یہ ایک تعلیمی ریپوزیٹری ہے جو ایج AI کی ترقی سکھانے پر مرکوز ہے۔ بنیادی شراکت کا نمونہ تعلیمی مواد کو بہتر بنانا اور ایج AI کے تصورات کو ظاہر کرنے والے نمونہ ایپلیکیشنز کو شامل/بہتر کرنا ہے۔**
 
 ---
 

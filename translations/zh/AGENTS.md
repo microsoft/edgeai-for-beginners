@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-08T16:00:18+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T11:08:49+00:00",
   "source_file": "AGENTS.md",
   "language_code": "zh"
 }
 -->
 # AGENTS.md
 
-> **开发者指南：为初学者贡献EdgeAI**
+> **初学者开发者指南：贡献于EdgeAI**
 > 
-> 本文档为开发者、AI代理和贡献者提供了关于本仓库的全面信息，涵盖了设置、开发工作流程、测试以及最佳实践。
+> 本文档为开发者、AI代理和贡献者提供了关于本仓库的全面信息。内容涵盖了设置、开发工作流、测试以及最佳实践。
 > 
-> **最后更新日期**：2025年10月 | **文档版本**：2.0
+> **最后更新日期**：2025年10月30日 | **文档版本**：3.0
 
 ## 目录
 
@@ -21,7 +21,7 @@ CO_OP_TRANSLATOR_METADATA:
 - [仓库结构](../..)
 - [先决条件](../..)
 - [设置命令](../..)
-- [开发工作流程](../..)
+- [开发工作流](../..)
 - [测试说明](../..)
 - [代码风格指南](../..)
 - [拉取请求指南](../..)
@@ -29,21 +29,21 @@ CO_OP_TRANSLATOR_METADATA:
 - [Foundry Local集成](../..)
 - [构建与部署](../..)
 - [常见问题与故障排除](../..)
-- [其他资源](../..)
+- [附加资源](../..)
 - [项目特定说明](../..)
 - [获取帮助](../..)
 
 ## 项目概述
 
-EdgeAI for Beginners 是一个全面的教育性仓库，教授使用小型语言模型（SLMs）进行边缘AI开发。课程内容包括EdgeAI基础知识、模型部署、优化技术以及使用Microsoft Foundry Local和各种AI框架的生产级实现。
+EdgeAI for Beginners 是一个全面的教育性仓库，旨在教授使用小型语言模型（SLMs）进行边缘AI开发。课程内容包括EdgeAI基础知识、模型部署、优化技术以及使用Microsoft Foundry Local和各种AI框架的生产级实现。
 
 **关键技术：**
 - Python 3.8+（AI/ML示例的主要语言）
 - .NET C#（AI/ML示例）
 - JavaScript/Node.js与Electron（用于桌面应用程序）
 - Microsoft Foundry Local SDK
-- Microsoft Windows ML 
-- VSCode AI Toolkit
+- Microsoft Windows ML
+- VSCode AI工具包
 - OpenAI SDK
 - AI框架：LangChain、Semantic Kernel、Chainlit
 - 模型优化：Llama.cpp、Microsoft Olive、OpenVINO、Apple MLX
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -73,7 +80,7 @@ edgeai-for-beginners/
 ### 必需工具
 
 - **Python 3.8+** - 用于AI/ML示例和笔记本
-- **Node.js 16+** - 用于Electron示例应用
+- **Node.js 16+** - 用于Electron示例应用程序
 - **Git** - 用于版本控制
 - **Microsoft Foundry Local** - 用于本地运行AI模型
 
@@ -86,16 +93,16 @@ edgeai-for-beginners/
 ### 系统要求
 
 - **内存**：最低8GB，推荐16GB以上以支持多模型场景
-- **存储**：至少10GB的可用空间，用于存储模型和依赖项
+- **存储**：至少10GB可用空间用于模型和依赖项
 - **操作系统**：Windows 10/11、macOS 11+或Linux（Ubuntu 20.04+）
 - **硬件**：支持AVX2的CPU；推荐使用GPU（CUDA、Qualcomm NPU）
 
 ### 知识要求
 
-- 基本的Python编程知识
+- 具备Python编程的基础知识
 - 熟悉命令行界面
-- 了解AI/ML概念（用于示例开发）
-- Git工作流程和拉取请求流程
+- 理解AI/ML概念（用于示例开发）
+- 熟悉Git工作流和拉取请求流程
 
 ## 设置命令
 
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Python示例设置（模块08和Python示例）
+### Python示例设置（模块08和Workshop示例）
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -145,7 +156,7 @@ npm run dist
 
 ### Foundry Local设置
 
-运行示例需要安装Foundry Local。请从官方仓库下载并安装：
+Foundry Local是运行示例所需的工具。请从官方仓库下载并安装：
 
 **安装：**
 - **Windows**：`winget install Microsoft.FoundryLocal`
@@ -155,7 +166,7 @@ npm run dist
 **快速开始：**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -164,25 +175,31 @@ foundry model ls
 foundry service status
 ```
 
-**注意**：Foundry Local会自动选择最适合您硬件的模型版本（CUDA GPU、Qualcomm NPU或CPU）。
+**注意**：Foundry Local会自动为您的硬件选择最佳模型版本（CUDA GPU、Qualcomm NPU或CPU）。
 
-## 开发工作流程
+## 开发工作流
 
 ### 内容开发
 
 本仓库主要包含**Markdown教育内容**。进行更改时：
 
-1. 编辑适当模块目录中的`.md`文件
+1. 编辑适当模块目录下的`.md`文件
 2. 遵循现有的格式模式
 3. 确保代码示例准确且经过测试
-4. 必要时更新相应的翻译内容（或由自动化处理）
+4. 必要时更新对应的翻译内容（或由自动化处理）
 
 ### 示例应用开发
 
-对于Python示例（示例01-07，09-10）：
+对于模块08的Python示例（示例01-07、09-10）：
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+对于Workshop Python示例：
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 对于Electron示例（示例08）：
@@ -225,7 +242,7 @@ npm run lint       # Check code style
 
 ### 示例应用测试
 
-**模块08/示例/08（Electron应用）具有全面的测试：**
+**模块08/示例/08（Electron应用）具有全面测试：**
 ```bash
 cd Module08/samples/08
 
@@ -247,20 +264,29 @@ npm test -- --coverage
 
 **Python示例需手动测试：**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## 代码风格指南
 
 ### Markdown内容
 
-- 使用一致的标题层次结构（#用于标题，##用于主要部分，###用于子部分）
-- 包含带语言标识符的代码块：```python, ```bash, ```javascript
-- 遵循现有格式用于表格、列表和强调
-- 保持行的可读性（目标约80-100字符，但不严格）
+- 使用一致的标题层级（#用于标题，##用于主要部分，###用于子部分）
+- 包含带语言说明的代码块：```python, ```bash, ```javascript
+- 遵循现有的表格、列表和强调格式
+- 保持行可读性（目标约80-100字符，但不严格限制）
 - 对内部引用使用相对链接
 
 ### Python代码风格
@@ -269,7 +295,7 @@ python samples/09/multi_agent_system.py
 - 适当使用类型提示
 - 为函数和类添加文档字符串
 - 使用有意义的变量名
-- 保持函数简洁且专注
+- 保持函数专注且简洁
 
 ### JavaScript/Node.js代码风格
 
@@ -289,7 +315,7 @@ npm run format      # Format with Prettier
 
 ## 拉取请求指南
 
-### 贡献工作流程
+### 贡献工作流
 
 1. **Fork仓库**并从`main`创建新分支
 2. **根据代码风格指南进行更改**
@@ -301,7 +327,7 @@ npm run format      # Format with Prettier
 ### 分支命名约定
 
 - `feature/<module>-<description>` - 用于新功能或内容
-- `fix/<module>-<description>` - 用于修复错误
+- `fix/<module>-<description>` - 用于错误修复
 - `docs/<description>` - 用于文档改进
 - `refactor/<description>` - 用于代码重构
 
@@ -335,12 +361,12 @@ fix(samples/08): resolve Electron build issue
 
 ### 行为准则
 
-所有贡献者必须遵守[Microsoft开源行为准则](https://opensource.microsoft.com/codeofconduct/)。在贡献之前，请查看[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)。
+所有贡献者必须遵守[Microsoft开源行为准则](https://opensource.microsoft.com/codeofconduct/)。请在贡献之前查看[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)。
 
-### 提交前
+### 提交前检查
 
 **对于内容更改：**
-- 预览所有修改过的Markdown文件
+- 预览所有修改的Markdown文件
 - 验证链接和图片是否正常工作
 - 检查拼写和语法错误
 
@@ -358,15 +384,15 @@ npm test
 ### 审查流程
 
 - 教育内容更改需审查准确性和清晰度
-- 示例代码需测试功能性
+- 代码示例需测试功能性
 - 翻译更新由GitHub Actions自动处理
 
 ## 翻译系统
 
-**重要提示：** 本仓库使用GitHub Actions进行自动化翻译。
+**重要：** 本仓库使用GitHub Actions进行自动翻译。
 
 - 翻译文件位于`/translations/`目录（支持50多种语言）
-- 通过`co-op-translator.yml`工作流自动化完成
+- 通过`co-op-translator.yml`工作流自动化处理
 - **请勿手动编辑翻译文件** - 它们会被覆盖
 - 仅编辑根目录和模块目录中的英文源文件
 - 推送到`main`分支时会自动生成翻译
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -450,7 +476,7 @@ curl http://localhost:<port>/v1/models
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -495,7 +521,7 @@ npm run pack
 
 ## 常见问题与故障排除
 
-> **提示**：请查看[GitHub问题](https://github.com/microsoft/edgeai-for-beginners/issues)以了解已知问题和解决方案。
+> **提示**：查看[GitHub问题](https://github.com/microsoft/edgeai-for-beginners/issues)以获取已知问题和解决方案。
 
 ### 严重问题（阻塞）
 
@@ -508,7 +534,7 @@ npm run pack
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -549,10 +575,10 @@ rm -rf node_modules package-lock.json
 npm install
 ```
 
-### 工作流程问题（轻微）
+### 工作流问题（轻微）
 
 #### 翻译工作流冲突
-**问题：** 翻译PR与您的更改发生冲突
+**问题：** 翻译PR与您的更改冲突
 
 **解决方案：**
 - 仅编辑英文源文件
@@ -573,26 +599,27 @@ foundry model run <model-alias>
 # Verify firewall settings allow downloads
 ```
 
-## 其他资源
+## 附加资源
 
 ### 学习路径
 - **初学者路径：** 模块01-02（7-9小时）
 - **中级路径：** 模块03-04（9-11小时）
 - **高级路径：** 模块05-07（12-15小时）
 - **专家路径：** 模块08（8-10小时）
+- **实践Workshop：** Workshop材料（6-8小时）
 
 ### 关键模块内容
-- **模块01：** EdgeAI基础知识和实际案例研究
+- **模块01：** EdgeAI基础知识和真实案例研究
 - **模块02：** 小型语言模型（SLM）家族和架构
 - **模块03：** 本地和云部署策略
-- **模块04：** 使用多种框架进行模型优化
+- **模块04：** 使用多个框架进行模型优化（Llama.cpp、Microsoft Olive、OpenVINO、Qualcomm QNN、Apple MLX）
 - **模块05：** SLMOps - 生产操作
 - **模块06：** AI代理和函数调用
 - **模块07：** 平台特定实现
-- **模块08：** Foundry Local工具包及10个综合示例
+- **模块08：** Foundry Local工具包，包含10个综合示例
 
-### 外部依赖项
-- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - 具有OpenAI兼容API的本地AI模型运行时
+### 外部依赖
+- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - 本地AI模型运行时，兼容OpenAI API
   - [文档](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
   - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [JavaScript SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
@@ -615,56 +642,67 @@ foundry model run <model-alias>
 7. **07-直接API客户端** - 低级API集成
 8. **08-Windows 11聊天应用** - 原生Electron桌面应用
 9. **09-高级多代理系统** - 复杂代理编排
-10. **10-Foundry工具框架** - LangChain/Semantic Kernel集成
+10. **10-Foundry 工具框架** - LangChain/Semantic Kernel 集成
 
-每个示例展示了使用Foundry Local进行边缘AI开发的不同方面。
+### 工作坊示例应用
 
-### 性能注意事项
+工作坊包括6个循序渐进的实践课程：
 
-- SLMs针对边缘部署进行了优化（2-16GB内存）
-- 本地推理提供 50-500 毫秒的响应时间  
-- 量化技术实现 75% 的大小缩减，同时保留 85% 的性能  
-- 使用本地模型实现实时对话功能  
+1. **课程 01** - 使用 Foundry Local 集成进行聊天启动
+2. **课程 02** - 使用 RAGAS 进行 RAG 管道和评估
+3. **课程 03** - 开源模型的基准测试
+4. **课程 04** - 模型比较与选择
+5. **课程 05** - 多代理编排系统
+6. **课程 06** - 模型路由与管道管理
 
-### 安全与隐私  
+每个示例展示了使用 Foundry Local 进行边缘 AI 开发的不同方面。
 
-- 所有处理均在本地完成——无数据发送至云端  
-- 适用于隐私敏感型应用（医疗、金融）  
-- 符合数据主权要求  
-- Foundry Local 完全运行于本地硬件  
+### 性能考量
 
-## 获取帮助  
+- SLMs 针对边缘部署进行了优化（2-16GB RAM）
+- 本地推理提供 50-500ms 的响应时间
+- 量化技术实现了 75% 的大小缩减，同时保留 85% 的性能
+- 使用本地模型实现实时对话功能
 
-### 文档  
+### 安全与隐私
 
-- **主 README**: [README.md](README.md) - 仓库概览和学习路径  
-- **学习指南**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - 学习资源和时间规划  
-- **支持**: [SUPPORT.md](SUPPORT.md) - 如何获取帮助  
-- **安全**: [SECURITY.md](SECURITY.md) - 报告安全问题  
+- 所有处理均在本地完成 - 无数据发送至云端
+- 适用于隐私敏感型应用（医疗、金融）
+- 符合数据主权要求
+- Foundry Local 完全运行于本地硬件
 
-### 社区支持  
+## 获取帮助
 
-- **GitHub 问题**: [报告错误或请求功能](https://github.com/microsoft/edgeai-for-beginners/issues)  
-- **GitHub 讨论**: [提问和分享想法](https://github.com/microsoft/edgeai-for-beginners/discussions)  
-- **Foundry Local 问题**: [Foundry Local 的技术问题](https://github.com/microsoft/Foundry-Local/issues)  
+### 文档
 
-### 联系方式  
+- **主 README**: [README.md](README.md) - 仓库概览和学习路径
+- **学习指南**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - 学习资源和时间表
+- **支持**: [SUPPORT.md](SUPPORT.md) - 如何获取帮助
+- **安全性**: [SECURITY.md](SECURITY.md) - 报告安全问题
 
-- **维护者**: 请参阅 [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)  
-- **安全问题**: 按照 [SECURITY.md](SECURITY.md) 中的负责任披露流程  
-- **微软支持**: 对于企业支持，请联系微软客户服务  
+### 社区支持
 
-### 其他资源  
+- **GitHub 问题**: [报告错误或请求功能](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **GitHub 讨论**: [提问和分享想法](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **Foundry Local 问题**: [Foundry Local 的技术问题](https://github.com/microsoft/Foundry-Local/issues)
 
-- **Microsoft Learn**: [AI 和机器学习学习路径](https://learn.microsoft.com/training/browse/?products=ai-services)  
-- **Foundry Local 文档**: [官方文档](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)  
-- **社区示例**: 查看 [GitHub 讨论](https://github.com/microsoft/edgeai-for-beginners/discussions) 中的社区贡献  
+### 联系方式
+
+- **维护者**: 查看 [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
+- **安全问题**: 按照 [SECURITY.md](SECURITY.md) 中的负责任披露流程
+- **微软支持**: 对于企业支持，请联系微软客户服务
+
+### 其他资源
+
+- **Microsoft Learn**: [AI 和机器学习学习路径](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **Foundry Local 文档**: [官方文档](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **社区示例**: 查看 [GitHub 讨论](https://github.com/microsoft/edgeai-for-beginners/discussions) 了解社区贡献
 
 ---
 
-**这是一个专注于教授边缘 AI 开发的教育性仓库。主要的贡献模式是改进教育内容以及添加/增强示例应用，以展示边缘 AI 的概念。**  
+**这是一个专注于教授边缘 AI 开发的教育性仓库。主要的贡献模式是改进教育内容以及添加/增强示例应用，以展示边缘 AI 概念。**
 
 ---
 
 **免责声明**：  
-本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
+本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们对因使用此翻译而产生的任何误解或误读不承担责任。

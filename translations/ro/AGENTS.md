@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-08T15:10:13+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T14:26:53+00:00",
   "source_file": "AGENTS.md",
   "language_code": "ro"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 > 
 > Acest document oferă informații detaliate pentru dezvoltatori, agenți AI și colaboratori care lucrează cu acest depozit. Acesta acoperă configurarea, fluxurile de lucru de dezvoltare, testarea și cele mai bune practici.
 > 
-> **Ultima actualizare**: Octombrie 2025 | **Versiunea documentului**: 2.0
+> **Ultima actualizare**: 30 octombrie 2025 | **Versiunea documentului**: 3.0
 
 ## Cuprins
 
@@ -21,7 +21,7 @@ CO_OP_TRANSLATOR_METADATA:
 - [Structura depozitului](../..)
 - [Prerechizite](../..)
 - [Comenzi de configurare](../..)
-- [Flux de lucru pentru dezvoltare](../..)
+- [Flux de lucru de dezvoltare](../..)
 - [Instrucțiuni de testare](../..)
 - [Ghiduri de stil pentru cod](../..)
 - [Ghiduri pentru cererile de pull](../..)
@@ -48,7 +48,7 @@ EdgeAI pentru începători este un depozit educațional cuprinzător care predă
 - Cadre AI: LangChain, Semantic Kernel, Chainlit
 - Optimizarea modelelor: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
 
-**Tip depozit:** Depozit de conținut educațional cu 8 module și 10 aplicații exemplu cuprinzătoare
+**Tip depozit:** Depozit de conținut educațional cu 8 module și 10 aplicații de exemplu cuprinzătoare
 
 **Arhitectură:** Parcurs de învățare multi-modul cu exemple practice care demonstrează modele de implementare Edge AI
 
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -73,7 +80,7 @@ edgeai-for-beginners/
 ### Instrumente necesare
 
 - **Python 3.8+** - Pentru exemple AI/ML și notebook-uri
-- **Node.js 16+** - Pentru aplicația exemplu Electron
+- **Node.js 16+** - Pentru aplicația de exemplu Electron
 - **Git** - Pentru controlul versiunilor
 - **Microsoft Foundry Local** - Pentru rularea modelelor AI local
 
@@ -85,17 +92,17 @@ edgeai-for-beginners/
 
 ### Cerințe de sistem
 
-- **RAM**: Minimum 8GB, recomandat 16GB+ pentru scenarii multi-model
-- **Spațiu de stocare**: Minimum 10GB liber pentru modele și dependențe
+- **RAM**: minim 8GB, recomandat 16GB+ pentru scenarii multi-model
+- **Spațiu de stocare**: minim 10GB spațiu liber pentru modele și dependențe
 - **OS**: Windows 10/11, macOS 11+ sau Linux (Ubuntu 20.04+)
 - **Hardware**: CPU cu suport AVX2; GPU (CUDA, Qualcomm NPU) opțional, dar recomandat
 
 ### Prerechizite de cunoștințe
 
 - Înțelegerea de bază a programării în Python
-- Familiaritate cu interfețele liniei de comandă
+- Familiaritate cu interfețele de linie de comandă
 - Înțelegerea conceptelor AI/ML (pentru dezvoltarea exemplelor)
-- Fluxuri de lucru Git și procesele de cereri de pull
+- Fluxuri de lucru Git și procese de cereri de pull
 
 ## Comenzi de configurare
 
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Configurarea exemplelor Python (Modul08 și exemple Python)
+### Configurarea exemplelor Python (Module08 și exemple Workshop)
 
 ```bash
 # Create and activate virtual environment
@@ -125,9 +132,13 @@ pip install foundry-local-sdk openai
 # Install additional dependencies for Module08 samples
 cd Module08
 pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
+pip install -r requirements.txt
 ```
 
-### Configurarea exemplelor Node.js (Exemplu 08 - Aplicație de chat Windows)
+### Configurarea exemplelor Node.js (Exemplu 08 - Aplicație Chat Windows)
 
 ```bash
 cd Module08/samples/08
@@ -155,7 +166,7 @@ Foundry Local este necesar pentru a rula exemplele. Descărcați și instalați 
 **Start rapid:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -166,32 +177,38 @@ foundry service status
 
 **Notă**: Foundry Local selectează automat cea mai bună variantă de model pentru hardware-ul dvs. (GPU CUDA, NPU Qualcomm sau CPU).
 
-## Flux de lucru pentru dezvoltare
+## Flux de lucru de dezvoltare
 
 ### Dezvoltarea conținutului
 
-Acest depozit conține în principal **conținut educațional în format Markdown**. Când faceți modificări:
+Acest depozit conține în principal **conținut educațional Markdown**. Când faceți modificări:
 
-1. Editați fișierele `.md` în directoarele modulului corespunzător
+1. Editați fișierele `.md` în directoarele de module corespunzătoare
 2. Urmați modelele de formatare existente
 3. Asigurați-vă că exemplele de cod sunt corecte și testate
-4. Actualizați conținutul tradus corespunzător, dacă este necesar (sau lăsați automatizarea să se ocupe de acest lucru)
+4. Actualizați conținutul tradus corespunzător, dacă este necesar (sau lăsați automatizarea să se ocupe de asta)
 
-### Dezvoltarea aplicațiilor exemplu
+### Dezvoltarea aplicațiilor de exemplu
 
-Pentru exemplele Python (exemplele 01-07, 09-10):
+Pentru exemplele Python din Module08 (exemple 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
 ```
 
-Pentru exemplul Electron (exemplul 08):
+Pentru exemplele Python din Workshop:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
+```
+
+Pentru exemplul Electron (exemplu 08):
 ```bash
 cd Module08/samples/08
 npm run dev  # Development with hot reload
 ```
 
-### Testarea aplicațiilor exemplu
+### Testarea aplicațiilor de exemplu
 
 Exemplele Python nu au teste automate, dar pot fi validate prin rularea lor:
 ```bash
@@ -215,17 +232,17 @@ npm run lint       # Check code style
 
 ### Validarea conținutului
 
-Depozitul folosește fluxuri de lucru automate de traducere. Nu este necesară testarea manuală pentru traduceri.
+Depozitul utilizează fluxuri de lucru automate de traducere. Nu este necesară testarea manuală pentru traduceri.
 
 **Validare manuală pentru modificările de conținut:**
-1. Previzualizați randarea Markdown a fișierelor `.md`
-2. Verificați ca toate linkurile să conducă la destinații valide
+1. Revizuiți redarea Markdown prin previzualizarea fișierelor `.md`
+2. Verificați dacă toate linkurile indică destinații valide
 3. Testați orice fragmente de cod incluse în documentație
-4. Asigurați-vă că imaginile se încarcă corect
+4. Verificați dacă imaginile se încarcă corect
 
-### Testarea aplicațiilor exemplu
+### Testarea aplicațiilor de exemplu
 
-**Module08/samples/08 (aplicația Electron) are testare cuprinzătoare:**
+**Module08/exemple/08 (aplicația Electron) are teste cuprinzătoare:**
 ```bash
 cd Module08/samples/08
 
@@ -247,10 +264,19 @@ npm test -- --coverage
 
 **Exemplele Python trebuie testate manual:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## Ghiduri de stil pentru cod
@@ -260,7 +286,7 @@ python samples/09/multi_agent_system.py
 - Utilizați o ierarhie consistentă a titlurilor (# pentru titlu, ## pentru secțiuni principale, ### pentru subsecțiuni)
 - Includeți blocuri de cod cu specificatori de limbaj: ```python, ```bash, ```javascript
 - Urmați formatarea existentă pentru tabele, liste și accentuări
-- Păstrați liniile ușor de citit (aproximativ 80-100 de caractere, dar nu strict)
+- Păstrați liniile lizibile (aproximativ 80-100 de caractere, dar nu strict)
 - Utilizați linkuri relative pentru referințe interne
 
 ### Stilul codului Python
@@ -295,15 +321,15 @@ npm run format      # Format with Prettier
 2. **Faceți modificările** urmând ghidurile de stil pentru cod
 3. **Testați temeinic** utilizând instrucțiunile de testare de mai sus
 4. **Faceți commit cu mesaje clare** urmând formatul convențional pentru commit-uri
-5. **Împingeți în fork-ul dvs.** și creați o cerere de pull
-6. **Răspundeți la feedback-ul** de la mentori în timpul revizuirii
+5. **Push către fork-ul dvs.** și creați o cerere de pull
+6. **Răspundeți la feedback** de la mentori în timpul revizuirii
 
 ### Convenția de denumire a ramurilor
 
-- `feature/<modul>-<descriere>` - Pentru funcționalități noi sau conținut
-- `fix/<modul>-<descriere>` - Pentru corectarea erorilor
-- `docs/<descriere>` - Pentru îmbunătățiri ale documentației
-- `refactor/<descriere>` - Pentru refactorizarea codului
+- `feature/<module>-<description>` - Pentru funcționalități noi sau conținut
+- `fix/<module>-<description>` - Pentru corectarea erorilor
+- `docs/<description>` - Pentru îmbunătățirea documentației
+- `refactor/<description>` - Pentru refactorizarea codului
 
 ### Formatul mesajului de commit
 
@@ -341,39 +367,39 @@ Toți colaboratorii trebuie să urmeze [Codul de conduită Microsoft Open Source
 
 **Pentru modificările de conținut:**
 - Previzualizați toate fișierele Markdown modificate
-- Verificați ca linkurile și imaginile să funcționeze
-- Verificați erorile de tipar și gramaticale
+- Verificați dacă linkurile și imaginile funcționează
+- Verificați pentru greșeli de tipar și erori gramaticale
 
-**Pentru modificările codului exemplu (Module08/samples/08):**
+**Pentru modificările codului de exemplu (Module08/exemple/08):**
 ```bash
 npm run lint
 npm test
 ```
 
 **Pentru modificările exemplelor Python:**
-- Testați ca exemplul să ruleze cu succes
-- Verificați funcționarea gestionării erorilor
-- Asigurați compatibilitatea cu Foundry Local
+- Testați dacă exemplul rulează cu succes
+- Verificați dacă gestionarea erorilor funcționează
+- Verificați compatibilitatea cu Foundry Local
 
 ### Procesul de revizuire
 
-- Modificările conținutului educațional sunt revizuite pentru acuratețe și claritate
+- Modificările de conținut educațional sunt revizuite pentru acuratețe și claritate
 - Exemplele de cod sunt testate pentru funcționalitate
-- Actualizările traducerilor sunt gestionate automat de GitHub Actions
+- Actualizările de traducere sunt gestionate automat de GitHub Actions
 
 ## Sistem de traducere
 
-**IMPORTANT:** Acest depozit folosește traducerea automată prin GitHub Actions.
+**IMPORTANT:** Acest depozit utilizează traducerea automată prin GitHub Actions.
 
 - Traducerile se află în directorul `/translations/` (50+ limbi)
-- Automatizat prin fluxul de lucru `co-op-translator.yml`
+- Automatizate prin fluxul de lucru `co-op-translator.yml`
 - **NU editați manual fișierele de traducere** - acestea vor fi suprascrise
-- Editați doar fișierele sursă în limba engleză din directoarele rădăcină și module
-- Traducerile sunt generate automat la push-ul în ramura `main`
+- Editați doar fișierele sursă în engleză din directoarele rădăcină și module
+- Traducerile sunt generate automat la push către ramura `main`
 
 ## Integrarea locală Foundry
 
-Majoritatea exemplelor din Modul08 necesită rularea Microsoft Foundry Local.
+Majoritatea exemplelor din Module08 necesită rularea Microsoft Foundry Local.
 
 ### Instalare și configurare
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -446,11 +472,11 @@ curl http://localhost:<port>/v1/models
 
 ### Variabile de mediu pentru exemple
 
-Majoritatea exemplelor folosesc aceste variabile de mediu:
+Majoritatea exemplelor utilizează aceste variabile de mediu:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -471,9 +497,9 @@ set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 Acest depozit este în principal documentație - nu este necesar un proces de construire pentru conținut.
 
-### Construirea aplicațiilor exemplu
+### Construirea aplicațiilor de exemplu
 
-**Aplicația Electron (Module08/samples/08):**
+**Aplicația Electron (Module08/exemple/08):**
 ```bash
 cd Module08/samples/08
 
@@ -490,7 +516,7 @@ npm run dist
 npm run pack
 ```
 
-**Exemple Python:**
+**Exemplele Python:**
 Nu este necesar un proces de construire - exemplele sunt rulate direct cu interpretul Python.
 
 ## Probleme comune și depanare
@@ -508,7 +534,7 @@ Nu este necesar un proces de construire - exemplele sunt rulate direct cu interp
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -555,7 +581,7 @@ npm install
 **Problemă:** PR-ul de traducere intră în conflict cu modificările dvs.
 
 **Soluție:**
-- Editați doar fișierele sursă în limba engleză
+- Editați doar fișierele sursă în engleză
 - Lăsați fluxul de lucru automat de traducere să gestioneze traducerile
 - Dacă apar conflicte, îmbinați `main` în ramura dvs. după ce traducerile sunt îmbinate
 
@@ -580,16 +606,17 @@ foundry model run <model-alias>
 - **Parcurs intermediar:** Modulele 03-04 (9-11 ore)
 - **Parcurs avansat:** Modulele 05-07 (12-15 ore)
 - **Parcurs expert:** Modulul 08 (8-10 ore)
+- **Atelier practic:** Materiale de atelier (6-8 ore)
 
 ### Conținut cheie al modulelor
-- **Module01:** Fundamentele EdgeAI și studii de caz reale
-- **Module02:** Familii și arhitecturi de modele de limbaj mici (SLM)
-- **Module03:** Strategii de implementare locală și în cloud
-- **Module04:** Optimizarea modelelor cu mai multe cadre
-- **Module05:** SLMOps - operațiuni de producție
-- **Module06:** Agenți AI și apelarea funcțiilor
-- **Module07:** Implementări specifice platformei
-- **Module08:** Instrumente Foundry Local cu 10 exemple cuprinzătoare
+- **Modulul01:** Fundamentele EdgeAI și studii de caz reale
+- **Modulul02:** Familii și arhitecturi de modele de limbaj mici (SLM)
+- **Modulul03:** Strategii de implementare locală și în cloud
+- **Modulul04:** Optimizarea modelelor cu mai multe cadre (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
+- **Modulul05:** SLMOps - operațiuni de producție
+- **Modulul06:** Agenți AI și apelarea funcțiilor
+- **Modulul07:** Implementări specifice platformei
+- **Modulul08:** Toolkit Foundry Local cu 10 exemple cuprinzătoare
 
 ### Dependențe externe
 - [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Runtime local pentru modele AI cu API compatibil OpenAI
@@ -597,33 +624,44 @@ foundry model run <model-alias>
   - [SDK Python](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [SDK JavaScript](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
 - [Llama.cpp](https://github.com/ggml-org/llama.cpp) - Cadru de optimizare
-- [Microsoft Olive](https://microsoft.github.io/Olive/) - Instrument de optimizare a modelelor
-- [OpenVINO](https://docs.openvino.ai/) - Instrument de optimizare Intel
+- [Microsoft Olive](https://microsoft.github.io/Olive/) - Toolkit de optimizare a modelelor
+- [OpenVINO](https://docs.openvino.ai/) - Toolkit de optimizare Intel
 
 ## Note specifice proiectului
 
-### Aplicații exemplu Modul08
+### Aplicații de exemplu din Modulul08
 
-Depozitul include 10 aplicații exemplu cuprinzătoare:
+Depozitul include 10 aplicații de exemplu cuprinzătoare:
 
 1. **01-REST Chat Quickstart** - Integrare de bază OpenAI SDK
 2. **02-OpenAI SDK Integration** - Funcționalități avansate ale SDK-ului
-3. **03-Model Discovery & Benchmarking** - Instrumente de comparație a modelelor
+3. **03-Model Discovery & Benchmarking** - Instrumente de comparare a modelelor
 4. **04-Chainlit RAG Application** - Generare augmentată prin recuperare
 5. **05-Multi-Agent Orchestration** - Coordonarea de bază a agenților
 6. **06-Models-as-Tools Router** - Rutare inteligentă a modelelor
 7. **07-Direct API Client** - Integrare API la nivel scăzut
 8. **08-Windows 11 Chat App** - Aplicație desktop nativă Electron
 9. **09-Advanced Multi-Agent System** - Orchestrare complexă a agenților
-10. **10-Foundry Tools Framework** - Integrare LangChain/Semantic Kernel
+10. **10-Cadrul de Instrumente Foundry** - Integrarea LangChain/Semantic Kernel
 
-Fiecare exemplu demonstrează diferite aspecte ale dezvoltării Edge AI cu Foundry Local.
+### Aplicații Exemple din Workshop
 
-### Considerații de performanță
+Workshop-ul include 6 sesiuni progresive cu implementări practice:
+
+1. **Sesiunea 01** - Configurarea inițială a chat-ului cu integrarea Foundry Local
+2. **Sesiunea 02** - Pipeline RAG și evaluare cu RAGAS
+3. **Sesiunea 03** - Testarea performanței modelelor open-source
+4. **Sesiunea 04** - Compararea și selecția modelelor
+5. **Sesiunea 05** - Sisteme de orchestrare multi-agent
+6. **Sesiunea 06** - Rutarea modelelor și gestionarea pipeline-urilor
+
+Fiecare exemplu demonstrează diferite aspecte ale dezvoltării AI la margine cu Foundry Local.
+
+### Considerații de Performanță
 
 - SLM-urile sunt optimizate pentru implementare la margine (2-16GB RAM)
 - Inferența locală oferă timpi de răspuns de 50-500ms
-- Tehnicile de cuantizare reduc dimensiunea cu 75%, păstrând 85% din performanță
+- Tehnicile de cuantizare reduc dimensiunea cu 75% păstrând 85% din performanță
 - Capacități de conversație în timp real cu modele locale
 
 ### Securitate și Confidențialitate
@@ -650,7 +688,7 @@ Fiecare exemplu demonstrează diferite aspecte ale dezvoltării Edge AI cu Found
 
 ### Contact
 
-- **Întreținători**: Consultați [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
+- **Responsabili**: Consultați [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
 - **Probleme de Securitate**: Urmați dezvăluirea responsabilă în [SECURITY.md](SECURITY.md)
 - **Suport Microsoft**: Pentru suport enterprise, contactați serviciul de relații cu clienții Microsoft
 
@@ -662,9 +700,9 @@ Fiecare exemplu demonstrează diferite aspecte ale dezvoltării Edge AI cu Found
 
 ---
 
-**Acesta este un depozit educațional axat pe predarea dezvoltării AI la margine. Modelul principal de contribuție este îmbunătățirea conținutului educațional și adăugarea/îmbunătățirea aplicațiilor demonstrative care ilustrează conceptele AI la margine.**
+**Acesta este un depozit educațional axat pe predarea dezvoltării AI la margine. Modelul principal de contribuție este îmbunătățirea conținutului educațional și adăugarea/îmbunătățirea aplicațiilor exemplu care demonstrează concepte AI la margine.**
 
 ---
 
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

@@ -1,29 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c0cb9f7bcff2bc170532d8870a891f38",
-  "translation_date": "2025-09-17T13:23:07+00:00",
+  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
+  "translation_date": "2025-10-30T10:44:02+00:00",
   "source_file": "Module04/README.md",
   "language_code": "de"
 }
 -->
 # Kapitel 04: Modellformatkonvertierung und Quantisierung - Kapitelübersicht
 
-Die Entwicklung von EdgeAI hat Modellformatkonvertierung und Quantisierung zu unverzichtbaren Technologien gemacht, um anspruchsvolle maschinelle Lernfähigkeiten auf ressourcenbeschränkten Geräten bereitzustellen. Dieses umfassende Kapitel bietet eine vollständige Anleitung zum Verständnis, zur Implementierung und zur Optimierung von Modellen für Edge-Deployment-Szenarien.
+Die Entwicklung von EdgeAI hat die Modellformatkonvertierung und Quantisierung zu unverzichtbaren Technologien gemacht, um anspruchsvolle maschinelle Lernfähigkeiten auf ressourcenbeschränkten Geräten bereitzustellen. Dieses umfassende Kapitel bietet eine vollständige Anleitung zum Verständnis, zur Implementierung und Optimierung von Modellen für Edge-Deployment-Szenarien.
 
 ## 📚 Kapitelstruktur und Lernpfad
 
-Dieses Kapitel ist in sechs aufeinander aufbauende Abschnitte gegliedert, die zusammen ein umfassendes Verständnis der Modelloptimierung für Edge-Computing schaffen:
+Dieses Kapitel ist in sieben aufeinander aufbauende Abschnitte gegliedert, die zusammen ein umfassendes Verständnis der Modelloptimierung für Edge-Computing schaffen:
 
 ---
 
 ## [Abschnitt 1: Grundlagen der Modellformatkonvertierung und Quantisierung](./01.Introduce.md)
 
 ### 🎯 Überblick
-Dieser grundlegende Abschnitt schafft das theoretische Fundament für die Modelloptimierung in Edge-Computing-Umgebungen. Er behandelt Quantisierungsgrenzen von 1-Bit bis 8-Bit Präzisionsstufen sowie wichtige Strategien zur Formatkonvertierung.
+Dieser grundlegende Abschnitt legt das theoretische Fundament für die Modelloptimierung in Edge-Computing-Umgebungen und behandelt Quantisierungsgrenzen von 1-Bit bis 8-Bit Präzisionsstufen sowie wichtige Strategien zur Formatkonvertierung.
 
 **Wichtige Themen:**
-- Präzisionsklassifizierungsrahmen (ultra-niedrig, niedrig, mittel)
+- Präzisionsklassifizierungsrahmen (ultra-niedrig, niedrig, mittlere Präzision)
 - Vorteile und Anwendungsfälle von GGUF- und ONNX-Formaten
 - Vorteile der Quantisierung für Betriebseffizienz und Flexibilität bei der Bereitstellung
 - Leistungsbenchmarks und Vergleich des Speicherbedarfs
@@ -31,14 +31,14 @@ Dieser grundlegende Abschnitt schafft das theoretische Fundament für die Modell
 **Lernziele:**
 - Verständnis der Quantisierungsgrenzen und Klassifikationen
 - Identifikation geeigneter Formatkonvertierungstechniken
-- Erlernen fortgeschrittener Optimierungsstrategien für Edge-Deployments
+- Erlernen fortgeschrittener Optimierungsstrategien für Edge-Deployment
 
 ---
 
 ## [Abschnitt 2: Llama.cpp Implementierungsanleitung](./02.Llamacpp.md)
 
 ### 🎯 Überblick
-Eine umfassende Anleitung zur Implementierung von Llama.cpp, einem leistungsstarken C++-Framework, das effiziente Inferenz von großen Sprachmodellen mit minimalem Setup auf verschiedenen Hardwarekonfigurationen ermöglicht.
+Ein umfassendes Tutorial zur Implementierung von Llama.cpp, einem leistungsstarken C++-Framework, das effiziente Inferenz von großen Sprachmodellen mit minimalem Setup auf verschiedenen Hardwarekonfigurationen ermöglicht.
 
 **Wichtige Themen:**
 - Installation auf Windows-, macOS- und Linux-Plattformen
@@ -47,7 +47,7 @@ Eine umfassende Anleitung zur Implementierung von Llama.cpp, einem leistungsstar
 - Python-Integration und Strategien für die Produktionsbereitstellung
 
 **Lernziele:**
-- Beherrschung der plattformübergreifenden Installation und des Build-Prozesses
+- Beherrschung der plattformübergreifenden Installation und des Build-Prozesses aus dem Quellcode
 - Implementierung von Modellquantisierungs- und Optimierungstechniken
 - Bereitstellung von Modellen im Servermodus mit REST-API-Integration
 
@@ -61,7 +61,7 @@ Erkundung von Microsoft Olive, einem hardwarebewussten Modelloptimierungstoolkit
 **Wichtige Themen:**
 - Auto-Optimierungsfunktionen mit dynamischer und statischer Quantisierung
 - Hardwarebewusste Intelligenz für CPU-, GPU- und NPU-Bereitstellung
-- Unterstützung beliebter Modelle (Llama, Phi, Qwen, Gemma) direkt nach der Installation
+- Unterstützung beliebter Modelle (Llama, Phi, Qwen, Gemma) direkt einsatzbereit
 - Unternehmensintegration mit Azure ML und Produktionsworkflows
 
 **Lernziele:**
@@ -92,30 +92,30 @@ Umfassende Erkundung des OpenVINO-Toolkits von Intel, einer Open-Source-Plattfor
 ## [Abschnitt 5: Apple MLX Framework im Detail](./05.AppleMLX.md)
 
 ### 🎯 Überblick
-Umfassende Abdeckung von Apple MLX, einem revolutionären Framework, das speziell für effizientes maschinelles Lernen auf Apple Silicon entwickelt wurde, mit Schwerpunkt auf großen Sprachmodellen und lokaler Bereitstellung.
+Umfassende Abdeckung von Apple MLX, einem revolutionären Framework, das speziell für effizientes maschinelles Lernen auf Apple Silicon entwickelt wurde, mit Schwerpunkt auf Fähigkeiten großer Sprachmodelle und lokaler Bereitstellung.
 
 **Wichtige Themen:**
 - Vorteile der einheitlichen Speicherarchitektur und Metal Performance Shaders
 - Unterstützung für LLaMA, Mistral, Phi-3, Qwen und Code Llama Modelle
 - LoRA-Feinabstimmung für effiziente Modellanpassung
-- Integration mit Hugging Face und Unterstützung für Quantisierung (4-Bit und 8-Bit)
+- Integration von Hugging Face und Quantisierungsunterstützung (4-Bit und 8-Bit)
 
 **Lernziele:**
-- Optimierung von Apple Silicon für die Bereitstellung von großen Sprachmodellen
+- Optimierung von Apple Silicon für die Bereitstellung von LLMs
 - Implementierung von Feinabstimmungs- und Modellanpassungstechniken
 - Aufbau von Unternehmens-KI-Anwendungen mit erweiterten Datenschutzfunktionen
 
 ---
 
-## [Abschnitt 6: Synthese des Edge AI Entwicklungsworkflows](./06.workflow-synthesis.md)
+## [Abschnitt 6: Synthese des Edge-AI-Entwicklungsworkflows](./06.workflow-synthesis.md)
 
 ### 🎯 Überblick
-Umfassende Synthese aller Optimierungsframeworks in einheitliche Workflows, Entscheidungsbäume und Best Practices für produktionsreife Edge-AI-Bereitstellung auf verschiedenen Plattformen und Anwendungsfällen.
+Umfassende Synthese aller Optimierungsframeworks in einheitliche Workflows, Entscheidungsbäume und Best Practices für produktionsreife Edge-AI-Bereitstellung auf verschiedenen Plattformen und Anwendungsfällen, einschließlich mobiler Geräte, Desktop und Cloud-Umgebungen.
 
 **Wichtige Themen:**
 - Einheitliche Workflow-Architektur, die mehrere Optimierungsframeworks integriert
-- Entscheidungsbäume zur Auswahl von Frameworks und Analyse von Leistungsabstrichen
-- Validierung der Produktionsreife und umfassende Bereitstellungsstrategien
+- Entscheidungsbäume zur Auswahl von Frameworks und Analyse von Leistungskompromissen
+- Validierung der Produktionsbereitschaft und umfassende Bereitstellungsstrategien
 - Zukunftssichere Strategien für aufkommende Hardware und Modellarchitekturen
 
 **Lernziele:**
@@ -125,38 +125,57 @@ Umfassende Synthese aller Optimierungsframeworks in einheitliche Workflows, Ents
 
 ---
 
+## [Abschnitt 7: Qualcomm QNN Optimierungssuite](./07.QualcommQNN.md)
+
+### 🎯 Überblick
+Umfassende Erkundung von Qualcomm QNN (Qualcomm Neural Network), einem einheitlichen KI-Inferenz-Framework, das darauf ausgelegt ist, die heterogene Computerarchitektur von Qualcomm, einschließlich Hexagon NPU, Adreno GPU und Kryo CPU, für maximale Leistung und Energieeffizienz auf mobilen und Edge-Geräten zu nutzen.
+
+**Wichtige Themen:**
+- Heterogenes Computing mit einheitlichem Zugriff auf NPU, GPU und CPU
+- Hardwarebewusste Optimierung für Snapdragon-Plattformen mit intelligenter Arbeitslastverteilung
+- Fortgeschrittene Quantisierungstechniken (INT8, INT16, gemischte Präzision) für mobile Bereitstellung
+- Energieeffiziente Inferenz optimiert für batteriebetriebene Geräte und Echtzeitanwendungen
+
+**Lernziele:**
+- Beherrschung der Qualcomm-Hardwarebeschleunigung für mobile KI-Bereitstellung
+- Implementierung energieeffizienter Optimierungsstrategien für Edge-Computing
+- Bereitstellung produktionsreifer Modelle im Qualcomm-Ökosystem mit optimaler Leistung
+
+---
+
 ## 🎯 Lernziele des Kapitels
 
-Nach Abschluss dieses umfassenden Kapitels werden die Leser folgende Fähigkeiten erlangen:
+Nach Abschluss dieses umfassenden Kapitels werden die Leser folgende Fähigkeiten erreichen:
 
 ### **Technische Kompetenz**
 - Tiefes Verständnis der Quantisierungsgrenzen und praktischen Anwendungen
-- Praktische Erfahrung mit verschiedenen Optimierungsframeworks
-- Fähigkeiten zur Produktionsbereitstellung in Edge-Computing-Umgebungen
+- Praktische Erfahrung mit mehreren Optimierungsframeworks
+- Fähigkeiten zur Produktionsbereitstellung für Edge-Computing-Umgebungen
 
 ### **Strategisches Verständnis**
-- Auswahl hardwarebewusster Optimierungsstrategien
-- Informierte Entscheidungsfindung bei Leistungsabstrichen
+- Fähigkeiten zur Auswahl hardwarebewusster Optimierungen
+- Fundierte Entscheidungsfindung bei Leistungskompromissen
 - Unternehmensgerechte Bereitstellungs- und Überwachungsstrategien
 
 ### **Leistungsbenchmarks**
 
-| Framework   | Quantisierung | Speicherbedarf | Geschwindigkeitsverbesserung | Anwendungsfall                |
-|-------------|---------------|----------------|------------------------------|-------------------------------|
-| Llama.cpp   | Q4_K_M        | ~4GB           | 2-3x                         | Plattformübergreifende Bereitstellung |
-| Olive       | INT4          | 60-75% Reduktion | 2-6x                         | Unternehmensworkflows         |
-| OpenVINO    | INT8/INT4     | 50-75% Reduktion | 2-5x                         | Intel-Hardware-Optimierung    |
-| MLX         | 4-Bit         | ~4GB           | 2-4x                         | Optimierung für Apple Silicon |
+| Framework | Quantisierung | Speicherverbrauch | Geschwindigkeitsverbesserung | Anwendungsfall |
+|-----------|---------------|-------------------|------------------------------|----------------|
+| Llama.cpp | Q4_K_M | ~4GB | 2-3x | Plattformübergreifende Bereitstellung |
+| Olive | INT4 | 60-75% Reduktion | 2-6x | Unternehmensworkflows |
+| OpenVINO | INT8/INT4 | 50-75% Reduktion | 2-5x | Intel-Hardware-Optimierung |
+| QNN | INT8/INT4 | 50-80% Reduktion | 5-15x | Qualcomm Mobile/Edge |
+| MLX | 4-Bit | ~4GB | 2-4x | Apple Silicon Optimierung |
 
 ## 🚀 Nächste Schritte und fortgeschrittene Anwendungen
 
 Dieses Kapitel bietet eine vollständige Grundlage für:
 - Entwicklung benutzerdefinierter Modelle für spezifische Domänen
-- Forschung im Bereich Edge-AI-Optimierung
+- Forschung in der Edge-AI-Optimierung
 - Entwicklung kommerzieller KI-Anwendungen
 - Großflächige Unternehmensbereitstellungen von Edge-AI
 
-Das Wissen aus diesen sechs Abschnitten bietet ein umfassendes Toolkit, um sich in der sich schnell entwickelnden Landschaft der Edge-AI-Modelloptimierung und -Bereitstellung zurechtzufinden.
+Das Wissen aus diesen sieben Abschnitten bietet ein umfassendes Toolkit, um sich in der sich schnell entwickelnden Landschaft der Edge-AI-Modelloptimierung und -Bereitstellung zurechtzufinden.
 
 ---
 

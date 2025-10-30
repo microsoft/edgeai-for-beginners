@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-08T20:26:58+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T12:15:14+00:00",
   "source_file": "AGENTS.md",
   "language_code": "pt"
 }
 -->
 # AGENTS.md
 
-> **Guia do Desenvolvedor para Contribuir com o EdgeAI para Iniciantes**
+> **Guia do Desenvolvedor para Contribuir com EdgeAI para Iniciantes**
 > 
-> Este documento fornece informações abrangentes para desenvolvedores, agentes de IA e colaboradores que trabalham com este repositório. Ele abrange configuração, fluxos de trabalho de desenvolvimento, testes e melhores práticas.
+> Este documento fornece informações detalhadas para desenvolvedores, agentes de IA e colaboradores que trabalham com este repositório. Ele abrange configuração, fluxos de trabalho de desenvolvimento, testes e melhores práticas.
 > 
-> **Última Atualização**: Outubro de 2025 | **Versão do Documento**: 2.0
+> **Última Atualização**: 30 de outubro de 2025 | **Versão do Documento**: 3.0
 
 ## Índice
 
@@ -26,16 +26,16 @@ CO_OP_TRANSLATOR_METADATA:
 - [Diretrizes de Estilo de Código](../..)
 - [Diretrizes para Pull Requests](../..)
 - [Sistema de Tradução](../..)
-- [Integração com o Foundry Local](../..)
-- [Construção e Implementação](../..)
+- [Integração Local do Foundry](../..)
+- [Build e Implantação](../..)
 - [Problemas Comuns e Solução de Problemas](../..)
 - [Recursos Adicionais](../..)
 - [Notas Específicas do Projeto](../..)
-- [Obter Ajuda](../..)
+- [Obtendo Ajuda](../..)
 
 ## Visão Geral do Projeto
 
-EdgeAI para Iniciantes é um repositório educacional abrangente que ensina o desenvolvimento de IA de Borda com Modelos de Linguagem Pequenos (SLMs). O curso aborda os fundamentos do EdgeAI, implementação de modelos, técnicas de otimização e implementações prontas para produção usando o Microsoft Foundry Local e vários frameworks de IA.
+EdgeAI para Iniciantes é um repositório educacional abrangente que ensina desenvolvimento de Edge AI com Modelos de Linguagem Pequenos (SLMs). O curso aborda fundamentos de EdgeAI, implantação de modelos, técnicas de otimização e implementações prontas para produção usando Microsoft Foundry Local e vários frameworks de IA.
 
 **Principais Tecnologias:**
 - Python 3.8+ (linguagem principal para exemplos de IA/ML)
@@ -50,7 +50,7 @@ EdgeAI para Iniciantes é um repositório educacional abrangente que ensina o de
 
 **Tipo de Repositório:** Repositório de conteúdo educacional com 8 módulos e 10 aplicações de exemplo abrangentes
 
-**Arquitetura:** Caminho de aprendizagem multi-módulo com exemplos práticos demonstrando padrões de implementação de IA de borda
+**Arquitetura:** Caminho de aprendizado multi-módulo com exemplos práticos demonstrando padrões de implantação de Edge AI
 
 ## Estrutura do Repositório
 
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -73,21 +80,21 @@ edgeai-for-beginners/
 ### Ferramentas Necessárias
 
 - **Python 3.8+** - Para exemplos e notebooks de IA/ML
-- **Node.js 16+** - Para a aplicação de exemplo em Electron
+- **Node.js 16+** - Para aplicação de exemplo com Electron
 - **Git** - Para controle de versão
 - **Microsoft Foundry Local** - Para executar modelos de IA localmente
 
 ### Ferramentas Recomendadas
 
 - **Visual Studio Code** - Com extensões Python, Jupyter e Pylance
-- **Windows Terminal** - Para uma melhor experiência de linha de comando (usuários do Windows)
-- **Docker** - Para desenvolvimento em contêiner (opcional)
+- **Windows Terminal** - Para uma melhor experiência de linha de comando (usuários Windows)
+- **Docker** - Para desenvolvimento em contêineres (opcional)
 
-### Requisitos do Sistema
+### Requisitos de Sistema
 
 - **RAM**: Mínimo de 8GB, recomendado 16GB+ para cenários com múltiplos modelos
 - **Armazenamento**: 10GB+ de espaço livre para modelos e dependências
-- **SO**: Windows 10/11, macOS 11+ ou Linux (Ubuntu 20.04+)
+- **SO**: Windows 10/11, macOS 11+, ou Linux (Ubuntu 20.04+)
 - **Hardware**: CPU com suporte AVX2; GPU (CUDA, Qualcomm NPU) opcional, mas recomendada
 
 ### Conhecimentos Necessários
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Configuração de Exemplos em Python (Módulo08 e exemplos em Python)
+### Configuração de Exemplos em Python (Módulo08 e exemplos de Workshop)
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -145,17 +156,17 @@ npm run dist
 
 ### Configuração do Foundry Local
 
-O Foundry Local é necessário para executar os exemplos. Faça o download e instale a partir do repositório oficial:
+Foundry Local é necessário para executar os exemplos. Baixe e instale a partir do repositório oficial:
 
 **Instalação:**
 - **Windows**: `winget install Microsoft.FoundryLocal`
 - **macOS**: `brew tap microsoft/foundrylocal && brew install foundrylocal`
-- **Manual**: Faça o download na [página de lançamentos](https://github.com/microsoft/Foundry-Local/releases)
+- **Manual**: Baixe da [página de lançamentos](https://github.com/microsoft/Foundry-Local/releases)
 
 **Início Rápido:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -164,7 +175,7 @@ foundry model ls
 foundry service status
 ```
 
-**Nota**: O Foundry Local seleciona automaticamente a melhor variante de modelo para o seu hardware (GPU CUDA, NPU Qualcomm ou CPU).
+**Nota**: Foundry Local seleciona automaticamente a melhor variante de modelo para o seu hardware (GPU CUDA, NPU Qualcomm ou CPU).
 
 ## Fluxo de Trabalho de Desenvolvimento
 
@@ -172,20 +183,26 @@ foundry service status
 
 Este repositório contém principalmente **conteúdo educacional em Markdown**. Ao fazer alterações:
 
-1. Edite os ficheiros `.md` nos diretórios de módulos apropriados
+1. Edite arquivos `.md` nos diretórios de módulos apropriados
 2. Siga os padrões de formatação existentes
-3. Certifique-se de que os exemplos de código estão corretos e testados
+3. Certifique-se de que os exemplos de código sejam precisos e testados
 4. Atualize o conteúdo traduzido correspondente, se necessário (ou deixe a automação cuidar disso)
 
 ### Desenvolvimento de Aplicações de Exemplo
 
-Para exemplos em Python (exemplos 01-07, 09-10):
+Para exemplos em Python do Módulo08 (exemplos 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
 ```
 
-Para o exemplo em Electron (exemplo 08):
+Para exemplos de Workshop em Python:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
+```
+
+Para exemplo com Electron (exemplo 08):
 ```bash
 cd Module08/samples/08
 npm run dev  # Development with hot reload
@@ -193,7 +210,7 @@ npm run dev  # Development with hot reload
 
 ### Testando Aplicações de Exemplo
 
-Os exemplos em Python não possuem testes automatizados, mas podem ser validados ao executá-los:
+Os exemplos em Python não possuem testes automatizados, mas podem ser validados executando-os:
 ```bash
 # Test basic chat functionality
 python samples/01/chat_quickstart.py "Hello"
@@ -203,7 +220,7 @@ set MODEL=phi-4-mini
 python samples/02/openai_sdk_client.py
 ```
 
-O exemplo em Electron possui infraestrutura de testes:
+O exemplo com Electron possui infraestrutura de testes:
 ```bash
 cd Module08/samples/08
 npm test           # Run unit tests
@@ -215,17 +232,17 @@ npm run lint       # Check code style
 
 ### Validação de Conteúdo
 
-O repositório utiliza fluxos de trabalho de tradução automatizados. Não é necessário realizar testes manuais para traduções.
+O repositório utiliza fluxos de trabalho de tradução automatizados. Não é necessário teste manual para traduções.
 
 **Validação manual para alterações de conteúdo:**
-1. Revise a renderização do Markdown ao visualizar os ficheiros `.md`
+1. Revise a renderização do Markdown ao visualizar arquivos `.md`
 2. Verifique se todos os links apontam para destinos válidos
 3. Teste quaisquer trechos de código incluídos na documentação
-4. Certifique-se de que as imagens carregam corretamente
+4. Certifique-se de que as imagens carreguem corretamente
 
 ### Teste de Aplicações de Exemplo
 
-**O módulo08/exemplos/08 (aplicação Electron) possui testes abrangentes:**
+**Módulo08/exemplos/08 (aplicação Electron) possui testes abrangentes:**
 ```bash
 cd Module08/samples/08
 
@@ -245,31 +262,40 @@ npm run test:e2e
 npm test -- --coverage
 ```
 
-**Os exemplos em Python devem ser testados manualmente:**
+**Exemplos em Python devem ser testados manualmente:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## Diretrizes de Estilo de Código
 
 ### Conteúdo em Markdown
 
-- Use uma hierarquia consistente de cabeçalhos (# para título, ## para seções principais, ### para subseções)
+- Use hierarquia consistente de cabeçalhos (# para título, ## para seções principais, ### para subseções)
 - Inclua blocos de código com especificadores de linguagem: ```python, ```bash, ```javascript
-- Siga o formato existente para tabelas, listas e ênfases
-- Mantenha as linhas legíveis (cerca de ~80-100 caracteres, mas não é obrigatório)
+- Siga a formatação existente para tabelas, listas e ênfase
+- Mantenha as linhas legíveis (aproximadamente 80-100 caracteres, mas não estritamente)
 - Use links relativos para referências internas
 
 ### Estilo de Código em Python
 
 - Siga as convenções do PEP 8
-- Use anotações de tipo quando apropriado
+- Utilize dicas de tipo quando apropriado
 - Inclua docstrings para funções e classes
 - Use nomes de variáveis significativos
-- Mantenha as funções focadas e concisas
+- Mantenha funções focadas e concisas
 
 ### Estilo de Código em JavaScript/Node.js
 
@@ -281,29 +307,29 @@ npm run lint:fix    # Auto-fix style issues
 npm run format      # Format with Prettier
 ```
 
-**Principais convenções:**
+**Convenções principais:**
 - Configuração do ESLint fornecida no exemplo 08
 - Prettier para formatação de código
-- Use sintaxe moderna ES6+
-- Siga os padrões existentes no código-base
+- Utilize sintaxe moderna ES6+
+- Siga os padrões existentes na base de código
 
 ## Diretrizes para Pull Requests
 
 ### Fluxo de Contribuição
 
-1. **Faça um fork do repositório** e crie um novo branch a partir do `main`
+1. **Faça um fork do repositório** e crie um novo branch a partir de `main`
 2. **Faça suas alterações** seguindo as diretrizes de estilo de código
 3. **Teste completamente** usando as instruções de teste acima
 4. **Faça commits com mensagens claras** seguindo o formato de commits convencionais
-5. **Envie para o seu fork** e crie um pull request
+5. **Envie para seu fork** e crie um pull request
 6. **Responda ao feedback** dos mantenedores durante a revisão
 
 ### Convenção de Nomes de Branch
 
-- `feature/<modulo>-<descrição>` - Para novas funcionalidades ou conteúdo
-- `fix/<modulo>-<descrição>` - Para correções de bugs
-- `docs/<descrição>` - Para melhorias na documentação
-- `refactor/<descrição>` - Para refatoração de código
+- `feature/<modulo>-<descricao>` - Para novos recursos ou conteúdo
+- `fix/<modulo>-<descricao>` - Para correções de bugs
+- `docs/<descricao>` - Para melhorias na documentação
+- `refactor/<descricao>` - Para refatoração de código
 
 ### Formato de Mensagem de Commit
 
@@ -324,7 +350,7 @@ docs(AGENTS): update Foundry Local setup instructions
 fix(samples/08): resolve Electron build issue
 ```
 
-### Formato do Título
+### Formato de Título
 ```
 [ModuleXX] Brief description of change
 ```
@@ -335,45 +361,45 @@ ou
 
 ### Código de Conduta
 
-Todos os colaboradores devem seguir o [Código de Conduta de Código Aberto da Microsoft](https://opensource.microsoft.com/codeofconduct/). Por favor, reveja o [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) antes de contribuir.
+Todos os colaboradores devem seguir o [Código de Conduta de Código Aberto da Microsoft](https://opensource.microsoft.com/codeofconduct/). Por favor, revise [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) antes de contribuir.
 
 ### Antes de Submeter
 
 **Para alterações de conteúdo:**
-- Visualize todos os ficheiros Markdown modificados
+- Visualize todos os arquivos Markdown modificados
 - Verifique se os links e imagens funcionam
-- Verifique se há erros de digitação e gramaticais
+- Procure por erros de digitação e gramaticais
 
-**Para alterações no código de exemplo (Módulo08/exemplos/08):**
+**Para alterações de código de exemplo (Módulo08/exemplos/08):**
 ```bash
 npm run lint
 npm test
 ```
 
-**Para alterações nos exemplos em Python:**
-- Teste se o exemplo é executado com sucesso
+**Para alterações em exemplos Python:**
+- Teste se o exemplo executa com sucesso
 - Verifique se o tratamento de erros funciona
-- Confirme a compatibilidade com o Foundry Local
+- Confirme a compatibilidade com Foundry Local
 
 ### Processo de Revisão
 
 - Alterações no conteúdo educacional são revisadas quanto à precisão e clareza
 - Exemplos de código são testados quanto à funcionalidade
-- Atualizações de tradução são tratadas automaticamente pelo GitHub Actions
+- Atualizações de tradução são tratadas automaticamente por GitHub Actions
 
 ## Sistema de Tradução
 
 **IMPORTANTE:** Este repositório utiliza tradução automatizada via GitHub Actions.
 
-- As traduções estão no diretório `/translations/` (50+ idiomas)
-- Automatizado via o fluxo de trabalho `co-op-translator.yml`
-- **NÃO edite manualmente os ficheiros de tradução** - eles serão sobrescritos
-- Edite apenas os ficheiros de origem em inglês nos diretórios raiz e de módulos
-- As traduções são geradas automaticamente ao enviar para o branch `main`
+- Traduções estão no diretório `/translations/` (50+ idiomas)
+- Automatizado via workflow `co-op-translator.yml`
+- **NÃO edite manualmente os arquivos de tradução** - eles serão sobrescritos
+- Edite apenas os arquivos fonte em inglês no diretório raiz e nos diretórios de módulos
+- Traduções são geradas automaticamente ao fazer push para o branch `main`
 
-## Integração com o Foundry Local
+## Integração Local do Foundry
 
-A maioria dos exemplos do Módulo08 requer o Microsoft Foundry Local em execução.
+A maioria dos exemplos do Módulo08 requer que o Microsoft Foundry Local esteja em execução.
 
 ### Instalação e Configuração
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -450,7 +476,7 @@ A maioria dos exemplos utiliza estas variáveis de ambiente:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -463,15 +489,15 @@ set AZURE_OPENAI_API_KEY=your-api-key
 set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-**Nota**: Ao usar o `FoundryLocalManager`, o SDK lida automaticamente com a descoberta de serviços e o carregamento de modelos. Os aliases de modelo (como `phi-3.5-mini`) garantem que a melhor variante seja selecionada para o seu hardware.
+**Nota**: Ao usar `FoundryLocalManager`, o SDK lida automaticamente com descoberta de serviços e carregamento de modelos. Apelidos de modelos (como `phi-3.5-mini`) garantem que a melhor variante seja selecionada para o seu hardware.
 
-## Construção e Implementação
+## Build e Implantação
 
-### Implementação de Conteúdo
+### Implantação de Conteúdo
 
-Este repositório é principalmente de documentação - não é necessário processo de construção para o conteúdo.
+Este repositório é principalmente documentação - nenhum processo de build é necessário para o conteúdo.
 
-### Construção de Aplicações de Exemplo
+### Build de Aplicações de Exemplo
 
 **Aplicação Electron (Módulo08/exemplos/08):**
 ```bash
@@ -491,7 +517,7 @@ npm run pack
 ```
 
 **Exemplos em Python:**
-Sem processo de construção - os exemplos são executados diretamente com o interpretador Python.
+Sem processo de build - os exemplos são executados diretamente com o interpretador Python.
 
 ## Problemas Comuns e Solução de Problemas
 
@@ -499,7 +525,7 @@ Sem processo de construção - os exemplos são executados diretamente com o int
 
 ### Problemas Críticos (Bloqueadores)
 
-#### Foundry Local Não Está em Execução
+#### Foundry Local Não Está Executando
 **Problema:** Exemplos falham com erros de conexão
 
 **Solução:**
@@ -508,7 +534,7 @@ Sem processo de construção - os exemplos são executados diretamente com o int
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -537,8 +563,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### Problemas na Construção do Electron
-**Problema:** Falhas no npm install ou na construção
+#### Problemas de Build com Electron
+**Problema:** Falhas no npm install ou build
 
 **Solução:**
 ```bash
@@ -551,16 +577,16 @@ npm install
 
 ### Problemas de Fluxo de Trabalho (Menores)
 
-#### Conflitos no Fluxo de Trabalho de Tradução
-**Problema:** Conflitos de PR de tradução com as suas alterações
+#### Conflitos no Workflow de Tradução
+**Problema:** PR de tradução conflita com suas alterações
 
 **Solução:**
-- Edite apenas os ficheiros de origem em inglês
-- Deixe o fluxo de trabalho de tradução automatizado lidar com as traduções
+- Edite apenas os arquivos fonte em inglês
+- Deixe o workflow de tradução automatizado lidar com as traduções
 - Se ocorrerem conflitos, faça merge do `main` no seu branch após as traduções serem mescladas
 
 #### Falhas no Download de Modelos
-**Problema:** O Foundry Local não consegue baixar os modelos
+**Problema:** Foundry Local falha ao baixar modelos
 
 **Solução:**
 ```bash
@@ -575,24 +601,25 @@ foundry model run <model-alias>
 
 ## Recursos Adicionais
 
-### Caminhos de Aprendizagem
+### Caminhos de Aprendizado
 - **Caminho para Iniciantes:** Módulos 01-02 (7-9 horas)
 - **Caminho Intermediário:** Módulos 03-04 (9-11 horas)
 - **Caminho Avançado:** Módulos 05-07 (12-15 horas)
-- **Caminho Especialista:** Módulo 08 (8-10 horas)
+- **Caminho para Especialistas:** Módulo 08 (8-10 horas)
+- **Workshop Prático:** Materiais de Workshop (6-8 horas)
 
 ### Conteúdo Principal dos Módulos
-- **Módulo01:** Fundamentos do EdgeAI e estudos de caso do mundo real
+- **Módulo01:** Fundamentos de EdgeAI e estudos de caso reais
 - **Módulo02:** Famílias e arquiteturas de Modelos de Linguagem Pequenos (SLM)
-- **Módulo03:** Estratégias de implementação local e na nuvem
-- **Módulo04:** Otimização de modelos com múltiplos frameworks
-- **Módulo05:** SLMOps - operações em produção
+- **Módulo03:** Estratégias de implantação local e na nuvem
+- **Módulo04:** Otimização de modelos com múltiplos frameworks (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
+- **Módulo05:** SLMOps - operações de produção
 - **Módulo06:** Agentes de IA e chamadas de função
-- **Módulo07:** Implementações específicas de plataformas
+- **Módulo07:** Implementações específicas de plataforma
 - **Módulo08:** Ferramentas do Foundry Local com 10 exemplos abrangentes
 
 ### Dependências Externas
-- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Runtime local de modelos de IA com API compatível com OpenAI
+- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Runtime de modelo de IA local com API compatível com OpenAI
   - [Documentação](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
   - [SDK Python](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [SDK JavaScript](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
@@ -606,65 +633,76 @@ foundry model run <model-alias>
 
 O repositório inclui 10 aplicações de exemplo abrangentes:
 
-1. **01-REST Chat Quickstart** - Integração básica com o OpenAI SDK
-2. **02-OpenAI SDK Integration** - Funcionalidades avançadas do SDK
+1. **01-REST Chat Quickstart** - Integração básica com OpenAI SDK
+2. **02-OpenAI SDK Integration** - Recursos avançados do SDK
 3. **03-Model Discovery & Benchmarking** - Ferramentas de comparação de modelos
 4. **04-Chainlit RAG Application** - Geração aumentada por recuperação
 5. **05-Multi-Agent Orchestration** - Coordenação básica de agentes
 6. **06-Models-as-Tools Router** - Roteamento inteligente de modelos
 7. **07-Direct API Client** - Integração de API de baixo nível
-8. **08-Windows 11 Chat App** - Aplicação desktop nativa em Electron
+8. **08-Windows 11 Chat App** - Aplicação desktop nativa com Electron
 9. **09-Advanced Multi-Agent System** - Orquestração complexa de agentes
-10. **10-Foundry Tools Framework** - Integração LangChain/Semantic Kernel
+10. **10-Framework de Ferramentas Foundry** - Integração LangChain/Semantic Kernel
 
-Cada exemplo demonstra diferentes aspectos do desenvolvimento de IA de borda com o Foundry Local.
+### Aplicações de Exemplo do Workshop
+
+O Workshop inclui 6 sessões progressivas com implementações práticas:
+
+1. **Sessão 01** - Inicialização de chat com integração Foundry Local
+2. **Sessão 02** - Pipeline RAG e avaliação com RAGAS
+3. **Sessão 03** - Benchmarking de modelos open-source
+4. **Sessão 04** - Comparação e seleção de modelos
+5. **Sessão 05** - Sistemas de orquestração multi-agente
+6. **Sessão 06** - Gestão de roteamento de modelos e pipelines
+
+Cada exemplo demonstra diferentes aspetos do desenvolvimento de IA de ponta com Foundry Local.
 
 ### Considerações de Desempenho
 
-- Os SLMs são otimizados para implementação em borda (2-16GB RAM)
-- A inferência local proporciona tempos de resposta de 50-500ms  
-- Técnicas de quantização alcançam uma redução de tamanho de 75% com retenção de desempenho de 85%  
-- Capacidades de conversação em tempo real com modelos locais  
+- SLMs são otimizados para implementação em dispositivos de ponta (2-16GB RAM)
+- Inferência local oferece tempos de resposta de 50-500ms
+- Técnicas de quantização reduzem o tamanho em 75% com retenção de 85% do desempenho
+- Capacidades de conversação em tempo real com modelos locais
 
-### Segurança e Privacidade  
+### Segurança e Privacidade
 
-- Todo o processamento ocorre localmente - nenhum dado é enviado para a nuvem  
-- Adequado para aplicações sensíveis à privacidade (saúde, finanças)  
-- Cumpre os requisitos de soberania de dados  
-- Foundry Local funciona inteiramente em hardware local  
+- Todo o processamento ocorre localmente - nenhum dado é enviado para a cloud
+- Adequado para aplicações sensíveis à privacidade (saúde, finanças)
+- Cumpre os requisitos de soberania de dados
+- Foundry Local funciona inteiramente em hardware local
 
-## Obter Ajuda  
+## Obter Ajuda
 
-### Documentação  
+### Documentação
 
-- **README Principal**: [README.md](README.md) - Visão geral do repositório e caminhos de aprendizagem  
-- **Guia de Estudo**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Recursos de aprendizagem e cronograma  
-- **Suporte**: [SUPPORT.md](SUPPORT.md) - Como obter ajuda  
-- **Segurança**: [SECURITY.md](SECURITY.md) - Relatar problemas de segurança  
+- **README Principal**: [README.md](README.md) - Visão geral do repositório e caminhos de aprendizagem
+- **Guia de Estudo**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Recursos de aprendizagem e cronograma
+- **Suporte**: [SUPPORT.md](SUPPORT.md) - Como obter ajuda
+- **Segurança**: [SECURITY.md](SECURITY.md) - Relatar problemas de segurança
 
-### Suporte da Comunidade  
+### Suporte da Comunidade
 
-- **Problemas no GitHub**: [Relatar bugs ou solicitar funcionalidades](https://github.com/microsoft/edgeai-for-beginners/issues)  
-- **Discussões no GitHub**: [Fazer perguntas e partilhar ideias](https://github.com/microsoft/edgeai-for-beginners/discussions)  
-- **Problemas no Foundry Local**: [Questões técnicas com o Foundry Local](https://github.com/microsoft/Foundry-Local/issues)  
+- **GitHub Issues**: [Relatar bugs ou solicitar funcionalidades](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **Discussões no GitHub**: [Fazer perguntas e partilhar ideias](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **Problemas com Foundry Local**: [Questões técnicas com Foundry Local](https://github.com/microsoft/Foundry-Local/issues)
 
-### Contacto  
+### Contacto
 
-- **Responsáveis**: Ver [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)  
-- **Problemas de Segurança**: Seguir a divulgação responsável em [SECURITY.md](SECURITY.md)  
-- **Suporte Microsoft**: Para suporte empresarial, contactar o serviço de apoio ao cliente da Microsoft  
+- **Responsáveis**: Consulte [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
+- **Problemas de Segurança**: Siga a divulgação responsável em [SECURITY.md](SECURITY.md)
+- **Suporte Microsoft**: Para suporte empresarial, contacte o serviço de apoio ao cliente da Microsoft
 
-### Recursos Adicionais  
+### Recursos Adicionais
 
-- **Microsoft Learn**: [Caminhos de Aprendizagem de IA e Aprendizagem Automática](https://learn.microsoft.com/training/browse/?products=ai-services)  
-- **Documentação do Foundry Local**: [Documentação Oficial](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)  
-- **Exemplos da Comunidade**: Consulte [Discussões no GitHub](https://github.com/microsoft/edgeai-for-beginners/discussions) para contribuições da comunidade  
+- **Microsoft Learn**: [Caminhos de Aprendizagem de IA e Machine Learning](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **Documentação Foundry Local**: [Documentação Oficial](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **Exemplos da Comunidade**: Consulte [Discussões no GitHub](https://github.com/microsoft/edgeai-for-beginners/discussions) para contribuições da comunidade
 
 ---
 
-**Este é um repositório educacional focado no ensino do desenvolvimento de IA na Edge. O principal padrão de contribuição é melhorar o conteúdo educacional e adicionar/aperfeiçoar aplicações de exemplo que demonstrem conceitos de IA na Edge.**  
+**Este é um repositório educacional focado no ensino do desenvolvimento de IA de ponta. O padrão principal de contribuição é melhorar o conteúdo educacional e adicionar/aperfeiçoar aplicações de exemplo que demonstrem conceitos de IA de ponta.**
 
 ---
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, é importante notar que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

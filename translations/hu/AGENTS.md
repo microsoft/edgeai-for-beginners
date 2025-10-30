@@ -1,28 +1,28 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-09T20:40:44+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T14:03:52+00:00",
   "source_file": "AGENTS.md",
   "language_code": "hu"
 }
 -->
 # AGENTS.md
 
-> **Fejlesztői útmutató kezdőknek szánt EdgeAI hozzájárulásokhoz**
+> **Fejlesztői útmutató kezdőknek szánt EdgeAI hozzájáruláshoz**
 > 
-> Ez a dokumentum átfogó információkat nyújt fejlesztőknek, AI ügynököknek és közreműködőknek, akik ezen a repozitóriumon dolgoznak. Tartalmazza a beállítást, fejlesztési munkafolyamatokat, tesztelést és legjobb gyakorlatokat.
+> Ez a dokumentum átfogó információkat nyújt a fejlesztőknek, AI ügynököknek és közreműködőknek, akik ezen a táron dolgoznak. Tartalmazza a beállítást, fejlesztési munkafolyamatokat, tesztelést és legjobb gyakorlatokat.
 > 
-> **Utolsó frissítés**: 2025 október | **Dokumentum verziója**: 2.0
+> **Utolsó frissítés**: 2025. október 30. | **Dokumentum verzió**: 3.0
 
 ## Tartalomjegyzék
 
-- [Projekt áttekintése](../..)
-- [Repozitórium felépítése](../..)
+- [Projekt áttekintés](../..)
+- [Tároló struktúra](../..)
 - [Előfeltételek](../..)
 - [Beállítási parancsok](../..)
 - [Fejlesztési munkafolyamat](../..)
-- [Tesztelési útmutató](../..)
+- [Tesztelési utasítások](../..)
 - [Kódstílus irányelvek](../..)
 - [Pull Request irányelvek](../..)
 - [Fordítási rendszer](../..)
@@ -33,9 +33,9 @@ CO_OP_TRANSLATOR_METADATA:
 - [Projekt-specifikus megjegyzések](../..)
 - [Segítség kérése](../..)
 
-## Projekt áttekintése
+## Projekt áttekintés
 
-Az EdgeAI for Beginners egy átfogó oktatási repozitórium, amely az Edge AI fejlesztést tanítja kis nyelvi modellekkel (SLM-ekkel). A kurzus az EdgeAI alapjait, modelltelepítést, optimalizálási technikákat és gyártásra kész implementációkat mutat be a Microsoft Foundry Local és különböző AI keretrendszerek segítségével.
+Az EdgeAI for Beginners egy átfogó oktatási tároló, amely az Edge AI fejlesztést tanítja Kis Nyelvi Modellekkel (SLM-ek). A kurzus az EdgeAI alapjait, modell telepítést, optimalizálási technikákat és gyártásra kész megvalósításokat tárgyalja a Microsoft Foundry Local és különböző AI keretrendszerek használatával.
 
 **Kulcstechnológiák:**
 - Python 3.8+ (AI/ML minták elsődleges nyelve)
@@ -46,13 +46,13 @@ Az EdgeAI for Beginners egy átfogó oktatási repozitórium, amely az Edge AI f
 - VSCode AI Toolkit
 - OpenAI SDK
 - AI keretrendszerek: LangChain, Semantic Kernel, Chainlit
-- Modelloptimalizálás: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
+- Modell optimalizálás: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
 
-**Repozitórium típusa:** Oktatási tartalom repozitórium 8 modul és 10 átfogó mintapéldával
+**Tároló típusa:** Oktatási tartalom tároló 8 modul és 10 átfogó mintapéldával
 
-**Architektúra:** Többmodulos tanulási útvonal gyakorlati mintákkal, amelyek az Edge AI telepítési mintákat demonstrálják
+**Architektúra:** Többmodulos tanulási útvonal gyakorlati mintákkal, amelyek bemutatják az Edge AI telepítési mintákat
 
-## Repozitórium felépítése
+## Tároló struktúra
 
 ```
 edgeai-for-beginners/
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -99,7 +106,7 @@ edgeai-for-beginners/
 
 ## Beállítási parancsok
 
-### Repozitórium beállítása
+### Tároló beállítása
 
 ```bash
 # Clone the repository
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Python minták beállítása (08. modul és Python minták)
+### Python minták beállítása (Module08 és Workshop minták)
 
 ```bash
 # Create and activate virtual environment
@@ -125,9 +132,13 @@ pip install foundry-local-sdk openai
 # Install additional dependencies for Module08 samples
 cd Module08
 pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
+pip install -r requirements.txt
 ```
 
-### Node.js minták beállítása (08. minta - Windows Chat App)
+### Node.js minták beállítása (Minta 08 - Windows Chat App)
 
 ```bash
 cd Module08/samples/08
@@ -145,17 +156,17 @@ npm run dist
 
 ### Foundry Local beállítása
 
-A minták futtatásához szükséges a Foundry Local. Töltse le és telepítse az hivatalos repozitóriumból:
+A Foundry Local szükséges a minták futtatásához. Töltse le és telepítse az hivatalos tárolóból:
 
 **Telepítés:**
 - **Windows**: `winget install Microsoft.FoundryLocal`
 - **macOS**: `brew tap microsoft/foundrylocal && brew install foundrylocal`
-- **Kézi**: Töltse le a [kiadások oldaláról](https://github.com/microsoft/Foundry-Local/releases)
+- **Manuális**: Töltse le a [kiadások oldaláról](https://github.com/microsoft/Foundry-Local/releases)
 
 **Gyors kezdés:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -170,22 +181,28 @@ foundry service status
 
 ### Tartalomfejlesztés
 
-Ez a repozitórium elsősorban **Markdown oktatási tartalmat** tartalmaz. Változtatások esetén:
+Ez a tároló elsősorban **Markdown oktatási tartalmat** tartalmaz. Módosítások végrehajtásakor:
 
-1. Szerkessze a `.md` fájlokat a megfelelő modul könyvtárakban
+1. Szerkessze a megfelelő modul könyvtárakban található `.md` fájlokat
 2. Kövesse a meglévő formázási mintákat
 3. Biztosítsa, hogy a kódpéldák pontosak és teszteltek legyenek
-4. Frissítse a megfelelő fordított tartalmat, ha szükséges (vagy hagyja, hogy az automatizálás kezelje)
+4. Frissítse a megfelelő fordított tartalmat, ha szükséges (vagy hagyja, hogy az automatizálás elvégezze)
 
 ### Mintapéldák fejlesztése
 
-Python mintákhoz (01-07, 09-10 minták):
+A Module08 Python mintákhoz (minták 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
 ```
 
-Electron mintához (08. minta):
+Workshop Python mintákhoz:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
+```
+
+Electron mintához (minta 08):
 ```bash
 cd Module08/samples/08
 npm run dev  # Development with hot reload
@@ -211,21 +228,21 @@ npm run test:e2e   # Run end-to-end tests
 npm run lint       # Check code style
 ```
 
-## Tesztelési útmutató
+## Tesztelési utasítások
 
 ### Tartalom ellenőrzése
 
-A repozitórium automatizált fordítási munkafolyamatokat használ. A fordítások manuális tesztelése nem szükséges.
+A tároló automatizált fordítási munkafolyamatokat használ. A fordítások manuális tesztelése nem szükséges.
 
 **Manuális ellenőrzés tartalomváltozások esetén:**
-1. Ellenőrizze a Markdown megjelenítését `.md` fájlok előnézetével
-2. Győződjön meg róla, hogy minden hivatkozás érvényes célokra mutat
+1. Ellenőrizze a Markdown megjelenítést `.md` fájlok előnézetével
+2. Győződjön meg róla, hogy minden hivatkozás érvényes célra mutat
 3. Tesztelje a dokumentációban szereplő kódrészleteket
 4. Ellenőrizze, hogy a képek helyesen töltődnek be
 
 ### Mintapéldák tesztelése
 
-**08. modul/minták/08 (Electron alkalmazás) átfogó tesztelést tartalmaz:**
+**Module08/minták/08 (Electron app) átfogó tesztelést tartalmaz:**
 ```bash
 cd Module08/samples/08
 
@@ -245,12 +262,21 @@ npm run test:e2e
 npm test -- --coverage
 ```
 
-**Python mintákat manuálisan kell tesztelni:**
+**Python minták manuálisan tesztelendők:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## Kódstílus irányelvek
@@ -258,16 +284,16 @@ python samples/09/multi_agent_system.py
 ### Markdown tartalom
 
 - Használjon következetes címsor hierarchiát (# a címhez, ## a fő szakaszokhoz, ### az alfejezetekhez)
-- Tartalmazzon kódrészleteket nyelvi specifikációval: ```python, ```bash, ```javascript
-- Kövesse a meglévő formázást táblázatokhoz, listákhoz és kiemelésekhez
-- Tartsa olvashatónak a sorokat (~80-100 karakter, de nem szigorú)
+- Tartalmazzon kódrészleteket nyelvi megjelöléssel: ```python, ```bash, ```javascript
+- Kövesse a meglévő formázást táblázatok, listák és kiemelések esetén
+- Tartsa olvasható sorokat (~80-100 karakter, de nem szigorú)
 - Használjon relatív hivatkozásokat belső referenciákhoz
 
 ### Python kódstílus
 
 - Kövesse a PEP 8 konvenciókat
 - Használjon típusjelöléseket, ahol szükséges
-- Tartalmazzon docstringeket a függvényekhez és osztályokhoz
+- Tartalmazzon dokumentációs szövegeket a függvényekhez és osztályokhoz
 - Használjon értelmes változóneveket
 - Tartsa a függvényeket fókuszáltan és tömören
 
@@ -282,7 +308,7 @@ npm run format      # Format with Prettier
 ```
 
 **Kulcskonvenciók:**
-- ESLint konfiguráció biztosított a 08. mintában
+- ESLint konfiguráció a 08-as mintában
 - Prettier a kódformázáshoz
 - Használjon modern ES6+ szintaxist
 - Kövesse a meglévő mintákat a kódbázisban
@@ -291,12 +317,12 @@ npm run format      # Format with Prettier
 
 ### Hozzájárulási munkafolyamat
 
-1. **Forkolja a repozitóriumot**, és hozzon létre egy új ágat a `main`-ből
-2. **Végezze el a változtatásokat** a kódstílus irányelvek szerint
-3. **Tesztelje alaposan** a fent leírt tesztelési útmutató alapján
-4. **Kötelezze el egyértelmű üzenetekkel** a konvencionális commit formátumot követve
-5. **Tolja fel a forkjára**, és hozzon létre egy pull requestet
-6. **Reagáljon a karbantartók visszajelzéseire** az áttekintés során
+1. **Forkolja a tárolót**, és hozzon létre egy új ágat a `main`-ből
+2. **Végezze el a módosításokat** a kódstílus irányelvek szerint
+3. **Tesztelje alaposan** a fent leírt tesztelési utasítások alapján
+4. **Készítsen egyértelmű üzeneteket** a commitokhoz a konvencionális commit formátum szerint
+5. **Pusholja a forkjára**, és hozzon létre egy pull requestet
+6. **Válaszoljon a karbantartók visszajelzéseire** az áttekintés során
 
 ### Ágnevezési konvenció
 
@@ -344,7 +370,7 @@ Minden közreműködőnek követnie kell a [Microsoft Open Source Code of Conduc
 - Ellenőrizze, hogy a hivatkozások és képek működnek
 - Ellenőrizze a helyesírási és nyelvtani hibákat
 
-**Mintakód változások esetén (08. modul/minták/08):**
+**Mintakód változások esetén (Module08/minták/08):**
 ```bash
 npm run lint
 npm test
@@ -352,7 +378,7 @@ npm test
 
 **Python minták változásai esetén:**
 - Tesztelje, hogy a minta sikeresen fut
-- Ellenőrizze a hibakezelést
+- Ellenőrizze a hibakezelés működését
 - Ellenőrizze a kompatibilitást a Foundry Local-lal
 
 ### Áttekintési folyamat
@@ -363,17 +389,17 @@ npm test
 
 ## Fordítási rendszer
 
-**FONTOS:** Ez a repozitórium automatizált fordítást használ a GitHub Actions segítségével.
+**FONTOS:** Ez a tároló automatizált fordítást használ a GitHub Actions segítségével.
 
 - A fordítások a `/translations/` könyvtárban találhatók (50+ nyelv)
 - Automatizált a `co-op-translator.yml` munkafolyamat által
 - **NE szerkessze manuálisan a fordítási fájlokat** - felülíródnak
 - Csak az angol forrásfájlokat szerkessze a gyökérben és a modul könyvtárakban
-- A fordítások automatikusan generálódnak a `main` ágra történő push során
+- A fordítások automatikusan generálódnak a `main` ágra történő push után
 
 ## Foundry Local integráció
 
-A legtöbb 08. modul minta futtatásához szükséges a Microsoft Foundry Local.
+A legtöbb Module08 minta a Microsoft Foundry Local futtatását igényli.
 
 ### Telepítés és beállítás
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -450,7 +476,7 @@ A legtöbb minta ezeket a környezeti változókat használja:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -463,17 +489,17 @@ set AZURE_OPENAI_API_KEY=your-api-key
 set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-**Megjegyzés**: A `FoundryLocalManager` használatakor az SDK automatikusan kezeli a szolgáltatás felfedezését és a modell betöltését. A modell aliasok (például `phi-3.5-mini`) biztosítják, hogy a legjobb változat legyen kiválasztva a hardveréhez.
+**Megjegyzés**: A `FoundryLocalManager` használatakor az SDK automatikusan kezeli a szolgáltatás felfedezését és a modell betöltését. Modell aliasok (például `phi-3.5-mini`) biztosítják, hogy a legjobb változat legyen kiválasztva a hardveréhez.
 
 ## Build és telepítés
 
 ### Tartalom telepítése
 
-Ez a repozitórium elsősorban dokumentációt tartalmaz - nincs szükség build folyamatra a tartalomhoz.
+Ez a tároló elsősorban dokumentáció - nincs szükség build folyamatra a tartalomhoz.
 
 ### Mintapéldák építése
 
-**Electron alkalmazás (08. modul/minták/08):**
+**Electron alkalmazás (Module08/minták/08):**
 ```bash
 cd Module08/samples/08
 
@@ -500,7 +526,7 @@ Nincs build folyamat - a minták közvetlenül a Python interpreterrel futtathat
 ### Kritikus problémák (blokkoló)
 
 #### Foundry Local nem fut
-**Probléma:** A minták kapcsolódási hibákkal meghiúsulnak
+**Probléma:** Minták csatlakozási hibákkal meghiúsulnak
 
 **Megoldás:**
 ```bash
@@ -508,7 +534,7 @@ Nincs build folyamat - a minták közvetlenül a Python interpreterrel futtathat
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -552,15 +578,15 @@ npm install
 ### Munkafolyamat problémák (kisebb)
 
 #### Fordítási munkafolyamat konfliktusok
-**Probléma:** A fordítási PR ütközik az Ön változtatásaival
+**Probléma:** Fordítás PR ütközik a változásaival
 
 **Megoldás:**
 - Csak az angol forrásfájlokat szerkessze
 - Hagyja, hogy az automatizált fordítási munkafolyamat kezelje a fordításokat
-- Ha konfliktusok lépnek fel, merge-elje a `main`-t az ágába, miután a fordítások merge-elődtek
+- Ha konfliktusok lépnek fel, merge-ölje a `main`-t az ágába, miután a fordítások merge-ölve lettek
 
 #### Modell letöltési hibák
-**Probléma:** A Foundry Local nem tudja letölteni a modelleket
+**Probléma:** Foundry Local nem tudja letölteni a modelleket
 
 **Megoldás:**
 ```bash
@@ -576,20 +602,21 @@ foundry model run <model-alias>
 ## További források
 
 ### Tanulási útvonalak
-- **Kezdő útvonal:** 01-02 modulok (7-9 óra)
-- **Középhaladó útvonal:** 03-04 modulok (9-11 óra)
-- **Haladó útvonal:** 05-07 modulok (12-15 óra)
-- **Szakértői útvonal:** 08. modul (8-10 óra)
+- **Kezdő útvonal:** Modulok 01-02 (7-9 óra)
+- **Középhaladó útvonal:** Modulok 03-04 (9-11 óra)
+- **Haladó útvonal:** Modulok 05-07 (12-15 óra)
+- **Szakértői útvonal:** Modul 08 (8-10 óra)
+- **Gyakorlati workshop:** Workshop anyagok (6-8 óra)
 
 ### Kulcsmodul tartalom
-- **01. modul:** EdgeAI alapok és valós esettanulmányok
-- **02. modul:** Kis nyelvi modellek (SLM) családjai és architektúrái
-- **03. modul:** Helyi és felhőalapú telepítési stratégiák
-- **04. modul:** Modelloptimalizálás több keretrendszerrel
-- **05. modul:** SLMOps - gyártási műveletek
-- **06. modul:** AI ügynökök és funkcióhívások
-- **07. modul:** Platform-specifikus implementációk
-- **08. modul:** Foundry Local eszközkészlet 10 átfogó mintával
+- **Module01:** EdgeAI alapok és valós esettanulmányok
+- **Module02:** Kis Nyelvi Modell (SLM) családok és architektúrák
+- **Module03:** Helyi és felhő telepítési stratégiák
+- **Module04:** Modell optimalizálás több keretrendszerrel (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
+- **Module05:** SLMOps - gyártási műveletek
+- **Module06:** AI ügynökök és funkcióhívások
+- **Module07:** Platform-specifikus megvalósítások
+- **Module08:** Foundry Local eszközkészlet 10 átfogó mintával
 
 ### Külső függőségek
 - [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Helyi AI modell futtatási környezet OpenAI-kompatibilis API-val
@@ -597,9 +624,27 @@ foundry model run <model-alias>
   - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [JavaScript SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
 - [Llama.cpp](https://github.com/ggml-org/llama.cpp) - Optimalizációs keretrendszer
-- [Microsoft Olive](https://microsoft.github.io/Olive/) - Modelloptimalizál
-- A helyi következtetés 50-500 ms válaszidőt biztosít
-- A kvantálási technikák 75%-os méretcsökkentést érnek el, miközben a teljesítmény 85%-át megtartják
+- [
+10. **10-Foundry Tools Framework** - LangChain/Semantic Kernel integráció
+
+### Workshop Mintapéldák
+
+A workshop 6 egymásra épülő szekciót tartalmaz gyakorlati megvalósításokkal:
+
+1. **01. szekció** - Chat indítása Foundry Local integrációval
+2. **02. szekció** - RAG folyamat és értékelés RAGAS segítségével
+3. **03. szekció** - Nyílt forráskódú modellek összehasonlítása
+4. **04. szekció** - Modellek összehasonlítása és kiválasztása
+5. **05. szekció** - Több ügynököt kezelő rendszerek
+6. **06. szekció** - Modellirányítás és folyamatkezelés
+
+Minden minta bemutatja az Edge AI fejlesztés különböző aspektusait Foundry Local segítségével.
+
+### Teljesítmény Szempontok
+
+- Az SLM-ek optimalizálva vannak Edge környezetben való használatra (2-16GB RAM)
+- Helyi következtetés 50-500ms válaszidőt biztosít
+- Kvantálási technikák 75%-os méretcsökkentést érnek el 85%-os teljesítménymegtartással
 - Valós idejű beszélgetési képességek helyi modellekkel
 
 ### Biztonság és Adatvédelem
@@ -609,38 +654,38 @@ foundry model run <model-alias>
 - Megfelel az adat-szuverenitási követelményeknek
 - A Foundry Local teljes mértékben helyi hardveren fut
 
-## Segítségkérés
+## Segítség Kérése
 
 ### Dokumentáció
 
 - **Fő README**: [README.md](README.md) - A repozitórium áttekintése és tanulási útvonalak
 - **Tanulmányi Útmutató**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Tanulási források és idővonal
-- **Támogatás**: [SUPPORT.md](SUPPORT.md) - Hogyan lehet segítséget kérni
+- **Támogatás**: [SUPPORT.md](SUPPORT.md) - Hogyan kérj segítséget
 - **Biztonság**: [SECURITY.md](SECURITY.md) - Biztonsági problémák jelentése
 
 ### Közösségi Támogatás
 
 - **GitHub Issues**: [Hibák jelentése vagy funkciók kérése](https://github.com/microsoft/edgeai-for-beginners/issues)
 - **GitHub Discussions**: [Kérdések feltevése és ötletek megosztása](https://github.com/microsoft/edgeai-for-beginners/discussions)
-- **Foundry Local Issues**: [Technikai problémák a Foundry Local-lal](https://github.com/microsoft/Foundry-Local/issues)
+- **Foundry Local Issues**: [Technikai problémák a Foundry Local kapcsán](https://github.com/microsoft/Foundry-Local/issues)
 
 ### Kapcsolat
 
 - **Karbantartók**: Lásd [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
-- **Biztonsági Problémák**: Kövesse a felelős közzétételt a [SECURITY.md](SECURITY.md) dokumentumban
-- **Microsoft Támogatás**: Vállalati támogatásért vegye fel a kapcsolatot a Microsoft ügyfélszolgálatával
+- **Biztonsági Problémák**: Kövesd a felelős bejelentési eljárást a [SECURITY.md](SECURITY.md) dokumentumban
+- **Microsoft Támogatás**: Vállalati támogatásért lépj kapcsolatba a Microsoft ügyfélszolgálatával
 
 ### További Források
 
 - **Microsoft Learn**: [AI és Gépi Tanulás Tanulási Útvonalak](https://learn.microsoft.com/training/browse/?products=ai-services)
 - **Foundry Local Dokumentáció**: [Hivatalos Dokumentáció](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
-- **Közösségi Minták**: Nézze meg a [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) oldalt a közösségi hozzájárulásokért
+- **Közösségi Minták**: Nézd meg a [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) oldalt közösségi hozzájárulásokért
 
 ---
 
-**Ez egy oktatási repozitórium, amely az Edge AI fejlesztés tanítására összpontosít. Az elsődleges hozzájárulási minta az oktatási tartalom fejlesztése és olyan mintapéldák hozzáadása vagy javítása, amelyek bemutatják az Edge AI koncepcióit.**
+**Ez egy oktatási repozitórium, amely az Edge AI fejlesztés tanítására fókuszál. Az elsődleges hozzájárulási forma az oktatási tartalom fejlesztése és olyan mintapéldák hozzáadása vagy javítása, amelyek bemutatják az Edge AI koncepcióit.**
 
 ---
 
 **Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével került lefordításra. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

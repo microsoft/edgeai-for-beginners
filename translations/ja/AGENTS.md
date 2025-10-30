@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-08T18:56:26+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T11:25:26+00:00",
   "source_file": "AGENTS.md",
   "language_code": "ja"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 > 
 > このドキュメントは、このリポジトリで作業する開発者、AIエージェント、貢献者向けに包括的な情報を提供します。セットアップ、開発ワークフロー、テスト、ベストプラクティスについて説明しています。
 > 
-> **最終更新日**: 2025年10月 | **ドキュメントバージョン**: 2.0
+> **最終更新日**: 2025年10月30日 | **ドキュメントバージョン**: 3.0
 
 ## 目次
 
@@ -35,7 +35,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## プロジェクト概要
 
-EdgeAI for Beginnersは、小型言語モデル（SLM）を使用したEdge AI開発を学ぶための包括的な教育リポジトリです。このコースでは、EdgeAIの基本、モデルのデプロイ、最適化技術、Microsoft Foundry LocalやさまざまなAIフレームワークを使用した実践的な実装をカバーしています。
+EdgeAI for Beginnersは、小型言語モデル（SLM）を使用したEdge AI開発を学ぶための包括的な教育リポジトリです。このコースでは、EdgeAIの基礎、モデルのデプロイ、最適化技術、Microsoft Foundry LocalやさまざまなAIフレームワークを使用した実践的な実装について学びます。
 
 **主要技術:**
 - Python 3.8+（AI/MLサンプルの主要言語）
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -81,7 +88,7 @@ edgeai-for-beginners/
 
 - **Visual Studio Code** - Python、Jupyter、Pylance拡張機能付き
 - **Windows Terminal** - コマンドライン体験向上（Windowsユーザー向け）
-- **Docker** - コンテナ化された開発環境（オプション）
+- **Docker** - コンテナ化された開発用（オプション）
 
 ### システム要件
 
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Pythonサンプルセットアップ（Module08とPythonサンプル）
+### Pythonサンプルセットアップ（Module08とワークショップサンプル）
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -155,7 +166,7 @@ Foundry Localはサンプルを実行するために必要です。公式リポ�
 **クイックスタート:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -179,10 +190,16 @@ foundry service status
 
 ### サンプルアプリケーション開発
 
-Pythonサンプル（サンプル01-07, 09-10）:
+Module08 Pythonサンプル（サンプル01-07, 09-10）:
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+ワークショップPythonサンプル:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 Electronサンプル（サンプル08）:
@@ -215,7 +232,7 @@ npm run lint       # Check code style
 
 ### コンテンツ検証
 
-リポジトリは自動翻訳ワークフローを使用しています。翻訳に関して手動テストは不要です。
+リポジトリは自動翻訳ワークフローを使用しています。翻訳の手動テストは不要です。
 
 **コンテンツ変更の手動検証:**
 1. `.md`ファイルをプレビューしてMarkdownレンダリングを確認
@@ -247,10 +264,19 @@ npm test -- --coverage
 
 **Pythonサンプルは手動でテストする必要があります:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## コードスタイルガイドライン
@@ -269,7 +295,7 @@ python samples/09/multi_agent_system.py
 - 適切な箇所で型ヒントを使用
 - 関数やクラスにドキュメント文字列を含める
 - 意味のある変数名を使用
-- 関数は焦点を絞り簡潔に保つ
+- 関数を簡潔かつ焦点を絞ったものにする
 
 ### JavaScript/Node.jsコードスタイル
 
@@ -300,7 +326,7 @@ npm run format      # Format with Prettier
 
 ### ブランチ命名規則
 
-- `feature/<module>-<description>` - 新しい機能やコンテンツの場合
+- `feature/<module>-<description>` - 新機能やコンテンツの場合
 - `fix/<module>-<description>` - バグ修正の場合
 - `docs/<description>` - ドキュメント改善の場合
 - `refactor/<description>` - コードリファクタリングの場合
@@ -363,7 +389,7 @@ npm test
 
 ## 翻訳システム
 
-**重要:** このリポジトリはGitHub Actionsを使用した自動翻訳を採用しています。
+**重要:** このリポジトリはGitHub Actionsによる自動翻訳を使用しています。
 
 - 翻訳は`/translations/`ディレクトリにあります（50以上の言語）
 - `co-op-translator.yml`ワークフローによって自動化
@@ -373,7 +399,7 @@ npm test
 
 ## Foundry Localの統合
 
-Module08のほとんどのサンプルはMicrosoft Foundry Localの実行を必要とします。
+ほとんどのModule08サンプルはMicrosoft Foundry Localの実行を必要とします。
 
 ### インストールとセットアップ
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -450,7 +476,7 @@ curl http://localhost:<port>/v1/models
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -463,11 +489,11 @@ set AZURE_OPENAI_API_KEY=your-api-key
 set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-**注意**: `FoundryLocalManager`を使用する場合、SDKはサービス検出とモデル読み込みを自動的に処理します。モデルエイリアス（例: `phi-3.5-mini`）はハードウェアに最適なバリアントを確実に選択します。
+**注意**: `FoundryLocalManager`を使用する場合、SDKはサービス検出とモデル読み込みを自動的に処理します。モデルエイリアス（例: `phi-3.5-mini`）はハードウェアに最適なバリアントを選択します。
 
 ## ビルドとデプロイ
 
-### コンテンツのデプロイ
+### コンテンツデプロイ
 
 このリポジトリは主にドキュメントで構成されているため、コンテンツにビルドプロセスは必要ありません。
 
@@ -508,7 +534,7 @@ npm run pack
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -549,7 +575,7 @@ rm -rf node_modules package-lock.json
 npm install
 ```
 
-### ワークフローの問題（軽度）
+### ワークフローの問題（軽微）
 
 #### 翻訳ワークフローの競合
 **問題:** 翻訳PRが変更と競合する
@@ -579,13 +605,14 @@ foundry model run <model-alias>
 - **初心者向けパス:** モジュール01-02（7-9時間）
 - **中級者向けパス:** モジュール03-04（9-11時間）
 - **上級者向けパス:** モジュール05-07（12-15時間）
-- **エキスパートパス:** モジュール08（8-10時間）
+- **エキスパート向けパス:** モジュール08（8-10時間）
+- **実践ワークショップ:** ワークショップ資料（6-8時間）
 
 ### 主要モジュールコンテンツ
-- **Module01:** EdgeAIの基本と実世界のケーススタディ
+- **Module01:** EdgeAIの基礎と実世界のケーススタディ
 - **Module02:** 小型言語モデル（SLM）のファミリーとアーキテクチャ
 - **Module03:** ローカルおよびクラウドデプロイメント戦略
-- **Module04:** 複数フレームワークを使用したモデル最適化
+- **Module04:** 複数フレームワークを使用したモデル最適化（Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX）
 - **Module05:** SLMOps - 本番運用
 - **Module06:** AIエージェントと関数呼び出し
 - **Module07:** プラットフォーム固有の実装
@@ -614,22 +641,35 @@ foundry model run <model-alias>
 6. **06-Models-as-Tools Router** - インテリジェントモデルルーティング
 7. **07-Direct API Client** - 低レベルAPI統合
 8. **08-Windows 11 Chat App** - ネイティブElectronデスクトップアプリケーション
-9. **09-Advanced Multi-Agent System** - 複雑なエージェント調整
+9. **09-Advanced Multi-Agent System** - 複雑なエージ
 10. **10-Foundry Tools Framework** - LangChain/Semantic Kernel統合
 
-各サンプルはFoundry Localを使用したEdge AI開発の異なる側面を示しています。
+### ワークショップサンプルアプリケーション
 
-### パフォーマンスの考
-- ローカル推論は50～500msの応答時間を提供
+ワークショップは、実践的な実装を含む6つの段階的なセッションで構成されています：
+
+1. **セッション01** - Foundry Local統合によるチャットのブートストラップ
+2. **セッション02** - RAGパイプラインとRAGASによる評価
+3. **セッション03** - オープンソースモデルのベンチマーク
+4. **セッション04** - モデルの比較と選択
+5. **セッション05** - マルチエージェントオーケストレーションシステム
+6. **セッション06** - モデルルーティングとパイプライン管理
+
+各サンプルは、Foundry Localを使用したエッジAI開発の異なる側面を示しています。
+
+### パフォーマンスに関する考慮事項
+
+- SLMはエッジ展開向けに最適化されています（2-16GB RAM）
+- ローカル推論は50-500msの応答時間を提供
 - 量子化技術により、サイズを75%削減しつつ85%の性能を維持
 - ローカルモデルによるリアルタイム会話機能
 
 ### セキュリティとプライバシー
 
-- すべての処理がローカルで行われ、データはクラウドに送信されない
-- プライバシーに敏感なアプリケーション（医療、金融）に適している
-- データ主権要件を満たす
-- Foundry Localは完全にローカルハードウェア上で動作
+- すべての処理はローカルで行われ、クラウドにデータは送信されません
+- プライバシーに敏感なアプリケーション（医療、金融）に適しています
+- データ主権要件を満たします
+- Foundry Localは完全にローカルハードウェア上で動作します
 
 ## ヘルプを得る
 
@@ -638,7 +678,7 @@ foundry model run <model-alias>
 - **メインREADME**: [README.md](README.md) - リポジトリ概要と学習パス
 - **学習ガイド**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - 学習リソースとタイムライン
 - **サポート**: [SUPPORT.md](SUPPORT.md) - ヘルプの取得方法
-- **セキュリティ**: [SECURITY.md](SECURITY.md) - セキュリティ問題の報告方法
+- **セキュリティ**: [SECURITY.md](SECURITY.md) - セキュリティ問題の報告
 
 ### コミュニティサポート
 
@@ -650,19 +690,19 @@ foundry model run <model-alias>
 
 - **メンテナー**: [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)を参照
 - **セキュリティ問題**: [SECURITY.md](SECURITY.md)に記載された責任ある開示手順に従う
-- **Microsoftサポート**: エンタープライズサポートについてはMicrosoftカスタマーサービスに連絡
+- **Microsoftサポート**: エンタープライズサポートについては、Microsoftカスタマーサービスにお問い合わせください
 
 ### 追加リソース
 
 - **Microsoft Learn**: [AIと機械学習の学習パス](https://learn.microsoft.com/training/browse/?products=ai-services)
 - **Foundry Localドキュメント**: [公式ドキュメント](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
-- **コミュニティサンプル**: コミュニティの投稿は[GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions)を確認
+- **コミュニティサンプル**: コミュニティの貢献については[GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions)を確認
 
 ---
 
-**このリポジトリは、Edge AI開発を教えることに焦点を当てた教育用リポジトリです。主な貢献パターンは、教育コンテンツの改善と、Edge AIの概念を示すサンプルアプリケーションの追加・強化です。**
+**このリポジトリは、エッジAI開発の教育に焦点を当てています。主な貢献パターンは、教育コンテンツの改善と、エッジAIの概念を示すサンプルアプリケーションの追加や強化です。**
 
 ---
 
 **免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を期すよう努めておりますが、自動翻訳には誤りや不正確さが含まれる可能性があります。元の言語で記載された原文が正式な情報源と見なされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用に起因する誤解や誤認について、当方は一切の責任を負いません。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてお考えください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤認について、当社は一切の責任を負いません。

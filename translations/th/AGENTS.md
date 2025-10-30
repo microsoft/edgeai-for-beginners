@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-09T12:35:08+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T12:53:01+00:00",
   "source_file": "AGENTS.md",
   "language_code": "th"
 }
@@ -11,33 +11,33 @@ CO_OP_TRANSLATOR_METADATA:
 
 > **คู่มือสำหรับนักพัฒนาในการมีส่วนร่วมกับ EdgeAI สำหรับผู้เริ่มต้น**
 > 
-> เอกสารนี้ให้ข้อมูลที่ครอบคลุมสำหรับนักพัฒนา, AI agents และผู้มีส่วนร่วมที่ทำงานกับ repository นี้ ครอบคลุมการตั้งค่า, เวิร์กโฟลว์การพัฒนา, การทดสอบ และแนวทางปฏิบัติที่ดีที่สุด
+> เอกสารนี้ให้ข้อมูลที่ครอบคลุมสำหรับนักพัฒนา, ตัวแทน AI, และผู้มีส่วนร่วมที่ทำงานกับคลังข้อมูลนี้ ครอบคลุมการตั้งค่า, กระบวนการพัฒนา, การทดสอบ, และแนวปฏิบัติที่ดีที่สุด
 > 
-> **อัปเดตล่าสุด**: ตุลาคม 2025 | **เวอร์ชันเอกสาร**: 2.0
+> **อัปเดตล่าสุด**: 30 ตุลาคม 2025 | **เวอร์ชันเอกสาร**: 3.0
 
 ## สารบัญ
 
 - [ภาพรวมโครงการ](../..)
-- [โครงสร้างของ Repository](../..)
+- [โครงสร้างคลังข้อมูล](../..)
 - [ข้อกำหนดเบื้องต้น](../..)
 - [คำสั่งการตั้งค่า](../..)
-- [เวิร์กโฟลว์การพัฒนา](../..)
+- [กระบวนการพัฒนา](../..)
 - [คำแนะนำการทดสอบ](../..)
 - [แนวทางการเขียนโค้ด](../..)
 - [แนวทางการส่ง Pull Request](../..)
 - [ระบบการแปล](../..)
 - [การผสานรวม Foundry Local](../..)
 - [การสร้างและการปรับใช้](../..)
-- [ปัญหาทั่วไปและการแก้ไข](../..)
+- [ปัญหาทั่วไปและการแก้ไขปัญหา](../..)
 - [ทรัพยากรเพิ่มเติม](../..)
 - [หมายเหตุเฉพาะโครงการ](../..)
 - [การขอความช่วยเหลือ](../..)
 
 ## ภาพรวมโครงการ
 
-EdgeAI สำหรับผู้เริ่มต้นเป็น repository การศึกษาแบบครบวงจรที่สอนการพัฒนา Edge AI ด้วย Small Language Models (SLMs) หลักสูตรครอบคลุมพื้นฐาน EdgeAI, การปรับใช้โมเดล, เทคนิคการปรับแต่ง และการใช้งานที่พร้อมสำหรับการผลิตโดยใช้ Microsoft Foundry Local และเฟรมเวิร์ก AI ต่างๆ
+EdgeAI สำหรับผู้เริ่มต้นเป็นคลังข้อมูลการศึกษาที่ครอบคลุมการพัฒนา Edge AI ด้วย Small Language Models (SLMs) หลักสูตรครอบคลุมพื้นฐาน EdgeAI, การปรับใช้โมเดล, เทคนิคการปรับแต่ง, และการใช้งานที่พร้อมสำหรับการผลิตโดยใช้ Microsoft Foundry Local และเฟรมเวิร์ค AI ต่างๆ
 
-**เทคโนโลยีหลัก:**
+**เทคโนโลยีสำคัญ:**
 - Python 3.8+ (ภาษาเริ่มต้นสำหรับตัวอย่าง AI/ML)
 - .NET C# (ตัวอย่าง AI/ML)
 - JavaScript/Node.js กับ Electron (สำหรับแอปพลิเคชันเดสก์ท็อป)
@@ -45,14 +45,14 @@ EdgeAI สำหรับผู้เริ่มต้นเป็น repositor
 - Microsoft Windows ML 
 - VSCode AI Toolkit
 - OpenAI SDK
-- เฟรมเวิร์ก AI: LangChain, Semantic Kernel, Chainlit
+- เฟรมเวิร์ค AI: LangChain, Semantic Kernel, Chainlit
 - การปรับแต่งโมเดล: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
 
-**ประเภทของ Repository:** Repository เนื้อหาการศึกษาที่มี 8 โมดูลและตัวอย่างแอปพลิเคชันที่ครอบคลุม 10 ตัวอย่าง
+**ประเภทคลังข้อมูล:** คลังข้อมูลเนื้อหาการศึกษาที่มี 8 โมดูลและตัวอย่างแอปพลิเคชันที่ครอบคลุม 10 ตัวอย่าง
 
 **สถาปัตยกรรม:** เส้นทางการเรียนรู้แบบหลายโมดูลพร้อมตัวอย่างที่ใช้งานจริงที่แสดงรูปแบบการปรับใช้ Edge AI
 
-## โครงสร้างของ Repository
+## โครงสร้างคลังข้อมูล
 
 ```
 edgeai-for-beginners/
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -79,27 +86,27 @@ edgeai-for-beginners/
 
 ### เครื่องมือที่แนะนำ
 
-- **Visual Studio Code** - พร้อมส่วนขยาย Python, Jupyter และ Pylance
-- **Windows Terminal** - สำหรับประสบการณ์การใช้งาน command-line ที่ดีกว่า (สำหรับผู้ใช้ Windows)
-- **Docker** - สำหรับการพัฒนาแบบ containerized (ไม่บังคับ)
+- **Visual Studio Code** - พร้อมส่วนขยาย Python, Jupyter, และ Pylance
+- **Windows Terminal** - สำหรับประสบการณ์การใช้งานบรรทัดคำสั่งที่ดีกว่า (สำหรับผู้ใช้ Windows)
+- **Docker** - สำหรับการพัฒนาแบบคอนเทนเนอร์ (ไม่บังคับ)
 
 ### ข้อกำหนดของระบบ
 
 - **RAM**: ขั้นต่ำ 8GB, แนะนำ 16GB+ สำหรับสถานการณ์ที่ใช้หลายโมเดล
-- **พื้นที่เก็บข้อมูล**: พื้นที่ว่าง 10GB+ สำหรับโมเดลและ dependencies
-- **OS**: Windows 10/11, macOS 11+ หรือ Linux (Ubuntu 20.04+)
+- **พื้นที่เก็บข้อมูล**: พื้นที่ว่าง 10GB+ สำหรับโมเดลและการพึ่งพา
+- **ระบบปฏิบัติการ**: Windows 10/11, macOS 11+, หรือ Linux (Ubuntu 20.04+)
 - **ฮาร์ดแวร์**: CPU ที่รองรับ AVX2; GPU (CUDA, Qualcomm NPU) ไม่บังคับแต่แนะนำ
 
 ### ความรู้เบื้องต้น
 
 - ความเข้าใจพื้นฐานเกี่ยวกับการเขียนโปรแกรม Python
-- ความคุ้นเคยกับ command-line interfaces
+- ความคุ้นเคยกับอินเทอร์เฟซบรรทัดคำสั่ง
 - ความเข้าใจเกี่ยวกับแนวคิด AI/ML (สำหรับการพัฒนาตัวอย่าง)
-- เวิร์กโฟลว์ Git และกระบวนการ Pull Request
+- กระบวนการ Git และ Pull Request
 
 ## คำสั่งการตั้งค่า
 
-### การตั้งค่า Repository
+### การตั้งค่าคลังข้อมูล
 
 ```bash
 # Clone the repository
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### การตั้งค่าตัวอย่าง Python (Module08 และตัวอย่าง Python)
+### การตั้งค่าตัวอย่าง Python (Module08 และตัวอย่าง Workshop)
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -145,17 +156,17 @@ npm run dist
 
 ### การตั้งค่า Foundry Local
 
-Foundry Local จำเป็นสำหรับการรันตัวอย่าง ดาวน์โหลดและติดตั้งจาก repository อย่างเป็นทางการ:
+Foundry Local จำเป็นสำหรับการรันตัวอย่าง ดาวน์โหลดและติดตั้งจากคลังข้อมูลอย่างเป็นทางการ:
 
 **การติดตั้ง:**
 - **Windows**: `winget install Microsoft.FoundryLocal`
 - **macOS**: `brew tap microsoft/foundrylocal && brew install foundrylocal`
-- **Manual**: ดาวน์โหลดจาก [releases page](https://github.com/microsoft/Foundry-Local/releases)
+- **Manual**: ดาวน์โหลดจาก [หน้าปล่อย](https://github.com/microsoft/Foundry-Local/releases)
 
 **เริ่มต้นใช้งาน:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -164,13 +175,13 @@ foundry model ls
 foundry service status
 ```
 
-**หมายเหตุ**: Foundry Local จะเลือกตัวแปรโมเดลที่ดีที่สุดสำหรับฮาร์ดแวร์ของคุณโดยอัตโนมัติ (CUDA GPU, Qualcomm NPU หรือ CPU)
+**หมายเหตุ**: Foundry Local จะเลือกตัวแปรโมเดลที่ดีที่สุดสำหรับฮาร์ดแวร์ของคุณโดยอัตโนมัติ (CUDA GPU, Qualcomm NPU, หรือ CPU)
 
-## เวิร์กโฟลว์การพัฒนา
+## กระบวนการพัฒนา
 
 ### การพัฒนาเนื้อหา
 
-Repository นี้ประกอบด้วย **เนื้อหาการศึกษา Markdown** เป็นหลัก เมื่อทำการเปลี่ยนแปลง:
+คลังข้อมูลนี้ประกอบด้วย **เนื้อหาการศึกษาที่เป็น Markdown** เป็นหลัก เมื่อทำการเปลี่ยนแปลง:
 
 1. แก้ไขไฟล์ `.md` ในไดเรกทอรีโมดูลที่เหมาะสม
 2. ปฏิบัติตามรูปแบบการจัดรูปแบบที่มีอยู่
@@ -179,10 +190,16 @@ Repository นี้ประกอบด้วย **เนื้อหากา
 
 ### การพัฒนาแอปพลิเคชันตัวอย่าง
 
-สำหรับตัวอย่าง Python (ตัวอย่าง 01-07, 09-10):
+สำหรับตัวอย่าง Python ใน Module08 (ตัวอย่าง 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+สำหรับตัวอย่าง Python ใน Workshop:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 สำหรับตัวอย่าง Electron (ตัวอย่าง 08):
@@ -215,9 +232,9 @@ npm run lint       # Check code style
 
 ### การตรวจสอบเนื้อหา
 
-Repository ใช้เวิร์กโฟลว์การแปลอัตโนมัติ ไม่จำเป็นต้องทดสอบการแปลด้วยตนเอง
+คลังข้อมูลใช้กระบวนการแปลอัตโนมัติ ไม่จำเป็นต้องทดสอบการแปลด้วยตนเอง
 
-**การตรวจสอบเนื้อหาด้วยตนเองสำหรับการเปลี่ยนแปลง:**
+**การตรวจสอบด้วยตนเองสำหรับการเปลี่ยนแปลงเนื้อหา:**
 1. ตรวจสอบการแสดงผล Markdown โดยการดูตัวอย่างไฟล์ `.md`
 2. ตรวจสอบให้แน่ใจว่าลิงก์ทั้งหมดชี้ไปยังเป้าหมายที่ถูกต้อง
 3. ทดสอบตัวอย่างโค้ดใดๆ ที่รวมอยู่ในเอกสาร
@@ -247,10 +264,19 @@ npm test -- --coverage
 
 **ตัวอย่าง Python ควรทดสอบด้วยตนเอง:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## แนวทางการเขียนโค้ด
@@ -259,7 +285,7 @@ python samples/09/multi_agent_system.py
 
 - ใช้ลำดับชั้นหัวข้อที่สอดคล้องกัน (# สำหรับชื่อเรื่อง, ## สำหรับส่วนหลัก, ### สำหรับส่วนย่อย)
 - รวมบล็อกโค้ดพร้อมตัวระบุภาษา: ```python, ```bash, ```javascript
-- ปฏิบัติตามรูปแบบที่มีอยู่สำหรับตาราง, รายการ และการเน้นข้อความ
+- ปฏิบัติตามรูปแบบที่มีอยู่สำหรับตาราง, รายการ, และการเน้น
 - ทำให้บรรทัดอ่านง่าย (~80-100 ตัวอักษร แต่ไม่เข้มงวด)
 - ใช้ลิงก์สัมพัทธ์สำหรับการอ้างอิงภายใน
 
@@ -289,21 +315,21 @@ npm run format      # Format with Prettier
 
 ## แนวทางการส่ง Pull Request
 
-### เวิร์กโฟลว์การมีส่วนร่วม
+### กระบวนการมีส่วนร่วม
 
-1. **Fork repository** และสร้างสาขาใหม่จาก `main`
+1. **Fork คลังข้อมูล** และสร้างสาขาใหม่จาก `main`
 2. **ทำการเปลี่ยนแปลงของคุณ** โดยปฏิบัติตามแนวทางการเขียนโค้ด
 3. **ทดสอบอย่างละเอียด** โดยใช้คำแนะนำการทดสอบด้านบน
-4. **Commit พร้อมข้อความที่ชัดเจน** โดยปฏิบัติตามรูปแบบ conventional commits
-5. **Push ไปยัง fork ของคุณ** และสร้าง pull request
+4. **Commit พร้อมข้อความที่ชัดเจน** โดยปฏิบัติตามรูปแบบ Conventional Commits
+5. **Push ไปยัง Fork ของคุณ** และสร้าง Pull Request
 6. **ตอบกลับความคิดเห็น** จากผู้ดูแลระหว่างการตรวจสอบ
 
-### การตั้งชื่อสาขา
+### รูปแบบการตั้งชื่อสาขา
 
-- `feature/<module>-<description>` - สำหรับฟีเจอร์ใหม่หรือเนื้อหาใหม่
-- `fix/<module>-<description>` - สำหรับการแก้ไขข้อบกพร่อง
+- `feature/<module>-<description>` - สำหรับฟีเจอร์หรือเนื้อหาใหม่
+- `fix/<module>-<description>` - สำหรับการแก้ไขข้อผิดพลาด
 - `docs/<description>` - สำหรับการปรับปรุงเอกสาร
-- `refactor/<description>` - สำหรับการปรับปรุงโค้ด
+- `refactor/<description>` - สำหรับการปรับโครงสร้างโค้ด
 
 ### รูปแบบข้อความ Commit
 
@@ -357,23 +383,23 @@ npm test
 
 ### กระบวนการตรวจสอบ
 
-- การเปลี่ยนแปลงเนื้อหาการศึกษาจะได้รับการตรวจสอบเพื่อความถูกต้องและความชัดเจน
-- ตัวอย่างโค้ดจะได้รับการทดสอบเพื่อการทำงาน
-- การอัปเดตการแปลจะได้รับการจัดการโดยอัตโนมัติผ่าน GitHub Actions
+- การเปลี่ยนแปลงเนื้อหาการศึกษาจะถูกตรวจสอบเพื่อความถูกต้องและความชัดเจน
+- ตัวอย่างโค้ดจะถูกทดสอบเพื่อการทำงาน
+- การอัปเดตการแปลจะถูกจัดการโดยอัตโนมัติผ่าน GitHub Actions
 
 ## ระบบการแปล
 
-**สำคัญ:** Repository นี้ใช้การแปลอัตโนมัติผ่าน GitHub Actions
+**สำคัญ:** คลังข้อมูลนี้ใช้การแปลอัตโนมัติผ่าน GitHub Actions
 
 - การแปลอยู่ในไดเรกทอรี `/translations/` (50+ ภาษา)
 - อัตโนมัติผ่าน workflow `co-op-translator.yml`
 - **ห้ามแก้ไขไฟล์การแปลด้วยตนเอง** - ไฟล์จะถูกเขียนทับ
-- แก้ไขเฉพาะไฟล์ต้นฉบับภาษาอังกฤษใน root และไดเรกทอรีโมดูล
+- แก้ไขเฉพาะไฟล์ต้นฉบับภาษาอังกฤษในไดเรกทอรีรากและโมดูล
 - การแปลจะถูกสร้างโดยอัตโนมัติเมื่อ push ไปยังสาขา `main`
 
 ## การผสานรวม Foundry Local
 
-ตัวอย่างส่วนใหญ่ใน Module08 ต้องการ Microsoft Foundry Local เพื่อรัน
+ตัวอย่างใน Module08 ส่วนใหญ่ต้องการ Microsoft Foundry Local เพื่อรัน
 
 ### การติดตั้งและการตั้งค่า
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -450,7 +476,7 @@ curl http://localhost:<port>/v1/models
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -463,13 +489,13 @@ set AZURE_OPENAI_API_KEY=your-api-key
 set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-**หมายเหตุ**: เมื่อใช้ `FoundryLocalManager` SDK จะจัดการการค้นหาบริการและการโหลดโมเดลโดยอัตโนมัติ ชื่อเล่นโมเดล (เช่น `phi-3.5-mini`) ช่วยให้มั่นใจว่าตัวแปรที่ดีที่สุดถูกเลือกสำหรับฮาร์ดแวร์ของคุณ
+**หมายเหตุ**: เมื่อใช้ `FoundryLocalManager`, SDK จะจัดการการค้นหาบริการและการโหลดโมเดลโดยอัตโนมัติ ชื่อเล่นโมเดล (เช่น `phi-3.5-mini`) ช่วยให้มั่นใจว่าตัวแปรที่ดีที่สุดถูกเลือกสำหรับฮาร์ดแวร์ของคุณ
 
 ## การสร้างและการปรับใช้
 
 ### การปรับใช้เนื้อหา
 
-Repository นี้เป็นเอกสารเป็นหลัก - ไม่จำเป็นต้องมีขั้นตอนการสร้างสำหรับเนื้อหา
+คลังข้อมูลนี้เป็นเอกสารเป็นหลัก - ไม่จำเป็นต้องมีขั้นตอนการสร้างสำหรับเนื้อหา
 
 ### การสร้างแอปพลิเคชันตัวอย่าง
 
@@ -493,14 +519,14 @@ npm run pack
 **ตัวอย่าง Python:**
 ไม่มีขั้นตอนการสร้าง - ตัวอย่างจะถูกรันโดยตรงด้วย Python interpreter
 
-## ปัญหาทั่วไปและการแก้ไข
+## ปัญหาทั่วไปและการแก้ไขปัญหา
 
 > **เคล็ดลับ**: ตรวจสอบ [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues) สำหรับปัญหาและวิธีแก้ไขที่ทราบ
 
-### ปัญหาสำคัญ (Blocking)
+### ปัญหาสำคัญ (บล็อกการทำงาน)
 
 #### Foundry Local ไม่ทำงาน
-**ปัญหา:** ตัวอย่างล้มเหลวด้วยข้อผิดพลาดการเชื่อมต่อ
+**ปัญหา:** ตัวอย่างล้มเหลวพร้อมข้อผิดพลาดการเชื่อมต่อ
 
 **วิธีแก้ไข:**
 ```bash
@@ -508,7 +534,7 @@ npm run pack
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -520,7 +546,7 @@ foundry model ls
 curl http://localhost:<port>/v1/models
 ```
 
-### ปัญหาทั่วไป (Moderate)
+### ปัญหาทั่วไป (ปานกลาง)
 
 #### ปัญหา Python Virtual Environment
 **ปัญหา:** ข้อผิดพลาดการนำเข้าโมดูล
@@ -538,7 +564,7 @@ pip install -r requirements.txt
 ```
 
 #### ปัญหาการสร้าง Electron
-**ปัญหา:** npm install หรือ build ล้มเหลว
+**ปัญหา:** npm install หรือการสร้างล้มเหลว
 
 **วิธีแก้ไข:**
 ```bash
@@ -549,15 +575,15 @@ rm -rf node_modules package-lock.json
 npm install
 ```
 
-### ปัญหาเวิร์กโฟลว์ (Minor)
+### ปัญหากระบวนการทำงาน (เล็กน้อย)
 
-#### ความขัดแย้งในเวิร์กโฟลว์การแปล
-**ปัญหา:** Translation PR ขัดแย้งกับการเปลี่ยนแปลงของคุณ
+#### ความขัดแย้งใน Workflow การแปล
+**ปัญหา:** PR การแปลขัดแย้งกับการเปลี่ยนแปลงของคุณ
 
 **วิธีแก้ไข:**
 - แก้ไขเฉพาะไฟล์ต้นฉบับภาษาอังกฤษ
-- ปล่อยให้เวิร์กโฟลว์การแปลอัตโนมัติจัดการการแปล
-- หากเกิดความขัดแย้ง ให้ merge `main` เข้าสู่สาขาของคุณหลังจากการแปลถูก merge
+- ปล่อยให้ Workflow การแปลอัตโนมัติจัดการการแปล
+- หากเกิดความขัดแย้ง ให้รวม `main` เข้ากับสาขาของคุณหลังจากการแปลถูกรวม
 
 #### การดาวน์โหลดโมเดลล้มเหลว
 **ปัญหา:** Foundry Local ล้มเหลวในการดาวน์โหลดโมเดล
@@ -576,18 +602,19 @@ foundry model run <model-alias>
 ## ทรัพยากรเพิ่มเติม
 
 ### เส้นทางการเรียนรู้
-- **เส้นทางสำหรับผู้เริ่มต้น:** โมดูล 01-02 (7-9 ชั่วโมง)
+- **เส้นทางผู้เริ่มต้น:** โมดูล 01-02 (7-9 ชั่วโมง)
 - **เส้นทางระดับกลาง:** โมดูล 03-04 (9-11 ชั่วโมง)
 - **เส้นทางขั้นสูง:** โมดูล 05-07 (12-15 ชั่วโมง)
 - **เส้นทางผู้เชี่ยวชาญ:** โมดูล 08 (8-10 ชั่วโมง)
+- **เวิร์กช็อปแบบลงมือทำ:** วัสดุเวิร์กช็อป (6-8 ชั่วโมง)
 
-### เนื้อหาหลักของโมดูล
+### เนื้อหาโมดูลสำคัญ
 - **Module01:** พื้นฐาน EdgeAI และกรณีศึกษาในโลกจริง
 - **Module02:** ครอบครัวและสถาปัตยกรรม Small Language Model (SLM)
 - **Module03:** กลยุทธ์การปรับใช้ในเครื่องและคลาวด์
-- **Module04:** การปรับแต่งโมเดลด้วยเฟรมเวิร์กหลายตัว
+- **Module04:** การปรับแต่งโมเดลด้วยเฟรมเวิร์คหลายตัว (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
 - **Module05:** SLMOps - การดำเนินงานในระดับการผลิต
-- **Module06:** AI agents และการเรียกฟังก์ชัน
+- **Module06:** ตัวแทน AI และการเรียกฟังก์ชัน
 - **Module07:** การใช้งานเฉพาะแพลตฟอร์ม
 - **Module08:** เครื่องมือ Foundry Local พร้อมตัวอย่างที่ครอบคลุม 10 ตัวอย่าง
 
@@ -596,62 +623,70 @@ foundry model run <model-alias>
   - [เอกสาร](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
   - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [JavaScript SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
-- [Llama.cpp](https://github.com/ggml-org/llama.cpp) - เฟรมเวิร์กการปรับแต่ง
+- [Llama.cpp](https://github.com/ggml-org/llama.cpp) - เฟรมเวิร์คการปรับแต่ง
 - [Microsoft Olive](https://microsoft.github.io/Olive/) - เครื่องมือปรับแต่งโมเดล
-- [OpenVINO](https://docs.openvino.ai/) - เครื่องมือปรับแต่งของ Intel
+- [OpenVINO
+10. **10-Foundry Tools Framework** - การผสาน LangChain/Semantic Kernel
 
-## หมายเหตุเฉพาะโครงการ
+### ตัวอย่างแอปพลิเคชันในเวิร์กช็อป
 
-### แอปพลิเคชันตัวอย่าง Module08
+เวิร์กช็อปประกอบด้วย 6 เซสชันที่มีการพัฒนาอย่างต่อเนื่องพร้อมการใช้งานจริง:
 
-Repository นี้รวมตัวอย่างแอปพลิเคชันที่ครอบคลุม 10 ตัวอย่าง:
+1. **เซสชัน 01** - การเริ่มต้นแชทด้วยการผสาน Foundry Local
+2. **เซสชัน 02** - การประเมินและการสร้าง RAG pipeline ด้วย RAGAS
+3. **เซสชัน 03** - การเปรียบเทียบประสิทธิภาพของโมเดลโอเพ่นซอร์ส
+4. **เซสชัน 04** - การเปรียบเทียบและการเลือกโมเดล
+5. **เซสชัน 05** - ระบบการจัดการหลายตัวแทน
+6. **เซสชัน 06** - การจัดการเส้นทางโมเดลและ pipeline
 
-1. **01-REST Chat Quickstart** - การผสานรวม SDK OpenAI เบื้องต้น
-2. **02-OpenAI SDK Integration** - ฟีเจอร์ SDK ขั้นสูง
+ตัวอย่างแต่ละตัวแสดงให้เห็นถึงแง่มุมต่าง ๆ ของการพัฒนา Edge AI ด้วย Foundry Local
 
-- การประมวลผลแบบโลคอลให้เวลาตอบสนอง 50-500 มิลลิวินาที  
-- เทคนิคการลดขนาดข้อมูลช่วยลดขนาดได้ถึง 75% พร้อมรักษาประสิทธิภาพไว้ 85%  
-- ความสามารถในการสนทนาแบบเรียลไทม์ด้วยโมเดลโลคอล  
+### ข้อควรพิจารณาด้านประสิทธิภาพ
 
-### ความปลอดภัยและความเป็นส่วนตัว  
+- SLMs ถูกปรับแต่งเพื่อการใช้งานใน edge (RAM 2-16GB)
+- การประมวลผลในเครื่องให้เวลาตอบสนอง 50-500ms
+- เทคนิคการลดขนาดช่วยลดขนาดลง 75% พร้อมรักษาประสิทธิภาพไว้ 85%
+- ความสามารถในการสนทนาแบบเรียลไทม์ด้วยโมเดลในเครื่อง
 
-- การประมวลผลทั้งหมดเกิดขึ้นในเครื่อง - ไม่มีการส่งข้อมูลไปยังคลาวด์  
-- เหมาะสำหรับแอปพลิเคชันที่ต้องการความเป็นส่วนตัว (เช่น การดูแลสุขภาพ การเงิน)  
-- ตรงตามข้อกำหนดด้านอธิปไตยของข้อมูล  
-- Foundry Local ทำงานทั้งหมดบนฮาร์ดแวร์ในเครื่อง  
+### ความปลอดภัยและความเป็นส่วนตัว
 
-## การขอความช่วยเหลือ  
+- การประมวลผลทั้งหมดเกิดขึ้นในเครื่อง - ไม่มีการส่งข้อมูลไปยังคลาวด์
+- เหมาะสำหรับแอปพลิเคชันที่ต้องการความเป็นส่วนตัว (สุขภาพ, การเงิน)
+- ตรงตามข้อกำหนดด้านอธิปไตยของข้อมูล
+- Foundry Local ทำงานทั้งหมดบนฮาร์ดแวร์ในเครื่อง
 
-### เอกสาร  
+## การขอความช่วยเหลือ
 
-- **README หลัก**: [README.md](README.md) - ภาพรวมของที่เก็บข้อมูลและเส้นทางการเรียนรู้  
-- **คู่มือการศึกษา**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - แหล่งข้อมูลการเรียนรู้และไทม์ไลน์  
-- **การสนับสนุน**: [SUPPORT.md](SUPPORT.md) - วิธีการขอความช่วยเหลือ  
-- **ความปลอดภัย**: [SECURITY.md](SECURITY.md) - การรายงานปัญหาด้านความปลอดภัย  
+### เอกสาร
 
-### การสนับสนุนจากชุมชน  
+- **README หลัก**: [README.md](README.md) - ภาพรวมของ repository และเส้นทางการเรียนรู้
+- **คู่มือการศึกษา**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - ทรัพยากรการเรียนรู้และไทม์ไลน์
+- **การสนับสนุน**: [SUPPORT.md](SUPPORT.md) - วิธีการขอความช่วยเหลือ
+- **ความปลอดภัย**: [SECURITY.md](SECURITY.md) - การรายงานปัญหาด้านความปลอดภัย
 
-- **GitHub Issues**: [รายงานบั๊กหรือขอฟีเจอร์](https://github.com/microsoft/edgeai-for-beginners/issues)  
-- **GitHub Discussions**: [ถามคำถามและแบ่งปันไอเดีย](https://github.com/microsoft/edgeai-for-beginners/discussions)  
-- **Foundry Local Issues**: [ปัญหาทางเทคนิคเกี่ยวกับ Foundry Local](https://github.com/microsoft/Foundry-Local/issues)  
+### การสนับสนุนจากชุมชน
 
-### ติดต่อ  
+- **GitHub Issues**: [รายงานบั๊กหรือขอฟีเจอร์](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **GitHub Discussions**: [ถามคำถามและแบ่งปันไอเดีย](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **Foundry Local Issues**: [ปัญหาทางเทคนิคเกี่ยวกับ Foundry Local](https://github.com/microsoft/Foundry-Local/issues)
 
-- **ผู้ดูแล**: ดู [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)  
-- **ปัญหาด้านความปลอดภัย**: ปฏิบัติตามการเปิดเผยอย่างรับผิดชอบใน [SECURITY.md](SECURITY.md)  
-- **การสนับสนุนจาก Microsoft**: สำหรับการสนับสนุนระดับองค์กร ติดต่อฝ่ายบริการลูกค้า Microsoft  
+### ติดต่อ
 
-### แหล่งข้อมูลเพิ่มเติม  
+- **ผู้ดูแล**: ดู [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
+- **ปัญหาด้านความปลอดภัย**: ปฏิบัติตามการเปิดเผยอย่างรับผิดชอบใน [SECURITY.md](SECURITY.md)
+- **การสนับสนุนจาก Microsoft**: สำหรับการสนับสนุนระดับองค์กร ติดต่อฝ่ายบริการลูกค้า Microsoft
 
-- **Microsoft Learn**: [เส้นทางการเรียนรู้ AI และ Machine Learning](https://learn.microsoft.com/training/browse/?products=ai-services)  
-- **เอกสาร Foundry Local**: [เอกสารอย่างเป็นทางการ](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)  
-- **ตัวอย่างจากชุมชน**: ตรวจสอบ [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) สำหรับการมีส่วนร่วมจากชุมชน  
+### ทรัพยากรเพิ่มเติม
+
+- **Microsoft Learn**: [เส้นทางการเรียนรู้ AI และ Machine Learning](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **เอกสาร Foundry Local**: [เอกสารอย่างเป็นทางการ](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **ตัวอย่างจากชุมชน**: ตรวจสอบ [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) สำหรับการมีส่วนร่วมจากชุมชน
 
 ---
 
-**นี่คือที่เก็บข้อมูลเพื่อการศึกษา โดยมุ่งเน้นการสอนการพัฒนา Edge AI รูปแบบการมีส่วนร่วมหลักคือการปรับปรุงเนื้อหาการศึกษาและเพิ่ม/ปรับปรุงแอปพลิเคชันตัวอย่างที่แสดงแนวคิด Edge AI**  
+**นี่คือ repository เพื่อการศึกษาโดยมุ่งเน้นการสอนการพัฒนา Edge AI รูปแบบการมีส่วนร่วมหลักคือการปรับปรุงเนื้อหาการศึกษาและการเพิ่ม/ปรับปรุงตัวอย่างแอปพลิเคชันที่แสดงแนวคิด Edge AI**
 
 ---
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลสำคัญ ขอแนะนำให้ใช้บริการแปลภาษามืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
