@@ -7,6 +7,10 @@ Metrics used: answer_relevancy, faithfulness, context_precision.
 NOTE: This is a minimal demonstration; in real scenarios you would build a
 larger evaluation dataset and possibly persist results.
 
+Usage:
+  From inside the Workshop/Samples directory, run:
+    python -m session02.rag_eval_ragas
+
 Environment Variables:
   FOUNDRY_LOCAL_ALIAS=phi-4-mini     # Model for generation
   EMBED_MODEL=sentence-transformers/... # Embedding model
@@ -18,14 +22,14 @@ SDK Reference:
 from __future__ import annotations
 import os
 import sys
-from workshop_utils import get_client, chat_once
+from utils.workshop_utils import get_client, chat_once
 
 try:
     from sentence_transformers import SentenceTransformer
     from ragas import evaluate
     from ragas.metrics import answer_relevancy, faithfulness, context_precision
     from datasets import Dataset
-    import numpy as np
+    from langchain_openai import ChatOpenAI
 except ImportError as e:
     print(f"[ERROR] Missing required package: {e}")
     print("[INFO] Install with: pip install sentence-transformers ragas datasets numpy")
@@ -51,7 +55,7 @@ alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")
 
 try:
-    _, client, model_id = get_client(alias, endpoint=endpoint)
+    manager, client, model_id = get_client(alias, endpoint=endpoint)
 except Exception as e:
     print(f"[ERROR] Failed to initialize Foundry Local client: {e}")
     sys.exit(1)
@@ -65,6 +69,12 @@ try:
 except Exception as e:
     print(f"[ERROR] Failed to initialize embedding model: {e}")
     sys.exit(1)
+
+class LocalEmbeddings:
+    def embed_documents(self, texts):
+        return embedder.encode(texts, convert_to_numpy=True, normalize_embeddings=True).tolist()
+    def embed_query(self, text):
+        return embedder.encode([text], convert_to_numpy=True, normalize_embeddings=True)[0].tolist()
 
 def retrieve(query: str, k: int = 2):
     q_emb = embedder.encode([query], convert_to_numpy=True, normalize_embeddings=True)[0]
@@ -89,16 +99,17 @@ for q, gt in zip(QUESTIONS, GROUND_TRUTH):
         "question": q,
         "answer": ans,
         "contexts": ctxs,
-        "ground_truths": [gt]
+        "ground_truths": [gt],
+        "reference": gt
     })
 
 try:
+    ragas_llm = ChatOpenAI(model=model_id, base_url=manager.endpoint, api_key=manager.api_key or 'not-needed', temperature=0.0, timeout=60)
     ds = Dataset.from_list(records)
     print("[INFO] Running RAGAS evaluation...")
-    results = evaluate(ds, metrics=[answer_relevancy, faithfulness, context_precision])
+    results = evaluate(ds, metrics=[answer_relevancy, faithfulness, context_precision], llm=ragas_llm, embeddings=LocalEmbeddings())
     print("\n[RAGAS EVALUATION RESULTS]")
-    for k, v in results.items():
-        print(f"  {k}: {v:.4f}" if isinstance(v, float) else f"  {k}: {v}")
+    print(results)
 except Exception as e:
     print(f"[ERROR] Evaluation failed: {e}")
     sys.exit(1)

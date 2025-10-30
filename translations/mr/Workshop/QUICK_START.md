@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T09:18:47+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T21:10:58+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "mr"
 }
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### सत्र 01: मूलभूत चॅट
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **पर्यावरणीय व्हेरिएबल्स:**
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### सत्र 02: RAG पाइपलाइन
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **पर्यावरणीय व्हेरिएबल्स:**
@@ -77,33 +77,34 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### सत्र 02: RAG मूल्यांकन (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**टीप**: अतिरिक्त dependencies `requirements.txt` द्वारे स्थापित करणे आवश्यक आहे
+**टीप**: `requirements.txt` द्वारे अतिरिक्त dependencies स्थापित करणे आवश्यक आहे
 
 ### सत्र 03: बेंचमार्किंग
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **पर्यावरणीय व्हेरिएबल्स:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**आउटपुट**: JSON ज्यामध्ये latency, throughput, आणि first-token मेट्रिक्स आहेत
+**आउटपुट**: JSON ज्यामध्ये विलंब, थ्रूपुट, आणि पहिल्या टोकनचे मेट्रिक्स आहेत
 
 ### सत्र 04: मॉडेल तुलना
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **पर्यावरणीय व्हेरिएबल्स:**
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### सत्र 05: मल्टी-एजंट ऑर्केस्ट्रेशन
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **पर्यावरणीय व्हेरिएबल्स:**
@@ -130,19 +131,19 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### सत्र 06: मॉडेल राउटर
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**राउटिंग लॉजिकची चाचणी** अनेक intents (कोड, सारांश, वर्गीकरण) सह
+**राउटिंग लॉजिकची चाचणी** अनेक हेतूंसाठी (कोड, सारांश, वर्गीकरण)
 
 ### सत्र 06: पाइपलाइन
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**जटिल बहु-स्टेप पाइपलाइन** नियोजन, अंमलबजावणी, आणि सुधारणा यासह
+**जटिल बहु-चरण पाइपलाइन** नियोजन, अंमलबजावणी, आणि सुधारणा यासह
 
 ## स्क्रिप्ट्स
 
@@ -165,7 +166,7 @@ python export_benchmark_markdown.py \
 python lint_markdown_cli.py --verbose
 ```
 
-**उद्देश**: दस्तऐवजामध्ये कालबाह्य CLI पॅटर्न्स शोधा
+**उद्देश**: दस्तऐवजामध्ये कालबाह्य CLI पॅटर्न शोधा
 
 ## चाचणी
 
@@ -228,22 +229,22 @@ foundry model run phi-4-mini
 
 ### मुख्य कॉन्फिगरेशन
 | व्हेरिएबल | डीफॉल्ट | वर्णन |
-|-----------|---------|-------|
-| `FOUNDRY_LOCAL_ALIAS` | बदलते | वापरण्यासाठी मॉडेल alias |
-| `FOUNDRY_LOCAL_ENDPOINT` | ऑटो | सेवा endpoint override करा |
+|----------|---------|-------------|
+| `FOUNDRY_LOCAL_ALIAS` | बदलते | वापरण्यासाठी मॉडेल उपनाम |
+| `FOUNDRY_LOCAL_ENDPOINT` | ऑटो | सेवा endpoint ओव्हरराइड करा |
 | `SHOW_USAGE` | `0` | टोकन वापर आकडेवारी दर्शवा |
 | `RETRY_ON_FAIL` | `1` | पुनर्प्रयत्न लॉजिक सक्षम करा |
 | `RETRY_BACKOFF` | `1.0` | प्रारंभिक पुनर्प्रयत्न विलंब (सेकंद) |
 
 ### सत्र-विशिष्ट
 | व्हेरिएबल | डीफॉल्ट | वर्णन |
-|-----------|---------|-------|
+|----------|---------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | एम्बेडिंग मॉडेल |
 | `RAG_QUESTION` | नमुना पहा | RAG चाचणी प्रश्न |
-| `BENCH_MODELS` | बदलते | कॉमा-वेगळे मॉडेल्स |
+| `BENCH_MODELS` | बदलते | अल्पविरामाने विभाजित मॉडेल्स |
 | `BENCH_ROUNDS` | `3` | बेंचमार्क पुनरावृत्ती |
 | `BENCH_PROMPT` | नमुना पहा | बेंचमार्क प्रॉम्प्ट |
-| `BENCH_STREAM` | `0` | प्रथम-टोकन latency मोजा |
+| `BENCH_STREAM` | `0` | पहिल्या टोकन विलंब मोजा |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | प्राथमिक एजंट मॉडेल |
 | `AGENT_MODEL_EDITOR` | प्राथमिक | संपादक एजंट मॉडेल |
 | `SLM_ALIAS` | `phi-4-mini` | लहान भाषा मॉडेल |
@@ -267,7 +268,7 @@ foundry model run phi-4-mini
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
-## मदत मिळवणे
+## मदत मिळवा
 
 1. सेवा स्थिती तपासा: `foundry service status`
 2. लॉग पहा: Foundry Local सेवा लॉग तपासा
@@ -279,7 +280,7 @@ foundry model run phi-4-mini
 1. सर्व कार्यशाळा सत्रे क्रमाने पूर्ण करा
 2. वेगवेगळ्या मॉडेल्ससह प्रयोग करा
 3. तुमच्या उपयोग प्रकरणांसाठी नमुने सुधारित करा
-4. `SDK_MIGRATION_NOTES.md` पुनरावलोकन करा प्रगत पॅटर्नसाठी
+4. प्रगत पॅटर्नसाठी `SDK_MIGRATION_NOTES.md` पुनरावलोकन करा
 
 ---
 
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **अस्वीकरण**:  
-हा दस्तऐवज [Co-op Translator](https://github.com/Azure/co-op-translator) या एआय भाषांतर सेवेचा वापर करून भाषांतरित करण्यात आला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित भाषांतरांमध्ये त्रुटी किंवा अचूकतेचा अभाव असू शकतो. मूळ भाषेतील दस्तऐवज हा अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी भाषांतराची शिफारस केली जाते. या भाषांतराचा वापर केल्यामुळे उद्भवलेल्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार राहणार नाही.
+हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित करण्यात आला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपयास लक्षात ठेवा की स्वयंचलित भाषांतरे त्रुटी किंवा अचूकतेच्या अभावाने युक्त असू शकतात. मूळ भाषेतील दस्तऐवज हा अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी, व्यावसायिक मानवी भाषांतराची शिफारस केली जाते. या भाषांतराचा वापर करून उद्भवलेल्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार राहणार नाही.

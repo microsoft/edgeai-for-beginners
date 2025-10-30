@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T15:16:33+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T23:09:21+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "ro"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Exemplele din Workshop utilizează variabile de mediu pentru configurare, centralizate în fișierul `.env` aflat la rădăcina depozitului. Acest lucru permite personalizarea ușoară fără a modifica codul.
 
-## Start Rapid
+## Început Rapid
 
 ### 1. Verifică Cerințele Prealabile
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. Configurează Mediul
 
-Fișierul `.env` este deja configurat cu valori implicite rezonabile. Majoritatea utilizatorilor nu vor trebui să modifice nimic.
+Fișierul `.env` este deja configurat cu valori implicite rezonabile. Majoritatea utilizatorilor nu vor trebui să schimbe nimic.
 
 **Opțional**: Revizuiește și personalizează setările:
 ```bash
@@ -39,12 +39,12 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Aplică Configurația
+### 3. Aplică Configurarea
 
 **Pentru Scripturi Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -61,13 +61,13 @@ python chat_bootstrap.py
 | Variabilă | Implicit | Descriere |
 |-----------|----------|-----------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Model implicit pentru exemple |
-| `FOUNDRY_LOCAL_ENDPOINT` | (gol) | Suprascrie endpoint-ul serviciului |
+| `FOUNDRY_LOCAL_ENDPOINT` | (gol) | Suprascrie punctul de acces al serviciului |
 | `PYTHONPATH` | Căi Workshop | Calea de căutare a modulelor Python |
 
 **Când să setezi FOUNDRY_LOCAL_ENDPOINT:**
 - Instanță Foundry Local la distanță
-- Configurare port personalizată
-- Separare dezvoltare/producție
+- Configurare personalizată a portului
+- Separarea dezvoltării/producerii
 
 **Exemplu:**
 ```bash
@@ -89,27 +89,27 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sesiunea 03: Benchmarking
 | Variabilă | Implicit | Scop |
 |-----------|----------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modele pentru benchmarking |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modele pentru benchmarking |
 | `BENCH_ROUNDS` | `3` | Iterații per model |
 | `BENCH_PROMPT` | Pre-configurat | Prompt de test |
-| `BENCH_STREAM` | `0` | Măsoară latența primului token |
+| `BENCH_STREAM` | `0` | Măsurarea latenței primului token |
 
-#### Sesiunea 04: Compararea Modelelor
+#### Sesiunea 04: Compararea Modelului
 | Variabilă | Implicit | Scop |
 |-----------|----------|------|
 | `SLM_ALIAS` | `phi-4-mini` | Model de limbaj mic |
 | `LLM_ALIAS` | `qwen2.5-7b` | Model de limbaj mare |
 | `COMPARE_PROMPT` | Pre-configurat | Prompt de comparație |
-| `COMPARE_RETRIES` | `2` | Încercări suplimentare |
+| `COMPARE_RETRIES` | `2` | Încercări repetate |
 
-#### Sesiunea 05: Orchestrare Multi-Agent
+#### Sesiunea 05: Orchestrarea Multi-Agent
 | Variabilă | Implicit | Scop |
 |-----------|----------|------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Model agent cercetător |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Model agent editor |
 | `AGENT_QUESTION` | Pre-configurat | Întrebare de test |
 
-### Configurare pentru Fiabilitate
+### Configurare de Fiabilitate
 
 | Variabilă | Implicit | Scop |
 |-----------|----------|------|
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Configurare pentru Benchmarking
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -159,7 +159,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ## Modele Recomandate
 
-### După Caz de Utilizare
+### După Scop
 
 **Scop General:**
 - `phi-4-mini` - Echilibru între calitate și viteză
@@ -168,13 +168,13 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `qwen2.5-0.5b` - Foarte rapid, bun pentru clasificare
 - `phi-4-mini` - Rapid cu o calitate bună
 
-**Calitate Înaltă:**
-- `qwen2.5-7b` - Cea mai bună calitate, utilizare mai mare de resurse
+**Calitate Ridicată:**
+- `qwen2.5-7b` - Cea mai bună calitate, consum mai mare de resurse
 - `phi-4-mini` - Calitate bună, resurse mai reduse
 
 **Generare de Cod:**
 - `deepseek-coder-1.3b` - Specializat pentru cod
-- `phi-4-mini` - General pentru codare
+- `phi-4-mini` - Codare generală
 
 ### După Disponibilitatea Resurselor
 
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## Configurare Avansată
 
-### Endpoint-uri Personalizate
+### Puncte de Acces Personalizate
 
 ```bash
 # Development environment
@@ -239,7 +239,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ### Variabile de Mediu Neîncărcate
 
 **Simptome:**
-- Scripturile folosesc modele greșite
+- Scripturile utilizează modele greșite
 - Erori de conexiune
 - Variabile nerecunoscute
 
@@ -263,7 +263,7 @@ pwd  # Should be in Workshop or repository root
 
 **Simptome:**
 - Erori "Connection refused"
-- "Service not available"
+- "Serviciu indisponibil"
 - Erori de timeout
 
 **Soluții:**
@@ -282,11 +282,11 @@ foundry service status | grep "Port"
 FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ```
 
-### Model Inexistent
+### Modelul Nu Este Găsit
 
 **Simptome:**
 - Erori "Model not found"
-- "Alias not recognized"
+- "Alias nerecunoscut"
 
 **Soluții:**
 ```bash
@@ -304,22 +304,19 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Simptome:**
 - Erori "Module not found"
-- "Cannot import workshop_utils"
 
 **Soluții:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
-## Testarea Configurației
+## Testarea Configurării
 
 ### Verifică Încărcarea Mediului
 
@@ -366,7 +363,7 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## Cele Mai Bune Practici de Securitate
+## Practici de Securitate Recomandate
 
 ### 1. Nu Comite Niciodată Secrete
 
@@ -404,23 +401,23 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ## Documentația SDK
 
-- **Depozit Principal**: https://github.com/microsoft/Foundry-Local
+- **Depozitul Principal**: https://github.com/microsoft/Foundry-Local
 - **SDK Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Documentație API**: Verifică depozitul SDK pentru cele mai recente informații
+- **Documentația API**: Verifică depozitul SDK pentru cele mai recente informații
 
 ## Resurse Suplimentare
 
-- `QUICK_START.md` - Ghid de început rapid
-- `SDK_MIGRATION_NOTES.md` - Detalii despre actualizările SDK
+- `QUICK_START.md` - Ghid de început
+- `SDK_MIGRATION_NOTES.md` - Detalii despre actualizarea SDK
 - `Workshop/samples/*/README.md` - Ghiduri specifice exemplelor
 
 ---
 
-**Ultima Actualizare**: 2025-01-08  
+**Ultima actualizare**: 2025-01-08  
 **Versiune**: 2.0  
-**SDK**: Foundry Local Python SDK (ultimul)
+**SDK**: Foundry Local Python SDK (latest)
 
 ---
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1b3c0fecfd713c2df903a0633249dc9",
-  "translation_date": "2025-10-08T21:39:16+00:00",
+  "original_hash": "d9e354c0182311726dc037a8809524e2",
+  "translation_date": "2025-10-28T21:41:55+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "pl"
 }
 -->
-# Sesja 4: Eksploracja Nowoczesnych Modeli – LLM, SLM i Inference na Urządzeniu
+# Sesja 4: Eksploracja najnowocześniejszych modeli – LLM, SLM i inferencja na urządzeniu
 
 ## Streszczenie
 
-Porównaj Duże Modele Językowe (LLM) i Małe Modele Językowe (SLM) w scenariuszach lokalnych i chmurowych. Poznaj wzorce wdrożeniowe wykorzystujące przyspieszenie ONNX Runtime, wykonanie WebGPU oraz hybrydowe doświadczenia RAG. W programie demo Chainlit RAG z lokalnym modelem oraz opcjonalna eksploracja OpenWebUI. Zaadaptujesz starter inference WebGPU i ocenisz możliwości oraz kompromisy koszt/wydajność Phi vs GPT-OSS-20B.
+Porównaj Duże Modele Językowe (LLM) i Małe Modele Językowe (SLM) w scenariuszach inferencji lokalnej i w chmurze. Poznaj wzorce wdrożeniowe wykorzystujące przyspieszenie ONNX Runtime, wykonanie WebGPU oraz hybrydowe doświadczenia RAG. Zawiera demonstrację Chainlit RAG z lokalnym modelem oraz opcjonalną eksplorację OpenWebUI. Dostosujesz starter inferencji WebGPU i ocenisz możliwości Phi w porównaniu z GPT-OSS-20B pod kątem kompromisów między kosztami a wydajnością.
 
 ## Cele nauki
 
 - **Porównaj** SLM i LLM pod względem opóźnienia, pamięci i jakości
 - **Wdróż** modele z ONNXRuntime i (gdzie obsługiwane) WebGPU
-- **Uruchom** inference w przeglądarce (interaktywne demo z zachowaniem prywatności)
+- **Uruchom** inferencję w przeglądarce (interaktywna demonstracja z zachowaniem prywatności)
 - **Zintegruj** pipeline Chainlit RAG z lokalnym backendem SLM
 - **Oceń** za pomocą lekkich heurystyk jakości i kosztów
 
@@ -25,27 +25,27 @@ Porównaj Duże Modele Językowe (LLM) i Małe Modele Językowe (SLM) w scenariu
 
 - Ukończone sesje 1–3
 - Zainstalowany `chainlit` (już w `requirements.txt` dla Module08)
-- Przeglądarka obsługująca WebGPU (Edge / Chrome najnowsza wersja na Windows 11)
+- Przeglądarka obsługująca WebGPU (Edge / Chrome w najnowszej wersji na Windows 11)
 - Działający Foundry Local (`foundry status`)
 
 ### Uwagi dotyczące różnych platform
 
-Windows pozostaje głównym środowiskiem docelowym. Dla deweloperów macOS oczekujących na natywne binaria:
+Windows pozostaje głównym środowiskiem docelowym. Dla deweloperów korzystających z macOS, którzy czekają na natywne pliki binarne:
 1. Uruchom Foundry Local w maszynie wirtualnej Windows 11 (Parallels / UTM) LUB na zdalnej stacji roboczej Windows.
 2. Udostępnij usługę (domyślny port 5273) i ustaw na macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-3. Użyj tych samych kroków dotyczących wirtualnego środowiska Python co w poprzednich sesjach.
+3. Użyj tych samych kroków konfiguracji wirtualnego środowiska Python co w poprzednich sesjach.
 
 Instalacja Chainlit (obie platformy):
 ```bash
 pip install chainlit
 ```
 
-## Przebieg demo (30 min)
+## Przebieg demonstracji (30 min)
 
-### 1. Porównanie Phi (SLM) vs GPT-OSS-20B (LLM) (6 min)
+### 1. Porównanie Phi (SLM) z GPT-OSS-20B (LLM) (6 min)
 
 ```powershell
 foundry model run phi-4-mini
@@ -67,15 +67,16 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 ```powershell
 foundry config set compute.onnx.enable_gpu true
 # Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
-Obserwuj zmiany przepustowości po włączeniu GPU w porównaniu do tylko CPU.
+Obserwuj zmiany przepustowości po włączeniu GPU w porównaniu z samym CPU.
 
-### 3. Inference WebGPU w przeglądarce (6 min)
+### 3. Inferencja WebGPU w przeglądarce (6 min)
 
-Zaadaptuj starter `04-webgpu-inference` (utwórz `samples/04-cutting-edge/webgpu_demo.html`):
+Dostosuj starter `04-webgpu-inference` (utwórz `samples/04-cutting-edge/webgpu_demo.html`):
 
 ```html
 <!DOCTYPE html>
@@ -116,9 +117,9 @@ Zaadaptuj starter `04-webgpu-inference` (utwórz `samples/04-cutting-edge/webgpu
 </html>
 ```
 
-Otwórz plik w przeglądarce; obserwuj lokalny roundtrip o niskim opóźnieniu.
+Otwórz plik w przeglądarce; obserwuj lokalny cykl o niskim opóźnieniu.
 
-### 4. Aplikacja Chat Chainlit RAG (7 min)
+### 4. Aplikacja czatu Chainlit RAG (7 min)
 
 Minimalny `samples/04-cutting-edge/chainlit_app.py`:
 
@@ -162,11 +163,11 @@ Uruchom:
 chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ```
 
-### 5. Projekt startowy: Adaptacja `04-webgpu-inference` (6 min)
+### 5. Projekt startowy: Dostosowanie `04-webgpu-inference` (6 min)
 
 Rezultaty:
-- Zastąp logikę pobierania placeholder streamingiem tokenów (użyj wariantu endpointu `stream=True`, gdy będzie dostępny)
-- Dodaj wykres opóźnienia (po stronie klienta) dla przełączania phi vs gpt-oss-20b
+- Zastąp logikę pobierania placeholderów strumieniowymi tokenami (użyj wariantu endpointu `stream=True`, gdy będzie dostępny)
+- Dodaj wykres opóźnienia (po stronie klienta) dla przełączników phi vs gpt-oss-20b
 - Osadź kontekst RAG inline (textarea dla dokumentów referencyjnych)
 
 ## Heurystyki oceny
@@ -174,10 +175,10 @@ Rezultaty:
 | Kategoria | Phi-4-mini | GPT-OSS-20B | Obserwacja |
 |-----------|------------|-------------|------------|
 | Opóźnienie (zimny start) | Szybkie | Wolniejsze | SLM szybko się rozgrzewa |
-| Pamięć | Niska | Wysoka | Możliwość na urządzeniu |
-| Zgodność z kontekstem | Dobra | Silna | Większy model może być bardziej rozwlekły |
-| Koszt (lokalny) | Minimalny | Wyższy (zasoby) | Kompromis energia/czas |
-| Najlepsze zastosowanie | Aplikacje brzegowe | Głębokie rozumowanie | Możliwy hybrydowy pipeline |
+| Pamięć | Niska | Wysoka | Możliwość użycia na urządzeniu |
+| Zgodność z kontekstem | Dobra | Silna | Większy model może być bardziej rozbudowany |
+| Koszt (lokalnie) | Minimalny | Wyższy (zasoby) | Kompromis energia/czas |
+| Najlepsze zastosowanie | Aplikacje brzegowe | Głębokie rozumowanie | Możliwa hybrydowa pipeline |
 
 ## Walidacja środowiska
 
@@ -187,17 +188,18 @@ foundry model list
 
 # For runtime metrics use the Python benchmark script (Session 3) and OS tools (Task Manager / nvidia-smi) instead of 'model stats'
 # Example:
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini,gpt-oss-20b
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 ## Rozwiązywanie problemów
 
 | Objaw | Przyczyna | Działanie |
 |-------|-----------|-----------|
-| Nieudane pobieranie strony | CORS lub usługa nie działa | Użyj `curl`, aby zweryfikować endpoint; włącz proxy CORS, jeśli potrzebne |
-| Pusty Chainlit | Środowisko nieaktywne | Aktywuj venv i ponownie zainstaluj zależności |
-| Wysokie opóźnienie | Model właśnie załadowany | Rozgrzej małą sekwencją promptów |
+| Nieudane pobranie strony | CORS lub usługa nie działa | Użyj `curl`, aby zweryfikować endpoint; włącz proxy CORS, jeśli to konieczne |
+| Pusty ekran Chainlit | Środowisko nieaktywne | Aktywuj venv i ponownie zainstaluj zależności |
+| Wysokie opóźnienie | Model właśnie załadowany | Rozgrzej krótką sekwencją podpowiedzi |
 
 ## Źródła
 
@@ -212,14 +214,14 @@ foundry model list
 
 ## Przykładowy scenariusz i mapowanie warsztatów
 
-| Artefakty warsztatowe | Scenariusz | Cel | Źródło danych / promptów |
-|-----------------------|------------|-----|--------------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Zespół architektoniczny oceniający SLM vs LLM dla generatora podsumowań dla kadry zarządzającej | Ilościowe porównanie opóźnienia + użycia tokenów | Pojedyncza zmienna środowiskowa `COMPARE_PROMPT` |
-| `chainlit_app.py` (demo RAG) | Prototyp asystenta wiedzy wewnętrznej | Ugruntowanie krótkich odpowiedzi przy minimalnym wyszukiwaniu leksykalnym | Lista `DOCS` inline w pliku |
-| `webgpu_demo.html` | Futurystyczny podgląd inference w przeglądarce na urządzeniu | Pokaz lokalnego roundtrip o niskim opóźnieniu + narracja UX | Tylko prompt użytkownika na żywo |
+| Artefakty warsztatowe | Scenariusz | Cel | Źródło danych / podpowiedzi |
+|-----------------------|------------|-----|-----------------------------|
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Zespół architektury oceniający SLM vs LLM dla generatora podsumowań dla kadry kierowniczej | Ilościowe porównanie opóźnienia + zużycia tokenów | Pojedyncza zmienna środowiskowa `COMPARE_PROMPT` |
+| `chainlit_app.py` (demo RAG) | Prototyp asystenta wiedzy wewnętrznej | Ugruntowanie krótkich odpowiedzi przy minimalnym wyszukiwaniu leksykalnym | Lista `DOCS` w pliku |
+| `webgpu_demo.html` | Futurystyczny podgląd inferencji w przeglądarce na urządzeniu | Pokaz lokalnego cyklu o niskim opóźnieniu + narracja UX | Tylko bieżące podpowiedzi użytkownika |
 
 ### Narracja scenariusza
-Organizacja produktowa chce generator briefingów dla kadry zarządzającej. Lekki SLM (phi‑4‑mini) tworzy szkice podsumowań; większy LLM (gpt‑oss‑20b) może dopracowywać tylko raporty o wysokim priorytecie. Skrypty sesji rejestrują empiryczne opóźnienia i metryki tokenów, aby uzasadnić hybrydowy projekt, podczas gdy demo Chainlit ilustruje, jak ugruntowane wyszukiwanie utrzymuje odpowiedzi małego modelu zgodne z faktami. Strona koncepcyjna WebGPU zapewnia wizję pełnego przetwarzania po stronie klienta, gdy akceleracja przeglądarki dojrzeje.
+Organizacja produktowa chce generatora podsumowań dla kadry kierowniczej. Lekki SLM (phi‑4‑mini) tworzy szkice podsumowań; większy LLM (gpt‑oss‑20b) może dopracowywać tylko raporty o wysokim priorytecie. Skrypty sesji rejestrują empiryczne metryki opóźnienia i tokenów, aby uzasadnić hybrydowy projekt, podczas gdy demo Chainlit ilustruje, jak ugruntowane wyszukiwanie utrzymuje odpowiedzi małego modelu jako faktyczne. Strona koncepcyjna WebGPU zapewnia wizję pełnego przetwarzania po stronie klienta, gdy akceleracja przeglądarki dojrzeje.
 
 ### Minimalny kontekst RAG (Chainlit)
 ```python
@@ -243,20 +245,20 @@ else:
 
 ### Opcjonalne ulepszenia
 
-| Fokus | Ulepszenie | Dlaczego | Wskazówka implementacyjna |
-|-------|------------|----------|---------------------------|
-| Metryki porównawcze | Śledź użycie tokenów + opóźnienie pierwszego tokenu | Holistyczny widok wydajności | Użyj ulepszonego skryptu benchmarkowego (Sesja 3) z `BENCH_STREAM=1` |
-| Hybrydowy pipeline | Szkic SLM → Dopracowanie LLM | Redukcja opóźnienia i kosztów | Generuj z phi-4-mini, dopracuj podsumowanie za pomocą gpt-oss-20b |
-| Streaming UI | Lepszy UX w Chainlit | Informacje zwrotne w czasie rzeczywistym | Użyj `stream=True`, gdy lokalny streaming będzie dostępny; kumuluj fragmenty |
+| Skupienie | Ulepszenie | Dlaczego | Wskazówka implementacyjna |
+|-----------|------------|----------|---------------------------|
+| Metryki porównawcze | Śledzenie zużycia tokenów + opóźnienia pierwszego tokena | Holistyczny widok wydajności | Użyj ulepszonego skryptu benchmarkowego (Sesja 3) z `BENCH_STREAM=1` |
+| Hybrydowa pipeline | Szkic SLM → Dopracowanie LLM | Redukcja opóźnienia i kosztów | Generuj za pomocą phi-4-mini, dopracuj podsumowanie za pomocą gpt-oss-20b |
+| Interfejs użytkownika strumieniowego | Lepszy UX w Chainlit | Informacje zwrotne w czasie rzeczywistym | Użyj `stream=True`, gdy lokalne strumieniowanie będzie dostępne; gromadź fragmenty |
 | Cache WebGPU | Szybsza inicjalizacja JS | Redukcja kosztów rekompilacji | Cache skompilowanych artefaktów shaderów (przyszła funkcjonalność runtime) |
-| Deterministyczny zestaw QA | Sprawiedliwe porównanie modeli | Eliminacja zmienności | Stała lista promptów + `temperature=0` dla ocen |
-| Ocena wyników | Strukturalna perspektywa jakości | Wyjście poza anegdoty | Prosta rubryka: spójność / zgodność z faktami / zwięzłość (1–5) |
+| Deterministyczny zestaw QA | Sprawiedliwe porównanie modeli | Eliminacja zmienności | Stała lista podpowiedzi + `temperature=0` dla ocen |
+| Ocena wyników | Strukturalna analiza jakości | Wyjście poza anegdoty | Prosta rubryka: spójność / faktualność / zwięzłość (1–5) |
 | Uwagi dotyczące energii / zasobów | Dyskusja w klasie | Pokaz kompromisów | Użyj monitorów OS (`foundry system info`, Task Manager, `nvidia-smi`) + wyniki skryptów benchmarkowych |
-| Symulacja kosztów | Uzasadnienie przed chmurą | Planowanie skalowania | Mapuj tokeny na hipotetyczne ceny chmurowe dla narracji TCO |
-| Rozkład opóźnienia | Identyfikacja wąskich gardeł | Cel optymalizacji | Mierz przygotowanie promptu, wysłanie żądania, pierwszy token, pełne zakończenie |
+| Symulacja kosztów | Uzasadnienie przed chmurą | Planowanie skalowania | Mapuj tokeny na hipotetyczne ceny chmury dla narracji TCO |
+| Rozkład opóźnienia | Identyfikacja wąskich gardeł | Cel optymalizacji | Mierz przygotowanie podpowiedzi, wysyłanie żądań, pierwszy token, pełne zakończenie |
 | RAG + LLM jako zapas | Sieć bezpieczeństwa jakości | Poprawa trudnych zapytań | Jeśli długość odpowiedzi SLM < próg lub niska pewność → eskalacja |
 
-#### Przykładowy wzorzec Szkic/Dopracowanie Hybrydowe
+#### Przykładowy wzorzec hybrydowy Szkic/Dopracowanie
 
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], max_tokens=300, temperature=0.4)
@@ -279,4 +281,4 @@ Użyj spójnych ram pomiarowych dla modeli, aby zapewnić uczciwe porównania.
 ---
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż staramy się zapewnić dokładność, należy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.

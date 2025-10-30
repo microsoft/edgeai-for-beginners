@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T16:39:45+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T22:31:18+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "vi"
 }
 -->
-# Hướng Dẫn Bắt Đầu Nhanh Cho Workshop
+# Hướng Dẫn Bắt Đầu Nhanh Workshop
 
 ## Yêu Cầu Trước
 
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Phiên 01: Chat Cơ Bản
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Biến Môi Trường:**  
@@ -60,11 +60,11 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
 ```
 
-### Phiên 02: RAG Pipeline
+### Phiên 02: Quy trình RAG
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Biến Môi Trường:**  
@@ -74,24 +74,25 @@ set RAG_QUESTION="Why use RAG with local inference?"
 set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
-### Phiên 02: Đánh Giá RAG (Ragas)
+### Phiên 02: Đánh giá RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-**Lưu ý**: Yêu cầu cài đặt thêm các phụ thuộc qua `requirements.txt`
+**Lưu ý**: Yêu cầu cài đặt thêm các phụ thuộc thông qua `requirements.txt`
 
 ### Phiên 03: Đánh Giá Hiệu Năng
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Biến Môi Trường:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### Phiên 04: So Sánh Mô Hình
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Biến Môi Trường:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Phiên 05: Điều Phối Đa Tác Nhân
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Biến Môi Trường:**  
@@ -130,21 +131,21 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Phiên 06: Bộ Định Tuyến Mô Hình
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Kiểm tra logic định tuyến** với nhiều ý định (code, tóm tắt, phân loại)
+**Kiểm tra logic định tuyến** với nhiều ý định (mã, tóm tắt, phân loại)
 
-### Phiên 06: Pipeline
+### Phiên 06: Quy trình
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**Pipeline phức tạp nhiều bước** với lập kế hoạch, thực thi, và tinh chỉnh
+**Quy trình nhiều bước phức tạp** với lập kế hoạch, thực thi, và tinh chỉnh
 
-## Scripts
+## Tập Lệnh
 
 ### Xuất Báo Cáo Đánh Giá Hiệu Năng
 
@@ -169,7 +170,7 @@ python lint_markdown_cli.py --verbose
 
 ## Kiểm Tra
 
-### Kiểm Tra Nhanh
+### Kiểm Tra Sơ Bộ
 
 ```bash
 cd Workshop
@@ -180,7 +181,7 @@ python -m tests.smoke
 
 ## Xử Lý Sự Cố
 
-### Dịch Vụ Không Chạy
+### Dịch Vụ Không Hoạt Động
 
 ```bash
 # Check status
@@ -229,7 +230,7 @@ foundry model run phi-4-mini
 ### Cấu Hình Cốt Lõi
 | Biến | Mặc định | Mô tả |
 |------|----------|-------|
-| `FOUNDRY_LOCAL_ALIAS` | Thay đổi | Bí danh mô hình sử dụng |
+| `FOUNDRY_LOCAL_ALIAS` | Thay đổi | Bí danh mô hình để sử dụng |
 | `FOUNDRY_LOCAL_ENDPOINT` | Tự động | Ghi đè điểm cuối dịch vụ |
 | `SHOW_USAGE` | `0` | Hiển thị thống kê sử dụng token |
 | `RETRY_ON_FAIL` | `1` | Bật logic thử lại |
@@ -240,7 +241,7 @@ foundry model run phi-4-mini
 |------|----------|-------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Mô hình nhúng |
 | `RAG_QUESTION` | Xem mẫu | Câu hỏi kiểm tra RAG |
-| `BENCH_MODELS` | Thay đổi | Các mô hình phân tách bằng dấu phẩy |
+| `BENCH_MODELS` | Thay đổi | Các mô hình phân cách bằng dấu phẩy |
 | `BENCH_ROUNDS` | `3` | Số lần đánh giá hiệu năng |
 | `BENCH_PROMPT` | Xem mẫu | Lời nhắc đánh giá hiệu năng |
 | `BENCH_STREAM` | `0` | Đo độ trễ token đầu tiên |
@@ -250,10 +251,10 @@ foundry model run phi-4-mini
 | `LLM_ALIAS` | `qwen2.5-7b` | Mô hình ngôn ngữ lớn |
 | `COMPARE_PROMPT` | Xem mẫu | Lời nhắc so sánh |
 
-## Mô Hình Đề Xuất
+## Mô Hình Khuyến Nghị
 
 ### Phát Triển & Kiểm Tra
-- **phi-4-mini** - Cân bằng giữa chất lượng và tốc độ
+- **phi-4-mini** - Chất lượng và tốc độ cân bằng
 - **qwen2.5-0.5b** - Rất nhanh cho phân loại
 - **gemma-2-2b** - Chất lượng tốt, tốc độ vừa phải
 
@@ -265,21 +266,21 @@ foundry model run phi-4-mini
 ## Tài Liệu SDK
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
 
-## Nhận Hỗ Trợ
+## Hỗ Trợ
 
 1. Kiểm tra trạng thái dịch vụ: `foundry service status`  
 2. Xem nhật ký: Kiểm tra nhật ký dịch vụ Foundry Local  
 3. Xem tài liệu SDK: https://github.com/microsoft/Foundry-Local  
-4. Xem mã mẫu: Tất cả các mẫu đều có docstring chi tiết  
+4. Xem mã mẫu: Tất cả các mẫu đều có chú thích chi tiết  
 
-## Các Bước Tiếp Theo
+## Bước Tiếp Theo
 
 1. Hoàn thành tất cả các phiên workshop theo thứ tự  
 2. Thử nghiệm với các mô hình khác nhau  
 3. Chỉnh sửa các mẫu cho trường hợp sử dụng của bạn  
-4. Xem `SDK_MIGRATION_NOTES.md` để biết các mẫu nâng cao  
+4. Xem lại `SDK_MIGRATION_NOTES.md` để biết các mẫu nâng cao  
 
 ---
 
@@ -290,4 +291,4 @@ foundry model run phi-4-mini
 ---
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

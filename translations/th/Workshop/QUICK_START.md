@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T12:48:17+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T21:58:00+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "th"
 }
 -->
 # คู่มือเริ่มต้นใช้งาน Workshop
 
-## สิ่งที่ต้องเตรียม
+## ข้อกำหนดเบื้องต้น
 
 ### 1. ติดตั้ง Foundry Local
 
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Session 01: Basic Chat
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Environment Variables:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Session 02: RAG Pipeline
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Environment Variables:**  
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Session 02: RAG Evaluation (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **หมายเหตุ**: ต้องติดตั้ง dependencies เพิ่มเติมผ่าน `requirements.txt`
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### Session 03: Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Environment Variables:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### Session 04: Model Comparison
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Environment Variables:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Session 05: Multi-Agent Orchestration
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Environment Variables:**  
@@ -130,21 +131,21 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Session 06: Model Router
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**ทดสอบตรรกะการ routing** ด้วย intents หลายแบบ (code, summarize, classification)
+**ทดสอบการทำงานของ routing logic** ด้วยหลาย intents (code, summarize, classification)
 
 ### Session 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Pipeline หลายขั้นตอนที่ซับซ้อน** รวมถึงการวางแผน การดำเนินการ และการปรับปรุง
 
-## สคริปต์
+## Scripts
 
 ### Export Benchmark Report
 
@@ -165,7 +166,7 @@ python export_benchmark_markdown.py \
 python lint_markdown_cli.py --verbose
 ```
 
-**วัตถุประสงค์**: ตรวจจับ CLI patterns ที่เลิกใช้งานในเอกสาร
+**วัตถุประสงค์**: ตรวจสอบ CLI patterns ที่เลิกใช้งานในเอกสาร
 
 ## การทดสอบ
 
@@ -176,7 +177,7 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**การทดสอบ**: ทดสอบฟังก์ชันพื้นฐานของตัวอย่างสำคัญ
+**การทดสอบ**: การทำงานพื้นฐานของตัวอย่างสำคัญ
 
 ## การแก้ไขปัญหา
 
@@ -227,20 +228,20 @@ foundry model run phi-4-mini
 ## อ้างอิง Environment Variable
 
 ### การตั้งค่าหลัก
-| ตัวแปร | ค่าเริ่มต้น | คำอธิบาย |
-|--------|-------------|-----------|
-| `FOUNDRY_LOCAL_ALIAS` | แตกต่างกัน | Model alias ที่จะใช้ |
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `FOUNDRY_LOCAL_ALIAS` | Varies | Model alias ที่ใช้ |
 | `FOUNDRY_LOCAL_ENDPOINT` | Auto | กำหนด service endpoint |
 | `SHOW_USAGE` | `0` | แสดงสถิติการใช้งาน token |
-| `RETRY_ON_FAIL` | `1` | เปิดใช้งานตรรกะ retry |
+| `RETRY_ON_FAIL` | `1` | เปิดใช้งาน retry logic |
 | `RETRY_BACKOFF` | `1.0` | ความล่าช้าเริ่มต้นในการ retry (วินาที) |
 
 ### เฉพาะ Session
-| ตัวแปร | ค่าเริ่มต้น | คำอธิบาย |
-|--------|-------------|-----------|
+| Variable | Default | Description |
+|----------|---------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding model |
 | `RAG_QUESTION` | ดูตัวอย่าง | คำถามทดสอบ RAG |
-| `BENCH_MODELS` | แตกต่างกัน | รายชื่อ models แบบ comma-separated |
+| `BENCH_MODELS` | Varies | รายชื่อ models แบบ comma-separated |
 | `BENCH_ROUNDS` | `3` | จำนวนรอบ benchmark |
 | `BENCH_PROMPT` | ดูตัวอย่าง | Benchmark prompt |
 | `BENCH_STREAM` | `0` | วัด latency ของ first-token |
@@ -254,10 +255,10 @@ foundry model run phi-4-mini
 
 ### การพัฒนาและการทดสอบ
 - **phi-4-mini** - คุณภาพและความเร็วที่สมดุล
-- **qwen2.5-0.5b** - เร็วมากสำหรับการจัดประเภท
+- **qwen2.5-0.5b** - เร็วมากสำหรับการจัดหมวดหมู่
 - **gemma-2-2b** - คุณภาพดี ความเร็วปานกลาง
 
-### สถานการณ์การใช้งานจริง
+### การใช้งานในสถานการณ์จริง
 - **phi-4-mini** - ใช้งานทั่วไป
 - **deepseek-coder-1.3b** - การสร้างโค้ด
 - **qwen2.5-7b** - การตอบกลับคุณภาพสูง
@@ -270,24 +271,24 @@ foundry model run phi-4-mini
 ## การขอความช่วยเหลือ
 
 1. ตรวจสอบสถานะบริการ: `foundry service status`  
-2. ดู logs: ตรวจสอบ logs ของ Foundry Local service  
-3. ตรวจสอบเอกสาร SDK: https://github.com/microsoft/Foundry-Local  
-4. ทบทวนโค้ดตัวอย่าง: ตัวอย่างทั้งหมดมี docstrings ที่ละเอียด
+2. ดู log: ตรวจสอบ log ของ Foundry Local service  
+3. ดูเอกสาร SDK: https://github.com/microsoft/Foundry-Local  
+4. ตรวจสอบโค้ดตัวอย่าง: ตัวอย่างทั้งหมดมี docstrings ที่ละเอียด
 
 ## ขั้นตอนถัดไป
 
 1. ทำทุก session ใน workshop ให้ครบตามลำดับ  
-2. ทดลองใช้โมเดลต่าง ๆ  
-3. ปรับเปลี่ยนตัวอย่างให้เหมาะกับกรณีการใช้งานของคุณ  
+2. ทดลองใช้งานโมเดลต่าง ๆ  
+3. ปรับเปลี่ยนตัวอย่างให้เหมาะกับการใช้งานของคุณ  
 4. ทบทวน `SDK_MIGRATION_NOTES.md` สำหรับ patterns ขั้นสูง  
 
 ---
 
 **อัปเดตล่าสุด**: 2025-01-08  
 **เวอร์ชัน Workshop**: ล่าสุด  
-**SDK**: Foundry Local Python SDK  
+**SDK**: Foundry Local Python SDK
 
 ---
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้องมากที่สุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามนุษย์ที่เป็นมืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้

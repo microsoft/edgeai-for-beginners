@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82e20fdeebffdf75eecdf5cdfb02b65c",
-  "translation_date": "2025-10-09T19:20:09+00:00",
+  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
+  "translation_date": "2025-10-28T22:41:32+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "ms"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrak
 
-Terokai cara membina aliran kerja GenAI yang boleh diambil tindakan menggunakan Foundry Local dan Azure AI Foundry. Pelajari kejuruteraan prompt lanjutan, integrasi data berstruktur, dan orkestrasi tugas dengan saluran paip yang boleh dihasilkan semula. Walaupun fokus adalah pada Retrieval-Augmented Generation (RAG) untuk soal jawab dokumen & data, corak ini boleh digunakan untuk reka bentuk penyelesaian GenAI yang lebih luas.
+Terokai cara membina aliran kerja GenAI yang boleh diambil tindakan menggunakan Foundry Local dan Azure AI Foundry. Pelajari teknik kejuruteraan prompt yang maju, integrasi data berstruktur, dan orkestrasi tugas dengan saluran paip yang boleh dihasilkan semula. Walaupun fokus adalah pada Retrieval-Augmented Generation (RAG) untuk soal jawab dokumen & data, corak ini boleh digunakan untuk reka bentuk penyelesaian GenAI yang lebih luas.
 
 ## Objektif Pembelajaran
 
@@ -21,16 +21,16 @@ Pada akhir sesi ini, anda akan:
 - **Melaksanakan Corak RAG**: Membina sistem soal jawab berasaskan dokumen dengan carian vektor
 - **Mengintegrasikan Data Berstruktur**: Bekerja dengan data CSV, JSON, dan tabular dalam aliran kerja AI
 - **Membina RAG Pengeluaran**: Mencipta aplikasi RAG yang boleh diskalakan dengan Chainlit
-- **Jambatan Lokal ke Awan**: Memahami laluan migrasi dari Foundry Local ke Azure AI Foundry
+- **Jambatan dari Tempatan ke Awan**: Memahami laluan migrasi dari Foundry Local ke Azure AI Foundry
 
 ## Prasyarat
 
-- Selesai Sesi 1 (Persediaan Foundry Local)
+- Menyelesaikan Sesi 1 (penyediaan Foundry Local)
 - Pemahaman asas tentang pangkalan data vektor dan embeddings
 - Pengalaman pengaturcaraan Python
 - Kefahaman tentang konsep pemprosesan dokumen
-
-### Permulaan Cepat Persekitaran Merentas Platform (Windows & macOS)
+ 
+### Permulaan Cepat Persekitaran Lintas Platform (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -48,11 +48,10 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Jika binari Foundry Local macOS belum tersedia dalam persekitaran anda, jalankan perkhidmatan pada VM atau kontena Windows dan tetapkan:
+Jika binari Foundry Local untuk macOS belum tersedia dalam persekitaran anda, jalankan perkhidmatan pada VM Windows atau kontena dan tetapkan:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-
 
 ## Pengesahan: Semakan Persekitaran Foundry Local
 
@@ -215,7 +214,6 @@ foundry model run phi-4-mini
 # Run the prompt engineering demo
 python samples/02-rag-solutions/prompt_engineering.py
 ```
-
 
 ### 2. Integrasi Data Tabular dengan Prompt (Soal Jawab CSV) (10 minit)
 
@@ -440,7 +438,6 @@ if __name__ == "__main__":
 python samples/02-rag-solutions/csv_qa_system.py
 ```
 
-
 ### 3. Projek Permulaan: Adaptasi 02-grounding-data (5 minit)
 
 #### Langkah 3.1: Sistem RAG Dokumen yang Dipertingkatkan
@@ -660,8 +657,7 @@ if __name__ == "__main__":
     demo_document_rag()
 ```
 
-
-### 4. Tunjukkan Laluan Migrasi CLI ke Azure (5 minit)
+### 4. Tunjukkan Laluan Migrasi CLI-ke-Azure (5 minit)
 
 #### Langkah 4.1: Gambaran Keseluruhan Strategi Migrasi
 
@@ -876,7 +872,6 @@ if __name__ == "__main__":
 python samples/02-rag-solutions/migration_guide.py
 ```
 
-
 ## Konsep Utama yang Diliputi
 
 ### 1. Kejuruteraan Prompt Lanjutan
@@ -891,21 +886,21 @@ python samples/02-rag-solutions/migration_guide.py
 - **Pemprosesan CSV**: Integrasi Pandas dengan model AI
 - **Analisis Statistik**: Ringkasan data automatik
 - **Penciptaan Konteks**: Penjanaan konteks dinamik berdasarkan pertanyaan
-- **Sokongan Pelbagai Format**: JSON, CSV, dan data tabular
+- **Sokongan Multi-format**: JSON, CSV, dan data tabular
 
 ### 3. Corak Pelaksanaan RAG
 
 - **Carian Vektor**: TF-IDF dan kesamaan kosinus
-- **Pengambilan Dokumen**: Pemarkahan dan penarafan relevansi
-- **Gabungan Konteks**: Sintesis pelbagai dokumen
-- **Penjanaan Jawapan**: Penciptaan jawapan yang berasaskan konteks
+- **Pengambilan Dokumen**: Penilaian dan penarafan relevansi
+- **Gabungan Konteks**: Sintesis multi-dokumen
+- **Penjanaan Jawapan**: Penciptaan jawapan yang berasaskan
 
 ### 4. Strategi Migrasi Awan
 
-- **API Bersatu**: Kod asas tunggal untuk lokal dan awan
+- **API Bersatu**: Kod tunggal untuk tempatan dan awan
 - **Abstraksi Persekitaran**: Penghantaran yang didorong konfigurasi
-- **Aliran Kerja Pembangunan**: Lokal → Pementasan → Pengeluaran
-- **Pengoptimuman Kos**: Pembangunan lokal, pengeluaran awan
+- **Aliran Kerja Pembangunan**: Tempatan → Staging → Pengeluaran
+- **Pengoptimuman Kos**: Pembangunan tempatan, pengeluaran awan
 
 ## Pertimbangan Pengeluaran
 
@@ -952,7 +947,6 @@ metrics = {
 }
 ```
 
-
 ## Langkah Seterusnya
 
 Selepas menyelesaikan sesi ini:
@@ -961,22 +955,22 @@ Selepas menyelesaikan sesi ini:
 2. **Bina RAG Pengeluaran**: Laksanakan dengan Chainlit (Contoh 04)
 3. **Carian Vektor Lanjutan**: Integrasi dengan Chroma atau Pinecone
 4. **Migrasi Awan**: Hantar ke Azure AI Foundry
-5. **Nilai Kualiti RAG**: Jalankan `python Workshop/samples/session02/rag_eval_ragas.py` untuk mengukur relevansi jawapan, kesetiaan, dan ketepatan konteks menggunakan ragas
+5. **Nilai Kualiti RAG**: Jalankan `cd Workkshop/samples;python -m session02.rag_eval_ragas` untuk mengukur answer_relevancy, faithfulness, dan context_precision menggunakan ragas
 
 ### Penambahbaikan Pilihan
 
 | Kategori | Penambahbaikan | Rasional | Arah |
 |----------|----------------|----------|------|
-| Pengambilan | Gantikan TF-IDF dengan stor vektor (FAISS / Chroma) | Panggilan semantik & skalabiliti yang lebih baik | Pecahkan dokumen (500–800 aksara), embed, indeks kekal |
+| Pengambilan | Gantikan TF-IDF dengan stor vektor (FAISS / Chroma) | Panggilan semantik & skalabiliti yang lebih baik | Pecahkan dokumen (500–800 aksara), embed, simpan indeks |
 | Indeks Hibrid | Penapisan semantik + kata kunci berganda | Meningkatkan ketepatan pada pertanyaan numerik / kod | Tapis mengikut kata kunci kemudian susun mengikut kesamaan kosinus |
-| Embeddings | Nilai pelbagai model embedding | Optimumkan relevansi vs kelajuan | A/B: MiniLM vs E5-small vs encoder yang dihoskan secara lokal |
-| Caching | Cache embeddings & hasil pengambilan | Kurangkan latensi pertanyaan berulang | Cache mudah pada cakera / sqlite dengan kunci hash |
-| Penilaian | Luaskan dataset ragas | Kualiti yang bermakna secara statistik | Kurasi 50–100 Q/A + konteks; stratifikasi mengikut topik |
+| Embeddings | Nilai pelbagai model embedding | Optimumkan relevansi vs kelajuan | A/B: MiniLM vs E5-small vs encoder yang dihoskan secara tempatan |
+| Caching | Cache embeddings & hasil pengambilan | Kurangkan latensi pertanyaan berulang | Simpanan mudah di cakera pickle / sqlite dengan kunci hash |
+| Penilaian | Luaskan dataset ragas | Kualiti yang bermakna secara statistik | Kumpulkan 50–100 Q/A + konteks; stratifikasi mengikut topik |
 | Metrik | Jejak masa pengambilan & penjanaan | Profil prestasi | Tangkap `retrieval_ms`, `gen_ms`, `tokens` setiap panggilan |
-| Guardrails | Tambah fallback halusinasi | Jawapan yang lebih selamat | Jika kesetiaan < ambang → jawapan: "Konteks tidak mencukupi." |
-| Fallback | Cascade model lokal → Azure | Peningkatan kualiti hibrid | Pada keyakinan rendah laluan ke awan melalui API OpenAI yang sama |
-| Ketentuan | Jalankan perbandingan stabil | Set eval yang boleh diulang | Tetapkan seed, `temperature=0`, nyahaktifkan keacakan sampler |
-| Pemantauan | Kekalkan sejarah run eval | Pengesanan regresi | Tambah baris JSON dengan cap masa + delta metrik |
+| Guardrails | Tambah fallback halusinasi | Jawapan yang lebih selamat | Jika faithfulness < threshold → jawapan: "Konteks tidak mencukupi." |
+| Fallback | Cascade model tempatan → Azure | Peningkatan kualiti hibrid | Pada keyakinan rendah laluan ke awan melalui API OpenAI yang sama |
+| Determinisme | Jalankan perbandingan stabil | Set penilaian yang boleh diulang | Tetapkan seed, `temperature=0`, lumpuhkan rawak sampler |
+| Pemantauan | Simpan sejarah run penilaian | Pengesanan regresi | Tambah baris JSON w/ cap masa + delta metrik |
 
 #### Contoh: Menambah Masa Pengambilan
 
@@ -990,7 +984,6 @@ text, usage = chat_once(alias, messages=messages, max_tokens=250, temperature=0.
 gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
-
 
 #### Skalakan Penilaian Dengan ragas
 
@@ -1008,7 +1001,7 @@ index.add(embeddings)  # embeddings = np.array([...]) normalized
 D, I = index.search(query_vec, k)
 ```
 
-Untuk kegigihan cakera gunakan `faiss.write_index(index, "kb.index")`.
+Untuk simpanan cakera gunakan `faiss.write_index(index, "kb.index")`.
 
 ## Sumber Tambahan
 
@@ -1019,28 +1012,28 @@ Untuk kegigihan cakera gunakan `faiss.write_index(index, "kb.index")`.
 - [Dokumentasi Penilaian Ragas](https://docs.ragas.io)
 
 ### Kod Contoh
-- [Contoh Modul08 04](./samples/04/README.md) - Aplikasi RAG Chainlit
+- [Contoh Modul08 04](./samples/04/README.md) - Aplikasi Chainlit RAG
 - [Sistem Multi-Ejen Lanjutan](./samples/09/README.md) - Corak koordinasi ejen
 
 ---
 
-**Tempoh Sesi**: 30 minit hands-on + 15 minit Q&A  
-**Tahap Kesukaran**: Pertengahan  
-**Prasyarat**: Sesi 1 selesai, Pengetahuan Python asas  
+**Tempoh Sesi**: 30 minit praktikal + 15 minit soal jawab
+**Tahap Kesukaran**: Pertengahan
+**Prasyarat**: Sesi 1 selesai, Pengetahuan asas Python
 
 ## Senario Contoh & Pemetaan Bengkel
 
-| Skrip / Notebook Bengkel | Senario | Matlamat | Dataset / Sumber Teras | Soalan Contoh |
+| Skrip Bengkel / Notebook | Senario | Matlamat | Dataset / Sumber Teras | Contoh Soalan |
 |--------------------------|---------|----------|------------------------|---------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Pangkalan pengetahuan sokongan dalaman menjawab soalan lazim privasi + prestasi | RAG minimal dalam memori dengan embeddings | Senarai `DOCS` dalam skrip (5 petikan pendek) | Mengapa menggunakan RAG dengan inferens lokal? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Penganalisis kualiti menetapkan metrik kesetiaan pengambilan asas | Kira metrik ragas pada dataset sintetik kecil | Susunan `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Apakah kelebihan inferens lokal? |
-| `prompt_engineering.py` (lanjutan) | SME domain mencipta prompt berasaskan untuk pelbagai vertikal | Bandingkan prompt sistem domain & impak token | `contexts` dict dalam talian | Bagaimana Foundry Local mengendalikan caching model? |
-| `csv_qa_system.py` | Ops jualan meneroka analitik interaktif ke atas eksport | Ringkaskan & pertanyaan potongan jualan kecil | `sample_sales_data.csv` yang dijana (10 baris) | Produk mana yang mempunyai jumlah jualan purata tertinggi? |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Pangkalan pengetahuan sokongan dalaman menjawab soalan lazim privasi + prestasi | RAG minimum dalam memori dengan embeddings | Senarai `DOCS` dalam skrip (5 petikan pendek) | Mengapa menggunakan RAG dengan inferens tempatan? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Penganalisis kualiti menetapkan metrik kepercayaan pengambilan asas | Kira metrik ragas pada dataset sintetik kecil | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` arrays | Apakah kelebihan yang ditawarkan oleh inferens tempatan? |
+| `prompt_engineering.py` (lanjutan) | SME domain mencipta prompt yang berasaskan untuk pelbagai vertikal | Bandingkan prompt sistem domain & impak token | Kamus `contexts` dalam talian | Bagaimana Foundry Local mengendalikan caching model? |
+| `csv_qa_system.py` | Operasi jualan meneroka analitik interaktif melalui eksport | Ringkaskan & pertanyaan potongan jualan kecil | Dihasilkan `sample_sales_data.csv` (10 baris) | Produk mana yang mempunyai jumlah jualan purata tertinggi? |
 | `document_rag.py` | Pasukan produk meneroka RAG dokumen untuk wiki dalaman | Ambil + petik dokumen yang relevan | Senarai `create_sample_knowledge_base()` | Apakah faedah Edge AI? |
-| `migration_guide.py` | Arkitek menyediakan rancangan migrasi awan | Tunjukkan kesetaraan API lokal→Azure | Prompt ujian statik | Terangkan faedah Edge AI dalam 2–3 ayat. |
+| `migration_guide.py` | Arkitek menyediakan rancangan migrasi awan | Tunjukkan pariti API tempatan→Azure | Prompt ujian statik | Terangkan faedah Edge AI dalam 2–3 ayat. |
 
 ### Petikan Dataset
-Senarai dokumen pipeline RAG dalam talian:
+Senarai dokumen saluran paip RAG dalam talian:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1060,14 +1053,13 @@ GROUND_TRUTH = [
 ]
 ```
 
-
 ### Naratif Senario
-Kumpulan kejuruteraan sokongan mahukan prototaip pantas untuk menjawab soalan lazim dalaman tanpa mendedahkan data pelanggan secara luaran. Artifak Sesi 2 berkembang daripada RAG minimal sementara (tanpa kegigihan) → soal jawab CSV berstruktur → pengambilan dokumen dengan petikan → penilaian kualiti objektif (ragas) → strategi migrasi yang sedia untuk pementasan Azure.
+Kumpulan kejuruteraan sokongan ingin prototaip pantas untuk menjawab soalan lazim dalaman tanpa mendedahkan data pelanggan secara luaran. Artifak Sesi 2 berkembang dari RAG minimum sementara (tanpa simpanan) → soal jawab CSV berstruktur → pengambilan dokumen dengan petikan → penilaian kualiti objektif (ragas) → strategi migrasi yang siap untuk peringkat Azure.
 
 ### Laluan Pengembangan
-Gunakan jadual Penambahbaikan Pilihan untuk berkembang: tukar TF‑IDF kepada FAISS/Chroma, besarkan korpus penilaian (50–100 Q/A), tambah eskalasi fallback kepada model yang lebih besar apabila kesetiaan < ambang.
+Gunakan jadual Penambahbaikan Pilihan untuk berkembang: tukar TF‑IDF untuk FAISS/Chroma, besarkan korpus penilaian (50–100 Q/A), tambah eskalasi fallback ke model yang lebih besar apabila faithfulness < threshold.
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

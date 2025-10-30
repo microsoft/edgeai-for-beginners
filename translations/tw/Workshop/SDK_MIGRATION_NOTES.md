@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-08T16:36:18+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T20:50:36+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "tw"
 }
 -->
-# Foundry Local SDK 遷移筆記
+# Foundry Local SDK 遷移注意事項
 
 ## 概述
 
-Workshop 資料夾中的所有 Python 文件已更新，遵循官方 [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local) 的最新模式。
+Workshop 資料夾中的所有 Python 文件已更新，以遵循官方 [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local) 的最新模式。
 
 ## 變更摘要
 
@@ -20,9 +20,9 @@ Workshop 資料夾中的所有 Python 文件已更新，遵循官方 [Foundry Lo
 #### 增強功能：
 - **端點覆蓋支持**：新增 `FOUNDRY_LOCAL_ENDPOINT` 環境變數支持
 - **改進的錯誤處理**：更好的異常處理，提供詳細的錯誤訊息
-- **增強的快取功能**：快取鍵現在包含端點，適用於多端點場景
+- **增強的快取功能**：快取鍵現在包含端點，以支持多端點場景
 - **指數回退**：重試邏輯現在使用指數回退以提高可靠性
-- **類型註解**：新增全面的類型提示，提升 IDE 支援
+- **類型註解**：新增全面的類型提示以改善 IDE 支持
 
 #### 新增功能：
 ```python
@@ -38,12 +38,12 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### Session 01: 聊天啟動 (`chat_bootstrap.py`)
 - 預設模型從 `phi-3.5-mini` 更新為 `phi-4-mini`
 - 新增端點覆蓋支持
-- 增強文件，加入 SDK 參考
+- 增強文檔，加入 SDK 參考
 
 #### Session 02: RAG 管道 (`rag_pipeline.py`)
 - 預設模型更新為 `phi-4-mini`
 - 新增端點覆蓋支持
-- 改進文件，加入環境變數細節
+- 改進文檔，加入環境變數細節
 
 #### Session 02: RAG 評估 (`rag_eval_ragas.py`)
 - 更新模型預設值
@@ -52,49 +52,49 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### Session 03: 基準測試 (`benchmark_oss_models.py`)
 - 預設模型列表更新，包含 `phi-4-mini`
-- 新增全面的環境變數文件
-- 改進函數文件
+- 新增全面的環境變數文檔
+- 改進函數文檔
 - 全面新增端點覆蓋支持
 
 #### Session 04: 模型比較 (`model_compare.py`)
 - 預設 LLM 從 `gpt-oss-20b` 更新為 `qwen2.5-7b`
 - 新增端點配置
-- 增強文件
+- 增強文檔
 
 #### Session 05: 多代理協作 (`agents_orchestrator.py`)
 - 新增類型提示（將 `str | None` 改為 `Optional[str]`）
-- 增強 Agent 類文件
+- 增強 Agent 類文檔
 - 新增端點覆蓋支持
 - 改進初始化模式
 
 #### Session 06: 模型路由器 (`models_router.py`)
 - 新增端點配置
-- 增強意圖檢測文件
-- 改進路由邏輯文件
+- 增強意圖檢測文檔
+- 改進路由邏輯文檔
 
 #### Session 06: 管道 (`models_pipeline.py`)
-- 新增全面的函數文件
-- 改進逐步文件
+- 新增全面的函數文檔
+- 改進逐步文檔
 - 增強錯誤處理
 
 ### 腳本
 
-#### 基準測試匯出 (`export_benchmark_markdown.py`)
+#### 基準測試導出 (`export_benchmark_markdown.py`)
 - 新增端點覆蓋支持
 - 更新預設模型
-- 增強函數文件
+- 增強函數文檔
 - 改進錯誤處理
 
 #### CLI Linter (`lint_markdown_cli.py`)
 - 新增 SDK 參考連結
-- 改進使用文件
+- 改進使用文檔
 
 ### 測試
 
 #### 煙霧測試 (`smoke.py`)
 - 新增端點覆蓋支持
-- 增強文件
-- 改進測試案例文件
+- 增強文檔
+- 改進測試案例文檔
 - 更好的錯誤報告
 
 ## 環境變數
@@ -104,7 +104,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 ### 核心配置
 - `FOUNDRY_LOCAL_ALIAS` - 使用的模型別名（預設值因範例而異）
 - `FOUNDRY_LOCAL_ENDPOINT` - 覆蓋服務端點（可選）
-- `SHOW_USAGE` - 顯示 Token 使用統計（預設值："0"）
+- `SHOW_USAGE` - 顯示 token 使用統計（預設值："0"）
 - `RETRY_ON_FAIL` - 啟用重試邏輯（預設值："1"）
 - `RETRY_BACKOFF` - 初始重試延遲（秒）（預設值："1.0"）
 
@@ -113,7 +113,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - `BENCH_MODELS` - 基準測試的逗號分隔模型
 - `BENCH_ROUNDS` - 基準測試輪次
 - `BENCH_PROMPT` - 基準測試的測試提示
-- `BENCH_STREAM` - 測量首字元延遲
+- `BENCH_STREAM` - 測量首 token 延遲
 - `RAG_QUESTION` - RAG 範例的測試問題
 - `AGENT_MODEL_PRIMARY` - 主代理模型
 - `AGENT_MODEL_EDITOR` - 編輯代理模型
@@ -154,7 +154,7 @@ except Exception as e:
     raise RuntimeError(f"Initialization failed: {e}") from e
 ```
 
-### 4. 帶指數回退的重試邏輯
+### 4. 使用指數回退的重試邏輯
 ```python
 delay = initial_delay
 for attempt in range(max_retries):
@@ -179,7 +179,7 @@ for chunk in stream:
         # Process chunk
 ```
 
-## 自定義範例的遷移指南
+## 自定範例的遷移指南
 
 如果您正在創建新範例或更新現有範例：
 
@@ -194,8 +194,8 @@ for chunk in stream:
    manager, client, model_id = get_client(alias, endpoint=endpoint)
    ```
 
-3. **新增全面的文件**：
-   - 文件中加入環境變數
+3. **新增全面文檔**：
+   - 在 docstring 中加入環境變數
    - SDK 參考連結
    - 使用範例
 
@@ -215,7 +215,7 @@ for chunk in stream:
 
 ## 測試
 
-所有範例可使用以下方式進行測試：
+所有範例可以使用以下方式進行測試：
 
 ```bash
 # Set environment variables
@@ -223,21 +223,22 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
 ```
 
-## SDK 文件參考
+## SDK 文檔參考
 
 - **主倉庫**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API 文件**: 請查看 SDK 倉庫以獲取最新 API 文件
+- **API 文檔**: 請查看 SDK 倉庫以獲取最新 API 文檔
 
 ## 重大變更
 
@@ -245,13 +246,13 @@ python -m Workshop.tests.smoke
 所有變更均向後兼容。更新主要包括：
 - 新增可選功能（端點覆蓋）
 - 改進錯誤處理
-- 增強文件
+- 增強文檔
 - 更新預設模型名稱至最新推薦
 
 ### 可選增強
 您可能希望更新代碼以使用：
 - `FOUNDRY_LOCAL_ENDPOINT` 進行明確的端點控制
-- `SHOW_USAGE=1` 以顯示 Token 使用情況
+- `SHOW_USAGE=1` 以顯示 token 使用情況
 - 更新的模型預設值（`phi-4-mini` 替代 `phi-3.5-mini`）
 
 ## 常見問題及解決方案
@@ -281,21 +282,21 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## 下一步
 
-1. **更新 Module08 範例**：將類似模式應用於 Module08/samples
+1. **更新 Module08 範例**：應用類似模式至 Module08/samples
 2. **新增整合測試**：創建全面的測試套件
 3. **性能基準測試**：比較更新前後的性能
-4. **文件更新**：更新主 README，加入新模式
+4. **文檔更新**：更新主 README，加入新模式
 
 ## 貢獻指南
 
 新增範例時：
 1. 使用 `workshop_utils.py` 以保持一致性
 2. 遵循現有範例的模式
-3. 新增全面的文件
+3. 新增全面的 docstring
 4. 包含 SDK 參考連結
 5. 支持端點覆蓋
 6. 新增正確的類型提示
-7. 在文件中加入使用範例
+7. 在 docstring 中加入使用範例
 
 ## 版本兼容性
 
@@ -306,11 +307,11 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ---
 
-**最後更新日期**: 2025-01-08  
+**最後更新**: 2025-01-08  
 **維護者**: EdgeAI Workshop 團隊  
 **SDK 版本**: Foundry Local SDK (最新 0.7.117+67073234e7)
 
 ---
 
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

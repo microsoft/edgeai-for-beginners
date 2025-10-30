@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T16:42:34+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T22:22:36+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "nl"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Samenvatting
 
-Ontwerp en orkestreer multi-role AI-agenten met behulp van Foundry Local’s low-latency, privacy-preserving runtime. Je definieert agentrollen, geheugenstrategieën, tool-aanroep patronen en uitvoeringsgrafieken. De sessie introduceert scaffolding-patronen die je kunt uitbreiden met Chainlit of LangGraph. Het starterproject breidt de bestaande agentarchitectuur uit met geheugenpersistentie en evaluatiehooks.
+Ontwerp en orkestreer multi-role AI-agenten met behulp van Foundry Local’s low-latency, privacy-preserving runtime. Je definieert agentrollen, geheugenstrategieën, tool-aanroeppatronen en uitvoeringsgrafieken. De sessie introduceert scaffolding-patronen die je kunt uitbreiden met Chainlit of LangGraph. Het starterproject breidt de bestaande agentarchitectuur uit met geheugenpersistentie en evaluatiehooks.
 
 ## Leerdoelen
 
-- **Definieer Rollen**: Systeem prompts & capaciteitsgrenzen
+- **Definieer Rollen**: Systeemprompts & capaciteitsgrenzen
 - **Implementeer Geheugen**: Kortetermijn (gesprek), langetermijn (vector / bestand), tijdelijke notitieblokken
 - **Scaffold Workflows**: Sequentiële, vertakkende en parallelle agentstappen
 - **Integreer Tools**: Lichtgewicht functie-aanroep patroon
@@ -27,7 +27,7 @@ Ontwerp en orkestreer multi-role AI-agenten met behulp van Foundry Local’s low
 - Python met `foundry-local-sdk`, `openai`, optioneel `chainlit`
 - Lokale modellen actief (minimaal `phi-4-mini`)
 
-### Cross-platform omgevingsfragment
+### Cross-platform omgeving snippet
 
 Windows:
 ```powershell
@@ -122,7 +122,7 @@ if __name__ == "__main__":
 ```
 
 
-### 2. CLI Scaffolding-patroon (3 min)
+### 2. CLI Scaffolding Patroon (3 min)
 
 ```powershell
 python samples/05-agents/agents_core.py
@@ -149,6 +149,7 @@ TOOLS = {
     "estimate_tokens": tool_estimate_tokens
 }
 ```
+
 
 Pas `agents_core.py` aan om eenvoudige toolsyntax mogelijk te maken: gebruiker schrijft `#tool:get_time` en agent voegt tooloutput toe aan de context vóór generatie.
 
@@ -193,7 +194,7 @@ Voeg toe:
 3. Optionele Chainlit front-end (twee tabbladen: gesprek & traces)
 4. Optionele LangGraph-stijl toestandsmachine (indien afhankelijkheid toegevoegd) voor vertakkingsbeslissingen
 
-## Validatiechecklist
+## Validatie Checklist
 
 ```powershell
 foundry model run phi-4-mini
@@ -204,12 +205,12 @@ Verwacht gestructureerde pijplijnoutput met toolinjectienotitie.
 
 ## Overzicht Geheugenstrategieën
 
-| Laag       | Doel                | Voorbeeld            |
-|------------|---------------------|----------------------|
+| Laag       | Doel               | Voorbeeld            |
+|------------|--------------------|----------------------|
 | Kortetermijn | Gesprekscontinuïteit | Laatste N berichten  |
-| Episodisch  | Sessieherinnering   | JSON per sessie      |
-| Semantisch  | Langetermijnopslag  | Vectoropslag van samenvattingen |
-| Scratchpad  | Redeneerstappen     | Inline chain-of-thought (privé) |
+| Episodisch  | Sessieherinnering  | JSON per sessie      |
+| Semantisch  | Langetermijnopslag | Vectoropslag van samenvattingen |
+| Scratchpad  | Redeneerstappen    | Inline chain-of-thought (privé) |
 
 ## Evaluatiehooks (Conceptueel)
 
@@ -230,7 +231,7 @@ evaluation = {
 |---------------------|--------------------------|--------------------------------|
 | Herhalende antwoorden | Contextvenster te groot/klein | Pas geheugenvensterparameter aan |
 | Tool niet aangeroepen | Verkeerde syntax         | Gebruik `#tool:tool_name` formaat |
-| Langzame orkestratie | Meerdere koude modellen  | Voer warmup prompts vooraf uit |
+| Trage orkestratie    | Meerdere koude modellen  | Voer warmup prompts vooraf uit |
 
 ## Referenties
 
@@ -243,25 +244,26 @@ evaluation = {
 **Sessieduur**: 30 min  
 **Moeilijkheidsgraad**: Geavanceerd
 
-## Voorbeeldscenario & Workshopmapping
+## Voorbeeldscenario & Workshop Mapping
 
-| Workshopscript | Scenario | Doelstelling | Voorbeeldprompt |
-|----------------|----------|--------------|-----------------|
+| Workshop Script | Scenario | Doelstelling | Voorbeeldprompt |
+|-----------------|----------|--------------|-----------------|
 | `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Kennisonderzoeksbot die executive-vriendelijke samenvattingen produceert | Twee-agentenpijplijn (onderzoek → redactionele verfijning) met optioneel verschillende modellen | Leg uit waarom edge inference belangrijk is voor compliance. |
 | (Uitgebreid) `tools.py` concept | Voeg tijd- & tokenramingtools toe | Demonstreer lichtgewicht tool-aanroep patroon | #tool:get_time |
 
-### Scenarioverhaal
-Het compliance-documentatieteam heeft snelle interne samenvattingen nodig, afkomstig van lokale kennis, zonder concepten naar cloudservices te sturen. Een onderzoekeragent verzamelt beknopte feitelijke punten; een redacteuragent herschrijft voor executive duidelijkheid. Verschillende modelaliassen kunnen worden toegewezen om latentie te optimaliseren (snelle SLM) versus stilistische verfijning (groter model alleen indien nodig).
+### Scenario Narratief
+Het compliance documentatieteam heeft snelle interne samenvattingen nodig, afkomstig van lokale kennis, zonder concepten naar cloudservices te sturen. Een onderzoeker-agent verzamelt beknopte feitelijke punten; een redacteur-agent herschrijft voor executive duidelijkheid. Verschillende modelaliassen kunnen worden toegewezen om latentie te optimaliseren (snelle SLM) versus stilistische verfijning (groter model alleen indien nodig).
 
 ### Voorbeeld Multi-Model Omgeving
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
-### Trace-structuur (Optioneel)
+### Trace Structuur (Optioneel)
 ```json
 {
     "step": 1,
@@ -277,17 +279,17 @@ Bewaar elke stap in een JSONL-bestand voor latere rubric scoring.
 
 ### Optionele Verbeteringen
 
-| Thema              | Verbetering              | Voordeel               | Implementatieschets       |
-|--------------------|--------------------------|------------------------|---------------------------|
+| Thema              | Verbetering              | Voordeel               | Implementatieschets         |
+|--------------------|--------------------------|------------------------|-----------------------------|
 | Multi-Model Rollen | Verschillende modellen per agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specialisatie & snelheid | Selecteer alias omgevingsvariabelen, roep `chat_once` aan met per-rol alias |
-| Gestructureerde Traces | JSON-trace van elke act(tool,input,latency,tokens) | Debug & evaluatie        | Voeg dict toe aan een lijst; schrijf `.jsonl` aan het einde |
+| Gestructureerde Traces | JSON trace van elke act(tool,input,latency,tokens) | Debug & evaluatie        | Voeg dict toe aan een lijst; schrijf `.jsonl` aan het einde |
 | Geheugenpersistentie | Herlaadbare dialoogcontext | Sessiecontinuïteit     | Dump `Agent.memory` naar `sessions/<ts>.json` |
 | Toolregister        | Dynamische toolontdekking | Uitbreidbaarheid       | Beheer `TOOLS` dict & inspecteer namen/beschrijvingen |
 | Retry & Backoff     | Robuuste lange ketens    | Verminder tijdelijke fouten | Omhul `act` met try/except + exponentiële backoff |
 | Rubric Scoring      | Geautomatiseerde kwalitatieve labels | Volg verbeteringen       | Secundaire pass prompting model: "Beoordeel duidelijkheid 1-5" |
 | Vectorgeheugen      | Semantische herinnering  | Rijke langetermijncontext | Embed samenvattingen, haal top-k op in systeembericht |
 | Streaming Antwoorden | Snellere waargenomen respons | UX-verbetering          | Gebruik streaming zodra beschikbaar en flush gedeeltelijke tokens |
-| Deterministische Tests | Regressiecontrole      | Stabiele CI             | Voer uit met `temperature=0`, vaste prompt seeds |
+| Deterministische Tests | Regressiecontrole      | Stabiele CI            | Voer uit met `temperature=0`, vaste prompt seeds |
 | Parallel Vertakken  | Snellere verkenning     | Doorvoer               | Gebruik `concurrent.futures` voor onafhankelijke agentstappen |
 
 #### Trace Record Voorbeeld
@@ -315,4 +317,4 @@ Bewaar (`answer`, `rating`) paren om een historische kwaliteitsgrafiek op te bou
 ---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

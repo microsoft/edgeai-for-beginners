@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T06:46:12+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T20:19:08+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "ar"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## الملخص
 
-ابدأ رحلتك مع Foundry Local من خلال تثبيته وتكوينه على نظام Windows 11. تعلم كيفية إعداد واجهة الأوامر (CLI)، تفعيل تسريع الأجهزة، وتخزين النماذج مؤقتًا للحصول على استنتاج محلي سريع. هذه الجلسة العملية تستعرض كيفية تشغيل نماذج مثل Phi، Qwen، DeepSeek، وGPT-OSS-20B باستخدام أوامر CLI قابلة للتكرار.
+ابدأ رحلتك مع Foundry Local من خلال تثبيته وتكوينه على نظام Windows 11. تعلم كيفية إعداد واجهة الأوامر (CLI)، تمكين تسريع الأجهزة، وتخزين النماذج مؤقتًا للحصول على استنتاج محلي سريع. هذه الجلسة العملية تستعرض كيفية تشغيل نماذج مثل Phi، Qwen، DeepSeek، وGPT-OSS-20B باستخدام أوامر CLI قابلة للتكرار.
 
 ## أهداف التعلم
 
@@ -19,15 +19,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **التثبيت والتكوين**: إعداد Foundry Local على Windows 11 مع إعدادات الأداء المثلى
 - **إتقان عمليات CLI**: استخدام واجهة الأوامر لإدارة النماذج ونشرها
-- **تفعيل تسريع الأجهزة**: تكوين تسريع GPU باستخدام ONNXRuntime أو WebGPU
+- **تمكين تسريع الأجهزة**: تكوين تسريع GPU باستخدام ONNXRuntime أو WebGPU
 - **نشر نماذج متعددة**: تشغيل نماذج phi-4، GPT-OSS-20B، Qwen، وDeepSeek محليًا
-- **بناء تطبيقك الأول**: تعديل العينات الموجودة لاستخدام Python SDK الخاص بـ Foundry Local
+- **بناء أول تطبيق لك**: تعديل العينات الحالية لاستخدام Foundry Local Python SDK
 
 # اختبار النموذج (طلب واحد غير تفاعلي)
 foundry model run phi-4-mini --prompt "مرحبًا، قدم نفسك"
 
 - Windows 11 (22H2 أو أحدث)
-# عرض النماذج المتاحة في الكتالوج (تظهر النماذج المحملة بعد التشغيل)
+# عرض النماذج المتاحة في الكتالوج (النماذج المحملة تظهر بعد التشغيل)
 foundry model list
 ## ملاحظة: لا يوجد حاليًا علامة `--running` مخصصة؛ لرؤية النماذج المحملة، ابدأ محادثة أو تحقق من سجلات الخدمة.
 - Python 3.10+ مثبت
@@ -36,18 +36,18 @@ foundry model list
 
 ### (اختياري) متغيرات البيئة
 
-قم بإنشاء ملف `.env` (أو ضبطه في الصدفة) لجعل السكربتات قابلة للنقل:
+قم بإنشاء ملف `.env` (أو ضبطه في shell) لجعل السكربتات قابلة للنقل:
 # مقارنة الردود (غير تفاعلي)
 foundry model run gpt-oss-20b --prompt "اشرح الذكاء الاصطناعي الطرفي بطريقة بسيطة"
 | المتغير | الغرض | المثال |
 |---------|-------|--------|
 | `FOUNDRY_LOCAL_ALIAS` | الاسم المستعار المفضل للنموذج (يختار الكتالوج تلقائيًا أفضل نسخة) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | تجاوز نقطة النهاية (وإلا يتم التحديد تلقائيًا من المدير) | `http://localhost:5273/v1` |
-| `FOUNDRY_LOCAL_STREAM` | تفعيل عرض البث | `true` |
+| `FOUNDRY_LOCAL_ENDPOINT` | تجاوز نقطة النهاية (وإلا يتم تحديدها تلقائيًا من المدير) | `http://localhost:5273/v1` |
+| `FOUNDRY_LOCAL_STREAM` | تمكين عرض البث | `true` |
 
-> إذا كان `FOUNDRY_LOCAL_ENDPOINT=auto` (أو غير مضبوط)، يتم استنتاجه من مدير SDK.
+> إذا كان `FOUNDRY_LOCAL_ENDPOINT=auto` (أو غير مضبوط)، يتم اشتقاقه من مدير SDK.
 
-## تدفق العرض التوضيحي (30 دقيقة)
+## سير العرض التوضيحي (30 دقيقة)
 
 ### 1. تثبيت Foundry Local والتحقق من إعداد CLI (10 دقائق)
 
@@ -160,32 +160,7 @@ print(resp.choices[0].message.content)
 
 إذا كنت تفضل التحكم الصريح، يمكنك استخدام CLI + عميل OpenAI كما هو موضح لاحقًا.
 
-### 2. تفعيل تسريع GPU (5 دقائق)
-
-#### الخطوة 2.1: التحقق من قدرات الأجهزة
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### الخطوة 2.2: تكوين تسريع الأجهزة
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. تشغيل النماذج محليًا عبر CLI (10 دقائق)
+### 2. تشغيل النماذج محليًا عبر CLI (10 دقائق)
 
 #### الخطوة 3.1: نشر نموذج Phi-4
 
@@ -315,7 +290,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 ### 1. بنية Foundry Local
 
 - **محرك الاستنتاج المحلي**: تشغيل النماذج بالكامل على جهازك
-- **توافق SDK مع OpenAI**: تكامل سلس مع كود OpenAI الموجود
+- **توافق SDK مع OpenAI**: تكامل سلس مع كود OpenAI الحالي
 - **إدارة النماذج**: تنزيل، تخزين مؤقت، وتشغيل نماذج متعددة بكفاءة
 - **تحسين الأجهزة**: الاستفادة من تسريع GPU، NPU، وCPU
 
@@ -411,7 +386,7 @@ netstat -an | findstr 5273
 - **Phi-4-mini**: الأفضل للمهام العامة، استخدام ذاكرة أقل
 - **Qwen2.5-0.5b**: أسرع استنتاج، موارد قليلة
 - **GPT-OSS-20B**: أعلى جودة، يتطلب موارد أكثر
-- **DeepSeek-Coder**: مخصص للمهام البرمجية
+- **DeepSeek-Coder**: مُحسن للمهام البرمجية
 
 ### 2. تحسين الأجهزة
 
@@ -429,32 +404,33 @@ foundry config set model.preload false
 ### 3. مراقبة الأداء
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### تحسينات اختيارية
 
 | التحسين | ماذا | كيف |
 |---------|------|-----|
-| الأدوات المشتركة | إزالة تكرار منطق العميل/الإعداد | استخدام `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| الأدوات المشتركة | إزالة منطق العميل/الإعداد المكرر | استخدام `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
 | رؤية استخدام الرموز | تعليم التفكير في التكلفة/الكفاءة مبكرًا | ضبط `SHOW_USAGE=1` لطباعة الرموز المستخدمة |
-| مقارنات حتمية | اختبارات مستقرة ومراجعات | استخدام `temperature=0`, `top_p=1`, نص طلب ثابت |
+| مقارنات حتمية | اختبارات مستقرة ومقارنة الانحدار | استخدام `temperature=0`, `top_p=1`, نص طلب ثابت |
 | زمن استجابة أول رمز | مقياس استجابة محسوس | تعديل سكربت القياس مع البث (`BENCH_STREAM=1`) |
 | إعادة المحاولة عند الأخطاء المؤقتة | عروض مرنة عند بدء التشغيل البارد | `RETRY_ON_FAIL=1` (افتراضي) وضبط `RETRY_BACKOFF` |
-| اختبار سريع | التحقق من التدفقات الرئيسية | تشغيل `python Workshop/tests/smoke.py` قبل الورشة |
-| ملفات تعريف أسماء النماذج | التبديل السريع بين مجموعات النماذج | الاحتفاظ بـ `.env` مع `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| كفاءة التخزين المؤقت | تجنب الإحماء المتكرر في تشغيل عينات متعددة | أدوات تخزين مؤقت للمديرين؛ إعادة الاستخدام عبر السكربتات/دفاتر الملاحظات |
-| إحماء التشغيل الأول | تقليل ارتفاعات زمن الاستجابة | إرسال طلب صغير بعد إنشاء `FoundryLocalManager`
+| اختبار سريع | التحقق السريع عبر التدفقات الرئيسية | تشغيل `python Workshop/tests/smoke.py` قبل الورشة |
+| ملفات تعريف أسماء النماذج | التبديل السريع بين مجموعات النماذج | الحفاظ على `.env` مع `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
+| كفاءة التخزين المؤقت | تجنب الإحماء المتكرر في تشغيل متعدد العينات | أدوات مديري التخزين المؤقت؛ إعادة الاستخدام عبر السكربتات/دفاتر الملاحظات |
+| الإحماء الأول | تقليل ارتفاعات زمن الاستجابة | تشغيل طلب صغير بعد إنشاء `FoundryLocalManager`
 
-مثال على أساس دافئ حتمي (PowerShell):
+مثال على الإحماء الحتمي الأساسي (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -471,29 +447,29 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 
 1. **استكشاف الجلسة الثانية**: بناء حلول الذكاء الاصطناعي باستخدام Azure AI Foundry RAG
 2. **تجربة نماذج مختلفة**: تجربة Qwen، DeepSeek، وعائلات النماذج الأخرى
-3. **تحسين الأداء**: ضبط الإعدادات وفقًا لجهازك
+3. **تحسين الأداء**: ضبط الإعدادات لتناسب أجهزتك
 4. **بناء تطبيقات مخصصة**: استخدام Foundry Local SDK في مشاريعك الخاصة
 
 ## موارد إضافية
 
 ### الوثائق
-- [مرجع Python SDK لـ Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
+- [مرجع Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [دليل تثبيت Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 - [كتالوج النماذج](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### كود العينات
-- [العينة 01 من Module08](./samples/01/README.md) - بدء سريع للمحادثة عبر REST
-- [العينة 02 من Module08](./samples/02/README.md) - تكامل SDK مع OpenAI
+- [العينة 01 من Module08](./samples/01/README.md) - بداية محادثة REST
+- [العينة 02 من Module08](./samples/02/README.md) - تكامل OpenAI SDK
 - [العينة 03 من Module08](./samples/03/README.md) - اكتشاف النماذج واختبار الأداء
 
 ### المجتمع
-- [مناقشات GitHub لـ Foundry Local](https://github.com/microsoft/Foundry-Local/discussions)
+- [مناقشات Foundry Local على GitHub](https://github.com/microsoft/Foundry-Local/discussions)
 - [مجتمع Azure AI](https://techcommunity.microsoft.com/category/artificialintelligence)
 
 ---
 
-**مدة الجلسة**: 30 دقيقة عملي + 15 دقيقة أسئلة وأجوبة  
-**مستوى الصعوبة**: مبتدئ  
+**مدة الجلسة**: 30 دقيقة عملية + 15 دقيقة للأسئلة
+**مستوى الصعوبة**: مبتدئ
 **المتطلبات الأساسية**: Windows 11، Python 3.10+، صلاحيات المسؤول
 
 ## سيناريو العينة وتخطيط الورشة
@@ -501,7 +477,7 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 | سكربت الورشة / دفتر الملاحظات | السيناريو | الهدف | المدخلات النموذجية | البيانات المطلوبة |
 |-------------------------------|-----------|-------|--------------------|-------------------|
 | `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | فريق تكنولوجيا المعلومات الداخلي يقيم الاستنتاج على الجهاز لبوابة تقييم الخصوصية | إثبات أن SLM المحلي يستجيب بزمن استجابة أقل من الثانية على الطلبات القياسية | "اذكر فائدتين للاستنتاج المحلي." | لا شيء (طلب واحد) |
-| كود تعديل البدء السريع | مطور ينقل سكربت OpenAI موجود إلى Foundry Local | إظهار التوافق السهل | "اذكر فائدتين للاستنتاج المحلي." | طلب داخلي فقط |
+| كود تعديل البداية السريعة | مطور ينقل سكربت OpenAI الحالي إلى Foundry Local | إظهار التوافق السريع | "اذكر فائدتين للاستنتاج المحلي." | طلب داخلي فقط |
 
 ### سرد السيناريو
 يجب على فريق الأمن والامتثال التحقق مما إذا كان يمكن معالجة بيانات النموذج الأولي الحساسة محليًا. يقومون بتشغيل سكربت الإعداد مع عدة طلبات (الخصوصية، زمن الاستجابة، التكلفة) باستخدام وضع درجة الحرارة الحتمية=0 لالتقاط المخرجات الأساسية للمقارنة لاحقًا (اختبار الأداء في الجلسة 3 ومقارنة SLM مقابل LLM في الجلسة 4).
@@ -515,9 +491,9 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 ]
 ```
 
-استخدم هذه القائمة لإنشاء دورة تقييم قابلة للتكرار أو لتغذية إطار اختبار الانحدار المستقبلي.
+استخدم هذه القائمة لإنشاء حلقة تقييم قابلة للتكرار أو لتغذية إطار اختبار الانحدار المستقبلي.
 
 ---
 
 **إخلاء المسؤولية**:  
-تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو معلومات غير دقيقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي. للحصول على معلومات حاسمة، يُوصى بالاستعانة بترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.
+تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي. للحصول على معلومات حاسمة، يُوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.

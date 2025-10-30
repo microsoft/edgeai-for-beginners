@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T19:16:33+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T22:40:57+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "ms"
 }
@@ -24,7 +24,7 @@ Reka bentuk dan orkestrasi ejen AI pelbagai peranan dengan memanfaatkan runtime 
 ## Prasyarat
 
 - Sesi 1–4 selesai
-- Python dengan `foundry-local-sdk`, `openai`, pilihan `chainlit`
+- Python dengan `foundry-local-sdk`, `openai`, opsional `chainlit`
 - Model tempatan berjalan (sekurang-kurangnya `phi-4-mini`)
 
 ### Petikan Persekitaran Merentas Platform
@@ -50,10 +50,9 @@ Jika menjalankan ejen dari macOS terhadap perkhidmatan hos Windows jauh:
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
-
 ## Aliran Demo (30 min)
 
-### 1. Tentukan Peranan Ejen & Memori (7 min)
+### 1. Tentukan Peranan & Memori Ejen (7 min)
 
 Cipta `samples/05-agents/agents_core.py`:
 
@@ -121,13 +120,11 @@ if __name__ == "__main__":
     demo()
 ```
 
-
 ### 2. Corak Scaffolding CLI (3 min)
 
 ```powershell
 python samples/05-agents/agents_core.py
 ```
-
 
 ### 3. Tambah Pemanggilan Alat (7 min)
 
@@ -150,7 +147,7 @@ TOOLS = {
 }
 ```
 
-Ubah suai `agents_core.py` untuk membolehkan sintaks alat mudah: pengguna menulis `#tool:get_time` dan ejen mengembangkan output alat ke dalam konteks sebelum penjanaan.
+Ubah suai `agents_core.py` untuk membolehkan sintaks alat yang mudah: pengguna menulis `#tool:get_time` dan ejen mengembangkan output alat ke dalam konteks sebelum penjanaan.
 
 ### 4. Aliran Kerja Berorkestrasi (6 min)
 
@@ -184,14 +181,13 @@ if __name__ == '__main__':
         print(f"== {k.upper()} ==\n{v}\n")
 ```
 
-
 ### 5. Projek Permulaan: Kembangkan `05-agent-architecture` (7 min)
 
 Tambah:
-1. Lapisan memori berterusan (contohnya, tambahkan baris JSON perbualan)
+1. Lapisan memori berterusan (contohnya, append baris JSON perbualan)
 2. Rubrik penilaian mudah: placeholder faktualiti / kejelasan / gaya
-3. Pilihan antaramuka depan Chainlit (dua tab: perbualan & jejak)
-4. Pilihan mesin keadaan gaya LangGraph (jika menambah kebergantungan) untuk keputusan bercabang
+3. Front-end Chainlit opsional (dua tab: perbualan & jejak)
+4. Mesin keadaan gaya LangGraph opsional (jika menambah kebergantungan) untuk keputusan bercabang
 
 ## Senarai Semak Pengesahan
 
@@ -200,9 +196,9 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Jangkakan output saluran paip berstruktur dengan nota suntikan alat.
+Harapkan output saluran paip berstruktur dengan nota suntikan alat.
 
-## Gambaran Keseluruhan Strategi Memori
+## Gambaran Strategi Memori
 
 | Lapisan | Tujuan | Contoh |
 |---------|--------|--------|
@@ -211,7 +207,7 @@ Jangkakan output saluran paip berstruktur dengan nota suntikan alat.
 | Semantik | Pengambilan jangka panjang | Simpanan vektor ringkasan |
 | Scratchpad | Langkah penaakulan | Rantaian pemikiran dalam talian (peribadi) |
 
-## Cangkuk Penilaian (Konsep)
+## Cangkuk Penilaian (Konseptual)
 
 ```python
 evaluation = {
@@ -222,7 +218,6 @@ evaluation = {
   "model": model_used
 }
 ```
-
 
 ## Penyelesaian Masalah
 
@@ -235,7 +230,7 @@ evaluation = {
 ## Rujukan
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- LangGraph (konsep pilihan): https://github.com/langchain-ai/langgraph
+- LangGraph (konsep opsional): https://github.com/langchain-ai/langgraph
 - Chainlit: https://docs.chainlit.io
 
 ---
@@ -247,7 +242,7 @@ evaluation = {
 
 | Skrip Bengkel | Senario | Objektif | Contoh Prompt |
 |---------------|---------|----------|---------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot penyelidikan pengetahuan menghasilkan ringkasan mesra eksekutif | Saluran paip dua ejen (penyelidikan → penggilapan editorial) dengan model berbeza pilihan | Jelaskan mengapa inferens tepi penting untuk pematuhan. |
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot penyelidikan pengetahuan menghasilkan ringkasan mesra eksekutif | Saluran paip dua ejen (penyelidikan → penggilapan editorial) dengan model berbeza opsional | Terangkan mengapa inferens tepi penting untuk pematuhan. |
 | (Dikembangkan) konsep `tools.py` | Tambah alat anggaran masa & token | Tunjukkan corak pemanggilan alat ringan | #tool:get_time |
 
 ### Naratif Senario
@@ -255,13 +250,13 @@ Pasukan dokumentasi pematuhan memerlukan ringkasan dalaman pantas yang diperoleh
 
 ### Contoh Persekitaran Multi-Model
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
-
-### Struktur Jejak (Pilihan)
+### Struktur Jejak (Opsional)
 ```json
 {
     "step": 1,
@@ -275,18 +270,18 @@ python Workshop\samples\session05\agents_orchestrator.py
 
 Simpan setiap langkah ke fail JSONL untuk penilaian rubrik kemudian.
 
-### Penambahbaikan Pilihan
+### Penambahbaikan Opsional
 
 | Tema | Penambahbaikan | Manfaat | Lakaran Pelaksanaan |
 |------|----------------|---------|---------------------|
-| Peranan Multi-Model | Model berbeza setiap ejen (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Pengkhususan & kelajuan | Pilih alias env vars, panggil `chat_once` dengan alias per peranan |
-| Jejak Berstruktur | Jejak JSON setiap tindakan(alat, input, latensi, token) | Debug & penilaian | Tambah dict ke senarai; tulis `.jsonl` pada akhir |
-| Ketekalan Memori | Konteks dialog boleh dimuat semula | Kesinambungan sesi | Buang `Agent.memory` ke `sessions/<ts>.json` |
+| Peranan Multi-Model | Model berbeza setiap ejen (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Pengkhususan & kelajuan | Pilih alias env vars, panggil `chat_once` dengan alias per-peranan |
+| Jejak Berstruktur | Jejak JSON setiap tindakan (alat, input, latensi, token) | Debug & penilaian | Tambah dict ke senarai; tulis `.jsonl` pada akhir |
+| Ketekalan Memori | Konteks dialog boleh dimuat semula | Kesinambungan sesi | Dump `Agent.memory` ke `sessions/<ts>.json` |
 | Pendaftaran Alat | Penemuan alat dinamik | Kebolehluasan | Kekalkan dict `TOOLS` & introspeksi nama/deskripsi |
 | Ulang & Backoff | Rantai panjang yang kukuh | Kurangkan kegagalan sementara | Bungkus `act` dengan try/except + backoff eksponen |
 | Penilaian Rubrik | Label kualitatif automatik | Jejak penambahbaikan | Prompt pas kedua model: "Nilai kejelasan 1-5" |
-| Memori Vektor | Pengambilan semantik | Konteks jangka panjang yang kaya | Benamkan ringkasan, ambil top-k ke dalam mesej sistem |
-| Balasan Penstriman | Respons yang dirasakan lebih pantas | Penambahbaikan UX | Gunakan penstriman apabila tersedia dan flush token separa |
+| Memori Vektor | Pengambilan semantik | Konteks jangka panjang yang kaya | Embed ringkasan, ambil top-k ke dalam mesej sistem |
+| Balasan Streaming | Respons yang dirasakan lebih pantas | Penambahbaikan UX | Gunakan streaming apabila tersedia dan flush token separa |
 | Ujian Deterministik | Kawalan regresi | CI stabil | Jalankan dengan `temperature=0`, benih prompt tetap |
 | Cabang Selari | Penerokaan lebih pantas | Throughput | Gunakan `concurrent.futures` untuk langkah ejen bebas |
 
@@ -302,7 +297,6 @@ trace.append({
 })
 ```
 
-
 #### Prompt Penilaian Mudah
 
 ```python
@@ -315,4 +309,4 @@ Simpan pasangan (`answer`, `rating`) untuk membina graf kualiti sejarah.
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-08T16:34:38+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T20:50:18+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "tw"
 }
@@ -11,37 +11,37 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概述
 
-`Workshop/samples` 目錄中的所有 Python 範例已更新，以遵循 Foundry Local SDK 的最佳實踐，並確保整個工作坊的一致性。
+`Workshop/samples` 目錄中的所有 Python 範例已更新，以遵循 Foundry Local SDK 的最佳實踐，並確保工作坊範例的一致性。
 
 **日期**：2025年10月8日  
-**範圍**：涵蓋6個工作坊課程的9個Python文件  
-**主要重點**：錯誤處理、文件化、SDK模式、用戶體驗
+**範圍**：涵蓋6個工作坊課程的9個Python檔案  
+**主要重點**：錯誤處理、文件撰寫、SDK模式、使用者體驗
 
 ---
 
-## 更新的文件
+## 更新的檔案
 
 ### 課程 01：入門
 - ✅ `chat_bootstrap.py` - 基本聊天和串流範例
 
 ### 課程 02：RAG 解決方案
-- ✅ `rag_pipeline.py` - 使用嵌入的 RAG 實現
-- ✅ `rag_eval_ragas.py` - 使用 RAGAS 指標進行 RAG 評估
+- ✅ `rag_pipeline.py` - 使用嵌入的RAG實現
+- ✅ `rag_eval_ragas.py` - 使用RAGAS指標進行RAG評估
 
 ### 課程 03：開源模型
 - ✅ `benchmark_oss_models.py` - 多模型基準測試
 
 ### 課程 04：尖端模型
-- ✅ `model_compare.py` - SLM 與 LLM 的比較
+- ✅ `model_compare.py` - SLM與LLM比較
 
 ### 課程 05：AI 驅動代理
 - ✅ `agents_orchestrator.py` - 多代理協調
 
-### 課程 06：作為工具的模型
+### 課程 06：模型作為工具
 - ✅ `models_router.py` - 基於意圖的模型路由
 - ✅ `models_pipeline.py` - 多步驟路由管道
 
-### 支援基礎設施
+### 支援基礎架構
 - ✅ `workshop_utils.py` - 已遵循最佳實踐（無需更改）
 
 ---
@@ -65,9 +65,9 @@ except Exception as e:
     sys.exit(1)
 ```
 
-**優勢：**
-- 提供清晰的錯誤訊息，實現優雅的錯誤處理
-- 提供可操作的故障排除提示
+**好處：**
+- 提供清晰的錯誤訊息以優雅處理錯誤
+- 可操作的故障排除提示
 - 為腳本提供正確的退出代碼
 
 ### 2. 更好的匯入管理
@@ -86,19 +86,19 @@ except ImportError:
     sys.exit(1)
 ```
 
-**優勢：**
+**好處：**
 - 當依賴項缺失時提供清晰的指導
-- 防止難以理解的匯入錯誤
-- 提供用戶友好的安裝指引
+- 防止晦澀的匯入錯誤
+- 使用者友好的安裝指示
 
-### 3. 全面的文件化
+### 3. 全面的文件撰寫
 
 **新增至所有範例：**
-- docstring 中的環境變數文件
-- SDK 參考連結
+- 文件字串中環境變數的說明
+- SDK參考連結
 - 使用範例
-- 詳細的函數/參數文件
-- 提供更好 IDE 支援的型別提示
+- 詳細的函數/參數說明
+- 提供更好的IDE支援的型別提示
 
 **範例：**
 ```python
@@ -116,7 +116,7 @@ def pipeline(task: str) -> Dict[str, Any]:
     """
 ```
 
-### 4. 改善用戶反饋
+### 4. 改善使用者回饋
 
 **新增資訊性日誌：**
 ```python
@@ -138,13 +138,13 @@ print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
 
-### 5. 強化基準測試
+### 5. 強大的基準測試
 
-**課程 03 的改進：**
-- 每個模型的錯誤處理（失敗時繼續）
+**課程 03 改進：**
+- 每個模型的錯誤處理（失敗後繼續）
 - 詳細的進度報告
 - 正確執行預熱回合
-- 支援首字元延遲測量
+- 支援首個標記延遲測量
 - 階段的清晰分離
 
 ### 6. 一致的型別提示
@@ -157,23 +157,23 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
     """Run comparison for given model alias."""
 ```
 
-**優勢：**
-- 更好的 IDE 自動完成
-- 提早檢測錯誤
-- 自我文件化的代碼
+**好處：**
+- 更好的IDE自動完成
+- 提早錯誤檢測
+- 自我描述的程式碼
 
 ### 7. 增強的模型路由器
 
-**課程 06 的改進：**
+**課程 06 改進：**
 - 全面的意圖檢測文件
-- 模型選擇算法解釋
+- 模型選擇演算法解釋
 - 詳細的路由日誌
 - 測試輸出格式化
 - 批量測試中的錯誤恢復
 
 ### 8. 多代理協調
 
-**課程 05 的改進：**
+**課程 05 改進：**
 - 階段性進度報告
 - 每個代理的錯誤處理
 - 清晰的管道結構
@@ -200,68 +200,68 @@ pip install -r Workshop/requirements.txt
 
 #### 課程 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### 課程 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### 課程 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### 課程 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### 課程 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### 課程 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
 
 ## 環境變數參考
 
-### 全域（所有範例適用）
+### 全域（所有範例）
 | 變數 | 描述 | 預設值 |
 |------|------|--------|
 | `FOUNDRY_LOCAL_ALIAS` | 使用的模型別名 | 根據範例而異 |
@@ -274,11 +274,11 @@ python models_pipeline.py
 | 變數 | 使用範例 | 描述 |
 |------|----------|------|
 | `EMBED_MODEL` | 課程 02 | 嵌入模型名稱 |
-| `RAG_QUESTION` | 課程 02 | RAG 測試問題 |
+| `RAG_QUESTION` | 課程 02 | RAG測試問題 |
 | `BENCH_MODELS` | 課程 03 | 逗號分隔的基準測試模型 |
 | `BENCH_ROUNDS` | 課程 03 | 基準測試回合數 |
 | `BENCH_PROMPT` | 課程 03 | 基準測試的測試提示 |
-| `BENCH_STREAM` | 課程 03 | 測量首字元延遲 |
+| `BENCH_STREAM` | 課程 03 | 測量首個標記延遲 |
 | `SLM_ALIAS` | 課程 04 | 小型語言模型 |
 | `LLM_ALIAS` | 課程 04 | 大型語言模型 |
 | `COMPARE_PROMPT` | 課程 04 | 比較測試提示 |
@@ -293,10 +293,10 @@ python models_pipeline.py
 
 **無** - 所有更改均向後相容。
 
-現有腳本將繼續運行。新增功能包括：
+現有腳本將繼續運作。新增功能包括：
 - 可選的環境變數
 - 增強的錯誤訊息（不影響功能）
-- 額外的日誌記錄（可選擇關閉）
+- 新增的日誌（可選擇隱藏）
 - 更好的型別提示（無運行時影響）
 
 ---
@@ -337,7 +337,7 @@ def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
 
-### 5. 全面的 docstring
+### 5. 全面的文件字串
 ```python
 def function(arg: str) -> str:
     """Short description.
@@ -353,7 +353,7 @@ def function(arg: str) -> str:
     """
 ```
 
-### 6. 環境變數支援
+### 6. 支援環境變數
 ```python
 import os
 
@@ -383,7 +383,7 @@ for model in models:
 pip install sentence-transformers ragas datasets numpy
 ```
 
-### 問題：連接錯誤
+### 問題：連線錯誤
 **解決方案：** 確保 Foundry Local 正在運行
 ```bash
 foundry service status
@@ -391,7 +391,7 @@ foundry model run phi-4-mini
 ```
 
 ### 問題：找不到模型
-**解決方案：** 檢查可用的模型
+**解決方案：** 檢查可用模型
 ```bash
 foundry model ls
 foundry model download <alias>
@@ -409,25 +409,25 @@ set BENCH_ROUNDS=2
 ## 下一步
 
 ### 1. 測試所有範例
-按照上述測試清單逐一驗證所有範例是否正常運行。
+按照上述測試清單逐一驗證所有範例是否正常運作。
 
 ### 2. 更新文件
-- 更新課程的 markdown 文件，加入新範例
-- 在主 README 中新增故障排除部分
-- 創建快速參考指南
+- 更新課程的Markdown檔案，加入新的範例
+- 在主README中新增故障排除部分
+- 建立快速參考指南
 
-### 3. 創建整合測試
+### 3. 建立整合測試
 ```python
 # Workshop/tests/test_samples.py
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
 
-### 4. 添加性能基準測試
+### 4. 新增性能基準測試
 追蹤錯誤處理改進帶來的性能提升。
 
-### 5. 收集用戶反饋
-向工作坊參與者收集以下方面的反饋：
+### 5. 使用者回饋
+收集工作坊參與者的回饋意見，關於：
 - 錯誤訊息的清晰度
 - 文件的完整性
 - 使用的便利性
@@ -436,41 +436,41 @@ def test_all_samples():
 
 ## 資源
 
-- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
-- **快速參考**: `Workshop/FOUNDRY_SDK_QUICKREF.md`  
-- **遷移說明**: `Workshop/SDK_MIGRATION_NOTES.md`  
-- **主存儲庫**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **快速參考**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **遷移說明**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **主存儲庫**: https://github.com/microsoft/Foundry-Local
 
 ---
 
 ## 維護
 
-### 添加新範例
-在創建新範例時，請遵循以下模式：
+### 新增範例
+在建立新範例時，請遵循以下模式：
 
-1. 使用 `workshop_utils` 進行客戶端管理
-2. 添加全面的錯誤處理
-3. 包含環境變數支援
-4. 添加型別提示和 docstring
+1. 使用 `workshop_utils` 管理客戶端
+2. 新增全面的錯誤處理
+3. 支援環境變數
+4. 新增型別提示和文件字串
 5. 提供資訊性日誌
-6. 在 docstring 中包含使用範例
-7. 連結到 SDK 文件
+6. 在文件字串中包含使用範例
+7. 連結至SDK文件
 
 ### 審查更新
-在審查範例更新時，檢查以下內容：
-- [ ] 所有 I/O 操作的錯誤處理
+在審查範例更新時，檢查以下項目：
+- [ ] 所有I/O操作的錯誤處理
 - [ ] 公共函數的型別提示
-- [ ] 全面的 docstring
+- [ ] 全面的文件字串
 - [ ] 環境變數文件
-- [ ] 資訊性用戶反饋
-- [ ] SDK 參考連結
-- [ ] 一致的代碼風格
+- [ ] 資訊性使用者回饋
+- [ ] SDK參考連結
+- [ ] 一致的程式碼風格
 
 ---
 
-**摘要**：所有工作坊的 Python 範例現在均遵循 Foundry Local SDK 的最佳實踐，並增強了錯誤處理、全面的文件化以及改進的用戶體驗。無重大變更——所有現有功能均得以保留並進一步增強。
+**摘要**：所有工作坊的Python範例現已遵循Foundry Local SDK最佳實踐，並增強了錯誤處理、全面的文件撰寫以及改善的使用者體驗。無重大變更 - 所有現有功能均保留並得到提升。
 
 ---
 
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或錯誤解釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

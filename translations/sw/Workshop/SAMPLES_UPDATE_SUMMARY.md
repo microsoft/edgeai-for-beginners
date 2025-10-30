@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T21:39:32+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:52:58+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "sw"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Muhtasari
 
-Sampuli zote za Python katika saraka ya `Workshop/samples` zimesasishwa kufuata mbinu bora za Foundry Local SDK na kuhakikisha uthabiti katika warsha.
+Sampuli zote za Python katika saraka ya `Workshop/samples` zimesasishwa kufuata mazoea bora ya Foundry Local SDK na kuhakikisha uthabiti katika warsha.
 
 **Tarehe**: Oktoba 8, 2025  
 **Wigo**: Faili 9 za Python katika vipindi 6 vya warsha  
@@ -26,7 +26,7 @@ Sampuli zote za Python katika saraka ya `Workshop/samples` zimesasishwa kufuata 
 
 ### Kipindi 02: Suluhisho za RAG
 - ✅ `rag_pipeline.py` - Utekelezaji wa RAG na embeddings
-- ✅ `rag_eval_ragas.py` - Tathmini ya RAG kwa kutumia vipimo vya RAGAS
+- ✅ `rag_eval_ragas.py` - Tathmini ya RAG na vipimo vya RAGAS
 
 ### Kipindi 03: Miundo ya Chanzo Huria
 - ✅ `benchmark_oss_models.py` - Upimaji wa miundo mingi
@@ -42,13 +42,13 @@ Sampuli zote za Python katika saraka ya `Workshop/samples` zimesasishwa kufuata 
 - ✅ `models_pipeline.py` - Njia ya hatua nyingi iliyopangwa
 
 ### Miundombinu ya Msaada
-- ✅ `workshop_utils.py` - Tayari inafuata mbinu bora (hakuna mabadiliko yanayohitajika)
+- ✅ `workshop_utils.py` - Tayari inafuata mazoea bora (hakuna mabadiliko yanayohitajika)
 
 ---
 
 ## Maboresho Muhimu
 
-### 1. Kushughulikia Makosa kwa Ufanisi
+### 1. Kuboresha Kushughulikia Makosa
 
 **Kabla:**
 ```python
@@ -66,8 +66,8 @@ except Exception as e:
 ```
 
 **Faida:**
-- Kushughulikia makosa kwa ustadi na ujumbe wazi wa makosa
-- Vidokezo vya kutatua matatizo vinavyoweza kutekelezwa
+- Kushughulikia makosa kwa ustadi na ujumbe wa wazi wa makosa
+- Vidokezo vya kutatua matatizo
 - Nambari sahihi za kutoka kwa maandishi
 
 ### 2. Usimamizi Bora wa Uingizaji
@@ -94,10 +94,10 @@ except ImportError:
 ### 3. Nyaraka za Kina
 
 **Imeongezwa kwa sampuli zote:**
-- Nyaraka za vigezo vya mazingira katika docstrings
+- Nyaraka za mabadiliko ya mazingira katika docstrings
 - Viungo vya marejeleo ya SDK
 - Mifano ya matumizi
-- Nyaraka za kina za kazi/vigezo
+- Nyaraka za kina za kazi/parameta
 - Vidokezo vya aina kwa msaada bora wa IDE
 
 **Mfano:**
@@ -118,7 +118,7 @@ def pipeline(task: str) -> Dict[str, Any]:
 
 ### 4. Maoni Bora ya Mtumiaji
 
-**Imeongezwa: Kumbukumbu za taarifa:**
+**Imeongezwa ukumbusho wa taarifa:**
 ```python
 print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
@@ -141,13 +141,13 @@ print(json.dumps(summary, indent=2))
 ### 5. Upimaji Imara
 
 **Maboresho ya Kipindi 03:**
-- Kushughulikia makosa kwa kila muundo (inaendelea hata ikishindwa)
+- Kushughulikia makosa ya kila muundo (inaendelea hata ikishindwa)
 - Kuripoti maendeleo kwa kina
 - Raundi za kujiandaa zinatekelezwa ipasavyo
 - Msaada wa kipimo cha ucheleweshaji wa tokeni ya kwanza
-- Utengano wazi wa hatua
+- Utenganisho wazi wa hatua
 
-### 6. Vidokezo vya Aina Thabiti
+### 6. Vidokezo vya Aina Vinavyolingana
 
 **Imeongezwa kote:**
 ```python
@@ -158,16 +158,16 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ```
 
 **Faida:**
-- Ujazo wa kiotomatiki bora wa IDE
+- Autocomplete bora ya IDE
 - Kugundua makosa mapema
 - Nambari inayojieleza yenyewe
 
-### 7. Uelekezaji wa Miundo Ulioboreshwa
+### 7. Uelekezaji wa Muundo Ulioboreshwa
 
 **Maboresho ya Kipindi 06:**
 - Nyaraka za kina za kugundua nia
-- Maelezo ya algoriti ya uteuzi wa miundo
-- Kumbukumbu za uelekezaji za kina
+- Maelezo ya algorithimu ya kuchagua muundo
+- Magogo ya uelekezaji wa kina
 - Muundo wa matokeo ya majaribio
 - Urejeshaji wa makosa katika majaribio ya kundi
 
@@ -175,7 +175,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 
 **Maboresho ya Kipindi 05:**
 - Kuripoti maendeleo hatua kwa hatua
-- Kushughulikia makosa kwa kila wakala
+- Kushughulikia makosa ya kila wakala
 - Muundo wazi wa njia
 - Nyaraka bora za usimamizi wa kumbukumbu
 
@@ -200,83 +200,83 @@ pip install -r Workshop/requirements.txt
 
 #### Kipindi 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Kipindi 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Kipindi 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Kipindi 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Kipindi 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Kipindi 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
 
-## Marejeleo ya Vigezo vya Mazingira
+## Marejeleo ya Mabadiliko ya Mazingira
 
-### Globali (Sampuli Zote)
+### Kwa Ujumla (Sampuli Zote)
 | Kigezo | Maelezo | Chaguo-msingi |
 |--------|---------|--------------|
 | `FOUNDRY_LOCAL_ALIAS` | Jina la mfano wa kutumia | Inatofautiana kwa sampuli |
-| `FOUNDRY_LOCAL_ENDPOINT` | Kubadilisha mwisho wa huduma | Inatambuliwa kiotomatiki |
+| `FOUNDRY_LOCAL_ENDPOINT` | Badilisha mwisho wa huduma | Inatambuliwa kiotomatiki |
 | `SHOW_USAGE` | Onyesha matumizi ya tokeni | `0` |
 | `RETRY_ON_FAIL` | Washa mantiki ya kujaribu tena | `1` |
-| `RETRY_BACKOFF` | Muda wa kuchelewa wa kujaribu tena | `1.0` |
+| `RETRY_BACKOFF` | Muda wa kuchelewa kujaribu tena | `1.0` |
 
 ### Sampuli Maalum
-| Kigezo | Kinatumika na | Maelezo |
-|--------|---------------|---------|
+| Kigezo | Kinachotumiwa na | Maelezo |
+|--------|------------------|---------|
 | `EMBED_MODEL` | Kipindi 02 | Jina la mfano wa embedding |
 | `RAG_QUESTION` | Kipindi 02 | Swali la majaribio kwa RAG |
-| `BENCH_MODELS` | Kipindi 03 | Miundo ya kupimwa, imetenganishwa kwa koma |
-| `BENCH_ROUNDS` | Kipindi 03 | Idadi ya raundi za upimaji |
+| `BENCH_MODELS` | Kipindi 03 | Miundo iliyotenganishwa kwa koma ya kupima |
+| `BENCH_ROUNDS` | Kipindi 03 | Idadi ya raundi za kupima |
 | `BENCH_PROMPT` | Kipindi 03 | Kidokezo cha majaribio kwa upimaji |
 | `BENCH_STREAM` | Kipindi 03 | Pima ucheleweshaji wa tokeni ya kwanza |
 | `SLM_ALIAS` | Kipindi 04 | Mfano mdogo wa lugha |
@@ -285,25 +285,25 @@ python models_pipeline.py
 | `AGENT_MODEL_PRIMARY` | Kipindi 05 | Mfano wa wakala mkuu |
 | `AGENT_MODEL_EDITOR` | Kipindi 05 | Mfano wa wakala mhariri |
 | `AGENT_QUESTION` | Kipindi 05 | Swali la majaribio kwa mawakala |
-| `PIPELINE_TASK` | Kipindi 06 | Kazi kwa njia |
+| `PIPELINE_TASK` | Kipindi 06 | Kazi ya njia |
 
 ---
 
 ## Mabadiliko Makubwa
 
-**Hakuna** - Mabadiliko yote yanapatana na matoleo ya awali.
+**Hakuna** - Mabadiliko yote yanalingana na yaliyopita.
 
 Skripti zilizopo zitaendelea kufanya kazi. Vipengele vipya ni:
 - Vigezo vya mazingira vya hiari
 - Ujumbe wa makosa ulioboreshwa (hauharibu utendaji)
-- Kumbukumbu za ziada (zinaweza kuzimwa)
-- Vidokezo bora vya aina (hakuna athari ya wakati wa utekelezaji)
+- Magogo ya ziada (yanaweza kuzimwa)
+- Vidokezo bora vya aina (hakuna athari ya wakati wa kukimbia)
 
 ---
 
-## Mbinu Bora Zilizotekelezwa
+## Mazoea Bora Yaliyotekelezwa
 
-### 1. Tumia Kila Wakati Workshop Utils
+### 1. Tumia Workshop Utils Kila Wakati
 ```python
 from workshop_utils import get_client, chat_once
 
@@ -322,7 +322,7 @@ except Exception as e:
     sys.exit(1)
 ```
 
-### 3. Kumbukumbu za Taarifa
+### 3. Magogo ya Taarifa
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
@@ -361,7 +361,7 @@ alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
 
-### 7. Kupungua kwa Neema
+### 7. Kushuka kwa Neema
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -409,12 +409,12 @@ set BENCH_ROUNDS=2
 ## Hatua Zifuatazo
 
 ### 1. Jaribu Sampuli Zote
-Pitisha orodha ya ukaguzi ya upimaji hapo juu ili kuthibitisha sampuli zote zinafanya kazi ipasavyo.
+Pitisha orodha ya ukaguzi ya majaribio hapo juu ili kuthibitisha sampuli zote zinafanya kazi ipasavyo.
 
 ### 2. Sasisha Nyaraka
-- Sasisha faili za markdown za vipindi na mifano mipya
+- Sasisha faili za warsha za markdown na mifano mipya
 - Ongeza sehemu ya kutatua matatizo kwenye README kuu
-- Unda mwongozo wa marejeleo ya haraka
+- Unda mwongozo wa rejeleo la haraka
 
 ### 3. Unda Majaribio ya Muunganisho
 ```python
@@ -437,8 +437,8 @@ Kusanya maoni kutoka kwa washiriki wa warsha kuhusu:
 ## Rasilimali
 
 - **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Marejeleo ya Haraka**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Vidokezo vya Uhamiaji**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Rejeleo la Haraka**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Vidokezo vya Uhamisho**: `Workshop/SDK_MIGRATION_NOTES.md`
 - **Hifadhi Kuu**: https://github.com/microsoft/Foundry-Local
 
 ---
@@ -446,29 +446,29 @@ Kusanya maoni kutoka kwa washiriki wa warsha kuhusu:
 ## Matengenezo
 
 ### Kuongeza Sampuli Mpya
-Fuata mifumo hii unapounda sampuli mpya:
+Fuata mifumo hii unapotengeneza sampuli mpya:
 
 1. Tumia `workshop_utils` kwa usimamizi wa mteja
 2. Ongeza kushughulikia makosa kwa kina
 3. Jumuisha msaada wa vigezo vya mazingira
 4. Ongeza vidokezo vya aina na docstrings
-5. Toa kumbukumbu za taarifa
+5. Toa magogo ya taarifa
 6. Jumuisha mifano ya matumizi katika docstring
 7. Unganisha na nyaraka za SDK
 
 ### Kukagua Sasisho
-Unapokagua sasisho za sampuli, angalia:
+Unapokagua sasisho za sampuli, hakikisha:
 - [ ] Kushughulikia makosa kwenye operesheni zote za I/O
 - [ ] Vidokezo vya aina kwenye kazi za umma
 - [ ] Docstrings za kina
 - [ ] Nyaraka za vigezo vya mazingira
-- [ ] Maoni ya mtumiaji yanayofaa
+- [ ] Maoni ya mtumiaji yenye taarifa
 - [ ] Viungo vya marejeleo ya SDK
-- [ ] Mtindo thabiti wa nambari
+- [ ] Mtindo wa nambari unaolingana
 
 ---
 
-**Muhtasari**: Sampuli zote za Python za Warsha sasa zinafuata mbinu bora za Foundry Local SDK na kushughulikia makosa kwa ufanisi, nyaraka za kina, na uzoefu bora wa mtumiaji. Hakuna mabadiliko makubwa - utendaji wote uliopo umehifadhiwa na kuboreshwa.
+**Muhtasari**: Sampuli zote za Python za Warsha sasa zinafuata mazoea bora ya Foundry Local SDK na kushughulikia makosa kwa ustadi, nyaraka za kina, na uzoefu bora wa mtumiaji. Hakuna mabadiliko makubwa - utendaji wote uliopo umehifadhiwa na kuboreshwa.
 
 ---
 

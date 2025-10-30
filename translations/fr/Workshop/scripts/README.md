@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-08T19:29:46+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T20:04:18+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "fr"
 }
@@ -20,7 +20,7 @@ Ce répertoire contient des scripts d'automatisation et de support utilisés pou
 
 ## 1. Analyseur de modèles CLI Markdown
 
-`lint_markdown_cli.py` scanne tous les fichiers `.md` non traduits pour détecter les modèles Foundry Local CLI interdits **dans les blocs de code délimités** (``` ... ```). Le texte informatif peut toujours mentionner les commandes obsolètes à des fins de contexte historique.
+`lint_markdown_cli.py` analyse tous les fichiers `.md` non traduits pour détecter les modèles Foundry Local CLI interdits **dans les blocs de code délimités** (``` ... ```). Le texte informatif peut toujours mentionner les commandes obsolètes à des fins historiques.
 
 ### Modèles obsolètes (bloqués dans les blocs de code)
 
@@ -32,7 +32,7 @@ L'analyseur bloque les modèles CLI obsolètes. Utilisez des alternatives modern
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
 | `foundry model list --running` | `foundry model list` |
 | `foundry model list --cached` | `foundry cache list` |
-| `foundry model stats` | Script de benchmark + outils système (`Gestionnaire des tâches`, `nvidia-smi`) |
+| `foundry model stats` | Script de benchmark + outils système (`Gestionnaire de tâches`, `nvidia-smi`) |
 | `foundry model benchmark` | `samples/session03/benchmark_oss_models.py` |
 | `foundry model list --available` | `foundry model list` |
 
@@ -76,11 +76,11 @@ Exemple d'ajout :
 DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental foo usage"))
 ```
 
-### Mentions explicatives autorisées
-Étant donné que seuls les blocs de code délimités sont appliqués, vous pouvez décrire les commandes obsolètes dans le texte narratif en toute sécurité. Si vous *devez* les montrer dans un bloc délimité pour contraste, ajoutez un bloc délimité **sans** triple backticks (par exemple, en indentant ou en citant) ou réécrivez sous forme pseudo.
+### Autorisation des mentions explicatives
+Étant donné que seuls les blocs de code délimités sont appliqués, vous pouvez décrire les commandes obsolètes dans le texte narratif en toute sécurité. Si vous *devez* les montrer dans un bloc délimité pour contraste, ajoutez un bloc délimité **sans** triple backticks (par exemple, en utilisant une indentation ou une citation) ou réécrivez sous forme pseudo.
 
 ### Ignorer des fichiers spécifiques (avancé)
-Si nécessaire, placez des exemples anciens dans un fichier séparé hors du dépôt ou renommez avec une extension différente pendant la rédaction. Les ignorances intentionnelles pour les copies traduites sont automatiques (chemins contenant `translations`).
+Si nécessaire, placez des exemples anciens dans un fichier séparé hors du dépôt ou renommez avec une extension différente pendant la rédaction. Les exclusions intentionnelles pour les copies traduites sont automatiques (chemins contenant `translations`).
 
 ### Dépannage
 | Problème | Cause | Résolution |
@@ -89,8 +89,8 @@ Si nécessaire, placez des exemples anciens dans un fichier séparé hors du dé
 | Le CI échoue mais passe localement | Version Python différente ou modifications non commises | Réexécutez localement, assurez-vous que l'arborescence de travail est propre, vérifiez la version Python du workflow (3.11) |
 | Besoin de contourner temporairement | Correctif d'urgence | Appliquez la correction immédiatement après ; envisagez d'utiliser une branche temporaire et une PR de suivi (évitez d'ajouter des commutateurs de contournement) |
 
-### Justification
-Aligner la documentation avec la surface CLI *stable* actuelle évite les frictions lors des ateliers, réduit la confusion des apprenants et centralise les mesures de performance via des scripts Python maintenus au lieu de sous-commandes CLI fluctuantes.
+### Raisonnement
+Aligner la documentation avec la surface CLI *stable* actuelle évite les frictions lors des ateliers, réduit la confusion des apprenants et centralise la mesure des performances via des scripts Python maintenus au lieu de sous-commandes CLI obsolètes.
 
 ---
 Maintenu dans le cadre de la chaîne d'outils de qualité de l'atelier. Pour des améliorations (par exemple, suggestions de correction automatique ou génération de rapports HTML), ouvrez une issue ou soumettez une PR.
@@ -117,10 +117,10 @@ python scripts/validate_samples.py --summary
 ### Ce qu'il vérifie
 - ✅ Validité de la syntaxe Python
 - ✅ Présence des imports requis
-- ✅ Implémentation de la gestion des erreurs (mode verbose)
-- ✅ Utilisation des annotations de type (mode verbose)
-- ✅ Docstrings des fonctions (mode verbose)
-- ✅ Liens de référence SDK (mode verbose)
+- ✅ Mise en œuvre de la gestion des erreurs (mode détaillé)
+- ✅ Utilisation des annotations de type (mode détaillé)
+- ✅ Docstrings des fonctions (mode détaillé)
+- ✅ Liens de référence SDK (mode détaillé)
 
 ### Variables d'environnement
 - `SKIP_IMPORT_CHECK=1` - Ignore la validation des imports
@@ -182,7 +182,7 @@ Génère un tableau de performance reproductible pour un ensemble de modèles.
 
 ### Utilisation
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Sorties
@@ -199,7 +199,7 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 | `--rounds` | Tours par modèle | 3 |
 | `--output` | Fichier de sortie Markdown | `benchmark_report.md` |
 | `--json` | Fichier de sortie JSON | `benchmark_report.json` |
-| `--fail-on-empty` | Sortie non nulle si tous les benchmarks échouent | désactivé |
+| `--fail-on-empty` | Code de sortie non nul si tous les benchmarks échouent | désactivé |
 
 La variable d'environnement `BENCH_STREAM=1` ajoute la mesure de latence du premier token.
 
@@ -211,4 +211,4 @@ La variable d'environnement `BENCH_STREAM=1` ajoute la mesure de latence du prem
 ---
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T19:17:34+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T22:37:03+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "id"
 }
@@ -17,19 +17,19 @@ Mulailah perjalanan Anda dengan Foundry Local dengan menginstal dan mengonfigura
 
 Pada akhir sesi ini, Anda akan dapat:
 
-- **Menginstal dan Mengonfigurasi**: Mengatur Foundry Local di Windows 11 dengan pengaturan performa optimal
+- **Instalasi dan Konfigurasi**: Mengatur Foundry Local di Windows 11 dengan pengaturan performa optimal
 - **Menguasai Operasi CLI**: Menggunakan Foundry Local CLI untuk manajemen dan penerapan model
 - **Mengaktifkan Akselerasi Perangkat Keras**: Mengonfigurasi akselerasi GPU dengan ONNXRuntime atau WebGPU
-- **Menerapkan Beberapa Model**: Menjalankan model phi-4, GPT-OSS-20B, Qwen, dan DeepSeek secara lokal
+- **Menerapkan Banyak Model**: Menjalankan model phi-4, GPT-OSS-20B, Qwen, dan DeepSeek secara lokal
 - **Membangun Aplikasi Pertama Anda**: Menyesuaikan sampel yang ada untuk menggunakan Foundry Local Python SDK
 
 # Uji model (prompt tunggal non-interaktif)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
+foundry model run phi-4-mini --prompt "Halo, perkenalkan dirimu"
 
 - Windows 11 (22H2 atau lebih baru)
 # Daftar model katalog yang tersedia (model yang dimuat akan muncul setelah dijalankan)
 foundry model list
-## NOTE: Saat ini tidak ada flag `--running` khusus; untuk melihat model yang dimuat, mulai obrolan atau periksa log layanan.
+## NOTE: Saat ini tidak ada flag khusus `--running`; untuk melihat model yang dimuat, mulai obrolan atau periksa log layanan.
 - Python 3.10+ terinstal
 - Visual Studio Code dengan ekstensi Python
 - Hak administrator untuk instalasi
@@ -38,7 +38,7 @@ foundry model list
 
 Buat file `.env` (atau atur di shell) untuk membuat skrip lebih portabel:
 # Bandingkan respons (non-interaktif)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
+foundry model run gpt-oss-20b --prompt "Jelaskan AI edge dengan istilah sederhana"
 | Variabel | Tujuan | Contoh |
 |----------|--------|--------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias model yang diinginkan (katalog secara otomatis memilih varian terbaik) | `phi-3.5-mini` |
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (Pratinjau / Jika Didukung)**
 
-Jika paket macOS asli tersedia (periksa dokumen resmi untuk yang terbaru):
+Jika paket macOS asli tersedia (periksa dokumen resmi untuk versi terbaru):
 
 ```bash
 # Homebrew (if/when available)
@@ -77,9 +77,9 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Jika biner asli macOS belum tersedia, Anda masih dapat:
-1. Menggunakan VM Windows 11 ARM/Intel (Parallels / UTM) dan mengikuti langkah-langkah Windows.
-2. Menjalankan model melalui container (jika gambar container diterbitkan) dan mengatur `FOUNDRY_LOCAL_ENDPOINT` ke port yang diekspos.
+Jika biner asli macOS belum tersedia, Anda masih dapat: 
+1. Menggunakan VM Windows 11 ARM/Intel (Parallels / UTM) dan mengikuti langkah-langkah Windows. 
+2. Menjalankan model melalui container (jika gambar container diterbitkan) dan mengatur `FOUNDRY_LOCAL_ENDPOINT` ke port yang diekspos. 
 
 **Buat Lingkungan Virtual Python (Lintas Platform)**
 
@@ -126,7 +126,7 @@ py -m venv .venv
 pip install foundry-local-sdk openai requests
 ```
 
-### SDK Bootstrapping (Direkomendasikan)
+### Bootstrapping SDK (Direkomendasikan)
 
 Alih-alih memulai layanan secara manual & menjalankan model, **Foundry Local Python SDK** dapat mengatur semuanya:
 
@@ -160,32 +160,7 @@ print(resp.choices[0].message.content)
 
 Jika Anda lebih suka kontrol eksplisit, Anda masih dapat menggunakan CLI + klien OpenAI seperti yang ditunjukkan nanti.
 
-### 2. Aktifkan Akselerasi GPU (5 menit)
-
-#### Langkah 2.1: Periksa Kemampuan Perangkat Keras
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Langkah 2.2: Konfigurasi Akselerasi Perangkat Keras
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Jalankan Model Secara Lokal melalui CLI (10 menit)
+### 2. Jalankan Model Secara Lokal melalui CLI (10 menit)
 
 #### Langkah 3.1: Terapkan Model Phi-4
 
@@ -316,7 +291,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 - **Mesin Inferensi Lokal**: Menjalankan model sepenuhnya di perangkat Anda
 - **Kompatibilitas SDK OpenAI**: Integrasi mulus dengan kode OpenAI yang ada
-- **Manajemen Model**: Mengunduh, menyimpan, dan menjalankan beberapa model secara efisien
+- **Manajemen Model**: Mengunduh, menyimpan, dan menjalankan banyak model secara efisien
 - **Optimasi Perangkat Keras**: Memanfaatkan akselerasi GPU, NPU, dan CPU
 
 ### 2. Referensi Perintah CLI
@@ -367,7 +342,7 @@ print()
 
 ## Pemecahan Masalah Umum
 
-### Masalah 1: "Foundry command not found"
+### Masalah 1: "Perintah Foundry tidak ditemukan"
 
 **Solusi:**
 ```powershell
@@ -376,7 +351,7 @@ print()
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Masalah 2: "Model failed to load"
+### Masalah 2: "Model gagal dimuat"
 
 **Solusi:**
 ```powershell
@@ -390,7 +365,7 @@ foundry model run phi-4-mini
 dir "$env:USERPROFILE\.foundry\models"
 ```
 
-### Masalah 3: "Connection refused on localhost:5273"
+### Masalah 3: "Koneksi ditolak di localhost:5273"
 
 **Solusi:**
 ```powershell
@@ -426,18 +401,19 @@ foundry config set model.cache.max_size 10GB
 foundry config set model.preload false
 ```
 
-### 3. Memantau Performa
+### 3. Pemantauan Performa
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Peningkatan Opsional
@@ -446,13 +422,13 @@ python Workshop\samples\session03\benchmark_oss_models.py
 |-------------|-----|----------|
 | Utilitas Bersama | Menghapus logika klien/bootstrap yang duplikat | Gunakan `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
 | Visibilitas Penggunaan Token | Mengajarkan pemikiran biaya/efisiensi sejak awal | Atur `SHOW_USAGE=1` untuk mencetak token prompt/penyelesaian/total |
-| Perbandingan Deterministik | Benchmarking stabil & pemeriksaan regresi | Gunakan `temperature=0`, `top_p=1`, teks prompt konsisten |
+| Perbandingan Deterministik | Benchmarking stabil & pemeriksaan regresi | Gunakan `temperature=0`, `top_p=1`, teks prompt yang konsisten |
 | Latensi Token Pertama | Metrik responsivitas yang dirasakan | Sesuaikan skrip benchmark dengan streaming (`BENCH_STREAM=1`) |
 | Coba Ulang pada Kesalahan Sementara | Demo yang tangguh pada start dingin | `RETRY_ON_FAIL=1` (default) & sesuaikan `RETRY_BACKOFF` |
-| Pengujian Awal | Pemeriksaan cepat untuk alur utama | Jalankan `python Workshop/tests/smoke.py` sebelum workshop |
-| Profil Alias Model | Beralih cepat antara set model di mesin | Pertahankan `.env` dengan `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Efisiensi Caching | Hindari pemanasan ulang berulang dalam menjalankan multi-sampel | Manajer cache utilitas; gunakan kembali di skrip/notebook |
-| Pemanasan Pertama Kali | Kurangi lonjakan latensi p95 | Jalankan prompt kecil setelah pembuatan `FoundryLocalManager` |
+| Pengujian Awal | Pemeriksaan cepat di alur utama | Jalankan `python Workshop/tests/smoke.py` sebelum workshop |
+| Profil Alias Model | Beralih cepat antara set model di berbagai mesin | Pertahankan `.env` dengan `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
+| Efisiensi Caching | Hindari pemanasan berulang dalam menjalankan multi-sampel | Manajer cache utilitas; gunakan kembali di skrip/notebook |
+| Pemanasan Awal | Kurangi lonjakan latensi p95 | Jalankan prompt kecil setelah pembuatan `FoundryLocalManager` |
 
 Contoh baseline hangat deterministik (PowerShell):
 
@@ -463,7 +439,7 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Anda seharusnya melihat output serupa & jumlah token yang identik pada pengujian kedua, yang mengonfirmasi determinisme.
+Anda seharusnya melihat output serupa & jumlah token identik pada pengujian kedua, yang mengonfirmasi determinisme.
 
 ## Langkah Selanjutnya
 
@@ -484,7 +460,7 @@ Setelah menyelesaikan sesi ini:
 ### Kode Contoh
 - [Module08 Sample 01](./samples/01/README.md) - REST Chat Quickstart
 - [Module08 Sample 02](./samples/02/README.md) - Integrasi SDK OpenAI
-- [Module08 Sample 03](./samples/03/README.md) - Penemuan & Benchmarking Model
+- [Module08 Sample 03](./samples/03/README.md) - Penemuan Model & Benchmarking
 
 ### Komunitas
 - [Diskusi GitHub Foundry Local](https://github.com/microsoft/Foundry-Local/discussions)
@@ -492,16 +468,16 @@ Setelah menyelesaikan sesi ini:
 
 ---
 
-**Durasi Sesi**: 30 menit praktik + 15 menit Tanya Jawab  
+**Durasi Sesi**: 30 menit praktik + 15 menit tanya jawab  
 **Tingkat Kesulitan**: Pemula  
-**Prasyarat**: Windows 11, Python 3.10+, Akses Administrator  
+**Prasyarat**: Windows 11, Python 3.10+, akses Administrator  
 
 ## Skenario Contoh & Pemetaan Workshop
 
 | Skrip / Notebook Workshop | Skenario | Tujuan | Contoh Input | Dataset yang Dibutuhkan |
-|---------------------------|----------|--------|--------------|-------------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Tim IT internal mengevaluasi inferensi di perangkat untuk portal penilaian privasi | Membuktikan bahwa SLM lokal merespons dalam latensi di bawah satu detik pada prompt standar | "List two benefits of local inference." | Tidak ada (prompt tunggal) |
-| Blok kode adaptasi quickstart | Pengembang yang memigrasikan skrip OpenAI yang ada ke Foundry Local | Menunjukkan kompatibilitas langsung | "Give two benefits of local inference." | Hanya prompt inline |
+|---------------------------|----------|-------|--------------|-------------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Tim IT internal mengevaluasi inferensi di perangkat untuk portal penilaian privasi | Membuktikan SLM lokal merespons dalam latensi sub-detik pada prompt standar | "Sebutkan dua manfaat inferensi lokal." | Tidak ada (prompt tunggal) |
+| Blok kode adaptasi quickstart | Pengembang yang memigrasi skrip OpenAI yang ada ke Foundry Local | Menunjukkan kompatibilitas drop-in | "Berikan dua manfaat inferensi lokal." | Hanya prompt inline |
 
 ### Narasi Skenario
 Tim keamanan & kepatuhan harus memvalidasi apakah data prototipe sensitif dapat diproses secara lokal. Mereka menjalankan skrip bootstrap dengan beberapa prompt (privasi, latensi, biaya) menggunakan mode deterministik temperature=0 untuk menangkap output baseline untuk perbandingan di masa mendatang (benchmarking Sesi 3 dan kontras SLM vs LLM Sesi 4).
@@ -520,4 +496,4 @@ Gunakan daftar ini untuk membuat loop evaluasi yang dapat direproduksi atau untu
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis dapat mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang timbul dari penggunaan terjemahan ini.

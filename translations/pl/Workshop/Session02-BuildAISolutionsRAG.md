@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82e20fdeebffdf75eecdf5cdfb02b65c",
-  "translation_date": "2025-10-08T21:45:56+00:00",
+  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
+  "translation_date": "2025-10-28T21:43:51+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "pl"
 }
@@ -11,17 +11,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Streszczenie
 
-Dowiedz się, jak budować praktyczne przepływy pracy GenAI za pomocą Foundry Local i Azure AI Foundry. Poznaj zaawansowane techniki projektowania promptów, integrację danych strukturalnych oraz orkiestrację zadań w powtarzalnych pipeline'ach. Choć głównym tematem jest Retrieval-Augmented Generation (RAG) dla pytań i odpowiedzi na podstawie dokumentów i danych, wzorce te można zastosować w szerszym projektowaniu rozwiązań GenAI.
+Poznaj, jak budować praktyczne przepływy pracy GenAI za pomocą Foundry Local i Azure AI Foundry. Naucz się zaawansowanego projektowania podpowiedzi, integracji danych strukturalnych oraz orkiestracji zadań za pomocą powtarzalnych procesów. Chociaż głównym tematem jest Retrieval-Augmented Generation (RAG) dla pytań i odpowiedzi dotyczących dokumentów i danych, wzorce te można zastosować do szerszego projektowania rozwiązań GenAI.
 
 ## Cele nauki
 
 Po zakończeniu tej sesji będziesz w stanie:
 
-- **Opanować projektowanie promptów**: Tworzyć skuteczne prompty systemowe i strategie ugruntowania
+- **Opanować projektowanie podpowiedzi**: Tworzyć skuteczne podpowiedzi systemowe i strategie ugruntowania
 - **Wdrażać wzorce RAG**: Budować systemy pytań i odpowiedzi oparte na dokumentach z wyszukiwaniem wektorowym
 - **Integracja danych strukturalnych**: Pracować z danymi w formacie CSV, JSON i tabelarycznym w przepływach pracy AI
-- **Tworzyć produkcyjne RAG**: Budować skalowalne aplikacje RAG za pomocą Chainlit
-- **Łączyć lokalne i chmurowe środowiska**: Zrozumieć ścieżki migracji z Foundry Local do Azure AI Foundry
+- **Tworzyć produkcyjne RAG**: Budować skalowalne aplikacje RAG z Chainlit
+- **Łączyć lokalne i chmurowe rozwiązania**: Zrozumieć ścieżki migracji z Foundry Local do Azure AI Foundry
 
 ## Wymagania wstępne
 
@@ -48,7 +48,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Jeśli binaria Foundry Local dla macOS nie są jeszcze dostępne w Twoim środowisku, uruchom usługę na maszynie wirtualnej Windows lub w kontenerze i ustaw:
+Jeśli binaria Foundry Local dla macOS nie są jeszcze dostępne w Twoim środowisku, uruchom usługę na maszynie wirtualnej Windows lub kontenerze i ustaw:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -69,11 +69,11 @@ Jeśli ostatnie polecenie się nie powiedzie, uruchom (lub ponownie uruchom) us�
 
 ## Przebieg demonstracji (30 minut)
 
-### 1. Prompty systemowe i strategie ugruntowania (10 minut)
+### 1. Podpowiedzi systemowe i strategie ugruntowania (10 minut)
 
-#### Krok 1.1: Zaawansowane projektowanie promptów
+#### Krok 1.1: Zaawansowane projektowanie podpowiedzi
 
-Utwórz plik `samples/02-rag-solutions/prompt_engineering.py`:
+Utwórz `samples/02-rag-solutions/prompt_engineering.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -217,11 +217,11 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### 2. Integracja danych tabelarycznych z promptami (Q&A na podstawie CSV) (10 minut)
+### 2. Integracja danych tabelarycznych z podpowiedziami (CSV Q&A) (10 minut)
 
 #### Krok 2.1: Integracja danych CSV
 
-Utwórz plik `samples/02-rag-solutions/csv_qa_system.py`:
+Utwórz `samples/02-rag-solutions/csv_qa_system.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -433,7 +433,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### Krok 2.2: Testowanie systemu Q&A na podstawie CSV
+#### Krok 2.2: Testowanie systemu Q&A dla CSV
 
 ```powershell
 # Run the CSV Q&A demo
@@ -441,11 +441,11 @@ python samples/02-rag-solutions/csv_qa_system.py
 ```
 
 
-### 3. Projekt startowy: Adaptacja 02-grounding-data (5 minut)
+### 3. Projekt początkowy: Adaptacja 02-grounding-data (5 minut)
 
 #### Krok 3.1: Ulepszony system RAG dla dokumentów
 
-Utwórz plik `samples/02-rag-solutions/document_rag.py`:
+Utwórz `samples/02-rag-solutions/document_rag.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -661,11 +661,11 @@ if __name__ == "__main__":
 ```
 
 
-### 4. Pokaz migracji z CLI do Azure (5 minut)
+### 4. Przedstawienie ścieżki migracji z CLI do Azure (5 minut)
 
 #### Krok 4.1: Przegląd strategii migracji
 
-Utwórz plik `samples/02-rag-solutions/migration_guide.py`:
+Utwórz `samples/02-rag-solutions/migration_guide.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -877,11 +877,11 @@ python samples/02-rag-solutions/migration_guide.py
 ```
 
 
-## Kluczowe pojęcia omówione
+## Kluczowe zagadnienia
 
-### 1. Zaawansowane projektowanie promptów
+### 1. Zaawansowane projektowanie podpowiedzi
 
-- **Prompty systemowe**: Eksperckie persony specyficzne dla domeny
+- **Podpowiedzi systemowe**: Eksperckie persony specyficzne dla domeny
 - **Strategie ugruntowania**: Techniki integracji kontekstu
 - **Kontrola temperatury**: Równoważenie kreatywności i spójności
 - **Zarządzanie tokenami**: Efektywne wykorzystanie kontekstu
@@ -891,19 +891,19 @@ python samples/02-rag-solutions/migration_guide.py
 - **Przetwarzanie CSV**: Integracja Pandas z modelami AI
 - **Analiza statystyczna**: Automatyczne podsumowanie danych
 - **Tworzenie kontekstu**: Dynamiczne generowanie kontekstu na podstawie zapytań
-- **Obsługa wielu formatów**: JSON, CSV i dane tabelaryczne
+- **Wsparcie dla wielu formatów**: JSON, CSV i dane tabelaryczne
 
 ### 3. Wzorce implementacji RAG
 
-- **Wyszukiwanie wektorowe**: TF-IDF i podobieństwo kosinusowe
+- **Wyszukiwanie wektorowe**: TF-IDF i podobieństwo cosinusowe
 - **Pobieranie dokumentów**: Ocena i ranking trafności
 - **Kombinacja kontekstu**: Synteza wielodokumentowa
 - **Generowanie odpowiedzi**: Tworzenie odpowiedzi opartej na ugruntowaniu
 
 ### 4. Strategie migracji do chmury
 
-- **Ujednolicone API**: Jedna baza kodu dla lokalnych i chmurowych środowisk
-- **Abstrakcja środowiska**: Wdrożenie sterowane konfiguracją
+- **Zunifikowane API**: Jedna baza kodu dla lokalnych i chmurowych rozwiązań
+- **Abstrakcja środowiska**: Konfiguracja sterująca wdrożeniem
 - **Przepływ pracy deweloperskiej**: Lokalnie → Staging → Produkcja
 - **Optymalizacja kosztów**: Rozwój lokalny, produkcja w chmurze
 
@@ -955,28 +955,28 @@ metrics = {
 
 ## Kolejne kroki
 
-Po ukończeniu tej sesji:
+Po zakończeniu tej sesji:
 
-1. **Eksploruj Sesję 3**: Modele open-source w Foundry Local
-2. **Buduj produkcyjne RAG**: Wdrażaj za pomocą Chainlit (Przykład 04)
+1. **Poznaj Sesję 3**: Modele open-source w Foundry Local
+2. **Twórz produkcyjne RAG**: Wdrażaj z Chainlit (Przykład 04)
 3. **Zaawansowane wyszukiwanie wektorowe**: Integracja z Chroma lub Pinecone
 4. **Migracja do chmury**: Wdrożenie w Azure AI Foundry
-5. **Ocena jakości RAG**: Uruchom `python Workshop/samples/session02/rag_eval_ragas.py`, aby zmierzyć answer_relevancy, faithfulness i context_precision za pomocą ragas
+5. **Ocena jakości RAG**: Uruchom `cd Workkshop/samples;python -m session02.rag_eval_ragas`, aby zmierzyć answer_relevancy, faithfulness i context_precision za pomocą ragas
 
 ### Opcjonalne ulepszenia
 
 | Kategoria | Ulepszenie | Uzasadnienie | Kierunek |
 |-----------|------------|--------------|----------|
-| Pobieranie | Zastąp TF-IDF magazynem wektorowym (FAISS / Chroma) | Lepsze semantyczne przypominanie i skalowalność | Podziel dokumenty (500–800 znaków), osadź, zapisz indeks |
-| Hybrydowy indeks | Podwójne filtrowanie semantyczne + słowne kluczowe | Poprawia precyzję zapytań numerycznych / kodowych | Filtruj według słów kluczowych, a następnie rankuj według podobieństwa kosinusowego |
-| Osadzenia | Oceń wiele modeli osadzeń | Optymalizacja trafności vs szybkość | A/B: MiniLM vs E5-small vs lokalnie hostowany encoder |
-| Cache | Cache osadzeń i wyników pobierania | Niższe opóźnienie powtarzanych zapytań | Prosty pickle na dysku / sqlite z kluczem hash |
-| Ocena | Rozszerz zbiór danych ragas | Statystycznie znacząca jakość | Kuracja 50–100 Q/A + konteksty; stratyfikacja według tematu |
-| Metryki | Śledź czas pobierania i generowania | Profilowanie wydajności | Zapisz `retrieval_ms`, `gen_ms`, `tokens` na wywołanie |
-| Zabezpieczenia | Dodaj fallback na halucynacje | Bezpieczniejsze odpowiedzi | Jeśli faithfulness < threshold → odpowiedź: "Niewystarczający kontekst." |
-| Fallback | Kaskada lokalna → model Azure | Hybrydowe zwiększenie jakości | Przy niskiej pewności przekieruj do chmury przez to samo API OpenAI |
-| Determinizm | Stabilne porównania | Powtarzalne zestawy ewaluacyjne | Ustaw seed, `temperature=0`, wyłącz losowość samplerów |
-| Monitorowanie | Zachowaj historię uruchomień ewaluacyjnych | Wykrywanie regresji | Dodaj linie JSON z timestamp + różnice metryk |
+| Pobieranie | Zastąp TF-IDF magazynem wektorowym (FAISS / Chroma) | Lepsze semantyczne przypomnienie i skalowalność | Podziel dokumenty (500–800 znaków), osadź, zapisz indeks |
+| Hybrydowy indeks | Podwójne filtrowanie semantyczne + słowne | Poprawia precyzję zapytań numerycznych / kodowych | Filtruj według słów kluczowych, a następnie oceniaj według podobieństwa cosinusowego |
+| Osadzenia | Oceń różne modele osadzeń | Optymalizacja trafności vs szybkość | A/B: MiniLM vs E5-small vs lokalnie hostowany enkoder |
+| Buforowanie | Buforuj osadzenia i wyniki pobierania | Skrócenie czasu odpowiedzi na powtarzające się zapytania | Prosty zapis na dysku pickle / sqlite z kluczem haszującym |
+| Ocena | Rozszerz zbiór danych ragas | Statystycznie znacząca jakość | Opracuj 50–100 Q/A + konteksty; podziel według tematu |
+| Metryki | Śledź czas pobierania i generowania | Profilowanie wydajności | Zapisuj `retrieval_ms`, `gen_ms`, `tokens` na każde wywołanie |
+| Zabezpieczenia | Dodaj mechanizm zapobiegający halucynacjom | Bezpieczniejsze odpowiedzi | Jeśli faithfulness < próg → odpowiedź: "Niewystarczający kontekst." |
+| Fallback | Kaskadowe przejście lokalne → model Azure | Hybrydowe zwiększenie jakości | Przy niskiej pewności przekieruj do chmury przez to samo API OpenAI |
+| Determinizm | Stabilne porównania | Powtarzalne zestawy ewaluacyjne | Ustaw seed, `temperature=0`, wyłącz losowość próbkowania |
+| Monitorowanie | Zachowaj historię wyników ewaluacji | Wykrywanie regresji | Dodaj linie JSON z datą i czasem + zmiany metryk |
 
 #### Przykład: Dodanie czasu pobierania
 
@@ -992,14 +992,14 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 ```
 
 
-#### Skalowanie oceny za pomocą ragas
+#### Skalowanie ewaluacji za pomocą ragas
 
 1. Zbierz JSONL z polami: `question`, `answer`, `contexts`, `ground_truths` (lista)
-2. Konwertuj na `Dataset.from_list(list_of_dicts)`
+2. Przekształć na `Dataset.from_list(list_of_dicts)`
 3. Uruchom `evaluate(dataset, metrics=[...])`
 4. Zapisz metryki (CSV/JSON) do analizy trendów.
 
-#### Szybki start magazynu wektorowego (FAISS)
+#### Szybki start z magazynem wektorowym (FAISS)
 
 ```python
 import faiss, numpy as np
@@ -1015,32 +1015,33 @@ Dla trwałości na dysku użyj `faiss.write_index(index, "kb.index")`.
 ### Dokumentacja
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Azure AI Foundry RAG Patterns](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [Przewodnik projektowania promptów](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
-- [Dokumentacja oceny Ragas](https://docs.ragas.io)
+- [Przewodnik projektowania podpowiedzi](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [Dokumentacja ewaluacji Ragas](https://docs.ragas.io)
 
 ### Przykładowy kod
-- [Przykład 04 z Module08](./samples/04/README.md) - Aplikacja RAG z Chainlit
-- [Zaawansowany system multi-agentowy](./samples/09/README.md) - Wzorce koordynacji agentów
+- [Przykład 04 z Modułu08](./samples/04/README.md) - Aplikacja RAG z Chainlit
+- [Zaawansowany system wieloagentowy](./samples/09/README.md) - Wzorce koordynacji agentów
 
 ---
 
-**Czas trwania sesji**: 30 minut praktyki + 15 minut Q&A  
+**Czas trwania sesji**: 30 minut praktyki + 15 minut pytań i odpowiedzi  
 **Poziom trudności**: Średniozaawansowany  
 **Wymagania wstępne**: Ukończona Sesja 1, Podstawowa znajomość Pythona
 
 ## Przykładowy scenariusz i mapowanie warsztatów
 
-| Skrypt warsztatowy / Notebook | Scenariusz | Cel | Główna baza danych / źródło | Przykładowe pytanie |
-|-------------------------------|------------|-----|----------------------------|---------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Wewnętrzna baza wiedzy wsparcia odpowiadająca na pytania dotyczące prywatności i wydajności | Minimalny RAG w pamięci z osadzeniami | Lista `DOCS` w skrypcie (5 krótkich fragmentów) | Dlaczego warto używać RAG z lokalnym wnioskowaniem? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analityk jakości ustalający bazowe metryki trafności pobierania | Obliczanie metryk ragas na małym syntetycznym zbiorze danych | Tablice `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Jaką przewagę daje lokalne wnioskowanie? |
-| `prompt_engineering.py` (zaawansowany) | Ekspert domeny tworzący ugruntowane prompty dla różnych branż | Porównanie promptów systemowych domeny i wpływu tokenów | Wbudowany słownik `contexts` | Jak Foundry Local obsługuje cache modeli? |
-| `csv_qa_system.py` | Operacje sprzedaży eksplorujące interaktywną analitykę eksportów | Podsumowanie i zapytania na małym wycinku sprzedaży | Wygenerowany `sample_sales_data.csv` (10 wierszy) | Który produkt ma najwyższą średnią kwotę sprzedaży? |
-| `document_rag.py` | Zespół produktowy eksplorujący RAG dla wewnętrznej wiki | Pobieranie + cytowanie odpowiednich dokumentów | Lista `create_sample_knowledge_base()` | Jakie są korzyści z Edge AI? |
-| `migration_guide.py` | Architekt przygotowujący plan migracji do chmury | Demonstracja parytetu API lokalnego → Azure | Statyczne prompty testowe | Wyjaśnij korzyści z Edge AI w 2–3 zdaniach. |
+| Skrypt warsztatowy / Notatnik | Scenariusz | Cel | Podstawowy zbiór danych / źródło | Przykładowe pytanie |
+|-------------------------------|------------|-----|----------------------------------|---------------------|
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Wewnętrzna baza wiedzy wsparcia odpowiadająca na pytania dotyczące prywatności + wydajności | Minimalny RAG w pamięci z osadzeniami | Lista `DOCS` w skrypcie (5 krótkich fragmentów) | Dlaczego warto używać RAG z lokalnym wnioskowaniem? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analityk jakości ustalający bazowe metryki wierności pobierania | Obliczanie metryk ragas na małym syntetycznym zbiorze danych | Tablice `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Jaką przewagę daje lokalne wnioskowanie? |
+| `prompt_engineering.py` (zaawansowane) | Ekspert domeny tworzący ugruntowane podpowiedzi dla różnych branż | Porównanie podpowiedzi systemowych domeny i wpływu tokenów | Wbudowany słownik `contexts` | Jak Foundry Local obsługuje buforowanie modeli? |
+| `csv_qa_system.py` | Operacje sprzedaży badające interaktywną analizę eksportów | Podsumowanie i zapytania dotyczące małego wycinka sprzedaży | Wygenerowany `sample_sales_data.csv` (10 wierszy) | Który produkt ma najwyższą średnią wartość sprzedaży? |
+| `document_rag.py` | Zespół produktowy badający RAG dla wewnętrznej wiki | Pobieranie + cytowanie odpowiednich dokumentów | Lista `create_sample_knowledge_base()` | Jakie są korzyści z Edge AI? |
+| `migration_guide.py` | Architekt przygotowujący plan migracji do chmury | Demonstracja parytetu API lokalne→Azure | Statyczne podpowiedzi testowe | Wyjaśnij korzyści z Edge AI w 2–3 zdaniach. |
 
-### Fragmenty zbiorów danych
-Lista dokumentów pipeline RAG:
+### Fragmenty zbioru danych
+
+Lista dokumentów w pipeline RAG:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1051,7 +1052,7 @@ DOCS = [
 ]
 ```
 
-Pary prawdy oceny ragas:
+Pary prawdy w ewaluacji ragas:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1062,12 +1063,14 @@ GROUND_TRUTH = [
 
 
 ### Narracja scenariusza
-Grupa inżynierów wsparcia chce szybko stworzyć prototyp odpowiadający na wewnętrzne pytania bez ujawniania danych klientów na zewnątrz. Artefakty Sesji 2 przechodzą od minimalnego efemerycznego RAG (bez trwałości) → strukturalne Q&A na podstawie CSV → pobieranie dokumentów z cytowaniem → obiektywna ocena jakości (ragas) → strategia migracji gotowa do etapu Azure.
+
+Grupa wsparcia technicznego chce szybko stworzyć prototyp, który odpowiada na wewnętrzne pytania, nie ujawniając danych klientów na zewnątrz. Artefakty z Sesji 2 przechodzą od minimalnego, efemerycznego RAG (bez trwałości) → strukturalne Q&A dla CSV → pobieranie dokumentów z cytowaniem → obiektywna ocena jakości (ragas) → strategia migracji gotowa do etapu Azure.
 
 ### Ścieżki rozwoju
-Użyj tabeli Opcjonalne ulepszenia, aby rozwijać: zamień TF-IDF na FAISS/Chroma, powiększ korpus ewaluacyjny (50–100 Q/A), dodaj eskalację fallback do większego modelu, gdy faithfulness < threshold.
+
+Skorzystaj z tabeli Opcjonalne Ulepszenia, aby rozwijać: zamień TF-IDF na FAISS/Chroma, powiększ korpus ewaluacyjny (50–100 Q/A), dodaj eskalację do większego modelu przy faithfulness < próg.
 
 ---
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego języku źródłowym powinien być uznawany za autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż staramy się zapewnić dokładność, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.

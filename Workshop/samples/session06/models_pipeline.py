@@ -6,6 +6,10 @@ Demonstrates a multi-stage pipeline:
   2. Execute: Route each step to specialized model
   3. Refine: Summarize combined outputs
 
+Usage:
+    From inside the Workshop/Samples directory, run:
+        python -m session06.models_pipeline
+
 Environment Variables:
   FOUNDRY_LOCAL_ENDPOINT=<url>       # Override endpoint
   PIPELINE_TASK="Your task"          # Task to process
@@ -16,8 +20,8 @@ SDK Reference:
 from __future__ import annotations
 import sys
 from typing import Dict, List, Tuple, Any
-from models_router import detect_intent, pick_model
-from workshop_utils import chat_once
+from session06.models_router import detect_intent, pick_model
+from utils.workshop_utils import chat_once
 
 def chat(alias: str, content: str) -> str:
     """Execute single chat completion for pipeline step.

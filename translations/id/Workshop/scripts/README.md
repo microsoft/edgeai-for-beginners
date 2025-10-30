@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-09T19:32:05+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T22:39:48+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "id"
 }
@@ -14,21 +14,21 @@ Direktori ini berisi skrip otomatisasi dan pendukung yang digunakan untuk menjag
 ## Isi
 
 | File | Tujuan |
-|------|---------|
-| `lint_markdown_cli.py` | Memeriksa blok kode markdown untuk pola perintah Foundry Local CLI yang sudah usang. |
+|------|--------|
+| `lint_markdown_cli.py` | Memeriksa kode markdown untuk memblokir pola perintah Foundry Local CLI yang sudah usang. |
 | `export_benchmark_markdown.py` | Menjalankan benchmark latensi multi-model dan menghasilkan laporan dalam format Markdown + JSON. |
 
 ## 1. Linter Pola Markdown CLI
 
 `lint_markdown_cli.py` memindai semua file `.md` non-terjemahan untuk pola Foundry Local CLI yang tidak diizinkan **di dalam blok kode berpagar** (``` ... ```). Prosa informatif masih dapat menyebutkan perintah yang sudah usang untuk konteks historis.
 
-### Pola yang Sudah Usang (Diblokir di Dalam Blok Kode)
+### Pola Usang (Diblokir di Dalam Blok Kode)
 
 Linter memblokir pola CLI yang sudah usang. Gunakan alternatif modern sebagai gantinya.
 
 ### Penggantian yang Diperlukan
-| Sudah Usang | Gunakan Sebagai Pengganti |
-|-------------|---------------------------|
+| Usang | Gunakan Sebagai Pengganti |
+|-------|---------------------------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
 | `foundry model list --running` | `foundry model list` |
 | `foundry model list --cached` | `foundry cache list` |
@@ -37,10 +37,10 @@ Linter memblokir pola CLI yang sudah usang. Gunakan alternatif modern sebagai ga
 | `foundry model list --available` | `foundry model list` |
 
 ### Kode Keluar
-| Kode | Arti |
-|------|------|
+| Kode | Makna |
+|------|-------|
 | 0 | Tidak ada pelanggaran yang terdeteksi |
-| 1 | Satu atau lebih pola yang sudah usang ditemukan |
+| 1 | Satu atau lebih pola usang ditemukan |
 
 ### Menjalankan Secara Lokal
 Dari root repositori (disarankan):
@@ -60,14 +60,14 @@ python Workshop/scripts/lint_markdown_cli.py --verbose
 echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
-Ini memblokir commit yang memperkenalkan pola yang sudah usang.
+Ini memblokir commit yang memperkenalkan pola usang.
 
 ### Integrasi CI
-Workflow GitHub Action (`.github/workflows/markdown-cli-lint.yml`) menjalankan linter pada setiap push dan pull request ke cabang `main` dan `Reactor`. Job yang gagal harus diperbaiki sebelum digabungkan.
+Workflow GitHub Action (`.github/workflows/markdown-cli-lint.yml`) menjalankan linter pada setiap push dan pull request ke cabang `main` dan `Reactor`. Job yang gagal harus diperbaiki sebelum merging.
 
-### Menambahkan Pola yang Sudah Usang Baru
+### Menambahkan Pola Usang Baru
 1. Buka `lint_markdown_cli.py`.
-2. Tambahkan tuple `(regex, suggestion)` ke daftar `DEPRECATED`. Gunakan string mentah dan sertakan batas kata `\b` jika sesuai.
+2. Tambahkan tuple `(regex, suggestion)` ke daftar `DEPRECATED`. Gunakan string mentah dan sertakan batas kata `\b` jika diperlukan.
 3. Jalankan linter secara lokal untuk memverifikasi deteksi.
 4. Commit dan push; CI akan menerapkan aturan baru.
 
@@ -77,27 +77,27 @@ DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental
 ```
 
 ### Mengizinkan Penyebutan Penjelasan
-Karena hanya blok kode berpagar yang ditegakkan, Anda dapat menjelaskan perintah yang sudah usang dalam teks naratif dengan aman. Jika Anda *harus* menunjukkannya di dalam blok berpagar untuk perbandingan, tambahkan blok berpagar **tanpa** tanda backtick tiga (misalnya, indentasi atau kutipan) atau tulis ulang dalam bentuk pseudo.
+Karena hanya blok kode berpagar yang ditegakkan, Anda dapat menjelaskan perintah usang dalam teks naratif dengan aman. Jika Anda *harus* menunjukkannya di dalam blok berpagar untuk perbandingan, tambahkan blok berpagar **tanpa** tanda backtick tiga (misalnya, indentasi atau kutipan) atau ubah ke bentuk pseudo.
 
 ### Melewati File Tertentu (Lanjutan)
-Jika diperlukan, bungkus contoh warisan dalam file terpisah di luar repositori atau ubah nama dengan ekstensi berbeda saat membuat draft. Pengabaian yang disengaja untuk salinan terjemahan dilakukan secara otomatis (jalur yang berisi `translations`).
+Jika diperlukan, bungkus contoh warisan dalam file terpisah di luar repositori atau ubah nama dengan ekstensi berbeda saat menyusun. Pengabaian yang disengaja untuk salinan terjemahan dilakukan secara otomatis (jalur yang mengandung `translations`).
 
 ### Pemecahan Masalah
 | Masalah | Penyebab | Resolusi |
 |---------|----------|----------|
-| Linter menandai baris yang Anda perbarui | Regex terlalu luas | Persempit pola dengan batas kata tambahan (`\b`) atau jangkar |
+| Linter menandai baris yang Anda perbarui | Regex terlalu luas | Persempit pola dengan batas kata tambahan (`\b`) atau penanda |
 | CI gagal tetapi lokal berhasil | Versi Python berbeda atau perubahan belum di-commit | Jalankan ulang secara lokal, pastikan tree kerja bersih, periksa versi Python workflow (3.11) |
-| Perlu melewati sementara | Perbaikan darurat | Terapkan perbaikan segera setelahnya; pertimbangkan menggunakan cabang sementara dan PR lanjutan (hindari menambahkan sakelar bypass) |
+| Perlu melewati sementara | Perbaikan darurat | Terapkan perbaikan segera setelahnya; pertimbangkan menggunakan cabang sementara dan PR lanjutan (hindari menambahkan saklar bypass) |
 
 ### Alasan
-Menjaga dokumentasi selaras dengan permukaan CLI *stabil* saat ini mencegah friksi workshop, menghindari kebingungan peserta, dan memusatkan pengukuran kinerja melalui skrip Python yang dipelihara daripada subperintah CLI yang tidak konsisten.
+Menjaga dokumentasi tetap selaras dengan permukaan CLI stabil *saat ini* mencegah friksi workshop, menghindari kebingungan peserta, dan memusatkan pengukuran kinerja melalui skrip Python yang terpelihara daripada subperintah CLI yang tidak konsisten.
 
 ---
 Dipelihara sebagai bagian dari toolchain kualitas workshop. Untuk peningkatan (misalnya, saran perbaikan otomatis atau pembuatan laporan HTML), buka issue atau kirimkan PR.
 
 ## 2. Skrip Validasi Contoh
 
-`validate_samples.py` memvalidasi semua file contoh Python untuk kesesuaian sintaks, impor, dan praktik terbaik.
+`validate_samples.py` memvalidasi semua file contoh Python untuk sintaks, impor, dan kepatuhan terhadap praktik terbaik.
 
 ### Penggunaan
 ```bash
@@ -165,24 +165,24 @@ python scripts/test_samples.py --verbose
 - `TEST_TIMEOUT=30` - Timeout per contoh dalam detik
 
 ### Kegagalan yang Diharapkan
-Beberapa pengujian mungkin gagal jika dependensi opsional tidak diinstal (misalnya, `ragas`, `sentence-transformers`). Instal dengan:
+Beberapa pengujian mungkin gagal jika dependensi opsional tidak terinstal (misalnya, `ragas`, `sentence-transformers`). Instal dengan:
 ```bash
 pip install sentence-transformers ragas datasets
 ```
 
 ### Kode Keluar
-- `0` - Semua pengujian lolos
+- `0` - Semua pengujian berhasil
 - `1` - Satu atau lebih pengujian gagal
 
 ## 4. Ekspor Benchmark Markdown
 
 Skrip: `export_benchmark_markdown.py`
 
-Menghasilkan tabel performa yang dapat direproduksi untuk satu set model.
+Menghasilkan tabel performa yang dapat direproduksi untuk serangkaian model.
 
 ### Penggunaan
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Output
@@ -199,16 +199,16 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 | `--rounds` | Putaran per model | 3 |
 | `--output` | File output Markdown | `benchmark_report.md` |
 | `--json` | File output JSON | `benchmark_report.json` |
-| `--fail-on-empty` | Keluar non-zero jika semua benchmark gagal | mati |
+| `--fail-on-empty` | Kode keluar non-nol jika semua benchmark gagal | mati |
 
 Variabel lingkungan `BENCH_STREAM=1` menambahkan pengukuran latensi token pertama.
 
 ### Catatan
-- Menggunakan kembali `workshop_utils` untuk bootstrap & caching model yang konsisten.
+- Menggunakan kembali `workshop_utils` untuk bootstrap model & caching yang konsisten.
 - Jika dijalankan dari direktori kerja yang berbeda, skrip mencoba fallback jalur untuk menemukan `workshop_utils`.
 - Untuk perbandingan GPU: jalankan sekali, aktifkan akselerasi melalui konfigurasi CLI, jalankan ulang, dan bandingkan JSON.
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diingat bahwa terjemahan otomatis dapat mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis dapat mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang keliru yang timbul dari penggunaan terjemahan ini.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-08T12:22:09+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T23:34:20+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "sl"
 }
@@ -16,11 +16,11 @@ Ta imenik vsebuje avtomatizacijske in podporne skripte, ki se uporabljajo za ohr
 | Datoteka | Namen |
 |----------|-------|
 | `lint_markdown_cli.py` | Preverja markdown kode za zastarele vzorce ukazov Foundry Local CLI znotraj blokov kode. |
-| `export_benchmark_markdown.py` | Izvaja večmodelno primerjavo latenc in generira poročila v Markdown + JSON formatu. |
+| `export_benchmark_markdown.py` | Izvaja večmodelno primerjavo latence in generira poročila v Markdown + JSON formatu. |
 
 ## 1. Preverjanje vzorcev Markdown CLI
 
-`lint_markdown_cli.py` pregleduje vse `.md` datoteke, ki niso prevodi, za nedovoljene vzorce ukazov Foundry Local CLI **znotraj blokov kode** (``` ... ```). Informativno besedilo lahko še vedno omenja zastarele ukaze za zgodovinski kontekst.
+`lint_markdown_cli.py` pregleduje vse neprevedene `.md` datoteke za nedovoljene vzorce Foundry Local CLI **znotraj blokov kode** (``` ... ```). Informativni tekst lahko še vedno omenja zastarele ukaze za zgodovinski kontekst.
 
 ### Zastareli vzorci (blokirani znotraj blokov kode)
 
@@ -55,45 +55,45 @@ macOS / Linux:
 python Workshop/scripts/lint_markdown_cli.py --verbose
 ```
 
-### Pre-commit Hook (neobvezno)
+### Predhodni zavezujoči kavelj (neobvezno)
 ```bash
 echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
-To blokira potrditve, ki uvajajo zastarele vzorce.
+To blokira zaveze, ki uvajajo zastarele vzorce.
 
 ### Integracija CI
-GitHub Action delovni tok (`.github/workflows/markdown-cli-lint.yml`) izvaja preverjevalnik ob vsakem potisku in zahtevi za združitev v veji `main` in `Reactor`. Neuspešne naloge je treba popraviti pred združitvijo.
+GitHub Action delovni tok (`.github/workflows/markdown-cli-lint.yml`) izvaja preverjevalnik ob vsakem potisku in zahtevi za združitev v veje `main` in `Reactor`. Neuspešne naloge je treba popraviti pred združitvijo.
 
 ### Dodajanje novih zastarelih vzorcev
 1. Odprite `lint_markdown_cli.py`.
-2. Dodajte par `(regex, suggestion)` v seznam `DEPRECATED`. Uporabite surovo nizovno obliko in vključite meje besed `\b`, kjer je to primerno.
+2. Dodajte par `(regex, suggestion)` v seznam `DEPRECATED`. Uporabite surovi niz in vključite meje besed `\b`, kjer je to primerno.
 3. Lokalno zaženite preverjevalnik, da preverite zaznavanje.
-4. Potrdite in potisnite; CI bo uveljavil novo pravilo.
+4. Zavežite in potisnite; CI bo uveljavil novo pravilo.
 
 Primer dodatka:
 ```python
 DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental foo usage"))
 ```
 
-### Dovoljenje pojasnjevalnih omemb
-Ker se preverjajo samo bloki kode, lahko varno opisujete zastarele ukaze v narativnem besedilu. Če jih *morate* prikazati znotraj bloka za primerjavo, dodajte blok brez trojnih nazobčanj (npr. z zamikom ali citatom) ali preoblikujte v psevdokodo.
+### Dovoljenje za pojasnjevalne omembe
+Ker se preverjanje izvaja samo znotraj blokov kode, lahko varno opisujete zastarele ukaze v narativnem tekstu. Če jih *morate* prikazati znotraj bloka, dodajte blok brez trojnih nazobčanj (npr. z zamikom ali citatom) ali preoblikujte v psevdokodo.
 
 ### Preskakovanje določenih datotek (napredno)
-Če je potrebno, ovijte primere v ločeno datoteko zunaj repozitorija ali preimenujte z drugačno končnico med osnutkom. Namerni preskoki za prevedene kopije so samodejni (poti, ki vsebujejo `translations`).
+Če je potrebno, zavijte primere v ločeno datoteko zunaj repozitorija ali preimenujte z drugačno končnico med osnutkom. Namerni preskoki za prevedene kopije so samodejni (poti, ki vsebujejo `translations`).
 
 ### Odpravljanje težav
 | Težava | Vzrok | Rešitev |
 |--------|-------|---------|
 | Preverjevalnik označi vrstico, ki ste jo posodobili | Regex preširok | Zožite vzorec z dodatno mejo besede (`\b`) ali sidri |
-| CI ne uspe, lokalno pa uspe | Različna različica Pythona ali neodložene spremembe | Ponovno zaženite lokalno, zagotovite čisto delovno drevo, preverite različico Pythona v delovnem toku (3.11) |
-| Potrebno začasno obiti | Nujna hitra rešitev | Takoj po tem uporabite popravek; razmislite o uporabi začasne veje in nadaljnjem PR (izogibajte se dodajanju stikal za obhod) |
+| CI ne uspe, lokalno pa uspe | Različna različica Pythona ali nekomitirane spremembe | Ponovno zaženite lokalno, zagotovite čisto delovno drevo, preverite različico Pythona v delovnem toku (3.11) |
+| Potrebno začasno obiti | Nujna popravka | Takoj uporabite popravke; razmislite o uporabi začasne veje in nadaljnjega PR (izogibajte se dodajanju stikal za obhod) |
 
-### Razlog
-Ohranjanje dokumentacije usklajene s *trenutno* stabilno površino CLI preprečuje težave pri delavnici, izogiba se zmedi udeležencev in centralizira merjenje zmogljivosti prek vzdrževanih Python skript namesto razpršenih podukazov CLI.
+### Razlogi
+Ohranjanje dokumentacije usklajene s *trenutno* stabilno površino CLI preprečuje težave pri delavnici, zmanjšuje zmedo udeležencev in centralizira merjenje zmogljivosti z vzdrževanimi Python skriptami namesto z zastarelimi podukazi CLI.
 
 ---
-Vzdrževano kot del orodij za zagotavljanje kakovosti delavnice. Za izboljšave (npr. samodejno popravljanje predlogov ali generiranje HTML poročil) odprite težavo ali predložite PR.
+Vzdrževano kot del orodij za zagotavljanje kakovosti delavnice. Za izboljšave (npr. samodejno popravljanje predlogov ali generiranje poročil v HTML), odprite težavo ali predložite PR.
 
 ## 2. Skripta za validacijo vzorcev
 
@@ -117,10 +117,10 @@ python scripts/validate_samples.py --summary
 ### Kaj preverja
 - ✅ Veljavnost Python sintakse
 - ✅ Prisotnost zahtevanih uvozov
-- ✅ Implementacija obravnave napak (verbose način)
-- ✅ Uporaba tipov (verbose način)
-- ✅ Dokumentacija funkcij (verbose način)
-- ✅ Povezave na SDK reference (verbose način)
+- ✅ Implementacija obravnave napak (podroben način)
+- ✅ Uporaba tipov (podroben način)
+- ✅ Dokumentacija funkcij (podroben način)
+- ✅ Povezave na SDK reference (podroben način)
 
 ### Okoljske spremenljivke
 - `SKIP_IMPORT_CHECK=1` - Preskoči preverjanje uvozov
@@ -150,22 +150,22 @@ python scripts/test_samples.py --verbose
 ```
 
 ### Predpogoji
-- Storitev Foundry Local mora biti zagnana: `foundry service start`
+- Zagnana storitev Foundry Local: `foundry service start`
 - Naloženi modeli: `foundry model run phi-4-mini`
 - Nameščene odvisnosti: `pip install -r requirements.txt`
 
 ### Kaj testira
 - ✅ Vzorec se lahko izvede brez napak med izvajanjem
 - ✅ Zahtevani izhod je generiran
-- ✅ Ustrezno obravnavanje napak ob neuspehu
+- ✅ Pravilno obravnavanje napak ob neuspehu
 - ✅ Zmogljivost (čas izvajanja)
 
 ### Okoljske spremenljivke
-- `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Model, ki se uporablja za testiranje
+- `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Model za testiranje
 - `TEST_TIMEOUT=30` - Časovna omejitev na vzorec v sekundah
 
 ### Pričakovane napake
-Nekateri testi lahko ne uspejo, če niso nameščene neobvezne odvisnosti (npr. `ragas`, `sentence-transformers`). Namestite jih z:
+Nekateri testi lahko ne uspejo, če niso nameščene neobvezne odvisnosti (npr. `ragas`, `sentence-transformers`). Namestite z:
 ```bash
 pip install sentence-transformers ragas datasets
 ```
@@ -178,24 +178,24 @@ pip install sentence-transformers ragas datasets
 
 Skripta: `export_benchmark_markdown.py`
 
-Generira tabelo zmogljivosti za niz modelov, ki jo je mogoče reproducirati.
+Generira reproducibilno tabelo zmogljivosti za niz modelov.
 
 ### Uporaba
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Izhodi
 | Datoteka | Opis |
 |----------|------|
-| `benchmark_report.md` | Tabela v Markdown formatu (povprečje, p95, tokeni/sekundo, neobvezno prvi token) |
-| `benchmark_report.json` | Surovi niz metrik za primerjavo in zgodovino |
+| `benchmark_report.md` | Tabela v Markdown formatu (povprečje, p95, tokeni/sek, opcijsko prvi token) |
+| `benchmark_report.json` | Surova matrika za primerjavo in zgodovino |
 
 ### Možnosti
 | Zastavica | Opis | Privzeto |
 |-----------|------|---------|
-| `--models` | Seznam modelov, ločenih z vejico | (obvezno) |
-| `--prompt` | Uporabljen poziv v vsakem krogu | (obvezno) |
+| `--models` | Seznam modelov, ločen z vejicami | (obvezno) |
+| `--prompt` | Poziv, uporabljen v vsakem krogu | (obvezno) |
 | `--rounds` | Število krogov na model | 3 |
 | `--output` | Izhodna datoteka v Markdown formatu | `benchmark_report.md` |
 | `--json` | Izhodna datoteka v JSON formatu | `benchmark_report.json` |
@@ -205,10 +205,10 @@ Okoljska spremenljivka `BENCH_STREAM=1` doda merjenje latence prvega tokena.
 
 ### Opombe
 - Uporablja `workshop_utils` za dosledno inicializacijo modelov in predpomnjenje.
-- Če se izvaja iz drugega delovnega imenika, skripta poskuša najti poti do `workshop_utils`.
+- Če se izvaja iz drugega delovnega imenika, skripta poskuša najti alternativne poti do `workshop_utils`.
 - Za primerjavo GPU: izvedite enkrat, omogočite pospeševanje prek konfiguracije CLI, ponovno izvedite in primerjajte JSON.
 
 ---
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.

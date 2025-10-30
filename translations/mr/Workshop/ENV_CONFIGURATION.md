@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T09:21:53+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T21:11:32+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "mr"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 वर्कशॉप नमुने कॉन्फिगरेशनसाठी पर्यावरणीय व्हेरिएबल्स वापरतात, जे रिपॉझिटरीच्या मूळ `.env` फाइलमध्ये केंद्रीकृत आहेत. यामुळे कोड बदलल्याशिवाय सुलभ सानुकूलन शक्य होते.
 
-## जलद सुरुवात
+## जलद प्रारंभ
 
 ### 1. पूर्वअटी सत्यापित करा
 
@@ -41,10 +41,10 @@ nano .env     # macOS/Linux
 
 ### 3. कॉन्फिगरेशन लागू करा
 
-**Python स्क्रिप्टसाठी:**
+**पायथन स्क्रिप्टसाठी:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -62,11 +62,11 @@ python chat_bootstrap.py
 |----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | नमुन्यांसाठी डीफॉल्ट मॉडेल |
 | `FOUNDRY_LOCAL_ENDPOINT` | (रिक्त) | सेवा एंडपॉइंट ओव्हरराइड करा |
-| `PYTHONPATH` | वर्कशॉप पथ | Python मॉड्यूल शोध पथ |
+| `PYTHONPATH` | वर्कशॉप पथ | पायथन मॉड्यूल शोध पथ |
 
 **FOUNDRY_LOCAL_ENDPOINT कधी सेट करावे:**
-- रिमोट Foundry Local इंस्टन्स
-- सानुकूल पोर्ट कॉन्फिगरेशन
+- रिमोट फाउंड्री लोकल इंस्टन्स
+- कस्टम पोर्ट कॉन्फिगरेशन
 - विकास/उत्पादन वेगळे करणे
 
 **उदाहरण:**
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### सत्र 03: बेंचमार्किंग
 | व्हेरिएबल | डीफॉल्ट | उद्देश |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | बेंचमार्कसाठी मॉडेल्स |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | बेंचमार्कसाठी मॉडेल्स |
 | `BENCH_ROUNDS` | `3` | प्रत्येक मॉडेलसाठी पुनरावृत्ती |
 | `BENCH_PROMPT` | पूर्व-कॉन्फिगर केलेले | चाचणी प्रॉम्प्ट |
 | `BENCH_STREAM` | `0` | पहिल्या टोकनची विलंबता मोजा |
@@ -100,7 +100,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `SLM_ALIAS` | `phi-4-mini` | लहान भाषा मॉडेल |
 | `LLM_ALIAS` | `qwen2.5-7b` | मोठे भाषा मॉडेल |
 | `COMPARE_PROMPT` | पूर्व-कॉन्फिगर केलेले | तुलना प्रॉम्प्ट |
-| `COMPARE_RETRIES` | `2` | पुन्हा प्रयत्नांची संख्या |
+| `COMPARE_RETRIES` | `2` | पुन्हा प्रयत्न करण्याचे वेळा |
 
 #### सत्र 05: मल्टी-एजंट ऑर्केस्ट्रेशन
 | व्हेरिएबल | डीफॉल्ट | उद्देश |
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### उत्पादन सेटअप (गुणवत्तेवर लक्ष केंद्रित)
+### उत्पादन सेटअप (गुणवत्ता लक्ष केंद्रित)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,12 +140,12 @@ SHOW_USAGE=0
 
 ### बेंचमार्किंग सेटअप
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### मल्टी-एजंट विशेषीकरण
+### मल्टी-एजंट स्पेशलायझेशन
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -161,18 +161,18 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### वापर प्रकरणानुसार
 
-**सामान्य उद्देशासाठी:**
+**सामान्य उद्देश:**
 - `phi-4-mini` - गुणवत्ता आणि गती यामध्ये संतुलन
 
-**जलद प्रतिसादासाठी:**
-- `qwen2.5-0.5b` - अतिशय जलद, वर्गीकरणासाठी चांगले
+**जलद प्रतिसाद:**
+- `qwen2.5-0.5b` - खूप जलद, वर्गीकरणासाठी चांगले
 - `phi-4-mini` - चांगल्या गुणवत्तेसह जलद
 
 **उच्च गुणवत्ता:**
-- `qwen2.5-7b` - सर्वोत्तम गुणवत्ता, जास्त संसाधन वापर
+- `qwen2.5-7b` - सर्वोत्तम गुणवत्ता, उच्च संसाधन वापर
 - `phi-4-mini` - चांगली गुणवत्ता, कमी संसाधने
 
-**कोड निर्मितीसाठी:**
+**कोड जनरेशन:**
 - `deepseek-coder-1.3b` - कोडसाठी विशेषीकृत
 - `phi-4-mini` - सामान्य उद्देश कोडिंग
 
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## प्रगत कॉन्फिगरेशन
 
-### सानुकूल एंडपॉइंट्स
+### कस्टम एंडपॉइंट्स
 
 ```bash
 # Development environment
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **लक्षणे:**
 - "मॉड्यूल सापडले नाही" त्रुटी
-- "workshop_utils आयात करू शकत नाही"
 
 **उपाय:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## कॉन्फिगरेशन चाचणी
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Foundry Local कनेक्शन चाचणी करा
+### फाउंड्री लोकल कनेक्शन चाचणी करा
 
 ```python
 # test_connection.py
@@ -405,12 +402,12 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## SDK दस्तऐवजीकरण
 
 - **मुख्य रिपॉझिटरी**: https://github.com/microsoft/Foundry-Local
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **पायथन SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 - **API दस्तऐवजीकरण**: नवीनतमसाठी SDK रिपॉझिटरी तपासा
 
 ## अतिरिक्त संसाधने
 
-- `QUICK_START.md` - सुरुवात मार्गदर्शक
+- `QUICK_START.md` - सुरुवातीसाठी मार्गदर्शक
 - `SDK_MIGRATION_NOTES.md` - SDK अद्यतन तपशील
 - `Workshop/samples/*/README.md` - नमुना-विशिष्ट मार्गदर्शक
 
@@ -418,9 +415,9 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 **शेवटचे अद्यतन**: 2025-01-08  
 **आवृत्ती**: 2.0  
-**SDK**: Foundry Local Python SDK (नवीनतम)
+**SDK**: फाउंड्री लोकल पायथन SDK (नवीनतम)
 
 ---
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) चा वापर करून भाषांतरित करण्यात आला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी कृपया लक्षात ठेवा की स्वयंचलित भाषांतरांमध्ये त्रुटी किंवा अचूकतेचा अभाव असू शकतो. मूळ भाषेतील दस्तऐवज हा अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी भाषांतराची शिफारस केली जाते. या भाषांतराचा वापर करून निर्माण होणाऱ्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार राहणार नाही.
+हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित करण्यात आला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी कृपया लक्षात ठेवा की स्वयंचलित भाषांतरांमध्ये त्रुटी किंवा अचूकतेचा अभाव असू शकतो. मूळ भाषेतील दस्तऐवज हा अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी भाषांतराची शिफारस केली जाते. या भाषांतराचा वापर करून निर्माण झालेल्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार राहणार नाही.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T14:02:45+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T23:25:10+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "hr"
 }
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Za Python skripte:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -67,7 +67,7 @@ python chat_bootstrap.py
 **Kada postaviti FOUNDRY_LOCAL_ENDPOINT:**
 - Udaljena instanca Foundry Local
 - Prilagođena konfiguracija porta
-- Razdvajanje razvoja i produkcije
+- Razdvajanje razvoja/produkcije
 
 **Primjer:**
 ```bash
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sesija 03: Benchmarking
 | Varijabla | Zadano | Svrha |
 |-----------|--------|-------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modeli za benchmarking |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modeli za benchmarking |
 | `BENCH_ROUNDS` | `3` | Iteracije po modelu |
 | `BENCH_PROMPT` | Predkonfigurirano | Testni prompt |
 | `BENCH_STREAM` | `0` | Mjerenje latencije prvog tokena |
@@ -119,7 +119,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 ## Uobičajene konfiguracije
 
-### Postavke za razvoj (brza iteracija)
+### Postavka za razvoj (brza iteracija)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Postavke za produkciju (fokus na kvalitetu)
+### Postavka za produkciju (fokus na kvalitetu)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -138,14 +138,14 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Postavke za benchmarking
+### Postavka za benchmarking
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### Specijalizacija za više agenata
+### Specijalizacija više agenata
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -170,7 +170,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Visoka kvaliteta:**
 - `qwen2.5-7b` - Najbolja kvaliteta, veća potrošnja resursa
-- `phi-4-mini` - Dobra kvaliteta, manja potrošnja resursa
+- `phi-4-mini` - Dobra kvaliteta, manji resursi
 
 **Generiranje koda:**
 - `deepseek-coder-1.3b` - Specijaliziran za kod
@@ -300,23 +300,20 @@ foundry model run phi-4-mini
 FOUNDRY_LOCAL_ALIAS=<available-model>
 ```
 
-### Pogreške uvoza
+### Pogreške pri uvozu
 
 **Simptomi:**
 - Pogreške "Modul nije pronađen"
-- "Ne mogu uvesti workshop_utils"
 
 **Rješenja:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Testiranje konfiguracije
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Testiranje veze s Foundry Local
+### Testiranje povezivanja s Foundry Local
 
 ```python
 # test_connection.py
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## Najbolje prakse za sigurnost
 
-### 1. Nikada ne dijelite tajne
+### 1. Nikada ne pohranjujte tajne u repozitorij
 
 ```bash
 # .gitignore should include:
@@ -377,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Koristite odvojene .env datoteke
+### 2. Koristite odvojene `.env` datoteke
 
 ```bash
 .env              # Default configuration
@@ -402,11 +399,11 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ```
 
-## Dokumentacija SDK-a
+## SDK dokumentacija
 
 - **Glavni repozitorij**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API dokumentacija**: Provjerite repozitorij SDK-a za najnovije informacije
+- **API dokumentacija**: Provjerite najnovije informacije u SDK repozitoriju
 
 ## Dodatni resursi
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane ljudskog prevoditelja. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešne interpretacije nastale korištenjem ovog prijevoda.

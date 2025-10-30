@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T09:22:16+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T21:17:09+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "ne"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## अवलोकन
 
-वर्कशपका नमूनाहरूले `.env` फाइलमा केन्द्रित वातावरण चरहरू प्रयोग गरेर कन्फिगरेसन गर्छ। यसले कोड परिवर्तन नगरी सजिलै अनुकूलन गर्न अनुमति दिन्छ।
+वर्कशपका नमूनाहरूले कन्फिगरेसनको लागि वातावरण चरहरू प्रयोग गर्छन्, जुन `.env` फाइलमा रिपोजिटरीको जडमा केन्द्रित गरिएको छ। यसले कोड परिवर्तन नगरी सजिलै अनुकूलन गर्न अनुमति दिन्छ।
 
 ## छिटो सुरु
 
-### १. आवश्यकताहरू पुष्टि गर्नुहोस्
+### १. आवश्यकताहरू प्रमाणित गर्नुहोस्
 
 ```bash
 # Check Foundry Local is installed
@@ -32,7 +32,7 @@ foundry model run phi-4-mini
 
 `.env` फाइल पहिले नै उपयुक्त डिफल्ट सेटिङहरूसँग कन्फिगर गरिएको छ। अधिकांश प्रयोगकर्ताहरूले केही परिवर्तन गर्न आवश्यक पर्दैन।
 
-**वैकल्पिक**: सेटिङहरू समीक्षा र अनुकूलन गर्नुहोस्:
+**वैकल्पिक**: सेटिङहरू समीक्षा गर्नुहोस् र अनुकूलन गर्नुहोस्:
 ```bash
 # Edit .env file
 notepad .env  # Windows
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Python स्क्रिप्टहरूको लागि:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -65,7 +65,7 @@ python chat_bootstrap.py
 | `PYTHONPATH` | वर्कशप पथहरू | Python मोड्युल खोज पथ |
 
 **FOUNDRY_LOCAL_ENDPOINT कहिले सेट गर्ने:**
-- रिमोट Foundry Local इन्स्ट्यान्स
+- रिमोट फाउन्ड्री लोकल इन्स्ट्यान्स
 - कस्टम पोर्ट कन्फिगरेसन
 - विकास/उत्पादन छुट्याउने
 
@@ -82,29 +82,29 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 #### सत्र ०२: RAG पाइपलाइन
 | चर | डिफल्ट | उद्देश्य |
-|-----|--------|----------|
+|-----|--------|---------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | एम्बेडिङ मोडेल |
 | `RAG_QUESTION` | पूर्व-कन्फिगर गरिएको | परीक्षण प्रश्न |
 
 #### सत्र ०३: बेंचमार्किङ
 | चर | डिफल्ट | उद्देश्य |
-|-----|--------|----------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | बेंचमार्क गर्न मोडेलहरू |
+|-----|--------|---------|
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | बेंचमार्क गर्न मोडेलहरू |
 | `BENCH_ROUNDS` | `3` | प्रत्येक मोडेलको लागि पुनरावृत्ति |
 | `BENCH_PROMPT` | पूर्व-कन्फिगर गरिएको | परीक्षण प्रम्प्ट |
 | `BENCH_STREAM` | `0` | पहिलो-टोकन विलम्बता मापन गर्नुहोस् |
 
 #### सत्र ०४: मोडेल तुलना
 | चर | डिफल्ट | उद्देश्य |
-|-----|--------|----------|
+|-----|--------|---------|
 | `SLM_ALIAS` | `phi-4-mini` | सानो भाषा मोडेल |
 | `LLM_ALIAS` | `qwen2.5-7b` | ठूलो भाषा मोडेल |
 | `COMPARE_PROMPT` | पूर्व-कन्फिगर गरिएको | तुलना प्रम्प्ट |
 | `COMPARE_RETRIES` | `2` | पुन: प्रयासको संख्या |
 
-#### सत्र ०५: बहु-एजेन्ट समन्वय
+#### सत्र ०५: मल्टि-एजेन्ट समन्वय
 | चर | डिफल्ट | उद्देश्य |
-|-----|--------|----------|
+|-----|--------|---------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | अनुसन्धानकर्ता एजेन्ट मोडेल |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | सम्पादक एजेन्ट मोडेल |
 | `AGENT_QUESTION` | पूर्व-कन्फिगर गरिएको | परीक्षण प्रश्न |
@@ -112,7 +112,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ### विश्वसनीयता कन्फिगरेसन
 
 | चर | डिफल्ट | उद्देश्य |
-|-----|--------|----------|
+|-----|--------|---------|
 | `SHOW_USAGE` | `1` | टोकन प्रयोग प्रिन्ट गर्नुहोस् |
 | `RETRY_ON_FAIL` | `1` | पुन: प्रयास तर्क सक्षम गर्नुहोस् |
 | `RETRY_BACKOFF` | `1.0` | पुन: प्रयास ढिलाइ (सेकेन्ड) |
@@ -140,12 +140,12 @@ SHOW_USAGE=0
 
 ### बेंचमार्किङ सेटअप
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### बहु-एजेन्ट विशेषज्ञता
+### मल्टि-एजेन्ट विशेषज्ञता
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -162,7 +162,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ### प्रयोग केस अनुसार
 
 **सामान्य उद्देश्य:**
-- `phi-4-mini` - सन्तुलित गुणस्तर र गति
+- `phi-4-mini` - गुणस्तर र गति सन्तुलित
 
 **छिटो प्रतिक्रिया:**
 - `qwen2.5-0.5b` - धेरै छिटो, वर्गीकरणको लागि राम्रो
@@ -170,7 +170,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **उच्च गुणस्तर:**
 - `qwen2.5-7b` - उत्कृष्ट गुणस्तर, उच्च स्रोत प्रयोग
-- `phi-4-mini` - राम्रो गुणस्तर, कम स्रोतहरू
+- `phi-4-mini` - राम्रो गुणस्तर, कम स्रोत
 
 **कोड उत्पादन:**
 - `deepseek-coder-1.3b` - कोडको लागि विशेष
@@ -178,21 +178,21 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### स्रोत उपलब्धता अनुसार
 
-**कम स्रोतहरू (< ८GB RAM):**
+**कम स्रोत (< ८GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
 LLM_ALIAS=phi-4-mini
 ```
 
-**मध्यम स्रोतहरू (८-१६GB RAM):**
+**मध्यम स्रोत (८-१६GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-7b
 ```
 
-**उच्च स्रोतहरू (१६GB+ RAM):**
+**उच्च स्रोत (१६GB+ RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-7b
 SLM_ALIAS=phi-4-mini
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### तापमान र नमूना (कोडमा ओभरराइड गर्नुहोस्)
+### तापक्रम र नमूना (कोडमा ओभरराइड गर्नुहोस्)
 
 ```python
 # In your scripts/notebooks
@@ -236,7 +236,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 ## समस्या समाधान
 
-### वातावरण चरहरू लोड भएन
+### वातावरण चरहरू लोड भएनन्
 
 **लक्षणहरू:**
 - स्क्रिप्टहरूले गलत मोडेल प्रयोग गर्छन्
@@ -304,24 +304,21 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **लक्षणहरू:**
 - "मोड्युल फेला परेन" त्रुटिहरू
-- "workshop_utils आयात गर्न सकिएन"
 
 **समाधानहरू:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## कन्फिगरेसन परीक्षण
 
-### वातावरण लोडिङ पुष्टि गर्नुहोस्
+### वातावरण लोडिङ प्रमाणित गर्नुहोस्
 
 ```python
 # test_env.py
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Foundry Local जडान परीक्षण गर्नुहोस्
+### फाउन्ड्री लोकल जडान परीक्षण गर्नुहोस्
 
 ```python
 # test_connection.py
@@ -385,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### ३. API कुञ्जीहरू घुमाउनुहोस्
+### ३. API कुञ्जीहरू परिवर्तन गर्नुहोस्
 
 ```bash
 # For Azure OpenAI or other cloud services
@@ -406,7 +403,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **मुख्य रिपोजिटरी**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API दस्तावेज**: नवीनतम जानकारीको लागि SDK रिपोजिटरी जाँच गर्नुहोस्
+- **API दस्तावेज**: नवीनतमको लागि SDK रिपोजिटरी जाँच गर्नुहोस्
 
 ## थप स्रोतहरू
 
@@ -418,9 +415,9 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 **अन्तिम अपडेट**: २०२५-०१-०८  
 **संस्करण**: २.०  
-**SDK**: Foundry Local Python SDK (नवीनतम)
+**SDK**: फाउन्ड्री लोकल Python SDK (नवीनतम)
 
 ---
 
 **अस्वीकरण**:  
-यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरेर अनुवाद गरिएको हो। हामी यथासम्भव शुद्धता सुनिश्चित गर्न प्रयास गर्छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटिहरू वा अशुद्धताहरू हुन सक्छ। मूल दस्तावेज़ यसको मातृभाषामा आधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीको लागि, व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न हुने कुनै पनि गलतफहमी वा गलत व्याख्याको लागि हामी जिम्मेवार हुने छैनौं।
+यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरेर अनुवाद गरिएको छ। हामी शुद्धताको लागि प्रयास गर्छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादहरूमा त्रुटिहरू वा अशुद्धताहरू हुन सक्छ। यसको मूल भाषा मा रहेको दस्तावेज़लाई आधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीको लागि, व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न हुने कुनै पनि गलतफहमी वा गलत व्याख्याको लागि हामी जिम्मेवार हुने छैनौं।

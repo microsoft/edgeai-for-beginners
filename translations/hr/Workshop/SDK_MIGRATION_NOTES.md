@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-08T14:24:39+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T23:28:57+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "hr"
 }
@@ -18,7 +18,7 @@ Svi Python datoteke u mapi Workshop ažurirane su kako bi slijedile najnovije ob
 ### Osnovna infrastruktura (`workshop_utils.py`)
 
 #### Poboljšane značajke:
-- **Podrška za nadjačavanje krajnje točke**: Dodana podrška za varijablu okruženja `FOUNDRY_LOCAL_ENDPOINT`
+- **Podrška za promjenu krajnje točke**: Dodana podrška za varijablu okruženja `FOUNDRY_LOCAL_ENDPOINT`
 - **Poboljšano rukovanje greškama**: Bolje rukovanje iznimkama s detaljnim porukama o greškama
 - **Poboljšano predmemoriranje**: Ključevi predmemorije sada uključuju krajnju točku za scenarije s više krajnjih točaka
 - **Eksponencijalno odgađanje**: Logika ponovnog pokušaja sada koristi eksponencijalno odgađanje za bolju pouzdanost
@@ -37,24 +37,24 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### Sesija 01: Pokretanje chata (`chat_bootstrap.py`)
 - Ažuriran zadani model s `phi-3.5-mini` na `phi-4-mini`
-- Dodana podrška za nadjačavanje krajnje točke
+- Dodana podrška za promjenu krajnje točke
 - Poboljšana dokumentacija s referencama na SDK
 
 #### Sesija 02: RAG cjevovod (`rag_pipeline.py`)
-- Ažuriran za korištenje `phi-4-mini` kao zadanog modela
-- Dodana podrška za nadjačavanje krajnje točke
+- Ažurirano za korištenje `phi-4-mini` kao zadanog modela
+- Dodana podrška za promjenu krajnje točke
 - Poboljšana dokumentacija s detaljima o varijablama okruženja
 
-#### Sesija 02: RAG evaluacija (`rag_eval_ragas.py`)
+#### Sesija 02: Procjena RAG-a (`rag_eval_ragas.py`)
 - Ažurirani zadani modeli
 - Dodana konfiguracija krajnje točke
 - Poboljšano rukovanje greškama
 
 #### Sesija 03: Benchmarking (`benchmark_oss_models.py`)
-- Ažuriran popis zadanih modela za uključivanje `phi-4-mini`
+- Ažuriran popis zadanih modela kako bi uključivao `phi-4-mini`
 - Dodana sveobuhvatna dokumentacija o varijablama okruženja
 - Poboljšana dokumentacija funkcija
-- Dodana podrška za nadjačavanje krajnje točke
+- Dodana podrška za promjenu krajnje točke
 
 #### Sesija 04: Usporedba modela (`model_compare.py`)
 - Ažuriran zadani LLM s `gpt-oss-20b` na `qwen2.5-7b`
@@ -64,7 +64,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### Sesija 05: Orkestracija više agenata (`agents_orchestrator.py`)
 - Dodane oznake tipova (promijenjeno `str | None` u `Optional[str]`)
 - Poboljšana dokumentacija klase Agent
-- Dodana podrška za nadjačavanje krajnje točke
+- Dodana podrška za promjenu krajnje točke
 - Poboljšan obrazac inicijalizacije
 
 #### Sesija 06: Usmjerivač modela (`models_router.py`)
@@ -80,19 +80,19 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 ### Skripte
 
 #### Izvoz benchmarka (`export_benchmark_markdown.py`)
-- Dodana podrška za nadjačavanje krajnje točke
+- Dodana podrška za promjenu krajnje točke
 - Ažurirani zadani modeli
 - Poboljšana dokumentacija funkcija
 - Poboljšano rukovanje greškama
 
 #### CLI Linter (`lint_markdown_cli.py`)
-- Dodane reference na SDK
+- Dodane poveznice na SDK reference
 - Poboljšana dokumentacija o korištenju
 
 ### Testovi
 
 #### Testovi dima (`smoke.py`)
-- Dodana podrška za nadjačavanje krajnje točke
+- Dodana podrška za promjenu krajnje točke
 - Poboljšana dokumentacija
 - Poboljšana dokumentacija testnih slučajeva
 - Bolje izvještavanje o greškama
@@ -103,8 +103,8 @@ Svi primjeri sada podržavaju ove varijable okruženja:
 
 ### Osnovna konfiguracija
 - `FOUNDRY_LOCAL_ALIAS` - Alias modela koji se koristi (zadano varira po primjeru)
-- `FOUNDRY_LOCAL_ENDPOINT` - Nadjačavanje krajnje točke usluge (opcionalno)
-- `SHOW_USAGE` - Prikaz statistike o korištenju tokena (zadano: "0")
+- `FOUNDRY_LOCAL_ENDPOINT` - Promjena krajnje točke usluge (opcionalno)
+- `SHOW_USAGE` - Prikaz statistike korištenja tokena (zadano: "0")
 - `RETRY_ON_FAIL` - Omogućavanje logike ponovnog pokušaja (zadano: "1")
 - `RETRY_BACKOFF` - Početno kašnjenje ponovnog pokušaja u sekundama (zadano: "1.0")
 
@@ -113,7 +113,7 @@ Svi primjeri sada podržavaju ove varijable okruženja:
 - `BENCH_MODELS` - Modeli odvojeni zarezom za benchmarking
 - `BENCH_ROUNDS` - Broj rundi benchmarkinga
 - `BENCH_PROMPT` - Testni prompt za benchmarking
-- `BENCH_STREAM` - Mjerenje latencije prvog tokena
+- `BENCH_STREAM` - Mjerenje kašnjenja prvog tokena
 - `RAG_QUESTION` - Testno pitanje za RAG primjere
 - `AGENT_MODEL_PRIMARY` - Primarni model agenta
 - `AGENT_MODEL_EDITOR` - Model agenta urednika
@@ -181,14 +181,14 @@ for chunk in stream:
 
 ## Vodič za migraciju prilagođenih primjera
 
-Ako kreirate nove primjere ili ažurirate postojeće:
+Ako stvarate nove primjere ili ažurirate postojeće:
 
 1. **Koristite pomoćne funkcije iz `workshop_utils.py`**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
 
-2. **Podržite nadjačavanje krajnje točke**:
+2. **Podržite promjenu krajnje točke**:
    ```python
    endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")
    manager, client, model_id = get_client(alias, endpoint=endpoint)
@@ -196,7 +196,7 @@ Ako kreirate nove primjere ili ažurirate postojeće:
 
 3. **Dodajte sveobuhvatnu dokumentaciju**:
    - Varijable okruženja u docstringu
-   - Referenca na SDK
+   - Poveznica na SDK reference
    - Primjeri korištenja
 
 4. **Koristite oznake tipova**:
@@ -223,33 +223,34 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
 ```
 
-## Reference na dokumentaciju SDK-a
+## Reference za dokumentaciju SDK-a
 
 - **Glavni repozitorij**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API dokumentacija**: Provjerite repozitorij SDK-a za najnoviju dokumentaciju API-ja
+- **API dokumentacija**: Provjerite najnoviju dokumentaciju API-ja u repozitoriju SDK-a
 
-## Prekidne promjene
+## Prekid kompatibilnosti
 
-### Nisu očekivane
+### Nisu očekivani
 Sve promjene su unatrag kompatibilne. Ažuriranja prvenstveno:
-- Dodaju nove opcionalne značajke (nadjačavanje krajnje točke)
+- Dodaju nove opcionalne značajke (promjena krajnje točke)
 - Poboljšavaju rukovanje greškama
 - Poboljšavaju dokumentaciju
 - Ažuriraju zadane nazive modela prema trenutnim preporukama
 
 ### Opcionalna poboljšanja
-Možda ćete htjeti ažurirati svoj kod za korištenje:
+Možda ćete htjeti ažurirati svoj kod kako biste koristili:
 - `FOUNDRY_LOCAL_ENDPOINT` za eksplicitnu kontrolu krajnje točke
 - `SHOW_USAGE=1` za vidljivost korištenja tokena
 - Ažurirane zadane modele (`phi-4-mini` umjesto `phi-3.5-mini`)
@@ -257,7 +258,7 @@ Možda ćete htjeti ažurirati svoj kod za korištenje:
 ## Uobičajeni problemi i rješenja
 
 ### Problem: "Inicijalizacija klijenta nije uspjela"
-**Rješenje**: Provjerite je li Foundry Local usluga pokrenuta:
+**Rješenje**: Provjerite je li usluga Foundry Local pokrenuta:
 ```bash
 foundry service start
 foundry model run phi-4-mini
@@ -269,7 +270,7 @@ foundry model run phi-4-mini
 foundry model list
 ```
 
-### Problem: Greške povezivanja krajnje točke
+### Problem: Pogreške povezivanja s krajnjom točkom
 **Rješenje**: Provjerite krajnju točku:
 ```bash
 # Check service status
@@ -290,10 +291,10 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 Kada dodajete nove primjere:
 1. Koristite `workshop_utils.py` za dosljednost
-2. Slijedite obrazac u postojećim primjerima
+2. Slijedite obrazac iz postojećih primjera
 3. Dodajte sveobuhvatne docstringove
-4. Uključite reference na SDK
-5. Podržite nadjačavanje krajnje točke
+4. Uključite poveznice na SDK reference
+5. Podržite promjenu krajnje točke
 6. Dodajte ispravne oznake tipova
 7. Uključite primjere korištenja u docstringu
 
@@ -306,11 +307,11 @@ Ova ažuriranja su kompatibilna s:
 
 ---
 
-**Zadnje ažuriranje**: 2025-01-08  
+**Posljednje ažuriranje**: 2025-01-08  
 **Održavatelj**: EdgeAI Workshop Team  
-**SDK verzija**: Foundry Local SDK (najnovija 0.7.117+67073234e7)
+**Verzija SDK-a**: Foundry Local SDK (najnovija 0.7.117+67073234e7)
 
 ---
 
 **Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane ljudskog prevoditelja. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

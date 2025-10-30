@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1b3c0fecfd713c2df903a0633249dc9",
-  "translation_date": "2025-10-09T21:08:05+00:00",
+  "original_hash": "d9e354c0182311726dc037a8809524e2",
+  "translation_date": "2025-10-28T19:56:59+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "en"
 }
@@ -15,7 +15,7 @@ Compare Large Language Models (LLMs) and Small Language Models (SLMs) for local 
 
 ## Learning Objectives
 
-- **Contrast** SLM and LLM based on latency, memory usage, and quality
+- **Compare** SLM and LLM based on latency, memory usage, and quality
 - **Deploy** models using ONNXRuntime and (where supported) WebGPU
 - **Run** browser-based inference (privacy-preserving interactive demo)
 - **Integrate** a Chainlit RAG pipeline with a local SLM backend
@@ -31,7 +31,7 @@ Compare Large Language Models (LLMs) and Small Language Models (SLMs) for local 
 ### Cross-Platform Notes
 
 Windows remains the primary target environment. For macOS developers awaiting native binaries:
-1. Run Foundry Local in a Windows 11 VM (Parallels/UTM) OR a remote Windows workstation.
+1. Run Foundry Local in a Windows 11 VM (Parallels / UTM) OR on a remote Windows workstation.
 2. Expose the service (default port 5273) and configure on macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
@@ -42,7 +42,6 @@ Chainlit installation (both platforms):
 ```bash
 pip install chainlit
 ```
-
 
 ## Demo Flow (30 min)
 
@@ -68,11 +67,12 @@ Track: response depth, factual accuracy, stylistic richness, latency.
 ```powershell
 foundry config set compute.onnx.enable_gpu true
 # Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
-Observe throughput changes after enabling GPU versus CPU-only execution.
+Observe throughput changes when switching between GPU and CPU-only modes.
 
 ### 3. WebGPU Inference in Browser (6 min)
 
@@ -163,23 +163,22 @@ Run:
 chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ```
 
-
 ### 5. Starter Project: Adapt `04-webgpu-inference` (6 min)
 
 Deliverables:
-- Replace placeholder fetch logic with streaming tokens (use the `stream=True` endpoint variant once enabled)
-- Add a latency chart (client-side) for Phi versus GPT-OSS-20B toggles
+- Replace placeholder fetch logic with streaming tokens (use `stream=True` endpoint variant once enabled)
+- Add a latency chart (client-side) for Phi vs GPT-OSS-20B toggles
 - Embed RAG context inline (textarea for reference documents)
 
 ## Evaluation Heuristics
 
-| Category          | Phi-4-mini | GPT-OSS-20B | Observation                  |
-|-------------------|------------|-------------|------------------------------|
-| Latency (cold)    | Fast       | Slower      | SLM warms up quickly         |
-| Memory            | Low        | High        | Feasibility for devices      |
-| Context adherence | Good       | Strong      | Larger models may be verbose |
-| Cost (local)      | Minimal    | Higher      | Energy/time trade-off        |
-| Best use case     | Edge apps  | Deep reasoning | Hybrid pipeline possible |
+| Category | Phi-4-mini | GPT-OSS-20B | Observation |
+|----------|------------|-------------|-------------|
+| Latency (cold) | Fast | Slower | SLM warms up quickly |
+| Memory | Low | High | Feasibility for devices |
+| Context adherence | Good | Strong | Larger models may be more verbose |
+| Cost (local) | Minimal | Higher (resource-intensive) | Energy/time trade-off |
+| Best use case | Edge apps | Deep reasoning | Hybrid pipeline possible |
 
 ## Validating Environment
 
@@ -189,18 +188,18 @@ foundry model list
 
 # For runtime metrics use the Python benchmark script (Session 3) and OS tools (Task Manager / nvidia-smi) instead of 'model stats'
 # Example:
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini,gpt-oss-20b
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
-
 
 ## Troubleshooting
 
-| Symptom              | Cause              | Action                                   |
-|----------------------|--------------------|-----------------------------------------|
+| Symptom | Cause | Action |
+|---------|-------|--------|
 | Web page fetch fails | CORS or service down | Use `curl` to verify endpoint; enable CORS proxy if needed |
-| Chainlit blank       | Environment not active | Activate virtual environment and reinstall dependencies |
-| High latency         | Model just loaded  | Warm up with a small prompt sequence    |
+| Chainlit blank | Environment not active | Activate virtual environment and reinstall dependencies |
+| High latency | Model just loaded | Warm up with a small prompt sequence |
 
 ## References
 
@@ -215,18 +214,16 @@ foundry model list
 
 ## Sample Scenario & Workshop Mapping
 
-| Workshop Artifacts                                   | Scenario                                      | Objective                          | Data / Prompt Source             |
-|-----------------------------------------------------|----------------------------------------------|------------------------------------|----------------------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architecture team evaluating SLM vs LLM for executive summary generator | Quantify latency and token usage delta | Single `COMPARE_PROMPT` environment variable |
-| `chainlit_app.py` (RAG demo)                        | Internal knowledge assistant prototype       | Ground short answers with minimal lexical retrieval | Inline `DOCS` list in file       |
-| `webgpu_demo.html`                                  | Futuristic on-device browser inference preview | Show low-latency local roundtrip and UX narrative | Live user prompt only             |
+| Workshop Artifacts | Scenario | Objective | Data / Prompt Source |
+|--------------------|----------|-----------|----------------------|
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architecture team evaluating SLM vs LLM for executive summary generator | Quantify latency and token usage differences | Single `COMPARE_PROMPT` environment variable |
+| `chainlit_app.py` (RAG demo) | Internal knowledge assistant prototype | Ground short answers with minimal lexical retrieval | Inline `DOCS` list in file |
+| `webgpu_demo.html` | Futuristic on-device browser inference preview | Show low-latency local roundtrip and UX narrative | Live user prompt only |
 
 ### Scenario Narrative
-
-The product team wants an executive briefing generator. A lightweight SLM (Phi-4-mini) drafts summaries, while a larger LLM (GPT-OSS-20B) refines only high-priority reports. Session scripts capture empirical latency and token metrics to justify a hybrid design, while the Chainlit demo illustrates how grounded retrieval ensures factual answers from the small model. The WebGPU concept page provides a vision for fully client-side processing as browser acceleration matures.
+The product team wants an executive briefing generator. A lightweight SLM (Phi-4-mini) drafts summaries, while a larger LLM (GPT-OSS-20B) refines only high-priority reports. Session scripts capture empirical latency and token metrics to justify a hybrid design, while the Chainlit demo illustrates how grounded retrieval ensures small model answers remain factual. The WebGPU concept page provides a vision for fully client-side processing as browser acceleration evolves.
 
 ### Minimal RAG Context (Chainlit)
-
 ```python
 DOCS = [
   "Foundry Local enables local model execution with OpenAI-compatible APIs.",
@@ -235,9 +232,7 @@ DOCS = [
 ]
 ```
 
-
 ### Hybrid Draft→Refine Flow (Pseudo)
-
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":prompt}], max_tokens=280)
 if len(draft) < 600:  # heuristic: escalate only for longer briefs or flagged topics
@@ -250,18 +245,18 @@ Track both latency components to report blended average cost.
 
 ### Optional Enhancements
 
-| Focus               | Enhancement                          | Why                                | Implementation Hint               |
-|---------------------|--------------------------------------|------------------------------------|-----------------------------------|
-| Comparative Metrics | Track token usage and first-token latency | Holistic performance view         | Use enhanced benchmark script (Session 3) with `BENCH_STREAM=1` |
-| Hybrid Pipeline     | SLM draft → LLM refine              | Reduce latency and cost           | Generate with Phi-4-mini, refine summary with GPT-OSS-20B |
-| Streaming UI        | Better UX in Chainlit               | Incremental feedback              | Use `stream=True` once local streaming is exposed; accumulate chunks |
-| WebGPU Caching      | Faster JS initialization            | Reduce recompile overhead         | Cache compiled shader artifacts (future runtime capability) |
-| Deterministic QA Set| Fair model comparison               | Remove variance                   | Fixed prompt list and `temperature=0` for evaluation runs |
-| Output Scoring      | Structured quality lens             | Move beyond anecdotes             | Simple rubric: coherence, factuality, brevity (1–5) |
-| Energy / Resource Notes | Classroom discussion            | Show trade-offs                   | Use OS monitors (`foundry system info`, Task Manager, `nvidia-smi`) and benchmark script outputs |
-| Cost Emulation      | Pre-cloud justification             | Plan scaling                      | Map tokens to hypothetical cloud pricing for TCO narrative |
-| Latency Decomposition | Identify bottlenecks              | Target optimizations              | Measure prompt preparation, request sending, first token, and full completion |
-| RAG + LLM Fallback  | Quality safety net                  | Improve difficult queries         | If SLM answer length is below a threshold or confidence is low → escalate |
+| Focus | Enhancement | Why | Implementation Hint |
+|-------|------------|-----|---------------------|
+| Comparative Metrics | Track token usage and first-token latency | Holistic performance view | Use enhanced benchmark script (Session 3) with `BENCH_STREAM=1` |
+| Hybrid Pipeline | SLM draft → LLM refine | Reduce latency and cost | Generate with Phi-4-mini, refine summary with GPT-OSS-20B |
+| Streaming UI | Better UX in Chainlit | Incremental feedback | Use `stream=True` once local streaming is exposed; accumulate chunks |
+| WebGPU Caching | Faster JS initialization | Reduce recompile overhead | Cache compiled shader artifacts (future runtime capability) |
+| Deterministic QA Set | Fair model comparison | Remove variance | Fixed prompt list and `temperature=0` for evaluation runs |
+| Output Scoring | Structured quality lens | Move beyond anecdotes | Simple rubric: coherence / factuality / brevity (1–5) |
+| Energy / Resource Notes | Classroom discussion | Show trade-offs | Use OS monitors (`foundry system info`, Task Manager, `nvidia-smi`) and benchmark script outputs |
+| Cost Emulation | Pre-cloud justification | Plan scaling | Map tokens to hypothetical cloud pricing for TCO narrative |
+| Latency Decomposition | Identify bottlenecks | Target optimizations | Measure prompt preparation, request sending, first token, full completion |
+| RAG + LLM Fallback | Quality safety net | Improve difficult queries | If SLM answer length is below a threshold or confidence is low → escalate |
 
 #### Example Hybrid Draft/Refine Pattern
 
@@ -269,7 +264,6 @@ Track both latency components to report blended average cost.
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], max_tokens=300, temperature=0.4)
 refine, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Improve clarity but keep facts:\n{draft}"}], max_tokens=220, temperature=0.3)
 ```
-
 
 #### Latency Breakdown Sketch
 
@@ -287,4 +281,4 @@ Use consistent measurement scaffolding across models for fair comparisons.
 ---
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.

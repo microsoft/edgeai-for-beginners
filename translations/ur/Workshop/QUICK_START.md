@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T06:41:21+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T20:27:36+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "ur"
 }
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### سیشن 01: بنیادی چیٹ
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **ماحولیاتی متغیرات:**
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### سیشن 02: RAG پائپ لائن
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **ماحولیاتی متغیرات:**
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### سیشن 02: RAG ایویلیوایشن (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **نوٹ**: اضافی ڈیپینڈنسیز کی ضرورت ہے جو `requirements.txt` کے ذریعے انسٹال کی جائیں گی
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### سیشن 03: بینچ مارکنگ
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **ماحولیاتی متغیرات:**
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### سیشن 04: ماڈل موازنہ
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **ماحولیاتی متغیرات:**
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### سیشن 05: ملٹی ایجنٹ آرکسٹریشن
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **ماحولیاتی متغیرات:**
@@ -130,16 +131,16 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### سیشن 06: ماڈل روٹر
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**ٹیسٹ روٹنگ لاجک** مختلف ارادوں کے ساتھ (کوڈ، خلاصہ، درجہ بندی)
+**روٹنگ لاجک کی جانچ کریں** مختلف ارادوں کے ساتھ (کوڈ، خلاصہ، درجہ بندی)
 
 ### سیشن 06: پائپ لائن
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **پیچیدہ ملٹی اسٹیپ پائپ لائن** منصوبہ بندی، عمل درآمد، اور بہتری کے ساتھ
@@ -159,7 +160,7 @@ python export_benchmark_markdown.py \
 
 **آؤٹ پٹ**: مارک ڈاؤن ٹیبل + JSON میٹرکس
 
-### مارک ڈاؤن CLI پیٹرنز کو لِنٹ کریں
+### مارک ڈاؤن CLI پیٹرنز کی جانچ کریں
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -176,11 +177,11 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**ٹیسٹس**: کلیدی سیمپلز کی بنیادی فعالیت
+**ٹیسٹس**: اہم سیمپلز کی بنیادی فعالیت
 
 ## مسائل کا حل
 
-### سروس نہیں چل رہی
+### سروس چل نہیں رہی
 
 ```bash
 # Check status
@@ -267,9 +268,9 @@ foundry model run phi-4-mini
 - **فاؤنڈری لوکل**: https://github.com/microsoft/Foundry-Local
 - **پائتھون SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
-## مدد حاصل کرنا
+## مدد حاصل کریں
 
-1. سروس اسٹیٹس چیک کریں: `foundry service status`
+1. سروس کی حالت چیک کریں: `foundry service status`
 2. لاگز دیکھیں: فاؤنڈری لوکل سروس لاگز چیک کریں
 3. SDK دستاویزات چیک کریں: https://github.com/microsoft/Foundry-Local
 4. سیمپل کوڈ کا جائزہ لیں: تمام سیمپلز میں تفصیلی ڈاکسٹرنگز موجود ہیں

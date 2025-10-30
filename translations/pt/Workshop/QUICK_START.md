@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T20:40:18+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T21:29:21+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "pt"
 }
@@ -27,7 +27,7 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. Instalar Dependências Python
+### 2. Instalar Dependências do Python
 
 A partir do diretório do Workshop:
 
@@ -45,13 +45,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Executar Exemplos do Workshop
+## Executando Exemplos do Workshop
 
 ### Sessão 01: Chat Básico
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Variáveis de Ambiente:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Sessão 02: Pipeline RAG
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Variáveis de Ambiente:**  
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Sessão 02: Avaliação RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Nota**: Requer dependências adicionais instaladas via `requirements.txt`
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### Sessão 03: Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Variáveis de Ambiente:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### Sessão 04: Comparação de Modelos
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Variáveis de Ambiente:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Sessão 05: Orquestração Multi-Agente
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Variáveis de Ambiente:**  
@@ -130,19 +131,19 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Sessão 06: Roteador de Modelos
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Testa lógica de roteamento** com múltiplas intenções (código, resumo, classificação)
+**Testa a lógica de roteamento** com múltiplas intenções (código, resumo, classificação)
 
 ### Sessão 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
-**Pipeline complexo de múltiplos passos** com planeamento, execução e refinamento
+**Pipeline complexo de múltiplas etapas** com planeamento, execução e refinamento
 
 ## Scripts
 
@@ -157,19 +158,19 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**Saída**: Tabela Markdown + métricas JSON
+**Saída**: Tabela em Markdown + métricas em JSON
 
-### Lint de Padrões CLI em Markdown
+### Verificar Padrões de CLI em Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**Objetivo**: Detetar padrões CLI obsoletos na documentação
+**Objetivo**: Detetar padrões de CLI obsoletos na documentação
 
 ## Testes
 
-### Testes de Fumo
+### Testes de Fumaça
 
 ```bash
 cd Workshop
@@ -265,7 +266,7 @@ foundry model run phi-4-mini
 ## Documentação do SDK
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **SDK Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Obter Ajuda
 
@@ -276,7 +277,7 @@ foundry model run phi-4-mini
 
 ## Próximos Passos
 
-1. Completar todas as sessões do workshop por ordem  
+1. Completar todas as sessões do workshop na ordem indicada  
 2. Experimentar diferentes modelos  
 3. Modificar os exemplos para os seus casos de uso  
 4. Rever `SDK_MIGRATION_NOTES.md` para padrões avançados  
@@ -289,5 +290,5 @@ foundry model run phi-4-mini
 
 ---
 
-**Aviso**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, é importante notar que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
+**Aviso Legal**:  
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

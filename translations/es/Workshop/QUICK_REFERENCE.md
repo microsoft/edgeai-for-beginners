@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-08T20:55:48+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T20:07:51+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "es"
 }
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -37,10 +37,10 @@ python chat_bootstrap.py "What is edge AI?"
 | 01 | `chat_bootstrap.py` | Chat básico + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG con embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | Evaluación de RAG | ~60s |
-| 03 | `benchmark_oss_models.py` | Evaluación de modelos | ~2m |
+| 03 | `benchmark_oss_models.py` | Benchmarking de modelos | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Sistema multi-agente | ~60s |
-| 06 | `models_router.py` | Enrutamiento por intención | ~45s |
+| 06 | `models_router.py` | Enrutamiento de intención | ~45s |
 | 06 | `models_pipeline.py` | Pipeline de múltiples pasos | ~60s |
 
 ---
@@ -102,7 +102,7 @@ python scripts/test_samples.py --verbose
 
 ---
 
-## 🐛 Resolución de Problemas
+## 🐛 Solución de Problemas
 
 ### Error de Conexión
 ```bash
@@ -200,7 +200,7 @@ for chunk in stream:
 | `qwen2.5-coder-0.5b` | 0.5B | Generación rápida de código | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Escritura creativa | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Código, refactorización | ⚡⚡ |
-| `phi-4-mini` | 4B | General, resúmenes | ⚡⚡ |
+| `phi-4-mini` | 4B | General, resumen | ⚡⚡ |
 | `qwen2.5-7b` | 7B | Razonamiento complejo | ⚡ |
 
 ---
@@ -217,10 +217,10 @@ for chunk in stream:
 ## 💡 Consejos
 
 1. **Cachear clientes**: `workshop_utils` lo hace por ti
-2. **Usar modelos más pequeños**: Comienza con `qwen2.5-0.5b` para pruebas
-3. **Habilitar estadísticas de uso**: Configura `SHOW_USAGE=1` para rastrear tokens
+2. **Usa modelos más pequeños**: Comienza con `qwen2.5-0.5b` para pruebas
+3. **Habilita estadísticas de uso**: Configura `SHOW_USAGE=1` para rastrear tokens
 4. **Procesamiento por lotes**: Procesa múltiples prompts de forma secuencial
-5. **Reducir max_tokens**: Disminuye la latencia para respuestas rápidas
+5. **Reduce max_tokens**: Disminuye la latencia para respuestas rápidas
 
 ---
 
@@ -232,35 +232,33 @@ python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### Evaluar Modelos
+### Benchmark de Modelos
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Pipeline de RAG
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Sistema Multi-Agente
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Ayuda Rápida**: Ejecuta cualquier muestra con `--help` o revisa el docstring:
+**Ayuda Rápida**: Ejecuta cualquier muestra con `--help` desde el directorio `samples` o revisa el docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.

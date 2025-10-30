@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-08T19:07:53+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T20:00:03+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "fr"
 }
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Session 01 : Chat de base
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Variables d'environnement :**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Session 02 : Pipeline RAG
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Variables d'environnement :**  
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Session 02 : Évaluation RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Remarque** : Nécessite des dépendances supplémentaires installées via `requirements.txt`
@@ -85,25 +86,25 @@ python rag_eval_ragas.py
 ### Session 03 : Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Variables d'environnement :**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Sortie** : JSON avec des métriques de latence, de débit et de premier token
+**Sortie** : JSON avec des métriques de latence, débit et premier token
 
 ### Session 04 : Comparaison de modèles
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Variables d'environnement :**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Session 05 : Orchestration multi-agents
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Variables d'environnement :**  
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Session 06 : Routeur de modèles
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **Teste la logique de routage** avec plusieurs intentions (code, résumé, classification)
@@ -139,7 +140,7 @@ python models_router.py
 ### Session 06 : Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Pipeline complexe en plusieurs étapes** avec planification, exécution et affinage
@@ -169,7 +170,7 @@ python lint_markdown_cli.py --verbose
 
 ## Tests
 
-### Tests de fumée
+### Tests de validation rapide
 
 ```bash
 cd Workshop
@@ -178,7 +179,7 @@ python -m tests.smoke
 
 **Tests** : Fonctionnalité de base des exemples clés
 
-## Dépannage
+## Résolution des problèmes
 
 ### Service non démarré
 
@@ -230,10 +231,10 @@ foundry model run phi-4-mini
 | Variable | Par défaut | Description |
 |----------|------------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | Variable | Alias du modèle à utiliser |
-| `FOUNDRY_LOCAL_ENDPOINT` | Automatique | Remplacer le point de terminaison du service |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Remplacer le point de terminaison du service |
 | `SHOW_USAGE` | `0` | Afficher les statistiques d'utilisation des tokens |
 | `RETRY_ON_FAIL` | `1` | Activer la logique de réessai |
-| `RETRY_BACKOFF` | `1.0` | Délai initial de réessai (en secondes) |
+| `RETRY_BACKOFF` | `1.0` | Délai initial de réessai (secondes) |
 
 ### Spécifique à la session
 | Variable | Par défaut | Description |
@@ -246,14 +247,14 @@ foundry model run phi-4-mini
 | `BENCH_STREAM` | `0` | Mesurer la latence du premier token |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Modèle principal de l'agent |
 | `AGENT_MODEL_EDITOR` | Principal | Modèle éditeur de l'agent |
-| `SLM_ALIAS` | `phi-4-mini` | Petit modèle de langage |
-| `LLM_ALIAS` | `qwen2.5-7b` | Grand modèle de langage |
+| `SLM_ALIAS` | `phi-4-mini` | Modèle de langage léger |
+| `LLM_ALIAS` | `qwen2.5-7b` | Modèle de langage large |
 | `COMPARE_PROMPT` | Voir exemple | Prompt de comparaison |
 
 ## Modèles recommandés
 
 ### Développement et tests
-- **phi-4-mini** - Qualité et vitesse équilibrées
+- **phi-4-mini** - Équilibre entre qualité et rapidité
 - **qwen2.5-0.5b** - Très rapide pour la classification
 - **gemma-2-2b** - Bonne qualité, vitesse modérée
 
@@ -272,7 +273,7 @@ foundry model run phi-4-mini
 1. Vérifiez le statut du service : `foundry service status`  
 2. Consultez les journaux : Vérifiez les journaux du service Foundry Local  
 3. Consultez la documentation SDK : https://github.com/microsoft/Foundry-Local  
-4. Examinez le code des exemples : Tous les exemples contiennent des docstrings détaillés
+4. Examinez le code des exemples : Tous les exemples contiennent des docstrings détaillés  
 
 ## Prochaines étapes
 
@@ -285,9 +286,9 @@ foundry model run phi-4-mini
 
 **Dernière mise à jour** : 08/01/2025  
 **Version de l'atelier** : Dernière  
-**SDK** : Foundry Local Python SDK  
+**SDK** : Foundry Local Python SDK
 
 ---
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.

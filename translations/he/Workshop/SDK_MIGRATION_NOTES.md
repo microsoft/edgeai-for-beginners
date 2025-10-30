@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T16:59:35+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:30:44+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "he"
 }
@@ -15,14 +15,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## סיכום שינויים
 
-### תשתית מרכזית (`workshop_utils.py`)
+### תשתית ליבה (`workshop_utils.py`)
 
-#### שיפורים:
+#### תכונות משופרות:
 - **תמיכה בהחלפת נקודת קצה**: נוספה תמיכה במשתנה הסביבה `FOUNDRY_LOCAL_ENDPOINT`
-- **שיפור טיפול בשגיאות**: טיפול טוב יותר בשגיאות עם הודעות מפורטות
-- **שיפור במטמון**: מפתחות מטמון כוללים כעת נקודת קצה עבור תרחישים מרובי נקודות קצה
-- **Backoff אקספוננציאלי**: לוגיקת ניסיונות חוזרים משתמשת כעת ב-backoff אקספוננציאלי לשיפור אמינות
-- **הוספת רמזי סוג**: נוספו רמזי סוג מקיפים לתמיכה טובה יותר ב-IDE
+- **שיפור טיפול בשגיאות**: טיפול טוב יותר בשגיאות עם הודעות שגיאה מפורטות
+- **שיפור במטמון**: מפתחות המטמון כוללים כעת את נקודת הקצה עבור תרחישים מרובי נקודות קצה
+- **Backoff אקספוננציאלי**: לוגיקת הניסיונות משתמשת כעת ב-backoff אקספוננציאלי לשיפור האמינות
+- **הערות סוג**: נוספו רמזי סוג מקיפים לתמיכה טובה יותר ב-IDE
 
 #### יכולות חדשות:
 ```python
@@ -33,19 +33,19 @@ manager, client, model_id = get_client(alias, endpoint="http://localhost:8000")
 RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 ```
 
-### אפליקציות לדוגמה
+### יישומים לדוגמה
 
-#### מפגש 01: אתחול צ'אט (`chat_bootstrap.py`)
+#### מפגש 01: Chat Bootstrap (`chat_bootstrap.py`)
 - עודכן מודל ברירת המחדל מ-`phi-3.5-mini` ל-`phi-4-mini`
 - נוספה תמיכה בהחלפת נקודת קצה
 - שופרה התיעוד עם הפניות ל-SDK
 
-#### מפגש 02: צינור RAG (`rag_pipeline.py`)
+#### מפגש 02: RAG Pipeline (`rag_pipeline.py`)
 - עודכן לשימוש ב-`phi-4-mini` כברירת מחדל
 - נוספה תמיכה בהחלפת נקודת קצה
 - שופרה התיעוד עם פרטים על משתני סביבה
 
-#### מפגש 02: הערכת RAG (`rag_eval_ragas.py`)
+#### מפגש 02: RAG Evaluation (`rag_eval_ragas.py`)
 - עודכנו ברירות מחדל של מודלים
 - נוספה תצורת נקודת קצה
 - שופרה טיפול בשגיאות
@@ -54,32 +54,32 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - עודכן רשימת מודלים ברירת מחדל לכלול את `phi-4-mini`
 - נוספה תיעוד מקיף על משתני סביבה
 - שופרה תיעוד פונקציות
-- נוספה תמיכה בהחלפת נקודת קצה בכל מקום
+- נוספה תמיכה בהחלפת נקודת קצה לאורך כל הקובץ
 
-#### מפגש 04: השוואת מודלים (`model_compare.py`)
+#### מפגש 04: Model Comparison (`model_compare.py`)
 - עודכן מודל LLM ברירת מחדל מ-`gpt-oss-20b` ל-`qwen2.5-7b`
 - נוספה תצורת נקודת קצה
 - שופרה תיעוד
 
-#### מפגש 05: תזמור רב-סוכנים (`agents_orchestrator.py`)
+#### מפגש 05: Multi-Agent Orchestration (`agents_orchestrator.py`)
 - נוספו רמזי סוג (שינוי מ-`str | None` ל-`Optional[str]`)
 - שופרה תיעוד מחלקת Agent
 - נוספה תמיכה בהחלפת נקודת קצה
-- שופרה תבנית אתחול
+- שופרה תבנית האתחול
 
-#### מפגש 06: ניתוב מודלים (`models_router.py`)
+#### מפגש 06: Model Router (`models_router.py`)
 - נוספה תצורת נקודת קצה
 - שופרה תיעוד זיהוי כוונה
-- שופרה תיעוד לוגיקת ניתוב
+- שופרה תיעוד לוגיקת הניתוב
 
-#### מפגש 06: צינור (`models_pipeline.py`)
-- שופרה תיעוד פונקציות מקיף
-- שופרה תיעוד שלב-אחר-שלב
+#### מפגש 06: Pipeline (`models_pipeline.py`)
+- נוספה תיעוד פונקציות מקיף
+- שופרה תיעוד שלב אחר שלב
 - שופרה טיפול בשגיאות
 
 ### סקריפטים
 
-#### ייצוא Benchmark (`export_benchmark_markdown.py`)
+#### Benchmark Export (`export_benchmark_markdown.py`)
 - נוספה תמיכה בהחלפת נקודת קצה
 - עודכנו מודלים ברירת מחדל
 - שופרה תיעוד פונקציות
@@ -101,26 +101,26 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 כל הדוגמאות תומכות כעת במשתני הסביבה הבאים:
 
-### תצורה מרכזית
+### תצורת ליבה
 - `FOUNDRY_LOCAL_ALIAS` - כינוי מודל לשימוש (ברירת מחדל משתנה לפי דוגמה)
 - `FOUNDRY_LOCAL_ENDPOINT` - החלפת נקודת שירות (אופציונלי)
 - `SHOW_USAGE` - הצגת סטטיסטיקות שימוש בטוקנים (ברירת מחדל: "0")
-- `RETRY_ON_FAIL` - הפעלת לוגיקת ניסיונות חוזרים (ברירת מחדל: "1")
-- `RETRY_BACKOFF` - עיכוב ראשוני בניסיונות חוזרים בשניות (ברירת מחדל: "1.0")
+- `RETRY_ON_FAIL` - הפעלת לוגיקת ניסיונות (ברירת מחדל: "1")
+- `RETRY_BACKOFF` - עיכוב ראשוני לניסיון מחדש בשניות (ברירת מחדל: "1.0")
 
-### דוגמה-ספציפית
+### ספציפי לדוגמה
 - `EMBED_MODEL` - מודל הטמעה לדוגמאות RAG
-- `BENCH_MODELS` - מודלים מופרדים בפסיקים ל-Benchmarking
-- `BENCH_ROUNDS` - מספר סבבי Benchmark
-- `BENCH_PROMPT` - פרומפט בדיקה ל-Benchmark
+- `BENCH_MODELS` - מודלים מופרדים בפסיקים לבנצ'מרק
+- `BENCH_ROUNDS` - מספר סבבי בנצ'מרק
+- `BENCH_PROMPT` - פרומפט בדיקה לבנצ'מרק
 - `BENCH_STREAM` - מדידת זמן תגובה לטוקן הראשון
-- `RAG_QUESTION` - שאלה לבדיקה בדוגמאות RAG
+- `RAG_QUESTION` - שאלת בדיקה לדוגמאות RAG
 - `AGENT_MODEL_PRIMARY` - מודל סוכן ראשי
 - `AGENT_MODEL_EDITOR` - מודל סוכן עורך
 - `SLM_ALIAS` - כינוי מודל שפה קטן
 - `LLM_ALIAS` - כינוי מודל שפה גדול
 
-## שיטות עבודה מומלצות ב-SDK
+## שיטות עבודה מומלצות ל-SDK
 
 ### 1. אתחול נכון של לקוח
 ```python
@@ -136,7 +136,7 @@ client = OpenAI(
 )
 ```
 
-### 2. שליפת מידע על מודלים
+### 2. שליפת מידע על מודל
 ```python
 # Proper model ID resolution
 model_info = manager.get_model_info(alias)
@@ -154,7 +154,7 @@ except Exception as e:
     raise RuntimeError(f"Initialization failed: {e}") from e
 ```
 
-### 4. לוגיקת ניסיונות חוזרים עם Backoff אקספוננציאלי
+### 4. לוגיקת ניסיונות עם Backoff אקספוננציאלי
 ```python
 delay = initial_delay
 for attempt in range(max_retries):
@@ -195,7 +195,7 @@ for chunk in stream:
    ```
 
 3. **הוסיפו תיעוד מקיף**:
-   - משתני סביבה בתיעוד פונקציות
+   - משתני סביבה בתיעוד
    - קישור להפניות ל-SDK
    - דוגמאות שימוש
 
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -250,27 +251,27 @@ python -m Workshop.tests.smoke
 
 ### שיפורים אופציונליים
 ייתכן שתרצו לעדכן את הקוד שלכם לשימוש ב:
-- `FOUNDRY_LOCAL_ENDPOINT` לשליטה מפורשת בנקודת קצה
+- `FOUNDRY_LOCAL_ENDPOINT` לשליטה מפורשת בנקודת הקצה
 - `SHOW_USAGE=1` לצפייה בשימוש בטוקנים
 - שמות מודלים מעודכנים (`phi-4-mini` במקום `phi-3.5-mini`)
 
 ## בעיות נפוצות ופתרונות
 
-### בעיה: "אתחול לקוח נכשל"
+### בעיה: "Client initialization failed"
 **פתרון**: ודאו ששירות Foundry Local פועל:
 ```bash
 foundry service start
 foundry model run phi-4-mini
 ```
 
-### בעיה: "מודל לא נמצא"
-**פתרון**: בדקו מודלים זמינים:
+### בעיה: "Model not found"
+**פתרון**: בדקו את המודלים הזמינים:
 ```bash
 foundry model list
 ```
 
 ### בעיה: שגיאות חיבור לנקודת קצה
-**פתרון**: אימתו את נקודת הקצה:
+**פתרון**: בדקו את נקודת הקצה:
 ```bash
 # Check service status
 foundry service status
@@ -281,36 +282,36 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## צעדים הבאים
 
-1. **עדכון דוגמאות Module08**: יישמו דפוסים דומים ב-Module08/samples
-2. **הוספת בדיקות אינטגרציה**: צרו מערך בדיקות מקיף
-3. **Benchmarking ביצועים**: השוו ביצועים לפני/אחרי
-4. **עדכוני תיעוד**: עדכנו את README הראשי עם דפוסים חדשים
+1. **עדכון דוגמאות Module08**: יישום דפוסים דומים ב-Module08/samples
+2. **הוספת בדיקות אינטגרציה**: יצירת מערך בדיקות מקיף
+3. **בנצ'מרק ביצועים**: השוואת ביצועים לפני/אחרי
+4. **עדכוני תיעוד**: עדכון README הראשי עם דפוסים חדשים
 
 ## הנחיות לתרומה
 
 בעת הוספת דוגמאות חדשות:
-1. השתמשו ב-`workshop_utils.py` לשמירה על עקביות
-2. עקבו אחר הדפוס בדוגמאות קיימות
-3. הוסיפו תיעוד פונקציות מקיף
+1. השתמשו ב-`workshop_utils.py` לצורך עקביות
+2. עקבו אחר הדפוס בדוגמאות הקיימות
+3. הוסיפו תיעוד מקיף
 4. כללו קישורים להפניות ל-SDK
 5. תמכו בהחלפת נקודת קצה
-6. הוסיפו רמזי סוג נכונים
-7. כללו דוגמאות שימוש בתיעוד פונקציות
+6. הוסיפו רמזי סוג מתאימים
+7. כללו דוגמאות שימוש בתיעוד
 
 ## תאימות גרסאות
 
-העדכונים הללו תואמים ל:
-- `foundry-local-sdk` (גרסה אחרונה)
+עדכונים אלו תואמים ל:
+- `foundry-local-sdk` (הגרסה העדכנית ביותר)
 - `openai>=1.30.0`
 - Python 3.8+
 
 ---
 
-**עודכן לאחרונה**: 2025-01-08  
+**תאריך עדכון אחרון**: 2025-01-08  
 **אחראי**: צוות EdgeAI Workshop  
-**גרסת SDK**: Foundry Local SDK (גרסה אחרונה 0.7.117+67073234e7)
+**גרסת SDK**: Foundry Local SDK (גרסה עדכנית 0.7.117+67073234e7)
 
 ---
 
-**כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור הסמכותי. למידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי בני אדם. איננו נושאים באחריות לאי-הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+**הצהרת אחריות**:  
+מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. איננו אחראים לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.

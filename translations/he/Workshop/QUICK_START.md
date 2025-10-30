@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T16:39:29+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T22:26:07+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "he"
 }
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### מפגש 01: צ'אט בסיסי
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **משתני סביבה:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### מפגש 02: צינור RAG
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **משתני סביבה:**  
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### מפגש 02: הערכת RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **הערה**: דורש התקנת תלותים נוספים דרך `requirements.txt`
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### מפגש 03: ביצועי מערכת
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **משתני סביבה:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### מפגש 04: השוואת מודלים
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **משתני סביבה:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### מפגש 05: תזמור רב-סוכנים
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **משתני סביבה:**  
@@ -130,8 +131,8 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### מפגש 06: ניתוב מודלים
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
 **בודק לוגיקת ניתוב** עם מספר כוונות (קוד, סיכום, סיווג)
@@ -139,7 +140,7 @@ python models_router.py
 ### מפגש 06: צינור עבודה
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **צינור עבודה מורכב רב-שלבי** עם תכנון, ביצוע ושיפור
@@ -157,9 +158,9 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**פלט**: טבלת Markdown + נתוני JSON
+**פלט**: טבלת Markdown + מדדי JSON
 
-### בדיקת CLI בתיעוד Markdown
+### בדיקת CLI ב-Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -176,11 +177,11 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**בדיקות**: פונקציונליות בסיסית של דוגמאות מרכזיות
+**בדיקות**: בדיקת פונקציונליות בסיסית של דוגמאות עיקריות
 
 ## פתרון בעיות
 
-### שירות לא פעיל
+### השירות לא פועל
 
 ```bash
 # Check status
@@ -228,20 +229,20 @@ foundry model run phi-4-mini
 
 ### הגדרות ליבה
 | משתנה | ברירת מחדל | תיאור |
-|-------|------------|-------|
+|-------|------------|--------|
 | `FOUNDRY_LOCAL_ALIAS` | משתנה | כינוי מודל לשימוש |
 | `FOUNDRY_LOCAL_ENDPOINT` | אוטומטי | עקיפת נקודת שירות |
 | `SHOW_USAGE` | `0` | הצגת סטטיסטיקות שימוש בטוקנים |
 | `RETRY_ON_FAIL` | `1` | הפעלת לוגיקת ניסיון חוזר |
 | `RETRY_BACKOFF` | `1.0` | עיכוב ראשוני לניסיון חוזר (שניות) |
 
-### מפגש ספציפי
+### ספציפי למפגש
 | משתנה | ברירת מחדל | תיאור |
-|-------|------------|-------|
+|-------|------------|--------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | מודל הטמעה |
 | `RAG_QUESTION` | ראה דוגמה | שאלה לבדיקה ב-RAG |
 | `BENCH_MODELS` | משתנה | מודלים מופרדים בפסיקים |
-| `BENCH_ROUNDS` | `3` | מספר סבבי ביצועים |
+| `BENCH_ROUNDS` | `3` | איטרציות ביצועים |
 | `BENCH_PROMPT` | ראה דוגמה | הנחיה לביצועים |
 | `BENCH_STREAM` | `0` | מדידת זמן תגובה לטוקן ראשון |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | מודל סוכן ראשי |
@@ -265,14 +266,14 @@ foundry model run phi-4-mini
 ## תיעוד SDK
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
 
 ## קבלת עזרה
 
-1. בדוק מצב שירות: `foundry service status`  
+1. בדוק סטטוס שירות: `foundry service status`  
 2. צפה ביומנים: בדוק יומני שירות Foundry Local  
 3. עיין בתיעוד SDK: https://github.com/microsoft/Foundry-Local  
-4. עיין בקוד דוגמאות: כל הדוגמאות כוללות הערות מפורטות
+4. סקור קוד דוגמאות: כל הדוגמאות כוללות תיעוד מפורט  
 
 ## צעדים הבאים
 
@@ -289,5 +290,5 @@ foundry model run phi-4-mini
 
 ---
 
-**כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור הסמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי אדם. איננו נושאים באחריות לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+**הצהרת אחריות**:  
+מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. אנו לא נושאים באחריות לכל אי הבנות או פרשנויות שגויות הנובעות משימוש בתרגום זה.

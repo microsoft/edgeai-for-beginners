@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T16:45:00+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T22:27:26+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "he"
 }
@@ -11,19 +11,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## תקציר
 
-התחילו את המסע שלכם עם Foundry Local על ידי התקנה והגדרה במערכת Windows 11. למדו כיצד להגדיר את CLI, להפעיל האצת חומרה ולשמור מודלים במטמון לצורך הסקת מסקנות מהירה מקומית. מפגש מעשי זה ידריך אתכם בהרצת מודלים כמו Phi, Qwen, DeepSeek ו-GPT-OSS-20B באמצעות פקודות CLI שחוזרות על עצמן.
+התחילו את המסע שלכם עם Foundry Local על ידי התקנה והגדרה שלו ב-Windows 11. למדו כיצד להגדיר את CLI, להפעיל האצת חומרה ולשמור מודלים במטמון לצורך הסקת מסקנות מקומית מהירה. מפגש מעשי זה ידריך אתכם בהרצת מודלים כמו Phi, Qwen, DeepSeek ו-GPT-OSS-20B באמצעות פקודות CLI שחוזרות על עצמן.
 
 ## מטרות למידה
 
 בסיום המפגש, תוכלו:
 
-- **להתקין ולהגדיר**: להגדיר את Foundry Local על Windows 11 עם הגדרות ביצועים מיטביות
+- **להתקין ולהגדיר**: להגדיר את Foundry Local ב-Windows 11 עם הגדרות ביצועים מיטביות
 - **לשלוט בפעולות CLI**: להשתמש ב-CLI של Foundry Local לניהול והפעלת מודלים
 - **להפעיל האצת חומרה**: להגדיר האצת GPU עם ONNXRuntime או WebGPU
-- **להפעיל מודלים מרובים**: להריץ מודלים כמו phi-4, GPT-OSS-20B, Qwen ו-DeepSeek באופן מקומי
+- **להפעיל מספר מודלים**: להריץ מודלים כמו phi-4, GPT-OSS-20B, Qwen ו-DeepSeek באופן מקומי
 - **לבנות את האפליקציה הראשונה שלכם**: להתאים דוגמאות קיימות לשימוש ב-SDK של Foundry Local ב-Python
 
-# בדיקת המודל (שאלה בודדת, לא אינטראקטיבית)
+# בדיקת המודל (הנחיה יחידה לא אינטראקטיבית)
 foundry model run phi-4-mini --prompt "שלום, הצג את עצמך"
 
 - Windows 11 (22H2 או גרסה מאוחרת יותר)
@@ -36,18 +36,18 @@ foundry model list
 
 ### (אופציונלי) משתני סביבה
 
-צרו קובץ `.env` (או הגדירו ב-shell) כדי להפוך סקריפטים לניידים:
+צרו `.env` (או הגדירו ב-shell) כדי להפוך סקריפטים לניידים:
 # השוואת תגובות (לא אינטראקטיבי)
-foundry model run gpt-oss-20b --prompt "הסבר על Edge AI במילים פשוטות"
+foundry model run gpt-oss-20b --prompt "הסבר על Edge AI במונחים פשוטים"
 | משתנה | מטרה | דוגמה |
 |-------|-------|-------|
-| `FOUNDRY_LOCAL_ALIAS` | כינוי מועדף למודל (הקטלוג בוחר אוטומטית את הגרסה הטובה ביותר) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | עקיפת נקודת קצה (אחרת מוגדר אוטומטית מהמנהל) | `http://localhost:5273/v1` |
+| `FOUNDRY_LOCAL_ALIAS` | כינוי מודל מועדף (הקטלוג בוחר אוטומטית את הגרסה הטובה ביותר) | `phi-3.5-mini` |
+| `FOUNDRY_LOCAL_ENDPOINT` | עקיפת נקודת קצה (אחרת אוטומטית מהמנהלת) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | הפעלת הדגמת סטרימינג | `true` |
 
-> אם `FOUNDRY_LOCAL_ENDPOINT=auto` (או לא מוגדר), אנו נגזור אותו מהמנהל של ה-SDK.
+> אם `FOUNDRY_LOCAL_ENDPOINT=auto` (או לא מוגדר) אנו נגזור אותו ממנהלת ה-SDK.
 
-## זרימת הדגמה (30 דקות)
+## תהליך הדגמה (30 דקות)
 
 ### 1. התקנת Foundry Local ואימות הגדרת CLI (10 דקות)
 
@@ -77,11 +77,11 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-אם בינאריים מקוריים ל-macOS עדיין לא זמינים, ניתן:
+אם בינארי מקורי ל-macOS עדיין לא זמין, ניתן:
 1. להשתמש ב-VM של Windows 11 ARM/Intel (Parallels / UTM) ולעקוב אחר השלבים של Windows.
 2. להריץ מודלים דרך קונטיינר (אם תמונת קונטיינר פורסמה) ולהגדיר `FOUNDRY_LOCAL_ENDPOINT` ליציאת הקונטיינר.
 
-**יצירת סביבה וירטואלית ב-Python (חוצה פלטפורמות)**
+**יצירת סביבה וירטואלית ב-Python (Cross‑Platform)**
 
 Windows PowerShell:
 ```powershell
@@ -160,32 +160,7 @@ print(resp.choices[0].message.content)
 
 אם אתם מעדיפים שליטה מפורשת, עדיין ניתן להשתמש ב-CLI + לקוח OpenAI כפי שמוצג בהמשך.
 
-### 2. הפעלת האצת GPU (5 דקות)
-
-#### שלב 2.1: בדיקת יכולות חומרה
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### שלב 2.2: הגדרת האצת חומרה
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. הרצת מודלים באופן מקומי דרך CLI (10 דקות)
+### 2. הרצת מודלים באופן מקומי דרך CLI (10 דקות)
 
 #### שלב 3.1: הפעלת מודל Phi-4
 
@@ -227,7 +202,7 @@ foundry cache list
 
 #### שלב 4.1: יצירת אפליקציית צ'אט בסיסית
 
-צרו `samples/01-foundry-quickstart/chat_quickstart.py` (מעודכן לשימוש במנהל אם זמין):
+צרו `samples/01-foundry-quickstart/chat_quickstart.py` (מעודכן לשימוש במנהלת אם זמינה):
 
 ```python
 #!/usr/bin/env python3
@@ -314,10 +289,10 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 
 ### 1. ארכיטקטורת Foundry Local
 
-- **מנוע הסקת מסקנות מקומי**: מריץ מודלים לחלוטין על המכשיר שלכם
+- **מנוע הסקת מסקנות מקומי**: מריץ מודלים באופן מלא על המכשיר שלכם
 - **תאימות ל-SDK של OpenAI**: אינטגרציה חלקה עם קוד OpenAI קיים
-- **ניהול מודלים**: הורדה, שמירה במטמון והרצת מודלים מרובים ביעילות
-- **אופטימיזציית חומרה**: ניצול האצת GPU, NPU ו-CPU
+- **ניהול מודלים**: הורדה, שמירה במטמון והרצה יעילה של מספר מודלים
+- **אופטימיזציה חומרתית**: ניצול האצת GPU, NPU ו-CPU
 
 ### 2. הפניות לפקודות CLI
 
@@ -331,7 +306,7 @@ foundry model unload <name>    # Unload from memory
 foundry config list            # Current configuration
 ```
 
-### 3. אינטגרציה עם SDK של Python
+### 3. אינטגרציה עם Python SDK
 
 ```python
 # Basic client setup
@@ -409,7 +384,7 @@ netstat -an | findstr 5273
 ### 1. אסטרטגיית בחירת מודלים
 
 - **Phi-4-mini**: הטוב ביותר למשימות כלליות, שימוש נמוך בזיכרון
-- **Qwen2.5-0.5b**: הסקת מסקנות מהירה, משאבים מינימליים
+- **Qwen2.5-0.5b**: הסקת מסקנות מהירה ביותר, משאבים מינימליים
 - **GPT-OSS-20B**: איכות גבוהה ביותר, דורש יותר משאבים
 - **DeepSeek-Coder**: מותאם למשימות תכנות
 
@@ -429,32 +404,33 @@ foundry config set model.preload false
 ### 3. ניטור ביצועים
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### שיפורים אופציונליים
 
 | שיפור | מה | איך |
 |-------|----|-----|
-| כלי עזר משותפים | הסרת לוגיקת לקוח/אתחול כפולה | השתמשו ב-`Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| נראות שימוש בטוקנים | לימוד חשיבה על עלות/יעילות מוקדם | הגדירו `SHOW_USAGE=1` להדפסת טוקנים של שאלה/תשובה/סה"כ |
-| השוואות דטרמיניסטיות | בדיקות יציבות וביצועים | השתמשו ב-`temperature=0`, `top_p=1`, טקסט שאלה עקבי |
-| זמן תגובה לטוקן ראשון | מדד לתחושת תגובתיות | התאימו סקריפט בדיקה עם סטרימינג (`BENCH_STREAM=1`) |
+| כלי עזר משותפים | הסרת לוגיקה כפולה של לקוח/אתחול | השתמשו ב-`Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| נראות שימוש בטוקנים | לימוד חשיבה עלות/יעילות מוקדם | הגדירו `SHOW_USAGE=1` להדפסת טוקנים של הנחיה/תשובה/סה"כ |
+| השוואות דטרמיניסטיות | בדיקות ביצועים יציבות ובדיקות רגרסיה | השתמשו ב-`temperature=0`, `top_p=1`, טקסט הנחיה עקבי |
+| זמן תגובה של טוקן ראשון | מדד לתחושת תגובתיות | התאימו סקריפט בדיקה עם סטרימינג (`BENCH_STREAM=1`) |
 | ניסיון חוזר על שגיאות זמניות | הדגמות עמידות בהפעלה ראשונית | `RETRY_ON_FAIL=1` (ברירת מחדל) והתאימו `RETRY_BACKOFF` |
 | בדיקות עישון | בדיקות מהירות על זרימות מרכזיות | הריצו `python Workshop/tests/smoke.py` לפני סדנה |
-| פרופילי כינוי מודלים | מעבר מהיר בין סט מודלים במכונות שונות | שמרו `.env` עם `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| יעילות מטמון | הימנעות מחימום חוזר בהרצה מרובת דוגמאות | כלי עזר למנהלי מטמון; שימוש חוזר בין סקריפטים/מחברות |
-| חימום ראשוני | הפחתת קפיצות זמן תגובה p95 | הריצו שאלה קטנה לאחר יצירת `FoundryLocalManager` |
+| פרופילי כינוי מודלים | מעבר מהיר בין סט מודלים במכשירים שונים | שמרו `.env` עם `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
+| יעילות מטמון | הימנעות מחימום חוזר בהרצה מרובת דוגמאות | כלי עזר למנהלי מטמון; שימוש חוזר בסקריפטים/מחברות |
+| חימום ראשוני | הפחתת קפיצות זמן תגובה p95 | הריצו הנחיה קטנה לאחר יצירת `FoundryLocalManager` |
 
-דוגמה לחימום דטרמיניסטי בסיסי (PowerShell):
+דוגמת חימום בסיס דטרמיניסטי (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -463,50 +439,50 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-אתם אמורים לראות פלט דומה וספירת טוקנים זהה בהרצה השנייה, מה שמאשר דטרמיניזם.
+עליכם לראות פלט דומה וספירת טוקנים זהה בהרצה השנייה, המאשרת דטרמיניזם.
 
 ## צעדים הבאים
 
 לאחר סיום המפגש:
 
-1. **חקירת מפגש 2**: בניית פתרונות AI עם Azure AI Foundry RAG
-2. **ניסוי עם מודלים שונים**: נסו את Qwen, DeepSeek ומשפחות מודלים אחרות
-3. **אופטימיזציית ביצועים**: כווננו הגדרות בהתאם לחומרה שלכם
-4. **בניית אפליקציות מותאמות אישית**: השתמשו ב-SDK של Foundry Local בפרויקטים שלכם
+1. **חקור את מפגש 2**: בניית פתרונות AI עם Azure AI Foundry RAG
+2. **נסה מודלים שונים**: נסה את Qwen, DeepSeek ומשפחות מודלים אחרות
+3. **שפר ביצועים**: כוונן הגדרות בהתאם לחומרה שלך
+4. **בנה אפליקציות מותאמות אישית**: השתמש ב-SDK של Foundry Local בפרויקטים שלך
 
 ## משאבים נוספים
 
 ### תיעוד
-- [התייחסות ל-SDK של Foundry Local ב-Python](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [מדריך התקנה של Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
-- [קטלוג מודלים](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
+- [Foundry Local Python SDK Reference](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
+- [Foundry Local Installation Guide](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
+- [Model Catalog](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### קוד לדוגמה
-- [דוגמה מודול08 01](./samples/01/README.md) - התחלה מהירה עם REST Chat
-- [דוגמה מודול08 02](./samples/02/README.md) - אינטגרציה עם SDK של OpenAI
-- [דוגמה מודול08 03](./samples/03/README.md) - גילוי מודלים ובדיקת ביצועים
+- [Module08 Sample 01](./samples/01/README.md) - מדריך מהיר לצ'אט REST
+- [Module08 Sample 02](./samples/02/README.md) - אינטגרציה עם SDK של OpenAI
+- [Module08 Sample 03](./samples/03/README.md) - גילוי מודלים ובדיקת ביצועים
 
 ### קהילה
-- [דיונים ב-GitHub של Foundry Local](https://github.com/microsoft/Foundry-Local/discussions)
-- [קהילת Azure AI](https://techcommunity.microsoft.com/category/artificialintelligence)
+- [Foundry Local GitHub Discussions](https://github.com/microsoft/Foundry-Local/discussions)
+- [Azure AI Community](https://techcommunity.microsoft.com/category/artificialintelligence)
 
 ---
 
 **משך המפגש**: 30 דקות מעשי + 15 דקות שאלות ותשובות  
 **רמת קושי**: מתחילים  
-**דרישות מוקדמות**: Windows 11, Python 3.10+, גישה מנהלית
+**דרישות מקדימות**: Windows 11, Python 3.10+, גישה מנהלית  
 
-## תרחיש לדוגמה ומיפוי סדנה
+## תרחיש לדוגמה ומיפוי לסדנה
 
-| סקריפט / מחברת סדנה | תרחיש | מטרה | קלט לדוגמה | דרוש מאגר נתונים |
-|----------------------|--------|------|------------|------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | צוות IT פנימי שמעריך הסקת מסקנות על המכשיר עבור פורטל הערכת פרטיות | הוכחת תגובה מקומית של SLM תוך פחות משנייה על שאלות סטנדרטיות | "ציין שני יתרונות של הסקת מסקנות מקומית." | אין (שאלה בודדת) |
-| קוד התאמה להתחלה מהירה | מפתח שמעתיק סקריפט OpenAI קיים ל-Foundry Local | הצגת תאימות ישירה | "ציין שני יתרונות של הסקת מסקנות מקומית." | רק שאלה פנימית |
+| סקריפט סדנה / מחברת | תרחיש | מטרה | קלט לדוגמה | נתונים נדרשים |
+|----------------------|--------|------|------------|---------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | צוות IT פנימי מעריך הסקת מסקנות במכשיר עבור פורטל הערכת פרטיות | הוכחת תגובת SLM מקומית תוך פחות משנייה להנחיות סטנדרטיות | "ציין שני יתרונות של הסקת מסקנות מקומית." | אין (הנחיה יחידה) |
+| קוד התאמת מדריך מהיר | מפתח שממיר סקריפט OpenAI קיים ל-Foundry Local | הדגמת תאימות ישירה | "ציין שני יתרונות של הסקת מסקנות מקומית." | רק הנחיה פנימית |
 
 ### נרטיב תרחיש
-צוות אבטחה וציות חייב לאמת האם ניתן לעבד נתוני אבטיפוס רגישים באופן מקומי. הם מריצים את סקריפט האתחול עם מספר שאלות (פרטיות, זמן תגובה, עלות) תוך שימוש במצב דטרמיניסטי `temperature=0` כדי ללכוד פלטים בסיסיים להשוואה עתידית (בדיקות ביצועים במפגש 3 והשוואת SLM מול LLM במפגש 4).
+צוות אבטחה וציות חייב לאמת האם ניתן לעבד נתוני אב-טיפוס רגישים באופן מקומי. הם מריצים את סקריפט האתחול עם מספר הנחיות (פרטיות, זמן תגובה, עלות) תוך שימוש במצב דטרמיניסטי temperature=0 כדי ללכוד תוצאות בסיס להשוואה עתידית (בדיקות ביצועים במפגש 3 והשוואת SLM מול LLM במפגש 4).
 
-### סט שאלות מינימלי JSON (אופציונלי)
+### סט הנחיות מינימלי JSON (אופציונלי)
 ```json
 [
     "List two benefits of local inference.",
@@ -515,9 +491,9 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 ]
 ```
 
-השתמשו ברשימה זו ליצירת לולאת הערכה שחוזרת על עצמה או לזריעת מסגרת בדיקות רגרסיה עתידית.
+השתמשו ברשימה זו ליצירת לולאת הערכה שחוזרת על עצמה או לזריעת בדיקת רגרסיה עתידית.
 
 ---
 
-**כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי אדם. איננו נושאים באחריות לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+**הצהרת אחריות**:  
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. למידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. איננו אחראים לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.

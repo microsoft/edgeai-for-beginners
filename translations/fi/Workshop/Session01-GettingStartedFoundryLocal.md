@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T14:29:38+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T22:17:53+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "fi"
 }
 -->
-# Istunto 1: Aloitus Foundry Localin kanssa
+# Istunto 1: Aloittaminen Foundry Localin kanssa
 
 ## Tiivistelmä
 
-Aloita matkasi Foundry Localin parissa asentamalla ja konfiguroimalla se Windows 11:lle. Opi CLI:n käyttöönotto, laitteistokiihdytyksen aktivointi ja mallien välimuistiin tallentaminen nopeaa paikallista päättelyä varten. Tämä käytännön istunto opastaa mallien, kuten Phi, Qwen, DeepSeek ja GPT-OSS-20B, suorittamisessa toistettavilla CLI-komentoilla.
+Aloita matkasi Foundry Localin parissa asentamalla ja konfiguroimalla se Windows 11:lle. Opettele CLI:n käyttöönotto, laitteistokiihdytyksen aktivointi ja mallien välimuistiin tallentaminen nopeaa paikallista päättelyä varten. Tämä käytännönläheinen istunto opastaa mallien, kuten Phi, Qwen, DeepSeek ja GPT-OSS-20B, suorittamisessa toistettavilla CLI-komennoilla.
 
 ## Oppimistavoitteet
 
@@ -19,17 +19,17 @@ Istunnon lopussa osaat:
 
 - **Asentaa ja konfiguroida**: Ottaa Foundry Localin käyttöön Windows 11:ssä optimaalisilla suoritusasetuksilla
 - **Hallita CLI-toimintoja**: Käyttää Foundry Local CLI:tä mallien hallintaan ja käyttöönottoon
-- **Aktivoida laitteistokiihdytyksen**: Konfiguroida GPU-kiihdytys ONNXRuntime- tai WebGPU-tekniikoilla
-- **Käyttää useita malleja**: Suorittaa phi-4-, GPT-OSS-20B-, Qwen- ja DeepSeek-malleja paikallisesti
-- **Rakentaa ensimmäisen sovelluksesi**: Mukauttaa olemassa olevia esimerkkejä Foundry Local Python SDK:n käyttöön
+- **Aktivoida laitteistokiihdytyksen**: Konfiguroida GPU-kiihdytyksen ONNXRuntime- tai WebGPU-teknologioilla
+- **Ottaa käyttöön useita malleja**: Suorittaa phi-4, GPT-OSS-20B, Qwen ja DeepSeek -malleja paikallisesti
+- **Rakentaa ensimmäisen sovelluksesi**: Mukauttaa olemassa olevia esimerkkejä käyttämään Foundry Local Python SDK:ta
 
 # Testaa mallia (ei-interaktiivinen yksittäinen kehotus)
 foundry model run phi-4-mini --prompt "Hei, esittäydy"
 
 - Windows 11 (22H2 tai uudempi)
-# Listaa saatavilla olevat katalogimallit (ladatut mallit näkyvät suorittamisen jälkeen)
+# Listaa saatavilla olevat katalogimallit (ladatut mallit näkyvät suorituksen jälkeen)
 foundry model list
-## HUOM: Tällä hetkellä ei ole erillistä `--running`-lippua; ladattujen mallien näkemiseksi aloita keskustelu tai tarkista palvelulokit.
+## NOTE: Tällä hetkellä ei ole erillistä `--running`-lippua; ladattujen mallien näkemiseksi aloita keskustelu tai tarkista palvelulokit.
 - Python 3.10+ asennettuna
 - Visual Studio Code Python-laajennuksella
 - Järjestelmänvalvojan oikeudet asennusta varten
@@ -47,7 +47,7 @@ foundry model run gpt-oss-20b --prompt "Selitä edge AI yksinkertaisesti"
 
 > Jos `FOUNDRY_LOCAL_ENDPOINT=auto` (tai ei asetettu), se johdetaan SDK-managerista.
 
-## Demo Flow (30 minuuttia)
+## Demokulku (30 minuuttia)
 
 ### 1. Asenna Foundry Local ja varmista CLI-asennus (10 minuuttia)
 
@@ -77,11 +77,11 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Jos macOS-natiivit binaarit eivät ole vielä saatavilla, voit silti: 
-1. Käyttää Windows 11 ARM/Intel VM:ää (Parallels / UTM) ja seurata Windows-ohjeita. 
-2. Suorittaa malleja kontissa (jos konttikuva julkaistu) ja asettaa `FOUNDRY_LOCAL_ENDPOINT` altistettuun porttiin. 
+Jos macOS-natiivit binäärit eivät ole vielä saatavilla, voit silti:
+1. Käyttää Windows 11 ARM/Intel VM:ää (Parallels / UTM) ja noudattaa Windows-ohjeita.
+2. Suorittaa malleja kontissa (jos konttikuva julkaistu) ja asettaa `FOUNDRY_LOCAL_ENDPOINT` altistettuun porttiin.
 
-**Luo Python-virtuaaliympäristö (alustariippumaton)**
+**Luo Python-virtuaaliympäristö (Ristiin‑alustainen)**
 
 Windows PowerShell:
 ```powershell
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### SDK:n käynnistäminen (suositeltu)
 
-Manuaalisen palvelun käynnistämisen ja mallien suorittamisen sijaan **Foundry Local Python SDK** voi käynnistää kaiken automaattisesti:
+Sen sijaan, että käynnistäisit palvelun ja suorittaisit malleja manuaalisesti, **Foundry Local Python SDK** voi automatisoida kaiken:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -158,36 +158,11 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Jos haluat tarkempaa hallintaa, voit silti käyttää CLI:tä + OpenAI-asiakasta myöhemmin näytetyllä tavalla.
+Jos haluat enemmän hallintaa, voit silti käyttää CLI:tä + OpenAI-asiakasta, kuten myöhemmin näytetään.
 
-### 2. Aktivoi GPU-kiihdytys (5 minuuttia)
+### 2. Suorita malleja paikallisesti CLI:n kautta (10 minuuttia)
 
-#### Vaihe 2.1: Tarkista laitteiston ominaisuudet
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Vaihe 2.2: Konfiguroi laitteistokiihdytys
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Suorita malleja paikallisesti CLI:n kautta (10 minuuttia)
-
-#### Vaihe 3.1: Käytä Phi-4-mallia
+#### Vaihe 3.1: Ota käyttöön Phi-4-malli
 
 ```powershell
 # Download and run phi-4-mini
@@ -199,7 +174,7 @@ foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 # NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
 ```
 
-#### Vaihe 3.2: Käytä GPT-OSS-20B-mallia
+#### Vaihe 3.2: Ota käyttöön GPT-OSS-20B
 
 ```powershell
 # Download and run GPT-OSS-20B
@@ -209,7 +184,7 @@ foundry model run gpt-oss-20b
 foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 ```
 
-#### Vaihe 3.3: Lataa lisää malleja
+#### Vaihe 3.3: Lataa lisämalleja
 
 ```powershell
 # Download Qwen model family
@@ -408,7 +383,7 @@ netstat -an | findstr 5273
 
 ### 1. Mallin valintastrategia
 
-- **Phi-4-mini**: Paras yleisiin tehtäviin, pienempi muistin käyttö
+- **Phi-4-mini**: Paras yleisiin tehtäviin, alhainen muistin käyttö
 - **Qwen2.5-0.5b**: Nopein päättely, vähäiset resurssivaatimukset
 - **GPT-OSS-20B**: Korkein laatu, vaatii enemmän resursseja
 - **DeepSeek-Coder**: Optimoitu ohjelmointitehtäviin
@@ -429,32 +404,33 @@ foundry config set model.preload false
 ### 3. Suorituskyvyn seuranta
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Valinnaiset parannukset
 
 | Parannus | Mitä | Kuinka |
 |----------|------|-------|
-| Jaetut apuohjelmat | Poista päällekkäinen asiakas-/käynnistyslogiikka | Käytä `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Tokenien käytön näkyvyys | Opeta kustannus-/tehokkuusajattelua varhain | Aseta `SHOW_USAGE=1` tulostamaan kehotus/vastaus/kokonais-tokenit |
+| Jaetut apuohjelmat | Poista päällekkäinen asiakas/käynnistyslogiikka | Käytä `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Tokenien käyttö näkyviin | Opeta kustannus/tehokkuusajattelua varhain | Aseta `SHOW_USAGE=1` tulostamaan kehotus/vastaus/kokonaismäärä |
 | Deterministiset vertailut | Vakaa suorituskykytestaus ja regressiotarkistukset | Käytä `temperature=0`, `top_p=1`, johdonmukaista kehotustekstiä |
-| Ensimmäisen tokenin viive | Koettu reagointikyvyn mittari | Mukauta vertailuskripti suoratoistolla (`BENCH_STREAM=1`) |
-| Uudelleenyrittäminen tilapäisissä virheissä | Kestävä demot kylmäkäynnistyksessä | `RETRY_ON_FAIL=1` (oletus) ja säädä `RETRY_BACKOFF` |
-| Savutestaus | Nopea tarkistus keskeisissä toiminnoissa | Suorita `python Workshop/tests/smoke.py` ennen työpajaa |
-| Mallialiasprofiilit | Vaihda mallisarjaa nopeasti koneiden välillä | Ylläpidä `.env` tiedostoa `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
+| Ensimmäisen tokenin viive | Koettu reagointikyky | Mukauta suorituskykytestaus skriptiä suoratoistolla (`BENCH_STREAM=1`) |
+| Uudelleenyritä tilapäisissä virheissä | Kestävä demotus kylmäkäynnistyksessä | `RETRY_ON_FAIL=1` (oletus) & säädä `RETRY_BACKOFF` |
+| Savutestaus | Nopea tarkistus keskeisille toiminnoille | Suorita `python Workshop/tests/smoke.py` ennen työpajaa |
+| Mallialias-profiilit | Vaihda nopeasti malliasetusta koneiden välillä | Ylläpidä `.env` tiedostoa `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
 | Välimuistin tehokkuus | Vältä toistuvia lämmityksiä moninäyteajossa | Apuohjelmat välimuistinhallintaan; käytä uudelleen skripteissä/notebookeissa |
-| Ensimmäisen ajon lämmitys | Vähennä p95-viivepiikkejä | Suorita pieni kehotus `FoundryLocalManager`-luonnin jälkeen |
+| Ensimmäisen ajon lämmitys | Vähennä p95 viivepiikkejä | Suorita pieni kehotus `FoundryLocalManager`-luonnin jälkeen |
 
-Esimerkki deterministisestä lämpimästä perustasosta (PowerShell):
+Esimerkki deterministinen lämmin peruslinja (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -463,13 +439,13 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Näet samanlaisen tulosteen ja identtiset tokenimäärät toisella ajolla, mikä vahvistaa determinismin.
+Sinun pitäisi nähdä samanlainen tulos ja identtiset token-määrät toisella ajokerralla, mikä vahvistaa determinismin.
 
 ## Seuraavat askeleet
 
 Kun olet suorittanut tämän istunnon:
 
-1. **Tutustu istuntoon 2**: Rakenna AI-ratkaisuja Azure AI Foundry RAG:lla
+1. **Tutustu istuntoon 2**: Rakenna tekoälyratkaisuja Azure AI Foundry RAG:lla
 2. **Kokeile eri malleja**: Testaa Qwen-, DeepSeek- ja muita malliperheitä
 3. **Optimoi suorituskyky**: Hienosäädä asetuksia laitteistosi mukaan
 4. **Rakenna omia sovelluksia**: Käytä Foundry Local SDK:ta omissa projekteissasi
@@ -482,9 +458,9 @@ Kun olet suorittanut tämän istunnon:
 - [Mallikatalogi](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Esimerkkikoodi
-- [Module08 Esimerkki 01](./samples/01/README.md) - REST Chat Quickstart
-- [Module08 Esimerkki 02](./samples/02/README.md) - OpenAI SDK -integraatio
-- [Module08 Esimerkki 03](./samples/03/README.md) - Mallien löytäminen ja vertailu
+- [Module08 Sample 01](./samples/01/README.md) - REST Chat Quickstart
+- [Module08 Sample 02](./samples/02/README.md) - OpenAI SDK -integraatio
+- [Module08 Sample 03](./samples/03/README.md) - Mallien löytäminen ja suorituskykytestaus
 
 ### Yhteisö
 - [Foundry Local GitHub -keskustelut](https://github.com/microsoft/Foundry-Local/discussions)
@@ -500,11 +476,11 @@ Kun olet suorittanut tämän istunnon:
 
 | Työpajaskripti / Notebook | Skenaario | Tavoite | Esimerkkisyöte(t) | Tarvittava datasetti |
 |---------------------------|-----------|---------|-------------------|----------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Sisäinen IT-tiimi arvioi paikallista päättelyä yksityisyyden arviointialustalle | Todista, että paikallinen SLM vastaa alle sekunnin viiveellä standardikehotuksiin | "Listaa kaksi paikallisen päättelyn hyötyä." | Ei mitään (yksittäinen kehotus) |
-| Quickstart-mukautuskoodilohko | Kehittäjä siirtää olemassa olevan OpenAI-skriptin Foundry Localille | Näytä yhteensopivuus | "Anna kaksi paikallisen päättelyn hyötyä." | Vain sisäinen kehotus |
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Sisäinen IT-tiimi arvioi laitteistopohjaista päättelyä yksityisyyden arviointialustalle | Todista, että paikallinen SLM vastaa alle sekunnin viiveellä standardikehotuksiin | "Listaa kaksi hyötyä paikallisesta päättelystä." | Ei mitään (yksittäinen kehotus) |
+| Quickstart-mukautuskoodilohko | Kehittäjä siirtää olemassa olevan OpenAI-skriptin Foundry Localille | Näytä yhteensopivuus | "Anna kaksi hyötyä paikallisesta päättelystä." | Vain sisäinen kehotus |
 
-### Skenaarion narratiivi
-Turvallisuus- ja vaatimustenmukaisuustiimin täytyy varmistaa, voiko arkaluontoista prototyyppidataa käsitellä paikallisesti. He suorittavat käynnistysskriptin useilla kehotuksilla (yksityisyys, viive, kustannukset) käyttäen determinististä temperature=0-tilaa tallentaakseen perustason tulokset myöhempää vertailua varten (istunto 3 vertailu ja istunto 4 SLM vs LLM -kontrasti).
+### Skenaarion kuvaus
+Turvallisuus- ja vaatimustenmukaisuustiimin täytyy varmistaa, että arkaluontoista prototyyppidataa voidaan käsitellä paikallisesti. He suorittavat käynnistysskriptin useilla kehotuksilla (yksityisyys, viive, kustannukset) käyttäen determinististä temperature=0-tilaa tallentaakseen peruslinjan tulokset myöhempää vertailua varten (istunto 3 suorituskykytestaus ja istunto 4 SLM vs LLM -vertailu).
 
 ### Minimikehotusjoukko JSON (valinnainen)
 ```json
@@ -515,9 +491,9 @@ Turvallisuus- ja vaatimustenmukaisuustiimin täytyy varmistaa, voiko arkaluontoi
 ]
 ```
 
-Käytä tätä listaa luodaksesi toistettavan arviointisilmukan tai siementääksesi tulevan regressiotestauksen työkalun.
+Käytä tätä listaa luodaksesi toistettavan arviointisilmukan tai siementääksesi tulevan regressiotestauksen.
 
 ---
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinkäsityksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-08T15:28:43+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T23:12:43+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "ro"
 }
@@ -32,17 +32,17 @@ Toate exemplele Python din directorul `Workshop/samples` au fost actualizate pen
 - ✅ `benchmark_oss_models.py` - Benchmarking multi-model
 
 ### Sesiunea 04: Modele de Ultimă Generație
-- ✅ `model_compare.py` - Comparație între SLM și LLM
+- ✅ `model_compare.py` - Comparare SLM vs LLM
 
 ### Sesiunea 05: Agenți Alimentați de AI
 - ✅ `agents_orchestrator.py` - Coordonare multi-agent
 
 ### Sesiunea 06: Modele ca Instrumente
 - ✅ `models_router.py` - Rutare bazată pe intenție
-- ✅ `models_pipeline.py` - Pipeline multi-pas rutat
+- ✅ `models_pipeline.py` - Pipeline rutat în mai mulți pași
 
 ### Infrastructură Suport
-- ✅ `workshop_utils.py` - Deja respectă cele mai bune practici (nu au fost necesare modificări)
+- ✅ `workshop_utils.py` - Deja respectă cele mai bune practici (nu sunt necesare modificări)
 
 ---
 
@@ -54,7 +54,7 @@ Toate exemplele Python din directorul `Workshop/samples` au fost actualizate pen
 ```python
 manager, client, model_id = get_client(alias)
 ```
-  
+
 **După:**
 ```python
 try:
@@ -64,19 +64,19 @@ except Exception as e:
     print("[INFO] Ensure Foundry Local is running: foundry service status")
     sys.exit(1)
 ```
-  
+
 **Beneficii:**
 - Gestionare grațioasă a erorilor cu mesaje clare
-- Indicații utile pentru depanare
-- Coduri de ieșire adecvate pentru scripting
+- Indicii utile pentru depanare
+- Coduri de ieșire corecte pentru scripting
 
-### 2. Management Mai Bun al Importurilor
+### 2. Management Îmbunătățit al Importurilor
 
 **Înainte:**
 ```python
 from sentence_transformers import SentenceTransformer
 ```
-  
+
 **După:**
 ```python
 try:
@@ -85,7 +85,7 @@ except ImportError:
     print("[ERROR] sentence-transformers is required. Install with: pip install sentence-transformers")
     sys.exit(1)
 ```
-  
+
 **Beneficii:**
 - Ghid clar când lipsesc dependențele
 - Previne erorile criptice de import
@@ -98,7 +98,7 @@ except ImportError:
 - Link-uri de referință SDK
 - Exemple de utilizare
 - Documentație detaliată pentru funcții/parametri
-- Hint-uri de tip pentru suport mai bun în IDE
+- Indicații de tip pentru suport mai bun în IDE
 
 **Exemplu:**
 ```python
@@ -115,41 +115,39 @@ def pipeline(task: str) -> Dict[str, Any]:
         Exception: If any pipeline stage fails
     """
 ```
-  
 
-### 4. Feedback Îmbunătățit pentru Utilizator
+### 4. Feedback Îmbunătățit pentru Utilizatori
 
-**Adăugat logare informativă:**
+**Adăugat jurnal informativ:**
 ```python
 print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
 print(f"[INFO] Loaded model: {alias} -> {model_id}")
 ```
-  
+
 **Indicatori de progres:**
 ```python
 print(f"[INFO] Benchmarking {alias}...")
 print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
 print(f"[INFO] Completed {alias}\n")
 ```
-  
+
 **Output structurat:**
 ```python
 print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
-  
 
 ### 5. Benchmarking Robust
 
 **Îmbunătățiri pentru Sesiunea 03:**
-- Gestionarea erorilor per-model (continuă în caz de eșec)
+- Gestionarea erorilor per model (continuă în caz de eșec)
 - Raportare detaliată a progresului
 - Execuție corectă a rundelor de încălzire
 - Suport pentru măsurarea latenței primului token
 - Separare clară a etapelor
 
-### 6. Hint-uri de Tip Consistente
+### 6. Indicații de Tip Consistente
 
 **Adăugate peste tot:**
 ```python
@@ -158,9 +156,9 @@ from typing import Dict, List, Tuple, Any, Optional
 def run(alias: str) -> Tuple[float, str, Optional[int]]:
     """Run comparison for given model alias."""
 ```
-  
+
 **Beneficii:**
-- Autocomplete mai bun în IDE
+- Autocompletare mai bună în IDE
 - Detectarea timpurie a erorilor
 - Cod auto-documentat
 
@@ -169,17 +167,17 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 **Îmbunătățiri pentru Sesiunea 06:**
 - Documentație cuprinzătoare pentru detectarea intenției
 - Explicație pentru algoritmul de selecție a modelului
-- Loguri detaliate de rutare
-- Formatare pentru output-ul testelor
-- Recuperare din erori în testarea batch
+- Jurnale detaliate de rutare
+- Format de testare a output-ului
+- Recuperare erori în testarea batch
 
 ### 8. Orchestrare Multi-Agent
 
 **Îmbunătățiri pentru Sesiunea 05:**
 - Raportare progres etapă cu etapă
-- Gestionarea erorilor per-agent
+- Gestionarea erorilor per agent
 - Structură clară a pipeline-ului
-- Documentație mai bună pentru managementul memoriei
+- Documentație mai bună pentru gestionarea memoriei
 
 ---
 
@@ -197,75 +195,73 @@ foundry model run qwen2.5-0.5b
 # Install dependencies
 pip install -r Workshop/requirements.txt
 ```
-  
 
 ### Testați Fiecare Exemplu
 
 #### Sesiunea 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
-  
+
 #### Sesiunea 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
-  
+
 #### Sesiunea 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
-  
+
 #### Sesiunea 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
-  
+
 #### Sesiunea 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
-  
+
 #### Sesiunea 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
-  
 
 ---
 
 ## Referință pentru Variabilele de Mediu
 
-### Globale (Toate Exemplele)
+### Global (Toate Exemplele)
 | Variabilă | Descriere | Implicit |
 |-----------|-----------|----------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias-ul modelului utilizat | Variază în funcție de exemplu |
@@ -274,22 +270,22 @@ python models_pipeline.py
 | `RETRY_ON_FAIL` | Activează logica de retry | `1` |
 | `RETRY_BACKOFF` | Întârzierea inițială pentru retry | `1.0` |
 
-### Specifice Exemplului
-| Variabilă | Utilizată de | Descriere |
-|-----------|--------------|-----------|
+### Specific Exemplului
+| Variabilă | Utilizat de | Descriere |
+|-----------|-------------|-----------|
 | `EMBED_MODEL` | Sesiunea 02 | Numele modelului de embedding |
-| `RAG_QUESTION` | Sesiunea 02 | Întrebare de test pentru RAG |
+| `RAG_QUESTION` | Sesiunea 02 | Întrebarea de test pentru RAG |
 | `BENCH_MODELS` | Sesiunea 03 | Modele separate prin virgulă pentru benchmark |
 | `BENCH_ROUNDS` | Sesiunea 03 | Numărul de runde de benchmark |
 | `BENCH_PROMPT` | Sesiunea 03 | Prompt de test pentru benchmark |
-| `BENCH_STREAM` | Sesiunea 03 | Măsoară latența primului token |
+| `BENCH_STREAM` | Sesiunea 03 | Măsurarea latenței primului token |
 | `SLM_ALIAS` | Sesiunea 04 | Model de limbaj mic |
 | `LLM_ALIAS` | Sesiunea 04 | Model de limbaj mare |
 | `COMPARE_PROMPT` | Sesiunea 04 | Prompt de test pentru comparație |
 | `AGENT_MODEL_PRIMARY` | Sesiunea 05 | Modelul agentului principal |
 | `AGENT_MODEL_EDITOR` | Sesiunea 05 | Modelul agentului editor |
-| `AGENT_QUESTION` | Sesiunea 05 | Întrebare de test pentru agenți |
-| `PIPELINE_TASK` | Sesiunea 06 | Task pentru pipeline |
+| `AGENT_QUESTION` | Sesiunea 05 | Întrebarea de test pentru agenți |
+| `PIPELINE_TASK` | Sesiunea 06 | Sarcina pentru pipeline |
 
 ---
 
@@ -300,8 +296,8 @@ python models_pipeline.py
 Scripturile existente vor continua să funcționeze. Noile funcționalități sunt:
 - Variabile de mediu opționale
 - Mesaje de eroare îmbunătățite (nu afectează funcționalitatea)
-- Logare suplimentară (poate fi suprimată)
-- Hint-uri de tip mai bune (fără impact la runtime)
+- Jurnal suplimentar (poate fi suprimat)
+- Indicații de tip mai bune (fără impact la runtime)
 
 ---
 
@@ -314,7 +310,7 @@ from workshop_utils import get_client, chat_once
 # Provides caching, retry, and endpoint management
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
-  
+
 ### 2. Model Corect de Gestionare a Erorilor
 ```python
 try:
@@ -325,22 +321,22 @@ except Exception as e:
     print("[INFO] Check: foundry service status")
     sys.exit(1)
 ```
-  
-### 3. Logare Informativă
+
+### 3. Jurnal Informativ
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
-  
-### 4. Hint-uri de Tip
+
+### 4. Indicații de Tip
 ```python
 from typing import Dict, List, Optional
 
 def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
-  
+
 ### 5. Docstrings Cuprinzătoare
 ```python
 def function(arg: str) -> str:
@@ -356,7 +352,7 @@ def function(arg: str) -> str:
         Exception: When it fails
     """
 ```
-  
+
 ### 6. Suport pentru Variabile de Mediu
 ```python
 import os
@@ -364,7 +360,7 @@ import os
 alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
-  
+
 ### 7. Degradare Grațioasă
 ```python
 # In benchmarks - continue on individual failures
@@ -376,54 +372,49 @@ for model in models:
         print(f"[ERROR] {model} failed: {e}")
         print(f"[INFO] Skipping {model}...")
 ```
-  
 
 ---
 
 ## Probleme Comune & Soluții
 
 ### Problemă: Erori de Import
-**Soluție:** Instalați dependențele lipsă  
+**Soluție:** Instalați dependențele lipsă
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
-  
 
 ### Problemă: Erori de Conexiune
-**Soluție:** Asigurați-vă că Foundry Local este pornit  
+**Soluție:** Asigurați-vă că Foundry Local rulează
 ```bash
 foundry service status
 foundry model run phi-4-mini
 ```
-  
 
 ### Problemă: Modelul Nu Este Găsit
-**Soluție:** Verificați modelele disponibile  
+**Soluție:** Verificați modelele disponibile
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
-  
 
-### Problemă: Performanță Scăzută
-**Soluție:** Utilizați modele mai mici sau ajustați parametrii  
+### Problemă: Performanță Lentă
+**Soluție:** Utilizați modele mai mici sau ajustați parametrii
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 set BENCH_ROUNDS=2
 ```
-  
 
 ---
 
 ## Pași Următori
 
 ### 1. Testați Toate Exemplele
-Parcurgeți lista de verificare de mai sus pentru a verifica dacă toate exemplele funcționează corect.
+Parcurgeți lista de verificare de testare de mai sus pentru a verifica dacă toate exemplele funcționează corect.
 
 ### 2. Actualizați Documentația
 - Actualizați fișierele markdown ale sesiunilor cu noile exemple
-- Adăugați o secțiune de depanare în README-ul principal
-- Creați un ghid de referință rapidă
+- Adăugați secțiunea de depanare în README principal
+- Creați un ghid de referință rapid
 
 ### 3. Creați Teste de Integrare
 ```python
@@ -431,12 +422,11 @@ Parcurgeți lista de verificare de mai sus pentru a verifica dacă toate exemple
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
-  
 
 ### 4. Adăugați Benchmark-uri de Performanță
-Monitorizați îmbunătățirile de performanță rezultate din gestionarea erorilor.
+Urmăriți îmbunătățirile de performanță datorate îmbunătățirilor gestionării erorilor.
 
-### 5. Feedback de la Utilizatori
+### 5. Feedback Utilizator
 Colectați feedback de la participanții la workshop despre:
 - Claritatea mesajelor de eroare
 - Completitudinea documentației
@@ -446,30 +436,30 @@ Colectați feedback de la participanții la workshop despre:
 
 ## Resurse
 
-- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
-- **Referință Rapidă**: `Workshop/FOUNDRY_SDK_QUICKREF.md`  
-- **Note de Migrare**: `Workshop/SDK_MIGRATION_NOTES.md`  
-- **Repository Principal**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **Referință Rapidă**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Note de Migrare**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Repository Principal**: https://github.com/microsoft/Foundry-Local
 
 ---
 
-## Mentenanță
+## Întreținere
 
 ### Adăugarea de Exemple Noi
 Urmați aceste modele când creați exemple noi:
 
-1. Utilizați `workshop_utils` pentru managementul clientului
+1. Utilizați `workshop_utils` pentru gestionarea clientului
 2. Adăugați gestionare cuprinzătoare a erorilor
 3. Includeți suport pentru variabile de mediu
-4. Adăugați hint-uri de tip și docstrings
-5. Oferiți logare informativă
+4. Adăugați indicații de tip și docstrings
+5. Oferiți jurnal informativ
 6. Includeți exemple de utilizare în docstring
 7. Link către documentația SDK
 
 ### Revizuirea Actualizărilor
 Când revizuiți actualizările exemplelor, verificați:
 - [ ] Gestionarea erorilor pentru toate operațiunile I/O
-- [ ] Hint-uri de tip pentru funcțiile publice
+- [ ] Indicații de tip pentru funcțiile publice
 - [ ] Docstrings cuprinzătoare
 - [ ] Documentație pentru variabilele de mediu
 - [ ] Feedback informativ pentru utilizator
@@ -478,7 +468,7 @@ Când revizuiți actualizările exemplelor, verificați:
 
 ---
 
-**Rezumat**: Toate exemplele Python din Workshop respectă acum cele mai bune practici ale SDK-ului Local Foundry, cu gestionare îmbunătățită a erorilor, documentație cuprinzătoare și o experiență mai bună pentru utilizator. Fără modificări majore - funcționalitatea existentă este păstrată și îmbunătățită.
+**Rezumat**: Toate exemplele Python din Workshop respectă acum cele mai bune practici ale SDK-ului Local Foundry, cu gestionare îmbunătățită a erorilor, documentație cuprinzătoare și o experiență mai bună pentru utilizator. Fără modificări majore - toate funcționalitățile existente sunt păstrate și îmbunătățite.
 
 ---
 

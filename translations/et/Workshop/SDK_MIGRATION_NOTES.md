@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-11T12:02:59+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-29T00:01:42+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "et"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Ülevaade
 
-Kõik Python-failid Workshop-kaustas on uuendatud, et järgida uusimaid mustreid ametlikust [Foundry Local Python SDK-st](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
+Kõik Python-failid Workshop kaustas on uuendatud, et järgida uusimaid mustreid ametlikust [Foundry Local Python SDK-st](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
 
 ## Muudatuste kokkuvõte
 
@@ -22,7 +22,7 @@ Kõik Python-failid Workshop-kaustas on uuendatud, et järgida uusimaid mustreid
 - **Parendatud veakäsitlus**: Parem erandite käsitlus koos üksikasjalike veateadetega
 - **Täiustatud vahemälu**: Vahemälu võtmed sisaldavad nüüd lõpp-punkti mitme lõpp-punkti stsenaariumide jaoks
 - **Eksponentsiaalne tagasipõrge**: Kordusloogika kasutab nüüd eksponentsiaalset tagasipõrget usaldusväärsuse parandamiseks
-- **Tüüpannotatsioonid**: Lisatud ulatuslikud tüüpide vihjed parema IDE toe jaoks
+- **Tüüpannotatsioonid**: Lisatud ulatuslikud tüüpviited parema IDE toe jaoks
 
 #### Uued võimalused:
 ```python
@@ -50,20 +50,20 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Lisatud lõpp-punkti konfiguratsioon
 - Täiustatud veakäsitlus
 
-#### Sessioon 03: Võrdlusuuring (`benchmark_oss_models.py`)
-- Vaikemudelite loend uuendatud, lisatud `phi-4-mini`
+#### Sessioon 03: Võrdlusuuringud (`benchmark_oss_models.py`)
+- Uuendatud vaikemudelite loend, lisatud `phi-4-mini`
 - Lisatud ulatuslik keskkonnamuutujate dokumentatsioon
 - Täiustatud funktsioonide dokumentatsioon
-- Lisatud lõpp-punkti ülekirjutamise tugi kogu rakenduses
+- Lisatud lõpp-punkti ülekirjutamise tugi kogu ulatuses
 
 #### Sessioon 04: Mudelite võrdlus (`model_compare.py`)
-- Vaikeline LLM uuendatud `gpt-oss-20b` pealt `qwen2.5-7b` peale
+- Vaikimisi LLM uuendatud `gpt-oss-20b` pealt `qwen2.5-7b` peale
 - Lisatud lõpp-punkti konfiguratsioon
 - Täiustatud dokumentatsioon
 
-#### Sessioon 05: Multi-agentide orkestreerimine (`agents_orchestrator.py`)
-- Lisatud tüüpide vihjed (muudetud `str | None` `Optional[str]` peale)
-- Täiustatud Agent-klassi dokumentatsioon
+#### Sessioon 05: Multi-agent orkestreerimine (`agents_orchestrator.py`)
+- Lisatud tüüpviited (muudetud `str | None` `Optional[str]` peale)
+- Täiustatud Agent klassi dokumentatsioon
 - Lisatud lõpp-punkti ülekirjutamise tugi
 - Täiustatud algatamise muster
 
@@ -74,7 +74,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### Sessioon 06: Torujuhe (`models_pipeline.py`)
 - Lisatud ulatuslik funktsioonide dokumentatsioon
-- Täiustatud samm-sammuline dokumentatsioon
+- Täiustatud samm-sammult dokumentatsioon
 - Täiustatud veakäsitlus
 
 ### Skriptid
@@ -91,7 +91,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### Testid
 
-#### Suitsutestid (`smoke.py`)
+#### Suitsu testid (`smoke.py`)
 - Lisatud lõpp-punkti ülekirjutamise tugi
 - Täiustatud dokumentatsioon
 - Täiustatud testjuhtumite dokumentatsioon
@@ -104,19 +104,19 @@ Kõik näidised toetavad nüüd järgmisi keskkonnamuutujaid:
 ### Põhikonfiguratsioon
 - `FOUNDRY_LOCAL_ALIAS` - Mudeli alias, mida kasutada (vaikeseade sõltub näidisest)
 - `FOUNDRY_LOCAL_ENDPOINT` - Teenuse lõpp-punkti ülekirjutamine (valikuline)
-- `SHOW_USAGE` - Näita tokeni kasutusstatistikat (vaikeseade: "0")
-- `RETRY_ON_FAIL` - Luba kordusloogika (vaikeseade: "1")
-- `RETRY_BACKOFF` - Esialgne kordusviivitus sekundites (vaikeseade: "1.0")
+- `SHOW_USAGE` - Näita tokeni kasutusstatistikat (vaikimisi: "0")
+- `RETRY_ON_FAIL` - Luba kordusloogika (vaikimisi: "1")
+- `RETRY_BACKOFF` - Esialgne kordusviivitus sekundites (vaikimisi: "1.0")
 
-### Näidise-spetsiifilised
-- `EMBED_MODEL` - RAG-näidiste jaoks kasutatav sisumudeli alias
-- `BENCH_MODELS` - Võrdlusuuringu mudelite komaga eraldatud loend
+### Näidise-spetsiifiline
+- `EMBED_MODEL` - RAG-näidiste jaoks mõeldud sisumudeli alias
+- `BENCH_MODELS` - Komaga eraldatud mudelid võrdlusuuringuteks
 - `BENCH_ROUNDS` - Võrdlusuuringu voorude arv
-- `BENCH_PROMPT` - Testi küsimus võrdlusuuringute jaoks
+- `BENCH_PROMPT` - Testi küsimus võrdlusuuringuteks
 - `BENCH_STREAM` - Esimese tokeni latentsuse mõõtmine
-- `RAG_QUESTION` - Testküsimus RAG-näidiste jaoks
-- `AGENT_MODEL_PRIMARY` - Peamine agentmudel
-- `AGENT_MODEL_EDITOR` - Toimetaja agentmudel
+- `RAG_QUESTION` - Testi küsimus RAG-näidiste jaoks
+- `AGENT_MODEL_PRIMARY` - Peamine agent mudel
+- `AGENT_MODEL_EDITOR` - Toimetaja agent mudel
 - `SLM_ALIAS` - Väikese keelemudeli alias
 - `LLM_ALIAS` - Suure keelemudeli alias
 
@@ -179,11 +179,11 @@ for chunk in stream:
         # Process chunk
 ```
 
-## Kohandatud näidiste migreerimise juhend
+## Migreerimisjuhend kohandatud näidiste jaoks
 
 Kui loote uusi näidiseid või uuendate olemasolevaid:
 
-1. **Kasutage `workshop_utils.py` abifunktsioone**:
+1. **Kasutage `workshop_utils.py` abivahendeid**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
@@ -195,11 +195,11 @@ Kui loote uusi näidiseid või uuendate olemasolevaid:
    ```
 
 3. **Lisage ulatuslik dokumentatsioon**:
-   - Keskkonnamuutujad dokumenditekstis
+   - Keskkonnamuutujad dokumendi kommentaarides
    - SDK viite link
    - Kasutusnäited
 
-4. **Kasutage tüüpide vihjeid**:
+4. **Kasutage tüüpviiteid**:
    ```python
    from typing import Optional, List, Dict, Any
    ```
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -239,7 +240,7 @@ python -m Workshop.tests.smoke
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 - **API dokumentatsioon**: Vaadake SDK repositooriumi uusimate API dokumentide jaoks
 
-## Murdvad muudatused
+## Muutused, mis võivad funktsionaalsust mõjutada
 
 ### Ei ole oodata
 Kõik muudatused on tagasiühilduvad. Uuendused peamiselt:
@@ -250,7 +251,7 @@ Kõik muudatused on tagasiühilduvad. Uuendused peamiselt:
 
 ### Valikulised täiustused
 Võite oma koodi uuendada, et kasutada:
-- `FOUNDRY_LOCAL_ENDPOINT` lõpp-punkti selgeks kontrollimiseks
+- `FOUNDRY_LOCAL_ENDPOINT` lõpp-punkti kontrollimiseks
 - `SHOW_USAGE=1` tokeni kasutuse nähtavuse jaoks
 - Uuendatud mudeli vaikeseaded (`phi-4-mini` asemel `phi-3.5-mini`)
 
@@ -263,7 +264,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Probleem: "Mudelit ei leitud"
+### Probleem: "Mudel ei leitud"
 **Lahendus**: Kontrollige saadaolevaid mudeleid:
 ```bash
 foundry model list
@@ -283,19 +284,19 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 1. **Uuendage Module08 näidiseid**: Rakendage sarnaseid mustreid Module08/samples kaustas
 2. **Lisage integratsioonitestid**: Looge ulatuslik testikomplekt
-3. **Jõudluse võrdlusuuring**: Võrrelge jõudlust enne ja pärast
+3. **Jõudluse võrdlusuuringud**: Võrrelge enne/pärast jõudlust
 4. **Dokumentatsiooni uuendused**: Uuendage peamist README-d uute mustritega
 
-## Panustamise juhised
+## Kaastöö juhised
 
 Uute näidiste lisamisel:
 1. Kasutage `workshop_utils.py` järjepidevuse tagamiseks
 2. Järgige olemasolevate näidiste mustrit
-3. Lisage ulatuslikud dokumenditekstid
+3. Lisage ulatuslikud dokumendikommentaarid
 4. Lisage SDK viite lingid
 5. Toetage lõpp-punkti ülekirjutamist
-6. Lisage korrektsed tüüpide vihjed
-7. Lisage kasutusnäited dokumenditeksti
+6. Lisage korrektsed tüüpviited
+7. Lisage kasutusnäited dokumendikommentaarides
 
 ## Versiooni ühilduvus
 

@@ -15,7 +15,7 @@ import os
 import sys
 import re
 from typing import Dict, Any
-from workshop_utils import get_client, chat_once
+from utils.workshop_utils import chat_once
 
 ENDPOINT = os.getenv("FOUNDRY_LOCAL_ENDPOINT")
 

@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-08T20:55:37+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T21:32:35+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "pt"
 }
 -->
-# Cartão de Referência Rápida - Exemplos do Workshop
+# Exemplos de Workshop - Cartão de Referência Rápida
 
 **Última Atualização**: 8 de outubro de 2025
 
@@ -24,16 +24,16 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
 
 ## 📂 Visão Geral dos Exemplos
 
-| Sessão | Exemplo | Objetivo | Tempo |
-|--------|---------|----------|-------|
+| Sessão | Exemplo | Propósito | Tempo |
+|--------|---------|-----------|-------|
 | 01 | `chat_bootstrap.py` | Chat básico + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG com embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | Avaliação de RAG | ~60s |
@@ -41,7 +41,7 @@ python chat_bootstrap.py "What is edge AI?"
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Sistema multi-agente | ~60s |
 | 06 | `models_router.py` | Roteamento de intenções | ~45s |
-| 06 | `models_pipeline.py` | Pipeline de múltiplos passos | ~60s |
+| 06 | `models_pipeline.py` | Pipeline de múltiplas etapas | ~60s |
 
 ---
 
@@ -216,9 +216,9 @@ for chunk in stream:
 
 ## 💡 Dicas
 
-1. **Cache de clientes**: `workshop_utils` faz o cache para si
+1. **Cache de clientes**: `workshop_utils` faz o cache para você
 2. **Use modelos menores**: Comece com `qwen2.5-0.5b` para testes
-3. **Ative estatísticas de uso**: Defina `SHOW_USAGE=1` para monitorizar tokens
+3. **Ative estatísticas de uso**: Defina `SHOW_USAGE=1` para monitorar tokens
 4. **Processamento em lote**: Processe múltiplos prompts sequencialmente
 5. **Reduza max_tokens**: Diminui a latência para respostas rápidas
 
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Benchmark de Modelos
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
-### Pipeline de RAG
+### Pipeline RAG
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Sistema Multi-Agente
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Ajuda Rápida**: Execute qualquer exemplo com `--help` ou consulte a docstring:
+**Ajuda Rápida**: Execute qualquer exemplo com `--help` no diretório `samples` ou consulte a docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Aviso**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, é importante notar que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

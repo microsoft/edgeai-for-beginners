@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8b994c57f1207012e4d7f58b7c0d1ae7",
-  "translation_date": "2025-10-17T09:17:11+00:00",
+  "original_hash": "45923ada94573fee7c82cc4f0c3bb344",
+  "translation_date": "2025-10-28T20:48:52+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "tw"
 }
 -->
 # EdgeAI 初學者工作坊
 
-> **建立可投入生產的邊緣 AI 應用的實作學習路徑**
+> **構建生產級邊緣 AI 應用的實踐學習路徑**
 >
 > 通過 Microsoft Foundry Local，從首次聊天完成到多代理協作，掌握本地 AI 部署的技能，分為六個漸進式課程。
 
@@ -17,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 簡介
 
-歡迎參加 **EdgeAI 初學者工作坊**，這是一個實用的指南，教您如何構建完全在本地硬體上運行的智能應用。本工作坊將理論性的邊緣 AI 概念轉化為實際技能，通過使用 Microsoft Foundry Local 和小型語言模型（SLMs）的逐步挑戰性練習來實現。
+歡迎參加 **EdgeAI 初學者工作坊**，這是一個實踐性強的指南，幫助您構建完全在本地硬件上運行的智能應用。本工作坊將理論性的邊緣 AI 概念轉化為實際技能，通過使用 Microsoft Foundry Local 和小型語言模型（SLMs）進行逐步挑戰的練習。
 
 ### 為什麼選擇這個工作坊？
 
@@ -27,19 +27,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **隱私與合規性** - 在本地處理敏感數據，無需傳輸到雲端（符合 HIPAA、GDPR、金融法規）
 2. **性能** - 消除網絡延遲（本地 50-500ms vs 雲端往返 500-2000ms）
-3. **成本控制** - 消除每次 API 請求的費用，並在無需雲端支出的情況下擴展
+3. **成本控制** - 消除按令牌計費的 API 成本，並在無需雲端支出的情況下擴展
 
 **但邊緣 AI 與眾不同**
 
 在本地運行 AI 需要新的技能：
 - 為資源限制選擇和優化模型
-- 本地服務管理和硬體加速
+- 本地服務管理和硬件加速
 - 為小型模型進行提示工程
 - 邊緣設備的生產部署模式
 
 **本工作坊提供這些技能**
 
-在六個專注的課程中（約三小時），您將從 "Hello World" 進步到部署可投入生產的多代理系統——所有這些都在您的機器上本地運行。
+在 6 個專注的課程中（約 3 小時），您將從 "Hello World" 進步到部署生產級的多代理系統——所有這些都在您的機器上本地運行。
 
 ---
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 4. **優化模型性能**
    - 為您的使用案例基準測試多個模型
-   - 測量延遲、吞吐量和首字元時間
+   - 測量延遲、吞吐量和首令牌時間
    - 根據速度/質量權衡選擇最佳模型
    - 在實際場景中比較 SLM 與 LLM 的權衡
 
@@ -76,13 +76,13 @@ CO_OP_TRANSLATOR_METADATA:
    - 為不同任務設計專門代理
    - 實現代理記憶和上下文管理
    - 在複雜工作流程中協調代理
-   - 在多個模型中智能路由請求
+   - 在多個模型間智能路由請求
 
-6. **部署可投入生產的解決方案**
+6. **部署生產級解決方案**
    - 實現錯誤處理和重試邏輯
    - 監控令牌使用和系統資源
    - 使用模型作為工具模式構建可擴展架構
-   - 計劃從邊緣到混合（邊緣+雲端）的遷移路徑
+   - 計劃從邊緣到混合（邊緣+雲）的遷移路徑
 
 ---
 
@@ -105,28 +105,28 @@ CO_OP_TRANSLATOR_METADATA:
 
 | 技能水平 | 課程 1-2 | 課程 3-4 | 課程 5-6 |
 |----------|----------|----------|----------|
-| **初學者** | ✅ 設置與基礎 | ⚠️ 挑戰性 | ❌ 太高級 |
+| **初學者** | ✅ 設置與基礎 | ⚠️ 挑戰性 | ❌ 過於高級 |
 | **中級** | ✅ 快速回顧 | ✅ 核心學習 | ⚠️ 延伸目標 |
-| **高級** | ✅ 輕鬆完成 | ✅ 精煉 | ✅ 生產模式 |
+| **高級** | ✅ 輕鬆完成 | ✅ 精細化 | ✅ 生產模式 |
 
 ### 職業技能
 
 **完成本工作坊後，您將能夠：**
 
 ✅ **構建隱私優先的應用**
-- 處理 PHI/PII 的醫療應用
+- 本地處理 PHI/PII 的醫療應用
 - 符合合規要求的金融服務
 - 擁有數據主權需求的政府系統
 
-✅ **為邊緣環境優化**
-- 資源有限的 IoT 設備
-- 離線優先的移動應用
+✅ **為邊緣環境進行優化**
+- 資源有限的物聯網設備
+- 以離線優先的移動應用
 - 低延遲的實時系統
 
 ✅ **設計智能架構**
 - 用於複雜工作流程的多代理系統
-- 混合邊緣-雲端部署
-- 成本優化的 AI 基礎架構
+- 混合邊緣-雲部署
+- 成本優化的 AI 基礎設施
 
 ✅ **領導邊緣 AI 項目**
 - 評估項目的邊緣 AI 可行性
@@ -156,18 +156,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 **系統要求：**
 - **操作系統**：Windows 10/11、macOS 11+ 或 Linux（Ubuntu 20.04+）
-- **RAM**：最低 8GB，建議 16GB+
-- **存儲**：模型需要 10GB+ 可用空間
+- **內存**：最低 8GB，建議 16GB+
+- **存儲**：至少 10GB 可用空間以存儲模型
 - **CPU**：支持 AVX2 的現代處理器
-- **GPU**（可選）：支持 CUDA 的 GPU 或 Qualcomm NPU 加速
+- **GPU**（可選）：支持 CUDA 的顯卡或 Qualcomm NPU 用於加速
 
-**軟體要求：**
+**軟件要求：**
 - **Python 3.8+** ([下載](https://www.python.org/downloads/))
 - **Microsoft Foundry Local** ([安裝指南](../../../Workshop))
 - **Git** ([下載](https://git-scm.com/downloads))
 - **Visual Studio Code**（推薦）([下載](https://code.visualstudio.com/))
 
-### 三步設置
+### 3 步設置
 
 #### 1. 安裝 Foundry Local
 
@@ -198,7 +198,7 @@ foundry service set --port 58123 --show
 foundry service set --port 58000 --show
 ```
 
-**驗證是否正常運行：**
+**驗證是否正常工作：**
 ```bash
 # Check service status
 foundry service status
@@ -251,8 +251,8 @@ pip install -r requirements.txt
 foundry model run phi-4-mini
 
 # Run the chat bootstrap sample
-cd samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 **✅ 成功！** 您應該看到關於邊緣 AI 的流式響應。
@@ -263,7 +263,7 @@ python chat_bootstrap.py "What is edge AI?"
 
 ### Python 示例
 
-逐步演示每個概念的實作示例：
+逐步演示每個概念的實踐示例：
 
 | 課程 | 示例 | 描述 | 運行時間 |
 |------|------|------|---------|
@@ -291,16 +291,16 @@ python chat_bootstrap.py "What is edge AI?"
 | 6 | [`session06_models_router.ipynb`](./notebooks/session06_models_router.ipynb) | 意圖路由 | ⭐⭐⭐ 高級 |
 | 6 | [`session06_models_pipeline.ipynb`](./notebooks/session06_models_pipeline.ipynb) | 管道協作 | ⭐⭐⭐ 高級 |
 
-### 文件
+### 文檔
 
 全面的指南和參考：
 
-| 文件 | 描述 | 使用時機 |
+| 文檔 | 描述 | 使用時機 |
 |------|------|---------|
 | [QUICK_START.md](./QUICK_START.md) | 快速設置指南 | 從零開始 |
 | [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | 命令與 API 速查表 | 需要快速答案 |
 | [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | SDK 模式與示例 | 編寫代碼時 |
-| [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | 環境變數指南 | 配置示例時 |
+| [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | 環境變量指南 | 配置示例時 |
 | [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | 最新示例改進 | 理解變更 |
 | [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | 遷移指南 | 升級代碼時 |
 | [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | 常見問題與修復 | 調試問題時 |
@@ -311,30 +311,30 @@ python chat_bootstrap.py "What is edge AI?"
 
 ### 初學者（3-4 小時）
 1. ✅ 課程 1：入門（專注於設置和基本聊天）
-2. ✅ 課程 2：RAG 基礎（初期跳過評估）
+2. ✅ 課程 2：RAG 基礎（初期可跳過評估）
 3. ✅ 課程 3：簡單基準測試（僅測試 2 個模型）
 4. ⏭️ 暫時跳過課程 4-6
-5. 🔄 完成第一個應用後返回課程 4-6
+5. 🔄 在構建第一個應用後返回學習課程 4-6
 
 ### 中級開發者（3 小時）
 1. ⚡ 課程 1：快速設置驗證
-2. ✅ 課程 2：完整 RAG 管道與評估
+2. ✅ 課程 2：完成 RAG 管道及評估
 3. ✅ 課程 3：完整基準測試套件
 4. ✅ 課程 4：模型優化
 5. ✅ 課程 5-6：專注於架構模式
 
-### 高級實踐者（2-3 小時）
+### 高級從業者（2-3 小時）
 1. ⚡ 課程 1-3：快速回顧與驗證
 2. ✅ 課程 4：深入優化
 3. ✅ 課程 5：多代理架構
 4. ✅ 課程 6：生產模式與擴展
-5. 🚀 延伸：構建自定義路由邏輯與混合部署
+5. 🚀 延伸：構建自定義路由邏輯和混合部署
 
 ---
 
-## 工作坊課程包（專注 30 分鐘實驗室）
+## 工作坊課程包（專注的 30 分鐘實驗室）
 
-如果您正在參加濃縮的六課工作坊格式，請使用這些專門指南（每個指南與更廣泛的模塊文檔相輔相成）：
+如果您正在參加濃縮的 6 課工作坊格式，請使用這些專門指南（每個指南都與上述更廣泛的模塊文檔相對應並補充）：
 
 | 工作坊課程 | 指南 | 核心重點 |
 |-----------|------|---------|
@@ -343,9 +343,9 @@ python chat_bootstrap.py "What is edge AI?"
 | 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Hugging Face 集成、基準測試、模型選擇 |
 | 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM 與 LLM 比較、WebGPU、Chainlit RAG、ONNX 加速 |
 | 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Agent 角色、記憶、工具、編排 |
-| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | 路由、鏈接、Azure 擴展路徑 |
+| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | 路由、鏈接、擴展至 Azure 的路徑 |
 
-每個課程文件包含：摘要、學習目標、30 分鐘演示流程、起始項目、驗證清單、故障排除，以及官方 Foundry Local Python SDK 的參考資料。
+每個課程檔案包含：摘要、學習目標、30 分鐘示範流程、起始專案、驗證檢查表、故障排除，以及官方 Foundry Local Python SDK 的參考資料。
 
 ### 範例腳本
 
@@ -367,7 +367,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-如果在不同的（Windows）機器或 VM 上運行 Foundry Local 服務，並從 macOS 匯出端點：
+如果在不同的（Windows）機器或虛擬機上運行 Foundry Local 服務，並從 macOS 匯出端點：
 
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
@@ -376,33 +376,33 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 | 課程 | 腳本 | 描述 |
 |------|------|------|
 | 1 | `samples/session01/chat_bootstrap.py` | 啟動服務與串流聊天 |
-| 2 | `samples/session02/rag_pipeline.py` | 最小化 RAG（內存嵌入） |
+| 2 | `samples/session02/rag_pipeline.py` | 最小化 RAG（記憶內嵌入） |
 |   | `samples/session02/rag_eval_ragas.py` | 使用 ragas 指標進行 RAG 評估 |
 | 3 | `samples/session03/benchmark_oss_models.py` | 多模型延遲與吞吐量基準測試 |
 | 4 | `samples/session04/model_compare.py` | SLM 與 LLM 比較（延遲與樣本輸出） |
-| 5 | `samples/session05/agents_orchestrator.py` | 兩個 Agent 的研究 → 編輯管道 |
-| 6 | `samples/session06/models_router.py` | 基於意圖的路由演示 |
-|   | `samples/session06/models_pipeline.py` | 多步計劃/執行/改進鏈 |
+| 5 | `samples/session05/agents_orchestrator.py` | 兩代理研究 → 編輯管道 |
+| 6 | `samples/session06/models_router.py` | 基於意圖的路由示範 |
+|   | `samples/session06/models_pipeline.py` | 多步驟計劃/執行/改進鏈 |
 
 ### 環境變數（適用於所有範例）
 
 | 變數 | 用途 | 範例 |
 |------|------|------|
-| `FOUNDRY_LOCAL_ALIAS` | 基本範例的預設單一模型別名 | `phi-4-mini` |
-| `SLM_ALIAS` / `LLM_ALIAS` | 明確的 SLM 與較大模型比較 | `phi-4-mini` / `gpt-oss-20b` |
-| `BENCH_MODELS` | 基準測試的模型別名列表 | `qwen2.5-0.5b,gemma-2-2b,mistral-7b` |
+| `FOUNDRY_LOCAL_ALIAS` | 基本範例的預設單模型別名 | `phi-4-mini` |
+| `SLM_ALIAS` / `LLM_ALIAS` | 用於比較的明確 SLM 與較大模型 | `phi-4-mini` / `gpt-oss-20b` |
+| `BENCH_MODELS` | 要基準測試的別名列表 | `qwen2.5-0.5b,mistral-7b` |
 | `BENCH_ROUNDS` | 每個模型的基準測試重複次數 | `3` |
 | `BENCH_PROMPT` | 基準測試中使用的提示 | `Explain retrieval augmented generation briefly.` |
 | `EMBED_MODEL` | Sentence-transformers 嵌入模型 | `sentence-transformers/all-MiniLM-L6-v2` |
-| `RAG_QUESTION` | 覆蓋 RAG 管道的測試問題 | `Why use RAG with local inference?` |
-| `AGENT_QUESTION` | 覆蓋 Agent 管道的問題 | `Explain why edge AI matters for compliance.` |
-| `AGENT_MODEL_PRIMARY` | 研究 Agent 的模型別名 | `phi-4-mini` |
-| `AGENT_MODEL_EDITOR` | 編輯 Agent 的模型別名（可不同） | `gpt-oss-20b` |
+| `RAG_QUESTION` | 覆蓋 RAG 管道的測試查詢 | `Why use RAG with local inference?` |
+| `AGENT_QUESTION` | 覆蓋代理管道查詢 | `Explain why edge AI matters for compliance.` |
+| `AGENT_MODEL_PRIMARY` | 研究代理的模型別名 | `phi-4-mini` |
+| `AGENT_MODEL_EDITOR` | 編輯代理的模型別名（可不同） | `gpt-oss-20b` |
 | `SHOW_USAGE` | 當設為 `1` 時，打印每次完成的 token 使用量 | `1` |
 | `RETRY_ON_FAIL` | 當設為 `1` 時，遇到暫時性聊天錯誤時重試一次 | `1` |
 | `RETRY_BACKOFF` | 重試前等待的秒數 | `1.0` |
 
-如果未設置變數，腳本會回退到合理的預設值。對於單模型演示，通常只需要設置 `FOUNDRY_LOCAL_ALIAS`。
+如果未設置變數，腳本將回退至合理的預設值。對於單模型示範，通常只需要設置 `FOUNDRY_LOCAL_ALIAS`。
 
 ### 工具模組
 
@@ -410,9 +410,9 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 * 快取的 `FoundryLocalManager` + OpenAI 客戶端創建
 * 帶有可選重試與使用量打印的 `chat_once()` 輔助函數
-* 簡單的 token 使用量報告（通過 `SHOW_USAGE=1` 啟用）
+* 簡單的 token 使用量報告（通過設置 `SHOW_USAGE=1` 啟用）
 
-這減少了重複並突出了高效本地模型編排的最佳實踐。
+這減少了重複，並突出了高效本地模型編排的最佳實踐。
 
 ## 可選增強功能（跨課程）
 
@@ -421,13 +421,13 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 | 確定性 | 固定溫度 + 穩定提示集 | 1–6 | 設置 `temperature=0`, `top_p=1` |
 | Token 使用量可見性 | 一致的成本/效率教學 | 1–6 | `SHOW_USAGE=1` |
 | 串流首個 Token | 感知延遲指標 | 1,3,4,6 | `BENCH_STREAM=1`（基準測試） |
-| 重試韌性 | 處理暫時性冷啟動 | 所有 | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
-| 多模型 Agent | 異質角色專業化 | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
-| 自適應路由 | 意圖 + 成本啟發式 | 6 | 擴展路由器，加入升級邏輯 |
-| 向量記憶 | 長期語義回憶 | 2,5,6 | 整合 FAISS/Chroma 嵌入索引 |
-| 跟蹤匯出 | 審計與評估 | 2,5,6 | 每步追加 JSON 行 |
-| 質量標準 | 質量跟蹤 | 3–6 | 次要評分提示 |
-| 煙霧測試 | 快速工作坊前驗證 | 所有 | `python Workshop/tests/smoke.py` |
+| 重試韌性 | 處理暫時性冷啟動 | 全部 | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
+| 多模型代理 | 異質角色專業化 | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
+| 自適應路由 | 意圖 + 成本啟發式 | 6 | 擴展路由器以包含升級邏輯 |
+| 向量記憶 | 長期語義回憶 | 2,5,6 | 集成 FAISS/Chroma 嵌入索引 |
+| 跟蹤導出 | 審計與評估 | 2,5,6 | 每步追加 JSON 行 |
+| 質量標準 | 定性跟蹤 | 3–6 | 次要評分提示 |
+| 煙霧測試 | 快速工作坊前驗證 | 全部 | `python Workshop/tests/smoke.py` |
 
 ### 確定性快速開始
 
@@ -437,36 +437,37 @@ set SHOW_USAGE=1
 python Workshop\tests\smoke.py
 ```
 
-預期在相同輸入的重複測試中保持穩定的 token 數量。
+對於重複的相同輸入，預期會有穩定的 token 數量。
 
 ### RAG 評估（課程 2）
 
-使用 `rag_eval_ragas.py` 計算答案的相關性、真實性和上下文精確度，基於一個小型合成數據集：
+使用 `rag_eval_ragas.py` 計算答案的相關性、真實性和上下文精確性，基於一個小型的合成數據集：
 
 ```powershell
-python samples/session02/rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
-通過提供更大的 JSONL 問題、上下文和真實答案集進行擴展，然後轉換為 Hugging Face `Dataset`。
+通過提供更大的問題、上下文和真實值的 JSONL 文件，然後轉換為 Hugging Face 的 `Dataset` 來擴展。
 
 ## CLI 命令準確性附錄
 
-工作坊僅使用當前已記錄 / 穩定的 Foundry Local CLI 命令。
+工作坊僅使用當前記錄的 / 穩定的 Foundry Local CLI 命令。
 
 ### 參考的穩定命令
 
 | 類別 | 命令 | 用途 |
 |------|------|------|
-| 核心 | `foundry --version` | 顯示已安裝版本 |
+| 核心 | `foundry --version` | 顯示已安裝的版本 |
 | 核心 | `foundry init` | 初始化配置 |
 | 服務 | `foundry service start` | 啟動本地服務（如果未自動啟動） |
 | 服務 | `foundry status` | 顯示服務狀態 |
 | 模型 | `foundry model list` | 列出目錄 / 可用模型 |
 | 模型 | `foundry model download <alias>` | 將模型權重下載到快取 |
-| 模型 | `foundry model run <alias>` | 本地啟動（加載）模型；結合 `--prompt` 進行一次性操作 |
-| 模型 | `foundry model unload <alias>` / `foundry model stop <alias>` | 從內存卸載模型（如果支持） |
+| 模型 | `foundry model run <alias>` | 在本地啟動（加載）模型；結合 `--prompt` 進行一次性操作 |
+| 模型 | `foundry model unload <alias>` / `foundry model stop <alias>` | 從記憶中卸載模型（如果支持） |
 | 快取 | `foundry cache list` | 列出已快取（下載）的模型 |
-| 系統 | `foundry system info` | 硬件與加速能力快照 |
+| 系統 | `foundry system info` | 硬體與加速能力快照 |
 | 系統 | `foundry system gpu-info` | GPU 診斷信息 |
 | 配置 | `foundry config list` | 顯示當前配置值 |
 | 配置 | `foundry config set <key> <value>` | 更新配置 |
@@ -479,37 +480,37 @@ python samples/session02/rag_eval_ragas.py
 foundry model run <alias> --prompt "Your question here"
 ```
 
-這執行一次提示/回應循環後退出。
+這將執行一次提示/回應循環，然後退出。
 
-### 移除 / 避免的模式
+### 已移除 / 避免的模式
 
-| 棄用 / 未記錄 | 替代 / 指導 |
-|---------------|-------------|
+| 已棄用 / 未記錄 | 替代 / 指導 |
+|-----------------|------------|
 | `foundry model chat <model> "..."` | `foundry model run <model> --prompt "..."` |
-| `foundry model list --running` | 使用普通 `foundry model list` + 最近活動 / 日誌 |
+| `foundry model list --running` | 使用普通的 `foundry model list` + 最近活動 / 日誌 |
 | `foundry model list --cached` | `foundry cache list` |
-| `foundry model stats <model>` | 使用基準測試 Python 腳本 + OS 工具（任務管理器 / `nvidia-smi`） |
+| `foundry model stats <model>` | 使用基準測試 Python 腳本 + 操作系統工具（任務管理器 / `nvidia-smi`） |
 | `foundry model benchmark ...` | `samples/session03/benchmark_oss_models.py` |
 
 ### 基準測試與遙測
 
 - 延遲、p95、tokens/sec：`samples/session03/benchmark_oss_models.py`
 - 首個 token 延遲（串流）：設置 `BENCH_STREAM=1`
-- 資源使用：OS 監控工具（任務管理器、活動監視器、`nvidia-smi`）+ `foundry system info`。
+- 資源使用：操作系統監控工具（任務管理器、活動監視器、`nvidia-smi`）+ `foundry system info`。
 
-隨著新的 CLI 遙測命令在上游穩定，它們可以以最小的修改集成到課程 markdown 中。
+隨著新的 CLI 遙測命令在上游穩定，它們可以通過最小的編輯集成到課程的 markdown 文件中。
 
-### 自動化 Lint 守護
+### 自動化代碼檢查
 
-一個自動化 linter 防止在 markdown 文件的代碼塊中重新引入棄用的 CLI 模式：
+自動化代碼檢查工具可防止在 markdown 文件的代碼塊中重新引入已棄用的 CLI 模式：
 
 腳本：`Workshop/scripts/lint_markdown_cli.py`
 
-代碼塊內的棄用模式被阻止。
+代碼塊中的已棄用模式將被阻止。
 
 推薦替代：
-| 棄用 | 替代 |
-|------|------|
+| 已棄用 | 替代 |
+|--------|------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
 | `model list --running` | `model list` |
 | `model list --cached` | `cache list` |
@@ -522,7 +523,7 @@ foundry model run <alias> --prompt "Your question here"
 python Workshop\scripts\lint_markdown_cli.py --verbose
 ```
 
-GitHub Action：`.github/workflows/markdown-cli-lint.yml` 在每次推送與 PR 時運行。
+GitHub Action：`.github/workflows/markdown-cli-lint.yml` 在每次推送和 PR 時運行。
 
 可選的 pre-commit 鉤子：
 ```bash
@@ -535,24 +536,24 @@ chmod +x .git/hooks/pre-commit
 | 任務 | CLI 單行命令 | SDK（Python）等效 | 備註 |
 |------|-------------|-------------------|------|
 | 運行模型一次（提示） | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK 自動啟動服務與快取 |
-| 下載（快取）模型 | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # 觸發下載/加載` | Manager 在別名映射到多個版本時選擇最佳變體 |
-| 列出目錄 | `foundry model list` | `# 使用 manager 為每個別名或維護已知列表` | CLI 聚合；SDK 目前為每個別名初始化 |
-| 列出已快取的模型 | `foundry cache list` | `manager.list_cached_models()` | 在 manager 初始化後（任何別名） |
-| 啟用 GPU 加速 | `foundry config set compute.onnx.enable_gpu true` | `# CLI 操作；SDK 假設配置已應用` | 配置是外部副作用 |
+| 下載（快取）模型 | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # 觸發下載/加載` | 管理器在別名映射到多個版本時選擇最佳變體 |
+| 列出目錄 | `foundry model list` | `# 使用管理器處理每個別名或維護已知列表` | CLI 聚合；SDK 目前為每個別名初始化 |
+| 列出已快取的模型 | `foundry cache list` | `manager.list_cached_models()` | 在管理器初始化後（任何別名） |
+| 啟用 GPU 加速 | `foundry config set compute.onnx.enable_gpu true` | `# CLI 操作；SDK 假設配置已應用` | 配置為外部副作用 |
 | 獲取端點 URL | （隱式） | `manager.endpoint` | 用於創建 OpenAI 兼容客戶端 |
 | 預熱模型 | `foundry model run <alias>` 然後首次提示 | `chat_once(alias, messages=[...])`（工具） | 工具處理初始冷延遲預熱 |
-| 測量延遲 | `python benchmark_oss_models.py` | `import benchmark_oss_models`（或新的匯出腳本） | 優先使用腳本以獲得一致的指標 |
+| 測量延遲 | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models`（或新的導出腳本） | 優先使用腳本以獲得一致的指標 |
 | 停止 / 卸載模型 | `foundry model unload <alias>` | （未公開 – 重啟服務 / 進程） | 通常不需要工作坊流程 |
-| 獲取 token 使用量 | （查看輸出） | `resp.usage.total_tokens` | 如果後端返回使用量對象則提供 |
+| 檢索 token 使用量 | （查看輸出） | `resp.usage.total_tokens` | 如果後端返回使用量對象則提供 |
 
-## 基準測試 Markdown 匯出
+## 基準測試 Markdown 導出
 
-使用腳本 `Workshop/scripts/export_benchmark_markdown.py` 運行新的基準測試（邏輯與 `samples/session03/benchmark_oss_models.py` 相同），並生成 GitHub 友好的 Markdown 表格以及原始 JSON。
+使用腳本 `Workshop/scripts/export_benchmark_markdown.py` 運行最新的基準測試（邏輯與 `samples/session03/benchmark_oss_models.py` 相同），並生成 GitHub 友好的 Markdown 表格以及原始 JSON。
 
 ### 範例
 
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,mistral-7b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 生成的文件：
@@ -561,7 +562,7 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 | `benchmark_report.md` | Markdown 表格 + 解釋提示 |
 | `benchmark_report.json` | 原始指標數組（用於差異 / 趨勢跟蹤） |
 
-在環境中設置 `BENCH_STREAM=1` 以包含支持的首個 token 延遲。
+在環境中設置 `BENCH_STREAM=1` 以包含首個 token 延遲（如果支持）。
 
 ---
 

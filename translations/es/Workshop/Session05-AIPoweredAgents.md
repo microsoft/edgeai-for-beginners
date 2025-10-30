@@ -1,27 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-08T20:43:58+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T20:05:28+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "es"
 }
 -->
-# Sesión 5: Construye Agentes Impulsados por IA Rápidamente con Foundry Local
+# Sesión 5: Construye Agentes Potenciados por IA Rápidamente con Foundry Local
 
 ## Resumen
 
-Diseña y orquesta agentes de IA con múltiples roles utilizando el entorno de ejecución de baja latencia y preservación de privacidad de Foundry Local. Definirás roles de agentes, estrategias de memoria, patrones de invocación de herramientas y gráficos de ejecución. La sesión introduce patrones de estructura que puedes ampliar con Chainlit o LangGraph. El proyecto inicial amplía la muestra de arquitectura de agentes existente para agregar persistencia de memoria y ganchos de evaluación.
+Diseña y orquesta agentes de IA con múltiples roles utilizando el entorno de ejecución de baja latencia y preservación de privacidad de Foundry Local. Definirás roles de agentes, estrategias de memoria, patrones de invocación de herramientas y gráficos de ejecución. La sesión introduce patrones de estructura que puedes ampliar con Chainlit o LangGraph. El proyecto inicial amplía el ejemplo de arquitectura de agentes existente para añadir persistencia de memoria y ganchos de evaluación.
 
 ## Objetivos de Aprendizaje
 
 - **Definir Roles**: Indicaciones del sistema y límites de capacidades
-- **Implementar Memoria**: Corto plazo (conversación), largo plazo (vector/archivo), notas efímeras
-- **Estructurar Flujos de Trabajo**: Pasos secuenciales, ramificados y paralelos de agentes
-- **Integrar Herramientas**: Patrón ligero de invocación de funciones como herramientas
-- **Evaluar**: Trazas básicas y puntuación de resultados basada en rúbricas
+- **Implementar Memoria**: Corto plazo (conversación), largo plazo (vector / archivo), notas efímeras
+- **Estructurar Flujos de Trabajo**: Pasos secuenciales, ramificados y paralelos de los agentes
+- **Integrar Herramientas**: Patrón ligero de llamada a funciones como herramientas
+- **Evaluar**: Trazabilidad básica + puntuación de resultados basada en rúbricas
 
-## Prerrequisitos
+## Requisitos Previos
 
 - Haber completado las sesiones 1–4
 - Python con `foundry-local-sdk`, `openai`, opcional `chainlit`
@@ -29,27 +29,27 @@ Diseña y orquesta agentes de IA con múltiples roles utilizando el entorno de e
 
 ### Fragmento de Entorno Multiplataforma
 
-Windows:  
+Windows:
 ```powershell
 py -m venv .venv
  .\.venv\Scripts\Activate.ps1
 pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
-  
-macOS:  
+
+macOS:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
-  
-Si ejecutas agentes desde macOS contra un servicio remoto en Windows:  
+
+Si ejecutas agentes desde macOS contra un servicio remoto en Windows:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-  
+
 
 ## Flujo de Demostración (30 min)
 
@@ -120,16 +120,16 @@ def demo():
 if __name__ == "__main__":
     demo()
 ```
-  
+
 
 ### 2. Patrón de Estructuración CLI (3 min)
 
 ```powershell
 python samples/05-agents/agents_core.py
 ```
-  
 
-### 3. Agregar Invocación de Herramientas (7 min)
+
+### 3. Añadir Invocación de Herramientas (7 min)
 
 Amplía con `samples/05-agents/tools.py`:
 
@@ -149,7 +149,7 @@ TOOLS = {
     "estimate_tokens": tool_estimate_tokens
 }
 ```
-  
+
 Modifica `agents_core.py` para permitir una sintaxis simple de herramientas: el usuario escribe `#tool:get_time` y el agente expande la salida de la herramienta en el contexto antes de la generación.
 
 ### 4. Flujo de Trabajo Orquestado (6 min)
@@ -183,15 +183,15 @@ if __name__ == '__main__':
     for k,v in result.items():
         print(f"== {k.upper()} ==\n{v}\n")
 ```
-  
+
 
 ### 5. Proyecto Inicial: Ampliar `05-agent-architecture` (7 min)
 
-Agrega:  
-1. Capa de memoria persistente (por ejemplo, agregar líneas JSON de conversaciones)  
-2. Rúbrica de evaluación simple: marcadores de factualidad, claridad y estilo  
-3. Front-end opcional con Chainlit (dos pestañas: conversación y trazas)  
-4. Máquina de estados estilo LangGraph opcional (si se agrega la dependencia) para decisiones ramificadas  
+Añade:
+1. Capa de memoria persistente (por ejemplo, añadir líneas JSON de conversaciones)
+2. Rúbrica de evaluación simple: marcadores de factualidad / claridad / estilo
+3. Front-end opcional con Chainlit (dos pestañas: conversación y trazas)
+4. Máquina de estados estilo LangGraph opcional (si se añade dependencia) para decisiones ramificadas
 
 ## Lista de Verificación de Validación
 
@@ -199,17 +199,17 @@ Agrega:
 foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
-  
+
 Espera una salida estructurada de la canalización con una nota de inyección de herramientas.
 
 ## Resumen de Estrategias de Memoria
 
-| Capa         | Propósito              | Ejemplo               |
-|--------------|------------------------|-----------------------|
-| Corto plazo  | Continuidad del diálogo | Últimos N mensajes    |
-| Episódica    | Recuerdo de la sesión  | JSON por sesión       |
-| Semántica    | Recuperación a largo plazo | Almacén vectorial de resúmenes |
-| Notas        | Pasos de razonamiento  | Cadena de pensamiento en línea (privada) |
+| Capa       | Propósito             | Ejemplo               |
+|------------|-----------------------|-----------------------|
+| Corto plazo | Continuidad del diálogo | Últimos N mensajes    |
+| Episódica   | Recuerdo de la sesión | JSON por sesión       |
+| Semántica   | Recuperación a largo plazo | Almacén vectorial de resúmenes |
+| Scratchpad  | Pasos de razonamiento | Cadena de pensamiento en línea (privada) |
 
 ## Ganchos de Evaluación (Conceptual)
 
@@ -222,49 +222,47 @@ evaluation = {
   "model": model_used
 }
 ```
-  
+
 
 ## Resolución de Problemas
 
-| Problema            | Causa                     | Resolución                     |
-|---------------------|---------------------------|---------------------------------|
-| Respuestas repetitivas | Ventana de contexto demasiado grande/pequeña | Ajusta el parámetro de ventana de memoria |
-| Herramienta no invocada | Sintaxis incorrecta         | Usa el formato `#tool:tool_name` |
-| Orquestación lenta  | Múltiples modelos en frío | Ejecuta prompts de calentamiento previamente |
+| Problema            | Causa                  | Resolución                     |
+|---------------------|------------------------|---------------------------------|
+| Respuestas repetitivas | Ventana de contexto demasiado grande/pequeña | Ajustar el parámetro de ventana de memoria |
+| Herramienta no invocada | Sintaxis incorrecta | Usar formato `#tool:tool_name` |
+| Orquestación lenta  | Múltiples modelos fríos | Ejecutar prompts de calentamiento previamente |
 
 ## Referencias
 
-- Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
-- LangGraph (concepto opcional): https://github.com/langchain-ai/langgraph  
-- Chainlit: https://docs.chainlit.io  
+- Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- LangGraph (concepto opcional): https://github.com/langchain-ai/langgraph
+- Chainlit: https://docs.chainlit.io
 
 ---
 
 **Duración de la Sesión**: 30 min  
-**Dificultad**: Avanzada  
+**Dificultad**: Avanzada
 
 ## Escenario de Ejemplo y Mapeo del Taller
 
 | Script del Taller | Escenario | Objetivo | Ejemplo de Prompt |
 |-------------------|-----------|----------|-------------------|
 | `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot de investigación de conocimiento que produce resúmenes aptos para ejecutivos | Canalización de dos agentes (investigación → pulido editorial) con modelos opcionales distintos | Explica por qué la inferencia en el borde es importante para el cumplimiento. |
-| (Ampliado) concepto `tools.py` | Agregar herramientas de estimación de tiempo y tokens | Demostrar patrón ligero de invocación de herramientas | #tool:get_time |
+| Concepto ampliado de `tools.py` | Añadir herramientas de estimación de tiempo y tokens | Demostrar patrón ligero de invocación de herramientas | #tool:get_time |
 
 ### Narrativa del Escenario
-
-El equipo de documentación de cumplimiento necesita resúmenes internos rápidos obtenidos de conocimiento local sin enviar borradores a servicios en la nube. Un agente investigador reúne puntos factuales concisos; un agente editor los reescribe para claridad ejecutiva. Se pueden asignar alias de modelos distintos para optimizar la latencia (SLM rápido) frente al refinamiento estilístico (modelo más grande solo cuando sea necesario).
+El equipo de documentación de cumplimiento necesita resúmenes internos rápidos obtenidos de conocimiento local sin enviar borradores a servicios en la nube. Un agente investigador reúne puntos factuales concisos; un agente editor los reescribe para mayor claridad ejecutiva. Se pueden asignar alias de modelos distintos para optimizar la latencia (SLM rápido) frente al refinamiento estilístico (modelo más grande solo cuando sea necesario).
 
 ### Ejemplo de Entorno Multi-Modelo
-
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
-  
+
 
 ### Estructura de Trazas (Opcional)
-
 ```json
 {
     "step": 1,
@@ -275,23 +273,23 @@ python Workshop\samples\session05\agents_orchestrator.py
     "model": "phi-4-mini"
 }
 ```
-  
+
 Persiste cada paso en un archivo JSONL para puntuación de rúbrica posterior.
 
 ### Mejoras Opcionales
 
-| Tema              | Mejora                     | Beneficio                     | Esbozo de Implementación       |
-|-------------------|----------------------------|-------------------------------|---------------------------------|
-| Roles Multi-Modelo | Modelos distintos por agente (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Especialización y velocidad   | Selecciona alias de variables de entorno, llama a `chat_once` con alias por rol |
-| Trazas Estructuradas | Trazas JSON de cada acción (herramienta, entrada, latencia, tokens) | Depuración y evaluación       | Agrega diccionario a una lista; escribe `.jsonl` al final |
-| Persistencia de Memoria | Contexto de diálogo recargable | Continuidad de la sesión      | Vuelca `Agent.memory` en `sessions/<ts>.json` |
-| Registro de Herramientas | Descubrimiento dinámico de herramientas | Extensibilidad                | Mantén un diccionario `TOOLS` e inspecciona nombres/descripciones |
-| Reintentos y Retrocesos | Cadenas largas robustas | Reducir fallos transitorios   | Envuelve `act` con try/except + retroceso exponencial |
-| Puntuación de Rúbrica | Etiquetas cualitativas automatizadas | Seguimiento de mejoras        | Pase secundario solicitando al modelo: "Califica claridad 1-5" |
-| Memoria Vectorial | Recuperación semántica | Contexto rico a largo plazo   | Inserta resúmenes, recupera los mejores k en el mensaje del sistema |
-| Respuestas en Streaming | Respuesta percibida más rápida | Mejora de UX                  | Usa streaming cuando esté disponible y vacía tokens parciales |
-| Pruebas Deterministas | Control de regresión | CI estable                    | Ejecuta con `temperature=0`, semillas de prompt fijas |
-| Ramificación Paralela | Exploración más rápida | Mayor rendimiento             | Usa `concurrent.futures` para pasos independientes de agentes |
+| Tema              | Mejora                     | Beneficio              | Esbozo de Implementación       |
+|-------------------|----------------------------|------------------------|--------------------------------|
+| Roles Multi-Modelo | Modelos distintos por agente (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Especialización y velocidad | Seleccionar alias de variables de entorno, llamar a `chat_once` con alias por rol |
+| Trazas Estructuradas | Trazas JSON de cada acción (herramienta, entrada, latencia, tokens) | Depuración y evaluación | Añadir diccionario a una lista; escribir `.jsonl` al final |
+| Persistencia de Memoria | Contexto de diálogo recargable | Continuidad de la sesión | Volcar `Agent.memory` en `sessions/<ts>.json` |
+| Registro de Herramientas | Descubrimiento dinámico de herramientas | Extensibilidad | Mantener un diccionario `TOOLS` e inspeccionar nombres/descripciones |
+| Reintentos y Retrocesos | Cadenas largas robustas | Reducir fallos transitorios | Envolver `act` con try/except + retroceso exponencial |
+| Puntuación de Rúbrica | Etiquetas cualitativas automatizadas | Seguimiento de mejoras | Segunda pasada con el modelo: "Califica claridad 1-5" |
+| Memoria Vectorial | Recuperación semántica | Contexto rico a largo plazo | Incorporar resúmenes, recuperar los mejores k en el mensaje del sistema |
+| Respuestas en Streaming | Respuesta percibida más rápida | Mejora de UX | Usar streaming cuando esté disponible y vaciar tokens parciales |
+| Pruebas Deterministas | Control de regresión | CI estable | Ejecutar con `temperature=0`, semillas de prompt fijas |
+| Ramificación Paralela | Exploración más rápida | Rendimiento | Usar `concurrent.futures` para pasos independientes de agentes |
 
 #### Ejemplo de Registro de Trazas
 
@@ -304,7 +302,7 @@ trace.append({
     "tools_used": list(tool_calls)
 })
 ```
-  
+
 
 #### Prompt de Evaluación Simple
 
@@ -312,10 +310,10 @@ trace.append({
 score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
-  
+
 Persiste pares (`answer`, `rating`) para construir un gráfico histórico de calidad.
 
 ---
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.

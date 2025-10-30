@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-08T12:18:50+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T23:33:40+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "sl"
 }
@@ -14,30 +14,30 @@ CO_OP_TRANSLATOR_METADATA:
 Vsi vzorci v Pythonu v imeniku `Workshop/samples` so bili posodobljeni, da sledijo najboljšim praksam lokalnega SDK Foundry in zagotavljajo doslednost v celotni delavnici.
 
 **Datum**: 8. oktober 2025  
-**Obseg**: 9 datotek v Pythonu v 6 delavniških sklopih  
-**Glavni poudarek**: Obvladovanje napak, dokumentacija, vzorci SDK, uporabniška izkušnja
+**Obseg**: 9 datotek v Pythonu v 6 delavnicah  
+**Primarni fokus**: Obvladovanje napak, dokumentacija, vzorci SDK, uporabniška izkušnja
 
 ---
 
 ## Posodobljene datoteke
 
-### Sklop 01: Začetek
+### Seansa 01: Začetek
 - ✅ `chat_bootstrap.py` - Osnovni primeri klepeta in pretakanja
 
-### Sklop 02: RAG rešitve
+### Seansa 02: RAG rešitve
 - ✅ `rag_pipeline.py` - Implementacija RAG z vdelavami
-- ✅ `rag_eval_ragas.py` - Evalvacija RAG z metrikami RAGAS
+- ✅ `rag_eval_ragas.py` - Ocena RAG z metrikami RAGAS
 
-### Sklop 03: Modeli odprte kode
+### Seansa 03: Modeli odprte kode
 - ✅ `benchmark_oss_models.py` - Primerjava več modelov
 
-### Sklop 04: Napredni modeli
+### Seansa 04: Najsodobnejši modeli
 - ✅ `model_compare.py` - Primerjava SLM in LLM
 
-### Sklop 05: Agenti, ki jih poganja AI
+### Seansa 05: Agenti, ki jih poganja umetna inteligenca
 - ✅ `agents_orchestrator.py` - Koordinacija več agentov
 
-### Sklop 06: Modeli kot orodja
+### Seansa 06: Modeli kot orodja
 - ✅ `models_router.py` - Usmerjanje modelov na podlagi namena
 - ✅ `models_pipeline.py` - Večstopenjski usmerjeni cevovod
 
@@ -55,7 +55,7 @@ Vsi vzorci v Pythonu v imeniku `Workshop/samples` so bili posodobljeni, da sledi
 manager, client, model_id = get_client(alias)
 ```
 
-**Potem:**
+**Po:**
 ```python
 try:
     manager, client, model_id = get_client(alias, endpoint=endpoint)
@@ -67,8 +67,8 @@ except Exception as e:
 
 **Prednosti:**
 - Elegantno obvladovanje napak z jasnimi sporočili o napakah
-- Koristni namigi za odpravljanje težav
-- Pravilne kode za izhod pri skriptiranju
+- Koristni nasveti za odpravljanje težav
+- Pravilne kode za izhod za skriptiranje
 
 ### 2. Boljše upravljanje uvozov
 
@@ -77,7 +77,7 @@ except Exception as e:
 from sentence_transformers import SentenceTransformer
 ```
 
-**Potem:**
+**Po:**
 ```python
 try:
     from sentence_transformers import SentenceTransformer
@@ -95,10 +95,10 @@ except ImportError:
 
 **Dodano v vse vzorce:**
 - Dokumentacija okoljskih spremenljivk v docstringih
-- Povezave na referenčno dokumentacijo SDK
+- Povezave na referenčne dokumente SDK
 - Primeri uporabe
 - Podrobna dokumentacija funkcij/parametrov
-- Namigi tipov za boljšo podporo IDE
+- Namigi za tipe za boljšo podporo IDE
 
 **Primer:**
 ```python
@@ -116,7 +116,7 @@ def pipeline(task: str) -> Dict[str, Any]:
     """
 ```
 
-### 4. Izboljšana povratna informacija uporabnikom
+### 4. Izboljšana povratna informacija uporabnika
 
 **Dodano informativno beleženje:**
 ```python
@@ -138,16 +138,16 @@ print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
 
-### 5. Zanesljivo primerjanje
+### 5. Zanesljivo primerjanje zmogljivosti
 
-**Izboljšave v sklopu 03:**
-- Obvladovanje napak za vsak model (nadaljuje ob napaki)
+**Izboljšave v seansi 03:**
+- Obvladovanje napak za vsak model (nadaljuje ob neuspehu)
 - Podrobno poročanje o napredku
 - Pravilno izvedeni ogrevalni krogi
 - Podpora za merjenje zakasnitve prvega žetona
 - Jasna ločitev faz
 
-### 6. Dosledni namigi tipov
+### 6. Dosledni namigi za tipe
 
 **Dodano povsod:**
 ```python
@@ -158,22 +158,22 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ```
 
 **Prednosti:**
-- Boljša samodokončanja v IDE
+- Boljša samodejna dopolnitev v IDE
 - Zgodnje odkrivanje napak
 - Samodokumentiranje kode
 
 ### 7. Izboljšan usmerjevalnik modelov
 
-**Izboljšave v sklopu 06:**
+**Izboljšave v seansi 06:**
 - Celovita dokumentacija zaznavanja namena
-- Razlaga algoritma za izbiro modela
+- Pojasnilo algoritma za izbiro modela
 - Podrobni dnevniki usmerjanja
 - Oblikovanje testnih izhodov
 - Obnova napak pri testiranju v serijah
 
 ### 8. Orkestracija več agentov
 
-**Izboljšave v sklopu 05:**
+**Izboljšave v seansi 05:**
 - Poročanje o napredku po fazah
 - Obvladovanje napak za vsakega agenta
 - Jasna struktura cevovoda
@@ -196,65 +196,65 @@ foundry model run qwen2.5-0.5b
 pip install -r Workshop/requirements.txt
 ```
 
-### Testiranje vsakega vzorca
+### Testirajte vsak vzorec
 
-#### Sklop 01
+#### Seansa 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
-#### Sklop 02
+#### Seansa 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
-#### Sklop 03
+#### Seansa 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
-#### Sklop 04
+#### Seansa 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
-#### Sklop 05
+#### Seansa 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
-#### Sklop 06
+#### Seansa 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
@@ -263,29 +263,29 @@ python models_pipeline.py
 
 ### Globalno (vsi vzorci)
 | Spremenljivka | Opis | Privzeto |
-|---------------|------|---------|
+|---------------|------|----------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias modela za uporabo | Različno glede na vzorec |
 | `FOUNDRY_LOCAL_ENDPOINT` | Prepis končne točke storitve | Samodejno zaznano |
-| `SHOW_USAGE` | Prikaz uporabe žetonov | `0` |
+| `SHOW_USAGE` | Prikaz porabe žetonov | `0` |
 | `RETRY_ON_FAIL` | Omogoči logiko ponovnega poskusa | `1` |
 | `RETRY_BACKOFF` | Začetna zakasnitev ponovnega poskusa | `1.0` |
 
 ### Specifično za vzorec
 | Spremenljivka | Uporablja | Opis |
-|---------------|----------|------|
-| `EMBED_MODEL` | Sklop 02 | Ime modela za vdelave |
-| `RAG_QUESTION` | Sklop 02 | Testno vprašanje za RAG |
-| `BENCH_MODELS` | Sklop 03 | Modeli za primerjanje, ločeni z vejico |
-| `BENCH_ROUNDS` | Sklop 03 | Število krogov primerjanja |
-| `BENCH_PROMPT` | Sklop 03 | Testni poziv za primerjanja |
-| `BENCH_STREAM` | Sklop 03 | Merjenje zakasnitve prvega žetona |
-| `SLM_ALIAS` | Sklop 04 | Majhen jezikovni model |
-| `LLM_ALIAS` | Sklop 04 | Velik jezikovni model |
-| `COMPARE_PROMPT` | Sklop 04 | Testni poziv za primerjavo |
-| `AGENT_MODEL_PRIMARY` | Sklop 05 | Primarni model agenta |
-| `AGENT_MODEL_EDITOR` | Sklop 05 | Model agenta za urejanje |
-| `AGENT_QUESTION` | Sklop 05 | Testno vprašanje za agente |
-| `PIPELINE_TASK` | Sklop 06 | Naloga za cevovod |
+|---------------|-----------|------|
+| `EMBED_MODEL` | Seansa 02 | Ime modela za vdelavo |
+| `RAG_QUESTION` | Seansa 02 | Testno vprašanje za RAG |
+| `BENCH_MODELS` | Seansa 03 | Modeli za primerjavo, ločeni z vejico |
+| `BENCH_ROUNDS` | Seansa 03 | Število krogov primerjave |
+| `BENCH_PROMPT` | Seansa 03 | Testni poziv za primerjave |
+| `BENCH_STREAM` | Seansa 03 | Merjenje zakasnitve prvega žetona |
+| `SLM_ALIAS` | Seansa 04 | Majhen jezikovni model |
+| `LLM_ALIAS` | Seansa 04 | Velik jezikovni model |
+| `COMPARE_PROMPT` | Seansa 04 | Testni poziv za primerjavo |
+| `AGENT_MODEL_PRIMARY` | Seansa 05 | Primarni model agenta |
+| `AGENT_MODEL_EDITOR` | Seansa 05 | Model agenta urednika |
+| `AGENT_QUESTION` | Seansa 05 | Testno vprašanje za agente |
+| `PIPELINE_TASK` | Seansa 06 | Naloga za cevovod |
 
 ---
 
@@ -297,7 +297,7 @@ Obstoječi skripti bodo še naprej delovali. Nove funkcije so:
 - Izbirne okoljske spremenljivke
 - Izboljšana sporočila o napakah (ne prekinjajo funkcionalnosti)
 - Dodatno beleženje (lahko se zatre)
-- Boljši namigi tipov (brez vpliva na izvajanje)
+- Boljši namigi za tipe (brez vpliva na izvajanje)
 
 ---
 
@@ -329,7 +329,7 @@ print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
 
-### 4. Namigi tipov
+### 4. Namigi za tipe
 ```python
 from typing import Dict, List, Optional
 
@@ -353,7 +353,7 @@ def function(arg: str) -> str:
     """
 ```
 
-### 6. Podpora okoljskim spremenljivkam
+### 6. Podpora za okoljske spremenljivke
 ```python
 import os
 
@@ -412,9 +412,9 @@ set BENCH_ROUNDS=2
 Izvedite preveritveni seznam testiranja zgoraj, da preverite, ali vsi vzorci delujejo pravilno.
 
 ### 2. Posodobite dokumentacijo
-- Posodobite markdown datoteke sklopov z novimi primeri
+- Posodobite markdown datoteke seans z novimi primeri
 - Dodajte razdelek za odpravljanje težav v glavni README
-- Ustvarite priročnik za hitro referenco
+- Ustvarite hitri referenčni vodnik
 
 ### 3. Ustvarite integracijske teste
 ```python
@@ -424,7 +424,7 @@ def test_all_samples():
 ```
 
 ### 4. Dodajte primerjave zmogljivosti
-Spremljajte izboljšave zmogljivosti zaradi izboljšanega obvladovanja napak.
+Sledite izboljšavam zmogljivosti zaradi izboljšav obvladovanja napak.
 
 ### 5. Povratne informacije uporabnikov
 Zberite povratne informacije udeležencev delavnice o:
@@ -437,7 +437,7 @@ Zberite povratne informacije udeležencev delavnice o:
 ## Viri
 
 - **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Hitri priročnik**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Hitri referenčni vodnik**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **Opombe o migraciji**: `Workshop/SDK_MIGRATION_NOTES.md`
 - **Glavno skladišče**: https://github.com/microsoft/Foundry-Local
 
@@ -448,29 +448,29 @@ Zberite povratne informacije udeležencev delavnice o:
 ### Dodajanje novih vzorcev
 Sledite tem vzorcem pri ustvarjanju novih vzorcev:
 
-1. Uporabite `workshop_utils` za upravljanje odjemalcev
+1. Uporabite `workshop_utils` za upravljanje odjemalca
 2. Dodajte celovito obvladovanje napak
-3. Vključite podporo okoljskim spremenljivkam
-4. Dodajte namige tipov in docstringe
+3. Vključite podporo za okoljske spremenljivke
+4. Dodajte namige za tipe in docstringe
 5. Zagotovite informativno beleženje
 6. Vključite primere uporabe v docstring
-7. Povežite se na dokumentacijo SDK
+7. Povežite se z dokumentacijo SDK
 
-### Pregledovanje posodobitev
-Pri pregledovanju posodobitev vzorcev preverite:
+### Pregled posodobitev
+Pri pregledu posodobitev vzorcev preverite:
 - [ ] Obvladovanje napak pri vseh operacijah I/O
-- [ ] Namige tipov pri javnih funkcijah
-- [ ] Celovite docstringe
-- [ ] Dokumentacijo okoljskih spremenljivk
-- [ ] Informativne povratne informacije uporabnikom
-- [ ] Povezave na referenčno dokumentacijo SDK
+- [ ] Namigi za tipe pri javnih funkcijah
+- [ ] Celoviti docstringi
+- [ ] Dokumentacija okoljskih spremenljivk
+- [ ] Informativna povratna informacija uporabnika
+- [ ] Povezave na referenčne dokumente SDK
 - [ ] Dosleden slog kode
 
 ---
 
-**Povzetek**: Vsi vzorci v Pythonu za delavnico zdaj sledijo najboljšim praksam lokalnega SDK Foundry z izboljšanim obvladovanjem napak, celovito dokumentacijo in izboljšano uporabniško izkušnjo. Brez prelomnih sprememb - vsa obstoječa funkcionalnost je ohranjena in izboljšana.
+**Povzetek**: Vsi Python vzorci delavnice zdaj sledijo najboljšim praksam lokalnega SDK Foundry z izboljšanim obvladovanjem napak, celovito dokumentacijo in izboljšano uporabniško izkušnjo. Brez prelomnih sprememb - vsa obstoječa funkcionalnost je ohranjena in izboljšana.
 
 ---
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.

@@ -2,7 +2,7 @@ foundry-local-sdk
 openai>=1.30.0
 ragas>=0.1.14
 datasets>=2.19.0
-sentence-transformers>=2.7.0
+sentence-transformers
 numpy>=1.26.0
 pandas>=2.2.0
 scikit-learn>=1.4.0

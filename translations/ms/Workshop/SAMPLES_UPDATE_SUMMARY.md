@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T19:30:28+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:43:22+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "ms"
 }
@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 Semua contoh Python dalam direktori `Workshop/samples` telah dikemas kini untuk mengikuti amalan terbaik Foundry Local SDK dan memastikan konsistensi di seluruh bengkel.
 
 **Tarikh**: 8 Oktober 2025  
-**Skop**: 9 fail Python merangkumi 6 sesi bengkel  
+**Skop**: 9 fail Python merentasi 6 sesi bengkel  
 **Fokus Utama**: Pengendalian ralat, dokumentasi, corak SDK, pengalaman pengguna
 
 ---
@@ -34,12 +34,12 @@ Semua contoh Python dalam direktori `Workshop/samples` telah dikemas kini untuk 
 ### Sesi 04: Model Terkini
 - ✅ `model_compare.py` - Perbandingan SLM vs LLM
 
-### Sesi 05: Agen Berkuasa AI
-- ✅ `agents_orchestrator.py` - Penyelarasan pelbagai agen
+### Sesi 05: Ejen Berkuasa AI
+- ✅ `agents_orchestrator.py` - Penyelarasan pelbagai ejen
 
-### Sesi 06: Model Sebagai Alat
+### Sesi 06: Model sebagai Alat
 - ✅ `models_router.py` - Penghalaan model berdasarkan niat
-- ✅ `models_pipeline.py` - Saluran berperingkat pelbagai langkah
+- ✅ `models_pipeline.py` - Saluran berperingkat berasaskan penghalaan
 
 ### Infrastruktur Sokongan
 - ✅ `workshop_utils.py` - Sudah mengikuti amalan terbaik (tiada perubahan diperlukan)
@@ -68,7 +68,7 @@ except Exception as e:
 **Manfaat:**
 - Pengendalian ralat yang lebih baik dengan mesej ralat yang jelas
 - Petunjuk penyelesaian masalah yang boleh diambil tindakan
-- Kod keluar yang sesuai untuk skrip
+- Kod keluar yang betul untuk skrip
 
 ### 2. Pengurusan Import yang Lebih Baik
 
@@ -87,13 +87,13 @@ except ImportError:
 ```
 
 **Manfaat:**
-- Panduan jelas apabila kebergantungan tiada
+- Panduan yang jelas apabila kebergantungan tiada
 - Mengelakkan ralat import yang tidak jelas
-- Arahan pemasangan yang mesra pengguna
+- Arahan pemasangan mesra pengguna
 
 ### 3. Dokumentasi Komprehensif
 
-**Ditambah pada semua contoh:**
+**Ditambah kepada semua contoh:**
 - Dokumentasi pembolehubah persekitaran dalam docstring
 - Pautan rujukan SDK
 - Contoh penggunaan
@@ -125,7 +125,7 @@ print(f"[INFO] Endpoint: {manager.endpoint}")
 print(f"[INFO] Loaded model: {alias} -> {model_id}")
 ```
 
-**Penunjuk kemajuan:**
+**Petunjuk kemajuan:**
 ```python
 print(f"[INFO] Benchmarking {alias}...")
 print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
@@ -142,7 +142,7 @@ print(json.dumps(summary, indent=2))
 
 **Penambahbaikan Sesi 03:**
 - Pengendalian ralat per model (teruskan jika berlaku kegagalan)
-- Pelaporan kemajuan yang terperinci
+- Laporan kemajuan yang terperinci
 - Pusingan pemanasan dilaksanakan dengan betul
 - Sokongan pengukuran latensi token pertama
 - Pemisahan peringkat yang jelas
@@ -171,11 +171,11 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 - Pemformatan output ujian
 - Pemulihan ralat dalam ujian batch
 
-### 8. Penyelarasan Pelbagai Agen
+### 8. Penyelarasan Pelbagai Ejen
 
 **Penambahbaikan Sesi 05:**
-- Pelaporan kemajuan peringkat demi peringkat
-- Pengendalian ralat per agen
+- Laporan kemajuan peringkat demi peringkat
+- Pengendalian ralat per ejen
 - Struktur saluran yang jelas
 - Dokumentasi pengurusan memori yang lebih baik
 
@@ -200,61 +200,61 @@ pip install -r Workshop/requirements.txt
 
 #### Sesi 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Sesi 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Sesi 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Sesi 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Sesi 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Sesi 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
@@ -264,11 +264,11 @@ python models_pipeline.py
 ### Global (Semua Contoh)
 | Pembolehubah | Penerangan | Lalai |
 |--------------|------------|-------|
-| `FOUNDRY_LOCAL_ALIAS` | Alias model yang digunakan | Berbeza mengikut contoh |
-| `FOUNDRY_LOCAL_ENDPOINT` | Gantikan titik akhir perkhidmatan | Dikesan secara automatik |
+| `FOUNDRY_LOCAL_ALIAS` | Alias model untuk digunakan | Berbeza mengikut contoh |
+| `FOUNDRY_LOCAL_ENDPOINT` | Menimpa titik akhir perkhidmatan | Dikesan secara automatik |
 | `SHOW_USAGE` | Paparkan penggunaan token | `0` |
-| `RETRY_ON_FAIL` | Aktifkan logik cubaan semula | `1` |
-| `RETRY_BACKOFF` | Kelewatan cubaan semula awal | `1.0` |
+| `RETRY_ON_FAIL` | Aktifkan logik percubaan semula | `1` |
+| `RETRY_BACKOFF` | Kelewatan percubaan semula awal | `1.0` |
 
 ### Khusus Contoh
 | Pembolehubah | Digunakan Oleh | Penerangan |
@@ -282,9 +282,9 @@ python models_pipeline.py
 | `SLM_ALIAS` | Sesi 04 | Model bahasa kecil |
 | `LLM_ALIAS` | Sesi 04 | Model bahasa besar |
 | `COMPARE_PROMPT` | Sesi 04 | Prompt ujian perbandingan |
-| `AGENT_MODEL_PRIMARY` | Sesi 05 | Model agen utama |
-| `AGENT_MODEL_EDITOR` | Sesi 05 | Model agen editor |
-| `AGENT_QUESTION` | Sesi 05 | Soalan ujian untuk agen |
+| `AGENT_MODEL_PRIMARY` | Sesi 05 | Model ejen utama |
+| `AGENT_MODEL_EDITOR` | Sesi 05 | Model ejen editor |
+| `AGENT_QUESTION` | Sesi 05 | Soalan ujian untuk ejen |
 | `PIPELINE_TASK` | Sesi 06 | Tugas untuk saluran |
 
 ---
@@ -295,7 +295,7 @@ python models_pipeline.py
 
 Skrip sedia ada akan terus berfungsi. Ciri baharu adalah:
 - Pembolehubah persekitaran pilihan
-- Mesej ralat yang dipertingkatkan (tidak merosakkan fungsi)
+- Mesej ralat yang dipertingkatkan (tidak memecahkan fungsi)
 - Log tambahan (boleh disenyapkan)
 - Petunjuk jenis yang lebih baik (tiada kesan masa jalan)
 
@@ -361,7 +361,7 @@ alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
 
-### 7. Penurunan Prestasi yang Lancar
+### 7. Kemerosotan yang Lancar
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -413,10 +413,10 @@ Laksanakan senarai semak ujian di atas untuk memastikan semua contoh berfungsi d
 
 ### 2. Kemas Kini Dokumentasi
 - Kemas kini fail markdown sesi dengan contoh baharu
-- Tambah bahagian penyelesaian masalah ke README utama
-- Cipta panduan rujukan pantas
+- Tambahkan bahagian penyelesaian masalah ke README utama
+- Buat panduan rujukan pantas
 
-### 3. Cipta Ujian Integrasi
+### 3. Buat Ujian Integrasi
 ```python
 # Workshop/tests/test_samples.py
 def test_all_samples():
@@ -449,9 +449,9 @@ Kumpulkan maklum balas daripada peserta bengkel mengenai:
 Ikuti corak ini semasa mencipta contoh baharu:
 
 1. Gunakan `workshop_utils` untuk pengurusan klien
-2. Tambah pengendalian ralat yang komprehensif
+2. Tambahkan pengendalian ralat yang komprehensif
 3. Sertakan sokongan pembolehubah persekitaran
-4. Tambah petunjuk jenis dan docstring
+4. Tambahkan petunjuk jenis dan docstring
 5. Sediakan log maklumat
 6. Sertakan contoh penggunaan dalam docstring
 7. Pautkan ke dokumentasi SDK
@@ -473,4 +473,4 @@ Semasa menyemak kemas kini contoh, periksa:
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

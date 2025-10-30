@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-08T19:13:14+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T20:52:25+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "ja"
 }
@@ -11,45 +11,45 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概要
 
-Windows 11にFoundry Localをインストールして設定し、旅を始めましょう。CLIのセットアップ、ハードウェアアクセラレーションの有効化、モデルのキャッシュによる高速なローカル推論の方法を学びます。このハンズオンセッションでは、Phi、Qwen、DeepSeek、GPT-OSS-20Bなどのモデルを再現可能なCLIコマンドを使用して実行する方法を説明します。
+Windows 11にFoundry Localをインストールして設定し、旅を始めましょう。CLIのセットアップ、ハードウェアアクセラレーションの有効化、モデルのキャッシュによる高速なローカル推論の方法を学びます。このハンズオンセッションでは、Phi、Qwen、DeepSeek、GPT-OSS-20Bなどのモデルを再現可能なCLIコマンドを使って実行する手順を紹介します。
 
 ## 学習目標
 
-このセッションの終わりまでに、以下を達成できるようになります：
+このセッションの終了時には以下を達成できます:
 
-- **インストールと設定**: Windows 11上でFoundry Localを最適なパフォーマンス設定でセットアップする
-- **CLI操作の習得**: Foundry Local CLIを使用してモデルの管理とデプロイを行う
-- **ハードウェアアクセラレーションの有効化**: ONNXRuntimeまたはWebGPUを使用してGPUアクセラレーションを設定する
-- **複数モデルのデプロイ**: phi-4、GPT-OSS-20B、Qwen、DeepSeekモデルをローカルで実行する
-- **最初のアプリを構築**: 既存のサンプルを適応させてFoundry Local Python SDKを使用する
+- **インストールと設定**: Windows 11でFoundry Localを最適なパフォーマンス設定でセットアップ
+- **CLI操作の習得**: Foundry Local CLIを使用してモデル管理とデプロイを実施
+- **ハードウェアアクセラレーションの有効化**: ONNXRuntimeまたはWebGPUを使用してGPUアクセラレーションを設定
+- **複数モデルのデプロイ**: phi-4、GPT-OSS-20B、Qwen、DeepSeekモデルをローカルで実行
+- **初めてのアプリ構築**: 既存のサンプルをFoundry Local Python SDKを使用して適応
 
-# モデルのテスト（非対話型単一プロンプト）
-foundry model run phi-4-mini --prompt "こんにちは、自己紹介をしてください"
+# モデルのテスト (非対話型単一プロンプト)
+foundry model run phi-4-mini --prompt "こんにちは、自己紹介してください"
 
 - Windows 11 (22H2以降)
-# 利用可能なカタログモデルの一覧表示（実行されたモデルは表示されます）
+# 利用可能なカタログモデルの一覧表示 (実行済みモデルは実行後に表示されます)
 foundry model list
-## NOTE: 現在、専用の`--running`フラグはありません。ロードされているモデルを確認するには、チャットを開始するか、サービスログを確認してください。
-- Python 3.10+がインストールされていること
-- Python拡張機能付きのVisual Studio Code
+## NOTE: 現在、専用の`--running`フラグはありません。ロードされているモデルを確認するには、チャットを開始するかサービスログを確認してください。
+- Python 3.10+インストール済み
+- Python拡張機能付きVisual Studio Code
 - インストールのための管理者権限
 
-### （オプション）環境変数
+### (オプション) 環境変数
 
-スクリプトを移植可能にするために`.env`を作成する（またはシェルで設定）：
-# 応答を比較（非対話型）
+スクリプトを移植可能にするために`.env`を作成するか、シェルで設定します:
+# レスポンスの比較 (非対話型)
 foundry model run gpt-oss-20b --prompt "エッジAIを簡単に説明してください"
 | 変数 | 目的 | 例 |
 |------|------|----|
-| `FOUNDRY_LOCAL_ALIAS` | 好みのモデルエイリアス（カタログが最適なバリアントを自動選択） | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | エンドポイントを上書き（デフォルトではマネージャーから自動取得） | `http://localhost:5273/v1` |
+| `FOUNDRY_LOCAL_ALIAS` | 推奨モデルエイリアス (カタログが最適なバリアントを自動選択) | `phi-3.5-mini` |
+| `FOUNDRY_LOCAL_ENDPOINT` | エンドポイントの上書き (通常はマネージャーから自動取得) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | ストリーミングデモを有効化 | `true` |
 
-> `FOUNDRY_LOCAL_ENDPOINT=auto`（または未設定）の場合、SDKマネージャーから自動的に取得します。
+> `FOUNDRY_LOCAL_ENDPOINT=auto` (または未設定)の場合、SDKマネージャーから自動的に取得します。
 
-## デモフロー（30分）
+## デモフロー (30分)
 
-### 1. Foundry LocalのインストールとCLIセットアップの確認（10分）
+### 1. Foundry LocalのインストールとCLIセットアップの確認 (10分)
 
 # キャッシュされたモデルの一覧表示
 foundry cache list
@@ -62,9 +62,9 @@ winget install Microsoft.FoundryLocal
 # https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
 
-**macOS（プレビュー/サポートされている場合）**
+**macOS (プレビュー / サポートされている場合)**
 
-ネイティブmacOSパッケージが提供されている場合（最新情報は公式ドキュメントを確認）：
+ネイティブmacOSパッケージが提供されている場合 (最新情報は公式ドキュメントを確認してください):
 
 ```bash
 # Homebrew (if/when available)
@@ -77,11 +77,11 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-ネイティブmacOSバイナリがまだ利用できない場合でも、以下の方法があります：
-1. Windows 11 ARM/Intel VM（Parallels / UTM）を使用し、Windowsの手順に従う。
-2. コンテナを使用してモデルを実行（コンテナイメージが公開されている場合）し、`FOUNDRY_LOCAL_ENDPOINT`を公開ポートに設定。
+macOSネイティブバイナリがまだ利用できない場合、以下の方法を使用できます:
+1. Windows 11 ARM/Intel VM (Parallels / UTM)を使用し、Windows手順に従う。
+2. コンテナを使用してモデルを実行 (コンテナイメージが公開されている場合)し、`FOUNDRY_LOCAL_ENDPOINT`を公開ポートに設定。
 
-**Python仮想環境の作成（クロスプラットフォーム）**
+**Python仮想環境の作成 (クロスプラットフォーム)**
 
 Windows PowerShell:
 ```powershell
@@ -95,7 +95,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-pipをアップグレードし、コア依存関係をインストール：
+pipをアップグレードし、主要な依存関係をインストール:
 ```bash
 python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
@@ -126,9 +126,9 @@ py -m venv .venv
 pip install foundry-local-sdk openai requests
 ```
 
-### SDKのブートストラップ（推奨）
+### SDKブートストラッピング (推奨)
 
-サービスを手動で開始してモデルを実行する代わりに、**Foundry Local Python SDK**を使用してすべてをブートストラップできます：
+サービスを手動で開始してモデルを実行する代わりに、**Foundry Local Python SDK**がすべてをブートストラップできます:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -160,32 +160,7 @@ print(resp.choices[0].message.content)
 
 明示的な制御を好む場合は、後述のCLI + OpenAIクライアントを使用することも可能です。
 
-### 2. GPUアクセラレーションの有効化（5分）
-
-#### ステップ2.1: ハードウェアの能力を確認
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### ステップ2.2: ハードウェアアクセラレーションの設定
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. CLIを使用してローカルでモデルを実行（10分）
+### 2. CLIを使用してローカルでモデルを実行 (10分)
 
 #### ステップ3.1: Phi-4モデルのデプロイ
 
@@ -223,11 +198,11 @@ foundry model download deepseek-coder-1.3b
 foundry cache list
 ```
 
-### 4. スタータープロジェクト: Foundry Local用に01-run-phiを適応（5分）
+### 4. スタータープロジェクト: Foundry Local用に01-run-phiを適応 (5分)
 
 #### ステップ4.1: 基本的なチャットアプリケーションの作成
 
-`samples/01-foundry-quickstart/chat_quickstart.py`を作成（マネージャーが利用可能な場合に更新）：
+`samples/01-foundry-quickstart/chat_quickstart.py`を作成 (マネージャーが利用可能な場合に更新):
 
 ```python
 #!/usr/bin/env python3
@@ -310,7 +285,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Found
 python samples/01-foundry-quickstart/chat_quickstart.py
 ```
 
-## カバーされた主要な概念
+## カバーする主要な概念
 
 ### 1. Foundry Localアーキテクチャ
 
@@ -390,7 +365,7 @@ foundry model run phi-4-mini
 dir "$env:USERPROFILE\.foundry\models"
 ```
 
-### 問題3: "localhost:5273で接続が拒否されました"
+### 問題3: "localhost:5273への接続が拒否されました"
 
 **解決策:**
 ```powershell
@@ -408,8 +383,8 @@ netstat -an | findstr 5273
 
 ### 1. モデル選択戦略
 
-- **Phi-4-mini**: 一般的なタスクに最適、メモリ使用量が少ない
-- **Qwen2.5-0.5b**: 最速の推論、最小限のリソース
+- **Phi-4-mini**: 一般的なタスクに最適、低メモリ使用量
+- **Qwen2.5-0.5b**: 最速の推論、最小リソース
 - **GPT-OSS-20B**: 最高品質、より多くのリソースが必要
 - **DeepSeek-Coder**: プログラミングタスクに最適化
 
@@ -429,32 +404,33 @@ foundry config set model.preload false
 ### 3. パフォーマンスの監視
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### オプションの強化
 
 | 強化 | 内容 | 方法 |
-|------|------|-----|
-| 共有ユーティリティ | クライアント/ブートストラップロジックの重複を削除 | `Workshop/samples/workshop_utils.py`（`get_client`, `chat_once`）を使用 |
-| トークン使用の可視化 | コスト/効率の意識を早期に教える | `SHOW_USAGE=1`を設定してプロンプト/完了/合計トークンを表示 |
-| 決定論的比較 | 安定したベンチマークと回帰チェック | `temperature=0`、`top_p=1`、一貫したプロンプトテキストを使用 |
-| 最初のトークン遅延 | 知覚的な応答性の指標 | ストリーミング（`BENCH_STREAM=1`）を使用してベンチマークスクリプトを適応 |
-| 一時的なエラーのリトライ | コールドスタート時のデモの回復力 | `RETRY_ON_FAIL=1`（デフォルト）を設定し、`RETRY_BACKOFF`を調整 |
-| スモークテスト | 主要なフロー全体の簡単な健全性チェック | ワークショップ前に`python Workshop/tests/smoke.py`を実行 |
-| モデルエイリアスプロファイル | マシン間でモデルセットを迅速に切り替え | `.env`に`FOUNDRY_LOCAL_ALIAS`、`SLM_ALIAS`、`LLM_ALIAS`を維持 |
-| キャッシュ効率 | マルチサンプル実行での繰り返しウォームアップを回避 | ユーティリティキャッシュマネージャーを使用し、スクリプト/ノートブック間で再利用 |
+|------|------|------|
+| 共有ユーティリティ | 重複するクライアント/ブートストラップロジックを削除 | `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`)を使用 |
+| トークン使用状況の可視化 | コスト/効率性の意識を早期に教える | `SHOW_USAGE=1`を設定してプロンプト/完了/合計トークンを表示 |
+| 決定論的比較 | 安定したベンチマークと回帰チェック | `temperature=0`, `top_p=1`, 一貫したプロンプトテキストを使用 |
+| 最初のトークン遅延 | 知覚される応答性の指標 | ストリーミングを使用してベンチマークスクリプトを適応 (`BENCH_STREAM=1`) |
+| 一時的なエラー時のリトライ | コールドスタート時のデモの回復力 | `RETRY_ON_FAIL=1` (デフォルト) & `RETRY_BACKOFF`を調整 |
+| スモークテスト | 主要なフロー全体の簡易的な健全性チェック | ワークショップ前に`python Workshop/tests/smoke.py`を実行 |
+| モデルエイリアスプロファイル | マシン間でモデルセットを迅速に切り替え | `.env`を維持し、`FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS`を設定 |
+| キャッシュ効率 | 複数サンプル実行時の繰り返しウォームアップを回避 | ユーティリティキャッシュマネージャー; スクリプト/ノートブック間で再利用 |
 | 初回実行ウォームアップ | p95遅延スパイクを削減 | `FoundryLocalManager`作成後に小さなプロンプトを実行 |
 
-決定論的なウォームベースラインの例（PowerShell）：
+決定論的なウォームベースラインの例 (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -463,28 +439,28 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-2回目の実行で同様の出力と同一のトークン数が表示され、決定論が確認されます。
+2回目の実行で同様の出力と同一のトークン数が表示され、決定論性が確認できます。
 
 ## 次のステップ
 
-このセッションを完了した後：
+このセッションを完了した後:
 
 1. **セッション2を探索**: Azure AI Foundry RAGを使用してAIソリューションを構築
 2. **異なるモデルを試す**: Qwen、DeepSeek、その他のモデルファミリーを試す
-3. **パフォーマンスを最適化**: 特定のハードウェアに合わせて設定を調整
+3. **パフォーマンスを最適化**: 特定のハードウェアに合わせて設定を微調整
 4. **カスタムアプリケーションを構築**: Foundry Local SDKを使用して独自のプロジェクトを作成
 
 ## 追加リソース
 
 ### ドキュメント
-- [Foundry Local Python SDK リファレンス](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [Foundry Local インストールガイド](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
+- [Foundry Local Python SDKリファレンス](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
+- [Foundry Localインストールガイド](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 - [モデルカタログ](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### サンプルコード
 - [Module08 Sample 01](./samples/01/README.md) - RESTチャットクイックスタート
 - [Module08 Sample 02](./samples/02/README.md) - OpenAI SDK統合
-- [Module08 Sample 03](./samples/03/README.md) - モデルの発見とベンチマーク
+- [Module08 Sample 03](./samples/03/README.md) - モデル探索とベンチマーク
 
 ### コミュニティ
 - [Foundry Local GitHub Discussions](https://github.com/microsoft/Foundry-Local/discussions)
@@ -492,21 +468,21 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 
 ---
 
-**セッション時間**: ハンズオン30分 + 質疑応答15分  
+**セッション時間**: ハンズオン30分 + Q&A15分  
 **難易度レベル**: 初級  
-**前提条件**: Windows 11、Python 3.10+、管理者権限
+**前提条件**: Windows 11、Python 3.10+、管理者アクセス
 
-## サンプルシナリオとワークショップのマッピング
+## サンプルシナリオとワークショップマッピング
 
 | ワークショップスクリプト / ノートブック | シナリオ | 目標 | 入力例 | 必要なデータセット |
-|--------------------------------|----------|------|--------|----------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | プライバシー評価ポータルのためのオンデバイス推論を評価する内部ITチーム | ローカルSLMが標準プロンプトで1秒未満の遅延で応答することを証明 | "ローカル推論の2つの利点を挙げてください。" | なし（単一プロンプト） |
-| クイックスタート適応コードブロック | 既存のOpenAIスクリプトをFoundry Localに移行する開発者 | ドロップイン互換性を示す | "ローカル推論の2つの利点を挙げてください。" | インラインプロンプトのみ |
+|------------------------------------------|----------|------|--------|------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | プライバシー評価ポータルのためのオンデバイス推論を評価する内部ITチーム | ローカルSLMが標準プロンプトでサブ秒の遅延で応答することを証明 | "ローカル推論の利点を2つ挙げてください。" | なし (単一プロンプト) |
+| クイックスタート適応コードブロック | 既存のOpenAIスクリプトをFoundry Localに移行する開発者 | ドロップイン互換性を示す | "ローカル推論の利点を2つ挙げてください。" | インラインプロンプトのみ |
 
-### シナリオの説明
-セキュリティ＆コンプライアンスチームは、機密性の高いプロトタイプデータをローカルで処理できるかどうかを検証する必要があります。彼らはブートストラップスクリプトを使用して、決定論的な`temperature=0`モードでいくつかのプロンプト（プライバシー、遅延、コスト）を実行し、後の比較（セッション3のベンチマークとセッション4のSLM対LLMの対比）のためのベースライン出力を収集します。
+### シナリオの概要
+セキュリティ＆コンプライアンスチームは、機密プロトタイプデータがローカルで処理可能かどうかを検証する必要があります。彼らはブートストラップスクリプトを使用して、いくつかのプロンプト (プライバシー、遅延、コスト) を実行し、決定論的なtemperature=0モードでベースライン出力をキャプチャし、後の比較 (セッション3のベンチマークとセッション4のSLM vs LLM対比) に使用します。
 
-### 最小プロンプトセットJSON（オプション）
+### 最小プロンプトセットJSON (オプション)
 ```json
 [
     "List two benefits of local inference.",
@@ -515,9 +491,9 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 ]
 ```
 
-このリストを使用して、再現可能な評価ループを作成するか、将来の回帰テストハーネスのシードとして使用してください。
+このリストを使用して再現可能な評価ループを作成するか、将来の回帰テストハーネスのシードとして使用してください。
 
 ---
 
 **免責事項**:  
-この文書は、AI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。元の言語で記載された文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解釈について、当方は一切の責任を負いません。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確さが含まれる可能性があります。元の言語で記載された文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤認について、当方は責任を負いません。

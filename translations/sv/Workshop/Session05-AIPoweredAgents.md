@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T12:53:39+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T22:04:13+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "sv"
 }
@@ -11,15 +11,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Sammanfattning
 
-Designa och orkestrera AI-agenter med flera roller genom att använda Foundry Locals låg-latens och integritetsbevarande runtime. Du kommer att definiera agentroller, minnesstrategier, mönster för verktygsanrop och exekveringsgrafer. Sessionen introducerar ramverksmönster som du kan utöka med Chainlit eller LangGraph. Startprojektet bygger vidare på det befintliga agentarkitekturexemplet för att lägga till minnespersistens och utvärderingskrokar.
+Designa och orkestrera AI-agenter med flera roller genom att använda Foundry Locals låg-latens och integritetsbevarande runtime. Du kommer att definiera agentroller, minnesstrategier, verktygsanropsmönster och exekveringsgrafer. Sessionen introducerar grundläggande mönster som du kan utöka med Chainlit eller LangGraph. Startprojektet bygger vidare på den befintliga agentarkitekturen för att lägga till minnespersistens och utvärderingsfunktioner.
 
 ## Lärandemål
 
 - **Definiera roller**: Systemprompter och kapacitetsgränser
-- **Implementera minne**: Korttidsminne (konversation), långtidsminne (vektor / fil), tillfälliga anteckningar
-- **Bygga arbetsflöden**: Sekventiella, förgrenade och parallella agentsteg
-- **Integrera verktyg**: Lättviktigt mönster för funktionsanrop
-- **Utvärdera**: Grundläggande spårning + utvärdering baserad på kriterier
+- **Implementera minne**: Kortvarigt (konversation), långvarigt (vektor / fil), tillfälliga anteckningar
+- **Skapa arbetsflöden**: Sekventiella, förgrenade och parallella agentsteg
+- **Integrera verktyg**: Lättviktigt funktionsanropsmönster
+- **Utvärdera**: Grundläggande spårning + resultatbedömning baserad på kriterier
 
 ## Förkunskaper
 
@@ -27,7 +27,7 @@ Designa och orkestrera AI-agenter med flera roller genom att använda Foundry Lo
 - Python med `foundry-local-sdk`, `openai`, valfritt `chainlit`
 - Lokala modeller igång (minst `phi-4-mini`)
 
-### Plattformsspecifika miljöutdrag
+### Miljöutdrag för flera plattformar
 
 Windows:
 ```powershell
@@ -45,7 +45,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Om agenter körs från macOS mot en fjärransluten Windows-värdtjänst:
+Om agenter körs från macOS mot en fjärrvärdtjänst på Windows:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -122,7 +122,7 @@ if __name__ == "__main__":
 ```
 
 
-### 2. CLI-ramverksmönster (3 min)
+### 2. CLI-strukturmönster (3 min)
 
 ```powershell
 python samples/05-agents/agents_core.py
@@ -149,6 +149,7 @@ TOOLS = {
     "estimate_tokens": tool_estimate_tokens
 }
 ```
+
 
 Ändra `agents_core.py` för att tillåta enkel verktygssyntax: användaren skriver `#tool:get_time` och agenten expanderar verktygsutdata till kontexten innan generering.
 
@@ -189,9 +190,9 @@ if __name__ == '__main__':
 
 Lägg till:
 1. Persistent minneslager (t.ex. JSON-linjer som lägger till konversationer)
-2. Enkel utvärderingsmall: placeholders för faktakontroll / tydlighet / stil
-3. Valfri Chainlit-front-end (två flikar: konversation & spår)
-4. Valfri LangGraph-stil state machine (om beroende läggs till) för förgreningsbeslut
+2. Enkel utvärderingsmall: faktualitet / tydlighet / stilplatshållare
+3. Valfri Chainlit-front-end (två flikar: konversation och spår)
+4. Valfri LangGraph-stil statsmaskin (om beroende läggs till) för förgreningsbeslut
 
 ## Valideringschecklista
 
@@ -200,18 +201,19 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Förvänta dig strukturerad pipeline-utdata med anteckning om verktygsinjektion.
+
+Förvänta dig strukturerad pipelineutdata med anteckning om verktygsinjektion.
 
 ## Översikt över minnesstrategier
 
 | Lager | Syfte | Exempel |
 |-------|-------|---------|
-| Korttidsminne | Dialogkontinuitet | De senaste N meddelandena |
-| Episodiskt | Sessionsåterkallelse | JSON per session |
-| Semantiskt | Långtidsåterhämtning | Vektorlager av sammanfattningar |
-| Anteckningsblock | Resonemangssteg | Inbäddad tankekedja (privat) |
+| Kortvarigt | Dialogkontinuitet | Senaste N meddelanden |
+| Episodiskt | Sessionsminne | JSON per session |
+| Semantiskt | Långtidsåterkallelse | Vektorlager av sammanfattningar |
+| Anteckningar | Resonemangssteg | Inbyggd kedja av tankar (privat) |
 
-## Utvärderingskrokar (Konceptuellt)
+## Utvärderingsfunktioner (Konceptuellt)
 
 ```python
 evaluation = {
@@ -228,9 +230,9 @@ evaluation = {
 
 | Problem | Orsak | Lösning |
 |---------|-------|---------|
-| Upprepade svar | För stort/litet kontextfönster | Justera minnesfönsterparametern |
+| Upprepande svar | Kontextfönstret är för stort/litet | Justera minnesfönsterparametern |
 | Verktyg anropas inte | Fel syntax | Använd formatet `#tool:tool_name` |
-| Långsam orkestrering | Flera kalla modeller | Förvärm modeller med prompts |
+| Långsam orkestrering | Flera kalla modeller | Förbered uppvärmningsprompter i förväg |
 
 ## Referenser
 
@@ -243,25 +245,29 @@ evaluation = {
 **Sessionens längd**: 30 min  
 **Svårighetsgrad**: Avancerad
 
-## Exempelscenario och workshopkarta
+## Exempelscenario och workshopkartläggning
 
-| Workshop-skript | Scenario | Mål | Exempelprompt |
-|-----------------|----------|-----|---------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Kunskapsforskningsbot som skapar ledningsvänliga sammanfattningar | Två-agenters pipeline (forskning → redaktionell polering) med valfria distinkta modeller | Förklara varför edge-inferens är viktigt för efterlevnad. |
-| (Utökat) `tools.py`-koncept | Lägg till verktyg för tid & token-uppskattning | Demonstrera lättviktigt verktygsanropsmönster | #tool:get_time |
+| Workshopskript | Scenario | Mål | Exempelprompt |
+|----------------|----------|-----|---------------|
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Kunskapsforskningsbot som producerar sammanfattningar för ledningsgrupper | Två-agentspipeline (forskning → redaktionell polering) med valfria separata modeller | Förklara varför edge-inferens är viktigt för efterlevnad. |
+| (Utökat) `tools.py`-koncept | Lägg till tid- och tokenberäkningsverktyg | Demonstrera lättviktigt verktygsanropsmönster | #tool:get_time |
 
 ### Scenarionarrativ
-Teamet för efterlevnadsdokumentation behöver snabba interna sammanfattningar hämtade från lokal kunskap utan att skicka utkast till molntjänster. En forskaragent samlar kortfattade faktapunkter; en redaktörsagent omformulerar för ledningsmässig tydlighet. Distinkta modellalias kan tilldelas för att optimera latens (snabb SLM) kontra stilistisk förfining (större modell endast vid behov).
 
-### Exempel på multimodellmiljö
+Teamet för efterlevnadsdokumentation behöver snabba interna sammanfattningar baserade på lokal kunskap utan att skicka utkast till molntjänster. En forskaragent samlar kortfattade faktapunkter; en redaktörsagent omformulerar för ledningsmässig tydlighet. Separata modellalias kan tilldelas för att optimera latens (snabb SLM) kontra stilistisk förfining (större modell endast vid behov).
+
+### Exempel på miljö med flera modeller
+
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
 ### Spårstruktur (Valfritt)
+
 ```json
 {
     "step": 1,
@@ -273,22 +279,23 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Spara varje steg till en JSONL-fil för senare utvärdering med kriterier.
+
+Spara varje steg till en JSONL-fil för senare bedömning med kriterier.
 
 ### Valfria förbättringar
 
-| Tema | Förbättring | Fördel | Implementationsskiss |
+| Tema | Förbättring | Fördel | Implementeringsskiss |
 |------|-------------|--------|-----------------------|
-| Multi-modellroller | Distinkta modeller per agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specialisering & hastighet | Välj alias-miljövariabler, anropa `chat_once` med alias per roll |
-| Strukturerade spår | JSON-spår av varje akt (verktyg, indata, latens, tokens) | Felsökning & utvärdering | Lägg till dict till en lista; skriv `.jsonl` i slutet |
+| Roller med flera modeller | Separata modeller per agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specialisering och hastighet | Välj aliasmiljövariabler, anropa `chat_once` med alias per roll |
+| Strukturerade spår | JSON-spår av varje akt (verktyg, input, latens, tokens) | Felsökning och utvärdering | Lägg till dict till en lista; skriv `.jsonl` vid slutet |
 | Minnespersistens | Återladdningsbar dialogkontext | Sessionskontinuitet | Spara `Agent.memory` till `sessions/<ts>.json` |
-| Verktygsregister | Dynamisk verktygsupptäckt | Utbyggbarhet | Underhåll `TOOLS`-dict & inspektera namn/beskrivningar |
-| Återförsök & backoff | Robust långa kedjor | Minska tillfälliga fel | Omslut `act` med try/except + exponentiell backoff |
-| Utvärderingsmall | Automatiserade kvalitativa etiketter | Spåra förbättringar | Sekundär passering som ber modellen: "Betygsätt tydlighet 1-5" |
-| Vektorminne | Semantisk återhämtning | Rik långtidskontext | Bädda in sammanfattningar, hämta top-k till systemmeddelande |
-| Strömmande svar | Snabbare upplevd respons | Förbättrad användarupplevelse | Använd strömning när tillgängligt och spola delvis genererade tokens |
-| Deterministiska tester | Kontroll av regression | Stabil CI | Kör med `temperature=0`, fasta promptfrön |
-| Parallella förgreningar | Snabbare utforskning | Genomströmning | Använd `concurrent.futures` för oberoende agentsteg |
+| Verktygsregister | Dynamisk verktygsupptäckt | Utbyggbarhet | Underhåll `TOOLS`-dict och inspektera namn/beskrivningar |
+| Återförsök och backoff | Robust långa kedjor | Minska tillfälliga fel | Omslut `act` med try/except + exponentiell backoff |
+| Bedömningsmall | Automatiserade kvalitativa etiketter | Spåra förbättringar | Sekundär passering som ber modellen: "Betygsätt tydlighet 1-5" |
+| Vektorminne | Semantisk återkallelse | Rik långsiktig kontext | Bädda in sammanfattningar, hämta topp-k till systemmeddelande |
+| Strömmande svar | Snabbare upplevd respons | UX-förbättring | Använd strömning när tillgängligt och spola ut delvisa tokens |
+| Deterministiska tester | Regressionskontroll | Stabil CI | Kör med `temperature=0`, fasta promptfrön |
+| Parallell förgrening | Snabbare utforskning | Genomströmning | Använd `concurrent.futures` för oberoende agentsteg |
 
 #### Exempel på spårpost
 
@@ -310,9 +317,10 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
+
 Spara (`answer`, `rating`)-par för att bygga en historisk kvalitetsgraf.
 
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen notera att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

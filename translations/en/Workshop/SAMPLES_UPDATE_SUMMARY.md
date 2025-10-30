@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T21:38:34+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T19:59:26+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "en"
 }
@@ -54,7 +54,7 @@ All Python samples in the `Workshop/samples` directory have been updated to alig
 ```python
 manager, client, model_id = get_client(alias)
 ```
-  
+
 **After:**
 ```python
 try:
@@ -64,11 +64,11 @@ except Exception as e:
     print("[INFO] Ensure Foundry Local is running: foundry service status")
     sys.exit(1)
 ```
-  
+
 **Benefits:**
 - Graceful error handling with clear error messages
 - Actionable troubleshooting tips
-- Proper exit codes for scripting
+- Proper exit codes for scripts
 
 ### 2. Better Import Management
 
@@ -76,7 +76,7 @@ except Exception as e:
 ```python
 from sentence_transformers import SentenceTransformer
 ```
-  
+
 **After:**
 ```python
 try:
@@ -85,7 +85,7 @@ except ImportError:
     print("[ERROR] sentence-transformers is required. Install with: pip install sentence-transformers")
     sys.exit(1)
 ```
-  
+
 **Benefits:**
 - Clear guidance for missing dependencies
 - Avoids cryptic import errors
@@ -115,7 +115,6 @@ def pipeline(task: str) -> Dict[str, Any]:
         Exception: If any pipeline stage fails
     """
 ```
-  
 
 ### 4. Improved User Feedback
 
@@ -125,28 +124,27 @@ print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
 print(f"[INFO] Loaded model: {alias} -> {model_id}")
 ```
-  
+
 **Progress indicators:**
 ```python
 print(f"[INFO] Benchmarking {alias}...")
 print(f"  Round {round_num + 1}/{ROUNDS}: {latency:.3f}s")
 print(f"[INFO] Completed {alias}\n")
 ```
-  
+
 **Structured output:**
 ```python
 print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
-  
 
 ### 5. Robust Benchmarking
 
 **Session 03 improvements:**
-- Per-model error handling (continues execution on failure)
-- Detailed progress reporting
+- Error handling for individual models (continues on failure)
+- Detailed progress updates
 - Proper execution of warmup rounds
-- Support for first-token latency measurement
+- Support for measuring first-token latency
 - Clear separation of benchmarking stages
 
 ### 6. Consistent Type Hints
@@ -158,7 +156,7 @@ from typing import Dict, List, Tuple, Any, Optional
 def run(alias: str) -> Tuple[float, str, Optional[int]]:
     """Run comparison for given model alias."""
 ```
-  
+
 **Benefits:**
 - Improved IDE autocomplete
 - Early detection of errors
@@ -176,8 +174,8 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ### 8. Multi-Agent Orchestration
 
 **Session 05 improvements:**
-- Progress reporting for each stage
-- Per-agent error handling
+- Progress updates for each stage
+- Error handling for individual agents
 - Clear pipeline structure
 - Improved memory management documentation
 
@@ -197,69 +195,67 @@ foundry model run qwen2.5-0.5b
 # Install dependencies
 pip install -r Workshop/requirements.txt
 ```
-  
 
 ### Test Each Sample
 
 #### Session 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
-  
+
 #### Session 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
-  
+
 #### Session 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
-  
+
 #### Session 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
-  
+
 #### Session 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
-  
+
 #### Session 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
-  
 
 ---
 
@@ -289,7 +285,7 @@ python models_pipeline.py
 | `AGENT_MODEL_PRIMARY` | Session 05 | Primary agent model |
 | `AGENT_MODEL_EDITOR` | Session 05 | Editor agent model |
 | `AGENT_QUESTION` | Session 05 | Test question for agents |
-| `PIPELINE_TASK` | Session 06 | Task for pipeline |
+| `PIPELINE_TASK` | Session 06 | Task for pipeline execution |
 
 ---
 
@@ -299,9 +295,9 @@ python models_pipeline.py
 
 Existing scripts will continue to function as before. New features include:
 - Optional environment variables
-- Enhanced error messages (do not disrupt functionality)
-- Additional logging (can be suppressed)
-- Improved type hints (no runtime impact)
+- Improved error messages (no impact on functionality)
+- Additional logging (can be disabled)
+- Enhanced type hints (no effect on runtime)
 
 ---
 
@@ -314,7 +310,7 @@ from workshop_utils import get_client, chat_once
 # Provides caching, retry, and endpoint management
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
-  
+
 ### 2. Proper Error Handling Pattern
 ```python
 try:
@@ -325,14 +321,14 @@ except Exception as e:
     print("[INFO] Check: foundry service status")
     sys.exit(1)
 ```
-  
+
 ### 3. Informative Logging
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
 print(f"[RESULT] Final output")  # Results
 ```
-  
+
 ### 4. Type Hints
 ```python
 from typing import Dict, List, Optional
@@ -340,7 +336,7 @@ from typing import Dict, List, Optional
 def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
-  
+
 ### 5. Comprehensive Docstrings
 ```python
 def function(arg: str) -> str:
@@ -356,7 +352,7 @@ def function(arg: str) -> str:
         Exception: When it fails
     """
 ```
-  
+
 ### 6. Environment Variable Support
 ```python
 import os
@@ -364,7 +360,7 @@ import os
 alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
-  
+
 ### 7. Graceful Degradation
 ```python
 # In benchmarks - continue on individual failures
@@ -376,49 +372,44 @@ for model in models:
         print(f"[ERROR] {model} failed: {e}")
         print(f"[INFO] Skipping {model}...")
 ```
-  
 
 ---
 
 ## Common Issues & Solutions
 
-### Issue: Import Errors  
-**Solution:** Install missing dependencies  
+### Issue: Import Errors
+**Solution:** Install missing dependencies
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
-  
 
-### Issue: Connection Errors  
-**Solution:** Ensure Foundry Local is running  
+### Issue: Connection Errors
+**Solution:** Ensure Foundry Local is running
 ```bash
 foundry service status
 foundry model run phi-4-mini
 ```
-  
 
-### Issue: Model Not Found  
-**Solution:** Check available models  
+### Issue: Model Not Found
+**Solution:** Verify available models
 ```bash
 foundry model ls
 foundry model download <alias>
 ```
-  
 
-### Issue: Slow Performance  
-**Solution:** Use smaller models or adjust parameters  
+### Issue: Slow Performance
+**Solution:** Use smaller models or adjust parameters
 ```bash
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 set BENCH_ROUNDS=2
 ```
-  
 
 ---
 
 ## Next Steps
 
 ### 1. Test All Samples
-Follow the testing checklist above to ensure all samples function correctly.
+Follow the testing checklist above to confirm all samples function correctly.
 
 ### 2. Update Documentation
 - Revise session markdown files with updated examples
@@ -431,7 +422,6 @@ Follow the testing checklist above to ensure all samples function correctly.
 def test_all_samples():
     """Run smoke tests on all samples."""
 ```
-  
 
 ### 4. Add Performance Benchmarks
 Measure performance improvements resulting from enhanced error handling.
@@ -446,10 +436,10 @@ Gather feedback from workshop participants regarding:
 
 ## Resources
 
-- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
-- **Quick Reference**: `Workshop/FOUNDRY_SDK_QUICKREF.md`  
-- **Migration Notes**: `Workshop/SDK_MIGRATION_NOTES.md`  
-- **Main Repository**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **Quick Reference**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Migration Notes**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Main Repository**: https://github.com/microsoft/Foundry-Local
 
 ---
 
@@ -457,17 +447,18 @@ Gather feedback from workshop participants regarding:
 
 ### Adding New Samples
 When creating new samples, follow these guidelines:
-1. Use `workshop_utils` for client management
+
+1. Utilize `workshop_utils` for client management
 2. Implement comprehensive error handling
 3. Support environment variables
 4. Include type hints and docstrings
-5. Provide informative logging
+5. Provide detailed logging
 6. Add usage examples in docstrings
-7. Link to SDK documentation
+7. Reference SDK documentation
 
 ### Reviewing Updates
-When reviewing sample updates, ensure:
-- [ ] Error handling is applied to all I/O operations
+When reviewing updates to samples, ensure:
+- [ ] Error handling is implemented for all I/O operations
 - [ ] Type hints are added to public functions
 - [ ] Docstrings are comprehensive
 - [ ] Environment variables are documented
@@ -477,9 +468,9 @@ When reviewing sample updates, ensure:
 
 ---
 
-**Summary**: All Workshop Python samples now adhere to Foundry Local SDK best practices, featuring improved error handling, comprehensive documentation, and enhanced user experience. No breaking changes—existing functionality remains intact and is further refined.
+**Summary**: All Workshop Python samples now adhere to Foundry Local SDK best practices, featuring improved error handling, detailed documentation, and enhanced user experience. No breaking changes—existing functionality remains intact and has been improved.
 
 ---
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations resulting from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.

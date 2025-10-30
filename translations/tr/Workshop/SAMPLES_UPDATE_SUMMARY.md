@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T11:06:38+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T21:50:32+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "tr"
 }
@@ -11,27 +11,27 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Genel Bakış
 
-`Workshop/samples` dizinindeki tüm Python örnekleri, Foundry Local SDK en iyi uygulamalarına uygun hale getirilmiş ve atölye genelinde tutarlılık sağlanmıştır.
+`Workshop/samples` dizinindeki tüm Python örnekleri, Foundry Local SDK en iyi uygulamalarına uygun hale getirilmiş ve atölye boyunca tutarlılık sağlanmıştır.
 
 **Tarih**: 8 Ekim 2025  
 **Kapsam**: 6 atölye oturumunda 9 Python dosyası  
-**Ana Odak**: Hata yönetimi, dokümantasyon, SDK desenleri, kullanıcı deneyimi
+**Ana Odak**: Hata yönetimi, dokümantasyon, SDK kalıpları, kullanıcı deneyimi
 
 ---
 
 ## Güncellenen Dosyalar
 
-### Oturum 01: Başlarken
+### Oturum 01: Başlangıç
 - ✅ `chat_bootstrap.py` - Temel sohbet ve akış örnekleri
 
 ### Oturum 02: RAG Çözümleri
-- ✅ `rag_pipeline.py` - Gömülü RAG uygulaması
-- ✅ `rag_eval_ragas.py` - RAGAS metrikleriyle RAG değerlendirmesi
+- ✅ `rag_pipeline.py` - Embedding ile RAG uygulaması
+- ✅ `rag_eval_ragas.py` - RAGAS metrikleri ile RAG değerlendirmesi
 
 ### Oturum 03: Açık Kaynak Modeller
 - ✅ `benchmark_oss_models.py` - Çoklu model karşılaştırması
 
-### Oturum 04: En Yeni Modeller
+### Oturum 04: En Son Modeller
 - ✅ `model_compare.py` - SLM ve LLM karşılaştırması
 
 ### Oturum 05: Yapay Zeka Destekli Ajanlar
@@ -42,7 +42,7 @@ CO_OP_TRANSLATOR_METADATA:
 - ✅ `models_pipeline.py` - Çok adımlı yönlendirilmiş işlem hattı
 
 ### Destekleyici Altyapı
-- ✅ `workshop_utils.py` - Zaten en iyi uygulamalara uygun (değişiklik gerekmedi)
+- ✅ `workshop_utils.py` - Zaten en iyi uygulamalara uygun (değişiklik yapılmadı)
 
 ---
 
@@ -66,9 +66,9 @@ except Exception as e:
 ```
 
 **Faydalar:**
-- Açık hata mesajlarıyla zarif hata yönetimi
+- Açık hata mesajları ile zarif hata yönetimi
 - Eyleme geçirilebilir sorun giderme ipuçları
-- Betikler için uygun çıkış kodları
+- Betik çalıştırma için uygun çıkış kodları
 
 ### 2. Daha İyi İçe Aktarma Yönetimi
 
@@ -94,7 +94,7 @@ except ImportError:
 ### 3. Kapsamlı Dokümantasyon
 
 **Tüm örneklere eklenenler:**
-- Docstring'lerde ortam değişkeni dokümantasyonu
+- Ortam değişkeni dokümantasyonu (docstring içinde)
 - SDK referans bağlantıları
 - Kullanım örnekleri
 - Ayrıntılı fonksiyon/parametre dokümantasyonu
@@ -138,11 +138,11 @@ print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
 
-### 5. Sağlam Karşılaştırma
+### 5. Güçlü Karşılaştırma
 
 **Oturum 03 iyileştirmeleri:**
 - Model başına hata yönetimi (hata durumunda devam eder)
-- Ayrıntılı ilerleme raporlama
+- Ayrıntılı ilerleme raporlaması
 - Isınma turları düzgün bir şekilde yürütüldü
 - İlk token gecikme ölçümü desteği
 - Aşamaların net ayrımı
@@ -160,13 +160,13 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 **Faydalar:**
 - Daha iyi IDE otomatik tamamlama
 - Erken hata tespiti
-- Kendini belgeleyen kod
+- Kendini açıklayan kod
 
 ### 7. Geliştirilmiş Model Yönlendirici
 
 **Oturum 06 iyileştirmeleri:**
 - Kapsamlı niyet algılama dokümantasyonu
-- Model seçme algoritması açıklaması
+- Model seçimi algoritması açıklaması
 - Ayrıntılı yönlendirme günlükleri
 - Test çıktısı formatlama
 - Toplu testlerde hata kurtarma
@@ -174,7 +174,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ### 8. Çoklu Ajan Orkestrasyonu
 
 **Oturum 05 iyileştirmeleri:**
-- Aşama bazlı ilerleme raporlama
+- Aşama bazında ilerleme raporlaması
 - Ajan başına hata yönetimi
 - Net işlem hattı yapısı
 - Daha iyi bellek yönetimi dokümantasyonu
@@ -200,61 +200,61 @@ pip install -r Workshop/requirements.txt
 
 #### Oturum 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Oturum 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Oturum 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Oturum 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Oturum 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Oturum 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
@@ -273,11 +273,11 @@ python models_pipeline.py
 ### Örnek Bazlı
 | Değişken | Kullanıldığı Yer | Açıklama |
 |----------|------------------|-------------|
-| `EMBED_MODEL` | Oturum 02 | Gömülü model adı |
+| `EMBED_MODEL` | Oturum 02 | Embedding model adı |
 | `RAG_QUESTION` | Oturum 02 | RAG için test sorusu |
 | `BENCH_MODELS` | Oturum 03 | Karşılaştırılacak modeller (virgülle ayrılmış) |
 | `BENCH_ROUNDS` | Oturum 03 | Karşılaştırma turları sayısı |
-| `BENCH_PROMPT` | Oturum 03 | Karşılaştırmalar için test istemi |
+| `BENCH_PROMPT` | Oturum 03 | Karşılaştırma için test istemi |
 | `BENCH_STREAM` | Oturum 03 | İlk token gecikmesini ölç |
 | `SLM_ALIAS` | Oturum 04 | Küçük dil modeli |
 | `LLM_ALIAS` | Oturum 04 | Büyük dil modeli |
@@ -285,18 +285,18 @@ python models_pipeline.py
 | `AGENT_MODEL_PRIMARY` | Oturum 05 | Birincil ajan modeli |
 | `AGENT_MODEL_EDITOR` | Oturum 05 | Editör ajan modeli |
 | `AGENT_QUESTION` | Oturum 05 | Ajanlar için test sorusu |
-| `PIPELINE_TASK` | Oturum 06 | İşlem hattı görevi |
+| `PIPELINE_TASK` | Oturum 06 | İşlem hattı için görev |
 
 ---
 
-## Geriye Dönük Uyumsuzluklar
+## Önemli Değişiklikler
 
 **Yok** - Tüm değişiklikler geriye dönük uyumludur.
 
-Mevcut betikler çalışmaya devam edecektir. Yeni özellikler:
+Mevcut betikler çalışmaya devam edecek. Yeni özellikler:
 - İsteğe bağlı ortam değişkenleri
 - Geliştirilmiş hata mesajları (işlevselliği bozmaz)
-- Ek günlükleme (bastırılabilir)
+- Ek günlükler (gizlenebilir)
 - Daha iyi tür ipuçları (çalışma zamanında etkisi yok)
 
 ---
@@ -311,7 +311,7 @@ from workshop_utils import get_client, chat_once
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
 
-### 2. Doğru Hata Yönetimi Deseni
+### 2. Doğru Hata Yönetimi Kalıbı
 ```python
 try:
     # Initialize client
@@ -322,7 +322,7 @@ except Exception as e:
     sys.exit(1)
 ```
 
-### 3. Bilgilendirici Günlükleme
+### 3. Bilgilendirici Günlükler
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
@@ -361,7 +361,7 @@ alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
 
-### 7. Zarif Bozulma
+### 7. Zarif Degradasyon
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -375,7 +375,7 @@ for model in models:
 
 ---
 
-## Yaygın Sorunlar ve Çözümleri
+## Yaygın Sorunlar ve Çözümler
 
 ### Sorun: İçe Aktarma Hataları
 **Çözüm:** Eksik bağımlılıkları yükleyin
@@ -412,8 +412,8 @@ set BENCH_ROUNDS=2
 Yukarıdaki test kontrol listesini kullanarak tüm örneklerin doğru çalıştığını doğrulayın.
 
 ### 2. Dokümantasyonu Güncelleyin
-- Yeni örneklerle oturum markdown dosyalarını güncelleyin
-- Ana README'ye sorun giderme bölümü ekleyin
+- Oturum markdown dosyalarını yeni örneklerle güncelleyin
+- Ana README dosyasına sorun giderme bölümü ekleyin
 - Hızlı referans kılavuzu oluşturun
 
 ### 3. Entegrasyon Testleri Oluşturun
@@ -424,7 +424,7 @@ def test_all_samples():
 ```
 
 ### 4. Performans Karşılaştırmaları Ekleyin
-Hata yönetimi iyileştirmelerinden kaynaklanan performans iyileştirmelerini takip edin.
+Hata yönetimi iyileştirmelerinden kaynaklanan performans gelişmelerini takip edin.
 
 ### 5. Kullanıcı Geri Bildirimi
 Atölye katılımcılarından şu konularda geri bildirim toplayın:
@@ -436,30 +436,30 @@ Atölye katılımcılarından şu konularda geri bildirim toplayın:
 
 ## Kaynaklar
 
-- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
-- **Hızlı Referans**: `Workshop/FOUNDRY_SDK_QUICKREF.md`  
-- **Geçiş Notları**: `Workshop/SDK_MIGRATION_NOTES.md`  
-- **Ana Depo**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **Hızlı Referans**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Geçiş Notları**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Ana Depo**: https://github.com/microsoft/Foundry-Local
 
 ---
 
 ## Bakım
 
 ### Yeni Örnekler Eklemek
-Yeni örnekler oluştururken şu desenleri izleyin:
+Yeni örnekler oluştururken şu kalıpları izleyin:
 
-1. İstemci yönetimi için `workshop_utils` kullanın
+1. `workshop_utils` kullanarak istemci yönetimi
 2. Kapsamlı hata yönetimi ekleyin
 3. Ortam değişkeni desteği ekleyin
 4. Tür ipuçları ve docstring'ler ekleyin
-5. Bilgilendirici günlükleme sağlayın
-6. Docstring'de kullanım örnekleri ekleyin
+5. Bilgilendirici günlükler sağlayın
+6. Docstring içinde kullanım örnekleri ekleyin
 7. SDK dokümantasyonuna bağlantı ekleyin
 
-### Güncellemeleri İnceleme
-Örnek güncellemelerini incelerken şunları kontrol edin:
-- [ ] Tüm G/Ç işlemlerinde hata yönetimi
-- [ ] Genel fonksiyonlarda tür ipuçları
+### Güncellemeleri Gözden Geçirme
+Örnek güncellemelerini gözden geçirirken şunları kontrol edin:
+- [ ] Tüm I/O işlemlerinde hata yönetimi
+- [ ] Genel işlevlerde tür ipuçları
 - [ ] Kapsamlı docstring'ler
 - [ ] Ortam değişkeni dokümantasyonu
 - [ ] Bilgilendirici kullanıcı geri bildirimi
@@ -468,9 +468,9 @@ Yeni örnekler oluştururken şu desenleri izleyin:
 
 ---
 
-**Özet**: Tüm Atölye Python örnekleri artık Foundry Local SDK en iyi uygulamalarını takip ediyor ve geliştirilmiş hata yönetimi, kapsamlı dokümantasyon ve iyileştirilmiş kullanıcı deneyimi sunuyor. Geriye dönük uyumsuzluk yok - mevcut işlevsellik korunmuş ve geliştirilmiştir.
+**Özet**: Tüm Atölye Python örnekleri artık Foundry Local SDK en iyi uygulamalarına uygun hale getirilmiş, geliştirilmiş hata yönetimi, kapsamlı dokümantasyon ve iyileştirilmiş kullanıcı deneyimi sunmaktadır. Hiçbir işlevsellik bozulmadan mevcut özellikler korunmuş ve geliştirilmiştir.
 
 ---
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çeviriler hata veya yanlışlıklar içerebilir. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.

@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T06:59:00+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T20:21:31+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ar"
 }
 -->
-# بطاقات مرجعية - عينات ورشة العمل
+# عينات ورشة العمل - بطاقة مرجعية سريعة
 
 **آخر تحديث**: 8 أكتوبر 2025
 
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -197,7 +197,7 @@ for chunk in stream:
 | النموذج | الحجم | الأفضل لـ | السرعة |
 |-------|------|----------|-------|
 | `qwen2.5-0.5b` | 0.5B | التصنيف السريع | ⚡⚡⚡ |
-| `qwen2.5-coder-0.5b` | 0.5B | توليد الكود بسرعة | ⚡⚡⚡ |
+| `qwen2.5-coder-0.5b` | 0.5B | توليد الكود السريع | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | الكتابة الإبداعية | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | الكود، إعادة الهيكلة | ⚡⚡ |
 | `phi-4-mini` | 4B | عام، التلخيص | ⚡⚡ |
@@ -219,7 +219,7 @@ for chunk in stream:
 1. **تخزين العملاء مؤقتًا**: يقوم `workshop_utils` بذلك نيابةً عنك
 2. **استخدام نماذج أصغر**: ابدأ بـ `qwen2.5-0.5b` للاختبار
 3. **تمكين إحصائيات الاستخدام**: قم بتعيين `SHOW_USAGE=1` لتتبع الرموز
-4. **المعالجة الدُفعية**: معالجة عدة مطالبات بشكل متسلسل
+4. **المعالجة الدُفعية**: قم بمعالجة عدة مطالبات بشكل متسلسل
 5. **تقليل max_tokens**: يقلل من زمن الاستجابة للحصول على ردود سريعة
 
 ---
@@ -234,40 +234,38 @@ python scripts/test_samples.py --quick
 
 ### قياس أداء النماذج
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### خط أنابيب RAG
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### نظام متعدد الوكلاء
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**مساعدة سريعة**: قم بتشغيل أي عينة باستخدام `--help` أو تحقق من التعليق التوضيحي:
+**مساعدة سريعة**: قم بتشغيل أي عينة باستخدام `--help` من دليل `samples` أو تحقق من docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**تم تحديث جميع العينات في أكتوبر 2025 وفقًا لأفضل ممارسات Foundry Local SDK** ✨
+**تم تحديث جميع العينات في أكتوبر 2025 مع أفضل ممارسات Foundry Local SDK** ✨
 
 ---
 
 **إخلاء المسؤولية**:  
-تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو معلومات غير دقيقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق. للحصول على معلومات حاسمة، يُوصى بالاستعانة بترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.
+تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق. للحصول على معلومات حاسمة، يُوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.

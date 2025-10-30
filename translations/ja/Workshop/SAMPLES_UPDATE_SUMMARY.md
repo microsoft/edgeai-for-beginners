@@ -1,32 +1,32 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-08T19:27:16+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T20:55:09+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "ja"
 }
 -->
-# ワークショップサンプル - Foundry Local SDK 更新概要
+# ワークショップサンプル - Foundry Local SDK更新概要
 
 ## 概要
 
-`Workshop/samples`ディレクトリ内のすべてのPythonサンプルが、Foundry Local SDKのベストプラクティスに従い、ワークショップ全体での一貫性を確保するよう更新されました。
+`Workshop/samples`ディレクトリ内のすべてのPythonサンプルが、Foundry Local SDKのベストプラクティスに従い、ワークショップ全体での一貫性を確保するために更新されました。
 
 **日付**: 2025年10月8日  
 **対象範囲**: 6つのワークショップセッションにわたる9つのPythonファイル  
-**主な焦点**: エラーハンドリング、ドキュメント化、SDKパターン、ユーザー体験
+**主な焦点**: エラーハンドリング、ドキュメント、SDKパターン、ユーザーエクスペリエンス
 
 ---
 
 ## 更新されたファイル
 
-### セッション01: 初めてのステップ
+### セッション01: はじめに
 - ✅ `chat_bootstrap.py` - 基本的なチャットとストリーミングの例
 
 ### セッション02: RAGソリューション
 - ✅ `rag_pipeline.py` - 埋め込みを使用したRAGの実装
-- ✅ `rag_eval_ragas.py` - RAGASメトリクスによるRAG評価
+- ✅ `rag_eval_ragas.py` - RAGASメトリクスを使用したRAGの評価
 
 ### セッション03: オープンソースモデル
 - ✅ `benchmark_oss_models.py` - 複数モデルのベンチマーク
@@ -50,12 +50,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. エラーハンドリングの強化
 
-**以前:**
+**変更前:**
 ```python
 manager, client, model_id = get_client(alias)
 ```
 
-**更新後:**
+**変更後:**
 ```python
 try:
     manager, client, model_id = get_client(alias, endpoint=endpoint)
@@ -66,18 +66,18 @@ except Exception as e:
 ```
 
 **メリット:**
-- 明確なエラーメッセージによる優雅なエラーハンドリング
-- トラブルシューティングのヒントが具体的
-- スクリプト用の適切な終了コード
+- 明確なエラーメッセージによるスムーズなエラーハンドリング
+- 問題解決のための具体的なヒント
+- スクリプトの適切な終了コード
 
 ### 2. インポート管理の改善
 
-**以前:**
+**変更前:**
 ```python
 from sentence_transformers import SentenceTransformer
 ```
 
-**更新後:**
+**変更後:**
 ```python
 try:
     from sentence_transformers import SentenceTransformer
@@ -91,11 +91,11 @@ except ImportError:
 - 不明瞭なインポートエラーの防止
 - ユーザーフレンドリーなインストール手順
 
-### 3. 包括的なドキュメント化
+### 3. 包括的なドキュメント
 
 **すべてのサンプルに追加:**
-- 環境変数のドキュメントをdocstringに記載
-- SDK参照リンク
+- docstring内の環境変数のドキュメント
+- SDKリファレンスリンク
 - 使用例
 - 詳細な関数/パラメータのドキュメント
 - IDEサポートを向上させる型ヒント
@@ -118,7 +118,7 @@ def pipeline(task: str) -> Dict[str, Any]:
 
 ### 4. ユーザーへのフィードバックの改善
 
-**情報提供のためのログを追加:**
+**情報豊富なログを追加:**
 ```python
 print(f"[INFO] Using model alias: {alias} -> id: {model_id}")
 print(f"[INFO] Endpoint: {manager.endpoint}")
@@ -138,10 +138,10 @@ print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
 
-### 5. 強力なベンチマーク
+### 5. 強化されたベンチマーク
 
 **セッション03の改善点:**
-- モデルごとのエラーハンドリング（失敗しても続行）
+- モデルごとのエラーハンドリング（失敗時も継続）
 - 詳細な進捗報告
 - ウォームアップラウンドの適切な実行
 - 最初のトークンの遅延測定サポート
@@ -158,8 +158,8 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ```
 
 **メリット:**
-- IDEのオートコンプリートが向上
-- 早期エラー検出
+- IDEのオートコンプリート機能の向上
+- 早期のエラー検出
 - 自己文書化コード
 
 ### 7. モデルルーターの強化
@@ -200,61 +200,61 @@ pip install -r Workshop/requirements.txt
 
 #### セッション01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### セッション02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### セッション03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### セッション04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### セッション05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### セッション06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
@@ -264,11 +264,11 @@ python models_pipeline.py
 ### グローバル（すべてのサンプル）
 | 変数 | 説明 | デフォルト |
 |------|------|------------|
-| `FOUNDRY_LOCAL_ALIAS` | 使用するモデルのエイリアス | サンプルによって異なる |
+| `FOUNDRY_LOCAL_ALIAS` | 使用するモデルのエイリアス | サンプルごとに異なる |
 | `FOUNDRY_LOCAL_ENDPOINT` | サービスエンドポイントの上書き | 自動検出 |
 | `SHOW_USAGE` | トークン使用量を表示 | `0` |
 | `RETRY_ON_FAIL` | リトライロジックを有効化 | `1` |
-| `RETRY_BACKOFF` | 初期リトライ遅延 | `1.0` |
+| `RETRY_BACKOFF` | リトライ遅延の初期値 | `1.0` |
 
 ### サンプル固有
 | 変数 | 使用セッション | 説明 |
@@ -278,7 +278,7 @@ python models_pipeline.py
 | `BENCH_MODELS` | セッション03 | ベンチマーク対象モデル（カンマ区切り） |
 | `BENCH_ROUNDS` | セッション03 | ベンチマークラウンド数 |
 | `BENCH_PROMPT` | セッション03 | ベンチマーク用テストプロンプト |
-| `BENCH_STREAM` | セッション03 | 最初のトークン遅延を測定 |
+| `BENCH_STREAM` | セッション03 | 最初のトークンの遅延を測定 |
 | `SLM_ALIAS` | セッション04 | 小型言語モデル |
 | `LLM_ALIAS` | セッション04 | 大型言語モデル |
 | `COMPARE_PROMPT` | セッション04 | 比較テストプロンプト |
@@ -289,15 +289,15 @@ python models_pipeline.py
 
 ---
 
-## 互換性を壊す変更
+## 互換性の変更
 
 **なし** - すべての変更は後方互換性があります。
 
 既存のスクリプトは引き続き動作します。新機能は以下の通りです:
 - オプションの環境変数
-- 強化されたエラーメッセージ（機能を壊さない）
+- 機能を壊さない明確なエラーメッセージ
 - 追加のログ（抑制可能）
-- 型ヒントの改善（実行時影響なし）
+- 型ヒントの向上（実行時の影響なし）
 
 ---
 
@@ -322,7 +322,7 @@ except Exception as e:
     sys.exit(1)
 ```
 
-### 3. 情報提供のためのログ
+### 3. 情報豊富なログ
 ```python
 print(f"[INFO] Starting process...")  # Info
 print(f"[ERROR] Operation failed: {e}")  # Errors
@@ -384,7 +384,7 @@ pip install sentence-transformers ragas datasets numpy
 ```
 
 ### 問題: 接続エラー
-**解決策:** Foundry Localが実行中であることを確認
+**解決策:** Foundry Localが稼働していることを確認
 ```bash
 foundry service status
 foundry model run phi-4-mini
@@ -409,10 +409,10 @@ set BENCH_ROUNDS=2
 ## 次のステップ
 
 ### 1. すべてのサンプルをテスト
-上記のテストチェックリストを実行し、すべてのサンプルが正しく動作することを確認します。
+上記のテストチェックリストを使用して、すべてのサンプルが正しく動作することを確認してください。
 
 ### 2. ドキュメントを更新
-- セッションのMarkdownファイルを新しい例で更新
+- 新しい例を使用してセッションのMarkdownファイルを更新
 - メインREADMEにトラブルシューティングセクションを追加
 - クイックリファレンスガイドを作成
 
@@ -427,9 +427,9 @@ def test_all_samples():
 エラーハンドリングの改善によるパフォーマンス向上を追跡。
 
 ### 5. ユーザーフィードバック
-ワークショップ参加者から以下についてのフィードバックを収集:
+ワークショップ参加者から以下のフィードバックを収集:
 - エラーメッセージの明確さ
-- ドキュメントの完全性
+- ドキュメントの充実度
 - 使いやすさ
 
 ---
@@ -452,25 +452,25 @@ def test_all_samples():
 2. 包括的なエラーハンドリングを追加
 3. 環境変数サポートを含める
 4. 型ヒントとdocstringを追加
-5. 情報提供のためのログを提供
+5. 情報豊富なログを提供
 6. docstringに使用例を含める
 7. SDKドキュメントへのリンクを追加
 
 ### 更新のレビュー
-サンプル更新をレビューする際は、以下を確認してください:
+サンプルの更新をレビューする際は、以下を確認してください:
 - [ ] すべてのI/O操作でのエラーハンドリング
 - [ ] 公開関数の型ヒント
 - [ ] 包括的なdocstring
 - [ ] 環境変数のドキュメント
-- [ ] 情報提供のためのユーザーフィードバック
-- [ ] SDK参照リンク
+- [ ] 情報豊富なユーザーフィードバック
+- [ ] SDKリファレンスリンク
 - [ ] 一貫したコードスタイル
 
 ---
 
-**まとめ**: すべてのワークショップPythonサンプルが、Foundry Local SDKのベストプラクティスに従い、エラーハンドリングの強化、包括的なドキュメント化、ユーザー体験の改善を実現しました。互換性を壊す変更はなく、既存の機能は維持されつつ強化されています。
+**まとめ**: すべてのワークショップPythonサンプルが、Foundry Local SDKのベストプラクティスに従い、エラーハンドリングの強化、包括的なドキュメント、ユーザーエクスペリエンスの向上を実現しました。既存の機能はそのまま維持され、さらに強化されています。
 
 ---
 
 **免責事項**:  
-この文書は、AI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を期すよう努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文（元の言語で記載された文書）が公式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳をお勧めします。この翻訳の使用に起因する誤解や誤認について、当方は一切の責任を負いかねます。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてお考えください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解について、当社は責任を負いません。

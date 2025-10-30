@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T19:15:23+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:44:37+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "tl"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Pangkalahatang-ideya
 
-Ang mga halimbawa sa Workshop ay gumagamit ng mga environment variable para sa configuration, na nakasentro sa `.env` file sa ugat ng repository. Pinapadali nito ang pag-customize nang hindi kinakailangang baguhin ang code.
+Ang mga halimbawa sa Workshop ay gumagamit ng mga environment variable para sa configuration, na nakapaloob sa `.env` file sa ugat ng repository. Pinapadali nito ang pag-customize nang hindi kinakailangang baguhin ang code.
 
 ## Mabilisang Simula
 
-### 1. Suriin ang Mga Kinakailangan
+### 1. Suriin ang mga Kinakailangan
 
 ```bash
 # Check Foundry Local is installed
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. I-configure ang Kapaligiran
 
-Ang `.env` file ay naka-configure na gamit ang mga default na setting. Karamihan sa mga gumagamit ay hindi na kailangang baguhin ito.
+Ang `.env` file ay naka-configure na may mga default na setting. Karamihan sa mga user ay hindi na kailangang baguhin ito.
 
 **Opsyonal**: Suriin at i-customize ang mga setting:
 ```bash
@@ -39,12 +39,12 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Ilapat ang Configuration
+### 3. I-apply ang Configuration
 
 **Para sa Python Scripts:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -58,16 +58,16 @@ python chat_bootstrap.py
 
 ### Pangunahing Configuration
 
-| Variable | Default | Paglalarawan |
+| Variable | Default | Deskripsyon |
 |----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Default na modelo para sa mga halimbawa |
 | `FOUNDRY_LOCAL_ENDPOINT` | (walang laman) | Override sa service endpoint |
 | `PYTHONPATH` | Mga path ng Workshop | Path para sa paghahanap ng Python module |
 
-**Kailan dapat itakda ang FOUNDRY_LOCAL_ENDPOINT:**
+**Kailan dapat i-set ang FOUNDRY_LOCAL_ENDPOINT:**
 - Remote na Foundry Local instance
-- Custom na configuration ng port
-- Pagkakaiba ng development/production
+- Custom na port configuration
+- Paghiwalay ng development/production
 
 **Halimbawa:**
 ```bash
@@ -78,31 +78,31 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ```
 
-### Mga Variable na Tukoy sa Session
+### Mga Variable na Pang-Sesyon
 
-#### Session 02: RAG Pipeline
+#### Sesyon 02: RAG Pipeline
 | Variable | Default | Layunin |
 |----------|---------|---------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding model |
 | `RAG_QUESTION` | Pre-configured | Test na tanong |
 
-#### Session 03: Benchmarking
+#### Sesyon 03: Benchmarking
 | Variable | Default | Layunin |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Mga modelong ibe-benchmark |
-| `BENCH_ROUNDS` | `3` | Mga iteration bawat modelo |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Mga modelong ibe-benchmark |
+| `BENCH_ROUNDS` | `3` | Mga iteration kada modelo |
 | `BENCH_PROMPT` | Pre-configured | Test na prompt |
 | `BENCH_STREAM` | `0` | Sukatin ang latency ng unang token |
 
-#### Session 04: Paghahambing ng Modelo
+#### Sesyon 04: Paghahambing ng Modelo
 | Variable | Default | Layunin |
 |----------|---------|---------|
 | `SLM_ALIAS` | `phi-4-mini` | Maliit na language model |
 | `LLM_ALIAS` | `qwen2.5-7b` | Malaking language model |
 | `COMPARE_PROMPT` | Pre-configured | Prompt para sa paghahambing |
-| `COMPARE_RETRIES` | `2` | Mga pagsubok na ulitin |
+| `COMPARE_RETRIES` | `2` | Mga attempt sa pag-retry |
 
-#### Session 05: Multi-Agent Orchestration
+#### Sesyon 05: Multi-Agent Orchestration
 | Variable | Default | Layunin |
 |----------|---------|---------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Modelo ng researcher agent |
@@ -113,11 +113,11 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 | Variable | Default | Layunin |
 |----------|---------|---------|
-| `SHOW_USAGE` | `1` | Ipakita ang paggamit ng token |
+| `SHOW_USAGE` | `1` | I-print ang token usage |
 | `RETRY_ON_FAIL` | `1` | Paganahin ang retry logic |
-| `RETRY_BACKOFF` | `1.0` | Delay sa retry (segundo) |
+| `RETRY_BACKOFF` | `1.0` | Delay sa pag-retry (segundo) |
 
-## Karaniwang Mga Configuration
+## Karaniwang Configurations
 
 ### Setup para sa Development (Mabilisang Iteration)
 ```bash
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Setup para sa Benchmarking
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -164,35 +164,35 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 **Pangkalahatang Layunin:**
 - `phi-4-mini` - Balanseng kalidad at bilis
 
-**Mabilisang Tugon:**
+**Mabilis na Tugon:**
 - `qwen2.5-0.5b` - Napakabilis, maganda para sa classification
 - `phi-4-mini` - Mabilis na may magandang kalidad
 
 **Mataas na Kalidad:**
-- `qwen2.5-7b` - Pinakamahusay na kalidad, mas mataas ang paggamit ng resources
+- `qwen2.5-7b` - Pinakamahusay na kalidad, mas mataas ang resource usage
 - `phi-4-mini` - Magandang kalidad, mas mababa ang resources
 
-**Paglikha ng Code:**
+**Pagbuo ng Code:**
 - `deepseek-coder-1.3b` - Espesyal para sa code
 - `phi-4-mini` - Pangkalahatang layunin sa coding
 
-### Ayon sa Availability ng Resources
+### Ayon sa Availability ng Resource
 
-**Mababang Resources (< 8GB RAM):**
+**Mababang Resource (< 8GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
 LLM_ALIAS=phi-4-mini
 ```
 
-**Katamtamang Resources (8-16GB RAM):**
+**Katamtamang Resource (8-16GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-7b
 ```
 
-**Mataas na Resources (16GB+ RAM):**
+**Mataas na Resource (16GB+ RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-7b
 SLM_ALIAS=phi-4-mini
@@ -239,7 +239,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ### Hindi Nalo-load ang Environment Variables
 
 **Mga Sintomas:**
-- Mali ang mga modelong ginagamit ng mga script
+- Mali ang mga modelong ginagamit ng scripts
 - Mga error sa koneksyon
 - Hindi nakikilala ang mga variable
 
@@ -264,7 +264,7 @@ pwd  # Should be in Workshop or repository root
 **Mga Sintomas:**
 - Mga error na "Connection refused"
 - "Service not available"
-- Mga error sa timeout
+- Mga timeout error
 
 **Mga Solusyon:**
 ```bash
@@ -304,22 +304,19 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Mga Sintomas:**
 - Mga error na "Module not found"
-- "Cannot import workshop_utils"
 
 **Mga Solusyon:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
-## Pagsubok sa Configuration
+## Pagsubok ng Configuration
 
 ### Suriin ang Pag-load ng Kapaligiran
 
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## Mga Pinakamahusay na Kasanayan sa Seguridad
 
-### 1. Huwag Kailanman I-commit ang Mga Lihim
+### 1. Huwag Kailanman I-commit ang Mga Secrets
 
 ```bash
 # .gitignore should include:
@@ -377,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Gumamit ng Magkakahiwalay na .env Files
+### 2. Gumamit ng Hiwa-hiwalay na .env Files
 
 ```bash
 .env              # Default configuration
@@ -385,14 +382,14 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Palitan ang Mga API Key
+### 3. I-rotate ang Mga API Keys
 
 ```bash
 # For Azure OpenAI or other cloud services
 # Regularly rotate keys and update .env
 ```
 
-### 4. Gumamit ng Config na Tukoy sa Kapaligiran
+### 4. Gumamit ng Config na Pang-Specific sa Kapaligiran
 
 ```bash
 # Development
@@ -406,13 +403,13 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Pangunahing Repository**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Dokumentasyon ng API**: Tingnan ang SDK repository para sa pinakabago
+- **API Dokumentasyon**: Tingnan ang SDK repository para sa pinakabago
 
-## Karagdagang Mga Mapagkukunan
+## Karagdagang Resources
 
 - `QUICK_START.md` - Gabay sa pagsisimula
 - `SDK_MIGRATION_NOTES.md` - Mga detalye sa pag-update ng SDK
-- `Workshop/samples/*/README.md` - Mga gabay na tukoy sa halimbawa
+- `Workshop/samples/*/README.md` - Mga gabay para sa partikular na halimbawa
 
 ---
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.

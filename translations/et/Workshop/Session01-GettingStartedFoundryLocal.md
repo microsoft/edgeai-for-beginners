@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-11T11:51:59+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T23:58:24+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "et"
 }
 -->
-# Sessioon 1: Foundry Locali kasutamise alustamine
+# Sessioon 1: Foundry Localiga alustamine
 
 ## Kokkuvõte
 
@@ -17,28 +17,28 @@ Alusta oma teekonda Foundry Localiga, paigaldades ja seadistades selle Windows 1
 
 Sessiooni lõpuks oskad:
 
-- **Paigaldada ja seadistada**: Optimeeritud jõudlusseadistustega Foundry Locali paigaldamine Windows 11-le
-- **Valdada CLI toiminguid**: Foundry Local CLI kasutamine mudelite haldamiseks ja juurutamiseks
-- **Lubada riistvarakiirendus**: GPU kiirenduse seadistamine ONNXRuntime'i või WebGPU abil
-- **Juurutada mitmeid mudeleid**: Käivitada lokaalselt phi-4, GPT-OSS-20B, Qwen ja DeepSeek mudeleid
-- **Luua oma esimene rakendus**: Kohandada olemasolevaid näiteid Foundry Local Python SDK kasutamiseks
+- **Paigaldada ja seadistada**: Seadista Foundry Local Windows 11 operatsioonisüsteemis optimaalse jõudluse jaoks
+- **Valdada CLI toiminguid**: Kasuta Foundry Local CLI-d mudelite haldamiseks ja juurutamiseks
+- **Lubada riistvarakiirendus**: Seadista GPU kiirendus ONNXRuntime'i või WebGPU abil
+- **Juurutada mitmeid mudeleid**: Käivita lokaalselt mudelid phi-4, GPT-OSS-20B, Qwen ja DeepSeek
+- **Luua oma esimene rakendus**: Kohanda olemasolevaid näidiseid Foundry Local Python SDK kasutamiseks
 
-# Testi mudelit (mitte-interaktiivne üksik küsimus)
-foundry model run phi-4-mini --prompt "Tere, tutvusta ennast"
+# Testi mudelit (mitte-interaktiivne üksik päring)
+foundry model run phi-4-mini --prompt "Tere, tutvusta end"
 
 - Windows 11 (22H2 või uuem)
-# Loetle saadaval olevad kataloogimudelid (laaditud mudelid ilmuvad pärast käivitamist)
+# Loetle saadaval olevad kataloogimudelid (laetud mudelid ilmuvad pärast käivitamist)
 foundry model list
-## NOTE: Praegu puudub spetsiaalne `--running` lipp; et näha, millised mudelid on laaditud, alusta vestlust või vaata teenuse logisid.
-- Python 3.10+ paigaldatud
-- Visual Studio Code koos Python laiendusega
-- Administraatori õigused paigaldamiseks
+## NOTE: Praegu pole spetsiaalset `--running` lippu; et näha, millised mudelid on laetud, alusta vestlust või vaata teenuse logisid.
+- Paigaldatud Python 3.10+
+- Visual Studio Code koos Python laiendiga
+- Paigaldamiseks vajalikud administraatori õigused
 
 ### (Valikuline) Keskkonnamuutujad
 
-Loo `.env` (või määra shellis), et skriptid oleksid kaasaskantavad:
+Loo `.env` (või määra shellis), et skriptid oleksid teisaldatavad:
 # Võrdle vastuseid (mitte-interaktiivne)
-foundry model run gpt-oss-20b --prompt "Selgita lihtsate sõnadega, mis on edge AI"
+foundry model run gpt-oss-20b --prompt "Selgita lihtsate sõnadega, mis on serva AI"
 | Muutuja | Eesmärk | Näide |
 |---------|---------|-------|
 | `FOUNDRY_LOCAL_ALIAS` | Eelistatud mudeli alias (kataloog valib automaatselt parima variandi) | `phi-3.5-mini` |
@@ -47,7 +47,7 @@ foundry model run gpt-oss-20b --prompt "Selgita lihtsate sõnadega, mis on edge 
 
 > Kui `FOUNDRY_LOCAL_ENDPOINT=auto` (või määramata), tuletame selle SDK haldurist.
 
-## Demo voog (30 minutit)
+## Demo käik (30 minutit)
 
 ### 1. Paigalda Foundry Local ja kontrolli CLI seadistust (10 minutit)
 
@@ -77,9 +77,9 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Kui macOS-i natiivsed binaarid pole veel saadaval, saad siiski:
-1. Kasutada Windows 11 ARM/Intel VM-i (Parallels / UTM) ja järgida Windowsi samme.
-2. Käivitada mudeleid konteineri kaudu (kui konteineripilt on avaldatud) ja määrata `FOUNDRY_LOCAL_ENDPOINT` avatud pordile.
+Kui macOS-i natiivsed binaarid pole veel saadaval, saad siiski: 
+1. Kasutada Windows 11 ARM/Intel VM-i (Parallels / UTM) ja järgida Windowsi samme. 
+2. Käivitada mudeleid konteineri kaudu (kui konteineripilt on avaldatud) ja määrata `FOUNDRY_LOCAL_ENDPOINT` avatud pordile. 
 
 **Loo Python virtuaalne keskkond (platvormidevaheline)**
 
@@ -126,9 +126,9 @@ py -m venv .venv
 pip install foundry-local-sdk openai requests
 ```
 
-### SDK Bootstrapping (Soovitatav)
+### SDK alglaadimine (soovitatav)
 
-Teenuse käsitsi käivitamise ja mudelite käitamise asemel saab **Foundry Local Python SDK** kõike automaatselt käivitada:
+Teenuse käsitsi käivitamise ja mudelite käitamise asemel saab **Foundry Local Python SDK** alglaadida kõik automaatselt:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -160,32 +160,7 @@ print(resp.choices[0].message.content)
 
 Kui eelistad selget kontrolli, saad siiski kasutada CLI-d + OpenAI klienti, nagu hiljem näidatud.
 
-### 2. Luba GPU kiirendus (5 minutit)
-
-#### Samm 2.1: Kontrolli riistvara võimekust
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Samm 2.2: Seadista riistvarakiirendus
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Käivita mudeleid lokaalselt CLI kaudu (10 minutit)
+### 2. Käivita mudeleid lokaalselt CLI kaudu (10 minutit)
 
 #### Samm 3.1: Juuruta Phi-4 mudel
 
@@ -223,7 +198,7 @@ foundry model download deepseek-coder-1.3b
 foundry cache list
 ```
 
-### 4. Algprojekt: Kohanda 01-run-phi Foundry Locali jaoks (5 minutit)
+### 4. Algusprojekt: Kohanda 01-run-phi Foundry Local jaoks (5 minutit)
 
 #### Samm 4.1: Loo lihtne vestlusrakendus
 
@@ -310,13 +285,13 @@ python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Found
 python samples/01-foundry-quickstart/chat_quickstart.py
 ```
 
-## Olulised käsitletud mõisted
+## Põhimõisted
 
 ### 1. Foundry Local arhitektuur
 
 - **Lokaalne järeldusmootor**: Käitab mudeleid täielikult sinu seadmes
 - **OpenAI SDK ühilduvus**: Sujuv integreerimine olemasoleva OpenAI koodiga
-- **Mudelite haldamine**: Tõhus mudelite allalaadimine, vahemällu salvestamine ja käitamine
+- **Mudelite haldamine**: Laadi, salvesta vahemällu ja käivita mudeleid tõhusalt
 - **Riistvara optimeerimine**: Kasuta GPU, NPU ja CPU kiirendust
 
 ### 2. CLI käskude viide
@@ -376,7 +351,7 @@ print()
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Probleem 2: "Mudeli laadimine ebaõnnestus"
+### Probleem 2: "Mudel ei laadinud"
 
 **Lahendus:**
 ```powershell
@@ -406,7 +381,7 @@ netstat -an | findstr 5273
 
 ## Jõudluse optimeerimise näpunäited
 
-### 1. Mudeli valimise strateegia
+### 1. Mudeli valiku strateegia
 
 - **Phi-4-mini**: Parim üldisteks ülesanneteks, madalam mälukasutus
 - **Qwen2.5-0.5b**: Kiireim järeldus, minimaalsed ressursid
@@ -429,30 +404,31 @@ foundry config set model.preload false
 ### 3. Jõudluse jälgimine
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Valikulised täiustused
 
 | Täiustus | Mis | Kuidas |
 |----------|-----|-------|
-| Jagatud utiliidid | Eemalda korduv klient/bootstrapi loogika | Kasuta `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Tokenite kasutuse nähtavus | Õpeta varakult kulude/efektiivsuse mõtlemist | Määra `SHOW_USAGE=1`, et printida küsimuse/vastuse/kokku tokenid |
-| Deterministlikud võrdlused | Stabiilne võrdlusalus ja regressioonikontroll | Kasuta `temperature=0`, `top_p=1`, järjepidevat küsimuse teksti |
+| Jagatud utiliidid | Eemalda korduv klient/alglaadimisloogika | Kasuta `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Tokenite kasutuse nähtavus | Õpeta varakult kulude/tõhususe mõtlemist | Määra `SHOW_USAGE=1`, et printida päringu/tulemuse/kokku tokenid |
+| Deterministlikud võrdlused | Stabiilne võrdlusalus ja regressioonikontroll | Kasuta `temperature=0`, `top_p=1`, järjepidevat päringuteksti |
 | Esimese tokeni latentsus | Tajutava reageerimisvõime mõõdik | Kohanda võrdlusaluse skripti voogesitusega (`BENCH_STREAM=1`) |
-| Ajutiste vigade korral uuesti proovimine | Vastupidavad demod külmkäivitusel | `RETRY_ON_FAIL=1` (vaikimisi) ja kohanda `RETRY_BACKOFF` |
+| Ajutiste vigade korral uuesti proovimine | Vastupidavad demod külmkäivituse korral | `RETRY_ON_FAIL=1` (vaikimisi) ja kohanda `RETRY_BACKOFF` |
 | Suitsu testimine | Kiire kontroll peamiste voogude üle | Käivita `python Workshop/tests/smoke.py` enne töötuba |
 | Mudeli alias profiilid | Kiire mudelikomplekti vahetus masinate vahel | Hoia `.env` koos `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Vahemälu tõhusus | Väldi korduvaid soojendusi mitme näite käitamisel | Utiliidid vahemälu halduritele; taaskasuta skriptides/märkmikes |
-| Esimese käivituse soojendus | Vähenda p95 latentsuse piike | Käivita väike küsimus pärast `FoundryLocalManager` loomist |
+| Vahemälu tõhusus | Väldi korduvaid soojendusi mitme näidise käitamisel | Utiliidid vahemälu halduritele; taaskasuta skriptides/märkmikes |
+| Esimese käivituse soojendus | Vähenda p95 latentsuse piike | Käivita väike päring pärast `FoundryLocalManager` loomist |
 
 Näide deterministlikust soojast algtasemest (PowerShell):
 
@@ -463,16 +439,16 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Te peaksite nägema sarnast väljundit ja identseid tokenite arve teisel käivitamisel, kinnitades determinismi.
+Peaksid nägema sarnast väljundit ja identseid tokenite arve teisel käivitamisel, mis kinnitab determinismi.
 
 ## Järgmised sammud
 
 Pärast sessiooni lõpetamist:
 
-1. **Uuri sessiooni 2**: Ehita AI lahendusi Azure AI Foundry RAG abil
+1. **Uuri sessiooni 2**: Loo AI lahendusi Azure AI Foundry RAG abil
 2. **Proovi erinevaid mudeleid**: Katseta Qwen, DeepSeek ja teisi mudeliperekondi
 3. **Optimeeri jõudlust**: Peenhäälesta seadeid vastavalt oma riistvarale
-4. **Ehita kohandatud rakendusi**: Kasuta Foundry Local SDK-d oma projektides
+4. **Loo kohandatud rakendusi**: Kasuta Foundry Local SDK-d oma projektides
 
 ## Täiendavad ressursid
 
@@ -482,9 +458,9 @@ Pärast sessiooni lõpetamist:
 - [Mudelikataloog](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Näidiskood
-- [Moodul08 Näide 01](./samples/01/README.md) - REST vestluse kiirstart
-- [Moodul08 Näide 02](./samples/02/README.md) - OpenAI SDK integreerimine
-- [Moodul08 Näide 03](./samples/03/README.md) - Mudelite avastamine ja võrdlusalus
+- [Moodul08 Näidis 01](./samples/01/README.md) - REST vestluse kiirkäivitus
+- [Moodul08 Näidis 02](./samples/02/README.md) - OpenAI SDK integreerimine
+- [Moodul08 Näidis 03](./samples/03/README.md) - Mudelite avastamine ja võrdlusalus
 
 ### Kogukond
 - [Foundry Local GitHub arutelud](https://github.com/microsoft/Foundry-Local/discussions)
@@ -494,19 +470,19 @@ Pärast sessiooni lõpetamist:
 
 **Sessiooni kestus**: 30 minutit praktilist + 15 minutit küsimusi ja vastuseid  
 **Raskusaste**: Algaja  
-**Eeldused**: Windows 11, Python 3.10+, Administraatori juurdepääs
+**Eeldused**: Windows 11, Python 3.10+, administraatoriõigused
 
-## Näidistsenaarium ja töötoa kaardistamine
+## Näidisstsenaarium ja töötoa kaardistus
 
-| Töötoa skript / märkmik | Stsenaarium | Eesmärk | Näide sisend(id) | Vajalik andmestik |
-|--------------------------|------------|--------|------------------|------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Sisemine IT meeskond hindab lokaalse järelduse kasutamist privaatsuse hindamise portaalis | Tõesta, et lokaalne SLM vastab standardsetele küsimustele alla sekundi latentsusega | "Loetle kaks lokaalse järelduse eelist." | Puudub (üksik küsimus) |
-| Kiirstarti kohandamise koodiplokk | Arendaja, kes migreerib olemasolevat OpenAI skripti Foundry Localile | Näita ühilduvust | "Anna kaks lokaalse järelduse eelist." | Ainult sisemine küsimus |
+| Töötoa skript / märkmik | Stsenaarium | Eesmärk | Näidis sisend(id) | Vajalik andmestik |
+|-------------------------|-------------|---------|-------------------|------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Sisemine IT meeskond hindab lokaalse järelduse kasutamist privaatsuse hindamise portaalis | Tõesta, et lokaalne SLM vastab alla sekundi latentsusega standardpäringutele | "Loetle kaks lokaalse järelduse eelist." | Puudub (üksik päring) |
+| Kiirkäivitus kohanduskoodi plokk | Arendaja, kes migreerib olemasolevat OpenAI skripti Foundry Localile | Näita lihtsat ühilduvust | "Anna kaks lokaalse järelduse eelist." | Ainult sisemine päring |
 
 ### Stsenaariumi narratiiv
-Turvalisuse ja vastavuse meeskond peab kinnitama, kas tundlikku prototüübi andmeid saab töödelda lokaalselt. Nad käivitavad bootstrap-skripti mitme küsimusega (privaatsus, latentsus, kulud), kasutades deterministlikku temperatuuri=0 režiimi, et jäädvustada algtaseme väljundid hilisemaks võrdluseks (Sessioon 3 võrdlusalus ja Sessioon 4 SLM vs LLM kontrast).
+Turvalisuse ja vastavuse meeskond peab kinnitama, kas tundlikku prototüübi andmeid saab lokaalselt töödelda. Nad käivitavad alglaadimisskripti mitme päringuga (privaatsus, latentsus, kulud), kasutades deterministlikku temperatuuri=0 režiimi, et koguda algtaseme väljundeid hilisemaks võrdluseks (Sessioon 3 võrdlusalus ja Sessioon 4 SLM vs LLM võrdlus).
 
-### Minimaalne küsimuste komplekt JSON (valikuline)
+### Minimaalne päringukomplekti JSON (valikuline)
 ```json
 [
     "List two benefits of local inference.",
@@ -515,9 +491,9 @@ Turvalisuse ja vastavuse meeskond peab kinnitama, kas tundlikku prototüübi and
 ]
 ```
 
-Kasuta seda loendit korduva hindamistsükli loomiseks või tulevase regressioonitesti raamistikuks.
+Kasuta seda loendit korduva hindamistsükli loomiseks või tulevase regressioonitesti raamistiku algatamiseks.
 
 ---
 
 **Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tekkida selle tõlke kasutamise tõttu.

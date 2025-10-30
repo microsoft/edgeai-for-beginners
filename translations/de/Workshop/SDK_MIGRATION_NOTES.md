@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-08T20:58:42+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T20:12:28+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "de"
 }
@@ -18,10 +18,10 @@ Alle Python-Dateien im Workshop-Ordner wurden aktualisiert, um den neuesten Must
 ### Kerninfrastruktur (`workshop_utils.py`)
 
 #### Verbesserte Funktionen:
-- **Unterstützung für Endpoint-Override**: Unterstützung für die Umgebungsvariable `FOUNDRY_LOCAL_ENDPOINT` hinzugefügt
+- **Unterstützung für Endpoint-Override**: Unterstützung der Umgebungsvariable `FOUNDRY_LOCAL_ENDPOINT` hinzugefügt
 - **Verbesserte Fehlerbehandlung**: Bessere Ausnahmebehandlung mit detaillierten Fehlermeldungen
-- **Erweiterte Caching-Funktionalität**: Cache-Schlüssel beinhalten jetzt den Endpoint für Multi-Endpoint-Szenarien
-- **Exponentielles Backoff**: Retry-Logik verwendet jetzt exponentielles Backoff für höhere Zuverlässigkeit
+- **Erweiterte Zwischenspeicherung**: Cache-Schlüssel beinhalten jetzt den Endpoint für Szenarien mit mehreren Endpoints
+- **Exponentielles Backoff**: Die Wiederholungslogik verwendet jetzt exponentielles Backoff für bessere Zuverlässigkeit
 - **Typannotationen**: Umfassende Typ-Hinweise für bessere IDE-Unterstützung hinzugefügt
 
 #### Neue Funktionen:
@@ -38,7 +38,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### Sitzung 01: Chat Bootstrap (`chat_bootstrap.py`)
 - Standardmodell von `phi-3.5-mini` auf `phi-4-mini` aktualisiert
 - Unterstützung für Endpoint-Override hinzugefügt
-- Dokumentation mit SDK-Referenzen erweitert
+- Dokumentation mit SDK-Referenzen verbessert
 
 #### Sitzung 02: RAG-Pipeline (`rag_pipeline.py`)
 - Aktualisiert, um `phi-4-mini` als Standard zu verwenden
@@ -51,7 +51,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Fehlerbehandlung verbessert
 
 #### Sitzung 03: Benchmarking (`benchmark_oss_models.py`)
-- Standardmodell-Liste aktualisiert, um `phi-4-mini` einzuschließen
+- Standardmodellliste aktualisiert, um `phi-4-mini` einzuschließen
 - Umfassende Dokumentation zu Umgebungsvariablen hinzugefügt
 - Funktionsdokumentation verbessert
 - Unterstützung für Endpoint-Override durchgehend hinzugefügt
@@ -59,30 +59,30 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### Sitzung 04: Modellvergleich (`model_compare.py`)
 - Standard-LLM von `gpt-oss-20b` auf `qwen2.5-7b` aktualisiert
 - Endpoint-Konfiguration hinzugefügt
-- Dokumentation erweitert
+- Dokumentation verbessert
 
 #### Sitzung 05: Multi-Agent-Orchestrierung (`agents_orchestrator.py`)
-- Typ-Hinweise hinzugefügt (Änderung von `str | None` zu `Optional[str]`)
+- Typ-Hinweise hinzugefügt (geändert von `str | None` zu `Optional[str]`)
 - Dokumentation der Agent-Klasse verbessert
 - Unterstützung für Endpoint-Override hinzugefügt
 - Initialisierungsmuster verbessert
 
 #### Sitzung 06: Modell-Router (`models_router.py`)
 - Endpoint-Konfiguration hinzugefügt
-- Dokumentation zur Intent-Erkennung erweitert
-- Dokumentation zur Routing-Logik verbessert
+- Dokumentation zur Intent-Erkennung verbessert
+- Dokumentation der Routing-Logik verbessert
 
 #### Sitzung 06: Pipeline (`models_pipeline.py`)
 - Umfassende Funktionsdokumentation hinzugefügt
 - Schritt-für-Schritt-Dokumentation verbessert
-- Fehlerbehandlung erweitert
+- Fehlerbehandlung verbessert
 
 ### Skripte
 
 #### Benchmark-Export (`export_benchmark_markdown.py`)
 - Unterstützung für Endpoint-Override hinzugefügt
 - Standardmodelle aktualisiert
-- Funktionsdokumentation erweitert
+- Funktionsdokumentation verbessert
 - Fehlerbehandlung verbessert
 
 #### CLI-Linter (`lint_markdown_cli.py`)
@@ -93,9 +93,9 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### Smoke-Tests (`smoke.py`)
 - Unterstützung für Endpoint-Override hinzugefügt
-- Dokumentation erweitert
-- Testfall-Dokumentation verbessert
-- Bessere Fehlerberichterstattung
+- Dokumentation verbessert
+- Dokumentation der Testfälle verbessert
+- Bessere Fehlerberichte
 
 ## Umgebungsvariablen
 
@@ -105,8 +105,8 @@ Alle Beispiele unterstützen jetzt diese Umgebungsvariablen:
 - `FOUNDRY_LOCAL_ALIAS` - Zu verwendender Modellalias (Standard variiert je nach Beispiel)
 - `FOUNDRY_LOCAL_ENDPOINT` - Service-Endpoint überschreiben (optional)
 - `SHOW_USAGE` - Token-Nutzungsstatistiken anzeigen (Standard: "0")
-- `RETRY_ON_FAIL` - Retry-Logik aktivieren (Standard: "1")
-- `RETRY_BACKOFF` - Anfangsverzögerung für Retry in Sekunden (Standard: "1.0")
+- `RETRY_ON_FAIL` - Wiederholungslogik aktivieren (Standard: "1")
+- `RETRY_BACKOFF` - Anfangsverzögerung für Wiederholungen in Sekunden (Standard: "1.0")
 
 ### Beispiel-spezifisch
 - `EMBED_MODEL` - Einbettungsmodell für RAG-Beispiele
@@ -136,7 +136,7 @@ client = OpenAI(
 )
 ```
 
-### 2. Modellinformationen abrufen
+### 2. Abruf von Modellinformationen
 ```python
 # Proper model ID resolution
 model_info = manager.get_model_info(alias)
@@ -154,7 +154,7 @@ except Exception as e:
     raise RuntimeError(f"Initialization failed: {e}") from e
 ```
 
-### 4. Retry-Logik mit exponentiellem Backoff
+### 4. Wiederholungslogik mit exponentiellem Backoff
 ```python
 delay = initial_delay
 for attempt in range(max_retries):
@@ -183,7 +183,7 @@ for chunk in stream:
 
 Wenn Sie neue Beispiele erstellen oder bestehende aktualisieren:
 
-1. **Verwenden Sie die Helfer in `workshop_utils.py`**:
+1. **Verwenden Sie die Hilfsfunktionen von `workshop_utils.py`**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -237,7 +238,7 @@ python -m Workshop.tests.smoke
 
 - **Hauptrepository**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API-Dokumentation**: Siehe SDK-Repository für die neuesten API-Dokumente
+- **API-Dokumentation**: Aktuelle API-Dokumentation im SDK-Repository einsehen
 
 ## Breaking Changes
 
@@ -246,18 +247,18 @@ Alle Änderungen sind rückwärtskompatibel. Die Updates:
 - Fügen neue optionale Funktionen hinzu (Endpoint-Override)
 - Verbessern die Fehlerbehandlung
 - Erweitern die Dokumentation
-- Aktualisieren die Standardmodellnamen gemäß aktuellen Empfehlungen
+- Aktualisieren die Standardmodellnamen auf aktuelle Empfehlungen
 
 ### Optionale Verbesserungen
-Es wird empfohlen, Ihren Code zu aktualisieren, um:
+Es wird empfohlen, den Code zu aktualisieren, um:
 - `FOUNDRY_LOCAL_ENDPOINT` für explizite Endpoint-Steuerung zu verwenden
-- `SHOW_USAGE=1` für Sichtbarkeit der Token-Nutzung
-- Aktualisierte Standardmodelle (`phi-4-mini` statt `phi-3.5-mini`) zu nutzen
+- `SHOW_USAGE=1` für die Sichtbarkeit der Token-Nutzung zu aktivieren
+- Aktualisierte Standardmodelle (`phi-4-mini` statt `phi-3.5-mini`) zu verwenden
 
 ## Häufige Probleme & Lösungen
 
 ### Problem: "Client-Initialisierung fehlgeschlagen"
-**Lösung**: Stellen Sie sicher, dass der Foundry Local-Dienst läuft:
+**Lösung**: Sicherstellen, dass der Foundry Local Service läuft:
 ```bash
 foundry service start
 foundry model run phi-4-mini
@@ -282,9 +283,9 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ## Nächste Schritte
 
 1. **Module08-Beispiele aktualisieren**: Ähnliche Muster auf Module08/samples anwenden
-2. **Integrationstests hinzufügen**: Umfassende Testsuite erstellen
-3. **Leistungsbenchmarking**: Vorher/Nachher-Leistung vergleichen
-4. **Dokumentation aktualisieren**: Haupt-README mit neuen Mustern aktualisieren
+2. **Integrationstests hinzufügen**: Umfassende Test-Suite erstellen
+3. **Leistungs-Benchmarking**: Vorher/Nachher-Leistung vergleichen
+4. **Dokumentationsupdates**: Haupt-README mit neuen Mustern aktualisieren
 
 ## Beitragsrichtlinien
 

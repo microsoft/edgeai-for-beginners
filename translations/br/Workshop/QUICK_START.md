@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20ef6223850f0ab7b6e546a6df0d7d68",
-  "translation_date": "2025-10-09T10:37:04+00:00",
+  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
+  "translation_date": "2025-10-28T21:33:33+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "br"
 }
@@ -50,8 +50,8 @@ pip install -r requirements.txt
 ### Sessão 01: Chat Básico
 
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What are the benefits of local AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
 **Variáveis de Ambiente:**  
@@ -63,8 +63,8 @@ set SHOW_USAGE=1
 ### Sessão 02: Pipeline RAG
 
 ```bash
-cd Workshop/samples/session02
-python rag_pipeline.py
+cd Workshop/samples
+python -m session02.rag_pipeline
 ```
 
 **Variáveis de Ambiente:**  
@@ -77,7 +77,8 @@ set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ### Sessão 02: Avaliação RAG (Ragas)
 
 ```bash
-python rag_eval_ragas.py
+cd Workshop/samples
+python -m session02.rag_eval_ragas
 ```
 
 **Nota**: Requer dependências adicionais instaladas via `requirements.txt`
@@ -85,13 +86,13 @@ python rag_eval_ragas.py
 ### Sessão 03: Benchmarking
 
 ```bash
-cd Workshop/samples/session03
-python benchmark_oss_models.py
+cd Workshop/samples
+python -m session03.benchmark_oss_models
 ```
 
 **Variáveis de Ambiente:**  
 ```bash
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
 set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
@@ -102,8 +103,8 @@ set BENCH_STREAM=1
 ### Sessão 04: Comparação de Modelos
 
 ```bash
-cd Workshop/samples/session04
-python model_compare.py
+cd Workshop/samples
+python -m session04.model_compare
 ```
 
 **Variáveis de Ambiente:**  
@@ -116,8 +117,8 @@ set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ### Sessão 05: Orquestração Multi-Agente
 
 ```bash
-cd Workshop/samples/session05
-python agents_orchestrator.py
+cd Workshop/samples
+python -m session05.agents_orchestrator
 ```
 
 **Variáveis de Ambiente:**  
@@ -130,16 +131,16 @@ set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ### Sessão 06: Roteador de Modelos
 
 ```bash
-cd Workshop/samples/session06
-python models_router.py
+cd Workshop/samples
+python -m session06.models_router
 ```
 
-**Testa lógica de roteamento** com múltiplas intenções (código, resumo, classificação)
+**Testa a lógica de roteamento** com múltiplas intenções (código, resumo, classificação)
 
 ### Sessão 06: Pipeline
 
 ```bash
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 **Pipeline complexo de múltiplas etapas** com planejamento, execução e refinamento
@@ -159,17 +160,17 @@ python export_benchmark_markdown.py \
 
 **Saída**: Tabela em Markdown + métricas em JSON
 
-### Lint de Padrões CLI em Markdown
+### Verificar Padrões de CLI em Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**Objetivo**: Detectar padrões CLI obsoletos na documentação
+**Objetivo**: Detectar padrões de CLI obsoletos na documentação
 
 ## Testes
 
-### Testes de Smoke
+### Testes de Fumaça
 
 ```bash
 cd Workshop
@@ -228,17 +229,17 @@ foundry model run phi-4-mini
 
 ### Configuração Principal
 | Variável | Padrão | Descrição |
-|----------|--------|-----------|
+|----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | Varia | Alias do modelo a ser usado |
 | `FOUNDRY_LOCAL_ENDPOINT` | Automático | Substituir endpoint do serviço |
 | `SHOW_USAGE` | `0` | Mostrar estatísticas de uso de tokens |
-| `RETRY_ON_FAIL` | `1` | Habilitar lógica de repetição |
+| `RETRY_ON_FAIL` | `1` | Ativar lógica de repetição |
 | `RETRY_BACKOFF` | `1.0` | Atraso inicial para repetição (segundos) |
 
 ### Específico da Sessão
 | Variável | Padrão | Descrição |
-|----------|--------|-----------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Modelo de embeddings |
+|----------|---------|-------------|
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Modelo de incorporação |
 | `RAG_QUESTION` | Ver exemplo | Pergunta de teste RAG |
 | `BENCH_MODELS` | Varia | Modelos separados por vírgula |
 | `BENCH_ROUNDS` | `3` | Iterações de benchmark |
@@ -265,14 +266,14 @@ foundry model run phi-4-mini
 ## Documentação do SDK
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **SDK Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
 
 ## Obtendo Ajuda
 
-1. Verificar status do serviço: `foundry service status`  
-2. Ver logs: Checar os logs do serviço Foundry Local  
-3. Consultar docs do SDK: https://github.com/microsoft/Foundry-Local  
-4. Revisar código de exemplo: Todos os exemplos possuem docstrings detalhadas  
+1. Verifique o status do serviço: `foundry service status`  
+2. Veja os logs: Verifique os logs do serviço Foundry Local  
+3. Consulte a documentação do SDK: https://github.com/microsoft/Foundry-Local  
+4. Revise o código de exemplo: Todos os exemplos possuem docstrings detalhados  
 
 ## Próximos Passos
 
@@ -283,11 +284,11 @@ foundry model run phi-4-mini
 
 ---
 
-**Última Atualização**: 08/01/2025  
+**Última Atualização**: 08-01-2025  
 **Versão do Workshop**: Mais recente  
-**SDK**: Foundry Local Python SDK
+**SDK**: Foundry Local Python SDK  
 
 ---
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

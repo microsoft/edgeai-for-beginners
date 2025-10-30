@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T10:39:58+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T21:33:59+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "br"
 }
@@ -15,7 +15,7 @@ Os exemplos do Workshop utilizam variáveis de ambiente para configuração, cen
 
 ## Início Rápido
 
-### 1. Verifique os Pré-requisitos
+### 1. Verificar Pré-requisitos
 
 ```bash
 # Check Foundry Local is installed
@@ -28,7 +28,7 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. Configure o Ambiente
+### 2. Configurar Ambiente
 
 O arquivo `.env` já está configurado com valores padrão sensatos. A maioria dos usuários não precisará alterar nada.
 
@@ -39,12 +39,12 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Aplique a Configuração
+### 3. Aplicar Configuração
 
 **Para Scripts Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -67,7 +67,7 @@ python chat_bootstrap.py
 **Quando configurar FOUNDRY_LOCAL_ENDPOINT:**
 - Instância remota do Foundry Local
 - Configuração de porta personalizada
-- Separação entre desenvolvimento e produção
+- Separação entre desenvolvimento/produção
 
 **Exemplo:**
 ```bash
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sessão 03: Benchmarking
 | Variável | Padrão | Finalidade |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modelos para benchmarking |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modelos para benchmarking |
 | `BENCH_ROUNDS` | `3` | Iterações por modelo |
 | `BENCH_PROMPT` | Pré-configurado | Prompt de teste |
 | `BENCH_STREAM` | `0` | Medir latência do primeiro token |
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Configuração de Produção (Foco na Qualidade)
+### Configuração de Produção (Foco em Qualidade)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Configuração de Benchmarking
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -178,7 +178,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### Por Disponibilidade de Recursos
 
-**Baixos Recursos (< 8GB RAM):**
+**Poucos Recursos (< 8GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Sintomas:**
 - Erros de "Módulo não encontrado"
-- "Não é possível importar workshop_utils"
 
 **Soluções:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Testando a Configuração
@@ -410,17 +407,17 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ## Recursos Adicionais
 
-- `QUICK_START.md` - Guia de introdução
-- `SDK_MIGRATION_NOTES.md` - Detalhes sobre atualizações do SDK
+- `QUICK_START.md` - Guia de início rápido
+- `SDK_MIGRATION_NOTES.md` - Detalhes sobre atualização do SDK
 - `Workshop/samples/*/README.md` - Guias específicos para os exemplos
 
 ---
 
-**Última Atualização**: 2025-01-08  
+**Última Atualização**: 08-01-2025  
 **Versão**: 2.0  
 **SDK**: Foundry Local Python SDK (mais recente)
 
 ---
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.

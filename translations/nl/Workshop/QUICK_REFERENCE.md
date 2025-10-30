@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T16:56:53+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T22:24:55+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "nl"
 }
 -->
 # Workshop Voorbeelden - Snel Referentiekaart
 
-**Laatst Bijgewerkt**: 8 oktober 2025
+**Laatst bijgewerkt**: 8 oktober 2025
 
 ---
 
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -201,7 +201,7 @@ for chunk in stream:
 | `gemma-2-2b` | 2B | Creatief schrijven | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Code, refactoring | ⚡⚡ |
 | `phi-4-mini` | 4B | Algemeen, samenvatting | ⚡⚡ |
-| `qwen2.5-7b` | 7B | Complexe redenering | ⚡ |
+| `qwen2.5-7b` | 7B | Complex redeneren | ⚡ |
 
 ---
 
@@ -210,17 +210,17 @@ for chunk in stream:
 - **SDK Documentatie**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Snelle Referentie**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **Update Samenvatting**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migratienotities**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Migratie Notities**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
 ## 💡 Tips
 
-1. **Cache clients**: `workshop_utils` cachet automatisch voor je
+1. **Cache clients**: `workshop_utils` cachet voor je
 2. **Gebruik kleinere modellen**: Begin met `qwen2.5-0.5b` voor testen
 3. **Schakel gebruiksstatistieken in**: Stel `SHOW_USAGE=1` in om tokens bij te houden
 4. **Batchverwerking**: Verwerk meerdere prompts achter elkaar
-5. **Verlaag max_tokens**: Vermindert latentie voor snelle antwoorden
+5. **Verlaag max_tokens**: Vermindert latentie voor snelle reacties
 
 ---
 
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Benchmark Modellen
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG Pipeline
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Multi-Agent Systeem
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Snelle Hulp**: Voer een voorbeeld uit met `--help` of bekijk de docstring:
+**Snelle Hulp**: Voer een voorbeeld uit met `--help` vanuit de `samples` map of bekijk de docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

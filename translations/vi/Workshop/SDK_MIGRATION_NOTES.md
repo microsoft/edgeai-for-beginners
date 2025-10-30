@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T17:00:05+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:35:25+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "vi"
 }
 -->
-# Ghi chú về việc di chuyển SDK Foundry Local
+# Ghi chú di chuyển SDK Local Foundry
 
 ## Tổng quan
 
@@ -21,8 +21,8 @@ Tất cả các tệp Python trong thư mục Workshop đã được cập nhậ
 - **Hỗ trợ ghi đè Endpoint**: Thêm hỗ trợ biến môi trường `FOUNDRY_LOCAL_ENDPOINT`
 - **Cải thiện xử lý lỗi**: Xử lý ngoại lệ tốt hơn với thông báo lỗi chi tiết
 - **Tăng cường bộ nhớ đệm**: Các khóa bộ nhớ đệm hiện bao gồm endpoint cho các kịch bản đa endpoint
-- **Exponential Backoff**: Logic thử lại hiện sử dụng exponential backoff để tăng độ tin cậy
-- **Chú thích kiểu**: Thêm các chú thích kiểu toàn diện để hỗ trợ IDE tốt hơn
+- **Backoff lũy thừa**: Logic thử lại hiện sử dụng backoff lũy thừa để tăng độ tin cậy
+- **Chú thích kiểu**: Thêm các gợi ý kiểu toàn diện để hỗ trợ tốt hơn cho IDE
 
 #### Khả năng mới:
 ```python
@@ -40,7 +40,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Thêm hỗ trợ ghi đè endpoint
 - Tăng cường tài liệu với tham chiếu SDK
 
-#### Phiên 02: RAG Pipeline (`rag_pipeline.py`)
+#### Phiên 02: Pipeline RAG (`rag_pipeline.py`)
 - Cập nhật để sử dụng `phi-4-mini` làm mặc định
 - Thêm hỗ trợ ghi đè endpoint
 - Cải thiện tài liệu với chi tiết biến môi trường
@@ -54,7 +54,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Cập nhật danh sách mô hình mặc định để bao gồm `phi-4-mini`
 - Thêm tài liệu biến môi trường toàn diện
 - Cải thiện tài liệu chức năng
-- Thêm hỗ trợ ghi đè endpoint xuyên suốt
+- Thêm hỗ trợ ghi đè endpoint toàn bộ
 
 #### Phiên 04: So sánh mô hình (`model_compare.py`)
 - Cập nhật LLM mặc định từ `gpt-oss-20b` sang `qwen2.5-7b`
@@ -62,7 +62,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Tăng cường tài liệu
 
 #### Phiên 05: Điều phối đa tác nhân (`agents_orchestrator.py`)
-- Thêm chú thích kiểu (thay đổi `str | None` thành `Optional[str]`)
+- Thêm gợi ý kiểu (thay đổi `str | None` thành `Optional[str]`)
 - Tăng cường tài liệu lớp Agent
 - Thêm hỗ trợ ghi đè endpoint
 - Cải thiện mẫu khởi tạo
@@ -89,12 +89,12 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Thêm liên kết tham chiếu SDK
 - Cải thiện tài liệu sử dụng
 
-### Kiểm thử
+### Tests
 
-#### Kiểm thử nhanh (`smoke.py`)
+#### Kiểm tra nhanh (`smoke.py`)
 - Thêm hỗ trợ ghi đè endpoint
 - Tăng cường tài liệu
-- Cải thiện tài liệu trường hợp kiểm thử
+- Cải thiện tài liệu trường hợp kiểm tra
 - Báo cáo lỗi tốt hơn
 
 ## Biến môi trường
@@ -112,9 +112,9 @@ Tất cả các mẫu hiện hỗ trợ các biến môi trường sau:
 - `EMBED_MODEL` - Mô hình nhúng cho các mẫu RAG
 - `BENCH_MODELS` - Các mô hình phân cách bằng dấu phẩy để đánh giá hiệu năng
 - `BENCH_ROUNDS` - Số vòng đánh giá hiệu năng
-- `BENCH_PROMPT` - Prompt kiểm thử cho đánh giá hiệu năng
+- `BENCH_PROMPT` - Lời nhắc kiểm tra cho đánh giá hiệu năng
 - `BENCH_STREAM` - Đo độ trễ token đầu tiên
-- `RAG_QUESTION` - Câu hỏi kiểm thử cho các mẫu RAG
+- `RAG_QUESTION` - Câu hỏi kiểm tra cho các mẫu RAG
 - `AGENT_MODEL_PRIMARY` - Mô hình tác nhân chính
 - `AGENT_MODEL_EDITOR` - Mô hình tác nhân chỉnh sửa
 - `SLM_ALIAS` - Bí danh mô hình ngôn ngữ nhỏ
@@ -154,7 +154,7 @@ except Exception as e:
     raise RuntimeError(f"Initialization failed: {e}") from e
 ```
 
-### 4. Logic thử lại với Exponential Backoff
+### 4. Logic thử lại với Backoff lũy thừa
 ```python
 delay = initial_delay
 for attempt in range(max_retries):
@@ -183,7 +183,7 @@ for chunk in stream:
 
 Nếu bạn đang tạo các mẫu mới hoặc cập nhật các mẫu hiện có:
 
-1. **Sử dụng các tiện ích trong `workshop_utils.py`**:
+1. **Sử dụng các trợ giúp từ `workshop_utils.py`**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
@@ -199,7 +199,7 @@ Nếu bạn đang tạo các mẫu mới hoặc cập nhật các mẫu hiện c
    - Liên kết tham chiếu SDK
    - Ví dụ sử dụng
 
-4. **Sử dụng chú thích kiểu**:
+4. **Sử dụng gợi ý kiểu**:
    ```python
    from typing import Optional, List, Dict, Any
    ```
@@ -213,9 +213,9 @@ Nếu bạn đang tạo các mẫu mới hoặc cập nhật các mẫu hiện c
        raise
    ```
 
-## Kiểm thử
+## Kiểm tra
 
-Tất cả các mẫu có thể được kiểm thử với:
+Tất cả các mẫu có thể được kiểm tra với:
 
 ```bash
 # Set environment variables
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -239,16 +240,16 @@ python -m Workshop.tests.smoke
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 - **Tài liệu API**: Kiểm tra kho SDK để biết tài liệu API mới nhất
 
-## Thay đổi phá vỡ
+## Thay đổi lớn
 
-### Không có thay đổi dự kiến
+### Không có dự kiến
 Tất cả các thay đổi đều tương thích ngược. Các cập nhật chủ yếu:
 - Thêm các tính năng tùy chọn mới (ghi đè endpoint)
 - Cải thiện xử lý lỗi
 - Tăng cường tài liệu
 - Cập nhật tên mô hình mặc định theo khuyến nghị hiện tại
 
-### Nâng cấp tùy chọn
+### Cải tiến tùy chọn
 Bạn có thể muốn cập nhật mã của mình để sử dụng:
 - `FOUNDRY_LOCAL_ENDPOINT` để kiểm soát endpoint rõ ràng
 - `SHOW_USAGE=1` để hiển thị sử dụng token
@@ -282,7 +283,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ## Các bước tiếp theo
 
 1. **Cập nhật các mẫu Module08**: Áp dụng các mẫu tương tự cho Module08/samples
-2. **Thêm kiểm thử tích hợp**: Tạo bộ kiểm thử toàn diện
+2. **Thêm kiểm tra tích hợp**: Tạo bộ kiểm tra toàn diện
 3. **Đánh giá hiệu năng**: So sánh hiệu năng trước/sau
 4. **Cập nhật tài liệu**: Cập nhật README chính với các mẫu mới
 
@@ -292,10 +293,10 @@ Khi thêm các mẫu mới:
 1. Sử dụng `workshop_utils.py` để đảm bảo tính nhất quán
 2. Tuân theo mẫu trong các mẫu hiện có
 3. Thêm docstring toàn diện
-4. Bao gồm liên kết tham chiếu SDK
+4. Bao gồm các liên kết tham chiếu SDK
 5. Hỗ trợ ghi đè endpoint
-6. Thêm chú thích kiểu đúng cách
-7. Bao gồm ví dụ sử dụng trong docstring
+6. Thêm gợi ý kiểu đúng cách
+7. Bao gồm các ví dụ sử dụng trong docstring
 
 ## Tương thích phiên bản
 
@@ -306,11 +307,11 @@ Các cập nhật này tương thích với:
 
 ---
 
-**Cập nhật lần cuối**: 2025-01-08  
-**Người duy trì**: Đội Workshop EdgeAI  
+**Cập nhật lần cuối**: 08-01-2025  
+**Người quản lý**: Đội ngũ EdgeAI Workshop  
 **Phiên bản SDK**: Foundry Local SDK (mới nhất 0.7.117+67073234e7)
 
 ---
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, chúng tôi khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

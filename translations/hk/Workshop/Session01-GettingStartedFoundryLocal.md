@@ -1,43 +1,43 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-08T16:21:55+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T20:43:04+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "hk"
 }
 -->
-# 第1節：開始使用 Foundry Local
+# 第一節：開始使用 Foundry Local
 
 ## 摘要
 
-透過在 Windows 11 上安裝和配置 Foundry Local，開啟您的旅程。學習如何設置 CLI、啟用硬件加速以及緩存模型以進行快速的本地推理。本次實作課程將逐步演示如何使用可重現的 CLI 命令運行 Phi、Qwen、DeepSeek 和 GPT-OSS-20B 等模型。
+透過在 Windows 11 上安裝和配置 Foundry Local，開啟您的旅程。學習如何設置 CLI、啟用硬件加速以及緩存模型以進行快速的本地推理。本次實踐課程將逐步演示如何使用可重現的 CLI 命令運行 Phi、Qwen、DeepSeek 和 GPT-OSS-20B 等模型。
 
 ## 學習目標
 
-完成本節後，您將能夠：
+完成本次課程後，您將能夠：
 
-- **安裝和配置**：在 Windows 11 上設置 Foundry Local，並進行最佳性能配置
+- **安裝和配置**：在 Windows 11 上設置 Foundry Local，並優化性能設置
 - **掌握 CLI 操作**：使用 Foundry Local CLI 進行模型管理和部署
 - **啟用硬件加速**：使用 ONNXRuntime 或 WebGPU 配置 GPU 加速
-- **部署多個模型**：本地運行 phi-4、GPT-OSS-20B、Qwen 和 DeepSeek 模型
+- **部署多個模型**：在本地運行 phi-4、GPT-OSS-20B、Qwen 和 DeepSeek 模型
 - **構建您的第一個應用**：改編現有範例以使用 Foundry Local Python SDK
 
 # 測試模型（非互動式單次提示）
 foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 
-- Windows 11（22H2 或更高版本）
-# 列出可用的目錄模型（已加載的模型在運行後顯示）
+- Windows 11 (22H2 或更高版本)
+# 列出可用的目錄模型（運行後加載的模型會顯示）
 foundry model list
-## 注意：目前沒有專門的 `--running` 標誌；要查看哪些模型已加載，可啟動聊天或檢查服務日誌。
+## 注意：目前沒有專門的 `--running` 標誌；要查看哪些模型已加載，請啟動聊天或檢查服務日誌。
 - 已安裝 Python 3.10+
 - 安裝了 Python 擴展的 Visual Studio Code
 - 安裝需要管理員權限
 
 ### （可選）環境變量
 
-創建 `.env`（或在 shell 中設置）以使腳本可移植：
-# 比較回應（非互動式）
+創建 `.env`（或在 shell 中設置）以使腳本更具可移植性：
+# 比較響應（非互動式）
 foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 | 變量 | 用途 | 示例 |
 |------|------|------|
@@ -45,7 +45,7 @@ foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 | `FOUNDRY_LOCAL_ENDPOINT` | 覆蓋端點（否則由管理器自動生成） | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | 啟用流式演示 | `true` |
 
-> 如果 `FOUNDRY_LOCAL_ENDPOINT=auto`（或未設置），我們將從 SDK 管理器中推導出。
+> 如果 `FOUNDRY_LOCAL_ENDPOINT=auto`（或未設置），我們會從 SDK 管理器中推導出。
 
 ## 演示流程（30 分鐘）
 
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS（預覽 / 如果支持）**
 
-如果提供了原生 macOS 套件（請檢查官方文檔以獲取最新信息）：
+如果提供了原生 macOS 套件（請查看官方文檔以獲取最新信息）：
 
 ```bash
 # Homebrew (if/when available)
@@ -83,13 +83,13 @@ sudo ./install.sh
 
 **創建 Python 虛擬環境（跨平台）**
 
-Windows PowerShell：
+Windows PowerShell:
 ```powershell
 py -m venv .venv
  .\.venv\Scripts\Activate.ps1
 ```
 
-macOS / Linux：
+macOS / Linux:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
@@ -158,34 +158,9 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-如果您更喜歡明確的控制，仍然可以使用 CLI + OpenAI 客戶端，如後續所示。
+如果您更喜歡顯式控制，仍然可以使用 CLI + OpenAI 客戶端，如後續所示。
 
-### 2. 啟用 GPU 加速（5 分鐘）
-
-#### 步驟 2.1：檢查硬件能力
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### 步驟 2.2：配置硬件加速
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. 通過 CLI 本地運行模型（10 分鐘）
+### 2. 通過 CLI 本地運行模型（10 分鐘）
 
 #### 步驟 3.1：部署 Phi-4 模型
 
@@ -223,7 +198,7 @@ foundry model download deepseek-coder-1.3b
 foundry cache list
 ```
 
-### 4. 初學者項目：改編 01-run-phi 以使用 Foundry Local（5 分鐘）
+### 4. 初學者項目：改編 01-run-phi 用於 Foundry Local（5 分鐘）
 
 #### 步驟 4.1：創建基本聊天應用
 
@@ -310,7 +285,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Found
 python samples/01-foundry-quickstart/chat_quickstart.py
 ```
 
-## 涵蓋的核心概念
+## 涵蓋的關鍵概念
 
 ### 1. Foundry Local 架構
 
@@ -408,7 +383,7 @@ netstat -an | findstr 5273
 
 ### 1. 模型選擇策略
 
-- **Phi-4-mini**：適合一般任務，內存使用較低
+- **Phi-4-mini**：適合一般任務，內存使用較少
 - **Qwen2.5-0.5b**：推理速度最快，資源需求最低
 - **GPT-OSS-20B**：質量最高，但需要更多資源
 - **DeepSeek-Coder**：針對編程任務進行優化
@@ -429,29 +404,30 @@ foundry config set model.preload false
 ### 3. 監控性能
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### 可選增強功能
 
 | 增強功能 | 內容 | 方法 |
 |----------|------|------|
-| 共享工具 | 消除重複的客戶端/引導邏輯 | 使用 `Workshop/samples/workshop_utils.py`（`get_client`，`chat_once`） |
+| 共享工具 | 消除重複的客戶端/引導邏輯 | 使用 `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
 | 令牌使用可見性 | 提早教導成本/效率思維 | 設置 `SHOW_USAGE=1` 以打印提示/完成/總令牌 |
-| 確定性比較 | 穩定的基準測試和回歸檢查 | 使用 `temperature=0`，`top_p=1`，一致的提示文本 |
-| 首令牌延遲 | 感知響應性指標 | 使用流式方式改編基準腳本（`BENCH_STREAM=1`） |
-| 暫時性錯誤重試 | 冷啟動時的演示更具韌性 | `RETRY_ON_FAIL=1`（默認）並調整 `RETRY_BACKOFF` |
-| 煙霧測試 | 快速檢查主要流程 | 在工作坊前運行 `python Workshop/tests/smoke.py` |
-| 模型別名配置檔案 | 在不同機器間快速切換模型集 | 維護 `.env`，包含 `FOUNDRY_LOCAL_ALIAS`，`SLM_ALIAS`，`LLM_ALIAS` |
-| 緩存效率 | 避免多範例運行中的重複預熱 | 工具緩存管理器；在腳本/筆記本間重用 |
+| 確定性比較 | 穩定的基準測試和回歸檢查 | 使用 `temperature=0`、`top_p=1`、一致的提示文本 |
+| 首令牌延遲 | 感知響應性指標 | 使用流式方式調整基準測試腳本（`BENCH_STREAM=1`） |
+| 暫時性錯誤重試 | 冷啟動時的演示恢復能力 | `RETRY_ON_FAIL=1`（默認）並調整 `RETRY_BACKOFF` |
+| 煙霧測試 | 快速檢查關鍵流程的健全性 | 在工作坊之前運行 `python Workshop/tests/smoke.py` |
+| 模型別名配置檔案 | 在機器之間快速切換模型集 | 維護 `.env`，包括 `FOUNDRY_LOCAL_ALIAS`、`SLM_ALIAS`、`LLM_ALIAS` |
+| 緩存效率 | 避免在多範例運行中重複預熱 | 工具緩存管理器；在腳本/筆記本中重用 |
 | 首次運行預熱 | 減少 p95 延遲峰值 | 在創建 `FoundryLocalManager` 後發送一個小提示 |
 
 示例確定性預熱基線（PowerShell）：
@@ -463,16 +439,16 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-您應該在第二次運行中看到類似的輸出和相同的令牌計數，確認確定性。
+您應該在第二次運行時看到類似的輸出和相同的令牌計數，確認確定性。
 
 ## 下一步
 
-完成本節後：
+完成本次課程後：
 
-1. **探索第2節**：使用 Azure AI Foundry RAG 構建 AI 解決方案
+1. **探索第二節**：使用 Azure AI Foundry RAG 構建 AI 解決方案
 2. **嘗試不同模型**：試驗 Qwen、DeepSeek 和其他模型系列
-3. **優化性能**：針對您的特定硬件進行設置微調
-4. **構建自定義應用**：在自己的項目中使用 Foundry Local SDK
+3. **優化性能**：根據您的特定硬件微調設置
+4. **構建自定義應用**：在您的項目中使用 Foundry Local SDK
 
 ## 附加資源
 
@@ -492,19 +468,19 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 
 ---
 
-**課程時長**：30 分鐘實作 + 15 分鐘問答
+**課程時長**：30 分鐘實踐 + 15 分鐘問答
 **難度級別**：初學者
-**先決條件**：Windows 11，Python 3.10+，管理員權限
+**先決條件**：Windows 11、Python 3.10+、管理員權限
 
 ## 範例場景與工作坊映射
 
 | 工作坊腳本 / 筆記本 | 場景 | 目標 | 示例輸入 | 所需數據集 |
 |---------------------|------|------|----------|------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | 內部 IT 團隊評估設備上的推理以進行隱私評估門戶 | 證明本地 SLM 在標準提示下的響應時間低於一秒 | "列出本地推理的兩個優勢。" | 無（單次提示） |
-| 快速入門改編代碼塊 | 開發者將現有 OpenAI 腳本遷移到 Foundry Local | 展示即插即用的兼容性 | "列出本地推理的兩個優勢。" | 僅內嵌提示 |
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | 內部 IT 團隊評估設備上的推理，用於隱私評估門戶 | 證明本地 SLM 在標準提示下的響應時間低於一秒 | "列出本地推理的兩個好處。" | 無（單次提示） |
+| 快速入門改編代碼塊 | 開發者將現有的 OpenAI 腳本遷移到 Foundry Local | 展示即插即用的兼容性 | "列出本地推理的兩個好處。" | 僅內嵌提示 |
 
 ### 場景敘述
-安全與合規小組必須驗證敏感原型數據是否可以在本地處理。他們使用引導腳本運行多個提示（隱私、延遲、成本），並使用確定性 `temperature=0` 模式捕獲基線輸出，以供後續比較（第3節基準測試和第4節 SLM 與 LLM 對比）。
+安全與合規小組必須驗證敏感原型數據是否可以在本地處理。他們使用引導腳本運行多個提示（隱私、延遲、成本），並使用確定性模式（temperature=0）捕獲基線輸出，以供後續比較（第三節基準測試和第四節 SLM 與 LLM 對比）。
 
 ### 最小提示集 JSON（可選）
 ```json
@@ -520,4 +496,4 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 ---
 
 **免責聲明**：  
-本文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。
+此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

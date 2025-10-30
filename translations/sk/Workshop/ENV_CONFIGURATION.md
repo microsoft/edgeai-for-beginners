@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T15:16:09+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T23:04:46+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "sk"
 }
@@ -39,12 +39,12 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Použitie konfigurácie
+### 3. Použite konfiguráciu
 
 **Pre Python skripty:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -61,7 +61,7 @@ python chat_bootstrap.py
 | Premenná | Predvolená hodnota | Popis |
 |----------|--------------------|-------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Predvolený model pre ukážky |
-| `FOUNDRY_LOCAL_ENDPOINT` | (prázdne) | Prekrytie koncového bodu služby |
+| `FOUNDRY_LOCAL_ENDPOINT` | (prázdne) | Prepis koncového bodu služby |
 | `PYTHONPATH` | Cesty Workshopu | Cesta pre vyhľadávanie Python modulov |
 
 **Kedy nastaviť FOUNDRY_LOCAL_ENDPOINT:**
@@ -83,15 +83,15 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Relácia 02: RAG Pipeline
 | Premenná | Predvolená hodnota | Účel |
 |----------|--------------------|------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Model na vkladanie |
-| `RAG_QUESTION` | Prednastavené | Testovacia otázka |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Model pre embedding |
+| `RAG_QUESTION` | Predkonfigurované | Testovacia otázka |
 
 #### Relácia 03: Benchmarking
 | Premenná | Predvolená hodnota | Účel |
 |----------|--------------------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modely na benchmarking |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modely na benchmarking |
 | `BENCH_ROUNDS` | `3` | Počet iterácií na model |
-| `BENCH_PROMPT` | Prednastavené | Testovacia výzva |
+| `BENCH_PROMPT` | Predkonfigurované | Testovací prompt |
 | `BENCH_STREAM` | `0` | Meranie latencie prvého tokenu |
 
 #### Relácia 04: Porovnanie modelov
@@ -99,7 +99,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |----------|--------------------|------|
 | `SLM_ALIAS` | `phi-4-mini` | Malý jazykový model |
 | `LLM_ALIAS` | `qwen2.5-7b` | Veľký jazykový model |
-| `COMPARE_PROMPT` | Prednastavené | Výzva na porovnanie |
+| `COMPARE_PROMPT` | Predkonfigurované | Prompt na porovnanie |
 | `COMPARE_RETRIES` | `2` | Počet pokusov o opakovanie |
 
 #### Relácia 05: Orchestrácia viacerých agentov
@@ -107,13 +107,13 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |----------|--------------------|------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Model výskumného agenta |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Model editora agenta |
-| `AGENT_QUESTION` | Prednastavené | Testovacia otázka |
+| `AGENT_QUESTION` | Predkonfigurované | Testovacia otázka |
 
 ### Konfigurácia spoľahlivosti
 
 | Premenná | Predvolená hodnota | Účel |
 |----------|--------------------|------|
-| `SHOW_USAGE` | `1` | Tlač spotreby tokenov |
+| `SHOW_USAGE` | `1` | Tlač tokenovej spotreby |
 | `RETRY_ON_FAIL` | `1` | Povolenie logiky opakovania |
 | `RETRY_BACKOFF` | `1.0` | Meškanie pri opakovaní (sekundy) |
 
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Nastavenie pre benchmarking
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### Teplota a vzorkovanie (prekrytie v kóde)
+### Teplota a vzorkovanie (prepis v kóde)
 
 ```python
 # In your scripts/notebooks
@@ -282,11 +282,11 @@ foundry service status | grep "Port"
 FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ```
 
-### Model sa nenašiel
+### Model nebol nájdený
 
 **Príznaky:**
-- Chyby "Model not found"
-- "Alias nie je rozpoznaný"
+- Chyby "Model nebol nájdený"
+- "Alias nebol rozpoznaný"
 
 **Riešenia:**
 ```bash
@@ -303,20 +303,17 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Chyby importu
 
 **Príznaky:**
-- Chyby "Module not found"
-- "Cannot import workshop_utils"
+- Chyby "Modul nebol nájdený"
 
 **Riešenia:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Testovanie konfigurácie
@@ -343,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Testovanie pripojenia Foundry Local
+### Test pripojenia Foundry Local
 
 ```python
 # test_connection.py
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## Najlepšie bezpečnostné postupy
 
-### 1. Nikdy nekomitujte tajné údaje
+### 1. Nikdy neukladajte tajné údaje do repozitára
 
 ```bash
 # .gitignore should include:
@@ -377,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Používajte oddelené súbory .env
+### 2. Používajte samostatné súbory .env
 
 ```bash
 .env              # Default configuration
@@ -385,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Rotujte API kľúče
+### 3. Pravidelne rotujte API kľúče
 
 ```bash
 # For Azure OpenAI or other cloud services
@@ -406,7 +403,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Hlavný repozitár**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API dokumentácia**: Skontrolujte repozitár SDK pre najnovšie informácie
+- **API dokumentácia**: Pozrite si najnovšie informácie v repozitári SDK
 
 ## Ďalšie zdroje
 
@@ -422,5 +419,5 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, upozorňujeme, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, uvedomte si, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

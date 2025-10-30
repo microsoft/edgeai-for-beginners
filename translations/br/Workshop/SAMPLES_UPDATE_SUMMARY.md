@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T11:05:53+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T21:37:00+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "br"
 }
@@ -70,7 +70,7 @@ except Exception as e:
 - Dicas práticas para solução de problemas
 - Códigos de saída apropriados para scripts
 
-### 2. Melhor Gestão de Imports
+### 2. Melhor Gerenciamento de Imports
 
 **Antes:**
 ```python
@@ -116,7 +116,6 @@ def pipeline(task: str) -> Dict[str, Any]:
     """
 ```
   
-
 ### 4. Feedback Aprimorado ao Usuário
 
 **Adicionado logging informativo:**
@@ -139,7 +138,6 @@ print("\n[BENCHMARK RESULTS]")
 print(json.dumps(summary, indent=2))
 ```
   
-
 ### 5. Benchmarking Robusto
 
 **Melhorias na Sessão 03:**
@@ -147,7 +145,7 @@ print(json.dumps(summary, indent=2))
 - Relatórios detalhados de progresso
 - Execução adequada de rodadas de aquecimento
 - Suporte à medição de latência do primeiro token
-- Separação clara das etapas
+- Separação clara de etapas
 
 ### 6. Dicas de Tipo Consistentes
 
@@ -161,7 +159,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
   
 **Benefícios:**
 - Melhor autocompletar em IDEs
-- Detecção antecipada de erros
+- Detecção precoce de erros
 - Código autoexplicativo
 
 ### 7. Roteador de Modelos Aprimorado
@@ -183,7 +181,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 
 ---
 
-## Lista de Verificação de Testes
+## Checklist de Testes
 
 ### Pré-requisitos
 ```bash
@@ -198,84 +196,82 @@ foundry model run qwen2.5-0.5b
 pip install -r Workshop/requirements.txt
 ```
   
-
 ### Testar Cada Exemplo
 
 #### Sessão 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
   
 #### Sessão 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
   
 #### Sessão 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
   
 #### Sessão 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
   
 #### Sessão 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
   
 #### Sessão 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
   
-
 ---
 
 ## Referência de Variáveis de Ambiente
 
-### Globais (Todos os Exemplos)
+### Global (Todos os Exemplos)
 | Variável | Descrição | Padrão |
 |----------|-------------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias do modelo a ser usado | Varia por exemplo |
 | `FOUNDRY_LOCAL_ENDPOINT` | Substituir endpoint do serviço | Detectado automaticamente |
 | `SHOW_USAGE` | Mostrar uso de tokens | `0` |
 | `RETRY_ON_FAIL` | Habilitar lógica de repetição | `1` |
-| `RETRY_BACKOFF` | Atraso inicial para repetição | `1.0` |
+| `RETRY_BACKOFF` | Tempo inicial de espera para repetição | `1.0` |
 
-### Específicas de Exemplos
-| Variável | Usada Por | Descrição |
+### Específico para Exemplos
+| Variável | Usado Por | Descrição |
 |----------|---------|-------------|
 | `EMBED_MODEL` | Sessão 02 | Nome do modelo de embedding |
 | `RAG_QUESTION` | Sessão 02 | Pergunta de teste para RAG |
@@ -286,7 +282,7 @@ python models_pipeline.py
 | `SLM_ALIAS` | Sessão 04 | Modelo de linguagem pequeno |
 | `LLM_ALIAS` | Sessão 04 | Modelo de linguagem grande |
 | `COMPARE_PROMPT` | Sessão 04 | Prompt de teste para comparação |
-| `AGENT_MODEL_PRIMARY` | Sessão 05 | Modelo de agente primário |
+| `AGENT_MODEL_PRIMARY` | Sessão 05 | Modelo de agente principal |
 | `AGENT_MODEL_EDITOR` | Sessão 05 | Modelo de agente editor |
 | `AGENT_QUESTION` | Sessão 05 | Pergunta de teste para agentes |
 | `PIPELINE_TASK` | Sessão 06 | Tarefa para pipeline |
@@ -299,7 +295,7 @@ python models_pipeline.py
 
 Os scripts existentes continuarão funcionando. Novos recursos incluem:
 - Variáveis de ambiente opcionais
-- Mensagens de erro aprimoradas (não quebram a funcionalidade)
+- Mensagens de erro aprimoradas (não quebram funcionalidade)
 - Logging adicional (pode ser suprimido)
 - Dicas de tipo melhores (sem impacto em tempo de execução)
 
@@ -307,7 +303,7 @@ Os scripts existentes continuarão funcionando. Novos recursos incluem:
 
 ## Melhores Práticas Implementadas
 
-### 1. Sempre Usar Workshop Utils
+### 1. Sempre Use Workshop Utils
 ```python
 from workshop_utils import get_client, chat_once
 
@@ -377,18 +373,16 @@ for model in models:
         print(f"[INFO] Skipping {model}...")
 ```
   
-
 ---
 
 ## Problemas Comuns e Soluções
 
 ### Problema: Erros de Importação
-**Solução:** Instalar dependências ausentes  
+**Solução:** Instale as dependências ausentes  
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
   
-
 ### Problema: Erros de Conexão
 **Solução:** Certifique-se de que o Foundry Local está em execução  
 ```bash
@@ -396,7 +390,6 @@ foundry service status
 foundry model run phi-4-mini
 ```
   
-
 ### Problema: Modelo Não Encontrado
 **Solução:** Verifique os modelos disponíveis  
 ```bash
@@ -404,7 +397,6 @@ foundry model ls
 foundry model download <alias>
 ```
   
-
 ### Problema: Desempenho Lento
 **Solução:** Use modelos menores ou ajuste os parâmetros  
 ```bash
@@ -412,13 +404,12 @@ set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 set BENCH_ROUNDS=2
 ```
   
-
 ---
 
 ## Próximos Passos
 
 ### 1. Testar Todos os Exemplos
-Siga a lista de verificação de testes acima para verificar se todos os exemplos funcionam corretamente.
+Siga o checklist de testes acima para verificar se todos os exemplos funcionam corretamente.
 
 ### 2. Atualizar Documentação
 - Atualizar os arquivos markdown das sessões com novos exemplos
@@ -432,7 +423,6 @@ def test_all_samples():
     """Run smoke tests on all samples."""
 ```
   
-
 ### 4. Adicionar Benchmarks de Desempenho
 Acompanhar melhorias de desempenho a partir das melhorias no tratamento de erros.
 
@@ -459,12 +449,12 @@ Coletar feedback dos participantes do workshop sobre:
 Siga estes padrões ao criar novos exemplos:
 
 1. Use `workshop_utils` para gerenciamento de cliente
-2. Adicione tratamento de erros abrangente
+2. Adicione tratamento abrangente de erros
 3. Inclua suporte a variáveis de ambiente
 4. Adicione dicas de tipo e docstrings
 5. Forneça logging informativo
 6. Inclua exemplos de uso em docstrings
-7. Link para a documentação do SDK
+7. Link para documentação do SDK
 
 ### Revisando Atualizações
 Ao revisar atualizações de exemplos, verifique:
@@ -478,9 +468,9 @@ Ao revisar atualizações de exemplos, verifique:
 
 ---
 
-**Resumo**: Todos os exemplos em Python do Workshop agora seguem as melhores práticas do SDK Local Foundry, com tratamento de erros aprimorado, documentação abrangente e experiência do usuário melhorada. Nenhuma alteração disruptiva - toda funcionalidade existente foi preservada e aprimorada.
+**Resumo**: Todos os exemplos em Python do Workshop agora seguem as melhores práticas do SDK Local Foundry com tratamento de erros aprimorado, documentação abrangente e experiência do usuário melhorada. Sem alterações disruptivas - toda funcionalidade existente foi preservada e aprimorada.
 
 ---
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, é importante estar ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

@@ -1,25 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T19:15:58+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T22:36:49+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "id"
 }
 -->
-# Sesi 5: Bangun Agen Berbasis AI dengan Cepat menggunakan Foundry Local
+# Sesi 5: Bangun Agen AI dengan Cepat menggunakan Foundry Local
 
 ## Abstrak
 
-Rancang dan orkestrasi agen AI multi-peran dengan memanfaatkan runtime Foundry Local yang memiliki latensi rendah dan menjaga privasi. Anda akan mendefinisikan peran agen, strategi memori, pola pemanggilan alat, dan grafik eksekusi. Sesi ini memperkenalkan pola scaffolding yang dapat Anda kembangkan dengan Chainlit atau LangGraph. Proyek awal memperluas sampel arsitektur agen yang ada untuk menambahkan persistensi memori + kait evaluasi.
+Rancang dan orkestrasi agen AI multi-peran dengan memanfaatkan runtime Foundry Local yang memiliki latensi rendah dan menjaga privasi. Anda akan mendefinisikan peran agen, strategi memori, pola pemanggilan alat, dan grafik eksekusi. Sesi ini memperkenalkan pola scaffolding yang dapat Anda kembangkan dengan Chainlit atau LangGraph. Proyek awal memperluas sampel arsitektur agen yang ada untuk menambahkan persistensi memori + pengait evaluasi.
 
 ## Tujuan Pembelajaran
 
-- **Definisikan Peran**: Prompt sistem & batasan kemampuan
+- **Definisikan Peran**: Prompt sistem & batas kemampuan
 - **Implementasikan Memori**: Jangka pendek (percakapan), jangka panjang (vektor / file), scratchpad sementara
 - **Scaffold Alur Kerja**: Langkah agen berurutan, bercabang, dan paralel
 - **Integrasikan Alat**: Pola pemanggilan alat fungsi ringan
-- **Evaluasi**: Pelacakan dasar + penilaian hasil berbasis rubrik
+- **Evaluasi**: Jejak dasar + penilaian hasil berbasis rubrik
 
 ## Prasyarat
 
@@ -188,9 +188,9 @@ if __name__ == '__main__':
 ### 5. Proyek Awal: Perluas `05-agent-architecture` (7 menit)
 
 Tambahkan:
-1. Lapisan memori persisten (misalnya, penambahan baris JSON dari percakapan)
+1. Lapisan memori yang persisten (misalnya, penambahan baris JSON dari percakapan)
 2. Rubrik evaluasi sederhana: placeholder faktualitas / kejelasan / gaya
-3. Front-end Chainlit opsional (dua tab: percakapan & pelacakan)
+3. Front-end Chainlit opsional (dua tab: percakapan & jejak)
 4. Mesin keadaan gaya LangGraph opsional (jika menambahkan dependensi) untuk keputusan bercabang
 
 ## Daftar Periksa Validasi
@@ -204,14 +204,14 @@ Harapkan output pipeline terstruktur dengan catatan injeksi alat.
 
 ## Ikhtisar Strategi Memori
 
-| Lapisan      | Tujuan              | Contoh               |
-|--------------|---------------------|----------------------|
-| Jangka pendek | Kelanjutan dialog   | Pesan terakhir N     |
-| Episodik     | Ingatan sesi        | JSON per sesi        |
-| Semantik     | Pengambilan jangka panjang | Toko vektor ringkasan |
-| Scratchpad   | Langkah penalaran   | Rantai pemikiran inline (privat) |
+| Lapisan | Tujuan | Contoh |
+|---------|--------|--------|
+| Jangka pendek | Kelanjutan dialog | Pesan terakhir N |
+| Episodik | Ingatan sesi | JSON per sesi |
+| Semantik | Pengambilan jangka panjang | Penyimpanan vektor dari ringkasan |
+| Scratchpad | Langkah penalaran | Rantai pemikiran inline (privat) |
 
-## Kait Evaluasi (Konseptual)
+## Pengait Evaluasi (Konseptual)
 
 ```python
 evaluation = {
@@ -226,11 +226,11 @@ evaluation = {
 
 ## Pemecahan Masalah
 
-| Masalah            | Penyebab                | Resolusi                     |
-|--------------------|-------------------------|------------------------------|
-| Jawaban berulang   | Jendela konteks terlalu besar/kecil | Sesuaikan parameter jendela memori |
-| Alat tidak dipanggil | Sintaks salah          | Gunakan format `#tool:tool_name` |
-| Orkestrasi lambat  | Model dingin berganda   | Jalankan prompt pemanasan sebelumnya |
+| Masalah | Penyebab | Resolusi |
+|---------|----------|----------|
+| Jawaban berulang | Jendela konteks terlalu besar/kecil | Sesuaikan parameter jendela memori |
+| Alat tidak dipanggil | Sintaks salah | Gunakan format `#tool:tool_name` |
+| Orkestrasi lambat | Model dingin yang banyak | Jalankan prompt pemanasan sebelumnya |
 
 ## Referensi
 
@@ -246,22 +246,23 @@ evaluation = {
 ## Skenario Contoh & Pemetaan Workshop
 
 | Skrip Workshop | Skenario | Tujuan | Contoh Prompt |
-|----------------|----------|--------|---------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot penelitian pengetahuan yang menghasilkan ringkasan ramah eksekutif | Pipeline dua agen (penelitian → penyempurnaan editorial) dengan model berbeda opsional | Jelaskan mengapa inferensi edge penting untuk kepatuhan. |
-| (Diperluas) konsep `tools.py` | Tambahkan alat estimasi waktu & token | Demonstrasikan pola pemanggilan alat ringan | #tool:get_time |
+|-----------------|----------|--------|---------------|
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot penelitian pengetahuan yang menghasilkan ringkasan ramah eksekutif | Pipeline dua agen (penelitian → penyempurnaan editorial) dengan model yang berbeda opsional | Jelaskan mengapa inferensi edge penting untuk kepatuhan. |
+| (Diperluas) konsep `tools.py` | Tambahkan alat estimasi waktu & token | Tunjukkan pola pemanggilan alat ringan | #tool:get_time |
 
 ### Narasi Skenario
-Tim dokumentasi kepatuhan membutuhkan ringkasan internal cepat yang bersumber dari pengetahuan lokal tanpa mengirimkan draf ke layanan cloud. Agen peneliti mengumpulkan poin fakta ringkas; agen editor menulis ulang untuk kejelasan eksekutif. Alias model yang berbeda dapat ditetapkan untuk mengoptimalkan latensi (SLM cepat) vs penyempurnaan gaya (model lebih besar hanya jika diperlukan).
+Tim dokumentasi kepatuhan membutuhkan ringkasan internal cepat yang bersumber dari pengetahuan lokal tanpa mengirimkan draf ke layanan cloud. Agen peneliti mengumpulkan poin fakta singkat; agen editor menulis ulang untuk kejelasan eksekutif. Alias model yang berbeda dapat ditugaskan untuk mengoptimalkan latensi (SLM cepat) vs penyempurnaan gaya (model yang lebih besar hanya jika diperlukan).
 
 ### Contoh Lingkungan Multi-Model
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
-### Struktur Pelacakan (Opsional)
+### Struktur Jejak (Opsional)
 ```json
 {
     "step": 1,
@@ -273,24 +274,24 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Simpan setiap langkah ke file JSONL untuk penilaian rubrik nanti.
+Persist setiap langkah ke file JSONL untuk penilaian rubrik nanti.
 
 ### Peningkatan Opsional
 
-| Tema              | Peningkatan            | Manfaat               | Sketsa Implementasi         |
-|-------------------|------------------------|-----------------------|-----------------------------|
+| Tema | Peningkatan | Manfaat | Sketsa Implementasi |
+|------|-------------|---------|---------------------|
 | Peran Multi-Model | Model berbeda per agen (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Spesialisasi & kecepatan | Pilih alias variabel lingkungan, panggil `chat_once` dengan alias per peran |
-| Pelacakan Terstruktur | Pelacakan JSON dari setiap tindakan (alat, input, latensi, token) | Debug & evaluasi        | Tambahkan dict ke daftar; tulis `.jsonl` di akhir |
-| Persistensi Memori | Konteks dialog yang dapat dimuat ulang | Kelanjutan sesi         | Dump `Agent.memory` ke `sessions/<ts>.json` |
-| Registri Alat      | Penemuan alat dinamis | Ekstensibilitas       | Pertahankan dict `TOOLS` & introspeksi nama/deskripsi |
-| Retry & Backoff    | Rantai panjang yang tangguh | Kurangi kegagalan sementara | Bungkus `act` dengan try/except + backoff eksponensial |
-| Penilaian Rubrik   | Label kualitatif otomatis | Lacak perbaikan       | Prompt pass sekunder model: "Nilai kejelasan 1-5" |
-| Memori Vektor      | Pengambilan semantik   | Konteks jangka panjang yang kaya | Embed ringkasan, ambil top-k ke dalam pesan sistem |
-| Balasan Streaming  | Respon yang dirasakan lebih cepat | Peningkatan UX         | Gunakan streaming saat tersedia dan flush token parsial |
-| Tes Deterministik  | Kontrol regresi        | CI stabil             | Jalankan dengan `temperature=0`, seed prompt tetap |
-| Cabang Paralel     | Eksplorasi lebih cepat | Throughput            | Gunakan `concurrent.futures` untuk langkah agen independen |
+| Jejak Terstruktur | Jejak JSON dari setiap tindakan (alat, input, latensi, token) | Debug & evaluasi | Tambahkan dict ke daftar; tulis `.jsonl` di akhir |
+| Persistensi Memori | Konteks dialog yang dapat dimuat ulang | Kelanjutan sesi | Dump `Agent.memory` ke `sessions/<ts>.json` |
+| Registri Alat | Penemuan alat dinamis | Ekstensibilitas | Pertahankan dict `TOOLS` & introspeksi nama/deskripsi |
+| Retry & Backoff | Rantai panjang yang tangguh | Kurangi kegagalan sementara | Bungkus `act` dengan try/except + backoff eksponensial |
+| Penilaian Rubrik | Label kualitatif otomatis | Lacak perbaikan | Prompt pass sekunder model: "Nilai kejelasan 1-5" |
+| Memori Vektor | Pengambilan semantik | Konteks jangka panjang yang kaya | Embed ringkasan, ambil top-k ke dalam pesan sistem |
+| Balasan Streaming | Respons yang terasa lebih cepat | Peningkatan UX | Gunakan streaming saat tersedia dan flush token parsial |
+| Tes Deterministik | Kontrol regresi | CI stabil | Jalankan dengan `temperature=0`, seed prompt tetap |
+| Cabang Paralel | Eksplorasi lebih cepat | Throughput | Gunakan `concurrent.futures` untuk langkah agen independen |
 
-#### Contoh Rekaman Pelacakan
+#### Contoh Rekaman Jejak
 
 ```python
 trace.append({
@@ -310,9 +311,9 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-Simpan pasangan (`answer`, `rating`) untuk membangun grafik kualitas historis.
+Persist pasangan (`answer`, `rating`) untuk membangun grafik kualitas historis.
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang keliru yang timbul dari penggunaan terjemahan ini.

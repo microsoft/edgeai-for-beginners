@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T14:40:21+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T22:10:55+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "da"
 }
 -->
-# Session 6: Foundry Local – Modeller som Værktøjer
+# Session 6: Foundry Local – Modeller som værktøjer
 
 ## Resumé
 
@@ -17,7 +17,7 @@ Behandl modeller som sammensatte værktøjer i et lokalt AI-operativlag. Denne s
 
 - **Konceptualisere** modeller som atomare værktøjer med deklarerede kapaciteter
 - **Rute** forespørgsler baseret på intention / heuristisk scoring
-- **Kæde** output på tværs af flertrinsopgaver (dekomponere → løse → forfine)
+- **Kæde** output på tværs af opgaver i flere trin (dekomponere → løse → forfine)
 - **Integrere** en samlet klient-API til downstream-applikationer
 - **Skalere** design til skyen (samme OpenAI-kompatible kontrakt)
 
@@ -26,7 +26,7 @@ Behandl modeller som sammensatte værktøjer i et lokalt AI-operativlag. Denne s
 - Sessioner 1–5 gennemført
 - Flere lokale modeller cachet (f.eks. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Cross-Platform Miljøudsnit
+### Snippet til tværplatformsmiljø
 
 Windows PowerShell:
 ```powershell
@@ -52,7 +52,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Demo Flow (30 min)
 
-### 1. Deklaration af Værktøjskapacitet (5 min)
+### 1. Deklaration af værktøjskapacitet (5 min)
 
 Opret `samples/06-tools/models_catalog.py`:
 
@@ -74,7 +74,7 @@ CATALOG = {
 ```
 
 
-### 2. Intention Detektion & Routing (8 min)
+### 2. Intentiondetektion og routing (8 min)
 
 Opret `samples/06-tools/router.py`:
 
@@ -133,7 +133,7 @@ if __name__ == "__main__":
 ```
 
 
-### 3. Flertrinsopgavekædning (7 min)
+### 3. Kædning af opgaver i flere trin (7 min)
 
 Opret `samples/06-tools/pipeline.py`:
 
@@ -179,20 +179,20 @@ if __name__ == '__main__':
 ### 4. Startprojekt: Tilpas `06-models-as-tools` (5 min)
 
 Forbedringer:
-- Tilføj streaming-token support (progressiv UI-opdatering)
-- Tilføj selvtillidsscore: leksikalsk overlap eller prompt-rubrik
+- Tilføj streaming-token-understøttelse (progressiv UI-opdatering)
+- Tilføj tillidsscore: leksikalsk overlap eller prompt-rubrik
 - Eksporter trace JSON (intention → model → latenstid → tokenforbrug)
 - Implementer cache-genbrug for gentagne deltrin
 
 ### 5. Skaleringsvej til Azure (5 min)
 
 | Lag | Lokalt (Foundry) | Skyen (Azure AI Foundry) | Overgangsstrategi |
-|-----|------------------|--------------------------|--------------------|
+|-----|------------------|--------------------------|-------------------|
 | Routing | Heuristisk Python | Holdbar mikrotjeneste | Containeriser & deploy API |
-| Modeller | SLMs cachet | Administrerede deployment | Map lokale navne til deployment-ID'er |
-| Observabilitet | CLI-statistik/manual | Central logning & metrikker | Tilføj strukturerede trace-events |
-| Sikkerhed | Kun lokal vært | Azure-autentificering/netværk | Introducer key vault til hemmeligheder |
-| Omkostninger | Enhedsressource | Forbrugsbaseret fakturering | Tilføj budgetbegrænsninger |
+| Modeller | Cachede SLM'er | Administrerede implementeringer | Map lokale navne til implementerings-ID'er |
+| Observabilitet | CLI-statistik/manual | Central logning & metrikker | Tilføj strukturerede trace-hændelser |
+| Sikkerhed | Kun lokal vært | Azure-autentificering / netværk | Introducer nøglevault til hemmeligheder |
+| Omkostninger | Enhedsressource | Forbrugsafregning | Tilføj budgetbegrænsninger |
 
 ## Valideringscheckliste
 
@@ -209,32 +209,32 @@ Forvent intention-baseret modelvalg og endeligt forfinet output.
 
 | Problem | Årsag | Løsning |
 |---------|-------|---------|
-| Alle opgaver rutet til samme model | Svage regler | Berig INTENT_RULES regex-sæt |
-| Pipeline fejler midt i trin | Manglende model indlæst | Kør `foundry model run <model>` |
+| Alle opgaver rutes til samme model | Svage regler | Berig INTENT_RULES regex-sæt |
+| Pipeline fejler midt i et trin | Manglende model indlæst | Kør `foundry model run <model>` |
 | Lav output-sammenhæng | Ingen forfiningsfase | Tilføj opsummerings-/valideringspassage |
 
 ## Referencer
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Azure AI Foundry Docs: https://learn.microsoft.com/azure/ai-foundry
-- Promptkvalitetsmønstre: Se Session 2
+- Prompt Quality Patterns: Se Session 2
 
 ---
 
-**Sessionsvarighed**: 30 min  
+**Sessionens varighed**: 30 min  
 **Sværhedsgrad**: Ekspert
 
-## Eksempelscenarie & Workshopkortlægning
+## Eksempelscenarie & workshopkortlægning
 
 | Workshop-scripts / Notebooks | Scenarie | Mål | Datasæt / Katalogkilde |
 |------------------------------|----------|-----|-------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Udviklerassistent håndterer blandede intention-prompter (refaktorere, opsummere, klassificere) | Heuristisk intention → modelalias-routing med tokenforbrug | Inline `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Flertrinsplanlægning & forfining for kompleks kodningsassistanceopgave | Dekomponere → specialiseret udførelse → opsummeringsforfiningstrin | Samme `CATALOG`; trin afledt af planoutput |
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Udviklerassistent, der håndterer blandede intention-prompter (refaktorere, opsummere, klassificere) | Heuristisk intention → modelalias-routing med tokenforbrug | Inline `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planlægning i flere trin & forfining for kompleks kodningsassistanceopgave | Dekomponere → specialiseret udførelse → opsummeringsforfining | Samme `CATALOG`; trin afledt af planoutput |
 
 ### Scenariefortælling
-Et ingeniørproduktivitetværktøj modtager heterogene opgaver: refaktorere kode, opsummere arkitektoniske noter, klassificere feedback. For at minimere latenstid og ressourceforbrug planlægger og opsummerer en lille generel model, en kode-specialiseret model håndterer refaktorering, og en letvægtsklassifikationsmodel mærker feedback. Pipeline-scriptet demonstrerer kædning + forfining; router-scriptet isolerer adaptiv enkelt-prompt-routing.
+Et værktøj til ingeniørproduktivitet modtager heterogene opgaver: refaktorere kode, opsummere arkitektoniske noter, klassificere feedback. For at minimere latenstid & ressourceforbrug planlægger og opsummerer en lille generel model, en kode-specialiseret model håndterer refaktorering, og en let klassifikationsdygtig model mærker feedback. Pipeline-scriptet demonstrerer kædning + forfining; router-scriptet isolerer adaptiv enkelt-prompt-routing.
 
-### Katalogsnapshot
+### Katalogoversigt
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -255,8 +255,8 @@ CATALOG = {
 ```
 
 
-### Trace-udvidelse (Valgfrit)
-Tilføj per-trin trace JSON-linjer for `models_pipeline.py`:
+### Trace-udvidelse (valgfri)
+Tilføj JSON-linjer pr. trin til `models_pipeline.py`:
 ```python
 trace.append({
     "step": step_idx,
@@ -268,25 +268,25 @@ trace.append({
 ```
 
 
-### Eskaleringsheuristik (Idé)
+### Eskaleringsheuristik (idé)
 Hvis planen indeholder nøgleord som "optimere", "sikkerhed" eller trinlængde > 280 tegn → eskaler til større model (f.eks. `gpt-oss-20b`) kun for det trin.
 
-### Valgfrie Forbedringer
+### Valgfrie forbedringer
 
-| Område | Forbedring | Værdi | Hint |
-|-------|------------|-------|------|
+| Område | Forbedring | Værdi | Tip |
+|--------|------------|-------|-----|
 | Caching | Genbrug manager + klientobjekter | Lavere latenstid, mindre overhead | Brug `workshop_utils.get_client` |
-| Brugsmetrikker | Fang tokens & per-trin latenstid | Profilering & optimering | Tid hver rutet kald; gem i trace-liste |
-| Adaptiv Routing | Selvtillid / omkostningsbevidst | Bedre kvalitet-omkostningsafvejning | Tilføj scoring: hvis prompt > N tegn eller regex matcher domæne → eskaler til større model |
-| Dynamisk Kapacitetsregister | Hot reload katalog | Ingen genstart genudrulning | Indlæs `catalog.json` ved runtime; overvåg filens tidsstempel |
-| Fallback-strategi | Robusthed under fejl | Højere tilgængelighed | Prøv primær → ved undtagelse fallback-alias |
-| Streaming Pipeline | Tidlig feedback | UX-forbedring | Stream hvert trin og buffer endelig forfiningsinput |
-| Vektorintention Embeddings | Mere nuanceret routing | Højere intentionsnøjagtighed | Embed prompt, cluster & map centroid → kapacitet |
-| Trace-eksport | Auditerbar kæde | Overholdelse/rapportering | Udsend JSON-linjer: trin, intention, model, latenstid_ms, tokens |
-| Omkostningssimulering | For-skyen estimering | Budgetplanlægning | Tildel notional omkostning/token per model & aggreger per opgave |
-| Deterministisk Tilstand | Repro reproducerbarhed | Stabil benchmarking | Miljø: `temperature=0`, fast trinantal |
+| Brugsmetrikker | Fang tokens & latenstid pr. trin | Profilering & optimering | Tidsmål hver routed kald; gem i trace-liste |
+| Adaptiv routing | Tillid / omkostningsbevidst | Bedre kvalitet-omkostningsafvejning | Tilføj scoring: hvis prompt > N tegn eller regex matcher domæne → eskaler til større model |
+| Dynamisk kapacitetsregister | Hot reload katalog | Ingen genstart genimplementering | Indlæs `catalog.json` ved runtime; overvåg filens tidsstempel |
+| Faldback-strategi | Robusthed ved fejl | Højere tilgængelighed | Prøv primær → ved undtagelse faldback-alias |
+| Streaming-pipeline | Tidlig feedback | UX-forbedring | Stream hvert trin og buffer endelig forfiningsinput |
+| Vektorintentionsembeds | Mere nuanceret routing | Højere intentionsnøjagtighed | Embed prompt, cluster & map centroid → kapacitet |
+| Trace-eksport | Reviderbar kæde | Overholdelse/rapportering | Udsend JSON-linjer: trin, intention, model, latenstid_ms, tokens |
+| Omkostningssimulering | Forudsigelse før skyen | Budgetplanlægning | Tildel skønnede omkostninger/token pr. model & aggreger pr. opgave |
+| Deterministisk tilstand | Reproducerbarhed | Stabil benchmarking | Miljø: `temperature=0`, fast antal trin |
 
-#### Eksempel på Trace-struktur
+#### Eksempel på trace-struktur
 
 ```python
 trace.append({
@@ -299,7 +299,7 @@ trace.append({
 ```
 
 
-#### Adaptiv Eskaleringsskitse
+#### Skitse til adaptiv eskalering
 
 ```python
 if len(prompt) > 280 or 'compliance' in prompt.lower():
@@ -308,7 +308,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
 ```
 
 
-#### Modelkatalog Hot Reload
+#### Hot reload af modelkatalog
 
 ```python
 import json, time, os
@@ -323,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Iterer gradvist—undgå overengineering af tidlige prototyper.
-
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

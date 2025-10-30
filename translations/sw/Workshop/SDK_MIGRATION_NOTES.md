@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T21:42:08+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:53:20+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "sw"
 }
 -->
-# Maelezo ya Uhamishaji wa Foundry Local SDK
+# Vidokezo vya Kuhama kwa Foundry Local SDK
 
 ## Muhtasari
 
@@ -19,8 +19,8 @@ Faili zote za Python katika folda ya Workshop zimesasishwa kufuata mifumo ya hiv
 
 #### Vipengele Vilivyoboreshwa:
 - **Msaada wa Kubadilisha Endpoint**: Imeongezwa msaada wa mazingira ya `FOUNDRY_LOCAL_ENDPOINT`
-- **Ushughulikiaji Bora wa Makosa**: Ushughulikiaji wa makosa na ujumbe wa kina wa makosa
-- **Uboreshaji wa Caching**: Funguo za cache sasa zinajumuisha endpoint kwa hali ya multi-endpoint
+- **Ushughulikiaji Bora wa Makosa**: Ushughulikiaji bora wa makosa na ujumbe wa kina wa makosa
+- **Uboreshaji wa Uwekaji Kache**: Funguo za kache sasa zinajumuisha endpoint kwa hali za multi-endpoint
 - **Exponential Backoff**: Mantiki ya kurudia sasa inatumia exponential backoff kwa uaminifu bora
 - **Maelezo ya Aina**: Imeongezwa maelezo ya aina kwa kina kwa msaada bora wa IDE
 
@@ -36,32 +36,32 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 ### Programu za Mfano
 
 #### Kipindi 01: Chat Bootstrap (`chat_bootstrap.py`)
-- Model chaguo-msingi imesasishwa kutoka `phi-3.5-mini` hadi `phi-4-mini`
+- Model ya msingi imesasishwa kutoka `phi-3.5-mini` hadi `phi-4-mini`
 - Imeongezwa msaada wa kubadilisha endpoint
 - Nyaraka zimeboreshwa na marejeleo ya SDK
 
 #### Kipindi 02: RAG Pipeline (`rag_pipeline.py`)
-- Imesasishwa kutumia `phi-4-mini` kama chaguo-msingi
+- Imesasishwa kutumia `phi-4-mini` kama default
 - Imeongezwa msaada wa kubadilisha endpoint
-- Nyaraka zimeboreshwa na maelezo ya mazingira
+- Nyaraka zimeboreshwa na maelezo ya mazingira ya mazingira
 
 #### Kipindi 02: RAG Evaluation (`rag_eval_ragas.py`)
-- Chaguo-msingi za model zimesasishwa
+- Default za model zimesasishwa
 - Imeongezwa usanidi wa endpoint
 - Ushughulikiaji wa makosa umeboreshwa
 
 #### Kipindi 03: Benchmarking (`benchmark_oss_models.py`)
-- Orodha ya modeli chaguo-msingi imesasishwa kujumuisha `phi-4-mini`
+- Orodha ya model za msingi imesasishwa kujumuisha `phi-4-mini`
 - Nyaraka za mazingira zimeboreshwa kwa kina
 - Nyaraka za kazi zimeboreshwa
 - Imeongezwa msaada wa kubadilisha endpoint kote
 
-#### Kipindi 04: Model Comparison (`model_compare.py`)
-- LLM chaguo-msingi imesasishwa kutoka `gpt-oss-20b` hadi `qwen2.5-7b`
+#### Kipindi 04: Ulinganisho wa Model (`model_compare.py`)
+- LLM ya msingi imesasishwa kutoka `gpt-oss-20b` hadi `qwen2.5-7b`
 - Imeongezwa usanidi wa endpoint
 - Nyaraka zimeboreshwa
 
-#### Kipindi 05: Multi-Agent Orchestration (`agents_orchestrator.py`)
+#### Kipindi 05: Uratibu wa Multi-Agent (`agents_orchestrator.py`)
 - Imeongezwa maelezo ya aina (imebadilishwa `str | None` hadi `Optional[str]`)
 - Nyaraka za darasa la Agent zimeboreshwa
 - Imeongezwa msaada wa kubadilisha endpoint
@@ -70,18 +70,18 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 #### Kipindi 06: Model Router (`models_router.py`)
 - Imeongezwa usanidi wa endpoint
 - Nyaraka za utambuzi wa nia zimeboreshwa
-- Nyaraka za mantiki ya routing zimeboreshwa
+- Nyaraka za mantiki ya uratibu zimeboreshwa
 
 #### Kipindi 06: Pipeline (`models_pipeline.py`)
 - Nyaraka za kazi zimeboreshwa kwa kina
 - Nyaraka za hatua kwa hatua zimeboreshwa
 - Ushughulikiaji wa makosa umeboreshwa
 
-### Scripti
+### Scripts
 
 #### Benchmark Export (`export_benchmark_markdown.py`)
 - Imeongezwa msaada wa kubadilisha endpoint
-- Modeli chaguo-msingi zimesasishwa
+- Model za msingi zimesasishwa
 - Nyaraka za kazi zimeboreshwa
 - Ushughulikiaji wa makosa umeboreshwa
 
@@ -97,28 +97,28 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Nyaraka za kesi za majaribio zimeboreshwa
 - Utoaji bora wa ripoti za makosa
 
-## Vigezo vya Mazingira
+## Mazingira ya Mazingira
 
-Sampuli zote sasa zinaunga mkono vigezo hivi vya mazingira:
+Sampuli zote sasa zinaunga mkono mazingira haya:
 
 ### Usanidi wa Msingi
-- `FOUNDRY_LOCAL_ALIAS` - Alias ya modeli ya kutumia (chaguo-msingi hutofautiana kwa sampuli)
+- `FOUNDRY_LOCAL_ALIAS` - Alias ya model ya kutumia (default inatofautiana kwa sampuli)
 - `FOUNDRY_LOCAL_ENDPOINT` - Kubadilisha endpoint ya huduma (hiari)
-- `SHOW_USAGE` - Onyesha takwimu za matumizi ya tokeni (chaguo-msingi: "0")
-- `RETRY_ON_FAIL` - Washa mantiki ya kurudia (chaguo-msingi: "1")
-- `RETRY_BACKOFF` - Muda wa kuchelewa wa kurudia wa awali kwa sekunde (chaguo-msingi: "1.0")
+- `SHOW_USAGE` - Onyesha takwimu za matumizi ya tokeni (default: "0")
+- `RETRY_ON_FAIL` - Washa mantiki ya kurudia (default: "1")
+- `RETRY_BACKOFF` - Muda wa kuchelewa wa kurudia kwa sekunde (default: "1.0")
 
 ### Sampuli Maalum
-- `EMBED_MODEL` - Modeli ya embedding kwa sampuli za RAG
-- `BENCH_MODELS` - Modeli zilizotenganishwa kwa koma kwa benchmarking
+- `EMBED_MODEL` - Model ya embedding kwa sampuli za RAG
+- `BENCH_MODELS` - Model zilizotenganishwa kwa koma kwa benchmarking
 - `BENCH_ROUNDS` - Idadi ya raundi za benchmarking
-- `BENCH_PROMPT` - Prompt ya majaribio kwa benchmarking
+- `BENCH_PROMPT` - Maandishi ya majaribio kwa benchmarking
 - `BENCH_STREAM` - Pima latency ya tokeni ya kwanza
 - `RAG_QUESTION` - Swali la majaribio kwa sampuli za RAG
-- `AGENT_MODEL_PRIMARY` - Modeli ya wakala wa msingi
-- `AGENT_MODEL_EDITOR` - Modeli ya wakala wa mhariri
-- `SLM_ALIAS` - Alias ya modeli ndogo ya lugha
-- `LLM_ALIAS` - Alias ya modeli kubwa ya lugha
+- `AGENT_MODEL_PRIMARY` - Model ya wakala wa msingi
+- `AGENT_MODEL_EDITOR` - Model ya wakala wa mhariri
+- `SLM_ALIAS` - Alias ya model ndogo ya lugha
+- `LLM_ALIAS` - Alias ya model kubwa ya lugha
 
 ## Mazoea Bora ya SDK Yaliyotekelezwa
 
@@ -136,7 +136,7 @@ client = OpenAI(
 )
 ```
 
-### 2. Upataji wa Taarifa za Modeli
+### 2. Upataji wa Taarifa za Model
 ```python
 # Proper model ID resolution
 model_info = manager.get_model_info(alias)
@@ -179,23 +179,23 @@ for chunk in stream:
         # Process chunk
 ```
 
-## Mwongozo wa Uhamishaji kwa Sampuli Maalum
+## Mwongozo wa Kuhama kwa Sampuli Maalum
 
 Ikiwa unaunda sampuli mpya au unasasisha zilizopo:
 
-1. **Tumia vipengele vya `workshop_utils.py`**:
+1. **Tumia wasaidizi wa `workshop_utils.py`**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
 
-2. **Unganisha msaada wa kubadilisha endpoint**:
+2. **Saidia kubadilisha endpoint**:
    ```python
    endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")
    manager, client, model_id = get_client(alias, endpoint=endpoint)
    ```
 
 3. **Ongeza nyaraka za kina**:
-   - Vigezo vya mazingira katika docstring
+   - Mazingira ya mazingira katika docstring
    - Kiungo cha marejeleo ya SDK
    - Mifano ya matumizi
 
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -239,38 +240,38 @@ python -m Workshop.tests.smoke
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 - **Nyaraka za API**: Angalia hifadhi ya SDK kwa nyaraka za API za hivi karibuni
 
-## Mabadiliko Yanayovunja
+## Mabadiliko Makubwa
 
 ### Hakuna Yanayotarajiwa
-Mabadiliko yote ni sambamba na yaliyopita. Sasisho hizi hasa:
+Mabadiliko yote yanalingana na yaliyopita. Sasisho hizi kimsingi:
 - Ongeza vipengele vipya vya hiari (kubadilisha endpoint)
 - Boresha ushughulikiaji wa makosa
 - Boresha nyaraka
-- Sasisha majina ya modeli chaguo-msingi kwa mapendekezo ya sasa
+- Sasisha majina ya model za msingi kwa mapendekezo ya sasa
 
 ### Uboreshaji wa Hiari
 Unaweza kutaka kusasisha msimbo wako kutumia:
 - `FOUNDRY_LOCAL_ENDPOINT` kwa udhibiti wa endpoint wazi
 - `SHOW_USAGE=1` kwa mwonekano wa matumizi ya tokeni
-- Sasisho za modeli chaguo-msingi (`phi-4-mini` badala ya `phi-3.5-mini`)
+- Default za model zilizosasishwa (`phi-4-mini` badala ya `phi-3.5-mini`)
 
 ## Masuala ya Kawaida na Suluhisho
 
 ### Tatizo: "Uanzishaji wa mteja umeshindwa"
-**Suluhisho**: Hakikisha huduma ya Foundry Local inaendesha:
+**Suluhisho**: Hakikisha huduma ya Foundry Local inafanya kazi:
 ```bash
 foundry service start
 foundry model run phi-4-mini
 ```
 
-### Tatizo: "Modeli haikupatikana"
-**Suluhisho**: Angalia modeli zinazopatikana:
+### Tatizo: "Model haikupatikana"
+**Suluhisho**: Angalia model zinazopatikana:
 ```bash
 foundry model list
 ```
 
 ### Tatizo: Makosa ya muunganisho wa endpoint
-**Suluhisho**: Thibitisha endpoint:
+**Suluhisho**: Hakikisha endpoint:
 ```bash
 # Check service status
 foundry service status
@@ -281,9 +282,9 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## Hatua Zifuatazo
 
-1. **Sasisha sampuli za Module08**: Tekeleza mifumo sawa kwa Module08/samples
-2. **Ongeza majaribio ya ujumuishaji**: Unda suite ya majaribio ya kina
-3. **Benchmarking ya utendaji**: Linganisha utendaji kabla/baada
+1. **Sasisha sampuli za Module08**: Tumia mifumo sawa kwa Module08/samples
+2. **Ongeza majaribio ya ujumuishaji**: Unda seti ya majaribio ya kina
+3. **Upimaji wa utendaji**: Linganisha utendaji kabla/baada ya mabadiliko
 4. **Sasisho za nyaraka**: Sasisha README kuu na mifumo mipya
 
 ## Miongozo ya Mchango
@@ -291,9 +292,9 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 Unapoongeza sampuli mpya:
 1. Tumia `workshop_utils.py` kwa uthabiti
 2. Fuata muundo katika sampuli zilizopo
-3. Ongeza docstring za kina
+3. Ongeza docstrings za kina
 4. Jumuisha viungo vya marejeleo ya SDK
-5. Unganisha msaada wa kubadilisha endpoint
+5. Saidia kubadilisha endpoint
 6. Ongeza maelezo sahihi ya aina
 7. Jumuisha mifano ya matumizi katika docstring
 
@@ -306,11 +307,11 @@ Sasisho hizi zinaendana na:
 
 ---
 
-**Tarehe ya Mwisho wa Sasisho**: 2025-01-08  
+**Imesasishwa Mwisho**: 2025-01-08  
 **Msimamizi**: Timu ya EdgeAI Workshop  
 **Toleo la SDK**: Foundry Local SDK (ya hivi karibuni 0.7.117+67073234e7)
 
 ---
 
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati asilia katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.

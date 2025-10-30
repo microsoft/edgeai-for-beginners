@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T21:17:15+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T23:47:07+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "lt"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Santrauka
 
-Pradėkite savo kelionę su Foundry Local įdiegdami ir konfigūruodami jį Windows 11 sistemoje. Sužinokite, kaip nustatyti CLI, įjungti aparatūros pagreitį ir talpinti modelius greitam vietiniam inferencijai. Ši praktinė sesija parodys, kaip paleisti modelius, tokius kaip Phi, Qwen, DeepSeek ir GPT-OSS-20B, naudojant atkuriamus CLI komandas.
+Pradėkite savo kelionę su Foundry Local įdiegdami ir sukonfigūruodami jį Windows 11 sistemoje. Sužinokite, kaip nustatyti CLI, įjungti aparatūros pagreitį ir talpinti modelius greitam vietiniam inferencijai. Ši praktinė sesija parodys, kaip paleisti tokius modelius kaip Phi, Qwen, DeepSeek ir GPT-OSS-20B naudojant atkuriamus CLI komandas.
 
 ## Mokymosi tikslai
 
-Po šios sesijos jūs:
+Šios sesijos pabaigoje jūs:
 
-- **Įdiegsite ir konfigūruosite**: Nustatysite Foundry Local Windows 11 sistemoje su optimaliomis našumo nuostatomis
+- **Įdiegsite ir sukonfigūruosite**: Nustatysite Foundry Local Windows 11 sistemoje su optimaliomis našumo nuostatomis
 - **Įvaldysite CLI operacijas**: Naudosite Foundry Local CLI modelių valdymui ir diegimui
 - **Įjungsite aparatūros pagreitį**: Konfigūruosite GPU pagreitį su ONNXRuntime arba WebGPU
 - **Diegsite kelis modelius**: Vietoje paleisite phi-4, GPT-OSS-20B, Qwen ir DeepSeek modelius
@@ -27,25 +27,25 @@ Po šios sesijos jūs:
 foundry model run phi-4-mini --prompt "Sveiki, prisistatykite"
 
 - Windows 11 (22H2 ar naujesnė versija)
-# Peržiūrėkite galimus katalogo modelius (įkelti modeliai pasirodys po paleidimo)
+# Peržiūrėkite galimus katalogo modelius (įkeltus modelius matysite po paleidimo)
 foundry model list
-## PASTABA: Šiuo metu nėra dedikuoto `--running` parametro; norėdami pamatyti, kurie modeliai įkelti, pradėkite pokalbį arba peržiūrėkite paslaugos žurnalus.
+## NOTE: Šiuo metu nėra specialaus `--running` parametro; norėdami pamatyti, kurie modeliai įkelti, pradėkite pokalbį arba patikrinkite paslaugos žurnalus.
 - Įdiegta Python 3.10+
 - Visual Studio Code su Python plėtiniu
 - Administratoriaus teisės diegimui
 
 ### (Pasirinktinai) Aplinkos kintamieji
 
-Sukurkite `.env` (arba nustatykite apvalkale), kad skriptai būtų perkeliamieji:
+Sukurkite `.env` (arba nustatykite apvalkale), kad scenarijai būtų perkeliamieji:
 # Palyginkite atsakymus (neinteraktyvus)
-foundry model run gpt-oss-20b --prompt "Paaiškinkite, kas yra edge AI paprastais žodžiais"
+foundry model run gpt-oss-20b --prompt "Paaiškinkite edge AI paprastais terminais"
 | Kintamasis | Paskirtis | Pavyzdys |
 |------------|-----------|----------|
-| `FOUNDRY_LOCAL_ALIAS` | Pageidaujamas modelio aliasas (katalogas automatiškai parenka geriausią variantą) | `phi-3.5-mini` |
+| `FOUNDRY_LOCAL_ALIAS` | Pageidaujamas modelio alias (katalogas automatiškai parenka geriausią variantą) | `phi-3.5-mini` |
 | `FOUNDRY_LOCAL_ENDPOINT` | Pakeisti galinį tašką (kitaip automatiškai iš valdytojo) | `http://localhost:5273/v1` |
 | `FOUNDRY_LOCAL_STREAM` | Įjungti srautinį demonstravimą | `true` |
 
-> Jei `FOUNDRY_LOCAL_ENDPOINT=auto` (arba nenustatytas), jis bus gautas iš SDK valdytojo.
+> Jei `FOUNDRY_LOCAL_ENDPOINT=auto` (arba nenustatytas), mes jį gauname iš SDK valdytojo.
 
 ## Demonstracijos eiga (30 minučių)
 
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (Peržiūra / Jei palaikoma)**
 
-Jei pateikiamas vietinis macOS paketas (patikrinkite oficialią dokumentaciją dėl naujausios informacijos):
+Jei pateikiamas natyvus macOS paketas (patikrinkite oficialią dokumentaciją dėl naujausios informacijos):
 
 ```bash
 # Homebrew (if/when available)
@@ -77,9 +77,9 @@ tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Jei macOS vietiniai dvejetainiai failai dar nepateikti, vis tiek galite: 
+Jei macOS natyvių dvejetainių failų dar nėra, vis tiek galite: 
 1. Naudoti Windows 11 ARM/Intel VM (Parallels / UTM) ir sekti Windows žingsnius. 
-2. Paleisti modelius per konteinerį (jei paskelbtas konteinerio vaizdas) ir nustatyti `FOUNDRY_LOCAL_ENDPOINT` į atidarytą prievadą. 
+2. Paleisti modelius per konteinerį (jei konteinerio vaizdas paskelbtas) ir nustatyti `FOUNDRY_LOCAL_ENDPOINT` į atitinkamą prievadą. 
 
 **Sukurkite Python virtualią aplinką (kryžminė platforma)**
 
@@ -128,7 +128,7 @@ pip install foundry-local-sdk openai requests
 
 ### SDK paleidimas (rekomenduojama)
 
-Užuot rankiniu būdu paleidus paslaugą ir modelius, **Foundry Local Python SDK** gali paleisti viską automatiškai:
+Užuot rankiniu būdu paleidę paslaugą ir modelius, **Foundry Local Python SDK** gali paleisti viską automatiškai:
 
 ```python
 from foundry_local import FoundryLocalManager
@@ -158,36 +158,11 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-Jei norite aiškios kontrolės, vis tiek galite naudoti CLI + OpenAI klientą, kaip parodyta vėliau.
+Jei norite turėti aiškią kontrolę, vis tiek galite naudoti CLI + OpenAI klientą, kaip parodyta vėliau.
 
-### 2. Įjunkite GPU pagreitį (5 minutės)
+### 2. Paleiskite modelius vietoje per CLI (10 minučių)
 
-#### 2.1 žingsnis: Patikrinkite aparatūros galimybes
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### 2.2 žingsnis: Konfigūruokite aparatūros pagreitį
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Paleiskite modelius vietoje per CLI (10 minučių)
-
-#### 3.1 žingsnis: Diegkite Phi-4 modelį
+#### 3.1 žingsnis: Diegti Phi-4 modelį
 
 ```powershell
 # Download and run phi-4-mini
@@ -199,7 +174,7 @@ foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 # NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
 ```
 
-#### 3.2 žingsnis: Diegkite GPT-OSS-20B
+#### 3.2 žingsnis: Diegti GPT-OSS-20B
 
 ```powershell
 # Download and run GPT-OSS-20B
@@ -209,7 +184,7 @@ foundry model run gpt-oss-20b
 foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 ```
 
-#### 3.3 žingsnis: Įkelkite papildomus modelius
+#### 3.3 žingsnis: Įkelti papildomus modelius
 
 ```powershell
 # Download Qwen model family
@@ -223,9 +198,9 @@ foundry model download deepseek-coder-1.3b
 foundry cache list
 ```
 
-### 4. Pradinis projektas: Pritaikykite 01-run-phi Foundry Local (5 minutės)
+### 4. Pradinis projektas: Pritaikyti 01-run-phi Foundry Local (5 minutės)
 
-#### 4.1 žingsnis: Sukurkite pagrindinę pokalbių programą
+#### 4.1 žingsnis: Sukurti pagrindinę pokalbių programą
 
 Sukurkite `samples/01-foundry-quickstart/chat_quickstart.py` (atnaujinta naudoti valdytoją, jei yra):
 
@@ -297,7 +272,7 @@ if __name__ == "__main__":
     main()
 ```
 
-#### 4.2 žingsnis: Testuokite programą
+#### 4.2 žingsnis: Testuoti programą
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -315,7 +290,7 @@ python samples/01-foundry-quickstart/chat_quickstart.py
 ### 1. Foundry Local architektūra
 
 - **Vietinis inferencijos variklis**: Modeliai veikia visiškai jūsų įrenginyje
-- **OpenAI SDK suderinamumas**: Sklandus integravimas su esamu OpenAI kodu
+- **OpenAI SDK suderinamumas**: Sklandi integracija su esamu OpenAI kodu
 - **Modelių valdymas**: Efektyvus modelių atsisiuntimas, talpinimas ir paleidimas
 - **Aparatūros optimizavimas**: Naudojamas GPU, NPU ir CPU pagreitis
 
@@ -376,7 +351,7 @@ print()
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Problema 2: "Modelio įkėlimas nepavyko"
+### Problema 2: "Modelis nepavyko įkelti"
 
 **Sprendimas:**
 ```powershell
@@ -429,32 +404,33 @@ foundry config set model.preload false
 ### 3. Našumo stebėjimas
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Pasirinktiniai patobulinimai
 
-| Patobulinimas | Kas | Kaip |
-|---------------|-----|------|
-| Bendri įrankiai | Pašalinkite pasikartojančią klientų/paleidimo logiką | Naudokite `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Žetonų naudojimo matomumas | Mokykite apie kaštus/efektyvumą anksti | Nustatykite `SHOW_USAGE=1`, kad spausdintumėte klausimo/atsakymo/bendrą žetonų skaičių |
-| Deterministiniai palyginimai | Stabilus testavimas ir regresijos patikrinimai | Naudokite `temperature=0`, `top_p=1`, nuoseklų klausimo tekstą |
-| Pirmojo žetono vėlinimas | Matomas atsako greičio rodiklis | Pritaikykite testavimo skriptą su srautiniu režimu (`BENCH_STREAM=1`) |
-| Pakartotinis bandymas dėl laikino klaidų | Atsparūs demonstravimai šalto paleidimo metu | `RETRY_ON_FAIL=1` (numatytasis) ir koreguokite `RETRY_BACKOFF` |
-| Greitas testavimas | Greita pagrindinių funkcijų patikra | Paleiskite `python Workshop/tests/smoke.py` prieš dirbtuves |
-| Modelio alias profiliai | Greitai keiskite modelių rinkinį tarp įrenginių | Laikykite `.env` su `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Talpinimo efektyvumas | Venkite pakartotinių paleidimų kelių pavyzdžių metu | Naudokite talpinimo valdytojus; pakartotinai naudokite skriptuose/notebook'uose |
-| Pirmojo paleidimo apšilimas | Sumažinkite p95 vėlinimo šuolius | Paleiskite trumpą klausimą po `FoundryLocalManager` sukūrimo |
+| Patobulinimas | Kas tai | Kaip |
+|---------------|---------|------|
+| Bendros priemonės | Pašalinti pasikartojančią kliento/paleidimo logiką | Naudokite `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
+| Žetonų naudojimo matomumas | Mokykite apie kaštus/efektyvumą anksti | Nustatykite `SHOW_USAGE=1`, kad būtų rodomi klausimai/atsakymai/bendras žetonų skaičius |
+| Deterministiniai palyginimai | Stabilus našumo testavimas ir regresijos patikrinimai | Naudokite `temperature=0`, `top_p=1`, nuoseklų klausimo tekstą |
+| Pirmojo žetono vėlavimas | Matomas atsako greičio rodiklis | Pritaikykite našumo testavimo scenarijų su srautu (`BENCH_STREAM=1`) |
+| Pakartotinis bandymas dėl laikinų klaidų | Patikimi demonstravimai šalto paleidimo metu | `RETRY_ON_FAIL=1` (numatytasis) ir koreguokite `RETRY_BACKOFF` |
+| Greitas testavimas | Greitas pagrindinių funkcijų patikrinimas | Paleiskite `python Workshop/tests/smoke.py` prieš dirbtuves |
+| Modelio alias profiliai | Greitas modelių rinkinio keitimas tarp mašinų | Išlaikykite `.env` su `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
+| Talpinimo efektyvumas | Venkite pakartotinių įkaitimų daugybės pavyzdžių paleidime | Naudokite talpinimo valdytojus; pakartotinai naudokite scenarijuose/užrašuose |
+| Pirmojo paleidimo įkaitimas | Sumažinkite p95 vėlavimo šuolius | Paleiskite trumpą klausimą po `FoundryLocalManager` sukūrimo |
 
-Pavyzdys deterministinio apšilimo (PowerShell):
+Pavyzdys deterministinio šilto paleidimo (PowerShell):
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -463,15 +439,15 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-Turėtumėte matyti panašų išvestį ir identišką žetonų skaičių antrame paleidime, patvirtinant deterministiškumą.
+Turėtumėte matyti panašų rezultatą ir identišką žetonų skaičių antrame paleidime, patvirtinant deterministiškumą.
 
 ## Kiti žingsniai
 
-Po šios sesijos:
+Baigę šią sesiją:
 
 1. **Išbandykite 2 sesiją**: Kurkite AI sprendimus su Azure AI Foundry RAG
 2. **Išbandykite skirtingus modelius**: Eksperimentuokite su Qwen, DeepSeek ir kitomis modelių šeimomis
-3. **Optimizuokite našumą**: Koreguokite nustatymus pagal savo specifinę aparatūrą
+3. **Optimizuokite našumą**: Tobulinkite nustatymus pagal savo specifinę aparatūrą
 4. **Kurkite pritaikytas programas**: Naudokite Foundry Local SDK savo projektuose
 
 ## Papildomi ištekliai
@@ -484,7 +460,7 @@ Po šios sesijos:
 ### Pavyzdinis kodas
 - [Module08 Pavyzdys 01](./samples/01/README.md) - REST pokalbių greitas startas
 - [Module08 Pavyzdys 02](./samples/02/README.md) - OpenAI SDK integracija
-- [Module08 Pavyzdys 03](./samples/03/README.md) - Modelių atradimas ir testavimas
+- [Module08 Pavyzdys 03](./samples/03/README.md) - Modelių atradimas ir našumo testavimas
 
 ### Bendruomenė
 - [Foundry Local GitHub diskusijos](https://github.com/microsoft/Foundry-Local/discussions)
@@ -494,17 +470,17 @@ Po šios sesijos:
 
 **Sesijos trukmė**: 30 minučių praktika + 15 minučių klausimai ir atsakymai  
 **Sudėtingumo lygis**: Pradedantysis  
-**Būtinos sąlygos**: Windows 11, Python 3.10+, administratoriaus teisės
+**Būtinos sąlygos**: Windows 11, Python 3.10+, administratoriaus prieiga  
 
 ## Pavyzdinė situacija ir dirbtuvių susiejimas
 
-| Dirbtuvių skriptas / užrašų knygelė | Situacija | Tikslas | Pavyzdiniai įvesties duomenys | Reikalingas duomenų rinkinys |
-|------------------------------------|-----------|--------|-----------------------------|-----------------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Vidinė IT komanda vertina vietinį inferenciją privatumo vertinimo portale | Įrodyti, kad vietinis SLM atsako per mažiau nei sekundę standartiniams klausimams | "Išvardinkite dvi vietinio inferencijos naudas." | Nėra (vieno klausimo atsakymas) |
-| Greito starto adaptacijos kodas | Kūrėjas, migruojantis esamą OpenAI skriptą į Foundry Local | Parodyti suderinamumą | "Išvardinkite dvi vietinio inferencijos naudas." | Tik įterptas klausimas |
+| Dirbtuvių scenarijus / užrašų knygelė | Situacija | Tikslas | Pavyzdiniai įvesties duomenys | Reikalingas duomenų rinkinys |
+|--------------------------------------|-----------|--------|-----------------------------|-----------------------------|
+| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Vidinė IT komanda vertina vietinę inferenciją privatumo vertinimo portale | Įrodyti, kad vietinis SLM atsako per mažiau nei sekundę į standartinius klausimus | "Išvardinkite dvi vietinės inferencijos naudas." | Nėra (vienas klausimas) |
+| Greito starto adaptacijos kodo blokas | Kūrėjas, perkeliantis esamą OpenAI scenarijų į Foundry Local | Parodyti lengvą suderinamumą | "Išvardinkite dvi vietinės inferencijos naudas." | Tik įterptas klausimas |
 
 ### Situacijos pasakojimas
-Saugumo ir atitikties komanda turi patikrinti, ar jautrūs prototipiniai duomenys gali būti apdorojami vietoje. Jie paleidžia paleidimo skriptą su keliais klausimais (privatumas, vėlinimas, kaštai), naudodami deterministinį režimą `temperature=0`, kad užfiksuotų bazinius rezultatus vėlesniam palyginimui (3 sesijos testavimas ir 4 sesijos SLM vs LLM kontrastas).
+Saugumo ir atitikties komanda turi patikrinti, ar jautri prototipų duomenų apdorojimas gali būti atliekamas vietoje. Jie paleidžia paleidimo scenarijų su keliais klausimais (privatumas, vėlavimas, kaštai), naudodami deterministinį temperature=0 režimą, kad užfiksuotų pradinius rezultatus vėlesniam palyginimui (3 sesijos našumo testavimas ir 4 sesijos SLM vs LLM kontrastas).
 
 ### Minimalus klausimų rinkinys JSON (pasirinktinai)
 ```json
@@ -519,5 +495,5 @@ Naudokite šį sąrašą, kad sukurtumėte atkuriamą vertinimo ciklą arba inic
 
 ---
 
-**Atsakomybės atsisakymas**:  
+**Atsakomybės apribojimas**:  
 Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.

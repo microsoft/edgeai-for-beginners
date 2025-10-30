@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T19:10:09+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T20:51:38+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "ja"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概要
 
-ワークショップのサンプルは、リポジトリのルートにある`.env`ファイルで環境変数を使用して設定を行います。これにより、コードを変更せずに簡単にカスタマイズできます。
+ワークショップのサンプルは、リポジトリのルートにある`.env`ファイルで環境変数を使用して設定されています。これにより、コードを変更せずに簡単にカスタマイズできます。
 
 ## クイックスタート
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. 環境の設定
 
-`.env`ファイルは既に適切なデフォルト値で設定されています。ほとんどのユーザーは変更する必要がありません。
+`.env`ファイルは、既に適切なデフォルト値で設定されています。ほとんどのユーザーは変更する必要がありません。
 
 **オプション**: 設定を確認してカスタマイズする:
 ```bash
@@ -39,12 +39,12 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. 設定を適用
+### 3. 設定を適用する
 
 **Pythonスクリプトの場合:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -56,18 +56,18 @@ python chat_bootstrap.py
 
 ## 環境変数リファレンス
 
-### コア設定
+### 基本設定
 
-| 変数 | デフォルト | 説明 |
-|------|-----------|------|
+| 変数 | デフォルト値 | 説明 |
+|------|-------------|------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | サンプルのデフォルトモデル |
 | `FOUNDRY_LOCAL_ENDPOINT` | (空) | サービスエンドポイントの上書き |
 | `PYTHONPATH` | ワークショップパス | Pythonモジュール検索パス |
 
 **FOUNDRY_LOCAL_ENDPOINTを設定するタイミング:**
-- リモートのFoundry Localインスタンス
-- カスタムポート設定
-- 開発/本番環境の分離
+- リモートのFoundry Localインスタンスを使用する場合
+- カスタムポート設定が必要な場合
+- 開発/本番環境の分離が必要な場合
 
 **例:**
 ```bash
@@ -81,45 +81,45 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ### セッション固有の変数
 
 #### セッション02: RAGパイプライン
-| 変数 | デフォルト | 目的 |
-|------|-----------|------|
+| 変数 | デフォルト値 | 目的 |
+|------|-------------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | 埋め込みモデル |
-| `RAG_QUESTION` | 事前設定済み | テスト用質問 |
+| `RAG_QUESTION` | 事前設定済み | テスト用の質問 |
 
 #### セッション03: ベンチマーク
-| 変数 | デフォルト | 目的 |
-|------|-----------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | ベンチマーク対象モデル |
+| 変数 | デフォルト値 | 目的 |
+|------|-------------|------|
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | ベンチマーク対象モデル |
 | `BENCH_ROUNDS` | `3` | モデルごとの反復回数 |
 | `BENCH_PROMPT` | 事前設定済み | テスト用プロンプト |
 | `BENCH_STREAM` | `0` | 最初のトークンの遅延を測定 |
 
 #### セッション04: モデル比較
-| 変数 | デフォルト | 目的 |
-|------|-----------|------|
+| 変数 | デフォルト値 | 目的 |
+|------|-------------|------|
 | `SLM_ALIAS` | `phi-4-mini` | 小型言語モデル |
 | `LLM_ALIAS` | `qwen2.5-7b` | 大型言語モデル |
 | `COMPARE_PROMPT` | 事前設定済み | 比較用プロンプト |
 | `COMPARE_RETRIES` | `2` | 再試行回数 |
 
 #### セッション05: マルチエージェントオーケストレーション
-| 変数 | デフォルト | 目的 |
-|------|-----------|------|
+| 変数 | デフォルト値 | 目的 |
+|------|-------------|------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | 研究者エージェントモデル |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | 編集者エージェントモデル |
 | `AGENT_QUESTION` | 事前設定済み | テスト用質問 |
 
 ### 信頼性設定
 
-| 変数 | デフォルト | 目的 |
-|------|-----------|------|
+| 変数 | デフォルト値 | 目的 |
+|------|-------------|------|
 | `SHOW_USAGE` | `1` | トークン使用量を表示 |
 | `RETRY_ON_FAIL` | `1` | 再試行ロジックを有効化 |
-| `RETRY_BACKOFF` | `1.0` | 再試行の遅延時間（秒） |
+| `RETRY_BACKOFF` | `1.0` | 再試行の遅延時間 (秒) |
 
 ## 一般的な設定
 
-### 開発環境（高速反復）
+### 開発環境 (高速反復)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### 本番環境（品質重視）
+### 本番環境 (品質重視)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### ベンチマーク設定
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -161,7 +161,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### 用途別
 
-**汎用:**
+**汎用目的:**
 - `phi-4-mini` - 品質と速度のバランスが良い
 
 **高速応答:**
@@ -170,29 +170,29 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **高品質:**
 - `qwen2.5-7b` - 最高品質、リソース使用量が多い
-- `phi-4-mini` - 良好な品質、低リソース
+- `phi-4-mini` - 良好な品質、リソース使用量が少ない
 
 **コード生成:**
 - `deepseek-coder-1.3b` - コード専用
-- `phi-4-mini` - 汎用コーディング
+- `phi-4-mini` - 汎用的なコーディング
 
 ### リソース別
 
-**低リソース（< 8GB RAM）:**
+**低リソース (< 8GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
 LLM_ALIAS=phi-4-mini
 ```
 
-**中リソース（8-16GB RAM）:**
+**中リソース (8-16GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-7b
 ```
 
-**高リソース（16GB+ RAM）:**
+**高リソース (16GB+ RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-7b
 SLM_ALIAS=phi-4-mini
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### 温度とサンプリング（コード内で上書き）
+### 温度とサンプリング (コード内で上書き)
 
 ```python
 # In your scripts/notebooks
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **症状:**
 - "モジュールが見つかりません"エラー
-- "workshop_utilsをインポートできません"
 
 **解決策:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## 設定のテスト
@@ -377,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. 別々の.envファイルを使用
+### 2. 別々の.envファイルを使用する
 
 ```bash
 .env              # Default configuration
@@ -385,14 +382,14 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. APIキーを定期的に更新
+### 3. APIキーを定期的に更新する
 
 ```bash
 # For Azure OpenAI or other cloud services
 # Regularly rotate keys and update .env
 ```
 
-### 4. 環境固有の設定を使用
+### 4. 環境固有の設定を使用する
 
 ```bash
 # Development
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **免責事項**:  
-この文書は、AI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてお考えください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解について、当社は責任を負いません。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤認について、当方は一切の責任を負いません。

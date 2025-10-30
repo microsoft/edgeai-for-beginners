@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-08T21:54:15+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T21:45:18+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "pl"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Streszczenie
 
-Traktuj modele jako kompozycyjne narzędzia w lokalnej warstwie operacyjnej AI. W tej sesji dowiesz się, jak łączyć wiele wyspecjalizowanych wywołań SLM/LLM, selektywnie kierować zadania i udostępniać zunifikowaną powierzchnię SDK dla aplikacji. Zbudujesz lekki router modeli + planista zadań, zintegrujesz go ze skryptem aplikacji i nakreślisz ścieżkę skalowania do Azure AI Foundry dla obciążeń produkcyjnych.
+Traktuj modele jako modułowe narzędzia w lokalnej warstwie operacyjnej AI. W tej sesji dowiesz się, jak łączyć wiele wyspecjalizowanych wywołań SLM/LLM, selektywnie kierować zadania i udostępniać zunifikowaną powierzchnię SDK dla aplikacji. Zbudujesz lekki router modeli + planista zadań, zintegrujesz go ze skryptem aplikacji i nakreślisz ścieżkę skalowania do Azure AI Foundry dla obciążeń produkcyjnych.
 
 ## Cele nauki
 
-- **Konceptualizacja** modeli jako atomowych narzędzi z zadeklarowanymi możliwościami
-- **Kierowanie** żądań na podstawie intencji / heurystycznego punktowania
-- **Łączenie** wyników w zadaniach wieloetapowych (rozłożenie → rozwiązanie → dopracowanie)
+- **Zrozumienie** modeli jako atomowych narzędzi z zadeklarowanymi możliwościami
+- **Kierowanie** żądań na podstawie intencji / heurystycznego oceniania
+- **Łączenie** wyników w wieloetapowych zadaniach (rozłożenie → rozwiązanie → dopracowanie)
 - **Integracja** zunifikowanego API klienta dla aplikacji końcowych
 - **Skalowanie** projektu do chmury (zgodność z kontraktem OpenAI)
 
@@ -44,7 +44,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Zdalny dostęp / dostęp do usług VM z macOS:
+Zdalny dostęp / dostęp do usługi VM z macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -176,23 +176,23 @@ if __name__ == '__main__':
 ```
 
 
-### 4. Projekt startowy: Adaptacja `06-models-as-tools` (5 min)
+### 4. Projekt początkowy: Dostosowanie `06-models-as-tools` (5 min)
 
 Ulepszenia:
-- Dodaj obsługę strumieniowania tokenów (progresywna aktualizacja UI)
-- Dodaj ocenę pewności: nakładanie leksykalne lub rubryka podpowiedzi
+- Dodaj obsługę strumieniowania tokenów (progresywna aktualizacja interfejsu użytkownika)
+- Dodaj ocenę pewności: nakładanie się leksykalne lub rubryka podpowiedzi
 - Eksportuj ślad JSON (intencja → model → opóźnienie → użycie tokenów)
-- Wprowadź ponowne wykorzystanie pamięci podręcznej dla powtarzających się podzadań
+- Wprowadź ponowne użycie pamięci podręcznej dla powtarzających się podzadań
 
 ### 5. Ścieżka skalowania do Azure (5 min)
 
 | Warstwa | Lokalnie (Foundry) | Chmura (Azure AI Foundry) | Strategia przejścia |
 |---------|--------------------|---------------------------|---------------------|
-| Kierowanie | Heurystyka Python | Trwały mikrousługa | Konteneryzacja i wdrożenie API |
+| Kierowanie | Heurystyka w Pythonie | Trwała mikrousługa | Konteneryzacja i wdrożenie API |
 | Modele | SLM w pamięci podręcznej | Zarządzane wdrożenia | Mapowanie lokalnych nazw na identyfikatory wdrożeń |
-| Obserwowalność | Statystyki CLI/ręczne | Centralne logowanie i metryki | Dodaj strukturalne zdarzenia śledzenia |
-| Bezpieczeństwo | Tylko host lokalny | Autoryzacja Azure / sieci | Wprowadź Key Vault dla tajemnic |
-| Koszt | Zasoby urządzenia | Rozliczanie zużycia | Dodaj ograniczenia budżetowe |
+| Obserwowalność | Statystyki CLI/ręczne | Centralne logowanie i metryki | Dodanie strukturalnych zdarzeń śledzenia |
+| Bezpieczeństwo | Tylko host lokalny | Autoryzacja Azure / sieć | Wprowadzenie sejfu kluczy dla tajemnic |
+| Koszty | Zasoby urządzenia | Rozliczanie zużycia | Dodanie ograniczeń budżetowych |
 
 ## Lista kontrolna walidacji
 
@@ -208,12 +208,12 @@ Oczekuj wyboru modelu na podstawie intencji i ostatecznego dopracowanego wyniku.
 ## Rozwiązywanie problemów
 
 | Problem | Przyczyna | Rozwiązanie |
-|---------|----------|-------------|
+|---------|-----------|-------------|
 | Wszystkie zadania kierowane do tego samego modelu | Słabe reguły | Wzbogacenie zestawu regex INTENT_RULES |
 | Pipeline zawodzi w połowie kroku | Brak załadowanego modelu | Uruchom `foundry model run <model>` |
 | Niska spójność wyników | Brak fazy dopracowania | Dodaj etap podsumowania/walidacji |
 
-## Odnośniki
+## Źródła
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Dokumentacja Azure AI Foundry: https://learn.microsoft.com/azure/ai-foundry
@@ -222,21 +222,19 @@ Oczekuj wyboru modelu na podstawie intencji i ostatecznego dopracowanego wyniku.
 ---
 
 **Czas trwania sesji**: 30 min  
-**Poziom trudności**: Ekspert
+**Poziom trudności**: Zaawansowany
 
 ## Przykładowy scenariusz i mapowanie warsztatów
 
 | Skrypty warsztatowe / Notatniki | Scenariusz | Cel | Źródło danych / katalogu |
-|---------------------------------|-----------|-----|--------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Asystent programisty obsługujący mieszane podpowiedzi intencji (refaktoryzacja, podsumowanie, klasyfikacja) | Heurystyczna intencja → kierowanie aliasu modelu z użyciem tokenów | Wbudowany `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planowanie wieloetapowe i dopracowanie dla złożonego zadania wsparcia kodowania | Rozłożenie → wyspecjalizowane wykonanie → etap dopracowania podsumowania | Ten sam `CATALOG`; kroki wywodzą się z wyniku planu |
+|---------------------------------|------------|-----|--------------------------|
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Asystent programisty obsługujący mieszane podpowiedzi intencji (refaktoryzacja, podsumowanie, klasyfikacja) | Heurystyczne kierowanie intencji → alias modelu z użyciem tokenów | Wbudowany `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Wieloetapowe planowanie i dopracowanie dla złożonego zadania wsparcia kodowania | Rozłożenie → wyspecjalizowane wykonanie → etap dopracowania podsumowania | Ten sam `CATALOG`; kroki wywodzące się z wyniku planowania |
 
 ### Narracja scenariusza
-
-Narzędzie zwiększające produktywność inżynierów otrzymuje różnorodne zadania: refaktoryzacja kodu, podsumowanie notatek architektonicznych, klasyfikacja opinii. Aby zminimalizować opóźnienia i zużycie zasobów, mały ogólny model planuje i podsumowuje, model wyspecjalizowany w kodzie obsługuje refaktoryzację, a lekki model zdolny do klasyfikacji etykietuje opinie. Skrypt pipeline demonstruje łączenie + dopracowanie; skrypt routera izoluje adaptacyjne kierowanie pojedynczej podpowiedzi.
+Narzędzie zwiększające produktywność inżynierów otrzymuje zróżnicowane zadania: refaktoryzacja kodu, podsumowanie notatek architektonicznych, klasyfikacja opinii. Aby zminimalizować opóźnienia i zużycie zasobów, mały ogólny model planuje i podsumowuje, model wyspecjalizowany w kodzie zajmuje się refaktoryzacją, a lekki model zdolny do klasyfikacji etykietuje opinie. Skrypt pipeline demonstruje łączenie + dopracowanie; skrypt routera izoluje adaptacyjne kierowanie pojedynczymi podpowiedziami.
 
 ### Migawka katalogu
-
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -247,7 +245,6 @@ CATALOG = {
 
 
 ### Przykładowe podpowiedzi testowe
-
 ```json
 [
     "Refactor this Python function for readability",
@@ -259,7 +256,6 @@ CATALOG = {
 
 
 ### Rozszerzenie śladu (opcjonalne)
-
 Dodaj linie JSON śladu dla każdego kroku w `models_pipeline.py`:
 ```python
 trace.append({
@@ -273,23 +269,22 @@ trace.append({
 
 
 ### Heurystyka eskalacji (pomysł)
-
-Jeśli plan zawiera słowa kluczowe takie jak "optymalizacja", "bezpieczeństwo" lub długość kroku > 280 znaków → eskaluj do większego modelu (np. `gpt-oss-20b`) tylko dla tego kroku.
+Jeśli plan zawiera słowa kluczowe, takie jak "optymalizacja", "bezpieczeństwo" lub długość kroku > 280 znaków → eskaluj do większego modelu (np. `gpt-oss-20b`) tylko dla tego kroku.
 
 ### Opcjonalne ulepszenia
 
 | Obszar | Ulepszenie | Wartość | Wskazówka |
 |--------|------------|---------|-----------|
-| Pamięć podręczna | Ponowne użycie obiektów managera + klienta | Niższe opóźnienia, mniejsze obciążenie | Użyj `workshop_utils.get_client` |
-| Metryki użycia | Zbieranie tokenów i opóźnień dla każdego kroku | Profilowanie i optymalizacja | Mierz czas każdego wywołania kierowanego; przechowuj w liście śladów |
-| Adaptacyjne kierowanie | Świadomość pewności / kosztów | Lepszy kompromis jakość-koszt | Dodaj punktowanie: jeśli podpowiedź > N znaków lub regex pasuje do domeny → eskaluj do większego modelu |
-| Dynamiczny rejestr możliwości | Gorące przeładowanie katalogu | Brak restartu / ponownego wdrożenia | Ładuj `catalog.json` w czasie rzeczywistym; obserwuj znacznik czasu pliku |
+| Pamięć podręczna | Ponowne użycie obiektów menedżera + klienta | Niższe opóźnienia, mniejsze obciążenie | Użyj `workshop_utils.get_client` |
+| Metryki użycia | Rejestracja tokenów i opóźnień na krok | Profilowanie i optymalizacja | Mierz czas każdego wywołania; przechowuj w liście śladów |
+| Adaptacyjne kierowanie | Świadomość pewności / kosztów | Lepszy kompromis jakość-koszt | Dodaj ocenę: jeśli podpowiedź > N znaków lub regex pasuje do domeny → eskaluj do większego modelu |
+| Dynamiczny rejestr możliwości | Gorące przeładowanie katalogu | Brak konieczności ponownego uruchamiania | Ładuj `catalog.json` w czasie rzeczywistym; monitoruj znacznik czasu pliku |
 | Strategia awaryjna | Odporność na awarie | Wyższa dostępność | Spróbuj głównego → w przypadku wyjątku alias awaryjny |
 | Pipeline strumieniowy | Wczesna informacja zwrotna | Poprawa UX | Strumieniuj każdy krok i buforuj dane wejściowe do ostatecznego dopracowania |
-| Wektory intencji | Bardziej subtelne kierowanie | Wyższa dokładność intencji | Osadź podpowiedź, klasteryzuj i mapuj centroid → możliwość |
-| Eksport śladu | Audytowalny łańcuch | Zgodność / raportowanie | Emituj linie JSON: krok, intencja, model, opóźnienie_ms, tokeny |
-| Symulacja kosztów | Szacowanie przed chmurą | Planowanie budżetu | Przypisz koszt/token dla każdego modelu i agreguj dla każdego zadania |
-| Tryb deterministyczny | Powtarzalna reprodukcja | Stabilne benchmarki | Env: `temperature=0`, stała liczba kroków |
+| Wektory intencji | Bardziej precyzyjne kierowanie | Wyższa dokładność intencji | Osadź podpowiedź, grupuj i mapuj centroid → możliwość |
+| Eksport śladu | Audytowalny łańcuch | Zgodność/sprawozdawczość | Emituj linie JSON: krok, intencja, model, latency_ms, tokeny |
+| Symulacja kosztów | Szacowanie przed wdrożeniem w chmurze | Planowanie budżetu | Przypisz koszt/token dla modelu i agreguj na zadanie |
+| Tryb deterministyczny | Powtarzalność testów | Stabilne benchmarki | Env: `temperature=0`, stała liczba kroków |
 
 #### Przykład struktury śladu
 
@@ -328,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Iteruj stopniowo—unikaj nadmiernego projektowania wczesnych prototypów.
-
 ---
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za wiarygodne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż staramy się zapewnić dokładność, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.

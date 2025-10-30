@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T14:42:14+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T22:11:11+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "da"
 }
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -37,11 +37,11 @@ python chat_bootstrap.py "What is edge AI?"
 | 01 | `chat_bootstrap.py` | Grundlæggende chat + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG med embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | RAG evaluering | ~60s |
-| 03 | `benchmark_oss_models.py` | Modelbenchmarking | ~2m |
+| 03 | `benchmark_oss_models.py` | Model benchmarking | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Multi-agent system | ~60s |
-| 06 | `models_router.py` | Intent-routing | ~45s |
-| 06 | `models_pipeline.py` | Multi-step pipeline | ~60s |
+| 06 | `models_router.py` | Intent routing | ~45s |
+| 06 | `models_pipeline.py` | Flertrins pipeline | ~60s |
 
 ---
 
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Session-specifikke
+### Session-Specifikke
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -84,7 +84,7 @@ set PIPELINE_TASK="Your task here"
 
 ---
 
-## ✅ Validering & Test
+## ✅ Validering & Testning
 
 ```bash
 # Validate syntax and imports
@@ -216,7 +216,7 @@ for chunk in stream:
 
 ## 💡 Tips
 
-1. **Cache klienter**: `workshop_utils` håndterer caching for dig
+1. **Cache klienter**: `workshop_utils` gemmer cache for dig
 2. **Brug mindre modeller**: Start med `qwen2.5-0.5b` til test
 3. **Aktiver brugsstatistik**: Sæt `SHOW_USAGE=1` for at spore tokens
 4. **Batchbehandling**: Behandl flere prompts sekventielt
@@ -224,7 +224,7 @@ for chunk in stream:
 
 ---
 
-## 🎯 Eksempelarbejdsgange
+## 🎯 Eksempel Workflows
 
 ### Test Alt
 ```bash
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Benchmark Modeller
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG Pipeline
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Multi-Agent System
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Hurtig Hjælp**: Kør et hvilket som helst eksempel med `--help` eller tjek docstring:
+**Hurtig Hjælp**: Kør et hvilket som helst eksempel med `--help` fra `samples` mappen eller tjek docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at sikre nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

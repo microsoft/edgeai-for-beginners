@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T16:18:12+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T20:47:07+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "tw"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概述
 
-工作坊範例使用環境變數進行配置，集中於存放在倉庫根目錄的 `.env` 文件中。這樣可以輕鬆自定義配置，而無需修改程式碼。
+Workshop 示例使用環境變數進行配置，集中於存放在倉庫根目錄的 `.env` 文件中。這樣可以輕鬆自定義配置，而無需修改代碼。
 
 ## 快速開始
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. 配置環境
 
-`.env` 文件已預設為合理的默認值。大多數使用者無需更改任何內容。
+`.env` 文件已預設了合理的默認值。大多數使用者不需要更改任何內容。
 
 **可選**：檢查並自定義設置：
 ```bash
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **針對 Python 腳本：**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -60,16 +60,16 @@ python chat_bootstrap.py
 
 | 變數 | 默認值 | 描述 |
 |------|--------|------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | 範例的默認模型 |
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | 示例的默認模型 |
 | `FOUNDRY_LOCAL_ENDPOINT` | (空) | 覆蓋服務端點 |
-| `PYTHONPATH` | 工作坊路徑 | Python 模組搜索路徑 |
+| `PYTHONPATH` | Workshop 路徑 | Python 模組搜索路徑 |
 
 **何時設置 FOUNDRY_LOCAL_ENDPOINT：**
 - 遠端 Foundry Local 實例
 - 自定義端口配置
-- 開發/生產環境分離
+- 區分開發/生產環境
 
-**範例：**
+**示例：**
 ```bash
 # Local custom port
 FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### 會話 03：基準測試
 | 變數 | 默認值 | 用途 |
 |------|--------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | 要測試的模型 |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | 要進行基準測試的模型 |
 | `BENCH_ROUNDS` | `3` | 每個模型的迭代次數 |
 | `BENCH_PROMPT` | 預設配置 | 測試提示 |
 | `BENCH_STREAM` | `0` | 測量首個 token 的延遲 |
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### 生產設置（品質優先）
+### 生產設置（質量優先）
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### 基準測試設置
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -162,19 +162,19 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ### 根據使用場景
 
 **通用用途：**
-- `phi-4-mini` - 平衡品質與速度
+- `phi-4-mini` - 平衡質量與速度
 
 **快速響應：**
 - `qwen2.5-0.5b` - 非常快，適合分類
-- `phi-4-mini` - 快速且品質良好
+- `phi-4-mini` - 快速且質量良好
 
-**高品質：**
-- `qwen2.5-7b` - 最佳品質，資源使用較高
-- `phi-4-mini` - 良好品質，資源需求較低
+**高質量：**
+- `qwen2.5-7b` - 最佳質量，資源需求較高
+- `phi-4-mini` - 質量良好，資源需求較低
 
-**程式碼生成：**
-- `deepseek-coder-1.3b` - 專為程式碼設計
-- `phi-4-mini` - 通用程式碼用途
+**代碼生成：**
+- `deepseek-coder-1.3b` - 專為代碼設計
+- `phi-4-mini` - 通用編碼
 
 ### 根據資源可用性
 
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### 溫度與採樣（在程式碼中覆蓋）
+### 溫度與採樣（在代碼中覆蓋）
 
 ```python
 # In your scripts/notebooks
@@ -241,7 +241,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 **症狀：**
 - 腳本使用錯誤的模型
 - 連接錯誤
-- 變數未被識別
+- 無法識別變數
 
 **解決方案：**
 ```bash
@@ -262,8 +262,8 @@ pwd  # Should be in Workshop or repository root
 ### 服務連接問題
 
 **症狀：**
-- "Connection refused" 錯誤
-- "Service not available"
+- "連接被拒絕" 錯誤
+- "服務不可用"
 - 超時錯誤
 
 **解決方案：**
@@ -285,8 +285,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ### 模型未找到
 
 **症狀：**
-- "Model not found" 錯誤
-- "Alias not recognized"
+- "未找到模型" 錯誤
+- "別名未識別"
 
 **解決方案：**
 ```bash
@@ -300,23 +300,20 @@ foundry model run phi-4-mini
 FOUNDRY_LOCAL_ALIAS=<available-model>
 ```
 
-### 匯入錯誤
+### 導入錯誤
 
 **症狀：**
-- "Module not found" 錯誤
-- "Cannot import workshop_utils"
+- "未找到模組" 錯誤
 
 **解決方案：**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## 測試配置
@@ -402,17 +399,17 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ```
 
-## SDK 文件
+## SDK 文檔
 
 - **主倉庫**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API 文件**: 請檢查 SDK 倉庫以獲取最新資訊
+- **API 文檔**: 請查看 SDK 倉庫以獲取最新信息
 
 ## 其他資源
 
 - `QUICK_START.md` - 快速入門指南
 - `SDK_MIGRATION_NOTES.md` - SDK 更新詳情
-- `Workshop/samples/*/README.md` - 範例特定指南
+- `Workshop/samples/*/README.md` - 示例特定指南
 
 ---
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1b3c0fecfd713c2df903a0633249dc9",
-  "translation_date": "2025-10-09T21:10:06+00:00",
+  "original_hash": "d9e354c0182311726dc037a8809524e2",
+  "translation_date": "2025-10-28T23:45:48+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "lt"
 }
 -->
-# Sesija 4: Pažangiausių modelių tyrinėjimas – LLM, SLM ir įrenginio inferencija
+# 4 sesija: Pažangiausių modelių tyrinėjimas – LLM, SLM ir įrenginio vidinė inferencija
 
 ## Santrauka
 
-Palyginkite didelius kalbos modelius (LLM) ir mažus kalbos modelius (SLM) vietinės ir debesų inferencijos scenarijams. Sužinokite diegimo modelius, naudojant ONNX Runtime pagreitį, WebGPU vykdymą ir hibridines RAG patirtis. Įtraukta Chainlit RAG demonstracija su vietiniu modeliu ir pasirenkama OpenWebUI tyrinėjimo galimybė. Jūs pritaikysite WebGPU inferencijos pradžios projektą ir įvertinsite Phi bei GPT-OSS-20B galimybių ir kaštų/našumo kompromisus.
+Palyginkite didelius kalbos modelius (LLM) ir mažus kalbos modelius (SLM) vietinės ir debesų inferencijos scenarijams. Sužinokite apie diegimo modelius, naudojant ONNX Runtime pagreitį, WebGPU vykdymą ir hibridines RAG patirtis. Įtraukta Chainlit RAG demonstracija su vietiniu modeliu ir papildoma OpenWebUI tyrinėjimo galimybė. Jūs pritaikysite WebGPU inferencijos pradžios projektą ir įvertinsite Phi bei GPT-OSS-20B galimybių ir kaštų/našumo kompromisus.
 
 ## Mokymosi tikslai
 
@@ -19,24 +19,24 @@ Palyginkite didelius kalbos modelius (LLM) ir mažus kalbos modelius (SLM) vieti
 - **Diegti** modelius su ONNXRuntime ir (jei palaikoma) WebGPU
 - **Vykdyti** naršyklėje pagrįstą inferenciją (privatumą užtikrinanti interaktyvi demonstracija)
 - **Integruoti** Chainlit RAG vamzdyną su vietiniu SLM pagrindu
-- **Įvertinti** naudojant lengvas kokybės ir kaštų euristikas
+- **Įvertinti** naudojant lengvus kokybės ir kaštų vertinimo kriterijus
 
-## Reikalavimai
+## Būtinos sąlygos
 
 - Užbaigtos 1–3 sesijos
-- Įdiegta `chainlit` (jau įtraukta į `requirements.txt` Module08)
-- Naršyklė, palaikanti WebGPU (Edge / Chrome naujausia versija Windows 11)
+- Įdiegtas `chainlit` (jau įtrauktas į `requirements.txt` Module08)
+- Naršyklė, palaikanti WebGPU (naujausia Edge / Chrome versija Windows 11)
 - Veikiantis Foundry Local (`foundry status`)
 
 ### Pastabos apie skirtingas platformas
 
-Windows išlieka pagrindinė tikslinė aplinka. macOS kūrėjams, laukiantiems vietinių dvejetainių failų:
-1. Paleiskite Foundry Local Windows 11 virtualioje mašinoje (Parallels / UTM) ARBA nuotoliniame Windows darbo stotyje.
+Windows išlieka pagrindine tikslinė aplinka. macOS kūrėjams, laukiantiems vietinių dvejetainių failų:
+1. Paleiskite Foundry Local Windows 11 virtualioje mašinoje (Parallels / UTM) ARBA nuotoliniame Windows darbo kompiuteryje.
 2. Atidarykite paslaugą (numatytasis prievadas 5273) ir nustatykite macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-3. Naudokite tuos pačius Python virtualios aplinkos veiksmus kaip ankstesnėse sesijose.
+3. Naudokite tuos pačius Python virtualios aplinkos veiksmus kaip ir ankstesnėse sesijose.
 
 Chainlit diegimas (abi platformos):
 ```bash
@@ -67,11 +67,12 @@ Stebėkite: atsakymų gilumą, faktinį tikslumą, stilistinį turtingumą, vėl
 ```powershell
 foundry config set compute.onnx.enable_gpu true
 # Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
-Stebėkite pralaidumo pokyčius įjungus GPU, palyginti su tik CPU.
+Stebėkite pralaidumo pokyčius įjungus GPU ir naudojant tik CPU.
 
 ### 3. WebGPU inferencija naršyklėje (6 min)
 
@@ -116,7 +117,7 @@ Pritaikykite pradžios projektą `04-webgpu-inference` (sukurkite `samples/04-cu
 </html>
 ```
 
-Atidarykite failą naršyklėje; stebėkite mažo vėlavimo vietinį apsikeitimą.
+Atidarykite failą naršyklėje; stebėkite mažo vėlavimo vietinį atsakymą.
 
 ### 4. Chainlit RAG pokalbių programa (7 min)
 
@@ -162,22 +163,22 @@ Paleiskite:
 chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ```
 
-### 5. Pradžios projektas: pritaikykite `04-webgpu-inference` (6 min)
+### 5. Pradinis projektas: pritaikykite `04-webgpu-inference` (6 min)
 
 Pristatomi rezultatai:
-- Pakeiskite vietos rezervavimo logiką srautinių žetonų gavimu (naudokite `stream=True` galinio taško variantą, kai jis bus įjungtas)
-- Pridėkite vėlavimo diagramą (kliento pusėje) Phi ir GPT-OSS-20B perjungimui
-- Įterpkite RAG kontekstą tiesiogiai (teksto lauką nuorodų dokumentams)
+- Pakeiskite laikinojo duomenų gavimo logiką į srautinius tokenus (naudokite `stream=True` galinę tašką, kai jis bus įjungtas)
+- Pridėkite vėlavimo diagramą (kliento pusėje) Phi ir GPT-OSS-20B perjungimams
+- Įterpkite RAG kontekstą tiesiogiai (teksto laukelis nuorodų dokumentams)
 
-## Vertinimo euristikos
+## Vertinimo kriterijai
 
 | Kategorija | Phi-4-mini | GPT-OSS-20B | Pastabos |
 |------------|------------|-------------|----------|
 | Vėlavimas (šaltas) | Greitas | Lėtesnis | SLM greitai įšyla |
 | Atmintis | Maža | Didelė | Įrenginio tinkamumas |
-| Konteksto laikymasis | Geras | Stiprus | Didesnis modelis gali būti iškalbingesnis |
-| Kaštai (vietiniai) | Minimalūs | Didesni (ištekliai) | Energijos/laiko kompromisas |
-| Geriausias naudojimo atvejis | Kraštinės programos | Gilus samprotavimas | Galima hibridinė sistema |
+| Konteksto laikymasis | Geras | Stiprus | Didesnis modelis gali būti išsamesnis |
+| Kaštai (vietiniai) | Minimalūs | Didesni (išteklių) | Energijos/laiko kompromisas |
+| Geriausias naudojimo atvejis | Kraštinės programos | Gili analizė | Galima hibridinė sistema |
 
 ## Aplinkos patikrinimas
 
@@ -187,17 +188,18 @@ foundry model list
 
 # For runtime metrics use the Python benchmark script (Session 3) and OS tools (Task Manager / nvidia-smi) instead of 'model stats'
 # Example:
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini,gpt-oss-20b
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
 ## Trikčių šalinimas
 
 | Simptomas | Priežastis | Veiksmas |
 |-----------|------------|----------|
-| Tinklalapio užklausos nepavyksta | CORS arba paslauga neveikia | Naudokite `curl`, kad patikrintumėte galinį tašką; įjunkite CORS tarpinį serverį, jei reikia |
+| Nepavyksta įkelti tinklalapio | CORS arba paslauga neveikia | Naudokite `curl`, kad patikrintumėte galinį tašką; jei reikia, įjunkite CORS proxy |
 | Chainlit tuščias | Aplinka neaktyvi | Aktyvuokite venv ir iš naujo įdiekite priklausomybes |
-| Didelis vėlavimas | Modelis ką tik įkeltas | Įšildykite mažos eilutės sekos užklausa |
+| Didelis vėlavimas | Modelis ką tik įkeltas | Įšildykite su mažu užklausos tekstu |
 
 ## Nuorodos
 
@@ -208,18 +210,18 @@ foundry model list
 ---
 
 **Sesijos trukmė**: 30 min  
-**Sudėtingumas**: Pažengusiems
+**Sudėtingumas**: Pažengęs
 
 ## Pavyzdinė situacija ir dirbtuvių susiejimas
 
 | Dirbtuvių artefaktai | Situacija | Tikslas | Duomenų / užklausos šaltinis |
 |----------------------|-----------|---------|-----------------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architektūros komanda, vertinanti SLM ir LLM vykdomojo santraukų generatoriui | Kiekybiškai įvertinti vėlavimo ir žetonų naudojimo skirtumus | Vienas `COMPARE_PROMPT` aplinkos kintamasis |
-| `chainlit_app.py` (RAG demonstracija) | Vidinis žinių asistento prototipas | Pagrįsti trumpus atsakymus minimalia leksine paieška | Tiesioginis `DOCS` sąrašas faile |
-| `webgpu_demo.html` | Ateities įrenginio naršyklės inferencijos peržiūra | Parodyti mažo vėlavimo vietinį apsikeitimą ir UX pasakojimą | Tik gyvas vartotojo užklausos tekstas |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architektūros komanda, vertinanti SLM ir LLM vykdomojo santraukų generatoriui | Kiekybiškai įvertinti vėlavimo ir tokenų naudojimo skirtumus | Vienas `COMPARE_PROMPT` aplinkos kintamasis |
+| `chainlit_app.py` (RAG demonstracija) | Vidinio žinių asistento prototipas | Pagrįsti trumpus atsakymus minimalia leksine paieška | Tiesioginis `DOCS` sąrašas faile |
+| `webgpu_demo.html` | Ateities įrenginio naršyklės inferencijos peržiūra | Parodyti mažo vėlavimo vietinį atsakymą ir UX pasakojimą | Tik gyva vartotojo užklausa |
 
 ### Situacijos pasakojimas
-Produktų organizacija nori vykdomojo santraukų generatoriaus. Lengvas SLM (phi‑4‑mini) rengia santraukas; didesnis LLM (gpt‑oss‑20b) gali tobulinti tik aukšto prioriteto ataskaitas. Sesijos scenarijai fiksuoja empirinį vėlavimą ir žetonų metrikas, kad pateisintų hibridinį dizainą, o Chainlit demonstracija parodo, kaip pagrįsta paieška užtikrina mažo modelio atsakymų faktinį tikslumą. WebGPU koncepcijos puslapis suteikia viziją visiškai kliento pusės apdorojimui, kai naršyklės pagreitis subręs.
+Produktų organizacija nori vykdomojo santraukų generatoriaus. Lengvas SLM (phi‑4‑mini) rengia santraukas; didesnis LLM (gpt‑oss‑20b) gali tobulinti tik aukšto prioriteto ataskaitas. Sesijos scenarijai fiksuoja empirinį vėlavimą ir tokenų metriką, kad būtų galima pagrįsti hibridinį dizainą, o Chainlit demonstracija iliustruoja, kaip pagrįsta paieška užtikrina mažo modelio atsakymų tikslumą. WebGPU koncepcijos puslapis pateikia viziją visiškai kliento pusės apdorojimui, kai naršyklės pagreitis bus labiau išvystytas.
 
 ### Minimalus RAG kontekstas (Chainlit)
 ```python
@@ -239,24 +241,24 @@ else:
     final, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Refine and polish:\n{draft}"}], max_tokens=220)
 ```
 
-Stebėkite abu vėlavimo komponentus, kad praneštumėte apie vidutinius mišrius kaštus.
+Sekite abu vėlavimo komponentus, kad pateiktumėte vidutinius mišrius kaštus.
 
-### Pasirenkami patobulinimai
+### Pasirinktiniai patobulinimai
 
 | Dėmesys | Patobulinimas | Kodėl | Įgyvendinimo užuomina |
-|---------|--------------|-------|-----------------------|
-| Palyginimo metrika | Stebėkite žetonų naudojimą ir pirmo žetono vėlavimą | Holistinis našumo vaizdas | Naudokite patobulintą testavimo scenarijų (3 sesija) su `BENCH_STREAM=1` |
+|---------|---------------|-------|-----------------------|
+| Palyginamos metrikos | Sekite tokenų naudojimą ir pirmojo tokeno vėlavimą | Holistinis našumo vaizdas | Naudokite patobulintą testavimo scenarijų (3 sesija) su `BENCH_STREAM=1` |
 | Hibridinis vamzdynas | SLM juodraštis → LLM tobulinimas | Sumažinti vėlavimą ir kaštus | Generuokite su phi-4-mini, tobulinkite santrauką su gpt-oss-20b |
-| Srautinė sąsaja | Geresnis UX Chainlit | Inkrementinis grįžtamasis ryšys | Naudokite `stream=True`, kai vietinis srautas bus įjungtas; kaupkite dalis |
-| WebGPU talpykla | Greitesnis JS inicijavimas | Sumažinti perkompiliavimo išlaidas | Talpinkite sukompiliuotus šeiderių artefaktus (būsima vykdymo galimybė) |
-| Deterministiniai QA rinkiniai | Sąžiningas modelių palyginimas | Pašalinti variaciją | Fiksuotas užklausų sąrašas + `temperature=0` vertinimo paleidimams |
-| Rezultatų vertinimas | Struktūrinis kokybės objektyvas | Peržengti anekdotus | Paprasta rubrika: nuoseklumas / faktualumas / glaustumas (1–5) |
+| Srautinė sąsaja | Geresnė UX Chainlit | Inkrementinis grįžtamasis ryšys | Naudokite `stream=True`, kai vietinis srautas bus įjungtas; kaupti dalis |
+| WebGPU talpykla | Greitesnis JS inicijavimas | Sumažinti perkompiliavimo išlaidas | Talpykloje saugokite sukompiliuotus šeiderių artefaktus (būsima vykdymo galimybė) |
+| Determinuotas QA rinkinys | Sąžiningas modelių palyginimas | Pašalinti variaciją | Fiksuotas užklausų sąrašas + `temperature=0` vertinimo paleidimams |
+| Rezultatų vertinimas | Struktūrinis kokybės matas | Virš anekdotų | Paprasta rubrika: nuoseklumas / faktualumas / glaustumas (1–5) |
 | Energijos / išteklių pastabos | Diskusija klasėje | Parodyti kompromisus | Naudokite OS monitorius (`foundry system info`, Task Manager, `nvidia-smi`) + testavimo scenarijų rezultatus |
-| Kaštų emuliacija | Prieš debesų pateisinimą | Planuoti mastelį | Žemėlapis žetonams į hipotetines debesų kainas TCO pasakojimui |
-| Vėlavimo skaidymas | Identifikuoti kliūtis | Tikslinės optimizacijos | Matuokite užklausos paruošimą, užklausos siuntimą, pirmą žetoną, pilną užbaigimą |
-| RAG + LLM atsarginė kopija | Kokybės saugumo tinklas | Pagerinti sudėtingus užklausimus | Jei SLM atsakymo ilgis < slenkstis arba mažas pasitikėjimas → eskaluoti |
+| Kaštų emuliacija | Prieš debesų pagrindimą | Planavimo mastelis | Susiekite tokenus su hipotetinėmis debesų kainomis TCO pasakojimui |
+| Vėlavimo skaidymas | Nustatyti kliūtis | Tikslinės optimizacijos | Matuokite užklausos paruošimą, užklausos siuntimą, pirmą tokeną, pilną užbaigimą |
+| RAG + LLM atsarginis variantas | Kokybės saugumo tinklas | Pagerinti sudėtingus klausimus | Jei SLM atsakymo ilgis < slenkstis arba žemas pasitikėjimas → eskaluoti |
 
-#### Pavyzdinis hibridinis juodraštis/tobulinimo modelis
+#### Pavyzdinis hibridinis juodraščio/tobulinimo modelis
 
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], max_tokens=300, temperature=0.4)
@@ -278,5 +280,5 @@ Naudokite nuoseklią matavimo struktūrą visiems modeliams, kad palyginimai bū
 
 ---
 
-**Atsakomybės atsisakymas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+**Atsakomybės apribojimas**:  
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, atsiradusius naudojant šį vertimą.

@@ -91,7 +91,7 @@ def get_client(alias: str, endpoint: Optional[str] = None) -> Tuple[FoundryLocal
         
     except Exception as e:
         _LOGGER.error(f"✗ Failed to initialize client for alias '{alias}': {e}")
-        _LOGGER.error(f"  Ensure Foundry Local service is running: foundry service start")
+        _LOGGER.error("✗ Ensure Foundry Local service is running: foundry service start")
         raise RuntimeError(f"Client initialization failed for '{alias}': {e}") from e
 
 def chat_once(alias: str, messages: List[dict], **kwargs) -> Tuple[str, Any]:

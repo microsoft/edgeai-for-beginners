@@ -1,22 +1,22 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-09T13:14:26+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T22:07:28+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "sv"
 }
 -->
 # Workshop-skript
 
-Den här katalogen innehåller automations- och stödskript som används för att upprätthålla kvalitet och konsekvens i Workshop-materialet.
+Den här katalogen innehåller automatiserings- och stödskript som används för att upprätthålla kvalitet och konsekvens i Workshop-materialet.
 
 ## Innehåll
 
 | Fil | Syfte |
-|-----|-------|
+|------|---------|
 | `lint_markdown_cli.py` | Kontrollerar markdown-kodblock för att blockera föråldrade Foundry Local CLI-kommandomönster. |
-| `export_benchmark_markdown.py` | Kör latensbenchmark för flera modeller och genererar Markdown- och JSON-rapporter. |
+| `export_benchmark_markdown.py` | Kör latensbenchmark för flera modeller och genererar Markdown + JSON-rapporter. |
 
 ## 1. Markdown CLI-mönsterkontroll
 
@@ -26,9 +26,9 @@ Den här katalogen innehåller automations- och stödskript som används för at
 
 Kontrollverktyget blockerar föråldrade CLI-mönster. Använd moderna alternativ istället.
 
-### Nödvändiga ersättningar
+### Obligatoriska ersättningar
 | Föråldrat | Använd istället |
-|-----------|-----------------|
+|------------|-------------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
 | `foundry model list --running` | `foundry model list` |
 | `foundry model list --cached` | `foundry cache list` |
@@ -38,7 +38,7 @@ Kontrollverktyget blockerar föråldrade CLI-mönster. Använd moderna alternati
 
 ### Exit-koder
 | Kod | Betydelse |
-|-----|-----------|
+|------|---------|
 | 0 | Inga överträdelser upptäckta |
 | 1 | En eller flera föråldrade mönster hittades |
 
@@ -55,15 +55,15 @@ macOS / Linux:
 python Workshop/scripts/lint_markdown_cli.py --verbose
 ```
 
-### Pre-commit Hook (valfritt)
+### Pre-commit-hook (valfritt)
 ```bash
 echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
 Detta blockerar commits som introducerar föråldrade mönster.
 
-### CI-integration
-Ett GitHub Action-arbetsflöde (`.github/workflows/markdown-cli-lint.yml`) kör kontrollverktyget vid varje push och pull request till `main`- och `Reactor`-brancherna. Misslyckade jobb måste åtgärdas innan sammanslagning.
+### CI-integrering
+Ett GitHub Action-arbetsflöde (`.github/workflows/markdown-cli-lint.yml`) kör kontrollverktyget vid varje push och pull request till `main` och `Reactor`-brancherna. Misslyckade jobb måste åtgärdas innan sammanslagning.
 
 ### Lägga till nya föråldrade mönster
 1. Öppna `lint_markdown_cli.py`.
@@ -77,25 +77,25 @@ DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental
 ```
 
 ### Tillåta förklarande omnämnanden
-Eftersom endast kodblock kontrolleras kan du beskriva föråldrade kommandon i narrativ text utan problem. Om du *måste* visa dem i ett kodblock för kontrast, använd ett kodblock **utan** trippel backticks (t.ex. indentering eller citat) eller skriv om till pseudoform.
+Eftersom endast kodblock kontrolleras kan du beskriva föråldrade kommandon i narrativ text utan problem. Om du *måste* visa dem i ett kodblock för kontrast, använd ett kodblock **utan** tre backticks (t.ex. indrag eller citat) eller skriv om till en pseudoform.
 
 ### Hoppa över specifika filer (avancerat)
-Om det behövs, placera äldre exempel i en separat fil utanför repositoryn eller byt namn med en annan filändelse under utkast. Avsiktliga undantag för översatta kopior är automatiska (sökvägar som innehåller `translations`).
+Om det behövs, placera äldre exempel i en separat fil utanför repositoryn eller byt namn med en annan filändelse under utarbetandet. Avsiktliga undantag för översatta kopior är automatiska (sökvägar som innehåller `translations`).
 
 ### Felsökning
 | Problem | Orsak | Lösning |
-|---------|-------|---------|
-| Kontrollverktyget flaggar en rad du uppdaterade | Regex för bred | Begränsa mönstret med ytterligare ordgräns (`\b`) eller ankare |
-| CI misslyckas men lokalt fungerar | Olika Python-version eller ocommitterade ändringar | Kör om lokalt, säkerställ en ren arbetskatalog, kontrollera arbetsflödets Python-version (3.11) |
-| Behöver tillfälligt kringgå | Akut hotfix | Åtgärda omedelbart efteråt; överväg att använda en tillfällig branch och uppföljande PR (undvik att lägga till kringgångsalternativ) |
+|-------|-------|-----------|
+| Kontrollverktyget flaggar en rad du har uppdaterat | Regex för bred | Begränsa mönstret med ytterligare ordgräns (`\b`) eller ankare |
+| CI misslyckas men lokalt fungerar | Olika Python-version eller ocommiterade ändringar | Kör om lokalt, säkerställ en ren arbetskatalog, kontrollera arbetsflödets Python-version (3.11) |
+| Behöver tillfälligt kringgå | Akut fix | Åtgärda omedelbart efteråt; överväg att använda en tillfällig branch och uppföljande PR (undvik att lägga till kringgångsalternativ) |
 
 ### Motivering
 Att hålla dokumentationen i linje med *nuvarande* stabil CLI-yta förhindrar friktion i workshoppen, undviker förvirring hos deltagare och centraliserar prestandamätning genom underhållna Python-skript istället för föråldrade CLI-kommandon.
 
 ---
-Underhålls som en del av workshopens kvalitetssäkringsverktyg. För förbättringar (t.ex. automatiska korrigeringsförslag eller HTML-rapportgenerering), öppna ett ärende eller skicka in en PR.
+Underhålls som en del av workshopens kvalitetssäkringsverktyg. För förbättringar (t.ex. automatiska korrigeringsförslag eller HTML-rapportgenerering), öppna ett ärende eller skicka en PR.
 
-## 2. Valideringsskript för exempel
+## 2. Exempelskript för validering
 
 `validate_samples.py` validerar alla Python-exempelfiler för syntax, imports och efterlevnad av bästa praxis.
 
@@ -115,11 +115,11 @@ python scripts/validate_samples.py --summary
 ```
 
 ### Vad det kontrollerar
-- ✅ Python-syntaxens giltighet
+- ✅ Python-syntax giltighet
 - ✅ Nödvändiga imports finns
 - ✅ Implementering av felhantering (verbose-läge)
 - ✅ Användning av typanvisningar (verbose-läge)
-- ✅ Funktionsdokumentation (verbose-läge)
+- ✅ Funktionsdocstrings (verbose-läge)
 - ✅ SDK-referenslänkar (verbose-läge)
 
 ### Miljövariabler
@@ -132,7 +132,7 @@ python scripts/validate_samples.py --summary
 
 ## 3. Testkörning av exempel
 
-`test_samples.py` kör snabbtester på alla exempel för att verifiera att de körs utan fel.
+`test_samples.py` kör snabba tester på alla exempel för att verifiera att de körs utan fel.
 
 ### Användning
 ```bash
@@ -157,11 +157,11 @@ python scripts/test_samples.py --verbose
 ### Vad det testar
 - ✅ Exempel kan köras utan runtime-fel
 - ✅ Nödvändig output genereras
-- ✅ Korrekt felhantering vid misslyckande
-- ✅ Prestanda (körningstid)
+- ✅ Korrekt felhantering vid fel
+- ✅ Prestanda (exekveringstid)
 
 ### Miljövariabler
-- `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Modell som ska användas för testning
+- `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - Modell att använda för testning
 - `TEST_TIMEOUT=30` - Timeout per exempel i sekunder
 
 ### Förväntade fel
@@ -182,18 +182,18 @@ Genererar en reproducerbar prestandatabell för en uppsättning modeller.
 
 ### Användning
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Utdata
 | Fil | Beskrivning |
-|-----|-------------|
+|------|-------------|
 | `benchmark_report.md` | Markdown-tabell (medelvärde, p95, tokens/sek, valfritt första token) |
-| `benchmark_report.json` | Rå metrisk array för diffning och historik |
+| `benchmark_report.json` | Rå metrisk array för jämförelse & historik |
 
 ### Alternativ
 | Flagga | Beskrivning | Standard |
-|--------|-------------|----------|
+|------|-------------|---------|
 | `--models` | Komma-separerade modellalias | (obligatoriskt) |
 | `--prompt` | Prompt som används varje omgång | (obligatoriskt) |
 | `--rounds` | Omgångar per modell | 3 |
@@ -204,11 +204,11 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 Miljövariabeln `BENCH_STREAM=1` lägger till latensmätning för första token.
 
 ### Anteckningar
-- Återanvänder `workshop_utils` för konsekvent modellbootstrap och caching.
-- Om skriptet körs från en annan arbetskatalog försöker det hitta `workshop_utils` via sökvägsfallbacks.
-- För GPU-jämförelse: kör en gång, aktivera acceleration via CLI-konfiguration, kör igen och jämför JSON.
+- Återanvänder `workshop_utils` för konsekvent modellbootstrap & caching.
+- Om det körs från en annan arbetskatalog försöker skriptet sökvägsfall tillbaka för att hitta `workshop_utils`.
+- För GPU-jämförelse: kör en gång, aktivera acceleration via CLI-konfiguration, kör om och jämför JSON.
 
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

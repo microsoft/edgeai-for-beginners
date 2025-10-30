@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T19:31:22+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:43:38+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "ms"
 }
@@ -46,7 +46,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Dokumentasi dipertingkatkan dengan butiran pembolehubah persekitaran
 
 #### Sesi 02: RAG Evaluation (`rag_eval_ragas.py`)
-- Model lalai dikemas kini
+- Lalai model dikemas kini
 - Menambah konfigurasi endpoint
 - Pengendalian ralat dipertingkatkan
 
@@ -65,12 +65,12 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Menambah petunjuk jenis (menukar `str | None` kepada `Optional[str]`)
 - Dokumentasi kelas Agent dipertingkatkan
 - Menambah sokongan override endpoint
-- Corak inisialisasi dipertingkatkan
+- Pola inisialisasi dipertingkatkan
 
-#### Sesi 06: Router Model (`models_router.py`)
+#### Sesi 06: Model Router (`models_router.py`)
 - Menambah konfigurasi endpoint
 - Dokumentasi pengesanan niat dipertingkatkan
-- Dokumentasi logik routing dipertingkatkan
+- Dokumentasi logik penghalaan dipertingkatkan
 
 #### Sesi 06: Pipeline (`models_pipeline.py`)
 - Dokumentasi fungsi yang komprehensif ditambah
@@ -95,7 +95,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Menambah sokongan override endpoint
 - Dokumentasi dipertingkatkan
 - Dokumentasi kes ujian dipertingkatkan
-- Pelaporan ralat yang lebih baik
+- Laporan ralat yang lebih baik
 
 ## Pembolehubah Persekitaran
 
@@ -105,18 +105,18 @@ Semua contoh kini menyokong pembolehubah persekitaran berikut:
 - `FOUNDRY_LOCAL_ALIAS` - Alias model untuk digunakan (lalai berbeza mengikut contoh)
 - `FOUNDRY_LOCAL_ENDPOINT` - Override endpoint perkhidmatan (pilihan)
 - `SHOW_USAGE` - Paparkan statistik penggunaan token (lalai: "0")
-- `RETRY_ON_FAIL` - Dayakan logik ulang cuba (lalai: "1")
+- `RETRY_ON_FAIL` - Aktifkan logik ulang cuba (lalai: "1")
 - `RETRY_BACKOFF` - Kelewatan ulang cuba awal dalam saat (lalai: "1.0")
 
 ### Khusus Contoh
 - `EMBED_MODEL` - Model embedding untuk contoh RAG
-- `BENCH_MODELS` - Model dipisahkan koma untuk benchmarking
+- `BENCH_MODELS` - Model yang dipisahkan dengan koma untuk benchmarking
 - `BENCH_ROUNDS` - Bilangan pusingan benchmark
 - `BENCH_PROMPT` - Prompt ujian untuk benchmark
 - `BENCH_STREAM` - Ukur latensi token pertama
 - `RAG_QUESTION` - Soalan ujian untuk contoh RAG
-- `AGENT_MODEL_PRIMARY` - Model agent utama
-- `AGENT_MODEL_EDITOR` - Model agent editor
+- `AGENT_MODEL_PRIMARY` - Model agen utama
+- `AGENT_MODEL_EDITOR` - Model agen editor
 - `SLM_ALIAS` - Alias model bahasa kecil
 - `LLM_ALIAS` - Alias model bahasa besar
 
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -244,15 +245,15 @@ python -m Workshop.tests.smoke
 ### Tiada Dijangka
 Semua perubahan adalah serasi ke belakang. Kemas kini ini terutamanya:
 - Menambah ciri pilihan baru (override endpoint)
-- Memperbaiki pengendalian ralat
-- Meningkatkan dokumentasi
+- Meningkatkan pengendalian ralat
+- Memperbaiki dokumentasi
 - Mengemas kini nama model lalai kepada cadangan semasa
 
 ### Peningkatan Pilihan
 Anda mungkin ingin mengemas kini kod anda untuk menggunakan:
-- `FOUNDRY_LOCAL_ENDPOINT` untuk kawalan endpoint eksplisit
-- `SHOW_USAGE=1` untuk melihat penggunaan token
-- Model lalai terkini (`phi-4-mini` menggantikan `phi-3.5-mini`)
+- `FOUNDRY_LOCAL_ENDPOINT` untuk kawalan endpoint yang eksplisit
+- `SHOW_USAGE=1` untuk keterlihatan penggunaan token
+- Model lalai yang dikemas kini (`phi-4-mini` dan bukannya `phi-3.5-mini`)
 
 ## Isu Biasa & Penyelesaian
 
@@ -263,13 +264,13 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Isu: "Model tidak dijumpai"
+### Isu: "Model tidak ditemui"
 **Penyelesaian**: Semak model yang tersedia:
 ```bash
 foundry model list
 ```
 
-### Isu: Ralat sambungan endpoint
+### Isu: Kesalahan sambungan endpoint
 **Penyelesaian**: Sahkan endpoint:
 ```bash
 # Check service status
@@ -281,7 +282,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## Langkah Seterusnya
 
-1. **Kemas kini contoh Module08**: Terapkan corak serupa pada Module08/samples
+1. **Kemas kini contoh Module08**: Terapkan corak serupa kepada Module08/samples
 2. **Tambah ujian integrasi**: Cipta suite ujian yang komprehensif
 3. **Benchmarking prestasi**: Bandingkan prestasi sebelum/selepas
 4. **Kemas kini dokumentasi**: Kemas kini README utama dengan corak baru
@@ -306,11 +307,11 @@ Kemas kini ini serasi dengan:
 
 ---
 
-**Tarikh Dikemas Kini**: 2025-01-08  
+**Kemas Kini Terakhir**: 2025-01-08  
 **Penyelenggara**: Pasukan Bengkel EdgeAI  
 **Versi SDK**: Foundry Local SDK (terkini 0.7.117+67073234e7)
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

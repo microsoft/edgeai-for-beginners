@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-08T20:42:02+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T21:29:46+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "pt"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Visão Geral
 
-Os exemplos do Workshop utilizam variáveis de ambiente para configuração, centralizadas no ficheiro `.env` na raiz do repositório. Isto permite uma personalização fácil sem necessidade de modificar o código.
+Os exemplos do Workshop utilizam variáveis de ambiente para configuração, centralizadas no ficheiro `.env` na raiz do repositório. Isso permite uma personalização fácil sem necessidade de modificar o código.
 
 ## Início Rápido
 
@@ -30,9 +30,9 @@ foundry model run phi-4-mini
 
 ### 2. Configurar o Ambiente
 
-O ficheiro `.env` já está configurado com valores padrão adequados. A maioria dos utilizadores não precisará de alterar nada.
+O ficheiro `.env` já está configurado com valores padrão sensatos. A maioria dos utilizadores não precisará alterar nada.
 
-**Opcional**: Revise e personalize as definições:
+**Opcional**: Revise e personalize as configurações:
 ```bash
 # Edit .env file
 notepad .env  # Windows
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Para Scripts Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -64,10 +64,10 @@ python chat_bootstrap.py
 | `FOUNDRY_LOCAL_ENDPOINT` | (vazio) | Substituir o endpoint do serviço |
 | `PYTHONPATH` | Caminhos do Workshop | Caminho de pesquisa de módulos Python |
 
-**Quando definir FOUNDRY_LOCAL_ENDPOINT:**
+**Quando configurar FOUNDRY_LOCAL_ENDPOINT:**
 - Instância remota do Foundry Local
 - Configuração de porta personalizada
-- Separação entre desenvolvimento e produção
+- Separação entre desenvolvimento/produção
 
 **Exemplo:**
 ```bash
@@ -78,24 +78,24 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ```
 
-### Variáveis Específicas da Sessão
+### Variáveis Específicas de Sessão
 
 #### Sessão 02: Pipeline RAG
-| Variável | Padrão | Finalidade |
+| Variável | Padrão | Propósito |
 |----------|---------|---------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Modelo de embeddings |
 | `RAG_QUESTION` | Pré-configurado | Pergunta de teste |
 
 #### Sessão 03: Benchmarking
-| Variável | Padrão | Finalidade |
+| Variável | Padrão | Propósito |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modelos para benchmarking |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modelos para benchmarking |
 | `BENCH_ROUNDS` | `3` | Iterações por modelo |
 | `BENCH_PROMPT` | Pré-configurado | Prompt de teste |
 | `BENCH_STREAM` | `0` | Medir latência do primeiro token |
 
 #### Sessão 04: Comparação de Modelos
-| Variável | Padrão | Finalidade |
+| Variável | Padrão | Propósito |
 |----------|---------|---------|
 | `SLM_ALIAS` | `phi-4-mini` | Modelo de linguagem pequeno |
 | `LLM_ALIAS` | `qwen2.5-7b` | Modelo de linguagem grande |
@@ -103,15 +103,15 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `COMPARE_RETRIES` | `2` | Tentativas de repetição |
 
 #### Sessão 05: Orquestração Multi-Agente
-| Variável | Padrão | Finalidade |
+| Variável | Padrão | Propósito |
 |----------|---------|---------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Modelo do agente investigador |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Modelo do agente pesquisador |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Modelo do agente editor |
 | `AGENT_QUESTION` | Pré-configurado | Pergunta de teste |
 
-### Configuração de Fiabilidade
+### Configuração de Confiabilidade
 
-| Variável | Padrão | Finalidade |
+| Variável | Padrão | Propósito |
 |----------|---------|---------|
 | `SHOW_USAGE` | `1` | Imprimir uso de tokens |
 | `RETRY_ON_FAIL` | `1` | Ativar lógica de repetição |
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Configuração de Benchmarking
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -174,7 +174,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Geração de Código:**
 - `deepseek-coder-1.3b` - Especializado para código
-- `phi-4-mini` - Propósito geral para programação
+- `phi-4-mini` - Propósito geral para codificação
 
 ### Por Disponibilidade de Recursos
 
@@ -304,22 +304,19 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Sintomas:**
 - Erros de "Módulo não encontrado"
-- "Não é possível importar workshop_utils"
 
 **Soluções:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
-## Testar Configuração
+## Testando a Configuração
 
 ### Verificar Carregamento do Ambiente
 
@@ -366,7 +363,7 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## Práticas de Segurança
+## Práticas de Segurança Recomendadas
 
 ### 1. Nunca Cometer Segredos
 
@@ -392,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. Usar Configuração Específica do Ambiente
+### 4. Usar Configuração Específica para o Ambiente
 
 ```bash
 # Development
@@ -406,21 +403,21 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Repositório Principal**: https://github.com/microsoft/Foundry-Local
 - **SDK Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Documentação da API**: Consulte o repositório do SDK para a versão mais recente
+- **Documentação da API**: Verifique o repositório do SDK para a versão mais recente
 
 ## Recursos Adicionais
 
-- `QUICK_START.md` - Guia de introdução
+- `QUICK_START.md` - Guia de início rápido
 - `SDK_MIGRATION_NOTES.md` - Detalhes sobre atualizações do SDK
-- `Workshop/samples/*/README.md` - Guias específicos para exemplos
+- `Workshop/samples/*/README.md` - Guias específicos para os exemplos
 
 ---
 
 **Última Atualização**: 2025-01-08  
 **Versão**: 2.0  
-**SDK**: Foundry Local Python SDK (mais recente)
+**SDK**: Foundry Local Python SDK (última versão)
 
 ---
 
-**Aviso**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, tenha em atenção que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
+**Aviso Legal**:  
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

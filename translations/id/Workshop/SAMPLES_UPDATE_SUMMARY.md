@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-09T19:30:03+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T22:39:19+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "id"
 }
 -->
-# Ringkasan Pembaruan SDK Lokal Foundry - Contoh Workshop
+# Contoh Workshop - Ringkasan Pembaruan Foundry Local SDK
 
-## Gambaran Umum
+## Ikhtisar
 
-Semua contoh Python di direktori `Workshop/samples` telah diperbarui untuk mengikuti praktik terbaik SDK Lokal Foundry dan memastikan konsistensi di seluruh workshop.
+Semua contoh Python di direktori `Workshop/samples` telah diperbarui untuk mengikuti praktik terbaik Foundry Local SDK dan memastikan konsistensi di seluruh workshop.
 
 **Tanggal**: 8 Oktober 2025  
 **Lingkup**: 9 file Python di 6 sesi workshop  
-**Fokus Utama**: Penanganan kesalahan, dokumentasi, pola SDK, pengalaman pengguna
+**Fokus Utama**: Penanganan error, dokumentasi, pola SDK, pengalaman pengguna
 
 ---
 
@@ -28,7 +28,7 @@ Semua contoh Python di direktori `Workshop/samples` telah diperbarui untuk mengi
 - ✅ `rag_pipeline.py` - Implementasi RAG dengan embeddings
 - ✅ `rag_eval_ragas.py` - Evaluasi RAG dengan metrik RAGAS
 
-### Sesi 03: Model Sumber Terbuka
+### Sesi 03: Model Open Source
 - ✅ `benchmark_oss_models.py` - Benchmarking multi-model
 
 ### Sesi 04: Model Terkini
@@ -46,16 +46,16 @@ Semua contoh Python di direktori `Workshop/samples` telah diperbarui untuk mengi
 
 ---
 
-## Perbaikan Utama
+## Peningkatan Utama
 
-### 1. Penanganan Kesalahan yang Ditingkatkan
+### 1. Penanganan Error yang Ditingkatkan
 
-**Sebelum:**
+**Sebelumnya:**
 ```python
 manager, client, model_id = get_client(alias)
 ```
 
-**Sesudah:**
+**Setelah:**
 ```python
 try:
     manager, client, model_id = get_client(alias, endpoint=endpoint)
@@ -66,18 +66,18 @@ except Exception as e:
 ```
 
 **Manfaat:**
-- Penanganan kesalahan yang lebih baik dengan pesan kesalahan yang jelas
+- Penanganan error yang lebih baik dengan pesan error yang jelas
 - Petunjuk pemecahan masalah yang dapat ditindaklanjuti
 - Kode keluar yang sesuai untuk scripting
 
-### 2. Manajemen Impor yang Lebih Baik
+### 2. Manajemen Import yang Lebih Baik
 
-**Sebelum:**
+**Sebelumnya:**
 ```python
 from sentence_transformers import SentenceTransformer
 ```
 
-**Sesudah:**
+**Setelah:**
 ```python
 try:
     from sentence_transformers import SentenceTransformer
@@ -88,7 +88,7 @@ except ImportError:
 
 **Manfaat:**
 - Panduan yang jelas saat dependensi hilang
-- Mencegah kesalahan impor yang membingungkan
+- Mencegah error import yang membingungkan
 - Instruksi instalasi yang ramah pengguna
 
 ### 3. Dokumentasi Komprehensif
@@ -140,10 +140,10 @@ print(json.dumps(summary, indent=2))
 
 ### 5. Benchmarking yang Kuat
 
-**Perbaikan Sesi 03:**
-- Penanganan kesalahan per-model (melanjutkan saat gagal)
+**Peningkatan Sesi 03:**
+- Penanganan error per model (melanjutkan saat gagal)
 - Pelaporan progres yang mendetail
-- Eksekusi putaran pemanasan dengan benar
+- Pemanasan dilakukan dengan benar
 - Dukungan pengukuran latensi token pertama
 - Pemisahan tahap yang jelas
 
@@ -159,23 +159,23 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 
 **Manfaat:**
 - Autocomplete IDE yang lebih baik
-- Deteksi kesalahan lebih awal
+- Deteksi error lebih awal
 - Kode yang lebih mudah dipahami
 
 ### 7. Router Model yang Ditingkatkan
 
-**Perbaikan Sesi 06:**
+**Peningkatan Sesi 06:**
 - Dokumentasi deteksi intent yang komprehensif
 - Penjelasan algoritma pemilihan model
 - Log routing yang mendetail
 - Format output pengujian
-- Pemulihan kesalahan dalam pengujian batch
+- Pemulihan error dalam pengujian batch
 
 ### 8. Orkestrasi Multi-Agen
 
-**Perbaikan Sesi 05:**
+**Peningkatan Sesi 05:**
 - Pelaporan progres tahap demi tahap
-- Penanganan kesalahan per-agen
+- Penanganan error per agen
 - Struktur pipeline yang jelas
 - Dokumentasi manajemen memori yang lebih baik
 
@@ -200,61 +200,61 @@ pip install -r Workshop/requirements.txt
 
 #### Sesi 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Sesi 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Sesi 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Sesi 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Sesi 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Sesi 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
@@ -264,8 +264,8 @@ python models_pipeline.py
 ### Global (Semua Contoh)
 | Variabel | Deskripsi | Default |
 |----------|-------------|---------|
-| `FOUNDRY_LOCAL_ALIAS` | Alias model yang digunakan | Bervariasi berdasarkan contoh |
-| `FOUNDRY_LOCAL_ENDPOINT` | Menimpa endpoint layanan | Terdeteksi otomatis |
+| `FOUNDRY_LOCAL_ALIAS` | Alias model yang digunakan | Bervariasi sesuai contoh |
+| `FOUNDRY_LOCAL_ENDPOINT` | Override endpoint layanan | Terdeteksi otomatis |
 | `SHOW_USAGE` | Menampilkan penggunaan token | `0` |
 | `RETRY_ON_FAIL` | Mengaktifkan logika retry | `1` |
 | `RETRY_BACKOFF` | Penundaan retry awal | `1.0` |
@@ -275,7 +275,7 @@ python models_pipeline.py
 |----------|---------|-------------|
 | `EMBED_MODEL` | Sesi 02 | Nama model embedding |
 | `RAG_QUESTION` | Sesi 02 | Pertanyaan uji untuk RAG |
-| `BENCH_MODELS` | Sesi 03 | Model yang di-benchmark (dipisahkan koma) |
+| `BENCH_MODELS` | Sesi 03 | Model yang akan di-benchmark (dipisahkan dengan koma) |
 | `BENCH_ROUNDS` | Sesi 03 | Jumlah putaran benchmark |
 | `BENCH_PROMPT` | Sesi 03 | Prompt uji untuk benchmark |
 | `BENCH_STREAM` | Sesi 03 | Mengukur latensi token pertama |
@@ -289,13 +289,13 @@ python models_pipeline.py
 
 ---
 
-## Perubahan yang Merusak
+## Perubahan yang Mengganggu
 
 **Tidak Ada** - Semua perubahan kompatibel dengan versi sebelumnya.
 
 Script yang ada akan tetap berfungsi. Fitur baru meliputi:
 - Variabel lingkungan opsional
-- Pesan kesalahan yang ditingkatkan (tidak merusak fungsionalitas)
+- Pesan error yang ditingkatkan (tidak merusak fungsionalitas)
 - Logging tambahan (dapat disembunyikan)
 - Petunjuk tipe yang lebih baik (tidak berdampak pada runtime)
 
@@ -311,7 +311,7 @@ from workshop_utils import get_client, chat_once
 manager, client, model_id = get_client(alias, endpoint=endpoint)
 ```
 
-### 2. Pola Penanganan Kesalahan yang Tepat
+### 2. Pola Penanganan Error yang Tepat
 ```python
 try:
     # Initialize client
@@ -361,7 +361,7 @@ alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
 endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT")  # None if not set
 ```
 
-### 7. Degradasi yang Anggun
+### 7. Degradasi yang Lancar
 ```python
 # In benchmarks - continue on individual failures
 for model in models:
@@ -377,14 +377,14 @@ for model in models:
 
 ## Masalah Umum & Solusi
 
-### Masalah: Kesalahan Impor
+### Masalah: Error Import
 **Solusi:** Instal dependensi yang hilang
 ```bash
 pip install sentence-transformers ragas datasets numpy
 ```
 
-### Masalah: Kesalahan Koneksi
-**Solusi:** Pastikan Foundry Lokal berjalan
+### Masalah: Error Koneksi
+**Solusi:** Pastikan Foundry Local berjalan
 ```bash
 foundry service status
 foundry model run phi-4-mini
@@ -424,11 +424,11 @@ def test_all_samples():
 ```
 
 ### 4. Tambahkan Benchmark Performa
-Lacak peningkatan performa dari perbaikan penanganan kesalahan.
+Lacak peningkatan performa dari peningkatan penanganan error.
 
 ### 5. Umpan Balik Pengguna
 Kumpulkan umpan balik dari peserta workshop tentang:
-- Kejelasan pesan kesalahan
+- Kejelasan pesan error
 - Kelengkapan dokumentasi
 - Kemudahan penggunaan
 
@@ -436,7 +436,7 @@ Kumpulkan umpan balik dari peserta workshop tentang:
 
 ## Sumber Daya
 
-- **SDK Lokal Foundry**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Referensi Cepat**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **Catatan Migrasi**: `Workshop/SDK_MIGRATION_NOTES.md`
 - **Repositori Utama**: https://github.com/microsoft/Foundry-Local
@@ -449,7 +449,7 @@ Kumpulkan umpan balik dari peserta workshop tentang:
 Ikuti pola ini saat membuat contoh baru:
 
 1. Gunakan `workshop_utils` untuk manajemen klien
-2. Tambahkan penanganan kesalahan yang komprehensif
+2. Tambahkan penanganan error yang komprehensif
 3. Sertakan dukungan variabel lingkungan
 4. Tambahkan petunjuk tipe dan docstring
 5. Berikan logging informatif
@@ -458,7 +458,7 @@ Ikuti pola ini saat membuat contoh baru:
 
 ### Meninjau Pembaruan
 Saat meninjau pembaruan contoh, periksa:
-- [ ] Penanganan kesalahan pada semua operasi I/O
+- [ ] Penanganan error pada semua operasi I/O
 - [ ] Petunjuk tipe pada fungsi publik
 - [ ] Docstring yang komprehensif
 - [ ] Dokumentasi variabel lingkungan
@@ -468,9 +468,9 @@ Saat meninjau pembaruan contoh, periksa:
 
 ---
 
-**Ringkasan**: Semua contoh Python Workshop kini mengikuti praktik terbaik SDK Lokal Foundry dengan penanganan kesalahan yang ditingkatkan, dokumentasi komprehensif, dan pengalaman pengguna yang lebih baik. Tidak ada perubahan yang merusak - semua fungsionalitas yang ada tetap terjaga dan ditingkatkan.
+**Ringkasan**: Semua contoh Python Workshop kini mengikuti praktik terbaik Foundry Local SDK dengan penanganan error yang ditingkatkan, dokumentasi komprehensif, dan pengalaman pengguna yang lebih baik. Tidak ada perubahan yang mengganggu - semua fungsi yang ada tetap terjaga dan ditingkatkan.
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis dapat mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang salah yang timbul dari penggunaan terjemahan ini.

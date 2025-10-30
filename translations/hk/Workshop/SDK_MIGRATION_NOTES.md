@@ -1,28 +1,28 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-08T16:36:41+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T20:45:50+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "hk"
 }
 -->
-# Foundry Local SDK 遷移注意事項
+# Foundry Local SDK 遷移筆記
 
 ## 概述
 
 Workshop 文件夾中的所有 Python 文件已更新，以遵循官方 [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local) 的最新模式。
 
-## 變更摘要
+## 更改摘要
 
 ### 核心基礎設施 (`workshop_utils.py`)
 
 #### 增強功能：
 - **端點覆蓋支持**：新增 `FOUNDRY_LOCAL_ENDPOINT` 環境變數支持
 - **改進的錯誤處理**：更好的異常處理，提供詳細的錯誤信息
-- **增強的緩存**：緩存鍵現在包含端點，以支持多端點場景
+- **增強的緩存功能**：緩存鍵現在包含端點，支持多端點場景
 - **指數回退**：重試邏輯現在使用指數回退以提高可靠性
-- **類型註解**：新增全面的類型提示以改善 IDE 支持
+- **類型註解**：新增全面的類型提示，提升 IDE 支持
 
 #### 新增功能：
 ```python
@@ -62,7 +62,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - 增強文檔
 
 #### Session 05: 多代理協作 (`agents_orchestrator.py`)
-- 新增類型提示（將 `str | None` 更改為 `Optional[str]`）
+- 新增類型提示（將 `str | None` 改為 `Optional[str]`）
 - 增強 Agent 類文檔
 - 新增端點覆蓋支持
 - 改進初始化模式
@@ -79,7 +79,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### 腳本
 
-#### 基準導出 (`export_benchmark_markdown.py`)
+#### 基準測試導出 (`export_benchmark_markdown.py`)
 - 新增端點覆蓋支持
 - 更新默認模型
 - 增強函數文檔
@@ -104,23 +104,23 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 ### 核心配置
 - `FOUNDRY_LOCAL_ALIAS` - 使用的模型別名（默認值因示例而異）
 - `FOUNDRY_LOCAL_ENDPOINT` - 覆蓋服務端點（可選）
-- `SHOW_USAGE` - 顯示令牌使用統計（默認："0"）
-- `RETRY_ON_FAIL` - 啟用重試邏輯（默認："1"）
-- `RETRY_BACKOFF` - 初始重試延遲（秒）（默認："1.0"）
+- `SHOW_USAGE` - 顯示令牌使用統計（默認值："0"）
+- `RETRY_ON_FAIL` - 啟用重試邏輯（默認值："1"）
+- `RETRY_BACKOFF` - 初始重試延遲（秒）（默認值："1.0"）
 
 ### 示例特定
 - `EMBED_MODEL` - RAG 示例的嵌入模型
 - `BENCH_MODELS` - 基準測試的逗號分隔模型
 - `BENCH_ROUNDS` - 基準測試輪次
 - `BENCH_PROMPT` - 基準測試的測試提示
-- `BENCH_STREAM` - 測量首令牌延遲
+- `BENCH_STREAM` - 測量首個令牌延遲
 - `RAG_QUESTION` - RAG 示例的測試問題
 - `AGENT_MODEL_PRIMARY` - 主代理模型
 - `AGENT_MODEL_EDITOR` - 編輯代理模型
 - `SLM_ALIAS` - 小型語言模型別名
 - `LLM_ALIAS` - 大型語言模型別名
 
-## SDK 已實施的最佳實踐
+## SDK 最佳實踐已實施
 
 ### 1. 正確的客戶端初始化
 ```python
@@ -154,7 +154,7 @@ except Exception as e:
     raise RuntimeError(f"Initialization failed: {e}") from e
 ```
 
-### 4. 帶指數回退的重試邏輯
+### 4. 使用指數回退的重試邏輯
 ```python
 delay = initial_delay
 for attempt in range(max_retries):
@@ -215,7 +215,7 @@ for chunk in stream:
 
 ## 測試
 
-所有示例均可使用以下方式進行測試：
+所有示例可以通過以下方式進行測試：
 
 ```bash
 # Set environment variables
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -239,9 +240,9 @@ python -m Workshop.tests.smoke
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 - **API 文檔**: 請查看 SDK 倉庫以獲取最新 API 文檔
 
-## 重大變更
+## 重大更改
 
-### 預期無重大變更
+### 預期無重大更改
 所有更改均向後兼容。更新主要包括：
 - 新增可選功能（端點覆蓋）
 - 改進錯誤處理
@@ -251,7 +252,7 @@ python -m Workshop.tests.smoke
 ### 可選增強
 您可能希望更新代碼以使用：
 - `FOUNDRY_LOCAL_ENDPOINT` 進行明確的端點控制
-- `SHOW_USAGE=1` 以顯示令牌使用情況
+- `SHOW_USAGE=1` 以查看令牌使用情況
 - 更新的模型默認值（`phi-4-mini` 替代 `phi-3.5-mini`）
 
 ## 常見問題及解決方案
@@ -263,7 +264,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### 問題: "模型未找到"
+### 問題: "未找到模型"
 **解決方案**: 檢查可用模型：
 ```bash
 foundry model list
@@ -281,10 +282,10 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## 下一步
 
-1. **更新 Module08 示例**: 將類似模式應用於 Module08/samples
-2. **新增集成測試**: 創建全面的測試套件
-3. **性能基準測試**: 比較更新前後的性能
-4. **文檔更新**: 更新主 README，加入新模式
+1. **更新 Module08 示例**：對 Module08/samples 應用類似模式
+2. **新增集成測試**：創建全面的測試套件
+3. **性能基準測試**：比較更新前後的性能
+4. **文檔更新**：使用新模式更新主 README
 
 ## 貢獻指南
 
@@ -299,8 +300,8 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 ## 版本兼容性
 
-這些更新兼容以下版本：
-- `foundry-local-sdk` (最新)
+這些更新兼容：
+- `foundry-local-sdk`（最新版本）
 - `openai>=1.30.0`
 - Python 3.8+
 
@@ -313,4 +314,4 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ---
 
 **免責聲明**：  
-此文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文文件作為權威來源。如涉及關鍵資訊，建議尋求專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

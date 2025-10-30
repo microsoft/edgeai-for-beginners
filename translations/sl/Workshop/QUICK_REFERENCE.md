@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-08T12:18:10+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T23:33:30+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "sl"
 }
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -33,15 +33,15 @@ python chat_bootstrap.py "What is edge AI?"
 ## 📂 Pregled vzorcev
 
 | Seja | Vzorec | Namen | Čas |
-|------|--------|-------|-----|
+|------|--------|-------|------|
 | 01 | `chat_bootstrap.py` | Osnovni klepet + pretakanje | ~30s |
 | 02 | `rag_pipeline.py` | RAG z vdelavami | ~45s |
 | 02 | `rag_eval_ragas.py` | Ocena RAG | ~60s |
 | 03 | `benchmark_oss_models.py` | Primerjava modelov | ~2m |
 | 04 | `model_compare.py` | SLM proti LLM | ~45s |
-| 05 | `agents_orchestrator.py` | Sistem več agentov | ~60s |
-| 06 | `models_router.py` | Usmerjanje namer | ~45s |
-| 06 | `models_pipeline.py` | Večstopenjski cevovod | ~60s |
+| 05 | `agents_orchestrator.py` | Sistem z več agenti | ~60s |
+| 06 | `models_router.py` | Usmerjanje namenov | ~45s |
+| 06 | `models_pipeline.py` | Večstopenjski proces | ~60s |
 
 ---
 
@@ -104,7 +104,7 @@ python scripts/test_samples.py --verbose
 
 ## 🐛 Odpravljanje težav
 
-### Napaka povezave
+### Napaka pri povezavi
 ```bash
 # Check Foundry Local
 foundry service status
@@ -114,7 +114,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Napaka uvoza
+### Napaka pri uvozu
 ```bash
 # Install missing dependencies
 pip install sentence-transformers ragas datasets
@@ -167,7 +167,7 @@ manager, client, model_id = get_client(
 )
 ```
 
-### Obvladovanje napak
+### Upravljanje napak
 ```python
 try:
     manager, client, model_id = get_client(alias)
@@ -196,7 +196,7 @@ for chunk in stream:
 
 | Model | Velikost | Najboljše za | Hitrost |
 |-------|----------|--------------|---------|
-| `qwen2.5-0.5b` | 0.5B | Hitro razvrščanje | ⚡⚡⚡ |
+| `qwen2.5-0.5b` | 0.5B | Hitra klasifikacija | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Hitro generiranje kode | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Kreativno pisanje | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Koda, prestrukturiranje | ⚡⚡ |
@@ -216,17 +216,17 @@ for chunk in stream:
 
 ## 💡 Nasveti
 
-1. **Predpomnite odjemalce**: `workshop_utils` to naredi namesto vas
-2. **Uporabljajte manjše modele**: Za testiranje začnite z `qwen2.5-0.5b`
+1. **Predpomnilnik odjemalcev**: `workshop_utils` to naredi namesto vas
+2. **Uporabite manjše modele**: Za testiranje začnite z `qwen2.5-0.5b`
 3. **Omogočite statistiko uporabe**: Nastavite `SHOW_USAGE=1` za sledenje žetonom
 4. **Obdelava v serijah**: Obdelajte več pozivov zaporedno
-5. **Znižajte max_tokens**: Zmanjša zakasnitve za hitre odgovore
+5. **Zmanjšajte max_tokens**: Zmanjša zakasnitve za hitre odgovore
 
 ---
 
 ## 🎯 Delovni tokovi vzorcev
 
-### Testirajte vse
+### Testiraj vse
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Primerjava modelov
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
-### RAG cevovod
+### RAG proces
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
-### Sistem več agentov
+### Sistem z več agenti
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Hitra pomoč**: Zaženite kateri koli vzorec z `--help` ali preverite docstring:
+**Hitri pomočnik**: Zaženite kateri koli vzorec z `--help` iz mape `samples` ali preverite docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -269,5 +267,5 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 
 ---
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.

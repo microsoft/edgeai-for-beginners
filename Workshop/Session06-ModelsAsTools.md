@@ -304,5 +304,3 @@ def get_catalog():
         last_mtime = m
     return CATALOG
 ```
-
-Iterate gradually—avoid over-engineering early prototypes.

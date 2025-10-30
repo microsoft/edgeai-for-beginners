@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T16:57:06+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T22:29:59+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "he"
 }
@@ -24,13 +24,13 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
 
-## 📂 סקירה כללית של הדוגמאות
+## 📂 סקירת דוגמאות
 
 | מפגש | דוגמה | מטרה | זמן |
 |------|-------|-------|------|
@@ -199,16 +199,16 @@ for chunk in stream:
 | `qwen2.5-0.5b` | 0.5B | סיווג מהיר | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | יצירת קוד מהירה | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | כתיבה יצירתית | ⚡⚡ |
-| `phi-3.5-mini` | 3.5B | קוד, שיפוץ | ⚡⚡ |
+| `phi-3.5-mini` | 3.5B | קוד, שכתוב | ⚡⚡ |
 | `phi-4-mini` | 4B | כללי, סיכום | ⚡⚡ |
-| `qwen2.5-7b` | 7B | הסקת מסקנות מורכבת | ⚡ |
+| `qwen2.5-7b` | 7B | חשיבה מורכבת | ⚡ |
 
 ---
 
 ## 🔗 משאבים
 
-- **תיעוד SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **עזר מהיר**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **מסמכי SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **דף עזר מהיר**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **סיכום עדכונים**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
 - **הערות מעבר**: `Workshop/SDK_MIGRATION_NOTES.md`
 
@@ -234,40 +234,38 @@ python scripts/test_samples.py --quick
 
 ### השוואת ביצועי מודלים
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### צינור RAG
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### מערכת רב-סוכנים
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**עזרה מהירה**: הרץ כל דוגמה עם `--help` או בדוק את תיעוד הפונקציה:
+**עזרה מהירה**: הרץ כל דוגמה עם `--help` מתוך ספריית `samples` או בדוק את תיאור הפונקציה:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**כל הדוגמאות עודכנו באוקטובר 2025 עם שיטות עבודה מומלצות של Foundry Local SDK** ✨
+**כל הדוגמאות עודכנו באוקטובר 2025 עם שיטות העבודה הטובות ביותר של Foundry Local SDK** ✨
 
 ---
 
-**כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי אדם. איננו נושאים באחריות לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+**הצהרת אחריות**:  
+מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. איננו אחראים לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.

@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-08T15:27:30+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T23:12:34+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ro"
 }
 -->
-# Mostre pentru Atelier - Carte de Referință Rapidă
+# Mostră Workshop - Carte de Referință Rapidă
 
 **Ultima actualizare**: 8 octombrie 2025
 
 ---
 
-## 🚀 Început Rapid
+## 🚀 Start Rapid
 
 ```bash
 # 1. Ensure Foundry Local is running
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -192,7 +192,7 @@ for chunk in stream:
 
 ---
 
-## 📊 Selectarea Modelului
+## 📊 Selecția Modelului
 
 | Model | Dimensiune | Cel Mai Bun Pentru | Viteză |
 |-------|------------|--------------------|-------|
@@ -224,7 +224,7 @@ for chunk in stream:
 
 ---
 
-## 🎯 Fluxuri de Lucru Mostre
+## 🎯 Fluxuri de Lucru Mostră
 
 ### Testează Tot
 ```bash
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Benchmarking Modele
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Pipeline RAG
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Sistem Multi-Agent
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Ajutor Rapid**: Rulează orice mostră cu `--help` sau verifică docstring-ul:
+**Ajutor Rapid**: Rulează orice mostră cu `--help` din directorul `samples` sau verifică docstring-ul:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

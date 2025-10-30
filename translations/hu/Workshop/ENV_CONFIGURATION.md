@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T21:11:03+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:54:33+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "hu"
 }
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. Környezet konfigurálása
 
-A `.env` fájl már ésszerű alapértelmezésekkel van konfigurálva. A legtöbb felhasználónak nem kell semmit módosítania.
+A `.env` fájl már ésszerű alapértelmezett beállításokkal van konfigurálva. A legtöbb felhasználónak nem kell semmit módosítania.
 
 **Opcionális**: Tekintse át és testreszabja a beállításokat:
 ```bash
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Python szkriptekhez:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -86,20 +86,20 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Beágyazási modell |
 | `RAG_QUESTION` | Előre konfigurált | Tesztkérdés |
 
-#### Munkamenet 03: Benchmarking
+#### Munkamenet 03: Teljesítményteszt
 | Változó | Alapértelmezett | Cél |
 |---------|-----------------|-----|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Benchmarkhoz használt modellek |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Tesztelendő modellek |
 | `BENCH_ROUNDS` | `3` | Iterációk modellenként |
-| `BENCH_PROMPT` | Előre konfigurált | Teszt prompt |
-| `BENCH_STREAM` | `0` | Első token késleltetés mérése |
+| `BENCH_PROMPT` | Előre konfigurált | Tesztelő kérdés |
+| `BENCH_STREAM` | `0` | Első token késleltetésének mérése |
 
 #### Munkamenet 04: Modell összehasonlítás
 | Változó | Alapértelmezett | Cél |
 |---------|-----------------|-----|
 | `SLM_ALIAS` | `phi-4-mini` | Kis nyelvi modell |
 | `LLM_ALIAS` | `qwen2.5-7b` | Nagy nyelvi modell |
-| `COMPARE_PROMPT` | Előre konfigurált | Összehasonlító prompt |
+| `COMPARE_PROMPT` | Előre konfigurált | Összehasonlító kérdés |
 | `COMPARE_RETRIES` | `2` | Újrapróbálkozások száma |
 
 #### Munkamenet 05: Többügynökös Orkesztráció
@@ -115,7 +115,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |---------|-----------------|-----|
 | `SHOW_USAGE` | `1` | Tokenhasználat megjelenítése |
 | `RETRY_ON_FAIL` | `1` | Újrapróbálkozási logika engedélyezése |
-| `RETRY_BACKOFF` | `1.0` | Újrapróbálkozási késleltetés (másodperc) |
+| `RETRY_BACKOFF` | `1.0` | Újrapróbálkozási késleltetés (másodpercben) |
 
 ## Gyakori konfigurációk
 
@@ -138,9 +138,9 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Benchmarking beállítás
+### Teljesítményteszt beállítás
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -239,9 +239,9 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ### Környezeti változók nem töltődnek be
 
 **Tünetek:**
-- Szkriptek rossz modelleket használnak
+- A szkriptek rossz modelleket használnak
 - Kapcsolódási hibák
-- Változók nem ismertek fel
+- Változók nem ismertek
 
 **Megoldások:**
 ```bash
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Tünetek:**
 - "Modul nem található" hibák
-- "Nem lehet importálni a workshop_utils-t"
 
 **Megoldások:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Konfiguráció tesztelése
@@ -377,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Használjon külön `.env` fájlokat
+### 2. Használjon külön .env fájlokat
 
 ```bash
 .env              # Default configuration
@@ -385,14 +382,14 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Forgassa az API kulcsokat
+### 3. API kulcsok rotálása
 
 ```bash
 # For Azure OpenAI or other cloud services
 # Regularly rotate keys and update .env
 ```
 
-### 4. Használjon környezet-specifikus konfigurációt
+### 4. Környezet-specifikus konfiguráció használata
 
 ```bash
 # Development
@@ -406,7 +403,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Fő repozitórium**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API Dokumentáció**: Tekintse meg az SDK repozitóriumot a legfrissebb információkért
+- **API Dokumentáció**: További információkért nézze meg az SDK repozitóriumot
 
 ## További források
 
@@ -418,9 +415,9 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 **Utolsó frissítés**: 2025-01-08  
 **Verzió**: 2.0  
-**SDK**: Foundry Local Python SDK (legfrissebb)
+**SDK**: Foundry Local Python SDK (legújabb)
 
 ---
 
 **Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével került lefordításra. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T21:12:23+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T19:57:32+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstract
 
-Design and manage multi-role AI agents using Foundry Local’s low-latency, privacy-focused runtime. You’ll define agent roles, memory strategies, tool usage patterns, and execution workflows. This session introduces scaffolding patterns that can be extended with Chainlit or LangGraph. The starter project builds on the existing agent architecture sample to include memory persistence and evaluation hooks.
+Design and manage multi-role AI agents using Foundry Local’s low-latency, privacy-focused runtime. You’ll define agent roles, memory strategies, tool invocation patterns, and execution workflows. This session introduces scaffolding patterns that can be extended with Chainlit or LangGraph. The starter project builds on the existing agent architecture sample to include memory persistence and evaluation hooks.
 
 ## Learning Objectives
 
@@ -19,13 +19,13 @@ Design and manage multi-role AI agents using Foundry Local’s low-latency, priv
 - **Implement Memory**: Short-term (conversation), long-term (vector/file), ephemeral scratchpads
 - **Scaffold Workflows**: Sequential, branching, and parallel agent steps
 - **Integrate Tools**: Lightweight function tool invocation pattern
-- **Evaluate**: Basic trace and rubric-based outcome scoring
+- **Evaluate**: Basic trace and rubric-driven outcome scoring
 
 ## Prerequisites
 
 - Completion of Sessions 1–4
 - Python with `foundry-local-sdk`, `openai`, optional `chainlit`
-- Local models running (at least `phi-4-mini`)
+- Local models running (minimum `phi-4-mini`)
 
 ### Cross-Platform Environment Snippet
 
@@ -150,7 +150,7 @@ TOOLS = {
 }
 ```
 
-Modify `agents_core.py` to allow simple tool syntax: the user writes `#tool:get_time`, and the agent incorporates the tool output into the context before generating a response.
+Modify `agents_core.py` to enable simple tool syntax: users write `#tool:get_time`, and the agent incorporates tool output into the context before generating responses.
 
 ### 4. Orchestrated Workflow (6 min)
 
@@ -188,7 +188,7 @@ if __name__ == '__main__':
 ### 5. Starter Project: Extend `05-agent-architecture` (7 min)
 
 Add:
-1. Persistent memory layer (e.g., appending conversations to a JSON lines file)
+1. Persistent memory layer (e.g., appending conversations to JSON lines)
 2. Simple evaluation rubric: placeholders for factuality, clarity, and style
 3. Optional Chainlit front-end (two tabs: conversation and traces)
 4. Optional LangGraph-style state machine (if adding dependency) for branching decisions
@@ -200,16 +200,16 @@ foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Expect structured pipeline output with a note on tool injection.
+Expect structured pipeline output with tool injection notes.
 
 ## Memory Strategies Overview
 
-| Layer       | Purpose              | Example                  |
-|-------------|----------------------|--------------------------|
-| Short-term  | Dialogue continuity  | Last N messages          |
-| Episodic    | Session recall       | JSON per session         |
-| Semantic    | Long-term retrieval  | Vector store of summaries|
-| Scratchpad  | Reasoning steps      | Inline chain-of-thought (private)|
+| Layer       | Purpose              | Example               |
+|-------------|----------------------|-----------------------|
+| Short-term  | Dialogue continuity  | Last N messages       |
+| Episodic    | Session recall       | JSON per session      |
+| Semantic    | Long-term retrieval  | Vector store of summaries |
+| Scratchpad  | Reasoning steps      | Inline chain-of-thought (private) |
 
 ## Evaluation Hooks (Conceptual)
 
@@ -226,11 +226,11 @@ evaluation = {
 
 ## Troubleshooting
 
-| Issue              | Cause                  | Resolution                          |
-|--------------------|------------------------|-------------------------------------|
+| Issue              | Cause                  | Resolution                     |
+|--------------------|------------------------|---------------------------------|
 | Repetitive answers | Context window too large/small | Adjust memory window parameter |
-| Tool not invoked   | Incorrect syntax       | Use `#tool:tool_name` format       |
-| Slow orchestration | Multiple cold models   | Pre-run warmup prompts             |
+| Tool not invoked   | Incorrect syntax       | Use `#tool:tool_name` format   |
+| Slow orchestration | Multiple cold models   | Pre-run warmup prompts         |
 
 ## References
 
@@ -245,23 +245,27 @@ evaluation = {
 
 ## Sample Scenario & Workshop Mapping
 
-| Workshop Script | Scenario | Objective | Example Prompt |
-|-----------------|----------|-----------|----------------|
+| Workshop Script                                      | Scenario                                           | Objective                                      | Example Prompt                                |
+|-----------------------------------------------------|---------------------------------------------------|-----------------------------------------------|-----------------------------------------------|
 | `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Knowledge research bot producing executive-friendly summaries | Two-agent pipeline (research → editorial polish) with optional distinct models | Explain why edge inference matters for compliance. |
-| (Extended) `tools.py` concept | Add time & token estimation tools | Demonstrate lightweight tool invocation pattern | #tool:get_time |
+| (Extended) `tools.py` concept                       | Add time & token estimation tools                 | Demonstrate lightweight tool invocation pattern | #tool:get_time                                |
 
 ### Scenario Narrative
-The compliance documentation team requires quick internal briefs sourced from local knowledge without sending drafts to cloud services. A researcher agent gathers concise factual points, while an editor agent refines them for executive clarity. Different model aliases can be assigned to optimize latency (fast SLM) versus stylistic refinement (larger model used only when necessary).
+
+The compliance documentation team needs quick internal briefs sourced from local knowledge without sending drafts to cloud services. A researcher agent gathers concise factual points; an editor agent rewrites them for executive clarity. Distinct model aliases can be assigned to optimize latency (fast SLM) versus stylistic refinement (larger model only when necessary).
 
 ### Example Multi-Model Environment
+
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
 ### Trace Structure (Optional)
+
 ```json
 {
     "step": 1,
@@ -273,22 +277,22 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Save each step to a JSONL file for later rubric scoring.
+Persist each step to a JSONL file for later rubric scoring.
 
 ### Optional Enhancements
 
-| Theme              | Enhancement                     | Benefit                  | Implementation Sketch                     |
-|--------------------|----------------------------------|--------------------------|-------------------------------------------|
-| Multi-Model Roles  | Distinct models per agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specialization & speed   | Select alias environment variables, call `chat_once` with per-role alias |
-| Structured Traces  | JSON trace of each act (tool, input, latency, tokens) | Debug & evaluation       | Append dictionary to a list; write `.jsonl` at the end |
-| Memory Persistence | Reloadable dialog context       | Session continuity       | Save `Agent.memory` to `sessions/<ts>.json` |
-| Tool Registry      | Dynamic tool discovery          | Extensibility            | Maintain `TOOLS` dictionary & inspect names/descriptions |
-| Retry & Backoff    | Robust long chains              | Reduce transient failures| Wrap `act` with try/except + exponential backoff |
-| Rubric Scoring     | Automated qualitative labels    | Track improvements       | Secondary pass prompting model: "Rate clarity 1-5" |
-| Vector Memory      | Semantic recall                 | Rich long-term context   | Embed summaries, retrieve top-k into system message |
-| Streaming Replies  | Faster perceived response       | UX improvement           | Use streaming when available and flush partial tokens |
-| Deterministic Tests| Regression control              | Stable CI                | Run with `temperature=0`, fixed prompt seeds |
-| Parallel Branching | Faster exploration              | Throughput               | Use `concurrent.futures` for independent agent steps |
+| Theme              | Enhancement                  | Benefit                     | Implementation Sketch       |
+|--------------------|-----------------------------|----------------------------|-----------------------------|
+| Multi-Model Roles  | Distinct models per agent (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specialization & speed      | Select alias env vars, call `chat_once` with per-role alias |
+| Structured Traces  | JSON trace of each act(tool,input,latency,tokens) | Debug & evaluation          | Append dict to a list; write `.jsonl` at end |
+| Memory Persistence | Reloadable dialog context   | Session continuity          | Dump `Agent.memory` to `sessions/<ts>.json` |
+| Tool Registry      | Dynamic tool discovery      | Extensibility               | Maintain `TOOLS` dict & introspect names/descriptions |
+| Retry & Backoff    | Robust long chains          | Reduce transient failures   | Wrap `act` with try/except + exponential backoff |
+| Rubric Scoring     | Automated qualitative labels | Track improvements          | Secondary pass prompting model: "Rate clarity 1-5" |
+| Vector Memory      | Semantic recall             | Rich long-term context      | Embed summaries, retrieve top-k into system message |
+| Streaming Replies  | Faster perceived response   | UX improvement              | Use streaming once available and flush partial tokens |
+| Deterministic Tests| Regression control          | Stable CI                   | Run with `temperature=0`, fixed prompt seeds |
+| Parallel Branching | Faster exploration          | Throughput                  | Use `concurrent.futures` for independent agent steps |
 
 #### Trace Record Example
 
@@ -310,9 +314,9 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-Save (`answer`, `rating`) pairs to build a historical quality graph.
+Persist (`answer`, `rating`) pairs to build a historical quality graph.
 
 ---
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.

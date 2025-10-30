@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T19:29:36+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T22:43:12+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ms"
 }
 -->
 # Kad Rujukan Pantas - Contoh Bengkel
 
-**Kemaskini Terakhir**: 8 Oktober 2025
+**Kemas Kini Terakhir**: 8 Oktober 2025
 
 ---
 
@@ -24,13 +24,13 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
 
-## 📂 Gambaran Contoh
+## 📂 Gambaran Keseluruhan Contoh
 
 | Sesi | Contoh | Tujuan | Masa |
 |------|--------|--------|------|
@@ -39,7 +39,7 @@ python chat_bootstrap.py "What is edge AI?"
 | 02 | `rag_eval_ragas.py` | Penilaian RAG | ~60s |
 | 03 | `benchmark_oss_models.py` | Penanda aras model | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
-| 05 | `agents_orchestrator.py` | Sistem multi-agent | ~60s |
+| 05 | `agents_orchestrator.py` | Sistem multi-ejen | ~60s |
 | 06 | `models_router.py` | Penghalaan niat | ~45s |
 | 06 | `models_pipeline.py` | Saluran berbilang langkah | ~60s |
 
@@ -196,7 +196,7 @@ for chunk in stream:
 
 | Model | Saiz | Terbaik Untuk | Kelajuan |
 |-------|------|---------------|----------|
-| `qwen2.5-0.5b` | 0.5B | Pengelasan pantas | ⚡⚡⚡ |
+| `qwen2.5-0.5b` | 0.5B | Klasifikasi pantas | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Penjanaan kod pantas | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Penulisan kreatif | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Kod, penstrukturan semula | ⚡⚡ |
@@ -209,17 +209,17 @@ for chunk in stream:
 
 - **Dokumen SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Rujukan Pantas**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Ringkasan Kemaskini**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
+- **Ringkasan Kemas Kini**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
 - **Nota Migrasi**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
 ## 💡 Petua
 
-1. **Cache klien**: `workshop_utils` menyimpan cache untuk anda
+1. **Cache klien**: `workshop_utils` akan cache untuk anda
 2. **Gunakan model lebih kecil**: Mulakan dengan `qwen2.5-0.5b` untuk ujian
 3. **Aktifkan statistik penggunaan**: Tetapkan `SHOW_USAGE=1` untuk menjejaki token
-4. **Pemprosesan kelompok**: Proses beberapa arahan secara berurutan
+4. **Pemprosesan batch**: Proses beberapa arahan secara berturutan
 5. **Kurangkan max_tokens**: Mengurangkan kependaman untuk respons pantas
 
 ---
@@ -234,40 +234,38 @@ python scripts/test_samples.py --quick
 
 ### Penanda Aras Model
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### Saluran RAG
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
-### Sistem Multi-Agent
+### Sistem Multi-Ejen
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Bantuan Pantas**: Jalankan mana-mana contoh dengan `--help` atau semak docstring:
+**Bantuan Pantas**: Jalankan mana-mana contoh dengan `--help` dari direktori `samples` atau semak docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**Semua contoh dikemaskini Oktober 2025 dengan amalan terbaik Foundry Local SDK** ✨
+**Semua contoh dikemas kini Oktober 2025 dengan amalan terbaik Foundry Local SDK** ✨
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

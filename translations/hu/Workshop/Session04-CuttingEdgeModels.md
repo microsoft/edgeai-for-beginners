@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1b3c0fecfd713c2df903a0633249dc9",
-  "translation_date": "2025-10-09T21:09:18+00:00",
+  "original_hash": "d9e354c0182311726dc037a8809524e2",
+  "translation_date": "2025-10-28T22:54:11+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "hu"
 }
@@ -11,41 +11,41 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Összefoglaló
 
-Hasonlítsd össze a Nagy Nyelvi Modelleket (LLM-ek) és a Kis Nyelvi Modelleket (SLM-ek) helyi és felhőalapú inferencia szcenáriókban. Ismerd meg a telepítési mintákat, amelyek az ONNX Runtime gyorsítást, a WebGPU végrehajtást és a hibrid RAG élményeket használják. Tartalmaz egy Chainlit RAG demót helyi modellel, valamint opcionális OpenWebUI felfedezést. Alkalmazz egy WebGPU inferencia kezdőcsomagot, és értékeld a Phi és a GPT-OSS-20B képességeit, valamint a költség/teljesítmény kompromisszumokat.
+Hasonlítsd össze a Nagy Nyelvi Modelleket (LLM-ek) és a Kis Nyelvi Modelleket (SLM-ek) helyi és felhőalapú inferencia szcenáriókban. Ismerd meg a telepítési mintákat az ONNX Runtime gyorsítás, WebGPU végrehajtás és hibrid RAG élmények kihasználásával. Tartalmaz egy Chainlit RAG demót helyi modellel, valamint opcionális OpenWebUI felfedezést. Alkalmazd a WebGPU inferencia kezdő projektet, és értékeld a Phi és GPT-OSS-20B képességeit, valamint a költség/teljesítmény kompromisszumokat.
 
 ## Tanulási célok
 
-- **Hasonlítsd össze** az SLM-et és az LLM-et késleltetés, memória és minőség szempontjából
-- **Telepíts** modelleket ONNXRuntime és (ahol támogatott) WebGPU segítségével
-- **Futtass** böngészőalapú inferenciát (adatvédelmet biztosító interaktív demó)
-- **Integrálj** egy Chainlit RAG csővezetéket helyi SLM háttérrel
-- **Értékelj** könnyű minőségi és költség-heurisztikák segítségével
+- **Összehasonlítás**: SLM vs LLM késleltetés, memória és minőség tengelyeken
+- **Modellek telepítése** ONNXRuntime és (ahol támogatott) WebGPU segítségével
+- **Futtatás** böngészőalapú inferencia (adatvédelmet biztosító interaktív demó)
+- **Integráció** egy Chainlit RAG csővezetékkel helyi SLM háttérrel
+- **Értékelés** könnyű minőségi + költségheurisztikák használatával
 
 ## Előfeltételek
 
 - 1–3. szekciók teljesítve
-- `chainlit` telepítve (már szerepel a `requirements.txt` fájlban a Module08-hoz)
-- WebGPU-képes böngésző (legújabb Edge / Chrome Windows 11-en)
+- `chainlit` telepítve (már benne van a `requirements.txt` fájlban a Module08-hoz)
+- WebGPU-képes böngésző (Edge / Chrome legújabb verziója Windows 11-en)
 - Foundry Local futtatása (`foundry status`)
 
-### Platformok közötti megjegyzések
+### Keresztplatformos megjegyzések
 
-A Windows továbbra is az elsődleges célplatform. macOS fejlesztők számára, akik natív binárisokra várnak:
-1. Futtasd a Foundry Local-t egy Windows 11 VM-ben (Parallels / UTM) VAGY egy távoli Windows munkaállomáson.
+A Windows továbbra is az elsődleges célplatform. MacOS fejlesztők számára, akik natív binárisokat várnak:
+1. Futtasd a Foundry Local-t Windows 11 VM-ben (Parallels / UTM) VAGY egy távoli Windows munkaállomáson.
 2. Tedd elérhetővé a szolgáltatást (alapértelmezett port: 5273), és állítsd be macOS-en:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 3. Használd ugyanazokat a Python virtuális környezet lépéseket, mint az előző szekciókban.
 
-Chainlit telepítése (mindkét platformon):
+Chainlit telepítés (mindkét platformon):
 ```bash
 pip install chainlit
 ```
 
 ## Demó menete (30 perc)
 
-### 1. Phi (SLM) és GPT-OSS-20B (LLM) összehasonlítása (6 perc)
+### 1. Phi (SLM) vs GPT-OSS-20B (LLM) összehasonlítása (6 perc)
 
 ```powershell
 foundry model run phi-4-mini
@@ -60,22 +60,23 @@ foundry model run phi-4-mini   --prompt "List 5 creative IoT edge AI ideas."
 foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 ```
 
-Kövesd nyomon: válasz mélysége, tényszerű pontosság, stilisztikai gazdagság, késleltetés.
+Kövesd: válasz mélysége, tényszerű pontosság, stilisztikai gazdagság, késleltetés.
 
 ### 2. ONNX Runtime gyorsítás (5 perc)
 
 ```powershell
 foundry config set compute.onnx.enable_gpu true
 # Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
-Figyeld meg az áteresztőképesség változásait a GPU és csak CPU használata között.
+Figyeld meg az áteresztőképesség változásait GPU engedélyezése után, szemben a csak CPU-val.
 
 ### 3. WebGPU inferencia böngészőben (6 perc)
 
-Alkalmazd a `04-webgpu-inference` kezdőcsomagot (hozz létre egy `samples/04-cutting-edge/webgpu_demo.html` fájlt):
+Alkalmazd a kezdő `04-webgpu-inference` projektet (hozz létre `samples/04-cutting-edge/webgpu_demo.html` fájlt):
 
 ```html
 <!DOCTYPE html>
@@ -116,7 +117,7 @@ Alkalmazd a `04-webgpu-inference` kezdőcsomagot (hozz létre egy `samples/04-cu
 </html>
 ```
 
-Nyisd meg a fájlt egy böngészőben; figyeld meg az alacsony késleltetésű helyi körforgást.
+Nyisd meg a fájlt böngészőben; figyeld meg az alacsony késleltetésű helyi körforgást.
 
 ### 4. Chainlit RAG chat alkalmazás (7 perc)
 
@@ -162,24 +163,24 @@ Futtatás:
 chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ```
 
-### 5. Kezdő projekt: Alkalmazd a `04-webgpu-inference` csomagot (6 perc)
+### 5. Kezdő projekt: Alkalmazd a `04-webgpu-inference` projektet (6 perc)
 
 Szállítandók:
-- Cseréld le a helyőrző fetch logikát streaming tokenekre (használd a `stream=True` végpont változatot, ha engedélyezve van)
+- Cseréld ki a helyettesítő fetch logikát streaming tokenekre (használd a `stream=True` végpont variánst, amint engedélyezve van)
 - Adj hozzá késleltetési diagramot (kliensoldalon) a phi és gpt-oss-20b váltásokhoz
 - Ágyazd be a RAG kontextust (szövegmező a referencia dokumentumokhoz)
 
-## Értékelési Heurisztikák
+## Értékelési heurisztikák
 
 | Kategória | Phi-4-mini | GPT-OSS-20B | Megfigyelés |
 |----------|------------|-------------|-------------|
-| Késleltetés (hideg) | Gyors | Lassabb | Az SLM gyorsan felmelegszik |
+| Késleltetés (hideg) | Gyors | Lassabb | SLM gyorsan felmelegszik |
 | Memória | Alacsony | Magas | Eszközön való megvalósíthatóság |
-| Kontextus betartása | Jó | Erős | A nagyobb modell bőbeszédűbb lehet |
+| Kontextus betartása | Jó | Erős | Nagyobb modell lehet, hogy bőbeszédűbb |
 | Költség (helyi) | Minimális | Magasabb (erőforrás) | Energia/idő kompromisszum |
 | Legjobb felhasználási eset | Edge alkalmazások | Mélyebb érvelés | Hibrid csővezeték lehetséges |
 
-## Környezet érvényesítése
+## Környezet validálása
 
 ```powershell
 # List catalog (no --running flag; loaded models are those you have previously run)
@@ -187,17 +188,18 @@ foundry model list
 
 # For runtime metrics use the Python benchmark script (Session 3) and OS tools (Task Manager / nvidia-smi) instead of 'model stats'
 # Example:
+#   cd Workshop/samples
 #   set BENCH_MODELS=phi-4-mini,gpt-oss-20b
-#   python Workshop\samples\session03\benchmark_oss_models.py
+#   python -m session03.benchmark_oss_models
 ```
 
-## Hibakeresés
+## Hibaelhárítás
 
 | Tünet | Ok | Teendő |
 |-------|----|--------|
 | Weboldal letöltése sikertelen | CORS vagy szolgáltatás leállt | Használj `curl`-t az végpont ellenőrzéséhez; engedélyezd a CORS proxyt, ha szükséges |
-| Chainlit üres | Környezet nincs aktív | Aktiváld a venv-et és telepítsd újra a függőségeket |
-| Magas késleltetés | Modell éppen betöltődött | Melegítsd fel egy kis méretű prompt szekvenciával |
+| Chainlit üres | Környezet nem aktív | Aktiváld a venv-t és telepítsd újra a függőségeket |
+| Magas késleltetés | Modell éppen betöltve | Melegítsd fel egy kis prompt szekvenciával |
 
 ## Hivatkozások
 
@@ -214,12 +216,12 @@ foundry model list
 
 | Workshop anyagok | Szcenárió | Cél | Adat / Prompt forrás |
 |------------------|-----------|-----|----------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architektúra csapat, amely az SLM-et és az LLM-et értékeli vezetői összefoglaló generátorhoz | Késleltetés + tokenhasználat különbségének számszerűsítése | Egyetlen `COMPARE_PROMPT` környezeti változó |
-| `chainlit_app.py` (RAG demó) | Belső tudásasszisztens prototípus | Rövid válaszok alátámasztása minimális lexikai visszakereséssel | Fájlban található `DOCS` lista |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architektúra csapat, amely SLM-et és LLM-et értékel vezetői összefoglaló generálásához | Késleltetés + tokenhasználat különbség kvantifikálása | Egyetlen `COMPARE_PROMPT` környezeti változó |
+| `chainlit_app.py` (RAG demó) | Belső tudásasszisztens prototípus | Rövid válaszok megalapozása minimális lexikai visszakereséssel | Fájlban található `DOCS` lista |
 | `webgpu_demo.html` | Jövőbeli eszközön futó böngésző inferencia előnézet | Alacsony késleltetésű helyi körforgás + UX narratíva bemutatása | Csak élő felhasználói prompt |
 
 ### Szcenárió narratíva
-A termékcsapat egy vezetői összefoglaló generátort szeretne. Egy könnyű SLM (phi‑4‑mini) készít vázlatokat; egy nagyobb LLM (gpt‑oss‑20b) csak a kiemelten fontos jelentéseket finomítja. A szekció szkriptek empirikus késleltetési és token metrikákat rögzítenek a hibrid tervezés igazolására, míg a Chainlit demó bemutatja, hogyan tartja a megalapozott visszakeresés tényszerűnek a kis modell válaszait. A WebGPU koncepcióoldal jövőképet nyújt a teljesen kliensoldali feldolgozáshoz, amikor a böngésző gyorsítás érettebbé válik.
+A termékcsapat egy vezetői összefoglaló generátort szeretne. Egy könnyű SLM (phi‑4‑mini) vázlatokat készít; egy nagyobb LLM (gpt‑oss‑20b) csak a kiemelt jelentéseket finomítja. A szekció szkriptek empirikus késleltetési és token metrikákat rögzítenek a hibrid tervezés igazolására, míg a Chainlit demó bemutatja, hogyan tartja a megalapozott visszakeresés a kis modell válaszait tényszerűnek. A WebGPU koncepció oldal jövőképet nyújt a teljesen kliensoldali feldolgozáshoz, amikor a böngésző gyorsítás éretté válik.
 
 ### Minimális RAG kontextus (Chainlit)
 ```python
@@ -230,7 +232,7 @@ DOCS = [
 ]
 ```
 
-### Hibrid Vázlat→Finomítás Folyamat (Ál)
+### Hibrid Vázlat→Finomítás folyamat (Ál)
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":prompt}], max_tokens=280)
 if len(draft) < 600:  # heuristic: escalate only for longer briefs or flagged topics
@@ -239,30 +241,31 @@ else:
     final, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Refine and polish:\n{draft}"}], max_tokens=220)
 ```
 
-Kövesd nyomon mindkét késleltetési komponenst, hogy jelentést készíts az átlagos kevert költségről.
+Kövesd mindkét késleltetési komponenst, hogy jelentést készíts az átlagos kevert költségről.
 
 ### Opcionális fejlesztések
 
 | Fókusz | Fejlesztés | Miért | Megvalósítási tipp |
 |--------|-----------|-------|--------------------|
-| Összehasonlító metrikák | Kövesd nyomon a tokenhasználatot + az első token késleltetését | Holisztikus teljesítménykép | Használj továbbfejlesztett benchmark szkriptet (3. szekció) `BENCH_STREAM=1`-el |
-| Hibrid csővezeték | SLM vázlat → LLM finomítás | Késleltetés és költség csökkentése | Készíts vázlatot phi-4-mini-vel, finomítsd az összefoglalót gpt-oss-20b-vel |
-| Streaming UI | Jobb UX a Chainlit-ben | Folyamatos visszajelzés | Használj `stream=True`-t, ha a helyi streaming elérhető; halmozd fel a részeket |
-| WebGPU gyorsítótár | Gyorsabb JS inicializálás | Újrafordítási költségek csökkentése | Gyorsítótárazd a lefordított shader artefaktumokat (jövőbeli futásidejű képesség) |
+| Összehasonlító metrikák | Kövesd a tokenhasználatot + első token késleltetést | Holisztikus teljesítmény nézet | Használj fejlett benchmark szkriptet (3. szekció) `BENCH_STREAM=1`-el |
+| Hibrid csővezeték | SLM vázlat → LLM finomítás | Késleltetés és költség csökkentése | Generálj phi-4-mini-vel, finomítsd az összefoglalót gpt-oss-20b-vel |
+| Streaming UI | Jobb UX a Chainlitben | Folyamatos visszajelzés | Használj `stream=True`-t, amint helyi streaming elérhető; halmozd fel a darabokat |
+| WebGPU gyorsítótár | Gyorsabb JS inicializálás | Újrafordítási terhelés csökkentése | Gyorsítótárazd a lefordított shader artefaktumokat (jövőbeli futási képesség) |
 | Determinisztikus QA készlet | Tisztességes modell összehasonlítás | Variancia eltávolítása | Fix prompt lista + `temperature=0` az értékelési futásokhoz |
-| Kimeneti pontozás | Strukturált minőségi nézőpont | Túl az anekdotákon | Egyszerű értékelési rendszer: koherencia / tényszerűség / tömörség (1–5) |
-| Energia / erőforrás jegyzetek | Osztálytermi megbeszélés | Kompromisszumok bemutatása | Használj OS monitorokat (`foundry system info`, Feladatkezelő, `nvidia-smi`) + benchmark szkript kimeneteket |
-| Költség emuláció | Felhő előtti igazolás | Skálázás tervezése | Térképezd fel a tokeneket feltételezett felhőárakra a TCO narratívához |
-| Késleltetés bontása | Szűk keresztmetszetek azonosítása | Optimalizálási célok | Mérd a prompt előkészítést, kérés küldését, első token, teljes befejezés |
+| Kimeneti pontozás | Strukturált minőségi lencse | Túl az anekdotákon | Egyszerű rubrika: koherencia / tényszerűség / tömörség (1–5) |
+| Energia / Erőforrás megjegyzések | Osztálytermi vita | Kompromisszumok bemutatása | Használj OS monitorokat (`foundry system info`, Feladatkezelő, `nvidia-smi`) + benchmark szkript kimeneteket |
+| Költség emuláció | Felhő előtti igazolás | Skálázási terv | Térképezd a tokeneket hipotetikus felhő árazásra a TCO narratívához |
+| Késleltetés lebontása | Szűk keresztmetszetek azonosítása | Optimalizációk célzása | Mérd a prompt előkészítést, kérés küldését, első token, teljes befejezés |
+| RAG + LLM visszaesés | Minőségi biztonsági háló | Nehéz kérdések javítása | Ha az SLM válasz hossza < küszöbérték vagy alacsony bizalom → eszkaláció |
 
-#### Példa hibrid vázlat/finomítás minta
+#### Példa hibrid Vázlat/Finomítás minta
 
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], max_tokens=300, temperature=0.4)
 refine, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Improve clarity but keep facts:\n{draft}"}], max_tokens=220, temperature=0.3)
 ```
 
-#### Késleltetés bontási vázlat
+#### Késleltetés lebontás vázlat
 
 ```python
 import time
@@ -273,9 +276,9 @@ full_ms = (time.time()-t1)*1000
 print({"prep_ms": prep_ms, "full_gen_ms": full_ms})
 ```
 
-Használj következetes mérési keretrendszert a modellek közötti tisztességes összehasonlítás érdekében.
+Használj következetes mérési keretet a modellek közötti tisztességes összehasonlítás érdekében.
 
 ---
 
 **Felelősség kizárása**:  
-Ezt a dokumentumot az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével fordították le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

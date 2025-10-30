@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8344ea4f8f563cfa921e09247588a225",
-  "translation_date": "2025-10-08T15:30:28+00:00",
+  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+  "translation_date": "2025-10-28T23:13:17+00:00",
   "source_file": "Workshop/scripts/README.md",
   "language_code": "ro"
 }
 -->
 # Scripturi Workshop
 
-Acest director conține scripturi de automatizare și suport utilizate pentru a menține calitatea și consistența materialelor din Workshop.
+Acest director conține scripturi de automatizare și suport utilizate pentru a menține calitatea și consistența materialelor Workshop-ului.
 
 ## Conținut
 
@@ -18,13 +18,13 @@ Acest director conține scripturi de automatizare și suport utilizate pentru a 
 | `lint_markdown_cli.py` | Verifică blocurile de cod Markdown pentru a bloca modelele de comenzi CLI Foundry Local depreciate. |
 | `export_benchmark_markdown.py` | Rulează benchmark-uri de latență multi-model și generează rapoarte în format Markdown + JSON. |
 
-## 1. Linter pentru Modele CLI în Markdown
+## 1. Linter pentru Modele CLI Markdown
 
-`lint_markdown_cli.py` scanează toate fișierele `.md` care nu sunt traduceri pentru modelele CLI Foundry Local **nepermise în interiorul blocurilor de cod delimitate** (``` ... ```). Proza informativă poate menționa în continuare comenzile depreciate pentru context istoric.
+`lint_markdown_cli.py` scanează toate fișierele `.md` care nu sunt traduceri pentru modelele CLI Foundry Local nepermise **în interiorul blocurilor de cod delimitate** (``` ... ```). Proza informativă poate menționa în continuare comenzile depreciate pentru context istoric.
 
-### Modele Depreciate (Blocate în Blocurile de Cod)
+### Modele Depreciate (Blocate în Interiorul Blocurilor de Cod)
 
-Linter-ul blochează modelele CLI depreciate. Utilizați alternativele moderne.
+Linter-ul blochează modelele CLI depreciate. Utilizați alternativele moderne în locul acestora.
 
 ### Înlocuiri Necesare
 | Depreciat | Utilizați În Loc |
@@ -38,7 +38,7 @@ Linter-ul blochează modelele CLI depreciate. Utilizați alternativele moderne.
 
 ### Coduri de Ieșire
 | Cod | Semnificație |
-|-----|-------------|
+|-----|--------------|
 | 0 | Nicio încălcare detectată |
 | 1 | Unul sau mai multe modele depreciate găsite |
 
@@ -60,14 +60,14 @@ python Workshop/scripts/lint_markdown_cli.py --verbose
 echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
-Acest hook blochează commit-urile care introduc modele depreciate.
+Acest lucru blochează commit-urile care introduc modele depreciate.
 
 ### Integrare CI
-Un workflow GitHub Action (`.github/workflows/markdown-cli-lint.yml`) rulează linter-ul la fiecare push și pull request către ramurile `main` și `Reactor`. Joburile eșuate trebuie rezolvate înainte de a face merge.
+Un workflow GitHub Action (`.github/workflows/markdown-cli-lint.yml`) rulează linter-ul la fiecare push și pull request către ramurile `main` și `Reactor`. Joburile eșuate trebuie rezolvate înainte de a fi integrate.
 
-### Adăugarea de Modele Depreciate Noi
+### Adăugarea de Noi Modele Depreciate
 1. Deschideți `lint_markdown_cli.py`.
-2. Adăugați un tuplu `(regex, suggestion)` la lista `DEPRECATED`. Utilizați un șir raw și includeți limite de cuvinte `\b` acolo unde este necesar.
+2. Adăugați un tuplu `(regex, suggestion)` la lista `DEPRECATED`. Utilizați un șir brut și includeți limite de cuvinte `\b` acolo unde este cazul.
 3. Rulați linter-ul local pentru a verifica detectarea.
 4. Faceți commit și push; CI va aplica noua regulă.
 
@@ -76,28 +76,28 @@ Exemplu de adăugare:
 DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental foo usage"))
 ```
 
-### Permisiunea Mențiunilor Explicative
-Deoarece doar blocurile de cod delimitate sunt aplicate, puteți descrie comenzile depreciate în text narativ în siguranță. Dacă *trebuie* să le arătați într-un bloc delimitat pentru contrast, adăugați un bloc delimitat **fără** triple backticks (de exemplu, indentare sau citare) sau rescrieți într-o formă pseudo.
+### Permisiunea Menționării Explicative
+Deoarece doar blocurile de cod delimitate sunt verificate, puteți descrie în siguranță comenzile depreciate în text narativ. Dacă *trebuie* să le afișați într-un bloc delimitat pentru contrast, adăugați un bloc delimitat **fără** triple backticks (de exemplu, indentare sau citare) sau rescrieți într-o formă pseudo.
 
-### Sărirea Fișierelor Specifice (Avansat)
-Dacă este necesar, încadrați exemplele vechi într-un fișier separat în afara depozitului sau redenumiți cu o extensie diferită în timp ce lucrați la schiță. Săririle intenționate pentru copii traduse sunt automate (căi care conțin `translations`).
+### Omiterea Fișierelor Specifice (Avansat)
+Dacă este necesar, înfășurați exemplele vechi într-un fișier separat în afara depozitului sau redenumiți-l cu o extensie diferită în timpul redactării. Omiterea intenționată pentru copii traduse este automată (căi care conțin `translations`).
 
 ### Depanare
 | Problemă | Cauză | Rezolvare |
 |----------|-------|----------|
-| Linter-ul semnalează o linie pe care ați actualizat-o | Regex prea larg | Restrângeți modelul cu limite de cuvinte suplimentare (`\b`) sau ancore |
+| Linter-ul semnalează o linie pe care ați actualizat-o | Regex prea general | Restrângeți modelul cu limite de cuvinte suplimentare (`\b`) sau ancore |
 | CI eșuează, dar local trece | Versiune Python diferită sau modificări necomise | Rulați din nou local, asigurați-vă că arborele de lucru este curat, verificați versiunea Python din workflow (3.11) |
-| Necesitatea unei ocoliri temporare | Hotfix de urgență | Aplicați fixul imediat după; luați în considerare utilizarea unei ramuri temporare și un PR de urmărire (evitați adăugarea de comutatoare de ocolire) |
+| Necesitatea de a ocoli temporar | Remediere urgentă | Aplicați remedierea imediat după; luați în considerare utilizarea unei ramuri temporare și a unui PR ulterior (evitați adăugarea de comutatoare de ocolire) |
 
 ### Motivație
-Menținerea documentației aliniate cu suprafața CLI *actuală* stabilă previne fricțiunea în workshop, evită confuzia participanților și centralizează măsurarea performanței prin scripturi Python întreținute, în loc de subcomenzi CLI învechite.
+Menținerea documentației aliniate cu suprafața CLI *actuală* stabilă previne fricțiunile în workshop, evită confuzia participanților și centralizează măsurarea performanței prin scripturi Python întreținute, în loc de subcomenzi CLI învechite.
 
 ---
 Întreținut ca parte a lanțului de instrumente pentru calitatea workshop-ului. Pentru îmbunătățiri (de exemplu, sugestii de auto-corectare sau generarea de rapoarte HTML), deschideți un issue sau trimiteți un PR.
 
-## 2. Script de Validare a Exemplelor
+## 2. Script de Validare a Exemplarelor
 
-`validate_samples.py` validează toate fișierele de exemple Python pentru sintaxă, importuri și conformitate cu cele mai bune practici.
+`validate_samples.py` validează toate fișierele de exemplu Python pentru validitatea sintaxei, importuri și conformitatea cu cele mai bune practici.
 
 ### Utilizare
 ```bash
@@ -116,23 +116,23 @@ python scripts/validate_samples.py --summary
 
 ### Ce verifică
 - ✅ Validitatea sintaxei Python
-- ✅ Importurile necesare sunt prezente
+- ✅ Prezența importurilor necesare
 - ✅ Implementarea gestionării erorilor (mod verbose)
 - ✅ Utilizarea tipurilor (mod verbose)
 - ✅ Docstrings pentru funcții (mod verbose)
 - ✅ Linkuri de referință SDK (mod verbose)
 
 ### Variabile de Mediu
-- `SKIP_IMPORT_CHECK=1` - Sare validarea importurilor
-- `SKIP_SYNTAX_CHECK=1` - Sare validarea sintaxei
+- `SKIP_IMPORT_CHECK=1` - Omiterea validării importurilor
+- `SKIP_SYNTAX_CHECK=1` - Omiterea validării sintaxei
 
 ### Coduri de Ieșire
-- `0` - Toate exemplele au trecut validarea
-- `1` - Unul sau mai multe exemple au eșuat
+- `0` - Toate exemplarele au trecut validarea
+- `1` - Unul sau mai multe exemplare au eșuat
 
-## 3. Runner de Teste pentru Exemple
+## 3. Runner de Testare a Exemplarelor
 
-`test_samples.py` rulează teste rapide pe toate exemplele pentru a verifica dacă se execută fără erori.
+`test_samples.py` rulează teste rapide pe toate exemplarele pentru a verifica dacă se execută fără erori.
 
 ### Utilizare
 ```bash
@@ -149,14 +149,14 @@ python scripts/test_samples.py --quick
 python scripts/test_samples.py --verbose
 ```
 
-### Prerechizite
+### Cerințe Prealabile
 - Serviciul Foundry Local activ: `foundry service start`
 - Modele încărcate: `foundry model run phi-4-mini`
 - Dependențe instalate: `pip install -r requirements.txt`
 
 ### Ce testează
-- ✅ Exemplul se poate executa fără erori de runtime
-- ✅ Output-ul necesar este generat
+- ✅ Exemplarul se poate executa fără erori de runtime
+- ✅ Se generează output-ul necesar
 - ✅ Gestionarea corectă a erorilor în caz de eșec
 - ✅ Performanță (timp de execuție)
 
@@ -182,14 +182,14 @@ Generează un tabel de performanță reproductibil pentru un set de modele.
 
 ### Utilizare
 ```powershell
-python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemma-2-2b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
 ```
 
 ### Output-uri
 | Fișier | Descriere |
 |--------|-----------|
 | `benchmark_report.md` | Tabel Markdown (medie, p95, tokens/sec, opțional primul token) |
-| `benchmark_report.json` | Array de metrici brute pentru comparare și istoric |
+| `benchmark_report.json` | Array de metrici brute pentru comparare & istoric |
 
 ### Opțiuni
 | Flag | Descriere | Implicit |
@@ -199,16 +199,16 @@ python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b,gemm
 | `--rounds` | Runde per model | 3 |
 | `--output` | Fișier de output Markdown | `benchmark_report.md` |
 | `--json` | Fișier de output JSON | `benchmark_report.json` |
-| `--fail-on-empty` | Ieșire non-zero dacă toate benchmark-urile eșuează | off |
+| `--fail-on-empty` | Ieșire non-zero dacă toate benchmark-urile eșuează | dezactivat |
 
 Variabila de mediu `BENCH_STREAM=1` adaugă măsurarea latenței primului token.
 
 ### Note
 - Reutilizează `workshop_utils` pentru bootstrap și caching consistent al modelelor.
-- Dacă este rulat dintr-un director de lucru diferit, scriptul încearcă fallback-uri de cale pentru a localiza `workshop_utils`.
-- Pentru comparație GPU: rulați o dată, activați accelerarea prin configurarea CLI, rulați din nou și comparați JSON-ul.
+- Dacă este rulat dintr-un alt director de lucru, scriptul încearcă fallback-uri de cale pentru a localiza `workshop_utils`.
+- Pentru comparația GPU: rulați o dată, activați accelerarea prin configurarea CLI, rulați din nou și comparați JSON-ul.
 
 ---
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de oameni. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

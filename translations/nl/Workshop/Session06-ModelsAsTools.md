@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T16:54:55+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T22:24:41+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "nl"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Samenvatting
 
-Behandel modellen als samenstelbare tools binnen een lokale AI-operatielaag. Deze sessie laat zien hoe je meerdere gespecialiseerde SLM/LLM-aanroepen kunt koppelen, taken selectief kunt routeren en een uniforme SDK-interface kunt aanbieden aan applicaties. Je bouwt een lichtgewicht modelrouter + taakplanner, integreert deze in een appscript en schetst het schaalpad naar Azure AI Foundry voor productiebelastingen.
+Behandel modellen als samenstelbare tools binnen een lokale AI-operatielaag. Deze sessie laat zien hoe je meerdere gespecialiseerde SLM/LLM-aanroepen kunt koppelen, taken selectief kunt routeren en een uniforme SDK-interface kunt aanbieden aan applicaties. Je gaat een lichte modelrouter + taakplanner bouwen, deze integreren in een app-script en de schaalbaarheid naar Azure AI Foundry voor productieomgevingen schetsen.
 
 ## Leerdoelen
 
 - **Conceptualiseer** modellen als atomische tools met gedefinieerde mogelijkheden
 - **Routeer** verzoeken op basis van intentie / heuristische scoring
-- **Koppel** outputs over meerstaps taken (decompositie → oplossen → verfijnen)
+- **Koppel** outputs over meerstaps taken (decomponeren → oplossen → verfijnen)
 - **Integreer** een uniforme client-API voor downstream applicaties
 - **Schaal** ontwerp naar de cloud (zelfde OpenAI-compatibele contract)
 
@@ -180,9 +180,9 @@ if __name__ == '__main__':
 
 Verbeteringen:
 - Voeg ondersteuning voor streaming tokens toe (progressieve UI-update)
-- Voeg vertrouwensscore toe: lexicale overlap of promptcriteria
+- Voeg vertrouwensscore toe: lexicale overlap of prompt-rubriek
 - Exporteer trace JSON (intentie → model → latentie → tokengebruik)
-- Implementeer cachehergebruik voor herhaalde subtaken
+- Implementeer cache-hergebruik voor herhaalde substappen
 
 ### 5. Schaalpad naar Azure (5 min)
 
@@ -192,7 +192,7 @@ Verbeteringen:
 | Modellen | SLM's in cache | Beheerde implementaties | Map lokale namen naar implementatie-ID's |
 | Observatie | CLI-statistieken/handmatig | Centrale logging & metrics | Voeg gestructureerde trace-evenementen toe |
 | Beveiliging | Alleen lokale host | Azure-authenticatie / netwerk | Introduceer key vault voor geheimen |
-| Kosten | Apparaatbronnen | Verbruiksfacturering | Voeg budgetbewakers toe |
+| Kosten | Apparaatbronnen | Verbruiksfacturering | Voeg budgetbewaking toe |
 
 ## Validatiechecklist
 
@@ -202,13 +202,13 @@ foundry model run deepseek-coder-1.3b
 python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
-
-Verwacht intentie-gebaseerde modelselectie en uiteindelijk verfijnde output.
+  
+Verwacht modelselectie op basis van intentie en een verfijnde eindoutput.
 
 ## Probleemoplossing
 
 | Probleem | Oorzaak | Oplossing |
-|----------|---------|----------|
+|----------|--------|-----------|
 | Alle taken worden naar hetzelfde model gerouteerd | Zwakke regels | Verrijk INTENT_RULES regex-set |
 | Pipeline faalt halverwege | Ontbrekend geladen model | Voer `foundry model run <model>` uit |
 | Lage outputcohesie | Geen verfijnfase | Voeg samenvattings-/validatiepassage toe |
@@ -221,20 +221,20 @@ Verwacht intentie-gebaseerde modelselectie en uiteindelijk verfijnde output.
 
 ---
 
-**Sessieduur**: 30 min  
+**Duur van de sessie**: 30 min  
 **Moeilijkheidsgraad**: Expert
 
-## Voorbeeldscenario & Workshopmapping
+## Voorbeeldscenario & workshopmapping
 
-| Workshop Scripts / Notebooks | Scenario | Doel | Dataset / Catalogusbron |
+| Workshop scripts / Notebooks | Scenario | Doel | Dataset / Catalogusbron |
 |------------------------------|----------|------|--------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Ontwikkelaarassistent die gemengde intentieprompts afhandelt (refactor, samenvatten, classificeren) | Heuristische intentie → modelaliasroutering met tokengebruik | Inline `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Meerstaps planning & verfijning voor complexe coderingstaken | Decompositie → gespecialiseerde uitvoering → samenvattingsverfijningsstap | Zelfde `CATALOG`; stappen afgeleid van planoutput |
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Ontwikkelaarshulp bij gemengde intentieprompts (refactoren, samenvatten, classificeren) | Heuristische intentie → modelalias-routering met tokengebruik | Inline `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Meerstaps planning & verfijning voor complexe coderingstaken | Decomponeren → gespecialiseerde uitvoering → samenvattingsverfijningsstap | Zelfde `CATALOG`; stappen afgeleid van planoutput |
 
 ### Scenarioverhaal
-Een productiviteitstool voor engineers ontvangt heterogene taken: code refactoren, architectuurnotities samenvatten, feedback classificeren. Om latentie en resourcegebruik te minimaliseren, plant en vat een klein algemeen model samen, een code-gespecialiseerd model handelt refactoren af, en een lichtgewicht classificatiemodel labelt feedback. Het pipelinescript demonstreert ketening + verfijning; het routerscript isoleert adaptieve single-prompt routering.
+Een productiviteitstool voor engineers ontvangt heterogene taken: code refactoren, architectuurnotities samenvatten, feedback classificeren. Om latentie en resourcegebruik te minimaliseren, plant en vat een klein algemeen model samen, een code-gespecialiseerd model behandelt refactoren, en een lichtgewicht classificatiemodel labelt feedback. Het pipelinescript demonstreert ketening + verfijning; het routerscript isoleert adaptieve routering van enkele prompts.
 
-### Catalogusmomentopname
+### Catalogusoverzicht
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -269,21 +269,21 @@ trace.append({
 
 
 ### Escalatieheuristiek (idee)
-Als het plan trefwoorden bevat zoals "optimaliseren", "beveiliging", of staplengte > 280 tekens → escaleer naar groter model (bijv. `gpt-oss-20b`) alleen voor die stap.
+Als het plan trefwoorden bevat zoals "optimaliseren", "beveiliging", of staplengte > 280 tekens → escaleren naar groter model (bijv. `gpt-oss-20b`) alleen voor die stap.
 
 ### Optionele verbeteringen
 
 | Gebied | Verbetering | Waarde | Hint |
 |-------|-------------|--------|------|
 | Caching | Hergebruik manager + clientobjecten | Lagere latentie, minder overhead | Gebruik `workshop_utils.get_client` |
-| Gebruiksstatistieken | Registreer tokens & latentie per stap | Profilering & optimalisatie | Meet elke gerouteerde oproep; sla op in tracelijst |
-| Adaptieve routering | Vertrouwen / kostenbewust | Betere kwaliteit-kostenafweging | Voeg scoring toe: als prompt > N tekens of regex matcht domein → escaleer naar groter model |
-| Dynamische capaciteitsregistratie | Catalogus hot reload | Geen herstart herimplementatie | Laad `catalog.json` tijdens runtime; controleer bestandstijdstempel |
-| Fallbackstrategie | Robuustheid bij fouten | Hogere beschikbaarheid | Probeer primair → bij uitzondering fallback-alias |
-| Streamingpipeline | Vroege feedback | UX-verbetering | Stream elke stap en buffer definitieve verfijningsinput |
+| Gebruiksstatistieken | Tokens & latentie per stap vastleggen | Profilering & optimalisatie | Meet elke gerouteerde oproep; sla op in tracelijst |
+| Adaptieve routering | Vertrouwen / kostenbewust | Betere kwaliteit-kostenafweging | Voeg scoring toe: als prompt > N tekens of regex matcht domein → escaleren naar groter model |
+| Dynamisch capaciteitsregister | Catalogus hot reload | Geen herstart herimplementatie | Laad `catalog.json` tijdens runtime; controleer bestandstijdstempel |
+| Fallbackstrategie | Robuustheid bij storingen | Hogere beschikbaarheid | Probeer primair → bij uitzondering fallback-alias |
+| Streamingpipeline | Vroege feedback | UX-verbetering | Stream elke stap en buffer de uiteindelijke verfijningsinput |
 | Vector intentie-embeddings | Meer genuanceerde routering | Hogere intentienauwkeurigheid | Embed prompt, cluster & map centroid → capaciteit |
 | Trace-export | Auditeerbare keten | Compliance/rapportage | Exporteer JSON-regels: stap, intentie, model, latentie_ms, tokens |
-| Kostenberekening | Pre-cloud schatting | Budgetplanning | Wijs notionele kosten/token per model toe & aggregeer per taak |
+| Kostenraming | Schatting pre-cloud | Budgetplanning | Wijs notionele kosten/token per model toe & aggregeer per taak |
 | Deterministische modus | Reproduceerbaarheid | Stabiele benchmarking | Omgeving: `temperature=0`, vast aantal stappen |
 
 #### Voorbeeld van tracestructuur
@@ -299,7 +299,7 @@ trace.append({
 ```
 
 
-#### Adaptieve escalatieschets
+#### Schets voor adaptieve escalatie
 
 ```python
 if len(prompt) > 280 or 'compliance' in prompt.lower():
@@ -323,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Itereer geleidelijk—vermijd over-engineering in vroege prototypes.
-
 ---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

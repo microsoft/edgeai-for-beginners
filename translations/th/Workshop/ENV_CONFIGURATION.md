@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T12:50:42+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T21:58:31+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "th"
 }
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **สำหรับสคริปต์ Python:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -61,13 +61,13 @@ python chat_bootstrap.py
 | ตัวแปร | ค่าเริ่มต้น | คำอธิบาย |
 |--------|-------------|-----------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | โมเดลเริ่มต้นสำหรับตัวอย่าง |
-| `FOUNDRY_LOCAL_ENDPOINT` | (ว่าง) | กำหนดค่า endpoint ของบริการ |
-| `PYTHONPATH` | เส้นทาง Workshop | เส้นทางการค้นหาโมดูล Python |
+| `FOUNDRY_LOCAL_ENDPOINT` | (ว่าง) | กำหนดค่าจุดเชื่อมต่อบริการ |
+| `PYTHONPATH` | เส้นทาง Workshop | เส้นทางค้นหาโมดูล Python |
 
 **เมื่อควรตั้งค่า FOUNDRY_LOCAL_ENDPOINT:**
-- ใช้ Foundry Local ระยะไกล
-- กำหนดค่าพอร์ตแบบกำหนดเอง
-- แยกการพัฒนา/การผลิต
+- การใช้งาน Foundry Local ระยะไกล
+- การตั้งค่าพอร์ตแบบกำหนดเอง
+- การแยกการพัฒนา/การผลิต
 
 **ตัวอย่าง:**
 ```bash
@@ -89,23 +89,23 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### เซสชัน 03: Benchmarking
 | ตัวแปร | ค่าเริ่มต้น | วัตถุประสงค์ |
 |--------|-------------|---------------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | โมเดลสำหรับการ benchmark |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | โมเดลสำหรับการทดสอบ |
 | `BENCH_ROUNDS` | `3` | จำนวนรอบต่อโมเดล |
-| `BENCH_PROMPT` | ตั้งค่าไว้แล้ว | prompt ทดสอบ |
-| `BENCH_STREAM` | `0` | วัด latency ของ token แรก |
+| `BENCH_PROMPT` | ตั้งค่าไว้แล้ว | คำสั่งทดสอบ |
+| `BENCH_STREAM` | `0` | วัดความล่าช้าของ token แรก |
 
 #### เซสชัน 04: การเปรียบเทียบโมเดล
 | ตัวแปร | ค่าเริ่มต้น | วัตถุประสงค์ |
 |--------|-------------|---------------|
 | `SLM_ALIAS` | `phi-4-mini` | โมเดลภาษาขนาดเล็ก |
 | `LLM_ALIAS` | `qwen2.5-7b` | โมเดลภาษาขนาดใหญ่ |
-| `COMPARE_PROMPT` | ตั้งค่าไว้แล้ว | prompt สำหรับการเปรียบเทียบ |
+| `COMPARE_PROMPT` | ตั้งค่าไว้แล้ว | คำสั่งเปรียบเทียบ |
 | `COMPARE_RETRIES` | `2` | จำนวนครั้งที่ลองใหม่ |
 
 #### เซสชัน 05: การจัดการหลายตัวแทน
 | ตัวแปร | ค่าเริ่มต้น | วัตถุประสงค์ |
 |--------|-------------|---------------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | โมเดลตัวแทนวิจัย |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | โมเดลตัวแทนนักวิจัย |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | โมเดลตัวแทนบรรณาธิการ |
 | `AGENT_QUESTION` | ตั้งค่าไว้แล้ว | คำถามทดสอบ |
 
@@ -115,11 +115,11 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |--------|-------------|---------------|
 | `SHOW_USAGE` | `1` | แสดงการใช้งาน token |
 | `RETRY_ON_FAIL` | `1` | เปิดใช้งานการลองใหม่ |
-| `RETRY_BACKOFF` | `1.0` | เวลาหน่วงสำหรับการลองใหม่ (วินาที) |
+| `RETRY_BACKOFF` | `1.0` | ความล่าช้าในการลองใหม่ (วินาที) |
 
 ## การตั้งค่าทั่วไป
 
-### การตั้งค่าสำหรับการพัฒนา (การวนซ้ำอย่างรวดเร็ว)
+### การตั้งค่าสำหรับการพัฒนา (การวนซ้ำเร็ว)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -138,9 +138,9 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### การตั้งค่าสำหรับ Benchmarking
+### การตั้งค่าสำหรับการทดสอบประสิทธิภาพ
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -164,8 +164,8 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 **การใช้งานทั่วไป:**
 - `phi-4-mini` - สมดุลระหว่างคุณภาพและความเร็ว
 
-**การตอบสนองรวดเร็ว:**
-- `qwen2.5-0.5b` - เร็วมาก เหมาะสำหรับการจัดหมวดหมู่
+**การตอบสนองเร็ว:**
+- `qwen2.5-0.5b` - เร็วมาก เหมาะสำหรับการจัดประเภท
 - `phi-4-mini` - เร็วและคุณภาพดี
 
 **คุณภาพสูง:**
@@ -176,7 +176,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `deepseek-coder-1.3b` - เชี่ยวชาญด้านการเขียนโค้ด
 - `phi-4-mini` - การเขียนโค้ดทั่วไป
 
-### ตามทรัพยากรที่มีอยู่
+### ตามทรัพยากรที่มี
 
 **ทรัพยากรต่ำ (< 8GB RAM):**
 ```bash
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## การตั้งค่าขั้นสูง
 
-### Endpoint แบบกำหนดเอง
+### จุดเชื่อมต่อแบบกำหนดเอง
 
 ```bash
 # Development environment
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### การตั้งค่า Temperature & Sampling (ปรับในโค้ด)
+### อุณหภูมิและการสุ่มตัวอย่าง (กำหนดในโค้ด)
 
 ```python
 # In your scripts/notebooks
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### การตั้งค่า Azure OpenAI Hybrid
+### การตั้งค่าแบบไฮบริด Azure OpenAI
 
 ```bash
 # Use local for development
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **อาการ:**
 - ข้อผิดพลาด "Module not found"
-- "Cannot import workshop_utils"
 
 **วิธีแก้ไข:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## การทดสอบการตั้งค่า
@@ -366,9 +363,9 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## แนวทางปฏิบัติด้านความปลอดภัย
+## แนวทางปฏิบัติที่ดีที่สุดด้านความปลอดภัย
 
-### 1. ห้าม commit ข้อมูลลับ
+### 1. ห้ามคอมมิตข้อมูลลับ
 
 ```bash
 # .gitignore should include:
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่แม่นยำ เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้บริการแปลภาษามนุษย์ที่เป็นมืออาชีพ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดซึ่งเกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามืออาชีพ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้

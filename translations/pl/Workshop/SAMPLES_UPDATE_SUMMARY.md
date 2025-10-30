@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5506309052b4f332914e36b518f11b14",
-  "translation_date": "2025-10-08T21:57:24+00:00",
+  "original_hash": "d49922db25659f398bae92011305e9dc",
+  "translation_date": "2025-10-28T21:45:44+00:00",
   "source_file": "Workshop/SAMPLES_UPDATE_SUMMARY.md",
   "language_code": "pl"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Przegląd
 
-Wszystkie przykłady w Pythonie w katalogu `Workshop/samples` zostały zaktualizowane zgodnie z najlepszymi praktykami Foundry Local SDK, aby zapewnić spójność w całym warsztacie.
+Wszystkie przykłady w Pythonie w katalogu `Workshop/samples` zostały zaktualizowane, aby stosować najlepsze praktyki Foundry Local SDK i zapewnić spójność w całym warsztacie.
 
 **Data**: 8 października 2025  
 **Zakres**: 9 plików Python w 6 sesjach warsztatowych  
@@ -25,16 +25,16 @@ Wszystkie przykłady w Pythonie w katalogu `Workshop/samples` zostały zaktualiz
 - ✅ `chat_bootstrap.py` - Podstawowe przykłady czatu i strumieniowania
 
 ### Sesja 02: Rozwiązania RAG
-- ✅ `rag_pipeline.py` - Implementacja RAG z osadzaniem
+- ✅ `rag_pipeline.py` - Implementacja RAG z osadzeniami
 - ✅ `rag_eval_ragas.py` - Ocena RAG z metrykami RAGAS
 
 ### Sesja 03: Modele Open Source
 - ✅ `benchmark_oss_models.py` - Benchmarking wielu modeli
 
-### Sesja 04: Najnowocześniejsze Modele
+### Sesja 04: Najnowsze Modele
 - ✅ `model_compare.py` - Porównanie SLM i LLM
 
-### Sesja 05: Agenci Wspomagani AI
+### Sesja 05: Agenci Wspierani przez AI
 - ✅ `agents_orchestrator.py` - Koordynacja wielu agentów
 
 ### Sesja 06: Modele jako Narzędzia
@@ -89,13 +89,13 @@ except ImportError:
 **Korzyści:**
 - Jasne wskazówki w przypadku brakujących zależności
 - Zapobieganie niejasnym błędom importu
-- Przyjazne instrukcje instalacji dla użytkownika
+- Przyjazne dla użytkownika instrukcje instalacji
 
 ### 3. Kompleksowa Dokumentacja
 
 **Dodano do wszystkich przykładów:**
-- Dokumentacja zmiennych środowiskowych w docstringach
-- Linki do referencji SDK
+- Dokumentacja zmiennych środowiskowych w docstrings
+- Linki do dokumentacji SDK
 - Przykłady użycia
 - Szczegółowa dokumentacja funkcji/parametrów
 - Podpowiedzi typów dla lepszego wsparcia IDE
@@ -165,7 +165,7 @@ def run(alias: str) -> Tuple[float, str, Optional[int]]:
 ### 7. Ulepszony Router Modeli
 
 **Ulepszenia w Sesji 06:**
-- Szczegółowa dokumentacja wykrywania intencji
+- Kompleksowa dokumentacja wykrywania intencji
 - Wyjaśnienie algorytmu wyboru modelu
 - Szczegółowe logi routingu
 - Formatowanie wyników testów
@@ -200,91 +200,91 @@ pip install -r Workshop/requirements.txt
 
 #### Sesja 01
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 #### Sesja 02
 ```bash
-cd Workshop/samples/session02
+cd Workshop/samples
 
 # RAG pipeline
-python rag_pipeline.py
+python -m session02.rag_pipeline
 
 # RAG evaluation (requires ragas)
 set RAG_QUESTION="What is local inference?"
-python rag_eval_ragas.py
+python -m session02.rag_eval_ragas
 ```
 
 #### Sesja 03
 ```bash
-cd Workshop/samples/session03
+cd Workshop/samples
 
 # Quick benchmark (2 rounds)
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=2
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 #### Sesja 04
 ```bash
-cd Workshop/samples/session04
+cd Workshop/samples
 
 # SLM vs LLM comparison
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
-python model_compare.py
+python -m session04.model_compare
 ```
 
 #### Sesja 05
 ```bash
-cd Workshop/samples/session05
+cd Workshop/samples
 
 # Multi-agent orchestration
 set AGENT_QUESTION="Why use local AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 #### Sesja 06
 ```bash
-cd Workshop/samples/session06
+cd Workshop/samples
 
 # Intent-based routing
-python models_router.py
+python -m session06.models_router
 
 # Multi-step pipeline
 set PIPELINE_TASK="Create a Python function and explain its performance"
-python models_pipeline.py
+python -m session06.models_pipeline
 ```
 
 ---
 
-## Referencja Zmiennych Środowiskowych
+## Referencje Zmiennych Środowiskowych
 
 ### Globalne (Wszystkie Przykłady)
 | Zmienna | Opis | Domyślna |
 |---------|------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Alias modelu do użycia | Różni się w zależności od przykładu |
-| `FOUNDRY_LOCAL_ENDPOINT` | Nadpisanie punktu końcowego usługi | Wykrywane automatycznie |
-| `SHOW_USAGE` | Pokazanie użycia tokenów | `0` |
-| `RETRY_ON_FAIL` | Włączenie logiki ponawiania | `1` |
-| `RETRY_BACKOFF` | Początkowe opóźnienie ponawiania | `1.0` |
+| `FOUNDRY_LOCAL_ENDPOINT` | Nadpisanie punktu końcowego usługi | Automatycznie wykrywane |
+| `SHOW_USAGE` | Pokazuje użycie tokenów | `0` |
+| `RETRY_ON_FAIL` | Włącza logikę ponawiania prób | `1` |
+| `RETRY_BACKOFF` | Początkowe opóźnienie ponowienia | `1.0` |
 
 ### Specyficzne dla Przykładu
 | Zmienna | Używane przez | Opis |
 |---------|--------------|------|
-| `EMBED_MODEL` | Sesja 02 | Nazwa modelu osadzania |
-| `RAG_QUESTION` | Sesja 02 | Testowe pytanie dla RAG |
+| `EMBED_MODEL` | Sesja 02 | Nazwa modelu osadzającego |
+| `RAG_QUESTION` | Sesja 02 | Pytanie testowe dla RAG |
 | `BENCH_MODELS` | Sesja 03 | Modele do benchmarkingu (oddzielone przecinkami) |
 | `BENCH_ROUNDS` | Sesja 03 | Liczba rund benchmarkingu |
 | `BENCH_PROMPT` | Sesja 03 | Testowy prompt dla benchmarków |
 | `BENCH_STREAM` | Sesja 03 | Pomiar opóźnienia pierwszego tokena |
 | `SLM_ALIAS` | Sesja 04 | Mały model językowy |
 | `LLM_ALIAS` | Sesja 04 | Duży model językowy |
-| `COMPARE_PROMPT` | Sesja 04 | Testowy prompt do porównania |
+| `COMPARE_PROMPT` | Sesja 04 | Testowy prompt porównawczy |
 | `AGENT_MODEL_PRIMARY` | Sesja 05 | Model głównego agenta |
 | `AGENT_MODEL_EDITOR` | Sesja 05 | Model agenta edytora |
-| `AGENT_QUESTION` | Sesja 05 | Testowe pytanie dla agentów |
+| `AGENT_QUESTION` | Sesja 05 | Pytanie testowe dla agentów |
 | `PIPELINE_TASK` | Sesja 06 | Zadanie dla pipeline'u |
 
 ---
@@ -293,17 +293,17 @@ python models_pipeline.py
 
 **Brak** - Wszystkie zmiany są kompatybilne wstecz.
 
-Istniejące skrypty będą działać bez zmian. Nowe funkcje obejmują:
+Istniejące skrypty będą nadal działać. Nowe funkcje to:
 - Opcjonalne zmienne środowiskowe
 - Ulepszone komunikaty o błędach (nie psują funkcjonalności)
-- Dodatkowe logowanie (można wyłączyć)
-- Lepsze podpowiedzi typów (bez wpływu na działanie w czasie rzeczywistym)
+- Dodatkowe logowanie (można je wyłączyć)
+- Lepsze podpowiedzi typów (bez wpływu na działanie)
 
 ---
 
 ## Wdrożone Najlepsze Praktyki
 
-### 1. Zawsze Używaj Workshop Utils
+### 1. Zawsze używaj Workshop Utils
 ```python
 from workshop_utils import get_client, chat_once
 
@@ -337,7 +337,7 @@ def process(data: List[str]) -> Dict[str, Any]:
     """Process data with type safety."""
 ```
 
-### 5. Kompleksowe Docstringi
+### 5. Kompleksowe Docstrings
 ```python
 def function(arg: str) -> str:
     """Short description.
@@ -412,7 +412,7 @@ set BENCH_ROUNDS=2
 Przejdź przez listę kontrolną testów powyżej, aby zweryfikować poprawność działania wszystkich przykładów.
 
 ### 2. Zaktualizuj Dokumentację
-- Zaktualizuj pliki markdown sesji z nowymi przykładami
+- Zaktualizuj pliki markdown sesji o nowe przykłady
 - Dodaj sekcję rozwiązywania problemów do głównego README
 - Stwórz przewodnik szybkiego odniesienia
 
@@ -427,7 +427,7 @@ def test_all_samples():
 Śledź poprawę wydajności wynikającą z ulepszeń obsługi błędów.
 
 ### 5. Informacja Zwrotna od Użytkowników
-Zbierz opinie uczestników warsztatu na temat:
+Zbierz opinie uczestników warsztatów na temat:
 - Jasności komunikatów o błędach
 - Kompleksowości dokumentacji
 - Łatwości użycia
@@ -437,7 +437,7 @@ Zbierz opinie uczestników warsztatu na temat:
 ## Zasoby
 
 - **Foundry Local SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Szybkie Odniesienie**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Przewodnik Szybkiego Odniesienia**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **Notatki Migracyjne**: `Workshop/SDK_MIGRATION_NOTES.md`
 - **Główne Repozytorium**: https://github.com/microsoft/Foundry-Local
 
@@ -446,31 +446,31 @@ Zbierz opinie uczestników warsztatu na temat:
 ## Utrzymanie
 
 ### Dodawanie Nowych Przykładów
-Postępuj zgodnie z tymi wzorcami podczas tworzenia nowych przykładów:
+Stosuj poniższe wzorce podczas tworzenia nowych przykładów:
 
 1. Używaj `workshop_utils` do zarządzania klientem
 2. Dodaj kompleksową obsługę błędów
 3. Uwzględnij obsługę zmiennych środowiskowych
-4. Dodaj podpowiedzi typów i docstringi
+4. Dodaj podpowiedzi typów i docstrings
 5. Zapewnij informacyjne logowanie
-6. Uwzględnij przykłady użycia w docstringu
+6. Uwzględnij przykłady użycia w docstrings
 7. Dodaj linki do dokumentacji SDK
 
 ### Przeglądanie Aktualizacji
 Podczas przeglądania aktualizacji przykładów sprawdź:
 - [ ] Obsługę błędów dla wszystkich operacji I/O
 - [ ] Podpowiedzi typów dla funkcji publicznych
-- [ ] Kompleksowe docstringi
+- [ ] Kompleksowe docstrings
 - [ ] Dokumentację zmiennych środowiskowych
 - [ ] Informacyjną informację zwrotną dla użytkownika
-- [ ] Linki do referencji SDK
+- [ ] Linki do dokumentacji SDK
 - [ ] Spójny styl kodu
 
 ---
 
-**Podsumowanie**: Wszystkie przykłady w Pythonie w Warsztacie teraz przestrzegają najlepszych praktyk Foundry Local SDK, z ulepszoną obsługą błędów, kompleksową dokumentacją i poprawionym doświadczeniem użytkownika. Brak zmian łamiących - cała istniejąca funkcjonalność została zachowana i ulepszona.
+**Podsumowanie**: Wszystkie przykłady w Pythonie w warsztacie są teraz zgodne z najlepszymi praktykami Foundry Local SDK, z ulepszoną obsługą błędów, kompleksową dokumentacją i poprawionym doświadczeniem użytkownika. Brak zmian łamiących - wszystkie istniejące funkcjonalności zostały zachowane i ulepszone.
 
 ---
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego języku źródłowym powinien być uznawany za autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż staramy się zapewnić dokładność, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.

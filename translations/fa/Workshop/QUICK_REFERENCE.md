@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-08T21:56:01+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T20:26:33+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "fa"
 }
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -38,7 +38,7 @@ python chat_bootstrap.py "What is edge AI?"
 | 02 | `rag_pipeline.py` | RAG با تعبیه‌ها | ~۴۵ ثانیه |
 | 02 | `rag_eval_ragas.py` | ارزیابی RAG | ~۶۰ ثانیه |
 | 03 | `benchmark_oss_models.py` | ارزیابی مدل‌ها | ~۲ دقیقه |
-| 04 | `model_compare.py` | مقایسه SLM و LLM | ~۴۵ ثانیه |
+| 04 | `model_compare.py` | SLM در مقابل LLM | ~۴۵ ثانیه |
 | 05 | `agents_orchestrator.py` | سیستم چند عاملی | ~۶۰ ثانیه |
 | 06 | `models_router.py` | مسیریابی هدف | ~۴۵ ثانیه |
 | 06 | `models_pipeline.py` | خط لوله چند مرحله‌ای | ~۶۰ ثانیه |
@@ -216,11 +216,11 @@ for chunk in stream:
 
 ## 💡 نکات
 
-1. **کش کردن کلاینت‌ها**: `workshop_utils` برای شما کش می‌کند
-2. **استفاده از مدل‌های کوچک‌تر**: برای آزمایش با `qwen2.5-0.5b` شروع کنید
-3. **فعال کردن آمار استفاده**: مقدار `SHOW_USAGE=1` را تنظیم کنید تا توکن‌ها را ردیابی کنید
+1. **کلاینت‌ها را کش کنید**: `workshop_utils` این کار را برای شما انجام می‌دهد
+2. **از مدل‌های کوچک‌تر استفاده کنید**: برای آزمایش با `qwen2.5-0.5b` شروع کنید
+3. **آمار استفاده را فعال کنید**: `SHOW_USAGE=1` را تنظیم کنید تا توکن‌ها را ردیابی کنید
 4. **پردازش دسته‌ای**: چندین درخواست را به صورت متوالی پردازش کنید
-5. **کاهش max_tokens**: زمان پاسخ‌دهی را برای پاسخ‌های سریع کاهش می‌دهد
+5. **کاهش max_tokens**: زمان پاسخ‌دهی را برای پاسخ‌های سریع کاهش دهید
 
 ---
 
@@ -234,38 +234,36 @@ python scripts/test_samples.py --quick
 
 ### ارزیابی مدل‌ها
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### خط لوله RAG
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### سیستم چند عاملی
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**راهنمای سریع**: هر نمونه را با `--help` اجرا کنید یا توضیحات داخل کد را بررسی کنید:
+**راهنمای سریع**: هر نمونه را با `--help` از دایرکتوری `samples` اجرا کنید یا توضیحات را بررسی کنید:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**تمام نمونه‌ها در اکتبر ۲۰۲۵ با بهترین روش‌های Foundry Local SDK به‌روزرسانی شده‌اند** ✨
+**همه نمونه‌ها در اکتبر ۲۰۲۵ با بهترین روش‌های Foundry Local SDK به‌روزرسانی شده‌اند** ✨
 
 ---
 

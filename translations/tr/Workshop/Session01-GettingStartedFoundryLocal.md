@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7c8a73e11384e3462674273498d0f9a6",
-  "translation_date": "2025-10-09T10:45:35+00:00",
+  "original_hash": "85fa559f498492b79de04e391c33687b",
+  "translation_date": "2025-10-28T21:47:55+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "tr"
 }
@@ -11,47 +11,47 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Özet
 
-Foundry Local ile yolculuğunuza Windows 11 üzerinde kurulum ve yapılandırma ile başlayın. CLI'yi nasıl ayarlayacağınızı, donanım hızlandırmayı nasıl etkinleştireceğinizi ve modelleri hızlı yerel çıkarım için nasıl önbelleğe alacağınızı öğrenin. Bu uygulamalı oturum, Phi, Qwen, DeepSeek ve GPT-OSS-20B gibi modelleri tekrarlanabilir CLI komutlarıyla çalıştırmayı adım adım gösteriyor.
+Foundry Local ile yolculuğunuza Windows 11 üzerinde kurulum ve yapılandırma yaparak başlayın. CLI'yi nasıl kuracağınızı, donanım hızlandırmayı nasıl etkinleştireceğinizi ve modelleri hızlı yerel çıkarım için nasıl önbelleğe alacağınızı öğrenin. Bu uygulamalı oturum, Phi, Qwen, DeepSeek ve GPT-OSS-20B gibi modelleri tekrarlanabilir CLI komutlarıyla çalıştırmayı adım adım anlatıyor.
 
 ## Öğrenme Hedefleri
 
-Bu oturumun sonunda şunları yapabileceksiniz:
+Bu oturumun sonunda:
 
-- **Kurulum ve Yapılandırma**: Foundry Local'ı Windows 11 üzerinde en iyi performans ayarlarıyla kurun
-- **CLI İşlemlerinde Ustalaşma**: Foundry Local CLI'yi model yönetimi ve dağıtımı için kullanın
+- **Kurulum ve Yapılandırma**: Foundry Local'ı Windows 11 üzerinde optimal performans ayarlarıyla kurmayı öğrenin
+- **CLI İşlemlerinde Ustalaşma**: Foundry Local CLI'yi model yönetimi ve dağıtımı için kullanmayı öğrenin
 - **Donanım Hızlandırmayı Etkinleştirme**: ONNXRuntime veya WebGPU ile GPU hızlandırmayı yapılandırın
 - **Birden Fazla Model Dağıtımı**: phi-4, GPT-OSS-20B, Qwen ve DeepSeek modellerini yerel olarak çalıştırın
 - **İlk Uygulamanızı Oluşturun**: Mevcut örnekleri Foundry Local Python SDK'sını kullanacak şekilde uyarlayın
 
-# Modeli test etme (etkileşimli olmayan tek bir istem)
-foundry model run phi-4-mini --prompt "Merhaba, kendini tanıt"
+# Modeli Test Etme (Etkileşimli Olmayan Tek Bir İstek)
+foundry model run phi-4-mini --prompt "Merhaba, kendini tanıtır mısın?"
 
 - Windows 11 (22H2 veya daha yeni)
-# Kullanılabilir katalog modellerini listeleme (çalıştırılan modeller çalıştırıldıktan sonra görünür)
+# Kullanılabilir katalog modellerini listele (çalıştırılan modeller görünür)
 foundry model list
 ## NOT: Şu anda özel bir `--running` bayrağı yok; hangi modellerin yüklü olduğunu görmek için bir sohbet başlatın veya hizmet günlüklerini inceleyin.
 - Python 3.10+ yüklü
-- Python uzantısı ile Visual Studio Code
-- Kurulum için yönetici ayrıcalıkları
+- Python uzantılı Visual Studio Code
+- Kurulum için yönetici yetkileri
 
 ### (Opsiyonel) Ortam Değişkenleri
 
 Komut dosyalarını taşınabilir hale getirmek için bir `.env` dosyası oluşturun (veya kabukta ayarlayın):
-# Yanıtları karşılaştırma (etkileşimli olmayan)
-foundry model run gpt-oss-20b --prompt "Edge AI'yi basit terimlerle açıklayın"
+# Yanıtları Karşılaştırma (Etkileşimli Olmayan)
+foundry model run gpt-oss-20b --prompt "Edge AI'yi basit terimlerle açıkla"
 | Değişken | Amaç | Örnek |
-|----------|------|-------|
+|----------|---------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Tercih edilen model takma adı (katalog en iyi varyantı otomatik seçer) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | Endpoint'i geçersiz kılma (aksi takdirde yöneticiden otomatik alınır) | `http://localhost:5273/v1` |
-| `FOUNDRY_LOCAL_STREAM` | Akış demolarını etkinleştirme | `true` |
+| `FOUNDRY_LOCAL_ENDPOINT` | Endpoint'i geçersiz kıl (aksi takdirde yöneticiden otomatik alınır) | `http://localhost:5273/v1` |
+| `FOUNDRY_LOCAL_STREAM` | Akış demolarını etkinleştir | `true` |
 
 > Eğer `FOUNDRY_LOCAL_ENDPOINT=auto` (veya ayarlanmamış) ise, bunu SDK yöneticisinden türetiyoruz.
 
 ## Demo Akışı (30 dakika)
 
-### 1. Foundry Local'ı Kurun ve CLI Kurulumunu Doğrulayın (10 dakika)
+### 1. Foundry Local'ı Kur ve CLI Kurulumunu Doğrula (10 dakika)
 
-# Önbelleğe alınmış modelleri listeleme
+# Önbelleğe alınmış modelleri listele
 foundry cache list
 
 ```powershell
@@ -64,7 +64,7 @@ winget install Microsoft.FoundryLocal
 
 **macOS (Önizleme / Destekleniyorsa)**
 
-Eğer bir yerel macOS paketi sağlanmışsa (en son sürüm için resmi belgeleri kontrol edin):
+Eğer bir yerel macOS paketi sağlanmışsa (en son resmi belgeleri kontrol edin):
 
 ```bash
 # Homebrew (if/when available)
@@ -79,7 +79,7 @@ sudo ./install.sh
 
 Eğer macOS yerel ikili dosyaları henüz mevcut değilse, yine de şunları yapabilirsiniz: 
 1. Windows 11 ARM/Intel VM (Parallels / UTM) kullanarak Windows adımlarını takip edin. 
-2. Modelleri konteyner üzerinden çalıştırın (eğer konteyner görüntüsü yayınlanmışsa) ve `FOUNDRY_LOCAL_ENDPOINT`'i açılan porta ayarlayın. 
+2. Modelleri bir konteyner aracılığıyla çalıştırın (eğer konteyner görüntüsü yayınlanmışsa) ve `FOUNDRY_LOCAL_ENDPOINT`'i açılan porta ayarlayın. 
 
 **Python Sanal Ortamı Oluşturma (Platformlar Arası)**
 
@@ -95,13 +95,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Pip'i yükseltin ve temel bağımlılıkları yükleyin:
+pip'i yükseltin ve temel bağımlılıkları yükleyin:
 ```bash
 python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-#### Adım 1.2: Kurulumu Doğrulama
+#### Adım 1.2: Kurulumu Doğrula
 
 ```powershell
 # Check version
@@ -114,7 +114,7 @@ foundry init
 foundry --help
 ```
 
-#### Adım 1.3: Ortamı Yapılandırma
+#### Adım 1.3: Ortamı Yapılandır
 
 ```powershell
 # Set up Python environment for Module08
@@ -160,34 +160,9 @@ print(resp.choices[0].message.content)
 
 Eğer açık kontrol tercih ediyorsanız, CLI + OpenAI istemcisini daha sonra gösterildiği gibi kullanabilirsiniz.
 
-### 2. GPU Hızlandırmayı Etkinleştirme (5 dakika)
+### 2. Modelleri CLI ile Yerel Olarak Çalıştırma (10 dakika)
 
-#### Adım 2.1: Donanım Yeteneklerini Kontrol Etme
-
-```powershell
-# Check available compute providers
-foundry system info
-
-# List GPU capabilities
-foundry system gpu-info
-```
-
-#### Adım 2.2: Donanım Hızlandırmayı Yapılandırma
-
-```powershell
-# Enable ONNX Runtime GPU (if NVIDIA GPU available)
-foundry config set compute.onnx.enable_gpu true
-
-# Enable WebGPU for broader hardware support
-foundry config set compute.webgpu.enabled true
-
-# Verify configuration
-foundry config list
-```
-
-### 3. Modelleri CLI ile Yerel Olarak Çalıştırma (10 dakika)
-
-#### Adım 3.1: Phi-4 Modelini Dağıtma
+#### Adım 3.1: Phi-4 Modelini Dağıt
 
 ```powershell
 # Download and run phi-4-mini
@@ -199,7 +174,7 @@ foundry model run phi-4-mini --prompt "Hello, introduce yourself"
 # NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
 ```
 
-#### Adım 3.2: GPT-OSS-20B Modelini Dağıtma
+#### Adım 3.2: GPT-OSS-20B Modelini Dağıt
 
 ```powershell
 # Download and run GPT-OSS-20B
@@ -209,7 +184,7 @@ foundry model run gpt-oss-20b
 foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
 ```
 
-#### Adım 3.3: Ek Modelleri Yükleme
+#### Adım 3.3: Ek Modelleri Yükle
 
 ```powershell
 # Download Qwen model family
@@ -225,9 +200,9 @@ foundry cache list
 
 ### 4. Başlangıç Projesi: 01-run-phi'yi Foundry Local için Uyarlama (5 dakika)
 
-#### Adım 4.1: Temel Sohbet Uygulaması Oluşturma
+#### Adım 4.1: Temel Sohbet Uygulaması Oluştur
 
-`samples/01-foundry-quickstart/chat_quickstart.py` dosyasını oluşturun (yönetici kullanılıyorsa güncellenmiş):
+`samples/01-foundry-quickstart/chat_quickstart.py` dosyasını oluşturun (varsa yöneticiyi kullanacak şekilde güncellendi):
 
 ```python
 #!/usr/bin/env python3
@@ -297,7 +272,7 @@ if __name__ == "__main__":
     main()
 ```
 
-#### Adım 4.2: Uygulamayı Test Etme
+#### Adım 4.2: Uygulamayı Test Et
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -310,14 +285,14 @@ python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Found
 python samples/01-foundry-quickstart/chat_quickstart.py
 ```
 
-## Kapsanan Temel Kavramlar
+## Ele Alınan Temel Kavramlar
 
 ### 1. Foundry Local Mimarisi
 
 - **Yerel Çıkarım Motoru**: Modelleri tamamen cihazınızda çalıştırır
 - **OpenAI SDK Uyumluluğu**: Mevcut OpenAI koduyla sorunsuz entegrasyon
-- **Model Yönetimi**: Birden fazla modeli verimli bir şekilde indirin, önbelleğe alın ve çalıştırın
-- **Donanım Optimizasyonu**: GPU, NPU ve CPU hızlandırmayı kullanın
+- **Model Yönetimi**: Birden fazla modeli verimli bir şekilde indirir, önbelleğe alır ve çalıştırır
+- **Donanım Optimizasyonu**: GPU, NPU ve CPU hızlandırmayı kullanır
 
 ### 2. CLI Komut Referansı
 
@@ -409,9 +384,9 @@ netstat -an | findstr 5273
 ### 1. Model Seçim Stratejisi
 
 - **Phi-4-mini**: Genel görevler için en iyisi, düşük bellek kullanımı
-- **Qwen2.5-0.5b**: En hızlı çıkarım, minimum kaynak kullanımı
+- **Qwen2.5-0.5b**: En hızlı çıkarım, minimum kaynak
 - **GPT-OSS-20B**: En yüksek kalite, daha fazla kaynak gerektirir
-- **DeepSeek-Coder**: Programlama görevleri için optimize edilmiş
+- **DeepSeek-Coder**: Programlama görevleri için optimize edilmiştir
 
 ### 2. Donanım Optimizasyonu
 
@@ -429,28 +404,29 @@ foundry config set model.preload false
 ### 3. Performansı İzleme
 
 ```powershell
+cd Workshop/samples
 # Performance & latency measurement
 # Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
 # Example:
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Re-run after enabling GPU acceleration to compare:
 foundry config set compute.onnx.enable_gpu true
-python Workshop\samples\session03\benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
-### Opsiyonel Geliştirmeler
+### Opsiyonel İyileştirmeler
 
-| Geliştirme | Ne | Nasıl |
-|------------|----|------|
-| Paylaşılan Yardımcı Araçlar | Yinelenen istemci/başlatma mantığını kaldırın | `Workshop/samples/workshop_utils.py` kullanın (`get_client`, `chat_once`) |
-| Token Kullanımı Görünürlüğü | Maliyet/verimlilik düşüncesini erken öğretin | `SHOW_USAGE=1` ayarlayın ve istem/tamamlama/toplam tokenleri yazdırın |
+| İyileştirme | Ne | Nasıl |
+|-------------|------|-----|
+| Paylaşılan Yardımcı Araçlar | Yinelenen istemci/başlatma mantığını kaldır | `Workshop/samples/workshop_utils.py` kullan (`get_client`, `chat_once`) |
+| Token Kullanımı Görünürlüğü | Maliyet/verimlilik düşüncesini erken öğretin | `SHOW_USAGE=1` ayarlayın ve istem/yanıt/toplam tokenleri yazdırın |
 | Deterministik Karşılaştırmalar | Kararlı kıyaslama ve regresyon kontrolleri | `temperature=0`, `top_p=1`, tutarlı istem metni kullanın |
-| İlk Token Gecikmesi | Algılanan yanıt verme ölçütü | Akışla kıyaslama komut dosyasını uyarlayın (`BENCH_STREAM=1`) |
-| Geçici Hatalarda Yeniden Deneme | Soğuk başlangıçta dayanıklı demolar | `RETRY_ON_FAIL=1` (varsayılan) ve `RETRY_BACKOFF` ayarlayın |
-| Duman Testi | Ana akışlar arasında hızlı doğruluk | Atölyeden önce `python Workshop/tests/smoke.py` çalıştırın |
-| Model Takma Adı Profilleri | Makineler arasında model setini hızlıca değiştirin | `.env` dosyasını `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` ile koruyun |
+| İlk Token Gecikmesi | Algılanan yanıt verme metriği | Akışla benchmark betiğini uyarlayın (`BENCH_STREAM=1`) |
+| Geçici Hatalarda Yeniden Deneme | Soğuk başlangıçta dayanıklı demolar | `RETRY_ON_FAIL=1` (varsayılan) ve `RETRY_BACKOFF`'u ayarlayın |
+| Duman Testi | Ana akışlar üzerinde hızlı kontrol | Workshop'tan önce `python Workshop/tests/smoke.py` çalıştırın |
+| Model Takma Adı Profilleri | Modelleri makineler arasında hızlıca değiştirin | `.env` dosyasını `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` ile tutun |
 | Önbellek Verimliliği | Çoklu örnek çalıştırmada tekrar eden ısınmaları önleyin | Yardımcı araçlar önbellek yöneticilerini kullanır; komut dosyaları/not defterleri arasında yeniden kullanın |
 | İlk Çalıştırma Isınması | p95 gecikme dalgalanmalarını azaltın | `FoundryLocalManager` oluşturulduktan sonra küçük bir istem gönderin |
 
@@ -463,7 +439,7 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
 ```
 
-İkinci çalıştırmada benzer çıktı ve aynı token sayısını görmelisiniz, bu deterministikliği doğrular.
+İkinci çalıştırmada benzer bir çıktı ve aynı token sayısını görmelisiniz, bu da deterministikliği doğrular.
 
 ## Sonraki Adımlar
 
@@ -472,7 +448,7 @@ Bu oturumu tamamladıktan sonra:
 1. **Oturum 2'yi Keşfedin**: Azure AI Foundry RAG ile AI çözümleri oluşturun
 2. **Farklı Modelleri Deneyin**: Qwen, DeepSeek ve diğer model ailelerini deneyin
 3. **Performansı Optimize Edin**: Donanımınıza özel ayarları ince ayar yapın
-4. **Özel Uygulamalar Oluşturun**: Foundry Local SDK'yı kendi projelerinizde kullanın
+4. **Özel Uygulamalar Geliştirin**: Foundry Local SDK'yı kendi projelerinizde kullanın
 
 ## Ek Kaynaklar
 
@@ -496,15 +472,15 @@ Bu oturumu tamamladıktan sonra:
 **Zorluk Seviyesi**: Başlangıç
 **Ön Koşullar**: Windows 11, Python 3.10+, Yönetici erişimi
 
-## Örnek Senaryo ve Atölye Eşleştirmesi
+## Örnek Senaryo ve Atölye Eşlemesi
 
-| Atölye Komut Dosyası / Not Defteri | Senaryo | Amaç | Örnek Girdi(ler) | Gerekli Veri Seti |
-|-----------------------------------|---------|------|------------------|------------------|
+| Atölye Betiği / Not Defteri | Senaryo | Amaç | Örnek Girdi(ler) | Gerekli Veri Seti |
+|----------------------------|----------|------|------------------|----------------|
 | `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Gizlilik değerlendirme portalı için cihaz üzerinde çıkarımı değerlendiren iç IT ekibi | Yerel SLM'nin standart istemlerde alt saniye gecikmeyle yanıt verdiğini kanıtlayın | "Yerel çıkarımın iki faydasını listeleyin." | Yok (tek istem) |
-| Hızlı başlangıç uyarlama kod bloğu | Mevcut bir OpenAI komut dosyasını Foundry Local'a taşıyan geliştirici | Uyumluluğu gösterin | "Yerel çıkarımın iki faydasını verin." | Sadece satır içi istem |
+| Hızlı başlangıç uyarlama kod bloğu | Mevcut bir OpenAI betiğini Foundry Local'a taşıyan geliştirici | Uyumluluğu gösterin | "Yerel çıkarımın iki faydasını verin." | Sadece satır içi istem |
 
 ### Senaryo Anlatımı
-Güvenlik ve uyumluluk ekibi, hassas prototip verilerinin yerel olarak işlenip işlenemeyeceğini doğrulamalıdır. Başlatma komut dosyasını birkaç istemle (gizlilik, gecikme, maliyet) deterministik `temperature=0` modunda çalıştırarak temel çıktıları daha sonra karşılaştırma için yakalar (Oturum 3 kıyaslama ve Oturum 4 SLM vs LLM karşılaştırması).
+Güvenlik ve uyumluluk ekibi, hassas prototip verilerinin yerel olarak işlenip işlenemeyeceğini doğrulamalıdır. Bootstrap betiğini birkaç istemle (gizlilik, gecikme, maliyet) deterministik temperature=0 modunda çalıştırarak temel çıktıları daha sonra karşılaştırma için yakalar (Oturum 3 kıyaslama ve Oturum 4 SLM vs LLM karşılaştırması).
 
 ### Minimal İstem Seti JSON (opsiyonel)
 ```json
@@ -520,4 +496,4 @@ Bu listeyi tekrarlanabilir bir değerlendirme döngüsü oluşturmak veya gelece
 ---
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan herhangi bir yanlış anlama veya yanlış yorumlama durumunda sorumluluk kabul edilmez.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çeviriler hata veya yanlışlıklar içerebilir. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.

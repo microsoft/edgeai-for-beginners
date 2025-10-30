@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-09T06:58:43+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-28T20:16:54+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ru"
 }
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -34,14 +34,14 @@ python chat_bootstrap.py "What is edge AI?"
 
 | Сессия | Образец | Назначение | Время |
 |--------|---------|------------|-------|
-| 01 | `chat_bootstrap.py` | Базовый чат + потоковая передача | ~30 сек |
-| 02 | `rag_pipeline.py` | RAG с эмбеддингами | ~45 сек |
-| 02 | `rag_eval_ragas.py` | Оценка RAG | ~60 сек |
-| 03 | `benchmark_oss_models.py` | Бенчмаркинг моделей | ~2 мин |
-| 04 | `model_compare.py` | SLM vs LLM | ~45 сек |
-| 05 | `agents_orchestrator.py` | Система с несколькими агентами | ~60 сек |
-| 06 | `models_router.py` | Маршрутизация намерений | ~45 сек |
-| 06 | `models_pipeline.py` | Многошаговый конвейер | ~60 сек |
+| 01 | `chat_bootstrap.py` | Базовый чат + потоковая передача | ~30с |
+| 02 | `rag_pipeline.py` | RAG с эмбеддингами | ~45с |
+| 02 | `rag_eval_ragas.py` | Оценка RAG | ~60с |
+| 03 | `benchmark_oss_models.py` | Сравнение моделей | ~2м |
+| 04 | `model_compare.py` | SLM vs LLM | ~45с |
+| 05 | `agents_orchestrator.py` | Система с несколькими агентами | ~60с |
+| 06 | `models_router.py` | Маршрутизация намерений | ~45с |
+| 06 | `models_pipeline.py` | Многошаговый конвейер | ~60с |
 
 ---
 
@@ -210,7 +210,7 @@ for chunk in stream:
 - **Документация SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Краткая справка**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 - **Сводка обновлений**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Заметки по миграции**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Примечания по миграции**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -219,7 +219,7 @@ for chunk in stream:
 1. **Кэшируйте клиентов**: `workshop_utils` делает это за вас
 2. **Используйте меньшие модели**: Начните с `qwen2.5-0.5b` для тестирования
 3. **Включите статистику использования**: Установите `SHOW_USAGE=1` для отслеживания токенов
-4. **Обрабатывайте данные пакетами**: Обрабатывайте несколько запросов последовательно
+4. **Пакетная обработка**: Обрабатывайте несколько запросов последовательно
 5. **Уменьшите max_tokens**: Снижает задержку для быстрых ответов
 
 ---
@@ -232,35 +232,33 @@ python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### Бенчмаркинг моделей
+### Сравнение моделей
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG-конвейер
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Система с несколькими агентами
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Быстрая помощь**: Запустите любой образец с `--help` или ознакомьтесь с docstring:
+**Быстрая помощь**: Запустите любой образец с `--help` из директории `samples` или ознакомьтесь с docstring:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Отказ от ответственности**:  
-Этот документ был переведен с использованием сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия обеспечить точность, автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его родном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется профессиональный перевод человеком. Мы не несем ответственности за любые недоразумения или неправильные интерпретации, возникшие в результате использования данного перевода.
+Этот документ был переведен с использованием сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия обеспечить точность, автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его родном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется профессиональный перевод человеком. Мы не несем ответственности за любые недоразумения или неправильные интерпретации, возникающие в результате использования данного перевода.

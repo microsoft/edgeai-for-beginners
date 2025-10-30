@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a887b7e85782dadd3fd1216cd63b6c23",
-  "translation_date": "2025-10-11T12:00:27+00:00",
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-10-29T00:01:11+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "et"
 }
@@ -24,8 +24,8 @@ foundry model run phi-4-mini
 pip install -r Workshop/requirements.txt
 
 # 3. Run a sample
-cd Workshop/samples/session01
-python chat_bootstrap.py "What is edge AI?"
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
 ---
@@ -35,7 +35,7 @@ python chat_bootstrap.py "What is edge AI?"
 | Sessioon | Näidis | Eesmärk | Aeg |
 |----------|--------|---------|-----|
 | 01 | `chat_bootstrap.py` | Põhiline vestlus + voogedastus | ~30s |
-| 02 | `rag_pipeline.py` | RAG koos sisukoodidega | ~45s |
+| 02 | `rag_pipeline.py` | RAG koos sisenditega | ~45s |
 | 02 | `rag_eval_ragas.py` | RAG hindamine | ~60s |
 | 03 | `benchmark_oss_models.py` | Mudelite võrdlus | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Sessioonipõhised
+### Sessioonispetsiifilised
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -199,7 +199,7 @@ for chunk in stream:
 | `qwen2.5-0.5b` | 0.5B | Kiire klassifikatsioon | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Kiire koodi genereerimine | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Loov kirjutamine | ⚡⚡ |
-| `phi-3.5-mini` | 3.5B | Kood, refaktorimine | ⚡⚡ |
+| `phi-3.5-mini` | 3.5B | Kood, refaktoreerimine | ⚡⚡ |
 | `phi-4-mini` | 4B | Üldine, kokkuvõtted | ⚡⚡ |
 | `qwen2.5-7b` | 7B | Keeruline arutlemine | ⚡ |
 
@@ -216,8 +216,8 @@ for chunk in stream:
 
 ## 💡 Näpunäited
 
-1. **Vahemälu kliendid**: `workshop_utils` teeb seda teie eest
-2. **Kasuta väiksemaid mudeleid**: Alusta testimiseks `qwen2.5-0.5b` mudeliga
+1. **Vahemälu kliendid**: `workshop_utils` haldab vahemälu sinu eest
+2. **Kasuta väiksemaid mudeleid**: Alusta testimist `qwen2.5-0.5b` mudeliga
 3. **Luba kasutusstatistika**: Määra `SHOW_USAGE=1`, et jälgida tokenite kasutust
 4. **Partii töötlemine**: Töötle mitu sisendit järjestikku
 5. **Vähenda max_tokens väärtust**: Vähendab latentsust kiirete vastuste jaoks
@@ -234,33 +234,31 @@ python scripts/test_samples.py --quick
 
 ### Võrdle Modelle
 ```bash
-cd samples/session03
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,gemma-2-2b
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=3
-python benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 ```
 
 ### RAG Torustik
 ```bash
-cd samples/session02
+cd samples
 set RAG_QUESTION="What is RAG?"
-python rag_pipeline.py
+python -m session02.rag_pipeline
 ```
 
 ### Mitme Agendi Süsteem
 ```bash
-cd samples/session05
+cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
-python agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 ---
 
-**Kiire Abi**: Käivita ükskõik milline näidis `--help` käsuga või vaata docstring'i:
+**Kiire Abi**: Käivita ükskõik milline näidis `--help` käsuga `samples` kataloogist või vaata docstring'i:
 ```bash
-python chat_bootstrap.py --help
-# or
-python -c "import chat_bootstrap; help(chat_bootstrap)"
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
@@ -270,4 +268,4 @@ python -c "import chat_bootstrap; help(chat_bootstrap)"
 ---
 
 **Lahtiütlus**:  
-See dokument on tõlgitud, kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi püüame tagada täpsust, palun arvestage, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks lugeda autoriteetseks allikaks. Olulise teabe puhul on soovitatav kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valede tõlgenduste eest.
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tekkida selle tõlke kasutamise tõttu.

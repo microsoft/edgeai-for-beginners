@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aee170a832b8870fc6eea546aa544bdb",
-  "translation_date": "2025-10-09T21:15:11+00:00",
+  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+  "translation_date": "2025-10-28T23:46:48+00:00",
   "source_file": "Workshop/Session05-AIPoweredAgents.md",
   "language_code": "lt"
 }
 -->
-# 5 sesija: Greitas AI valdomų agentų kūrimas su Foundry Local
+# Sesija 5: Greitai kurkite AI valdomus agentus su Foundry Local
 
 ## Santrauka
 
-Kurkite ir koordinuokite daugelio vaidmenų AI agentus, naudodami Foundry Local mažo delsos ir privatumo užtikrinimo vykdymo aplinką. Apibrėšite agentų vaidmenis, atminties strategijas, įrankių iškvietimo modelius ir vykdymo grafikus. Sesijoje bus pristatyti šablonai, kuriuos galėsite išplėsti naudodami Chainlit arba LangGraph. Pradinis projektas išplečia esamą agentų architektūros pavyzdį, pridedant atminties išsaugojimą ir vertinimo kabliukus.
+Sukurkite ir koordinuokite daugelio vaidmenų AI agentus, naudodami Foundry Local mažo delsos ir privatumo išsaugojimo vykdymo aplinką. Apibrėžkite agentų vaidmenis, atminties strategijas, įrankių naudojimo modelius ir vykdymo grafikus. Sesijoje pristatomi karkaso modeliai, kuriuos galima plėsti naudojant Chainlit arba LangGraph. Pradinis projektas praplečia esamą agentų architektūros pavyzdį, pridedant atminties išsaugojimą ir vertinimo kabliukus.
 
 ## Mokymosi tikslai
 
 - **Apibrėžti vaidmenis**: Sistemos raginimai ir galimybių ribos
-- **Įgyvendinti atmintį**: Trumpalaikė (pokalbių), ilgalaikė (vektorinė / failų), laikina atmintis
-- **Sukurti darbo eigas**: Sekos, šakotieji ir lygiagretūs agentų žingsniai
-- **Integruoti įrankius**: Lengvas funkcijų įrankių iškvietimo modelis
-- **Įvertinti**: Pagrindinis sekimo ir rezultatų vertinimas pagal rubriką
+- **Įgyvendinti atmintį**: Trumpalaikė (pokalbis), ilgalaikė (vektoriai / failai), laikina užrašų knygelė
+- **Karkaso kūrimas**: Nuoseklūs, šakoti ir lygiagretūs agentų žingsniai
+- **Integruoti įrankius**: Lengvas funkcijų įrankių kvietimo modelis
+- **Vertinti**: Pagrindinis sekimas + vertinimas pagal rubriką
 
 ## Būtinos sąlygos
 
 - Užbaigtos 1–4 sesijos
-- Python su `foundry-local-sdk`, `openai`, pasirinktinai `chainlit`
-- Vietiniai modeliai (bent jau `phi-4-mini`)
+- Python su `foundry-local-sdk`, `openai`, neprivaloma `chainlit`
+- Vietiniai modeliai veikia (bent jau `phi-4-mini`)
 
 ### Kryžminės platformos aplinkos fragmentas
 
@@ -53,7 +53,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Demonstracijos eiga (30 min)
 
-### 1. Apibrėžkite agentų vaidmenis ir atmintį (7 min)
+### 1. Apibrėžti agentų vaidmenis ir atmintį (7 min)
 
 Sukurkite `samples/05-agents/agents_core.py`:
 
@@ -122,16 +122,16 @@ if __name__ == "__main__":
 ```
 
 
-### 2. CLI šablono modelis (3 min)
+### 2. CLI karkaso modelis (3 min)
 
 ```powershell
 python samples/05-agents/agents_core.py
 ```
 
 
-### 3. Pridėkite įrankių iškvietimą (7 min)
+### 3. Pridėti įrankių naudojimą (7 min)
 
-Pratęskite su `samples/05-agents/tools.py`:
+Pridėkite `samples/05-agents/tools.py`:
 
 ```python
 from datetime import datetime
@@ -150,9 +150,9 @@ TOOLS = {
 }
 ```
 
-Pakeiskite `agents_core.py`, kad būtų leidžiama paprasta įrankių sintaksė: vartotojas rašo `#tool:get_time`, o agentas prieš generavimą įtraukia įrankio išvestį į kontekstą.
+Pakeiskite `agents_core.py`, kad būtų galima naudoti paprastą įrankių sintaksę: vartotojas rašo `#tool:get_time`, o agentas įtraukia įrankio rezultatą į kontekstą prieš generavimą.
 
-### 4. Koordinuota darbo eiga (6 min)
+### 4. Koordinuotas darbo procesas (6 min)
 
 Sukurkite `samples/05-agents/orchestrator.py`:
 
@@ -185,33 +185,33 @@ if __name__ == '__main__':
 ```
 
 
-### 5. Pradinis projektas: Išplėskite `05-agent-architecture` (7 min)
+### 5. Pradinis projektas: Praplėsti `05-agent-architecture` (7 min)
 
-Pridėkite:
-1. Nuolatinės atminties sluoksnį (pvz., JSON linijų pokalbių priedą)
-2. Paprastą vertinimo rubriką: faktualumo / aiškumo / stiliaus vietos laikiklius
-3. Pasirenkamą Chainlit sąsają (dvi kortelės: pokalbis ir sekimas)
-4. Pasirenkamą LangGraph stiliaus būsenos mašiną (jei pridedama priklausomybė) šakotų sprendimų priėmimui
+Pridėti:
+1. Nuolatinės atminties sluoksnį (pvz., JSON linijų pokalbių papildymą)
+2. Paprastą vertinimo rubriką: faktualumo / aiškumo / stiliaus vietos rezervavimo ženklus
+3. Neprivalomą Chainlit sąsają (du skirtukai: pokalbis ir sekimas)
+4. Neprivalomą LangGraph stiliaus būsenos mašiną (jei pridedama priklausomybė) šakotų sprendimų priėmimui
 
-## Patikrinimo sąrašas
+## Patikros sąrašas
 
 ```powershell
 foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-Tikėkitės struktūrizuotos dujotiekio išvesties su įrankių įterpimo pastaba.
+Tikėtis struktūrizuoto proceso išvesties su įrankių įtraukimo pastaba.
 
 ## Atminties strategijų apžvalga
 
-| Sluoksnis | Tikslas | Pavyzdys |
-|-----------|---------|----------|
+| Sluoksnis | Paskirtis | Pavyzdys |
+|-----------|-----------|----------|
 | Trumpalaikė | Pokalbio tęstinumas | Paskutinės N žinutės |
 | Epizodinė | Sesijos prisiminimas | JSON kiekvienai sesijai |
-| Semantinė | Ilgalaikis atgaminimas | Santraukų vektorinė saugykla |
-| Laikina atmintis | Mąstymo žingsniai | Vidinė mąstymo grandinė (privati) |
+| Semantinė | Ilgalaikis atminties išsaugojimas | Santraukų vektorinė saugykla |
+| Užrašų knygelė | Mąstymo žingsniai | Vidinė mąstymo grandinė (privati) |
 
-## Vertinimo kabliukai (koncepcija)
+## Vertinimo kabliukai (konceptualūs)
 
 ```python
 evaluation = {
@@ -227,15 +227,15 @@ evaluation = {
 ## Trikčių šalinimas
 
 | Problema | Priežastis | Sprendimas |
-|----------|------------|------------|
-| Pasikartojantys atsakymai | Per didelis / mažas konteksto langas | Sureguliuokite atminties lango parametrą |
-| Įrankis neiškviečiamas | Neteisinga sintaksė | Naudokite `#tool:tool_name` formatą |
-| Lėta koordinacija | Keli šaltieji modeliai | Iš anksto paleiskite šildymo raginimus |
+|----------|-----------|-----------|
+| Pasikartojantys atsakymai | Konteksto langas per didelis / mažas | Koreguokite atminties lango parametrą |
+| Įrankis neįvykdytas | Neteisinga sintaksė | Naudokite `#tool:tool_name` formatą |
+| Lėta koordinacija | Daug šaltų modelių | Iš anksto paleiskite šildymo raginimus |
 
 ## Nuorodos
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- LangGraph (pasirenkama koncepcija): https://github.com/langchain-ai/langgraph
+- LangGraph (neprivalomas konceptas): https://github.com/langchain-ai/langgraph
 - Chainlit: https://docs.chainlit.io
 
 ---
@@ -247,21 +247,22 @@ evaluation = {
 
 | Dirbtuvių scenarijus | Situacija | Tikslas | Pavyzdinis raginimas |
 |-----------------------|-----------|---------|----------------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Žinių tyrimų botas, kuriantis vadovams pritaikytas santraukas | Dviejų agentų dujotiekis (tyrimas → redakcinis tobulinimas) su pasirenkamais skirtingais modeliais | Paaiškinkite, kodėl kraštinis įžvalgos apdorojimas svarbus atitikties užtikrinimui. |
-| (Išplėstas) `tools.py` konceptas | Pridėkite laiko ir žetonų skaičiavimo įrankius | Pademonstruokite lengvą įrankių iškvietimo modelį | #tool:get_time |
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Žinių tyrimo robotas, kuriantis vadovams pritaikytas santraukas | Dviejų agentų procesas (tyrimas → redakcinis tobulinimas) su neprivalomais skirtingais modeliais | Paaiškinkite, kodėl kraštinis įžvalgos procesas yra svarbus atitikties užtikrinimui. |
+| (Praplėstas) `tools.py` konceptas | Pridėti laiko ir žetonų skaičiavimo įrankius | Pademonstruoti lengvą įrankių naudojimo modelį | #tool:get_time |
 
 ### Situacijos pasakojimas
-Atitikties dokumentacijos komanda reikalauja greitų vidinių santraukų, gautų iš vietinių žinių, nesiunčiant juodraščių į debesų paslaugas. Tyrimų agentas surenka glaustus faktinius punktus; redaktoriaus agentas perrašo juos, kad būtų aiškiau vadovams. Gali būti priskirti skirtingi modelių pavadinimai, siekiant optimizuoti delsą (greitas SLM) ir stilistinį tobulinimą (didesnis modelis tik prireikus).
+Atitikties dokumentacijos komanda reikalauja greitų vidinių santraukų, surinktų iš vietinių žinių, neskelbiant juodraščių į debesų paslaugas. Tyrimo agentas surenka glaustus faktinius punktus; redaktorius agentas perrašo juos, kad būtų aiškūs vadovams. Skirtingi modelių aliasai gali būti priskirti, siekiant optimizuoti delsą (greitas SLM) ir stilistinį tobulinimą (didesnis modelis tik tada, kai reikia).
 
-### Pavyzdinė kelių modelių aplinka
+### Pavyzdinė daugelio modelių aplinka
 ```powershell
+cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=gpt-oss-20b
-python Workshop\samples\session05\agents_orchestrator.py
+python -m session05.agents_orchestrator
 ```
 
 
-### Sekimo struktūra (pasirenkama)
+### Sekimo struktūra (neprivaloma)
 ```json
 {
     "step": 1,
@@ -273,22 +274,22 @@ python Workshop\samples\session05\agents_orchestrator.py
 }
 ```
 
-Išsaugokite kiekvieną žingsnį JSONL faile, kad vėliau galėtumėte vertinti pagal rubriką.
+Išsaugokite kiekvieną žingsnį JSONL faile vėlesniam vertinimui pagal rubriką.
 
-### Pasirenkami patobulinimai
+### Neprivalomi patobulinimai
 
-| Tema | Patobulinimas | Nauda | Įgyvendinimo eskizas |
-|------|---------------|-------|-----------------------|
-| Kelių modelių vaidmenys | Skirtingi modeliai kiekvienam agentui (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specializacija ir greitis | Pasirinkite aplinkos kintamuosius, iškvieskite `chat_once` su kiekvieno vaidmens pavadinimu |
-| Struktūrizuotas sekimas | JSON sekimas kiekvienam veiksmui (įrankis, įvestis, delsimas, žetonai) | Derinimas ir vertinimas | Pridėkite žodyną į sąrašą; rašykite `.jsonl` failą pabaigoje |
-| Atminties išsaugojimas | Perkraunamas pokalbio kontekstas | Sesijos tęstinumas | Išsaugokite `Agent.memory` į `sessions/<ts>.json` |
-| Įrankių registras | Dinaminis įrankių aptikimas | Išplėstinumą | Tvarkykite `TOOLS` žodyną ir tikrinkite pavadinimus / aprašymus |
-| Pakartojimas ir atidėjimas | Patikimos ilgos grandinės | Sumažinkite laikinus gedimus | Apgaubkite `act` su try/except + eksponentiniu atidėjimu |
-| Rubrikos vertinimas | Automatiniai kokybiniai įvertinimai | Stebėkite patobulinimus | Antrinis modelio raginimas: "Įvertinkite aiškumą 1-5" |
-| Vektorinė atmintis | Semantinis atgaminimas | Turtingas ilgalaikis kontekstas | Įterpkite santraukas, atgaukite top-k į sisteminę žinutę |
-| Srautinis atsakymas | Greitesnis suvokiamas atsakas | Vartotojo patirties gerinimas | Naudokite srautą, kai tik jis bus prieinamas, ir išvalykite dalinius žetonus |
-| Determinuoti testai | Regresijos kontrolė | Stabilus CI | Paleiskite su `temperature=0`, fiksuotais raginimo sėklomis |
-| Lygiagretus šakojimasis | Greitesnė analizė | Pralaidumas | Naudokite `concurrent.futures` nepriklausomiems agentų žingsniams |
+| Tema | Patobulinimas | Privalumas | Įgyvendinimo eskizas |
+|------|--------------|------------|-----------------------|
+| Daugelio modelių vaidmenys | Skirtingi modeliai kiekvienam agentui (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specializacija ir greitis | Pasirinkite alias aplinkos kintamuosius, kvieskite `chat_once` su kiekvieno vaidmens alias |
+| Struktūrizuotas sekimas | JSON sekimas kiekvienam veiksmui (įrankis, įvestis, delsos laikas, žetonai) | Derinimas ir vertinimas | Pridėkite žodyną į sąrašą; rašykite `.jsonl` pabaigoje |
+| Atminties išsaugojimas | Pakartotinai įkeliama pokalbio aplinka | Sesijos tęstinumas | Išsaugokite `Agent.memory` į `sessions/<ts>.json` |
+| Įrankių registras | Dinaminis įrankių aptikimas | Išplėstumas | Tvarkykite `TOOLS` žodyną ir tikrinkite pavadinimus/aprašymus |
+| Pakartojimas ir atidėjimas | Patikimos ilgos grandinės | Sumažinti laikinas klaidas | Apgaubkite `act` su try/except + eksponentiniu atidėjimu |
+| Vertinimo rubrika | Automatiniai kokybiniai žymėjimai | Stebėti patobulinimus | Antrinis modelio raginimas: "Įvertinkite aiškumą 1-5" |
+| Vektorinė atmintis | Semantinis prisiminimas | Turtingas ilgalaikis kontekstas | Įterpkite santraukas, ištraukite top-k į sistemos pranešimą |
+| Srautiniai atsakymai | Greitesnis suvokiamas atsakas | UX patobulinimas | Naudokite srautą, kai jis pasiekiamas, ir išvalykite dalinius žetonus |
+| Deterministiniai testai | Regresijos kontrolė | Stabilus CI | Vykdykite su `temperature=0`, fiksuotais raginimo sėklomis |
+| Lygiagretus šakojimas | Greitesnė analizė | Našumas | Naudokite `concurrent.futures` nepriklausomiems agentų žingsniams |
 
 #### Sekimo įrašo pavyzdys
 
@@ -310,9 +311,9 @@ score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-Išsaugokite (`atsakymas`, `įvertinimas`) poras, kad sukurtumėte istorinio kokybės grafiko.
+Išsaugokite (`answer`, `rating`) poras, kad sukurtumėte istorinių kokybės grafiką.
 
 ---
 
-**Atsakomybės atsisakymas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus interpretavimus, atsiradusius naudojant šį vertimą.
+**Atsakomybės apribojimas**:  
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, atsiradusius naudojant šį vertimą.

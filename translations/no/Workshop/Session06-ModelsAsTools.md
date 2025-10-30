@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94b65d49961cabc07f76062d09a5d09c",
-  "translation_date": "2025-10-09T14:40:59+00:00",
+  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+  "translation_date": "2025-10-28T22:15:20+00:00",
   "source_file": "Workshop/Session06-ModelsAsTools.md",
   "language_code": "no"
 }
@@ -11,22 +11,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Sammendrag
 
-Behandle modeller som sammensatte verktøy i et lokalt AI-operativlag. Denne sesjonen viser hvordan man kan kjede flere spesialiserte SLM/LLM-kall, selektivt rute oppgaver, og eksponere en samlet SDK-overflate til applikasjoner. Du vil bygge en lettvekts modellruter + oppgaveplanlegger, integrere den i et appskript, og skissere veien til Azure AI Foundry for produksjonsarbeidsmengder.
+Behandle modeller som sammensatte verktøy innenfor et lokalt AI-operativlag. Denne sesjonen viser hvordan man kan kjede flere spesialiserte SLM/LLM-kall, selektivt rute oppgaver, og eksponere en enhetlig SDK-overflate til applikasjoner. Du vil bygge en lettvekts modellruter + oppgaveplanlegger, integrere den i et appskript, og skissere skaleringsveien til Azure AI Foundry for produksjonsarbeidsbelastninger.
 
 ## Læringsmål
 
-- **Konseptualisere** modeller som atomiske verktøy med deklarerte kapabiliteter
-- **Rute** forespørsler basert på intensjon / heuristisk scoring
-- **Kjede** utdata over oppgaver i flere steg (dekomponere → løse → forbedre)
-- **Integrere** en samlet klient-API for nedstrøms applikasjoner
+- **Konseptualisere** modeller som atomære verktøy med deklarerte kapabiliteter
+- **Rute** forespørsler basert på intensjon / heuristisk vurdering
+- **Kjede** utdata på tvers av oppgaver i flere steg (dekomponere → løse → forbedre)
+- **Integrere** en enhetlig klient-API for nedstrøms applikasjoner
 - **Skalere** design til skyen (samme OpenAI-kompatible kontrakt)
 
 ## Forutsetninger
 
 - Sesjoner 1–5 fullført
-- Flere lokale modeller lagret (f.eks. `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- Flere lokale modeller lagret (f.eks., `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
-### Tverrplattform Miljøsnutt
+### Tverrplattform Miljøutdrag
 
 Windows PowerShell:
 ```powershell
@@ -44,7 +44,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Fjern-/VM-tilgang fra macOS:
+Fjern-/VM-tjenestetilgang fra macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -133,7 +133,7 @@ if __name__ == "__main__":
 ```
 
 
-### 3. Oppgavekjeding i Flere Steg (7 min)
+### 3. Kjeding av Oppgaver i Flere Steg (7 min)
 
 Opprett `samples/06-tools/pipeline.py`:
 
@@ -179,10 +179,10 @@ if __name__ == '__main__':
 ### 4. Startprosjekt: Tilpass `06-models-as-tools` (5 min)
 
 Forbedringer:
-- Legg til støtte for strømming av tokens (progressiv UI-oppdatering)
-- Legg til selvtillitsvurdering: leksikalsk overlapp eller prompt-rubrik
+- Legg til støtte for streaming av tokens (progressiv UI-oppdatering)
+- Legg til tillitsscore: leksikalsk overlapp eller prompt-rubrik
 - Eksporter sporings-JSON (intensjon → modell → ventetid → tokenbruk)
-- Implementer cache-gjenbruk for gjentatte delsteg
+- Implementer gjenbruk av cache for gjentatte delsteg
 
 ### 5. Skaleringsvei til Azure (5 min)
 
@@ -190,8 +190,8 @@ Forbedringer:
 |-----|------------------|--------------------------|--------------------|
 | Ruting | Heuristisk Python | Holdbar mikrotjeneste | Containeriser & deploy API |
 | Modeller | SLMs lagret | Administrerte distribusjoner | Kartlegg lokale navn til distribusjons-IDer |
-| Observabilitet | CLI-statistikk/manuell | Sentral logging & metrikk | Legg til strukturerte sporingshendelser |
-| Sikkerhet | Kun lokal vert | Azure-autentisering / nettverk | Introduser nøkkelhvelv for hemmeligheter |
+| Observabilitet | CLI-statistikk/manuell | Sentral logging & metrikker | Legg til strukturerte sporingshendelser |
+| Sikkerhet | Kun lokal vert | Azure-autentisering / nettverk | Introduksjon av nøkkelhvelv for hemmeligheter |
 | Kostnad | Enhetsressurs | Forbruksfakturering | Legg til budsjettkontroller |
 
 ## Valideringssjekkliste
@@ -211,28 +211,28 @@ Forvent intensjonsbasert modellvalg og endelig forbedret utdata.
 |---------|-------|---------|
 | Alle oppgaver rutet til samme modell | Svake regler | Berik INTENT_RULES regex-sett |
 | Pipeline feiler midt i et steg | Manglende modell lastet | Kjør `foundry model run <model>` |
-| Lav sammenheng i utdata | Ingen forbedringsfase | Legg til oppsummerings-/valideringspass |
+| Lav utdata-sammenheng | Ingen forbedringsfase | Legg til oppsummerings-/valideringspass |
 
 ## Referanser
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Azure AI Foundry Docs: https://learn.microsoft.com/azure/ai-foundry
-- Promptkvalitetsmønstre: Se Sesjon 2
+- Prompt Kvalitetsmønstre: Se Sesjon 2
 
 ---
 
-**Varighet på sesjon**: 30 min  
+**Sesjonsvarighet**: 30 min  
 **Vanskelighetsgrad**: Ekspert
 
-## Eksempelscenario & Workshopkartlegging
+## Eksempelscenario & Workshop Kartlegging
 
-| Workshop-skript / Notebooks | Scenario | Mål | Datasett / Katalogkilde |
+| Workshop Skript / Notebooks | Scenario | Mål | Datasett / Katalogkilde |
 |-----------------------------|----------|-----|--------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Utviklerassistent som håndterer blandede intensjonsforespørsler (refaktorere, oppsummere, klassifisere) | Heuristisk intensjon → modellaliasruting med tokenbruk | Inline `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planlegging i flere steg & forbedring for kompleks kodeassistanseoppgave | Dekomponere → spesialisert utførelse → oppsummeringsforbedringssteg | Samme `CATALOG`; steg avledet fra planutdata |
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Utviklerassistent som håndterer blandede intensjonsforespørsler (refaktorere, oppsummere, klassifisere) | Heuristisk intensjon → modellalias-ruting med tokenbruk | Inline `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Planlegging i flere steg & forbedring for kompleks oppgave med kodeassistanse | Dekomponere → spesialisert utførelse → oppsummeringsforbedringssteg | Samme `CATALOG`; steg avledet fra planutdata |
 
 ### Scenariofortelling
-Et verktøy for ingeniørproduktivitet mottar heterogene oppgaver: refaktorere kode, oppsummere arkitektoniske notater, klassifisere tilbakemeldinger. For å minimere ventetid og ressursbruk planlegger og oppsummerer en liten generell modell, en kode-spesialisert modell håndterer refaktorering, og en lettvekts klassifiseringsmodell merker tilbakemeldinger. Pipeline-skriptet demonstrerer kjeding + forbedring; router-skriptet isolerer adaptiv enkel-prompt-ruting.
+Et verktøy for ingeniørproduktivitet mottar heterogene oppgaver: refaktorere kode, oppsummere arkitektoniske notater, klassifisere tilbakemeldinger. For å minimere ventetid & ressursbruk, planlegger og oppsummerer en liten generell modell, en kode-spesialisert modell håndterer refaktorering, og en lettvekts klassifiseringsmodell merker tilbakemeldinger. Pipeline-skriptet demonstrerer kjeding + forbedring; router-skriptet isolerer adaptiv enkel-prompt-ruting.
 
 ### Katalogoversikt
 ```python
@@ -244,7 +244,7 @@ CATALOG = {
 ```
 
 
-### Eksempeltestprompter
+### Eksempel Testprompter
 ```json
 [
     "Refactor this Python function for readability",
@@ -269,21 +269,21 @@ trace.append({
 
 
 ### Eskaleringsheuristikk (Ide)
-Hvis planen inneholder nøkkelord som "optimalisere", "sikkerhet", eller steglengde > 280 tegn → eskaler til større modell (f.eks. `gpt-oss-20b`) kun for det steget.
+Hvis planen inneholder nøkkelord som "optimalisere", "sikkerhet", eller steglengde > 280 tegn → eskaler til større modell (f.eks., `gpt-oss-20b`) kun for det steget.
 
 ### Valgfrie Forbedringer
 
 | Område | Forbedring | Verdi | Hint |
 |--------|------------|-------|------|
 | Caching | Gjenbruk manager + klientobjekter | Lavere ventetid, mindre overhead | Bruk `workshop_utils.get_client` |
-| Bruksmetrikk | Fang tokens & ventetid per steg | Profilering & optimalisering | Tid hver rutet kall; lagre i sporingsliste |
-| Adaptiv Ruting | Selvtillit / kostnadsbevisst | Bedre kvalitet-kostnad-avveining | Legg til scoring: hvis prompt > N tegn eller regex matcher domene → eskaler til større modell |
-| Dynamisk Kapasitetsregister | Hot reload katalog | Ingen omstart / ny distribusjon | Last `catalog.json` ved runtime; overvåk filens tidsstempel |
-| Fallback-strategi | Robusthet ved feil | Høyere tilgjengelighet | Prøv primær → ved unntak fallback-alias |
-| Strømmingspipeline | Tidlig tilbakemelding | Forbedret brukeropplevelse | Strøm hvert steg og buffer endelig forbedringsinput |
-| Vektorintensjonsinnbedding | Mer nyansert ruting | Høyere intensjonsnøyaktighet | Embed prompt, cluster & kartlegg sentrum → kapasitet |
-| Sporingsutdata | Auditerbar kjede | Samsvar/rapportering | Emit JSON-linjer: steg, intensjon, modell, ventetid_ms, tokens |
-| Kostnadssimulering | Estimering før skyen | Budsjettplanlegging | Tildel notional kostnad/token per modell & aggreger per oppgave |
+| Bruksmetrikker | Fang tokens & ventetid per steg | Profilering & optimalisering | Tid hver rutet kall; lagre i sporingsliste |
+| Adaptiv Ruting | Tillit / kostnadsbevisst | Bedre kvalitet-kostnadsforhold | Legg til scoring: hvis prompt > N tegn eller regex matcher domene → eskaler til større modell |
+| Dynamisk Kapabilitetsregister | Hot reload katalog | Ingen omstart eller ny distribusjon | Last `catalog.json` ved runtime; overvåk filens tidsstempel |
+| Fallback Strategi | Robusthet ved feil | Høyere tilgjengelighet | Prøv primær → ved unntak fallback-alias |
+| Streaming Pipeline | Tidlig tilbakemelding | Forbedret brukeropplevelse | Stream hvert steg og buffer endelig forbedringsinput |
+| Vektorintensjons-embedding | Mer nyansert ruting | Høyere intensjonsnøyaktighet | Embed prompt, cluster & map centroid → kapabilitet |
+| Sporingsutdrag | Auditerbar kjede | Samsvar/rapportering | Emit JSON-linjer: steg, intensjon, modell, ventetid_ms, tokens |
+| Kostnadssimulering | Estimering før skyen | Budsjettplanlegging | Tildel nominell kostnad/token per modell & aggreger per oppgave |
 | Deterministisk Modus | Repro-reproduserbarhet | Stabil benchmarking | Miljø: `temperature=0`, fast antall steg |
 
 #### Eksempel på Sporingsstruktur
@@ -308,7 +308,7 @@ if len(prompt) > 280 or 'compliance' in prompt.lower():
 ```
 
 
-#### Hot Reload av Modellkatalog
+#### Modellkatalog Hot Reload
 
 ```python
 import json, time, os
@@ -323,10 +323,7 @@ def get_catalog():
     return CATALOG
 ```
 
-
-Iterer gradvis—unngå overengineering av tidlige prototyper.
-
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

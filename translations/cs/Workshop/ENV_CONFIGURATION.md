@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd4a5b9ec82d35599b0abc9af89e7c9e",
-  "translation_date": "2025-10-09T21:11:25+00:00",
+  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
+  "translation_date": "2025-10-28T22:59:53+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "cs"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Přehled
 
-Ukázky Workshopu používají pro konfiguraci proměnné prostředí, které jsou centralizovány v souboru `.env` v kořenovém adresáři repozitáře. To umožňuje snadné přizpůsobení bez nutnosti upravovat kód.
+Ukázky Workshopu používají pro konfiguraci proměnné prostředí, které jsou centralizovány v souboru `.env` v kořenovém adresáři repozitáře. To umožňuje snadné přizpůsobení bez úprav kódu.
 
 ## Rychlý start
 
@@ -30,9 +30,9 @@ foundry model run phi-4-mini
 
 ### 2. Konfigurace prostředí
 
-Soubor `.env` je již nakonfigurován s rozumnými výchozími hodnotami. Většina uživatelů nebude muset nic měnit.
+Soubor `.env` je již nastaven s rozumnými výchozími hodnotami. Většina uživatelů nebude muset nic měnit.
 
-**Volitelné**: Zkontrolujte a upravte nastavení:
+**Volitelné**: Zkontrolujte a přizpůsobte nastavení:
 ```bash
 # Edit .env file
 notepad .env  # Windows
@@ -43,8 +43,8 @@ nano .env     # macOS/Linux
 
 **Pro Python skripty:**
 ```bash
-cd Workshop/samples/session01
-python chat_bootstrap.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
@@ -84,14 +84,14 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | Proměnná | Výchozí hodnota | Účel |
 |----------|-----------------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Model pro vkládání |
-| `RAG_QUESTION` | Předkonfigurováno | Testovací otázka |
+| `RAG_QUESTION` | Přednastaveno | Testovací otázka |
 
 #### Relace 03: Benchmarking
 | Proměnná | Výchozí hodnota | Účel |
 |----------|-----------------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b,gemma-2-2b` | Modely pro benchmarking |
-| `BENCH_ROUNDS` | `3` | Iterace na model |
-| `BENCH_PROMPT` | Předkonfigurováno | Testovací prompt |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modely pro benchmarking |
+| `BENCH_ROUNDS` | `3` | Počet iterací na model |
+| `BENCH_PROMPT` | Přednastaveno | Testovací prompt |
 | `BENCH_STREAM` | `0` | Měření latence prvního tokenu |
 
 #### Relace 04: Porovnání modelů
@@ -99,7 +99,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |----------|-----------------|------|
 | `SLM_ALIAS` | `phi-4-mini` | Malý jazykový model |
 | `LLM_ALIAS` | `qwen2.5-7b` | Velký jazykový model |
-| `COMPARE_PROMPT` | Předkonfigurováno | Prompt pro porovnání |
+| `COMPARE_PROMPT` | Přednastaveno | Prompt pro porovnání |
 | `COMPARE_RETRIES` | `2` | Počet pokusů o opakování |
 
 #### Relace 05: Orchestrace více agentů
@@ -107,14 +107,14 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |----------|-----------------|------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Model výzkumného agenta |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Model editačního agenta |
-| `AGENT_QUESTION` | Předkonfigurováno | Testovací otázka |
+| `AGENT_QUESTION` | Přednastaveno | Testovací otázka |
 
 ### Konfigurace spolehlivosti
 
 | Proměnná | Výchozí hodnota | Účel |
 |----------|-----------------|------|
-| `SHOW_USAGE` | `1` | Tisk využití tokenů |
-| `RETRY_ON_FAIL` | `1` | Povolení logiky opakování |
+| `SHOW_USAGE` | `1` | Tisknout využití tokenů |
+| `RETRY_ON_FAIL` | `1` | Povolit logiku opakování |
 | `RETRY_BACKOFF` | `1.0` | Zpoždění opakování (v sekundách) |
 
 ## Běžné konfigurace
@@ -140,7 +140,7 @@ SHOW_USAGE=0
 
 ### Nastavení pro benchmarking
 ```bash
-BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b,gemma-2-2b
+BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **Příznaky:**
 - Chyby "Model nebyl nalezen"
-- "Alias není rozpoznán"
+- "Alias nebyl rozpoznán"
 
 **Řešení:**
 ```bash
@@ -304,19 +304,16 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 **Příznaky:**
 - Chyby "Modul nebyl nalezen"
-- "Nelze importovat workshop_utils"
 
 **Řešení:**
+
 ```bash
-# 1. Verify PYTHONPATH in .env
-PYTHONPATH=${workspaceFolder}/Workshop/samples
+# 1. Activate virtual environment
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Testování konfigurace
@@ -368,7 +365,7 @@ except Exception as e:
 
 ## Nejlepší bezpečnostní postupy
 
-### 1. Nikdy neukládejte tajné údaje do repozitáře
+### 1. Nikdy neukládejte tajné informace
 
 ```bash
 # .gitignore should include:
@@ -406,13 +403,13 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Hlavní repozitář**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API dokumentace**: Zkontrolujte repozitář SDK pro nejnovější verzi
+- **Dokumentace API**: Podívejte se na repozitář SDK pro nejnovější informace
 
 ## Další zdroje
 
 - `QUICK_START.md` - Průvodce začátkem
 - `SDK_MIGRATION_NOTES.md` - Podrobnosti o aktualizaci SDK
-- `Workshop/samples/*/README.md` - Průvodce specifické pro ukázky
+- `Workshop/samples/*/README.md` - Průvodce specifický pro ukázky
 
 ---
 
@@ -423,4 +420,4 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ---
 
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace doporučujeme profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.

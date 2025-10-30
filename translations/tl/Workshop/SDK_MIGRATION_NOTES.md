@@ -1,27 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T19:31:42+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T22:48:00+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "tl"
 }
 -->
-# Foundry Local SDK Migration Notes
+# Foundry Local SDK Mga Tala sa Paglipat
 
 ## Pangkalahatang-ideya
 
 Ang lahat ng Python files sa Workshop folder ay na-update upang sundin ang pinakabagong mga pattern mula sa opisyal na [Foundry Local Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local).
 
-## Buod ng Mga Pagbabago
+## Buod ng mga Pagbabago
 
-### Core Infrastructure (`workshop_utils.py`)
+### Pangunahing Imprastraktura (`workshop_utils.py`)
 
 #### Pinahusay na Mga Tampok:
 - **Suporta sa Endpoint Override**: Idinagdag ang suporta para sa environment variable na `FOUNDRY_LOCAL_ENDPOINT`
-- **Pinahusay na Error Handling**: Mas mahusay na paghawak ng mga exception na may detalyadong mga mensahe ng error
-- **Pinahusay na Caching**: Ang mga cache key ngayon ay kasama ang endpoint para sa multi-endpoint scenarios
-- **Exponential Backoff**: Ang retry logic ay gumagamit na ngayon ng exponential backoff para sa mas maaasahang operasyon
+- **Pinahusay na Paghawak ng Error**: Mas mahusay na paghawak ng exception na may detalyadong mga mensahe ng error
+- **Pinahusay na Caching**: Ang mga cache key ay ngayon kasama ang endpoint para sa mga multi-endpoint na senaryo
+- **Exponential Backoff**: Ang retry logic ay gumagamit na ng exponential backoff para sa mas maaasahang operasyon
 - **Type Annotations**: Idinagdag ang komprehensibong type hints para sa mas mahusay na suporta sa IDE
 
 #### Mga Bagong Kakayahan:
@@ -33,10 +33,10 @@ manager, client, model_id = get_client(alias, endpoint="http://localhost:8000")
 RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 ```
 
-### Mga Sample na Aplikasyon
+### Mga Halimbawang Aplikasyon
 
 #### Session 01: Chat Bootstrap (`chat_bootstrap.py`)
-- Na-update ang default na modelo mula `phi-3.5-mini` patungong `phi-4-mini`
+- Na-update ang default na modelo mula sa `phi-3.5-mini` patungo sa `phi-4-mini`
 - Idinagdag ang suporta sa endpoint override
 - Pinahusay ang dokumentasyon na may mga reference sa SDK
 
@@ -54,15 +54,15 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Na-update ang default na listahan ng modelo upang isama ang `phi-4-mini`
 - Idinagdag ang komprehensibong dokumentasyon ng environment variable
 - Pinahusay ang dokumentasyon ng function
-- Idinagdag ang suporta sa endpoint override sa buong script
+- Idinagdag ang suporta sa endpoint override sa kabuuan
 
 #### Session 04: Model Comparison (`model_compare.py`)
-- Na-update ang default na LLM mula `gpt-oss-20b` patungong `qwen2.5-7b`
+- Na-update ang default na LLM mula sa `gpt-oss-20b` patungo sa `qwen2.5-7b`
 - Idinagdag ang configuration ng endpoint
 - Pinahusay ang dokumentasyon
 
 #### Session 05: Multi-Agent Orchestration (`agents_orchestrator.py`)
-- Idinagdag ang type hints (binago ang `str | None` sa `Optional[str]`)
+- Idinagdag ang type hints (binago ang `str | None` patungo sa `Optional[str]`)
 - Pinahusay ang dokumentasyon ng Agent class
 - Idinagdag ang suporta sa endpoint override
 - Pinahusay ang pattern ng initialization
@@ -81,7 +81,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 #### Benchmark Export (`export_benchmark_markdown.py`)
 - Idinagdag ang suporta sa endpoint override
-- Na-update ang default na mga modelo
+- Na-update ang mga default na modelo
 - Pinahusay ang dokumentasyon ng function
 - Pinahusay ang paghawak ng error
 
@@ -89,7 +89,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Idinagdag ang mga reference link sa SDK
 - Pinahusay ang dokumentasyon ng paggamit
 
-### Mga Pagsusulit
+### Mga Pagsubok
 
 #### Smoke Tests (`smoke.py`)
 - Idinagdag ang suporta sa endpoint override
@@ -99,26 +99,26 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ## Mga Environment Variable
 
-Ang lahat ng mga sample ay sumusuporta na ngayon sa mga sumusunod na environment variable:
+Ang lahat ng mga halimbawa ay ngayon sumusuporta sa mga environment variable na ito:
 
-### Core Configuration
-- `FOUNDRY_LOCAL_ALIAS` - Model alias na gagamitin (default ay nag-iiba depende sa sample)
-- `FOUNDRY_LOCAL_ENDPOINT` - Override service endpoint (opsyonal)
-- `SHOW_USAGE` - Ipakita ang mga istatistika ng token usage (default: "0")
+### Pangunahing Configuration
+- `FOUNDRY_LOCAL_ALIAS` - Model alias na gagamitin (default ay nag-iiba depende sa halimbawa)
+- `FOUNDRY_LOCAL_ENDPOINT` - Override ng service endpoint (opsyonal)
+- `SHOW_USAGE` - Ipakita ang mga istatistika ng paggamit ng token (default: "0")
 - `RETRY_ON_FAIL` - Paganahin ang retry logic (default: "1")
 - `RETRY_BACKOFF` - Paunang delay ng retry sa segundo (default: "1.0")
 
-### Sample-Specific
-- `EMBED_MODEL` - Embedding model para sa mga RAG sample
+### Para sa Partikular na Halimbawa
+- `EMBED_MODEL` - Embedding model para sa mga halimbawa ng RAG
 - `BENCH_MODELS` - Mga modelong pinaghihiwalay ng comma para sa benchmarking
-- `BENCH_ROUNDS` - Bilang ng benchmark rounds
+- `BENCH_ROUNDS` - Bilang ng mga benchmark rounds
 - `BENCH_PROMPT` - Test prompt para sa benchmarks
 - `BENCH_STREAM` - Sukatin ang latency ng unang token
-- `RAG_QUESTION` - Test question para sa mga RAG sample
-- `AGENT_MODEL_PRIMARY` - Pangunahing agent model
-- `AGENT_MODEL_EDITOR` - Editor agent model
-- `SLM_ALIAS` - Small language model alias
-- `LLM_ALIAS` - Large language model alias
+- `RAG_QUESTION` - Test question para sa mga halimbawa ng RAG
+- `AGENT_MODEL_PRIMARY` - Pangunahing modelo ng agent
+- `AGENT_MODEL_EDITOR` - Editor na modelo ng agent
+- `SLM_ALIAS` - Maliit na language model alias
+- `LLM_ALIAS` - Malaking language model alias
 
 ## Mga Pinakamahusay na Praktis sa SDK na Naipatupad
 
@@ -179,11 +179,11 @@ for chunk in stream:
         # Process chunk
 ```
 
-## Gabay sa Migration para sa Custom na Mga Sample
+## Gabay sa Paglipat para sa Mga Custom na Halimbawa
 
-Kung gumagawa ka ng mga bagong sample o nag-a-update ng mga umiiral na:
+Kung gumagawa ka ng mga bagong halimbawa o nag-a-update ng mga umiiral na:
 
-1. **Gamitin ang mga helper sa `workshop_utils.py`**:
+1. **Gamitin ang mga helper ng `workshop_utils.py`**:
    ```python
    from workshop_utils import get_client, chat_once
    ```
@@ -213,9 +213,9 @@ Kung gumagawa ka ng mga bagong sample o nag-a-update ng mga umiiral na:
        raise
    ```
 
-## Pagsusulit
+## Pagsubok
 
-Ang lahat ng mga sample ay maaaring subukan gamit ang:
+Ang lahat ng mga halimbawa ay maaaring subukan gamit ang:
 
 ```bash
 # Set environment variables
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -250,20 +251,20 @@ Ang lahat ng mga pagbabago ay backward compatible. Ang mga update ay pangunahing
 
 ### Opsyonal na Mga Pagpapahusay
 Maaaring gusto mong i-update ang iyong code upang gamitin:
-- `FOUNDRY_LOCAL_ENDPOINT` para sa explicit na kontrol sa endpoint
-- `SHOW_USAGE=1` para sa visibility ng token usage
+- `FOUNDRY_LOCAL_ENDPOINT` para sa malinaw na kontrol sa endpoint
+- `SHOW_USAGE=1` para sa visibility ng paggamit ng token
 - Na-update na mga default na modelo (`phi-4-mini` sa halip na `phi-3.5-mini`)
 
 ## Mga Karaniwang Isyu at Solusyon
 
-### Isyu: "Client initialization failed"
+### Isyu: "Nabigo ang initialization ng client"
 **Solusyon**: Siguraduhing tumatakbo ang Foundry Local service:
 ```bash
 foundry service start
 foundry model run phi-4-mini
 ```
 
-### Isyu: "Model not found"
+### Isyu: "Hindi natagpuan ang modelo"
 **Solusyon**: Suriin ang mga available na modelo:
 ```bash
 foundry model list
@@ -282,15 +283,15 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ## Mga Susunod na Hakbang
 
 1. **I-update ang Module08 samples**: Ipatupad ang mga katulad na pattern sa Module08/samples
-2. **Magdagdag ng mga integration test**: Gumawa ng komprehensibong test suite
-3. **Benchmarking ng performance**: Ihambing ang performance bago/at pagkatapos
+2. **Magdagdag ng mga integration tests**: Gumawa ng komprehensibong test suite
+3. **Benchmarking ng performance**: Ihambing ang performance bago/ pagkatapos
 4. **Mga update sa dokumentasyon**: I-update ang pangunahing README gamit ang mga bagong pattern
 
 ## Mga Alituntunin sa Kontribusyon
 
-Kapag nagdaragdag ng mga bagong sample:
-1. Gamitin ang `workshop_utils.py` para sa consistency
-2. Sundin ang pattern sa mga umiiral na sample
+Kapag nagdaragdag ng mga bagong halimbawa:
+1. Gamitin ang `workshop_utils.py` para sa pagkakapare-pareho
+2. Sundin ang pattern sa mga umiiral na halimbawa
 3. Magdagdag ng komprehensibong docstrings
 4. Isama ang mga reference link sa SDK
 5. Suportahan ang endpoint override
@@ -313,4 +314,4 @@ Ang mga update na ito ay compatible sa:
 ---
 
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.

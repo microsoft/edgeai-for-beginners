@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ec281a7cf06deda1f29140a2959ef0d2",
-  "translation_date": "2025-10-09T11:07:41+00:00",
+  "original_hash": "a5bfedb0d4694a0b3a95d69b159b1a5a",
+  "translation_date": "2025-10-28T21:37:15+00:00",
   "source_file": "Workshop/SDK_MIGRATION_NOTES.md",
   "language_code": "br"
 }
@@ -19,7 +19,7 @@ Todos os arquivos Python na pasta Workshop foram atualizados para seguir os padr
 
 #### Recursos Aprimorados:
 - **Suporte a Substituição de Endpoint**: Adicionado suporte à variável de ambiente `FOUNDRY_LOCAL_ENDPOINT`
-- **Melhoria no Tratamento de Erros**: Tratamento de exceções mais robusto com mensagens de erro detalhadas
+- **Melhoria no Tratamento de Erros**: Tratamento de exceções aprimorado com mensagens de erro detalhadas
 - **Cache Aprimorado**: As chaves de cache agora incluem o endpoint para cenários com múltiplos endpoints
 - **Backoff Exponencial**: A lógica de repetição agora utiliza backoff exponencial para maior confiabilidade
 - **Anotações de Tipo**: Adicionadas dicas de tipo abrangentes para melhor suporte em IDEs
@@ -46,7 +46,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Documentação aprimorada com detalhes sobre variáveis de ambiente
 
 #### Sessão 02: Avaliação RAG (`rag_eval_ragas.py`)
-- Atualizados os modelos padrão
+- Atualizados os padrões de modelo
 - Adicionada configuração de endpoint
 - Tratamento de erros aprimorado
 
@@ -54,7 +54,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Lista de modelos padrão atualizada para incluir `phi-4-mini`
 - Documentação abrangente sobre variáveis de ambiente adicionada
 - Documentação de funções aprimorada
-- Suporte à substituição de endpoint adicionado em todo o código
+- Suporte à substituição de endpoint adicionado
 
 #### Sessão 04: Comparação de Modelos (`model_compare.py`)
 - LLM padrão atualizado de `gpt-oss-20b` para `qwen2.5-7b`
@@ -62,7 +62,7 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 - Documentação aprimorada
 
 #### Sessão 05: Orquestração Multi-Agente (`agents_orchestrator.py`)
-- Adicionadas dicas de tipo (alterado `str | None` para `Optional[str]`)
+- Adicionadas dicas de tipo (alterado de `str | None` para `Optional[str]`)
 - Documentação da classe Agent aprimorada
 - Suporte à substituição de endpoint adicionado
 - Padrão de inicialização aprimorado
@@ -91,11 +91,11 @@ RuntimeError: Client initialization failed for 'phi-4-mini': <detailed_error>
 
 ### Testes
 
-#### Testes de Smoke (`smoke.py`)
+#### Testes de Fumaça (`smoke.py`)
 - Suporte à substituição de endpoint adicionado
 - Documentação aprimorada
 - Documentação de casos de teste aprimorada
-- Relatórios de erro mais detalhados
+- Relatórios de erro melhorados
 
 ## Variáveis de Ambiente
 
@@ -105,13 +105,13 @@ Todos os exemplos agora suportam estas variáveis de ambiente:
 - `FOUNDRY_LOCAL_ALIAS` - Alias do modelo a ser usado (padrão varia por exemplo)
 - `FOUNDRY_LOCAL_ENDPOINT` - Substituir o endpoint do serviço (opcional)
 - `SHOW_USAGE` - Mostrar estatísticas de uso de tokens (padrão: "0")
-- `RETRY_ON_FAIL` - Habilitar lógica de repetição (padrão: "1")
-- `RETRY_BACKOFF` - Atraso inicial de repetição em segundos (padrão: "1.0")
+- `RETRY_ON_FAIL` - Ativar lógica de repetição (padrão: "1")
+- `RETRY_BACKOFF` - Tempo inicial de espera para repetição em segundos (padrão: "1.0")
 
-### Específicas de Exemplos
-- `EMBED_MODEL` - Modelo de embedding para exemplos RAG
+### Específicas para Exemplos
+- `EMBED_MODEL` - Modelo de incorporação para exemplos RAG
 - `BENCH_MODELS` - Modelos separados por vírgula para benchmarking
-- `BENCH_ROUNDS` - Número de rodadas de benchmark
+- `BENCH_ROUNDS` - Número de rodadas de benchmarking
 - `BENCH_PROMPT` - Prompt de teste para benchmarks
 - `BENCH_STREAM` - Medir latência do primeiro token
 - `RAG_QUESTION` - Pergunta de teste para exemplos RAG
@@ -223,11 +223,12 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 
 # Run individual samples
-python Workshop/samples/session01/chat_bootstrap.py "Test question"
-python Workshop/samples/session02/rag_pipeline.py
+cd Workshop/samples
+python -m session01.chat_bootstrap "Test question"
+python -m session02.rag_pipeline
 
 # Run benchmark
-python Workshop/samples/session03/benchmark_oss_models.py
+python -m session03.benchmark_oss_models
 
 # Run smoke tests
 python -m Workshop.tests.smoke
@@ -237,21 +238,21 @@ python -m Workshop.tests.smoke
 
 - **Repositório Principal**: https://github.com/microsoft/Foundry-Local
 - **SDK Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Documentação da API**: Consulte o repositório do SDK para a documentação mais recente da API
+- **Documentação da API**: Verifique o repositório do SDK para os documentos mais recentes da API
 
-## Alterações Incompatíveis
+## Alterações Significativas
 
 ### Nenhuma Esperada
-Todas as alterações são compatíveis com versões anteriores. As atualizações principalmente:
+Todas as alterações são retrocompatíveis. As atualizações principalmente:
 - Adicionam novos recursos opcionais (substituição de endpoint)
 - Melhoram o tratamento de erros
-- Aprimoram a documentação
+- Aperfeiçoam a documentação
 - Atualizam os nomes dos modelos padrão para as recomendações atuais
 
 ### Melhorias Opcionais
 Você pode querer atualizar seu código para usar:
 - `FOUNDRY_LOCAL_ENDPOINT` para controle explícito de endpoint
-- `SHOW_USAGE=1` para visibilidade de uso de tokens
+- `SHOW_USAGE=1` para visibilidade do uso de tokens
 - Modelos padrão atualizados (`phi-4-mini` em vez de `phi-3.5-mini`)
 
 ## Problemas Comuns e Soluções
@@ -282,8 +283,8 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ## Próximos Passos
 
 1. **Atualizar exemplos do Módulo08**: Aplicar padrões semelhantes aos exemplos do Módulo08
-2. **Adicionar testes de integração**: Criar uma suíte de testes abrangente
-3. **Benchmark de desempenho**: Comparar desempenho antes/depois
+2. **Adicionar testes de integração**: Criar suíte de testes abrangente
+3. **Benchmarking de desempenho**: Comparar desempenho antes/depois
 4. **Atualizações na documentação**: Atualizar o README principal com os novos padrões
 
 ## Diretrizes de Contribuição
@@ -300,17 +301,17 @@ Ao adicionar novos exemplos:
 ## Compatibilidade de Versão
 
 Essas atualizações são compatíveis com:
-- `foundry-local-sdk` (mais recente)
+- `foundry-local-sdk` (última versão)
 - `openai>=1.30.0`
 - Python 3.8+
 
 ---
 
-**Última Atualização**: 08/01/2025  
+**Última Atualização**: 08-01-2025  
 **Responsável**: Equipe EdgeAI Workshop  
-**Versão do SDK**: Foundry Local SDK (mais recente 0.7.117+67073234e7)
+**Versão do SDK**: Foundry Local SDK (última 0.7.117+67073234e7)
 
 ---
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
