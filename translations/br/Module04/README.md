@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c0cb9f7bcff2bc170532d8870a891f38",
-  "translation_date": "2025-09-17T23:29:17+00:00",
+  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
+  "translation_date": "2025-10-30T12:24:10+00:00",
   "source_file": "Module04/README.md",
   "language_code": "br"
 }
@@ -13,14 +13,14 @@ O surgimento do EdgeAI tornou a conversão de formato de modelo e a quantizaçã
 
 ## 📚 Estrutura do Capítulo e Caminho de Aprendizado
 
-Este capítulo está organizado em seis seções progressivas, cada uma construindo sobre a anterior para criar uma compreensão completa da otimização de modelos para computação em dispositivos de borda:
+Este capítulo está organizado em sete seções progressivas, cada uma construindo sobre a anterior para criar uma compreensão completa da otimização de modelos para computação em dispositivos de borda:
 
 ---
 
 ## [Seção 1: Fundamentos de Conversão de Formato de Modelo e Quantização](./01.Introduce.md)
 
 ### 🎯 Visão Geral
-Esta seção introdutória estabelece a base teórica para a otimização de modelos em ambientes de computação de borda, abordando limites de quantização de 1-bit a 8-bit e estratégias-chave de conversão de formato.
+Esta seção fundamental estabelece o quadro teórico para a otimização de modelos em ambientes de computação de borda, abordando limites de quantização de 1-bit a 8-bit e estratégias-chave de conversão de formato.
 
 **Tópicos Principais:**
 - Estrutura de classificação de precisão (ultra-baixa, baixa, média precisão)
@@ -38,7 +38,7 @@ Esta seção introdutória estabelece a base teórica para a otimização de mod
 ## [Seção 2: Guia de Implementação do Llama.cpp](./02.Llamacpp.md)
 
 ### 🎯 Visão Geral
-Um tutorial abrangente para implementar o Llama.cpp, um poderoso framework em C++ que permite inferência eficiente de Modelos de Linguagem Grande com configuração mínima em diversas plataformas de hardware.
+Um tutorial abrangente para implementar o Llama.cpp, um poderoso framework em C++ que permite inferência eficiente de Modelos de Linguagem Grande com configuração mínima em diversas configurações de hardware.
 
 **Tópicos Principais:**
 - Instalação em plataformas Windows, macOS e Linux
@@ -47,7 +47,7 @@ Um tutorial abrangente para implementar o Llama.cpp, um poderoso framework em C+
 - Integração com Python e estratégias de implantação em produção
 
 **Resultados de Aprendizado:**
-- Dominar a instalação multiplataforma e a construção a partir do código-fonte
+- Dominar a instalação multiplataforma e compilação a partir do código-fonte
 - Implementar técnicas de quantização e otimização de modelos
 - Implantar modelos em modo servidor com integração de API REST
 
@@ -56,25 +56,25 @@ Um tutorial abrangente para implementar o Llama.cpp, um poderoso framework em C+
 ## [Seção 3: Suite de Otimização Microsoft Olive](./03.MicrosoftOlive.md)
 
 ### 🎯 Visão Geral
-Exploração do Microsoft Olive, uma ferramenta de otimização de modelos sensível ao hardware com mais de 40 componentes de otimização integrados, projetada para implantação de modelos em nível empresarial em diversas plataformas de hardware.
+Exploração do Microsoft Olive, uma ferramenta de otimização de modelos consciente de hardware com mais de 40 componentes de otimização integrados, projetada para implantação de modelos em nível empresarial em diversas plataformas de hardware.
 
 **Tópicos Principais:**
 - Recursos de auto-otimização com quantização dinâmica e estática
-- Inteligência sensível ao hardware para implantação em CPU, GPU e NPU
-- Suporte nativo para modelos populares (Llama, Phi, Qwen, Gemma)
+- Inteligência consciente de hardware para implantação em CPU, GPU e NPU
+- Suporte a modelos populares (Llama, Phi, Qwen, Gemma) prontos para uso
 - Integração empresarial com Azure ML e fluxos de trabalho de produção
 
 **Resultados de Aprendizado:**
-- Aproveitar a otimização automatizada para diversas arquiteturas de modelo
+- Aproveitar a otimização automatizada para várias arquiteturas de modelo
 - Implementar estratégias de implantação multiplataforma
-- Estabelecer pipelines de otimização prontos para o mercado
+- Estabelecer pipelines de otimização prontos para empresas
 
 ---
 
 ## [Seção 4: Suite de Otimização OpenVINO Toolkit](./04.openvino.md)
 
 ### 🎯 Visão Geral
-Exploração abrangente do OpenVINO Toolkit da Intel, uma plataforma de código aberto para implementar soluções de IA de alto desempenho em ambientes de nuvem, locais e de borda, com capacidades avançadas do Neural Network Compression Framework (NNCF).
+Exploração abrangente do OpenVINO Toolkit da Intel, uma plataforma de código aberto para implantar soluções de IA de alto desempenho em ambientes de nuvem, locais e de borda, com capacidades avançadas do Neural Network Compression Framework (NNCF).
 
 **Tópicos Principais:**
 - Implantação multiplataforma com aceleração de hardware (CPU, GPU, VPU, aceleradores de IA)
@@ -98,25 +98,25 @@ Cobertura abrangente do Apple MLX, um framework revolucionário projetado especi
 - Vantagens da arquitetura de memória unificada e Metal Performance Shaders
 - Suporte para modelos LLaMA, Mistral, Phi-3, Qwen e Code Llama
 - Fine-tuning com LoRA para personalização eficiente de modelos
-- Integração com Hugging Face e suporte para quantização (4-bit e 8-bit)
+- Integração com Hugging Face e suporte à quantização (4-bit e 8-bit)
 
 **Resultados de Aprendizado:**
 - Dominar a otimização para Apple Silicon na implantação de LLMs
 - Implementar técnicas de fine-tuning e personalização de modelos
-- Construir aplicações de IA empresariais com recursos aprimorados de privacidade
+- Construir aplicativos de IA empresariais com recursos aprimorados de privacidade
 
 ---
 
 ## [Seção 6: Síntese do Fluxo de Trabalho de Desenvolvimento de Edge AI](./06.workflow-synthesis.md)
 
 ### 🎯 Visão Geral
-Síntese abrangente de todos os frameworks de otimização em fluxos de trabalho unificados, matrizes de decisão e melhores práticas para implantação de Edge AI pronta para produção em diversas plataformas e casos de uso.
+Síntese abrangente de todos os frameworks de otimização em fluxos de trabalho unificados, matrizes de decisão e melhores práticas para implantação de Edge AI pronta para produção em diversas plataformas e casos de uso, incluindo dispositivos móveis, desktops e ambientes de nuvem.
 
 **Tópicos Principais:**
 - Arquitetura de fluxo de trabalho unificada integrando múltiplos frameworks de otimização
 - Árvores de decisão para seleção de frameworks e análise de trade-offs de desempenho
 - Validação de prontidão para produção e estratégias de implantação abrangentes
-- Estratégias para futuro-proofing com hardware emergente e arquiteturas de modelo
+- Estratégias para garantir compatibilidade com hardware e arquiteturas de modelo emergentes
 
 **Resultados de Aprendizado:**
 - Dominar a seleção sistemática de frameworks com base em requisitos e restrições
@@ -125,40 +125,59 @@ Síntese abrangente de todos os frameworks de otimização em fluxos de trabalho
 
 ---
 
+## [Seção 7: Suite de Otimização Qualcomm QNN](./07.QualcommQNN.md)
+
+### 🎯 Visão Geral
+Exploração abrangente do Qualcomm QNN (Qualcomm Neural Network), um framework unificado de inferência de IA projetado para aproveitar a arquitetura de computação heterogênea da Qualcomm, incluindo Hexagon NPU, Adreno GPU e Kryo CPU, para máximo desempenho e eficiência energética em dispositivos móveis e de borda.
+
+**Tópicos Principais:**
+- Computação heterogênea com acesso unificado a NPU, GPU e CPU
+- Otimização consciente de hardware para plataformas Snapdragon com distribuição inteligente de carga de trabalho
+- Técnicas avançadas de quantização (INT8, INT16, precisão mista) para implantação móvel
+- Inferência eficiente em termos de energia otimizada para dispositivos alimentados por bateria e aplicações em tempo real
+
+**Resultados de Aprendizado:**
+- Dominar a aceleração de hardware Qualcomm para implantação de IA móvel
+- Implementar estratégias de otimização eficientes em termos de energia para computação de borda
+- Implantar modelos prontos para produção no ecossistema Qualcomm com desempenho ideal
+
+---
+
 ## 🎯 Resultados de Aprendizado do Capítulo
 
 Ao concluir este capítulo abrangente, os leitores alcançarão:
 
 ### **Domínio Técnico**
-- Compreensão profunda dos limites de quantização e suas aplicações práticas
+- Compreensão profunda dos limites de quantização e aplicações práticas
 - Experiência prática com múltiplos frameworks de otimização
-- Habilidades de implantação em ambientes de computação de borda
+- Habilidades de implantação em produção para ambientes de computação de borda
 
 ### **Compreensão Estratégica**
-- Capacidades de seleção de otimização sensível ao hardware
+- Capacidades de seleção de otimização consciente de hardware
 - Tomada de decisão informada sobre trade-offs de desempenho
-- Estratégias de implantação e monitoramento prontas para o mercado
+- Estratégias de implantação e monitoramento prontas para empresas
 
 ### **Benchmarks de Desempenho**
 
-| Framework   | Quantização | Uso de Memória | Melhoria de Velocidade | Caso de Uso                |
-|-------------|-------------|----------------|-------------------------|----------------------------|
-| Llama.cpp   | Q4_K_M      | ~4GB           | 2-3x                   | Implantação multiplataforma |
-| Olive       | INT4        | Redução de 60-75% | 2-6x                   | Fluxos de trabalho empresariais |
-| OpenVINO    | INT8/INT4   | Redução de 50-75% | 2-5x                   | Otimização para hardware Intel |
-| MLX         | 4-bit       | ~4GB           | 2-4x                   | Otimização para Apple Silicon |
+| Framework | Quantização | Uso de Memória | Melhoria de Velocidade | Caso de Uso |
+|-----------|-------------|----------------|------------------------|-------------|
+| Llama.cpp | Q4_K_M | ~4GB | 2-3x | Implantação multiplataforma |
+| Olive | INT4 | Redução de 60-75% | 2-6x | Fluxos de trabalho empresariais |
+| OpenVINO | INT8/INT4 | Redução de 50-75% | 2-5x | Otimização de hardware Intel |
+| QNN | INT8/INT4 | Redução de 50-80% | 5-15x | Dispositivos móveis/borda Qualcomm |
+| MLX | 4-bit | ~4GB | 2-4x | Otimização para Apple Silicon |
 
 ## 🚀 Próximos Passos e Aplicações Avançadas
 
-Este capítulo oferece uma base completa para:
+Este capítulo fornece uma base completa para:
 - Desenvolvimento de modelos personalizados para domínios específicos
 - Pesquisa em otimização de Edge AI
-- Desenvolvimento de aplicações comerciais de IA
+- Desenvolvimento de aplicativos comerciais de IA
 - Implantações de Edge AI em larga escala para empresas
 
-O conhecimento adquirido nestas seis seções oferece um conjunto de ferramentas abrangente para navegar no cenário em rápida evolução da otimização e implantação de modelos de Edge AI.
+O conhecimento dessas sete seções oferece um conjunto de ferramentas abrangente para navegar no cenário em rápida evolução da otimização e implantação de modelos de Edge AI.
 
 ---
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-08T15:04:19+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T14:19:15+00:00",
   "source_file": "AGENTS.md",
   "language_code": "sk"
 }
 -->
 # AGENTS.md
 
-> **Príručka pre vývojárov prispievajúcich do EdgeAI pre začiatočníkov**
+> **Príručka pre vývojárov na prispievanie do EdgeAI pre začiatočníkov**
 > 
 > Tento dokument poskytuje komplexné informácie pre vývojárov, AI agentov a prispievateľov pracujúcich s týmto repozitárom. Zahŕňa nastavenie, pracovné postupy vývoja, testovanie a osvedčené postupy.
 > 
-> **Posledná aktualizácia**: október 2025 | **Verzia dokumentu**: 2.0
+> **Posledná aktualizácia**: 30. októbra 2025 | **Verzia dokumentu**: 3.0
 
 ## Obsah
 
@@ -38,8 +38,8 @@ CO_OP_TRANSLATOR_METADATA:
 EdgeAI pre začiatočníkov je komplexný vzdelávací repozitár, ktorý učí vývoj Edge AI pomocou malých jazykových modelov (SLM). Kurz pokrýva základy EdgeAI, nasadenie modelov, optimalizačné techniky a implementácie pripravené na produkciu pomocou Microsoft Foundry Local a rôznych AI rámcov.
 
 **Kľúčové technológie:**
-- Python 3.8+ (primárny jazyk pre AI/ML ukážky)
-- .NET C# (AI/ML ukážky)
+- Python 3.8+ (primárny jazyk pre AI/ML vzorky)
+- .NET C# (AI/ML vzorky)
 - JavaScript/Node.js s Electron (pre desktopové aplikácie)
 - Microsoft Foundry Local SDK
 - Microsoft Windows ML 
@@ -48,9 +48,9 @@ EdgeAI pre začiatočníkov je komplexný vzdelávací repozitár, ktorý učí 
 - AI rámce: LangChain, Semantic Kernel, Chainlit
 - Optimalizácia modelov: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
 
-**Typ repozitára:** Vzdelávací obsahový repozitár s 8 modulmi a 10 komplexnými ukážkovými aplikáciami
+**Typ repozitára:** Vzdelávací obsahový repozitár s 8 modulmi a 10 komplexnými vzorovými aplikáciami
 
-**Architektúra:** Viacmodulová vzdelávacia cesta s praktickými ukážkami demonštrujúcimi vzory nasadenia Edge AI
+**Architektúra:** Viacmodulová vzdelávacia cesta s praktickými vzorkami demonštrujúcimi vzory nasadenia Edge AI
 
 ## Štruktúra repozitára
 
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -70,22 +77,22 @@ edgeai-for-beginners/
 
 ## Predpoklady
 
-### Požadované nástroje
+### Potrebné nástroje
 
-- **Python 3.8+** - Pre AI/ML ukážky a notebooky
-- **Node.js 16+** - Pre ukážkovú aplikáciu Electron
-- **Git** - Pre správu verzií
+- **Python 3.8+** - Pre AI/ML vzorky a notebooky
+- **Node.js 16+** - Pre vzorovú aplikáciu Electron
+- **Git** - Pre verzionovanie
 - **Microsoft Foundry Local** - Pre lokálne spúšťanie AI modelov
 
 ### Odporúčané nástroje
 
 - **Visual Studio Code** - S rozšíreniami Python, Jupyter a Pylance
-- **Windows Terminal** - Pre lepší zážitok z príkazového riadku (používatelia Windows)
+- **Windows Terminal** - Pre lepší zážitok z príkazového riadku (Windows používatelia)
 - **Docker** - Pre kontajnerový vývoj (voliteľné)
 
 ### Požiadavky na systém
 
-- **RAM**: Minimálne 8GB, odporúča sa 16GB+ pre scenáre s viacerými modelmi
+- **RAM**: Minimálne 8GB, odporúčané 16GB+ pre scenáre s viacerými modelmi
 - **Úložisko**: 10GB+ voľného miesta pre modely a závislosti
 - **OS**: Windows 10/11, macOS 11+, alebo Linux (Ubuntu 20.04+)
 - **Hardvér**: CPU s podporou AVX2; GPU (CUDA, Qualcomm NPU) voliteľné, ale odporúčané
@@ -94,7 +101,7 @@ edgeai-for-beginners/
 
 - Základné porozumenie programovaniu v Pythone
 - Znalosť príkazového riadku
-- Porozumenie konceptom AI/ML (pre vývoj ukážok)
+- Porozumenie konceptom AI/ML (pre vývoj vzoriek)
 - Git pracovné postupy a procesy pull requestov
 
 ## Príkazy na nastavenie
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Nastavenie Python ukážok (Modul08 a Python ukážky)
+### Nastavenie Python vzoriek (Modul08 a vzorky workshopu)
 
 ```bash
 # Create and activate virtual environment
@@ -125,9 +132,13 @@ pip install foundry-local-sdk openai
 # Install additional dependencies for Module08 samples
 cd Module08
 pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
+pip install -r requirements.txt
 ```
 
-### Nastavenie Node.js ukážok (Ukážka 08 - Windows Chat App)
+### Nastavenie Node.js vzoriek (Vzorka 08 - Windows Chat App)
 
 ```bash
 cd Module08/samples/08
@@ -145,7 +156,7 @@ npm run dist
 
 ### Nastavenie Foundry Local
 
-Foundry Local je potrebné na spustenie ukážok. Stiahnite a nainštalujte z oficiálneho repozitára:
+Foundry Local je potrebné na spustenie vzoriek. Stiahnite a nainštalujte z oficiálneho repozitára:
 
 **Inštalácia:**
 - **Windows**: `winget install Microsoft.FoundryLocal`
@@ -155,7 +166,7 @@ Foundry Local je potrebné na spustenie ukážok. Stiahnite a nainštalujte z of
 **Rýchly štart:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -164,36 +175,42 @@ foundry model ls
 foundry service status
 ```
 
-**Poznámka**: Foundry Local automaticky vyberie najlepšiu variantu modelu pre váš hardvér (CUDA GPU, Qualcomm NPU alebo CPU).
+**Poznámka**: Foundry Local automaticky vyberá najlepšiu variantu modelu pre váš hardvér (CUDA GPU, Qualcomm NPU, alebo CPU).
 
 ## Pracovný postup vývoja
 
 ### Vývoj obsahu
 
-Tento repozitár obsahuje primárne **Markdown vzdelávací obsah**. Pri vykonávaní zmien:
+Tento repozitár obsahuje primárne **vzdelávací obsah vo formáte Markdown**. Pri vykonávaní zmien:
 
 1. Upravte `.md` súbory v príslušných adresároch modulov
 2. Dodržiavajte existujúce formátovacie vzory
 3. Uistite sa, že ukážky kódu sú presné a otestované
-4. Aktualizujte zodpovedajúci preložený obsah, ak je to potrebné (alebo nechajte automatizáciu, aby to spravila)
+4. Aktualizujte zodpovedajúci preložený obsah, ak je to potrebné (alebo nechajte automatizáciu, aby to urobila za vás)
 
-### Vývoj ukážkových aplikácií
+### Vývoj vzorových aplikácií
 
-Pre Python ukážky (ukážky 01-07, 09-10):
+Pre Python vzorky Modulu08 (vzorky 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
 ```
 
-Pre ukážku Electron (ukážka 08):
+Pre Python vzorky workshopu:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
+```
+
+Pre Electron vzorku (vzorka 08):
 ```bash
 cd Module08/samples/08
 npm run dev  # Development with hot reload
 ```
 
-### Testovanie ukážkových aplikácií
+### Testovanie vzorových aplikácií
 
-Python ukážky nemajú automatizované testy, ale môžu byť validované ich spustením:
+Python vzorky nemajú automatizované testy, ale môžu byť overené ich spustením:
 ```bash
 # Test basic chat functionality
 python samples/01/chat_quickstart.py "Hello"
@@ -203,7 +220,7 @@ set MODEL=phi-4-mini
 python samples/02/openai_sdk_client.py
 ```
 
-Ukážka Electron má testovaciu infraštruktúru:
+Electron vzorka má testovaciu infraštruktúru:
 ```bash
 cd Module08/samples/08
 npm test           # Run unit tests
@@ -215,7 +232,7 @@ npm run lint       # Check code style
 
 ### Validácia obsahu
 
-Repozitár používa automatizované pracovné postupy pre preklady. Manuálne testovanie prekladov nie je potrebné.
+Repozitár používa automatizované pracovné postupy pre preklad. Manuálne testovanie prekladov nie je potrebné.
 
 **Manuálna validácia zmien obsahu:**
 1. Skontrolujte vykreslenie Markdownu náhľadom `.md` súborov
@@ -223,9 +240,9 @@ Repozitár používa automatizované pracovné postupy pre preklady. Manuálne t
 3. Otestujte akékoľvek ukážky kódu zahrnuté v dokumentácii
 4. Skontrolujte, či sa obrázky načítavajú správne
 
-### Testovanie ukážkových aplikácií
+### Testovanie vzorových aplikácií
 
-**Module08/samples/08 (Electron app) má komplexné testovanie:**
+**Modul08/vzorky/08 (Electron aplikácia) má komplexné testovanie:**
 ```bash
 cd Module08/samples/08
 
@@ -245,17 +262,26 @@ npm run test:e2e
 npm test -- --coverage
 ```
 
-**Python ukážky by mali byť testované manuálne:**
+**Python vzorky by mali byť testované manuálne:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## Štýlové pokyny pre kód
 
-### Markdown obsah
+### Obsah Markdown
 
 - Používajte konzistentnú hierarchiu nadpisov (# pre názov, ## pre hlavné sekcie, ### pre podsekcie)
 - Zahrňte bloky kódu so špecifikátormi jazyka: ```python, ```bash, ```javascript
@@ -263,15 +289,15 @@ python samples/09/multi_agent_system.py
 - Udržujte riadky čitateľné (cieľom je ~80-100 znakov, ale nie striktne)
 - Používajte relatívne odkazy pre interné referencie
 
-### Štýl kódu v Pythone
+### Štýl kódu Python
 
 - Dodržiavajte konvencie PEP 8
-- Používajte typové anotácie, kde je to vhodné
+- Používajte typové náznaky, kde je to vhodné
 - Zahrňte docstringy pre funkcie a triedy
 - Používajte zmysluplné názvy premenných
 - Udržujte funkcie zamerané a stručné
 
-### Štýl kódu v JavaScripte/Node.js
+### Štýl kódu JavaScript/Node.js
 
 ```bash
 # Electron sample follows ESLint configuration
@@ -282,7 +308,7 @@ npm run format      # Format with Prettier
 ```
 
 **Kľúčové konvencie:**
-- Konfigurácia ESLint je poskytnutá v ukážke 08
+- Konfigurácia ESLint je poskytnutá vo vzorke 08
 - Prettier pre formátovanie kódu
 - Používajte modernú syntax ES6+
 - Dodržiavajte existujúce vzory v kóde
@@ -293,10 +319,10 @@ npm run format      # Format with Prettier
 
 1. **Forknite repozitár** a vytvorte novú vetvu z `main`
 2. **Vykonajte svoje zmeny** podľa štýlových pokynov pre kód
-3. **Dôkladne otestujte** pomocou pokynov na testovanie vyššie
+3. **Dôkladne otestujte** pomocou vyššie uvedených pokynov na testovanie
 4. **Commitujte s jasnými správami** podľa formátu konvenčných commitov
 5. **Pushnite do svojho forku** a vytvorte pull request
-6. **Reagujte na spätnú väzbu** od správcov počas revízie
+6. **Reagujte na spätnú väzbu** od správcov počas recenzie
 
 ### Konvencia pomenovania vetiev
 
@@ -344,36 +370,36 @@ Všetci prispievatelia musia dodržiavať [Microsoft Open Source Code of Conduct
 - Overte odkazy a obrázky
 - Skontrolujte pravopisné a gramatické chyby
 
-**Pre zmeny ukážkového kódu (Module08/samples/08):**
+**Pre zmeny vzorového kódu (Modul08/vzorky/08):**
 ```bash
 npm run lint
 npm test
 ```
 
-**Pre zmeny Python ukážok:**
-- Otestujte, že ukážka sa úspešne spustí
-- Overte, že spracovanie chýb funguje
+**Pre zmeny Python vzoriek:**
+- Otestujte, či vzorka úspešne beží
+- Overte, či funguje spracovanie chýb
 - Skontrolujte kompatibilitu s Foundry Local
 
-### Proces revízie
+### Proces recenzie
 
-- Zmeny vzdelávacieho obsahu sú kontrolované na presnosť a jasnosť
-- Ukážky kódu sú testované na funkčnosť
-- Aktualizácie prekladov sú spracované automaticky pomocou GitHub Actions
+- Zmeny vzdelávacieho obsahu sú kontrolované z hľadiska presnosti a jasnosti
+- Vzorky kódu sú testované z hľadiska funkčnosti
+- Aktualizácie prekladu sú automaticky spracované pomocou GitHub Actions
 
 ## Systém prekladu
 
 **DÔLEŽITÉ:** Tento repozitár používa automatizovaný preklad prostredníctvom GitHub Actions.
 
 - Preklady sú v adresári `/translations/` (50+ jazykov)
-- Automatizované prostredníctvom workflowu `co-op-translator.yml`
-- **NEUPRAVUJTE manuálne prekladové súbory** - budú prepísané
+- Automatizované prostredníctvom pracovného postupu `co-op-translator.yml`
+- **NEUPRAVUJTE manuálne súbory prekladu** - budú prepísané
 - Upravujte iba anglické zdrojové súbory v koreňovom adresári a adresároch modulov
-- Preklady sa automaticky generujú pri pushnutí do vetvy `main`
+- Preklady sú automaticky generované pri pushnutí do vetvy `main`
 
 ## Integrácia Foundry Local
 
-Väčšina ukážok z Modulu08 vyžaduje, aby bol Microsoft Foundry Local spustený.
+Väčšina vzoriek Modulu08 vyžaduje, aby bol Microsoft Foundry Local spustený.
 
 ### Inštalácia a nastavenie
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -444,13 +470,13 @@ curl http://localhost:<port>/v1/models
 # Note: Port is displayed when running 'foundry service status'
 ```
 
-### Premenné prostredia pre ukážky
+### Premenné prostredia pre vzorky
 
-Väčšina ukážok používa tieto premenné prostredia:
+Väčšina vzoriek používa tieto premenné prostredia:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -471,9 +497,9 @@ set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 Tento repozitár je primárne dokumentácia - nie je potrebný žiadny proces buildovania pre obsah.
 
-### Build ukážkových aplikácií
+### Build vzorových aplikácií
 
-**Electron aplikácia (Module08/samples/08):**
+**Electron aplikácia (Modul08/vzorky/08):**
 ```bash
 cd Module08/samples/08
 
@@ -490,8 +516,8 @@ npm run dist
 npm run pack
 ```
 
-**Python ukážky:**
-Nie je potrebný proces buildovania - ukážky sa spúšťajú priamo pomocou Python interpretera.
+**Python vzorky:**
+Nie je potrebný proces buildovania - vzorky sa spúšťajú priamo pomocou Python interpreteru.
 
 ## Bežné problémy a riešenie problémov
 
@@ -499,8 +525,8 @@ Nie je potrebný proces buildovania - ukážky sa spúšťajú priamo pomocou Py
 
 ### Kritické problémy (blokujúce)
 
-#### Foundry Local nie je spustený
-**Problém:** Ukážky zlyhávajú s chybami pripojenia
+#### Foundry Local nebeží
+**Problém:** Vzorky zlyhávajú s chybami pripojenia
 
 **Riešenie:**
 ```bash
@@ -508,7 +534,7 @@ Nie je potrebný proces buildovania - ukážky sa spúšťajú priamo pomocou Py
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -580,42 +606,58 @@ foundry model run <model-alias>
 - **Cesta pre pokročilých:** Moduly 03-04 (9-11 hodín)
 - **Cesta pre expertov:** Moduly 05-07 (12-15 hodín)
 - **Cesta pre profesionálov:** Modul 08 (8-10 hodín)
+- **Workshop:** Materiály workshopu (6-8 hodín)
 
 ### Kľúčový obsah modulov
 - **Modul01:** Základy EdgeAI a prípadové štúdie z reálneho sveta
 - **Modul02:** Rodiny a architektúry malých jazykových modelov (SLM)
 - **Modul03:** Lokálne a cloudové stratégie nasadenia
-- **Modul04:** Optimalizácia modelov s viacerými rámcami
-- **Modul05:** SLMOps - operácie v produkcii
+- **Modul04:** Optimalizácia modelov s viacerými rámcami (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
+- **Modul05:** SLMOps - produkčné operácie
 - **Modul06:** AI agenti a volanie funkcií
 - **Modul07:** Implementácie špecifické pre platformu
-- **Modul08:** Nástroj Foundry Local s 10 komplexnými ukážkami
+- **Modul08:** Nástroj Foundry Local s 10 komplexnými vzorkami
 
 ### Externé závislosti
 - [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Lokálny runtime AI modelov s OpenAI-kompatibilným API
   - [Dokumentácia](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
   - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [JavaScript SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
-- [Llama.cpp](https://github.com/ggml-org/llama.cpp) - Optimalizačný rámec
+- [Llama.cpp](https://github.com/ggml-org/llama.cpp) - Rámec optimalizácie
 - [Microsoft Olive](https://microsoft.github.io/Olive/) - Nástroj na optimalizáciu modelov
 - [OpenVINO](https://docs.openvino.ai/) - Intelov nástroj na optimalizáciu
 
 ## Poznámky špecifické pre projekt
 
-### Ukážkové aplikácie Modulu08
+### Vzorové aplikácie Modulu08
 
-Repozitár obsahuje 10 komplexných ukážkových aplikácií:
+Repozitár obsahuje 10 komplexných vzorových aplikácií:
 
 1. **01-REST Chat Quickstart** - Základná integrácia OpenAI SDK
 2. **02-OpenAI SDK Integration** - Pokročilé funkcie SDK
-3. **03-Model Discovery & Benchmarking** - Nástroje na porovnávanie modelov
-4. **04-Chainlit RAG Application** - Generácia s podporou vyhľadávania
-5. **05-Multi-Agent Orchestration** - Základná koordinácia agentov
-6. **06-Models-as-Tools Router** - Inteligentné smerovanie modelov
-7. **07
-- Lokálna inferencia poskytuje odozvu v rozmedzí 50-500 ms
-- Kvantizačné techniky dosahujú 75% zníženie veľkosti pri zachovaní 85% výkonu
-- Schopnosti pre konverzáciu v reálnom čase s lokálnymi modelmi
+3. **03-Model Discovery & Benchmarking** - Nástroje na porovnanie modelov
+4. **04-Chainlit RAG Application**
+10. **10-Nástroje Foundry Framework** - Integrácia LangChain/Semantic Kernel
+
+### Ukážkové aplikácie workshopu
+
+Workshop zahŕňa 6 progresívnych sekcií s praktickými implementáciami:
+
+1. **Sekcia 01** - Spustenie chatu s integráciou Foundry Local
+2. **Sekcia 02** - RAG pipeline a hodnotenie pomocou RAGAS
+3. **Sekcia 03** - Porovnávanie open-source modelov
+4. **Sekcia 04** - Porovnanie a výber modelov
+5. **Sekcia 05** - Systémy orchestrácie viacerých agentov
+6. **Sekcia 06** - Smerovanie modelov a správa pipeline
+
+Každá ukážka demonštruje rôzne aspekty vývoja edge AI s Foundry Local.
+
+### Výkonnostné aspekty
+
+- SLMs sú optimalizované pre nasadenie na edge zariadeniach (2-16GB RAM)
+- Lokálne inferencie poskytujú odozvy v rozmedzí 50-500ms
+- Kvantizačné techniky dosahujú zníženie veľkosti o 75% pri zachovaní 85% výkonu
+- Schopnosti reálneho času pre konverzácie s lokálnymi modelmi
 
 ### Bezpečnosť a súkromie
 
@@ -631,31 +673,31 @@ Repozitár obsahuje 10 komplexných ukážkových aplikácií:
 - **Hlavný README**: [README.md](README.md) - Prehľad repozitára a učebné cesty
 - **Študijný sprievodca**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Učebné zdroje a časový plán
 - **Podpora**: [SUPPORT.md](SUPPORT.md) - Ako získať pomoc
-- **Bezpečnosť**: [SECURITY.md](SECURITY.md) - Nahlasovanie bezpečnostných problémov
+- **Bezpečnosť**: [SECURITY.md](SECURITY.md) - Nahlásenie bezpečnostných problémov
 
 ### Podpora komunity
 
-- **GitHub Issues**: [Nahlásiť chyby alebo požiadať o funkcie](https://github.com/microsoft/edgeai-for-beginners/issues)
-- **GitHub Discussions**: [Pýtať sa otázky a zdieľať nápady](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **GitHub Issues**: [Nahlásenie chýb alebo požiadaviek na funkcie](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **GitHub Discussions**: [Pýtajte sa otázky a zdieľajte nápady](https://github.com/microsoft/edgeai-for-beginners/discussions)
 - **Foundry Local Issues**: [Technické problémy s Foundry Local](https://github.com/microsoft/Foundry-Local/issues)
 
 ### Kontakt
 
 - **Správcovia**: Pozrite si [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
-- **Bezpečnostné problémy**: Postupujte podľa zodpovedného nahlasovania v [SECURITY.md](SECURITY.md)
-- **Podpora od Microsoftu**: Pre podnikové služby kontaktujte zákaznícky servis Microsoftu
+- **Bezpečnostné problémy**: Postupujte podľa zodpovedného nahlásenia v [SECURITY.md](SECURITY.md)
+- **Podpora Microsoftu**: Pre podnikové služby kontaktujte zákaznícku podporu Microsoftu
 
 ### Ďalšie zdroje
 
-- **Microsoft Learn**: [Učebné cesty pre AI a strojové učenie](https://learn.microsoft.com/training/browse/?products=ai-services)
-- **Foundry Local Dokumentácia**: [Oficiálna dokumentácia](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
-- **Ukážky komunity**: Pozrite si [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) pre príspevky od komunity
+- **Microsoft Learn**: [Učebné cesty AI a strojového učenia](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **Dokumentácia Foundry Local**: [Oficiálne dokumenty](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **Ukážky komunity**: Pozrite si [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) pre príspevky komunity
 
 ---
 
-**Toto je vzdelávací repozitár zameraný na výučbu vývoja Edge AI. Hlavným príspevkovým vzorom je zlepšovanie vzdelávacieho obsahu a pridávanie/vylepšovanie ukážkových aplikácií, ktoré demonštrujú koncepty Edge AI.**
+**Toto je vzdelávací repozitár zameraný na výučbu vývoja Edge AI. Hlavným príspevkovým vzorom je zlepšovanie vzdelávacieho obsahu a pridávanie/zlepšovanie ukážkových aplikácií, ktoré demonštrujú koncepty Edge AI.**
 
 ---
 
-**Upozornenie**:  
+**Zrieknutie sa zodpovednosti**:  
 Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-08T11:42:23+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T14:57:22+00:00",
   "source_file": "AGENTS.md",
   "language_code": "sl"
 }
 -->
 # AGENTS.md
 
-> **Vodnik za razvijalce pri prispevanju k EdgeAI za začetnike**
+> **Razvijalčev vodnik za prispevanje k EdgeAI za začetnike**
 > 
-> Ta dokument ponuja celovite informacije za razvijalce, AI agente in sodelujoče, ki delajo s tem repozitorijem. Pokriva nastavitev, delovne tokove razvoja, testiranje in najboljše prakse.
+> Ta dokument ponuja obsežne informacije za razvijalce, AI agente in sodelujoče, ki delajo s tem repozitorijem. Pokriva nastavitev, delovne tokove razvoja, testiranje in najboljše prakse.
 > 
-> **Zadnja posodobitev**: oktober 2025 | **Različica dokumenta**: 2.0
+> **Zadnja posodobitev**: 30. oktober 2025 | **Različica dokumenta**: 3.0
 
 ## Kazalo vsebine
 
@@ -26,7 +26,7 @@ CO_OP_TRANSLATOR_METADATA:
 - [Smernice za slog kode](../..)
 - [Smernice za zahteve za združitev](../..)
 - [Sistem za prevajanje](../..)
-- [Lokalna integracija Foundry](../..)
+- [Integracija Foundry Local](../..)
 - [Gradnja in uvajanje](../..)
 - [Pogoste težave in odpravljanje napak](../..)
 - [Dodatni viri](../..)
@@ -35,11 +35,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Pregled projekta
 
-EdgeAI za začetnike je celovit izobraževalni repozitorij, ki poučuje razvoj Edge AI z malimi jezikovnimi modeli (SLM). Tečaj pokriva osnove EdgeAI, uvajanje modelov, tehnike optimizacije in implementacije, pripravljene za produkcijo, z uporabo Microsoft Foundry Local in različnih AI ogrodij.
+EdgeAI za začetnike je obsežen izobraževalni repozitorij, ki poučuje razvoj Edge AI z malimi jezikovnimi modeli (SLM). Tečaj pokriva osnove EdgeAI, uvajanje modelov, tehnike optimizacije in implementacije, pripravljene za produkcijo, z uporabo Microsoft Foundry Local in različnih AI ogrodij.
 
 **Ključne tehnologije:**
-- Python 3.8+ (glavni jezik za AI/ML primere)
-- .NET C# (AI/ML primeri)
+- Python 3.8+ (glavni jezik za AI/ML vzorce)
+- .NET C# (AI/ML vzorci)
 - JavaScript/Node.js z Electron (za namizne aplikacije)
 - Microsoft Foundry Local SDK
 - Microsoft Windows ML 
@@ -48,9 +48,9 @@ EdgeAI za začetnike je celovit izobraževalni repozitorij, ki poučuje razvoj E
 - AI ogrodja: LangChain, Semantic Kernel, Chainlit
 - Optimizacija modelov: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
 
-**Vrsta repozitorija:** Izobraževalna vsebina z 8 moduli in 10 celovitimi primeri aplikacij
+**Vrsta repozitorija:** Izobraževalni repozitorij z 8 moduli in 10 obsežnimi vzorčnimi aplikacijami
 
-**Arhitektura:** Večmodularna učna pot s praktičnimi primeri, ki prikazujejo vzorce uvajanja Edge AI
+**Arhitektura:** Večmodulna učna pot s praktičnimi vzorci, ki prikazujejo vzorce uvajanja Edge AI
 
 ## Struktura repozitorija
 
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -72,29 +79,29 @@ edgeai-for-beginners/
 
 ### Zahtevana orodja
 
-- **Python 3.8+** - Za AI/ML primere in zvezke
-- **Node.js 16+** - Za aplikacijo Electron
+- **Python 3.8+** - Za AI/ML vzorce in beležke
+- **Node.js 16+** - Za vzorčno aplikacijo Electron
 - **Git** - Za nadzor različic
 - **Microsoft Foundry Local** - Za lokalno izvajanje AI modelov
 
 ### Priporočena orodja
 
 - **Visual Studio Code** - Z razširitvami Python, Jupyter in Pylance
-- **Windows Terminal** - Za boljšo izkušnjo ukazne vrstice (Windows uporabniki)
+- **Windows Terminal** - Za boljšo izkušnjo ukazne vrstice (uporabniki Windows)
 - **Docker** - Za razvoj v kontejnerjih (neobvezno)
 
 ### Sistemske zahteve
 
 - **RAM**: najmanj 8GB, priporočljivo 16GB+ za scenarije z več modeli
-- **Shramba**: 10GB+ prostega prostora za modele in odvisnosti
+- **Shramba**: najmanj 10GB prostega prostora za modele in odvisnosti
 - **OS**: Windows 10/11, macOS 11+ ali Linux (Ubuntu 20.04+)
 - **Strojna oprema**: CPU s podporo za AVX2; GPU (CUDA, Qualcomm NPU) neobvezno, vendar priporočljivo
 
-### Zahteve glede znanja
+### Predhodno znanje
 
 - Osnovno razumevanje programiranja v Pythonu
 - Seznanjenost z ukaznimi vrsticami
-- Razumevanje konceptov AI/ML (za razvoj primerov)
+- Razumevanje konceptov AI/ML (za razvoj vzorcev)
 - Git delovni tokovi in procesi zahtev za združitev
 
 ## Ukazi za nastavitev
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Nastavitev Python primerov (Modul08 in Python primeri)
+### Nastavitev Python vzorcev (Modul08 in delavniški vzorci)
 
 ```bash
 # Create and activate virtual environment
@@ -125,9 +132,13 @@ pip install foundry-local-sdk openai
 # Install additional dependencies for Module08 samples
 cd Module08
 pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
+pip install -r requirements.txt
 ```
 
-### Nastavitev Node.js primerov (Primer 08 - Windows Chat App)
+### Nastavitev Node.js vzorcev (Vzorec 08 - Windows Chat App)
 
 ```bash
 cd Module08/samples/08
@@ -145,7 +156,7 @@ npm run dist
 
 ### Nastavitev Foundry Local
 
-Foundry Local je potreben za izvajanje primerov. Prenesite in namestite iz uradnega repozitorija:
+Foundry Local je potreben za izvajanje vzorcev. Prenesite in namestite iz uradnega repozitorija:
 
 **Namestitev:**
 - **Windows**: `winget install Microsoft.FoundryLocal`
@@ -155,7 +166,7 @@ Foundry Local je potreben za izvajanje primerov. Prenesite in namestite iz uradn
 **Hitri začetek:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -170,30 +181,36 @@ foundry service status
 
 ### Razvoj vsebine
 
-Ta repozitorij vsebuje predvsem **izobraževalno vsebino v Markdownu**. Pri spreminjanju:
+Ta repozitorij vsebuje predvsem **Markdown izobraževalno vsebino**. Pri spreminjanju:
 
 1. Uredite `.md` datoteke v ustreznih modulskih imenikih
 2. Upoštevajte obstoječe vzorce oblikovanja
 3. Poskrbite, da so primeri kode točni in preizkušeni
-4. Po potrebi posodobite ustrezno prevedeno vsebino (ali pa naj to opravi avtomatizacija)
+4. Po potrebi posodobite ustrezno prevedeno vsebino (ali pustite, da to opravi avtomatizacija)
 
-### Razvoj primerov aplikacij
+### Razvoj vzorčnih aplikacij
 
-Za Python primere (primeri 01-07, 09-10):
+Za Python vzorce Modula08 (vzorce 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
 ```
 
-Za Electron primer (primer 08):
+Za delavniške Python vzorce:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
+```
+
+Za vzorec Electron (vzorec 08):
 ```bash
 cd Module08/samples/08
 npm run dev  # Development with hot reload
 ```
 
-### Testiranje primerov aplikacij
+### Testiranje vzorčnih aplikacij
 
-Python primeri nimajo avtomatiziranih testov, vendar jih lahko preverite z zagonom:
+Python vzorci nimajo avtomatiziranih testov, vendar jih je mogoče preveriti z zagonom:
 ```bash
 # Test basic chat functionality
 python samples/01/chat_quickstart.py "Hello"
@@ -203,7 +220,7 @@ set MODEL=phi-4-mini
 python samples/02/openai_sdk_client.py
 ```
 
-Electron primer ima infrastrukturo za testiranje:
+Vzorec Electron ima infrastrukturo za testiranje:
 ```bash
 cd Module08/samples/08
 npm test           # Run unit tests
@@ -218,14 +235,14 @@ npm run lint       # Check code style
 Repozitorij uporablja avtomatizirane delovne tokove za prevajanje. Ročno testiranje prevodov ni potrebno.
 
 **Ročno preverjanje sprememb vsebine:**
-1. Preglejte upodobitev Markdowna z ogledom `.md` datotek
+1. Preglejte upodabljanje Markdown z ogledom `.md` datotek
 2. Preverite, ali vse povezave kažejo na veljavne cilje
 3. Preizkusite vse kode, vključene v dokumentacijo
 4. Preverite, ali se slike pravilno nalagajo
 
-### Testiranje primerov aplikacij
+### Testiranje vzorčnih aplikacij
 
-**Module08/samples/08 (Electron aplikacija) ima celovito testiranje:**
+**Module08/samples/08 (Electron aplikacija) ima obsežno testiranje:**
 ```bash
 cd Module08/samples/08
 
@@ -245,12 +262,21 @@ npm run test:e2e
 npm test -- --coverage
 ```
 
-**Python primeri morajo biti ročno testirani:**
+**Python vzorce je treba testirati ročno:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## Smernice za slog kode
@@ -260,10 +286,10 @@ python samples/09/multi_agent_system.py
 - Uporabljajte dosledno hierarhijo naslovov (# za naslov, ## za glavne razdelke, ### za podrazdelke)
 - Vključite kode z določenimi jeziki: ```python, ```bash, ```javascript
 - Upoštevajte obstoječe oblikovanje za tabele, sezname in poudarke
-- Ohranite berljivost vrstic (cilj ~80-100 znakov, vendar ni strogo)
+- Naj bodo vrstice berljive (cilj ~80-100 znakov, vendar ne strogo)
 - Uporabljajte relativne povezave za notranje reference
 
-### Slog kode v Pythonu
+### Slog kode Python
 
 - Upoštevajte konvencije PEP 8
 - Uporabljajte tipe, kjer je primerno
@@ -271,7 +297,7 @@ python samples/09/multi_agent_system.py
 - Uporabljajte smiselna imena spremenljivk
 - Naj bodo funkcije osredotočene in jedrnate
 
-### Slog kode v JavaScript/Node.js
+### Slog kode JavaScript/Node.js
 
 ```bash
 # Electron sample follows ESLint configuration
@@ -282,7 +308,7 @@ npm run format      # Format with Prettier
 ```
 
 **Ključne konvencije:**
-- ESLint konfiguracija je na voljo v primeru 08
+- Konfiguracija ESLint je na voljo v vzorcu 08
 - Prettier za oblikovanje kode
 - Uporabljajte sodobno sintakso ES6+
 - Upoštevajte obstoječe vzorce v kodi
@@ -307,7 +333,7 @@ npm run format      # Format with Prettier
 
 ### Format sporočila zavez
 
-Upoštevajte [Conventional Commits](https://www.conventionalcommits.org/):
+Sledite [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
 <type>(<scope>): <description>
@@ -335,30 +361,30 @@ ali
 
 ### Kodeks ravnanja
 
-Vsi sodelujoči morajo upoštevati [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Prosimo, preglejte [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) pred prispevanjem.
+Vsi sodelujoči morajo upoštevati [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Pred prispevanjem preglejte [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ### Pred oddajo
 
 **Za spremembe vsebine:**
 - Predogled vseh spremenjenih Markdown datotek
-- Preverite povezave in slike
+- Preverite, ali povezave in slike delujejo
 - Preverite tipkarske in slovnične napake
 
-**Za spremembe kode primerov (Module08/samples/08):**
+**Za spremembe vzorčne kode (Module08/samples/08):**
 ```bash
 npm run lint
 npm test
 ```
 
-**Za spremembe Python primerov:**
-- Preverite, ali primer uspešno deluje
+**Za spremembe Python vzorcev:**
+- Preverite, ali vzorec uspešno deluje
 - Preverite, ali obravnava napak deluje
-- Preverite združljivost z Foundry Local
+- Preverite združljivost s Foundry Local
 
 ### Postopek pregleda
 
 - Spremembe izobraževalne vsebine se pregledajo glede točnosti in jasnosti
-- Primeri kode se testirajo glede funkcionalnosti
+- Vzorci kode se testirajo glede funkcionalnosti
 - Posodobitve prevodov se obravnavajo samodejno prek GitHub Actions
 
 ## Sistem za prevajanje
@@ -369,11 +395,11 @@ npm test
 - Avtomatizirano prek delovnega toka `co-op-translator.yml`
 - **NE urejajte ročno prevedenih datotek** - te bodo prepisane
 - Urejajte samo izvorne datoteke v angleščini v korenskem in modulskih imenikih
-- Prevajanja se samodejno ustvarijo ob potisku v vejo `main`
+- Prevajanja se samodejno generirajo ob potisku v vejo `main`
 
-## Lokalna integracija Foundry
+## Integracija Foundry Local
 
-Večina primerov Module08 zahteva, da Microsoft Foundry Local deluje.
+Večina vzorcev Modula08 zahteva, da Microsoft Foundry Local deluje.
 
 ### Namestitev in nastavitev
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -444,13 +470,13 @@ curl http://localhost:<port>/v1/models
 # Note: Port is displayed when running 'foundry service status'
 ```
 
-### Okoljske spremenljivke za primere
+### Spremenljivke okolja za vzorce
 
-Večina primerov uporablja te okoljske spremenljivke:
+Večina vzorcev uporablja te spremenljivke okolja:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -471,7 +497,7 @@ set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 Ta repozitorij je predvsem dokumentacija - proces gradnje za vsebino ni potreben.
 
-### Gradnja primerov aplikacij
+### Gradnja vzorčnih aplikacij
 
 **Electron aplikacija (Module08/samples/08):**
 ```bash
@@ -490,8 +516,8 @@ npm run dist
 npm run pack
 ```
 
-**Python primeri:**
-Proces gradnje ni potreben - primeri se izvajajo neposredno z interpreterjem Python.
+**Python vzorci:**
+Proces gradnje ni potreben - vzorci se izvajajo neposredno z interpreterjem Python.
 
 ## Pogoste težave in odpravljanje napak
 
@@ -500,7 +526,7 @@ Proces gradnje ni potreben - primeri se izvajajo neposredno z interpreterjem Pyt
 ### Kritične težave (blokirajoče)
 
 #### Foundry Local ne deluje
-**Težava:** Primeri ne uspejo zaradi napak pri povezavi
+**Težava:** Vzorci ne uspejo zaradi napak povezave
 
 **Rešitev:**
 ```bash
@@ -508,7 +534,7 @@ Proces gradnje ni potreben - primeri se izvajajo neposredno z interpreterjem Pyt
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -551,12 +577,12 @@ npm install
 
 ### Težave z delovnim tokom (manjše)
 
-#### Konflikti pri prevajalskem delovnem toku
+#### Konflikti delovnega toka prevajanja
 **Težava:** Konflikti prevajalskih PR-jev z vašimi spremembami
 
 **Rešitev:**
 - Urejajte samo izvorne datoteke v angleščini
-- Naj avtomatizirani prevajalski delovni tok obravnava prevode
+- Pustite, da avtomatizirani delovni tok prevajanja obravnava prevode
 - Če pride do konfliktov, združite `main` v svojo vejo po združitvi prevodov
 
 #### Napake pri prenosu modelov
@@ -577,19 +603,20 @@ foundry model run <model-alias>
 
 ### Učne poti
 - **Pot za začetnike:** Moduli 01-02 (7-9 ur)
-- **Pot za srednje uporabnike:** Moduli 03-04 (9-11 ur)
+- **Pot za srednje napredne:** Moduli 03-04 (9-11 ur)
 - **Pot za napredne:** Moduli 05-07 (12-15 ur)
 - **Pot za strokovnjake:** Modul 08 (8-10 ur)
+- **Praktična delavnica:** Gradivo za delavnico (6-8 ur)
 
 ### Ključna vsebina modulov
 - **Modul01:** Osnove EdgeAI in študije primerov iz resničnega sveta
 - **Modul02:** Družine in arhitekture malih jezikovnih modelov (SLM)
 - **Modul03:** Strategije lokalnega in oblačnega uvajanja
-- **Modul04:** Optimizacija modelov z več ogrodji
+- **Modul04:** Optimizacija modelov z več ogrodji (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
 - **Modul05:** SLMOps - operacije v produkciji
 - **Modul06:** AI agenti in klicanje funkcij
 - **Modul07:** Implementacije, specifične za platformo
-- **Modul08:** Orodja Foundry Local z 10 celovitimi primeri
+- **Modul08:** Orodje Foundry Local z 10 obsežnimi vzorci
 
 ### Zunanje odvisnosti
 - [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Lokalni runtime AI modelov z OpenAI-kompatibilnim API-jem
@@ -602,9 +629,9 @@ foundry model run <model-alias>
 
 ## Opombe, specifične za projekt
 
-### Primeri aplikacij Modul08
+### Vzorčne aplikacije Modula08
 
-Repozitorij vključuje 10 celovitih primerov aplikacij:
+Repozitorij vključuje 10 obsežnih vzorčnih aplikacij:
 
 1. **01-REST Chat Quickstart** - Osnovna integracija OpenAI SDK
 2. **02-OpenAI SDK Integration** - Napredne funkcije SDK
@@ -613,40 +640,51 @@ Repozitorij vključuje 10 celovitih primerov aplikacij:
 5. **05-Multi-Agent Orchestration** - Osnovna koordinacija agentov
 6. **06-Models-as-Tools Router** - Inteligentno usmerjanje modelov
 7. **07-Direct API Client** - Nizkoročnostna integracija API-ja
-8. **08-Windows 11 Chat App** - Domača Electron namizna aplikacija
+8. **08-Windows 11 Chat App** - Domača namizna aplikacija Electron
 9. **09-Advanced Multi-Agent System** - Kompleksna orkestracija agentov
-10. **10-Foundry Tools Framework** - Integracija LangChain/Semantic Kernel
+10. **10-Orodja Foundry Framework** - Integracija LangChain/Semantic Kernel
+
+### Primeri aplikacij delavnice
+
+Delavnica vključuje 6 progresivnih sej s praktičnimi implementacijami:
+
+1. **Seja 01** - Zagon klepeta z integracijo Foundry Local
+2. **Seja 02** - RAG cevovod in ocenjevanje z RAGAS
+3. **Seja 03** - Primerjalno testiranje odprtokodnih modelov
+4. **Seja 04** - Primerjava in izbira modelov
+5. **Seja 05** - Sistemi za orkestracijo več agentov
+6. **Seja 06** - Usmerjanje modelov in upravljanje cevovodov
 
 Vsak primer prikazuje različne vidike razvoja Edge AI z Foundry Local.
 
-### Premisleki glede zmogljivosti
+### Upoštevanje zmogljivosti
 
-- SLM-ji so optimizirani za uvajanje na robu (2-16GB RAM)
-- Lokalna inferenca omogoča odzivne čase med 50-500 ms
-- Tehnike kvantizacije dosežejo 75% zmanjšanje velikosti ob 85% ohranitvi zmogljivosti
-- Zmožnosti za pogovore v realnem času z lokalnimi modeli
+- SLM-ji so optimizirani za robno uporabo (2-16GB RAM)
+- Lokalno sklepanje omogoča odzivne čase med 50-500ms
+- Tehnike kvantizacije dosežejo 75% zmanjšanje velikosti z 85% ohranitvijo zmogljivosti
+- Zmožnosti pogovorov v realnem času z lokalnimi modeli
 
 ### Varnost in zasebnost
 
 - Vsa obdelava poteka lokalno - podatki se ne pošiljajo v oblak
 - Primerno za aplikacije, občutljive na zasebnost (zdravstvo, finance)
 - Izpolnjuje zahteve glede suverenosti podatkov
-- Foundry Local deluje izključno na lokalni strojni opremi
+- Foundry Local deluje popolnoma na lokalni strojni opremi
 
 ## Pomoč
 
 ### Dokumentacija
 
 - **Glavni README**: [README.md](README.md) - Pregled repozitorija in učne poti
-- **Učni vodič**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Učni viri in časovnica
-- **Podpora**: [SUPPORT.md](SUPPORT.md) - Kako pridobiti pomoč
-- **Varnost**: [SECURITY.md](SECURITY.md) - Prijava varnostnih težav
+- **Učni vodič**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Učni viri in časovni načrt
+- **Podpora**: [SUPPORT.md](SUPPORT.md) - Kako dobiti pomoč
+- **Varnost**: [SECURITY.md](SECURITY.md) - Poročanje o varnostnih težavah
 
 ### Podpora skupnosti
 
 - **GitHub Issues**: [Prijava napak ali zahteva za funkcije](https://github.com/microsoft/edgeai-for-beginners/issues)
-- **GitHub Discussions**: [Postavljanje vprašanj in deljenje idej](https://github.com/microsoft/edgeai-for-beginners/discussions)
-- **Foundry Local Issues**: [Tehnične težave s Foundry Local](https://github.com/microsoft/Foundry-Local/issues)
+- **GitHub Discussions**: [Postavite vprašanja in delite ideje](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **Težave Foundry Local**: [Tehnične težave s Foundry Local](https://github.com/microsoft/Foundry-Local/issues)
 
 ### Kontakt
 
@@ -657,14 +695,14 @@ Vsak primer prikazuje različne vidike razvoja Edge AI z Foundry Local.
 ### Dodatni viri
 
 - **Microsoft Learn**: [Učne poti za AI in strojno učenje](https://learn.microsoft.com/training/browse/?products=ai-services)
-- **Foundry Local Dokumentacija**: [Uradna dokumentacija](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **Dokumentacija Foundry Local**: [Uradna dokumentacija](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
 - **Primeri skupnosti**: Preverite [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) za prispevke skupnosti
 
 ---
 
-**To je izobraževalni repozitorij, osredotočen na poučevanje razvoja Edge AI. Glavni vzorec prispevkov vključuje izboljšanje izobraževalne vsebine ter dodajanje/izboljšanje vzorčnih aplikacij, ki prikazujejo koncepte Edge AI.**
+**To je izobraževalni repozitorij, osredotočen na poučevanje razvoja Edge AI. Glavni vzorec prispevkov je izboljšanje izobraževalne vsebine in dodajanje/izboljšanje primerov aplikacij, ki prikazujejo koncepte Edge AI.**
 
 ---
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.

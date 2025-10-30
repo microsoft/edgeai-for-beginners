@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-09T18:58:29+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T13:39:58+00:00",
   "source_file": "AGENTS.md",
   "language_code": "id"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 > **Panduan Pengembang untuk Berkontribusi pada EdgeAI untuk Pemula**
 > 
-> Dokumen ini menyediakan informasi lengkap bagi pengembang, agen AI, dan kontributor yang bekerja dengan repositori ini. Dokumen ini mencakup pengaturan, alur kerja pengembangan, pengujian, dan praktik terbaik.
+> Dokumen ini menyediakan informasi lengkap untuk pengembang, agen AI, dan kontributor yang bekerja dengan repositori ini. Dokumen ini mencakup pengaturan, alur kerja pengembangan, pengujian, dan praktik terbaik.
 > 
-> **Terakhir Diperbarui**: Oktober 2025 | **Versi Dokumen**: 2.0
+> **Terakhir Diperbarui**: 30 Oktober 2025 | **Versi Dokumen**: 3.0
 
 ## Daftar Isi
 
@@ -26,7 +26,7 @@ CO_OP_TRANSLATOR_METADATA:
 - [Panduan Gaya Kode](../..)
 - [Panduan Pull Request](../..)
 - [Sistem Terjemahan](../..)
-- [Integrasi Lokal Foundry](../..)
+- [Integrasi Foundry Local](../..)
 - [Pembangunan dan Penerapan](../..)
 - [Masalah Umum dan Pemecahan Masalah](../..)
 - [Sumber Daya Tambahan](../..)
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -81,7 +88,7 @@ edgeai-for-beginners/
 
 - **Visual Studio Code** - Dengan ekstensi Python, Jupyter, dan Pylance
 - **Windows Terminal** - Untuk pengalaman baris perintah yang lebih baik (pengguna Windows)
-- **Docker** - Untuk pengembangan dalam container (opsional)
+- **Docker** - Untuk pengembangan dalam kontainer (opsional)
 
 ### Persyaratan Sistem
 
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Pengaturan Sampel Python (Modul08 dan sampel Python)
+### Pengaturan Sampel Python (Modul08 dan sampel Workshop)
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -155,7 +166,7 @@ Foundry Local diperlukan untuk menjalankan sampel. Unduh dan instal dari reposit
 **Panduan Cepat:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -170,19 +181,25 @@ foundry service status
 
 ### Pengembangan Konten
 
-Repositori ini terutama berisi **konten edukasi dalam format Markdown**. Saat melakukan perubahan:
+Repositori ini terutama berisi **konten edukasi Markdown**. Saat melakukan perubahan:
 
 1. Edit file `.md` di direktori modul yang sesuai
-2. Ikuti pola format yang sudah ada
+2. Ikuti pola format yang ada
 3. Pastikan contoh kode akurat dan telah diuji
 4. Perbarui konten terjemahan yang sesuai jika diperlukan (atau biarkan otomatisasi menangani)
 
 ### Pengembangan Aplikasi Sampel
 
-Untuk sampel Python (sampel 01-07, 09-10):
+Untuk sampel Python Modul08 (sampel 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+Untuk sampel Python Workshop:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 Untuk sampel Electron (sampel 08):
@@ -218,7 +235,7 @@ npm run lint       # Check code style
 Repositori menggunakan alur kerja terjemahan otomatis. Tidak diperlukan pengujian manual untuk terjemahan.
 
 **Validasi manual untuk perubahan konten:**
-1. Tinjau rendering Markdown dengan mempratinjau file `.md`
+1. Tinjau rendering Markdown dengan melihat pratinjau file `.md`
 2. Verifikasi semua tautan mengarah ke target yang valid
 3. Uji cuplikan kode yang disertakan dalam dokumentasi
 4. Periksa apakah gambar dimuat dengan benar
@@ -247,17 +264,26 @@ npm test -- --coverage
 
 **Sampel Python harus diuji secara manual:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## Panduan Gaya Kode
 
 ### Konten Markdown
 
-- Gunakan hierarki heading yang konsisten (# untuk judul, ## untuk bagian utama, ### untuk subbagian)
+- Gunakan hierarki judul yang konsisten (# untuk judul, ## untuk bagian utama, ### untuk subbagian)
 - Sertakan blok kode dengan spesifikasi bahasa: ```python, ```bash, ```javascript
 - Ikuti format yang ada untuk tabel, daftar, dan penekanan
 - Jaga agar baris tetap mudah dibaca (usahakan ~80-100 karakter, tetapi tidak ketat)
@@ -281,18 +307,18 @@ npm run lint:fix    # Auto-fix style issues
 npm run format      # Format with Prettier
 ```
 
-**Konvensi Utama:**
+**Konvensi utama:**
 - Konfigurasi ESLint disediakan dalam sampel 08
 - Prettier untuk format kode
-- Gunakan sintaks ES6+ modern
+- Gunakan sintaks modern ES6+
 - Ikuti pola yang ada dalam basis kode
 
 ## Panduan Pull Request
 
-### Alur Kontribusi
+### Alur Kerja Kontribusi
 
 1. **Fork repositori** dan buat cabang baru dari `main`
-2. **Lakukan perubahan** sesuai panduan gaya kode
+2. **Lakukan perubahan Anda** mengikuti panduan gaya kode
 3. **Uji secara menyeluruh** menggunakan instruksi pengujian di atas
 4. **Commit dengan pesan yang jelas** mengikuti format commit konvensional
 5. **Push ke fork Anda** dan buat pull request
@@ -371,7 +397,7 @@ npm test
 - Edit hanya file sumber bahasa Inggris di direktori root dan modul
 - Terjemahan secara otomatis dihasilkan saat push ke cabang `main`
 
-## Integrasi Lokal Foundry
+## Integrasi Foundry Local
 
 Sebagian besar sampel Modul08 memerlukan Microsoft Foundry Local untuk berjalan.
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -450,7 +476,7 @@ Sebagian besar sampel menggunakan variabel lingkungan berikut:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -508,7 +534,7 @@ Tidak ada proses pembangunan - sampel dijalankan langsung dengan interpreter Pyt
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -538,7 +564,7 @@ pip install -r requirements.txt
 ```
 
 #### Masalah Pembangunan Electron
-**Masalah:** Kegagalan npm install atau build
+**Masalah:** npm install atau kegagalan pembangunan
 
 **Solusi:**
 ```bash
@@ -552,10 +578,10 @@ npm install
 ### Masalah Alur Kerja (Ringan)
 
 #### Konflik Alur Kerja Terjemahan
-**Masalah:** Konflik PR terjemahan dengan perubahan Anda
+**Masalah:** PR terjemahan konflik dengan perubahan Anda
 
 **Solusi:**
-- Hanya edit file sumber bahasa Inggris
+- Edit hanya file sumber bahasa Inggris
 - Biarkan alur kerja terjemahan otomatis menangani terjemahan
 - Jika terjadi konflik, gabungkan `main` ke cabang Anda setelah terjemahan digabungkan
 
@@ -580,12 +606,13 @@ foundry model run <model-alias>
 - **Jalur Menengah:** Modul 03-04 (9-11 jam)
 - **Jalur Lanjutan:** Modul 05-07 (12-15 jam)
 - **Jalur Ahli:** Modul 08 (8-10 jam)
+- **Workshop Praktis:** Materi workshop (6-8 jam)
 
 ### Konten Modul Utama
 - **Modul01:** Dasar-dasar EdgeAI dan studi kasus dunia nyata
 - **Modul02:** Keluarga dan arsitektur Small Language Model (SLM)
 - **Modul03:** Strategi penerapan lokal dan cloud
-- **Modul04:** Optimasi model dengan berbagai kerangka kerja
+- **Modul04:** Optimasi model dengan berbagai kerangka kerja (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
 - **Modul05:** SLMOps - operasi produksi
 - **Modul06:** Agen AI dan pemanggilan fungsi
 - **Modul07:** Implementasi spesifik platform
@@ -611,19 +638,30 @@ Repositori ini mencakup 10 aplikasi sampel yang komprehensif:
 3. **03-Model Discovery & Benchmarking** - Alat perbandingan model
 4. **04-Chainlit RAG Application** - Generasi berbasis pengambilan
 5. **05-Multi-Agent Orchestration** - Koordinasi agen dasar
-6. **06-Models-as-Tools Router** - Perutean model cerdas
+6. **06-Models-as-Tools Router** - Pengarahan model cerdas
 7. **07-Direct API Client** - Integrasi API tingkat rendah
 8. **08-Windows 11 Chat App** - Aplikasi desktop Electron native
 9. **09-Advanced Multi-Agent System** - Orkestrasi agen kompleks
-10. **10-Foundry Tools Framework** - Integrasi LangChain/Semantic Kernel
+10. **10-Kerangka Alat Foundry** - Integrasi LangChain/Semantic Kernel
 
-Setiap sampel menunjukkan aspek berbeda dari pengembangan Edge AI dengan Foundry Local.
+### Aplikasi Contoh Workshop
 
-### Pertimbangan Kinerja
+Workshop ini mencakup 6 sesi progresif dengan implementasi praktis:
+
+1. **Sesi 01** - Memulai chat dengan integrasi Foundry Local
+2. **Sesi 02** - Pipeline RAG dan evaluasi dengan RAGAS
+3. **Sesi 03** - Benchmarking model open-source
+4. **Sesi 04** - Perbandingan dan pemilihan model
+5. **Sesi 05** - Sistem orkestrasi multi-agen
+6. **Sesi 06** - Pengaturan routing model dan manajemen pipeline
+
+Setiap contoh menunjukkan berbagai aspek pengembangan AI edge dengan Foundry Local.
+
+### Pertimbangan Performa
 
 - SLM dioptimalkan untuk penerapan edge (2-16GB RAM)
 - Inferensi lokal memberikan waktu respons 50-500ms
-- Teknik kuantisasi mencapai pengurangan ukuran hingga 75% dengan retensi kinerja sebesar 85%
+- Teknik kuantisasi mencapai pengurangan ukuran 75% dengan retensi performa 85%
 - Kemampuan percakapan real-time dengan model lokal
 
 ### Keamanan dan Privasi
@@ -631,14 +669,14 @@ Setiap sampel menunjukkan aspek berbeda dari pengembangan Edge AI dengan Foundry
 - Semua pemrosesan dilakukan secara lokal - tidak ada data yang dikirim ke cloud
 - Cocok untuk aplikasi yang sensitif terhadap privasi (kesehatan, keuangan)
 - Memenuhi persyaratan kedaulatan data
-- Foundry Local berjalan sepenuhnya di perangkat keras lokal
+- Foundry Local sepenuhnya berjalan di perangkat keras lokal
 
 ## Mendapatkan Bantuan
 
 ### Dokumentasi
 
-- **README Utama**: [README.md](README.md) - Ikhtisar repositori dan jalur pembelajaran
-- **Panduan Belajar**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Sumber daya pembelajaran dan garis waktu
+- **README Utama**: [README.md](README.md) - Gambaran umum repositori dan jalur pembelajaran
+- **Panduan Studi**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Sumber daya pembelajaran dan timeline
 - **Dukungan**: [SUPPORT.md](SUPPORT.md) - Cara mendapatkan bantuan
 - **Keamanan**: [SECURITY.md](SECURITY.md) - Melaporkan masalah keamanan
 
@@ -646,7 +684,7 @@ Setiap sampel menunjukkan aspek berbeda dari pengembangan Edge AI dengan Foundry
 
 - **GitHub Issues**: [Laporkan bug atau minta fitur](https://github.com/microsoft/edgeai-for-beginners/issues)
 - **Diskusi GitHub**: [Ajukan pertanyaan dan bagikan ide](https://github.com/microsoft/edgeai-for-beginners/discussions)
-- **Foundry Local Issues**: [Masalah teknis dengan Foundry Local](https://github.com/microsoft/Foundry-Local/issues)
+- **Masalah Foundry Local**: [Masalah teknis dengan Foundry Local](https://github.com/microsoft/Foundry-Local/issues)
 
 ### Kontak
 
@@ -656,15 +694,15 @@ Setiap sampel menunjukkan aspek berbeda dari pengembangan Edge AI dengan Foundry
 
 ### Sumber Daya Tambahan
 
-- **Microsoft Learn**: [Jalur Pembelajaran AI dan Pembelajaran Mesin](https://learn.microsoft.com/training/browse/?products=ai-services)
-- **Dokumentasi Foundry Local**: [Dokumen Resmi](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **Microsoft Learn**: [Jalur Pembelajaran AI dan Machine Learning](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **Dokumentasi Foundry Local**: [Dokumentasi Resmi](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
 - **Contoh Komunitas**: Lihat [Diskusi GitHub](https://github.com/microsoft/edgeai-for-beginners/discussions) untuk kontribusi komunitas
 
 ---
 
-**Ini adalah repositori pendidikan yang berfokus pada pengajaran pengembangan Edge AI. Pola kontribusi utama adalah meningkatkan konten pendidikan dan menambahkan/mengembangkan aplikasi contoh yang menunjukkan konsep Edge AI.**
+**Ini adalah repositori edukasi yang berfokus pada pengajaran pengembangan AI Edge. Pola kontribusi utama adalah meningkatkan konten edukasi dan menambahkan/mengembangkan aplikasi contoh yang menunjukkan konsep AI Edge.**
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan terjemahan yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemah manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang keliru yang timbul dari penggunaan terjemahan ini.

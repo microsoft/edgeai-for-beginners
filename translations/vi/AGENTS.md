@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-09T16:33:50+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T13:33:39+00:00",
   "source_file": "AGENTS.md",
   "language_code": "vi"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 > **Hướng dẫn dành cho nhà phát triển đóng góp vào EdgeAI cho người mới bắt đầu**
 > 
-> Tài liệu này cung cấp thông tin toàn diện cho các nhà phát triển, tác nhân AI, và người đóng góp làm việc với kho lưu trữ này. Nó bao gồm thiết lập, quy trình phát triển, kiểm thử, và các thực hành tốt nhất.
+> Tài liệu này cung cấp thông tin toàn diện cho các nhà phát triển, tác nhân AI và những người đóng góp làm việc với kho lưu trữ này. Nó bao gồm thiết lập, quy trình phát triển, kiểm thử và các phương pháp tốt nhất.
 > 
-> **Cập nhật lần cuối**: Tháng 10 năm 2025 | **Phiên bản tài liệu**: 2.0
+> **Cập nhật lần cuối**: 30 tháng 10, 2025 | **Phiên bản tài liệu**: 3.0
 
 ## Mục lục
 
@@ -35,7 +35,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tổng quan dự án
 
-EdgeAI cho người mới bắt đầu là một kho lưu trữ giáo dục toàn diện, dạy về phát triển Edge AI với các Mô hình Ngôn ngữ Nhỏ (SLMs). Khóa học bao gồm các nguyên tắc cơ bản về EdgeAI, triển khai mô hình, kỹ thuật tối ưu hóa, và các ứng dụng sẵn sàng sản xuất sử dụng Microsoft Foundry Local và các khung AI khác nhau.
+EdgeAI cho người mới bắt đầu là một kho lưu trữ giáo dục toàn diện dạy về phát triển Edge AI với các Mô hình Ngôn ngữ Nhỏ (SLMs). Khóa học bao gồm các nguyên tắc cơ bản về EdgeAI, triển khai mô hình, kỹ thuật tối ưu hóa và các triển khai sẵn sàng sản xuất sử dụng Microsoft Foundry Local và các khung AI khác nhau.
 
 **Công nghệ chính:**
 - Python 3.8+ (ngôn ngữ chính cho các mẫu AI/ML)
@@ -48,9 +48,9 @@ EdgeAI cho người mới bắt đầu là một kho lưu trữ giáo dục toà
 - Các khung AI: LangChain, Semantic Kernel, Chainlit
 - Tối ưu hóa mô hình: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
 
-**Loại kho lưu trữ:** Kho lưu trữ nội dung giáo dục với 8 mô-đun và 10 ứng dụng mẫu toàn diện
+**Loại kho lưu trữ:** Kho nội dung giáo dục với 8 mô-đun và 10 ứng dụng mẫu toàn diện
 
-**Kiến trúc:** Lộ trình học tập đa mô-đun với các mẫu thực hành minh họa các mẫu triển khai Edge AI
+**Kiến trúc:** Lộ trình học đa mô-đun với các mẫu thực hành minh họa các mẫu triển khai Edge AI
 
 ## Cấu trúc kho lưu trữ
 
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -72,30 +79,30 @@ edgeai-for-beginners/
 
 ### Công cụ cần thiết
 
-- **Python 3.8+** - Dùng cho các mẫu AI/ML và notebook
-- **Node.js 16+** - Dùng cho ứng dụng mẫu Electron
-- **Git** - Dùng để kiểm soát phiên bản
-- **Microsoft Foundry Local** - Dùng để chạy các mô hình AI cục bộ
+- **Python 3.8+** - Cho các mẫu AI/ML và notebook
+- **Node.js 16+** - Cho ứng dụng mẫu Electron
+- **Git** - Cho kiểm soát phiên bản
+- **Microsoft Foundry Local** - Để chạy các mô hình AI cục bộ
 
 ### Công cụ khuyến nghị
 
-- **Visual Studio Code** - Với các tiện ích mở rộng Python, Jupyter, và Pylance
-- **Windows Terminal** - Để có trải nghiệm dòng lệnh tốt hơn (người dùng Windows)
-- **Docker** - Dùng cho phát triển trong container (tùy chọn)
+- **Visual Studio Code** - Với các tiện ích mở rộng Python, Jupyter và Pylance
+- **Windows Terminal** - Để trải nghiệm dòng lệnh tốt hơn (người dùng Windows)
+- **Docker** - Cho phát triển trong container (tùy chọn)
 
 ### Yêu cầu hệ thống
 
 - **RAM**: Tối thiểu 8GB, khuyến nghị 16GB+ cho các kịch bản đa mô hình
-- **Dung lượng lưu trữ**: Tối thiểu 10GB dung lượng trống cho mô hình và các phụ thuộc
+- **Dung lượng lưu trữ**: Tối thiểu 10GB không gian trống cho mô hình và phụ thuộc
 - **Hệ điều hành**: Windows 10/11, macOS 11+, hoặc Linux (Ubuntu 20.04+)
 - **Phần cứng**: CPU hỗ trợ AVX2; GPU (CUDA, Qualcomm NPU) tùy chọn nhưng được khuyến nghị
 
 ### Yêu cầu kiến thức
 
-- Hiểu biết cơ bản về lập trình Python
+- Hiểu cơ bản về lập trình Python
 - Quen thuộc với giao diện dòng lệnh
-- Hiểu các khái niệm AI/ML (dành cho phát triển mẫu)
-- Quy trình Git và quy trình yêu cầu kéo
+- Hiểu các khái niệm AI/ML (cho phát triển mẫu)
+- Quy trình Git và yêu cầu kéo
 
 ## Lệnh thiết lập
 
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Thiết lập mẫu Python (Mô-đun08 và các mẫu Python)
+### Thiết lập mẫu Python (Mô-đun08 và các mẫu Workshop)
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -155,7 +166,7 @@ Foundry Local cần thiết để chạy các mẫu. Tải xuống và cài đ�
 **Bắt đầu nhanh:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -172,17 +183,23 @@ foundry service status
 
 Kho lưu trữ này chủ yếu chứa **nội dung giáo dục Markdown**. Khi thực hiện thay đổi:
 
-1. Chỉnh sửa các tệp `.md` trong thư mục mô-đun tương ứng
+1. Chỉnh sửa các tệp `.md` trong các thư mục mô-đun tương ứng
 2. Tuân theo các mẫu định dạng hiện có
 3. Đảm bảo các ví dụ mã chính xác và đã được kiểm thử
 4. Cập nhật nội dung dịch tương ứng nếu cần (hoặc để tự động hóa xử lý)
 
 ### Phát triển ứng dụng mẫu
 
-Đối với các mẫu Python (mẫu 01-07, 09-10):
+Đối với các mẫu Python Mô-đun08 (mẫu 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+Đối với các mẫu Python Workshop:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 Đối với mẫu Electron (mẫu 08):
@@ -225,7 +242,7 @@ Kho lưu trữ sử dụng quy trình dịch tự động. Không cần kiểm t
 
 ### Kiểm thử ứng dụng mẫu
 
-**Module08/samples/08 (ứng dụng Electron) có kiểm thử toàn diện:**
+**Mô-đun08/mẫu/08 (ứng dụng Electron) có kiểm thử toàn diện:**
 ```bash
 cd Module08/samples/08
 
@@ -247,10 +264,19 @@ npm test -- --coverage
 
 **Các mẫu Python nên được kiểm thử thủ công:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## Hướng dẫn về phong cách mã
@@ -259,8 +285,8 @@ python samples/09/multi_agent_system.py
 
 - Sử dụng hệ thống tiêu đề nhất quán (# cho tiêu đề, ## cho các phần chính, ### cho các phần phụ)
 - Bao gồm các khối mã với chỉ định ngôn ngữ: ```python, ```bash, ```javascript
-- Tuân theo định dạng hiện có cho bảng, danh sách, và nhấn mạnh
-- Giữ các dòng dễ đọc (nhắm đến ~80-100 ký tự, nhưng không bắt buộc)
+- Tuân theo định dạng hiện có cho bảng, danh sách và nhấn mạnh
+- Giữ các dòng dễ đọc (nhắm đến ~80-100 ký tự, nhưng không nghiêm ngặt)
 - Sử dụng liên kết tương đối cho các tham chiếu nội bộ
 
 ### Phong cách mã Python
@@ -292,22 +318,22 @@ npm run format      # Format with Prettier
 ### Quy trình đóng góp
 
 1. **Fork kho lưu trữ** và tạo một nhánh mới từ `main`
-2. **Thực hiện thay đổi của bạn** theo hướng dẫn về phong cách mã
-3. **Kiểm thử kỹ lưỡng** bằng cách sử dụng hướng dẫn kiểm thử ở trên
+2. **Thực hiện thay đổi của bạn** theo hướng dẫn phong cách mã
+3. **Kiểm thử kỹ lưỡng** sử dụng hướng dẫn kiểm thử ở trên
 4. **Commit với thông điệp rõ ràng** theo định dạng commit thông thường
 5. **Đẩy lên fork của bạn** và tạo yêu cầu kéo
 6. **Phản hồi phản hồi** từ người duyệt trong quá trình xem xét
 
 ### Quy ước đặt tên nhánh
 
-- `feature/<module>-<description>` - Dành cho tính năng mới hoặc nội dung mới
-- `fix/<module>-<description>` - Dành cho sửa lỗi
-- `docs/<description>` - Dành cho cải tiến tài liệu
-- `refactor/<description>` - Dành cho tái cấu trúc mã
+- `feature/<module>-<description>` - Cho tính năng mới hoặc nội dung
+- `fix/<module>-<description>` - Cho sửa lỗi
+- `docs/<description>` - Cho cải tiến tài liệu
+- `refactor/<description>` - Cho tái cấu trúc mã
 
 ### Định dạng thông điệp commit
 
-Tuân theo [Conventional Commits](https://www.conventionalcommits.org/):
+Tuân theo [Commit thông thường](https://www.conventionalcommits.org/):
 
 ```
 <type>(<scope>): <description>
@@ -340,11 +366,11 @@ Tất cả người đóng góp phải tuân theo [Quy tắc ứng xử mã ngu�
 ### Trước khi gửi
 
 **Đối với thay đổi nội dung:**
-- Xem trước tất cả các tệp Markdown đã chỉnh sửa
+- Xem trước tất cả các tệp Markdown đã sửa đổi
 - Xác minh liên kết và hình ảnh hoạt động
 - Kiểm tra lỗi chính tả và ngữ pháp
 
-**Đối với thay đổi mã mẫu (Module08/samples/08):**
+**Đối với thay đổi mã mẫu (Mô-đun08/mẫu/08):**
 ```bash
 npm run lint
 npm test
@@ -358,7 +384,7 @@ npm test
 ### Quy trình xem xét
 
 - Thay đổi nội dung giáo dục được xem xét về độ chính xác và rõ ràng
-- Các mẫu mã được kiểm thử về chức năng
+- Mẫu mã được kiểm thử về chức năng
 - Cập nhật dịch thuật được xử lý tự động bởi GitHub Actions
 
 ## Hệ thống dịch thuật
@@ -373,7 +399,7 @@ npm test
 
 ## Tích hợp Foundry Local
 
-Hầu hết các mẫu Module08 yêu cầu Microsoft Foundry Local đang chạy.
+Hầu hết các mẫu Mô-đun08 yêu cầu Microsoft Foundry Local đang chạy.
 
 ### Cài đặt & Thiết lập
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -446,11 +472,11 @@ curl http://localhost:<port>/v1/models
 
 ### Biến môi trường cho các mẫu
 
-Hầu hết các mẫu sử dụng các biến môi trường sau:
+Hầu hết các mẫu sử dụng các biến môi trường này:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -463,7 +489,7 @@ set AZURE_OPENAI_API_KEY=your-api-key
 set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-**Lưu ý**: Khi sử dụng `FoundryLocalManager`, SDK tự động xử lý việc khám phá dịch vụ và tải mô hình. Các bí danh mô hình (như `phi-3.5-mini`) đảm bảo biến thể tốt nhất được chọn cho phần cứng của bạn.
+**Lưu ý**: Khi sử dụng `FoundryLocalManager`, SDK tự động xử lý khám phá dịch vụ và tải mô hình. Các bí danh mô hình (như `phi-3.5-mini`) đảm bảo biến thể tốt nhất được chọn cho phần cứng của bạn.
 
 ## Xây dựng và triển khai
 
@@ -473,7 +499,7 @@ Kho lưu trữ này chủ yếu là tài liệu - không cần quy trình xây d
 
 ### Xây dựng ứng dụng mẫu
 
-**Ứng dụng Electron (Module08/samples/08):**
+**Ứng dụng Electron (Mô-đun08/mẫu/08):**
 ```bash
 cd Module08/samples/08
 
@@ -490,7 +516,7 @@ npm run dist
 npm run pack
 ```
 
-**Các mẫu Python:**
+**Mẫu Python:**
 Không có quy trình xây dựng - các mẫu được chạy trực tiếp với trình thông dịch Python.
 
 ## Các vấn đề thường gặp và cách khắc phục
@@ -500,7 +526,7 @@ Không có quy trình xây dựng - các mẫu được chạy trực tiếp v�
 ### Vấn đề nghiêm trọng (Chặn)
 
 #### Foundry Local không chạy
-**Vấn đề:** Các mẫu thất bại với lỗi kết nối
+**Vấn đề:** Các mẫu không hoạt động với lỗi kết nối
 
 **Giải pháp:**
 ```bash
@@ -508,7 +534,7 @@ Không có quy trình xây dựng - các mẫu được chạy trực tiếp v�
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -576,23 +602,24 @@ foundry model run <model-alias>
 ## Tài nguyên bổ sung
 
 ### Lộ trình học tập
-- **Lộ trình cho người mới bắt đầu:** Mô-đun 01-02 (7-9 giờ)
+- **Lộ trình cơ bản:** Mô-đun 01-02 (7-9 giờ)
 - **Lộ trình trung cấp:** Mô-đun 03-04 (9-11 giờ)
 - **Lộ trình nâng cao:** Mô-đun 05-07 (12-15 giờ)
 - **Lộ trình chuyên gia:** Mô-đun 08 (8-10 giờ)
+- **Workshop thực hành:** Tài liệu workshop (6-8 giờ)
 
 ### Nội dung chính của mô-đun
-- **Mô-đun01:** Các nguyên tắc cơ bản về EdgeAI và nghiên cứu trường hợp thực tế
-- **Mô-đun02:** Các họ và kiến trúc Mô hình Ngôn ngữ Nhỏ (SLM)
+- **Mô-đun01:** Các nguyên tắc cơ bản về EdgeAI và các nghiên cứu trường hợp thực tế
+- **Mô-đun02:** Các họ và kiến trúc của Mô hình Ngôn ngữ Nhỏ (SLM)
 - **Mô-đun03:** Chiến lược triển khai cục bộ và đám mây
-- **Mô-đun04:** Tối ưu hóa mô hình với nhiều khung
+- **Mô-đun04:** Tối ưu hóa mô hình với nhiều khung (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
 - **Mô-đun05:** SLMOps - vận hành sản xuất
 - **Mô-đun06:** Tác nhân AI và gọi hàm
-- **Mô-đun07:** Các triển khai cụ thể theo nền tảng
+- **Mô-đun07:** Triển khai cụ thể theo nền tảng
 - **Mô-đun08:** Bộ công cụ Foundry Local với 10 mẫu toàn diện
 
 ### Phụ thuộc bên ngoài
-- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Thời gian chạy mô hình AI cục bộ với API tương thích OpenAI
+- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Runtime mô hình AI cục bộ với API tương thích OpenAI
   - [Tài liệu](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
   - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [JavaScript SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
@@ -606,7 +633,7 @@ foundry model run <model-alias>
 
 Kho lưu trữ bao gồm 10 ứng dụng mẫu toàn diện:
 
-1. **01-REST Chat Quickstart** - Tích hợp SDK OpenAI cơ bản
+1. **01-REST Chat Quickstart** - Tích hợp cơ bản OpenAI SDK
 2. **02-OpenAI SDK Integration** - Các tính năng nâng cao của SDK
 3. **03-Model Discovery & Benchmarking** - Công cụ so sánh mô hình
 4. **04-Chainlit RAG Application** - Tạo nội dung dựa trên truy xuất
@@ -615,56 +642,67 @@ Kho lưu trữ bao gồm 10 ứng dụng mẫu toàn diện:
 7. **07-Direct API Client** - Tích hợp API cấp thấp
 8. **08-Windows 11 Chat App** - Ứng dụng máy tính để bàn Electron gốc
 9. **09-Advanced Multi-Agent System** - Điều phối tác nhân phức tạp
-10. **10-Foundry Tools Framework** - Tích hợp LangChain/Semantic Kernel
+10. **10-Công cụ Framework Foundry** - Tích hợp LangChain/Semantic Kernel
 
-Mỗi mẫu minh họa các khía cạnh khác nhau của phát triển Edge AI với Foundry Local.
+### Ứng dụng mẫu trong Workshop
 
-### Cân nhắc về hiệu suất
+Workshop bao gồm 6 buổi học tiến bộ với các triển khai thực tế:
 
-- Các SLM được tối ưu hóa cho triển khai tại chỗ (2-16GB RAM)
-- Suy luận cục bộ cung cấp thời gian phản hồi từ 50-500ms  
-- Các kỹ thuật lượng tử hóa giảm kích thước đến 75% trong khi giữ lại 85% hiệu suất  
-- Khả năng hội thoại thời gian thực với các mô hình cục bộ  
+1. **Buổi 01** - Khởi động chat với tích hợp Foundry Local
+2. **Buổi 02** - Quy trình RAG và đánh giá với RAGAS
+3. **Buổi 03** - Đánh giá hiệu năng các mô hình mã nguồn mở
+4. **Buổi 04** - So sánh và lựa chọn mô hình
+5. **Buổi 05** - Hệ thống điều phối đa tác nhân
+6. **Buổi 06** - Định tuyến mô hình và quản lý quy trình
 
-### Bảo mật và Quyền riêng tư  
+Mỗi mẫu minh họa các khía cạnh khác nhau của phát triển AI biên với Foundry Local.
 
-- Tất cả xử lý diễn ra cục bộ - không có dữ liệu nào được gửi lên đám mây  
-- Phù hợp với các ứng dụng nhạy cảm về quyền riêng tư (y tế, tài chính)  
-- Đáp ứng các yêu cầu về chủ quyền dữ liệu  
-- Foundry Local hoạt động hoàn toàn trên phần cứng cục bộ  
+### Các yếu tố hiệu năng
 
-## Nhận hỗ trợ  
+- SLMs được tối ưu hóa cho triển khai biên (2-16GB RAM)
+- Suy luận cục bộ cung cấp thời gian phản hồi từ 50-500ms
+- Kỹ thuật lượng hóa giảm kích thước 75% với 85% hiệu năng được giữ lại
+- Khả năng hội thoại thời gian thực với các mô hình cục bộ
 
-### Tài liệu  
+### Bảo mật và quyền riêng tư
 
-- **README chính**: [README.md](README.md) - Tổng quan về kho lưu trữ và lộ trình học tập  
-- **Hướng dẫn học tập**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Tài nguyên học tập và thời gian biểu  
-- **Hỗ trợ**: [SUPPORT.md](SUPPORT.md) - Cách nhận hỗ trợ  
-- **Bảo mật**: [SECURITY.md](SECURITY.md) - Báo cáo các vấn đề bảo mật  
+- Tất cả xử lý diễn ra cục bộ - không gửi dữ liệu lên đám mây
+- Phù hợp cho các ứng dụng nhạy cảm về quyền riêng tư (y tế, tài chính)
+- Đáp ứng yêu cầu về chủ quyền dữ liệu
+- Foundry Local hoạt động hoàn toàn trên phần cứng cục bộ
 
-### Hỗ trợ cộng đồng  
+## Hỗ trợ
 
-- **GitHub Issues**: [Báo lỗi hoặc yêu cầu tính năng](https://github.com/microsoft/edgeai-for-beginners/issues)  
-- **GitHub Discussions**: [Đặt câu hỏi và chia sẻ ý tưởng](https://github.com/microsoft/edgeai-for-beginners/discussions)  
-- **Foundry Local Issues**: [Các vấn đề kỹ thuật với Foundry Local](https://github.com/microsoft/Foundry-Local/issues)  
+### Tài liệu
 
-### Liên hệ  
+- **README chính**: [README.md](README.md) - Tổng quan kho lưu trữ và lộ trình học tập
+- **Hướng dẫn học tập**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Tài nguyên học tập và thời gian biểu
+- **Hỗ trợ**: [SUPPORT.md](SUPPORT.md) - Cách nhận hỗ trợ
+- **Bảo mật**: [SECURITY.md](SECURITY.md) - Báo cáo vấn đề bảo mật
 
-- **Người duy trì**: Xem [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)  
-- **Vấn đề bảo mật**: Thực hiện tiết lộ có trách nhiệm trong [SECURITY.md](SECURITY.md)  
-- **Hỗ trợ từ Microsoft**: Đối với hỗ trợ doanh nghiệp, liên hệ với dịch vụ khách hàng của Microsoft  
+### Hỗ trợ cộng đồng
 
-### Tài nguyên bổ sung  
+- **GitHub Issues**: [Báo lỗi hoặc yêu cầu tính năng](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **GitHub Discussions**: [Đặt câu hỏi và chia sẻ ý tưởng](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **Vấn đề Foundry Local**: [Vấn đề kỹ thuật với Foundry Local](https://github.com/microsoft/Foundry-Local/issues)
 
-- **Microsoft Learn**: [Lộ trình học tập về AI và Machine Learning](https://learn.microsoft.com/training/browse/?products=ai-services)  
-- **Tài liệu Foundry Local**: [Tài liệu chính thức](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)  
-- **Mẫu cộng đồng**: Xem [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) để biết các đóng góp từ cộng đồng  
+### Liên hệ
+
+- **Người duy trì**: Xem [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
+- **Vấn đề bảo mật**: Thực hiện báo cáo có trách nhiệm trong [SECURITY.md](SECURITY.md)
+- **Hỗ trợ Microsoft**: Đối với hỗ trợ doanh nghiệp, liên hệ dịch vụ khách hàng Microsoft
+
+### Tài nguyên bổ sung
+
+- **Microsoft Learn**: [Lộ trình học AI và Machine Learning](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **Tài liệu Foundry Local**: [Tài liệu chính thức](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **Mẫu cộng đồng**: Xem [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) để tìm đóng góp từ cộng đồng
 
 ---
 
-**Đây là một kho lưu trữ giáo dục tập trung vào việc giảng dạy phát triển Edge AI. Mô hình đóng góp chính là cải thiện nội dung giáo dục và thêm/cải thiện các ứng dụng mẫu minh họa các khái niệm về Edge AI.**  
+**Đây là kho lưu trữ giáo dục tập trung vào việc giảng dạy phát triển AI biên. Mô hình đóng góp chính là cải thiện nội dung giáo dục và thêm/nâng cấp các ứng dụng mẫu minh họa các khái niệm AI biên.**
 
 ---
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, chúng tôi khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

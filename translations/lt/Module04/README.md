@@ -1,26 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c0cb9f7bcff2bc170532d8870a891f38",
-  "translation_date": "2025-09-19T00:26:03+00:00",
+  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
+  "translation_date": "2025-10-30T15:24:37+00:00",
   "source_file": "Module04/README.md",
   "language_code": "lt"
 }
 -->
-# 4 skyrius: Modelių formato konvertavimas ir kvantizavimas – skyrius apžvalga
+# 4 skyrius: Modelių formato konvertavimas ir kvantizavimas - skyrius apžvalga
 
-EdgeAI atsiradimas padarė modelių formato konvertavimą ir kvantizavimą esminėmis technologijomis, leidžiančiomis diegti pažangias mašininio mokymosi galimybes ribotų resursų įrenginiuose. Šis išsamus skyrius pateikia pilną vadovą, kaip suprasti, įgyvendinti ir optimizuoti modelius, skirtus diegimui kraštiniuose scenarijuose.
+EdgeAI atsiradimas padarė modelių formato konvertavimą ir kvantizavimą esminėmis technologijomis, leidžiančiomis diegti pažangias mašininio mokymosi galimybes ribotų resursų įrenginiuose. Šis išsamus skyrius pateikia pilną vadovą, kaip suprasti, įgyvendinti ir optimizuoti modelius kraštinių įrenginių diegimo scenarijams.
 
 ## 📚 Skyriaus struktūra ir mokymosi kelias
 
-Šis skyrius suskirstytas į šešias progresyvias dalis, kurios viena kitą papildo, siekiant sukurti išsamų modelių optimizavimo kraštiniam kompiuterijos supratimą:
+Šis skyrius suskirstytas į septynias progresyvias dalis, kiekviena iš jų remiasi ankstesne, kad sukurtų išsamų modelių optimizavimo kraštiniam kompiuteriui supratimą:
 
 ---
 
 ## [1 dalis: Modelių formato konvertavimo ir kvantizavimo pagrindai](./01.Introduce.md)
 
 ### 🎯 Apžvalga
-Ši pagrindinė dalis nustato teorinį pagrindą modelių optimizavimui kraštiniuose kompiuterijos aplinkose, apimant kvantizavimo ribas nuo 1-bit iki 8-bit tikslumo lygių ir pagrindines formato konvertavimo strategijas.
+Ši pagrindinė dalis nustato teorinį pagrindą modelių optimizavimui kraštinių kompiuterių aplinkose, apimant kvantizavimo ribas nuo 1 bitų iki 8 bitų tikslumo lygių ir pagrindines formato konvertavimo strategijas.
 
 **Pagrindinės temos:**
 - Tikslumo klasifikavimo sistema (itin žemas, žemas, vidutinis tikslumas)
@@ -30,7 +30,7 @@ EdgeAI atsiradimas padarė modelių formato konvertavimą ir kvantizavimą esmin
 
 **Mokymosi rezultatai:**
 - Suprasti kvantizavimo ribas ir klasifikacijas
-- Identifikuoti tinkamas formato konvertavimo technikas
+- Nustatyti tinkamas formato konvertavimo technikas
 - Išmokti pažangias optimizavimo strategijas kraštiniam diegimui
 
 ---
@@ -38,13 +38,13 @@ EdgeAI atsiradimas padarė modelių formato konvertavimą ir kvantizavimą esmin
 ## [2 dalis: Llama.cpp įgyvendinimo vadovas](./02.Llamacpp.md)
 
 ### 🎯 Apžvalga
-Išsamus vadovas, kaip įgyvendinti Llama.cpp – galingą C++ sistemą, leidžiančią efektyviai vykdyti didelius kalbos modelius su minimaliu nustatymu įvairiose aparatinės įrangos konfigūracijose.
+Išsamus vadovas, kaip įgyvendinti Llama.cpp, galingą C++ sistemą, leidžiančią efektyviai vykdyti didelių kalbos modelių užklausas su minimaliu nustatymu įvairiose aparatinės įrangos konfigūracijose.
 
 **Pagrindinės temos:**
 - Diegimas Windows, macOS ir Linux platformose
 - GGUF formato konvertavimas ir įvairūs kvantizavimo lygiai (Q2_K iki Q8_0)
 - Aparatinės įrangos pagreitinimas naudojant CUDA, Metal, OpenCL ir Vulkan
-- Python integracija ir diegimo strategijos gamybai
+- Python integracija ir gamybos diegimo strategijos
 
 **Mokymosi rezultatai:**
 - Įvaldyti diegimą įvairiose platformose ir kūrimą iš šaltinio
@@ -59,22 +59,22 @@ Išsamus vadovas, kaip įgyvendinti Llama.cpp – galingą C++ sistemą, leidži
 Microsoft Olive tyrinėjimas – aparatinės įrangos optimizavimo įrankių rinkinys su daugiau nei 40 integruotų optimizavimo komponentų, skirtas įmonės lygio modelių diegimui įvairiose aparatinės įrangos platformose.
 
 **Pagrindinės temos:**
-- Automatinės optimizavimo funkcijos su dinamišku ir statiniu kvantizavimu
+- Automatinio optimizavimo funkcijos su dinamišku ir statiniu kvantizavimu
 - Aparatinės įrangos intelektas CPU, GPU ir NPU diegimui
 - Populiarių modelių palaikymas (Llama, Phi, Qwen, Gemma) iš karto
 - Įmonės integracija su Azure ML ir gamybos darbo eigomis
 
 **Mokymosi rezultatai:**
-- Pasinaudoti automatine optimizacija įvairioms modelių architektūroms
+- Pasinaudoti automatizuotu optimizavimu įvairioms modelių architektūroms
 - Įgyvendinti diegimo strategijas įvairiose platformose
 - Sukurti įmonės lygio optimizavimo procesus
 
 ---
 
-## [4 dalis: OpenVINO įrankių rinkinio optimizavimo rinkinys](./04.openvino.md)
+## [4 dalis: OpenVINO įrankių rinkinys optimizavimui](./04.openvino.md)
 
 ### 🎯 Apžvalga
-Išsamus Intel OpenVINO įrankių rinkinio tyrinėjimas – atviro kodo platforma, skirta diegti efektyvius AI sprendimus debesyje, vietoje ir kraštiniuose aplinkose su pažangiomis Neural Network Compression Framework (NNCF) galimybėmis.
+Išsamus Intel OpenVINO įrankių rinkinio tyrinėjimas – atvirojo kodo platforma, skirta diegti efektyvius AI sprendimus debesyje, vietoje ir kraštiniuose įrenginiuose su pažangiomis Neural Network Compression Framework (NNCF) galimybėmis.
 
 **Pagrindinės temos:**
 - Diegimas įvairiose platformose su aparatinės įrangos pagreitinimu (CPU, GPU, VPU, AI akceleratoriai)
@@ -83,13 +83,13 @@ Išsamus Intel OpenVINO įrankių rinkinio tyrinėjimas – atviro kodo platform
 - Įmonės lygio modelių serverio galimybės ir mastelio diegimo strategijos
 
 **Mokymosi rezultatai:**
-- Įvaldyti OpenVINO modelių konvertavimo ir optimizavimo darbo eigas
+- Įvaldyti OpenVINO modelių konvertavimo ir optimizavimo procesus
 - Įgyvendinti pažangias kvantizavimo technikas su NNCF
 - Diegti optimizuotus modelius įvairiose aparatinės įrangos platformose su Model Server
 
 ---
 
-## [5 dalis: Apple MLX sistemos giluminė analizė](./05.AppleMLX.md)
+## [5 dalis: Apple MLX sistemos išsamus tyrinėjimas](./05.AppleMLX.md)
 
 ### 🎯 Apžvalga
 Išsamus Apple MLX tyrinėjimas – revoliucinė sistema, specialiai sukurta efektyviam mašininio mokymosi vykdymui Apple Silicon, akcentuojant didelių kalbos modelių galimybes ir vietinį diegimą.
@@ -98,7 +98,7 @@ Išsamus Apple MLX tyrinėjimas – revoliucinė sistema, specialiai sukurta efe
 - Vieningos atminties architektūros privalumai ir Metal Performance Shaders
 - LLaMA, Mistral, Phi-3, Qwen ir Code Llama modelių palaikymas
 - LoRA smulkus derinimas efektyviam modelių pritaikymui
-- Hugging Face integracija ir kvantizavimo palaikymas (4-bit ir 8-bit)
+- Hugging Face integracija ir kvantizavimo palaikymas (4 bitų ir 8 bitų)
 
 **Mokymosi rezultatai:**
 - Įvaldyti Apple Silicon optimizavimą LLM diegimui
@@ -110,18 +110,36 @@ Išsamus Apple MLX tyrinėjimas – revoliucinė sistema, specialiai sukurta efe
 ## [6 dalis: Edge AI kūrimo darbo eigos sintezė](./06.workflow-synthesis.md)
 
 ### 🎯 Apžvalga
-Išsamus visų optimizavimo sistemų sintezavimas į vieningas darbo eigas, sprendimų matricas ir geriausias praktikas, skirtas gamybai paruoštam Edge AI diegimui įvairiose platformose ir naudojimo atvejais.
+Visų optimizavimo sistemų sintezė į vieningas darbo eigas, sprendimų matricas ir geriausias praktikas, skirtas gamybai paruoštam Edge AI diegimui įvairiose platformose ir naudojimo atvejais, įskaitant mobiliuosius, stalinius ir debesų aplinkas.
 
 **Pagrindinės temos:**
 - Vieninga darbo eigos architektūra, integruojanti kelias optimizavimo sistemas
 - Sistemos pasirinkimo sprendimų medžiai ir našumo kompromisų analizė
-- Gamybos pasirengimo validacija ir išsamios diegimo strategijos
-- Ateities strategijos naujai atsirandančiai aparatinės įrangai ir modelių architektūroms
+- Gamybos pasirengimo patvirtinimas ir išsamios diegimo strategijos
+- Ateities užtikrinimo strategijos naujai atsirandančiai aparatinės įrangai ir modelių architektūroms
 
 **Mokymosi rezultatai:**
 - Įvaldyti sistemingą sistemos pasirinkimą pagal reikalavimus ir apribojimus
-- Įgyvendinti gamybos lygio Edge AI procesus su išsamia stebėsena
+- Įgyvendinti gamybai paruoštas Edge AI darbo eigas su išsamia stebėsena
 - Kurti pritaikomas darbo eigas, kurios evoliucionuoja kartu su naujomis technologijomis ir reikalavimais
+
+---
+
+## [7 dalis: Qualcomm QNN optimizavimo rinkinys](./07.QualcommQNN.md)
+
+### 🎯 Apžvalga
+Išsamus Qualcomm QNN (Qualcomm Neural Network) tyrinėjimas – vieninga AI užklausų sistema, sukurta pasinaudoti Qualcomm heterogenine kompiuterine architektūra, įskaitant Hexagon NPU, Adreno GPU ir Kryo CPU, siekiant maksimalaus našumo ir energijos efektyvumo mobiliuosiuose ir kraštiniuose įrenginiuose.
+
+**Pagrindinės temos:**
+- Heterogeninis kompiuteris su vieninga prieiga prie NPU, GPU ir CPU
+- Aparatinės įrangos optimizavimas Snapdragon platformoms su intelektualiu darbo krūvio paskirstymu
+- Pažangios kvantizavimo technikos (INT8, INT16, mišrus tikslumas) mobiliajam diegimui
+- Energiją taupantis užklausų vykdymas, optimizuotas baterijomis maitinamiems įrenginiams ir realaus laiko programoms
+
+**Mokymosi rezultatai:**
+- Įvaldyti Qualcomm aparatinės įrangos pagreitinimą mobiliajam AI diegimui
+- Įgyvendinti energiją taupančias optimizavimo strategijas kraštiniam kompiuteriui
+- Diegti gamybai paruoštus modelius Qualcomm ekosistemoje su optimaliu našumu
 
 ---
 
@@ -131,8 +149,8 @@ Baigus šį išsamų skyrių, skaitytojai pasieks:
 
 ### **Techninį meistriškumą**
 - Gilų kvantizavimo ribų ir praktinių pritaikymų supratimą
-- Praktinę patirtį su įvairiomis optimizavimo sistemomis
-- Gamybos diegimo įgūdžius kraštiniuose kompiuterijos aplinkose
+- Praktinę patirtį su keliomis optimizavimo sistemomis
+- Gamybos diegimo įgūdžius kraštinių kompiuterių aplinkose
 
 ### **Strateginį supratimą**
 - Aparatinės įrangos optimizavimo pasirinkimo galimybes
@@ -141,22 +159,23 @@ Baigus šį išsamų skyrių, skaitytojai pasieks:
 
 ### **Našumo palyginimai**
 
-| Sistema     | Kvantizavimas | Atminties naudojimas | Greičio padidėjimas | Naudojimo atvejis              |
-|-------------|---------------|----------------------|---------------------|--------------------------------|
-| Llama.cpp   | Q4_K_M        | ~4GB                | 2-3x               | Diegimas įvairiose platformose |
-| Olive       | INT4          | 60-75% mažinimas    | 2-6x               | Įmonės darbo eigos             |
-| OpenVINO    | INT8/INT4     | 50-75% mažinimas    | 2-5x               | Intel aparatinės įrangos optimizavimas |
-| MLX         | 4-bit         | ~4GB                | 2-4x               | Apple Silicon optimizavimas    |
+| Sistema | Kvantizavimas | Atminties naudojimas | Greičio padidėjimas | Naudojimo atvejis |
+|---------|---------------|----------------------|---------------------|-------------------|
+| Llama.cpp | Q4_K_M | ~4GB | 2-3x | Diegimas įvairiose platformose |
+| Olive | INT4 | 60-75% sumažinimas | 2-6x | Įmonės darbo eigos |
+| OpenVINO | INT8/INT4 | 50-75% sumažinimas | 2-5x | Intel aparatinės įrangos optimizavimas |
+| QNN | INT8/INT4 | 50-80% sumažinimas | 5-15x | Qualcomm mobilus/kraštinis |
+| MLX | 4-bit | ~4GB | 2-4x | Apple Silicon optimizavimas |
 
-## 🚀 Kiti žingsniai ir pažangios taikymo galimybės
+## 🚀 Kiti žingsniai ir pažangios taikymo sritys
 
 Šis skyrius suteikia pilną pagrindą:
 - Individualių modelių kūrimui specifinėms sritims
-- Tyrimams Edge AI optimizavimo srityje
+- Tyrimams kraštinio AI optimizavimo srityje
 - Komercinių AI programų kūrimui
-- Didelio masto įmonės Edge AI diegimams
+- Didelio masto įmonės kraštinio AI diegimams
 
-Žinios iš šių šešių dalių siūlo išsamų įrankių rinkinį, skirtą naviguoti sparčiai besikeičiančiame Edge AI modelių optimizavimo ir diegimo kraštovaizdyje.
+Žinios iš šių septynių dalių siūlo išsamų įrankių rinkinį, skirtą naršyti sparčiai besikeičiančią kraštinio AI modelių optimizavimo ir diegimo aplinką.
 
 ---
 

@@ -1,162 +1,181 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c0cb9f7bcff2bc170532d8870a891f38",
-  "translation_date": "2025-10-11T11:42:25+00:00",
+  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
+  "translation_date": "2025-10-30T15:42:08+00:00",
   "source_file": "Module04/README.md",
   "language_code": "et"
 }
 -->
-# 4. peatükk: Mudelite formaadi konverteerimine ja kvantiseerimine - peatüki ülevaade
+# 4. peatükk: Mudeli formaadi konverteerimine ja kvantiseerimine - peatüki ülevaade
 
-EdgeAI esiletõus on muutnud mudelite formaadi konverteerimise ja kvantiseerimise hädavajalikeks tehnoloogiateks, et rakendada keerukaid masinõppevõimalusi piiratud ressurssidega seadmetes. See põhjalik peatükk pakub täielikku juhendit mudelite mõistmiseks, rakendamiseks ja optimeerimiseks serva juurutamise stsenaariumide jaoks.
+EdgeAI esiletõus on muutnud mudeli formaadi konverteerimise ja kvantiseerimise oluliseks tehnoloogiaks, et rakendada keerukaid masinõppe võimalusi piiratud ressurssidega seadmetel. See põhjalik peatükk pakub täielikku juhendit mudelite mõistmiseks, rakendamiseks ja optimeerimiseks serva kasutuselevõtu stsenaariumides.
 
-## 📚 Peatüki struktuur ja õpitee
+## 📚 Peatüki struktuur ja õpiteekond
 
-See peatükk on jaotatud kuueks järjestikuseks osaks, millest igaüks tugineb eelmisele, et luua terviklik arusaam mudelite optimeerimisest servaarvutuse jaoks:
+Peatükk on jaotatud seitsmeks järjestikuseks osaks, millest igaüks tugineb eelnevale, et luua terviklik arusaam mudelite optimeerimisest serva arvutuse jaoks:
 
 ---
 
-## [1. osa: Mudelite formaadi konverteerimise ja kvantiseerimise alused](./01.Introduce.md)
+## [1. osa: Mudeli formaadi konverteerimise ja kvantiseerimise alused](./01.Introduce.md)
 
 ### 🎯 Ülevaade
-See sissejuhatav osa loob teoreetilise raamistiku mudelite optimeerimiseks servaarvutuse keskkondades, hõlmates kvantiseerimise piire 1-bitist kuni 8-bitise täpsuseni ja peamisi formaadi konverteerimise strateegiaid.
+See sissejuhatav osa loob teoreetilise raamistiku mudelite optimeerimiseks serva arvutuskeskkondades, hõlmates kvantiseerimise piire 1-bitist kuni 8-bitise täpsuseni ja peamisi formaadi konverteerimise strateegiaid.
 
 **Peamised teemad:**
-- Täpsuse klassifitseerimise raamistik (väga madal, madal, keskmine täpsus)
+- Täpsuse klassifikatsiooni raamistik (üliväike, väike, keskmine täpsus)
 - GGUF ja ONNX formaadi eelised ja kasutusjuhtumid
-- Kvantiseerimise eelised tööefektiivsuse ja juurutamise paindlikkuse osas
-- Jõudlusnäitajad ja mälukasutuse võrdlused
+- Kvantiseerimise eelised operatiivse efektiivsuse ja paindlikkuse jaoks
+- Jõudluse võrdlused ja mälukasutuse analüüs
 
 **Õpitulemused:**
 - Mõista kvantiseerimise piire ja klassifikatsioone
-- Tuvastada sobivad formaadi konverteerimise tehnikad
-- Õppida edasijõudnud optimeerimisstrateegiaid serva juurutamiseks
+- Tuvasta sobivad formaadi konverteerimise tehnikad
+- Õpi serva kasutuselevõtu täiustatud optimeerimisstrateegiaid
 
 ---
 
 ## [2. osa: Llama.cpp rakendamise juhend](./02.Llamacpp.md)
 
 ### 🎯 Ülevaade
-Põhjalik juhend Llama.cpp rakendamiseks, mis on võimas C++ raamistik, mis võimaldab tõhusat suurte keelemudelite järeldamist minimaalse seadistusega erinevates riistvarakonfiguratsioonides.
+Põhjalik juhend Llama.cpp rakendamiseks, mis on võimas C++ raamistik, mis võimaldab tõhusat suurte keelemudelite järeldamist minimaalse seadistusega erinevatel riistvarakonfiguratsioonidel.
 
 **Peamised teemad:**
-- Installatsioon Windowsi, macOS-i ja Linuxi platvormidel
-- GGUF formaadi konverteerimine ja erinevad kvantiseerimistasemed (Q2_K kuni Q8_0)
-- Riistvarakiirendus CUDA, Metal, OpenCL ja Vulkan abil
-- Pythoni integreerimine ja tootmisesse juurutamise strateegiad
+- Paigaldamine Windowsi, macOS-i ja Linuxi platvormidel
+- GGUF formaadi konverteerimine ja erinevad kvantiseerimise tasemed (Q2_K kuni Q8_0)
+- Riistvarakiirendus CUDA, Metal, OpenCL ja Vulkaniga
+- Pythoniga integreerimine ja tootmise kasutuselevõtu strateegiad
 
 **Õpitulemused:**
-- Omandada platvormideülene installatsioon ja allikast kompileerimine
-- Rakendada mudelite kvantiseerimise ja optimeerimise tehnikaid
-- Juurutada mudeleid serverirežiimis REST API integreerimisega
+- Valda platvormidevahelist paigaldamist ja allikast ehitamist
+- Rakenda mudeli kvantiseerimise ja optimeerimise tehnikaid
+- Kasuta mudeleid serverirežiimis REST API integreerimisega
 
 ---
 
 ## [3. osa: Microsoft Olive optimeerimiskomplekt](./03.MicrosoftOlive.md)
 
 ### 🎯 Ülevaade
-Microsoft Olive'i uurimine, mis on riistvarateadlik mudelite optimeerimise tööriistakomplekt, millel on üle 40 sisseehitatud optimeerimiskomponendi ja mis on mõeldud ettevõtte tasemel mudelite juurutamiseks erinevatel riistvaraplatvormidel.
+Microsoft Olive'i uurimine, riistvarateadlik mudelite optimeerimise tööriistakomplekt, millel on üle 40 sisseehitatud optimeerimiskomponendi, mis on mõeldud ettevõtte tasemel mudelite kasutuselevõtuks erinevatel riistvaraplatvormidel.
 
 **Peamised teemad:**
 - Automaatse optimeerimise funktsioonid dünaamilise ja staatilise kvantiseerimisega
-- Riistvarateadlikkus CPU, GPU ja NPU juurutamiseks
-- Populaarsete mudelite (Llama, Phi, Qwen, Gemma) tugi
-- Ettevõtte integratsioon Azure ML-i ja tootmisvoogudega
+- Riistvarateadlik intelligentsus CPU, GPU ja NPU kasutuselevõtuks
+- Populaarsete mudelite tugi (Llama, Phi, Qwen, Gemma) otse karbist
+- Ettevõtte integreerimine Azure ML-i ja tootmise töövoogudega
 
 **Õpitulemused:**
-- Kasutada automaatset optimeerimist erinevate mudeliarhitektuuride jaoks
-- Rakendada platvormideüleseid juurutamisstrateegiaid
-- Luua ettevõtte tasemel optimeerimisprotsesse
+- Kasuta automaatset optimeerimist erinevate mudeliarhitektuuride jaoks
+- Rakenda platvormidevahelisi kasutuselevõtu strateegiaid
+- Loo ettevõtte tasemel optimeerimise töövooge
 
 ---
 
-## [4. osa: OpenVINO Toolkit optimeerimiskomplekt](./04.openvino.md)
+## [4. osa: OpenVINO tööriistakomplekti optimeerimine](./04.openvino.md)
 
 ### 🎯 Ülevaade
-Põhjalik ülevaade Inteli OpenVINO tööriistakomplektist, mis on avatud lähtekoodiga platvorm, mis võimaldab jõudluslikke tehisintellekti lahendusi pilves, kohapeal ja servakeskkondades, kasutades täiustatud närvivõrkude tihendamise raamistikku (NNCF).
+Intel OpenVINO tööriistakomplekti põhjalik uurimine, avatud lähtekoodiga platvorm, mis võimaldab jõuliste AI lahenduste kasutuselevõttu pilves, kohapeal ja serva keskkondades koos täiustatud Neural Network Compression Framework (NNCF) võimalustega.
 
 **Peamised teemad:**
-- Platvormideülene juurutamine riistvarakiirendusega (CPU, GPU, VPU, AI kiirendid)
-- Närvivõrkude tihendamise raamistik (NNCF) edasijõudnud kvantiseerimise ja kärpimise jaoks
-- OpenVINO GenAI suurte keelemudelite optimeerimiseks ja juurutamiseks
-- Ettevõtte tasemel mudeliserveri võimalused ja skaleeritavad juurutamisstrateegiad
+- Platvormidevaheline kasutuselevõtt riistvarakiirendusega (CPU, GPU, VPU, AI kiirendid)
+- Neural Network Compression Framework (NNCF) täiustatud kvantiseerimise ja kärpimise jaoks
+- OpenVINO GenAI suurte keelemudelite optimeerimiseks ja kasutuselevõtuks
+- Ettevõtte tasemel mudeliserveri võimalused ja skaleeritavad kasutuselevõtu strateegiad
 
 **Õpitulemused:**
-- Omandada OpenVINO mudelite konverteerimise ja optimeerimise töövood
-- Rakendada edasijõudnud kvantiseerimistehnikaid NNCF-iga
-- Juurutada optimeeritud mudeleid erinevatel riistvaraplatvormidel mudeliserveri abil
+- Valda OpenVINO mudeli konverteerimise ja optimeerimise töövooge
+- Rakenda täiustatud kvantiseerimise tehnikaid NNCF-iga
+- Kasuta optimeeritud mudeleid erinevatel riistvaraplatvormidel mudeliserveriga
 
 ---
 
 ## [5. osa: Apple MLX raamistik põhjalikult](./05.AppleMLX.md)
 
 ### 🎯 Ülevaade
-Põhjalik ülevaade Apple MLX-ist, revolutsioonilisest raamistikust, mis on spetsiaalselt loodud tõhusaks masinõppeks Apple Siliconil, keskendudes suurte keelemudelite võimalustele ja kohalikule juurutamisele.
+Apple MLX-i põhjalik käsitlus, revolutsiooniline raamistik, mis on spetsiaalselt loodud tõhusaks masinõppeks Apple Siliconil, keskendudes suurte keelemudelite võimalustele ja kohalikule kasutuselevõtule.
 
 **Peamised teemad:**
-- Ühtse mälustruktuuri eelised ja Metal Performance Shaders
+- Ühtse mäluarhitektuuri eelised ja Metal Performance Shaders
 - Tugi LLaMA, Mistral, Phi-3, Qwen ja Code Llama mudelitele
-- LoRA peenhäälestus tõhusaks mudelite kohandamiseks
+- LoRA peenhäälestus tõhusaks mudeli kohandamiseks
 - Hugging Face integratsioon ja kvantiseerimise tugi (4-bitine ja 8-bitine)
 
 **Õpitulemused:**
-- Omandada Apple Siliconi optimeerimine suurte keelemudelite juurutamiseks
-- Rakendada peenhäälestus- ja mudelite kohandamistehnikaid
-- Luua ettevõtte tehisintellekti rakendusi täiustatud privaatsusfunktsioonidega
+- Valda Apple Siliconi optimeerimist LLM-i kasutuselevõtuks
+- Rakenda peenhäälestuse ja mudeli kohandamise tehnikaid
+- Loo ettevõtte AI rakendusi täiustatud privaatsusfunktsioonidega
 
 ---
 
 ## [6. osa: Edge AI arendustöövoo süntees](./06.workflow-synthesis.md)
 
 ### 🎯 Ülevaade
-Kõigi optimeerimisraamistike põhjalik süntees ühtseteks töövoogudeks, otsustusmaatriksiteks ja parimateks praktikuteks tootmisvalmis Edge AI juurutamiseks erinevatel platvormidel ja kasutusjuhtudel.
+Kõigi optimeerimisraamistike põhjalik süntees ühtseteks töövoogudeks, otsustusmaatriksiteks ja parimateks praktikateks tootmisvalmis Edge AI kasutuselevõtuks erinevatel platvormidel ja kasutusjuhtudel, sealhulgas mobiil-, lauaarvuti- ja pilvekeskkondades.
 
 **Peamised teemad:**
 - Ühtne töövoo arhitektuur, mis integreerib mitmeid optimeerimisraamistikke
 - Raamistiku valiku otsustuspuud ja jõudluse kompromisside analüüs
-- Tootmisvalmiduse valideerimine ja põhjalikud juurutamisstrateegiad
+- Tootmisvalmiduse valideerimine ja põhjalikud kasutuselevõtu strateegiad
 - Tulevikukindlad strateegiad uute riistvara ja mudeliarhitektuuride jaoks
 
 **Õpitulemused:**
-- Omandada süstemaatiline raamistik valikute tegemiseks vastavalt nõuetele ja piirangutele
-- Rakendada tootmiskõlblikke Edge AI töövooge koos põhjaliku jälgimisega
-- Kujundada kohandatavaid töövooge, mis arenevad koos uute tehnoloogiate ja nõuetega
+- Valda süsteemset raamistiku valikut vastavalt nõuetele ja piirangutele
+- Rakenda tootmisvalmis Edge AI töövooge koos põhjaliku jälgimisega
+- Kujunda kohandatavaid töövooge, mis arenevad koos uute tehnoloogiate ja nõuetega
+
+---
+
+## [7. osa: Qualcomm QNN optimeerimiskomplekt](./07.QualcommQNN.md)
+
+### 🎯 Ülevaade
+Qualcomm QNN (Qualcomm Neural Network) põhjalik uurimine, ühtne AI järeldusraamistik, mis on loodud Qualcommi heterogeense arvutusarhitektuuri, sealhulgas Hexagon NPU, Adreno GPU ja Kryo CPU, maksimaalse jõudluse ja energiatõhususe kasutamiseks mobiil- ja servaseadmetel.
+
+**Peamised teemad:**
+- Heterogeenne arvutus ühtse juurdepääsuga NPU-le, GPU-le ja CPU-le
+- Riistvarateadlik optimeerimine Snapdragon platvormide jaoks intelligentse töökoormuse jaotusega
+- Täiustatud kvantiseerimise tehnikad (INT8, INT16, segatäpsus) mobiilkasutuseks
+- Energiatõhus järeldus optimeeritud akutoitega seadmete ja reaalajas rakenduste jaoks
+
+**Õpitulemused:**
+- Valda Qualcommi riistvarakiirendust mobiilse AI kasutuselevõtuks
+- Rakenda energiatõhusaid optimeerimisstrateegiaid serva arvutuseks
+- Kasuta tootmisvalmis mudeleid Qualcommi ökosüsteemis optimaalse jõudlusega
 
 ---
 
 ## 🎯 Peatüki õpitulemused
 
-Pärast selle põhjaliku peatüki läbimist saavutavad lugejad:
+Selle põhjaliku peatüki läbimisel saavutavad lugejad:
 
 ### **Tehniline meisterlikkus**
 - Sügav arusaam kvantiseerimise piiridest ja praktilistest rakendustest
-- Praktiline kogemus mitme optimeerimisraamistikuga
-- Tootmisesse juurutamise oskused servaarvutuse keskkondades
+- Käed-külge kogemus mitme optimeerimisraamistikuga
+- Tootmise kasutuselevõtu oskused serva arvutuskeskkondades
 
 ### **Strateegiline arusaam**
-- Riistvarateadlik optimeerimise valikuvõimekus
+- Riistvarateadlik optimeerimise valiku võimekus
 - Informeeritud otsuste tegemine jõudluse kompromisside osas
-- Ettevõtte tasemel juurutamise ja jälgimise strateegiad
+- Ettevõtte tasemel kasutuselevõtu ja jälgimise strateegiad
 
-### **Jõudlusnäitajad**
+### **Jõudluse võrdlused**
 
 | Raamistik | Kvantiseerimine | Mälukasutus | Kiiruse paranemine | Kasutusjuhtum |
 |-----------|-----------------|-------------|--------------------|---------------|
-| Llama.cpp | Q4_K_M          | ~4GB        | 2-3x               | Platvormideülene juurutamine |
-| Olive     | INT4            | 60-75% vähenemine | 2-6x         | Ettevõtte töövood |
-| OpenVINO  | INT8/INT4       | 50-75% vähenemine | 2-5x         | Inteli riistvara optimeerimine |
-| MLX       | 4-bitine        | ~4GB        | 2-4x               | Apple Siliconi optimeerimine |
+| Llama.cpp | Q4_K_M | ~4GB | 2-3x | Platvormidevaheline kasutuselevõtt |
+| Olive | INT4 | 60-75% vähendamine | 2-6x | Ettevõtte töövood |
+| OpenVINO | INT8/INT4 | 50-75% vähendamine | 2-5x | Inteli riistvara optimeerimine |
+| QNN | INT8/INT4 | 50-80% vähendamine | 5-15x | Qualcomm mobiil/serv |
+| MLX | 4-bitine | ~4GB | 2-4x | Apple Silicon optimeerimine |
 
-## 🚀 Järgmised sammud ja edasijõudnud rakendused
+## 🚀 Järgmised sammud ja täiustatud rakendused
 
 See peatükk pakub täielikku alust:
 - Kohandatud mudelite arendamiseks spetsiifilistele valdkondadele
-- Uurimistööks serva tehisintellekti optimeerimise alal
-- Kaubanduslike tehisintellekti rakenduste arendamiseks
-- Suuremahuliste ettevõtte serva tehisintellekti juurutuste jaoks
+- Serva AI optimeerimise uurimiseks
+- Kommertslike AI rakenduste arendamiseks
+- Suuremahuliste ettevõtte serva AI kasutuselevõtuks
 
-Nende kuue osa teadmised pakuvad terviklikku tööriistakomplekti, et navigeerida kiiresti arenevas serva tehisintellekti mudelite optimeerimise ja juurutamise maastikus.
+Nende seitsme osa teadmised pakuvad terviklikku tööriistakomplekti, et navigeerida kiiresti arenevas serva AI mudelite optimeerimise ja kasutuselevõtu maastikus.
 
 ---
 

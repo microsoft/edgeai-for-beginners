@@ -1,214 +1,275 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "cbc822b7b1c0af38342e07c36b8cf0c4",
-  "translation_date": "2025-10-09T20:40:07+00:00",
+  "original_hash": "78ca68df03ae43371b203ea43d346dec",
+  "translation_date": "2025-10-30T14:03:09+00:00",
   "source_file": "CHANGELOG.md",
   "language_code": "hu"
 }
 -->
-# Változások naplója
+# Változásnapló
 
-Az EdgeAI for Beginners minden jelentős változása itt kerül dokumentálásra. Ez a projekt dátum-alapú bejegyzéseket és a Keep a Changelog stílust használja (Hozzáadva, Módosítva, Javítva, Eltávolítva, Dokumentáció, Áthelyezve).
+Az EdgeAI for Beginners minden jelentős változása itt van dokumentálva. Ez a projekt dátum-alapú bejegyzéseket és a Keep a Changelog stílust használja (Hozzáadva, Módosítva, Javítva, Eltávolítva, Dokumentáció, Áthelyezve).
+
+## 2025-10-30
+
+### Hozzáadva - Modul06 AI Ügynökök Átfogó Fejlesztése
+- **Microsoft Agent Framework Integráció** (`Module06/01.IntroduceAgent.md`):
+  - Teljes szekció a Microsoft Agent Frameworkről, amely gyártásra kész ügynökök fejlesztésére szolgál
+  - Részletes integrációs minták a Foundry Local használatával élő telepítéshez
+  - Több ügynök együttes működésének példái speciális SLM modellekkel
+  - Vállalati telepítési minták erőforrás-kezeléssel és monitorozással
+  - Biztonsági és megfelelőségi funkciók élő ügynökrendszerekhez
+  - Valós példák (kiskereskedelem, egészségügy, ügyfélszolgálat)
+
+- **SLM Ügynökök Gyártási Telepítési Stratégiái**:
+  - **Foundry Local**: Teljes vállalati szintű élő AI futtatási dokumentáció telepítéssel, konfigurációval és gyártási mintákkal
+  - **Ollama**: Közösségközpontú telepítés fejlett monitorozással és modellkezeléssel
+  - **VLLM**: Nagy teljesítményű következtetési motor fejlett optimalizációs technikákkal és vállalati funkciókkal
+  - Gyártási telepítési ellenőrzőlisták és összehasonlító táblázatok mindhárom platformhoz
+
+- **Élőre Optimalizált SLM Keretrendszerek Fejlesztése**:
+  - **ONNX Runtime**: Új átfogó szekció a többplatformos SLM ügynökök telepítéséhez
+  - Univerzális telepítési minták Windows, Linux, macOS, iOS és Android rendszerekhez
+  - Hardvergyorsítási opciók (CPU, GPU, NPU) automatikus felismeréssel
+  - Gyártásra kész funkciók és ügynök-specifikus optimalizációk
+  - Teljes implementációs példák Microsoft Agent Framework integrációval
+
+- **Hivatkozások és További Olvasmányok**:
+  - Átfogó forráskönyvtár több mint 100 hiteles forrással
+  - Alapvető kutatási anyagok AI ügynökökről és Kis Nyelvi Modellekről
+  - Hivatalos dokumentáció minden jelentős keretrendszerhez és eszközhöz
+  - Iparági jelentések, piaci elemzések és technikai összehasonlítások
+  - Oktatási források, konferenciák és közösségi fórumok
+  - Szabványok, specifikációk és megfelelőségi keretrendszerek
+
+### Módosítva - Modul06 Tartalom Modernizálása
+- **Fejlesztett Tanulási Célok**: Hozzáadva a Microsoft Agent Framework elsajátítását és élő telepítési képességeket
+- **Gyártási Fókusz**: Konceptuális útmutatás helyett implementációra kész példák
+- **Kódpéldák**: Minden példa frissítve modern SDK mintákra és legjobb gyakorlatokra
+- **Architektúra Minták**: Hozzáadva hierarchikus ügynök architektúrák és élő-felhő koordináció
+- **Teljesítmény Optimalizáció**: Fejlesztve erőforrás-kezelési és automatikus skálázási ajánlásokkal
+
+### Dokumentáció - Modul06 Struktúra Fejlesztése
+- **Átfogó Ügynök Keretrendszer Lefedettség**: Alapfogalmaktól a vállalati telepítésig
+- **Gyártási Telepítési Stratégiák**: Teljes útmutatók Foundry Local, Ollama és VLLM számára
+- **Többplatformos Optimalizáció**: Hozzáadva ONNX Runtime univerzális telepítéshez
+- **Forráskönyvtár**: Kiterjedt hivatkozások folyamatos tanuláshoz és implementációhoz
+
+### Hozzáadva - Modul06 Modell Kontextus Protokoll (MCP) Dokumentáció Frissítése
+- **MCP Bevezetés Modernizálása** (`Module06/03.IntroduceMCP.md`):
+  - Frissítve a legújabb MCP specifikációkkal a modelcontextprotocol.io-ról (2025-06-18 verzió)
+  - Hozzáadva hivatalos USB-C analógia szabványos AI alkalmazáskapcsolatokhoz
+  - Frissítve az architektúra szekció hivatalos két rétegű dizájnnal (Adatréteg + Szállítási réteg)
+  - Fejlesztett alapvető primitívek dokumentáció szerver primitívekkel (Eszközök, Erőforrások, Utasítások) és kliens primitívekkel (Mintavétel, Kiváltás, Naplózás)
+
+- **Átfogó MCP Hivatkozások és Források**:
+  - Hozzáadva **MCP kezdőknek** link (https://aka.ms/mcp-for-beginners)
+  - Hivatalos MCP dokumentáció és specifikációk (modelcontextprotocol.io)
+  - Fejlesztési források, beleértve MCP Inspector és referencia implementációk
+  - Technikai szabványok (JSON-RPC 2.0, JSON Schema, OpenAPI, Server-Sent Events)
+
+### Hozzáadva - Modul04 Qualcomm QNN Integráció
+- **Új 7. szekció: Qualcomm QNN Optimalizációs Csomag** (`Module04/05.QualcommQNN.md`):
+  - Átfogó, több mint 400 soros útmutató Qualcomm egységes AI következtetési keretrendszeréhez
+  - Részletes lefedettség a heterogén számításról (Hexagon NPU, Adreno GPU, Kryo CPU)
+  - Hardver-tudatos optimalizáció Snapdragon platformokhoz intelligens munkaterhelés elosztással
+  - Fejlett kvantálási technikák (INT8, INT16, vegyes precizitás) mobil telepítéshez
+  - Energiatakarékos következtetési optimalizáció akkumulátoros eszközökhöz és valós idejű alkalmazásokhoz
+  - Teljes telepítési útmutató QNN SDK beállítással és környezeti konfigurációval
+  - Gyakorlati példák: PyTorch QNN-re konvertálása, több háttér optimalizáció, kontextus bináris generálás
+  - Fejlett használati minták: egyedi háttér konfiguráció, dinamikus kvantálás, teljesítmény profilozás
+  - Átfogó hibaelhárítási szekció és közösségi források
+
+- **Fejlesztett Modul04 Struktúra**:
+  - README.md frissítve 7 progresszív szekcióval (korábban 6)
+  - Qualcomm QNN hozzáadva a teljesítmény összehasonlító táblázathoz (5-15x sebességnövekedés, 50-80% memória csökkentés)
+  - Átfogó tanulási eredmények mobil AI telepítéshez és energiaoptimalizációhoz
+
+### Módosítva - Modul04 Dokumentáció Frissítések
+- **Microsoft Olive dokumentáció fejlesztése** (`Module04/03.MicrosoftOlive.md`):
+  - Hozzáadva átfogó "Olive Recipes Repository" szekció, amely több mint 100 előre elkészített optimalizációs receptet tartalmaz
+  - Részletes lefedettség a támogatott modellcsaládokról (Phi, Llama, Qwen, Gemma, Mistral, DeepSeek)
+  - Gyakorlati használati példák recept testreszabására és közösségi hozzájárulásokra
+  - Fejlesztve teljesítmény összehasonlításokkal és integrációs útmutatóval
+
+- **Szekció átrendezése a Modul04-ben**:
+  - Apple MLX áthelyezve az 5. szekcióba (korábban 6. szekció)
+  - Workflow Synthesis áthelyezve a 6. szekcióba (korábban 7. szekció)
+  - Qualcomm QNN pozícionálva a 7. szekcióba (specializált mobil/élő fókusz)
+  - Minden fájl hivatkozás és navigációs link frissítve ennek megfelelően
+
+### Javítva - Workshop Minta Validáció
+- **chat_bootstrap.py validáció és javítás**:
+  - Javítva sérült import utasítás (`util.util.workshop_utils` → `util.workshop_utils`)
+  - Hiányzó `__init__.py` létrehozva a util csomagban a megfelelő Python modul feloldáshoz
+  - Szükséges függőségek telepítve (openai, foundry-local-sdk) conda környezetben
+  - Minta futtatás sikeresen validálva alapértelmezett és egyedi utasításokkal
+  - Integráció megerősítve a Foundry Local szolgáltatással és modell betöltéssel (phi-4-mini CUDA optimalizációval)
+
+### Dokumentáció - Átfogó Útmutató Frissítések
+- **Module04 README.md teljes átszervezése**:
+  - Qualcomm QNN hozzáadva mint jelentős optimalizációs keretrendszer az OpenVINO, Olive, MLX mellett
+  - Fejezet tanulási eredmények frissítve mobil AI telepítés és energiaoptimalizáció hozzáadásával
+  - Fejlesztett teljesítmény összehasonlító táblázat QNN metrikákkal és mobil/élő használati esetekkel
+  - Logikus előrehaladás fenntartva vállalati megoldásoktól platform-specifikus optimalizációkig
+
+- **Kereszthivatkozások és navigáció**:
+  - Minden belső link és fájl hivatkozás frissítve az új szekció számozás szerint
+  - Fejlesztett workflow synthesis leírás mobil, asztali és felhő környezetekhez
+  - Átfogó forráslinkek hozzáadva a Qualcomm fejlesztői ökoszisztémához
 
 ## 2025-10-08
 
-### Hozzáadva - Workshop átfogó frissítés
+### Hozzáadva - Workshop Átfogó Frissítés
 - **Workshop README.md teljes újraírása**:
-  - Átfogó bevezető hozzáadása, amely bemutatja az Edge AI értékajánlatát (adatvédelem, teljesítmény, költség)
-  - 6 alapvető tanulási célkitűzés létrehozása részletes kompetenciákkal
-  - Tanulási eredmények táblázat hozzáadása szállítmányokkal és kompetenciamátrixszal
-  - Karrierre kész készségek szekció hozzáadása az iparági relevancia érdekében
-  - Gyors kezdési útmutató létrehozása előfeltételekkel és 3 lépéses beállítással
-  - Erőforrástáblák létrehozása Python mintákhoz (8 fájl futási idővel)
+  - Átfogó bevezetés hozzáadva, amely magyarázza az Edge AI értékajánlatát (adatvédelem, teljesítmény, költség)
+  - 6 alapvető tanulási cél létrehozva részletes kompetenciákkal
+  - Tanulási eredmények táblázata létrehozva szállítmányokkal és kompetencia mátrixszal
+  - Karrierre kész készségek szekció hozzáadva iparági relevanciával
+  - Gyors kezdési útmutató létrehozva előfeltételekkel és 3 lépéses beállítással
+  - Forrástáblák létrehozva Python mintákhoz (8 fájl futási idővel)
   - Jupyter notebookok táblázata (8 notebook nehézségi besorolással)
-  - Dokumentációs táblázat létrehozása (7 kulcsfontosságú dokumentum "Használja, amikor" útmutatással)
-  - Tanulási útvonal ajánlások hozzáadása különböző készségszintekhez
+  - Dokumentációs táblázat létrehozva (7 kulcsfontosságú dokumentum "Használja, amikor" útmutatással)
+  - Tanulási útvonal ajánlások különböző készségszintekhez
 
 - **Workshop validációs és tesztelési infrastruktúra**:
-  - `scripts/validate_samples.py` létrehozása - Átfogó validációs eszköz szintaxis, importok és legjobb gyakorlatok ellenőrzésére
-  - `scripts/test_samples.py` létrehozása - Gyors teszt futtató az összes Python mintához
-  - Validációs dokumentáció hozzáadása a `scripts/README.md` fájlhoz
+  - `scripts/validate_samples.py` létrehozva - Átfogó validációs eszköz szintaxis, importok és legjobb gyakorlatok ellenőrzésére
+  - `scripts/test_samples.py` létrehozva - Gyors teszt futtató minden Python mintához
+  - Validációs dokumentáció hozzáadva a `scripts/README.md`-hez
 
 - **Átfogó dokumentáció**:
-  - `SAMPLES_UPDATE_SUMMARY.md` létrehozása - 400+ soros részletes útmutató az összes fejlesztésről
-  - `UPDATE_COMPLETE.md` létrehozása - Frissítés befejezésének vezetői összefoglalója
-  - `QUICK_REFERENCE.md` létrehozása - Gyors referencia kártya a Workshophoz
+  - `SAMPLES_UPDATE_SUMMARY.md` létrehozva - Több mint 400 soros részletes útmutató az összes fejlesztésről
+  - `UPDATE_COMPLETE.md` létrehozva - Frissítés befejezésének vezetői összefoglalója
+  - `QUICK_REFERENCE.md` létrehozva - Gyors referencia kártya a Workshophoz
 
-### Módosítva - Workshop Python minták modernizálása
-- **Mind a 8 Python minta frissítése legjobb gyakorlatokkal**:
-  - Hibakezelés javítása try-except blokkokkal minden I/O művelet körül
-  - Típusjelzések és átfogó docstringek hozzáadása
-  - Egységes [INFO]/[ERROR]/[RESULT] naplózási minta megvalósítása
-  - Opcionális importok védelme telepítési útmutatóval
-  - Felhasználói visszajelzés javítása az összes mintában
+### Módosítva - Workshop Python Minták Modernizálása
+- **Mind a 8 Python minta frissítve legjobb gyakorlatokkal**:
+  - Fejlesztett hiba kezelés try-except blokkokkal minden I/O művelet körül
+  - Típusjelzések és átfogó docstringek hozzáadva
+  - Egységes [INFO]/[ERROR]/[RESULT] naplózási minta implementálva
+  - Opcionális importok védve telepítési utasításokkal
+  - Felhasználói visszajelzés javítva minden mintában
 
 - **session01/chat_bootstrap.py**:
-  - Ügyfél inicializálásának javítása átfogó hibaüzenetekkel
-  - Streaming hibakezelés javítása szakaszellenőrzéssel
-  - Jobb kivételkezelés hozzáadása szolgáltatás elérhetetlensége esetén
+  - Ügyfél inicializáció fejlesztve átfogó hibaüzenetekkel
+  - Streaming hiba kezelés javítva szakasz validációval
+  - Jobb kivételkezelés hozzáadva szolgáltatás elérhetetlenség esetén
 
 - **session02/rag_pipeline.py**:
-  - Importőrök hozzáadása sentence-transformers esetében telepítési útmutatóval
-  - Hibakezelés javítása beágyazási és generálási műveleteknél
-  - Kimenet formázásának javítása strukturált eredményekkel
+  - Import őrök hozzáadva sentence-transformershez telepítési utasításokkal
+  - Hiba kezelés fejlesztve beágyazási és generálási műveletekhez
+  - Kimeneti formázás javítva strukturált eredményekkel
 
 - **session02/rag_eval_ragas.py**:
-  - Opcionális importok védelme (ragas, datasets) felhasználóbarát hibaüzenetekkel
-  - Hibakezelés hozzáadása értékelési metrikákhoz
-  - Kimenet formázásának javítása értékelési eredményekhez
+  - Opcionális importok védve (ragas, datasets) felhasználóbarát hibaüzenetekkel
+  - Hiba kezelés hozzáadva értékelési metrikákhoz
+  - Kimeneti formázás fejlesztve értékelési eredményekhez
 
 - **session03/benchmark_oss_models.py**:
-  - Kegyes degradáció megvalósítása (folytatja modellhibák esetén)
-  - Részletes haladási jelentés és modellenkénti hibakezelés hozzáadása
-  - Statisztikai számítások javítása átfogó hibakezeléssel
+  - Kegyes degradáció implementálva (folytatja modellhibák esetén)
+  - Részletes haladási jelentés és modell-specifikus hiba kezelés hozzáadva
+  - Statisztikai számítás fejlesztve átfogó hiba helyreállítással
 
 - **session04/model_compare.py**:
-  - Típusjelzések hozzáadása (Tuple visszatérési típusok)
-  - Kimenet formázásának javítása strukturált JSON eredményekkel
-  - Modellenkénti hibakezelés megvalósítása helyreállítással
+  - Típusjelzések hozzáadva (Tuple visszatérési típusok)
+  - Kimeneti formázás fejlesztve strukturált JSON eredményekkel
+  - Modell-specifikus hiba kezelés implementálva helyreállítással
 
 - **session05/agents_orchestrator.py**:
-  - Agent.act() javítása átfogó docstringekkel
-  - Pipeline hibakezelés hozzáadása szakaszok szerinti naplózással
-  - Memóriakezelés és állapotkövetés javítása
+  - Agent.act() fejlesztve átfogó docstringekkel
+  - Pipeline hiba kezelés hozzáadva szakaszok szerinti naplózással
+  - Memóriakezelés és állapotkövetés javítva
 
 - **session06/models_router.py**:
-  - Funkciódokumentáció javítása az összes útválasztási komponenshez
-  - Részletes naplózás hozzáadása a route() funkcióban
-  - Tesztkimenet javítása strukturált eredményekkel
+  - Funkció dokumentáció fejlesztve minden útválasztó komponenshez
+  - Részletes naplózás hozzáadva a route() funkcióban
+  - Teszt kimenet javítva strukturált eredményekkel
 
 - **session06/models_pipeline.py**:
-  - Hibakezelés hozzáadása a chat() segédfunkcióhoz
-  - Pipeline() javítása szakasznaplózással és haladási jelentéssel
-  - main() javítása átfogó hibakezeléssel
+  - Hiba kezelés hozzáadva a chat() segédfunkcióhoz
+  - Pipeline() fejlesztve szakasz naplózással és haladási jelentéssel
+  - Main() fejlesztve átfogó hiba helyreállítással
 
-### Dokumentáció - Workshop dokumentáció fejlesztése
-- Fő README.md frissítése Workshop szekcióval, amely kiemeli a gyakorlati tanulási útvonalat
-- STUDY_GUIDE.md fejlesztése átfogó Workshop szekcióval, amely tartalmazza:
-  - Tanulási célkitűzések és tanulmányi fókuszterületek
+### Dokumentáció - Workshop Dokumentáció Fejlesztése
+- Fő README.md frissítve Workshop szekcióval, amely kiemeli a gyakorlati tanulási utat
+- STUDY_GUIDE.md fejlesztve átfogó Workshop szekcióval, beleértve:
+  - Tanulási célok és tanulmányi fókuszterületek
   - Önértékelési kérdések
-  - Gyakorlati feladatok időbecslésekkel
+  - Gyakorlati feladatok időbecsléssel
   - Időbeosztás koncentrált és részmunkaidős tanulmányokhoz
-  - Workshop hozzáadása a haladáskövetési sablonhoz
-- Időbeosztási útmutató frissítése 20 óráról 30 órára (beleértve a Workshopot)
-- Workshop mintaleírások és tanulási eredmények hozzáadása a README-hez
+  - Workshop hozzáadva haladáskövetési sablonhoz
+- Időbeosztási útmutató frissítve 20 óráról 30 órára (beleértve a Workshopot)
+- Workshop minta leírások és tanulási eredmények hozzáadva README-hez
 
 ### Javítva
-- Inkonzisztens hibakezelési minták megoldása a Workshop minták között
-- Opcionális függőség importálási hibák javítása megfelelő védelmekkel
-- Hiányzó típusjelzések javítása kritikus funkciókban
-- Elégtelen felhasználói visszajelzés kezelése hibás helyzetekben
-- Validációs problémák megoldása átfogó tesztelési infrastruktúrával
+- Workshop minták közötti hiba kezelés minták következetlenségei megoldva
+- Opcionális függőség import hibák javítva megfelelő őrökkel
+- Hiányzó típusjelzések javítva kritikus funkciókban
+- Elégtelen felhasználói visszajelzés javítva hibahelyzetekben
+- Validációs problémák megoldva átfogó tesztelési infrastruktúrával
 
 ---
 
 ## 2025-09-23
 
-### Módosítva - Modul 08 jelentős modernizálása
-- **Átfogó igazítás a Microsoft Foundry-Local repository mintákhoz**
-  - Minden kódpélda frissítése modern `FoundryLocalManager` és OpenAI SDK integrációval
-  - Elavult manuális `requests` hívások cseréje megfelelő SDK használatra
-  - Implementációs minták igazítása hivatalos Microsoft dokumentációval és mintákkal
-
-- **05.AIPoweredAgents.md modernizálása**:
-  - Többügynökös orkestráció frissítése modern SDK minták használatával
-  - Koordinátor implementációjának fejlesztése fejlett funkciókkal (visszacsatolási hurkok, teljesítményfigyelés)
-  - Átfogó hibakezelés és szolgáltatás egészségellenőrzés hozzáadása
-  - Megfelelő hivatkozások integrálása helyi mintákhoz (`samples/05/multi_agent_orchestration.ipynb`)
-  - Funkcióhívási példák frissítése modern `tools` paraméter használatával az elavult `functions` helyett
-  - Termelésre kész minták hozzáadása monitorozással és statisztikai követéssel
-
-- **06.ModelsAsTools.md teljes újraírása**:
-  - Alapvető eszközregiszter cseréje intelligens modell útválasztó implementációval
-  - Kulcsszó-alapú modellválasztás hozzáadása különböző feladattípusokhoz (általános, érvelés, kód, kreatív)
-  - Környezet-alapú konfiguráció integrálása rugalmas modellhozzárendeléssel
-  - Fejlesztés átfogó szolgáltatás egészségfigyeléssel és hibakezeléssel
-  - Termelési telepítési minták hozzáadása kérésfigyeléssel és teljesítménykövetéssel
-  - Igazítás helyi implementációval a `samples/06/router.py` és `samples/06/model_router.ipynb` fájlokban
-
-- **Dokumentációs struktúra fejlesztések**:
-  - Áttekintő szekciók hozzáadása, amelyek kiemelik a modernizációt és SDK igazítást
-  - Fejlesztés emojikkal és jobb formázással az olvashatóság javítása érdekében
-  - Megfelelő hivatkozások hozzáadása helyi mintafájlokhoz a dokumentációban
-  - Termelésre kész implementációs útmutató és legjobb gyakorlatok integrálása
-
-### Hozzáadva
-- Átfogó áttekintő szekciók a Modul 08 fájlokban, amelyek kiemelik a modern SDK integrációt
-- Architektúra kiemelések, amelyek bemutatják a fejlett funkciókat (többügynökös rendszerek, intelligens útválasztás)
-- Közvetlen hivatkozások helyi mintaimplementációkra gyakorlati tapasztalatokhoz
-- Termelési telepítési útmutató monitorozási és hibakezelési mintákkal
-- Interaktív Jupyter notebook példák fejlett funkciókkal és benchmarkokkal
-
-### Javítva
-- Igazítási eltérések a dokumentáció és a tényleges mintaimplementációk között
-- Elavult SDK használati minták a Modul 08-ban
-- Hiányzó hivatkozások átfogó helyi mintakönyvtárhoz
-- Inkonzisztens implementációs megközelítések különböző szekciókban
-
----
-
-## 2025-09-18
-
-### Hozzáadva
-- Modul 08: Microsoft Foundry Local – Teljes fejlesztői eszközkészlet
-  - Hat szekció: beállítás, Azure AI Foundry integráció, nyílt forráskódú modellek, élvonalbeli demók, ügynökök és modellek mint eszközök
+### Módosítva
   - Futtatható minták a `Module08/samples/01`–`06` alatt Windows cmd utasításokkal
     - `01` REST gyors chat (`chat_quickstart.py`)
-    - `02` SDK gyorsindító OpenAI/Foundry Local és Azure OpenAI támogatással (`sdk_quickstart.py`)
-    - `03` CLI listázás és benchmark (`list_and_bench.cmd`)
-    - `04` Chainlit demo (`app.py`)
-    - `05` Többügynökös orkestráció (`python -m samples.05.agents.coordinator`)
-    - `06` Modellek mint eszközök útválasztó (`router.py`)
-- Azure OpenAI támogatás a 2. szekció SDK mintában környezeti változó konfigurációval
-- `.vscode/settings.json` a `Module08/.venv`-re mutat, javítva a Python elemzési felbontást
-- `.env` a `PYTHONPATH` utalással a VS Code/Pylance tudatosság érdekében
+    - `02` SDK gyorsindítás OpenAI/Foundry Local és Azure OpenAI támogatással (`sdk_quickstart.py`)
+    - `03` CLI listázás és tesztelés (`list_and_bench.cmd`)
+    - `04` Chainlit bemutató (`app.py`)
+    - `05` Többügynökös koordináció (`python -m samples.05.agents.coordinator`)
+    - `06` Modellek-eszközként router (`router.py`)
+- Azure OpenAI támogatás a 2. szekció SDK mintájában környezeti változó konfigurációval
+- `.vscode/settings.json` a `Module08/.venv`-re mutat, hogy javítsa a Python elemzési felbontást
+- `.env` a `PYTHONPATH` utalással a VS Code/Pylance felismerés érdekében
 
-### Módosítva
-- Alapértelmezett modell frissítése `phi-4-mini`-re a Modul 08 dokumentációban és mintákban; az összes fennmaradó `phi-3.5` említés eltávolítása a Modul 08-ban
-- Útválasztó (`Module08/samples/06/router.py`) fejlesztések:
-  - Végpont felfedezése `foundry service status` regex elemzéssel
-  - `/v1/models` egészségellenőrzés indításkor
-  - Környezet-konfigurálható modellregiszter (`GENERAL_MODEL`, `REASONING_MODEL`, `CODE_MODEL`, `TOOL_REGISTRY` JSON)
-- Követelmények frissítése: `Module08/requirements.txt` most tartalmazza az `openai`-t (a `requests`, `chainlit` mellett)
-- Chainlit minta útmutató tisztázása és hibaelhárítás hozzáadása; import feloldás munkaterület beállításokkal
+### Változások
+- Alapértelmezett modell frissítve `phi-4-mini`-re a Module 08 dokumentációban és mintákban; eltávolítva a fennmaradó `phi-3.5` említések a Module 08-ban
+- Router (`Module08/samples/06/router.py`) fejlesztések:
+  - Végpontok felfedezése a `foundry service status` regex elemzésével
+  - `/v1/models` állapotellenőrzés indításkor
+  - Környezeti változóval konfigurálható modellregisztráció (`GENERAL_MODEL`, `REASONING_MODEL`, `CODE_MODEL`, `TOOL_REGISTRY` JSON)
+- Követelmények frissítve: `Module08/requirements.txt` most tartalmazza az `openai`-t (a `requests`, `chainlit` mellett)
+- Chainlit minta útmutató pontosítva és hibaelhárítás hozzáadva; import feloldás munkaterületi beállításokkal
 
-### Javítva
-- Importálási problémák megoldása:
-  - Az útválasztó már nem függ egy nem létező `utils` modultól; funkciók inline kerültek
+### Javítások
+- Import problémák megoldva:
+  - A router már nem függ egy nem létező `utils` modultól; a funkciók beépítve
   - A koordinátor relatív importot használ (`from .specialists import ...`) és modul útvonalon keresztül van meghívva
   - VS Code/Pylance konfiguráció a `chainlit` és csomagimportok feloldására
-- Kisebb elírás javítása a `STUDY_GUIDE.md` fájlban és Modul 08 lefedettség hozzáadása
+- Kisebb elírás javítva a `STUDY_GUIDE.md`-ben, és hozzáadva a Module 08 lefedettség
 
-### Eltávolítva
-- Nem használt `Module08/infra/obs.py` törlése és az üres `infra/` könyvtár eltávolítása; megfigyelési minták opcionálisan megmaradtak a dokumentációban
+### Törölve
+- Törölve a nem használt `Module08/infra/obs.py` és az üres `infra/` könyvtár; az opcionális megfigyelési minták megmaradtak a dokumentációban
 
 ### Áthelyezve
-- Modul 08 demók konszolidálása a `Module08/samples` alatt szekció-számozott mappákkal
-  - Chainlit alkalmazás áthelyezése a `samples/04`-be
-  - Ügynökök áthelyezése a `samples/05`-be és `__init__.py` fájlok hozzáadása a csomagfeloldáshoz
+- A Module 08 bemutatók konszolidálva a `Module08/samples` alá szekciószámozott mappákkal
+  - Chainlit alkalmazás áthelyezve a `samples/04`-be
+  - Ügynökök áthelyezve a `samples/05`-be, és hozzáadva `__init__.py` fájlok a csomagfeloldáshoz
 
 ### Dokumentáció
-- Modul 08 szekció dokumentációk és minden minta README gazdagítása Microsoft Learn és megbízható szállítói hivatkozásokkal
-- `Module08/README.md` frissítése minták áttekintésével, útválasztó konfigurációval és validációs tippekkel
-- `Module07/README.md` Windows Foundry Local szekció validálása Learn dokumentációval
-- `STUDY_GUIDE.md` frissítése:
-  - Modul 08 hozzáadása áttekintéshez, ütemtervekhez, haladáskövetőhöz
-  - Átfogó Hivatkozások szekció hozzáadása (Foundry Local, Azure AI, Olive, ONNX Runtime, OpenVINO, MLX, Llama.cpp, vLLM, Ollama, AI Toolkit, Windows ML)
+- A Module 08 szekció dokumentációja és minden minta README-je gazdagítva Microsoft Learn és megbízható gyártói hivatkozásokkal
+- `Module08/README.md` frissítve minták áttekintésével, router konfigurációval és validációs tippekkel
+- `Module07/README.md` Windows Foundry Local szekciója validálva a Learn dokumentációval
+- `STUDY_GUIDE.md` frissítve:
+  - Module 08 hozzáadva az áttekintéshez, ütemtervekhez, haladási nyomkövetőhöz
+  - Átfogó Hivatkozások szekció hozzáadva (Foundry Local, Azure AI, Olive, ONNX Runtime, OpenVINO, MLX, Llama.cpp, vLLM, Ollama, AI Toolkit, Windows ML)
 
 ---
 
 ## Történeti (összefoglaló)
-- Kurzus architektúra és modulok létrehozása (01–07 modulok)
+- Tanfolyam architektúra és modulok létrehozva (Modules 01–07)
 - Iteratív tartalom modernizálás, formázási szabványosítás és esettanulmányok hozzáadása
 - Optimalizációs keretrendszerek lefedettségének bővítése (Llama.cpp, Olive, OpenVINO, Apple MLX)
 
 ## Kiadatlan / Hátralévő (javaslatok)
-- Opcionális mintánkénti gyors tesztek a Foundry Local elérhetőség validálására
-- Fordítások felülvizsgálata a modellhivatkozások igazítására (pl. `phi-4-mini`)
+- Opcionális mintánkénti gyors tesztek a Foundry Local elérhetőségének validálására
+- Fordítások felülvizsgálata a modellhivatkozások összehangolására (pl. `phi-4-mini`)
 - Minimális pyright konfiguráció hozzáadása, ha a csapatok munkaterület-szintű szigorúságot preferálnak
 
 ---
 
 **Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

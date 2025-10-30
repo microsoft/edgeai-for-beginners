@@ -1,58 +1,58 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-09T07:56:06+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T11:12:46+00:00",
   "source_file": "AGENTS.md",
   "language_code": "mo"
 }
 -->
 # AGENTS.md
 
-> **開發者指南：EdgeAI 初學者貢獻指南**
+> **開發者指南：貢獻於初學者的EdgeAI**
 > 
-> 本文件提供給開發者、AI代理以及貢獻者的全面資訊，涵蓋了本存儲庫的設置、開發工作流程、測試以及最佳實踐。
+> 本文件提供給開發者、AI代理以及貢獻者的全面資訊，涵蓋了設置、開發工作流程、測試以及最佳實踐。
 > 
-> **最後更新日期**：2025年10月 | **文件版本**：2.0
+> **最後更新日期**：2025年10月30日 | **文件版本**：3.0
 
 ## 目錄
 
 - [專案概述](../..)
-- [存儲庫結構](../..)
+- [倉庫結構](../..)
 - [先決條件](../..)
 - [設置指令](../..)
 - [開發工作流程](../..)
-- [測試指引](../..)
+- [測試指導](../..)
 - [代碼風格指南](../..)
 - [拉取請求指南](../..)
 - [翻譯系統](../..)
-- [Foundry Local 整合](../..)
+- [Foundry Local整合](../..)
 - [構建與部署](../..)
 - [常見問題與故障排除](../..)
-- [額外資源](../..)
+- [其他資源](../..)
 - [專案特定備註](../..)
-- [尋求幫助](../..)
+- [獲取幫助](../..)
 
 ## 專案概述
 
-EdgeAI for Beginners 是一個全面的教育存儲庫，教授使用小型語言模型（SLMs）進行邊緣AI開發。課程涵蓋了EdgeAI基礎知識、模型部署、優化技術以及使用 Microsoft Foundry Local 和各種AI框架的生產級實現。
+EdgeAI for Beginners是一個全面的教育倉庫，旨在教授使用小型語言模型（SLMs）進行Edge AI開發。課程涵蓋EdgeAI基礎知識、模型部署、優化技術以及使用Microsoft Foundry Local和各種AI框架的生產級實現。
 
-**核心技術：**
+**主要技術：**
 - Python 3.8+（AI/ML範例的主要語言）
 - .NET C#（AI/ML範例）
-- JavaScript/Node.js 與 Electron（桌面應用程式）
+- JavaScript/Node.js與Electron（桌面應用程式）
 - Microsoft Foundry Local SDK
 - Microsoft Windows ML 
-- VSCode AI 工具包
+- VSCode AI工具包
 - OpenAI SDK
 - AI框架：LangChain、Semantic Kernel、Chainlit
 - 模型優化：Llama.cpp、Microsoft Olive、OpenVINO、Apple MLX
 
-**存儲庫類型：** 教育內容存儲庫，包含8個模組和10個全面的範例應用程式
+**倉庫類型：** 包含8個模組和10個全面範例應用的教育內容倉庫
 
-**架構：** 多模組學習路徑，提供展示邊緣AI部署模式的實用範例
+**架構：** 多模組學習路徑，展示Edge AI部署模式的實用範例
 
-## 存儲庫結構
+## 倉庫結構
 
 ```
 edgeai-for-beginners/
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -85,21 +92,21 @@ edgeai-for-beginners/
 
 ### 系統需求
 
-- **RAM**：最低8GB，推薦16GB以上以支持多模型場景
-- **存儲空間**：至少10GB的可用空間，用於模型和依賴項
-- **操作系統**：Windows 10/11、macOS 11+ 或 Linux（Ubuntu 20.04+）
+- **RAM**：最低8GB，建議16GB以上以支持多模型場景
+- **存儲**：至少10GB的空閒空間，用於模型和依賴項
+- **操作系統**：Windows 10/11、macOS 11+或Linux（Ubuntu 20.04+）
 - **硬件**：支持AVX2的CPU；GPU（CUDA、Qualcomm NPU）可選但推薦
 
 ### 知識要求
 
 - 基本的Python編程知識
 - 熟悉命令行界面
-- 理解AI/ML概念（用於範例開發）
-- Git工作流程和拉取請求流程
+- 了解AI/ML概念（用於範例開發）
+- Git工作流程和拉取請求過程
 
 ## 設置指令
 
-### 存儲庫設置
+### 倉庫設置
 
 ```bash
 # Clone the repository
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Python範例設置（模組08及Python範例）
+### Python範例設置（Module08和Workshop範例）
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -145,7 +156,7 @@ npm run dist
 
 ### Foundry Local設置
 
-Foundry Local 是運行範例所需的工具。從官方存儲庫下載並安裝：
+Foundry Local是運行範例所需的工具。請從官方倉庫下載並安裝：
 
 **安裝：**
 - **Windows**：`winget install Microsoft.FoundryLocal`
@@ -155,7 +166,7 @@ Foundry Local 是運行範例所需的工具。從官方存儲庫下載並安裝
 **快速開始：**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -164,25 +175,31 @@ foundry model ls
 foundry service status
 ```
 
-**注意**：Foundry Local 會自動選擇最適合您硬件的模型版本（CUDA GPU、Qualcomm NPU 或 CPU）。
+**注意**：Foundry Local會自動選擇最適合您硬件的模型版本（CUDA GPU、Qualcomm NPU或CPU）。
 
 ## 開發工作流程
 
 ### 內容開發
 
-本存儲庫主要包含**Markdown教育內容**。進行更改時：
+本倉庫主要包含**Markdown教育內容**。進行更改時：
 
-1. 編輯模組目錄中的 `.md` 文件
-2. 遵循現有的格式模式
+1. 編輯適當模組目錄中的`.md`文件
+2. 遵循現有格式模式
 3. 確保代碼範例準確且已測試
 4. 必要時更新相應的翻譯內容（或由自動化處理）
 
 ### 範例應用程式開發
 
-對於Python範例（範例01-07、09-10）：
+對於Module08 Python範例（範例01-07, 09-10）：
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+對於Workshop Python範例：
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 對於Electron範例（範例08）：
@@ -211,21 +228,21 @@ npm run test:e2e   # Run end-to-end tests
 npm run lint       # Check code style
 ```
 
-## 測試指引
+## 測試指導
 
 ### 內容驗證
 
-存儲庫使用自動化翻譯工作流程。翻譯無需手動測試。
+倉庫使用自動翻譯工作流程。翻譯無需手動測試。
 
-**手動驗證內容更改：**
-1. 通過預覽 `.md` 文件檢查Markdown渲染
+**內容更改的手動驗證：**
+1. 通過預覽`.md`文件檢查Markdown渲染
 2. 確保所有鏈接指向有效目標
-3. 測試文檔中包含的任何代碼片段
+3. 測試文檔中包含的代碼片段
 4. 確保圖片正確加載
 
 ### 範例應用程式測試
 
-**模組08/範例/08（Electron應用程式）具有全面測試：**
+**Module08/samples/08（Electron應用程式）有全面測試：**
 ```bash
 cd Module08/samples/08
 
@@ -245,23 +262,32 @@ npm run test:e2e
 npm test -- --coverage
 ```
 
-**Python範例需手動測試：**
+**Python範例應進行手動測試：**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## 代碼風格指南
 
 ### Markdown內容
 
-- 使用一致的標題層次結構（# 用於標題，## 用於主要部分，### 用於子部分）
+- 使用一致的標題層次結構（#用於標題，##用於主要部分，###用於子部分）
 - 包含帶有語言指定的代碼塊：```python, ```bash, ```javascript
-- 遵循現有的表格、列表和強調格式
-- 保持行可讀性（目標約80-100字符，但不嚴格）
-- 使用相對鏈接指向內部引用
+- 遵循現有格式，用於表格、列表和強調
+- 保持行的可讀性（目標約80-100字符，但不嚴格）
+- 對內部引用使用相對鏈接
 
 ### Python代碼風格
 
@@ -291,12 +317,12 @@ npm run format      # Format with Prettier
 
 ### 貢獻工作流程
 
-1. **Fork存儲庫**並從 `main` 創建新分支
+1. **Fork倉庫**並從`main`創建新分支
 2. **進行更改**，遵循代碼風格指南
-3. **按照上述測試指引進行全面測試**
-4. **使用清晰的消息提交**，遵循常規提交格式
+3. **使用上述測試指導進行全面測試**
+4. **提交清晰的消息**，遵循常規提交格式
 5. **推送到您的Fork**並創建拉取請求
-6. **回應維護者在審查過程中的反饋**
+6. **回應維護者的審查意見**
 
 ### 分支命名規範
 
@@ -335,7 +361,7 @@ fix(samples/08): resolve Electron build issue
 
 ### 行為準則
 
-所有貢獻者必須遵守[Microsoft開源行為準則](https://opensource.microsoft.com/codeofconduct/)。請在貢獻前查看 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)。
+所有貢獻者必須遵守[Microsoft開源行為準則](https://opensource.microsoft.com/codeofconduct/)。請在貢獻前查看[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)。
 
 ### 提交前
 
@@ -344,7 +370,7 @@ fix(samples/08): resolve Electron build issue
 - 驗證鏈接和圖片是否正常
 - 檢查拼寫和語法錯誤
 
-**對於範例代碼更改（模組08/範例/08）：**
+**對於範例代碼更改（Module08/samples/08）：**
 ```bash
 npm run lint
 npm test
@@ -363,17 +389,17 @@ npm test
 
 ## 翻譯系統
 
-**重要事項：** 本存儲庫使用GitHub Actions進行自動翻譯。
+**重要事項：** 本倉庫使用GitHub Actions進行自動翻譯。
 
-- 翻譯存儲在 `/translations/` 目錄中（支持50多種語言）
-- 通過 `co-op-translator.yml` 工作流程自動化
+- 翻譯存放於`/translations/`目錄（支持50多種語言）
+- 通過`co-op-translator.yml`工作流程自動化
 - **請勿手動編輯翻譯文件** - 它們將被覆蓋
 - 僅編輯根目錄和模組目錄中的英文源文件
-- 推送到 `main` 分支時，翻譯將自動生成
+- 翻譯在推送到`main`分支時自動生成
 
-## Foundry Local 整合
+## Foundry Local整合
 
-大多數模組08範例需要Microsoft Foundry Local運行。
+大多數Module08範例需要Microsoft Foundry Local運行。
 
 ### 安裝與設置
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -450,7 +476,7 @@ curl http://localhost:<port>/v1/models
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -463,17 +489,17 @@ set AZURE_OPENAI_API_KEY=your-api-key
 set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-**注意**：使用 `FoundryLocalManager` 時，SDK會自動處理服務發現和模型加載。模型別名（如 `phi-3.5-mini`）確保選擇最適合您硬件的版本。
+**注意**：使用`FoundryLocalManager`時，SDK會自動處理服務發現和模型加載。模型別名（如`phi-3.5-mini`）確保選擇最適合您硬件的版本。
 
 ## 構建與部署
 
 ### 內容部署
 
-本存儲庫主要是文檔內容 - 無需構建過程。
+本倉庫主要是文檔內容 - 不需要構建過程。
 
 ### 範例應用程式構建
 
-**Electron應用程式（模組08/範例/08）：**
+**Electron應用程式（Module08/samples/08）：**
 ```bash
 cd Module08/samples/08
 
@@ -495,7 +521,7 @@ npm run pack
 
 ## 常見問題與故障排除
 
-> **提示**：檢查 [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues) 了解已知問題和解決方案。
+> **提示**：查看[GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues)以了解已知問題和解決方案。
 
 ### 嚴重問題（阻塞）
 
@@ -508,7 +534,7 @@ npm run pack
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -557,7 +583,7 @@ npm install
 **解決方案：**
 - 僅編輯英文源文件
 - 讓自動翻譯工作流程處理翻譯
-- 如果發生衝突，在翻譯合併後將 `main` 合併到您的分支
+- 如果發生衝突，在翻譯合併後將`main`合併到您的分支
 
 #### 模型下載失敗
 **問題：** Foundry Local無法下載模型
@@ -573,26 +599,27 @@ foundry model run <model-alias>
 # Verify firewall settings allow downloads
 ```
 
-## 額外資源
+## 其他資源
 
 ### 學習路徑
 - **初學者路徑：** 模組01-02（7-9小時）
 - **中級路徑：** 模組03-04（9-11小時）
 - **高級路徑：** 模組05-07（12-15小時）
 - **專家路徑：** 模組08（8-10小時）
+- **實作工作坊：** 工作坊材料（6-8小時）
 
-### 核心模組內容
-- **模組01：** EdgeAI基礎知識及實際案例研究
-- **模組02：** 小型語言模型（SLM）家族及架構
+### 主要模組內容
+- **模組01：** EdgeAI基礎知識和實際案例研究
+- **模組02：** 小型語言模型（SLM）家族和架構
 - **模組03：** 本地和雲端部署策略
-- **模組04：** 使用多種框架進行模型優化
+- **模組04：** 使用多種框架進行模型優化（Llama.cpp、Microsoft Olive、OpenVINO、Qualcomm QNN、Apple MLX）
 - **模組05：** SLMOps - 生產運營
-- **模組06：** AI代理及函數調用
+- **模組06：** AI代理和函數調用
 - **模組07：** 平台特定實現
-- **模組08：** Foundry Local工具包及10個全面範例
+- **模組08：** Foundry Local工具包，包含10個全面範例
 
 ### 外部依賴項
-- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - 提供OpenAI兼容API的本地AI模型運行時
+- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - 具有OpenAI兼容API的本地AI模型運行時
   - [文檔](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
   - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [JavaScript SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
@@ -602,9 +629,9 @@ foundry model run <model-alias>
 
 ## 專案特定備註
 
-### 模組08範例應用程式
+### Module08範例應用程式
 
-存儲庫包含10個全面範例應用程式：
+倉庫包含10個全面範例應用程式：
 
 1. **01-REST聊天快速入門** - 基本OpenAI SDK整合
 2. **02-OpenAI SDK整合** - 高級SDK功能
@@ -615,56 +642,67 @@ foundry model run <model-alias>
 7. **07-直接API客戶端** - 低級API整合
 8. **08-Windows 11聊天應用程式** - 原生Electron桌面應用程式
 9. **09-高級多代理系統** - 複雜代理協作
-10. **10-Foundry工具框架** - LangChain/Semantic Kernel整合
+10. **10-Foundry 工具框架** - LangChain/Semantic Kernel 整合
 
-每個範例展示了使用Foundry Local進行邊緣AI開發的不同方面。
+### 工作坊範例應用
+
+工作坊包含 6 個循序漸進的課程，並提供實際應用：
+
+1. **課程 01** - 使用 Foundry Local 整合進行聊天啟動
+2. **課程 02** - 使用 RAGAS 進行 RAG 管道和評估
+3. **課程 03** - 開源模型的基準測試
+4. **課程 04** - 模型比較與選擇
+5. **課程 05** - 多代理協作系統
+6. **課程 06** - 模型路由與管道管理
+
+每個範例展示了使用 Foundry Local 進行邊緣 AI 開發的不同方面。
 
 ### 性能考量
 
-- SLMs已針對邊緣部署進行優化（2-16GB RAM）
-- 本地推理提供 50-500 毫秒的響應時間  
-- 量化技術實現 75% 的大小縮減，同時保留 85% 的性能  
-- 使用本地模型進行即時對話  
+- SLMs 已針對邊緣部署進行優化（2-16GB RAM）
+- 本地推理提供 50-500ms 的響應時間
+- 量化技術可實現 75% 的大小縮減，並保留 85% 的性能
+- 使用本地模型進行即時對話的能力
 
 ### 安全性與隱私
 
-- 所有處理均在本地進行——無需將數據發送至雲端  
-- 適用於隱私敏感型應用（如醫療、金融）  
-- 符合數據主權要求  
-- Foundry Local 完全運行於本地硬件  
+- 所有處理均在本地進行 - 無數據發送至雲端
+- 適用於隱私敏感的應用（如醫療、金融）
+- 符合數據主權要求
+- Foundry Local 完全在本地硬件上運行
 
-## 獲取幫助
+## 尋求幫助
 
 ### 文件
 
-- **主 README**: [README.md](README.md) - 儲存庫概覽及學習路徑  
-- **學習指南**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - 學習資源及時間表  
-- **支援**: [SUPPORT.md](SUPPORT.md) - 如何獲得幫助  
-- **安全性**: [SECURITY.md](SECURITY.md) - 報告安全問題  
+- **主要 README**: [README.md](README.md) - 儲存庫概述與學習路徑
+- **學習指南**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - 學習資源與時間表
+- **支援**: [SUPPORT.md](SUPPORT.md) - 如何獲得幫助
+- **安全性**: [SECURITY.md](SECURITY.md) - 報告安全問題
 
 ### 社群支援
 
-- **GitHub 問題**: [回報錯誤或提出功能需求](https://github.com/microsoft/edgeai-for-beginners/issues)  
-- **GitHub 討論**: [提出問題並分享想法](https://github.com/microsoft/edgeai-for-beginners/discussions)  
-- **Foundry Local 問題**: [Foundry Local 的技術問題](https://github.com/microsoft/Foundry-Local/issues)  
+- **GitHub 問題**: [回報錯誤或提出功能需求](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **GitHub 討論**: [提出問題並分享想法](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **Foundry Local 問題**: [Foundry Local 的技術問題](https://github.com/microsoft/Foundry-Local/issues)
 
 ### 聯絡方式
 
-- **維護者**: 請參閱 [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)  
-- **安全問題**: 請遵循 [SECURITY.md](SECURITY.md) 中的負責披露流程  
-- **Microsoft 支援**: 對於企業支援，請聯絡 Microsoft 客戶服務  
+- **維護者**: 請參閱 [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
+- **安全問題**: 按照 [SECURITY.md](SECURITY.md) 中的負責任披露流程
+- **Microsoft 支援**: 對於企業支援，請聯絡 Microsoft 客戶服務
 
 ### 其他資源
 
-- **Microsoft Learn**: [AI 和機器學習學習路徑](https://learn.microsoft.com/training/browse/?products=ai-services)  
-- **Foundry Local 文件**: [官方文件](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)  
-- **社群範例**: 請查看 [GitHub 討論](https://github.com/microsoft/edgeai-for-beginners/discussions) 中的社群貢獻  
+- **Microsoft Learn**: [AI 和機器學習學習路徑](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **Foundry Local 文件**: [官方文件](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **社群範例**: 查看 [GitHub 討論](https://github.com/microsoft/edgeai-for-beginners/discussions) 以獲取社群貢獻
 
 ---
 
-**這是一個教育性儲存庫，專注於教授 Edge AI 開發。主要的貢獻模式是改進教育內容以及添加/增強示例應用，以展示 Edge AI 概念。**  
+**這是一個專注於教授邊緣 AI 開發的教育性儲存庫。主要的貢獻模式是改進教育內容以及新增/增強展示邊緣 AI 概念的範例應用。**
 
 ---
 
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或錯誤解釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

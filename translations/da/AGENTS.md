@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-09T14:06:21+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T13:05:25+00:00",
   "source_file": "AGENTS.md",
   "language_code": "da"
 }
 -->
 # AGENTS.md
 
-> **Udviklerguide til at bidrage til EdgeAI for begyndere**
+> **Udviklervejledning til bidrag til EdgeAI for begyndere**
 > 
-> Dette dokument giver omfattende information til udviklere, AI-agenter og bidragsydere, der arbejder med dette repository. Det dækker opsætning, udviklingsarbejdsgange, test og bedste praksis.
+> Dette dokument giver omfattende information til udviklere, AI-agenter og bidragydere, der arbejder med dette repository. Det dækker opsætning, udviklingsarbejdsgange, test og bedste praksis.
 > 
-> **Sidst opdateret**: Oktober 2025 | **Dokumentversion**: 2.0
+> **Sidst opdateret**: 30. oktober 2025 | **Dokumentversion**: 3.0
 
 ## Indholdsfortegnelse
 
@@ -35,7 +35,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Projektoversigt
 
-EdgeAI for begyndere er et omfattende uddannelsesrepository, der underviser i Edge AI-udvikling med Small Language Models (SLMs). Kurset dækker EdgeAI-grundprincipper, modeludrulning, optimeringsteknikker og produktionsklare implementeringer ved hjælp af Microsoft Foundry Local og forskellige AI-rammeværk.
+EdgeAI for begyndere er et omfattende uddannelsesrepository, der underviser i Edge AI-udvikling med Small Language Models (SLMs). Kurset dækker EdgeAI-grundlæggende, modeludrulning, optimeringsteknikker og produktionsklare implementeringer ved hjælp af Microsoft Foundry Local og forskellige AI-rammer.
 
 **Nøgleteknologier:**
 - Python 3.8+ (primært sprog til AI/ML-eksempler)
@@ -45,7 +45,7 @@ EdgeAI for begyndere er et omfattende uddannelsesrepository, der underviser i Ed
 - Microsoft Windows ML 
 - VSCode AI Toolkit
 - OpenAI SDK
-- AI-rammeværk: LangChain, Semantic Kernel, Chainlit
+- AI-rammer: LangChain, Semantic Kernel, Chainlit
 - Modeloptimering: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
 
 **Repository-type:** Uddannelsesindhold med 8 moduler og 10 omfattende prøveapplikationer
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -88,12 +95,12 @@ edgeai-for-beginners/
 - **RAM**: Minimum 8GB, 16GB+ anbefales til multi-model scenarier
 - **Lagerplads**: 10GB+ ledig plads til modeller og afhængigheder
 - **OS**: Windows 10/11, macOS 11+ eller Linux (Ubuntu 20.04+)
-- **Hardware**: CPU med AVX2-understøttelse; GPU (CUDA, Qualcomm NPU) valgfri, men anbefales
+- **Hardware**: CPU med AVX2-understøttelse; GPU (CUDA, Qualcomm NPU) valgfrit, men anbefales
 
-### Videnforudsætninger
+### Vidensforudsætninger
 
 - Grundlæggende forståelse af Python-programmering
-- Kendskab til kommandolinjegrænseflader
+- Fortrolighed med kommandolinjegrænseflader
 - Forståelse af AI/ML-koncepter (til prøveudvikling)
 - Git-arbejdsgange og pull request-processer
 
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Opsætning af Python-prøver (Modul08 og Python-prøver)
+### Opsætning af Python-prøver (Modul08 og workshop-prøver)
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -155,7 +166,7 @@ Foundry Local er påkrævet for at køre prøverne. Download og installer fra de
 **Hurtig start:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -174,15 +185,21 @@ Dette repository indeholder primært **Markdown-uddannelsesindhold**. Når du fo
 
 1. Rediger `.md`-filer i de relevante modulmapper
 2. Følg eksisterende formateringsmønstre
-3. Sørg for, at kodeeksempler er korrekte og testede
-4. Opdater tilsvarende oversat indhold, hvis nødvendigt (eller lad automatiseringen håndtere det)
+3. Sørg for, at kodeeksempler er nøjagtige og testede
+4. Opdater tilsvarende oversat indhold, hvis nødvendigt (eller lad automatisering håndtere det)
 
 ### Udvikling af prøveapplikationer
 
-For Python-prøver (prøver 01-07, 09-10):
+For Modul08 Python-prøver (prøver 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+For workshop Python-prøver:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 For Electron-prøve (prøve 08):
@@ -218,14 +235,14 @@ npm run lint       # Check code style
 Repositoryet bruger automatiserede oversættelsesarbejdsgange. Ingen manuel test er påkrævet for oversættelser.
 
 **Manuel validering for indholdsændringer:**
-1. Gennemgå Markdown-visning ved at forhåndsvise `.md`-filer
+1. Gennemse Markdown-visning ved at forhåndsvise `.md`-filer
 2. Bekræft, at alle links peger på gyldige mål
-3. Test eventuelle kodeeksempler, der er inkluderet i dokumentationen
+3. Test eventuelle kodeuddrag inkluderet i dokumentationen
 4. Kontroller, at billeder indlæses korrekt
 
 ### Test af prøveapplikationer
 
-**Module08/samples/08 (Electron-app) har omfattende tests:**
+**Modul08/prøver/08 (Electron-app) har omfattende tests:**
 ```bash
 cd Module08/samples/08
 
@@ -245,12 +262,21 @@ npm run test:e2e
 npm test -- --coverage
 ```
 
-**Python-prøver skal testes manuelt:**
+**Python-prøver bør testes manuelt:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## Retningslinjer for kodestil
@@ -294,14 +320,14 @@ npm run format      # Format with Prettier
 1. **Fork repositoryet** og opret en ny gren fra `main`
 2. **Foretag dine ændringer** i henhold til kodestilsretningslinjerne
 3. **Test grundigt** ved hjælp af testinstruktionerne ovenfor
-4. **Commit med klare beskeder** i henhold til konventionelle commits-formatet
+4. **Commit med klare beskeder** i henhold til konventionelle commits-format
 5. **Push til din fork** og opret en pull request
 6. **Svar på feedback** fra vedligeholdere under gennemgang
 
 ### Navngivningskonvention for grene
 
-- `feature/<module>-<beskrivelse>` - Til nye funktioner eller indhold
-- `fix/<module>-<beskrivelse>` - Til fejlrettelser
+- `feature/<modul>-<beskrivelse>` - Til nye funktioner eller indhold
+- `fix/<modul>-<beskrivelse>` - Til fejlrettelser
 - `docs/<beskrivelse>` - Til dokumentationsforbedringer
 - `refactor/<beskrivelse>` - Til kodeomstrukturering
 
@@ -335,16 +361,16 @@ eller
 
 ### Adfærdskodeks
 
-Alle bidragsydere skal følge [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Gennemgå venligst [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), før du bidrager.
+Alle bidragydere skal følge [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Gennemgå venligst [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), før du bidrager.
 
 ### Før indsendelse
 
 **For indholdsændringer:**
 - Forhåndsvis alle ændrede Markdown-filer
 - Bekræft, at links og billeder fungerer
-- Tjek for stave- og grammatikfejl
+- Kontroller for stave- og grammatikfejl
 
-**For ændringer i prøvekode (Module08/samples/08):**
+**For ændringer i prøvekode (Modul08/prøver/08):**
 ```bash
 npm run lint
 npm test
@@ -353,7 +379,7 @@ npm test
 **For ændringer i Python-prøver:**
 - Test, at prøven kører korrekt
 - Bekræft, at fejlbehandling fungerer
-- Tjek kompatibilitet med Foundry Local
+- Kontroller kompatibilitet med Foundry Local
 
 ### Gennemgangsproces
 
@@ -373,7 +399,7 @@ npm test
 
 ## Foundry Local-integration
 
-De fleste Module08-prøver kræver, at Microsoft Foundry Local kører.
+De fleste Modul08-prøver kræver, at Microsoft Foundry Local kører.
 
 ### Installation & opsætning
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -450,7 +476,7 @@ De fleste prøver bruger disse miljøvariabler:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -473,7 +499,7 @@ Dette repository er primært dokumentation - ingen byggeproces kræves for indho
 
 ### Bygning af prøveapplikationer
 
-**Electron-applikation (Module08/samples/08):**
+**Electron-applikation (Modul08/prøver/08):**
 ```bash
 cd Module08/samples/08
 
@@ -508,7 +534,7 @@ Ingen byggeproces - prøver køres direkte med Python-fortolkeren.
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -557,10 +583,10 @@ npm install
 **Løsning:**
 - Rediger kun engelske kildefiler
 - Lad den automatiserede oversættelsesarbejdsgang håndtere oversættelser
-- Hvis konflikter opstår, merge `main` ind i din gren efter oversættelser er merged
+- Hvis der opstår konflikter, så flet `main` ind i din gren, efter at oversættelserne er flettet
 
 #### Fejl ved modeldownload
-**Problem:** Foundry Local fejler ved download af modeller
+**Problem:** Foundry Local kan ikke downloade modeller
 
 **Løsning:**
 ```bash
@@ -577,26 +603,27 @@ foundry model run <model-alias>
 
 ### Læringsstier
 - **Begyndersti:** Moduler 01-02 (7-9 timer)
-- **Mellemsti:** Moduler 03-04 (9-11 timer)
+- **Mellemtrin:** Moduler 03-04 (9-11 timer)
 - **Avanceret sti:** Moduler 05-07 (12-15 timer)
 - **Ekspertsti:** Modul 08 (8-10 timer)
+- **Hands-On Workshop:** Workshop-materialer (6-8 timer)
 
 ### Nøgleindhold i moduler
-- **Modul01:** EdgeAI-grundprincipper og virkelige eksempler
+- **Modul01:** EdgeAI-grundlæggende og virkelige casestudier
 - **Modul02:** Small Language Model (SLM)-familier og arkitekturer
 - **Modul03:** Lokale og cloud-udrulningsstrategier
-- **Modul04:** Modeloptimering med flere rammeværk
+- **Modul04:** Modeloptimering med flere rammer (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
 - **Modul05:** SLMOps - produktionsdrift
 - **Modul06:** AI-agenter og funktionskald
 - **Modul07:** Platform-specifikke implementeringer
-- **Modul08:** Foundry Local-værktøjskasse med 10 omfattende prøver
+- **Modul08:** Foundry Local-værktøjssæt med 10 omfattende prøver
 
 ### Eksterne afhængigheder
-- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Lokalt AI-model runtime med OpenAI-kompatibel API
+- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Lokal AI-model runtime med OpenAI-kompatibel API
   - [Dokumentation](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
   - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [JavaScript SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
-- [Llama.cpp](https://github.com/ggml-org/llama.cpp) - Optimeringsrammeværk
+- [Llama.cpp](https://github.com/ggml-org/llama.cpp) - Optimeringsramme
 - [Microsoft Olive](https://microsoft.github.io/Olive/) - Modeloptimeringsværktøj
 - [OpenVINO](https://docs.openvino.ai/) - Intels optimeringsværktøj
 
@@ -615,21 +642,32 @@ Repositoryet inkluderer 10 omfattende prøveapplikationer:
 7. **07-Direct API Client** - Lav-niveau API-integration
 8. **08-Windows 11 Chat App** - Native Electron desktop-applikation
 9. **09-Advanced Multi-Agent System** - Kompleks agentkoordinering
-10. **10-Foundry Tools Framework** - LangChain/Semantic Kernel-integration
+10. **10-Foundry Tools Framework** - LangChain/Semantic Kernel integration
 
-Hver prøve demonstrerer forskellige aspekter af Edge AI-udvikling med Foundry Local.
+### Workshop Eksempelapplikationer
 
-### Ydelseshensyn
+Workshoppen inkluderer 6 progressive sessioner med praktiske implementeringer:
 
-- SLM'er er optimeret til edge-udrulning (2-16GB RAM)
-- Lokal inferens giver svartider på 50-500 ms
-- Kvantiseringsteknikker opnår 75% reduktion i størrelse med 85% bevaret ydeevne
-- Realtids-samtalefunktioner med lokale modeller
+1. **Session 01** - Chat bootstrap med Foundry Local integration
+2. **Session 02** - RAG pipeline og evaluering med RAGAS
+3. **Session 03** - Benchmarking af open-source modeller
+4. **Session 04** - Model sammenligning og valg
+5. **Session 05** - Multi-agent orkestreringssystemer
+6. **Session 06** - Model routing og pipeline management
+
+Hver prøve demonstrerer forskellige aspekter af edge AI-udvikling med Foundry Local.
+
+### Ydeevneovervejelser
+
+- SLM'er er optimeret til edge-implementering (2-16GB RAM)
+- Lokal inferens giver svartider på 50-500ms
+- Kvantiseringsteknikker opnår 75% størrelsesreduktion med 85% ydeevnebevarelse
+- Realtids-samtaleegenskaber med lokale modeller
 
 ### Sikkerhed og Privatliv
 
 - Al behandling sker lokalt - ingen data sendes til skyen
-- Velegnet til applikationer med fokus på privatliv (sundhedsvæsen, finans)
+- Velegnet til applikationer med følsomme data (sundhedsvæsen, finans)
 - Opfylder krav til datasuverænitet
 - Foundry Local kører udelukkende på lokal hardware
 
@@ -637,7 +675,7 @@ Hver prøve demonstrerer forskellige aspekter af Edge AI-udvikling med Foundry L
 
 ### Dokumentation
 
-- **Hoved README**: [README.md](README.md) - Oversigt over repository og læringsveje
+- **Hoved README**: [README.md](README.md) - Repository oversigt og læringsveje
 - **Studieguide**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Læringsressourcer og tidslinje
 - **Support**: [SUPPORT.md](SUPPORT.md) - Hvordan man får hjælp
 - **Sikkerhed**: [SECURITY.md](SECURITY.md) - Rapportering af sikkerhedsproblemer
@@ -651,20 +689,20 @@ Hver prøve demonstrerer forskellige aspekter af Edge AI-udvikling med Foundry L
 ### Kontakt
 
 - **Vedligeholdere**: Se [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
-- **Sikkerhedsproblemer**: Følg ansvarlig offentliggørelse i [SECURITY.md](SECURITY.md)
+- **Sikkerhedsproblemer**: Følg ansvarlig rapportering i [SECURITY.md](SECURITY.md)
 - **Microsoft Support**: For virksomhedssupport, kontakt Microsoft kundeservice
 
 ### Yderligere Ressourcer
 
 - **Microsoft Learn**: [AI og Machine Learning Læringsveje](https://learn.microsoft.com/training/browse/?products=ai-services)
 - **Foundry Local Dokumentation**: [Officielle Dokumenter](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
-- **Fællesskabs-eksempler**: Se [GitHub Diskussioner](https://github.com/microsoft/edgeai-for-beginners/discussions) for bidrag fra fællesskabet
+- **Fællesskabsprøver**: Tjek [GitHub Diskussioner](https://github.com/microsoft/edgeai-for-beginners/discussions) for bidrag fra fællesskabet
 
 ---
 
-**Dette er et uddannelsesrepository med fokus på at lære udvikling af Edge AI. Det primære bidragsmønster er at forbedre uddannelsesindhold og tilføje/forbedre prøveapplikationer, der demonstrerer Edge AI-koncepter.**
+**Dette er et uddannelsesrepository fokuseret på at undervise i Edge AI-udvikling. Det primære bidragsmønster er at forbedre uddannelsesindhold og tilføje/forbedre prøveapplikationer, der demonstrerer Edge AI-koncepter.**
 
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c0cb9f7bcff2bc170532d8870a891f38",
-  "translation_date": "2025-09-18T10:14:16+00:00",
+  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
+  "translation_date": "2025-10-30T13:08:20+00:00",
   "source_file": "Module04/README.md",
   "language_code": "da"
 }
 -->
-# Kapitel 04: Modelformatkonvertering og Kvantisering - Kapiteloversigt
+# Kapitel 04: Konvertering af Modelformat og Kvantisering - Kapiteloversigt
 
-Fremkomsten af EdgeAI har gjort modelformatkonvertering og kvantisering til essentielle teknologier for at implementere avancerede maskinlæringsfunktioner på enheder med begrænsede ressourcer. Dette omfattende kapitel giver en komplet guide til at forstå, implementere og optimere modeller til edge-implementeringsscenarier.
+Fremkomsten af EdgeAI har gjort konvertering af modelformat og kvantisering til essentielle teknologier for at implementere avancerede maskinlæringsfunktioner på enheder med begrænsede ressourcer. Dette omfattende kapitel giver en komplet guide til at forstå, implementere og optimere modeller til edge-implementeringsscenarier.
 
 ## 📚 Kapitelstruktur og Læringsvej
 
-Dette kapitel er organiseret i seks progressive sektioner, der bygger på hinanden for at skabe en omfattende forståelse af modeloptimering til edge computing:
+Dette kapitel er organiseret i syv progressive sektioner, der hver bygger videre på den forrige for at skabe en omfattende forståelse af modeloptimering til edge computing:
 
 ---
 
-## [Sektion 1: Grundlag for Modelformatkonvertering og Kvantisering](./01.Introduce.md)
+## [Sektion 1: Grundlag for Konvertering af Modelformat og Kvantisering](./01.Introduce.md)
 
 ### 🎯 Oversigt
-Denne grundlæggende sektion etablerer det teoretiske fundament for modeloptimering i edge computing-miljøer og dækker kvantiseringsgrænser fra 1-bit til 8-bit præcisionsniveauer samt vigtige strategier for formatkonvertering.
+Denne grundlæggende sektion etablerer den teoretiske ramme for modeloptimering i edge computing-miljøer, og dækker kvantiseringsgrænser fra 1-bit til 8-bit præcisionsniveauer samt nøglestrategier for formatkonvertering.
 
 **Nøgleemner:**
 - Klassifikationsramme for præcision (ultra-lav, lav, medium præcision)
 - Fordele og anvendelser af GGUF- og ONNX-format
-- Fordele ved kvantisering for operationel effektivitet og fleksibilitet i implementering
+- Fordele ved kvantisering for operationel effektivitet og implementeringsfleksibilitet
 - Ydelsesmålinger og sammenligninger af hukommelsesforbrug
 
 **Læringsmål:**
@@ -38,7 +38,7 @@ Denne grundlæggende sektion etablerer det teoretiske fundament for modeloptimer
 ## [Sektion 2: Llama.cpp Implementeringsguide](./02.Llamacpp.md)
 
 ### 🎯 Oversigt
-En omfattende vejledning til implementering af Llama.cpp, et kraftfuldt C++-framework, der muliggør effektiv Large Language Model-inferens med minimal opsætning på tværs af forskellige hardwarekonfigurationer.
+En omfattende vejledning til implementering af Llama.cpp, et kraftfuldt C++-framework, der muliggør effektiv inferens af store sprogmodeller med minimal opsætning på tværs af forskellige hardwarekonfigurationer.
 
 **Nøgleemner:**
 - Installation på Windows, macOS og Linux-platforme
@@ -47,7 +47,7 @@ En omfattende vejledning til implementering af Llama.cpp, et kraftfuldt C++-fram
 - Python-integration og strategier for produktionsimplementering
 
 **Læringsmål:**
-- Mestre tværplatformsinstallation og opbygning fra kildekode
+- Mestre tværplatformsinstallation og opbygning fra kilde
 - Implementere modelkvantisering og optimeringsteknikker
 - Implementere modeller i servertilstand med REST API-integration
 
@@ -56,109 +56,128 @@ En omfattende vejledning til implementering af Llama.cpp, et kraftfuldt C++-fram
 ## [Sektion 3: Microsoft Olive Optimeringssuite](./03.MicrosoftOlive.md)
 
 ### 🎯 Oversigt
-Udforskning af Microsoft Olive, et hardwarebevidst modeloptimeringsværktøj med over 40 indbyggede optimeringskomponenter, designet til implementering af virksomhedsmodeller på tværs af forskellige hardwareplatforme.
+Udforskning af Microsoft Olive, et hardwarebevidst modeloptimeringsværktøj med over 40 indbyggede optimeringskomponenter, designet til implementering af modeller i virksomhedsklasse på tværs af forskellige hardwareplatforme.
 
 **Nøgleemner:**
 - Auto-optimeringsfunktioner med dynamisk og statisk kvantisering
-- Hardwarebevidst intelligens til CPU-, GPU- og NPU-implementering
+- Hardwarebevidst intelligens til implementering på CPU, GPU og NPU
 - Understøttelse af populære modeller (Llama, Phi, Qwen, Gemma) direkte
-- Integration med Azure ML og produktionsarbejdsgange
+- Integration i virksomheder med Azure ML og produktionsarbejdsgange
 
 **Læringsmål:**
 - Udnytte automatiseret optimering til forskellige modelarkitekturer
-- Implementere tværplatformsstrategier for implementering
-- Etablere virksomhedsparate optimeringspipelines
+- Implementere tværplatformsimplementeringsstrategier
+- Etablere optimeringspipelines klar til virksomhed
 
 ---
 
 ## [Sektion 4: OpenVINO Toolkit Optimeringssuite](./04.openvino.md)
 
 ### 🎯 Oversigt
-Omfattende udforskning af Intels OpenVINO toolkit, en open source-platform til implementering af effektive AI-løsninger på tværs af cloud-, on-premises- og edge-miljøer med avancerede Neural Network Compression Framework (NNCF)-funktioner.
+Omfattende udforskning af Intels OpenVINO toolkit, en open source-platform til implementering af effektive AI-løsninger på tværs af cloud, on-premises og edge-miljøer med avancerede Neural Network Compression Framework (NNCF)-funktioner.
 
 **Nøgleemner:**
 - Tværplatformsimplementering med hardwareacceleration (CPU, GPU, VPU, AI-acceleratorer)
 - Neural Network Compression Framework (NNCF) til avanceret kvantisering og beskæring
 - OpenVINO GenAI til optimering og implementering af store sprogmodeller
-- Virksomhedsparate modelserverfunktioner og skalerbare implementeringsstrategier
+- Funktioner til virksomhedsklasse modelserver og skalerbare implementeringsstrategier
 
 **Læringsmål:**
-- Mestre OpenVINO-modelkonvertering og optimeringsarbejdsgange
+- Mestre OpenVINO modelkonvertering og optimeringsarbejdsgange
 - Implementere avancerede kvantiseringsteknikker med NNCF
 - Implementere optimerede modeller på tværs af forskellige hardwareplatforme med Model Server
 
 ---
 
-## [Sektion 5: Apple MLX Framework Dybdedyk](./05.AppleMLX.md)
+## [Sektion 5: Apple MLX Framework Dybdegående Analyse](./05.AppleMLX.md)
 
 ### 🎯 Oversigt
-Omfattende dækning af Apple MLX, et revolutionerende framework specifikt designet til effektiv maskinlæring på Apple Silicon, med fokus på store sprogmodellers kapabiliteter og lokal implementering.
+Omfattende dækning af Apple MLX, et revolutionerende framework specifikt designet til effektiv maskinlæring på Apple Silicon, med fokus på store sprogmodelkapaciteter og lokal implementering.
 
 **Nøgleemner:**
 - Fordele ved unified memory-arkitektur og Metal Performance Shaders
 - Understøttelse af LLaMA, Mistral, Phi-3, Qwen og Code Llama-modeller
 - LoRA finjustering til effektiv modeltilpasning
-- Hugging Face-integration og kvantiseringsunderstøttelse (4-bit og 8-bit)
+- Hugging Face-integration og kvantiseringsstøtte (4-bit og 8-bit)
 
 **Læringsmål:**
-- Mestre optimering af Apple Silicon til LLM-implementering
+- Mestre Apple Silicon-optimering til LLM-implementering
 - Implementere finjusterings- og modeltilpasningsteknikker
-- Bygge virksomheds-AI-applikationer med forbedrede privatlivsfunktioner
+- Bygge AI-applikationer til virksomheder med forbedrede privatlivsfunktioner
 
 ---
 
-## [Sektion 6: Edge AI Udviklingsarbejdsgangssyntese](./06.workflow-synthesis.md)
+## [Sektion 6: Workflow-syntese for Edge AI-udvikling](./06.workflow-synthesis.md)
 
 ### 🎯 Oversigt
-Omfattende syntese af alle optimeringsframeworks til enhedlige arbejdsgange, beslutningsmatricer og bedste praksis for produktionsklare Edge AI-implementeringer på tværs af forskellige platforme og anvendelser.
+Omfattende syntese af alle optimeringsframeworks til integrerede arbejdsgange, beslutningsmatricer og bedste praksis for produktionsklare Edge AI-implementeringer på tværs af forskellige platforme og anvendelser, herunder mobil, desktop og cloud-miljøer.
 
 **Nøgleemner:**
-- Enhedlig arbejdsgangsarkitektur, der integrerer flere optimeringsframeworks
-- Beslutningstræer for frameworkvalg og analyse af ydelsestrade-offs
-- Validering af produktionsparathed og omfattende implementeringsstrategier
+- Integreret workflow-arkitektur, der samler flere optimeringsframeworks
+- Beslutningstræer for framework-valg og analyse af ydeevnekompromiser
+- Validering af produktionsklarhed og omfattende implementeringsstrategier
 - Fremtidssikring af strategier for nye hardware- og modelarkitekturer
 
 **Læringsmål:**
-- Mestre systematisk frameworkvalg baseret på krav og begrænsninger
+- Mestre systematisk valg af framework baseret på krav og begrænsninger
 - Implementere produktionsklare Edge AI-pipelines med omfattende overvågning
 - Designe tilpasningsdygtige arbejdsgange, der udvikler sig med nye teknologier og krav
 
 ---
 
+## [Sektion 7: Qualcomm QNN Optimeringssuite](./07.QualcommQNN.md)
+
+### 🎯 Oversigt
+Omfattende udforskning af Qualcomm QNN (Qualcomm Neural Network), et samlet AI-inferensframework designet til at udnytte Qualcomms heterogene computearkitektur, herunder Hexagon NPU, Adreno GPU og Kryo CPU, for maksimal ydeevne og energieffektivitet på mobile og edge-enheder.
+
+**Nøgleemner:**
+- Heterogen computing med samlet adgang til NPU, GPU og CPU
+- Hardwarebevidst optimering til Snapdragon-platforme med intelligent arbejdsfordeling
+- Avancerede kvantiseringsteknikker (INT8, INT16, mixed-precision) til mobilimplementering
+- Energieffektiv inferens optimeret til batteridrevne enheder og realtidsapplikationer
+
+**Læringsmål:**
+- Mestre Qualcomm hardwareacceleration til mobil AI-implementering
+- Implementere energieffektive optimeringsstrategier til edge computing
+- Implementere produktionsklare modeller på tværs af Qualcomms økosystem med optimal ydeevne
+
+---
+
 ## 🎯 Kapitel Læringsmål
 
-Ved afslutningen af dette omfattende kapitel vil læserne opnå:
+Efter at have gennemført dette omfattende kapitel vil læserne opnå:
 
 ### **Teknisk Mestring**
-- Dyb forståelse af kvantiseringsgrænser og praktiske anvendelser
+- Dybtgående forståelse af kvantiseringsgrænser og praktiske anvendelser
 - Praktisk erfaring med flere optimeringsframeworks
-- Implementeringsfærdigheder til edge computing-miljøer
+- Færdigheder i produktionsimplementering til edge computing-miljøer
 
 ### **Strategisk Forståelse**
-- Evne til hardwarebevidst optimeringsvalg
-- Informeret beslutningstagning om ydelsestrade-offs
-- Virksomhedsparate implementerings- og overvågningsstrategier
+- Evne til at vælge hardwarebevidste optimeringsløsninger
+- Informeret beslutningstagning om ydeevnekompromiser
+- Implementerings- og overvågningsstrategier klar til virksomhed
 
 ### **Ydelsesmålinger**
 
-| Framework   | Kvantisering | Hukommelsesforbrug | Hastighedsforbedring | Anvendelse                  |
-|-------------|--------------|--------------------|-----------------------|----------------------------|
-| Llama.cpp   | Q4_K_M       | ~4GB              | 2-3x                 | Tværplatformsimplementering |
-| Olive       | INT4         | 60-75% reduktion  | 2-6x                 | Virksomhedsarbejdsgange    |
-| OpenVINO    | INT8/INT4    | 50-75% reduktion  | 2-5x                 | Intel hardwareoptimering   |
-| MLX         | 4-bit        | ~4GB              | 2-4x                 | Optimering til Apple Silicon |
+| Framework | Kvantisering | Hukommelsesforbrug | Hastighedsforbedring | Anvendelse |
+|-----------|--------------|--------------------|----------------------|------------|
+| Llama.cpp | Q4_K_M | ~4GB | 2-3x | Tværplatformsimplementering |
+| Olive | INT4 | 60-75% reduktion | 2-6x | Virksomhedsarbejdsgange |
+| OpenVINO | INT8/INT4 | 50-75% reduktion | 2-5x | Intel hardwareoptimering |
+| QNN | INT8/INT4 | 50-80% reduktion | 5-15x | Qualcomm mobil/edge |
+| MLX | 4-bit | ~4GB | 2-4x | Apple Silicon-optimering |
 
 ## 🚀 Næste Skridt og Avancerede Anvendelser
 
-Dette kapitel giver en komplet grundlag for:
+Dette kapitel giver et komplet fundament for:
 - Udvikling af skræddersyede modeller til specifikke domæner
 - Forskning i edge AI-optimering
 - Udvikling af kommercielle AI-applikationer
-- Storskala virksomhedsimplementeringer af edge AI
+- Storskala virksomhedsmæssige edge AI-implementeringer
 
-Viden fra disse seks sektioner tilbyder et omfattende værktøjssæt til at navigere i det hurtigt udviklende landskab af edge AI-modeloptimering og implementering.
+Viden fra disse syv sektioner tilbyder et omfattende værktøjssæt til at navigere i det hurtigt udviklende landskab af edge AI-modeloptimering og implementering.
 
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

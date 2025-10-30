@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-11T10:59:04+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T15:36:56+00:00",
   "source_file": "AGENTS.md",
   "language_code": "et"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 > **Arendajate juhend EdgeAI algajatele**
 > 
-> See dokument pakub põhjalikku teavet arendajatele, tehisintellekti agentidele ja kaastöötajatele, kes töötavad selle repositooriumiga. See hõlmab seadistamist, arendustöövooge, testimist ja parimaid tavasid.
+> See dokument pakub põhjalikku teavet arendajatele, AI agentidele ja kaastöötajatele, kes töötavad selle repositooriumiga. See hõlmab seadistamist, arendustöövooge, testimist ja parimaid praktikaid.
 > 
-> **Viimati uuendatud**: oktoober 2025 | **Dokumendi versioon**: 2.0
+> **Viimati uuendatud**: 30. oktoober 2025 | **Dokumendi versioon**: 3.0
 
 ## Sisukord
 
@@ -27,7 +27,7 @@ CO_OP_TRANSLATOR_METADATA:
 - [Pull Request'i juhised](../..)
 - [Tõlkesüsteem](../..)
 - [Foundry Local integratsioon](../..)
-- [Ehitamine ja juurutamine](../..)
+- [Ehitus ja juurutamine](../..)
 - [Levinud probleemid ja tõrkeotsing](../..)
 - [Täiendavad ressursid](../..)
 - [Projektispetsiifilised märkused](../..)
@@ -35,22 +35,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Projekti ülevaade
 
-EdgeAI for Beginners on põhjalik hariduslik repositoorium, mis õpetab Edge AI arendamist väikeste keelemudelite (SLM) abil. Kursus hõlmab EdgeAI aluseid, mudelite juurutamist, optimeerimistehnikaid ja tootmiskõlblikke rakendusi, kasutades Microsoft Foundry Local'i ja erinevaid tehisintellekti raamistikke.
+EdgeAI algajatele on põhjalik hariduslik repositoorium, mis õpetab Edge AI arendust väikeste keelemudelitega (SLM). Kursus hõlmab EdgeAI põhialuseid, mudelite juurutamist, optimeerimistehnikaid ja tootmisvalmis rakendusi, kasutades Microsoft Foundry Local'i ja erinevaid AI raamistikke.
 
 **Peamised tehnoloogiad:**
 - Python 3.8+ (peamine keel AI/ML näidete jaoks)
 - .NET C# (AI/ML näited)
 - JavaScript/Node.js koos Electroniga (töölauarakenduste jaoks)
 - Microsoft Foundry Local SDK
-- Microsoft Windows ML
+- Microsoft Windows ML 
 - VSCode AI Toolkit
 - OpenAI SDK
 - AI raamistikud: LangChain, Semantic Kernel, Chainlit
-- Mudelite optimeerimine: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
+- Mudeli optimeerimine: Llama.cpp, Microsoft Olive, OpenVINO, Apple MLX
 
-**Repositooriumi tüüp:** Haridusliku sisuga repositoorium, mis sisaldab 8 moodulit ja 10 põhjalikku näidisrakendust
+**Repositooriumi tüüp:** Hariduslik sisurepositoorium 8 mooduli ja 10 põhjaliku näidisrakendusega
 
-**Arhitektuur:** Mitme mooduliga õpitee praktiliste näidetega, mis demonstreerivad Edge AI juurutusmustreid
+**Arhitektuur:** Mitme mooduliga õppeprogramm praktiliste näidetega, mis demonstreerivad Edge AI juurutusmustreid
 
 ## Repositooriumi struktuur
 
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -75,27 +82,27 @@ edgeai-for-beginners/
 - **Python 3.8+** - AI/ML näidete ja märkmike jaoks
 - **Node.js 16+** - Electroni näidisrakenduse jaoks
 - **Git** - Versioonihalduseks
-- **Microsoft Foundry Local** - AI mudelite kohalikuks käitamiseks
+- **Microsoft Foundry Local** - AI mudelite lokaalseteks käitusteks
 
 ### Soovitatavad tööriistad
 
-- **Visual Studio Code** - Python, Jupyter ja Pylance laiendustega
+- **Visual Studio Code** - Python'i, Jupyter'i ja Pylance'i laiendustega
 - **Windows Terminal** - Parema käsureakogemuse jaoks (Windowsi kasutajatele)
-- **Docker** - Konteineripõhiseks arendamiseks (valikuline)
+- **Docker** - Konteineripõhiseks arenduseks (valikuline)
 
 ### Süsteeminõuded
 
-- **RAM**: minimaalselt 8GB, soovitatavalt 16GB+ mitme mudeli stsenaariumide jaoks
-- **Salvestusruum**: vähemalt 10GB vaba ruumi mudelite ja sõltuvuste jaoks
-- **Operatsioonisüsteem**: Windows 10/11, macOS 11+ või Linux (Ubuntu 20.04+)
-- **Riistvara**: AVX2 toega protsessor; GPU (CUDA, Qualcomm NPU) on valikuline, kuid soovitatav
+- **RAM**: Minimaalselt 8GB, soovitatavalt 16GB+ mitme mudeli stsenaariumide jaoks
+- **Salvestusruum**: 10GB+ vaba ruumi mudelite ja sõltuvuste jaoks
+- **OS**: Windows 10/11, macOS 11+ või Linux (Ubuntu 20.04+)
+- **Riistvara**: CPU AVX2 toega; GPU (CUDA, Qualcomm NPU) valikuline, kuid soovitatav
 
 ### Teadmiste eeltingimused
 
-- Pythoni programmeerimise põhialuste tundmine
+- Põhiteadmised Python'i programmeerimisest
 - Käsurealiideste tundmine
 - AI/ML kontseptsioonide mõistmine (näidiste arendamiseks)
-- Git töövoogude ja pull request'i protsesside tundmine
+- Git'i töövood ja pull request'i protsessid
 
 ## Seadistuskäsud
 
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Pythoni näidiste seadistamine (Moodul08 ja Pythoni näidised)
+### Python'i näidiste seadistamine (Moodul08 ja töötoa näidised)
 
 ```bash
 # Create and activate virtual environment
@@ -125,9 +132,13 @@ pip install foundry-local-sdk openai
 # Install additional dependencies for Module08 samples
 cd Module08
 pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
+pip install -r requirements.txt
 ```
 
-### Node.js näidise seadistamine (Näidis 08 - Windowsi vestlusrakendus)
+### Node.js näidiste seadistamine (Näidis 08 - Windowsi vestlusrakendus)
 
 ```bash
 cd Module08/samples/08
@@ -143,19 +154,19 @@ npm run build
 npm run dist
 ```
 
-### Foundry Local seadistamine
+### Foundry Local'i seadistamine
 
 Foundry Local on vajalik näidiste käitamiseks. Laadi alla ja installi ametlikust repositooriumist:
 
 **Paigaldamine:**
 - **Windows**: `winget install Microsoft.FoundryLocal`
 - **macOS**: `brew tap microsoft/foundrylocal && brew install foundrylocal`
-- **Käsitsi**: Laadi alla [väljalaske lehelt](https://github.com/microsoft/Foundry-Local/releases)
+- **Manuaalne**: Laadi alla [väljalaske lehelt](https://github.com/microsoft/Foundry-Local/releases)
 
-**Kiirstart:**
+**Kiire alustamine:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -164,25 +175,31 @@ foundry model ls
 foundry service status
 ```
 
-**Märkus**: Foundry Local valib automaatselt teie riistvarale parima mudelivariandi (CUDA GPU, Qualcomm NPU või CPU).
+**Märkus**: Foundry Local valib automaatselt parima mudelivariandi teie riistvara jaoks (CUDA GPU, Qualcomm NPU või CPU).
 
 ## Arendustöövoog
 
 ### Sisu arendamine
 
-See repositoorium sisaldab peamiselt **Markdowni haridussisu**. Muudatuste tegemisel:
+See repositoorium sisaldab peamiselt **Markdown haridussisu**. Muudatuste tegemisel:
 
-1. Redigeeri `.md` faile vastavates moodulite kaustades
+1. Redigeeri `.md` faile vastavates moodulite kataloogides
 2. Järgi olemasolevaid vormindusmustreid
 3. Veendu, et koodinäited on täpsed ja testitud
-4. Uuenda vastavalt vajadusele ka tõlgitud sisu (või lase automatiseerimisel seda teha)
+4. Uuenda vastavat tõlgitud sisu, kui vajalik (või lase automatiseerimisel seda teha)
 
 ### Näidisrakenduste arendamine
 
-Pythoni näidiste jaoks (näidised 01-07, 09-10):
+Moodul08 Python'i näidiste jaoks (näidised 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+Töötoa Python'i näidiste jaoks:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 Electroni näidise jaoks (näidis 08):
@@ -193,7 +210,7 @@ npm run dev  # Development with hot reload
 
 ### Näidisrakenduste testimine
 
-Pythoni näidistel puuduvad automaatsed testid, kuid neid saab valideerida käivitamise teel:
+Python'i näidistel puuduvad automaatsed testid, kuid neid saab valideerida käivitamise teel:
 ```bash
 # Test basic chat functionality
 python samples/01/chat_quickstart.py "Hello"
@@ -215,13 +232,13 @@ npm run lint       # Check code style
 
 ### Sisu valideerimine
 
-Repositoorium kasutab automaatseid tõlkevooge. Tõlgete käsitsi testimine pole vajalik.
+Repositoorium kasutab automaatseid tõlkeworkflow'sid. Tõlgete jaoks pole käsitsi testimist vaja.
 
 **Käsitsi valideerimine sisu muudatuste korral:**
-1. Vaata üle Markdowni renderdamine, eelvaadates `.md` faile
-2. Veendu, et kõik lingid viivad kehtivatele sihtkohtadele
+1. Vaata Markdown'i renderdamist `.md` failide eelvaates
+2. Kontrolli, et kõik lingid viivad kehtivatele sihtkohtadele
 3. Testi dokumentatsioonis sisalduvaid koodinäiteid
-4. Kontrolli, et pildid laaditakse õigesti
+4. Veendu, et pildid laaditakse korrektselt
 
 ### Näidisrakenduste testimine
 
@@ -245,29 +262,38 @@ npm run test:e2e
 npm test -- --coverage
 ```
 
-**Pythoni näidiseid tuleks testida käsitsi:**
+**Python'i näidised tuleks testida käsitsi:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## Koodistiili juhised
 
-### Markdowni sisu
+### Markdown sisu
 
 - Kasuta järjepidevat pealkirjade hierarhiat (# pealkirja jaoks, ## põhiosade jaoks, ### alajaotuste jaoks)
-- Lisa koodiplokid keele määrangutega: ```python, ```bash, ```javascript
-- Järgi olemasolevat vormindust tabelite, loendite ja rõhuasetuste jaoks
-- Hoia read loetavad (~80-100 tähemärki, kuid mitte range reegel)
+- Lisa koodiplokid keele määratlustega: ```python, ```bash, ```javascript
+- Järgi olemasolevat vormindust tabelite, loendite ja rõhutuste jaoks
+- Hoia read loetavad (umbes 80-100 tähemärki, kuid mitte rangelt)
 - Kasuta sisemiste viidete jaoks suhtelisi linke
 
-### Pythoni koodistiil
+### Python'i koodistiil
 
 - Järgi PEP 8 konventsioone
-- Kasuta tüübi vihjeid, kui võimalik
-- Lisa funktsioonidele ja klassidele dokumentatsioon
+- Kasuta tüüpviiteid, kui sobilik
+- Lisa funktsioonidele ja klassidele docstring'id
 - Kasuta tähenduslikke muutujanimesid
 - Hoia funktsioonid keskendunud ja lühikesed
 
@@ -282,7 +308,7 @@ npm run format      # Format with Prettier
 ```
 
 **Peamised konventsioonid:**
-- ESLint konfiguratsioon on saadaval näidises 08
+- ESLint konfiguratsioon on näidises 08
 - Prettier koodi vormindamiseks
 - Kasuta kaasaegset ES6+ süntaksit
 - Järgi olemasolevaid mustreid koodibaasis
@@ -294,8 +320,8 @@ npm run format      # Format with Prettier
 1. **Fork'i repositoorium** ja loo uus haru `main` harust
 2. **Tee oma muudatused**, järgides koodistiili juhiseid
 3. **Testi põhjalikult**, kasutades ülaltoodud testimisjuhiseid
-4. **Kommenteeri selgelt**, järgides konventsionaalsete commit'ide formaati
-5. **Lükka oma fork'i** ja loo pull request
+4. **Commit'i selgete sõnumitega**, järgides konventsionaalsete commit'ide formaati
+5. **Push'i oma fork'i** ja loo pull request
 6. **Vasta tagasisidele**, mida hooldajad ülevaatuse käigus annavad
 
 ### Haru nimetamise konventsioon
@@ -335,14 +361,14 @@ või
 
 ### Käitumisjuhend
 
-Kõik kaastöötajad peavad järgima [Microsofti avatud lähtekoodiga käitumisjuhendit](https://opensource.microsoft.com/codeofconduct/). Palun tutvu [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) failiga enne kaastöö tegemist.
+Kõik kaastöötajad peavad järgima [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Palun vaata üle [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) enne kaastööd.
 
 ### Enne esitamist
 
 **Sisu muudatuste korral:**
-- Vaata üle kõik muudetud Markdowni failid
-- Veendu, et lingid ja pildid töötavad
-- Kontrolli õigekirja ja grammatikavigu
+- Vaata üle kõik muudetud Markdown failid
+- Kontrolli linkide ja piltide toimimist
+- Kontrolli kirjavigu ja grammatikat
 
 **Näidiskoodi muudatuste korral (Moodul08/näidised/08):**
 ```bash
@@ -350,30 +376,30 @@ npm run lint
 npm test
 ```
 
-**Pythoni näidiste muudatuste korral:**
+**Python'i näidiste muudatuste korral:**
 - Testi, et näidis töötab edukalt
-- Veendu, et veakäsitlus toimib
-- Kontrolli ühilduvust Foundry Local'iga
+- Kontrolli veakäsitlust
+- Veendu ühilduvuses Foundry Local'iga
 
-### Ülevaatuse protsess
+### Ülevaatusprotsess
 
-- Haridussisu muudatusi vaadatakse üle täpsuse ja selguse osas
-- Koodinäidiseid testitakse funktsionaalsuse osas
-- Tõlkeuuendusi haldab automaatselt GitHub Actions
+- Haridussisu muudatused vaadatakse üle täpsuse ja selguse osas
+- Koodinäidised testitakse funktsionaalsuse osas
+- Tõlkeuuendused hallatakse automaatselt GitHub Actions'i poolt
 
 ## Tõlkesüsteem
 
-**OLULINE:** See repositoorium kasutab automaatset tõlget GitHub Actions'i kaudu.
+**TÄHTIS:** See repositoorium kasutab automaatset tõlget GitHub Actions'i kaudu.
 
-- Tõlked asuvad kaustas `/translations/` (üle 50 keele)
+- Tõlked asuvad `/translations/` kataloogis (50+ keelt)
 - Automatiseeritud `co-op-translator.yml` töövoo kaudu
-- **ÄRGE muutke tõlkefailide sisu käsitsi** - need kirjutatakse üle
-- Muutke ainult ingliskeelseid algfaile juur- ja moodulite kaustades
-- Tõlked luuakse automaatselt, kui muudatused lükatakse `main` harusse
+- **ÄRA muuda tõlkefaile käsitsi** - need kirjutatakse üle
+- Muuda ainult ingliskeelseid algfaile juur- ja moodulikataloogides
+- Tõlked genereeritakse automaatselt `main` harule push'imisel
 
 ## Foundry Local integratsioon
 
-Enamik Moodul08 näidiseid nõuab Microsoft Foundry Local'i töötamist.
+Enamik Moodul08 näidiseid nõuab Microsoft Foundry Local'i käitamist.
 
 ### Paigaldamine ja seadistamine
 
@@ -387,7 +413,7 @@ brew tap microsoft/foundrylocal
 brew install foundrylocal
 ```
 
-**Paigalda Pythoni SDK:**
+**Paigalda Python SDK:**
 ```bash
 pip install foundry-local-sdk openai
 ```
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -433,7 +459,7 @@ response = client.chat.completions.create(
 )
 ```
 
-### Foundry Local'i kontrollimine
+### Foundry Local'i valideerimine
 ```bash
 # Service status and endpoint
 foundry service status
@@ -450,7 +476,7 @@ Enamik näidiseid kasutab järgmisi keskkonnamuutujaid:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -463,9 +489,9 @@ set AZURE_OPENAI_API_KEY=your-api-key
 set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-**Märkus**: Kui kasutate `FoundryLocalManager`'i, haldab SDK automaatselt teenuste avastamist ja mudelite laadimist. Mudelite aliasid (nt `phi-3.5-mini`) kasutatakse parima variandi valimiseks teie riistvara jaoks.
+**Märkus**: Kasutades `FoundryLocalManager'it`, haldab SDK automaatselt teenuste avastamist ja mudelite laadimist. Mudeli aliased (näiteks `phi-3.5-mini`) tagavad parima variandi valiku teie riistvara jaoks.
 
-## Ehitamine ja juurutamine
+## Ehitus ja juurutamine
 
 ### Sisu juurutamine
 
@@ -490,17 +516,17 @@ npm run dist
 npm run pack
 ```
 
-**Pythoni näidised:**
-Ehitamisprotsessi pole - näidised käivitatakse otse Pythoni tõlgiga.
+**Python'i näidised:**
+Ehitusprotsessi pole - näidised käivitatakse otse Python'i tõlgiga.
 
 ## Levinud probleemid ja tõrkeotsing
 
-> **Vihje**: Kontrolli [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues) teadaolevate probleemide ja lahenduste kohta.
+> **Näpunäide**: Vaata [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues) teadaolevate probleemide ja lahenduste jaoks.
 
-### Kriitilised probleemid (tõkestavad)
+### Kriitilised probleemid (blokeerivad)
 
 #### Foundry Local ei tööta
-**Probleem:** Näidised ebaõnnestuvad ühendusvigade tõttu
+**Probleem:** Näidised ebaõnnestuvad ühenduse vigadega
 
 **Lahendus:**
 ```bash
@@ -508,7 +534,7 @@ Ehitamisprotsessi pole - näidised käivitatakse otse Pythoni tõlgiga.
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -522,7 +548,7 @@ curl http://localhost:<port>/v1/models
 
 ### Levinud probleemid (mõõdukad)
 
-#### Pythoni virtuaalse keskkonna probleemid
+#### Python'i virtuaalse keskkonna probleemid
 **Probleem:** Mooduli importimise vead
 
 **Lahendus:**
@@ -537,8 +563,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### Electroni ehitamise probleemid
-**Probleem:** npm installi või ehitamise vead
+#### Electroni ehitusprobleemid
+**Probleem:** npm installimise või ehitamise vead
 
 **Lahendus:**
 ```bash
@@ -549,15 +575,15 @@ rm -rf node_modules package-lock.json
 npm install
 ```
 
-### Töövoo probleemid (väiksemad)
+### Töövoo probleemid (väikesed)
 
-#### Tõlkevoo konfliktid
-**Probleem:** Tõlke PR on vastuolus teie muudatustega
+#### Tõlkeworkflow konfliktid
+**Probleem:** Tõlke PR konfliktib teie muudatustega
 
 **Lahendus:**
-- Muutke ainult ingliskeelseid algfaile
-- Laske automaatsel tõlkevoogul tõlked hallata
-- Kui konfliktid tekivad, ühendage `main` oma haruga pärast tõlgete ühendamist
+- Muuda ainult ingliskeelseid algfaile
+- Lase automaatsel tõlkeworkflow'l tõlked hallata
+- Kui konfliktid tekivad, ühenda `main` oma harusse pärast tõlgete ühendamist
 
 #### Mudeli allalaadimise vead
 **Probleem:** Foundry Local ei suuda mudeleid alla laadida
@@ -575,29 +601,30 @@ foundry model run <model-alias>
 
 ## Täiendavad ressursid
 
-### Õppeteed
-- **Algajate tee:** Moodulid 01-02 (7-9 tundi)
-- **Kesktase:** Moodulid 03-04 (9-11 tundi)
-- **Edasijõudnud:** Moodulid 05-07 (12-15 tundi)
-- **Ekspertide tee:** Moodul 08 (8-10 tundi)
+### Õppeprogrammid
+- **Algajate programm:** Moodulid 01-02 (7-9 tundi)
+- **Kesktaseme programm:** Moodulid 03-04 (9-11 tundi)
+- **Edasijõudnute programm:** Moodulid 05-07 (12-15 tundi)
+- **Ekspertide programm:** Moodul 08 (8-10 tundi)
+- **Praktiline töötuba:** Töötoa materjalid (6-8 tundi)
 
-### Olulised mooduli sisud
-- **Moodul01:** EdgeAI alused ja reaalsed juhtumiuuringud
+### Peamised mooduli sisud
+- **Moodul01:** EdgeAI põhialused ja reaalsed juhtumiuuringud
 - **Moodul02:** Väikeste keelemudelite (SLM) perekonnad ja arhitektuurid
 - **Moodul03:** Kohalikud ja pilvepõhised juurutusstrateegiad
-- **Moodul04:** Mudelite optimeerimine mitme raamistiku abil
-- **Moodul05:** SLMOps - tootmistoimingud
+- **Moodul04:** Mudeli optimeerimine mitme raamistikuga (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
+- **Moodul05:** SLMOps - tootmisoperatsioonid
 - **Moodul06:** AI agendid ja funktsioonide kutsumine
 - **Moodul07:** Platvormispetsiifilised rakendused
 - **Moodul08:** Foundry Local tööriistakomplekt 10 põhjaliku näidisega
 
 ### Välised sõltuvused
-- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Kohalik AI mudelite käituskeskkond OpenAI-ühilduva API-ga
+- [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - Kohalik AI mudeli käitusaeg OpenAI-ühilduva API-ga
   - [Dokumentatsioon](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
-  - [Pythoni SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
-  - [JavaScripti SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
+  - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
+  - [JavaScript SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
 - [Llama.cpp](https://github.com/ggml-org/llama.cpp) - Optimeerimisraamistik
-- [Microsoft Olive](https://microsoft.github.io/Olive/) - Mudelite optimeerimise tööriistakomplekt
+- [Microsoft Olive](https://microsoft.github.io/Olive/) - Mudeli optimeerimise tööriistakomplekt
 - [OpenVINO](https://docs.openvino.ai/) - Inteli optimeerimise tööriistakomplekt
 
 ## Projektispetsiifilised märkused
@@ -606,61 +633,76 @@ foundry model run <model-alias>
 
 Repositoorium sisaldab 10 põhjalikku näidisrakendust:
 
-1. **01-REST Chat Quickstart** - Põhiline OpenAI SDK integreerimine
-2. **02-OpenAI SDK integreerimine** - Täiustatud SDK funktsioonid
+1. **01-REST vestluse kiirstart** - Põhiline OpenAI SDK integratsioon
+2. **02-OpenAI SDK integratsioon** - Täiustatud SDK funktsioonid
 3. **03-Mudelite avastamine ja võrdlemine** - Mudelite võrdlustööriistad
 4. **04-Chainlit RAG rakendus** - Otsingupõhine generatsioon
-5. **05-Multi-Agent Orchestration** - Põhiline agentide koordineerimine
-6. **06-Models-as-Tools Router** - Nutikas mudelite suunamine
-7. **07-Otsene API klient** - Madala taseme API integreerimine
+5. **05-Multi-Agent orkestreerimine** - Põhiline agentide koordineerimine
+6. **06-Mudelid-tööriistadena suunaja** - Nutikas mudelite suunamine
+7. **07-Otsene API klient** - Madala taseme API integratsioon
 8. **08-Windows 11 vestlusrakendus** - Kohalik Electroni töölauarakendus
-9. **09-Täiustatud multi-agent süsteem** - Keeruline agentide koordineerimine
-10. **10-Foundry Tools Framework** - LangChain/Semantic Kernel integratsioon
+9. **09-Täiustatud Multi-Agent süsteem** - Kompleksne agentide orkestreerimine
+10. **10-Valukoja Tööriistade Raamistik** - LangChain/Semantic Kernel integratsioon
 
-Iga näidis demonstreerib erinevaid Edge AI ar
-- Kohalik järeldamine pakub 50-500ms vastuseaegu  
-- Kvantiseerimistehnikad saavutavad 75% suuruse vähendamise, säilitades 85% jõudlusest  
-- Reaalajas vestlusvõimalused kohalike mudelitega  
+### Töötuba Näidisrakendused
 
-### Turvalisus ja privaatsus  
+Töötuba sisaldab 6 järjestikust sessiooni praktiliste rakendustega:
 
-- Kogu töötlemine toimub kohapeal - andmeid pilve ei saadeta  
-- Sobib privaatsustundlikele rakendustele (tervishoid, rahandus)  
-- Vastab andmesuveräänsuse nõuetele  
-- Foundry Local töötab täielikult kohalikul riistvaral  
+1. **Sessioon 01** - Vestluse käivitamine koos Foundry Local integratsiooniga
+2. **Sessioon 02** - RAG torujuhtme ja hindamine RAGAS-iga
+3. **Sessioon 03** - Avatud lähtekoodiga mudelite võrdlus
+4. **Sessioon 04** - Mudelite võrdlemine ja valik
+5. **Sessioon 05** - Mitme agendi orkestreerimissüsteemid
+6. **Sessioon 06** - Mudelite suunamine ja torujuhtme haldamine
 
-## Abi saamine  
+Iga näidis illustreerib erinevaid aspekte serva AI arenduses koos Foundry Localiga.
 
-### Dokumentatsioon  
+### Jõudluse kaalutlused
 
-- **Peamine README**: [README.md](README.md) - Repositooriumi ülevaade ja õppejuhised  
-- **Õppejuhend**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Õpperessursid ja ajakava  
-- **Tugi**: [SUPPORT.md](SUPPORT.md) - Kuidas abi saada  
-- **Turvalisus**: [SECURITY.md](SECURITY.md) - Turvaküsimuste raporteerimine  
+- SLM-id on optimeeritud serva kasutuselevõtuks (2-16GB RAM)
+- Kohalik järeldamine tagab 50-500ms vastuse ajad
+- Kvantiseerimistehnikad saavutavad 75% suuruse vähendamise 85% jõudluse säilitamisega
+- Reaalajas vestlusvõimalused kohalike mudelitega
 
-### Kogukonna tugi  
+### Turvalisus ja privaatsus
 
-- **GitHubi probleemid**: [Teata vigadest või taotle funktsioone](https://github.com/microsoft/edgeai-for-beginners/issues)  
-- **GitHubi arutelud**: [Esita küsimusi ja jaga ideid](https://github.com/microsoft/edgeai-for-beginners/discussions)  
-- **Foundry Local probleemid**: [Tehnilised probleemid Foundry Localiga](https://github.com/microsoft/Foundry-Local/issues)  
+- Kogu töötlemine toimub kohapeal - andmeid ei saadeta pilve
+- Sobib privaatsustundlikele rakendustele (tervishoid, rahandus)
+- Vastab andmesuveräänsuse nõuetele
+- Foundry Local töötab täielikult kohalikul riistvaral
 
-### Kontakt  
+## Abi saamine
 
-- **Hooldajad**: Vaata [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)  
-- **Turvaküsimused**: Järgi vastutustundlikku avalikustamist [SECURITY.md](SECURITY.md)  
-- **Microsofti tugi**: Ettevõtte toe jaoks võta ühendust Microsofti klienditeenindusega  
+### Dokumentatsioon
 
-### Lisamaterjalid  
+- **Peamine README**: [README.md](README.md) - Repositooriumi ülevaade ja õppejuhised
+- **Õppejuhend**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - Õpperessursid ja ajakava
+- **Tugi**: [SUPPORT.md](SUPPORT.md) - Kuidas abi saada
+- **Turvalisus**: [SECURITY.md](SECURITY.md) - Turvalisuse probleemide raporteerimine
 
-- **Microsoft Learn**: [AI ja masinõppe õpperajad](https://learn.microsoft.com/training/browse/?products=ai-services)  
-- **Foundry Local dokumentatsioon**: [Ametlikud dokumendid](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)  
-- **Kogukonna näidised**: Vaata [GitHubi arutelud](https://github.com/microsoft/edgeai-for-beginners/discussions) kogukonna panuste jaoks  
+### Kogukonna tugi
+
+- **GitHub Issues**: [Teata vigadest või taotle funktsioone](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **GitHub Discussions**: [Esita küsimusi ja jaga ideid](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **Foundry Local Issues**: [Tehnilised probleemid Foundry Localiga](https://github.com/microsoft/Foundry-Local/issues)
+
+### Kontakt
+
+- **Hooldajad**: Vaata [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS)
+- **Turvalisuse probleemid**: Järgi vastutustundlikku avalikustamist [SECURITY.md](SECURITY.md)
+- **Microsofti tugi**: Ettevõtte toe jaoks võtke ühendust Microsofti klienditeenindusega
+
+### Täiendavad ressursid
+
+- **Microsoft Learn**: [AI ja masinõppe õpperajad](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **Foundry Local Dokumentatsioon**: [Ametlikud dokumendid](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **Kogukonna näidised**: Vaata [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) kogukonna panuste jaoks
 
 ---
 
-**See on hariduslik repositoorium, mis keskendub Edge AI arenduse õpetamisele. Peamine panustamise viis on haridusliku sisu täiustamine ja näidisrakenduste lisamine/parendamine, mis demonstreerivad Edge AI kontseptsioone.**  
+**See on hariduslik repositoorium, mis keskendub serva AI arenduse õpetamisele. Peamine panustamise muster on haridusliku sisu täiustamine ja näidisrakenduste lisamine/parendamine, mis illustreerivad serva AI kontseptsioone.**
 
 ---
 
 **Lahtiütlus**:  
-See dokument on tõlgitud, kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi püüame tagada täpsust, palun arvestage, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algkeeles tuleks lugeda autoriteetseks allikaks. Olulise teabe puhul on soovitatav kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valede tõlgenduste eest.
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tekkida selle tõlke kasutamise tõttu.

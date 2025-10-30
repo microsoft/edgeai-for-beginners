@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "135b2658979f1e494bb0ecc6e26d4752",
-  "translation_date": "2025-10-09T09:09:59+00:00",
+  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+  "translation_date": "2025-10-30T11:58:19+00:00",
   "source_file": "AGENTS.md",
   "language_code": "ne"
 }
 -->
 # AGENTS.md
 
-> **डेभलपर गाइड: EdgeAI को शुरुवातकर्ताहरूका लागि योगदान**
+> **एज डेभलपरहरूको लागि EdgeAI मा योगदान गर्ने मार्गदर्शन**
 > 
 > यो दस्तावेजले यस रिपोजिटरीसँग काम गर्ने डेभलपरहरू, AI एजेन्टहरू, र योगदानकर्ताहरूका लागि विस्तृत जानकारी प्रदान गर्दछ। यसमा सेटअप, विकास कार्यप्रवाह, परीक्षण, र उत्कृष्ट अभ्यासहरू समेटिएको छ।
 > 
-> **अन्तिम अपडेट**: अक्टोबर २०२५ | **दस्तावेज संस्करण**: २.०
+> **अन्तिम अपडेट**: अक्टोबर ३०, २०२५ | **दस्तावेज संस्करण**: ३.०
 
-## सामग्री तालिका
+## सामग्रीको सूची
 
 - [परियोजना अवलोकन](../..)
 - [रिपोजिटरी संरचना](../..)
@@ -28,14 +28,14 @@ CO_OP_TRANSLATOR_METADATA:
 - [अनुवाद प्रणाली](../..)
 - [Foundry Local एकीकरण](../..)
 - [निर्माण र परिनियोजन](../..)
-- [सामान्य समस्याहरू र समाधान](../..)
-- [अतिरिक्त स्रोतहरू](../..)
-- [परियोजना-विशेष नोटहरू](../..)
-- [मद्दत प्राप्त गर्ने तरिका](../..)
+- [सामान्य समस्याहरू र समस्या समाधान](../..)
+- [थप स्रोतहरू](../..)
+- [परियोजना-विशिष्ट नोटहरू](../..)
+- [मद्दत प्राप्त गर्दै](../..)
 
 ## परियोजना अवलोकन
 
-EdgeAI for Beginners एक व्यापक शैक्षिक रिपोजिटरी हो जसले साना भाषा मोडेल (SLMs) प्रयोग गरेर Edge AI विकास सिकाउँछ। यो पाठ्यक्रमले EdgeAI को आधारभूत कुरा, मोडेल परिनियोजन, अनुकूलन प्रविधिहरू, र उत्पादन-तयार कार्यान्वयनहरू Microsoft Foundry Local र विभिन्न AI फ्रेमवर्कहरू प्रयोग गरेर समेट्छ।
+EdgeAI for Beginners एक व्यापक शैक्षिक रिपोजिटरी हो जसले साना भाषा मोडेल (SLMs) प्रयोग गरेर Edge AI विकास सिकाउँछ। यो पाठ्यक्रमले EdgeAI का आधारभूत कुराहरू, मोडेल परिनियोजन, अनुकूलन प्रविधिहरू, र Microsoft Foundry Local र विभिन्न AI फ्रेमवर्कहरू प्रयोग गरेर उत्पादन-तयारी कार्यान्वयनहरू समेट्छ।
 
 **मुख्य प्रविधिहरू:**
 - Python 3.8+ (AI/ML नमूनाहरूको लागि प्राथमिक भाषा)
@@ -63,6 +63,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -109,7 +116,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Python नमूना सेटअप (Module08 र Python नमूनाहरू)
+### Python नमूना सेटअप (Module08 र कार्यशाला नमूनाहरू)
 
 ```bash
 # Create and activate virtual environment
@@ -124,6 +131,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -152,10 +163,10 @@ Foundry Local नमूनाहरू चलाउन आवश्यक छ।
 - **macOS**: `brew tap microsoft/foundrylocal && brew install foundrylocal`
 - **म्यानुअल**: [रिलिज पृष्ठ](https://github.com/microsoft/Foundry-Local/releases) बाट डाउनलोड गर्नुहोस्
 
-**द्रुत सुरुवात:**
+**द्रुत सुरु:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -164,7 +175,7 @@ foundry model ls
 foundry service status
 ```
 
-**नोट**: Foundry Local ले तपाईंको हार्डवेयरको लागि उत्तम मोडेल भेरियन्ट स्वतः चयन गर्दछ (CUDA GPU, Qualcomm NPU, वा CPU)।
+**नोट**: Foundry Local ले तपाईंको हार्डवेयरको लागि उत्तम मोडेल भेरियन्ट स्वचालित रूपमा चयन गर्दछ (CUDA GPU, Qualcomm NPU, वा CPU)।
 
 ## विकास कार्यप्रवाह
 
@@ -173,16 +184,22 @@ foundry service status
 यो रिपोजिटरी मुख्य रूपमा **Markdown शैक्षिक सामग्री** समावेश गर्दछ। परिवर्तन गर्दा:
 
 1. उपयुक्त मोड्युल निर्देशिकाहरूमा `.md` फाइलहरू सम्पादन गर्नुहोस्
-2. विद्यमान ढाँचाहरू अनुसरण गर्नुहोस्
+2. विद्यमान स्वरूपण ढाँचाहरू अनुसरण गर्नुहोस्
 3. कोड उदाहरणहरू सटीक र परीक्षण गरिएको सुनिश्चित गर्नुहोस्
 4. आवश्यक परेमा सम्बन्धित अनुवादित सामग्री अद्यावधिक गर्नुहोस् (वा स्वचालनलाई यसलाई ह्यान्डल गर्न दिनुहोस्)
 
 ### नमूना अनुप्रयोग विकास
 
-Python नमूनाहरूको लागि (नमूना ०१-०७, ०९-१०):
+Module08 Python नमूनाहरूको लागि (नमूनाहरू ०१-०७, ०९-१०):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+कार्यशाला Python नमूनाहरूको लागि:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 Electron नमूनाको लागि (नमूना ०८):
@@ -193,7 +210,7 @@ npm run dev  # Development with hot reload
 
 ### नमूना अनुप्रयोग परीक्षण
 
-Python नमूनाहरूमा स्वचालित परीक्षण छैन तर तिनीहरू चलाएर मान्य गर्न सकिन्छ:
+Python नमूनाहरूमा स्वचालित परीक्षणहरू छैनन् तर तिनीहरू चलाएर मान्य गर्न सकिन्छ:
 ```bash
 # Test basic chat functionality
 python samples/01/chat_quickstart.py "Hello"
@@ -215,7 +232,7 @@ npm run lint       # Check code style
 
 ### सामग्री मान्यता
 
-रिपोजिटरीले स्वचालित अनुवाद कार्यप्रवाहहरू प्रयोग गर्दछ। अनुवादहरूको लागि कुनै म्यानुअल परीक्षण आवश्यक छैन।
+रिपोजिटरीले स्वचालित अनुवाद कार्यप्रवाह प्रयोग गर्दछ। अनुवादहरूको लागि कुनै म्यानुअल परीक्षण आवश्यक छैन।
 
 **सामग्री परिवर्तनहरूको लागि म्यानुअल मान्यता:**
 1. `.md` फाइलहरू पूर्वावलोकन गरेर Markdown रेंडरिङ समीक्षा गर्नुहोस्
@@ -247,10 +264,19 @@ npm test -- --coverage
 
 **Python नमूनाहरू म्यानुअल रूपमा परीक्षण गर्नुपर्छ:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## कोड शैली दिशानिर्देशहरू
@@ -258,9 +284,9 @@ python samples/09/multi_agent_system.py
 ### Markdown सामग्री
 
 - लगातार शीर्षक पदानुक्रम प्रयोग गर्नुहोस् (# शीर्षकको लागि, ## मुख्य खण्डहरूको लागि, ### उपखण्डहरूको लागि)
-- भाषा निर्दिष्टकर्ताहरू सहित कोड ब्लकहरू समावेश गर्नुहोस्: ```python, ```bash, ```javascript
-- तालिका, सूची, र जोडको लागि विद्यमान ढाँचाहरू अनुसरण गर्नुहोस्
-- लाइनहरू पढ्न मिल्ने बनाउनुहोस् (~८०-१०० अक्षरहरूको लक्ष्य राख्नुहोस्, तर कडा नियम होइन)
+- भाषा निर्दिष्ट गर्ने कोड ब्लकहरू समावेश गर्नुहोस्: ```python, ```bash, ```javascript
+- तालिका, सूची, र जोड दिनको लागि विद्यमान स्वरूपण अनुसरण गर्नुहोस्
+- लाइनहरू पढ्न मिल्ने बनाउनुहोस् (~८०-१०० अक्षरहरूको लक्ष्य राख्नुहोस्, तर कडा रूपमा होइन)
 - आन्तरिक सन्दर्भहरूको लागि सापेक्ष लिंकहरू प्रयोग गर्नुहोस्
 
 ### Python कोड शैली
@@ -269,7 +295,7 @@ python samples/09/multi_agent_system.py
 - उपयुक्त ठाउँमा प्रकार संकेतहरू प्रयोग गर्नुहोस्
 - कार्यहरू र कक्षाहरूको लागि डकस्ट्रिङहरू समावेश गर्नुहोस्
 - अर्थपूर्ण भेरिएबल नामहरू प्रयोग गर्नुहोस्
-- कार्यहरू केन्द्रित र संक्षिप्त राख्नुहोस्
+- कार्यहरूलाई केन्द्रित र संक्षिप्त राख्नुहोस्
 
 ### JavaScript/Node.js कोड शैली
 
@@ -283,7 +309,7 @@ npm run format      # Format with Prettier
 
 **मुख्य सम्मेलनहरू:**
 - नमूना ०८ मा प्रदान गरिएको ESLint कन्फिगरेसन
-- कोड ढाँचाका लागि Prettier
+- कोड स्वरूपणको लागि Prettier प्रयोग गर्नुहोस्
 - आधुनिक ES6+ सिन्ट्याक्स प्रयोग गर्नुहोस्
 - कोडबेसमा विद्यमान ढाँचाहरू अनुसरण गर्नुहोस्
 
@@ -303,7 +329,7 @@ npm run format      # Format with Prettier
 - `feature/<module>-<description>` - नयाँ सुविधाहरू वा सामग्रीको लागि
 - `fix/<module>-<description>` - बग सुधारको लागि
 - `docs/<description>` - दस्तावेज सुधारको लागि
-- `refactor/<description>` - कोड पुनर्संरचना
+- `refactor/<description>` - कोड पुनः संरचनाको लागि
 
 ### कमिट सन्देश ढाँचा
 
@@ -335,7 +361,7 @@ or
 
 ### आचार संहिता
 
-सबै योगदानकर्ताहरूले [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) अनुसरण गर्नुपर्छ। योगदान गर्नु अघि कृपया [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) समीक्षा गर्नुहोस्।
+सबै योगदानकर्ताहरूले [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) अनुसरण गर्नुपर्छ। कृपया योगदान गर्नु अघि [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) समीक्षा गर्नुहोस्।
 
 ### पेश गर्नु अघि
 
@@ -367,7 +393,7 @@ npm test
 
 - अनुवादहरू `/translations/` निर्देशिकामा छन् (५०+ भाषाहरू)
 - `co-op-translator.yml` कार्यप्रवाह मार्फत स्वचालित
-- **अनुवाद फाइलहरू म्यानुअल रूपमा सम्पादन नगर्नुहोस्** - तिनीहरू ओभरराइट गरिनेछन्
+- **अनुवाद फाइलहरू म्यानुअल रूपमा सम्पादन नगर्नुहोस्** - तिनीहरू अधिलेखित हुनेछन्
 - मूल अंग्रेजी स्रोत फाइलहरू मात्र सम्पादन गर्नुहोस् रूट र मोड्युल निर्देशिकाहरूमा
 - `main` शाखामा पुश गर्दा अनुवादहरू स्वचालित रूपमा उत्पन्न हुन्छन्
 
@@ -415,7 +441,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -450,7 +476,7 @@ curl http://localhost:<port>/v1/models
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -463,13 +489,13 @@ set AZURE_OPENAI_API_KEY=your-api-key
 set AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-**नोट**: `FoundryLocalManager` प्रयोग गर्दा, SDK ले सेवा खोजी र मोडेल लोडिङ स्वचालित रूपमा ह्यान्डल गर्छ। मोडेल उपनामहरू (जस्तै `phi-3.5-mini`) ले तपाईंको हार्डवेयरको लागि उत्तम भेरियन्ट सुनिश्चित गर्छ।
+**नोट**: `FoundryLocalManager` प्रयोग गर्दा, SDK ले सेवा खोजी र मोडेल लोडिङ स्वचालित रूपमा ह्यान्डल गर्दछ। मोडेल उपनामहरू (जस्तै `phi-3.5-mini`) ले तपाईंको हार्डवेयरको लागि उत्तम भेरियन्ट सुनिश्चित गर्छ।
 
 ## निर्माण र परिनियोजन
 
 ### सामग्री परिनियोजन
 
-यो रिपोजिटरी मुख्य रूपमा दस्तावेज हो - सामग्रीको लागि कुनै निर्माण प्रक्रिया आवश्यक छैन।
+यो रिपोजिटरी मुख्य रूपमा दस्तावेजीकरण हो - सामग्रीको लागि कुनै निर्माण प्रक्रिया आवश्यक छैन।
 
 ### नमूना अनुप्रयोग निर्माण
 
@@ -491,13 +517,13 @@ npm run pack
 ```
 
 **Python नमूनाहरू:**
-कुनै निर्माण प्रक्रिया छैन - नमूनाहरू Python इन्टरप्रिटरसँग सिधै चलाइन्छन्।
+कुनै निर्माण प्रक्रिया छैन - नमूनाहरू Python इन्टरप्रिटरसँग सिधै चलाइन्छ।
 
-## सामान्य समस्याहरू र समाधान
+## सामान्य समस्याहरू र समस्या समाधान
 
-> **टिप**: [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues) मा ज्ञात समस्याहरू र समाधानहरू जाँच गर्नुहोस्।
+> **टिप्स**: [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues) मा ज्ञात समस्याहरू र समाधानहरूको लागि जाँच गर्नुहोस्।
 
-### महत्वपूर्ण समस्याहरू (ब्लकिङ)
+### गम्भीर समस्याहरू (ब्लकिंग)
 
 #### Foundry Local चलिरहेको छैन
 **समस्या:** नमूनाहरू जडान त्रुटिहरूसँग असफल हुन्छन्
@@ -508,7 +534,7 @@ npm run pack
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -538,7 +564,7 @@ pip install -r requirements.txt
 ```
 
 #### Electron निर्माण समस्याहरू
-**समस्या:** npm स्थापना वा निर्माण असफलता
+**समस्या:** npm install वा निर्माण असफलता
 
 **समाधान:**
 ```bash
@@ -555,7 +581,7 @@ npm install
 **समस्या:** अनुवाद PR तपाईंको परिवर्तनहरूसँग द्वन्द्वमा छ
 
 **समाधान:**
-- अंग्रेजी स्रोत फाइलहरू मात्र सम्पादन गर्नुहोस्
+- केवल अंग्रेजी स्रोत फाइलहरू सम्पादन गर्नुहोस्
 - स्वचालित अनुवाद कार्यप्रवाहलाई अनुवादहरू ह्यान्डल गर्न दिनुहोस्
 - यदि द्वन्द्वहरू उत्पन्न हुन्छन् भने, अनुवादहरू मर्ज भएपछि `main` लाई तपाईंको शाखामा मर्ज गर्नुहोस्
 
@@ -573,34 +599,35 @@ foundry model run <model-alias>
 # Verify firewall settings allow downloads
 ```
 
-## अतिरिक्त स्रोतहरू
+## थप स्रोतहरू
 
 ### शिक्षण पथहरू
-- **शुरुवात पथ:** मोड्युल ०१-०२ (७-९ घण्टा)
-- **मध्यम पथ:** मोड्युल ०३-०४ (९-११ घण्टा)
+- **सुरुवाती पथ:** मोड्युल ०१-०२ (७-९ घण्टा)
+- **मध्यवर्ती पथ:** मोड्युल ०३-०४ (९-११ घण्टा)
 - **उन्नत पथ:** मोड्युल ०५-०७ (१२-१५ घण्टा)
 - **विशेषज्ञ पथ:** मोड्युल ०८ (८-१० घण्टा)
+- **व्यावहारिक कार्यशाला:** कार्यशाला सामग्रीहरू (६-८ घण्टा)
 
 ### प्रमुख मोड्युल सामग्री
-- **मोड्युल०१:** EdgeAI को आधारभूत कुरा र वास्तविक-विश्व केस अध्ययनहरू
-- **मोड्युल०२:** साना भाषा मोडेल (SLM) परिवारहरू र आर्किटेक्चरहरू
-- **मोड्युल०३:** स्थानीय र क्लाउड परिनियोजन रणनीतिहरू
-- **मोड्युल०४:** बहु-फ्रेमवर्कहरूसँग मोडेल अनुकूलन
-- **मोड्युल०५:** SLMOps - उत्पादन सञ्चालनहरू
-- **मोड्युल०६:** AI एजेन्टहरू र कार्य कलिङ
-- **मोड्युल०७:** प्लेटफर्म-विशेष कार्यान्वयनहरू
-- **मोड्युल०८:** Foundry Local टूलकिट १० व्यापक नमूनाहरू सहित
+- **Module01:** EdgeAI का आधारभूत कुराहरू र वास्तविक संसारका केस अध्ययनहरू
+- **Module02:** साना भाषा मोडेल (SLM) परिवारहरू र आर्किटेक्चरहरू
+- **Module03:** स्थानीय र क्लाउड परिनियोजन रणनीतिहरू
+- **Module04:** विभिन्न फ्रेमवर्कहरूसँग मोडेल अनुकूलन (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
+- **Module05:** SLMOps - उत्पादन सञ्चालनहरू
+- **Module06:** AI एजेन्टहरू र कार्य कलिंग
+- **Module07:** प्लेटफर्म-विशिष्ट कार्यान्वयनहरू
+- **Module08:** Foundry Local टूलकिटसँग १० व्यापक नमूनाहरू
 
 ### बाह्य निर्भरताहरू
 - [Microsoft Foundry Local](https://github.com/microsoft/Foundry-Local) - OpenAI-संगत API सहितको स्थानीय AI मोडेल रनटाइम
-  - [दस्तावेज](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+  - [दस्तावेजीकरण](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
   - [Python SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/python)
   - [JavaScript SDK](https://github.com/microsoft/Foundry-Local/tree/main/sdk/javascript)
 - [Llama.cpp](https://github.com/ggml-org/llama.cpp) - अनुकूलन फ्रेमवर्क
 - [Microsoft Olive](https://microsoft.github.io/Olive/) - मोडेल अनुकूलन टूलकिट
 - [OpenVINO](https://docs.openvino.ai/) - Intel को अनुकूलन टूलकिट
 
-## परियोजना-विशेष नोटहरू
+## परियोजना-विशिष्ट नोटहरू
 
 ### Module08 नमूना अनुप्रयोगहरू
 
@@ -613,54 +640,68 @@ foundry model run <model-alias>
 5. **05-Multi-Agent Orchestration** - आधारभूत एजेन्ट समन्वय
 6. **06-Models-as-Tools Router** - बौद्धिक मोडेल राउटिङ
 7. **07-Direct API Client** - कम-स्तर API एकीकरण
-8. **08-Windows 11 Chat App** - देशी Electron डेस्कटप अनुप्रयोग
-9. **09-Advanced Multi-Agent System** - जटिल एजेन्ट समन्वय
-10. **10-Foundry Tools Framework** - LangChain/Semantic Kernel एकीकरण
+8. **08-Windows 11 Chat App** - देशी Electron डेस्कटप अनुप्र
+10. **10-फाउन्ड्री टूल्स फ्रेमवर्क** - LangChain/Semantic Kernel एकीकरण
 
-प्रत्य
-- स्थानीय इनफरेन्सले ५०-५०० मिलिसेकेन्डको प्रतिक्रिया समय प्रदान गर्दछ
-- क्वान्टाइजेसन प्रविधिले ७५% आकार घटाउने र ८५% प्रदर्शन कायम राख्ने क्षमता हासिल गर्दछ
-- स्थानीय मोडेलहरूसँग वास्तविक समय संवादको क्षमता
+### कार्यशाला नमूना अनुप्रयोगहरू
+
+कार्यशालामा ६ प्रगतिशील सत्रहरू समावेश छन् जसमा व्यावहारिक कार्यान्वयनहरू छन्:
+
+1. **सत्र ०१** - फाउन्ड्री लोकल एकीकरणसँग च्याट बुटस्ट्र्याप
+2. **सत्र ०२** - RAG पाइपलाइन र RAGAS सँग मूल्याङ्कन
+3. **सत्र ०३** - ओपन-सोर्स मोडेलहरूको बेंचमार्किङ
+4. **सत्र ०४** - मोडेल तुलना र चयन
+5. **सत्र ०५** - मल्टि-एजेन्ट अर्केस्ट्रेसन प्रणालीहरू
+6. **सत्र ०६** - मोडेल रुटिङ र पाइपलाइन व्यवस्थापन
+
+प्रत्येक नमूनाले फाउन्ड्री लोकलसँग एज एआई विकासका विभिन्न पक्षहरू प्रदर्शन गर्दछ।
+
+### प्रदर्शन विचारहरू
+
+- SLMs एजमा तैनातीको लागि अनुकूलित छन् (२-१६GB RAM)
+- स्थानीय इनफरेन्सले ५०-५००ms प्रतिक्रिया समय प्रदान गर्दछ
+- क्वान्टाइजेसन प्रविधिहरूले ७५% आकार घटाउने र ८५% प्रदर्शन कायम राख्ने क्षमता प्राप्त गर्दछ
+- स्थानीय मोडेलहरूसँग वास्तविक-समय संवाद क्षमता
 
 ### सुरक्षा र गोपनीयता
 
 - सबै प्रक्रिया स्थानीय रूपमा हुन्छ - कुनै पनि डेटा क्लाउडमा पठाइँदैन
-- गोपनीयता-संवेदनशील एप्लिकेसनहरू (जस्तै स्वास्थ्य सेवा, वित्त) का लागि उपयुक्त
+- गोपनीयता-संवेदनशील अनुप्रयोगहरू (स्वास्थ्य सेवा, वित्त) को लागि उपयुक्त
 - डेटा सार्वभौमिकता आवश्यकताहरू पूरा गर्दछ
-- Foundry Local पूर्ण रूपमा स्थानीय हार्डवेयरमा चल्छ
+- फाउन्ड्री लोकल पूर्ण रूपमा स्थानीय हार्डवेयरमा चल्छ
 
 ## सहयोग प्राप्त गर्ने तरिका
 
 ### दस्तावेज
 
-- **मुख्य README**: [README.md](README.md) - रिपोजिटरीको अवलोकन र सिकाइका मार्गहरू
-- **अध्ययन मार्गदर्शक**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - सिकाइका स्रोतहरू र समयरेखा
+- **मुख्य README**: [README.md](README.md) - रिपोजिटरी अवलोकन र सिकाइ मार्गहरू
+- **अध्ययन मार्गदर्शक**: [STUDY_GUIDE.md](STUDY_GUIDE.md) - सिकाइ स्रोतहरू र समयरेखा
 - **सहयोग**: [SUPPORT.md](SUPPORT.md) - सहयोग प्राप्त गर्ने तरिका
 - **सुरक्षा**: [SECURITY.md](SECURITY.md) - सुरक्षा समस्याहरू रिपोर्ट गर्ने तरिका
 
 ### समुदाय सहयोग
 
-- **GitHub Issues**: [बग रिपोर्ट गर्नुहोस् वा फिचर अनुरोध गर्नुहोस्](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **GitHub Issues**: [बग रिपोर्ट गर्नुहोस् वा सुविधाहरूको अनुरोध गर्नुहोस्](https://github.com/microsoft/edgeai-for-beginners/issues)
 - **GitHub Discussions**: [प्रश्न सोध्नुहोस् र विचारहरू साझा गर्नुहोस्](https://github.com/microsoft/edgeai-for-beginners/discussions)
-- **Foundry Local Issues**: [Foundry Local सम्बन्धी प्राविधिक समस्याहरू](https://github.com/microsoft/Foundry-Local/issues)
+- **Foundry Local Issues**: [फाउन्ड्री लोकलसँग प्राविधिक समस्याहरू](https://github.com/microsoft/Foundry-Local/issues)
 
 ### सम्पर्क
 
 - **रखवाला**: [CODEOWNERS](https://github.com/microsoft/edgeai-for-beginners/blob/main/.github/CODEOWNERS) हेर्नुहोस्
 - **सुरक्षा समस्याहरू**: [SECURITY.md](SECURITY.md) मा जिम्मेवार प्रकटीकरणको पालना गर्नुहोस्
-- **Microsoft सहयोग**: उद्यम सहयोगका लागि Microsoft ग्राहक सेवासँग सम्पर्क गर्नुहोस्
+- **Microsoft Support**: उद्यम सहयोगको लागि, Microsoft ग्राहक सेवासँग सम्पर्क गर्नुहोस्
 
 ### थप स्रोतहरू
 
-- **Microsoft Learn**: [AI र मेसिन लर्निङ सिकाइका मार्गहरू](https://learn.microsoft.com/training/browse/?products=ai-services)
-- **Foundry Local दस्तावेज**: [औपचारिक दस्तावेज](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
-- **समुदाय नमूनाहरू**: समुदाय योगदानका लागि [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) हेर्नुहोस्
+- **Microsoft Learn**: [एआई र मेसिन लर्निङ सिकाइ मार्गहरू](https://learn.microsoft.com/training/browse/?products=ai-services)
+- **Foundry Local Documentation**: [आधिकारिक दस्तावेज](https://github.com/microsoft/Foundry-Local/blob/main/docs/README.md)
+- **समुदाय नमूनाहरू**: समुदाय योगदानहरूको लागि [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions) हेर्नुहोस्
 
 ---
 
-**यो शैक्षिक रिपोजिटरी Edge AI विकास सिकाउनेमा केन्द्रित छ। मुख्य योगदान ढाँचा शैक्षिक सामग्री सुधार गर्ने र Edge AI अवधारणाहरू प्रदर्शन गर्ने नमूना एप्लिकेसनहरू थप्ने/सुधार गर्ने हो।**
+**यो एज एआई विकास सिकाउनेमा केन्द्रित शैक्षिक रिपोजिटरी हो। प्राथमिक योगदान ढाँचा शैक्षिक सामग्री सुधार गर्ने र एज एआई अवधारणाहरू प्रदर्शन गर्ने नमूना अनुप्रयोगहरू थप्ने/सुधार गर्ने हो।**
 
 ---
 
 **अस्वीकरण**:  
-यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरेर अनुवाद गरिएको हो। हामी शुद्धताको लागि प्रयास गर्छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटिहरू वा अशुद्धताहरू हुन सक्छ। मूल दस्तावेज़ यसको मातृभाषामा आधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीको लागि, व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न हुने कुनै पनि गलतफहमी वा गलत व्याख्याको लागि हामी जिम्मेवार हुनेछैनौं।
+यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरेर अनुवाद गरिएको छ। हामी शुद्धताको लागि प्रयास गर्छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटिहरू वा अशुद्धताहरू हुन सक्छ। यसको मूल भाषा मा रहेको दस्तावेज़लाई आधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीको लागि, व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न हुने कुनै पनि गलतफहमी वा गलत व्याख्याको लागि हामी जिम्मेवार हुने छैनौं।

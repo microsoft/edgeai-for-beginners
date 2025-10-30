@@ -1,164 +1,183 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c0cb9f7bcff2bc170532d8870a891f38",
-  "translation_date": "2025-09-18T10:15:06+00:00",
+  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
+  "translation_date": "2025-10-30T13:20:30+00:00",
   "source_file": "Module04/README.md",
   "language_code": "fi"
 }
 -->
-# Luku 04: Mallimuotojen Muuntaminen ja Kvantisointi - Luvun Yleiskatsaus
+# Luku 04: Mallimuodon muunnos ja kvantisointi - Luvun yleiskatsaus
 
-EdgeAI:n nousu on tehnyt mallimuotojen muuntamisesta ja kvantisoinnista olennaisia teknologioita, kun kehittyneitä koneoppimiskykyjä otetaan käyttöön resurssirajoitteisilla laitteilla. Tämä kattava luku tarjoaa täydellisen oppaan mallien ymmärtämiseen, toteuttamiseen ja optimointiin reunalaskennan käyttöskenaarioita varten.
+EdgeAI:n nousu on tehnyt mallimuodon muunnoksesta ja kvantisoinnista keskeisiä teknologioita kehittyneiden koneoppimiskykyjen käyttöönotossa resurssirajoitteisilla laitteilla. Tämä kattava luku tarjoaa täydellisen oppaan mallien ymmärtämiseen, toteuttamiseen ja optimointiin reunalaitteiden käyttöönottoskenaarioita varten.
 
-## 📚 Luvun Rakenne ja Oppimispolku
+## 📚 Luvun rakenne ja oppimispolku
 
-Tämä luku on jaettu kuuteen vaiheittaiseen osioon, jotka rakentuvat toistensa päälle tarjoten kokonaisvaltaisen ymmärryksen mallien optimoinnista reunalaskentaa varten:
+Tämä luku on jaettu seitsemään edistykselliseen osioon, jotka rakentuvat toistensa päälle muodostaen kattavan ymmärryksen mallien optimoinnista reunalaskentaa varten:
 
 ---
 
-## [Osio 1: Mallimuotojen Muuntamisen ja Kvantisoinnin Perusteet](./01.Introduce.md)
+## [Osio 1: Mallimuodon muunnoksen ja kvantisoinnin perusteet](./01.Introduce.md)
 
 ### 🎯 Yleiskatsaus
-Tämä perusosio luo teoreettisen pohjan mallien optimoinnille reunalaskentaympäristöissä, kattaen kvantisoinnin tarkkuustasot 1-bitistä 8-bittiin sekä keskeiset muuntostrategiat.
+Tämä perusosio luo teoreettisen viitekehyksen mallien optimoinnille reunalaskentaympäristöissä, kattaen kvantisointirajat 1-bittisestä 8-bittiseen tarkkuuteen sekä keskeiset muodonmuunnosstrategiat.
 
-**Keskeiset Aiheet:**
+**Keskeiset aiheet:**
 - Tarkkuusluokittelun viitekehys (erittäin matala, matala, keskitarkkuus)
 - GGUF- ja ONNX-muotojen edut ja käyttötapaukset
-- Kvantisoinnin hyödyt toiminnallisessa tehokkuudessa ja käyttöönoton joustavuudessa
-- Suorituskykyvertailut ja muistijalanjäljen analyysit
+- Kvantisoinnin hyödyt operatiivisen tehokkuuden ja käyttöönoton joustavuuden kannalta
+- Suorituskykyvertailut ja muistijalanjäljen vertailut
 
 **Oppimistavoitteet:**
-- Ymmärtää kvantisoinnin rajat ja luokittelut
-- Tunnistaa sopivat muuntotekniikat
-- Oppia edistyneitä optimointistrategioita reunakäyttöön
+- Ymmärrä kvantisointirajat ja luokittelut
+- Tunnista sopivat muodonmuunnostekniikat
+- Opi edistyneitä optimointistrategioita reunakäyttöön
 
 ---
 
-## [Osio 2: Llama.cpp:n Toteutusopas](./02.Llamacpp.md)
+## [Osio 2: Llama.cpp:n toteutusopas](./02.Llamacpp.md)
 
 ### 🎯 Yleiskatsaus
-Kattava opas Llama.cpp:n toteuttamiseen, tehokas C++-kehys, joka mahdollistaa suurten kielimallien suorittamisen vähäisellä asennuksella eri laitteistoalustoilla.
+Kattava opas Llama.cpp:n toteuttamiseen, tehokas C++-kehys, joka mahdollistaa suurten kielimallien tehokkaan päättelyn vähäisellä asennuksella eri laitteistokokoonpanoissa.
 
-**Keskeiset Aiheet:**
+**Keskeiset aiheet:**
 - Asennus Windows-, macOS- ja Linux-alustoille
-- GGUF-muodon muuntaminen ja eri kvantisointitasot (Q2_K–Q8_0)
+- GGUF-muodon muunnos ja eri kvantisointitasot (Q2_K - Q8_0)
 - Laitteistokiihdytys CUDA:n, Metalin, OpenCL:n ja Vulkanin avulla
 - Python-integraatio ja tuotantokäyttöstrategiat
 
 **Oppimistavoitteet:**
-- Hallita monialustainen asennus ja lähdekoodista rakentaminen
-- Toteuttaa mallien kvantisointi ja optimointitekniikat
-- Ottaa mallit käyttöön palvelintilassa REST API -integraatiolla
+- Hallitse monialustainen asennus ja lähdekoodista rakentaminen
+- Toteuta mallien kvantisointi- ja optimointitekniikat
+- Ota mallit käyttöön palvelintilassa REST API -integraatiolla
 
 ---
 
-## [Osio 3: Microsoft Olive -optimointityökalu](./03.MicrosoftOlive.md)
+## [Osio 3: Microsoft Olive -optimointipaketti](./03.MicrosoftOlive.md)
 
 ### 🎯 Yleiskatsaus
-Tutustuminen Microsoft Oliveen, laitteistotietoiseen mallien optimointityökaluun, jossa on yli 40 sisäänrakennettua optimointikomponenttia, suunniteltu yritystason mallien käyttöönottoon eri laitteistoalustoilla.
+Microsoft Olive -työkalun tutkiminen, laitteistotietoinen mallien optimointityökalu, jossa on yli 40 sisäänrakennettua optimointikomponenttia, suunniteltu yritystason mallien käyttöönottoon eri laitteistoalustoilla.
 
-**Keskeiset Aiheet:**
+**Keskeiset aiheet:**
 - Automaattiset optimointiominaisuudet dynaamisella ja staattisella kvantisoinnilla
 - Laitteistotietoinen älykkyys CPU-, GPU- ja NPU-käyttöönottoa varten
-- Suosittujen mallien (Llama, Phi, Qwen, Gemma) tuki suoraan
+- Suosittujen mallien tuki (Llama, Phi, Qwen, Gemma) valmiina
 - Yritysintegraatio Azure ML:n ja tuotantotyönkulkujen kanssa
 
 **Oppimistavoitteet:**
-- Hyödyntää automaattista optimointia eri mallirakenteille
-- Toteuttaa monialustaisia käyttöönotto-strategioita
-- Rakentaa yritysvalmiita optimointiputkia
+- Hyödynnä automaattista optimointia eri mallirakenteille
+- Toteuta monialustaisia käyttöönotto-strategioita
+- Luo yritysvalmiita optimointiputkia
 
 ---
 
-## [Osio 4: OpenVINO Toolkit -optimointityökalu](./04.openvino.md)
+## [Osio 4: OpenVINO Toolkit -optimointipaketti](./04.openvino.md)
 
 ### 🎯 Yleiskatsaus
-Kattava katsaus Intelin OpenVINO-työkaluun, avoimen lähdekoodin alusta, joka mahdollistaa suorituskykyisten tekoälyratkaisujen käyttöönoton pilvessä, paikallisympäristöissä ja reunalaskennassa edistyneillä Neural Network Compression Framework (NNCF) -ominaisuuksilla.
+Intel OpenVINO -työkalupaketin kattava tutkiminen, avoimen lähdekoodin alusta suorituskykyisten tekoälyratkaisujen käyttöönottoon pilvessä, paikallisessa ja reunaympäristöissä edistyneillä Neural Network Compression Framework (NNCF) -ominaisuuksilla.
 
-**Keskeiset Aiheet:**
+**Keskeiset aiheet:**
 - Monialustainen käyttöönotto laitteistokiihdytyksellä (CPU, GPU, VPU, AI-kiihdyttimet)
 - Neural Network Compression Framework (NNCF) edistyneeseen kvantisointiin ja karsintaan
 - OpenVINO GenAI suurten kielimallien optimointiin ja käyttöönottoon
 - Yritystason mallipalvelimen ominaisuudet ja skaalautuvat käyttöönotto-strategiat
 
 **Oppimistavoitteet:**
-- Hallita OpenVINO-mallien muunto- ja optimointityönkulut
-- Toteuttaa edistyneitä kvantisointitekniikoita NNCF:n avulla
-- Ottaa käyttöön optimoituja malleja eri laitteistoalustoilla Model Serverin avulla
+- Hallitse OpenVINO-mallien muunnos- ja optimointityönkulut
+- Toteuta edistyneitä kvantisointitekniikoita NNCF:n avulla
+- Ota optimoidut mallit käyttöön eri laitteistoalustoilla Model Serverin avulla
 
 ---
 
 ## [Osio 5: Apple MLX Framework -syväluotaus](./05.AppleMLX.md)
 
 ### 🎯 Yleiskatsaus
-Kattava katsaus Apple MLX:ään, vallankumoukselliseen kehykseen, joka on erityisesti suunniteltu tehokkaaseen koneoppimiseen Apple Siliconilla, painottaen suurten kielimallien kyvykkyyksiä ja paikallista käyttöönottoa.
+Apple MLX:n kattava käsittely, vallankumouksellinen kehys, joka on erityisesti suunniteltu tehokkaaseen koneoppimiseen Apple Siliconilla, painottaen suurten kielimallien kyvykkyyksiä ja paikallista käyttöönottoa.
 
-**Keskeiset Aiheet:**
-- Yhdistetyn muistirakenteen edut ja Metal Performance Shaders
+**Keskeiset aiheet:**
+- Yhtenäisen muistirakenteen edut ja Metal Performance Shaders
 - Tuki LLaMA-, Mistral-, Phi-3-, Qwen- ja Code Llama -malleille
 - LoRA-hienosäätö tehokkaaseen mallien räätälöintiin
 - Hugging Face -integraatio ja kvantisointituki (4-bittinen ja 8-bittinen)
 
 **Oppimistavoitteet:**
-- Hallita Apple Silicon -optimointi suurten kielimallien käyttöönottoa varten
-- Toteuttaa hienosäätö- ja mallien räätälöintitekniikoita
-- Rakentaa yritystason tekoälysovelluksia parannetuilla yksityisyysominaisuuksilla
+- Hallitse Apple Silicon -optimointi LLM-käyttöönottoa varten
+- Toteuta hienosäätö- ja mallien räätälöintitekniikat
+- Rakenna yritystason tekoälysovelluksia parannetuilla yksityisyysominaisuuksilla
 
 ---
 
-## [Osio 6: Edge AI -kehitystyönkulun Synteesi](./06.workflow-synthesis.md)
+## [Osio 6: Edge AI -kehitystyönkulun synteesi](./06.workflow-synthesis.md)
 
 ### 🎯 Yleiskatsaus
-Kaikkien optimointikehysten kattava synteesi yhtenäisiksi työnkuluiksi, päätösmatriiseiksi ja parhaiksi käytännöiksi tuotantovalmiiseen Edge AI -käyttöönottoon eri alustoilla ja käyttötapauksissa.
+Kaikkien optimointikehysten kattava synteesi yhtenäisiksi työnkuluiksi, päätösmatriiseiksi ja parhaiksi käytännöiksi tuotantovalmiin Edge AI:n käyttöönottoon eri alustoilla ja käyttötapauksissa, mukaan lukien mobiili, työpöytä ja pilviympäristöt.
 
-**Keskeiset Aiheet:**
+**Keskeiset aiheet:**
 - Yhtenäinen työnkulkuarkkitehtuuri, joka integroi useita optimointikehyksiä
-- Kehyksen valintapuut ja suorituskykyyn liittyvien kompromissien analyysi
+- Kehyksen valintapäätöspuut ja suorituskykyvaihtoehtojen analyysi
 - Tuotantovalmiuden validointi ja kattavat käyttöönotto-strategiat
-- Tulevaisuuden varmistaminen uusille laitteistoille ja mallirakenteille
+- Tulevaisuuden varmistusstrategiat kehittyville laitteistoille ja mallirakenteille
 
 **Oppimistavoitteet:**
-- Hallita systemaattinen kehyksen valinta vaatimusten ja rajoitteiden perusteella
-- Toteuttaa tuotantotason Edge AI -putkia kattavalla seurannalla
-- Suunnitella mukautuvia työnkulkuja, jotka kehittyvät uusien teknologioiden ja vaatimusten mukana
+- Hallitse systemaattinen kehyksen valinta vaatimusten ja rajoitusten perusteella
+- Toteuta tuotantotason Edge AI -putket kattavalla seurannalla
+- Suunnittele mukautuvia työnkulkuja, jotka kehittyvät uusien teknologioiden ja vaatimusten mukana
 
 ---
 
-## 🎯 Luvun Oppimistavoitteet
+## [Osio 7: Qualcomm QNN -optimointipaketti](./07.QualcommQNN.md)
 
-Tämän kattavan luvun suorittamisen jälkeen lukijat saavuttavat:
+### 🎯 Yleiskatsaus
+Qualcomm QNN:n (Qualcomm Neural Network) kattava tutkiminen, yhtenäinen tekoälypäättelykehys, joka on suunniteltu hyödyntämään Qualcommin heterogeenistä laskenta-arkkitehtuuria, mukaan lukien Hexagon NPU, Adreno GPU ja Kryo CPU, maksimaalisen suorituskyvyn ja energiatehokkuuden saavuttamiseksi mobiili- ja reunalaitteilla.
 
-### **Tekninen Hallinta**
-- Syvällinen ymmärrys kvantisoinnin rajoista ja käytännön sovelluksista
+**Keskeiset aiheet:**
+- Heterogeeninen laskenta yhtenäisellä pääsyllä NPU:hun, GPU:hun ja CPU:hun
+- Laitteistotietoinen optimointi Snapdragon-alustoille älykkäällä työkuormanjakelulla
+- Edistyneet kvantisointitekniikat (INT8, INT16, sekatarkkuus) mobiilikäyttöön
+- Energiatehokas päättely optimoitu akkukäyttöisille laitteille ja reaaliaikaisille sovelluksille
+
+**Oppimistavoitteet:**
+- Hallitse Qualcomm-laitteistokiihdytys mobiili-AI:n käyttöönottoa varten
+- Toteuta energiatehokkaita optimointistrategioita reunalaskentaa varten
+- Ota tuotantovalmiit mallit käyttöön Qualcommin ekosysteemissä optimaalisella suorituskyvyllä
+
+---
+
+## 🎯 Luvun oppimistavoitteet
+
+Kun tämä kattava luku on suoritettu, lukijat saavuttavat:
+
+### **Tekninen osaaminen**
+- Syvällinen ymmärrys kvantisointirajoista ja käytännön sovelluksista
 - Käytännön kokemus useista optimointikehyksistä
-- Tuotantokäyttöön liittyvät taidot reunalaskentaympäristöissä
+- Tuotantokäyttötaidot reunalaskentaympäristöissä
 
-### **Strateginen Ymmärrys**
-- Laitteistotietoisen optimoinnin valintakyvyt
-- Tietoinen päätöksenteko suorituskykyyn liittyvistä kompromisseista
-- Yritystason käyttöönotto- ja seurantastrategiat
+### **Strateginen ymmärrys**
+- Laitteistotietoisten optimointivalintojen kyvykkyys
+- Tietoinen päätöksenteko suorituskykyvaihtoehtojen suhteen
+- Yritysvalmiit käyttöönotto- ja seurantastrategiat
 
 ### **Suorituskykyvertailut**
 
-| Kehys      | Kvantisointi | Muistin Käyttö | Nopeuden Parannus | Käyttötapa             |
-|------------|--------------|----------------|--------------------|------------------------|
-| Llama.cpp  | Q4_K_M       | ~4GB           | 2-3x              | Monialustainen käyttö |
-| Olive      | INT4         | 60-75% vähemmän| 2-6x              | Yritystyönkulut       |
-| OpenVINO   | INT8/INT4    | 50-75% vähemmän| 2-5x              | Intel-laitteiston optimointi |
-| MLX        | 4-bittinen   | ~4GB           | 2-4x              | Apple Silicon -optimointi |
+| Kehys | Kvantisointi | Muistin käyttö | Nopeuden parannus | Käyttötapaus |
+|-------|--------------|----------------|-------------------|--------------|
+| Llama.cpp | Q4_K_M | ~4GB | 2-3x | Monialustainen käyttöönotto |
+| Olive | INT4 | 60-75% vähennys | 2-6x | Yritystyönkulut |
+| OpenVINO | INT8/INT4 | 50-75% vähennys | 2-5x | Intel-laitteistooptimointi |
+| QNN | INT8/INT4 | 50-80% vähennys | 5-15x | Qualcomm mobiili/reuna |
+| MLX | 4-bittinen | ~4GB | 2-4x | Apple Silicon -optimointi |
 
-## 🚀 Seuraavat Askeleet ja Edistyneet Sovellukset
+## 🚀 Seuraavat askeleet ja edistyneet sovellukset
 
-Tämä luku tarjoaa vankan perustan:
+Tämä luku tarjoaa täydellisen perustan:
 - Räätälöityjen mallien kehittämiseen tiettyjä aloja varten
-- Reunalaskennan optimointitutkimukseen
+- Tutkimukseen reunalaskennan optimoinnissa
 - Kaupallisten tekoälysovellusten kehittämiseen
-- Suurten yritystason Edge AI -käyttöönottojen toteuttamiseen
+- Suurimittaisten yritystason Edge AI -käyttöönottojen toteuttamiseen
 
-Näiden kuuden osion tiedot tarjoavat kattavan työkalupakin nopeasti kehittyvän Edge AI -mallien optimoinnin ja käyttöönoton kentän hallintaan.
+Näiden seitsemän osion tiedot tarjoavat kattavan työkalupaketin navigoimiseen nopeasti kehittyvässä reunalaskennan mallien optimoinnin ja käyttöönoton maailmassa.
 
 ---
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi katsoa ensisijaiseksi lähteeksi. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.

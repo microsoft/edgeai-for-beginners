@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c0cb9f7bcff2bc170532d8870a891f38",
-  "translation_date": "2025-09-18T14:33:29+00:00",
+  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
+  "translation_date": "2025-10-30T13:47:27+00:00",
   "source_file": "Module04/README.md",
   "language_code": "ms"
 }
@@ -13,14 +13,14 @@ Kemunculan EdgeAI telah menjadikan penukaran format model dan kuantisasi sebagai
 
 ## 📚 Struktur Bab dan Laluan Pembelajaran
 
-Bab ini disusun dalam enam bahagian progresif, setiap satu membina pemahaman yang lebih mendalam tentang pengoptimuman model untuk pengkomputeran tepi:
+Bab ini disusun dalam tujuh bahagian progresif, setiap satu membina pemahaman yang menyeluruh tentang pengoptimuman model untuk pengkomputeran tepi:
 
 ---
 
 ## [Bahagian 1: Asas Penukaran Format Model dan Kuantisasi](./01.Introduce.md)
 
 ### 🎯 Gambaran
-Bahagian asas ini menetapkan kerangka teori untuk pengoptimuman model dalam persekitaran pengkomputeran tepi, merangkumi sempadan kuantisasi dari tahap ketepatan 1-bit hingga 8-bit serta strategi penukaran format utama.
+Bahagian asas ini menetapkan kerangka teori untuk pengoptimuman model dalam persekitaran pengkomputeran tepi, merangkumi sempadan kuantisasi dari tahap ketepatan 1-bit hingga 8-bit dan strategi penukaran format utama.
 
 **Topik Utama:**
 - Kerangka klasifikasi ketepatan (ultra-rendah, rendah, sederhana)
@@ -38,7 +38,7 @@ Bahagian asas ini menetapkan kerangka teori untuk pengoptimuman model dalam pers
 ## [Bahagian 2: Panduan Pelaksanaan Llama.cpp](./02.Llamacpp.md)
 
 ### 🎯 Gambaran
-Tutorial komprehensif untuk melaksanakan Llama.cpp, kerangka C++ yang berkuasa untuk inferens Model Bahasa Besar dengan persediaan minimum merentasi konfigurasi perkakasan yang pelbagai.
+Tutorial komprehensif untuk melaksanakan Llama.cpp, kerangka C++ yang berkuasa yang membolehkan inferens Model Bahasa Besar dengan persediaan minimum merentasi konfigurasi perkakasan yang pelbagai.
 
 **Topik Utama:**
 - Pemasangan di platform Windows, macOS, dan Linux
@@ -47,16 +47,16 @@ Tutorial komprehensif untuk melaksanakan Llama.cpp, kerangka C++ yang berkuasa u
 - Integrasi Python dan strategi pelaksanaan pengeluaran
 
 **Hasil Pembelajaran:**
-- Menguasai pemasangan merentas platform dan binaan dari sumber
+- Menguasai pemasangan merentas platform dan membina dari sumber
 - Melaksanakan teknik kuantisasi dan pengoptimuman model
 - Melaksanakan model dalam mod pelayan dengan integrasi REST API
 
 ---
 
-## [Bahagian 3: Microsoft Olive Optimization Suite](./03.MicrosoftOlive.md)
+## [Bahagian 3: Suite Pengoptimuman Microsoft Olive](./03.MicrosoftOlive.md)
 
 ### 🎯 Gambaran
-Penerokaan Microsoft Olive, alat pengoptimuman model yang peka terhadap perkakasan dengan lebih daripada 40 komponen pengoptimuman terbina, direka untuk pelaksanaan model bertaraf perusahaan merentasi platform perkakasan yang pelbagai.
+Penerokaan Microsoft Olive, alat pengoptimuman model yang peka terhadap perkakasan dengan lebih daripada 40 komponen pengoptimuman terbina, direka untuk pelaksanaan model kelas perusahaan merentasi platform perkakasan yang pelbagai.
 
 **Topik Utama:**
 - Ciri auto-pengoptimuman dengan kuantisasi dinamik dan statik
@@ -67,29 +67,29 @@ Penerokaan Microsoft Olive, alat pengoptimuman model yang peka terhadap perkakas
 **Hasil Pembelajaran:**
 - Memanfaatkan pengoptimuman automatik untuk pelbagai seni bina model
 - Melaksanakan strategi pelaksanaan merentas platform
-- Menubuhkan saluran pengoptimuman yang bersedia untuk perusahaan
+- Menubuhkan saluran pengoptimuman yang sedia untuk perusahaan
 
 ---
 
-## [Bahagian 4: OpenVINO Toolkit Optimization Suite](./04.openvino.md)
+## [Bahagian 4: Suite Pengoptimuman OpenVINO Toolkit](./04.openvino.md)
 
 ### 🎯 Gambaran
-Penerokaan komprehensif alat OpenVINO Intel, platform sumber terbuka untuk melaksanakan penyelesaian AI yang berprestasi tinggi merentasi awan, premis, dan persekitaran tepi dengan keupayaan rangka kerja pemampatan rangkaian neural (NNCF) yang canggih.
+Penerokaan komprehensif alat OpenVINO Intel, platform sumber terbuka untuk melaksanakan penyelesaian AI yang berprestasi tinggi merentasi awan, premis, dan persekitaran tepi dengan keupayaan Rangka Kerja Pemampatan Neural Network (NNCF) yang canggih.
 
 **Topik Utama:**
 - Pelaksanaan merentas platform dengan pecutan perkakasan (CPU, GPU, VPU, pemecut AI)
-- Rangka kerja pemampatan rangkaian neural (NNCF) untuk kuantisasi dan pemangkasan lanjutan
+- Rangka Kerja Pemampatan Neural Network (NNCF) untuk kuantisasi dan pemangkasan lanjutan
 - OpenVINO GenAI untuk pengoptimuman dan pelaksanaan model bahasa besar
-- Keupayaan pelayan model bertaraf perusahaan dan strategi pelaksanaan yang boleh diskalakan
+- Keupayaan pelayan model kelas perusahaan dan strategi pelaksanaan yang boleh diskalakan
 
 **Hasil Pembelajaran:**
 - Menguasai aliran kerja penukaran dan pengoptimuman model OpenVINO
 - Melaksanakan teknik kuantisasi lanjutan dengan NNCF
-- Melaksanakan model yang dioptimumkan merentasi platform perkakasan yang pelbagai dengan Pelayan Model
+- Melaksanakan model yang dioptimumkan merentasi platform perkakasan yang pelbagai dengan Model Server
 
 ---
 
-## [Bahagian 5: Apple MLX Framework Deep Dive](./05.AppleMLX.md)
+## [Bahagian 5: Penyelaman Mendalam Kerangka Apple MLX](./05.AppleMLX.md)
 
 ### 🎯 Gambaran
 Liputan komprehensif Apple MLX, kerangka revolusioner yang direka khusus untuk pembelajaran mesin yang cekap pada Apple Silicon, dengan penekanan pada keupayaan Model Bahasa Besar dan pelaksanaan tempatan.
@@ -110,18 +110,36 @@ Liputan komprehensif Apple MLX, kerangka revolusioner yang direka khusus untuk p
 ## [Bahagian 6: Sintesis Aliran Kerja Pembangunan Edge AI](./06.workflow-synthesis.md)
 
 ### 🎯 Gambaran
-Sintesis komprehensif semua rangka kerja pengoptimuman ke dalam aliran kerja bersatu, matriks keputusan, dan amalan terbaik untuk pelaksanaan Edge AI yang bersedia untuk pengeluaran merentasi platform dan kegunaan yang pelbagai.
+Sintesis komprehensif semua kerangka pengoptimuman ke dalam aliran kerja bersatu, matriks keputusan, dan amalan terbaik untuk pelaksanaan Edge AI yang sedia untuk pengeluaran merentasi platform dan kegunaan yang pelbagai termasuk mudah alih, desktop, dan persekitaran awan.
 
 **Topik Utama:**
-- Seni bina aliran kerja bersatu yang mengintegrasikan pelbagai rangka kerja pengoptimuman
-- Pokok keputusan pemilihan rangka kerja dan analisis kompromi prestasi
+- Seni bina aliran kerja bersatu yang mengintegrasikan pelbagai kerangka pengoptimuman
+- Pokok keputusan pemilihan kerangka dan analisis kompromi prestasi
 - Pengesahan kesediaan pengeluaran dan strategi pelaksanaan yang komprehensif
 - Strategi masa depan untuk perkakasan dan seni bina model yang muncul
 
 **Hasil Pembelajaran:**
-- Menguasai pemilihan rangka kerja yang sistematik berdasarkan keperluan dan kekangan
-- Melaksanakan saluran Edge AI bertaraf pengeluaran dengan pemantauan yang komprehensif
-- Merancang aliran kerja yang boleh disesuaikan dengan teknologi dan keperluan yang berkembang
+- Menguasai pemilihan kerangka sistematik berdasarkan keperluan dan kekangan
+- Melaksanakan saluran Edge AI yang sedia untuk pengeluaran dengan pemantauan yang komprehensif
+- Merancang aliran kerja yang boleh disesuaikan yang berkembang dengan teknologi dan keperluan yang muncul
+
+---
+
+## [Bahagian 7: Suite Pengoptimuman Qualcomm QNN](./07.QualcommQNN.md)
+
+### 🎯 Gambaran
+Penerokaan komprehensif Qualcomm QNN (Qualcomm Neural Network), kerangka inferens AI bersatu yang direka untuk memanfaatkan seni bina pengkomputeran heterogen Qualcomm termasuk Hexagon NPU, Adreno GPU, dan Kryo CPU untuk prestasi maksimum dan kecekapan tenaga pada peranti mudah alih dan tepi.
+
+**Topik Utama:**
+- Pengkomputeran heterogen dengan akses bersatu kepada NPU, GPU, dan CPU
+- Pengoptimuman peka perkakasan untuk platform Snapdragon dengan pengagihan beban kerja yang pintar
+- Teknik kuantisasi lanjutan (INT8, INT16, ketepatan campuran) untuk pelaksanaan mudah alih
+- Inferens cekap tenaga yang dioptimumkan untuk peranti berkuasa bateri dan aplikasi masa nyata
+
+**Hasil Pembelajaran:**
+- Menguasai pecutan perkakasan Qualcomm untuk pelaksanaan AI mudah alih
+- Melaksanakan strategi pengoptimuman cekap tenaga untuk pengkomputeran tepi
+- Melaksanakan model yang sedia untuk pengeluaran merentasi ekosistem Qualcomm dengan prestasi optimum
 
 ---
 
@@ -131,34 +149,35 @@ Setelah menyelesaikan bab yang komprehensif ini, pembaca akan mencapai:
 
 ### **Penguasaan Teknikal**
 - Pemahaman mendalam tentang sempadan kuantisasi dan aplikasi praktikal
-- Pengalaman langsung dengan pelbagai rangka kerja pengoptimuman
+- Pengalaman langsung dengan pelbagai kerangka pengoptimuman
 - Kemahiran pelaksanaan pengeluaran untuk persekitaran pengkomputeran tepi
 
 ### **Pemahaman Strategik**
-- Keupayaan pemilihan pengoptimuman yang peka terhadap perkakasan
+- Keupayaan pemilihan pengoptimuman peka perkakasan
 - Pembuatan keputusan yang berinformasi tentang kompromi prestasi
-- Strategi pelaksanaan dan pemantauan yang bersedia untuk perusahaan
+- Strategi pelaksanaan dan pemantauan yang sedia untuk perusahaan
 
 ### **Penanda Aras Prestasi**
 
-| Rangka Kerja | Kuantisasi | Penggunaan Memori | Peningkatan Kelajuan | Kegunaan |
-|--------------|------------|-------------------|----------------------|----------|
-| Llama.cpp    | Q4_K_M     | ~4GB             | 2-3x                | Pelaksanaan merentas platform |
-| Olive        | INT4       | Pengurangan 60-75%| 2-6x                | Aliran kerja perusahaan |
-| OpenVINO     | INT8/INT4  | Pengurangan 50-75%| 2-5x                | Pengoptimuman perkakasan Intel |
-| MLX          | 4-bit      | ~4GB             | 2-4x                | Pengoptimuman Apple Silicon |
+| Kerangka | Kuantisasi | Penggunaan Memori | Peningkatan Kelajuan | Kegunaan |
+|----------|------------|-------------------|----------------------|----------|
+| Llama.cpp | Q4_K_M | ~4GB | 2-3x | Pelaksanaan merentas platform |
+| Olive | INT4 | Pengurangan 60-75% | 2-6x | Aliran kerja perusahaan |
+| OpenVINO | INT8/INT4 | Pengurangan 50-75% | 2-5x | Pengoptimuman perkakasan Intel |
+| QNN | INT8/INT4 | Pengurangan 50-80% | 5-15x | Mudah alih/tepi Qualcomm |
+| MLX | 4-bit | ~4GB | 2-4x | Pengoptimuman Apple Silicon |
 
 ## 🚀 Langkah Seterusnya dan Aplikasi Lanjutan
 
 Bab ini menyediakan asas lengkap untuk:
 - Pembangunan model tersuai untuk domain tertentu
-- Penyelidikan dalam pengoptimuman Edge AI
+- Penyelidikan dalam pengoptimuman AI tepi
 - Pembangunan aplikasi AI komersial
-- Pelaksanaan Edge AI perusahaan berskala besar
+- Pelaksanaan AI tepi perusahaan berskala besar
 
-Pengetahuan dari enam bahagian ini menawarkan alat komprehensif untuk menavigasi landskap pengoptimuman dan pelaksanaan model Edge AI yang berkembang pesat.
+Pengetahuan daripada tujuh bahagian ini menawarkan alat komprehensif untuk menavigasi landskap yang berkembang pesat dalam pengoptimuman dan pelaksanaan model AI tepi.
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
