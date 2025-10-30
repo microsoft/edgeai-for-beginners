@@ -4,7 +4,7 @@
 > 
 > This document provides comprehensive information for developers, AI agents, and contributors working with this repository. It covers setup, development workflows, testing, and best practices.
 > 
-> **Last Updated**: October 2025 | **Document Version**: 2.0
+> **Last Updated**: October 30, 2025 | **Document Version**: 3.0
 
 ## Table of Contents
 
@@ -54,6 +54,13 @@ edgeai-for-beginners/
 │   ├── samples/07/        # API client (Python)
 │   ├── samples/08/        # Windows 11 chat app (Electron)
 │   └── samples/09-10/     # Advanced multi-agent systems (Python)
+├── Workshop/               # Hands-on workshop materials
+│   ├── samples/           # Workshop Python samples with utilities
+│   │   ├── session01/     # Chat bootstrap samples
+│   │   ├── session02-06/  # Progressive workshop sessions
+│   │   └── util/          # Workshop utility modules
+│   ├── notebooks/         # Jupyter notebook tutorials
+│   └── scripts/           # Validation and testing tools
 ├── translations/          # Multi-language translations (50+ languages)
 ├── translated_images/     # Localized images
 └── imgs/                  # Course images and assets
@@ -100,7 +107,7 @@ cd edgeai-for-beginners
 # No build step required - this is primarily an educational content repository
 ```
 
-### Python Sample Setup (Module08 and Python samples)
+### Python Sample Setup (Module08 and Workshop samples)
 
 ```bash
 # Create and activate virtual environment
@@ -115,6 +122,10 @@ pip install foundry-local-sdk openai
 
 # Install additional dependencies for Module08 samples
 cd Module08
+pip install -r requirements.txt
+
+# Install Workshop dependencies
+cd ../Workshop
 pip install -r requirements.txt
 ```
 
@@ -146,7 +157,7 @@ Foundry Local is required to run the samples. Download and install from the offi
 **Quick Start:**
 ```bash
 # Run your first model (auto-downloads if needed)
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # List available models
 foundry model ls
@@ -170,10 +181,16 @@ This repository contains primarily **Markdown educational content**. When making
 
 ### Sample Application Development
 
-For Python samples (samples 01-07, 09-10):
+For Module08 Python samples (samples 01-07, 09-10):
 ```bash
 cd Module08
 python samples/01/chat_quickstart.py "Test message"
+```
+
+For Workshop Python samples:
+```bash
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test message"
 ```
 
 For Electron sample (sample 08):
@@ -238,10 +255,19 @@ npm test -- --coverage
 
 **Python samples should be manually tested:**
 ```bash
-# Each sample can be run directly
+# Module08 samples
 python samples/01/chat_quickstart.py "Test prompt"
 python samples/04/chainlit_rag.py
 python samples/09/multi_agent_system.py
+
+# Workshop samples
+cd Workshop/samples/session01
+python chat_bootstrap.py "Test prompt"
+
+# Use Workshop validation tools
+cd Workshop/scripts
+python validate_samples.py  # Validate syntax and imports
+python test_samples.py      # Run smoke tests
 ```
 
 ## Code Style Guidelines
@@ -406,7 +432,7 @@ from foundry_local import FoundryLocalManager
 import openai
 
 # Use model alias for automatic hardware optimization
-alias = "phi-3.5-mini"
+alias = "phi-4-mini"
 
 # Create manager (auto-starts service and loads model)
 manager = FoundryLocalManager(alias)
@@ -441,7 +467,7 @@ Most samples use these environment variables:
 ```bash
 # Foundry Local configuration
 # Note: The SDK (FoundryLocalManager) automatically detects endpoint
-set MODEL=phi-3.5-mini  # or phi-4-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
+set MODEL=phi-4-mini  # or phi-3.5-mini, qwen2.5-0.5b, qwen2.5-coder-0.5b
 set API_KEY=            # Not required for local usage
 
 # Manual endpoint (if not using SDK)
@@ -499,7 +525,7 @@ No build process - samples are run directly with Python interpreter.
 foundry service status
 
 # Start service with a model
-foundry model run phi-3.5-mini
+foundry model run phi-4-mini
 
 # Or explicitly start service
 foundry service start
@@ -571,12 +597,13 @@ foundry model run <model-alias>
 - **Intermediate Path:** Modules 03-04 (9-11 hours)
 - **Advanced Path:** Modules 05-07 (12-15 hours)
 - **Expert Path:** Module 08 (8-10 hours)
+- **Hands-On Workshop:** Workshop materials (6-8 hours)
 
 ### Key Module Content
 - **Module01:** EdgeAI fundamentals and real-world case studies
 - **Module02:** Small Language Model (SLM) families and architectures
 - **Module03:** Local and cloud deployment strategies
-- **Module04:** Model optimization with multiple frameworks
+- **Module04:** Model optimization with multiple frameworks (Llama.cpp, Microsoft Olive, OpenVINO, Qualcomm QNN, Apple MLX)
 - **Module05:** SLMOps - production operations
 - **Module06:** AI agents and function calling
 - **Module07:** Platform-specific implementations
@@ -607,6 +634,17 @@ The repository includes 10 comprehensive sample applications:
 8. **08-Windows 11 Chat App** - Native Electron desktop application
 9. **09-Advanced Multi-Agent System** - Complex agent orchestration
 10. **10-Foundry Tools Framework** - LangChain/Semantic Kernel integration
+
+### Workshop Sample Applications
+
+The Workshop includes 6 progressive sessions with practical implementations:
+
+1. **Session 01** - Chat bootstrap with Foundry Local integration
+2. **Session 02** - RAG pipeline and evaluation with RAGAS
+3. **Session 03** - Benchmarking open-source models
+4. **Session 04** - Model comparison and selection
+5. **Session 05** - Multi-agent orchestration systems
+6. **Session 06** - Model routing and pipeline management
 
 Each sample demonstrates different aspects of edge AI development with Foundry Local.
 
