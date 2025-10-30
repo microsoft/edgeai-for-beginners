@@ -4,7 +4,7 @@ The emergence of EdgeAI has made model format conversion and quantization essent
 
 ## 📚 Chapter Structure and Learning Path
 
-This chapter is organized into six progressive sections, each building upon the previous to create a comprehensive understanding of model optimization for edge computing:
+This chapter is organized into seven progressive sections, each building upon the previous to create a comprehensive understanding of model optimization for edge computing:
 
 ---
 
@@ -101,7 +101,7 @@ Comprehensive coverage of Apple MLX, a revolutionary framework specifically desi
 ## [Section 6: Edge AI Development Workflow Synthesis](./06.workflow-synthesis.md)
 
 ### 🎯 Overview
-Comprehensive synthesis of all optimization frameworks into unified workflows, decision matrices, and best practices for production-ready Edge AI deployment across diverse platforms and use cases.
+Comprehensive synthesis of all optimization frameworks into unified workflows, decision matrices, and best practices for production-ready Edge AI deployment across diverse platforms and use cases including mobile, desktop, and cloud environments.
 
 **Key Topics:**
 - Unified workflow architecture integrating multiple optimization frameworks
@@ -113,6 +113,24 @@ Comprehensive synthesis of all optimization frameworks into unified workflows, d
 - Master systematic framework selection based on requirements and constraints
 - Implement production-grade Edge AI pipelines with comprehensive monitoring
 - Design adaptable workflows that evolve with emerging technologies and requirements
+
+---
+
+## [Section 7: Qualcomm QNN Optimization Suite](./07.QualcommQNN.md)
+
+### 🎯 Overview
+Comprehensive exploration of Qualcomm QNN (Qualcomm Neural Network), a unified AI inference framework designed to leverage Qualcomm's heterogeneous computing architecture including Hexagon NPU, Adreno GPU, and Kryo CPU for maximum performance and energy efficiency on mobile and edge devices.
+
+**Key Topics:**
+- Heterogeneous computing with unified access to NPU, GPU, and CPU
+- Hardware-aware optimization for Snapdragon platforms with intelligent workload distribution
+- Advanced quantization techniques (INT8, INT16, mixed-precision) for mobile deployment
+- Power-efficient inference optimized for battery-powered devices and real-time applications
+
+**Learning Outcomes:**
+- Master Qualcomm hardware acceleration for mobile AI deployment
+- Implement power-efficient optimization strategies for edge computing
+- Deploy production-ready models across Qualcomm's ecosystem with optimal performance
 
 ---
 
@@ -137,6 +155,7 @@ Upon completing this comprehensive chapter, readers will achieve:
 | Llama.cpp | Q4_K_M | ~4GB | 2-3x | Cross-platform deployment |
 | Olive | INT4 | 60-75% reduction | 2-6x | Enterprise workflows |
 | OpenVINO | INT8/INT4 | 50-75% reduction | 2-5x | Intel hardware optimization |
+| QNN | INT8/INT4 | 50-80% reduction | 5-15x | Qualcomm mobile/edge |
 | MLX | 4-bit | ~4GB | 2-4x | Apple Silicon optimization |
 
 ## 🚀 Next Steps and Advanced Applications
@@ -147,4 +166,4 @@ This chapter provides a complete foundation for:
 - Commercial AI application development
 - Large-scale enterprise edge AI deployments
 
-The knowledge from these six sections offers a comprehensive toolkit for navigating the rapidly evolving landscape of edge AI model optimization and deployment.
+The knowledge from these seven sections offers a comprehensive toolkit for navigating the rapidly evolving landscape of edge AI model optimization and deployment.

@@ -2,6 +2,115 @@
 
 All notable changes to EdgeAI for Beginners are documented here. This project uses date-based entries and the Keep a Changelog style (Added, Changed, Fixed, Removed, Docs, Moved).
 
+## 2025-10-30
+
+### Added - Module06 AI Agents Comprehensive Enhancement
+- **Microsoft Agent Framework Integration** (`Module06/01.IntroduceAgent.md`):
+  - Complete section on Microsoft Agent Framework for production-ready agent development
+  - Detailed integration patterns with Foundry Local for edge deployment
+  - Multi-agent orchestration examples with specialized SLM models
+  - Enterprise deployment patterns with resource management and monitoring
+  - Security and compliance features for edge agent systems
+  - Real-world implementation examples (retail, healthcare, customer service)
+
+- **Production SLM Agent Deployment Strategies**:
+  - **Foundry Local**: Complete enterprise-grade edge AI runtime documentation with installation, configuration, and production patterns
+  - **Ollama**: Enhanced community-focused deployment with comprehensive monitoring and model management
+  - **VLLM**: High-performance inference engine with advanced optimization techniques and enterprise features
+  - Production deployment checklists and comparison tables for all three platforms
+
+- **Edge-Optimized SLM Frameworks Enhancement**:
+  - **ONNX Runtime**: New comprehensive section for cross-platform SLM agent deployment
+  - Universal deployment patterns across Windows, Linux, macOS, iOS, and Android
+  - Hardware acceleration options (CPU, GPU, NPU) with automatic detection
+  - Production-ready features and agent-specific optimizations
+  - Complete implementation examples with Microsoft Agent Framework integration
+
+- **References and Further Reading**:
+  - Comprehensive resource library with 100+ authoritative sources
+  - Core research papers on AI agents and Small Language Models
+  - Official documentation for all major frameworks and tools
+  - Industry reports, market analysis, and technical benchmarks
+  - Educational resources, conferences, and community forums
+  - Standards, specifications, and compliance frameworks
+
+### Changed - Module06 Content Modernization
+- **Enhanced Learning Objectives**: Added Microsoft Agent Framework mastery and edge deployment capabilities
+- **Production Focus**: Shifted from conceptual to implementation-ready guidance with production examples
+- **Code Examples**: Updated all examples to use modern SDK patterns and best practices
+- **Architecture Patterns**: Added hierarchical agent architectures and edge-to-cloud coordination
+- **Performance Optimization**: Enhanced with resource management and auto-scaling recommendations
+
+### Docs - Module06 Structure Enhancement
+- **Comprehensive Agent Framework Coverage**: From basic concepts to enterprise deployment
+- **Production Deployment Strategies**: Complete guides for Foundry Local, Ollama, and VLLM
+- **Cross-Platform Optimization**: Added ONNX Runtime for universal deployment
+- **Resource Library**: Extensive references for continued learning and implementation
+
+### Added - Module06 Model Context Protocol (MCP) Documentation Update
+- **MCP Introduction Modernization** (`Module06/03.IntroduceMCP.md`):
+  - Updated with latest MCP specifications from modelcontextprotocol.io (2025-06-18 version)
+  - Added official USB-C analogy for standardized AI application connections
+  - Updated architecture section with official two-layer design (Data Layer + Transport Layer)
+  - Enhanced core primitives documentation with server primitives (Tools, Resources, Prompts) and client primitives (Sampling, Elicitation, Logging)
+
+- **Comprehensive MCP References and Resources**:
+  - Added **MCP for Beginners** link (https://aka.ms/mcp-for-beginners) 
+  - Official MCP documentation and specifications (modelcontextprotocol.io)
+  - Development resources including MCP Inspector and reference implementations
+  - Technical standards (JSON-RPC 2.0, JSON Schema, OpenAPI, Server-Sent Events)
+
+
+### Added - Module04 Qualcomm QNN Integration
+- **New Section 7: Qualcomm QNN Optimization Suite** (`Module04/05.QualcommQNN.md`):
+  - Comprehensive 400+ line guide covering Qualcomm's unified AI inference framework
+  - Detailed coverage of heterogeneous computing (Hexagon NPU, Adreno GPU, Kryo CPU)
+  - Hardware-aware optimization for Snapdragon platforms with intelligent workload distribution
+  - Advanced quantization techniques (INT8, INT16, mixed-precision) for mobile deployment
+  - Power-efficient inference optimization for battery-powered devices and real-time applications
+  - Complete installation guide with QNN SDK setup and environment configuration
+  - Practical examples: PyTorch to QNN conversion, multi-backend optimization, context binary generation
+  - Advanced usage patterns: custom backend configuration, dynamic quantization, performance profiling
+  - Comprehensive troubleshooting section and community resources
+
+- **Enhanced Module04 structure**:
+  - Updated README.md to include 7 progressive sections (was 6)
+  - Added Qualcomm QNN to performance benchmarks table (5-15x speed improvement, 50-80% memory reduction)
+  - Comprehensive learning outcomes for mobile AI deployment and power optimization
+
+### Changed - Module04 Documentation Updates
+- **Microsoft Olive documentation enhancement** (`Module04/03.MicrosoftOlive.md`):
+  - Added comprehensive "Olive Recipes Repository" section covering 100+ pre-built optimization recipes
+  - Detailed coverage of supported model families (Phi, Llama, Qwen, Gemma, Mistral, DeepSeek)
+  - Practical usage examples for recipe customization and community contributions
+  - Enhanced with performance benchmarks and integration guidance
+
+- **Section reordering in Module04**:
+  - Apple MLX moved to Section 5 (was Section 6)
+  - Workflow Synthesis moved to Section 6 (was Section 7)  
+  - Qualcomm QNN positioned as Section 7 (specialized mobile/edge focus)
+  - Updated all file references and navigation links accordingly
+
+### Fixed - Workshop Sample Validation
+- **chat_bootstrap.py validation and repair**:
+  - Fixed corrupted import statement (`util.util.workshop_utils` → `util.workshop_utils`)
+  - Created missing `__init__.py` in util package for proper Python module resolution
+  - Installed required dependencies (openai, foundry-local-sdk) in conda environment
+  - Successfully validated sample execution with both default and custom prompts
+  - Confirmed integration with Foundry Local service and model loading (phi-4-mini with CUDA optimization)
+
+### Docs - Comprehensive Guide Updates
+- **Module04 README.md complete restructure**:
+  - Added Qualcomm QNN as major optimization framework alongside OpenVINO, Olive, MLX
+  - Updated chapter learning outcomes to include mobile AI deployment and power optimization
+  - Enhanced performance comparison table with QNN metrics and mobile/edge use cases
+  - Maintained logical progression from enterprise solutions to platform-specific optimizations
+
+- **Cross-references and navigation**:
+  - Updated all internal links and file references for new section numbering
+  - Enhanced workflow synthesis description to include mobile, desktop, and cloud environments
+  - Added comprehensive resource links for Qualcomm developer ecosystem
+
 ## 2025-10-08
 
 ### Added - Workshop Comprehensive Update
