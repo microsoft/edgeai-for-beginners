@@ -17,7 +17,7 @@ Compare Large Language Models (LLMs) and Small Language Models (SLMs) for local 
 - Sessions 1–3 completed
 - `chainlit` installed (already in `requirements.txt` for Module08)
 - WebGPU-capable browser (Edge / Chrome latest on Windows 11)
-- Foundry Local running (`foundry status`)
+- Foundry Local running (`foundry service status`)
 
 ### Cross-Platform Notes
 
@@ -52,16 +52,6 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 ```
 
 Track: response depth, factual accuracy, stylistic richness, latency.
-
-### 2. ONNX Runtime Acceleration (5 min)
-
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
 
 Observe throughput changes after enabling GPU vs CPU-only.
 
@@ -244,7 +234,7 @@ Track both latency components to report blended average cost.
 | WebGPU Caching | Faster JS init | Reduce recompile overhead | Cache compiled shader artifacts (future runtime capability) |
 | Deterministic QA Set | Fair model comparison | Remove variance | Fixed prompt list + `temperature=0` for evaluation runs |
 | Output Scoring | Structured quality lens | Move beyond anecdotes | Simple rubric: coherence / factuality / brevity (1–5) |
-| Energy / Resource Notes | Classroom discussion | Show trade-offs | Use OS monitors (`foundry system info`, Task Manager, `nvidia-smi`) + benchmark script outputs |
+| Energy / Resource Notes | Classroom discussion | Show trade-offs | Use OS monitors (Task Manager, `nvidia-smi`) + benchmark script outputs |
 | Cost Emulation | Pre-cloud justification | Plan scaling | Map tokens to hypothetical cloud pricing for TCO narrative |
 | Latency Decomposition | Identify bottlenecks | Target optimizations | Measure prompt prep, request send, first token, full completion |
 | RAG + LLM Fallback | Quality safety net | Improve difficult queries | If SLM answer length < threshold or low confidence → escalate |

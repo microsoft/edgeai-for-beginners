@@ -399,7 +399,6 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## Additional Resources
 
 - `QUICK_START.md` - Getting started guide
-- `SDK_MIGRATION_NOTES.md` - SDK update details
 - `Workshop/samples/*/README.md` - Sample-specific guides
 
 ---

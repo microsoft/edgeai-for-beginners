@@ -19,7 +19,6 @@ By the end you will be able to:
 - Sessions 1 & 2 completed
 - Python environment with `foundry-local-sdk` installed
 - At least 15GB free disk for multiple model caches
-- Optional: GPU/WebGPU acceleration enabled (`foundry config list`)
 
 ### Cross-Platform Environment Quick Start
 
