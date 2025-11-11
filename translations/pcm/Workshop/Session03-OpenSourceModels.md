@@ -1,0 +1,295 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
+  "translation_date": "2025-11-11T17:40:54+00:00",
+  "source_file": "Workshop/Session03-OpenSourceModels.md",
+  "language_code": "pcm"
+}
+-->
+# Session 3: Open-Source Models for Foundry Local
+
+## Abstract
+
+Learn how to carry Hugging Face and other open-source models enter Foundry Local. You go sabi how to choose models, contribute to community workflows, compare performance, and extend Foundry with custom model registrations. Dis session dey follow weekly "Model Mondays" exploration themes and e go help you evaluate and use open-source models locally before you scale am go Azure.
+
+## Learning Objectives
+
+By the time we finish, you go fit:
+
+- **Discover & Evaluate**: Find models wey fit (mistral, gemma, qwen, deepseek) based on quality vs resource trade-offs.
+- **Load & Run**: Use Foundry Local CLI to download, cache, and run community models.
+- **Benchmark**: Use consistent latency + token throughput + quality heuristics.
+- **Extend**: Register or adapt custom model wrapper wey follow SDK-compatible patterns.
+- **Compare**: Create structured comparisons for SLM vs mid-size LLM selection decisions.
+
+## Prerequisites
+
+- You don complete Sessions 1 & 2
+- Python environment wey get `foundry-local-sdk` installed
+- At least 15GB free disk space for model caches
+- Optional: GPU/WebGPU acceleration enabled (`foundry config list`)
+
+### Cross-Platform Environment Quick Start
+
+Windows PowerShell:
+```powershell
+py -m venv .venv
+ .\.venv\Scripts\Activate.ps1
+pip install --upgrade pip
+pip install foundry-local-sdk openai numpy
+```
+
+macOS / Linux:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai numpy
+```
+
+If you dey benchmark from macOS against Windows host service, set:
+```bash
+export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
+```
+
+
+## Demo Flow (30 min)
+
+### 1. Load Hugging Face Models via CLI (8 min)
+
+```powershell
+# List catalog entries (filter manually if needed)
+foundry model list
+
+# Download a set of comparison targets
+foundry model download mistral-7b
+foundry model download gemma-2-2b
+foundry model download qwen2.5-0.5b
+
+# Verify cache
+foundry cache list
+```
+
+
+### 2. Run & Quick Probe (5 min)
+
+```powershell
+foundry model run qwen2.5-0.5b
+foundry model run qwen2.5-0.5b --prompt "List three benefits of local inference."
+
+foundry model run mistral-7b
+foundry model run mistral-7b --prompt "Explain retrieval augmented generation in one paragraph."
+```
+
+
+### 3. Benchmark Script (8 min)
+
+Create `samples/03-oss-models/benchmark_models.py`:
+
+```python
+#!/usr/bin/env python3
+"""Lightweight benchmarking for open-source models in Foundry Local.
+Metrics: first token latency, total latency, tokens/sec (approx via usage), model size indicator.
+Reference SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+"""
+
+import time, statistics, json
+from openai import OpenAI
+
+MODELS = [
+    "qwen2.5-0.5b",
+    "gemma-2-2b",
+    "mistral-7b",
+]
+
+PROMPT = "Explain the principle of retrieval augmented generation in 2 sentences."
+ROUNDS = 3
+
+client = OpenAI(base_url="http://localhost:5273/v1", api_key="not-needed")
+
+def run_round(model: str):
+    start = time.time()
+    resp = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": PROMPT}],
+        max_tokens=150,
+        temperature=0.2,
+        stream=False
+    )
+    end = time.time()
+    usage = getattr(resp, "usage", None)
+    total_tokens = usage.total_tokens if usage else None
+    return {
+        "latency_sec": end - start,
+        "total_tokens": total_tokens,
+        "tokens_per_sec": (total_tokens / (end - start)) if (total_tokens and (end-start) > 0) else None,
+        "sample_response": resp.choices[0].message.content[:160].replace("\n", " ")
+    }
+
+def benchmark_model(model: str):
+    results = [run_round(model) for _ in range(ROUNDS)]
+    latencies = [r["latency_sec"] for r in results]
+    tps = [r["tokens_per_sec"] for r in results if r["tokens_per_sec"]]
+    return {
+        "model": model,
+        "rounds": ROUNDS,
+        "latency_avg": statistics.mean(latencies),
+        "latency_p95": statistics.quantiles(latencies, n=20)[-1] if len(latencies) > 1 else latencies[0],
+        "tokens_per_sec_avg": statistics.mean(tps) if tps else None,
+        "sample": results[-1]["sample_response"]
+    }
+
+def main():
+    summary = [benchmark_model(m) for m in MODELS]
+    print(json.dumps(summary, indent=2))
+    print("\nInterpretation Tips:\n- latency_avg: lower better\n- tokens_per_sec_avg: higher better\n- Compare quality manually on sample outputs.")
+
+if __name__ == "__main__":
+    main()
+```
+
+Run:
+
+```powershell
+python samples/03-oss-models/benchmark_models.py
+```
+
+
+### 4. Compare Performance (5 min)
+
+Talk about trade-offs: load time, memory footprint (check Task Manager / `nvidia-smi` / OS resource monitor), output quality vs speed. Use Python benchmark script (Session 3) for latency & throughput; repeat after GPU acceleration dey enabled.
+
+### 5. Starter Project (4 min)
+
+Create model comparison report generator (extend benchmarking script with markdown export).
+
+## Starter Project: Extend `03-huggingface-models`
+
+Make the sample better by:
+
+1. Adding benchmark aggregation + CSV/Markdown output.
+2. Adding simple qualitative scoring (prompt pair set + manual annotation stub file).
+3. Adding JSON config (`models.json`) for pluggable model list & prompt set.
+
+## Validation Checklist
+
+```powershell
+foundry cache list
+foundry model run qwen2.5-0.5b
+curl http://localhost:5273/v1/models
+```
+
+All target models suppose show and respond to probe chat request.
+
+## Sample Scenario & Workshop Mapping
+
+| Workshop Script | Scenario | Goal | Prompt / Dataset Source |
+|-----------------|----------|------|-------------------------|
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge platform team dey choose default SLM for embedded summarizer | Create latency + p95 + tokens/sec comparison across candidate models | Inline `PROMPT` var + environment `BENCH_MODELS` list |
+
+### Scenario Narrative
+
+Product engineering team need choose default lightweight summarization model for offline meeting-notes feature. Dem dey run controlled deterministic benchmarks (temperature=0) across fixed prompt set (see example below) and collect latency + throughput metrics with and without GPU acceleration.
+
+### Example Prompt Set JSON (expandable)
+
+```json
+[
+    "Explain the principle of retrieval augmented generation in 2 sentences.",
+    "List 3 privacy benefits of local inference.",
+    "Summarize why model size impacts latency on consumer hardware.",
+    "Provide two scenarios where an SLM is preferable to an LLM."
+]
+```
+
+Loop each prompt per model, capture per‑prompt latency to get distribution metrics and find outliers.
+
+## Model Selection Framework
+
+| Dimension | Metric | Why E Matter |
+|----------|--------|--------------|
+| Latency | avg / p95 | User experience consistency |
+| Throughput | tokens/sec | Batch & streaming scalability |
+| Memory | resident size | Device fit & concurrency |
+| Quality | rubric prompts | Task suitability |
+| Footprint | disk cache | Distribution & updates |
+| License | use allowance | Commercial compliance |
+
+## Extending With Custom Model
+
+High-level pattern (pseudo):
+
+```python
+# pseudo_adapter.py (conceptual)
+class CustomModelAdapter:
+    def load(self, weights_path: str): ...
+    def generate(self, prompt: str, **params) -> str: ...
+
+# Register with local routing (future extensibility point)
+```
+
+Check official repo for latest adapter interfaces:
+https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+
+## Troubleshooting
+
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| OOM on mistral-7b | RAM/GPU no reach | Stop other models; try smaller variant |
+| Slow first response | Cold load | Keep warm with periodic lightweight prompt |
+| Download stalls | Network problem | Retry; prefetch during off-peak |
+
+## References
+
+- Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- Model Mondays: https://aka.ms/model-mondays
+- Hugging Face Model Discovery: https://huggingface.co/models
+
+---
+
+**Session Duration**: 30 min (+ optional deep dive)  
+**Difficulty**: Intermediate
+
+### Optional Enhancements
+
+| Enhancement | Benefit | How |
+|-------------|---------|-----|
+| Streaming First-Token Latency | Measures perceived responsiveness | Run benchmark with `BENCH_STREAM=1` (enhanced script in `Workshop/samples/session03`) |
+| Deterministic Mode | Stable regression comparisons | `temperature=0`, fixed prompt set, capture JSON outputs under version control |
+| Quality Rubric Scoring | Adds qualitative dimension | Maintain `prompts.json` with expected facets; annotate scores (1–5) manually or via secondary model |
+| CSV / Markdown Export | Shareable report | Extend script to write `benchmark_report.md` with table & highlights |
+| Model Capability Tags | Helps automated routing later | Maintain `models.json` with `{alias: {capabilities:[], size_mb:..}}` |
+| Cache Warmup Phase | Reduce cold-start bias | Execute one warm round before timing loop (already implemented) |
+| Percentile Accuracy | Robust tail latency | Use numpy percentile (already in refactored script) |
+| Token Cost Approximation | Economic comparison | Approx cost = (tokens/sec * avg tokens per request) * energy heuristic |
+| Auto-Skipping Failed Models | Resilience in batch runs | Wrap each benchmark in try/except and mark status field |
+
+#### Minimal Markdown Export Snippet
+
+```python
+with open("benchmark_report.md", "w") as f:
+        f.write("|Model|Avg Latency|p95|TPS|\n|---|---|---|---|\n")
+        for row in summary:
+                f.write(f"|{row['alias']}|{row['latency_avg']:.2f}|{row['latency_p95']:.2f}|{(row.get('tokens_per_sec_avg') or 0):.1f}|\n")
+```
+
+
+#### Deterministic Prompt Set Example
+
+```json
+[
+    "Summarize retrieval augmented generation.",
+    "List 3 privacy benefits of local inference.",
+    "Explain when to choose an SLM over an LLM."
+]
+```
+
+Loop the static list instead of random prompts for comparable metrics across commits.
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:  
+Dis dokyument don use AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am accurate, abeg make you sabi say machine translation fit get mistake or no dey correct well. Di original dokyument wey dey for im native language na di main source wey you go fit trust. For important information, e good make professional human translation dey use. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

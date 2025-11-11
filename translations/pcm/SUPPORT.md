@@ -1,0 +1,28 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "368870f8ab79f903ad80b6a985829516",
+  "translation_date": "2025-11-11T17:20:45+00:00",
+  "source_file": "SUPPORT.md",
+  "language_code": "pcm"
+}
+-->
+# Support
+
+## How you go fit report wahala and get help  
+
+Dis project dey use GitHub Issues to track bugs and feature requests. Abeg make you search di issues wey don dey already before you go report new one so you no go repeat am. If you wan report new wahala, abeg file your bug or feature request as new Issue.
+
+If you need help or you get question about how to use dis project, abeg:
+- Check di [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) wey experts and other developers dey gather.
+
+## Microsoft Support Policy  
+
+Support for di Model Context Protocol (MCP) for Beginners project dey limited to di resources wey dem list above.
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:  
+Dis dokyument don use AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am accurate, abeg sabi say automated translations fit get mistake or no dey correct well. Di original dokyument wey dey for im native language na di main source wey you go fit trust. For important information, e better make professional human translation dey use. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
