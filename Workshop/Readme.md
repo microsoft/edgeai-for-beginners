@@ -448,18 +448,13 @@ The workshop deliberately uses only currently documented / stable Foundry Local 
 | Category | Command | Purpose |
 |----------|---------|---------|
 | Core | `foundry --version` | Show installed version |
-| Core | `foundry init` | Initialize configuration |
 | Service | `foundry service start` | Start local service (if not auto) |
-| Service | `foundry status` | Show service status |
+| Service | `foundry service status` | Show service status |
 | Models | `foundry model list` | List catalog / available models |
 | Models | `foundry model download <alias>` | Download model weights into cache |
 | Models | `foundry model run <alias>` | Launch (load) a model locally; combine with `--prompt` for one‑shot |
 | Models | `foundry model unload <alias>` / `foundry model stop <alias>` | Unload a model from memory (if supported) |
 | Cache | `foundry cache list` | List cached (downloaded) models |
-| System | `foundry system info` | Hardware & acceleration capabilities snapshot |
-| System | `foundry system gpu-info` | GPU diagnostic info |
-| Config | `foundry config list` | Show current config values |
-| Config | `foundry config set <key> <value>` | Update configuration |
 
 ### One‑Shot Prompt Pattern
 
@@ -485,7 +480,7 @@ This executes a single prompt/response cycle then exits.
 
 - Latency, p95, tokens/sec: `samples/session03/benchmark_oss_models.py`
 - First‑token latency (streaming): set `BENCH_STREAM=1`
-- Resource usage: OS monitors (Task Manager, Activity Monitor, `nvidia-smi`) + `foundry system info`.
+- Resource usage: OS monitors (Task Manager, Activity Monitor, `nvidia-smi`).
 
 As new CLI telemetry commands stabilize upstream, they can be incorporated with minimal edits to session markdowns.
 
@@ -528,7 +523,6 @@ chmod +x .git/hooks/pre-commit
 | Download (cache) model | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # triggers download/load` | Manager picks best variant if alias maps to multiple builds |
 | List catalog | `foundry model list` | `# use manager for each alias or maintain known list` | CLI aggregates; SDK currently per-alias instantiation |
 | List cached models | `foundry cache list` | `manager.list_cached_models()` | After manager init (any alias) |
-| Enable GPU acceleration | `foundry config set compute.onnx.enable_gpu true` | `# CLI action; SDK assumes config already applied` | Configuration is external side effect |
 | Get endpoint URL | (implicit) | `manager.endpoint` | Used to create OpenAI-compatible client |
 | Warm a model | `foundry model run <alias>` then first prompt | `chat_once(alias, messages=[...])` (utility) | Utilities handle initial cold latency warmup |
 | Measure latency | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (or new exporter script) | Prefer script for consistent metrics |

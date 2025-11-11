@@ -77,9 +77,6 @@ foundry --version
 
 # View available commands
 foundry --help
-
-# Initialize configuration (creates default settings)
-foundry init
 ```
 
 Expected output should show version information and available commands.
@@ -309,7 +306,6 @@ Congratulations! You've successfully:
 # Installation & Setup
 foundry --version              # Check installation
 foundry --help                 # View all commands
-foundry init                   # Initialize configuration
 
 # Model Management
 foundry model list             # List available models
