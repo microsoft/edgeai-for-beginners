@@ -292,8 +292,6 @@ Comprehensive guides and references:
 | [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Command & API cheat sheet | Need quick answers |
 | [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | SDK patterns & examples | Writing code |
 | [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Environment variable guide | Configuring samples |
-| [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Latest sample improvements | Understanding changes |
-| [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Migration guide | Upgrading code |
 | [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Common issues & fixes | Debugging problems |
 
 ---

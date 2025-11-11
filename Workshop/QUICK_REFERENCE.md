@@ -200,8 +200,6 @@ for chunk in stream:
 
 - **SDK Docs**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Quick Ref**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Update Summary**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migration Notes**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 

@@ -271,7 +271,6 @@ foundry model run phi-4-mini
 1. Complete all workshop sessions in order
 2. Experiment with different models
 3. Modify samples for your use cases
-4. Review `SDK_MIGRATION_NOTES.md` for advanced patterns
 
 ---
 
