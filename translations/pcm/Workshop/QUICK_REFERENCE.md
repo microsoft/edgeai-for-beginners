@@ -1,0 +1,273 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "93615ab69c8773b52c4437d537f6acea",
+  "translation_date": "2025-11-11T17:41:57+00:00",
+  "source_file": "Workshop/QUICK_REFERENCE.md",
+  "language_code": "pcm"
+}
+-->
+# Workshop Samples - Quick Reference Card
+
+**Last Updated**: October 8, 2025
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# 1. Ensure Foundry Local is running
+foundry service status
+foundry model run phi-4-mini
+
+# 2. Install dependencies
+pip install -r Workshop/requirements.txt
+
+# 3. Run a sample
+cd Workshop/samples
+python -m session01.chat_bootstrap "What is edge AI?"
+```
+
+---
+
+## 📂 Sample Overview
+
+| Session | Sample | Purpose | Time |
+|---------|--------|---------|------|
+| 01 | `chat_bootstrap.py` | Basic chat + streaming | ~30s |
+| 02 | `rag_pipeline.py` | RAG wit embeddings | ~45s |
+| 02 | `rag_eval_ragas.py` | RAG evaluation | ~60s |
+| 03 | `benchmark_oss_models.py` | Model benchmarking | ~2m |
+| 04 | `model_compare.py` | SLM vs LLM | ~45s |
+| 05 | `agents_orchestrator.py` | Multi-agent system | ~60s |
+| 06 | `models_router.py` | Intent routing | ~45s |
+| 06 | `models_pipeline.py` | Multi-step pipeline | ~60s |
+
+---
+
+## 🛠️ Environment Variables
+
+### Essential
+```bash
+# Choose model
+set FOUNDRY_LOCAL_ALIAS=phi-4-mini
+
+# Override endpoint (optional)
+set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
+
+# Show token usage
+set SHOW_USAGE=1
+```
+
+### Session-Specific
+```bash
+# Session 02: RAG
+set RAG_QUESTION="What is local inference?"
+set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
+
+# Session 03: Benchmarking
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
+set BENCH_ROUNDS=3
+set BENCH_STREAM=1
+
+# Session 04: Comparison
+set SLM_ALIAS=phi-4-mini
+set LLM_ALIAS=qwen2.5-7b
+
+# Session 05: Agents
+set AGENT_MODEL_PRIMARY=phi-4-mini
+set AGENT_QUESTION="Why use edge AI?"
+
+# Session 06: Pipeline
+set PIPELINE_TASK="Your task here"
+```
+
+---
+
+## ✅ Validation & Testing
+
+```bash
+# Validate syntax and imports
+python scripts/validate_samples.py
+
+# Validate specific session
+python scripts/validate_samples.py --session 01
+
+# Run smoke tests
+python scripts/test_samples.py --quick
+
+# Verbose testing
+python scripts/test_samples.py --verbose
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### Connection Error
+```bash
+# Check Foundry Local
+foundry service status
+
+# Start if needed
+foundry service start
+foundry model run phi-4-mini
+```
+
+### Import Error
+```bash
+# Install missing dependencies
+pip install sentence-transformers ragas datasets
+
+# Or install all
+pip install -r Workshop/requirements.txt
+```
+
+### Model Not Found
+```bash
+# List available models
+foundry model ls
+
+# Download model
+foundry model download phi-4-mini
+```
+
+### Slow Performance
+```bash
+# Use smaller model
+set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
+
+# Reduce benchmark rounds
+set BENCH_ROUNDS=1
+```
+
+---
+
+## 📖 Common Patterns
+
+### Basic Chat
+```python
+from workshop_utils import chat_once
+
+text, usage = chat_once(
+    'phi-4-mini',
+    messages=[{"role": "user", "content": "Hello"}],
+    max_tokens=100,
+    temperature=0.7
+)
+```
+
+### Get Client
+```python
+from workshop_utils import get_client
+
+manager, client, model_id = get_client(
+    alias='phi-4-mini',
+    endpoint=None  # Auto-detect
+)
+```
+
+### Error Handling
+```python
+try:
+    manager, client, model_id = get_client(alias)
+except Exception as e:
+    print(f"[ERROR] Failed: {e}")
+    print("[INFO] Check: foundry service status")
+    sys.exit(1)
+```
+
+### Streaming
+```python
+stream = client.chat.completions.create(
+    model=model_id,
+    messages=messages,
+    stream=True
+)
+
+for chunk in stream:
+    if chunk.choices[0].delta.content:
+        print(chunk.choices[0].delta.content, end="", flush=True)
+```
+
+---
+
+## 📊 Model Selection
+
+| Model | Size | Best For | Speed |
+|-------|------|----------|-------|
+| `qwen2.5-0.5b` | 0.5B | Fast classification | ⚡⚡⚡ |
+| `qwen2.5-coder-0.5b` | 0.5B | Quick code gen | ⚡⚡⚡ |
+| `gemma-2-2b` | 2B | Creative writing | ⚡⚡ |
+| `phi-3.5-mini` | 3.5B | Code, refactoring | ⚡⚡ |
+| `phi-4-mini` | 4B | General, summary | ⚡⚡ |
+| `qwen2.5-7b` | 7B | Complex reasoning | ⚡ |
+
+---
+
+## 🔗 Resources
+
+- **SDK Docs**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **Quick Ref**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
+- **Update Summary**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
+- **Migration Notes**: `Workshop/SDK_MIGRATION_NOTES.md`
+
+---
+
+## 💡 Tips
+
+1. **Cache clients**: `workshop_utils` go help you cache am
+2. **Use smaller models**: Start wit `qwen2.5-0.5b` for testing
+3. **Enable usage stats**: Set `SHOW_USAGE=1` to track tokens
+4. **Batch processing**: Process plenty prompts one by one
+5. **Lower max_tokens**: E go reduce latency for quick response
+
+---
+
+## 🎯 Sample Workflows
+
+### Test Everything
+```bash
+python scripts/validate_samples.py
+python scripts/test_samples.py --quick
+```
+
+### Benchmark Models
+```bash
+cd samples
+set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
+set BENCH_ROUNDS=3
+python -m session03.benchmark_oss_models
+```
+
+### RAG Pipeline
+```bash
+cd samples
+set RAG_QUESTION="What is RAG?"
+python -m session02.rag_pipeline
+```
+
+### Multi-Agent System
+```bash
+cd samples
+set AGENT_QUESTION="Why edge AI for healthcare?"
+python -m session05.agents_orchestrator
+```
+
+---
+
+**Quick Help**: Run any sample wit `--help` from the `samples` directory or check the docstring:
+```bash
+python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
+```
+
+---
+
+**All samples don update October 2025 wit Foundry Local SDK best practices** ✨
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:  
+Dis dokyument don use AI transleto service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am accurate, abeg sabi say machine translation fit get mistake or no dey correct well. Di original dokyument for im native language na di main source wey you go trust. For important mata, e good make professional human transleto check am. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
