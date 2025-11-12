@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T23:03:14+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T00:11:31+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "cs"
 }
 -->
-# Ukázky workshopu - Rychlá referenční karta
+# Workshop Samples - Rychlá referenční karta
 
 **Poslední aktualizace**: 8. října 2025
 
@@ -33,14 +33,14 @@ python -m session01.chat_bootstrap "What is edge AI?"
 ## 📂 Přehled ukázek
 
 | Sezení | Ukázka | Účel | Čas |
-|--------|--------|------|------|
+|--------|--------|------|-----|
 | 01 | `chat_bootstrap.py` | Základní chat + streamování | ~30s |
 | 02 | `rag_pipeline.py` | RAG s embeddingy | ~45s |
 | 02 | `rag_eval_ragas.py` | Hodnocení RAG | ~60s |
-| 03 | `benchmark_oss_models.py` | Porovnání modelů | ~2m |
+| 03 | `benchmark_oss_models.py` | Benchmarking modelů | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Systém s více agenty | ~60s |
-| 06 | `models_router.py` | Směrování záměrů | ~45s |
+| 06 | `models_router.py` | Směrování podle záměru | ~45s |
 | 06 | `models_pipeline.py` | Vícekrokový proces | ~60s |
 
 ---
@@ -84,7 +84,7 @@ set PIPELINE_TASK="Your task here"
 
 ---
 
-## ✅ Ověření a testování
+## ✅ Validace a testování
 
 ```bash
 # Validate syntax and imports
@@ -201,22 +201,20 @@ for chunk in stream:
 | `gemma-2-2b` | 2B | Kreativní psaní | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Kód, refaktoring | ⚡⚡ |
 | `phi-4-mini` | 4B | Obecné, shrnutí | ⚡⚡ |
-| `qwen2.5-7b` | 7B | Složitější uvažování | ⚡ |
+| `qwen2.5-7b` | 7B | Komplexní uvažování | ⚡ |
 
 ---
 
 ## 🔗 Zdroje
 
 - **SDK dokumentace**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Rychlá reference**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Shrnutí aktualizací**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Poznámky k migraci**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Rychlá referenční karta**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 
 ---
 
 ## 💡 Tipy
 
-1. **Cache klientů**: `workshop_utils` to za vás ukládá do mezipaměti
+1. **Cache klientů**: `workshop_utils` se postará o cache
 2. **Používejte menší modely**: Začněte s `qwen2.5-0.5b` pro testování
 3. **Povolte statistiky využití**: Nastavte `SHOW_USAGE=1` pro sledování tokenů
 4. **Zpracování v dávkách**: Zpracovávejte více promptů postupně
@@ -226,13 +224,13 @@ for chunk in stream:
 
 ## 🎯 Ukázkové pracovní postupy
 
-### Otestujte vše
+### Testování všeho
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### Porovnání modelů
+### Benchmarking modelů
 ```bash
 cd samples
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T21:32:35+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T22:44:02+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "pt"
 }
@@ -40,7 +40,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 03 | `benchmark_oss_models.py` | Benchmarking de modelos | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Sistema multi-agente | ~60s |
-| 06 | `models_router.py` | Roteamento de intenções | ~45s |
+| 06 | `models_router.py` | Roteamento por intenção | ~45s |
 | 06 | `models_pipeline.py` | Pipeline de múltiplas etapas | ~60s |
 
 ---
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **Documentação SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Referência Rápida**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Resumo de Atualizações**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Notas de Migração**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Aviso**:  
 Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

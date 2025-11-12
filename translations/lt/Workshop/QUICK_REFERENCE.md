@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T23:50:00+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T00:54:20+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "lt"
 }
 -->
-# Dirbtuvių pavyzdžiai - Greitoji atmintinė
+# Dirbtuvių pavyzdžiai - Greitos nuorodos kortelė
 
 **Paskutinį kartą atnaujinta**: 2025 m. spalio 8 d.
 
@@ -39,9 +39,9 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 02 | `rag_eval_ragas.py` | RAG vertinimas | ~60s |
 | 03 | `benchmark_oss_models.py` | Modelių palyginimas | ~2m |
 | 04 | `model_compare.py` | SLM prieš LLM | ~45s |
-| 05 | `agents_orchestrator.py` | Daugiaveiksnių sistemų valdymas | ~60s |
+| 05 | `agents_orchestrator.py` | Daugiaveiksmių agentų sistema | ~60s |
 | 06 | `models_router.py` | Ketinimų nukreipimas | ~45s |
-| 06 | `models_pipeline.py` | Daugiapakopė dujotiekio sistema | ~60s |
+| 06 | `models_pipeline.py` | Daugiapakopė sistema | ~60s |
 
 ---
 
@@ -197,7 +197,7 @@ for chunk in stream:
 | Modelis | Dydis | Geriausiai tinka | Greitis |
 |---------|-------|------------------|---------|
 | `qwen2.5-0.5b` | 0.5B | Greita klasifikacija | ⚡⚡⚡ |
-| `qwen2.5-coder-0.5b` | 0.5B | Greitas kodo generavimas | ⚡⚡⚡ |
+| `qwen2.5-coder-0.5b` | 0.5B | Greita kodo generacija | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Kūrybinis rašymas | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Kodas, refaktoringas | ⚡⚡ |
 | `phi-4-mini` | 4B | Bendras, santrauka | ⚡⚡ |
@@ -208,9 +208,7 @@ for chunk in stream:
 ## 🔗 Ištekliai
 
 - **SDK dokumentacija**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Greitoji atmintinė**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Atnaujinimų santrauka**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migracijos pastabos**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Greita nuoroda**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 
 ---
 
@@ -220,7 +218,7 @@ for chunk in stream:
 2. **Naudokite mažesnius modelius**: Pradėkite nuo `qwen2.5-0.5b` testavimui
 3. **Įjunkite naudojimo statistiką**: Nustatykite `SHOW_USAGE=1`, kad stebėtumėte žetonus
 4. **Apdorokite partijomis**: Apdorokite kelis užklausimus iš eilės
-5. **Sumažinkite max_tokens**: Sumažina vėlavimą greitiems atsakymams
+5. **Sumažinkite max_tokens**: Sutrumpina atsakymo laiką
 
 ---
 
@@ -240,14 +238,14 @@ set BENCH_ROUNDS=3
 python -m session03.benchmark_oss_models
 ```
 
-### RAG dujotiekis
+### RAG sistema
 ```bash
 cd samples
 set RAG_QUESTION="What is RAG?"
 python -m session02.rag_pipeline
 ```
 
-### Daugiaveiksnių sistemų valdymas
+### Daugiaveiksmių agentų sistema
 ```bash
 cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus interpretavimus, atsiradusius naudojant šį vertimą.
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, kylančius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

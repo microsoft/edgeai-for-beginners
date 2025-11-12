@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T22:59:24+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-12T00:07:03+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "cs"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Předpoklady
 
-### 1. Instalace Foundry Local
+### 1. Nainstalujte Foundry Local
 
-Postupujte podle oficiálního instalačního průvodce:
+Postupujte podle oficiálního průvodce instalací:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -27,7 +27,7 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. Instalace Python závislostí
+### 2. Nainstalujte Python závislosti
 
 Z adresáře Workshop:
 
@@ -45,7 +45,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Spouštění ukázek z workshopu
+## Spuštění ukázek workshopu
 
 ### Sezení 01: Základní chat
 
@@ -135,7 +135,7 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**Testuje logiku směrování** s více záměry (kód, shrnutí, klasifikace)
+**Testuje logiku směrování** s různými záměry (kód, shrnutí, klasifikace)
 
 ### Sezení 06: Pipeline
 
@@ -147,7 +147,7 @@ python -m session06.models_pipeline
 
 ## Skripty
 
-### Export benchmark reportu
+### Export zprávy o benchmarku
 
 ```bash
 cd Workshop/scripts
@@ -160,17 +160,17 @@ python export_benchmark_markdown.py \
 
 **Výstup**: Tabulka v Markdownu + JSON metriky
 
-### Lintování CLI vzorů v Markdownu
+### Kontrola vzorů CLI v Markdownu
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**Účel**: Detekce zastaralých CLI vzorů v dokumentaci
+**Účel**: Detekce zastaralých vzorů CLI v dokumentaci
 
 ## Testování
 
-### Smoke testy
+### Rychlé testy
 
 ```bash
 cd Workshop
@@ -240,13 +240,13 @@ foundry model run phi-4-mini
 | Proměnná | Výchozí | Popis |
 |----------|---------|-------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Model pro vkládání |
-| `RAG_QUESTION` | Viz ukázka | Testovací otázka pro RAG |
+| `RAG_QUESTION` | Viz ukázka | Testovací otázka RAG |
 | `BENCH_MODELS` | Různé | Modely oddělené čárkou |
 | `BENCH_ROUNDS` | `3` | Iterace benchmarku |
-| `BENCH_PROMPT` | Viz ukázka | Výzva pro benchmark |
+| `BENCH_PROMPT` | Viz ukázka | Výzva benchmarku |
 | `BENCH_STREAM` | `0` | Měření latence prvního tokenu |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Primární model agenta |
-| `AGENT_MODEL_EDITOR` | Primární | Model editoru agenta |
+| `AGENT_MODEL_EDITOR` | Primární | Editor model agenta |
 | `SLM_ALIAS` | `phi-4-mini` | Malý jazykový model |
 | `LLM_ALIAS` | `qwen2.5-7b` | Velký jazykový model |
 | `COMPARE_PROMPT` | Viz ukázka | Výzva pro porovnání |
@@ -271,16 +271,15 @@ foundry model run phi-4-mini
 ## Získání pomoci
 
 1. Zkontrolujte stav služby: `foundry service status`
-2. Prohlédněte si logy: Zkontrolujte logy služby Foundry Local
+2. Zobrazte logy: Zkontrolujte logy služby Foundry Local
 3. Projděte dokumentaci SDK: https://github.com/microsoft/Foundry-Local
-4. Projděte ukázkový kód: Všechny ukázky obsahují podrobné docstringy
+4. Projděte ukázkový kód: Všechny ukázky obsahují podrobné komentáře
 
 ## Další kroky
 
-1. Dokončete všechna sezení workshopu v pořadí
+1. Dokončete všechna sezení workshopu postupně
 2. Experimentujte s různými modely
-3. Upravte ukázky pro své případy použití
-4. Projděte `SDK_MIGRATION_NOTES.md` pro pokročilé vzory
+3. Upravte ukázky podle svých potřeb
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

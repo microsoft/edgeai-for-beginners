@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T23:24:37+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-12T00:30:35+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "hr"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. Instalirajte Foundry Local
 
-Slijedite službeni vodič za instalaciju:  
+Slijedite službeni vodič za instalaciju:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -45,7 +45,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Pokretanje uzoraka iz radionice
+## Pokretanje primjera iz radionice
 
 ### Sesija 01: Osnovni chat
 
@@ -54,7 +54,7 @@ cd Workshop/samples
 python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
-**Varijable okruženja:**  
+**Varijable okruženja:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
@@ -67,14 +67,14 @@ cd Workshop/samples
 python -m session02.rag_pipeline
 ```
 
-**Varijable okruženja:**  
+**Varijable okruženja:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set RAG_QUESTION="Why use RAG with local inference?"
 set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
-### Sesija 02: RAG evaluacija (Ragas)
+### Sesija 02: Procjena RAG-a (Ragas)
 
 ```bash
 cd Workshop/samples
@@ -90,7 +90,7 @@ cd Workshop/samples
 python -m session03.benchmark_oss_models
 ```
 
-**Varijable okruženja:**  
+**Varijable okruženja:**
 ```bash
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
@@ -98,7 +98,7 @@ set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Izlaz**: JSON s metrikama latencije, propusnosti i prvog tokena
+**Izlaz**: JSON s metrikama kašnjenja, propusnosti i prvog tokena
 
 ### Sesija 04: Usporedba modela
 
@@ -107,7 +107,7 @@ cd Workshop/samples
 python -m session04.model_compare
 ```
 
-**Varijable okruženja:**  
+**Varijable okruženja:**
 ```bash
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
@@ -121,7 +121,7 @@ cd Workshop/samples
 python -m session05.agents_orchestrator
 ```
 
-**Varijable okruženja:**  
+**Varijable okruženja:**
 ```bash
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=phi-4-mini
@@ -147,7 +147,7 @@ python -m session06.models_pipeline
 
 ## Skripte
 
-### Izvoz izvještaja o benchmarku
+### Izvoz izvješća o benchmarku
 
 ```bash
 cd Workshop/scripts
@@ -177,7 +177,7 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**Testovi**: Osnovna funkcionalnost ključnih uzoraka
+**Testovi**: Osnovna funkcionalnost ključnih primjera
 
 ## Rješavanje problema
 
@@ -230,7 +230,7 @@ foundry model run phi-4-mini
 ### Osnovna konfiguracija
 | Varijabla | Zadano | Opis |
 |-----------|--------|------|
-| `FOUNDRY_LOCAL_ALIAS` | Razlikuje se | Alias modela koji se koristi |
+| `FOUNDRY_LOCAL_ALIAS` | Varira | Alias modela za korištenje |
 | `FOUNDRY_LOCAL_ENDPOINT` | Automatski | Prepisuje krajnju točku usluge |
 | `SHOW_USAGE` | `0` | Prikazuje statistiku korištenja tokena |
 | `RETRY_ON_FAIL` | `1` | Omogućuje logiku ponovnog pokušaja |
@@ -240,16 +240,16 @@ foundry model run phi-4-mini
 | Varijabla | Zadano | Opis |
 |-----------|--------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Model za ugrađivanje |
-| `RAG_QUESTION` | Pogledajte uzorak | Pitanje za RAG test |
-| `BENCH_MODELS` | Razlikuje se | Modeli odvojeni zarezom |
+| `RAG_QUESTION` | Pogledajte primjer | Testno pitanje za RAG |
+| `BENCH_MODELS` | Varira | Modeli odvojeni zarezom |
 | `BENCH_ROUNDS` | `3` | Iteracije benchmarka |
-| `BENCH_PROMPT` | Pogledajte uzorak | Prompt za benchmark |
-| `BENCH_STREAM` | `0` | Mjeri latenciju prvog tokena |
+| `BENCH_PROMPT` | Pogledajte primjer | Upit za benchmark |
+| `BENCH_STREAM` | `0` | Mjerenje kašnjenja prvog tokena |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Primarni model agenta |
 | `AGENT_MODEL_EDITOR` | Primarni | Model agenta urednika |
 | `SLM_ALIAS` | `phi-4-mini` | Mali jezični model |
 | `LLM_ALIAS` | `qwen2.5-7b` | Veliki jezični model |
-| `COMPARE_PROMPT` | Pogledajte uzorak | Prompt za usporedbu |
+| `COMPARE_PROMPT` | Pogledajte primjer | Upit za usporedbu |
 
 ## Preporučeni modeli
 
@@ -261,26 +261,25 @@ foundry model run phi-4-mini
 ### Proizvodni scenariji
 - **phi-4-mini** - Opća namjena
 - **deepseek-coder-1.3b** - Generiranje koda
-- **qwen2.5-7b** - Visokokvalitetni odgovori
+- **qwen2.5-7b** - Odgovori visoke kvalitete
 
-## SDK Dokumentacija
+## SDK dokumentacija
 
-- **Foundry Local**: https://github.com/microsoft/Foundry-Local  
+- **Foundry Local**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Dobivanje pomoći
 
-1. Provjerite status usluge: `foundry service status`  
-2. Pregledajte logove: Provjerite logove usluge Foundry Local  
-3. Pregledajte SDK dokumentaciju: https://github.com/microsoft/Foundry-Local  
-4. Pregledajte uzorak koda: Svi uzorci imaju detaljne docstringove  
+1. Provjerite status usluge: `foundry service status`
+2. Pregledajte logove: Provjerite logove usluge Foundry Local
+3. Pregledajte SDK dokumentaciju: https://github.com/microsoft/Foundry-Local
+4. Pregledajte primjere koda: Svi primjeri imaju detaljne docstringove
 
 ## Sljedeći koraci
 
-1. Završite sve sesije radionice redoslijedom  
-2. Eksperimentirajte s različitim modelima  
-3. Prilagodite uzorke za svoje slučajeve korištenja  
-4. Pregledajte `SDK_MIGRATION_NOTES.md` za napredne uzorke  
+1. Završite sve sesije radionice redoslijedom
+2. Eksperimentirajte s različitim modelima
+3. Prilagodite primjere za svoje slučajeve korištenja
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
-**Izjava o odricanju odgovornosti**:  
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Odricanje od odgovornosti**:  
 Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

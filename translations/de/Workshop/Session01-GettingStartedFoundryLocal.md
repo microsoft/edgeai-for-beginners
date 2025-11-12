@@ -1,499 +1,472 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "85fa559f498492b79de04e391c33687b",
-  "translation_date": "2025-10-28T20:09:54+00:00",
+  "original_hash": "8c30436578b1bd604c48233ecdd39701",
+  "translation_date": "2025-11-11T21:27:33+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "de"
 }
 -->
-# Sitzung 1: Einstieg in Foundry Local
+# Sitzung 1: Einführung in Foundry Local
 
 ## Zusammenfassung
 
-Beginnen Sie Ihre Reise mit Foundry Local, indem Sie es auf Windows 11 installieren und konfigurieren. Lernen Sie, wie Sie die CLI einrichten, Hardware-Beschleunigung aktivieren und Modelle für schnelle lokale Inferenz zwischenspeichern. Diese praktische Sitzung zeigt, wie Modelle wie Phi, Qwen, DeepSeek und GPT-OSS-20B mit reproduzierbaren CLI-Befehlen ausgeführt werden.
+Lernen Sie, wie Sie Ihre ersten KI-Modelle mit Microsoft Foundry Local installieren, konfigurieren und ausführen. Diese praktische Sitzung bietet eine schrittweise Einführung in die lokale Inferenz, von der Installation bis hin zur Erstellung Ihrer ersten Chat-Anwendung mit Modellen wie Phi-4, Qwen und DeepSeek.
 
 ## Lernziele
 
 Am Ende dieser Sitzung werden Sie:
 
-- **Installieren und Konfigurieren**: Foundry Local auf Windows 11 mit optimalen Leistungseinstellungen einrichten
+- **Installieren und Konfigurieren**: Foundry Local korrekt einrichten und die Installation überprüfen
 - **CLI-Operationen meistern**: Foundry Local CLI für Modellverwaltung und -bereitstellung nutzen
-- **Hardware-Beschleunigung aktivieren**: GPU-Beschleunigung mit ONNXRuntime oder WebGPU konfigurieren
-- **Mehrere Modelle bereitstellen**: Modelle wie phi-4, GPT-OSS-20B, Qwen und DeepSeek lokal ausführen
-- **Ihre erste App erstellen**: Bestehende Beispiele anpassen, um das Foundry Local Python SDK zu verwenden
+- **Ihr erstes Modell ausführen**: Ein lokales KI-Modell erfolgreich bereitstellen und damit interagieren
+- **Eine Chat-App erstellen**: Eine einfache Chat-Anwendung mit dem Foundry Local Python SDK entwickeln
+- **Lokale KI verstehen**: Die Grundlagen der lokalen Inferenz und Modellverwaltung begreifen
 
-# Modell testen (nicht-interaktive Einzelaufforderung)
-foundry model run phi-4-mini --prompt "Hallo, stell dich vor"
+## Voraussetzungen
 
-- Windows 11 (22H2 oder später)
-# Verfügbare Katalogmodelle auflisten (geladene Modelle erscheinen nach dem Ausführen)
-foundry model list
-## NOTE: Derzeit gibt es kein dediziertes `--running`-Flag; um zu sehen, welche geladen sind, starten Sie einen Chat oder überprüfen Sie die Servicelogs.
-- Python 3.10+ installiert
-- Visual Studio Code mit Python-Erweiterung
-- Administratorrechte für die Installation
+### Systemanforderungen
 
-### (Optional) Umgebungsvariablen
+- **Windows**: Windows 11 (22H2 oder später) ODER **macOS**: macOS 11+ (eingeschränkte Unterstützung)
+- **RAM**: Mindestens 8GB, empfohlen 16GB+
+- **Speicherplatz**: Mindestens 10GB freier Speicherplatz für Modelle
+- **Python**: Version 3.10 oder später installiert
+- **Administratorzugriff**: Administratorrechte für die Installation
 
-Erstellen Sie eine `.env`-Datei (oder setzen Sie sie in der Shell), um Skripte portabel zu machen:
-# Antworten vergleichen (nicht-interaktiv)
-foundry model run gpt-oss-20b --prompt "Erkläre Edge AI in einfachen Worten"
-| Variable | Zweck | Beispiel |
-|----------|-------|----------|
-| `FOUNDRY_LOCAL_ALIAS` | Bevorzugter Modellalias (Katalog wählt automatisch die beste Variante aus) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | Endpunkt überschreiben (ansonsten automatisch vom Manager) | `http://localhost:5273/v1` |
-| `FOUNDRY_LOCAL_STREAM` | Streaming-Demo aktivieren | `true` |
+### Entwicklungsumgebung
 
-> Wenn `FOUNDRY_LOCAL_ENDPOINT=auto` (oder nicht gesetzt) ist, wird es vom SDK-Manager abgeleitet.
+- Visual Studio Code mit Python-Erweiterung (empfohlen)
+- Zugriff auf die Kommandozeile (PowerShell unter Windows, Terminal unter macOS)
+- Git zum Klonen von Repositories (optional)
 
-## Demo-Ablauf (30 Minuten)
+## Ablauf des Workshops (30 Minuten)
 
-### 1. Foundry Local installieren und CLI-Einrichtung überprüfen (10 Minuten)
+### Schritt 1: Foundry Local installieren (5 Minuten)
 
-# Zwischengespeicherte Modelle auflisten
-foundry cache list
+#### Installation unter Windows
+
+Installieren Sie Foundry Local mit dem Windows-Paketmanager:
 
 ```powershell
 # Install via winget (recommended)
 winget install Microsoft.FoundryLocal
-
-# Or download from Microsoft Learn
-# https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
 
-**macOS (Vorschau / falls unterstützt)**
+Alternative: Direkt herunterladen von [Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 
-Falls ein nativer macOS-Paket bereitgestellt wird (offizielle Dokumentation für die neuesten Informationen prüfen):
+#### Installation unter macOS (eingeschränkte Unterstützung)
+
+> [!NOTE] 
+> Die Unterstützung für macOS befindet sich derzeit in der Vorschau. Überprüfen Sie die offizielle Dokumentation für die neuesten Informationen.
+
+Falls verfügbar, installieren Sie Foundry Local mit Homebrew:
 
 ```bash
-# Homebrew (if/when available)
+# If Homebrew formula is available
 brew update
-brew install foundry-local  # hypothetical formula name
+brew install foundry-local
 
-# Or manual download (tarball)
+# Or manual download (check official docs for latest)
 curl -L -o foundry-local.tar.gz "https://download.microsoft.com/foundry-local/latest/macos/foundry-local.tar.gz"
 tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Falls native macOS-Binärdateien noch nicht verfügbar sind, können Sie dennoch: 
-1. Eine Windows 11 ARM/Intel VM (Parallels / UTM) verwenden und die Windows-Schritte befolgen. 
-2. Modelle über Container ausführen (falls Container-Image veröffentlicht) und `FOUNDRY_LOCAL_ENDPOINT` auf den freigegebenen Port setzen. 
+**Alternative für macOS-Nutzer:**
+- Verwenden Sie eine Windows 11 VM (Parallels/UTM) und folgen Sie den Windows-Schritten
+- Führen Sie Foundry Local über einen Container aus, falls verfügbar, und konfigurieren Sie `FOUNDRY_LOCAL_ENDPOINT`
 
-**Python-Virtual Environment erstellen (plattformübergreifend)**
+### Schritt 2: Installation überprüfen (3 Minuten)
 
-Windows PowerShell:
-```powershell
-py -m venv .venv
- .\.venv\Scripts\Activate.ps1
-```
-
-macOS / Linux:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-Pip aktualisieren und Kernabhängigkeiten installieren:
-```bash
-python -m pip install --upgrade pip
-pip install foundry-local-sdk openai
-```
-
-#### Schritt 1.2: Installation überprüfen
+Starten Sie nach der Installation Ihr Terminal neu und überprüfen Sie, ob Foundry Local funktioniert:
 
 ```powershell
-# Check version
+# Check if Foundry Local is installed correctly
 foundry --version
-
-# Initialize configuration
-foundry init
 
 # View available commands
 foundry --help
 ```
 
-#### Schritt 1.3: Umgebung konfigurieren
+Die erwartete Ausgabe sollte Versionsinformationen und verfügbare Befehle anzeigen.
 
+### Schritt 3: Python-Umgebung einrichten (5 Minuten)
+
+Erstellen Sie eine dedizierte Python-Umgebung für diesen Workshop:
+
+**Windows:**
 ```powershell
-# Set up Python environment for Module08
-cd Module08
+# Create virtual environment
 py -m venv .venv
-.\.venv\Scripts\activate
 
-# Install Foundry Local Python SDK and dependencies
-pip install foundry-local-sdk openai requests
+# Activate environment
+.\.venv\Scripts\Activate.ps1
+
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-### SDK-Bootstrapping (empfohlen)
+**macOS/Linux:**
+```bash
+# Create virtual environment
+python3 -m venv .venv
 
-Anstatt den Dienst manuell zu starten und Modelle auszuführen, kann das **Foundry Local Python SDK** alles bootstrappen:
+# Activate environment
+source .venv/bin/activate
 
-```python
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
-
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-
-# Bootstraps service + downloads + loads most suitable variant for hardware
-manager = FoundryLocalManager(alias)
-
-print("Service running:", manager.is_service_running())
-print("Endpoint:", manager.endpoint)
-print("Cached models:", manager.list_cached_models())
-
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
-
-resp = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[
-        {"role": "system", "content": "You are a helpful local assistant."},
-        {"role": "user", "content": "Hello"}
-    ],
-    max_tokens=120,
-    temperature=0.5
-)
-print(resp.choices[0].message.content)
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-Falls Sie lieber explizite Kontrolle haben möchten, können Sie weiterhin die CLI + OpenAI-Client wie später gezeigt verwenden.
+### Schritt 4: Ihr erstes Modell ausführen (7 Minuten)
 
-### 2. Modelle lokal über CLI ausführen (10 Minuten)
+Jetzt führen wir unser erstes KI-Modell lokal aus!
 
-#### Schritt 3.1: Phi-4-Modell bereitstellen
+#### Starten Sie mit Phi-4 Mini (empfohlenes erstes Modell)
 
 ```powershell
-# Download and run phi-4-mini
+# Download and start phi-4-mini (lightweight, fast)
 foundry model run phi-4-mini
 
-# Test the model (one-shot prompt)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
-
-# NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
+# Test the model with a simple prompt
+foundry model run phi-4-mini --prompt "Hello, introduce yourself in one sentence"
 ```
 
-#### Schritt 3.2: GPT-OSS-20B bereitstellen
+> [!TIP]
+> Dieser Befehl lädt das Modell (beim ersten Mal) herunter und startet den Foundry Local-Dienst automatisch.
+
+#### Überprüfen, was läuft
 
 ```powershell
-# Download and run GPT-OSS-20B
-foundry model run gpt-oss-20b
+# List available models (shows downloaded models)
+foundry model list
 
-# Compare responses (one-shot prompt)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-```
+# Check service status
+foundry service status
 
-#### Schritt 3.3: Zusätzliche Modelle laden
-
-```powershell
-# Download Qwen model family
-foundry model download qwen2.5-0.5b
-foundry model download qwen2.5-7b
-
-# Download DeepSeek models
-foundry model download deepseek-coder-1.3b
-
-# List cached models
+# See what models are cached locally
 foundry cache list
 ```
 
-### 4. Starter-Projekt: 01-run-phi für Foundry Local anpassen (5 Minuten)
+#### Verschiedene Modelle ausprobieren
 
-#### Schritt 4.1: Basis-Chat-Anwendung erstellen
+Sobald phi-4-mini funktioniert, experimentieren Sie mit anderen Modellen:
 
-Erstellen Sie `samples/01-foundry-quickstart/chat_quickstart.py` (aktualisiert, um den Manager zu verwenden, falls verfügbar):
+```powershell
+# Larger model with better capabilities
+foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
+
+# Fast, efficient model
+foundry model run qwen2.5-0.5b --prompt "What are the benefits of local AI inference?"
+```
+
+### Schritt 5: Ihre erste Chat-Anwendung erstellen (10 Minuten)
+
+Jetzt erstellen wir eine Python-Anwendung, die die Modelle nutzt, die wir gerade gestartet haben.
+
+#### Das Chat-Skript erstellen
+
+Erstellen Sie eine neue Datei namens `my_first_chat.py` (oder verwenden Sie das bereitgestellte Beispiel):
 
 ```python
 #!/usr/bin/env python3
 """
-Foundry Local Chat Quickstart
-Demo: Basic chat interaction using Foundry Local Python SDK
-Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python
+My First Foundry Local Chat Application
+Using FoundryLocalManager for automatic service management
 """
 
-import os, sys
+import os
+from foundry_local import FoundryLocalManager
 from openai import OpenAI
-try:
-    from foundry_local import FoundryLocalManager  # control-plane SDK
-except ImportError:
-    FoundryLocalManager = None
 
 def main():
-    """Main chat function using Foundry Local SDK"""
-    
-    # Preferred: bootstrap via SDK manager (auto start + download + load)
-    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-    if FoundryLocalManager:
-        manager = FoundryLocalManager(alias)
-        endpoint = manager.endpoint
-        model_id = manager.get_model_info(alias).id
-        api_key = manager.api_key or "not-needed"
-    else:
-        # Fallback: assume default endpoint & alias already running via CLI
-        endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT", "http://localhost:5273/v1")
-        model_id = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
-        api_key = "not-needed"
-
-    client = OpenAI(base_url=endpoint, api_key=api_key)
-    
-    # Get user input
-    if len(sys.argv) > 1:
-        user_message = " ".join(sys.argv[1:])
-    else:
-        user_message = input("Enter your message: ")
+    # Get model alias from environment or use default
+    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
     
     try:
-        # Make chat completion request
-        response = client.chat.completions.create(
-            model=model_id,
-            messages=[
-                {"role": "system", "content": "You are a helpful AI assistant powered by Microsoft Foundry Local."},
-                {"role": "user", "content": user_message}
-            ],
-            max_tokens=500,
-            temperature=0.7
+        # Initialize Foundry Local Manager (auto-starts service, downloads model)
+        manager = FoundryLocalManager(alias)
+        
+        # Create OpenAI client pointing to local endpoint
+        client = OpenAI(
+            base_url=manager.endpoint,
+            api_key=manager.api_key or "not-needed"
         )
         
-        # Display response
-        print(f"\nModel: {response.model}")
-        print(f"Response: {response.choices[0].message.content}")
-        print(f"Tokens used: {response.usage.total_tokens if response.usage else 'N/A'}")
+        # Get the actual model ID for this alias
+        model_id = manager.get_model_info(alias).id
+        
+        print("🤖 Welcome to your first local AI chat!")
+        print(f"� Using model: {alias} -> {model_id}")
+        print(f"🌐 Endpoint: {manager.endpoint}")
+        print("�💡 Type 'quit' to exit\n")
         
     except Exception as e:
-        print(f"Error: {e}")
-        print("\nTroubleshooting:")
-    print("1. Ensure Foundry Local is running: foundry status")
-    print("2. List models: foundry model list")
-    print(f"3. Start model if needed: foundry model run {model_id}")
-    print("4. Or let SDK bootstrap: pip install foundry-local-sdk")
+        print(f"❌ Failed to initialize Foundry Local: {e}")
+        print("💡 Make sure Foundry Local is installed: foundry --version")
+        return
+    
+    while True:
+        # Get user input
+        user_message = input("You: ").strip()
+        
+        if user_message.lower() in ['quit', 'exit', 'bye']:
+            print("👋 Goodbye!")
+            break
+            
+        if not user_message:
+            continue
+            
+        try:
+            # Send message to local AI model
+            response = client.chat.completions.create(
+                model=model_id,
+                messages=[
+                    {"role": "system", "content": "You are a helpful AI assistant running locally."},
+                    {"role": "user", "content": user_message}
+                ],
+                max_tokens=200,
+                temperature=0.7
+            )
+            
+            # Display the response
+            ai_response = response.choices[0].message.content
+            print(f"🤖 AI: {ai_response}\n")
+            
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            print("💡 Check service status: foundry service status\n")
 
 if __name__ == "__main__":
     main()
 ```
 
-#### Schritt 4.2: Anwendung testen
+> [!TIP]
+> **Verwandte Beispiele**: Für fortgeschrittene Nutzung siehe:
+>
+> - **Python-Beispiel**: `Workshop/samples/session01/chat_bootstrap.py` - Enthält Streaming-Antworten und Fehlerbehandlung
+> - **Jupyter Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - Interaktive Version mit detaillierten Erklärungen
+
+#### Ihre Chat-Anwendung testen
 
 ```powershell
-# Ensure phi-4-mini is running
-foundry model run phi-4-mini
-
-# Run the quickstart app
-python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Foundry Local?"
-
-# Try interactive mode
-python samples/01-foundry-quickstart/chat_quickstart.py
+# No need to manually start models - FoundryLocalManager handles this!
+# Just run your chat application
+python my_first_chat.py
 ```
 
-## Wichtige behandelte Konzepte
-
-### 1. Foundry Local Architektur
-
-- **Lokale Inferenz-Engine**: Führt Modelle vollständig auf Ihrem Gerät aus
-- **OpenAI SDK-Kompatibilität**: Nahtlose Integration mit bestehendem OpenAI-Code
-- **Modellverwaltung**: Modelle effizient herunterladen, zwischenspeichern und ausführen
-- **Hardware-Optimierung**: Nutzung von GPU-, NPU- und CPU-Beschleunigung
-
-### 2. CLI-Befehlsreferenz
+Alternative: Verwenden Sie direkt die bereitgestellten Beispiele
 
 ```powershell
-# Core Commands
+# Try the complete sample with streaming support
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
+```
+
+Oder erkunden Sie das interaktive Notebook  
+Öffnen Sie Workshop/notebooks/session01_chat_bootstrap.ipynb in VS Code
+
+Probieren Sie diese Beispielgespräche aus:
+
+- "Was ist Microsoft Foundry Local?"
+- "Nennen Sie 3 Vorteile der Ausführung von KI-Modellen lokal"
+- "Helfen Sie mir, Edge-KI zu verstehen"
+
+## Was Sie erreicht haben
+
+Herzlichen Glückwunsch! Sie haben erfolgreich:
+
+1. ✅ **Foundry Local installiert** und überprüft, dass es funktioniert
+2. ✅ **Ihr erstes KI-Modell gestartet** (phi-4-mini) lokal
+3. ✅ **Verschiedene Modelle getestet** über die Kommandozeile
+4. ✅ **Eine Chat-Anwendung erstellt**, die mit Ihrer lokalen KI verbunden ist
+5. ✅ **Lokale KI-Inferenz erlebt** ohne Cloud-Abhängigkeiten
+
+## Verständnis der Vorgänge
+
+### Lokale KI-Inferenz
+
+- Ihre KI-Modelle laufen vollständig auf Ihrem Computer
+- Es werden keine Daten in die Cloud gesendet
+- Antworten werden lokal mit Ihrer CPU/GPU generiert
+- Datenschutz und Sicherheit bleiben erhalten
+
+### Modellverwaltung
+
+- `foundry model run` lädt und startet Modelle
+- **FoundryLocalManager SDK** startet automatisch Dienste und lädt Modelle
+- Modelle werden lokal zwischengespeichert für zukünftige Nutzung
+- Mehrere Modelle können heruntergeladen werden, aber typischerweise läuft nur eines gleichzeitig
+- Der Dienst verwaltet den Lebenszyklus der Modelle automatisch
+
+### SDK- vs CLI-Ansätze
+
+- **CLI-Ansatz**: Manuelle Modellverwaltung mit `foundry model run <model>`
+- **SDK-Ansatz**: Automatische Dienst- und Modellverwaltung mit `FoundryLocalManager(alias)`
+- **Empfehlung**: SDK für Anwendungen nutzen, CLI für Tests und Erkundung
+
+## Referenz für häufige Befehle
+
+### Wichtige CLI-Befehle
+
+```powershell
+# Installation & Setup
 foundry --version              # Check installation
+foundry --help                 # View all commands
+
 # Model Management
 foundry model list             # List available models
-foundry model unload <name>    # Unload from memory
+foundry model run <model>      # Download and start a model
+foundry model run <model> --prompt "text"  # One-shot prompt
+foundry cache list             # Show downloaded models
 
-foundry config list            # Current configuration
+# Service Management
+foundry service status         # Check if service is running
+foundry service start          # Start the service manually
+foundry service stop           # Stop the service
 ```
 
-### 3. Python SDK-Integration
+### Modell-Empfehlungen
 
-```python
-# Basic client setup
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
+- **phi-4-mini**: Bestes Einstiegsmodell - schnell, leichtgewichtig, gute Qualität
+- **qwen2.5-0.5b**: Schnellste Inferenz, minimaler Speicherverbrauch
+- **gpt-oss-20b**: Höhere Qualität der Antworten, benötigt mehr Ressourcen
+- **deepseek-coder-1.3b**: Optimiert für Programmier- und Codeaufgaben
 
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-manager = FoundryLocalManager(alias)
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
+## Fehlerbehebung
 
-response = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Hello!"}],
-    max_tokens=50
-)
-print(response.choices[0].message.content)
-
-# Streaming example
-stream = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Give a 1-sentence definition of edge AI."}],
-    stream=True,
-    max_tokens=60,
-    temperature=0.4
-)
-for chunk in stream:
-    delta = chunk.choices[0].delta
-    if delta and delta.content:
-        print(delta.content, end="", flush=True)
-print()
-```
-
-## Häufige Probleme beheben
-
-### Problem 1: "Foundry-Befehl nicht gefunden"
+### "Foundry-Befehl nicht gefunden"
 
 **Lösung:**
+
 ```powershell
-# Restart PowerShell after installation
-# Or manually add to PATH
+# Restart your terminal after installation
+# Or manually add to PATH (Windows)
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Problem 2: "Modell konnte nicht geladen werden"
+### "Modell konnte nicht geladen werden"
 
 **Lösung:**
-```powershell
-# Check available memory
-foundry system info
 
-# Try smaller model first
+```powershell
+# Check available system memory
+foundry service status
+
+# Try a smaller model first
 foundry model run phi-4-mini
 
-# Check disk space for model cache
-dir "$env:USERPROFILE\.foundry\models"
+# Check disk space for model downloads
+# Models are stored in: %USERPROFILE%\.foundry\models (Windows)
 ```
 
-### Problem 3: "Verbindung zu localhost:5273 verweigert"
+### "Verbindung zu localhost verweigert"
 
 **Lösung:**
+
 ```powershell
 # Check if service is running
-foundry status
+foundry service status
 
 # Start service if needed
 foundry service start
 
-# Check for port conflicts
-netstat -an | findstr 5273
+# Verify the port (default is 5273)
+# Check for port conflicts with: netstat -an | findstr 5273
 ```
-
-## Tipps zur Leistungsoptimierung
-
-### 1. Modell-Auswahlstrategie
-
-- **Phi-4-mini**: Am besten für allgemeine Aufgaben, geringer Speicherbedarf
-- **Qwen2.5-0.5b**: Schnellste Inferenz, minimale Ressourcen
-- **GPT-OSS-20B**: Höchste Qualität, benötigt mehr Ressourcen
-- **DeepSeek-Coder**: Optimiert für Programmieraufgaben
-
-### 2. Hardware-Optimierung
-
-```powershell
-# Enable all acceleration options
-foundry config set compute.onnx.enable_gpu true
-foundry config set compute.webgpu.enabled true
-foundry config set compute.cpu.threads auto
-
-# Optimize memory usage
-foundry config set model.cache.max_size 10GB
-foundry config set model.preload false
-```
-
-### 3. Leistung überwachen
-
-```powershell
-cd Workshop/samples
-# Performance & latency measurement
-# Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
-# Example:
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python -m session03.benchmark_oss_models
-
-# Re-run after enabling GPU acceleration to compare:
-foundry config set compute.onnx.enable_gpu true
-python -m session03.benchmark_oss_models
-```
-
-### Optionale Verbesserungen
-
-| Verbesserung | Was | Wie |
-|--------------|-----|-----|
-| Gemeinsame Utilities | Entfernen von doppelter Client-/Bootstrapping-Logik | Verwenden Sie `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Token-Nutzungsanzeige | Frühzeitiges Lernen von Kosten-/Effizienzdenken | Setzen Sie `SHOW_USAGE=1`, um Prompt-/Completion-/Gesamttoken anzuzeigen |
-| Deterministische Vergleiche | Stabile Benchmarking- und Regressionstests | Verwenden Sie `temperature=0`, `top_p=1`, konsistenten Prompt-Text |
-| Erste-Token-Latenz | Wahrgenommene Reaktionszeit-Metrik | Benchmark-Skript mit Streaming anpassen (`BENCH_STREAM=1`) |
-| Wiederholung bei vorübergehenden Fehlern | Resiliente Demos bei Kaltstart | `RETRY_ON_FAIL=1` (Standard) & `RETRY_BACKOFF` anpassen |
-| Smoke-Tests | Schnelle Überprüfung wichtiger Abläufe | Führen Sie `python Workshop/tests/smoke.py` vor einem Workshop aus |
-| Modell-Alias-Profile | Schnelles Wechseln des Modellsatzes zwischen Maschinen | `.env` mit `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` pflegen |
-| Caching-Effizienz | Vermeidung wiederholter Warmups bei Multi-Sample-Ausführung | Utilities-Cache-Manager; Wiederverwendung über Skripte/Notebooks hinweg |
-| Warmup beim ersten Lauf | Reduzierung von p95-Latenzspitzen | Kleinen Prompt nach Erstellung von `FoundryLocalManager` ausführen |
-
-Beispiel für eine deterministische Warm-Basislinie (PowerShell):
-
-```powershell
-set FOUNDRY_LOCAL_ALIAS=phi-4-mini
-set SHOW_USAGE=1
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference." | Out-Null
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
-```
-
-Sie sollten ähnliche Ausgaben und identische Token-Zahlen beim zweiten Lauf sehen, was die Determinismus bestätigt.
 
 ## Nächste Schritte
 
-Nach Abschluss dieser Sitzung:
+### Sofortige nächste Aktionen
 
-1. **Session 2 erkunden**: KI-Lösungen mit Azure AI Foundry RAG erstellen
-2. **Andere Modelle ausprobieren**: Mit Qwen, DeepSeek und anderen Modellfamilien experimentieren
-3. **Leistung optimieren**: Einstellungen für Ihre spezifische Hardware feinabstimmen
-4. **Eigene Anwendungen erstellen**: Das Foundry Local SDK in Ihren eigenen Projekten verwenden
+1. **Experimentieren** Sie mit verschiedenen Modellen und Eingaben
+2. **Modifizieren** Sie Ihre Chat-Anwendung, um verschiedene Modelle auszuprobieren
+3. **Erstellen** Sie eigene Eingaben und testen Sie die Antworten
+4. **Erkunden** Sie Sitzung 2: Aufbau von RAG-Anwendungen
+
+### Fortgeschrittener Lernpfad
+
+1. **Sitzung 2**: KI-Lösungen mit RAG (Retrieval-Augmented Generation) entwickeln
+2. **Sitzung 3**: Vergleich verschiedener Open-Source-Modelle
+3. **Sitzung 4**: Arbeiten mit modernsten Modellen
+4. **Sitzung 5**: Aufbau von Multi-Agenten-KI-Systemen
+
+## Umgebungsvariablen (optional)
+
+Für fortgeschrittene Nutzung können Sie diese Umgebungsvariablen setzen:
+
+| Variable | Zweck | Beispiel |
+|----------|---------|---------|
+| `FOUNDRY_LOCAL_ALIAS` | Standardmodell | `phi-4-mini` |
+| `FOUNDRY_LOCAL_ENDPOINT` | Endpunkt-URL überschreiben | `http://localhost:5273/v1` |
+
+Erstellen Sie eine `.env`-Datei in Ihrem Projektverzeichnis:
+```
+FOUNDRY_LOCAL_ALIAS=phi-4-mini
+FOUNDRY_LOCAL_ENDPOINT=auto
+```
 
 ## Zusätzliche Ressourcen
 
 ### Dokumentation
+
 - [Foundry Local Python SDK Referenz](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Foundry Local Installationsanleitung](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 - [Modellkatalog](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Beispielcode
-- [Modul08 Beispiel 01](./samples/01/README.md) - REST Chat Quickstart
-- [Modul08 Beispiel 02](./samples/02/README.md) - OpenAI SDK-Integration
-- [Modul08 Beispiel 03](./samples/03/README.md) - Modellentdeckung & Benchmarking
+
+- **Session01 Python-Beispiel**: `Workshop/samples/session01/chat_bootstrap.py` - Vollständige Chat-App mit Streaming
+- **Session01 Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - Interaktives Tutorial  
+- [Modul08 Beispiel 01](../Module08/samples/01/README.md) - REST Chat Schnellstart
+- [Modul08 Beispiel 02](../Module08/samples/02/README.md) - OpenAI SDK Integration
+- [Modul08 Beispiel 03](../Module08/samples/03/README.md) - Modellentdeckung & Benchmarking
 
 ### Community
+
 - [Foundry Local GitHub Diskussionen](https://github.com/microsoft/Foundry-Local/discussions)
 - [Azure AI Community](https://techcommunity.microsoft.com/category/artificialintelligence)
 
 ---
 
-**Sitzungsdauer**: 30 Minuten Praxis + 15 Minuten Q&A  
+**Dauer der Sitzung**: 30 Minuten Praxis + 15 Minuten Q&A  
 **Schwierigkeitsgrad**: Anfänger  
-**Voraussetzungen**: Windows 11, Python 3.10+, Administratorzugriff  
+**Voraussetzungen**: Windows 11/macOS 11+, Python 3.10+, Administratorzugriff
 
-## Beispiel-Szenario & Workshop-Zuordnung
+## Beispiel-Szenario des Workshops
 
-| Workshop-Skript / Notebook | Szenario | Ziel | Beispiel-Eingaben | Benötigter Datensatz |
-|----------------------------|----------|------|-------------------|-----------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internes IT-Team bewertet On-Device-Inferenz für ein Datenschutzbewertungsportal | Nachweis, dass lokale SLM innerhalb von Sub-Sekunden-Latenz auf Standard-Prompts reagiert | "Nennen Sie zwei Vorteile der lokalen Inferenz." | Keiner (Einzelaufforderung) |
-| Quickstart-Anpassungscodeblock | Entwickler migriert ein bestehendes OpenAI-Skript zu Foundry Local | Zeigt Drop-in-Kompatibilität | "Nennen Sie zwei Vorteile der lokalen Inferenz." | Nur Inline-Prompt |
+### Kontext aus der Praxis
 
-### Szenario-Erzählung
-Das Sicherheits- und Compliance-Team muss validieren, ob sensible Prototypdaten lokal verarbeitet werden können. Sie führen das Bootstrap-Skript mit mehreren Prompts (Datenschutz, Latenz, Kosten) im deterministischen Modus `temperature=0` aus, um Basis-Ausgaben für spätere Vergleiche (Session 3 Benchmarking und Session 4 SLM vs LLM Kontrast) zu erfassen.
+**Szenario**: Ein IT-Team eines Unternehmens muss die lokale KI-Inferenz evaluieren, um sensible Mitarbeiterfeedbacks zu verarbeiten, ohne Daten an externe Dienste zu senden.
 
-### Minimaler Prompt-Set JSON (optional)
+**Ihr Ziel**: Zeigen Sie, dass lokale KI-Modelle qualitativ hochwertige Antworten mit einer Latenzzeit von unter einer Sekunde liefern können, während die Daten vollständig privat bleiben.
+
+### Testeingaben
+
+Verwenden Sie diese Eingaben, um Ihre Einrichtung zu validieren:
+
 ```json
 [
     "List two benefits of local inference.",
     "Summarize why keeping data on device improves privacy.",
-    "Give one trade‑off when choosing an SLM over a large model."
+    "Give one trade-off when choosing a small model over a large model."
 ]
 ```
 
-Verwenden Sie diese Liste, um eine reproduzierbare Bewertungsrunde zu erstellen oder einen zukünftigen Regressionstest-Harness zu initialisieren.
+### Erfolgskriterien
+
+- ✅ Alle Eingaben liefern Antworten in unter 2 Sekunden
+- ✅ Es werden keine Daten von Ihrem lokalen Rechner gesendet
+- ✅ Antworten sind relevant und hilfreich
+- ✅ Ihre Chat-Anwendung funktioniert reibungslos
+
+Diese Validierung stellt sicher, dass Ihre Foundry Local-Einrichtung bereit ist für die fortgeschrittenen Workshops in den Sitzungen 2-6.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-09T10:58:07+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T22:51:57+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "it"
 }
@@ -11,14 +11,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstract
 
-Scopri come integrare modelli open-source di Hugging Face e altri in Foundry Local. Impara strategie di selezione, flussi di lavoro per contributi della community, metodologie di confronto delle prestazioni e come estendere Foundry con registrazioni di modelli personalizzati. Questa sessione si collega ai temi di esplorazione settimanali "Model Mondays" e ti prepara a valutare e operazionalizzare modelli open-source localmente prima di scalarli su Azure.
+Scopri come integrare modelli di Hugging Face e altri modelli open-source in Foundry Local. Impara strategie di selezione, flussi di lavoro per il contributo della comunità, metodologie di confronto delle prestazioni e come estendere Foundry con registrazioni di modelli personalizzati. Questa sessione si collega ai temi di esplorazione settimanali "Model Mondays" e ti prepara a valutare e operativizzare modelli open-source localmente prima di scalarli su Azure.
 
 ## Obiettivi di Apprendimento
 
 Alla fine sarai in grado di:
 
-- **Scoprire & Valutare**: Identificare modelli candidati (mistral, gemma, qwen, deepseek) utilizzando compromessi tra qualità e risorse.
-- **Caricare & Eseguire**: Usare il CLI di Foundry Local per scaricare, memorizzare nella cache e avviare modelli della community.
+- **Scoprire & Valutare**: Identificare modelli candidati (mistral, gemma, qwen, deepseek) utilizzando il compromesso tra qualità e risorse.
+- **Caricare & Eseguire**: Usare Foundry Local CLI per scaricare, memorizzare nella cache e avviare modelli della comunità.
 - **Benchmark**: Applicare euristiche consistenti per latenza + throughput di token + qualità.
 - **Estendere**: Registrare o adattare un wrapper di modello personalizzato seguendo pattern compatibili con l'SDK.
 - **Confrontare**: Produrre confronti strutturati per decisioni di selezione tra SLM e LLM di medie dimensioni.
@@ -27,32 +27,31 @@ Alla fine sarai in grado di:
 
 - Completamento delle sessioni 1 e 2
 - Ambiente Python con `foundry-local-sdk` installato
-- Almeno 15GB di spazio libero su disco per cache di modelli multipli
-- Opzionale: Accelerazione GPU/WebGPU abilitata (`foundry config list`)
+- Almeno 15GB di spazio libero su disco per più cache di modelli
 
 ### Avvio Rapido Ambiente Cross-Platform
 
-Windows PowerShell:
+Windows PowerShell:  
 ```powershell
 py -m venv .venv
  .\.venv\Scripts\Activate.ps1
 pip install --upgrade pip
 pip install foundry-local-sdk openai numpy
 ```
-
-macOS / Linux:
+  
+macOS / Linux:  
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install foundry-local-sdk openai numpy
 ```
-
-Quando si esegue il benchmarking da macOS contro un servizio host Windows, impostare:
+  
+Quando si esegue il benchmarking da macOS contro un servizio host Windows, impostare:  
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-
+  
 
 ## Flusso Demo (30 min)
 
@@ -70,9 +69,9 @@ foundry model download qwen2.5-0.5b
 # Verify cache
 foundry cache list
 ```
+  
 
-
-### 2. Eseguire & Sondare Rapidamente (5 min)
+### 2. Eseguire & Sondare Velocemente (5 min)
 
 ```powershell
 foundry model run qwen2.5-0.5b
@@ -81,12 +80,11 @@ foundry model run qwen2.5-0.5b --prompt "List three benefits of local inference.
 foundry model run mistral-7b
 foundry model run mistral-7b --prompt "Explain retrieval augmented generation in one paragraph."
 ```
-
+  
 
 ### 3. Script di Benchmark (8 min)
 
-Creare `samples/03-oss-models/benchmark_models.py`:
-
+Creare `samples/03-oss-models/benchmark_models.py`:  
 ```python
 #!/usr/bin/env python3
 """Lightweight benchmarking for open-source models in Foundry Local.
@@ -148,28 +146,27 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
-Eseguire:
-
+  
+Eseguire:  
 ```powershell
 python samples/03-oss-models/benchmark_models.py
 ```
-
+  
 
 ### 4. Confrontare le Prestazioni (5 min)
 
-Discutere i compromessi: tempo di caricamento, impronta di memoria (osservare Task Manager / `nvidia-smi` / monitor delle risorse del sistema operativo), qualità dell'output rispetto alla velocità. Utilizzare lo script di benchmark Python (Sessione 3) per latenza e throughput; ripetere dopo aver abilitato l'accelerazione GPU.
+Discutere compromessi: tempo di caricamento, utilizzo della memoria (osservare Task Manager / `nvidia-smi` / monitor delle risorse del sistema operativo), qualità dell'output rispetto alla velocità. Utilizzare lo script di benchmark Python (Sessione 3) per latenza e throughput; ripetere dopo aver abilitato l'accelerazione GPU.
 
 ### 5. Progetto Iniziale (4 min)
 
-Creare un generatore di report di confronto dei modelli (estendere lo script di benchmark con esportazione in markdown).
+Creare un generatore di report di confronto dei modelli (estendere lo script di benchmarking con esportazione in markdown).
 
 ## Progetto Iniziale: Estendere `03-huggingface-models`
 
 Migliorare il campione esistente aggiungendo:
 
 1. Aggregazione dei benchmark + output CSV/Markdown.
-2. Implementazione di una semplice valutazione qualitativa (set di prompt + file di annotazione manuale).
+2. Implementazione di una semplice valutazione qualitativa (set di prompt + file stub di annotazione manuale).
 3. Introduzione di una configurazione JSON (`models.json`) per lista di modelli plug-in e set di prompt.
 
 ## Checklist di Validazione
@@ -179,20 +176,20 @@ foundry cache list
 foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
-
-Tutti i modelli target dovrebbero apparire e rispondere a una richiesta di chat di sondaggio.
+  
+Tutti i modelli target dovrebbero apparire e rispondere a una richiesta di chat di prova.
 
 ## Scenario di Esempio & Mappatura Workshop
 
-| Script Workshop | Scenario | Obiettivo | Fonte Prompt / Dataset |
-|-----------------|----------|-----------|-------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Team piattaforma edge che seleziona SLM predefinito per un sintetizzatore integrato | Produrre confronto latenza + p95 + token/sec tra modelli candidati | Variabile `PROMPT` inline + lista `BENCH_MODELS` ambiente |
+| Script del Workshop | Scenario | Obiettivo | Fonte Prompt / Dataset |
+|---------------------|----------|-----------|-------------------------|
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Team della piattaforma edge che seleziona SLM predefinito per il riassunto integrato | Produrre un confronto di latenza + p95 + token/sec tra modelli candidati | Variabile `PROMPT` inline + lista `BENCH_MODELS` dell'ambiente |
 
 ### Narrazione dello Scenario
 
-Il team di ingegneria prodotto deve scegliere un modello di sintesi leggero predefinito per una funzionalità di note di riunione offline. Eseguono benchmark deterministici controllati (temperature=0) su un set di prompt fisso (vedi esempio sotto) e raccolgono metriche di latenza + throughput con e senza accelerazione GPU.
+Il team di ingegneria del prodotto deve scegliere un modello di riassunto leggero predefinito per una funzione di note di riunione offline. Eseguono benchmark deterministici controllati (temperature=0) su un set di prompt fisso (vedi esempio sotto) e raccolgono metriche di latenza + throughput con e senza accelerazione GPU.
 
-### Esempio Set di Prompt JSON (espandibile)
+### Esempio di Set di Prompt JSON (espandibile)
 
 ```json
 [
@@ -202,24 +199,23 @@ Il team di ingegneria prodotto deve scegliere un modello di sintesi leggero pred
     "Provide two scenarios where an SLM is preferable to an LLM."
 ]
 ```
+  
+Eseguire un ciclo su ogni prompt per modello, catturare la latenza per prompt per derivare metriche di distribuzione e rilevare outlier.
 
-Eseguire un loop su ogni prompt per modello, catturare la latenza per prompt per derivare metriche di distribuzione e rilevare outlier.
-
-## Framework di Selezione Modelli
+## Framework di Selezione dei Modelli
 
 | Dimensione | Metrica | Perché è Importante |
 |------------|---------|---------------------|
 | Latenza | media / p95 | Coerenza dell'esperienza utente |
 | Throughput | token/sec | Scalabilità batch e streaming |
-| Memoria | dimensione residente | Adattamento al dispositivo & concorrenza |
+| Memoria | dimensione residente | Adattamento al dispositivo e concorrenza |
 | Qualità | rubric prompts | Idoneità al compito |
-| Impronta | cache disco | Distribuzione & aggiornamenti |
+| Impronta | cache disco | Distribuzione e aggiornamenti |
 | Licenza | permessi d'uso | Conformità commerciale |
 
 ## Estensione con Modello Personalizzato
 
-Pattern di alto livello (pseudo):
-
+Pattern di alto livello (pseudo):  
 ```python
 # pseudo_adapter.py (conceptual)
 class CustomModelAdapter:
@@ -228,44 +224,44 @@ class CustomModelAdapter:
 
 # Register with local routing (future extensibility point)
 ```
-
+  
 Consultare il repository ufficiale per interfacce adapter in evoluzione:  
-https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
 
 ## Risoluzione dei Problemi
 
 | Problema | Causa | Soluzione |
 |----------|-------|-----------|
 | OOM su mistral-7b | RAM/GPU insufficiente | Fermare altri modelli; provare variante più piccola |
-| Risposta lenta iniziale | Caricamento a freddo | Mantenere caldo con un prompt leggero periodico |
-| Download bloccato | Instabilità di rete | Riprova; prefetch durante ore di bassa attività |
+| Risposta iniziale lenta | Caricamento a freddo | Mantenere caldo con un prompt leggero periodico |
+| Download bloccato | Instabilità di rete | Riprova; prefetch durante le ore di minor traffico |
 
 ## Riferimenti
 
-- Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- Model Mondays: https://aka.ms/model-mondays
-- Scoperta Modelli Hugging Face: https://huggingface.co/models
+- Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
+- Model Mondays: https://aka.ms/model-mondays  
+- Scoperta Modelli Hugging Face: https://huggingface.co/models  
 
 ---
 
-**Durata Sessione**: 30 min (+ approfondimento opzionale)  
-**Difficoltà**: Intermedia
+**Durata della Sessione**: 30 min (+ approfondimento opzionale)  
+**Difficoltà**: Intermedia  
 
 ### Miglioramenti Opzionali
 
 | Miglioramento | Beneficio | Come |
 |---------------|-----------|------|
-| Latenza Primo Token Streaming | Misura la reattività percepita | Eseguire benchmark con `BENCH_STREAM=1` (script migliorato in `Workshop/samples/session03`) |
+| Latenza del Primo Token in Streaming | Misura la reattività percepita | Eseguire benchmark con `BENCH_STREAM=1` (script migliorato in `Workshop/samples/session03`) |
 | Modalità Deterministica | Confronti di regressione stabili | `temperature=0`, set di prompt fisso, catturare output JSON sotto controllo versione |
-| Valutazione Rubrica Qualità | Aggiunge una dimensione qualitativa | Mantenere `prompts.json` con aspetti previsti; annotare punteggi (1–5) manualmente o tramite modello secondario |
-| Esportazione CSV / Markdown | Report condivisibile | Estendere script per scrivere `benchmark_report.md` con tabella & punti salienti |
+| Valutazione Rubrica Qualità | Aggiunge una dimensione qualitativa | Mantenere `prompts.json` con aspetti attesi; annotare punteggi (1–5) manualmente o tramite modello secondario |
+| Esportazione CSV / Markdown | Report condivisibile | Estendere script per scrivere `benchmark_report.md` con tabella e punti salienti |
 | Tag Capacità Modello | Aiuta il routing automatico successivo | Mantenere `models.json` con `{alias: {capabilities:[], size_mb:..}}` |
-| Fase di Riscaldamento Cache | Riduce bias di avvio a freddo | Eseguire un round di riscaldamento prima del loop di timing (già implementato) |
+| Fase di Riscaldamento Cache | Riduce il bias di avvio a freddo | Eseguire un round di riscaldamento prima del ciclo di temporizzazione (già implementato) |
 | Accuratezza Percentile | Latenza robusta di coda | Usare percentile numpy (già nello script rifattorizzato) |
-| Approssimazione Costo Token | Confronto economico | Costo approssimato = (token/sec * token medi per richiesta) * euristica energetica |
-| Salto Automatico Modelli Falliti | Resilienza in esecuzioni batch | Avvolgere ogni benchmark in try/except e segnare campo stato |
+| Approssimazione Costo Token | Confronto economico | Costo approssimativo = (token/sec * token medi per richiesta) * euristica energetica |
+| Salto Automatico Modelli Falliti | Resilienza nelle esecuzioni batch | Avvolgere ogni benchmark in try/except e contrassegnare il campo di stato |
 
-#### Snippet Esportazione Markdown Minima
+#### Snippet di Esportazione Markdown Minima
 
 ```python
 with open("benchmark_report.md", "w") as f:
@@ -273,9 +269,9 @@ with open("benchmark_report.md", "w") as f:
         for row in summary:
                 f.write(f"|{row['alias']}|{row['latency_avg']:.2f}|{row['latency_p95']:.2f}|{(row.get('tokens_per_sec_avg') or 0):.1f}|\n")
 ```
+  
 
-
-#### Esempio Set di Prompt Deterministico
+#### Esempio di Set di Prompt Deterministico
 
 ```json
 [
@@ -284,10 +280,12 @@ with open("benchmark_report.md", "w") as f:
     "Explain when to choose an SLM over an LLM."
 ]
 ```
-
-Eseguire il loop sulla lista statica invece di prompt casuali per metriche comparabili tra commit.
+  
+Eseguire il ciclo sulla lista statica invece di prompt casuali per metriche comparabili tra commit.
 
 ---
 
-**Clausola di esclusione della responsabilità**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un traduttore umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:  
+Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche potrebbero contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T20:37:09+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T21:52:18+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "mo"
 }
@@ -83,7 +83,7 @@ python -m session02.rag_eval_ragas
 
 **注意**：需要通過 `requirements.txt` 安裝額外的依賴項
 
-### 第三節：基準測試
+### 第三節：效能測試
 
 ```bash
 cd Workshop/samples
@@ -98,7 +98,7 @@ set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**輸出：** JSON 格式，包含延遲、吞吐量及首字元指標
+**輸出：** 包含延遲、吞吐量及首字元指標的 JSON
 
 ### 第四節：模型比較
 
@@ -135,7 +135,7 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**測試路由邏輯**，包含多種意圖（代碼、摘要、分類）
+**測試路由邏輯**，包含多種意圖（程式碼、摘要、分類）
 
 ### 第六節：管道
 
@@ -147,7 +147,7 @@ python -m session06.models_pipeline
 
 ## 腳本
 
-### 匯出基準測試報告
+### 匯出效能測試報告
 
 ```bash
 cd Workshop/scripts
@@ -181,7 +181,7 @@ python -m tests.smoke
 
 ## 疑難排解
 
-### 服務未啟動
+### 服務未運行
 
 ```bash
 # Check status
@@ -215,7 +215,7 @@ foundry service status
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ```
 
-### 找不到模型
+### 模型未找到
 
 ```bash
 # List available models
@@ -230,7 +230,7 @@ foundry model run phi-4-mini
 ### 核心配置
 | 變數 | 預設值 | 描述 |
 |------|--------|------|
-| `FOUNDRY_LOCAL_ALIAS` | 依情況而定 | 使用的模型別名 |
+| `FOUNDRY_LOCAL_ALIAS` | 視情況而定 | 使用的模型別名 |
 | `FOUNDRY_LOCAL_ENDPOINT` | 自動 | 覆蓋服務端點 |
 | `SHOW_USAGE` | `0` | 顯示令牌使用統計 |
 | `RETRY_ON_FAIL` | `1` | 啟用重試邏輯 |
@@ -241,9 +241,9 @@ foundry model run phi-4-mini
 |------|--------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | 嵌入模型 |
 | `RAG_QUESTION` | 見範例 | RAG 測試問題 |
-| `BENCH_MODELS` | 依情況而定 | 逗號分隔的模型 |
-| `BENCH_ROUNDS` | `3` | 基準測試迭代次數 |
-| `BENCH_PROMPT` | 見範例 | 基準測試提示 |
+| `BENCH_MODELS` | 視情況而定 | 逗號分隔的模型 |
+| `BENCH_ROUNDS` | `3` | 效能測試迭代次數 |
+| `BENCH_PROMPT` | 見範例 | 效能測試提示 |
 | `BENCH_STREAM` | `0` | 測量首字元延遲 |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | 主代理模型 |
 | `AGENT_MODEL_EDITOR` | 主代理 | 編輯代理模型 |
@@ -254,14 +254,14 @@ foundry model run phi-4-mini
 ## 推薦模型
 
 ### 開發與測試
-- **phi-4-mini** - 平衡質量與速度
+- **phi-4-mini** - 平衡品質與速度
 - **qwen2.5-0.5b** - 分類速度非常快
-- **gemma-2-2b** - 質量良好，速度適中
+- **gemma-2-2b** - 良好品質，速度適中
 
 ### 生產場景
 - **phi-4-mini** - 通用用途
-- **deepseek-coder-1.3b** - 代碼生成
-- **qwen2.5-7b** - 高質量回應
+- **deepseek-coder-1.3b** - 程式碼生成
+- **qwen2.5-7b** - 高品質回應
 
 ## SDK 文檔
 
@@ -273,22 +273,23 @@ foundry model run phi-4-mini
 1. 檢查服務狀態：`foundry service status`  
 2. 查看日誌：檢查 Foundry Local 服務日誌  
 3. 查看 SDK 文檔：https://github.com/microsoft/Foundry-Local  
-4. 查看範例代碼：所有範例均包含詳細的文檔註釋  
+4. 查看範例程式碼：所有範例均包含詳細的文檔註解  
 
 ## 下一步
 
-1. 按順序完成所有工作坊會話  
-2. 嘗試使用不同的模型  
+1. 按順序完成所有工作坊課程  
+2. 嘗試不同的模型  
 3. 修改範例以適應您的使用場景  
-4. 查看 `SDK_MIGRATION_NOTES.md` 以了解高級模式  
 
 ---
 
 **最後更新日期**：2025-01-08  
 **工作坊版本**：最新  
-**SDK**：Foundry Local Python SDK
+**SDK**：Foundry Local Python SDK  
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T22:16:43+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-11T23:24:52+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "fi"
 }
 -->
-# Istunto 4: Tutustu huippumalleihin – LLM:t, SLM:t ja laitekohtainen inferenssi
+# Istunto 4: Tutustu huippumalleihin – LLM:t, SLM:t ja laitepohjainen päättely
 
 ## Tiivistelmä
 
-Vertaa suuria kielimalleja (LLM) ja pieniä kielimalleja (SLM) paikallisen ja pilvipohjaisen inferenssin näkökulmasta. Opettele käyttöönoton malleja hyödyntäen ONNX Runtime -kiihdytystä, WebGPU-suoritusta ja hybridisiä RAG-kokemuksia. Sisältää Chainlit RAG -demon paikallisella mallilla sekä valinnaisen OpenWebUI-tutkimuksen. Mukautat WebGPU-inferenssin aloitusprojektin ja arvioit Phi:n ja GPT-OSS-20B:n kyvykkyyttä sekä kustannus/suorituskyky -kompromisseja.
+Vertaa suuria kielimalleja (LLM) ja pieniä kielimalleja (SLM) paikallisen ja pilvipohjaisen päättelyn skenaarioissa. Opi käyttöönoton malleja hyödyntäen ONNX Runtime -kiihdytystä, WebGPU-suoritusta ja hybridisiä RAG-kokemuksia. Sisältää Chainlit RAG -demon paikallisella mallilla sekä valinnaisen OpenWebUI-tutkimuksen. Mukautat WebGPU-päättelyn aloitusprojektin ja arvioit Phi:n ja GPT-OSS-20B:n kyvykkyyttä sekä kustannus/suorituskykyä.
 
 ## Oppimistavoitteet
 
 - **Vertaa** SLM:ää ja LLM:ää viiveen, muistin ja laadun osalta
-- **Ota käyttöön** malleja ONNXRuntime-ohjelmalla ja (jos tuettu) WebGPU:lla
-- **Suorita** selaimen kautta tapahtuva inferenssi (yksityisyyttä suojaava interaktiivinen demo)
+- **Ota käyttöön** malleja ONNXRuntime:lla ja (missä tuettu) WebGPU:lla
+- **Suorita** selaimen kautta tapahtuva päättely (yksityisyyttä suojaava interaktiivinen demo)
 - **Integroi** Chainlit RAG -putki paikallisen SLM-taustajärjestelmän kanssa
 - **Arvioi** kevyillä laatu- ja kustannusheuristiikoilla
 
@@ -26,24 +26,24 @@ Vertaa suuria kielimalleja (LLM) ja pieniä kielimalleja (SLM) paikallisen ja pi
 - Istunnot 1–3 suoritettu
 - `chainlit` asennettuna (jo mukana `requirements.txt`-tiedostossa Module08:ssa)
 - WebGPU-yhteensopiva selain (Edge / Chrome uusin versio Windows 11:ssä)
-- Foundry Local käynnissä (`foundry status`)
+- Foundry Local käynnissä (`foundry service status`)
 
 ### Alustojen väliset huomiot
 
-Windows on ensisijainen kohdeympäristö. macOS-kehittäjille, jotka odottavat natiivibinaareja:
-1. Aja Foundry Local Windows 11 -virtuaalikoneessa (Parallels / UTM) TAI etä-Windows-työasemalla.
-2. Avaa palvelu (oletusportti 5273) ja aseta macOS:lle:
+Windows on edelleen ensisijainen kohdeympäristö. macOS-kehittäjille, jotka odottavat natiivibinaareja:
+1. Käynnistä Foundry Local Windows 11 -virtuaalikoneessa (Parallels / UTM) TAI etä-Windows-työasemalla.
+2. Avaa palvelu (oletusportti 5273) ja aseta macOS:ssa:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-3. Käytä samoja Python-virtuaaliympäristön asennusvaiheita kuin aiemmissa istunnoissa.
+3. Käytä samoja Python-virtuaaliympäristön vaiheita kuin aiemmissa istunnoissa.
 
 Chainlit-asennus (molemmilla alustoilla):
 ```bash
 pip install chainlit
 ```
 
-## Demo-prosessi (30 min)
+## Demokulku (30 min)
 
 ### 1. Vertaa Phi (SLM) ja GPT-OSS-20B (LLM) (6 min)
 
@@ -62,19 +62,9 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 
 Seuraa: vastausten syvyyttä, faktatarkkuutta, tyylillistä rikkautta, viivettä.
 
-### 2. ONNX Runtime -kiihdytys (5 min)
-
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
-
 Havainnoi läpimenomuutoksia GPU:n ja vain CPU:n käytön välillä.
 
-### 3. WebGPU-inferenssi selaimessa (6 min)
+### 3. WebGPU-päättely selaimessa (6 min)
 
 Mukauta aloitusprojektia `04-webgpu-inference` (luo `samples/04-cutting-edge/webgpu_demo.html`):
 
@@ -119,7 +109,7 @@ Mukauta aloitusprojektia `04-webgpu-inference` (luo `samples/04-cutting-edge/web
 
 Avaa tiedosto selaimessa; havainnoi matalan viiveen paikallinen kierros.
 
-### 4. Chainlit RAG -chat-sovellus (7 min)
+### 4. Chainlit RAG Chat -sovellus (7 min)
 
 Minimaalinen `samples/04-cutting-edge/chainlit_app.py`:
 
@@ -166,19 +156,19 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ### 5. Aloitusprojekti: Mukauta `04-webgpu-inference` (6 min)
 
 Toimitettavat:
-- Korvaa paikkamerkkien hakulogiikka suoratoistotokenilla (käytä `stream=True` -päätepisteen varianttia, kun se on käytössä)
-- Lisää viivekaavio (asiakaspuolella) Phi:n ja GPT-OSS-20B:n vaihtojen osalta
-- Upota RAG-konteksti suoraan (tekstialue viitedokumenteille)
+- Korvaa paikkamerkkien hakulogiikka suoratoistotokenilla (käytä `stream=True` päätepistevarianttia, kun se on käytössä)
+- Lisää viivekaavio (asiakaspuolella) Phi:n ja GPT-OSS-20B:n vaihtamiseksi
+- Upota RAG-konteksti sisäisesti (tekstialue viitedokumenteille)
 
 ## Arviointiheuristiikat
 
-| Kategoria | Phi-4-mini | GPT-OSS-20B | Havainnot |
-|-----------|------------|-------------|-----------|
+| Kategoria | Phi-4-mini | GPT-OSS-20B | Havainto |
+|-----------|------------|-------------|----------|
 | Viive (kylmä) | Nopea | Hitaampi | SLM lämpenee nopeasti |
 | Muisti | Matala | Korkea | Laitteen toteutettavuus |
-| Kontekstin noudattaminen | Hyvä | Vahva | Suurempi malli voi olla sanallisempi |
-| Kustannukset (paikallinen) | Vähäinen | Korkeampi (resurssit) | Energia-/aikakompromissi |
-| Paras käyttötapaus | Reuna-sovellukset | Syvällinen päättely | Mahdollinen hybridiputki |
+| Kontekstin noudattaminen | Hyvä | Vahva | Suurempi malli voi olla sanallisesti rikkaampi |
+| Kustannus (paikallinen) | Vähäinen | Korkeampi (resurssit) | Energia-/aikakauppa |
+| Paras käyttötapaus | Reuna-sovellukset | Syvä päättely | Hybridiputki mahdollinen |
 
 ## Ympäristön validointi
 
@@ -197,7 +187,7 @@ foundry model list
 
 | Oire | Syy | Toimenpide |
 |------|-----|-----------|
-| Verkkosivun haku epäonnistuu | CORS tai palvelu ei toimi | Käytä `curl` varmistaaksesi päätepisteen; ota käyttöön CORS-välityspalvelin tarvittaessa |
+| Verkkosivun haku epäonnistuu | CORS tai palvelu alhaalla | Käytä `curl` varmistaaksesi päätepisteen; ota käyttöön CORS-välityspalvelin tarvittaessa |
 | Chainlit tyhjä | Ympäristö ei aktiivinen | Aktivoi venv ja asenna riippuvuudet uudelleen |
 | Korkea viive | Malli juuri ladattu | Lämmitä pienellä kehotussekvenssillä |
 
@@ -215,13 +205,13 @@ foundry model list
 ## Esimerkkiskenaario ja työpajan kartoitus
 
 | Työpajan artefaktit | Skenaario | Tavoite | Data / Kehotuslähde |
-|---------------------|-----------|---------|---------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Arkkitehtitiimi arvioi SLM:ää ja LLM:ää johtoryhmän yhteenvetogeneraattorille | Määritä viiveen ja tokenien käytön ero | Yksi `COMPARE_PROMPT` ympäristömuuttuja |
-| `chainlit_app.py` (RAG-demo) | Sisäinen tietämysassistentin prototyyppi | Perustele lyhyet vastaukset minimaalisella leksikaalisella haulla | Tiedoston sisäinen `DOCS`-lista |
-| `webgpu_demo.html` | Tulevaisuuden laitekohtainen selaimen inferenssin esikatselu | Näytä matalan viiveen paikallinen kierros + UX-narratiivi | Vain käyttäjän live-kehotus |
+|---------------------|----------|---------|---------------------|
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Arkkitehtitiimi arvioi SLM:ää ja LLM:ää johtoryhmän tiivistelmägeneraattorille | Kvantifioi viive + tokenien käyttöero | Yksittäinen `COMPARE_PROMPT` ympäristömuuttuja |
+| `chainlit_app.py` (RAG-demo) | Sisäinen tietämysassistentin prototyyppi | Perusta lyhyet vastaukset minimaalisella leksikaalisella haulla | Tiedoston sisäinen `DOCS`-lista |
+| `webgpu_demo.html` | Tulevaisuuden laitepohjainen selaimen päättelyesikatselu | Näytä matalan viiveen paikallinen kierros + UX-narratiivi | Vain käyttäjän live-kehotus |
 
 ### Skenaarion narratiivi
-Tuotanto-organisaatio haluaa johtoryhmän yhteenvetogeneraattorin. Kevyt SLM (phi‑4‑mini) laatii yhteenvedot; suurempi LLM (gpt‑oss‑20b) voi tarkentaa vain korkean prioriteetin raportteja. Istuntoskriptit tallentavat empiiriset viive- ja tokenimittarit perustellakseen hybridisuunnittelun, kun taas Chainlit-demo havainnollistaa, kuinka perusteltu haku pitää pienen mallin vastaukset faktapohjaisina. WebGPU-konseptisivu tarjoaa visiointipolun täysin asiakaspuolen käsittelyyn, kun selaimen kiihdytys kehittyy.
+Tuotetiimi haluaa johtoryhmän tiivistelmägeneraattorin. Kevyt SLM (phi‑4‑mini) luonnostelee tiivistelmät; suurempi LLM (gpt‑oss‑20b) voi tarkentaa vain korkean prioriteetin raportteja. Istuntoskriptit tallentavat empiiriset viive- ja tokenimittarit hybridisuunnittelun perustelemiseksi, kun taas Chainlit-demo havainnollistaa, kuinka perusteltu haku pitää pienen mallin vastaukset faktapohjaisina. WebGPU-konseptisivu tarjoaa visiointipolun täysin asiakaspuolen käsittelyyn, kun selaimen kiihdytys kehittyy.
 
 ### Minimaalinen RAG-konteksti (Chainlit)
 ```python
@@ -232,7 +222,7 @@ DOCS = [
 ]
 ```
 
-### Hybridiluonnos→Tarkennusvirtaus (Pseudo)
+### Hybridiluonnos→Tarkennusvirtaus (Pseudokoodi)
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":prompt}], max_tokens=280)
 if len(draft) < 600:  # heuristic: escalate only for longer briefs or flagged topics
@@ -241,20 +231,20 @@ else:
     final, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Refine and polish:\n{draft}"}], max_tokens=220)
 ```
 
-Seuraa molempia viivekomponentteja raportoidaksesi keskimääräiset yhdistetyt kustannukset.
+Seuraa molempia viivekomponentteja raportoida blended-keskimääräiset kustannukset.
 
 ### Valinnaiset parannukset
 
 | Painopiste | Parannus | Miksi | Toteutusvinkki |
 |------------|----------|-------|----------------|
-| Vertailumetriikat | Seuraa tokenien käyttöä + ensimmäisen tokenin viivettä | Kokonaisvaltainen suorituskykykuva | Käytä parannettua vertailuskriptiä (Istunto 3) `BENCH_STREAM=1` kanssa |
-| Hybridiputki | SLM-luonnos → LLM-tarkennus | Vähennä viivettä ja kustannuksia | Luo phi-4-mini:llä, tarkenna yhteenveto gpt-oss-20b:llä |
-| Suoratoisto-UI | Parempi UX Chainlitissä | Jatkuva palaute | Käytä `stream=True`, kun paikallinen suoratoisto on käytössä; kerää osia |
-| WebGPU-välimuisti | Nopeampi JS-initialisointi | Vähennä uudelleenkääntämisen ylikuormitusta | Välimuistiin käännetyt shader-artefaktit (tuleva runtime-ominaisuus) |
-| Deterministinen QA-setti | Reilu mallivertailu | Poista vaihtelu | Kiinteä kehotuslista + `temperature=0` arviointiajoille |
-| Tulosten pisteytys | Rakenteellinen laatulinsse | Siirry anekdooteista eteenpäin | Yksinkertainen rubriikki: johdonmukaisuus / faktapohjaisuus / tiiviys (1–5) |
-| Energia-/resurssimuistiinpanot | Luokkahuonekeskustelu | Näytä kompromissit | Käytä käyttöjärjestelmän seurantatyökaluja (`foundry system info`, Tehtävienhallinta, `nvidia-smi`) + vertailuskriptin tuloksia |
-| Kustannusten emulointi | Pilven perustelu | Suunnittele skaalaus | Kartuta tokenit hypoteettiseen pilvihinnoitteluun TCO-narratiivin osalta |
+| Vertailumittarit | Seuraa tokenien käyttöä + ensimmäisen tokenin viivettä | Kokonaisvaltainen suorituskykykuva | Käytä parannettua vertailuskriptiä (Istunto 3) `BENCH_STREAM=1` kanssa |
+| Hybridiputki | SLM luonnos → LLM tarkennus | Vähennä viivettä ja kustannuksia | Luo phi-4-mini:llä, tarkenna tiivistelmä gpt-oss-20b:llä |
+| Suoratoisto-UI | Parempi UX Chainlitissä | Jatkuva palaute | Käytä `stream=True`, kun paikallinen suoratoisto on käytössä; kerää palasia |
+| WebGPU-välimuisti | Nopeampi JS-initialisointi | Vähennä uudelleenkääntämisen ylikuormitusta | Välimuistita käännetyt shader-artefaktit (tuleva runtime-ominaisuus) |
+| Deterministinen QA-setti | Reilu mallivertailu | Poista vaihtelu | Kiinteä kehotuslista + `temperature=0` arviointia varten |
+| Tulosten pisteytys | Rakenteellinen laatulinssi | Siirry anekdooteista eteenpäin | Yksinkertainen rubriikki: johdonmukaisuus / faktapohjaisuus / tiiviys (1–5) |
+| Energia-/resurssihuomiot | Luokkahuonekeskustelu | Näytä kaupat | Käytä OS-monitorointityökaluja (Tehtävienhallinta, `nvidia-smi`) + vertailuskriptin tuloksia |
+| Kustannusemulointi | Pilvipohjainen perustelu | Suunnittele skaalaus | Kartta tokenit hypoteettiseen pilvihinnoitteluun TCO-narratiiville |
 | Viiveen erittely | Tunnista pullonkaulat | Kohdista optimoinnit | Mittaa kehotuksen valmistelu, pyynnön lähetys, ensimmäinen token, täydellinen valmistuminen |
 | RAG + LLM-varajärjestelmä | Laadun turvaverkko | Paranna vaikeita kyselyitä | Jos SLM-vastaus pituus < kynnysarvo tai matala luottamus → eskaloi |
 
@@ -280,5 +270,7 @@ Käytä johdonmukaista mittauskehystä mallien välillä reilujen vertailujen va
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Vastuuvapauslauseke**:  
 Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

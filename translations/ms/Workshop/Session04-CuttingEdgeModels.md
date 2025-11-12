@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T22:40:13+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-11T23:48:17+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "ms"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrak
 
-Bandingkan Model Bahasa Besar (LLM) dan Model Bahasa Kecil (SLM) untuk senario inferens tempatan vs awan. Pelajari corak pengedaran dengan memanfaatkan pecutan ONNX Runtime, pelaksanaan WebGPU, dan pengalaman hibrid RAG. Termasuk demo Chainlit RAG dengan model tempatan serta eksplorasi OpenWebUI pilihan. Anda akan menyesuaikan permulaan inferens WebGPU dan menilai kemampuan Phi vs GPT-OSS-20B serta pertimbangan kos/prestasi.
+Bandingkan Model Bahasa Besar (LLM) dan Model Bahasa Kecil (SLM) untuk senario inferens tempatan vs awan. Pelajari corak pengedaran menggunakan pecutan ONNX Runtime, pelaksanaan WebGPU, dan pengalaman hibrid RAG. Termasuk demo Chainlit RAG dengan model tempatan serta eksplorasi OpenWebUI pilihan. Anda akan menyesuaikan permulaan inferens WebGPU dan menilai keupayaan Phi vs GPT-OSS-20B serta pertimbangan kos/prestasi.
 
 ## Objektif Pembelajaran
 
@@ -26,9 +26,9 @@ Bandingkan Model Bahasa Besar (LLM) dan Model Bahasa Kecil (SLM) untuk senario i
 - Sesi 1–3 selesai
 - `chainlit` dipasang (sudah ada dalam `requirements.txt` untuk Modul08)
 - Pelayar yang menyokong WebGPU (Edge / Chrome terkini pada Windows 11)
-- Foundry Local berjalan (`foundry status`)
+- Foundry Local berjalan (`foundry service status`)
 
-### Nota Merentas Platform
+### Nota Lintas Platform
 
 Windows kekal sebagai persekitaran sasaran utama. Untuk pembangun macOS yang menunggu binari asli:
 1. Jalankan Foundry Local dalam VM Windows 11 (Parallels / UTM) ATAU stesen kerja Windows jauh.
@@ -43,9 +43,9 @@ Pemasangan Chainlit (kedua-dua platform):
 pip install chainlit
 ```
 
-## Aliran Demo (30 min)
+## Aliran Demo (30 minit)
 
-### 1. Bandingkan Phi (SLM) vs GPT-OSS-20B (LLM) (6 min)
+### 1. Bandingkan Phi (SLM) vs GPT-OSS-20B (LLM) (6 minit)
 
 ```powershell
 foundry model run phi-4-mini
@@ -62,19 +62,9 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 
 Jejak: kedalaman respons, ketepatan fakta, kekayaan gaya, latensi.
 
-### 2. Pecutan ONNX Runtime (5 min)
-
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
-
 Perhatikan perubahan throughput selepas mengaktifkan GPU vs hanya CPU.
 
-### 3. Inferens WebGPU dalam Pelayar (6 min)
+### 3. Inferens WebGPU dalam Pelayar (6 minit)
 
 Sesuaikan permulaan `04-webgpu-inference` (buat `samples/04-cutting-edge/webgpu_demo.html`):
 
@@ -119,9 +109,9 @@ Sesuaikan permulaan `04-webgpu-inference` (buat `samples/04-cutting-edge/webgpu_
 
 Buka fail dalam pelayar; perhatikan pusingan tempatan berlatensi rendah.
 
-### 4. Aplikasi Chat Chainlit RAG (7 min)
+### 4. Aplikasi Chat Chainlit RAG (7 minit)
 
-`samples/04-cutting-edge/chainlit_app.py` minimal:
+`samples/04-cutting-edge/chainlit_app.py` minimum:
 
 ```python
 #!/usr/bin/env python3
@@ -163,11 +153,11 @@ Jalankan:
 chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ```
 
-### 5. Projek Permulaan: Sesuaikan `04-webgpu-inference` (6 min)
+### 5. Projek Permulaan: Sesuaikan `04-webgpu-inference` (6 minit)
 
 Hasil:
-- Gantikan logik pengambilan tempat dengan token streaming (gunakan varian endpoint `stream=True` setelah diaktifkan)
-- Tambahkan carta latensi (pihak klien) untuk togol phi vs gpt-oss-20b
+- Gantikan logik pengambilan placeholder dengan token streaming (gunakan varian endpoint `stream=True` setelah diaktifkan)
+- Tambahkan carta latensi (klien) untuk togol phi vs gpt-oss-20b
 - Tanamkan konteks RAG secara langsung (textarea untuk dokumen rujukan)
 
 ## Heuristik Penilaian
@@ -197,9 +187,9 @@ foundry model list
 
 | Gejala | Punca | Tindakan |
 |--------|-------|---------|
-| Pengambilan halaman web gagal | CORS atau perkhidmatan tidak berfungsi | Gunakan `curl` untuk mengesahkan endpoint; aktifkan proksi CORS jika diperlukan |
+| Pengambilan halaman web gagal | CORS atau perkhidmatan tidak aktif | Gunakan `curl` untuk mengesahkan endpoint; aktifkan proksi CORS jika diperlukan |
 | Chainlit kosong | Persekitaran tidak aktif | Aktifkan venv & pasang semula keperluan |
-| Latensi tinggi | Model baru dimuatkan | Panaskan dengan urutan prompt kecil |
+| Latensi tinggi | Model baru dimuat | Panaskan dengan urutan prompt kecil |
 
 ## Rujukan
 
@@ -209,21 +199,21 @@ foundry model list
 
 ---
 
-**Tempoh Sesi**: 30 min  
+**Tempoh Sesi**: 30 minit  
 **Kesukaran**: Lanjutan
 
 ## Senario Contoh & Pemetaan Bengkel
 
 | Artifak Bengkel | Senario | Objektif | Sumber Data / Prompt |
 |------------------|---------|----------|----------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Pasukan seni bina menilai SLM vs LLM untuk penjana ringkasan eksekutif | Kuantifikasi latensi + delta penggunaan token | Satu pemboleh ubah persekitaran `COMPARE_PROMPT` |
-| `chainlit_app.py` (demo RAG) | Prototaip pembantu pengetahuan dalaman | Menyandarkan jawapan pendek dengan pengambilan leksikal minimum | Senarai `DOCS` dalam fail |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Pasukan seni bina menilai SLM vs LLM untuk penjana ringkasan eksekutif | Kuantifikasi latensi + delta penggunaan token | Satu pembolehubah persekitaran `COMPARE_PROMPT` |
+| `chainlit_app.py` (demo RAG) | Prototaip pembantu pengetahuan dalaman | Menyokong jawapan pendek dengan pengambilan leksikal minimum | Senarai `DOCS` dalam fail |
 | `webgpu_demo.html` | Pratonton inferens pelayar pada peranti masa depan | Tunjukkan pusingan tempatan berlatensi rendah + naratif UX | Hanya prompt pengguna langsung |
 
 ### Naratif Senario
-Organisasi produk mahukan penjana taklimat eksekutif. SLM ringan (phi‑4‑mini) merangka ringkasan; LLM lebih besar (gpt‑oss‑20b) mungkin hanya memperhalusi laporan keutamaan tinggi. Skrip sesi menangkap metrik latensi & token empirikal untuk membenarkan reka bentuk hibrid, sementara demo Chainlit menggambarkan bagaimana pengambilan yang disandarkan memastikan jawapan model kecil adalah faktual. Halaman konsep WebGPU menyediakan laluan visi untuk pemprosesan sepenuhnya di pihak klien apabila pecutan pelayar matang.
+Organisasi produk mahukan penjana taklimat eksekutif. SLM ringan (phi‑4‑mini) merangka ringkasan; LLM yang lebih besar (gpt‑oss‑20b) mungkin hanya memperhalusi laporan keutamaan tinggi. Skrip sesi menangkap metrik latensi & token empirikal untuk membenarkan reka bentuk hibrid, sementara demo Chainlit menggambarkan bagaimana pengambilan yang berasas memastikan jawapan model kecil adalah fakta. Halaman konsep WebGPU menyediakan laluan visi untuk pemprosesan sepenuhnya di sisi klien apabila pecutan pelayar matang.
 
-### Konteks RAG Minimal (Chainlit)
+### Konteks RAG Minimum (Chainlit)
 ```python
 DOCS = [
   "Foundry Local enables local model execution with OpenAI-compatible APIs.",
@@ -252,8 +242,8 @@ Jejak kedua-dua komponen latensi untuk melaporkan kos purata gabungan.
 | UI Streaming | UX lebih baik dalam Chainlit | Maklum balas secara beransur-ansur | Gunakan `stream=True` setelah streaming tempatan didedahkan; kumpulkan pecahan |
 | Cache WebGPU | Permulaan JS lebih pantas | Kurangkan overhead penyusunan semula | Cache artifak shader yang disusun (keupayaan runtime masa depan) |
 | Set QA Deterministik | Perbandingan model yang adil | Hilangkan variasi | Senarai prompt tetap + `temperature=0` untuk larian penilaian |
-| Pemarkahan Output | Lensa kualiti berstruktur | Melangkaui anekdot | Rubrik mudah: koheren / faktual / ringkas (1–5) |
-| Nota Tenaga / Sumber | Perbincangan kelas | Tunjukkan pertukaran | Gunakan monitor OS (`foundry system info`, Task Manager, `nvidia-smi`) + keluaran skrip penanda aras |
+| Pemarkahan Output | Lensa kualiti berstruktur | Bergerak melangkaui anekdot | Rubrik ringkas: koherensi / fakta / ringkas (1–5) |
+| Nota Tenaga / Sumber | Perbincangan kelas | Tunjukkan pertukaran | Gunakan monitor OS (Task Manager, `nvidia-smi`) + output skrip penanda aras |
 | Simulasi Kos | Justifikasi pra-awan | Rancang penskalaan | Peta token kepada harga awan hipotesis untuk naratif TCO |
 | Penguraian Latensi | Kenal pasti halangan | Sasarkan pengoptimuman | Ukur persediaan prompt, penghantaran permintaan, token pertama, penyelesaian penuh |
 | RAG + LLM Fallback | Jaring keselamatan kualiti | Tingkatkan pertanyaan sukar | Jika panjang jawapan SLM < ambang atau keyakinan rendah → tingkatkan |
@@ -276,9 +266,11 @@ full_ms = (time.time()-t1)*1000
 print({"prep_ms": prep_ms, "full_gen_ms": full_ms})
 ```
 
-Gunakan rangka pengukuran yang konsisten di seluruh model untuk perbandingan yang adil.
+Gunakan kerangka pengukuran yang konsisten di seluruh model untuk perbandingan yang adil.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

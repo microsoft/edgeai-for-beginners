@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-09T16:52:18+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T23:32:59+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "nl"
 }
@@ -11,26 +11,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Samenvatting
 
-Ontdek hoe je Hugging Face en andere open-source modellen kunt integreren in Foundry Local. Leer strategieën voor modelselectie, workflows voor bijdragen aan de community, methodologie voor prestatievergelijking en hoe je Foundry kunt uitbreiden met aangepaste modelregistraties. Deze sessie sluit aan bij de wekelijkse "Model Mondays"-verkenningsthema's en stelt je in staat om open-source modellen lokaal te evalueren en operationeel te maken voordat je opschaalt naar Azure.
+Ontdek hoe je Hugging Face en andere open-source modellen kunt integreren in Foundry Local. Leer strategieën voor modelselectie, workflows voor bijdragen aan de community, methodologie voor prestatievergelijking en hoe je Foundry kunt uitbreiden met aangepaste modelregistraties. Deze sessie sluit aan bij de wekelijkse "Model Mondays"-verkenningsthema's en helpt je om open-source modellen lokaal te evalueren en operationeel te maken voordat je opschaalt naar Azure.
 
 ## Leerdoelen
 
-Aan het einde kun je:
+Aan het einde van deze sessie kun je:
 
-- **Ontdekken & Evalueren**: Kandidatenmodellen identificeren (mistral, gemma, qwen, deepseek) op basis van kwaliteit versus resource-afwegingen.
+- **Ontdekken & Evalueren**: Geschikte modellen identificeren (mistral, gemma, qwen, deepseek) door kwaliteit af te wegen tegen resourcegebruik.
 - **Laden & Uitvoeren**: Foundry Local CLI gebruiken om communitymodellen te downloaden, te cachen en te starten.
 - **Benchmarken**: Consistente heuristieken toepassen voor latency, token-doorvoer en kwaliteit.
-- **Uitbreiden**: Een aangepaste modelwrapper registreren of aanpassen volgens SDK-compatibele patronen.
+- **Uitbreiden**: Een aangepast model registreren of aanpassen volgens SDK-compatibele patronen.
 - **Vergelijken**: Gestructureerde vergelijkingen maken voor SLM versus middelgrote LLM-selectiebeslissingen.
 
 ## Vereisten
 
-- Sessies 1 & 2 voltooid
+- Sessies 1 & 2 afgerond
 - Python-omgeving met `foundry-local-sdk` geïnstalleerd
 - Minimaal 15GB vrije schijfruimte voor meerdere modelcaches
-- Optioneel: GPU/WebGPU-versnelling ingeschakeld (`foundry config list`)
 
-### Snelstart voor Cross-Platform Omgeving
+### Cross-platform omgeving snel starten
 
 Windows PowerShell:
 ```powershell
@@ -54,9 +53,9 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Demo Flow (30 min)
+## Demo Flow (30 minuten)
 
-### 1. Hugging Face Modellen Laden via CLI (8 min)
+### 1. Hugging Face-modellen laden via CLI (8 minuten)
 
 ```powershell
 # List catalog entries (filter manually if needed)
@@ -72,7 +71,7 @@ foundry cache list
 ```
 
 
-### 2. Uitvoeren & Snelle Controle (5 min)
+### 2. Uitvoeren & Snelle Controle (5 minuten)
 
 ```powershell
 foundry model run qwen2.5-0.5b
@@ -83,7 +82,7 @@ foundry model run mistral-7b --prompt "Explain retrieval augmented generation in
 ```
 
 
-### 3. Benchmarkscript (8 min)
+### 3. Benchmarkscript (8 minuten)
 
 Maak `samples/03-oss-models/benchmark_models.py`:
 
@@ -156,21 +155,21 @@ python samples/03-oss-models/benchmark_models.py
 ```
 
 
-### 4. Prestatie Vergelijken (5 min)
+### 4. Prestaties vergelijken (5 minuten)
 
-Bespreek afwegingen: laadtijd, geheugengebruik (observeer Taakbeheer / `nvidia-smi` / OS-resource monitor), outputkwaliteit versus snelheid. Gebruik het Python-benchmarkscript (Sessie 3) voor latency & doorvoer; herhaal na het inschakelen van GPU-versnelling.
+Bespreek afwegingen: laadtijd, geheugengebruik (bekijk Taakbeheer / `nvidia-smi` / OS-resource monitor), outputkwaliteit versus snelheid. Gebruik het Python-benchmarkscript (Sessie 3) voor latency & doorvoer; herhaal na het inschakelen van GPU-versnelling.
 
-### 5. Starterproject (4 min)
+### 5. Startproject (4 minuten)
 
-Maak een generator voor modelvergelijkingsrapporten (breid benchmarkscript uit met markdown-export).
+Maak een generator voor modelvergelijkingsrapporten (breid het benchmarkscript uit met markdown-export).
 
-## Starterproject: Uitbreiden `03-huggingface-models`
+## Startproject: Uitbreiden `03-huggingface-models`
 
 Verbeter het bestaande voorbeeld door:
 
-1. Benchmarkaggregatie + CSV/Markdown-output toe te voegen.
-2. Eenvoudige kwalitatieve scoring te implementeren (promptpaarset + handmatige annotatiebestand).
-3. Een JSON-configuratie (`models.json`) te introduceren voor een instelbare modellenlijst & promptset.
+1. Benchmarkaggregatie + CSV/Markdown-uitvoer toe te voegen.
+2. Eenvoudige kwalitatieve scoring te implementeren (promptpaarset + handmatig annotatiebestand).
+3. Een JSON-configuratie (`models.json`) te introduceren voor een uitbreidbare modellijst en promptset.
 
 ## Validatiechecklist
 
@@ -180,17 +179,17 @@ foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
 
-Alle doelmodellen moeten verschijnen en reageren op een chatverzoek.
+Alle doelmodellen moeten verschijnen en reageren op een testchatverzoek.
 
 ## Voorbeeldscenario & Workshopmapping
 
 | Workshopscript | Scenario | Doel | Prompt / Datasetbron |
 |-----------------|----------|------|-----------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge-platformteam selecteert standaard SLM voor ingebouwde samenvatter | Latency + p95 + tokens/sec vergelijking produceren tussen kandidatenmodellen | Inline `PROMPT` var + omgeving `BENCH_MODELS` lijst |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge-platformteam kiest standaard SLM voor ingebouwde samenvatter | Latency + p95 + tokens/sec-vergelijking produceren tussen kandidaatmodellen | Inline `PROMPT` var + omgeving `BENCH_MODELS` lijst |
 
 ### Scenarioverhaal
 
-Productengineering moet een standaard lichtgewicht samenvattingsmodel kiezen voor een offline notulenfunctie. Ze voeren gecontroleerde deterministische benchmarks uit (temperature=0) over een vaste promptset (zie voorbeeld hieronder) en verzamelen latency- en doorvoermetingen met en zonder GPU-versnelling.
+Het productontwikkelingsteam moet een standaard lichtgewicht samenvattingsmodel kiezen voor een offline functie voor vergadernotities. Ze voeren gecontroleerde deterministische benchmarks uit (temperature=0) op een vaste promptset (zie voorbeeld hieronder) en verzamelen latency- en doorvoermetingen met en zonder GPU-versnelling.
 
 ### Voorbeeld Promptset JSON (uitbreidbaar)
 
@@ -207,7 +206,7 @@ Loop elke prompt per model, leg latency per prompt vast om distributiemetingen a
 
 ## Modelselectiekader
 
-| Dimensie | Metriek | Waarom Het Belangrijk Is |
+| Dimensie | Metriek | Waarom het belangrijk is |
 |----------|--------|--------------------------|
 | Latency | gemiddeld / p95 | Consistentie van gebruikerservaring |
 | Doorvoer | tokens/sec | Batch- & streaming-schaalbaarheid |
@@ -216,7 +215,7 @@ Loop elke prompt per model, leg latency per prompt vast om distributiemetingen a
 | Voetafdruk | schijfcache | Distributie & updates |
 | Licentie | gebruiksvoorwaarden | Commerciële naleving |
 
-## Uitbreiden Met Aangepast Model
+## Uitbreiden met een aangepast model
 
 Hoog-niveau patroon (pseudo):
 
@@ -248,24 +247,24 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ---
 
-**Sessieduur**: 30 min (+ optionele verdieping)  
+**Sessieduur**: 30 minuten (+ optionele verdieping)  
 **Moeilijkheidsgraad**: Gemiddeld
 
-### Optionele Verbeteringen
+### Optionele verbeteringen
 
 | Verbetering | Voordeel | Hoe |
 |-------------|----------|-----|
-| Streaming Eerste-Token Latency | Meet waargenomen responsiviteit | Voer benchmark uit met `BENCH_STREAM=1` (uitgebreid script in `Workshop/samples/session03`) |
-| Deterministische Modus | Stabiele regressievergelijkingen | `temperature=0`, vaste promptset, JSON-uitvoer vastleggen onder versiebeheer |
-| Kwaliteitsrubriek Scoring | Voegt kwalitatieve dimensie toe | Beheer `prompts.json` met verwachte facetten; scores (1–5) handmatig annoteren of via secundair model |
-| CSV / Markdown Export | Deelbaar rapport | Breid script uit om `benchmark_report.md` te schrijven met tabel & highlights |
+| Streaming First-Token Latency | Meet waargenomen responsiviteit | Voer benchmark uit met `BENCH_STREAM=1` (verbeterd script in `Workshop/samples/session03`) |
+| Deterministische modus | Stabiele regressievergelijkingen | `temperature=0`, vaste promptset, JSON-uitvoer vastleggen onder versiebeheer |
+| Kwaliteitsrubriek scoring | Voegt kwalitatieve dimensie toe | Beheer `prompts.json` met verwachte facetten; scores (1–5) handmatig annoteren of via secundair model |
+| CSV / Markdown-export | Deelbaar rapport | Breid script uit om `benchmark_report.md` te schrijven met tabel & highlights |
 | Modelcapaciteitstags | Helpt bij geautomatiseerde routering later | Beheer `models.json` met `{alias: {capabilities:[], size_mb:..}}` |
-| Cache-opwarmfase | Vermindert koude-startbias | Voer één warme ronde uit vóór de timingloop (al geïmplementeerd) |
-| Percentiele Nauwkeurigheid | Robuuste tail latency | Gebruik numpy percentiel (al in refactored script) |
+| Cache-opwarmfase | Vermindert koude-startbias | Voer een warme ronde uit vóór de timingloop (al geïmplementeerd) |
+| Percentiele nauwkeurigheid | Robuuste tail latency | Gebruik numpy percentiel (al in refactored script) |
 | Tokenkostenbenadering | Economische vergelijking | Geschatte kosten = (tokens/sec * gemiddelde tokens per verzoek) * energieheuristiek |
-| Automatisch Overslaan van Mislukte Modellen | Veerkracht in batchruns | Omwikkel elke benchmark met try/except en markeer statusveld |
+| Automatisch overslaan van mislukte modellen | Veerkracht bij batchruns | Wikkel elke benchmark in try/except en markeer statusveld |
 
-#### Minimale Markdown Export Snippet
+#### Minimale Markdown-exportfragment
 
 ```python
 with open("benchmark_report.md", "w") as f:
@@ -275,7 +274,7 @@ with open("benchmark_report.md", "w") as f:
 ```
 
 
-#### Voorbeeld Deterministische Promptset
+#### Voorbeeld deterministische promptset
 
 ```json
 [
@@ -289,5 +288,7 @@ Loop de statische lijst in plaats van willekeurige prompts voor vergelijkbare me
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

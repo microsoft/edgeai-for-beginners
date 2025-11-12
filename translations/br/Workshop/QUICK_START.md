@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T21:33:33+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T22:44:20+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "br"
 }
@@ -135,7 +135,7 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**Testa a lógica de roteamento** com múltiplas intenções (código, resumo, classificação)
+**Testa lógica de roteamento** com múltiplas intenções (código, resumo, classificação)
 
 ### Sessão 06: Pipeline
 
@@ -160,7 +160,7 @@ python export_benchmark_markdown.py \
 
 **Saída**: Tabela em Markdown + métricas em JSON
 
-### Verificar Padrões de CLI em Markdown
+### Verificar Padrões de CLI no Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -233,13 +233,13 @@ foundry model run phi-4-mini
 | `FOUNDRY_LOCAL_ALIAS` | Varia | Alias do modelo a ser usado |
 | `FOUNDRY_LOCAL_ENDPOINT` | Automático | Substituir endpoint do serviço |
 | `SHOW_USAGE` | `0` | Mostrar estatísticas de uso de tokens |
-| `RETRY_ON_FAIL` | `1` | Ativar lógica de repetição |
+| `RETRY_ON_FAIL` | `1` | Habilitar lógica de repetição |
 | `RETRY_BACKOFF` | `1.0` | Atraso inicial para repetição (segundos) |
 
 ### Específico da Sessão
 | Variável | Padrão | Descrição |
 |----------|---------|-------------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Modelo de incorporação |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Modelo de embeddings |
 | `RAG_QUESTION` | Ver exemplo | Pergunta de teste RAG |
 | `BENCH_MODELS` | Varia | Modelos separados por vírgula |
 | `BENCH_ROUNDS` | `3` | Iterações de benchmark |
@@ -266,29 +266,30 @@ foundry model run phi-4-mini
 ## Documentação do SDK
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
+- **SDK Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Obtendo Ajuda
 
-1. Verifique o status do serviço: `foundry service status`  
-2. Veja os logs: Verifique os logs do serviço Foundry Local  
-3. Consulte a documentação do SDK: https://github.com/microsoft/Foundry-Local  
-4. Revise o código de exemplo: Todos os exemplos possuem docstrings detalhados  
+1. Verificar status do serviço: `foundry service status`  
+2. Ver logs: Checar os logs do serviço Foundry Local  
+3. Consultar docs do SDK: https://github.com/microsoft/Foundry-Local  
+4. Revisar código de exemplo: Todos os exemplos possuem docstrings detalhados  
 
 ## Próximos Passos
 
 1. Complete todas as sessões do workshop na ordem  
 2. Experimente diferentes modelos  
 3. Modifique os exemplos para seus casos de uso  
-4. Revise `SDK_MIGRATION_NOTES.md` para padrões avançados  
 
 ---
 
-**Última Atualização**: 08-01-2025  
+**Última Atualização**: 08/01/2025  
 **Versão do Workshop**: Mais recente  
 **SDK**: Foundry Local Python SDK  
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:52:48+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T00:02:10+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "sw"
 }
@@ -33,7 +33,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 ## 📂 Muhtasari wa Sampuli
 
 | Kipindi | Sampuli | Kusudi | Muda |
-|---------|--------|---------|------|
+|---------|---------|--------|------|
 | 01 | `chat_bootstrap.py` | Mazungumzo ya msingi + utiririshaji | ~30s |
 | 02 | `rag_pipeline.py` | RAG na embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | Tathmini ya RAG | ~60s |
@@ -84,7 +84,7 @@ set PIPELINE_TASK="Your task here"
 
 ---
 
-## ✅ Uthibitishaji & Upimaji
+## ✅ Uthibitishaji na Upimaji
 
 ```bash
 # Validate syntax and imports
@@ -195,13 +195,13 @@ for chunk in stream:
 ## 📊 Uchaguzi wa Mfano
 
 | Mfano | Ukubwa | Bora Kwa | Kasi |
-|-------|------|----------|-------|
+|-------|-------|----------|------|
 | `qwen2.5-0.5b` | 0.5B | Uainishaji wa haraka | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Uzalishaji wa haraka wa msimbo | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Uandishi wa ubunifu | ⚡⚡ |
-| `phi-3.5-mini` | 3.5B | Msimbo, kurekebisha | ⚡⚡ |
-| `phi-4-mini` | 4B | Jumla, maelezo ya jumla | ⚡⚡ |
-| `qwen2.5-7b` | 7B | Ufikiri wa kina | ⚡ |
+| `phi-3.5-mini` | 3.5B | Msimbo, urekebishaji | ⚡⚡ |
+| `phi-4-mini` | 4B | Jumla ya jumla | ⚡⚡ |
+| `qwen2.5-7b` | 7B | Ufikiri wa hali ngumu | ⚡ |
 
 ---
 
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **SDK Docs**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Marejeleo ya Haraka**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Muhtasari wa Sasisho**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Vidokezo vya Uhamishaji**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -219,7 +217,7 @@ for chunk in stream:
 1. **Hifadhi wateja**: `workshop_utils` inahifadhi kwa ajili yako
 2. **Tumia mifano midogo**: Anza na `qwen2.5-0.5b` kwa majaribio
 3. **Wezesha takwimu za matumizi**: Weka `SHOW_USAGE=1` kufuatilia tokeni
-4. **Usindikaji wa kundi**: Shughulikia maelezo mengi kwa mfululizo
+4. **Usindikaji wa kundi**: Shughulikia maelekezo mengi mfululizo
 5. **Punguza max_tokens**: Inapunguza muda wa kusubiri kwa majibu ya haraka
 
 ---
@@ -256,16 +254,18 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Msaada wa Haraka**: Endesha sampuli yoyote kwa `--help` kutoka kwenye saraka ya `samples` au angalia maelezo ya maandishi:
+**Msaada wa Haraka**: Endesha sampuli yoyote kwa `--help` kutoka kwenye saraka ya `samples` au angalia docstring:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**Sampuli zote zimesasishwa Oktoba 2025 kwa mbinu bora za Foundry Local SDK** ✨
+**Sampuli zote zimesasishwa Oktoba 2025 na mbinu bora za Foundry Local SDK** ✨
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T23:23:26+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T00:30:09+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "sr"
 }
@@ -40,7 +40,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 03 | `benchmark_oss_models.py` | Бенчмаркинг модела | ~2м |
 | 04 | `model_compare.py` | SLM vs LLM | ~45с |
 | 05 | `agents_orchestrator.py` | Систем са више агената | ~60с |
-| 06 | `models_router.py` | Рутање намере | ~45с |
+| 06 | `models_router.py` | Рутање намера | ~45с |
 | 06 | `models_pipeline.py` | Вишестепени процес | ~60с |
 
 ---
@@ -167,7 +167,7 @@ manager, client, model_id = get_client(
 )
 ```
 
-### Руководење грешкама
+### Руковање грешкама
 ```python
 try:
     manager, client, model_id = get_client(alias)
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **SDK документација**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Брза референца**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Резиме ажурирања**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Белешке о миграцији**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -256,7 +254,7 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Брза помоћ**: Покрените било који пример са `--help` из директоријума `samples` или погледајте docstring:
+**Брза помоћ**: Покрените било који пример са `--help` из директоријума `samples` или проверите docstring:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем услуге за превођење помоћу вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да обезбедимо тачност, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитативним извором. За критичне информације препоручује се професионални превод од стране људи. Не сносимо одговорност за било каква погрешна тумачења или неспоразуме који могу настати услед коришћења овог превода.
+Овај документ је преведен помоћу услуге за превођење вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да обезбедимо тачност, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитативним извором. За критичне информације препоручује се професионални превод од стране људи. Не преузимамо одговорност за било каква погрешна тумачења или неспоразуме који могу настати услед коришћења овог превода.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

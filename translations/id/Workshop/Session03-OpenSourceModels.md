@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-09T19:25:10+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T23:47:05+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "id"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrak
 
-Pelajari cara membawa model Hugging Face dan model open-source lainnya ke Foundry Local. Temukan strategi pemilihan, alur kerja kontribusi komunitas, metodologi perbandingan kinerja, dan cara memperluas Foundry dengan registrasi model kustom. Sesi ini selaras dengan tema eksplorasi mingguan "Model Mondays" dan mempersiapkan Anda untuk mengevaluasi serta mengoperasionalkan model open-source secara lokal sebelum melakukan skala ke Azure.
+Pelajari cara membawa model Hugging Face dan model open-source lainnya ke Foundry Local. Temukan strategi pemilihan, alur kerja kontribusi komunitas, metodologi perbandingan kinerja, dan cara memperluas Foundry dengan registrasi model kustom. Sesi ini sesuai dengan tema eksplorasi mingguan "Model Mondays" dan membantu Anda mengevaluasi serta mengoperasionalkan model open-source secara lokal sebelum skalabilitas ke Azure.
 
 ## Tujuan Pembelajaran
 
 Pada akhir sesi, Anda akan dapat:
 
-- **Menemukan & Mengevaluasi**: Mengidentifikasi model kandidat (mistral, gemma, qwen, deepseek) dengan mempertimbangkan kualitas vs sumber daya.
+- **Menemukan & Mengevaluasi**: Mengidentifikasi model kandidat (mistral, gemma, qwen, deepseek) menggunakan pertimbangan kualitas vs sumber daya.
 - **Memuat & Menjalankan**: Menggunakan Foundry Local CLI untuk mengunduh, menyimpan, dan menjalankan model komunitas.
 - **Benchmark**: Menerapkan heuristik konsisten untuk latensi + throughput token + kualitas.
 - **Memperluas**: Mendaftarkan atau menyesuaikan pembungkus model kustom sesuai pola yang kompatibel dengan SDK.
@@ -27,10 +27,9 @@ Pada akhir sesi, Anda akan dapat:
 
 - Sesi 1 & 2 telah selesai
 - Lingkungan Python dengan `foundry-local-sdk` terinstal
-- Setidaknya 15GB ruang disk kosong untuk cache model
-- Opsional: Akselerasi GPU/WebGPU diaktifkan (`foundry config list`)
+- Setidaknya 15GB ruang disk kosong untuk cache beberapa model
 
-### Panduan Cepat Lingkungan Lintas Platform
+### Panduan Memulai Cepat di Lingkungan Lintas Platform
 
 Windows PowerShell:
 ```powershell
@@ -158,18 +157,18 @@ python samples/03-oss-models/benchmark_models.py
 
 ### 4. Membandingkan Kinerja (5 menit)
 
-Diskusikan trade-off: waktu pemuatan, penggunaan memori (amati Task Manager / `nvidia-smi` / monitor sumber daya OS), kualitas output vs kecepatan. Gunakan skrip benchmark Python (Sesi 3) untuk latensi & throughput; ulangi setelah mengaktifkan akselerasi GPU.
+Diskusikan pertimbangan: waktu pemuatan, penggunaan memori (amati Task Manager / `nvidia-smi` / monitor sumber daya OS), kualitas output vs kecepatan. Gunakan skrip benchmark Python (Sesi 3) untuk latensi & throughput; ulangi setelah mengaktifkan akselerasi GPU.
 
-### 5. Proyek Pemula (4 menit)
+### 5. Proyek Awal (4 menit)
 
 Buat generator laporan perbandingan model (perluas skrip benchmark dengan ekspor markdown).
 
-## Proyek Pemula: Memperluas `03-huggingface-models`
+## Proyek Awal: Memperluas `03-huggingface-models`
 
 Tingkatkan sampel yang ada dengan:
 
 1. Menambahkan agregasi benchmark + output CSV/Markdown.
-2. Mengimplementasikan penilaian kualitatif sederhana (set pasangan prompt + file anotasi manual).
+2. Mengimplementasikan penilaian kualitatif sederhana (set pasangan prompt + file stub anotasi manual).
 3. Memperkenalkan konfigurasi JSON (`models.json`) untuk daftar model yang dapat dihubungkan & set prompt.
 
 ## Daftar Periksa Validasi
@@ -182,14 +181,14 @@ curl http://localhost:5273/v1/models
 
 Semua model target harus muncul dan merespons permintaan chat probe.
 
-## Skenario Sampel & Pemetaan Workshop
+## Skenario Contoh & Pemetaan Workshop
 
 | Skrip Workshop | Skenario | Tujuan | Sumber Prompt / Dataset |
 |-----------------|----------|--------|-------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Tim platform edge memilih SLM default untuk summarizer tersemat | Menghasilkan perbandingan latensi + p95 + token/detik di antara model kandidat | Variabel `PROMPT` inline + daftar `BENCH_MODELS` lingkungan |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Tim platform edge memilih SLM default untuk summarizer tersemat | Menghasilkan perbandingan latensi + p95 + tokens/detik di antara model kandidat | Variabel `PROMPT` inline + daftar `BENCH_MODELS` lingkungan |
 
 ### Narasi Skenario
-Tim rekayasa produk harus memilih model ringkas default untuk fitur catatan rapat offline. Mereka menjalankan benchmark deterministik yang terkontrol (temperature=0) pada set prompt tetap (lihat contoh di bawah) dan mengumpulkan metrik latensi + throughput dengan dan tanpa akselerasi GPU.
+Tim rekayasa produk harus memilih model summarization ringan default untuk fitur catatan rapat offline. Mereka menjalankan benchmark deterministik yang terkontrol (temperature=0) pada set prompt tetap (lihat contoh di bawah) dan mengumpulkan metrik latensi + throughput dengan dan tanpa akselerasi GPU.
 
 ### Contoh Set Prompt JSON (dapat diperluas)
 ```json
@@ -201,20 +200,20 @@ Tim rekayasa produk harus memilih model ringkas default untuk fitur catatan rapa
 ]
 ```
 
-Loop setiap prompt per model, tangkap latensi per-prompt untuk mendapatkan metrik distribusi dan mendeteksi outlier.
+Loop setiap prompt per model, tangkap latensi per-prompt untuk menghitung metrik distribusi dan mendeteksi outlier.
 
 ## Kerangka Kerja Pemilihan Model
 
 | Dimensi | Metrik | Mengapa Penting |
 |---------|--------|-----------------|
 | Latensi | rata-rata / p95 | Konsistensi pengalaman pengguna |
-| Throughput | token/detik | Skalabilitas batch & streaming |
-| Memori | ukuran residu | Kesesuaian perangkat & konkurensi |
+| Throughput | tokens/detik | Skalabilitas batch & streaming |
+| Memori | ukuran residensi | Kesesuaian perangkat & konkurensi |
 | Kualitas | prompt rubrik | Kesesuaian tugas |
 | Jejak | cache disk | Distribusi & pembaruan |
 | Lisensi | izin penggunaan | Kepatuhan komersial |
 
-## Memperluas Dengan Model Kustom
+## Memperluas dengan Model Kustom
 
 Pola tingkat tinggi (pseudo):
 
@@ -255,12 +254,12 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 |-------------|---------|------|
 | Latensi Token Pertama Streaming | Mengukur responsivitas yang dirasakan | Jalankan benchmark dengan `BENCH_STREAM=1` (skrip yang ditingkatkan di `Workshop/samples/session03`) |
 | Mode Deterministik | Perbandingan regresi yang stabil | `temperature=0`, set prompt tetap, tangkap output JSON di bawah kontrol versi |
-| Penilaian Rubrik Kualitas | Menambahkan dimensi kualitatif | Pertahankan `prompts.json` dengan aspek yang diharapkan; anotasi skor (1–5) secara manual atau melalui model sekunder |
+| Penilaian Rubrik Kualitas | Menambahkan dimensi kualitatif | Kelola `prompts.json` dengan aspek yang diharapkan; anotasi skor (1–5) secara manual atau melalui model sekunder |
 | Ekspor CSV / Markdown | Laporan yang dapat dibagikan | Perluas skrip untuk menulis `benchmark_report.md` dengan tabel & sorotan |
-| Tag Kemampuan Model | Membantu perutean otomatis di masa depan | Pertahankan `models.json` dengan `{alias: {capabilities:[], size_mb:..}}` |
-| Fase Pemanasan Cache | Mengurangi bias pemuatan dingin | Jalankan satu putaran hangat sebelum loop pengaturan waktu (sudah diimplementasikan) |
-| Akurasi Persentil | Latensi tail yang kuat | Gunakan persentil numpy (sudah ada di skrip yang direfaktor) |
-| Perkiraan Biaya Token | Perbandingan ekonomi | Perkiraan biaya = (token/detik * rata-rata token per permintaan) * heuristik energi |
+| Tag Kemampuan Model | Membantu perutean otomatis di masa depan | Kelola `models.json` dengan `{alias: {capabilities:[], size_mb:..}}` |
+| Fase Pemanasan Cache | Mengurangi bias pemuatan dingin | Jalankan satu putaran hangat sebelum loop pengukuran waktu (sudah diimplementasikan) |
+| Akurasi Persentil | Latensi tail yang kuat | Gunakan numpy percentile (sudah dalam skrip yang direfaktor) |
+| Perkiraan Biaya Token | Perbandingan ekonomi | Perkiraan biaya = (tokens/detik * rata-rata token per permintaan) * heuristik energi |
 | Auto-Skipping Model Gagal | Ketahanan dalam batch run | Bungkus setiap benchmark dalam try/except dan tandai status field |
 
 #### Cuplikan Ekspor Markdown Minimal
@@ -287,5 +286,7 @@ Loop daftar statis alih-alih prompt acak untuk metrik yang dapat dibandingkan di
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T23:56:57+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-12T01:00:26+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "et"
 }
@@ -29,7 +29,7 @@ foundry service status
 
 ### 2. Paigalda Python sõltuvused
 
-Töötuba kataloogist:
+Töötuba kataloogist:  
 
 ```bash
 # Create virtual environment (recommended)
@@ -45,7 +45,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Töötuba näidiste käivitamine
+## Töötuba näidete käivitamine
 
 ### Sessioon 01: Põhiline vestlus
 
@@ -81,9 +81,9 @@ cd Workshop/samples
 python -m session02.rag_eval_ragas
 ```
 
-**Märkus**: Vajab täiendavate sõltuvuste paigaldamist `requirements.txt` kaudu
+**Märkus**: Vajab täiendavaid sõltuvusi, mis on paigaldatud `requirements.txt` kaudu
 
-### Sessioon 03: Võrdlusuuring
+### Sessioon 03: Võrdlusuuringud
 
 ```bash
 cd Workshop/samples
@@ -147,7 +147,7 @@ python -m session06.models_pipeline
 
 ## Skriptid
 
-### Võrdlusuuringu aruande eksport
+### Ekspordi võrdlusuuringu aruanne
 
 ```bash
 cd Workshop/scripts
@@ -160,13 +160,13 @@ python export_benchmark_markdown.py \
 
 **Väljund**: Markdown tabel + JSON mõõdikud
 
-### Markdown CLI mustrite kontrollimine
+### Kontrolli Markdown CLI mustreid
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**Eesmärk**: Tuvastada dokumentatsioonis vananenud CLI mustrid
+**Eesmärk**: Tuvastada vananenud CLI mustrid dokumentatsioonis
 
 ## Testimine
 
@@ -177,7 +177,7 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**Testid**: Põhifunktsionaalsus peamiste näidiste jaoks
+**Testid**: Põhifunktsionaalsus peamiste näidete jaoks
 
 ## Tõrkeotsing
 
@@ -232,7 +232,7 @@ foundry model run phi-4-mini
 |---------|-----------|-----------|
 | `FOUNDRY_LOCAL_ALIAS` | Muutuv | Kasutatav mudeli alias |
 | `FOUNDRY_LOCAL_ENDPOINT` | Auto | Teenuse lõpp-punkti ülekirjutamine |
-| `SHOW_USAGE` | `0` | Näita tokeni kasutuse statistikat |
+| `SHOW_USAGE` | `0` | Näita märgi kasutamise statistikat |
 | `RETRY_ON_FAIL` | `1` | Luba uuesti proovimise loogika |
 | `RETRY_BACKOFF` | `1.0` | Esialgne uuesti proovimise viivitus (sekundites) |
 
@@ -240,16 +240,16 @@ foundry model run phi-4-mini
 | Muutuja | Vaikimisi | Kirjeldus |
 |---------|-----------|-----------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding mudel |
-| `RAG_QUESTION` | Vaata näidist | RAG testküsimus |
+| `RAG_QUESTION` | Vaata näidet | RAG testküsimus |
 | `BENCH_MODELS` | Muutuv | Komaga eraldatud mudelid |
 | `BENCH_ROUNDS` | `3` | Võrdlusuuringu iteratsioonid |
-| `BENCH_PROMPT` | Vaata näidist | Võrdlusuuringu küsimus |
+| `BENCH_PROMPT` | Vaata näidet | Võrdlusuuringu küsimus |
 | `BENCH_STREAM` | `0` | Mõõda esimese märgi latentsust |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Peamine agent mudel |
 | `AGENT_MODEL_EDITOR` | Peamine | Toimetaja agent mudel |
 | `SLM_ALIAS` | `phi-4-mini` | Väike keelemudel |
 | `LLM_ALIAS` | `qwen2.5-7b` | Suur keelemudel |
-| `COMPARE_PROMPT` | Vaata näidist | Võrdlusküsimus |
+| `COMPARE_PROMPT` | Vaata näidet | Võrdluse küsimus |
 
 ## Soovitatud mudelid
 
@@ -273,14 +273,13 @@ foundry model run phi-4-mini
 1. Kontrolli teenuse olekut: `foundry service status`  
 2. Vaata logisid: Kontrolli Foundry Local teenuse logisid  
 3. Vaata SDK dokumentatsiooni: https://github.com/microsoft/Foundry-Local  
-4. Uuri näidiskoodi: Kõigil näidistel on üksikasjalikud kommentaarid  
+4. Vaata näidiskoodi: Kõigil näidetel on üksikasjalikud docstringid  
 
 ## Järgmised sammud
 
-1. Lõpeta kõik töötoa sessioonid järjekorras  
+1. Täida kõik töötoa sessioonid järjekorras  
 2. Katseta erinevaid mudeleid  
-3. Kohanda näidiseid vastavalt oma vajadustele  
-4. Vaata `SDK_MIGRATION_NOTES.md` edasijõudnute mustrite jaoks  
+3. Kohanda näiteid oma kasutusjuhtude jaoks  
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tekkida selle tõlke kasutamise tõttu.
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palun olge teadlik, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul on soovitatav kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-09T14:37:29+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T23:19:16+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "da"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Resumé
 
-Lær, hvordan du integrerer Hugging Face og andre open-source modeller i Foundry Local. Få indsigt i udvælgelsesstrategier, workflows for bidrag fra fællesskabet, metoder til performance-sammenligning og hvordan du udvider Foundry med registrering af egne modeller. Denne session knytter sig til de ugentlige "Model Mondays"-temaer og giver dig værktøjer til at evaluere og operationalisere open-source modeller lokalt, før du skalerer til Azure.
+Lær hvordan du kan integrere Hugging Face og andre open-source modeller i Foundry Local. Få indsigt i udvælgelsesstrategier, workflows for bidrag fra fællesskabet, metoder til sammenligning af ydeevne, og hvordan du kan udvide Foundry med registrering af brugerdefinerede modeller. Denne session knytter sig til de ugentlige "Model Mondays"-temaer og giver dig værktøjer til at evaluere og operationalisere open-source modeller lokalt, før du skalerer til Azure.
 
 ## Læringsmål
 
@@ -20,7 +20,7 @@ Ved afslutningen vil du kunne:
 - **Opdage & Evaluere**: Identificere kandidater (mistral, gemma, qwen, deepseek) baseret på kvalitet kontra ressourceforbrug.
 - **Indlæse & Køre**: Bruge Foundry Local CLI til at downloade, cache og starte fællesskabsmodeller.
 - **Benchmarke**: Anvende konsistente heuristikker for latenstid, token-gennemstrømning og kvalitet.
-- **Udvide**: Registrere eller tilpasse en egen model-wrapper efter SDK-kompatible mønstre.
+- **Udvide**: Registrere eller tilpasse en brugerdefineret model-wrapper efter SDK-kompatible mønstre.
 - **Sammenligne**: Udarbejde strukturerede sammenligninger for SLM kontra mellemstore LLM-valg.
 
 ## Forudsætninger
@@ -28,7 +28,6 @@ Ved afslutningen vil du kunne:
 - Session 1 & 2 gennemført
 - Python-miljø med `foundry-local-sdk` installeret
 - Mindst 15GB ledig diskplads til flere model-caches
-- Valgfrit: GPU/WebGPU-acceleration aktiveret (`foundry config list`)
 
 ### Hurtig start på tværs af platforme
 
@@ -53,7 +52,6 @@ Ved benchmarking fra macOS mod en Windows-hosttjeneste, indstil:
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
-
 ## Demo Flow (30 min)
 
 ### 1. Indlæs Hugging Face-modeller via CLI (8 min)
@@ -71,7 +69,6 @@ foundry model download qwen2.5-0.5b
 foundry cache list
 ```
 
-
 ### 2. Kør & Hurtig Test (5 min)
 
 ```powershell
@@ -82,8 +79,7 @@ foundry model run mistral-7b
 foundry model run mistral-7b --prompt "Explain retrieval augmented generation in one paragraph."
 ```
 
-
-### 3. Benchmark-script (8 min)
+### 3. Benchmark Script (8 min)
 
 Opret `samples/03-oss-models/benchmark_models.py`:
 
@@ -155,8 +151,7 @@ Kør:
 python samples/03-oss-models/benchmark_models.py
 ```
 
-
-### 4. Sammenlign ydeevne (5 min)
+### 4. Sammenlign Ydeevne (5 min)
 
 Diskuter kompromiser: indlæsningstid, hukommelsesforbrug (observer Task Manager / `nvidia-smi` / OS ressourceovervågning), outputkvalitet kontra hastighed. Brug Python-benchmark-scriptet (Session 3) til latenstid og gennemstrømning; gentag efter aktivering af GPU-acceleration.
 
@@ -170,7 +165,7 @@ Forbedr det eksisterende eksempel ved at:
 
 1. Tilføje benchmark-aggregation + CSV/Markdown-eksport.
 2. Implementere simpel kvalitativ scoring (prompt-par-sæt + manuel annoteringsstub-fil).
-3. Introducere en JSON-konfiguration (`models.json`) for en plug-and-play modelliste og prompt-sæt.
+3. Introducere en JSON-konfiguration (`models.json`) til en plug-and-play modelliste og prompt-sæt.
 
 ## Valideringscheckliste
 
@@ -184,14 +179,14 @@ Alle målmodeller skal vises og reagere på en test-chatforespørgsel.
 
 ## Eksempelscenarie & Workshop-mapping
 
-| Workshop-script | Scenarie | Mål | Prompt / Dataset-kilde |
+| Workshop Script | Scenarie | Mål | Prompt / Dataset-kilde |
 |-----------------|----------|-----|-------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge-platformteam vælger standard-SLM til indlejret opsummeringsfunktion | Udarbejd sammenligning af latenstid + p95 + tokens/sekund for kandidater | Inline `PROMPT`-variabel + miljø `BENCH_MODELS`-liste |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge-platformteam vælger standard SLM til indlejret opsummeringsfunktion | Udarbejd latenstid + p95 + tokens/sek sammenligning på tværs af kandidatmodeller | Inline `PROMPT` var + miljø `BENCH_MODELS` liste |
 
 ### Scenariefortælling
-Produktudvikling skal vælge en standard letvægts-opsummeringsmodel til en offline mødenotat-funktion. De udfører kontrollerede deterministiske benchmarks (temperature=0) på tværs af et fast prompt-sæt (se eksempel nedenfor) og indsamler latenstid + gennemstrømningsmålinger med og uden GPU-acceleration.
+Produktudvikling skal vælge en standard letvægts-opsummeringsmodel til en offline mødenotatfunktion. De udfører kontrollerede deterministiske benchmarks (temperature=0) på tværs af et fast prompt-sæt (se eksempel nedenfor) og indsamler latenstid + gennemstrømningsmålinger med og uden GPU-acceleration.
 
-### Eksempel på JSON-prompt-sæt (udvideligt)
+### Eksempel på Prompt-sæt JSON (udvideligt)
 ```json
 [
     "Explain the principle of retrieval augmented generation in 2 sentences.",
@@ -201,20 +196,20 @@ Produktudvikling skal vælge en standard letvægts-opsummeringsmodel til en offl
 ]
 ```
 
-Loop hver prompt pr. model, fang latenstid pr. prompt for at udlede distributionsmålinger og opdage outliers.
+Loop hver prompt pr. model, registrer latenstid pr. prompt for at udlede distributionsmålinger og opdage outliers.
 
 ## Modeludvælgelsesramme
 
 | Dimension | Metric | Hvorfor det er vigtigt |
 |----------|--------|-------------------------|
 | Latenstid | gennemsnit / p95 | Konsistens i brugeroplevelse |
-| Gennemstrømning | tokens/sekund | Batch- og streaming-skalerbarhed |
+| Gennemstrømning | tokens/sek | Batch- og streaming-skalerbarhed |
 | Hukommelse | resident størrelse | Enhedstilpasning & samtidighed |
 | Kvalitet | rubric prompts | Opgaveegnethed |
 | Footprint | disk-cache | Distribution & opdateringer |
-| Licens | brugsbegrænsning | Kommerciel overholdelse |
+| Licens | brugsbetingelser | Kommerciel overholdelse |
 
-## Udvidelse med egen model
+## Udvidelse med brugerdefineret model
 
 Overordnet mønster (pseudo):
 
@@ -227,7 +222,7 @@ class CustomModelAdapter:
 # Register with local routing (future extensibility point)
 ```
 
-Se den officielle repo for opdaterede adapterinterfaces:
+Konsulter det officielle repo for udviklende adapterinterfaces:
 https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ## Fejlfinding
@@ -236,7 +231,7 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 |---------|-------|---------|
 | OOM på mistral-7b | Utilstrækkelig RAM/GPU | Stop andre modeller; prøv mindre variant |
 | Langsom første respons | Kold indlæsning | Hold varm med en periodisk let prompt |
-| Download stopper | Netværksinstabilitet | Prøv igen; forudhent under lavtrafik |
+| Download går i stå | Netværksinstabilitet | Prøv igen; forudhent under lavtrafik |
 
 ## Referencer
 
@@ -246,7 +241,7 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ---
 
-**Sessionens varighed**: 30 min (+ valgfri dybdegående gennemgang)  
+**Sessionsvarighed**: 30 min (+ valgfri dybdegående gennemgang)  
 **Sværhedsgrad**: Mellem
 
 ### Valgfrie forbedringer
@@ -254,14 +249,14 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 | Forbedring | Fordel | Hvordan |
 |------------|--------|---------|
 | Streaming af første-token-latenstid | Måler oplevet responsivitet | Kør benchmark med `BENCH_STREAM=1` (forbedret script i `Workshop/samples/session03`) |
-| Deterministisk tilstand | Stabil regression-sammenligning | `temperature=0`, fast prompt-sæt, fang JSON-outputs under versionskontrol |
+| Deterministisk tilstand | Stabil regression sammenligninger | `temperature=0`, fast prompt-sæt, registrer JSON-outputs under versionskontrol |
 | Kvalitetsrubrikscoring | Tilføjer kvalitativ dimension | Vedligehold `prompts.json` med forventede facetter; annoter scores (1–5) manuelt eller via sekundær model |
 | CSV / Markdown-eksport | Delbar rapport | Udvid scriptet til at skrive `benchmark_report.md` med tabel & højdepunkter |
 | Modelkapabilitet-tags | Hjælper med automatiseret routing senere | Vedligehold `models.json` med `{alias: {capabilities:[], size_mb:..}}` |
 | Cache-opvarmningsfase | Reducer bias fra koldstart | Udfør en varm runde før timing-loop (allerede implementeret) |
 | Percentil-nøjagtighed | Robust tail-latenstid | Brug numpy percentil (allerede i refaktoreret script) |
 | Token-omkostningsberegning | Økonomisk sammenligning | Omkostning ≈ (tokens/sek * gennemsnit tokens pr. forespørgsel) * energiheuristik |
-| Automatisk spring over fejlede modeller | Robusthed i batch-kørsler | Wrap hver benchmark i try/except og markér statusfelt |
+| Automatisk spring over fejlede modeller | Robusthed i batch-kørsler | Indpak hver benchmark i try/except og marker statusfelt |
 
 #### Minimal Markdown-eksport snippet
 
@@ -271,7 +266,6 @@ with open("benchmark_report.md", "w") as f:
         for row in summary:
                 f.write(f"|{row['alias']}|{row['latency_avg']:.2f}|{row['latency_p95']:.2f}|{(row.get('tokens_per_sec_avg') or 0):.1f}|\n")
 ```
-
 
 #### Eksempel på deterministisk prompt-sæt
 
@@ -287,5 +281,7 @@ Loop den statiske liste i stedet for tilfældige prompts for sammenlignelige må
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:  
 Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

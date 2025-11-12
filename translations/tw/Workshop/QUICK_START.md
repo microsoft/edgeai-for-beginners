@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T20:46:21+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T22:00:56+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "tw"
 }
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ## 執行工作坊範例
 
-### 第 01 節：基礎聊天
+### Session 01: 基本聊天
 
 ```bash
 cd Workshop/samples
@@ -60,7 +60,7 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
 ```
 
-### 第 02 節：RAG 管道
+### Session 02: RAG 管道
 
 ```bash
 cd Workshop/samples
@@ -74,7 +74,7 @@ set RAG_QUESTION="Why use RAG with local inference?"
 set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
-### 第 02 節：RAG 評估 (Ragas)
+### Session 02: RAG 評估 (Ragas)
 
 ```bash
 cd Workshop/samples
@@ -83,7 +83,7 @@ python -m session02.rag_eval_ragas
 
 **注意**：需要通過 `requirements.txt` 安裝額外的依賴項
 
-### 第 03 節：基準測試
+### Session 03: 基準測試
 
 ```bash
 cd Workshop/samples
@@ -100,7 +100,7 @@ set BENCH_STREAM=1
 
 **輸出**：包含延遲、吞吐量和首字元指標的 JSON
 
-### 第 04 節：模型比較
+### Session 04: 模型比較
 
 ```bash
 cd Workshop/samples
@@ -114,7 +114,7 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### 第 05 節：多代理協作
+### Session 05: 多代理協作
 
 ```bash
 cd Workshop/samples
@@ -128,7 +128,7 @@ set AGENT_MODEL_EDITOR=phi-4-mini
 set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ```
 
-### 第 06 節：模型路由器
+### Session 06: 模型路由器
 
 ```bash
 cd Workshop/samples
@@ -137,7 +137,7 @@ python -m session06.models_router
 
 **測試路由邏輯**，包含多種意圖（代碼、摘要、分類）
 
-### 第 06 節：管道
+### Session 06: 管道
 
 ```bash
 python -m session06.models_pipeline
@@ -160,7 +160,7 @@ python export_benchmark_markdown.py \
 
 **輸出**：Markdown 表格 + JSON 指標
 
-### 檢查 Markdown CLI 模式
+### Lint Markdown CLI 模式
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -170,7 +170,7 @@ python lint_markdown_cli.py --verbose
 
 ## 測試
 
-### 簡單測試
+### 煙霧測試
 
 ```bash
 cd Workshop
@@ -230,18 +230,18 @@ foundry model run phi-4-mini
 ### 核心配置
 | 變數 | 預設值 | 描述 |
 |------|--------|------|
-| `FOUNDRY_LOCAL_ALIAS` | 依情況而定 | 使用的模型別名 |
+| `FOUNDRY_LOCAL_ALIAS` | 不同 | 使用的模型別名 |
 | `FOUNDRY_LOCAL_ENDPOINT` | 自動 | 覆蓋服務端點 |
 | `SHOW_USAGE` | `0` | 顯示令牌使用統計 |
 | `RETRY_ON_FAIL` | `1` | 啟用重試邏輯 |
 | `RETRY_BACKOFF` | `1.0` | 初始重試延遲（秒） |
 
-### 特定於會話
+### 特定會話
 | 變數 | 預設值 | 描述 |
 |------|--------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | 嵌入模型 |
 | `RAG_QUESTION` | 見範例 | RAG 測試問題 |
-| `BENCH_MODELS` | 依情況而定 | 逗號分隔的模型 |
+| `BENCH_MODELS` | 不同 | 逗號分隔的模型 |
 | `BENCH_ROUNDS` | `3` | 基準測試迭代次數 |
 | `BENCH_PROMPT` | 見範例 | 基準測試提示 |
 | `BENCH_STREAM` | `0` | 測量首字元延遲 |
@@ -273,22 +273,23 @@ foundry model run phi-4-mini
 1. 檢查服務狀態：`foundry service status`  
 2. 查看日誌：檢查 Foundry Local 服務日誌  
 3. 查看 SDK 文檔：https://github.com/microsoft/Foundry-Local  
-4. 查看範例代碼：所有範例均包含詳細的文檔註釋  
+4. 查看範例代碼：所有範例均包含詳細的文檔字符串  
 
 ## 下一步
 
 1. 按順序完成所有工作坊會話  
 2. 嘗試不同的模型  
 3. 修改範例以適應您的使用場景  
-4. 查看 `SDK_MIGRATION_NOTES.md` 以了解高級模式  
 
 ---
 
 **最後更新日期**：2025-01-08  
 **工作坊版本**：最新  
-**SDK**：Foundry Local Python SDK
+**SDK**：Foundry Local Python SDK  
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責聲明**：  
-本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

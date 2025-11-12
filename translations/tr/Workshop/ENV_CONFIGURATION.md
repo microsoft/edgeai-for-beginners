@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T21:47:08+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T22:58:30+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "tr"
 }
@@ -59,7 +59,7 @@ python -m session01.chat_bootstrap "Your question here"
 ### Temel Yapılandırma
 
 | Değişken | Varsayılan | Açıklama |
-|----------|-----------|----------|
+|----------|------------|----------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Örnekler için varsayılan model |
 | `FOUNDRY_LOCAL_ENDPOINT` | (boş) | Servis uç noktasını geçersiz kıl |
 | `PYTHONPATH` | Workshop yolları | Python modül arama yolu |
@@ -82,21 +82,21 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 #### Oturum 02: RAG Pipeline
 | Değişken | Varsayılan | Amaç |
-|----------|-----------|------|
+|----------|------------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Gömme modeli |
 | `RAG_QUESTION` | Önceden yapılandırılmış | Test sorusu |
 
 #### Oturum 03: Benchmarking
 | Değişken | Varsayılan | Amaç |
-|----------|-----------|------|
+|----------|------------|------|
 | `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Karşılaştırılacak modeller |
-| `BENCH_ROUNDS` | `3` | Model başına iterasyonlar |
+| `BENCH_ROUNDS` | `3` | Model başına yineleme |
 | `BENCH_PROMPT` | Önceden yapılandırılmış | Test istemi |
 | `BENCH_STREAM` | `0` | İlk token gecikmesini ölç |
 
 #### Oturum 04: Model Karşılaştırması
 | Değişken | Varsayılan | Amaç |
-|----------|-----------|------|
+|----------|------------|------|
 | `SLM_ALIAS` | `phi-4-mini` | Küçük dil modeli |
 | `LLM_ALIAS` | `qwen2.5-7b` | Büyük dil modeli |
 | `COMPARE_PROMPT` | Önceden yapılandırılmış | Karşılaştırma istemi |
@@ -104,7 +104,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 #### Oturum 05: Çoklu Ajan Orkestrasyonu
 | Değişken | Varsayılan | Amaç |
-|----------|-----------|------|
+|----------|------------|------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Araştırmacı ajan modeli |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Editör ajan modeli |
 | `AGENT_QUESTION` | Önceden yapılandırılmış | Test sorusu |
@@ -112,14 +112,14 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ### Güvenilirlik Yapılandırması
 
 | Değişken | Varsayılan | Amaç |
-|----------|-----------|------|
+|----------|------------|------|
 | `SHOW_USAGE` | `1` | Token kullanımını yazdır |
 | `RETRY_ON_FAIL` | `1` | Yeniden deneme mantığını etkinleştir |
 | `RETRY_BACKOFF` | `1.0` | Yeniden deneme gecikmesi (saniye) |
 
 ## Yaygın Yapılandırmalar
 
-### Geliştirme Kurulumu (Hızlı İterasyon)
+### Geliştirme Kurulumu (Hızlı Yineleme)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -236,7 +236,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 ## Sorun Giderme
 
-### Ortam Değişkenleri Yüklenmiyor
+### Ortam Değişkenleri Yüklenmedi
 
 **Belirtiler:**
 - Scriptler yanlış modelleri kullanıyor
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **Belirtiler:**
 - "Model bulunamadı" hataları
-- "Alias tanınmıyor"
+- "Alias tanınmadı"
 
 **Çözümler:**
 ```bash
@@ -365,7 +365,7 @@ except Exception as e:
 
 ## Güvenlik En İyi Uygulamaları
 
-### 1. Asla Gizli Bilgileri Yüklemeyin
+### 1. Asla Gizli Bilgileri Commit Etmeyin
 
 ```bash
 # .gitignore should include:
@@ -408,7 +408,6 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## Ek Kaynaklar
 
 - `QUICK_START.md` - Başlangıç kılavuzu
-- `SDK_MIGRATION_NOTES.md` - SDK güncelleme detayları
 - `Workshop/samples/*/README.md` - Örnek bazlı kılavuzlar
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
 Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çeviriler hata veya yanlışlıklar içerebilir. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

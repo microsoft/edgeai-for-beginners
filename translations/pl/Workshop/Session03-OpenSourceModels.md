@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-08T21:51:49+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T22:56:38+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "pl"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Streszczenie
 
-Dowiedz się, jak wprowadzać modele Hugging Face i inne modele open-source do Foundry Local. Poznaj strategie wyboru, procesy współpracy z społecznością, metodologię porównywania wydajności oraz sposoby rozszerzania Foundry o rejestrację niestandardowych modeli. Ta sesja nawiązuje do cotygodniowych tematów eksploracyjnych "Modelowe Poniedziałki" i wyposaża Cię w umiejętności oceny i wdrażania modeli open-source lokalnie przed ich skalowaniem na platformie Azure.
+Dowiedz się, jak wprowadzać modele open-source, takie jak te z Hugging Face, do Foundry Local. Poznaj strategie wyboru, procesy współpracy z społecznością, metodologię porównywania wydajności oraz sposoby rozszerzania Foundry o rejestrację niestandardowych modeli. Ta sesja nawiązuje do cotygodniowych tematów eksploracyjnych "Modelowe Poniedziałki" i wyposaża Cię w umiejętności oceny i wdrażania modeli open-source lokalnie przed ich skalowaniem na platformie Azure.
 
 ## Cele nauki
 
@@ -19,7 +19,7 @@ Po zakończeniu sesji będziesz w stanie:
 
 - **Odkrywać i oceniać**: Identyfikować potencjalne modele (mistral, gemma, qwen, deepseek) z uwzględnieniem kompromisów między jakością a zasobami.
 - **Ładować i uruchamiać**: Korzystać z Foundry Local CLI do pobierania, buforowania i uruchamiania modeli społecznościowych.
-- **Przeprowadzać benchmarki**: Stosować spójne heurystyki dla opóźnień, przepustowości tokenów i jakości.
+- **Benchmarkować**: Stosować spójne heurystyki dla opóźnień, przepustowości tokenów i jakości.
 - **Rozszerzać**: Rejestrować lub dostosowywać niestandardowe opakowania modeli zgodnie z wzorcami kompatybilnymi z SDK.
 - **Porównywać**: Tworzyć uporządkowane porównania dla decyzji dotyczących wyboru SLM w porównaniu z modelami LLM średniej wielkości.
 
@@ -27,8 +27,7 @@ Po zakończeniu sesji będziesz w stanie:
 
 - Ukończone sesje 1 i 2
 - Środowisko Python z zainstalowanym `foundry-local-sdk`
-- Co najmniej 15 GB wolnego miejsca na dysku na potrzeby buforowania modeli
-- Opcjonalnie: Włączona akceleracja GPU/WebGPU (`foundry config list`)
+- Co najmniej 15 GB wolnego miejsca na dysku na potrzeby buforowania wielu modeli
 
 ### Szybki start w środowisku wieloplatformowym
 
@@ -48,15 +47,15 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai numpy
 ```
   
-Podczas przeprowadzania benchmarków z macOS na usłudze hostowanej na Windows, ustaw:  
+Podczas benchmarkowania z macOS na hostowanej usłudze Windows, ustaw:  
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
   
 
-## Przebieg demonstracji (30 minut)
+## Przebieg demonstracji (30 min)
 
-### 1. Ładowanie modeli Hugging Face za pomocą CLI (8 minut)
+### 1. Ładowanie modeli Hugging Face za pomocą CLI (8 min)
 
 ```powershell
 # List catalog entries (filter manually if needed)
@@ -72,7 +71,7 @@ foundry cache list
 ```
   
 
-### 2. Uruchomienie i szybka analiza (5 minut)
+### 2. Uruchamianie i szybka analiza (5 min)
 
 ```powershell
 foundry model run qwen2.5-0.5b
@@ -83,7 +82,7 @@ foundry model run mistral-7b --prompt "Explain retrieval augmented generation in
 ```
   
 
-### 3. Skrypt benchmarkowy (8 minut)
+### 3. Skrypt benchmarkowy (8 min)
 
 Utwórz plik `samples/03-oss-models/benchmark_models.py`:
 
@@ -149,6 +148,7 @@ if __name__ == "__main__":
     main()
 ```
   
+
 Uruchom:
 
 ```powershell
@@ -156,11 +156,11 @@ python samples/03-oss-models/benchmark_models.py
 ```
   
 
-### 4. Porównanie wydajności (5 minut)
+### 4. Porównanie wydajności (5 min)
 
-Omów kompromisy: czas ładowania, zużycie pamięci (obserwuj Menedżera zadań / `nvidia-smi` / monitor zasobów systemu operacyjnego), jakość wyników w porównaniu z szybkością. Użyj skryptu benchmarkowego w Pythonie (Sesja 3) do pomiaru opóźnień i przepustowości; powtórz testy po włączeniu akceleracji GPU.
+Omów kompromisy: czas ładowania, zużycie pamięci (obserwuj Menedżera zadań / `nvidia-smi` / monitor zasobów systemu operacyjnego), jakość wyników w porównaniu z szybkością. Użyj skryptu benchmarkowego w Pythonie (Sesja 3) do analizy opóźnień i przepustowości; powtórz testy po włączeniu akceleracji GPU.
 
-### 5. Projekt startowy (4 minuty)
+### 5. Projekt startowy (4 min)
 
 Utwórz generator raportów porównawczych modeli (rozszerz skrypt benchmarkowy o eksport do formatu markdown).
 
@@ -186,11 +186,11 @@ Wszystkie docelowe modele powinny się pojawić i odpowiedzieć na zapytanie tes
 
 | Skrypt warsztatowy | Scenariusz | Cel | Źródło promptów / danych |
 |---------------------|------------|-----|--------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Zespół platformy brzegowej wybierający domyślny SLM dla wbudowanego narzędzia do podsumowywania | Opracowanie porównania opóźnień + p95 + tokenów/sekundę dla wybranych modeli | Wbudowana zmienna `PROMPT` + lista środowiskowa `BENCH_MODELS` |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Zespół platformy brzegowej wybiera domyślny SLM dla wbudowanego narzędzia do podsumowywania | Opracowanie porównania opóźnień + p95 + tokenów/sekundę dla wybranych modeli | Wbudowana zmienna `PROMPT` + lista środowiskowa `BENCH_MODELS` |
 
 ### Narracja scenariusza
 
-Zespół inżynierii produktu musi wybrać domyślny lekki model do podsumowywania dla funkcji offline do notatek ze spotkań. Przeprowadzają kontrolowane, deterministyczne testy porównawcze (temperature=0) na stałym zestawie promptów (patrz przykład poniżej) i zbierają metryki opóźnień i przepustowości z włączoną i wyłączoną akceleracją GPU.
+Zespół inżynierii produktu musi wybrać domyślny lekki model do podsumowywania dla funkcji offline do notatek ze spotkań. Przeprowadzają kontrolowane, deterministyczne testy porównawcze (temperature=0) na stałym zestawie promptów (patrz przykład poniżej) i zbierają metryki opóźnień oraz przepustowości z i bez akceleracji GPU.
 
 ### Przykładowy zestaw promptów w formacie JSON (rozszerzalny)
 
@@ -203,7 +203,7 @@ Zespół inżynierii produktu musi wybrać domyślny lekki model do podsumowywan
 ]
 ```
   
-Pętla dla każdego promptu na model, rejestracja opóźnienia dla każdego promptu w celu wyprowadzenia metryk rozkładu i wykrycia wartości odstających.
+Pętla dla każdego promptu na model, rejestracja opóźnienia dla każdego promptu w celu wyprowadzenia metryk dystrybucji i wykrycia wartości odstających.
 
 ## Ramy wyboru modelu
 
@@ -229,14 +229,14 @@ class CustomModelAdapter:
 # Register with local routing (future extensibility point)
 ```
   
-Zapoznaj się z oficjalnym repozytorium, aby uzyskać aktualne interfejsy adapterów:  
+Konsultuj oficjalne repozytorium w celu uzyskania aktualnych interfejsów adapterów:  
 https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
 
 ## Rozwiązywanie problemów
 
 | Problem | Przyczyna | Rozwiązanie |
 |---------|-----------|-------------|
-| OOM na mistral-7b | Niewystarczająca ilość RAM/GPU | Zatrzymaj inne modele; spróbuj mniejszy wariant |
+| OOM na mistral-7b | Niewystarczająca pamięć RAM/GPU | Zatrzymaj inne modele; spróbuj mniejszy wariant |
 | Wolna pierwsza odpowiedź | Zimne ładowanie | Utrzymuj w gotowości za pomocą okresowego lekkiego promptu |
 | Zawieszenie pobierania | Niestabilność sieci | Spróbuj ponownie; pobierz w czasie poza szczytem |
 
@@ -248,7 +248,7 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ---
 
-**Czas trwania sesji**: 30 minut (+ opcjonalne pogłębienie)  
+**Czas trwania sesji**: 30 min (+ opcjonalne pogłębienie)  
 **Poziom trudności**: Średniozaawansowany  
 
 ### Opcjonalne ulepszenia
@@ -257,11 +257,11 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 |------------|---------|-----|
 | Opóźnienie pierwszego tokena w strumieniu | Pomiar postrzeganej responsywności | Uruchom benchmark z `BENCH_STREAM=1` (ulepszony skrypt w `Workshop/samples/session03`) |
 | Tryb deterministyczny | Stabilne porównania regresji | `temperature=0`, stały zestaw promptów, rejestracja wyników JSON pod kontrolą wersji |
-| Ocena jakościowa | Dodaje wymiar jakościowy | Utrzymuj `prompts.json` z oczekiwanymi aspektami; oznaczaj wyniki (1–5) ręcznie lub za pomocą modelu pomocniczego |
-| Eksport do CSV / Markdown | Udostępnianie raportów | Rozszerz skrypt, aby zapisywał `benchmark_report.md` z tabelą i podsumowaniem |
+| Ocena jakościowa | Dodaje wymiar jakościowy | Utrzymuj `prompts.json` z oczekiwanymi aspektami; oznaczaj oceny (1–5) ręcznie lub za pomocą drugiego modelu |
+| Eksport do CSV / Markdown | Udostępnianie raportów | Rozszerz skrypt o zapis `benchmark_report.md` z tabelą i podsumowaniem |
 | Tagi zdolności modelu | Pomaga w automatycznym routingu | Utrzymuj `models.json` z `{alias: {capabilities:[], size_mb:..}}` |
 | Faza rozgrzewki bufora | Redukcja wpływu zimnego startu | Wykonaj jedną rundę rozgrzewki przed pętlą czasową (już zaimplementowane) |
-| Dokładność percentylowa | Solidne opóźnienia końcowe | Użyj percentyla numpy (już w zrefaktoryzowanym skrypcie) |
+| Dokładność percentylowa | Solidne opóźnienia ogonowe | Użyj percentyla numpy (już w zrefaktoryzowanym skrypcie) |
 | Przybliżenie kosztu tokena | Porównanie ekonomiczne | Przybliżony koszt = (tokeny/sek * średnia liczba tokenów na żądanie) * heurystyka energii |
 | Automatyczne pomijanie nieudanych modeli | Odporność w partiach | Owiń każdy benchmark w try/except i oznacz pole statusu |
 
@@ -285,9 +285,11 @@ with open("benchmark_report.md", "w") as f:
 ]
 ```
   
-Pętla na statycznej liście zamiast losowych promptów dla porównywalnych metryk w różnych commitach.
+Pętla dla statycznej listy zamiast losowych promptów w celu uzyskania porównywalnych metryk w różnych commitach.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Zastrzeżenie**:  
 Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż staramy się zapewnić dokładność, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

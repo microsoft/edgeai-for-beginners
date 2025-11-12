@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T22:44:37+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T23:53:17+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "tl"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Pangkalahatang-ideya
 
-Ang mga halimbawa sa Workshop ay gumagamit ng mga environment variable para sa configuration, na nakapaloob sa `.env` file sa ugat ng repository. Pinapadali nito ang pag-customize nang hindi kinakailangang baguhin ang code.
+Ang mga halimbawa sa Workshop ay gumagamit ng mga environment variable para sa configuration, na nakasentro sa `.env` file sa ugat ng repository. Pinapadali nito ang pag-customize nang hindi kinakailangang baguhin ang code.
 
 ## Mabilisang Simula
 
-### 1. Suriin ang mga Kinakailangan
+### 1. Suriin ang Mga Kinakailangan
 
 ```bash
 # Check Foundry Local is installed
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. I-configure ang Kapaligiran
 
-Ang `.env` file ay naka-configure na may mga default na setting. Karamihan sa mga user ay hindi na kailangang baguhin ito.
+Ang `.env` file ay naka-configure na gamit ang mga default na setting. Karamihan sa mga user ay hindi na kailangang magbago ng anuman.
 
 **Opsyonal**: Suriin at i-customize ang mga setting:
 ```bash
@@ -39,7 +39,7 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. I-apply ang Configuration
+### 3. Ilapat ang Configuration
 
 **Para sa Python Scripts:**
 ```bash
@@ -54,7 +54,7 @@ python -m session01.chat_bootstrap "Your question here"
 # Variables are loaded when cells execute
 ```
 
-## Sanggunian sa Environment Variables
+## Sanggunian ng Environment Variables
 
 ### Pangunahing Configuration
 
@@ -78,31 +78,31 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ```
 
-### Mga Variable na Pang-Sesyon
+### Mga Variable na Tukoy sa Session
 
-#### Sesyon 02: RAG Pipeline
+#### Session 02: RAG Pipeline
 | Variable | Default | Layunin |
 |----------|---------|---------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding model |
 | `RAG_QUESTION` | Pre-configured | Test na tanong |
 
-#### Sesyon 03: Benchmarking
+#### Session 03: Benchmarking
 | Variable | Default | Layunin |
 |----------|---------|---------|
 | `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Mga modelong ibe-benchmark |
-| `BENCH_ROUNDS` | `3` | Mga iteration kada modelo |
+| `BENCH_ROUNDS` | `3` | Mga iteration bawat modelo |
 | `BENCH_PROMPT` | Pre-configured | Test na prompt |
 | `BENCH_STREAM` | `0` | Sukatin ang latency ng unang token |
 
-#### Sesyon 04: Paghahambing ng Modelo
+#### Session 04: Paghahambing ng Modelo
 | Variable | Default | Layunin |
 |----------|---------|---------|
 | `SLM_ALIAS` | `phi-4-mini` | Maliit na language model |
 | `LLM_ALIAS` | `qwen2.5-7b` | Malaking language model |
 | `COMPARE_PROMPT` | Pre-configured | Prompt para sa paghahambing |
-| `COMPARE_RETRIES` | `2` | Mga attempt sa pag-retry |
+| `COMPARE_RETRIES` | `2` | Mga pagsubok na ulitin |
 
-#### Sesyon 05: Multi-Agent Orchestration
+#### Session 05: Multi-Agent Orchestration
 | Variable | Default | Layunin |
 |----------|---------|---------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Modelo ng researcher agent |
@@ -115,9 +115,9 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |----------|---------|---------|
 | `SHOW_USAGE` | `1` | I-print ang token usage |
 | `RETRY_ON_FAIL` | `1` | Paganahin ang retry logic |
-| `RETRY_BACKOFF` | `1.0` | Delay sa pag-retry (segundo) |
+| `RETRY_BACKOFF` | `1.0` | Delay sa retry (segundo) |
 
-## Karaniwang Configurations
+## Karaniwang Configuration
 
 ### Setup para sa Development (Mabilisang Iteration)
 ```bash
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Setup para sa Production (Pagtuon sa Kalidad)
+### Setup para sa Production (Pokus sa Kalidad)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -389,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. Gumamit ng Config na Pang-Specific sa Kapaligiran
+### 4. Gumamit ng Config na Tukoy sa Kapaligiran
 
 ```bash
 # Development
@@ -405,11 +405,10 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 - **API Dokumentasyon**: Tingnan ang SDK repository para sa pinakabago
 
-## Karagdagang Resources
+## Karagdagang Mga Mapagkukunan
 
 - `QUICK_START.md` - Gabay sa pagsisimula
-- `SDK_MIGRATION_NOTES.md` - Mga detalye sa pag-update ng SDK
-- `Workshop/samples/*/README.md` - Mga gabay para sa partikular na halimbawa
+- `Workshop/samples/*/README.md` - Mga gabay na tukoy sa halimbawa
 
 ---
 
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

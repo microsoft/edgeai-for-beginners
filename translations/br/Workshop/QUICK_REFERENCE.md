@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T21:36:51+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T22:47:55+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "br"
 }
@@ -39,7 +39,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 02 | `rag_eval_ragas.py` | Avaliação de RAG | ~60s |
 | 03 | `benchmark_oss_models.py` | Benchmark de modelos | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
-| 05 | `agents_orchestrator.py` | Sistema multiagente | ~60s |
+| 05 | `agents_orchestrator.py` | Sistema multi-agente | ~60s |
 | 06 | `models_router.py` | Roteamento de intenções | ~45s |
 | 06 | `models_pipeline.py` | Pipeline de múltiplas etapas | ~60s |
 
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Específicas por Sessão
+### Específicas da Sessão
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -197,7 +197,7 @@ for chunk in stream:
 | Modelo | Tamanho | Melhor Para | Velocidade |
 |--------|---------|-------------|------------|
 | `qwen2.5-0.5b` | 0.5B | Classificação rápida | ⚡⚡⚡ |
-| `qwen2.5-coder-0.5b` | 0.5B | Geração rápida de código | ⚡⚡⚡ |
+| `qwen2.5-coder-0.5b` | 0.5B | Geração de código rápida | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Escrita criativa | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Código, refatoração | ⚡⚡ |
 | `phi-4-mini` | 4B | Geral, resumo | ⚡⚡ |
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **Documentação SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Referência Rápida**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Resumo de Atualizações**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Notas de Migração**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -218,7 +216,7 @@ for chunk in stream:
 
 1. **Cache de clientes**: `workshop_utils` faz o cache para você
 2. **Use modelos menores**: Comece com `qwen2.5-0.5b` para testes
-3. **Ative estatísticas de uso**: Configure `SHOW_USAGE=1` para rastrear tokens
+3. **Ative estatísticas de uso**: Configure `SHOW_USAGE=1` para monitorar tokens
 4. **Processamento em lote**: Processe múltiplos prompts sequencialmente
 5. **Reduza max_tokens**: Diminui a latência para respostas rápidas
 
@@ -247,7 +245,7 @@ set RAG_QUESTION="What is RAG?"
 python -m session02.rag_pipeline
 ```
 
-### Sistema Multiagente
+### Sistema Multi-Agente
 ```bash
 cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T20:41:55+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T21:56:35+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "hk"
 }
@@ -98,7 +98,7 @@ set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**輸出：** JSON 格式，包含延遲、吞吐量及首字元指標
+**輸出：** JSON 格式的延遲、吞吐量及首字元指標
 
 ### Session 04: 模型比較
 
@@ -135,7 +135,7 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**測試路由邏輯**，包含多種意圖（代碼、摘要、分類）
+**測試路由邏輯**，包含多種意圖（如代碼、摘要、分類）
 
 ### Session 06: 管道
 
@@ -160,7 +160,7 @@ python export_benchmark_markdown.py \
 
 **輸出：** Markdown 表格 + JSON 指標
 
-### 檢查 Markdown CLI 模式
+### Markdown CLI 模式檢查
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -170,7 +170,7 @@ python lint_markdown_cli.py --verbose
 
 ## 測試
 
-### 簡單測試
+### 煙霧測試
 
 ```bash
 cd Workshop
@@ -230,7 +230,7 @@ foundry model run phi-4-mini
 ### 核心配置
 | 變數 | 預設值 | 描述 |
 |------|--------|------|
-| `FOUNDRY_LOCAL_ALIAS` | 不同 | 使用的模型別名 |
+| `FOUNDRY_LOCAL_ALIAS` | 視情況而定 | 使用的模型別名 |
 | `FOUNDRY_LOCAL_ENDPOINT` | 自動 | 覆蓋服務端點 |
 | `SHOW_USAGE` | `0` | 顯示令牌使用統計 |
 | `RETRY_ON_FAIL` | `1` | 啟用重試邏輯 |
@@ -241,7 +241,7 @@ foundry model run phi-4-mini
 |------|--------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | 嵌入模型 |
 | `RAG_QUESTION` | 見範例 | RAG 測試問題 |
-| `BENCH_MODELS` | 不同 | 逗號分隔的模型 |
+| `BENCH_MODELS` | 視情況而定 | 逗號分隔的模型 |
 | `BENCH_ROUNDS` | `3` | 基準測試迭代次數 |
 | `BENCH_PROMPT` | 見範例 | 基準測試提示 |
 | `BENCH_STREAM` | `0` | 測量首字元延遲 |
@@ -279,8 +279,7 @@ foundry model run phi-4-mini
 
 1. 按順序完成所有工作坊 Session  
 2. 嘗試不同的模型  
-3. 修改範例以適應您的使用場景  
-4. 查看 `SDK_MIGRATION_NOTES.md` 以了解高級模式
+3. 根據您的使用場景修改範例  
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責聲明**：  
 此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

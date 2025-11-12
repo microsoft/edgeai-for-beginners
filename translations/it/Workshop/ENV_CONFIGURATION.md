@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T21:38:10+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T22:49:16+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "it"
 }
@@ -28,7 +28,7 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. Configurazione dell'Ambiente
+### 2. Configura l'Ambiente
 
 Il file `.env` è già configurato con valori predefiniti sensati. La maggior parte degli utenti non avrà bisogno di modificare nulla.
 
@@ -157,7 +157,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ```
 
-## Modelli Raccomandati
+## Modelli Consigliati
 
 ### Per Caso d'Uso
 
@@ -174,7 +174,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Generazione di Codice:**
 - `deepseek-coder-1.3b` - Specializzato per il codice
-- `phi-4-mini` - Generico per il coding
+- `phi-4-mini` - Generico per la programmazione
 
 ### Per Disponibilità di Risorse
 
@@ -363,7 +363,7 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## Migliori Pratiche di Sicurezza
+## Pratiche di Sicurezza Consigliate
 
 ### 1. Non Commettere Mai Segreti
 
@@ -389,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. Usa Configurazioni Specifiche per Ambiente
+### 4. Usa Configurazioni Specifiche per l'Ambiente
 
 ```bash
 # Development
@@ -408,7 +408,6 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## Risorse Aggiuntive
 
 - `QUICK_START.md` - Guida introduttiva
-- `SDK_MIGRATION_NOTES.md` - Dettagli sull'aggiornamento SDK
 - `Workshop/samples/*/README.md` - Guide specifiche per gli esempi
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatizzate possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

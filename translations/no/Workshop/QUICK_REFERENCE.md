@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:15:36+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:23:56+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "no"
 }
 -->
-# Workshop Eksempler - Hurtig Referansekort
+# Workshop Eksempler - Hurtigreferansekort
 
 **Sist oppdatert**: 8. oktober 2025
 
@@ -32,8 +32,8 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ## 📂 Oversikt over eksempler
 
-| Økt | Eksempel | Formål | Tid |
-|-----|----------|--------|-----|
+| Sesjon | Eksempel | Formål | Tid |
+|--------|----------|--------|-----|
 | 01 | `chat_bootstrap.py` | Grunnleggende chat + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG med embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | RAG evaluering | ~60s |
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Øktspesifikke
+### Sesjonsspesifikke
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -194,8 +194,8 @@ for chunk in stream:
 
 ## 📊 Modellvalg
 
-| Modell | Størrelse | Best egnet for | Hastighet |
-|--------|-----------|----------------|-----------|
+| Modell | Størrelse | Best til | Hastighet |
+|--------|-----------|----------|-----------|
 | `qwen2.5-0.5b` | 0.5B | Rask klassifisering | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Rask kodegenerering | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Kreativ skriving | ⚡⚡ |
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **SDK-dokumentasjon**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Hurtigreferanse**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Oppsummering av oppdateringer**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migrasjonsnotater**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:  
 Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

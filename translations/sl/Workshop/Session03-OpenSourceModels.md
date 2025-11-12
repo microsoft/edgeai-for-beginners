@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-08T12:12:39+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-12T00:39:57+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "sl"
 }
@@ -11,26 +11,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Povzetek
 
-Odkrijte, kako vključiti modele Hugging Face in druge modele odprte kode v Foundry Local. Naučite se strategij izbire, delovnih tokov prispevkov skupnosti, metodologije primerjave zmogljivosti ter kako razširiti Foundry z registracijami prilagojenih modelov. Ta seja se povezuje s tedenskimi temami raziskovanja "Model Mondays" in vas opremi za ocenjevanje ter operativno uporabo modelov odprte kode lokalno, preden jih razširite na Azure.
+Odkrijte, kako vključiti modele Hugging Face in druge modele odprte kode v Foundry Local. Naučite se strategij izbire, delovnih procesov prispevkov skupnosti, metodologije primerjave zmogljivosti ter kako razširiti Foundry z registracijami prilagojenih modelov. Ta seja se povezuje s tedenskimi temami raziskovanja "Model Mondays" in vas opremi za ocenjevanje ter operativno uporabo modelov odprte kode lokalno, preden jih razširite na Azure.
 
 ## Cilji učenja
 
 Do konca boste sposobni:
 
-- **Odkriti in oceniti**: Prepoznati kandidate za modele (mistral, gemma, qwen, deepseek) z upoštevanjem kompromisov med kakovostjo in porabo virov.
+- **Odkriti in oceniti**: Identificirati kandidate za modele (mistral, gemma, qwen, deepseek) z upoštevanjem kompromisov med kakovostjo in porabo virov.
 - **Naložiti in zagnati**: Uporabiti Foundry Local CLI za prenos, predpomnjenje in zagon modelov skupnosti.
-- **Primerjati**: Uporabiti dosledne heuristike za zakasnitev, prepustnost tokenov in kakovost.
-- **Razširiti**: Registrirati ali prilagoditi ovojnico modela po vzorcih, združljivih z SDK.
+- **Primerjati**: Uporabiti dosledne heuristike za zakasnitev + prepustnost tokenov + kakovost.
+- **Razširiti**: Registrirati ali prilagoditi ovitek za model po vzorcih, združljivih z SDK.
 - **Primerjati**: Ustvariti strukturirane primerjave za odločitve med SLM in srednje velikimi LLM.
 
 ## Predpogoji
 
 - Zaključeni seji 1 in 2
 - Python okolje z nameščenim `foundry-local-sdk`
-- Vsaj 15 GB prostega diska za predpomnjenje več modelov
-- Opcijsko: Omogočeno pospeševanje GPU/WebGPU (`foundry config list`)
+- Vsaj 15 GB prostega diska za več predpomnjenih modelov
 
-### Hiter začetek v večplatformskem okolju
+### Hiter začetek okolja na več platformah
 
 Windows PowerShell:
 ```powershell
@@ -48,7 +47,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai numpy
 ```
 
-Pri primerjanju zmogljivosti z macOS na storitvi gostitelja Windows nastavite:
+Pri primerjanju zmogljivosti z macOS proti storitvi gostitelja Windows nastavite:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -72,7 +71,7 @@ foundry cache list
 ```
 
 
-### 2. Zagon in hitra preizkusna analiza (5 min)
+### 2. Zagon in hitra preiskava (5 min)
 
 ```powershell
 foundry model run qwen2.5-0.5b
@@ -162,13 +161,13 @@ Razpravljajte o kompromisih: čas nalaganja, poraba pomnilnika (opazujte Task Ma
 
 ### 5. Začetni projekt (4 min)
 
-Ustvarite generator poročil za primerjavo modelov (razširite skripto za primerjavo zmogljivosti z izvozom v markdown).
+Ustvarite generator poročil o primerjavi modelov (razširite skripto za primerjavo zmogljivosti z izvozom v markdown).
 
 ## Začetni projekt: Razširite `03-huggingface-models`
 
 Izboljšajte obstoječi vzorec z:
 
-1. Dodajanjem agregacije primerjav + izvozom v CSV/Markdown.
+1. Dodajanjem združevanja primerjav + izvozom v CSV/Markdown.
 2. Implementacijo preprostega kvalitativnega ocenjevanja (nabor parov pozivov + datoteka za ročno označevanje).
 3. Uvedbo JSON konfiguracije (`models.json`) za prilagodljiv seznam modelov in nabor pozivov.
 
@@ -180,19 +179,19 @@ foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
 
-Vsi ciljni modeli naj se prikažejo in odzovejo na zahtevo za klepet.
+Vsi ciljni modeli naj se pojavijo in odgovorijo na zahtevo za klepet.
 
 ## Primer scenarija in povezava z delavnico
 
 | Skripta delavnice | Scenarij | Cilj | Vir poziva / nabora podatkov |
 |-------------------|----------|------|-----------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Ekipa platforme Edge izbira privzeti SLM za vgrajeni povzetek | Ustvarite primerjavo zakasnitve + p95 + tokenov/sekundo med kandidati za modele | Inline `PROMPT` var + seznam okolja `BENCH_MODELS` |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Ekipa platforme Edge izbira privzeti SLM za vgrajeni povzetek | Ustvarite primerjavo zakasnitve + p95 + tokenov/sekundo med kandidati za modele | Vgrajena spremenljivka `PROMPT` + seznam okolja `BENCH_MODELS` |
 
 ### Narativ scenarija
 
-Inženiring izdelka mora izbrati privzeti lahek model za povzetek za funkcijo offline zapisov sestankov. Izvedejo nadzorovane deterministične primerjave (temperature=0) na fiksnem naboru pozivov (glejte primer spodaj) in zbirajo metrike zakasnitve + prepustnosti z in brez pospeševanja GPU.
+Ekipa za razvoj izdelkov mora izbrati privzeti lahek model za povzemanje za funkcijo offline zapisovanja opomb s sestankov. Izvedejo nadzorovane deterministične primerjave (temperature=0) na fiksnem naboru pozivov (glejte primer spodaj) in zbirajo metrike zakasnitve + prepustnosti z in brez pospeševanja GPU.
 
-### Primer JSON nabora pozivov (razširljiv)
+### Primer razširljivega nabora pozivov JSON
 
 ```json
 [
@@ -207,14 +206,14 @@ Zagnajte vsak poziv za vsak model, zajemite zakasnitev na poziv za izpeljavo dis
 
 ## Okvir za izbiro modela
 
-| Dimenzija | Metrika | Zakaj je pomembno |
+| Dimenzija | Metrika | Zakaj je pomembna |
 |-----------|---------|-------------------|
 | Zakasnitev | povprečje / p95 | Doslednost uporabniške izkušnje |
 | Prepustnost | tokeni/sekundo | Skalabilnost serij in pretakanja |
 | Pomnilnik | velikost rezidenta | Prilagoditev napravi in sočasnost |
-| Kakovost | rubrika pozivov | Primernost za nalogo |
+| Kakovost | pozivni kriteriji | Primernost za nalogo |
 | Odtis | predpomnilnik diska | Distribucija in posodobitve |
-| Licenca | dovoljenje za uporabo | Skladnost s komercialno uporabo |
+| Licenca | dovoljenje za uporabo | Skladnost s komercialnimi pravili |
 
 ## Razširitev s prilagojenim modelom
 
@@ -235,34 +234,34 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 ## Odpravljanje težav
 
 | Težava | Vzrok | Rešitev |
-|--------|-------|--------|
+|--------|-------|---------|
 | OOM na mistral-7b | Premalo RAM/GPU | Ustavite druge modele; poskusite manjšo različico |
-| Počasni prvi odziv | Hladno nalaganje | Ohranite toploto z občasnim lahkim pozivom |
+| Počasni prvi odziv | Hladno nalaganje | Ohranite aktivnost z občasnim lahkim pozivom |
 | Zastoji pri prenosu | Nestabilnost omrežja | Poskusite znova; predpomnite med manj obremenjenimi urami |
 
 ## Reference
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Model Mondays: https://aka.ms/model-mondays
-- Hugging Face Model Discovery: https://huggingface.co/models
+- Odkritje modelov Hugging Face: https://huggingface.co/models
 
 ---
 
-**Trajanje seje**: 30 min (+ opcijsko poglobljeno raziskovanje)  
+**Trajanje seje**: 30 min (+ opcijski poglobljeni pregled)  
 **Težavnost**: Srednja
 
 ### Opcijske izboljšave
 
 | Izboljšava | Korist | Kako |
-|------------|--------|-----|
-| Zakasnitev prvega tokena pri pretakanju | Meri zaznano odzivnost | Zaženite primerjavo z `BENCH_STREAM=1` (izboljšana skripta v `Workshop/samples/session03`) |
-| Deterministični način | Stabilne regresijske primerjave | `temperature=0`, fiksni nabor pozivov, zajem JSON izhodov pod nadzorom različic |
-| Ocena po rubriki kakovosti | Dodaja kvalitativno dimenzijo | Vzdržujte `prompts.json` z pričakovanimi vidiki; ročno ali prek sekundarnega modela označite ocene (1–5) |
+|------------|--------|------|
+| Zakasnitev prvega tokena pri pretakanju | Meri zaznano odzivnost | Zaženite primerjavo zmogljivosti z `BENCH_STREAM=1` (izboljšana skripta v `Workshop/samples/session03`) |
+| Deterministični način | Stabilne primerjave regresij | `temperature=0`, fiksni nabor pozivov, zajem JSON izhodov pod nadzorom različic |
+| Ocena po kriterijih kakovosti | Dodaja kvalitativno dimenzijo | Vzdržujte `prompts.json` z pričakovanimi vidiki; ročno ali prek sekundarnega modela označite ocene (1–5) |
 | Izvoz v CSV / Markdown | Deljivo poročilo | Razširite skripto za zapis `benchmark_report.md` s tabelo in poudarki |
 | Oznake zmogljivosti modela | Pomaga pri avtomatiziranem usmerjanju kasneje | Vzdržujte `models.json` z `{alias: {capabilities:[], size_mb:..}}` |
-| Faza ogrevanja predpomnilnika | Zmanjšanje pristranskosti hladnega zagona | Izvedite en krog ogrevanja pred časovno zanko (že implementirano) |
+| Faza ogrevanja predpomnilnika | Zmanjšanje pristranskosti hladnega zagona | Izvedite eno ogrevalno rundo pred časovno zanko (že implementirano) |
 | Natančnost percentila | Robustna zakasnitev repa | Uporabite numpy percentil (že v preoblikovani skripti) |
-| Približek stroškov tokenov | Ekonomska primerjava | Približen strošek = (tokeni/sekundo * povprečni tokeni na zahtevo) * energijska ocena |
+| Približek stroškov tokenov | Ekonomska primerjava | Približen strošek = (tokeni/sekundo * povprečno število tokenov na zahtevo) * energijska ocena |
 | Samodejno preskakovanje neuspelih modelov | Odpornost pri serijskih zagonih | Ovijte vsako primerjavo v try/except in označite statusno polje |
 
 #### Minimalni izvoz v Markdown
@@ -289,5 +288,7 @@ Zagnajte statični seznam namesto naključnih pozivov za primerljive metrike med
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne odgovarjamo za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

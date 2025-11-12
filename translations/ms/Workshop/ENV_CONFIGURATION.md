@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T22:40:29+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T23:48:46+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "ms"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Contoh Workshop menggunakan pembolehubah persekitaran untuk konfigurasi, yang disentralisasi dalam fail `.env` di akar repositori. Ini membolehkan penyesuaian mudah tanpa mengubah kod.
 
-## Permulaan Pantas
+## Permulaan Cepat
 
 ### 1. Sahkan Prasyarat
 
@@ -119,7 +119,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 ## Konfigurasi Biasa
 
-### Tetapan Pembangunan (Iterasi Pantas)
+### Persediaan Pembangunan (Iterasi Cepat)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Tetapan Pengeluaran (Fokus Kualiti)
+### Persediaan Pengeluaran (Fokus Kualiti)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -138,7 +138,7 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Tetapan Penanda Aras
+### Persediaan Penanda Aras
 ```bash
 BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
@@ -164,7 +164,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 **Tujuan Umum:**
 - `phi-4-mini` - Keseimbangan kualiti dan kelajuan
 
-**Respons Pantas:**
+**Respons Cepat:**
 - `qwen2.5-0.5b` - Sangat pantas, baik untuk klasifikasi
 - `phi-4-mini` - Pantas dengan kualiti baik
 
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### Tetapan Hibrid Azure OpenAI
+### Persediaan Hibrid Azure OpenAI
 
 ```bash
 # Use local for development
@@ -303,7 +303,7 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Ralat Import
 
 **Gejala:**
-- Ralat "Module not found"
+- Ralat "Modul tidak ditemui"
 
 **Penyelesaian:**
 
@@ -403,12 +403,11 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Repositori Utama**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Dokumentasi API**: Semak repositori SDK untuk versi terkini
+- **Dokumentasi API**: Semak repositori SDK untuk yang terkini
 
 ## Sumber Tambahan
 
 - `QUICK_START.md` - Panduan memulakan
-- `SDK_MIGRATION_NOTES.md` - Butiran kemas kini SDK
 - `Workshop/samples/*/README.md` - Panduan khusus contoh
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

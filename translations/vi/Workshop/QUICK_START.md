@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T22:31:18+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T23:38:54+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "vi"
 }
 -->
-# Hướng Dẫn Bắt Đầu Nhanh Workshop
+# Hướng Dẫn Bắt Đầu Nhanh Cho Workshop
 
 ## Yêu Cầu Trước
 
@@ -27,7 +27,7 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. Cài đặt các phụ thuộc Python
+### 2. Cài đặt Các Thư Viện Python
 
 Từ thư mục Workshop:
 
@@ -60,7 +60,7 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
 ```
 
-### Phiên 02: Quy trình RAG
+### Phiên 02: RAG Pipeline
 
 ```bash
 cd Workshop/samples
@@ -74,14 +74,14 @@ set RAG_QUESTION="Why use RAG with local inference?"
 set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
-### Phiên 02: Đánh giá RAG (Ragas)
+### Phiên 02: Đánh Giá RAG (Ragas)
 
 ```bash
 cd Workshop/samples
 python -m session02.rag_eval_ragas
 ```
 
-**Lưu ý**: Yêu cầu cài đặt thêm các phụ thuộc thông qua `requirements.txt`
+**Lưu ý**: Yêu cầu cài đặt thêm các thư viện qua `requirements.txt`
 
 ### Phiên 03: Đánh Giá Hiệu Năng
 
@@ -98,7 +98,7 @@ set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Kết quả**: JSON với các chỉ số độ trễ, thông lượng, và thời gian tạo token đầu tiên
+**Kết Quả**: JSON với các chỉ số độ trễ, thông lượng, và thời gian tạo token đầu tiên
 
 ### Phiên 04: So Sánh Mô Hình
 
@@ -135,17 +135,17 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**Kiểm tra logic định tuyến** với nhiều ý định (mã, tóm tắt, phân loại)
+**Kiểm tra logic định tuyến** với nhiều mục đích (code, tóm tắt, phân loại)
 
-### Phiên 06: Quy trình
+### Phiên 06: Pipeline
 
 ```bash
 python -m session06.models_pipeline
 ```
 
-**Quy trình nhiều bước phức tạp** với lập kế hoạch, thực thi, và tinh chỉnh
+**Pipeline phức tạp nhiều bước** với lập kế hoạch, thực thi, và tinh chỉnh
 
-## Tập Lệnh
+## Scripts
 
 ### Xuất Báo Cáo Đánh Giá Hiệu Năng
 
@@ -158,30 +158,30 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**Kết quả**: Bảng Markdown + các chỉ số JSON
+**Kết Quả**: Bảng Markdown + các chỉ số JSON
 
-### Kiểm Tra Mẫu CLI Markdown
+### Kiểm Tra Các Mẫu CLI Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**Mục đích**: Phát hiện các mẫu CLI đã lỗi thời trong tài liệu
+**Mục Đích**: Phát hiện các mẫu CLI đã lỗi thời trong tài liệu
 
 ## Kiểm Tra
 
-### Kiểm Tra Sơ Bộ
+### Kiểm Tra Nhanh
 
 ```bash
 cd Workshop
 python -m tests.smoke
 ```
 
-**Kiểm tra**: Chức năng cơ bản của các mẫu chính
+**Kiểm Tra**: Chức năng cơ bản của các mẫu chính
 
 ## Xử Lý Sự Cố
 
-### Dịch Vụ Không Hoạt Động
+### Dịch Vụ Không Chạy
 
 ```bash
 # Check status
@@ -228,20 +228,20 @@ foundry model run phi-4-mini
 ## Tham Chiếu Biến Môi Trường
 
 ### Cấu Hình Cốt Lõi
-| Biến | Mặc định | Mô tả |
+| Biến | Mặc Định | Mô Tả |
 |------|----------|-------|
-| `FOUNDRY_LOCAL_ALIAS` | Thay đổi | Bí danh mô hình để sử dụng |
+| `FOUNDRY_LOCAL_ALIAS` | Thay đổi | Bí danh mô hình sử dụng |
 | `FOUNDRY_LOCAL_ENDPOINT` | Tự động | Ghi đè điểm cuối dịch vụ |
 | `SHOW_USAGE` | `0` | Hiển thị thống kê sử dụng token |
 | `RETRY_ON_FAIL` | `1` | Bật logic thử lại |
-| `RETRY_BACKOFF` | `1.0` | Độ trễ thử lại ban đầu (giây) |
+| `RETRY_BACKOFF` | `1.0` | Độ trễ ban đầu khi thử lại (giây) |
 
 ### Cụ Thể Theo Phiên
-| Biến | Mặc định | Mô tả |
+| Biến | Mặc Định | Mô Tả |
 |------|----------|-------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Mô hình nhúng |
 | `RAG_QUESTION` | Xem mẫu | Câu hỏi kiểm tra RAG |
-| `BENCH_MODELS` | Thay đổi | Các mô hình phân cách bằng dấu phẩy |
+| `BENCH_MODELS` | Thay đổi | Các mô hình phân tách bằng dấu phẩy |
 | `BENCH_ROUNDS` | `3` | Số lần đánh giá hiệu năng |
 | `BENCH_PROMPT` | Xem mẫu | Lời nhắc đánh giá hiệu năng |
 | `BENCH_STREAM` | `0` | Đo độ trễ token đầu tiên |
@@ -251,10 +251,10 @@ foundry model run phi-4-mini
 | `LLM_ALIAS` | `qwen2.5-7b` | Mô hình ngôn ngữ lớn |
 | `COMPARE_PROMPT` | Xem mẫu | Lời nhắc so sánh |
 
-## Mô Hình Khuyến Nghị
+## Mô Hình Đề Xuất
 
 ### Phát Triển & Kiểm Tra
-- **phi-4-mini** - Chất lượng và tốc độ cân bằng
+- **phi-4-mini** - Cân bằng giữa chất lượng và tốc độ
 - **qwen2.5-0.5b** - Rất nhanh cho phân loại
 - **gemma-2-2b** - Chất lượng tốt, tốc độ vừa phải
 
@@ -266,21 +266,20 @@ foundry model run phi-4-mini
 ## Tài Liệu SDK
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
-## Hỗ Trợ
+## Nhận Hỗ Trợ
 
 1. Kiểm tra trạng thái dịch vụ: `foundry service status`  
 2. Xem nhật ký: Kiểm tra nhật ký dịch vụ Foundry Local  
 3. Xem tài liệu SDK: https://github.com/microsoft/Foundry-Local  
-4. Xem mã mẫu: Tất cả các mẫu đều có chú thích chi tiết  
+4. Xem mã mẫu: Tất cả các mẫu đều có docstring chi tiết  
 
-## Bước Tiếp Theo
+## Các Bước Tiếp Theo
 
 1. Hoàn thành tất cả các phiên workshop theo thứ tự  
 2. Thử nghiệm với các mô hình khác nhau  
 3. Chỉnh sửa các mẫu cho trường hợp sử dụng của bạn  
-4. Xem lại `SDK_MIGRATION_NOTES.md` để biết các mẫu nâng cao  
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, chúng tôi khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

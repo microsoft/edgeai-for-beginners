@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T21:46:36+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T22:57:28+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "tr"
 }
@@ -135,7 +135,7 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**Yönlendirme mantığını test eder** (kod, özetleme, sınıflandırma gibi birden fazla niyetle)
+**Yönlendirme mantığını test eder** farklı niyetlerle (kod, özetleme, sınıflandırma)
 
 ### Oturum 06: Pipeline
 
@@ -239,17 +239,17 @@ foundry model run phi-4-mini
 ### Oturuma Özel
 | Değişken | Varsayılan | Açıklama |
 |----------|------------|----------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Gömülü model |
-| `RAG_QUESTION` | Örnek soruya bakın | RAG test sorusu |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Gömme modeli |
+| `RAG_QUESTION` | Örnekten bakın | RAG test sorusu |
 | `BENCH_MODELS` | Değişken | Virgülle ayrılmış modeller |
 | `BENCH_ROUNDS` | `3` | Performans testi yinelemeleri |
-| `BENCH_PROMPT` | Örnek isteme bakın | Performans testi istemi |
+| `BENCH_PROMPT` | Örnekten bakın | Performans testi istemi |
 | `BENCH_STREAM` | `0` | İlk token gecikmesini ölç |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Birincil ajan modeli |
 | `AGENT_MODEL_EDITOR` | Birincil | Editör ajan modeli |
 | `SLM_ALIAS` | `phi-4-mini` | Küçük dil modeli |
 | `LLM_ALIAS` | `qwen2.5-7b` | Büyük dil modeli |
-| `COMPARE_PROMPT` | Örnek isteme bakın | Karşılaştırma istemi |
+| `COMPARE_PROMPT` | Örnekten bakın | Karşılaştırma istemi |
 
 ## Önerilen Modeller
 
@@ -266,13 +266,13 @@ foundry model run phi-4-mini
 ## SDK Belgeleri
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Yardım Alma
 
 1. Servis durumunu kontrol edin: `foundry service status`  
 2. Günlükleri görüntüleyin: Foundry Local servis günlüklerini kontrol edin  
-3. SDK belgelerine bakın: https://github.com/microsoft/Foundry-Local  
+3. SDK belgelerini kontrol edin: https://github.com/microsoft/Foundry-Local  
 4. Örnek kodu inceleyin: Tüm örneklerde ayrıntılı açıklamalar bulunmaktadır  
 
 ## Sonraki Adımlar
@@ -280,15 +280,16 @@ foundry model run phi-4-mini
 1. Tüm atölye oturumlarını sırayla tamamlayın  
 2. Farklı modellerle deney yapın  
 3. Örnekleri kendi kullanım senaryolarınıza göre değiştirin  
-4. Gelişmiş kalıplar için `SDK_MIGRATION_NOTES.md` dosyasını inceleyin  
 
 ---
 
 **Son Güncelleme**: 2025-01-08  
 **Atölye Sürümü**: En Son  
-**SDK**: Foundry Local Python SDK  
+**SDK**: Foundry Local Python SDK
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
 Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çeviriler hata veya yanlışlıklar içerebilir. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

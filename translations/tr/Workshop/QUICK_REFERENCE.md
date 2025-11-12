@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T21:50:22+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:01:55+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "tr"
 }
@@ -37,7 +37,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 01 | `chat_bootstrap.py` | Temel sohbet + akış | ~30s |
 | 02 | `rag_pipeline.py` | Embedding ile RAG | ~45s |
 | 02 | `rag_eval_ragas.py` | RAG değerlendirme | ~60s |
-| 03 | `benchmark_oss_models.py` | Model karşılaştırması | ~2m |
+| 03 | `benchmark_oss_models.py` | Model karşılaştırma | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Çoklu ajan sistemi | ~60s |
 | 06 | `models_router.py` | Niyet yönlendirme | ~45s |
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **SDK Belgeleri**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Hızlı Referans**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Güncelleme Özeti**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Geçiş Notları**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -218,8 +216,8 @@ for chunk in stream:
 
 1. **İstemcileri önbelleğe alın**: `workshop_utils` sizin için önbelleğe alır
 2. **Daha küçük modeller kullanın**: Test için `qwen2.5-0.5b` ile başlayın
-3. **Kullanım istatistiklerini etkinleştirin**: Token takibi için `SHOW_USAGE=1` ayarlayın
-4. **Toplu işlem yapın**: Birden fazla istemi ardışık olarak işleyin
+3. **Kullanım istatistiklerini etkinleştirin**: Token takibi için `SHOW_USAGE=1` ayarını yapın
+4. **Toplu işlem yapın**: Birden fazla istemi sırayla işleyin
 5. **max_tokens değerini düşürün**: Hızlı yanıtlar için gecikmeyi azaltır
 
 ---
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çeviriler hata veya yanlışlıklar içerebilir. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

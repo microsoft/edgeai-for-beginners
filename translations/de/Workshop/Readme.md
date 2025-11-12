@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "45923ada94573fee7c82cc4f0c3bb344",
-  "translation_date": "2025-10-28T20:10:51+00:00",
+  "original_hash": "04951692a100dcd716df01efca2d3f0d",
+  "translation_date": "2025-11-11T21:28:34+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "de"
 }
 -->
-# EdgeAI für Einsteiger - Workshop
+# EdgeAI für Anfänger - Workshop
 
 > **Praktischer Lernpfad für die Entwicklung produktionsreifer Edge-AI-Anwendungen**
 >
-> Meistern Sie die lokale KI-Bereitstellung mit Microsoft Foundry Local, von der ersten Chat-Komplettierung bis zur Multi-Agenten-Orchestrierung in 6 aufeinander aufbauenden Sitzungen.
+> Beherrschen Sie die lokale KI-Bereitstellung mit Microsoft Foundry Local – von der ersten Chat-Komplettierung bis zur Multi-Agenten-Orchestrierung in 6 aufeinander aufbauenden Sitzungen.
 
 ---
 
 ## 🎯 Einführung
 
-Willkommen zum **EdgeAI für Einsteiger Workshop** – Ihrem praktischen Leitfaden für die Entwicklung intelligenter Anwendungen, die vollständig auf lokaler Hardware laufen. Dieser Workshop verwandelt theoretische Edge-AI-Konzepte in praktische Fähigkeiten durch zunehmend anspruchsvollere Übungen mit Microsoft Foundry Local und Small Language Models (SLMs).
+Willkommen zum **EdgeAI für Anfänger Workshop** – Ihrem praktischen Leitfaden für die Entwicklung intelligenter Anwendungen, die vollständig auf lokaler Hardware laufen. Dieser Workshop verwandelt theoretische Edge-AI-Konzepte in praktische Fähigkeiten durch zunehmend anspruchsvollere Übungen mit Microsoft Foundry Local und Small Language Models (SLMs).
 
 ### Warum dieser Workshop?
 
@@ -25,56 +25,56 @@ Willkommen zum **EdgeAI für Einsteiger Workshop** – Ihrem praktischen Leitfad
 
 Weltweit wechseln Organisationen von cloudabhängiger KI zu Edge-Computing aus drei entscheidenden Gründen:
 
-1. **Datenschutz & Compliance** – Verarbeitung sensibler Daten lokal ohne Übertragung in die Cloud (HIPAA, DSGVO, Finanzvorschriften)
-2. **Leistung** – Eliminierung von Netzwerklatenz (50-500ms lokal vs. 500-2000ms Cloud-Round-Trip)
+1. **Datenschutz & Compliance** – Verarbeitung sensibler Daten lokal, ohne Übertragung in die Cloud (HIPAA, DSGVO, Finanzvorschriften)
+2. **Leistung** – Eliminierung von Netzwerk-Latenzzeiten (50-500ms lokal vs. 500-2000ms Cloud-Round-Trip)
 3. **Kostenkontrolle** – Wegfall von API-Kosten pro Token und Skalierung ohne Cloud-Ausgaben
 
 **Aber Edge-AI ist anders**
 
 Das Ausführen von KI vor Ort erfordert neue Fähigkeiten:
-- Modellauswahl und Optimierung für ressourcenbeschränkte Umgebungen
+- Modellauswahl und -optimierung für ressourcenbeschränkte Umgebungen
 - Lokales Service-Management und Hardware-Beschleunigung
 - Prompt-Engineering für kleinere Modelle
 - Produktionsbereitstellungsmuster für Edge-Geräte
 
 **Dieser Workshop vermittelt diese Fähigkeiten**
 
-In 6 fokussierten Sitzungen (~3 Stunden insgesamt) entwickeln Sie sich von "Hello World" bis zur Bereitstellung produktionsreifer Multi-Agenten-Systeme – alles läuft lokal auf Ihrem Rechner.
+In 6 fokussierten Sitzungen (~3 Stunden insgesamt) entwickeln Sie sich von „Hello World“ bis zur Bereitstellung produktionsreifer Multi-Agenten-Systeme – alles läuft lokal auf Ihrem Rechner.
 
 ---
 
 ## 📚 Lernziele
 
-Nach Abschluss dieses Workshops können Sie:
+Nach Abschluss dieses Workshops werden Sie in der Lage sein:
 
 ### Kernkompetenzen
 1. **Lokale KI-Dienste bereitstellen und verwalten**
    - Microsoft Foundry Local installieren und konfigurieren
    - Geeignete Modelle für Edge-Bereitstellungen auswählen
-   - Modelllebenszyklus verwalten (herunterladen, laden, zwischenspeichern)
+   - Modelllebenszyklus verwalten (Herunterladen, Laden, Zwischenspeichern)
    - Ressourcenverbrauch überwachen und Leistung optimieren
 
 2. **KI-gestützte Anwendungen entwickeln**
    - OpenAI-kompatible Chat-Komplettierungen lokal implementieren
    - Effektive Prompts für Small Language Models entwerfen
-   - Streaming-Antworten für eine bessere Benutzererfahrung handhaben
+   - Streaming-Antworten für bessere Benutzererfahrung handhaben
    - Lokale Modelle in bestehende Anwendungen integrieren
 
 3. **RAG-Systeme (Retrieval Augmented Generation) erstellen**
    - Semantische Suche mit Embeddings aufbauen
    - LLM-Antworten in domänenspezifisches Wissen einbetten
    - RAG-Qualität mit branchenüblichen Metriken bewerten
-   - Vom Prototyp zur Produktion skalieren
+   - Skalierung vom Prototyp zur Produktion
 
 4. **Modellleistung optimieren**
    - Mehrere Modelle für Ihren Anwendungsfall benchmarken
    - Latenz, Durchsatz und Zeit bis zum ersten Token messen
-   - Optimale Modelle basierend auf Geschwindigkeits-/Qualitätskompromissen auswählen
+   - Optimale Modelle basierend auf Geschwindigkeit/Qualität-Abwägungen auswählen
    - SLM- vs. LLM-Abwägungen in realen Szenarien vergleichen
 
 5. **Multi-Agenten-Systeme orchestrieren**
    - Spezialisierte Agenten für verschiedene Aufgaben entwerfen
-   - Agentenspeicher und Kontextmanagement implementieren
+   - Agenten-Speicher und Kontextmanagement implementieren
    - Agenten in komplexen Workflows koordinieren
    - Anfragen intelligent über mehrere Modelle routen
 
@@ -92,8 +92,8 @@ Nach Abschluss dieses Workshops können Sie:
 
 Am Ende dieses Workshops haben Sie Folgendes erstellt:
 
-| Sitzung | Ergebnis | Demonstrierte Fähigkeiten |
-|---------|----------|---------------------------|
+| Sitzung | Ergebnis | Gezeigte Fähigkeiten |
+|---------|----------|-----------------------|
 | **1** | Chat-Anwendung mit Streaming | Service-Setup, grundlegende Komplettierungen, Streaming-UX |
 | **2** | RAG-System mit Bewertung | Embeddings, semantische Suche, Qualitätsmetriken |
 | **3** | Multi-Modell-Benchmark-Suite | Leistungsbewertung, Modellvergleich |
@@ -106,7 +106,7 @@ Am Ende dieses Workshops haben Sie Folgendes erstellt:
 | Fähigkeitsniveau | Sitzung 1-2 | Sitzung 3-4 | Sitzung 5-6 |
 |------------------|-------------|-------------|-------------|
 | **Anfänger** | ✅ Setup & Grundlagen | ⚠️ Herausfordernd | ❌ Zu fortgeschritten |
-| **Fortgeschritten** | ✅ Schnelle Überprüfung | ✅ Kernlernen | ⚠️ Stretch-Ziele |
+| **Fortgeschritten** | ✅ Schnelle Wiederholung | ✅ Kernlernen | ⚠️ Stretch-Ziele |
 | **Experte** | ✅ Leicht zu bewältigen | ✅ Verfeinerung | ✅ Produktionsmuster |
 
 ### Karrierefähigkeiten
@@ -114,9 +114,9 @@ Am Ende dieses Workshops haben Sie Folgendes erstellt:
 **Nach diesem Workshop sind Sie bereit:**
 
 ✅ **Datenschutzorientierte Anwendungen zu entwickeln**
-- Gesundheitsanwendungen, die PHI/PII lokal verarbeiten
+- Gesundheits-Apps, die PHI/PII lokal verarbeiten
 - Finanzdienstleistungen mit Compliance-Anforderungen
-- Regierungssysteme mit Anforderungen an Datenhoheit
+- Regierungssysteme mit Anforderungen an die Datenhoheit
 
 ✅ **Für Edge-Umgebungen zu optimieren**
 - IoT-Geräte mit begrenzten Ressourcen
@@ -129,7 +129,7 @@ Am Ende dieses Workshops haben Sie Folgendes erstellt:
 - Kostenoptimierte KI-Infrastruktur
 
 ✅ **Edge-AI-Initiativen zu leiten**
-- Machbarkeit von Edge-AI für Projekte bewerten
+- Machbarkeit von Edge-AI-Projekten bewerten
 - Geeignete Modelle und Frameworks auswählen
 - Skalierbare lokale KI-Lösungen entwerfen
 
@@ -141,12 +141,12 @@ Am Ende dieses Workshops haben Sie Folgendes erstellt:
 
 | Sitzung | Thema | Fokus | Dauer |
 |---------|-------|-------|-------|
-| **1** | Einstieg in Foundry Local | Installation, Validierung, erste Komplettierungen | 30 Min |
-| **2** | KI-Lösungen mit RAG erstellen | Prompt-Engineering, Embeddings, Bewertung | 30 Min |
-| **3** | Open-Source-Modelle | Modellentdeckung, Benchmarking, Auswahl | 30 Min |
-| **4** | Cutting-Edge-Modelle | SLM vs. LLM, Optimierung, Frameworks | 30 Min |
-| **5** | KI-gestützte Agenten | Agentendesign, Orchestrierung, Speicher | 30 Min |
-| **6** | Modelle als Werkzeuge | Routing, Verkettung, Skalierungsstrategien | 30 Min |
+| **1** | Einführung in Foundry Local | Installation, Validierung, erste Komplettierungen | 30 Min. |
+| **2** | KI-Lösungen mit RAG erstellen | Prompt-Engineering, Embeddings, Bewertung | 30 Min. |
+| **3** | Open-Source-Modelle | Modellentdeckung, Benchmarking, Auswahl | 30 Min. |
+| **4** | Cutting-Edge-Modelle | SLM vs. LLM, Optimierung, Frameworks | 30 Min. |
+| **5** | KI-gestützte Agenten | Agentendesign, Orchestrierung, Speicher | 30 Min. |
+| **6** | Modelle als Werkzeuge | Routing, Verkettung, Skalierungsstrategien | 30 Min. |
 
 ---
 
@@ -157,7 +157,7 @@ Am Ende dieses Workshops haben Sie Folgendes erstellt:
 **Systemanforderungen:**
 - **OS**: Windows 10/11, macOS 11+ oder Linux (Ubuntu 20.04+)
 - **RAM**: Mindestens 8GB, empfohlen 16GB+
-- **Speicherplatz**: Mindestens 10GB freier Speicherplatz für Modelle
+- **Speicherplatz**: Mindestens 10GB freier Speicher für Modelle
 - **CPU**: Moderner Prozessor mit AVX2-Unterstützung
 - **GPU** (optional): CUDA-kompatibel oder Qualcomm NPU für Beschleunigung
 
@@ -255,7 +255,7 @@ cd samples
 python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
-**✅ Erfolg!** Sie sollten eine Streaming-Antwort über Edge-AI sehen.
+**✅ Erfolg!** Sie sollten eine Streaming-Antwort zu Edge-AI sehen.
 
 ---
 
@@ -263,7 +263,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ### Python-Beispiele
 
-Progressive praktische Beispiele, die jedes Konzept demonstrieren:
+Praktische Beispiele, die jedes Konzept demonstrieren:
 
 | Sitzung | Beispiel | Beschreibung | Laufzeit |
 |---------|----------|--------------|----------|
@@ -276,7 +276,7 @@ Progressive praktische Beispiele, die jedes Konzept demonstrieren:
 | 6 | [`models_router.py`](../../../Workshop/samples/session06/models_router.py) | Intent-basiertes Routing | ~45s |
 | 6 | [`models_pipeline.py`](../../../Workshop/samples/session06/models_pipeline.py) | Multi-Step-Pipeline | ~60s |
 
-### Jupyter-Notebooks
+### Jupyter Notebooks
 
 Interaktive Erkundung mit Erklärungen und Visualisierungen:
 
@@ -293,24 +293,22 @@ Interaktive Erkundung mit Erklärungen und Visualisierungen:
 
 ### Dokumentation
 
-Umfassende Leitfäden und Referenzen:
+Umfassende Anleitungen und Referenzen:
 
-| Dokument | Beschreibung | Verwendung |
-|----------|--------------|------------|
-| [QUICK_START.md](./QUICK_START.md) | Schnellstart-Anleitung | Start von Grund auf |
-| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Befehls- & API-Spickzettel | Schnelle Antworten |
-| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | SDK-Muster & Beispiele | Code schreiben |
-| [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Leitfaden für Umgebungsvariablen | Beispiele konfigurieren |
-| [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Neueste Verbesserungen der Beispiele | Änderungen verstehen |
-| [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Migrationsleitfaden | Code aktualisieren |
-| [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Häufige Probleme & Lösungen | Probleme beheben |
+| Dokument | Beschreibung | Wann verwenden |
+|----------|--------------|----------------|
+| [QUICK_START.md](./QUICK_START.md) | Schnellstart-Anleitung | Von Anfang an |
+| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Befehls- & API-Spickzettel | Bei schnellen Fragen |
+| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | SDK-Muster & Beispiele | Beim Schreiben von Code |
+| [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Anleitung zu Umgebungsvariablen | Beim Konfigurieren von Beispielen |
+| [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Häufige Probleme & Lösungen | Beim Debuggen von Problemen |
 
 ---
 
 ## 🎓 Empfehlungen für den Lernpfad
 
 ### Für Anfänger (3-4 Stunden)
-1. ✅ Sitzung 1: Einstieg (Fokus auf Setup und grundlegenden Chat)
+1. ✅ Sitzung 1: Einführung (Fokus auf Setup und grundlegenden Chat)
 2. ✅ Sitzung 2: RAG-Grundlagen (Bewertung zunächst überspringen)
 3. ✅ Sitzung 3: Einfaches Benchmarking (nur 2 Modelle)
 4. ⏭️ Sitzungen 4-6 vorerst überspringen
@@ -323,29 +321,29 @@ Umfassende Leitfäden und Referenzen:
 4. ✅ Sitzung 4: Modelloptimierung
 5. ✅ Sitzungen 5-6: Fokus auf Architektur-Muster
 
-### Für erfahrene Praktiker (2-3 Stunden)
+### Für Experten (2-3 Stunden)
 1. ⚡ Sitzungen 1-3: Schnelle Überprüfung und Validierung
 2. ✅ Sitzung 4: Tiefgehende Optimierung
 3. ✅ Sitzung 5: Multi-Agenten-Architektur
 4. ✅ Sitzung 6: Produktionsmuster und Skalierung
-5. 🚀 Erweiterung: Eigene Routing-Logik und hybride Bereitstellungen erstellen
+5. 🚀 Erweiterung: Eigene Routing-Logik und hybride Bereitstellungen entwickeln
 
 ---
 
-## Workshop-Sitzungspaket (Fokussierte 30-Minuten-Labs)
+## Workshop-Sitzungspaket (Fokussierte 30‑Minuten-Labs)
 
-Wenn Sie dem kompakten 6-Sitzungen-Workshop-Format folgen, verwenden Sie diese speziellen Leitfäden (jeder ist auf die umfassenderen Modul-Dokumente oben abgestimmt):
+Wenn Sie dem kompakten 6-Sitzungen-Workshop-Format folgen, verwenden Sie diese speziellen Leitfäden (jeder ergänzt die umfassenderen Modul-Dokumentationen oben):
 
 | Workshop-Sitzung | Leitfaden | Kernfokus |
 |------------------|-----------|-----------|
 | 1 | [Session01-GettingStartedFoundryLocal](./Session01-GettingStartedFoundryLocal.md) | Installation, Validierung, Ausführung von phi & GPT-OSS-20B, Beschleunigung |
-| 2 | [Session02-BuildAISolutionsRAG](./Session02-BuildAISolutionsRAG.md) | Prompt-Engineering, RAG-Muster, CSV- & Dokumentenverankerung, Migration |
-| 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Integration von Hugging Face, Benchmarking, Modellauswahl |
-| 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM vs LLM, WebGPU, Chainlit RAG, ONNX-Beschleunigung |
+| 2 | [Session02-BuildAISolutionsRAG](./Session02-BuildAISolutionsRAG.md) | Prompt-Engineering, RAG-Muster, CSV- & Dokumenten-Einbettung, Migration |
+| 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Hugging Face-Integration, Benchmarking, Modellauswahl |
+| 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM vs. LLM, WebGPU, Chainlit RAG, ONNX-Beschleunigung |
 | 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Agentenrollen, Speicher, Tools, Orchestrierung |
 | 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Routing, Verkettung, Skalierungspfad zu Azure |
 
-Jede Sitzungsdatei enthält: Zusammenfassung, Lernziele, 30-minütigen Demo-Ablauf, Starterprojekt, Validierungscheckliste, Fehlerbehebung und Verweise auf das offizielle Foundry Local Python SDK.
+Jede Sitzungsdatei enthält: Zusammenfassung, Lernziele, 30‑minütigen Demo-Ablauf, Starterprojekt, Validierungscheckliste, Fehlerbehebung und Verweise auf das offizielle Foundry Local Python SDK.
 
 ### Beispielskripte
 
@@ -367,7 +365,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Falls der Foundry Local-Dienst auf einer anderen (Windows-) Maschine oder VM von macOS ausgeführt wird, exportieren Sie den Endpunkt:
+Wenn der Foundry Local-Dienst auf einem anderen (Windows-)Rechner oder einer VM von macOS aus ausgeführt wird, exportieren Sie den Endpunkt:
 
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
@@ -378,46 +376,46 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 | 1 | `samples/session01/chat_bootstrap.py` | Bootstrap-Dienst & Streaming-Chat |
 | 2 | `samples/session02/rag_pipeline.py` | Minimaler RAG (In-Memory-Embeddings) |
 |   | `samples/session02/rag_eval_ragas.py` | RAG-Auswertung mit Ragas-Metriken |
-| 3 | `samples/session03/benchmark_oss_models.py` | Benchmarking von Multi-Modell-Latenz & Durchsatz |
-| 4 | `samples/session04/model_compare.py` | Vergleich SLM vs LLM (Latenz & Beispielausgabe) |
+| 3 | `samples/session03/benchmark_oss_models.py` | Multi-Modell-Latenz- & Durchsatz-Benchmarking |
+| 4 | `samples/session04/model_compare.py` | SLM vs LLM Vergleich (Latenz & Beispielausgabe) |
 | 5 | `samples/session05/agents_orchestrator.py` | Zwei-Agenten-Forschung → Redaktionelle Pipeline |
-| 6 | `samples/session06/models_router.py` | Intent-basiertes Routing-Demo |
+| 6 | `samples/session06/models_router.py` | Intent-basierte Routing-Demo |
 |   | `samples/session06/models_pipeline.py` | Mehrstufige Plan-/Ausführungs-/Verfeinerungskette |
 
 ### Umgebungsvariablen (Gemeinsam für alle Beispiele)
 
 | Variable | Zweck | Beispiel |
-|----------|-------|----------|
+|----------|-------|---------|
 | `FOUNDRY_LOCAL_ALIAS` | Standardalias für ein einzelnes Modell für einfache Beispiele | `phi-4-mini` |
 | `SLM_ALIAS` / `LLM_ALIAS` | Explizites SLM vs größeres Modell zum Vergleich | `phi-4-mini` / `gpt-oss-20b` |
-| `BENCH_MODELS` | Komma-separierte Liste von Aliases für Benchmarking | `qwen2.5-0.5b,mistral-7b` |
-| `BENCH_ROUNDS` | Benchmark-Wiederholungen pro Modell | `3` |
-| `BENCH_PROMPT` | Im Benchmarking verwendeter Prompt | `Explain retrieval augmented generation briefly.` |
-| `EMBED_MODEL` | Sentence-Transformers-Embedding-Modell | `sentence-transformers/all-MiniLM-L6-v2` |
-| `RAG_QUESTION` | Testabfrage für die RAG-Pipeline überschreiben | `Why use RAG with local inference?` |
-| `AGENT_QUESTION` | Abfrage für die Agenten-Pipeline überschreiben | `Explain why edge AI matters for compliance.` |
+| `BENCH_MODELS` | Komma-getrennte Liste von Aliases für Benchmarking | `qwen2.5-0.5b,mistral-7b` |
+| `BENCH_ROUNDS` | Wiederholungen pro Modell im Benchmark | `3` |
+| `BENCH_PROMPT` | Im Benchmarking verwendetes Prompt | `Explain retrieval augmented generation briefly.` |
+| `EMBED_MODEL` | Sentence-transformers Embedding-Modell | `sentence-transformers/all-MiniLM-L6-v2` |
+| `RAG_QUESTION` | Testabfrage für RAG-Pipeline überschreiben | `Why use RAG with local inference?` |
+| `AGENT_QUESTION` | Abfrage für Agenten-Pipeline überschreiben | `Explain why edge AI matters for compliance.` |
 | `AGENT_MODEL_PRIMARY` | Modellalias für Forschungsagenten | `phi-4-mini` |
-| `AGENT_MODEL_EDITOR` | Modellalias für Editor-Agenten (kann unterschiedlich sein) | `gpt-oss-20b` |
-| `SHOW_USAGE` | Wenn `1`, druckt Token-Nutzung pro Abschluss | `1` |
+| `AGENT_MODEL_EDITOR` | Modellalias für Redaktionsagenten (kann unterschiedlich sein) | `gpt-oss-20b` |
+| `SHOW_USAGE` | Wenn `1`, wird die Token-Nutzung pro Abschluss angezeigt | `1` |
 | `RETRY_ON_FAIL` | Wenn `1`, einmaliger Wiederholungsversuch bei vorübergehenden Chat-Fehlern | `1` |
 | `RETRY_BACKOFF` | Sekunden, die vor dem Wiederholungsversuch gewartet werden | `1.0` |
 
-Falls eine Variable nicht gesetzt ist, greifen die Skripte auf sinnvolle Standardwerte zurück. Für Demos mit einem einzigen Modell benötigen Sie normalerweise nur `FOUNDRY_LOCAL_ALIAS`.
+Wenn eine Variable nicht gesetzt ist, greifen die Skripte auf sinnvolle Standardwerte zurück. Für Demos mit einem einzigen Modell benötigen Sie normalerweise nur `FOUNDRY_LOCAL_ALIAS`.
 
 ### Hilfsmodul
 
-Alle Beispiele verwenden jetzt ein Hilfsmodul `samples/workshop_utils.py`, das Folgendes bietet:
+Alle Beispiele teilen jetzt ein Hilfsmodul `samples/workshop_utils.py`, das Folgendes bietet:
 
 * Zwischengespeicherte Erstellung von `FoundryLocalManager` + OpenAI-Client
 * `chat_once()`-Helfer mit optionalem Wiederholungsversuch + Nutzungsanzeige
-* Einfache Token-Nutzungsberichte (aktivieren mit `SHOW_USAGE=1`)
+* Einfache Berichterstattung über die Token-Nutzung (aktivieren mit `SHOW_USAGE=1`)
 
 Dies reduziert Duplikationen und hebt Best Practices für effiziente lokale Modellorchestrierung hervor.
 
 ## Optionale Verbesserungen (Sitzungsübergreifend)
 
 | Thema | Verbesserung | Sitzungen | Env / Umschalter |
-|-------|-------------|----------|------------------|
+|-------|--------------|-----------|------------------|
 | Determinismus | Feste Temperatur + stabile Prompt-Sets | 1–6 | Setze `temperature=0`, `top_p=1` |
 | Token-Nutzungsanzeige | Konsistente Kosten-/Effizienzvermittlung | 1–6 | `SHOW_USAGE=1` |
 | Streaming des ersten Tokens | Wahrgenommene Latenzmetrik | 1,3,4,6 | `BENCH_STREAM=1` (Benchmark) |
@@ -425,8 +423,8 @@ Dies reduziert Duplikationen und hebt Best Practices für effiziente lokale Mode
 | Multi-Modell-Agenten | Heterogene Rollenspezialisierung | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
 | Adaptives Routing | Intent + Kostenheuristiken | 6 | Router mit Eskalationslogik erweitern |
 | Vektorspeicher | Langfristiges semantisches Erinnern | 2,5,6 | FAISS/Chroma-Embedding-Index integrieren |
-| Trace-Export | Auditierung & Auswertung | 2,5,6 | JSON-Lines pro Schritt anhängen |
-| Qualitätsrubriken | Qualitative Nachverfolgung | 3–6 | Sekundäre Bewertungs-Prompts |
+| Trace-Export | Auditierung & Auswertung | 2,5,6 | JSON-Zeilen pro Schritt anhängen |
+| Qualitätsrichtlinien | Qualitative Nachverfolgung | 3–6 | Sekundäre Bewertungs-Prompts |
 | Smoke-Tests | Schnelle Validierung vor dem Workshop | Alle | `python Workshop/tests/smoke.py` |
 
 ### Deterministischer Schnellstart
@@ -441,16 +439,16 @@ Erwarten Sie stabile Token-Zahlen bei wiederholten identischen Eingaben.
 
 ### RAG-Auswertung (Sitzung 2)
 
-Verwenden Sie `rag_eval_ragas.py`, um Antwortrelevanz, Glaubwürdigkeit und Kontextpräzision auf einem kleinen synthetischen Datensatz zu berechnen:
+Verwenden Sie `rag_eval_ragas.py`, um Antwortrelevanz, Zuverlässigkeit und Kontextpräzision auf einem kleinen synthetischen Datensatz zu berechnen:
 
 ```powershell
 cd Workshop/samples
 python -m session02.rag_eval_ragas
 ```
 
-Erweitern Sie dies, indem Sie ein größeres JSONL mit Fragen, Kontexten und Ground Truths bereitstellen und dann in ein Hugging Face `Dataset` konvertieren.
+Erweitern Sie dies, indem Sie ein größeres JSONL mit Fragen, Kontexten und Ground-Truths bereitstellen und dann in ein Hugging Face `Dataset` konvertieren.
 
-## CLI-Befehlsgenauigkeitsanhang
+## CLI-Befehlsgenauigkeits-Anhang
 
 Der Workshop verwendet absichtlich nur derzeit dokumentierte / stabile Foundry Local CLI-Befehle.
 
@@ -459,20 +457,15 @@ Der Workshop verwendet absichtlich nur derzeit dokumentierte / stabile Foundry L
 | Kategorie | Befehl | Zweck |
 |-----------|--------|-------|
 | Kern | `foundry --version` | Installierte Version anzeigen |
-| Kern | `foundry init` | Konfiguration initialisieren |
 | Dienst | `foundry service start` | Lokalen Dienst starten (falls nicht automatisch) |
-| Dienst | `foundry status` | Dienststatus anzeigen |
+| Dienst | `foundry service status` | Dienststatus anzeigen |
 | Modelle | `foundry model list` | Katalog / verfügbare Modelle auflisten |
 | Modelle | `foundry model download <alias>` | Modellgewichte in den Cache herunterladen |
-| Modelle | `foundry model run <alias>` | Modell lokal starten (laden); mit `--prompt` für Einmalabfrage kombinieren |
+| Modelle | `foundry model run <alias>` | Modell lokal starten (laden); mit `--prompt` für Einmal-Antwort kombinieren |
 | Modelle | `foundry model unload <alias>` / `foundry model stop <alias>` | Modell aus dem Speicher entladen (falls unterstützt) |
 | Cache | `foundry cache list` | Zwischengespeicherte (heruntergeladene) Modelle auflisten |
-| System | `foundry system info` | Snapshot der Hardware- & Beschleunigungsfunktionen |
-| System | `foundry system gpu-info` | GPU-Diagnoseinformationen |
-| Konfiguration | `foundry config list` | Aktuelle Konfigurationswerte anzeigen |
-| Konfiguration | `foundry config set <key> <value>` | Konfiguration aktualisieren |
 
-### Einmalige Prompt-Muster
+### Einmaliges Prompt-Muster
 
 Anstelle des veralteten Unterbefehls `model chat` verwenden Sie:
 
@@ -494,21 +487,21 @@ Dies führt einen einzigen Prompt-/Antwortzyklus aus und beendet sich dann.
 
 ### Benchmarking & Telemetrie
 
-- Latenz, p95, Tokens/Sek.: `samples/session03/benchmark_oss_models.py`
+- Latenz, p95, Tokens/Sekunde: `samples/session03/benchmark_oss_models.py`
 - Latenz des ersten Tokens (Streaming): Setzen Sie `BENCH_STREAM=1`
-- Ressourcennutzung: OS-Monitore (Task-Manager, Aktivitätsmonitor, `nvidia-smi`) + `foundry system info`.
+- Ressourcennutzung: OS-Monitore (Task-Manager, Aktivitätsmonitor, `nvidia-smi`).
 
 Sobald neue CLI-Telemetrie-Befehle stabilisiert sind, können sie mit minimalen Änderungen in die Sitzungs-Markdowns integriert werden.
 
-### Automatische Lint-Überprüfung
+### Automatische Lint-Prüfung
 
 Ein automatischer Linter verhindert die Wiedereinführung veralteter CLI-Muster innerhalb von Codeblöcken in Markdown-Dateien:
 
 Skript: `Workshop/scripts/lint_markdown_cli.py`
 
-Veraltete Muster werden innerhalb von Code-Fences blockiert.
+Veraltete Muster werden innerhalb von Codeblöcken blockiert.
 
-Empfohlene Ersatzmuster:
+Empfohlene Ersatzlösungen:
 | Veraltet | Ersatz |
 |----------|--------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
@@ -534,17 +527,16 @@ chmod +x .git/hooks/pre-commit
 ## Schnelle CLI → SDK-Migrationstabelle
 
 | Aufgabe | CLI-Einzeiler | SDK (Python) Äquivalent | Hinweise |
-|---------|---------------|-------------------------|---------|
+|---------|---------------|-------------------------|----------|
 | Ein Modell einmal ausführen (Prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK bootstrapped Dienst & Caching automatisch |
 | Modell herunterladen (Cache) | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # löst Download/Laden aus` | Manager wählt die beste Variante, wenn Alias auf mehrere Builds verweist |
-| Katalog auflisten | `foundry model list` | `# verwenden Sie den Manager für jeden Alias oder pflegen Sie eine bekannte Liste` | CLI aggregiert; SDK derzeit pro Alias-Initialisierung |
+| Katalog auflisten | `foundry model list` | `# verwenden Sie den Manager für jeden Alias oder pflegen Sie eine bekannte Liste` | CLI aggregiert; SDK derzeit pro Alias-Instanziierung |
 | Zwischengespeicherte Modelle auflisten | `foundry cache list` | `manager.list_cached_models()` | Nach Manager-Initialisierung (beliebiger Alias) |
-| GPU-Beschleunigung aktivieren | `foundry config set compute.onnx.enable_gpu true` | `# CLI-Aktion; SDK geht davon aus, dass Konfiguration bereits angewendet wurde` | Konfiguration ist externer Nebeneffekt |
-| Endpunkt-URL abrufen | (implizit) | `manager.endpoint` | Wird verwendet, um OpenAI-kompatiblen Client zu erstellen |
+| Endpunkt-URL abrufen | (implizit) | `manager.endpoint` | Wird verwendet, um einen OpenAI-kompatiblen Client zu erstellen |
 | Ein Modell aufwärmen | `foundry model run <alias>` dann erster Prompt | `chat_once(alias, messages=[...])` (Utility) | Utilities handhaben anfängliche Kaltlatenz-Aufwärmung |
-| Latenz messen | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (oder neues Exporterskript) | Bevorzugen Sie Skript für konsistente Metriken |
+| Latenz messen | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (oder neues Export-Skript) | Skript bevorzugen für konsistente Metriken |
 | Modell stoppen / entladen | `foundry model unload <alias>` | (Nicht verfügbar – Dienst / Prozess neu starten) | Normalerweise nicht erforderlich für Workshop-Ablauf |
-| Token-Nutzung abrufen | (Ausgabe anzeigen) | `resp.usage.total_tokens` | Wird bereitgestellt, wenn Backend Nutzungsobjekt zurückgibt |
+| Token-Nutzung abrufen | (Ausgabe anzeigen) | `resp.usage.total_tokens` | Wird bereitgestellt, wenn Backend ein Nutzungsobjekt zurückgibt |
 
 ## Benchmark-Markdown-Export
 
@@ -560,11 +552,13 @@ Generierte Dateien:
 | Datei | Inhalt |
 |-------|--------|
 | `benchmark_report.md` | Markdown-Tabelle + Interpretationshinweise |
-| `benchmark_report.json` | Rohdaten-Metriken-Array (zum Differenzieren / Trendverfolgung) |
+| `benchmark_report.json` | Rohdaten-Metriken-Array (für Differenzierung / Trendverfolgung) |
 
 Setzen Sie `BENCH_STREAM=1` in der Umgebung, um die Latenz des ersten Tokens einzuschließen, falls unterstützt.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

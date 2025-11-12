@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T23:09:21+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-12T00:17:52+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "ro"
 }
@@ -13,9 +13,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 Exemplele din Workshop utilizează variabile de mediu pentru configurare, centralizate în fișierul `.env` aflat la rădăcina depozitului. Acest lucru permite personalizarea ușoară fără a modifica codul.
 
-## Început Rapid
+## Start Rapid
 
-### 1. Verifică Cerințele Prealabile
+### 1. Verifică Prerechizitele
 
 ```bash
 # Check Foundry Local is installed
@@ -61,13 +61,13 @@ python -m session01.chat_bootstrap "Your question here"
 | Variabilă | Implicit | Descriere |
 |-----------|----------|-----------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Model implicit pentru exemple |
-| `FOUNDRY_LOCAL_ENDPOINT` | (gol) | Suprascrie punctul de acces al serviciului |
+| `FOUNDRY_LOCAL_ENDPOINT` | (gol) | Suprascrie endpoint-ul serviciului |
 | `PYTHONPATH` | Căi Workshop | Calea de căutare a modulelor Python |
 
 **Când să setezi FOUNDRY_LOCAL_ENDPOINT:**
 - Instanță Foundry Local la distanță
-- Configurare personalizată a portului
-- Separarea dezvoltării/producerii
+- Configurare port personalizată
+- Separare dezvoltare/producție
 
 **Exemplu:**
 ```bash
@@ -92,7 +92,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modele pentru benchmarking |
 | `BENCH_ROUNDS` | `3` | Iterații per model |
 | `BENCH_PROMPT` | Pre-configurat | Prompt de test |
-| `BENCH_STREAM` | `0` | Măsurarea latenței primului token |
+| `BENCH_STREAM` | `0` | Măsoară latența primului token |
 
 #### Sesiunea 04: Compararea Modelului
 | Variabilă | Implicit | Scop |
@@ -100,22 +100,22 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `SLM_ALIAS` | `phi-4-mini` | Model de limbaj mic |
 | `LLM_ALIAS` | `qwen2.5-7b` | Model de limbaj mare |
 | `COMPARE_PROMPT` | Pre-configurat | Prompt de comparație |
-| `COMPARE_RETRIES` | `2` | Încercări repetate |
+| `COMPARE_RETRIES` | `2` | Încercări de reîncercare |
 
-#### Sesiunea 05: Orchestrarea Multi-Agent
+#### Sesiunea 05: Orchestrare Multi-Agent
 | Variabilă | Implicit | Scop |
 |-----------|----------|------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Model agent cercetător |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Model agent editor |
 | `AGENT_QUESTION` | Pre-configurat | Întrebare de test |
 
-### Configurare de Fiabilitate
+### Configurare Fiabilitate
 
 | Variabilă | Implicit | Scop |
 |-----------|----------|------|
 | `SHOW_USAGE` | `1` | Afișează utilizarea token-urilor |
 | `RETRY_ON_FAIL` | `1` | Activează logica de reîncercare |
-| `RETRY_BACKOFF` | `1.0` | Întârziere la reîncercare (secunde) |
+| `RETRY_BACKOFF` | `1.0` | Întârziere reîncercare (secunde) |
 
 ## Configurări Comune
 
@@ -166,13 +166,13 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Răspunsuri Rapide:**
 - `qwen2.5-0.5b` - Foarte rapid, bun pentru clasificare
-- `phi-4-mini` - Rapid cu o calitate bună
+- `phi-4-mini` - Rapid cu calitate bună
 
 **Calitate Ridicată:**
 - `qwen2.5-7b` - Cea mai bună calitate, consum mai mare de resurse
 - `phi-4-mini` - Calitate bună, resurse mai reduse
 
-**Generare de Cod:**
+**Generare Cod:**
 - `deepseek-coder-1.3b` - Specializat pentru cod
 - `phi-4-mini` - Codare generală
 
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## Configurare Avansată
 
-### Puncte de Acces Personalizate
+### Endpoint-uri Personalizate
 
 ```bash
 # Development environment
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### Temperatură și Eșantionare (Suprascriere în Cod)
+### Temperatură și Sampling (Suprascriere în Cod)
 
 ```python
 # In your scripts/notebooks
@@ -239,7 +239,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ### Variabile de Mediu Neîncărcate
 
 **Simptome:**
-- Scripturile utilizează modele greșite
+- Scripturile folosesc modele greșite
 - Erori de conexiune
 - Variabile nerecunoscute
 
@@ -374,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Utilizează Fișiere .env Separate
+### 2. Folosește Fișiere .env Separate
 
 ```bash
 .env              # Default configuration
@@ -389,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. Utilizează Configurări Specifice Mediului
+### 4. Folosește Configurări Specifice Mediului
 
 ```bash
 # Development
@@ -401,23 +401,24 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ## Documentația SDK
 
-- **Depozitul Principal**: https://github.com/microsoft/Foundry-Local
+- **Depozit Principal**: https://github.com/microsoft/Foundry-Local
 - **SDK Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Documentația API**: Verifică depozitul SDK pentru cele mai recente informații
+- **Documentație API**: Verifică depozitul SDK pentru cele mai recente informații
 
 ## Resurse Suplimentare
 
 - `QUICK_START.md` - Ghid de început
-- `SDK_MIGRATION_NOTES.md` - Detalii despre actualizarea SDK
 - `Workshop/samples/*/README.md` - Ghiduri specifice exemplelor
 
 ---
 
-**Ultima actualizare**: 2025-01-08  
+**Ultima Actualizare**: 2025-01-08  
 **Versiune**: 2.0  
 **SDK**: Foundry Local Python SDK (latest)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

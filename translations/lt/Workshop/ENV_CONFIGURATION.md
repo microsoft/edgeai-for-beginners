@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T23:46:12+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-12T00:51:31+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "lt"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Apžvalga
 
-Dirbtuvių pavyzdžiai naudoja aplinkos kintamuosius konfigūravimui, kurie yra centralizuoti `.env` faile, esančiame saugyklos šaknyje. Tai leidžia lengvai pritaikyti nustatymus, nekeičiant kodo.
+Dirbtuvių pavyzdžiai naudoja aplinkos kintamuosius konfigūravimui, kurie yra centralizuoti `.env` faile, esančiame saugyklos šaknyje. Tai leidžia lengvai pritaikyti nustatymus, nekeisdami kodo.
 
 ## Greitas pradėjimas
 
@@ -41,7 +41,7 @@ nano .env     # macOS/Linux
 
 ### 3. Taikykite konfigūraciją
 
-**Python scenarijams:**
+**Python skriptams:**
 ```bash
 cd Workshop/samples
 python -m session01.chat_bootstrap "Your question here"
@@ -61,13 +61,13 @@ python -m session01.chat_bootstrap "Your question here"
 | Kintamasis | Numatytasis | Aprašymas |
 |------------|-------------|-----------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Numatytoji modelio versija pavyzdžiams |
-| `FOUNDRY_LOCAL_ENDPOINT` | (tuščias) | Paslaugos pabaigos taško pakeitimas |
+| `FOUNDRY_LOCAL_ENDPOINT` | (tuščias) | Paslaugos galinio taško pakeitimas |
 | `PYTHONPATH` | Dirbtuvių keliai | Python modulių paieškos kelias |
 
 **Kada nustatyti FOUNDRY_LOCAL_ENDPOINT:**
 - Nuotolinė Foundry Local instancija
 - Individualus prievado konfigūravimas
-- Skirtumas tarp kūrimo/produkcijos aplinkų
+- Skirtumas tarp kūrimo ir gamybos aplinkos
 
 **Pavyzdys:**
 ```bash
@@ -100,7 +100,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `SLM_ALIAS` | `phi-4-mini` | Mažas kalbos modelis |
 | `LLM_ALIAS` | `qwen2.5-7b` | Didelis kalbos modelis |
 | `COMPARE_PROMPT` | Iš anksto sukonfigūruota | Palyginimo užklausa |
-| `COMPARE_RETRIES` | `2` | Bandymų skaičius |
+| `COMPARE_RETRIES` | `2` | Bandymų kartų skaičius |
 
 #### Sesija 05: Daugiaveiksmė orkestracija
 | Kintamasis | Numatytasis | Paskirtis |
@@ -115,9 +115,9 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |------------|-------------|-----------|
 | `SHOW_USAGE` | `1` | Spausdinti ženklo naudojimą |
 | `RETRY_ON_FAIL` | `1` | Įjungti bandymo logiką |
-| `RETRY_BACKOFF` | `1.0` | Bandymo vėlavimas (sekundėmis) |
+| `RETRY_BACKOFF` | `1.0` | Vėlavimas prieš bandymą (sekundėmis) |
 
-## Dažnos konfigūracijos
+## Dažniausios konfigūracijos
 
 ### Kūrimo aplinka (greitas iteravimas)
 ```bash
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Produkcijos aplinka (kokybės prioritetas)
+### Gamybos aplinka (kokybės prioritetas)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -161,20 +161,20 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### Pagal naudojimo atvejį
 
-**Bendras naudojimas:**
+**Bendroji paskirtis:**
 - `phi-4-mini` - Subalansuota kokybė ir greitis
 
 **Greiti atsakymai:**
 - `qwen2.5-0.5b` - Labai greitas, tinkamas klasifikacijai
-- `phi-4-mini` - Greitas su gera kokybe
+- `phi-4-mini` - Greitas ir geros kokybės
 
 **Aukšta kokybė:**
 - `qwen2.5-7b` - Geriausia kokybė, didesnis resursų naudojimas
-- `phi-4-mini` - Gera kokybė, mažesnis resursų naudojimas
+- `phi-4-mini` - Gera kokybė, mažesni resursai
 
 **Kodo generavimas:**
-- `deepseek-coder-1.3b` - Specializuotas kodui
-- `phi-4-mini` - Bendro naudojimo kodavimas
+- `deepseek-coder-1.3b` - Specializuotas kodavimui
+- `phi-4-mini` - Bendroji paskirtis kodavimui
 
 ### Pagal resursų prieinamumą
 
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## Išplėstinė konfigūracija
 
-### Individualūs pabaigos taškai
+### Individualūs galiniai taškai
 
 ```bash
 # Development environment
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### Azure OpenAI hibridinė konfigūracija
+### Azure OpenAI hibridinis nustatymas
 
 ```bash
 # Use local for development
@@ -239,9 +239,9 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ### Aplinkos kintamieji neįkelti
 
 **Simptomai:**
-- Scenarijai naudoja neteisingus modelius
+- Skriptai naudoja neteisingus modelius
 - Ryšio klaidos
-- Kintamieji neatpažįstami
+- Kintamieji neatpažinti
 
 **Sprendimai:**
 ```bash
@@ -365,7 +365,7 @@ except Exception as e:
 
 ## Saugumo geriausios praktikos
 
-### 1. Niekada neįkelkite slaptažodžių
+### 1. Niekada neįkelkite slaptų duomenų
 
 ```bash
 # .gitignore should include:
@@ -408,7 +408,6 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## Papildomi ištekliai
 
 - `QUICK_START.md` - Pradžios vadovas
-- `SDK_MIGRATION_NOTES.md` - SDK atnaujinimo detalės
 - `Workshop/samples/*/README.md` - Pavyzdžių specifiniai vadovai
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, atsiradusius dėl šio vertimo naudojimo.
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, atsiradusius naudojant šį vertimą.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

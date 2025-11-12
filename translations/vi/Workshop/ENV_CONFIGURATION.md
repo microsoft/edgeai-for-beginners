@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T22:31:48+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T23:39:59+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "vi"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tổng Quan
 
-Các mẫu trong Workshop sử dụng biến môi trường để cấu hình, tập trung trong tệp `.env` tại thư mục gốc của kho lưu trữ. Điều này cho phép tùy chỉnh dễ dàng mà không cần sửa đổi mã nguồn.
+Các mẫu trong Workshop sử dụng biến môi trường để cấu hình, được tập trung trong tệp `.env` tại thư mục gốc của kho lưu trữ. Điều này cho phép tùy chỉnh dễ dàng mà không cần sửa đổi mã nguồn.
 
 ## Bắt Đầu Nhanh
 
@@ -54,7 +54,7 @@ python -m session01.chat_bootstrap "Your question here"
 # Variables are loaded when cells execute
 ```
 
-## Tham Chiếu Biến Môi Trường
+## Tham Khảo Biến Môi Trường
 
 ### Cấu Hình Cốt Lõi
 
@@ -64,7 +64,7 @@ python -m session01.chat_bootstrap "Your question here"
 | `FOUNDRY_LOCAL_ENDPOINT` | (trống) | Ghi đè điểm cuối dịch vụ |
 | `PYTHONPATH` | Đường dẫn Workshop | Đường dẫn tìm kiếm module Python |
 
-**Khi nào cần đặt FOUNDRY_LOCAL_ENDPOINT:**
+**Khi nào cần thiết lập FOUNDRY_LOCAL_ENDPOINT:**
 - Phiên bản Foundry Local từ xa
 - Cấu hình cổng tùy chỉnh
 - Phân tách phát triển/sản xuất
@@ -86,11 +86,11 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Mô hình nhúng |
 | `RAG_QUESTION` | Được cấu hình trước | Câu hỏi kiểm tra |
 
-#### Phiên 03: Đánh Giá Hiệu Năng
+#### Phiên 03: Benchmarking
 | Biến | Mặc định | Mục đích |
 |------|----------|----------|
 | `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Các mô hình để đánh giá |
-| `BENCH_ROUNDS` | `3` | Số vòng lặp mỗi mô hình |
+| `BENCH_ROUNDS` | `3` | Số lần lặp mỗi mô hình |
 | `BENCH_PROMPT` | Được cấu hình trước | Lời nhắc kiểm tra |
 | `BENCH_STREAM` | `0` | Đo độ trễ token đầu tiên |
 
@@ -113,13 +113,13 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 | Biến | Mặc định | Mục đích |
 |------|----------|----------|
-| `SHOW_USAGE` | `1` | In mức sử dụng token |
+| `SHOW_USAGE` | `1` | In ra lượng token đã sử dụng |
 | `RETRY_ON_FAIL` | `1` | Bật logic thử lại |
-| `RETRY_BACKOFF` | `1.0` | Độ trễ thử lại (giây) |
+| `RETRY_BACKOFF` | `1.0` | Thời gian chờ thử lại (giây) |
 
 ## Cấu Hình Thông Dụng
 
-### Thiết Lập Phát Triển (Lặp Nhanh)
+### Cài Đặt Phát Triển (Lặp Nhanh)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Thiết Lập Sản Xuất (Tập Trung Chất Lượng)
+### Cài Đặt Sản Xuất (Tập Trung Vào Chất Lượng)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -138,7 +138,7 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Thiết Lập Đánh Giá Hiệu Năng
+### Cài Đặt Đánh Giá
 ```bash
 BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
@@ -170,11 +170,11 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Chất Lượng Cao:**
 - `qwen2.5-7b` - Chất lượng tốt nhất, sử dụng tài nguyên cao hơn
-- `phi-4-mini` - Chất lượng tốt, tài nguyên thấp hơn
+- `phi-4-mini` - Chất lượng tốt, ít tài nguyên hơn
 
-**Sinh Mã:**
+**Tạo Mã:**
 - `deepseek-coder-1.3b` - Chuyên biệt cho mã hóa
-- `phi-4-mini` - Mã hóa mục đích chung
+- `phi-4-mini` - Mục đích chung cho mã hóa
 
 ### Theo Khả Năng Tài Nguyên
 
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### Thiết Lập Kết Hợp Azure OpenAI
+### Cài Đặt Kết Hợp Azure OpenAI
 
 ```bash
 # Use local for development
@@ -238,12 +238,12 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 ### Biến Môi Trường Không Được Tải
 
-**Triệu Chứng:**
+**Triệu chứng:**
 - Script sử dụng sai mô hình
 - Lỗi kết nối
 - Biến không được nhận diện
 
-**Giải Pháp:**
+**Giải pháp:**
 ```bash
 # 1. Verify .env exists in repository root
 ls -la .env  # macOS/Linux
@@ -261,12 +261,12 @@ pwd  # Should be in Workshop or repository root
 
 ### Vấn Đề Kết Nối Dịch Vụ
 
-**Triệu Chứng:**
+**Triệu chứng:**
 - Lỗi "Connection refused"
-- "Service not available"
-- Lỗi timeout
+- "Dịch vụ không khả dụng"
+- Lỗi hết thời gian kết nối
 
-**Giải Pháp:**
+**Giải pháp:**
 ```bash
 # 1. Check service status
 foundry service status
@@ -284,11 +284,11 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 ### Mô Hình Không Tìm Thấy
 
-**Triệu Chứng:**
+**Triệu chứng:**
 - Lỗi "Model not found"
-- "Alias not recognized"
+- "Alias không được nhận diện"
 
-**Giải Pháp:**
+**Giải pháp:**
 ```bash
 # 1. List available models
 foundry model list
@@ -302,10 +302,10 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 
 ### Lỗi Nhập Khẩu
 
-**Triệu Chứng:**
+**Triệu chứng:**
 - Lỗi "Module not found"
 
-**Giải Pháp:**
+**Giải pháp:**
 
 ```bash
 # 1. Activate virtual environment
@@ -408,7 +408,6 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## Tài Nguyên Bổ Sung
 
 - `QUICK_START.md` - Hướng dẫn bắt đầu
-- `SDK_MIGRATION_NOTES.md` - Chi tiết cập nhật SDK
 - `Workshop/samples/*/README.md` - Hướng dẫn cụ thể cho từng mẫu
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, chúng tôi khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

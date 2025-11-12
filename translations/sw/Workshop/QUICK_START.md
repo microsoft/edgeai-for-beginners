@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T22:48:31+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T23:56:59+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "sw"
 }
@@ -29,7 +29,7 @@ foundry service status
 
 ### 2. Sakinisha Mahitaji ya Python
 
-Kutoka kwenye saraka ya Warsha:
+Kutoka kwenye folda ya Warsha:
 
 ```bash
 # Create virtual environment (recommended)
@@ -135,7 +135,7 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**Inajaribu mantiki ya uelekezaji** kwa nia mbalimbali (kodi, muhtasari, uainishaji)
+**Inajaribu mantiki ya usambazaji** kwa nia mbalimbali (kodi, muhtasari, uainishaji)
 
 ### Kipindi 06: Pipeline
 
@@ -145,7 +145,7 @@ python -m session06.models_pipeline
 
 **Pipeline ya hatua nyingi ngumu** yenye upangaji, utekelezaji, na uboreshaji
 
-## Scripti
+## Skripti
 
 ### Hamisha Ripoti ya Upimaji wa Utendaji
 
@@ -215,7 +215,7 @@ foundry service status
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ```
 
-### Muundo Haupatikani
+### Muundo Haujapatikana
 
 ```bash
 # List available models
@@ -229,39 +229,39 @@ foundry model run phi-4-mini
 
 ### Usanidi wa Msingi
 | Kigezo | Chaguo-msingi | Maelezo |
-|--------|--------------|----------|
-| `FOUNDRY_LOCAL_ALIAS` | Inatofautiana | Jina la mfano wa kutumia |
-| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Badilisha endpoint ya huduma |
+|--------|---------------|----------|
+| `FOUNDRY_LOCAL_ALIAS` | Inatofautiana | Jina la muundo wa kutumia |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Badilisha sehemu ya huduma |
 | `SHOW_USAGE` | `0` | Onyesha takwimu za matumizi ya tokeni |
 | `RETRY_ON_FAIL` | `1` | Washa mantiki ya kujaribu tena |
-| `RETRY_BACKOFF` | `1.0` | Muda wa kusubiri wa awali (sekunde) |
+| `RETRY_BACKOFF` | `1.0` | Muda wa awali wa kuchelewa kujaribu tena (sekunde) |
 
 ### Maalum kwa Kipindi
 | Kigezo | Chaguo-msingi | Maelezo |
-|--------|--------------|----------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Mfano wa kuingiza |
+|--------|---------------|----------|
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Muundo wa kuingiza |
 | `RAG_QUESTION` | Tazama sampuli | Swali la majaribio ya RAG |
 | `BENCH_MODELS` | Inatofautiana | Miundo iliyotenganishwa kwa koma |
-| `BENCH_ROUNDS` | `3` | Mizunguko ya upimaji wa utendaji |
-| `BENCH_PROMPT` | Tazama sampuli | Maelezo ya upimaji wa utendaji |
+| `BENCH_ROUNDS` | `3` | Mizunguko ya upimaji |
+| `BENCH_PROMPT` | Tazama sampuli | Maelekezo ya upimaji |
 | `BENCH_STREAM` | `0` | Pima muda wa tokeni ya kwanza |
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Mfano wa wakala wa msingi |
-| `AGENT_MODEL_EDITOR` | Msingi | Mfano wa wakala wa mhariri |
-| `SLM_ALIAS` | `phi-4-mini` | Mfano mdogo wa lugha |
-| `LLM_ALIAS` | `qwen2.5-7b` | Mfano mkubwa wa lugha |
-| `COMPARE_PROMPT` | Tazama sampuli | Maelezo ya ulinganishaji |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Muundo wa wakala wa msingi |
+| `AGENT_MODEL_EDITOR` | Msingi | Muundo wa wakala wa mhariri |
+| `SLM_ALIAS` | `phi-4-mini` | Muundo mdogo wa lugha |
+| `LLM_ALIAS` | `qwen2.5-7b` | Muundo mkubwa wa lugha |
+| `COMPARE_PROMPT` | Tazama sampuli | Maelekezo ya kulinganisha |
 
 ## Miundo Inayopendekezwa
 
 ### Maendeleo na Upimaji
-- **phi-4-mini** - Ubora na kasi iliyosawazishwa
-- **qwen2.5-0.5b** - Kasi kubwa kwa uainishaji
+- **phi-4-mini** - Ubora na kasi ya wastani
+- **qwen2.5-0.5b** - Kasi sana kwa uainishaji
 - **gemma-2-2b** - Ubora mzuri, kasi ya wastani
 
-### Matukio ya Uzalishaji
+### Matumizi ya Uzalishaji
 - **phi-4-mini** - Matumizi ya jumla
-- **deepseek-coder-1.3b** - Uundaji wa kodi
-- **qwen2.5-7b** - Majibu ya ubora wa juu
+- **deepseek-coder-1.3b** - Uzalishaji wa kodi
+- **qwen2.5-7b** - Majibu ya hali ya juu
 
 ## Nyaraka za SDK
 
@@ -279,8 +279,7 @@ foundry model run phi-4-mini
 
 1. Kamilisha vipindi vyote vya warsha kwa mpangilio  
 2. Jaribu miundo tofauti  
-3. Badilisha sampuli kwa matumizi yako  
-4. Pitia `SDK_MIGRATION_NOTES.md` kwa mifumo ya hali ya juu  
+3. Badilisha sampuli kwa matumizi yako
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

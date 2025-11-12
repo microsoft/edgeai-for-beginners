@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T23:28:28+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T00:35:22+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "hr"
 }
 -->
 # Uzorci radionice - Brza referentna kartica
 
-**Zadnje ažurirano**: 8. listopada 2025.
+**Zadnje ažuriranje**: 8. listopada 2025.
 
 ---
 
@@ -40,7 +40,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 03 | `benchmark_oss_models.py` | Benchmarking modela | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Sustav s više agenata | ~60s |
-| 06 | `models_router.py` | Usmjeravanje namjera | ~45s |
+| 06 | `models_router.py` | Usmjeravanje prema namjeri | ~45s |
 | 06 | `models_pipeline.py` | Višekorakna cjevovodna obrada | ~60s |
 
 ---
@@ -104,7 +104,7 @@ python scripts/test_samples.py --verbose
 
 ## 🐛 Rješavanje problema
 
-### Pogreška povezivanja
+### Greška u povezivanju
 ```bash
 # Check Foundry Local
 foundry service status
@@ -114,7 +114,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Pogreška pri uvozu
+### Greška pri uvozu
 ```bash
 # Install missing dependencies
 pip install sentence-transformers ragas datasets
@@ -157,7 +157,7 @@ text, usage = chat_once(
 )
 ```
 
-### Dohvaćanje klijenta
+### Dohvati klijenta
 ```python
 from workshop_utils import get_client
 
@@ -167,7 +167,7 @@ manager, client, model_id = get_client(
 )
 ```
 
-### Rukovanje pogreškama
+### Rukovanje greškama
 ```python
 try:
     manager, client, model_id = get_client(alias)
@@ -209,15 +209,13 @@ for chunk in stream:
 
 - **SDK dokumentacija**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Brza referenca**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Sažetak ažuriranja**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Bilješke o migraciji**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
 ## 💡 Savjeti
 
 1. **Keširajte klijente**: `workshop_utils` to radi za vas
-2. **Koristite manje modele**: Započnite s `qwen2.5-0.5b` za testiranje
+2. **Koristite manje modele**: Počnite s `qwen2.5-0.5b` za testiranje
 3. **Omogućite statistiku korištenja**: Postavite `SHOW_USAGE=1` za praćenje tokena
 4. **Obrada u serijama**: Obradite više upita uzastopno
 5. **Smanjite max_tokens**: Smanjuje kašnjenje za brze odgovore
@@ -226,7 +224,7 @@ for chunk in stream:
 
 ## 🎯 Radni tijekovi uzoraka
 
-### Testirajte sve
+### Testiraj sve
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
-**Izjava o odricanju odgovornosti**:  
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Odricanje od odgovornosti**:  
 Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

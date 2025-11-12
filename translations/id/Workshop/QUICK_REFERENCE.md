@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:39:11+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:47:29+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "id"
 }
@@ -39,7 +39,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 02 | `rag_eval_ragas.py` | Evaluasi RAG | ~60 detik |
 | 03 | `benchmark_oss_models.py` | Benchmarking model | ~2 menit |
 | 04 | `model_compare.py` | SLM vs LLM | ~45 detik |
-| 05 | `agents_orchestrator.py` | Sistem multi-agent | ~60 detik |
+| 05 | `agents_orchestrator.py` | Sistem multi-agen | ~60 detik |
 | 06 | `models_router.py` | Routing intent | ~45 detik |
 | 06 | `models_pipeline.py` | Pipeline multi-langkah | ~60 detik |
 
@@ -47,7 +47,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ## 🛠️ Variabel Lingkungan
 
-### Penting
+### Esensial
 ```bash
 # Choose model
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -209,17 +209,15 @@ for chunk in stream:
 
 - **Dokumentasi SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Referensi Cepat**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Ringkasan Pembaruan**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Catatan Migrasi**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
 ## 💡 Tips
 
-1. **Cache client**: `workshop_utils` sudah mencache untuk Anda
-2. **Gunakan model yang lebih kecil**: Mulai dengan `qwen2.5-0.5b` untuk pengujian
+1. **Cache client**: `workshop_utils` sudah menyediakan cache untuk Anda
+2. **Gunakan model yang lebih kecil**: Mulailah dengan `qwen2.5-0.5b` untuk pengujian
 3. **Aktifkan statistik penggunaan**: Atur `SHOW_USAGE=1` untuk melacak token
-4. **Pemrosesan batch**: Proses beberapa prompt secara berurutan
+4. **Proses batch**: Proses beberapa prompt secara berurutan
 5. **Kurangi max_tokens**: Mengurangi latensi untuk respons cepat
 
 ---
@@ -247,7 +245,7 @@ set RAG_QUESTION="What is RAG?"
 python -m session02.rag_pipeline
 ```
 
-### Sistem Multi-Agent
+### Sistem Multi-Agen
 ```bash
 cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis dapat mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

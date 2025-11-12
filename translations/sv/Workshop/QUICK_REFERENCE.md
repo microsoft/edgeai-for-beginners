@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:06:46+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:15:24+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "sv"
 }
@@ -47,7 +47,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ## 🛠️ Miljövariabler
 
-### Nödvändiga
+### Grundläggande
 ```bash
 # Choose model
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Session-Specifika
+### Sessionsspecifika
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **SDK Dokumentation**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Snabb Referens**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Uppdateringssammanfattning**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migreringsanteckningar**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -256,7 +254,7 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Snabb Hjälp**: Kör vilket exempel som helst med `--help` från `samples`-katalogen eller kontrollera docstring:
+**Snabb Hjälp**: Kör vilket exempel som helst med `--help` från katalogen `samples` eller kontrollera docstring:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,499 +1,472 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "85fa559f498492b79de04e391c33687b",
-  "translation_date": "2025-10-28T22:55:25+00:00",
+  "original_hash": "8c30436578b1bd604c48233ecdd39701",
+  "translation_date": "2025-11-12T00:04:31+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "hu"
 }
 -->
-# 1. szekció: Bevezetés a Foundry Local használatába
+# 1. szekció: Első lépések a Foundry Local használatával
 
 ## Összefoglaló
 
-Kezdd el az utadat a Foundry Local használatával, telepítsd és konfiguráld Windows 11 rendszeren. Ismerd meg a CLI beállítását, a hardveres gyorsítás engedélyezését, valamint a modellek gyors helyi következtetéshez történő gyorsítótárazását. Ez a gyakorlati szekció bemutatja, hogyan futtathatók modellek, mint például Phi, Qwen, DeepSeek és GPT-OSS-20B reprodukálható CLI parancsok segítségével.
+Tanulja meg, hogyan telepítse, konfigurálja és futtassa első AI modelljeit a Microsoft Foundry Local segítségével. Ez a gyakorlati szekció lépésről lépésre bemutatja a helyi inferencia folyamatát, a telepítéstől kezdve az első chat alkalmazás felépítéséig, olyan modellek használatával, mint a Phi-4, Qwen és DeepSeek.
 
 ## Tanulási célok
 
-A szekció végére képes leszel:
+A szekció végére képes lesz:
 
-- **Telepítés és konfigurálás**: Állítsd be a Foundry Local-t Windows 11 rendszeren optimális teljesítménybeállításokkal
-- **CLI műveletek elsajátítása**: Használd a Foundry Local CLI-t modellek kezelésére és telepítésére
-- **Hardveres gyorsítás engedélyezése**: Konfiguráld a GPU gyorsítást ONNXRuntime vagy WebGPU segítségével
-- **Több modell telepítése**: Futtasd helyben a phi-4, GPT-OSS-20B, Qwen és DeepSeek modelleket
-- **Első alkalmazásod létrehozása**: Alkalmazd a meglévő mintákat a Foundry Local Python SDK használatával
+- **Telepítés és konfiguráció**: A Foundry Local beállítása és a telepítés ellenőrzése
+- **CLI műveletek elsajátítása**: A Foundry Local CLI használata modellek kezelésére és telepítésére
+- **Első modell futtatása**: Helyi AI modell sikeres telepítése és interakciója
+- **Chat alkalmazás készítése**: Alapvető chat alkalmazás létrehozása a Foundry Local Python SDK segítségével
+- **Helyi AI megértése**: A helyi inferencia és modellkezelés alapjainak elsajátítása
 
-# Modell tesztelése (nem interaktív, egyetlen prompt)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
+## Előfeltételek
 
-- Windows 11 (22H2 vagy újabb)
-# Elérhető katalógusmodellek listázása (a betöltött modellek megjelennek futtatás után)
-foundry model list
-## MEGJEGYZÉS: Jelenleg nincs dedikált `--running` flag; a betöltött modellek megtekintéséhez indíts el egy chatet vagy ellenőrizd a szolgáltatás naplóit.
-- Telepített Python 3.10+
-- Visual Studio Code Python bővítménnyel
-- Adminisztrátori jogosultságok a telepítéshez
+### Rendszerkövetelmények
 
-### (Opcionális) Környezeti változók
+- **Windows**: Windows 11 (22H2 vagy újabb) VAGY **macOS**: macOS 11+ (korlátozott támogatás)
+- **RAM**: Minimum 8GB, ajánlott 16GB+
+- **Tárhely**: Legalább 10GB szabad hely a modellek számára
+- **Python**: Telepített 3.10 vagy újabb verzió
+- **Adminisztrátori hozzáférés**: Telepítéshez szükséges jogosultság
 
-Hozz létre egy `.env` fájlt (vagy állítsd be a shellben), hogy a szkriptek hordozhatóak legyenek:
-# Válaszok összehasonlítása (nem interaktív)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-| Változó | Cél | Példa |
-|---------|-----|-------|
-| `FOUNDRY_LOCAL_ALIAS` | Preferált modell alias (a katalógus automatikusan kiválasztja a legjobb változatot) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | Végpont felülírása (egyébként automatikusan a menedzserből) | `http://localhost:5273/v1` |
-| `FOUNDRY_LOCAL_STREAM` | Streaming demó engedélyezése | `true` |
+### Fejlesztői környezet
 
-> Ha `FOUNDRY_LOCAL_ENDPOINT=auto` (vagy nincs beállítva), az SDK menedzserből származtatjuk.
+- Visual Studio Code Python kiterjesztéssel (ajánlott)
+- Parancssori hozzáférés (PowerShell Windows-on, Terminal macOS-en)
+- Git a repozitóriumok klónozásához (opcionális)
 
-## Demó menete (30 perc)
+## Workshop menete (30 perc)
 
-### 1. Foundry Local telepítése és CLI beállítás ellenőrzése (10 perc)
+### 1. lépés: Foundry Local telepítése (5 perc)
 
-# Gyorsítótárazott modellek listázása
-foundry cache list
+#### Windows telepítés
+
+Telepítse a Foundry Local-t a Windows csomagkezelő segítségével:
 
 ```powershell
 # Install via winget (recommended)
 winget install Microsoft.FoundryLocal
-
-# Or download from Microsoft Learn
-# https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
 
-**macOS (Előzetes / Ha támogatott)**
+Alternatíva: Töltse le közvetlenül a [Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install) oldalról.
 
-Ha natív macOS csomag elérhető (ellenőrizd a hivatalos dokumentációt a legfrissebb információkért):
+#### macOS telepítés (korlátozott támogatás)
+
+> [!NOTE] 
+> A macOS támogatás jelenleg előzetes verzióban érhető el. Ellenőrizze a hivatalos dokumentációt a legfrissebb információkért.
+
+Ha elérhető, telepítse a Homebrew segítségével:
 
 ```bash
-# Homebrew (if/when available)
+# If Homebrew formula is available
 brew update
-brew install foundry-local  # hypothetical formula name
+brew install foundry-local
 
-# Or manual download (tarball)
+# Or manual download (check official docs for latest)
 curl -L -o foundry-local.tar.gz "https://download.microsoft.com/foundry-local/latest/macos/foundry-local.tar.gz"
 tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Ha a macOS natív binárisok még nem elérhetők, akkor:
-1. Használj Windows 11 ARM/Intel VM-et (Parallels / UTM) és kövesd a Windows lépéseit.
-2. Futtasd a modelleket konténeren keresztül (ha közzétett konténerkép elérhető), és állítsd be a `FOUNDRY_LOCAL_ENDPOINT`-ot az expozált portra.
+**Alternatíva macOS felhasználók számára:**
+- Használjon Windows 11 virtuális gépet (Parallels/UTM) és kövesse a Windows lépéseit
+- Futtassa konténeren keresztül, ha elérhető, és konfigurálja a `FOUNDRY_LOCAL_ENDPOINT`-t
 
-**Python virtuális környezet létrehozása (platformfüggetlen)**
+### 2. lépés: Telepítés ellenőrzése (3 perc)
 
-Windows PowerShell:
-```powershell
-py -m venv .venv
- .\.venv\Scripts\Activate.ps1
-```
-
-macOS / Linux:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-Frissítsd a pipet és telepítsd az alapvető függőségeket:
-```bash
-python -m pip install --upgrade pip
-pip install foundry-local-sdk openai
-```
-
-#### 1.2 lépés: Telepítés ellenőrzése
+A telepítés után indítsa újra a terminált, és ellenőrizze, hogy a Foundry Local működik:
 
 ```powershell
-# Check version
+# Check if Foundry Local is installed correctly
 foundry --version
-
-# Initialize configuration
-foundry init
 
 # View available commands
 foundry --help
 ```
 
-#### 1.3 lépés: Környezet konfigurálása
+A várt kimenetnek tartalmaznia kell a verzióinformációkat és az elérhető parancsokat.
 
+### 3. lépés: Python környezet beállítása (5 perc)
+
+Hozzon létre egy dedikált Python környezetet ehhez a workshophoz:
+
+**Windows:**
 ```powershell
-# Set up Python environment for Module08
-cd Module08
+# Create virtual environment
 py -m venv .venv
-.\.venv\Scripts\activate
 
-# Install Foundry Local Python SDK and dependencies
-pip install foundry-local-sdk openai requests
+# Activate environment
+.\.venv\Scripts\Activate.ps1
+
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-### SDK Bootstrapping (Ajánlott)
+**macOS/Linux:**
+```bash
+# Create virtual environment
+python3 -m venv .venv
 
-A szolgáltatás manuális indítása és a modellek futtatása helyett a **Foundry Local Python SDK** mindent automatikusan elindíthat:
+# Activate environment
+source .venv/bin/activate
 
-```python
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
-
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-
-# Bootstraps service + downloads + loads most suitable variant for hardware
-manager = FoundryLocalManager(alias)
-
-print("Service running:", manager.is_service_running())
-print("Endpoint:", manager.endpoint)
-print("Cached models:", manager.list_cached_models())
-
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
-
-resp = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[
-        {"role": "system", "content": "You are a helpful local assistant."},
-        {"role": "user", "content": "Hello"}
-    ],
-    max_tokens=120,
-    temperature=0.5
-)
-print(resp.choices[0].message.content)
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-Ha inkább explicit kontrollt szeretnél, továbbra is használhatod a CLI-t + OpenAI klienst, ahogy később bemutatjuk.
+### 4. lépés: Első modell futtatása (7 perc)
 
-### 2. Modellek helyi futtatása CLI-n keresztül (10 perc)
+Most futtassuk az első AI modellt helyben!
 
-#### 3.1 lépés: Phi-4 modell telepítése
+#### Kezdje a Phi-4 Mini modellel (ajánlott első modell)
 
 ```powershell
-# Download and run phi-4-mini
+# Download and start phi-4-mini (lightweight, fast)
 foundry model run phi-4-mini
 
-# Test the model (one-shot prompt)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
-
-# NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
+# Test the model with a simple prompt
+foundry model run phi-4-mini --prompt "Hello, introduce yourself in one sentence"
 ```
 
-#### 3.2 lépés: GPT-OSS-20B telepítése
+> [!TIP]
+> Ez a parancs letölti a modellt (első alkalommal) és automatikusan elindítja a Foundry Local szolgáltatást.
+
+#### Ellenőrizze, mi fut
 
 ```powershell
-# Download and run GPT-OSS-20B
-foundry model run gpt-oss-20b
+# List available models (shows downloaded models)
+foundry model list
 
-# Compare responses (one-shot prompt)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-```
+# Check service status
+foundry service status
 
-#### 3.3 lépés: További modellek betöltése
-
-```powershell
-# Download Qwen model family
-foundry model download qwen2.5-0.5b
-foundry model download qwen2.5-7b
-
-# Download DeepSeek models
-foundry model download deepseek-coder-1.3b
-
-# List cached models
+# See what models are cached locally
 foundry cache list
 ```
 
-### 4. Kezdő projekt: 01-run-phi adaptálása Foundry Local-hoz (5 perc)
+#### Próbáljon ki más modelleket
 
-#### 4.1 lépés: Alapvető chat alkalmazás létrehozása
+Miután a phi-4-mini működik, kísérletezzen más modellekkel:
 
-Hozz létre `samples/01-foundry-quickstart/chat_quickstart.py` fájlt (frissítve a menedzser használatára, ha elérhető):
+```powershell
+# Larger model with better capabilities
+foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
+
+# Fast, efficient model
+foundry model run qwen2.5-0.5b --prompt "What are the benefits of local AI inference?"
+```
+
+### 5. lépés: Első chat alkalmazás készítése (10 perc)
+
+Most hozzunk létre egy Python alkalmazást, amely használja az éppen elindított modelleket.
+
+#### Chat script létrehozása
+
+Hozzon létre egy új fájlt `my_first_chat.py` néven (vagy használja a mellékelt mintát):
 
 ```python
 #!/usr/bin/env python3
 """
-Foundry Local Chat Quickstart
-Demo: Basic chat interaction using Foundry Local Python SDK
-Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python
+My First Foundry Local Chat Application
+Using FoundryLocalManager for automatic service management
 """
 
-import os, sys
+import os
+from foundry_local import FoundryLocalManager
 from openai import OpenAI
-try:
-    from foundry_local import FoundryLocalManager  # control-plane SDK
-except ImportError:
-    FoundryLocalManager = None
 
 def main():
-    """Main chat function using Foundry Local SDK"""
-    
-    # Preferred: bootstrap via SDK manager (auto start + download + load)
-    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-    if FoundryLocalManager:
-        manager = FoundryLocalManager(alias)
-        endpoint = manager.endpoint
-        model_id = manager.get_model_info(alias).id
-        api_key = manager.api_key or "not-needed"
-    else:
-        # Fallback: assume default endpoint & alias already running via CLI
-        endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT", "http://localhost:5273/v1")
-        model_id = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
-        api_key = "not-needed"
-
-    client = OpenAI(base_url=endpoint, api_key=api_key)
-    
-    # Get user input
-    if len(sys.argv) > 1:
-        user_message = " ".join(sys.argv[1:])
-    else:
-        user_message = input("Enter your message: ")
+    # Get model alias from environment or use default
+    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
     
     try:
-        # Make chat completion request
-        response = client.chat.completions.create(
-            model=model_id,
-            messages=[
-                {"role": "system", "content": "You are a helpful AI assistant powered by Microsoft Foundry Local."},
-                {"role": "user", "content": user_message}
-            ],
-            max_tokens=500,
-            temperature=0.7
+        # Initialize Foundry Local Manager (auto-starts service, downloads model)
+        manager = FoundryLocalManager(alias)
+        
+        # Create OpenAI client pointing to local endpoint
+        client = OpenAI(
+            base_url=manager.endpoint,
+            api_key=manager.api_key or "not-needed"
         )
         
-        # Display response
-        print(f"\nModel: {response.model}")
-        print(f"Response: {response.choices[0].message.content}")
-        print(f"Tokens used: {response.usage.total_tokens if response.usage else 'N/A'}")
+        # Get the actual model ID for this alias
+        model_id = manager.get_model_info(alias).id
+        
+        print("🤖 Welcome to your first local AI chat!")
+        print(f"� Using model: {alias} -> {model_id}")
+        print(f"🌐 Endpoint: {manager.endpoint}")
+        print("�💡 Type 'quit' to exit\n")
         
     except Exception as e:
-        print(f"Error: {e}")
-        print("\nTroubleshooting:")
-    print("1. Ensure Foundry Local is running: foundry status")
-    print("2. List models: foundry model list")
-    print(f"3. Start model if needed: foundry model run {model_id}")
-    print("4. Or let SDK bootstrap: pip install foundry-local-sdk")
+        print(f"❌ Failed to initialize Foundry Local: {e}")
+        print("💡 Make sure Foundry Local is installed: foundry --version")
+        return
+    
+    while True:
+        # Get user input
+        user_message = input("You: ").strip()
+        
+        if user_message.lower() in ['quit', 'exit', 'bye']:
+            print("👋 Goodbye!")
+            break
+            
+        if not user_message:
+            continue
+            
+        try:
+            # Send message to local AI model
+            response = client.chat.completions.create(
+                model=model_id,
+                messages=[
+                    {"role": "system", "content": "You are a helpful AI assistant running locally."},
+                    {"role": "user", "content": user_message}
+                ],
+                max_tokens=200,
+                temperature=0.7
+            )
+            
+            # Display the response
+            ai_response = response.choices[0].message.content
+            print(f"🤖 AI: {ai_response}\n")
+            
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            print("💡 Check service status: foundry service status\n")
 
 if __name__ == "__main__":
     main()
 ```
 
-#### 4.2 lépés: Az alkalmazás tesztelése
+> [!TIP]
+> **Kapcsolódó példák**: További fejlett használathoz lásd:
+>
+> - **Python példa**: `Workshop/samples/session01/chat_bootstrap.py` - Streaming válaszokkal és hibakezeléssel
+> - **Jupyter Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - Interaktív verzió részletes magyarázatokkal
+
+#### Chat alkalmazás tesztelése
 
 ```powershell
-# Ensure phi-4-mini is running
-foundry model run phi-4-mini
-
-# Run the quickstart app
-python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Foundry Local?"
-
-# Try interactive mode
-python samples/01-foundry-quickstart/chat_quickstart.py
+# No need to manually start models - FoundryLocalManager handles this!
+# Just run your chat application
+python my_first_chat.py
 ```
 
-## Főbb fogalmak
-
-### 1. Foundry Local architektúra
-
-- **Helyi következtetési motor**: Teljesen a saját eszközödön futtatja a modelleket
-- **OpenAI SDK kompatibilitás**: Zökkenőmentes integráció a meglévő OpenAI kóddal
-- **Modellek kezelése**: Modellek letöltése, gyorsítótárazása és hatékony futtatása
-- **Hardver optimalizálás**: GPU, NPU és CPU gyorsítás kihasználása
-
-### 2. CLI parancs referencia
+Alternatíva: Használja közvetlenül a mellékelt mintákat
 
 ```powershell
-# Core Commands
+# Try the complete sample with streaming support
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
+```
+
+Vagy fedezze fel az interaktív notebookot
+Nyissa meg a Workshop/notebooks/session01_chat_bootstrap.ipynb fájlt a VS Code-ban
+
+Próbálja ki ezeket a példabeszélgetéseket:
+
+- "Mi az a Microsoft Foundry Local?"
+- "Sorolj fel 3 előnyt a helyi AI modellek futtatásával kapcsolatban"
+- "Segíts megérteni az edge AI-t"
+
+## Amit elért
+
+Gratulálunk! Sikeresen:
+
+1. ✅ **Telepítette a Foundry Local-t** és ellenőrizte a működését
+2. ✅ **Elindította az első AI modellt** (phi-4-mini) helyben
+3. ✅ **Tesztelte különböző modelleket** parancssoron keresztül
+4. ✅ **Készített egy chat alkalmazást**, amely csatlakozik a helyi AI-hoz
+5. ✅ **Tapasztalatot szerzett a helyi AI inferenciában** felhőfüggőség nélkül
+
+## Mi történt?
+
+### Helyi AI inferencia
+
+- Az AI modellek teljes mértékben az Ön számítógépén futnak
+- Nem kerül adat a felhőbe
+- A válaszok helyben, a CPU/GPU segítségével generálódnak
+- A magánélet és a biztonság megőrzése biztosított
+
+### Modellkezelés
+
+- A `foundry model run` letölti és elindítja a modelleket
+- A **FoundryLocalManager SDK** automatikusan kezeli a szolgáltatás indítását és a modellek betöltését
+- A modellek helyben tárolódnak a későbbi használatra
+- Több modell is letölthető, de általában egyszerre csak egy fut
+- A szolgáltatás automatikusan kezeli a modellek életciklusát
+
+### SDK vs CLI megközelítések
+
+- **CLI megközelítés**: Manuális modellkezelés a `foundry model run <model>` parancs segítségével
+- **SDK megközelítés**: Automatikus szolgáltatás- és modellkezelés a `FoundryLocalManager(alias)` használatával
+- **Ajánlás**: Használja az SDK-t alkalmazásokhoz, a CLI-t teszteléshez és felfedezéshez
+
+## Gyakori parancsok referenciája
+
+### Alapvető CLI parancsok
+
+```powershell
+# Installation & Setup
 foundry --version              # Check installation
+foundry --help                 # View all commands
+
 # Model Management
 foundry model list             # List available models
-foundry model unload <name>    # Unload from memory
+foundry model run <model>      # Download and start a model
+foundry model run <model> --prompt "text"  # One-shot prompt
+foundry cache list             # Show downloaded models
 
-foundry config list            # Current configuration
+# Service Management
+foundry service status         # Check if service is running
+foundry service start          # Start the service manually
+foundry service stop           # Stop the service
 ```
 
-### 3. Python SDK integráció
+### Modellajánlások
 
-```python
-# Basic client setup
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
+- **phi-4-mini**: Legjobb kezdő modell - gyors, könnyű, jó minőségű
+- **qwen2.5-0.5b**: Leggyorsabb inferencia, minimális memóriahasználat
+- **gpt-oss-20b**: Magasabb minőségű válaszok, több erőforrást igényel
+- **deepseek-coder-1.3b**: Programozásra és kódolási feladatokra optimalizált
 
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-manager = FoundryLocalManager(alias)
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
+## Hibakeresés
 
-response = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Hello!"}],
-    max_tokens=50
-)
-print(response.choices[0].message.content)
-
-# Streaming example
-stream = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Give a 1-sentence definition of edge AI."}],
-    stream=True,
-    max_tokens=60,
-    temperature=0.4
-)
-for chunk in stream:
-    delta = chunk.choices[0].delta
-    if delta and delta.content:
-        print(delta.content, end="", flush=True)
-print()
-```
-
-## Gyakori problémák elhárítása
-
-### Probléma 1: "Foundry parancs nem található"
+### "Foundry parancs nem található"
 
 **Megoldás:**
+
 ```powershell
-# Restart PowerShell after installation
-# Or manually add to PATH
+# Restart your terminal after installation
+# Or manually add to PATH (Windows)
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Probléma 2: "A modell betöltése sikertelen"
+### "A modell betöltése sikertelen"
 
 **Megoldás:**
-```powershell
-# Check available memory
-foundry system info
 
-# Try smaller model first
+```powershell
+# Check available system memory
+foundry service status
+
+# Try a smaller model first
 foundry model run phi-4-mini
 
-# Check disk space for model cache
-dir "$env:USERPROFILE\.foundry\models"
+# Check disk space for model downloads
+# Models are stored in: %USERPROFILE%\.foundry\models (Windows)
 ```
 
-### Probléma 3: "Kapcsolat megtagadva a localhost:5273 címen"
+### "Kapcsolat megtagadva a localhoston"
 
 **Megoldás:**
+
 ```powershell
 # Check if service is running
-foundry status
+foundry service status
 
 # Start service if needed
 foundry service start
 
-# Check for port conflicts
-netstat -an | findstr 5273
+# Verify the port (default is 5273)
+# Check for port conflicts with: netstat -an | findstr 5273
 ```
-
-## Teljesítmény optimalizálási tippek
-
-### 1. Modellválasztási stratégia
-
-- **Phi-4-mini**: Általános feladatokra a legjobb, alacsony memóriahasználat
-- **Qwen2.5-0.5b**: Leggyorsabb következtetés, minimális erőforrásigény
-- **GPT-OSS-20B**: Legmagasabb minőség, több erőforrást igényel
-- **DeepSeek-Coder**: Programozási feladatokra optimalizált
-
-### 2. Hardver optimalizálás
-
-```powershell
-# Enable all acceleration options
-foundry config set compute.onnx.enable_gpu true
-foundry config set compute.webgpu.enabled true
-foundry config set compute.cpu.threads auto
-
-# Optimize memory usage
-foundry config set model.cache.max_size 10GB
-foundry config set model.preload false
-```
-
-### 3. Teljesítmény monitorozása
-
-```powershell
-cd Workshop/samples
-# Performance & latency measurement
-# Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
-# Example:
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python -m session03.benchmark_oss_models
-
-# Re-run after enabling GPU acceleration to compare:
-foundry config set compute.onnx.enable_gpu true
-python -m session03.benchmark_oss_models
-```
-
-### Opcionális fejlesztések
-
-| Fejlesztés | Mi ez | Hogyan |
-|------------|-------|--------|
-| Megosztott segédprogramok | Távolítsd el az ismétlődő kliens/bootstrapping logikát | Használd a `Workshop/samples/workshop_utils.py` fájlt (`get_client`, `chat_once`) |
-| Tokenhasználat láthatósága | Tanítsd meg a költség/hatékonyság gondolkodást korán | Állítsd be a `SHOW_USAGE=1` értéket, hogy megjelenítse a prompt/completion/összes tokeneket |
-| Determinisztikus összehasonlítások | Stabil benchmarking és regresszió ellenőrzések | Használj `temperature=0`, `top_p=1`, következetes prompt szöveget |
-| Első token késleltetés | Érzékelt válaszidő metrika | Alkalmazd a benchmark szkriptet streaminggel (`BENCH_STREAM=1`) |
-| Újrapróbálkozás átmeneti hibák esetén | Ellenálló demók hidegindításkor | `RETRY_ON_FAIL=1` (alapértelmezett) és állítsd be a `RETRY_BACKOFF` értéket |
-| Füsttesztelés | Gyors ellenőrzés a kulcsfolyamatokon | Futtasd a `python Workshop/tests/smoke.py` fájlt workshop előtt |
-| Modell alias profilok | Gyorsan váltogatható modellkészlet gépek között | Tartsd fenn a `.env` fájlt `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` értékekkel |
-| Gyorsítótárazási hatékonyság | Kerüld el az ismételt bemelegítéseket több minta futtatásakor | Segédprogramok gyorsítótár menedzserekhez; használd újra szkriptek/notebookok között |
-| Első futtatás bemelegítése | Csökkentsd a p95 késleltetési csúcsokat | Indíts egy apró promptot a `FoundryLocalManager` létrehozása után |
-
-Példa determinisztikus meleg alapvonal (PowerShell):
-
-```powershell
-set FOUNDRY_LOCAL_ALIAS=phi-4-mini
-set SHOW_USAGE=1
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference." | Out-Null
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
-```
-
-Hasonló kimenetet és azonos token számokat kell látnod a második futtatáskor, megerősítve a determinisztikusságot.
 
 ## Következő lépések
 
-A szekció befejezése után:
+### Azonnali teendők
 
-1. **Fedezd fel a 2. szekciót**: AI megoldások építése Azure AI Foundry RAG segítségével
-2. **Próbálj ki különböző modelleket**: Kísérletezz Qwen, DeepSeek és más modellcsaládokkal
-3. **Optimalizáld a teljesítményt**: Finomhangold a beállításokat a saját hardveredhez
-4. **Építs egyedi alkalmazásokat**: Használd a Foundry Local SDK-t saját projektjeidben
+1. **Kísérletezzen** különböző modellekkel és kérdésekkel
+2. **Módosítsa** a chat alkalmazását, hogy különböző modelleket próbáljon ki
+3. **Hozzon létre** saját kérdéseket és tesztelje a válaszokat
+4. **Fedezze fel** a 2. szekciót: RAG alkalmazások építése
+
+### Haladó tanulási útvonal
+
+1. **2. szekció**: AI megoldások építése RAG (Retrieval-Augmented Generation) segítségével
+2. **3. szekció**: Különböző nyílt forráskódú modellek összehasonlítása
+3. **4. szekció**: Legmodernebb modellek használata
+4. **5. szekció**: Többügynökös AI rendszerek építése
+
+## Környezeti változók (opcionális)
+
+Haladó használathoz beállíthatja ezeket a környezeti változókat:
+
+| Változó | Cél | Példa |
+|----------|---------|---------|
+| `FOUNDRY_LOCAL_ALIAS` | Alapértelmezett modell használata | `phi-4-mini` |
+| `FOUNDRY_LOCAL_ENDPOINT` | Végpont URL felülírása | `http://localhost:5273/v1` |
+
+Hozzon létre egy `.env` fájlt a projekt könyvtárában:
+```
+FOUNDRY_LOCAL_ALIAS=phi-4-mini
+FOUNDRY_LOCAL_ENDPOINT=auto
+```
 
 ## További források
 
 ### Dokumentáció
+
 - [Foundry Local Python SDK Referencia](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Foundry Local Telepítési Útmutató](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
-- [Modellek katalógusa](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
+- [Modellkatalógus](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
-### Példakód
-- [Module08 Minta 01](./samples/01/README.md) - REST Chat Gyorsindítás
-- [Module08 Minta 02](./samples/02/README.md) - OpenAI SDK Integráció
-- [Module08 Minta 03](./samples/03/README.md) - Modell felfedezés és benchmarking
+### Példakódok
+
+- **Session01 Python Minta**: `Workshop/samples/session01/chat_bootstrap.py` - Teljes chat alkalmazás streaminggel
+- **Session01 Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - Interaktív oktatóanyag  
+- [Module08 Sample 01](../Module08/samples/01/README.md) - REST Chat Gyorsindító
+- [Module08 Sample 02](../Module08/samples/02/README.md) - OpenAI SDK Integráció
+- [Module08 Sample 03](../Module08/samples/03/README.md) - Modell felfedezés és teljesítménytesztelés
 
 ### Közösség
-- [Foundry Local GitHub Beszélgetések](https://github.com/microsoft/Foundry-Local/discussions)
+
+- [Foundry Local GitHub Discussions](https://github.com/microsoft/Foundry-Local/discussions)
 - [Azure AI Közösség](https://techcommunity.microsoft.com/category/artificialintelligence)
 
 ---
 
-**Szekció időtartama**: 30 perc gyakorlati + 15 perc kérdések és válaszok
-**Nehézségi szint**: Kezdő
-**Előfeltételek**: Windows 11, Python 3.10+, Adminisztrátori hozzáférés
+**Szekció időtartama**: 30 perc gyakorlati rész + 15 perc kérdések és válaszok  
+**Nehézségi szint**: Kezdő  
+**Előfeltételek**: Windows 11/macOS 11+, Python 3.10+, Adminisztrátori hozzáférés
 
-## Példa szcenárió és workshop térkép
+## Workshop példa szcenárió
 
-| Workshop szkript / notebook | Szcenárió | Cél | Példa bemenet(ek) | Szükséges adatállomány |
-|-----------------------------|-----------|-----|-------------------|------------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Belső IT csapat, amely az eszközön történő következtetést értékeli egy adatvédelmi portálhoz | Bizonyítsd, hogy a helyi SLM szubszekundum késleltetéssel válaszol standard promptokra | "Sorolj fel két előnyt a helyi következtetésről." | Nincs (egyetlen prompt) |
-| Gyorsindítás adaptációs kódblokk | Fejlesztő, aki egy meglévő OpenAI szkriptet migrál Foundry Local-ra | Mutasd meg a kompatibilitást | "Sorolj fel két előnyt a helyi következtetésről." | Csak inline prompt |
+### Valós életbeli kontextus
 
-### Szcenárió narratíva
-A biztonsági és megfelelőségi csapatnak validálnia kell, hogy érzékeny prototípusadatok helyben feldolgozhatók-e. Futtatják a bootstrap szkriptet több prompttal (adatvédelem, késleltetés, költség) determinisztikus `temperature=0` módban, hogy rögzítsék az alapvető kimeneteket későbbi összehasonlításhoz (3. szekció benchmarking és 4. szekció SLM vs LLM kontraszt).
+**Szcenárió**: Egy vállalati IT csapatnak értékelnie kell az eszközön futó AI inferenciát, hogy érzékeny munkavállalói visszajelzéseket dolgozzon fel anélkül, hogy adatokat küldene külső szolgáltatásoknak.
 
-### Minimális prompt készlet JSON (opcionális)
+**Célja**: Bizonyítsa be, hogy a helyi AI modellek minőségi válaszokat tudnak nyújtani másodpercek alatti késleltetéssel, miközben teljes adatvédelmet biztosítanak.
+
+### Tesztkérdések
+
+Használja ezeket a kérdéseket a beállítás ellenőrzéséhez:
+
 ```json
 [
     "List two benefits of local inference.",
     "Summarize why keeping data on device improves privacy.",
-    "Give one trade‑off when choosing an SLM over a large model."
+    "Give one trade-off when choosing a small model over a large model."
 ]
 ```
 
-Használd ezt a listát reprodukálható értékelési ciklus létrehozásához vagy egy jövőbeli regressziós teszt keret magjának.
+### Sikerességi kritériumok
+
+- ✅ Minden kérdésre 2 másodpercen belül érkezik válasz
+- ✅ Nem kerül adat ki a helyi gépről
+- ✅ A válaszok relevánsak és hasznosak
+- ✅ A chat alkalmazás zökkenőmentesen működik
+
+Ez az ellenőrzés biztosítja, hogy a Foundry Local beállítása készen áll a 2-6. szekciók haladó workshopjaira.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Felelősség kizárása**:  
 Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

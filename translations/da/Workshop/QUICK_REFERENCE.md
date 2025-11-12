@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:11:11+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:19:41+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "da"
 }
 -->
 # Workshop Eksempler - Hurtig Referencekort
 
-**Sidst opdateret**: 8. oktober 2025
+**Sidst Opdateret**: 8. oktober 2025
 
 ---
 
@@ -30,18 +30,18 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ---
 
-## 📂 Oversigt over Eksempler
+## 📂 Eksempeloversigt
 
 | Session | Eksempel | Formål | Tid |
 |---------|----------|--------|-----|
 | 01 | `chat_bootstrap.py` | Grundlæggende chat + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG med embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | RAG evaluering | ~60s |
-| 03 | `benchmark_oss_models.py` | Model benchmarking | ~2m |
+| 03 | `benchmark_oss_models.py` | Modelbenchmarking | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Multi-agent system | ~60s |
-| 06 | `models_router.py` | Intent routing | ~45s |
-| 06 | `models_pipeline.py` | Flertrins pipeline | ~60s |
+| 06 | `models_router.py` | Intent-routing | ~45s |
+| 06 | `models_pipeline.py` | Multi-step pipeline | ~60s |
 
 ---
 
@@ -84,7 +84,7 @@ set PIPELINE_TASK="Your task here"
 
 ---
 
-## ✅ Validering & Testning
+## ✅ Validering & Test
 
 ```bash
 # Validate syntax and imports
@@ -123,7 +123,7 @@ pip install sentence-transformers ragas datasets
 pip install -r Workshop/requirements.txt
 ```
 
-### Model ikke fundet
+### Model Ikke Fundet
 ```bash
 # List available models
 foundry model ls
@@ -132,7 +132,7 @@ foundry model ls
 foundry model download phi-4-mini
 ```
 
-### Langsom ydeevne
+### Langsom Ydeevne
 ```bash
 # Use smaller model
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
@@ -157,7 +157,7 @@ text, usage = chat_once(
 )
 ```
 
-### Få Klient
+### Hent Klient
 ```python
 from workshop_utils import get_client
 
@@ -194,9 +194,9 @@ for chunk in stream:
 
 ## 📊 Modelvalg
 
-| Model | Størrelse | Bedst til | Hastighed |
+| Model | Størrelse | Bedst Til | Hastighed |
 |-------|-----------|-----------|-----------|
-| `qwen2.5-0.5b` | 0.5B | Hurtig klassifikation | ⚡⚡⚡ |
+| `qwen2.5-0.5b` | 0.5B | Hurtig klassificering | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Hurtig kodegenerering | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Kreativ skrivning | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Kode, refaktorering | ⚡⚡ |
@@ -209,22 +209,20 @@ for chunk in stream:
 
 - **SDK Dokumentation**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Hurtig Reference**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Opdateringsoversigt**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migreringsnoter**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
 ## 💡 Tips
 
-1. **Cache klienter**: `workshop_utils` gemmer cache for dig
+1. **Cache klienter**: `workshop_utils` cacher for dig
 2. **Brug mindre modeller**: Start med `qwen2.5-0.5b` til test
-3. **Aktiver brugsstatistik**: Sæt `SHOW_USAGE=1` for at spore tokens
+3. **Aktiver brugstatistik**: Sæt `SHOW_USAGE=1` for at spore tokens
 4. **Batchbehandling**: Behandl flere prompts sekventielt
 5. **Reducer max_tokens**: Mindsker ventetid for hurtige svar
 
 ---
 
-## 🎯 Eksempel Workflows
+## 🎯 Eksempelarbejdsgange
 
 ### Test Alt
 ```bash
@@ -256,7 +254,7 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Hurtig Hjælp**: Kør et hvilket som helst eksempel med `--help` fra `samples` mappen eller tjek docstring:
+**Hurtig Hjælp**: Kør et hvilket som helst eksempel med `--help` fra `samples`-mappen eller tjek docstring:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:  
 Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

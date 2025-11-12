@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T23:07:46+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T00:16:24+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "sk"
 }
 -->
-# Workshop Samples - Rýchla referenčná karta
+# Ukážky workshopu - Rýchla referenčná karta
 
 **Posledná aktualizácia**: 8. október 2025
 
@@ -30,17 +30,17 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ---
 
-## 📂 Prehľad vzoriek
+## 📂 Prehľad ukážok
 
-| Relácia | Vzor | Účel | Čas |
-|---------|------|------|-----|
+| Relácia | Ukážka | Účel | Čas |
+|---------|--------|------|-----|
 | 01 | `chat_bootstrap.py` | Základný chat + streamovanie | ~30s |
 | 02 | `rag_pipeline.py` | RAG s embeddingami | ~45s |
 | 02 | `rag_eval_ragas.py` | Hodnotenie RAG | ~60s |
 | 03 | `benchmark_oss_models.py` | Porovnanie modelov | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Systém viacerých agentov | ~60s |
-| 06 | `models_router.py` | Smerovanie zámerov | ~45s |
+| 06 | `models_router.py` | Smerovanie podľa zámeru | ~45s |
 | 06 | `models_pipeline.py` | Viackroková pipeline | ~60s |
 
 ---
@@ -123,7 +123,7 @@ pip install sentence-transformers ragas datasets
 pip install -r Workshop/requirements.txt
 ```
 
-### Model nenájdený
+### Model nebol nájdený
 ```bash
 # List available models
 foundry model ls
@@ -167,7 +167,7 @@ manager, client, model_id = get_client(
 )
 ```
 
-### Riešenie chýb
+### Spracovanie chýb
 ```python
 try:
     manager, client, model_id = get_client(alias)
@@ -207,24 +207,22 @@ for chunk in stream:
 
 ## 🔗 Zdroje
 
-- **SDK Dokumentácia**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **SDK dokumentácia**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Rýchla referenčná karta**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Zhrnutie aktualizácií**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Poznámky k migrácii**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
 ## 💡 Tipy
 
-1. **Cache klientov**: `workshop_utils` to urobí za vás
+1. **Cache klientov**: `workshop_utils` to robí za vás
 2. **Používajte menšie modely**: Začnite s `qwen2.5-0.5b` na testovanie
 3. **Povoľte štatistiky používania**: Nastavte `SHOW_USAGE=1` na sledovanie tokenov
-4. **Spracovanie dávok**: Spracujte viacero promptov postupne
-5. **Znížte max_tokens**: Zníži latenciu pre rýchle odpovede
+4. **Batch spracovanie**: Spracujte viacero promptov postupne
+5. **Znížte max_tokens**: Znižuje latenciu pre rýchle odpovede
 
 ---
 
-## 🎯 Pracovné postupy vzoriek
+## 🎯 Ukážkové pracovné postupy
 
 ### Testovanie všetkého
 ```bash
@@ -240,7 +238,7 @@ set BENCH_ROUNDS=3
 python -m session03.benchmark_oss_models
 ```
 
-### RAG Pipeline
+### RAG pipeline
 ```bash
 cd samples
 set RAG_QUESTION="What is RAG?"
@@ -256,16 +254,18 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Rýchla pomoc**: Spustite akúkoľvek vzorku s `--help` z adresára `samples` alebo si pozrite docstring:
+**Rýchla pomoc**: Spustite akúkoľvek ukážku s `--help` z adresára `samples` alebo si pozrite docstring:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**Všetky vzorky aktualizované v októbri 2025 podľa najlepších postupov Foundry Local SDK** ✨
+**Všetky ukážky aktualizované v októbri 2025 podľa najlepších postupov Foundry Local SDK** ✨
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

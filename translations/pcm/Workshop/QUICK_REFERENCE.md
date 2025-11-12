@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-11-11T17:41:57+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T01:08:59+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "pcm"
 }
@@ -209,14 +209,12 @@ for chunk in stream:
 
 - **SDK Docs**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Quick Ref**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Update Summary**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migration Notes**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
 ## 💡 Tips
 
-1. **Cache clients**: `workshop_utils` go help you cache am
+1. **Cache clients**: `workshop_utils` dey cache am for you
 2. **Use smaller models**: Start wit `qwen2.5-0.5b` for testing
 3. **Enable usage stats**: Set `SHOW_USAGE=1` to track tokens
 4. **Batch processing**: Process plenty prompts one by one
@@ -269,5 +267,5 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dis dokyument don use AI transleto service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am accurate, abeg sabi say machine translation fit get mistake or no dey correct well. Di original dokyument for im native language na di main source wey you go trust. For important mata, e good make professional human transleto check am. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
+Dis dokyument don use AI transleto service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am correct, abeg sabi say machine translation fit get mistake or no dey accurate well. Di original dokyument wey dey im native language na di main source wey you go trust. For important mata, e good make professional human transleto check am. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

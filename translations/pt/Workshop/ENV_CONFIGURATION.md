@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T21:29:46+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T22:40:54+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "pt"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Visão Geral
 
-Os exemplos do Workshop utilizam variáveis de ambiente para configuração, centralizadas no ficheiro `.env` na raiz do repositório. Isso permite uma personalização fácil sem necessidade de modificar o código.
+Os exemplos do Workshop utilizam variáveis de ambiente para configuração, centralizadas no ficheiro `.env` na raiz do repositório. Isto permite uma personalização fácil sem modificar o código.
 
 ## Início Rápido
 
@@ -28,11 +28,11 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. Configurar o Ambiente
+### 2. Configurar Ambiente
 
 O ficheiro `.env` já está configurado com valores padrão sensatos. A maioria dos utilizadores não precisará alterar nada.
 
-**Opcional**: Revise e personalize as configurações:
+**Opcional**: Rever e personalizar configurações:
 ```bash
 # Edit .env file
 notepad .env  # Windows
@@ -60,7 +60,7 @@ python -m session01.chat_bootstrap "Your question here"
 
 | Variável | Padrão | Descrição |
 |----------|---------|-------------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Modelo padrão para os exemplos |
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Modelo padrão para exemplos |
 | `FOUNDRY_LOCAL_ENDPOINT` | (vazio) | Substituir o endpoint do serviço |
 | `PYTHONPATH` | Caminhos do Workshop | Caminho de pesquisa de módulos Python |
 
@@ -109,7 +109,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Modelo do agente editor |
 | `AGENT_QUESTION` | Pré-configurado | Pergunta de teste |
 
-### Configuração de Confiabilidade
+### Configuração de Fiabilidade
 
 | Variável | Padrão | Propósito |
 |----------|---------|---------|
@@ -174,7 +174,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Geração de Código:**
 - `deepseek-coder-1.3b` - Especializado para código
-- `phi-4-mini` - Propósito geral para codificação
+- `phi-4-mini` - Propósito geral para programação
 
 ### Por Disponibilidade de Recursos
 
@@ -316,7 +316,7 @@ source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-## Testando a Configuração
+## Testar Configuração
 
 ### Verificar Carregamento do Ambiente
 
@@ -403,21 +403,22 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Repositório Principal**: https://github.com/microsoft/Foundry-Local
 - **SDK Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Documentação da API**: Verifique o repositório do SDK para a versão mais recente
+- **Documentação da API**: Verificar repositório do SDK para a versão mais recente
 
 ## Recursos Adicionais
 
 - `QUICK_START.md` - Guia de início rápido
-- `SDK_MIGRATION_NOTES.md` - Detalhes sobre atualizações do SDK
-- `Workshop/samples/*/README.md` - Guias específicos para os exemplos
+- `Workshop/samples/*/README.md` - Guias específicos para exemplos
 
 ---
 
 **Última Atualização**: 2025-01-08  
 **Versão**: 2.0  
-**SDK**: Foundry Local Python SDK (última versão)
+**SDK**: Foundry Local Python SDK (mais recente)
 
 ---
 
-**Aviso Legal**:  
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Aviso**:  
 Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

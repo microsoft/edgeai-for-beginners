@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "85fa559f498492b79de04e391c33687b",
-  "translation_date": "2025-10-28T22:45:21+00:00",
+  "original_hash": "8c30436578b1bd604c48233ecdd39701",
+  "translation_date": "2025-11-11T23:53:52+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "tl"
 }
@@ -11,489 +11,462 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrak
 
-Simulan ang iyong paglalakbay sa Foundry Local sa pamamagitan ng pag-install at pag-configure nito sa Windows 11. Matutunan kung paano i-set up ang CLI, paganahin ang hardware acceleration, at i-cache ang mga modelo para sa mabilis na lokal na inference. Ang hands-on na sesyon na ito ay magpapakita kung paano patakbuhin ang mga modelo tulad ng Phi, Qwen, DeepSeek, at GPT-OSS-20B gamit ang mga reproducible na CLI command.
+Matutunan kung paano mag-install, mag-configure, at magpatakbo ng iyong unang AI models gamit ang Microsoft Foundry Local. Ang hands-on session na ito ay nagbibigay ng step-by-step na introduksyon sa lokal na inference, mula sa pag-install hanggang sa paggawa ng iyong unang chat application gamit ang mga model tulad ng Phi-4, Qwen, at DeepSeek.
 
 ## Mga Layunin sa Pag-aaral
 
-Sa pagtatapos ng sesyon na ito, ikaw ay:
+Sa pagtatapos ng session na ito, magagawa mo ang sumusunod:
 
-- **Mag-install at Mag-configure**: I-set up ang Foundry Local sa Windows 11 gamit ang optimal na mga setting ng performance
-- **Master CLI Operations**: Gamitin ang Foundry Local CLI para sa pamamahala at deployment ng mga modelo
-- **Paganahin ang Hardware Acceleration**: I-configure ang GPU acceleration gamit ang ONNXRuntime o WebGPU
-- **Mag-deploy ng Maraming Modelo**: Patakbuhin ang phi-4, GPT-OSS-20B, Qwen, at DeepSeek na mga modelo nang lokal
-- **Bumuo ng Iyong Unang App**: I-adapt ang mga umiiral na sample upang magamit ang Foundry Local Python SDK
+- **Mag-Install at Mag-Configure**: I-set up ang Foundry Local na may tamang pag-verify ng installation
+- **Master CLI Operations**: Gumamit ng Foundry Local CLI para sa pamamahala at pag-deploy ng mga model
+- **Patakbuhin ang Iyong Unang Model**: Magtagumpay sa pag-deploy at pakikipag-ugnayan sa isang lokal na AI model
+- **Gumawa ng Chat App**: Lumikha ng basic na chat application gamit ang Foundry Local Python SDK
+- **Unawain ang Lokal na AI**: Maunawaan ang mga pangunahing kaalaman sa lokal na inference at pamamahala ng model
 
-# Subukan ang modelo (hindi interactive na single prompt)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
+## Mga Kinakailangan
 
-- Windows 11 (22H2 o mas bago)
-# Ilista ang mga available na catalog model (ang mga loaded na modelo ay lilitaw kapag pinatakbo)
-foundry model list
-## NOTE: Sa kasalukuyan, walang dedikadong `--running` flag; upang makita kung alin ang loaded, mag-initiate ng chat o suriin ang mga service log.
-- Nakainstall ang Python 3.10+
-- Visual Studio Code na may Python extension
-- Administrator privileges para sa pag-install
+### Mga Kinakailangan sa Sistema
 
-### (Opsyonal) Mga Environment Variable
+- **Windows**: Windows 11 (22H2 o mas bago) O **macOS**: macOS 11+ (limitadong suporta)
+- **RAM**: Minimum na 8GB, inirerekomenda ang 16GB+
+- **Storage**: 10GB+ na libreng espasyo para sa mga model
+- **Python**: 3.10 o mas bago na naka-install
+- **Admin Access**: Pribilehiyo ng administrator para sa pag-install
 
-Gumawa ng `.env` (o i-set sa shell) upang gawing portable ang mga script:
-# Ihambing ang mga sagot (hindi interactive)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-| Variable | Layunin | Halimbawa |
-|----------|---------|-----------|
-| `FOUNDRY_LOCAL_ALIAS` | Preferred na alias ng modelo (ang catalog ay awtomatikong pumipili ng pinakamahusay na variant) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | Override endpoint (kung hindi, awtomatikong mula sa manager) | `http://localhost:5273/v1` |
-| `FOUNDRY_LOCAL_STREAM` | Paganahin ang streaming demo | `true` |
+### Kapaligiran ng Pag-develop
 
-> Kung `FOUNDRY_LOCAL_ENDPOINT=auto` (o hindi naka-set), ito ay kinukuha mula sa SDK manager.
+- Visual Studio Code na may Python extension (inirerekomenda)
+- Access sa command line (PowerShell sa Windows, Terminal sa macOS)
+- Git para sa pag-clone ng mga repository (opsyonal)
 
-## Daloy ng Demo (30 minuto)
+## Daloy ng Workshop (30 minuto)
 
-### 1. I-install ang Foundry Local at I-verify ang Setup ng CLI (10 minuto)
+### Hakbang 1: I-install ang Foundry Local (5 minuto)
 
-# Ilista ang mga naka-cache na modelo
-foundry cache list
+#### Pag-install sa Windows
+
+I-install ang Foundry Local gamit ang Windows package manager:
 
 ```powershell
 # Install via winget (recommended)
 winget install Microsoft.FoundryLocal
-
-# Or download from Microsoft Learn
-# https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
 
-**macOS (Preview / Kung Suportado)**
+Alternatibo: I-download nang direkta mula sa [Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 
-Kung may native na macOS package na ibinigay (suriin ang opisyal na dokumento para sa pinakabago):
+#### Pag-install sa macOS (Limitadong Suporta)
+
+> [!NOTE] 
+> Ang suporta sa macOS ay kasalukuyang nasa preview. Tingnan ang opisyal na dokumentasyon para sa pinakabagong availability.
+
+Kung available, i-install gamit ang Homebrew:
 
 ```bash
-# Homebrew (if/when available)
+# If Homebrew formula is available
 brew update
-brew install foundry-local  # hypothetical formula name
+brew install foundry-local
 
-# Or manual download (tarball)
+# Or manual download (check official docs for latest)
 curl -L -o foundry-local.tar.gz "https://download.microsoft.com/foundry-local/latest/macos/foundry-local.tar.gz"
 tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Kung ang mga native na binary ng macOS ay hindi pa available, maaari mo pa ring:
-1. Gumamit ng Windows 11 ARM/Intel VM (Parallels / UTM) at sundin ang mga hakbang sa Windows.
-2. Patakbuhin ang mga modelo gamit ang container (kung may na-publish na container image) at i-set ang `FOUNDRY_LOCAL_ENDPOINT` sa exposed na port.
+**Alternatibo para sa mga gumagamit ng macOS:**
+- Gumamit ng Windows 11 VM (Parallels/UTM) at sundin ang mga hakbang sa Windows
+- Patakbuhin gamit ang container kung available at i-configure ang `FOUNDRY_LOCAL_ENDPOINT`
 
-**Gumawa ng Python Virtual Environment (Cross‑Platform)**
+### Hakbang 2: I-verify ang Pag-install (3 minuto)
 
-Windows PowerShell:
-```powershell
-py -m venv .venv
- .\.venv\Scripts\Activate.ps1
-```
-
-macOS / Linux:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-I-upgrade ang pip at i-install ang mga pangunahing dependency:
-```bash
-python -m pip install --upgrade pip
-pip install foundry-local-sdk openai
-```
-
-#### Hakbang 1.2: I-verify ang Pag-install
+Pagkatapos ng pag-install, i-restart ang iyong terminal at i-verify na gumagana ang Foundry Local:
 
 ```powershell
-# Check version
+# Check if Foundry Local is installed correctly
 foundry --version
-
-# Initialize configuration
-foundry init
 
 # View available commands
 foundry --help
 ```
 
-#### Hakbang 1.3: I-configure ang Environment
+Ang inaasahang output ay dapat magpakita ng impormasyon ng bersyon at mga available na command.
 
+### Hakbang 3: I-set Up ang Python Environment (5 minuto)
+
+Gumawa ng dedikadong Python environment para sa workshop na ito:
+
+**Windows:**
 ```powershell
-# Set up Python environment for Module08
-cd Module08
+# Create virtual environment
 py -m venv .venv
-.\.venv\Scripts\activate
 
-# Install Foundry Local Python SDK and dependencies
-pip install foundry-local-sdk openai requests
+# Activate environment
+.\.venv\Scripts\Activate.ps1
+
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-### SDK Bootstrapping (Inirerekomenda)
+**macOS/Linux:**
+```bash
+# Create virtual environment
+python3 -m venv .venv
 
-Sa halip na manu-manong simulan ang serbisyo at patakbuhin ang mga modelo, ang **Foundry Local Python SDK** ay maaaring mag-bootstrap ng lahat:
+# Activate environment
+source .venv/bin/activate
 
-```python
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
-
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-
-# Bootstraps service + downloads + loads most suitable variant for hardware
-manager = FoundryLocalManager(alias)
-
-print("Service running:", manager.is_service_running())
-print("Endpoint:", manager.endpoint)
-print("Cached models:", manager.list_cached_models())
-
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
-
-resp = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[
-        {"role": "system", "content": "You are a helpful local assistant."},
-        {"role": "user", "content": "Hello"}
-    ],
-    max_tokens=120,
-    temperature=0.5
-)
-print(resp.choices[0].message.content)
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-Kung mas gusto mo ang explicit na kontrol, maaari mo pa ring gamitin ang CLI + OpenAI client tulad ng ipinakita sa ibang bahagi.
+### Hakbang 4: Patakbuhin ang Iyong Unang Model (7 minuto)
 
-### 2. Patakbuhin ang Mga Modelo nang Lokal gamit ang CLI (10 minuto)
+Ngayon, patakbuhin natin ang ating unang AI model nang lokal!
 
-#### Hakbang 3.1: I-deploy ang Phi-4 Model
+#### Magsimula sa Phi-4 Mini (Inirerekomendang Unang Model)
 
 ```powershell
-# Download and run phi-4-mini
+# Download and start phi-4-mini (lightweight, fast)
 foundry model run phi-4-mini
 
-# Test the model (one-shot prompt)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
-
-# NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
+# Test the model with a simple prompt
+foundry model run phi-4-mini --prompt "Hello, introduce yourself in one sentence"
 ```
 
-#### Hakbang 3.2: I-deploy ang GPT-OSS-20B
+> [!TIP]
+> Ang command na ito ay magda-download ng model (sa unang pagkakataon) at awtomatikong sisimulan ang Foundry Local service.
+
+#### Tingnan ang Mga Aktibong Model
 
 ```powershell
-# Download and run GPT-OSS-20B
-foundry model run gpt-oss-20b
+# List available models (shows downloaded models)
+foundry model list
 
-# Compare responses (one-shot prompt)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-```
+# Check service status
+foundry service status
 
-#### Hakbang 3.3: I-load ang Karagdagang Mga Modelo
-
-```powershell
-# Download Qwen model family
-foundry model download qwen2.5-0.5b
-foundry model download qwen2.5-7b
-
-# Download DeepSeek models
-foundry model download deepseek-coder-1.3b
-
-# List cached models
+# See what models are cached locally
 foundry cache list
 ```
 
-### 4. Starter Project: I-adapt ang 01-run-phi para sa Foundry Local (5 minuto)
+#### Subukan ang Iba't Ibang Model
 
-#### Hakbang 4.1: Gumawa ng Basic Chat Application
+Kapag gumagana na ang phi-4-mini, subukan ang iba pang mga model:
 
-Gumawa ng `samples/01-foundry-quickstart/chat_quickstart.py` (ina-update upang gamitin ang manager kung available):
+```powershell
+# Larger model with better capabilities
+foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
+
+# Fast, efficient model
+foundry model run qwen2.5-0.5b --prompt "What are the benefits of local AI inference?"
+```
+
+### Hakbang 5: Gumawa ng Iyong Unang Chat Application (10 minuto)
+
+Ngayon, gumawa tayo ng Python application na gumagamit ng mga model na sinimulan natin.
+
+#### Gumawa ng Chat Script
+
+Gumawa ng bagong file na tinatawag na `my_first_chat.py` (o gamitin ang ibinigay na sample):
 
 ```python
 #!/usr/bin/env python3
 """
-Foundry Local Chat Quickstart
-Demo: Basic chat interaction using Foundry Local Python SDK
-Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python
+My First Foundry Local Chat Application
+Using FoundryLocalManager for automatic service management
 """
 
-import os, sys
+import os
+from foundry_local import FoundryLocalManager
 from openai import OpenAI
-try:
-    from foundry_local import FoundryLocalManager  # control-plane SDK
-except ImportError:
-    FoundryLocalManager = None
 
 def main():
-    """Main chat function using Foundry Local SDK"""
-    
-    # Preferred: bootstrap via SDK manager (auto start + download + load)
-    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-    if FoundryLocalManager:
-        manager = FoundryLocalManager(alias)
-        endpoint = manager.endpoint
-        model_id = manager.get_model_info(alias).id
-        api_key = manager.api_key or "not-needed"
-    else:
-        # Fallback: assume default endpoint & alias already running via CLI
-        endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT", "http://localhost:5273/v1")
-        model_id = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
-        api_key = "not-needed"
-
-    client = OpenAI(base_url=endpoint, api_key=api_key)
-    
-    # Get user input
-    if len(sys.argv) > 1:
-        user_message = " ".join(sys.argv[1:])
-    else:
-        user_message = input("Enter your message: ")
+    # Get model alias from environment or use default
+    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
     
     try:
-        # Make chat completion request
-        response = client.chat.completions.create(
-            model=model_id,
-            messages=[
-                {"role": "system", "content": "You are a helpful AI assistant powered by Microsoft Foundry Local."},
-                {"role": "user", "content": user_message}
-            ],
-            max_tokens=500,
-            temperature=0.7
+        # Initialize Foundry Local Manager (auto-starts service, downloads model)
+        manager = FoundryLocalManager(alias)
+        
+        # Create OpenAI client pointing to local endpoint
+        client = OpenAI(
+            base_url=manager.endpoint,
+            api_key=manager.api_key or "not-needed"
         )
         
-        # Display response
-        print(f"\nModel: {response.model}")
-        print(f"Response: {response.choices[0].message.content}")
-        print(f"Tokens used: {response.usage.total_tokens if response.usage else 'N/A'}")
+        # Get the actual model ID for this alias
+        model_id = manager.get_model_info(alias).id
+        
+        print("🤖 Welcome to your first local AI chat!")
+        print(f"� Using model: {alias} -> {model_id}")
+        print(f"🌐 Endpoint: {manager.endpoint}")
+        print("�💡 Type 'quit' to exit\n")
         
     except Exception as e:
-        print(f"Error: {e}")
-        print("\nTroubleshooting:")
-    print("1. Ensure Foundry Local is running: foundry status")
-    print("2. List models: foundry model list")
-    print(f"3. Start model if needed: foundry model run {model_id}")
-    print("4. Or let SDK bootstrap: pip install foundry-local-sdk")
+        print(f"❌ Failed to initialize Foundry Local: {e}")
+        print("💡 Make sure Foundry Local is installed: foundry --version")
+        return
+    
+    while True:
+        # Get user input
+        user_message = input("You: ").strip()
+        
+        if user_message.lower() in ['quit', 'exit', 'bye']:
+            print("👋 Goodbye!")
+            break
+            
+        if not user_message:
+            continue
+            
+        try:
+            # Send message to local AI model
+            response = client.chat.completions.create(
+                model=model_id,
+                messages=[
+                    {"role": "system", "content": "You are a helpful AI assistant running locally."},
+                    {"role": "user", "content": user_message}
+                ],
+                max_tokens=200,
+                temperature=0.7
+            )
+            
+            # Display the response
+            ai_response = response.choices[0].message.content
+            print(f"🤖 AI: {ai_response}\n")
+            
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            print("💡 Check service status: foundry service status\n")
 
 if __name__ == "__main__":
     main()
 ```
 
-#### Hakbang 4.2: Subukan ang Application
+> [!TIP]
+> **Mga Kaugnay na Halimbawa**: Para sa mas advanced na paggamit, tingnan:
+>
+> - **Python Sample**: `Workshop/samples/session01/chat_bootstrap.py` - May kasamang streaming responses at error handling
+> - **Jupyter Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - Interactive na bersyon na may detalyadong paliwanag
+
+#### Subukan ang Iyong Chat Application
 
 ```powershell
-# Ensure phi-4-mini is running
-foundry model run phi-4-mini
-
-# Run the quickstart app
-python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Foundry Local?"
-
-# Try interactive mode
-python samples/01-foundry-quickstart/chat_quickstart.py
+# No need to manually start models - FoundryLocalManager handles this!
+# Just run your chat application
+python my_first_chat.py
 ```
 
-## Mga Pangunahing Konsepto na Tinalakay
-
-### 1. Arkitektura ng Foundry Local
-
-- **Local Inference Engine**: Pinapatakbo ang mga modelo nang buo sa iyong device
-- **OpenAI SDK Compatibility**: Seamless na integrasyon sa umiiral na OpenAI code
-- **Pamamahala ng Modelo**: Mag-download, mag-cache, at patakbuhin ang maraming modelo nang epektibo
-- **Hardware Optimization**: Gamitin ang GPU, NPU, at CPU acceleration
-
-### 2. CLI Command Reference
+Alternatibo: Gamitin ang mga ibinigay na sample nang direkta
 
 ```powershell
-# Core Commands
+# Try the complete sample with streaming support
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
+```
+
+O tuklasin ang interactive notebook
+Buksan ang Workshop/notebooks/session01_chat_bootstrap.ipynb sa VS Code
+
+Subukan ang mga halimbawa ng pag-uusap:
+
+- "Ano ang Microsoft Foundry Local?"
+- "Magbigay ng 3 benepisyo ng pagpapatakbo ng AI models nang lokal"
+- "Tulungan mo akong maunawaan ang edge AI"
+
+## Ano ang Iyong Naabot
+
+Binabati kita! Matagumpay mong:
+
+1. ✅ **Na-install ang Foundry Local** at na-verify na gumagana ito
+2. ✅ **Sinimulan ang iyong unang AI model** (phi-4-mini) nang lokal
+3. ✅ **Nasubukan ang iba't ibang model** gamit ang command line
+4. ✅ **Nakapagtayo ng chat application** na kumokonekta sa iyong lokal na AI
+5. ✅ **Naranasan ang lokal na AI inference** nang walang cloud dependencies
+
+## Pag-unawa sa Nangyari
+
+### Lokal na AI Inference
+
+- Ang iyong mga AI model ay tumatakbo nang buo sa iyong computer
+- Walang data ang ipinapadala sa cloud
+- Ang mga sagot ay nabubuo nang lokal gamit ang iyong CPU/GPU
+- Ang privacy at seguridad ay napananatili
+
+### Pamamahala ng Model
+
+- Ang `foundry model run` ay nagda-download at nagsisimula ng mga model
+- Ang **FoundryLocalManager SDK** ay awtomatikong humahawak sa pagsisimula ng serbisyo at pag-load ng model
+- Ang mga model ay naka-cache nang lokal para sa susunod na paggamit
+- Maraming model ang maaaring ma-download ngunit karaniwang isa lamang ang tumatakbo sa isang pagkakataon
+- Ang serbisyo ay awtomatikong namamahala sa lifecycle ng model
+
+### SDK vs CLI na Paraan
+
+- **CLI Approach**: Manu-manong pamamahala ng model gamit ang `foundry model run <model>`
+- **SDK Approach**: Awtomatikong serbisyo + pamamahala ng model gamit ang `FoundryLocalManager(alias)`
+- **Rekomendasyon**: Gamitin ang SDK para sa mga application, CLI para sa testing at exploration
+
+## Mga Karaniwang Command Reference
+
+### Mahahalagang CLI Command
+
+```powershell
+# Installation & Setup
 foundry --version              # Check installation
+foundry --help                 # View all commands
+
 # Model Management
 foundry model list             # List available models
-foundry model unload <name>    # Unload from memory
+foundry model run <model>      # Download and start a model
+foundry model run <model> --prompt "text"  # One-shot prompt
+foundry cache list             # Show downloaded models
 
-foundry config list            # Current configuration
+# Service Management
+foundry service status         # Check if service is running
+foundry service start          # Start the service manually
+foundry service stop           # Stop the service
 ```
 
-### 3. Python SDK Integration
+### Mga Rekomendasyon sa Model
 
-```python
-# Basic client setup
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
+- **phi-4-mini**: Pinakamahusay na panimulang model - mabilis, magaan, magandang kalidad
+- **qwen2.5-0.5b**: Pinakamabilis na inference, minimal na memory usage
+- **gpt-oss-20b**: Mas mataas na kalidad ng sagot, nangangailangan ng mas maraming resources
+- **deepseek-coder-1.3b**: Na-optimize para sa programming at mga code task
 
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-manager = FoundryLocalManager(alias)
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
+## Pag-troubleshoot
 
-response = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Hello!"}],
-    max_tokens=50
-)
-print(response.choices[0].message.content)
-
-# Streaming example
-stream = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Give a 1-sentence definition of edge AI."}],
-    stream=True,
-    max_tokens=60,
-    temperature=0.4
-)
-for chunk in stream:
-    delta = chunk.choices[0].delta
-    if delta and delta.content:
-        print(delta.content, end="", flush=True)
-print()
-```
-
-## Pag-troubleshoot ng Karaniwang Mga Isyu
-
-### Isyu 1: "Foundry command not found"
+### "Foundry command not found"
 
 **Solusyon:**
+
 ```powershell
-# Restart PowerShell after installation
-# Or manually add to PATH
+# Restart your terminal after installation
+# Or manually add to PATH (Windows)
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Isyu 2: "Model failed to load"
+### "Model failed to load"
 
 **Solusyon:**
-```powershell
-# Check available memory
-foundry system info
 
-# Try smaller model first
+```powershell
+# Check available system memory
+foundry service status
+
+# Try a smaller model first
 foundry model run phi-4-mini
 
-# Check disk space for model cache
-dir "$env:USERPROFILE\.foundry\models"
+# Check disk space for model downloads
+# Models are stored in: %USERPROFILE%\.foundry\models (Windows)
 ```
 
-### Isyu 3: "Connection refused on localhost:5273"
+### "Connection refused on localhost"
 
 **Solusyon:**
+
 ```powershell
 # Check if service is running
-foundry status
+foundry service status
 
 # Start service if needed
 foundry service start
 
-# Check for port conflicts
-netstat -an | findstr 5273
+# Verify the port (default is 5273)
+# Check for port conflicts with: netstat -an | findstr 5273
 ```
-
-## Mga Tip sa Performance Optimization
-
-### 1. Estratehiya sa Pagpili ng Modelo
-
-- **Phi-4-mini**: Pinakamainam para sa pangkalahatang mga gawain, mababang memory usage
-- **Qwen2.5-0.5b**: Pinakamabilis na inference, minimal na resources
-- **GPT-OSS-20B**: Pinakamataas na kalidad, nangangailangan ng mas maraming resources
-- **DeepSeek-Coder**: Na-optimize para sa mga programming task
-
-### 2. Hardware Optimization
-
-```powershell
-# Enable all acceleration options
-foundry config set compute.onnx.enable_gpu true
-foundry config set compute.webgpu.enabled true
-foundry config set compute.cpu.threads auto
-
-# Optimize memory usage
-foundry config set model.cache.max_size 10GB
-foundry config set model.preload false
-```
-
-### 3. Pagsubaybay sa Performance
-
-```powershell
-cd Workshop/samples
-# Performance & latency measurement
-# Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
-# Example:
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python -m session03.benchmark_oss_models
-
-# Re-run after enabling GPU acceleration to compare:
-foundry config set compute.onnx.enable_gpu true
-python -m session03.benchmark_oss_models
-```
-
-### Opsyonal na Mga Pagpapahusay
-
-| Pagpapahusay | Ano | Paano |
-|--------------|-----|-------|
-| Shared Utilities | Tanggalin ang duplicate na client/bootstrap logic | Gamitin ang `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Visibility ng Token Usage | Turuan ang cost/efficiency thinking nang maaga | I-set ang `SHOW_USAGE=1` upang i-print ang prompt/completion/total tokens |
-| Deterministic Comparisons | Stable benchmarking at regression checks | Gamitin ang `temperature=0`, `top_p=1`, consistent na prompt text |
-| First-Token Latency | Sukatin ang perceived responsiveness | I-adapt ang benchmark script gamit ang streaming (`BENCH_STREAM=1`) |
-| Retry on Transient Errors | Resilient na demo sa cold start | `RETRY_ON_FAIL=1` (default) at i-adjust ang `RETRY_BACKOFF` |
-| Smoke Testing | Mabilis na sanity check sa mga pangunahing flow | Patakbuhin ang `python Workshop/tests/smoke.py` bago ang workshop |
-| Model Alias Profiles | Mabilis na pag-pivot ng model set sa pagitan ng mga machine | Panatilihin ang `.env` na may `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Caching Efficiency | Iwasan ang paulit-ulit na warmups sa multi-sample run | Utilities cache managers; gamitin muli sa mga script/notebooks |
-| First Run Warmup | Bawasan ang p95 latency spikes | Patakbuhin ang maliit na prompt pagkatapos ng `FoundryLocalManager` creation |
-
-Halimbawa ng deterministic warm baseline (PowerShell):
-
-```powershell
-set FOUNDRY_LOCAL_ALIAS=phi-4-mini
-set SHOW_USAGE=1
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference." | Out-Null
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
-```
-
-Makikita mo ang katulad na output at pare-parehong bilang ng token sa pangalawang run, na nagpapatunay ng determinism.
 
 ## Mga Susunod na Hakbang
 
-Pagkatapos makumpleto ang sesyon na ito:
+### Agarang Mga Aksyon
 
-1. **I-explore ang Session 2**: Bumuo ng AI solutions gamit ang Azure AI Foundry RAG
-2. **Subukan ang Iba't Ibang Modelo**: Mag-eksperimento sa Qwen, DeepSeek, at iba pang pamilya ng modelo
-3. **I-optimize ang Performance**: I-fine-tune ang mga setting para sa iyong partikular na hardware
-4. **Bumuo ng Custom na Mga Application**: Gamitin ang Foundry Local SDK sa iyong sariling mga proyekto
+1. **Subukan** ang iba't ibang model at prompts
+2. **Baguhin** ang iyong chat application para subukan ang iba't ibang model
+3. **Gumawa** ng sarili mong prompts at subukan ang mga sagot
+4. **Tuklasin** ang Session 2: Paggawa ng RAG applications
 
-## Karagdagang Mga Resource
+### Advanced na Landas ng Pag-aaral
+
+1. **Session 2**: Gumawa ng AI solutions gamit ang RAG (Retrieval-Augmented Generation)
+2. **Session 3**: Ihambing ang iba't ibang open-source models
+3. **Session 4**: Gumamit ng mga cutting-edge models
+4. **Session 5**: Gumawa ng multi-agent AI systems
+
+## Mga Environment Variable (Opsyonal)
+
+Para sa mas advanced na paggamit, maaari mong i-set ang mga environment variable na ito:
+
+| Variable | Layunin | Halimbawa |
+|----------|---------|---------|
+| `FOUNDRY_LOCAL_ALIAS` | Default na model na gagamitin | `phi-4-mini` |
+| `FOUNDRY_LOCAL_ENDPOINT` | I-override ang endpoint URL | `http://localhost:5273/v1` |
+
+Gumawa ng `.env` file sa iyong project directory:
+```
+FOUNDRY_LOCAL_ALIAS=phi-4-mini
+FOUNDRY_LOCAL_ENDPOINT=auto
+```
+
+## Karagdagang Resources
 
 ### Dokumentasyon
+
 - [Foundry Local Python SDK Reference](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Foundry Local Installation Guide](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 - [Model Catalog](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Sample Code
-- [Module08 Sample 01](./samples/01/README.md) - REST Chat Quickstart
-- [Module08 Sample 02](./samples/02/README.md) - OpenAI SDK Integration
-- [Module08 Sample 03](./samples/03/README.md) - Model Discovery & Benchmarking
+
+- **Session01 Python Sample**: `Workshop/samples/session01/chat_bootstrap.py` - Kumpletong chat app na may streaming
+- **Session01 Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - Interactive na tutorial  
+- [Module08 Sample 01](../Module08/samples/01/README.md) - REST Chat Quickstart
+- [Module08 Sample 02](../Module08/samples/02/README.md) - OpenAI SDK Integration
+- [Module08 Sample 03](../Module08/samples/03/README.md) - Model Discovery & Benchmarking
 
 ### Komunidad
+
 - [Foundry Local GitHub Discussions](https://github.com/microsoft/Foundry-Local/discussions)
 - [Azure AI Community](https://techcommunity.microsoft.com/category/artificialintelligence)
 
 ---
 
-**Tagal ng Sisyon**: 30 minuto hands-on + 15 minuto Q&A  
+**Tagal ng Session**: 30 minuto hands-on + 15 minuto Q&A  
 **Antas ng Kahirapan**: Baguhan  
-**Mga Kinakailangan**: Windows 11, Python 3.10+, Administrator access  
+**Mga Kinakailangan**: Windows 11/macOS 11+, Python 3.10+, Admin access
 
-## Halimbawang Scenario at Workshop Mapping
+## Halimbawa ng Workshop Scenario
 
-| Workshop Script / Notebook | Scenario | Layunin | Halimbawa ng Input(s) | Kailangan na Dataset |
-|----------------------------|----------|---------|------------------------|-----------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internal IT team na nag-evaluate ng on‑device inference para sa isang privacy assessment portal | Patunayan na ang lokal na SLM ay tumutugon sa sub‑second latency sa mga standard na prompt | "List two benefits of local inference." | Wala (single prompt) |
-| Quickstart adaptation code block | Developer na nag-migrate ng umiiral na OpenAI script sa Foundry Local | Ipakita ang drop‑in compatibility | "Give two benefits of local inference." | Inline prompt lamang |
+### Konteksto sa Tunay na Mundo
 
-### Narrative ng Scenario
-Ang security & compliance squad ay kailangang mag-validate kung ang sensitibong prototype data ay maaaring ma-proseso nang lokal. Pinapatakbo nila ang bootstrap script gamit ang ilang prompt (privacy, latency, cost) sa deterministic na temperature=0 mode upang makuha ang baseline outputs para sa susunod na comparison (Session 3 benchmarking at Session 4 SLM vs LLM contrast).
+**Scenario**: Ang isang enterprise IT team ay kailangang mag-evaluate ng on-device AI inference para sa pagproseso ng sensitibong feedback ng empleyado nang hindi ipinapadala ang data sa mga external na serbisyo.
 
-### Minimal Prompt Set JSON (opsyonal)
+**Layunin Mo**: Ipakita na ang lokal na AI models ay maaaring magbigay ng de-kalidad na sagot na may sub-second latency habang pinapanatili ang kumpletong data privacy.
+
+### Mga Test Prompts
+
+Gamitin ang mga prompt na ito para i-validate ang iyong setup:
+
 ```json
 [
     "List two benefits of local inference.",
     "Summarize why keeping data on device improves privacy.",
-    "Give one trade‑off when choosing an SLM over a large model."
+    "Give one trade-off when choosing a small model over a large model."
 ]
 ```
 
-Gamitin ang listahang ito upang gumawa ng reproducible evaluation loop o upang mag-seed ng future regression test harness.
+### Pamantayan ng Tagumpay
+
+- ✅ Ang lahat ng prompt ay may sagot sa loob ng 2 segundo
+- ✅ Walang data ang lumalabas sa iyong lokal na makina
+- ✅ Ang mga sagot ay may kaugnayan at kapaki-pakinabang
+- ✅ Ang iyong chat application ay gumagana nang maayos
+
+Ang validation na ito ay nagsisiguro na ang iyong Foundry Local setup ay handa para sa mga advanced na workshop sa Sessions 2-6.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, pakitandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na awtoritatibong pinagmulan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

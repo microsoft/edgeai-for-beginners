@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-09T14:38:16+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T23:23:32+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "no"
 }
@@ -17,8 +17,8 @@ Lær hvordan du kan integrere Hugging Face og andre modeller med åpen kildekode
 
 Ved slutten av sesjonen vil du kunne:
 
-- **Oppdage & Evaluere**: Identifisere aktuelle modeller (mistral, gemma, qwen, deepseek) basert på balansen mellom kvalitet og ressursbruk.
-- **Laste & Kjøre**: Bruke Foundry Local CLI til å laste ned, cache og kjøre fellesskapsmodeller.
+- **Oppdage & Evaluere**: Identifisere aktuelle modeller (mistral, gemma, qwen, deepseek) basert på kvalitet kontra ressursbruk.
+- **Laste & Kjøre**: Bruke Foundry Local CLI til å laste ned, cache og starte fellesskapsmodeller.
 - **Benchmarke**: Anvende konsistente heuristikker for latenstid, token-gjennomstrømning og kvalitet.
 - **Utvide**: Registrere eller tilpasse en tilpasset modellwrapper i henhold til SDK-kompatible mønstre.
 - **Sammenligne**: Lage strukturerte sammenligninger for valg mellom SLM og mellomstore LLM-modeller.
@@ -28,7 +28,6 @@ Ved slutten av sesjonen vil du kunne:
 - Fullført sesjon 1 og 2
 - Python-miljø med `foundry-local-sdk` installert
 - Minst 15GB ledig diskplass for flere modell-cacher
-- Valgfritt: GPU/WebGPU-akselerasjon aktivert (`foundry config list`)
 
 ### Hurtigstart for tverrplattform-miljø
 
@@ -48,7 +47,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai numpy
 ```
 
-Ved benchmarking fra macOS mot en Windows-vertsservice, sett:
+Ved benchmarking fra macOS mot en Windows-hosttjeneste, sett:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -158,19 +157,19 @@ python samples/03-oss-models/benchmark_models.py
 
 ### 4. Sammenlign Ytelse (5 min)
 
-Diskuter avveininger: lastetid, minnebruk (observer Oppgavebehandling / `nvidia-smi` / OS ressursmonitor), output-kvalitet vs hastighet. Bruk Python benchmark-skriptet (Sesjon 3) for latenstid og gjennomstrømning; gjenta etter aktivering av GPU-akselerasjon.
+Diskuter avveininger: lastetid, minnebruk (observer Oppgavebehandling / `nvidia-smi` / OS ressursmonitor), outputkvalitet kontra hastighet. Bruk Python benchmark-skriptet (Sesjon 3) for latenstid og gjennomstrømning; gjenta etter å ha aktivert GPU-akselerasjon.
 
 ### 5. Startprosjekt (4 min)
 
-Lag en rapportgenerator for modellsammenligning (utvid benchmark-skriptet med markdown-eksport).
+Lag en rapportgenerator for modell-sammenligning (utvid benchmark-skriptet med eksport til markdown).
 
 ## Startprosjekt: Utvid `03-huggingface-models`
 
-Forbedre det eksisterende eksemplet ved å:
+Forbedre det eksisterende eksempelet ved å:
 
-1. Legge til benchmark-aggregasjon + CSV/Markdown-eksport.
+1. Legge til benchmark-aggregering + CSV/Markdown-eksport.
 2. Implementere enkel kvalitativ scoring (prompt-parsett + manuell annoteringsfil).
-3. Introdusere en JSON-konfigurasjon (`models.json`) for en pluggbar modelliste og prompt-sett.
+3. Introdusere en JSON-konfigurasjon (`models.json`) for pluggbar modelliste og prompt-sett.
 
 ## Valideringssjekkliste
 
@@ -180,16 +179,16 @@ foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
 
-Alle målmodeller skal vises og svare på en test-chatforespørsel.
+Alle målmodeller skal vises og svare på en forespørsel om chat.
 
 ## Eksempelscenario & Workshop-kartlegging
 
-| Workshop-skript | Scenario | Mål | Prompt / Datasettkilde |
+| Workshop-skript | Scenario | Mål | Prompt / Dataset-kilde |
 |-----------------|----------|-----|-------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge-plattformteam som velger standard SLM for innebygd oppsummeringsfunksjon | Produsere latenstid + p95 + tokens/sek sammenligning mellom aktuelle modeller | Inline `PROMPT`-variabel + miljø `BENCH_MODELS`-liste |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge-plattformteam som velger standard SLM for innebygd oppsummeringsfunksjon | Produsere sammenligning av latenstid + p95 + tokens/sekund for aktuelle modeller | Inline `PROMPT`-variabel + miljø `BENCH_MODELS`-liste |
 
 ### Scenariofortelling
-Produktutvikling må velge en standard lettvekts oppsummeringsmodell for en offline møtenotat-funksjon. De kjører kontrollerte deterministiske benchmarks (temperature=0) på et fast prompt-sett (se eksempel nedenfor) og samler latenstid + gjennomstrømningsmetrikker med og uten GPU-akselerasjon.
+Produktutvikling må velge en standard lettvekts oppsummeringsmodell for en offline møte-notatfunksjon. De kjører kontrollerte deterministiske benchmarks (temperature=0) over et fast prompt-sett (se eksempel nedenfor) og samler inn latenstid + gjennomstrømningsmetrikker med og uten GPU-akselerasjon.
 
 ### Eksempel på JSON-prompt-sett (utvidbart)
 ```json
@@ -203,16 +202,16 @@ Produktutvikling må velge en standard lettvekts oppsummeringsmodell for en offl
 
 Loop hver prompt per modell, fang opp latenstid per prompt for å utlede distribusjonsmetrikker og oppdage avvik.
 
-## Rammeverk for modellvalg
+## Rammeverk for modellutvelgelse
 
 | Dimensjon | Metrikk | Hvorfor det er viktig |
 |----------|--------|------------------------|
 | Latenstid | gj.snitt / p95 | Konsistens i brukeropplevelse |
-| Gjennomstrømning | tokens/sek | Skalerbarhet for batch og streaming |
-| Minne | resident størrelse | Enhetskompatibilitet og samtidighet |
-| Kvalitet | rubric prompts | Oppgavens egnethet |
-| Fotavtrykk | disk-cache | Distribusjon og oppdateringer |
-| Lisens | bruksbegrensning | Kommersiell samsvar |
+| Gjennomstrømning | tokens/sekund | Skalerbarhet for batch & streaming |
+| Minne | resident størrelse | Enhetskompatibilitet & samtidighet |
+| Kvalitet | rubrikk-prompt | Oppgaveegnethet |
+| Fotavtrykk | disk-cache | Distribusjon & oppdateringer |
+| Lisens | bruksrettigheter | Kommersiell samsvar |
 
 ## Utvidelse med tilpasset modell
 
@@ -235,8 +234,8 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 | Problem | Årsak | Løsning |
 |---------|-------|---------|
 | OOM på mistral-7b | Utilstrekkelig RAM/GPU | Stopp andre modeller; prøv mindre variant |
-| Langsom første respons | Kald oppstart | Hold varm med et periodisk lettvekts-prompt |
-| Nedlastingsproblemer | Nettverksinstabilitet | Prøv igjen; forhåndslast under lavtrafikkperioder |
+| Langsom første respons | Kald last | Hold varm med et periodisk lettvekts-prompt |
+| Nedlastingsproblemer | Nettverksinstabilitet | Prøv igjen; forhåndshent under lavtrafikk |
 
 ## Referanser
 
@@ -255,10 +254,10 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 |------------|--------|---------|
 | Streaming av første-token-latenstid | Måler opplevd responsivitet | Kjør benchmark med `BENCH_STREAM=1` (utvidet skript i `Workshop/samples/session03`) |
 | Deterministisk modus | Stabil regresjonssammenligning | `temperature=0`, fast prompt-sett, fang JSON-utganger under versjonskontroll |
-| Kvalitetsvurdering | Legger til kvalitativ dimensjon | Vedlikehold `prompts.json` med forventede aspekter; annoter score (1–5) manuelt eller via sekundær modell |
-| CSV / Markdown-eksport | Delbar rapport | Utvid skriptet til å skrive `benchmark_report.md` med tabell og høydepunkter |
-| Modellkapabilitet-tags | Hjelper med automatisert ruting senere | Vedlikehold `models.json` med `{alias: {capabilities:[], size_mb:..}}` |
-| Cache-oppvarmingsfase | Reduserer kaldstart-bias | Utfør en varm runde før tidsmåling (allerede implementert) |
+| Kvalitetsrubrikk-scoring | Legger til kvalitativ dimensjon | Vedlikehold `prompts.json` med forventede aspekter; annoter score (1–5) manuelt eller via sekundær modell |
+| CSV / Markdown-eksport | Delbar rapport | Utvid skriptet til å skrive `benchmark_report.md` med tabell & høydepunkter |
+| Modellkapabilitets-tagger | Hjelper med automatisert ruting senere | Vedlikehold `models.json` med `{alias: {capabilities:[], size_mb:..}}` |
+| Cache-oppvarmingsfase | Reduser kaldstart-bias | Utfør en varm runde før tidsmåling (allerede implementert) |
 | Percentil-nøyaktighet | Robust tail-latenstid | Bruk numpy percentil (allerede i refaktorert skript) |
 | Token-kostnadsestimering | Økonomisk sammenligning | Omtrentlig kostnad = (tokens/sek * gj.snitt tokens per forespørsel) * energiheuristikk |
 | Automatisk hopping over mislykkede modeller | Robusthet i batch-kjøringer | Pakk hver benchmark i try/except og marker statusfelt |
@@ -287,5 +286,7 @@ Loop den statiske listen i stedet for tilfeldige prompts for sammenlignbare metr
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi etterstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

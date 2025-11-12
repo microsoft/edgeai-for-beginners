@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T22:22:08+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T23:30:34+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "nl"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overzicht
 
-De workshopvoorbeelden maken gebruik van omgevingsvariabelen voor configuratie, gecentraliseerd in het `.env`-bestand in de hoofdmap van de repository. Dit maakt eenvoudige aanpassingen mogelijk zonder de code te wijzigen.
+De Workshop-voorbeelden maken gebruik van omgevingsvariabelen voor configuratie, gecentraliseerd in het `.env`-bestand in de hoofdmap van de repository. Dit maakt eenvoudige aanpassingen mogelijk zonder de code te wijzigen.
 
 ## Snelstartgids
 
@@ -67,7 +67,7 @@ python -m session01.chat_bootstrap "Your question here"
 **Wanneer `FOUNDRY_LOCAL_ENDPOINT` instellen:**
 - Externe Foundry Local-instantie
 - Aangepaste poortconfiguratie
-- Scheiding tussen ontwikkeling/productie
+- Scheiding tussen ontwikkeling en productie
 
 **Voorbeeld:**
 ```bash
@@ -92,7 +92,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modellen om te benchmarken |
 | `BENCH_ROUNDS` | `3` | Iteraties per model |
 | `BENCH_PROMPT` | Vooraf geconfigureerd | Testprompt |
-| `BENCH_STREAM` | `0` | Eerste-token latentie meten |
+| `BENCH_STREAM` | `0` | Latentie van eerste token meten |
 
 #### Sessie 04: Modelvergelijking
 | Variabele | Standaard | Doel |
@@ -105,8 +105,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Sessie 05: Multi-Agent Orchestratie
 | Variabele | Standaard | Doel |
 |-----------|-----------|------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Onderzoeker-agent model |
-| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Editor-agent model |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Onderzoeker-agentmodel |
+| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Editor-agentmodel |
 | `AGENT_QUESTION` | Vooraf geconfigureerd | Testvraag |
 
 ### Betrouwbaarheidsconfiguratie
@@ -157,9 +157,9 @@ FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ```
 
-## Aanbevolen Modellen
+## Aanbevolen modellen
 
-### Per Gebruiksscenario
+### Per gebruiksscenario
 
 **Algemeen gebruik:**
 - `phi-4-mini` - Gebalanceerde kwaliteit en snelheid
@@ -170,7 +170,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Hoge kwaliteit:**
 - `qwen2.5-7b` - Beste kwaliteit, hogere resourcegebruik
-- `phi-4-mini` - Goede kwaliteit, minder resources
+- `phi-4-mini` - Goede kwaliteit, lagere resources
 
 **Codegeneratie:**
 - `deepseek-coder-1.3b` - Gespecialiseerd voor code
@@ -199,9 +199,9 @@ SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-14b
 ```
 
-## Geavanceerde Configuratie
+## Geavanceerde configuratie
 
-### Aangepaste Endpoints
+### Aangepaste endpoints
 
 ```bash
 # Development environment
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### Temperatuur & Sampling (Overschrijven in Code)
+### Temperatuur & Sampling (Overschrijven in code)
 
 ```python
 # In your scripts/notebooks
@@ -262,7 +262,7 @@ pwd  # Should be in Workshop or repository root
 ### Verbindingsproblemen met service
 
 **Symptomen:**
-- Fouten zoals "Verbinding geweigerd"
+- Fouten "Verbinding geweigerd"
 - "Service niet beschikbaar"
 - Time-out fouten
 
@@ -285,7 +285,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ### Model niet gevonden
 
 **Symptomen:**
-- Fouten zoals "Model niet gevonden"
+- Fouten "Model niet gevonden"
 - "Alias niet herkend"
 
 **Oplossingen:**
@@ -303,7 +303,7 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Importfouten
 
 **Symptomen:**
-- Fouten zoals "Module niet gevonden"
+- Fouten "Module niet gevonden"
 
 **Oplossingen:**
 
@@ -399,17 +399,16 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ```
 
-## SDK Documentatie
+## SDK-documentatie
 
 - **Hoofdrepository**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API Documentatie**: Bekijk de SDK-repository voor de meest recente versie
+- **API-documentatie**: Bekijk SDK-repository voor de laatste versie
 
 ## Aanvullende bronnen
 
 - `QUICK_START.md` - Handleiding voor beginners
-- `SDK_MIGRATION_NOTES.md` - Details over SDK-updates
-- `Workshop/samples/*/README.md` - Specifieke handleidingen voor voorbeelden
+- `Workshop/samples/*/README.md` - Gidsen specifiek voor voorbeelden
 
 ---
 
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

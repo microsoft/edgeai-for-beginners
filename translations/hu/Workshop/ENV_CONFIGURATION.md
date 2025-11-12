@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T22:54:33+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-12T00:03:52+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "hu"
 }
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. Környezet konfigurálása
 
-A `.env` fájl már ésszerű alapértelmezett beállításokkal van konfigurálva. A legtöbb felhasználónak nem kell semmit módosítania.
+A `.env` fájl már ésszerű alapértelmezésekkel van konfigurálva. A legtöbb felhasználónak nem kell semmit módosítania.
 
 **Opcionális**: Tekintse át és testreszabja a beállításokat:
 ```bash
@@ -86,20 +86,20 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Beágyazási modell |
 | `RAG_QUESTION` | Előre konfigurált | Tesztkérdés |
 
-#### Munkamenet 03: Teljesítményteszt
+#### Munkamenet 03: Teljesítménytesztelés
 | Változó | Alapértelmezett | Cél |
 |---------|-----------------|-----|
 | `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Tesztelendő modellek |
 | `BENCH_ROUNDS` | `3` | Iterációk modellenként |
-| `BENCH_PROMPT` | Előre konfigurált | Tesztelő kérdés |
-| `BENCH_STREAM` | `0` | Első token késleltetésének mérése |
+| `BENCH_PROMPT` | Előre konfigurált | Teszt prompt |
+| `BENCH_STREAM` | `0` | Első token késleltetés mérése |
 
 #### Munkamenet 04: Modell összehasonlítás
 | Változó | Alapértelmezett | Cél |
 |---------|-----------------|-----|
 | `SLM_ALIAS` | `phi-4-mini` | Kis nyelvi modell |
 | `LLM_ALIAS` | `qwen2.5-7b` | Nagy nyelvi modell |
-| `COMPARE_PROMPT` | Előre konfigurált | Összehasonlító kérdés |
+| `COMPARE_PROMPT` | Előre konfigurált | Összehasonlító prompt |
 | `COMPARE_RETRIES` | `2` | Újrapróbálkozások száma |
 
 #### Munkamenet 05: Többügynökös Orkesztráció
@@ -115,7 +115,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |---------|-----------------|-----|
 | `SHOW_USAGE` | `1` | Tokenhasználat megjelenítése |
 | `RETRY_ON_FAIL` | `1` | Újrapróbálkozási logika engedélyezése |
-| `RETRY_BACKOFF` | `1.0` | Újrapróbálkozási késleltetés (másodpercben) |
+| `RETRY_BACKOFF` | `1.0` | Újrapróbálkozási késleltetés (másodperc) |
 
 ## Gyakori konfigurációk
 
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Gyártási beállítás (Minőség fókusz)
+### Gyártási beállítás (Minőségi fókusz)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -138,7 +138,7 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Teljesítményteszt beállítás
+### Teljesítménytesztelési beállítás
 ```bash
 BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
@@ -241,7 +241,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 **Tünetek:**
 - A szkriptek rossz modelleket használnak
 - Kapcsolódási hibák
-- Változók nem ismertek
+- Nem felismert változók
 
 **Megoldások:**
 ```bash
@@ -365,7 +365,7 @@ except Exception as e:
 
 ## Biztonsági legjobb gyakorlatok
 
-### 1. Soha ne kötelezzen el titkokat
+### 1. Soha ne kövessen el titkokat
 
 ```bash
 # .gitignore should include:
@@ -374,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Használjon külön .env fájlokat
+### 2. Használjon külön `.env` fájlokat
 
 ```bash
 .env              # Default configuration
@@ -403,21 +403,22 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Fő repozitórium**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API Dokumentáció**: További információkért nézze meg az SDK repozitóriumot
+- **API Dokumentáció**: A legfrissebb információkért nézze meg az SDK repozitóriumot
 
 ## További források
 
 - `QUICK_START.md` - Kezdő útmutató
-- `SDK_MIGRATION_NOTES.md` - SDK frissítési részletek
-- `Workshop/samples/*/README.md` - Mintákhoz kapcsolódó útmutatók
+- `Workshop/samples/*/README.md` - Minta-specifikus útmutatók
 
 ---
 
 **Utolsó frissítés**: 2025-01-08  
 **Verzió**: 2.0  
-**SDK**: Foundry Local Python SDK (legújabb)
+**SDK**: Foundry Local Python SDK (legfrissebb)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Felelősség kizárása**:  
 Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

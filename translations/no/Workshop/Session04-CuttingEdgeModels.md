@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T22:12:15+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-11T23:20:30+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "no"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Sammendrag
 
-Sammenlign store språkmodeller (LLMs) og små språkmodeller (SLMs) for lokale vs skybaserte inferens-scenarier. Lær distribusjonsmønstre som utnytter ONNX Runtime-akselerasjon, WebGPU-eksekvering og hybride RAG-opplevelser. Inkluderer en Chainlit RAG-demo med en lokal modell samt en valgfri utforskning av OpenWebUI. Du vil tilpasse en WebGPU-inferensstarter og evaluere Phi vs GPT-OSS-20B med hensyn til kapasitet og kostnad/ytelse.
+Sammenlign Large Language Models (LLMs) og Small Language Models (SLMs) for lokale vs skybaserte inferensscenarier. Lær distribusjonsmønstre som utnytter ONNX Runtime-akselerasjon, WebGPU-eksekvering og hybride RAG-opplevelser. Inkluderer en Chainlit RAG-demo med en lokal modell samt en valgfri utforskning av OpenWebUI. Du vil tilpasse en WebGPU-inferensstarter og evaluere Phi vs GPT-OSS-20B med hensyn til kapasitet og kostnad/ytelse.
 
 ## Læringsmål
 
-- **Sammenligne** SLM vs LLM på aksene for latens, minne og kvalitet
+- **Sammenligne** SLM vs LLM med hensyn til forsinkelse, minne og kvalitet
 - **Distribuere** modeller med ONNXRuntime og (der det støttes) WebGPU
 - **Kjøre** nettleserbasert inferens (personvernbevarende interaktiv demo)
 - **Integrere** en Chainlit RAG-pipeline med en lokal SLM-backend
@@ -23,14 +23,14 @@ Sammenlign store språkmodeller (LLMs) og små språkmodeller (SLMs) for lokale 
 
 ## Forutsetninger
 
-- Sesjoner 1–3 fullført
+- Sesjonene 1–3 fullført
 - `chainlit` installert (allerede i `requirements.txt` for Modul08)
 - WebGPU-kompatibel nettleser (Edge / Chrome siste versjon på Windows 11)
-- Foundry Local kjører (`foundry status`)
+- Foundry Local kjører (`foundry service status`)
 
-### Plattformnotater
+### Tverrplattformnotater
 
-Windows forblir det primære målmiljøet. For macOS-utviklere som venter på native binærfiler:
+Windows forblir det primære målet. For macOS-utviklere som venter på native binærfiler:
 1. Kjør Foundry Local i en Windows 11 VM (Parallels / UTM) ELLER en ekstern Windows-arbeidsstasjon.
 2. Eksponer tjenesten (standardport 5273) og sett opp på macOS:
 ```bash
@@ -38,7 +38,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 3. Bruk de samme Python-virtuelle miljøtrinnene som i tidligere sesjoner.
 
-Chainlit installasjon (begge plattformer):
+Chainlit-installasjon (begge plattformer):
 ```bash
 pip install chainlit
 ```
@@ -60,19 +60,9 @@ foundry model run phi-4-mini   --prompt "List 5 creative IoT edge AI ideas."
 foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 ```
 
-Spor: responsdybde, faktanøyaktighet, stilistisk rikdom, latens.
+Spor: responsdybde, faktanøyaktighet, stilistisk rikdom, forsinkelse.
 
-### 2. ONNX Runtime-akselerasjon (5 min)
-
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
-
-Observer gjennomstrømningsendringer etter aktivering av GPU vs kun CPU.
+Observer endringer i gjennomstrømning etter aktivering av GPU vs kun CPU.
 
 ### 3. WebGPU-inferens i nettleser (6 min)
 
@@ -117,7 +107,7 @@ Tilpass starteren `04-webgpu-inference` (lag `samples/04-cutting-edge/webgpu_dem
 </html>
 ```
 
-Åpne filen i en nettleser; observer lav-latens lokal rundtur.
+Åpne filen i en nettleser; observer lav forsinkelse ved lokal rundtur.
 
 ### 4. Chainlit RAG Chat App (7 min)
 
@@ -163,22 +153,22 @@ Kjør:
 chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ```
 
-### 5. Starterprosjekt: Tilpass `04-webgpu-inference` (6 min)
+### 5. Startprosjekt: Tilpass `04-webgpu-inference` (6 min)
 
 Leveranser:
-- Erstatt plassholder-logikk for henting med strømming av tokens (bruk `stream=True` endpoint-variant når aktivert)
-- Legg til latensdiagram (klientside) for Phi vs GPT-OSS-20B-toggles
-- Innebygg RAG-kontekst inline (tekstområde for referansedokumenter)
+- Erstatt plassholderlogikk for henting med strømming av tokens (bruk `stream=True` endepunktvariant når aktivert)
+- Legg til forsinkelsesdiagram (klientsiden) for Phi vs GPT-OSS-20B-alternativer
+- Innebygg RAG-kontekst (tekstområde for referansedokumenter)
 
 ## Evalueringsheuristikker
 
 | Kategori | Phi-4-mini | GPT-OSS-20B | Observasjon |
 |----------|------------|-------------|-------------|
-| Latens (kald) | Rask | Langsommere | SLM varmes raskt opp |
+| Forsinkelse (kald) | Rask | Langsommere | SLM varmes raskt opp |
 | Minne | Lavt | Høyt | Enhetsmulighet |
-| Kontekstadhering | Bra | Sterk | Større modell kan være mer ordrik |
-| Kostnad (lokal) | Minimal | Høyere (ressurser) | Energi/tid-avveining |
-| Beste bruksområde | Edge-apper | Dyp resonnering | Hybrid pipeline mulig |
+| Kontekstadhering | God | Sterk | Større modell kan være mer detaljert |
+| Kostnad (lokalt) | Minimal | Høyere (ressurser) | Energi/tid-avveining |
+| Beste bruksområde | Kantapper | Dyp resonnering | Hybrid pipeline mulig |
 
 ## Validering av miljø
 
@@ -195,17 +185,17 @@ foundry model list
 
 ## Feilsøking
 
-| Symptom | Årsak | Tiltak |
+| Symptom | Årsak | Handling |
 |---------|-------|--------|
-| Nettstedshenting mislykkes | CORS eller tjeneste nede | Bruk `curl` for å verifisere endpoint; aktiver CORS-proxy hvis nødvendig |
+| Nettleserhenting mislykkes | CORS eller tjeneste nede | Bruk `curl` for å verifisere endepunkt; aktiver CORS-proxy hvis nødvendig |
 | Chainlit blank | Miljø ikke aktivt | Aktiver venv og installer avhengigheter på nytt |
-| Høy latens | Modell nettopp lastet | Varm opp med liten prompt-sekvens |
+| Høy forsinkelse | Modell nettopp lastet | Varm opp med liten promptsekvens |
 
 ## Referanser
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- Chainlit Docs: https://docs.chainlit.io
-- RAG Evaluering (Ragas): https://docs.ragas.io
+- Chainlit-dokumentasjon: https://docs.chainlit.io
+- RAG-evaluering (Ragas): https://docs.ragas.io
 
 ---
 
@@ -214,14 +204,14 @@ foundry model list
 
 ## Eksempelscenario og workshopkartlegging
 
-| Workshop-artikler | Scenario | Mål | Data / prompt-kilde |
-|--------------------|----------|-----|---------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Arkitekturteam som evaluerer SLM vs LLM for oppsummeringsgenerator for ledelsen | Kvantifisere latens + tokenbruk-delta | Enkel `COMPARE_PROMPT` miljøvariabel |
-| `chainlit_app.py` (RAG-demo) | Intern kunnskapsassistentprototype | Grunnlegge korte svar med minimal leksikalsk gjenfinning | Inline `DOCS` liste i filen |
-| `webgpu_demo.html` | Fremtidsrettet nettleser-inferens på enhet | Vise lav-latens lokal rundtur + UX-narrativ | Kun live brukerprompt |
+| Workshop-artefakter | Scenario | Mål | Data / promptkilde |
+|--------------------|----------|-----------|----------------------|
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Arkitekturteam som evaluerer SLM vs LLM for generering av lederoppsummeringer | Kvantifisere forsinkelse + tokenbruk | Enkelt `COMPARE_PROMPT` miljøvariabel |
+| `chainlit_app.py` (RAG-demo) | Intern kunnskapsassistentprototype | Grunnleggende korte svar med minimal leksikalsk henting | Innebygd `DOCS`-liste i filen |
+| `webgpu_demo.html` | Fremtidsrettet lokal nettleserinferens | Vise lav forsinkelse ved lokal rundtur + UX-narrativ | Kun live brukerprompt |
 
-### Scenario-narrativ
-Produktorganisasjonen ønsker en generator for lederbriefinger. En lett SLM (phi-4-mini) utarbeider oppsummeringer; en større LLM (gpt-oss-20b) kan kun finjustere rapporter med høy prioritet. Sesjonsskript fanger empiriske latens- og token-metrikker for å rettferdiggjøre et hybriddesign, mens Chainlit-demoen illustrerer hvordan grunnlagt gjenfinning holder små modellers svar faktuelle. WebGPU-konseptet gir en visjonsvei for fullstendig klientbasert prosessering når nettleserakselerasjon modnes.
+### Scenarionarrativ
+Produktorganisasjonen ønsker en generator for lederoppsummeringer. En lett SLM (phi-4-mini) lager utkast til oppsummeringer; en større LLM (gpt-oss-20b) kan kun finjustere høyprioriterte rapporter. Sesjonsskriptene fanger empiriske forsinkelses- og tokenmålinger for å rettferdiggjøre et hybriddesign, mens Chainlit-demoen illustrerer hvordan grunnlagt henting holder små modellers svar faktuelle. WebGPU-konseptet gir en visjonsvei for fullstendig klientsidebehandling når nettleserakselerasjon modnes.
 
 ### Minimal RAG-kontekst (Chainlit)
 ```python
@@ -241,22 +231,22 @@ else:
     final, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Refine and polish:\n{draft}"}], max_tokens=220)
 ```
 
-Spor begge latenskomponentene for å rapportere gjennomsnittlig blandet kostnad.
+Spor begge forsinkelseskomponentene for å rapportere blandet gjennomsnittskostnad.
 
 ### Valgfrie forbedringer
 
 | Fokus | Forbedring | Hvorfor | Implementeringshint |
-|-------|------------|--------|---------------------|
-| Sammenligningsmetrikker | Spor tokenbruk + første-token-latens | Helhetlig ytelsesvisning | Bruk forbedret benchmark-skript (Sesjon 3) med `BENCH_STREAM=1` |
-| Hybrid pipeline | SLM utkast → LLM finjustering | Redusere latens og kostnad | Generer med phi-4-mini, finjuster oppsummering med gpt-oss-20b |
+|-------|------------|-----|---------------------|
+| Sammenligningsmetrikker | Spor tokenbruk + første-token forsinkelse | Helhetlig ytelsesoversikt | Bruk forbedret benchmark-skript (Sesjon 3) med `BENCH_STREAM=1` |
+| Hybrid pipeline | SLM-utkast → LLM-finjustering | Redusere forsinkelse og kostnad | Generer med phi-4-mini, finjuster oppsummering med gpt-oss-20b |
 | Strømmings-UI | Bedre UX i Chainlit | Inkrementell tilbakemelding | Bruk `stream=True` når lokal strømming er eksponert; akkumulere biter |
 | WebGPU-caching | Raskere JS-initiering | Redusere omkompileringskostnader | Cache kompilerte shader-artefakter (fremtidig runtime-funksjonalitet) |
-| Deterministisk QA-sett | Rettferdig modell-sammenligning | Fjern variasjon | Fast prompt-liste + `temperature=0` for evalueringskjøringer |
+| Deterministisk QA-sett | Rettferdig modell-sammenligning | Fjern variasjon | Fast promptliste + `temperature=0` for evalueringskjøringer |
 | Output-vurdering | Strukturert kvalitetslinse | Gå utover anekdoter | Enkel rubrikk: sammenheng / faktualitet / korthet (1–5) |
-| Energi / ressursnotater | Klassediskusjon | Vise avveininger | Bruk OS-monitorer (`foundry system info`, Oppgavebehandling, `nvidia-smi`) + benchmark-skriptutganger |
-| Kostnadsemulering | Begrunnelse før skyen | Planlegg skalering | Kartlegg tokens til hypotetisk skyprissetting for TCO-narrativ |
-| Latensdekomponering | Identifisere flaskehalser | Målrettede optimaliseringer | Mål prompt-forberedelse, forespørselssending, første token, fullføring |
-| RAG + LLM fallback | Kvalitetssikkerhetsnett | Forbedre vanskelige spørsmål | Hvis SLM-svarlengde < terskel eller lav tillit → eskaler |
+| Energi / ressursnotater | Klassediskusjon | Vise avveininger | Bruk OS-monitorer (Oppgavebehandling, `nvidia-smi`) + benchmark-skriptutganger |
+| Kostnadsemulering | Pre-skybegrunnelse | Planlegg skalering | Kartlegg tokens til hypotetisk skyprissetting for TCO-narrativ |
+| Forsinkelsesdekomponering | Identifisere flaskehalser | Målrettede optimaliseringer | Mål promptforberedelse, forespørselssending, første token, fullføring |
+| RAG + LLM-fallback | Kvalitetssikkerhetsnett | Forbedre vanskelige spørsmål | Hvis SLM-svarlengde < terskel eller lav tillit → eskaler |
 
 #### Eksempel på hybrid utkast/finjusteringsmønster
 
@@ -265,7 +255,7 @@ draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], ma
 refine, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Improve clarity but keep facts:\n{draft}"}], max_tokens=220, temperature=0.3)
 ```
 
-#### Skisse for latensnedbrytning
+#### Skisse for forsinkelsesnedbrytning
 
 ```python
 import time
@@ -280,5 +270,7 @@ Bruk konsistent målingsrammeverk på tvers av modeller for rettferdige sammenli
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

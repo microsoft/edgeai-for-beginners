@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:02:07+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:11:01+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "th"
 }
@@ -37,11 +37,11 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 01 | `chat_bootstrap.py` | แชทพื้นฐาน + สตรีมมิ่ง | ~30 วินาที |
 | 02 | `rag_pipeline.py` | RAG พร้อม embeddings | ~45 วินาที |
 | 02 | `rag_eval_ragas.py` | การประเมิน RAG | ~60 วินาที |
-| 03 | `benchmark_oss_models.py` | การเปรียบเทียบประสิทธิภาพโมเดล | ~2 นาที |
+| 03 | `benchmark_oss_models.py` | การวัดประสิทธิภาพโมเดล | ~2 นาที |
 | 04 | `model_compare.py` | SLM เทียบกับ LLM | ~45 วินาที |
-| 05 | `agents_orchestrator.py` | ระบบหลายตัวแทน | ~60 วินาที |
-| 06 | `models_router.py` | การจัดเส้นทางตามเจตนา | ~45 วินาที |
-| 06 | `models_pipeline.py` | การประมวลผลหลายขั้นตอน | ~60 วินาที |
+| 05 | `agents_orchestrator.py` | ระบบหลายเอเจนต์ | ~60 วินาที |
+| 06 | `models_router.py` | การจัดการเจตนา | ~45 วินาที |
+| 06 | `models_pipeline.py` | การทำงานแบบหลายขั้นตอน | ~60 วินาที |
 
 ---
 
@@ -200,7 +200,7 @@ for chunk in stream:
 | `qwen2.5-coder-0.5b` | 0.5B | การสร้างโค้ดอย่างรวดเร็ว | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | การเขียนเชิงสร้างสรรค์ | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | โค้ด, การปรับปรุงโค้ด | ⚡⚡ |
-| `phi-4-mini` | 4B | ทั่วไป, สรุป | ⚡⚡ |
+| `phi-4-mini` | 4B | การใช้งานทั่วไป, สรุป | ⚡⚡ |
 | `qwen2.5-7b` | 7B | การวิเคราะห์ที่ซับซ้อน | ⚡ |
 
 ---
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **เอกสาร SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **อ้างอิงด่วน**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **สรุปการอัปเดต**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **หมายเหตุการย้าย**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -218,9 +216,9 @@ for chunk in stream:
 
 1. **แคช Client**: `workshop_utils` จะช่วยแคชให้คุณ
 2. **ใช้โมเดลขนาดเล็ก**: เริ่มต้นด้วย `qwen2.5-0.5b` สำหรับการทดสอบ
-3. **เปิดใช้งานสถิติการใช้งาน**: ตั้งค่า `SHOW_USAGE=1` เพื่อดูการใช้โทเค็น
+3. **เปิดการติดตามการใช้งาน**: ตั้งค่า `SHOW_USAGE=1` เพื่อดูการใช้โทเค็น
 4. **การประมวลผลแบบแบทช์**: ประมวลผลคำถามหลายคำถามต่อเนื่องกัน
-5. **ลด max_tokens**: ลดเวลาในการตอบกลับให้เร็วขึ้น
+5. **ลด max_tokens**: ลดเวลาในการตอบกลับสำหรับคำตอบที่รวดเร็ว
 
 ---
 
@@ -232,7 +230,7 @@ python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### เปรียบเทียบประสิทธิภาพโมเดล
+### วัดประสิทธิภาพโมเดล
 ```bash
 cd samples
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
@@ -247,7 +245,7 @@ set RAG_QUESTION="What is RAG?"
 python -m session02.rag_pipeline
 ```
 
-### ระบบหลายตัวแทน
+### ระบบหลายเอเจนต์
 ```bash
 cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามืออาชีพ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

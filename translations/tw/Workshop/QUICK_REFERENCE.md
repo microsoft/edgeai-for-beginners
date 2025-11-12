@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T20:50:08+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T22:05:08+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "tw"
 }
 -->
 # 工作坊範例 - 快速參考卡
 
-**最後更新**：2025年10月8日
+**最後更新**: 2025年10月8日
 
 ---
 
@@ -207,20 +207,18 @@ for chunk in stream:
 
 ## 🔗 資源
 
-- **SDK 文件**：https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **快速參考**：`Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **更新摘要**：`Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **遷移說明**：`Workshop/SDK_MIGRATION_NOTES.md`
+- **SDK 文件**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **快速參考**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 
 ---
 
 ## 💡 提示
 
-1. **緩存客戶端**：`workshop_utils` 為您緩存
-2. **使用較小模型**：測試時從 `qwen2.5-0.5b` 開始
-3. **啟用使用統計**：設置 `SHOW_USAGE=1` 以追蹤 token 使用情況
-4. **批量處理**：順序處理多個提示
-5. **降低 max_tokens**：減少延遲以獲得快速響應
+1. **緩存客戶端**: `workshop_utils` 為您緩存
+2. **使用較小的模型**: 測試時先使用 `qwen2.5-0.5b`
+3. **啟用使用統計**: 設置 `SHOW_USAGE=1` 以追蹤 token 使用情況
+4. **批量處理**: 依次處理多個提示
+5. **降低 max_tokens**: 減少延遲以獲得快速響應
 
 ---
 
@@ -256,16 +254,18 @@ python -m session05.agents_orchestrator
 
 ---
 
-**快速幫助**：從 `samples` 目錄運行任何範例並使用 `--help`，或查看文檔字符串：
+**快速幫助**: 從 `samples` 目錄運行任何範例並使用 `--help`，或查看文檔字符串:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**所有範例已於2025年10月更新，符合 Foundry Local SDK 最佳實踐** ✨
+**所有範例已於2025年10月更新，採用 Foundry Local SDK 最佳實踐** ✨
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或誤釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或誤釋不承擔責任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

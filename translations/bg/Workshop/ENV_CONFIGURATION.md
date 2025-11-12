@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T23:14:10+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-12T00:22:42+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "bg"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Общ преглед
 
-Примерите от Workshop използват променливи на средата за конфигурация, централизирани в `.env` файла в корена на хранилището. Това позволява лесно персонализиране без промяна на кода.
+Примерите от Workshop използват променливи на средата за конфигурация, централизирани в `.env` файла в основната директория на хранилището. Това позволява лесна персонализация без промяна на кода.
 
 ## Бърз старт
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. Конфигурирайте средата
 
-Файлът `.env` вече е конфигуриран с разумни настройки по подразбиране. Повечето потребители няма да имат нужда да променят нищо.
+Файлът `.env` вече е конфигуриран с разумни настройки по подразбиране. Повечето потребители няма да се нуждаят от промени.
 
 **По избор**: Прегледайте и персонализирайте настройките:
 ```bash
@@ -67,7 +67,7 @@ python -m session01.chat_bootstrap "Your question here"
 **Кога да зададете FOUNDRY_LOCAL_ENDPOINT:**
 - Отдалечен Foundry Local инстанс
 - Персонализирана конфигурация на порт
-- Разделяне на разработка/производство
+- Разделение между разработка и продукция
 
 **Пример:**
 ```bash
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Настройка за производство (фокус върху качеството)
+### Настройка за продукция (фокус върху качеството)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -178,7 +178,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### Според налични ресурси
 
-**Малко ресурси (< 8GB RAM):**
+**Ниски ресурси (< 8GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
@@ -259,7 +259,7 @@ dir .env     # Windows
 pwd  # Should be in Workshop or repository root
 ```
 
-### Проблеми със свързване към услугата
+### Проблеми със свързването към услугата
 
 **Симптоми:**
 - Грешки "Connection refused"
@@ -340,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Тест на връзката с Foundry Local
+### Тест за връзка с Foundry Local
 
 ```python
 # test_connection.py
@@ -403,21 +403,22 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Основно хранилище**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API документация**: Проверете хранилището на SDK за най-новата информация
+- **API документация**: Проверете хранилището на SDK за най-новата версия
 
 ## Допълнителни ресурси
 
 - `QUICK_START.md` - Ръководство за започване
-- `SDK_MIGRATION_NOTES.md` - Детайли за актуализация на SDK
 - `Workshop/samples/*/README.md` - Ръководства, специфични за примерите
 
 ---
 
-**Последна актуализация**: 2025-01-08  
+**Последно обновяване**: 2025-01-08  
 **Версия**: 2.0  
 **SDK**: Foundry Local Python SDK (най-новата)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Отказ от отговорност**:  
 Този документ е преведен с помощта на AI услуга за превод [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи може да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да било недоразумения или погрешни интерпретации, произтичащи от използването на този превод.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

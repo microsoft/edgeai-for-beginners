@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-11-11T17:40:54+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-12T01:08:39+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "pcm"
 }
@@ -11,24 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstract
 
-Learn how to carry Hugging Face and other open-source models enter Foundry Local. You go sabi how to choose models, contribute to community workflows, compare performance, and extend Foundry with custom model registrations. Dis session dey follow weekly "Model Mondays" exploration themes and e go help you evaluate and use open-source models locally before you scale am go Azure.
+Learn how to carry Hugging Face and other open-source models enter Foundry Local. You go sabi how to choose models, contribute to community workflows, compare performance, and extend Foundry with custom model registrations. Dis session dey follow di weekly "Model Mondays" exploration themes and e go help you test and use open-source models locally before you scale am go Azure.
 
 ## Learning Objectives
 
-By the time we finish, you go fit:
+By di end you go fit:
 
 - **Discover & Evaluate**: Find models wey fit (mistral, gemma, qwen, deepseek) based on quality vs resource trade-offs.
-- **Load & Run**: Use Foundry Local CLI to download, cache, and run community models.
+- **Load & Run**: Use Foundry Local CLI to download, keep, and run community models.
 - **Benchmark**: Use consistent latency + token throughput + quality heuristics.
-- **Extend**: Register or adapt custom model wrapper wey follow SDK-compatible patterns.
+- **Extend**: Register or change custom model wrapper wey follow SDK-compatible patterns.
 - **Compare**: Create structured comparisons for SLM vs mid-size LLM selection decisions.
 
 ## Prerequisites
 
 - You don complete Sessions 1 & 2
 - Python environment wey get `foundry-local-sdk` installed
-- At least 15GB free disk space for model caches
-- Optional: GPU/WebGPU acceleration enabled (`foundry config list`)
+- At least 15GB free disk space for plenty model caches
 
 ### Cross-Platform Environment Quick Start
 
@@ -158,15 +157,15 @@ python samples/03-oss-models/benchmark_models.py
 
 ### 4. Compare Performance (5 min)
 
-Talk about trade-offs: load time, memory footprint (check Task Manager / `nvidia-smi` / OS resource monitor), output quality vs speed. Use Python benchmark script (Session 3) for latency & throughput; repeat after GPU acceleration dey enabled.
+Talk about di trade-offs: load time, memory footprint (check Task Manager / `nvidia-smi` / OS resource monitor), output quality vs speed. Use di Python benchmark script (Session 3) for latency & throughput; repeat am after you enable GPU acceleration.
 
 ### 5. Starter Project (4 min)
 
-Create model comparison report generator (extend benchmarking script with markdown export).
+Create model comparison report generator (add markdown export to di benchmarking script).
 
 ## Starter Project: Extend `03-huggingface-models`
 
-Make the sample better by:
+Make di sample better by:
 
 1. Adding benchmark aggregation + CSV/Markdown output.
 2. Adding simple qualitative scoring (prompt pair set + manual annotation stub file).
@@ -180,17 +179,17 @@ foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
 
-All target models suppose show and respond to probe chat request.
+All di target models suppose show and respond to probe chat request.
 
 ## Sample Scenario & Workshop Mapping
 
 | Workshop Script | Scenario | Goal | Prompt / Dataset Source |
 |-----------------|----------|------|-------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge platform team dey choose default SLM for embedded summarizer | Create latency + p95 + tokens/sec comparison across candidate models | Inline `PROMPT` var + environment `BENCH_MODELS` list |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge platform team dey choose default SLM for embedded summarizer | Create latency + p95 + tokens/sec comparison for di candidate models | Inline `PROMPT` var + environment `BENCH_MODELS` list |
 
 ### Scenario Narrative
 
-Product engineering team need choose default lightweight summarization model for offline meeting-notes feature. Dem dey run controlled deterministic benchmarks (temperature=0) across fixed prompt set (see example below) and collect latency + throughput metrics with and without GPU acceleration.
+Product engineering team need to choose default lightweight summarization model for offline meeting-notes feature. Dem dey run controlled deterministic benchmarks (temperature=0) across fixed prompt set (check example below) and collect latency + throughput metrics with and without GPU acceleration.
 
 ### Example Prompt Set JSON (expandable)
 
@@ -229,7 +228,7 @@ class CustomModelAdapter:
 # Register with local routing (future extensibility point)
 ```
 
-Check official repo for latest adapter interfaces:
+Check di official repo for di latest adapter interfaces:
 https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ## Troubleshooting
@@ -237,8 +236,8 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 | Issue | Cause | Fix |
 |-------|-------|-----|
 | OOM on mistral-7b | RAM/GPU no reach | Stop other models; try smaller variant |
-| Slow first response | Cold load | Keep warm with periodic lightweight prompt |
-| Download stalls | Network problem | Retry; prefetch during off-peak |
+| Slow first response | Cold load | Keep am warm with small lightweight prompt |
+| Download stalls | Network no stable | Retry; prefetch during off-peak |
 
 ## References
 
@@ -285,11 +284,11 @@ with open("benchmark_report.md", "w") as f:
 ]
 ```
 
-Loop the static list instead of random prompts for comparable metrics across commits.
+Loop di static list instead of random prompts for comparable metrics across commits.
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dis dokyument don use AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am accurate, abeg make you sabi say machine translation fit get mistake or no dey correct well. Di original dokyument wey dey for im native language na di main source wey you go fit trust. For important information, e good make professional human translation dey use. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
+Dis dokyument don use AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am accurate, abeg sabi say automated translations fit get mistake or no dey correct well. Di original dokyument for im native language na di main source wey you go fit trust. For important information, e better make professional human translation dey use. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

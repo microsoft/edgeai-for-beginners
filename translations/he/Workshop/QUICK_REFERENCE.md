@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:29:59+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:38:32+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "he"
 }
 -->
 # דף עזר מהיר - דוגמאות לסדנה
 
-**עדכון אחרון**: 8 באוקטובר, 2025
+**עודכן לאחרונה**: 8 באוקטובר, 2025
 
 ---
 
@@ -33,7 +33,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 ## 📂 סקירת דוגמאות
 
 | מפגש | דוגמה | מטרה | זמן |
-|------|-------|-------|------|
+|------|-------|------|-----|
 | 01 | `chat_bootstrap.py` | צ'אט בסיסי + סטרימינג | ~30 שניות |
 | 02 | `rag_pipeline.py` | RAG עם הטמעות | ~45 שניות |
 | 02 | `rag_eval_ragas.py` | הערכת RAG | ~60 שניות |
@@ -84,7 +84,7 @@ set PIPELINE_TASK="Your task here"
 
 ---
 
-## ✅ אימות ובדיקות
+## ✅ אימות ובדיקה
 
 ```bash
 # Validate syntax and imports
@@ -102,7 +102,7 @@ python scripts/test_samples.py --verbose
 
 ---
 
-## 🐛 פתרון בעיות
+## 🐛 פתרון תקלות
 
 ### שגיאת חיבור
 ```bash
@@ -199,7 +199,7 @@ for chunk in stream:
 | `qwen2.5-0.5b` | 0.5B | סיווג מהיר | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | יצירת קוד מהירה | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | כתיבה יצירתית | ⚡⚡ |
-| `phi-3.5-mini` | 3.5B | קוד, שכתוב | ⚡⚡ |
+| `phi-3.5-mini` | 3.5B | קוד, שיפוץ | ⚡⚡ |
 | `phi-4-mini` | 4B | כללי, סיכום | ⚡⚡ |
 | `qwen2.5-7b` | 7B | חשיבה מורכבת | ⚡ |
 
@@ -208,9 +208,7 @@ for chunk in stream:
 ## 🔗 משאבים
 
 - **מסמכי SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **דף עזר מהיר**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **סיכום עדכונים**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **הערות מעבר**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **עזר מהיר**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 
 ---
 
@@ -256,16 +254,18 @@ python -m session05.agents_orchestrator
 
 ---
 
-**עזרה מהירה**: הרץ כל דוגמה עם `--help` מתוך ספריית `samples` או בדוק את תיאור הפונקציה:
+**עזרה מהירה**: הרץ כל דוגמה עם `--help` מתוך תיקיית `samples` או בדוק את תיאור הפונקציה:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**כל הדוגמאות עודכנו באוקטובר 2025 עם שיטות העבודה הטובות ביותר של Foundry Local SDK** ✨
+**כל הדוגמאות עודכנו באוקטובר 2025 עם שיטות עבודה מומלצות של Foundry Local SDK** ✨
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **הצהרת אחריות**:  
-מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. איננו אחראים לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. אנו לא נושאים באחריות לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

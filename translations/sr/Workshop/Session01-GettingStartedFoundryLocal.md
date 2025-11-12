@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "85fa559f498492b79de04e391c33687b",
-  "translation_date": "2025-10-28T23:20:28+00:00",
+  "original_hash": "8c30436578b1bd604c48233ecdd39701",
+  "translation_date": "2025-11-12T00:27:55+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "sr"
 }
@@ -11,458 +11,421 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Апстракт
 
-Започните своје путовање са Foundry Local инсталирањем и конфигурисањем на Windows 11. Научите како да подесите CLI, омогућите хардверско убрзање и кеширате моделе за брзу локалну инференцију. Ова практична сесија вас води кроз покретање модела као што су Phi, Qwen, DeepSeek и GPT-OSS-20B користећи репродуктивне CLI команде.
+Научите како да инсталирате, конфигуришете и покренете своје прве AI моделе користећи Microsoft Foundry Local. Ова практична сесија пружа корак-по-корак увод у локалну инференцију, од инсталације до креирања ваше прве апликације за ћаскање користећи моделе као што су Phi-4, Qwen и DeepSeek.
 
 ## Циљеви учења
 
 На крају ове сесије, моћи ћете:
 
-- **Инсталирати и конфигурисати**: Поставити Foundry Local на Windows 11 са оптималним подешавањима перформанси
+- **Инсталирати и конфигурисати**: Поставити Foundry Local уз правилну проверу инсталације
 - **Овладати CLI операцијама**: Користити Foundry Local CLI за управљање моделима и њихово покретање
-- **Омогућити хардверско убрзање**: Конфигурисати GPU убрзање са ONNXRuntime или WebGPU
-- **Покренути више модела**: Локално покренути моделе phi-4, GPT-OSS-20B, Qwen и DeepSeek
-- **Направити своју прву апликацију**: Прилагодити постојеће примере за коришћење Foundry Local Python SDK-а
+- **Покренути свој први модел**: Успешно покренути и интерактивно радити са локалним AI моделом
+- **Направити апликацију за ћаскање**: Креирати основну апликацију за ћаскање користећи Foundry Local Python SDK
+- **Разумети локални AI**: Схватити основе локалне инференције и управљања моделима
 
-# Тестирање модела (неинтерактивни једноставни упит)
-foundry model run phi-4-mini --prompt "Здраво, представи се"
+## Предуслови
 
-- Windows 11 (22H2 или новији)
-# Листа доступних модела из каталога (учитани модели се појављују након покретања)
-foundry model list
-## NOTE: Тренутно не постоји посебна ознака `--running`; да бисте видели који су учитани, покрените чет или прегледајте логове сервиса.
-- Инсталиран Python 3.10+
-- Visual Studio Code са Python екстензијом
-- Администраторске привилегије за инсталацију
+### Захтеви система
 
-### (Опционо) Променљиве окружења
+- **Windows**: Windows 11 (22H2 или новији) ИЛИ **macOS**: macOS 11+ (ограничена подршка)
+- **RAM**: Минимум 8GB, препоручено 16GB+
+- **Складиште**: 10GB+ слободног простора за моделе
+- **Python**: Инсталиран 3.10 или новији
+- **Администраторски приступ**: Привилегије администратора за инсталацију
 
-Направите `.env` (или поставите у shell) да би скрипте биле преносиве:
-# Поређење одговора (неинтерактивно)
-foundry model run gpt-oss-20b --prompt "Објасни edge AI једноставним речима"
-| Променљива | Сврха | Пример |
-|------------|-------|--------|
-| `FOUNDRY_LOCAL_ALIAS` | Преферирани алијас модела (каталог аутоматски бира најбољу варијанту) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | Замена за подразумевани endpoint (иначе аутоматски из менаџера) | `http://localhost:5273/v1` |
-| `FOUNDRY_LOCAL_STREAM` | Омогућава демонстрацију стриминга | `true` |
+### Развојно окружење
 
-> Ако је `FOUNDRY_LOCAL_ENDPOINT=auto` (или није постављен), изводимо га из SDK менаџера.
+- Visual Studio Code са Python екстензијом (препоручено)
+- Приступ командној линији (PowerShell на Windows-у, Terminal на macOS-у)
+- Git за клонирање репозиторијума (опционо)
 
-## Демонстрациони ток (30 минута)
+## Ток радионице (30 минута)
 
-### 1. Инсталирање Foundry Local и провера CLI подешавања (10 минута)
+### Корак 1: Инсталирање Foundry Local (5 минута)
 
-# Листа кешираних модела
-foundry cache list
+#### Инсталација на Windows-у
+
+Инсталирајте Foundry Local користећи Windows пакет менаџер:
 
 ```powershell
 # Install via winget (recommended)
 winget install Microsoft.FoundryLocal
-
-# Or download from Microsoft Learn
-# https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
 
-**macOS (Преглед / Ако је подржано)**
+Алтернатива: Преузмите директно са [Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 
-Ако је доступан изворни macOS пакет (проверите званичну документацију за најновије):
+#### Инсталација на macOS-у (ограничена подршка)
+
+> [!NOTE] 
+> Подршка за macOS је тренутно у прегледу. Проверите званичну документацију за најновије информације.
+
+Ако је доступно, инсталирајте користећи Homebrew:
 
 ```bash
-# Homebrew (if/when available)
+# If Homebrew formula is available
 brew update
-brew install foundry-local  # hypothetical formula name
+brew install foundry-local
 
-# Or manual download (tarball)
+# Or manual download (check official docs for latest)
 curl -L -o foundry-local.tar.gz "https://download.microsoft.com/foundry-local/latest/macos/foundry-local.tar.gz"
 tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Ако изворни macOS бинарни фајлови још нису доступни, можете:
-1. Користити Windows 11 ARM/Intel VM (Parallels / UTM) и следити кораке за Windows.
-2. Покренути моделе преко контејнера (ако је објављена слика контејнера) и поставити `FOUNDRY_LOCAL_ENDPOINT` на изложени порт.
+**Алтернатива за кориснике macOS-а:**
+- Користите Windows 11 VM (Parallels/UTM) и следите кораке за Windows
+- Покрените преко контејнера ако је доступно и конфигуришите `FOUNDRY_LOCAL_ENDPOINT`
 
-**Креирање Python виртуелног окружења (Cross‑Platform)**
+### Корак 2: Провера инсталације (3 минута)
 
-Windows PowerShell:
-```powershell
-py -m venv .venv
- .\.venv\Scripts\Activate.ps1
-```
-
-macOS / Linux:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-Ажурирајте pip и инсталирајте основне зависности:
-```bash
-python -m pip install --upgrade pip
-pip install foundry-local-sdk openai
-```
-
-#### Корак 1.2: Провера инсталације
+Након инсталације, поново покрените терминал и проверите да ли Foundry Local ради:
 
 ```powershell
-# Check version
+# Check if Foundry Local is installed correctly
 foundry --version
-
-# Initialize configuration
-foundry init
 
 # View available commands
 foundry --help
 ```
 
-#### Корак 1.3: Конфигурисање окружења
+Очекујани излаз треба да приказује информације о верзији и доступне команде.
 
+### Корак 3: Постављање Python окружења (5 минута)
+
+Креирајте посебно Python окружење за ову радионицу:
+
+**Windows:**
 ```powershell
-# Set up Python environment for Module08
-cd Module08
+# Create virtual environment
 py -m venv .venv
-.\.venv\Scripts\activate
 
-# Install Foundry Local Python SDK and dependencies
-pip install foundry-local-sdk openai requests
+# Activate environment
+.\.venv\Scripts\Activate.ps1
+
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-### SDK Bootstrapping (Препоручено)
+**macOS/Linux:**
+```bash
+# Create virtual environment
+python3 -m venv .venv
 
-Уместо ручног покретања сервиса и модела, **Foundry Local Python SDK** може аутоматски покренути све:
+# Activate environment
+source .venv/bin/activate
 
-```python
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
-
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-
-# Bootstraps service + downloads + loads most suitable variant for hardware
-manager = FoundryLocalManager(alias)
-
-print("Service running:", manager.is_service_running())
-print("Endpoint:", manager.endpoint)
-print("Cached models:", manager.list_cached_models())
-
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
-
-resp = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[
-        {"role": "system", "content": "You are a helpful local assistant."},
-        {"role": "user", "content": "Hello"}
-    ],
-    max_tokens=120,
-    temperature=0.5
-)
-print(resp.choices[0].message.content)
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-Ако више волите експлицитну контролу, можете и даље користити CLI + OpenAI клијент као што је приказано касније.
+### Корак 4: Покрените свој први модел (7 минута)
 
-### 2. Локално покретање модела преко CLI (10 минута)
+Сада покренимо наш први AI модел локално!
 
-#### Корак 3.1: Деплој Phi-4 модела
+#### Почетак са Phi-4 Mini (препоручени први модел)
 
 ```powershell
-# Download and run phi-4-mini
+# Download and start phi-4-mini (lightweight, fast)
 foundry model run phi-4-mini
 
-# Test the model (one-shot prompt)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
-
-# NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
+# Test the model with a simple prompt
+foundry model run phi-4-mini --prompt "Hello, introduce yourself in one sentence"
 ```
 
-#### Корак 3.2: Деплој GPT-OSS-20B
+> [!TIP]
+> Ова команда преузима модел (први пут) и аутоматски покреће Foundry Local сервис.
+
+#### Провера шта је покренуто
 
 ```powershell
-# Download and run GPT-OSS-20B
-foundry model run gpt-oss-20b
+# List available models (shows downloaded models)
+foundry model list
 
-# Compare responses (one-shot prompt)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-```
+# Check service status
+foundry service status
 
-#### Корак 3.3: Учитавање додатних модела
-
-```powershell
-# Download Qwen model family
-foundry model download qwen2.5-0.5b
-foundry model download qwen2.5-7b
-
-# Download DeepSeek models
-foundry model download deepseek-coder-1.3b
-
-# List cached models
+# See what models are cached locally
 foundry cache list
 ```
 
-### 4. Почетни пројекат: Прилагођавање 01-run-phi за Foundry Local (5 минута)
+#### Испробајте различите моделе
 
-#### Корак 4.1: Креирање основне чет апликације
+Када phi-4-mini ради, експериментишите са другим моделима:
 
-Направите `samples/01-foundry-quickstart/chat_quickstart.py` (ажурирано за коришћење менаџера ако је доступан):
+```powershell
+# Larger model with better capabilities
+foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
+
+# Fast, efficient model
+foundry model run qwen2.5-0.5b --prompt "What are the benefits of local AI inference?"
+```
+
+### Корак 5: Направите своју прву апликацију за ћаскање (10 минута)
+
+Сада ћемо креирати Python апликацију која користи моделе које смо управо покренули.
+
+#### Креирање скрипте за ћаскање
+
+Креирајте нову датотеку под називом `my_first_chat.py` (или користите обезбеђени пример):
 
 ```python
 #!/usr/bin/env python3
 """
-Foundry Local Chat Quickstart
-Demo: Basic chat interaction using Foundry Local Python SDK
-Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python
+My First Foundry Local Chat Application
+Using FoundryLocalManager for automatic service management
 """
 
-import os, sys
+import os
+from foundry_local import FoundryLocalManager
 from openai import OpenAI
-try:
-    from foundry_local import FoundryLocalManager  # control-plane SDK
-except ImportError:
-    FoundryLocalManager = None
 
 def main():
-    """Main chat function using Foundry Local SDK"""
-    
-    # Preferred: bootstrap via SDK manager (auto start + download + load)
-    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-    if FoundryLocalManager:
-        manager = FoundryLocalManager(alias)
-        endpoint = manager.endpoint
-        model_id = manager.get_model_info(alias).id
-        api_key = manager.api_key or "not-needed"
-    else:
-        # Fallback: assume default endpoint & alias already running via CLI
-        endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT", "http://localhost:5273/v1")
-        model_id = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
-        api_key = "not-needed"
-
-    client = OpenAI(base_url=endpoint, api_key=api_key)
-    
-    # Get user input
-    if len(sys.argv) > 1:
-        user_message = " ".join(sys.argv[1:])
-    else:
-        user_message = input("Enter your message: ")
+    # Get model alias from environment or use default
+    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
     
     try:
-        # Make chat completion request
-        response = client.chat.completions.create(
-            model=model_id,
-            messages=[
-                {"role": "system", "content": "You are a helpful AI assistant powered by Microsoft Foundry Local."},
-                {"role": "user", "content": user_message}
-            ],
-            max_tokens=500,
-            temperature=0.7
+        # Initialize Foundry Local Manager (auto-starts service, downloads model)
+        manager = FoundryLocalManager(alias)
+        
+        # Create OpenAI client pointing to local endpoint
+        client = OpenAI(
+            base_url=manager.endpoint,
+            api_key=manager.api_key or "not-needed"
         )
         
-        # Display response
-        print(f"\nModel: {response.model}")
-        print(f"Response: {response.choices[0].message.content}")
-        print(f"Tokens used: {response.usage.total_tokens if response.usage else 'N/A'}")
+        # Get the actual model ID for this alias
+        model_id = manager.get_model_info(alias).id
+        
+        print("🤖 Welcome to your first local AI chat!")
+        print(f"� Using model: {alias} -> {model_id}")
+        print(f"🌐 Endpoint: {manager.endpoint}")
+        print("�💡 Type 'quit' to exit\n")
         
     except Exception as e:
-        print(f"Error: {e}")
-        print("\nTroubleshooting:")
-    print("1. Ensure Foundry Local is running: foundry status")
-    print("2. List models: foundry model list")
-    print(f"3. Start model if needed: foundry model run {model_id}")
-    print("4. Or let SDK bootstrap: pip install foundry-local-sdk")
+        print(f"❌ Failed to initialize Foundry Local: {e}")
+        print("💡 Make sure Foundry Local is installed: foundry --version")
+        return
+    
+    while True:
+        # Get user input
+        user_message = input("You: ").strip()
+        
+        if user_message.lower() in ['quit', 'exit', 'bye']:
+            print("👋 Goodbye!")
+            break
+            
+        if not user_message:
+            continue
+            
+        try:
+            # Send message to local AI model
+            response = client.chat.completions.create(
+                model=model_id,
+                messages=[
+                    {"role": "system", "content": "You are a helpful AI assistant running locally."},
+                    {"role": "user", "content": user_message}
+                ],
+                max_tokens=200,
+                temperature=0.7
+            )
+            
+            # Display the response
+            ai_response = response.choices[0].message.content
+            print(f"🤖 AI: {ai_response}\n")
+            
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            print("💡 Check service status: foundry service status\n")
 
 if __name__ == "__main__":
     main()
 ```
 
-#### Корак 4.2: Тестирање апликације
+> [!TIP]
+> **Повезани примери**: За напредније коришћење, погледајте:
+>
+> - **Python пример**: `Workshop/samples/session01/chat_bootstrap.py` - Укључује стриминг одговора и руковање грешкама
+> - **Jupyter Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - Интерактивна верзија са детаљним објашњењима
+
+#### Тестирање ваше апликације за ћаскање
 
 ```powershell
-# Ensure phi-4-mini is running
-foundry model run phi-4-mini
-
-# Run the quickstart app
-python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Foundry Local?"
-
-# Try interactive mode
-python samples/01-foundry-quickstart/chat_quickstart.py
+# No need to manually start models - FoundryLocalManager handles this!
+# Just run your chat application
+python my_first_chat.py
 ```
 
-## Кључни концепти
-
-### 1. Архитектура Foundry Local
-
-- **Локални инференцијски мотор**: Покреће моделе у потпуности на вашем уређају
-- **Компатибилност са OpenAI SDK-ом**: Лака интеграција са постојећим OpenAI кодом
-- **Управљање моделима**: Преузимање, кеширање и ефикасно покретање више модела
-- **Оптимизација хардвера**: Искористите GPU, NPU и CPU убрзање
-
-### 2. Референца за CLI команде
+Алтернатива: Користите директно обезбеђене примере
 
 ```powershell
-# Core Commands
+# Try the complete sample with streaming support
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
+```
+
+Или истражите интерактивни нотебук  
+Отворите Workshop/notebooks/session01_chat_bootstrap.ipynb у VS Code-у
+
+Испробајте ове пример разговоре:
+
+- "Шта је Microsoft Foundry Local?"
+- "Наведи 3 предности покретања AI модела локално"
+- "Помози ми да разумем edge AI"
+
+## Шта сте постигли
+
+Честитамо! Успешно сте:
+
+1. ✅ **Инсталирали Foundry Local** и проверили његово функционисање
+2. ✅ **Покренули свој први AI модел** (phi-4-mini) локално
+3. ✅ **Тестирали различите моделе** преко командне линије
+4. ✅ **Направили апликацију за ћаскање** која се повезује са вашим локалним AI
+5. ✅ **Искусили локалну AI инференцију** без зависности од облака
+
+## Разумевање шта се догодило
+
+### Локална AI инференција
+
+- Ваши AI модели раде у потпуности на вашем рачунару
+- Нема слања података у облак
+- Одговори се генеришу локално користећи ваш CPU/GPU
+- Приватност и безбедност су очувани
+
+### Управљање моделима
+
+- `foundry model run` преузима и покреће моделе
+- **FoundryLocalManager SDK** аутоматски управља покретањем сервиса и учитавањем модела
+- Модели се кеширају локално за будућу употребу
+- Више модела може бити преузето, али обично се један покреће у исто време
+- Сервис аутоматски управља животним циклусом модела
+
+### SDK vs CLI приступи
+
+- **CLI приступ**: Ручно управљање моделима са `foundry model run <model>`
+- **SDK приступ**: Аутоматско управљање сервисом и моделима са `FoundryLocalManager(alias)`
+- **Препорука**: Користите SDK за апликације, CLI за тестирање и истраживање
+
+## Референца за основне команде
+
+### Основне CLI команде
+
+```powershell
+# Installation & Setup
 foundry --version              # Check installation
+foundry --help                 # View all commands
+
 # Model Management
 foundry model list             # List available models
-foundry model unload <name>    # Unload from memory
+foundry model run <model>      # Download and start a model
+foundry model run <model> --prompt "text"  # One-shot prompt
+foundry cache list             # Show downloaded models
 
-foundry config list            # Current configuration
+# Service Management
+foundry service status         # Check if service is running
+foundry service start          # Start the service manually
+foundry service stop           # Stop the service
 ```
 
-### 3. Интеграција Python SDK-а
+### Препоруке за моделе
 
-```python
-# Basic client setup
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
+- **phi-4-mini**: Најбољи почетни модел - брз, лаган, добар квалитет
+- **qwen2.5-0.5b**: Најбржа инференција, минимална употреба меморије
+- **gpt-oss-20b**: Виши квалитет одговора, захтева више ресурса
+- **deepseek-coder-1.3b**: Оптимизован за програмирање и задатке кодирања
 
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-manager = FoundryLocalManager(alias)
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
+## Решавање проблема
 
-response = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Hello!"}],
-    max_tokens=50
-)
-print(response.choices[0].message.content)
-
-# Streaming example
-stream = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Give a 1-sentence definition of edge AI."}],
-    stream=True,
-    max_tokens=60,
-    temperature=0.4
-)
-for chunk in stream:
-    delta = chunk.choices[0].delta
-    if delta and delta.content:
-        print(delta.content, end="", flush=True)
-print()
-```
-
-## Решавање уобичајених проблема
-
-### Проблем 1: "Foundry команда није пронађена"
+### "Foundry команда није пронађена"
 
 **Решење:**
+
 ```powershell
-# Restart PowerShell after installation
-# Or manually add to PATH
+# Restart your terminal after installation
+# Or manually add to PATH (Windows)
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Проблем 2: "Модел није успео да се учита"
+### "Модел није успео да се учита"
 
 **Решење:**
-```powershell
-# Check available memory
-foundry system info
 
-# Try smaller model first
+```powershell
+# Check available system memory
+foundry service status
+
+# Try a smaller model first
 foundry model run phi-4-mini
 
-# Check disk space for model cache
-dir "$env:USERPROFILE\.foundry\models"
+# Check disk space for model downloads
+# Models are stored in: %USERPROFILE%\.foundry\models (Windows)
 ```
 
-### Проблем 3: "Веза одбијена на localhost:5273"
+### "Веза одбијена на localhost-у"
 
 **Решење:**
+
 ```powershell
 # Check if service is running
-foundry status
+foundry service status
 
 # Start service if needed
 foundry service start
 
-# Check for port conflicts
-netstat -an | findstr 5273
+# Verify the port (default is 5273)
+# Check for port conflicts with: netstat -an | findstr 5273
 ```
-
-## Савети за оптимизацију перформанси
-
-### 1. Стратегија избора модела
-
-- **Phi-4-mini**: Најбољи за опште задатке, мања потрошња меморије
-- **Qwen2.5-0.5b**: Најбржа инференција, минимални ресурси
-- **GPT-OSS-20B**: Највиши квалитет, захтева више ресурса
-- **DeepSeek-Coder**: Оптимизован за програмске задатке
-
-### 2. Оптимизација хардвера
-
-```powershell
-# Enable all acceleration options
-foundry config set compute.onnx.enable_gpu true
-foundry config set compute.webgpu.enabled true
-foundry config set compute.cpu.threads auto
-
-# Optimize memory usage
-foundry config set model.cache.max_size 10GB
-foundry config set model.preload false
-```
-
-### 3. Праћење перформанси
-
-```powershell
-cd Workshop/samples
-# Performance & latency measurement
-# Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
-# Example:
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python -m session03.benchmark_oss_models
-
-# Re-run after enabling GPU acceleration to compare:
-foundry config set compute.onnx.enable_gpu true
-python -m session03.benchmark_oss_models
-```
-
-### Опциона побољшања
-
-| Побољшање | Шта | Како |
-|-----------|-----|------|
-| Заједничке алатке | Уклоните дуплирану логику клијента/покретања | Користите `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Видљивост коришћења токена | Рано учење о трошковима/ефикасности | Поставите `SHOW_USAGE=1` да бисте приказали упит/завршетак/укупне токене |
-| Детерминистичка поређења | Стабилно тестирање и провера регресије | Користите `temperature=0`, `top_p=1`, конзистентан текст упита |
-| Латенција првог токена | Метрика перципиране одзивности | Прилагодите скрипту за тестирање са стримингом (`BENCH_STREAM=1`) |
-| Поновно покретање на привременим грешкама | Отпорне демонстрације при хладном старту | `RETRY_ON_FAIL=1` (подразумевано) и прилагодите `RETRY_BACKOFF` |
-| Smoke Testing | Брза провера кључних токова | Покрените `python Workshop/tests/smoke.py` пре радионице |
-| Профили алијаса модела | Брзо пребацивање између сетова модела на различитим машинама | Одржавајте `.env` са `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Ефикасност кеширања | Избегавајте поновљено загревање у више узорака | Алатке за кеширање менаџера; поновно коришћење у скриптама/бележницама |
-| Загревање при првом покретању | Смањите п95 латенцију | Покрените мали упит након креирања `FoundryLocalManager`
-
-Пример детерминистичке топле основе (PowerShell):
-
-```powershell
-set FOUNDRY_LOCAL_ALIAS=phi-4-mini
-set SHOW_USAGE=1
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference." | Out-Null
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
-```
-
-Требало би да видите сличан излаз и идентичан број токена при другом покретању, што потврђује детерминизам.
 
 ## Следећи кораци
 
-Након завршетка ове сесије:
+### Непосредне акције
 
-1. **Истражите Сесију 2**: Изградите AI решења са Azure AI Foundry RAG
-2. **Испробајте различите моделе**: Експериментишите са Qwen, DeepSeek и другим породицама модела
-3. **Оптимизујте перформансе**: Фино подесите поставке за ваш специфичан хардвер
-4. **Направите прилагођене апликације**: Користите Foundry Local SDK у својим пројектима
+1. **Експериментишите** са различитим моделима и упитима
+2. **Модификујте** своју апликацију за ћаскање да испробате различите моделе
+3. **Креирајте** своје упите и тестирајте одговоре
+4. **Истражите** Сесију 2: Креирање RAG апликација
+
+### Напредни пут учења
+
+1. **Сесија 2**: Креирање AI решења са RAG (Retrieval-Augmented Generation)
+2. **Сесија 3**: Поређење различитих open-source модела
+3. **Сесија 4**: Рад са најсавременијим моделима
+4. **Сесија 5**: Креирање мулти-агентских AI система
+
+## Енвиронмент променљиве (опционо)
+
+За напредније коришћење, можете поставити ове енвиронмент променљиве:
+
+| Променљива | Сврха | Пример |
+|------------|-------|--------|
+| `FOUNDRY_LOCAL_ALIAS` | Подразумевани модел за коришћење | `phi-4-mini` |
+| `FOUNDRY_LOCAL_ENDPOINT` | Замена URL-а за крајњу тачку | `http://localhost:5273/v1` |
+
+Креирајте `.env` датотеку у вашем директоријуму пројекта:
+```
+FOUNDRY_LOCAL_ALIAS=phi-4-mini
+FOUNDRY_LOCAL_ENDPOINT=auto
+```
 
 ## Додатни ресурси
 
 ### Документација
+
 - [Foundry Local Python SDK Reference](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Foundry Local Installation Guide](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 - [Model Catalog](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Пример кода
-- [Module08 Sample 01](./samples/01/README.md) - Брзи почетак са REST четом
-- [Module08 Sample 02](./samples/02/README.md) - Интеграција са OpenAI SDK-ом
-- [Module08 Sample 03](./samples/03/README.md) - Откривање модела и тестирање перформанси
+
+- **Session01 Python Sample**: `Workshop/samples/session01/chat_bootstrap.py` - Комплетна апликација за ћаскање са стримингом
+- **Session01 Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - Интерактивни туторијал  
+- [Module08 Sample 01](../Module08/samples/01/README.md) - Брзи почетак са REST Chat
+- [Module08 Sample 02](../Module08/samples/02/README.md) - Интеграција са OpenAI SDK
+- [Module08 Sample 03](../Module08/samples/03/README.md) - Откривање модела и бенчмаркинг
 
 ### Заједница
+
 - [Foundry Local GitHub Discussions](https://github.com/microsoft/Foundry-Local/discussions)
 - [Azure AI Community](https://techcommunity.microsoft.com/category/artificialintelligence)
 
@@ -470,30 +433,40 @@ python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits o
 
 **Трајање сесије**: 30 минута практично + 15 минута питања и одговори  
 **Ниво тежине**: Почетни  
-**Предуслови**: Windows 11, Python 3.10+, Администраторски приступ  
+**Предуслови**: Windows 11/macOS 11+, Python 3.10+, Администраторски приступ
 
-## Пример сценарија и мапирање радионице
+## Пример сценарија радионице
 
-| Скрипта радионице / Бележница | Сценарио | Циљ | Пример уноса | Потребан сет података |
-|-------------------------------|----------|-----|--------------|-----------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Интерни IT тим који процењује инференцију на уређају за портал процене приватности | Потврдите да локални SLM одговара унутар латенције мање од секунде на стандардне упите | "Наведи две предности локалне инференције." | Није потребан (једноставан упит) |
-| Кодни блок за адаптацију брзог почетка | Програмер који мигрира постојећу OpenAI скрипту на Foundry Local | Прикажи компатибилност без измена | "Наведи две предности локалне инференције." | Само унутрашњи упит |
+### Контекст из стварног живота
 
-### Наратив сценарија
-Тим за безбедност и усклађеност мора да потврди да ли се осетљиви прототипски подаци могу обрађивати локално. Они покрећу скрипту за покретање са неколико упита (приватност, латенција, трошкови) користећи детерминистички режим temperature=0 како би забележили основне излазе за касније поређење (тестирање перформанси у Сесији 3 и поређење SLM и LLM у Сесији 4).
+**Сценарио**: IT тим у компанији треба да процени AI инференцију на уређају за обраду осетљивих повратних информација запослених без слања података на екстерне сервисе.
 
-### Минимални JSON сет упита (опционо)
+**Ваш циљ**: Демонстрирати да локални AI модели могу пружити квалитетне одговоре са латенцијом мањом од једне секунде уз потпуно очување приватности података.
+
+### Тест упити
+
+Користите ове упите за валидацију вашег подешавања:
+
 ```json
 [
     "List two benefits of local inference.",
     "Summarize why keeping data on device improves privacy.",
-    "Give one trade‑off when choosing an SLM over a large model."
+    "Give one trade-off when choosing a small model over a large model."
 ]
 ```
 
-Користите ову листу за креирање репродуктивног циклуса процене или за иницијализацију будућег тестирања регресије.
+### Критеријуми успеха
+
+- ✅ Сви упити добијају одговоре за мање од 2 секунде
+- ✅ Нема слања података са вашег локалног рачунара
+- ✅ Одговори су релевантни и корисни
+- ✅ Ваша апликација за ћаскање ради без проблема
+
+Ова валидација осигурава да је ваше Foundry Local подешавање спремно за напредне радионице у Сесијама 2-6.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Одрицање од одговорности**:  
-Овај документ је преведен помоћу услуге за превођење вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да обезбедимо тачност, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитативним извором. За критичне информације препоручује се професионални превод од стране људи. Не преузимамо одговорност за било каква погрешна тумачења или неспоразуме који могу произаћи из коришћења овог превода.
+Овај документ је преведен помоћу услуге за превођење вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да обезбедимо тачност, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на изворном језику треба сматрати ауторитативним извором. За критичне информације препоручује се професионални превод од стране људи. Не преузимамо одговорност за било каква погрешна тумачења или неспоразуме који могу настати услед коришћења овог превода.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

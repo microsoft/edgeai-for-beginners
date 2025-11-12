@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T20:17:55+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T21:34:54+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "ar"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. تثبيت Foundry Local
 
-اتبع دليل التثبيت الرسمي:  
+اتبع دليل التثبيت الرسمي:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -54,7 +54,7 @@ cd Workshop/samples
 python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
-**المتغيرات البيئية:**  
+**المتغيرات البيئية:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
@@ -67,7 +67,7 @@ cd Workshop/samples
 python -m session02.rag_pipeline
 ```
 
-**المتغيرات البيئية:**  
+**المتغيرات البيئية:**
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set RAG_QUESTION="Why use RAG with local inference?"
@@ -90,7 +90,7 @@ cd Workshop/samples
 python -m session03.benchmark_oss_models
 ```
 
-**المتغيرات البيئية:**  
+**المتغيرات البيئية:**
 ```bash
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
@@ -107,7 +107,7 @@ cd Workshop/samples
 python -m session04.model_compare
 ```
 
-**المتغيرات البيئية:**  
+**المتغيرات البيئية:**
 ```bash
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
@@ -121,7 +121,7 @@ cd Workshop/samples
 python -m session05.agents_orchestrator
 ```
 
-**المتغيرات البيئية:**  
+**المتغيرات البيئية:**
 ```bash
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=phi-4-mini
@@ -229,7 +229,7 @@ foundry model run phi-4-mini
 
 ### التكوين الأساسي
 | المتغير | الافتراضي | الوصف |
-|---------|-----------|-------|
+|----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | يختلف | الاسم المستعار للنموذج المستخدم |
 | `FOUNDRY_LOCAL_ENDPOINT` | تلقائي | تجاوز نقطة نهاية الخدمة |
 | `SHOW_USAGE` | `0` | عرض إحصائيات استخدام الرموز |
@@ -238,15 +238,15 @@ foundry model run phi-4-mini
 
 ### خاص بالجلسة
 | المتغير | الافتراضي | الوصف |
-|---------|-----------|-------|
+|----------|---------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | نموذج التضمين |
 | `RAG_QUESTION` | انظر العينة | سؤال اختبار RAG |
 | `BENCH_MODELS` | يختلف | نماذج مفصولة بفواصل |
 | `BENCH_ROUNDS` | `3` | تكرارات قياس الأداء |
 | `BENCH_PROMPT` | انظر العينة | موجه قياس الأداء |
 | `BENCH_STREAM` | `0` | قياس تأخير أول رمز |
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | النموذج الأساسي للوكيل |
-| `AGENT_MODEL_EDITOR` | الأساسي | نموذج الوكيل المحرر |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | نموذج الوكيل الأساسي |
+| `AGENT_MODEL_EDITOR` | الأساسي | نموذج وكيل المحرر |
 | `SLM_ALIAS` | `phi-4-mini` | نموذج اللغة الصغيرة |
 | `LLM_ALIAS` | `qwen2.5-7b` | نموذج اللغة الكبير |
 | `COMPARE_PROMPT` | انظر العينة | موجه المقارنة |
@@ -259,36 +259,37 @@ foundry model run phi-4-mini
 - **gemma-2-2b** - جودة جيدة، سرعة معتدلة
 
 ### سيناريوهات الإنتاج
-- **phi-4-mini** - متعدد الأغراض
-- **deepseek-coder-1.3b** - توليد الكود
+- **phi-4-mini** - متعدد الاستخدامات
+- **deepseek-coder-1.3b** - توليد الأكواد
 - **qwen2.5-7b** - استجابات عالية الجودة
 
 ## وثائق SDK
 
-- **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
+- **Foundry Local**: https://github.com/microsoft/Foundry-Local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## الحصول على المساعدة
 
-1. تحقق من حالة الخدمة: `foundry service status`  
-2. عرض السجلات: تحقق من سجلات خدمة Foundry Local  
-3. تحقق من وثائق SDK: https://github.com/microsoft/Foundry-Local  
-4. مراجعة الكود النموذجي: جميع العينات تحتوي على تعليقات توضيحية مفصلة  
+1. تحقق من حالة الخدمة: `foundry service status`
+2. عرض السجلات: تحقق من سجلات خدمة Foundry Local
+3. تحقق من وثائق SDK: https://github.com/microsoft/Foundry-Local
+4. مراجعة الكود النموذجي: جميع العينات تحتوي على تعليقات توضيحية مفصلة
 
 ## الخطوات التالية
 
-1. أكمل جميع جلسات الورشة بالترتيب  
-2. جرب نماذج مختلفة  
-3. قم بتعديل العينات لتناسب حالات الاستخدام الخاصة بك  
-4. راجع `SDK_MIGRATION_NOTES.md` للحصول على أنماط متقدمة  
+1. أكمل جميع جلسات الورشة بالترتيب
+2. جرب نماذج مختلفة
+3. قم بتعديل العينات لتناسب حالات الاستخدام الخاصة بك
 
 ---
 
 **آخر تحديث**: 2025-01-08  
 **إصدار الورشة**: الأحدث  
-**SDK**: Foundry Local Python SDK  
+**SDK**: Foundry Local Python SDK
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **إخلاء المسؤولية**:  
 تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي. للحصول على معلومات حاسمة، يُوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

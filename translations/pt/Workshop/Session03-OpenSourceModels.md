@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-08T20:51:46+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T22:43:40+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "pt"
 }
@@ -11,14 +11,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Resumo
 
-Descubra como integrar modelos do Hugging Face e outros modelos open-source no Foundry Local. Aprenda estratégias de seleção, fluxos de trabalho de contribuição comunitária, metodologia de comparação de desempenho e como expandir o Foundry com registros personalizados de modelos. Esta sessão está alinhada com os temas semanais de exploração "Model Mondays" e prepara você para avaliar e operacionalizar modelos open-source localmente antes de escalar para o Azure.
+Descubra como integrar modelos do Hugging Face e outros modelos open-source no Foundry Local. Aprenda estratégias de seleção, fluxos de contribuição da comunidade, metodologias de comparação de desempenho e como expandir o Foundry com registros personalizados de modelos. Esta sessão está alinhada com os temas semanais de exploração "Model Mondays" e prepara você para avaliar e operacionalizar modelos open-source localmente antes de escalar para o Azure.
 
 ## Objetivos de Aprendizagem
 
 Ao final, você será capaz de:
 
-- **Descobrir & Avaliar**: Identificar modelos candidatos (mistral, gemma, qwen, deepseek) usando trade-offs entre qualidade e recursos.
-- **Carregar & Executar**: Utilizar o CLI do Foundry Local para baixar, armazenar em cache e lançar modelos da comunidade.
+- **Descobrir e Avaliar**: Identificar modelos candidatos (mistral, gemma, qwen, deepseek) usando trade-offs entre qualidade e recursos.
+- **Carregar e Executar**: Utilizar o CLI do Foundry Local para baixar, armazenar em cache e executar modelos da comunidade.
 - **Benchmark**: Aplicar heurísticas consistentes de latência + throughput de tokens + qualidade.
 - **Expandir**: Registrar ou adaptar um wrapper de modelo personalizado seguindo padrões compatíveis com SDK.
 - **Comparar**: Produzir comparações estruturadas para decisões de seleção entre SLM e LLM de médio porte.
@@ -28,7 +28,6 @@ Ao final, você será capaz de:
 - Sessões 1 e 2 concluídas
 - Ambiente Python com `foundry-local-sdk` instalado
 - Pelo menos 15GB de espaço livre em disco para múltiplos caches de modelos
-- Opcional: Aceleração GPU/WebGPU habilitada (`foundry config list`)
 
 ### Início Rápido em Ambiente Multiplataforma
 
@@ -48,13 +47,13 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai numpy
 ```
 
-Ao realizar benchmarks no macOS contra um serviço host Windows, configure:
+Ao realizar benchmarks no macOS contra um serviço host em Windows, configure:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Fluxo de Demonstração (30 min)
+## Fluxo da Demonstração (30 min)
 
 ### 1. Carregar Modelos do Hugging Face via CLI (8 min)
 
@@ -72,7 +71,7 @@ foundry cache list
 ```
 
 
-### 2. Executar & Teste Rápido (5 min)
+### 2. Executar e Testar Rapidamente (5 min)
 
 ```powershell
 foundry model run qwen2.5-0.5b
@@ -158,19 +157,19 @@ python samples/03-oss-models/benchmark_models.py
 
 ### 4. Comparar Desempenho (5 min)
 
-Discuta trade-offs: tempo de carregamento, uso de memória (observe o Gerenciador de Tarefas / `nvidia-smi` / monitor de recursos do sistema operacional), qualidade de saída versus velocidade. Use o script de benchmark em Python (Sessão 3) para latência e throughput; repita após habilitar aceleração GPU.
+Discuta os trade-offs: tempo de carregamento, uso de memória (observe o Gerenciador de Tarefas / `nvidia-smi` / monitor de recursos do sistema operacional), qualidade de saída versus velocidade. Use o script de benchmark em Python (Sessão 3) para latência e throughput; repita após ativar a aceleração por GPU.
 
 ### 5. Projeto Inicial (4 min)
 
-Crie um gerador de relatórios de comparação de modelos (estenda o script de benchmark com exportação em markdown).
+Crie um gerador de relatórios de comparação de modelos (expanda o script de benchmark com exportação em markdown).
 
 ## Projeto Inicial: Expandir `03-huggingface-models`
 
 Melhore o exemplo existente ao:
 
 1. Adicionar agregação de benchmarks + saída em CSV/Markdown.
-2. Implementar pontuação qualitativa simples (conjunto de pares de prompts + arquivo de anotação manual).
-3. Introduzir um arquivo de configuração JSON (`models.json`) para lista de modelos plugáveis e conjunto de prompts.
+2. Implementar uma pontuação qualitativa simples (conjunto de pares de prompts + arquivo de anotação manual).
+3. Introduzir uma configuração JSON (`models.json`) para lista de modelos plugáveis e conjunto de prompts.
 
 ## Lista de Verificação de Validação
 
@@ -182,15 +181,15 @@ curl http://localhost:5273/v1/models
 
 Todos os modelos-alvo devem aparecer e responder a uma solicitação de chat de teste.
 
-## Cenário de Exemplo & Mapeamento de Workshop
+## Cenário de Exemplo e Mapeamento do Workshop
 
 | Script do Workshop | Cenário | Objetivo | Fonte de Prompt / Dataset |
 |--------------------|---------|----------|---------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Equipe de plataforma edge selecionando SLM padrão para sumarizador embutido | Produzir comparação de latência + p95 + tokens/segundo entre modelos candidatos | Variável `PROMPT` inline + lista `BENCH_MODELS` no ambiente |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Equipe de plataforma de borda selecionando SLM padrão para sumarizador embutido | Produzir comparação de latência + p95 + tokens/segundo entre modelos candidatos | Variável `PROMPT` inline + lista `BENCH_MODELS` no ambiente |
 
 ### Narrativa do Cenário
 
-A engenharia de produto deve escolher um modelo leve padrão de sumarização para uma funcionalidade offline de notas de reunião. Eles executam benchmarks determinísticos controlados (temperature=0) em um conjunto fixo de prompts (veja exemplo abaixo) e coletam métricas de latência + throughput com e sem aceleração GPU.
+A engenharia de produto deve escolher um modelo de sumarização leve padrão para um recurso offline de notas de reunião. Eles realizam benchmarks determinísticos controlados (temperature=0) em um conjunto fixo de prompts (veja exemplo abaixo) e coletam métricas de latência + throughput com e sem aceleração por GPU.
 
 ### Exemplo de Conjunto de Prompts JSON (expansível)
 
@@ -208,12 +207,12 @@ Itere cada prompt por modelo, capture a latência por prompt para derivar métri
 ## Estrutura de Seleção de Modelos
 
 | Dimensão | Métrica | Por que é importante |
-|----------|---------|-----------------------|
-| Latência | média / p95 | Consistência na experiência do usuário |
+|----------|---------|----------------------|
+| Latência | média / p95 | Consistência na experiência do utilizador |
 | Throughput | tokens/segundo | Escalabilidade em lote e streaming |
 | Memória | tamanho residente | Compatibilidade com dispositivos e concorrência |
 | Qualidade | prompts de rubrica | Adequação à tarefa |
-| Pegada | cache em disco | Distribuição e atualizações |
+| Espaço | cache em disco | Distribuição e atualizações |
 | Licença | permissão de uso | Conformidade comercial |
 
 ## Expansão com Modelo Personalizado
@@ -229,16 +228,16 @@ class CustomModelAdapter:
 # Register with local routing (future extensibility point)
 ```
 
-Consulte o repositório oficial para interfaces de adaptadores em evolução:
+Consulte o repositório oficial para interfaces de adaptadores em evolução:  
 https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
-## Solução de Problemas
+## Resolução de Problemas
 
 | Problema | Causa | Solução |
 |----------|-------|---------|
 | OOM no mistral-7b | RAM/GPU insuficiente | Pare outros modelos; tente uma variante menor |
 | Resposta inicial lenta | Carregamento frio | Mantenha aquecido com um prompt leve periódico |
-| Download travado | Instabilidade na rede | Tente novamente; pré-carregue fora do horário de pico |
+| Falhas no download | Instabilidade na rede | Tente novamente; pré-carregue em horários de menor tráfego |
 
 ## Referências
 
@@ -255,15 +254,15 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 | Melhoria | Benefício | Como |
 |----------|-----------|------|
-| Latência de Primeiro Token em Streaming | Mede a responsividade percebida | Execute o benchmark com `BENCH_STREAM=1` (script aprimorado em `Workshop/samples/session03`) |
-| Modo Determinístico | Comparações de regressão estáveis | `temperature=0`, conjunto fixo de prompts, capture saídas JSON sob controle de versão |
+| Latência do Primeiro Token em Streaming | Mede a responsividade percebida | Execute o benchmark com `BENCH_STREAM=1` (script aprimorado em `Workshop/samples/session03`) |
+| Modo Determinístico | Comparações de regressão estáveis | `temperature=0`, conjunto de prompts fixo, capture saídas JSON sob controle de versão |
 | Pontuação de Rubrica de Qualidade | Adiciona dimensão qualitativa | Mantenha `prompts.json` com facetas esperadas; anote pontuações (1–5) manualmente ou via modelo secundário |
-| Exportação em CSV / Markdown | Relatório compartilhável | Estenda o script para escrever `benchmark_report.md` com tabela e destaques |
+| Exportação em CSV / Markdown | Relatório compartilhável | Expanda o script para escrever `benchmark_report.md` com tabela e destaques |
 | Tags de Capacidade do Modelo | Ajuda no roteamento automatizado posteriormente | Mantenha `models.json` com `{alias: {capabilities:[], size_mb:..}}` |
 | Fase de Aquecimento de Cache | Reduz viés de inicialização fria | Execute uma rodada de aquecimento antes do loop de temporização (já implementado) |
-| Precisão Percentil | Latência robusta de cauda | Use percentil numpy (já no script refatorado) |
-| Aproximação de Custo por Token | Comparação econômica | Custo aprox = (tokens/segundo * média de tokens por solicitação) * heurística de energia |
-| Pular Modelos com Falha Automaticamente | Resiliência em execuções em lote | Envolva cada benchmark em try/except e marque o campo de status |
+| Precisão Percentil | Latência robusta de cauda | Use numpy percentile (já no script refatorado) |
+| Aproximação de Custo por Token | Comparação econômica | Custo aproximado = (tokens/segundo * média de tokens por solicitação) * heurística de energia |
+| Ignorar Modelos com Falha Automaticamente | Resiliência em execuções em lote | Envolva cada benchmark em try/except e marque o campo de status |
 
 #### Trecho Mínimo de Exportação em Markdown
 
@@ -289,5 +288,7 @@ Itere a lista estática em vez de prompts aleatórios para métricas comparávei
 
 ---
 
-**Aviso**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, é importante notar que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Aviso Legal**:  
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

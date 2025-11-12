@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T20:04:33+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T21:21:45+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "es"
 }
@@ -170,7 +170,7 @@ python lint_markdown_cli.py --verbose
 
 ## Pruebas
 
-### Pruebas de Fumado
+### Pruebas Básicas
 
 ```bash
 cd Workshop
@@ -181,7 +181,7 @@ python -m tests.smoke
 
 ## Solución de Problemas
 
-### Servicio No Ejecutándose
+### Servicio No Funciona
 
 ```bash
 # Check status
@@ -271,7 +271,7 @@ foundry model run phi-4-mini
 ## Obtener Ayuda
 
 1. Verifica el estado del servicio: `foundry service status`  
-2. Revisa los logs: Consulta los logs del servicio Foundry Local  
+2. Revisa los registros: Consulta los registros del servicio Foundry Local  
 3. Consulta la documentación del SDK: https://github.com/microsoft/Foundry-Local  
 4. Revisa el código de ejemplo: Todos los ejemplos tienen docstrings detallados  
 
@@ -280,7 +280,6 @@ foundry model run phi-4-mini
 1. Completa todas las sesiones del taller en orden  
 2. Experimenta con diferentes modelos  
 3. Modifica los ejemplos para tus casos de uso  
-4. Revisa `SDK_MIGRATION_NOTES.md` para patrones avanzados  
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

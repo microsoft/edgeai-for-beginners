@@ -1,499 +1,481 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "85fa559f498492b79de04e391c33687b",
-  "translation_date": "2025-10-28T23:36:06+00:00",
+  "original_hash": "8c30436578b1bd604c48233ecdd39701",
+  "translation_date": "2025-11-12T00:42:56+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "my"
 }
 -->
-# အစည်းအဝေး ၁: Foundry Local ကိုစတင်အသုံးပြုခြင်း
+# အပိုင်း ၁: Foundry Local ကို စတင်အသုံးပြုခြင်း
 
 ## အကျဉ်းချုပ်
 
-Windows 11 တွင် Foundry Local ကိုထည့်သွင်းပြီး ပြင်ဆင်ခြင်းဖြင့် သင်၏ခရီးစဉ်ကို စတင်ပါ။ CLI ကို စတင်တပ်ဆင်ခြင်း၊ hardware acceleration ကို ဖွင့်ခြင်းနှင့် မော်ဒယ်များကို cache လုပ်ခြင်းဖြင့် အမြန်လေ့လာမှုများအတွက် ပြင်ဆင်ပါ။ ဒီလက်တွေ့လုပ်ငန်းခွင်အစည်းအဝေးမှာ Phi, Qwen, DeepSeek, GPT-OSS-20B စတဲ့ မော်ဒယ်တွေကို CLI command တွေကို အသုံးပြုပြီး run လုပ်ပုံကို လမ်းညွှန်ပေးပါမယ်။
+Microsoft Foundry Local ကို အသုံးပြု၍ AI မော်ဒယ်များကို တပ်ဆင်ခြင်း၊ ဖွဲ့စည်းခြင်းနှင့် အလုပ်လုပ်စေခြင်းကို လေ့လာပါ။ ဒီလက်တွေ့အပိုင်းမှာ တပ်ဆင်ခြင်းမှ စတင်ပြီး Phi-4, Qwen, နှင့် DeepSeek မော်ဒယ်များကို အသုံးပြု၍ ပထမဆုံး chat application တစ်ခုကို တည်ဆောက်ခြင်းအထိ လိုက်လျောညီထွေ လမ်းညွှန်မှုကို ပေးပါသည်။
 
-## သင်ယူရမည့်ရည်ရွယ်ချက်များ
+## သင်ယူရမည့် ရည်မှန်းချက်များ
 
-ဒီအစည်းအဝေးအဆုံးမှာ သင်သည် -
+ဒီအပိုင်းအပြီးမှာ သင်သည်-
 
-- **ထည့်သွင်းခြင်းနှင့် ပြင်ဆင်ခြင်း**: Windows 11 တွင် Foundry Local ကို အကောင်းဆုံး performance setting များဖြင့် တပ်ဆင်ပါ။
-- **CLI လုပ်ဆောင်မှုများကို ကျွမ်းကျင်ခြင်း**: Foundry Local CLI ကို အသုံးပြုပြီး မော်ဒယ်များကို စီမံခန့်ခွဲခြင်းနှင့် တင်သွင်းခြင်း။
-- **Hardware Acceleration ကို ဖွင့်ခြင်း**: GPU acceleration ကို ONNXRuntime သို့မဟုတ် WebGPU ဖြင့် ပြင်ဆင်ပါ။
-- **မော်ဒယ်များစွာကို တင်သွင်းခြင်း**: phi-4, GPT-OSS-20B, Qwen, DeepSeek မော်ဒယ်များကို locally run လုပ်ပါ။
-- **သင့်ရဲ့ ပထမဆုံး App ကို တည်ဆောက်ပါ**: Foundry Local Python SDK ကို အသုံးပြုရန် ရှိပြီးသား sample များကို ပြင်ဆင်ပါ။
+- **တပ်ဆင်ခြင်းနှင့် ဖွဲ့စည်းခြင်း**: Foundry Local ကို တပ်ဆင်ပြီး အတည်ပြုခြင်း
+- **CLI လုပ်ဆောင်မှုများကို ကျွမ်းကျင်ခြင်း**: Foundry Local CLI ကို အသုံးပြု၍ မော်ဒယ်များကို စီမံခန့်ခွဲခြင်းနှင့် တင်သွင်းခြင်း
+- **ပထမဆုံး မော်ဒယ်ကို အလုပ်လုပ်စေခြင်း**: ဒေသခံ AI မော်ဒယ်တစ်ခုကို အောင်မြင်စွာ တင်သွင်းပြီး အပြန်အလှန်လုပ်ဆောင်ခြင်း
+- **Chat App တစ်ခု တည်ဆောက်ခြင်း**: Foundry Local Python SDK ကို အသုံးပြု၍ chat application အခြေခံတစ်ခုကို ဖန်တီးခြင်း
+- **ဒေသခံ AI ကို နားလည်ခြင်း**: ဒေသခံ inference နှင့် မော်ဒယ်စီမံခန့်ခွဲမှု၏ အခြေခံအချက်များကို နားလည်ခြင်း
 
-# မော်ဒယ်ကို စမ်းသပ်ခြင်း (non-interactive single prompt)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
+## ကြိုတင်လိုအပ်ချက်များ
 
-- Windows 11 (22H2 သို့မဟုတ် အထက်)
-# ရရှိနိုင်သော catalog မော်ဒယ်များကို စစ်ဆေးပါ (run လုပ်ပြီးမှ loaded မော်ဒယ်များကို တွေ့နိုင်ပါမည်)
-foundry model list
-## NOTE: လက်ရှိတွင် `--running` flag အထူးသီးသန့်မရှိသေးပါ; loaded ဖြစ်နေသည်ကို ကြည့်ရန် chat ကို စတင်ပါ သို့မဟုတ် service logs ကို စစ်ဆေးပါ။
-- Python 3.10+ ထည့်သွင်းထား
-- Visual Studio Code with Python extension
-- Installation အတွက် Administrator privileges
+### စနစ်လိုအပ်ချက်များ
 
-### (Optional) Environment Variables
+- **Windows**: Windows 11 (22H2 သို့မဟုတ် အထက်) OR **macOS**: macOS 11+ (အကန့်အသတ်ရှိသော ပံ့ပိုးမှု)
+- **RAM**: အနည်းဆုံး 8GB၊ အကြံပြုချက် 16GB+
+- **သိုလှောင်မှု**: မော်ဒယ်များအတွက် အခမဲ့နေရာ 10GB+
+- **Python**: 3.10 သို့မဟုတ် အထက်တင်ထားရှိရမည်
+- **Admin Access**: တပ်ဆင်ရန် အုပ်ချုပ်သူအခွင့်အာဏာ
 
-scripts များကို ပိုမိုလွယ်ကူစွာ အသုံးပြုနိုင်ရန် `.env` ဖိုင်တစ်ခု (သို့မဟုတ် shell တွင် set လုပ်ပါ):
-# Compare responses (non-interactive)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-| Variable | Purpose | Example |
-|----------|---------|---------|
-| `FOUNDRY_LOCAL_ALIAS` | မော်ဒယ် alias ကို သတ်မှတ်ခြင်း (catalog မှ အကောင်းဆုံး variant ကို auto-select လုပ်ပါမည်) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | endpoint ကို override လုပ်ခြင်း (otherwise auto from manager) | `http://localhost:5273/v1` |
-| `FOUNDRY_LOCAL_STREAM` | streaming demo ကို ဖွင့်ခြင်း | `true` |
+### ဖွံ့ဖြိုးရေးပတ်ဝန်းကျင်
 
-> `FOUNDRY_LOCAL_ENDPOINT=auto` (သို့မဟုတ် unset) ဖြစ်ပါက SDK manager မှ derive လုပ်ပါမည်။
+- Python extension ပါရှိသော Visual Studio Code (အကြံပြုချက်)
+- Command line access (Windows တွင် PowerShell၊ macOS တွင် Terminal)
+- Git (optional) ကို အသုံးပြု၍ repository များကို clone လုပ်ခြင်း
 
-## Demo Flow (၃၀ မိနစ်)
+## အလုပ်ရုံဆွေးနွေးမှု အစီအစဉ် (၃၀ မိနစ်)
 
-### ၁. Foundry Local ကို ထည့်သွင်းပြီး CLI Setup ကို Verify လုပ်ပါ (၁၀ မိနစ်)
+### အဆင့် ၁: Foundry Local ကို တပ်ဆင်ခြင်း (၅ မိနစ်)
 
-# cached မော်ဒယ်များကို စစ်ဆေးပါ
-foundry cache list
+#### Windows တွင် တပ်ဆင်ခြင်း
+
+Windows package manager ကို အသုံးပြု၍ Foundry Local ကို တပ်ဆင်ပါ:
 
 ```powershell
 # Install via winget (recommended)
 winget install Microsoft.FoundryLocal
-
-# Or download from Microsoft Learn
-# https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
 
-**macOS (Preview / If Supported)**
+အခြားနည်းလမ်း: [Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install) မှ တိုက်ရိုက်ဒေါင်းလုပ်ဆွဲပါ
 
-native macOS package ရရှိနိုင်ပါက (နောက်ဆုံး version ကို official docs တွင် စစ်ဆေးပါ):
+#### macOS တွင် တပ်ဆင်ခြင်း (အကန့်အသတ်ရှိသော ပံ့ပိုးမှု)
+
+> [!NOTE]  
+> macOS ပံ့ပိုးမှုသည် လက်ရှိတွင် preview အဆင့်တွင် ရှိနေပါသည်။ နောက်ဆုံးရရှိနိုင်မှုအတွက် တရားဝင်စာရွက်စာတမ်းကို စစ်ဆေးပါ။
+
+Homebrew ကို အသုံးပြု၍ တပ်ဆင်ပါ:
 
 ```bash
-# Homebrew (if/when available)
+# If Homebrew formula is available
 brew update
-brew install foundry-local  # hypothetical formula name
+brew install foundry-local
 
-# Or manual download (tarball)
+# Or manual download (check official docs for latest)
 curl -L -o foundry-local.tar.gz "https://download.microsoft.com/foundry-local/latest/macos/foundry-local.tar.gz"
 tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-macOS native binaries မရရှိသေးပါက သင်လုပ်နိုင်သည်မှာ:
-1. Windows 11 ARM/Intel VM (Parallels / UTM) ကို အသုံးပြုပြီး Windows အဆင့်များကို လိုက်နာပါ။
-2. container image ရရှိနိုင်ပါက container မှတစ်ဆင့် run လုပ်ပြီး `FOUNDRY_LOCAL_ENDPOINT` ကို exposed port သို့ set လုပ်ပါ။
+**macOS အသုံးပြုသူများအတွက် အခြားနည်းလမ်းများ:**
+- Windows 11 VM (Parallels/UTM) ကို အသုံးပြု၍ Windows အဆင့်များကို လိုက်နာပါ
+- container ကို အသုံးပြု၍ `FOUNDRY_LOCAL_ENDPOINT` ကို ဖွဲ့စည်းပါ
 
-**Python Virtual Environment တည်ဆောက်ခြင်း (Cross‑Platform)**
+### အဆင့် ၂: တပ်ဆင်မှုကို အတည်ပြုခြင်း (၃ မိနစ်)
 
-Windows PowerShell:
-```powershell
-py -m venv .venv
- .\.venv\Scripts\Activate.ps1
-```
-
-macOS / Linux:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-pip ကို upgrade လုပ်ပြီး core dependencies များကို ထည့်သွင်းပါ:
-```bash
-python -m pip install --upgrade pip
-pip install foundry-local-sdk openai
-```
-
-#### အဆင့် ၁.၂: Installation ကို Verify လုပ်ပါ
+တပ်ဆင်ပြီးနောက် terminal ကို ပြန်စပြီး Foundry Local အလုပ်လုပ်နေသည်ကို အတည်ပြုပါ:
 
 ```powershell
-# Check version
+# Check if Foundry Local is installed correctly
 foundry --version
-
-# Initialize configuration
-foundry init
 
 # View available commands
 foundry --help
 ```
 
-#### အဆင့် ၁.၃: Environment ကို ပြင်ဆင်ပါ
+မျှော်မှန်းထားသော output တွင် version အချက်အလက်နှင့် ရရှိနိုင်သော command များကို ပြသရမည်။
 
+### အဆင့် ၃: Python ပတ်ဝန်းကျင်ကို ဖွဲ့စည်းခြင်း (၅ မိနစ်)
+
+ဒီ workshop အတွက် သီးသန့် Python ပတ်ဝန်းကျင်တစ်ခုကို ဖန်တီးပါ:
+
+**Windows:**
 ```powershell
-# Set up Python environment for Module08
-cd Module08
+# Create virtual environment
 py -m venv .venv
-.\.venv\Scripts\activate
 
-# Install Foundry Local Python SDK and dependencies
-pip install foundry-local-sdk openai requests
+# Activate environment
+.\.venv\Scripts\Activate.ps1
+
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-### SDK Bootstrapping (Recommended)
+**macOS/Linux:**
+```bash
+# Create virtual environment
+python3 -m venv .venv
 
-service ကို manually start လုပ်ပြီး မော်ဒယ်များကို run လုပ်ခြင်းအစား **Foundry Local Python SDK** ကို အသုံးပြုပြီး bootstrap လုပ်ပါ:
+# Activate environment
+source .venv/bin/activate
 
-```python
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
-
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-
-# Bootstraps service + downloads + loads most suitable variant for hardware
-manager = FoundryLocalManager(alias)
-
-print("Service running:", manager.is_service_running())
-print("Endpoint:", manager.endpoint)
-print("Cached models:", manager.list_cached_models())
-
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
-
-resp = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[
-        {"role": "system", "content": "You are a helpful local assistant."},
-        {"role": "user", "content": "Hello"}
-    ],
-    max_tokens=120,
-    temperature=0.5
-)
-print(resp.choices[0].message.content)
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-သင် explicit control ကို ပိုနှစ်သက်ပါက CLI + OpenAI client ကို အောက်တွင် ပြထားသည့်အတိုင်း အသုံးပြုနိုင်ပါသည်။
 
-### ၂. CLI ဖြင့် မော်ဒယ်များကို locally run လုပ်ပါ (၁၀ မိနစ်)
+### အဆင့် ၄: ပထမဆုံး မော်ဒယ်ကို အလုပ်လုပ်စေခြင်း (၇ မိနစ်)
 
-#### အဆင့် ၃.၁: Phi-4 Model ကို Deploy လုပ်ပါ
+အခုတော့ AI မော်ဒယ်တစ်ခုကို ဒေသခံတွင် အလုပ်လုပ်စေကြပါစို့!
+
+#### Phi-4 Mini ဖြင့် စတင်ပါ (အကြံပြုထားသော ပထမဆုံး မော်ဒယ်)
 
 ```powershell
-# Download and run phi-4-mini
+# Download and start phi-4-mini (lightweight, fast)
 foundry model run phi-4-mini
 
-# Test the model (one-shot prompt)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
-
-# NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
+# Test the model with a simple prompt
+foundry model run phi-4-mini --prompt "Hello, introduce yourself in one sentence"
 ```
 
-#### အဆင့် ၃.၂: GPT-OSS-20B ကို Deploy လုပ်ပါ
+> [!TIP]  
+> ဒီ command သည် မော်ဒယ်ကို (ပထမဆုံးအကြိမ်) ဒေါင်းလုပ်ဆွဲပြီး Foundry Local service ကို အလိုအလျောက် စတင်ပေးပါသည်။
+
+#### အလုပ်လုပ်နေသည်ကို စစ်ဆေးပါ
 
 ```powershell
-# Download and run GPT-OSS-20B
-foundry model run gpt-oss-20b
+# List available models (shows downloaded models)
+foundry model list
 
-# Compare responses (one-shot prompt)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-```
+# Check service status
+foundry service status
 
-#### အဆင့် ၃.၃: အခြားမော်ဒယ်များကို Load လုပ်ပါ
-
-```powershell
-# Download Qwen model family
-foundry model download qwen2.5-0.5b
-foundry model download qwen2.5-7b
-
-# Download DeepSeek models
-foundry model download deepseek-coder-1.3b
-
-# List cached models
+# See what models are cached locally
 foundry cache list
 ```
 
-### ၄. Starter Project: Foundry Local အတွက် 01-run-phi ကို ပြင်ဆင်ပါ (၅ မိနစ်)
 
-#### အဆင့် ၄.၁: Basic Chat Application တည်ဆောက်ပါ
+#### မော်ဒယ်အမျိုးမျိုးကို စမ်းသပ်ပါ
 
-`samples/01-foundry-quickstart/chat_quickstart.py` ကို ဖန်တီးပါ (manager ကို အသုံးပြုရန် update လုပ်ထားသည်):
+phi-4-mini အလုပ်လုပ်နေပြီးပါက အခြားမော်ဒယ်များကို စမ်းသပ်ပါ:
+
+```powershell
+# Larger model with better capabilities
+foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
+
+# Fast, efficient model
+foundry model run qwen2.5-0.5b --prompt "What are the benefits of local AI inference?"
+```
+
+
+### အဆင့် ၅: ပထမဆုံး Chat Application ကို တည်ဆောက်ခြင်း (၁၀ မိနစ်)
+
+အခုတော့ ကျွန်ုပ်တို့ စတင်ထားသော မော်ဒယ်များကို အသုံးပြုသော Python application တစ်ခုကို ဖန်တီးကြပါစို့။
+
+#### Chat Script ကို ဖန်တီးပါ
+
+`my_first_chat.py` ဟုခေါ်သော ဖိုင်အသစ်တစ်ခုကို ဖန်တီးပါ (သို့မဟုတ် ပေးထားသော နမူနာကို အသုံးပြုပါ):
 
 ```python
 #!/usr/bin/env python3
 """
-Foundry Local Chat Quickstart
-Demo: Basic chat interaction using Foundry Local Python SDK
-Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python
+My First Foundry Local Chat Application
+Using FoundryLocalManager for automatic service management
 """
 
-import os, sys
+import os
+from foundry_local import FoundryLocalManager
 from openai import OpenAI
-try:
-    from foundry_local import FoundryLocalManager  # control-plane SDK
-except ImportError:
-    FoundryLocalManager = None
 
 def main():
-    """Main chat function using Foundry Local SDK"""
-    
-    # Preferred: bootstrap via SDK manager (auto start + download + load)
-    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-    if FoundryLocalManager:
-        manager = FoundryLocalManager(alias)
-        endpoint = manager.endpoint
-        model_id = manager.get_model_info(alias).id
-        api_key = manager.api_key or "not-needed"
-    else:
-        # Fallback: assume default endpoint & alias already running via CLI
-        endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT", "http://localhost:5273/v1")
-        model_id = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
-        api_key = "not-needed"
-
-    client = OpenAI(base_url=endpoint, api_key=api_key)
-    
-    # Get user input
-    if len(sys.argv) > 1:
-        user_message = " ".join(sys.argv[1:])
-    else:
-        user_message = input("Enter your message: ")
+    # Get model alias from environment or use default
+    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
     
     try:
-        # Make chat completion request
-        response = client.chat.completions.create(
-            model=model_id,
-            messages=[
-                {"role": "system", "content": "You are a helpful AI assistant powered by Microsoft Foundry Local."},
-                {"role": "user", "content": user_message}
-            ],
-            max_tokens=500,
-            temperature=0.7
+        # Initialize Foundry Local Manager (auto-starts service, downloads model)
+        manager = FoundryLocalManager(alias)
+        
+        # Create OpenAI client pointing to local endpoint
+        client = OpenAI(
+            base_url=manager.endpoint,
+            api_key=manager.api_key or "not-needed"
         )
         
-        # Display response
-        print(f"\nModel: {response.model}")
-        print(f"Response: {response.choices[0].message.content}")
-        print(f"Tokens used: {response.usage.total_tokens if response.usage else 'N/A'}")
+        # Get the actual model ID for this alias
+        model_id = manager.get_model_info(alias).id
+        
+        print("🤖 Welcome to your first local AI chat!")
+        print(f"� Using model: {alias} -> {model_id}")
+        print(f"🌐 Endpoint: {manager.endpoint}")
+        print("�💡 Type 'quit' to exit\n")
         
     except Exception as e:
-        print(f"Error: {e}")
-        print("\nTroubleshooting:")
-    print("1. Ensure Foundry Local is running: foundry status")
-    print("2. List models: foundry model list")
-    print(f"3. Start model if needed: foundry model run {model_id}")
-    print("4. Or let SDK bootstrap: pip install foundry-local-sdk")
+        print(f"❌ Failed to initialize Foundry Local: {e}")
+        print("💡 Make sure Foundry Local is installed: foundry --version")
+        return
+    
+    while True:
+        # Get user input
+        user_message = input("You: ").strip()
+        
+        if user_message.lower() in ['quit', 'exit', 'bye']:
+            print("👋 Goodbye!")
+            break
+            
+        if not user_message:
+            continue
+            
+        try:
+            # Send message to local AI model
+            response = client.chat.completions.create(
+                model=model_id,
+                messages=[
+                    {"role": "system", "content": "You are a helpful AI assistant running locally."},
+                    {"role": "user", "content": user_message}
+                ],
+                max_tokens=200,
+                temperature=0.7
+            )
+            
+            # Display the response
+            ai_response = response.choices[0].message.content
+            print(f"🤖 AI: {ai_response}\n")
+            
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            print("💡 Check service status: foundry service status\n")
 
 if __name__ == "__main__":
     main()
 ```
 
-#### အဆင့် ၄.၂: Application ကို စမ်းသပ်ပါ
+> [!TIP]  
+> **သက်ဆိုင်သော နမူနာများ**: ပိုမိုအဆင့်မြင့်အသုံးပြုမှုအတွက် ကြည့်ပါ:
+>
+> - **Python နမူနာ**: `Workshop/samples/session01/chat_bootstrap.py` - streaming response နှင့် error handling ပါဝင်သည်
+> - **Jupyter Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - အသေးစိတ်ရှင်းလင်းချက်များပါရှိသော interactive version
+
+#### Chat Application ကို စမ်းသပ်ပါ
 
 ```powershell
-# Ensure phi-4-mini is running
-foundry model run phi-4-mini
-
-# Run the quickstart app
-python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Foundry Local?"
-
-# Try interactive mode
-python samples/01-foundry-quickstart/chat_quickstart.py
+# No need to manually start models - FoundryLocalManager handles this!
+# Just run your chat application
+python my_first_chat.py
 ```
 
-## အဓိကအကြောင်းအရာများ
-
-### ၁. Foundry Local Architecture
-
-- **Local Inference Engine**: မော်ဒယ်များကို သင့် device ပေါ်တွင် run လုပ်ပါ။
-- **OpenAI SDK Compatibility**: ရှိပြီးသား OpenAI code နှင့် seamless integration
-- **Model Management**: မော်ဒယ်များကို download, cache, run လုပ်ခြင်း။
-- **Hardware Optimization**: GPU, NPU, CPU acceleration ကို အသုံးပြုပါ။
-
-### ၂. CLI Command Reference
+အခြားနည်းလမ်း: ပေးထားသော နမူနာများကို တိုက်ရိုက်အသုံးပြုပါ
 
 ```powershell
-# Core Commands
+# Try the complete sample with streaming support
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
+```
+
+သို့မဟုတ် interactive notebook ကို စမ်းသပ်ပါ  
+Workshop/notebooks/session01_chat_bootstrap.ipynb ကို VS Code တွင် ဖွင့်ပါ
+
+ဒီဥပမာစကားပြောများကို စမ်းသပ်ပါ:
+
+- "Microsoft Foundry Local ဆိုတာ ဘာလဲ?"
+- "AI မော်ဒယ်များကို ဒေသခံတွင် အလုပ်လုပ်စေခြင်း၏ အကျိုးကျေးဇူး ၃ ခုကို ဖော်ပြပါ"
+- "edge AI ကို နားလည်စေပါ"
+
+## သင်အောင်မြင်စွာ ပြီးမြောက်ခဲ့သည့်အရာများ
+
+ဂုဏ်ယူပါတယ်! သင်အောင်မြင်စွာ-
+
+1. ✅ **Foundry Local ကို တပ်ဆင်ပြီး အတည်ပြုခဲ့သည်**
+2. ✅ **ပထမဆုံး AI မော်ဒယ်** (phi-4-mini) ကို ဒေသခံတွင် စတင်ခဲ့သည်
+3. ✅ **မော်ဒယ်အမျိုးမျိုးကို စမ်းသပ်ခဲ့သည်** command line မှတစ်ဆင့်
+4. ✅ **Chat application တစ်ခုကို တည်ဆောက်ခဲ့သည်** ဒေသခံ AI ကို ချိတ်ဆက်ထားသော
+5. ✅ **Cloud မရှိဘဲ ဒေသခံ AI inference ကို အတွေ့အကြုံရခဲ့သည်**
+
+## ဖြစ်ပျက်ခဲ့သည့်အရာကို နားလည်ခြင်း
+
+### ဒေသခံ AI Inference
+
+- သင်၏ AI မော်ဒယ်များသည် သင်၏ကွန်ပျူတာပေါ်တွင် အပြည့်အဝ အလုပ်လုပ်သည်
+- အချက်အလက်များကို cloud သို့ မပို့ပါ
+- အပြန်အလှန်များကို သင်၏ CPU/GPU ကို အသုံးပြု၍ ဒေသခံတွင် ဖန်တီးသည်
+- ကိုယ်ရေးအချက်အလက်နှင့် လုံခြုံရေးကို ထိန်းသိမ်းထားသည်
+
+### မော်ဒယ်စီမံခန့်ခွဲမှု
+
+- `foundry model run` သည် မော်ဒယ်များကို ဒေါင်းလုပ်ဆွဲပြီး စတင်သည်
+- **FoundryLocalManager SDK** သည် service စတင်ခြင်းနှင့် မော်ဒယ်တင်သွင်းခြင်းကို အလိုအလျောက် စီမံခန့်ခွဲသည်
+- မော်ဒယ်များကို အနာဂတ်အသုံးပြုမှုအတွက် ဒေသခံတွင် cache လုပ်ထားသည်
+- မော်ဒယ်များကို များစွာ ဒေါင်းလုပ်ဆွဲနိုင်သော်လည်း 通常 တစ်ခုသာ အလုပ်လုပ်သည်
+- service သည် မော်ဒယ်၏ အသက်တာကို အလိုအလျောက် စီမံခန့်ခွဲသည်
+
+### SDK နှင့် CLI လမ်းလျှောက်မှုများ
+
+- **CLI လမ်းလျှောက်မှု**: `foundry model run <model>` ဖြင့် မော်ဒယ်စီမံခန့်ခွဲမှုကို လက်ဖြင့်လုပ်ဆောင်ခြင်း
+- **SDK လမ်းလျှောက်မှု**: `FoundryLocalManager(alias)` ဖြင့် service + မော်ဒယ်စီမံခန့်ခွဲမှုကို အလိုအလျောက်လုပ်ဆောင်ခြင်း
+- **အကြံပြုချက်**: application များအတွက် SDK ကို အသုံးပြုပါ၊ စမ်းသပ်ခြင်းနှင့် ရှာဖွေခြင်းအတွက် CLI ကို အသုံးပြုပါ
+
+## အရေးကြီးသော Command များကို ရှင်းလင်းခြင်း
+
+### CLI Command များ
+
+```powershell
+# Installation & Setup
 foundry --version              # Check installation
+foundry --help                 # View all commands
+
 # Model Management
 foundry model list             # List available models
-foundry model unload <name>    # Unload from memory
+foundry model run <model>      # Download and start a model
+foundry model run <model> --prompt "text"  # One-shot prompt
+foundry cache list             # Show downloaded models
 
-foundry config list            # Current configuration
+# Service Management
+foundry service status         # Check if service is running
+foundry service start          # Start the service manually
+foundry service stop           # Stop the service
 ```
 
-### ၃. Python SDK Integration
 
-```python
-# Basic client setup
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
+### မော်ဒယ်အကြံပြုချက်များ
 
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-manager = FoundryLocalManager(alias)
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
+- **phi-4-mini**: စတင်ရန်အကောင်းဆုံး မော်ဒယ် - မြန်ဆန်၊ အလေးမရှိ၊ အရည်အသွေးကောင်း
+- **qwen2.5-0.5b**: အမြန်ဆုံး inference၊ memory အသုံးပြုမှု အနည်းဆုံး
+- **gpt-oss-20b**: အရည်အသွေးမြင့်သော အပြန်အလှန်များ၊ အရင်းအမြစ်များ ပိုမိုလိုအပ်
+- **deepseek-coder-1.3b**: programming နှင့် code အလုပ်များအတွက် အထူးပြုထားသည်
 
-response = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Hello!"}],
-    max_tokens=50
-)
-print(response.choices[0].message.content)
+## ပြဿနာများကို ဖြေရှင်းခြင်း
 
-# Streaming example
-stream = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Give a 1-sentence definition of edge AI."}],
-    stream=True,
-    max_tokens=60,
-    temperature=0.4
-)
-for chunk in stream:
-    delta = chunk.choices[0].delta
-    if delta and delta.content:
-        print(delta.content, end="", flush=True)
-print()
-```
-
-## အခက်အခဲများကို ဖြေရှင်းခြင်း
-
-### အခက်အခဲ ၁: "Foundry command not found"
+### "Foundry command not found"
 
 **ဖြေရှင်းနည်း:**
+
 ```powershell
-# Restart PowerShell after installation
-# Or manually add to PATH
+# Restart your terminal after installation
+# Or manually add to PATH (Windows)
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### အခက်အခဲ ၂: "Model failed to load"
+
+### "Model failed to load"
 
 **ဖြေရှင်းနည်း:**
-```powershell
-# Check available memory
-foundry system info
 
-# Try smaller model first
+```powershell
+# Check available system memory
+foundry service status
+
+# Try a smaller model first
 foundry model run phi-4-mini
 
-# Check disk space for model cache
-dir "$env:USERPROFILE\.foundry\models"
+# Check disk space for model downloads
+# Models are stored in: %USERPROFILE%\.foundry\models (Windows)
 ```
 
-### အခက်အခဲ ၃: "Connection refused on localhost:5273"
+
+### "Connection refused on localhost"
 
 **ဖြေရှင်းနည်း:**
+
 ```powershell
 # Check if service is running
-foundry status
+foundry service status
 
 # Start service if needed
 foundry service start
 
-# Check for port conflicts
-netstat -an | findstr 5273
+# Verify the port (default is 5273)
+# Check for port conflicts with: netstat -an | findstr 5273
 ```
 
-## Performance Optimization Tips
-
-### ၁. Model Selection Strategy
-
-- **Phi-4-mini**: အထွေထွေလုပ်ငန်းများအတွက် အကောင်းဆုံး၊ memory usage နည်း
-- **Qwen2.5-0.5b**: အမြန်ဆုံး inference၊ အနည်းဆုံး resources
-- **GPT-OSS-20B**: အရည်အသွေးအမြင့်ဆုံး၊ resources ပိုမိုလိုအပ်
-- **DeepSeek-Coder**: programming tasks အတွက် အကောင်းဆုံး
-
-### ၂. Hardware Optimization
-
-```powershell
-# Enable all acceleration options
-foundry config set compute.onnx.enable_gpu true
-foundry config set compute.webgpu.enabled true
-foundry config set compute.cpu.threads auto
-
-# Optimize memory usage
-foundry config set model.cache.max_size 10GB
-foundry config set model.preload false
-```
-
-### ၃. Performance ကို စစ်ဆေးခြင်း
-
-```powershell
-cd Workshop/samples
-# Performance & latency measurement
-# Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
-# Example:
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python -m session03.benchmark_oss_models
-
-# Re-run after enabling GPU acceleration to compare:
-foundry config set compute.onnx.enable_gpu true
-python -m session03.benchmark_oss_models
-```
-
-### Optional Enhancements
-
-| Enhancement | အဓိက | လုပ်နည်း |
-|-------------|------|-----|
-| Shared Utilities | client/bootstrap logic များကို duplicate မဖြစ်အောင် ဖယ်ရှားပါ | `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) ကို အသုံးပြုပါ |
-| Token Usage Visibility | cost/efficiency ကို စဉ်းစားရန် သင်ကြားပါ | `SHOW_USAGE=1` ကို set လုပ်ပြီး prompt/completion/total tokens ကို print လုပ်ပါ |
-| Deterministic Comparisons | benchmarking & regression စစ်ဆေးမှုများ | `temperature=0`, `top_p=1`, consistent prompt text ကို အသုံးပြုပါ |
-| First-Token Latency | responsiveness metric | streaming (`BENCH_STREAM=1`) ဖြင့် benchmark script ကို ပြင်ဆင်ပါ |
-| Retry on Transient Errors | cold start တွင် resilient demos | `RETRY_ON_FAIL=1` (default) & `RETRY_BACKOFF` ကို ပြင်ဆင်ပါ |
-| Smoke Testing | key flows များကို အမြန်စစ်ဆေးခြင်း | workshop မတိုင်မီ `python Workshop/tests/smoke.py` ကို run လုပ်ပါ |
-| Model Alias Profiles | machine များအကြား မော်ဒယ် set ကို အလွယ်တကူ ပြောင်းနိုင် | `.env` ကို `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` ဖြင့် ထိန်းသိမ်းပါ |
-| Caching Efficiency | multi-sample run တွင် repeated warmups မဖြစ်အောင် | Utilities cache managers; scripts/notebooks များအကြား reuse လုပ်ပါ |
-| First Run Warmup | p95 latency spikes ကို လျှော့ချပါ | `FoundryLocalManager` တည်ဆောက်ပြီးနောက် tiny prompt တစ်ခုကို fire လုပ်ပါ။
-
-PowerShell မှာ deterministic warm baseline ကို ဥပမာ:
-
-```powershell
-set FOUNDRY_LOCAL_ALIAS=phi-4-mini
-set SHOW_USAGE=1
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference." | Out-Null
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
-```
-
-သင် output တူညီပြီး token count တူညီသော ဒုတိယ run တွင် determinism ကို အတည်ပြုနိုင်ပါမည်။
 
 ## နောက်တစ်ဆင့်များ
 
-ဒီအစည်းအဝေးပြီးဆုံးပြီးနောက်:
+### ချက်ချင်းလုပ်ဆောင်ရန်
 
-1. **Session 2 ကို လေ့လာပါ**: Azure AI Foundry RAG ဖြင့် AI solution များကို တည်ဆောက်ပါ။
-2. **မော်ဒယ်များကို စမ်းသပ်ပါ**: Qwen, DeepSeek နှင့် အခြားမော်ဒယ်များကို စမ်းသပ်ပါ။
-3. **Performance ကို အကောင်းဆုံးဖြစ်အောင် ပြင်ဆင်ပါ**: သင့် hardware အတွက် setting များကို fine-tune လုပ်ပါ။
-4. **Custom Applications ကို တည်ဆောက်ပါ**: Foundry Local SDK ကို သင့်ရဲ့ project များတွင် အသုံးပြုပါ။
+1. **မော်ဒယ်များနှင့် prompt များကို စမ်းသပ်ပါ**
+2. **သင်၏ chat application ကို ပြင်ဆင်ပြီး မော်ဒယ်အမျိုးမျိုးကို စမ်းသပ်ပါ**
+3. **သင်၏ကိုယ်ပိုင် prompt များကို ဖန်တီးပြီး အပြန်အလှန်များကို စမ်းသပ်ပါ**
+4. **Session 2**: RAG application များကို တည်ဆောက်ခြင်းကို ရှာဖွေပါ
 
-## အပိုဆောင်းအရင်းအမြစ်များ
+### အဆင့်မြင့် သင်ယူမှုလမ်းကြောင်း
 
-### Documentation
+1. **Session 2**: RAG (Retrieval-Augmented Generation) ဖြင့် AI ဖြေရှင်းချက်များကို တည်ဆောက်ခြင်း
+2. **Session 3**: အခြား open-source မော်ဒယ်များကို နှိုင်းယှဉ်ခြင်း
+3. **Session 4**: နောက်ဆုံးပေါ် မော်ဒယ်များနှင့် အလုပ်လုပ်ခြင်း
+4. **Session 5**: multi-agent AI စနစ်များကို တည်ဆောက်ခြင်း
+
+## ပတ်ဝန်းကျင် Variable များ (optional)
+
+ပိုမိုအဆင့်မြင့်အသုံးပြုမှုအတွက် ဒီပတ်ဝန်းကျင် variable များကို သတ်မှတ်နိုင်သည်:
+
+| Variable | ရည်ရွယ်ချက် | ဥပမာ |
+|----------|---------|---------|
+| `FOUNDRY_LOCAL_ALIAS` | အသုံးပြုရန် မော်ဒယ် default | `phi-4-mini` |
+| `FOUNDRY_LOCAL_ENDPOINT` | endpoint URL ကို override | `http://localhost:5273/v1` |
+
+သင်၏ project directory တွင် `.env` ဖိုင်တစ်ခု ဖန်တီးပါ:
+```
+FOUNDRY_LOCAL_ALIAS=phi-4-mini
+FOUNDRY_LOCAL_ENDPOINT=auto
+```
+
+
+## ထပ်ဆောင်းအရင်းအမြစ်များ
+
+### စာရွက်စာတမ်းများ
+
 - [Foundry Local Python SDK Reference](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Foundry Local Installation Guide](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 - [Model Catalog](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
-### Sample Code
-- [Module08 Sample 01](./samples/01/README.md) - REST Chat Quickstart
-- [Module08 Sample 02](./samples/02/README.md) - OpenAI SDK Integration
-- [Module08 Sample 03](./samples/03/README.md) - Model Discovery & Benchmarking
+### နမူနာ Code
+
+- **Session01 Python Sample**: `Workshop/samples/session01/chat_bootstrap.py` - streaming response ပါရှိသော chat app အပြည့်အစုံ
+- **Session01 Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - interactive tutorial  
+- [Module08 Sample 01](../Module08/samples/01/README.md) - REST Chat Quickstart
+- [Module08 Sample 02](../Module08/samples/02/README.md) - OpenAI SDK Integration
+- [Module08 Sample 03](../Module08/samples/03/README.md) - Model Discovery & Benchmarking
 
 ### Community
+
 - [Foundry Local GitHub Discussions](https://github.com/microsoft/Foundry-Local/discussions)
 - [Azure AI Community](https://techcommunity.microsoft.com/category/artificialintelligence)
 
 ---
 
-**Session Duration**: 30 မိနစ် လက်တွေ့လုပ်ငန်း + 15 မိနစ် Q&A
-**Difficulty Level**: Beginner
-**Prerequisites**: Windows 11, Python 3.10+, Administrator access
+**Session ကြာမြင့်ချိန်**: လက်တွေ့ ၃၀ မိနစ် + Q&A ၁၅ မိနစ်  
+**အဆင့်အတန်း**: Beginner  
+**ကြိုတင်လိုအပ်ချက်များ**: Windows 11/macOS 11+, Python 3.10+, Admin access
 
-## Sample Scenario & Workshop Mapping
+## Workshop ဥပမာအခြေအနေ
 
-| Workshop Script / Notebook | Scenario | ရည်ရွယ်ချက် | Example Input(s) | Dataset Needed |
-|----------------------------|----------|------|------------------|----------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Internal IT team သည် privacy assessment portal အတွက် on‑device inference ကို စမ်းသပ်ခြင်း | local SLM သည် standard prompts တွင် sub‑second latency ဖြင့် တုံ့ပြန်မှုရှိသည်ကို သက်သေပြပါ | "List two benefits of local inference." | None (single prompt) |
-| Quickstart adaptation code block | Developer သည် ရှိပြီးသား OpenAI script ကို Foundry Local သို့ ပြောင်းလဲခြင်း | drop‑in compatibility ကို ပြပါ | "Give two benefits of local inference." | Inline prompt only |
+### အမှန်တကယ်အခြေအနေ
 
-### Scenario Narrative
-Security & compliance team သည် sensitive prototype data ကို locally process လုပ်နိုင်မလား စစ်ဆေးရမည်။ သူတို့ bootstrap script ကို privacy, latency, cost စတဲ့ prompt များဖြင့် run လုပ်ပြီး deterministic temperature=0 mode ကို အသုံးပြုကာ baseline outputs များကို capture လုပ်ပါမည် (Session 3 benchmarking နှင့် Session 4 SLM vs LLM contrast အတွက်).
+**အခြေအနေ**: အဖွဲ့အစည်း IT အဖွဲ့တစ်ခုသည် sensitive employee feedback များကို အပြင်ပဝန်ဆောင်မှုများသို့ အချက်အလက်မပို့ဘဲ device ပေါ်တွင် AI inference ကို စမ်းသပ်ရန် လိုအပ်သည်။
 
-### Minimal Prompt Set JSON (optional)
+**သင်၏ရည်မှန်းချက်**: ဒေသခံ AI မော်ဒယ်များသည် sub-second latency ဖြင့် အရည်အသွေးမြင့် အပြန်အလှန်များကို ပေးနိုင်ပြီး အချက်အလက်လုံခြုံရေးကို ထိန်းသိမ်းထားနိုင်သည်ကို ပြသပါ။
+
+### Test Prompts
+
+ဒီ prompt များကို သင်၏ setup ကို အတည်ပြုရန် အသုံးပြုပါ:
+
 ```json
 [
     "List two benefits of local inference.",
     "Summarize why keeping data on device improves privacy.",
-    "Give one trade‑off when choosing an SLM over a large model."
+    "Give one trade-off when choosing a small model over a large model."
 ]
 ```
 
-ဒီ list ကို အသုံးပြုပြီး reproducible evaluation loop တစ်ခုကို ဖန်တီးပါ သို့မဟုတ် အနာဂတ် regression test harness ကို seed လုပ်ပါ။
+
+### အောင်မြင်မှုအချက်အလက်များ
+
+- ✅ prompt များအားလုံးသည် ၂ စက္ကန့်အောက်တွင် အပြန်အလှန်ရရှိသည်
+- ✅ အချက်အလက်များသည် သင်၏ local machine ကို မထွက်သွားပါ
+- ✅ အပြန်အလှန်များသည် သက်ဆိုင်ပြီး အကျိုးရှိသည်
+- ✅ သင်၏ chat application သည် ချောမွေ့စွာ အလုပ်လုပ်သည်
+
+ဒီအတည်ပြုမှုသည် Sessions 2-6 တွင် အဆင့်မြင့် workshop များအတွက် သင်၏ Foundry Local setup အဆင်သင့်ဖြစ်ကြောင်း အတည်ပြုသည်။
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရ အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွတ်များ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T22:03:24+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-11T23:11:50+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "sv"
 }
 -->
-# Session 4: Utforska banbrytande modeller – LLMs, SLMs & lokal inferens
+# Session 4: Utforska Banbrytande Modeller – LLMs, SLMs & Lokal Inferens
 
 ## Sammanfattning
 
-Jämför Large Language Models (LLMs) och Small Language Models (SLMs) för lokala kontra molnbaserade inferensscenarier. Lär dig implementeringsmönster som utnyttjar ONNX Runtime-acceleration, WebGPU-exekvering och hybrid RAG-upplevelser. Inkluderar en Chainlit RAG-demo med en lokal modell samt en valfri utforskning av OpenWebUI. Du kommer att anpassa en WebGPU-inferensstart och utvärdera Phi kontra GPT-OSS-20B vad gäller kapacitet och kostnads-/prestandaavvägningar.
+Jämför Large Language Models (LLMs) och Small Language Models (SLMs) för lokala kontra molnbaserade inferensscenarier. Lär dig implementeringsmönster som utnyttjar ONNX Runtime-acceleration, WebGPU-exekvering och hybrid RAG-upplevelser. Inkluderar en Chainlit RAG-demo med en lokal modell samt en valfri utforskning av OpenWebUI. Du kommer att anpassa en WebGPU-inferensstart och utvärdera Phi kontra GPT-OSS-20B vad gäller kapabilitet och kostnads-/prestandaavvägningar.
 
 ## Lärandemål
 
@@ -19,16 +19,16 @@ Jämför Large Language Models (LLMs) och Small Language Models (SLMs) för loka
 - **Implementera** modeller med ONNXRuntime och (där det stöds) WebGPU
 - **Kör** webbläsarbaserad inferens (integritetsbevarande interaktiv demo)
 - **Integrera** en Chainlit RAG-pipeline med en lokal SLM-backend
-- **Utvärdera** med hjälp av lättviktiga kvalitets- och kostnadsheuristiker
+- **Utvärdera** med hjälp av lättviktiga kvalitets- och kostnadsheuristik
 
 ## Förkunskapskrav
 
 - Sessioner 1–3 genomförda
 - `chainlit` installerat (redan inkluderat i `requirements.txt` för Modul08)
 - WebGPU-kompatibel webbläsare (Edge / Chrome senaste versionen på Windows 11)
-- Foundry Local igång (`foundry status`)
+- Foundry Local igång (`foundry service status`)
 
-### Plattformsspecifika anteckningar
+### Plattformsspecifika Anteckningar
 
 Windows är fortfarande den primära målmiljön. För macOS-utvecklare som väntar på inhemska binärfiler:
 1. Kör Foundry Local i en Windows 11 VM (Parallels / UTM) ELLER en fjärransluten Windows-arbetsstation.
@@ -38,14 +38,14 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 3. Använd samma Python-virtuella miljösteg som i tidigare sessioner.
 
-Chainlit-installation (båda plattformarna):
+Chainlit-installation (båda plattformar):
 ```bash
 pip install chainlit
 ```
 
-## Demo-flöde (30 min)
+## Demo Flöde (30 min)
 
-### 1. Jämför Phi (SLM) och GPT-OSS-20B (LLM) (6 min)
+### 1. Jämför Phi (SLM) kontra GPT-OSS-20B (LLM) (6 min)
 
 ```powershell
 foundry model run phi-4-mini
@@ -62,19 +62,9 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 
 Spåra: svarsdjup, faktakorrekthet, stilistisk rikedom, latens.
 
-### 2. ONNX Runtime-acceleration (5 min)
+Observera genomströmningsförändringar efter att GPU aktiverats kontra endast CPU.
 
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
-
-Observera genomströmningsförändringar efter att ha aktiverat GPU kontra endast CPU.
-
-### 3. WebGPU-inferens i webbläsaren (6 min)
+### 3. WebGPU Inferens i Webbläsare (6 min)
 
 Anpassa startfilen `04-webgpu-inference` (skapa `samples/04-cutting-edge/webgpu_demo.html`):
 
@@ -119,7 +109,7 @@ Anpassa startfilen `04-webgpu-inference` (skapa `samples/04-cutting-edge/webgpu_
 
 Öppna filen i en webbläsare; observera låg latens vid lokal rundresa.
 
-### 4. Chainlit RAG-chattapp (7 min)
+### 4. Chainlit RAG Chattapp (7 min)
 
 Minimal `samples/04-cutting-edge/chainlit_app.py`:
 
@@ -175,12 +165,12 @@ Leveranser:
 | Kategori | Phi-4-mini | GPT-OSS-20B | Observation |
 |----------|------------|-------------|-------------|
 | Latens (kallstart) | Snabb | Långsammare | SLM värms upp snabbt |
-| Minne | Låg | Hög | Möjlighet att köra på enheter |
-| Kontextföljsamhet | Bra | Stark | Större modell kan vara mer ordrik |
+| Minne | Lågt | Högt | Möjlighet att köra på enheter |
+| Kontextföljsamhet | Bra | Stark | Större modell kan vara mer detaljerad |
 | Kostnad (lokalt) | Minimal | Högre (resurser) | Energi-/tidsavvägning |
-| Bästa användningsområde | Edge-appar | Djupgående resonemang | Hybridpipeline möjlig |
+| Bästa användningsfall | Edge-appar | Djupgående resonemang | Hybridpipeline möjlig |
 
-## Validering av miljö
+## Validera Miljö
 
 ```powershell
 # List catalog (no --running flag; loaded models are those you have previously run)
@@ -197,31 +187,31 @@ foundry model list
 
 | Symptom | Orsak | Åtgärd |
 |---------|-------|--------|
-| Webbsidans hämtning misslyckas | CORS eller tjänsten nere | Använd `curl` för att verifiera endpoint; aktivera CORS-proxy om det behövs |
-| Chainlit tom | Miljö inte aktiv | Aktivera venv och installera om beroenden |
+| Webbsidans hämtning misslyckas | CORS eller tjänsten nere | Använd `curl` för att verifiera endpoint; aktivera CORS-proxy om nödvändigt |
+| Chainlit tom | Miljö ej aktiv | Aktivera venv & installera om beroenden |
 | Hög latens | Modellen precis laddad | Värm upp med en liten promptsekvens |
 
 ## Referenser
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- Chainlit-dokumentation: https://docs.chainlit.io
-- RAG-utvärdering (Ragas): https://docs.ragas.io
+- Chainlit Docs: https://docs.chainlit.io
+- RAG Evaluation (Ragas): https://docs.ragas.io
 
 ---
 
-**Sessionens längd**: 30 min  
+**Sessionens Längd**: 30 min  
 **Svårighetsgrad**: Avancerad
 
-## Exempelscenario & workshopkartläggning
+## Exempelscenario & Workshopkartläggning
 
-| Workshopartefakter | Scenario | Mål | Data / promptkälla |
+| Workshopartefakter | Scenario | Mål | Data / Promptkälla |
 |--------------------|----------|-----|--------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Arkitektteam som utvärderar SLM kontra LLM för sammanfattningsgenerator för ledningsgrupp | Kvantifiera latens + tokenanvändningsskillnad | Enstaka `COMPARE_PROMPT` miljövariabel |
-| `chainlit_app.py` (RAG-demo) | Prototyp för intern kunskapsassistent | Grundlägg korta svar med minimal lexikalisk hämtning | Inline `DOCS`-lista i filen |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Arkitektteam som utvärderar SLM kontra LLM för sammanfattningsgenerator för ledningen | Kvantifiera latens + tokenanvändningsskillnad | Enkel `COMPARE_PROMPT` miljövariabel |
+| `chainlit_app.py` (RAG-demo) | Intern prototyp för kunskapsassistent | Grundlägg korta svar med minimal lexikalisk hämtning | Inline `DOCS` lista i filen |
 | `webgpu_demo.html` | Framtida lokal webbläsarinferensförhandsvisning | Visa låg latens vid lokal rundresa + UX-berättelse | Endast live användarprompt |
 
-### Scenarionarrativ
-Produktorganisationen vill ha en generator för ledningsgruppssammanfattningar. En lättviktig SLM (phi‑4‑mini) skapar utkast till sammanfattningar; en större LLM (gpt‑oss‑20b) kan endast förfina högprioriterade rapporter. Sessionsskripten fångar empiriska latens- och tokenmått för att motivera en hybriddesign, medan Chainlit-demon illustrerar hur grundad hämtning håller små modellers svar faktiska. WebGPU-konceptet ger en vision för helt klientbaserad bearbetning när webbläsaracceleration mognar.
+### Scenarioberättelse
+Produktorganisationen vill ha en generator för ledningssammanfattningar. En lättviktig SLM (phi‑4‑mini) skapar utkast till sammanfattningar; en större LLM (gpt‑oss‑20b) kan endast förfina högprioriterade rapporter. Sessionsskripten fångar empiriska latens- och tokenmetrik för att motivera en hybriddesign, medan Chainlit-demon illustrerar hur grundad hämtning håller små modellers svar faktabaserade. WebGPU-konceptet ger en vision för helt klientbaserad bearbetning när webbläsaracceleration mognar.
 
 ### Minimal RAG-kontekst (Chainlit)
 ```python
@@ -232,7 +222,7 @@ DOCS = [
 ]
 ```
 
-### Hybridutkast→Förfina-flöde (Pseudo)
+### Hybrid Utkast→Förfina Flöde (Pseudo)
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":prompt}], max_tokens=280)
 if len(draft) < 600:  # heuristic: escalate only for longer briefs or flagged topics
@@ -241,24 +231,24 @@ else:
     final, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Refine and polish:\n{draft}"}], max_tokens=220)
 ```
 
-Spåra båda latenskomponenterna för att rapportera genomsnittlig blandad kostnad.
+Spåra båda latenskomponenterna för att rapportera blandad genomsnittlig kostnad.
 
-### Valfria förbättringar
+### Valfria Förbättringar
 
 | Fokus | Förbättring | Varför | Implementeringshint |
 |-------|------------|-------|---------------------|
-| Jämförande mått | Spåra tokenanvändning + latens för första token | Holistisk prestandavy | Använd förbättrat benchmark-skript (Session 3) med `BENCH_STREAM=1` |
-| Hybridpipeline | SLM-utkast → LLM-förfining | Minska latens och kostnad | Generera med phi-4-mini, förfina sammanfattning med gpt-oss-20b |
-| Strömmande UI | Bättre UX i Chainlit | Inkrementell feedback | Använd `stream=True` när lokal strömning är aktiverad; ackumulera delar |
-| WebGPU-caching | Snabbare JS-initiering | Minska omkompileringens overhead | Cachea kompilerade shader-artefakter (framtida runtime-funktion) |
+| Jämförande Metrik | Spåra tokenanvändning + latens för första token | Holistisk prestandavy | Använd förbättrat benchmark-skript (Session 3) med `BENCH_STREAM=1` |
+| Hybridpipeline | SLM utkast → LLM förfina | Minska latens & kostnad | Generera med phi-4-mini, förfina sammanfattning med gpt-oss-20b |
+| Strömmande UI | Bättre UX i Chainlit | Inkrementell feedback | Använd `stream=True` när lokal strömning exponeras; ackumulera bitar |
+| WebGPU Caching | Snabbare JS-initiering | Minska omkompilering | Cachea kompilerade shaderartefakter (framtida runtime-funktion) |
 | Deterministisk QA-uppsättning | Rättvis modelljämförelse | Ta bort variation | Fast promptlista + `temperature=0` för utvärderingskörningar |
 | Resultatbedömning | Strukturerad kvalitetslins | Gå bortom anekdoter | Enkel rubricering: sammanhang / faktakorrekthet / korthet (1–5) |
-| Energi-/resursanteckningar | Klassrumsdiskussion | Visa avvägningar | Använd OS-övervakning (`foundry system info`, Aktivitetshanteraren, `nvidia-smi`) + benchmark-skriptutgångar |
-| Kostnadssimulering | Förberedelse för moln | Planera skalning | Kartlägg tokens till hypotetisk molnprissättning för TCO-berättelse |
-| Latensnedbrytning | Identifiera flaskhalsar | Måloptimera | Mät promptförberedelse, begäran, första token, fullständig slutförande |
-| RAG + LLM-fallback | Kvalitetssäkerhetsnät | Förbättra svåra frågor | Om SLM-svarslängd < tröskel eller låg säkerhet → eskalera |
+| Energi-/Resursanteckningar | Klassrumsdiskussion | Visa avvägningar | Använd OS-övervakning (Task Manager, `nvidia-smi`) + benchmark-skriptutdata |
+| Kostnadssimulering | Förbered molnmotivering | Planera skalning | Kartlägg tokens till hypotetisk molnprissättning för TCO-berättelse |
+| Latensnedbrytning | Identifiera flaskhalsar | Målinriktade optimeringar | Mät promptförberedelse, begäran, första token, fullständig slutförande |
+| RAG + LLM Fallback | Kvalitetssäkerhetsnät | Förbättra svåra frågor | Om SLM-svarslängd < tröskel eller låg tillförlitlighet → eskalera |
 
-#### Exempel på hybridutkast/förfiningsmönster
+#### Exempel på Hybrid Utkast/Förfina Mönster
 
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], max_tokens=300, temperature=0.4)
@@ -280,5 +270,7 @@ Använd konsekvent mätstruktur över modeller för rättvisa jämförelser.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

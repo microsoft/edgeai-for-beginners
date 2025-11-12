@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T22:40:02+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T23:47:48+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "ms"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. Pasang Foundry Local
 
-Ikuti panduan pemasangan rasmi:
+Ikuti panduan pemasangan rasmi:  
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -54,7 +54,7 @@ cd Workshop/samples
 python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
-**Pembolehubah Persekitaran:**
+**Pembolehubah Persekitaran:**  
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
@@ -67,7 +67,7 @@ cd Workshop/samples
 python -m session02.rag_pipeline
 ```
 
-**Pembolehubah Persekitaran:**
+**Pembolehubah Persekitaran:**  
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set RAG_QUESTION="Why use RAG with local inference?"
@@ -81,7 +81,7 @@ cd Workshop/samples
 python -m session02.rag_eval_ragas
 ```
 
-**Nota**: Memerlukan kebergantungan tambahan dipasang melalui `requirements.txt`
+**Nota**: Memerlukan kebergantungan tambahan yang dipasang melalui `requirements.txt`
 
 ### Sesi 03: Penanda Aras
 
@@ -90,7 +90,7 @@ cd Workshop/samples
 python -m session03.benchmark_oss_models
 ```
 
-**Pembolehubah Persekitaran:**
+**Pembolehubah Persekitaran:**  
 ```bash
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
@@ -107,7 +107,7 @@ cd Workshop/samples
 python -m session04.model_compare
 ```
 
-**Pembolehubah Persekitaran:**
+**Pembolehubah Persekitaran:**  
 ```bash
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
@@ -121,21 +121,21 @@ cd Workshop/samples
 python -m session05.agents_orchestrator
 ```
 
-**Pembolehubah Persekitaran:**
+**Pembolehubah Persekitaran:**  
 ```bash
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=phi-4-mini
 set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ```
 
-### Sesi 06: Penghala Model
+### Sesi 06: Router Model
 
 ```bash
 cd Workshop/samples
 python -m session06.models_router
 ```
 
-**Menguji logik penghalaan** dengan pelbagai niat (kod, ringkasan, klasifikasi)
+**Ujian logik penghalaan** dengan pelbagai niat (kod, ringkasan, klasifikasi)
 
 ### Sesi 06: Pipeline
 
@@ -181,7 +181,7 @@ python -m tests.smoke
 
 ## Penyelesaian Masalah
 
-### Perkhidmatan Tidak Berjalan
+### Perkhidmatan Tidak Berfungsi
 
 ```bash
 # Check status
@@ -231,8 +231,8 @@ foundry model run phi-4-mini
 | Pembolehubah | Lalai | Penerangan |
 |--------------|-------|------------|
 | `FOUNDRY_LOCAL_ALIAS` | Berbeza | Alias model untuk digunakan |
-| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Menimpa titik akhir perkhidmatan |
-| `SHOW_USAGE` | `0` | Paparkan statistik penggunaan token |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Ganti titik akhir perkhidmatan |
+| `SHOW_USAGE` | `0` | Tunjukkan statistik penggunaan token |
 | `RETRY_ON_FAIL` | `1` | Aktifkan logik percubaan semula |
 | `RETRY_BACKOFF` | `1.0` | Kelewatan percubaan semula awal (saat) |
 
@@ -241,7 +241,7 @@ foundry model run phi-4-mini
 |--------------|-------|------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Model embedding |
 | `RAG_QUESTION` | Lihat sampel | Soalan ujian RAG |
-| `BENCH_MODELS` | Berbeza | Model dipisahkan dengan koma |
+| `BENCH_MODELS` | Berbeza | Model yang dipisahkan dengan koma |
 | `BENCH_ROUNDS` | `3` | Iterasi penanda aras |
 | `BENCH_PROMPT` | Lihat sampel | Prompt penanda aras |
 | `BENCH_STREAM` | `0` | Ukur latensi token pertama |
@@ -251,7 +251,7 @@ foundry model run phi-4-mini
 | `LLM_ALIAS` | `qwen2.5-7b` | Model bahasa besar |
 | `COMPARE_PROMPT` | Lihat sampel | Prompt perbandingan |
 
-## Model Disyorkan
+## Model yang Disyorkan
 
 ### Pembangunan & Ujian
 - **phi-4-mini** - Kualiti dan kelajuan seimbang
@@ -265,22 +265,21 @@ foundry model run phi-4-mini
 
 ## Dokumentasi SDK
 
-- **Foundry Local**: https://github.com/microsoft/Foundry-Local
+- **Foundry Local**: https://github.com/microsoft/Foundry-Local  
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## Mendapatkan Bantuan
 
-1. Periksa status perkhidmatan: `foundry service status`
-2. Lihat log: Periksa log perkhidmatan Foundry Local
-3. Semak dokumen SDK: https://github.com/microsoft/Foundry-Local
-4. Semak kod sampel: Semua sampel mempunyai docstring terperinci
+1. Semak status perkhidmatan: `foundry service status`  
+2. Lihat log: Semak log perkhidmatan Foundry Local  
+3. Semak dokumen SDK: https://github.com/microsoft/Foundry-Local  
+4. Semak kod sampel: Semua sampel mempunyai docstring terperinci  
 
 ## Langkah Seterusnya
 
-1. Lengkapkan semua sesi bengkel mengikut urutan
-2. Bereksperimen dengan model yang berbeza
-3. Ubah suai sampel untuk kes penggunaan anda
-4. Semak `SDK_MIGRATION_NOTES.md` untuk corak lanjutan
+1. Lengkapkan semua sesi bengkel mengikut urutan  
+2. Bereksperimen dengan model yang berbeza  
+3. Ubah suai sampel untuk kes penggunaan anda  
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

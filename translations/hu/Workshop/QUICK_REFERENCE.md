@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:58:13+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T00:06:41+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "hu"
 }
@@ -195,12 +195,12 @@ for chunk in stream:
 ## 📊 Modellválasztás
 
 | Modell | Méret | Legjobb felhasználás | Sebesség |
-|-------|-------|-----------------------|---------|
+|--------|-------|----------------------|----------|
 | `qwen2.5-0.5b` | 0.5B | Gyors osztályozás | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Gyors kódgenerálás | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Kreatív írás | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Kód, refaktorálás | ⚡⚡ |
-| `phi-4-mini` | 4B | Általános, összefoglalás | ⚡⚡ |
+| `phi-4-mini` | 4B | Általános, összegzés | ⚡⚡ |
 | `qwen2.5-7b` | 7B | Komplex érvelés | ⚡ |
 
 ---
@@ -209,17 +209,15 @@ for chunk in stream:
 
 - **SDK Dokumentáció**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Gyors referencia**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Frissítési összefoglaló**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migrációs jegyzetek**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
 ## 💡 Tippek
 
-1. **Ügyfelek gyorsítótárazása**: A `workshop_utils` automatikusan gyorsítótáraz
+1. **Ügyfelek gyorsítótárazása**: A `workshop_utils` automatikusan gyorsítótárazza
 2. **Használj kisebb modelleket**: Kezdd a `qwen2.5-0.5b` modellel teszteléshez
-3. **Engedélyezd a használati statisztikát**: Állítsd be `SHOW_USAGE=1` a tokenek követéséhez
-4. **Batch feldolgozás**: Több prompt feldolgozása egymás után
+3. **Engedélyezd a használati statisztikát**: Állítsd be `SHOW_USAGE=1` a tokenek nyomon követéséhez
+4. **Batch feldolgozás**: Több promptot dolgozz fel egymás után
 5. **Csökkentsd a max_tokens értéket**: Csökkenti a késleltetést gyors válaszokhoz
 
 ---
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Felelősség kizárása**:  
 Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

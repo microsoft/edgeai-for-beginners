@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-11-11T17:37:00+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-12T01:05:52+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "pcm"
 }
 -->
 # Workshop Quick Start Guide
 
-## Wetin you go need
+## Wetin You Need
 
 ### 1. Install Foundry Local
 
@@ -45,7 +45,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## How to run Workshop Samples
+## How to Run Workshop Samples
 
 ### Session 01: Basic Chat
 
@@ -143,7 +143,7 @@ python -m session06.models_router
 python -m session06.models_pipeline
 ```
 
-**Complex multi-step pipeline** wey get planning, execution, and refinement
+**E be complex multi-step pipeline** wey get planning, execution, and refinement
 
 ## Scripts
 
@@ -177,7 +177,7 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**Tests**: E dey check basic functionality of key samples
+**Tests**: E dey test di basic functionality of di key samples
 
 ## Troubleshooting
 
@@ -275,12 +275,11 @@ foundry model run phi-4-mini
 3. Check SDK docs: https://github.com/microsoft/Foundry-Local
 4. Review sample code: All samples get detailed docstrings
 
-## Wetin to Do Next
+## Next Steps
 
-1. Finish all workshop sessions one by one
+1. Finish all di workshop sessions one by one
 2. Try different models
-3. Change samples to fit your own use cases
-4. Check `SDK_MIGRATION_NOTES.md` for advanced patterns
+3. Change di samples to fit your own use cases
 
 ---
 
@@ -292,5 +291,5 @@ foundry model run phi-4-mini
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dis dokyument don use AI transleto service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am correct, abeg sabi say machine translation fit get mistake or no dey accurate well. Di original dokyument for im native language na di main source wey you go trust. For important mata, e good make professional human transleto check am. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
+Dis dokyument don use AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am accurate, abeg sabi say automated translations fit get mistake or no dey correct well. Di original dokyument for im native language na di one wey you go take as di correct source. For important information, e better make professional human translation dey use. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

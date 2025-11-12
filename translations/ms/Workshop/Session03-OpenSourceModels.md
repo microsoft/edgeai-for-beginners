@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-09T19:25:50+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T23:51:30+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "ms"
 }
@@ -11,24 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrak
 
-Ketahui cara membawa model Hugging Face dan sumber terbuka lain ke dalam Foundry Local. Pelajari strategi pemilihan, alur kerja sumbangan komuniti, metodologi perbandingan prestasi, dan cara memperluaskan Foundry dengan pendaftaran model tersuai. Sesi ini selaras dengan tema eksplorasi mingguan "Model Mondays" dan melengkapkan anda untuk menilai serta mengoperasikan model sumber terbuka secara tempatan sebelum meningkatkannya ke Azure.
+Ketahui cara membawa model Hugging Face dan model sumber terbuka lain ke dalam Foundry Local. Pelajari strategi pemilihan, aliran kerja sumbangan komuniti, metodologi perbandingan prestasi, dan cara memperluaskan Foundry dengan pendaftaran model tersuai. Sesi ini selaras dengan tema eksplorasi mingguan "Model Mondays" dan melengkapkan anda untuk menilai dan mengoperasikan model sumber terbuka secara tempatan sebelum meningkatkan ke Azure.
 
 ## Objektif Pembelajaran
 
 Pada akhir sesi, anda akan dapat:
 
-- **Menemui & Menilai**: Mengenal pasti model calon (mistral, gemma, qwen, deepseek) menggunakan pertimbangan kualiti vs sumber.
-- **Memuat & Menjalankan**: Menggunakan CLI Foundry Local untuk memuat turun, menyimpan, dan melancarkan model komuniti.
-- **Penanda Aras**: Menerapkan heuristik konsisten untuk latensi + throughput token + kualiti.
-- **Memperluaskan**: Mendaftarkan atau menyesuaikan pembungkus model tersuai mengikut corak yang serasi dengan SDK.
+- **Menemui & Menilai**: Mengenal pasti model calon (mistral, gemma, qwen, deepseek) menggunakan pertukaran antara kualiti dan sumber.
+- **Memuat & Menjalankan**: Menggunakan Foundry Local CLI untuk memuat turun, menyimpan, dan melancarkan model komuniti.
+- **Penanda Aras**: Mengaplikasikan heuristik konsisten untuk latensi + throughput token + kualiti.
+- **Memperluaskan**: Mendaftar atau menyesuaikan pembungkus model tersuai mengikut pola yang serasi dengan SDK.
 - **Membandingkan**: Menghasilkan perbandingan terstruktur untuk keputusan pemilihan SLM vs LLM bersaiz sederhana.
 
 ## Prasyarat
 
-- Sesi 1 & 2 telah diselesaikan
+- Sesi 1 & 2 selesai
 - Persekitaran Python dengan `foundry-local-sdk` dipasang
-- Sekurang-kurangnya 15GB ruang cakera kosong untuk cache model berganda
-- Pilihan: Pecutan GPU/WebGPU diaktifkan (`foundry config list`)
+- Sekurang-kurangnya 15GB ruang cakera kosong untuk cache model pelbagai
 
 ### Permulaan Cepat Persekitaran Merentas Platform
 
@@ -56,7 +55,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Aliran Demo (30 minit)
 
-### 1. Memuat Model Hugging Face melalui CLI (8 minit)
+### 1. Memuatkan Model Hugging Face melalui CLI (8 minit)
 
 ```powershell
 # List catalog entries (filter manually if needed)
@@ -158,13 +157,13 @@ python samples/03-oss-models/benchmark_models.py
 
 ### 4. Membandingkan Prestasi (5 minit)
 
-Bincangkan pertimbangan: masa muat, jejak memori (perhatikan Task Manager / `nvidia-smi` / monitor sumber OS), kualiti output vs kelajuan. Gunakan skrip penanda aras Python (Sesi 3) untuk latensi & throughput; ulang selepas mengaktifkan pecutan GPU.
+Bincangkan pertukaran: masa muat, jejak memori (perhatikan Task Manager / `nvidia-smi` / monitor sumber OS), kualiti output vs kelajuan. Gunakan skrip penanda aras Python (Sesi 3) untuk latensi & throughput; ulangi selepas mengaktifkan pecutan GPU.
 
 ### 5. Projek Permulaan (4 minit)
 
 Cipta penjana laporan perbandingan model (perluaskan skrip penanda aras dengan eksport markdown).
 
-## Projek Permulaan: Perluaskan `03-huggingface-models`
+## Projek Permulaan: Memperluaskan `03-huggingface-models`
 
 Tingkatkan sampel sedia ada dengan:
 
@@ -180,18 +179,18 @@ foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
 
-Semua model sasaran harus muncul dan memberi respons kepada permintaan sembang probe.
+Semua model sasaran harus muncul dan memberi respons kepada permintaan chat probe.
 
 ## Senario Sampel & Pemetaan Bengkel
 
 | Skrip Bengkel | Senario | Matlamat | Sumber Prompt / Dataset |
 |---------------|---------|----------|-------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Pasukan platform tepi memilih SLM lalai untuk penyimpul terbenam | Menghasilkan perbandingan latensi + p95 + token/saat di kalangan model calon | Var `PROMPT` dalam talian + senarai `BENCH_MODELS` persekitaran |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Pasukan platform tepi memilih SLM lalai untuk penyimpul terbenam | Menghasilkan perbandingan latensi + p95 + token/sec di kalangan model calon | Var `PROMPT` dalam talian + senarai `BENCH_MODELS` persekitaran |
 
 ### Naratif Senario
-Pasukan kejuruteraan produk perlu memilih model penyimpul ringan lalai untuk ciri nota mesyuarat luar talian. Mereka menjalankan penanda aras deterministik terkawal (temperature=0) di seluruh set prompt tetap (lihat contoh di bawah) dan mengumpulkan metrik latensi + throughput dengan dan tanpa pecutan GPU.
+Kejuruteraan produk mesti memilih model penyimpul ringan lalai untuk ciri nota mesyuarat luar talian. Mereka menjalankan penanda aras deterministik terkawal (temperature=0) di kalangan set prompt tetap (lihat contoh di bawah) dan mengumpulkan metrik latensi + throughput dengan dan tanpa pecutan GPU.
 
-### Contoh Set Prompt JSON (boleh dikembangkan)
+### Contoh Set Prompt JSON (boleh diperluaskan)
 ```json
 [
     "Explain the principle of retrieval augmented generation in 2 sentences.",
@@ -205,18 +204,18 @@ Ulang setiap prompt bagi setiap model, tangkap latensi per-prompt untuk mendapat
 
 ## Kerangka Pemilihan Model
 
-| Dimensi | Metrik | Kepentingan |
-|---------|--------|-------------|
+| Dimensi | Metrik | Mengapa Ia Penting |
+|---------|--------|--------------------|
 | Latensi | avg / p95 | Konsistensi pengalaman pengguna |
-| Throughput | token/saat | Skalabiliti batch & streaming |
-| Memori | saiz penduduk | Keserasian peranti & kebolehan serentak |
-| Kualiti | prompt rubrik | Kesesuaian tugas |
+| Throughput | tokens/sec | Skalabiliti batch & streaming |
+| Memori | saiz penduduk | Keserasian peranti & kebersamaan |
+| Kualiti | rubric prompts | Kesesuaian tugas |
 | Jejak | cache cakera | Pengedaran & kemas kini |
 | Lesen | kebenaran penggunaan | Pematuhan komersial |
 
 ## Memperluaskan Dengan Model Tersuai
 
-Corak peringkat tinggi (pseudo):
+Pola tahap tinggi (pseudo):
 
 ```python
 # pseudo_adapter.py (conceptual)
@@ -236,7 +235,7 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 |-----|-------|-------------|
 | OOM pada mistral-7b | RAM/GPU tidak mencukupi | Hentikan model lain; cuba varian lebih kecil |
 | Respons pertama perlahan | Muat sejuk | Kekalkan hangat dengan prompt ringan berkala |
-| Muat turun tergendala | Ketidakstabilan rangkaian | Cuba semula; muat awal semasa waktu luar puncak |
+| Muat turun tergendala | Ketidakstabilan rangkaian | Cuba semula; pra-muat semasa waktu tidak sibuk |
 
 ## Rujukan
 
@@ -252,15 +251,15 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 ### Penambahbaikan Pilihan
 
 | Penambahbaikan | Manfaat | Cara |
-|----------------|---------|------|
-| Latensi Token Pertama Streaming | Mengukur responsif yang dirasakan | Jalankan penanda aras dengan `BENCH_STREAM=1` (skrip yang dipertingkatkan dalam `Workshop/samples/session03`) |
+|----------------|---------|-----|
+| Latensi Token Pertama Streaming | Mengukur responsiviti yang dirasakan | Jalankan penanda aras dengan `BENCH_STREAM=1` (skrip yang dipertingkatkan dalam `Workshop/samples/session03`) |
 | Mod Deterministik | Perbandingan regresi stabil | `temperature=0`, set prompt tetap, tangkap output JSON di bawah kawalan versi |
 | Penilaian Rubrik Kualiti | Menambah dimensi kualitatif | Kekalkan `prompts.json` dengan aspek yang dijangka; anotasi skor (1–5) secara manual atau melalui model sekunder |
 | Eksport CSV / Markdown | Laporan yang boleh dikongsi | Perluaskan skrip untuk menulis `benchmark_report.md` dengan jadual & sorotan |
 | Tag Keupayaan Model | Membantu penghalaan automatik kemudian | Kekalkan `models.json` dengan `{alias: {capabilities:[], size_mb:..}}` |
 | Fasa Pemanasan Cache | Mengurangkan bias permulaan sejuk | Laksanakan satu pusingan hangat sebelum gelung masa (sudah dilaksanakan) |
-| Ketepatan Peratusan | Latensi ekor yang kukuh | Gunakan peratusan numpy (sudah dalam skrip yang diperbaharui) |
-| Anggaran Kos Token | Perbandingan ekonomi | Anggaran kos = (token/saat * purata token setiap permintaan) * heuristik tenaga |
+| Ketepatan Peratusan | Latensi ekor yang kukuh | Gunakan numpy percentile (sudah dalam skrip yang diubah suai) |
+| Anggaran Kos Token | Perbandingan ekonomi | Anggaran kos = (tokens/sec * purata token setiap permintaan) * heuristik tenaga |
 | Melangkau Model Gagal Secara Automatik | Ketahanan dalam jalankan batch | Bungkus setiap penanda aras dalam try/except dan tandakan medan status |
 
 #### Petikan Eksport Markdown Minimal
@@ -283,9 +282,11 @@ with open("benchmark_report.md", "w") as f:
 ]
 ```
 
-Ulang senarai statik dan bukannya prompt rawak untuk metrik yang boleh dibandingkan di seluruh komit.
+Ulang senarai statik dan bukannya prompt rawak untuk metrik yang boleh dibandingkan di kalangan komit.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

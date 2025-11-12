@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T21:33:59+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T22:45:14+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "br"
 }
@@ -81,13 +81,13 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ### Variáveis Específicas de Sessão
 
 #### Sessão 02: Pipeline RAG
-| Variável | Padrão | Finalidade |
+| Variável | Padrão | Propósito |
 |----------|---------|---------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Modelo de embeddings |
 | `RAG_QUESTION` | Pré-configurado | Pergunta de teste |
 
 #### Sessão 03: Benchmarking
-| Variável | Padrão | Finalidade |
+| Variável | Padrão | Propósito |
 |----------|---------|---------|
 | `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modelos para benchmarking |
 | `BENCH_ROUNDS` | `3` | Iterações por modelo |
@@ -95,7 +95,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `BENCH_STREAM` | `0` | Medir latência do primeiro token |
 
 #### Sessão 04: Comparação de Modelos
-| Variável | Padrão | Finalidade |
+| Variável | Padrão | Propósito |
 |----------|---------|---------|
 | `SLM_ALIAS` | `phi-4-mini` | Modelo de linguagem pequeno |
 | `LLM_ALIAS` | `qwen2.5-7b` | Modelo de linguagem grande |
@@ -103,7 +103,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `COMPARE_RETRIES` | `2` | Tentativas de repetição |
 
 #### Sessão 05: Orquestração Multi-Agente
-| Variável | Padrão | Finalidade |
+| Variável | Padrão | Propósito |
 |----------|---------|---------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Modelo do agente pesquisador |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Modelo do agente editor |
@@ -111,7 +111,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 ### Configuração de Confiabilidade
 
-| Variável | Padrão | Finalidade |
+| Variável | Padrão | Propósito |
 |----------|---------|---------|
 | `SHOW_USAGE` | `1` | Exibir uso de tokens |
 | `RETRY_ON_FAIL` | `1` | Habilitar lógica de repetição |
@@ -162,7 +162,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ### Por Caso de Uso
 
 **Uso Geral:**
-- `phi-4-mini` - Qualidade e velocidade equilibradas
+- `phi-4-mini` - Equilíbrio entre qualidade e velocidade
 
 **Respostas Rápidas:**
 - `qwen2.5-0.5b` - Muito rápido, bom para classificação
@@ -173,7 +173,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - Boa qualidade, menos recursos
 
 **Geração de Código:**
-- `deepseek-coder-1.3b` - Especializado para código
+- `deepseek-coder-1.3b` - Especializado em código
 - `phi-4-mini` - Propósito geral para codificação
 
 ### Por Disponibilidade de Recursos
@@ -363,7 +363,7 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## Práticas de Segurança
+## Melhores Práticas de Segurança
 
 ### 1. Nunca Comite Segredos
 
@@ -382,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Rotacione Chaves de API
+### 3. Rotacione as Chaves de API
 
 ```bash
 # For Azure OpenAI or other cloud services
@@ -403,21 +403,22 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Repositório Principal**: https://github.com/microsoft/Foundry-Local
 - **SDK Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Documentação da API**: Verifique o repositório do SDK para a versão mais recente
+- **Documentação da API**: Consulte o repositório do SDK para a versão mais recente
 
 ## Recursos Adicionais
 
-- `QUICK_START.md` - Guia de início rápido
-- `SDK_MIGRATION_NOTES.md` - Detalhes sobre atualização do SDK
+- `QUICK_START.md` - Guia de introdução
 - `Workshop/samples/*/README.md` - Guias específicos para os exemplos
 
 ---
 
 **Última Atualização**: 08-01-2025  
 **Versão**: 2.0  
-**SDK**: Foundry Local Python SDK (mais recente)
+**SDK**: Foundry Local Python SDK (última versão)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

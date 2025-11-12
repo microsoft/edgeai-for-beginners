@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "45923ada94573fee7c82cc4f0c3bb344",
-  "translation_date": "2025-10-28T22:14:21+00:00",
+  "original_hash": "04951692a100dcd716df01efca2d3f0d",
+  "translation_date": "2025-11-11T23:22:34+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "no"
 }
@@ -17,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 Introduksjon
 
-Velkommen til **EdgeAI for Nybegynnere Workshop** - din praktiske, hands-on guide til å bygge intelligente applikasjoner som kjører helt på lokal maskinvare. Denne workshopen forvandler teoretiske Edge AI-konsepter til ferdigheter i den virkelige verden gjennom gradvis utfordrende øvelser ved bruk av Microsoft Foundry Local og Small Language Models (SLMs).
+Velkommen til **EdgeAI for Nybegynnere Workshop** - din praktiske guide til å bygge intelligente applikasjoner som kjører helt på lokal maskinvare. Denne workshopen forvandler teoretiske Edge AI-konsepter til reelle ferdigheter gjennom gradvis utfordrende øvelser ved bruk av Microsoft Foundry Local og Small Language Models (SLMs).
 
 ### Hvorfor denne workshopen?
 
@@ -26,20 +26,20 @@ Velkommen til **EdgeAI for Nybegynnere Workshop** - din praktiske, hands-on guid
 Organisasjoner over hele verden skifter fra skybasert AI til edge computing av tre viktige grunner:
 
 1. **Personvern og samsvar** - Behandle sensitive data lokalt uten overføring til skyen (HIPAA, GDPR, finansielle reguleringer)
-2. **Ytelse** - Fjern nettverksforsinkelser (50-500ms lokalt vs 500-2000ms sky-rundtur)
-3. **Kostnadskontroll** - Fjern kostnader per token API og skaler uten skyutgifter
+2. **Ytelse** - Fjern nettverksforsinkelse (50-500ms lokalt vs 500-2000ms sky-rundtur)
+3. **Kostnadskontroll** - Fjern kostnader per token for API og skaler uten skyutgifter
 
 **Men Edge AI er annerledes**
 
 Å kjøre AI lokalt krever nye ferdigheter:
 - Modellvalg og optimalisering for ressursbegrensninger
-- Lokal tjenestestyring og maskinvareakselerasjon
+- Lokal tjenesteadministrasjon og maskinvareakselerasjon
 - Prompt engineering for mindre modeller
-- Produksjonsdistribusjonsmønstre for edge-enheter
+- Distribusjonsmønstre for produksjon på edge-enheter
 
 **Denne workshopen gir deg disse ferdighetene**
 
-I 6 fokuserte økter (~3 timer totalt) vil du gå fra "Hello World" til å distribuere produksjonsklare multi-agent systemer - alt kjører lokalt på din maskin.
+I 6 fokuserte økter (~3 timer totalt) vil du gå fra "Hello World" til å distribuere produksjonsklare multi-agent systemer - alt kjørende lokalt på din maskin.
 
 ---
 
@@ -63,14 +63,14 @@ Ved å fullføre denne workshopen vil du kunne:
 3. **Skape RAG (Retrieval Augmented Generation)-systemer**
    - Bygge semantisk søk med embeddings
    - Forankre LLM-responser i domenespesifikk kunnskap
-   - Evaluere RAG-kvalitet med bransjestandarder
+   - Evaluere RAG-kvalitet med bransjestandardmetrikker
    - Skalere fra prototype til produksjon
 
 4. **Optimalisere modellens ytelse**
-   - Benchmarke flere modeller for ditt brukstilfelle
+   - Benchmarke flere modeller for din brukstilfelle
    - Måle forsinkelse, gjennomstrømning og tid til første token
    - Velge optimale modeller basert på hastighet/kvalitet-avveininger
-   - Sammenligne SLM vs LLM-avveininger i virkelige scenarioer
+   - Sammenligne SLM vs LLM-avveininger i reelle scenarier
 
 5. **Orkestrere multi-agent systemer**
    - Designe spesialiserte agenter for ulike oppgaver
@@ -92,50 +92,50 @@ Ved å fullføre denne workshopen vil du kunne:
 
 Ved slutten av denne workshopen vil du ha laget:
 
-| Økt | Leveranse | Demonstrerte ferdigheter |
+| Økt | Leveranse | Ferdigheter demonstrert |
 |-----|-----------|--------------------------|
 | **1** | Chat-applikasjon med streaming | Tjenesteoppsett, grunnleggende kompletteringer, streaming UX |
-| **2** | RAG-system med evaluering | Embeddings, semantisk søk, kvalitetsmålinger |
-| **3** | Multi-modell benchmark-suite | Ytelsesmåling, modell-sammenligning |
+| **2** | RAG-system med evaluering | Embeddings, semantisk søk, kvalitetsmetrikker |
+| **3** | Benchmark-suite for flere modeller | Ytelsesmåling, modell-sammenligning |
 | **4** | SLM vs LLM-komparator | Avveiningsanalyse, optimaliseringsstrategier |
 | **5** | Multi-agent orkestrator | Agentdesign, minnehåndtering, koordinering |
-| **6** | Intelligent rutingssystem | Intentsdeteksjon, modellvalg, skalerbarhet |
+| **6** | Intelligent rutingssystem | Intensjonsdeteksjon, modellvalg, skalerbarhet |
 
 ### Kompetansematrise
 
 | Ferdighetsnivå | Økt 1-2 | Økt 3-4 | Økt 5-6 |
 |----------------|---------|---------|---------|
-| **Nybegynner** | ✅ Oppsett & grunnleggende | ⚠️ Utfordrende | ❌ For avansert |
-| **Mellomnivå** | ✅ Rask gjennomgang | ✅ Kjerneopplæring | ⚠️ Utfordrende mål |
-| **Avansert** | ✅ Enkelt | ✅ Finpussing | ✅ Produksjonsmønstre |
+| **Nybegynner** | ✅ Oppsett og grunnleggende | ⚠️ Utfordrende | ❌ For avansert |
+| **Middels** | ✅ Rask gjennomgang | ✅ Kjerneopplæring | ⚠️ Utfordrende mål |
+| **Avansert** | ✅ Enkelt | ✅ Forfining | ✅ Produksjonsmønstre |
 
 ### Karriereklare ferdigheter
 
 **Etter denne workshopen vil du være klar til å:**
 
-✅ **Bygge personvern-fokuserte applikasjoner**
+✅ **Bygge personvern-første applikasjoner**
 - Helseapplikasjoner som håndterer PHI/PII lokalt
-- Finanstjenester med samsvarskrav
-- Offentlige systemer med krav til datasuverenitet
+- Finansielle tjenester med samsvarskrav
+- Offentlige systemer med datasuverenitetsbehov
 
 ✅ **Optimalisere for edge-miljøer**
 - IoT-enheter med begrensede ressurser
-- Offline-først mobilapplikasjoner
+- Offline-første mobilapplikasjoner
 - Lav-latens sanntidssystemer
 
 ✅ **Designe intelligente arkitekturer**
 - Multi-agent systemer for komplekse arbeidsflyter
-- Hybrid edge-sky-distribusjoner
+- Hybrid edge-sky distribusjoner
 - Kostnadsoptimalisert AI-infrastruktur
 
 ✅ **Lede Edge AI-initiativer**
 - Evaluere Edge AI-muligheter for prosjekter
 - Velge passende modeller og rammeverk
-- Arkitektere skalerbare lokale AI-løsninger
+- Arkitekt skalerbare lokale AI-løsninger
 
 ---
 
-## 🗺️ Workshop-struktur
+## 🗺️ Workshopstruktur
 
 ### Øktoversikt (6 økter × 30 minutter = 3 timer)
 
@@ -144,19 +144,19 @@ Ved slutten av denne workshopen vil du ha laget:
 | **1** | Kom i gang med Foundry Local | Installere, validere, første kompletteringer | 30 min |
 | **2** | Bygge AI-løsninger med RAG | Prompt engineering, embeddings, evaluering | 30 min |
 | **3** | Åpen kildekode-modeller | Modelloppdagelse, benchmarking, valg | 30 min |
-| **4** | Avanserte modeller | SLM vs LLM, optimalisering, rammeverk | 30 min |
+| **4** | Banebrytende modeller | SLM vs LLM, optimalisering, rammeverk | 30 min |
 | **5** | AI-drevne agenter | Agentdesign, orkestrering, minne | 30 min |
 | **6** | Modeller som verktøy | Ruting, kjeding, skaleringsstrategier | 30 min |
 
 ---
 
-## 🚀 Rask start
+## 🚀 Kom i gang raskt
 
 ### Forutsetninger
 
 **Systemkrav:**
 - **OS**: Windows 10/11, macOS 11+, eller Linux (Ubuntu 20.04+)
-- **RAM**: Minimum 8GB, anbefalt 16GB+
+- **RAM**: Minimum 8GB, 16GB+ anbefales
 - **Lagring**: 10GB+ ledig plass for modeller
 - **CPU**: Moderne prosessor med AVX2-støtte
 - **GPU** (valgfritt): CUDA-kompatibel eller Qualcomm NPU for akselerasjon
@@ -167,7 +167,7 @@ Ved slutten av denne workshopen vil du ha laget:
 - **Git** ([Last ned](https://git-scm.com/downloads))
 - **Visual Studio Code** (anbefalt) ([Last ned](https://code.visualstudio.com/))
 
-### Oppsett i 3 steg
+### Oppsett i 3 trinn
 
 #### 1. Installer Foundry Local
 
@@ -206,7 +206,7 @@ foundry service status
 # Test the endpoint
 curl http://127.0.0.1:58123/v1/models
 ```
-**Finn tilgjengelige modeller**
+**Finne tilgjengelige modeller**
 For å se hvilke modeller som er tilgjengelige i din Foundry Local-instans, kan du spørre modellendepunktet:
 
 ```bash
@@ -214,7 +214,7 @@ For å se hvilke modeller som er tilgjengelige i din Foundry Local-instans, kan 
 foundry model list
 ```
 
-Ved bruk av web-endepunkt 
+Ved bruk av webendepunkt 
 
 ```bash
 # Windows PowerShell
@@ -255,11 +255,11 @@ cd samples
 python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
-**✅ Suksess!** Du bør se en streaming-respons om edge AI.
+**✅ Suksess!** Du bør se en streamingrespons om edge AI.
 
 ---
 
-## 📦 Workshop-ressurser
+## 📦 Workshopressurser
 
 ### Python-eksempler
 
@@ -270,11 +270,11 @@ Praktiske eksempler som demonstrerer hvert konsept:
 | 1 | [`chat_bootstrap.py`](../../../Workshop/samples/session01/chat_bootstrap.py) | Grunnleggende & streaming chat | ~30s |
 | 2 | [`rag_pipeline.py`](../../../Workshop/samples/session02/rag_pipeline.py) | RAG med embeddings | ~45s |
 | 2 | [`rag_eval_ragas.py`](../../../Workshop/samples/session02/rag_eval_ragas.py) | RAG-kvalitetsevaluering | ~60s |
-| 3 | [`benchmark_oss_models.py`](../../../Workshop/samples/session03/benchmark_oss_models.py) | Multi-modell benchmarking | ~2-3m |
+| 3 | [`benchmark_oss_models.py`](../../../Workshop/samples/session03/benchmark_oss_models.py) | Benchmarking av flere modeller | ~2-3m |
 | 4 | [`model_compare.py`](../../../Workshop/samples/session04/model_compare.py) | SLM vs LLM-sammenligning | ~45s |
 | 5 | [`agents_orchestrator.py`](../../../Workshop/samples/session05/agents_orchestrator.py) | Multi-agent system | ~60s |
-| 6 | [`models_router.py`](../../../Workshop/samples/session06/models_router.py) | Intent-basert ruting | ~45s |
-| 6 | [`models_pipeline.py`](../../../Workshop/samples/session06/models_pipeline.py) | Multi-trinns pipeline | ~60s |
+| 6 | [`models_router.py`](../../../Workshop/samples/session06/models_router.py) | Intensjonsbasert ruting | ~45s |
+| 6 | [`models_pipeline.py`](../../../Workshop/samples/session06/models_pipeline.py) | Flertrinns pipeline | ~60s |
 
 ### Jupyter Notebooks
 
@@ -282,28 +282,26 @@ Interaktiv utforskning med forklaringer og visualiseringer:
 
 | Økt | Notebook | Beskrivelse | Vanskelighetsgrad |
 |-----|----------|-------------|--------------------|
-| 1 | [`session01_chat_bootstrap.ipynb`](./notebooks/session01_chat_bootstrap.ipynb) | Grunnleggende chat & streaming | ⭐ Nybegynner |
-| 2 | [`session02_rag_pipeline.ipynb`](./notebooks/session02_rag_pipeline.ipynb) | Bygg RAG-system | ⭐⭐ Mellomnivå |
-| 2 | [`session02_rag_eval_ragas.ipynb`](./notebooks/session02_rag_eval_ragas.ipynb) | Evaluer RAG-kvalitet | ⭐⭐ Mellomnivå |
-| 3 | [`session03_benchmark_oss_models.ipynb`](./notebooks/session03_benchmark_oss_models.ipynb) | Modellbenchmarking | ⭐⭐ Mellomnivå |
-| 4 | [`session04_model_compare.ipynb`](./notebooks/session04_model_compare.ipynb) | Modellsammenligning | ⭐⭐ Mellomnivå |
+| 1 | [`session01_chat_bootstrap.ipynb`](./notebooks/session01_chat_bootstrap.ipynb) | Chat-grunnleggende & streaming | ⭐ Nybegynner |
+| 2 | [`session02_rag_pipeline.ipynb`](./notebooks/session02_rag_pipeline.ipynb) | Bygg RAG-system | ⭐⭐ Middels |
+| 2 | [`session02_rag_eval_ragas.ipynb`](./notebooks/session02_rag_eval_ragas.ipynb) | Evaluer RAG-kvalitet | ⭐⭐ Middels |
+| 3 | [`session03_benchmark_oss_models.ipynb`](./notebooks/session03_benchmark_oss_models.ipynb) | Modellbenchmarking | ⭐⭐ Middels |
+| 4 | [`session04_model_compare.ipynb`](./notebooks/session04_model_compare.ipynb) | Modellsammenligning | ⭐⭐ Middels |
 | 5 | [`session05_agents_orchestrator.ipynb`](./notebooks/session05_agents_orchestrator.ipynb) | Agentorkestrering | ⭐⭐⭐ Avansert |
-| 6 | [`session06_models_router.ipynb`](./notebooks/session06_models_router.ipynb) | Intent-ruting | ⭐⭐⭐ Avansert |
+| 6 | [`session06_models_router.ipynb`](./notebooks/session06_models_router.ipynb) | Intensjonsruting | ⭐⭐⭐ Avansert |
 | 6 | [`session06_models_pipeline.ipynb`](./notebooks/session06_models_pipeline.ipynb) | Pipeline-orkestrering | ⭐⭐⭐ Avansert |
 
 ### Dokumentasjon
 
 Omfattende guider og referanser:
 
-| Dokument | Beskrivelse | Bruk når |
-|----------|-------------|----------|
-| [QUICK_START.md](./QUICK_START.md) | Hurtigstartveiledning | Starter fra bunnen |
-| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Kommando- og API-hurtigreferanse | Trenger raske svar |
-| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | SDK-mønstre & eksempler | Skriver kode |
-| [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Veiledning for miljøvariabler | Konfigurerer eksempler |
-| [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Nyeste forbedringer i eksempler | Forstå endringer |
-| [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Migreringsveiledning | Oppgraderer kode |
-| [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Vanlige problemer & løsninger | Feilsøking |
+| Dokument | Beskrivelse | Når bruke |
+|----------|-------------|-----------|
+| [QUICK_START.md](./QUICK_START.md) | Hurtigoppsettguide | Når du starter fra bunnen |
+| [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Kommando- og API-oversikt | Når du trenger raske svar |
+| [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | SDK-mønstre og eksempler | Når du skriver kode |
+| [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Veiledning for miljøvariabler | Når du konfigurerer eksempler |
+| [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Vanlige problemer og løsninger | Når du feilsøker |
 
 ---
 
@@ -311,12 +309,12 @@ Omfattende guider og referanser:
 
 ### For nybegynnere (3-4 timer)
 1. ✅ Økt 1: Kom i gang (fokus på oppsett og grunnleggende chat)
-2. ✅ Økt 2: Grunnleggende RAG (hopp over evaluering i starten)
+2. ✅ Økt 2: RAG-grunnleggende (hopp over evaluering i starten)
 3. ✅ Økt 3: Enkel benchmarking (kun 2 modeller)
-4. ⏭️ Hopp over økt 4-6 for nå
+4. ⏭️ Hopp over økt 4-6 foreløpig
 5. 🔄 Gå tilbake til økt 4-6 etter å ha bygget din første applikasjon
 
-### For utviklere på mellomnivå (3 timer)
+### For middels erfarne utviklere (3 timer)
 1. ⚡ Økt 1: Rask validering av oppsett
 2. ✅ Økt 2: Fullfør RAG-pipeline med evaluering
 3. ✅ Økt 3: Full benchmark-suite
@@ -332,9 +330,9 @@ Omfattende guider og referanser:
 
 ---
 
-## Workshop-øktpakke (Fokuserte 30-minutters laboratorier)
+## Workshop-øktpakke (Fokuserte 30-minutters laber)
 
-Hvis du følger det konsentrerte 6-økt workshop-formatet, bruk disse dedikerte guidene (hver tilsvarer og utfyller de bredere modul-dokumentene ovenfor):
+Hvis du følger det komprimerte 6-økters workshopformatet, bruk disse dedikerte guidene (hver tilsvarer og utfyller de bredere modul-dokumentene ovenfor):
 
 | Workshop-økt | Veiledning | Kjernefokus |
 |--------------|------------|-------------|
@@ -343,7 +341,7 @@ Hvis du følger det konsentrerte 6-økt workshop-formatet, bruk disse dedikerte 
 | 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Integrasjon med Hugging Face, benchmarking, modellvalg |
 | 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM vs LLM, WebGPU, Chainlit RAG, ONNX-akselerasjon |
 | 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Agentroller, minne, verktøy, orkestrering |
-| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Ruting, kjeding, skaleringsvei til Azure |
+| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Ruting, kjeding, skalering til Azure |
 
 Hver sesjonsfil inkluderer: sammendrag, læringsmål, 30-minutters demo, startprosjekt, valideringssjekkliste, feilsøking og referanser til den offisielle Foundry Local Python SDK.
 
@@ -375,29 +373,29 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 | Sesjon | Skript(er) | Beskrivelse |
 |--------|------------|-------------|
-| 1 | `samples/session01/chat_bootstrap.py` | Bootstrap-tjeneste & streaming-chat |
-| 2 | `samples/session02/rag_pipeline.py` | Minimal RAG (inn-minne-embeddings) |
+| 1 | `samples/session01/chat_bootstrap.py` | Oppstartstjeneste & streaming-chat |
+| 2 | `samples/session02/rag_pipeline.py` | Minimal RAG (innholdsbaserte embeddings) |
 |   | `samples/session02/rag_eval_ragas.py` | RAG-evaluering med ragas-metrikker |
-| 3 | `samples/session03/benchmark_oss_models.py` | Multi-modell latens- og gjennomstrømningsbenchmarking |
-| 4 | `samples/session04/model_compare.py` | SLM vs LLM-sammenligning (latens & eksempelutdata) |
+| 3 | `samples/session03/benchmark_oss_models.py` | Benchmarking av flere modeller (latens & gjennomstrømning) |
+| 4 | `samples/session04/model_compare.py` | SLM vs LLM sammenligning (latens & eksempelutdata) |
 | 5 | `samples/session05/agents_orchestrator.py` | To-agent forsknings- → redaksjonell pipeline |
 | 6 | `samples/session06/models_router.py` | Intent-basert rutingdemo |
-|   | `samples/session06/models_pipeline.py` | Multi-trinn plan/utfør/forbedre-kjede |
+|   | `samples/session06/models_pipeline.py` | Flertrinns plan/utfør/forbedre-kjede |
 
-### Miljøvariabler (Felles for eksempler)
+### Miljøvariabler (Felles for alle eksempler)
 
 | Variabel | Formål | Eksempel |
 |----------|--------|----------|
 | `FOUNDRY_LOCAL_ALIAS` | Standard enkeltmodell-alias for grunnleggende eksempler | `phi-4-mini` |
 | `SLM_ALIAS` / `LLM_ALIAS` | Eksplisitt SLM vs større modell for sammenligning | `phi-4-mini` / `gpt-oss-20b` |
 | `BENCH_MODELS` | Kommaliste over aliaser for benchmarking | `qwen2.5-0.5b,mistral-7b` |
-| `BENCH_ROUNDS` | Benchmark-repetisjoner per modell | `3` |
-| `BENCH_PROMPT` | Prompt brukt i benchmarking | `Forklar retrieval augmented generation kort.` |
+| `BENCH_ROUNDS` | Antall benchmark-repetisjoner per modell | `3` |
+| `BENCH_PROMPT` | Prompt brukt i benchmarking | `Explain retrieval augmented generation briefly.` |
 | `EMBED_MODEL` | Sentence-transformers embedding-modell | `sentence-transformers/all-MiniLM-L6-v2` |
-| `RAG_QUESTION` | Overstyr testspørsmål for RAG-pipeline | `Hvorfor bruke RAG med lokal inferens?` |
-| `AGENT_QUESTION` | Overstyr agents-pipeline-spørsmål | `Forklar hvorfor edge AI er viktig for samsvar.` |
+| `RAG_QUESTION` | Overstyr testspørsmål for RAG-pipeline | `Why use RAG with local inference?` |
+| `AGENT_QUESTION` | Overstyr spørsmål for agent-pipeline | `Explain why edge AI matters for compliance.` |
 | `AGENT_MODEL_PRIMARY` | Modellalias for forskningsagent | `phi-4-mini` |
-| `AGENT_MODEL_EDITOR` | Modellalias for redaktøragent (kan variere) | `gpt-oss-20b` |
+| `AGENT_MODEL_EDITOR` | Modellalias for redaktøragent (kan være forskjellig) | `gpt-oss-20b` |
 | `SHOW_USAGE` | Når `1`, skriver ut tokenbruk per fullføring | `1` |
 | `RETRY_ON_FAIL` | Når `1`, prøv på nytt én gang ved midlertidige chatfeil | `1` |
 | `RETRY_BACKOFF` | Sekunder å vente før ny forsøk | `1.0` |
@@ -406,27 +404,27 @@ Hvis en variabel ikke er satt, faller skriptene tilbake til fornuftige standardv
 
 ### Verktøymodul
 
-Alle eksempler deler nå en hjelper `samples/workshop_utils.py` som tilbyr:
+Alle eksempler deler nå en hjelpefil `samples/workshop_utils.py` som tilbyr:
 
-* Hurtigbufret `FoundryLocalManager` + OpenAI-klientoppretting
-* `chat_once()` hjelper med valgfri ny forsøk + brukstrykk
-* Enkel rapportering av tokenbruk (aktiver via `SHOW_USAGE=1`)
+* Hurtigbuffer for opprettelse av `FoundryLocalManager` + OpenAI-klient
+* `chat_once()`-hjelpefunksjon med valgfri ny forsøk + brukerrapportering
+* Enkel rapportering av tokenbruk (aktiveres med `SHOW_USAGE=1`)
 
 Dette reduserer duplisering og fremhever beste praksis for effektiv lokal modellorkestrering.
 
-## Valgfrie forbedringer (Tverrsesjon)
+## Valgfrie forbedringer (på tvers av sesjoner)
 
-| Tema | Forbedring | Sesjoner | Miljø / Veksle |
+| Tema | Forbedring | Sesjoner | Miljø / Bryter |
 |------|------------|----------|----------------|
 | Determinisme | Fast temperatur + stabile promptsett | 1–6 | Sett `temperature=0`, `top_p=1` |
 | Synlighet av tokenbruk | Konsistent kostnad/effektivitet undervisning | 1–6 | `SHOW_USAGE=1` |
-| Streaming av første token | Oppfattet latensmetrisk | 1,3,4,6 | `BENCH_STREAM=1` (benchmark) |
+| Streaming av første token | Opplevd latensmetrisk | 1,3,4,6 | `BENCH_STREAM=1` (benchmark) |
 | Robusthet ved ny forsøk | Håndterer midlertidig kaldstart | Alle | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
 | Multi-modell-agenter | Heterogen rolle-spesialisering | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
 | Adaptiv ruting | Intent + kostnadsheuristikk | 6 | Utvid router med eskaleringslogikk |
 | Vektorminne | Langsiktig semantisk gjenkalling | 2,5,6 | Integrer FAISS/Chroma embedding-indeks |
 | Sporingsutdrag | Revisjon & evaluering | 2,5,6 | Legg til JSON-linjer per trinn |
-| Kvalitetsrubrikker | Kvalitativ sporing | 3–6 | Sekundære scoringsprompter |
+| Kvalitetsrubrikker | Kvalitativ sporing | 3–6 | Sekundære vurderingsprompter |
 | Røyktester | Rask validering før workshop | Alle | `python Workshop/tests/smoke.py` |
 
 ### Deterministisk rask start
@@ -437,7 +435,7 @@ set SHOW_USAGE=1
 python Workshop\tests\smoke.py
 ```
 
-Forvent stabile tokenantall på tvers av gjentatte identiske innganger.
+Forvent stabile tokenantall på tvers av gjentatte identiske input.
 
 ### RAG-evaluering (Sesjon 2)
 
@@ -448,33 +446,28 @@ cd Workshop/samples
 python -m session02.rag_eval_ragas
 ```
 
-Utvid ved å levere en større JSONL med spørsmål, kontekster og sannheter, og deretter konvertere til et Hugging Face `Dataset`.
+Utvid ved å levere en større JSONL med spørsmål, kontekster og fasitsvar, og konverter deretter til et Hugging Face `Dataset`.
 
 ## CLI Kommando Nøyaktighetsvedlegg
 
-Workshopen bruker bevisst kun dokumenterte / stabile Foundry Local CLI-kommandoer.
+Workshoppen bruker kun dokumenterte / stabile Foundry Local CLI-kommandoer.
 
 ### Refererte stabile kommandoer
 
 | Kategori | Kommando | Formål |
 |----------|----------|--------|
 | Kjerne | `foundry --version` | Vis installert versjon |
-| Kjerne | `foundry init` | Initialiser konfigurasjon |
 | Tjeneste | `foundry service start` | Start lokal tjeneste (hvis ikke automatisk) |
-| Tjeneste | `foundry status` | Vis tjenestestatus |
+| Tjeneste | `foundry service status` | Vis tjenestestatus |
 | Modeller | `foundry model list` | List katalog / tilgjengelige modeller |
 | Modeller | `foundry model download <alias>` | Last ned modellvekter til hurtigbuffer |
 | Modeller | `foundry model run <alias>` | Start (last) en modell lokalt; kombiner med `--prompt` for én-gangs |
 | Modeller | `foundry model unload <alias>` / `foundry model stop <alias>` | Fjern en modell fra minnet (hvis støttet) |
 | Hurtigbuffer | `foundry cache list` | List hurtigbufrede (nedlastede) modeller |
-| System | `foundry system info` | Maskinvare- & akselerasjonskapabiliteter-snapshot |
-| System | `foundry system gpu-info` | GPU-diagnostisk info |
-| Konfigurasjon | `foundry config list` | Vis gjeldende konfigurasjonsverdier |
-| Konfigurasjon | `foundry config set <key> <value>` | Oppdater konfigurasjon |
 
 ### Én-gangs promptmønster
 
-I stedet for en utgått `model chat` underkommando, bruk:
+I stedet for en utgått `model chat`-underkommando, bruk:
 
 ```powershell
 foundry model run <alias> --prompt "Your question here"
@@ -496,17 +489,17 @@ Dette utfører en enkelt prompt/svar-syklus og avslutter deretter.
 
 - Latens, p95, tokens/sek: `samples/session03/benchmark_oss_models.py`
 - Første-token latens (streaming): sett `BENCH_STREAM=1`
-- Ressursbruk: OS-monitorer (Task Manager, Activity Monitor, `nvidia-smi`) + `foundry system info`.
+- Ressursbruk: OS-monitorer (Task Manager, Activity Monitor, `nvidia-smi`).
 
-Etter hvert som nye CLI-telemetrikommandoer stabiliseres, kan de enkelt integreres i sesjonsmarkeringene.
+Når nye CLI telemetrikommandoer stabiliseres oppstrøms, kan de integreres med minimale endringer i sesjonsmarkdowns.
 
-### Automatisk Lint-sjekk
+### Automatisk Lint Guard
 
 En automatisk linter forhindrer gjeninnføring av utgåtte CLI-mønstre inne i avgrensede kodeblokker i markdown-filer:
 
 Skript: `Workshop/scripts/lint_markdown_cli.py`
 
-Utgåtte mønstre blokkeres inne i kodegjerder.
+Utgåtte mønstre blokkeres inne i kodeblokker.
 
 Anbefalte erstatninger:
 | Utgått | Erstatning |
@@ -531,20 +524,19 @@ echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
 
-## Rask CLI → SDK Migrasjonstabell
+## Rask CLI → SDK Migreringstabell
 
 | Oppgave | CLI Én-liner | SDK (Python) Ekvivalent | Notater |
 |---------|--------------|-------------------------|---------|
-| Kjør en modell én gang (prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK starter tjeneste & hurtigbufring automatisk |
-| Last ned (hurtigbuffer) modell | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # utløser nedlasting/lasting` | Manager velger beste variant hvis aliaset peker til flere versjoner |
+| Kjør en modell én gang (prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK starter tjeneste & hurtigbuffer automatisk |
+| Last ned (hurtigbuffer) modell | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # triggers download/load` | Manager velger beste variant hvis aliaset peker til flere versjoner |
 | List katalog | `foundry model list` | `# bruk manager for hvert alias eller oppretthold kjent liste` | CLI samler; SDK for øyeblikket per-alias-instansiering |
 | List hurtigbufrede modeller | `foundry cache list` | `manager.list_cached_models()` | Etter manager-initiering (hvilket som helst alias) |
-| Aktiver GPU-akselerasjon | `foundry config set compute.onnx.enable_gpu true` | `# CLI-handling; SDK antar at konfigurasjon allerede er brukt` | Konfigurasjon er ekstern sideeffekt |
 | Hent endepunkt-URL | (implisitt) | `manager.endpoint` | Brukes til å opprette OpenAI-kompatibel klient |
-| Varm opp en modell | `foundry model run <alias>` deretter første prompt | `chat_once(alias, messages=[...])` (verktøy) | Verktøy håndterer initial kald latens oppvarming |
-| Mål latens | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (eller nytt eksporteringsskript) | Foretrekk skript for konsistente metrikker |
-| Stopp / fjern modell | `foundry model unload <alias>` | (Ikke eksponert – start tjeneste / prosess på nytt) | Vanligvis ikke nødvendig for workshop-flyt |
-| Hent tokenbruk | (vis utdata) | `resp.usage.total_tokens` | Tilbys hvis backend returnerer bruksobjekt |
+| Varm opp en modell | `foundry model run <alias>` deretter første prompt | `chat_once(alias, messages=[...])` (utility) | Utilities håndterer initial kald latens oppvarming |
+| Mål latens | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (eller nytt eksportskript) | Foretrekk skript for konsistente metrikker |
+| Stopp / fjern modell | `foundry model unload <alias>` | (Ikke eksponert – restart tjeneste / prosess) | Vanligvis ikke nødvendig for workshop-flyt |
+| Hent tokenbruk | (vis output) | `resp.usage.total_tokens` | Tilbys hvis backend returnerer bruk-objekt |
 
 ## Benchmark Markdown Eksport
 
@@ -560,11 +552,13 @@ Genererte filer:
 | Fil | Innhold |
 |-----|---------|
 | `benchmark_report.md` | Markdown-tabell + tolkningshint |
-| `benchmark_report.json` | Rå metrikker (for sammenligning / trendsporing) |
+| `benchmark_report.json` | Rå metrikker-array (for differensiering / trendsporing) |
 
 Sett `BENCH_STREAM=1` i miljøet for å inkludere første-token latens hvis støttet.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

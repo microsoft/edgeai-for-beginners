@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T21:40:45+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T22:52:19+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "it"
 }
 -->
 # Esempi di Workshop - Scheda di Riferimento Rapida
 
-**Ultimo Aggiornamento**: 8 ottobre 2025
+**Ultimo aggiornamento**: 8 ottobre 2025
 
 ---
 
@@ -40,7 +40,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 03 | `benchmark_oss_models.py` | Benchmarking dei modelli | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Sistema multi-agente | ~60s |
-| 06 | `models_router.py` | Routing delle intenzioni | ~45s |
+| 06 | `models_router.py` | Routing per intenti | ~45s |
 | 06 | `models_pipeline.py` | Pipeline multi-step | ~60s |
 
 ---
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Specifiche per la Sessione
+### Specifiche per Sessione
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **Documentazione SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Riferimento Rapido**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Riepilogo Aggiornamenti**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Note di Migrazione**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -218,9 +216,9 @@ for chunk in stream:
 
 1. **Cache dei client**: `workshop_utils` gestisce la cache per te
 2. **Usa modelli più piccoli**: Inizia con `qwen2.5-0.5b` per i test
-3. **Abilita le statistiche di utilizzo**: Imposta `SHOW_USAGE=1` per monitorare i token
+3. **Abilita statistiche di utilizzo**: Imposta `SHOW_USAGE=1` per monitorare i token
 4. **Elaborazione in batch**: Processa più prompt in sequenza
-5. **Riduci max_tokens**: Riduce la latenza per risposte rapide
+5. **Riduci max_tokens**: Diminuisce la latenza per risposte rapide
 
 ---
 
@@ -256,7 +254,7 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Aiuto Rapido**: Esegui qualsiasi esempio con `--help` dalla directory `samples` o controlla il docstring:
+**Aiuto Rapido**: Esegui qualsiasi esempio con `--help` dalla directory `samples` o consulta il docstring:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
 Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
