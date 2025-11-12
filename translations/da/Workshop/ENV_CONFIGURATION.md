@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T22:08:10+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T23:16:44+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "da"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Oversigt
 
-Workshop-eksemplerne bruger miljøvariabler til konfiguration, som er centraliseret i `.env`-filen i roden af repositoryet. Dette gør det nemt at tilpasse uden at ændre koden.
+Workshop-eksemplerne bruger miljøvariabler til konfiguration, centraliseret i `.env`-filen i roden af repositoryet. Dette gør det nemt at tilpasse uden at ændre koden.
 
 ## Hurtig start
 
@@ -56,15 +56,15 @@ python -m session01.chat_bootstrap "Your question here"
 
 ## Reference for miljøvariabler
 
-### Grundlæggende konfiguration
+### Kernekonfiguration
 
 | Variabel | Standard | Beskrivelse |
 |----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Standardmodel for eksempler |
 | `FOUNDRY_LOCAL_ENDPOINT` | (tom) | Overstyr service-endpoint |
-| `PYTHONPATH` | Workshop-stier | Søgesti for Python-moduler |
+| `PYTHONPATH` | Workshop-stier | Python-modulsøgningssti |
 
-**Hvornår skal FOUNDRY_LOCAL_ENDPOINT sættes:**
+**Hvornår man skal sætte FOUNDRY_LOCAL_ENDPOINT:**
 - Fjern Foundry Local-instans
 - Tilpasset portkonfiguration
 - Adskillelse af udvikling/produktion
@@ -94,13 +94,13 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `BENCH_PROMPT` | Forudkonfigureret | Testprompt |
 | `BENCH_STREAM` | `0` | Måling af første-token latenstid |
 
-#### Session 04: Model sammenligning
+#### Session 04: Model-sammenligning
 | Variabel | Standard | Formål |
 |----------|---------|---------|
-| `SLM_ALIAS` | `phi-4-mini` | Lille sprogmodel |
-| `LLM_ALIAS` | `qwen2.5-7b` | Stor sprogmodel |
+| `SLM_ALIAS` | `phi-4-mini` | Lille sproglig model |
+| `LLM_ALIAS` | `qwen2.5-7b` | Stor sproglig model |
 | `COMPARE_PROMPT` | Forudkonfigureret | Sammenligningsprompt |
-| `COMPARE_RETRIES` | `2` | Forsøg på genprøvning |
+| `COMPARE_RETRIES` | `2` | Forsøgsforsøg |
 
 #### Session 05: Multi-agent orkestrering
 | Variabel | Standard | Formål |
@@ -109,13 +109,13 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Redaktør-agent model |
 | `AGENT_QUESTION` | Forudkonfigureret | Testspørgsmål |
 
-### Konfiguration for pålidelighed
+### Pålidelighedskonfiguration
 
 | Variabel | Standard | Formål |
 |----------|---------|---------|
 | `SHOW_USAGE` | `1` | Udskriv tokenforbrug |
-| `RETRY_ON_FAIL` | `1` | Aktiver genprøvningslogik |
-| `RETRY_BACKOFF` | `1.0` | Forsinkelse ved genprøvning (sekunder) |
+| `RETRY_ON_FAIL` | `1` | Aktivér retry-logik |
+| `RETRY_BACKOFF` | `1.0` | Forsinkelse ved genforsøg (sekunder) |
 
 ## Almindelige konfigurationer
 
@@ -174,7 +174,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Kodegenerering:**
 - `deepseek-coder-1.3b` - Specialiseret til kode
-- `phi-4-mini` - Generelt formål for kodning
+- `phi-4-mini` - Generelt formål til kodning
 
 ### Efter ressource tilgængelighed
 
@@ -259,12 +259,12 @@ dir .env     # Windows
 pwd  # Should be in Workshop or repository root
 ```
 
-### Problemer med serviceforbindelse
+### Serviceforbindelsesproblemer
 
 **Symptomer:**
-- "Connection refused" fejl
+- "Connection refused"-fejl
 - "Service ikke tilgængelig"
-- Timeout fejl
+- Timeout-fejl
 
 **Løsninger:**
 ```bash
@@ -285,7 +285,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ### Model ikke fundet
 
 **Symptomer:**
-- "Model ikke fundet" fejl
+- "Model ikke fundet"-fejl
 - "Alias ikke genkendt"
 
 **Løsninger:**
@@ -303,7 +303,7 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Importfejl
 
 **Symptomer:**
-- "Modul ikke fundet" fejl
+- "Modul ikke fundet"-fejl
 
 **Løsninger:**
 
@@ -363,7 +363,7 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## Sikkerhedspraksis
+## Sikkerhedsbedste praksis
 
 ### 1. Aldrig commit hemmeligheder
 
@@ -408,8 +408,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## Yderligere ressourcer
 
 - `QUICK_START.md` - Kom godt i gang guide
-- `SDK_MIGRATION_NOTES.md` - Detaljer om SDK-opdatering
-- `Workshop/samples/*/README.md` - Guides specifikt for eksempler
+- `Workshop/samples/*/README.md` - Eksempelspecifikke guider
 
 ---
 
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:  
 Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

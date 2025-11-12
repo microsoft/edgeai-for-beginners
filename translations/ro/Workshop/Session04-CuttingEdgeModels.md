@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T23:09:03+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-12T00:17:17+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "ro"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Rezumat
 
-Comparați Modelele de Limbaj Extins (LLM-uri) și Modelele de Limbaj Mic (SLM-uri) pentru scenarii de inferență locală vs cloud. Aflați modele de implementare care utilizează accelerarea ONNX Runtime, execuția WebGPU și experiențele hibride RAG. Include o demonstrație Chainlit RAG cu un model local plus o explorare opțională OpenWebUI. Veți adapta un starter de inferență WebGPU și veți evalua capacitatea și compromisurile cost/performanță ale Phi vs GPT-OSS-20B.
+Comparați Modelele de Limbaj Extins (LLM-uri) și Modelele de Limbaj Redus (SLM-uri) pentru scenarii de inferență locală vs. în cloud. Aflați modele de implementare care utilizează accelerarea ONNX Runtime, execuția WebGPU și experiențe hibride RAG. Include o demonstrație Chainlit RAG cu un model local plus o explorare opțională OpenWebUI. Veți adapta un starter de inferență WebGPU și veți evalua capacitatea și compromisurile cost/performanță ale Phi vs GPT-OSS-20B.
 
 ## Obiective de învățare
 
@@ -19,18 +19,18 @@ Comparați Modelele de Limbaj Extins (LLM-uri) și Modelele de Limbaj Mic (SLM-u
 - **Implementați** modele cu ONNXRuntime și (unde este suportat) WebGPU
 - **Rulați** inferență bazată pe browser (demonstrație interactivă care protejează confidențialitatea)
 - **Integrați** un pipeline Chainlit RAG cu un backend SLM local
-- **Evaluați** utilizând heuristici ușoare de calitate + cost
+- **Evaluați** utilizând euristici ușoare de calitate + cost
 
 ## Cerințe preliminare
 
 - Finalizarea sesiunilor 1–3
 - `chainlit` instalat (deja inclus în `requirements.txt` pentru Modulul08)
-- Browser compatibil cu WebGPU (Edge / Chrome ultima versiune pe Windows 11)
-- Foundry Local activ (`foundry status`)
+- Browser compatibil WebGPU (Edge / Chrome ultima versiune pe Windows 11)
+- Foundry Local activ (`foundry service status`)
 
 ### Note pentru platforme multiple
 
-Windows rămâne mediul principal țintă. Pentru dezvoltatorii macOS care așteaptă binare native:
+Windows rămâne mediul țintă principal. Pentru dezvoltatorii macOS care așteaptă binare native:
 1. Rulați Foundry Local într-o mașină virtuală Windows 11 (Parallels / UTM) SAU pe o stație de lucru Windows la distanță.
 2. Expuneți serviciul (port implicit 5273) și setați pe macOS:
 ```bash
@@ -61,16 +61,6 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 ```
 
 Urmăriți: profunzimea răspunsului, acuratețea factuală, bogăția stilistică, latența.
-
-### 2. Accelerarea ONNX Runtime (5 min)
-
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
 
 Observați schimbările de throughput după activarea GPU vs doar CPU.
 
@@ -117,9 +107,9 @@ Adaptați starterul `04-webgpu-inference` (creați `samples/04-cutting-edge/webg
 </html>
 ```
 
-Deschideți fișierul într-un browser; observați roundtrip-ul local cu latență redusă.
+Deschideți fișierul într-un browser; observați latența redusă în procesarea locală.
 
-### 4. Aplicația de chat Chainlit RAG (7 min)
+### 4. Aplicație de chat Chainlit RAG (7 min)
 
 Minimal `samples/04-cutting-edge/chainlit_app.py`:
 
@@ -167,18 +157,18 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 
 Livrabile:
 - Înlocuiți logica de fetch placeholder cu tokenuri de streaming (utilizați varianta endpoint `stream=True` odată activată)
-- Adăugați un grafic de latență (client-side) pentru comutarea între phi și gpt-oss-20b
+- Adăugați un grafic de latență (client-side) pentru comutările phi vs gpt-oss-20b
 - Încorporați contextul RAG inline (textarea pentru documente de referință)
 
-## Heuristici de evaluare
+## Euristici de evaluare
 
 | Categorie | Phi-4-mini | GPT-OSS-20B | Observație |
 |-----------|------------|-------------|------------|
 | Latență (rece) | Rapid | Mai lent | SLM se încălzește rapid |
 | Memorie | Scăzută | Ridicată | Fezabilitate pe dispozitiv |
-| Aderență la context | Bună | Puternică | Modelul mai mare poate fi mai detaliat |
-| Cost (local) | Minimal | Mai mare (resurse) | Compromis energie/timp |
-| Cel mai bun caz de utilizare | Aplicații edge | Raționament profund | Posibil pipeline hibrid |
+| Respectarea contextului | Bună | Puternică | Modelul mai mare poate fi mai detaliat |
+| Cost (local) | Minim | Mai mare (resurse) | Compromis energie/timp |
+| Cel mai bun caz de utilizare | Aplicații edge | Raționament profund | Pipeline hibrid posibil |
 
 ## Validarea mediului
 
@@ -197,9 +187,9 @@ foundry model list
 
 | Simptom | Cauză | Acțiune |
 |---------|-------|--------|
-| Eșec la fetch-ul paginii web | CORS sau serviciu indisponibil | Utilizați `curl` pentru a verifica endpoint-ul; activați proxy-ul CORS dacă este necesar |
-| Chainlit gol | Mediu neactiv | Activați venv și reinstalați dependențele |
-| Latență ridicată | Modelul tocmai a fost încărcat | Încălziți cu o secvență mică de prompturi |
+| Eșec la preluarea paginii web | CORS sau serviciu inactiv | Utilizați `curl` pentru a verifica endpoint-ul; activați proxy CORS dacă este necesar |
+| Chainlit gol | Mediu inactiv | Activați venv și reinstalați dependențele |
+| Latență ridicată | Modelul tocmai a fost încărcat | Încălziți cu o secvență de prompturi mici |
 
 ## Referințe
 
@@ -212,18 +202,18 @@ foundry model list
 **Durata sesiunii**: 30 min  
 **Dificultate**: Avansat
 
-## Scenariu de exemplu și mapare workshop
+## Scenariu exemplu și mapare workshop
 
 | Artefacte workshop | Scenariu | Obiectiv | Sursă date / prompt |
 |--------------------|----------|----------|---------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Echipa de arhitectură evaluează SLM vs LLM pentru generatorul de rezumate executive | Cuantificarea diferenței de latență + utilizare token | Variabilă de mediu `COMPARE_PROMPT` unică |
-| `chainlit_app.py` (demo RAG) | Prototip asistent de cunoștințe intern | Răspunsuri scurte bazate pe recuperare lexicală minimă | Lista `DOCS` inline în fișier |
-| `webgpu_demo.html` | Previzualizare inferență futuristă pe browser | Demonstrarea roundtrip-ului local cu latență redusă + narațiune UX | Doar prompt live utilizator |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Echipa de arhitectură evaluează SLM vs LLM pentru generatorul de rezumate executive | Cuantificarea diferenței de latență + utilizare tokenuri | Variabilă de mediu unică `COMPARE_PROMPT` |
+| `chainlit_app.py` (demo RAG) | Prototip asistent de cunoștințe intern | Răspunsuri scurte fundamentate cu recuperare lexicală minimă | Lista `DOCS` inline în fișier |
+| `webgpu_demo.html` | Previzualizare inferență futuristă pe browser | Arată procesarea locală cu latență redusă + narațiune UX | Doar prompt utilizator live |
 
 ### Narațiunea scenariului
-Organizația de produs dorește un generator de briefing-uri executive. Un SLM ușor (phi‑4‑mini) redactează rezumate; un LLM mai mare (gpt‑oss‑20b) poate rafina doar rapoartele de prioritate înaltă. Scripturile sesiunii captează metrici empirici de latență și token pentru a justifica un design hibrid, în timp ce demonstrația Chainlit ilustrează cum recuperarea fundamentată menține răspunsurile modelului mic factuale. Pagina concept WebGPU oferă o cale de viziune pentru procesarea completă pe client atunci când accelerarea browserului se maturizează.
+Organizația de produs dorește un generator de briefing-uri executive. Un SLM ușor (phi‑4‑mini) redactează rezumate; un LLM mai mare (gpt‑oss‑20b) poate rafina doar rapoartele de prioritate înaltă. Scripturile sesiunii capturează latența empirică și metricile tokenurilor pentru a justifica un design hibrid, în timp ce demonstrația Chainlit ilustrează cum recuperarea fundamentată menține răspunsurile modelului mic factuale. Pagina conceptuală WebGPU oferă o cale de viziune pentru procesarea complet client-side atunci când accelerarea browserului se maturizează.
 
-### Context RAG Minimal (Chainlit)
+### Context RAG minimal (Chainlit)
 ```python
 DOCS = [
   "Foundry Local enables local model execution with OpenAI-compatible APIs.",
@@ -246,17 +236,17 @@ Urmăriți ambele componente de latență pentru a raporta costul mediu combinat
 ### Îmbunătățiri opționale
 
 | Focus | Îmbunătățire | Motiv | Indicație de implementare |
-|-------|-------------|-------|--------------------------|
-| Metrice comparative | Urmăriți utilizarea tokenurilor + latența primului token | Vedere holistică a performanței | Utilizați scriptul de benchmark îmbunătățit (Sesiunea 3) cu `BENCH_STREAM=1` |
-| Pipeline hibrid | Draft SLM → Rafinat LLM | Reducerea latenței și costului | Generați cu phi-4-mini, rafinați rezumatul cu gpt-oss-20b |
+|-------|-------------|-------|---------------------------|
+| Metrici comparative | Urmăriți utilizarea tokenurilor + latența primului token | Vedere holistică a performanței | Utilizați scriptul de benchmark îmbunătățit (Sesiunea 3) cu `BENCH_STREAM=1` |
+| Pipeline hibrid | Draft SLM → Rafinat LLM | Reduceți latența și costul | Generați cu phi-4-mini, rafinați rezumatul cu gpt-oss-20b |
 | UI de streaming | UX mai bun în Chainlit | Feedback incremental | Utilizați `stream=True` odată ce streaming-ul local este expus; acumulați fragmente |
-| Caching WebGPU | Inițializare JS mai rapidă | Reducerea suprasarcinii recompilării | Cache pentru artefactele shader compilate (capacitate runtime viitoare) |
-| Set QA determinist | Comparație echitabilă a modelelor | Eliminarea variației | Listă fixă de prompturi + `temperature=0` pentru rulările de evaluare |
-| Scorare output | Lentilă de calitate structurată | Depășirea anecdoticelor | Rubrică simplă: coerență / factualitate / concizie (1–5) |
-| Note energie / resurse | Discuție în clasă | Arătarea compromisurilor | Utilizați monitoare OS (`foundry system info`, Task Manager, `nvidia-smi`) + output-uri script benchmark |
-| Emulare cost | Justificare pre-cloud | Planificarea scalării | Maparea tokenurilor la prețuri cloud ipotetice pentru narațiunea TCO |
-| Decompoziție latență | Identificarea blocajelor | Optimizări țintite | Măsurarea pregătirii promptului, trimiterea cererii, primul token, completarea totală |
-| RAG + fallback LLM | Plasă de siguranță pentru calitate | Îmbunătățirea întrebărilor dificile | Dacă lungimea răspunsului SLM < prag sau încrederea scăzută → escaladare |
+| Caching WebGPU | Inițializare JS mai rapidă | Reduceți suprasarcina recompilării | Cache artefacte shader compilate (capacitate runtime viitoare) |
+| Set QA determinist | Comparație echitabilă a modelelor | Eliminați variația | Listă de prompturi fixă + `temperature=0` pentru rulările de evaluare |
+| Scorarea outputului | Lentilă de calitate structurată | Depășirea anecdoticelor | Rubrică simplă: coerență / factualitate / concizie (1–5) |
+| Note energie / resurse | Discuție în clasă | Arătați compromisurile | Utilizați monitoare OS (Task Manager, `nvidia-smi`) + ieșiri script benchmark |
+| Emulare cost | Justificare pre-cloud | Planificați scalarea | Maparea tokenurilor la prețuri ipotetice de cloud pentru narațiunea TCO |
+| Decompoziția latenței | Identificați blocajele | Țintiți optimizările | Măsurați pregătirea promptului, trimiterea cererii, primul token, completarea totală |
+| RAG + fallback LLM | Plasă de siguranță pentru calitate | Îmbunătățirea interogărilor dificile | Dacă lungimea răspunsului SLM < prag sau încrederea scăzută → escaladare |
 
 #### Exemplu de model hibrid Draft/Refine
 
@@ -280,5 +270,7 @@ Utilizați o structură consistentă de măsurare între modele pentru comparaț
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

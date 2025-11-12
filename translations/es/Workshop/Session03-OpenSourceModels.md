@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-08T20:52:22+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T21:25:15+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "es"
 }
@@ -11,24 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Resumen
 
-Descubre cómo integrar modelos de Hugging Face y otros modelos de código abierto en Foundry Local. Aprende estrategias de selección, flujos de trabajo de contribución comunitaria, metodología de comparación de rendimiento y cómo extender Foundry con registros personalizados de modelos. Esta sesión se alinea con los temas de exploración semanales de "Model Mondays" y te prepara para evaluar y operacionalizar modelos de código abierto localmente antes de escalar a Azure.
+Descubre cómo integrar modelos de Hugging Face y otros de código abierto en Foundry Local. Aprende estrategias de selección, flujos de contribución comunitaria, metodología de comparación de rendimiento y cómo extender Foundry con registros personalizados de modelos. Esta sesión se alinea con los temas de exploración semanales de "Model Mondays" y te prepara para evaluar y operacionalizar modelos de código abierto localmente antes de escalar a Azure.
 
 ## Objetivos de Aprendizaje
 
 Al finalizar, serás capaz de:
 
 - **Descubrir y Evaluar**: Identificar modelos candidatos (mistral, gemma, qwen, deepseek) utilizando el equilibrio entre calidad y recursos.
-- **Cargar y Ejecutar**: Usar Foundry Local CLI para descargar, almacenar en caché y ejecutar modelos comunitarios.
+- **Cargar y Ejecutar**: Usar Foundry Local CLI para descargar, almacenar en caché y lanzar modelos comunitarios.
 - **Evaluar Rendimiento**: Aplicar heurísticas consistentes de latencia + rendimiento de tokens + calidad.
 - **Extender**: Registrar o adaptar un envoltorio de modelo personalizado siguiendo patrones compatibles con el SDK.
-- **Comparar**: Producir comparaciones estructuradas para decisiones de selección entre SLM y LLM de tamaño medio.
+- **Comparar**: Generar comparaciones estructuradas para decisiones de selección entre SLM y LLM de tamaño medio.
 
 ## Prerrequisitos
 
 - Haber completado las sesiones 1 y 2
 - Entorno Python con `foundry-local-sdk` instalado
 - Al menos 15GB de espacio libre en disco para múltiples cachés de modelos
-- Opcional: Aceleración GPU/WebGPU habilitada (`foundry config list`)
 
 ### Inicio Rápido en Entornos Multiplataforma
 
@@ -53,9 +52,10 @@ Al realizar evaluaciones de rendimiento desde macOS contra un servicio host en W
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
+
 ## Flujo de Demostración (30 min)
 
-### 1. Cargar Modelos de Hugging Face vía CLI (8 min)
+### 1. Cargar Modelos de Hugging Face mediante CLI (8 min)
 
 ```powershell
 # List catalog entries (filter manually if needed)
@@ -70,7 +70,8 @@ foundry model download qwen2.5-0.5b
 foundry cache list
 ```
 
-### 2. Ejecutar y Prueba Rápida (5 min)
+
+### 2. Ejecutar y Realizar una Prueba Rápida (5 min)
 
 ```powershell
 foundry model run qwen2.5-0.5b
@@ -79,6 +80,7 @@ foundry model run qwen2.5-0.5b --prompt "List three benefits of local inference.
 foundry model run mistral-7b
 foundry model run mistral-7b --prompt "Explain retrieval augmented generation in one paragraph."
 ```
+
 
 ### 3. Script de Evaluación de Rendimiento (8 min)
 
@@ -152,19 +154,20 @@ Ejecuta:
 python samples/03-oss-models/benchmark_models.py
 ```
 
+
 ### 4. Comparar Rendimiento (5 min)
 
-Discute los compromisos: tiempo de carga, uso de memoria (observa el Administrador de Tareas / `nvidia-smi` / monitor de recursos del sistema operativo), calidad de salida frente a velocidad. Usa el script de evaluación de rendimiento en Python (Sesión 3) para latencia y rendimiento; repite después de habilitar la aceleración GPU.
+Discute los compromisos: tiempo de carga, uso de memoria (observa el Administrador de Tareas / `nvidia-smi` / monitor de recursos del sistema operativo), calidad de salida frente a velocidad. Usa el script de evaluación de rendimiento en Python (Sesión 3) para medir latencia y rendimiento; repite después de habilitar la aceleración GPU.
 
 ### 5. Proyecto Inicial (4 min)
 
-Crea un generador de informes de comparación de modelos (extiende el script de evaluación de rendimiento con exportación en markdown).
+Crea un generador de informes de comparación de modelos (extiende el script de evaluación de rendimiento con exportación en formato markdown).
 
 ## Proyecto Inicial: Extender `03-huggingface-models`
 
 Mejora el ejemplo existente mediante:
 
-1. Agregar agregación de evaluaciones de rendimiento + salida en CSV/Markdown.
+1. Agregar agregación de evaluaciones de rendimiento + salida en formato CSV/Markdown.
 2. Implementar puntuación cualitativa simple (conjunto de pares de prompts + archivo de anotación manual).
 3. Introducir una configuración JSON (`models.json`) para una lista de modelos y conjunto de prompts personalizables.
 
@@ -182,12 +185,14 @@ Todos los modelos objetivo deben aparecer y responder a una solicitud de chat de
 
 | Script del Taller | Escenario | Objetivo | Fuente de Prompt / Dataset |
 |-------------------|-----------|----------|----------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Equipo de plataforma Edge seleccionando SLM predeterminado para un resumidor integrado | Producir comparación de latencia + p95 + tokens/segundo entre modelos candidatos | Variable `PROMPT` en línea + lista `BENCH_MODELS` en el entorno |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Equipo de plataforma Edge seleccionando SLM predeterminado para un resumidor integrado | Generar comparación de latencia + p95 + tokens/segundo entre modelos candidatos | Variable `PROMPT` en línea + lista `BENCH_MODELS` en el entorno |
 
 ### Narrativa del Escenario
-El equipo de ingeniería de producto debe elegir un modelo de resumen ligero predeterminado para una función de notas de reuniones offline. Realizan evaluaciones de rendimiento controladas y deterministas (temperature=0) en un conjunto fijo de prompts (ver ejemplo abajo) y recopilan métricas de latencia + rendimiento con y sin aceleración GPU.
+
+El equipo de ingeniería de producto debe elegir un modelo de resumen ligero predeterminado para una función de notas de reuniones offline. Realizan evaluaciones de rendimiento controladas y deterministas (temperature=0) en un conjunto fijo de prompts (ver ejemplo abajo) y recopilan métricas de latencia y rendimiento con y sin aceleración GPU.
 
 ### Ejemplo de Conjunto de Prompts en JSON (expandible)
+
 ```json
 [
     "Explain the principle of retrieval augmented generation in 2 sentences.",
@@ -201,16 +206,16 @@ Itera cada prompt por modelo, captura la latencia por prompt para derivar métri
 
 ## Marco de Selección de Modelos
 
-| Dimensión | Métrica | Importancia |
-|-----------|---------|-------------|
+| Dimensión | Métrica | Por qué es importante |
+|-----------|---------|-----------------------|
 | Latencia | promedio / p95 | Consistencia en la experiencia del usuario |
-| Rendimiento | tokens/segundo | Escalabilidad en lotes y transmisión |
-| Memoria | tamaño residente | Adaptación al dispositivo y concurrencia |
+| Rendimiento | tokens/segundo | Escalabilidad en lotes y streaming |
+| Memoria | tamaño residente | Ajuste al dispositivo y concurrencia |
 | Calidad | prompts de evaluación | Adecuación a la tarea |
 | Huella | caché en disco | Distribución y actualizaciones |
 | Licencia | permiso de uso | Cumplimiento comercial |
 
-## Extensión con Modelo Personalizado
+## Extender con un Modelo Personalizado
 
 Patrón de alto nivel (pseudo):
 
@@ -232,7 +237,7 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 |----------|-------|----------|
 | OOM en mistral-7b | RAM/GPU insuficiente | Detén otros modelos; prueba una variante más pequeña |
 | Respuesta inicial lenta | Carga en frío | Mantén activo con un prompt ligero periódico |
-| Descarga se detiene | Inestabilidad de red | Reintenta; predescarga en horarios de menor tráfico |
+| Descarga se detiene | Inestabilidad de red | Reintenta; predescarga en horarios de baja actividad |
 
 ## Referencias
 
@@ -251,13 +256,13 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 |--------|-----------|------|
 | Latencia del Primer Token en Streaming | Mide la percepción de respuesta | Ejecuta evaluación con `BENCH_STREAM=1` (script mejorado en `Workshop/samples/session03`) |
 | Modo Determinista | Comparaciones de regresión estables | `temperature=0`, conjunto de prompts fijo, captura salidas JSON bajo control de versiones |
-| Puntuación con Rubrica de Calidad | Agrega dimensión cualitativa | Mantén `prompts.json` con facetas esperadas; anota puntuaciones (1–5) manualmente o con un modelo secundario |
+| Puntuación con Rubrica de Calidad | Añade dimensión cualitativa | Mantén `prompts.json` con facetas esperadas; anota puntuaciones (1–5) manualmente o mediante un modelo secundario |
 | Exportación en CSV / Markdown | Informe compartible | Extiende el script para escribir `benchmark_report.md` con tabla y destacados |
-| Etiquetas de Capacidades del Modelo | Ayuda en el enrutamiento automatizado | Mantén `models.json` con `{alias: {capabilities:[], size_mb:..}}` |
+| Etiquetas de Capacidades de Modelos | Ayuda en el enrutamiento automatizado posterior | Mantén `models.json` con `{alias: {capabilities:[], size_mb:..}}` |
 | Fase de Calentamiento de Caché | Reduce sesgo de inicio en frío | Ejecuta una ronda inicial antes del bucle de tiempo (ya implementado) |
-| Precisión Percentil | Latencia robusta en cola | Usa percentil de numpy (ya en script refactorizado) |
-| Aproximación de Costo por Token | Comparación económica | Costo aprox = (tokens/seg * tokens promedio por solicitud) * heurística de energía |
-| Salto Automático de Modelos Fallidos | Resiliencia en ejecuciones por lotes | Envuelve cada evaluación en try/except y marca el campo de estado |
+| Precisión Percentil | Latencia robusta en extremos | Usa percentil de numpy (ya en el script refactorizado) |
+| Aproximación de Costo por Token | Comparación económica | Costo aprox = (tokens/seg * promedio de tokens por solicitud) * heurística de energía |
+| Saltar Automáticamente Modelos Fallidos | Resiliencia en ejecuciones por lotes | Envuelve cada evaluación en try/except y marca el campo de estado |
 
 #### Fragmento Mínimo de Exportación en Markdown
 
@@ -267,6 +272,7 @@ with open("benchmark_report.md", "w") as f:
         for row in summary:
                 f.write(f"|{row['alias']}|{row['latency_avg']:.2f}|{row['latency_p95']:.2f}|{(row.get('tokens_per_sec_avg') or 0):.1f}|\n")
 ```
+
 
 #### Ejemplo de Conjunto de Prompts Determinista
 
@@ -282,5 +288,7 @@ Itera la lista estática en lugar de prompts aleatorios para métricas comparabl
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

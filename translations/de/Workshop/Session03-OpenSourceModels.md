@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-08T20:52:57+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T21:29:29+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "de"
 }
@@ -11,24 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Zusammenfassung
 
-Erfahren Sie, wie Sie Hugging Face und andere Open-Source-Modelle in Foundry Local integrieren können. Lernen Sie Auswahlstrategien, Workflows für Community-Beiträge, Methoden zum Leistungsvergleich und wie Sie Foundry mit benutzerdefinierten Modellregistrierungen erweitern können. Diese Sitzung orientiert sich an den wöchentlichen "Model Mondays"-Erkundungsthemen und befähigt Sie, Open-Source-Modelle lokal zu bewerten und zu operationalisieren, bevor Sie auf Azure skalieren.
+Erfahren Sie, wie Sie Hugging Face und andere Open-Source-Modelle in Foundry Local integrieren können. Lernen Sie Strategien zur Modellauswahl, Workflows für Community-Beiträge, Methoden zum Leistungsvergleich und wie Sie Foundry mit benutzerdefinierten Modellregistrierungen erweitern können. Diese Sitzung orientiert sich an den wöchentlichen "Model Mondays"-Erkundungsthemen und befähigt Sie, Open-Source-Modelle lokal zu bewerten und zu operationalisieren, bevor Sie auf Azure skalieren.
 
 ## Lernziele
 
-Am Ende der Sitzung können Sie:
+Am Ende werden Sie in der Lage sein:
 
-- **Entdecken & Bewerten**: Kandidatenmodelle (mistral, gemma, qwen, deepseek) anhand von Qualitäts- und Ressourcenausgleich identifizieren.
-- **Laden & Ausführen**: Mit der Foundry Local CLI Community-Modelle herunterladen, zwischenspeichern und starten.
+- **Entdecken & Bewerten**: Kandidatenmodelle (mistral, gemma, qwen, deepseek) anhand von Qualitäts- und Ressourcenausgleich zu identifizieren.
+- **Laden & Ausführen**: Mit dem Foundry Local CLI Community-Modelle herunterladen, zwischenspeichern und starten.
 - **Benchmarking**: Konsistente Heuristiken für Latenz, Token-Durchsatz und Qualität anwenden.
 - **Erweitern**: Einen benutzerdefinierten Modell-Wrapper registrieren oder anpassen, der SDK-kompatible Muster verwendet.
-- **Vergleichen**: Strukturierte Vergleiche für Entscheidungen zwischen SLM und mittelgroßen LLMs erstellen.
+- **Vergleichen**: Strukturierte Vergleiche für SLM- vs. mittelgroße LLM-Auswahlentscheidungen erstellen.
 
 ## Voraussetzungen
 
 - Sitzungen 1 & 2 abgeschlossen
 - Python-Umgebung mit installiertem `foundry-local-sdk`
 - Mindestens 15 GB freier Speicherplatz für mehrere Modell-Caches
-- Optional: GPU/WebGPU-Beschleunigung aktiviert (`foundry config list`)
 
 ### Schnellstart für plattformübergreifende Umgebungen
 
@@ -39,7 +38,7 @@ py -m venv .venv
 pip install --upgrade pip
 pip install foundry-local-sdk openai numpy
 ```
-  
+
 macOS / Linux:
 ```bash
 python3 -m venv .venv
@@ -47,12 +46,12 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install foundry-local-sdk openai numpy
 ```
-  
-Beim Benchmarking von macOS gegen einen Windows-Host-Service einstellen:  
+
+Beim Benchmarking von macOS gegen einen Windows-Host-Service einstellen:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-  
+
 
 ## Demo-Ablauf (30 Minuten)
 
@@ -70,9 +69,9 @@ foundry model download qwen2.5-0.5b
 # Verify cache
 foundry cache list
 ```
-  
 
-### 2. Ausführen & Schnelltest (5 Minuten)
+
+### 2. Ausführen & Schnelle Überprüfung (5 Minuten)
 
 ```powershell
 foundry model run qwen2.5-0.5b
@@ -81,7 +80,7 @@ foundry model run qwen2.5-0.5b --prompt "List three benefits of local inference.
 foundry model run mistral-7b
 foundry model run mistral-7b --prompt "Explain retrieval augmented generation in one paragraph."
 ```
-  
+
 
 ### 3. Benchmark-Skript (8 Minuten)
 
@@ -148,17 +147,17 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-  
+
 Ausführen:
 
 ```powershell
 python samples/03-oss-models/benchmark_models.py
 ```
-  
+
 
 ### 4. Leistung vergleichen (5 Minuten)
 
-Diskutieren Sie Kompromisse: Ladezeit, Speicherbedarf (beobachten Sie Task-Manager / `nvidia-smi` / OS-Ressourcenmonitor), Ausgabequalität vs. Geschwindigkeit. Verwenden Sie das Python-Benchmark-Skript (Sitzung 3) für Latenz und Durchsatz; wiederholen Sie den Test nach Aktivierung der GPU-Beschleunigung.
+Diskutieren Sie Kompromisse: Ladezeit, Speicherbedarf (beobachten Sie Task-Manager / `nvidia-smi` / OS-Ressourcenmonitor), Ausgabequalität vs. Geschwindigkeit. Verwenden Sie das Python-Benchmark-Skript (Sitzung 3) für Latenz und Durchsatz; wiederholen Sie dies nach Aktivierung der GPU-Beschleunigung.
 
 ### 5. Starter-Projekt (4 Minuten)
 
@@ -169,8 +168,8 @@ Erstellen Sie einen Generator für Modellvergleichsberichte (Benchmark-Skript mi
 Verbessern Sie das bestehende Beispiel durch:
 
 1. Hinzufügen von Benchmark-Aggregation + CSV/Markdown-Ausgabe.
-2. Implementierung einer einfachen qualitativen Bewertung (Prompt-Paar-Satz + manuelle Annotationsdatei).
-3. Einführung einer JSON-Konfiguration (`models.json`) für eine anpassbare Modellauswahl und Prompt-Satz.
+2. Implementierung einer einfachen qualitativen Bewertung (Prompt-Paar-Set + manuelle Annotationsdatei).
+3. Einführung einer JSON-Konfiguration (`models.json`) für eine anpassbare Modellauswahl und Prompt-Set.
 
 ## Validierungs-Checkliste
 
@@ -179,20 +178,20 @@ foundry cache list
 foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
-  
+
 Alle Zielmodelle sollten erscheinen und auf eine Probe-Chat-Anfrage reagieren.
 
 ## Beispiel-Szenario & Workshop-Zuordnung
 
 | Workshop-Skript | Szenario | Ziel | Prompt-/Datensatzquelle |
 |-----------------|----------|------|-------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge-Plattform-Team wählt Standard-SLM für eingebetteten Summarizer | Latenz + p95 + Token/Sekunde-Vergleich zwischen Kandidatenmodellen erstellen | Inline-Variable `PROMPT` + Umgebungsvariable `BENCH_MODELS` |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge-Plattform-Team wählt Standard-SLM für eingebetteten Summarizer | Latenz + p95 + Token/Sekunden-Vergleich zwischen Kandidatenmodellen erstellen | Inline-Variable `PROMPT` + Umgebungsvariable `BENCH_MODELS` Liste |
 
 ### Szenario-Erzählung
 
-Das Produktentwicklungsteam muss ein Standard-Leichtgewichts-Summarization-Modell für eine Offline-Meeting-Notizen-Funktion auswählen. Sie führen kontrollierte deterministische Benchmarks (temperature=0) mit einem festen Prompt-Satz durch (siehe Beispiel unten) und sammeln Latenz- und Durchsatzmetriken mit und ohne GPU-Beschleunigung.
+Das Produktentwicklungsteam muss ein Standard-Leichtgewicht-Summarizer-Modell für eine Offline-Meeting-Notiz-Funktion auswählen. Sie führen kontrollierte deterministische Benchmarks (temperature=0) über ein festes Prompt-Set (siehe Beispiel unten) durch und sammeln Latenz- und Durchsatzmetriken mit und ohne GPU-Beschleunigung.
 
-### Beispiel-Prompt-Satz JSON (erweiterbar)
+### Beispiel-Prompt-Set JSON (erweiterbar)
 
 ```json
 [
@@ -202,16 +201,16 @@ Das Produktentwicklungsteam muss ein Standard-Leichtgewichts-Summarization-Model
     "Provide two scenarios where an SLM is preferable to an LLM."
 ]
 ```
-  
+
 Schleifen Sie jeden Prompt pro Modell, erfassen Sie die Latenz pro Prompt, um Verteilungsmetriken abzuleiten und Ausreißer zu erkennen.
 
-## Rahmenwerk für Modellauswahl
+## Modell-Auswahlrahmen
 
 | Dimension | Metrik | Warum es wichtig ist |
 |----------|--------|-----------------------|
 | Latenz | Durchschnitt / p95 | Konsistenz der Benutzererfahrung |
 | Durchsatz | Token/Sekunde | Skalierbarkeit für Batch- und Streaming |
-| Speicher | Residentgröße | Gerätekompatibilität & Parallelität |
+| Speicher | Residentgröße | Gerätekompatibilität & Gleichzeitigkeit |
 | Qualität | Rubrik-Prompts | Aufgaben-Eignung |
 | Speicherbedarf | Cache-Größe | Verteilung & Updates |
 | Lizenz | Nutzungsberechtigung | Kommerzielle Konformität |
@@ -228,41 +227,41 @@ class CustomModelAdapter:
 
 # Register with local routing (future extensibility point)
 ```
-  
-Konsultieren Sie das offizielle Repository für sich weiterentwickelnde Adapter-Schnittstellen:  
-https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
+
+Konsultieren Sie das offizielle Repository für sich entwickelnde Adapter-Schnittstellen:  
+https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ## Fehlerbehebung
 
 | Problem | Ursache | Lösung |
 |---------|---------|--------|
 | OOM bei mistral-7b | Unzureichender RAM/GPU | Andere Modelle stoppen; kleinere Variante ausprobieren |
-| Langsame erste Antwort | Kalter Start | Mit einem leichten Prompt regelmäßig warmhalten |
-| Download bleibt hängen | Netzwerkinstabilität | Erneut versuchen; während Nebenzeiten vorab laden |
+| Langsame erste Antwort | Kalter Start | Mit einem periodischen leichten Prompt warmhalten |
+| Download bleibt hängen | Netzwerkinstabilität | Wiederholen; während Nebenzeiten vorab abrufen |
 
 ## Referenzen
 
-- Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
-- Model Mondays: https://aka.ms/model-mondays  
-- Hugging Face Model Discovery: https://huggingface.co/models  
+- Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- Model Mondays: https://aka.ms/model-mondays
+- Hugging Face Model Discovery: https://huggingface.co/models
 
 ---
 
 **Sitzungsdauer**: 30 Minuten (+ optionaler Deep Dive)  
-**Schwierigkeitsgrad**: Mittel  
+**Schwierigkeitsgrad**: Mittel
 
 ### Optionale Verbesserungen
 
 | Verbesserung | Vorteil | Wie |
 |--------------|---------|-----|
-| Streaming-Erste-Token-Latenz | Misst wahrgenommene Reaktionsfähigkeit | Benchmark mit `BENCH_STREAM=1` ausführen (erweitertes Skript in `Workshop/samples/session03`) |
-| Deterministischer Modus | Stabile Regression-Vergleiche | `temperature=0`, fester Prompt-Satz, JSON-Ausgaben unter Versionskontrolle erfassen |
-| Qualitätsbewertung nach Rubrik | Fügt qualitative Dimension hinzu | `prompts.json` mit erwarteten Facetten pflegen; Bewertungen (1–5) manuell oder über sekundäres Modell annotieren |
-| CSV/Markdown-Export | Teilbarer Bericht | Skript erweitern, um `benchmark_report.md` mit Tabelle & Highlights zu schreiben |
-| Modellfähigkeits-Tags | Unterstützt spätere automatisierte Routing | `models.json` mit `{alias: {capabilities:[], size_mb:..}}` pflegen |
-| Cache-Warmup-Phase | Reduziert Bias durch Kaltstart | Eine warme Runde vor der Timing-Schleife ausführen (bereits implementiert) |
-| Perzentil-Genauigkeit | Robuste Tail-Latenz | Numpy-Perzentil verwenden (bereits im refaktorierten Skript enthalten) |
-| Token-Kosten-Schätzung | Wirtschaftlicher Vergleich | Geschätzte Kosten = (Token/Sekunde * durchschnittliche Token pro Anfrage) * Energieheuristik |
+| Streaming-Ersttoken-Latenz | Misst wahrgenommene Reaktionsfähigkeit | Benchmark mit `BENCH_STREAM=1` ausführen (erweitertes Skript in `Workshop/samples/session03`) |
+| Deterministischer Modus | Stabile Regression-Vergleiche | `temperature=0`, festes Prompt-Set, JSON-Ausgaben unter Versionskontrolle erfassen |
+| Qualitäts-Rubrik-Bewertung | Fügt qualitative Dimension hinzu | `prompts.json` mit erwarteten Facetten pflegen; Bewertungen (1–5) manuell oder über sekundäres Modell annotieren |
+| CSV-/Markdown-Export | Teilbarer Bericht | Skript erweitern, um `benchmark_report.md` mit Tabelle & Highlights zu schreiben |
+| Modell-Fähigkeits-Tags | Hilft bei späterer automatisierter Weiterleitung | `models.json` mit `{alias: {capabilities:[], size_mb:..}}` pflegen |
+| Cache-Warmup-Phase | Reduziert Bias durch kalten Start | Eine warme Runde vor der Timing-Schleife ausführen (bereits implementiert) |
+| Perzentil-Genauigkeit | Robuste Latenz am Rand | Numpy-Perzentil verwenden (bereits im refaktorierten Skript enthalten) |
+| Token-Kosten-Schätzung | Wirtschaftlicher Vergleich | Geschätzte Kosten = (Token/Sekunde * durchschnittliche Token pro Anfrage) * Energie-Heuristik |
 | Automatisches Überspringen fehlgeschlagener Modelle | Resilienz bei Batch-Läufen | Jeden Benchmark in try/except einwickeln und Statusfeld markieren |
 
 #### Minimaler Markdown-Export-Schnipsel
@@ -273,9 +272,9 @@ with open("benchmark_report.md", "w") as f:
         for row in summary:
                 f.write(f"|{row['alias']}|{row['latency_avg']:.2f}|{row['latency_p95']:.2f}|{(row.get('tokens_per_sec_avg') or 0):.1f}|\n")
 ```
-  
 
-#### Beispiel für deterministischen Prompt-Satz
+
+#### Beispiel für deterministisches Prompt-Set
 
 ```json
 [
@@ -284,10 +283,12 @@ with open("benchmark_report.md", "w") as f:
     "Explain when to choose an SLM over an LLM."
 ]
 ```
-  
-Schleifen Sie die statische Liste anstelle von zufälligen Prompts, um vergleichbare Metriken über Commits hinweg zu erhalten.
+
+Schleifen Sie die statische Liste anstelle von zufälligen Prompts für vergleichbare Metriken über Commits hinweg.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

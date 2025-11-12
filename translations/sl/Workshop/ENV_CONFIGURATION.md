@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T23:30:05+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-12T00:36:55+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "sl"
 }
@@ -48,7 +48,7 @@ python -m session01.chat_bootstrap "Your question here"
 # Environment variables automatically loaded
 ```
 
-**Za zvezke:**
+**Za beležke:**
 ```python
 # Restart kernel after .env changes
 # Variables are loaded when cells execute
@@ -66,8 +66,8 @@ python -m session01.chat_bootstrap "Your question here"
 
 **Kdaj nastaviti FOUNDRY_LOCAL_ENDPOINT:**
 - Oddaljena instanca Foundry Local
-- Prilagojena konfiguracija vrat
-- Ločitev razvoja/produkcije
+- Prilagoditev vrat
+- Ločitev razvojnega/produkcijskega okolja
 
 **Primer:**
 ```bash
@@ -78,42 +78,42 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ```
 
-### Spremenljivke, specifične za sejo
+### Spremenljivke specifične za sejo
 
 #### Seja 02: RAG cevovod
 | Spremenljivka | Privzeto | Namen |
 |---------------|----------|-------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Model za vdelavo |
-| `RAG_QUESTION` | Vnaprej konfigurirano | Testno vprašanje |
+| `RAG_QUESTION` | Prednastavljeno | Testno vprašanje |
 
 #### Seja 03: Primerjava zmogljivosti
 | Spremenljivka | Privzeto | Namen |
 |---------------|----------|-------|
 | `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modeli za primerjavo |
 | `BENCH_ROUNDS` | `3` | Iteracije na model |
-| `BENCH_PROMPT` | Vnaprej konfigurirano | Testni poziv |
-| `BENCH_STREAM` | `0` | Merjenje zakasnitve prvega žetona |
+| `BENCH_PROMPT` | Prednastavljeno | Testni poziv |
+| `BENCH_STREAM` | `0` | Merjenje zakasnitve prvega znaka |
 
 #### Seja 04: Primerjava modelov
 | Spremenljivka | Privzeto | Namen |
 |---------------|----------|-------|
 | `SLM_ALIAS` | `phi-4-mini` | Majhen jezikovni model |
 | `LLM_ALIAS` | `qwen2.5-7b` | Velik jezikovni model |
-| `COMPARE_PROMPT` | Vnaprej konfigurirano | Poziv za primerjavo |
-| `COMPARE_RETRIES` | `2` | Število poskusov ponovnega zagona |
+| `COMPARE_PROMPT` | Prednastavljeno | Poziv za primerjavo |
+| `COMPARE_RETRIES` | `2` | Poskusi ponovnega zagona |
 
 #### Seja 05: Orkestracija več agentov
 | Spremenljivka | Privzeto | Namen |
 |---------------|----------|-------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Model raziskovalnega agenta |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Model uredniškega agenta |
-| `AGENT_QUESTION` | Vnaprej konfigurirano | Testno vprašanje |
+| `AGENT_QUESTION` | Prednastavljeno | Testno vprašanje |
 
 ### Konfiguracija zanesljivosti
 
 | Spremenljivka | Privzeto | Namen |
 |---------------|----------|-------|
-| `SHOW_USAGE` | `1` | Prikaz uporabe žetonov |
+| `SHOW_USAGE` | `1` | Prikaz porabe žetonov |
 | `RETRY_ON_FAIL` | `1` | Omogoči logiko ponovnega poskusa |
 | `RETRY_BACKOFF` | `1.0` | Zakasnitev ponovnega poskusa (sekunde) |
 
@@ -161,7 +161,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### Po namenu uporabe
 
-**Splošna uporaba:**
+**Splošni namen:**
 - `phi-4-mini` - Uravnotežena kakovost in hitrost
 
 **Hitri odzivi:**
@@ -174,7 +174,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Generiranje kode:**
 - `deepseek-coder-1.3b` - Specializiran za kodo
-- `phi-4-mini` - Splošna uporaba za kodiranje
+- `phi-4-mini` - Splošni namen kodiranja
 
 ### Po razpoložljivosti virov
 
@@ -240,7 +240,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 **Simptomi:**
 - Skripte uporabljajo napačne modele
-- Napake pri povezovanju
+- Napake pri povezavi
 - Spremenljivke niso prepoznane
 
 **Rešitve:**
@@ -365,7 +365,7 @@ except Exception as e:
 
 ## Najboljše prakse za varnost
 
-### 1. Nikoli ne shranjujte občutljivih podatkov
+### 1. Nikoli ne shranjujte skrivnosti v repozitorij
 
 ```bash
 # .gitignore should include:
@@ -374,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Uporabljajte ločene `.env` datoteke
+### 2. Uporabite ločene `.env` datoteke
 
 ```bash
 .env              # Default configuration
@@ -389,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. Uporabljajte konfiguracijo, specifično za okolje
+### 4. Uporabite konfiguracijo specifično za okolje
 
 ```bash
 # Development
@@ -408,8 +408,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## Dodatni viri
 
 - `QUICK_START.md` - Vodnik za začetek
-- `SDK_MIGRATION_NOTES.md` - Podrobnosti o posodobitvi SDK
-- `Workshop/samples/*/README.md` - Vodniki, specifični za primere
+- `Workshop/samples/*/README.md` - Vodniki specifični za primere
 
 ---
 
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne odgovarjamo za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

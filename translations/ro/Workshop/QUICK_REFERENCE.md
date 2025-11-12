@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T23:12:34+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T00:21:06+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ro"
 }
 -->
-# Mostră Workshop - Carte de Referință Rapidă
+# Mostre Workshop - Carte de Referință Rapidă
 
 **Ultima actualizare**: 8 octombrie 2025
 
@@ -192,7 +192,7 @@ for chunk in stream:
 
 ---
 
-## 📊 Selecția Modelului
+## 📊 Selectarea Modelului
 
 | Model | Dimensiune | Cel Mai Bun Pentru | Viteză |
 |-------|------------|--------------------|-------|
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **Documentație SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Referință Rapidă**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Rezumat Actualizări**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Note de Migrare**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -218,13 +216,13 @@ for chunk in stream:
 
 1. **Cache pentru clienți**: `workshop_utils` face caching pentru tine
 2. **Folosește modele mai mici**: Începe cu `qwen2.5-0.5b` pentru testare
-3. **Activează statistici de utilizare**: Setează `SHOW_USAGE=1` pentru a urmări tokenii
+3. **Activează statistici de utilizare**: Setează `SHOW_USAGE=1` pentru a urmări token-urile
 4. **Procesare în loturi**: Procesează mai multe prompturi secvențial
 5. **Redu max_tokens**: Scade latența pentru răspunsuri rapide
 
 ---
 
-## 🎯 Fluxuri de Lucru Mostră
+## 🎯 Fluxuri de Lucru Mostre
 
 ### Testează Tot
 ```bash
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

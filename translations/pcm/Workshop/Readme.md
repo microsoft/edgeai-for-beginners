@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "45923ada94573fee7c82cc4f0c3bb344",
-  "translation_date": "2025-11-11T17:40:08+00:00",
+  "original_hash": "04951692a100dcd716df01efca2d3f0d",
+  "translation_date": "2025-11-12T01:07:54+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "pcm"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > **Hands-On Learning Path for Building Production-Ready Edge AI Applications**
 >
-> Learn how to deploy AI wey dey run for local machine wit Microsoft Foundry Local, from first chat completion to multi-agent orchestration inside 6 progressive sessions.
+> Learn how to deploy AI wey dey work for local machine with Microsoft Foundry Local, from first chat completion to multi-agent orchestration inside 6 progressive sessions.
 
 ---
 
@@ -23,19 +23,19 @@ Welcome to **EdgeAI for Beginners Workshop** - na practical guide wey go teach y
 
 **Edge AI Revolution don land**
 
-Plenty companies for di world don dey move from cloud AI go edge computing because of three main reasons:
+Plenty organizations for di world don dey move from cloud AI go edge computing because of three main reasons:
 
 1. **Privacy & Compliance** - Process sensitive data for local machine without sending am go cloud (HIPAA, GDPR, financial regulations)
 2. **Performance** - No need network delay (50-500ms local vs 500-2000ms cloud round-trip)
-3. **Cost Control** - No dey pay per-token API cost and fit scale without cloud wahala
+3. **Cost Control** - No dey pay per-token API cost and fit scale without cloud expenses
 
 **But Edge AI dey different**
 
-To run AI for local machine, you go need new skills:
-- How to choose and optimize model wey go fit your hardware
-- Manage local service and use hardware acceleration
-- Prompt engineering for smaller models
-- How to deploy production-ready AI for edge devices
+To run AI for your own machine, you go need new skills:
+- How to choose and optimize model wey go fit your machine
+- How to manage local service and use hardware acceleration
+- How to design prompts wey go work well for smaller models
+- How to deploy production-ready solutions for edge devices
 
 **This Workshop go teach you those skills**
 
@@ -52,11 +52,11 @@ When you finish this workshop, you go sabi:
    - Install and configure Microsoft Foundry Local
    - Choose correct models for edge deployment
    - Manage model lifecycle (download, load, cache)
-   - Monitor resource usage and optimize performance
+   - Monitor resource usage and improve performance
 
 2. **Build AI-Powered Applications**
-   - Implement OpenAI-compatible chat completions locally
-   - Design better prompts for Small Language Models
+   - Implement OpenAI-compatible chat completions for local machine
+   - Design good prompts for Small Language Models
    - Handle streaming responses for better user experience
    - Add local models into existing applications
 
@@ -70,10 +70,10 @@ When you finish this workshop, you go sabi:
    - Test different models for your use case
    - Measure latency, throughput, and first-token time
    - Choose best models based on speed/quality tradeoffs
-   - Compare SLM vs LLM trade-offs for real-life scenarios
+   - Compare SLM vs LLM trade-offs for real scenarios
 
 5. **Orchestrate Multi-Agent Systems**
-   - Design agents wey go do different tasks
+   - Design agents wey dey specialize for different tasks
    - Implement agent memory and context management
    - Make agents work together for complex workflows
    - Route requests smartly across multiple models
@@ -82,7 +82,7 @@ When you finish this workshop, you go sabi:
    - Add error handling and retry logic
    - Monitor token usage and system resources
    - Build scalable architectures with model-as-tools patterns
-   - Plan migration from edge to hybrid (edge + cloud)
+   - Plan migration paths from edge to hybrid (edge + cloud)
 
 ---
 
@@ -92,8 +92,8 @@ When you finish this workshop, you go sabi:
 
 By di end of this workshop, you go don create:
 
-| Session | Deliverable | Skills Weh You Go Learn |
-|---------|-------------|-------------------------|
+| Session | Deliverable | Skills Demonstrated |
+|---------|-------------|---------------------|
 | **1** | Chat application with streaming | Service setup, basic completions, streaming UX |
 | **2** | RAG system with evaluation | Embeddings, semantic search, quality metrics |
 | **3** | Multi-model benchmark suite | Performance measurement, model comparison |
@@ -131,7 +131,7 @@ By di end of this workshop, you go don create:
 ✅ **Lead Edge AI Initiatives**
 - Check Edge AI feasibility for projects
 - Choose correct models and frameworks
-- Architect scalable local AI solutions
+- Design scalable local AI solutions
 
 ---
 
@@ -263,7 +263,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ### Python Samples
 
-Progressive hands-on examples demonstrating each concept:
+Progressive hands-on examples wey dey show each concept:
 
 | Session | Sample | Description | Run Time |
 |---------|--------|-------------|----------|
@@ -301,8 +301,6 @@ Comprehensive guides and references:
 | [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Command & API cheat sheet | Need quick answers |
 | [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | SDK patterns & examples | Writing code |
 | [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Environment variable guide | Configuring samples |
-| [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Latest sample improvements | Understanding changes |
-| [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Migration guide | Upgrading code |
 | [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Common issues & fixes | Debugging problems |
 
 ---
@@ -345,7 +343,7 @@ If you're following the condensed 6-session workshop format, use these dedicated
 | 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Agent roles, memory, tools, orchestration |
 | 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Routing, chaining, scaling path to Azure |
 
-Each session file get: abstract, wetin you go learn, 30‑minute demo flow, starter project, validation checklist, troubleshooting, and references to the official Foundry Local Python SDK.
+Each session file get: abstract, learning objectives, 30‑minute demo flow, starter project, validation checklist, troubleshooting, and references to the official Foundry Local Python SDK.
 
 ### Sample Scripts
 
@@ -367,7 +365,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-If you dey run Foundry Local service for another (Windows) machine or VM from macOS, export the endpoint:
+If Foundry Local service dey run for different (Windows) machine or VM from macOS, export the endpoint:
 
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
@@ -398,21 +396,21 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 | `AGENT_QUESTION` | Override agents pipeline query | `Explain why edge AI matters for compliance.` |
 | `AGENT_MODEL_PRIMARY` | Model alias for research agent | `phi-4-mini` |
 | `AGENT_MODEL_EDITOR` | Model alias for editor agent (fit be different) | `gpt-oss-20b` |
-| `SHOW_USAGE` | If `1`, e go show token usage per completion | `1` |
-| `RETRY_ON_FAIL` | If `1`, e go retry once if transient chat error happen | `1` |
+| `SHOW_USAGE` | If `1`, e go print token usage per completion | `1` |
+| `RETRY_ON_FAIL` | If `1`, retry once on transient chat errors | `1` |
 | `RETRY_BACKOFF` | Seconds to wait before retry | `1.0` |
 
-If variable no dey set, scripts go use sensible defaults. For single‑model demos, you go only need `FOUNDRY_LOCAL_ALIAS`.
+If variable no dey set, scripts go fallback to sensible defaults. For single‑model demos, you go mostly need only `FOUNDRY_LOCAL_ALIAS`.
 
 ### Utility Module
 
-All samples now dey share one helper `samples/workshop_utils.py` wey dey provide:
+All samples now dey share helper `samples/workshop_utils.py` wey dey provide:
 
 * Cached `FoundryLocalManager` + OpenAI client creation
-* `chat_once()` helper wey get optional retry + usage printing
+* `chat_once()` helper with optional retry + usage printing
 * Simple token usage reporting (enable am with `SHOW_USAGE=1`)
 
-This one dey reduce duplication and e dey show better ways to do local model orchestration.
+E dey reduce duplication and e dey show better ways to do local model orchestration.
 
 ## Optional Enhancements (Cross-Session)
 
@@ -441,14 +439,14 @@ Expect stable token counts across repeated identical inputs.
 
 ### RAG Evaluation (Session 2)
 
-Use `rag_eval_ragas.py` to calculate answer relevancy, faithfulness, and context precision for small synthetic dataset:
+Use `rag_eval_ragas.py` to compute answer relevancy, faithfulness, and context precision on a tiny synthetic dataset:
 
 ```powershell
 cd Workshop/samples
 python -m session02.rag_eval_ragas
 ```
 
-You fit extend am by supplying bigger JSONL of questions, contexts, and ground truths, then convert am to Hugging Face `Dataset`.
+Extend am by supplying bigger JSONL of questions, contexts, and ground truths, then convert am to Hugging Face `Dataset`.
 
 ## CLI Command Accuracy Appendix
 
@@ -459,28 +457,23 @@ The workshop dey use only currently documented / stable Foundry Local CLI comman
 | Category | Command | Purpose |
 |----------|---------|---------|
 | Core | `foundry --version` | Show installed version |
-| Core | `foundry init` | Initialize configuration |
-| Service | `foundry service start` | Start local service (if e no start by itself) |
-| Service | `foundry status` | Show service status |
+| Service | `foundry service start` | Start local service (if e no auto) |
+| Service | `foundry service status` | Show service status |
 | Models | `foundry model list` | List catalog / available models |
 | Models | `foundry model download <alias>` | Download model weights into cache |
-| Models | `foundry model run <alias>` | Launch (load) model locally; combine with `--prompt` for one‑shot |
+| Models | `foundry model run <alias>` | Launch (load) model locally; combine am with `--prompt` for one‑shot |
 | Models | `foundry model unload <alias>` / `foundry model stop <alias>` | Unload model from memory (if e dey supported) |
 | Cache | `foundry cache list` | List cached (downloaded) models |
-| System | `foundry system info` | Hardware & acceleration capabilities snapshot |
-| System | `foundry system gpu-info` | GPU diagnostic info |
-| Config | `foundry config list` | Show current config values |
-| Config | `foundry config set <key> <value>` | Update configuration |
 
 ### One‑Shot Prompt Pattern
 
-Instead of the old `model chat` subcommand wey dem no dey use again, use:
+Instead of deprecated `model chat` subcommand, use:
 
 ```powershell
 foundry model run <alias> --prompt "Your question here"
 ```
 
-This one dey run single prompt/response cycle then e go stop.
+E go execute single prompt/response cycle then e go exit.
 
 ### Removed / Avoided Patterns
 
@@ -496,17 +489,17 @@ This one dey run single prompt/response cycle then e go stop.
 
 - Latency, p95, tokens/sec: `samples/session03/benchmark_oss_models.py`
 - First‑token latency (streaming): set `BENCH_STREAM=1`
-- Resource usage: OS monitors (Task Manager, Activity Monitor, `nvidia-smi`) + `foundry system info`.
+- Resource usage: OS monitors (Task Manager, Activity Monitor, `nvidia-smi`).
 
-As new CLI telemetry commands dey stable for upstream, dem fit add am with small edits to session markdowns.
+As new CLI telemetry commands dey stabilize upstream, dem fit dey add am with small edits to session markdowns.
 
 ### Automated Lint Guard
 
-One automated linter dey stop make dem no put old CLI patterns inside fenced code blocks for markdown files:
+Automated linter dey prevent reintroduction of deprecated CLI patterns inside fenced code blocks of markdown files:
 
 Script: `Workshop/scripts/lint_markdown_cli.py`
 
-Old patterns no go dey allowed inside code fences.
+Deprecated patterns dey blocked inside code fences.
 
 Recommended replacements:
 | Deprecated | Replacement |
@@ -535,20 +528,19 @@ chmod +x .git/hooks/pre-commit
 
 | Task | CLI One-Liner | SDK (Python) Equivalent | Notes |
 |------|---------------|-------------------------|-------|
-| Run a model once (prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK dey start service & caching automatically |
+| Run model once (prompt) | `foundry model run phi-4-mini --prompt "Hello"` | `manager=FoundryLocalManager("phi-4-mini"); client=OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed"); client.chat.completions.create(model=manager.get_model_info("phi-4-mini").id, messages=[{"role":"user","content":"Hello"}])` | SDK dey bootstrap service & caching automatically |
 | Download (cache) model | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # triggers download/load` | Manager dey pick best variant if alias dey map to multiple builds |
 | List catalog | `foundry model list` | `# use manager for each alias or maintain known list` | CLI dey aggregate; SDK currently dey per-alias instantiation |
 | List cached models | `foundry cache list` | `manager.list_cached_models()` | After manager init (any alias) |
-| Enable GPU acceleration | `foundry config set compute.onnx.enable_gpu true` | `# CLI action; SDK dey assume config don already apply` | Configuration na external side effect |
-| Get endpoint URL | (implicit) | `manager.endpoint` | Dem dey use am to create OpenAI-compatible client |
-| Warm a model | `foundry model run <alias>` then first prompt | `chat_once(alias, messages=[...])` (utility) | Utilities dey handle initial cold latency warmup |
+| Get endpoint URL | (implicit) | `manager.endpoint` | E dey used to create OpenAI-compatible client |
+| Warm model | `foundry model run <alias>` then first prompt | `chat_once(alias, messages=[...])` (utility) | Utilities dey handle initial cold latency warmup |
 | Measure latency | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (or new exporter script) | Prefer script for consistent metrics |
-| Stop / unload model | `foundry model unload <alias>` | (Not exposed – restart service / process) | Normally no dey required for workshop flow |
+| Stop / unload model | `foundry model unload <alias>` | (Not exposed – restart service / process) | E no dey required for workshop flow |
 | Retrieve token usage | (view output) | `resp.usage.total_tokens` | Provided if backend dey return usage object |
 
 ## Benchmark Markdown Export
 
-Use the script `Workshop/scripts/export_benchmark_markdown.py` to run fresh benchmark (same logic as `samples/session03/benchmark_oss_models.py`) and e go generate GitHub-friendly Markdown table plus raw JSON.
+Use script `Workshop/scripts/export_benchmark_markdown.py` to run fresh benchmark (same logic as `samples/session03/benchmark_oss_models.py`) and emit GitHub-friendly Markdown table plus raw JSON.
 
 ### Example
 
@@ -568,5 +560,5 @@ Set `BENCH_STREAM=1` for environment to include first-token latency if e dey sup
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dis dokyument don translate wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even as we dey try make am correct, abeg make you sabi say machine translation fit get mistake or no dey accurate well. Di original dokyument wey dey for im native language na di main source wey you go trust. For important information, e good make professional human translator check am. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
+Dis dokyument don use AI transleshion service [Co-op Translator](https://github.com/Azure/co-op-translator) do di transleshion. Even as we dey try make am accurate, abeg make you sabi say transleshion wey machine do fit get mistake or no dey correct well. Di original dokyument for im native language na di one wey you go take as di correct source. For important informashon, e good make you use professional human transleshion. We no go fit take blame for any misunderstanding or wrong meaning wey fit happen because you use dis transleshion.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

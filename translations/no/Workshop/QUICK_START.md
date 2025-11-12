@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T22:12:03+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T23:20:02+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "no"
 }
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ## Kjøre Workshop-eksempler
 
-### Sesjon 01: Grunnleggende Chat
+### Økt 01: Grunnleggende Chat
 
 ```bash
 cd Workshop/samples
@@ -60,7 +60,7 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
 ```
 
-### Sesjon 02: RAG Pipeline
+### Økt 02: RAG Pipeline
 
 ```bash
 cd Workshop/samples
@@ -74,7 +74,7 @@ set RAG_QUESTION="Why use RAG with local inference?"
 set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
-### Sesjon 02: RAG Evaluering (Ragas)
+### Økt 02: RAG Evaluering (Ragas)
 
 ```bash
 cd Workshop/samples
@@ -83,7 +83,7 @@ python -m session02.rag_eval_ragas
 
 **Merk**: Krever ekstra avhengigheter installert via `requirements.txt`
 
-### Sesjon 03: Benchmarking
+### Økt 03: Benchmarking
 
 ```bash
 cd Workshop/samples
@@ -98,9 +98,9 @@ set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Utdata**: JSON med latenstid, gjennomstrømning og førstetoken-metrikker
+**Utdata**: JSON med latenstid, gjennomstrømning og første-token-metrikker
 
-### Sesjon 04: Modell-sammenligning
+### Økt 04: Modell-sammenligning
 
 ```bash
 cd Workshop/samples
@@ -114,7 +114,7 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### Sesjon 05: Multi-agent Orkestrering
+### Økt 05: Multi-agent Orkestrering
 
 ```bash
 cd Workshop/samples
@@ -128,7 +128,7 @@ set AGENT_MODEL_EDITOR=phi-4-mini
 set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ```
 
-### Sesjon 06: Modellruter
+### Økt 06: Modellruter
 
 ```bash
 cd Workshop/samples
@@ -137,7 +137,7 @@ python -m session06.models_router
 
 **Tester rutelogikk** med flere intensjoner (kode, oppsummering, klassifisering)
 
-### Sesjon 06: Pipeline
+### Økt 06: Pipeline
 
 ```bash
 python -m session06.models_pipeline
@@ -232,11 +232,11 @@ foundry model run phi-4-mini
 |----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | Varierer | Modellalias som skal brukes |
 | `FOUNDRY_LOCAL_ENDPOINT` | Auto | Overstyr tjenesteendepunkt |
-| `SHOW_USAGE` | `0` | Vis tokenbruk-statistikk |
+| `SHOW_USAGE` | `0` | Vis token-bruksstatistikk |
 | `RETRY_ON_FAIL` | `1` | Aktiver retry-logikk |
 | `RETRY_BACKOFF` | `1.0` | Startforsinkelse for retry (sekunder) |
 
-### Sesjonsspesifikk
+### Økt-spesifikk
 | Variabel | Standard | Beskrivelse |
 |----------|---------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding-modell |
@@ -244,7 +244,7 @@ foundry model run phi-4-mini
 | `BENCH_MODELS` | Varierer | Komma-separerte modeller |
 | `BENCH_ROUNDS` | `3` | Benchmark-iterasjoner |
 | `BENCH_PROMPT` | Se eksempel | Benchmark-prompt |
-| `BENCH_STREAM` | `0` | Mål førstetoken-latenstid |
+| `BENCH_STREAM` | `0` | Måle første-token-latenstid |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Primær agentmodell |
 | `AGENT_MODEL_EDITOR` | Primær | Editor-agentmodell |
 | `SLM_ALIAS` | `phi-4-mini` | Liten språkmodell |
@@ -277,10 +277,9 @@ foundry model run phi-4-mini
 
 ## Neste steg
 
-1. Fullfør alle workshop-sesjoner i rekkefølge
+1. Fullfør alle workshop-økter i rekkefølge
 2. Eksperimenter med forskjellige modeller
-3. Tilpass eksempler til dine bruksområder
-4. Gå gjennom `SDK_MIGRATION_NOTES.md` for avanserte mønstre
+3. Modifiser eksempler for dine bruksområder
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

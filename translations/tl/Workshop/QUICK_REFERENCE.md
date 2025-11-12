@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:47:29+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:56:28+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "tl"
 }
@@ -37,7 +37,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 01 | `chat_bootstrap.py` | Pangunahing chat + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG gamit ang embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | Pagsusuri ng RAG | ~60s |
-| 03 | `benchmark_oss_models.py` | Paghahambing ng modelo | ~2m |
+| 03 | `benchmark_oss_models.py` | Paghahambing ng mga modelo | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Sistema ng multi-agent | ~60s |
 | 06 | `models_router.py` | Intent routing | ~45s |
@@ -45,7 +45,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ---
 
-## 🛠️ Mga Variable ng Kapaligiran
+## 🛠️ Mga Environment Variable
 
 ### Mahalaga
 ```bash
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Para sa Bawat Session
+### Pang-session
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -123,7 +123,7 @@ pip install sentence-transformers ragas datasets
 pip install -r Workshop/requirements.txt
 ```
 
-### Hindi Natagpuan ang Modelo
+### Modelong Hindi Natagpuan
 ```bash
 # List available models
 foundry model ls
@@ -167,7 +167,7 @@ manager, client, model_id = get_client(
 )
 ```
 
-### Pag-aayos ng Error
+### Paghawak ng Error
 ```python
 try:
     manager, client, model_id = get_client(alias)
@@ -194,7 +194,7 @@ for chunk in stream:
 
 ## 📊 Pagpili ng Modelo
 
-| Modelo | Sukat | Pinakamainam Para sa | Bilis |
+| Modelo | Sukat | Pinakamahusay Para sa | Bilis |
 |--------|-------|-----------------------|-------|
 | `qwen2.5-0.5b` | 0.5B | Mabilis na klasipikasyon | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Mabilis na pagbuo ng code | ⚡⚡⚡ |
@@ -209,22 +209,20 @@ for chunk in stream:
 
 - **SDK Docs**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Quick Ref**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Update Summary**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migration Notes**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
 ## 💡 Mga Tip
 
 1. **Cache clients**: Ang `workshop_utils` ay awtomatikong nagka-cache para sa iyo
-2. **Gumamit ng mas maliliit na modelo**: Simulan sa `qwen2.5-0.5b` para sa pagsubok
+2. **Gumamit ng mas maliliit na modelo**: Simulan gamit ang `qwen2.5-0.5b` para sa pagsubok
 3. **I-enable ang usage stats**: Itakda ang `SHOW_USAGE=1` para subaybayan ang mga token
-4. **Batch processing**: Iproseso ang maraming prompt nang sunud-sunod
-5. **Bawasan ang max_tokens**: Binabawasan ang latency para sa mabilisang tugon
+4. **Batch processing**: Iproseso ang maraming prompt nang sunod-sunod
+5. **Ibaba ang max_tokens**: Binabawasan ang latency para sa mabilisang tugon
 
 ---
 
-## 🎯 Mga Daloy ng Halimbawa
+## 🎯 Mga Halimbawang Workflow
 
 ### Subukan Lahat
 ```bash
@@ -232,7 +230,7 @@ python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### Paghahambing ng Modelo
+### Paghahambing ng Mga Modelo
 ```bash
 cd samples
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
@@ -263,9 +261,11 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
-**Lahat ng halimbawa ay na-update noong Oktubre 2025 gamit ang pinakamahusay na kasanayan sa Foundry Local SDK** ✨
+**Ang lahat ng mga halimbawa ay na-update noong Oktubre 2025 gamit ang pinakamahusay na kasanayan sa Foundry Local SDK** ✨
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Paunawa**:  
 Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na pinagmulan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

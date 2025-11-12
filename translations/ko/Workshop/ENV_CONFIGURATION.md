@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T20:56:32+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T22:10:47+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "ko"
 }
@@ -64,10 +64,10 @@ python -m session01.chat_bootstrap "Your question here"
 | `FOUNDRY_LOCAL_ENDPOINT` | (비어 있음) | 서비스 엔드포인트 재정의 |
 | `PYTHONPATH` | 워크숍 경로 | Python 모듈 검색 경로 |
 
-**FOUNDRY_LOCAL_ENDPOINT를 설정해야 하는 경우:**
+**FOUNDRY_LOCAL_ENDPOINT를 설정해야 할 때:**
 - 원격 Foundry Local 인스턴스
 - 사용자 지정 포트 구성
-- 개발/운영 환경 분리
+- 개발/프로덕션 분리
 
 **예시:**
 ```bash
@@ -102,10 +102,10 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `COMPARE_PROMPT` | 사전 구성됨 | 비교 프롬프트 |
 | `COMPARE_RETRIES` | `2` | 재시도 횟수 |
 
-#### 세션 05: 다중 에이전트 오케스트레이션
+#### 세션 05: 멀티 에이전트 오케스트레이션
 | 변수 | 기본값 | 목적 |
 |------|--------|------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | 연구자 에이전트 모델 |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | 연구원 에이전트 모델 |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | 편집자 에이전트 모델 |
 | `AGENT_QUESTION` | 사전 구성됨 | 테스트 질문 |
 
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### 운영 환경 설정 (품질 중심)
+### 프로덕션 환경 설정 (품질 중심)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -145,7 +145,7 @@ BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### 다중 에이전트 특화
+### 멀티 에이전트 특화
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -166,17 +166,17 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **빠른 응답:**
 - `qwen2.5-0.5b` - 매우 빠르며 분류에 적합
-- `phi-4-mini` - 빠르면서도 품질이 우수
+- `phi-4-mini` - 빠르면서도 좋은 품질
 
 **고품질:**
-- `qwen2.5-7b` - 최고의 품질, 높은 자원 사용
-- `phi-4-mini` - 우수한 품질, 낮은 자원 사용
+- `qwen2.5-7b` - 최고의 품질, 높은 리소스 사용
+- `phi-4-mini` - 좋은 품질, 낮은 리소스 사용
 
 **코드 생성:**
 - `deepseek-coder-1.3b` - 코드에 특화됨
-- `phi-4-mini` - 일반 목적 코딩
+- `phi-4-mini` - 일반적인 코딩에 적합
 
-### 자원 가용성별
+### 리소스 가용성별
 
 **저자원 (< 8GB RAM):**
 ```bash
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## 고급 구성
 
-### 사용자 정의 엔드포인트
+### 사용자 지정 엔드포인트
 
 ```bash
 # Development environment
@@ -382,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. API 키 주기적으로 변경
+### 3. API 키 교체
 
 ```bash
 # For Azure OpenAI or other cloud services
@@ -408,7 +408,6 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## 추가 자료
 
 - `QUICK_START.md` - 시작 가이드
-- `SDK_MIGRATION_NOTES.md` - SDK 업데이트 세부사항
 - `Workshop/samples/*/README.md` - 샘플별 가이드
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **면책 조항**:  
 이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전을 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임지지 않습니다.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

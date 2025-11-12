@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T20:23:19+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T21:40:31+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "fa"
 }
@@ -234,14 +234,14 @@ AZURE_OPENAI_API_KEY=your-key-here
 AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-## رفع اشکال
+## رفع مشکلات
 
 ### متغیرهای محیطی بارگذاری نمی‌شوند
 
 **علائم:**
 - اسکریپت‌ها از مدل‌های اشتباه استفاده می‌کنند
 - خطاهای اتصال
-- متغیرها شناسایی نمی‌شوند
+- متغیرها شناخته نمی‌شوند
 
 **راه‌حل‌ها:**
 ```bash
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **علائم:**
 - خطاهای "مدل پیدا نشد"
-- "نام مستعار شناسایی نشد"
+- "نام مستعار شناخته نشد"
 
 **راه‌حل‌ها:**
 ```bash
@@ -365,7 +365,7 @@ except Exception as e:
 
 ## بهترین شیوه‌های امنیتی
 
-### 1. هرگز اطلاعات حساس را کامیت نکنید
+### 1. هرگز اطلاعات محرمانه را کامیت نکنید
 
 ```bash
 # .gitignore should include:
@@ -382,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. کلیدهای API را چرخشی کنید
+### 3. کلیدهای API را چرخش دهید
 
 ```bash
 # For Azure OpenAI or other cloud services
@@ -408,8 +408,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## منابع اضافی
 
 - `QUICK_START.md` - راهنمای شروع سریع
-- `SDK_MIGRATION_NOTES.md` - جزئیات به‌روزرسانی SDK
-- `Workshop/samples/*/README.md` - راهنماهای خاص نمونه‌ها
+- `Workshop/samples/*/README.md` - راهنماهای خاص نمونه
 
 ---
 
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

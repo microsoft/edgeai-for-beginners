@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-08T14:16:27+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-12T00:34:53+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "hr"
 }
@@ -15,20 +15,19 @@ Otkrijte kako integrirati Hugging Face i druge open-source modele u Foundry Loca
 
 ## Ciljevi učenja
 
-Na kraju sesije moći ćete:
+Na kraju ćete moći:
 
 - **Otkriti i procijeniti**: Identificirati potencijalne modele (mistral, gemma, qwen, deepseek) koristeći kompromis između kvalitete i resursa.
-- **Učitati i pokrenuti**: Koristiti Foundry Local CLI za preuzimanje, predmemoriranje i pokretanje modela iz zajednice.
-- **Benchmark**: Primijeniti dosljedne heuristike za latenciju, propusnost tokena i kvalitetu.
-- **Proširiti**: Registrirati ili prilagoditi prilagođeni model koristeći SDK-kompatibilne obrasce.
-- **Usporediti**: Izraditi strukturirane usporedbe za odluke između SLM i srednje velikih LLM modela.
+- **Učitati i pokrenuti**: Koristiti Foundry Local CLI za preuzimanje, predmemoriranje i pokretanje modela zajednice.
+- **Benchmark**: Primijeniti dosljedne heuristike za latenciju + propusnost tokena + kvalitetu.
+- **Proširiti**: Registrirati ili prilagoditi prilagođeni omotač modela prema uzorcima kompatibilnim sa SDK-om.
+- **Usporediti**: Izraditi strukturirane usporedbe za odluke o odabiru SLM-a naspram srednje velikih LLM-ova.
 
 ## Preduvjeti
 
 - Završene sesije 1 i 2
 - Python okruženje s instaliranim `foundry-local-sdk`
 - Najmanje 15GB slobodnog prostora na disku za predmemoriranje više modela
-- Opcionalno: Omogućena GPU/WebGPU akceleracija (`foundry config list`)
 
 ### Brzi početak za više platformi
 
@@ -48,7 +47,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai numpy
 ```
 
-Prilikom benchmarkinga s macOS-a prema Windows host servisu, postavite:
+Prilikom benchmarkinga s macOS-a prema Windows host usluzi, postavite:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -158,13 +157,13 @@ python samples/03-oss-models/benchmark_models.py
 
 ### 4. Usporedba performansi (5 min)
 
-Raspravite o kompromisima: vrijeme učitavanja, memorijski otisak (promatrajte Task Manager / `nvidia-smi` / OS monitor resursa), kvaliteta izlaza u odnosu na brzinu. Koristite Python benchmark skriptu (Sesija 3) za latenciju i propusnost; ponovite nakon omogućavanja GPU akceleracije.
+Raspravite o kompromisima: vrijeme učitavanja, zauzeće memorije (promatrajte Task Manager / `nvidia-smi` / monitor resursa OS-a), kvaliteta izlaza naspram brzine. Koristite Python benchmark skriptu (Sesija 3) za latenciju i propusnost; ponovite nakon omogućavanja GPU ubrzanja.
 
 ### 5. Početni projekt (4 min)
 
-Izradite generator izvještaja za usporedbu modela (proširite benchmark skriptu s izvozom u markdown).
+Izradite generator izvještaja o usporedbi modela (proširite benchmark skriptu s izvozom u markdown).
 
-## Početni projekt: Proširenje `03-huggingface-models`
+## Početni projekt: Proširite `03-huggingface-models`
 
 Poboljšajte postojeći uzorak dodavanjem:
 
@@ -180,7 +179,7 @@ foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
 
-Svi ciljani modeli trebaju se pojaviti i odgovoriti na zahtjev za probni chat.
+Svi ciljani modeli trebaju se pojaviti i odgovoriti na zahtjev za chat probom.
 
 ## Primjer scenarija i mapiranje radionice
 
@@ -190,7 +189,7 @@ Svi ciljani modeli trebaju se pojaviti i odgovoriti na zahtjev za probni chat.
 
 ### Narativ scenarija
 
-Inženjerski tim mora odabrati zadani lagani model za sažimanje za offline značajku bilješki sa sastanka. Provode kontrolirane determinističke benchmarke (temperature=0) na fiksnom setu upita (vidi primjer dolje) i prikupljaju metrike latencije i propusnosti s i bez GPU akceleracije.
+Inženjering proizvoda mora odabrati zadani lagani model za sažimanje za offline značajku bilješki sa sastanka. Provode kontrolirane determinističke benchmarke (temperature=0) na fiksnom setu upita (vidi primjer dolje) i prikupljaju metrike latencije + propusnosti s i bez GPU ubrzanja.
 
 ### Primjer JSON seta upita (proširiv)
 
@@ -210,15 +209,15 @@ Prođite svaki upit po modelu, zabilježite latenciju po upitu kako biste izveli
 | Dimenzija | Metrika | Zašto je važna |
 |-----------|---------|----------------|
 | Latencija | prosjek / p95 | Dosljednost korisničkog iskustva |
-| Propusnost | tokeni/sec | Skalabilnost za batch i streaming |
-| Memorija | rezidentna veličina | Prilagodba uređaju i konkurentnost |
-| Kvaliteta | rubrika upita | Prikladnost za zadatak |
-| Otisak | predmemorija diska | Distribucija i ažuriranja |
+| Propusnost | tokeni/sec | Skalabilnost serija i streaminga |
+| Memorija | zauzeće | Prilagodba uređaju i konkurentnost |
+| Kvaliteta | upiti prema rubrici | Prikladnost za zadatak |
+| Zauzeće | predmemorija diska | Distribucija i ažuriranja |
 | Licenca | dopuštenje za korištenje | Komercijalna usklađenost |
 
 ## Proširenje s prilagođenim modelom
 
-Visokorazinski obrazac (pseudo):
+Visokorazinski uzorak (pseudo):
 
 ```python
 # pseudo_adapter.py (conceptual)
@@ -229,7 +228,7 @@ class CustomModelAdapter:
 # Register with local routing (future extensibility point)
 ```
 
-Konzultirajte službeni repozitorij za evolucijske adapter sučelja:
+Konzultirajte službeni repozitorij za evolucijske adaptere sučelja:
 https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ## Rješavanje problema
@@ -257,13 +256,13 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 |-------------|----------|------|
 | Latencija prvog tokena u streamingu | Mjeri percipiranu odzivnost | Pokrenite benchmark s `BENCH_STREAM=1` (poboljšana skripta u `Workshop/samples/session03`) |
 | Deterministički način rada | Stabilne regresijske usporedbe | `temperature=0`, fiksni set upita, zabilježite JSON izlaze pod kontrolom verzija |
-| Ocjenjivanje prema rubrici kvalitete | Dodaje kvalitativnu dimenziju | Održavajte `prompts.json` s očekivanim aspektima; ručno ocjenjujte (1–5) ili putem sekundarnog modela |
-| Izvoz u CSV / Markdown | Dijeljivi izvještaj | Proširite skriptu za pisanje `benchmark_report.md` s tablicom i istaknutim dijelovima |
+| Ocjenjivanje prema rubrici kvalitete | Dodaje kvalitativnu dimenziju | Održavajte `prompts.json` s očekivanim aspektima; ručno ili sekundarnim modelom anotirajte ocjene (1–5) |
+| Izvoz u CSV / Markdown | Izvještaj za dijeljenje | Proširite skriptu za pisanje `benchmark_report.md` s tablicom i istaknutim dijelovima |
 | Oznake sposobnosti modela | Pomaže kasnijem automatiziranom usmjeravanju | Održavajte `models.json` s `{alias: {capabilities:[], size_mb:..}}` |
-| Faza zagrijavanja predmemorije | Smanjuje pristranost hladnog starta | Izvršite jedan krug zagrijavanja prije vremenske petlje (već implementirano) |
+| Faza zagrijavanja predmemorije | Smanjuje pristranost hladnog starta | Izvršite jedan lagani krug prije vremenske petlje (već implementirano) |
 | Točnost percentila | Robusna latencija repa | Koristite numpy percentil (već u refaktoriranoj skripti) |
-| Procjena troška tokena | Ekonomska usporedba | Približni trošak = (tokeni/sec * prosječni tokeni po zahtjevu) * energetska heuristika |
-| Automatsko preskakanje neuspjelih modela | Otpornost u batch pokretanjima | Omotajte svaki benchmark u try/except i označite statusno polje |
+| Procjena troška tokena | Ekonomska usporedba | Približan trošak = (tokeni/sec * prosječni tokeni po zahtjevu) * energetska heuristika |
+| Automatsko preskakanje neuspjelih modela | Otpornost u serijskim pokretanjima | Omotajte svaki benchmark u try/except i označite statusno polje |
 
 #### Minimalni isječak za izvoz u Markdown
 
@@ -289,5 +288,7 @@ Prođite statički popis umjesto nasumičnih upita za usporedive metrike kroz co
 
 ---
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Izjava o odricanju odgovornosti**:  
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane ljudskog prevoditelja. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

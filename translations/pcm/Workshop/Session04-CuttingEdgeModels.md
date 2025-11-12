@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-11-11T17:37:26+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-12T01:06:16+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "pcm"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstract
 
-Compare Large Language Models (LLMs) and Small Language Models (SLMs) for local vs cloud inference scenarios. Learn how to deploy models using ONNX Runtime acceleration, WebGPU execution, and hybrid RAG experiences. E go include Chainlit RAG demo wey dey use local model plus optional OpenWebUI exploration. You go adapt WebGPU inference starter and check Phi vs GPT-OSS-20B capability & cost/performance trade-offs.
+Compare Large Language Models (LLMs) and Small Language Models (SLMs) for local vs cloud inference scenarios. Learn how to deploy models wey dey use ONNX Runtime acceleration, WebGPU execution, and hybrid RAG experiences. E go include Chainlit RAG demo wey dey use local model plus optional OpenWebUI exploration. You go adapt WebGPU inference starter and check Phi vs GPT-OSS-20B capability & cost/performance trade-offs.
 
 ## Learning Objectives
 
-- **Compare** SLM vs LLM for latency, memory, and quality
+- **Compare** SLM and LLM for latency, memory, and quality
 - **Deploy** models with ONNXRuntime and (if e dey supported) WebGPU
 - **Run** inference for browser (privacy-preserving interactive demo)
 - **Integrate** Chainlit RAG pipeline with local SLM backend
@@ -23,10 +23,10 @@ Compare Large Language Models (LLMs) and Small Language Models (SLMs) for local 
 
 ## Prerequisites
 
-- You don complete Sessions 1–3
+- You don finish Sessions 1–3
 - `chainlit` don dey installed (e dey already for `requirements.txt` for Module08)
 - WebGPU-capable browser (Edge / Chrome latest for Windows 11)
-- Foundry Local dey run (`foundry status`)
+- Foundry Local dey run (`foundry service status`)
 
 ### Cross-Platform Notes
 
@@ -36,7 +36,7 @@ Windows na di main environment wey we dey target. For macOS developers wey dey w
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-3. Use di same Python virtual environment steps wey you don use for di previous sessions.
+3. Use di same Python virtual environment steps wey you don use for di earlier sessions.
 
 Chainlit install (both platforms):
 ```bash
@@ -62,17 +62,7 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 
 Track: response depth, factual accuracy, stylistic richness, latency.
 
-### 2. ONNX Runtime Acceleration (5 min)
-
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
-
-Observe throughput changes after you enable GPU vs CPU-only.
+Check how throughput dey change after you enable GPU vs CPU-only.
 
 ### 3. WebGPU Inference in Browser (6 min)
 
@@ -117,7 +107,7 @@ Adapt starter `04-webgpu-inference` (create `samples/04-cutting-edge/webgpu_demo
 </html>
 ```
 
-Open di file for browser; observe low-latency local roundtrip.
+Open di file for browser; check di low-latency local roundtrip.
 
 ### 4. Chainlit RAG Chat App (7 min)
 
@@ -197,7 +187,7 @@ foundry model list
 
 | Symptom | Cause | Action |
 |---------|-------|--------|
-| Web page fetch fails | CORS or service down | Use `curl` to check endpoint; enable CORS proxy if e dey needed |
+| Web page fetch no work | CORS or service no dey | Use `curl` to check endpoint; enable CORS proxy if e dey needed |
 | Chainlit blank | Env no dey active | Activate venv & reinstall dependencies |
 | High latency | Model just load | Warm am with small prompt sequence |
 
@@ -216,12 +206,12 @@ foundry model list
 
 | Workshop Artifacts | Scenario | Objective | Data / Prompt Source |
 |--------------------|----------|-----------|----------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architecture team dey evaluate SLM vs LLM for executive summary generator | Quantify latency + token usage delta | Single `COMPARE_PROMPT` env var |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Architecture team dey check SLM vs LLM for executive summary generator | Quantify latency + token usage delta | Single `COMPARE_PROMPT` env var |
 | `chainlit_app.py` (RAG demo) | Internal knowledge assistant prototype | Ground short answers with minimal lexical retrieval | Inline `DOCS` list for file |
 | `webgpu_demo.html` | Futuristic on‑device browser inference preview | Show low‑latency local roundtrip + UX narrative | Live user prompt only |
 
 ### Scenario Narrative
-Di product org wan executive briefing generator. Lightweight SLM (phi‑4‑mini) dey draft summaries; bigger LLM (gpt‑oss‑20b) fit refine only high‑priority reports. Session scripts dey capture empirical latency & token metrics to justify hybrid design, while di Chainlit demo dey show how grounded retrieval dey keep small model answers factual. Di WebGPU concept page dey provide vision path for fully client‑side processing when browser acceleration don mature.
+Di product org wan make executive briefing generator. Lightweight SLM (phi‑4‑mini) dey draft summaries; bigger LLM (gpt‑oss‑20b) fit refine only high‑priority reports. Session scripts dey capture latency & token metrics to justify hybrid design, while di Chainlit demo dey show how grounded retrieval dey keep small model answers factual. Di WebGPU concept page dey provide vision path for fully client‑side processing when browser acceleration don mature.
 
 ### Minimal RAG Context (Chainlit)
 ```python
@@ -253,7 +243,7 @@ Track both latency components to report blended average cost.
 | WebGPU Caching | Faster JS init | Reduce recompile overhead | Cache compiled shader artifacts (future runtime capability) |
 | Deterministic QA Set | Fair model comparison | Remove variance | Fixed prompt list + `temperature=0` for evaluation runs |
 | Output Scoring | Structured quality lens | Move beyond anecdotes | Simple rubric: coherence / factuality / brevity (1–5) |
-| Energy / Resource Notes | Classroom discussion | Show trade-offs | Use OS monitors (`foundry system info`, Task Manager, `nvidia-smi`) + benchmark script outputs |
+| Energy / Resource Notes | Classroom discussion | Show trade-offs | Use OS monitors (Task Manager, `nvidia-smi`) + benchmark script outputs |
 | Cost Emulation | Pre-cloud justification | Plan scaling | Map tokens to hypothetical cloud pricing for TCO narrative |
 | Latency Decomposition | Identify bottlenecks | Target optimizations | Measure prompt prep, request send, first token, full completion |
 | RAG + LLM Fallback | Quality safety net | Improve difficult queries | If SLM answer length < threshold or low confidence → escalate |
@@ -282,5 +272,5 @@ Use consistent measurement scaffolding across models for fair comparisons.
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dis dokyument don use AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am accurate, abeg sabi say automated translations fit get mistake or no dey correct well. Di original dokyument wey dey for im native language na di main source wey you go fit trust. For important information, e good make professional human translation dey use. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
+Dis dokyument don use AI translet service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translet. Even as we dey try make am correct, abeg make you sabi say AI translet fit get mistake or no dey accurate well. Di original dokyument wey dey for im native language na di one wey you go take as di correct source. For important mata, e good make professional human translet do am. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translet.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

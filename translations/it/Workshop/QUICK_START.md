@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T21:37:43+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T22:48:17+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "it"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. Installa Foundry Local
 
-Segui la guida ufficiale per l'installazione:  
+Segui la guida ufficiale all'installazione:  
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -27,7 +27,7 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. Installa le dipendenze Python
+### 2. Installa le Dipendenze Python
 
 Dalla directory del Workshop:
 
@@ -45,16 +45,16 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Esecuzione degli esempi del Workshop
+## Esecuzione degli Esempi del Workshop
 
-### Sessione 01: Chat di base
+### Sessione 01: Chat di Base
 
 ```bash
 cd Workshop/samples
 python -m session01.chat_bootstrap "What are the benefits of local AI?"
 ```
 
-**Variabili d'ambiente:**  
+**Variabili d'Ambiente:**  
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
@@ -67,7 +67,7 @@ cd Workshop/samples
 python -m session02.rag_pipeline
 ```
 
-**Variabili d'ambiente:**  
+**Variabili d'Ambiente:**  
 ```bash
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set RAG_QUESTION="Why use RAG with local inference?"
@@ -90,7 +90,7 @@ cd Workshop/samples
 python -m session03.benchmark_oss_models
 ```
 
-**Variabili d'ambiente:**  
+**Variabili d'Ambiente:**  
 ```bash
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
 set BENCH_ROUNDS=5
@@ -100,42 +100,42 @@ set BENCH_STREAM=1
 
 **Output**: JSON con metriche di latenza, throughput e primo token
 
-### Sessione 04: Confronto tra modelli
+### Sessione 04: Confronto Modelli
 
 ```bash
 cd Workshop/samples
 python -m session04.model_compare
 ```
 
-**Variabili d'ambiente:**  
+**Variabili d'Ambiente:**  
 ```bash
 set SLM_ALIAS=phi-4-mini
 set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### Sessione 05: Orchestrazione Multi-Agent
+### Sessione 05: Orchestrazione Multi-Agente
 
 ```bash
 cd Workshop/samples
 python -m session05.agents_orchestrator
 ```
 
-**Variabili d'ambiente:**  
+**Variabili d'Ambiente:**  
 ```bash
 set AGENT_MODEL_PRIMARY=phi-4-mini
 set AGENT_MODEL_EDITOR=phi-4-mini
 set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ```
 
-### Sessione 06: Router di modelli
+### Sessione 06: Router Modelli
 
 ```bash
 cd Workshop/samples
 python -m session06.models_router
 ```
 
-**Testa la logica di routing** con intenti multipli (codice, riassunto, classificazione)
+**Testa la logica di instradamento** con intenti multipli (codice, riassunto, classificazione)
 
 ### Sessione 06: Pipeline
 
@@ -147,7 +147,7 @@ python -m session06.models_pipeline
 
 ## Script
 
-### Esporta il report di benchmark
+### Esporta Report Benchmark
 
 ```bash
 cd Workshop/scripts
@@ -160,7 +160,7 @@ python export_benchmark_markdown.py \
 
 **Output**: Tabella Markdown + metriche JSON
 
-### Lint per pattern CLI Markdown
+### Lint Markdown CLI Patterns
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -170,7 +170,7 @@ python lint_markdown_cli.py --verbose
 
 ## Test
 
-### Test preliminari
+### Test di Base
 
 ```bash
 cd Workshop
@@ -179,9 +179,9 @@ python -m tests.smoke
 
 **Test**: Funzionalità di base degli esempi principali
 
-## Risoluzione dei problemi
+## Risoluzione dei Problemi
 
-### Servizio non in esecuzione
+### Servizio Non Attivo
 
 ```bash
 # Check status
@@ -194,7 +194,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Errori di importazione moduli
+### Errori di Importazione Moduli
 
 ```bash
 # Ensure virtual environment is activated
@@ -205,7 +205,7 @@ source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### Errori di connessione
+### Errori di Connessione
 
 ```bash
 # Check endpoint
@@ -215,7 +215,7 @@ foundry service status
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ```
 
-### Modello non trovato
+### Modello Non Trovato
 
 ```bash
 # List available models
@@ -225,40 +225,40 @@ foundry model list
 foundry model run phi-4-mini
 ```
 
-## Riferimento alle variabili d'ambiente
+## Riferimento alle Variabili d'Ambiente
 
-### Configurazione principale
+### Configurazione Principale
 | Variabile | Predefinito | Descrizione |
 |-----------|-------------|-------------|
-| `FOUNDRY_LOCAL_ALIAS` | Variabile | Alias del modello da utilizzare |
+| `FOUNDRY_LOCAL_ALIAS` | Varia | Alias del modello da utilizzare |
 | `FOUNDRY_LOCAL_ENDPOINT` | Auto | Sovrascrive l'endpoint del servizio |
 | `SHOW_USAGE` | `0` | Mostra le statistiche di utilizzo dei token |
 | `RETRY_ON_FAIL` | `1` | Abilita la logica di retry |
 | `RETRY_BACKOFF` | `1.0` | Ritardo iniziale per il retry (secondi) |
 
-### Specifico per sessione
+### Specifiche per Sessione
 | Variabile | Predefinito | Descrizione |
 |-----------|-------------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Modello di embedding |
 | `RAG_QUESTION` | Vedi esempio | Domanda di test RAG |
-| `BENCH_MODELS` | Variabile | Modelli separati da virgola |
-| `BENCH_ROUNDS` | `3` | Iterazioni di benchmark |
-| `BENCH_PROMPT` | Vedi esempio | Prompt di benchmark |
+| `BENCH_MODELS` | Varia | Modelli separati da virgola |
+| `BENCH_ROUNDS` | `3` | Iterazioni del benchmark |
+| `BENCH_PROMPT` | Vedi esempio | Prompt del benchmark |
 | `BENCH_STREAM` | `0` | Misura la latenza del primo token |
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Modello principale dell'agente |
-| `AGENT_MODEL_EDITOR` | Primario | Modello editor dell'agente |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Modello agente primario |
+| `AGENT_MODEL_EDITOR` | Primario | Modello agente editor |
 | `SLM_ALIAS` | `phi-4-mini` | Modello linguistico piccolo |
 | `LLM_ALIAS` | `qwen2.5-7b` | Modello linguistico grande |
 | `COMPARE_PROMPT` | Vedi esempio | Prompt di confronto |
 
-## Modelli consigliati
+## Modelli Consigliati
 
-### Sviluppo e test
+### Sviluppo e Test
 - **phi-4-mini** - Qualità e velocità bilanciate
 - **qwen2.5-0.5b** - Molto veloce per la classificazione
 - **gemma-2-2b** - Buona qualità, velocità moderata
 
-### Scenari di produzione
+### Scenari di Produzione
 - **phi-4-mini** - Uso generico
 - **deepseek-coder-1.3b** - Generazione di codice
 - **qwen2.5-7b** - Risposte di alta qualità
@@ -266,29 +266,30 @@ foundry model run phi-4-mini
 ## Documentazione SDK
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
 
-## Ottenere aiuto
+## Ottenere Aiuto
 
 1. Controlla lo stato del servizio: `foundry service status`  
 2. Visualizza i log: Controlla i log del servizio Foundry Local  
 3. Consulta la documentazione SDK: https://github.com/microsoft/Foundry-Local  
-4. Esamina il codice di esempio: Tutti gli esempi hanno docstring dettagliati
+4. Esamina il codice di esempio: Tutti gli esempi includono docstring dettagliati  
 
-## Prossimi passi
+## Prossimi Passi
 
 1. Completa tutte le sessioni del workshop in ordine  
 2. Sperimenta con modelli diversi  
 3. Modifica gli esempi per i tuoi casi d'uso  
-4. Consulta `SDK_MIGRATION_NOTES.md` per pattern avanzati
 
 ---
 
-**Ultimo aggiornamento**: 08-01-2025  
+**Ultimo Aggiornamento**: 2025-01-08  
 **Versione del Workshop**: Ultima  
 **SDK**: Foundry Local Python SDK
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
 Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

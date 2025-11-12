@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T20:12:03+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T21:29:54+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "de"
 }
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Sitzungs-spezifisch
+### Sitzungsbezogen
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -200,7 +200,7 @@ for chunk in stream:
 | `qwen2.5-coder-0.5b` | 0.5B | Schnelle Code-Generierung | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Kreatives Schreiben | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Code, Refactoring | ⚡⚡ |
-| `phi-4-mini` | 4B | Allgemein, Zusammenfassung | ⚡⚡ |
+| `phi-4-mini` | 4B | Allgemein, Zusammenfassungen | ⚡⚡ |
 | `qwen2.5-7b` | 7B | Komplexes Denken | ⚡ |
 
 ---
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **SDK-Dokumentation**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Schnellreferenz**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Update-Zusammenfassung**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migrationshinweise**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -220,7 +218,7 @@ for chunk in stream:
 2. **Kleinere Modelle verwenden**: Beginnen Sie mit `qwen2.5-0.5b` für Tests
 3. **Nutzungsstatistiken aktivieren**: Setzen Sie `SHOW_USAGE=1`, um Token zu verfolgen
 4. **Batch-Verarbeitung**: Mehrere Prompts nacheinander verarbeiten
-5. **Max_tokens reduzieren**: Verringert die Latenz für schnelle Antworten
+5. **max_tokens reduzieren**: Verringert die Latenz für schnelle Antworten
 
 ---
 
@@ -256,16 +254,18 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Schnelle Hilfe**: Führen Sie ein beliebiges Beispiel mit `--help` aus dem Verzeichnis `samples` aus oder sehen Sie sich die docstring an:
+**Schnelle Hilfe**: Führen Sie ein beliebiges Beispiel mit `--help` aus dem `samples`-Verzeichnis aus oder sehen Sie sich die Docstring an:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**Alle Beispiele wurden im Oktober 2025 mit den Best Practices des Foundry Local SDK aktualisiert** ✨
+**Alle Beispiele aktualisiert im Oktober 2025 mit den besten Praktiken des Foundry Local SDK** ✨
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

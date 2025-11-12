@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T23:57:09+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-12T01:01:08+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "et"
 }
@@ -11,32 +11,32 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Kokkuvõte
 
-Võrrelge suuri keelemudeleid (LLM) ja väikeseid keelemudeleid (SLM) kohalike ja pilvepõhiste järelduste stsenaariumide jaoks. Õppige juurutamismustreid, kasutades ONNX Runtime kiirendust, WebGPU täitmist ja hübriidseid RAG-kogemusi. Sisaldab Chainlit RAG-i demo koos kohaliku mudeliga ja valikulist OpenWebUI uurimist. Kohandate WebGPU järelduse algversiooni ja hindate Phi ja GPT-OSS-20B võimekust ning kulude/tõhususe kompromisse.
+Võrrelge suuri keelemudeleid (LLM-id) ja väikeseid keelemudeleid (SLM-id) kohalike ja pilvepõhiste järelduste stsenaariumide jaoks. Õppige juurutamismustreid, kasutades ONNX Runtime kiirendust, WebGPU täitmist ja hübriidseid RAG-kogemusi. Sisaldab Chainlit RAG demo koos kohaliku mudeliga ja valikulist OpenWebUI uurimist. Kohandate WebGPU järeldamise algversiooni ja hindate Phi ja GPT-OSS-20B võimekust ning kulude/tõhususe kompromisse.
 
 ## Õpieesmärgid
 
-- **Võrrelge** SLM-i ja LLM-i latentsuse, mälu ja kvaliteedi telgedel
+- **Võrrelge** SLM-i ja LLM-i latentsuse, mälu ja kvaliteedi osas
 - **Juurutage** mudeleid ONNXRuntime'iga ja (kui toetatud) WebGPU-ga
 - **Käivitage** brauseripõhine järeldamine (privaatsust säilitav interaktiivne demo)
 - **Integreerige** Chainlit RAG torujuhe kohaliku SLM-i taustsüsteemiga
-- **Hinnake** kergete kvaliteedi- ja kulude heuristikate abil
+- **Hinnake** kergete kvaliteedi- ja kuluhinnangute abil
 
 ## Eeltingimused
 
 - Sessioonid 1–3 läbitud
 - `chainlit` installitud (juba olemas `requirements.txt` failis Module08 jaoks)
-- WebGPU-toega brauser (Edge / Chrome uusim versioon Windows 11 jaoks)
-- Foundry Local töötab (`foundry status`)
+- WebGPU-toega brauser (Edge / Chrome uusim versioon Windows 11-l)
+- Foundry Local töötab (`foundry service status`)
 
 ### Platvormidevahelised märkused
 
-Windows jääb peamiseks sihtkeskkonnaks. macOS-i arendajatele, kes ootavad natiivseid binaare:
+Windows jääb peamiseks sihtkeskkonnaks. macOS-i arendajatele, kes ootavad kohalikke binaare:
 1. Käivitage Foundry Local Windows 11 virtuaalmasinas (Parallels / UTM) VÕI kaug-Windowsi tööjaamas.
 2. Avage teenus (vaikeport 5273) ja seadistage macOS-is:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-3. Kasutage samu Python virtuaalkeskkonna samme nagu eelnevates sessioonides.
+3. Kasutage samu Python'i virtuaalkeskkonna samme nagu eelnevates sessioonides.
 
 Chainlit installimine (mõlemal platvormil):
 ```bash
@@ -45,7 +45,7 @@ pip install chainlit
 
 ## Demo voog (30 min)
 
-### 1. Võrdle Phi (SLM) ja GPT-OSS-20B (LLM) (6 min)
+### 1. Võrrelge Phi (SLM) ja GPT-OSS-20B (LLM) (6 min)
 
 ```powershell
 foundry model run phi-4-mini
@@ -60,23 +60,13 @@ foundry model run phi-4-mini   --prompt "List 5 creative IoT edge AI ideas."
 foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 ```
 
-Jälgi: vastuse sügavust, faktilist täpsust, stiililist rikkust, latentsust.
+Jälgige: vastuste sügavust, faktilist täpsust, stiililist rikkust, latentsust.
 
-### 2. ONNX Runtime kiirendus (5 min)
-
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
-
-Jälgi läbilaskevõime muutusi pärast GPU lubamist võrreldes ainult CPU-ga.
+Vaadake läbilaskevõime muutusi pärast GPU lubamist võrreldes ainult CPU-ga.
 
 ### 3. WebGPU järeldamine brauseris (6 min)
 
-Kohanda algversiooni `04-webgpu-inference` (loo `samples/04-cutting-edge/webgpu_demo.html`):
+Kohandage algversiooni `04-webgpu-inference` (looge `samples/04-cutting-edge/webgpu_demo.html`):
 
 ```html
 <!DOCTYPE html>
@@ -117,7 +107,7 @@ Kohanda algversiooni `04-webgpu-inference` (loo `samples/04-cutting-edge/webgpu_
 </html>
 ```
 
-Ava fail brauseris; jälgi madala latentsusega kohalikku ringlust.
+Avage fail brauseris; jälgige madala latentsusega kohalikku ringlust.
 
 ### 4. Chainlit RAG vestlusrakendus (7 min)
 
@@ -157,28 +147,28 @@ async def main(message: cl.Message):
     await cl.Message(content=resp.choices[0].message.content).send()
 ```
 
-Käivita:
+Käivitage:
 
 ```powershell
 chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ```
 
-### 5. Algprojekt: Kohanda `04-webgpu-inference` (6 min)
+### 5. Algprojekt: Kohandage `04-webgpu-inference` (6 min)
 
 Tarnitavad:
-- Asenda kohatäite andmete hankimise loogika voogedastuse tokenitega (kasuta `stream=True` lõpp-punkti varianti, kui see on lubatud)
-- Lisa latentsuse diagramm (kliendipoolne) Phi ja GPT-OSS-20B lülituste jaoks
-- Lisa RAG kontekst otse (tekstiala viitedokumentide jaoks)
+- Asendage kohatäite andmete hankimise loogika voogesituse tokenitega (kasutage `stream=True` lõpp-punkti varianti, kui see on lubatud)
+- Lisage latentsuse diagramm (kliendipoolne) Phi ja GPT-OSS-20B lülituste jaoks
+- Sisestage RAG kontekst otse (tekstiala viitedokumentide jaoks)
 
-## Hindamise heuristikad
+## Hindamiskriteeriumid
 
 | Kategooria | Phi-4-mini | GPT-OSS-20B | Tähelepanek |
 |------------|------------|-------------|-------------|
 | Latentsus (külm) | Kiire | Aeglasem | SLM soojeneb kiiresti |
 | Mälu | Madal | Kõrge | Seadme teostatavus |
 | Konteksti järgimine | Hea | Tugev | Suurem mudel võib olla sõnaohtram |
-| Kulu (kohalik) | Minimaalne | Kõrgem (ressurss) | Energia/aja kompromiss |
-| Parim kasutusjuhtum | Ääriserakendused | Sügav mõtlemine | Võimalik hübriidtorujuhe |
+| Kulu (kohalik) | Minimaalne | Kõrgem (ressursid) | Energia/aja kompromiss |
+| Parim kasutusjuht | Servarakendused | Sügav mõtlemine | Võimalik hübriidtorujuhe |
 
 ## Keskkonna valideerimine
 
@@ -197,14 +187,14 @@ foundry model list
 
 | Sümptom | Põhjus | Tegevus |
 |---------|--------|---------|
-| Veebilehe laadimine ebaõnnestub | CORS või teenus maas | Kasuta `curl`, et kontrollida lõpp-punkti; luba CORS proxy vajadusel |
-| Chainlit tühi | Keskkond pole aktiivne | Aktiveeri venv ja installi uuesti sõltuvused |
-| Kõrge latentsus | Mudel just laaditud | Soojenda väikese prompt-jadaga |
+| Veebilehe laadimine ebaõnnestub | CORS või teenus maas | Kasutage `curl`-i, et kontrollida lõpp-punkti; lubage vajadusel CORS proxy |
+| Chainlit tühi | Keskkond pole aktiivne | Aktiveerige venv ja installige uuesti sõltuvused |
+| Kõrge latentsus | Mudel just laaditud | Soojendage väikese sisendiga |
 
 ## Viited
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- Chainlit dokumendid: https://docs.chainlit.io
+- Chainlit dokumentatsioon: https://docs.chainlit.io
 - RAG hindamine (Ragas): https://docs.ragas.io
 
 ---
@@ -214,11 +204,11 @@ foundry model list
 
 ## Näidisstsenaarium ja töötoa kaardistamine
 
-| Töötoa artefaktid | Stsenaarium | Eesmärk | Andmed / prompti allikas |
+| Töötoa artefaktid | Stsenaarium | Eesmärk | Andmed / sisendi allikas |
 |-------------------|------------|---------|-------------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Arhitektuurimeeskond hindab SLM-i ja LLM-i juhtkonna kokkuvõtete generaatori jaoks | Koguse latentsuse ja tokenite kasutuse erinevuse kvantifitseerimine | Üksik `COMPARE_PROMPT` keskkonnamuutuja |
-| `chainlit_app.py` (RAG demo) | Sisemine teadmiste assistendi prototüüp | Lühivastuste aluseks minimaalne leksikaalne otsing | Faili sisemine `DOCS` loend |
-| `webgpu_demo.html` | Tulevikku suunatud seadmesisese brauseri järelduse eelvaade | Näita madala latentsusega kohalikku ringlust + UX narratiivi | Ainult reaalajas kasutaja prompt |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Arhitektuurimeeskond hindab SLM-i ja LLM-i juhtkonna kokkuvõtete generaatoriks | Kvantifitseerige latentsuse ja tokenite kasutuse erinevused | Üksik `COMPARE_PROMPT` keskkonnamuutuja |
+| `chainlit_app.py` (RAG demo) | Sisemine teadmiste assistendi prototüüp | Lühivastuste põhjendamine minimaalse leksikaalse otsinguga | Faili sisemine `DOCS` loend |
+| `webgpu_demo.html` | Tulevikku suunatud seadmesisese brauseri järeldamise eelvaade | Näidake madala latentsusega kohalikku ringlust + UX narratiivi | Ainult reaalajas kasutaja sisend |
 
 ### Stsenaariumi narratiiv
 Tooteorganisatsioon soovib juhtkonna kokkuvõtete generaatorit. Kerge SLM (phi-4-mini) koostab kokkuvõtteid; suurem LLM (gpt-oss-20b) võib täiustada ainult kõrge prioriteediga aruandeid. Sessiooniskriptid koguvad empiirilisi latentsuse ja tokenite mõõdikuid, et õigustada hübriidset disaini, samas kui Chainlit demo illustreerib, kuidas põhjendatud otsing hoiab väikese mudeli vastused faktilised. WebGPU kontseptsioonileht pakub visioonirada täielikult kliendipoolseks töötlemiseks, kui brauseri kiirendus küpseb.
@@ -241,24 +231,24 @@ else:
     final, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Refine and polish:\n{draft}"}], max_tokens=220)
 ```
 
-Jälgi mõlemat latentsuskomponenti, et raporteerida segatud keskmist kulu.
+Jälgige mõlemat latentsuskomponenti, et raporteerida segatud keskmist kulu.
 
 ### Valikulised täiustused
 
 | Fookus | Täiustus | Miks | Rakendamise vihje |
 |--------|----------|------|-------------------|
-| Võrdlevad mõõdikud | Jälgi tokenite kasutust + esimese tokeni latentsust | Holistiline jõudluse ülevaade | Kasuta täiustatud võrdlusskripti (Sessioon 3) koos `BENCH_STREAM=1` |
-| Hübriidtorujuhe | SLM mustand → LLM täiustus | Vähenda latentsust ja kulu | Loo phi-4-mini abil, täiusta kokkuvõte gpt-oss-20b-ga |
-| Voogedastuse UI | Parem UX Chainlitis | Järk-järguline tagasiside | Kasuta `stream=True`, kui kohalik voogedastus on lubatud; koguge tükid |
-| WebGPU vahemälu | Kiirem JS algus | Vähenda ümberkompileerimise koormust | Vahemälu kompileeritud shaderi artefaktid (tulevane runtime võimekus) |
-| Deterministlik QA komplekt | Õiglane mudelivõrdlus | Eemalda variatsioon | Fikseeritud prompt-loend + `temperature=0` hindamisjooksude jaoks |
-| Väljundi hindamine | Struktureeritud kvaliteedi analüüs | Liigu anekdootidest kaugemale | Lihtne rubriik: sidusus / faktilisus / lühidus (1–5) |
-| Energia / ressursi märkmed | Klassiruumi arutelu | Näita kompromisse | Kasuta OS-i monitooringut (`foundry system info`, Task Manager, `nvidia-smi`) + võrdlusskripti väljundeid |
-| Kulu emulatsioon | Pilve-eelne õigustus | Plaani skaleerimist | Kaardista tokenid hüpoteetilise pilve hinna jaoks TCO narratiivi loomiseks |
-| Latentsuse jaotus | Kitsaskohtade tuvastamine | Optimeerimise sihtimine | Mõõda prompti ettevalmistust, päringu saatmist, esimest tokenit, täielikku lõpetamist |
-| RAG + LLM varuvariant | Kvaliteedi turvavõrk | Paranda keerulisi päringuid | Kui SLM-i vastuse pikkus < lävi või madal usaldus → eskaleeri |
+| Võrdlevad mõõdikud | Jälgige tokenite kasutust + esimese tokeni latentsust | Holistiline jõudluse ülevaade | Kasutage täiustatud võrdlusskripti (Sessioon 3) koos `BENCH_STREAM=1` |
+| Hübriidtorujuhe | SLM mustand → LLM täiustus | Vähendage latentsust ja kulu | Looge phi-4-mini-ga, täiustage kokkuvõtet gpt-oss-20b-ga |
+| Voogesituse UI | Parem UX Chainlitis | Järk-järguline tagasiside | Kasutage `stream=True`, kui kohalik voogesitus on lubatud; koguge tükke |
+| WebGPU vahemälu | Kiirem JS alglaadimine | Vähendage uuesti kompileerimise koormust | Vahemällu salvestage kompileeritud shaderi artefaktid (tulevane runtime võimekus) |
+| Deterministlik QA komplekt | Õiglane mudeli võrdlus | Eemaldage varieeruvus | Fikseeritud sisendite loend + `temperature=0` hindamisjooksude jaoks |
+| Väljundi hindamine | Struktureeritud kvaliteedi vaade | Liikuge anekdootidest kaugemale | Lihtne rubriik: sidusus / faktilisus / lühidus (1–5) |
+| Energia / ressursi märkused | Klassiruumi arutelu | Näidake kompromisse | Kasutage OS-i monitoore (Task Manager, `nvidia-smi`) + võrdlusskripti väljundeid |
+| Kulu emulatsioon | Pilve-eelne õigustus | Plaanige skaleerimist | Kaardistage tokenid hüpoteetilise pilve hinna järgi TCO narratiivi jaoks |
+| Latentsuse jaotus | Kitsaskohtade tuvastamine | Optimeerimise sihtimine | Mõõtke sisendi ettevalmistust, päringu saatmist, esimest tokenit, täielikku lõpetamist |
+| RAG + LLM varuvariant | Kvaliteedi turvavõrk | Parandage keerulisi päringuid | Kui SLM-i vastuse pikkus < lävi või madal usaldus → eskaleerige |
 
-#### Näide hübriidse mustandi/täiustamise mustrist
+#### Näide hübriidsest mustandi/täiustamise mustrist
 
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], max_tokens=300, temperature=0.4)
@@ -276,9 +266,11 @@ full_ms = (time.time()-t1)*1000
 print({"prep_ms": prep_ms, "full_gen_ms": full_ms})
 ```
 
-Kasuta järjepidevat mõõtmise raamistikku mudelite vahel õiglaselt võrdlemiseks.
+Kasutage mudelite vahel järjepidevat mõõtmise raamistikku õiglasemaks võrdluseks.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Lahtiütlus**:  
 See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tekkida selle tõlke kasutamise tõttu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

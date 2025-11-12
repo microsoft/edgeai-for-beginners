@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T23:29:45+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-12T00:36:20+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "sl"
 }
@@ -11,27 +11,27 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Povzetek
 
-Primerjajte velike jezikovne modele (LLM-ji) in majhne jezikovne modele (SLM-ji) za scenarije inferenc lokalno proti oblaku. Naučite se vzorcev uvajanja z uporabo pospeševanja ONNX Runtime, izvajanja WebGPU in hibridnih izkušenj RAG. Vključuje demonstracijo Chainlit RAG z lokalnim modelom ter opcijsko raziskovanje OpenWebUI. Prilagodili boste začetni projekt za inferenco WebGPU in ocenili zmogljivost ter razmerje med stroški in učinkovitostjo Phi proti GPT-OSS-20B.
+Primerjajte velike jezikovne modele (LLM-ji) in majhne jezikovne modele (SLM-ji) za scenarije lokalne in oblačne inference. Spoznajte vzorce uvajanja z uporabo pospeševanja ONNX Runtime, izvajanja WebGPU in hibridnih RAG izkušenj. Vključuje Chainlit RAG demo z lokalnim modelom ter opcijsko raziskovanje OpenWebUI. Prilagodili boste začetni projekt za WebGPU inferenco in ocenili zmogljivost ter stroškovno/zmogljivostne kompromise med Phi in GPT-OSS-20B.
 
 ## Cilji učenja
 
-- **Primerjajte** SLM proti LLM glede na zakasnitve, pomnilnik in kakovost
-- **Uvedite** modele z ONNXRuntime in (kjer je podprto) WebGPU
-- **Izvedite** inferenco v brskalniku (interaktivna demonstracija, ki ohranja zasebnost)
+- **Primerjajte** SLM in LLM glede na zakasnitve, pomnilnik in kakovost
+- **Uvedite** modele z ONNXRuntime in (kjer podprto) WebGPU
+- **Izvedite** inferenco v brskalniku (interaktivni demo, ki ohranja zasebnost)
 - **Integrirajte** Chainlit RAG cevovod z lokalnim SLM zaledjem
-- **Ocenite** z uporabo lahkih kakovostnih + stroškovnih heuristik
+- **Ocenite** z uporabo lahkih kakovostnih + stroškovnih hevristik
 
 ## Predpogoji
 
 - Zaključene seje 1–3
 - Nameščen `chainlit` (že v `requirements.txt` za Modul08)
-- Brskalnik, združljiv z WebGPU (Edge / Chrome najnovejši na Windows 11)
-- Delujoč Foundry Local (`foundry status`)
+- Brskalnik, ki podpira WebGPU (Edge / Chrome najnovejša različica na Windows 11)
+- Zagnan Foundry Local (`foundry service status`)
 
 ### Opombe za več platform
 
 Windows ostaja primarno ciljno okolje. Za razvijalce na macOS, ki čakajo na izvorne binarne datoteke:
-1. Zaženite Foundry Local v Windows 11 VM (Parallels / UTM) ALI na oddaljeni delovni postaji Windows.
+1. Zaženite Foundry Local v Windows 11 VM (Parallels / UTM) ALI na oddaljeni Windows delovni postaji.
 2. Omogočite storitev (privzeti port 5273) in nastavite na macOS:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
@@ -45,7 +45,7 @@ pip install chainlit
 
 ## Potek demonstracije (30 min)
 
-### 1. Primerjava Phi (SLM) proti GPT-OSS-20B (LLM) (6 min)
+### 1. Primerjava Phi (SLM) in GPT-OSS-20B (LLM) (6 min)
 
 ```powershell
 foundry model run phi-4-mini
@@ -62,19 +62,9 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 
 Sledite: globina odgovora, dejanska natančnost, slogovna bogatost, zakasnitev.
 
-### 2. Pospeševanje ONNX Runtime (5 min)
+Opazujte spremembe prepustnosti po omogočitvi GPU v primerjavi z uporabo samo CPU.
 
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
-
-Opazujte spremembe prepustnosti po omogočitvi GPU proti samo CPU.
-
-### 3. Inferenca WebGPU v brskalniku (6 min)
+### 3. WebGPU inferenca v brskalniku (6 min)
 
 Prilagodite začetni projekt `04-webgpu-inference` (ustvarite `samples/04-cutting-edge/webgpu_demo.html`):
 
@@ -165,18 +155,18 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 
 ### 5. Začetni projekt: Prilagodite `04-webgpu-inference` (6 min)
 
-Rezultati:
-- Zamenjajte logiko pridobivanja z mestom za pretakanje tokenov (uporabite različico `stream=True` endpointa, ko bo omogočena)
+Dostave:
+- Zamenjajte logiko pridobivanja z nadomestnim pretokom tokov (uporabite `stream=True` različico končne točke, ko bo omogočena)
 - Dodajte graf zakasnitve (na strani odjemalca) za preklop med phi in gpt-oss-20b
-- Vdelajte kontekst RAG neposredno (besedilno polje za referenčne dokumente)
+- Vdelajte RAG kontekst neposredno (besedilno polje za referenčne dokumente)
 
-## Heuristika ocenjevanja
+## Hevristike ocenjevanja
 
 | Kategorija | Phi-4-mini | GPT-OSS-20B | Opazovanje |
 |------------|------------|-------------|------------|
 | Zakasnitev (hladno) | Hitro | Počasneje | SLM se hitro ogreje |
 | Pomnilnik | Nizek | Visok | Ustreznost naprave |
-| Upoštevanje konteksta | Dobro | Močno | Večji model je lahko bolj zgovoren |
+| Upoštevanje konteksta | Dobro | Močno | Večji model je lahko bolj obširen |
 | Stroški (lokalno) | Minimalni | Višji (viri) | Kompromis med energijo/časom |
 | Najboljša uporaba | Aplikacije na robu | Globoko razmišljanje | Možna hibridna rešitev |
 
@@ -197,15 +187,15 @@ foundry model list
 
 | Simptom | Vzrok | Ukrep |
 |---------|-------|-------|
-| Pridobivanje spletne strani ne uspe | CORS ali storitev ne deluje | Uporabite `curl` za preverjanje endpointa; omogočite CORS proxy, če je potrebno |
+| Pridobivanje spletne strani ne uspe | CORS ali storitev ne deluje | Uporabite `curl` za preverjanje končne točke; omogočite CORS proxy, če je potrebno |
 | Chainlit prazen | Okolje ni aktivno | Aktivirajte venv in ponovno namestite odvisnosti |
 | Visoka zakasnitev | Model je pravkar naložen | Ogrejte z majhnim zaporedjem pozivov |
 
 ## Reference
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- Dokumentacija Chainlit: https://docs.chainlit.io
-- Ocena RAG (Ragas): https://docs.ragas.io
+- Chainlit dokumentacija: https://docs.chainlit.io
+- RAG ocenjevanje (Ragas): https://docs.ragas.io
 
 ---
 
@@ -216,14 +206,14 @@ foundry model list
 
 | Artefakti delavnice | Scenarij | Cilj | Vir podatkov / pozivov |
 |---------------------|----------|------|------------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Arhitekturna ekipa ocenjuje SLM proti LLM za generator povzetkov za vodstvo | Kvantificirajte zakasnitev + razliko v uporabi tokenov | En sam `COMPARE_PROMPT` okoljski spremenljiv |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Arhitekturna ekipa ocenjuje SLM v primerjavi z LLM za generator povzetkov za vodstvo | Kvantificirajte zakasnitev + razliko v uporabi žetonov | En sam `COMPARE_PROMPT` okoljski spremenljiv |
 | `chainlit_app.py` (RAG demo) | Prototip notranjega asistenta za znanje | Utemeljite kratke odgovore z minimalnim leksikalnim pridobivanjem | Vgrajen seznam `DOCS` v datoteki |
-| `webgpu_demo.html` | Napredna inferenca v brskalniku na napravi | Prikaz lokalnega povratnega klica z nizko zakasnitvijo + UX narativ | Samo poziv v živo uporabnika |
+| `webgpu_demo.html` | Vizija futuristične inferenčne obdelave v brskalniku na napravi | Prikaz lokalnega povratnega klica z nizko zakasnitvijo + UX narativ | Samo poziv v živo uporabnika |
 
 ### Narativ scenarija
-Produktna organizacija želi generator povzetkov za vodstvo. Lahek SLM (phi‑4‑mini) pripravi osnutke povzetkov; večji LLM (gpt‑oss‑20b) lahko izpopolni le poročila z visoko prioriteto. Skripte seje zajamejo empirične metrike zakasnitve in tokenov za upravičenje hibridne zasnove, medtem ko demonstracija Chainlit prikazuje, kako utemeljeno pridobivanje ohranja odgovore majhnega modela dejanske. Konceptna stran WebGPU ponuja vizijo za popolnoma odjemalsko obdelavo, ko pospeševanje brskalnika dozori.
+Produktna organizacija želi generator povzetkov za vodstvo. Lahek SLM (phi‑4‑mini) pripravi osnutke povzetkov; večji LLM (gpt‑oss‑20b) lahko izpopolni le poročila z visoko prioriteto. Skripte seje zajamejo empirične zakasnitve in metrike žetonov za utemeljitev hibridne zasnove, medtem ko Chainlit demo prikazuje, kako utemeljeno pridobivanje ohranja odgovore majhnega modela dejanske. Konceptna stran WebGPU ponuja vizijo za popolnoma odjemalsko obdelavo, ko se pospeševanje brskalnika razvije.
 
-### Minimalni kontekst RAG (Chainlit)
+### Minimalni RAG kontekst (Chainlit)
 ```python
 DOCS = [
   "Foundry Local enables local model execution with OpenAI-compatible APIs.",
@@ -232,7 +222,7 @@ DOCS = [
 ]
 ```
 
-### Hibridni tok Osnutek→Izpopolnitev (Psevdokoda)
+### Hibridni tok osnutek→izpopolnitev (psevdokoda)
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":prompt}], max_tokens=280)
 if len(draft) < 600:  # heuristic: escalate only for longer briefs or flagged topics
@@ -246,19 +236,19 @@ Sledite obema komponentama zakasnitve za poročanje o povprečnih stroških.
 ### Opcijske izboljšave
 
 | Fokus | Izboljšava | Zakaj | Namig za implementacijo |
-|-------|-----------|-------|-------------------------|
-| Primerjalne metrike | Sledite uporabi tokenov + zakasnitvi prvega tokena | Celovit pogled na zmogljivost | Uporabite izboljšano skripto za merjenje (Seja 3) z `BENCH_STREAM=1` |
-| Hibridni cevovod | Osnutek SLM → Izpopolnitev LLM | Zmanjšajte zakasnitev in stroške | Ustvarite s phi-4-mini, izpopolnite povzetek z gpt-oss-20b |
-| Pretakanje UI | Boljša UX v Chainlit | Postopne povratne informacije | Uporabite `stream=True`, ko bo lokalno pretakanje omogočeno; kopičite dele |
-| Predpomnjenje WebGPU | Hitrejša JS inicializacija | Zmanjšajte režijske stroške ponovnega prevajanja | Predpomnite prevedene artefakte shaderjev (prihodnja zmogljivost izvajanja) |
-| Deterministični QA set | Poštena primerjava modelov | Odstranite varianco | Fiksni seznam pozivov + `temperature=0` za ocenjevalne izvedbe |
-| Ocena izhoda | Strukturna kakovostna leča | Premaknite se onkraj anekdot | Enostavna rubrika: koherenca / dejanskost / jedrnatost (1–5) |
-| Opombe o energiji / virih | Razprava v učilnici | Prikaz kompromisov | Uporabite OS monitorje (`foundry system info`, Upravitelj opravil, `nvidia-smi`) + izhode skripte za merjenje |
-| Simulacija stroškov | Predoblačna upravičenost | Načrtujte skaliranje | Preslikajte tokene v hipotetične oblačne cene za narativ TCO |
-| Razčlenitev zakasnitve | Identificirajte ozka grla | Cilj optimizacije | Izmerite pripravo poziva, pošiljanje zahteve, prvi token, popolno dokončanje |
-| RAG + LLM varnostna mreža | Varnostna mreža kakovosti | Izboljšajte zahtevne poizvedbe | Če je dolžina odgovora SLM < prag ali nizka zanesljivost → eskalirajte |
+|-------|------------|-------|-------------------------|
+| Primerjalne metrike | Sledite uporabi žetonov + zakasnitvi prvega žetona | Celovit pogled na zmogljivost | Uporabite izboljšano skripto za primerjavo (Seja 3) z `BENCH_STREAM=1` |
+| Hibridni cevovod | Osnutek SLM → izpopolnitev LLM | Zmanjšajte zakasnitev in stroške | Ustvarite z phi-4-mini, izpopolnite povzetek z gpt-oss-20b |
+| UI za pretok | Boljša UX v Chainlit | Postopne povratne informacije | Uporabite `stream=True`, ko bo lokalno pretakanje omogočeno; zbirajte dele |
+| WebGPU predpomnjenje | Hitrejša inicializacija JS | Zmanjšajte režijske stroške ponovnega prevajanja | Predpomnite artefakte prevedenih senčil (prihodnja zmogljivost izvajanja) |
+| Determiniran nabor QA | Poštena primerjava modelov | Odstranite variabilnost | Fiksni seznam pozivov + `temperature=0` za ocenjevalne izvedbe |
+| Ocena izhodov | Strukturiran kakovostni pogled | Premaknite se onkraj anekdot | Enostavna rubrika: koherenca / dejanskost / jedrnatost (1–5) |
+| Opombe o energiji / virih | Razprava v učilnici | Prikaz kompromisov | Uporabite OS monitorje (Task Manager, `nvidia-smi`) + izhode skripte za primerjavo |
+| Simulacija stroškov | Predoblačna utemeljitev | Načrtujte skaliranje | Preslikajte žetone v hipotetične oblačne cene za narativ TCO |
+| Razčlenitev zakasnitve | Identificirajte ozka grla | Ciljne optimizacije | Izmerite pripravo poziva, pošiljanje zahteve, prvi žeton, popolno dokončanje |
+| RAG + LLM varnostna mreža | Varnostna mreža kakovosti | Izboljšajte zahtevne poizvedbe | Če je dolžina odgovora SLM < prag ali nizka zanesljivost → nadgradite |
 
-#### Primer hibridnega vzorca Osnutek/Izpopolnitev
+#### Primer hibridnega vzorca osnutek/izpopolnitev
 
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], max_tokens=300, temperature=0.4)
@@ -276,9 +266,11 @@ full_ms = (time.time()-t1)*1000
 print({"prep_ms": prep_ms, "full_gen_ms": full_ms})
 ```
 
-Uporabite dosledno merilno ogrodje med modeli za poštene primerjave.
+Uporabite dosledne merilne okvire med modeli za poštene primerjave.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI prevajanja [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T20:09:12+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T21:27:01+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "de"
 }
@@ -67,7 +67,7 @@ python -m session01.chat_bootstrap "Your question here"
 **Wann `FOUNDRY_LOCAL_ENDPOINT` gesetzt werden sollte:**
 - Remote Foundry Local Instanz
 - Anpassung der Portkonfiguration
-- Trennung von Entwicklungs- und Produktionsumgebungen
+- Trennung von Entwicklung und Produktion
 
 **Beispiel:**
 ```bash
@@ -78,7 +78,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ```
 
-### Sitzungsbezogene Variablen
+### Sitzungspezifische Variablen
 
 #### Sitzung 02: RAG-Pipeline
 | Variable | Standardwert | Zweck |
@@ -113,7 +113,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 | Variable | Standardwert | Zweck |
 |----------|--------------|-------|
-| `SHOW_USAGE` | `1` | Token-Nutzung anzeigen |
+| `SHOW_USAGE` | `1` | Token-Nutzung ausgeben |
 | `RETRY_ON_FAIL` | `1` | Wiederholungslogik aktivieren |
 | `RETRY_BACKOFF` | `1.0` | Verzögerung bei Wiederholung (Sekunden) |
 
@@ -178,7 +178,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### Nach Ressourcenverfügbarkeit
 
-**Geringe Ressourcen (< 8GB RAM):**
+**Wenig Ressourcen (< 8GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
@@ -318,7 +318,7 @@ pip install -r requirements.txt
 
 ## Konfiguration testen
 
-### Überprüfung des Ladens der Umgebung
+### Überprüfen des Ladens der Umgebung
 
 ```python
 # test_env.py
@@ -340,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Test der Foundry Local-Verbindung
+### Verbindung zu Foundry Local testen
 
 ```python
 # test_connection.py
@@ -408,16 +408,17 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## Zusätzliche Ressourcen
 
 - `QUICK_START.md` - Schnellstart-Anleitung
-- `SDK_MIGRATION_NOTES.md` - Details zu SDK-Updates
 - `Workshop/samples/*/README.md` - Beispiel-spezifische Anleitungen
 
 ---
 
-**Letzte Aktualisierung**: 2025-01-08  
+**Letzte Aktualisierung**: 08.01.2025  
 **Version**: 2.0  
 **SDK**: Foundry Local Python SDK (neueste Version)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

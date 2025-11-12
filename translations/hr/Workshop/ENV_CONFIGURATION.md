@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T23:25:10+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-12T00:31:47+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "hr"
 }
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. Konfigurirajte okruženje
 
-Datoteka `.env` već je konfigurirana s razumnim zadanim postavkama. Većina korisnika neće trebati ništa mijenjati.
+`.env` datoteka već je konfigurirana s razumnim zadanim postavkama. Većina korisnika neće trebati ništa mijenjati.
 
 **Opcionalno**: Pregledajte i prilagodite postavke:
 ```bash
@@ -145,7 +145,7 @@ BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### Specijalizacija više agenata
+### Specijalizacija za više agenata
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -170,7 +170,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Visoka kvaliteta:**
 - `qwen2.5-7b` - Najbolja kvaliteta, veća potrošnja resursa
-- `phi-4-mini` - Dobra kvaliteta, manji resursi
+- `phi-4-mini` - Dobra kvaliteta, manja potrošnja resursa
 
 **Generiranje koda:**
 - `deepseek-coder-1.3b` - Specijaliziran za kod
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### Temperatura i uzorkovanje (prekoračenje u kodu)
+### Temperatura i uzorkovanje (prepisivanje u kodu)
 
 ```python
 # In your scripts/notebooks
@@ -365,7 +365,7 @@ except Exception as e:
 
 ## Najbolje prakse za sigurnost
 
-### 1. Nikada ne pohranjujte tajne u repozitorij
+### 1. Nikada ne dijelite tajne
 
 ```bash
 # .gitignore should include:
@@ -374,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Koristite odvojene `.env` datoteke
+### 2. Koristite odvojene .env datoteke
 
 ```bash
 .env              # Default configuration
@@ -408,7 +408,6 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## Dodatni resursi
 
 - `QUICK_START.md` - Vodič za početak
-- `SDK_MIGRATION_NOTES.md` - Detalji o ažuriranju SDK-a
 - `Workshop/samples/*/README.md` - Vodiči specifični za primjere
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
-**Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešne interpretacije nastale korištenjem ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

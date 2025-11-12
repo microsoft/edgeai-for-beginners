@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-29T00:01:11+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T01:05:31+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "et"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ---
 
-## 🚀 Kiire Alustamine
+## 🚀 Kiire alustamine
 
 ```bash
 # 1. Ensure Foundry Local is running
@@ -30,16 +30,16 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ---
 
-## 📂 Näidiste Ülevaade
+## 📂 Näidiste ülevaade
 
 | Sessioon | Näidis | Eesmärk | Aeg |
-|----------|--------|---------|-----|
+|----------|--------|---------|------|
 | 01 | `chat_bootstrap.py` | Põhiline vestlus + voogedastus | ~30s |
 | 02 | `rag_pipeline.py` | RAG koos sisenditega | ~45s |
 | 02 | `rag_eval_ragas.py` | RAG hindamine | ~60s |
 | 03 | `benchmark_oss_models.py` | Mudelite võrdlus | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
-| 05 | `agents_orchestrator.py` | Mitme agendi süsteem | ~60s |
+| 05 | `agents_orchestrator.py` | Multi-agent süsteem | ~60s |
 | 06 | `models_router.py` | Kavatsuste suunamine | ~45s |
 | 06 | `models_pipeline.py` | Mitmeastmeline torustik | ~60s |
 
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Sessioonispetsiifilised
+### Sessioonipõhised
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -84,7 +84,7 @@ set PIPELINE_TASK="Your task here"
 
 ---
 
-## ✅ Valideerimine ja Testimine
+## ✅ Valideerimine ja testimine
 
 ```bash
 # Validate syntax and imports
@@ -114,7 +114,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Impordi viga
+### Impordiviga
 ```bash
 # Install missing dependencies
 pip install sentence-transformers ragas datasets
@@ -143,9 +143,9 @@ set BENCH_ROUNDS=1
 
 ---
 
-## 📖 Levinud Mustrid
+## 📖 Levinud mustrid
 
-### Põhiline Vestlus
+### Põhiline vestlus
 ```python
 from workshop_utils import chat_once
 
@@ -157,7 +157,7 @@ text, usage = chat_once(
 )
 ```
 
-### Kliendi Hankimine
+### Kliendi hankimine
 ```python
 from workshop_utils import get_client
 
@@ -167,7 +167,7 @@ manager, client, model_id = get_client(
 )
 ```
 
-### Vigade Käitlemine
+### Vigade käsitlemine
 ```python
 try:
     manager, client, model_id = get_client(alias)
@@ -192,14 +192,14 @@ for chunk in stream:
 
 ---
 
-## 📊 Mudeli Valik
+## 📊 Mudeli valik
 
-| Mudel | Suurus | Parim Kasutus | Kiirus |
-|-------|--------|---------------|--------|
+| Mudel | Suurus | Parim kasutus | Kiirus |
+|-------|--------|--------------|--------|
 | `qwen2.5-0.5b` | 0.5B | Kiire klassifikatsioon | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Kiire koodi genereerimine | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Loov kirjutamine | ⚡⚡ |
-| `phi-3.5-mini` | 3.5B | Kood, refaktoreerimine | ⚡⚡ |
+| `phi-3.5-mini` | 3.5B | Kood, refaktorimine | ⚡⚡ |
 | `phi-4-mini` | 4B | Üldine, kokkuvõtted | ⚡⚡ |
 | `qwen2.5-7b` | 7B | Keeruline arutlemine | ⚡ |
 
@@ -207,32 +207,30 @@ for chunk in stream:
 
 ## 🔗 Ressursid
 
-- **SDK Dokumentatsioon**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Kiire Viide**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Uuenduste Kokkuvõte**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migreerimise Märkmed**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **SDK dokumentatsioon**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **Kiire viide**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 
 ---
 
 ## 💡 Näpunäited
 
-1. **Vahemälu kliendid**: `workshop_utils` haldab vahemälu sinu eest
-2. **Kasuta väiksemaid mudeleid**: Alusta testimist `qwen2.5-0.5b` mudeliga
+1. **Vahemälu kliendid**: `workshop_utils` teeb seda teie eest
+2. **Kasuta väiksemaid mudeleid**: Alusta testimiseks `qwen2.5-0.5b` mudeliga
 3. **Luba kasutusstatistika**: Määra `SHOW_USAGE=1`, et jälgida tokenite kasutust
-4. **Partii töötlemine**: Töötle mitu sisendit järjestikku
+4. **Partii töötlemine**: Töötle mitu sisendit järjest
 5. **Vähenda max_tokens väärtust**: Vähendab latentsust kiirete vastuste jaoks
 
 ---
 
-## 🎯 Näidiste Töövood
+## 🎯 Näidistöövood
 
-### Testi Kõike
+### Testi kõike
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### Võrdle Modelle
+### Mudelite võrdlemine
 ```bash
 cd samples
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
@@ -240,14 +238,14 @@ set BENCH_ROUNDS=3
 python -m session03.benchmark_oss_models
 ```
 
-### RAG Torustik
+### RAG torustik
 ```bash
 cd samples
 set RAG_QUESTION="What is RAG?"
 python -m session02.rag_pipeline
 ```
 
-### Mitme Agendi Süsteem
+### Multi-agent süsteem
 ```bash
 cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
@@ -256,7 +254,7 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Kiire Abi**: Käivita ükskõik milline näidis `--help` käsuga `samples` kataloogist või vaata docstring'i:
+**Kiire abi**: Käivita ükskõik milline näidis `--help` käsuga `samples` kataloogist või vaata docstring'i:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tekkida selle tõlke kasutamise tõttu.
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palun olge teadlik, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul on soovitatav kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tekkida selle tõlke kasutamise tõttu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

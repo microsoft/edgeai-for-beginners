@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-09T14:39:05+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T23:28:42+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "fi"
 }
@@ -11,26 +11,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tiivistelmä
 
-Tutustu siihen, miten Hugging Face ja muut avoimen lähdekoodin mallit tuodaan Foundry Localiin. Opit valintastrategioita, yhteisön kontribuutiotyönkulkuja, suorituskyvyn vertailumenetelmiä ja tapoja laajentaa Foundrya mukautetuilla mallirekisteröinneillä. Tämä istunto liittyy viikoittaisiin "Model Mondays" -tutkimusteemoihin ja antaa valmiudet arvioida ja ottaa käyttöön avoimen lähdekoodin malleja paikallisesti ennen laajentamista Azureen.
+Opi tuomaan Hugging Face ja muita avoimen lähdekoodin malleja Foundry Localiin. Tutustu mallien valintastrategioihin, yhteisön osallistumisen työnkulkuihin, suorituskyvyn vertailumenetelmiin ja siihen, miten Foundryä voi laajentaa mukautetuilla mallirekisteröinneillä. Tämä istunto liittyy viikoittaisiin "Model Mondays" -tutkimusteemoihin ja antaa valmiudet arvioida ja ottaa käyttöön avoimen lähdekoodin malleja paikallisesti ennen laajentamista Azureen.
 
 ## Oppimistavoitteet
 
 Istunnon lopussa osaat:
 
-- **Löytää ja arvioida**: Tunnistaa ehdokasmalleja (mistral, gemma, qwen, deepseek) laadun ja resurssien välisen tasapainon perusteella.
+- **Löytää ja arvioida**: Tunnistaa ehdokasmallit (mistral, gemma, qwen, deepseek) laadun ja resurssien välisen tasapainon perusteella.
 - **Ladata ja suorittaa**: Käyttää Foundry Local CLI:tä yhteisön mallien lataamiseen, välimuistiin tallentamiseen ja käynnistämiseen.
-- **Vertailuarvioida**: Soveltaa johdonmukaisia viive-, token-läpäisy- ja laatuheuristiikkoja.
+- **Suorittaa vertailuja**: Soveltaa johdonmukaisia viive-, token-läpäisy- ja laatuheuristiikkoja.
 - **Laajentaa**: Rekisteröidä tai mukauttaa oma mallikääre SDK-yhteensopivien mallien mukaisesti.
 - **Verrata**: Tuottaa rakenteellisia vertailuja SLM:n ja keskikokoisten LLM-mallien valintapäätösten tueksi.
 
-## Esitietovaatimukset
+## Esivaatimukset
 
 - Istunnot 1 ja 2 suoritettu
-- Python-ympäristö, jossa `foundry-local-sdk` asennettuna
-- Vähintään 15GB vapaata levytilaa useiden mallivälimuistien tallentamiseen
-- Valinnainen: GPU/WebGPU-kiihdytys käytössä (`foundry config list`)
+- Python-ympäristö, jossa `foundry-local-sdk` on asennettuna
+- Vähintään 15GB vapaata levytilaa useiden mallien välimuistia varten
 
-### Nopea aloitus monialustaympäristössä
+### Nopea aloitus eri käyttöjärjestelmissä
 
 Windows PowerShell:
 ```powershell
@@ -48,13 +47,13 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai numpy
 ```
 
-Kun suoritat vertailuarviointia macOS:stä Windows-isäntäpalveluun, aseta:
+Kun suoritat vertailuja macOS:sta Windows-palvelimella, aseta:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Demo Flow (30 min)
+## Demo (30 min)
 
 ### 1. Lataa Hugging Face -mallit CLI:n kautta (8 min)
 
@@ -83,7 +82,7 @@ foundry model run mistral-7b --prompt "Explain retrieval augmented generation in
 ```
 
 
-### 3. Vertailuarviointiskripti (8 min)
+### 3. Vertailuskripti (8 min)
 
 Luo `samples/03-oss-models/benchmark_models.py`:
 
@@ -158,19 +157,19 @@ python samples/03-oss-models/benchmark_models.py
 
 ### 4. Vertaa suorituskykyä (5 min)
 
-Keskustele kompromisseista: latausaika, muistinkäyttö (seuraa Task Manageria / `nvidia-smi` / käyttöjärjestelmän resurssimonitoria), tulosten laatu vs nopeus. Käytä Python-vertailuarviointiskriptiä (istunto 3) viiveen ja läpäisyn mittaamiseen; toista GPU-kiihdytyksen ollessa käytössä.
+Keskustele kompromisseista: latausaika, muistin käyttö (seuraa Task Manageria / `nvidia-smi` / käyttöjärjestelmän resurssimonitoria), tulosten laatu vs. nopeus. Käytä Python-vertailuskriptiä (istunto 3) viiveen ja läpäisyn mittaamiseen; toista GPU-kiihdytyksen ollessa käytössä.
 
 ### 5. Aloitusprojekti (4 min)
 
-Luo mallivertailuraporttigeneraattori (laajenna vertailuarviointiskriptiä markdown-viennillä).
+Luo mallivertailuraporttigeneraattori (laajenna vertailuskriptiä markdown-viennillä).
 
 ## Aloitusprojekti: Laajenna `03-huggingface-models`
 
-Paranna olemassa olevaa esimerkkiä seuraavasti:
+Paranna olemassa olevaa esimerkkiä:
 
-1. Lisää vertailuarvioinnin aggregointi + CSV/Markdown-vienti.
+1. Lisää vertailujen yhdistäminen + CSV/Markdown-vienti.
 2. Toteuta yksinkertainen laadullinen pisteytys (kehotepareja + manuaalinen annotointitiedosto).
-3. Ota käyttöön JSON-konfiguraatio (`models.json`) mallilistan ja kehotesarjan liittämiseksi.
+3. Lisää JSON-konfiguraatio (`models.json`) mallilistan ja kehotteiden joukon muokattavuutta varten.
 
 ## Vahvistuslista
 
@@ -180,20 +179,18 @@ foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
 
-Kaikkien kohdemallien tulisi näkyä ja vastata kokeilukeskustelupyyntöön.
+Kaikkien kohdemallien tulisi näkyä ja vastata testikehotteeseen.
 
-## Esimerkkitilanne ja työpajan kartoitus
+## Esimerkkiskenaario ja työpajan kartoitus
 
-| Työpajaskripti | Tilanne | Tavoite | Kehote / datasetin lähde |
-|-----------------|----------|------|-------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Reuna-alustatiimi valitsee oletus-SLM:n upotetulle tiivistämistoiminnolle | Tuota viive + p95 + tokenit/sek vertailu ehdokasmallien välillä | Inline `PROMPT` var + ympäristö `BENCH_MODELS` lista |
+| Työpajan skripti | Skenaario | Tavoite | Kehote / datasetin lähde |
+|------------------|-----------|---------|--------------------------|
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Reunaplatform-tiimi valitsee oletus-SLM:n upotetulle tiivistelmälle | Tuottaa viive + p95 + tokenit/sekunti -vertailu ehdokasmallien välillä | Inline `PROMPT` var + ympäristö `BENCH_MODELS` lista |
 
-### Tilannekuvaus
+### Skenaarion narratiivi
+Tuotetekniikan tiimin täytyy valita oletuskevyt tiivistämismalli offline-kokousmuistiinpanojen ominaisuutta varten. He suorittavat kontrolloituja deterministisiä vertailuja (temperature=0) kiinteän kehottejoukon avulla (katso esimerkki alla) ja keräävät viive- ja läpäisymetriikoita GPU-kiihdytyksen kanssa ja ilman.
 
-Tuotetekniikkatiimin täytyy valita oletuskevyt tiivistämismalli offline-kokousmuistiinpanojen ominaisuutta varten. He suorittavat kontrolloituja deterministisiä vertailuarviointeja (temperature=0) kiinteän kehotesarjan avulla (katso esimerkki alla) ja keräävät viive- ja läpäisymittareita GPU-kiihdytyksen ollessa käytössä ja ilman sitä.
-
-### Esimerkkikehotesarja JSON (laajennettavissa)
-
+### Esimerkkikehotteiden JSON (laajennettavissa)
 ```json
 [
     "Explain the principle of retrieval augmented generation in 2 sentences.",
@@ -203,17 +200,17 @@ Tuotetekniikkatiimin täytyy valita oletuskevyt tiivistämismalli offline-kokous
 ]
 ```
 
-Käy läpi jokainen kehote per malli, tallenna kehotekohtainen viive jakaumamittareiden johdannaiseksi ja poikkeamien havaitsemiseksi.
+Käy läpi jokainen kehote per malli, tallenna kehotekohtainen viive jakaumametriikoiden johdannaiseksi ja havaitse poikkeamat.
 
 ## Mallin valintakehys
 
 | Ulottuvuus | Mittari | Miksi tärkeää |
-|----------|--------|----------------|
+|------------|---------|---------------|
 | Viive | keskiarvo / p95 | Käyttäjäkokemuksen johdonmukaisuus |
-| Läpäisy | tokenit/sek | Erä- ja suoratoistettavuus |
+| Läpäisy | tokenit/sekunti | Erä- ja suoratoistettavuus |
 | Muisti | käytössä oleva koko | Laitteeseen sopivuus ja samanaikaisuus |
 | Laatu | arviointikehotteet | Tehtävän soveltuvuus |
-| Jälki | levyvälimuisti | Jakelu ja päivitykset |
+| Jälki | levyn välimuisti | Jakelu ja päivitykset |
 | Lisenssi | käyttöoikeus | Kaupallinen yhteensopivuus |
 
 ## Laajentaminen mukautetulla mallilla
@@ -229,16 +226,16 @@ class CustomModelAdapter:
 # Register with local routing (future extensibility point)
 ```
 
-Katso virallinen repo kehittyvien adapteriliittymien osalta:  
+Katso virallinen repo kehittyviä adapteriliittymiä varten:
 https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
-## Vianmääritys
+## Vianetsintä
 
-| Ongelma | Syy | Korjaus |
-|-------|-------|-----|
+| Ongelma | Syynä | Korjaus |
+|---------|-------|--------|
 | OOM mistral-7b:ssä | Riittämätön RAM/GPU | Lopeta muut mallit; kokeile pienempää varianttia |
 | Hidas ensimmäinen vastaus | Kylmä lataus | Pidä lämpimänä kevyellä kehotteella säännöllisesti |
-| Lataus pysähtyy | Verkkoyhteyden epävakaus | Yritä uudelleen; esilataa hiljaisina aikoina |
+| Lataus keskeytyy | Verkkoyhteyden epävakaus | Yritä uudelleen; esilataa hiljaisina aikoina |
 
 ## Viitteet
 
@@ -254,16 +251,16 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 ### Valinnaiset parannukset
 
 | Parannus | Hyöty | Miten |
-|-------------|---------|-----|
-| Suoratoiston ensimmäisen tokenin viive | Mittaa koettua reagointinopeutta | Suorita vertailuarviointi `BENCH_STREAM=1` (parannettu skripti `Workshop/samples/session03`) |
-| Deterministinen tila | Vakaa regressiovertailu | `temperature=0`, kiinteä kehotesarja, tallenna JSON-tulokset versionhallintaan |
-| Laadullinen arviointipisteytys | Lisää laadullinen ulottuvuus | Ylläpidä `prompts.json` odotettujen ominaisuuksien kanssa; pisteytä (1–5) manuaalisesti tai toissijaisen mallin avulla |
-| CSV / Markdown-vienti | Jaettava raportti | Laajenna skripti kirjoittamaan `benchmark_report.md` taulukon ja kohokohtien kanssa |
-| Mallin ominaisuustunnisteet | Auttaa automatisoidussa reitityksessä myöhemmin | Ylläpidä `models.json` muodossa `{alias: {capabilities:[], size_mb:..}}` |
-| Välimuistin esilämmitys | Vähentää kylmäkäynnistysvinoumaa | Suorita yksi lämmittelykierros ennen ajoitusjaksoa (jo toteutettu) |
-| Prosenttipisteen tarkkuus | Vahva viiveen häntä | Käytä numpy-prosenttipistettä (jo refaktoroidussa skriptissä) |
-| Token-kustannusarvio | Taloudellinen vertailu | Arvioitu kustannus = (tokenit/sek * keskimääräinen tokenien määrä per pyyntö) * energiakustannusheuristiikka |
-| Epäonnistuneiden mallien automaattinen ohitus | Kestävyys eräajoissa | Kääri jokainen vertailuarviointi try/except-lohkoon ja merkitse tilakenttä |
+|----------|-------|-------|
+| Suoratoiston ensimmäisen tokenin viive | Mittaa koettua reagointikykyä | Suorita vertailu `BENCH_STREAM=1` (parannettu skripti `Workshop/samples/session03`) |
+| Deterministinen tila | Vakaa regressiovertailu | `temperature=0`, kiinteä kehottejoukko, tallenna JSON-tulokset versionhallintaan |
+| Laadun arviointipisteytys | Lisää laadullisen ulottuvuuden | Ylläpidä `prompts.json` odotettujen ominaisuuksien kanssa; pisteytä (1–5) manuaalisesti tai toissijaisen mallin avulla |
+| CSV / Markdown-vienti | Jaettava raportti | Laajenna skripti kirjoittamaan `benchmark_report.md` taulukolla ja kohokohdilla |
+| Mallin ominaisuustunnisteet | Automaattinen reititys myöhemmin | Ylläpidä `models.json` tiedostoa, jossa `{alias: {capabilities:[], size_mb:..}}` |
+| Välimuistin esilämmitys | Vähennä kylmäkäynnistysviivettä | Suorita yksi lämmittelykierros ennen ajastussilmukkaa (jo toteutettu) |
+| Prosenttipisteen tarkkuus | Kestävä häntäviive | Käytä numpy-prosenttipistettä (jo uudelleenmuokatussa skriptissä) |
+| Token-kustannusten arviointi | Taloudellinen vertailu | Arvioitu kustannus = (tokenit/sekunti * keskimääräinen tokenien määrä per pyyntö) * energiakulutuksen heuristiikka |
+| Epäonnistuneiden mallien automaattinen ohitus | Kestävyys eräajoissa | Kääri jokainen vertailu try/except-lohkoon ja merkitse tilakenttä |
 
 #### Minimal Markdown Export Snippet
 
@@ -274,8 +271,7 @@ with open("benchmark_report.md", "w") as f:
                 f.write(f"|{row['alias']}|{row['latency_avg']:.2f}|{row['latency_p95']:.2f}|{(row.get('tokens_per_sec_avg') or 0):.1f}|\n")
 ```
 
-
-#### Deterministinen kehotesarjaesimerkki
+#### Deterministinen kehottejoukkoesimerkki
 
 ```json
 [
@@ -285,9 +281,11 @@ with open("benchmark_report.md", "w") as f:
 ]
 ```
 
-Käytä staattista listaa satunnaisten kehotteiden sijaan vertailukelpoisten mittareiden saamiseksi eri commitien välillä.
+Käytä staattista listaa satunnaisten kehotteiden sijaan vertailukelpoisten metriikoiden saamiseksi eri commitien välillä.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Vastuuvapauslauseke**:  
 Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

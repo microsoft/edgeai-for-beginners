@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T21:29:21+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T22:39:59+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "pt"
 }
@@ -135,7 +135,7 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**Testa a lógica de roteamento** com múltiplas intenções (código, resumo, classificação)
+**Testa lógica de roteamento** com múltiplas intenções (código, resumo, classificação)
 
 ### Sessão 06: Pipeline
 
@@ -160,13 +160,13 @@ python export_benchmark_markdown.py \
 
 **Saída**: Tabela em Markdown + métricas em JSON
 
-### Verificar Padrões de CLI em Markdown
+### Verificar Padrões CLI em Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**Objetivo**: Detetar padrões de CLI obsoletos na documentação
+**Objetivo**: Detectar padrões CLI obsoletos na documentação
 
 ## Testes
 
@@ -271,7 +271,7 @@ foundry model run phi-4-mini
 ## Obter Ajuda
 
 1. Verificar estado do serviço: `foundry service status`  
-2. Consultar logs: Verificar os logs do serviço Foundry Local  
+2. Ver logs: Consultar os logs do serviço Foundry Local  
 3. Consultar documentação do SDK: https://github.com/microsoft/Foundry-Local  
 4. Rever código de exemplo: Todos os exemplos têm docstrings detalhadas  
 
@@ -280,7 +280,6 @@ foundry model run phi-4-mini
 1. Completar todas as sessões do workshop na ordem indicada  
 2. Experimentar diferentes modelos  
 3. Modificar os exemplos para os seus casos de uso  
-4. Rever `SDK_MIGRATION_NOTES.md` para padrões avançados  
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Aviso Legal**:  
 Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

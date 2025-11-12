@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T21:58:31+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T23:08:20+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "th"
 }
@@ -61,8 +61,8 @@ python -m session01.chat_bootstrap "Your question here"
 | ตัวแปร | ค่าเริ่มต้น | คำอธิบาย |
 |--------|-------------|-----------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | โมเดลเริ่มต้นสำหรับตัวอย่าง |
-| `FOUNDRY_LOCAL_ENDPOINT` | (ว่าง) | กำหนดค่าจุดเชื่อมต่อบริการ |
-| `PYTHONPATH` | เส้นทาง Workshop | เส้นทางค้นหาโมดูล Python |
+| `FOUNDRY_LOCAL_ENDPOINT` | (ว่าง) | กำหนดค่า endpoint ของบริการ |
+| `PYTHONPATH` | เส้นทาง Workshop | เส้นทางการค้นหาโมดูล Python |
 
 **เมื่อควรตั้งค่า FOUNDRY_LOCAL_ENDPOINT:**
 - การใช้งาน Foundry Local ระยะไกล
@@ -115,7 +115,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |--------|-------------|---------------|
 | `SHOW_USAGE` | `1` | แสดงการใช้งาน token |
 | `RETRY_ON_FAIL` | `1` | เปิดใช้งานการลองใหม่ |
-| `RETRY_BACKOFF` | `1.0` | ความล่าช้าในการลองใหม่ (วินาที) |
+| `RETRY_BACKOFF` | `1.0` | ความล่าช้าก่อนลองใหม่ (วินาที) |
 
 ## การตั้งค่าทั่วไป
 
@@ -173,7 +173,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - คุณภาพดี ใช้ทรัพยากรน้อยกว่า
 
 **การสร้างโค้ด:**
-- `deepseek-coder-1.3b` - เชี่ยวชาญด้านการเขียนโค้ด
+- `deepseek-coder-1.3b` - เชี่ยวชาญด้านโค้ด
 - `phi-4-mini` - การเขียนโค้ดทั่วไป
 
 ### ตามทรัพยากรที่มี
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## การตั้งค่าขั้นสูง
 
-### จุดเชื่อมต่อแบบกำหนดเอง
+### Endpoint แบบกำหนดเอง
 
 ```bash
 # Development environment
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### อุณหภูมิและการสุ่มตัวอย่าง (กำหนดในโค้ด)
+### อุณหภูมิและการสุ่มตัวอย่าง (ปรับในโค้ด)
 
 ```python
 # In your scripts/notebooks
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### การตั้งค่าแบบไฮบริด Azure OpenAI
+### การตั้งค่า Azure OpenAI Hybrid
 
 ```bash
 # Use local for development
@@ -365,7 +365,7 @@ except Exception as e:
 
 ## แนวทางปฏิบัติที่ดีที่สุดด้านความปลอดภัย
 
-### 1. ห้ามคอมมิตข้อมูลลับ
+### 1. อย่าคอมมิตข้อมูลลับ
 
 ```bash
 # .gitignore should include:
@@ -408,7 +408,6 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## แหล่งข้อมูลเพิ่มเติม
 
 - `QUICK_START.md` - คู่มือเริ่มต้นใช้งาน
-- `SDK_MIGRATION_NOTES.md` - รายละเอียดการอัปเดต SDK
 - `Workshop/samples/*/README.md` - คู่มือเฉพาะตัวอย่าง
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามืออาชีพ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามืออาชีพ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

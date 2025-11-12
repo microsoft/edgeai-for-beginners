@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T23:34:37+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-12T00:40:49+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "my"
 }
 -->
-# Workshop အမြန်စတင်ရန်လမ်းညွှန်
+# Workshop အမြန်စတင်လမ်းညွှန်
 
 ## ကြိုတင်လိုအပ်ချက်များ
 
-### 1. Foundry Local ကို Install လုပ်ပါ
+### 1. Foundry Local ကိုထည့်သွင်းပါ
 
-အတည်ပြုထားသော Install လုပ်နည်းလမ်းညွှန်ကို လိုက်နာပါ:
+တရားဝင်ထည့်သွင်းလမ်းညွှန်ကိုလိုက်နာပါ:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -27,7 +27,7 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. Python Dependencies ကို Install လုပ်ပါ
+### 2. Python Dependencies ကိုထည့်သွင်းပါ
 
 Workshop directory မှာ:
 
@@ -45,7 +45,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Workshop Samples များကို အလုပ်လုပ်စေခြင်း
+## Workshop နမူနာများကိုအလုပ်လုပ်စေခြင်း
 
 ### Session 01: အခြေခံ Chat
 
@@ -81,7 +81,7 @@ cd Workshop/samples
 python -m session02.rag_eval_ragas
 ```
 
-**မှတ်ချက်**: `requirements.txt` မှာ အပို Dependencies များကို Install လုပ်ရန်လိုအပ်သည်
+**မှတ်ချက်**: `requirements.txt` မှတစ်ဆင့်ထည့်သွင်းရမည့်အပို dependencies လိုအပ်သည်
 
 ### Session 03: Benchmarking
 
@@ -100,7 +100,7 @@ set BENCH_STREAM=1
 
 **Output**: latency, throughput, နှင့် first-token metrics ပါသော JSON
 
-### Session 04: Model Comparison
+### Session 04: Model နှိုင်းယှဉ်ခြင်း
 
 ```bash
 cd Workshop/samples
@@ -135,7 +135,7 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**Tests routing logic** with multiple intents (code, summarize, classification)
+**Tests routing logic** ကို intents များစွာ (code, summarize, classification) ဖြင့်စမ်းသပ်သည်
 
 ### Session 06: Pipeline
 
@@ -143,11 +143,11 @@ python -m session06.models_router
 python -m session06.models_pipeline
 ```
 
-**Complex multi-step pipeline** with planning, execution, and refinement
+**စီစဉ်ခြင်း၊ အကောင်အထည်ဖော်ခြင်းနှင့် ပြန်လည်တိုးတက်အောင်လုပ်ခြင်းပါသော အဆင့်များစွာရှိသော pipeline**
 
 ## Scripts
 
-### Export Benchmark Report
+### Benchmark Report ကို Export လုပ်ပါ
 
 ```bash
 cd Workshop/scripts
@@ -160,13 +160,13 @@ python export_benchmark_markdown.py \
 
 **Output**: Markdown table + JSON metrics
 
-### Lint Markdown CLI Patterns
+### Markdown CLI Patterns ကို Lint လုပ်ပါ
 
 ```bash
 python lint_markdown_cli.py --verbose
 ```
 
-**ရည်ရွယ်ချက်**: Documentation တွင် မသုံးတော့သော CLI patterns များကို ရှာဖွေပါ
+**ရည်ရွယ်ချက်**: documentation မှာ CLI patterns များမသုံးတော့ဘူးဆိုတာကိုရှာဖွေပါ
 
 ## စမ်းသပ်ခြင်း
 
@@ -177,11 +177,11 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**Tests**: အဓိက sample များ၏ အခြေခံလုပ်ဆောင်မှုများကို စမ်းသပ်ခြင်း
+**Tests**: အဓိကနမူနာများ၏ အခြေခံလုပ်ဆောင်မှုကိုစမ်းသပ်သည်
 
-## ပြဿနာများကို ဖြေရှင်းခြင်း
+## ပြဿနာများကိုဖြေရှင်းခြင်း
 
-### Service မလုပ်ဆောင်ခြင်း
+### Service မအလုပ်လုပ်ခြင်း
 
 ```bash
 # Check status
@@ -215,7 +215,7 @@ foundry service status
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ```
 
-### Model မတွေ့ရှိခြင်း
+### Model မတွေ့ခြင်း
 
 ```bash
 # List available models
@@ -225,16 +225,16 @@ foundry model list
 foundry model run phi-4-mini
 ```
 
-## Environment Variable Reference
+## Environment Variable ကိုရည်ညွှန်းခြင်း
 
 ### Core Configuration
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | Varies | အသုံးပြုရန် Model alias |
-| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Service endpoint ကို Override လုပ်ပါ |
-| `SHOW_USAGE` | `0` | Token usage stats ကို ပြပါ |
-| `RETRY_ON_FAIL` | `1` | Retry logic ကို Enable လုပ်ပါ |
-| `RETRY_BACKOFF` | `1.0` | Retry စတင်ချိန်နှောင့်နှေးမှု (စက္ကန့်) |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | service endpoint ကို override လုပ်ပါ |
+| `SHOW_USAGE` | `0` | token usage stats ကိုပြပါ |
+| `RETRY_ON_FAIL` | `1` | retry logic ကို enable လုပ်ပါ |
+| `RETRY_BACKOFF` | `1.0` | အစပိုင်း retry နောက်ကျမှု (စက္ကန့်) |
 
 ### Session-Specific
 | Variable | Default | Description |
@@ -244,7 +244,7 @@ foundry model run phi-4-mini
 | `BENCH_MODELS` | Varies | Comma-separated models |
 | `BENCH_ROUNDS` | `3` | Benchmark iterations |
 | `BENCH_PROMPT` | See sample | Benchmark prompt |
-| `BENCH_STREAM` | `0` | First-token latency ကို တိုင်းတာပါ |
+| `BENCH_STREAM` | `0` | first-token latency ကိုတိုင်းတာပါ |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Primary agent model |
 | `AGENT_MODEL_EDITOR` | Primary | Editor agent model |
 | `SLM_ALIAS` | `phi-4-mini` | Small language model |
@@ -254,14 +254,14 @@ foundry model run phi-4-mini
 ## အကြံပြုထားသော Models
 
 ### Development & Testing
-- **phi-4-mini** - အရည်အသွေးနှင့် အမြန်နှုန်းကို ထိန်းညှိထားသည်
-- **qwen2.5-0.5b** - Classification အတွက် အလွန်မြန်ဆန်သည်
+- **phi-4-mini** - အရည်အသွေးနှင့်အမြန်နှုန်းကိုထိန်းညှိထားသည်
+- **qwen2.5-0.5b** - Classification အတွက်အလွန်မြန်ဆန်သည်
 - **gemma-2-2b** - အရည်အသွေးကောင်းပြီး အလယ်အလတ်မြန်နှုန်းရှိသည်
 
 ### Production Scenarios
-- **phi-4-mini** - General purpose
+- **phi-4-mini** - အထွေထွေအသုံးပြုမှု
 - **deepseek-coder-1.3b** - Code generation
-- **qwen2.5-7b** - အရည်အသွေးမြင့်မားသော အဖြေများ
+- **qwen2.5-7b** - အရည်အသွေးမြင့်မားသောအဖြေများ
 
 ## SDK Documentation
 
@@ -270,25 +270,26 @@ foundry model run phi-4-mini
 
 ## အကူအညီရယူခြင်း
 
-1. Service status ကို စစ်ဆေးပါ: `foundry service status`
-2. Log များကို ကြည့်ပါ: Foundry Local service logs ကို စစ်ဆေးပါ
-3. SDK docs ကို ကြည့်ပါ: https://github.com/microsoft/Foundry-Local
-4. Sample code ကို ပြန်လည်သုံးသပ်ပါ: Sample အားလုံးတွင် အသေးစိတ် docstrings ပါရှိသည်
+1. Service status ကိုစစ်ဆေးပါ: `foundry service status`
+2. Logs ကိုကြည့်ပါ: Foundry Local service logs ကိုစစ်ဆေးပါ
+3. SDK docs ကိုကြည့်ပါ: https://github.com/microsoft/Foundry-Local
+4. နမူနာ code ကိုကြည့်ပါ: နမူနာအားလုံးမှာအသေးစိတ် docstrings ပါရှိသည်
 
 ## နောက်တစ်ဆင့်များ
 
-1. Workshop sessions အားလုံးကို အစဉ်လိုက်ပြီး ပြီးမြောက်ပါ
-2. မတူညီသော Models များကို စမ်းသပ်ပါ
-3. သင့်အသုံးအဆောင်များအတွက် Samples များကို ပြင်ဆင်ပါ
-4. `SDK_MIGRATION_NOTES.md` ကို Advanced patterns အတွက် ပြန်လည်သုံးသပ်ပါ
+1. Workshop session အားလုံးကိုအစဉ်လိုက်ပြီးမြောက်ပါ
+2. Model များကိုစမ်းသပ်ပါ
+3. သင့်အသုံးအဆောင်များအတွက်နမူနာများကိုပြင်ဆင်ပါ
 
 ---
 
 **နောက်ဆုံးအပ်ဒိတ်**: 2025-01-08  
-**Workshop Version**: Latest  
+**Workshop Version**: နောက်ဆုံး  
 **SDK**: Foundry Local Python SDK
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရ အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

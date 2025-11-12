@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T20:07:51+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T21:25:38+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "es"
 }
@@ -40,7 +40,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 03 | `benchmark_oss_models.py` | Benchmarking de modelos | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Sistema multi-agente | ~60s |
-| 06 | `models_router.py` | Enrutamiento de intención | ~45s |
+| 06 | `models_router.py` | Enrutamiento por intención | ~45s |
 | 06 | `models_pipeline.py` | Pipeline de múltiples pasos | ~60s |
 
 ---
@@ -102,7 +102,7 @@ python scripts/test_samples.py --verbose
 
 ---
 
-## 🐛 Solución de Problemas
+## 🐛 Resolución de Problemas
 
 ### Error de Conexión
 ```bash
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **Documentación SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Referencia Rápida**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Resumen de Actualizaciones**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Notas de Migración**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -232,7 +230,7 @@ python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### Benchmark de Modelos
+### Benchmarking de Modelos
 ```bash
 cd samples
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
@@ -240,7 +238,7 @@ set BENCH_ROUNDS=3
 python -m session03.benchmark_oss_models
 ```
 
-### Pipeline de RAG
+### Pipeline RAG
 ```bash
 cd samples
 set RAG_QUESTION="What is RAG?"
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

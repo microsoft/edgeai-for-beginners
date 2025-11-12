@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T22:36:23+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T23:44:47+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "id"
 }
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. Konfigurasi Lingkungan
 
-File `.env` sudah dikonfigurasi dengan nilai default yang sesuai. Sebagian besar pengguna tidak perlu mengubah apa pun.
+File `.env` sudah dikonfigurasi dengan pengaturan default yang sesuai. Sebagian besar pengguna tidak perlu mengubah apa pun.
 
 **Opsional**: Tinjau dan sesuaikan pengaturan:
 ```bash
@@ -113,8 +113,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 | Variabel | Default | Tujuan |
 |----------|---------|---------|
-| `SHOW_USAGE` | `1` | Menampilkan penggunaan token |
-| `RETRY_ON_FAIL` | `1` | Mengaktifkan logika ulang |
+| `SHOW_USAGE` | `1` | Cetak penggunaan token |
+| `RETRY_ON_FAIL` | `1` | Aktifkan logika ulang |
 | `RETRY_BACKOFF` | `1.0` | Penundaan ulang (detik) |
 
 ## Konfigurasi Umum
@@ -174,7 +174,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Generasi Kode:**
 - `deepseek-coder-1.3b` - Spesialisasi untuk kode
-- `phi-4-mini` - Tujuan umum untuk pengkodean
+- `phi-4-mini` - Pengkodean tujuan umum
 
 ### Berdasarkan Ketersediaan Sumber Daya
 
@@ -303,7 +303,7 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Kesalahan Impor
 
 **Gejala:**
-- Kesalahan "Module not found"
+- Kesalahan "Modul tidak ditemukan"
 
 **Solusi:**
 
@@ -403,12 +403,11 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Repositori Utama**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Dokumentasi API**: Periksa repositori SDK untuk versi terbaru
+- **Dokumentasi API**: Periksa repositori SDK untuk yang terbaru
 
 ## Sumber Daya Tambahan
 
 - `QUICK_START.md` - Panduan memulai
-- `SDK_MIGRATION_NOTES.md` - Detail pembaruan SDK
 - `Workshop/samples/*/README.md` - Panduan khusus contoh
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis dapat mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

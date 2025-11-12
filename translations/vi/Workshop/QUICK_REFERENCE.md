@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:34:56+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:43:25+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "vi"
 }
 -->
 # Thẻ Tham Khảo Nhanh - Mẫu Workshop
 
-**Cập nhật lần cuối**: 8 tháng 10, 2025
+**Cập nhật lần cuối**: Ngày 8 tháng 10, 2025
 
 ---
 
-## 🚀 Bắt Đầu Nhanh
+## 🚀 Bắt đầu nhanh
 
 ```bash
 # 1. Ensure Foundry Local is running
@@ -30,10 +30,10 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ---
 
-## 📂 Tổng Quan Mẫu
+## 📂 Tổng quan về mẫu
 
-| Phiên | Mẫu | Mục Đích | Thời Gian |
-|-------|-----|----------|-----------|
+| Phiên | Mẫu | Mục đích | Thời gian |
+|-------|------|----------|-----------|
 | 01 | `chat_bootstrap.py` | Chat cơ bản + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG với embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | Đánh giá RAG | ~60s |
@@ -45,9 +45,9 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ---
 
-## 🛠️ Biến Môi Trường
+## 🛠️ Biến môi trường
 
-### Cần Thiết
+### Cần thiết
 ```bash
 # Choose model
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -59,7 +59,7 @@ set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 set SHOW_USAGE=1
 ```
 
-### Theo Phiên
+### Theo phiên
 ```bash
 # Session 02: RAG
 set RAG_QUESTION="What is local inference?"
@@ -84,7 +84,7 @@ set PIPELINE_TASK="Your task here"
 
 ---
 
-## ✅ Xác Thực & Kiểm Tra
+## ✅ Xác thực & Kiểm tra
 
 ```bash
 # Validate syntax and imports
@@ -102,9 +102,9 @@ python scripts/test_samples.py --verbose
 
 ---
 
-## 🐛 Xử Lý Lỗi
+## 🐛 Xử lý sự cố
 
-### Lỗi Kết Nối
+### Lỗi kết nối
 ```bash
 # Check Foundry Local
 foundry service status
@@ -114,7 +114,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### Lỗi Import
+### Lỗi nhập khẩu
 ```bash
 # Install missing dependencies
 pip install sentence-transformers ragas datasets
@@ -123,7 +123,7 @@ pip install sentence-transformers ragas datasets
 pip install -r Workshop/requirements.txt
 ```
 
-### Không Tìm Thấy Mô Hình
+### Không tìm thấy mô hình
 ```bash
 # List available models
 foundry model ls
@@ -132,7 +132,7 @@ foundry model ls
 foundry model download phi-4-mini
 ```
 
-### Hiệu Năng Chậm
+### Hiệu suất chậm
 ```bash
 # Use smaller model
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
@@ -143,9 +143,9 @@ set BENCH_ROUNDS=1
 
 ---
 
-## 📖 Mẫu Thường Dùng
+## 📖 Mẫu phổ biến
 
-### Chat Cơ Bản
+### Chat cơ bản
 ```python
 from workshop_utils import chat_once
 
@@ -167,7 +167,7 @@ manager, client, model_id = get_client(
 )
 ```
 
-### Xử Lý Lỗi
+### Xử lý lỗi
 ```python
 try:
     manager, client, model_id = get_client(alias)
@@ -192,9 +192,9 @@ for chunk in stream:
 
 ---
 
-## 📊 Lựa Chọn Mô Hình
+## 📊 Lựa chọn mô hình
 
-| Mô Hình | Kích Thước | Tốt Nhất Cho | Tốc Độ |
+| Mô hình | Kích thước | Tốt nhất cho | Tốc độ |
 |---------|------------|--------------|--------|
 | `qwen2.5-0.5b` | 0.5B | Phân loại nhanh | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Sinh mã nhanh | ⚡⚡⚡ |
@@ -205,34 +205,32 @@ for chunk in stream:
 
 ---
 
-## 🔗 Tài Nguyên
+## 🔗 Tài nguyên
 
 - **Tài liệu SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Tham Khảo Nhanh**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Tóm Tắt Cập Nhật**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Ghi Chú Di Chuyển**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Tham khảo nhanh**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 
 ---
 
 ## 💡 Mẹo
 
-1. **Bộ nhớ cache client**: `workshop_utils` tự động lưu trữ cho bạn
-2. **Dùng mô hình nhỏ hơn**: Bắt đầu với `qwen2.5-0.5b` để thử nghiệm
+1. **Bộ nhớ đệm client**: `workshop_utils` tự động lưu bộ nhớ đệm cho bạn
+2. **Sử dụng mô hình nhỏ hơn**: Bắt đầu với `qwen2.5-0.5b` để thử nghiệm
 3. **Bật thống kê sử dụng**: Đặt `SHOW_USAGE=1` để theo dõi token
-4. **Xử lý hàng loạt**: Xử lý nhiều prompt liên tiếp
+4. **Xử lý theo lô**: Xử lý nhiều prompt liên tiếp
 5. **Giảm max_tokens**: Giảm độ trễ cho phản hồi nhanh
 
 ---
 
-## 🎯 Quy Trình Mẫu
+## 🎯 Quy trình mẫu
 
-### Kiểm Tra Tất Cả
+### Kiểm tra tất cả
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### Đánh Giá Mô Hình
+### Đánh giá mô hình
 ```bash
 cd samples
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
@@ -240,14 +238,14 @@ set BENCH_ROUNDS=3
 python -m session03.benchmark_oss_models
 ```
 
-### Quy Trình RAG
+### Quy trình RAG
 ```bash
 cd samples
 set RAG_QUESTION="What is RAG?"
 python -m session02.rag_pipeline
 ```
 
-### Hệ Thống Đa Tác Nhân
+### Hệ thống đa tác nhân
 ```bash
 cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
@@ -256,16 +254,18 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Trợ Giúp Nhanh**: Chạy bất kỳ mẫu nào với `--help` từ thư mục `samples` hoặc kiểm tra docstring:
+**Trợ giúp nhanh**: Chạy bất kỳ mẫu nào với `--help` từ thư mục `samples` hoặc kiểm tra docstring:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**Tất cả các mẫu đã được cập nhật vào tháng 10 năm 2025 với các thực hành tốt nhất của Foundry Local SDK** ✨
+**Tất cả các mẫu được cập nhật tháng 10 năm 2025 với các thực hành tốt nhất của Foundry Local SDK** ✨
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp từ con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

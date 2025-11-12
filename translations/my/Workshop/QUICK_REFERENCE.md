@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T23:38:53+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T00:45:25+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "my"
 }
 -->
-# Workshop Samples - အမြန်ကိုးကားကဒ်
+# Workshop Samples - အမြန်ကိုးကားကတ်
 
 **နောက်ဆုံးအပ်ဒိတ်**: အောက်တိုဘာ ၈၊ ၂၀၂၅
 
@@ -34,14 +34,14 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 | အစည်းအဝေး | နမူနာ | ရည်ရွယ်ချက် | အချိန် |
 |------------|--------|-------------|--------|
-| 01 | `chat_bootstrap.py` | အခြေခံ chat + streaming | ~30 စက္ကန့် |
-| 02 | `rag_pipeline.py` | RAG နှင့် embeddings | ~45 စက္ကန့် |
-| 02 | `rag_eval_ragas.py` | RAG အကဲဖြတ်ခြင်း | ~60 စက္ကန့် |
-| 03 | `benchmark_oss_models.py` | မော်ဒယ် benchmarking | ~2 မိနစ် |
-| 04 | `model_compare.py` | SLM နှင့် LLM | ~45 စက္ကန့် |
-| 05 | `agents_orchestrator.py` | Multi-agent system | ~60 စက္ကန့် |
-| 06 | `models_router.py` | ရည်ရွယ်ချက် routing | ~45 စက္ကန့် |
-| 06 | `models_pipeline.py` | Multi-step pipeline | ~60 စက္ကန့် |
+| 01 | `chat_bootstrap.py` | အခြေခံ chat + streaming | ~30s |
+| 02 | `rag_pipeline.py` | RAG နှင့် embeddings | ~45s |
+| 02 | `rag_eval_ragas.py` | RAG အကဲဖြတ်ခြင်း | ~60s |
+| 03 | `benchmark_oss_models.py` | မော်ဒယ်များ benchmarking | ~2m |
+| 04 | `model_compare.py` | SLM နှင့် LLM | ~45s |
+| 05 | `agents_orchestrator.py` | Multi-agent system | ~60s |
+| 06 | `models_router.py` | Intent routing | ~45s |
+| 06 | `models_pipeline.py` | Multi-step pipeline | ~60s |
 
 ---
 
@@ -143,7 +143,7 @@ set BENCH_ROUNDS=1
 
 ---
 
-## 📖 အများဆုံးတွေ့ရသော Pattern များ
+## 📖 အများဆုံးအသုံးပြုသော Pattern များ
 
 ### အခြေခံ Chat
 ```python
@@ -167,7 +167,7 @@ manager, client, model_id = get_client(
 )
 ```
 
-### အမှားကို ကိုင်တွယ်ခြင်း
+### အမှားကိုင်တွယ်ခြင်း
 ```python
 try:
     manager, client, model_id = get_client(alias)
@@ -195,9 +195,9 @@ for chunk in stream:
 ## 📊 မော်ဒယ်ရွေးချယ်ခြင်း
 
 | မော်ဒယ် | အရွယ်အစား | အကောင်းဆုံးအသုံးပြုမှု | အမြန်နှုန်း |
-|---------|------------|------------------------|-------------|
-| `qwen2.5-0.5b` | 0.5B | အမြန်အတန်းခွဲခြင်း | ⚡⚡⚡ |
-| `qwen2.5-coder-0.5b` | 0.5B | အမြန် code ဖန်တီးခြင်း | ⚡⚡⚡ |
+|--------|------------|------------------------|-------------|
+| `qwen2.5-0.5b` | 0.5B | အမြန်အတိအကျခွဲခြားမှု | ⚡⚡⚡ |
+| `qwen2.5-coder-0.5b` | 0.5B | အမြန် code ဖန်တီးမှု | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | ဖန်တီးမှုရေးသားခြင်း | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Code, refactoring | ⚡⚡ |
 | `phi-4-mini` | 4B | အထွေထွေ, အကျဉ်းချုပ် | ⚡⚡ |
@@ -208,18 +208,16 @@ for chunk in stream:
 ## 🔗 အရင်းအမြစ်များ
 
 - **SDK Docs**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **အမြန်ကိုးကား**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **အပ်ဒိတ်အကျဉ်းချုပ်**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **ပြောင်းရွှေ့မှတ်စုများ**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Quick Ref**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 
 ---
 
 ## 💡 အကြံပေးချက်များ
 
-1. **Cache clients**: `workshop_utils` သင့်အတွက် cache လုပ်ပေးသည်
-2. **မော်ဒယ်အသေးများကို အသုံးပြုပါ**: စမ်းသပ်ရန် `qwen2.5-0.5b` ဖြင့် စတင်ပါ
-3. **အသုံးပြုမှုစာရင်းကို ဖွင့်ပါ**: `SHOW_USAGE=1` ကို သတ်မှတ်ပြီး token များကို စောင့်ကြည့်ပါ
-4. **Batch စီမံခြင်း**: prompt များကို အဆင့်ဆင့် စီမံပါ
+1. **Client များ cache လုပ်ပါ**: `workshop_utils` သင့်အတွက် cache လုပ်ပေးသည်
+2. **မော်ဒယ်အသေးစားများကို အသုံးပြုပါ**: စမ်းသပ်ရန် `qwen2.5-0.5b` ဖြင့် စတင်ပါ
+3. **အသုံးပြုမှုစာရင်းကို ဖွင့်ပါ**: `SHOW_USAGE=1` သတ်မှတ်ပြီး token များကို စစ်ဆေးပါ
+4. **Batch processing**: အတန်းလိုက် prompt များကို အဆက်မပြတ်လုပ်ဆောင်ပါ
 5. **max_tokens ကို လျှော့ချပါ**: အမြန်တုံ့ပြန်မှုအတွက် latency ကို လျှော့ချသည်
 
 ---
@@ -232,7 +230,7 @@ python scripts/validate_samples.py
 python scripts/test_samples.py --quick
 ```
 
-### မော်ဒယ်များကို Benchmark လုပ်ပါ
+### မော်ဒယ်များ Benchmark လုပ်ပါ
 ```bash
 cd samples
 set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
@@ -256,7 +254,7 @@ python -m session05.agents_orchestrator
 
 ---
 
-**အမြန်အကူအညီ**: `samples` directory မှ `--help` ဖြင့် နမူနာတစ်ခုခုကို run လုပ်ပါ၊ သို့မဟုတ် docstring ကို ကြည့်ပါ:
+**အမြန်အကူအညီ**: `samples` directory မှ `--help` ဖြင့် နမူနာတစ်ခုခုကို run လုပ်ပါ သို့မဟုတ် docstring ကို စစ်ဆေးပါ:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူသားမှ ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားယူမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားယူမှုမှားများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

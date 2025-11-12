@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T23:57:31+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-12T01:01:48+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "et"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Ülevaade
 
-Töötoa näidised kasutavad konfiguratsiooniks keskkonnamuutujaid, mis on koondatud `.env` faili hoidla juures. See võimaldab lihtsat kohandamist ilma koodi muutmata.
+Töötoa näidised kasutavad konfiguratsiooniks keskkonnamuutujaid, mis on koondatud `.env` faili hoidla juurkausta. See võimaldab lihtsat kohandamist ilma koodi muutmata.
 
 ## Kiire alustamine
 
@@ -39,7 +39,7 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Rakenda seadistused
+### 3. Rakenda konfiguratsioon
 
 **Python skriptide jaoks:**
 ```bash
@@ -60,9 +60,9 @@ python -m session01.chat_bootstrap "Your question here"
 
 | Muutuja | Vaikeseade | Kirjeldus |
 |---------|------------|-----------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Näidiste vaikemudel |
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Vaikemudel näidiste jaoks |
 | `FOUNDRY_LOCAL_ENDPOINT` | (tühi) | Teenuse lõpp-punkti ülekirjutamine |
-| `PYTHONPATH` | Töötoa teed | Pythoni moodulite otsingutee |
+| `PYTHONPATH` | Töötoa teed | Python moodulite otsingutee |
 
 **Millal seadistada FOUNDRY_LOCAL_ENDPOINT:**
 - Kaug-Fondry Local instants
@@ -84,14 +84,14 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | Muutuja | Vaikeseade | Eesmärk |
 |---------|------------|---------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding mudel |
-| `RAG_QUESTION` | Eelkonfigureeritud | Testküsimus |
+| `RAG_QUESTION` | Eelseadistatud | Testküsimus |
 
 #### Sessioon 03: Võrdlusuuring
 | Muutuja | Vaikeseade | Eesmärk |
 |---------|------------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Mudelid võrdlusuuringuks |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Mudelid võrdlemiseks |
 | `BENCH_ROUNDS` | `3` | Iteratsioonid mudeli kohta |
-| `BENCH_PROMPT` | Eelkonfigureeritud | Testkäsk |
+| `BENCH_PROMPT` | Eelseadistatud | Testkäsk |
 | `BENCH_STREAM` | `0` | Esimese märgi latentsuse mõõtmine |
 
 #### Sessioon 04: Mudelite võrdlus
@@ -99,7 +99,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |---------|------------|---------|
 | `SLM_ALIAS` | `phi-4-mini` | Väike keelemudel |
 | `LLM_ALIAS` | `qwen2.5-7b` | Suur keelemudel |
-| `COMPARE_PROMPT` | Eelkonfigureeritud | Võrdluskäsk |
+| `COMPARE_PROMPT` | Eelseadistatud | Võrdluskäsk |
 | `COMPARE_RETRIES` | `2` | Uuesti proovimise katsed |
 
 #### Sessioon 05: Multi-agent orkestreerimine
@@ -107,17 +107,17 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |---------|------------|---------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Teaduri agendi mudel |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Toimetaja agendi mudel |
-| `AGENT_QUESTION` | Eelkonfigureeritud | Testküsimus |
+| `AGENT_QUESTION` | Eelseadistatud | Testküsimus |
 
 ### Usaldusväärsuse konfiguratsioon
 
 | Muutuja | Vaikeseade | Eesmärk |
 |---------|------------|---------|
-| `SHOW_USAGE` | `1` | Näita märgi kasutust |
+| `SHOW_USAGE` | `1` | Prindi tokenite kasutus |
 | `RETRY_ON_FAIL` | `1` | Luba uuesti proovimise loogika |
 | `RETRY_BACKOFF` | `1.0` | Uuesti proovimise viivitus (sekundites) |
 
-## Üldised konfiguratsioonid
+## Tavalised konfiguratsioonid
 
 ### Arenduskeskkond (kiire iteratsioon)
 ```bash
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Tootmiskeskkond (kvaliteedile keskendumine)
+### Tootmiskeskkond (kvaliteedi fookus)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -145,7 +145,7 @@ BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### Multi-agendi spetsialiseerumine
+### Multi-agent spetsialiseerumine
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -165,16 +165,16 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - Tasakaalustatud kvaliteet ja kiirus
 
 **Kiired vastused:**
-- `qwen2.5-0.5b` - Väga kiire, hea klassifitseerimiseks
+- `qwen2.5-0.5b` - Väga kiire, sobib klassifitseerimiseks
 - `phi-4-mini` - Kiire ja hea kvaliteediga
 
 **Kõrge kvaliteet:**
 - `qwen2.5-7b` - Parim kvaliteet, suurem ressursikasutus
-- `phi-4-mini` - Hea kvaliteet, madalamad ressursid
+- `phi-4-mini` - Hea kvaliteet, madalam ressursikasutus
 
 **Koodi genereerimine:**
 - `deepseek-coder-1.3b` - Spetsialiseerunud koodile
-- `phi-4-mini` - Üldotstarbeline koodikirjutamine
+- `phi-4-mini` - Üldotstarbeline koodimine
 
 ### Ressursside kättesaadavuse järgi
 
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### Temperatuur ja valik (ülekirjutamine koodis)
+### Temperatuur ja proovivõtmine (ülekirjutamine koodis)
 
 ```python
 # In your scripts/notebooks
@@ -236,12 +236,12 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 ## Tõrkeotsing
 
-### Keskkonnamuutujad ei laadi
+### Keskkonnamuutujad ei laetud
 
 **Sümptomid:**
 - Skriptid kasutavad valesid mudeleid
 - Ühenduse vead
-- Muutujad ei ole tunnustatud
+- Muutujaid ei tunnistata
 
 **Lahendused:**
 ```bash
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **Sümptomid:**
 - "Mudel ei leitud" vead
-- "Alias ei ole tunnustatud"
+- "Alias ei tunnistatud"
 
 **Lahendused:**
 ```bash
@@ -363,9 +363,9 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## Turvalisuse parimad praktikad
+## Turvalisuse parimad tavad
 
-### 1. Ära kunagi salvesta salasõnu
+### 1. Ära kunagi salvesta saladusi
 
 ```bash
 # .gitignore should include:
@@ -403,21 +403,22 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Peamine hoidla**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API dokumentatsioon**: Vaata SDK hoidlat viimaste versioonide jaoks
+- **API dokumentatsioon**: Vaata SDK hoidlat uusima info jaoks
 
 ## Täiendavad ressursid
 
 - `QUICK_START.md` - Alustamise juhend
-- `SDK_MIGRATION_NOTES.md` - SDK uuenduste üksikasjad
 - `Workshop/samples/*/README.md` - Näidiste spetsiifilised juhendid
 
 ---
 
 **Viimati uuendatud**: 2025-01-08  
 **Versioon**: 2.0  
-**SDK**: Foundry Local Python SDK (viimane)
+**SDK**: Foundry Local Python SDK (uusim)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tuleneda selle tõlke kasutamisest.
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

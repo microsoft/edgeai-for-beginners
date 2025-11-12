@@ -1,38 +1,38 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T20:56:16+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-11T22:10:15+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "ko"
 }
 -->
-# 세션 4: 최첨단 모델 탐구 – LLM, SLM 및 온디바이스 추론
+# 세션 4: 최첨단 모델 탐구 – LLM, SLM 및 디바이스 내 추론
 
 ## 개요
 
-클라우드와 로컬 추론 시나리오에서 대형 언어 모델(LLM)과 소형 언어 모델(SLM)을 비교합니다. ONNX Runtime 가속화, WebGPU 실행 및 하이브리드 RAG 경험을 활용한 배포 패턴을 배웁니다. 로컬 모델과 선택적 OpenWebUI 탐색을 포함한 Chainlit RAG 데모를 제공합니다. WebGPU 추론 스타터를 조정하고 Phi와 GPT-OSS-20B의 성능 및 비용/효율성 트레이드오프를 평가합니다.
+클라우드와 로컬 추론 시나리오에서 대형 언어 모델(LLM)과 소형 언어 모델(SLM)을 비교합니다. ONNX Runtime 가속화, WebGPU 실행 및 하이브리드 RAG 경험을 활용한 배포 패턴을 배웁니다. 로컬 모델을 사용한 Chainlit RAG 데모와 선택적으로 OpenWebUI 탐색이 포함됩니다. WebGPU 추론 스타터를 조정하고 Phi와 GPT-OSS-20B의 성능 및 비용/효율성 트레이드오프를 평가합니다.
 
 ## 학습 목표
 
 - **비교**: SLM과 LLM의 지연 시간, 메모리, 품질 축에서의 차이점
 - **배포**: ONNXRuntime 및 (지원되는 경우) WebGPU를 사용하여 모델 배포
-- **실행**: 브라우저 기반 추론(개인정보 보호를 위한 대화형 데모)
+- **실행**: 브라우저 기반 추론(개인정보 보호를 위한 인터랙티브 데모)
 - **통합**: 로컬 SLM 백엔드와 Chainlit RAG 파이프라인 통합
-- **평가**: 경량 품질 및 비용 휴리스틱을 사용하여 평가
+- **평가**: 경량 품질 및 비용 휴리스틱을 사용한 평가
 
 ## 사전 요구 사항
 
 - 세션 1–3 완료
 - `chainlit` 설치됨 (Module08의 `requirements.txt`에 이미 포함됨)
-- WebGPU 지원 브라우저(Windows 11에서 최신 Edge/Chrome)
-- Foundry Local 실행 중 (`foundry status`)
+- WebGPU 지원 브라우저(Windows 11에서 최신 Edge / Chrome)
+- Foundry Local 실행 중 (`foundry service status`)
 
 ### 크로스 플랫폼 참고 사항
 
-Windows는 주요 대상 환경으로 남아 있습니다. macOS 개발자는 네이티브 바이너리를 기다리는 동안:
+Windows는 주요 대상 환경입니다. macOS 개발자가 네이티브 바이너리를 기다리는 동안:
 1. Windows 11 VM(Parallels / UTM) 또는 원격 Windows 워크스테이션에서 Foundry Local 실행.
-2. 서비스 노출(기본 포트 5273) 및 macOS에서 설정:
+2. 서비스를 노출(default port 5273)하고 macOS에서 설정:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -61,16 +61,6 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 ```
 
 추적: 응답 깊이, 사실 정확성, 스타일 풍부함, 지연 시간.
-
-### 2. ONNX Runtime 가속화 (5분)
-
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
 
 GPU 활성화 후 처리량 변화를 관찰(CPU 전용과 비교).
 
@@ -117,7 +107,7 @@ GPU 활성화 후 처리량 변화를 관찰(CPU 전용과 비교).
 </html>
 ```
 
-브라우저에서 파일 열기; 저지연 로컬 왕복 관찰.
+브라우저에서 파일 열기; 저지연 로컬 라운드트립 관찰.
 
 ### 4. Chainlit RAG 채팅 앱 (7분)
 
@@ -167,7 +157,7 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 
 산출물:
 - 플레이스홀더 fetch 로직을 스트리밍 토큰으로 교체(`stream=True` 엔드포인트 변형 사용 가능 시)
-- phi와 gpt-oss-20b 전환을 위한 지연 시간 차트(클라이언트 측) 추가
+- phi와 gpt-oss-20b 토글을 위한 지연 시간 차트(클라이언트 측) 추가
 - RAG 컨텍스트를 인라인으로 포함(참조 문서를 위한 텍스트 영역)
 
 ## 평가 휴리스틱
@@ -176,7 +166,7 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 |----------|------------|-------------|-------------|
 | 지연 시간(콜드) | 빠름 | 느림 | SLM은 빠르게 워밍업 |
 | 메모리 | 낮음 | 높음 | 디바이스 적합성 |
-| 컨텍스트 준수 | 좋음 | 강력함 | 더 큰 모델은 더 상세할 수 있음 |
+| 컨텍스트 준수 | 좋음 | 강력함 | 더 큰 모델은 더 장황할 수 있음 |
 | 비용(로컬) | 최소 | 높음(자원) | 에너지/시간 트레이드오프 |
 | 최적 사용 사례 | 엣지 앱 | 심층적 추론 | 하이브리드 파이프라인 가능 |
 
@@ -204,12 +194,12 @@ foundry model list
 ## 참고 자료
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- Chainlit 문서: https://docs.chainlit.io
+- Chainlit Docs: https://docs.chainlit.io
 - RAG 평가(Ragas): https://docs.ragas.io
 
 ---
 
-**세션 시간**: 30분  
+**세션 소요 시간**: 30분  
 **난이도**: 고급
 
 ## 샘플 시나리오 및 워크숍 매핑
@@ -217,13 +207,13 @@ foundry model list
 | 워크숍 아티팩트 | 시나리오 | 목표 | 데이터 / 프롬프트 소스 |
 |--------------------|----------|-----------|----------------------|
 | `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | 경영진 요약 생성기를 평가하는 아키텍처 팀 | 지연 시간 및 토큰 사용량 차이를 정량화 | 단일 `COMPARE_PROMPT` 환경 변수 |
-| `chainlit_app.py` (RAG 데모) | 내부 지식 보조 프로토타입 | 최소한의 어휘 검색으로 짧은 답변을 기반으로 함 | 파일 내 인라인 `DOCS` 목록 |
-| `webgpu_demo.html` | 미래 지향적 온디바이스 브라우저 추론 미리보기 | 저지연 로컬 왕복 및 UX 내러티브 표시 | 라이브 사용자 프롬프트만 사용 |
+| `chainlit_app.py` (RAG 데모) | 내부 지식 보조 프로토타입 | 최소한의 어휘 검색으로 짧은 답변을 기반화 | 파일 내 인라인 `DOCS` 목록 |
+| `webgpu_demo.html` | 미래 지향적 디바이스 내 브라우저 추론 미리보기 | 저지연 로컬 라운드트립 및 UX 내러티브 표시 | 라이브 사용자 프롬프트만 사용 |
 
 ### 시나리오 내러티브
-제품 조직은 경영진 브리핑 생성기를 원합니다. 경량 SLM(phi‑4‑mini)이 요약을 작성하고, 더 큰 LLM(gpt‑oss‑20b)은 고우선 보고서만 정제할 수 있습니다. 세션 스크립트는 하이브리드 디자인을 정당화하기 위해 경험적 지연 시간 및 토큰 메트릭을 캡처하며, Chainlit 데모는 소형 모델 답변을 사실적으로 유지하는 방법을 보여줍니다. WebGPU 컨셉 페이지는 브라우저 가속이 성숙할 때 완전히 클라이언트 측 처리를 위한 비전 경로를 제공합니다.
+제품 조직은 경영진 브리핑 생성기를 원합니다. 경량 SLM(phi‑4‑mini)이 요약을 작성하고, 더 큰 LLM(gpt‑oss‑20b)은 고우선 보고서만 정제할 수 있습니다. 세션 스크립트는 하이브리드 설계를 정당화하기 위해 경험적 지연 시간 및 토큰 메트릭을 캡처하며, Chainlit 데모는 소형 모델 답변을 사실적으로 유지하는 방법을 보여줍니다. WebGPU 개념 페이지는 브라우저 가속이 성숙할 때 완전히 클라이언트 측 처리를 위한 비전 경로를 제공합니다.
 
-### 최소 RAG 컨텍스트 (Chainlit)
+### 최소 RAG 컨텍스트(Chainlit)
 ```python
 DOCS = [
   "Foundry Local enables local model execution with OpenAI-compatible APIs.",
@@ -232,7 +222,7 @@ DOCS = [
 ]
 ```
 
-### 하이브리드 초안→정제 흐름 (의사 코드)
+### 하이브리드 초안→정제 흐름(의사 코드)
 ```python
 draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":prompt}], max_tokens=280)
 if len(draft) < 600:  # heuristic: escalate only for longer briefs or flagged topics
@@ -247,16 +237,16 @@ else:
 
 | 초점 | 개선 사항 | 이유 | 구현 힌트 |
 |-------|------------|-----|---------------------|
-| 비교 메트릭 | 토큰 사용량 및 첫 번째 토큰 지연 시간 추적 | 전체적인 성능 보기 | `BENCH_STREAM=1`을 사용하여 향상된 벤치마크 스크립트(Session 3) 사용 |
-| 하이브리드 파이프라인 | SLM 초안 → LLM 정제 | 지연 시간 및 비용 감소 | phi-4-mini로 생성, gpt-oss-20b로 요약 정제 |
+| 비교 메트릭 | 토큰 사용량 및 첫 번째 토큰 지연 시간 추적 | 전체적인 성능 보기 | `BENCH_STREAM=1`을 사용한 향상된 벤치마크 스크립트(Session 3) 사용 |
+| 하이브리드 파이프라인 | SLM 초안 → LLM 정제 | 지연 시간 및 비용 감소 | phi-4-mini로 생성하고 gpt-oss-20b로 요약 정제 |
 | 스트리밍 UI | Chainlit에서 더 나은 UX | 점진적 피드백 | 로컬 스트리밍이 노출되면 `stream=True` 사용; 청크 누적 |
 | WebGPU 캐싱 | 더 빠른 JS 초기화 | 재컴파일 오버헤드 감소 | 컴파일된 셰이더 아티팩트 캐싱(미래 런타임 기능) |
 | 결정론적 QA 세트 | 공정한 모델 비교 | 변동성 제거 | 고정된 프롬프트 목록 및 평가 실행을 위한 `temperature=0` |
-| 출력 점수화 | 구조화된 품질 렌즈 | 일화적 평가를 넘어 이동 | 간단한 루브릭: 일관성 / 사실성 / 간결성 (1–5) |
-| 에너지 / 자원 노트 | 교실 토론 | 트레이드오프 표시 | OS 모니터 사용(`foundry system info`, 작업 관리자, `nvidia-smi`) + 벤치마크 스크립트 출력 |
-| 비용 에뮬레이션 | 클라우드 정당화 사전 준비 | 확장 계획 | 토큰을 가상 클라우드 가격에 매핑하여 TCO 내러티브 작성 |
-| 지연 시간 분해 | 병목 식별 | 최적화 대상 | 프롬프트 준비, 요청 전송, 첫 번째 토큰, 전체 완료 측정 |
-| RAG + LLM 폴백 | 품질 안전망 | 어려운 쿼리 개선 | SLM 답변 길이가 임계값보다 짧거나 자신감이 낮은 경우 → 승격 |
+| 출력 점수화 | 구조화된 품질 렌즈 | 일화적 평가를 넘어 이동 | 간단한 루브릭: 일관성 / 사실성 / 간결성(1–5) |
+| 에너지 / 자원 노트 | 교실 토론 | 트레이드오프 표시 | OS 모니터(Task Manager, `nvidia-smi`) 및 벤치마크 스크립트 출력 사용 |
+| 비용 에뮬레이션 | 클라우드 사전 정당화 | 확장 계획 | 토큰을 가상 클라우드 가격에 매핑하여 TCO 내러티브 작성 |
+| 지연 시간 분해 | 병목 현상 식별 | 최적화 대상 | 프롬프트 준비, 요청 전송, 첫 번째 토큰, 전체 완료 측정 |
+| RAG + LLM 폴백 | 품질 안전망 | 어려운 쿼리 개선 | SLM 답변 길이가 임계값 미만이거나 신뢰도가 낮을 경우 → 상위 모델로 에스컬레이션 |
 
 #### 하이브리드 초안/정제 패턴 예시
 
@@ -280,5 +270,7 @@ print({"prep_ms": prep_ms, "full_gen_ms": full_ms})
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어를 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어를 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임지지 않습니다.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

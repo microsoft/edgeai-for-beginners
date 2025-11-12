@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T21:45:35+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T22:57:07+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "pl"
 }
 -->
-# Przykładowe Warsztaty - Karta Szybkiego Dostępu
+# Przykładowe Warsztaty - Karta Szybkiego Odniesienia
 
 **Ostatnia aktualizacja**: 8 października 2025
 
@@ -34,7 +34,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 | Sesja | Przykład | Cel | Czas |
 |-------|----------|-----|------|
-| 01 | `chat_bootstrap.py` | Podstawowy czat + streaming | ~30s |
+| 01 | `chat_bootstrap.py` | Podstawowy chat + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG z osadzeniami | ~45s |
 | 02 | `rag_eval_ragas.py` | Ocena RAG | ~60s |
 | 03 | `benchmark_oss_models.py` | Benchmark modeli | ~2m |
@@ -143,9 +143,9 @@ set BENCH_ROUNDS=1
 
 ---
 
-## 📖 Wzorce
+## 📖 Wzorce Użycia
 
-### Podstawowy Czat
+### Podstawowy Chat
 ```python
 from workshop_utils import chat_once
 
@@ -195,7 +195,7 @@ for chunk in stream:
 ## 📊 Wybór Modelu
 
 | Model | Rozmiar | Najlepsze Zastosowanie | Szybkość |
-|-------|---------|-------------------------|----------|
+|-------|---------|------------------------|----------|
 | `qwen2.5-0.5b` | 0.5B | Szybka klasyfikacja | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Szybkie generowanie kodu | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Twórcze pisanie | ⚡⚡ |
@@ -208,18 +208,16 @@ for chunk in stream:
 ## 🔗 Zasoby
 
 - **Dokumentacja SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **Szybki Dostęp**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Podsumowanie Aktualizacji**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Notatki Migracyjne**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **Szybkie Odniesienie**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
 
 ---
 
 ## 💡 Wskazówki
 
-1. **Buforuj klientów**: `workshop_utils` robi to za Ciebie
+1. **Cache klientów**: `workshop_utils` robi to za Ciebie
 2. **Używaj mniejszych modeli**: Zacznij od `qwen2.5-0.5b` do testów
 3. **Włącz statystyki użycia**: Ustaw `SHOW_USAGE=1`, aby śledzić tokeny
-4. **Przetwarzanie wsadowe**: Przetwarzaj wiele zapytań sekwencyjnie
+4. **Przetwarzanie wsadowe**: Przetwarzaj wiele promptów sekwencyjnie
 5. **Obniż max_tokens**: Zmniejsza opóźnienia dla szybkich odpowiedzi
 
 ---
@@ -256,7 +254,7 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Szybka Pomoc**: Uruchom dowolny przykład z `--help` z katalogu `samples` lub sprawdź docstring:
+**Szybka Pomoc**: Uruchom dowolny przykład z `--help` w katalogu `samples` lub sprawdź docstring:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Zastrzeżenie**:  
 Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż staramy się zapewnić dokładność, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T20:08:44+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T21:25:59+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "de"
 }
@@ -114,7 +114,7 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### Sitzung 05: Multi-Agenten-Orchestrierung
+### Sitzung 05: Multi-Agent-Orchestrierung
 
 ```bash
 cd Workshop/samples
@@ -160,7 +160,7 @@ python export_benchmark_markdown.py \
 
 **Ausgabe**: Markdown-Tabelle + JSON-Metriken
 
-### Markdown CLI-Muster überprüfen
+### Markdown CLI-Muster prüfen
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -231,25 +231,25 @@ foundry model run phi-4-mini
 | Variable | Standardwert | Beschreibung |
 |----------|--------------|--------------|
 | `FOUNDRY_LOCAL_ALIAS` | Variiert | Zu verwendender Modellalias |
-| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Service-Endpunkt überschreiben |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Dienst-Endpunkt überschreiben |
 | `SHOW_USAGE` | `0` | Token-Nutzungsstatistiken anzeigen |
 | `RETRY_ON_FAIL` | `1` | Wiederholungslogik aktivieren |
-| `RETRY_BACKOFF` | `1.0` | Anfangsverzögerung bei Wiederholung (Sekunden) |
+| `RETRY_BACKOFF` | `1.0` | Anfangsverzögerung für Wiederholungen (Sekunden) |
 
 ### Sitzungsbezogen
 | Variable | Standardwert | Beschreibung |
 |----------|--------------|--------------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding-Modell |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Einbettungsmodell |
 | `RAG_QUESTION` | Siehe Beispiel | RAG-Testfrage |
-| `BENCH_MODELS` | Variiert | Komma-separierte Modelle |
+| `BENCH_MODELS` | Variiert | Kommagetrennte Modelle |
 | `BENCH_ROUNDS` | `3` | Benchmark-Wiederholungen |
-| `BENCH_PROMPT` | Siehe Beispiel | Benchmark-Eingabeaufforderung |
+| `BENCH_PROMPT` | Siehe Beispiel | Benchmark-Prompt |
 | `BENCH_STREAM` | `0` | Latenz des ersten Tokens messen |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Primäres Agentenmodell |
 | `AGENT_MODEL_EDITOR` | Primär | Editor-Agentenmodell |
 | `SLM_ALIAS` | `phi-4-mini` | Kleines Sprachmodell |
 | `LLM_ALIAS` | `qwen2.5-7b` | Großes Sprachmodell |
-| `COMPARE_PROMPT` | Siehe Beispiel | Vergleichseingabeaufforderung |
+| `COMPARE_PROMPT` | Siehe Beispiel | Vergleichs-Prompt |
 
 ## Empfohlene Modelle
 
@@ -271,24 +271,25 @@ foundry model run phi-4-mini
 ## Hilfe erhalten
 
 1. Dienststatus prüfen: `foundry service status`  
-2. Protokolle anzeigen: Überprüfen Sie die Foundry Local-Dienstprotokolle  
+2. Protokolle anzeigen: Foundry Local-Dienstprotokolle prüfen  
 3. SDK-Dokumentation prüfen: https://github.com/microsoft/Foundry-Local  
-4. Beispielcode überprüfen: Alle Beispiele enthalten detaillierte Docstrings  
+4. Beispielcode überprüfen: Alle Beispiele enthalten ausführliche Docstrings  
 
 ## Nächste Schritte
 
-1. Schließen Sie alle Workshop-Sitzungen der Reihe nach ab  
-2. Experimentieren Sie mit verschiedenen Modellen  
-3. Passen Sie Beispiele an Ihre Anwendungsfälle an  
-4. Überprüfen Sie `SDK_MIGRATION_NOTES.md` für fortgeschrittene Muster  
+1. Alle Workshop-Sitzungen der Reihe nach abschließen  
+2. Mit verschiedenen Modellen experimentieren  
+3. Beispiele für Ihre Anwendungsfälle anpassen  
 
 ---
 
-**Zuletzt aktualisiert**: 08.01.2025  
+**Letzte Aktualisierung**: 08.01.2025  
 **Workshop-Version**: Aktuell  
-**SDK**: Foundry Local Python SDK
+**SDK**: Foundry Local Python SDK  
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

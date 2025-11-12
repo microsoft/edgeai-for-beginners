@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T22:53:58+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-12T00:02:35+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "hu"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 1. Telepítse a Foundry Local-t
 
-Kövesse a hivatalos telepítési útmutatót:  
+Kövesse az hivatalos telepítési útmutatót:  
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -160,7 +160,7 @@ python export_benchmark_markdown.py \
 
 **Kimenet**: Markdown táblázat + JSON metrikák
 
-### Markdown CLI minták ellenőrzése
+### Markdown CLI minták lintelése
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -249,7 +249,7 @@ foundry model run phi-4-mini
 | `AGENT_MODEL_EDITOR` | Elsődleges | Szerkesztő ügynök modell |
 | `SLM_ALIAS` | `phi-4-mini` | Kis nyelvi modell |
 | `LLM_ALIAS` | `qwen2.5-7b` | Nagy nyelvi modell |
-| `COMPARE_PROMPT` | Lásd minta | Összehasonlító prompt |
+| `COMPARE_PROMPT` | Lásd minta | Összehasonlítás prompt |
 
 ## Ajánlott modellek
 
@@ -273,14 +273,13 @@ foundry model run phi-4-mini
 1. Ellenőrizze a szolgáltatás állapotát: `foundry service status`  
 2. Nézze meg a naplókat: Ellenőrizze a Foundry Local szolgáltatás naplóit  
 3. Nézze meg az SDK dokumentációt: https://github.com/microsoft/Foundry-Local  
-4. Tekintse át a mintakódokat: Minden minta részletes docstringekkel rendelkezik
+4. Tekintse át a mintakódot: Minden minta részletes docstringekkel rendelkezik  
 
 ## Következő lépések
 
 1. Végezze el az összes workshop szekciót sorrendben  
 2. Kísérletezzen különböző modellekkel  
 3. Módosítsa a mintákat saját felhasználási esetekhez  
-4. Tekintse át az `SDK_MIGRATION_NOTES.md` fájlt haladó mintákért
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Felelősség kizárása**:  
 Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

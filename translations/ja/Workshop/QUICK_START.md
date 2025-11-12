@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T20:51:07+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T22:05:31+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "ja"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 前提条件
 
-### 1. Foundry Localのインストール
+### 1. Foundry Localをインストール
 
 公式インストールガイドに従ってください:  
 https://github.com/microsoft/Foundry-Local
@@ -27,9 +27,9 @@ foundry model run phi-4-mini
 foundry service status
 ```
 
-### 2. Python依存関係のインストール
+### 2. Python依存関係をインストール
 
-ワークショップディレクトリから以下を実行してください:
+ワークショップディレクトリから:
 
 ```bash
 # Create virtual environment (recommended)
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ## ワークショップサンプルの実行
 
-### セッション 01: 基本的なチャット
+### セッション01: 基本的なチャット
 
 ```bash
 cd Workshop/samples
@@ -60,7 +60,7 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
 ```
 
-### セッション 02: RAGパイプライン
+### セッション02: RAGパイプライン
 
 ```bash
 cd Workshop/samples
@@ -74,7 +74,7 @@ set RAG_QUESTION="Why use RAG with local inference?"
 set EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
-### セッション 02: RAG評価 (Ragas)
+### セッション02: RAG評価 (Ragas)
 
 ```bash
 cd Workshop/samples
@@ -83,7 +83,7 @@ python -m session02.rag_eval_ragas
 
 **注意**: `requirements.txt`を使用して追加の依存関係をインストールする必要があります
 
-### セッション 03: ベンチマーク
+### セッション03: ベンチマーク
 
 ```bash
 cd Workshop/samples
@@ -98,9 +98,9 @@ set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**出力:** レイテンシ、スループット、最初のトークンメトリクスを含むJSON
+**出力**: レイテンシ、スループット、最初のトークンメトリクスを含むJSON
 
-### セッション 04: モデル比較
+### セッション04: モデル比較
 
 ```bash
 cd Workshop/samples
@@ -114,7 +114,7 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### セッション 05: マルチエージェントオーケストレーション
+### セッション05: マルチエージェントオーケストレーション
 
 ```bash
 cd Workshop/samples
@@ -128,16 +128,16 @@ set AGENT_MODEL_EDITOR=phi-4-mini
 set AGENT_QUESTION="Explain why edge AI matters for compliance"
 ```
 
-### セッション 06: モデルルーター
+### セッション06: モデルルーター
 
 ```bash
 cd Workshop/samples
 python -m session06.models_router
 ```
 
-**ルーティングロジックをテスト**: 複数の意図（コード、要約、分類）
+**ルーティングロジックをテスト**: 複数の意図 (コード、要約、分類)
 
-### セッション 06: パイプライン
+### セッション06: パイプライン
 
 ```bash
 python -m session06.models_pipeline
@@ -158,7 +158,7 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**出力:** Markdownテーブル + JSONメトリクス
+**出力**: Markdownテーブル + JSONメトリクス
 
 ### Markdown CLIパターンのLint
 
@@ -166,7 +166,7 @@ python export_benchmark_markdown.py \
 python lint_markdown_cli.py --verbose
 ```
 
-**目的:** ドキュメント内の非推奨CLIパターンを検出
+**目的**: ドキュメント内の非推奨CLIパターンを検出
 
 ## テスト
 
@@ -177,7 +177,7 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**テスト内容:** 主要なサンプルの基本機能
+**テスト**: 主要なサンプルの基本機能
 
 ## トラブルシューティング
 
@@ -229,22 +229,22 @@ foundry model run phi-4-mini
 
 ### コア設定
 | 変数 | デフォルト | 説明 |
-|------|-----------|------|
+|------|------------|------|
 | `FOUNDRY_LOCAL_ALIAS` | 変動 | 使用するモデルのエイリアス |
 | `FOUNDRY_LOCAL_ENDPOINT` | 自動 | サービスエンドポイントを上書き |
-| `SHOW_USAGE` | `0` | トークン使用統計を表示 |
+| `SHOW_USAGE` | `0` | トークン使用状況を表示 |
 | `RETRY_ON_FAIL` | `1` | リトライロジックを有効化 |
-| `RETRY_BACKOFF` | `1.0` | 初期リトライ遅延（秒） |
+| `RETRY_BACKOFF` | `1.0` | 初期リトライ遅延 (秒) |
 
 ### セッション固有
 | 変数 | デフォルト | 説明 |
-|------|-----------|------|
+|------|------------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | 埋め込みモデル |
 | `RAG_QUESTION` | サンプル参照 | RAGテスト質問 |
 | `BENCH_MODELS` | 変動 | カンマ区切りのモデル |
 | `BENCH_ROUNDS` | `3` | ベンチマークの反復回数 |
 | `BENCH_PROMPT` | サンプル参照 | ベンチマークプロンプト |
-| `BENCH_STREAM` | `0` | 最初のトークンのレイテンシを測定 |
+| `BENCH_STREAM` | `0` | 最初のトークンレイテンシを測定 |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | 主エージェントモデル |
 | `AGENT_MODEL_EDITOR` | 主 | エディターエージェントモデル |
 | `SLM_ALIAS` | `phi-4-mini` | 小型言語モデル |
@@ -258,29 +258,28 @@ foundry model run phi-4-mini
 - **qwen2.5-0.5b** - 分類に非常に高速
 - **gemma-2-2b** - 良好な品質、適度な速度
 
-### 本番環境
-- **phi-4-mini** - 汎用目的
+### 本番シナリオ
+- **phi-4-mini** - 汎用
 - **deepseek-coder-1.3b** - コード生成
 - **qwen2.5-7b** - 高品質な応答
 
 ## SDKドキュメント
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
 
 ## ヘルプを得る方法
 
 1. サービスステータスを確認: `foundry service status`  
 2. ログを確認: Foundry Localサービスログを確認  
 3. SDKドキュメントを確認: https://github.com/microsoft/Foundry-Local  
-4. サンプルコードを確認: すべてのサンプルには詳細なドックストリングがあります  
+4. サンプルコードをレビュー: すべてのサンプルには詳細なdocstringがあります  
 
 ## 次のステップ
 
 1. ワークショップセッションを順番に完了する  
 2. 異なるモデルを試す  
 3. サンプルを自分のユースケースに合わせて変更する  
-4. `SDK_MIGRATION_NOTES.md`を確認して高度なパターンを学ぶ  
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責事項**:  
-この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解釈について、当社は責任を負いません。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確さが含まれる可能性があります。元の言語で記載された文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解について、当社は責任を負いません。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

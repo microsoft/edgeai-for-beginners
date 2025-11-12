@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T20:37:39+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-11T21:52:46+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "mo"
 }
@@ -15,23 +15,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 學習目標
 
-- **對比** SLM 與 LLM 在延遲、記憶體、品質方面的表現
-- **部署** 使用 ONNXRuntime 和（支持的情況下）WebGPU 的模型
-- **運行** 基於瀏覽器的推理（保護隱私的互動演示）
+- **對比** SLM 與 LLM 在延遲、記憶體、質量方面的差異
+- **部署** 使用 ONNXRuntime 和（在支持的情況下）WebGPU 的模型
+- **運行** 基於瀏覽器的推理（保護隱私的交互式演示）
 - **整合** 使用本地 SLM 後端的 Chainlit RAG 管道
-- **評估** 使用輕量化的品質與成本準則
+- **評估** 使用輕量化的質量與成本啟發式方法
 
 ## 先決條件
 
 - 完成第一至第三節
 - 已安裝 `chainlit`（已包含在 Module08 的 `requirements.txt` 中）
-- 支持 WebGPU 的瀏覽器（Windows 11 上最新版本的 Edge / Chrome）
-- Foundry Local 正在運行（`foundry status`）
+- 支援 WebGPU 的瀏覽器（Windows 11 上最新版本的 Edge / Chrome）
+- Foundry Local 正在運行（`foundry service status`）
 
 ### 跨平台注意事項
 
 Windows 仍然是主要目標環境。對於等待原生二進制文件的 macOS 開發者：
-1. 在 Windows 11 虛擬機（Parallels / UTM）或遠程 Windows 工作站中運行 Foundry Local。
+1. 在 Windows 11 虛擬機（Parallels / UTM）或遠端 Windows 工作站中運行 Foundry Local。
 2. 將服務暴露（默認端口 5273），並在 macOS 上設置：
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
@@ -39,7 +39,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 3. 使用與之前課程相同的 Python 虛擬環境步驟。
 
-Chainlit 安裝（兩個平台均適用）：
+Chainlit 安裝（兩個平台）：
 ```bash
 pip install chainlit
 ```
@@ -62,17 +62,7 @@ foundry model run phi-4-mini   --prompt "List 5 creative IoT edge AI ideas."
 foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 ```
 
-追蹤：回應深度、事實準確性、風格豐富度、延遲。
-
-### 2. ONNX Runtime 加速（5 分鐘）
-
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
+追蹤：回應深度、事實準確性、風格豐富性、延遲。
 
 觀察啟用 GPU 與僅使用 CPU 時的吞吐量變化。
 
@@ -123,7 +113,7 @@ foundry config set compute.onnx.enable_gpu true
 
 ### 4. Chainlit RAG 聊天應用（7 分鐘）
 
-最小化 `samples/04-cutting-edge/chainlit_app.py`：
+最小化的 `samples/04-cutting-edge/chainlit_app.py`：
 
 ```python
 #!/usr/bin/env python3
@@ -169,11 +159,11 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ### 5. 入門項目：調整 `04-webgpu-inference`（6 分鐘）
 
 交付成果：
-- 替換佔位符抓取邏輯，使用流式令牌（啟用後使用 `stream=True` 端點變體）
+- 替換佔位符抓取邏輯為流式令牌（啟用 `stream=True` 端點變體後使用）
 - 添加延遲圖表（客戶端）以切換 phi 與 gpt-oss-20b
-- 嵌入 RAG 上下文（參考文檔的文本框）
+- 嵌入 RAG 上下文（參考文檔的文本區域）
 
-## 評估準則
+## 評估啟發式方法
 
 | 類別 | Phi-4-mini | GPT-OSS-20B | 觀察 |
 |------|------------|-------------|------|
@@ -181,7 +171,7 @@ chainlit run samples/04-cutting-edge/chainlit_app.py -w
 | 記憶體 | 低 | 高 | 設備可行性 |
 | 上下文遵循 | 良好 | 強 | 大型模型可能更冗長 |
 | 成本（本地） | 最低 | 較高（資源） | 能源/時間取捨 |
-| 最佳使用場景 | 邊緣應用 | 深度推理 | 可實現混合管道 |
+| 最佳使用場景 | 邊緣應用 | 深度推理 | 可行的混合管道 |
 
 ## 驗證環境
 
@@ -202,8 +192,8 @@ foundry model list
 | 症狀 | 原因 | 措施 |
 |------|------|------|
 | 網頁抓取失敗 | CORS 或服務中斷 | 使用 `curl` 驗證端點；如有需要啟用 CORS 代理 |
-| Chainlit 空白 | 環境未激活 | 激活 venv 並重新安裝依賴 |
-| 高延遲 | 模型剛加載 | 使用小型提示序列進行預熱 |
+| Chainlit 空白 | 環境未激活 | 激活虛擬環境並重新安裝依賴 |
+| 高延遲 | 模型剛加載 | 使用小提示序列進行預熱 |
 
 ## 參考資料
 
@@ -220,15 +210,15 @@ foundry model list
 
 | 工作坊產物 | 場景 | 目標 | 數據 / 提示來源 |
 |------------|------|------|----------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | 評估 SLM 與 LLM 用於高管摘要生成的架構團隊 | 量化延遲與令牌使用差異 | 單一 `COMPARE_PROMPT` 環境變量 |
-| `chainlit_app.py`（RAG 演示） | 內部知識助手原型 | 使用最少的詞彙檢索來支持簡短回答 | 文件中的內嵌 `DOCS` 列表 |
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | 架構團隊評估 SLM 與 LLM 用於執行摘要生成 | 量化延遲與令牌使用差異 | 單一 `COMPARE_PROMPT` 環境變量 |
+| `chainlit_app.py`（RAG 演示） | 內部知識助手原型 | 使用最少的詞彙檢索生成簡短答案 | 文件中的內嵌 `DOCS` 列表 |
 | `webgpu_demo.html` | 未來設備端瀏覽器推理預覽 | 展示低延遲的本地回傳與用戶體驗敘述 | 僅限即時用戶提示 |
 
 ### 場景敘述
 
-產品部門希望有一個高管簡報生成器。輕量化的 SLM（phi-4-mini）草擬摘要；較大的 LLM（gpt-oss-20b）僅在高優先級報告中進行精煉。課程腳本捕捉了實際延遲與令牌指標，以證明混合設計的合理性，而 Chainlit 演示則展示了如何通過基於檢索的方式保持小型模型回答的事實性。WebGPU 概念頁提供了瀏覽器加速成熟後完全客戶端處理的願景路徑。
+產品部門希望有一個執行簡報生成器。一個輕量級的 SLM（phi-4-mini）負責草擬摘要；而更大的 LLM（gpt-oss-20b）僅用於精煉高優先級報告。課程腳本捕捉了經驗性延遲與令牌指標，以證明混合設計的合理性，同時 Chainlit 演示展示了如何通過基於事實的檢索保持小型模型答案的準確性。WebGPU 概念頁提供了瀏覽器加速成熟後完全客戶端處理的願景路徑。
 
-### 最小化 RAG 上下文（Chainlit）
+### 最小 RAG 上下文（Chainlit）
 
 ```python
 DOCS = [
@@ -253,18 +243,18 @@ else:
 
 ### 可選增強功能
 
-| 重點 | 增強功能 | 原因 | 實施提示 |
-|------|----------|------|---------|
-| 比較指標 | 追蹤令牌使用量 + 首令牌延遲 | 全面性能視圖 | 使用增強的基準腳本（第三節）並設置 `BENCH_STREAM=1` |
+| 重點 | 增強 | 原因 | 實施提示 |
+|------|------|------|---------|
+| 比較指標 | 追蹤令牌使用 + 首令牌延遲 | 全面性能視圖 | 使用增強的基準腳本（第三節）並設置 `BENCH_STREAM=1` |
 | 混合管道 | SLM 草擬 → LLM 精煉 | 降低延遲與成本 | 使用 phi-4-mini 生成，使用 gpt-oss-20b 精煉摘要 |
-| 流式 UI | Chainlit 中更好的用戶體驗 | 增量反饋 | 一旦本地流式推理暴露，使用 `stream=True`；累積塊 |
+| 流式 UI | Chainlit 中更好的用戶體驗 | 增量反饋 | 一旦本地流式暴露，使用 `stream=True`；累積塊 |
 | WebGPU 緩存 | 更快的 JS 初始化 | 減少重新編譯開銷 | 緩存編譯的著色器工件（未來運行時功能） |
 | 確定性 QA 集 | 公平模型比較 | 消除變異性 | 固定提示列表 + 評估運行時設置 `temperature=0` |
-| 輸出評分 | 結構化品質視角 | 超越軼事 | 簡單的評分標準：連貫性 / 事實性 / 簡潔性（1–5） |
-| 能源 / 資源註解 | 課堂討論 | 展示取捨 | 使用操作系統監控（`foundry system info`、任務管理器、`nvidia-smi`）+ 基準腳本輸出 |
-| 成本模擬 | 雲端前的正當性 | 計劃擴展 | 將令牌映射到假設的雲端定價以構建 TCO 敘述 |
+| 輸出評分 | 結構化質量視角 | 超越軼事 | 簡單的評分標準：連貫性 / 事實性 / 簡潔性（1–5） |
+| 能源 / 資源筆記 | 課堂討論 | 展示取捨 | 使用操作系統監控（任務管理器，`nvidia-smi`）+ 基準腳本輸出 |
+| 成本模擬 | 雲端前的正當性 | 計劃擴展 | 將令牌映射到假設的雲端定價以進行總擁有成本敘述 |
 | 延遲分解 | 識別瓶頸 | 目標優化 | 測量提示準備、請求發送、首令牌、完整完成 |
-| RAG + LLM 回退 | 品質安全網 | 改善困難查詢 | 如果 SLM 回答長度 < 閾值或信心低 → 升級 |
+| RAG + LLM 回退 | 質量安全網 | 改善困難查詢 | 如果 SLM 答案長度低於閾值或信心低 → 升級 |
 
 #### 示例混合草擬/精煉模式
 
@@ -289,5 +279,7 @@ print({"prep_ms": prep_ms, "full_gen_ms": full_ms})
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

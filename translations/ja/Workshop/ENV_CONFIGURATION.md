@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T20:51:38+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T22:06:38+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "ja"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概要
 
-ワークショップのサンプルは、リポジトリのルートにある`.env`ファイルで環境変数を使用して設定されています。これにより、コードを変更せずに簡単にカスタマイズできます。
+ワークショップのサンプルは、リポジトリのルートにある`.env`ファイルで環境変数を使用して設定を管理しています。これにより、コードを変更せずに簡単にカスタマイズできます。
 
 ## クイックスタート
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. 環境の設定
 
-`.env`ファイルは、既に適切なデフォルト値で設定されています。ほとんどのユーザーは変更する必要がありません。
+`.env`ファイルは既に適切なデフォルト値で設定されています。ほとんどのユーザーは変更する必要がありません。
 
 **オプション**: 設定を確認してカスタマイズする:
 ```bash
@@ -56,7 +56,7 @@ python -m session01.chat_bootstrap "Your question here"
 
 ## 環境変数リファレンス
 
-### 基本設定
+### コア設定
 
 | 変数 | デフォルト値 | 説明 |
 |------|-------------|------|
@@ -65,9 +65,9 @@ python -m session01.chat_bootstrap "Your question here"
 | `PYTHONPATH` | ワークショップパス | Pythonモジュール検索パス |
 
 **FOUNDRY_LOCAL_ENDPOINTを設定するタイミング:**
-- リモートのFoundry Localインスタンスを使用する場合
-- カスタムポート設定が必要な場合
-- 開発/本番環境の分離が必要な場合
+- リモートのFoundry Localインスタンス
+- カスタムポート設定
+- 開発/本番環境の分離
 
 **例:**
 ```bash
@@ -84,7 +84,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | 変数 | デフォルト値 | 目的 |
 |------|-------------|------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | 埋め込みモデル |
-| `RAG_QUESTION` | 事前設定済み | テスト用の質問 |
+| `RAG_QUESTION` | 事前設定済み | テスト用質問 |
 
 #### セッション03: ベンチマーク
 | 変数 | デフォルト値 | 目的 |
@@ -115,11 +115,11 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |------|-------------|------|
 | `SHOW_USAGE` | `1` | トークン使用量を表示 |
 | `RETRY_ON_FAIL` | `1` | 再試行ロジックを有効化 |
-| `RETRY_BACKOFF` | `1.0` | 再試行の遅延時間 (秒) |
+| `RETRY_BACKOFF` | `1.0` | 再試行の遅延時間（秒） |
 
 ## 一般的な設定
 
-### 開発環境 (高速反復)
+### 開発環境設定（高速な反復）
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### 本番環境 (品質重視)
+### 本番環境設定（品質重視）
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -161,7 +161,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### 用途別
 
-**汎用目的:**
+**汎用:**
 - `phi-4-mini` - 品質と速度のバランスが良い
 
 **高速応答:**
@@ -178,21 +178,21 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ### リソース別
 
-**低リソース (< 8GB RAM):**
+**低リソース（< 8GB RAM）:**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
 LLM_ALIAS=phi-4-mini
 ```
 
-**中リソース (8-16GB RAM):**
+**中リソース（8-16GB RAM）:**
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-7b
 ```
 
-**高リソース (16GB+ RAM):**
+**高リソース（16GB+ RAM）:**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-7b
 SLM_ALIAS=phi-4-mini
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### 温度とサンプリング (コード内で上書き)
+### 温度とサンプリング（コード内で上書き）
 
 ```python
 # In your scripts/notebooks
@@ -262,7 +262,7 @@ pwd  # Should be in Workshop or repository root
 ### サービス接続の問題
 
 **症状:**
-- "接続拒否"エラー
+- "接続が拒否されました"エラー
 - "サービスが利用できません"
 - タイムアウトエラー
 
@@ -318,7 +318,7 @@ pip install -r requirements.txt
 
 ## 設定のテスト
 
-### 環境読み込みの確認
+### 環境の読み込み確認
 
 ```python
 # test_env.py
@@ -408,7 +408,6 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## 追加リソース
 
 - `QUICK_START.md` - 初期設定ガイド
-- `SDK_MIGRATION_NOTES.md` - SDK更新の詳細
 - `Workshop/samples/*/README.md` - サンプル固有のガイド
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責事項**:  
-この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤認について、当方は一切の責任を負いません。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解について、当社は一切の責任を負いません。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

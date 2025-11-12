@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T20:36:17+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T21:51:57+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "zh"
 }
@@ -35,7 +35,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 会话 | 示例 | 目的 | 时间 |
 |------|------|------|------|
 | 01 | `chat_bootstrap.py` | 基础聊天 + 流式传输 | ~30秒 |
-| 02 | `rag_pipeline.py` | RAG与嵌入 | ~45秒 |
+| 02 | `rag_pipeline.py` | 使用嵌入的RAG | ~45秒 |
 | 02 | `rag_eval_ragas.py` | RAG评估 | ~60秒 |
 | 03 | `benchmark_oss_models.py` | 模型基准测试 | ~2分钟 |
 | 04 | `model_compare.py` | SLM与LLM对比 | ~45秒 |
@@ -207,19 +207,17 @@ for chunk in stream:
 
 ## 🔗 资源
 
-- **SDK文档**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **快速参考**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **更新摘要**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **迁移说明**: `Workshop/SDK_MIGRATION_NOTES.md`
+- **SDK文档**：https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **快速参考**：`Workshop/FOUNDRY_SDK_QUICKREF.md`
 
 ---
 
 ## 💡 提示
 
-1. **缓存客户端**：`workshop_utils`会为您缓存
+1. **缓存客户端**：`workshop_utils`会为你缓存
 2. **使用较小的模型**：测试时从`qwen2.5-0.5b`开始
-3. **启用使用统计**：设置`SHOW_USAGE=1`以跟踪token使用情况
-4. **批量处理**：按顺序处理多个提示
+3. **启用使用统计**：设置`SHOW_USAGE=1`以跟踪令牌使用情况
+4. **批量处理**：顺序处理多个提示
 5. **降低max_tokens**：减少延迟以获得快速响应
 
 ---
@@ -256,16 +254,18 @@ python -m session05.agents_orchestrator
 
 ---
 
-**快速帮助**：从`samples`目录运行任何示例并使用`--help`，或查看文档字符串：
+**快速帮助**：在`samples`目录中运行任何示例并使用`--help`，或查看文档字符串：
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**所有示例已于2025年10月更新，符合Foundry Local SDK最佳实践** ✨
+**所有示例已于2025年10月更新，采用Foundry Local SDK最佳实践** ✨
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免责声明**：  
-本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
+本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

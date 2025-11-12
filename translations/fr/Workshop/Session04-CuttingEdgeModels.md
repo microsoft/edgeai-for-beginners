@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T20:00:14+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-11T21:18:07+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "fr"
 }
@@ -11,32 +11,32 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Résumé
 
-Comparez les grands modèles de langage (LLMs) et les petits modèles de langage (SLMs) pour des scénarios d'inférence locale ou dans le cloud. Apprenez les modèles de déploiement en utilisant l'accélération ONNX Runtime, l'exécution WebGPU et des expériences hybrides RAG. Inclut une démonstration Chainlit RAG avec un modèle local et une exploration optionnelle d'OpenWebUI. Vous adapterez un starter d'inférence WebGPU et évaluerez les compromis entre capacité et coût/performance de Phi et GPT-OSS-20B.
+Comparez les Large Language Models (LLMs) et les Small Language Models (SLMs) pour des scénarios d'inférence locale ou dans le cloud. Découvrez les modèles de déploiement utilisant l'accélération ONNX Runtime, l'exécution WebGPU et des expériences hybrides RAG. Inclut une démonstration Chainlit RAG avec un modèle local et une exploration optionnelle d'OpenWebUI. Vous adapterez un starter d'inférence WebGPU et évaluerez les compromis entre capacité et coût/performance de Phi et GPT-OSS-20B.
 
 ## Objectifs d'apprentissage
 
 - **Comparer** SLM et LLM sur les axes de latence, mémoire et qualité
 - **Déployer** des modèles avec ONNXRuntime et (là où c'est pris en charge) WebGPU
-- **Exécuter** une inférence basée sur navigateur (démonstration interactive respectueuse de la vie privée)
-- **Intégrer** un pipeline Chainlit RAG avec un backend SLM local
+- **Exécuter** une inférence dans le navigateur (démonstration interactive respectant la vie privée)
+- **Intégrer** une pipeline Chainlit RAG avec un backend SLM local
 - **Évaluer** en utilisant des heuristiques légères de qualité et de coût
 
 ## Prérequis
 
 - Sessions 1 à 3 terminées
-- `chainlit` installé (déjà dans `requirements.txt` pour Module08)
+- `chainlit` installé (déjà inclus dans `requirements.txt` pour le Module08)
 - Navigateur compatible WebGPU (Edge / Chrome dernière version sur Windows 11)
-- Foundry Local en cours d'exécution (`foundry status`)
+- Foundry Local en cours d'exécution (`foundry service status`)
 
 ### Notes multiplateformes
 
 Windows reste l'environnement cible principal. Pour les développeurs macOS en attente de binaires natifs :
-1. Exécutez Foundry Local dans une VM Windows 11 (Parallels / UTM) OU une station de travail Windows distante.
+1. Exécutez Foundry Local dans une VM Windows 11 (Parallels / UTM) OU sur une station de travail Windows distante.
 2. Exposez le service (port par défaut 5273) et configurez sur macOS :
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-3. Utilisez les mêmes étapes d'environnement virtuel Python que dans les sessions précédentes.
+3. Utilisez les mêmes étapes de configuration de l'environnement virtuel Python que pour les sessions précédentes.
 
 Installation de Chainlit (les deux plateformes) :
 ```bash
@@ -61,16 +61,6 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 ```
 
 Suivez : profondeur des réponses, précision factuelle, richesse stylistique, latence.
-
-### 2. Accélération ONNX Runtime (5 min)
-
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
 
 Observez les changements de débit après activation du GPU par rapport au mode CPU uniquement.
 
@@ -121,7 +111,7 @@ Ouvrez le fichier dans un navigateur ; observez le faible temps de latence pour 
 
 ### 4. Application de chat Chainlit RAG (7 min)
 
-Minimal `samples/04-cutting-edge/chainlit_app.py` :
+`samples/04-cutting-edge/chainlit_app.py` minimal :
 
 ```python
 #!/usr/bin/env python3
@@ -177,7 +167,7 @@ Livrables :
 | Latence (à froid) | Rapide | Plus lent | SLM se réchauffe rapidement |
 | Mémoire | Faible | Élevée | Faisabilité sur appareil |
 | Adhérence au contexte | Bonne | Forte | Modèle plus grand peut être plus verbeux |
-| Coût (local) | Minimal | Plus élevé (ressources) | Compromis énergie/temps |
+| Coût (local) | Minime | Plus élevé (ressources) | Compromis énergie/temps |
 | Meilleur cas d'utilisation | Applications Edge | Raisonnement approfondi | Pipeline hybride possible |
 
 ## Validation de l'environnement
@@ -198,8 +188,8 @@ foundry model list
 | Symptôme | Cause | Action |
 |----------|-------|--------|
 | Échec de récupération de la page web | CORS ou service hors ligne | Utilisez `curl` pour vérifier le point de terminaison ; activez un proxy CORS si nécessaire |
-| Page blanche Chainlit | Env non actif | Activez venv et réinstallez les dépendances |
-| Latence élevée | Modèle juste chargé | Réchauffez avec une petite séquence de prompt |
+| Page blanche Chainlit | Environnement non actif | Activez l'environnement virtuel et réinstallez les dépendances |
+| Latence élevée | Modèle juste chargé | Réchauffez avec une petite séquence de prompts |
 
 ## Références
 
@@ -214,14 +204,14 @@ foundry model list
 
 ## Scénario d'exemple et cartographie de l'atelier
 
-| Artefacts de l'atelier | Scénario | Objectif | Source de données / prompt |
-|-------------------------|----------|----------|----------------------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Équipe d'architecture évaluant SLM vs LLM pour un générateur de résumé exécutif | Quantifier la latence + delta d'utilisation des jetons | Variable d'environnement unique `COMPARE_PROMPT` |
-| `chainlit_app.py` (démonstration RAG) | Prototype d'assistant de connaissances interne | Réponses courtes basées sur une récupération lexicale minimale | Liste `DOCS` en ligne dans le fichier |
-| `webgpu_demo.html` | Aperçu futuriste de l'inférence sur navigateur | Montrer un aller-retour local à faible latence + narration UX | Prompt utilisateur en direct uniquement |
+| Artefacts de l'atelier | Scénario | Objectif | Source de données / prompts |
+|-------------------------|----------|----------|-----------------------------|
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Équipe d'architecture évaluant SLM vs LLM pour un générateur de résumé exécutif | Quantifier la latence + différence d'utilisation des jetons | Variable d'environnement unique `COMPARE_PROMPT` |
+| `chainlit_app.py` (démo RAG) | Prototype d'assistant de connaissances interne | Réponses courtes basées sur une récupération lexicale minimale | Liste `DOCS` en ligne dans le fichier |
+| `webgpu_demo.html` | Aperçu futuriste de l'inférence dans le navigateur sur appareil | Montrer un aller-retour local à faible latence + narration UX | Prompt utilisateur en direct uniquement |
 
 ### Narration du scénario
-L'organisation produit souhaite un générateur de briefing exécutif. Un SLM léger (phi‑4‑mini) rédige des résumés ; un LLM plus grand (gpt‑oss‑20b) peut affiner uniquement les rapports prioritaires. Les scripts de session capturent des métriques empiriques de latence et de jetons pour justifier un design hybride, tandis que la démonstration Chainlit illustre comment une récupération ancrée maintient les réponses du petit modèle factuelles. La page concept WebGPU fournit une voie de vision pour un traitement entièrement côté client lorsque l'accélération du navigateur mûrit.
+L'organisation produit souhaite un générateur de briefing exécutif. Un SLM léger (phi‑4‑mini) rédige des résumés ; un LLM plus grand (gpt‑oss‑20b) peut affiner uniquement les rapports prioritaires. Les scripts de session capturent des métriques empiriques de latence et de jetons pour justifier un design hybride, tandis que la démo Chainlit illustre comment une récupération ancrée maintient les réponses du petit modèle factuelles. La page concept WebGPU fournit une voie de vision pour un traitement entièrement côté client lorsque l'accélération du navigateur mûrit.
 
 ### Contexte RAG minimal (Chainlit)
 ```python
@@ -245,17 +235,17 @@ Suivez les deux composants de latence pour rapporter le coût moyen combiné.
 
 ### Améliorations optionnelles
 
-| Focus | Amélioration | Pourquoi | Indice d'implémentation |
+| Focus | Amélioration | Pourquoi | Indice de mise en œuvre |
 |-------|-------------|----------|-------------------------|
-| Métriques comparatives | Suivre l'utilisation des jetons + latence du premier jeton | Vue globale des performances | Utilisez un script de benchmark amélioré (Session 3) avec `BENCH_STREAM=1` |
-| Pipeline hybride | Brouillon SLM → Affinage LLM | Réduire la latence et le coût | Générer avec phi-4-mini, affiner le résumé avec gpt-oss-20b |
-| Interface utilisateur en streaming | Meilleure UX dans Chainlit | Feedback incrémental | Utilisez `stream=True` une fois le streaming local exposé ; accumulez les morceaux |
+| Métriques comparatives | Suivre l'utilisation des jetons + latence du premier jeton | Vue globale des performances | Utilisez le script de benchmark amélioré (Session 3) avec `BENCH_STREAM=1` |
+| Pipeline hybride | Brouillon SLM → Affinage LLM | Réduire latence et coût | Générer avec phi-4-mini, affiner le résumé avec gpt-oss-20b |
+| UI en streaming | Meilleure UX dans Chainlit | Feedback incrémental | Utilisez `stream=True` une fois le streaming local exposé ; accumulez les morceaux |
 | Mise en cache WebGPU | Initialisation JS plus rapide | Réduire les frais de recompilation | Cachez les artefacts de shader compilés (capacité future du runtime) |
-| Ensemble de QA déterministe | Comparaison équitable des modèles | Éliminer la variance | Liste de prompts fixe + `temperature=0` pour les exécutions d'évaluation |
-| Évaluation des sorties | Lentille de qualité structurée | Aller au-delà des anecdotes | Rubrique simple : cohérence / factualité / concision (1–5) |
-| Notes sur énergie / ressources | Discussion en classe | Montrer les compromis | Utilisez les moniteurs OS (`foundry system info`, Gestionnaire de tâches, `nvidia-smi`) + sorties de script de benchmark |
+| Ensemble QA déterministe | Comparaison équitable des modèles | Éliminer la variance | Liste de prompts fixe + `temperature=0` pour les exécutions d'évaluation |
+| Évaluation des sorties | Lens de qualité structurée | Aller au-delà des anecdotes | Rubrique simple : cohérence / factualité / concision (1–5) |
+| Notes sur énergie / ressources | Discussion en classe | Montrer les compromis | Utilisez les moniteurs OS (Gestionnaire de tâches, `nvidia-smi`) + sorties de script de benchmark |
 | Émulation de coût | Justification pré-cloud | Planifier l'échelle | Mappez les jetons à une tarification cloud hypothétique pour une narration TCO |
-| Décomposition de latence | Identifier les goulots d'étranglement | Cibler les optimisations | Mesurez la préparation du prompt, l'envoi de la requête, le premier jeton, la complétion totale |
+| Décomposition de latence | Identifier les goulots d'étranglement | Cibler les optimisations | Mesurez la préparation des prompts, l'envoi de requêtes, le premier jeton, la complétion totale |
 | RAG + LLM en secours | Filet de sécurité qualité | Améliorer les requêtes difficiles | Si la longueur de réponse SLM < seuil ou faible confiance → escalade |
 
 #### Exemple de modèle hybride Brouillon/Affinage
@@ -265,7 +255,7 @@ draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], ma
 refine, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Improve clarity but keep facts:\n{draft}"}], max_tokens=220, temperature=0.3)
 ```
 
-#### Croquis de décomposition de latence
+#### Schéma de décomposition de latence
 
 ```python
 import time
@@ -280,5 +270,7 @@ Utilisez une structure de mesure cohérente entre les modèles pour des comparai
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Avertissement** :  
 Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T22:03:14+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T23:11:23+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "sv"
 }
@@ -114,7 +114,7 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### Session 05: Multi-Agent Orkestrering
+### Session 05: Multi-Agent Orchestration
 
 ```bash
 cd Workshop/samples
@@ -135,7 +135,7 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**Testar routinglogik** med flera intentioner (kod, sammanfatta, klassificering)
+**Testar routinglogik** med flera avsikter (kod, sammanfatta, klassificering)
 
 ### Session 06: Pipeline
 
@@ -215,7 +215,7 @@ foundry service status
 set FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 ```
 
-### Modell hittas inte
+### Modell hittades inte
 
 ```bash
 # List available models
@@ -229,16 +229,16 @@ foundry model run phi-4-mini
 
 ### Grundkonfiguration
 | Variabel | Standard | Beskrivning |
-|----------|---------|-------------|
+|----------|----------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | Varierar | Modellalias att använda |
-| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Åsidosätt tjänstslutpunkt |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Åsidosätt tjänstendpunkt |
 | `SHOW_USAGE` | `0` | Visa statistik för tokenanvändning |
 | `RETRY_ON_FAIL` | `1` | Aktivera återförsökslogik |
 | `RETRY_BACKOFF` | `1.0` | Initial återförsöksfördröjning (sekunder) |
 
 ### Sessionsspecifik
 | Variabel | Standard | Beskrivning |
-|----------|---------|-------------|
+|----------|----------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Inbäddningsmodell |
 | `RAG_QUESTION` | Se exempel | RAG-testfråga |
 | `BENCH_MODELS` | Varierar | Komma-separerade modeller |
@@ -271,7 +271,7 @@ foundry model run phi-4-mini
 ## Få hjälp
 
 1. Kontrollera tjänstens status: `foundry service status`  
-2. Visa loggar: Kontrollera Foundry Locals tjänstloggar  
+2. Visa loggar: Kontrollera Foundry Local-tjänstens loggar  
 3. Kontrollera SDK-dokumentation: https://github.com/microsoft/Foundry-Local  
 4. Granska exempel: Alla exempel har detaljerade docstrings  
 
@@ -280,7 +280,6 @@ foundry model run phi-4-mini
 1. Slutför alla workshopsessioner i ordning  
 2. Experimentera med olika modeller  
 3. Anpassa exempel för dina användningsfall  
-4. Granska `SDK_MIGRATION_NOTES.md` för avancerade mönster  
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör du vara medveten om att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

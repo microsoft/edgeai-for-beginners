@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T23:29:33+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-12T00:35:45+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "sl"
 }
 -->
-# Hiteri vodnik za delavnico
+# Hitra navodila za delavnico
 
 ## Predpogoji
 
 ### 1. Namestite Foundry Local
 
-Sledite uradnemu vodniku za namestitev:
+Sledite uradnim navodilom za namestitev:
 https://github.com/microsoft/Foundry-Local
 
 ```bash
@@ -98,7 +98,7 @@ set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Izhod**: JSON z meritvami zakasnitve, prepustnosti in prvega znaka
+**Izhod**: JSON z metriko zakasnitve, prepustnosti in prvega žetona
 
 ### Seja 04: Primerjava modelov
 
@@ -158,7 +158,7 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**Izhod**: Markdown tabela + JSON meritve
+**Izhod**: Markdown tabela + JSON metrike
 
 ### Preverjanje vzorcev CLI v Markdownu
 
@@ -166,7 +166,7 @@ python export_benchmark_markdown.py \
 python lint_markdown_cli.py --verbose
 ```
 
-**Namen**: Zaznavanje zastarelih CLI vzorcev v dokumentaciji
+**Namen**: Zaznavanje zastarelih vzorcev CLI v dokumentaciji
 
 ## Testiranje
 
@@ -205,7 +205,7 @@ source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### Napake povezave
+### Napake pri povezavi
 
 ```bash
 # Check endpoint
@@ -230,9 +230,9 @@ foundry model run phi-4-mini
 ### Osnovna konfiguracija
 | Spremenljivka | Privzeto | Opis |
 |---------------|----------|------|
-| `FOUNDRY_LOCAL_ALIAS` | Različno | Uporabljeni vzdevek modela |
-| `FOUNDRY_LOCAL_ENDPOINT` | Samodejno | Preklic končne točke storitve |
-| `SHOW_USAGE` | `0` | Prikaz statistike uporabe žetonov |
+| `FOUNDRY_LOCAL_ALIAS` | Različno | Alias modela za uporabo |
+| `FOUNDRY_LOCAL_ENDPOINT` | Samodejno | Prekliči končno točko storitve |
+| `SHOW_USAGE` | `0` | Prikaži statistiko uporabe žetonov |
 | `RETRY_ON_FAIL` | `1` | Omogoči logiko ponovnega poskusa |
 | `RETRY_BACKOFF` | `1.0` | Začetna zakasnitev ponovnega poskusa (sekunde) |
 
@@ -244,7 +244,7 @@ foundry model run phi-4-mini
 | `BENCH_MODELS` | Različno | Modeli, ločeni z vejico |
 | `BENCH_ROUNDS` | `3` | Iteracije primerjanja zmogljivosti |
 | `BENCH_PROMPT` | Glej primer | Poziv za primerjavo zmogljivosti |
-| `BENCH_STREAM` | `0` | Merjenje zakasnitve prvega znaka |
+| `BENCH_STREAM` | `0` | Merjenje zakasnitve prvega žetona |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Primarni model agenta |
 | `AGENT_MODEL_EDITOR` | Primarni | Model agenta za urejanje |
 | `SLM_ALIAS` | `phi-4-mini` | Majhen jezikovni model |
@@ -279,8 +279,7 @@ foundry model run phi-4-mini
 
 1. Zaključite vse seje delavnice po vrsti
 2. Eksperimentirajte z različnimi modeli
-3. Prilagodite primere za svoje primere uporabe
-4. Preglejte `SDK_MIGRATION_NOTES.md` za napredne vzorce
+3. Prilagodite primere za svoje potrebe
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni prevod s strani človeka. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

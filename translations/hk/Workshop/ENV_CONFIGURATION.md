@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T20:42:21+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T21:57:34+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "hk"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概述
 
-工作坊範例使用環境變數進行配置，集中於存放在倉庫根目錄的 `.env` 文件中。這樣可以輕鬆自定義配置而無需修改代碼。
+工作坊範例使用環境變數進行配置，集中於存放在倉庫根目錄的 `.env` 文件中。這樣可以輕鬆自定義配置，而無需修改代碼。
 
 ## 快速開始
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. 配置環境
 
-`.env` 文件已預設為合理的默認值。大多數使用者無需更改任何內容。
+`.env` 文件已預設好合理的默認值。大多數使用者無需更改任何內容。
 
 **可選**：檢視並自定義設置：
 ```bash
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### 會話 03：基準測試
 | 變數 | 默認值 | 用途 |
 |------|--------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | 要進行基準測試的模型 |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | 要測試的模型 |
 | `BENCH_ROUNDS` | `3` | 每個模型的迭代次數 |
 | `BENCH_PROMPT` | 預設配置 | 測試提示 |
 | `BENCH_STREAM` | `0` | 測量首個 token 的延遲 |
@@ -165,7 +165,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - 平衡質量與速度
 
 **快速響應：**
-- `qwen2.5-0.5b` - 非常快速，適合分類
+- `qwen2.5-0.5b` - 非常快，適合分類
 - `phi-4-mini` - 快速且質量良好
 
 **高質量：**
@@ -174,7 +174,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **代碼生成：**
 - `deepseek-coder-1.3b` - 專為代碼設計
-- `phi-4-mini` - 通用編碼
+- `phi-4-mini` - 通用代碼用途
 
 ### 根據資源可用性
 
@@ -285,7 +285,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ### 模型未找到
 
 **症狀：**
-- "未找到模型" 錯誤
+- "模型未找到" 錯誤
 - "別名未識別"
 
 **解決方案：**
@@ -303,7 +303,7 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### 導入錯誤
 
 **症狀：**
-- "未找到模組" 錯誤
+- "模組未找到" 錯誤
 
 **解決方案：**
 
@@ -389,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. 使用特定於環境的配置
+### 4. 使用特定環境配置
 
 ```bash
 # Development
@@ -399,17 +399,16 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ```
 
-## SDK 文件
+## SDK 文檔
 
 - **主倉庫**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API 文件**: 請檢視 SDK 倉庫以獲取最新資訊
+- **API 文檔**: 請檢視 SDK 倉庫以獲取最新資訊
 
 ## 其他資源
 
 - `QUICK_START.md` - 快速入門指南
-- `SDK_MIGRATION_NOTES.md` - SDK 更新詳情
-- `Workshop/samples/*/README.md` - 範例專屬指南
+- `Workshop/samples/*/README.md` - 範例特定指南
 
 ---
 
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責聲明**：  
-此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要信息，建議使用專業人工翻譯。我們不對因使用此翻譯而引起的任何誤解或誤釋承擔責任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

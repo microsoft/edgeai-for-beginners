@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T20:21:31+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T21:39:10+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ar"
 }
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **وثائق SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **المرجع السريع**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **ملخص التحديثات**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **ملاحظات الترحيل**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -220,7 +218,7 @@ for chunk in stream:
 2. **استخدام نماذج أصغر**: ابدأ بـ `qwen2.5-0.5b` للاختبار
 3. **تمكين إحصائيات الاستخدام**: قم بتعيين `SHOW_USAGE=1` لتتبع الرموز
 4. **المعالجة الدُفعية**: قم بمعالجة عدة مطالبات بشكل متسلسل
-5. **تقليل max_tokens**: يقلل من زمن الاستجابة للحصول على ردود سريعة
+5. **تقليل max_tokens**: يقلل من التأخير للحصول على استجابات سريعة
 
 ---
 
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **إخلاء المسؤولية**:  
 تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق. للحصول على معلومات حاسمة، يُوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

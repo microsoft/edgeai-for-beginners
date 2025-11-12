@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T20:00:03+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T21:17:38+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "fr"
 }
@@ -160,7 +160,7 @@ python export_benchmark_markdown.py \
 
 **Sortie** : Tableau Markdown + métriques JSON
 
-### Linter pour les modèles CLI Markdown
+### Linter les modèles CLI Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -228,23 +228,23 @@ foundry model run phi-4-mini
 ## Référence des variables d'environnement
 
 ### Configuration principale
-| Variable | Par défaut | Description |
-|----------|------------|-------------|
+| Variable | Valeur par défaut | Description |
+|----------|-------------------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | Variable | Alias du modèle à utiliser |
-| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Remplacer le point de terminaison du service |
-| `SHOW_USAGE` | `0` | Afficher les statistiques d'utilisation des tokens |
-| `RETRY_ON_FAIL` | `1` | Activer la logique de réessai |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | Remplace le point de terminaison du service |
+| `SHOW_USAGE` | `0` | Affiche les statistiques d'utilisation des tokens |
+| `RETRY_ON_FAIL` | `1` | Active la logique de réessai |
 | `RETRY_BACKOFF` | `1.0` | Délai initial de réessai (secondes) |
 
 ### Spécifique à la session
-| Variable | Par défaut | Description |
-|----------|------------|-------------|
+| Variable | Valeur par défaut | Description |
+|----------|-------------------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Modèle d'embedding |
 | `RAG_QUESTION` | Voir exemple | Question de test RAG |
 | `BENCH_MODELS` | Variable | Modèles séparés par des virgules |
 | `BENCH_ROUNDS` | `3` | Itérations de benchmark |
 | `BENCH_PROMPT` | Voir exemple | Prompt de benchmark |
-| `BENCH_STREAM` | `0` | Mesurer la latence du premier token |
+| `BENCH_STREAM` | `0` | Mesure de la latence du premier token |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Modèle principal de l'agent |
 | `AGENT_MODEL_EDITOR` | Principal | Modèle éditeur de l'agent |
 | `SLM_ALIAS` | `phi-4-mini` | Modèle de langage léger |
@@ -254,7 +254,7 @@ foundry model run phi-4-mini
 ## Modèles recommandés
 
 ### Développement et tests
-- **phi-4-mini** - Équilibre entre qualité et rapidité
+- **phi-4-mini** - Équilibre entre qualité et vitesse
 - **qwen2.5-0.5b** - Très rapide pour la classification
 - **gemma-2-2b** - Bonne qualité, vitesse modérée
 
@@ -280,7 +280,6 @@ foundry model run phi-4-mini
 1. Complétez toutes les sessions de l'atelier dans l'ordre  
 2. Expérimentez avec différents modèles  
 3. Modifiez les exemples pour vos cas d'utilisation  
-4. Consultez `SDK_MIGRATION_NOTES.md` pour des modèles avancés  
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction professionnelle humaine. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

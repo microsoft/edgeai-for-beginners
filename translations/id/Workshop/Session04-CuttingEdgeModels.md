@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T22:36:08+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-11T23:44:17+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "id"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrak
 
-Bandingkan Large Language Models (LLMs) dan Small Language Models (SLMs) untuk skenario inferensi lokal vs cloud. Pelajari pola penerapan dengan memanfaatkan akselerasi ONNX Runtime, eksekusi WebGPU, dan pengalaman hybrid RAG. Termasuk demo Chainlit RAG dengan model lokal serta eksplorasi opsional OpenWebUI. Anda akan menyesuaikan starter inferensi WebGPU dan mengevaluasi kemampuan Phi vs GPT-OSS-20B serta trade-off biaya/kinerja.
+Bandingkan Large Language Models (LLMs) dan Small Language Models (SLMs) untuk skenario inferensi lokal vs cloud. Pelajari pola penerapan yang memanfaatkan akselerasi ONNX Runtime, eksekusi WebGPU, dan pengalaman hybrid RAG. Termasuk demo Chainlit RAG dengan model lokal serta eksplorasi opsional OpenWebUI. Anda akan menyesuaikan starter inferensi WebGPU dan mengevaluasi kemampuan Phi vs GPT-OSS-20B serta trade-off biaya/kinerja.
 
 ## Tujuan Pembelajaran
 
@@ -26,7 +26,7 @@ Bandingkan Large Language Models (LLMs) dan Small Language Models (SLMs) untuk s
 - Sesi 1–3 selesai
 - `chainlit` terinstal (sudah ada di `requirements.txt` untuk Modul08)
 - Browser yang mendukung WebGPU (Edge / Chrome terbaru di Windows 11)
-- Foundry Local berjalan (`foundry status`)
+- Foundry Local berjalan (`foundry service status`)
 
 ### Catatan Lintas Platform
 
@@ -62,17 +62,7 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 
 Pantau: kedalaman respons, akurasi faktual, kekayaan gaya, latensi.
 
-### 2. Akselerasi ONNX Runtime (5 menit)
-
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
-
-Amati perubahan throughput setelah mengaktifkan GPU vs hanya CPU.
+Amati perubahan throughput setelah mengaktifkan GPU dibandingkan hanya CPU.
 
 ### 3. Inferensi WebGPU di Browser (6 menit)
 
@@ -196,10 +186,10 @@ foundry model list
 ## Pemecahan Masalah
 
 | Gejala | Penyebab | Tindakan |
-|---------|-------|--------|
+|--------|----------|----------|
 | Fetch halaman web gagal | CORS atau layanan down | Gunakan `curl` untuk memverifikasi endpoint; aktifkan proxy CORS jika diperlukan |
 | Chainlit kosong | Lingkungan tidak aktif | Aktifkan venv & instal ulang dependensi |
-| Latensi tinggi | Model baru saja dimuat | Panaskan dengan urutan prompt kecil |
+| Latensi tinggi | Model baru dimuat | Panaskan dengan urutan prompt kecil |
 
 ## Referensi
 
@@ -210,18 +200,18 @@ foundry model list
 ---
 
 **Durasi Sesi**: 30 menit  
-**Kesulitan**: Lanjutan
+**Tingkat Kesulitan**: Lanjutan
 
-## Contoh Skenario & Pemetaan Workshop
+## Skenario Contoh & Pemetaan Workshop
 
 | Artefak Workshop | Skenario | Tujuan | Sumber Data / Prompt |
-|--------------------|----------|-----------|----------------------|
+|------------------|----------|--------|----------------------|
 | `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | Tim arsitektur mengevaluasi SLM vs LLM untuk generator ringkasan eksekutif | Kuantifikasi delta latensi + penggunaan token | Variabel lingkungan `COMPARE_PROMPT` tunggal |
-| `chainlit_app.py` (demo RAG) | Prototipe asisten pengetahuan internal | Dasarkan jawaban singkat dengan pengambilan leksikal minimal | Daftar `DOCS` langsung dalam file |
-| `webgpu_demo.html` | Pratinjau inferensi browser di perangkat masa depan | Tampilkan roundtrip lokal dengan latensi rendah + narasi UX | Hanya prompt pengguna langsung |
+| `chainlit_app.py` (demo RAG) | Prototipe asisten pengetahuan internal | Memberikan jawaban singkat dengan pengambilan leksikal minimal | Daftar `DOCS` langsung dalam file |
+| `webgpu_demo.html` | Pratinjau inferensi browser di perangkat masa depan | Menunjukkan roundtrip lokal berlatensi rendah + narasi UX | Hanya prompt pengguna langsung |
 
 ### Narasi Skenario
-Organisasi produk menginginkan generator briefing eksekutif. SLM ringan (phi‑4‑mini) membuat draft ringkasan; LLM yang lebih besar (gpt‑oss‑20b) mungkin hanya menyempurnakan laporan prioritas tinggi. Skrip sesi menangkap metrik latensi & token empiris untuk membenarkan desain hybrid, sementara demo Chainlit menggambarkan bagaimana pengambilan yang terarah menjaga jawaban model kecil tetap faktual. Halaman konsep WebGPU memberikan jalur visi untuk pemrosesan sepenuhnya di sisi klien saat akselerasi browser matang.
+Organisasi produk menginginkan generator ringkasan eksekutif. SLM ringan (phi‑4‑mini) membuat draft ringkasan; LLM yang lebih besar (gpt‑oss‑20b) mungkin hanya menyempurnakan laporan prioritas tinggi. Skrip sesi menangkap metrik latensi & token empiris untuk membenarkan desain hybrid, sementara demo Chainlit menggambarkan bagaimana pengambilan yang terarah menjaga jawaban model kecil tetap faktual. Halaman konsep WebGPU memberikan jalur visi untuk pemrosesan sepenuhnya di sisi klien saat akselerasi browser matang.
 
 ### Konteks RAG Minimal (Chainlit)
 ```python
@@ -241,20 +231,20 @@ else:
     final, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Refine and polish:\n{draft}"}], max_tokens=220)
 ```
 
-Pantau kedua komponen latensi untuk melaporkan biaya rata-rata gabungan.
+Lacak kedua komponen latensi untuk melaporkan rata-rata biaya gabungan.
 
 ### Peningkatan Opsional
 
 | Fokus | Peningkatan | Mengapa | Petunjuk Implementasi |
-|-------|------------|-----|---------------------|
-| Metrik Perbandingan | Pantau penggunaan token + latensi token pertama | Pandangan kinerja holistik | Gunakan skrip benchmark yang ditingkatkan (Sesi 3) dengan `BENCH_STREAM=1` |
+|-------|------------|---------|-----------------------|
+| Metrik Perbandingan | Lacak penggunaan token + latensi token pertama | Pandangan kinerja holistik | Gunakan skrip benchmark yang ditingkatkan (Sesi 3) dengan `BENCH_STREAM=1` |
 | Pipeline Hybrid | Draft SLM → Refine LLM | Kurangi latensi & biaya | Buat dengan phi-4-mini, sempurnakan ringkasan dengan gpt-oss-20b |
 | UI Streaming | UX lebih baik di Chainlit | Umpan balik bertahap | Gunakan `stream=True` setelah streaming lokal diaktifkan; kumpulkan potongan |
-| Caching WebGPU | Inisialisasi JS lebih cepat | Kurangi overhead kompilasi ulang | Cache artefak shader yang telah dikompilasi (kemampuan runtime masa depan) |
-| Set QA Deterministik | Perbandingan model yang adil | Hilangkan variasi | Daftar prompt tetap + `temperature=0` untuk evaluasi |
-| Penilaian Output | Lensa kualitas terstruktur | Melampaui anekdot | Rubrik sederhana: koherensi / faktualitas / ringkas (1–5) |
-| Catatan Energi / Sumber Daya | Diskusi kelas | Tunjukkan trade-off | Gunakan monitor OS (`foundry system info`, Task Manager, `nvidia-smi`) + output skrip benchmark |
-| Simulasi Biaya | Justifikasi pra-cloud | Rencana skala | Peta token ke harga cloud hipotetis untuk narasi TCO |
+| Caching WebGPU | Inisialisasi JS lebih cepat | Kurangi overhead kompilasi ulang | Cache artefak shader yang dikompilasi (kemampuan runtime masa depan) |
+| Set QA Deterministik | Perbandingan model yang adil | Hilangkan variansi | Daftar prompt tetap + `temperature=0` untuk evaluasi |
+| Penilaian Output | Lensa kualitas terstruktur | Melampaui anekdot | Rubrik sederhana: koherensi / faktualitas / singkat (1–5) |
+| Catatan Energi / Sumber Daya | Diskusi kelas | Tunjukkan trade-off | Gunakan monitor OS (Task Manager, `nvidia-smi`) + output skrip benchmark |
+| Emulasi Biaya | Justifikasi pra-cloud | Rencana skalabilitas | Peta token ke harga cloud hipotetis untuk narasi TCO |
 | Dekonstruksi Latensi | Identifikasi hambatan | Targetkan optimasi | Ukur persiapan prompt, pengiriman permintaan, token pertama, penyelesaian penuh |
 | RAG + LLM Fallback | Jaring pengaman kualitas | Tingkatkan kueri sulit | Jika panjang jawaban SLM < ambang batas atau kepercayaan rendah → eskalasi |
 
@@ -265,7 +255,7 @@ draft, _ = chat_once('phi-4-mini', messages=[{"role":"user","content":task}], ma
 refine, _ = chat_once('gpt-oss-20b', messages=[{"role":"user","content":f"Improve clarity but keep facts:\n{draft}"}], max_tokens=220, temperature=0.3)
 ```
 
-#### Sketsa Dekonstruksi Latensi
+#### Sketsa Pemecahan Latensi
 
 ```python
 import time
@@ -280,5 +270,7 @@ Gunakan kerangka pengukuran yang konsisten di seluruh model untuk perbandingan y
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis dapat mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

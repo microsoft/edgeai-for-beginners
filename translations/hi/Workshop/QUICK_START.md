@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T21:00:24+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T22:14:13+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "hi"
 }
@@ -98,7 +98,7 @@ set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**आउटपुट**: लेटेंसी, थ्रूपुट, और फर्स्ट-टोकन मेट्रिक्स के साथ JSON
+**आउटपुट**: JSON जिसमें लेटेंसी, थ्रूपुट, और फर्स्ट-टोकन मेट्रिक्स शामिल हैं
 
 ### सत्र 04: मॉडल तुलना
 
@@ -143,7 +143,7 @@ python -m session06.models_router
 python -m session06.models_pipeline
 ```
 
-**जटिल मल्टी-स्टेप पाइपलाइन** जिसमें योजना, निष्पादन, और सुधार शामिल हैं
+**जटिल मल्टी-स्टेप पाइपलाइन** जिसमें योजना, निष्पादन, और सुधार शामिल है
 
 ## स्क्रिप्ट्स
 
@@ -166,7 +166,7 @@ python export_benchmark_markdown.py \
 python lint_markdown_cli.py --verbose
 ```
 
-**उद्देश्य**: डाक्यूमेंटेशन में पुराने CLI पैटर्न्स का पता लगाना
+**उद्देश्य**: दस्तावेज़ में पुराने CLI पैटर्न का पता लगाना
 
 ## परीक्षण
 
@@ -194,7 +194,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### मॉड्यूल इंपोर्ट त्रुटियां
+### मॉड्यूल इंपोर्ट त्रुटियाँ
 
 ```bash
 # Ensure virtual environment is activated
@@ -205,7 +205,7 @@ source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### कनेक्शन त्रुटियां
+### कनेक्शन त्रुटियाँ
 
 ```bash
 # Check endpoint
@@ -230,18 +230,18 @@ foundry model run phi-4-mini
 ### कोर कॉन्फ़िगरेशन
 | वेरिएबल | डिफ़ॉल्ट | विवरण |
 |----------|---------|-------------|
-| `FOUNDRY_LOCAL_ALIAS` | अलग-अलग | उपयोग करने के लिए मॉडल का उपनाम |
-| `FOUNDRY_LOCAL_ENDPOINT` | ऑटो | सेवा एंडपॉइंट को ओवरराइड करें |
-| `SHOW_USAGE` | `0` | टोकन उपयोग आँकड़े दिखाएं |
+| `FOUNDRY_LOCAL_ALIAS` | अलग-अलग | उपयोग करने के लिए मॉडल उपनाम |
+| `FOUNDRY_LOCAL_ENDPOINT` | ऑटो | सेवा एंडपॉइंट ओवरराइड करें |
+| `SHOW_USAGE` | `0` | टोकन उपयोग आँकड़े दिखाएँ |
 | `RETRY_ON_FAIL` | `1` | पुनः प्रयास लॉजिक सक्षम करें |
-| `RETRY_BACKOFF` | `1.0` | प्रारंभिक पुनः प्रयास विलंब (सेकंड में) |
+| `RETRY_BACKOFF` | `1.0` | प्रारंभिक पुनः प्रयास विलंब (सेकंड) |
 
 ### सत्र-विशिष्ट
 | वेरिएबल | डिफ़ॉल्ट | विवरण |
 |----------|---------|-------------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | एम्बेडिंग मॉडल |
 | `RAG_QUESTION` | सैंपल देखें | RAG परीक्षण प्रश्न |
-| `BENCH_MODELS` | अलग-अलग | कॉमा से अलग किए गए मॉडल |
+| `BENCH_MODELS` | अलग-अलग | कॉमा से अलग मॉडल्स |
 | `BENCH_ROUNDS` | `3` | बेंचमार्क पुनरावृत्तियाँ |
 | `BENCH_PROMPT` | सैंपल देखें | बेंचमार्क प्रॉम्प्ट |
 | `BENCH_STREAM` | `0` | फर्स्ट-टोकन लेटेंसी मापें |
@@ -263,24 +263,23 @@ foundry model run phi-4-mini
 - **deepseek-coder-1.3b** - कोड जनरेशन
 - **qwen2.5-7b** - उच्च गुणवत्ता वाले उत्तर
 
-## SDK डाक्यूमेंटेशन
+## SDK दस्तावेज़
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## सहायता प्राप्त करना
 
-1. सेवा की स्थिति जांचें: `foundry service status`
+1. सेवा स्थिति जांचें: `foundry service status`
 2. लॉग देखें: Foundry Local सेवा लॉग जांचें
-3. SDK डाक्यूमेंट्स देखें: https://github.com/microsoft/Foundry-Local
+3. SDK दस्तावेज़ देखें: https://github.com/microsoft/Foundry-Local
 4. सैंपल कोड की समीक्षा करें: सभी सैंपल्स में विस्तृत डॉकस्ट्रिंग्स हैं
 
 ## अगले कदम
 
-1. सभी वर्कशॉप सत्रों को क्रम में पूरा करें
+1. सभी वर्कशॉप सत्र क्रम में पूरा करें
 2. विभिन्न मॉडल्स के साथ प्रयोग करें
-3. अपने उपयोग मामलों के लिए सैंपल्स को संशोधित करें
-4. उन्नत पैटर्न्स के लिए `SDK_MIGRATION_NOTES.md` की समीक्षा करें
+3. अपने उपयोग मामलों के लिए सैंपल्स संशोधित करें
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **अस्वीकरण**:  
-यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयास करते हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियां या अशुद्धियां हो सकती हैं। मूल भाषा में दस्तावेज़ को आधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम जिम्मेदार नहीं हैं।
+यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयास करते हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियां या अशुद्धियां हो सकती हैं। मूल भाषा में दस्तावेज़ को आधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम उत्तरदायी नहीं हैं।
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

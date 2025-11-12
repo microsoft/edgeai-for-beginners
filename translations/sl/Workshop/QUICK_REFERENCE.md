@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T23:33:30+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-12T00:40:24+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "sl"
 }
@@ -167,7 +167,7 @@ manager, client, model_id = get_client(
 )
 ```
 
-### Upravljanje napak
+### Obdelava napak
 ```python
 try:
     manager, client, model_id = get_client(alias)
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **SDK dokumentacija**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Hitri referenčni vodič**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Povzetek posodobitev**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Opombe o migraciji**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -220,11 +218,11 @@ for chunk in stream:
 2. **Uporabite manjše modele**: Za testiranje začnite z `qwen2.5-0.5b`
 3. **Omogočite statistiko uporabe**: Nastavite `SHOW_USAGE=1` za sledenje žetonom
 4. **Obdelava v serijah**: Obdelajte več pozivov zaporedno
-5. **Zmanjšajte max_tokens**: Zmanjša zakasnitve za hitre odgovore
+5. **Znižajte max_tokens**: Zmanjša zakasnitve za hitre odgovore
 
 ---
 
-## 🎯 Delovni tokovi vzorcev
+## 🎯 Vzorčni delovni tokovi
 
 ### Testiraj vse
 ```bash
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

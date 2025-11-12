@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T22:59:53+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-12T00:08:09+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "cs"
 }
@@ -113,8 +113,8 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 | Proměnná | Výchozí hodnota | Účel |
 |----------|-----------------|------|
-| `SHOW_USAGE` | `1` | Tisknout využití tokenů |
-| `RETRY_ON_FAIL` | `1` | Povolit logiku opakování |
+| `SHOW_USAGE` | `1` | Tisk využití tokenů |
+| `RETRY_ON_FAIL` | `1` | Povolení logiky opakování |
 | `RETRY_BACKOFF` | `1.0` | Zpoždění opakování (v sekundách) |
 
 ## Běžné konfigurace
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **Příznaky:**
 - Chyby "Model nebyl nalezen"
-- "Alias nebyl rozpoznán"
+- "Alias není rozpoznán"
 
 **Řešení:**
 ```bash
@@ -300,7 +300,7 @@ foundry model run phi-4-mini
 FOUNDRY_LOCAL_ALIAS=<available-model>
 ```
 
-### Chyby importu
+### Chyby při importu
 
 **Příznaky:**
 - Chyby "Modul nebyl nalezen"
@@ -340,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Test připojení Foundry Local
+### Test připojení k Foundry Local
 
 ```python
 # test_connection.py
@@ -365,7 +365,7 @@ except Exception as e:
 
 ## Nejlepší bezpečnostní postupy
 
-### 1. Nikdy neukládejte tajné informace
+### 1. Nikdy neukládejte tajné klíče do repozitáře
 
 ```bash
 # .gitignore should include:
@@ -382,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Pravidelně měňte API klíče
+### 3. Rotace API klíčů
 
 ```bash
 # For Azure OpenAI or other cloud services
@@ -408,7 +408,6 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## Další zdroje
 
 - `QUICK_START.md` - Průvodce začátkem
-- `SDK_MIGRATION_NOTES.md` - Podrobnosti o aktualizaci SDK
 - `Workshop/samples/*/README.md` - Průvodce specifický pro ukázky
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

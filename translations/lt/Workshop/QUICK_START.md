@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T23:45:36+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-12T00:50:15+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "lt"
 }
@@ -98,7 +98,7 @@ set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**Rezultatas**: JSON su vėlavimo, pralaidumo ir pirmojo ženklo metrika
+**Rezultatas**: JSON su vėlinimo, pralaidumo ir pirmo ženklo metrikomis
 
 ### Sesija 04: Modelių palyginimas
 
@@ -158,7 +158,7 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**Rezultatas**: Markdown lentelė + JSON metrika
+**Rezultatas**: Markdown lentelė + JSON metrikos
 
 ### Tikrinti Markdown CLI šablonus
 
@@ -231,10 +231,10 @@ foundry model run phi-4-mini
 | Kintamasis | Numatytasis | Aprašymas |
 |------------|-------------|-----------|
 | `FOUNDRY_LOCAL_ALIAS` | Skiriasi | Naudojamas modelio alias |
-| `FOUNDRY_LOCAL_ENDPOINT` | Automatiškai | Pakeisti paslaugos galinį tašką |
-| `SHOW_USAGE` | `0` | Rodyti ženklo naudojimo statistiką |
-| `RETRY_ON_FAIL` | `1` | Įjungti pakartojimo logiką |
-| `RETRY_BACKOFF` | `1.0` | Pradinė pakartojimo vėlavimo trukmė (sekundėmis) |
+| `FOUNDRY_LOCAL_ENDPOINT` | Automatinis | Pakeisti paslaugos galinį tašką |
+| `SHOW_USAGE` | `0` | Rodyti žetonų naudojimo statistiką |
+| `RETRY_ON_FAIL` | `1` | Įjungti pakartotinio bandymo logiką |
+| `RETRY_BACKOFF` | `1.0` | Pradinė pakartotinio bandymo vėlinimo trukmė (sekundėmis) |
 
 ### Sesijai specifiniai
 | Kintamasis | Numatytasis | Aprašymas |
@@ -244,7 +244,7 @@ foundry model run phi-4-mini
 | `BENCH_MODELS` | Skiriasi | Modeliai, atskirti kableliais |
 | `BENCH_ROUNDS` | `3` | Testavimo iteracijos |
 | `BENCH_PROMPT` | Žr. pavyzdį | Testavimo užklausa |
-| `BENCH_STREAM` | `0` | Pirmojo ženklo vėlavimo matavimas |
+| `BENCH_STREAM` | `0` | Pirmo ženklo vėlinimo matavimas |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Pagrindinis agento modelis |
 | `AGENT_MODEL_EDITOR` | Pagrindinis | Redaktoriaus agento modelis |
 | `SLM_ALIAS` | `phi-4-mini` | Mažas kalbos modelis |
@@ -259,7 +259,7 @@ foundry model run phi-4-mini
 - **gemma-2-2b** - Gera kokybė, vidutinis greitis
 
 ### Gamybiniai scenarijai
-- **phi-4-mini** - Bendros paskirties
+- **phi-4-mini** - Bendras naudojimas
 - **deepseek-coder-1.3b** - Kodo generavimas
 - **qwen2.5-7b** - Aukštos kokybės atsakymai
 
@@ -273,14 +273,13 @@ foundry model run phi-4-mini
 1. Patikrinkite paslaugos būseną: `foundry service status`  
 2. Peržiūrėkite žurnalus: Patikrinkite Foundry Local paslaugos žurnalus  
 3. Peržiūrėkite SDK dokumentaciją: https://github.com/microsoft/Foundry-Local  
-4. Peržiūrėkite pavyzdinį kodą: Visi pavyzdžiai turi išsamius dokumentacijos aprašymus  
+4. Peržiūrėkite pavyzdinį kodą: Visi pavyzdžiai turi išsamius dokumentacijos aprašymus
 
-## Kiti žingsniai
+## Tolimesni žingsniai
 
 1. Užbaikite visas dirbtuvių sesijas iš eilės  
 2. Eksperimentuokite su skirtingais modeliais  
 3. Pritaikykite pavyzdžius savo poreikiams  
-4. Peržiūrėkite `SDK_MIGRATION_NOTES.md` dėl pažangių šablonų  
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingą interpretaciją, atsiradusią naudojant šį vertimą.
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus interpretavimus, atsiradusius naudojant šį vertimą.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

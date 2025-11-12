@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T21:58:00+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T23:07:11+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "th"
 }
 -->
 # คู่มือเริ่มต้นใช้งาน Workshop
 
-## ข้อกำหนดเบื้องต้น
+## สิ่งที่ต้องเตรียม
 
 ### 1. ติดตั้ง Foundry Local
 
@@ -135,7 +135,7 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**ทดสอบการทำงานของ routing logic** ด้วยหลาย intents (code, summarize, classification)
+**ทดสอบการทำงานของ routing logic** ด้วย intents หลายแบบ (code, summarize, classification)
 
 ### Session 06: Pipeline
 
@@ -145,7 +145,7 @@ python -m session06.models_pipeline
 
 **Pipeline หลายขั้นตอนที่ซับซ้อน** รวมถึงการวางแผน การดำเนินการ และการปรับปรุง
 
-## Scripts
+## สคริปต์
 
 ### Export Benchmark Report
 
@@ -166,7 +166,7 @@ python export_benchmark_markdown.py \
 python lint_markdown_cli.py --verbose
 ```
 
-**วัตถุประสงค์**: ตรวจสอบ CLI patterns ที่เลิกใช้งานในเอกสาร
+**วัตถุประสงค์**: ตรวจสอบ CLI patterns ที่ล้าสมัยในเอกสาร
 
 ## การทดสอบ
 
@@ -177,7 +177,7 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**การทดสอบ**: การทำงานพื้นฐานของตัวอย่างสำคัญ
+**การทดสอบ**: ฟังก์ชันพื้นฐานของตัวอย่างสำคัญ
 
 ## การแก้ไขปัญหา
 
@@ -230,35 +230,35 @@ foundry model run phi-4-mini
 ### การตั้งค่าหลัก
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `FOUNDRY_LOCAL_ALIAS` | Varies | Model alias ที่ใช้ |
-| `FOUNDRY_LOCAL_ENDPOINT` | Auto | กำหนด service endpoint |
+| `FOUNDRY_LOCAL_ALIAS` | Varies | Alias ของโมเดลที่ใช้ |
+| `FOUNDRY_LOCAL_ENDPOINT` | Auto | กำหนด endpoint ของ service |
 | `SHOW_USAGE` | `0` | แสดงสถิติการใช้งาน token |
-| `RETRY_ON_FAIL` | `1` | เปิดใช้งาน retry logic |
-| `RETRY_BACKOFF` | `1.0` | ความล่าช้าเริ่มต้นในการ retry (วินาที) |
+| `RETRY_ON_FAIL` | `1` | เปิดใช้งาน logic การ retry |
+| `RETRY_BACKOFF` | `1.0` | ระยะเวลาหน่วงเริ่มต้นสำหรับ retry (วินาที) |
 
 ### เฉพาะ Session
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding model |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | โมเดล embedding |
 | `RAG_QUESTION` | ดูตัวอย่าง | คำถามทดสอบ RAG |
-| `BENCH_MODELS` | Varies | รายชื่อ models แบบ comma-separated |
-| `BENCH_ROUNDS` | `3` | จำนวนรอบ benchmark |
-| `BENCH_PROMPT` | ดูตัวอย่าง | Benchmark prompt |
+| `BENCH_MODELS` | Varies | โมเดลที่คั่นด้วยเครื่องหมายจุลภาค |
+| `BENCH_ROUNDS` | `3` | จำนวนรอบการ benchmark |
+| `BENCH_PROMPT` | ดูตัวอย่าง | prompt สำหรับ benchmark |
 | `BENCH_STREAM` | `0` | วัด latency ของ first-token |
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Primary agent model |
-| `AGENT_MODEL_EDITOR` | Primary | Editor agent model |
-| `SLM_ALIAS` | `phi-4-mini` | Small language model |
-| `LLM_ALIAS` | `qwen2.5-7b` | Large language model |
-| `COMPARE_PROMPT` | ดูตัวอย่าง | Comparison prompt |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | โมเดลหลักของ agent |
+| `AGENT_MODEL_EDITOR` | Primary | โมเดล editor ของ agent |
+| `SLM_ALIAS` | `phi-4-mini` | โมเดลภาษาแบบเล็ก |
+| `LLM_ALIAS` | `qwen2.5-7b` | โมเดลภาษาแบบใหญ่ |
+| `COMPARE_PROMPT` | ดูตัวอย่าง | prompt สำหรับการเปรียบเทียบ |
 
 ## โมเดลที่แนะนำ
 
 ### การพัฒนาและการทดสอบ
 - **phi-4-mini** - คุณภาพและความเร็วที่สมดุล
-- **qwen2.5-0.5b** - เร็วมากสำหรับการจัดหมวดหมู่
+- **qwen2.5-0.5b** - เร็วมากสำหรับการจัดประเภท
 - **gemma-2-2b** - คุณภาพดี ความเร็วปานกลาง
 
-### การใช้งานในสถานการณ์จริง
+### สถานการณ์การใช้งานจริง
 - **phi-4-mini** - ใช้งานทั่วไป
 - **deepseek-coder-1.3b** - การสร้างโค้ด
 - **qwen2.5-7b** - การตอบกลับคุณภาพสูง
@@ -270,8 +270,8 @@ foundry model run phi-4-mini
 
 ## การขอความช่วยเหลือ
 
-1. ตรวจสอบสถานะบริการ: `foundry service status`  
-2. ดู log: ตรวจสอบ log ของ Foundry Local service  
+1. ตรวจสอบสถานะ service: `foundry service status`  
+2. ดู logs: ตรวจสอบ logs ของ Foundry Local service  
 3. ดูเอกสาร SDK: https://github.com/microsoft/Foundry-Local  
 4. ตรวจสอบโค้ดตัวอย่าง: ตัวอย่างทั้งหมดมี docstrings ที่ละเอียด
 
@@ -280,7 +280,6 @@ foundry model run phi-4-mini
 1. ทำทุก session ใน workshop ให้ครบตามลำดับ  
 2. ทดลองใช้งานโมเดลต่าง ๆ  
 3. ปรับเปลี่ยนตัวอย่างให้เหมาะกับการใช้งานของคุณ  
-4. ทบทวน `SDK_MIGRATION_NOTES.md` สำหรับ patterns ขั้นสูง  
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามนุษย์ที่เป็นมืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลภาษามืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,36 +1,35 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-09T19:26:30+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-11T23:56:01+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "tl"
 }
 -->
-# Session 3: Mga Open-Source na Modelo sa Foundry Local
+# Session 3: Mga Open-Source Model sa Foundry Local
 
 ## Abstrak
 
-Alamin kung paano dalhin ang mga modelo mula sa Hugging Face at iba pang open-source na modelo sa Foundry Local. Matutunan ang mga estratehiya sa pagpili, mga workflow para sa kontribusyon sa komunidad, metodolohiya ng paghahambing ng performance, at kung paano palawakin ang Foundry gamit ang custom na pagpaparehistro ng modelo. Ang sesyong ito ay nakatuon sa lingguhang tema ng "Model Mondays" at magbibigay sa iyo ng kakayahang suriin at gamitin ang mga open-source na modelo nang lokal bago ito i-scale sa Azure.
+Alamin kung paano dalhin ang Hugging Face at iba pang open-source na mga modelo sa Foundry Local. Matutunan ang mga estratehiya sa pagpili, mga workflow para sa kontribusyon ng komunidad, metodolohiya ng paghahambing ng performance, at kung paano palawakin ang Foundry gamit ang custom na pagrehistro ng modelo. Ang sesyon na ito ay tumutugma sa lingguhang tema ng "Model Mondays" at magbibigay sa iyo ng kakayahan upang suriin at gamitin ang mga open-source na modelo nang lokal bago ito i-scale sa Azure.
 
-## Mga Layunin sa Pagkatuto
+## Mga Layunin sa Pag-aaral
 
 Sa pagtatapos ng sesyon, magagawa mo ang:
 
-- **Matuklasan at Suriin**: Tukuyin ang mga posibleng modelo (mistral, gemma, qwen, deepseek) gamit ang trade-offs sa kalidad at resources.
-- **I-load at Patakbuhin**: Gamitin ang Foundry Local CLI upang mag-download, mag-cache, at magpatakbo ng mga modelo mula sa komunidad.
-- **Benchmark**: Mag-apply ng pare-parehong latency + token throughput + mga heuristics ng kalidad.
-- **Palawakin**: Magparehistro o mag-adapt ng custom na model wrapper gamit ang mga pattern na compatible sa SDK.
-- **Ihambing**: Gumawa ng mga nakabalangkas na paghahambing para sa mga desisyon sa pagpili ng SLM vs mid-size LLM.
+- **Pagdiskubre at Pagsusuri**: Tukuyin ang mga kandidato na modelo (mistral, gemma, qwen, deepseek) gamit ang trade-offs sa kalidad at resources.
+- **Pag-load at Pagpatakbo**: Gamitin ang Foundry Local CLI upang mag-download, mag-cache, at magpatakbo ng mga modelo mula sa komunidad.
+- **Benchmarking**: Mag-apply ng pare-parehong latency + token throughput + quality heuristics.
+- **Pagpapalawak**: Magrehistro o mag-adapt ng custom na model wrapper na sumusunod sa mga pattern na compatible sa SDK.
+- **Paghahambing**: Gumawa ng structured na paghahambing para sa SLM vs mid-size LLM na mga desisyon sa pagpili.
 
 ## Mga Kinakailangan
 
 - Natapos ang Sessions 1 & 2
 - Python environment na may naka-install na `foundry-local-sdk`
-- Hindi bababa sa 15GB na libreng disk space para sa maraming model caches
-- Opsyonal: Naka-enable na GPU/WebGPU acceleration (`foundry config list`)
+- Hindi bababa sa 15GB na libreng disk space para sa maraming model cache
 
-### Mabilis na Simula sa Cross-Platform Environment
+### Mabilis na Pagsisimula sa Cross-Platform Environment
 
 Windows PowerShell:
 ```powershell
@@ -54,9 +53,9 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Daloy ng Demo (30 minuto)
+## Demo Flow (30 minuto)
 
-### 1. I-load ang Hugging Face Models gamit ang CLI (8 minuto)
+### 1. Pag-load ng Hugging Face Models gamit ang CLI (8 minuto)
 
 ```powershell
 # List catalog entries (filter manually if needed)
@@ -71,7 +70,8 @@ foundry model download qwen2.5-0.5b
 foundry cache list
 ```
 
-### 2. Patakbuhin at Mabilisang Suriin (5 minuto)
+
+### 2. Pagpatakbo at Mabilis na Pagsusuri (5 minuto)
 
 ```powershell
 foundry model run qwen2.5-0.5b
@@ -80,6 +80,7 @@ foundry model run qwen2.5-0.5b --prompt "List three benefits of local inference.
 foundry model run mistral-7b
 foundry model run mistral-7b --prompt "Explain retrieval augmented generation in one paragraph."
 ```
+
 
 ### 3. Benchmark Script (8 minuto)
 
@@ -153,23 +154,24 @@ Patakbuhin:
 python samples/03-oss-models/benchmark_models.py
 ```
 
-### 4. Ihambing ang Performance (5 minuto)
 
-Talakayin ang mga trade-offs: oras ng pag-load, memory footprint (obserbahan ang Task Manager / `nvidia-smi` / OS resource monitor), kalidad ng output laban sa bilis. Gamitin ang Python benchmark script (Session 3) para sa latency at throughput; ulitin pagkatapos i-enable ang GPU acceleration.
+### 4. Paghahambing ng Performance (5 minuto)
 
-### 5. Panimulang Proyekto (4 minuto)
+Talakayin ang trade-offs: oras ng pag-load, memory footprint (obserbahan ang Task Manager / `nvidia-smi` / OS resource monitor), kalidad ng output laban sa bilis. Gamitin ang Python benchmark script (Session 3) para sa latency at throughput; ulitin pagkatapos i-enable ang GPU acceleration.
+
+### 5. Starter Project (4 minuto)
 
 Gumawa ng generator para sa ulat ng paghahambing ng modelo (palawakin ang benchmarking script gamit ang markdown export).
 
-## Panimulang Proyekto: Palawakin ang `03-huggingface-models`
+## Starter Project: Palawakin ang `03-huggingface-models`
 
 Pagandahin ang umiiral na sample sa pamamagitan ng:
 
-1. Pagdaragdag ng benchmark aggregation + output ng CSV/Markdown.
+1. Pagdaragdag ng benchmark aggregation + CSV/Markdown output.
 2. Pagpapatupad ng simpleng qualitative scoring (prompt pair set + manual annotation stub file).
 3. Pagpapakilala ng JSON config (`models.json`) para sa pluggable na listahan ng modelo at prompt set.
 
-## Checklist ng Pagpapatunay
+## Validation Checklist
 
 ```powershell
 foundry cache list
@@ -177,18 +179,20 @@ foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
 
-Lahat ng target na modelo ay dapat lumabas at tumugon sa isang probe chat request.
+Lahat ng target na modelo ay dapat lumitaw at tumugon sa isang probe chat request.
 
-## Halimbawang Scenario at Pagmamapa ng Workshop
+## Sample Scenario at Workshop Mapping
 
 | Workshop Script | Scenario | Layunin | Pinagmulan ng Prompt / Dataset |
 |-----------------|----------|---------|--------------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge platform team na pumipili ng default na SLM para sa embedded summarizer | Gumawa ng paghahambing ng latency + p95 + tokens/sec sa mga posibleng modelo | Inline `PROMPT` var + environment `BENCH_MODELS` list |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge platform team na pumipili ng default na SLM para sa embedded summarizer | Gumawa ng latency + p95 + tokens/sec na paghahambing sa mga kandidato na modelo | Inline `PROMPT` var + environment `BENCH_MODELS` list |
 
-### Naratibo ng Scenario
-Kailangang pumili ang product engineering ng default na magaan na summarization model para sa offline na tampok ng meeting-notes. Sila ay nagsasagawa ng kontroladong deterministic benchmarks (temperature=0) gamit ang nakapirming prompt set (tingnan ang halimbawa sa ibaba) at nangongolekta ng latency + throughput metrics na may at walang GPU acceleration.
+### Narrative ng Scenario
+
+Ang product engineering ay kailangang pumili ng default na lightweight summarization model para sa offline na feature ng meeting-notes. Gumagawa sila ng kontroladong deterministic benchmarks (temperature=0) sa isang fixed prompt set (tingnan ang halimbawa sa ibaba) at nangongolekta ng latency + throughput metrics na may at walang GPU acceleration.
 
 ### Halimbawa ng Prompt Set JSON (maaaring palawakin)
+
 ```json
 [
     "Explain the principle of retrieval augmented generation in 2 sentences.",
@@ -198,22 +202,22 @@ Kailangang pumili ang product engineering ng default na magaan na summarization 
 ]
 ```
 
-I-loop ang bawat prompt sa bawat modelo, kunin ang latency per-prompt upang makuha ang mga distribution metrics at matukoy ang mga outlier.
+I-loop ang bawat prompt sa bawat modelo, kunin ang latency sa bawat prompt upang makuha ang mga distribution metrics at matukoy ang mga outliers.
 
 ## Framework sa Pagpili ng Modelo
 
 | Dimensyon | Sukatan | Bakit Mahalaga |
 |-----------|---------|----------------|
-| Latency   | avg / p95 | Konsistensya ng karanasan ng user |
-| Throughput | tokens/sec | Batch at streaming scalability |
-| Memory    | laki ng residente | Kakayahan ng device at concurrency |
-| Kalidad   | rubric prompts | Angkop para sa gawain |
+| Latency | avg / p95 | Konsistensya ng karanasan ng user |
+| Throughput | tokens/sec | Scalability ng batch at streaming |
+| Memory | resident size | Pagkakasya sa device at concurrency |
+| Kalidad | rubric prompts | Angkop para sa task |
 | Footprint | disk cache | Pamamahagi at mga update |
-| Lisensya  | pahintulot sa paggamit | Pagsunod sa komersyal na patakaran |
+| Lisensya | pahintulot sa paggamit | Pagsunod sa komersyal na regulasyon |
 
 ## Pagpapalawak Gamit ang Custom na Modelo
 
-Pangkalahatang pattern (pseudo):
+High-level na pattern (pseudo):
 
 ```python
 # pseudo_adapter.py (conceptual)
@@ -224,43 +228,43 @@ class CustomModelAdapter:
 # Register with local routing (future extensibility point)
 ```
 
-Konsultahin ang opisyal na repo para sa mga umuusbong na adapter interfaces:
+Konsultahin ang opisyal na repo para sa mga umuusbong na adapter interfaces:  
 https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ## Pag-aayos ng Problema
 
 | Isyu | Sanhi | Solusyon |
 |------|-------|----------|
-| OOM sa mistral-7b | Kulang na RAM/GPU | Itigil ang ibang mga modelo; subukan ang mas maliit na variant |
+| OOM sa mistral-7b | Hindi sapat na RAM/GPU | Itigil ang ibang mga modelo; subukan ang mas maliit na variant |
 | Mabagal na unang tugon | Cold load | Panatilihing mainit gamit ang periodic na magaan na prompt |
-| Pagkaantala sa pag-download | Kawalan ng katatagan sa network | Subukang muli; mag-prefetch sa off-peak na oras |
+| Pagkaantala sa pag-download | Kawalan ng katatagan sa network | Subukang muli; mag-prefetch sa oras na hindi abala |
 
 ## Mga Sanggunian
 
-- Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- Model Mondays: https://aka.ms/model-mondays
-- Hugging Face Model Discovery: https://huggingface.co/models
+- Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python  
+- Model Mondays: https://aka.ms/model-mondays  
+- Hugging Face Model Discovery: https://huggingface.co/models  
 
 ---
 
-**Tagal ng Session**: 30 minuto (+ opsyonal na mas malalim na talakayan)  
+**Tagal ng Sesyon**: 30 minuto (+ opsyonal na mas malalim na talakayan)  
 **Kahirapan**: Intermediate
 
 ### Opsyonal na Mga Pagpapahusay
 
 | Pagpapahusay | Benepisyo | Paano |
 |--------------|-----------|-------|
-| Streaming First-Token Latency | Sinusukat ang nararamdamang responsiveness | Patakbuhin ang benchmark gamit ang `BENCH_STREAM=1` (pinahusay na script sa `Workshop/samples/session03`) |
-| Deterministic Mode | Matatag na paghahambing ng regression | `temperature=0`, nakapirming prompt set, kunin ang mga JSON output sa ilalim ng version control |
-| Quality Rubric Scoring | Nagdadagdag ng qualitative na dimensyon | Panatilihin ang `prompts.json` na may inaasahang aspeto; i-annotate ang mga score (1–5) nang manu-mano o gamit ang pangalawang modelo |
+| Streaming First-Token Latency | Sinusukat ang perceived responsiveness | Patakbuhin ang benchmark gamit ang `BENCH_STREAM=1` (pinahusay na script sa `Workshop/samples/session03`) |
+| Deterministic Mode | Matatag na paghahambing ng regression | `temperature=0`, fixed prompt set, kunin ang JSON outputs sa ilalim ng version control |
+| Quality Rubric Scoring | Nagdaragdag ng qualitative na dimensyon | Panatilihin ang `prompts.json` na may inaasahang aspeto; mag-annotate ng scores (1–5) nang manu-mano o gamit ang pangalawang modelo |
 | CSV / Markdown Export | Maibabahaging ulat | Palawakin ang script upang magsulat ng `benchmark_report.md` na may table at highlights |
-| Model Capability Tags | Tumutulong sa automated na pag-route sa hinaharap | Panatilihin ang `models.json` na may `{alias: {capabilities:[], size_mb:..}}` |
-| Cache Warmup Phase | Binabawasan ang bias ng cold-start | Magpatupad ng isang warm round bago ang timing loop (naipatupad na) |
-| Percentile Accuracy | Matatag na tail latency | Gamitin ang numpy percentile (na sa refactored script na) |
-| Token Cost Approximation | Paghahambing ng gastos | Approx cost = (tokens/sec * avg tokens per request) * energy heuristic |
+| Model Capability Tags | Tinutulungan ang automated routing sa hinaharap | Panatilihin ang `models.json` na may `{alias: {capabilities:[], size_mb:..}}` |
+| Cache Warmup Phase | Binabawasan ang cold-start bias | Magpatakbo ng isang warm round bago ang timing loop (naipatupad na) |
+| Percentile Accuracy | Mas matibay na tail latency | Gamitin ang numpy percentile (na nasa refactored script na) |
+| Token Cost Approximation | Paghahambing sa ekonomiya | Approx cost = (tokens/sec * avg tokens per request) * energy heuristic |
 | Auto-Skipping Failed Models | Resilience sa batch runs | I-wrap ang bawat benchmark sa try/except at markahan ang status field |
 
-#### Minimal na Snippet para sa Markdown Export
+#### Minimal Markdown Export Snippet
 
 ```python
 with open("benchmark_report.md", "w") as f:
@@ -268,6 +272,7 @@ with open("benchmark_report.md", "w") as f:
         for row in summary:
                 f.write(f"|{row['alias']}|{row['latency_avg']:.2f}|{row['latency_p95']:.2f}|{(row.get('tokens_per_sec_avg') or 0):.1f}|\n")
 ```
+
 
 #### Halimbawa ng Deterministic Prompt Set
 
@@ -283,5 +288,7 @@ I-loop ang static na listahan sa halip na random na mga prompt para sa maihahamb
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, pakitandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

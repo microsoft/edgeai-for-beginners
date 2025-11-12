@@ -1,51 +1,51 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d9e354c0182311726dc037a8809524e2",
-  "translation_date": "2025-10-28T20:42:06+00:00",
+  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+  "translation_date": "2025-11-11T21:57:03+00:00",
   "source_file": "Workshop/Session04-CuttingEdgeModels.md",
   "language_code": "hk"
 }
 -->
-# 第四節：探索尖端模型——LLMs、SLMs及設備端推理
+# 第四節：探索尖端模型 – LLMs、SLMs 和設備端推理
 
 ## 摘要
 
-比較大型語言模型（LLMs）與小型語言模型（SLMs）在本地與雲端推理場景中的表現。學習利用ONNX Runtime加速、WebGPU執行及混合RAG體驗的部署模式。包括使用本地模型的Chainlit RAG演示，以及可選的OpenWebUI探索。您將調整WebGPU推理入門範例，並評估Phi與GPT-OSS-20B的能力及成本/性能取捨。
+比較大型語言模型（LLMs）和小型語言模型（SLMs）在本地與雲端推理場景中的表現。學習如何利用 ONNX Runtime 加速、WebGPU 執行以及混合 RAG 體驗進行部署。包括使用本地模型的 Chainlit RAG 演示以及可選的 OpenWebUI 探索。您將調整 WebGPU 推理入門範例，並評估 Phi 與 GPT-OSS-20B 的能力及成本/性能權衡。
 
 ## 學習目標
 
-- **對比** SLM與LLM在延遲、記憶體及質量方面的表現
-- **部署** 使用ONNXRuntime及（支持的情況下）WebGPU的模型
-- **運行** 基於瀏覽器的推理（保護隱私的交互式演示）
-- **整合** 使用本地SLM後端的Chainlit RAG管道
-- **評估** 使用輕量化的質量及成本啟發式方法
+- **對比** SLM 與 LLM 在延遲、記憶體和質量方面的表現
+- **部署** 使用 ONNXRuntime 和（支持的情況下）WebGPU 的模型
+- **運行** 基於瀏覽器的推理（保護隱私的互動演示）
+- **整合** 使用本地 SLM 後端的 Chainlit RAG 管道
+- **評估** 使用輕量化的質量和成本準則
 
 ## 先決條件
 
 - 完成第一至第三節
-- 已安裝`chainlit`（已包含在Module08的`requirements.txt`中）
-- 支持WebGPU的瀏覽器（Windows 11上的最新版本Edge/Chrome）
-- Foundry Local正在運行（`foundry status`）
+- 已安裝 `chainlit`（已包含在 Module08 的 `requirements.txt` 中）
+- 支持 WebGPU 的瀏覽器（Windows 11 上最新版本的 Edge / Chrome）
+- Foundry Local 正在運行（`foundry service status`）
 
 ### 跨平台注意事項
 
-Windows仍然是主要目標環境。對於等待原生二進制文件的macOS開發者：
-1. 在Windows 11虛擬機（Parallels / UTM）或遠程Windows工作站中運行Foundry Local。
-2. 將服務暴露（默認端口5273），並在macOS上設置：
+Windows 仍然是主要目標環境。對於等待原生二進制文件的 macOS 開發者：
+1. 在 Windows 11 虛擬機（Parallels / UTM）或遠程 Windows 工作站中運行 Foundry Local。
+2. 將服務暴露（默認端口 5273），並在 macOS 上設置：
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-3. 使用與之前課程相同的Python虛擬環境步驟。
+3. 使用與之前課程相同的 Python 虛擬環境步驟。
 
-Chainlit安裝（兩個平台均適用）：
+Chainlit 安裝（兩個平台均適用）：
 ```bash
 pip install chainlit
 ```
 
-## 演示流程（30分鐘）
+## 演示流程（30 分鐘）
 
-### 1. 比較Phi（SLM）與GPT-OSS-20B（LLM）（6分鐘）
+### 1. 比較 Phi（SLM）與 GPT-OSS-20B（LLM）（6 分鐘）
 
 ```powershell
 foundry model run phi-4-mini
@@ -62,21 +62,11 @@ foundry model run gpt-oss-20b --prompt "List 5 creative IoT edge AI ideas."
 
 追蹤：響應深度、事實準確性、風格豐富性、延遲。
 
-### 2. ONNX Runtime加速（5分鐘）
+觀察啟用 GPU 與僅使用 CPU 時的吞吐量變化。
 
-```powershell
-foundry config set compute.onnx.enable_gpu true
-# Re-run Python benchmark script for quantitative latency / throughput after enabling GPU
-#   cd Workshop/samples
-#   set BENCH_MODELS=phi-4-mini
-#   python -m session03.benchmark_oss_models
-```
+### 3. 瀏覽器中的 WebGPU 推理（6 分鐘）
 
-觀察啟用GPU與僅使用CPU後的吞吐量變化。
-
-### 3. 瀏覽器中的WebGPU推理（6分鐘）
-
-調整入門範例`04-webgpu-inference`（創建`samples/04-cutting-edge/webgpu_demo.html`）：
+調整入門範例 `04-webgpu-inference`（創建 `samples/04-cutting-edge/webgpu_demo.html`）：
 
 ```html
 <!DOCTYPE html>
@@ -119,9 +109,9 @@ foundry config set compute.onnx.enable_gpu true
 
 在瀏覽器中打開文件；觀察低延遲的本地回傳。
 
-### 4. Chainlit RAG聊天應用（7分鐘）
+### 4. Chainlit RAG 聊天應用（7 分鐘）
 
-最小化的`samples/04-cutting-edge/chainlit_app.py`：
+簡化版 `samples/04-cutting-edge/chainlit_app.py`：
 
 ```python
 #!/usr/bin/env python3
@@ -163,22 +153,22 @@ async def main(message: cl.Message):
 chainlit run samples/04-cutting-edge/chainlit_app.py -w
 ```
 
-### 5. 入門項目：調整`04-webgpu-inference`（6分鐘）
+### 5. 入門項目：調整 `04-webgpu-inference`（6 分鐘）
 
-交付物：
-- 用流式令牌替換佔位符提取邏輯（啟用`stream=True`端點變體後使用）
-- 添加延遲圖表（客戶端）以切換phi與gpt-oss-20b
-- 嵌入RAG上下文（用於參考文檔的文本框）
+交付成果：
+- 替換佔位符抓取邏輯為流式令牌（啟用後使用 `stream=True` 端點變體）
+- 添加延遲圖表（客戶端）以切換 phi 與 gpt-oss-20b
+- 嵌入 RAG 上下文（參考文檔的文本框）
 
-## 評估啟發式方法
+## 評估準則
 
 | 類別 | Phi-4-mini | GPT-OSS-20B | 觀察 |
 |------|------------|-------------|------|
-| 延遲（冷啟動） | 快速 | 較慢 | SLM啟動速度快 |
+| 延遲（冷啟動） | 快速 | 較慢 | SLM 啟動速度快 |
 | 記憶體 | 低 | 高 | 設備可行性 |
-| 上下文遵守 | 良好 | 強 | 較大的模型可能更詳細 |
-| 成本（本地） | 最低 | 較高（資源） | 能源/時間取捨 |
-| 最佳使用場景 | 邊緣應用 | 深度推理 | 可行的混合管道 |
+| 上下文遵循 | 良好 | 強 | 大型模型可能更冗長 |
+| 成本（本地） | 最低 | 較高（資源） | 能源/時間權衡 |
+| 最佳使用場景 | 邊緣應用 | 深度推理 | 可實現混合管道 |
 
 ## 驗證環境
 
@@ -193,37 +183,37 @@ foundry model list
 #   python -m session03.benchmark_oss_models
 ```
 
-## 疑難排解
+## 故障排除
 
 | 症狀 | 原因 | 措施 |
 |------|------|------|
-| 網頁提取失敗 | CORS或服務中斷 | 使用`curl`驗證端點；如有需要啟用CORS代理 |
-| Chainlit空白 | 環境未激活 | 激活虛擬環境並重新安裝依賴 |
+| 網頁抓取失敗 | CORS 或服務中斷 | 使用 `curl` 驗證端點；如有需要啟用 CORS 代理 |
+| Chainlit 空白 | 環境未激活 | 激活 venv 並重新安裝依賴 |
 | 高延遲 | 模型剛加載 | 使用小提示序列進行預熱 |
 
 ## 參考資料
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- Chainlit文檔: https://docs.chainlit.io
-- RAG評估（Ragas）: https://docs.ragas.io
+- Chainlit 文檔: https://docs.chainlit.io
+- RAG 評估（Ragas）: https://docs.ragas.io
 
 ---
 
-**課程時長**: 30分鐘  
+**課程時長**: 30 分鐘  
 **難度**: 高級
 
-## 示例場景及工作坊映射
+## 示例場景與工作坊映射
 
 | 工作坊產物 | 場景 | 目標 | 數據/提示來源 |
-|------------|------|------|---------------|
-| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | 架構團隊評估SLM與LLM用於高層摘要生成 | 量化延遲及令牌使用差異 | 單一`COMPARE_PROMPT`環境變量 |
-| `chainlit_app.py`（RAG演示） | 內部知識助手原型 | 用最少的詞彙檢索支持簡短回答 | 文件中的內嵌`DOCS`列表 |
-| `webgpu_demo.html` | 未來設備端瀏覽器推理預覽 | 展示低延遲本地回傳及用戶體驗敘述 | 僅限即時用戶提示 |
+|------------|------|------|--------------|
+| `samples/session04/model_compare.py` / `notebooks/session04_model_compare.ipynb` | 架構團隊評估 SLM 與 LLM 用於高管摘要生成 | 量化延遲與令牌使用差異 | 單一 `COMPARE_PROMPT` 環境變量 |
+| `chainlit_app.py`（RAG 演示） | 內部知識助手原型 | 使用最少的詞彙檢索生成簡短答案 | 文件中的內嵌 `DOCS` 列表 |
+| `webgpu_demo.html` | 未來設備端瀏覽器推理預覽 | 展示低延遲的本地回傳與用戶體驗敘述 | 僅限即時用戶提示 |
 
 ### 場景敘述
-產品部門希望開發一個高層簡報生成器。一個輕量化的SLM（phi‑4‑mini）負責草擬摘要；較大的LLM（gpt‑oss‑20b）僅精煉高優先級報告。課程腳本捕捉了實際延遲及令牌指標以證明混合設計的合理性，而Chainlit演示則展示了如何通過基於事實的檢索保持小型模型回答的準確性。WebGPU概念頁提供了瀏覽器加速成熟後完全客戶端處理的願景路徑。
+產品部門希望有一個高管簡報生成器。一個輕量化的 SLM（phi-4-mini）草擬摘要；一個更大的 LLM（gpt-oss-20b）可能僅用於精煉高優先級報告。課程腳本捕捉了實際延遲和令牌指標，以證明混合設計的合理性，而 Chainlit 演示則展示了如何通過基於事實的檢索保持小型模型答案的準確性。WebGPU 概念頁提供了一個完全客戶端處理的未來路徑，當瀏覽器加速成熟時。
 
-### 最小RAG上下文（Chainlit）
+### 最小 RAG 上下文（Chainlit）
 ```python
 DOCS = [
   "Foundry Local enables local model execution with OpenAI-compatible APIs.",
@@ -245,18 +235,18 @@ else:
 
 ### 可選增強功能
 
-| 重點 | 增強功能 | 原因 | 實施提示 |
-|------|----------|------|----------|
-| 比較指標 | 追蹤令牌使用及首令牌延遲 | 全面性能視圖 | 使用增強的基準腳本（第三節）及`BENCH_STREAM=1` |
-| 混合管道 | SLM草擬→LLM精煉 | 降低延遲及成本 | 使用phi-4-mini生成，使用gpt-oss-20b精煉摘要 |
-| 流式UI | Chainlit中的更佳用戶體驗 | 增量反饋 | 一旦本地流式功能開放，使用`stream=True`；累積塊 |
-| WebGPU緩存 | 更快的JS初始化 | 降低重編譯開銷 | 緩存編譯的著色器工件（未來運行時功能） |
-| 確定性QA集 | 公平的模型比較 | 消除變異性 | 固定提示列表及評估運行的`temperature=0` |
-| 輸出評分 | 結構化質量視角 | 超越軼事 | 簡單的評分標準：連貫性/事實性/簡潔性（1–5分） |
-| 能源/資源註釋 | 課堂討論 | 展示取捨 | 使用操作系統監控（`foundry system info`，任務管理器，`nvidia-smi`）及基準腳本輸出 |
-| 成本模擬 | 雲端前的論證 | 計劃擴展 | 將令牌映射到假設的雲端定價以進行總擁有成本敘述 |
-| 延遲分解 | 識別瓶頸 | 目標優化 | 測量提示準備、請求發送、首令牌、完整完成 |
-| RAG + LLM後備 | 質量安全網 | 改善困難查詢 | 如果SLM回答長度低於閾值或信心低→升級 |
+| 重點 | 增強 | 原因 | 實施提示 |
+|------|------|------|---------|
+| 比較指標 | 追蹤令牌使用與首令牌延遲 | 全面性能視圖 | 使用增強的基準腳本（第三節）並設置 `BENCH_STREAM=1` |
+| 混合管道 | SLM 草擬 → LLM 精煉 | 降低延遲與成本 | 使用 phi-4-mini 生成，使用 gpt-oss-20b 精煉摘要 |
+| 流式 UI | Chainlit 中更好的用戶體驗 | 增量反饋 | 一旦本地流式推理啟用，使用 `stream=True`；累積塊 |
+| WebGPU 緩存 | 更快的 JS 初始化 | 降低重新編譯開銷 | 緩存編譯的著色器工件（未來運行時功能） |
+| 確定性 QA 集 | 公平的模型比較 | 消除變異性 | 固定提示列表並設置 `temperature=0` 進行評估運行 |
+| 輸出評分 | 結構化質量視角 | 超越軼事 | 簡單的評分標準：連貫性/事實性/簡潔性（1–5） |
+| 能源/資源筆記 | 課堂討論 | 展示權衡 | 使用操作系統監控（任務管理器，`nvidia-smi`）+ 基準腳本輸出 |
+| 成本模擬 | 雲端前的論證 | 計劃擴展 | 將令牌映射到假設的雲端定價以構建 TCO 敘述 |
+| 延遲分解 | 識別瓶頸 | 針對優化 | 測量提示準備、請求發送、首令牌、完整完成 |
+| RAG + LLM 回退 | 質量安全網 | 改善困難查詢 | 如果 SLM 答案長度低於閾值或信心低 → 升級 |
 
 #### 示例混合草擬/精煉模式
 
@@ -276,9 +266,11 @@ full_ms = (time.time()-t1)*1000
 print({"prep_ms": prep_ms, "full_gen_ms": full_ms})
 ```
 
-使用一致的測量框架跨模型進行公平比較。
+在模型間使用一致的測量框架以進行公平比較。
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責聲明**：  
 此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

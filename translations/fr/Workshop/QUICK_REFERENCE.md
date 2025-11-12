@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T20:03:18+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T21:21:25+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "fr"
 }
@@ -37,10 +37,10 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 01 | `chat_bootstrap.py` | Chat basique + streaming | ~30s |
 | 02 | `rag_pipeline.py` | RAG avec embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | Évaluation RAG | ~60s |
-| 03 | `benchmark_oss_models.py` | Benchmarking de modèles | ~2m |
+| 03 | `benchmark_oss_models.py` | Benchmarking des modèles | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Système multi-agents | ~60s |
-| 06 | `models_router.py` | Routage d'intentions | ~45s |
+| 06 | `models_router.py` | Routage d'intention | ~45s |
 | 06 | `models_pipeline.py` | Pipeline multi-étapes | ~60s |
 
 ---
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **Docs SDK** : https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Référence rapide** : `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Résumé des mises à jour** : `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Notes de migration** : `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Avertissement** :  
 Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

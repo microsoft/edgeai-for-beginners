@@ -1,36 +1,35 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-09T21:31:19+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-12T00:11:03+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "cs"
 }
 -->
-# Session 3: Open-Source Modely ve Foundry Local
+# Sezení 3: Open-Source modely ve Foundry Local
 
 ## Abstrakt
 
-Zjistěte, jak integrovat modely z Hugging Face a další open-source modely do Foundry Local. Naučte se strategie výběru, pracovní postupy pro přispívání do komunity, metodiku porovnávání výkonu a jak rozšířit Foundry pomocí registrace vlastních modelů. Tato lekce se váže na týdenní témata "Model Mondays" a poskytne vám nástroje pro hodnocení a provozování open-source modelů lokálně před jejich škálováním na Azure.
+Zjistěte, jak integrovat modely Hugging Face a další open-source modely do Foundry Local. Naučte se strategie výběru, pracovní postupy pro přispívání do komunity, metodologii porovnávání výkonu a jak rozšířit Foundry pomocí registrace vlastních modelů. Toto sezení se váže na týdenní témata "Model Mondays" a poskytne vám nástroje pro hodnocení a provozování open-source modelů lokálně před jejich škálováním na Azure.
 
-## Výukové cíle
+## Cíle učení
 
 Na konci budete schopni:
 
-- **Objevit & Hodnotit**: Identifikovat vhodné modely (mistral, gemma, qwen, deepseek) na základě kompromisů mezi kvalitou a zdroji.
-- **Načíst & Spustit**: Použít Foundry Local CLI k stažení, uložení do cache a spuštění komunitních modelů.
-- **Benchmarkovat**: Aplikovat konzistentní heuristiky pro latenci, průchodnost tokenů a kvalitu.
+- **Objevit & Hodnotit**: Identifikovat kandidátní modely (mistral, gemma, qwen, deepseek) na základě kompromisu mezi kvalitou a zdroji.
+- **Načíst & Spustit**: Použít Foundry Local CLI k stažení, uložení do mezipaměti a spuštění komunitních modelů.
+- **Benchmarkovat**: Aplikovat konzistentní heuristiky latence + průchodnosti tokenů + kvality.
 - **Rozšířit**: Registrovat nebo přizpůsobit vlastní obal modelu podle vzorů kompatibilních se SDK.
 - **Porovnat**: Vytvořit strukturované porovnání pro rozhodování mezi SLM a středně velkými LLM.
 
 ## Předpoklady
 
-- Dokončené lekce 1 a 2
+- Dokončené sezení 1 a 2
 - Python prostředí s nainstalovaným `foundry-local-sdk`
-- Minimálně 15 GB volného místa na disku pro cache více modelů
-- Volitelné: Aktivované GPU/WebGPU zrychlení (`foundry config list`)
+- Minimálně 15 GB volného místa na disku pro mezipaměti modelů
 
-### Rychlý start pro více platforem
+### Rychlý start pro multiplatformní prostředí
 
 Windows PowerShell:
 ```powershell
@@ -54,9 +53,9 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Demo průběh (30 min)
+## Průběh ukázky (30 min)
 
-### 1. Načtení modelů z Hugging Face přes CLI (8 min)
+### 1. Načtení modelů Hugging Face přes CLI (8 min)
 
 ```powershell
 # List catalog entries (filter manually if needed)
@@ -158,7 +157,7 @@ python samples/03-oss-models/benchmark_models.py
 
 ### 4. Porovnání výkonu (5 min)
 
-Diskutujte kompromisy: čas načítání, paměťová náročnost (pozorujte Task Manager / `nvidia-smi` / monitor zdrojů OS), kvalita výstupu vs rychlost. Použijte Python benchmarkovací skript (lekce 3) pro latenci a průchodnost; opakujte po aktivaci GPU zrychlení.
+Diskutujte kompromisy: doba načítání, paměťová náročnost (pozorujte Správce úloh / `nvidia-smi` / monitor zdrojů OS), kvalita výstupu vs rychlost. Použijte Python benchmarkovací skript (Sezení 3) pro latenci & průchodnost; opakujte po zapnutí akcelerace GPU.
 
 ### 5. Startovací projekt (4 min)
 
@@ -166,10 +165,10 @@ Vytvořte generátor zpráv pro porovnání modelů (rozšiřte benchmarkovací 
 
 ## Startovací projekt: Rozšíření `03-huggingface-models`
 
-Vylepšete existující ukázku:
+Vylepšete existující vzorek:
 
 1. Přidáním agregace benchmarků + výstupu do CSV/Markdown.
-2. Implementací jednoduchého kvalitativního hodnocení (sada promptů + manuální anotace).
+2. Implementací jednoduchého kvalitativního hodnocení (sada dvojic promptů + soubor pro manuální anotaci).
 3. Zavedením JSON konfigurace (`models.json`) pro seznam modelů a sadu promptů.
 
 ## Kontrolní seznam validace
@@ -180,20 +179,18 @@ foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
 
-Všechny cílové modely by se měly objevit a reagovat na testovací chat požadavek.
+Všechny cílové modely by se měly objevit a reagovat na požadavek na chat.
 
-## Ukázkový scénář & mapování workshopu
+## Ukázkový scénář & Mapování workshopu
 
 | Skript workshopu | Scénář | Cíl | Zdroj promptů / datasetu |
 |------------------|--------|-----|--------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Tým pro platformu Edge vybírá výchozí SLM pro vestavěný sumarizátor | Vytvořit porovnání latence + p95 + tokenů/sec mezi kandidátními modely | Inline `PROMPT` var + seznam `BENCH_MODELS` prostředí |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Tým platformy Edge vybírá výchozí SLM pro vestavěný sumarizátor | Vytvořit porovnání latence + p95 + tokenů/sec mezi kandidátními modely | Inline `PROMPT` var + seznam `BENCH_MODELS` prostředí |
 
 ### Narativ scénáře
-
-Produktový tým musí vybrat výchozí lehký sumarizační model pro offline funkci poznámek ze schůzek. Provádějí kontrolované deterministické benchmarky (temperature=0) na pevné sadě promptů (viz příklad níže) a sbírají metriky latence + průchodnosti s a bez GPU zrychlení.
+Produktový tým musí vybrat výchozí lehký sumarizační model pro offline funkci poznámek ze schůzek. Provádějí kontrolované deterministické benchmarky (teplota=0) na pevné sadě promptů (viz příklad níže) a sbírají metriky latence & průchodnosti s a bez akcelerace GPU.
 
 ### Příklad JSON sady promptů (rozšiřitelný)
-
 ```json
 [
     "Explain the principle of retrieval augmented generation in 2 sentences.",
@@ -210,13 +207,13 @@ Projděte každý prompt pro každý model, zachyťte latenci na prompt a odvoď
 | Dimenze | Metrika | Proč je důležitá |
 |---------|---------|------------------|
 | Latence | průměr / p95 | Konzistence uživatelského zážitku |
-| Průchodnost | tokeny/sec | Škálovatelnost dávkového a streamovaného zpracování |
+| Průchodnost | tokeny/sec | Škálovatelnost dávkového & streamovacího režimu |
 | Paměť | rezidentní velikost | Vhodnost pro zařízení & souběžnost |
 | Kvalita | promptová kritéria | Vhodnost pro úkol |
-| Stopa | cache na disku | Distribuce & aktualizace |
+| Stopa | mezipaměť na disku | Distribuce & aktualizace |
 | Licence | povolení k použití | Soulad s komerčními podmínkami |
 
-## Rozšíření o vlastní model
+## Rozšíření s vlastním modelem
 
 Vysoká úroveň vzoru (pseudo):
 
@@ -229,7 +226,7 @@ class CustomModelAdapter:
 # Register with local routing (future extensibility point)
 ```
 
-Konzultujte oficiální repozitář pro vývoj adaptérů:
+Konzultujte oficiální repozitář pro vyvíjející se rozhraní adaptérů:
 https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ## Řešení problémů
@@ -237,18 +234,18 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 | Problém | Příčina | Řešení |
 |---------|---------|--------|
 | OOM na mistral-7b | Nedostatečná RAM/GPU | Zastavte jiné modely; zkuste menší variantu |
-| Pomalejší první odpověď | Studené načítání | Udržujte aktivní pomocí periodického lehkého promptu |
+| Pomalejší první odpověď | Studené načítání | Udržujte v teple pomocí periodického lehkého promptu |
 | Zaseknutí stahování | Nestabilita sítě | Opakujte; přednačtěte během mimo špičku |
 
 ## Reference
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Model Mondays: https://aka.ms/model-mondays
-- Hugging Face Model Discovery: https://huggingface.co/models
+- Objevování modelů Hugging Face: https://huggingface.co/models
 
 ---
 
-**Délka lekce**: 30 min (+ volitelný hlubší ponor)  
+**Délka sezení**: 30 min (+ volitelný hlubší ponor)  
 **Obtížnost**: Střední
 
 ### Volitelná vylepšení
@@ -256,16 +253,16 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 | Vylepšení | Přínos | Jak |
 |-----------|--------|-----|
 | Latence prvního tokenu při streamování | Měří vnímanou odezvu | Spusťte benchmark s `BENCH_STREAM=1` (vylepšený skript v `Workshop/samples/session03`) |
-| Deterministický režim | Stabilní regresní porovnání | `temperature=0`, pevná sada promptů, zachyťte JSON výstupy pod verzovací kontrolou |
+| Deterministický režim | Stabilní regresní porovnání | `teplota=0`, pevná sada promptů, zachyťte JSON výstupy pod verzovací kontrolou |
 | Hodnocení podle kvalitativních kritérií | Přidává kvalitativní rozměr | Udržujte `prompts.json` s očekávanými aspekty; anotujte skóre (1–5) ručně nebo pomocí sekundárního modelu |
-| Export do CSV / Markdown | Sdílitelná zpráva | Rozšiřte skript o zápis `benchmark_report.md` s tabulkou & zvýrazněními |
-| Tagy schopností modelu | Pomáhá automatizovanému směrování později | Udržujte `models.json` s `{alias: {capabilities:[], size_mb:..}}` |
-| Fáze zahřátí cache | Snižuje zkreslení studeného startu | Proveďte jedno zahřívací kolo před časovací smyčkou (již implementováno) |
+| Export do CSV / Markdown | Sdílitelná zpráva | Rozšiřte skript pro zápis `benchmark_report.md` s tabulkou & zvýrazněními |
+| Štítky schopností modelu | Pomáhá automatizovanému směrování později | Udržujte `models.json` s `{alias: {capabilities:[], size_mb:..}}` |
+| Fáze zahřátí mezipaměti | Snižuje zkreslení studeného startu | Proveďte jedno zahřívací kolo před časovací smyčkou (již implementováno) |
 | Percentilová přesnost | Robustní latence na konci | Použijte numpy percentil (již v refaktorovaném skriptu) |
 | Odhad nákladů na tokeny | Ekonomické porovnání | Přibližné náklady = (tokeny/sec * průměrný počet tokenů na požadavek) * energetická heuristika |
 | Automatické přeskočení neúspěšných modelů | Odolnost při dávkovém spuštění | Zabalte každý benchmark do try/except a označte stavové pole |
 
-#### Minimální snippet pro export do Markdown
+#### Minimální úryvek pro export do Markdown
 
 ```python
 with open("benchmark_report.md", "w") as f:
@@ -285,9 +282,11 @@ with open("benchmark_report.md", "w") as f:
 ]
 ```
 
-Projděte statický seznam místo náhodných promptů pro srovnatelné metriky napříč verzemi.
+Projděte statický seznam místo náhodných promptů pro srovnatelné metriky napříč commity.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

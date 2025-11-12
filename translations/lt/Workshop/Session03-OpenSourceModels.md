@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-09T21:32:01+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-12T00:53:48+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "lt"
 }
@@ -11,24 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Santrauka
 
-Sužinokite, kaip integruoti Hugging Face ir kitus atvirojo kodo modelius į Foundry Local. Išmokite modelių atrankos strategijas, bendruomenės indėlio darbo eigas, našumo palyginimo metodiką ir kaip praplėsti Foundry naudojant pasirinktinius modelių registravimus. Ši sesija atitinka savaitinius „Modelių pirmadienio“ tyrinėjimo temas ir suteikia galimybę įvertinti bei pritaikyti atvirojo kodo modelius vietoje prieš juos mastelį perkeliant į Azure.
+Sužinokite, kaip integruoti Hugging Face ir kitus atvirojo kodo modelius į Foundry Local. Išmokite modelių atrankos strategijas, bendruomenės indėlio darbo eigas, našumo palyginimo metodiką ir kaip praplėsti Foundry su individualiais modelių registravimais. Ši sesija atitinka savaitinius „Modelių pirmadienio“ tyrinėjimo temas ir suteikia galimybę įvertinti bei pritaikyti atvirojo kodo modelius vietoje prieš pereinant prie Azure.
 
 ## Mokymosi tikslai
 
-Sesijos pabaigoje galėsite:
+Po sesijos galėsite:
 
-- **Atrasti ir įvertinti**: Identifikuoti kandidatus modelius (mistral, gemma, qwen, deepseek) naudojant kokybės ir resursų kompromisus.
+- **Atrasti ir įvertinti**: Identifikuoti potencialius modelius (mistral, gemma, qwen, deepseek) naudojant kokybės ir resursų kompromisus.
 - **Įkelti ir paleisti**: Naudoti Foundry Local CLI atsisiųsti, talpinti ir paleisti bendruomenės modelius.
-- **Testuoti našumą**: Taikyti nuoseklius vėlinimo + žetonų pralaidumo + kokybės vertinimo kriterijus.
-- **Praplėsti**: Registruoti arba pritaikyti pasirinktą modelio apvalkalą, laikantis SDK suderinamų šablonų.
+- **Testuoti**: Taikyti nuoseklius vėlinimo, žetonų pralaidumo ir kokybės vertinimo kriterijus.
+- **Praplėsti**: Registruoti arba pritaikyti individualų modelio apvalkalą pagal SDK suderinamus šablonus.
 - **Palyginti**: Sukurti struktūrizuotus palyginimus SLM ir vidutinio dydžio LLM atrankos sprendimams.
 
 ## Reikalavimai
 
-- Užbaigtos 1 ir 2 sesijos
+- Baigtos 1 ir 2 sesijos
 - Python aplinka su įdiegtu `foundry-local-sdk`
-- Bent 15 GB laisvos vietos diske keliems modelių talpykloms
-- Pasirinktinai: Įjungtas GPU/WebGPU pagreitinimas (`foundry config list`)
+- Bent 15GB laisvos vietos diske keliems modelių talpykloms
 
 ### Greitas startas įvairiose platformose
 
@@ -56,7 +55,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Demonstracijos eiga (30 min)
 
-### 1. Įkelkite Hugging Face modelius per CLI (8 min)
+### 1. Hugging Face modelių įkėlimas per CLI (8 min)
 
 ```powershell
 # List catalog entries (filter manually if needed)
@@ -72,7 +71,7 @@ foundry cache list
 ```
 
 
-### 2. Paleiskite ir greitai patikrinkite (5 min)
+### 2. Paleidimas ir greitas patikrinimas (5 min)
 
 ```powershell
 foundry model run qwen2.5-0.5b
@@ -156,9 +155,9 @@ python samples/03-oss-models/benchmark_models.py
 ```
 
 
-### 4. Palyginkite našumą (5 min)
+### 4. Našumo palyginimas (5 min)
 
-Diskutuokite apie kompromisus: įkėlimo laiką, atminties naudojimą (stebėkite Task Manager / `nvidia-smi` / OS resursų monitorių), išvesties kokybę ir greitį. Naudokite Python testavimo scenarijų (3 sesija) vėlinimo ir pralaidumo matavimui; pakartokite įjungus GPU pagreitinimą.
+Aptarkite kompromisus: įkėlimo laiką, atminties naudojimą (stebėkite Task Manager / `nvidia-smi` / OS resursų monitorių), išvesties kokybę ir greitį. Naudokite Python testavimo scenarijų (3 sesija) vėlinimo ir pralaidumo matavimui; pakartokite įjungus GPU pagreitį.
 
 ### 5. Pradinis projektas (4 min)
 
@@ -180,17 +179,17 @@ foundry model run qwen2.5-0.5b
 curl http://localhost:5273/v1/models
 ```
 
-Visi tiksliniai modeliai turėtų pasirodyti ir atsakyti į testinį pokalbio užklausą.
+Visi tiksliniai modeliai turėtų pasirodyti ir atsakyti į pokalbio užklausą.
 
 ## Pavyzdinė situacija ir dirbtuvių susiejimas
 
 | Dirbtuvių scenarijus | Situacija | Tikslas | Pateikčių / duomenų šaltinis |
 |----------------------|-----------|---------|-----------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge platformos komanda, renkantis numatytąjį SLM įterptam santraukų generatoriui | Sukurti vėlinimo + p95 + žetonų per sekundę palyginimą tarp kandidatų modelių | Vidinis `PROMPT` kintamasis + aplinkos `BENCH_MODELS` sąrašas |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Edge platformos komanda renkasi numatytąjį SLM įterptam santraukų generatoriui | Sukurti vėlinimo + p95 + žetonų per sekundę palyginimą tarp kandidatų modelių | Vidinis `PROMPT` kintamasis + aplinkos `BENCH_MODELS` sąrašas |
 
-### Situacijos pasakojimas
+### Situacijos aprašymas
 
-Produktų inžinerijos komanda turi pasirinkti numatytąjį lengvą santraukų modelį neprisijungus veikiančiai susitikimų užrašų funkcijai. Jie vykdo kontroliuojamus deterministinius testus (temperature=0) pagal fiksuotą pateikčių rinkinį (žr. pavyzdį žemiau) ir renka vėlinimo + pralaidumo metrikas su GPU pagreitinimu ir be jo.
+Produktų inžinerijos komanda turi pasirinkti numatytąjį lengvą santraukų modelį offline susitikimų užrašų funkcijai. Jie vykdo kontroliuojamus deterministinius testus (temperature=0) pagal fiksuotą pateikčių rinkinį (žr. pavyzdį žemiau) ir renka vėlinimo + pralaidumo metrikas su GPU pagreičiu ir be jo.
 
 ### Pavyzdinis pateikčių rinkinys JSON (plečiamas)
 
@@ -203,20 +202,20 @@ Produktų inžinerijos komanda turi pasirinkti numatytąjį lengvą santraukų m
 ]
 ```
 
-Kartokite kiekvieną pateiktį kiekvienam modeliui, fiksuokite vėlinimą kiekvienai pateikčiai, kad gautumėte pasiskirstymo metrikas ir aptiktumėte anomalijas.
+Kartokite kiekvieną pateiktį kiekvienam modeliui, fiksuokite vėlinimą per pateiktį, kad gautumėte pasiskirstymo metrikas ir aptiktumėte anomalijas.
 
-## Modelių atrankos struktūra
+## Modelių atrankos sistema
 
 | Dimensija | Metrika | Kodėl tai svarbu |
 |-----------|---------|------------------|
 | Vėlinimas | vidurkis / p95 | Vartotojo patirties nuoseklumas |
-| Pralaidumas | žetonai per sekundę | Grupės ir srautinio mastelio galimybės |
+| Pralaidumas | žetonai per sekundę | Grupės ir srautinio apdorojimo mastelis |
 | Atmintis | rezidentinis dydis | Įrenginio tinkamumas ir konkurencija |
 | Kokybė | pateikčių rubrika | Užduoties tinkamumas |
 | Pėdsakas | disko talpykla | Platinimas ir atnaujinimai |
-| Licencija | naudojimo leidimas | Komercinis suderinamumas |
+| Licencija | naudojimo leidimas | Komercinis atitikimas |
 
-## Praplėtimas su pasirinktiniu modeliu
+## Praplėtimas su individualiu modeliu
 
 Aukšto lygio šablonas (pseudo):
 
@@ -229,7 +228,7 @@ class CustomModelAdapter:
 # Register with local routing (future extensibility point)
 ```
 
-Konsultuokitės su oficialiu repozitoriumi dėl besikeičiančių adapterio sąsajų:
+Konsultuokitės su oficialiu repozitoriumi dėl besivystančių adapterių sąsajų:
 https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ## Trikčių šalinimas
@@ -237,7 +236,7 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 | Problema | Priežastis | Sprendimas |
 |----------|------------|------------|
 | OOM su mistral-7b | Nepakankama RAM/GPU | Sustabdykite kitus modelius; bandykite mažesnį variantą |
-| Lėtas pirmasis atsakas | Šaltas įkrovimas | Palaikykite aktyvumą su periodine lengva pateiktimi |
+| Lėtas pirmasis atsakas | Šaltas įkėlimas | Palaikykite šiltą su periodine lengva užklausa |
 | Atsisiuntimas stringa | Tinklo nestabilumas | Bandykite iš naujo; iš anksto atsisiųskite ne piko metu |
 
 ## Nuorodos
@@ -248,22 +247,22 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ---
 
-**Sesijos trukmė**: 30 min (+ pasirinktinis giluminis tyrimas)  
+**Sesijos trukmė**: 30 min (+ pasirenkamas giluminis tyrimas)  
 **Sudėtingumas**: Vidutinis
 
-### Pasirinktiniai patobulinimai
+### Pasirenkami patobulinimai
 
-| Patobulinimas | Privalumas | Kaip |
-|---------------|------------|------|
-| Srautinio pirmojo žetono vėlinimas | Matuoja suvokiamą atsakymo greitį | Paleiskite testą su `BENCH_STREAM=1` (patobulintas scenarijus `Workshop/samples/session03`) |
-| Deterministinis režimas | Stabilūs regresijos palyginimai | `temperature=0`, fiksuotas pateikčių rinkinys, fiksuokite JSON išvestis pagal versijų kontrolę |
-| Kokybės rubrikos vertinimas | Prideda kokybinį matmenį | Palaikykite `prompts.json` su numatomais aspektais; rankiniu būdu arba per antrinį modelį pažymėkite balus (1–5) |
+| Patobulinimas | Nauda | Kaip |
+|---------------|-------|------|
+| Srautinio pirmojo žetono vėlinimas | Matavimas suvokiamo atsako greičio | Vykdykite testą su `BENCH_STREAM=1` (patobulintas scenarijus `Workshop/samples/session03`) |
+| Deterministinis režimas | Stabilūs regresijos palyginimai | `temperature=0`, fiksuotas pateikčių rinkinys, fiksuokite JSON išvestis versijų kontrolėje |
+| Kokybės rubrikos vertinimas | Prideda kokybinį matmenį | Tvarkykite `prompts.json` su numatomais aspektais; rankiniu būdu arba antriniu modeliu pažymėkite balus (1–5) |
 | CSV / Markdown eksportas | Dalijimosi ataskaita | Praplėskite scenarijų, kad rašytų `benchmark_report.md` su lentele ir akcentais |
-| Modelio galimybių žymės | Padeda automatizuotam maršrutizavimui vėliau | Palaikykite `models.json` su `{alias: {capabilities:[], size_mb:..}}` |
-| Talpyklos šildymo fazė | Sumažina šalto starto šališkumą | Atlikite vieną šildymo etapą prieš laiko matavimo ciklą (jau įgyvendinta) |
-| Procentinė tikslumo analizė | Patikimas vėlinimo uodegos matavimas | Naudokite numpy procentilę (jau refaktorizuotame scenarijuje) |
-| Žetono kainos apskaičiavimas | Ekonominis palyginimas | Apytikslė kaina = (žetonai per sekundę * vidutinis žetonų skaičius per užklausą) * energijos heuristika |
-| Automatinis nepavykusių modelių praleidimas | Atsparumas grupės paleidimuose | Apgaubkite kiekvieną testą try/except ir pažymėkite būsenos lauką |
+| Modelio galimybių žymos | Padeda automatizuotam maršrutizavimui vėliau | Tvarkykite `models.json` su `{alias: {capabilities:[], size_mb:..}}` |
+| Talpyklos pašildymo fazė | Sumažina šalto starto šališkumą | Atlikite vieną šildymo etapą prieš laiko matavimo ciklą (jau įgyvendinta) |
+| Procentinis tikslumas | Patikimas vėlinimo uodegos matavimas | Naudokite numpy procentilę (jau perdirbtame scenarijuje) |
+| Žetonų kainos apskaičiavimas | Ekonominis palyginimas | Apytikslė kaina = (žetonai per sekundę * vidutinis žetonų skaičius per užklausą) * energijos sąnaudų heuristika |
+| Automatinis nepavykusių modelių praleidimas | Atsparumas grupiniams testams | Apgaubkite kiekvieną testą try/except ir pažymėkite būsenos lauką |
 
 #### Minimalus Markdown eksporto fragmentas
 
@@ -285,9 +284,11 @@ with open("benchmark_report.md", "w") as f:
 ]
 ```
 
-Kartokite statinį sąrašą vietoj atsitiktinių pateikčių, kad gautumėte palyginamus metrikos duomenis tarp įsipareigojimų.
+Kartokite statinį sąrašą vietoj atsitiktinių pateikčių, kad gautumėte palyginamus metrikos duomenis per kelis įsipareigojimus.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus aiškinimus, kylančius dėl šio vertimo naudojimo.
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, atsiradusius naudojant šį vertimą.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

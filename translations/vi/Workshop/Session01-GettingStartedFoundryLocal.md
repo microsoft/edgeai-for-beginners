@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "85fa559f498492b79de04e391c33687b",
-  "translation_date": "2025-10-28T22:32:38+00:00",
+  "original_hash": "8c30436578b1bd604c48233ecdd39701",
+  "translation_date": "2025-11-11T23:40:34+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "vi"
 }
@@ -11,458 +11,421 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tóm tắt
 
-Khởi đầu hành trình của bạn với Foundry Local bằng cách cài đặt và cấu hình trên Windows 11. Tìm hiểu cách thiết lập CLI, kích hoạt tăng tốc phần cứng và lưu trữ mô hình để suy luận nhanh tại chỗ. Buổi thực hành này hướng dẫn cách chạy các mô hình như Phi, Qwen, DeepSeek và GPT-OSS-20B bằng các lệnh CLI có thể tái sử dụng.
+Học cách cài đặt, cấu hình và chạy các mô hình AI đầu tiên của bạn bằng Microsoft Foundry Local. Buổi thực hành này cung cấp hướng dẫn từng bước về suy luận cục bộ, từ cài đặt đến xây dựng ứng dụng chat đầu tiên của bạn sử dụng các mô hình như Phi-4, Qwen và DeepSeek.
 
 ## Mục tiêu học tập
 
 Sau buổi học này, bạn sẽ:
 
-- **Cài đặt và cấu hình**: Thiết lập Foundry Local trên Windows 11 với các cài đặt hiệu suất tối ưu
+- **Cài đặt và cấu hình**: Thiết lập Foundry Local với xác minh cài đặt đúng cách
 - **Thành thạo thao tác CLI**: Sử dụng Foundry Local CLI để quản lý và triển khai mô hình
-- **Kích hoạt tăng tốc phần cứng**: Cấu hình tăng tốc GPU với ONNXRuntime hoặc WebGPU
-- **Triển khai nhiều mô hình**: Chạy các mô hình phi-4, GPT-OSS-20B, Qwen và DeepSeek tại chỗ
-- **Xây dựng ứng dụng đầu tiên**: Điều chỉnh các mẫu hiện có để sử dụng Foundry Local Python SDK
+- **Chạy mô hình đầu tiên**: Triển khai và tương tác thành công với một mô hình AI cục bộ
+- **Xây dựng ứng dụng chat**: Tạo ứng dụng chat cơ bản sử dụng Foundry Local Python SDK
+- **Hiểu AI cục bộ**: Nắm vững các nguyên tắc cơ bản về suy luận cục bộ và quản lý mô hình
 
-# Kiểm tra mô hình (một lần nhắc không tương tác)
-foundry model run phi-4-mini --prompt "Xin chào, hãy giới thiệu về bản thân"
+## Yêu cầu trước
 
-- Windows 11 (22H2 hoặc mới hơn)
-# Liệt kê các mô hình trong danh mục (các mô hình đã tải xuất hiện sau khi chạy)
-foundry model list
-## NOTE: Hiện tại không có cờ `--running` chuyên dụng; để xem mô hình nào đã tải, hãy bắt đầu một cuộc trò chuyện hoặc kiểm tra nhật ký dịch vụ.
-- Python 3.10+ đã cài đặt
-- Visual Studio Code với tiện ích mở rộng Python
-- Quyền quản trị để cài đặt
+### Yêu cầu hệ thống
 
-### (Tùy chọn) Biến môi trường
+- **Windows**: Windows 11 (22H2 hoặc mới hơn) HOẶC **macOS**: macOS 11+ (hỗ trợ hạn chế)
+- **RAM**: Tối thiểu 8GB, khuyến nghị 16GB+
+- **Dung lượng lưu trữ**: Tối thiểu 10GB trống cho các mô hình
+- **Python**: Phiên bản 3.10 hoặc mới hơn
+- **Quyền quản trị**: Quyền quản trị để cài đặt
 
-Tạo `.env` (hoặc thiết lập trong shell) để làm cho các script có thể di chuyển:
-# So sánh phản hồi (không tương tác)
-foundry model run gpt-oss-20b --prompt "Giải thích AI biên một cách đơn giản"
-| Biến | Mục đích | Ví dụ |
-|------|----------|-------|
-| `FOUNDRY_LOCAL_ALIAS` | Bí danh mô hình ưu tiên (danh mục tự động chọn biến thể tốt nhất) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | Ghi đè điểm cuối (nếu không sẽ tự động từ trình quản lý) | `http://localhost:5273/v1` |
-| `FOUNDRY_LOCAL_STREAM` | Kích hoạt demo streaming | `true` |
+### Môi trường phát triển
 
-> Nếu `FOUNDRY_LOCAL_ENDPOINT=auto` (hoặc không được thiết lập), chúng tôi sẽ lấy từ trình quản lý SDK.
+- Visual Studio Code với phần mở rộng Python (khuyến nghị)
+- Truy cập dòng lệnh (PowerShell trên Windows, Terminal trên macOS)
+- Git để clone các kho lưu trữ (tùy chọn)
 
-## Quy trình demo (30 phút)
+## Quy trình workshop (30 phút)
 
-### 1. Cài đặt Foundry Local và xác minh thiết lập CLI (10 phút)
+### Bước 1: Cài đặt Foundry Local (5 phút)
 
-# Liệt kê các mô hình đã lưu trữ
-foundry cache list
+#### Cài đặt trên Windows
+
+Cài đặt Foundry Local bằng trình quản lý gói Windows:
 
 ```powershell
 # Install via winget (recommended)
 winget install Microsoft.FoundryLocal
-
-# Or download from Microsoft Learn
-# https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
 
-**macOS (Xem trước / Nếu được hỗ trợ)**
+Lựa chọn khác: Tải xuống trực tiếp từ [Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 
-Nếu có gói macOS gốc (kiểm tra tài liệu chính thức để biết thông tin mới nhất):
+#### Cài đặt trên macOS (Hỗ trợ hạn chế)
+
+> [!NOTE] 
+> Hỗ trợ macOS hiện đang trong giai đoạn thử nghiệm. Kiểm tra tài liệu chính thức để biết thông tin mới nhất.
+
+Nếu có sẵn, cài đặt bằng Homebrew:
 
 ```bash
-# Homebrew (if/when available)
+# If Homebrew formula is available
 brew update
-brew install foundry-local  # hypothetical formula name
+brew install foundry-local
 
-# Or manual download (tarball)
+# Or manual download (check official docs for latest)
 curl -L -o foundry-local.tar.gz "https://download.microsoft.com/foundry-local/latest/macos/foundry-local.tar.gz"
 tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-Nếu các tệp nhị phân gốc macOS chưa có sẵn, bạn vẫn có thể: 
-1. Sử dụng VM Windows 11 ARM/Intel (Parallels / UTM) và làm theo các bước trên Windows. 
-2. Chạy các mô hình qua container (nếu hình ảnh container được xuất bản) và thiết lập `FOUNDRY_LOCAL_ENDPOINT` tới cổng được mở.
+**Lựa chọn khác cho người dùng macOS:**
+- Sử dụng máy ảo Windows 11 (Parallels/UTM) và làm theo các bước trên Windows
+- Chạy qua container nếu có và cấu hình `FOUNDRY_LOCAL_ENDPOINT`
 
-**Tạo môi trường ảo Python (Đa nền tảng)**
+### Bước 2: Xác minh cài đặt (3 phút)
 
-Windows PowerShell:
-```powershell
-py -m venv .venv
- .\.venv\Scripts\Activate.ps1
-```
-
-macOS / Linux:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-Nâng cấp pip và cài đặt các phụ thuộc cốt lõi:
-```bash
-python -m pip install --upgrade pip
-pip install foundry-local-sdk openai
-```
-
-#### Bước 1.2: Xác minh cài đặt
+Sau khi cài đặt, khởi động lại terminal của bạn và xác minh Foundry Local hoạt động:
 
 ```powershell
-# Check version
+# Check if Foundry Local is installed correctly
 foundry --version
-
-# Initialize configuration
-foundry init
 
 # View available commands
 foundry --help
 ```
 
-#### Bước 1.3: Cấu hình môi trường
+Kết quả mong đợi sẽ hiển thị thông tin phiên bản và các lệnh có sẵn.
 
+### Bước 3: Thiết lập môi trường Python (5 phút)
+
+Tạo môi trường Python chuyên dụng cho workshop này:
+
+**Windows:**
 ```powershell
-# Set up Python environment for Module08
-cd Module08
+# Create virtual environment
 py -m venv .venv
-.\.venv\Scripts\activate
 
-# Install Foundry Local Python SDK and dependencies
-pip install foundry-local-sdk openai requests
+# Activate environment
+.\.venv\Scripts\Activate.ps1
+
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-### Khởi động SDK (Khuyến nghị)
+**macOS/Linux:**
+```bash
+# Create virtual environment
+python3 -m venv .venv
 
-Thay vì khởi động dịch vụ và chạy mô hình thủ công, **Foundry Local Python SDK** có thể khởi động mọi thứ:
+# Activate environment
+source .venv/bin/activate
 
-```python
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
-
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-
-# Bootstraps service + downloads + loads most suitable variant for hardware
-manager = FoundryLocalManager(alias)
-
-print("Service running:", manager.is_service_running())
-print("Endpoint:", manager.endpoint)
-print("Cached models:", manager.list_cached_models())
-
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
-
-resp = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[
-        {"role": "system", "content": "You are a helpful local assistant."},
-        {"role": "user", "content": "Hello"}
-    ],
-    max_tokens=120,
-    temperature=0.5
-)
-print(resp.choices[0].message.content)
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-Nếu bạn thích kiểm soát rõ ràng, bạn vẫn có thể sử dụng CLI + client OpenAI như được hiển thị sau.
+### Bước 4: Chạy mô hình đầu tiên của bạn (7 phút)
 
-### 2. Chạy mô hình tại chỗ qua CLI (10 phút)
+Bây giờ hãy chạy mô hình AI đầu tiên của chúng ta cục bộ!
 
-#### Bước 3.1: Triển khai mô hình Phi-4
+#### Bắt đầu với Phi-4 Mini (Mô hình đầu tiên được khuyến nghị)
 
 ```powershell
-# Download and run phi-4-mini
+# Download and start phi-4-mini (lightweight, fast)
 foundry model run phi-4-mini
 
-# Test the model (one-shot prompt)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
-
-# NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
+# Test the model with a simple prompt
+foundry model run phi-4-mini --prompt "Hello, introduce yourself in one sentence"
 ```
 
-#### Bước 3.2: Triển khai GPT-OSS-20B
+> [!TIP]
+> Lệnh này tải xuống mô hình (lần đầu tiên) và tự động khởi động dịch vụ Foundry Local.
+
+#### Kiểm tra những gì đang chạy
 
 ```powershell
-# Download and run GPT-OSS-20B
-foundry model run gpt-oss-20b
+# List available models (shows downloaded models)
+foundry model list
 
-# Compare responses (one-shot prompt)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-```
+# Check service status
+foundry service status
 
-#### Bước 3.3: Tải thêm mô hình
-
-```powershell
-# Download Qwen model family
-foundry model download qwen2.5-0.5b
-foundry model download qwen2.5-7b
-
-# Download DeepSeek models
-foundry model download deepseek-coder-1.3b
-
-# List cached models
+# See what models are cached locally
 foundry cache list
 ```
 
-### 4. Dự án khởi đầu: Điều chỉnh 01-run-phi cho Foundry Local (5 phút)
+#### Thử các mô hình khác
 
-#### Bước 4.1: Tạo ứng dụng trò chuyện cơ bản
+Khi phi-4-mini hoạt động, hãy thử nghiệm với các mô hình khác:
 
-Tạo `samples/01-foundry-quickstart/chat_quickstart.py` (cập nhật để sử dụng trình quản lý nếu có):
+```powershell
+# Larger model with better capabilities
+foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
+
+# Fast, efficient model
+foundry model run qwen2.5-0.5b --prompt "What are the benefits of local AI inference?"
+```
+
+### Bước 5: Xây dựng ứng dụng chat đầu tiên của bạn (10 phút)
+
+Bây giờ hãy tạo một ứng dụng Python sử dụng các mô hình mà chúng ta vừa khởi động.
+
+#### Tạo script chat
+
+Tạo một file mới tên là `my_first_chat.py` (hoặc sử dụng mẫu được cung cấp):
 
 ```python
 #!/usr/bin/env python3
 """
-Foundry Local Chat Quickstart
-Demo: Basic chat interaction using Foundry Local Python SDK
-Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python
+My First Foundry Local Chat Application
+Using FoundryLocalManager for automatic service management
 """
 
-import os, sys
+import os
+from foundry_local import FoundryLocalManager
 from openai import OpenAI
-try:
-    from foundry_local import FoundryLocalManager  # control-plane SDK
-except ImportError:
-    FoundryLocalManager = None
 
 def main():
-    """Main chat function using Foundry Local SDK"""
-    
-    # Preferred: bootstrap via SDK manager (auto start + download + load)
-    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-    if FoundryLocalManager:
-        manager = FoundryLocalManager(alias)
-        endpoint = manager.endpoint
-        model_id = manager.get_model_info(alias).id
-        api_key = manager.api_key or "not-needed"
-    else:
-        # Fallback: assume default endpoint & alias already running via CLI
-        endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT", "http://localhost:5273/v1")
-        model_id = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
-        api_key = "not-needed"
-
-    client = OpenAI(base_url=endpoint, api_key=api_key)
-    
-    # Get user input
-    if len(sys.argv) > 1:
-        user_message = " ".join(sys.argv[1:])
-    else:
-        user_message = input("Enter your message: ")
+    # Get model alias from environment or use default
+    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
     
     try:
-        # Make chat completion request
-        response = client.chat.completions.create(
-            model=model_id,
-            messages=[
-                {"role": "system", "content": "You are a helpful AI assistant powered by Microsoft Foundry Local."},
-                {"role": "user", "content": user_message}
-            ],
-            max_tokens=500,
-            temperature=0.7
+        # Initialize Foundry Local Manager (auto-starts service, downloads model)
+        manager = FoundryLocalManager(alias)
+        
+        # Create OpenAI client pointing to local endpoint
+        client = OpenAI(
+            base_url=manager.endpoint,
+            api_key=manager.api_key or "not-needed"
         )
         
-        # Display response
-        print(f"\nModel: {response.model}")
-        print(f"Response: {response.choices[0].message.content}")
-        print(f"Tokens used: {response.usage.total_tokens if response.usage else 'N/A'}")
+        # Get the actual model ID for this alias
+        model_id = manager.get_model_info(alias).id
+        
+        print("🤖 Welcome to your first local AI chat!")
+        print(f"� Using model: {alias} -> {model_id}")
+        print(f"🌐 Endpoint: {manager.endpoint}")
+        print("�💡 Type 'quit' to exit\n")
         
     except Exception as e:
-        print(f"Error: {e}")
-        print("\nTroubleshooting:")
-    print("1. Ensure Foundry Local is running: foundry status")
-    print("2. List models: foundry model list")
-    print(f"3. Start model if needed: foundry model run {model_id}")
-    print("4. Or let SDK bootstrap: pip install foundry-local-sdk")
+        print(f"❌ Failed to initialize Foundry Local: {e}")
+        print("💡 Make sure Foundry Local is installed: foundry --version")
+        return
+    
+    while True:
+        # Get user input
+        user_message = input("You: ").strip()
+        
+        if user_message.lower() in ['quit', 'exit', 'bye']:
+            print("👋 Goodbye!")
+            break
+            
+        if not user_message:
+            continue
+            
+        try:
+            # Send message to local AI model
+            response = client.chat.completions.create(
+                model=model_id,
+                messages=[
+                    {"role": "system", "content": "You are a helpful AI assistant running locally."},
+                    {"role": "user", "content": user_message}
+                ],
+                max_tokens=200,
+                temperature=0.7
+            )
+            
+            # Display the response
+            ai_response = response.choices[0].message.content
+            print(f"🤖 AI: {ai_response}\n")
+            
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            print("💡 Check service status: foundry service status\n")
 
 if __name__ == "__main__":
     main()
 ```
 
-#### Bước 4.2: Kiểm tra ứng dụng
+> [!TIP]
+> **Ví dụ liên quan**: Để sử dụng nâng cao hơn, xem:
+>
+> - **Mẫu Python**: `Workshop/samples/session01/chat_bootstrap.py` - Bao gồm phản hồi streaming và xử lý lỗi
+> - **Jupyter Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - Phiên bản tương tác với giải thích chi tiết
+
+#### Kiểm tra ứng dụng chat của bạn
 
 ```powershell
-# Ensure phi-4-mini is running
-foundry model run phi-4-mini
-
-# Run the quickstart app
-python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Foundry Local?"
-
-# Try interactive mode
-python samples/01-foundry-quickstart/chat_quickstart.py
+# No need to manually start models - FoundryLocalManager handles this!
+# Just run your chat application
+python my_first_chat.py
 ```
 
-## Các khái niệm chính được đề cập
-
-### 1. Kiến trúc Foundry Local
-
-- **Công cụ suy luận tại chỗ**: Chạy mô hình hoàn toàn trên thiết bị của bạn
-- **Tương thích SDK OpenAI**: Tích hợp liền mạch với mã OpenAI hiện có
-- **Quản lý mô hình**: Tải xuống, lưu trữ và chạy nhiều mô hình một cách hiệu quả
-- **Tối ưu hóa phần cứng**: Tận dụng tăng tốc GPU, NPU và CPU
-
-### 2. Tham chiếu lệnh CLI
+Lựa chọn khác: Sử dụng trực tiếp các mẫu được cung cấp
 
 ```powershell
-# Core Commands
+# Try the complete sample with streaming support
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
+```
+
+Hoặc khám phá notebook tương tác
+Mở Workshop/notebooks/session01_chat_bootstrap.ipynb trong VS Code
+
+Thử các cuộc hội thoại ví dụ sau:
+
+- "Microsoft Foundry Local là gì?"
+- "Liệt kê 3 lợi ích của việc chạy mô hình AI cục bộ"
+- "Giúp tôi hiểu AI edge"
+
+## Những gì bạn đã đạt được
+
+Chúc mừng! Bạn đã thành công:
+
+1. ✅ **Cài đặt Foundry Local** và xác minh nó hoạt động
+2. ✅ **Khởi động mô hình AI đầu tiên** (phi-4-mini) cục bộ
+3. ✅ **Thử nghiệm các mô hình khác** qua dòng lệnh
+4. ✅ **Xây dựng ứng dụng chat** kết nối với AI cục bộ của bạn
+5. ✅ **Trải nghiệm suy luận AI cục bộ** mà không cần phụ thuộc vào đám mây
+
+## Hiểu những gì đã xảy ra
+
+### Suy luận AI cục bộ
+
+- Các mô hình AI của bạn chạy hoàn toàn trên máy tính của bạn
+- Không có dữ liệu nào được gửi lên đám mây
+- Phản hồi được tạo cục bộ sử dụng CPU/GPU của bạn
+- Quyền riêng tư và bảo mật được duy trì
+
+### Quản lý mô hình
+
+- `foundry model run` tải xuống và khởi động các mô hình
+- **FoundryLocalManager SDK** tự động xử lý khởi động dịch vụ và tải mô hình
+- Các mô hình được lưu trữ cục bộ để sử dụng trong tương lai
+- Nhiều mô hình có thể được tải xuống nhưng thường chỉ chạy một mô hình tại một thời điểm
+- Dịch vụ tự động quản lý vòng đời mô hình
+
+### SDK vs CLI
+
+- **Cách tiếp cận CLI**: Quản lý mô hình thủ công với `foundry model run <model>`
+- **Cách tiếp cận SDK**: Quản lý dịch vụ + mô hình tự động với `FoundryLocalManager(alias)`
+- **Khuyến nghị**: Sử dụng SDK cho ứng dụng, CLI để thử nghiệm và khám phá
+
+## Tham khảo các lệnh thông dụng
+
+### Các lệnh CLI cần thiết
+
+```powershell
+# Installation & Setup
 foundry --version              # Check installation
+foundry --help                 # View all commands
+
 # Model Management
 foundry model list             # List available models
-foundry model unload <name>    # Unload from memory
+foundry model run <model>      # Download and start a model
+foundry model run <model> --prompt "text"  # One-shot prompt
+foundry cache list             # Show downloaded models
 
-foundry config list            # Current configuration
+# Service Management
+foundry service status         # Check if service is running
+foundry service start          # Start the service manually
+foundry service stop           # Stop the service
 ```
 
-### 3. Tích hợp Python SDK
+### Gợi ý mô hình
 
-```python
-# Basic client setup
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
+- **phi-4-mini**: Mô hình khởi đầu tốt nhất - nhanh, nhẹ, chất lượng tốt
+- **qwen2.5-0.5b**: Suy luận nhanh nhất, sử dụng ít bộ nhớ
+- **gpt-oss-20b**: Phản hồi chất lượng cao hơn, cần nhiều tài nguyên hơn
+- **deepseek-coder-1.3b**: Tối ưu hóa cho lập trình và các tác vụ mã hóa
 
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-manager = FoundryLocalManager(alias)
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
+## Xử lý sự cố
 
-response = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Hello!"}],
-    max_tokens=50
-)
-print(response.choices[0].message.content)
-
-# Streaming example
-stream = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Give a 1-sentence definition of edge AI."}],
-    stream=True,
-    max_tokens=60,
-    temperature=0.4
-)
-for chunk in stream:
-    delta = chunk.choices[0].delta
-    if delta and delta.content:
-        print(delta.content, end="", flush=True)
-print()
-```
-
-## Khắc phục sự cố thường gặp
-
-### Vấn đề 1: "Không tìm thấy lệnh Foundry"
+### "Không tìm thấy lệnh Foundry"
 
 **Giải pháp:**
+
 ```powershell
-# Restart PowerShell after installation
-# Or manually add to PATH
+# Restart your terminal after installation
+# Or manually add to PATH (Windows)
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### Vấn đề 2: "Mô hình không tải được"
+### "Mô hình không tải được"
 
 **Giải pháp:**
-```powershell
-# Check available memory
-foundry system info
 
-# Try smaller model first
+```powershell
+# Check available system memory
+foundry service status
+
+# Try a smaller model first
 foundry model run phi-4-mini
 
-# Check disk space for model cache
-dir "$env:USERPROFILE\.foundry\models"
+# Check disk space for model downloads
+# Models are stored in: %USERPROFILE%\.foundry\models (Windows)
 ```
 
-### Vấn đề 3: "Kết nối bị từ chối trên localhost:5273"
+### "Kết nối bị từ chối trên localhost"
 
 **Giải pháp:**
+
 ```powershell
 # Check if service is running
-foundry status
+foundry service status
 
 # Start service if needed
 foundry service start
 
-# Check for port conflicts
-netstat -an | findstr 5273
+# Verify the port (default is 5273)
+# Check for port conflicts with: netstat -an | findstr 5273
 ```
 
-## Mẹo tối ưu hóa hiệu suất
+## Các bước tiếp theo
 
-### 1. Chiến lược chọn mô hình
+### Hành động ngay lập tức
 
-- **Phi-4-mini**: Tốt nhất cho các nhiệm vụ chung, sử dụng ít bộ nhớ
-- **Qwen2.5-0.5b**: Suy luận nhanh nhất, tài nguyên tối thiểu
-- **GPT-OSS-20B**: Chất lượng cao nhất, yêu cầu nhiều tài nguyên hơn
-- **DeepSeek-Coder**: Tối ưu hóa cho các nhiệm vụ lập trình
+1. **Thử nghiệm** với các mô hình và lời nhắc khác nhau
+2. **Chỉnh sửa** ứng dụng chat của bạn để thử các mô hình khác
+3. **Tạo** lời nhắc của riêng bạn và kiểm tra phản hồi
+4. **Khám phá** Buổi 2: Xây dựng ứng dụng RAG
 
-### 2. Tối ưu hóa phần cứng
+### Lộ trình học nâng cao
 
-```powershell
-# Enable all acceleration options
-foundry config set compute.onnx.enable_gpu true
-foundry config set compute.webgpu.enabled true
-foundry config set compute.cpu.threads auto
+1. **Buổi 2**: Xây dựng giải pháp AI với RAG (Retrieval-Augmented Generation)
+2. **Buổi 3**: So sánh các mô hình mã nguồn mở khác nhau
+3. **Buổi 4**: Làm việc với các mô hình tiên tiến
+4. **Buổi 5**: Xây dựng hệ thống AI đa tác nhân
 
-# Optimize memory usage
-foundry config set model.cache.max_size 10GB
-foundry config set model.preload false
+## Biến môi trường (Tùy chọn)
+
+Để sử dụng nâng cao hơn, bạn có thể thiết lập các biến môi trường sau:
+
+| Biến | Mục đích | Ví dụ |
+|------|----------|-------|
+| `FOUNDRY_LOCAL_ALIAS` | Mô hình mặc định để sử dụng | `phi-4-mini` |
+| `FOUNDRY_LOCAL_ENDPOINT` | Ghi đè URL endpoint | `http://localhost:5273/v1` |
+
+Tạo file `.env` trong thư mục dự án của bạn:
 ```
-
-### 3. Giám sát hiệu suất
-
-```powershell
-cd Workshop/samples
-# Performance & latency measurement
-# Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
-# Example:
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python -m session03.benchmark_oss_models
-
-# Re-run after enabling GPU acceleration to compare:
-foundry config set compute.onnx.enable_gpu true
-python -m session03.benchmark_oss_models
+FOUNDRY_LOCAL_ALIAS=phi-4-mini
+FOUNDRY_LOCAL_ENDPOINT=auto
 ```
-
-### Nâng cấp tùy chọn
-
-| Nâng cấp | Nội dung | Cách thực hiện |
-|----------|----------|----------------|
-| Tiện ích chia sẻ | Loại bỏ logic client/bootstrap trùng lặp | Sử dụng `Workshop/samples/workshop_utils.py` (`get_client`, `chat_once`) |
-| Hiển thị sử dụng token | Dạy tư duy về chi phí/hiệu quả sớm | Thiết lập `SHOW_USAGE=1` để in token nhắc/hoàn thành/tổng cộng |
-| So sánh xác định | Kiểm tra hiệu suất & hồi quy ổn định | Sử dụng `temperature=0`, `top_p=1`, văn bản nhắc nhất quán |
-| Độ trễ token đầu tiên | Chỉ số phản hồi cảm nhận | Điều chỉnh script benchmark với streaming (`BENCH_STREAM=1`) |
-| Thử lại khi lỗi thoáng qua | Demo bền bỉ khi khởi động lạnh | `RETRY_ON_FAIL=1` (mặc định) & điều chỉnh `RETRY_BACKOFF` |
-| Kiểm tra nhanh | Kiểm tra nhanh các luồng chính | Chạy `python Workshop/tests/smoke.py` trước workshop |
-| Hồ sơ bí danh mô hình | Chuyển đổi nhanh giữa các bộ mô hình trên máy | Duy trì `.env` với `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` |
-| Hiệu quả lưu trữ | Tránh khởi động lại nhiều lần trong chạy mẫu | Tiện ích quản lý lưu trữ; tái sử dụng giữa các script/notebook |
-| Khởi động lần đầu | Giảm đột biến độ trễ p95 | Gửi một nhắc nhỏ sau khi tạo `FoundryLocalManager` |
-
-Ví dụ khởi động cơ bản xác định (PowerShell):
-
-```powershell
-set FOUNDRY_LOCAL_ALIAS=phi-4-mini
-set SHOW_USAGE=1
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference." | Out-Null
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
-```
-
-Bạn sẽ thấy đầu ra tương tự & số lượng token giống hệt nhau trong lần chạy thứ hai, xác nhận tính xác định.
-
-## Bước tiếp theo
-
-Sau khi hoàn thành buổi học này:
-
-1. **Khám phá Buổi 2**: Xây dựng giải pháp AI với Azure AI Foundry RAG
-2. **Thử các mô hình khác nhau**: Thử nghiệm với Qwen, DeepSeek và các dòng mô hình khác
-3. **Tối ưu hóa hiệu suất**: Tinh chỉnh cài đặt cho phần cứng cụ thể của bạn
-4. **Xây dựng ứng dụng tùy chỉnh**: Sử dụng Foundry Local SDK trong các dự án của riêng bạn
 
 ## Tài nguyên bổ sung
 
 ### Tài liệu
-- [Tham chiếu Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
+
+- [Tham khảo Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Hướng dẫn cài đặt Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
 - [Danh mục mô hình](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### Mã mẫu
-- [Mẫu Module08 01](./samples/01/README.md) - Khởi đầu trò chuyện REST
-- [Mẫu Module08 02](./samples/02/README.md) - Tích hợp SDK OpenAI
-- [Mẫu Module08 03](./samples/03/README.md) - Khám phá & đánh giá mô hình
+
+- **Mẫu Python Buổi 01**: `Workshop/samples/session01/chat_bootstrap.py` - Ứng dụng chat hoàn chỉnh với streaming
+- **Notebook Buổi 01**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - Hướng dẫn tương tác  
+- [Mẫu 01 Module08](../Module08/samples/01/README.md) - Khởi động nhanh REST Chat
+- [Mẫu 02 Module08](../Module08/samples/02/README.md) - Tích hợp OpenAI SDK
+- [Mẫu 03 Module08](../Module08/samples/03/README.md) - Khám phá & đánh giá mô hình
 
 ### Cộng đồng
+
 - [Thảo luận GitHub Foundry Local](https://github.com/microsoft/Foundry-Local/discussions)
 - [Cộng đồng Azure AI](https://techcommunity.microsoft.com/category/artificialintelligence)
 
@@ -470,30 +433,40 @@ Sau khi hoàn thành buổi học này:
 
 **Thời lượng buổi học**: 30 phút thực hành + 15 phút hỏi đáp  
 **Mức độ khó**: Người mới bắt đầu  
-**Yêu cầu trước**: Windows 11, Python 3.10+, quyền quản trị
+**Yêu cầu trước**: Windows 11/macOS 11+, Python 3.10+, Quyền quản trị
 
-## Kịch bản mẫu & ánh xạ workshop
+## Kịch bản ví dụ trong workshop
 
-| Script / Notebook Workshop | Kịch bản | Mục tiêu | Ví dụ đầu vào | Dataset cần thiết |
-|----------------------------|----------|----------|---------------|-------------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | Đội IT nội bộ đánh giá suy luận tại chỗ cho cổng đánh giá quyền riêng tư | Chứng minh SLM tại chỗ phản hồi trong độ trễ dưới một giây với các nhắc chuẩn | "Liệt kê hai lợi ích của suy luận tại chỗ." | Không (một lần nhắc) |
-| Mã khởi đầu điều chỉnh nhanh | Nhà phát triển chuyển đổi script OpenAI hiện có sang Foundry Local | Hiển thị khả năng tương thích thay thế | "Đưa ra hai lợi ích của suy luận tại chỗ." | Chỉ nhắc nội tuyến |
+### Bối cảnh thực tế
 
-### Tường thuật kịch bản
-Đội bảo mật & tuân thủ phải xác nhận liệu dữ liệu nguyên mẫu nhạy cảm có thể được xử lý tại chỗ hay không. Họ chạy script khởi động với nhiều nhắc (quyền riêng tư, độ trễ, chi phí) sử dụng chế độ xác định temperature=0 để ghi lại đầu ra cơ bản cho so sánh sau (đánh giá hiệu suất Buổi 3 và đối chiếu SLM vs LLM Buổi 4).
+**Kịch bản**: Một nhóm IT doanh nghiệp cần đánh giá suy luận AI trên thiết bị để xử lý phản hồi nhạy cảm của nhân viên mà không gửi dữ liệu đến các dịch vụ bên ngoài.
 
-### JSON bộ nhắc tối thiểu (tùy chọn)
+**Mục tiêu của bạn**: Chứng minh rằng các mô hình AI cục bộ có thể cung cấp phản hồi chất lượng với độ trễ dưới một giây trong khi duy trì hoàn toàn quyền riêng tư dữ liệu.
+
+### Lời nhắc kiểm tra
+
+Sử dụng các lời nhắc này để xác thực thiết lập của bạn:
+
 ```json
 [
     "List two benefits of local inference.",
     "Summarize why keeping data on device improves privacy.",
-    "Give one trade‑off when choosing an SLM over a large model."
+    "Give one trade-off when choosing a small model over a large model."
 ]
 ```
 
-Sử dụng danh sách này để tạo vòng lặp đánh giá có thể tái tạo hoặc để khởi tạo một bộ kiểm tra hồi quy trong tương lai.
+### Tiêu chí thành công
+
+- ✅ Tất cả các lời nhắc nhận được phản hồi trong vòng dưới 2 giây
+- ✅ Không có dữ liệu nào rời khỏi máy cục bộ của bạn
+- ✅ Phản hồi phù hợp và hữu ích
+- ✅ Ứng dụng chat của bạn hoạt động mượt mà
+
+Việc xác thực này đảm bảo thiết lập Foundry Local của bạn đã sẵn sàng cho các workshop nâng cao trong Buổi 2-6.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, chúng tôi khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T20:59:30+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T22:13:52+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ko"
 }
@@ -114,7 +114,7 @@ foundry service start
 foundry model run phi-4-mini
 ```
 
-### 가져오기 오류
+### Import 오류
 ```bash
 # Install missing dependencies
 pip install sentence-transformers ragas datasets
@@ -194,8 +194,8 @@ for chunk in stream:
 
 ## 📊 모델 선택
 
-| 모델 | 크기 | 적합한 용도 | 속도 |
-|------|------|------------|------|
+| 모델 | 크기 | 최적 용도 | 속도 |
+|------|------|----------|------|
 | `qwen2.5-0.5b` | 0.5B | 빠른 분류 | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | 빠른 코드 생성 | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | 창의적 글쓰기 | ⚡⚡ |
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **SDK 문서**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **빠른 참조**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **업데이트 요약**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **마이그레이션 노트**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -218,7 +216,7 @@ for chunk in stream:
 
 1. **클라이언트 캐시 사용**: `workshop_utils`가 자동으로 캐시 처리
 2. **작은 모델 사용**: 테스트 시 `qwen2.5-0.5b`로 시작
-3. **사용 통계 활성화**: `SHOW_USAGE=1` 설정으로 토큰 추적
+3. **사용 통계 활성화**: `SHOW_USAGE=1` 설정으로 토큰 사용량 추적
 4. **배치 처리**: 여러 프롬프트를 순차적으로 처리
 5. **max_tokens 줄이기**: 빠른 응답을 위해 지연 시간 감소
 
@@ -226,7 +224,7 @@ for chunk in stream:
 
 ## 🎯 샘플 워크플로우
 
-### 모든 항목 테스트
+### 모든 것 테스트하기
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전을 권위 있는 출처로 간주해야 합니다. 중요한 정보에 대해서는 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어를 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임지지 않습니다.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

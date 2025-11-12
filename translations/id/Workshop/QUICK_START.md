@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T22:35:57+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T23:43:45+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "id"
 }
@@ -60,7 +60,7 @@ set FOUNDRY_LOCAL_ALIAS=phi-4-mini
 set SHOW_USAGE=1
 ```
 
-### Sesi 02: Pipeline RAG
+### Sesi 02: RAG Pipeline
 
 ```bash
 cd Workshop/samples
@@ -81,7 +81,7 @@ cd Workshop/samples
 python -m session02.rag_eval_ragas
 ```
 
-**Catatan**: Memerlukan dependensi tambahan yang diinstal melalui `requirements.txt`
+**Catatan**: Membutuhkan dependensi tambahan yang diinstal melalui `requirements.txt`
 
 ### Sesi 03: Benchmarking
 
@@ -114,7 +114,7 @@ set LLM_ALIAS=qwen2.5-7b
 set COMPARE_PROMPT="List 5 benefits of local AI inference"
 ```
 
-### Sesi 05: Orkestrasi Multi-Agen
+### Sesi 05: Orkestrasi Multi-Agent
 
 ```bash
 cd Workshop/samples
@@ -135,7 +135,7 @@ cd Workshop/samples
 python -m session06.models_router
 ```
 
-**Menguji logika routing** dengan beberapa intent (kode, ringkasan, klasifikasi)
+**Menguji logika routing** dengan berbagai intent (kode, ringkasan, klasifikasi)
 
 ### Sesi 06: Pipeline
 
@@ -233,8 +233,8 @@ foundry model run phi-4-mini
 | `FOUNDRY_LOCAL_ALIAS` | Bervariasi | Alias model yang digunakan |
 | `FOUNDRY_LOCAL_ENDPOINT` | Otomatis | Menimpa endpoint layanan |
 | `SHOW_USAGE` | `0` | Menampilkan statistik penggunaan token |
-| `RETRY_ON_FAIL` | `1` | Mengaktifkan logika pengulangan |
-| `RETRY_BACKOFF` | `1.0` | Penundaan awal pengulangan (detik) |
+| `RETRY_ON_FAIL` | `1` | Mengaktifkan logika retry |
+| `RETRY_BACKOFF` | `1.0` | Penundaan retry awal (detik) |
 
 ### Spesifik Sesi
 | Variabel | Default | Deskripsi |
@@ -280,7 +280,6 @@ foundry model run phi-4-mini
 1. Selesaikan semua sesi workshop secara berurutan
 2. Bereksperimen dengan berbagai model
 3. Modifikasi contoh untuk kasus penggunaan Anda
-4. Tinjau `SDK_MIGRATION_NOTES.md` untuk pola lanjutan
 
 ---
 
@@ -290,5 +289,7 @@ foundry model run phi-4-mini
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis dapat mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang keliru yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

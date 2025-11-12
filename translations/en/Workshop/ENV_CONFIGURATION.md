@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T19:57:11+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T21:15:06+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overview
 
-The Workshop samples use environment variables for configuration, centralized in the `.env` file located at the root of the repository. This makes it easy to customize settings without altering the code.
+The Workshop samples use environment variables for configuration, centralized in the `.env` file located at the root of the repository. This makes it easy to customize settings without modifying the code.
 
 ## Quick Start
 
@@ -115,7 +115,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |----------|---------|---------|
 | `SHOW_USAGE` | `1` | Display token usage |
 | `RETRY_ON_FAIL` | `1` | Enable retry logic |
-| `RETRY_BACKOFF` | `1.0` | Delay between retries (seconds) |
+| `RETRY_BACKOFF` | `1.0` | Delay between retries (in seconds) |
 
 ## Common Configurations
 
@@ -165,7 +165,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `phi-4-mini` - Balanced quality and speed
 
 **Fast Responses:**
-- `qwen2.5-0.5b` - Very fast, suitable for classification tasks
+- `qwen2.5-0.5b` - Very fast, ideal for classification tasks
 - `phi-4-mini` - Fast with good quality
 
 **High Quality:**
@@ -408,7 +408,6 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## Additional Resources
 
 - `QUICK_START.md` - Guide for getting started
-- `SDK_MIGRATION_NOTES.md` - Details on SDK updates
 - `Workshop/samples/*/README.md` - Guides specific to samples
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

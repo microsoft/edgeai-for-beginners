@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "45923ada94573fee7c82cc4f0c3bb344",
-  "translation_date": "2025-10-28T22:23:48+00:00",
+  "original_hash": "04951692a100dcd716df01efca2d3f0d",
+  "translation_date": "2025-11-11T23:32:03+00:00",
   "source_file": "Workshop/Readme.md",
   "language_code": "nl"
 }
@@ -17,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 Introductie
 
-Welkom bij de **EdgeAI voor Beginners Workshop** - jouw praktische gids voor het bouwen van intelligente toepassingen die volledig op lokale hardware draaien. Deze workshop transformeert theoretische Edge AI-concepten in praktische vaardigheden door middel van steeds uitdagendere oefeningen met Microsoft Foundry Local en Small Language Models (SLMs).
+Welkom bij de **EdgeAI voor Beginners Workshop** - jouw praktische gids voor het bouwen van intelligente toepassingen die volledig op lokale hardware draaien. Deze workshop vertaalt theoretische Edge AI-concepten naar praktische vaardigheden door middel van steeds uitdagendere oefeningen met Microsoft Foundry Local en Small Language Models (SLMs).
 
 ### Waarom deze workshop?
 
@@ -26,8 +26,8 @@ Welkom bij de **EdgeAI voor Beginners Workshop** - jouw praktische gids voor het
 Organisaties wereldwijd verschuiven van cloud-afhankelijke AI naar edge computing om drie belangrijke redenen:
 
 1. **Privacy & Compliance** - Verwerk gevoelige gegevens lokaal zonder cloudtransmissie (HIPAA, GDPR, financiële regelgeving)
-2. **Prestaties** - Elimineer netwerklatentie (50-500ms lokaal vs 500-2000ms cloud round-trip)
-3. **Kostenbeheersing** - Vermijd kosten per token voor API's en schaal zonder cloudkosten
+2. **Prestaties** - Elimineer netwerkvertraging (50-500ms lokaal vs 500-2000ms cloud round-trip)
+3. **Kostenbeheersing** - Verminder kosten per token en schaal zonder clouduitgaven
 
 **Maar Edge AI is anders**
 
@@ -45,42 +45,42 @@ In 6 gerichte sessies (~3 uur totaal) ga je van "Hello World" naar het implement
 
 ## 📚 Leerdoelen
 
-Na het voltooien van deze workshop kun je:
+Door deze workshop te voltooien, kun je:
 
 ### Kerncompetenties
 1. **Lokale AI-services implementeren en beheren**
    - Installeer en configureer Microsoft Foundry Local
    - Selecteer geschikte modellen voor edge-implementatie
    - Beheer de levenscyclus van modellen (downloaden, laden, cachen)
-   - Monitor middelengebruik en optimaliseer prestaties
+   - Monitor resourcegebruik en optimaliseer prestaties
 
 2. **AI-aangedreven toepassingen bouwen**
    - Implementeer OpenAI-compatibele chatcompletions lokaal
    - Ontwerp effectieve prompts voor Small Language Models
-   - Verwerk streamingresponses voor betere gebruikerservaring
+   - Verwerk streamingreacties voor een betere gebruikerservaring
    - Integreer lokale modellen in bestaande toepassingen
 
 3. **RAG (Retrieval Augmented Generation) systemen creëren**
-   - Bouw semantische zoekoplossingen met embeddings
-   - Baseer LLM-responses op domeinspecifieke kennis
+   - Bouw semantisch zoeken met embeddings
+   - Baseer LLM-reacties op domeinspecifieke kennis
    - Evalueer RAG-kwaliteit met industriestandaard metrics
    - Schaal van prototype naar productie
 
 4. **Modelprestaties optimaliseren**
    - Benchmark meerdere modellen voor jouw use case
-   - Meet latentie, doorvoer en tijd voor eerste token
-   - Selecteer optimale modellen op basis van snelheid/kwaliteit afwegingen
+   - Meet latency, throughput en first-token tijd
+   - Selecteer optimale modellen op basis van snelheid/kwaliteitsafwegingen
    - Vergelijk SLM vs LLM afwegingen in echte scenario's
 
 5. **Multi-agent systemen orkestreren**
    - Ontwerp gespecialiseerde agents voor verschillende taken
-   - Implementeer geheugen en contextbeheer voor agents
+   - Implementeer agentgeheugen en contextbeheer
    - Coördineer agents in complexe workflows
-   - Routeer verzoeken intelligent over meerdere modellen
+   - Verwerk verzoeken intelligent over meerdere modellen
 
 6. **Productieklare oplossingen implementeren**
    - Implementeer foutafhandeling en retry-logica
-   - Monitor tokengebruik en systeembronnen
+   - Monitor tokengebruik en systeemresources
    - Bouw schaalbare architecturen met model-as-tools patronen
    - Plan migratiepaden van edge naar hybride (edge + cloud)
 
@@ -95,9 +95,9 @@ Aan het einde van deze workshop heb je het volgende gecreëerd:
 | Sessie | Resultaat | Vaardigheden gedemonstreerd |
 |--------|-----------|----------------------------|
 | **1** | Chattoepassing met streaming | Service setup, basiscompletions, streaming UX |
-| **2** | RAG-systeem met evaluatie | Embeddings, semantische zoekoplossingen, kwaliteitsmetrics |
+| **2** | RAG-systeem met evaluatie | Embeddings, semantisch zoeken, kwaliteitsmetrics |
 | **3** | Multi-model benchmark suite | Prestatiemeting, modelvergelijking |
-| **4** | SLM vs LLM comparator | Afwegingenanalyse, optimalisatiestrategieën |
+| **4** | SLM vs LLM comparator | Afweginganalyse, optimalisatiestrategieën |
 | **5** | Multi-agent orkestrator | Agentontwerp, geheugenbeheer, coördinatie |
 | **6** | Intelligentsysteem voor routering | Intentdetectie, modelselectie, schaalbaarheid |
 
@@ -116,7 +116,7 @@ Aan het einde van deze workshop heb je het volgende gecreëerd:
 ✅ **Privacy-eerste toepassingen te bouwen**
 - Zorgtoepassingen die PHI/PII lokaal verwerken
 - Financiële diensten met nalevingsvereisten
-- Overheidssystemen met data-soevereiniteitsbehoeften
+- Overheidssystemen met datasoevereiniteitsbehoeften
 
 ✅ **Optimaliseren voor edge-omgevingen**
 - IoT-apparaten met beperkte middelen
@@ -137,7 +137,7 @@ Aan het einde van deze workshop heb je het volgende gecreëerd:
 
 ## 🗺️ Workshopstructuur
 
-### Sessieoverzicht (6 sessies × 30 minuten = 3 uur)
+### Sessies Overzicht (6 sessies × 30 minuten = 3 uur)
 
 | Sessie | Onderwerp | Focus | Duur |
 |--------|-----------|-------|------|
@@ -198,7 +198,7 @@ foundry service set --port 58123 --show
 foundry service set --port 58000 --show
 ```
 
-**Verifiëren dat het werkt:**
+**Controleer of het werkt:**
 ```bash
 # Check service status
 foundry service status
@@ -255,15 +255,15 @@ cd samples
 python -m session01.chat_bootstrap "What is edge AI?"
 ```
 
-**✅ Succes!** Je zou een streamingresponse over edge AI moeten zien.
+**✅ Succes!** Je zou een streamingreactie moeten zien over edge AI.
 
 ---
 
 ## 📦 Workshopbronnen
 
-### Python-voorbeelden
+### Python Voorbeelden
 
-Praktische voorbeelden die elk concept demonstreren:
+Progressieve hands-on voorbeelden die elk concept demonstreren:
 
 | Sessie | Voorbeeld | Beschrijving | Uitvoeringstijd |
 |--------|-----------|--------------|-----------------|
@@ -274,17 +274,17 @@ Praktische voorbeelden die elk concept demonstreren:
 | 4 | [`model_compare.py`](../../../Workshop/samples/session04/model_compare.py) | SLM vs LLM vergelijking | ~45s |
 | 5 | [`agents_orchestrator.py`](../../../Workshop/samples/session05/agents_orchestrator.py) | Multi-agent systeem | ~60s |
 | 6 | [`models_router.py`](../../../Workshop/samples/session06/models_router.py) | Intent-gebaseerde routering | ~45s |
-| 6 | [`models_pipeline.py`](../../../Workshop/samples/session06/models_pipeline.py) | Multi-stap pipeline | ~60s |
+| 6 | [`models_pipeline.py`](../../../Workshop/samples/session06/models_pipeline.py) | Multi-step pipeline | ~60s |
 
 ### Jupyter Notebooks
 
 Interactieve verkenning met uitleg en visualisaties:
 
-| Sessie | Notebook | Beschrijving | Moeilijkheid |
-|--------|----------|--------------|-------------|
+| Sessie | Notebook | Beschrijving | Moeilijkheidsgraad |
+|--------|----------|--------------|--------------------|
 | 1 | [`session01_chat_bootstrap.ipynb`](./notebooks/session01_chat_bootstrap.ipynb) | Chat basis & streaming | ⭐ Beginner |
-| 2 | [`session02_rag_pipeline.ipynb`](./notebooks/session02_rag_pipeline.ipynb) | RAG systeem bouwen | ⭐⭐ Gemiddeld |
-| 2 | [`session02_rag_eval_ragas.ipynb`](./notebooks/session02_rag_eval_ragas.ipynb) | RAG kwaliteit evalueren | ⭐⭐ Gemiddeld |
+| 2 | [`session02_rag_pipeline.ipynb`](./notebooks/session02_rag_pipeline.ipynb) | Bouw RAG systeem | ⭐⭐ Gemiddeld |
+| 2 | [`session02_rag_eval_ragas.ipynb`](./notebooks/session02_rag_eval_ragas.ipynb) | Evalueer RAG kwaliteit | ⭐⭐ Gemiddeld |
 | 3 | [`session03_benchmark_oss_models.ipynb`](./notebooks/session03_benchmark_oss_models.ipynb) | Model benchmarking | ⭐⭐ Gemiddeld |
 | 4 | [`session04_model_compare.ipynb`](./notebooks/session04_model_compare.ipynb) | Modelvergelijking | ⭐⭐ Gemiddeld |
 | 5 | [`session05_agents_orchestrator.ipynb`](./notebooks/session05_agents_orchestrator.ipynb) | Agent orkestratie | ⭐⭐⭐ Geavanceerd |
@@ -301,13 +301,11 @@ Uitgebreide gidsen en referenties:
 | [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) | Command & API spiekbriefje | Snel antwoorden nodig |
 | [FOUNDRY_SDK_QUICKREF.md](./FOUNDRY_SDK_QUICKREF.md) | SDK patronen & voorbeelden | Code schrijven |
 | [ENV_CONFIGURATION.md](./ENV_CONFIGURATION.md) | Gids voor omgevingsvariabelen | Samples configureren |
-| [SAMPLES_UPDATE_SUMMARY.md](./SAMPLES_UPDATE_SUMMARY.md) | Laatste verbeteringen in samples | Wijzigingen begrijpen |
-| [SDK_MIGRATION_NOTES.md](./SDK_MIGRATION_NOTES.md) | Migratiegids | Code upgraden |
 | [notebooks/TROUBLESHOOTING.md](./notebooks/TROUBLESHOOTING.md) | Veelvoorkomende problemen & oplossingen | Problemen oplossen |
 
 ---
 
-## 🎓 Aanbevelingen voor leertraject
+## 🎓 Aanbevelingen voor het leertraject
 
 ### Voor beginners (3-4 uur)
 1. ✅ Sessie 1: Aan de slag (focus op setup en basis chat)
@@ -334,18 +332,18 @@ Uitgebreide gidsen en referenties:
 
 ## Workshop Sessie Pack (Gerichte 30‑minuten Labs)
 
-Als je het compacte 6-sessie workshopformaat volgt, gebruik dan deze speciale gidsen (elk sluit aan bij en vult de bredere module-documentatie hierboven aan):
+Als je het compacte 6-sessie workshopformaat volgt, gebruik dan deze specifieke gidsen (elk sluit aan bij en vult de bredere module-documentatie hierboven aan):
 
 | Workshop Sessie | Gids | Kernfocus |
 |-----------------|------|-----------|
 | 1 | [Session01-GettingStartedFoundryLocal](./Session01-GettingStartedFoundryLocal.md) | Installeren, valideren, draaien phi & GPT-OSS-20B, versnelling |
 | 2 | [Session02-BuildAISolutionsRAG](./Session02-BuildAISolutionsRAG.md) | Prompt engineering, RAG patronen, CSV & document grounding, migratie |
-| 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Integratie met Hugging Face, benchmarking, modelselectie |
-| 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM vs LLM, WebGPU, Chainlit RAG, ONNX-versnelling |
-| 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Rollen van agents, geheugen, tools, orkestratie |
-| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Routering, chaining, schaalbaarheid naar Azure |
+| 3 | [Session03-OpenSourceModels](./Session03-OpenSourceModels.md) | Hugging Face integratie, benchmarking, modelselectie |
+| 4 | [Session04-CuttingEdgeModels](./Session04-CuttingEdgeModels.md) | SLM vs LLM, WebGPU, Chainlit RAG, ONNX versnelling |
+| 5 | [Session05-AIPoweredAgents](./Session05-AIPoweredAgents.md) | Agentrollen, geheugen, tools, orkestratie |
+| 6 | [Session06-ModelsAsTools](./Session06-ModelsAsTools.md) | Routing, chaining, schaalbaarheid naar Azure |
 
-Elke sessiebestand bevat: samenvatting, leerdoelen, 30 minuten demo-flow, startproject, validatiechecklist, probleemoplossing en verwijzingen naar de officiële Foundry Local Python SDK.
+Elke sessiebestand bevat: samenvatting, leerdoelen, 30-minuten demo flow, startproject, validatiechecklist, probleemoplossing en verwijzingen naar de officiële Foundry Local Python SDK.
 
 ### Voorbeeldscripts
 
@@ -367,7 +365,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Als je de Foundry Local-service uitvoert op een andere (Windows) machine of VM vanaf macOS, exporteer dan het eindpunt:
+Als je de Foundry Local-service uitvoert op een andere (Windows) machine of VM vanaf macOS, exporteer dan de endpoint:
 
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
@@ -375,61 +373,61 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 | Sessie | Script(s) | Beschrijving |
 |--------|-----------|--------------|
-| 1 | `samples/session01/chat_bootstrap.py` | Bootstrap-service & streaming chat |
+| 1 | `samples/session01/chat_bootstrap.py` | Bootstrap service & streaming chat |
 | 2 | `samples/session02/rag_pipeline.py` | Minimale RAG (in-memory embeddings) |
 |   | `samples/session02/rag_eval_ragas.py` | RAG-evaluatie met ragas-metrics |
 | 3 | `samples/session03/benchmark_oss_models.py` | Multi-model latency & throughput benchmarking |
-| 4 | `samples/session04/model_compare.py` | Vergelijking SLM vs LLM (latency & voorbeeldoutput) |
-| 5 | `samples/session05/agents_orchestrator.py` | Twee-agent onderzoek → redactionele workflow |
-| 6 | `samples/session06/models_router.py` | Intent-gebaseerde routering demo |
-|   | `samples/session06/models_pipeline.py` | Multi-step plan/execute/refine keten |
+| 4 | `samples/session04/model_compare.py` | SLM vs LLM vergelijking (latency & voorbeeldoutput) |
+| 5 | `samples/session05/agents_orchestrator.py` | Twee-agent onderzoek → redactionele pipeline |
+| 6 | `samples/session06/models_router.py` | Intent-gebaseerde routing demo |
+|   | `samples/session06/models_pipeline.py` | Multi-step plan/execute/refine chain |
 
-### Omgevingsvariabelen (Gemeenschappelijk voor alle voorbeelden)
+### Omgevingsvariabelen (Algemeen voor alle voorbeelden)
 
 | Variabele | Doel | Voorbeeld |
 |-----------|------|----------|
-| `FOUNDRY_LOCAL_ALIAS` | Standaard alias voor één model voor eenvoudige voorbeelden | `phi-4-mini` |
+| `FOUNDRY_LOCAL_ALIAS` | Standaard alias voor één model voor basisvoorbeelden | `phi-4-mini` |
 | `SLM_ALIAS` / `LLM_ALIAS` | Expliciete SLM versus groter model voor vergelijking | `phi-4-mini` / `gpt-oss-20b` |
 | `BENCH_MODELS` | Komma-lijst van aliassen om te benchmarken | `qwen2.5-0.5b,mistral-7b` |
-| `BENCH_ROUNDS` | Aantal benchmarkherhalingen per model | `3` |
-| `BENCH_PROMPT` | Prompt gebruikt bij benchmarking | `Leg retrieval augmented generation kort uit.` |
+| `BENCH_ROUNDS` | Benchmarkherhalingen per model | `3` |
+| `BENCH_PROMPT` | Prompt gebruikt bij benchmarking | `Explain retrieval augmented generation briefly.` |
 | `EMBED_MODEL` | Sentence-transformers embedding model | `sentence-transformers/all-MiniLM-L6-v2` |
-| `RAG_QUESTION` | Overschrijf testvraag voor RAG-pipeline | `Waarom RAG gebruiken met lokale inferentie?` |
-| `AGENT_QUESTION` | Overschrijf vraag voor agents-pipeline | `Leg uit waarom edge AI belangrijk is voor compliance.` |
+| `RAG_QUESTION` | Overschrijf testquery voor RAG-pipeline | `Why use RAG with local inference?` |
+| `AGENT_QUESTION` | Overschrijf agents-pipeline query | `Explain why edge AI matters for compliance.` |
 | `AGENT_MODEL_PRIMARY` | Modelalias voor onderzoeksagent | `phi-4-mini` |
-| `AGENT_MODEL_EDITOR` | Modelalias voor redacteur-agent (kan verschillen) | `gpt-oss-20b` |
-| `SHOW_USAGE` | Wanneer `1`, toont tokengebruik per voltooiing | `1` |
+| `AGENT_MODEL_EDITOR` | Modelalias voor redacteuragent (kan verschillen) | `gpt-oss-20b` |
+| `SHOW_USAGE` | Wanneer `1`, print tokengebruik per voltooiing | `1` |
 | `RETRY_ON_FAIL` | Wanneer `1`, probeer opnieuw bij tijdelijke chatfouten | `1` |
-| `RETRY_BACKOFF` | Aantal seconden wachten voor opnieuw proberen | `1.0` |
+| `RETRY_BACKOFF` | Seconden wachten voor opnieuw proberen | `1.0` |
 
-Als een variabele niet is ingesteld, vallen scripts terug op logische standaardwaarden. Voor demo's met één model heb je meestal alleen `FOUNDRY_LOCAL_ALIAS` nodig.
+Als een variabele niet is ingesteld, vallen scripts terug op verstandige standaardwaarden. Voor demo's met één model heb je meestal alleen `FOUNDRY_LOCAL_ALIAS` nodig.
 
 ### Hulpmodule
 
 Alle voorbeelden delen nu een helper `samples/workshop_utils.py` die biedt:
 
-* Gecachte `FoundryLocalManager` + OpenAI-client creatie
+* Cached `FoundryLocalManager` + OpenAI client creatie
 * `chat_once()` helper met optionele retry + gebruiksrapportage
 * Eenvoudige tokengebruikrapportage (inschakelen via `SHOW_USAGE=1`)
 
 Dit vermindert duplicatie en benadrukt best practices voor efficiënte lokale modelorkestratie.
 
-## Optionele verbeteringen (sessieoverschrijdend)
+## Optionele Verbeteringen (Cross-Session)
 
 | Thema | Verbetering | Sessies | Env / Toggle |
 |-------|-------------|---------|--------------|
 | Determinisme | Vaste temperatuur + stabiele promptsets | 1–6 | Stel in `temperature=0`, `top_p=1` |
-| Zichtbaarheid tokengebruik | Consistente kosten/efficiëntieonderwijs | 1–6 | `SHOW_USAGE=1` |
-| Streaming eerste token | Waargenomen latentie metric | 1,3,4,6 | `BENCH_STREAM=1` (benchmark) |
-| Retry veerkracht | Handelt tijdelijke cold-start af | Alle | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
-| Multi-model agents | Heterogene rolverdeling | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
-| Adaptieve routering | Intent + kostenheuristieken | 6 | Breid router uit met escalatielogica |
+| Zichtbaarheid Tokengebruik | Consistente kosten/efficiëntieonderwijs | 1–6 | `SHOW_USAGE=1` |
+| Streaming Eerste Token | Waargenomen latencymetriek | 1,3,4,6 | `BENCH_STREAM=1` (benchmark) |
+| Retry Veerkracht | Handelt tijdelijke cold-start | Alle | `RETRY_ON_FAIL=1` + `RETRY_BACKOFF` |
+| Multi-Model Agents | Heterogene rolverdeling | 5 | `AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR` |
+| Adaptieve Routing | Intent + kostenheuristieken | 6 | Breid router uit met escalatielogica |
 | Vectorgeheugen | Langetermijn semantische herinnering | 2,5,6 | Integreer FAISS/Chroma embedding index |
-| Trace-export | Auditing & evaluatie | 2,5,6 | Voeg JSON-regels per stap toe |
-| Kwaliteitsrubrieken | Kwalitatieve tracking | 3–6 | Secundaire beoordelingsprompts |
-| Smoke-tests | Snelle pre-workshop validatie | Alle | `python Workshop/tests/smoke.py` |
+| Trace Export | Auditing & evaluatie | 2,5,6 | Voeg JSON-regels per stap toe |
+| Kwaliteitsrubrieken | Kwalitatieve tracking | 3–6 | Secundaire scoring prompts |
+| Smoke Tests | Snelle pre-workshop validatie | Alle | `python Workshop/tests/smoke.py` |
 
-### Deterministische snelle start
+### Deterministische Snelle Start
 
 ```powershell
 set FOUNDRY_LOCAL_ALIAS=phi-4-mini
@@ -439,9 +437,9 @@ python Workshop\tests\smoke.py
 
 Verwacht stabiele tokenaantallen bij herhaalde identieke invoer.
 
-### RAG-evaluatie (Sessie 2)
+### RAG Evaluatie (Sessie 2)
 
-Gebruik `rag_eval_ragas.py` om antwoordrelevantie, betrouwbaarheid en contextnauwkeurigheid te berekenen op een kleine synthetische dataset:
+Gebruik `rag_eval_ragas.py` om antwoordrelevantie, betrouwbaarheid en contextprecisie te berekenen op een kleine synthetische dataset:
 
 ```powershell
 cd Workshop/samples
@@ -450,80 +448,75 @@ python -m session02.rag_eval_ragas
 
 Breid uit door een grotere JSONL van vragen, contexten en grondwaarheden te leveren en deze vervolgens om te zetten naar een Hugging Face `Dataset`.
 
-## CLI Command Accuratesse Bijlage
+## CLI Command Nauwkeurigheidsbijlage
 
 De workshop gebruikt bewust alleen momenteel gedocumenteerde / stabiele Foundry Local CLI-commando's.
 
-### Stabiele commando's genoemd
+### Stabiele Referentiecommando's
 
 | Categorie | Commando | Doel |
 |-----------|----------|------|
 | Kern | `foundry --version` | Toon geïnstalleerde versie |
-| Kern | `foundry init` | Initialiseer configuratie |
 | Service | `foundry service start` | Start lokale service (indien niet automatisch) |
-| Service | `foundry status` | Toon servicestatus |
+| Service | `foundry service status` | Toon servicestatus |
 | Modellen | `foundry model list` | Lijst catalogus / beschikbare modellen |
 | Modellen | `foundry model download <alias>` | Download modelgewichten naar cache |
 | Modellen | `foundry model run <alias>` | Start (laad) een model lokaal; combineer met `--prompt` voor eenmalige uitvoering |
 | Modellen | `foundry model unload <alias>` / `foundry model stop <alias>` | Laad een model uit het geheugen (indien ondersteund) |
 | Cache | `foundry cache list` | Lijst gecachte (gedownloade) modellen |
-| Systeem | `foundry system info` | Snapshot van hardware- & versnellingsmogelijkheden |
-| Systeem | `foundry system gpu-info` | GPU-diagnostische informatie |
-| Config | `foundry config list` | Toon huidige configuratiewaarden |
-| Config | `foundry config set <key> <value>` | Werk configuratie bij |
 
-### Eenmalig promptpatroon
+### Eenmalige Promptpatroon
 
-In plaats van een verouderd `model chat` subcommando, gebruik:
+In plaats van een verouderde `model chat` subcommando, gebruik:
 
 ```powershell
 foundry model run <alias> --prompt "Your question here"
 ```
 
-Dit voert een enkele prompt/antwoordcyclus uit en sluit vervolgens af.
+Dit voert een enkele prompt/response-cyclus uit en sluit vervolgens af.
 
-### Verwijderde / Vermeden patronen
+### Verwijderde / Vermeden Patronen
 
 | Verouderd / Ongedocumenteerd | Vervanging / Richtlijnen |
-|------------------------------|--------------------------|
+|-----------------------------|--------------------------|
 | `foundry model chat <model> "..."` | `foundry model run <model> --prompt "..."` |
-| `foundry model list --running` | Gebruik gewoon `foundry model list` + recente activiteit / logs |
+| `foundry model list --running` | Gebruik gewone `foundry model list` + recente activiteit / logs |
 | `foundry model list --cached` | `foundry cache list` |
 | `foundry model stats <model>` | Gebruik benchmark Python-script + OS-tools (Taakbeheer / `nvidia-smi`) |
 | `foundry model benchmark ...` | `samples/session03/benchmark_oss_models.py` |
 
 ### Benchmarking & Telemetrie
 
-- Latentie, p95, tokens/sec: `samples/session03/benchmark_oss_models.py`
-- Eerste-token latentie (streaming): stel `BENCH_STREAM=1` in
-- Resourcegebruik: OS-monitoren (Taakbeheer, Activiteitenmonitor, `nvidia-smi`) + `foundry system info`.
+- Latency, p95, tokens/sec: `samples/session03/benchmark_oss_models.py`
+- Eerste-token latency (streaming): stel `BENCH_STREAM=1` in
+- Resourcegebruik: OS-monitoren (Taakbeheer, Activiteitenmonitor, `nvidia-smi`).
 
 Zodra nieuwe CLI-telemetriecommando's upstream stabiliseren, kunnen ze met minimale aanpassingen worden opgenomen in sessiemarkdowns.
 
-### Geautomatiseerde lintbewaking
+### Geautomatiseerde Lint Guard
 
 Een geautomatiseerde linter voorkomt herintroductie van verouderde CLI-patronen binnen afgebakende codeblokken van markdown-bestanden:
 
 Script: `Workshop/scripts/lint_markdown_cli.py`
 
-Verouderde patronen worden geblokkeerd binnen codeblokken.
+Verouderde patronen worden geblokkeerd binnen code fences.
 
 Aanbevolen vervangingen:
 | Verouderd | Vervanging |
-|-----------|------------|
+|-----------|-----------|
 | `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
 | `model list --running` | `model list` |
 | `model list --cached` | `cache list` |
-| `model stats` | Benchmark-script + systeemtools |
+| `model stats` | Benchmark script + systeemtools |
 | `model benchmark` | `samples/session03/benchmark_oss_models.py` |
 | `model list --available` | `model list` |
 
-Lokale uitvoering:
+Run lokaal:
 ```powershell
 python Workshop\scripts\lint_markdown_cli.py --verbose
 ```
 
-GitHub Action: `.github/workflows/markdown-cli-lint.yml` wordt uitgevoerd bij elke push & PR.
+GitHub Action: `.github/workflows/markdown-cli-lint.yml` draait bij elke push & PR.
 
 Optionele pre-commit hook:
 ```bash
@@ -539,16 +532,15 @@ chmod +x .git/hooks/pre-commit
 | Download (cache) model | `foundry model download qwen2.5-0.5b` | `FoundryLocalManager("qwen2.5-0.5b")  # triggers download/load` | Manager kiest beste variant als alias naar meerdere builds verwijst |
 | Lijst catalogus | `foundry model list` | `# gebruik manager voor elke alias of onderhoud bekende lijst` | CLI aggregeert; SDK momenteel per-alias initialisatie |
 | Lijst gecachte modellen | `foundry cache list` | `manager.list_cached_models()` | Na manager-initialisatie (elke alias) |
-| GPU-versnelling inschakelen | `foundry config set compute.onnx.enable_gpu true` | `# CLI-actie; SDK gaat ervan uit dat configuratie al is toegepast` | Configuratie is externe bijwerking |
-| Verkrijg endpoint-URL | (impliciet) | `manager.endpoint` | Gebruikt om OpenAI-compatibele client te maken |
-| Warm een model op | `foundry model run <alias>` dan eerste prompt | `chat_once(alias, messages=[...])` (utility) | Hulpmiddelen behandelen initiële cold latency opwarming |
-| Meet latentie | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (of nieuw exportscript) | Geef de voorkeur aan script voor consistente metrics |
+| Verkrijg endpoint URL | (impliciet) | `manager.endpoint` | Gebruikt om OpenAI-compatibele client te maken |
+| Warm een model op | `foundry model run <alias>` dan eerste prompt | `chat_once(alias, messages=[...])` (utility) | Utilities behandelen initiële cold latency warmup |
+| Meet latency | `python -m session03.benchmark_oss_models` | `import benchmark_oss_models` (of nieuwe exportscript) | Geef voorkeur aan script voor consistente metrics |
 | Stop / laad model uit | `foundry model unload <alias>` | (Niet blootgesteld – herstart service / proces) | Meestal niet nodig voor workshopflow |
-| Verkrijg tokengebruik | (bekijk output) | `resp.usage.total_tokens` | Wordt geleverd als backend gebruiksobject retourneert |
+| Verkrijg tokengebruik | (bekijk output) | `resp.usage.total_tokens` | Geboden als backend gebruiksobject retourneert |
 
 ## Benchmark Markdown Export
 
-Gebruik het script `Workshop/scripts/export_benchmark_markdown.py` om een nieuwe benchmark uit te voeren (dezelfde logica als `samples/session03/benchmark_oss_models.py`) en een GitHub-vriendelijke Markdown-tabel plus ruwe JSON te genereren.
+Gebruik het script `Workshop/scripts/export_benchmark_markdown.py` om een nieuwe benchmark uit te voeren (zelfde logica als `samples/session03/benchmark_oss_models.py`) en een GitHub-vriendelijke Markdown-tabel plus ruwe JSON te genereren.
 
 ### Voorbeeld
 
@@ -560,11 +552,13 @@ Gegenereerde bestanden:
 | Bestand | Inhoud |
 |---------|--------|
 | `benchmark_report.md` | Markdown-tabel + interpretatiehints |
-| `benchmark_report.json` | Ruwe metrics-array (voor diffing / trendtracking) |
+| `benchmark_report.json` | Ruwe metrics-array (voor diffing / trend tracking) |
 
-Stel `BENCH_STREAM=1` in de omgeving in om eerste-token latentie op te nemen indien ondersteund.
+Stel `BENCH_STREAM=1` in de omgeving in om eerste-token latency op te nemen indien ondersteund.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
 Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

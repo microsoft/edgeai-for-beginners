@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:43:12+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:51:57+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ms"
 }
 -->
-# Kad Rujukan Pantas - Contoh Bengkel
+# Kad Rujukan Pantas - Sampel Bengkel
 
 **Kemas Kini Terakhir**: 8 Oktober 2025
 
@@ -30,16 +30,16 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ---
 
-## 📂 Gambaran Keseluruhan Contoh
+## 📂 Gambaran Keseluruhan Sampel
 
-| Sesi | Contoh | Tujuan | Masa |
+| Sesi | Sampel | Tujuan | Masa |
 |------|--------|--------|------|
 | 01 | `chat_bootstrap.py` | Chat asas + penstriman | ~30s |
 | 02 | `rag_pipeline.py` | RAG dengan embeddings | ~45s |
 | 02 | `rag_eval_ragas.py` | Penilaian RAG | ~60s |
 | 03 | `benchmark_oss_models.py` | Penanda aras model | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
-| 05 | `agents_orchestrator.py` | Sistem multi-ejen | ~60s |
+| 05 | `agents_orchestrator.py` | Sistem multi-agent | ~60s |
 | 06 | `models_router.py` | Penghalaan niat | ~45s |
 | 06 | `models_pipeline.py` | Saluran berbilang langkah | ~60s |
 
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **Dokumen SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Rujukan Pantas**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Ringkasan Kemas Kini**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Nota Migrasi**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -219,12 +217,12 @@ for chunk in stream:
 1. **Cache klien**: `workshop_utils` akan cache untuk anda
 2. **Gunakan model lebih kecil**: Mulakan dengan `qwen2.5-0.5b` untuk ujian
 3. **Aktifkan statistik penggunaan**: Tetapkan `SHOW_USAGE=1` untuk menjejaki token
-4. **Pemprosesan batch**: Proses beberapa arahan secara berturutan
-5. **Kurangkan max_tokens**: Mengurangkan kependaman untuk respons pantas
+4. **Pemprosesan batch**: Proses beberapa arahan secara berurutan
+5. **Kurangkan max_tokens**: Mengurangkan latensi untuk respons pantas
 
 ---
 
-## 🎯 Aliran Kerja Contoh
+## 🎯 Aliran Kerja Sampel
 
 ### Uji Segalanya
 ```bash
@@ -247,7 +245,7 @@ set RAG_QUESTION="What is RAG?"
 python -m session02.rag_pipeline
 ```
 
-### Sistem Multi-Ejen
+### Sistem Multi-Agent
 ```bash
 cd samples
 set AGENT_QUESTION="Why edge AI for healthcare?"
@@ -256,16 +254,18 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Bantuan Pantas**: Jalankan mana-mana contoh dengan `--help` dari direktori `samples` atau semak docstring:
+**Bantuan Pantas**: Jalankan mana-mana sampel dengan `--help` dari direktori `samples` atau semak docstring:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
 
 ---
 
-**Semua contoh dikemas kini Oktober 2025 dengan amalan terbaik Foundry Local SDK** ✨
+**Semua sampel dikemas kini Oktober 2025 dengan amalan terbaik Foundry Local SDK** ✨
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

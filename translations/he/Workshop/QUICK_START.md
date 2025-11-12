@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fd656d9068e1459dae855bd47075f2fb",
-  "translation_date": "2025-10-28T22:26:07+00:00",
+  "original_hash": "eee296ca63673b7520d15942f6a01826",
+  "translation_date": "2025-11-11T23:33:43+00:00",
   "source_file": "Workshop/QUICK_START.md",
   "language_code": "he"
 }
 -->
 # מדריך התחלה מהירה לסדנה
 
-## דרישות מקדימות
+## דרישות מוקדמות
 
 ### 1. התקנת Foundry Local
 
@@ -98,7 +98,7 @@ set BENCH_PROMPT="Explain RAG briefly"
 set BENCH_STREAM=1
 ```
 
-**פלט**: JSON עם נתוני זמן תגובה, תפוקה ומדדי טוקן ראשון
+**פלט**: JSON עם נתוני זמן תגובה, קצב עיבוד ומדדי טוקן ראשון
 
 ### מפגש 04: השוואת מודלים
 
@@ -158,9 +158,9 @@ python export_benchmark_markdown.py \
     --output benchmark_report.md
 ```
 
-**פלט**: טבלת Markdown + מדדי JSON
+**פלט**: טבלת Markdown + נתוני JSON
 
-### בדיקת CLI ב-Markdown
+### בדיקת CLI בתיעוד Markdown
 
 ```bash
 python lint_markdown_cli.py --verbose
@@ -177,11 +177,11 @@ cd Workshop
 python -m tests.smoke
 ```
 
-**בדיקות**: בדיקת פונקציונליות בסיסית של דוגמאות עיקריות
+**בדיקות**: פונקציונליות בסיסית של דוגמאות מרכזיות
 
 ## פתרון בעיות
 
-### השירות לא פועל
+### שירות לא פעיל
 
 ```bash
 # Check status
@@ -229,20 +229,20 @@ foundry model run phi-4-mini
 
 ### הגדרות ליבה
 | משתנה | ברירת מחדל | תיאור |
-|-------|------------|--------|
+|-------|------------|-------|
 | `FOUNDRY_LOCAL_ALIAS` | משתנה | כינוי מודל לשימוש |
 | `FOUNDRY_LOCAL_ENDPOINT` | אוטומטי | עקיפת נקודת שירות |
 | `SHOW_USAGE` | `0` | הצגת סטטיסטיקות שימוש בטוקנים |
 | `RETRY_ON_FAIL` | `1` | הפעלת לוגיקת ניסיון חוזר |
 | `RETRY_BACKOFF` | `1.0` | עיכוב ראשוני לניסיון חוזר (שניות) |
 
-### ספציפי למפגש
+### מפגש ספציפי
 | משתנה | ברירת מחדל | תיאור |
-|-------|------------|--------|
+|-------|------------|-------|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | מודל הטמעה |
 | `RAG_QUESTION` | ראה דוגמה | שאלה לבדיקה ב-RAG |
 | `BENCH_MODELS` | משתנה | מודלים מופרדים בפסיקים |
-| `BENCH_ROUNDS` | `3` | איטרציות ביצועים |
+| `BENCH_ROUNDS` | `3` | מספר סבבי ביצועים |
 | `BENCH_PROMPT` | ראה דוגמה | הנחיה לביצועים |
 | `BENCH_STREAM` | `0` | מדידת זמן תגובה לטוקן ראשון |
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | מודל סוכן ראשי |
@@ -266,29 +266,30 @@ foundry model run phi-4-mini
 ## תיעוד SDK
 
 - **Foundry Local**: https://github.com/microsoft/Foundry-Local  
-- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local  
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
 
 ## קבלת עזרה
 
-1. בדוק סטטוס שירות: `foundry service status`  
+1. בדוק מצב שירות: `foundry service status`  
 2. צפה ביומנים: בדוק יומני שירות Foundry Local  
 3. עיין בתיעוד SDK: https://github.com/microsoft/Foundry-Local  
-4. סקור קוד דוגמאות: כל הדוגמאות כוללות תיעוד מפורט  
+4. עיין בקוד דוגמאות: כל הדוגמאות כוללות תיעוד מפורט
 
 ## צעדים הבאים
 
 1. השלם את כל מפגשי הסדנה לפי הסדר  
 2. נסה מודלים שונים  
 3. שנה דוגמאות לצרכים שלך  
-4. עיין ב-`SDK_MIGRATION_NOTES.md` לדפוסים מתקדמים  
 
 ---
 
 **עודכן לאחרונה**: 2025-01-08  
 **גרסת סדנה**: אחרונה  
-**SDK**: Foundry Local Python SDK  
+**SDK**: Foundry Local Python SDK
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **הצהרת אחריות**:  
-מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. אנו לא נושאים באחריות לכל אי הבנות או פרשנויות שגויות הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. איננו אחראים לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

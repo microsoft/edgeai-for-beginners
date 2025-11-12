@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-11-11T17:37:52+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-12T01:06:41+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "pcm"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overview
 
-Di Workshop samples dey use environment variables for configuration, wey dem put for `.env` file wey dey for di root of di repository. Dis one make am easy to customize without touching di code.
+Di Workshop samples dey use environment variables for configuration, wey dem gather for `.env` file wey dey for di repository root. Dis one make am easy to customize without touching di code.
 
 ## Quick Start
 
@@ -32,7 +32,7 @@ foundry model run phi-4-mini
 
 Di `.env` file don already get better default settings. Most people no go need change anything.
 
-**Optional**: Look di settings and change am if you wan:
+**Optional**: Check and adjust di settings:
 ```bash
 # Edit .env file
 notepad .env  # Windows
@@ -285,7 +285,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ### Model Not Found
 
 **Symptoms:**
-- "Model no dey" errors
+- "Model no dey found" errors
 - "Alias no dey recognized"
 
 **Solutions:**
@@ -303,7 +303,7 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Import Errors
 
 **Symptoms:**
-- "Module no dey" errors
+- "Module no dey found" errors
 
 **Solutions:**
 
@@ -407,8 +407,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ## Additional Resources
 
-- `QUICK_START.md` - How to start guide
-- `SDK_MIGRATION_NOTES.md` - SDK update details
+- `QUICK_START.md` - Getting started guide
 - `Workshop/samples/*/README.md` - Sample-specific guides
 
 ---
@@ -421,5 +420,5 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dis dokyument don use AI transleshion service [Co-op Translator](https://github.com/Azure/co-op-translator) do di transleshion. Even as we dey try make am accurate, abeg make you sabi say machine transleshion fit get mistake or no dey correct well. Di original dokyument wey dey for im native language na di one wey you go take as di correct source. For important mata, e good make you use professional human transleshion. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis transleshion.
+Dis dokyument don use AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am correct, abeg sabi say machine translation fit get mistake or no dey accurate well. Di original dokyument for im native language na di main correct source. For important information, e better make professional human translation dey use. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because of dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

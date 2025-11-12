@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-11T11:57:58+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-12T01:05:00+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "et"
 }
 -->
-# Sessioon 3: Avatud lähtekoodiga mudelid Foundry Localis
+# Sessie 3: Avatud lähtekoodiga mudelid Foundry Localis
 
 ## Kokkuvõte
 
-Õpi, kuidas tuua Hugging Face'i ja teisi avatud lähtekoodiga mudeleid Foundry Locali. Tutvu mudelite valikustrateegiate, kogukonna panustamise töövoogude, jõudluse võrdlusmeetodite ja Foundry laiendamise võimalustega kohandatud mudeliregistratsioonide abil. See sessioon järgib iganädalasi "Model Mondays" uurimisteemasid ja annab oskused avatud lähtekoodiga mudelite hindamiseks ja rakendamiseks lokaalselt enne Azure'i skaleerimist.
+Avasta, kuidas tuua Hugging Face'i ja teisi avatud lähtekoodiga mudeleid Foundry Locali. Õpi valikustrateegiaid, kogukonna panustamise töövooge, jõudluse võrdlemise metoodikat ja seda, kuidas laiendada Foundryt kohandatud mudelite registreerimisega. See sessioon haakub iganädalaste "Model Mondays" uurimisteemadega ja annab sulle oskused avatud lähtekoodiga mudelite hindamiseks ja rakendamiseks kohapeal enne nende skaleerimist Azure'i.
 
 ## Õpieesmärgid
 
@@ -19,18 +19,17 @@ Sessiooni lõpuks oskad:
 
 - **Avastada ja hinnata**: Tuvastada kandidaatmudeleid (mistral, gemma, qwen, deepseek), arvestades kvaliteedi ja ressursside kompromisse.
 - **Laadida ja käivitada**: Kasutada Foundry Local CLI-d kogukonna mudelite allalaadimiseks, vahemällu salvestamiseks ja käivitamiseks.
-- **Võrdlusuuringud**: Rakendada järjepidevaid latentsuse, tokenite läbilaskevõime ja kvaliteedi heuristikuid.
-- **Laiendada**: Registreerida või kohandada SDK-ga ühilduvat mudeli wrapperit.
+- **Võrdlusuuringuid teha**: Rakendada järjepidevaid latentsuse, tokenite läbilaskevõime ja kvaliteedi heuristikaid.
+- **Laiendada**: Registreerida või kohandada mudeli wrapperit, järgides SDK-ga ühilduvaid mustreid.
 - **Võrrelda**: Luua struktureeritud võrdlusi SLM-i ja keskmise suurusega LLM-i valikute jaoks.
 
 ## Eeltingimused
 
 - Sessioonid 1 ja 2 läbitud
-- Python keskkond koos `foundry-local-sdk` paigaldatud
+- Python'i keskkond, kus on paigaldatud `foundry-local-sdk`
 - Vähemalt 15GB vaba kettaruumi mitme mudeli vahemälu jaoks
-- Valikuline: GPU/WebGPU kiirendus lubatud (`foundry config list`)
 
-### Kiire alustamine mitme platvormi keskkonnas
+### Platvormideülene keskkonna kiirkäivitus
 
 Windows PowerShell:
 ```powershell
@@ -48,7 +47,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai numpy
 ```
 
-Kui benchmarkid macOS-ist Windowsi hostiteenuse vastu, seadista:
+Kui teed võrdlusuuringut macOS-ist Windowsi hostiteenuse vastu, seadista:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -155,21 +154,21 @@ python samples/03-oss-models/benchmark_models.py
 
 ### 4. Jõudluse võrdlemine (5 min)
 
-Arutle kompromisside üle: laadimisaeg, mälukasutus (vaata Task Manager / `nvidia-smi` / OS-i ressursimonitor), väljundi kvaliteet vs kiirus. Kasuta Python võrdlusuuringu skripti (Sessioon 3) latentsuse ja läbilaskevõime mõõtmiseks; korda pärast GPU kiirenduse lubamist.
+Arutle kompromisside üle: laadimisaeg, mälumaht (vaata Task Manager / `nvidia-smi` / OS-i ressursimonitor), väljundi kvaliteet vs kiirus. Kasuta Python'i võrdlusuuringu skripti (Sessie 3) latentsuse ja läbilaskevõime mõõtmiseks; korda protsessi pärast GPU kiirenduse lubamist.
 
-### 5. Algprojekt (4 min)
+### 5. Algusprojekt (4 min)
 
-Loo mudelite võrdlusaruande generaator (laienda võrdlusuuringu skripti markdowni eksportimisega).
+Loo mudelite võrdlusaruande generaator (laienda võrdlusuuringu skripti markdowni ekspordiga).
 
-## Algprojekt: Laienda `03-huggingface-models`
+## Algusprojekt: Laienda `03-huggingface-models`
 
-Täienda olemasolevat näidist järgmiselt:
+Täienda olemasolevat näidet:
 
-1. Lisa võrdlusuuringu koondamine + CSV/Markdown väljund.
-2. Rakenda lihtne kvalitatiivne hindamine (küsimuste paaride komplekt + käsitsi annotatsiooni stub-fail).
-3. Lisa JSON-konfiguratsioon (`models.json`) mudelite nimekirja ja küsimuste komplekti jaoks.
+1. Lisa võrdlusuuringute koondamine + CSV/Markdowni väljund.
+2. Rakenda lihtne kvalitatiivne hindamine (küsimuste paaride komplekt + käsitsi märgistamise stub-fail).
+3. Lisa JSON-konfiguratsioonifail (`models.json`) pistikprogrammide mudeliloendi ja küsimuste komplekti jaoks.
 
-## Kontroll-loend valideerimiseks
+## Kontrollnimekiri valideerimiseks
 
 ```powershell
 foundry cache list
@@ -181,14 +180,14 @@ Kõik sihtmudelid peaksid ilmuma ja vastama testvestluse päringule.
 
 ## Näidistsenaarium ja töötoa kaardistamine
 
-| Töötoa skript | Stsenaarium | Eesmärk | Küsimuste/Dataseti allikas |
-|---------------|------------|---------|---------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Servaplatvormi meeskond valib vaikimisi SLM-i sisseehitatud kokkuvõtja jaoks | Toota latentsuse + p95 + tokenite/sekundis võrdlus kandidaatmudeleid | Inline `PROMPT` var + keskkonna `BENCH_MODELS` nimekiri |
+| Töötoa skript | Stsenaarium | Eesmärk | Küsimus / Andmestiku allikas |
+|---------------|-------------|---------|-----------------------------|
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Servaplatvormi meeskond valib vaikimisi SLM-i manustatud kokkuvõttefunktsiooni jaoks | Toota latentsuse + p95 + tokenite/sek võrdlus kandidaatmudelite vahel | Sisseehitatud `PROMPT` muutujaga + keskkonna `BENCH_MODELS` loend |
 
 ### Stsenaariumi narratiiv
-Tootearendus peab valima vaikimisi kerge kokkuvõtva mudeli offline koosolekumärkmete funktsiooni jaoks. Nad viivad läbi kontrollitud deterministlikud võrdlusuuringud (temperature=0) fikseeritud küsimuste komplekti alusel (vt näidet allpool) ja koguvad latentsuse + läbilaskevõime mõõdikuid koos ja ilma GPU kiirenduseta.
+Tootearenduse meeskond peab valima vaikimisi kerge kokkuvõtte mudeli võrguühenduseta koosolekumärkmete funktsiooni jaoks. Nad viivad läbi kontrollitud deterministlikud võrdlusuuringud (temperature=0) fikseeritud küsimuste komplekti alusel (vt allolevat näidet) ja koguvad latentsuse + läbilaskevõime mõõdikuid koos ja ilma GPU kiirenduseta.
 
-### Näide küsimuste komplekti JSON (laiendatav)
+### Näide küsimuste komplekti JSON-ist (laiendatav)
 ```json
 [
     "Explain the principle of retrieval augmented generation in 2 sentences.",
@@ -198,22 +197,22 @@ Tootearendus peab valima vaikimisi kerge kokkuvõtva mudeli offline koosolekumä
 ]
 ```
 
-Loopi iga küsimus mudeli kohta, jäädvusta iga küsimuse latentsus, et tuletada jaotusmõõdikud ja tuvastada kõrvalekalded.
+Korda iga küsimust iga mudeli puhul, jäädvusta iga küsimuse latentsus, et tuletada jaotusmõõdikud ja tuvastada kõrvalekalded.
 
 ## Mudeli valiku raamistik
 
-| Dimensioon | Mõõdik | Miks see oluline on |
-|------------|--------|---------------------|
+| Mõõde | Mõõdik | Miks see oluline on |
+|-------|--------|---------------------|
 | Latentsus | keskmine / p95 | Kasutajakogemuse järjepidevus |
-| Läbilaskevõime | tokenid/sekundis | Partii- ja voogedastuse skaleeritavus |
-| Mälu | residentne suurus | Seadme sobivus ja samaaegsus |
-| Kvaliteet | rubriigi küsimused | Ülesande sobivus |
-| Jalajälg | kettavahemälu | Jaotamine ja uuendused |
+| Läbilaskevõime | tokenid/sek | Partii- ja voogedastuse skaleeritavus |
+| Mälu | kasutatav maht | Seadme sobivus ja samaaegsus |
+| Kvaliteet | hindamisküsimused | Ülesande sobivus |
+| Jälg | kettavahemälu | Jaotamine ja uuendused |
 | Litsents | kasutusõigused | Kaubanduslik vastavus |
 
 ## Kohandatud mudeli lisamine
 
-Kõrgetasemeline muster (pseudo):
+Kõrgetasemeline muster (pseudokood):
 
 ```python
 # pseudo_adapter.py (conceptual)
@@ -224,22 +223,22 @@ class CustomModelAdapter:
 # Register with local routing (future extensibility point)
 ```
 
-Vaata ametlikku repo, et tutvuda arenevate adapteriliidestega:  
+Vaata ametlikku repo't adapteriliideste arenduste kohta:
 https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ## Tõrkeotsing
 
 | Probleem | Põhjus | Lahendus |
-|----------|--------|---------|
+|----------|--------|----------|
 | OOM mistral-7b puhul | Ebapiisav RAM/GPU | Peata teised mudelid; proovi väiksemat varianti |
-| Aeglane esimene vastus | Külm laadimine | Hoia soojana perioodilise kerge küsimusega |
-| Allalaadimine takerdub | Võrgu ebastabiilsus | Proovi uuesti; eel-laadi vaikse ajal |
+| Aeglane esimene vastus | Külm laadimine | Hoia soojas perioodilise kerge küsimusega |
+| Allalaadimine takerdub | Võrgu ebastabiilsus | Proovi uuesti; eellaadi mittekoormatud ajal |
 
 ## Viited
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Model Mondays: https://aka.ms/model-mondays
-- Hugging Face mudelite avastamine: https://huggingface.co/models
+- Hugging Face'i mudelite avastamine: https://huggingface.co/models
 
 ---
 
@@ -249,18 +248,18 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 ### Valikulised täiustused
 
 | Täiustus | Kasu | Kuidas |
-|----------|------|-------|
-| Esimese tokeni latentsus voogesituses | Mõõdab tajutavat reageerimiskiirust | Käivita benchmark `BENCH_STREAM=1` (täiustatud skript `Workshop/samples/session03`) |
-| Deterministlik režiim | Stabiilsed regressioonivõrdlused | `temperature=0`, fikseeritud küsimuste komplekt, jäädvusta JSON väljundid versioonikontrolli all |
-| Kvaliteedi rubriigi hindamine | Lisab kvalitatiivse mõõtme | Halda `prompts.json` eeldatavate aspektidega; hinda skoorid (1–5) käsitsi või teise mudeli abil |
-| CSV / Markdown eksport | Jagatav aruanne | Laienda skripti, et kirjutada `benchmark_report.md` tabeli ja esiletõstetega |
+|----------|------|--------|
+| Esimese tokeni latentsuse voogedastus | Mõõdab tajutavat reageerimiskiirust | Käivita võrdlusuuring `BENCH_STREAM=1` abil (täiustatud skript `Workshop/samples/session03` kaustas) |
+| Deterministlik režiim | Stabiilsed regressioonivõrdlused | `temperature=0`, fikseeritud küsimuste komplekt, jäädvusta JSON-väljundid versioonikontrolli all |
+| Kvaliteedi hindamise skoorimine | Lisab kvalitatiivse mõõtme | Halda `prompts.json` oodatavate aspektidega; märgi skoorid (1–5) käsitsi või teise mudeli abil |
+| CSV / Markdowni eksport | Jagatav aruanne | Laienda skripti, et kirjutada `benchmark_report.md` tabeli ja esiletõstudega |
 | Mudeli võimekuse sildid | Aitab hiljem automatiseeritud suunamist | Halda `models.json` koos `{alias: {capabilities:[], size_mb:..}}` |
-| Vahemälu soojendusfaas | Vähendab külmkäivituse kallutatust | Käivita üks soojendusring enne ajastamise tsüklit (juba rakendatud) |
-| Protsentuaalne täpsus | Tugev latentsuse saba | Kasuta numpy protsentiili (juba refaktooritud skriptis) |
-| Tokenite kulu ligikaudne arvutus | Majanduslik võrdlus | Ligikaudne kulu = (tokenid/sekundis * keskmine tokenite arv päringu kohta) * energia heuristik |
-| Ebaõnnestunud mudelite automaatne vahelejätmine | Vastupidavus partii käitustes | Mähi iga benchmark try/except sisse ja märgi olekuväli |
+| Vahemälu soojendusfaas | Vähendab külmkäivituse kallutatust | Teosta üks soojendusring enne ajastusahelat (juba rakendatud) |
+| Protsentiili täpsus | Tugev sabalatentsus | Kasuta numpy protsentiili (juba refaktoreeritud skriptis) |
+| Tokenite kulu hinnang | Majanduslik võrdlus | Ligikaudne kulu = (tokenid/sek * keskmine tokenite arv päringu kohta) * energia heuristika |
+| Ebaõnnestunud mudelite automaatne vahelejätmine | Vastupidavus partii käitamisel | Mähi iga võrdlusuuring try/except sisse ja märgi olekuväli |
 
-#### Minimaalne Markdowni eksportimise snippet
+#### Minimaalne Markdowni ekspordi näidis
 
 ```python
 with open("benchmark_report.md", "w") as f:
@@ -279,9 +278,11 @@ with open("benchmark_report.md", "w") as f:
 ]
 ```
 
-Loopi staatilist nimekirja juhuslike küsimuste asemel, et saada võrreldavaid mõõdikuid üle commitide.
+Kasuta staatilist loendit juhuslike küsimuste asemel, et saada võrreldavaid mõõdikuid erinevate versioonide vahel.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algkeeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tekkida selle tõlke kasutamise tõttu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

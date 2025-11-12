@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:24:55+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:33:23+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "nl"
 }
@@ -102,7 +102,7 @@ python scripts/test_samples.py --verbose
 
 ---
 
-## 🐛 Problemen Oplossen
+## 🐛 Problemen oplossen
 
 ### Verbindingsfout
 ```bash
@@ -123,7 +123,7 @@ pip install sentence-transformers ragas datasets
 pip install -r Workshop/requirements.txt
 ```
 
-### Model Niet Gevonden
+### Model niet gevonden
 ```bash
 # List available models
 foundry model ls
@@ -132,7 +132,7 @@ foundry model ls
 foundry model download phi-4-mini
 ```
 
-### Trage Prestaties
+### Trage prestaties
 ```bash
 # Use smaller model
 set FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
@@ -157,7 +157,7 @@ text, usage = chat_once(
 )
 ```
 
-### Client Ophalen
+### Client ophalen
 ```python
 from workshop_utils import get_client
 
@@ -194,14 +194,14 @@ for chunk in stream:
 
 ## 📊 Modelselectie
 
-| Model | Grootte | Beste Voor | Snelheid |
+| Model | Grootte | Beste voor | Snelheid |
 |-------|---------|------------|----------|
 | `qwen2.5-0.5b` | 0.5B | Snelle classificatie | ⚡⚡⚡ |
 | `qwen2.5-coder-0.5b` | 0.5B | Snelle code generatie | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Creatief schrijven | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Code, refactoring | ⚡⚡ |
 | `phi-4-mini` | 4B | Algemeen, samenvatting | ⚡⚡ |
-| `qwen2.5-7b` | 7B | Complex redeneren | ⚡ |
+| `qwen2.5-7b` | 7B | Complexe redenering | ⚡ |
 
 ---
 
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **SDK Documentatie**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Snelle Referentie**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Update Samenvatting**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migratie Notities**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

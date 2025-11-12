@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T22:49:06+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T23:58:13+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "sw"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Muhtasari
 
-Mifano ya Warsha hutumia vigezo vya mazingira kwa usanidi, vilivyowekwa katikati kwenye faili `.env` katika mzizi wa hifadhi. Hii inaruhusu ubinafsishaji rahisi bila kubadilisha msimbo.
+Mfano wa Warsha hutumia vigezo vya mazingira kwa usanidi, vilivyowekwa kwenye faili `.env` katika mzizi wa hifadhi. Hii inaruhusu ubinafsishaji rahisi bila kubadilisha msimbo.
 
 ## Kuanza Haraka
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. Sanidi Mazingira
 
-Faili `.env` tayari imewekwa na chaguo-msingi zinazofaa. Watumiaji wengi hawatahitaji kubadilisha chochote.
+Faili ya `.env` tayari imesanidiwa na chaguo-msingi zinazofaa. Watumiaji wengi hawatahitaji kubadilisha chochote.
 
 **Hiari**: Kagua na ubadilishe mipangilio:
 ```bash
@@ -60,14 +60,14 @@ python -m session01.chat_bootstrap "Your question here"
 
 | Kigezo | Chaguo-msingi | Maelezo |
 |--------|---------------|---------|
-| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Mfano wa chaguo-msingi kwa mifano |
-| `FOUNDRY_LOCAL_ENDPOINT` | (tupu) | Badilisha huduma ya mwisho |
+| `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Modeli chaguo-msingi kwa mifano |
+| `FOUNDRY_LOCAL_ENDPOINT` | (hakuna) | Badilisha endpoint ya huduma |
 | `PYTHONPATH` | Njia za Warsha | Njia ya utafutaji wa moduli za Python |
 
 **Wakati wa kuweka FOUNDRY_LOCAL_ENDPOINT:**
-- Kesi ya mbali ya Foundry Local
+- Kesi ya Foundry Local ya mbali
 - Usanidi wa bandari maalum
-- Utengano wa maendeleo/uzalishaji
+- Tofauti ya maendeleo/uzalishaji
 
 **Mfano:**
 ```bash
@@ -83,30 +83,30 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### Kikao 02: RAG Pipeline
 | Kigezo | Chaguo-msingi | Kusudi |
 |--------|---------------|--------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Mfano wa kuweka |
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Modeli ya embedding |
 | `RAG_QUESTION` | Imewekwa awali | Swali la majaribio |
 
-#### Kikao 03: Upimaji
+#### Kikao 03: Benchmarking
 | Kigezo | Chaguo-msingi | Kusudi |
 |--------|---------------|--------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Mifano ya kupima |
-| `BENCH_ROUNDS` | `3` | Marudio kwa kila mfano |
-| `BENCH_PROMPT` | Imewekwa awali | Maelekezo ya majaribio |
-| `BENCH_STREAM` | `0` | Pima ucheleweshaji wa tokeni ya kwanza |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modeli za benchmarking |
+| `BENCH_ROUNDS` | `3` | Mizunguko kwa kila modeli |
+| `BENCH_PROMPT` | Imewekwa awali | Prompt ya majaribio |
+| `BENCH_STREAM` | `0` | Pima latency ya tokeni ya kwanza |
 
-#### Kikao 04: Ulinganisho wa Mfano
+#### Kikao 04: Ulinganisho wa Modeli
 | Kigezo | Chaguo-msingi | Kusudi |
 |--------|---------------|--------|
-| `SLM_ALIAS` | `phi-4-mini` | Mfano mdogo wa lugha |
-| `LLM_ALIAS` | `qwen2.5-7b` | Mfano mkubwa wa lugha |
-| `COMPARE_PROMPT` | Imewekwa awali | Maelekezo ya kulinganisha |
+| `SLM_ALIAS` | `phi-4-mini` | Modeli ndogo ya lugha |
+| `LLM_ALIAS` | `qwen2.5-7b` | Modeli kubwa ya lugha |
+| `COMPARE_PROMPT` | Imewekwa awali | Prompt ya kulinganisha |
 | `COMPARE_RETRIES` | `2` | Jaribio la kurudia |
 
 #### Kikao 05: Uratibu wa Wakala Wengi
 | Kigezo | Chaguo-msingi | Kusudi |
 |--------|---------------|--------|
-| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Mfano wa wakala wa utafiti |
-| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Mfano wa wakala wa mhariri |
+| `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Modeli ya wakala mtafiti |
+| `AGENT_MODEL_EDITOR` | `phi-4-mini` | Modeli ya wakala mhariri |
 | `AGENT_QUESTION` | Imewekwa awali | Swali la majaribio |
 
 ### Usanidi wa Uaminifu
@@ -138,7 +138,7 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Usanidi wa Upimaji
+### Usanidi wa Benchmarking
 ```bash
 BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
@@ -157,12 +157,12 @@ FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ```
 
-## Mifano Inayopendekezwa
+## Modeli Zinazopendekezwa
 
-### Kwa Kesi ya Matumizi
+### Kwa Matumizi Maalum
 
 **Matumizi ya Kawaida:**
-- `phi-4-mini` - Ubora na kasi iliyosawazishwa
+- `phi-4-mini` - Ubora na kasi ya wastani
 
 **Majibu ya Haraka:**
 - `qwen2.5-0.5b` - Haraka sana, nzuri kwa uainishaji
@@ -170,11 +170,11 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 **Ubora wa Juu:**
 - `qwen2.5-7b` - Ubora bora, matumizi ya rasilimali zaidi
-- `phi-4-mini` - Ubora mzuri, rasilimali za chini
+- `phi-4-mini` - Ubora mzuri, rasilimali chache
 
 **Uzalishaji wa Msimbo:**
-- `deepseek-coder-1.3b` - Imebobea kwa msimbo
-- `phi-4-mini` - Kusudi la jumla la msimbo
+- `deepseek-coder-1.3b` - Maalum kwa msimbo
+- `phi-4-mini` - Msimbo wa matumizi ya jumla
 
 ### Kwa Upatikanaji wa Rasilimali
 
@@ -201,7 +201,7 @@ LLM_ALIAS=qwen2.5-14b
 
 ## Usanidi wa Juu
 
-### Huduma za Mwisho Maalum
+### Endpoints Maalum
 
 ```bash
 # Development environment
@@ -239,7 +239,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ### Vigezo vya Mazingira Havijapakiwa
 
 **Dalili:**
-- Script zinatumia mifano isiyo sahihi
+- Script zinatumia modeli zisizo sahihi
 - Hitilafu za muunganisho
 - Vigezo havitambuliki
 
@@ -262,9 +262,9 @@ pwd  # Should be in Workshop or repository root
 ### Masuala ya Muunganisho wa Huduma
 
 **Dalili:**
-- Hitilafu za "Connection refused"
+- Hitilafu za "Muunganisho umekataliwa"
 - "Huduma haipatikani"
-- Hitilafu za muda wa kuisha
+- Hitilafu za muda wa kusubiri
 
 **Suluhisho:**
 ```bash
@@ -282,10 +282,10 @@ foundry service status | grep "Port"
 FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ```
 
-### Mfano Haupatikani
+### Modeli Haipatikani
 
 **Dalili:**
-- Hitilafu za "Model not found"
+- Hitilafu za "Modeli haipatikani"
 - "Alias haijatambulika"
 
 **Suluhisho:**
@@ -303,7 +303,7 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Hitilafu za Uingizaji
 
 **Dalili:**
-- Hitilafu za "Module not found"
+- Hitilafu za "Moduli haipatikani"
 
 **Suluhisho:**
 
@@ -374,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Tumia Faili za .env Zilizotenganishwa
+### 2. Tumia Faili Tofauti za .env
 
 ```bash
 .env              # Default configuration
@@ -403,12 +403,11 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Hifadhi Kuu**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Nyaraka za API**: Angalia hifadhi ya SDK kwa za hivi karibuni
+- **Nyaraka za API**: Angalia hifadhi ya SDK kwa toleo la hivi karibuni
 
 ## Rasilimali Zingine
 
 - `QUICK_START.md` - Mwongozo wa kuanza
-- `SDK_MIGRATION_NOTES.md` - Maelezo ya sasisho la SDK
 - `Workshop/samples/*/README.md` - Miongozo maalum ya mifano
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya kiasili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

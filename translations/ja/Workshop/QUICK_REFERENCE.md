@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T20:54:59+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T22:09:20+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "ja"
 }
@@ -37,7 +37,7 @@ python -m session01.chat_bootstrap "What is edge AI?"
 | 01 | `chat_bootstrap.py` | 基本的なチャット + ストリーミング | 約30秒 |
 | 02 | `rag_pipeline.py` | 埋め込みを使用したRAG | 約45秒 |
 | 02 | `rag_eval_ragas.py` | RAG評価 | 約60秒 |
-| 03 | `benchmark_oss_models.py` | モデルベンチマーク | 約2分 |
+| 03 | `benchmark_oss_models.py` | モデルのベンチマーク | 約2分 |
 | 04 | `model_compare.py` | SLMとLLMの比較 | 約45秒 |
 | 05 | `agents_orchestrator.py` | マルチエージェントシステム | 約60秒 |
 | 06 | `models_router.py` | インテントルーティング | 約45秒 |
@@ -143,7 +143,7 @@ set BENCH_ROUNDS=1
 
 ---
 
-## 📖 よくあるパターン
+## 📖 共通パターン
 
 ### 基本的なチャット
 ```python
@@ -200,7 +200,7 @@ for chunk in stream:
 | `qwen2.5-coder-0.5b` | 0.5B | 素早いコード生成 | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | 創造的な文章作成 | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | コード、リファクタリング | ⚡⚡ |
-| `phi-4-mini` | 4B | 一般用途、要約 | ⚡⚡ |
+| `phi-4-mini` | 4B | 一般的な用途、要約 | ⚡⚡ |
 | `qwen2.5-7b` | 7B | 複雑な推論 | ⚡ |
 
 ---
@@ -209,24 +209,22 @@ for chunk in stream:
 
 - **SDKドキュメント**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **クイックリファレンス**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **更新概要**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **移行ノート**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
 ## 💡 ヒント
 
-1. **クライアントのキャッシュ**: `workshop_utils`が自動でキャッシュします
-2. **小型モデルを使用**: テストには`qwen2.5-0.5b`を使用
-3. **使用状況統計を有効化**: `SHOW_USAGE=1`を設定してトークンを追跡
+1. **クライアントをキャッシュする**: `workshop_utils`が自動でキャッシュします
+2. **小さいモデルを使用する**: テストには`qwen2.5-0.5b`を使用
+3. **使用状況統計を有効化する**: `SHOW_USAGE=1`を設定してトークンを追跡
 4. **バッチ処理**: 複数のプロンプトを順次処理
-5. **max_tokensを減らす**: クイックレスポンスのためにレイテンシを削減
+5. **max_tokensを減らす**: 応答の遅延を減らすため
 
 ---
 
 ## 🎯 サンプルワークフロー
 
-### 全てをテスト
+### 全てをテストする
 ```bash
 python scripts/validate_samples.py
 python scripts/test_samples.py --quick
@@ -256,7 +254,7 @@ python -m session05.agents_orchestrator
 
 ---
 
-**クイックヘルプ**: `samples`ディレクトリから任意のサンプルを`--help`で実行するか、ドックストリングを確認してください:
+**クイックヘルプ**: `samples`ディレクトリから`--help`を使用して任意のサンプルを実行するか、ドックストリングを確認してください:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責事項**:  
-この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤認について、当方は一切の責任を負いません。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解釈について、当方は責任を負いません。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

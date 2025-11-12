@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T21:42:14+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T22:53:43+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "pl"
 }
 -->
-# Przewodnik konfiguracji środowiska
+# Przewodnik Konfiguracji Środowiska
 
 ## Przegląd
 
-Przykłady warsztatowe wykorzystują zmienne środowiskowe do konfiguracji, które są centralnie zarządzane w pliku `.env` znajdującym się w głównym katalogu repozytorium. Dzięki temu można łatwo dostosować ustawienia bez konieczności modyfikowania kodu.
+Przykłady warsztatowe używają zmiennych środowiskowych do konfiguracji, które są scentralizowane w pliku `.env` znajdującym się w katalogu głównym repozytorium. Dzięki temu można łatwo dostosować ustawienia bez konieczności modyfikowania kodu.
 
-## Szybki start
+## Szybki Start
 
-### 1. Sprawdź wymagania wstępne
+### 1. Sprawdź Wymagania Wstępne
 
 ```bash
 # Check Foundry Local is installed
@@ -28,7 +28,7 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. Skonfiguruj środowisko
+### 2. Skonfiguruj Środowisko
 
 Plik `.env` jest już skonfigurowany z domyślnymi ustawieniami. Większość użytkowników nie będzie musiała nic zmieniać.
 
@@ -39,7 +39,7 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Zastosuj konfigurację
+### 3. Zastosuj Konfigurację
 
 **Dla skryptów Python:**
 ```bash
@@ -54,12 +54,12 @@ python -m session01.chat_bootstrap "Your question here"
 # Variables are loaded when cells execute
 ```
 
-## Referencja zmiennych środowiskowych
+## Odniesienie do Zmiennych Środowiskowych
 
-### Podstawowa konfiguracja
+### Podstawowa Konfiguracja
 
-| Zmienna | Domyślna wartość | Opis |
-|---------|------------------|------|
+| Zmienna | Domyślna | Opis |
+|---------|----------|------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Domyślny model dla przykładów |
 | `FOUNDRY_LOCAL_ENDPOINT` | (puste) | Nadpisanie punktu końcowego usługi |
 | `PYTHONPATH` | Ścieżki warsztatowe | Ścieżka wyszukiwania modułów Python |
@@ -67,7 +67,7 @@ python -m session01.chat_bootstrap "Your question here"
 **Kiedy ustawić FOUNDRY_LOCAL_ENDPOINT:**
 - Zdalna instancja Foundry Local
 - Niestandardowa konfiguracja portu
-- Oddzielenie środowisk deweloperskich/produkcyjnych
+- Oddzielenie środowiska deweloperskiego/produkcyjnego
 
 **Przykład:**
 ```bash
@@ -78,48 +78,48 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ```
 
-### Zmienne specyficzne dla sesji
+### Zmienne Specyficzne dla Sesji
 
 #### Sesja 02: Pipeline RAG
-| Zmienna | Domyślna wartość | Cel |
-|---------|------------------|-----|
+| Zmienna | Domyślna | Cel |
+|---------|----------|-----|
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Model osadzania |
-| `RAG_QUESTION` | Wstępnie skonfigurowane | Pytanie testowe |
+| `RAG_QUESTION` | Wstępnie skonfigurowane | Testowe pytanie |
 
 #### Sesja 03: Benchmarking
-| Zmienna | Domyślna wartość | Cel |
-|---------|------------------|-----|
+| Zmienna | Domyślna | Cel |
+|---------|----------|-----|
 | `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modele do benchmarku |
 | `BENCH_ROUNDS` | `3` | Liczba iteracji na model |
-| `BENCH_PROMPT` | Wstępnie skonfigurowane | Prompt testowy |
+| `BENCH_PROMPT` | Wstępnie skonfigurowane | Testowy prompt |
 | `BENCH_STREAM` | `0` | Pomiar opóźnienia pierwszego tokenu |
 
-#### Sesja 04: Porównanie modeli
-| Zmienna | Domyślna wartość | Cel |
-|---------|------------------|-----|
+#### Sesja 04: Porównanie Modeli
+| Zmienna | Domyślna | Cel |
+|---------|----------|-----|
 | `SLM_ALIAS` | `phi-4-mini` | Mały model językowy |
 | `LLM_ALIAS` | `qwen2.5-7b` | Duży model językowy |
 | `COMPARE_PROMPT` | Wstępnie skonfigurowane | Prompt porównawczy |
 | `COMPARE_RETRIES` | `2` | Liczba prób ponowienia |
 
-#### Sesja 05: Orkiestracja wieloagentowa
-| Zmienna | Domyślna wartość | Cel |
-|---------|------------------|-----|
+#### Sesja 05: Orkiestracja Wieloagentowa
+| Zmienna | Domyślna | Cel |
+|---------|----------|-----|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Model agenta badawczego |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Model agenta edytora |
-| `AGENT_QUESTION` | Wstępnie skonfigurowane | Pytanie testowe |
+| `AGENT_QUESTION` | Wstępnie skonfigurowane | Testowe pytanie |
 
-### Konfiguracja niezawodności
+### Konfiguracja Niezawodności
 
-| Zmienna | Domyślna wartość | Cel |
-|---------|------------------|-----|
+| Zmienna | Domyślna | Cel |
+|---------|----------|-----|
 | `SHOW_USAGE` | `1` | Wyświetlanie zużycia tokenów |
-| `RETRY_ON_FAIL` | `1` | Włączenie logiki ponawiania |
+| `RETRY_ON_FAIL` | `1` | Włączenie logiki ponowienia |
 | `RETRY_BACKOFF` | `1.0` | Opóźnienie ponowienia (sekundy) |
 
-## Typowe konfiguracje
+## Typowe Konfiguracje
 
-### Ustawienia deweloperskie (szybka iteracja)
+### Ustawienia Deweloperskie (Szybka Iteracja)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Ustawienia produkcyjne (skupienie na jakości)
+### Ustawienia Produkcyjne (Skupienie na Jakości)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -138,70 +138,70 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Konfiguracja benchmarków
+### Konfiguracja Benchmarkingu
 ```bash
 BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### Specjalizacja wieloagentowa
+### Specjalizacja Wieloagentowa
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
 ```
 
-### Zdalny rozwój
+### Zdalny Rozwój
 ```bash
 FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ```
 
-## Rekomendowane modele
+## Polecane Modele
 
-### Według zastosowania
+### Według Zastosowania
 
-**Ogólne przeznaczenie:**
+**Ogólne Zastosowanie:**
 - `phi-4-mini` - Zrównoważona jakość i szybkość
 
-**Szybkie odpowiedzi:**
+**Szybkie Odpowiedzi:**
 - `qwen2.5-0.5b` - Bardzo szybki, dobry do klasyfikacji
 - `phi-4-mini` - Szybki z dobrą jakością
 
-**Wysoka jakość:**
+**Wysoka Jakość:**
 - `qwen2.5-7b` - Najlepsza jakość, większe zużycie zasobów
 - `phi-4-mini` - Dobra jakość, mniejsze zasoby
 
-**Generowanie kodu:**
+**Generowanie Kodów:**
 - `deepseek-coder-1.3b` - Specjalizowany do kodu
-- `phi-4-mini` - Ogólne przeznaczenie kodowania
+- `phi-4-mini` - Ogólne zastosowanie w kodowaniu
 
-### Według dostępnych zasobów
+### Według Dostępnych Zasobów
 
-**Małe zasoby (< 8GB RAM):**
+**Małe Zasoby (< 8GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
 LLM_ALIAS=phi-4-mini
 ```
 
-**Średnie zasoby (8-16GB RAM):**
+**Średnie Zasoby (8-16GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-7b
 ```
 
-**Duże zasoby (16GB+ RAM):**
+**Duże Zasoby (16GB+ RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-7b
 SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-14b
 ```
 
-## Zaawansowana konfiguracja
+## Zaawansowana Konfiguracja
 
-### Niestandardowe punkty końcowe
+### Niestandardowe Punkty Końcowe
 
 ```bash
 # Development environment
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### Temperatura i próbkowanie (nadpisanie w kodzie)
+### Temperatura i Próbkowanie (Nadpisanie w Kodzie)
 
 ```python
 # In your scripts/notebooks
@@ -222,7 +222,7 @@ os.environ['TEMPERATURE'] = '0.7'
 os.environ['TOP_P'] = '0.9'
 ```
 
-### Hybrydowa konfiguracja Azure OpenAI
+### Hybrydowa Konfiguracja Azure OpenAI
 
 ```bash
 # Use local for development
@@ -234,9 +234,9 @@ AZURE_OPENAI_API_KEY=your-key-here
 AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-## Rozwiązywanie problemów
+## Rozwiązywanie Problemów
 
-### Zmienne środowiskowe nie zostały załadowane
+### Zmienne Środowiskowe Nie Załadowane
 
 **Objawy:**
 - Skrypty używają niewłaściwych modeli
@@ -259,7 +259,7 @@ dir .env     # Windows
 pwd  # Should be in Workshop or repository root
 ```
 
-### Problemy z połączeniem z usługą
+### Problemy z Połączeniem Usługi
 
 **Objawy:**
 - Błędy "Connection refused"
@@ -282,7 +282,7 @@ foundry service status | grep "Port"
 FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ```
 
-### Model nie znaleziony
+### Model Nie Znaleziony
 
 **Objawy:**
 - Błędy "Model not found"
@@ -300,7 +300,7 @@ foundry model run phi-4-mini
 FOUNDRY_LOCAL_ALIAS=<available-model>
 ```
 
-### Błędy importu
+### Błędy Importu
 
 **Objawy:**
 - Błędy "Module not found"
@@ -316,9 +316,9 @@ source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-## Testowanie konfiguracji
+## Testowanie Konfiguracji
 
-### Weryfikacja ładowania środowiska
+### Weryfikacja Ładowania Środowiska
 
 ```python
 # test_env.py
@@ -340,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Test połączenia z Foundry Local
+### Test Połączenia z Foundry Local
 
 ```python
 # test_connection.py
@@ -363,9 +363,9 @@ except Exception as e:
     print(f"✗ Connection failed: {e}")
 ```
 
-## Najlepsze praktyki bezpieczeństwa
+## Najlepsze Praktyki Bezpieczeństwa
 
-### 1. Nigdy nie commituj danych wrażliwych
+### 1. Nigdy Nie Komituj Sekretów
 
 ```bash
 # .gitignore should include:
@@ -374,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Używaj oddzielnych plików .env
+### 2. Używaj Oddzielnych Plików .env
 
 ```bash
 .env              # Default configuration
@@ -382,14 +382,14 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Rotacja kluczy API
+### 3. Rotacja Kluczy API
 
 ```bash
 # For Azure OpenAI or other cloud services
 # Regularly rotate keys and update .env
 ```
 
-### 4. Używaj konfiguracji specyficznej dla środowiska
+### 4. Używaj Konfiguracji Specyficznej dla Środowiska
 
 ```bash
 # Development
@@ -401,23 +401,24 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ## Dokumentacja SDK
 
-- **Główne repozytorium**: https://github.com/microsoft/Foundry-Local
+- **Główne Repozytorium**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Dokumentacja API**: Sprawdź najnowsze informacje w repozytorium SDK
+- **Dokumentacja API**: Sprawdź repozytorium SDK dla najnowszych informacji
 
-## Dodatkowe zasoby
+## Dodatkowe Zasoby
 
 - `QUICK_START.md` - Przewodnik szybkiego startu
-- `SDK_MIGRATION_NOTES.md` - Szczegóły aktualizacji SDK
 - `Workshop/samples/*/README.md` - Przewodniki specyficzne dla przykładów
 
 ---
 
-**Ostatnia aktualizacja**: 2025-01-08  
+**Ostatnia Aktualizacja**: 2025-01-08  
 **Wersja**: 2.0  
 **SDK**: Foundry Local Python SDK (najnowsza)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Zastrzeżenie**:  
 Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż staramy się zapewnić dokładność, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

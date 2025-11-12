@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T22:20:35+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T23:29:17+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "fi"
 }
 -->
-# Työpajan näyteet - Pikaopas
+# Työpajan näytteet - Pikaopas
 
 **Viimeksi päivitetty**: 8. lokakuuta 2025
 
@@ -30,18 +30,18 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 ---
 
-## 📂 Näyteiden yleiskatsaus
+## 📂 Näyteyleiskatsaus
 
 | Istunto | Näyte | Tarkoitus | Aika |
 |---------|-------|-----------|------|
-| 01 | `chat_bootstrap.py` | Peruskeskustelu + suoratoisto | ~30s |
+| 01 | `chat_bootstrap.py` | Peruschatti + suoratoisto | ~30s |
 | 02 | `rag_pipeline.py` | RAG upotuksilla | ~45s |
 | 02 | `rag_eval_ragas.py` | RAG-arviointi | ~60s |
 | 03 | `benchmark_oss_models.py` | Mallien vertailu | ~2m |
 | 04 | `model_compare.py` | SLM vs LLM | ~45s |
 | 05 | `agents_orchestrator.py` | Moniagenttijärjestelmä | ~60s |
-| 06 | `models_router.py` | Tarkoituksen ohjaus | ~45s |
-| 06 | `models_pipeline.py` | Monivaiheinen putkisto | ~60s |
+| 06 | `models_router.py` | Tarkoituksenmukainen reititys | ~45s |
+| 06 | `models_pipeline.py` | Monivaiheinen putki | ~60s |
 
 ---
 
@@ -145,7 +145,7 @@ set BENCH_ROUNDS=1
 
 ## 📖 Yleiset mallit
 
-### Peruskeskustelu
+### Peruschatti
 ```python
 from workshop_utils import chat_once
 
@@ -157,7 +157,7 @@ text, usage = chat_once(
 )
 ```
 
-### Asiakkaan hakeminen
+### Asiakkaan haku
 ```python
 from workshop_utils import get_client
 
@@ -194,10 +194,10 @@ for chunk in stream:
 
 ## 📊 Mallin valinta
 
-| Malli | Koko | Paras käyttö | Nopeus |
-|-------|------|--------------|--------|
+| Malli | Koko | Parhaimmillaan | Nopeus |
+|-------|------|----------------|--------|
 | `qwen2.5-0.5b` | 0.5B | Nopea luokittelu | ⚡⚡⚡ |
-| `qwen2.5-coder-0.5b` | 0.5B | Nopeaan koodin generointiin | ⚡⚡⚡ |
+| `qwen2.5-coder-0.5b` | 0.5B | Nopea koodin generointi | ⚡⚡⚡ |
 | `gemma-2-2b` | 2B | Luova kirjoittaminen | ⚡⚡ |
 | `phi-3.5-mini` | 3.5B | Koodi, refaktorointi | ⚡⚡ |
 | `phi-4-mini` | 4B | Yleinen, tiivistys | ⚡⚡ |
@@ -209,14 +209,12 @@ for chunk in stream:
 
 - **SDK-dokumentaatio**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Pikaopas**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Päivitysyhteenveto**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Siirtymishuomautukset**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
 ## 💡 Vinkkejä
 
-1. **Välimuisti asiakkaat**: `workshop_utils` hoitaa välimuistituksen puolestasi
+1. **Välimuistiasiakkaat**: `workshop_utils` hoitaa välimuistin puolestasi
 2. **Käytä pienempiä malleja**: Aloita `qwen2.5-0.5b`-mallilla testaukseen
 3. **Ota käyttötilastot käyttöön**: Aseta `SHOW_USAGE=1` seurataksesi tokenien käyttöä
 4. **Eräkäsittely**: Käsittele useita kehotteita peräkkäin
@@ -240,7 +238,7 @@ set BENCH_ROUNDS=3
 python -m session03.benchmark_oss_models
 ```
 
-### RAG-putkisto
+### RAG-putki
 ```bash
 cd samples
 set RAG_QUESTION="What is RAG?"
@@ -256,7 +254,7 @@ python -m session05.agents_orchestrator
 
 ---
 
-**Pika-apu**: Suorita mikä tahansa näyte `--help`-komennolla `samples`-hakemistosta tai tarkista docstring:
+**Pika-apu**: Aja mikä tahansa näyte komennolla `--help` kansiosta `samples` tai tarkista docstring:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

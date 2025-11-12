@@ -1,499 +1,480 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "85fa559f498492b79de04e391c33687b",
-  "translation_date": "2025-10-28T21:23:51+00:00",
+  "original_hash": "8c30436578b1bd604c48233ecdd39701",
+  "translation_date": "2025-11-11T22:35:55+00:00",
   "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
   "language_code": "pa"
 }
 -->
-# ਸੈਸ਼ਨ 1: Foundry Local ਨਾਲ ਸ਼ੁਰੂਆਤ
+# ਸੈਸ਼ਨ 1: ਫਾਊਂਡਰੀ ਲੋਕਲ ਨਾਲ ਸ਼ੁਰੂਆਤ
 
 ## ਸਾਰ
 
-Foundry Local ਨਾਲ ਆਪਣਾ ਸਫਰ ਸ਼ੁਰੂ ਕਰੋ, Windows 11 'ਤੇ ਇਸਨੂੰ ਇੰਸਟਾਲ ਅਤੇ ਕਨਫਿਗਰ ਕਰਕੇ। CLI ਸੈਟਅੱਪ ਕਰਨ, ਹਾਰਡਵੇਅਰ ਐਕਸਲੇਰੇਸ਼ਨ ਨੂੰ ਐਨਬਲ ਕਰਨ ਅਤੇ ਤੇਜ਼ ਸਥਾਨਕ ਇੰਫਰੈਂਸ ਲਈ ਮਾਡਲਾਂ ਨੂੰ ਕੈਸ਼ ਕਰਨ ਦਾ ਤਰੀਕਾ ਸਿੱਖੋ। ਇਹ ਹੱਥ-ਅਨੁਭਵ ਸੈਸ਼ਨ ਫਾਈ, Qwen, DeepSeek, ਅਤੇ GPT-OSS-20B ਵਰਗੇ ਮਾਡਲਾਂ ਨੂੰ ਦੁਹਰਾਏ ਜਾ ਸਕਣ ਵਾਲੇ CLI ਕਮਾਂਡਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਚਲਾਉਣ ਦੀ ਪ੍ਰਕਿਰਿਆ ਦਿਖਾਉਂਦਾ ਹੈ।
+ਮਾਈਕਰੋਸਾਫਟ ਫਾਊਂਡਰੀ ਲੋਕਲ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਪਣੇ ਪਹਿਲੇ AI ਮਾਡਲ ਨੂੰ ਇੰਸਟਾਲ, ਕਨਫਿਗਰ ਅਤੇ ਚਲਾਉਣ ਦੇ ਤਰੀਕੇ ਸਿੱਖੋ। ਇਹ ਹੱਥ-ਅਨੁਭਵ ਸੈਸ਼ਨ ਤੁਹਾਨੂੰ ਸਥਾਨਕ ਇੰਫਰੈਂਸ ਦੀ ਪੂਰੀ ਜਾਣਕਾਰੀ ਦੇਵੇਗਾ, ਇੰਸਟਾਲੇਸ਼ਨ ਤੋਂ ਲੈ ਕੇ ਫਾਈ-4, ਕਵੈਨ ਅਤੇ ਡੀਪਸੀਕ ਵਰਗੇ ਮਾਡਲਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਪਣਾ ਪਹਿਲਾ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਉਣ ਤੱਕ।
 
 ## ਸਿੱਖਣ ਦੇ ਉਦੇਸ਼
 
 ਇਸ ਸੈਸ਼ਨ ਦੇ ਅੰਤ ਤੱਕ, ਤੁਸੀਂ:
 
-- **ਇੰਸਟਾਲ ਅਤੇ ਕਨਫਿਗਰ ਕਰੋ**: Windows 11 'ਤੇ Foundry Local ਨੂੰ ਵਧੀਆ ਪ੍ਰਦਰਸ਼ਨ ਸੈਟਿੰਗਾਂ ਨਾਲ ਸੈਟਅੱਪ ਕਰੋ
+- **ਇੰਸਟਾਲ ਅਤੇ ਕਨਫਿਗਰ ਕਰੋ**: ਫਾਊਂਡਰੀ ਲੋਕਲ ਨੂੰ ਸਹੀ ਤਰੀਕੇ ਨਾਲ ਸੈਟਅਪ ਅਤੇ ਇੰਸਟਾਲੇਸ਼ਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ
 - **CLI ਓਪਰੇਸ਼ਨ ਵਿੱਚ ਮਾਹਰ ਬਣੋ**: ਮਾਡਲ ਮੈਨੇਜਮੈਂਟ ਅਤੇ ਡਿਪਲੌਇਮੈਂਟ ਲਈ Foundry Local CLI ਦੀ ਵਰਤੋਂ ਕਰੋ
-- **ਹਾਰਡਵੇਅਰ ਐਕਸਲੇਰੇਸ਼ਨ ਐਨਬਲ ਕਰੋ**: ONNXRuntime ਜਾਂ WebGPU ਨਾਲ GPU ਐਕਸਲੇਰੇਸ਼ਨ ਕਨਫਿਗਰ ਕਰੋ
-- **ਕਈ ਮਾਡਲ ਡਿਪਲੌਇ ਕਰੋ**: phi-4, GPT-OSS-20B, Qwen, ਅਤੇ DeepSeek ਮਾਡਲਾਂ ਨੂੰ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਚਲਾਓ
-- **ਆਪਣਾ ਪਹਿਲਾ ਐਪ ਬਣਾਓ**: Foundry Local Python SDK ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਮੌਜੂਦਾ ਨਮੂਨਿਆਂ ਨੂੰ ਅਨੁਕੂਲ ਬਣਾਓ
+- **ਪਹਿਲਾ ਮਾਡਲ ਚਲਾਓ**: ਸਥਾਨਕ AI ਮਾਡਲ ਨੂੰ ਸਫਲਤਾਪੂਰਵਕ ਡਿਪਲੌਇ ਅਤੇ ਇੰਟਰੈਕਟ ਕਰੋ
+- **ਚੈਟ ਐਪ ਬਣਾਓ**: Foundry Local Python SDK ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਇੱਕ ਬੁਨਿਆਦੀ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਓ
+- **ਸਥਾਨਕ AI ਨੂੰ ਸਮਝੋ**: ਸਥਾਨਕ ਇੰਫਰੈਂਸ ਅਤੇ ਮਾਡਲ ਮੈਨੇਜਮੈਂਟ ਦੇ ਮੁੱਢਲੇ ਸਿਧਾਂਤਾਂ ਨੂੰ ਸਮਝੋ
 
-# ਮਾਡਲ ਦੀ ਜਾਂਚ ਕਰੋ (ਗੈਰ-ਇੰਟਰੈਕਟਿਵ ਸਿੰਗਲ ਪ੍ਰੌਮਪਟ)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
+## ਪੂਰਵ ਸ਼ਰਤਾਂ
 
-- Windows 11 (22H2 ਜਾਂ ਇਸ ਤੋਂ ਬਾਅਦ)
-# ਉਪਲਬਧ ਕੈਟਾਲੌਗ ਮਾਡਲਾਂ ਦੀ ਸੂਚੀ (ਲੋਡ ਕੀਤੇ ਮਾਡਲ ਚਲਾਏ ਜਾਣ ਤੋਂ ਬਾਅਦ ਦਿਖਾਈ ਦਿੰਦੇ ਹਨ)
-foundry model list
-## NOTE: ਇਸ ਸਮੇਂ ਕੋਈ ਸਮਰਪਿਤ `--running` ਫਲੈਗ ਨਹੀਂ ਹੈ; ਇਹ ਦੇਖਣ ਲਈ ਕਿ ਕਿਹੜੇ ਲੋਡ ਕੀਤੇ ਗਏ ਹਨ, ਚੈਟ ਸ਼ੁਰੂ ਕਰੋ ਜਾਂ ਸੇਵਾ ਲੌਗ ਦੀ ਜਾਂਚ ਕਰੋ।
-- Python 3.10+ ਇੰਸਟਾਲ ਕੀਤਾ ਹੋਇਆ
-- Visual Studio Code Python ਐਕਸਟੈਂਸ਼ਨ ਨਾਲ
-- ਇੰਸਟਾਲੇਸ਼ਨ ਲਈ ਐਡਮਿਨਿਸਟ੍ਰੇਟਰ ਅਧਿਕਾਰ
+### ਸਿਸਟਮ ਦੀਆਂ ਲੋੜਾਂ
 
-### (ਵਿਕਲਪਿਕ) ਵਾਤਾਵਰਣ ਵੈਰੀਏਬਲ
+- **Windows**: Windows 11 (22H2 ਜਾਂ ਇਸ ਤੋਂ ਬਾਅਦ) ਜਾਂ **macOS**: macOS 11+ (ਸੀਮਿਤ ਸਹਾਇਤਾ)
+- **RAM**: ਘੱਟੋ-ਘੱਟ 8GB, 16GB+ ਸਿਫਾਰਸ਼ੀ
+- **ਸਟੋਰੇਜ**: ਮਾਡਲਾਂ ਲਈ 10GB+ ਖਾਲੀ ਸਥਾਨ
+- **Python**: 3.10 ਜਾਂ ਇਸ ਤੋਂ ਬਾਅਦ ਇੰਸਟਾਲ ਕੀਤਾ ਹੋਇਆ
+- **ਐਡਮਿਨ ਐਕਸੈਸ**: ਇੰਸਟਾਲੇਸ਼ਨ ਲਈ ਪ੍ਰਸ਼ਾਸਨਿਕ ਅਧਿਕਾਰ
 
-ਸਕ੍ਰਿਪਟਾਂ ਨੂੰ ਪੋਰਟੇਬਲ ਬਣਾਉਣ ਲਈ `.env` ਬਣਾਓ (ਜਾਂ ਸ਼ੈਲ ਵਿੱਚ ਸੈਟ ਕਰੋ):
-# ਜਵਾਬਾਂ ਦੀ ਤੁਲਨਾ ਕਰੋ (ਗੈਰ-ਇੰਟਰੈਕਟਿਵ)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-| Variable | Purpose | Example |
-|----------|---------|---------|
-| `FOUNDRY_LOCAL_ALIAS` | ਪਸੰਦੀਦਾ ਮਾਡਲ ਅਲਿਆਸ (ਕੈਟਾਲੌਗ ਵਧੀਆ ਵੈਰੀਐਂਟ ਨੂੰ ਆਟੋ-ਚੁਣਦਾ ਹੈ) | `phi-3.5-mini` |
-| `FOUNDRY_LOCAL_ENDPOINT` | ਐਂਡਪੌਇੰਟ ਓਵਰਰਾਈਡ ਕਰੋ (ਨਹੀਂ ਤਾਂ ਮੈਨੇਜਰ ਤੋਂ ਆਟੋ) | `http://localhost:5273/v1` |
-| `FOUNDRY_LOCAL_STREAM` | ਸਟ੍ਰੀਮਿੰਗ ਡੈਮੋ ਐਨਬਲ ਕਰੋ | `true` |
+### ਵਿਕਾਸ ਦਾ ਮਾਹੌਲ
 
-> ਜੇ `FOUNDRY_LOCAL_ENDPOINT=auto` (ਜਾਂ ਅਨਸੈਟ) ਹੈ ਤਾਂ ਅਸੀਂ ਇਸਨੂੰ SDK ਮੈਨੇਜਰ ਤੋਂ ਪ੍ਰਾਪਤ ਕਰਦੇ ਹਾਂ।
+- ਪਾਈਥਨ ਐਕਸਟੈਂਸ਼ਨ ਨਾਲ Visual Studio Code (ਸਿਫਾਰਸ਼ੀ)
+- ਕਮਾਂਡ ਲਾਈਨ ਐਕਸੈਸ (Windows 'ਤੇ PowerShell, macOS 'ਤੇ Terminal)
+- ਰਿਪੋਜ਼ਿਟਰੀਜ਼ ਕਲੋਨ ਕਰਨ ਲਈ Git (ਵਿਕਲਪਿਕ)
 
-## ਡੈਮੋ ਫਲੋ (30 ਮਿੰਟ)
+## ਵਰਕਸ਼ਾਪ ਦਾ ਪ੍ਰਵਾਹ (30 ਮਿੰਟ)
 
-### 1. Foundry Local ਇੰਸਟਾਲ ਕਰੋ ਅਤੇ CLI ਸੈਟਅੱਪ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ (10 ਮਿੰਟ)
+### ਕਦਮ 1: Foundry Local ਇੰਸਟਾਲ ਕਰੋ (5 ਮਿੰਟ)
 
-# ਕੈਸ਼ ਕੀਤੇ ਮਾਡਲਾਂ ਦੀ ਸੂਚੀ
-foundry cache list
+#### Windows ਇੰਸਟਾਲੇਸ਼ਨ
+
+Windows ਪੈਕੇਜ ਮੈਨੇਜਰ ਦੀ ਵਰਤੋਂ ਕਰਕੇ Foundry Local ਇੰਸਟਾਲ ਕਰੋ:
 
 ```powershell
 # Install via winget (recommended)
 winget install Microsoft.FoundryLocal
-
-# Or download from Microsoft Learn
-# https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install
 ```
 
-**macOS (ਪ੍ਰੀਵਿਊ / ਜੇ ਸਪੋਰਟ ਕੀਤਾ ਗਿਆ)**
+ਵਿਕਲਪ: [Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install) ਤੋਂ ਸਿੱਧਾ ਡਾਊਨਲੋਡ ਕਰੋ
 
-ਜੇਕਰ ਕੋਈ ਮੂਲ macOS ਪੈਕੇਜ ਪ੍ਰਦਾਨ ਕੀਤਾ ਗਿਆ ਹੈ (ਤਾਜ਼ਾ ਲਈ ਅਧਿਕਾਰਤ ਦਸਤਾਵੇਜ਼ਾਂ ਦੀ ਜਾਂਚ ਕਰੋ):
+#### macOS ਇੰਸਟਾਲੇਸ਼ਨ (ਸੀਮਿਤ ਸਹਾਇਤਾ)
+
+> [!NOTE]  
+> macOS ਸਹਾਇਤਾ ਇਸ ਵੇਲੇ ਪ੍ਰੀਵਿਊ ਵਿੱਚ ਹੈ। ਤਾਜ਼ਾ ਉਪਲਬਧਤਾ ਲਈ ਅਧਿਕਾਰਤ ਦਸਤਾਵੇਜ਼ਾਂ ਦੀ ਜਾਂਚ ਕਰੋ।
+
+ਜੇ ਉਪਲਬਧ ਹੈ, ਤਾਂ Homebrew ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਇੰਸਟਾਲ ਕਰੋ:
 
 ```bash
-# Homebrew (if/when available)
+# If Homebrew formula is available
 brew update
-brew install foundry-local  # hypothetical formula name
+brew install foundry-local
 
-# Or manual download (tarball)
+# Or manual download (check official docs for latest)
 curl -L -o foundry-local.tar.gz "https://download.microsoft.com/foundry-local/latest/macos/foundry-local.tar.gz"
 tar -xzf foundry-local.tar.gz
 sudo ./install.sh
 ```
 
-ਜੇ macOS ਮੂਲ ਬਾਈਨਰੀ ਅਜੇ ਉਪਲਬਧ ਨਹੀਂ ਹਨ, ਤਾਂ ਤੁਸੀਂ ਅਜੇ ਵੀ ਕਰ ਸਕਦੇ ਹੋ: 
-1. Windows 11 ARM/Intel VM (Parallels / UTM) ਦੀ ਵਰਤੋਂ ਕਰੋ ਅਤੇ Windows ਕਦਮਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ। 
-2. ਮਾਡਲਾਂ ਨੂੰ ਕੰਟੇਨਰ ਰਾਹੀਂ ਚਲਾਓ (ਜੇ ਕੰਟੇਨਰ ਚਿੱਤਰ ਪ੍ਰਕਾਸ਼ਿਤ ਕੀਤਾ ਗਿਆ ਹੈ) ਅਤੇ `FOUNDRY_LOCAL_ENDPOINT` ਨੂੰ ਉਘਾਏ ਪੋਰਟ 'ਤੇ ਸੈਟ ਕਰੋ। 
+**macOS ਉਪਭੋਗਤਾਵਾਂ ਲਈ ਵਿਕਲਪ:**
+- Windows 11 VM (Parallels/UTM) ਦੀ ਵਰਤੋਂ ਕਰੋ ਅਤੇ Windows ਦੇ ਕਦਮਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ
+- ਜੇ ਉਪਲਬਧ ਹੋਵੇ ਤਾਂ ਕੰਟੇਨਰ ਰਾਹੀਂ ਚਲਾਓ ਅਤੇ `FOUNDRY_LOCAL_ENDPOINT` ਕਨਫਿਗਰ ਕਰੋ
 
-**Python ਵਰਚੁਅਲ ਵਾਤਾਵਰਣ ਬਣਾਓ (ਕਰਾਸ-ਪਲੇਟਫਾਰਮ)**
+### ਕਦਮ 2: ਇੰਸਟਾਲੇਸ਼ਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ (3 ਮਿੰਟ)
 
-Windows PowerShell:
-```powershell
-py -m venv .venv
- .\.venv\Scripts\Activate.ps1
-```
-
-macOS / Linux:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-pip ਨੂੰ ਅਪਗ੍ਰੇਡ ਕਰੋ ਅਤੇ ਕੋਰ ਡਿਪੈਂਡੈਂਸੀਜ਼ ਇੰਸਟਾਲ ਕਰੋ:
-```bash
-python -m pip install --upgrade pip
-pip install foundry-local-sdk openai
-```
-
-#### ਕਦਮ 1.2: ਇੰਸਟਾਲੇਸ਼ਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ
+ਇੰਸਟਾਲੇਸ਼ਨ ਤੋਂ ਬਾਅਦ, ਆਪਣਾ ਟਰਮੀਨਲ ਮੁੜ ਸ਼ੁਰੂ ਕਰੋ ਅਤੇ Foundry Local ਦੇ ਕੰਮ ਕਰਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ:
 
 ```powershell
-# Check version
+# Check if Foundry Local is installed correctly
 foundry --version
-
-# Initialize configuration
-foundry init
 
 # View available commands
 foundry --help
 ```
 
-#### ਕਦਮ 1.3: ਵਾਤਾਵਰਣ ਕਨਫਿਗਰ ਕਰੋ
+ਉਮੀਦ ਕੀਤੀ ਆਉਟਪੁੱਟ ਵਿੱਚ ਵਰਜਨ ਜਾਣਕਾਰੀ ਅਤੇ ਉਪਲਬਧ ਕਮਾਂਡਾਂ ਦਿਖਾਈ ਦੇਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ।
 
+### ਕਦਮ 3: Python ਮਾਹੌਲ ਸੈਟਅਪ ਕਰੋ (5 ਮਿੰਟ)
+
+ਇਸ ਵਰਕਸ਼ਾਪ ਲਈ ਇੱਕ ਸਮਰਪਿਤ Python ਮਾਹੌਲ ਬਣਾਓ:
+
+**Windows:**
 ```powershell
-# Set up Python environment for Module08
-cd Module08
+# Create virtual environment
 py -m venv .venv
-.\.venv\Scripts\activate
 
-# Install Foundry Local Python SDK and dependencies
-pip install foundry-local-sdk openai requests
+# Activate environment
+.\.venv\Scripts\Activate.ps1
+
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-### SDK ਬੂਟਸਟ੍ਰੈਪਿੰਗ (ਸਿਫਾਰਸ਼ ਕੀਤੀ ਗਈ)
+**macOS/Linux:**
+```bash
+# Create virtual environment
+python3 -m venv .venv
 
-ਸੇਵਾ ਨੂੰ ਮੈਨੂਅਲੀ ਤੌਰ 'ਤੇ ਸ਼ੁਰੂ ਕਰਨ ਅਤੇ ਮਾਡਲਾਂ ਨੂੰ ਚਲਾਉਣ ਦੀ ਬਜਾਏ, **Foundry Local Python SDK** ਸਭ ਕੁਝ ਬੂਟਸਟ੍ਰੈਪ ਕਰ ਸਕਦਾ ਹੈ:
+# Activate environment
+source .venv/bin/activate
 
-```python
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
-
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-
-# Bootstraps service + downloads + loads most suitable variant for hardware
-manager = FoundryLocalManager(alias)
-
-print("Service running:", manager.is_service_running())
-print("Endpoint:", manager.endpoint)
-print("Cached models:", manager.list_cached_models())
-
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
-
-resp = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[
-        {"role": "system", "content": "You are a helpful local assistant."},
-        {"role": "user", "content": "Hello"}
-    ],
-    max_tokens=120,
-    temperature=0.5
-)
-print(resp.choices[0].message.content)
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install foundry-local-sdk openai
 ```
 
-ਜੇ ਤੁਸੀਂ ਸਪਸ਼ਟ ਕੰਟਰੋਲ ਨੂੰ ਤਰਜੀਹ ਦਿੰਦੇ ਹੋ ਤਾਂ ਤੁਸੀਂ CLI + OpenAI ਕਲਾਇੰਟ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹੋ ਜਿਵੇਂ ਕਿ ਬਾਅਦ ਵਿੱਚ ਦਿਖਾਇਆ ਗਿਆ ਹੈ।
 
-### 2. ਮਾਡਲਾਂ ਨੂੰ ਸਥਾਨਕ ਤੌਰ 'ਤੇ CLI ਰਾਹੀਂ ਚਲਾਓ (10 ਮਿੰਟ)
+### ਕਦਮ 4: ਆਪਣਾ ਪਹਿਲਾ ਮਾਡਲ ਚਲਾਓ (7 ਮਿੰਟ)
 
-#### ਕਦਮ 3.1: Phi-4 ਮਾਡਲ ਡਿਪਲੌਇ ਕਰੋ
+ਹੁਣ ਆਓ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਆਪਣਾ ਪਹਿਲਾ AI ਮਾਡਲ ਚਲਾਈਏ!
+
+#### Phi-4 Mini ਨਾਲ ਸ਼ੁਰੂ ਕਰੋ (ਸਿਫਾਰਸ਼ੀ ਪਹਿਲਾ ਮਾਡਲ)
 
 ```powershell
-# Download and run phi-4-mini
+# Download and start phi-4-mini (lightweight, fast)
 foundry model run phi-4-mini
 
-# Test the model (one-shot prompt)
-foundry model run phi-4-mini --prompt "Hello, introduce yourself"
-
-# NOTE: There is no `--running` flag; use `foundry model list` and recent activity to infer loaded models.
+# Test the model with a simple prompt
+foundry model run phi-4-mini --prompt "Hello, introduce yourself in one sentence"
 ```
 
-#### ਕਦਮ 3.2: GPT-OSS-20B ਡਿਪਲੌਇ ਕਰੋ
+> [!TIP]  
+> ਇਹ ਕਮਾਂਡ ਮਾਡਲ ਨੂੰ ਡਾਊਨਲੋਡ ਕਰਦੀ ਹੈ (ਪਹਿਲੀ ਵਾਰ) ਅਤੇ Foundry Local ਸੇਵਾ ਨੂੰ ਆਪਣੇ ਆਪ ਸ਼ੁਰੂ ਕਰਦੀ ਹੈ।
+
+#### ਚੈੱਕ ਕਰੋ ਕਿ ਕੀ ਚਲ ਰਿਹਾ ਹੈ
 
 ```powershell
-# Download and run GPT-OSS-20B
-foundry model run gpt-oss-20b
+# List available models (shows downloaded models)
+foundry model list
 
-# Compare responses (one-shot prompt)
-foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
-```
+# Check service status
+foundry service status
 
-#### ਕਦਮ 3.3: ਵਾਧੂ ਮਾਡਲ ਲੋਡ ਕਰੋ
-
-```powershell
-# Download Qwen model family
-foundry model download qwen2.5-0.5b
-foundry model download qwen2.5-7b
-
-# Download DeepSeek models
-foundry model download deepseek-coder-1.3b
-
-# List cached models
+# See what models are cached locally
 foundry cache list
 ```
 
-### 4. ਸਟਾਰਟਰ ਪ੍ਰੋਜੈਕਟ: Foundry Local ਲਈ 01-run-phi ਨੂੰ ਅਨੁਕੂਲ ਬਣਾਓ (5 ਮਿੰਟ)
 
-#### ਕਦਮ 4.1: ਬੇਸਿਕ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਓ
+#### ਵੱਖ-ਵੱਖ ਮਾਡਲਾਂ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ
 
-`samples/01-foundry-quickstart/chat_quickstart.py` ਬਣਾਓ (ਜੇ ਮੈਨੇਜਰ ਉਪਲਬਧ ਹੋਵੇ ਤਾਂ ਇਸਨੂੰ ਵਰਤੋ):
+ਜਦੋਂ phi-4-mini ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ, ਤਾਂ ਹੋਰ ਮਾਡਲਾਂ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ:
+
+```powershell
+# Larger model with better capabilities
+foundry model run gpt-oss-20b --prompt "Explain edge AI in simple terms"
+
+# Fast, efficient model
+foundry model run qwen2.5-0.5b --prompt "What are the benefits of local AI inference?"
+```
+
+
+### ਕਦਮ 5: ਆਪਣਾ ਪਹਿਲਾ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਓ (10 ਮਿੰਟ)
+
+ਹੁਣ ਆਓ ਇੱਕ Python ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਈਏ ਜੋ ਸਿਰਫ਼ ਉਹ ਮਾਡਲ ਵਰਤਦਾ ਹੈ ਜੋ ਅਸੀਂ ਹੁਣੇ ਹੀ ਸ਼ੁਰੂ ਕੀਤਾ ਹੈ।
+
+#### ਚੈਟ ਸਕ੍ਰਿਪਟ ਬਣਾਓ
+
+`my_first_chat.py` ਨਾਮਕ ਇੱਕ ਨਵੀਂ ਫਾਈਲ ਬਣਾਓ (ਜਾਂ ਦਿੱਤੇ ਨਮੂਨੇ ਦੀ ਵਰਤੋਂ ਕਰੋ):
 
 ```python
 #!/usr/bin/env python3
 """
-Foundry Local Chat Quickstart
-Demo: Basic chat interaction using Foundry Local Python SDK
-Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python
+My First Foundry Local Chat Application
+Using FoundryLocalManager for automatic service management
 """
 
-import os, sys
+import os
+from foundry_local import FoundryLocalManager
 from openai import OpenAI
-try:
-    from foundry_local import FoundryLocalManager  # control-plane SDK
-except ImportError:
-    FoundryLocalManager = None
 
 def main():
-    """Main chat function using Foundry Local SDK"""
-    
-    # Preferred: bootstrap via SDK manager (auto start + download + load)
-    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-    if FoundryLocalManager:
-        manager = FoundryLocalManager(alias)
-        endpoint = manager.endpoint
-        model_id = manager.get_model_info(alias).id
-        api_key = manager.api_key or "not-needed"
-    else:
-        # Fallback: assume default endpoint & alias already running via CLI
-        endpoint = os.getenv("FOUNDRY_LOCAL_ENDPOINT", "http://localhost:5273/v1")
-        model_id = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
-        api_key = "not-needed"
-
-    client = OpenAI(base_url=endpoint, api_key=api_key)
-    
-    # Get user input
-    if len(sys.argv) > 1:
-        user_message = " ".join(sys.argv[1:])
-    else:
-        user_message = input("Enter your message: ")
+    # Get model alias from environment or use default
+    alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-4-mini")
     
     try:
-        # Make chat completion request
-        response = client.chat.completions.create(
-            model=model_id,
-            messages=[
-                {"role": "system", "content": "You are a helpful AI assistant powered by Microsoft Foundry Local."},
-                {"role": "user", "content": user_message}
-            ],
-            max_tokens=500,
-            temperature=0.7
+        # Initialize Foundry Local Manager (auto-starts service, downloads model)
+        manager = FoundryLocalManager(alias)
+        
+        # Create OpenAI client pointing to local endpoint
+        client = OpenAI(
+            base_url=manager.endpoint,
+            api_key=manager.api_key or "not-needed"
         )
         
-        # Display response
-        print(f"\nModel: {response.model}")
-        print(f"Response: {response.choices[0].message.content}")
-        print(f"Tokens used: {response.usage.total_tokens if response.usage else 'N/A'}")
+        # Get the actual model ID for this alias
+        model_id = manager.get_model_info(alias).id
+        
+        print("🤖 Welcome to your first local AI chat!")
+        print(f"� Using model: {alias} -> {model_id}")
+        print(f"🌐 Endpoint: {manager.endpoint}")
+        print("�💡 Type 'quit' to exit\n")
         
     except Exception as e:
-        print(f"Error: {e}")
-        print("\nTroubleshooting:")
-    print("1. Ensure Foundry Local is running: foundry status")
-    print("2. List models: foundry model list")
-    print(f"3. Start model if needed: foundry model run {model_id}")
-    print("4. Or let SDK bootstrap: pip install foundry-local-sdk")
+        print(f"❌ Failed to initialize Foundry Local: {e}")
+        print("💡 Make sure Foundry Local is installed: foundry --version")
+        return
+    
+    while True:
+        # Get user input
+        user_message = input("You: ").strip()
+        
+        if user_message.lower() in ['quit', 'exit', 'bye']:
+            print("👋 Goodbye!")
+            break
+            
+        if not user_message:
+            continue
+            
+        try:
+            # Send message to local AI model
+            response = client.chat.completions.create(
+                model=model_id,
+                messages=[
+                    {"role": "system", "content": "You are a helpful AI assistant running locally."},
+                    {"role": "user", "content": user_message}
+                ],
+                max_tokens=200,
+                temperature=0.7
+            )
+            
+            # Display the response
+            ai_response = response.choices[0].message.content
+            print(f"🤖 AI: {ai_response}\n")
+            
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            print("💡 Check service status: foundry service status\n")
 
 if __name__ == "__main__":
     main()
 ```
 
-#### ਕਦਮ 4.2: ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ
+> [!TIP]  
+> **ਸੰਬੰਧਿਤ ਉਦਾਹਰਨਾਂ**: ਹੋਰ ਉੱਚ-ਸਤਹ ਦੇ ਉਪਯੋਗ ਲਈ, ਵੇਖੋ:  
+> - **Python ਨਮੂਨਾ**: `Workshop/samples/session01/chat_bootstrap.py` - ਸਟ੍ਰੀਮਿੰਗ ਜਵਾਬ ਅਤੇ ਗਲਤੀ ਸੰਭਾਲਣ ਸਮੇਤ  
+> - **Jupyter Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - ਵਿਸਤ੍ਰਿਤ ਵਿਆਖਿਆਵਾਂ ਨਾਲ ਇੰਟਰੈਕਟਿਵ ਵਰਜਨ
+
+#### ਆਪਣੀ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ
 
 ```powershell
-# Ensure phi-4-mini is running
-foundry model run phi-4-mini
-
-# Run the quickstart app
-python samples/01-foundry-quickstart/chat_quickstart.py "What is Microsoft Foundry Local?"
-
-# Try interactive mode
-python samples/01-foundry-quickstart/chat_quickstart.py
+# No need to manually start models - FoundryLocalManager handles this!
+# Just run your chat application
+python my_first_chat.py
 ```
 
-## ਕਵਰ ਕੀਤੇ ਮੁੱਖ ਸੰਕਲਪ
-
-### 1. Foundry Local ਆਰਕੀਟੈਕਚਰ
-
-- **ਸਥਾਨਕ ਇੰਫਰੈਂਸ ਇੰਜਨ**: ਮਾਡਲਾਂ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਤੁਹਾਡੇ ਡਿਵਾਈਸ 'ਤੇ ਚਲਾਉਂਦਾ ਹੈ
-- **OpenAI SDK ਅਨੁਕੂਲਤਾ**: ਮੌਜੂਦਾ OpenAI ਕੋਡ ਨਾਲ ਬੇਰੋਕ ਟਿਕਾਉ
-- **ਮਾਡਲ ਮੈਨੇਜਮੈਂਟ**: ਕਈ ਮਾਡਲਾਂ ਨੂੰ ਡਾਊਨਲੋਡ, ਕੈਸ਼ ਅਤੇ ਕੁਸ਼ਲਤਾਪੂਰਵਕ ਚਲਾਓ
-- **ਹਾਰਡਵੇਅਰ ਅਪਟਿਮਾਈਜ਼ੇਸ਼ਨ**: GPU, NPU, ਅਤੇ CPU ਐਕਸਲੇਰੇਸ਼ਨ ਦੀ ਵਰਤੋਂ ਕਰੋ
-
-### 2. CLI ਕਮਾਂਡ ਰੈਫਰੈਂਸ
+ਵਿਕਲਪ: ਦਿੱਤੇ ਗਏ ਨਮੂਨਿਆਂ ਦੀ ਸਿੱਧੀ ਵਰਤੋਂ ਕਰੋ
 
 ```powershell
-# Core Commands
+# Try the complete sample with streaming support
+cd Workshop/samples
+python -m session01.chat_bootstrap "Your question here"
+```
+
+ਜਾਂ ਇੰਟਰੈਕਟਿਵ ਨੋਟਬੁੱਕ ਦੀ ਖੋਜ ਕਰੋ  
+Workshop/notebooks/session01_chat_bootstrap.ipynb ਨੂੰ VS Code ਵਿੱਚ ਖੋਲ੍ਹੋ
+
+ਇਹ ਉਦਾਹਰਨ ਗੱਲਬਾਤਾਂ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ:
+
+- "Microsoft Foundry Local ਕੀ ਹੈ?"
+- "ਸਥਾਨਕ ਤੌਰ 'ਤੇ AI ਮਾਡਲ ਚਲਾਉਣ ਦੇ 3 ਫਾਇਦੇ ਦੱਸੋ"
+- "ਮੈਨੂੰ ਐਜ AI ਸਮਝਣ ਵਿੱਚ ਮਦਦ ਕਰੋ"
+
+## ਤੁਸੀਂ ਕੀ ਹਾਸਲ ਕੀਤਾ
+
+ਮੁਬਾਰਕਾਂ! ਤੁਸੀਂ ਸਫਲਤਾਪੂਰਵਕ:
+
+1. ✅ **Foundry Local ਇੰਸਟਾਲ ਕੀਤਾ** ਅਤੇ ਇਸਦੇ ਕੰਮ ਕਰਨ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ
+2. ✅ **ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਆਪਣਾ ਪਹਿਲਾ AI ਮਾਡਲ ਸ਼ੁਰੂ ਕੀਤਾ** (phi-4-mini)
+3. ✅ **ਕਮਾਂਡ ਲਾਈਨ ਰਾਹੀਂ ਵੱਖ-ਵੱਖ ਮਾਡਲਾਂ ਦੀ ਜਾਂਚ ਕੀਤੀ**
+4. ✅ **ਇੱਕ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਇਆ** ਜੋ ਤੁਹਾਡੇ ਸਥਾਨਕ AI ਨਾਲ ਜੁੜਦਾ ਹੈ
+5. ✅ **ਸਥਾਨਕ AI ਇੰਫਰੈਂਸ ਦਾ ਅਨੁਭਵ ਕੀਤਾ** ਬਿਨਾਂ ਕਲਾਉਡ ਨਿਰਭਰਤਾ ਦੇ
+
+## ਕੀ ਹੋਇਆ ਇਹ ਸਮਝਣਾ
+
+### ਸਥਾਨਕ AI ਇੰਫਰੈਂਸ
+
+- ਤੁਹਾਡੇ AI ਮਾਡਲ ਪੂਰੀ ਤਰ੍ਹਾਂ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ 'ਤੇ ਚਲਦੇ ਹਨ
+- ਕੋਈ ਡਾਟਾ ਕਲਾਉਡ ਨੂੰ ਨਹੀਂ ਭੇਜਿਆ ਜਾਂਦਾ
+- ਜਵਾਬ ਤੁਹਾਡੇ CPU/GPU ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਤਿਆਰ ਕੀਤੇ ਜਾਂਦੇ ਹਨ
+- ਗੋਪਨੀਯਤਾ ਅਤੇ ਸੁਰੱਖਿਆ ਬਰਕਰਾਰ ਰਹਿੰਦੀ ਹੈ
+
+### ਮਾਡਲ ਮੈਨੇਜਮੈਂਟ
+
+- `foundry model run` ਮਾਡਲਾਂ ਨੂੰ ਡਾਊਨਲੋਡ ਅਤੇ ਸ਼ੁਰੂ ਕਰਦਾ ਹੈ
+- **FoundryLocalManager SDK** ਸੇਵਾ ਸ਼ੁਰੂ ਕਰਨ ਅਤੇ ਮਾਡਲ ਲੋਡ ਕਰਨ ਨੂੰ ਆਪਣੇ ਆਪ ਸੰਭਾਲਦਾ ਹੈ
+- ਮਾਡਲ ਭਵਿੱਖ ਦੀ ਵਰਤੋਂ ਲਈ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਸਟੋਰ ਕੀਤੇ ਜਾਂਦੇ ਹਨ
+- ਕਈ ਮਾਡਲ ਡਾਊਨਲੋਡ ਕੀਤੇ ਜਾ ਸਕਦੇ ਹਨ ਪਰ ਆਮ ਤੌਰ 'ਤੇ ਇੱਕ ਸਮੇਂ 'ਤੇ ਇੱਕ ਚਲਦਾ ਹੈ
+- ਸੇਵਾ ਆਪਣੇ ਆਪ ਮਾਡਲ ਲਾਈਫਸਾਈਕਲ ਨੂੰ ਮੈਨੇਜ ਕਰਦੀ ਹੈ
+
+### SDK ਵਿਰੁੱਧ CLI ਪਹੁੰਚ
+
+- **CLI ਪਹੁੰਚ**: `foundry model run <model>` ਨਾਲ ਮਾਡਲ ਮੈਨੇਜਮੈਂਟ ਮੈਨੂਅਲ
+- **SDK ਪਹੁੰਚ**: `FoundryLocalManager(alias)` ਨਾਲ ਸੇਵਾ + ਮਾਡਲ ਮੈਨੇਜਮੈਂਟ ਆਪਣੇ ਆਪ
+- **ਸਿਫਾਰਸ਼**: ਐਪਲੀਕੇਸ਼ਨ ਲਈ SDK ਦੀ ਵਰਤੋਂ ਕਰੋ, ਟੈਸਟਿੰਗ ਅਤੇ ਐਕਸਪਲੋਰੇਸ਼ਨ ਲਈ CLI ਦੀ ਵਰਤੋਂ ਕਰੋ
+
+## ਆਮ ਕਮਾਂਡ ਰਿਫਰੈਂਸ
+
+### ਜ਼ਰੂਰੀ CLI ਕਮਾਂਡਾਂ
+
+```powershell
+# Installation & Setup
 foundry --version              # Check installation
+foundry --help                 # View all commands
+
 # Model Management
 foundry model list             # List available models
-foundry model unload <name>    # Unload from memory
+foundry model run <model>      # Download and start a model
+foundry model run <model> --prompt "text"  # One-shot prompt
+foundry cache list             # Show downloaded models
 
-foundry config list            # Current configuration
+# Service Management
+foundry service status         # Check if service is running
+foundry service start          # Start the service manually
+foundry service stop           # Stop the service
 ```
 
-### 3. Python SDK ਇੰਟੀਗ੍ਰੇਸ਼ਨ
 
-```python
-# Basic client setup
-from foundry_local import FoundryLocalManager
-from openai import OpenAI
-import os
+### ਮਾਡਲ ਸਿਫਾਰਸ਼ਾਂ
 
-alias = os.getenv("FOUNDRY_LOCAL_ALIAS", "phi-3.5-mini")
-manager = FoundryLocalManager(alias)
-client = OpenAI(base_url=manager.endpoint, api_key=manager.api_key or "not-needed")
+- **phi-4-mini**: ਸ਼ੁਰੂਆਤੀ ਮਾਡਲ ਲਈ ਸਭ ਤੋਂ ਵਧੀਆ - ਤੇਜ਼, ਹਲਕਾ, ਵਧੀਆ ਗੁਣਵੱਤਾ
+- **qwen2.5-0.5b**: ਸਭ ਤੋਂ ਤੇਜ਼ ਇੰਫਰੈਂਸ, ਘੱਟੋ-ਘੱਟ ਮੈਮੋਰੀ ਦੀ ਵਰਤੋਂ
+- **gpt-oss-20b**: ਉੱਚ ਗੁਣਵੱਤਾ ਵਾਲੇ ਜਵਾਬ, ਵੱਧ ਸਾਧਨਾਂ ਦੀ ਲੋੜ
+- **deepseek-coder-1.3b**: ਪ੍ਰੋਗਰਾਮਿੰਗ ਅਤੇ ਕੋਡ ਟਾਸਕ ਲਈ ਅਨੁਕੂਲ
 
-response = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Hello!"}],
-    max_tokens=50
-)
-print(response.choices[0].message.content)
+## ਸਮੱਸਿਆ ਹੱਲ
 
-# Streaming example
-stream = client.chat.completions.create(
-    model=manager.get_model_info(alias).id,
-    messages=[{"role": "user", "content": "Give a 1-sentence definition of edge AI."}],
-    stream=True,
-    max_tokens=60,
-    temperature=0.4
-)
-for chunk in stream:
-    delta = chunk.choices[0].delta
-    if delta and delta.content:
-        print(delta.content, end="", flush=True)
-print()
-```
-
-## ਆਮ ਸਮੱਸਿਆਵਾਂ ਦਾ ਹੱਲ
-
-### ਸਮੱਸਿਆ 1: "Foundry ਕਮਾਂਡ ਨਹੀਂ ਮਿਲੀ"
+### "Foundry ਕਮਾਂਡ ਨਹੀਂ ਮਿਲੀ"
 
 **ਹੱਲ:**
+
 ```powershell
-# Restart PowerShell after installation
-# Or manually add to PATH
+# Restart your terminal after installation
+# Or manually add to PATH (Windows)
 $env:PATH += ";C:\Program Files\Microsoft\FoundryLocal"
 ```
 
-### ਸਮੱਸਿਆ 2: "ਮਾਡਲ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
+
+### "ਮਾਡਲ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
 
 **ਹੱਲ:**
-```powershell
-# Check available memory
-foundry system info
 
-# Try smaller model first
+```powershell
+# Check available system memory
+foundry service status
+
+# Try a smaller model first
 foundry model run phi-4-mini
 
-# Check disk space for model cache
-dir "$env:USERPROFILE\.foundry\models"
+# Check disk space for model downloads
+# Models are stored in: %USERPROFILE%\.foundry\models (Windows)
 ```
 
-### ਸਮੱਸਿਆ 3: "localhost:5273 'ਤੇ ਕਨੈਕਸ਼ਨ ਰਿਫਿਊਜ਼ਡ"
+
+### "localhost 'ਤੇ ਕਨੈਕਸ਼ਨ ਰਿਫਿਊਜ਼ਡ"
 
 **ਹੱਲ:**
+
 ```powershell
 # Check if service is running
-foundry status
+foundry service status
 
 # Start service if needed
 foundry service start
 
-# Check for port conflicts
-netstat -an | findstr 5273
+# Verify the port (default is 5273)
+# Check for port conflicts with: netstat -an | findstr 5273
 ```
 
-## ਪ੍ਰਦਰਸ਼ਨ ਅਪਟਿਮਾਈਜ਼ੇਸ਼ਨ ਟਿਪਸ
-
-### 1. ਮਾਡਲ ਚੋਣ ਰਣਨੀਤੀ
-
-- **Phi-4-mini**: ਆਮ ਕੰਮਾਂ ਲਈ ਵਧੀਆ, ਘੱਟ ਮੈਮੋਰੀ ਦੀ ਵਰਤੋਂ
-- **Qwen2.5-0.5b**: ਸਭ ਤੋਂ ਤੇਜ਼ ਇੰਫਰੈਂਸ, ਘੱਟ ਸਰੋਤਾਂ ਦੀ ਲੋੜ
-- **GPT-OSS-20B**: ਸਭ ਤੋਂ ਉੱਚ ਗੁਣਵੱਤਾ, ਵਧੇਰੇ ਸਰੋਤਾਂ ਦੀ ਲੋੜ
-- **DeepSeek-Coder**: ਪ੍ਰੋਗਰਾਮਿੰਗ ਕੰਮਾਂ ਲਈ ਅਪਟਿਮਾਈਜ਼ ਕੀਤਾ
-
-### 2. ਹਾਰਡਵੇਅਰ ਅਪਟਿਮਾਈਜ਼ੇਸ਼ਨ
-
-```powershell
-# Enable all acceleration options
-foundry config set compute.onnx.enable_gpu true
-foundry config set compute.webgpu.enabled true
-foundry config set compute.cpu.threads auto
-
-# Optimize memory usage
-foundry config set model.cache.max_size 10GB
-foundry config set model.preload false
-```
-
-### 3. ਪ੍ਰਦਰਸ਼ਨ ਦੀ ਨਿਗਰਾਨੀ
-
-```powershell
-cd Workshop/samples
-# Performance & latency measurement
-# Use the Python benchmark script (Session 3) instead of legacy 'model stats' or 'model benchmark' commands.
-# Example:
-set BENCH_MODELS=phi-4-mini,qwen2.5-0.5b
-python -m session03.benchmark_oss_models
-
-# Re-run after enabling GPU acceleration to compare:
-foundry config set compute.onnx.enable_gpu true
-python -m session03.benchmark_oss_models
-```
-
-### ਵਿਕਲਪਿਕ ਸੁਧਾਰ
-
-| ਸੁਧਾਰ | ਕੀ ਹੈ | ਕਿਵੇਂ |
-|-------|-------|-------|
-| ਸਾਂਝੇ ਯੂਟਿਲਿਟੀਜ਼ | ਡੁਪਲੀਕੇਟ ਕਲਾਇੰਟ/ਬੂਟਸਟ੍ਰੈਪ ਲੌਜਿਕ ਨੂੰ ਹਟਾਓ | `Workshop/samples/workshop_utils.py` ਦੀ ਵਰਤੋਂ ਕਰੋ (`get_client`, `chat_once`) |
-| ਟੋਕਨ ਵਰਤੋਂ ਦ੍ਰਿਸ਼ਮਾਨਤਾ | ਲਾਗਤ/ਕੁਸ਼ਲਤਾ ਦੀ ਸੋਚ ਸਿਖਾਓ | `SHOW_USAGE=1` ਸੈਟ ਕਰੋ ਤਾਂ ਜੋ ਪ੍ਰੌਮਪਟ/ਕੰਪਲੀਸ਼ਨ/ਕੁੱਲ ਟੋਕਨ ਪ੍ਰਿੰਟ ਹੋਣ |
-| ਨਿਰਧਾਰਿਤ ਤੁਲਨਾਵਾਂ | ਸਥਿਰ ਬੈਂਚਮਾਰਕਿੰਗ ਅਤੇ ਰਿਗਰੈਸ਼ਨ ਜਾਂਚ | `temperature=0`, `top_p=1`, ਸਥਿਰ ਪ੍ਰੌਮਪਟ ਟੈਕਸਟ ਦੀ ਵਰਤੋਂ ਕਰੋ |
-| ਪਹਿਲਾ-ਟੋਕਨ ਲੇਟੈਂਸੀ | ਮਹਿਸੂਸ ਕੀਤੀ ਗਈ ਪ੍ਰਤੀਕ੍ਰਿਆ ਮੈਟ੍ਰਿਕ | ਸਟ੍ਰੀਮਿੰਗ ਨਾਲ ਬੈਂਚਮਾਰਕ ਸਕ੍ਰਿਪਟ ਅਨੁਕੂਲ ਬਣਾਓ (`BENCH_STREAM=1`) |
-| ਅਸਥਾਈ ਗਲਤੀਆਂ 'ਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ | ਠੰਡੇ ਸ਼ੁਰੂ 'ਤੇ ਲਚੀਲਾਪਨ ਡੈਮੋ | `RETRY_ON_FAIL=1` (ਡਿਫਾਲਟ) ਅਤੇ `RETRY_BACKOFF` ਨੂੰ ਅਨੁਕੂਲ ਬਣਾਓ |
-| ਸਮੋਕ ਟੈਸਟਿੰਗ | ਮੁੱਖ ਫਲੋਜ਼ 'ਤੇ ਤੇਜ਼ ਸੈਨਿਟੀ | ਵਰਕਸ਼ਾਪ ਤੋਂ ਪਹਿਲਾਂ `python Workshop/tests/smoke.py` ਚਲਾਓ |
-| ਮਾਡਲ ਅਲਿਆਸ ਪ੍ਰੋਫਾਈਲ | ਮਸ਼ੀਨਾਂ ਦੇ ਵਿਚਕਾਰ ਮਾਡਲ ਸੈੱਟ ਨੂੰ ਤੇਜ਼ੀ ਨਾਲ ਪਿਵਟ ਕਰੋ | `.env` ਨੂੰ `FOUNDRY_LOCAL_ALIAS`, `SLM_ALIAS`, `LLM_ALIAS` ਨਾਲ ਰੱਖੋ |
-| ਕੈਸ਼ਿੰਗ ਕੁਸ਼ਲਤਾ | ਕਈ-ਨਮੂਨਾ ਚਾਲ ਵਿੱਚ ਦੁਹਰਾਏ ਗਏ ਵਾਰਮਅੱਪ ਤੋਂ ਬਚੋ | ਯੂਟਿਲਿਟੀਜ਼ ਕੈਸ਼ ਮੈਨੇਜਰ; ਸਕ੍ਰਿਪਟ/ਨੋਟਬੁੱਕ ਵਿੱਚ ਦੁਬਾਰਾ ਵਰਤੋਂ ਕਰੋ |
-| ਪਹਿਲੀ ਚਾਲ ਵਾਰਮਅੱਪ | p95 ਲੇਟੈਂਸੀ ਸਪਾਈਕ ਨੂੰ ਘਟਾਓ | `FoundryLocalManager` ਬਣਾਉਣ ਤੋਂ ਬਾਅਦ ਇੱਕ ਛੋਟਾ ਪ੍ਰੌਮਪਟ ਚਲਾਓ |
-
-ਨਿਰਧਾਰਿਤ ਵਾਰਮ ਬੇਸਲਾਈਨ ਦਾ ਉਦਾਹਰਨ (PowerShell):
-
-```powershell
-set FOUNDRY_LOCAL_ALIAS=phi-4-mini
-set SHOW_USAGE=1
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference." | Out-Null
-python Workshop\samples\session01\chat_bootstrap.py "List two privacy benefits of local inference."
-```
-
-ਤੁਹਾਨੂੰ ਦੂਜੇ ਚਾਲ 'ਤੇ ਸਮਾਨ ਆਉਟਪੁੱਟ ਅਤੇ ਇੱਕੋ ਜਿਹੇ ਟੋਕਨ ਗਿਣਤੀ ਦੇਖਣੀ ਚਾਹੀਦੀ ਹੈ, ਜੋ ਨਿਰਧਾਰਿਤਤਾ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦਾ ਹੈ।
 
 ## ਅਗਲੇ ਕਦਮ
 
-ਇਸ ਸੈਸ਼ਨ ਨੂੰ ਪੂਰਾ ਕਰਨ ਤੋਂ ਬਾਅਦ:
+### ਤੁਰੰਤ ਅਗਲੇ ਕਾਰਵਾਈ
 
-1. **ਸੈਸ਼ਨ 2 ਦੀ ਖੋਜ ਕਰੋ**: Azure AI Foundry RAG ਨਾਲ AI ਹੱਲ ਬਣਾਓ
-2. **ਵੱਖ-ਵੱਖ ਮਾਡਲਾਂ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ**: Qwen, DeepSeek, ਅਤੇ ਹੋਰ ਮਾਡਲ ਪਰਿਵਾਰਾਂ ਨਾਲ ਪ੍ਰਯੋਗ ਕਰੋ
-3. **ਪ੍ਰਦਰਸ਼ਨ ਨੂੰ ਅਪਟਿਮਾਈਜ਼ ਕਰੋ**: ਆਪਣੇ ਵਿਸ਼ੇਸ਼ ਹਾਰਡਵੇਅਰ ਲਈ ਸੈਟਿੰਗਾਂ ਨੂੰ ਸੁਧਾਰੋ
-4. **ਕਸਟਮ ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਓ**: Foundry Local SDK ਦੀ ਵਰਤੋਂ ਆਪਣੇ ਪ੍ਰੋਜੈਕਟਾਂ ਵਿੱਚ ਕਰੋ
+1. **ਵੱਖ-ਵੱਖ ਮਾਡਲਾਂ ਅਤੇ ਪ੍ਰੋਮਪਟਾਂ ਨਾਲ ਪ੍ਰਯੋਗ ਕਰੋ**
+2. **ਆਪਣੀ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ ਨੂੰ ਸੋਧੋ** ਵੱਖ-ਵੱਖ ਮਾਡਲਾਂ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਨ ਲਈ
+3. **ਆਪਣੇ ਪ੍ਰੋਮਪਟ ਬਣਾਓ** ਅਤੇ ਜਵਾਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ
+4. **ਸੈਸ਼ਨ 2 ਦੀ ਖੋਜ ਕਰੋ**: RAG ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਉਣਾ
+
+### ਉੱਚ-ਸਤਹ ਸਿੱਖਣ ਦਾ ਮਾਰਗ
+
+1. **ਸੈਸ਼ਨ 2**: RAG (Retrieval-Augmented Generation) ਨਾਲ AI ਹੱਲ ਬਣਾਓ
+2. **ਸੈਸ਼ਨ 3**: ਵੱਖ-ਵੱਖ ਖੁੱਲੇ-ਸਰੋਤ ਮਾਡਲਾਂ ਦੀ ਤੁਲਨਾ ਕਰੋ
+3. **ਸੈਸ਼ਨ 4**: ਅਗਲੇ ਪੱਧਰ ਦੇ ਮਾਡਲਾਂ ਨਾਲ ਕੰਮ ਕਰੋ
+4. **ਸੈਸ਼ਨ 5**: ਬਹੁ-ਏਜੰਟ AI ਸਿਸਟਮ ਬਣਾਓ
+
+## ਵਾਤਾਵਰਣ ਵੈਰੀਏਬਲ (ਵਿਕਲਪਿਕ)
+
+ਹੋਰ ਉੱਚ-ਸਤਹ ਦੇ ਉਪਯੋਗ ਲਈ, ਤੁਸੀਂ ਇਹ ਵਾਤਾਵਰਣ ਵੈਰੀਏਬਲ ਸੈਟ ਕਰ ਸਕਦੇ ਹੋ:
+
+| ਵੈਰੀਏਬਲ | ਉਦੇਸ਼ | ਉਦਾਹਰਨ |
+|----------|---------|---------|
+| `FOUNDRY_LOCAL_ALIAS` | ਵਰਤਣ ਲਈ ਡਿਫਾਲਟ ਮਾਡਲ | `phi-4-mini` |
+| `FOUNDRY_LOCAL_ENDPOINT` | ਐਂਡਪੌਇੰਟ URL ਨੂੰ ਓਵਰਰਾਈਡ ਕਰੋ | `http://localhost:5273/v1` |
+
+ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ ਡਾਇਰੈਕਟਰੀ ਵਿੱਚ `.env` ਫਾਈਲ ਬਣਾਓ:
+```
+FOUNDRY_LOCAL_ALIAS=phi-4-mini
+FOUNDRY_LOCAL_ENDPOINT=auto
+```
+
 
 ## ਵਾਧੂ ਸਰੋਤ
 
 ### ਦਸਤਾਵੇਜ਼
-- [Foundry Local Python SDK ਰੈਫਰੈਂਸ](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [Foundry Local ਇੰਸਟਾਲੇਸ਼ਨ ਗਾਈਡ](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
-- [ਮਾਡਲ ਕੈਟਾਲੌਗ](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
+
+- [Foundry Local Python SDK Reference](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
+- [Foundry Local Installation Guide](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/install)
+- [Model Catalog](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/models)
 
 ### ਨਮੂਨਾ ਕੋਡ
-- [Module08 Sample 01](./samples/01/README.md) - REST Chat Quickstart
-- [Module08 Sample 02](./samples/02/README.md) - OpenAI SDK Integration
-- [Module08 Sample 03](./samples/03/README.md) - Model Discovery & Benchmarking
+
+- **Session01 Python Sample**: `Workshop/samples/session01/chat_bootstrap.py` - ਸਟ੍ਰੀਮਿੰਗ ਸਮੇਤ ਪੂਰਾ ਚੈਟ ਐਪ
+- **Session01 Notebook**: `Workshop/notebooks/session01_chat_bootstrap.ipynb` - ਇੰਟਰੈਕਟਿਵ ਟਿਊਟੋਰਿਅਲ  
+- [Module08 Sample 01](../Module08/samples/01/README.md) - REST Chat Quickstart
+- [Module08 Sample 02](../Module08/samples/02/README.md) - OpenAI SDK Integration
+- [Module08 Sample 03](../Module08/samples/03/README.md) - Model Discovery & Benchmarking
 
 ### ਕਮਿਊਨਿਟੀ
+
 - [Foundry Local GitHub Discussions](https://github.com/microsoft/Foundry-Local/discussions)
 - [Azure AI Community](https://techcommunity.microsoft.com/category/artificialintelligence)
 
 ---
 
-**ਸੈਸ਼ਨ ਦੀ ਮਿਆਦ**: 30 ਮਿੰਟ ਹੱਥ-ਅਨੁਭਵ + 15 ਮਿੰਟ Q&A
-**ਮੁਸ਼ਕਲ ਪੱਧਰ**: ਸ਼ੁਰੂਆਤੀ
-**ਪੂਰਵ ਸ਼ਰਤਾਂ**: Windows 11, Python 3.10+, ਐਡਮਿਨਿਸਟ੍ਰੇਟਰ ਐਕਸੈਸ
+**ਸੈਸ਼ਨ ਦੀ ਮਿਆਦ**: 30 ਮਿੰਟ ਹੱਥ-ਅਨੁਭਵ + 15 ਮਿੰਟ Q&A  
+**ਮੁਸ਼ਕਲ ਪੱਧਰ**: ਸ਼ੁਰੂਆਤੀ  
+**ਪੂਰਵ ਸ਼ਰਤਾਂ**: Windows 11/macOS 11+, Python 3.10+, ਐਡਮਿਨ ਐਕਸੈਸ
 
-## ਨਮੂਨਾ ਸਥਿਤੀ ਅਤੇ ਵਰਕਸ਼ਾਪ ਮੈਪਿੰਗ
+## ਵਰਕਸ਼ਾਪ ਉਦਾਹਰਨ ਦ੍ਰਿਸ਼
 
-| ਵਰਕਸ਼ਾਪ ਸਕ੍ਰਿਪਟ / ਨੋਟਬੁੱਕ | ਸਥਿਤੀ | ਲਕਸ਼ | ਉਦਾਹਰਨ ਇਨਪੁੱਟ | ਲੋੜੀਂਦਾ ਡਾਟਾਸੈਟ |
-|----------------------------|--------|------|----------------|----------------|
-| `samples/session01/chat_bootstrap.py` / `notebooks/session01_chat_bootstrap.ipynb` | ਡਿਵੈਲਪਰ ਟੀਮ ਜੋ ਡਿਵਾਈਸ ਇੰਫਰੈਂਸ ਨੂੰ ਪ੍ਰਾਈਵੇਸੀ ਅਸੈਸਮੈਂਟ ਪੋਰਟਲ ਲਈ ਅਨੁਕੂਲ ਬਣਾਉਣ ਦੀ ਜਾਂਚ ਕਰ ਰਹੀ ਹੈ | ਸਥਾਨਕ SLM ਨੂੰ ਸਾਬਤ ਕਰੋ ਕਿ ਸਟੈਂਡਰਡ ਪ੍ਰੌਮਪਟ 'ਤੇ ਸਬ-ਸੈਕੰਡ ਲੇਟੈਂਸੀ ਵਿੱਚ ਜਵਾਬ ਦਿੰਦਾ ਹੈ | "List two benefits of local inference." | ਕੋਈ ਨਹੀਂ (ਸਿੰਗਲ ਪ੍ਰੌਮਪਟ) |
-| Quickstart adaptation code block | ਡਿਵੈਲਪਰ ਜੋ ਮੌਜੂਦਾ OpenAI ਸਕ੍ਰਿਪਟ ਨੂੰ Foundry Local ਵਿੱਚ ਮਾਈਗਰੇਟ ਕਰ ਰਿਹਾ ਹੈ | ਡ੍ਰੌਪ-ਇਨ ਅਨੁਕੂਲਤਾ ਦਿਖਾਓ | "Give two benefits of local inference." | ਸਿਰਫ ਇਨਲਾਈਨ ਪ੍ਰੌਮਪਟ |
+### ਅਸਲ-ਦੁਨੀਆ ਦਾ ਸੰਦਰਭ
 
-### ਸਥਿਤੀ ਕਹਾਣੀ
-ਸੁਰੱਖਿਆ ਅਤੇ ਕੰਪਲਾਇੰਸ ਸਕੁਐਡ ਨੂੰ ਇਹ ਪ੍ਰਮਾਣਿਤ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ ਕਿ ਸੰਵੇਦਨਸ਼ੀਲ ਪ੍ਰੋਟੋਟਾਈਪ ਡਾਟਾ ਨੂੰ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਪ੍ਰੋਸੈਸ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। ਉਹ ਬੂਟਸਟ੍ਰੈਪ ਸਕ੍ਰਿਪਟ ਨੂੰ ਕਈ ਪ੍ਰੌਮਪਟਾਂ (ਪ੍ਰਾਈਵੇਸੀ, ਲੇਟੈਂਸੀ, ਲਾਗਤ) ਨਾਲ ਚਲਾਉਂਦੇ ਹਨ ਜੋ ਨਿਰਧਾਰਿਤ temperature=0 ਮੋਡ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹਨ ਤਾਂ ਜੋ ਬਾਅਦ ਵਿੱਚ ਤੁਲਨਾ ਲਈ ਬੇਸਲਾਈਨ ਆਉਟਪੁੱਟ ਕੈਪਚਰ ਕੀਤਾ ਜਾ ਸਕੇ (ਸੈਸ਼ਨ 3 ਬੈਂਚਮਾਰਕਿੰਗ ਅਤੇ ਸੈਸ਼ਨ 4 SLM ਵਿਰੁੱਧ LLM ਵਿਰੋਧ).
+**ਦ੍ਰਿਸ਼**: ਇੱਕ ਐਨਟਰਪ੍ਰਾਈਜ਼ IT ਟੀਮ ਨੂੰ ਸੰਵੇਦਨਸ਼ੀਲ ਕਰਮਚਾਰੀ ਫੀਡਬੈਕ ਨੂੰ ਬਾਹਰੀ ਸੇਵਾਵਾਂ ਨੂੰ ਡਾਟਾ ਭੇਜਣ ਤੋਂ ਬਿਨਾਂ ਪ੍ਰੋਸੈਸ ਕਰਨ ਲਈ ਡਿਵਾਈਸ-ਤੇ AI ਇੰਫਰੈਂਸ ਦਾ ਮੁਲਾਂਕਣ ਕਰਨ ਦੀ ਲੋੜ ਹੈ।
 
-### ਘੱਟੋ-ਘੱਟ ਪ੍ਰੌਮਪਟ ਸੈੱਟ JSON (ਵਿਕਲਪਿਕ)
+**ਤੁਹਾਡਾ ਉਦੇਸ਼**: ਸਥਾਨਕ AI ਮਾਡਲਾਂ ਨੂੰ ਸਬ-ਸੈਕੰਡ ਲੈਟੈਂਸੀ ਨਾਲ ਗੁਣਵੱਤਾ ਵਾਲੇ ਜਵਾਬ ਪ੍ਰਦਾਨ ਕਰਨ ਅਤੇ ਪੂਰੀ ਡਾਟਾ ਗੋਪਨੀਯਤਾ ਨੂੰ ਬਰਕਰਾਰ ਰੱਖਣ ਦਾ ਪ੍ਰਮਾਣ ਦਿਓ।
+
+### ਟੈਸਟ ਪ੍ਰੋਮਪਟ
+
+ਆਪਣੀ ਸੈਟਅਪ ਦੀ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਇਹ ਪ੍ਰੋਮਪਟ ਵਰਤੋ:
+
 ```json
 [
     "List two benefits of local inference.",
     "Summarize why keeping data on device improves privacy.",
-    "Give one trade‑off when choosing an SLM over a large model."
+    "Give one trade-off when choosing a small model over a large model."
 ]
 ```
 
-ਇਸ ਸੂਚੀ
+
+### ਸਫਲਤਾ ਮਾਪਦੰਡ
+
+- ✅ ਸਾਰੇ ਪ੍ਰੋਮਪਟ 2 ਸਕਿੰਟ ਤੋਂ ਘੱਟ ਸਮੇਂ ਵਿੱਚ ਜਵਾਬ ਪ੍ਰਾਪਤ ਕਰਦੇ ਹਨ
+- ✅ ਕੋਈ ਡਾਟਾ ਤੁਹਾਡੇ ਸਥਾਨਕ ਮਸ਼ੀਨ ਤੋਂ ਬਾਹਰ ਨਹੀਂ ਜਾਂਦਾ
+- ✅ ਜਵਾਬ ਸਬੰਧਤ ਅਤੇ ਮਦਦਗਾਰ ਹਨ
+- ✅ ਤੁਹਾਡੀ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ ਸਫਲਤਾਪੂਰਵਕ ਕੰਮ ਕਰਦੀ ਹੈ
+
+ਇਹ ਵੈਰੀਫਿਕੇਸ਼ਨ ਯਕੀਨੀ ਬਣਾਉਂਦੀ ਹੈ ਕਿ ਤੁਹਾਡਾ Foundry Local ਸੈਟਅਪ ਸੈਸ਼ਨ 2-6 ਵਿੱਚ ਉੱਚ-ਸਤਹ ਦੇ ਵਰਕਸ਼ਾਪਾਂ ਲਈ ਤਿਆਰ ਹੈ।
 
 ---
 
-**ਅਸਵੀਕਰਤੀ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀ ਹੋਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਦਿਓ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੁੱਤੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਇਸਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ਅਸਵੀਕਰਤਾ**:  
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀ ਹੋਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਦਿਓ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੁੱਤੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਇਸਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਮੂਲ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

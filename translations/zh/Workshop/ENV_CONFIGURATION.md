@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T20:33:34+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T21:49:16+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "zh"
 }
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. 配置环境
 
-`.env` 文件已预配置为合理的默认值。大多数用户无需更改任何内容。
+`.env` 文件已经配置了合理的默认值。大多数用户无需更改任何内容。
 
 **可选**：查看并定制设置：
 ```bash
@@ -89,7 +89,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 #### 会话 03：基准测试
 | 变量 | 默认值 | 用途 |
 |------|--------|------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | 要测试的模型 |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | 要进行基准测试的模型 |
 | `BENCH_ROUNDS` | `3` | 每个模型的迭代次数 |
 | `BENCH_PROMPT` | 预配置 | 测试提示 |
 | `BENCH_STREAM` | `0` | 测量首个 token 的延迟 |
@@ -408,16 +408,17 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ## 其他资源
 
 - `QUICK_START.md` - 快速入门指南
-- `SDK_MIGRATION_NOTES.md` - SDK 更新详情
 - `Workshop/samples/*/README.md` - 示例特定指南
 
 ---
 
-**最后更新日期**: 2025-01-08  
+**最后更新**: 2025-01-08  
 **版本**: 2.0  
 **SDK**: Foundry Local Python SDK（最新）
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免责声明**：  
-本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
+本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们对因使用此翻译而产生的任何误解或误读不承担责任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

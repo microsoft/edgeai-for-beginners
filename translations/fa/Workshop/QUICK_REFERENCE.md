@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T20:26:33+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T21:43:51+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "fa"
 }
@@ -34,14 +34,14 @@ python -m session01.chat_bootstrap "What is edge AI?"
 
 | جلسه | نمونه | هدف | زمان |
 |------|-------|------|------|
-| 01 | `chat_bootstrap.py` | چت پایه + استریم | ~۳۰ ثانیه |
-| 02 | `rag_pipeline.py` | RAG با تعبیه‌ها | ~۴۵ ثانیه |
-| 02 | `rag_eval_ragas.py` | ارزیابی RAG | ~۶۰ ثانیه |
-| 03 | `benchmark_oss_models.py` | ارزیابی مدل‌ها | ~۲ دقیقه |
-| 04 | `model_compare.py` | SLM در مقابل LLM | ~۴۵ ثانیه |
-| 05 | `agents_orchestrator.py` | سیستم چند عاملی | ~۶۰ ثانیه |
-| 06 | `models_router.py` | مسیریابی هدف | ~۴۵ ثانیه |
-| 06 | `models_pipeline.py` | خط لوله چند مرحله‌ای | ~۶۰ ثانیه |
+| ۰۱ | `chat_bootstrap.py` | چت پایه + استریم | ~۳۰ ثانیه |
+| ۰۲ | `rag_pipeline.py` | RAG با تعبیه‌ها | ~۴۵ ثانیه |
+| ۰۲ | `rag_eval_ragas.py` | ارزیابی RAG | ~۶۰ ثانیه |
+| ۰۳ | `benchmark_oss_models.py` | ارزیابی مدل‌ها | ~۲ دقیقه |
+| ۰۴ | `model_compare.py` | مقایسه SLM و LLM | ~۴۵ ثانیه |
+| ۰۵ | `agents_orchestrator.py` | سیستم چند عاملی | ~۶۰ ثانیه |
+| ۰۶ | `models_router.py` | مسیریابی هدف | ~۴۵ ثانیه |
+| ۰۶ | `models_pipeline.py` | خط لوله چند مرحله‌ای | ~۶۰ ثانیه |
 
 ---
 
@@ -196,12 +196,12 @@ for chunk in stream:
 
 | مدل | اندازه | بهترین کاربرد | سرعت |
 |-----|--------|--------------|-------|
-| `qwen2.5-0.5b` | 0.5B | طبقه‌بندی سریع | ⚡⚡⚡ |
-| `qwen2.5-coder-0.5b` | 0.5B | تولید سریع کد | ⚡⚡⚡ |
-| `gemma-2-2b` | 2B | نوشتن خلاقانه | ⚡⚡ |
-| `phi-3.5-mini` | 3.5B | کدنویسی، بازسازی | ⚡⚡ |
-| `phi-4-mini` | 4B | عمومی، خلاصه‌سازی | ⚡⚡ |
-| `qwen2.5-7b` | 7B | استدلال پیچیده | ⚡ |
+| `qwen2.5-0.5b` | ۰.۵B | طبقه‌بندی سریع | ⚡⚡⚡ |
+| `qwen2.5-coder-0.5b` | ۰.۵B | تولید سریع کد | ⚡⚡⚡ |
+| `gemma-2-2b` | ۲B | نوشتن خلاقانه | ⚡⚡ |
+| `phi-3.5-mini` | ۳.۵B | کدنویسی، بازسازی | ⚡⚡ |
+| `phi-4-mini` | ۴B | عمومی، خلاصه‌سازی | ⚡⚡ |
+| `qwen2.5-7b` | ۷B | استدلال پیچیده | ⚡ |
 
 ---
 
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **مستندات SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **مرجع سریع**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **خلاصه به‌روزرسانی**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **یادداشت‌های مهاجرت**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -256,7 +254,7 @@ python -m session05.agents_orchestrator
 
 ---
 
-**راهنمای سریع**: هر نمونه را با `--help` از دایرکتوری `samples` اجرا کنید یا توضیحات را بررسی کنید:
+**راهنمای سریع**: هر نمونه را با `--help` از دایرکتوری `samples` اجرا کنید یا مستندات داخلی را بررسی کنید:
 ```bash
 python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 ```
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **سلب مسئولیت**:  
 این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

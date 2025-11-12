@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T22:12:33+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T23:21:00+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "no"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Oversikt
 
-Workshop-eksemplene bruker miljøvariabler for konfigurasjon, sentralisert i `.env`-filen i rotmappen til depotet. Dette gjør det enkelt å tilpasse uten å endre koden.
+Workshop-eksemplene bruker miljøvariabler for konfigurasjon, sentralisert i `.env`-filen i roten av depotet. Dette gjør det enkelt å tilpasse uten å endre kode.
 
-## Kom i gang raskt
+## Kom i Gang
 
-### 1. Bekreft forutsetninger
+### 1. Bekreft Forutsetninger
 
 ```bash
 # Check Foundry Local is installed
@@ -28,18 +28,18 @@ foundry service status
 foundry model run phi-4-mini
 ```
 
-### 2. Konfigurer miljøet
+### 2. Konfigurer Miljø
 
 `.env`-filen er allerede konfigurert med fornuftige standardverdier. De fleste brukere trenger ikke å endre noe.
 
-**Valgfritt**: Gå gjennom og tilpass innstillingene:
+**Valgfritt**: Gå gjennom og tilpass innstillinger:
 ```bash
 # Edit .env file
 notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Bruk konfigurasjonen
+### 3. Bruk Konfigurasjonen
 
 **For Python-skript:**
 ```bash
@@ -54,20 +54,20 @@ python -m session01.chat_bootstrap "Your question here"
 # Variables are loaded when cells execute
 ```
 
-## Referanse for miljøvariabler
+## Referanse for Miljøvariabler
 
 ### Kjernekonfigurasjon
 
 | Variabel | Standard | Beskrivelse |
-|----------|----------|-------------|
+|----------|---------|-------------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Standardmodell for eksempler |
 | `FOUNDRY_LOCAL_ENDPOINT` | (tom) | Overstyr tjenesteendepunkt |
-| `PYTHONPATH` | Workshop-stier | Søkesti for Python-moduler |
+| `PYTHONPATH` | Workshop-stier | Søkevei for Python-moduler |
 
 **Når du bør sette FOUNDRY_LOCAL_ENDPOINT:**
 - Fjernstyrt Foundry Local-instans
 - Tilpasset portkonfigurasjon
-- Skille mellom utvikling og produksjon
+- Skille mellom utvikling/produksjon
 
 **Eksempel:**
 ```bash
@@ -78,33 +78,33 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:8000
 FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ```
 
-### Øktspesifikke variabler
+### Sesjonsspesifikke Variabler
 
-#### Økt 02: RAG Pipeline
+#### Sesjon 02: RAG Pipeline
 | Variabel | Standard | Formål |
-|----------|----------|--------|
-| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embeddingsmodell |
+|----------|---------|---------|
+| `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding-modell |
 | `RAG_QUESTION` | Forhåndskonfigurert | Testspørsmål |
 
-#### Økt 03: Benchmarking
+#### Sesjon 03: Benchmarking
 | Variabel | Standard | Formål |
-|----------|----------|--------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modeller for benchmarking |
+|----------|---------|---------|
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Modeller som skal benchmarkes |
 | `BENCH_ROUNDS` | `3` | Iterasjoner per modell |
 | `BENCH_PROMPT` | Forhåndskonfigurert | Testprompt |
 | `BENCH_STREAM` | `0` | Måle latens for første token |
 
-#### Økt 04: Modell-sammenligning
+#### Sesjon 04: Modell-sammenligning
 | Variabel | Standard | Formål |
-|----------|----------|--------|
+|----------|---------|---------|
 | `SLM_ALIAS` | `phi-4-mini` | Liten språkmodell |
 | `LLM_ALIAS` | `qwen2.5-7b` | Stor språkmodell |
 | `COMPARE_PROMPT` | Forhåndskonfigurert | Sammenligningsprompt |
-| `COMPARE_RETRIES` | `2` | Antall forsøk på nytt |
+| `COMPARE_RETRIES` | `2` | Forsøksforsøk |
 
-#### Økt 05: Multi-Agent Orkestrering
+#### Sesjon 05: Multi-Agent Orkestrering
 | Variabel | Standard | Formål |
-|----------|----------|--------|
+|----------|---------|---------|
 | `AGENT_MODEL_PRIMARY` | `phi-4-mini` | Forsker-agentmodell |
 | `AGENT_MODEL_EDITOR` | `phi-4-mini` | Redaktør-agentmodell |
 | `AGENT_QUESTION` | Forhåndskonfigurert | Testspørsmål |
@@ -112,14 +112,14 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 ### Pålitelighetskonfigurasjon
 
 | Variabel | Standard | Formål |
-|----------|----------|--------|
-| `SHOW_USAGE` | `1` | Vis tokenbruk |
-| `RETRY_ON_FAIL` | `1` | Aktiver logikk for å prøve på nytt |
-| `RETRY_BACKOFF` | `1.0` | Forsinkelse før nytt forsøk (sekunder) |
+|----------|---------|---------|
+| `SHOW_USAGE` | `1` | Skriv ut tokenbruk |
+| `RETRY_ON_FAIL` | `1` | Aktiver retry-logikk |
+| `RETRY_BACKOFF` | `1.0` | Forsinkelse ved retry (sekunder) |
 
-## Vanlige konfigurasjoner
+## Vanlige Konfigurasjoner
 
-### Utviklingsoppsett (Rask iterasjon)
+### Utviklingsoppsett (Rask Iterasjon)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -128,7 +128,7 @@ BENCH_MODELS=phi-4-mini
 SHOW_USAGE=1
 ```
 
-### Produksjonsoppsett (Fokus på kvalitet)
+### Produksjonsoppsett (Kvalitetsfokus)
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
@@ -145,7 +145,7 @@ BENCH_ROUNDS=5
 BENCH_STREAM=1
 ```
 
-### Spesialisering for Multi-Agent
+### Multi-Agent Spesialisering
 ```bash
 AGENT_MODEL_PRIMARY=phi-4-mini        # Fast for research
 AGENT_MODEL_EDITOR=qwen2.5-7b         # Quality for editing
@@ -157,51 +157,51 @@ FOUNDRY_LOCAL_ENDPOINT=http://dev-server.local:5273/v1
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 ```
 
-## Anbefalte modeller
+## Anbefalte Modeller
 
-### Etter bruksområde
+### Etter Bruksområde
 
-**Generelt bruk:**
-- `phi-4-mini` - Balanse mellom kvalitet og hastighet
+**Generelt Formål:**
+- `phi-4-mini` - Balansert kvalitet og hastighet
 
-**Raske svar:**
-- `qwen2.5-0.5b` - Svært rask, god for klassifisering
+**Raske Svar:**
+- `qwen2.5-0.5b` - Veldig rask, bra for klassifisering
 - `phi-4-mini` - Rask med god kvalitet
 
-**Høy kvalitet:**
+**Høy Kvalitet:**
 - `qwen2.5-7b` - Beste kvalitet, høyere ressursbruk
 - `phi-4-mini` - God kvalitet, lavere ressurser
 
 **Kodegenerering:**
 - `deepseek-coder-1.3b` - Spesialisert for kode
-- `phi-4-mini` - Generell bruk for koding
+- `phi-4-mini` - Generelt formål for koding
 
-### Etter ressurskapasitet
+### Etter Ressurstilgjengelighet
 
-**Lave ressurser (< 8GB RAM):**
+**Lave Ressurser (< 8GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-0.5b
 SLM_ALIAS=qwen2.5-0.5b
 LLM_ALIAS=phi-4-mini
 ```
 
-**Middels ressurser (8-16GB RAM):**
+**Middels Ressurser (8-16GB RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=phi-4-mini
 SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-7b
 ```
 
-**Høye ressurser (16GB+ RAM):**
+**Høye Ressurser (16GB+ RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-7b
 SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-14b
 ```
 
-## Avansert konfigurasjon
+## Avansert Konfigurasjon
 
-### Tilpassede endepunkter
+### Tilpassede Endepunkter
 
 ```bash
 # Development environment
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### Temperatur og sampling (Overstyr i kode)
+### Temperatur & Sampling (Overstyr i Kode)
 
 ```python
 # In your scripts/notebooks
@@ -236,7 +236,7 @@ AZURE_OPENAI_API_VERSION=2024-08-01-preview
 
 ## Feilsøking
 
-### Miljøvariabler lastes ikke
+### Miljøvariabler Lastes Ikke
 
 **Symptomer:**
 - Skript bruker feil modeller
@@ -259,10 +259,10 @@ dir .env     # Windows
 pwd  # Should be in Workshop or repository root
 ```
 
-### Tilkoblingsproblemer med tjenesten
+### Tilkoblingsproblemer med Tjenesten
 
 **Symptomer:**
-- Feil som "Tilkobling nektet"
+- Feil "Tilkobling nektet"
 - "Tjenesten er ikke tilgjengelig"
 - Tidsavbruddsfeil
 
@@ -282,10 +282,10 @@ foundry service status | grep "Port"
 FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 ```
 
-### Modell ikke funnet
+### Modell Ikke Funnet
 
 **Symptomer:**
-- Feil som "Modell ikke funnet"
+- Feil "Modell ikke funnet"
 - "Alias ikke gjenkjent"
 
 **Løsninger:**
@@ -303,7 +303,7 @@ FOUNDRY_LOCAL_ALIAS=<available-model>
 ### Importfeil
 
 **Symptomer:**
-- Feil som "Modul ikke funnet"
+- Feil "Modul ikke funnet"
 
 **Løsninger:**
 
@@ -316,9 +316,9 @@ source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-## Testing av konfigurasjon
+## Testing av Konfigurasjon
 
-### Verifiser miljølasting
+### Verifiser Miljølasting
 
 ```python
 # test_env.py
@@ -365,7 +365,7 @@ except Exception as e:
 
 ## Sikkerhetspraksis
 
-### 1. Aldri legg ut hemmeligheter
+### 1. Aldri Forplikt Hemmeligheter
 
 ```bash
 # .gitignore should include:
@@ -374,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Bruk separate .env-filer
+### 2. Bruk Separate .env-filer
 
 ```bash
 .env              # Default configuration
@@ -389,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. Bruk miljøspesifikk konfigurasjon
+### 4. Bruk Miljøspesifikk Konfigurasjon
 
 ```bash
 # Development
@@ -399,25 +399,26 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 ```
 
-## SDK-dokumentasjon
+## SDK Dokumentasjon
 
 - **Hoveddepot**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API-dokumentasjon**: Sjekk SDK-depotet for siste versjon
+- **API Dokumentasjon**: Se SDK-depotet for siste versjon
 
 ## Tilleggsressurser
 
 - `QUICK_START.md` - Kom i gang-veiledning
-- `SDK_MIGRATION_NOTES.md` - Detaljer om SDK-oppdatering
-- `Workshop/samples/*/README.md` - Veiledninger for spesifikke eksempler
+- `Workshop/samples/*/README.md` - Eksempelspecifikke veiledninger
 
 ---
 
-**Sist oppdatert**: 2025-01-08  
+**Sist Oppdatert**: 2025-01-08  
 **Versjon**: 2.0  
-**SDK**: Foundry Local Python SDK (siste versjon)
+**SDK**: Foundry Local Python SDK (siste)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

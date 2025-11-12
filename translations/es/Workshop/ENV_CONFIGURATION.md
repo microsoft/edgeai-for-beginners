@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T20:04:59+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T21:22:40+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "es"
 }
@@ -39,7 +39,7 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Aplicar Configuración
+### 3. Aplicar la Configuración
 
 **Para Scripts en Python:**
 ```bash
@@ -115,7 +115,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 |----------|----------------|-----------|
 | `SHOW_USAGE` | `1` | Imprimir uso de tokens |
 | `RETRY_ON_FAIL` | `1` | Activar lógica de reintento |
-| `RETRY_BACKOFF` | `1.0` | Retraso en el reintento (segundos) |
+| `RETRY_BACKOFF` | `1.0` | Retraso en reintento (segundos) |
 
 ## Configuraciones Comunes
 
@@ -159,7 +159,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 
 ## Modelos Recomendados
 
-### Por Caso de Uso
+### Según Caso de Uso
 
 **Propósito General:**
 - `phi-4-mini` - Equilibrio entre calidad y velocidad
@@ -176,7 +176,7 @@ FOUNDRY_LOCAL_ALIAS=phi-4-mini
 - `deepseek-coder-1.3b` - Especializado en código
 - `phi-4-mini` - Propósito general para codificación
 
-### Por Disponibilidad de Recursos
+### Según Disponibilidad de Recursos
 
 **Recursos Bajos (< 8GB RAM):**
 ```bash
@@ -192,7 +192,7 @@ SLM_ALIAS=phi-4-mini
 LLM_ALIAS=qwen2.5-7b
 ```
 
-**Recursos Altos (16GB+ RAM):**
+**Altos Recursos (16GB+ RAM):**
 ```bash
 FOUNDRY_LOCAL_ALIAS=qwen2.5-7b
 SLM_ALIAS=phi-4-mini
@@ -365,7 +365,7 @@ except Exception as e:
 
 ## Prácticas de Seguridad Recomendadas
 
-### 1. Nunca Comprometer Secretos
+### 1. Nunca Comparta Secretos
 
 ```bash
 # .gitignore should include:
@@ -374,7 +374,7 @@ except Exception as e:
 *.key
 ```
 
-### 2. Usar Archivos .env Separados
+### 2. Use Archivos .env Separados
 
 ```bash
 .env              # Default configuration
@@ -389,7 +389,7 @@ except Exception as e:
 # Regularly rotate keys and update .env
 ```
 
-### 4. Usar Configuración Específica del Entorno
+### 4. Use Configuración Específica del Entorno
 
 ```bash
 # Development
@@ -403,12 +403,11 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Repositorio Principal**: https://github.com/microsoft/Foundry-Local
 - **SDK de Python**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **Documentación de la API**: Consultar el repositorio del SDK para la última versión
+- **Documentación de la API**: Consulte el repositorio del SDK para la última versión
 
 ## Recursos Adicionales
 
 - `QUICK_START.md` - Guía de inicio rápido
-- `SDK_MIGRATION_NOTES.md` - Detalles de actualización del SDK
 - `Workshop/samples/*/README.md` - Guías específicas de ejemplos
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Descargo de responsabilidad**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

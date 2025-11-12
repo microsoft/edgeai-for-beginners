@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T22:17:03+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-11T23:25:30+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "fi"
 }
@@ -39,7 +39,7 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Ota konfiguraatio käyttöön
+### 3. Käytä konfiguraatiota
 
 **Python-skripteille:**
 ```bash
@@ -86,10 +86,10 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Upotusmalli |
 | `RAG_QUESTION` | Esikonfiguroitu | Testikysymys |
 
-#### Istunto 03: Vertailutestit
+#### Istunto 03: Benchmarking
 | Muuttuja | Oletus | Tarkoitus |
 |----------|---------|---------|
-| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Mallit vertailutestaukseen |
+| `BENCH_MODELS` | `phi-4-mini,qwen2.5-0.5b` | Mallit vertailuun |
 | `BENCH_ROUNDS` | `3` | Iteraatiot per malli |
 | `BENCH_PROMPT` | Esikonfiguroitu | Testikehotus |
 | `BENCH_STREAM` | `0` | Ensimmäisen tokenin viiveen mittaus |
@@ -100,7 +100,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 | `SLM_ALIAS` | `phi-4-mini` | Pieni kielimalli |
 | `LLM_ALIAS` | `qwen2.5-7b` | Suuri kielimalli |
 | `COMPARE_PROMPT` | Esikonfiguroitu | Vertailukehotus |
-| `COMPARE_RETRIES` | `2` | Uusintayritysten määrä |
+| `COMPARE_RETRIES` | `2` | Uusintayritykset |
 
 #### Istunto 05: Moniagenttiorganisointi
 | Muuttuja | Oletus | Tarkoitus |
@@ -138,7 +138,7 @@ AGENT_MODEL_EDITOR=qwen2.5-7b
 SHOW_USAGE=0
 ```
 
-### Vertailutestauksen konfiguraatio
+### Benchmarking-asetukset
 ```bash
 BENCH_MODELS=phi-4-mini,qwen2.5-0.5b,qwen2.5-7b
 BENCH_ROUNDS=5
@@ -234,7 +234,7 @@ AZURE_OPENAI_API_KEY=your-key-here
 AZURE_OPENAI_API_VERSION=2024-08-01-preview
 ```
 
-## Vianetsintä
+## Vianmääritys
 
 ### Ympäristömuuttujia ei ladattu
 
@@ -382,14 +382,14 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Kierrätä API-avaimet
+### 3. Vaihda API-avaimet säännöllisesti
 
 ```bash
 # For Azure OpenAI or other cloud services
 # Regularly rotate keys and update .env
 ```
 
-### 4. Käytä ympäristökohtaisia konfiguraatioita
+### 4. Käytä ympäristökohtaisia asetuksia
 
 ```bash
 # Development
@@ -403,12 +403,11 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Pääarkisto**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API-dokumentaatio**: Katso SDK-arkisto viimeisimmät tiedot
+- **API-dokumentaatio**: Tarkista SDK-arkisto uusimpia varten
 
 ## Lisäresurssit
 
 - `QUICK_START.md` - Aloitusopas
-- `SDK_MIGRATION_NOTES.md` - SDK-päivityksen tiedot
 - `Workshop/samples/*/README.md` - Esimerkkikohtaiset oppaat
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

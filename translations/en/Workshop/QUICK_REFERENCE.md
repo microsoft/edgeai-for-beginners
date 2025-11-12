@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "93615ab69c8773b52c4437d537f6acea",
-  "translation_date": "2025-10-28T19:59:18+00:00",
+  "original_hash": "f4b84b08208b791e7822f88127e498f5",
+  "translation_date": "2025-11-11T21:17:19+00:00",
   "source_file": "Workshop/QUICK_REFERENCE.md",
   "language_code": "en"
 }
@@ -209,8 +209,6 @@ for chunk in stream:
 
 - **SDK Docs**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - **Quick Ref**: `Workshop/FOUNDRY_SDK_QUICKREF.md`
-- **Update Summary**: `Workshop/SAMPLES_UPDATE_SUMMARY.md`
-- **Migration Notes**: `Workshop/SDK_MIGRATION_NOTES.md`
 
 ---
 
@@ -267,5 +265,7 @@ python -c "import session01.chat_bootstrap; help(session01.chat_bootstrap)"
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

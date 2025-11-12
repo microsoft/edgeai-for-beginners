@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da0a7a09670d5ab535141d121ea043fe",
-  "translation_date": "2025-10-28T23:04:46+00:00",
+  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+  "translation_date": "2025-11-12T00:13:02+00:00",
   "source_file": "Workshop/ENV_CONFIGURATION.md",
   "language_code": "sk"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Prehľad
 
-Ukážky Workshopu používajú na konfiguráciu premenné prostredia, ktoré sú centralizované v súbore `.env` v koreňovom adresári repozitára. To umožňuje jednoduché prispôsobenie bez úprav kódu.
+Ukážky Workshopu používajú premenné prostredia na konfiguráciu, ktoré sú centralizované v súbore `.env` v koreňovom adresári repozitára. To umožňuje jednoduché prispôsobenie bez úprav kódu.
 
 ## Rýchly štart
 
@@ -30,7 +30,7 @@ foundry model run phi-4-mini
 
 ### 2. Konfigurácia prostredia
 
-Súbor `.env` je už prednastavený s rozumnými predvolenými hodnotami. Väčšina používateľov nebude musieť nič meniť.
+Súbor `.env` je už nakonfigurovaný s rozumnými predvolenými hodnotami. Väčšina používateľov nebude musieť nič meniť.
 
 **Voliteľné**: Skontrolujte a prispôsobte nastavenia:
 ```bash
@@ -39,7 +39,7 @@ notepad .env  # Windows
 nano .env     # macOS/Linux
 ```
 
-### 3. Použite konfiguráciu
+### 3. Použitie konfigurácie
 
 **Pre Python skripty:**
 ```bash
@@ -61,7 +61,7 @@ python -m session01.chat_bootstrap "Your question here"
 | Premenná | Predvolená hodnota | Popis |
 |----------|--------------------|-------|
 | `FOUNDRY_LOCAL_ALIAS` | `phi-4-mini` | Predvolený model pre ukážky |
-| `FOUNDRY_LOCAL_ENDPOINT` | (prázdne) | Prepis koncového bodu služby |
+| `FOUNDRY_LOCAL_ENDPOINT` | (prázdne) | Prekrytie koncového bodu služby |
 | `PYTHONPATH` | Cesty Workshopu | Cesta pre vyhľadávanie Python modulov |
 
 **Kedy nastaviť FOUNDRY_LOCAL_ENDPOINT:**
@@ -113,7 +113,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://192.168.1.50:5273/v1
 
 | Premenná | Predvolená hodnota | Účel |
 |----------|--------------------|------|
-| `SHOW_USAGE` | `1` | Tlač tokenovej spotreby |
+| `SHOW_USAGE` | `1` | Tlač spotreby tokenov |
 | `RETRY_ON_FAIL` | `1` | Povolenie logiky opakovania |
 | `RETRY_BACKOFF` | `1.0` | Meškanie pri opakovaní (sekundy) |
 
@@ -214,7 +214,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://staging.internal:5273/v1
 FOUNDRY_LOCAL_ENDPOINT=http://prod.internal:5273/v1
 ```
 
-### Teplota a vzorkovanie (prepis v kóde)
+### Teplota a vzorkovanie (prekrytie v kóde)
 
 ```python
 # In your scripts/notebooks
@@ -286,7 +286,7 @@ FOUNDRY_LOCAL_ENDPOINT=http://localhost:<port>
 
 **Príznaky:**
 - Chyby "Model nebol nájdený"
-- "Alias nebol rozpoznaný"
+- "Alias nie je rozpoznaný"
 
 **Riešenia:**
 ```bash
@@ -340,7 +340,7 @@ print(f"  AGENT_MODEL_PRIMARY: {os.getenv('AGENT_MODEL_PRIMARY')}")
 print(f"  AGENT_MODEL_EDITOR: {os.getenv('AGENT_MODEL_EDITOR')}")
 ```
 
-### Test pripojenia Foundry Local
+### Testovanie pripojenia Foundry Local
 
 ```python
 # test_connection.py
@@ -365,7 +365,7 @@ except Exception as e:
 
 ## Najlepšie bezpečnostné postupy
 
-### 1. Nikdy neukladajte tajné údaje do repozitára
+### 1. Nikdy nekomitujte tajné údaje
 
 ```bash
 # .gitignore should include:
@@ -382,7 +382,7 @@ except Exception as e:
 .env.production   # Production config (secure storage)
 ```
 
-### 3. Pravidelne rotujte API kľúče
+### 3. Rotujte API kľúče
 
 ```bash
 # For Azure OpenAI or other cloud services
@@ -403,12 +403,11 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 - **Hlavný repozitár**: https://github.com/microsoft/Foundry-Local
 - **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python/foundry_local
-- **API dokumentácia**: Pozrite si najnovšie informácie v repozitári SDK
+- **API dokumentácia**: Skontrolujte repozitár SDK pre najnovšie informácie
 
 ## Ďalšie zdroje
 
 - `QUICK_START.md` - Príručka pre začiatok
-- `SDK_MIGRATION_NOTES.md` - Detaily aktualizácie SDK
 - `Workshop/samples/*/README.md` - Príručky špecifické pre ukážky
 
 ---
@@ -419,5 +418,7 @@ FOUNDRY_LOCAL_ENDPOINT=${PROD_FOUNDRY_ENDPOINT}
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, uvedomte si, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

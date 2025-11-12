@@ -1,34 +1,33 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d6ad6c8b4a0e3ecef3afb86a6f578e1c",
-  "translation_date": "2025-10-09T21:29:41+00:00",
+  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+  "translation_date": "2025-11-12T00:01:38+00:00",
   "source_file": "Workshop/Session03-OpenSourceModels.md",
   "language_code": "sw"
 }
 -->
-# Kipindi cha 3: Miundo ya Chanzo Huria katika Foundry Local
+# Kikao cha 3: Miundo ya Chanzo Huria katika Foundry Local
 
 ## Muhtasari
 
-Gundua jinsi ya kuleta miundo ya Hugging Face na mingine ya chanzo huria katika Foundry Local. Jifunze mikakati ya kuchagua, michakato ya kuchangia jamii, mbinu za kulinganisha utendaji, na jinsi ya kupanua Foundry kwa usajili wa miundo maalum. Kipindi hiki kinahusiana na mada za uchunguzi za kila wiki za "Model Mondays" na kinakupa uwezo wa kutathmini na kutumia miundo ya chanzo huria kwa ndani kabla ya kupanua hadi Azure.
+Gundua jinsi ya kuleta miundo ya Hugging Face na miundo mingine ya chanzo huria katika Foundry Local. Jifunze mikakati ya kuchagua, michakato ya kuchangia jamii, mbinu za kulinganisha utendaji, na jinsi ya kupanua Foundry kwa usajili wa miundo maalum. Kikao hiki kinahusiana na mada za uchunguzi za kila wiki za "Model Mondays" na kinakupa uwezo wa kutathmini na kutumia miundo ya chanzo huria kwa ndani kabla ya kupanua hadi Azure.
 
 ## Malengo ya Kujifunza
 
-Mwisho wa kipindi hiki utaweza:
+Mwisho wa kikao utaweza:
 
 - **Gundua & Tathmini**: Tambua miundo inayofaa (mistral, gemma, qwen, deepseek) kwa kutumia uwiano wa ubora dhidi ya rasilimali.
 - **Pakua & Endesha**: Tumia Foundry Local CLI kupakua, kuhifadhi, na kuzindua miundo ya jamii.
-- **Linganisho**: Tumia vigezo thabiti vya ucheleweshaji + kasi ya tokeni + ubora.
-- **Panua**: Sajili au rekebisha kifungashio cha muundo maalum kufuatia mifumo inayolingana na SDK.
-- **Linganisho**: Tengeneza kulinganisha kwa muundo wa SLM dhidi ya LLM za ukubwa wa kati.
+- **Linganishwa**: Tumia vigezo vya uthabiti wa latency + kasi ya tokeni + ubora.
+- **Panua**: Sajili au rekebisha kifungashio cha muundo maalum kufuatana na mifumo inayolingana na SDK.
+- **Linganishwa**: Tengeneza kulinganisha kwa muundo wa SLM dhidi ya LLM za ukubwa wa kati.
 
 ## Mahitaji ya Awali
 
-- Vipindi 1 & 2 vimekamilika
+- Kikao cha 1 & 2 kimekamilika
 - Mazingira ya Python yenye `foundry-local-sdk` imewekwa
-- Angalau 15GB ya nafasi ya diski kwa hifadhi ya miundo mingi
-- Hiari: Uharakishaji wa GPU/WebGPU umewezeshwa (`foundry config list`)
+- Angalau GB 15 ya nafasi ya diski kwa hifadhi ya miundo mingi
 
 ### Mwanzo wa Haraka wa Mazingira ya Msalaba
 
@@ -71,6 +70,7 @@ foundry model download qwen2.5-0.5b
 foundry cache list
 ```
 
+
 ### 2. Endesha & Uchunguzi wa Haraka (Dakika 5)
 
 ```powershell
@@ -81,7 +81,8 @@ foundry model run mistral-7b
 foundry model run mistral-7b --prompt "Explain retrieval augmented generation in one paragraph."
 ```
 
-### 3. Script ya Kulinganisha (Dakika 8)
+
+### 3. Script ya Benchmark (Dakika 8)
 
 Tengeneza `samples/03-oss-models/benchmark_models.py`:
 
@@ -153,23 +154,24 @@ Endesha:
 python samples/03-oss-models/benchmark_models.py
 ```
 
-### 4. Linganisho la Utendaji (Dakika 5)
 
-Jadili uwiano: muda wa kupakia, matumizi ya kumbukumbu (angalia Task Manager / `nvidia-smi` / monitor ya rasilimali ya OS), ubora wa matokeo dhidi ya kasi. Tumia script ya Python ya kulinganisha (Kipindi cha 3) kwa ucheleweshaji & kasi ya tokeni; rudia baada ya kuwezesha uharakishaji wa GPU.
+### 4. Linganishwa Utendaji (Dakika 5)
+
+Jadili faida na hasara: muda wa kupakia, matumizi ya kumbukumbu (angalia Task Manager / `nvidia-smi` / monitor ya rasilimali ya OS), ubora wa matokeo dhidi ya kasi. Tumia script ya Python ya benchmark (Kikao cha 3) kwa latency & throughput; rudia baada ya kuwezesha kasi ya GPU.
 
 ### 5. Mradi wa Kuanza (Dakika 4)
 
-Tengeneza jenereta ya ripoti ya kulinganisha miundo (panua script ya kulinganisha na usafirishaji wa markdown).
+Tengeneza jenereta ya ripoti ya kulinganisha miundo (panua script ya benchmark na usafirishaji wa markdown).
 
 ## Mradi wa Kuanza: Panua `03-huggingface-models`
 
 Boresha sampuli iliyopo kwa:
 
-1. Kuongeza mkusanyiko wa kulinganisha + usafirishaji wa CSV/Markdown.
-2. Kutekeleza upimaji rahisi wa ubora (seti ya maelezo ya majaribio + faili ya maelezo ya mwongozo).
+1. Kuongeza mkusanyiko wa benchmark + usafirishaji wa CSV/Markdown.
+2. Kutekeleza alama rahisi za ubora (seti ya jozi ya maelezo + faili ya maelezo ya mwongozo).
 3. Kuanzisha usanidi wa JSON (`models.json`) kwa orodha ya miundo inayoweza kuunganishwa & seti ya maelezo.
 
-## Orodha ya Uhakiki
+## Orodha ya Ukaguzi wa Uthibitishaji
 
 ```powershell
 foundry cache list
@@ -179,16 +181,18 @@ curl http://localhost:5273/v1/models
 
 Miundo yote inayolengwa inapaswa kuonekana na kujibu ombi la mazungumzo ya uchunguzi.
 
-## Mfano wa Hali & Ulinganisho wa Warsha
+## Hali ya Mfano & Ulinganishaji wa Warsha
 
 | Script ya Warsha | Hali | Lengo | Chanzo cha Maelezo / Dataset |
 |------------------|------|-------|-----------------------------|
-| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Timu ya jukwaa la Edge inayochagua SLM chaguo-msingi kwa muhtasari wa kujengwa | Tengeneza kulinganisha kwa ucheleweshaji + p95 + tokeni/sec kati ya miundo inayolengwa | Inline `PROMPT` var + mazingira `BENCH_MODELS` list |
+| `samples/session03/benchmark_oss_models.py` / `notebooks/session03_benchmark_oss_models.ipynb` | Timu ya jukwaa la ukingo ikichagua SLM chaguo-msingi kwa muhtasari wa kifaa kilichojengwa | Tengeneza kulinganisha latency + p95 + tokeni/sec kati ya miundo inayofaa | Kigezo cha `PROMPT` cha ndani + orodha ya mazingira `BENCH_MODELS` |
 
 ### Simulizi ya Hali
-Uhandisi wa bidhaa lazima uchague muundo mwepesi wa muhtasari wa chaguo-msingi kwa kipengele cha noti za mkutano nje ya mtandao. Wanakimbia kulinganisha thabiti ya majaribio (temperature=0) katika seti ya maelezo ya kudumu (tazama mfano hapa chini) na kukusanya vigezo vya ucheleweshaji + kasi ya tokeni na bila uharakishaji wa GPU.
 
-### Mfano wa Seti ya Maelezo ya JSON (inaweza kupanuliwa)
+Timu ya uhandisi wa bidhaa inapaswa kuchagua muundo wa muhtasari mwepesi wa chaguo-msingi kwa kipengele cha maelezo ya mkutano wa nje ya mtandao. Wanakimbia benchmark za kudhibitiwa za kimaamuzi (joto=0) kwenye seti ya maelezo ya kudumu (angalia mfano hapa chini) na kukusanya vipimo vya latency + throughput na bila kasi ya GPU.
+
+### Mfano wa Seti ya Maelezo ya JSON (inayoweza kupanuliwa)
+
 ```json
 [
     "Explain the principle of retrieval augmented generation in 2 sentences.",
@@ -198,16 +202,16 @@ Uhandisi wa bidhaa lazima uchague muundo mwepesi wa muhtasari wa chaguo-msingi k
 ]
 ```
 
-Rudia kila maelezo kwa kila muundo, rekodi ucheleweshaji kwa kila maelezo ili kupata vigezo vya usambazaji na kugundua matukio ya nje.
+Rudia kila maelezo kwa kila muundo, kamata latency kwa kila maelezo ili kupata vipimo vya usambazaji na kugundua hali zisizo za kawaida.
 
 ## Mfumo wa Uchaguzi wa Muundo
 
-| Kipengele | Kipimo | Kwa Nini Kina Muhimu |
-|-----------|--------|---------------------|
-| Ucheleweshaji | wastani / p95 | Uthabiti wa uzoefu wa mtumiaji |
-| Kasi | tokeni/sec | Uwezo wa kundi & utiririshaji |
+| Kipimo | Metric | Kwa Nini Ni Muhimu |
+|--------|--------|--------------------|
+| Latency | wastani / p95 | Uthabiti wa uzoefu wa mtumiaji |
+| Throughput | tokeni/sec | Uwezo wa kundi & utiririshaji |
 | Kumbukumbu | ukubwa wa makazi | Uwezo wa kifaa & ushirikiano |
-| Ubora | maelezo ya rubriki | Ustahiki wa kazi |
+| Ubora | maelezo ya rubric | Ustahiki wa kazi |
 | Alama ya Kumbukumbu | hifadhi ya diski | Usambazaji & masasisho |
 | Leseni | ruhusa ya matumizi | Uzingatiaji wa kibiashara |
 
@@ -224,16 +228,16 @@ class CustomModelAdapter:
 # Register with local routing (future extensibility point)
 ```
 
-Tazama repo rasmi kwa miingiliano ya adapta inayobadilika:
+Tazama repo rasmi kwa interface za adapta zinazobadilika:
 https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ## Utatuzi wa Matatizo
 
 | Tatizo | Sababu | Suluhisho |
-|--------|--------|----------|
+|--------|--------|-----------|
 | OOM kwenye mistral-7b | RAM/GPU haitoshi | Zima miundo mingine; jaribu toleo dogo |
 | Jibu la kwanza polepole | Kupakia baridi | Weka joto kwa maelezo mepesi ya mara kwa mara |
-| Kupakua kunakwama | Kutokuwa thabiti kwa mtandao | Jaribu tena; pakua mapema wakati wa saa za chini |
+| Kupakua kunakwama | Kutokuwa na utulivu wa mtandao | Jaribu tena; pakua mapema wakati wa saa za chini |
 
 ## Marejeleo
 
@@ -243,22 +247,22 @@ https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 
 ---
 
-**Muda wa Kipindi**: Dakika 30 (+ uchunguzi wa kina wa hiari)  
+**Muda wa Kikao**: Dakika 30 (+ uchunguzi wa kina wa hiari)  
 **Ugumu**: Kati
 
 ### Uboreshaji wa Hiari
 
 | Uboreshaji | Faida | Jinsi |
-|------------|-------|------|
-| Ucheleweshaji wa Tokeni ya Kwanza ya Utiririshaji | Inapima mwitikio unaoonekana | Endesha kulinganisha na `BENCH_STREAM=1` (script iliyoboreshwa katika `Workshop/samples/session03`) |
-| Hali ya Kiamua | Kulinganisha thabiti ya regression | `temperature=0`, seti ya maelezo ya kudumu, rekodi matokeo ya JSON chini ya udhibiti wa toleo |
-| Upimaji wa Rubriki ya Ubora | Ongeza kipimo cha ubora | Hifadhi `prompts.json` na vipengele vinavyotarajiwa; weka alama (1–5) kwa mwongozo au kupitia muundo wa pili |
-| Usafirishaji wa CSV / Markdown | Ripoti inayoweza kushirikiwa | Panua script kuandika `benchmark_report.md` na jedwali & vivutio |
-| Alama za Uwezo wa Muundo | Husaidia uelekezaji wa kiotomatiki baadaye | Hifadhi `models.json` na `{alias: {capabilities:[], size_mb:..}}` |
-| Awamu ya Kupasha Joto Kumbukumbu | Punguza upendeleo wa kuanza baridi | Tekeleza mzunguko mmoja wa joto kabla ya mzunguko wa muda (tayari imetekelezwa) |
-| Usahihi wa Asilimia | Ucheleweshaji thabiti wa mkia | Tumia asilimia ya numpy (tayari katika script iliyorekebishwa) |
-| Makadirio ya Gharama ya Tokeni | Kulinganisha kiuchumi | Gharama ya makadirio = (tokeni/sec * wastani wa tokeni kwa ombi) * hesabu ya nishati |
-| Kuruka Kiotomatiki Miundo Iliyoshindwa | Ustahimilivu katika mizunguko ya kundi | Funga kila kulinganisha katika try/except na weka uwanja wa hali |
+|------------|-------|-------|
+| Latency ya Tokeni ya Kwanza ya Utiririshaji | Inapima mwitikio unaoonekana | Endesha benchmark na `BENCH_STREAM=1` (script iliyoboreshwa katika `Workshop/samples/session03`) |
+| Hali ya Kimaamuzi | Kulinganisha thabiti za regression | `temperature=0`, seti ya maelezo ya kudumu, kamata matokeo ya JSON chini ya udhibiti wa toleo |
+| Alama ya Rubric ya Ubora | Inaongeza kipimo cha ubora | Dumisha `prompts.json` na vipengele vinavyotarajiwa; weka alama (1–5) kwa mkono au kupitia muundo wa pili |
+| Usafirishaji wa CSV / Markdown | Ripoti inayoweza kushirikishwa | Panua script kuandika `benchmark_report.md` na jedwali & vivutio |
+| Lebo za Uwezo wa Muundo | Husaidia uelekezaji wa kiotomatiki baadaye | Dumisha `models.json` na `{alias: {capabilities:[], size_mb:..}}` |
+| Awamu ya Kupasha Joto Hifadhi | Punguza upendeleo wa kuanza baridi | Tekeleza mzunguko mmoja wa joto kabla ya mzunguko wa muda (tayari imetekelezwa) |
+| Usahihi wa Asilimia | Latency ya mkia thabiti | Tumia asilimia ya numpy (tayari katika script iliyorekebishwa) |
+| Makadirio ya Gharama ya Tokeni | Kulinganisha kiuchumi | Gharama ya takriban = (tokeni/sec * wastani wa tokeni kwa ombi) * makadirio ya nishati |
+| Kuruka Kiotomatiki Miundo Iliyoshindwa | Ustahimilivu katika mizunguko ya kundi | Funga kila benchmark katika jaribu/isipokuwa na weka hali ya uwanja |
 
 #### Kipande Kidogo cha Usafirishaji wa Markdown
 
@@ -269,7 +273,8 @@ with open("benchmark_report.md", "w") as f:
                 f.write(f"|{row['alias']}|{row['latency_avg']:.2f}|{row['latency_p95']:.2f}|{(row.get('tokens_per_sec_avg') or 0):.1f}|\n")
 ```
 
-#### Mfano wa Seti ya Maelezo ya Kiamua
+
+#### Mfano wa Seti ya Maelezo ya Kimaamuzi
 
 ```json
 [
@@ -279,9 +284,11 @@ with open("benchmark_report.md", "w") as f:
 ]
 ```
 
-Rudia orodha tuli badala ya maelezo ya nasibu kwa vigezo vinavyoweza kulinganishwa katika mabadiliko.
+Rudia orodha tuli badala ya maelezo ya nasibu kwa vipimo vinavyoweza kulinganishwa katika marekebisho.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
