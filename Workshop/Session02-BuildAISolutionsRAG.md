@@ -222,6 +222,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -946,7 +947,7 @@ After completing this session:
 2. **Build Production RAG**: Implement with Chainlit (Sample 04)
 3. **Advanced Vector Search**: Integrate with Chroma or Pinecone
 4. **Cloud Migration**: Deploy to Azure AI Foundry
-5. **Evaluate RAG Quality**: Run `cd Workkshop/samples;python -m session02.rag_eval_ragas` to measure answer_relevancy, faithfulness, and context_precision using ragas
+5. **Evaluate RAG Quality**: Run `cd Workshop/samples;python -m session02.rag_eval_ragas` to measure answer_relevancy, faithfulness, and context_precision using ragas
 
 ### Optional Enhancements
 
