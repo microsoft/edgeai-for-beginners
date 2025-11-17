@@ -1,36 +1,36 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T21:48:38+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T18:54:44+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "tr"
 }
 -->
-# Oturum 2: Azure AI Foundry ile Yapay Zeka Çözümleri Geliştirme
+# Oturum 2: Azure AI Foundry ile Yapay Zeka Çözümleri Oluşturma
 
 ## Özet
 
-Foundry Local ve Azure AI Foundry kullanarak uygulanabilir GenAI iş akışlarını nasıl oluşturacağınızı keşfedin. Gelişmiş istem mühendisliğini öğrenin, yapılandırılmış verileri entegre edin ve tekrarlanabilir iş akışlarıyla görevleri düzenleyin. Odak noktası belge ve veri Soru-Cevap için Retrieval-Augmented Generation (RAG) olsa da, bu modeller daha geniş GenAI çözüm tasarımına genelleştirilebilir.
+Foundry Local ve Azure AI Foundry kullanarak uygulanabilir GenAI iş akışları oluşturmayı keşfedin. Gelişmiş istem mühendisliğini öğrenin, yapılandırılmış verileri entegre edin ve tekrarlanabilir iş akışlarıyla görevleri düzenleyin. Odak noktası belge ve veri Soru-Cevap için Retrieval-Augmented Generation (RAG) olsa da, bu modeller daha geniş GenAI çözüm tasarımına genelleştirilebilir.
 
 ## Öğrenme Hedefleri
 
 Bu oturumun sonunda:
 
-- **İstem Mühendisliğinde Ustalaşın**: Etkili sistem istemleri ve temel oluşturma stratejileri tasarlayın
-- **RAG Modellerini Uygulayın**: Vektör aramasıyla belge tabanlı Soru-Cevap sistemleri oluşturun
-- **Yapılandırılmış Verileri Entegre Edin**: AI iş akışlarında CSV, JSON ve tabular verilerle çalışın
-- **Üretim RAG Oluşturun**: Chainlit ile ölçeklenebilir RAG uygulamaları geliştirin
-- **Yerelden Buluta Köprü Kurun**: Foundry Local'den Azure AI Foundry'e geçiş yollarını anlayın
+- **İstem Mühendisliğinde Ustalaşın**: Etkili sistem istemleri ve bağlama stratejileri tasarlayın
+- **RAG Modellerini Uygulayın**: Belge tabanlı Soru-Cevap sistemleri oluşturun ve vektör arama kullanın
+- **Yapılandırılmış Verileri Entegre Edin**: AI iş akışlarında CSV, JSON ve tablo verileriyle çalışın
+- **Üretim RAG Uygulamaları Oluşturun**: Chainlit ile ölçeklenebilir RAG uygulamaları geliştirin
+- **Yerelden Buluta Geçişi Sağlayın**: Foundry Local'den Azure AI Foundry'e geçiş yollarını anlayın
 
 ## Ön Koşullar
 
 - Oturum 1'i tamamlamış olmak (Foundry Local kurulumu)
-- Vektör veri tabanları ve gömme (embedding) hakkında temel bilgi
+- Vektör veri tabanları ve gömme işlemleri hakkında temel bilgi
 - Python programlama deneyimi
 - Belge işleme kavramlarına aşinalık
 
-### Platformlar Arası Hızlı Başlangıç (Windows & macOS)
+### Platformlar Arası Ortam Hızlı Başlangıç (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -69,7 +69,7 @@ Son komut başarısız olursa, hizmeti başlatın (veya yeniden başlatın): `fo
 
 ## Demo Akışı (30 dakika)
 
-### 1. Sistem İstemleri ve Temel Oluşturma Stratejileri (10 dakika)
+### 1. Sistem İstemleri ve Bağlama Stratejileri (10 dakika)
 
 #### Adım 1.1: Gelişmiş İstem Mühendisliği
 
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### Adım 1.2: Temel Oluşturma Stratejilerini Test Etme
+#### Adım 1.2: Bağlama Stratejilerini Test Edin
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -217,7 +217,7 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### 2. Tabular Verileri İstemlerle Entegre Etme (CSV Soru-Cevap) (10 dakika)
+### 2. Tablo Verilerini İstemlerle Entegre Etme (CSV Soru-Cevap) (10 dakika)
 
 #### Adım 2.1: CSV Veri Entegrasyonu
 
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -433,7 +434,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### Adım 2.2: CSV Soru-Cevap Sistemini Test Etme
+#### Adım 2.2: CSV Soru-Cevap Sistemini Test Edin
 
 ```powershell
 # Run the CSV Q&A demo
@@ -443,7 +444,7 @@ python samples/02-rag-solutions/csv_qa_system.py
 
 ### 3. Başlangıç Projesi: 02-grounding-data'yı Uyarlama (5 dakika)
 
-#### Adım 3.1: Gelişmiş Belge RAG Sistemi
+#### Adım 3.1: Geliştirilmiş Belge RAG Sistemi
 
 `samples/02-rag-solutions/document_rag.py` dosyasını oluşturun:
 
@@ -869,7 +870,7 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-#### Adım 4.2: Geçiş Modellerini Test Etme
+#### Adım 4.2: Geçiş Modellerini Test Edin
 
 ```powershell
 # Run the migration demo
@@ -881,33 +882,33 @@ python samples/02-rag-solutions/migration_guide.py
 
 ### 1. Gelişmiş İstem Mühendisliği
 
-- **Sistem İstemleri**: Alan spesifik uzman kişilikler
-- **Temel Oluşturma Stratejileri**: Bağlam entegrasyon teknikleri
+- **Sistem İstemleri**: Alan uzmanı kişilikleri
+- **Bağlama Stratejileri**: Bağlam entegrasyon teknikleri
 - **Sıcaklık Kontrolü**: Yaratıcılık ve tutarlılık arasında denge
 - **Token Yönetimi**: Verimli bağlam kullanımı
 
 ### 2. Yapılandırılmış Veri Entegrasyonu
 
-- **CSV İşleme**: Pandas ile AI modellerinin entegrasyonu
+- **CSV İşleme**: Pandas ile AI modelleri entegrasyonu
 - **İstatistiksel Analiz**: Otomatik veri özetleme
 - **Bağlam Oluşturma**: Sorgulara dayalı dinamik bağlam oluşturma
-- **Çok Formatlı Destek**: JSON, CSV ve tabular veri
+- **Çoklu Format Desteği**: JSON, CSV ve tablo verileri
 
 ### 3. RAG Uygulama Modelleri
 
 - **Vektör Arama**: TF-IDF ve kosinüs benzerliği
 - **Belge Getirme**: Alaka puanlama ve sıralama
 - **Bağlam Kombinasyonu**: Çoklu belge sentezi
-- **Cevap Oluşturma**: Temellendirilmiş yanıt oluşturma
+- **Cevap Oluşturma**: Bağlama dayalı yanıt oluşturma
 
 ### 4. Bulut Geçiş Stratejileri
 
 - **Birleşik API'ler**: Yerel ve bulut için tek kod tabanı
 - **Ortam Soyutlama**: Konfigürasyon odaklı dağıtım
-- **Geliştirme İş Akışı**: Yerel → Test → Üretim
+- **Geliştirme İş Akışı**: Yerel → Staging → Üretim
 - **Maliyet Optimizasyonu**: Yerel geliştirme, bulut üretimi
 
-## Üretimle İlgili Hususlar
+## Üretim Düşünceleri
 
 ### 1. Performans Optimizasyonu
 
@@ -958,27 +959,27 @@ metrics = {
 Bu oturumu tamamladıktan sonra:
 
 1. **Oturum 3'ü Keşfedin**: Foundry Local'de Açık Kaynak Modeller
-2. **Üretim RAG Geliştirin**: Chainlit ile uygulayın (Örnek 04)
+2. **Üretim RAG Uygulaması Oluşturun**: Chainlit ile uygulayın (Örnek 04)
 3. **Gelişmiş Vektör Arama**: Chroma veya Pinecone ile entegre edin
 4. **Bulut Geçişi**: Azure AI Foundry'e dağıtım yapın
-5. **RAG Kalitesini Değerlendirin**: `cd Workkshop/samples;python -m session02.rag_eval_ragas` komutunu çalıştırarak ragas kullanarak yanıt alaka düzeyini, doğruluğunu ve bağlam hassasiyetini ölçün
+5. **RAG Kalitesini Değerlendirin**: `cd Workshop/samples;python -m session02.rag_eval_ragas` komutunu çalıştırarak yanıt alaka düzeyini, doğruluğunu ve bağlam hassasiyetini ragas ile ölçün
 
 ### İsteğe Bağlı Geliştirmeler
 
 | Kategori | Geliştirme | Gerekçe | Yönlendirme |
 |----------|-------------|-----------|-----------|
-| Retrieval | TF-IDF yerine vektör deposu (FAISS / Chroma) kullanın | Daha iyi semantik hatırlama ve ölçeklenebilirlik | Belgeleri parçalara ayırın (500–800 karakter), gömün, indeksi saklayın |
+| Getirme | TF-IDF yerine vektör deposu (FAISS / Chroma) kullanın | Daha iyi semantik geri çağırma ve ölçeklenebilirlik | Belgeleri parçalara ayırın (500–800 karakter), gömün, indeks kalıcı hale getirin |
 | Hibrit İndeks | Çift semantik + anahtar kelime filtreleme | Sayısal / kod sorgularında hassasiyeti artırır | Anahtar kelimeye göre filtreleyin, ardından kosinüs benzerliğine göre sıralayın |
-| Gömme | Birden fazla gömme modelini değerlendirin | Alaka düzeyi ve hız arasında optimizasyon | A/B: MiniLM vs E5-small vs yerel barındırılan kodlayıcı |
-| Önbellekleme | Gömme ve retrieval sonuçlarını önbelleğe alın | Tekrarlanan sorgu gecikmesini azaltır | Basit disk üzerinde pickle / sqlite ile hash anahtarı |
-| Değerlendirme | Ragas veri setini genişletin | İstatistiksel olarak anlamlı kalite | 50–100 Soru/Cevap + bağlamlar oluşturun; konulara göre sınıflandırın |
-| Metrikler | Retrieval ve oluşturma sürelerini takip edin | Performans profili | Her çağrı için `retrieval_ms`, `gen_ms`, `tokens` yakalayın |
-| Koruma Çubukları | Halüsinasyon geri dönüşü ekleyin | Daha güvenli yanıtlar | Eğer doğruluk < eşik → yanıt: "Yetersiz bağlam." |
-| Geri Dönüş | Yerel → Azure modeline geçiş yapın | Hibrit kalite artışı | Düşük güven durumunda aynı OpenAI API üzerinden buluta yönlendirin |
-| Determinizm | Kararlı karşılaştırma çalışmaları | Tekrarlanabilir değerlendirme setleri | Tohumu sabitleyin, `temperature=0`, örnekleme rastgeleliğini devre dışı bırakın |
-| İzleme | Değerlendirme geçmişini saklayın | Regresyon tespiti | JSON satırlarını zaman damgası + metrik farkları ile ekleyin |
+| Gömme İşlemleri | Birden fazla gömme modelini değerlendirin | Alaka düzeyi ve hız arasında optimizasyon | A/B: MiniLM vs E5-small vs yerel barındırılan kodlayıcı |
+| Önbellekleme | Gömme ve getirme sonuçlarını önbelleğe alın | Tekrarlanan sorgu gecikmesini azaltır | Basit disk üzerinde pickle / sqlite ile hash anahtarı |
+| Değerlendirme | Ragas veri setini genişletin | İstatistiksel olarak anlamlı kalite | 50–100 Soru/Cevap + bağlamlar oluşturun; konulara göre katmanlandırın |
+| Metrikler | Getirme ve oluşturma sürelerini izleyin | Performans profili | Her çağrı için `retrieval_ms`, `gen_ms`, `tokens` değerlerini yakalayın |
+| Güvenlik Önlemleri | Halüsinasyon için geri dönüş ekleyin | Daha güvenli yanıtlar | Eğer doğruluk < eşik → yanıt: "Yeterli bağlam yok." |
+| Geri Dönüş | Yerel → Azure model geçişi | Hibrit kalite artışı | Düşük güven durumunda aynı OpenAI API üzerinden buluta yönlendirin |
+| Determinizm | Kararlı karşılaştırma çalışmaları | Tekrarlanabilir değerlendirme setleri | Tohum sabitleyin, `temperature=0`, örnekleyici rastgeleliğini devre dışı bırakın |
+| İzleme | Değerlendirme geçmişini kalıcı hale getirin | Regresyon tespiti | JSON satırlarını zaman damgası + metrik değişiklikleriyle ekleyin |
 
-#### Örnek: Retrieval Süresi Ekleme
+#### Örnek: Getirme Süresi Ekleme
 
 ```python
 import time
@@ -992,7 +993,7 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 ```
 
 
-#### ragas ile Değerlendirmeyi Ölçeklendirme
+#### Ragas ile Değerlendirmeyi Ölçeklendirme
 
 1. `question`, `answer`, `contexts`, `ground_truths` (liste) alanlarına sahip bir JSONL oluşturun
 2. `Dataset.from_list(list_of_dicts)` ile dönüştürün
@@ -1016,28 +1017,28 @@ Disk kalıcılığı için `faiss.write_index(index, "kb.index")` kullanın.
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Azure AI Foundry RAG Modelleri](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
 - [İleri Düzey İstem Mühendisliği Kılavuzu](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
-- [Ragas Değerlendirme Belgeleri](https://docs.ragas.io)
+- [Ragas Değerlendirme Dokümanları](https://docs.ragas.io)
 
 ### Örnek Kod
 - [Module08 Örnek 04](./samples/04/README.md) - Chainlit RAG Uygulaması
-- [Gelişmiş Çoklu Ajan Sistemi](./samples/09/README.md) - Ajan koordinasyon modelleri
+- [Gelişmiş Çoklu Aracı Sistemi](./samples/09/README.md) - Aracı koordinasyon modelleri
 
 ---
 
-**Oturum Süresi**: 30 dakika uygulamalı + 15 dakika Soru-Cevap
-**Zorluk Seviyesi**: Orta
+**Oturum Süresi**: 30 dakika uygulamalı + 15 dakika Soru-Cevap  
+**Zorluk Seviyesi**: Orta  
 **Ön Koşullar**: Oturum 1 tamamlandı, Temel Python bilgisi
 
-## Örnek Senaryo ve Atölye Haritalaması
+## Örnek Senaryo ve Atölye Eşlemesi
 
 | Atölye Script / Notebook | Senaryo | Amaç | Temel Veri Seti / Kaynak | Örnek Soru |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Gizlilik + performans SSS'lerini yanıtlayan iç destek bilgi tabanı | Minimal bellek içi RAG ile gömme | Script'teki `DOCS` listesi (5 kısa pasaj) | Neden yerel çıkarım ile RAG kullanmalıyız? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kalite analisti, retrieval doğruluğu metriklerini belirliyor | Küçük sentetik veri setinde ragas metriklerini hesaplayın | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` dizileri | Yerel çıkarımın avantajı nedir? |
-| `prompt_engineering.py` (ileri düzey) | Alan uzmanı, birden fazla dikey için temellendirilmiş istemler oluşturuyor | Alan sistem istemlerini ve token etkisini karşılaştırın | Inline `contexts` dict | Foundry Local model önbelleklemesini nasıl yönetir? |
-| `csv_qa_system.py` | Satış operasyonları, ihracatlar üzerinde etkileşimli analizler yapıyor | Küçük bir satış dilimini özetleyin ve sorgulayın | Oluşturulmuş `sample_sales_data.csv` (10 satır) | En yüksek ortalama satış miktarına sahip ürün hangisi? |
-| `document_rag.py` | Ürün ekibi, iç wiki için belge RAG'yi araştırıyor | İlgili belgeleri alın ve alıntı yapın | `create_sample_knowledge_base()` listesi | Edge AI'nin avantajları nelerdir? |
-| `migration_guide.py` | Mimar, bulut geçiş planı hazırlıyor | Yerel→Azure API eşitliğini gösterin | Statik test istemleri | Edge AI'nin avantajlarını 2–3 cümleyle açıklayın. |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Gizlilik + performans SSS'lerini yanıtlayan iç destek bilgi tabanı | Gömme işlemleriyle minimal bellek içi RAG | Script'teki `DOCS` listesi (5 kısa pasaj) | Neden yerel çıkarım ile RAG kullanmalıyız? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kalite analisti, temel getirme doğruluğu metriklerini oluşturuyor | Küçük sentetik veri setinde ragas metriklerini hesaplayın | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` dizileri | Yerel çıkarımın avantajı nedir? |
+| `prompt_engineering.py` (ileri düzey) | Alan uzmanı, birden fazla dikey için bağlamlı istemler oluşturuyor | Alan sistem istemlerini ve token etkisini karşılaştırın | Inline `contexts` dict | Foundry Local model önbelleklemesini nasıl yönetir? |
+| `csv_qa_system.py` | Satış operasyonları, dışa aktarımlar üzerinde etkileşimli analizler keşfediyor | Küçük bir satış dilimini özetleyin ve sorgulayın | Oluşturulan `sample_sales_data.csv` (10 satır) | Hangi ürün en yüksek ortalama satış miktarına sahip? |
+| `document_rag.py` | Ürün ekibi, iç wiki için belge RAG'ı keşfediyor | İlgili belgeleri alın ve alıntı yapın | `create_sample_knowledge_base()` listesi | Edge AI'nin faydaları nelerdir? |
+| `migration_guide.py` | Mimar, bulut geçiş planı hazırlıyor | Yerel→Azure API eşitliğini gösterin | Statik test istemleri | Edge AI'nin faydalarını 2–3 cümleyle açıklayın. |
 
 ### Veri Seti Parçaları
 Inline RAG pipeline belge listesi:
@@ -1062,12 +1063,14 @@ GROUND_TRUTH = [
 
 
 ### Senaryo Anlatımı
-Destek mühendisliği grubu, müşteri verilerini harici olarak paylaşmadan iç SSS'leri yanıtlamak için hızlı bir prototip istiyor. Oturum 2 eserleri minimal geçici RAG'den (kalıcılık yok) → yapılandırılmış CSV Soru-Cevap → alıntılı belge retrieval → nesnel kalite değerlendirmesi (ragas) → Azure testine hazır bir geçiş stratejisine kadar ilerliyor.
+Destek mühendisliği grubu, müşteri verilerini harici olarak açığa çıkarmadan iç SSS'leri yanıtlamak için hızlı bir prototip istiyor. Oturum 2 eserleri minimal geçici RAG'dan (kalıcılık yok) → yapılandırılmış CSV Soru-Cevap → alıntılı belge getirme → nesnel kalite değerlendirmesi (ragas) → Azure sahneleme için hazır bir geçiş stratejisine ilerliyor.
 
 ### Genişleme Yolları
-İsteğe Bağlı Geliştirmeler tablosunu kullanarak geliştirin: TF‑IDF'yi FAISS/Chroma ile değiştirin, değerlendirme corpusunu büyütün (50–100 Soru/Cevap), doğruluk < eşik olduğunda daha büyük bir modele geri dönüş ekleyin.
+İsteğe Bağlı Geliştirmeler tablosunu kullanarak geliştirin: TF‑IDF yerine FAISS/Chroma kullanın, değerlendirme corpusunu büyütün (50–100 Soru/Cevap), doğruluk < eşik olduğunda daha büyük bir modele geri dönüş ekleyin.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çeviriler hata veya yanlışlıklar içerebilir. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

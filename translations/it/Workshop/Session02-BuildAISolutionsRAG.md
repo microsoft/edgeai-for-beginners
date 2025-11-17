@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T21:39:32+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T18:52:30+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "it"
 }
@@ -11,26 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstract
 
-Scopri come costruire flussi di lavoro GenAI pratici utilizzando Foundry Local e Azure AI Foundry. Impara tecniche avanzate di prompt engineering, integra dati strutturati e orchestra attività con pipeline riproducibili. Sebbene il focus sia su Retrieval-Augmented Generation (RAG) per domande e risposte su documenti e dati, i modelli si applicano anche alla progettazione di soluzioni GenAI più ampie.
+Scopri come costruire flussi di lavoro GenAI pratici utilizzando Foundry Local e Azure AI Foundry. Impara tecniche avanzate di prompt engineering, integra dati strutturati e orchestra attività con pipeline riproducibili. Sebbene il focus sia su Retrieval-Augmented Generation (RAG) per Q&A su documenti e dati, i modelli si applicano alla progettazione di soluzioni GenAI più ampie.
 
 ## Obiettivi di Apprendimento
 
 Alla fine di questa sessione, sarai in grado di:
 
-- **Padroneggiare il Prompt Engineering**: Progettare prompt di sistema efficaci e strategie di grounding
-- **Implementare Modelli RAG**: Creare sistemi di domande e risposte basati su documenti con ricerca vettoriale
-- **Integrare Dati Strutturati**: Lavorare con dati CSV, JSON e tabulari nei flussi di lavoro AI
-- **Creare RAG di Produzione**: Sviluppare applicazioni RAG scalabili con Chainlit
-- **Collegare Locale al Cloud**: Comprendere i percorsi di migrazione da Foundry Local ad Azure AI Foundry
+- **Dominare il Prompt Engineering**: Progettare prompt di sistema efficaci e strategie di grounding
+- **Implementare Modelli RAG**: Creare sistemi di Q&A basati su documenti con ricerca vettoriale
+- **Integrare Dati Strutturati**: Lavorare con dati CSV, JSON e tabellari nei flussi di lavoro AI
+- **Creare RAG in Produzione**: Sviluppare applicazioni RAG scalabili con Chainlit
+- **Collegare Locale e Cloud**: Comprendere i percorsi di migrazione da Foundry Local ad Azure AI Foundry
 
 ## Prerequisiti
 
 - Completamento della Sessione 1 (configurazione di Foundry Local)
 - Comprensione di base dei database vettoriali e degli embeddings
 - Esperienza di programmazione in Python
-- Familiarità con i concetti di elaborazione dei documenti
+- Familiarità con i concetti di elaborazione documentale
 
-### Avvio Rapido dell'Ambiente Cross-Platform (Windows & macOS)
+### Avvio Rapido Ambiente Cross-Platform (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -56,7 +56,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Validazione: Controllo dell'Ambiente Foundry Local
 
-Prima di iniziare le dimostrazioni, valida il tuo ambiente locale:
+Prima di iniziare le demo, valida il tuo ambiente locale:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -67,7 +67,7 @@ curl http://localhost:5273/v1/models  # Validate API (should list running model)
 
 Se l'ultimo comando fallisce, avvia (o riavvia) il servizio: `foundry service start`.
 
-## Flusso della Demo (30 minuti)
+## Flusso Demo (30 minuti)
 
 ### 1. Prompt di Sistema e Strategie di Grounding (10 minuti)
 
@@ -217,9 +217,9 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### 2. Integrare Dati Tabulari con i Prompt (Q&A su CSV) (10 minuti)
+### 2. Integrare Dati Tabellari con Prompt (Q&A su CSV) (10 minuti)
 
-#### Passo 2.1: Integrazione dei Dati CSV
+#### Passo 2.1: Integrazione Dati CSV
 
 Crea `samples/02-rag-solutions/csv_qa_system.py`:
 
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -443,7 +444,7 @@ python samples/02-rag-solutions/csv_qa_system.py
 
 ### 3. Progetto Iniziale: Adattare 02-grounding-data (5 minuti)
 
-#### Passo 3.1: Sistema RAG Avanzato per Documenti
+#### Passo 3.1: Sistema RAG su Documenti Migliorato
 
 Crea `samples/02-rag-solutions/document_rag.py`:
 
@@ -661,7 +662,7 @@ if __name__ == "__main__":
 ```
 
 
-### 4. Mostrare il Percorso di Migrazione da CLI ad Azure (5 minuti)
+### 4. Mostrare il Percorso di Migrazione CLI-to-Azure (5 minuti)
 
 #### Passo 4.1: Panoramica della Strategia di Migrazione
 
@@ -881,9 +882,9 @@ python samples/02-rag-solutions/migration_guide.py
 
 ### 1. Prompt Engineering Avanzato
 
-- **Prompt di Sistema**: Personaggi esperti specifici per il dominio
+- **Prompt di Sistema**: Personaggi esperti specifici del dominio
 - **Strategie di Grounding**: Tecniche di integrazione del contesto
-- **Controllo della Temperatura**: Bilanciamento tra creatività e coerenza
+- **Controllo della Temperatura**: Bilanciare creatività e coerenza
 - **Gestione dei Token**: Uso efficiente del contesto
 
 ### 2. Integrazione di Dati Strutturati
@@ -891,20 +892,20 @@ python samples/02-rag-solutions/migration_guide.py
 - **Elaborazione CSV**: Integrazione di Pandas con modelli AI
 - **Analisi Statistica**: Riassunto automatico dei dati
 - **Creazione del Contesto**: Generazione dinamica del contesto basata sulle query
-- **Supporto Multi-formato**: Dati JSON, CSV e tabulari
+- **Supporto Multi-formato**: Dati JSON, CSV e tabellari
 
 ### 3. Modelli di Implementazione RAG
 
 - **Ricerca Vettoriale**: TF-IDF e similarità coseno
-- **Recupero Documenti**: Valutazione e classificazione della rilevanza
-- **Combinazione del Contesto**: Sintesi di più documenti
-- **Generazione delle Risposte**: Creazione di risposte basate sul contesto
+- **Recupero Documenti**: Punteggio di rilevanza e ranking
+- **Combinazione del Contesto**: Sintesi multi-documento
+- **Generazione delle Risposte**: Creazione di risposte basate sul grounding
 
 ### 4. Strategie di Migrazione al Cloud
 
 - **API Unificate**: Un unico codice per locale e cloud
 - **Astrazione dell'Ambiente**: Deployment basato sulla configurazione
-- **Flusso di Sviluppo**: Locale → Staging → Produzione
+- **Workflow di Sviluppo**: Locale → Staging → Produzione
 - **Ottimizzazione dei Costi**: Sviluppo locale, produzione su cloud
 
 ## Considerazioni per la Produzione
@@ -958,25 +959,25 @@ metrics = {
 Dopo aver completato questa sessione:
 
 1. **Esplora la Sessione 3**: Modelli Open-Source in Foundry Local
-2. **Crea RAG di Produzione**: Implementa con Chainlit (Esempio 04)
+2. **Crea RAG in Produzione**: Implementa con Chainlit (Esempio 04)
 3. **Ricerca Vettoriale Avanzata**: Integra con Chroma o Pinecone
 4. **Migrazione al Cloud**: Distribuisci su Azure AI Foundry
-5. **Valuta la Qualità del RAG**: Esegui `cd Workkshop/samples;python -m session02.rag_eval_ragas` per misurare rilevanza delle risposte, fedeltà e precisione del contesto utilizzando ragas
+5. **Valuta la Qualità RAG**: Esegui `cd Workshop/samples;python -m session02.rag_eval_ragas` per misurare rilevanza delle risposte, fedeltà e precisione del contesto usando ragas
 
 ### Miglioramenti Opzionali
 
 | Categoria | Miglioramento | Motivazione | Direzione |
-|-----------|---------------|-------------|-----------|
-| Recupero | Sostituire TF-IDF con un archivio vettoriale (FAISS / Chroma) | Migliore richiamo semantico e scalabilità | Suddividi documenti (500–800 caratteri), crea embedding, persisti l'indice |
-| Indice Ibrido | Filtraggio semantico + per parole chiave | Migliora la precisione su query numeriche / codice | Filtra per parola chiave, poi classifica per similarità coseno |
-| Embeddings | Valutare diversi modelli di embedding | Ottimizza rilevanza vs velocità | A/B: MiniLM vs E5-small vs encoder ospitato localmente |
-| Caching | Cache per embedding e risultati di recupero | Riduce la latenza delle query ripetute | Semplice pickle su disco / sqlite con chiave hash |
-| Valutazione | Espandi il dataset ragas | Qualità statisticamente significativa | Cura 50–100 Q/A + contesti; stratifica per argomento |
+|----------|-------------|-----------|-----------|
+| Recupero | Sostituire TF-IDF con archivio vettoriale (FAISS / Chroma) | Migliore richiamo semantico e scalabilità | Suddividi documenti (500–800 caratteri), embed, persisti l'indice |
+| Indice Ibrido | Filtraggio semantico + keyword | Migliora precisione su query numeriche / codice | Filtra per keyword poi classifica per similarità coseno |
+| Embeddings | Valutare diversi modelli di embedding | Ottimizza rilevanza vs velocità | A/B: MiniLM vs E5-small vs encoder locale |
+| Caching | Cache embeddings e risultati di recupero | Riduci latenza per query ripetute | Semplice pickle su disco / sqlite con chiave hash |
+| Valutazione | Espandi dataset ragas | Qualità statisticamente significativa | Cura 50–100 Q/A + contesti; stratifica per argomento |
 | Metriche | Traccia tempi di recupero e generazione | Profilazione delle prestazioni | Cattura `retrieval_ms`, `gen_ms`, `tokens` per chiamata |
 | Guardrails | Aggiungi fallback per allucinazioni | Risposte più sicure | Se fedeltà < soglia → risposta: "Contesto insufficiente." |
-| Fallback | Cascata modello locale → Azure | Miglioramento della qualità ibrida | Con bassa fiducia, instrada al cloud tramite la stessa API OpenAI |
-| Determinismo | Esecuzioni di confronto stabili | Set di valutazione ripetibili | Fissa il seed, `temperature=0`, disabilita casualità del campionatore |
-| Monitoraggio | Persiste la cronologia delle esecuzioni di valutazione | Rilevamento delle regressioni | Aggiungi righe JSON con timestamp + delta metriche |
+| Fallback | Cascata modello locale → Azure | Miglioramento qualità ibrida | Su bassa confidenza instrada al cloud tramite stessa API OpenAI |
+| Determinismo | Esecuzioni di confronto stabili | Set di valutazione ripetibili | Fissa seed, `temperature=0`, disabilita casualità del sampler |
+| Monitoraggio | Persisti cronologia delle valutazioni | Rilevamento regressioni | Aggiungi righe JSON con timestamp + delta metriche |
 
 #### Esempio: Aggiungere il Tempo di Recupero
 
@@ -991,12 +992,13 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
+
 #### Scalare la Valutazione con ragas
 
 1. Assembla un JSONL con campi: `question`, `answer`, `contexts`, `ground_truths` (lista)
 2. Converti in `Dataset.from_list(list_of_dicts)`
 3. Esegui `evaluate(dataset, metrics=[...])`
-4. Archivia le metriche (CSV/JSON) per analisi delle tendenze.
+4. Archivia metriche (CSV/JSON) per analisi delle tendenze.
 
 #### Avvio Rapido Archivio Vettoriale (FAISS)
 
@@ -1007,7 +1009,7 @@ index.add(embeddings)  # embeddings = np.array([...]) normalized
 D, I = index.search(query_vec, k)
 ```
 
-Per la persistenza su disco usa `faiss.write_index(index, "kb.index")`.
+Per persistenza su disco usa `faiss.write_index(index, "kb.index")`.
 
 ## Risorse Aggiuntive
 
@@ -1019,27 +1021,27 @@ Per la persistenza su disco usa `faiss.write_index(index, "kb.index")`.
 
 ### Codice di Esempio
 - [Modulo08 Esempio 04](./samples/04/README.md) - Applicazione RAG con Chainlit
-- [Sistema Multi-Agent Avanzato](./samples/09/README.md) - Modelli di coordinamento degli agenti
+- [Sistema Multi-Agente Avanzato](./samples/09/README.md) - Modelli di coordinamento agenti
 
 ---
 
-**Durata della Sessione**: 30 minuti di pratica + 15 minuti di Q&A  
+**Durata della Sessione**: 30 minuti hands-on + 15 minuti Q&A  
 **Livello di Difficoltà**: Intermedio  
-**Prerequisiti**: Sessione 1 completata, Conoscenze di base di Python
+**Prerequisiti**: Sessione 1 completata, Conoscenze di base di Python  
 
-## Scenario di Esempio e Mappatura del Workshop
+## Scenario di Esempio e Mappatura Workshop
 
-| Script / Notebook del Workshop | Scenario | Obiettivo | Dataset / Fonte Principale | Domanda di Esempio |
-|--------------------------------|----------|-----------|----------------------------|--------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Base di conoscenza interna per rispondere a FAQ su privacy e prestazioni | RAG minimo in memoria con embeddings | Lista `DOCS` nello script (5 brevi passaggi) | Perché usare RAG con inferenza locale? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analista di qualità che stabilisce metriche di fedeltà del recupero | Calcola metriche ragas su un piccolo dataset sintetico | Array `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Quali vantaggi offre l'inferenza locale? |
-| `prompt_engineering.py` (avanzato) | Esperto di dominio che crea prompt basati sul contesto per diversi settori | Confronta prompt di sistema per dominio e impatto dei token | Dizionario `contexts` inline | Come gestisce Foundry Local la cache dei modelli? |
+| Script / Notebook Workshop | Scenario | Obiettivo | Dataset / Fonte Principale | Domanda di Esempio |
+|----------------------------|----------|------|-----------------------|------------------|
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Base di conoscenza interna per rispondere a FAQ su privacy + prestazioni | RAG minimale in memoria con embeddings | Lista `DOCS` nello script (5 brevi passaggi) | Perché usare RAG con inferenza locale? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analista qualità che stabilisce metriche di fedeltà del recupero | Calcola metriche ragas su piccolo dataset sintetico | Array `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Quale vantaggio offre l'inferenza locale? |
+| `prompt_engineering.py` (avanzato) | Esperto di dominio che crea prompt mirati per diversi settori | Confronta prompt di sistema per dominio e impatto sui token | Dizionario `contexts` inline | Come gestisce Foundry Local la cache dei modelli? |
 | `csv_qa_system.py` | Operazioni di vendita che esplorano analisi interattive su esportazioni | Riassumi e interroga un piccolo campione di vendite | `sample_sales_data.csv` generato (10 righe) | Quale prodotto ha la media di vendite più alta? |
-| `document_rag.py` | Team di prodotto che esplora RAG per wiki interni | Recupera + cita documenti rilevanti | Lista `create_sample_knowledge_base()` | Quali sono i vantaggi dell'Edge AI? |
-| `migration_guide.py` | Architetto che prepara un piano di migrazione al cloud | Dimostra la parità API locale→Azure | Prompt di test statici | Spiega i vantaggi dell'Edge AI in 2–3 frasi. |
+| `document_rag.py` | Team di prodotto che esplora RAG su documenti per wiki interno | Recupera + cita documenti rilevanti | Lista `create_sample_knowledge_base()` | Quali sono i vantaggi dell'Edge AI? |
+| `migration_guide.py` | Architetto che prepara un piano di migrazione al cloud | Dimostra parità API locale→Azure | Prompt di test statici | Spiega i vantaggi dell'Edge AI in 2–3 frasi. |
 
-### Estratti del Dataset
-Lista di documenti inline per pipeline RAG:
+### Snippet Dataset
+Lista documenti pipeline RAG inline:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1061,12 +1063,14 @@ GROUND_TRUTH = [
 
 
 ### Narrazione dello Scenario
-Il gruppo di ingegneria di supporto desidera un prototipo rapido per rispondere a FAQ interne senza esporre dati dei clienti esternamente. Gli artefatti della Sessione 2 progrediscono da un RAG minimo ed effimero (senza persistenza) → Q&A su CSV strutturato → recupero documenti con citazione → valutazione oggettiva della qualità (ragas) → una strategia di migrazione pronta per lo staging su Azure.
+Il gruppo di supporto ingegneristico desidera un prototipo rapido per rispondere a FAQ interne senza esporre dati dei clienti esternamente. Gli artefatti della Sessione 2 evolvono da un RAG minimale ed effimero (senza persistenza) → Q&A su CSV strutturato → recupero documenti con citazione → valutazione oggettiva della qualità (ragas) → una strategia di migrazione pronta per lo staging su Azure.
 
 ### Percorsi di Espansione
-Utilizza la tabella dei Miglioramenti Opzionali per evolvere: sostituisci TF‑IDF con FAISS/Chroma, amplia il corpus di valutazione (50–100 Q/A), aggiungi escalation di fallback a un modello più grande quando la fedeltà < soglia.
+Usa la tabella Miglioramenti Opzionali per evolvere: sostituisci TF-IDF con FAISS/Chroma, amplia il corpus di valutazione (50–100 Q/A), aggiungi escalation di fallback a un modello più grande quando la fedeltà < soglia.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si consiglia una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

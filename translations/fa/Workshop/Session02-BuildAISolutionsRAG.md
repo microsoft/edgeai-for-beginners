@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T20:24:54+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T18:33:24+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "fa"
 }
@@ -11,17 +11,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## خلاصه
 
-در این جلسه، نحوه ساخت جریان‌های کاری عملی GenAI با استفاده از Foundry Local و Azure AI Foundry را بررسی کنید. مهندسی پیشرفته پرامپت، ادغام داده‌های ساختاریافته و هماهنگی وظایف با خطوط لوله قابل بازتولید را بیاموزید. تمرکز اصلی بر روی تولید مبتنی بر بازیابی (RAG) برای پرسش و پاسخ اسناد و داده‌ها است، اما الگوها به طراحی گسترده‌تر راه‌حل‌های GenAI نیز تعمیم می‌یابند.
+در این جلسه یاد می‌گیرید چگونه جریان‌های کاری GenAI عملیاتی را با استفاده از Foundry Local و Azure AI Foundry بسازید. مهندسی پیشرفته پرسش‌ها، ادغام داده‌های ساختاریافته و هماهنگی وظایف با خطوط تولید قابل بازتولید را بررسی کنید. تمرکز اصلی بر روی تولید مبتنی بر بازیابی (RAG) برای پرسش و پاسخ اسناد و داده‌ها است، اما الگوها به طراحی گسترده‌تر راه‌حل‌های GenAI نیز تعمیم می‌یابند.
 
 ## اهداف یادگیری
 
 در پایان این جلسه، شما:
 
-- **مهندسی پرامپت را تسلط خواهید یافت**: طراحی پرامپت‌های سیستمی مؤثر و استراتژی‌های پایه‌گذاری
+- **مهندسی پرسش‌ها را تسلط خواهید یافت**: طراحی پرسش‌های سیستمی مؤثر و استراتژی‌های پایه‌گذاری
 - **الگوهای RAG را پیاده‌سازی خواهید کرد**: ساخت سیستم‌های پرسش و پاسخ مبتنی بر اسناد با جستجوی برداری
-- **ادغام داده‌های ساختاریافته**: کار با داده‌های CSV، JSON و جدولی در جریان‌های کاری هوش مصنوعی
-- **ساخت RAG تولیدی**: ایجاد برنامه‌های RAG مقیاس‌پذیر با Chainlit
-- **پل ارتباطی بین محلی و ابری**: درک مسیرهای مهاجرت از Foundry Local به Azure AI Foundry
+- **ادغام داده‌های ساختاریافته را انجام خواهید داد**: کار با داده‌های CSV، JSON و جدولی در جریان‌های کاری هوش مصنوعی
+- **RAG تولیدی را خواهید ساخت**: ایجاد برنامه‌های RAG مقیاس‌پذیر با Chainlit
+- **پل ارتباطی بین محلی و ابری را خواهید فهمید**: مسیرهای مهاجرت از Foundry Local به Azure AI Foundry را درک خواهید کرد
 
 ## پیش‌نیازها
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### شروع سریع محیط چند پلتفرمی (ویندوز و macOS)
 
-Windows PowerShell:
+PowerShell ویندوز:
 ```powershell
 py -m venv .venv
  .\.venv\Scripts\Activate.ps1
@@ -40,7 +40,7 @@ pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-macOS / Linux:
+macOS / لینوکس:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
@@ -69,11 +69,11 @@ curl http://localhost:5273/v1/models  # Validate API (should list running model)
 
 ## جریان دمو (۳۰ دقیقه)
 
-### ۱. پرامپت‌های سیستمی و استراتژی‌های پایه‌گذاری (۱۰ دقیقه)
+### ۱. پرسش‌های سیستمی و استراتژی‌های پایه‌گذاری (۱۰ دقیقه)
 
-#### مرحله ۱.۱: مهندسی پیشرفته پرامپت
+#### مرحله ۱.۱: مهندسی پیشرفته پرسش‌ها
 
-ایجاد `samples/02-rag-solutions/prompt_engineering.py`:
+ایجاد کنید `samples/02-rag-solutions/prompt_engineering.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -217,11 +217,11 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### ۲. ادغام داده‌های جدولی با پرامپت‌ها (پرسش و پاسخ CSV) (۱۰ دقیقه)
+### ۲. ادغام داده‌های جدولی با پرسش‌ها (پرسش و پاسخ CSV) (۱۰ دقیقه)
 
 #### مرحله ۲.۱: ادغام داده‌های CSV
 
-ایجاد `samples/02-rag-solutions/csv_qa_system.py`:
+ایجاد کنید `samples/02-rag-solutions/csv_qa_system.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -445,7 +446,7 @@ python samples/02-rag-solutions/csv_qa_system.py
 
 #### مرحله ۳.۱: سیستم RAG اسناد پیشرفته
 
-ایجاد `samples/02-rag-solutions/document_rag.py`:
+ایجاد کنید `samples/02-rag-solutions/document_rag.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -665,7 +666,7 @@ if __name__ == "__main__":
 
 #### مرحله ۴.۱: مرور استراتژی مهاجرت
 
-ایجاد `samples/02-rag-solutions/migration_guide.py`:
+ایجاد کنید `samples/02-rag-solutions/migration_guide.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -879,12 +880,12 @@ python samples/02-rag-solutions/migration_guide.py
 
 ## مفاهیم کلیدی پوشش داده شده
 
-### ۱. مهندسی پیشرفته پرامپت
+### ۱. مهندسی پیشرفته پرسش‌ها
 
-- **پرامپت‌های سیستمی**: شخصیت‌های متخصص خاص دامنه
+- **پرسش‌های سیستمی**: شخصیت‌های متخصص خاص دامنه
 - **استراتژی‌های پایه‌گذاری**: تکنیک‌های ادغام زمینه
 - **کنترل دما**: تعادل بین خلاقیت و ثبات
-- **مدیریت توکن**: استفاده کارآمد از زمینه
+- **مدیریت توکن‌ها**: استفاده کارآمد از زمینه
 
 ### ۲. ادغام داده‌های ساختاریافته
 
@@ -957,11 +958,11 @@ metrics = {
 
 پس از تکمیل این جلسه:
 
-1. **بررسی جلسه ۳**: مدل‌های متن‌باز در Foundry Local
-2. **ساخت RAG تولیدی**: پیاده‌سازی با Chainlit (نمونه ۰۴)
-3. **جستجوی برداری پیشرفته**: ادغام با Chroma یا Pinecone
-4. **مهاجرت به ابر**: استقرار در Azure AI Foundry
-5. **ارزیابی کیفیت RAG**: اجرای `cd Workkshop/samples;python -m session02.rag_eval_ragas` برای اندازه‌گیری پاسخ‌دهی، وفاداری و دقت زمینه با استفاده از ragas
+۱. **جلسه ۳ را بررسی کنید**: مدل‌های متن‌باز در Foundry Local
+۲. **RAG تولیدی بسازید**: پیاده‌سازی با Chainlit (نمونه ۰۴)
+۳. **جستجوی برداری پیشرفته**: ادغام با Chroma یا Pinecone
+۴. **مهاجرت به ابر**: استقرار در Azure AI Foundry
+۵. **کیفیت RAG را ارزیابی کنید**: اجرای `cd Workshop/samples;python -m session02.rag_eval_ragas` برای اندازه‌گیری پاسخ‌دهی، وفاداری و دقت زمینه با استفاده از ragas
 
 ### بهبودهای اختیاری
 
@@ -994,10 +995,10 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 
 #### مقیاس‌بندی ارزیابی با ragas
 
-1. یک JSONL با فیلدهای: `question`، `answer`، `contexts`، `ground_truths` (لیست) تهیه کنید
-2. تبدیل به `Dataset.from_list(list_of_dicts)`
-3. اجرای `evaluate(dataset, metrics=[...])`
-4. ذخیره معیارها (CSV/JSON) برای تحلیل روند.
+۱. یک JSONL با فیلدهای `question`، `answer`، `contexts`، `ground_truths` (لیست) جمع‌آوری کنید
+۲. تبدیل به `Dataset.from_list(list_of_dicts)`
+۳. اجرای `evaluate(dataset, metrics=[...])`
+۴. ذخیره معیارها (CSV/JSON) برای تحلیل روند.
 
 #### شروع سریع ذخیره برداری (FAISS)
 
@@ -1015,11 +1016,11 @@ D, I = index.search(query_vec, k)
 ### مستندات
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [الگوهای RAG Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [راهنمای مهندسی پرامپت](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [راهنمای مهندسی پرسش‌ها](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
 - [مستندات ارزیابی Ragas](https://docs.ragas.io)
 
 ### کد نمونه
-- [نمونه ۰۸ ماژول ۰۴](./samples/04/README.md) - برنامه RAG Chainlit
+- [نمونه ۰۴ ماژول ۰۸](./samples/04/README.md) - برنامه RAG Chainlit
 - [سیستم چندعاملی پیشرفته](./samples/09/README.md) - الگوهای هماهنگی عامل
 
 ---
@@ -1030,14 +1031,14 @@ D, I = index.search(query_vec, k)
 
 ## سناریوی نمونه و نگاشت کارگاه
 
-| اسکریپت / نوت‌بوک کارگاه | سناریو | هدف | مجموعه داده / منبع اصلی | پرسش نمونه |
+| اسکریپت / دفترچه کارگاه | سناریو | هدف | مجموعه داده / منبع اصلی | پرسش نمونه |
 |----------------------------|----------|------|-----------------------|------------------|
 | `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | پایگاه دانش پشتیبانی داخلی پاسخ به سوالات متداول حریم خصوصی + عملکرد | RAG حداقلی در حافظه با تعبیه‌ها | لیست `DOCS` در اسکریپت (۵ بخش کوتاه) | چرا از RAG با استنتاج محلی استفاده کنیم؟ |
 | `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | تحلیلگر کیفیت ایجاد معیارهای پایه وفاداری بازیابی | محاسبه معیارهای ragas روی مجموعه داده مصنوعی کوچک | آرایه‌های `DOCS`، `QUESTIONS`، `GROUND_TRUTH` | چه مزیتی استنتاج محلی ارائه می‌دهد؟ |
-| `prompt_engineering.py` (پیشرفته) | SME دامنه طراحی پرامپت‌های پایه‌گذاری شده برای چندین عمودی | مقایسه پرامپت‌های سیستمی دامنه و تأثیر توکن | دیکشنری `contexts` داخلی | Foundry Local چگونه کش مدل را مدیریت می‌کند؟ |
+| `prompt_engineering.py` (پیشرفته) | متخصص دامنه طراحی پرسش‌های پایه‌گذاری شده برای چندین عمودی | مقایسه پرسش‌های سیستمی دامنه و تأثیر توکن | دیکشنری `contexts` داخلی | Foundry Local چگونه کش مدل را مدیریت می‌کند؟ |
 | `csv_qa_system.py` | عملیات فروش بررسی تحلیل‌های تعاملی بر صادرات | خلاصه‌سازی و پرسش از بخش کوچک فروش | `sample_sales_data.csv` تولید شده (۱۰ ردیف) | کدام محصول بالاترین میانگین مبلغ فروش را دارد؟ |
-| `document_rag.py` | تیم محصول بررسی RAG اسناد برای ویکی داخلی | بازیابی + استناد به اسناد مرتبط | لیست `create_sample_knowledge_base()` | مزایای Edge AI چیست؟ |
-| `migration_guide.py` | معمار آماده‌سازی برنامه مهاجرت به ابر | نمایش برابری API محلی→Azure | پرامپت‌های آزمایشی ثابت | مزایای Edge AI را در ۲–۳ جمله توضیح دهید. |
+| `document_rag.py` | تیم محصول بررسی RAG اسناد برای ویکی داخلی | بازیابی + استناد به اسناد مرتبط | لیست `create_sample_knowledge_base()` | مزایای هوش مصنوعی Edge چیست؟ |
+| `migration_guide.py` | معمار آماده‌سازی طرح مهاجرت به ابر | نمایش برابری API محلی→Azure | پرسش‌های آزمایشی ثابت | مزایای هوش مصنوعی Edge را در ۲–۳ جمله توضیح دهید. |
 
 ### قطعات مجموعه داده
 لیست اسناد خط لوله RAG داخلی:
@@ -1062,12 +1063,14 @@ GROUND_TRUTH = [
 
 
 ### روایت سناریو
-گروه مهندسی پشتیبانی به دنبال یک نمونه اولیه سریع برای پاسخ به سوالات متداول داخلی بدون افشای داده‌های مشتری به خارج است. مصنوعات جلسه ۲ از یک RAG حداقلی موقت (بدون ذخیره‌سازی) → پرسش و پاسخ CSV ساختاریافته → بازیابی اسناد با استناد → ارزیابی کیفیت عینی (ragas) → یک استراتژی مهاجرت آماده برای مرحله‌بندی Azure پیشرفت می‌کنند.
+گروه مهندسی پشتیبانی به دنبال یک نمونه اولیه سریع برای پاسخ به سوالات متداول داخلی است بدون اینکه داده‌های مشتری را به بیرون منتقل کند. مصنوعات جلسه ۲ از یک RAG حداقلی موقت (بدون ذخیره‌سازی) → پرسش و پاسخ CSV ساختاریافته → بازیابی اسناد با استناد → ارزیابی کیفیت عینی (ragas) → یک استراتژی مهاجرت آماده برای مرحله‌بندی Azure پیشرفت می‌کنند.
 
 ### مسیرهای گسترش
 از جدول بهبودهای اختیاری برای تکامل استفاده کنید: جایگزینی TF-IDF با FAISS/Chroma، بزرگ کردن مجموعه ارزیابی (۵۰–۱۰۰ پرسش/پاسخ)، افزودن بازگشت به مدل بزرگ‌تر زمانی که وفاداری < آستانه.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **سلب مسئولیت**:  
 این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,32 +1,32 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T20:57:56+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T18:41:39+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "ko"
 }
 -->
-# 세션 2: Azure AI Foundry를 활용한 AI 솔루션 구축
+# 세션 2: Azure AI Foundry로 AI 솔루션 구축하기
 
 ## 개요
 
-Foundry Local과 Azure AI Foundry를 사용하여 실행 가능한 생성형 AI 워크플로우를 구축하는 방법을 탐구합니다. 고급 프롬프트 엔지니어링을 배우고, 구조화된 데이터를 통합하며, 재현 가능한 파이프라인으로 작업을 조율하는 방법을 알아봅니다. 문서 및 데이터 Q&A를 위한 검색 증강 생성(RAG)에 초점을 맞추지만, 이러한 패턴은 더 넓은 생성형 AI 솔루션 설계에도 일반화될 수 있습니다.
+Foundry Local과 Azure AI Foundry를 사용하여 실행 가능한 GenAI 워크플로를 구축하는 방법을 탐구합니다. 고급 프롬프트 엔지니어링, 구조화된 데이터 통합, 재현 가능한 파이프라인을 통한 작업 조율을 배웁니다. 문서 및 데이터 Q&A를 위한 Retrieval-Augmented Generation (RAG)에 중점을 두지만, 이 패턴은 더 넓은 GenAI 솔루션 설계에도 일반화됩니다.
 
 ## 학습 목표
 
 이 세션이 끝날 때까지 다음을 배울 수 있습니다:
 
-- **프롬프트 엔지니어링 마스터하기**: 효과적인 시스템 프롬프트와 기반 전략 설계
+- **프롬프트 엔지니어링 숙달**: 효과적인 시스템 프롬프트와 그라운딩 전략 설계
 - **RAG 패턴 구현**: 벡터 검색을 활용한 문서 기반 Q&A 시스템 구축
-- **구조화된 데이터 통합**: CSV, JSON 및 표 형식 데이터를 AI 워크플로우에서 활용
-- **생산용 RAG 구축**: Chainlit을 사용하여 확장 가능한 RAG 애플리케이션 생성
-- **로컬에서 클라우드로 연결**: Foundry Local에서 Azure AI Foundry로의 마이그레이션 경로 이해
+- **구조화된 데이터 통합**: CSV, JSON, 표 형식 데이터를 AI 워크플로에 통합
+- **프로덕션 RAG 구축**: Chainlit을 사용하여 확장 가능한 RAG 애플리케이션 생성
+- **로컬에서 클라우드로의 연결**: Foundry Local에서 Azure AI Foundry로의 마이그레이션 경로 이해
 
-## 사전 준비 사항
+## 사전 요구 사항
 
-- 세션 1 완료 (Foundry Local 설정)
-- 벡터 데이터베이스와 임베딩에 대한 기본 이해
+- 세션 1 (Foundry Local 설정) 완료
+- 벡터 데이터베이스 및 임베딩에 대한 기본 이해
 - Python 프로그래밍 경험
 - 문서 처리 개념에 대한 친숙함
 
@@ -48,13 +48,13 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Foundry Local macOS 바이너리가 아직 환경에 제공되지 않은 경우, Windows VM 또는 컨테이너에서 서비스를 실행하고 다음을 설정하세요:
+만약 Foundry Local macOS 바이너리가 아직 환경에 없다면, Windows VM 또는 컨테이너에서 서비스를 실행하고 다음을 설정하세요:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## 유효성 검사: Foundry Local 환경 확인
+## 검증: Foundry Local 환경 확인
 
 데모를 시작하기 전에 로컬 환경을 확인하세요:
 
@@ -65,11 +65,11 @@ foundry model run phi-4-mini   # Start baseline SLM
 curl http://localhost:5273/v1/models  # Validate API (should list running model)
 ```
 
-마지막 명령이 실패하면 서비스를 시작하거나 다시 시작하세요: `foundry service start`.
+마지막 명령이 실패하면, 서비스를 시작(또는 재시작)하세요: `foundry service start`.
 
 ## 데모 흐름 (30분)
 
-### 1. 시스템 프롬프트와 기반 전략 (10분)
+### 1. 시스템 프롬프트와 그라운딩 전략 (10분)
 
 #### 단계 1.1: 고급 프롬프트 엔지니어링
 
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### 단계 1.2: 기반 전략 테스트
+#### 단계 1.2: 그라운딩 전략 테스트
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -441,7 +442,7 @@ python samples/02-rag-solutions/csv_qa_system.py
 ```
 
 
-### 3. 시작 프로젝트: 02-grounding-data 적응 (5분)
+### 3. 스타터 프로젝트: 02-grounding-data 적응 (5분)
 
 #### 단계 3.1: 향상된 문서 RAG 시스템
 
@@ -882,7 +883,7 @@ python samples/02-rag-solutions/migration_guide.py
 ### 1. 고급 프롬프트 엔지니어링
 
 - **시스템 프롬프트**: 도메인별 전문가 페르소나
-- **기반 전략**: 컨텍스트 통합 기술
+- **그라운딩 전략**: 컨텍스트 통합 기술
 - **온도 제어**: 창의성과 일관성의 균형
 - **토큰 관리**: 효율적인 컨텍스트 사용
 
@@ -891,23 +892,23 @@ python samples/02-rag-solutions/migration_guide.py
 - **CSV 처리**: Pandas와 AI 모델 통합
 - **통계 분석**: 자동 데이터 요약
 - **컨텍스트 생성**: 쿼리에 기반한 동적 컨텍스트 생성
-- **다중 형식 지원**: JSON, CSV 및 표 형식 데이터
+- **다중 형식 지원**: JSON, CSV, 표 형식 데이터
 
 ### 3. RAG 구현 패턴
 
 - **벡터 검색**: TF-IDF 및 코사인 유사도
 - **문서 검색**: 관련성 점수 및 순위 매기기
-- **컨텍스트 결합**: 다중 문서 합성
-- **답변 생성**: 기반이 되는 응답 생성
+- **컨텍스트 결합**: 다중 문서 통합
+- **답변 생성**: 그라운딩된 응답 생성
 
 ### 4. 클라우드 마이그레이션 전략
 
 - **통합 API**: 로컬 및 클라우드에 대한 단일 코드베이스
 - **환경 추상화**: 구성 기반 배포
-- **개발 워크플로우**: 로컬 → 스테이징 → 프로덕션
+- **개발 워크플로**: 로컬 → 스테이징 → 프로덕션
 - **비용 최적화**: 로컬 개발, 클라우드 프로덕션
 
-## 생산 고려 사항
+## 프로덕션 고려 사항
 
 ### 1. 성능 최적화
 
@@ -958,25 +959,25 @@ metrics = {
 이 세션을 완료한 후:
 
 1. **세션 3 탐색**: Foundry Local에서 오픈 소스 모델
-2. **생산용 RAG 구축**: Chainlit을 사용하여 구현 (샘플 04)
+2. **프로덕션 RAG 구축**: Chainlit으로 구현 (샘플 04)
 3. **고급 벡터 검색**: Chroma 또는 Pinecone과 통합
 4. **클라우드 마이그레이션**: Azure AI Foundry에 배포
-5. **RAG 품질 평가**: `cd Workkshop/samples;python -m session02.rag_eval_ragas`를 실행하여 ragas를 사용해 답변 관련성, 신뢰성 및 컨텍스트 정확성을 측정
+5. **RAG 품질 평가**: `cd Workshop/samples;python -m session02.rag_eval_ragas`를 실행하여 ragas를 사용해 answer_relevancy, faithfulness, context_precision 측정
 
-### 선택적 개선 사항
+### 선택적 개선
 
-| 카테고리 | 개선 사항 | 이유 | 방향 |
-|----------|-------------|-----------|-----------|
-| 검색 | TF-IDF를 벡터 스토어(FAISS / Chroma)로 교체 | 더 나은 의미적 회상 및 확장성 | 문서 분할(500–800자), 임베딩, 인덱스 지속 |
+| 카테고리 | 개선 | 이유 | 방향 |
+|----------|------|------|------|
+| 검색 | TF-IDF를 벡터 스토어(FAISS / Chroma)로 교체 | 더 나은 의미적 검색 및 확장성 | 문서 분할(500–800자), 임베딩, 인덱스 저장 |
 | 하이브리드 인덱스 | 의미적 + 키워드 필터링 병합 | 숫자/코드 쿼리에 대한 정밀도 향상 | 키워드로 필터링 후 코사인 유사도로 순위 매기기 |
 | 임베딩 | 여러 임베딩 모델 평가 | 관련성 vs 속도 최적화 | A/B: MiniLM vs E5-small vs 로컬 호스팅 인코더 |
-| 캐싱 | 임베딩 및 검색 결과 캐싱 | 반복 쿼리 지연 시간 감소 | 해시 키를 사용한 간단한 디스크 피클/SQLite |
+| 캐싱 | 임베딩 및 검색 결과 캐싱 | 반복 쿼리 지연 시간 단축 | 해시 키를 사용한 간단한 디스크 저장(pickle/sqlite) |
 | 평가 | ragas 데이터셋 확장 | 통계적으로 의미 있는 품질 | 50–100 Q/A + 컨텍스트 큐레이션; 주제별 계층화 |
 | 메트릭 | 검색 및 생성 시간 추적 | 성능 프로파일링 | 호출당 `retrieval_ms`, `gen_ms`, `tokens` 캡처 |
-| 가드레일 | 환각 대체 추가 | 더 안전한 답변 | 신뢰성 < 임계값일 경우 → 답변: "컨텍스트가 충분하지 않습니다." |
-| 폴백 | 로컬 → Azure 모델로 계단식 | 하이브리드 품질 향상 | 신뢰도가 낮을 경우 동일한 OpenAI API를 통해 클라우드로 라우팅 |
+| 가드레일 | 환각 대체 추가 | 더 안전한 답변 | faithfulness < 임계값일 경우 → "컨텍스트가 부족합니다." |
+| 폴백 | 로컬 → Azure 모델로 전환 | 하이브리드 품질 향상 | 신뢰도 낮을 경우 동일한 OpenAI API를 통해 클라우드로 라우팅 |
 | 결정론 | 안정적인 비교 실행 | 반복 가능한 평가 세트 | 시드 고정, `temperature=0`, 샘플러 무작위성 비활성화 |
-| 모니터링 | 평가 실행 기록 지속 | 회귀 감지 | JSON 라인에 타임스탬프 + 메트릭 변화 추가 |
+| 모니터링 | 평가 실행 기록 저장 | 회귀 감지 | JSON 라인에 타임스탬프 + 메트릭 변화 추가 |
 
 #### 예: 검색 시간 추가
 
@@ -992,12 +993,12 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 ```
 
 
-#### ragas를 활용한 평가 확장
+#### ragas로 평가 확장
 
-1. 필드가 포함된 JSONL 조립: `question`, `answer`, `contexts`, `ground_truths` (리스트)
+1. `question`, `answer`, `contexts`, `ground_truths`(리스트) 필드가 포함된 JSONL 작성
 2. `Dataset.from_list(list_of_dicts)`로 변환
 3. `evaluate(dataset, metrics=[...])` 실행
-4. 트렌드 분석을 위해 메트릭 저장 (CSV/JSON).
+4. 메트릭(CSV/JSON) 저장하여 추세 분석
 
 #### 벡터 스토어 빠른 시작 (FAISS)
 
@@ -1019,25 +1020,25 @@ D, I = index.search(query_vec, k)
 - [Ragas 평가 문서](https://docs.ragas.io)
 
 ### 샘플 코드
-- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG 애플리케이션
-- [고급 다중 에이전트 시스템](./samples/09/README.md) - 에이전트 조정 패턴
+- [Module08 샘플 04](./samples/04/README.md) - Chainlit RAG 애플리케이션
+- [고급 멀티 에이전트 시스템](./samples/09/README.md) - 에이전트 조정 패턴
 
 ---
 
 **세션 시간**: 30분 실습 + 15분 Q&A  
-**난이도 수준**: 중급  
-**사전 준비 사항**: 세션 1 완료, Python 기본 지식
+**난이도**: 중급  
+**사전 요구 사항**: 세션 1 완료, Python 기본 지식
 
 ## 샘플 시나리오 및 워크숍 매핑
 
 | 워크숍 스크립트 / 노트북 | 시나리오 | 목표 | 핵심 데이터셋 / 소스 | 예제 질문 |
-|----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | 내부 지원 지식 기반에서 개인정보 및 성능 FAQ 답변 | 임베딩을 활용한 최소 메모리 RAG | 스크립트 내 `DOCS` 리스트 (5개의 짧은 문단) | 로컬 추론과 함께 RAG를 사용하는 이유는 무엇인가요? |
+|--------------------------|----------|------|---------------------|----------|
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | 내부 지원 지식 기반에서 개인정보 및 성능 FAQ 답변 | 임베딩을 사용한 최소 메모리 RAG | 스크립트의 `DOCS` 리스트 (5개의 짧은 문단) | 로컬 추론과 함께 RAG를 사용하는 이유는? |
 | `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | 품질 분석가가 기본 검색 신뢰성 메트릭 설정 | 작은 합성 데이터셋에서 ragas 메트릭 계산 | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` 배열 | 로컬 추론이 제공하는 이점은 무엇인가요? |
-| `prompt_engineering.py` (고급) | 도메인 SME가 여러 분야를 위한 기반 프롬프트 제작 | 도메인 시스템 프롬프트 및 토큰 영향 비교 | 인라인 `contexts` dict | Foundry Local이 모델 캐싱을 처리하는 방법은 무엇인가요? |
-| `csv_qa_system.py` | 영업 운영팀이 내보낸 데이터에 대한 대화형 분석 탐구 | 작은 판매 데이터 요약 및 쿼리 | 생성된 `sample_sales_data.csv` (10행) | 평균 판매 금액이 가장 높은 제품은 무엇인가요? |
-| `document_rag.py` | 제품 팀이 내부 위키를 위한 문서 RAG 탐구 | 관련 문서 검색 및 인용 | `create_sample_knowledge_base()` 리스트 | Edge AI의 이점은 무엇인가요? |
-| `migration_guide.py` | 아키텍트가 클라우드 마이그레이션 계획 준비 | 로컬→Azure API 동등성 시연 | 정적 테스트 프롬프트 | Edge AI의 이점을 2–3문장으로 설명하세요. |
+| `prompt_engineering.py` (고급) | 여러 산업 분야를 위한 그라운딩된 프롬프트를 제작하는 도메인 SME | 도메인 시스템 프롬프트 및 토큰 영향 비교 | 인라인 `contexts` 딕셔너리 | Foundry Local이 모델 캐싱을 처리하는 방법은? |
+| `csv_qa_system.py` | 영업 운영팀이 내보낸 데이터를 기반으로 대화형 분석 탐색 | 작은 판매 데이터 요약 및 쿼리 | 생성된 `sample_sales_data.csv` (10행) | 평균 판매 금액이 가장 높은 제품은? |
+| `document_rag.py` | 제품 팀이 내부 위키를 위한 문서 RAG 탐색 | 관련 문서 검색 및 인용 | `create_sample_knowledge_base()` 리스트 | 엣지 AI의 이점은 무엇인가요? |
+| `migration_guide.py` | 클라우드 마이그레이션 계획을 준비하는 아키텍트 | 로컬→Azure API 동등성 시연 | 정적 테스트 프롬프트 | 엣지 AI의 이점을 2–3문장으로 설명하세요. |
 
 ### 데이터셋 스니펫
 인라인 RAG 파이프라인 문서 리스트:
@@ -1051,7 +1052,7 @@ DOCS = [
 ]
 ```
 
-Ragas 평가 신뢰성 튜플:
+Ragas 평가 진실 튜플:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1062,12 +1063,14 @@ GROUND_TRUTH = [
 
 
 ### 시나리오 내러티브
-지원 엔지니어링 그룹은 고객 데이터를 외부에 노출하지 않고 내부 FAQ를 빠르게 답변할 수 있는 프로토타입을 원합니다. 세션 2 아티팩트는 최소한의 임시 RAG(비영구적) → 구조화된 CSV Q&A → 인용이 포함된 문서 검색 → 객관적인 품질 평가(ragas) → Azure 스테이징 준비 마이그레이션 전략으로 진행됩니다.
+지원 엔지니어링 그룹은 고객 데이터를 외부에 노출하지 않고 내부 FAQ에 답변할 수 있는 빠른 프로토타입을 원합니다. 세션 2 아티팩트는 최소한의 임시 RAG(영구 저장 없음) → 구조화된 CSV Q&A → 인용이 포함된 문서 검색 → 객관적인 품질 평가(ragas) → Azure 스테이징에 준비된 마이그레이션 전략으로 진행됩니다.
 
 ### 확장 경로
-선택적 개선 사항 표를 사용하여 발전시키세요: TF-IDF를 FAISS/Chroma로 교체, 평가 코퍼스 확대(50–100 Q/A), 신뢰성 < 임계값일 때 더 큰 모델로 폴백 에스컬레이션 추가.
+선택적 개선 표를 사용하여 발전시키세요: TF-IDF를 FAISS/Chroma로 교체, 평가 코퍼스 확대(50–100 Q/A), faithfulness < 임계값일 때 더 큰 모델로 폴백 에스컬레이션 추가.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어를 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전을 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

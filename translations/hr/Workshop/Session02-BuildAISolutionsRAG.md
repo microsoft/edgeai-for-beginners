@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T23:26:40+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T19:24:13+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "hr"
 }
@@ -11,14 +11,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Sažetak
 
-Istražite kako izraditi primjenjive GenAI tijekove rada koristeći Foundry Local i Azure AI Foundry. Naučite napredno oblikovanje upita, integrirajte strukturirane podatke i orkestrirajte zadatke s reproducibilnim cjevovodima. Iako je fokus na generiranju uz pomoć pretraživanja (RAG) za pitanja i odgovore na temelju dokumenata i podataka, obrasci se mogu primijeniti na širi dizajn GenAI rješenja.
+Istražite kako izgraditi primjenjive GenAI tijekove rada koristeći Foundry Local i Azure AI Foundry. Naučite napredno oblikovanje upita, integrirajte strukturirane podatke i orkestrirajte zadatke s reproducibilnim cjevovodima. Iako je fokus na Retrieval-Augmented Generation (RAG) za pitanja i odgovore na temelju dokumenata i podataka, obrasci se mogu primijeniti na širi dizajn GenAI rješenja.
 
 ## Ciljevi učenja
 
 Na kraju ove sesije, moći ćete:
 
-- **Ovladati oblikovanjem upita**: Dizajnirati učinkovite sistemske upite i strategije utemeljenja
-- **Primijeniti RAG obrasce**: Izraditi sustave za pitanja i odgovore na temelju dokumenata koristeći vektorsko pretraživanje
+- **Savladati oblikovanje upita**: Dizajnirati učinkovite sistemske upite i strategije utemeljenja
+- **Primijeniti RAG obrasce**: Izgraditi sustave za pitanja i odgovore na temelju dokumenata koristeći vektorsko pretraživanje
 - **Integrirati strukturirane podatke**: Raditi s CSV, JSON i tabličnim podacima u AI tijekovima rada
 - **Izgraditi produkcijski RAG**: Kreirati skalabilne RAG aplikacije koristeći Chainlit
 - **Povezati lokalno s oblakom**: Razumjeti migracijske putove od Foundry Local do Azure AI Foundry
@@ -27,7 +27,7 @@ Na kraju ove sesije, moći ćete:
 
 - Završena Sesija 1 (postavljanje Foundry Local)
 - Osnovno razumijevanje vektorskih baza podataka i ugrađivanja
-- Iskustvo s Python programiranjem
+- Iskustvo programiranja u Pythonu
 - Poznavanje koncepata obrade dokumenata
 
 ### Brzi početak za više platformi (Windows i macOS)
@@ -54,7 +54,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Provjera: Provjera okruženja Foundry Local
+## Validacija: Provjera okruženja Foundry Local
 
 Prije početka demonstracija, provjerite svoje lokalno okruženje:
 
@@ -217,7 +217,7 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### 2. Integracija tabličnih podataka s upitima (CSV pitanja i odgovori) (10 minuta)
+### 2. Integracija tabličnih podataka s upitima (CSV Q&A) (10 minuta)
 
 #### Korak 2.1: Integracija CSV podataka
 
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -433,7 +434,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### Korak 2.2: Testiranje CSV sustava za pitanja i odgovore
+#### Korak 2.2: Testiranje CSV Q&A sustava
 
 ```powershell
 # Run the CSV Q&A demo
@@ -443,7 +444,7 @@ python samples/02-rag-solutions/csv_qa_system.py
 
 ### 3. Početni projekt: Prilagodba 02-grounding-data (5 minuta)
 
-#### Korak 3.1: Poboljšani sustav RAG za dokumente
+#### Korak 3.1: Poboljšani dokumentni RAG sustav
 
 Kreirajte `samples/02-rag-solutions/document_rag.py`:
 
@@ -663,7 +664,7 @@ if __name__ == "__main__":
 
 ### 4. Prikaz migracijskog puta od CLI do Azure (5 minuta)
 
-#### Korak 4.1: Pregled strategije migracije
+#### Korak 4.1: Pregled migracijske strategije
 
 Kreirajte `samples/02-rag-solutions/migration_guide.py`:
 
@@ -888,7 +889,7 @@ python samples/02-rag-solutions/migration_guide.py
 
 ### 2. Integracija strukturiranih podataka
 
-- **Obrada CSV-a**: Integracija Pandas biblioteke s AI modelima
+- **Obrada CSV-a**: Integracija Pandas s AI modelima
 - **Statistička analiza**: Automatizirano sažimanje podataka
 - **Stvaranje konteksta**: Dinamičko generiranje konteksta na temelju upita
 - **Podrška za više formata**: JSON, CSV i tablični podaci
@@ -898,13 +899,13 @@ python samples/02-rag-solutions/migration_guide.py
 - **Vektorsko pretraživanje**: TF-IDF i kosinusna sličnost
 - **Dohvaćanje dokumenata**: Ocjenjivanje relevantnosti i rangiranje
 - **Kombinacija konteksta**: Sinteza više dokumenata
-- **Generiranje odgovora**: Stvaranje odgovora temeljenog na kontekstu
+- **Generiranje odgovora**: Kreiranje odgovora temeljenih na kontekstu
 
 ### 4. Strategije migracije u oblak
 
 - **Jedinstveni API-ji**: Jedinstvena baza koda za lokalno i oblak
 - **Apstrakcija okruženja**: Implementacija vođena konfiguracijom
-- **Razvojni tijek rada**: Lokalno → testno okruženje → produkcija
+- **Razvojni tijek rada**: Lokalno → Staging → Produkcija
 - **Optimizacija troškova**: Lokalni razvoj, produkcija u oblaku
 
 ## Razmatranja za produkciju
@@ -957,25 +958,25 @@ metrics = {
 
 Nakon završetka ove sesije:
 
-1. **Istražite Sesiju 3**: Modeli otvorenog koda u Foundry Local
-2. **Izgradite produkcijski RAG**: Implementirajte s Chainlit (Primjer 04)
+1. **Istražite Sesiju 3**: Open-Source modeli u Foundry Local
+2. **Izgradite produkcijski RAG**: Implementirajte s Chainlit (Sample 04)
 3. **Napredno vektorsko pretraživanje**: Integrirajte s Chroma ili Pinecone
 4. **Migracija u oblak**: Implementirajte na Azure AI Foundry
-5. **Procijenite kvalitetu RAG-a**: Pokrenite `cd Workkshop/samples;python -m session02.rag_eval_ragas` za mjerenje relevantnosti odgovora, vjerodostojnosti i preciznosti konteksta koristeći ragas
+5. **Procijenite kvalitetu RAG-a**: Pokrenite `cd Workshop/samples;python -m session02.rag_eval_ragas` za mjerenje relevantnosti odgovora, vjerodostojnosti i preciznosti konteksta koristeći ragas
 
 ### Opcionalna poboljšanja
 
 | Kategorija | Poboljšanje | Razlog | Smjer |
 |------------|-------------|--------|-------|
-| Dohvaćanje | Zamijenite TF-IDF vektorskom bazom (FAISS / Chroma) | Bolji semantički dohvat i skalabilnost | Podijelite dokumente (500–800 znakova), ugradite, spremite indeks |
-| Hibridni indeks | Dvostruko semantičko + filtriranje ključnih riječi | Poboljšava preciznost za numeričke / kodne upite | Filtrirajte prema ključnim riječima, zatim rangirajte prema kosinusnoj sličnosti |
-| Ugrađivanja | Procijenite više modela ugrađivanja | Optimizirajte relevantnost i brzinu | A/B: MiniLM vs E5-small vs lokalno hostirani koder |
+| Dohvaćanje | Zamijenite TF-IDF vektorskom bazom (FAISS / Chroma) | Bolji semantički podsjetnik i skalabilnost | Podijelite dokumente (500–800 znakova), ugradite, spremite indeks |
+| Hibridni indeks | Dvostruko semantičko + filtriranje ključnih riječi | Poboljšava preciznost za numeričke / kodne upite | Filtrirajte po ključnim riječima, zatim rangirajte prema kosinusnoj sličnosti |
+| Ugrađivanja | Procijenite više modela ugrađivanja | Optimizirajte relevantnost naspram brzine | A/B: MiniLM vs E5-small vs lokalno hostirani koder |
 | Predmemoriranje | Predmemorirajte ugrađivanja i rezultate dohvaćanja | Smanjite latenciju ponovljenih upita | Jednostavno na disku pickle / sqlite s hash ključem |
-| Evaluacija | Proširite ragas dataset | Statistički značajna kvaliteta | Kurirajte 50–100 Q/A + kontekste; stratificirajte po temama |
+| Evaluacija | Proširite ragas dataset | Statistički značajna kvaliteta | Kurirajte 50–100 Q/A + konteksta; stratificirajte po temi |
 | Metrike | Pratite vrijeme dohvaćanja i generiranja | Profiliranje performansi | Zabilježite `retrieval_ms`, `gen_ms`, `tokens` po pozivu |
 | Sigurnosne mjere | Dodajte fallback za halucinacije | Sigurniji odgovori | Ako vjerodostojnost < prag → odgovor: "Nedovoljan kontekst." |
-| Fallback | Kaskadno lokalno → Azure model | Hibridno poboljšanje kvalitete | Na niskoj sigurnosti preusmjerite na oblak putem istog OpenAI API-ja |
-| Determinizam | Stabilna usporedba | Ponovljivi eval setovi | Fiksirajte seed, `temperature=0`, onemogućite nasumičnost uzorkovanja |
+| Fallback | Kaskadno lokalno → Azure model | Hibridno poboljšanje kvalitete | Na niskom povjerenju preusmjerite na oblak putem istog OpenAI API-ja |
+| Determinizam | Stabilni usporedni testovi | Ponovljivi eval setovi | Fiksirajte seed, `temperature=0`, onemogućite nasumičnost uzorkovanja |
 | Praćenje | Spremite povijest evaluacijskih pokretanja | Otkrivanje regresije | Dodajte JSON linije s vremenskom oznakom + metrikama promjena |
 
 #### Primjer: Dodavanje vremena dohvaćanja
@@ -1016,7 +1017,7 @@ Za trajno spremanje na disku koristite `faiss.write_index(index, "kb.index")`.
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Azure AI Foundry RAG Patterns](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
 - [Vodič za oblikovanje upita](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
-- [Ragas dokumentacija za evaluaciju](https://docs.ragas.io)
+- [Ragas Evaluacijska Dokumentacija](https://docs.ragas.io)
 
 ### Primjeri koda
 - [Modul08 Primjer 04](./samples/04/README.md) - Chainlit RAG aplikacija
@@ -1026,17 +1027,17 @@ Za trajno spremanje na disku koristite `faiss.write_index(index, "kb.index")`.
 
 **Trajanje sesije**: 30 minuta praktičnog rada + 15 minuta pitanja i odgovora  
 **Razina težine**: Srednja  
-**Preduvjeti**: Završena Sesija 1, osnovno znanje Python-a  
+**Preduvjeti**: Završena Sesija 1, Osnovno znanje Pythona  
 
 ## Primjer scenarija i mapiranje radionice
 
-| Skripta / Bilježnica radionice | Scenarij | Cilj | Osnovni dataset / Izvor | Primjer pitanja |
+| Skripta radionice / Bilježnica | Scenarij | Cilj | Osnovni dataset / Izvor | Primjer pitanja |
 |--------------------------------|----------|------|--------------------------|-----------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Interna baza znanja za podršku odgovara na pitanja o privatnosti i performansama | Minimalni RAG u memoriji s ugrađivanjima | `DOCS` lista u skripti (5 kratkih odlomaka) | Zašto koristiti RAG s lokalnim inferencijama? |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Interna baza znanja za podršku odgovara na pitanja o privatnosti + performansama | Minimalni RAG u memoriji s ugrađivanjima | `DOCS` lista u skripti (5 kratkih odlomaka) | Zašto koristiti RAG s lokalnim inferencijama? |
 | `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analitičar kvalitete uspostavlja osnovne metrike vjerodostojnosti dohvaćanja | Izračunajte ragas metrike na malom sintetičkom datasetu | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` nizovi | Koja je prednost lokalne inferencije? |
-| `prompt_engineering.py` (napredno) | SME za domenu oblikuje utemeljene upite za više vertikala | Usporedite sistemske upite za domenu i utjecaj tokena | Ugrađeni `contexts` dict | Kako Foundry Local upravlja predmemoriranjem modela? |
+| `prompt_engineering.py` (napredno) | SME za domenu kreira utemeljene upite za više vertikala | Usporedite sistemske upite za domenu i utjecaj tokena | Inline `contexts` dict | Kako Foundry Local upravlja predmemoriranjem modela? |
 | `csv_qa_system.py` | Operacije prodaje istražuju interaktivnu analitiku nad izvozima | Sažmite i postavite upite na malom uzorku prodaje | Generirani `sample_sales_data.csv` (10 redaka) | Koji proizvod ima najveći prosječni iznos prodaje? |
-| `document_rag.py` | Tim proizvoda istražuje RAG za interne wiki dokumente | Dohvatite + citirajte relevantne dokumente | `create_sample_knowledge_base()` lista | Koje su prednosti Edge AI-a? |
+| `document_rag.py` | Proizvodni tim istražuje dokumentni RAG za internu wiki | Dohvatite + citirajte relevantne dokumente | `create_sample_knowledge_base()` lista | Koje su prednosti Edge AI-a? |
 | `migration_guide.py` | Arhitekt priprema plan migracije u oblak | Demonstrirajte paritet lokalnog→Azure API-ja | Statički testni upiti | Objasnite prednosti Edge AI-a u 2–3 rečenice. |
 
 ### Snippets dataset-a
@@ -1062,12 +1063,14 @@ GROUND_TRUTH = [
 
 
 ### Narativ scenarija
-Grupa za podršku inženjeringa želi brzi prototip za odgovaranje na interna često postavljana pitanja bez izlaganja podataka o klijentima vanjskim sustavima. Artefakti Sesije 2 napreduju od minimalnog privremenog RAG-a (bez trajnog spremanja) → strukturirani CSV Q&A → dohvaćanje dokumenata s citiranjem → objektivna kvalitativna evaluacija (ragas) → strategija migracije spremna za Azure testno okruženje.
+Grupa za podršku inženjeringa želi brzi prototip za odgovaranje na interna često postavljana pitanja bez izlaganja podataka o klijentima vanjskim sustavima. Artefakti Sesije 2 napreduju od minimalnog prolaznog RAG-a (bez trajnosti) → strukturirani CSV Q&A → dohvaćanje dokumenata s citiranjem → objektivna kvalitativna evaluacija (ragas) → migracijska strategija spremna za Azure staging.
 
 ### Putovi proširenja
-Koristite tablicu Opcionalna poboljšanja za razvoj: zamijenite TF-IDF s FAISS/Chroma, proširite evaluacijski korpus (50–100 Q/A), dodajte eskalaciju na veći model kada vjerodostojnost < prag.
+Koristite tablicu opcionalnih poboljšanja za razvoj: zamijenite TF‑IDF s FAISS/Chroma, proširite korpus evaluacije (50–100 Q/A), dodajte eskalaciju fallback-a na veći model kada vjerodostojnost < prag.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne odgovaramo za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

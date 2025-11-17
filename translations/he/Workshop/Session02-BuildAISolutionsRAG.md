@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T22:28:11+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T19:06:18+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "he"
 }
@@ -11,26 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## תקציר
 
-חקור כיצד לבנות תהליכי עבודה מעשיים עם GenAI באמצעות Foundry Local ו-Azure AI Foundry. למד הנדסת פרומפט מתקדמת, שלב נתונים מובנים, ונהל משימות עם צינורות עבודה שחוזרים על עצמם. למרות שהמיקוד הוא ב-Retrieval-Augmented Generation (RAG) לשאלות ותשובות על מסמכים ונתונים, הדפוסים מתאימים לעיצוב פתרונות GenAI רחבים יותר.
+למדו כיצד לבנות תהליכי עבודה של GenAI באמצעות Foundry Local ו-Azure AI Foundry. גלו הנדסת פרומפט מתקדמת, שלבו נתונים מובנים, וארגנו משימות עם צינורות עבודה שחוזרים על עצמם. למרות שהמיקוד הוא ב-Retrieval-Augmented Generation (RAG) לשאלות ותשובות על מסמכים ונתונים, הדפוסים מתאימים לעיצוב פתרונות GenAI רחבים יותר.
 
 ## מטרות למידה
 
-בסיום המפגש, תוכל:
+בסיום המפגש, תוכלו:
 
 - **לשלוט בהנדסת פרומפט**: לעצב פרומפטים מערכתיים יעילים ואסטרטגיות עיגון
 - **ליישם דפוסי RAG**: לבנות מערכות שאלות ותשובות מבוססות מסמכים עם חיפוש וקטורי
 - **לשלב נתונים מובנים**: לעבוד עם נתוני CSV, JSON וטבלאות בתהליכי AI
-- **לבנות RAG בייצור**: ליצור יישומי RAG ניתנים להרחבה עם Chainlit
-- **לחבר בין מקומי לענן**: להבין את מסלולי ההגירה מ-Foundry Local ל-Azure AI Foundry
+- **לבנות RAG לייצור**: ליצור יישומי RAG ניתנים להרחבה עם Chainlit
+- **לחבר בין מקומי לענן**: להבין מסלולי מעבר מ-Foundry Local ל-Azure AI Foundry
 
-## דרישות מקדימות
+## דרישות מוקדמות
 
-- סיום מפגש 1 (הגדרת Foundry Local)
-- הבנה בסיסית של מסדי נתונים וקטוריים ו-embeddings
+- השלמת מפגש 1 (הגדרת Foundry Local)
+- הבנה בסיסית של מסדי נתונים וקטוריים והטבעות
 - ניסיון בתכנות Python
 - היכרות עם מושגים של עיבוד מסמכים
 
-### התחלה מהירה בסביבה חוצה פלטפורמות (Windows & macOS)
+### התחלה מהירה בסביבה חוצה פלטפורמות (Windows ו-macOS)
 
 Windows PowerShell:
 ```powershell
@@ -48,7 +48,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-אם קבצי הבינארי של Foundry Local עבור macOS אינם זמינים בסביבתך, הפעל את השירות ב-VM או מיכל Windows והגדר:
+אם בינארי Foundry Local עבור macOS אינו זמין בסביבתכם, הפעילו את השירות ב-Windows VM או קונטיינר והגדירו:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -56,7 +56,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## אימות: בדיקת סביבת Foundry Local
 
-לפני תחילת ההדגמות, יש לאמת את הסביבה המקומית:
+לפני תחילת הדגמות, בדקו את הסביבה המקומית שלכם:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -65,7 +65,7 @@ foundry model run phi-4-mini   # Start baseline SLM
 curl http://localhost:5273/v1/models  # Validate API (should list running model)
 ```
 
-אם הפקודה האחרונה נכשלת, הפעל (או הפעל מחדש) את השירות: `foundry service start`.
+אם הפקודה האחרונה נכשלת, התחילו (או הפעילו מחדש) את השירות: `foundry service start`.
 
 ## זרימת הדגמה (30 דקות)
 
@@ -73,7 +73,7 @@ curl http://localhost:5273/v1/models  # Validate API (should list running model)
 
 #### שלב 1.1: הנדסת פרומפט מתקדמת
 
-צור `samples/02-rag-solutions/prompt_engineering.py`:
+צרו `samples/02-rag-solutions/prompt_engineering.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -217,11 +217,11 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### 2. שילוב נתונים טבלאיים עם פרומפטים (שאלות ותשובות על CSV) (10 דקות)
+### 2. שילוב נתונים טבלאיים עם פרומפטים (שאלות ותשובות CSV) (10 דקות)
 
 #### שלב 2.1: שילוב נתוני CSV
 
-צור `samples/02-rag-solutions/csv_qa_system.py`:
+צרו `samples/02-rag-solutions/csv_qa_system.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -433,7 +434,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### שלב 2.2: בדיקת מערכת שאלות ותשובות על CSV
+#### שלב 2.2: בדיקת מערכת שאלות ותשובות CSV
 
 ```powershell
 # Run the CSV Q&A demo
@@ -445,7 +446,7 @@ python samples/02-rag-solutions/csv_qa_system.py
 
 #### שלב 3.1: מערכת RAG מסמכים משופרת
 
-צור `samples/02-rag-solutions/document_rag.py`:
+צרו `samples/02-rag-solutions/document_rag.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -661,11 +662,11 @@ if __name__ == "__main__":
 ```
 
 
-### 4. הצגת מסלול הגירה מ-CLI ל-Azure (5 דקות)
+### 4. הצגת מסלול מעבר CLI לענן (5 דקות)
 
-#### שלב 4.1: סקירת אסטרטגיית הגירה
+#### שלב 4.1: סקירת אסטרטגיית מעבר
 
-צור `samples/02-rag-solutions/migration_guide.py`:
+צרו `samples/02-rag-solutions/migration_guide.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -869,7 +870,7 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-#### שלב 4.2: בדיקת דפוסי הגירה
+#### שלב 4.2: בדיקת דפוסי מעבר
 
 ```powershell
 # Run the migration demo
@@ -888,28 +889,28 @@ python samples/02-rag-solutions/migration_guide.py
 
 ### 2. שילוב נתונים מובנים
 
-- **עיבוד CSV**: שילוב Pandas עם מודלים של AI
+- **עיבוד CSV**: שילוב Pandas עם מודלי AI
 - **ניתוח סטטיסטי**: סיכום נתונים אוטומטי
 - **יצירת הקשר**: יצירת הקשר דינמית בהתבסס על שאילתות
-- **תמיכה בפורמטים מרובים**: JSON, CSV ונתונים טבלאיים
+- **תמיכה רב-פורמטית**: JSON, CSV ונתונים טבלאיים
 
 ### 3. דפוסי יישום RAG
 
 - **חיפוש וקטורי**: TF-IDF ודמיון קוסינוס
 - **שליפת מסמכים**: ניקוד ורלוונטיות
-- **שילוב הקשר**: סינתזה של מסמכים מרובים
-- **יצירת תשובות**: יצירת תשובות מבוססות הקשר
+- **שילוב הקשר**: סינתזה רב-מסמכית
+- **יצירת תשובות**: יצירת תשובות מעוגנות
 
-### 4. אסטרטגיות הגירה לענן
+### 4. אסטרטגיות מעבר לענן
 
-- **ממשקי API מאוחדים**: בסיס קוד יחיד למקומי ולענן
-- **הפשטת סביבה**: פריסה מונחית תצורה
+- **API מאוחד**: בסיס קוד יחיד למקומי ולענן
+- **הפשטת סביבה**: פריסה מונעת תצורה
 - **זרימת עבודה לפיתוח**: מקומי → שלב ביניים → ייצור
-- **אופטימיזציה עלויות**: פיתוח מקומי, ייצור בענן
+- **אופטימיזציית עלויות**: פיתוח מקומי, ייצור בענן
 
 ## שיקולים לייצור
 
-### 1. אופטימיזציה ביצועים
+### 1. אופטימיזציית ביצועים
 
 ```python
 # Optimize for production RAG
@@ -955,30 +956,30 @@ metrics = {
 
 ## צעדים הבאים
 
-לאחר סיום המפגש:
+לאחר השלמת המפגש:
 
-1. **חקור את מפגש 3**: מודלים בקוד פתוח ב-Foundry Local
-2. **בנה RAG בייצור**: יישם עם Chainlit (דוגמה 04)
-3. **חיפוש וקטורי מתקדם**: שלב עם Chroma או Pinecone
-4. **הגירה לענן**: פרוס ל-Azure AI Foundry
-5. **הערך איכות RAG**: הרץ `cd Workkshop/samples;python -m session02.rag_eval_ragas` למדידת answer_relevancy, faithfulness, ו-context_precision באמצעות ragas
+1. **חקירת מפגש 3**: מודלים בקוד פתוח ב-Foundry Local
+2. **בניית RAG לייצור**: יישום עם Chainlit (דוגמה 04)
+3. **חיפוש וקטורי מתקדם**: שילוב עם Chroma או Pinecone
+4. **מעבר לענן**: פריסה ל-Azure AI Foundry
+5. **הערכת איכות RAG**: הריצו `cd Workshop/samples;python -m session02.rag_eval_ragas` למדידת רלוונטיות תשובה, נאמנות ודיוק הקשר באמצעות ragas
 
 ### שיפורים אופציונליים
 
 | קטגוריה | שיפור | רציונל | כיוון |
 |----------|-------------|-----------|-----------|
-| שליפה | החלף TF-IDF באחסון וקטורי (FAISS / Chroma) | זיכרון סמנטי טוב יותר ויכולת הרחבה | חלק מסמכים (500–800 תווים), הטמע, שמור אינדקס |
-| אינדקס היברידי | סינון סמנטי + מילות מפתח | משפר דיוק בשאילתות מספריות / קוד | סנן לפי מילת מפתח ואז דרג לפי דמיון קוסינוס |
-| Embeddings | הערך מספר מודלי embedding | אופטימיזציה רלוונטיות מול מהירות | A/B: MiniLM מול E5-small מול מקודד מקומי |
-| מטמון | מטמון embeddings ותוצאות שליפה | הפחתת זמן תגובה לשאילתות חוזרות | מטמון פשוט בדיסק / sqlite עם מפתח hash |
-| הערכה | הרחב את dataset של ragas | איכות סטטיסטית משמעותית | אוסף 50–100 שאלות/תשובות + הקשרים; חלוקה לפי נושא |
-| מדדים | עקוב אחר זמני שליפה ויצירה | פרופיל ביצועים | תפוס `retrieval_ms`, `gen_ms`, `tokens` לכל קריאה |
-| מסילות בטיחות | הוסף fallback להזיות | תשובות בטוחות יותר | אם faithfulness < סף → תשובה: "אין הקשר מספיק." |
-| fallback | מעבר ממודל מקומי → מודל Azure | שיפור איכות היברידית | על ביטחון נמוך ניתוב לענן דרך אותו API של OpenAI |
-| דטרמיניזם | השוואות יציבות | סטים הערכה חוזרים | קבע seed, `temperature=0`, בטל אקראיות של דוגם |
-| ניטור | שמור היסטוריית הערכה | זיהוי רגרסיות | הוסף שורות JSON עם חותמת זמן + שינויים במדדים |
+| שליפה | החלפת TF-IDF באחסון וקטורי (FAISS / Chroma) | זיכרון סמנטי טוב יותר ויכולת הרחבה | חלוקת מסמכים (500–800 תווים), הטבעה, שמירת אינדקס |
+| אינדקס היברידי | סינון סמנטי + מילות מפתח | שיפור דיוק בשאילתות מספריות / קוד | סינון לפי מילת מפתח ואז דירוג לפי דמיון קוסינוס |
+| הטבעות | הערכת מספר מודלי הטבעה | אופטימיזציית רלוונטיות מול מהירות | A/B: MiniLM מול E5-small מול מקודד מקומי |
+| מטמון | מטמון הטבעות ותוצאות שליפה | הפחתת זמן תגובה לשאילתות חוזרות | מטמון פשוט בדיסק / sqlite עם מפתח hash |
+| הערכה | הרחבת מאגר ragas | איכות סטטיסטית משמעותית | אוסף 50–100 שאלות/תשובות + הקשרים; חלוקה לפי נושא |
+| מדדים | מעקב אחר זמני שליפה ויצירה | פרופיל ביצועים | לכידת `retrieval_ms`, `gen_ms`, `tokens` לכל קריאה |
+| מסילות בטיחות | הוספת מנגנון נפילה להזיות | תשובות בטוחות יותר | אם נאמנות < סף → תשובה: "הקשר לא מספיק." |
+| נפילה | מעבר מקומי → מודל Azure | שיפור איכות היברידית | בביטחון נמוך מעבר לענן דרך אותו API של OpenAI |
+| דטרמיניזם | הרצות השוואה יציבות | מערכי הערכה חוזרים | תיקון seed, `temperature=0`, ביטול אקראיות דוגם |
+| ניטור | שמירת היסטוריית הרצות הערכה | זיהוי רגרסיות | הוספת שורות JSON עם חותמת זמן + שינויים במדדים |
 
-#### דוגמה: הוספת זמן שליפה
+#### דוגמה: הוספת תזמון שליפה
 
 ```python
 import time
@@ -994,12 +995,12 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 
 #### הרחבת הערכה עם ragas
 
-1. הרכב JSONL עם שדות: `question`, `answer`, `contexts`, `ground_truths` (רשימה)
-2. המרה ל-`Dataset.from_list(list_of_dicts)`
-3. הרץ `evaluate(dataset, metrics=[...])`
-4. שמור מדדים (CSV/JSON) לניתוח מגמות.
+1. הרכיבו JSONL עם שדות: `question`, `answer`, `contexts`, `ground_truths` (רשימה)
+2. המירו ל-`Dataset.from_list(list_of_dicts)`
+3. הריצו `evaluate(dataset, metrics=[...])`
+4. שמרו מדדים (CSV/JSON) לניתוח מגמות.
 
-#### התחלה מהירה עם אחסון וקטורי (FAISS)
+#### התחלה מהירה לאחסון וקטורי (FAISS)
 
 ```python
 import faiss, numpy as np
@@ -1008,36 +1009,36 @@ index.add(embeddings)  # embeddings = np.array([...]) normalized
 D, I = index.search(query_vec, k)
 ```
 
-לשמירת דיסק השתמש ב-`faiss.write_index(index, "kb.index")`.
+לשמירת דיסק השתמשו ב-`faiss.write_index(index, "kb.index")`.
 
 ## משאבים נוספים
 
 ### תיעוד
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Azure AI Foundry RAG Patterns](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [מדריך הנדסת פרומפטים](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [מדריך הנדסת פרומפט מתקדמת](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
 - [תיעוד הערכת Ragas](https://docs.ragas.io)
 
 ### קוד לדוגמה
 - [דוגמה 04 מודול08](./samples/04/README.md) - יישום RAG עם Chainlit
-- [מערכת רב-סוכנים מתקדמת](./samples/09/README.md) - דפוסי תיאום סוכנים
+- [מערכת סוכנים מתקדמת](./samples/09/README.md) - דפוסי תיאום סוכנים
 
 ---
 
-**משך המפגש**: 30 דקות תרגול + 15 דקות שאלות ותשובות  
-**רמת קושי**: בינוני  
-**דרישות מקדימות**: סיום מפגש 1, ידע בסיסי ב-Python  
+**משך המפגש**: 30 דקות עבודה מעשית + 15 דקות שאלות ותשובות  
+**רמת קושי**: בינונית  
+**דרישות מוקדמות**: השלמת מפגש 1, ידע בסיסי ב-Python  
 
 ## תרחיש לדוגמה ומיפוי סדנה
 
-| תסריט סדנה / מחברת | תרחיש | מטרה | מאגר נתונים / מקור מרכזי | שאלה לדוגמה |
-|---------------------|--------|-------|--------------------------|-------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | בסיס ידע לתמיכה פנימית במענה לשאלות נפוצות על פרטיות וביצועים | RAG מינימלי בזיכרון עם embeddings | רשימת `DOCS` בסקריפט (5 קטעים קצרים) | למה להשתמש ב-RAG עם הסקה מקומית? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | אנליסט איכות שמקים מדדי בסיס לאמינות שליפה | חישוב מדדי ragas על מאגר נתונים סינתטי קטן | מערכים `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | מה היתרון של הסקה מקומית? |
-| `prompt_engineering.py` (מתקדם) | מומחה תחום שמנסח פרומפטים מבוססי הקשר למגוון תחומים | השוואת פרומפטים מערכתיים והשפעת טוקנים | מילון `contexts` מובנה | איך Foundry Local מתמודד עם מטמון מודלים? |
-| `csv_qa_system.py` | צוות מכירות שחוקר אנליטיקה אינטראקטיבית על ייצוא נתונים | סיכום ושאילת חתך מכירות קטן | `sample_sales_data.csv` שנוצר (10 שורות) | איזה מוצר בעל ממוצע מכירות הגבוה ביותר? |
-| `document_rag.py` | צוות מוצר שחוקר RAG מסמכים לויקי פנימי | שליפה + ציטוט מסמכים רלוונטיים | רשימת `create_sample_knowledge_base()` | מה היתרונות של Edge AI? |
-| `migration_guide.py` | ארכיטקט שמכין תוכנית הגירה לענן | הדגמת התאמה בין API מקומי ל-Azure | פרומפטים סטטיים לבדיקה | הסבר את היתרונות של Edge AI ב-2–3 משפטים. |
+| סקריפט / מחברת סדנה | תרחיש | מטרה | מאגר נתונים / מקור מרכזי | שאלה לדוגמה |
+|----------------------------|----------|------|-----------------------|------------------|
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | בסיס ידע תמיכה פנימי העונה על שאלות פרטיות + ביצועים | RAG מינימלי בזיכרון עם הטבעות | רשימת `DOCS` בסקריפט (5 קטעים קצרים) | למה להשתמש ב-RAG עם הסקה מקומית? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | אנליסט איכות המקים מדדי נאמנות שליפה בסיסיים | חישוב מדדי ragas על מאגר סינתטי קטן | מערכים `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | מה היתרון של הסקה מקומית? |
+| `prompt_engineering.py` (מתקדם) | מומחה תחום המנסח פרומפטים מעוגנים למספר תחומים | השוואת פרומפטים מערכתיים לתחום והשפעת טוקנים | מילון `contexts` מוטמע | איך Foundry Local מטפל במטמון מודלים? |
+| `csv_qa_system.py` | צוות מכירות החוקר אנליטיקה אינטראקטיבית על ייצוא | סיכום ושאילת פרוסת מכירות קטנה | `sample_sales_data.csv` שנוצר (10 שורות) | איזה מוצר בעל ממוצע מכירות הגבוה ביותר? |
+| `document_rag.py` | צוות מוצר החוקר RAG מסמכים לויקי פנימי | שליפה + ציטוט מסמכים רלוונטיים | רשימת `create_sample_knowledge_base()` | מה היתרונות של Edge AI? |
+| `migration_guide.py` | ארכיטקט המכין תוכנית מעבר לענן | הדגמת התאמה בין API מקומי ל-Azure | פרומפטים סטטיים לבדיקה | הסבר את היתרונות של Edge AI ב-2–3 משפטים. |
 
 ### קטעי מאגר נתונים
 רשימת מסמכים בצינור RAG:
@@ -1051,7 +1052,7 @@ DOCS = [
 ]
 ```
 
-זוגות אמת להערכת Ragas:
+זוגות אמת להערכת ragas:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1062,12 +1063,14 @@ GROUND_TRUTH = [
 
 
 ### נרטיב תרחיש
-קבוצת מהנדסי התמיכה רוצה אבטיפוס מהיר למענה על שאלות נפוצות פנימיות מבלי לחשוף נתוני לקוחות חיצונית. המפגש השני מתקדם מ-RAG מינימלי זמני (ללא שימור) → שאלות ותשובות על CSV מובנה → שליפת מסמכים עם ציטוט → הערכת איכות אובייקטיבית (ragas) → אסטרטגיית הגירה מוכנה לשלב ביניים ב-Azure.
+קבוצת מהנדסי התמיכה רוצה אבטיפוס מהיר שיענה על שאלות נפוצות פנימיות מבלי לחשוף נתוני לקוחות חיצוניים. המפגש השני מתקדם מ-RAG מינימלי זמני (ללא התמדה) → שאלות ותשובות CSV מובנות → שליפת מסמכים עם ציטוט → הערכת איכות אובייקטיבית (ragas) → אסטרטגיית מעבר מוכנה לשלב ביניים ב-Azure.
 
 ### מסלולי הרחבה
-השתמש בטבלת השיפורים האופציונליים כדי להתפתח: החלף TF‑IDF ב-FAISS/Chroma, הגדל את מאגר ההערכה (50–100 שאלות/תשובות), הוסף הסלמה fallback למודל גדול יותר כאשר faithfulness < סף.
+השתמשו בטבלת השיפורים האופציונליים כדי להתפתח: החליפו TF-IDF ב-FAISS/Chroma, הגדילו את מאגר ההערכה (50–100 שאלות/תשובות), הוסיפו הסלמה למודל גדול יותר כאשר נאמנות < סף.
 
 ---
 
-**הצהרת אחריות**:  
-מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. אנו לא נושאים באחריות לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**כתב ויתור**:  
+מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. איננו אחראים לאי הבנות או פירושים שגויים הנובעים משימוש בתרגום זה.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T19:58:12+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T18:25:53+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "en"
 }
@@ -11,23 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstract
 
-Learn how to create actionable Generative AI workflows using Foundry Local and Azure AI Foundry. This session covers advanced prompt engineering, integrating structured data, and orchestrating tasks with reproducible pipelines. While the focus is on Retrieval-Augmented Generation (RAG) for document and data Q&A, the patterns can be applied to broader Generative AI solution designs.
+Learn how to create actionable GenAI workflows using Foundry Local and Azure AI Foundry. This session covers advanced prompt engineering, integrating structured data, and orchestrating tasks with reproducible pipelines. While the focus is on Retrieval-Augmented Generation (RAG) for document and data Q&A, the patterns can be applied to broader GenAI solution design.
 
 ## Learning Objectives
 
 By the end of this session, you will:
 
-- **Master Prompt Engineering**: Develop effective system prompts and grounding strategies
-- **Implement RAG Patterns**: Build document-based Q&A systems using vector search
-- **Integrate Structured Data**: Utilize CSV, JSON, and tabular data in AI workflows
-- **Build Production RAG**: Develop scalable RAG applications with Chainlit
-- **Bridge Local to Cloud**: Learn migration paths from Foundry Local to Azure AI Foundry
+- **Master Prompt Engineering**: Design effective system prompts and grounding strategies
+- **Implement RAG Patterns**: Build document-based Q&A systems with vector search
+- **Integrate Structured Data**: Work with CSV, JSON, and tabular data in AI workflows
+- **Build Production RAG**: Create scalable RAG applications with Chainlit
+- **Bridge Local to Cloud**: Understand migration paths from Foundry Local to Azure AI Foundry
 
 ## Prerequisites
 
 - Completion of Session 1 (Foundry Local setup)
-- Basic knowledge of vector databases and embeddings
-- Experience with Python programming
+- Basic understanding of vector databases and embeddings
+- Python programming experience
 - Familiarity with document processing concepts
 
 ### Cross-Platform Environment Quick Start (Windows & macOS)
@@ -56,7 +56,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Validation: Foundry Local Environment Check
 
-Before starting the demos, ensure your local environment is properly set up:
+Before starting the demos, validate your local environment:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -234,6 +234,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -884,31 +885,31 @@ python samples/02-rag-solutions/migration_guide.py
 
 ### 1. Advanced Prompt Engineering
 
-- **System Prompts**: Creating domain-specific expert personas
-- **Grounding Strategies**: Techniques for integrating context
-- **Temperature Control**: Balancing creativity and consistency
-- **Token Management**: Efficient use of context
+- **System Prompts**: Domain-specific expert personas
+- **Grounding Strategies**: Context integration techniques
+- **Temperature Control**: Balancing creativity vs consistency
+- **Token Management**: Efficient context usage
 
 ### 2. Structured Data Integration
 
-- **CSV Processing**: Using Pandas with AI models
-- **Statistical Analysis**: Automating data summarization
-- **Context Creation**: Generating dynamic context based on queries
-- **Multi-format Support**: Handling JSON, CSV, and tabular data
+- **CSV Processing**: Pandas integration with AI models
+- **Statistical Analysis**: Automated data summarization
+- **Context Creation**: Dynamic context generation based on queries
+- **Multi-format Support**: JSON, CSV, and tabular data
 
 ### 3. RAG Implementation Patterns
 
-- **Vector Search**: Using TF-IDF and cosine similarity
-- **Document Retrieval**: Scoring and ranking relevance
-- **Context Combination**: Synthesizing information from multiple documents
-- **Answer Generation**: Producing grounded responses
+- **Vector Search**: TF-IDF and cosine similarity
+- **Document Retrieval**: Relevance scoring and ranking
+- **Context Combination**: Multi-document synthesis
+- **Answer Generation**: Grounded response creation
 
 ### 4. Cloud Migration Strategies
 
-- **Unified APIs**: Maintaining a single codebase for local and cloud environments
-- **Environment Abstraction**: Deploying configurations across different setups
-- **Development Workflow**: Transitioning from local to staging to production
-- **Cost Optimization**: Developing locally and deploying in the cloud
+- **Unified APIs**: Single codebase for local and cloud
+- **Environment Abstraction**: Configuration-driven deployment
+- **Development Workflow**: Local → Staging → Production
+- **Cost Optimization**: Local development, cloud production
 
 ## Production Considerations
 
@@ -966,7 +967,7 @@ After completing this session:
 2. **Build Production RAG**: Implement with Chainlit (Sample 04)
 3. **Advanced Vector Search**: Integrate with Chroma or Pinecone
 4. **Cloud Migration**: Deploy to Azure AI Foundry
-5. **Evaluate RAG Quality**: Run `cd Workkshop/samples;python -m session02.rag_eval_ragas` to measure answer_relevancy, faithfulness, and context_precision using ragas
+5. **Evaluate RAG Quality**: Run `cd Workshop/samples;python -m session02.rag_eval_ragas` to measure answer_relevancy, faithfulness, and context_precision using ragas
 
 ### Optional Enhancements
 
@@ -1068,14 +1069,14 @@ GROUND_TRUTH = [
 
 
 ### Scenario Narrative
-
 The support engineering group wants a rapid prototype to answer internal FAQs without exposing customer data externally. Session 2 artifacts progress from a minimal ephemeral RAG (no persistence) → structured CSV Q&A → document retrieval with citation → objective quality evaluation (ragas) → a migration strategy ready for Azure staging.
 
 ### Expansion Paths
-
 Use the Optional Enhancements table to evolve: swap TF‑IDF for FAISS/Chroma, enlarge the evaluation corpus (50–100 Q/A), add fallback escalation to a larger model when faithfulness < threshold.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
