@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T21:24:49+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T18:48:43+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "pa"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## ਸਾਰ
 
-Foundry Local ਅਤੇ Azure AI Foundry ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਕਾਰਗਰ GenAI ਵਰਕਫਲੋ ਬਣਾਉਣ ਦੇ ਤਰੀਕੇ ਖੋਜੋ। ਉੱਚ-ਸਤਹ ਦੇ ਪ੍ਰੋਮਪਟ ਇੰਜੀਨੀਅਰਿੰਗ ਸਿੱਖੋ, ਸਟ੍ਰਕਚਰਡ ਡਾਟਾ ਨੂੰ ਇੰਟੀਗਰੇਟ ਕਰੋ, ਅਤੇ ਦੁਬਾਰਾ ਬਣਾਉਣ ਯੋਗ ਪਾਈਪਲਾਈਨ ਨਾਲ ਟਾਸਕਸ ਨੂੰ ਆਰਕੈਸਟ੍ਰੇਟ ਕਰੋ। ਜਦੋਂ ਕਿ ਦਸਤਾਵੇਜ਼ ਅਤੇ ਡਾਟਾ Q&A ਲਈ Retrieval-Augmented Generation (RAG) 'ਤੇ ਧਿਆਨ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ, ਇਹ ਪੈਟਰਨ ਵਿਆਪਕ GenAI ਹੱਲ ਡਿਜ਼ਾਈਨ ਲਈ ਜਨਰਲਾਈਜ਼ ਕੀਤੇ ਗਏ ਹਨ।
+Foundry Local ਅਤੇ Azure AI Foundry ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਕਾਰਗਰ GenAI ਵਰਕਫਲੋ ਬਣਾਉਣ ਦੇ ਤਰੀਕੇ ਖੋਜੋ। ਉੱਚ-ਸਤਹ ਦੇ ਪ੍ਰੋਮਪਟ ਇੰਜੀਨੀਅਰਿੰਗ ਸਿੱਖੋ, ਸੰਰਚਿਤ ਡਾਟਾ ਨੂੰ ਸ਼ਾਮਲ ਕਰੋ, ਅਤੇ ਦੁਹਰਾਏ ਜਾ ਸਕਣ ਵਾਲੇ ਪਾਈਪਲਾਈਨ ਨਾਲ ਕੰਮਾਂ ਨੂੰ ਸੰਗਠਿਤ ਕਰੋ। ਜਦੋਂ ਕਿ ਦਸਤਾਵੇਜ਼ ਅਤੇ ਡਾਟਾ Q&A ਲਈ Retrieval-Augmented Generation (RAG) 'ਤੇ ਧਿਆਨ ਦਿੱਤਾ ਗਿਆ ਹੈ, ਇਹ ਪੈਟਰਨ ਵਿਆਪਕ GenAI ਹੱਲ ਡਿਜ਼ਾਈਨ ਲਈ ਜਨਰਲਾਈਜ਼ ਕੀਤੇ ਜਾ ਸਕਦੇ ਹਨ।
 
 ## ਸਿੱਖਣ ਦੇ ਉਦੇਸ਼
 
@@ -19,15 +19,15 @@ Foundry Local ਅਤੇ Azure AI Foundry ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਕ
 
 - **ਪ੍ਰੋਮਪਟ ਇੰਜੀਨੀਅਰਿੰਗ ਵਿੱਚ ਮਾਹਰ ਹੋਵੋਗੇ**: ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਸਿਸਟਮ ਪ੍ਰੋਮਪਟ ਅਤੇ ਗ੍ਰਾਊਂਡਿੰਗ ਰਣਨੀਤੀਆਂ ਡਿਜ਼ਾਈਨ ਕਰੋ
 - **RAG ਪੈਟਰਨ ਲਾਗੂ ਕਰੋ**: ਵੈਕਟਰ ਖੋਜ ਨਾਲ ਦਸਤਾਵੇਜ਼-ਅਧਾਰਿਤ Q&A ਸਿਸਟਮ ਬਣਾਓ
-- **ਸਟ੍ਰਕਚਰਡ ਡਾਟਾ ਇੰਟੀਗਰੇਟ ਕਰੋ**: AI ਵਰਕਫਲੋਜ਼ ਵਿੱਚ CSV, JSON, ਅਤੇ ਟੈਬੂਲਰ ਡਾਟਾ ਨਾਲ ਕੰਮ ਕਰੋ
-- **ਪ੍ਰੋਡਕਸ਼ਨ RAG ਬਣਾਓ**: Chainlit ਨਾਲ ਸਕੇਲਯੋਗ RAG ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਓ
+- **ਸੰਰਚਿਤ ਡਾਟਾ ਸ਼ਾਮਲ ਕਰੋ**: AI ਵਰਕਫਲੋ ਵਿੱਚ CSV, JSON, ਅਤੇ ਟੇਬਲਰ ਡਾਟਾ ਨਾਲ ਕੰਮ ਕਰੋ
+- **ਪ੍ਰੋਡਕਸ਼ਨ RAG ਬਣਾਓ**: Chainlit ਨਾਲ ਸਕੇਲਬਲ RAG ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਓ
 - **ਲੋਕਲ ਤੋਂ ਕਲਾਉਡ ਤੱਕ ਪੂਲ ਬਣਾਓ**: Foundry Local ਤੋਂ Azure AI Foundry ਤੱਕ ਮਾਈਗ੍ਰੇਸ਼ਨ ਪਾਥ ਨੂੰ ਸਮਝੋ
 
 ## ਪੂਰਵ ਸ਼ਰਤਾਂ
 
-- ਸੈਸ਼ਨ 1 (Foundry Local ਸੈਟਅੱਪ) ਪੂਰਾ ਕੀਤਾ ਹੋਵੇ
-- ਵੈਕਟਰ ਡੇਟਾਬੇਸ ਅਤੇ ਐਮਬੈਡਿੰਗਸ ਦੀ ਬੁਨਿਆਦੀ ਸਮਝ
-- Python ਪ੍ਰੋਗਰਾਮਿੰਗ ਦਾ ਅਨੁਭਵ
+- ਸੈਸ਼ਨ 1 (Foundry Local ਸੈਟਅਪ) ਪੂਰਾ ਕੀਤਾ
+- ਵੈਕਟਰ ਡਾਟਾਬੇਸ ਅਤੇ ਐਮਬੈਡਿੰਗ ਦੀ ਬੁਨਿਆਦੀ ਸਮਝ
+- Python ਪ੍ਰੋਗਰਾਮਿੰਗ ਦਾ ਤਜਰਬਾ
 - ਦਸਤਾਵੇਜ਼ ਪ੍ਰੋਸੈਸਿੰਗ ਸੰਕਲਪਾਂ ਨਾਲ ਜਾਣੂ
 
 ### ਕ੍ਰਾਸ-ਪਲੇਟਫਾਰਮ ਵਾਤਾਵਰਣ ਕਵਿਕ ਸਟਾਰਟ (Windows & macOS)
@@ -39,7 +39,7 @@ py -m venv .venv
 pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
-
+  
 macOS / Linux:
 ```bash
 python3 -m venv .venv
@@ -47,16 +47,16 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
-
-ਜੇ Foundry Local macOS ਬਾਈਨਰੀਜ਼ ਤੁਹਾਡੇ ਵਾਤਾਵਰਣ ਵਿੱਚ ਉਪਲਬਧ ਨਹੀਂ ਹਨ, ਤਾਂ ਸੇਵਾ ਨੂੰ Windows VM ਜਾਂ ਕੰਟੇਨਰ 'ਤੇ ਚਲਾਓ ਅਤੇ ਸੈਟ ਕਰੋ:
+  
+ਜੇ Foundry Local macOS ਬਾਈਨਰੀ ਤੁਹਾਡੇ ਵਾਤਾਵਰਣ ਵਿੱਚ ਉਪਲਬਧ ਨਹੀਂ ਹਨ, ਤਾਂ ਸੇਵਾ ਨੂੰ Windows VM ਜਾਂ ਕੰਟੇਨਰ 'ਤੇ ਚਲਾਓ ਅਤੇ ਸੈਟ ਕਰੋ:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-
+  
 
 ## ਵੈਰੀਫਿਕੇਸ਼ਨ: Foundry Local ਵਾਤਾਵਰਣ ਚੈੱਕ
 
-ਡੈਮੋਜ਼ ਸ਼ੁਰੂ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, ਆਪਣੇ ਲੋਕਲ ਵਾਤਾਵਰਣ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ:
+ਡੈਮੋ ਸ਼ੁਰੂ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, ਆਪਣੇ ਲੋਕਲ ਵਾਤਾਵਰਣ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -64,8 +64,8 @@ foundry status                 # Service status
 foundry model run phi-4-mini   # Start baseline SLM
 curl http://localhost:5273/v1/models  # Validate API (should list running model)
 ```
-
-ਜੇਕਰ ਆਖਰੀ ਕਮਾਂਡ ਫੇਲ੍ਹ ਹੋ ਜਾਂਦੀ ਹੈ, ਤਾਂ ਸੇਵਾ ਸ਼ੁਰੂ ਕਰੋ (ਜਾਂ ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੋ): `foundry service start`।
+  
+ਜੇ ਆਖਰੀ ਕਮਾਂਡ ਫੇਲ੍ਹ ਹੋ ਜਾਂਦੀ ਹੈ, ਤਾਂ ਸੇਵਾ ਸ਼ੁਰੂ (ਜਾਂ ਦੁਬਾਰਾ ਸ਼ੁਰੂ) ਕਰੋ: `foundry service start`।
 
 ## ਡੈਮੋ ਫਲੋ (30 ਮਿੰਟ)
 
@@ -205,7 +205,7 @@ def demo_grounding_strategies():
 if __name__ == "__main__":
     demo_grounding_strategies()
 ```
-
+  
 #### ਕਦਮ 1.2: ਗ੍ਰਾਊਂਡਿੰਗ ਰਣਨੀਤੀਆਂ ਦੀ ਜਾਂਚ ਕਰੋ
 
 ```powershell
@@ -215,9 +215,9 @@ foundry model run phi-4-mini
 # Run the prompt engineering demo
 python samples/02-rag-solutions/prompt_engineering.py
 ```
+  
 
-
-### 2. ਪ੍ਰੋਮਪਟ ਨਾਲ ਟੈਬੂਲਰ ਡਾਟਾ ਇੰਟੀਗਰੇਟ ਕਰੋ (CSV Q&A) (10 ਮਿੰਟ)
+### 2. ਪ੍ਰੋਮਪਟ ਨਾਲ ਟੇਬਲਰ ਡਾਟਾ ਸ਼ਾਮਲ ਕਰੋ (CSV Q&A) (10 ਮਿੰਟ)
 
 #### ਕਦਮ 2.1: CSV ਡਾਟਾ ਇੰਟੀਗ੍ਰੇਸ਼ਨ
 
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -432,14 +433,14 @@ def demo_csv_qa():
 if __name__ == "__main__":
     demo_csv_qa()
 ```
-
+  
 #### ਕਦਮ 2.2: CSV Q&A ਸਿਸਟਮ ਦੀ ਜਾਂਚ ਕਰੋ
 
 ```powershell
 # Run the CSV Q&A demo
 python samples/02-rag-solutions/csv_qa_system.py
 ```
-
+  
 
 ### 3. ਸਟਾਰਟਰ ਪ੍ਰੋਜੈਕਟ: 02-grounding-data ਨੂੰ ਅਨੁਕੂਲ ਬਣਾਓ (5 ਮਿੰਟ)
 
@@ -659,11 +660,11 @@ def demo_document_rag():
 if __name__ == "__main__":
     demo_document_rag()
 ```
-
+  
 
 ### 4. CLI ਤੋਂ Azure ਮਾਈਗ੍ਰੇਸ਼ਨ ਪਾਥ ਦਿਖਾਓ (5 ਮਿੰਟ)
 
-#### ਕਦਮ 4.1: ਮਾਈਗ੍ਰੇਸ਼ਨ ਰਣਨੀਤੀ ਝਲਕ
+#### ਕਦਮ 4.1: ਮਾਈਗ੍ਰੇਸ਼ਨ ਰਣਨੀਤੀ ਦਾ ਝਲਕਾ
 
 `samples/02-rag-solutions/migration_guide.py` ਬਣਾਓ:
 
@@ -868,37 +869,37 @@ def demo_migration_patterns():
 if __name__ == "__main__":
     demo_migration_patterns()
 ```
-
+  
 #### ਕਦਮ 4.2: ਮਾਈਗ੍ਰੇਸ਼ਨ ਪੈਟਰਨ ਦੀ ਜਾਂਚ ਕਰੋ
 
 ```powershell
 # Run the migration demo
 python samples/02-rag-solutions/migration_guide.py
 ```
-
+  
 
 ## ਕਵਰ ਕੀਤੇ ਮੁੱਖ ਸੰਕਲਪ
 
 ### 1. ਉੱਚ-ਸਤਹ ਪ੍ਰੋਮਪਟ ਇੰਜੀਨੀਅਰਿੰਗ
 
-- **ਸਿਸਟਮ ਪ੍ਰੋਮਪਟ**: ਡੋਮੇਨ-ਵਿਸ਼ੇਸ਼ ਮਾਹਰ ਪੁਰਸਨਾਸ਼
+- **ਸਿਸਟਮ ਪ੍ਰੋਮਪਟ**: ਡੋਮੇਨ-ਵਿਸ਼ੇਸ਼ ਮਾਹਰ ਪੁਰਸਨਾਸ
 - **ਗ੍ਰਾਊਂਡਿੰਗ ਰਣਨੀਤੀਆਂ**: ਸੰਦਰਭ ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਤਕਨੀਕਾਂ
 - **ਟੈਂਪਰੇਚਰ ਕੰਟਰੋਲ**: ਰਚਨਾਤਮਕਤਾ ਵਿਰੁੱਧ ਸਥਿਰਤਾ ਦਾ ਸੰਤੁਲਨ
-- **ਟੋਕਨ ਮੈਨੇਜਮੈਂਟ**: ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਸੰਦਰਭ ਦੀ ਵਰਤੋਂ
+- **ਟੋਕਨ ਪ੍ਰਬੰਧਨ**: ਸੰਦਰਭ ਦੀ ਕੁਸ਼ਲ ਵਰਤੋਂ
 
-### 2. ਸਟ੍ਰਕਚਰਡ ਡਾਟਾ ਇੰਟੀਗ੍ਰੇਸ਼ਨ
+### 2. ਸੰਰਚਿਤ ਡਾਟਾ ਇੰਟੀਗ੍ਰੇਸ਼ਨ
 
-- **CSV ਪ੍ਰੋਸੈਸਿੰਗ**: Pandas ਨੂੰ AI ਮਾਡਲਾਂ ਨਾਲ ਇੰਟੀਗ੍ਰੇਟ ਕਰਨਾ
+- **CSV ਪ੍ਰੋਸੈਸਿੰਗ**: Pandas ਨੂੰ AI ਮਾਡਲ ਨਾਲ ਜੋੜਨਾ
 - **ਸੰਖਿਆਕੀ ਵਿਸ਼ਲੇਸ਼ਣ**: ਆਟੋਮੈਟਿਕ ਡਾਟਾ ਸੰਖੇਪਣ
-- **ਸੰਦਰਭ ਸਿਰਜਣਾ**: ਪ੍ਰਸ਼ਨਾਂ ਦੇ ਅਧਾਰ 'ਤੇ ਗਤੀਸ਼ੀਲ ਸੰਦਰਭ ਸਿਰਜਣਾ
-- **ਮਲਟੀ-ਫਾਰਮੈਟ ਸਪੋਰਟ**: JSON, CSV, ਅਤੇ ਟੈਬੂਲਰ ਡਾਟਾ
+- **ਸੰਦਰਭ ਰਚਨਾ**: ਪ੍ਰਸ਼ਨਾਂ ਦੇ ਅਧਾਰ 'ਤੇ ਗਤੀਸ਼ੀਲ ਸੰਦਰਭ ਰਚਨਾ
+- **ਮਲਟੀ-ਫਾਰਮੈਟ ਸਪੋਰਟ**: JSON, CSV, ਅਤੇ ਟੇਬਲਰ ਡਾਟਾ
 
 ### 3. RAG ਲਾਗੂ ਕਰਨ ਦੇ ਪੈਟਰਨ
 
 - **ਵੈਕਟਰ ਖੋਜ**: TF-IDF ਅਤੇ ਕੋਸਾਈਨ ਸਮਾਨਤਾ
-- **ਦਸਤਾਵੇਜ਼ ਰੀਟਰੀਵਲ**: ਪ੍ਰਸੰਗਿਕਤਾ ਸਕੋਰਿੰਗ ਅਤੇ ਰੈਂਕਿੰਗ
-- **ਸੰਦਰਭ ਕੌਂਬੀਨੇਸ਼ਨ**: ਮਲਟੀ-ਦਸਤਾਵੇਜ਼ ਸਿੰਥੇਸਿਸ
-- **ਜਵਾਬ ਸਿਰਜਣਾ**: ਗ੍ਰਾਊਂਡਡ ਰਿਸਪਾਂਸ ਸਿਰਜਣਾ
+- **ਦਸਤਾਵੇਜ਼ ਰਿਟਰੀਵਲ**: ਪ੍ਰਸੰਗਿਕਤਾ ਸਕੋਰਿੰਗ ਅਤੇ ਰੈਂਕਿੰਗ
+- **ਸੰਦਰਭ ਸੰਯੋਜਨ**: ਬਹੁ-ਦਸਤਾਵੇਜ਼ ਸੰਸ਼ਲੇਸ਼ਣ
+- **ਜਵਾਬ ਰਚਨਾ**: ਗ੍ਰਾਊਂਡਡ ਜਵਾਬ ਬਣਾਉਣਾ
 
 ### 4. ਕਲਾਉਡ ਮਾਈਗ੍ਰੇਸ਼ਨ ਰਣਨੀਤੀਆਂ
 
@@ -907,7 +908,7 @@ python samples/02-rag-solutions/migration_guide.py
 - **ਡਿਵੈਲਪਮੈਂਟ ਵਰਕਫਲੋ**: ਲੋਕਲ → ਸਟੇਜਿੰਗ → ਪ੍ਰੋਡਕਸ਼ਨ
 - **ਲਾਗਤ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ**: ਲੋਕਲ ਡਿਵੈਲਪਮੈਂਟ, ਕਲਾਉਡ ਪ੍ਰੋਡਕਸ਼ਨ
 
-## ਪ੍ਰੋਡਕਸ਼ਨ ਵਿਚ ਧਿਆਨ ਦੇਣ ਵਾਲੀਆਂ ਗੱਲਾਂ
+## ਪ੍ਰੋਡਕਸ਼ਨ ਵਿਚਾਰ
 
 ### 1. ਪ੍ਰਦਰਸ਼ਨ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ
 
@@ -922,7 +923,7 @@ rag_config = {
     "chunk_overlap": 50
 }
 ```
-
+  
 ### 2. ਗਲਤੀ ਸੰਭਾਲ
 
 ```python
@@ -939,8 +940,8 @@ except Exception as e:
     # Log error and provide graceful degradation
     logger.error(f"RAG system error: {e}")
 ```
-
-### 3. ਮਾਨੀਟਰਿੰਗ ਅਤੇ ਦ੍ਰਿਸ਼ਮਾਨਤਾ
+  
+### 3. ਮਾਨੀਟਰਿੰਗ ਅਤੇ ਦ੍ਰਿਸ਼ਟਤਾ
 
 ```python
 # Track RAG performance
@@ -951,34 +952,34 @@ metrics = {
     "user_satisfaction": feedback_score
 }
 ```
-
+  
 
 ## ਅਗਲੇ ਕਦਮ
 
-ਇਸ ਸੈਸ਼ਨ ਨੂੰ ਪੂਰਾ ਕਰਨ ਤੋਂ ਬਾਅਦ:
+ਇਸ ਸੈਸ਼ਨ ਨੂੰ ਪੂਰਾ ਕਰਨ ਦੇ ਬਾਅਦ:
 
 1. **ਸੈਸ਼ਨ 3 ਦੀ ਖੋਜ ਕਰੋ**: Foundry Local ਵਿੱਚ ਖੁੱਲ੍ਹੇ-ਸਰੋਤ ਮਾਡਲ
 2. **ਪ੍ਰੋਡਕਸ਼ਨ RAG ਬਣਾਓ**: Chainlit ਨਾਲ ਲਾਗੂ ਕਰੋ (ਸੈਂਪਲ 04)
-3. **ਉੱਚ-ਸਤਹ ਵੈਕਟਰ ਖੋਜ**: Chroma ਜਾਂ Pinecone ਨਾਲ ਇੰਟੀਗਰੇਟ ਕਰੋ
+3. **ਉੱਚ-ਸਤਹ ਵੈਕਟਰ ਖੋਜ**: Chroma ਜਾਂ Pinecone ਨਾਲ ਇੰਟੀਗ੍ਰੇਟ ਕਰੋ
 4. **ਕਲਾਉਡ ਮਾਈਗ੍ਰੇਸ਼ਨ**: Azure AI Foundry 'ਤੇ ਡਿਪਲੌਇਮੈਂਟ ਕਰੋ
 5. **RAG ਗੁਣਵੱਤਾ ਦਾ ਮੁਲਾਂਕਣ ਕਰੋ**: `cd Workshop/samples;python -m session02.rag_eval_ragas` ਚਲਾਓ ਜਵਾਬ ਦੀ ਪ੍ਰਸੰਗਿਕਤਾ, ਸੱਚਾਈ, ਅਤੇ ਸੰਦਰਭ ਸਹੀਤਾ ਨੂੰ ragas ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਮਾਪਣ ਲਈ
 
 ### ਵਿਕਲਪਿਕ ਸੁਧਾਰ
 
 | ਸ਼੍ਰੇਣੀ | ਸੁਧਾਰ | ਕਾਰਨ | ਦਿਸ਼ਾ |
-|--------|-------|------|-------|
-| ਰੀਟਰੀਵਲ | TF-IDF ਨੂੰ ਵੈਕਟਰ ਸਟੋਰ (FAISS / Chroma) ਨਾਲ ਬਦਲੋ | ਬਿਹਤਰ ਸੈਮਾਂਟਿਕ ਰੀਕਾਲ ਅਤੇ ਸਕੇਲਬਿਲਟੀ | ਦਸਤਾਵੇਜ਼ਾਂ ਨੂੰ ਚੰਕ ਕਰੋ (500–800 ਅੱਖਰ), ਐਮਬੈਡ ਕਰੋ, ਇੰਡੈਕਸ ਸਟੋਰ ਕਰੋ |
-| ਹਾਈਬ੍ਰਿਡ ਇੰਡੈਕਸ | ਦੋਹਰੇ ਸੈਮਾਂਟਿਕ + ਕੀਵਰਡ ਫਿਲਟਰਿੰਗ | ਸੰਖਿਆਕੀ / ਕੋਡ ਪ੍ਰਸ਼ਨਾਂ 'ਤੇ ਸਹੀਤਾ ਵਿੱਚ ਸੁਧਾਰ | ਪਹਿਲਾਂ ਕੀਵਰਡ ਦੁਆਰਾ ਫਿਲਟਰ ਕਰੋ ਫਿਰ ਕੋਸਾਈਨ ਸਮਾਨਤਾ ਦੁਆਰਾ ਰੈਂਕ ਕਰੋ |
-| ਐਮਬੈਡਿੰਗਸ | ਕਈ ਐਮਬੈਡਿੰਗ ਮਾਡਲਾਂ ਦਾ ਮੁਲਾਂਕਣ ਕਰੋ | ਪ੍ਰਸੰਗਿਕਤਾ ਵਿਰੁੱਧ ਗਤੀ ਵਿੱਚ ਸੁਧਾਰ | A/B: MiniLM vs E5-small vs ਸਥਾਨਕ ਹੋਸਟ ਕੀਤੇ ਐਨਕੋਡਰ |
-| ਕੈਸ਼ਿੰਗ | ਐਮਬੈਡਿੰਗਸ ਅਤੇ ਰੀਟਰੀਵਲ ਨਤੀਜੇ ਕੈਸ਼ ਕਰੋ | ਦੁਹਰਾਏ ਗਏ ਪ੍ਰਸ਼ਨਾਂ ਦੀ ਲੈਟੈਂਸੀ ਘਟਾਓ | ਸਧਾਰਨ ਡਿਸਕ ਪਿਕਲ / sqlite ਨਾਲ ਹੈਸ਼ ਕੀ |
-| ਮੁਲਾਂਕਣ | ragas ਡਾਟਾਸੈਟ ਵਧਾਓ | ਗੁਣਵੱਤਾ ਲਈ ਸਾਂਖਿਕ ਮਹੱਤਵਪੂਰਨ | 50–100 Q/A + ਸੰਦਰਭਾਂ ਨੂੰ ਇਕੱਠਾ ਕਰੋ; ਵਿਸ਼ੇ ਦੁਆਰਾ ਵੰਡ ਕਰੋ |
-| ਮੈਟ੍ਰਿਕਸ | ਰੀਟਰੀਵਲ ਅਤੇ ਜਨਰੇਸ਼ਨ ਸਮਾਂ ਟ੍ਰੈਕ ਕਰੋ | ਪ੍ਰਦਰਸ਼ਨ ਪ੍ਰੋਫਾਈਲਿੰਗ | ਹਰ ਕਾਲ ਲਈ `retrieval_ms`, `gen_ms`, `tokens` ਕੈਪਚਰ ਕਰੋ |
-| ਗਾਰਡਰੇਲਸ | ਹਾਲੂਸੀਨੇਸ਼ਨ ਫਾਲਬੈਕ ਸ਼ਾਮਲ ਕਰੋ | ਸੁਰੱਖਿਅਤ ਜਵਾਬ | ਜੇ ਸੱਚਾਈ < ਸੀਮਾ → ਜਵਾਬ: "ਅਪਰਯਾਪਤ ਸੰਦਰਭ।" |
-| ਫਾਲਬੈਕ | ਸਥਾਨਕ → Azure ਮਾਡਲ ਕੈਸਕੇਡ | ਹਾਈਬ੍ਰਿਡ ਗੁਣਵੱਤਾ ਵਿੱਚ ਸੁਧਾਰ | ਘੱਟ ਭਰੋਸੇ 'ਤੇ ਕਲਾਉਡ ਵੱਲ ਰੂਟ ਕਰੋ ਇੱਕੋ OpenAI API ਦੁਆਰਾ |
-| ਡਿਟਰਮਿਨਿਜ਼ਮ | ਸਥਿਰ ਤੁਲਨਾ ਚਲਾਉਣਾ | ਦੁਹਰਾਏ ਜਾਣ ਯੋਗ ਮੁਲਾਂਕਣ ਸੈੱਟ | ਬੀਜ ਨੂੰ ਫਿਕਸ ਕਰੋ, `temperature=0`, ਸੈਂਪਲਰ ਰੈਂਡਮਨੈਸ ਨੂੰ ਅਯੋਗ ਕਰੋ |
-| ਮਾਨੀਟਰਿੰਗ | ਮੁਲਾਂਕਣ ਰਨ ਇਤਿਹਾਸ ਸਟੋਰ ਕਰੋ | ਰਿਗਰੈਸ਼ਨ ਡਿਟੈਕਸ਼ਨ | JSON ਲਾਈਨਜ਼ ਨੂੰ ਟਾਈਮਸਟੈਂਪ + ਮੈਟ੍ਰਿਕ ਡੈਲਟਸ ਨਾਲ ਐਪੈਂਡ ਕਰੋ |
+|----------|-------------|-----------|-----------|
+| ਰਿਟਰੀਵਲ | TF-IDF ਨੂੰ ਵੈਕਟਰ ਸਟੋਰ (FAISS / Chroma) ਨਾਲ ਬਦਲੋ | semantic ਯਾਦ ਅਤੇ ਸਕੇਲਬਿਲਟੀ ਵਿੱਚ ਸੁਧਾਰ | ਦਸਤਾਵੇਜ਼ਾਂ ਨੂੰ ਚੰਕ ਕਰੋ (500–800 ਅੱਖਰ), embed ਕਰੋ, ਇੰਡੈਕਸ ਨੂੰ ਸਥਿਰ ਕਰੋ |
+| ਹਾਈਬ੍ਰਿਡ ਇੰਡੈਕਸ | ਦੋਹਰੇ semantic + ਕੀਵਰਡ ਫਿਲਟਰੀਂਗ | ਗਿਣਤੀ/ਕੋਡ ਪ੍ਰਸ਼ਨਾਂ 'ਤੇ ਸਹੀਤਾ ਵਿੱਚ ਸੁਧਾਰ | ਪਹਿਲਾਂ ਕੀਵਰਡ ਦੁਆਰਾ ਫਿਲਟਰ ਕਰੋ ਫਿਰ ਕੋਸਾਈਨ ਸਮਾਨਤਾ ਦੁਆਰਾ ਰੈਂਕ ਕਰੋ |
+| ਐਮਬੈਡਿੰਗ | ਕਈ ਐਮਬੈਡਿੰਗ ਮਾਡਲਾਂ ਦਾ ਮੁਲਾਂਕਣ ਕਰੋ | ਪ੍ਰਸੰਗਿਕਤਾ ਵਿਰੁੱਧ ਗਤੀ ਵਿੱਚ ਸੁਧਾਰ | A/B: MiniLM ਵਿਰੁੱਧ E5-small ਵਿਰੁੱਧ ਲੋਕਲ ਹੋਸਟਡ ਐਨਕੋਡਰ |
+| ਕੈਸ਼ਿੰਗ | ਐਮਬੈਡਿੰਗ ਅਤੇ ਰਿਟਰੀਵਲ ਨਤੀਜੇ ਕੈਸ਼ ਕਰੋ | ਦੁਹਰਾਏ ਗਏ ਪ੍ਰਸ਼ਨਾਂ ਦੀ ਲੈਟੈਂਸੀ ਘਟਾਓ | ਸਧਾਰਨ ਡਿਸਕ ਪਿਕਲ / sqlite ਨਾਲ ਹੈਸ਼ ਕੀ |
+| ਮੁਲਾਂਕਣ | ragas ਡਾਟਾਸੈਟ ਵਧਾਓ | ਗੁਣਵੱਤਾ ਲਈ ਅੰਕੜੇਵਾਰ ਮਹੱਤਵਪੂਰਨ | 50–100 Q/A + ਸੰਦਰਭਾਂ ਨੂੰ ਕਿਊਰੇਟ ਕਰੋ; ਵਿਸ਼ੇ ਦੁਆਰਾ ਸਟ੍ਰੈਟੀਫਾਈ ਕਰੋ |
+| ਮੈਟ੍ਰਿਕਸ | ਰਿਟਰੀਵਲ ਅਤੇ ਜਨਰੇਸ਼ਨ ਸਮਾਂ ਟ੍ਰੈਕ ਕਰੋ | ਪ੍ਰਦਰਸ਼ਨ ਪ੍ਰੋਫਾਈਲਿੰਗ | ਪ੍ਰਤੀ ਕਾਲ `retrieval_ms`, `gen_ms`, `tokens` ਕੈਪਚਰ ਕਰੋ |
+| ਗਾਰਡਰੇਲ | ਹਾਲੂਸੀਨੇਸ਼ਨ ਫਾਲਬੈਕ ਸ਼ਾਮਲ ਕਰੋ | ਸੁਰੱਖਿਅਤ ਜਵਾਬ | ਜੇ ਸੱਚਾਈ < ਥ੍ਰੈਸ਼ਹੋਲਡ → ਜਵਾਬ: "ਅਪਰਯਾਪਤ ਸੰਦਰਭ।" |
+| ਫਾਲਬੈਕ | ਲੋਕਲ → Azure ਮਾਡਲ ਕੈਸਕੇਡ ਕਰੋ | ਹਾਈਬ੍ਰਿਡ ਗੁਣਵੱਤਾ ਵਿੱਚ ਸੁਧਾਰ | ਘੱਟ ਭਰੋਸੇ 'ਤੇ OpenAI API ਦੁਆਰਾ ਕਲਾਉਡ ਨੂੰ ਰੂਟ ਕਰੋ |
+| ਨਿਰਧਾਰਤਾ | ਸਥਿਰ ਤੁਲਨਾ ਚਲਾਓ | ਦੁਹਰਾਏ ਜਾ ਸਕਣ ਵਾਲੇ ਮੁਲਾਂਕਣ ਸੈੱਟ | ਬੀਜ ਨੂੰ ਫਿਕਸ ਕਰੋ, `temperature=0`, ਸੈਂਪਲਰ randomness ਨੂੰ ਅਯੋਗ ਕਰੋ |
+| ਮਾਨੀਟਰਿੰਗ | ਮੁਲਾਂਕਣ ਰਨ ਇਤਿਹਾਸ ਨੂੰ ਸਥਿਰ ਕਰੋ | ਰਿਗ੍ਰੈਸ਼ਨ ਡਿਟੈਕਸ਼ਨ | JSON ਲਾਈਨਾਂ ਨੂੰ ਟਾਈਮਸਟੈਂਪ + ਮੈਟ੍ਰਿਕ ਡੈਲਟਸ ਨਾਲ ਐਪੈਂਡ ਕਰੋ |
 
-#### ਉਦਾਹਰਣ: ਰੀਟਰੀਵਲ ਸਮਾਂ ਸ਼ਾਮਲ ਕਰਨਾ
+#### ਉਦਾਹਰਣ: ਰਿਟਰੀਵਲ ਸਮਾਂ ਸ਼ਾਮਲ ਕਰਨਾ
 
 ```python
 import time
@@ -990,14 +991,13 @@ text, usage = chat_once(alias, messages=messages, max_tokens=250, temperature=0.
 gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
-
-
+  
 #### ragas ਨਾਲ ਮੁਲਾਂਕਣ ਨੂੰ ਸਕੇਲ ਕਰਨਾ
 
-1. JSONL ਨੂੰ `question`, `answer`, `contexts`, `ground_truths` (ਸੂਚੀ) ਖੇਤਰਾਂ ਨਾਲ ਇਕੱਠਾ ਕਰੋ
-2. `Dataset.from_list(list_of_dicts)` ਵਿੱਚ ਪਰਿਵਰਤਿਤ ਕਰੋ
+1. JSONL ਨੂੰ ਫੀਲਡਾਂ ਨਾਲ ਇਕੱਠਾ ਕਰੋ: `question`, `answer`, `contexts`, `ground_truths` (ਸੂਚੀ)
+2. `Dataset.from_list(list_of_dicts)` ਵਿੱਚ ਰੂਪਾਂਤਰਿਤ ਕਰੋ
 3. `evaluate(dataset, metrics=[...])` ਚਲਾਓ
-4. ਰੁਝਾਨ ਵਿਸ਼ਲੇਸ਼ਣ ਲਈ ਮੈਟ੍ਰਿਕਸ (CSV/JSON) ਸਟੋਰ ਕਰੋ।
+4. ਟ੍ਰੈਂਡ ਵਿਸ਼ਲੇਸ਼ਣ ਲਈ ਮੈਟ੍ਰਿਕਸ (CSV/JSON) ਸਟੋਰ ਕਰੋ।
 
 #### ਵੈਕਟਰ ਸਟੋਰ ਕਵਿਕ ਸਟਾਰਟ (FAISS)
 
@@ -1007,20 +1007,22 @@ index = faiss.IndexFlatIP(embeddings.shape[1])
 index.add(embeddings)  # embeddings = np.array([...]) normalized
 D, I = index.search(query_vec, k)
 ```
-
-ਡਿਸਕ ਸਟੋਰ ਕਰਨ ਲਈ `faiss.write_index(index, "kb.index")` ਦੀ ਵਰਤੋਂ ਕਰੋ।
+  
+ਡਿਸਕ ਸਥਿਰਤਾ ਲਈ `faiss.write_index(index, "kb.index")` ਦੀ ਵਰਤੋਂ ਕਰੋ।
 
 ## ਵਾਧੂ ਸਰੋਤ
 
 ### ਦਸਤਾਵੇਜ਼
-- [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [Azure AI Foundry RAG Patterns](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [Prompt Engineering Guide](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
-- [Ragas Evaluation Docs](https://docs.ragas.io)
+
+- [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)  
+- [Azure AI Foundry RAG Patterns](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)  
+- [Prompt Engineering Guide](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)  
+- [Ragas Evaluation Docs](https://docs.ragas.io)  
 
 ### ਸੈਂਪਲ ਕੋਡ
-- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG ਐਪਲੀਕੇਸ਼ਨ
-- [Advanced Multi-Agent System](./samples/09/README.md) - ਏਜੰਟ ਕੋਆਰਡੀਨੇਸ਼ਨ ਪੈਟਰਨ
+
+- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG ਐਪਲੀਕੇਸ਼ਨ  
+- [Advanced Multi-Agent System](./samples/09/README.md) - ਏਜੰਟ ਕੋਆਰਡੀਨੇਸ਼ਨ ਪੈਟਰਨ  
 
 ---
 
@@ -1028,19 +1030,20 @@ D, I = index.search(query_vec, k)
 **ਮੁਸ਼ਕਲ ਪੱਧਰ**: ਮੱਧਮ  
 **ਪੂਰਵ ਸ਼ਰਤਾਂ**: ਸੈਸ਼ਨ 1 ਪੂਰਾ ਕੀਤਾ, ਬੁਨਿਆਦੀ Python ਗਿਆਨ  
 
-## ਸੈਂਪਲ ਸਿਨੇਰਿਓ ਅਤੇ ਵਰਕਸ਼ਾਪ ਮੈਪਿੰਗ
+## ਸੈਂਪਲ ਸਿਨਾਰੀਓ ਅਤੇ ਵਰਕਸ਼ਾਪ ਮੈਪਿੰਗ
 
-| ਵਰਕਸ਼ਾਪ ਸਕ੍ਰਿਪਟ / ਨੋਟਬੁੱਕ | ਸਿਨੇਰਿਓ | ਉਦੇਸ਼ | ਕੋਰ ਡਾਟਾਸੈਟ / ਸਰੋਤ | ਉਦਾਹਰਣ ਪ੍ਰਸ਼ਨ |
+| ਵਰਕਸ਼ਾਪ ਸਕ੍ਰਿਪਟ / ਨੋਟਬੁੱਕ | ਸਿਨਾਰੀਓ | ਲਕਸ਼ | ਕੋਰ ਡਾਟਾਸੈਟ / ਸਰੋਤ | ਉਦਾਹਰਣ ਪ੍ਰਸ਼ਨ |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | ਅੰਦਰੂਨੀ ਸਹਾਇਤਾ ਗਿਆਨ ਅਧਾਰ ਗੋਪਨੀਯਤਾ + ਪ੍ਰਦਰਸ਼ਨ FAQs ਦਾ ਜਵਾਬ ਦੇਣਾ | ਐਮਬੈਡਿੰਗਸ ਨਾਲ ਘੱਟੋ-ਘੱਟ ਇਨ-ਮੇਮੋਰੀ RAG | ਸਕ੍ਰਿਪਟ ਵਿੱਚ `DOCS` ਸੂਚੀ (5 ਛੋਟੇ ਪੈਸੇਜ) | ਸਥਾਨਕ ਇੰਫਰੈਂਸ ਨਾਲ RAG ਦੀ ਵਰਤੋਂ ਕਿਉਂ? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | ਗੁਣਵੱਤਾ ਵਿਸ਼ਲੇਸ਼ਕ ਬੇਸਲਾਈਨ ਰੀਟਰੀਵਲ ਸੱਚਾਈ ਮੈਟ੍ਰਿਕਸ ਸਥਾਪਿਤ ਕਰਨਾ | ਛੋਟੇ ਸਿੰਥੇਟਿਕ ਡਾਟਾਸੈਟ 'ਤੇ ragas ਮੈਟ੍ਰਿਕਸ ਦੀ ਗਣਨਾ ਕਰੋ | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` ਐਰੇ | ਸਥਾਨਕ ਇੰਫਰੈਂਸ ਕਿਹੜਾ ਫਾਇਦਾ ਪੇਸ਼ ਕਰਦਾ ਹੈ? |
-| `prompt_engineering.py` (ਉੱਚ-ਸਤਹ) | ਡੋਮੇਨ SME ਕਈ ਵਰਟੀਕਲ ਲਈ ਗ੍ਰਾਊਂਡਡ ਪ੍ਰੋਮਪਟ ਬਣਾਉਣਾ | ਡੋਮੇਨ ਸਿਸਟਮ ਪ੍ਰੋਮਪਟ ਅਤੇ ਟੋਕਨ ਪ੍ਰਭਾਵ ਦੀ ਤੁਲਨਾ ਕਰੋ | Inline `contexts` dict | Foundry Local ਮਾਡਲ ਕੈਸ਼ਿੰਗ ਨੂੰ ਕਿਵੇਂ ਸੰਭਾਲਦਾ ਹੈ? |
-| `csv_qa_system.py` | ਵਿਕਰੀ ਦੇ ਕਾਰਜ ਨਿਰਯਾਤਾਂ 'ਤੇ ਇੰਟਰੈਕਟਿਵ ਵਿਸ਼ਲੇਸ਼ਣ ਦੀ ਖੋਜ ਕਰਦੇ ਹਨ | ਛੋਟੇ ਵਿਕਰੀ ਸਲਾਈਸ ਨੂੰ ਸੰਖੇਪ ਅਤੇ ਪ੍ਰਸ਼ਨ ਕਰੋ | Generated `sample_sales_data.csv` (10 rows) | ਸਭ ਤੋਂ ਵੱਧ ਔਸਤ ਵਿਕਰੀ ਰਕਮ ਵਾਲਾ ਉਤਪਾਦ ਕਿਹੜਾ ਹੈ? |
-| `document_rag.py` | ਉਤਪਾਦ ਟੀਮ ਅੰਦਰੂਨੀ ਵਿਕੀ ਲਈ ਦਸਤਾਵੇਜ਼ RAG ਦੀ ਖੋਜ ਕਰ ਰਹੀ ਹੈ | ਸੰਦਰਭਿਤ ਦਸਤਾਵੇਜ਼ਾਂ ਨੂੰ ਰੀਟਰੀਵ ਕਰੋ ਅਤੇ ਹਵਾਲਾ ਦਿਓ | `create_sample_knowledge_base()` ਸੂਚੀ | Edge AI ਦੇ ਫਾਇਦੇ ਕੀ ਹਨ? |
-| `migration_guide.py` | ਆਰਕੀਟੈਕਟ ਕਲਾਉਡ ਮਾਈਗ੍ਰੇਸ਼ਨ ਯੋਜਨਾ ਤਿਆਰ ਕਰ ਰਿਹਾ ਹੈ | ਸਥਾਨਕ→Azure API ਪੈਰਿਟੀ ਦਿਖਾਓ | ਸਥਿਰ ਟੈਸਟ ਪ੍ਰੋਮਪਟ | Edge AI ਦੇ ਫਾਇਦੇ 2–3 ਵਾਕਾਂ ਵਿੱਚ ਸਮਝਾਓ। |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | ਅੰਦਰੂਨੀ ਸਹਾਇਤਾ ਨੋਲਿਜ ਬੇਸ ਜੋ ਗੋਪਨੀਯਤਾ + ਪ੍ਰਦਰਸ਼ਨ FAQs ਦਾ ਜਵਾਬ ਦਿੰਦਾ ਹੈ | embedding ਨਾਲ ਘੱਟ-ਸਮੇਂ RAG | ਸਕ੍ਰਿਪਟ ਵਿੱਚ `DOCS` ਸੂਚੀ (5 ਛੋਟੇ ਪੈਸੇਜ) | ਲੋਕਲ ਇੰਫਰੈਂਸ ਨਾਲ RAG ਕਿਉਂ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | ਗੁਣਵੱਤਾ ਵਿਸ਼ਲੇਸ਼ਕ ਜੋ ਬੇਸਲਾਈਨ ਰਿਟਰੀਵਲ ਸੱਚਾਈ ਮੈਟ੍ਰਿਕਸ ਸਥਾਪਿਤ ਕਰਦਾ ਹੈ | ਛੋਟੇ ਸਿੰਥੈਟਿਕ ਡਾਟਾਸੈਟ 'ਤੇ ragas ਮੈਟ੍ਰਿਕਸ ਦੀ ਗਣਨਾ ਕਰੋ | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` arrays | ਲੋਕਲ ਇੰਫਰੈਂਸ ਕਿਹੜਾ ਫਾਇਦਾ ਦਿੰਦਾ ਹੈ? |
+| `prompt_engineering.py` (ਉੱਚ-ਸਤਹ) | ਡੋਮੇਨ SME ਜੋ ਕਈ ਵਰਟੀਕਲ ਲਈ ਗ੍ਰਾਊਂਡਡ ਪ੍ਰੋਮਪਟ ਬਣਾਉਂਦਾ ਹੈ | ਡੋਮੇਨ ਸਿਸਟਮ ਪ੍ਰੋਮਪਟ ਅਤੇ ਟੋਕਨ ਪ੍ਰਭਾਵ ਦੀ ਤੁਲਨਾ ਕਰੋ | Inline `contexts` dict | Foundry Local ਮਾਡਲ ਕੈਸ਼ਿੰਗ ਨੂੰ ਕਿਵੇਂ ਸੰਭਾਲਦਾ ਹੈ? |
+| `csv_qa_system.py` | ਸੇਲਜ਼ ਓਪਸ ਜੋ ਨਿਰਯਾਤਾਂ 'ਤੇ ਇੰਟਰਐਕਟਿਵ ਵਿਸ਼ਲੇਸ਼ਣ ਦੀ ਖੋਜ ਕਰਦਾ ਹੈ | ਛੋਟੇ ਸੇਲਜ਼ ਸਲਾਈਸ ਨੂੰ ਸੰਖੇਪਿਤ ਕਰੋ ਅਤੇ ਪ੍ਰਸ਼ਨ ਕਰੋ | ਜਨਰੇਟ ਕੀਤਾ `sample_sales_data.csv` (10 ਪੰਗਤਾਂ) | ਸਭ ਤੋਂ ਉੱਚੇ ਔਸਤ ਵਿਕਰੀ ਰਕਮ ਵਾਲਾ ਉਤਪਾਦ ਕਿਹੜਾ ਹੈ? |
+| `document_rag.py` | ਪ੍ਰੋਡਕਟ ਟੀਮ ਜੋ ਅੰਦਰੂਨੀ ਵਿਕੀ ਲਈ ਦਸਤਾਵੇਜ਼ RAG ਦੀ ਖੋਜ ਕਰਦੀ ਹੈ | ਪ੍ਰਸੰਗਿਕ ਦਸਤਾਵੇਜ਼ਾਂ ਨੂੰ ਰਿਟਰੀਵ ਕਰੋ + ਹਵਾਲਾ ਦਿਓ | `create_sample_knowledge_base()` ਸੂਚੀ | Edge AI ਦੇ ਫਾਇਦੇ ਕੀ ਹਨ? |
+| `migration_guide.py` | ਆਰਕੀਟੈਕਟ ਜੋ ਕਲਾਉਡ ਮਾਈਗ੍ਰੇਸ਼ਨ ਯੋਜਨਾ ਤਿਆਰ ਕਰਦਾ ਹੈ | ਲੋਕਲ→Azure API parity ਨੂੰ ਦਰਸਾਓ | ਸਥਿਰ ਟੈਸਟ ਪ੍ਰੋਮਪਟ | Edge AI ਦੇ ਫਾਇਦੇ 2–3 ਵਾਕਾਂ ਵਿੱਚ ਸਮਝਾਓ। |
 
-### ਡਾਟਾਸੈਟ ਸਨਿੱਪਟਸ
-Inline RAG pipeline ਦਸਤਾਵੇਜ਼ ਸੂਚੀ:
+### ਡਾਟਾਸੈਟ ਸਨਿੱਪਟ
+
+Inline RAG pipeline doc list:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1050,10 +1053,24 @@ DOCS = [
     "Vector similarity search retrieves semantically relevant documents for a query.",
 ]
 ```
+  
+Ragas evaluation truth tuples:
+```python
+QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
+GROUND_TRUTH = [
+    "Local inference reduces latency and preserves privacy.",
+    "RAG adds retrieved context snippets to improve factual grounding."
+]
+```
+  
 
-Ragas ਮੁਲਾਂਕਣ ਸੱਚਾਈ ਟ
+### ਸਿਨਾਰੀਓ ਕਹਾਣੀ
+
+ਸਹਾਇਤਾ ਇੰਜੀਨੀਅਰਿੰਗ ਸਮੂਹ ਇੱਕ ਤੇਜ਼ ਪ੍ਰੋਟੋਟਾਈਪ ਚਾਹੁੰਦਾ ਹੈ ਜੋ ਗਾਹਕ ਡਾਟਾ ਨੂੰ ਬਾਹਰਲੇ ਤੌਰ 'ਤੇ ਉਜਾਗ
 
 ---
 
-**ਅਸਵੀਕਰਤਾ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀ ਹੋਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਦਿਓ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੁੱਤੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਇਸਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ਅਸਵੀਕਰਤੀ**:  
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀ ਹੋਣ ਦਾ ਯਤਨ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਦਿਓ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੁਣੀਕਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਇਸ ਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਮੂਲ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

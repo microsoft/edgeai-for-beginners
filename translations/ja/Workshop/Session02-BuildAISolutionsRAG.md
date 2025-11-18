@@ -1,36 +1,36 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T20:53:12+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T18:40:22+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "ja"
 }
 -->
-# セッション2: Azure AI FoundryでAIソリューションを構築する
+# セッション 2: Azure AI Foundry を使った AI ソリューションの構築
 
 ## 概要
 
-Foundry LocalとAzure AI Foundryを使用して、実用的なGenAIワークフローを構築する方法を探ります。高度なプロンプトエンジニアリング、構造化データの統合、再現可能なパイプラインによるタスクのオーケストレーションを学びます。ドキュメントやデータのQ&Aに焦点を当てたRetrieval-Augmented Generation（RAG）を中心に、より広範なGenAIソリューション設計に応用可能なパターンを紹介します。
+Foundry Local と Azure AI Foundry を活用して、実用的な生成AI（GenAI）ワークフローを構築する方法を学びます。高度なプロンプトエンジニアリング、構造化データの統合、再現可能なパイプラインによるタスクのオーケストレーションを探求します。このセッションでは、ドキュメントやデータのQ&Aにおける検索強化生成（RAG）に焦点を当てますが、これらのパターンはより広範なGenAIソリューション設計にも応用可能です。
 
 ## 学習目標
 
-このセッションを終えると、以下を習得できます：
+このセッションを終えると、以下ができるようになります：
 
-- **プロンプトエンジニアリングの習得**: 効果的なシステムプロンプトと基盤戦略の設計
-- **RAGパターンの実装**: ベクトル検索を使用したドキュメントベースのQ&Aシステムの構築
-- **構造化データの統合**: CSV、JSON、表形式データをAIワークフローで活用
-- **本番環境向けRAGの構築**: Chainlitを使用したスケーラブルなRAGアプリケーションの作成
-- **ローカルからクラウドへの橋渡し**: Foundry LocalからAzure AI Foundryへの移行パスの理解
+- **プロンプトエンジニアリングの習得**: 効果的なシステムプロンプトと基盤戦略を設計する
+- **RAGパターンの実装**: ベクター検索を用いたドキュメントベースのQ&Aシステムを構築する
+- **構造化データの統合**: CSV、JSON、表形式データをAIワークフローで活用する
+- **本番環境向けRAGの構築**: Chainlitを使用してスケーラブルなRAGアプリケーションを作成する
+- **ローカルからクラウドへの橋渡し**: Foundry Local から Azure AI Foundry への移行パスを理解する
 
 ## 前提条件
 
-- セッション1（Foundry Localのセットアップ）を完了していること
-- ベクトルデータベースと埋め込みの基本的な理解
+- セッション1（Foundry Local のセットアップ）を完了していること
+- ベクターデータベースと埋め込みの基本的な理解
 - Pythonプログラミングの経験
 - ドキュメント処理の概念に精通していること
 
-### クロスプラットフォーム環境のクイックスタート（Windows & macOS）
+### クロスプラットフォーム環境クイックスタート（Windows & macOS）
 
 Windows PowerShell:
 ```powershell
@@ -48,15 +48,15 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Foundry LocalのmacOSバイナリがまだ利用できない場合は、Windows VMまたはコンテナでサービスを実行し、以下を設定してください：
+Foundry Local の macOS バイナリがまだ利用できない場合は、Windows VM またはコンテナでサービスを実行し、以下を設定してください：
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## 検証: Foundry Local環境チェック
+## 検証: Foundry Local 環境チェック
 
-デモを開始する前に、ローカル環境を検証してください：
+デモを始める前に、ローカル環境を検証してください：
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -65,15 +65,15 @@ foundry model run phi-4-mini   # Start baseline SLM
 curl http://localhost:5273/v1/models  # Validate API (should list running model)
 ```
 
-最後のコマンドが失敗した場合は、サービスを開始（または再起動）してください：`foundry service start`
+最後のコマンドが失敗した場合は、サービスを開始（または再起動）してください：`foundry service start`。
 
-## デモの流れ（30分）
+## デモフロー（30分）
 
 ### 1. システムプロンプトと基盤戦略（10分）
 
-#### ステップ1.1: 高度なプロンプトエンジニアリング
+#### ステップ 1.1: 高度なプロンプトエンジニアリング
 
-`samples/02-rag-solutions/prompt_engineering.py`を作成：
+`samples/02-rag-solutions/prompt_engineering.py` を作成：
 
 ```python
 #!/usr/bin/env python3
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### ステップ1.2: 基盤戦略のテスト
+#### ステップ 1.2: 基盤戦略のテスト
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -219,9 +219,9 @@ python samples/02-rag-solutions/prompt_engineering.py
 
 ### 2. プロンプトと表形式データの統合（CSV Q&A）（10分）
 
-#### ステップ2.1: CSVデータ統合
+#### ステップ 2.1: CSVデータの統合
 
-`samples/02-rag-solutions/csv_qa_system.py`を作成：
+`samples/02-rag-solutions/csv_qa_system.py` を作成：
 
 ```python
 #!/usr/bin/env python3
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -433,7 +434,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### ステップ2.2: CSV Q&Aシステムのテスト
+#### ステップ 2.2: CSV Q&Aシステムのテスト
 
 ```powershell
 # Run the CSV Q&A demo
@@ -441,11 +442,11 @@ python samples/02-rag-solutions/csv_qa_system.py
 ```
 
 
-### 3. スタータープロジェクト: 02-grounding-dataの適応（5分）
+### 3. スタータープロジェクト: 02-grounding-data の適応（5分）
 
-#### ステップ3.1: 強化されたドキュメントRAGシステム
+#### ステップ 3.1: 強化されたドキュメントRAGシステム
 
-`samples/02-rag-solutions/document_rag.py`を作成：
+`samples/02-rag-solutions/document_rag.py` を作成：
 
 ```python
 #!/usr/bin/env python3
@@ -661,11 +662,11 @@ if __name__ == "__main__":
 ```
 
 
-### 4. CLIからAzureへの移行パスの表示（5分）
+### 4. CLIからAzureへの移行パスの提示（5分）
 
-#### ステップ4.1: 移行戦略の概要
+#### ステップ 4.1: 移行戦略の概要
 
-`samples/02-rag-solutions/migration_guide.py`を作成：
+`samples/02-rag-solutions/migration_guide.py` を作成：
 
 ```python
 #!/usr/bin/env python3
@@ -869,7 +870,7 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-#### ステップ4.2: 移行パターンのテスト
+#### ステップ 4.2: 移行パターンのテスト
 
 ```powershell
 # Run the migration demo
@@ -877,7 +878,7 @@ python samples/02-rag-solutions/migration_guide.py
 ```
 
 
-## カバーする主要な概念
+## カバーされる主要概念
 
 ### 1. 高度なプロンプトエンジニアリング
 
@@ -891,19 +892,19 @@ python samples/02-rag-solutions/migration_guide.py
 - **CSV処理**: PandasとAIモデルの統合
 - **統計分析**: 自動データ要約
 - **コンテキスト作成**: クエリに基づく動的コンテキスト生成
-- **多形式対応**: JSON、CSV、表形式データ
+- **多形式サポート**: JSON、CSV、表形式データ
 
 ### 3. RAG実装パターン
 
-- **ベクトル検索**: TF-IDFとコサイン類似度
+- **ベクター検索**: TF-IDFとコサイン類似度
 - **ドキュメント検索**: 関連性スコアリングとランキング
 - **コンテキストの組み合わせ**: 複数ドキュメントの統合
 - **回答生成**: 基盤に基づいた応答作成
 
 ### 4. クラウド移行戦略
 
-- **統一API**: ローカルとクラウドの単一コードベース
-- **環境抽象化**: 設定駆動型デプロイ
+- **統一API**: ローカルとクラウドで単一のコードベース
+- **環境抽象化**: 設定駆動型のデプロイ
 - **開発ワークフロー**: ローカル → ステージング → 本番
 - **コスト最適化**: ローカル開発、クラウド本番
 
@@ -957,26 +958,26 @@ metrics = {
 
 このセッションを完了した後：
 
-1. **セッション3を探索**: Foundry Localでのオープンソースモデル
-2. **本番環境向けRAGを構築**: Chainlitを使用して実装（サンプル04）
-3. **高度なベクトル検索**: ChromaまたはPineconeと統合
-4. **クラウド移行**: Azure AI Foundryにデプロイ
-5. **RAG品質を評価**: `cd Workkshop/samples;python -m session02.rag_eval_ragas`を実行して、ragasを使用して回答の関連性、忠実性、コンテキスト精度を測定
+1. **セッション3を探求**: Foundry Local でのオープンソースモデル
+2. **本番RAGを構築**: Chainlitを使用して実装（サンプル04）
+3. **高度なベクター検索**: ChromaまたはPineconeと統合
+4. **クラウド移行**: Azure AI Foundry にデプロイ
+5. **RAGの品質を評価**: `cd Workshop/samples;python -m session02.rag_eval_ragas` を実行して、ragasを使用して回答の関連性、忠実性、コンテキスト精度を測定
 
 ### オプションの拡張
 
-| カテゴリ | 拡張 | 理由 | 方向性 |
+| カテゴリ | 拡張 | 理由 | 方法 |
 |----------|-------------|-----------|-----------|
-| 検索 | TF-IDFをベクトルストア（FAISS / Chroma）に置き換え | より良い意味的リコールとスケーラビリティ | ドキュメントをチャンク化（500–800文字）、埋め込み、インデックスを永続化 |
-| ハイブリッドインデックス | 意味的 + キーワードフィルタリングの併用 | 数値/コードクエリの精度向上 | キーワードでフィルタリング後、コサイン類似度でランク付け |
+| 検索 | TF-IDFをベクターストア（FAISS / Chroma）に置き換え | セマンティックリコールとスケーラビリティの向上 | ドキュメントをチャンク化（500–800文字）、埋め込み、インデックスを永続化 |
+| ハイブリッドインデックス | セマンティック + キーワードフィルタリングの併用 | 数値/コードクエリの精度向上 | キーワードでフィルタリング後、コサイン類似度でランク付け |
 | 埋め込み | 複数の埋め込みモデルを評価 | 関連性と速度の最適化 | A/B: MiniLM vs E5-small vs ローカルホストエンコーダ |
-| キャッシュ | 埋め込みと検索結果をキャッシュ | 繰り返しクエリの待機時間を短縮 | ハッシュキーを使用した簡易オンディスクピクル/SQLite |
-| 評価 | ragasデータセットを拡張 | 統計的に意味のある品質 | 50–100のQ/A + コンテキストをキュレーション；トピック別に層化 |
+| キャッシュ | 埋め込みと検索結果をキャッシュ | 繰り返しクエリの遅延を低減 | ハッシュキーを使用したシンプルなオンディスクpickle/sqlite |
+| 評価 | ragasデータセットを拡張 | 統計的に有意な品質 | 50–100のQ/A + コンテキストをキュレート；トピック別に層化 |
 | メトリクス | 検索と生成のタイミングを追跡 | パフォーマンスプロファイリング | 各呼び出しで`retrieval_ms`、`gen_ms`、`tokens`をキャプチャ |
-| ガードレール | 幻覚のフォールバックを追加 | 安全な回答 | 忠実性が閾値未満の場合 → 回答: "十分なコンテキストがありません。" |
-| フォールバック | ローカル → Azureモデルのカスケード | ハイブリッド品質向上 | 信頼性が低い場合、同じOpenAI APIを介してクラウドにルート |
-| 決定論 | 安定した比較実行 | 再現可能な評価セット | シードを固定、`temperature=0`、サンプラーのランダム性を無効化 |
-| モニタリング | 評価実行履歴を永続化 | 回帰検出 | JSONラインにタイムスタンプ + メトリクスの差分を追加 |
+| ガードレール | 幻覚のフォールバックを追加 | 安全な回答 | 忠実性 < 閾値の場合 → 回答: "十分なコンテキストがありません。" |
+| フォールバック | ローカル → Azureモデルのカスケード | ハイブリッド品質向上 | 信頼度が低い場合、同じOpenAI APIを介してクラウドにルート |
+| 決定性 | 安定した比較実行 | 再現可能な評価セット | シードを固定、`temperature=0`、サンプラーのランダム性を無効化 |
+| モニタリング | 評価実行履歴を永続化 | 回帰検出 | JSON行をタイムスタンプ + メトリクス差分で追加 |
 
 #### 例: 検索タイミングの追加
 
@@ -991,15 +992,14 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
+#### ragasを使った評価のスケーリング
 
-#### ragasを使用した評価のスケーリング
-
-1. フィールドを含むJSONLを作成：`question`、`answer`、`contexts`、`ground_truths`（リスト）
-2. `Dataset.from_list(list_of_dicts)`に変換
-3. `evaluate(dataset, metrics=[...])`を実行
+1. フィールドを持つJSONLを作成: `question`、`answer`、`contexts`、`ground_truths`（リスト）
+2. `Dataset.from_list(list_of_dicts)` に変換
+3. `evaluate(dataset, metrics=[...])` を実行
 4. メトリクス（CSV/JSON）を保存してトレンド分析を行う
 
-#### ベクトルストアクイックスタート（FAISS）
+#### ベクターストアクイックスタート（FAISS）
 
 ```python
 import faiss, numpy as np
@@ -1008,19 +1008,19 @@ index.add(embeddings)  # embeddings = np.array([...]) normalized
 D, I = index.search(query_vec, k)
 ```
 
-ディスク永続化には`faiss.write_index(index, "kb.index")`を使用します。
+ディスク永続化には`faiss.write_index(index, "kb.index")`を使用。
 
 ## 追加リソース
 
 ### ドキュメント
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [Azure AI Foundry RAG Patterns](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [Prompt Engineering Guide](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
-- [Ragas Evaluation Docs](https://docs.ragas.io)
+- [Azure AI Foundry RAG パターン](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
+- [プロンプトエンジニアリングガイド](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [Ragas 評価ドキュメント](https://docs.ragas.io)
 
 ### サンプルコード
-- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAGアプリケーション
-- [Advanced Multi-Agent System](./samples/09/README.md) - エージェント協調パターン
+- [Module08 サンプル04](./samples/04/README.md) - Chainlit RAG アプリケーション
+- [高度なマルチエージェントシステム](./samples/09/README.md) - エージェント調整パターン
 
 ---
 
@@ -1030,14 +1030,14 @@ D, I = index.search(query_vec, k)
 
 ## サンプルシナリオとワークショップマッピング
 
-| ワークショップスクリプト / ノートブック | シナリオ | 目標 | コアデータセット / ソース | 例の質問 |
+| ワークショップスクリプト / ノートブック | シナリオ | 目標 | コアデータセット / ソース | サンプル質問 |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | 内部サポート知識ベースでプライバシーとパフォーマンスFAQに回答 | 埋め込みを使用した最小限のインメモリRAG | スクリプト内の`DOCS`リスト（5つの短いパッセージ） | なぜローカル推論でRAGを使用するのか？ |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | 品質アナリストが基準となる検索忠実性メトリクスを確立 | 小規模な合成データセットでragasメトリクスを計算 | `DOCS`、`QUESTIONS`、`GROUND_TRUTH`配列 | ローカル推論の利点は何か？ |
-| `prompt_engineering.py`（高度） | ドメインSMEが複数の業界向けに基盤プロンプトを作成 | ドメインシステムプロンプトとトークンの影響を比較 | インライン`contexts`辞書 | Foundry Localはモデルキャッシュをどのように処理するか？ |
-| `csv_qa_system.py` | 営業オペレーションがエクスポートに対するインタラクティブ分析を探る | 小規模な営業スライスを要約＆クエリ | 生成された`sample_sales_data.csv`（10行） | 平均売上額が最も高い製品はどれか？ |
-| `document_rag.py` | 製品チームが内部Wiki向けのドキュメントRAGを探る | 関連ドキュメントを検索＆引用 | `create_sample_knowledge_base()`リスト | エッジAIの利点は何か？ |
-| `migration_guide.py` | アーキテクトがクラウド移行計画を準備 | ローカル→Azure APIの互換性を示す | 静的テストプロンプト | エッジAIの利点を2〜3文で説明してください。 |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | 内部サポートナレッジベースでプライバシー + パフォーマンスFAQに回答 | 埋め込みを使用した最小限のインメモリRAG | スクリプト内の`DOCS`リスト（5つの短いパッセージ） | なぜローカル推論でRAGを使用するのですか？ |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | 品質アナリストが基準となる検索忠実性メトリクスを確立 | 小規模な合成データセットでragasメトリクスを計算 | `DOCS`、`QUESTIONS`、`GROUND_TRUTH`配列 | ローカル推論の利点は何ですか？ |
+| `prompt_engineering.py`（高度） | ドメインSMEが複数の業界向けに基盤プロンプトを作成 | ドメインシステムプロンプトとトークンの影響を比較 | インライン`contexts`辞書 | Foundry Localはモデルキャッシュをどのように処理しますか？ |
+| `csv_qa_system.py` | 営業オペレーションがエクスポート上でインタラクティブ分析を探求 | 小規模な営業データの要約とクエリ | 生成された`sample_sales_data.csv`（10行） | 平均売上額が最も高い製品はどれですか？ |
+| `document_rag.py` | 製品チームが内部Wiki向けのドキュメントRAGを探求 | 関連ドキュメントを検索 + 引用 | `create_sample_knowledge_base()`リスト | エッジAIの利点は何ですか？ |
+| `migration_guide.py` | アーキテクトがクラウド移行計画を準備 | ローカル→Azure APIの互換性を実証 | 静的テストプロンプト | エッジAIの利点を2〜3文で説明してください。 |
 
 ### データセットスニペット
 インラインRAGパイプラインドキュメントリスト：
@@ -1061,13 +1061,15 @@ GROUND_TRUTH = [
 ```
 
 
-### シナリオの概要
+### シナリオナラティブ
 サポートエンジニアリンググループは、顧客データを外部に公開せずに内部FAQに回答するための迅速なプロトタイプを求めています。セッション2の成果物は、最小限の一時的なRAG（永続性なし）→構造化CSV Q&A→引用付きドキュメント検索→客観的品質評価（ragas）→Azureステージングに対応した移行戦略へと進化します。
 
 ### 拡張パス
-オプションの拡張表を使用して進化：TF-IDFをFAISS/Chromaに置き換え、評価コーパスを拡大（50–100 Q/A）、忠実性が閾値未満の場合に大規模モデルへのフォールバックエスカレーションを追加。
+オプションの拡張表を使用して進化させる：TF-IDFをFAISS/Chromaに置き換え、評価コーパスを拡大（50–100 Q/A）、忠実性 < 閾値の場合に大規模モデルへのフォールバックエスカレーションを追加。
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責事項**:  
-この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤認について、当社は責任を負いません。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤認について、当社は一切の責任を負いません。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

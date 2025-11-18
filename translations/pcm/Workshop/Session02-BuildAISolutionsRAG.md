@@ -1,35 +1,35 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-11-11T17:39:18+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T19:35:07+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "pcm"
 }
 -->
-# Session 2: Build AI Solutions wit Azure AI Foundry
+# Session 2: Build AI Solutions with Azure AI Foundry
 
 ## Abstract
 
-Learn how to take build GenAI workflows wey dey work well wit Foundry Local and Azure AI Foundry. You go sabi advanced prompt engineering, how to join structured data, and how to arrange tasks wit pipelines wey fit repeat. Even though we dey focus on Retrieval-Augmented Generation (RAG) for document & data Q&A, di patterns fit work for other GenAI solution design.
+Learn how to build GenAI workflows wey dey work well using Foundry Local and Azure AI Foundry. You go sabi advanced prompt engineering, how to join structured data, and how to arrange tasks with pipelines wey fit repeat. Even though we dey focus on Retrieval-Augmented Generation (RAG) for document & data Q&A, the patterns fit work for other GenAI solution designs.
 
 ## Learning Objectives
 
-By di end of dis session, you go:
+By the end of this session, you go:
 
 - **Sabi Prompt Engineering**: Design system prompts wey dey effective and grounding strategies
 - **Implement RAG Patterns**: Build Q&A systems wey dey use vector search for documents
-- **Join Structured Data**: Work wit CSV, JSON, and tabular data inside AI workflows
-- **Build Production RAG**: Create RAG applications wey fit scale wit Chainlit
+- **Join Structured Data**: Work with CSV, JSON, and tabular data for AI workflows
+- **Build Production RAG**: Create RAG applications wey fit scale with Chainlit
 - **Move Local to Cloud**: Understand how to migrate from Foundry Local to Azure AI Foundry
 
 ## Prerequisites
 
 - Don complete Session 1 (Foundry Local setup)
-- Small knowledge of vector databases and embeddings
-- Python programming experience
-- Sabi document processing concepts
- 
+- Basic understanding of vector databases and embeddings
+- Sabi Python programming
+- Know document processing concepts
+
 ### Cross-Platform Environment Quick Start (Windows & macOS)
 
 Windows PowerShell:
@@ -48,14 +48,15 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-If Foundry Local macOS binaries no dey your environment, run di service for Windows VM or container and set:
+If Foundry Local macOS binaries no dey your environment, run the service for Windows VM or container and set:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
+
 ## Validation: Foundry Local Environment Check
 
-Before you start di demos, make sure say your local environment dey okay:
+Before you start the demos, make sure say your local environment dey okay:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -64,7 +65,7 @@ foundry model run phi-4-mini   # Start baseline SLM
 curl http://localhost:5273/v1/models  # Validate API (should list running model)
 ```
 
-If di last command no work, start (or restart) di service: `foundry service start`.
+If the last command no work, start (or restart) the service: `foundry service start`.
 
 ## Demo Flow (30 minutes)
 
@@ -215,7 +216,8 @@ foundry model run phi-4-mini
 python samples/02-rag-solutions/prompt_engineering.py
 ```
 
-### 2. Join Tabular Data wit Prompts (CSV Q&A) (10 minutes)
+
+### 2. Join Tabular Data with Prompts (CSV Q&A) (10 minutes)
 
 #### Step 2.1: CSV Data Integration
 
@@ -231,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -437,6 +440,7 @@ if __name__ == "__main__":
 # Run the CSV Q&A demo
 python samples/02-rag-solutions/csv_qa_system.py
 ```
+
 
 ### 3. Starter Project: Adapt 02-grounding-data (5 minutes)
 
@@ -657,6 +661,7 @@ if __name__ == "__main__":
     demo_document_rag()
 ```
 
+
 ### 4. Show CLI-to-Azure Migration Path (5 minutes)
 
 #### Step 4.1: Migration Strategy Overview
@@ -872,35 +877,36 @@ if __name__ == "__main__":
 python samples/02-rag-solutions/migration_guide.py
 ```
 
+
 ## Key Concepts Covered
 
 ### 1. Advanced Prompt Engineering
 
-- **System Prompts**: Expert personas wey dey specific to di domain
-- **Grounding Strategies**: Techniques to join context
+- **System Prompts**: Expert personas wey dey specific to domain
+- **Grounding Strategies**: Techniques to add context
 - **Temperature Control**: Balance creativity and consistency
-- **Token Management**: Use context well well
+- **Token Management**: Use context well
 
 ### 2. Structured Data Integration
 
-- **CSV Processing**: Pandas integration wit AI models
-- **Statistical Analysis**: Automated data summarization
-- **Context Creation**: Dynamic context generation based on queries
+- **CSV Processing**: Use Pandas with AI models
+- **Statistical Analysis**: Summarize data automatically
+- **Context Creation**: Generate context based on queries
 - **Multi-format Support**: JSON, CSV, and tabular data
 
 ### 3. RAG Implementation Patterns
 
 - **Vector Search**: TF-IDF and cosine similarity
-- **Document Retrieval**: Relevance scoring and ranking
+- **Document Retrieval**: Score and rank relevance
 - **Context Combination**: Join multiple documents
-- **Answer Generation**: Create grounded response
+- **Answer Generation**: Create grounded responses
 
 ### 4. Cloud Migration Strategies
 
 - **Unified APIs**: One codebase for local and cloud
-- **Environment Abstraction**: Configuration-driven deployment
+- **Environment Abstraction**: Deploy with configuration
 - **Development Workflow**: Local → Staging → Production
-- **Cost Optimization**: Local development, cloud production
+- **Cost Optimization**: Develop local, produce in cloud
 
 ## Production Considerations
 
@@ -947,30 +953,31 @@ metrics = {
 }
 ```
 
+
 ## Next Steps
 
-After you finish dis session:
+After this session:
 
-1. **Check Session 3**: Open-Source Models for Foundry Local
+1. **Explore Session 3**: Open-Source Models in Foundry Local
 2. **Build Production RAG**: Use Chainlit (Sample 04)
-3. **Advanced Vector Search**: Join wit Chroma or Pinecone
+3. **Advanced Vector Search**: Work with Chroma or Pinecone
 4. **Cloud Migration**: Deploy to Azure AI Foundry
-5. **Check RAG Quality**: Run `cd Workkshop/samples;python -m session02.rag_eval_ragas` to measure answer_relevancy, faithfulness, and context_precision using ragas
+5. **Evaluate RAG Quality**: Run `cd Workshop/samples;python -m session02.rag_eval_ragas` to measure answer_relevancy, faithfulness, and context_precision using ragas
 
 ### Optional Enhancements
 
 | Category | Enhancement | Rationale | Direction |
 |----------|-------------|-----------|-----------|
-| Retrieval | Replace TF-IDF wit vector store (FAISS / Chroma) | Better semantic recall & scalability | Chunk docs (500–800 chars), embed, persist index |
+| Retrieval | Replace TF-IDF with vector store (FAISS / Chroma) | Better semantic recall & scalability | Chunk docs (500–800 chars), embed, persist index |
 | Hybrid Index | Dual semantic + keyword filtering | Improves precision on numeric / code queries | Filter by keyword then rank by cosine similarity |
-| Embeddings | Test different embedding models | Optimize relevance vs speed | A/B: MiniLM vs E5-small vs locally hosted encoder |
-| Caching | Cache embeddings & retrieval results | Reduce latency for repeated queries | Simple on-disk pickle / sqlite wit hash key |
+| Embeddings | Evaluate multiple embedding models | Optimize relevance vs speed | A/B: MiniLM vs E5-small vs locally hosted encoder |
+| Caching | Cache embeddings & retrieval results | Lower repeated query latency | Simple on-disk pickle / sqlite with hash key |
 | Evaluation | Expand ragas dataset | Statistically meaningful quality | Curate 50–100 Q/A + contexts; stratify by topic |
 | Metrics | Track retrieval & generation timings | Performance profiling | Capture `retrieval_ms`, `gen_ms`, `tokens` per call |
-| Guardrails | Add fallback for hallucination | Safer answers | If faithfulness < threshold → answer: "Insufficient context." |
+| Guardrails | Add hallucination fallback | Safer answers | If faithfulness < threshold → answer: "Insufficient context." |
 | Fallback | Cascade local → Azure model | Hybrid quality boost | On low confidence route to cloud via same OpenAI API |
 | Determinism | Stable comparison runs | Repeatable eval sets | Fix seed, `temperature=0`, disable sampler randomness |
-| Monitoring | Save eval run history | Regression detection | Append JSON lines wit timestamp + metric deltas |
+| Monitoring | Persist eval run history | Regression detection | Append JSON lines w/ timestamp + metric deltas |
 
 #### Example: Adding Retrieval Timing
 
@@ -985,12 +992,13 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
-#### Scaling Evaluation Wit ragas
 
-1. Gather JSONL wit fields: `question`, `answer`, `contexts`, `ground_truths` (list)
+#### Scaling Evaluation With ragas
+
+1. Assemble a JSONL with fields: `question`, `answer`, `contexts`, `ground_truths` (list)
 2. Convert to `Dataset.from_list(list_of_dicts)`
 3. Run `evaluate(dataset, metrics=[...])`
-4. Save metrics (CSV/JSON) for trend analysis.
+4. Store metrics (CSV/JSON) for trend analysis.
 
 #### Vector Store Quick Start (FAISS)
 
@@ -1017,20 +1025,20 @@ For disk persistence use `faiss.write_index(index, "kb.index")`.
 
 ---
 
-**Session Duration**: 30 minutes hands-on + 15 minutes Q&A
-**Difficulty Level**: Intermediate
-**Prerequisites**: Session 1 completed, Basic Python knowledge
+**Session Duration**: 30 minutes hands-on + 15 minutes Q&A  
+**Difficulty Level**: Intermediate  
+**Prerequisites**: Session 1 completed, Basic Python knowledge  
 
 ## Sample Scenario & Workshop Mapping
 
 | Workshop Script / Notebook | Scenario | Goal | Core Dataset / Source | Example Question |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Internal support knowledge base answering privacy + performance FAQs | Minimal in‑memory RAG wit embeddings | `DOCS` list in script (5 short passages) | Why use RAG wit local inference? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Quality analyst establishing baseline retrieval faithfulness metrics | Compute ragas metrics on tiny synthetic dataset | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` arrays | Wetin be di advantage of local inference? |
-| `prompt_engineering.py` (advanced) | Domain SME crafting grounded prompts for multiple verticals | Compare domain system prompts & token impact | Inline `contexts` dict | How Foundry Local dey handle model caching? |
-| `csv_qa_system.py` | Sales ops exploring interactive analytics over exports | Summarize & query small sales slice | Generated `sample_sales_data.csv` (10 rows) | Which product get di highest average sales amount? |
-| `document_rag.py` | Product team exploring doc RAG for internal wiki | Retrieve + cite relevant docs | `create_sample_knowledge_base()` list | Wetin be di benefits of Edge AI? |
-| `migration_guide.py` | Architect preparing cloud migration plan | Show local→Azure API parity | Static test prompts | Explain di benefits of edge AI in 2–3 sentences. |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Internal support knowledge base answering privacy + performance FAQs | Minimal in‑memory RAG with embeddings | `DOCS` list in script (5 short passages) | Why use RAG with local inference? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Quality analyst establishing baseline retrieval faithfulness metrics | Compute ragas metrics on tiny synthetic dataset | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` arrays | What advantage does local inference offer? |
+| `prompt_engineering.py` (advanced) | Domain SME crafting grounded prompts for multiple verticals | Compare domain system prompts & token impact | Inline `contexts` dict | How does Foundry Local handle model caching? |
+| `csv_qa_system.py` | Sales ops exploring interactive analytics over exports | Summarize & query small sales slice | Generated `sample_sales_data.csv` (10 rows) | Which product has highest average sales amount? |
+| `document_rag.py` | Product team exploring doc RAG for internal wiki | Retrieve + cite relevant docs | `create_sample_knowledge_base()` list | What are the benefits of Edge AI? |
+| `migration_guide.py` | Architect preparing cloud migration plan | Demonstrate local→Azure API parity | Static test prompts | Explain the benefits of edge AI in 2–3 sentences. |
 
 ### Dataset Snippets
 Inline RAG pipeline doc list:
@@ -1053,15 +1061,16 @@ GROUND_TRUTH = [
 ]
 ```
 
+
 ### Scenario Narrative
-Di support engineering group wan quick prototype to answer internal FAQs without exposing customer data outside. Session 2 artifacts dey move from minimal ephemeral RAG (no persistence) → structured CSV Q&A → document retrieval wit citation → objective quality evaluation (ragas) → migration strategy wey ready for Azure staging.
+The support engineering group wan prototype wey go answer internal FAQs fast without exposing customer data outside. Session 2 artifacts dey move from minimal ephemeral RAG (no persistence) → structured CSV Q&A → document retrieval with citation → objective quality evaluation (ragas) → migration strategy wey ready for Azure staging.
 
 ### Expansion Paths
-Use di Optional Enhancements table to improve: change TF‑IDF to FAISS/Chroma, make di evaluation corpus bigger (50–100 Q/A), add fallback escalation to bigger model when faithfulness < threshold.
+Use the Optional Enhancements table to improve: change TF‑IDF to FAISS/Chroma, make evaluation corpus bigger (50–100 Q/A), add fallback to bigger model when faithfulness < threshold.
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dis dokyument don use AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am accurate, abeg sabi say machine translation fit get mistake or no dey correct well. Di original dokyument for im native language na di main source wey you go trust. For important information, e better make professional human translation dey use. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
+Dis dokyument don use AI transle-shun service [Co-op Translator](https://github.com/Azure/co-op-translator) do di transle-shun. Even as we dey try make am correct, abeg sabi say transle-shun wey machine do fit get mistake or no dey accurate well. Di original dokyument for im native language na di one wey you go take as di correct source. For important mata, e good make professional human transle-shun dey use. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis transle-shun.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

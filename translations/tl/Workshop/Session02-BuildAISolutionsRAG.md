@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T22:45:59+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T19:11:48+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "tl"
 }
@@ -13,15 +13,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 Tuklasin kung paano bumuo ng mga actionable na GenAI workflows gamit ang Foundry Local at Azure AI Foundry. Matutunan ang advanced prompt engineering, pagsasama ng structured data, at pag-orchestrate ng mga gawain gamit ang reproducible pipelines. Bagama't nakatuon sa Retrieval-Augmented Generation (RAG) para sa dokumento at data Q&A, ang mga pattern ay maaaring gamitin sa mas malawak na disenyo ng GenAI solutions.
 
-## Mga Layunin sa Pagkatuto
+## Mga Layunin sa Pag-aaral
 
-Sa pagtatapos ng sesyon na ito, magagawa mo ang sumusunod:
+Sa pagtatapos ng sesyon na ito, ikaw ay:
 
-- **Master Prompt Engineering**: Magdisenyo ng epektibong system prompts at grounding strategies
-- **Ipatupad ang RAG Patterns**: Bumuo ng mga Q&A system na nakabase sa dokumento gamit ang vector search
+- **Magiging bihasa sa Prompt Engineering**: Magdisenyo ng epektibong system prompts at grounding strategies
+- **Magpatupad ng RAG Patterns**: Bumuo ng mga Q&A system na batay sa dokumento gamit ang vector search
 - **Isama ang Structured Data**: Gumamit ng CSV, JSON, at tabular data sa AI workflows
 - **Bumuo ng Production RAG**: Lumikha ng scalable RAG applications gamit ang Chainlit
-- **Pag-ugnayin ang Lokal sa Cloud**: Unawain ang mga landas ng migration mula Foundry Local patungo sa Azure AI Foundry
+- **Mag-bridge mula Local patungong Cloud**: Unawain ang mga migration path mula Foundry Local patungong Azure AI Foundry
 
 ## Mga Kinakailangan
 
@@ -56,7 +56,7 @@ export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 
 ## Pag-validate: Foundry Local Environment Check
 
-Bago simulan ang mga demo, i-validate ang iyong lokal na environment:
+Bago simulan ang mga demo, i-validate ang iyong local environment:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -67,7 +67,7 @@ curl http://localhost:5273/v1/models  # Validate API (should list running model)
 
 Kung nabigo ang huling command, simulan (o i-restart) ang serbisyo: `foundry service start`.
 
-## Daloy ng Demo (30 minuto)
+## Demo Flow (30 minuto)
 
 ### 1. System Prompts at Grounding Strategies (10 minuto)
 
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -443,7 +444,7 @@ python samples/02-rag-solutions/csv_qa_system.py
 
 ### 3. Starter Project: I-adapt ang 02-grounding-data (5 minuto)
 
-#### Hakbang 3.1: Pinahusay na Document RAG System
+#### Hakbang 3.1: Enhanced Document RAG System
 
 Gumawa ng `samples/02-rag-solutions/document_rag.py`:
 
@@ -663,7 +664,7 @@ if __name__ == "__main__":
 
 ### 4. Ipakita ang CLI-to-Azure Migration Path (5 minuto)
 
-#### Hakbang 4.1: Overview ng Migration Strategy
+#### Hakbang 4.1: Migration Strategy Overview
 
 Gumawa ng `samples/02-rag-solutions/migration_guide.py`:
 
@@ -883,29 +884,29 @@ python samples/02-rag-solutions/migration_guide.py
 
 - **System Prompts**: Mga domain-specific expert personas
 - **Grounding Strategies**: Mga teknik sa pagsasama ng konteksto
-- **Temperature Control**: Balanse sa pagitan ng creativity at consistency
+- **Temperature Control**: Pagbalanse ng creativity vs consistency
 - **Token Management**: Epektibong paggamit ng konteksto
 
-### 2. Pagsasama ng Structured Data
+### 2. Structured Data Integration
 
-- **Pagproseso ng CSV**: Pagsasama ng Pandas sa AI models
+- **CSV Processing**: Pandas integration sa AI models
 - **Statistical Analysis**: Automated na pag-summarize ng data
-- **Paglikha ng Konteksto**: Dynamic na pagbuo ng konteksto base sa mga query
-- **Suporta sa Multi-format**: JSON, CSV, at tabular data
+- **Context Creation**: Dynamic na pagbuo ng konteksto base sa queries
+- **Multi-format Support**: JSON, CSV, at tabular data
 
-### 3. Mga Pattern ng RAG Implementation
+### 3. RAG Implementation Patterns
 
 - **Vector Search**: TF-IDF at cosine similarity
 - **Document Retrieval**: Relevance scoring at ranking
-- **Pagsasama ng Konteksto**: Multi-document synthesis
-- **Pagbuo ng Sagot**: Grounded response creation
+- **Context Combination**: Multi-document synthesis
+- **Answer Generation**: Grounded response creation
 
-### 4. Mga Estratehiya sa Cloud Migration
+### 4. Cloud Migration Strategies
 
-- **Unified APIs**: Isang codebase para sa lokal at cloud
+- **Unified APIs**: Single codebase para sa local at cloud
 - **Environment Abstraction**: Configuration-driven deployment
-- **Workflow ng Development**: Lokal → Staging → Production
-- **Cost Optimization**: Lokal na development, cloud production
+- **Development Workflow**: Local → Staging → Production
+- **Cost Optimization**: Local development, cloud production
 
 ## Mga Pagsasaalang-alang sa Produksyon
 
@@ -940,7 +941,7 @@ except Exception as e:
     logger.error(f"RAG system error: {e}")
 ```
 
-### 3. Monitoring at Observability
+### 3. Monitoring and Observability
 
 ```python
 # Track RAG performance
@@ -961,22 +962,22 @@ Pagkatapos makumpleto ang sesyon na ito:
 2. **Bumuo ng Production RAG**: Ipatupad gamit ang Chainlit (Sample 04)
 3. **Advanced Vector Search**: Isama sa Chroma o Pinecone
 4. **Cloud Migration**: I-deploy sa Azure AI Foundry
-5. **Suriin ang Kalidad ng RAG**: Patakbuhin ang `cd Workkshop/samples;python -m session02.rag_eval_ragas` upang sukatin ang answer_relevancy, faithfulness, at context_precision gamit ang ragas
+5. **Suriin ang RAG Quality**: Patakbuhin ang `cd Workshop/samples;python -m session02.rag_eval_ragas` upang sukatin ang answer_relevancy, faithfulness, at context_precision gamit ang ragas
 
 ### Mga Opsyonal na Pagpapahusay
 
 | Kategorya | Pagpapahusay | Rason | Direksyon |
-|-----------|--------------|-------|-----------|
-| Retrieval | Palitan ang TF-IDF ng vector store (FAISS / Chroma) | Mas mahusay na semantic recall at scalability | I-chunk ang mga dokumento (500–800 chars), i-embed, i-persist ang index |
-| Hybrid Index | Dual semantic + keyword filtering | Pinapabuti ang precision sa numeric / code queries | I-filter gamit ang keyword pagkatapos i-rank gamit ang cosine similarity |
-| Embeddings | Suriin ang iba't ibang embedding models | I-optimize ang relevance vs bilis | A/B: MiniLM vs E5-small vs locally hosted encoder |
-| Caching | I-cache ang embeddings at retrieval results | Mas mababang latency sa paulit-ulit na query | Simple on-disk pickle / sqlite gamit ang hash key |
-| Evaluation | Palawakin ang ragas dataset | Statistically meaningful na kalidad | Mag-curate ng 50–100 Q/A + contexts; stratify ayon sa topic |
+|----------|-------------|-----------|-----------|
+| Retrieval | Palitan ang TF-IDF ng vector store (FAISS / Chroma) | Mas mahusay na semantic recall at scalability | Chunk docs (500–800 chars), embed, persist index |
+| Hybrid Index | Dual semantic + keyword filtering | Pinapabuti ang precision sa numeric / code queries | Filter by keyword then rank by cosine similarity |
+| Embeddings | Suriin ang iba't ibang embedding models | I-optimize ang relevance vs speed | A/B: MiniLM vs E5-small vs locally hosted encoder |
+| Caching | Cache embeddings at retrieval results | Mas mababang latency sa repeated queries | Simple on-disk pickle / sqlite gamit ang hash key |
+| Evaluation | Palawakin ang ragas dataset | Statistically meaningful quality | Curate 50–100 Q/A + contexts; stratify by topic |
 | Metrics | Subaybayan ang retrieval at generation timings | Performance profiling | I-capture ang `retrieval_ms`, `gen_ms`, `tokens` bawat tawag |
-| Guardrails | Magdagdag ng hallucination fallback | Mas ligtas na mga sagot | Kung ang faithfulness < threshold → sagot: "Insufficient context." |
-| Fallback | Cascade local → Azure model | Hybrid na pagtaas ng kalidad | Sa mababang confidence, i-route sa cloud gamit ang parehong OpenAI API |
-| Determinism | Stable na mga comparison runs | Repeatable eval sets | I-fix ang seed, `temperature=0`, i-disable ang sampler randomness |
-| Monitoring | I-persist ang eval run history | Regression detection | I-append ang JSON lines w/ timestamp + metric deltas |
+| Guardrails | Magdagdag ng hallucination fallback | Mas ligtas na sagot | Kung faithfulness < threshold → sagot: "Insufficient context." |
+| Fallback | Cascade local → Azure model | Hybrid quality boost | Sa mababang confidence, i-route sa cloud gamit ang parehong OpenAI API |
+| Determinism | Stable comparison runs | Repeatable eval sets | Fix seed, `temperature=0`, disable sampler randomness |
+| Monitoring | I-persist ang eval run history | Regression detection | Append JSON lines w/ timestamp + metric deltas |
 
 #### Halimbawa: Pagdaragdag ng Retrieval Timing
 
@@ -992,9 +993,9 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 ```
 
 
-#### Pag-scale ng Evaluation Gamit ang ragas
+#### Scaling Evaluation Gamit ang ragas
 
-1. Bumuo ng JSONL na may mga field: `question`, `answer`, `contexts`, `ground_truths` (list)
+1. Mag-assemble ng JSONL na may fields: `question`, `answer`, `contexts`, `ground_truths` (list)
 2. I-convert sa `Dataset.from_list(list_of_dicts)`
 3. Patakbuhin ang `evaluate(dataset, metrics=[...])`
 4. I-store ang metrics (CSV/JSON) para sa trend analysis.
@@ -1010,7 +1011,7 @@ D, I = index.search(query_vec, k)
 
 Para sa disk persistence, gamitin ang `faiss.write_index(index, "kb.index")`.
 
-## Karagdagang Mga Mapagkukunan
+## Karagdagang Resources
 
 ### Dokumentasyon
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
@@ -1028,16 +1029,16 @@ Para sa disk persistence, gamitin ang `faiss.write_index(index, "kb.index")`.
 **Antas ng Kahirapan**: Intermediate  
 **Mga Kinakailangan**: Natapos ang Session 1, Pangunahing kaalaman sa Python  
 
-## Halimbawang Scenario at Workshop Mapping
+## Sample Scenario at Workshop Mapping
 
-| Workshop Script / Notebook | Scenario | Layunin | Pangunahing Dataset / Source | Halimbawang Tanong |
-|----------------------------|----------|---------|------------------------------|--------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Internal support knowledge base na sumasagot sa privacy + performance FAQs | Minimal in‑memory RAG na may embeddings | `DOCS` list sa script (5 short passages) | Bakit ginagamit ang RAG sa lokal na inference? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Quality analyst na nagtatatag ng baseline retrieval faithfulness metrics | I-compute ang ragas metrics sa maliit na synthetic dataset | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` arrays | Anong advantage ang inaalok ng lokal na inference? |
+| Workshop Script / Notebook | Scenario | Layunin | Core Dataset / Source | Halimbawa ng Tanong |
+|----------------------------|----------|------|-----------------------|------------------|
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Internal support knowledge base answering privacy + performance FAQs | Minimal in‑memory RAG with embeddings | `DOCS` list sa script (5 short passages) | Bakit gamitin ang RAG sa local inference? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Quality analyst na nagtatatag ng baseline retrieval faithfulness metrics | Compute ragas metrics sa maliit na synthetic dataset | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` arrays | Anong benepisyo ang hatid ng local inference? |
 | `prompt_engineering.py` (advanced) | Domain SME na gumagawa ng grounded prompts para sa iba't ibang verticals | Ihambing ang domain system prompts at token impact | Inline `contexts` dict | Paano hinahandle ng Foundry Local ang model caching? |
 | `csv_qa_system.py` | Sales ops na nag-eexplore ng interactive analytics sa exports | I-summarize at i-query ang maliit na sales slice | Generated `sample_sales_data.csv` (10 rows) | Aling produkto ang may pinakamataas na average sales amount? |
-| `document_rag.py` | Product team na nag-eexplore ng doc RAG para sa internal wiki | I-retrieve + i-cite ang mga relevant na dokumento | `create_sample_knowledge_base()` list | Ano ang mga benepisyo ng Edge AI? |
-| `migration_guide.py` | Arkitekto na naghahanda ng cloud migration plan | Ipakita ang local→Azure API parity | Static test prompts | Ipaliwanag ang mga benepisyo ng edge AI sa 2–3 pangungusap. |
+| `document_rag.py` | Product team na nag-eexplore ng doc RAG para sa internal wiki | Mag-retrieve + mag-cite ng relevant docs | `create_sample_knowledge_base()` list | Ano ang mga benepisyo ng Edge AI? |
+| `migration_guide.py` | Architect na naghahanda ng cloud migration plan | Ipakita ang local→Azure API parity | Static test prompts | Ipaliwanag ang mga benepisyo ng edge AI sa 2–3 pangungusap. |
 
 ### Dataset Snippets
 Inline RAG pipeline doc list:
@@ -1061,13 +1062,15 @@ GROUND_TRUTH = [
 ```
 
 
-### Narrative ng Scenario
-Ang support engineering group ay nais ng mabilisang prototype upang sagutin ang mga internal FAQs nang hindi inilalantad ang customer data sa labas. Ang mga artifact ng Session 2 ay umuusad mula sa minimal ephemeral RAG (walang persistence) → structured CSV Q&A → document retrieval na may citation → objective quality evaluation (ragas) → isang migration strategy na handa para sa Azure staging.
+### Scenario Narrative
+Ang support engineering group ay nais ng mabilisang prototype upang sagutin ang internal FAQs nang hindi inilalantad ang customer data sa labas. Ang mga artifacts ng Session 2 ay umuusad mula sa minimal ephemeral RAG (walang persistence) → structured CSV Q&A → document retrieval na may citation → objective quality evaluation (ragas) → isang migration strategy na handa para sa Azure staging.
 
-### Mga Landas ng Pagpapalawak
-Gamitin ang Optional Enhancements table upang mag-evolve: palitan ang TF‑IDF ng FAISS/Chroma, palakihin ang evaluation corpus (50–100 Q/A), magdagdag ng fallback escalation sa mas malaking modelo kapag ang faithfulness < threshold.
+### Mga Landas sa Pagpapalawak
+Gamitin ang Optional Enhancements table upang mag-evolve: palitan ang TF‑IDF ng FAISS/Chroma, palakihin ang evaluation corpus (50–100 Q/A), magdagdag ng fallback escalation sa mas malaking model kapag ang faithfulness < threshold.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na pinagmulan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na pinagmulan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T20:39:19+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T18:36:56+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "mo"
 }
@@ -11,16 +11,16 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 摘要
 
-探索如何使用 Foundry Local 和 Azure AI Foundry 建構可行的生成式 AI 工作流程。學習進階提示工程、整合結構化數據，以及使用可重現的管道來編排任務。雖然重點是針對文件和數據問答的檢索增強生成（RAG），但這些模式可廣泛應用於生成式 AI 解決方案設計。
+探索如何使用 Foundry Local 和 Azure AI Foundry 建構可行的生成式 AI 工作流程。學習進階提示工程、整合結構化數據，以及使用可重現的管道來協調任務。雖然重點在於文件和數據問答的檢索增強生成（RAG），但這些模式可廣泛應用於生成式 AI 解決方案設計。
 
 ## 學習目標
 
 完成本節後，您將能夠：
 
 - **掌握提示工程**：設計有效的系統提示和基礎策略
-- **實現 RAG 模式**：使用向量搜索構建基於文件的問答系統
+- **實現 RAG 模式**：使用向量搜索建構基於文件的問答系統
 - **整合結構化數據**：在 AI 工作流程中處理 CSV、JSON 和表格數據
-- **構建生產級 RAG**：使用 Chainlit 創建可擴展的 RAG 應用
+- **建構生產級 RAG**：使用 Chainlit 創建可擴展的 RAG 應用
 - **連接本地到雲端**：了解從 Foundry Local 遷移到 Azure AI Foundry 的路徑
 
 ## 先決條件
@@ -48,7 +48,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
   
-如果您的環境尚未提供 Foundry Local 的 macOS 二進制文件，請在 Windows VM 或容器中運行服務並設置：
+如果您的環境尚未提供 Foundry Local 的 macOS 二進制檔案，請在 Windows VM 或容器中運行服務並設置：
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -218,7 +218,7 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
   
 
-### 2. 使用提示整合表格數據（CSV 問答）（10 分鐘）
+### 2. 整合表格數據與提示（CSV 問答）（10 分鐘）
 
 #### 步驟 2.1：CSV 數據整合
 
@@ -234,6 +234,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -892,7 +893,7 @@ python samples/02-rag-solutions/migration_guide.py
 ### 2. 結構化數據整合
 
 - **CSV 處理**：Pandas 與 AI 模型整合
-- **統計分析**：自動化數據摘要
+- **統計分析**：自動數據摘要
 - **上下文創建**：基於查詢動態生成上下文
 - **多格式支持**：JSON、CSV 和表格數據
 
@@ -901,13 +902,13 @@ python samples/02-rag-solutions/migration_guide.py
 - **向量搜索**：TF-IDF 和餘弦相似度
 - **文件檢索**：相關性評分和排序
 - **上下文組合**：多文件綜合
-- **答案生成**：基於上下文的回答創建
+- **答案生成**：基於上下文的回應創建
 
 ### 4. 雲端遷移策略
 
 - **統一 API**：本地和雲端的單一代碼基礎
 - **環境抽象**：基於配置的部署
-- **開發工作流程**：本地 → 測試環境 → 生產環境
+- **開發工作流程**：本地 → 測試 → 生產
 - **成本優化**：本地開發，雲端生產
 
 ## 生產考量
@@ -962,8 +963,8 @@ metrics = {
 
 完成本節後：
 
-1. **探索第三節**：Foundry Local 中的開源模型
-2. **構建生產級 RAG**：使用 Chainlit 實現（範例 04）
+1. **探索第三節**：Foundry Local 的開源模型
+2. **建構生產級 RAG**：使用 Chainlit 實現（範例 04）
 3. **進階向量搜索**：整合 Chroma 或 Pinecone
 4. **雲端遷移**：部署到 Azure AI Foundry
 5. **評估 RAG 質量**：運行 `cd Workshop/samples;python -m session02.rag_eval_ragas` 測量答案相關性、真實性和上下文精確度，使用 ragas
@@ -973,17 +974,17 @@ metrics = {
 | 類別 | 增強 | 理由 | 指導方向 |
 |------|------|------|----------|
 | 檢索 | 用向量存儲（FAISS / Chroma）替換 TF-IDF | 提升語義召回和可擴展性 | 將文件分塊（500–800 字元），嵌入，持久化索引 |
-| 混合索引 | 雙重語義 + 關鍵字過濾 | 提高數字/代碼查詢的精確度 | 先按關鍵字過濾，再按餘弦相似度排序 |
-| 嵌入 | 評估多個嵌入模型 | 優化相關性與速度 | A/B 測試：MiniLM vs E5-small vs 本地託管編碼器 |
+| 混合索引 | 雙語義 + 關鍵字過濾 | 提高數字/代碼查詢的精確度 | 先按關鍵字過濾，再按餘弦相似度排序 |
+| 嵌入 | 評估多個嵌入模型 | 優化相關性與速度 | A/B 測試：MiniLM vs E5-small vs 本地托管編碼器 |
 | 緩存 | 緩存嵌入和檢索結果 | 降低重複查詢延遲 | 使用簡單的磁盤 pickle / sqlite 和哈希鍵 |
-| 評估 | 擴展 ragas 數據集 | 統計上有意義的質量 | 策劃 50–100 個問答 + 上下文；按主題分層 |
-| 指標 | 跟踪檢索和生成時間 | 性能分析 | 捕獲每次調用的 `retrieval_ms`、`gen_ms`、`tokens` |
-| 防護措施 | 添加幻覺回退 | 更安全的答案 | 如果真實性 < 閾值 → 答案："上下文不足。" |
+| 評估 | 擴展 ragas 數據集 | 統計上有意義的質量 | 策劃 50–100 問答 + 上下文；按主題分層 |
+| 指標 | 跟踪檢索和生成時間 | 性能分析 | 捕捉每次調用的 `retrieval_ms`、`gen_ms`、`tokens` |
+| 防護措施 | 添加幻覺回退 | 更安全的答案 | 如果真實性低於閾值 → 回答："上下文不足。" |
 | 回退 | 本地 → Azure 模型級聯 | 混合質量提升 | 在低信心時通過相同的 OpenAI API 路由到雲端 |
-| 確定性 | 穩定的比較運行 | 可重複的評估集 | 固定種子，`temperature=0`，禁用採樣隨機性 |
-| 監控 | 持久化評估運行歷史 | 回歸檢測 | 附加 JSON 行，帶有時間戳 + 指標變化 |
+| 確定性 | 穩定的比較運行 | 可重複的評估集 | 固定種子，`temperature=0`，禁用採樣器隨機性 |
+| 監控 | 持久化評估運行歷史 | 回歸檢測 | 附加 JSON 行，帶有時間戳和指標變化 |
 
-#### 範例：添加檢索時間
+#### 示例：添加檢索時間
 
 ```python
 import time
@@ -999,7 +1000,7 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 
 #### 使用 ragas 擴展評估
 
-1. 構建包含以下字段的 JSONL：`question`、`answer`、`contexts`、`ground_truths`（列表）
+1. 組裝一個 JSONL，字段包括：`question`、`answer`、`contexts`、`ground_truths`（列表）
 2. 轉換為 `Dataset.from_list(list_of_dicts)`
 3. 運行 `evaluate(dataset, metrics=[...])`
 4. 存儲指標（CSV/JSON）以進行趨勢分析。
@@ -1015,13 +1016,13 @@ D, I = index.search(query_vec, k)
   
 對於磁盤持久化，使用 `faiss.write_index(index, "kb.index")`。
 
-## 其他資源
+## 附加資源
 
 ### 文件
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Azure AI Foundry RAG 模式](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
 - [提示工程指南](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
-- [Ragas 評估文檔](https://docs.ragas.io)
+- [Ragas 評估文件](https://docs.ragas.io)
 
 ### 範例代碼
 - [Module08 範例 04](./samples/04/README.md) - Chainlit RAG 應用
@@ -1030,19 +1031,19 @@ D, I = index.search(query_vec, k)
 ---
 
 **課程時長**：30 分鐘實作 + 15 分鐘問答  
-**難度等級**：中級  
-**先決條件**：完成第一節，具備基本 Python 知識
+**難度級別**：中級  
+**先決條件**：完成第一節，具備基本 Python 知識  
 
 ## 範例場景與工作坊映射
 
-| 工作坊腳本 / 筆記本 | 場景 | 目標 | 核心數據集 / 資源 | 範例問題 |
+| 工作坊腳本 / 筆記本 | 場景 | 目標 | 核心數據集 / 資源 | 示例問題 |
 |---------------------|------|------|------------------|----------|
 | `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | 內部支持知識庫回答隱私 + 性能常見問題 | 使用嵌入的最小內存 RAG | 腳本中的 `DOCS` 列表（5 個短段落） | 為什麼使用 RAG 與本地推理？ |
 | `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | 質量分析員建立基準檢索真實性指標 | 在小型合成數據集上計算 ragas 指標 | `DOCS`、`QUESTIONS`、`GROUND_TRUTH` 陣列 | 本地推理有什麼優勢？ |
-| `prompt_engineering.py`（進階） | 領域專家設計多垂直領域的基礎提示 | 比較領域系統提示和 token 影響 | 內嵌 `contexts` 字典 | Foundry Local 如何處理模型緩存？ |
-| `csv_qa_system.py` | 銷售運營探索導出數據的交互式分析 | 摘要和查詢小型銷售數據片段 | 生成的 `sample_sales_data.csv`（10 行） | 哪個產品的平均銷售額最高？ |
+| `prompt_engineering.py`（進階） | 領域專家為多個垂直領域設計基礎提示 | 比較領域系統提示和 token 影響 | 內嵌 `contexts` 字典 | Foundry Local 如何處理模型緩存？ |
+| `csv_qa_system.py` | 銷售運營探索導出數據的互動分析 | 摘要和查詢小型銷售片段 | 生成的 `sample_sales_data.csv`（10 行） | 哪個產品的平均銷售額最高？ |
 | `document_rag.py` | 產品團隊探索內部維基的文件 RAG | 檢索並引用相關文件 | `create_sample_knowledge_base()` 列表 | 邊緣 AI 的優勢是什麼？ |
-| `migration_guide.py` | 架構師準備雲端遷移計劃 | 展示本地 → Azure API 的一致性 | 靜態測試提示 | 用 2–3 句解釋邊緣 AI 的優勢。 |
+| `migration_guide.py` | 架構師準備雲端遷移計劃 | 展示本地→Azure API 的一致性 | 靜態測試提示 | 用 2–3 句解釋邊緣 AI 的優勢。 |
 
 ### 數據集片段
 內嵌 RAG 管道文檔列表：
@@ -1067,12 +1068,14 @@ GROUND_TRUTH = [
   
 
 ### 場景敘述
-支持工程團隊希望快速原型化以回答內部常見問題，而不將客戶數據暴露到外部。第二節的成果從最小的臨時 RAG（無持久性）→ 結構化 CSV 問答 → 文件檢索與引用 → 客觀質量評估（ragas）→ 準備好 Azure 測試環境的遷移策略。
+支持工程團隊希望快速原型化以回答內部常見問題，而不將客戶數據暴露到外部。第二節的成果從最小的臨時 RAG（無持久性）→ 結構化 CSV 問答 → 文件檢索與引用 → 客觀質量評估（ragas）→ 準備好 Azure 測試的遷移策略。
 
 ### 擴展路徑
-使用可選增強表來改進：用 FAISS/Chroma 替換 TF-IDF，擴大評估語料庫（50–100 問答），在真實性 < 閾值時添加回退升級到更大的模型。
+使用可選增強表來改進：用 FAISS/Chroma 替換 TF-IDF，擴大評估語料庫（50–100 問答），在真實性低於閾值時添加回退升級到更大的模型。
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或誤釋不承擔責任。
+本文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原始語言的文件作為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋不承擔責任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

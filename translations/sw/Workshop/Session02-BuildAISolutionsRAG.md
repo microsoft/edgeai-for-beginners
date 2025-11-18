@@ -1,36 +1,36 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T22:50:51+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T19:13:25+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "sw"
 }
 -->
-# Kikao cha 2: Kujenga Suluhisho za AI kwa kutumia Azure AI Foundry
+# Kikao cha 2: Jenga Suluhisho za AI na Azure AI Foundry
 
 ## Muhtasari
 
-Gundua jinsi ya kujenga mchakato wa kazi wa GenAI unaoweza kutekelezeka kwa kutumia Foundry Local na Azure AI Foundry. Jifunze mbinu za hali ya juu za uhandisi wa maelekezo, unganisha data iliyopangwa, na panga kazi kwa kutumia mifumo inayoweza kurudiwa. Ingawa mkazo uko kwenye Utoaji wa Taarifa Ulioimarishwa (RAG) kwa maswali na majibu ya nyaraka na data, mifumo hii inaweza kutumika kwa muundo mpana wa suluhisho za GenAI.
+Gundua jinsi ya kujenga mchakato wa GenAI unaoweza kutekelezeka kwa kutumia Foundry Local na Azure AI Foundry. Jifunze mbinu za hali ya juu za uhandisi wa maelekezo, unganisha data iliyopangwa, na panga kazi kwa kutumia mifumo inayoweza kurudiwa. Ingawa mkazo ni kwenye Retrieval-Augmented Generation (RAG) kwa maswali na majibu ya nyaraka na data, mifumo hii inaweza kutumika kwa muundo mpana wa suluhisho za GenAI.
 
 ## Malengo ya Kujifunza
 
 Mwisho wa kikao hiki, utaweza:
 
-- **Kumiliki Uhandisi wa Maelekezo**: Kubuni maelekezo ya mfumo yenye ufanisi na mikakati ya msingi
-- **Kutumia Mifumo ya RAG**: Kujenga mifumo ya maswali na majibu inayotegemea nyaraka kwa kutumia utafutaji wa vector
-- **Kuunganisha Data Iliyoandaliwa**: Kufanya kazi na data ya CSV, JSON, na tabular katika mchakato wa kazi wa AI
-- **Kujenga RAG ya Uzalishaji**: Kuunda programu za RAG zinazoweza kupanuka kwa kutumia Chainlit
-- **Kuunganisha Local na Wingu**: Kuelewa njia za uhamiaji kutoka Foundry Local hadi Azure AI Foundry
+- **Kumudu Uhandisi wa Maelekezo**: Unda maelekezo ya mfumo yenye ufanisi na mikakati ya msingi
+- **Kutumia Mifumo ya RAG**: Jenga mifumo ya maswali na majibu inayotegemea nyaraka kwa kutumia utafutaji wa vekta
+- **Kuunganisha Data Iliyopangwa**: Fanya kazi na CSV, JSON, na data ya tabular katika mchakato wa AI
+- **Kujenga RAG ya Uzalishaji**: Unda programu za RAG zinazoweza kupanuka kwa kutumia Chainlit
+- **Kuhamisha kutoka Local hadi Cloud**: Elewa njia za uhamisho kutoka Foundry Local hadi Azure AI Foundry
 
 ## Mahitaji ya Awali
 
-- Kukamilisha Kikao cha 1 (Usanidi wa Foundry Local)
-- Uelewa wa msingi wa hifadhidata za vector na embeddings
+- Umemaliza Kikao cha 1 (Usanidi wa Foundry Local)
+- Uelewa wa msingi wa hifadhidata za vekta na embeddings
 - Uzoefu wa programu ya Python
-- Uzoefu wa dhana za usindikaji wa nyaraka
+- Ufahamu wa dhana za usindikaji wa nyaraka
 
-### Mwanzo wa Haraka wa Mazingira ya Msalaba (Windows & macOS)
+### Mwanzo wa Haraka wa Mazingira ya Mifumo Mbalimbali (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -48,15 +48,15 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Ikiwa binaries za Foundry Local macOS bado hazipatikani katika mazingira yako, endesha huduma kwenye VM ya Windows au kontena na weka:
+Ikiwa binaries za Foundry Local kwa macOS hazipatikani bado katika mazingira yako, endesha huduma kwenye VM ya Windows au kontena na weka:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Uthibitisho: Ukaguzi wa Mazingira ya Foundry Local
+## Uthibitishaji: Ukaguzi wa Mazingira ya Foundry Local
 
-Kabla ya kuanza maonyesho, hakikisha mazingira yako ya ndani:
+Kabla ya kuanza maonyesho, thibitisha mazingira yako ya ndani:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -65,13 +65,13 @@ foundry model run phi-4-mini   # Start baseline SLM
 curl http://localhost:5273/v1/models  # Validate API (should list running model)
 ```
 
-Ikiwa amri ya mwisho itashindwa, anzisha (au anzisha tena) huduma: `foundry service start`.
+Ikiwa amri ya mwisho itashindwa, anzisha (au anzisha upya) huduma: `foundry service start`.
 
 ## Mtiririko wa Maonyesho (Dakika 30)
 
 ### 1. Maelekezo ya Mfumo na Mikakati ya Msingi (Dakika 10)
 
-#### Hatua ya 1.1: Uhandisi wa Maelekezo ya Hali ya Juu
+#### Hatua 1.1: Uhandisi wa Maelekezo ya Hali ya Juu
 
 Unda `samples/02-rag-solutions/prompt_engineering.py`:
 
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### Hatua ya 1.2: Jaribu Mikakati ya Msingi
+#### Hatua 1.2: Jaribu Mikakati ya Msingi
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -217,9 +217,9 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### 2. Kuunganisha Data ya Tabular na Maelekezo (Maswali na Majibu ya CSV) (Dakika 10)
+### 2. Unganisha Data ya Tabular na Maelekezo (Maswali na Majibu ya CSV) (Dakika 10)
 
-#### Hatua ya 2.1: Muunganiko wa Data ya CSV
+#### Hatua 2.1: Ujumuishaji wa Data ya CSV
 
 Unda `samples/02-rag-solutions/csv_qa_system.py`:
 
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -433,7 +434,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### Hatua ya 2.2: Jaribu Mfumo wa Maswali na Majibu ya CSV
+#### Hatua 2.2: Jaribu Mfumo wa Maswali na Majibu ya CSV
 
 ```powershell
 # Run the CSV Q&A demo
@@ -441,9 +442,9 @@ python samples/02-rag-solutions/csv_qa_system.py
 ```
 
 
-### 3. Mradi wa Kuanza: Kubadilisha 02-grounding-data (Dakika 5)
+### 3. Mradi wa Kuanza: Badilisha 02-grounding-data (Dakika 5)
 
-#### Hatua ya 3.1: Mfumo wa Nyaraka wa RAG Ulioboreshwa
+#### Hatua 3.1: Mfumo wa RAG wa Nyaraka Ulioboreshwa
 
 Unda `samples/02-rag-solutions/document_rag.py`:
 
@@ -661,9 +662,9 @@ if __name__ == "__main__":
 ```
 
 
-### 4. Onyesha Njia ya Uhamiaji kutoka CLI hadi Azure (Dakika 5)
+### 4. Onyesha Njia ya Uhamisho kutoka CLI hadi Azure (Dakika 5)
 
-#### Hatua ya 4.1: Muhtasari wa Mkakati wa Uhamiaji
+#### Hatua 4.1: Muhtasari wa Mkakati wa Uhamisho
 
 Unda `samples/02-rag-solutions/migration_guide.py`:
 
@@ -869,7 +870,7 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-#### Hatua ya 4.2: Jaribu Mifumo ya Uhamiaji
+#### Hatua 4.2: Jaribu Mifumo ya Uhamisho
 
 ```powershell
 # Run the migration demo
@@ -882,32 +883,32 @@ python samples/02-rag-solutions/migration_guide.py
 ### 1. Uhandisi wa Maelekezo ya Hali ya Juu
 
 - **Maelekezo ya Mfumo**: Wataalamu wa kikoa maalum
-- **Mikakati ya Msingi**: Mbinu za kuunganisha muktadha
-- **Udhibiti wa Joto**: Kuweka usawa kati ya ubunifu na uthabiti
+- **Mikakati ya Msingi**: Mbinu za ujumuishaji wa muktadha
+- **Udhibiti wa Joto**: Kuweka uwiano kati ya ubunifu na uthabiti
 - **Usimamizi wa Tokeni**: Matumizi bora ya muktadha
 
-### 2. Muunganiko wa Data Iliyoandaliwa
+### 2. Ujumuishaji wa Data Iliyopangwa
 
-- **Usindikaji wa CSV**: Muunganiko wa Pandas na mifumo ya AI
-- **Uchambuzi wa Takwimu**: Muhtasari wa data uliojiendesha
-- **Uundaji wa Muktadha**: Uundaji wa muktadha wa kipekee kulingana na maswali
-- **Msaada wa Muundo Mbalimbali**: JSON, CSV, na data ya tabular
+- **Usindikaji wa CSV**: Ujumuishaji wa Pandas na mifumo ya AI
+- **Uchambuzi wa Takwimu**: Muhtasari wa data kiotomatiki
+- **Uundaji wa Muktadha**: Uundaji wa muktadha wa nguvu kulingana na maswali
+- **Msaada wa Miundo Mingi**: JSON, CSV, na data ya tabular
 
 ### 3. Mifumo ya Utekelezaji ya RAG
 
-- **Utafutaji wa Vector**: TF-IDF na mfanano wa cosine
-- **Utoaji wa Nyaraka**: Upangaji wa umuhimu na alama
-- **Muunganiko wa Muktadha**: Muhtasari wa nyaraka nyingi
-- **Uundaji wa Majibu**: Uundaji wa majibu yaliyo na msingi
+- **Utafutaji wa Vekta**: TF-IDF na mfanano wa cosine
+- **Upataji wa Nyaraka**: Upangaji wa umuhimu na alama
+- **Mchanganyiko wa Muktadha**: Muunganiko wa nyaraka nyingi
+- **Uundaji wa Majibu**: Uundaji wa majibu yaliyojikita
 
-### 4. Mikakati ya Uhamiaji wa Wingu
+### 4. Mikakati ya Uhamisho wa Cloud
 
-- **APIs Zilizojumuishwa**: Msingi mmoja wa msimbo kwa local na wingu
+- **APIs Zilizounganishwa**: Msingi mmoja wa msimbo kwa local na cloud
 - **Utoaji wa Mazingira**: Utekelezaji unaoendeshwa na usanidi
-- **Mtiririko wa Maendeleo**: Local → Staging → Uzalishaji
-- **Uboreshaji wa Gharama**: Maendeleo ya local, uzalishaji wa wingu
+- **Mtiririko wa Maendeleo**: Local → Staging → Production
+- **Uboreshaji wa Gharama**: Maendeleo ya ndani, uzalishaji wa cloud
 
-## Mambo ya Kuzingatia kwa Uzalishaji
+## Mazingatio ya Uzalishaji
 
 ### 1. Uboreshaji wa Utendaji
 
@@ -923,7 +924,7 @@ rag_config = {
 }
 ```
 
-### 2. Kushughulikia Makosa
+### 2. Ushughulikiaji wa Makosa
 
 ```python
 # Robust error handling
@@ -955,30 +956,30 @@ metrics = {
 
 ## Hatua Zifuatazo
 
-Baada ya kukamilisha kikao hiki:
+Baada ya kumaliza kikao hiki:
 
-1. **Gundua Kikao cha 3**: Miundo ya Chanzo Huria katika Foundry Local
+1. **Chunguza Kikao cha 3**: Miundo ya Chanzo Huria katika Foundry Local
 2. **Jenga RAG ya Uzalishaji**: Tekeleza kwa Chainlit (Mfano 04)
-3. **Utafutaji wa Vector wa Hali ya Juu**: Unganisha na Chroma au Pinecone
-4. **Uhamiaji wa Wingu**: Tekeleza kwa Azure AI Foundry
-5. **Tathmini Ubora wa RAG**: Endesha `cd Workkshop/samples;python -m session02.rag_eval_ragas` kupima uhusiano wa majibu, uaminifu, na usahihi wa muktadha kwa kutumia ragas
+3. **Utafutaji wa Vekta wa Hali ya Juu**: Unganisha na Chroma au Pinecone
+4. **Uhamisho wa Cloud**: Tekeleza kwa Azure AI Foundry
+5. **Tathmini Ubora wa RAG**: Endesha `cd Workshop/samples;python -m session02.rag_eval_ragas` kupima answer_relevancy, faithfulness, na context_precision kwa kutumia ragas
 
 ### Uboreshaji wa Hiari
 
-| Kategoria | Uboreshaji | Sababu | Mwelekeo |
-|-----------|------------|--------|----------|
-| Utoaji | Badilisha TF-IDF na hifadhi ya vector (FAISS / Chroma) | Kumbukumbu bora ya semantiki na upanuzi | Gawa nyaraka (500–800 herufi), weka embeddings, hifadhi index |
-| Hifadhi Mseto | Kuchuja semantiki + maneno muhimu | Inaboresha usahihi kwenye maswali ya nambari / kanuni | Chuja kwa maneno muhimu kisha panga kwa mfanano wa cosine |
-| Embeddings | Tathmini miundo mbalimbali ya embeddings | Boresha umuhimu dhidi ya kasi | A/B: MiniLM vs E5-small vs encoder inayohifadhiwa local |
-| Caching | Hifadhi embeddings na matokeo ya utoaji | Punguza ucheleweshaji wa maswali yanayorudiwa | Hifadhi rahisi kwenye diski / sqlite na ufunguo wa hash |
-| Tathmini | Panua dataset ya ragas | Ubora wa takwimu wa maana | Kusanya maswali na majibu 50–100 + muktadha; panga kwa mada |
-| Metriki | Fuatilia muda wa utoaji na uundaji | Ufuatiliaji wa utendaji | Rekodi `retrieval_ms`, `gen_ms`, `tokens` kwa kila simu |
-| Guardrails | Ongeza fallback ya udanganyifu | Majibu salama | Ikiwa uaminifu < kizingiti → jibu: "Muktadha haujatosha." |
-| Fallback | Panga local → Azure model | Kuongeza ubora wa mseto | Kwa uaminifu wa chini elekeza kwa wingu kupitia API sawa ya OpenAI |
-| Uthabiti | Ulinganisho thabiti wa uendeshaji | Seti za tathmini zinazoweza kurudiwa | Weka mbegu, `temperature=0`, zima nasibu ya sampler |
-| Ufuatiliaji | Hifadhi historia ya tathmini ya uendeshaji | Kugundua kurudi nyuma | Ongeza mistari ya JSON na timestamp + tofauti za metrik |
+| Jamii | Uboreshaji | Sababu | Mwelekeo |
+|-------|------------|--------|----------|
+| Upataji | Badilisha TF-IDF na hifadhi ya vekta (FAISS / Chroma) | Kumbukumbu bora ya semantiki na upanuzi | Gawanya nyaraka (herufi 500–800), embed, hifadhi index |
+| Hifadhi Mseto | Uchujaji wa semantiki + maneno muhimu | Inaboresha usahihi kwenye maswali ya nambari / msimbo | Chuja kwa maneno muhimu kisha panga kwa mfanano wa cosine |
+| Embeddings | Tathmini miundo mingi ya embedding | Boresha umuhimu dhidi ya kasi | A/B: MiniLM vs E5-small vs encoder inayohifadhiwa ndani |
+| Caching | Hifadhi embeddings & matokeo ya upataji | Punguza ucheleweshaji wa maswali yanayojirudia | Rahisi kwenye diski pickle / sqlite na hash key |
+| Tathmini | Panua dataset ya ragas | Ubora wa maana wa takwimu | Kusanya maswali/majibu 50–100 + muktadha; gawanya kwa mada |
+| Vipimo | Fuatilia muda wa upataji & uundaji | Ufuatiliaji wa utendaji | Rekodi `retrieval_ms`, `gen_ms`, `tokens` kwa kila simu |
+| Ulinzi | Ongeza fallback ya udanganyifu | Majibu salama | Ikiwa faithfulness < kizingiti → jibu: "Muktadha hautoshi." |
+| Fallback | Panga local → Azure model | Kuongeza ubora wa mseto | Kwa ujasiri mdogo elekeza kwa cloud kupitia OpenAI API ile ile |
+| Uthabiti | Ulinganisho thabiti wa majaribio | Seti za tathmini zinazoweza kurudiwa | Weka mbegu, `temperature=0`, zima nasibu ya sampler |
+| Ufuatiliaji | Hifadhi historia ya tathmini | Kugundua mabadiliko | Ongeza mistari ya JSON na timestamp + tofauti za kipimo |
 
-#### Mfano: Kuongeza Muda wa Utoaji
+#### Mfano: Kuongeza Muda wa Upataji
 
 ```python
 import time
@@ -991,15 +992,14 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
-
-#### Kupanua Tathmini na ragas
+#### Kupima kwa Kiwango na ragas
 
 1. Kusanya JSONL yenye sehemu: `question`, `answer`, `contexts`, `ground_truths` (orodha)
 2. Badilisha kuwa `Dataset.from_list(list_of_dicts)`
 3. Endesha `evaluate(dataset, metrics=[...])`
-4. Hifadhi metrik (CSV/JSON) kwa uchambuzi wa mwenendo.
+4. Hifadhi vipimo (CSV/JSON) kwa uchambuzi wa mwenendo.
 
-#### Mwanzo wa Haraka wa Hifadhi ya Vector (FAISS)
+#### Mwanzo wa Haraka wa Hifadhi ya Vekta (FAISS)
 
 ```python
 import faiss, numpy as np
@@ -1019,28 +1019,28 @@ Kwa hifadhi ya diski tumia `faiss.write_index(index, "kb.index")`.
 - [Nyaraka za Tathmini ya Ragas](https://docs.ragas.io)
 
 ### Mifano ya Msimbo
-- [Mfano wa Moduli08 04](./samples/04/README.md) - Chainlit RAG Application
+- [Mfano 04 wa Module08](./samples/04/README.md) - Chainlit RAG Application
 - [Mfumo wa Wakala wa Hali ya Juu](./samples/09/README.md) - Mifumo ya uratibu wa wakala
 
 ---
 
 **Muda wa Kikao**: Dakika 30 za vitendo + Dakika 15 za Maswali na Majibu  
-**Kiwango cha Ugumu**: Wastani  
+**Kiwango cha Ugumu**: Kati  
 **Mahitaji ya Awali**: Kikao cha 1 kimekamilika, Ujuzi wa Msingi wa Python  
 
-## Mfano wa Hali na Ulinganisho wa Warsha
+## Mfano wa Hali na Ulinganifu wa Warsha
 
-| Hati ya Warsha / Daftari | Hali | Lengo | Dataset / Chanzo Kikuu | Swali la Mfano |
-|--------------------------|------|-------|------------------------|----------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Msingi wa maarifa ya msaada wa ndani kujibu maswali ya faragha + utendaji | RAG ya ndani ya muda mfupi bila hifadhi | Orodha ya `DOCS` katika hati (vipande 5 vifupi) | Kwa nini utumie RAG na inference ya local? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Mchambuzi wa ubora anayeanzisha metrik za msingi za uaminifu wa utoaji | Hesabu metrik za ragas kwenye dataset ndogo ya synthetic | Arrays za `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Ni faida gani inference ya local inatoa? |
-| `prompt_engineering.py` (hali ya juu) | SME wa kikoa akibuni maelekezo yaliyo na msingi kwa sekta mbalimbali | Linganisha maelekezo ya mfumo wa kikoa na athari ya tokeni | Dict ya `contexts` ya ndani | Foundry Local inashughulikiaje caching ya modeli? |
-| `csv_qa_system.py` | Operesheni za mauzo zinazochunguza uchambuzi wa maingiliano juu ya mauzo | Muhtasari na maswali juu ya sehemu ndogo ya mauzo | `sample_sales_data.csv` iliyotengenezwa (mistari 10) | Bidhaa gani ina wastani wa mauzo ya juu zaidi? |
-| `document_rag.py` | Timu ya bidhaa inayochunguza RAG ya nyaraka kwa wiki ya ndani | Pata + taja nyaraka zinazofaa | Orodha ya `create_sample_knowledge_base()` | Ni faida gani za Edge AI? |
-| `migration_guide.py` | Mbunifu anayeandaa mpango wa uhamiaji wa wingu | Onyesha usawa wa API ya local→Azure | Maelekezo ya majaribio ya static | Eleza faida za Edge AI kwa sentensi 2–3. |
+| Script ya Warsha / Notebook | Hali | Lengo | Dataset / Chanzo Kikuu | Swali la Mfano |
+|-----------------------------|------|-------|------------------------|----------------|
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Msingi wa maarifa ya msaada wa ndani yanayojibu maswali ya faragha + utendaji | RAG ya msingi ya ndani bila hifadhi | Orodha ya `DOCS` kwenye script (vifungu 5 vifupi) | Kwa nini utumie RAG na inference ya ndani? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Mchambuzi wa ubora anayejenga vipimo vya msingi vya uaminifu wa upataji | Hesabu vipimo vya ragas kwenye dataset ndogo ya synthetiki | Arrays za `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Je, faida ya inference ya ndani ni ipi? |
+| `prompt_engineering.py` (hali ya juu) | Mtaalamu wa kikoa akitengeneza maelekezo ya msingi kwa sekta nyingi | Linganisha maelekezo ya mfumo wa kikoa & athari za tokeni | Kamusi ya `contexts` ya ndani | Foundry Local inashughulikiaje caching ya modeli? |
+| `csv_qa_system.py` | Operesheni za mauzo zinazochunguza uchambuzi wa mwingiliano juu ya mauzo | Fupisha & uliza sehemu ndogo ya mauzo | `sample_sales_data.csv` iliyotengenezwa (safu 10) | Bidhaa gani ina wastani wa mauzo ya juu zaidi? |
+| `document_rag.py` | Timu ya bidhaa inayochunguza RAG ya nyaraka kwa wiki ya ndani | Pata + taja nyaraka husika | Orodha ya `create_sample_knowledge_base()` | Faida za Edge AI ni zipi? |
+| `migration_guide.py` | Mbunifu anayejitayarisha mpango wa uhamisho wa cloud | Onyesha usawa wa API kati ya local→Azure | Maelekezo ya majaribio ya static | Eleza faida za Edge AI kwa sentensi 2–3. |
 
 ### Vipande vya Dataset
-Orodha ya pipeline ya RAG ya ndani:
+Orodha ya nyaraka za RAG pipeline:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1051,7 +1051,7 @@ DOCS = [
 ]
 ```
 
-Vipande vya ukweli wa tathmini ya ragas:
+Jozi za ukweli wa tathmini ya Ragas:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1061,13 +1061,15 @@ GROUND_TRUTH = [
 ```
 
 
-### Maelezo ya Hali
-Kikundi cha uhandisi wa msaada kinataka mfano wa haraka wa kujibu maswali ya ndani bila kufichua data ya wateja nje. Vifaa vya Kikao cha 2 vinapiga hatua kutoka RAG ya muda mfupi (bila hifadhi) → Maswali na Majibu ya CSV iliyopangwa → Utoaji wa nyaraka na nukuu → Tathmini ya ubora wa malengo (ragas) → mkakati wa uhamiaji tayari kwa Azure staging.
+### Simulizi ya Hali
+Kikundi cha wahandisi wa msaada kinataka mfano wa haraka wa kujibu maswali ya ndani bila kufichua data ya wateja nje. Vifaa vya Kikao cha 2 vinapiga hatua kutoka RAG ya msingi isiyo na hifadhi → Maswali na Majibu ya CSV → upataji wa nyaraka na marejeleo → tathmini ya ubora wa lengo (ragas) → mkakati wa uhamisho tayari kwa hatua ya Azure.
 
-### Njia za Kupanua
-Tumia jedwali la Uboreshaji wa Hiari kuboresha: badilisha TF-IDF na FAISS/Chroma, panua corpus ya tathmini (maswali na majibu 50–100), ongeza kupanda kwa modeli kubwa wakati uaminifu < kizingiti.
+### Njia za Upanuzi
+Tumia jedwali la Uboreshaji wa Hiari kuboresha: badilisha TF‑IDF na FAISS/Chroma, panua corpus ya tathmini (maswali/majibu 50–100), ongeza uhamisho wa fallback kwa modeli kubwa wakati faithfulness < kizingiti.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T23:01:28+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T19:16:47+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "cs"
 }
@@ -11,17 +11,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrakt
 
-Zjistěte, jak vytvořit praktické GenAI workflow pomocí Foundry Local a Azure AI Foundry. Naučte se pokročilé techniky návrhu promptů, integraci strukturovaných dat a orchestraci úkolů s reprodukovatelnými pipeline. Zaměření je na Retrieval-Augmented Generation (RAG) pro dotazy na dokumenty a data, ale vzory lze aplikovat na širší návrh GenAI řešení.
+Zjistěte, jak vytvářet praktické GenAI pracovní postupy pomocí Foundry Local a Azure AI Foundry. Naučte se pokročilé techniky návrhu promptů, integraci strukturovaných dat a orchestraci úkolů s reprodukovatelnými pipeline. Zaměření je na Retrieval-Augmented Generation (RAG) pro dotazy na dokumenty a data, ale vzory lze aplikovat na širší návrh GenAI řešení.
 
 ## Cíle učení
 
 Na konci tohoto sezení budete schopni:
 
-- **Ovládnout návrh promptů**: Navrhnout efektivní systémové prompty a strategie ukotvení
-- **Implementovat RAG vzory**: Vytvořit systémy dotazování na dokumenty pomocí vektorového vyhledávání
-- **Integrovat strukturovaná data**: Pracovat s CSV, JSON a tabulárními daty v AI workflow
-- **Vytvořit produkční RAG**: Vytvořit škálovatelné RAG aplikace s Chainlit
-- **Přemostit lokální a cloudové prostředí**: Pochopit migrační cesty z Foundry Local do Azure AI Foundry
+- **Ovládnout návrh promptů**: Navrhovat efektivní systémové prompty a strategie ukotvení
+- **Implementovat RAG vzory**: Vytvářet systémy dotazování na dokumenty pomocí vektorového vyhledávání
+- **Integrovat strukturovaná data**: Pracovat s CSV, JSON a tabulárními daty v AI pracovních postupech
+- **Vytvořit produkční RAG**: Vytvářet škálovatelné RAG aplikace s Chainlit
+- **Spojit lokální a cloudové prostředí**: Porozumět migračním cestám z Foundry Local do Azure AI Foundry
 
 ## Předpoklady
 
@@ -30,7 +30,7 @@ Na konci tohoto sezení budete schopni:
 - Zkušenosti s programováním v Pythonu
 - Znalost konceptů zpracování dokumentů
 
-### Rychlý start v multiplatformním prostředí (Windows & macOS)
+### Rychlý start pro multiplatformní prostředí (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -48,7 +48,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Pokud nejsou dostupné binární soubory Foundry Local pro macOS ve vašem prostředí, spusťte službu na Windows VM nebo kontejneru a nastavte:
+Pokud nejsou v prostředí dostupné binární soubory Foundry Local pro macOS, spusťte službu na Windows VM nebo kontejneru a nastavte:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -67,7 +67,7 @@ curl http://localhost:5273/v1/models  # Validate API (should list running model)
 
 Pokud poslední příkaz selže, spusťte (nebo restartujte) službu: `foundry service start`.
 
-## Průběh ukázek (30 minut)
+## Průběh ukázky (30 minut)
 
 ### 1. Systémové prompty a strategie ukotvení (10 minut)
 
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -904,7 +905,7 @@ python samples/02-rag-solutions/migration_guide.py
 
 - **Jednotné API**: Jednotný kód pro lokální i cloudové prostředí
 - **Abstrakce prostředí**: Nasazení řízené konfigurací
-- **Workflow vývoje**: Lokální → Staging → Produkce
+- **Vývojový workflow**: Lokální → Staging → Produkce
 - **Optimalizace nákladů**: Lokální vývoj, produkce v cloudu
 
 ## Produkční úvahy
@@ -961,22 +962,22 @@ Po dokončení tohoto sezení:
 2. **Vytvořte produkční RAG**: Implementujte s Chainlit (Ukázka 04)
 3. **Pokročilé vektorové vyhledávání**: Integrace s Chroma nebo Pinecone
 4. **Migrace do cloudu**: Nasazení do Azure AI Foundry
-5. **Hodnocení kvality RAG**: Spusťte `cd Workkshop/samples;python -m session02.rag_eval_ragas` pro měření relevance odpovědí, věrnosti a přesnosti kontextu pomocí ragas
+5. **Hodnocení kvality RAG**: Spusťte `cd Workshop/samples;python -m session02.rag_eval_ragas` pro měření relevance odpovědí, věrnosti a přesnosti kontextu pomocí ragas
 
 ### Volitelná vylepšení
 
 | Kategorie | Vylepšení | Důvod | Směr |
 |----------|-------------|-----------|-----------|
 | Získávání | Nahrazení TF-IDF vektorovým úložištěm (FAISS / Chroma) | Lepší sémantická přesnost a škálovatelnost | Rozdělit dokumenty (500–800 znaků), embedovat, uložit index |
-| Hybridní index | Dvojí sémantické + klíčové filtrování | Zlepšuje přesnost u numerických / kódových dotazů | Filtrovat podle klíčového slova, poté řadit podle kosinové podobnosti |
+| Hybridní index | Dvojí sémantické + klíčové filtrování | Zlepšuje přesnost u numerických / kódových dotazů | Filtrovat podle klíčových slov, poté řadit podle kosinové podobnosti |
 | Embeddingy | Hodnocení více embedding modelů | Optimalizace relevance vs rychlosti | A/B: MiniLM vs E5-small vs lokálně hostovaný encoder |
-| Caching | Cache embeddingů a výsledků získávání | Snížení latence opakovaných dotazů | Jednoduchý on-disk pickle / sqlite s hash klíčem |
+| Caching | Cache embeddingů a výsledků vyhledávání | Snížení latence opakovaných dotazů | Jednoduchý na disku pickle / sqlite s hash klíčem |
 | Hodnocení | Rozšíření datasetu ragas | Statisticky významná kvalita | Kurátorovat 50–100 Q/A + kontexty; stratifikovat podle tématu |
 | Metriky | Sledování časů získávání a generování | Profilování výkonu | Zachytit `retrieval_ms`, `gen_ms`, `tokens` na volání |
-| Ochranné mechanismy | Přidání záložního mechanismu proti halucinacím | Bezpečnější odpovědi | Pokud věrnost < práh → odpověď: "Nedostatečný kontext." |
-| Záložní mechanismus | Kaskáda lokální → Azure model | Hybridní zlepšení kvality | Při nízké důvěře přesměrovat na cloud přes stejné OpenAI API |
-| Determinismus | Stabilní porovnávací běhy | Opakovatelné evaluační sady | Fixovat seed, `temperature=0`, deaktivovat náhodnost sampleru |
-| Monitoring | Ukládání historie evaluačních běhů | Detekce regresí | Přidat JSON řádky s časovou značkou + změny metrik |
+| Ochranné mechanismy | Přidání fallbacku proti halucinacím | Bezpečnější odpovědi | Pokud věrnost < práh → odpověď: "Nedostatečný kontext." |
+| Fallback | Kaskáda lokální → Azure model | Hybridní zlepšení kvality | Při nízké důvěře přesměrovat na cloud přes stejné OpenAI API |
+| Determinismus | Stabilní porovnávací běhy | Opakovatelné eval sety | Fixovat seed, `temperature=0`, vypnout náhodnost sampleru |
+| Monitoring | Ukládání historie eval běhů | Detekce regresí | Přidat JSON řádky s časovým razítkem + metrickými změnami |
 
 #### Příklad: Přidání časování získávání
 
@@ -1019,7 +1020,7 @@ Pro perzistenci na disku použijte `faiss.write_index(index, "kb.index")`.
 - [Ragas Evaluation Docs](https://docs.ragas.io)
 
 ### Ukázkový kód
-- [Ukázka 04 modulu08](./samples/04/README.md) - Chainlit RAG aplikace
+- [Ukázka 04 z Modulu08](./samples/04/README.md) - Chainlit RAG aplikace
 - [Pokročilý multi-agentní systém](./samples/09/README.md) - Vzory koordinace agentů
 
 ---
@@ -1030,17 +1031,17 @@ Pro perzistenci na disku použijte `faiss.write_index(index, "kb.index")`.
 
 ## Ukázkový scénář a mapování workshopu
 
-| Skript / Notebook workshopu | Scénář | Cíl | Hlavní dataset / zdroj | Příklad otázky |
+| Skript / Notebook workshopu | Scénář | Cíl | Základní dataset / zdroj | Příklad otázky |
 |----------------------------|----------|------|-----------------------|------------------|
 | `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Interní podpora znalostní báze odpovídající na otázky o ochraně soukromí + výkonu | Minimální RAG v paměti s embeddingy | `DOCS` seznam ve skriptu (5 krátkých pasáží) | Proč používat RAG s lokální inferencí? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analytik kvality stanovující základní metriky věrnosti získávání | Výpočet ragas metrik na malém syntetickém datasetu | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` pole | Jakou výhodu nabízí lokální inference? |
-| `prompt_engineering.py` (pokročilé) | Doménový expert navrhující ukotvené prompty pro různé vertikály | Porovnání doménových systémových promptů a dopadu tokenů | Inline `contexts` dict | Jak Foundry Local zpracovává cache modelů? |
-| `csv_qa_system.py` | Sales ops zkoumající interaktivní analýzu exportů | Shrnutí a dotazování na malý výřez prodeje | Generovaný `sample_sales_data.csv` (10 řádků) | Který produkt má nejvyšší průměrnou částku prodeje? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analytik kvality stanovující základní metriky věrnosti získávání | Výpočet metrik ragas na malém syntetickém datasetu | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` pole | Jakou výhodu nabízí lokální inference? |
+| `prompt_engineering.py` (pokročilé) | Doménový SME vytvářející ukotvené prompty pro různé vertikály | Porovnání doménových systémových promptů a dopadu tokenů | Inline `contexts` dict | Jak Foundry Local zpracovává cache modelů? |
+| `csv_qa_system.py` | Sales ops zkoumající interaktivní analytiku nad exporty | Shrnutí & dotazování na malý výřez prodeje | Generovaný `sample_sales_data.csv` (10 řádků) | Který produkt má nejvyšší průměrnou částku prodeje? |
 | `document_rag.py` | Produktový tým zkoumající dokumentový RAG pro interní wiki | Získávání + citace relevantních dokumentů | `create_sample_knowledge_base()` seznam | Jaké jsou výhody Edge AI? |
-| `migration_guide.py` | Architekt připravující plán migrace do cloudu | Ukázka parity API mezi lokálním a Azure | Statické testovací prompty | Vysvětlete výhody Edge AI ve 2–3 větách. |
+| `migration_guide.py` | Architekt připravující plán migrace do cloudu | Ukázka parity API lokální→Azure | Statické testovací prompty | Vysvětlete výhody Edge AI ve 2–3 větách. |
 
 ### Ukázky datasetu
-Inline seznam dokumentů RAG pipeline:
+Seznam dokumentů pro RAG pipeline:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1051,7 +1052,7 @@ DOCS = [
 ]
 ```
 
-Ragas hodnotící pravdivé dvojice:
+Pravdivé dvojice pro hodnocení ragas:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1061,13 +1062,15 @@ GROUND_TRUTH = [
 ```
 
 
-### Narativ scénáře
+### Scénářový příběh
 Skupina podpory inženýrů chce rychlý prototyp pro odpovídání na interní FAQ bez vystavení zákaznických dat externě. Artefakty ze Sezení 2 postupují od minimálního efemérního RAG (bez perzistence) → strukturované CSV Q&A → získávání dokumentů s citací → objektivní hodnocení kvality (ragas) → migrační strategie připravené pro Azure staging.
 
 ### Cesty rozšíření
-Použijte tabulku Volitelná vylepšení k evoluci: nahraďte TF-IDF FAISS/Chroma, rozšiřte evaluační korpus (50–100 Q/A), přidejte eskalaci na větší model při věrnosti < práh.
+Použijte tabulku Volitelná vylepšení k evoluci: nahrazení TF‑IDF za FAISS/Chroma, rozšíření eval korpusu (50–100 Q/A), přidání fallback eskalace na větší model při věrnosti < práh.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

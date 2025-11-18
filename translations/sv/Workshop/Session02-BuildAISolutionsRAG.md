@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T22:05:08+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T18:59:00+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "sv"
 }
@@ -11,24 +11,24 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Sammanfattning
 
-Utforska hur man bygger användbara GenAI-arbetsflöden med Foundry Local och Azure AI Foundry. Lär dig avancerad promptteknik, integrera strukturerad data och orkestrera uppgifter med reproducerbara pipelines. Fokus ligger på Retrieval-Augmented Generation (RAG) för dokument- och datafrågor, men mönstren kan tillämpas på bredare GenAI-lösningsdesign.
+Utforska hur man bygger användbara GenAI-arbetsflöden med Foundry Local och Azure AI Foundry. Lär dig avancerad promptteknik, integrera strukturerad data och orkestrera uppgifter med reproducerbara pipelines. Även om fokus ligger på Retrieval-Augmented Generation (RAG) för dokument- och datafrågor, kan mönstren tillämpas på bredare GenAI-lösningsdesign.
 
 ## Lärandemål
 
-Efter denna session kommer du att:
+Efter denna session kommer du att kunna:
 
-- **Behärska Promptteknik**: Designa effektiva systemprompter och grundningsstrategier
+- **Bemästra Prompt Engineering**: Designa effektiva systemprompter och grundningsstrategier
 - **Implementera RAG-mönster**: Bygga dokumentbaserade Q&A-system med vektorsökning
 - **Integrera strukturerad data**: Arbeta med CSV-, JSON- och tabulär data i AI-arbetsflöden
-- **Bygga produktionsklara RAG**: Skapa skalbara RAG-applikationer med Chainlit
+- **Bygga produktions-RAG**: Skapa skalbara RAG-applikationer med Chainlit
 - **Överbrygga lokalt till moln**: Förstå migrationsvägar från Foundry Local till Azure AI Foundry
 
 ## Förkunskaper
 
-- Slutfört Session 1 (Foundry Local-setup)
-- Grundläggande förståelse för vektordatabaser och embeddings
+- Genomfört Session 1 (Foundry Local-uppsättning)
+- Grundläggande förståelse för vektordatabaser och inbäddningar
 - Erfarenhet av Python-programmering
-- Kännedom om dokumentbearbetningskoncept
+- Bekantskap med dokumentbearbetningskoncept
 
 ### Snabbstart för plattformsoberoende miljö (Windows & macOS)
 
@@ -48,7 +48,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Om Foundry Locals macOS-binära filer ännu inte är tillgängliga i din miljö, kör tjänsten på en Windows VM eller container och ställ in:
+Om Foundry Local macOS-binära filer ännu inte är tillgängliga i din miljö, kör tjänsten på en Windows-VM eller container och ställ in:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -661,7 +662,7 @@ if __name__ == "__main__":
 ```
 
 
-### 4. Visa CLI-till-Azure migrationsväg (5 minuter)
+### 4. Visa CLI-till-Azure-migrationsväg (5 minuter)
 
 #### Steg 4.1: Översikt över migrationsstrategi
 
@@ -877,7 +878,7 @@ python samples/02-rag-solutions/migration_guide.py
 ```
 
 
-## Viktiga koncept som täcks
+## Centrala koncept som täcks
 
 ### 1. Avancerad promptteknik
 
@@ -889,14 +890,14 @@ python samples/02-rag-solutions/migration_guide.py
 ### 2. Integration av strukturerad data
 
 - **CSV-bearbetning**: Pandas-integration med AI-modeller
-- **Statistisk analys**: Automatisk datasammanfattning
+- **Statistisk analys**: Automatisk datasummering
 - **Kontextskapande**: Dynamisk kontextgenerering baserat på frågor
 - **Stöd för flera format**: JSON, CSV och tabulär data
 
 ### 3. RAG-implementeringsmönster
 
 - **Vektorsökning**: TF-IDF och cosinuslikhet
-- **Dokumenthämtning**: Relevansbedömning och rankning
+- **Dokumenthämtning**: Relevanspoäng och rankning
 - **Kombination av kontext**: Syntes av flera dokument
 - **Svarsgenerering**: Skapande av grundade svar
 
@@ -957,28 +958,28 @@ metrics = {
 
 Efter att ha slutfört denna session:
 
-1. **Utforska Session 3**: Öppen källkod-modeller i Foundry Local
-2. **Bygg produktionsklara RAG**: Implementera med Chainlit (Exempel 04)
+1. **Utforska Session 3**: Öppen källkodsmodeller i Foundry Local
+2. **Bygg produktions-RAG**: Implementera med Chainlit (Exempel 04)
 3. **Avancerad vektorsökning**: Integrera med Chroma eller Pinecone
 4. **Molnmigration**: Distribuera till Azure AI Foundry
-5. **Utvärdera RAG-kvalitet**: Kör `cd Workshop/samples;python -m session02.rag_eval_ragas` för att mäta svarens relevans, trovärdighet och kontextprecision med ragas
+5. **Utvärdera RAG-kvalitet**: Kör `cd Workshop/samples;python -m session02.rag_eval_ragas` för att mäta answer_relevancy, faithfulness och context_precision med ragas
 
 ### Valfria förbättringar
 
 | Kategori | Förbättring | Motivering | Riktning |
 |----------|-------------|-----------|-----------|
-| Hämtning | Ersätt TF-IDF med vektorlagring (FAISS / Chroma) | Bättre semantisk återkallelse och skalbarhet | Dela upp dokument (500–800 tecken), embedda, spara index |
-| Hybridindex | Dubbel semantisk + nyckelordsfiltrering | Förbättrar precision på numeriska / kodfrågor | Filtrera efter nyckelord och rangordna sedan med cosinuslikhet |
-| Embeddings | Utvärdera flera embedding-modeller | Optimera relevans kontra hastighet | A/B: MiniLM vs E5-small vs lokalt värd encoder |
-| Caching | Cachea embeddings och hämtresultat | Minska latens vid upprepade frågor | Enkel lagring på disk med pickle / sqlite med hash-nyckel |
+| Hämtning | Ersätt TF-IDF med vektorlagring (FAISS / Chroma) | Bättre semantisk återkallelse och skalbarhet | Dela upp dokument (500–800 tecken), bädda in, spara index |
+| Hybridindex | Dubbel semantisk + nyckelordsfiltrering | Förbättrar precision på numeriska / kodfrågor | Filtrera efter nyckelord och ranka sedan med cosinuslikhet |
+| Inbäddningar | Utvärdera flera inbäddningsmodeller | Optimera relevans kontra hastighet | A/B: MiniLM vs E5-small vs lokalt värd kodare |
+| Caching | Cachea inbäddningar och hämtresultat | Lägre latens för upprepade frågor | Enkel diskbaserad pickle / sqlite med hash-nyckel |
 | Utvärdering | Utöka ragas-dataset | Statistiskt meningsfull kvalitet | Kurera 50–100 Q/A + kontexter; stratifiera efter ämne |
 | Mätvärden | Spåra hämtning och genereringstider | Prestandaprofilering | Fånga `retrieval_ms`, `gen_ms`, `tokens` per anrop |
-| Säkerhetsåtgärder | Lägg till fallback för hallucinationer | Säkrare svar | Om trovärdighet < tröskel → svar: "Otillräcklig kontext." |
-| Fallback | Kaskad lokalt → Azure-modell | Hybridkvalitetsförbättring | Vid låg säkerhet, dirigera till molnet via samma OpenAI API |
+| Skyddsräcken | Lägg till fallback för hallucinationer | Säkrare svar | Om faithfulness < tröskel → svar: "Otillräcklig kontext." |
+| Fallback | Kaskad lokalt → Azure-modell | Hybridkvalitetsförbättring | Vid låg tillförlitlighet, dirigera till molnet via samma OpenAI API |
 | Determinism | Stabil jämförelse | Reproducerbara utvärderingsuppsättningar | Fixera seed, `temperature=0`, inaktivera slumpmässighet i sampler |
-| Övervakning | Spara historik för utvärderingskörningar | Upptäckt av regression | Lägg till JSON-rader med tidsstämpel + metrikförändringar |
+| Övervakning | Spara utvärderingshistorik | Upptäckt av regressioner | Lägg till JSON-rader med tidsstämpel + metrikförändringar |
 
-#### Exempel: Lägga till hämtningstid
+#### Exempel: Lägg till hämtningstider
 
 ```python
 import time
@@ -991,13 +992,12 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
-
-#### Skalning av utvärdering med ragas
+#### Skala utvärdering med ragas
 
 1. Sätt ihop en JSONL med fälten: `question`, `answer`, `contexts`, `ground_truths` (lista)
 2. Konvertera till `Dataset.from_list(list_of_dicts)`
 3. Kör `evaluate(dataset, metrics=[...])`
-4. Spara metrik (CSV/JSON) för trendanalys.
+4. Spara mätvärden (CSV/JSON) för trendanalys.
 
 #### Snabbstart för vektorlagring (FAISS)
 
@@ -1008,7 +1008,7 @@ index.add(embeddings)  # embeddings = np.array([...]) normalized
 D, I = index.search(query_vec, k)
 ```
 
-För lagring på disk, använd `faiss.write_index(index, "kb.index")`.
+För diskpersistens använd `faiss.write_index(index, "kb.index")`.
 
 ## Ytterligare resurser
 
@@ -1026,21 +1026,21 @@ För lagring på disk, använd `faiss.write_index(index, "kb.index")`.
 
 **Sessionens längd**: 30 minuter praktiskt arbete + 15 minuter Q&A  
 **Svårighetsgrad**: Medel  
-**Förkunskaper**: Session 1 slutförd, grundläggande kunskaper i Python
+**Förkunskaper**: Session 1 genomförd, Grundläggande Python-kunskaper
 
-## Exempelscenario och workshopkartläggning
+## Exempelscenario och workshopkarta
 
-| Workshop-skript / Notebook | Scenario | Mål | Kärndataset / Källa | Exempel på fråga |
+| Workshopskript / Notebook | Scenario | Mål | Kärndataset / Källa | Exempel på fråga |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Intern kunskapsbas för att besvara frågor om integritet och prestanda | Minimal RAG i minnet med embeddings | `DOCS`-lista i skriptet (5 korta avsnitt) | Varför använda RAG med lokal inferens? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kvalitetsanalytiker som fastställer baslinjemetrik för hämtningens trovärdighet | Beräkna ragas-metrik på ett litet syntetiskt dataset | `DOCS`, `QUESTIONS`, `GROUND_TRUTH`-arrayer | Vilken fördel har lokal inferens? |
-| `prompt_engineering.py` (avancerad) | Domänexpert som skapar grundade prompter för flera vertikaler | Jämför domänspecifika systemprompter och tokenpåverkan | Inline `contexts`-dict | Hur hanterar Foundry Local modellcaching? |
-| `csv_qa_system.py` | Försäljningsavdelning som utforskar interaktiv analys av exportdata | Sammanfatta och fråga en liten försäljningsdel | Genererad `sample_sales_data.csv` (10 rader) | Vilken produkt har högst genomsnittlig försäljningssumma? |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Internt supportkunskapsbas som svarar på sekretess- och prestanda-FAQ | Minimal RAG i minnet med inbäddningar | `DOCS`-lista i skript (5 korta avsnitt) | Varför använda RAG med lokal inferens? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kvalitetsanalytiker som fastställer baslinjemått för hämtningens tillförlitlighet | Beräkna ragas-mått på ett litet syntetiskt dataset | `DOCS`, `QUESTIONS`, `GROUND_TRUTH`-arrayer | Vilken fördel erbjuder lokal inferens? |
+| `prompt_engineering.py` (avancerad) | Domänexpert som skapar grundade prompter för flera vertikaler | Jämför domänsystemprompter och tokenpåverkan | Inline `contexts`-dict | Hur hanterar Foundry Local modellcaching? |
+| `csv_qa_system.py` | Försäljningsoperationer som utforskar interaktiv analys av exporter | Summera och fråga en liten försäljningsdel | Genererat `sample_sales_data.csv` (10 rader) | Vilken produkt har högst genomsnittligt försäljningsbelopp? |
 | `document_rag.py` | Produktteam som utforskar dokument-RAG för intern wiki | Hämta + citera relevanta dokument | `create_sample_knowledge_base()`-lista | Vilka är fördelarna med Edge AI? |
-| `migration_guide.py` | Arkitekt som förbereder en molnmigrationsplan | Demonstrera lokal→Azure API-paritet | Statisk testprompt | Förklara fördelarna med Edge AI i 2–3 meningar. |
+| `migration_guide.py` | Arkitekt som förbereder molnmigrationsplan | Demonstrera lokal→Azure API-paritet | Statiska testprompter | Förklara fördelarna med Edge AI i 2–3 meningar. |
 
 ### Datasetutdrag
-Inline RAG-pipeline dokumentlista:
+Inline RAG-pipelinedokumentlista:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1051,7 +1051,7 @@ DOCS = [
 ]
 ```
 
-Ragas utvärdering av sanningspar:
+Ragas utvärderingssanningstupler:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1061,13 +1061,15 @@ GROUND_TRUTH = [
 ```
 
 
-### Scenarioberättelse
-Supportteknikgruppen vill ha en snabb prototyp för att besvara interna frågor utan att exponera kunddata externt. Session 2-artefakter går från en minimal tillfällig RAG (ingen lagring) → strukturerad CSV Q&A → dokumenthämtning med citat → objektiv kvalitetsutvärdering (ragas) → en migrationsstrategi redo för Azure-staging.
+### Scenarionarrativ
+Supportingenjörsgruppen vill ha en snabb prototyp för att besvara interna FAQ utan att exponera kunddata externt. Session 2-artifakter går från en minimal, tillfällig RAG (ingen persistens) → strukturerad CSV Q&A → dokumenthämtning med citat → objektiv kvalitetsutvärdering (ragas) → en migrationsstrategi redo för Azure-staging.
 
 ### Utvecklingsvägar
-Använd tabellen Valfria förbättringar för att utveckla: byt ut TF-IDF mot FAISS/Chroma, utöka utvärderingskorpuset (50–100 Q/A), lägg till fallback-eskalering till en större modell när trovärdighet < tröskel.
+Använd tabellen för valfria förbättringar för att utveckla: byt ut TF-IDF mot FAISS/Chroma, utöka utvärderingskorpuset (50–100 Q/A), lägg till fallback-eskalering till en större modell när faithfulness < tröskel.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfriskrivning**:  
 Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

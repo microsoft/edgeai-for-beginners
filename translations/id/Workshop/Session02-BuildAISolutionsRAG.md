@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T22:37:42+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T19:09:08+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "id"
 }
@@ -11,16 +11,16 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Abstrak
 
-Pelajari cara membangun alur kerja GenAI yang dapat diimplementasikan menggunakan Foundry Local dan Azure AI Foundry. Pelajari teknik lanjutan dalam prompt engineering, integrasi data terstruktur, dan pengaturan tugas dengan pipeline yang dapat direproduksi. Meskipun fokusnya pada Retrieval-Augmented Generation (RAG) untuk tanya jawab dokumen & data, pola-pola ini dapat diterapkan pada desain solusi GenAI yang lebih luas.
+Pelajari cara membangun alur kerja GenAI yang dapat diimplementasikan menggunakan Foundry Local dan Azure AI Foundry. Pelajari teknik lanjutan dalam prompt engineering, integrasi data terstruktur, dan pengaturan tugas dengan pipeline yang dapat direproduksi. Meskipun fokusnya pada Retrieval-Augmented Generation (RAG) untuk Q&A dokumen & data, pola ini dapat diterapkan pada desain solusi GenAI yang lebih luas.
 
 ## Tujuan Pembelajaran
 
-Di akhir sesi ini, Anda akan:
+Di akhir sesi ini, Anda akan dapat:
 
-- **Menguasai Prompt Engineering**: Merancang prompt sistem yang efektif dan strategi grounding
-- **Menerapkan Pola RAG**: Membangun sistem tanya jawab berbasis dokumen dengan pencarian vektor
+- **Menguasai Prompt Engineering**: Merancang sistem prompt yang efektif dan strategi grounding
+- **Menerapkan Pola RAG**: Membangun sistem Q&A berbasis dokumen dengan pencarian vektor
 - **Mengintegrasikan Data Terstruktur**: Bekerja dengan data CSV, JSON, dan tabel dalam alur kerja AI
-- **Membangun RAG Produksi**: Membuat aplikasi RAG yang dapat diskalakan dengan Chainlit
+- **Membangun RAG Produksi**: Membuat aplikasi RAG yang skalabel dengan Chainlit
 - **Menghubungkan Lokal ke Cloud**: Memahami jalur migrasi dari Foundry Local ke Azure AI Foundry
 
 ## Prasyarat
@@ -28,7 +28,7 @@ Di akhir sesi ini, Anda akan:
 - Menyelesaikan Sesi 1 (pengaturan Foundry Local)
 - Pemahaman dasar tentang database vektor dan embeddings
 - Pengalaman pemrograman Python
-- Familiar dengan konsep pemrosesan dokumen
+- Familiaritas dengan konsep pemrosesan dokumen
 
 ### Panduan Cepat Lingkungan Lintas Platform (Windows & macOS)
 
@@ -48,7 +48,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Jika binary Foundry Local untuk macOS belum tersedia di lingkungan Anda, jalankan layanan di VM Windows atau container dan atur:
+Jika binary Foundry Local untuk macOS belum tersedia di lingkungan Anda, jalankan layanan di VM atau container Windows dan atur:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -65,11 +65,11 @@ foundry model run phi-4-mini   # Start baseline SLM
 curl http://localhost:5273/v1/models  # Validate API (should list running model)
 ```
 
-Jika perintah terakhir gagal, mulai (atau mulai ulang) layanan: `foundry service start`.
+Jika perintah terakhir gagal, mulai ulang layanan: `foundry service start`.
 
 ## Alur Demo (30 menit)
 
-### 1. Prompt Sistem dan Strategi Grounding (10 menit)
+### 1. Sistem Prompt dan Strategi Grounding (10 menit)
 
 #### Langkah 1.1: Prompt Engineering Lanjutan
 
@@ -217,7 +217,7 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### 2. Integrasi Data Tabel dengan Prompt (Tanya Jawab CSV) (10 menit)
+### 2. Integrasi Data Tabel dengan Prompt (Q&A CSV) (10 menit)
 
 #### Langkah 2.1: Integrasi Data CSV
 
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -433,7 +434,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### Langkah 2.2: Uji Sistem Tanya Jawab CSV
+#### Langkah 2.2: Uji Sistem Q&A CSV
 
 ```powershell
 # Run the CSV Q&A demo
@@ -661,9 +662,9 @@ if __name__ == "__main__":
 ```
 
 
-### 4. Tampilkan Jalur Migrasi dari CLI ke Azure (5 menit)
+### 4. Tampilkan Jalur Migrasi CLI ke Azure (5 menit)
 
-#### Langkah 4.1: Gambaran Strategi Migrasi
+#### Langkah 4.1: Ikhtisar Strategi Migrasi
 
 Buat `samples/02-rag-solutions/migration_guide.py`:
 
@@ -898,9 +899,9 @@ python samples/02-rag-solutions/migration_guide.py
 - **Pencarian Vektor**: TF-IDF dan cosine similarity
 - **Pengambilan Dokumen**: Penilaian relevansi dan peringkat
 - **Kombinasi Konteks**: Sintesis multi-dokumen
-- **Pembuatan Jawaban**: Pembuatan jawaban yang didasarkan pada konteks
+- **Pembuatan Jawaban**: Pembuatan respons yang terarah
 
-### 4. Strategi Migrasi ke Cloud
+### 4. Strategi Migrasi Cloud
 
 - **API Terpadu**: Basis kode tunggal untuk lokal dan cloud
 - **Abstraksi Lingkungan**: Deployment berbasis konfigurasi
@@ -960,23 +961,23 @@ Setelah menyelesaikan sesi ini:
 1. **Jelajahi Sesi 3**: Model Open-Source di Foundry Local
 2. **Bangun RAG Produksi**: Implementasi dengan Chainlit (Contoh 04)
 3. **Pencarian Vektor Lanjutan**: Integrasi dengan Chroma atau Pinecone
-4. **Migrasi ke Cloud**: Deploy ke Azure AI Foundry
-5. **Evaluasi Kualitas RAG**: Jalankan `cd Workkshop/samples;python -m session02.rag_eval_ragas` untuk mengukur relevansi jawaban, keakuratan, dan presisi konteks menggunakan ragas
+4. **Migrasi Cloud**: Deploy ke Azure AI Foundry
+5. **Evaluasi Kualitas RAG**: Jalankan `cd Workshop/samples;python -m session02.rag_eval_ragas` untuk mengukur relevansi jawaban, keakuratan, dan presisi konteks menggunakan ragas
 
 ### Peningkatan Opsional
 
 | Kategori | Peningkatan | Alasan | Arah |
 |----------|-------------|--------|------|
-| Retrieval | Ganti TF-IDF dengan vector store (FAISS / Chroma) | Recall semantik yang lebih baik & skalabilitas | Potong dokumen (500–800 karakter), embed, simpan indeks |
+| Retrieval | Ganti TF-IDF dengan vector store (FAISS / Chroma) | Recall semantik & skalabilitas lebih baik | Potong dokumen (500–800 karakter), embed, simpan indeks |
 | Indeks Hibrid | Penyaringan semantik + kata kunci ganda | Meningkatkan presisi pada kueri numerik / kode | Filter berdasarkan kata kunci lalu peringkat dengan cosine similarity |
 | Embeddings | Evaluasi beberapa model embedding | Optimalkan relevansi vs kecepatan | A/B: MiniLM vs E5-small vs encoder lokal |
-| Caching | Cache hasil embedding & retrieval | Kurangi latensi kueri berulang | Simpan sederhana di disk dengan pickle / sqlite menggunakan hash key |
+| Caching | Cache hasil embedding & retrieval | Kurangi latensi kueri berulang | Cache sederhana di disk / sqlite dengan hash key |
 | Evaluasi | Perluas dataset ragas | Kualitas yang bermakna secara statistik | Kurasi 50–100 Q/A + konteks; stratifikasi berdasarkan topik |
 | Metrik | Lacak waktu retrieval & generation | Profiling performa | Tangkap `retrieval_ms`, `gen_ms`, `tokens` per panggilan |
-| Guardrails | Tambahkan fallback untuk halusinasi | Jawaban yang lebih aman | Jika keakuratan < ambang → jawaban: "Konteks tidak mencukupi." |
-| Fallback | Alihkan lokal → model Azure | Peningkatan kualitas hibrid | Pada kepercayaan rendah, alihkan ke cloud melalui API OpenAI yang sama |
+| Guardrails | Tambahkan fallback halusinasi | Jawaban lebih aman | Jika keakuratan < ambang → jawaban: "Konteks tidak mencukupi." |
+| Fallback | Cascade model lokal → Azure | Peningkatan kualitas hibrid | Pada kepercayaan rendah, rute ke cloud melalui API OpenAI yang sama |
 | Determinisme | Perbandingan run yang stabil | Set evaluasi yang dapat diulang | Tetapkan seed, `temperature=0`, nonaktifkan randomness sampler |
-| Monitoring | Simpan riwayat evaluasi run | Deteksi regresi | Tambahkan baris JSON dengan timestamp + delta metrik |
+| Monitoring | Simpan riwayat evaluasi run | Deteksi regresi | Tambahkan JSON lines dengan timestamp + delta metrik |
 
 #### Contoh: Menambahkan Waktu Retrieval
 
@@ -992,7 +993,7 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 ```
 
 
-#### Skalabilitas Evaluasi dengan ragas
+#### Skalakan Evaluasi dengan ragas
 
 1. Susun JSONL dengan field: `question`, `answer`, `contexts`, `ground_truths` (list)
 2. Konversi ke `Dataset.from_list(list_of_dicts)`
@@ -1014,30 +1015,30 @@ Untuk persistensi disk gunakan `faiss.write_index(index, "kb.index")`.
 
 ### Dokumentasi
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [Pola RAG Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
+- [Azure AI Foundry RAG Patterns](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
 - [Panduan Prompt Engineering](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
 - [Dokumentasi Evaluasi Ragas](https://docs.ragas.io)
 
 ### Contoh Kode
-- [Module08 Sample 04](./samples/04/README.md) - Aplikasi Chainlit RAG
-- [Sistem Multi-Agen Lanjutan](./samples/09/README.md) - Pola koordinasi agen
+- [Contoh Modul08 04](./samples/04/README.md) - Aplikasi RAG Chainlit
+- [Sistem Multi-Agent Lanjutan](./samples/09/README.md) - Pola koordinasi agen
 
 ---
 
-**Durasi Sesi**: 30 menit praktik langsung + 15 menit tanya jawab  
+**Durasi Sesi**: 30 menit praktik + 15 menit Q&A  
 **Tingkat Kesulitan**: Menengah  
-**Prasyarat**: Sesi 1 selesai, Pengetahuan dasar Python  
+**Prasyarat**: Sesi 1 selesai, Pengetahuan dasar Python
 
 ## Skenario Contoh & Pemetaan Workshop
 
-| Skrip / Notebook Workshop | Skenario | Tujuan | Dataset / Sumber Utama | Contoh Pertanyaan |
-|---------------------------|----------|--------|------------------------|-------------------|
+| Skrip / Notebook Workshop | Skenario | Tujuan | Dataset / Sumber Inti | Contoh Pertanyaan |
+|---------------------------|----------|--------|-----------------------|-------------------|
 | `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Basis pengetahuan dukungan internal menjawab FAQ privasi + performa | RAG minimal dalam memori dengan embeddings | Daftar `DOCS` dalam skrip (5 cuplikan pendek) | Mengapa menggunakan RAG dengan inferensi lokal? |
 | `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analis kualitas menetapkan metrik keakuratan pengambilan dasar | Hitung metrik ragas pada dataset sintetis kecil | Array `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Apa keuntungan dari inferensi lokal? |
 | `prompt_engineering.py` (lanjutan) | SME domain merancang prompt berbasis konteks untuk berbagai vertikal | Bandingkan prompt sistem domain & dampak token | Dict `contexts` inline | Bagaimana Foundry Local menangani caching model? |
-| `csv_qa_system.py` | Operasi penjualan mengeksplorasi analitik interaktif atas ekspor | Meringkas & mengajukan kueri pada data penjualan kecil | `sample_sales_data.csv` yang dihasilkan (10 baris) | Produk mana yang memiliki rata-rata penjualan tertinggi? |
-| `document_rag.py` | Tim produk mengeksplorasi RAG dokumen untuk wiki internal | Mengambil + mengutip dokumen yang relevan | Daftar `create_sample_knowledge_base()` | Apa manfaat dari Edge AI? |
-| `migration_guide.py` | Arsitek menyiapkan rencana migrasi cloud | Menunjukkan kesetaraan API lokal→Azure | Prompt uji statis | Jelaskan manfaat Edge AI dalam 2–3 kalimat. |
+| `csv_qa_system.py` | Operasi penjualan mengeksplorasi analitik interaktif atas ekspor | Meringkas & mengkueri potongan kecil penjualan | `sample_sales_data.csv` yang dihasilkan (10 baris) | Produk mana yang memiliki rata-rata penjualan tertinggi? |
+| `document_rag.py` | Tim produk mengeksplorasi RAG dokumen untuk wiki internal | Mengambil + mengutip dokumen relevan | Daftar `create_sample_knowledge_base()` | Apa manfaat dari Edge AI? |
+| `migration_guide.py` | Arsitek menyiapkan rencana migrasi cloud | Menunjukkan paritas API lokal→Azure | Prompt uji statis | Jelaskan manfaat Edge AI dalam 2–3 kalimat. |
 
 ### Cuplikan Dataset
 Daftar dokumen pipeline RAG inline:
@@ -1062,12 +1063,14 @@ GROUND_TRUTH = [
 
 
 ### Narasi Skenario
-Grup rekayasa dukungan ingin membuat prototipe cepat untuk menjawab FAQ internal tanpa mengekspos data pelanggan ke luar. Artefak Sesi 2 berkembang dari RAG minimal sementara (tanpa persistensi) → Tanya Jawab CSV terstruktur → pengambilan dokumen dengan kutipan → evaluasi kualitas objektif (ragas) → strategi migrasi yang siap untuk staging di Azure.
+Grup rekayasa dukungan ingin prototipe cepat untuk menjawab FAQ internal tanpa mengekspos data pelanggan secara eksternal. Artefak Sesi 2 berkembang dari RAG minimal sementara (tanpa persistensi) → Q&A CSV terstruktur → pengambilan dokumen dengan kutipan → evaluasi kualitas objektif (ragas) → strategi migrasi yang siap untuk staging Azure.
 
 ### Jalur Ekspansi
 Gunakan tabel Peningkatan Opsional untuk berkembang: ganti TF-IDF dengan FAISS/Chroma, perbesar korpus evaluasi (50–100 Q/A), tambahkan eskalasi fallback ke model yang lebih besar saat keakuratan < ambang.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

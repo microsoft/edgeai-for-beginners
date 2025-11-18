@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T23:31:37+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T19:25:28+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "sl"
 }
@@ -11,26 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Povzetek
 
-Raziščite, kako zgraditi uporabne delovne tokove GenAI z uporabo Foundry Local in Azure AI Foundry. Naučite se naprednega oblikovanja pozivov, integracije strukturiranih podatkov in orkestracije nalog z reproducibilnimi cevovodi. Čeprav je poudarek na generaciji z obogatenim pridobivanjem (RAG) za vprašanja in odgovore na podlagi dokumentov in podatkov, se vzorci lahko uporabijo tudi za širše oblikovanje rešitev GenAI.
+Raziščite, kako zgraditi uporabne GenAI delovne tokove z uporabo Foundry Local in Azure AI Foundry. Naučite se naprednega oblikovanja pozivov, integrirajte strukturirane podatke in orkestrirajte naloge z reproducibilnimi cevovodi. Čeprav je poudarek na Retrieval-Augmented Generation (RAG) za vprašanja in odgovore na podlagi dokumentov in podatkov, se vzorci lahko posplošijo na širše oblikovanje GenAI rešitev.
 
 ## Cilji učenja
 
 Do konca te seje boste:
 
-- **Obvladali oblikovanje pozivov**: Oblikovali učinkovite sistemske pozive in strategije utemeljitve
-- **Implementirali vzorce RAG**: Zgradili sisteme za vprašanja in odgovore na podlagi dokumentov z iskanjem vektorjev
+- **Obvladali oblikovanje pozivov**: Oblikovali učinkovite sistemske pozive in strategije utemeljevanja
+- **Izvedli RAG vzorce**: Zgradili sisteme za vprašanja in odgovore na podlagi dokumentov z iskanjem vektorjev
 - **Integrirali strukturirane podatke**: Delali s CSV, JSON in tabelaričnimi podatki v AI delovnih tokovih
-- **Zgradili produkcijski RAG**: Ustvarili skalabilne RAG aplikacije z Chainlit
+- **Zgradili produkcijski RAG**: Ustvarili skalabilne RAG aplikacije z uporabo Chainlit
 - **Povezali lokalno z oblakom**: Razumeli poti migracije iz Foundry Local v Azure AI Foundry
 
 ## Predpogoji
 
 - Zaključena Seja 1 (nastavitev Foundry Local)
-- Osnovno razumevanje vektorskih baz podatkov in vgrajenih funkcij
+- Osnovno razumevanje vektorskih baz podatkov in vdelav
 - Izkušnje s programiranjem v Pythonu
 - Poznavanje konceptov obdelave dokumentov
 
-### Hitri začetek okolja za več platform (Windows & macOS)
+### Hiter začetek v večplatformskem okolju (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -48,7 +48,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Če binarne datoteke Foundry Local za macOS še niso na voljo v vašem okolju, zaženite storitev na Windows VM ali vsebniku in nastavite:
+Če binarne datoteke Foundry Local za macOS še niso na voljo v vašem okolju, zaženite storitev na Windows VM ali v vsebniku in nastavite:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -69,7 +69,7 @@ curl http://localhost:5273/v1/models  # Validate API (should list running model)
 
 ## Potek demonstracije (30 minut)
 
-### 1. Sistemski pozivi in strategije utemeljitve (10 minut)
+### 1. Sistemski pozivi in strategije utemeljevanja (10 minut)
 
 #### Korak 1.1: Napredno oblikovanje pozivov
 
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### Korak 1.2: Testiranje strategij utemeljitve
+#### Korak 1.2: Preizkusite strategije utemeljevanja
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -433,7 +434,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### Korak 2.2: Testiranje sistema CSV Q&A
+#### Korak 2.2: Preizkusite CSV Q&A sistem
 
 ```powershell
 # Run the CSV Q&A demo
@@ -661,7 +662,7 @@ if __name__ == "__main__":
 ```
 
 
-### 4. Prikaz poti migracije CLI v Azure (5 minut)
+### 4. Prikaz poti migracije iz CLI v Azure (5 minut)
 
 #### Korak 4.1: Pregled strategije migracije
 
@@ -869,7 +870,7 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-#### Korak 4.2: Testiranje vzorcev migracije
+#### Korak 4.2: Preizkusite vzorce migracije
 
 ```powershell
 # Run the migration demo
@@ -882,7 +883,7 @@ python samples/02-rag-solutions/migration_guide.py
 ### 1. Napredno oblikovanje pozivov
 
 - **Sistemski pozivi**: Osebnosti strokovnjakov za določena področja
-- **Strategije utemeljitve**: Tehnike integracije konteksta
+- **Strategije utemeljevanja**: Tehnike integracije konteksta
 - **Nadzor temperature**: Uravnoteženje med ustvarjalnostjo in doslednostjo
 - **Upravljanje žetonov**: Učinkovita uporaba konteksta
 
@@ -890,21 +891,21 @@ python samples/02-rag-solutions/migration_guide.py
 
 - **Obdelava CSV**: Integracija Pandas z AI modeli
 - **Statistična analiza**: Avtomatizirano povzemanje podatkov
-- **Ustvarjanje konteksta**: Dinamično generiranje konteksta na podlagi poizvedb
+- **Ustvarjanje konteksta**: Dinamično ustvarjanje konteksta na podlagi poizvedb
 - **Podpora več formatov**: JSON, CSV in tabelarični podatki
 
 ### 3. Vzorci implementacije RAG
 
 - **Iskanje vektorjev**: TF-IDF in kosinusna podobnost
-- **Pridobivanje dokumentov**: Ocena relevantnosti in razvrščanje
+- **Pridobivanje dokumentov**: Ocena in razvrščanje relevantnosti
 - **Kombinacija konteksta**: Sinteza več dokumentov
-- **Generacija odgovorov**: Ustvarjanje odgovorov na podlagi konteksta
+- **Generiranje odgovorov**: Ustvarjanje odgovorov na podlagi utemeljenega konteksta
 
 ### 4. Strategije migracije v oblak
 
 - **Poenoteni API-ji**: Enotna koda za lokalno in oblačno okolje
-- **Abstrakcija okolja**: Namestitev na podlagi konfiguracije
-- **Delovni tok razvoja**: Lokalno → testno → produkcijsko okolje
+- **Abstrakcija okolja**: Konfiguracijsko vodena uvedba
+- **Razvojni potek dela**: Lokalno → Testno → Produkcijsko okolje
 - **Optimizacija stroškov**: Lokalni razvoj, produkcija v oblaku
 
 ## Premisleki za produkcijo
@@ -960,23 +961,23 @@ Po zaključku te seje:
 1. **Raziščite Sejo 3**: Modeli odprte kode v Foundry Local
 2. **Zgradite produkcijski RAG**: Implementirajte z Chainlit (Vzorec 04)
 3. **Napredno iskanje vektorjev**: Integrirajte z Chroma ali Pinecone
-4. **Migracija v oblak**: Namestite v Azure AI Foundry
-5. **Ocenite kakovost RAG**: Zaženite `cd Workkshop/samples;python -m session02.rag_eval_ragas` za merjenje relevantnosti odgovorov, zanesljivosti in natančnosti konteksta z uporabo ragas
+4. **Migracija v oblak**: Uvedite v Azure AI Foundry
+5. **Ocenite kakovost RAG**: Zaženite `cd Workshop/samples;python -m session02.rag_eval_ragas` za merjenje answer_relevancy, faithfulness in context_precision z uporabo ragas
 
-### Neobvezne izboljšave
+### Dodatne izboljšave
 
 | Kategorija | Izboljšava | Razlog | Smer |
 |------------|------------|--------|------|
-| Pridobivanje | Zamenjava TF-IDF z vektorsko shrambo (FAISS / Chroma) | Boljši semantični priklic in skalabilnost | Razdelite dokumente (500–800 znakov), vgradite, shranite indeks |
-| Hibridni indeks | Dvojno semantično + filtriranje ključnih besed | Izboljša natančnost pri numeričnih / kodnih poizvedbah | Filtrirajte po ključni besedi, nato razvrstite po kosinusni podobnosti |
-| Vgraditve | Ocenite več modelov vgraditve | Optimizirajte relevantnost proti hitrosti | A/B: MiniLM proti E5-small proti lokalno gostovanemu kodirniku |
-| Predpomnjenje | Predpomnjenje vgraditev in rezultatov pridobivanja | Zmanjšanje zakasnitve pri ponovljenih poizvedbah | Enostavno na disku pickle / sqlite s ključem hash |
-| Evaluacija | Razširite ragas podatkovno zbirko | Statistično pomembna kakovost | Ustvarite 50–100 vprašanj/odgovorov + kontekste; razvrstite po temah |
-| Metri | Spremljajte čas pridobivanja in generacije | Profiliranje zmogljivosti | Zajemite `retrieval_ms`, `gen_ms`, `tokens` na klic |
-| Varnostne ograje | Dodajte varnostno mrežo za halucinacije | Varnejši odgovori | Če zanesljivost < prag → odgovor: "Premalo konteksta." |
-| Rezervni načrt | Kaskadno lokalno → Azure model | Hibridna izboljšava kakovosti | Pri nizki zanesljivosti preusmerite v oblak prek istega OpenAI API |
-| Determinizem | Stabilni primerjalni zagoni | Ponovljivi evalacijski nizi | Fiksirajte seme, `temperature=0`, onemogočite naključnost vzorčenja |
-| Spremljanje | Shranite zgodovino evalacijskih zagonov | Odkrivanje regresij | Dodajte JSON vrstice z časovnim žigom + spremembe metrik |
+| Pridobivanje | Zamenjajte TF-IDF z vektorsko shrambo (FAISS / Chroma) | Boljši semantični priklic in skalabilnost | Razdelite dokumente (500–800 znakov), vdelajte, shranite indeks |
+| Hibridni indeks | Dvojno semantično + filtriranje ključnih besed | Izboljša natančnost pri numeričnih / kodnih poizvedbah | Filtrirajte po ključnih besedah, nato razvrstite po kosinusni podobnosti |
+| Vdelave | Ocenite več modelov vdelav | Optimizirajte relevantnost proti hitrosti | A/B: MiniLM proti E5-small proti lokalno gostovanemu kodirniku |
+| Predpomnjenje | Predpomnite vdelave in rezultate pridobivanja | Zmanjšajte zakasnitev pri ponovljenih poizvedbah | Preprosto na disku pickle / sqlite z hash ključem |
+| Evalvacija | Razširite ragas podatkovno zbirko | Statistično pomembna kakovost | Kurirajte 50–100 Q/A + kontekste; stratificirajte po temah |
+| Meritve | Spremljajte čase pridobivanja in generiranja | Profiliranje zmogljivosti | Zajemite `retrieval_ms`, `gen_ms`, `tokens` na klic |
+| Varnostne ograje | Dodajte varnostno mrežo za halucinacije | Varnejši odgovori | Če je faithfulness < prag → odgovor: "Nezadosten kontekst." |
+| Rezervni načrt | Kaskadno lokalno → Azure model | Hibridna kakovostna izboljšava | Pri nizki zanesljivosti preusmerite v oblak prek istega OpenAI API |
+| Determinizem | Stabilni primerjalni zagoni | Ponovljivi evalvacijski nizi | Popravite seme, `temperature=0`, onemogočite naključnost vzorčenja |
+| Spremljanje | Shranite zgodovino evalvacijskih zagonov | Zaznavanje regresij | Dodajte JSON vrstice z žigom časa + spremembami metrik |
 
 #### Primer: Dodajanje časa pridobivanja
 
@@ -992,14 +993,14 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 ```
 
 
-#### Razširitev evaluacije z ragas
+#### Razširitev evalvacije z ragas
 
 1. Sestavite JSONL z polji: `question`, `answer`, `contexts`, `ground_truths` (seznam)
 2. Pretvorite v `Dataset.from_list(list_of_dicts)`
 3. Zaženite `evaluate(dataset, metrics=[...])`
 4. Shranite metrike (CSV/JSON) za analizo trendov.
 
-#### Hitri začetek vektorske shrambe (FAISS)
+#### Hiter začetek z vektorsko shrambo (FAISS)
 
 ```python
 import faiss, numpy as np
@@ -1016,11 +1017,11 @@ Za shranjevanje na disk uporabite `faiss.write_index(index, "kb.index")`.
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Azure AI Foundry RAG Patterns](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
 - [Vodnik za oblikovanje pozivov](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
-- [Dokumentacija za ocenjevanje Ragas](https://docs.ragas.io)
+- [Ragas Evalvacija Dokumentacija](https://docs.ragas.io)
 
-### Vzorčna koda
-- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG aplikacija
-- [Napredni sistem več agentov](./samples/09/README.md) - Vzorci koordinacije agentov
+### Vzorec kode
+- [Modul08 Vzorec 04](./samples/04/README.md) - Chainlit RAG aplikacija
+- [Napreden sistem z več agenti](./samples/09/README.md) - Vzorci koordinacije agentov
 
 ---
 
@@ -1030,18 +1031,17 @@ Za shranjevanje na disk uporabite `faiss.write_index(index, "kb.index")`.
 
 ## Vzorec scenarija in preslikava delavnice
 
-| Skripta delavnice / Zvezek | Scenarij | Cilj | Osnovni podatki / vir | Primer vprašanja |
+| Skripta / Zvezek delavnice | Scenarij | Cilj | Osnovni podatki / Vir | Primer vprašanja |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Notranja baza znanja za podporo, ki odgovarja na pogosta vprašanja o zasebnosti + zmogljivosti | Minimalni RAG v pomnilniku z vgraditvami | Seznam `DOCS` v skripti (5 kratkih odlomkov) | Zakaj uporabljati RAG z lokalno inferenco? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analitik kakovosti, ki vzpostavlja osnovne metrike zanesljivosti pridobivanja | Izračun metrik ragas na majhnem sintetičnem naboru podatkov | Tabele `DOCS`, `QUESTIONS`, `GROUND_TRUTH` | Kakšna je prednost lokalne inference? |
-| `prompt_engineering.py` (napredno) | Strokovnjak za področje, ki oblikuje utemeljene pozive za več področij | Primerjava sistemskih pozivov za področje in vpliv žetonov | Vgrajen slovar `contexts` | Kako Foundry Local obravnava predpomnjenje modelov? |
-| `csv_qa_system.py` | Operacije prodaje, ki raziskujejo interaktivno analitiko nad izvozi | Povzemanje in poizvedovanje majhnega prodajnega odseka | Ustvarjen `sample_sales_data.csv` (10 vrstic) | Kateri izdelek ima najvišjo povprečno prodajno vrednost? |
-| `document_rag.py` | Produktna ekipa raziskuje dokumentni RAG za interno wiki | Pridobivanje + navajanje relevantnih dokumentov | Seznam `create_sample_knowledge_base()` | Kakšne so prednosti Edge AI? |
-| `migration_guide.py` | Arhitekt pripravlja načrt migracije v oblak | Demonstracija lokalne → Azure API enakosti | Statični testni pozivi | Pojasnite prednosti Edge AI v 2–3 stavkih. |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Notranja baza znanja za podporo, ki odgovarja na pogosta vprašanja o zasebnosti in zmogljivosti | Minimalni RAG v pomnilniku z vdelavami | `DOCS` seznam v skripti (5 kratkih odlomkov) | Zakaj uporabljati RAG z lokalnim sklepanjem? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Analitik kakovosti, ki vzpostavlja osnovne metrike zanesljivosti pridobivanja | Izračunajte ragas metrike na majhnem sintetičnem naboru podatkov | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` tabele | Kakšna je prednost lokalnega sklepanja? |
+| `prompt_engineering.py` (napredno) | Strokovnjak za področje, ki oblikuje utemeljene pozive za več vertikal | Primerjajte sistemske pozive za področja in vpliv žetonov | Vgrajen `contexts` slovar | Kako Foundry Local obravnava predpomnjenje modelov? |
+| `csv_qa_system.py` | Prodajna operativa, ki raziskuje interaktivno analitiko nad izvozi | Povzemite in poizvedujte po majhnem prodajnem vzorcu | Generiran `sample_sales_data.csv` (10 vrstic) | Kateri izdelek ima najvišjo povprečno prodajno vrednost? |
+| `document_rag.py` | Produktna ekipa, ki raziskuje dokumentni RAG za interno wiki | Pridobite in citirajte relevantne dokumente | `create_sample_knowledge_base()` seznam | Kakšne so prednosti Edge AI? |
+| `migration_guide.py` | Arhitekt, ki pripravlja načrt migracije v oblak | Prikažite pariteto API-jev lokalno → Azure | Statični testni pozivi | Pojasnite prednosti Edge AI v 2–3 stavkih. |
 
-### Izseki podatkovnih zbirk
-
-Seznam dokumentov RAG cevovoda:
+### Izseki podatkovnih nizov
+Seznam dokumentov za RAG cevovod:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1052,7 +1052,7 @@ DOCS = [
 ]
 ```
 
-Resnične tuple za ocenjevanje Ragas:
+Resnične vrednosti za evalvacijo ragas:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1063,14 +1063,14 @@ GROUND_TRUTH = [
 
 
 ### Narativ scenarija
+Skupina za podporo inženiringu želi hitro prototipirati sistem za odgovarjanje na notranja pogosta vprašanja, ne da bi izpostavila podatke strank zunaj. Artefakti iz Seje 2 napredujejo od minimalnega začasnega RAG (brez shranjevanja) → strukturiranega CSV Q&A → pridobivanja dokumentov s citiranjem → objektivne evalvacije kakovosti (ragas) → strategije migracije, pripravljene za Azure.
 
-Skupina za podporo inženiringu želi hitro prototipirati sistem za odgovarjanje na notranja pogosta vprašanja, ne da bi izpostavila podatke strank zunanjim virom. Artefakti Seje 2 napredujejo od minimalnega začasnega RAG (brez shranjevanja) → strukturirano CSV Q&A → pridobivanje dokumentov z navajanjem → objektivno ocenjevanje kakovosti (ragas) → strategija migracije, pripravljena za testiranje v Azure.
-
-### Poti za razširitev
-
-Uporabite tabelo Neobvezne izboljšave za razvoj: zamenjajte TF-IDF za FAISS/Chroma, povečajte korpus za ocenjevanje (50–100 vprašanj/odgovorov), dodajte rezervno eskalacijo na večji model, ko je zanesljivost < prag.
+### Poti za širitev
+Uporabite tabelo Dodatne izboljšave za razvoj: zamenjajte TF-IDF za FAISS/Chroma, povečajte evalvacijski korpus (50–100 Q/A), dodajte eskalacijo na večji model, ko je faithfulness < prag.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

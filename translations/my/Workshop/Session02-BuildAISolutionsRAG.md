@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T23:36:55+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T19:26:59+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "my"
 }
@@ -11,26 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## အကျဉ်းချုပ်
 
-Foundry Local နှင့် Azure AI Foundry ကို အသုံးပြု၍ လုပ်ဆောင်နိုင်သော GenAI အလုပ်လုပ်ပုံများကို စူးစမ်းလေ့လာပါ။ Prompt engineering အဆင့်မြင့်နည်းလမ်းများကို သင်ယူပြီး၊ ဖွဲ့စည်းထားသော ဒေတာများကို ပေါင်းစည်းကာ၊ ပြန်လုပ်နိုင်သော pipeline များဖြင့် အလုပ်များကို စီမံခန့်ခွဲပါ။ Document နှင့် Data Q&A အတွက် Retrieval-Augmented Generation (RAG) ကို အဓိကထားပြီး၊ ဒီ pattern များကို ကျယ်ပြန့်သော GenAI ဖြေရှင်းနည်းများအတွက် အသုံးပြုနိုင်သည်။
+Foundry Local နှင့် Azure AI Foundry ကို အသုံးပြု၍ အသုံးချနိုင်သော GenAI workflow များကို တည်ဆောက်ပုံကို လေ့လာပါ။ Prompt engineering အဆင့်မြင့်နည်းလမ်းများ၊ ဖွဲ့စည်းထားသော ဒေတာများကို ပေါင်းစပ်ခြင်းနှင့် ပြန်လုပ်နိုင်သော pipeline များဖြင့် တာဝန်များကို စီမံခန့်ခွဲခြင်းတို့ကို လေ့လာပါ။ အဓိကအားဖြင့် စာရွက်စာတမ်းများနှင့် ဒေတာ Q&A အတွက် Retrieval-Augmented Generation (RAG) ကို အခြေခံထားသော်လည်း၊ ဒီပုံစံများသည် ကျယ်ပြန့်သော GenAI ဖြေရှင်းနည်းဒီဇိုင်းများအတွက်လည်း သက်ဆိုင်ပါသည်။
 
 ## သင်ယူရမည့် ရည်မှန်းချက်များ
 
-ဒီအစည်းအဝေးအဆုံးတွင် သင်သည် -
+ဒီအစည်းအဝေးအဆုံးတွင်၊ သင်သည် -
 
-- **Prompt Engineering ကို ကျွမ်းကျင်စွာ အသုံးပြုနိုင်မည်**: စနစ် prompt များနှင့် grounding နည်းလမ်းများကို ထိရောက်စွာ ဒီဇိုင်းဆွဲနိုင်မည်။
-- **RAG Pattern များကို အကောင်အထည်ဖော်နိုင်မည်**: Vector search ဖြင့် စာရွက်အခြေခံ Q&A စနစ်များ တည်ဆောက်နိုင်မည်။
-- **ဖွဲ့စည်းထားသော ဒေတာများကို ပေါင်းစည်းနိုင်မည်**: AI အလုပ်လုပ်ပုံများတွင် CSV, JSON, နှင့် tabular data များကို အသုံးပြုနိုင်မည်။
-- **Production RAG ကို တည်ဆောက်နိုင်မည်**: Chainlit ဖြင့် scalable RAG application များ ဖန်တီးနိုင်မည်။
-- **Local မှ Cloud သို့ ချိတ်ဆက်နိုင်မည်**: Foundry Local မှ Azure AI Foundry သို့ ပြောင်းရွှေ့ခြင်းလမ်းကြောင်းများကို နားလည်နိုင်မည်။
+- **Prompt Engineering ကို ကျွမ်းကျင်စွာ လုပ်နိုင်မည်**: ထိရောက်သော system prompts နှင့် grounding နည်းလမ်းများကို ဒီဇိုင်းဆွဲနိုင်မည်
+- **RAG ပုံစံများကို အကောင်အထည်ဖော်နိုင်မည်**: vector search ဖြင့် စာရွက်စာတမ်းအခြေခံ Q&A စနစ်များ တည်ဆောက်နိုင်မည်
+- **ဖွဲ့စည်းထားသော ဒေတာများကို ပေါင်းစပ်နိုင်မည်**: CSV, JSON, နှင့် tabular data များကို AI workflow များတွင် အသုံးပြုနိုင်မည်
+- **Production RAG ကို တည်ဆောက်နိုင်မည်**: Chainlit ဖြင့် အရွယ်အစားကြီးသော RAG အက်ပလီကေးရှင်းများ ဖန်တီးနိုင်မည်
+- **Local မှ Cloud သို့ ချိတ်ဆက်နိုင်မည်**: Foundry Local မှ Azure AI Foundry သို့ ပြောင်းရွှေ့ခြင်း၏ လမ်းကြောင်းများကို နားလည်နိုင်မည်
 
-## ကြိုတင်လိုအပ်ချက်များ
+## လိုအပ်ချက်များ
 
-- Session 1 (Foundry Local setup) ကို ပြီးစီးထားရမည်။
-- Vector database နှင့် embeddings အခြေခံကို နားလည်ထားရမည်။
-- Python programming အတွေ့အကြုံရှိရမည်။
-- Document ကို အလုပ်လုပ်ပုံဆိုင်ရာ အကြောင်းအရာများကို နားလည်ထားရမည်။
+- အစည်းအဝေး ၁ (Foundry Local setup) ကို ပြီးစီးထားရမည်
+- vector database နှင့် embeddings အခြေခံကို နားလည်ထားရမည်
+- Python programming အတွေ့အကြုံရှိရမည်
+- စာရွက်စာတမ်းများကို အလုပ်လုပ်စေခြင်းဆိုင်ရာ အကြောင်းအရာများကို ရင်းနှီးထားရမည်
 
-### Cross-Platform Environment Quick Start (Windows & macOS)
+### Cross-Platform ပတ်ဝန်းကျင် အမြန်စတင်ခြင်း (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -48,15 +48,15 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Foundry Local macOS binaries မရှိသေးပါက၊ Windows VM သို့မဟုတ် container တွင် service ကို run လုပ်ပြီး အောက်ပါအတိုင်း set လုပ်ပါ:
+Foundry Local macOS binaries မရှိသေးပါက၊ Windows VM သို့မဟုတ် container တွင် service ကို run ပြီး၊ အောက်ပါအတိုင်း set လုပ်ပါ:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
 
-## Validation: Foundry Local Environment Check
+## အတည်ပြုခြင်း: Foundry Local ပတ်ဝန်းကျင် စစ်ဆေးခြင်း
 
-Demo များကို စတင်မည့်အခါ၊ သင့် local environment ကို validate လုပ်ပါ:
+Demo မစတင်မီ၊ သင့် local ပတ်ဝန်းကျင်ကို အတည်ပြုပါ:
 
 ```powershell
 foundry --version              # Ensure CLI is installed
@@ -67,13 +67,13 @@ curl http://localhost:5273/v1/models  # Validate API (should list running model)
 
 နောက်ဆုံး command မအောင်မြင်ပါက၊ service ကို စတင် (သို့) ပြန်စတင်ပါ: `foundry service start`။
 
-## Demo Flow (30 မိနစ်)
+## Demo Flow (၃၀ မိနစ်)
 
-### 1. System Prompts နှင့် Grounding Strategies (10 မိနစ်)
+### ၁။ System Prompts နှင့် Grounding Strategies (၁၀ မိနစ်)
 
-#### အဆင့် 1.1: Advanced Prompt Engineering
+#### အဆင့် ၁.၁: Advanced Prompt Engineering
 
-`samples/02-rag-solutions/prompt_engineering.py` ကို ဖန်တီးပါ:
+`samples/02-rag-solutions/prompt_engineering.py` ဖန်တီးပါ:
 
 ```python
 #!/usr/bin/env python3
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### အဆင့် 1.2: Grounding Strategies ကို စမ်းသပ်ခြင်း
+#### အဆင့် ၁.၂: Grounding Strategies စမ်းသပ်ခြင်း
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -217,11 +217,11 @@ python samples/02-rag-solutions/prompt_engineering.py
 ```
 
 
-### 2. Tabular Data ကို Prompts နှင့် ပေါင်းစည်းခြင်း (CSV Q&A) (10 မိနစ်)
+### ၂။ Tabular Data ကို Prompts နှင့် ပေါင်းစပ်ခြင်း (CSV Q&A) (၁၀ မိနစ်)
 
-#### အဆင့် 2.1: CSV Data Integration
+#### အဆင့် ၂.၁: CSV Data Integration
 
-`samples/02-rag-solutions/csv_qa_system.py` ကို ဖန်တီးပါ:
+`samples/02-rag-solutions/csv_qa_system.py` ဖန်တီးပါ:
 
 ```python
 #!/usr/bin/env python3
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -433,7 +434,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### အဆင့် 2.2: CSV Q&A System ကို စမ်းသပ်ခြင်း
+#### အဆင့် ၂.၂: CSV Q&A System စမ်းသပ်ခြင်း
 
 ```powershell
 # Run the CSV Q&A demo
@@ -441,11 +442,11 @@ python samples/02-rag-solutions/csv_qa_system.py
 ```
 
 
-### 3. Starter Project: Adapt 02-grounding-data (5 မိနစ်)
+### ၃။ Starter Project: 02-grounding-data ကို ပြင်ဆင်ခြင်း (၅ မိနစ်)
 
-#### အဆင့် 3.1: Enhanced Document RAG System
+#### အဆင့် ၃.၁: Enhanced Document RAG System
 
-`samples/02-rag-solutions/document_rag.py` ကို ဖန်တီးပါ:
+`samples/02-rag-solutions/document_rag.py` ဖန်တီးပါ:
 
 ```python
 #!/usr/bin/env python3
@@ -661,11 +662,11 @@ if __name__ == "__main__":
 ```
 
 
-### 4. CLI-to-Azure Migration Path ကို ပြသခြင်း (5 မိနစ်)
+### ၄။ CLI မှ Azure သို့ ပြောင်းရွှေ့ခြင်း လမ်းကြောင်း ပြသခြင်း (၅ မိနစ်)
 
-#### အဆင့် 4.1: Migration Strategy Overview
+#### အဆင့် ၄.၁: Migration Strategy အကျဉ်းချုပ်
 
-`samples/02-rag-solutions/migration_guide.py` ကို ဖန်တီးပါ:
+`samples/02-rag-solutions/migration_guide.py` ဖန်တီးပါ:
 
 ```python
 #!/usr/bin/env python3
@@ -869,7 +870,7 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-#### အဆင့် 4.2: Migration Patterns ကို စမ်းသပ်ခြင်း
+#### အဆင့် ၄.၂: Migration Patterns စမ်းသပ်ခြင်း
 
 ```powershell
 # Run the migration demo
@@ -877,39 +878,39 @@ python samples/02-rag-solutions/migration_guide.py
 ```
 
 
-## အဓိကအကြောင်းအရာများ
+## အဓိက အကြောင်းအရာများ
 
-### 1. Advanced Prompt Engineering
+### ၁။ Advanced Prompt Engineering
 
-- **System Prompts**: Domain-specific expert personas
-- **Grounding Strategies**: Context integration techniques
-- **Temperature Control**: Balancing creativity vs consistency
-- **Token Management**: Efficient context usage
+- **System Prompts**: အထူးကျွမ်းကျင်သူများအတွက် domain-specific personas
+- **Grounding Strategies**: အကြောင်းအရာ ပေါင်းစပ်နည်းလမ်းများ
+- **Temperature Control**: ဖန်တီးမှုနှင့် တိကျမှုအကြား ညှိနှိုင်းမှု
+- **Token Management**: အကြောင်းအရာကို ထိရောက်စွာ အသုံးပြုခြင်း
 
-### 2. Structured Data Integration
+### ၂။ Structured Data Integration
 
-- **CSV Processing**: Pandas integration with AI models
-- **Statistical Analysis**: Automated data summarization
-- **Context Creation**: Dynamic context generation based on queries
-- **Multi-format Support**: JSON, CSV, နှင့် tabular data
+- **CSV Processing**: Pandas နှင့် AI မော်ဒယ်များ ပေါင်းစပ်ခြင်း
+- **Statistical Analysis**: ဒေတာကို အလိုအလျောက် အကျဉ်းချုပ်ခြင်း
+- **Context Creation**: မေးခွန်းများအပေါ် အခြေခံ၍ အကြောင်းအရာ ဖန်တီးခြင်း
+- **Multi-format Support**: JSON, CSV, နှင့် tabular data များ
 
-### 3. RAG Implementation Patterns
+### ၃။ RAG အကောင်အထည်ဖော်မှု ပုံစံများ
 
 - **Vector Search**: TF-IDF နှင့် cosine similarity
-- **Document Retrieval**: Relevance scoring နှင့် ranking
-- **Context Combination**: Multi-document synthesis
-- **Answer Generation**: Grounded response creation
+- **Document Retrieval**: သက်ဆိုင်မှု အဆင့်သတ်မှတ်ခြင်း
+- **Context Combination**: စာရွက်စာတမ်းများ ပေါင်းစပ်ခြင်း
+- **Answer Generation**: အခြေခံထားသော အဖြေ ဖန်တီးခြင်း
 
-### 4. Cloud Migration Strategies
+### ၄။ Cloud Migration Strategies
 
-- **Unified APIs**: Local နှင့် cloud အတွက် single codebase
-- **Environment Abstraction**: Configuration-driven deployment
+- **Unified APIs**: Local နှင့် cloud အတွက် တစ်ခုတည်းသော codebase
+- **Environment Abstraction**: Configuration အပေါ် အခြေခံ၍ deployment
 - **Development Workflow**: Local → Staging → Production
-- **Cost Optimization**: Local development, cloud production
+- **Cost Optimization**: Local တွင် ဖွံ့ဖြိုးတိုးတက်မှု၊ cloud တွင် ထုတ်လုပ်မှု
 
-## Production Considerations
+## Production အတွက် စဉ်းစားစရာများ
 
-### 1. Performance Optimization
+### ၁။ Performance Optimization
 
 ```python
 # Optimize for production RAG
@@ -923,7 +924,7 @@ rag_config = {
 }
 ```
 
-### 2. Error Handling
+### ၂။ Error Handling
 
 ```python
 # Robust error handling
@@ -940,7 +941,7 @@ except Exception as e:
     logger.error(f"RAG system error: {e}")
 ```
 
-### 3. Monitoring and Observability
+### ၃။ Monitoring and Observability
 
 ```python
 # Track RAG performance
@@ -953,32 +954,32 @@ metrics = {
 ```
 
 
-## Next Steps
+## နောက်တစ်ဆင့်များ
 
-ဒီ session ကို ပြီးဆုံးပြီးနောက်:
+ဒီအစည်းအဝေးပြီးဆုံးပြီးနောက် -
 
-1. **Session 3 ကို စူးစမ်းပါ**: Foundry Local တွင် Open-Source Models
-2. **Production RAG ကို တည်ဆောက်ပါ**: Chainlit (Sample 04) ဖြင့် အကောင်အထည်ဖော်ပါ။
-3. **Advanced Vector Search**: Chroma သို့မဟုတ် Pinecone နှင့် ပေါင်းစည်းပါ။
-4. **Cloud Migration**: Azure AI Foundry သို့ Deploy လုပ်ပါ။
-5. **RAG Quality ကို အကဲဖြတ်ပါ**: `cd Workshop/samples;python -m session02.rag_eval_ragas` ကို run လုပ်ပြီး ragas ကို အသုံးပြု၍ answer_relevancy, faithfulness, နှင့် context_precision ကို တိုင်းတာပါ။
+1. **Session 3 ကို လေ့လာပါ**: Foundry Local တွင် Open-Source မော်ဒယ်များ
+2. **Production RAG တည်ဆောက်ပါ**: Chainlit ဖြင့် အကောင်အထည်ဖော်ပါ (Sample 04)
+3. **Advanced Vector Search**: Chroma သို့မဟုတ် Pinecone နှင့် ပေါင်းစပ်ပါ
+4. **Cloud Migration**: Azure AI Foundry သို့ Deploy လုပ်ပါ
+5. **RAG အရည်အသွေးကို အကဲဖြတ်ပါ**: `cd Workshop/samples;python -m session02.rag_eval_ragas` ကို run လုပ်၍ answer_relevancy, faithfulness, နှင့် context_precision ကို ragas ဖြင့် တိုင်းတာပါ
 
-### Optional Enhancements
+### အပို တိုးတက်မှုများ
 
-| Category | Enhancement | Rationale | Direction |
+| အမျိုးအစား | တိုးတက်မှု | အကြောင်းပြချက် | လမ်းညွှန်ချက် |
 |----------|-------------|-----------|-----------|
-| Retrieval | TF-IDF ကို vector store (FAISS / Chroma) ဖြင့် အစားထိုးပါ | Semantic recall နှင့် scalability ကို မြှင့်တင်ရန် | Chunk docs (500–800 chars), embed, persist index |
-| Hybrid Index | Dual semantic + keyword filtering | Numeric / code queries အတွက် precision ကို မြှင့်တင်ရန် | Keyword ဖြင့် filter လုပ်ပြီး cosine similarity ဖြင့် rank လုပ်ပါ |
-| Embeddings | Embedding models များစွာကို စမ်းသပ်ပါ | Relevance နှင့် speed ကို optimize လုပ်ရန် | A/B: MiniLM vs E5-small vs locally hosted encoder |
-| Caching | Embeddings နှင့် retrieval results ကို cache လုပ်ပါ | Repeated query latency ကို လျှော့ချရန် | Simple on-disk pickle / sqlite with hash key |
-| Evaluation | ragas dataset ကို တိုးချဲ့ပါ | Statistically meaningful quality | 50–100 Q/A + contexts ကို curate လုပ်ပြီး topic အလိုက် stratify လုပ်ပါ |
-| Metrics | Retrieval နှင့် generation timings ကို track လုပ်ပါ | Performance profiling | `retrieval_ms`, `gen_ms`, `tokens` per call ကို capture လုပ်ပါ |
-| Guardrails | Hallucination fallback ကို ထည့်ပါ | Safer answers | Faithfulness < threshold ဖြစ်ပါက → answer: "Insufficient context." |
-| Fallback | Local → Azure model ကို cascade လုပ်ပါ | Hybrid quality boost | Low confidence ဖြစ်ပါက OpenAI API ဖြင့် cloud သို့ route လုပ်ပါ |
-| Determinism | Stable comparison runs | Repeatable eval sets | Seed ကို fix လုပ်ပြီး၊ `temperature=0`၊ sampler randomness ကို disable လုပ်ပါ |
-| Monitoring | Eval run history ကို persist လုပ်ပါ | Regression detection | JSON lines w/ timestamp + metric deltas ကို append လုပ်ပါ |
+| Retrieval | TF-IDF ကို vector store (FAISS / Chroma) ဖြင့် အစားထိုးပါ | Semantic recall နှင့် scalability တိုးတက်စေသည် | စာရွက်စာတမ်းများကို (500–800 စာလုံး) ချိတ်ဆက်ပြီး embed လုပ်ပါ၊ index ကို သိမ်းဆည်းပါ |
+| Hybrid Index | Semantic + keyword filtering နှစ်မျိုးပေါင်းစပ်ပါ | Numeric / code မေးခွန်းများအတွက် တိကျမှု တိုးတက်စေသည် | Keyword ဖြင့် filter ပြီး cosine similarity ဖြင့် အဆင့်သတ်မှတ်ပါ |
+| Embeddings | Embedding မော်ဒယ်များ မျိုးစုံကို စမ်းသပ်ပါ | Relevance နှင့် speed ကို အကောင်းဆုံးဖြစ်စေသည် | A/B: MiniLM vs E5-small vs locally hosted encoder |
+| Caching | Embeddings နှင့် retrieval results ကို cache လုပ်ပါ | မေးခွန်းများ ထပ်မံမေးခြင်းအတွက် latency လျှော့ချသည် | On-disk pickle / sqlite ကို hash key ဖြင့် အသုံးပြုပါ |
+| Evaluation | Ragas dataset ကို တိုးချဲ့ပါ | အရည်အသွေးကို သက်သေပြရန် အရေးကြီးသည် | 50–100 Q/A + contexts ကို စုဆောင်းပြီး၊ topic အလိုက် စီစဉ်ပါ |
+| Metrics | Retrieval နှင့် generation timing များကို တိုင်းတာပါ | Performance profiling | `retrieval_ms`, `gen_ms`, `tokens` တိုင်းတာမှုများကို call တစ်ခုစီအတွက် သိမ်းဆည်းပါ |
+| Guardrails | Hallucination fallback ထည့်ပါ | အဖြေများကို ပိုမိုလုံခြုံစေသည် | Faithfulness < threshold ဖြစ်ပါက → "Insufficient context." ဟု ဖြေပါ |
+| Fallback | Local → Azure မော်ဒယ်ကို cascade လုပ်ပါ | Quality တိုးတက်စေသည် | Low confidence ဖြစ်ပါက OpenAI API ဖြင့် cloud သို့ ပို့ပါ |
+| Determinism | Stable comparison run များ | Evaluation set များကို ထပ်မံပြုလုပ်နိုင်စေရန် | Seed ကို fix လုပ်ပြီး၊ `temperature=0` သတ်မှတ်ပါ၊ sampler randomness ကို ပိတ်ပါ |
+| Monitoring | Evaluation run history ကို သိမ်းဆည်းပါ | Regression detection | JSON lines ကို timestamp + metric deltas ဖြင့် ထပ်ထည့်ပါ |
 
-#### Example: Adding Retrieval Timing
+#### ဥပမာ: Retrieval Timing ထည့်သွင်းခြင်း
 
 ```python
 import time
@@ -991,13 +992,12 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
+#### Ragas ဖြင့် Evaluation ကို Scale လုပ်ခြင်း
 
-#### Scaling Evaluation With ragas
-
-1. `question`, `answer`, `contexts`, `ground_truths` (list) fields ပါသော JSONL ကို assemble လုပ်ပါ။
-2. `Dataset.from_list(list_of_dicts)` သို့ convert လုပ်ပါ။
-3. `evaluate(dataset, metrics=[...])` ကို run လုပ်ပါ။
-4. Trend analysis အတွက် metrics (CSV/JSON) ကို store လုပ်ပါ။
+1. `question`, `answer`, `contexts`, `ground_truths` (list) ပါသော JSONL တစ်ခုကို စုစည်းပါ
+2. `Dataset.from_list(list_of_dicts)` သို့ ပြောင်းပါ
+3. `evaluate(dataset, metrics=[...])` ကို run လုပ်ပါ
+4. Metrics (CSV/JSON) ကို သိမ်းဆည်းပြီး trend analysis ပြုလုပ်ပါ။
 
 #### Vector Store Quick Start (FAISS)
 
@@ -1010,7 +1010,7 @@ D, I = index.search(query_vec, k)
 
 Disk persistence အတွက် `faiss.write_index(index, "kb.index")` ကို အသုံးပြုပါ။
 
-## Additional Resources
+## အပိုဆောင်း အရင်းအမြစ်များ
 
 ### Documentation
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
@@ -1024,20 +1024,20 @@ Disk persistence အတွက် `faiss.write_index(index, "kb.index")` ကိ�
 
 ---
 
-**Session Duration**: 30 မိနစ် hands-on + 15 မိနစ် Q&A  
-**Difficulty Level**: အလယ်အလတ်  
-**Prerequisites**: Session 1 ကို ပြီးစီးထားရမည်၊ Basic Python အခြေခံကို နားလည်ထားရမည်  
+**အစည်းအဝေး ကြာချိန်**: ၃၀ မိနစ် လက်တွေ့လုပ်ငန်း + ၁၅ မိနစ် Q&A  
+**အဆင့်အတန်း**: အလယ်အလတ်  
+**လိုအပ်ချက်များ**: Session 1 ပြီးစီးပြီး၊ Python အခြေခံကို နားလည်ထားရမည်
 
-## Sample Scenario & Workshop Mapping
+## နမူနာ အခြေအနေနှင့် Workshop Mapping
 
-| Workshop Script / Notebook | Scenario | Goal | Core Dataset / Source | Example Question |
+| Workshop Script / Notebook | အခြေအနေ | ရည်မှန်းချက် | Core Dataset / Source | ဥပမာ မေးခွန်း |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Privacy + performance FAQs ကို ဖြေရှင်းရန် Internal support knowledge base | Minimal in‑memory RAG with embeddings | `DOCS` list in script (5 short passages) | Why use RAG with local inference? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Quality analyst အနေဖြင့် baseline retrieval faithfulness metrics ကို တည်ဆောက်ခြင်း | Tiny synthetic dataset တွင် ragas metrics ကို တိုင်းတာခြင်း | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` arrays | What advantage does local inference offer? |
-| `prompt_engineering.py` (advanced) | Domain SME အနေဖြင့် grounded prompts များကို vertical များအလိုက် crafting လုပ်ခြင်း | Domain system prompts နှင့် token impact ကို နှိုင်းယှဉ်ခြင်း | Inline `contexts` dict | How does Foundry Local handle model caching? |
-| `csv_qa_system.py` | Sales ops အနေဖြင့် exports အပေါ် interactive analytics ကို စူးစမ်းခြင်း | Small sales slice ကို စုစည်းပြီး query လုပ်ခြင်း | Generated `sample_sales_data.csv` (10 rows) | Which product has highest average sales amount? |
-| `document_rag.py` | Product team အနေဖြင့် internal wiki အတွက် doc RAG ကို စူးစမ်းခြင်း | Relevant docs ကို ရှာဖွေပြီး citation ပေးခြင်း | `create_sample_knowledge_base()` list | What are the benefits of Edge AI? |
-| `migration_guide.py` | Architect အနေဖြင့် cloud migration plan ကို ပြင်ဆင်ခြင်း | Local→Azure API parity ကို ပြသခြင်း | Static test prompts | Explain the benefits of edge AI in 2–3 sentences. |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Privacy + performance FAQs များကို ဖြေရှင်းရန် Internal support knowledge base | In-memory RAG တစ်ခုကို တည်ဆောက်ခြင်း | Script တွင်ပါသော `DOCS` (စာရွက်စာတမ်း ၅ ခု) | Local inference ဖြင့် RAG ကို ဘာကြောင့် အသုံးပြုသင့်သလဲ? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Quality analyst တစ်ဦးက baseline retrieval faithfulness metrics ကို တည်ဆောက်ခြင်း | Ragas metrics ကို tiny synthetic dataset တွင် တိုင်းတာခြင်း | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` arrays | Local inference ၏ အကျိုးကျေးဇူးများက ဘာလဲ? |
+| `prompt_engineering.py` (advanced) | Domain SME တစ်ဦးက grounded prompts များကို vertical များအတွက် ဖန်တီးခြင်း | Domain system prompts နှင့် token impact ကို နှိုင်းယှဉ်ခြင်း | Inline `contexts` dict | Foundry Local သည် model caching ကို ဘယ်လို စီမံခန့်ခွဲသလဲ? |
+| `csv_qa_system.py` | Sales ops တစ်ဦးက export များအပေါ် interactive analytics ကို စမ်းသပ်ခြင်း | Sales slice သေးငယ်တစ်ခုကို အကျဉ်းချုပ်ပြီး မေးမြန်းခြင်း | Generated `sample_sales_data.csv` (တန်း ၁၀ ခု) | အရောင်းပမာဏ အများဆုံးရှိသော ပစ္စည်းက ဘာလဲ? |
+| `document_rag.py` | Product team တစ်ခုက internal wiki အတွက် doc RAG ကို စမ်းသပ်ခြင်း | သက်ဆိုင်သော စာရွက်စာတမ်းများကို ရှာဖွေပြီး citation ပေးခြင်း | `create_sample_knowledge_base()` list | Edge AI ၏ အကျိုးကျေးဇူးများက ဘာလဲ? |
+| `migration_guide.py` | Architect တစ်ဦးက cloud migration အစီအစဉ်ကို ပြင်ဆင်ခြင်း | Local → Azure API parity ကို ပြသခြင်း | Static test prompts | Edge AI ၏ အကျိုးကျေးဇူးများကို ၂–၃ စာကြောင်းဖြင့် ရှင်းပြပါ။ |
 
 ### Dataset Snippets
 Inline RAG pipeline doc list:
@@ -1061,13 +1061,15 @@ GROUND_TRUTH = [
 ```
 
 
-### Scenario Narrative
-Support engineering group သည် customer data ကို အပြင်ဘက်သို့ မပေါ်လွင်စေဘဲ Internal FAQs ကို ဖြေရှင်းရန် rapid prototype တစ်ခုလိုအပ်သည်။ Session 2 artifacts တွင် minimal ephemeral RAG (no persistence) → structured CSV Q&A → document retrieval with citation → objective quality evaluation (ragas) → Azure staging အတွက် ပြင်ဆင်ထားသော migration strategy အထိ တိုးတက်မှုရှိသည်။
+### အခြေအနေ အကြောင်းအရာ
+Support engineering အဖွဲ့သည် အပြင်ဘက်သို့ ဖောက်သည်ဒေတာများ မပေါက်ကြားစေဘဲ Internal FAQs များကို ဖြေရှင်းနိုင်သော rapid prototype တစ်ခုလိုအပ်သည်။ Session 2 artifacts များသည် minimal ephemeral RAG (no persistence) → structured CSV Q&A → document retrieval with citation → objective quality evaluation (ragas) → Azure staging အတွက် ပြင်ဆင်ထားသော migration strategy အထိ တိုးတက်မှုရှိသည်။
 
-### Expansion Paths
-Optional Enhancements အတွင်းရှိ ဇယားကို အသုံးပြု၍ တိုးတက်မှုများ ပြုလုပ်ပါ: TF‑IDF ကို FAISS/Chroma ဖြင့် အစားထိုးပါ၊ evaluation corpus ကို (50–100 Q/A) တိုးချဲ့ပါ၊ faithfulness < threshold ဖြစ်ပါက fallback escalation ကို ထည့်ပါ။
+### တိုးချဲ့မှု လမ်းကြောင်းများ
+Optional Enhancements အတွင်းရှိဇယားကို အသုံးပြု၍ တိုးတက်မှုများ ပြုလုပ်ပါ: TF-IDF ကို FAISS/Chroma ဖြင့် အစားထိုးပါ၊ evaluation corpus (50–100 Q/A) ကို ကြီးထွားစေပါ၊ faithfulness < threshold ဖြစ်ပါက အကြီးမားသော မော်ဒယ်သို့ fallback escalation ထည့်ပါ။
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

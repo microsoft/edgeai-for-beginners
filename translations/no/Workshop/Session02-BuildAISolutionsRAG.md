@@ -1,36 +1,36 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "72de9f8878960ee83159ae9e8f592ea0",
-  "translation_date": "2025-10-28T22:13:59+00:00",
+  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+  "translation_date": "2025-11-17T19:01:38+00:00",
   "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
   "language_code": "no"
 }
 -->
-# Økt 2: Bygg AI-løsninger med Azure AI Foundry
+# Sesjon 2: Bygg AI-løsninger med Azure AI Foundry
 
 ## Sammendrag
 
-Utforsk hvordan du kan bygge handlingsrettede GenAI-arbeidsflyter ved hjelp av Foundry Local og Azure AI Foundry. Lær avansert prompt engineering, integrer strukturerte data og orkestrer oppgaver med reproduserbare pipelines. Selv om fokuset er på Retrieval-Augmented Generation (RAG) for dokument- og data-Q&A, kan mønstrene generaliseres til bredere GenAI-løsningsdesign.
+Utforsk hvordan du kan bygge handlingsrettede GenAI-arbeidsflyter ved hjelp av Foundry Local og Azure AI Foundry. Lær avansert prompt engineering, integrer strukturerte data, og orkestrer oppgaver med reproduserbare pipelines. Selv om fokuset er på Retrieval-Augmented Generation (RAG) for dokument- og data-Q&A, kan mønstrene generaliseres til bredere GenAI-løsningsdesign.
 
 ## Læringsmål
 
-Ved slutten av denne økten vil du:
+Ved slutten av denne sesjonen vil du:
 
-- **Mestre Prompt Engineering**: Utforme effektive systemprompter og forankringsstrategier
+- **Beherske Prompt Engineering**: Designe effektive systemprompter og grunningsstrategier
 - **Implementere RAG-mønstre**: Bygge dokumentbaserte Q&A-systemer med vektorsøk
-- **Integrere strukturerte data**: Arbeide med CSV-, JSON- og tabulære data i AI-arbeidsflyter
-- **Bygge produksjonsklare RAG-applikasjoner**: Skape skalerbare RAG-applikasjoner med Chainlit
-- **Bro mellom lokal og sky**: Forstå migreringsveier fra Foundry Local til Azure AI Foundry
+- **Integrere strukturerte data**: Arbeide med CSV, JSON og tabulære data i AI-arbeidsflyter
+- **Bygge produksjonsklare RAG**: Lage skalerbare RAG-applikasjoner med Chainlit
+- **Bro mellom lokal og sky**: Forstå migrasjonsveier fra Foundry Local til Azure AI Foundry
 
 ## Forutsetninger
 
-- Fullført Økt 1 (Foundry Local-oppsett)
+- Fullført Sesjon 1 (Foundry Local-oppsett)
 - Grunnleggende forståelse av vektordatabaser og embeddings
 - Erfaring med Python-programmering
 - Kjennskap til dokumentbehandlingskonsepter
 
-### Hurtigstart for plattformuavhengig miljø (Windows & macOS)
+### Hurtigstart for tverrplattformmiljø (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -48,7 +48,7 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Hvis Foundry Local macOS-binærfiler ennå ikke er tilgjengelige i ditt miljø, kjør tjenesten på en Windows VM eller container og sett:
+Hvis Foundry Local macOS-binærfiler ikke er tilgjengelige i ditt miljø, kjør tjenesten på en Windows VM eller container og sett:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
@@ -65,13 +65,13 @@ foundry model run phi-4-mini   # Start baseline SLM
 curl http://localhost:5273/v1/models  # Validate API (should list running model)
 ```
 
-Hvis den siste kommandoen feiler, start (eller start på nytt) tjenesten: `foundry service start`.
+Hvis den siste kommandoen feiler, start (eller restart) tjenesten: `foundry service start`.
 
-## Demo Flyt (30 minutter)
+## Demo-flyt (30 minutter)
 
-### 1. Systemprompter og forankringsstrategier (10 minutter)
+### 1. Systemprompter og grunningsstrategier (10 minutter)
 
-#### Trinn 1.1: Avansert Prompt Engineering
+#### Steg 1.1: Avansert Prompt Engineering
 
 Opprett `samples/02-rag-solutions/prompt_engineering.py`:
 
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### Trinn 1.2: Test forankringsstrategier
+#### Steg 1.2: Test grunningsstrategier
 
 ```powershell
 # Ensure phi-4-mini is running
@@ -219,7 +219,7 @@ python samples/02-rag-solutions/prompt_engineering.py
 
 ### 2. Integrer tabulære data med prompter (CSV Q&A) (10 minutter)
 
-#### Trinn 2.1: Integrasjon av CSV-data
+#### Steg 2.1: Integrasjon av CSV-data
 
 Opprett `samples/02-rag-solutions/csv_qa_system.py`:
 
@@ -233,6 +233,7 @@ Reference: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/refe
 
 import pandas as pd
 import json
+import os
 from openai import OpenAI
 from typing import Dict, Any, List
 import io
@@ -433,7 +434,7 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### Trinn 2.2: Test CSV Q&A-system
+#### Steg 2.2: Test CSV Q&A-systemet
 
 ```powershell
 # Run the CSV Q&A demo
@@ -443,7 +444,7 @@ python samples/02-rag-solutions/csv_qa_system.py
 
 ### 3. Startprosjekt: Tilpass 02-grounding-data (5 minutter)
 
-#### Trinn 3.1: Forbedret dokument-RAG-system
+#### Steg 3.1: Forbedret dokument-RAG-system
 
 Opprett `samples/02-rag-solutions/document_rag.py`:
 
@@ -661,9 +662,9 @@ if __name__ == "__main__":
 ```
 
 
-### 4. Vis CLI-til-Azure migreringsvei (5 minutter)
+### 4. Vis CLI-til-Azure migrasjonsvei (5 minutter)
 
-#### Trinn 4.1: Oversikt over migreringsstrategi
+#### Steg 4.1: Oversikt over migrasjonsstrategi
 
 Opprett `samples/02-rag-solutions/migration_guide.py`:
 
@@ -869,7 +870,7 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-#### Trinn 4.2: Test migreringsmønstre
+#### Steg 4.2: Test migrasjonsmønstre
 
 ```powershell
 # Run the migration demo
@@ -881,8 +882,8 @@ python samples/02-rag-solutions/migration_guide.py
 
 ### 1. Avansert Prompt Engineering
 
-- **Systemprompter**: Domene-spesifikke ekspertpersonas
-- **Forankringsstrategier**: Teknikker for kontekstintegrasjon
+- **Systemprompter**: Ekspertpersonas for spesifikke domener
+- **Grunningsstrategier**: Teknikker for kontekstintegrasjon
 - **Temperaturkontroll**: Balansering av kreativitet vs konsistens
 - **Tokenhåndtering**: Effektiv bruk av kontekst
 
@@ -898,13 +899,13 @@ python samples/02-rag-solutions/migration_guide.py
 - **Vektorsøk**: TF-IDF og cosinuslikhet
 - **Dokumenthenting**: Relevansscoring og rangering
 - **Kontekstkombinasjon**: Syntese av flere dokumenter
-- **Svargenerering**: Skapelse av forankrede svar
+- **Svargenerering**: Skaping av grunnede svar
 
-### 4. Sky-migreringsstrategier
+### 4. Sky-migrasjonsstrategier
 
-- **Forente API-er**: Enkelt kodebase for lokalt og sky
+- **Enhetlige API-er**: En enkelt kodebase for lokal og sky
 - **Miljøabstraksjon**: Konfigurasjonsdrevet distribusjon
-- **Utviklingsarbeidsflyt**: Lokalt → Staging → Produksjon
+- **Utviklingsarbeidsflyt**: Lokal → Staging → Produksjon
 - **Kostnadsoptimalisering**: Lokal utvikling, skyproduksjon
 
 ## Produksjonsbetraktninger
@@ -955,28 +956,28 @@ metrics = {
 
 ## Neste steg
 
-Etter å ha fullført denne økten:
+Etter å ha fullført denne sesjonen:
 
-1. **Utforsk Økt 3**: Open-Source-modeller i Foundry Local
-2. **Bygg produksjonsklare RAG-applikasjoner**: Implementer med Chainlit (Eksempel 04)
+1. **Utforsk Sesjon 3**: Open-Source-modeller i Foundry Local
+2. **Bygg produksjonsklare RAG**: Implementer med Chainlit (Eksempel 04)
 3. **Avansert vektorsøk**: Integrer med Chroma eller Pinecone
-4. **Sky-migrering**: Distribuer til Azure AI Foundry
-5. **Evaluer RAG-kvalitet**: Kjør `cd Workkshop/samples;python -m session02.rag_eval_ragas` for å måle answer_relevancy, faithfulness og context_precision ved hjelp av ragas
+4. **Sky-migrasjon**: Distribuer til Azure AI Foundry
+5. **Evaluer RAG-kvalitet**: Kjør `cd Workshop/samples;python -m session02.rag_eval_ragas` for å måle answer_relevancy, faithfulness og context_precision ved hjelp av ragas
 
 ### Valgfrie forbedringer
 
 | Kategori | Forbedring | Begrunnelse | Retning |
-|----------|------------|-------------|---------|
-| Henting | Erstatt TF-IDF med vektorlagring (FAISS / Chroma) | Bedre semantisk gjenfinning og skalerbarhet | Del opp dokumenter (500–800 tegn), embed, lagre indeks |
-| Hybridindeks | Dobbel semantisk + nøkkelordfiltrering | Forbedrer presisjon på numeriske / kodeforespørsler | Filtrer etter nøkkelord, deretter ranger etter cosinuslikhet |
+|----------|-------------|-----------|-----------|
+| Henting | Erstatt TF-IDF med vektorlagring (FAISS / Chroma) | Bedre semantisk gjenkalling og skalerbarhet | Del opp dokumenter (500–800 tegn), embed, lagre indeks |
+| Hybrid indeks | Dobbel semantisk + nøkkelordfiltrering | Forbedrer presisjon på numeriske / kodeforespørsler | Filtrer etter nøkkelord, deretter ranger etter cosinuslikhet |
 | Embeddings | Evaluer flere embedding-modeller | Optimaliser relevans vs hastighet | A/B: MiniLM vs E5-small vs lokalt hostet encoder |
-| Caching | Hurtigbuffer for embeddings og henteresultater | Reduserer ventetid ved gjentatte forespørsler | Enkel diskbasert pickle / sqlite med hash-nøkkel |
+| Caching | Cache embeddings og henteresultater | Reduser ventetid for gjentatte forespørsler | Enkel diskbasert pickle / sqlite med hash-nøkkel |
 | Evaluering | Utvid ragas-datasettet | Statistisk meningsfull kvalitet | Kurater 50–100 Q/A + kontekster; stratifiser etter tema |
-| Metrikker | Spor henting- og genereringstider | Ytelsesprofilering | Fang opp `retrieval_ms`, `gen_ms`, `tokens` per kall |
-| Sikkerhet | Legg til fallback for hallusinasjoner | Sikrere svar | Hvis faithfulness < terskel → svar: "Utilstrekkelig kontekst." |
-| Fallback | Kaskader lokalt → Azure-modell | Hybrid kvalitetsforbedring | Ved lav tillit, rute til sky via samme OpenAI API |
-| Determinisme | Stabile sammenligningskjøringer | Reproduserbare evalueringssett | Fiks seed, `temperature=0`, deaktiver tilfeldig sampling |
-| Overvåking | Lagre evalueringshistorikk | Oppdage regresjoner | Legg til JSON-linjer med tidsstempel + metrikker |
+| Metrikker | Spor henting og genereringstider | Ytelsesprofilering | Fang opp `retrieval_ms`, `gen_ms`, `tokens` per kall |
+| Sikkerhetsnett | Legg til fallback for hallusinasjoner | Sikrere svar | Hvis faithfulness < terskel → svar: "Utilstrekkelig kontekst." |
+| Fallback | Kaskader lokalt → Azure-modell | Hybrid kvalitetsforbedring | Ved lav selvtillit, rute til sky via samme OpenAI API |
+| Determinisme | Stabile sammenligningskjøringer | Reproduserbare evalueringssett | Fiks seed, `temperature=0`, deaktiver tilfeldighet i sampler |
+| Overvåking | Lagre evalueringshistorikk | Oppdag regresjoner | Legg til JSON-linjer med tidsstempel + metrikker endringer |
 
 #### Eksempel: Legge til hentetid
 
@@ -992,7 +993,7 @@ record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usag
 ```
 
 
-#### Skalering av evaluering med ragas
+#### Skalere evaluering med ragas
 
 1. Sett sammen en JSONL med feltene: `question`, `answer`, `contexts`, `ground_truths` (liste)
 2. Konverter til `Dataset.from_list(list_of_dicts)`
@@ -1020,24 +1021,24 @@ For diskpersistens bruk `faiss.write_index(index, "kb.index")`.
 
 ### Eksempelkode
 - [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG-applikasjon
-- [Advanced Multi-Agent System](./samples/09/README.md) - Agentkoordinasjonsmønstre
+- [Avansert Multi-Agent System](./samples/09/README.md) - Mønstre for agentkoordinering
 
 ---
 
-**Varighet på økten**: 30 minutter praktisk + 15 minutter Q&A  
+**Varighet for sesjonen**: 30 minutter praktisk + 15 minutter Q&A  
 **Vanskelighetsgrad**: Middels  
-**Forutsetninger**: Fullført Økt 1, Grunnleggende Python-kunnskaper
+**Forutsetninger**: Fullført Sesjon 1, Grunnleggende Python-kunnskaper  
 
-## Eksempelscenario og workshop-kartlegging
+## Eksempelscenario og workshopkartlegging
 
-| Workshop-skript / Notatbok | Scenario | Mål | Kjerne-datasett / Kilde | Eksempelforespørsel |
-|----------------------------|----------|-----|-------------------------|---------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Intern kunnskapsbase for support som svarer på spørsmål om personvern + ytelse | Minimal RAG i minnet med embeddings | `DOCS`-liste i skript (5 korte avsnitt) | Hvorfor bruke RAG med lokal inferens? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kvalitetsanalytiker som etablerer baseline for gjenfinningsnøyaktighet | Beregn ragas-metrikker på et lite syntetisk datasett | `DOCS`, `QUESTIONS`, `GROUND_TRUTH`-arrayer | Hvilken fordel gir lokal inferens? |
-| `prompt_engineering.py` (avansert) | Domeneekspert som utformer forankrede prompter for flere vertikaler | Sammenlign domene-systemprompter og tokenpåvirkning | Inline `contexts`-ordbok | Hvordan håndterer Foundry Local modell-caching? |
-| `csv_qa_system.py` | Salgsoperasjoner som utforsker interaktiv analyse over eksporterte data | Oppsummer og spør om et lite salgsutvalg | Generert `sample_sales_data.csv` (10 rader) | Hvilket produkt har høyest gjennomsnittlig salgsbeløp? |
-| `document_rag.py` | Produktteam som utforsker dokument-RAG for intern wiki | Hent og siter relevante dokumenter | `create_sample_knowledge_base()`-liste | Hva er fordelene med Edge AI? |
-| `migration_guide.py` | Arkitekt som forbereder sky-migreringsplan | Demonstrer lokal→Azure API-paritet | Statisk testprompter | Forklar fordelene med Edge AI i 2–3 setninger. |
+| Workshop-skript / Notebook | Scenario | Mål | Kjerne-datasett / Kilde | Eksempelforespørsel |
+|----------------------------|----------|------|-----------------------|------------------|
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Intern kunnskapsbase som svarer på personvern- og ytelses-FAQ | Minimal RAG i minnet med embeddings | `DOCS`-liste i skript (5 korte avsnitt) | Hvorfor bruke RAG med lokal inferens? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kvalitetsanalytiker som etablerer baseline for hentingens troverdighet | Beregn ragas-metrikker på lite syntetisk datasett | `DOCS`, `QUESTIONS`, `GROUND_TRUTH`-arrays | Hvilken fordel gir lokal inferens? |
+| `prompt_engineering.py` (avansert) | Domeneekspert som lager grunnede prompter for flere vertikaler | Sammenlign domene-systemprompter og tokenpåvirkning | Inline `contexts`-dict | Hvordan håndterer Foundry Local modellcaching? |
+| `csv_qa_system.py` | Salgsoperasjoner som utforsker interaktiv analyse over eksport | Oppsummer og spør om liten salgsutskrift | Generert `sample_sales_data.csv` (10 rader) | Hvilket produkt har høyest gjennomsnittlig salgsbeløp? |
+| `document_rag.py` | Produktteam som utforsker dokument-RAG for intern wiki | Hent + siter relevante dokumenter | `create_sample_knowledge_base()`-liste | Hva er fordelene med Edge AI? |
+| `migration_guide.py` | Arkitekt som forbereder sky-migrasjonsplan | Demonstrer lokal→Azure API-paritet | Statisk testprompter | Forklar fordelene med Edge AI i 2–3 setninger. |
 
 ### Datasettutdrag
 Inline RAG pipeline dokumentliste:
@@ -1051,7 +1052,7 @@ DOCS = [
 ]
 ```
 
-Ragas evaluerings-sannhetstupler:
+Ragas evaluering sannhetstupler:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1062,12 +1063,14 @@ GROUND_TRUTH = [
 
 
 ### Scenariofortelling
-Supportteamet ønsker en rask prototype for å svare på interne FAQs uten å eksponere kundedata eksternt. Økt 2-artefakter utvikler seg fra en minimal, midlertidig RAG (uten persistens) → strukturert CSV Q&A → dokumenthenting med sitering → objektiv kvalitetsvurdering (ragas) → en migreringsstrategi klar for Azure staging.
+Supportingeniørgruppen ønsker en rask prototype for å svare på interne FAQ-er uten å eksponere kundedata eksternt. Artefaktene fra Sesjon 2 går fra en minimal, flyktig RAG (ingen persistens) → strukturert CSV Q&A → dokumenthenting med sitering → objektiv kvalitetsvurdering (ragas) → en migrasjonsstrategi klar for Azure staging.
 
-### Utvidelsesmuligheter
-Bruk tabellen for valgfrie forbedringer for å utvikle videre: bytt ut TF-IDF med FAISS/Chroma, utvid evalueringskorpuset (50–100 Q/A), legg til fallback-eskalering til en større modell når faithfulness < terskel.
+### Utvidelsesveier
+Bruk tabellen for valgfrie forbedringer for å utvikle: bytt TF-IDF med FAISS/Chroma, utvid evalueringskorpuset (50–100 Q/A), legg til fallback-eskalering til en større modell når faithfulness < terskel.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
