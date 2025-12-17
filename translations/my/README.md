@@ -1,15 +1,16 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1e49c901b8a8e953904d655ae4630bfe",
-  "translation_date": "2025-11-18T18:13:33+00:00",
+  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
+  "translation_date": "2025-12-15T16:21:08+00:00",
   "source_file": "README.md",
   "language_code": "my"
 }
 -->
-# EdgeAI အတွက် အခြေခံသင်ခန်းစာများ
+# EdgeAI for Beginners 
 
-![သင်ခန်းစာအဖုံးပုံ](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.my.png)
+
+![Course cover image](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.my.png)
 
 [![GitHub contributors](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
@@ -20,82 +21,83 @@ CO_OP_TRANSLATOR_METADATA:
 [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
 
+
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-ဒီအရင်းအမြစ်တွေကို စတင်အသုံးပြုဖို့ အောက်ပါအဆင့်တွေကို လိုက်နာပါ။
+Follow these steps to get started using these resources:
 
-1. **Repository ကို Fork လုပ်ပါ**: [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork) ကိုနှိပ်ပါ။
-2. **Repository ကို Clone လုပ်ပါ**: `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Azure AI Foundry Discord ကို Join လုပ်ပြီး ကျွမ်းကျင်သူများနှင့် Developer များနှင့် တွေ့ဆုံပါ**](https://discord.com/invite/ByRwuEEgH4)
+1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Clone the Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+3. [**Join The Azure AI Foundry Discord and meet experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
 
-### 🌐 ဘာသာစကားများအထောက်အပံ့
 
-#### GitHub Action မှတဆင့် အလိုအလျောက် (အမြဲ Update ဖြစ်နေသော)
+### 🌐 Multi-Language Support
+
+#### Supported via GitHub Action (Automated & Always Up-to-Date)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](./README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](./README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**အပိုဘာသာစကားများအထောက်အပံ့လိုချင်ပါက [ဒီမှာ](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md) ရှိသောစာရင်းကိုကြည့်ပါ။**
+**If you wish to have additional translations languages supported are listed [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+## Introduction
 
-## အကျဉ်းချုပ်
+Welcome to **EdgeAI for Beginners** – your comprehensive journey into the transformative world of Edge Artificial Intelligence. This course bridges the gap between powerful AI capabilities and practical, real-world deployment on edge devices, empowering you to harness AI's potential directly where data is generated and decisions need to be made.
 
-**EdgeAI for Beginners** မှ ကြိုဆိုပါတယ်။ Edge Artificial Intelligence ၏ ပြောင်းလဲမှုအလှည့်အပြောင်းကို သင်ခန်းစာအပြည့်အစုံဖြင့် လေ့လာနိုင်မည့် ခရီးစဉ်ဖြစ်ပါတယ်။ ဒီသင်ခန်းစာက AI ၏ အင်အားကြီးသောစွမ်းရည်များနှင့် edge devices တွေမှာ အကောင်အထည်ဖော်နိုင်မှုအကြားကွာဟချက်ကို ဖြည့်ဆည်းပေးပြီး၊ ဒေတာထုတ်လုပ်ရာနေရာမှာ တိုက်ရိုက် AI ၏စွမ်းရည်ကို အသုံးချနိုင်စေပါတယ်။
+### What You'll Master
 
-### သင်လေ့လာနိုင်မည့်အရာများ
+This course takes you from fundamental concepts to production-ready implementations, covering:
+- **Small Language Models (SLMs)** optimized for edge deployment
+- **Hardware-aware optimization** across diverse platforms
+- **Real-time inference** with privacy-preserving capabilities
+- **Production deployment** strategies for enterprise applications
 
-ဒီသင်ခန်းစာက အခြေခံအကြောင်းအရာများမှ စတင်ပြီး ထုတ်လုပ်မှုအဆင့်အထိ လေ့လာနိုင်မည့်အရာများကို ဖော်ပြထားပါတယ်။
-- **Small Language Models (SLMs)** ကို edge deployment အတွက် အထူးပြုထားခြင်း
-- **Hardware-aware optimization** ကို platform များစွာအတွက်
-- **Real-time inference** ကို privacy ကိုထိန်းသိမ်းထားနိုင်စွမ်းဖြင့်
-- **Production deployment** ကို စီးပွားရေးလုပ်ငန်းများအတွက်
+### Why EdgeAI Matters
 
-### EdgeAI အရေးကြီးမှု
-
-Edge AI သည် ခေတ်မီပြဿနာများကို ဖြေရှင်းပေးနိုင်သော အရေးကြီးသောအလှည့်အပြောင်းဖြစ်ပါတယ်။
-- **Privacy & Security**: Cloud ကိုမရောက်မီ sensitive data ကို local မှာ process လုပ်ခြင်း
-- **Real-time Performance**: အရေးကြီးသော application များအတွက် network latency ကိုဖယ်ရှားခြင်း
-- **Cost Efficiency**: Bandwidth နှင့် cloud computing ကုန်ကျစရိတ်ကို လျှော့ချခြင်း
-- **Resilient Operations**: Network ပြတ်တောက်မှုများအတွင်းမှာလည်း လုပ်ဆောင်နိုင်စွမ်းရှိခြင်း
-- **Regulatory Compliance**: Data sovereignty လိုအပ်ချက်များကို ဖြည့်ဆည်းခြင်း
+Edge AI represents a paradigm shift that addresses critical modern challenges:
+- **Privacy & Security**: Process sensitive data locally without cloud exposure
+- **Real-time Performance**: Eliminate network latency for time-critical applications
+- **Cost Efficiency**: Reduce bandwidth and cloud computing expenses
+- **Resilient Operations**: Maintain functionality during network outages
+- **Regulatory Compliance**: Meet data sovereignty requirements
 
 ### Edge AI
 
-Edge AI ဆိုတာ AI algorithm နှင့် language models တွေကို hardware ပေါ်မှာ local မှာ run လုပ်ခြင်းဖြစ်ပြီး၊ data ထုတ်လုပ်ရာနေရာမှာ cloud resources မလိုအပ်ဘဲ inference လုပ်ခြင်းဖြစ်ပါတယ်။ Latency ကိုလျှော့ချပြီး privacy ကိုတိုးတက်စေပြီး real-time decision-making ကို အကောင်အထည်ဖော်နိုင်ပါတယ်။
+Edge AI refers to running AI algorithms and language models locally on hardware, close to where data is generated without relying on cloud resources for inference. It reduces latency, enhances privacy, and enables real-time decision-making.
 
-### အဓိကအချက်များ:
-- **On-device inference**: AI models တွေကို edge devices (ဖုန်း၊ router၊ microcontroller၊ industrial PC) ပေါ်မှာ run လုပ်ခြင်း
-- **Offline capability**: အမြဲတမ်း internet connection မလိုအပ်ဘဲ လုပ်ဆောင်နိုင်စွမ်း
-- **Low latency**: Real-time systems အတွက် အမြန်တုံ့ပြန်မှု
-- **Data sovereignty**: Sensitive data ကို local မှာထားပြီး၊ security နှင့် compliance ကိုတိုးတက်စေခြင်း
+### Core Principles:
+- **On-device inference**: AI models run on edge devices (phones, routers, microcontrollers, industrial PCs)
+- **Offline capability**: Functions without persistent internet connectivity
+- **Low latency**: Immediate responses suited for real-time systems
+- **Data sovereignty**: Keeps sensitive data local, improving security and compliance
 
 ### Small Language Models (SLMs)
 
-Phi-4, Mistral-7B, Gemma စတဲ့ SLMs တွေဟာ LLMs အကြီးအကျယ်ကို training သို့မဟုတ် distillation လုပ်ထားပြီး:
-- **Reduced memory footprint**: Edge device memory အကန့်အသတ်ကို ထိရောက်စွာအသုံးပြုခြင်း
-- **Lower compute demand**: CPU နှင့် edge GPU performance အတွက် optimization
-- **Faster startup times**: Responsive application အတွက် initialization အမြန်ဆုံးဖြစ်စေခြင်း
+SLMs like Phi-4, Mistral-7B, and Gemma are optimized versions of larger LLMs—trained or distilled for:
+- **Reduced memory footprint**: Efficient use of limited edge device memory
+- **Lower compute demand**: Optimized for CPU and edge GPU performance
+- **Faster startup times**: Quick initialization for responsive applications
 
-SLMs တွေဟာ အောက်ပါအကန့်အသတ်များကို ဖြည့်ဆည်းနိုင်စွမ်းရှိပါတယ်။
-- **Embedded systems**: IoT devices နှင့် industrial controllers
-- **Mobile devices**: Offline capabilities ရှိသော smartphones နှင့် tablets
-- **IoT Devices**: Resource အကန့်အသတ်ရှိသော sensor နှင့် smart devices
-- **Edge servers**: Limited GPU resources ရှိသော local processing units
-- **Personal Computers**: Desktop နှင့် laptop deployment scenarios
+They unlock powerful NLP capabilities while meeting the constraints of:
+- **Embedded systems**: IoT devices and industrial controllers
+- **Mobile devices**: Smartphones and tablets with offline capabilities
+- **IoT Devices**: Sensors and smart devices with limited resources
+- **Edge servers**: Local processing units with limited GPU resources
+- **Personal Computers**: Desktop and laptop deployment scenarios
 
-## သင်ခန်းစာ Module များနှင့် Navigation
+## Course Modules & Navigation
 
-| Module | ခေါင်းစဉ် | အဓိကအချက် | Key Content | အဆင့် | ကြာမြင့်ချိန် |
+| Module | Topic | Focus Area | Key Content | Level | Duration |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [EdgeAI အကြောင်းအကျဉ်း](./introduction.md) | အခြေခံနှင့်အကြောင်းအရာ | EdgeAI အကျဉ်းချုပ် • စက်မှုလုပ်ငန်းအသုံးချမှုများ • SLM အကျဉ်းချုပ် • သင်ခန်းစာရည်ရွယ်ချက်များ | Beginner | 1-2 နာရီ |
-| [📚 01](../../Module01) | [EdgeAI အခြေခံအချက်များ](./Module01/README.md) | Cloud နှင့် Edge AI ၏ နှိုင်းယှဉ်မှု | EdgeAI အခြေခံအချက်များ • အမှန်တကယ် Case Studies • Implementation Guide • Edge Deployment | Beginner | 3-4 နာရီ |
-| [🧠 02](../../Module02) | [SLM Model အခြေခံအချက်များ](./Module02/README.md) | Model များ၏ မိသားစုနှင့် architecture | Phi Family • Qwen Family • Gemma Family • BitNET • μModel • Phi-Silica | Beginner | 4-5 နာရီ |
-| [🚀 03](../../Module03) | [SLM Deployment လက်တွေ့ကျမှု](./Module03/README.md) | Local နှင့် cloud deployment | Advanced Learning • Local Environment • Cloud Deployment | Intermediate | 4-5 နာရီ |
-| [⚙️ 04](../../Module04) | [Model Optimization Toolkit](./Module04/README.md) | Cross-platform optimization | Introduction • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Workflow Synthesis | Intermediate | 5-6 နာရီ |
-| [🔧 05](../../Module05) | [SLMOps Production](./Module05/README.md) | Production operations | SLMOps Introduction • Model Distillation • Fine-tuning • Production Deployment | Advanced | 5-6 နာရီ |
-| [🤖 06](../../Module06) | [AI Agents & Function Calling](./Module06/README.md) | Agent frameworks & MCP | Agent Introduction • Function Calling • Model Context Protocol | Advanced | 4-5 နာရီ |
-| [💻 07](../../Module07) | [Platform Implementation](./Module07/README.md) | Cross-platform samples | AI Toolkit • Foundry Local • Windows Development | Advanced | 3-4 နာရီ |
-| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Production-ready samples | Sample applications (see details below) | Expert | 8-10 နာရီ |
+| [📖 00 ](./introduction.md) | [Introduction to EdgeAI](./introduction.md) | Foundation & Context | EdgeAI Overview • Industry Applications • SLM Introduction • Learning Objectives | Beginner | 1-2 hrs |
+| [📚 01](../../Module01) | [EdgeAI Fundamentals](./Module01/README.md) | Cloud vs Edge AI comparison | EdgeAI Fundamentals • Real World Case Studies • Implementation Guide • Edge Deployment | Beginner | 3-4 hrs |
+| [🧠 02](../../Module02) | [SLM Model Foundations](./Module02/README.md) | Model families & architecture | Phi Family • Qwen Family • Gemma Family • BitNET • μModel • Phi-Silica | Beginner | 4-5 hrs |
+| [🚀 03](../../Module03) | [SLM Deployment Practice](./Module03/README.md) | Local & cloud deployment | Advanced Learning • Local Environment • Cloud Deployment | Intermediate | 4-5 hrs |
+| [⚙️ 04](../../Module04) | [Model Optimization Toolkit](./Module04/README.md) | Cross-platform optimization | Introduction • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Workflow Synthesis | Intermediate | 5-6 hrs |
+| [🔧 05](../../Module05) | [SLMOps Production](./Module05/README.md) | Production operations | SLMOps Introduction • Model Distillation • Fine-tuning • Production Deployment | Advanced | 5-6 hrs |
+| [🤖 06](../../Module06) | [AI Agents & Function Calling](./Module06/README.md) | Agent frameworks & MCP | Agent Introduction • Function Calling • Model Context Protocol | Advanced | 4-5 hrs |
+| [💻 07](../../Module07) | [Platform Implementation](./Module07/README.md) | Cross-platform samples | AI Toolkit • Foundry Local • Windows Development | Advanced | 3-4 hrs |
+| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Production-ready samples | Sample applications (see details below) | Expert | 8-10 hrs |
 
 ### 🏭 **Module 08: Sample Applications**
 
@@ -110,68 +112,68 @@ SLMs တွေဟာ အောက်ပါအကန့်အသတ်မျာ�
 - [09: Advanced Multi-Agent System](./Module08/samples/09/README.md)
 - [10: Foundry Tools Framework](./Module08/samples/10/README.md)
 
-### 🎓 **Workshop: လက်တွေ့လေ့လာမှုလမ်းကြောင်း**
+### 🎓 **Workshop: Hands-On Learning Path**
 
-Production-ready implementation များပါဝင်သော လက်တွေ့လေ့လာမှု workshop materials:
+Comprehensive hands-on workshop materials with production-ready implementations:
 
-- **[Workshop Guide](./Workshop/Readme.md)** - သင်ခန်းစာရည်ရွယ်ချက်များ၊ ရလဒ်များနှင့် resource navigation
-- **Python Samples** (6 sessions) - Best practices, error handling နှင့် အပြည့်အစုံ documentation ဖြင့် update လုပ်ထားသော
-- **Jupyter Notebooks** (8 interactive) - Benchmarks နှင့် performance monitoring ပါဝင်သော အဆင့်ဆင့်လမ်းညွှန်
-- **Session Guides** - Workshop session တစ်ခုစီအတွက် အသေးစိတ် markdown လမ်းညွှန်
-- **Validation Tools** - Code quality ကိုစစ်ဆေးပြီး smoke tests run လုပ်ရန် scripts
+- **[Workshop Guide](./Workshop/Readme.md)** - Complete learning objectives, outcomes, and resource navigation
+- **Python Samples** (6 sessions) - Updated with best practices, error handling, and comprehensive documentation
+- **Jupyter Notebooks** (8 interactive) - Step-by-step tutorials with benchmarks and performance monitoring
+- **Session Guides** - Detailed markdown guides for each workshop session
+- **Validation Tools** - Scripts to verify code quality and run smoke tests
 
-**သင်တည်ဆောက်မည့်အရာများ:**
-- Streaming support ပါဝင်သော Local AI chat applications
-- RAG pipelines နှင့် quality evaluation (RAGAS)
-- Multi-model benchmarking နှင့် comparison tools
+**What You'll Build:**
+- Local AI chat applications with streaming support
+- RAG pipelines with quality evaluation (RAGAS)
+- Multi-model benchmarking and comparison tools
 - Multi-agent orchestration systems
-- Task-based selection ဖြင့် intelligent model routing
+- Intelligent model routing with task-based selection
 
-### 📊 **Learning Path အကျဉ်းချုပ်**
-- **စုစုပေါင်းကြာမြင့်ချိန်**: 36-45 နာရီ
-- **Beginner Path**: Modules 01-02 (7-9 နာရီ)  
-- **Intermediate Path**: Modules 03-04 (9-11 နာရီ)
-- **Advanced Path**: Modules 05-07 (12-15 နာရီ)
-- **Expert Path**: Module 08 (8-10 နာရီ)
+### 📊 **Learning Path Summary**
+- **Total Duration**: 36-45 hours
+- **Beginner Path**: Modules 01-02 (7-9 hours)  
+- **Intermediate Path**: Modules 03-04 (9-11 hours)
+- **Advanced Path**: Modules 05-07 (12-15 hours)
+- **Expert Path**: Module 08 (8-10 hours)
 
-## သင်တည်ဆောက်မည့်အရာများ
+## What You'll Build
 
-### 🎯 အဓိကစွမ်းရည်များ
-- **Edge AI Architecture**: Cloud integration ပါဝင်သော local-first AI systems ကို design လုပ်ခြင်း
-- **Model Optimization**: Edge deployment အတွက် model များကို quantize နှင့် compress လုပ်ခြင်း (85% အမြန်နှုန်းတိုးတက်မှု၊ 75% အရွယ်အစားလျှော့ချမှု)
-- **Multi-Platform Deployment**: Windows, mobile, embedded နှင့် cloud-edge hybrid systems
-- **ထုတ်လုပ်မှု လုပ်ငန်းဆောင်တာများ**: ထုတ်လုပ်မှုအတွက် edge AI ကိုစောင့်ကြည့်ခြင်း၊ အရွယ်အစားချဲ့ထွင်ခြင်းနှင့် ထိန်းသိမ်းခြင်း
+### 🎯 Core Competencies
+- **Edge AI Architecture**: Design local-first AI systems with cloud integration
+- **မော်ဒယ်အကောင်းမြှင့်ခြင်း**: အနားတွင် တပ်ဆင်ရန် မော်ဒယ်များကို အရေအတွက်ချုပ်ခြင်းနှင့် ဖိအားပေးခြင်း (အမြန်နှုန်း ၈၅% တိုးတက်မှု၊ အရွယ်အစား ၇၅% လျော့ချမှု)
+- **စနစ်အမျိုးမျိုးတွင် တပ်ဆင်ခြင်း**: Windows, မိုဘိုင်း, ထည့်သွင်းထားသော စနစ်များနှင့် cloud-edge ပေါင်းစပ်စနစ်များ
+- **ထုတ်လုပ်မှု လည်ပတ်မှုများ**: ထုတ်လုပ်မှုတွင် edge AI ကို စောင့်ကြည့်ခြင်း၊ တိုးချဲ့ခြင်းနှင့် ထိန်းသိမ်းခြင်း
 
-### 🏗️ လက်တွေ့ စီမံကိန်းများ
-- **Foundry Local Chat Apps**: Windows 11 အတွက် မူလ native အက်ပ်လီကေးရှင်း၊ မော်ဒယ်ပြောင်းလဲမှုအတွက်
-- **Multi-Agent Systems**: ရှုပ်ထွေးသော workflow များအတွက် အထူးကျွမ်းကျင်သူများနှင့် ပူးပေါင်းလုပ်ဆောင်သော စီမံခန့်ခွဲသူ
-- **RAG Applications**: ဒေသခံစာရွက်စာတမ်းများကို vector ရှာဖွေမှုဖြင့် အလုပ်လုပ်ခြင်း
-- **Model Routers**: တာဝန်ခွဲခြားမှုအပေါ် မူတည်၍ မော်ဒယ်များကို ထိရောက်စွာရွေးချယ်ခြင်း
-- **API Frameworks**: ထုတ်လုပ်မှုအဆင်သင့် client များ၊ streaming နှင့် ကျန်းမာရေးစောင့်ကြည့်မှု
-- **Cross-Platform Tools**: LangChain/Semantic Kernel ပေါင်းစပ်မှု pattern များ
+### 🏗️ လက်တွေ့ပရောဂျက်များ
+- **Foundry Local စကားပြော အက်ပ်များ**: မော်ဒယ်ပြောင်းလဲနိုင်သော Windows 11 မူရင်းအက်ပ်
+- **အများအပြား အေးဂျင့် စနစ်များ**: ရှုပ်ထွေးသော လုပ်ငန်းစဉ်များအတွက် အထူးပြု အေးဂျင့်များနှင့် ညှိနှိုင်းသူ
+- **RAG အက်ပ်များ**: ဒေတာစာရွက်များကို ဒေသတွင်းတွင် လုပ်ဆောင်ခြင်းနှင့် ဗက်တာရှာဖွေရေး
+- **မော်ဒယ် ရွေးချယ်သူများ**: လုပ်ငန်းတာဝန်အပေါ် မော်ဒယ်များအကြား အတတ်ပညာဖြင့် ရွေးချယ်ခြင်း
+- **API ဖရိမ်ဝပ်များ**: ထုတ်လုပ်မှုအဆင်သင့် ဖောက်သည်များ၊ စီးဆင်းမှုနှင့် ကျန်းမာရေး စောင့်ကြည့်မှု
+- **Cross-Platform ကိရိယာများ**: LangChain/Semantic Kernel ပေါင်းစပ်မှု ပုံစံများ
 
-### 🏢 စက်မှုလုပ်ငန်း အသုံးချမှုများ
-**ထုတ်လုပ်မှု** • **ကျန်းမာရေး** • **အလိုအလျောက်မောင်းနှင်သောယာဉ်များ** • **စမတ်မြို့များ** • **မိုဘိုင်းအက်ပ်များ**
+### 🏢 စက်မှုလုပ်ငန်း အသုံးပြုမှုများ
+**ထုတ်လုပ်မှု** • **ကျန်းမာရေး** • **အလိုအလျောက်ယာဉ်များ** • **စမတ်မြို့များ** • **မိုဘိုင်းအက်ပ်များ**
 
-## အစောပိုင်း စတင်ခြင်း
+## အမြန်စတင်ခြင်း
 
-**အကြံပြု သင်ကြားမှုလမ်းကြောင်း** (စုစုပေါင်း 20-30 နာရီ):
+**အကြံပြုသင်ယူမှု လမ်းကြောင်း** (စုစုပေါင်း ၂၀-၃၀ နာရီ):
 
-0. **📖 အကျဉ်းချုပ်** ([Introduction.md](./introduction.md)): EdgeAI အခြေခံ + စက်မှုလုပ်ငန်းအခြေအနေ + သင်ကြားမှုဖွဲ့စည်းမှု
-1. **📚 အခြေခံ** (Modules 01-02): EdgeAI အယူအဆများ + SLM မော်ဒယ်မိသားစုများ
-2. **⚙️ အကောင်းဆုံးဖြစ်စေခြင်း** (Modules 03-04): တပ်ဆင်ခြင်း + quantization framework များ  
-3. **🚀 ထုတ်လုပ်မှု** (Modules 05-06): SLMOps + AI အေးဂျင့်များ + function ခေါ်ဆိုမှု
-4. **💻 အကောင်အထည်ဖော်ခြင်း** (Modules 07-08): ပလက်ဖောင်းနမူနာများ + Foundry Local toolkit
+0. **📖 နိဒါန်း** ([Introduction.md](./introduction.md)): EdgeAI အခြေခံ + စက်မှုလုပ်ငန်းအခြေအနေ + သင်ယူမှု ဖရိမ်ဝပ်
+1. **📚 အခြေခံ** (Module 01-02): EdgeAI အယူအဆများ + SLM မော်ဒယ် မျိုးဆက်များ
+2. **⚙️ အကောင်းမြှင့်ခြင်း** (Module 03-04): တပ်ဆင်ခြင်း + အရေအတွက်ချုပ်ခြင်း ဖရိမ်ဝပ်များ  
+3. **🚀 ထုတ်လုပ်မှု** (Module 05-06): SLMOps + AI အေးဂျင့်များ + function ခေါ်ဆိုခြင်း
+4. **💻 အကောင်အထည်ဖော်ခြင်း** (Module 07-08): စနစ်နမူနာများ + Foundry Local ကိရိယာစုစည်းမှု
 
-Module တစ်ခုစီတွင် သီအိုရီ၊ လက်တွေ့လေ့ကျင့်မှုများနှင့် ထုတ်လုပ်မှုအဆင်သင့် code နမူနာများ ပါဝင်သည်။
+Module တစ်ခုချင်းစီတွင် သီအိုရီ၊ လက်တွေ့လေ့ကျင့်မှုများနှင့် ထုတ်လုပ်မှုအဆင်သင့် ကုဒ်နမူနာများ ပါဝင်သည်။
 
-## အလုပ်အကိုင် အကျိုးသက်ရောက်မှု
+## အလုပ်အကိုင် သက်ရောက်မှု
 
-**နည်းပညာဆိုင်ရာ အခန်းကဏ္ဍများ**: EdgeAI Solutions Architect • ML Engineer (Edge) • IoT AI Developer • Mobile AI Developer
+**နည်းပညာဆိုင်ရာ အခန်းကဏ္ဍများ**: EdgeAI ဖြေရှင်းချက် အင်ဂျင်နီယာ • ML အင်ဂျင်နီယာ (Edge) • IoT AI ဖန်တီးသူ • မိုဘိုင်း AI ဖန်တီးသူ
 
-**စက်မှုလုပ်ငန်းကဏ္ဍများ**: ထုတ်လုပ်မှု 4.0 • ကျန်းမာရေးနည်းပညာ • အလိုအလျောက်စနစ်များ • FinTech • စားသုံးသူအီလက်ထရွန်းနစ်
+**စက်မှုလုပ်ငန်း အပိုင်းများ**: ထုတ်လုပ်မှု 4.0 • ကျန်းမာရေးနည်းပညာ • အလိုအလျောက်စနစ်များ • FinTech • စားသုံးသူ လျှပ်စစ်ပစ္စည်းများ
 
-**Portfolio စီမံကိန်းများ**: Multi-agent systems • ထုတ်လုပ်မှု RAG အက်ပ်များ • Cross-platform တပ်ဆင်မှု • စွမ်းဆောင်ရည်အကောင်းဆုံးဖြစ်စေမှု
+**ပရောဂျက်များ**: အများအပြား အေးဂျင့် စနစ်များ • ထုတ်လုပ်မှု RAG အက်ပ်များ • Cross-platform တပ်ဆင်မှု • စွမ်းဆောင်ရည် အကောင်းမြှင့်ခြင်း
 
 ## Repository ဖွဲ့စည်းမှု
 
@@ -190,23 +192,24 @@ edgeai-for-beginners/
 
 ## သင်တန်း အထူးအချက်များ
 
-✅ **တိုးတက်မှု သင်ကြားမှု**: သီအိုရီ → လက်တွေ့ → ထုတ်လုပ်မှုတပ်ဆင်မှု  
-✅ **အမှန်တကယ် Case Study များ**: Microsoft, Japan Airlines, စီးပွားရေးလုပ်ငန်းအကောင်အထည်ဖော်မှုများ  
-✅ **လက်တွေ့ နမူနာများ**: 50+ နမူနာများ၊ Foundry Local အတွက် 10 အပြည့်အစုံ demo များ  
-✅ **စွမ်းဆောင်ရည် အာရုံစိုက်မှု**: 85% အမြန်နှုန်းတိုးတက်မှု၊ 75% အရွယ်အစားလျှော့ချမှု  
-✅ **Multi-Platform**: Windows, မိုဘိုင်း, embedded, cloud-edge hybrid  
-✅ **ထုတ်လုပ်မှုအဆင်သင့်**: စောင့်ကြည့်မှု၊ အရွယ်အစားချဲ့ထွင်မှု၊ လုံခြုံရေး၊ လိုက်နာမှု framework များ
+✅ **တိုးတက်မှုအဆင့်လိုက် သင်ယူမှု**: သီအိုရီ → လက်တွေ့ → ထုတ်လုပ်မှု တပ်ဆင်ခြင်း  
+✅ **အမှန်တကယ် ဖြစ်ပျက်မှုများ**: Microsoft, Japan Airlines, စက်မှုလုပ်ငန်း အကောင်အထည်ဖော်မှုများ  
+✅ **လက်တွေ့ နမူနာများ**: နမူနာ ၅၀ ကျော်၊ Foundry Local အပြည့်အစုံ ၁၀ ခု  
+✅ **စွမ်းဆောင်ရည် အာရုံစိုက်မှု**: အမြန်နှုန်း ၈၅% တိုးတက်မှု၊ အရွယ်အစား ၇၅% လျော့ချမှု  
+✅ **စနစ်အမျိုးမျိုး**: Windows, မိုဘိုင်း, ထည့်သွင်းထားသော စနစ်များ၊ cloud-edge ပေါင်းစပ်  
+✅ **ထုတ်လုပ်မှုအဆင်သင့်**: စောင့်ကြည့်ခြင်း၊ တိုးချဲ့ခြင်း၊ လုံခြုံရေး၊ လိုက်နာမှု ဖရိမ်ဝပ်များ
 
-📖 **[လေ့လာမှုလမ်းညွှန် ရရှိနိုင်ပါသည်](STUDY_GUIDE.md)**: 20 နာရီ သင်ကြားမှုလမ်းကြောင်းကို ဖွဲ့စည်းထားပြီး အချိန်ခွဲဝေမှုအကြံပြုချက်နှင့် ကိုယ်တိုင်အကဲဖြတ်မှုကိရိယာများပါဝင်သည်။
+📖 **[သင်ယူမှု လမ်းညွှန် ရရှိနိုင်ပါသည်](STUDY_GUIDE.md)**: ၂၀ နာရီ သင်ယူမှု လမ်းကြောင်း၊ အချိန်ခွဲဝေပေးမှုနှင့် ကိုယ်တိုင် သုံးသပ်မှုကိရိယာများပါဝင်သည်။
 
 ---
 
-**EdgeAI သည် AI တပ်ဆင်မှု၏ အနာဂတ်ကို ကိုယ်စားပြုသည်**: ဒေသခံကို ဦးစားပေးခြင်း၊ ကိုယ်ရေးကိုယ်တာအချက်အလက်များကို ထိန်းသိမ်းခြင်းနှင့် ထိရောက်မှုမြှင့်တင်ခြင်း။ ဤကျွမ်းကျင်မှုများကို ကျွမ်းကျင်ပြီး နောက်မျိုးဆက်၏ ထူးချွန်သော အက်ပ်လီကေးရှင်းများကို တည်ဆောက်ပါ။
+**EdgeAI သည် AI တပ်ဆင်မှု၏ အနာဂတ်ကို ကိုယ်စားပြုသည်**: ဒေသတွင်း အရင်ဆုံး၊ ကိုယ်ရေးကိုယ်တာ ကာကွယ်မှုနှင့် ထိရောက်မှုရှိသည်။ ဤကျွမ်းကျင်မှုများကို ကျွမ်းကျင်ပြီး နောက်တစ်ဆင့် အတတ်ပညာမြင့် အက်ပ်များ ဖန်တီးပါ။
 
 ## အခြား သင်တန်းများ
 
-ကျွန်ုပ်တို့၏အဖွဲ့သည် အခြားသင်တန်းများကိုလည်း ထုတ်လုပ်ပါသည်! ကြည့်ရှုပါ:
+ကျွန်ုပ်တို့အဖွဲ့သည် အခြား သင်တန်းများကို ထုတ်လုပ်ပါသည်! ကြည့်ရှုပါ:
 
+<!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### Azure / Edge / MCP / Agents
 [![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -214,7 +217,7 @@ edgeai-for-beginners/
 [![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
-
+ 
 ### Generative AI Series
 [![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
@@ -222,8 +225,8 @@ edgeai-for-beginners/
 [![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
-
-### Core Learning
+ 
+### အခြေခံ သင်ယူမှု
 [![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 [![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
@@ -233,25 +236,26 @@ edgeai-for-beginners/
 [![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
-
-### Copilot Series
+ 
+### Copilot စီးရီး
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+<!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
-## အကူအညီရယူခြင်း
+## အကူအညီ ရယူခြင်း
 
-AI အက်ပ်များ တည်ဆောက်ရာတွင် အခက်အခဲရှိပါက သို့မဟုတ် မေးခွန်းများရှိပါက:
+AI အက်ပ်များ ဖန်တီးရာတွင် အခက်အခဲရှိပါက သို့မဟုတ် မေးခွန်းများရှိပါက ဝင်ရောက်ပါ:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-ထုတ်ကုန်အကြံပြုချက်များ သို့မဟုတ် တည်ဆောက်ရာတွင် အမှားများရှိပါက:
+ထုတ်ကုန်တုံ့ပြန်ချက် သို့မဟုတ် အမှားများရှိပါက အောက်ပါနေရာသို့ သွားရောက်ပါ:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**ဝက်ဘ်ဆိုက်မှတ်ချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားနေသော်လည်း၊ အလိုအလျောက်ဘာသာပြန်ဆိုမှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူလဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတည်သောရင်းမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲသုံးစားမှု သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+**အကြောင်းကြားချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
