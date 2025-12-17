@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T15:18:56+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T12:23:27+00:00",
   "source_file": "README.md",
   "language_code": "tr"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 ![Kurs kapak resmi](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.tr.png)
 
 [![GitHub katkıda bulunanlar](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![GitHub sorunları](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
+[![GitHub sorunlar](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
 [![GitHub çekme istekleri](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
 [![PR'ler Hoşgeldiniz](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
@@ -36,18 +36,18 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
 #### GitHub Action ile Desteklenir (Otomatik & Her Zaman Güncel)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](./README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[Arapça](../ar/README.md) | [Bengalce](../bn/README.md) | [Bulgarca](../bg/README.md) | [Birmanca (Myanmar)](../my/README.md) | [Çince (Basitleştirilmiş)](../zh/README.md) | [Çince (Geleneksel, Hong Kong)](../hk/README.md) | [Çince (Geleneksel, Makao)](../mo/README.md) | [Çince (Geleneksel, Tayvan)](../tw/README.md) | [Hırvatça](../hr/README.md) | [Çekçe](../cs/README.md) | [Danca](../da/README.md) | [Flemenkçe](../nl/README.md) | [Estonca](../et/README.md) | [Fince](../fi/README.md) | [Fransızca](../fr/README.md) | [Almanca](../de/README.md) | [Yunanca](../el/README.md) | [İbranice](../he/README.md) | [Hintçe](../hi/README.md) | [Macarca](../hu/README.md) | [Endonezce](../id/README.md) | [İtalyanca](../it/README.md) | [Japonca](../ja/README.md) | [Kannada](../kn/README.md) | [Korece](../ko/README.md) | [Litvanca](../lt/README.md) | [Malayca](../ms/README.md) | [Malayalamca](../ml/README.md) | [Marathi](../mr/README.md) | [Nepalce](../ne/README.md) | [Nijerya Pidgin](../pcm/README.md) | [Norveççe](../no/README.md) | [Farsça (Persian)](../fa/README.md) | [Lehçe](../pl/README.md) | [Portekizce (Brezilya)](../br/README.md) | [Portekizce (Portekiz)](../pt/README.md) | [Pencapça (Gurmukhi)](../pa/README.md) | [Romence](../ro/README.md) | [Rusça](../ru/README.md) | [Sırpça (Kiril)](../sr/README.md) | [Slovakça](../sk/README.md) | [Slovence](../sl/README.md) | [İspanyolca](../es/README.md) | [Svahili](../sw/README.md) | [İsveççe](../sv/README.md) | [Tagalogca (Filipinler)](../tl/README.md) | [Tamilce](../ta/README.md) | [Telugu](../te/README.md) | [Tayca](../th/README.md) | [Türkçe](./README.md) | [Ukraynaca](../uk/README.md) | [Urduca](../ur/README.md) | [Vietnamca](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 **Ek çeviri dillerinin desteklenmesini istiyorsanız, [burada](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md) listelenmiştir**
 ## Giriş
 
-**Yeni Başlayanlar için EdgeAI**'ye hoş geldiniz – Edge Yapay Zekanın dönüştürücü dünyasına kapsamlı yolculuğunuz. Bu kurs, güçlü AI yetenekleri ile gerçek dünya kenar cihazlarında pratik dağıtım arasındaki boşluğu kapatır ve verinin üretildiği ve kararların verilmesi gereken yerde AI potansiyelini doğrudan kullanmanızı sağlar.
+**Yeni Başlayanlar için EdgeAI**'ye hoş geldiniz – Edge Yapay Zekanın dönüştürücü dünyasına kapsamlı yolculuğunuz. Bu kurs, güçlü AI yetenekleri ile gerçek dünya kenar cihazlarında pratik dağıtım arasındaki boşluğu kapatarak, verinin üretildiği ve kararların verilmesi gereken yerde AI potansiyelini doğrudan kullanmanızı sağlar.
 
 ### Neleri Öğreneceksiniz
 
 Bu kurs sizi temel kavramlardan üretime hazır uygulamalara kadar götürür, şunları kapsar:
-- Kenar dağıtımı için optimize edilmiş **Küçük Dil Modelleri (SLM'ler)**
+- Kenar dağıtımı için optimize edilmiş **Küçük Dil Modelleri (SLM)**
 - Çeşitli platformlarda **donanım farkındalıklı optimizasyon**
 - **Gizliliği koruyan gerçek zamanlı çıkarım**
 - Kurumsal uygulamalar için **üretim dağıtım** stratejileri
@@ -71,11 +71,11 @@ Edge AI, AI algoritmalarını ve dil modellerini verinin üretildiği yere yakı
 - **Düşük gecikme**: Gerçek zamanlı sistemlere uygun anlık yanıtlar
 - **Veri egemenliği**: Hassas verileri yerel tutar, güvenlik ve uyumluluğu artırır
 
-### Küçük Dil Modelleri (SLM'ler)
+### Küçük Dil Modelleri (SLM)
 
 Phi-4, Mistral-7B ve Gemma gibi SLM'ler, daha büyük LLM'lerin optimize edilmiş versiyonlarıdır—şunlar için eğitilmiş veya damıtılmıştır:
 - **Azaltılmış bellek kullanımı**: Sınırlı kenar cihaz belleğinin verimli kullanımı
-- **Daha düşük hesaplama talebi**: CPU ve kenar GPU performansı için optimize edilmiş
+- **Düşük hesaplama talebi**: CPU ve kenar GPU performansı için optimize edilmiş
 - **Daha hızlı başlatma süreleri**: Yanıt veren uygulamalar için hızlı başlatma
 
 Bunlar, şu kısıtlamaları karşılayarak güçlü NLP yeteneklerini açığa çıkarır:
@@ -94,7 +94,7 @@ Bunlar, şu kısıtlamaları karşılayarak güçlü NLP yeteneklerini açığa 
 | [🧠 02](../../Module02) | [SLM Model Temelleri](./Module02/README.md) | Model aileleri & mimari | Phi Ailesi • Qwen Ailesi • Gemma Ailesi • BitNET • μModel • Phi-Silica | Yeni Başlayan | 4-5 saat |
 | [🚀 03](../../Module03) | [SLM Dağıtım Uygulaması](./Module03/README.md) | Yerel & bulut dağıtımı | İleri Düzey Öğrenme • Yerel Ortam • Bulut Dağıtımı | Orta | 4-5 saat |
 | [⚙️ 04](../../Module04) | [Model Optimizasyon Araç Seti](./Module04/README.md) | Platformlar arası optimizasyon | Giriş • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • İş Akışı Sentezi | Orta | 5-6 saat |
-| [🔧 05](../../Module05) | [SLMOps Üretim](./Module05/README.md) | Üretim operasyonları | SLMOps Tanıtımı • Model Damıtımı • İnce Ayar • Üretim Dağıtımı | İleri | 5-6 saat |
+| [🔧 05](../../Module05) | [SLMOps Üretim](./Module05/README.md) | Üretim operasyonları | SLMOps Tanıtımı • Model Damıtma • İnce Ayar • Üretim Dağıtımı | İleri | 5-6 saat |
 | [🤖 06](../../Module06) | [AI Ajanları & Fonksiyon Çağrısı](./Module06/README.md) | Ajan çerçeveleri & MCP | Ajan Tanıtımı • Fonksiyon Çağrısı • Model Bağlam Protokolü | İleri | 4-5 saat |
 | [💻 07](../../Module07) | [Platform Uygulaması](./Module07/README.md) | Platformlar arası örnekler | AI Araç Seti • Foundry Local • Windows Geliştirme | İleri | 3-4 saat |
 | [🏭 08](../../Module08) | [Foundry Local Araç Seti](./Module08/README.md) | Üretime hazır örnekler | Örnek uygulamalar (aşağıda detaylar) | Uzman | 8-10 saat |
@@ -109,7 +109,7 @@ Bunlar, şu kısıtlamaları karşılayarak güçlü NLP yeteneklerini açığa 
 - [06: Araç Olarak Modeller Yönlendiricisi](./Module08/samples/06/README.md)
 - [07: Doğrudan API İstemcisi](./Module08/samples/07/README.md)
 - [08: Windows 11 Sohbet Uygulaması](./Module08/samples/08/README.md)
-- [09: İleri Çoklu Ajan Sistemi](./Module08/samples/09/README.md)
+- [09: İleri Düzey Çoklu Ajan Sistemi](./Module08/samples/09/README.md)
 - [10: Foundry Araçları Çerçevesi](./Module08/samples/10/README.md)
 
 ### 🎓 **Atölye: Uygulamalı Öğrenme Yolu**
@@ -119,7 +119,7 @@ Bunlar, şu kısıtlamaları karşılayarak güçlü NLP yeteneklerini açığa 
 - **[Atölye Rehberi](./Workshop/Readme.md)** - Tam öğrenme hedefleri, sonuçlar ve kaynak navigasyonu
 - **Python Örnekleri** (6 oturum) - En iyi uygulamalar, hata yönetimi ve kapsamlı dokümantasyon ile güncellendi
 - **Jupyter Notebooks** (8 etkileşimli) - Adım adım öğreticiler, kıyaslamalar ve performans izleme
-- **Oturum Rehberleri** - Her atölye oturumu için detaylı markdown rehberleri
+- **Oturum Rehberleri** - Her atölye oturumu için ayrıntılı markdown rehberleri
 - **Doğrulama Araçları** - Kod kalitesini doğrulamak ve duman testleri çalıştırmak için betikler
 
 **Neler İnşa Edeceksiniz:**
@@ -140,7 +140,7 @@ Bunlar, şu kısıtlamaları karşılayarak güçlü NLP yeteneklerini açığa 
 
 ### 🎯 Temel Yetenekler
 - **Edge AI Mimarisi**: Bulut entegrasyonlu yerel öncelikli AI sistemleri tasarlayın
-- **Model Optimizasyonu**: Kenar dağıtımı için modelleri kuantize edin ve sıkıştırın (yüzde 85 hız artışı, yüzde 75 boyut azaltımı)
+- **Model Optimizasyonu**: Kenar dağıtımı için modelleri kuantize edin ve sıkıştırın (yüzde 85 hız artışı, yüzde 75 boyut azaltma)
 - **Çoklu Platform Dağıtımı**: Windows, mobil, gömülü ve bulut-kenar hibrit sistemler
 - **Üretim Operasyonları**: Üretimde kenar AI'nın izlenmesi, ölçeklendirilmesi ve bakımı
 
@@ -192,7 +192,7 @@ edgeai-for-beginners/
 
 ## Kurs Öne Çıkanlar
 
-✅ **Kademeli Öğrenme**: Teori → Uygulama → Üretim dağıtımı  
+✅ **Kademeli Öğrenme**: Teori → Pratik → Üretim dağıtımı  
 ✅ **Gerçek Vaka Çalışmaları**: Microsoft, Japan Airlines, kurumsal uygulamalar  
 ✅ **Uygulamalı Örnekler**: 50+ örnek, 10 kapsamlı Foundry Yerel demo  
 ✅ **Performans Odaklı**: %85 hız artışı, %75 boyut azaltımı  
@@ -210,6 +210,12 @@ edgeai-for-beginners/
 Ekibimiz başka kurslar da üretiyor! Göz atın:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
+### LangChain
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
+
+---
+
 ### Azure / Edge / MCP / Ajanlar
 [![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -257,5 +263,5 @@ AI uygulamaları geliştirme konusunda takılırsanız veya sorularınız olursa
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

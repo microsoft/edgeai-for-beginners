@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T15:40:54+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T12:42:59+00:00",
   "source_file": "README.md",
   "language_code": "he"
 }
@@ -26,7 +26,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 עקבו אחר השלבים הבאים כדי להתחיל להשתמש במשאבים אלו:
 
-1. **צור מזלג למאגר**: לחץ על [![מזלגות ב-GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+1. **צור מזלג של המאגר**: לחץ על [![מזלגות ב-GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **שכפל את המאגר**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**הצטרף ל-Discord של Azure AI Foundry ופגוש מומחים ומפתחים נוספים**](https://discord.com/invite/ByRwuEEgH4)
 
@@ -39,10 +39,10 @@ CO_OP_TRANSLATOR_METADATA:
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](./README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**אם ברצונך לתמוך בשפות תרגום נוספות, הן רשומות [כאן](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**אם ברצונך לתמוך בשפות תרגום נוספות, הן מפורטות [כאן](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## מבוא
 
-ברוכים הבאים ל-**EdgeAI למתחילים** – המסע המקיף שלכם לעולם המהפכני של בינה מלאכותית בקצה. קורס זה גשר בין יכולות AI עוצמתיות לפריסה מעשית בעולם האמיתי על מכשירי קצה, ומאפשר לכם למנף את הפוטנציאל של AI ישירות במקום שבו הנתונים נוצרים וההחלטות צריכות להתקבל.
+ברוכים הבאים ל-**EdgeAI למתחילים** – המסע המקיף שלכם לעולם המהפכני של בינה מלאכותית בקצה. קורס זה גשר בין יכולות AI עוצמתיות לפריסה מעשית במכשירי קצה, ומאפשר לכם למנף את הפוטנציאל של AI ישירות במקום שבו הנתונים נוצרים וההחלטות צריכות להתקבל.
 
 ### מה תלמדו לשלוט בו
 
@@ -50,7 +50,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **מודלים שפתיים קטנים (SLMs)** מותאמים לפריסה בקצה
 - **אופטימיזציה מודעת חומרה** על פני פלטפורמות מגוונות
 - **הסקה בזמן אמת** עם יכולות שמירת פרטיות
-- **אסטרטגיות פריסה לייצור** עבור יישומי ארגונים
+- **אסטרטגיות פריסה לייצור** ליישומי ארגונים
 
 ### למה EdgeAI חשוב
 
@@ -73,8 +73,8 @@ Edge AI מתייחס להרצת אלגוריתמים של AI ומודלים שפ
 
 ### מודלים שפתיים קטנים (SLMs)
 
-SLMs כמו Phi-4, Mistral-7B ו-Gemma הם גרסאות מותאמות של LLMs גדולים יותר — מאומנים או מזוקקים עבור:
-- **הפחתת טביעת זיכרון**: שימוש יעיל בזיכרון מוגבל של מכשירי קצה
+SLMs כמו Phi-4, Mistral-7B ו-Gemma הם גרסאות מותאמות של LLMs גדולים יותר – מאומנים או מזוקקים עבור:
+- **טביעת זיכרון מופחתת**: שימוש יעיל בזיכרון מוגבל של מכשירי קצה
 - **דרישת חישוב נמוכה יותר**: מותאם לביצועי CPU ו-GPU בקצה
 - **זמני אתחול מהירים יותר**: אתחול מהיר ליישומים תגובתיים
 
@@ -83,7 +83,7 @@ SLMs כמו Phi-4, Mistral-7B ו-Gemma הם גרסאות מותאמות של LLM
 - **מכשירים ניידים**: סמארטפונים וטאבלטים עם יכולות לא מקוונות
 - **מכשירי IoT**: חיישנים ומכשירים חכמים עם משאבים מוגבלים
 - **שרתים בקצה**: יחידות עיבוד מקומיות עם משאבי GPU מוגבלים
-- **מחשבים אישיים**: תרחישי פריסה על שולחן עבודה ונייד
+- **מחשבים אישיים**: תרחישי פריסה במחשב שולחני ונייד
 
 ## מודולי הקורס וניווט
 
@@ -120,7 +120,7 @@ SLMs כמו Phi-4, Mistral-7B ו-Gemma הם גרסאות מותאמות של LLM
 - **דוגמאות בפייתון** (6 מפגשים) - מעודכנות עם שיטות עבודה מומלצות, טיפול בשגיאות ותיעוד מקיף
 - **מחברות Jupyter** (8 אינטראקטיביות) - הדרכות שלב אחר שלב עם מדדי ביצועים ומעקב
 - **מדריכי מפגשים** - מדריכים מפורטים במארקדאון לכל מפגש בסדנה
-- **כלי אימות** - סקריפטים לאימות איכות קוד והרצת בדיקות ראשוניות
+- **כלי אימות** - סקריפטים לאימות איכות הקוד והרצת בדיקות ראשוניות
 
 **מה תבנו:**
 - אפליקציות שיחה AI מקומיות עם תמיכה בזרימה
@@ -192,9 +192,9 @@ edgeai-for-beginners/
   
 ## נקודות מרכזיות בקורס  
 
-✅ **למידה הדרגתית**: תיאוריה → פרקטיקה → פריסה בייצור  
+✅ **למידה הדרגתית**: תיאוריה → פרקטיקה → פריסת ייצור  
 ✅ **מקרי בוחן אמיתיים**: Microsoft, Japan Airlines, יישומים ארגוניים  
-✅ **דוגמאות מעשיות**: מעל 50 דוגמאות, 10 הדגמות Foundry Local מקיפות  
+✅ **דוגמאות מעשיות**: 50+ דוגמאות, 10 הדגמות Foundry Local מקיפות  
 ✅ **מיקוד בביצועים**: שיפורי מהירות של 85%, הקטנת גודל ב-75%  
 ✅ **רב-פלטפורמי**: Windows, מובייל, משובצים, היבריד ענן-קצה  
 ✅ **מוכן לייצור**: ניטור, סקיילינג, אבטחה, מסגרות תאימות  
@@ -210,6 +210,12 @@ edgeai-for-beginners/
 הצוות שלנו מייצר קורסים נוספים! בדקו:  
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
+### LangChain  
+[![LangChain4j למתחילים](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js למתחילים](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+
+---  
+
 ### Azure / Edge / MCP / סוכנים  
 [![AZD למתחילים](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Edge AI למתחילים](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -257,5 +263,5 @@ edgeai-for-beginners/
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

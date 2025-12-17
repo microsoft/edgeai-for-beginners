@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T15:44:45+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T12:45:24+00:00",
   "source_file": "README.md",
   "language_code": "vi"
 }
@@ -42,13 +42,13 @@ Làm theo các bước sau để bắt đầu sử dụng các tài nguyên này
 **Nếu bạn muốn có thêm các ngôn ngữ dịch được hỗ trợ, danh sách có tại [đây](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Giới Thiệu
 
-Chào mừng bạn đến với **EdgeAI cho Người Mới Bắt Đầu** – hành trình toàn diện của bạn vào thế giới chuyển đổi của Trí tuệ Nhân tạo tại biên. Khóa học này kết nối khoảng cách giữa khả năng AI mạnh mẽ và triển khai thực tế trong thế giới thực trên các thiết bị biên, giúp bạn khai thác tiềm năng AI ngay tại nơi dữ liệu được tạo ra và nơi cần ra quyết định.
+Chào mừng bạn đến với **EdgeAI cho Người Mới Bắt Đầu** – hành trình toàn diện của bạn vào thế giới chuyển đổi của Trí tuệ Nhân tạo Biên. Khóa học này kết nối khoảng cách giữa khả năng AI mạnh mẽ và triển khai thực tế trong thế giới thực trên các thiết bị biên, giúp bạn khai thác tiềm năng AI ngay tại nơi dữ liệu được tạo ra và nơi cần ra quyết định.
 
 ### Những Gì Bạn Sẽ Thành Thạo
 
 Khóa học này đưa bạn từ các khái niệm cơ bản đến các triển khai sẵn sàng sản xuất, bao gồm:
 - **Mô hình Ngôn ngữ Nhỏ (SLMs)** được tối ưu hóa cho triển khai biên
-- **Tối ưu hóa nhận biết phần cứng** trên nhiều nền tảng đa dạng
+- **Tối ưu hóa nhận biết phần cứng** trên các nền tảng đa dạng
 - **Suy luận thời gian thực** với khả năng bảo vệ quyền riêng tư
 - **Chiến lược triển khai sản xuất** cho các ứng dụng doanh nghiệp
 
@@ -63,7 +63,7 @@ Edge AI đại diện cho một sự thay đổi mô hình giải quyết các t
 
 ### Edge AI
 
-Edge AI đề cập đến việc chạy các thuật toán AI và mô hình ngôn ngữ cục bộ trên phần cứng, gần nơi dữ liệu được tạo ra mà không phụ thuộc vào tài nguyên đám mây để suy luận. Nó giảm độ trễ, tăng cường quyền riêng tư và cho phép ra quyết định thời gian thực.
+Edge AI đề cập đến việc chạy các thuật toán AI và mô hình ngôn ngữ ngay trên phần cứng, gần nơi dữ liệu được tạo ra mà không phụ thuộc vào tài nguyên đám mây để suy luận. Nó giảm độ trễ, tăng cường quyền riêng tư và cho phép ra quyết định thời gian thực.
 
 ### Nguyên Tắc Cốt Lõi:
 - **Suy luận trên thiết bị**: Mô hình AI chạy trên các thiết bị biên (điện thoại, bộ định tuyến, vi điều khiển, máy tính công nghiệp)
@@ -73,7 +73,7 @@ Edge AI đề cập đến việc chạy các thuật toán AI và mô hình ng�
 
 ### Mô hình Ngôn ngữ Nhỏ (SLMs)
 
-SLMs như Phi-4, Mistral-7B và Gemma là các phiên bản tối ưu hóa của các LLM lớn hơn—được huấn luyện hoặc chưng cất để:
+SLMs như Phi-4, Mistral-7B, và Gemma là các phiên bản tối ưu hóa của các LLM lớn hơn—được huấn luyện hoặc chưng cất để:
 - **Giảm dung lượng bộ nhớ**: Sử dụng hiệu quả bộ nhớ hạn chế của thiết bị biên
 - **Giảm nhu cầu tính toán**: Tối ưu cho hiệu suất CPU và GPU biên
 - **Thời gian khởi động nhanh hơn**: Khởi tạo nhanh cho các ứng dụng phản hồi nhanh
@@ -203,13 +203,19 @@ edgeai-for-beginners/
 
 ---  
 
-**EdgeAI đại diện cho tương lai của triển khai AI**: ưu tiên cục bộ, bảo vệ quyền riêng tư và hiệu quả. Làm chủ kỹ năng này để xây dựng thế hệ ứng dụng thông minh tiếp theo.  
+**EdgeAI đại diện cho tương lai của triển khai AI**: ưu tiên cục bộ, bảo vệ quyền riêng tư và hiệu quả. Thành thạo kỹ năng này để xây dựng thế hệ ứng dụng thông minh tiếp theo.  
 
 ## Các khóa học khác  
 
-Nhóm của chúng tôi còn sản xuất các khóa học khác! Xem thêm:  
+Nhóm chúng tôi còn sản xuất các khóa học khác! Xem thêm:  
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
+### LangChain  
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+
+---  
+
 ### Azure / Edge / MCP / Agents  
 [![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -218,7 +224,7 @@ Nhóm của chúng tôi còn sản xuất các khóa học khác! Xem thêm:
 
 ---  
  
-### Chuỗi AI Tạo sinh  
+### Chuỗi AI Tạo Sinh  
 [![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
 [![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  

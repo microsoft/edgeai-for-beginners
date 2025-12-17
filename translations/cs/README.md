@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T16:01:04+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T12:58:52+00:00",
   "source_file": "README.md",
   "language_code": "cs"
 }
 -->
-# EdgeAI pro začátečníky
+# EdgeAI pro začátečníky 
 
 
 ![Obrázek obálky kurzu](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.cs.png)
@@ -33,7 +33,7 @@ Postupujte podle těchto kroků, abyste začali používat tyto zdroje:
 
 ### 🌐 Podpora více jazyků
 
-#### Podporováno pomocí GitHub Action (automatizované a vždy aktuální)
+#### Podporováno přes GitHub Action (automatizované a vždy aktuální)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](./README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
@@ -49,7 +49,7 @@ Vítejte v **EdgeAI pro začátečníky** – vaší komplexní cestě do transf
 Tento kurz vás provede od základních konceptů až po implementace připravené pro produkci, zahrnující:
 - **Malé jazykové modely (SLM)** optimalizované pro nasazení na edge
 - **Optimalizace s ohledem na hardware** napříč různými platformami
-- **Inferenci v reálném čase** s ochranou soukromí
+- **Inference v reálném čase** s ochranou soukromí
 - **Strategie produkčního nasazení** pro podnikové aplikace
 
 ### Proč je EdgeAI důležitý
@@ -63,20 +63,20 @@ Edge AI představuje paradigmatický posun, který řeší klíčové moderní v
 
 ### Edge AI
 
-Edge AI znamená spuštění AI algoritmů a jazykových modelů lokálně na hardwaru, blízko místa generování dat, bez závislosti na cloudových zdrojích pro inferenci. Snižuje latenci, zvyšuje soukromí a umožňuje rozhodování v reálném čase.
+Edge AI znamená spuštění AI algoritmů a jazykových modelů lokálně na hardwaru, blízko místa generování dat, bez závislosti na cloudových zdrojích pro inference. Snižuje latenci, zvyšuje soukromí a umožňuje rozhodování v reálném čase.
 
 ### Základní principy:
-- **Inferencování na zařízení**: AI modely běží na edge zařízeních (telefony, routery, mikrokontroléry, průmyslové PC)
+- **Inference na zařízení**: AI modely běží na edge zařízeních (telefony, routery, mikrokontroléry, průmyslové PC)
 - **Funkčnost offline**: Funguje bez trvalého připojení k internetu
 - **Nízká latence**: Okamžité reakce vhodné pro systémy v reálném čase
 - **Suverenita dat**: Uchovává citlivá data lokálně, zlepšuje bezpečnost a soulad s předpisy
 
 ### Malé jazykové modely (SLM)
 
-SLM jako Phi-4, Mistral-7B a Gemma jsou optimalizované verze větších LLM — trénované nebo destilované pro:
+SLM jako Phi-4, Mistral-7B a Gemma jsou optimalizované verze větších LLM—trénované nebo destilované pro:
 - **Sníženou paměťovou náročnost**: Efektivní využití omezené paměti edge zařízení
 - **Nižší výpočetní nároky**: Optimalizované pro výkon CPU a edge GPU
-- **Rychlejší spuštění**: Rychlá inicializace pro responzivní aplikace
+- **Rychlejší start**: Rychlá inicializace pro responzivní aplikace
 
 Odemknou výkonné NLP schopnosti a zároveň splňují omezení:
 - **Vestavěné systémy**: IoT zařízení a průmyslové kontroléry
@@ -140,42 +140,42 @@ Komplexní materiály pro praktický workshop s produkčně připravenými imple
 
 ### 🎯 Klíčové kompetence
 - **Architektura Edge AI**: Navrhování lokálně orientovaných AI systémů s integrací do cloudu
-- **Optimalizace modelu**: Kvantizace a komprese modelů pro nasazení na okraji sítě (85% zrychlení, 75% zmenšení velikosti)
-- **Víceplatformní nasazení**: Windows, mobilní zařízení, vestavěné systémy a hybridní cloud-okrajové systémy
-- **Provoz v produkci**: Monitorování, škálování a údržba edge AI v produkčním prostředí
+- **Optimalizace modelu**: Kvantizace a komprese modelů pro nasazení na okraji (85% zrychlení, 75% zmenšení velikosti)  
+- **Víceplatformní nasazení**: Windows, mobilní zařízení, vestavěné systémy a hybridní cloud-okrajové systémy  
+- **Provoz v produkci**: Monitorování, škálování a údržba edge AI v produkci  
 
-### 🏗️ Praktické projekty
-- **Foundry Local Chat Apps**: Nativní aplikace pro Windows 11 s přepínáním modelů
-- **Systémy s více agenty**: Koordinátor se specialisty pro složité pracovní postupy  
-- **RAG aplikace**: Lokální zpracování dokumentů s vektorovým vyhledáváním
-- **Modelové směrovače**: Inteligentní výběr mezi modely na základě analýzy úkolu
-- **API frameworky**: Produkčně připravení klienti se streamováním a monitorováním stavu
-- **Nástroje pro více platforem**: Vzory integrace LangChain/Semantic Kernel
+### 🏗️ Praktické projekty  
+- **Foundry Local Chat Apps**: Nativní aplikace pro Windows 11 s přepínáním modelů  
+- **Systémy s více agenty**: Koordinátor se specialistickými agenty pro složité pracovní postupy  
+- **RAG aplikace**: Lokální zpracování dokumentů s vektorovým vyhledáváním  
+- **Modelové směrovače**: Inteligentní výběr mezi modely na základě analýzy úkolu  
+- **API frameworky**: Produkčně připravení klienti se streamováním a monitorováním stavu  
+- **Nástroje pro více platforem**: Vzory integrace LangChain/Semantic Kernel  
 
-### 🏢 Průmyslové aplikace
-**Výroba** • **Zdravotnictví** • **Autonomní vozidla** • **Chytrá města** • **Mobilní aplikace**
+### 🏢 Průmyslové aplikace  
+**Výroba** • **Zdravotnictví** • **Autonomní vozidla** • **Chytrá města** • **Mobilní aplikace**  
 
-## Rychlý start
+## Rychlý start  
 
-**Doporučená cesta učení** (celkem 20-30 hodin):
+**Doporučená cesta učení** (celkem 20-30 hodin):  
 
-0. **📖 Úvod** ([Introduction.md](./introduction.md)): Základy EdgeAI + průmyslový kontext + rámec učení
-1. **📚 Základy** (Moduly 01-02): Koncepty EdgeAI + rodiny modelů SLM
+0. **📖 Úvod** ([Introduction.md](./introduction.md)): Základy EdgeAI + průmyslový kontext + rámec učení  
+1. **📚 Základy** (Moduly 01-02): Koncepty EdgeAI + rodiny modelů SLM  
 2. **⚙️ Optimalizace** (Moduly 03-04): Nasazení + kvantizační frameworky  
-3. **🚀 Produkce** (Moduly 05-06): SLMOps + AI agenti + volání funkcí
-4. **💻 Implementace** (Moduly 07-08): Ukázky platforem + nástroje Foundry Local
+3. **🚀 Produkce** (Moduly 05-06): SLMOps + AI agenti + volání funkcí  
+4. **💻 Implementace** (Moduly 07-08): Ukázky platforem + nástroje Foundry Local  
 
-Každý modul obsahuje teorii, praktická cvičení a kódové ukázky připravené pro produkci.
+Každý modul obsahuje teorii, praktická cvičení a kódové ukázky připravené pro produkci.  
 
-## Kariérní dopad
+## Kariérní dopad  
 
-**Technické role**: Architekt řešení EdgeAI • ML inženýr (Edge) • IoT AI vývojář • Mobilní AI vývojář
+**Technické role**: Architekt řešení EdgeAI • ML inženýr (Edge) • IoT AI vývojář • Mobilní AI vývojář  
 
-**Průmyslová odvětví**: Výroba 4.0 • Zdravotnické technologie • Autonomní systémy • FinTech • Spotřební elektronika
+**Průmyslová odvětví**: Výroba 4.0 • Zdravotnické technologie • Autonomní systémy • FinTech • Spotřební elektronika  
 
-**Portfolio projektů**: Systémy s více agenty • Produkční RAG aplikace • Víceplatformní nasazení • Optimalizace výkonu
+**Portfolio projektů**: Systémy s více agenty • Produkční RAG aplikace • Víceplatformní nasazení • Optimalizace výkonu  
 
-## Struktura repozitáře
+## Struktura repozitáře  
 
 ```
 edgeai-for-beginners/
@@ -189,67 +189,73 @@ edgeai-for-beginners/
 ├── 🌐 translations/    # Multi-language support (8+ languages)
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
-
-## Hlavní body kurzu
+  
+## Hlavní body kurzu  
 
 ✅ **Postupné učení**: Teorie → Praxe → Produkční nasazení  
-✅ **Reálné případové studie**: Microsoft, Japan Airlines, podnikové implementace  
+✅ **Reálné případové studie**: Microsoft, Japan Airlines, podniková nasazení  
 ✅ **Praktické ukázky**: 50+ příkladů, 10 komplexních demo aplikací Foundry Local  
 ✅ **Zaměření na výkon**: 85% zrychlení, 75% zmenšení velikosti  
-✅ **Víceplatforemní**: Windows, mobil, vestavěné systémy, cloud-okrajový hybrid  
-✅ **Připraveno pro produkci**: Monitorování, škálování, bezpečnost, rámce souladu
+✅ **Víceplatfromní**: Windows, mobil, vestavěné systémy, cloud-okrajový hybrid  
+✅ **Připraveno pro produkci**: Monitorování, škálování, bezpečnost, rámce souladu  
 
-📖 **[Dostupný studijní průvodce](STUDY_GUIDE.md)**: Strukturovaná 20hodinová cesta učení s doporučením časového rozvrhu a nástroji pro sebehodnocení.
+📖 **[Studijní průvodce k dispozici](STUDY_GUIDE.md)**: Strukturovaná 20hodinová cesta učení s doporučením časového rozvrhu a nástroji pro sebehodnocení.  
 
----
+---  
 
-**EdgeAI představuje budoucnost nasazení AI**: lokálně orientované, chránící soukromí a efektivní. Ovládněte tyto dovednosti a vytvořte další generaci inteligentních aplikací.
+**EdgeAI představuje budoucnost nasazení AI**: lokálně orientované, chránící soukromí a efektivní. Ovládněte tyto dovednosti a vytvořte další generaci inteligentních aplikací.  
 
-## Další kurzy
+## Další kurzy  
 
-Náš tým vytváří i další kurzy! Podívejte se na:
+Náš tým vytváří i další kurzy! Podívejte se na:  
 
-<!-- CO-OP TRANSLATOR OTHER COURSES START -->
-### Azure / Edge / MCP / Agenti
-[![AZD pro začátečníky](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Edge AI pro začátečníky](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![MCP pro začátečníky](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI agenti pro začátečníky](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+<!-- CO-OP TRANSLATOR OTHER COURSES START -->  
+### LangChain  
+[![LangChain4j pro začátečníky](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js pro začátečníky](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
 
----
+---  
+
+### Azure / Edge / MCP / Agenti  
+[![AZD pro začátečníky](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Edge AI pro začátečníky](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![MCP pro začátečníky](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AI agenti pro začátečníky](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
+
+---  
  
-### Série Generativní AI
-[![Generativní AI pro začátečníky](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Generativní AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-[![Generativní AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
-[![Generativní AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+### Série Generativní AI  
+[![Generativní AI pro začátečníky](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Generativní AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
+[![Generativní AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
+[![Generativní AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
 
----
+---  
  
-### Základní učení
-[![ML pro začátečníky](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![Data Science pro začátečníky](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI pro začátečníky](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-[![Kyberbezpečnost pro začátečníky](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
-[![Webový vývoj pro začátečníky](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-[![IoT pro začátečníky](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-[![Vývoj XR pro začátečníky](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+### Základní učení  
+[![ML pro začátečníky](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Data Science pro začátečníky](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AI pro začátečníky](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Kyberbezpečnost pro začátečníky](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
+[![Webový vývoj pro začátečníky](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
+[![IoT pro začátečníky](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
+[![XR vývoj pro začátečníky](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
----
+---  
  
-### Série Copilot
-[![Copilot pro AI párové programování](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-[![Copilot pro C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
-<!-- CO-OP TRANSLATOR OTHER COURSES END -->
+### Série Copilot  
+[![Copilot pro AI párové programování](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
+[![Copilot pro C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
+[![Copilot dobrodružství](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
+<!-- CO-OP TRANSLATOR OTHER COURSES END -->  
 
-## Získání pomoci
+## Získání pomoci  
 
-Pokud narazíte na problém nebo máte otázky ohledně tvorby AI aplikací, připojte se:
+Pokud narazíte na problém nebo máte otázky ohledně tvorby AI aplikací, připojte se:  
 
-[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)  
 
-Pokud máte zpětnou vazbu k produktu nebo chyby při vývoji, navštivte:
+Pokud máte zpětnou vazbu k produktu nebo chyby při vývoji, navštivte:  
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
@@ -257,5 +263,5 @@ Pokud máte zpětnou vazbu k produktu nebo chyby při vývoji, navštivte:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

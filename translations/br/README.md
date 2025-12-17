@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T15:10:19+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T12:16:33+00:00",
   "source_file": "README.md",
   "language_code": "br"
 }
@@ -26,7 +26,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Siga estes passos para começar a usar esses recursos:
 
-1. **Faça um Fork do Repositório**: Clique em [![Forks do GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+1. **Faça um Fork do Repositório**: Clique [![Forks do GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Clone o Repositório**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Junte-se ao Azure AI Foundry Discord e conheça especialistas e outros desenvolvedores**](https://discord.com/invite/ByRwuEEgH4)
 
@@ -36,13 +36,13 @@ Siga estes passos para começar a usar esses recursos:
 #### Suportado via GitHub Action (Automatizado e Sempre Atualizado)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Árabe](../ar/README.md) | [Bengali](../bn/README.md) | [Búlgaro](../bg/README.md) | [Birmanês (Myanmar)](../my/README.md) | [Chinês (Simplificado)](../zh/README.md) | [Chinês (Tradicional, Hong Kong)](../hk/README.md) | [Chinês (Tradicional, Macau)](../mo/README.md) | [Chinês (Tradicional, Taiwan)](../tw/README.md) | [Croata](../hr/README.md) | [Tcheco](../cs/README.md) | [Dinamarquês](../da/README.md) | [Holandês](../nl/README.md) | [Estoniano](../et/README.md) | [Finlandês](../fi/README.md) | [Francês](../fr/README.md) | [Alemão](../de/README.md) | [Grego](../el/README.md) | [Hebraico](../he/README.md) | [Hindi](../hi/README.md) | [Húngaro](../hu/README.md) | [Indonésio](../id/README.md) | [Italiano](../it/README.md) | [Japonês](../ja/README.md) | [Kannada](../kn/README.md) | [Coreano](../ko/README.md) | [Lituano](../lt/README.md) | [Malaio](../ms/README.md) | [Malaiala](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Pidgin Nigeriano](../pcm/README.md) | [Norueguês](../no/README.md) | [Persa (Farsi)](../fa/README.md) | [Polonês](../pl/README.md) | [Português (Brasil)](./README.md) | [Português (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romeno](../ro/README.md) | [Russo](../ru/README.md) | [Sérvio (Cirílico)](../sr/README.md) | [Eslovaco](../sk/README.md) | [Esloveno](../sl/README.md) | [Espanhol](../es/README.md) | [Suaíli](../sw/README.md) | [Sueco](../sv/README.md) | [Tagalo (Filipino)](../tl/README.md) | [Tâmil](../ta/README.md) | [Telugu](../te/README.md) | [Tailandês](../th/README.md) | [Turco](../tr/README.md) | [Ucraniano](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamita](../vi/README.md)
+[Árabe](../ar/README.md) | [Bengali](../bn/README.md) | [Búlgaro](../bg/README.md) | [Birmanês (Myanmar)](../my/README.md) | [Chinês (Simplificado)](../zh/README.md) | [Chinês (Tradicional, Hong Kong)](../hk/README.md) | [Chinês (Tradicional, Macau)](../mo/README.md) | [Chinês (Tradicional, Taiwan)](../tw/README.md) | [Croata](../hr/README.md) | [Tcheco](../cs/README.md) | [Dinamarquês](../da/README.md) | [Holandês](../nl/README.md) | [Estoniano](../et/README.md) | [Finlandês](../fi/README.md) | [Francês](../fr/README.md) | [Alemão](../de/README.md) | [Grego](../el/README.md) | [Hebraico](../he/README.md) | [Hindi](../hi/README.md) | [Húngaro](../hu/README.md) | [Indonésio](../id/README.md) | [Italiano](../it/README.md) | [Japonês](../ja/README.md) | [Kannada](../kn/README.md) | [Coreano](../ko/README.md) | [Lituano](../lt/README.md) | [Malaio](../ms/README.md) | [Malaiala](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Pidgin Nigeriano](../pcm/README.md) | [Norueguês](../no/README.md) | [Persa (Farsi)](../fa/README.md) | [Polonês](../pl/README.md) | [Português (Brasil)](./README.md) | [Português (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romeno](../ro/README.md) | [Russo](../ru/README.md) | [Sérvio (Cirílico)](../sr/README.md) | [Eslovaco](../sk/README.md) | [Esloveno](../sl/README.md) | [Espanhol](../es/README.md) | [Suaíli](../sw/README.md) | [Sueco](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tâmil](../ta/README.md) | [Telugu](../te/README.md) | [Tailandês](../th/README.md) | [Turco](../tr/README.md) | [Ucraniano](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamita](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 **Se desejar que idiomas adicionais sejam suportados, eles estão listados [aqui](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introdução
 
-Bem-vindo ao **EdgeAI para Iniciantes** – sua jornada abrangente no mundo transformador da Inteligência Artificial de Borda. Este curso conecta o poder das capacidades de IA com a implantação prática e real em dispositivos de borda, capacitando você a aproveitar o potencial da IA diretamente onde os dados são gerados e as decisões precisam ser tomadas.
+Bem-vindo ao **EdgeAI para Iniciantes** – sua jornada abrangente no mundo transformador da Inteligência Artificial na Borda. Este curso conecta as poderosas capacidades de IA com a implantação prática e real em dispositivos de borda, capacitando você a aproveitar o potencial da IA diretamente onde os dados são gerados e as decisões precisam ser tomadas.
 
 ### O que você vai dominar
 
@@ -66,14 +66,14 @@ Edge AI representa uma mudança de paradigma que aborda desafios modernos críti
 Edge AI refere-se à execução de algoritmos de IA e modelos de linguagem localmente no hardware, próximo ao local onde os dados são gerados, sem depender de recursos de nuvem para inferência. Isso reduz a latência, melhora a privacidade e permite a tomada de decisões em tempo real.
 
 ### Princípios fundamentais:
-- **Inferência no dispositivo**: Modelos de IA executados em dispositivos de borda (celulares, roteadores, microcontroladores, PCs industriais)
+- **Inferência no dispositivo**: Modelos de IA executam em dispositivos de borda (celulares, roteadores, microcontroladores, PCs industriais)
 - **Capacidade offline**: Funciona sem conectividade persistente com a internet
 - **Baixa latência**: Respostas imediatas adequadas para sistemas em tempo real
-- **Soberania dos dados**: Mantém dados sensíveis localmente, melhorando segurança e conformidade
+- **Soberania de dados**: Mantém dados sensíveis localmente, melhorando segurança e conformidade
 
 ### Modelos de Linguagem Pequenos (SLMs)
 
-SLMs como Phi-4, Mistral-7B e Gemma são versões otimizadas de LLMs maiores — treinados ou destilados para:
+SLMs como Phi-4, Mistral-7B e Gemma são versões otimizadas de LLMs maiores—treinados ou destilados para:
 - **Redução da pegada de memória**: Uso eficiente da memória limitada dos dispositivos de borda
 - **Menor demanda computacional**: Otimizado para desempenho em CPU e GPU de borda
 - **Tempos de inicialização mais rápidos**: Inicialização rápida para aplicações responsivas
@@ -90,7 +90,7 @@ Eles desbloqueiam poderosas capacidades de PLN enquanto atendem às restrições
 | Módulo | Tópico | Área de Foco | Conteúdo Principal | Nível | Duração |
 |--------|-------|------------|-------------|--------|----------|
 | [📖 00 ](./introduction.md) | [Introdução ao EdgeAI](./introduction.md) | Fundamentos & Contexto | Visão Geral do EdgeAI • Aplicações na Indústria • Introdução ao SLM • Objetivos de Aprendizagem | Iniciante | 1-2 hrs |
-| [📚 01](../../Module01) | [Fundamentos do EdgeAI](./Module01/README.md) | Comparação Cloud vs Edge AI | Fundamentos do EdgeAI • Estudos de Caso do Mundo Real • Guia de Implementação • Implantação na Borda | Iniciante | 3-4 hrs |
+| [📚 01](../../Module01) | [Fundamentos do EdgeAI](./Module01/README.md) | Comparação Cloud vs Edge AI | Fundamentos do EdgeAI • Estudos de Caso Reais • Guia de Implementação • Implantação na Borda | Iniciante | 3-4 hrs |
 | [🧠 02](../../Module02) | [Fundamentos do Modelo SLM](./Module02/README.md) | Famílias de modelos & arquitetura | Família Phi • Família Qwen • Família Gemma • BitNET • μModel • Phi-Silica | Iniciante | 4-5 hrs |
 | [🚀 03](../../Module03) | [Prática de Implantação SLM](./Module03/README.md) | Implantação local & na nuvem | Aprendizado Avançado • Ambiente Local • Implantação na Nuvem | Intermediário | 4-5 hrs |
 | [⚙️ 04](../../Module04) | [Kit de Ferramentas de Otimização de Modelos](./Module04/README.md) | Otimização multiplataforma | Introdução • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Síntese de Fluxo de Trabalho | Intermediário | 5-6 hrs |
@@ -117,7 +117,7 @@ Eles desbloqueiam poderosas capacidades de PLN enquanto atendem às restrições
 Materiais abrangentes de workshop prático com implementações prontas para produção:
 
 - **[Guia do Workshop](./Workshop/Readme.md)** - Objetivos completos de aprendizagem, resultados e navegação de recursos
-- **Exemplos em Python** (6 sessões) - Atualizados com melhores práticas, tratamento de erros e documentação completa
+- **Exemplos em Python** (6 sessões) - Atualizados com melhores práticas, tratamento de erros e documentação abrangente
 - **Cadernos Jupyter** (8 interativos) - Tutoriais passo a passo com benchmarks e monitoramento de desempenho
 - **Guias de Sessão** - Guias detalhados em markdown para cada sessão do workshop
 - **Ferramentas de Validação** - Scripts para verificar qualidade do código e executar testes básicos
@@ -138,28 +138,28 @@ Materiais abrangentes de workshop prático com implementações prontas para pro
 
 ## O que você vai construir
 
-### 🎯 Competências Principais
-- **Arquitetura Edge AI**: Projetar sistemas de IA locais com integração em nuvem
+### 🎯 Competências Centrais
+- **Arquitetura Edge AI**: Projetar sistemas de IA com prioridade local e integração com nuvem
 - **Otimização de Modelos**: Quantizar e comprimir modelos para implantação na borda (aumento de velocidade de 85%, redução de tamanho de 75%)
 - **Implantação Multiplataforma**: Windows, mobile, embarcados e sistemas híbridos cloud-edge
 - **Operações em Produção**: Monitoramento, escalonamento e manutenção de IA na borda em produção
 
 ### 🏗️ Projetos Práticos
-- **Apps de Chat Local Foundry**: Aplicativo nativo Windows 11 com troca de modelos
-- **Sistemas Multi-Agentes**: Coordenador com agentes especialistas para fluxos de trabalho complexos  
+- **Aplicativos de Chat Local Foundry**: Aplicativo nativo Windows 11 com troca de modelos
+- **Sistemas Multiagentes**: Coordenador com agentes especialistas para fluxos de trabalho complexos  
 - **Aplicações RAG**: Processamento local de documentos com busca vetorial
 - **Roteadores de Modelos**: Seleção inteligente entre modelos baseada em análise de tarefas
 - **Frameworks de API**: Clientes prontos para produção com streaming e monitoramento de saúde
-- **Ferramentas Cross-Platform**: Padrões de integração LangChain/Semantic Kernel
+- **Ferramentas Multiplataforma**: Padrões de integração LangChain/Semantic Kernel
 
-### 🏢 Aplicações na Indústria
+### 🏢 Aplicações Industriais
 **Manufatura** • **Saúde** • **Veículos Autônomos** • **Cidades Inteligentes** • **Apps Mobile**
 
 ## Início Rápido
 
 **Caminho de Aprendizado Recomendado** (20-30 horas no total):
 
-0. **📖 Introdução** ([Introduction.md](./introduction.md)): Fundamentos do EdgeAI + contexto da indústria + framework de aprendizado
+0. **📖 Introdução** ([Introduction.md](./introduction.md)): Fundamentos do EdgeAI + contexto industrial + framework de aprendizado
 1. **📚 Fundamentos** (Módulos 01-02): Conceitos de EdgeAI + famílias de modelos SLM
 2. **⚙️ Otimização** (Módulos 03-04): Implantação + frameworks de quantização  
 3. **🚀 Produção** (Módulos 05-06): SLMOps + agentes de IA + chamadas de função
@@ -169,11 +169,11 @@ Cada módulo inclui teoria, exercícios práticos e exemplos de código prontos 
 
 ## Impacto na Carreira
 
-**Funções Técnicas**: Arquiteto de Soluções EdgeAI • Engenheiro de ML (Edge) • Desenvolvedor IoT AI • Desenvolvedor Mobile AI
+**Funções Técnicas**: Arquiteto de Soluções EdgeAI • Engenheiro de ML (Edge) • Desenvolvedor de IA para IoT • Desenvolvedor de IA Mobile
 
-**Setores da Indústria**: Manufatura 4.0 • Tecnologia em Saúde • Sistemas Autônomos • FinTech • Eletrônicos de Consumo
+**Setores Industriais**: Manufatura 4.0 • Tecnologia em Saúde • Sistemas Autônomos • FinTech • Eletrônicos de Consumo
 
-**Projetos de Portfólio**: Sistemas multi-agentes • Apps RAG em produção • Implantação multiplataforma • Otimização de desempenho
+**Projetos de Portfólio**: Sistemas multiagentes • Apps RAG em produção • Implantação multiplataforma • Otimização de desempenho
 
 ## Estrutura do Repositório
 
@@ -210,46 +210,52 @@ edgeai-for-beginners/
 Nossa equipe produz outros cursos! Confira:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
+### LangChain
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
+
+---
+
 ### Azure / Edge / MCP / Agentes
-[![AZD para Iniciantes](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Edge AI para Iniciantes](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![MCP para Iniciantes](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Agentes de IA para Iniciantes](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
 ### Série de IA Generativa
-[![IA Generativa para Iniciantes](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![IA Generativa (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-[![IA Generativa (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
-[![IA Generativa (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
  
 ### Aprendizado Básico
-[![ML para Iniciantes](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![Ciência de Dados para Iniciantes](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-[![IA para Iniciantes](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-[![Cibersegurança para Iniciantes](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
-[![Desenvolvimento Web para Iniciantes](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-[![IoT para Iniciantes](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-[![Desenvolvimento XR para Iniciantes](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
 ### Série Copilot
-[![Copilot para Programação Emparelhada com IA](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-[![Copilot para C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-[![Aventura Copilot](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
 ## Obtendo Ajuda
 
-Se você ficar travado ou tiver dúvidas sobre como construir apps de IA, entre em:
+Se você ficar preso ou tiver dúvidas sobre como construir apps de IA, participe:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Se você tiver feedback sobre o produto ou erros durante a construção, visite:
+Se você tiver feedback sobre o produto ou erros durante o desenvolvimento, visite:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
@@ -257,5 +263,5 @@ Se você tiver feedback sobre o produto ou erros durante a construção, visite:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

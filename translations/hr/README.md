@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T16:15:34+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T13:11:19+00:00",
   "source_file": "README.md",
   "language_code": "hr"
 }
@@ -33,7 +33,7 @@ Slijedite ove korake da biste započeli s korištenjem ovih resursa:
 
 ### 🌐 Podrška za više jezika
 
-#### Podržano putem GitHub akcije (Automatski i uvijek ažurirano)
+#### Podržano putem GitHub akcije (Automatski i uvijek ažurno)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](./README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
@@ -42,12 +42,12 @@ Slijedite ove korake da biste započeli s korištenjem ovih resursa:
 **Ako želite da budu podržani dodatni jezici prijevoda, oni su navedeni [ovdje](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Uvod
 
-Dobrodošli u **EdgeAI za početnike** – vaše sveobuhvatno putovanje u transformativni svijet Edge umjetne inteligencije. Ovaj tečaj premošćuje jaz između moćnih AI mogućnosti i praktične, stvarne primjene na edge uređajima, osnažujući vas da iskoristite potencijal AI-a izravno tamo gdje se podaci generiraju i gdje se trebaju donositi odluke.
+Dobrodošli u **EdgeAI za početnike** – vaše sveobuhvatno putovanje u transformativni svijet Edge umjetne inteligencije. Ovaj tečaj premošćuje jaz između moćnih AI mogućnosti i praktične, stvarne primjene na edge uređajima, osnažujući vas da iskoristite potencijal AI-ja izravno tamo gdje se podaci generiraju i gdje se trebaju donositi odluke.
 
 ### Što ćete savladati
 
 Ovaj tečaj vodi vas od osnovnih pojmova do implementacija spremnih za proizvodnju, pokrivajući:
-- **Male jezične modele (SLM)** optimizirane za edge implementaciju
+- **Mali jezični modeli (SLM)** optimizirani za edge implementaciju
 - **Optimizaciju svjesnu hardvera** na različitim platformama
 - **Inferenciju u stvarnom vremenu** s mogućnostima očuvanja privatnosti
 - **Strategije proizvodnog postavljanja** za enterprise aplikacije
@@ -68,13 +68,13 @@ Edge AI odnosi se na pokretanje AI algoritama i jezičnih modela lokalno na hard
 ### Temeljna načela:
 - **Inferencija na uređaju**: AI modeli rade na edge uređajima (telefoni, ruteri, mikrokontroleri, industrijska računala)
 - **Mogućnost rada offline**: Funkcionira bez stalne internetske veze
-- **Niska latencija**: Odgovori odmah, prikladni za sustave u stvarnom vremenu
+- **Niska latencija**: Odgovori u stvarnom vremenu prikladni za sustave osjetljive na vrijeme
 - **Suverenitet podataka**: Osjetljivi podaci ostaju lokalno, poboljšavajući sigurnost i usklađenost
 
 ### Mali jezični modeli (SLM)
 
 SLM-ovi poput Phi-4, Mistral-7B i Gemma su optimizirane verzije većih LLM-ova — trenirani ili destilirani za:
-- **Smanjeni memorijski otisak**: Učinkovito korištenje ograničene memorije edge uređaja
+- **Smanjeni memorijski otisak**: Efikasno korištenje ograničene memorije edge uređaja
 - **Niže zahtjeve za računanjem**: Optimizirani za CPU i edge GPU performanse
 - **Brže vrijeme pokretanja**: Brza inicijalizacija za responzivne aplikacije
 
@@ -118,7 +118,7 @@ Sveobuhvatni materijali za radionicu s implementacijama spremnim za proizvodnju:
 
 - **[Vodič za radionicu](./Workshop/Readme.md)** - Potpuni ciljevi učenja, ishodi i navigacija resursima
 - **Python primjeri** (6 sesija) - Ažurirani s najboljim praksama, rukovanjem pogrešaka i opsežnom dokumentacijom
-- **Jupyter bilježnice** (8 interaktivnih) - Korak-po-korak tutorijali s benchmarkovima i praćenjem performansi
+- **Jupyter bilježnice** (8 interaktivnih) - Korak-po-korak tutorijali s benchmark testovima i praćenjem performansi
 - **Vodiči za sesije** - Detaljni markdown vodiči za svaku radionicu
 - **Alati za validaciju** - Skripte za provjeru kvalitete koda i izvođenje osnovnih testova
 
@@ -126,7 +126,7 @@ Sveobuhvatni materijali za radionicu s implementacijama spremnim za proizvodnju:
 - Lokalne AI chat aplikacije s podrškom za streaming
 - RAG pipeline-ove s evaluacijom kvalitete (RAGAS)
 - Alate za benchmarking i usporedbu više modela
-- Sustave za orkestraciju više agenata
+- Sustave orkestracije više agenata
 - Inteligentno usmjeravanje modela s odabirom zadataka
 
 ### 📊 **Sažetak puta učenja**
@@ -134,7 +134,7 @@ Sveobuhvatni materijali za radionicu s implementacijama spremnim za proizvodnju:
 - **Put za početnike**: Moduli 01-02 (7-9 sati)  
 - **Srednji put**: Moduli 03-04 (9-11 sati)
 - **Napredni put**: Moduli 05-07 (12-15 sati)
-- **Ekspertni put**: Modul 08 (8-10 sati)
+- **Put za eksperte**: Modul 08 (8-10 sati)
 
 ## Što ćete izgraditi
 
@@ -193,11 +193,11 @@ edgeai-for-beginners/
   
 ## Istaknuto u tečaju  
 
-✅ **Postupno učenje**: Teorija → Praksa → Produkcijska implementacija  
+✅ **Postupno učenje**: Teorija → praksa → produkcijska implementacija  
 ✅ **Stvarni primjeri**: Microsoft, Japan Airlines, implementacije u poduzećima  
 ✅ **Praktični primjeri**: 50+ primjera, 10 sveobuhvatnih Foundry Local demonstracija  
 ✅ **Fokus na performanse**: 85% poboljšanja brzine, 75% smanjenja veličine  
-✅ **Višeplatformski**: Windows, mobilni, ugrađeni, cloud-edge hibrid  
+✅ **Višeplatformski**: Windows, mobilni uređaji, ugrađeni sustavi, cloud-edge hibrid  
 ✅ **Spremno za produkciju**: Praćenje, skaliranje, sigurnost, okviri usklađenosti  
 
 📖 **[Dostupan vodič za učenje](STUDY_GUIDE.md)**: Strukturirani 20-satni put učenja s uputama za raspodjelu vremena i alatima za samoocjenu.  
@@ -211,6 +211,12 @@ edgeai-for-beginners/
 Naš tim proizvodi i druge tečajeve! Pogledajte:  
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
+### LangChain  
+[![LangChain4j za početnike](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js za početnike](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+
+---  
+
 ### Azure / Edge / MCP / Agenti  
 [![AZD za početnike](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Edge AI za početnike](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -231,7 +237,7 @@ Naš tim proizvodi i druge tečajeve! Pogledajte:
 [![ML za početnike](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Data Science za početnike](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
 [![AI za početnike](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Cybersecurity za početnike](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
+[![Kibernetička sigurnost za početnike](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
 [![Web razvoj za početnike](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
 [![IoT za početnike](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
 [![XR razvoj za početnike](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -250,7 +256,7 @@ Ako zapnete ili imate pitanja o izradi AI aplikacija, pridružite se:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)  
 
-Ako imate povratne informacije o proizvodu ili prijavite greške tijekom izrade, posjetite:  
+Ako imate povratne informacije o proizvodu ili greške tijekom izrade, posjetite:  
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T15:32:12+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T12:35:54+00:00",
   "source_file": "README.md",
   "language_code": "no"
 }
@@ -26,8 +26,8 @@ CO_OP_TRANSLATOR_METADATA:
 
 Følg disse trinnene for å komme i gang med å bruke disse ressursene:
 
-1. **Fork repositoriet**: Klikk [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Klon repositoriet**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+1. **Fork Repository**: Klikk [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Klon Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Bli med i Azure AI Foundry Discord og møt eksperter og andre utviklere**](https://discord.com/invite/ByRwuEEgH4)
 
 
@@ -42,7 +42,7 @@ Følg disse trinnene for å komme i gang med å bruke disse ressursene:
 **Hvis du ønsker at flere oversettelsesspråk skal støttes, er de listet [her](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introduksjon
 
-Velkommen til **EdgeAI for nybegynnere** – din omfattende reise inn i den transformative verdenen av Edge kunstig intelligens. Dette kurset bygger bro mellom kraftige AI-muligheter og praktisk, virkelighetsnær distribusjon på edge-enheter, og gir deg mulighet til å utnytte AI sitt potensial direkte der data genereres og beslutninger må tas.
+Velkommen til **EdgeAI for nybegynnere** – din omfattende reise inn i den transformative verdenen av Edge Kunstig Intelligens. Dette kurset bygger bro mellom kraftige AI-muligheter og praktisk, virkelighetsnær distribusjon på edge-enheter, og gir deg mulighet til å utnytte AI sitt potensial direkte der data genereres og beslutninger må tas.
 
 ### Hva du vil mestre
 
@@ -50,7 +50,7 @@ Dette kurset tar deg fra grunnleggende konsepter til produksjonsklare implemente
 - **Små språkmodeller (SLMs)** optimalisert for edge-distribusjon
 - **Maskinvarebevisst optimalisering** på tvers av ulike plattformer
 - **Sanntids inferens** med personvernbevarende funksjoner
-- **Produksjonsdistribusjonsstrategier** for bedriftsapplikasjoner
+- **Produksjonsdistribusjon** strategier for bedriftsapplikasjoner
 
 ### Hvorfor EdgeAI er viktig
 
@@ -78,7 +78,7 @@ SLMs som Phi-4, Mistral-7B og Gemma er optimaliserte versjoner av større LLM-er
 - **Lavere beregningsbehov**: Optimalisert for CPU- og edge-GPU-ytelse
 - **Raskere oppstartstider**: Rask initialisering for responsive applikasjoner
 
-De låser opp kraftige NLP-muligheter samtidig som de møter begrensningene til:
+De åpner for kraftige NLP-muligheter samtidig som de møter begrensningene til:
 - **Innebygde systemer**: IoT-enheter og industrielle kontrollere
 - **Mobile enheter**: Smarttelefoner og nettbrett med offline-funksjonalitet
 - **IoT-enheter**: Sensorer og smarte enheter med begrensede ressurser
@@ -94,27 +94,27 @@ De låser opp kraftige NLP-muligheter samtidig som de møter begrensningene til:
 | [🧠 02](../../Module02) | [SLM Modellgrunnlag](./Module02/README.md) | Modellfamilier og arkitektur | Phi-familien • Qwen-familien • Gemma-familien • BitNET • μModel • Phi-Silica | Nybegynner | 4-5 t |
 | [🚀 03](../../Module03) | [SLM Distribusjonspraksis](./Module03/README.md) | Lokal og sky-distribusjon | Avansert læring • Lokalt miljø • Sky-distribusjon | Mellomnivå | 4-5 t |
 | [⚙️ 04](../../Module04) | [Modelloptimaliseringsverktøy](./Module04/README.md) | Plattformuavhengig optimalisering | Introduksjon • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Arbeidsflytsyntese | Mellomnivå | 5-6 t |
-| [🔧 05](../../Module05) | [SLMOps Produksjon](./Module05/README.md) | Produksjonsoperasjoner | SLMOps Introduksjon • Modell destillering • Finjustering • Produksjonsdistribusjon | Avansert | 5-6 t |
-| [🤖 06](../../Module06) | [AI-agenter og funksjonskall](./Module06/README.md) | Agentrammeverk og MCP | Agentintroduksjon • Funksjonskall • Modellkontekstprotokoll | Avansert | 4-5 t |
+| [🔧 05](../../Module05) | [SLMOps Produksjon](./Module05/README.md) | Produksjonsoperasjoner | SLMOps Introduksjon • Modell Destillering • Finjustering • Produksjonsdistribusjon | Avansert | 5-6 t |
+| [🤖 06](../../Module06) | [AI-agenter og Funksjonskall](./Module06/README.md) | Agentrammeverk og MCP | Agentintroduksjon • Funksjonskall • Modellkontekstprotokoll | Avansert | 4-5 t |
 | [💻 07](../../Module07) | [Plattformimplementering](./Module07/README.md) | Plattformuavhengige eksempler | AI-verktøykasse • Foundry Local • Windows-utvikling | Avansert | 3-4 t |
-| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Produksjonsklare eksempler | Eksempelsøknader (se detaljer nedenfor) | Ekspert | 8-10 t |
+| [🏭 08](../../Module08) | [Foundry Local Verktøykasse](./Module08/README.md) | Produksjonsklare eksempler | Eksempelsøknader (se detaljer nedenfor) | Ekspert | 8-10 t |
 
 ### 🏭 **Modul 08: Eksempelsøknader**
 
-- [01: REST Chat Quickstart](./Module08/samples/01/README.md)
-- [02: OpenAI SDK-integrasjon](./Module08/samples/02/README.md)
-- [03: Modelloppdagelse og benchmarking](./Module08/samples/03/README.md)
+- [01: REST Chat Hurtigstart](./Module08/samples/01/README.md)
+- [02: OpenAI SDK Integrasjon](./Module08/samples/02/README.md)
+- [03: Modelloppdagelse og Benchmarking](./Module08/samples/03/README.md)
 - [04: Chainlit RAG-applikasjon](./Module08/samples/04/README.md)
-- [05: Multi-agent orkestrering](./Module08/samples/05/README.md)
-- [06: Modeller-som-verktøy-ruter](./Module08/samples/06/README.md)
+- [05: Multi-Agent Orkestrering](./Module08/samples/05/README.md)
+- [06: Modeller-som-verktøy Router](./Module08/samples/06/README.md)
 - [07: Direkte API-klient](./Module08/samples/07/README.md)
 - [08: Windows 11 Chat-app](./Module08/samples/08/README.md)
-- [09: Avansert multi-agent system](./Module08/samples/09/README.md)
+- [09: Avansert Multi-Agent System](./Module08/samples/09/README.md)
 - [10: Foundry Tools Framework](./Module08/samples/10/README.md)
 
 ### 🎓 **Workshop: Praktisk læringssti**
 
-Omfattende praktisk workshop-materiale med produksjonsklare implementeringer:
+Omfattende praktiske workshop-materialer med produksjonsklare implementeringer:
 
 - **[Workshop Guide](./Workshop/Readme.md)** - Fullstendige læringsmål, resultater og ressursnavigasjon
 - **Python-eksempler** (6 økter) - Oppdatert med beste praksis, feilhåndtering og omfattende dokumentasjon
@@ -175,7 +175,7 @@ Hver modul inkluderer teori, praktiske øvelser og produksjonsklare kodeeksemple
 
 **Porteføljeprosjekter**: Multi-agent systemer • Produksjons-RAG-apper • Tverrplattform-distribusjon • Ytelsesoptimalisering  
 
-## Repository-struktur  
+## Repositoriumstruktur  
 
 ```
 edgeai-for-beginners/
@@ -196,7 +196,7 @@ edgeai-for-beginners/
 ✅ **Reelle casestudier**: Microsoft, Japan Airlines, bedriftsimplementeringer  
 ✅ **Praktiske eksempler**: 50+ eksempler, 10 omfattende Foundry Local demoer  
 ✅ **Ytelsesfokus**: 85 % hastighetsforbedringer, 75 % størrelsesreduksjoner  
-✅ **Multiplattform**: Windows, mobil, innebygde systemer, sky-edge hybrid  
+✅ **Multiplattform**: Windows, mobil, innebygd, sky-edge hybrid  
 ✅ **Produksjonsklart**: Overvåking, skalering, sikkerhet, samsvarsrammeverk  
 
 📖 **[Studieveiledning tilgjengelig](STUDY_GUIDE.md)**: Strukturert 20-timers læringsvei med tidsallokeringsveiledning og selvvurderingsverktøy.  
@@ -210,6 +210,12 @@ edgeai-for-beginners/
 Vårt team produserer flere kurs! Sjekk ut:  
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
+### LangChain  
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+
+---  
+
 ### Azure / Edge / MCP / Agenter  
 [![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -217,7 +223,7 @@ Vårt team produserer flere kurs! Sjekk ut:
 [![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### Generativ AI-serie  
 [![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
@@ -225,7 +231,7 @@ Vårt team produserer flere kurs! Sjekk ut:
 [![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### Kjerneopplæring  
 [![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -236,7 +242,7 @@ Vårt team produserer flere kurs! Sjekk ut:
 [![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### Copilot-serie  
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
