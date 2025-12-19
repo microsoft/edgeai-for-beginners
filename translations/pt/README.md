@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T12:14:25+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T08:57:04+00:00",
   "source_file": "README.md",
   "language_code": "pt"
 }
@@ -10,11 +10,11 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI para Iniciantes 
 
 
-![Imagem da capa do curso](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.pt.png)
+![Imagem de capa do curso](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.pt.png)
 
 [![Contribuidores do GitHub](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![Problemas no GitHub](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
-[![Pedidos de Pull no GitHub](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
+[![Problemas do GitHub](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
+[![Pedidos de Pull do GitHub](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
 [![PRs Bem-vindos](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 [![Observadores do GitHub](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
@@ -47,9 +47,9 @@ Bem-vindo ao **EdgeAI para Iniciantes** – a sua jornada abrangente no mundo tr
 ### O que Vai Dominar
 
 Este curso leva-o desde conceitos fundamentais até implementações prontas para produção, cobrindo:
-- **Modelos de Linguagem Pequenos (SLMs)** otimizados para implementação na edge
+- **Modelos Pequenos de Linguagem (SLMs)** otimizados para implementação na edge
 - **Otimização consciente do hardware** em diversas plataformas
-- **Inferência em tempo real** com capacidades de preservação da privacidade
+- **Inferência em tempo real** com capacidades de preservação de privacidade
 - **Estratégias de implementação em produção** para aplicações empresariais
 
 ### Por que a EdgeAI é Importante
@@ -71,7 +71,7 @@ Edge AI refere-se à execução de algoritmos de IA e modelos de linguagem local
 - **Baixa latência**: Respostas imediatas adequadas para sistemas em tempo real
 - **Soberania dos dados**: Mantém dados sensíveis localmente, melhorando segurança e conformidade
 
-### Modelos de Linguagem Pequenos (SLMs)
+### Modelos Pequenos de Linguagem (SLMs)
 
 SLMs como Phi-4, Mistral-7B e Gemma são versões otimizadas de LLMs maiores—treinados ou destilados para:
 - **Redução da pegada de memória**: Uso eficiente da memória limitada dos dispositivos edge
@@ -89,7 +89,7 @@ Eles desbloqueiam poderosas capacidades de PLN enquanto cumprem as restrições 
 
 | Módulo | Tema | Área de Foco | Conteúdo Principal | Nível | Duração |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Introdução ao EdgeAI](./introduction.md) | Fundamentos & Contexto | Visão Geral do EdgeAI • Aplicações na Indústria • Introdução aos SLM • Objetivos de Aprendizagem | Iniciante | 1-2 hrs |
+| [📖 00 ](./introduction.md) | [Introdução ao EdgeAI](./introduction.md) | Fundamentos & Contexto | Visão Geral do EdgeAI • Aplicações na Indústria • Introdução a SLM • Objetivos de Aprendizagem | Iniciante | 1-2 hrs |
 | [📚 01](../../Module01) | [Fundamentos do EdgeAI](./Module01/README.md) | Comparação Cloud vs Edge AI | Fundamentos do EdgeAI • Estudos de Caso Reais • Guia de Implementação • Implementação na Edge | Iniciante | 3-4 hrs |
 | [🧠 02](../../Module02) | [Fundamentos do Modelo SLM](./Module02/README.md) | Famílias de modelos & arquitetura | Família Phi • Família Qwen • Família Gemma • BitNET • μModel • Phi-Silica | Iniciante | 4-5 hrs |
 | [🚀 03](../../Module03) | [Prática de Implementação SLM](./Module03/README.md) | Implementação local & cloud | Aprendizagem Avançada • Ambiente Local • Implementação na Cloud | Intermédio | 4-5 hrs |
@@ -117,7 +117,7 @@ Eles desbloqueiam poderosas capacidades de PLN enquanto cumprem as restrições 
 Materiais abrangentes para workshop prático com implementações prontas para produção:
 
 - **[Guia do Workshop](./Workshop/Readme.md)** - Objetivos completos de aprendizagem, resultados e navegação de recursos
-- **Exemplos em Python** (6 sessões) - Atualizados com melhores práticas, tratamento de erros e documentação completa
+- **Exemplos em Python** (6 sessões) - Atualizados com melhores práticas, tratamento de erros e documentação abrangente
 - **Jupyter Notebooks** (8 interativos) - Tutoriais passo a passo com benchmarks e monitorização de desempenho
 - **Guias de Sessão** - Guias detalhados em markdown para cada sessão do workshop
 - **Ferramentas de Validação** - Scripts para verificar qualidade do código e executar testes básicos
@@ -251,7 +251,7 @@ A nossa equipa produz outros cursos! Veja:
 
 ## Obter Ajuda
 
-Se ficar bloqueado ou tiver dúvidas sobre como construir apps de IA, junte-se a:
+Se ficar bloqueado ou tiver dúvidas sobre como construir aplicações de IA, junte-se a:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 

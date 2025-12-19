@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T12:56:27+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T09:39:22+00:00",
   "source_file": "README.md",
   "language_code": "hu"
 }
@@ -42,40 +42,40 @@ Kövesse ezeket a lépéseket a források használatának megkezdéséhez:
 **Ha további fordítási nyelveket szeretne támogatni, azok itt találhatók [itt](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Bevezetés
 
-Üdvözöljük az **EdgeAI kezdőknek** tanfolyamon – az átfogó utazásán az Edge Mesterséges Intelligencia átalakító világába. Ez a tanfolyam hidat képez a hatékony MI képességek és a gyakorlati, valós környezetben történő élő eszközökön való telepítés között, lehetővé téve, hogy közvetlenül ott használja ki az MI potenciálját, ahol az adatok keletkeznek és döntéseket kell hozni.
+Üdvözöljük az **EdgeAI kezdőknek** tanfolyamon – átfogó utazásán az Edge Mesterséges Intelligencia átalakító világába. Ez a tanfolyam hidat képez a hatékony MI képességek és a gyakorlati, valós környezetben történő élő eszközökön való telepítés között, lehetővé téve, hogy közvetlenül ott használja ki az MI potenciálját, ahol az adatok keletkeznek és döntéseket kell hozni.
 
 ### Amit elsajátít
 
 Ez a tanfolyam az alapfogalmaktól a gyártásra kész megvalósításokig vezet, lefedve:
 - **Kis nyelvi modellek (SLM-ek)**, amelyek az élő eszközökre optimalizáltak
 - **Hardver-tudatos optimalizáció** különböző platformokon
-- **Valós idejű következtetés** adatvédelmi képességekkel
+- **Valós idejű következtetés** adatvédelmet biztosító képességekkel
 - **Gyártásra történő telepítési** stratégiák vállalati alkalmazásokhoz
 
 ### Miért fontos az EdgeAI
 
 Az Edge AI paradigmaváltást jelent, amely a modern kihívásokat kezeli:
-- **Adatvédelem és biztonság**: Érzékeny adatokat helyben dolgoz fel, felhő nélkül
+- **Adatvédelem és biztonság**: Érzékeny adatokat helyben dolgoz fel, felhő nélküli kitettség nélkül
 - **Valós idejű teljesítmény**: Megszünteti a hálózati késleltetést időkritikus alkalmazásoknál
 - **Költséghatékonyság**: Csökkenti a sávszélesség és felhőszámítási költségeket
-- **Rugalmas működés**: Működés hálózati kimaradás esetén is
+- **Rugalmas működés**: Működőképesség hálózati kimaradás esetén is
 - **Szabályozási megfelelés**: Adat-szuverenitási követelmények teljesítése
 
 ### Edge AI
 
-Az Edge AI az MI algoritmusok és nyelvi modellek helyi futtatását jelenti hardveren, közel az adatok keletkezési helyéhez, felhő erőforrások nélkül a következtetéshez. Csökkenti a késleltetést, növeli az adatvédelmet, és lehetővé teszi a valós idejű döntéshozatalt.
+Az Edge AI az AI algoritmusok és nyelvi modellek helyi futtatását jelenti hardveren, közel az adatok keletkezési helyéhez, felhő erőforrások nélkül a következtetéshez. Csökkenti a késleltetést, növeli az adatvédelmet, és lehetővé teszi a valós idejű döntéshozatalt.
 
 ### Alapelvek:
-- **Helyi következtetés**: MI modellek futnak élő eszközökön (telefonok, routerek, mikrokontrollerek, ipari PC-k)
+- **Helyi következtetés**: Az AI modellek élő eszközökön futnak (telefonok, routerek, mikrokontrollerek, ipari PC-k)
 - **Offline működés**: Internetkapcsolat nélkül is működik
 - **Alacsony késleltetés**: Azonnali válaszok valós idejű rendszerekhez
 - **Adatszuverenitás**: Érzékeny adatokat helyben tart, javítva a biztonságot és megfelelést
 
 ### Kis nyelvi modellek (SLM-ek)
 
-Az olyan SLM-ek, mint a Phi-4, Mistral-7B és Gemma, optimalizált változatai a nagyobb LLM-eknek – tanították vagy desztillálták őket:
-- **Csökkentett memóriaigény**: Hatékony használat korlátozott élő eszköz memóriánál
-- **Alacsonyabb számítási igény**: CPU és élő GPU teljesítményre optimalizált
+Az olyan SLM-ek, mint a Phi-4, Mistral-7B és Gemma, nagyobb LLM-ek optimalizált változatai – tanították vagy desztillálták őket:
+- **Csökkentett memóriaigény**: Hatékony használat az élő eszközök korlátozott memóriájában
+- **Alacsonyabb számítási igény**: CPU és élő GPU teljesítményre optimalizálva
 - **Gyorsabb indítási idő**: Gyors inicializáció a reszponzív alkalmazásokhoz
 
 Erőteljes NLP képességeket nyitnak meg, miközben megfelelnek az alábbi korlátoknak:
@@ -94,9 +94,9 @@ Erőteljes NLP képességeket nyitnak meg, miközben megfelelnek az alábbi korl
 | [🧠 02](../../Module02) | [SLM modell alapok](./Module02/README.md) | Modellcsaládok és architektúra | Phi család • Qwen család • Gemma család • BitNET • μModel • Phi-Silica | Kezdő | 4-5 óra |
 | [🚀 03](../../Module03) | [SLM telepítési gyakorlat](./Module03/README.md) | Helyi és felhő telepítés | Haladó tanulás • Helyi környezet • Felhő telepítés | Középhaladó | 4-5 óra |
 | [⚙️ 04](../../Module04) | [Modell optimalizációs eszköztár](./Module04/README.md) | Platformok közötti optimalizáció | Bevezetés • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Munkafolyamat szintézis | Középhaladó | 5-6 óra |
-| [🔧 05](../../Module05) | [SLMOps gyártásban](./Module05/README.md) | Gyártási műveletek | SLMOps bevezetés • Modell desztilláció • Finomhangolás • Gyártásba telepítés | Haladó | 5-6 óra |
-| [🤖 06](../../Module06) | [MI ügynökök és függvényhívás](./Module06/README.md) | Ügynök keretrendszerek és MCP | Ügynök bevezetés • Függvényhívás • Modell kontextus protokoll | Haladó | 4-5 óra |
-| [💻 07](../../Module07) | [Platform megvalósítás](./Module07/README.md) | Platformok közötti példák | MI eszköztár • Foundry Local • Windows fejlesztés | Haladó | 3-4 óra |
+| [🔧 05](../../Module05) | [SLMOps gyártásban](./Module05/README.md) | Gyártási műveletek | SLMOps bevezetés • Modell desztilláció • Finomhangolás • Gyártásra telepítés | Haladó | 5-6 óra |
+| [🤖 06](../../Module06) | [AI ügynökök és függvényhívás](./Module06/README.md) | Ügynök keretrendszerek és MCP | Ügynök bevezetés • Függvényhívás • Modell kontextus protokoll | Haladó | 4-5 óra |
+| [💻 07](../../Module07) | [Platform megvalósítás](./Module07/README.md) | Platformok közötti példák | AI eszköztár • Foundry Local • Windows fejlesztés | Haladó | 3-4 óra |
 | [🏭 08](../../Module08) | [Foundry Local eszköztár](./Module08/README.md) | Gyártásra kész példák | Mintaalkalmazások (lásd részletek lent) | Szakértő | 8-10 óra |
 
 ### 🏭 **08. modul: Mintaalkalmazások**
@@ -114,7 +114,7 @@ Erőteljes NLP képességeket nyitnak meg, miközben megfelelnek az alábbi korl
 
 ### 🎓 **Műhely: Gyakorlati tanulási út**
 
-Átfogó gyakorlati műhely anyagok gyártásra kész megvalósításokkal:
+Átfogó gyakorlati műhelyanyagok gyártásra kész megvalósításokkal:
 
 - **[Műhely útmutató](./Workshop/Readme.md)** - Teljes tanulási célok, eredmények és forrás navigáció
 - **Python minták** (6 alkalom) - Frissítve legjobb gyakorlatokkal, hibakezeléssel és részletes dokumentációval
@@ -123,7 +123,7 @@ Erőteljes NLP képességeket nyitnak meg, miközben megfelelnek az alábbi korl
 - **Érvényesítő eszközök** - Szkriptek a kódminőség ellenőrzésére és gyors tesztek futtatására
 
 **Amit építeni fog:**
-- Helyi MI chat alkalmazások streaming támogatással
+- Helyi AI chat alkalmazások streaming támogatással
 - RAG csővezetékek minőségértékeléssel (RAGAS)
 - Többmodell benchmark és összehasonlító eszközök
 - Többügynökös összehangoló rendszerek
@@ -139,13 +139,13 @@ Erőteljes NLP képességeket nyitnak meg, miközben megfelelnek az alábbi korl
 ## Amit építeni fog
 
 ### 🎯 Alapvető kompetenciák
-- **Edge AI architektúra**: Helyi első MI rendszerek tervezése felhő integrációval
+- **Edge AI architektúra**: Helyi első AI rendszerek tervezése felhő integrációval
 - **Modelloptimalizálás**: Modellek kvantálása és tömörítése élre történő telepítéshez (85%-os sebességnövekedés, 75%-os méretcsökkenés)  
 - **Többplatformos telepítés**: Windows, mobil, beágyazott és felhő-él hibrid rendszerek  
 - **Termelési műveletek**: Él AI figyelése, skálázása és karbantartása termelésben  
 
 ### 🏗️ Gyakorlati projektek  
-- **Foundry Local Chat alkalmazások**: Windows 11 natív alkalmazás modellváltással  
+- **Foundry helyi csevegőalkalmazások**: Windows 11 natív alkalmazás modellváltással  
 - **Többügynökös rendszerek**: Koordinátor szakértő ügynökökkel összetett munkafolyamatokhoz  
 - **RAG alkalmazások**: Helyi dokumentumfeldolgozás vektoros kereséssel  
 - **Modellrouterek**: Intelligens modellválasztás feladatelemzés alapján  
@@ -203,7 +203,7 @@ edgeai-for-beginners/
 
 ---  
 
-**Az EdgeAI az AI telepítés jövőjét képviseli**: helyi első, adatvédelmet tiszteletben tartó és hatékony. Sajátítsd el ezeket a készségeket a következő generációs intelligens alkalmazások építéséhez.  
+**Az EdgeAI az AI telepítés jövőjét képviseli**: helyi elsődlegesség, adatvédelem és hatékonyság. Sajátítsd el ezeket a készségeket, hogy a következő generációs intelligens alkalmazásokat építhesd.  
 
 ## Egyéb tanfolyamok  
 
@@ -263,5 +263,5 @@ Ha termék-visszajelzésed vagy hibák vannak az építés során, látogass el 
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Jogi nyilatkozat**:
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

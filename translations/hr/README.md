@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T13:11:19+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T09:51:57+00:00",
   "source_file": "README.md",
   "language_code": "hr"
 }
@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI za početnike 
 
 
-![Slika naslovnice tečaja](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.hr.png)
+![Naslovna slika tečaja](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.hr.png)
 
 [![GitHub suradnici](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub problemi](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
@@ -33,24 +33,24 @@ Slijedite ove korake da biste započeli s korištenjem ovih resursa:
 
 ### 🌐 Podrška za više jezika
 
-#### Podržano putem GitHub akcije (Automatski i uvijek ažurno)
+#### Podržano putem GitHub akcije (Automatski i uvijek ažurirano)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](./README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[Arapski](../ar/README.md) | [Bengalski](../bn/README.md) | [Bugarski](../bg/README.md) | [Burmanski (Myanmar)](../my/README.md) | [Kineski (pojednostavljeni)](../zh/README.md) | [Kineski (tradicionalni, Hong Kong)](../hk/README.md) | [Kineski (tradicionalni, Macau)](../mo/README.md) | [Kineski (tradicionalni, Tajvan)](../tw/README.md) | [Hrvatski](./README.md) | [Češki](../cs/README.md) | [Danski](../da/README.md) | [Nizozemski](../nl/README.md) | [Estonski](../et/README.md) | [Finski](../fi/README.md) | [Francuski](../fr/README.md) | [Njemački](../de/README.md) | [Grčki](../el/README.md) | [Hebrejski](../he/README.md) | [Hindi](../hi/README.md) | [Mađarski](../hu/README.md) | [Indonezijski](../id/README.md) | [Talijanski](../it/README.md) | [Japanski](../ja/README.md) | [Kannada](../kn/README.md) | [Korejski](../ko/README.md) | [Litvanski](../lt/README.md) | [Malajski](../ms/README.md) | [Malajalamski](../ml/README.md) | [Marathi](../mr/README.md) | [Nepalski](../ne/README.md) | [Nigerijski pidžin](../pcm/README.md) | [Norveški](../no/README.md) | [Perzijski (Farsi)](../fa/README.md) | [Poljski](../pl/README.md) | [Portugalski (Brazil)](../br/README.md) | [Portugalski (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Rumunjski](../ro/README.md) | [Ruski](../ru/README.md) | [Srpski (ćirilica)](../sr/README.md) | [Slovački](../sk/README.md) | [Slovenski](../sl/README.md) | [Španjolski](../es/README.md) | [Svahili](../sw/README.md) | [Švedski](../sv/README.md) | [Tagalog (Filipinski)](../tl/README.md) | [Tamilski](../ta/README.md) | [Telugu](../te/README.md) | [Tajlandski](../th/README.md) | [Turski](../tr/README.md) | [Ukrajinski](../uk/README.md) | [Urdu](../ur/README.md) | [Vijetnamski](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 **Ako želite da budu podržani dodatni jezici prijevoda, oni su navedeni [ovdje](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Uvod
 
-Dobrodošli u **EdgeAI za početnike** – vaše sveobuhvatno putovanje u transformativni svijet Edge umjetne inteligencije. Ovaj tečaj premošćuje jaz između moćnih AI mogućnosti i praktične, stvarne primjene na edge uređajima, osnažujući vas da iskoristite potencijal AI-ja izravno tamo gdje se podaci generiraju i gdje se trebaju donositi odluke.
+Dobrodošli u **EdgeAI za početnike** – vaše sveobuhvatno putovanje u transformativni svijet Edge umjetne inteligencije. Ovaj tečaj premošćuje jaz između moćnih AI mogućnosti i praktične, stvarne primjene na edge uređajima, osnažujući vas da iskoristite potencijal AI-a izravno tamo gdje se podaci generiraju i gdje se trebaju donositi odluke.
 
 ### Što ćete savladati
 
 Ovaj tečaj vodi vas od osnovnih pojmova do implementacija spremnih za proizvodnju, pokrivajući:
-- **Mali jezični modeli (SLM)** optimizirani za edge implementaciju
+- **Mali jezični modeli (SLM)** optimizirani za edge primjenu
 - **Optimizaciju svjesnu hardvera** na različitim platformama
 - **Inferenciju u stvarnom vremenu** s mogućnostima očuvanja privatnosti
-- **Strategije proizvodnog postavljanja** za enterprise aplikacije
+- **Strategije proizvodnog postavljanja** za poslovne aplikacije
 
 ### Zašto je EdgeAI važan
 
@@ -68,7 +68,7 @@ Edge AI odnosi se na pokretanje AI algoritama i jezičnih modela lokalno na hard
 ### Temeljna načela:
 - **Inferencija na uređaju**: AI modeli rade na edge uređajima (telefoni, ruteri, mikrokontroleri, industrijska računala)
 - **Mogućnost rada offline**: Funkcionira bez stalne internetske veze
-- **Niska latencija**: Odgovori u stvarnom vremenu prikladni za sustave osjetljive na vrijeme
+- **Niska latencija**: Odgovori odmah, prikladni za sustave u stvarnom vremenu
 - **Suverenitet podataka**: Osjetljivi podaci ostaju lokalno, poboljšavajući sigurnost i usklađenost
 
 ### Mali jezični modeli (SLM)
@@ -83,18 +83,18 @@ Oni otključavaju moćne NLP mogućnosti dok zadovoljavaju ograničenja:
 - **Mobilni uređaji**: Pametni telefoni i tableti s mogućnostima rada offline
 - **IoT uređaji**: Senzori i pametni uređaji s ograničenim resursima
 - **Edge serveri**: Lokalni procesorski uređaji s ograničenim GPU resursima
-- **Osobna računala**: Scenariji implementacije na desktop i laptop računalima
+- **Osobna računala**: Scenariji implementacije na stolnim i prijenosnim računalima
 
 ## Moduli tečaja i navigacija
 
 | Modul | Tema | Područje fokusa | Ključni sadržaj | Razina | Trajanje |
 |--------|-------|------------|-------------|--------|----------|
 | [📖 00 ](./introduction.md) | [Uvod u EdgeAI](./introduction.md) | Osnove i kontekst | Pregled EdgeAI • Industrijske primjene • Uvod u SLM • Ciljevi učenja | Početnik | 1-2 sata |
-| [📚 01](../../Module01) | [Osnove EdgeAI](./Module01/README.md) | Usporedba Cloud vs Edge AI | Osnove EdgeAI • Studije slučaja iz stvarnog svijeta • Vodič za implementaciju • Edge implementacija | Početnik | 3-4 sata |
+| [📚 01](../../Module01) | [Osnove EdgeAI](./Module01/README.md) | Usporedba Cloud vs Edge AI | Osnove EdgeAI • Studije slučaja iz stvarnog svijeta • Vodič za implementaciju • Edge postavljanje | Početnik | 3-4 sata |
 | [🧠 02](../../Module02) | [Temelji SLM modela](./Module02/README.md) | Obitelji modela i arhitektura | Phi obitelj • Qwen obitelj • Gemma obitelj • BitNET • μModel • Phi-Silica | Početnik | 4-5 sati |
-| [🚀 03](../../Module03) | [Praksa implementacije SLM](./Module03/README.md) | Lokalna i oblačna implementacija | Napredno učenje • Lokalno okruženje • Oblačna implementacija | Srednja | 4-5 sati |
-| [⚙️ 04](../../Module04) | [Alatni paket za optimizaciju modela](./Module04/README.md) | Optimizacija na više platformi | Uvod • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sinteza radnog toka | Srednja | 5-6 sati |
-| [🔧 05](../../Module05) | [SLMOps proizvodnja](./Module05/README.md) | Proizvodne operacije | Uvod u SLMOps • Destilacija modela • Fino podešavanje • Proizvodna implementacija | Napredno | 5-6 sati |
+| [🚀 03](../../Module03) | [Praksa postavljanja SLM](./Module03/README.md) | Lokalno i oblačno postavljanje | Napredno učenje • Lokalno okruženje • Oblačno postavljanje | Srednja razina | 4-5 sati |
+| [⚙️ 04](../../Module04) | [Alati za optimizaciju modela](./Module04/README.md) | Optimizacija na više platformi | Uvod • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sinteza radnog toka | Srednja razina | 5-6 sati |
+| [🔧 05](../../Module05) | [SLMOps proizvodnja](./Module05/README.md) | Proizvodne operacije | Uvod u SLMOps • Destilacija modela • Fino podešavanje • Proizvodno postavljanje | Napredno | 5-6 sati |
 | [🤖 06](../../Module06) | [AI agenti i pozivanje funkcija](./Module06/README.md) | Okviri agenata i MCP | Uvod u agente • Pozivanje funkcija • Protokol konteksta modela | Napredno | 4-5 sati |
 | [💻 07](../../Module07) | [Implementacija platforme](./Module07/README.md) | Primjeri na više platformi | AI alatni paket • Foundry Local • Windows razvoj | Napredno | 3-4 sata |
 | [🏭 08](../../Module08) | [Foundry Local alatni paket](./Module08/README.md) | Primjeri spremni za proizvodnju | Primjeri aplikacija (vidi detalje dolje) | Ekspert | 8-10 sati |
@@ -134,7 +134,7 @@ Sveobuhvatni materijali za radionicu s implementacijama spremnim za proizvodnju:
 - **Put za početnike**: Moduli 01-02 (7-9 sati)  
 - **Srednji put**: Moduli 03-04 (9-11 sati)
 - **Napredni put**: Moduli 05-07 (12-15 sati)
-- **Put za eksperte**: Modul 08 (8-10 sati)
+- **Ekspertni put**: Modul 08 (8-10 sati)
 
 ## Što ćete izgraditi
 
@@ -264,5 +264,5 @@ Ako imate povratne informacije o proizvodu ili greške tijekom izrade, posjetite
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Odricanje od odgovornosti**:
-Ovaj dokument preveden je pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

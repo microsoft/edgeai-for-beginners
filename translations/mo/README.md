@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T11:48:52+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T08:32:01+00:00",
   "source_file": "README.md",
   "language_code": "mo"
 }
@@ -24,10 +24,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-請按照以下步驟開始使用這些資源：
+跟隨以下步驟開始使用這些資源：
 
 1. **分支此儲存庫**：點擊 [![GitHub 分支](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **克隆此儲存庫**：   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+2. **克隆此儲存庫**： `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**加入 Azure AI Foundry Discord，與專家及開發者交流**](https://discord.com/invite/ByRwuEEgH4)
 
 
@@ -39,10 +39,10 @@ CO_OP_TRANSLATOR_METADATA:
 [阿拉伯語](../ar/README.md) | [孟加拉語](../bn/README.md) | [保加利亞語](../bg/README.md) | [緬甸語 (Myanmar)](../my/README.md) | [中文 (簡體)](../zh/README.md) | [中文 (繁體，香港)](../hk/README.md) | [中文 (繁體，澳門)](./README.md) | [中文 (繁體，台灣)](../tw/README.md) | [克羅地亞語](../hr/README.md) | [捷克語](../cs/README.md) | [丹麥語](../da/README.md) | [荷蘭語](../nl/README.md) | [愛沙尼亞語](../et/README.md) | [芬蘭語](../fi/README.md) | [法語](../fr/README.md) | [德語](../de/README.md) | [希臘語](../el/README.md) | [希伯來語](../he/README.md) | [印地語](../hi/README.md) | [匈牙利語](../hu/README.md) | [印尼語](../id/README.md) | [義大利語](../it/README.md) | [日語](../ja/README.md) | [坎納達語](../kn/README.md) | [韓語](../ko/README.md) | [立陶宛語](../lt/README.md) | [馬來語](../ms/README.md) | [馬拉雅拉姆語](../ml/README.md) | [馬拉地語](../mr/README.md) | [尼泊爾語](../ne/README.md) | [奈及利亞皮欽語](../pcm/README.md) | [挪威語](../no/README.md) | [波斯語 (法爾西語)](../fa/README.md) | [波蘭語](../pl/README.md) | [葡萄牙語 (巴西)](../br/README.md) | [葡萄牙語 (葡萄牙)](../pt/README.md) | [旁遮普語 (Gurmukhi)](../pa/README.md) | [羅馬尼亞語](../ro/README.md) | [俄語](../ru/README.md) | [塞爾維亞語 (西里爾字母)](../sr/README.md) | [斯洛伐克語](../sk/README.md) | [斯洛文尼亞語](../sl/README.md) | [西班牙語](../es/README.md) | [斯瓦希里語](../sw/README.md) | [瑞典語](../sv/README.md) | [他加祿語 (菲律賓語)](../tl/README.md) | [泰米爾語](../ta/README.md) | [泰盧固語](../te/README.md) | [泰語](../th/README.md) | [土耳其語](../tr/README.md) | [烏克蘭語](../uk/README.md) | [烏爾都語](../ur/README.md) | [越南語](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**如果您希望支援更多翻譯語言，請參閱[此處](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**如欲支援更多翻譯語言，請參閱 [此處](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## 介紹
 
-歡迎來到 **EdgeAI 初學者指南** — 您全面探索邊緣人工智能變革世界的旅程。本課程架起強大 AI 能力與實際、現場部署於邊緣裝置之間的橋樑，使您能直接在數據產生及決策所需之處發揮 AI 潛力。
+歡迎來到 **EdgeAI 初學者指南** — 您全面探索邊緣人工智能變革世界的旅程。本課程連接強大 AI 能力與實際、現場部署於邊緣裝置的橋樑，使您能直接在數據產生及決策所需之處發揮 AI 潛力。
 
 ### 您將掌握的內容
 
@@ -56,8 +56,8 @@ CO_OP_TRANSLATOR_METADATA:
 
 Edge AI 代表一種範式轉移，解決現代關鍵挑戰：
 - **隱私與安全**：本地處理敏感數據，無需雲端暴露
-- **即時效能**：消除網絡延遲，適用時間關鍵應用
-- **成本效益**：降低頻寬與雲端運算費用
+- **即時效能**：消除網絡延遲，適用時間敏感應用
+- **成本效益**：降低頻寬與雲端運算開銷
 - **韌性運作**：網絡中斷時仍維持功能
 - **法規遵循**：符合數據主權要求
 
@@ -67,18 +67,18 @@ Edge AI 代表一種範式轉移，解決現代關鍵挑戰：
 
 ### 核心原則：
 - **裝置端推論**：AI 模型在邊緣裝置（手機、路由器、微控制器、工業電腦）上運行
-- **離線能力**：無需持續網路連接即可運作
+- **離線能力**：無需持續網絡連接即可運作
 - **低延遲**：即時回應，適合即時系統
 - **數據主權**：敏感數據保留本地，提高安全與合規性
 
 ### 小型語言模型 (SLMs)
 
-SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本—經過訓練或蒸餾以達成：
+SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本，經過訓練或蒸餾以達成：
 - **減少記憶體佔用**：有效利用有限的邊緣裝置記憶體
-- **降低運算需求**：優化 CPU 與邊緣 GPU 效能
+- **降低計算需求**：優化 CPU 與邊緣 GPU 效能
 - **更快啟動時間**：快速初始化，提升應用反應速度
 
-它們在滿足以下限制條件下，釋放強大 NLP 能力：
+它們在滿足以下限制條件下釋放強大 NLP 能力：
 - **嵌入式系統**：物聯網裝置與工業控制器
 - **行動裝置**：具備離線能力的智慧手機和平板
 - **物聯網裝置**：資源有限的感測器與智慧裝置
@@ -107,7 +107,7 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本—經過訓�
 - [04: Chainlit RAG 應用](./Module08/samples/04/README.md)
 - [05: 多代理協調](./Module08/samples/05/README.md)
 - [06: 模型即工具路由器](./Module08/samples/06/README.md)
-- [07: 直接 API 用戶端](./Module08/samples/07/README.md)
+- [07: 直接 API 客戶端](./Module08/samples/07/README.md)
 - [08: Windows 11 聊天應用](./Module08/samples/08/README.md)
 - [09: 進階多代理系統](./Module08/samples/09/README.md)
 - [10: Foundry 工具框架](./Module08/samples/10/README.md)
@@ -116,11 +116,11 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本—經過訓�
 
 完整實作工作坊材料，含生產級實作：
 
-- **[工作坊指南](./Workshop/Readme.md)** — 完整學習目標、成果與資源導覽
-- **Python 範例**（6 堂課）— 更新最佳實踐、錯誤處理與完整文件
-- **Jupyter 筆記本**（8 個互動式）— 逐步教學，含基準測試與效能監控
-- **課程指南** — 每堂工作坊課程詳細 Markdown 指南
-- **驗證工具** — 驗證程式碼品質與執行冒煙測試的腳本
+- **[工作坊指南](./Workshop/Readme.md)** - 完整學習目標、成果與資源導覽
+- **Python 範例**（6 堂課）- 更新最佳實踐、錯誤處理與完整文件
+- **Jupyter 筆記本**（8 個互動式）- 逐步教學，含基準測試與效能監控
+- **課程指南** - 每堂工作坊課程詳細 Markdown 指南
+- **驗證工具** - 驗證程式碼品質與執行煙霧測試的腳本
 
 **您將打造：**
 - 支援串流的本地 AI 聊天應用
@@ -171,7 +171,7 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本—經過訓�
 
 **技術職位**：EdgeAI 解決方案架構師 • 邊緣機器學習工程師 • 物聯網 AI 開發者 • 手機 AI 開發者
 
-**行業領域**：製造4.0 • 醫療科技 • 自主系統 • 金融科技 • 消費電子
+**行業領域**：製造 4.0 • 醫療科技 • 自主系統 • 金融科技 • 消費電子
 
 **作品集專案**：多代理系統 • 生產級 RAG 應用 • 跨平台部署 • 性能優化
 
@@ -199,11 +199,11 @@ edgeai-for-beginners/
 ✅ **多平台支援**：Windows、手機、嵌入式、雲端邊緣混合  
 ✅ **生產就緒**：監控、擴展、安全、合規框架
 
-📖 **[學習指南](STUDY_GUIDE.md)**：結構化20小時學習路徑，含時間分配指引及自我評估工具。
+📖 **[學習指南可用](STUDY_GUIDE.md)**：結構化20小時學習路徑，含時間分配指引及自我評估工具。
 
 ---
 
-**EdgeAI 代表 AI 部署的未來**：本地優先、隱私保護、高效能。掌握這些技能，打造下一代智能應用。
+**EdgeAI 代表 AI 部署的未來**：本地優先、隱私保護、高效能。掌握這些技能，打造下一代智慧應用。
 
 ## 其他課程
 
@@ -263,5 +263,5 @@ edgeai-for-beginners/
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責聲明**：
-本文件係使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我哋致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我哋對因使用本翻譯而引起之任何誤解或誤釋概不負責。
+本文件係使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我哋致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我哋對因使用本翻譯而引致之任何誤解或誤釋概不負責。
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

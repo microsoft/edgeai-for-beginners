@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T13:14:07+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T09:54:19+00:00",
   "source_file": "README.md",
   "language_code": "sl"
 }
@@ -10,25 +10,25 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI za začetnike 
 
 
-![Course cover image](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.sl.png)
+![Slika naslovnice tečaja](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.sl.png)
 
-[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Prispevki na GitHubu](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
+[![Težave na GitHubu](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
+[![Zahteve za združitev na GitHubu](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
+[![PR dobrodošli](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-[![GitHub stars](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
+[![Opazovalci na GitHubu](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
+[![Razvejitev na GitHubu](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+[![Zvezdice na GitHubu](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
 
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
 Sledite tem korakom, da začnete uporabljati te vire:
 
-1. **Razvezi repozitorij**: Kliknite [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Kloniraj repozitorij**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Pridruži se Azure AI Foundry Discord in spoznaj strokovnjake ter druge razvijalce**](https://discord.com/invite/ByRwuEEgH4)
+1. **Razvejitev repozitorija**: Kliknite [![Razvejitev na GitHubu](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Klonirajte repozitorij**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+3. [**Pridružite se Azure AI Foundry Discordu in spoznajte strokovnjake ter druge razvijalce**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Podpora za več jezikov
@@ -42,28 +42,28 @@ Sledite tem korakom, da začnete uporabljati te vire:
 **Če želite, da so podprti dodatni prevodni jeziki, so navedeni [tukaj](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Uvod
 
-Dobrodošli v **EdgeAI za začetnike** – vašo celovito potovanje v preobrazbeni svet robne umetne inteligence. Ta tečaj premošča vrzel med zmogljivimi AI zmožnostmi in praktično, realno uporabo na robnih napravah, kar vam omogoča, da izkoristite potencial AI neposredno tam, kjer se podatki ustvarjajo in je potrebno sprejemati odločitve.
+Dobrodošli v **EdgeAI za začetnike** – vašo celovito potovanje v preobrazbeni svet robne umetne inteligence. Ta tečaj premošča vrzel med zmogljivimi AI zmožnostmi in praktično, realno uporabo na robnih napravah, kar vam omogoča, da izkoristite potencial AI neposredno tam, kjer se podatki ustvarjajo in je treba sprejemati odločitve.
 
 ### Kaj boste osvojili
 
-Ta tečaj vas popelje od osnovnih konceptov do implementacij, pripravljenih za produkcijo, ki zajemajo:
-- **Majhni jezikovni modeli (SLM)**, optimizirani za robno nameščanje
-- **Optimizacija, ki upošteva strojno opremo** na različnih platformah
+Ta tečaj vas popelje od osnovnih konceptov do implementacij pripravljenih za produkcijo, vključno z:
+- **Majhnimi jezikovnimi modeli (SLM)**, optimiziranimi za robno nameščanje
+- **Optimizacijo, ki upošteva strojno opremo** na različnih platformah
 - **Realnočasovno sklepanje** z zmožnostmi varovanja zasebnosti
 - **Strategije produkcijskega nameščanja** za poslovne aplikacije
 
 ### Zakaj je EdgeAI pomemben
 
-Edge AI predstavlja premik paradigme, ki naslavlja ključne sodobne izzive:
+Robna AI predstavlja premik paradigme, ki naslavlja ključne sodobne izzive:
 - **Zasebnost in varnost**: Obdelava občutljivih podatkov lokalno brez izpostavljenosti oblaku
 - **Realnočasovna zmogljivost**: Odprava zakasnitve omrežja za časovno kritične aplikacije
 - **Stroškovna učinkovitost**: Zmanjšanje pasovne širine in stroškov oblačnega računalništva
 - **Odpornost delovanja**: Ohranjanje funkcionalnosti med izpadi omrežja
 - **Skladnost z zakonodajo**: Izpolnjevanje zahtev glede suverenosti podatkov
 
-### Robna umetna inteligenca
+### Robna AI
 
-Robna AI se nanaša na izvajanje AI algoritmov in jezikovnih modelov lokalno na strojni opremi, blizu mesta, kjer se podatki ustvarjajo, brez odvisnosti od oblačnih virov za sklepanje. Zmanjšuje zakasnitev, izboljšuje zasebnost in omogoča realnočasovno odločanje.
+Robna AI pomeni izvajanje AI algoritmov in jezikovnih modelov lokalno na strojni opremi, blizu mesta, kjer se podatki ustvarjajo, brez odvisnosti od oblačnih virov za sklepanje. Zmanjšuje zakasnitev, izboljšuje zasebnost in omogoča realnočasovno odločanje.
 
 ### Temeljna načela:
 - **Sklepanje na napravi**: AI modeli tečejo na robnih napravah (telefoni, usmerjevalniki, mikrokontrolerji, industrijski računalniki)
@@ -93,7 +93,7 @@ Omogočajo zmogljive NLP zmožnosti ob upoštevanju omejitev:
 | [📚 01](../../Module01) | [Osnove EdgeAI](./Module01/README.md) | Primerjava oblak vs rob AI | Osnove EdgeAI • Primeri iz resničnega sveta • Vodnik za implementacijo • Robno nameščanje | Začetnik | 3-4 ure |
 | [🧠 02](../../Module02) | [Temelji SLM modelov](./Module02/README.md) | Družine modelov in arhitektura | Družina Phi • Družina Qwen • Družina Gemma • BitNET • μModel • Phi-Silica | Začetnik | 4-5 ur |
 | [🚀 03](../../Module03) | [Praksa nameščanja SLM](./Module03/README.md) | Lokalno in oblačno nameščanje | Napredno učenje • Lokalno okolje • Oblačno nameščanje | Srednje | 4-5 ur |
-| [⚙️ 04](../../Module04) | [Orodja za optimizacijo modelov](./Module04/README.md) | Optimizacija na več platformah | Uvod • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sestavljanje delovnih tokov | Srednje | 5-6 ur |
+| [⚙️ 04](../../Module04) | [Orodja za optimizacijo modelov](./Module04/README.md) | Optimizacija na več platformah | Uvod • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sestavljanje delovnega toka | Srednje | 5-6 ur |
 | [🔧 05](../../Module05) | [SLMOps produkcija](./Module05/README.md) | Produkcijsko upravljanje | Uvod v SLMOps • Destilacija modelov • Fino nastavljanje • Produkcijsko nameščanje | Napredno | 5-6 ur |
 | [🤖 06](../../Module06) | [AI agenti in klic funkcij](./Module06/README.md) | Okviri agentov in MCP | Uvod v agente • Klic funkcij • Protokol konteksta modela | Napredno | 4-5 ur |
 | [💻 07](../../Module07) | [Implementacija platforme](./Module07/README.md) | Vzorci za več platform | AI orodja • Foundry Local • Razvoj za Windows | Napredno | 3-4 ure |
@@ -110,15 +110,15 @@ Omogočajo zmogljive NLP zmožnosti ob upoštevanju omejitev:
 - [07: Neposredni API odjemalec](./Module08/samples/07/README.md)
 - [08: Windows 11 klepetalna aplikacija](./Module08/samples/08/README.md)
 - [09: Napredni sistem več agentov](./Module08/samples/09/README.md)
-- [10: Foundry orodja okvir](./Module08/samples/10/README.md)
+- [10: Okvir Foundry orodij](./Module08/samples/10/README.md)
 
-### 🎓 **Delavnica: Pot učenja z rokami**
+### 🎓 **Delavnica: Pot učenja z vajo**
 
-Celoviti materiali za praktično delavnico z implementacijami, pripravljenimi za produkcijo:
+Celoviti materiali delavnice z implementacijami pripravljenimi za produkcijo:
 
 - **[Vodnik delavnice](./Workshop/Readme.md)** - Popolni cilji učenja, rezultati in navigacija virov
 - **Python vzorci** (6 sej) - Posodobljeni z najboljšimi praksami, obravnavo napak in obsežno dokumentacijo
-- **Jupyter zvezki** (8 interaktivnih) - Korak za korakom vodiči z merjenjem zmogljivosti in spremljanjem
+- **Jupyter zvezki** (8 interaktivnih) - Korak za korakom vodiči z benchmarki in spremljanjem zmogljivosti
 - **Vodniki za seje** - Podrobni markdown vodiči za vsako delavnico
 - **Orodja za validacijo** - Skripte za preverjanje kakovosti kode in izvajanje osnovnih testov
 
@@ -152,7 +152,7 @@ Celoviti materiali za praktično delavnico z implementacijami, pripravljenimi za
 - **API ogrodja**: Produkcijsko pripravljeni odjemalci s pretakanjem in nadzorom zdravja
 - **Večplatformska orodja**: Vzorce integracije LangChain/Semantic Kernel
 
-### 🏢 Industrijske aplikacije
+### 🏢 Industrijske uporabe
 **Proizvodnja** • **Zdravstvo** • **Avtonomna vozila** • **Pametna mesta** • **Mobilne aplikacije**
 
 ## Hiter začetek
@@ -162,7 +162,7 @@ Celoviti materiali za praktično delavnico z implementacijami, pripravljenimi za
 0. **📖 Uvod** ([Introduction.md](./introduction.md)): Osnove EdgeAI + industrijski kontekst + učni okvir
 1. **📚 Osnove** (Moduli 01-02): Koncepti EdgeAI + družine modelov SLM
 2. **⚙️ Optimizacija** (Moduli 03-04): Namestitev + ogrodja za kvantizacijo  
-3. **🚀 Produkcija** (Moduli 05-06): SLMOps + AI agenti + klic funkcij
+3. **🚀 Produkcija** (Moduli 05-06): SLMOps + AI agenti + klici funkcij
 4. **💻 Implementacija** (Moduli 07-08): Vzorci platform + orodja Foundry Local
 
 Vsak modul vključuje teorijo, praktične vaje in produkcijsko pripravljene vzorce kode.
@@ -194,7 +194,7 @@ edgeai-for-beginners/
 
 ✅ **Postopno učenje**: Teorija → praksa → produkcijska namestitev  
 ✅ **Resnični primeri**: Microsoft, Japan Airlines, implementacije v podjetjih  
-✅ **Praktični vzorci**: 50+ primerov, 10 obsežnih demojev Foundry Local  
+✅ **Praktični vzorci**: 50+ primerov, 10 obsežnih demonstracij Foundry Local  
 ✅ **Osredotočenost na zmogljivost**: 85 % izboljšave hitrosti, 75 % zmanjšanje velikosti  
 ✅ **Večplatformsko**: Windows, mobilno, vgrajeno, hibrid oblak-rob  
 ✅ **Pripravljeno za produkcijo**: Nadzor, skaliranje, varnost, skladnost

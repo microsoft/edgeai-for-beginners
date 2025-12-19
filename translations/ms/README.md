@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T12:49:35+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T09:33:20+00:00",
   "source_file": "README.md",
   "language_code": "ms"
 }
@@ -17,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 [![Permintaan tarik GitHub](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
 [![PRs Dialu-alukan](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-[![Pemerhati GitHub](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
+[![Penonton GitHub](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
 [![Fork GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 [![Bintang GitHub](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
 
@@ -42,7 +42,7 @@ Ikuti langkah-langkah ini untuk memulakan penggunaan sumber ini:
 **Jika anda ingin menyokong bahasa terjemahan tambahan disenaraikan [di sini](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Pengenalan
 
-Selamat datang ke **EdgeAI untuk Pemula** – perjalanan menyeluruh anda ke dalam dunia Transformasi Kecerdasan Buatan Edge. Kursus ini merapatkan jurang antara keupayaan AI yang hebat dan pelaksanaan praktikal di dunia sebenar pada peranti edge, memberi kuasa kepada anda untuk memanfaatkan potensi AI secara langsung di tempat data dijana dan keputusan perlu dibuat.
+Selamat datang ke **EdgeAI untuk Pemula** – perjalanan menyeluruh anda ke dunia transformasi Kecerdasan Buatan Edge. Kursus ini merapatkan jurang antara keupayaan AI yang hebat dan pelaksanaan praktikal di dunia sebenar pada peranti edge, membolehkan anda memanfaatkan potensi AI terus di tempat data dijana dan keputusan perlu dibuat.
 
 ### Apa yang Akan Anda Kuasai
 
@@ -54,7 +54,7 @@ Kursus ini membawa anda dari konsep asas ke pelaksanaan sedia produksi, merangku
 
 ### Mengapa EdgeAI Penting
 
-Edge AI mewakili perubahan paradigma yang menangani cabaran moden yang kritikal:
+Edge AI mewakili perubahan paradigma yang menangani cabaran moden kritikal:
 - **Privasi & Keselamatan**: Memproses data sensitif secara tempatan tanpa pendedahan awan
 - **Prestasi Masa Nyata**: Menghapuskan kelewatan rangkaian untuk aplikasi kritikal masa
 - **Kecekapan Kos**: Mengurangkan penggunaan jalur lebar dan kos pengkomputeran awan
@@ -66,17 +66,17 @@ Edge AI mewakili perubahan paradigma yang menangani cabaran moden yang kritikal:
 Edge AI merujuk kepada menjalankan algoritma AI dan model bahasa secara tempatan pada perkakasan, berhampiran dengan tempat data dijana tanpa bergantung pada sumber awan untuk inferens. Ia mengurangkan kelewatan, meningkatkan privasi, dan membolehkan pembuatan keputusan masa nyata.
 
 ### Prinsip Teras:
-- **Inferens pada peranti**: Model AI dijalankan pada peranti edge (telefon, penghala, mikropengawal, PC industri)
+- **Inferens pada peranti**: Model AI berjalan pada peranti edge (telefon, penghala, mikropengawal, PC industri)
 - **Keupayaan luar talian**: Berfungsi tanpa sambungan internet berterusan
 - **Kelewatan rendah**: Respons segera sesuai untuk sistem masa nyata
 - **Kedaulatan data**: Menyimpan data sensitif secara tempatan, meningkatkan keselamatan dan pematuhan
 
 ### Model Bahasa Kecil (SLMs)
 
-SLMs seperti Phi-4, Mistral-7B, dan Gemma adalah versi dioptimumkan model bahasa besar (LLMs)—dilatih atau disuling untuk:
+SLM seperti Phi-4, Mistral-7B, dan Gemma adalah versi dioptimumkan LLM yang lebih besar—dilatih atau didistilasi untuk:
 - **Jejak memori dikurangkan**: Penggunaan cekap memori peranti edge yang terhad
-- **Permintaan pengkomputeran lebih rendah**: Dioptimumkan untuk prestasi CPU dan GPU edge
-- **Masa permulaan lebih pantas**: Inisialisasi cepat untuk aplikasi responsif
+- **Permintaan pengiraan lebih rendah**: Dioptimumkan untuk prestasi CPU dan GPU edge
+- **Masa mula lebih pantas**: Inisialisasi cepat untuk aplikasi responsif
 
 Mereka membuka keupayaan NLP yang hebat sambil memenuhi kekangan:
 - **Sistem terbenam**: Peranti IoT dan pengawal industri
@@ -94,7 +94,7 @@ Mereka membuka keupayaan NLP yang hebat sambil memenuhi kekangan:
 | [🧠 02](../../Module02) | [Asas Model SLM](./Module02/README.md) | Keluarga model & seni bina | Keluarga Phi • Keluarga Qwen • Keluarga Gemma • BitNET • μModel • Phi-Silica | Pemula | 4-5 jam |
 | [🚀 03](../../Module03) | [Amalan Pelaksanaan SLM](./Module03/README.md) | Pelaksanaan tempatan & awan | Pembelajaran Lanjutan • Persekitaran Tempatan • Pelaksanaan Awan | Pertengahan | 4-5 jam |
 | [⚙️ 04](../../Module04) | [Toolkit Pengoptimuman Model](./Module04/README.md) | Pengoptimuman merentas platform | Pengenalan • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sintesis Aliran Kerja | Pertengahan | 5-6 jam |
-| [🔧 05](../../Module05) | [SLMOps Produksi](./Module05/README.md) | Operasi produksi | Pengenalan SLMOps • Penyulingan Model • Penalaan Halus • Pelaksanaan Produksi | Lanjutan | 5-6 jam |
+| [🔧 05](../../Module05) | [SLMOps Produksi](./Module05/README.md) | Operasi produksi | Pengenalan SLMOps • Distilasi Model • Penalaan Halus • Pelaksanaan Produksi | Lanjutan | 5-6 jam |
 | [🤖 06](../../Module06) | [Ejen AI & Panggilan Fungsi](./Module06/README.md) | Rangka kerja ejen & MCP | Pengenalan Ejen • Panggilan Fungsi • Protokol Konteks Model | Lanjutan | 4-5 jam |
 | [💻 07](../../Module07) | [Pelaksanaan Platform](./Module07/README.md) | Contoh merentas platform | Toolkit AI • Foundry Tempatan • Pembangunan Windows | Lanjutan | 3-4 jam |
 | [🏭 08](../../Module08) | [Toolkit Foundry Tempatan](./Module08/README.md) | Contoh sedia produksi | Aplikasi contoh (lihat butiran di bawah) | Pakar | 8-10 jam |
@@ -140,8 +140,8 @@ Bahan bengkel praktikal menyeluruh dengan pelaksanaan sedia produksi:
 
 ### 🎯 Kompetensi Teras
 - **Seni Bina Edge AI**: Reka sistem AI berfokuskan tempatan dengan integrasi awan
-- **Pengoptimuman Model**: Kuantisasi dan mampatan model untuk penempatan tepi (peningkatan kelajuan 85%, pengurangan saiz 75%)
-- **Penempatan Pelbagai Platform**: Windows, mudah alih, terbenam, dan sistem hibrid awan-tepi
+- **Pengoptimuman Model**: Kuantisasi dan mampatan model untuk penyebaran tepi (peningkatan kelajuan 85%, pengurangan saiz 75%)
+- **Penyebaran Pelbagai Platform**: Windows, mudah alih, terbenam, dan sistem hibrid awan-tepi
 - **Operasi Pengeluaran**: Pemantauan, penskalaan, dan penyelenggaraan AI tepi dalam pengeluaran
 
 ### 🏗️ Projek Praktikal
@@ -161,7 +161,7 @@ Bahan bengkel praktikal menyeluruh dengan pelaksanaan sedia produksi:
 
 0. **📖 Pengenalan** ([Introduction.md](./introduction.md)): Asas EdgeAI + konteks industri + rangka kerja pembelajaran
 1. **📚 Asas** (Modul 01-02): Konsep EdgeAI + keluarga model SLM
-2. **⚙️ Pengoptimuman** (Modul 03-04): Penempatan + rangka kerja kuantisasi  
+2. **⚙️ Pengoptimuman** (Modul 03-04): Penyebaran + rangka kerja kuantisasi  
 3. **🚀 Pengeluaran** (Modul 05-06): SLMOps + ejen AI + panggilan fungsi
 4. **💻 Pelaksanaan** (Modul 07-08): Contoh platform + toolkit Foundry Local
 
@@ -173,7 +173,7 @@ Setiap modul merangkumi teori, latihan praktikal, dan contoh kod sedia pengeluar
 
 **Sektor Industri**: Pembuatan 4.0 • Teknologi Penjagaan Kesihatan • Sistem Autonomi • FinTech • Elektronik Pengguna
 
-**Projek Portfolio**: Sistem multi-ejen • Aplikasi RAG pengeluaran • Penempatan rentas platform • Pengoptimuman prestasi
+**Projek Portfolio**: Sistem multi-ejen • Aplikasi RAG pengeluaran • Penyebaran rentas platform • Pengoptimuman prestasi
 
 ## Struktur Repositori
 
@@ -192,7 +192,7 @@ edgeai-for-beginners/
 
 ## Sorotan Kursus
 
-✅ **Pembelajaran Progresif**: Teori → Amalan → Penempatan pengeluaran  
+✅ **Pembelajaran Progresif**: Teori → Amalan → Penyebaran pengeluaran  
 ✅ **Kajian Kes Sebenar**: Microsoft, Japan Airlines, pelaksanaan perusahaan  
 ✅ **Contoh Praktikal**: 50+ contoh, 10 demo komprehensif Foundry Local  
 ✅ **Fokus Prestasi**: Peningkatan kelajuan 85%, pengurangan saiz 75%  
@@ -203,7 +203,7 @@ edgeai-for-beginners/
 
 ---
 
-**EdgeAI mewakili masa depan penempatan AI**: keutamaan tempatan, pemeliharaan privasi, dan cekap. Kuasai kemahiran ini untuk membina generasi seterusnya aplikasi pintar.
+**EdgeAI mewakili masa depan penyebaran AI**: keutamaan tempatan, pemeliharaan privasi, dan cekap. Kuasai kemahiran ini untuk membina generasi seterusnya aplikasi pintar.
 
 ## Kursus Lain
 
@@ -263,5 +263,5 @@ Jika anda mempunyai maklum balas produk atau ralat semasa membina, lawati:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

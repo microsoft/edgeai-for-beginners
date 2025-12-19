@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T12:18:27+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T09:01:55+00:00",
   "source_file": "README.md",
   "language_code": "it"
 }
@@ -26,7 +26,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Segui questi passaggi per iniziare a utilizzare queste risorse:
 
-1. **Forka il Repository**: Clicca su [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+1. **Forka il Repository**: Clicca [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Clona il Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Unisciti al Discord di Azure AI Foundry e incontra esperti e altri sviluppatori**](https://discord.com/invite/ByRwuEEgH4)
 
@@ -42,11 +42,11 @@ Segui questi passaggi per iniziare a utilizzare queste risorse:
 **Se desideri che vengano supportate ulteriori lingue di traduzione, sono elencate [qui](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introduzione
 
-Benvenuto in **EdgeAI per Principianti** – il tuo percorso completo nel mondo trasformativo dell'Intelligenza Artificiale Edge. Questo corso colma il divario tra potenti capacità di AI e il dispiegamento pratico e reale su dispositivi edge, permettendoti di sfruttare il potenziale dell'AI direttamente dove i dati vengono generati e le decisioni devono essere prese.
+Benvenuto in **EdgeAI per Principianti** – il tuo percorso completo nel mondo trasformativo dell'Intelligenza Artificiale Edge. Questo corso colma il divario tra potenti capacità AI e il dispiegamento pratico e reale su dispositivi edge, permettendoti di sfruttare il potenziale dell'AI direttamente dove i dati vengono generati e le decisioni devono essere prese.
 
 ### Cosa Imparerai
 
-Questo corso ti guida dai concetti fondamentali fino a implementazioni pronte per la produzione, coprendo:
+Questo corso ti guida dai concetti fondamentali fino alle implementazioni pronte per la produzione, coprendo:
 - **Modelli Linguistici Piccoli (SLM)** ottimizzati per il dispiegamento edge
 - **Ottimizzazione consapevole dell'hardware** su piattaforme diverse
 - **Inferenza in tempo reale** con capacità di preservazione della privacy
@@ -63,7 +63,7 @@ Edge AI rappresenta un cambiamento di paradigma che affronta sfide moderne criti
 
 ### Edge AI
 
-Edge AI si riferisce all'esecuzione di algoritmi AI e modelli linguistici localmente sull'hardware, vicino al luogo in cui i dati vengono generati senza fare affidamento su risorse cloud per l'inferenza. Riduce la latenza, migliora la privacy e consente decisioni in tempo reale.
+Edge AI si riferisce all'esecuzione di algoritmi AI e modelli linguistici localmente sull'hardware, vicino al luogo in cui i dati sono generati senza fare affidamento su risorse cloud per l'inferenza. Riduce la latenza, migliora la privacy e consente decisioni in tempo reale.
 
 ### Principi Fondamentali:
 - **Inferenza on-device**: I modelli AI girano su dispositivi edge (telefoni, router, microcontrollori, PC industriali)
@@ -74,7 +74,7 @@ Edge AI si riferisce all'esecuzione di algoritmi AI e modelli linguistici localm
 ### Modelli Linguistici Piccoli (SLM)
 
 Gli SLM come Phi-4, Mistral-7B e Gemma sono versioni ottimizzate di LLM più grandi—addestrati o distillati per:
-- **Riduzione dell'occupazione di memoria**: Uso efficiente della memoria limitata dei dispositivi edge
+- **Ridotto ingombro di memoria**: Uso efficiente della memoria limitata dei dispositivi edge
 - **Minore richiesta di calcolo**: Ottimizzati per prestazioni CPU e GPU edge
 - **Tempi di avvio più rapidi**: Inizializzazione veloce per applicazioni reattive
 
@@ -216,7 +216,7 @@ Il nostro team produce altri corsi! Dai un'occhiata a:
 
 ---
 
-### Azure / Edge / MCP / Agenti
+### Azure / Edge / MCP / Agents
 [![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -263,5 +263,5 @@ Se hai feedback sul prodotto o errori durante lo sviluppo visita:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un traduttore umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

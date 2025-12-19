@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T12:42:59+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T09:26:18+00:00",
   "source_file": "README.md",
   "language_code": "he"
 }
@@ -39,10 +39,10 @@ CO_OP_TRANSLATOR_METADATA:
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](./README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**אם ברצונך לתמוך בשפות תרגום נוספות, הן מפורטות [כאן](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**אם ברצונך לתמוך בשפות תרגום נוספות, הן רשומות [כאן](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## מבוא
 
-ברוכים הבאים ל-**EdgeAI למתחילים** – המסע המקיף שלכם לעולם המהפכני של בינה מלאכותית בקצה. קורס זה גשר בין יכולות AI עוצמתיות לפריסה מעשית במכשירי קצה, ומאפשר לכם למנף את הפוטנציאל של AI ישירות במקום שבו הנתונים נוצרים וההחלטות צריכות להתקבל.
+ברוכים הבאים ל-**EdgeAI למתחילים** – המסע המקיף שלכם לעולם המהפכני של בינה מלאכותית בקצה. קורס זה גשר בין יכולות AI עוצמתיות לפריסה מעשית בעולם האמיתי על מכשירי קצה, ומאפשר לכם למנף את הפוטנציאל של AI ישירות במקום שבו הנתונים נוצרים וההחלטות צריכות להתקבל.
 
 ### מה תלמדו לשלוט בו
 
@@ -50,7 +50,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **מודלים שפתיים קטנים (SLMs)** מותאמים לפריסה בקצה
 - **אופטימיזציה מודעת חומרה** על פני פלטפורמות מגוונות
 - **הסקה בזמן אמת** עם יכולות שמירת פרטיות
-- **אסטרטגיות פריסה לייצור** ליישומי ארגונים
+- **אסטרטגיות פריסה לייצור** עבור יישומי ארגונים
 
 ### למה EdgeAI חשוב
 
@@ -73,7 +73,7 @@ Edge AI מתייחס להרצת אלגוריתמים של AI ומודלים שפ
 
 ### מודלים שפתיים קטנים (SLMs)
 
-SLMs כמו Phi-4, Mistral-7B ו-Gemma הם גרסאות מותאמות של LLMs גדולים יותר – מאומנים או מזוקקים עבור:
+SLMs כמו Phi-4, Mistral-7B ו-Gemma הם גרסאות מותאמות של LLMs גדולים יותר — מאומנים או מזוקקים עבור:
 - **טביעת זיכרון מופחתת**: שימוש יעיל בזיכרון מוגבל של מכשירי קצה
 - **דרישת חישוב נמוכה יותר**: מותאם לביצועי CPU ו-GPU בקצה
 - **זמני אתחול מהירים יותר**: אתחול מהיר ליישומים תגובתיים
@@ -83,9 +83,9 @@ SLMs כמו Phi-4, Mistral-7B ו-Gemma הם גרסאות מותאמות של LLM
 - **מכשירים ניידים**: סמארטפונים וטאבלטים עם יכולות לא מקוונות
 - **מכשירי IoT**: חיישנים ומכשירים חכמים עם משאבים מוגבלים
 - **שרתים בקצה**: יחידות עיבוד מקומיות עם משאבי GPU מוגבלים
-- **מחשבים אישיים**: תרחישי פריסה במחשב שולחני ונייד
+- **מחשבים אישיים**: תרחישי פריסה על שולחן עבודה ונייד
 
-## מודולי הקורס וניווט
+## מודולים וניווט בקורס
 
 | מודול | נושא | תחום מיקוד | תוכן מרכזי | רמה | משך |
 |--------|-------|------------|-------------|--------|----------|
@@ -190,9 +190,9 @@ edgeai-for-beginners/
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
   
-## נקודות מרכזיות בקורס  
+## נקודות עיקריות בקורס  
 
-✅ **למידה הדרגתית**: תיאוריה → פרקטיקה → פריסת ייצור  
+✅ **למידה הדרגתית**: תיאוריה → פרקטיקה → פריסה בייצור  
 ✅ **מקרי בוחן אמיתיים**: Microsoft, Japan Airlines, יישומים ארגוניים  
 ✅ **דוגמאות מעשיות**: 50+ דוגמאות, 10 הדגמות Foundry Local מקיפות  
 ✅ **מיקוד בביצועים**: שיפורי מהירות של 85%, הקטנת גודל ב-75%  
@@ -207,7 +207,7 @@ edgeai-for-beginners/
 
 ## קורסים נוספים  
 
-הצוות שלנו מייצר קורסים נוספים! בדקו:  
+הצוות שלנו מייצר קורסים נוספים! בדוק:  
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
 ### LangChain  
@@ -251,11 +251,11 @@ edgeai-for-beginners/
 
 ## קבלת עזרה  
 
-אם נתקעתם או יש לכם שאלות לגבי בניית אפליקציות AI, הצטרפו ל:  
+אם נתקעת או יש לך שאלות לגבי בניית אפליקציות AI, הצטרף:  
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)  
 
-אם יש לכם משוב על המוצר או שגיאות בזמן בנייה, בקרו ב:  
+אם יש לך משוב על מוצר או שגיאות בזמן בנייה, בקר ב:  
 
 [![פורום מפתחי Microsoft Foundry](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
@@ -263,5 +263,5 @@ edgeai-for-beginners/
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו הוא המקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

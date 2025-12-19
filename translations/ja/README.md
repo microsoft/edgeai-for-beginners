@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T11:56:14+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T08:39:15+00:00",
   "source_file": "README.md",
   "language_code": "ja"
 }
@@ -39,18 +39,18 @@ CO_OP_TRANSLATOR_METADATA:
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](./README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**追加の翻訳言語をご希望の場合は、[こちら](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)にリストされています。**
+**追加の翻訳言語をご希望の場合は、[こちら](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)をご覧ください。**
 ## はじめに
 
 **EdgeAI for Beginners**へようこそ — エッジ人工知能の変革的な世界への包括的な旅路です。このコースは強力なAI機能とエッジデバイス上での実用的な実装のギャップを埋め、データが生成され意思決定が行われる場所で直接AIの可能性を活用できるようにします。
 
 ### 習得できること
 
-このコースでは基本的な概念から本番環境対応の実装までをカバーします：
+このコースでは基本的な概念から本番環境での実装までをカバーします：
 - **エッジ展開に最適化された小型言語モデル（SLM）**
 - **多様なプラットフォームに対応したハードウェア認識最適化**
 - **プライバシー保護機能を備えたリアルタイム推論**
-- **企業向けアプリケーションの本番展開戦略**
+- **企業向けの本番展開戦略**
 
 ### なぜEdgeAIが重要か
 
@@ -63,7 +63,7 @@ Edge AIは現代の重要な課題に対応するパラダイムシフトを表�
 
 ### Edge AIとは
 
-Edge AIは、AIアルゴリズムや言語モデルをクラウドに依存せず、データが生成される近くのハードウェア上でローカルに実行することを指します。これにより遅延が減り、プライバシーが向上し、リアルタイムの意思決定が可能になります。
+Edge AIは、AIアルゴリズムや言語モデルをクラウドに依存せず、データが生成される場所の近くのハードウェア上でローカルに実行することを指します。これにより遅延が減り、プライバシーが向上し、リアルタイムの意思決定が可能になります。
 
 ### コア原則：
 - **オンデバイス推論**：AIモデルはエッジデバイス（スマホ、ルーター、マイクロコントローラー、産業用PC）上で動作
@@ -74,16 +74,16 @@ Edge AIは、AIアルゴリズムや言語モデルをクラウドに依存せ�
 ### 小型言語モデル（SLM）
 
 Phi-4、Mistral-7B、GemmaなどのSLMは、大型LLMの最適化版であり、以下のために訓練または蒸留されています：
-- **メモリフットプリントの削減**：限られたエッジデバイスのメモリを効率的に使用
-- **計算負荷の低減**：CPUやエッジGPUの性能に最適化
-- **高速起動時間**：応答性の高いアプリケーションのための迅速な初期化
+- **メモリ使用量の削減**：限られたエッジデバイスのメモリを効率的に使用
+- **計算負荷の軽減**：CPUやエッジGPUの性能に最適化
+- **高速起動**：応答性の高いアプリケーションのための迅速な初期化
 
 これにより、以下の制約を満たしつつ強力なNLP機能を実現します：
 - **組み込みシステム**：IoTデバイスや産業用コントローラー
 - **モバイルデバイス**：オフライン機能を備えたスマートフォンやタブレット
 - **IoTデバイス**：限られたリソースのセンサーやスマートデバイス
 - **エッジサーバー**：限られたGPUリソースのローカル処理ユニット
-- **パーソナルコンピューター**：デスクトップやノートPCでの展開シナリオ
+- **パーソナルコンピューター**：デスクトップやノートパソコンでの展開シナリオ
 
 ## コースモジュールとナビゲーション
 
@@ -171,7 +171,7 @@ Phi-4、Mistral-7B、GemmaなどのSLMは、大型LLMの最適化版であり、
 
 **技術職種**: EdgeAIソリューションアーキテクト • MLエンジニア（エッジ） • IoT AI開発者 • モバイルAI開発者
 
-**業界分野**: 製造業4.0 • ヘルスケア技術 • 自律システム • フィンテック • 家電製品
+**業界分野**: 製造業4.0 • ヘルスケア技術 • 自律システム • フィンテック • コンシューマーエレクトロニクス
 
 **ポートフォリオプロジェクト**: マルチエージェントシステム • 本番RAGアプリ • クロスプラットフォーム展開 • パフォーマンス最適化
 
@@ -193,7 +193,7 @@ edgeai-for-beginners/
 ## コースのハイライト
 
 ✅ **段階的学習**: 理論 → 実践 → 本番展開  
-✅ **実際の事例研究**: Microsoft、日本航空、企業導入事例  
+✅ **実例ケーススタディ**: Microsoft、日本航空、企業導入事例  
 ✅ **ハンズオンサンプル**: 50以上の例、10の包括的なFoundry Localデモ  
 ✅ **パフォーマンス重視**: 85%の速度向上、75%のサイズ削減  
 ✅ **マルチプラットフォーム**: Windows、モバイル、組み込み、クラウドエッジハイブリッド  
@@ -249,7 +249,7 @@ edgeai-for-beginners/
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
-## ヘルプを得るには
+## ヘルプを得る
 
 AIアプリの構築で行き詰まったり質問がある場合は、以下に参加してください：
 
@@ -263,5 +263,5 @@ AIアプリの構築で行き詰まったり質問がある場合は、以下に
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責事項**：  
-本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
+本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

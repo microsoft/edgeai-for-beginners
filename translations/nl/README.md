@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T12:40:47+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T09:24:01+00:00",
   "source_file": "README.md",
   "language_code": "nl"
 }
@@ -36,15 +36,15 @@ Volg deze stappen om aan de slag te gaan met deze bronnen:
 #### Ondersteund via GitHub Action (Geautomatiseerd & Altijd Up-to-Date)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabisch](../ar/README.md) | [Bengaals](../bn/README.md) | [Bulgaars](../bg/README.md) | [Birmaans (Myanmar)](../my/README.md) | [Chinees (Vereenvoudigd)](../zh/README.md) | [Chinees (Traditioneel, Hong Kong)](../hk/README.md) | [Chinees (Traditioneel, Macau)](../mo/README.md) | [Chinees (Traditioneel, Taiwan)](../tw/README.md) | [Kroatisch](../hr/README.md) | [Tsjechisch](../cs/README.md) | [Deens](../da/README.md) | [Nederlands](./README.md) | [Ests](../et/README.md) | [Fins](../fi/README.md) | [Frans](../fr/README.md) | [Duits](../de/README.md) | [Grieks](../el/README.md) | [Hebreeuws](../he/README.md) | [Hindi](../hi/README.md) | [Hongaars](../hu/README.md) | [Indonesisch](../id/README.md) | [Italiaans](../it/README.md) | [Japans](../ja/README.md) | [Kannada](../kn/README.md) | [Koreaans](../ko/README.md) | [Litouws](../lt/README.md) | [Maleis](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepalees](../ne/README.md) | [Nigeriaans Pidgin](../pcm/README.md) | [Noors](../no/README.md) | [Perzisch (Farsi)](../fa/README.md) | [Pools](../pl/README.md) | [Portugees (Brazilië)](../br/README.md) | [Portugees (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Roemeens](../ro/README.md) | [Russisch](../ru/README.md) | [Servisch (Cyrillisch)](../sr/README.md) | [Slowaaks](../sk/README.md) | [Sloveens](../sl/README.md) | [Spaans](../es/README.md) | [Swahili](../sw/README.md) | [Zweeds](../sv/README.md) | [Tagalog (Filipijns)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thais](../th/README.md) | [Turks](../tr/README.md) | [Oekraïens](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamees](../vi/README.md)
+[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](./README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 **Als je extra vertalingen wilt laten ondersteunen, staan de ondersteunde talen [hier](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introductie
 
-Welkom bij **EdgeAI voor Beginners** – jouw uitgebreide reis in de transformerende wereld van Edge Kunstmatige Intelligentie. Deze cursus overbrugt de kloof tussen krachtige AI-mogelijkheden en praktische, real-world implementatie op edge-apparaten, waardoor je in staat wordt gesteld om het potentieel van AI direct te benutten waar data wordt gegenereerd en beslissingen genomen moeten worden.
+Welkom bij **EdgeAI voor Beginners** – jouw uitgebreide reis in de transformerende wereld van Edge Kunstmatige Intelligentie. Deze cursus overbrugt de kloof tussen krachtige AI-mogelijkheden en praktische, real-world implementatie op edge-apparaten, waardoor je AI's potentieel direct kunt benutten waar data wordt gegenereerd en beslissingen moeten worden genomen.
 
-### Wat je zult beheersen
+### Wat Je Zal Beheersen
 
 Deze cursus neemt je mee van fundamentele concepten tot productieklare implementaties, met onder andere:
 - **Kleine Taalmodellen (SLM's)** geoptimaliseerd voor edge-implementatie
@@ -52,7 +52,7 @@ Deze cursus neemt je mee van fundamentele concepten tot productieklare implement
 - **Realtime inferentie** met privacybeschermende mogelijkheden
 - **Productie-implementatiestrategieën** voor bedrijfsapplicaties
 
-### Waarom EdgeAI belangrijk is
+### Waarom EdgeAI Belangrijk Is
 
 Edge AI vertegenwoordigt een paradigmaverschuiving die kritieke moderne uitdagingen aanpakt:
 - **Privacy & Beveiliging**: Verwerk gevoelige data lokaal zonder blootstelling aan de cloud
@@ -69,7 +69,7 @@ Edge AI verwijst naar het uitvoeren van AI-algoritmen en taalmodellen lokaal op 
 - **On-device inferentie**: AI-modellen draaien op edge-apparaten (telefoons, routers, microcontrollers, industriële pc's)
 - **Offline functionaliteit**: Werkt zonder permanente internetverbinding
 - **Lage latentie**: Onmiddellijke reacties geschikt voor realtime systemen
-- **Data-soevereiniteit**: Houdt gevoelige data lokaal, wat beveiliging en naleving verbetert
+- **Data-soevereiniteit**: Houdt gevoelige data lokaal, verbetert beveiliging en naleving
 
 ### Kleine Taalmodellen (SLM's)
 
@@ -95,7 +95,7 @@ Ze ontsluiten krachtige NLP-mogelijkheden terwijl ze voldoen aan de beperkingen 
 | [🚀 03](../../Module03) | [SLM Implementatie Praktijk](./Module03/README.md) | Lokale & cloud implementatie | Gevorderd Leren • Lokale Omgeving • Cloud Implementatie | Gemiddeld | 4-5 uur |
 | [⚙️ 04](../../Module04) | [Model Optimalisatie Toolkit](./Module04/README.md) | Cross-platform optimalisatie | Introductie • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Workflow Synthese | Gemiddeld | 5-6 uur |
 | [🔧 05](../../Module05) | [SLMOps Productie](./Module05/README.md) | Productie operaties | SLMOps Introductie • Model Distillatie • Fine-tuning • Productie Implementatie | Gevorderd | 5-6 uur |
-| [🤖 06](../../Module06) | [AI Agents & Function Calling](./Module06/README.md) | Agent frameworks & MCP | Agent Introductie • Function Calling • Model Context Protocol | Gevorderd | 4-5 uur |
+| [🤖 06](../../Module06) | [AI Agents & Functie Aanroepen](./Module06/README.md) | Agent frameworks & MCP | Agent Introductie • Functie Aanroepen • Model Context Protocol | Gevorderd | 4-5 uur |
 | [💻 07](../../Module07) | [Platform Implementatie](./Module07/README.md) | Cross-platform voorbeelden | AI Toolkit • Foundry Local • Windows Ontwikkeling | Gevorderd | 3-4 uur |
 | [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Productieklare voorbeelden | Voorbeeldapplicaties (zie details hieronder) | Expert | 8-10 uur |
 
@@ -122,7 +122,7 @@ Uitgebreid hands-on workshopmateriaal met productieklare implementaties:
 - **Sessie Gidsen** - Gedetailleerde markdown gidsen voor elke workshopsessie
 - **Validatie Tools** - Scripts om codekwaliteit te verifiëren en smoke tests uit te voeren
 
-**Wat je zult bouwen:**
+**Wat Je Zal Bouwen:**
 - Lokale AI-chatapplicaties met streaming ondersteuning
 - RAG-pijplijnen met kwaliteitsbeoordeling (RAGAS)
 - Multi-model benchmarking en vergelijkingstools
@@ -136,16 +136,16 @@ Uitgebreid hands-on workshopmateriaal met productieklare implementaties:
 - **Gevorderd Traject**: Modules 05-07 (12-15 uur)
 - **Expert Traject**: Module 08 (8-10 uur)
 
-## Wat je zult bouwen
+## Wat Je Zal Bouwen
 
 ### 🎯 Kerncompetenties
 - **Edge AI Architectuur**: Ontwerp lokaal-eerst AI-systemen met cloudintegratie
 - **Modeloptimalisatie**: Modelle kwantiseren en comprimeren voor edge-implementatie (85% snelheidsverbetering, 75% groottevermindering)  
 - **Multi-platform implementatie**: Windows, mobiel, embedded en cloud-edge hybride systemen  
-- **Productie-operaties**: Monitoring, schaling en onderhoud van edge AI in productie  
+- **Productie-operaties**: Monitoring, schalen en onderhouden van edge AI in productie  
 
 ### 🏗️ Praktische projecten  
-- **Foundry Local Chat-apps**: Windows 11 native applicatie met modelwisselopties  
+- **Foundry Local Chat-apps**: Windows 11 native applicatie met modelwisseloptie  
 - **Multi-agent systemen**: Coördinator met specialistische agenten voor complexe workflows  
 - **RAG-toepassingen**: Lokale documentverwerking met vectorzoekfunctie  
 - **Modelrouters**: Intelligente selectie tussen modellen op basis van taak-analyse  
@@ -155,9 +155,9 @@ Uitgebreid hands-on workshopmateriaal met productieklare implementaties:
 ### 🏢 Industrie-toepassingen  
 **Productie** • **Gezondheidszorg** • **Autonome voertuigen** • **Slimme steden** • **Mobiele apps**  
 
-## Snelstart
+## Snel aan de slag  
 
-**Aanbevolen leertraject** (20-30 uur totaal):
+**Aanbevolen leertraject** (20-30 uur totaal):  
 
 0. **📖 Introductie** ([Introduction.md](./introduction.md)): EdgeAI basis + industriecontext + leerframework  
 1. **📚 Basis** (Modules 01-02): EdgeAI concepten + SLM model-families  
@@ -167,7 +167,7 @@ Uitgebreid hands-on workshopmateriaal met productieklare implementaties:
 
 Elke module bevat theorie, praktische oefeningen en productieklaar codevoorbeelden.  
 
-## Carrière-impact
+## Carrière-impact  
 
 **Technische rollen**: EdgeAI Solutions Architect • ML Engineer (Edge) • IoT AI Developer • Mobile AI Developer  
 
@@ -175,7 +175,7 @@ Elke module bevat theorie, praktische oefeningen en productieklaar codevoorbeeld
 
 **Portfolio-projecten**: Multi-agent systemen • Productie RAG-apps • Cross-platform implementatie • Prestatieoptimalisatie  
 
-## Repositoriumstructuur
+## Repositoriumstructuur  
 
 ```
 edgeai-for-beginners/
@@ -190,72 +190,72 @@ edgeai-for-beginners/
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
   
-## Cursushoogtepunten
+## Cursushoogtepunten  
 
 ✅ **Progressief leren**: Theorie → Praktijk → Productie-implementatie  
 ✅ **Echte casestudies**: Microsoft, Japan Airlines, enterprise-implementaties  
 ✅ **Hands-on voorbeelden**: 50+ voorbeelden, 10 uitgebreide Foundry Local demo’s  
 ✅ **Prestatiegericht**: 85% snelheidsverbeteringen, 75% grootteverminderingen  
 ✅ **Multi-platform**: Windows, mobiel, embedded, cloud-edge hybride  
-✅ **Productieklaar**: Monitoring, schaling, beveiliging, compliance-frameworks  
+✅ **Productieklaar**: Monitoring, schalen, beveiliging, compliance-frameworks  
 
 📖 **[Studiegids beschikbaar](STUDY_GUIDE.md)**: Gestructureerd 20-uur leertraject met tijdsindeling en zelfevaluatietools.  
 
----
+---  
 
 **EdgeAI vertegenwoordigt de toekomst van AI-implementatie**: lokaal-georiënteerd, privacy-beschermend en efficiënt. Beheers deze vaardigheden om de volgende generatie intelligente applicaties te bouwen.  
 
-## Andere cursussen
+## Andere cursussen  
 
-Ons team produceert ook andere cursussen! Bekijk:
+Ons team produceert ook andere cursussen! Bekijk:  
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
 ### LangChain  
-[![LangChain4j voor beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
-[![LangChain.js voor beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
 
 ---  
 
 ### Azure / Edge / MCP / Agents  
-[![AZD voor beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Edge AI voor beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![MCP voor beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![AI Agents voor beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
  
 ### Generatieve AI-serie  
-[![Generatieve AI voor beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Generatieve AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
-[![Generatieve AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
-[![Generatieve AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
 
 ---  
  
 ### Kernleren  
-[![ML voor beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Data Science voor beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
-[![AI voor beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Cybersecurity voor beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
-[![Webontwikkeling voor beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
-[![IoT voor beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
-[![XR-ontwikkeling voor beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
+[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
+[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
+[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
  
 ### Copilot-serie  
-[![Copilot voor AI paired programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
-[![Copilot voor C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
+[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
+[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->  
 
-## Hulp krijgen
+## Hulp krijgen  
 
-Als je vastloopt of vragen hebt over het bouwen van AI-apps, sluit je aan bij:
+Als je vastloopt of vragen hebt over het bouwen van AI-apps, sluit je aan bij:  
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)  
 
-Als je productfeedback hebt of fouten tegenkomt tijdens het bouwen, bezoek dan:
+Als je productfeedback hebt of fouten tegenkomt tijdens het bouwen, bezoek:  
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
