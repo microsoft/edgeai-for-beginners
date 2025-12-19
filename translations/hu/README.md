@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T15:58:34+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T12:56:27+00:00",
   "source_file": "README.md",
   "language_code": "hu"
 }
@@ -50,11 +50,11 @@ Ez a tanfolyam az alapfogalmaktól a gyártásra kész megvalósításokig vezet
 - **Kis nyelvi modellek (SLM-ek)**, amelyek az élő eszközökre optimalizáltak
 - **Hardver-tudatos optimalizáció** különböző platformokon
 - **Valós idejű következtetés** adatvédelmi képességekkel
-- **Gyártásra való telepítési stratégiák** vállalati alkalmazásokhoz
+- **Gyártásra történő telepítési** stratégiák vállalati alkalmazásokhoz
 
 ### Miért fontos az EdgeAI
 
-Az Edge AI paradigmaváltást jelent, amely a kritikus modern kihívásokat kezeli:
+Az Edge AI paradigmaváltást jelent, amely a modern kihívásokat kezeli:
 - **Adatvédelem és biztonság**: Érzékeny adatokat helyben dolgoz fel, felhő nélkül
 - **Valós idejű teljesítmény**: Megszünteti a hálózati késleltetést időkritikus alkalmazásoknál
 - **Költséghatékonyság**: Csökkenti a sávszélesség és felhőszámítási költségeket
@@ -63,17 +63,17 @@ Az Edge AI paradigmaváltást jelent, amely a kritikus modern kihívásokat keze
 
 ### Edge AI
 
-Az Edge AI az AI algoritmusok és nyelvi modellek helyi futtatását jelenti a hardveren, közel az adatok keletkezési helyéhez, felhő erőforrások nélkül a következtetéshez. Csökkenti a késleltetést, növeli az adatvédelmet, és lehetővé teszi a valós idejű döntéshozatalt.
+Az Edge AI az MI algoritmusok és nyelvi modellek helyi futtatását jelenti hardveren, közel az adatok keletkezési helyéhez, felhő erőforrások nélkül a következtetéshez. Csökkenti a késleltetést, növeli az adatvédelmet, és lehetővé teszi a valós idejű döntéshozatalt.
 
 ### Alapelvek:
-- **Helyi következtetés**: Az AI modellek élő eszközökön futnak (telefonok, routerek, mikrokontrollerek, ipari PC-k)
+- **Helyi következtetés**: MI modellek futnak élő eszközökön (telefonok, routerek, mikrokontrollerek, ipari PC-k)
 - **Offline működés**: Internetkapcsolat nélkül is működik
 - **Alacsony késleltetés**: Azonnali válaszok valós idejű rendszerekhez
 - **Adatszuverenitás**: Érzékeny adatokat helyben tart, javítva a biztonságot és megfelelést
 
 ### Kis nyelvi modellek (SLM-ek)
 
-Az olyan SLM-ek, mint a Phi-4, Mistral-7B és Gemma, nagyobb LLM-ek optimalizált változatai – tanították vagy desztillálták őket:
+Az olyan SLM-ek, mint a Phi-4, Mistral-7B és Gemma, optimalizált változatai a nagyobb LLM-eknek – tanították vagy desztillálták őket:
 - **Csökkentett memóriaigény**: Hatékony használat korlátozott élő eszköz memóriánál
 - **Alacsonyabb számítási igény**: CPU és élő GPU teljesítményre optimalizált
 - **Gyorsabb indítási idő**: Gyors inicializáció a reszponzív alkalmazásokhoz
@@ -82,7 +82,7 @@ Erőteljes NLP képességeket nyitnak meg, miközben megfelelnek az alábbi korl
 - **Beágyazott rendszerek**: IoT eszközök és ipari vezérlők
 - **Mobil eszközök**: Okostelefonok és táblagépek offline képességekkel
 - **IoT eszközök**: Érzékelők és okoseszközök korlátozott erőforrásokkal
-- **Edge szerverek**: Helyi feldolgozó egységek korlátozott GPU erőforrásokkal
+- **Élő szerverek**: Helyi feldolgozó egységek korlátozott GPU erőforrásokkal
 - **Személyi számítógépek**: Asztali és laptop telepítési forgatókönyvek
 
 ## Tanfolyam modulok és navigáció
@@ -95,8 +95,8 @@ Erőteljes NLP képességeket nyitnak meg, miközben megfelelnek az alábbi korl
 | [🚀 03](../../Module03) | [SLM telepítési gyakorlat](./Module03/README.md) | Helyi és felhő telepítés | Haladó tanulás • Helyi környezet • Felhő telepítés | Középhaladó | 4-5 óra |
 | [⚙️ 04](../../Module04) | [Modell optimalizációs eszköztár](./Module04/README.md) | Platformok közötti optimalizáció | Bevezetés • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Munkafolyamat szintézis | Középhaladó | 5-6 óra |
 | [🔧 05](../../Module05) | [SLMOps gyártásban](./Module05/README.md) | Gyártási műveletek | SLMOps bevezetés • Modell desztilláció • Finomhangolás • Gyártásba telepítés | Haladó | 5-6 óra |
-| [🤖 06](../../Module06) | [AI ügynökök és függvényhívás](./Module06/README.md) | Ügynök keretrendszerek és MCP | Ügynök bevezetés • Függvényhívás • Modell kontextus protokoll | Haladó | 4-5 óra |
-| [💻 07](../../Module07) | [Platform megvalósítás](./Module07/README.md) | Platformok közötti példák | AI eszköztár • Foundry Local • Windows fejlesztés | Haladó | 3-4 óra |
+| [🤖 06](../../Module06) | [MI ügynökök és függvényhívás](./Module06/README.md) | Ügynök keretrendszerek és MCP | Ügynök bevezetés • Függvényhívás • Modell kontextus protokoll | Haladó | 4-5 óra |
+| [💻 07](../../Module07) | [Platform megvalósítás](./Module07/README.md) | Platformok közötti példák | MI eszköztár • Foundry Local • Windows fejlesztés | Haladó | 3-4 óra |
 | [🏭 08](../../Module08) | [Foundry Local eszköztár](./Module08/README.md) | Gyártásra kész példák | Mintaalkalmazások (lásd részletek lent) | Szakértő | 8-10 óra |
 
 ### 🏭 **08. modul: Mintaalkalmazások**
@@ -114,7 +114,7 @@ Erőteljes NLP képességeket nyitnak meg, miközben megfelelnek az alábbi korl
 
 ### 🎓 **Műhely: Gyakorlati tanulási út**
 
-Átfogó gyakorlati műhelyanyagok gyártásra kész megvalósításokkal:
+Átfogó gyakorlati műhely anyagok gyártásra kész megvalósításokkal:
 
 - **[Műhely útmutató](./Workshop/Readme.md)** - Teljes tanulási célok, eredmények és forrás navigáció
 - **Python minták** (6 alkalom) - Frissítve legjobb gyakorlatokkal, hibakezeléssel és részletes dokumentációval
@@ -123,7 +123,7 @@ Erőteljes NLP képességeket nyitnak meg, miközben megfelelnek az alábbi korl
 - **Érvényesítő eszközök** - Szkriptek a kódminőség ellenőrzésére és gyors tesztek futtatására
 
 **Amit építeni fog:**
-- Helyi AI chat alkalmazások streaming támogatással
+- Helyi MI chat alkalmazások streaming támogatással
 - RAG csővezetékek minőségértékeléssel (RAGAS)
 - Többmodell benchmark és összehasonlító eszközök
 - Többügynökös összehangoló rendszerek
@@ -138,11 +138,11 @@ Erőteljes NLP képességeket nyitnak meg, miközben megfelelnek az alábbi korl
 
 ## Amit építeni fog
 
-### 🎯 Alapkészségek
-- **Edge AI architektúra**: Helyi első AI rendszerek tervezése felhő integrációval
-- **Modelloptimalizálás**: Modellek kvantálása és tömörítése élőhelyi telepítéshez (85%-os sebességnövekedés, 75%-os méretcsökkenés)  
-- **Többplatformos telepítés**: Windows, mobil, beágyazott és felhő-élőhely hibrid rendszerek  
-- **Termelési műveletek**: Élőhelyi AI figyelése, skálázása és karbantartása termelésben  
+### 🎯 Alapvető kompetenciák
+- **Edge AI architektúra**: Helyi első MI rendszerek tervezése felhő integrációval
+- **Modelloptimalizálás**: Modellek kvantálása és tömörítése élre történő telepítéshez (85%-os sebességnövekedés, 75%-os méretcsökkenés)  
+- **Többplatformos telepítés**: Windows, mobil, beágyazott és felhő-él hibrid rendszerek  
+- **Termelési műveletek**: Él AI figyelése, skálázása és karbantartása termelésben  
 
 ### 🏗️ Gyakorlati projektek  
 - **Foundry Local Chat alkalmazások**: Windows 11 natív alkalmazás modellváltással  
@@ -196,20 +196,26 @@ edgeai-for-beginners/
 ✅ **Valós esettanulmányok**: Microsoft, Japan Airlines, vállalati megvalósítások  
 ✅ **Gyakorlati példák**: 50+ példa, 10 átfogó Foundry Local demó  
 ✅ **Teljesítmény fókusz**: 85%-os sebességnövekedés, 75%-os méretcsökkenés  
-✅ **Többplatformos**: Windows, mobil, beágyazott, felhő-élőhely hibrid  
+✅ **Többplatformos**: Windows, mobil, beágyazott, felhő-él hibrid  
 ✅ **Termelésre kész**: Figyelés, skálázás, biztonság, megfelelőségi keretrendszerek  
 
 📖 **[Tanulmányi útmutató elérhető](STUDY_GUIDE.md)**: Strukturált 20 órás tanulási útvonal időbeosztási útmutatóval és önértékelő eszközökkel.  
 
 ---  
 
-**Az EdgeAI az AI telepítés jövőjét képviseli**: helyi elsődlegesség, adatvédelem és hatékonyság. Sajátítsd el ezeket a készségeket a következő generációs intelligens alkalmazások építéséhez.  
+**Az EdgeAI az AI telepítés jövőjét képviseli**: helyi első, adatvédelmet tiszteletben tartó és hatékony. Sajátítsd el ezeket a készségeket a következő generációs intelligens alkalmazások építéséhez.  
 
 ## Egyéb tanfolyamok  
 
 Csapatunk más tanfolyamokat is készít! Nézd meg:  
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
+### LangChain  
+[![LangChain4j kezdőknek](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js kezdőknek](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+
+---  
+
 ### Azure / Edge / MCP / Ügynökök  
 [![AZD kezdőknek](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Edge AI kezdőknek](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -257,5 +263,5 @@ Ha termék-visszajelzésed vagy hibák vannak az építés során, látogass el 
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Jogi nyilatkozat**:
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

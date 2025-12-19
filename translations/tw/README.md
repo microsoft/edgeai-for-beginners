@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T14:45:56+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T11:53:57+00:00",
   "source_file": "README.md",
   "language_code": "tw"
 }
@@ -26,9 +26,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 請依照以下步驟開始使用這些資源：
 
-1. **Fork 倉庫**：點擊 [![GitHub 分支](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Clone 倉庫**：`git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**加入 Azure AI Foundry Discord，與專家及開發者交流**](https://discord.com/invite/ByRwuEEgH4)
+1. **分支此儲存庫**：點擊 [![GitHub 分支](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **克隆此儲存庫**：`git clone https://github.com/microsoft/edgeai-for-beginners.git`
+3. [**加入 Azure AI Foundry Discord，與專家及其他開發者交流**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 多語言支援
@@ -39,26 +39,26 @@ CO_OP_TRANSLATOR_METADATA:
 [阿拉伯語](../ar/README.md) | [孟加拉語](../bn/README.md) | [保加利亞語](../bg/README.md) | [緬甸語](../my/README.md) | [中文（簡體）](../zh/README.md) | [中文（繁體，香港）](../hk/README.md) | [中文（繁體，澳門）](../mo/README.md) | [中文（繁體，台灣）](./README.md) | [克羅埃西亞語](../hr/README.md) | [捷克語](../cs/README.md) | [丹麥語](../da/README.md) | [荷蘭語](../nl/README.md) | [愛沙尼亞語](../et/README.md) | [芬蘭語](../fi/README.md) | [法語](../fr/README.md) | [德語](../de/README.md) | [希臘語](../el/README.md) | [希伯來語](../he/README.md) | [印地語](../hi/README.md) | [匈牙利語](../hu/README.md) | [印尼語](../id/README.md) | [義大利語](../it/README.md) | [日語](../ja/README.md) | [坎納達語](../kn/README.md) | [韓語](../ko/README.md) | [立陶宛語](../lt/README.md) | [馬來語](../ms/README.md) | [馬拉雅拉姆語](../ml/README.md) | [馬拉地語](../mr/README.md) | [尼泊爾語](../ne/README.md) | [奈及利亞皮欽語](../pcm/README.md) | [挪威語](../no/README.md) | [波斯語（法爾西語）](../fa/README.md) | [波蘭語](../pl/README.md) | [葡萄牙語（巴西）](../br/README.md) | [葡萄牙語（葡萄牙）](../pt/README.md) | [旁遮普語（古魯穆奇文）](../pa/README.md) | [羅馬尼亞語](../ro/README.md) | [俄語](../ru/README.md) | [塞爾維亞語（西里爾字母）](../sr/README.md) | [斯洛伐克語](../sk/README.md) | [斯洛文尼亞語](../sl/README.md) | [西班牙語](../es/README.md) | [斯瓦希里語](../sw/README.md) | [瑞典語](../sv/README.md) | [他加祿語（菲律賓語）](../tl/README.md) | [泰米爾語](../ta/README.md) | [泰盧固語](../te/README.md) | [泰語](../th/README.md) | [土耳其語](../tr/README.md) | [烏克蘭語](../uk/README.md) | [烏爾都語](../ur/README.md) | [越南語](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**如果您希望支援更多翻譯語言，請參考 [此處](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**如果您希望支援更多翻譯語言，請參考[此處](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## 介紹
 
-歡迎來到 **EdgeAI 初學者指南** — 您全面探索邊緣人工智慧變革世界的旅程。本課程架起強大 AI 能力與實際、現場部署於邊緣裝置之間的橋樑，使您能直接在資料產生與決策發生的地方發揮 AI 潛力。
+歡迎來到 **EdgeAI 初學者指南** — 您全面探索邊緣人工智慧變革世界的旅程。本課程架起強大 AI 能力與實際、真實世界邊緣裝置部署之間的橋樑，使您能直接在資料產生與決策需要發生的地方，發揮 AI 的潛力。
 
 ### 您將掌握的內容
 
-本課程帶您從基礎概念到生產級實作，涵蓋：
+本課程帶您從基礎概念到生產就緒的實作，涵蓋：
 - **小型語言模型（SLMs）**，針對邊緣部署優化
-- **硬體感知優化**，跨多平台調整
+- **硬體感知優化**，跨多種平台
 - **即時推論**，具備隱私保護功能
-- **生產部署**，企業應用策略
+- **企業應用的生產部署**策略
 
 ### 為什麼 EdgeAI 重要
 
 Edge AI 代表一種範式轉移，解決現代關鍵挑戰：
-- **隱私與安全**：本地處理敏感資料，避免雲端暴露
-- **即時效能**：消除網路延遲，適用時間關鍵應用
+- **隱私與安全**：在本地處理敏感資料，無需暴露於雲端
+- **即時效能**：消除網路延遲，適用於時間敏感應用
 - **成本效益**：降低頻寬與雲端運算費用
-- **韌性運作**：網路中斷時仍維持功能
+- **韌性運作**：網路中斷時仍能維持功能
 - **法規遵循**：符合資料主權要求
 
 ### 邊緣人工智慧
@@ -69,7 +69,7 @@ Edge AI 指在硬體本地執行 AI 演算法與語言模型，靠近資料產�
 - **裝置端推論**：AI 模型在邊緣裝置（手機、路由器、微控制器、工業電腦）上運行
 - **離線能力**：無需持續網路連線即可運作
 - **低延遲**：即時回應，適合即時系統
-- **資料主權**：敏感資料保留本地，提升安全與合規
+- **資料主權**：敏感資料保留在本地，提升安全與合規性
 
 ### 小型語言模型（SLMs）
 
@@ -82,7 +82,7 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本，經過訓�
 - **嵌入式系統**：物聯網裝置與工業控制器
 - **行動裝置**：具備離線能力的智慧型手機與平板
 - **物聯網裝置**：資源有限的感測器與智慧裝置
-- **邊緣伺服器**：有限 GPU 資源的本地處理單元
+- **邊緣伺服器**：具有限制 GPU 資源的本地處理單元
 - **個人電腦**：桌面與筆記型電腦部署場景
 
 ## 課程模組與導覽
@@ -97,7 +97,7 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本，經過訓�
 | [🔧 05](../../Module05) | [SLMOps 生產](./Module05/README.md) | 生產運營 | SLMOps 介紹 • 模型蒸餾 • 微調 • 生產部署 | 進階 | 5-6 小時 |
 | [🤖 06](../../Module06) | [AI 代理與函式呼叫](./Module06/README.md) | 代理框架與 MCP | 代理介紹 • 函式呼叫 • 模型上下文協定 | 進階 | 4-5 小時 |
 | [💻 07](../../Module07) | [平台實作](./Module07/README.md) | 跨平台範例 | AI 工具包 • Foundry Local • Windows 開發 | 進階 | 3-4 小時 |
-| [🏭 08](../../Module08) | [Foundry Local 工具包](./Module08/README.md) | 生產級範例 | 範例應用（詳見下方） | 專家 | 8-10 小時 |
+| [🏭 08](../../Module08) | [Foundry Local 工具包](./Module08/README.md) | 生產就緒範例 | 範例應用（詳見下方） | 專家 | 8-10 小時 |
 
 ### 🏭 **模組 08：範例應用**
 
@@ -114,13 +114,13 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本，經過訓�
 
 ### 🎓 **工作坊：實作學習路徑**
 
-完整實作工作坊教材，含生產級實作：
+完整的實作工作坊教材，包含生產就緒的實作：
 
 - **[工作坊指南](./Workshop/Readme.md)** — 完整學習目標、成果與資源導覽
 - **Python 範例**（6 堂課）— 更新最佳實踐、錯誤處理與完整文件
 - **Jupyter 筆記本**（8 個互動式）— 逐步教學，含基準測試與效能監控
-- **課程指南** — 每堂工作坊課程詳細 Markdown 指南
-- **驗證工具** — 驗證程式碼品質與執行煙霧測試的腳本
+- **課程指南** — 每堂工作坊課程的詳細 markdown 指南
+- **驗證工具** — 驗證程式碼品質與執行冒煙測試的腳本
 
 **您將打造：**
 - 支援串流的本地 AI 聊天應用
@@ -169,13 +169,13 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本，經過訓�
 
 ## 職涯影響
 
-**技術職位**：EdgeAI 解決方案架構師 • 邊緣機器學習工程師 • 物聯網 AI 開發者 • 行動 AI 開發者
+**技術職務**：EdgeAI 解決方案架構師 • 邊緣機器學習工程師 • 物聯網 AI 開發者 • 行動 AI 開發者
 
-**產業領域**：製造4.0 • 醫療科技 • 自主系統 • 金融科技 • 消費性電子
+**產業領域**：製造 4.0 • 醫療科技 • 自主系統 • 金融科技 • 消費性電子
 
 **作品集專案**：多代理系統 • 生產級 RAG 應用 • 跨平台部署 • 性能優化
 
-## 倉庫結構
+## 儲存庫結構
 
 ```
 edgeai-for-beginners/
@@ -207,10 +207,16 @@ edgeai-for-beginners/
 
 ## 其他課程
 
-我們團隊還有其他課程！歡迎參考：
+我們團隊還有其他課程！請參考：
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
-### Azure / Edge / MCP / 代理
+### LangChain
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
+
+---
+
+### Azure / Edge / MCP / Agents
 [![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -257,5 +263,5 @@ edgeai-for-beginners/
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

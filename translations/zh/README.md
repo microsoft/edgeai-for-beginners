@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T14:38:34+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T11:46:23+00:00",
   "source_file": "README.md",
   "language_code": "zh"
 }
@@ -27,7 +27,7 @@ CO_OP_TRANSLATOR_METADATA:
 按照以下步骤开始使用这些资源：
 
 1. **Fork 仓库**：点击 [![GitHub 分叉](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **克隆仓库**： `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+2. **克隆仓库**：`git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**加入 Azure AI Foundry Discord，结识专家和开发者**](https://discord.com/invite/ByRwuEEgH4)
 
 
@@ -42,7 +42,7 @@ CO_OP_TRANSLATOR_METADATA:
 **如果您希望支持更多翻译语言，列表见[这里](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## 介绍
 
-欢迎来到 **EdgeAI 初学者指南** —— 您通往边缘人工智能变革世界的全面旅程。本课程架起了强大 AI 能力与边缘设备实际部署之间的桥梁，使您能够直接在数据生成和决策发生的地方利用 AI 的潜力。
+欢迎来到 **EdgeAI 初学者指南** —— 您通往边缘人工智能变革世界的全面旅程。本课程架起了强大 AI 能力与边缘设备实际部署之间的桥梁，使您能够直接在数据生成和决策发生的地方发挥 AI 的潜力。
 
 ### 您将掌握的内容
 
@@ -73,7 +73,7 @@ Edge AI 指的是在硬件本地运行 AI 算法和语言模型，靠近数据�
 
 ### 小型语言模型（SLMs）
 
-SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的优化版本——经过训练或蒸馏以实现：
+SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的优化版本——通过训练或蒸馏实现：
 - **内存占用减少**：高效利用边缘设备有限内存
 - **计算需求降低**：针对 CPU 和边缘 GPU 性能优化
 - **启动速度更快**：快速初始化，提升响应速度
@@ -101,16 +101,16 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的优化版本——经过�
 
 ### 🏭 **模块 08：示例应用**
 
-- [01: REST 聊天快速入门](./Module08/samples/01/README.md)
-- [02: OpenAI SDK 集成](./Module08/samples/02/README.md)
-- [03: 模型发现与基准测试](./Module08/samples/03/README.md)
-- [04: Chainlit RAG 应用](./Module08/samples/04/README.md)
-- [05: 多代理编排](./Module08/samples/05/README.md)
-- [06: 模型即工具路由器](./Module08/samples/06/README.md)
-- [07: 直接 API 客户端](./Module08/samples/07/README.md)
-- [08: Windows 11 聊天应用](./Module08/samples/08/README.md)
-- [09: 高级多代理系统](./Module08/samples/09/README.md)
-- [10: Foundry 工具框架](./Module08/samples/10/README.md)
+- [01：REST 聊天快速入门](./Module08/samples/01/README.md)
+- [02：OpenAI SDK 集成](./Module08/samples/02/README.md)
+- [03：模型发现与基准测试](./Module08/samples/03/README.md)
+- [04：Chainlit RAG 应用](./Module08/samples/04/README.md)
+- [05：多代理编排](./Module08/samples/05/README.md)
+- [06：模型即工具路由器](./Module08/samples/06/README.md)
+- [07：直接 API 客户端](./Module08/samples/07/README.md)
+- [08：Windows 11 聊天应用](./Module08/samples/08/README.md)
+- [09：高级多代理系统](./Module08/samples/09/README.md)
+- [10：Foundry 工具框架](./Module08/samples/10/README.md)
 
 ### 🎓 **工作坊：动手学习路径**
 
@@ -125,7 +125,7 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的优化版本——经过�
 **您将构建：**
 - 支持流式传输的本地 AI 聊天应用
 - 带质量评估的 RAG 流水线（RAGAS）
-- 多模型基准测试与比较工具
+- 多模型基准测试和比较工具
 - 多代理编排系统
 - 基于任务选择的智能模型路由
 
@@ -139,9 +139,9 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的优化版本——经过�
 ## 您将构建的内容
 
 ### 🎯 核心能力
-- **边缘 AI 架构**：设计以本地优先、云端集成的 AI 系统
-- **模型优化**：对模型进行量化和压缩以实现边缘部署（提升85%速度，减少75%体积）  
-- **多平台部署**：支持Windows、移动端、嵌入式及云边混合系统  
+- **Edge AI 架构**：设计以本地为先、云端集成的 AI 系统
+- **模型优化**：量化和压缩模型以实现边缘部署（提升85%速度，减少75%体积）  
+- **多平台部署**：Windows、移动端、嵌入式及云边混合系统  
 - **生产运维**：监控、扩展及维护生产环境中的边缘AI  
 
 ### 🏗️ 实践项目  
@@ -207,10 +207,16 @@ edgeai-for-beginners/
 
 ## 其他课程  
 
-我们团队还制作了其他课程！请查看：  
+我们的团队还制作了其他课程！请查看：  
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
-### Azure / Edge / MCP / 智能体  
+### LangChain  
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+
+---  
+
+### Azure / Edge / MCP / Agents  
 [![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -257,5 +263,5 @@ edgeai-for-beginners/
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免责声明**：  
-本文件由人工智能翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译。虽然我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译而成。尽管我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

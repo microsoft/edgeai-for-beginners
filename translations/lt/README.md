@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T16:26:15+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T13:22:01+00:00",
   "source_file": "README.md",
   "language_code": "lt"
 }
@@ -12,7 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ![Kurso viršelio paveikslėlis](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.lt.png)
 
-[![GitHub bendradarbiai](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
+[![GitHub indėlininkai](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub problemos](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
 [![GitHub pull-užklausos](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
 [![PRs Sveiki](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Sekite šiuos veiksmus, kad pradėtumėte naudotis šiomis ištekliais:
+Sekite šiuos žingsnius, kad pradėtumėte naudotis šiomis ištekliais:
 
 1. **Padarykite šaką (Fork) saugykloje**: Spustelėkite [![GitHub šakos](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Klonuokite saugyklą**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
@@ -57,7 +57,7 @@ Sveiki atvykę į **EdgeAI pradedantiesiems** – jūsų išsamų kelionę į tr
 Edge AI reiškia paradigmų pokytį, kuris sprendžia svarbias šiuolaikines problemas:
 - **Privatumas ir saugumas**: Apdorokite jautrius duomenis vietoje, neatskleisdami debesijai
 - **Realaus laiko našumas**: Pašalinkite tinklo delsą laiko kritinėms programoms
-- **Kainų efektyvumas**: Sumažinkite pralaidumą ir debesų kompiuterijos išlaidas
+- **Kainų efektyvumas**: Sumažinkite pralaidumo ir debesų skaičiavimo išlaidas
 - **Atsparios operacijos**: Išlaikykite funkcionalumą tinklo gedimų metu
 - **Reguliavimo atitiktis**: Atitikite duomenų suvereniteto reikalavimus
 
@@ -69,13 +69,13 @@ Edge AI reiškia DI algoritmų ir kalbos modelių vykdymą vietoje, arti duomen�
 - **Vietinis spėjimas**: DI modeliai veikia krašto įrenginiuose (telefonuose, maršrutizatoriuose, mikrovaldikliuose, pramoniniuose kompiuteriuose)
 - **Veikimas be interneto**: Funkcionuoja be nuolatinio interneto ryšio
 - **Mažas delsas**: Akimirksniu atsako, tinkami realaus laiko sistemoms
-- **Duomenų suverenitetas**: Jautrius duomenis laiko vietoje, gerindamas saugumą ir atitiktį
+- **Duomenų suverenitetas**: Jautri informacija lieka vietoje, gerinant saugumą ir atitiktį
 
 ### Maži kalbos modeliai (SLM)
 
-SLM, tokie kaip Phi-4, Mistral-7B ir Gemma, yra optimizuotos didesnių LLM versijos – apmokytos arba distiliuotos siekiant:
-- **Sumažinti atminties poreikį**: Efektyvus ribotos krašto įrenginių atminties naudojimas
-- **Mažesnės skaičiavimo sąnaudos**: Optimizuoti CPU ir krašto GPU našumui
+SLM, tokie kaip Phi-4, Mistral-7B ir Gemma, yra optimizuotos didesnių LLM versijos – apmokytos arba distiliuotos tam, kad:
+- **Sumažintų atminties poreikį**: Efektyvus ribotos krašto įrenginių atminties naudojimas
+- **Mažesnis skaičiavimo poreikis**: Optimizuoti CPU ir krašto GPU našumui
 - **Greitesnis paleidimas**: Greita inicializacija reaguojančioms programoms
 
 Jie atveria galingas NLP galimybes, atitinkančias:
@@ -90,14 +90,14 @@ Jie atveria galingas NLP galimybes, atitinkančias:
 | Modulis | Tema | Dėmesio sritis | Pagrindinė turinys | Lygis | Trukmė |
 |--------|-------|------------|-------------|--------|----------|
 | [📖 00 ](./introduction.md) | [Įvadas į EdgeAI](./introduction.md) | Pagrindai ir kontekstas | EdgeAI apžvalga • Pramonės taikymai • SLM įvadas • Mokymosi tikslai | Pradedantysis | 1-2 val |
-| [📚 01](../../Module01) | [EdgeAI pagrindai](./Module01/README.md) | Debesijos ir krašto DI palyginimas | EdgeAI pagrindai • Realūs atvejai • Įgyvendinimo vadovas • Krašto diegimas | Pradedantysis | 3-4 val |
+| [📚 01](../../Module01) | [EdgeAI pagrindai](./Module01/README.md) | Debesijos ir krašto DI palyginimas | EdgeAI pagrindai • Realūs atvejų tyrimai • Įgyvendinimo vadovas • Krašto diegimas | Pradedantysis | 3-4 val |
 | [🧠 02](../../Module02) | [SLM modelių pagrindai](./Module02/README.md) | Modelių šeimos ir architektūra | Phi šeima • Qwen šeima • Gemma šeima • BitNET • μModel • Phi-Silica | Pradedantysis | 4-5 val |
 | [🚀 03](../../Module03) | [SLM diegimo praktika](./Module03/README.md) | Vietinis ir debesijos diegimas | Pažangus mokymasis • Vietinė aplinka • Debesijos diegimas | Vidutinis | 4-5 val |
 | [⚙️ 04](../../Module04) | [Modelių optimizavimo įrankiai](./Module04/README.md) | Kryžminė platformų optimizacija | Įvadas • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Darbo eigos sintezė | Vidutinis | 5-6 val |
 | [🔧 05](../../Module05) | [SLMOps gamyba](./Module05/README.md) | Gamybinės operacijos | SLMOps įvadas • Modelių distiliacija • Smulkus derinimas • Gamybinis diegimas | Pažengęs | 5-6 val |
 | [🤖 06](../../Module06) | [DI agentai ir funkcijų kvietimas](./Module06/README.md) | Agentų karkasai ir MCP | Agentų įvadas • Funkcijų kvietimas • Modelių konteksto protokolas | Pažengęs | 4-5 val |
 | [💻 07](../../Module07) | [Platformos įgyvendinimas](./Module07/README.md) | Kryžminės platformos pavyzdžiai | DI įrankių rinkinys • Foundry Local • Windows kūrimas | Pažengęs | 3-4 val |
-| [🏭 08](../../Module08) | [Foundry Local įrankių rinkinys](./Module08/README.md) | Gamybai paruošti pavyzdžiai | Pavyzdinės programos (žr. žemiau) | Ekspertas | 8-10 val |
+| [🏭 08](../../Module08) | [Foundry Local įrankių rinkinys](./Module08/README.md) | Gamybai paruošti pavyzdžiai | Pavyzdinės programos (žr. žemiau detales) | Ekspertas | 8-10 val |
 
 ### 🏭 **Modulis 08: Pavyzdinės programos**
 
@@ -106,7 +106,7 @@ Jie atveria galingas NLP galimybes, atitinkančias:
 - [03: Modelių atradimas ir etalonavimas](./Module08/samples/03/README.md)
 - [04: Chainlit RAG programa](./Module08/samples/04/README.md)
 - [05: Multi-agentų orkestracija](./Module08/samples/05/README.md)
-- [06: Modeliai kaip įrankiai maršrutizatorius](./Module08/samples/06/README.md)
+- [06: Modeliai kaip įrankių maršrutizatorius](./Module08/samples/06/README.md)
 - [07: Tiesioginis API klientas](./Module08/samples/07/README.md)
 - [08: Windows 11 pokalbių programa](./Module08/samples/08/README.md)
 - [09: Pažangi multi-agentų sistema](./Module08/samples/09/README.md)
@@ -139,25 +139,25 @@ Išsamios praktinės dirbtuvės su gamybai paruoštais įgyvendinimais:
 ## Ką sukursite
 
 ### 🎯 Pagrindiniai gebėjimai
-- **Edge AI architektūra**: Kurkite vietinius pirmiausia DI sistemas su debesijos integracija
+- **Edge AI architektūra**: Kurkite vietoje pirmiausia veikiančias DI sistemas su debesijos integracija
 - **Modelio optimizavimas**: modelių kvantizavimas ir suspaudimas krašto įrenginiams (85 % greičio padidėjimas, 75 % dydžio sumažėjimas)  
-- **Daugiaplatformis diegimas**: Windows, mobilieji įrenginiai, įterptinės sistemos ir debesų-krašto hibridiniai sprendimai  
+- **Daugiaplatformis diegimas**: Windows, mobiliosios, įterptinės ir debesų-krašto hibridinės sistemos  
 - **Gamybinė veikla**: krašto AI stebėjimas, mastelio keitimas ir palaikymas  
 
 ### 🏗️ Praktiniai projektai  
-- **Foundry Local pokalbių programėlės**: Windows 11 gimtoji programa su modelių perjungimu  
+- **Foundry Local pokalbių programos**: Windows 11 vietinė programa su modelių perjungimu  
 - **Daugiagentinės sistemos**: koordinatorius su specialistų agentais sudėtingiems darbo srautams  
 - **RAG programos**: vietinis dokumentų apdorojimas su vektorinėmis paieškomis  
 - **Modelių maršrutizatoriai**: intelektualus modelių pasirinkimas pagal užduoties analizę  
-- **API karkasai**: gamybai paruošti klientai su srautinio perdavimo ir sveikatos stebėjimo funkcijomis  
+- **API karkasai**: gamybai paruošti klientai su srautinimu ir sveikatos stebėsena  
 - **Daugiaplatforminiai įrankiai**: LangChain/Semantic Kernel integracijos šablonai  
 
 ### 🏢 Pramonės taikymai  
-**Gamyba** • **Sveikatos priežiūra** • **Autonominiai automobiliai** • **Išmanieji miestai** • **Mobiliosios programėlės**  
+**Gamyba** • **Sveikatos priežiūra** • **Autonominiai automobiliai** • **Išmanieji miestai** • **Mobiliosios programos**  
 
 ## Greitas pradėjimas  
 
-**Rekomenduojama mokymosi tvarka** (iš viso 20–30 valandų):  
+**Rekomenduojama mokymosi eiga** (iš viso 20–30 valandų):  
 
 0. **📖 Įvadas** ([Introduction.md](./introduction.md)): EdgeAI pagrindai + pramonės kontekstas + mokymosi sistema  
 1. **📚 Pagrindai** (1–2 moduliai): EdgeAI sąvokos + SLM modelių šeimos  
@@ -196,10 +196,10 @@ edgeai-for-beginners/
 ✅ **Tikri atvejai**: Microsoft, Japan Airlines, įmonių diegimai  
 ✅ **Praktiniai pavyzdžiai**: 50+ pavyzdžių, 10 išsamių Foundry Local demonstracijų  
 ✅ **Dėmesys našumui**: 85 % greičio pagerinimai, 75 % dydžio sumažinimai  
-✅ **Daugiaplatformis**: Windows, mobilieji, įterptinės, debesų-krašto hibridai  
-✅ **Gamybai paruošta**: stebėjimas, mastelio keitimas, saugumas, atitikties karkasai  
+✅ **Daugiaplatformis**: Windows, mobiliosios, įterptinės, debesų-krašto hibridas  
+✅ **Gamybai paruošta**: stebėsena, mastelio keitimas, saugumas, atitikties karkasai  
 
-📖 **[Studijų vadovas prieinamas](STUDY_GUIDE.md)**: struktūruotas 20 valandų mokymosi planas su laiko paskirstymo gairėmis ir savianalizės įrankiais.  
+📖 **[Studijų vadovas prieinamas](STUDY_GUIDE.md)**: struktūruota 20 valandų mokymosi eiga su laiko paskirstymo gairėmis ir savęs vertinimo įrankiais.  
 
 ---  
 
@@ -210,6 +210,12 @@ edgeai-for-beginners/
 Mūsų komanda rengia ir kitus kursus! Peržiūrėkite:  
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
+### LangChain  
+[![LangChain4j pradedantiesiems](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js pradedantiesiems](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+
+---  
+
 ### Azure / Edge / MCP / Agentai  
 [![AZD pradedantiesiems](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Edge AI pradedantiesiems](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -217,7 +223,7 @@ Mūsų komanda rengia ir kitus kursus! Peržiūrėkite:
 [![AI agentai pradedantiesiems](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
-   
+ 
 ### Generatyvinis DI serija  
 [![Generatyvinis DI pradedantiesiems](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Generatyvinis DI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
@@ -225,7 +231,7 @@ Mūsų komanda rengia ir kitus kursus! Peržiūrėkite:
 [![Generatyvinis DI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
 
 ---  
-   
+ 
 ### Pagrindinis mokymasis  
 [![ML pradedantiesiems](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Duomenų mokslas pradedantiesiems](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -236,9 +242,9 @@ Mūsų komanda rengia ir kitus kursus! Peržiūrėkite:
 [![XR kūrimas pradedantiesiems](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
-   
+ 
 ### Copilot serija  
-[![Copilot AI poriniam programavimui](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
+[![Copilot dirbtinio intelekto poriniam programavimui](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
 [![Copilot C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
 [![Copilot nuotykiai](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->  
@@ -249,13 +255,13 @@ Jei užstrigote arba turite klausimų apie DI programų kūrimą, prisijunkite p
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)  
 
-Jei turite produkto atsiliepimų arba radote klaidų kūrimo metu, apsilankykite:  
+Jei turite produkto atsiliepimų ar klaidų, kurdami apsilankykite:  
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojamas profesionalus žmogaus vertimas. Mes neatsakome už bet kokius nesusipratimus ar neteisingus aiškinimus, kylančius dėl šio vertimo naudojimo.
+**Atsakomybės apribojimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojamas profesionalus žmogaus vertimas. Mes neatsakome už bet kokius nesusipratimus ar neteisingus aiškinimus, kilusius dėl šio vertimo naudojimo.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

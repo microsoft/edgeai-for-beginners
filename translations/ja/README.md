@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T14:48:21+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T11:56:14+00:00",
   "source_file": "README.md",
   "language_code": "ja"
 }
@@ -50,7 +50,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **エッジ展開に最適化された小型言語モデル（SLM）**
 - **多様なプラットフォームに対応したハードウェア認識最適化**
 - **プライバシー保護機能を備えたリアルタイム推論**
-- **企業向けの本番展開戦略**
+- **企業向けアプリケーションの本番展開戦略**
 
 ### なぜEdgeAIが重要か
 
@@ -83,14 +83,14 @@ Phi-4、Mistral-7B、GemmaなどのSLMは、大型LLMの最適化版であり、
 - **モバイルデバイス**：オフライン機能を備えたスマートフォンやタブレット
 - **IoTデバイス**：限られたリソースのセンサーやスマートデバイス
 - **エッジサーバー**：限られたGPUリソースのローカル処理ユニット
-- **パーソナルコンピューター**：デスクトップやノートパソコンでの展開シナリオ
+- **パーソナルコンピューター**：デスクトップやノートPCでの展開シナリオ
 
 ## コースモジュールとナビゲーション
 
 | モジュール | トピック | フォーカス領域 | 主要内容 | レベル | 所要時間 |
 |--------|-------|------------|-------------|--------|----------|
 | [📖 00 ](./introduction.md) | [EdgeAI入門](./introduction.md) | 基礎と背景 | EdgeAI概要・業界応用・SLM紹介・学習目標 | 初心者 | 1-2時間 |
-| [📚 01](../../Module01) | [EdgeAI基礎](./Module01/README.md) | クラウドとエッジAIの比較 | EdgeAI基礎・実世界の事例・実装ガイド・エッジ展開 | 初心者 | 3-4時間 |
+| [📚 01](../../Module01) | [EdgeAI基礎](./Module01/README.md) | クラウドとエッジAIの比較 | EdgeAI基礎・実世界事例・実装ガイド・エッジ展開 | 初心者 | 3-4時間 |
 | [🧠 02](../../Module02) | [SLMモデル基礎](./Module02/README.md) | モデルファミリーとアーキテクチャ | Phiファミリー・Qwenファミリー・Gemmaファミリー・BitNET・μModel・Phi-Silica | 初心者 | 4-5時間 |
 | [🚀 03](../../Module03) | [SLM展開実践](./Module03/README.md) | ローカル＆クラウド展開 | 応用学習・ローカル環境・クラウド展開 | 中級 | 4-5時間 |
 | [⚙️ 04](../../Module04) | [モデル最適化ツールキット](./Module04/README.md) | クロスプラットフォーム最適化 | 入門・Llama.cpp・Microsoft Olive・OpenVINO・Apple MLX・ワークフロー合成 | 中級 | 5-6時間 |
@@ -106,7 +106,7 @@ Phi-4、Mistral-7B、GemmaなどのSLMは、大型LLMの最適化版であり、
 - [03: モデル発見＆ベンチマーク](./Module08/samples/03/README.md)
 - [04: Chainlit RAGアプリケーション](./Module08/samples/04/README.md)
 - [05: マルチエージェントオーケストレーション](./Module08/samples/05/README.md)
-- [06: モデルズ・アズ・ツールズルーター](./Module08/samples/06/README.md)
+- [06: Models-as-Toolsルーター](./Module08/samples/06/README.md)
 - [07: 直接APIクライアント](./Module08/samples/07/README.md)
 - [08: Windows 11チャットアプリ](./Module08/samples/08/README.md)
 - [09: 高度なマルチエージェントシステム](./Module08/samples/09/README.md)
@@ -132,8 +132,8 @@ Phi-4、Mistral-7B、GemmaなどのSLMは、大型LLMの最適化版であり、
 ### 📊 **学習パス概要**
 - **総所要時間**：36-45時間
 - **初心者パス**：モジュール01-02（7-9時間）  
-- **中級パス**：モジュール03-04（9-11時間）
-- **上級パス**：モジュール05-07（12-15時間）
+- **中級者パス**：モジュール03-04（9-11時間）
+- **上級者パス**：モジュール05-07（12-15時間）
 - **エキスパートパス**：モジュール08（8-10時間）
 
 ## 作成するもの
@@ -142,7 +142,7 @@ Phi-4、Mistral-7B、GemmaなどのSLMは、大型LLMの最適化版であり、
 - **Edge AIアーキテクチャ**：クラウド統合を備えたローカルファーストAIシステムの設計
 - **モデル最適化**: エッジ展開のためのモデルの量子化と圧縮（85%の速度向上、75%のサイズ削減）
 - **マルチプラットフォーム展開**: Windows、モバイル、組み込み、クラウドエッジハイブリッドシステム
-- **本番運用**: エッジAIの監視、スケーリング、保守
+- **本番運用**: エッジAIの監視、スケーリング、維持管理
 
 ### 🏗️ 実践プロジェクト
 - **Foundryローカルチャットアプリ**: モデル切り替え機能を備えたWindows 11ネイティブアプリケーション
@@ -157,7 +157,7 @@ Phi-4、Mistral-7B、GemmaなどのSLMは、大型LLMの最適化版であり、
 
 ## クイックスタート
 
-**推奨学習パス**（合計20〜30時間）:
+**推奨学習パス**（合計20～30時間）:
 
 0. **📖 はじめに** ([Introduction.md](./introduction.md)): EdgeAIの基礎＋業界コンテキスト＋学習フレームワーク
 1. **📚 基礎** (モジュール01-02): EdgeAIの概念＋SLMモデルファミリー
@@ -193,7 +193,7 @@ edgeai-for-beginners/
 ## コースのハイライト
 
 ✅ **段階的学習**: 理論 → 実践 → 本番展開  
-✅ **実際のケーススタディ**: Microsoft、日本航空、企業導入事例  
+✅ **実際の事例研究**: Microsoft、日本航空、企業導入事例  
 ✅ **ハンズオンサンプル**: 50以上の例、10の包括的なFoundry Localデモ  
 ✅ **パフォーマンス重視**: 85%の速度向上、75%のサイズ削減  
 ✅ **マルチプラットフォーム**: Windows、モバイル、組み込み、クラウドエッジハイブリッド  
@@ -210,7 +210,13 @@ edgeai-for-beginners/
 私たちのチームは他のコースも制作しています！ぜひご覧ください：
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
-### Azure / Edge / MCP / エージェント
+### LangChain
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
+
+---
+
+### Azure / Edge / MCP / Agents
 [![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -218,7 +224,7 @@ edgeai-for-beginners/
 
 ---
  
-### 生成AIシリーズ
+### ジェネレーティブAIシリーズ
 [![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
@@ -226,7 +232,7 @@ edgeai-for-beginners/
 
 ---
  
-### コア学習
+### コアラーニング
 [![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 [![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
@@ -257,5 +263,5 @@ AIアプリの構築で行き詰まったり質問がある場合は、以下に
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責事項**：  
-本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
+本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T16:23:28+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T13:19:32+00:00",
   "source_file": "README.md",
   "language_code": "uk"
 }
@@ -10,28 +10,28 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI для початківців 
 
 
-![Course cover image](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.uk.png)
+![Обкладинка курсу](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.uk.png)
 
-[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
+[![Учасники GitHub](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
+[![Проблеми GitHub](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
+[![Запити на злиття GitHub](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-[![GitHub stars](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
+[![Спостерігачі GitHub](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
+[![Форки GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+[![Зірки GitHub](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
 
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
 Виконайте ці кроки, щоб почати використовувати ці ресурси:
 
-1. **Форкніть репозиторій**: Натисніть [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+1. **Форкніть репозиторій**: Натисніть [![Форки GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Клонуйте репозиторій**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Приєднуйтесь до Azure AI Foundry Discord і зустрічайте експертів та інших розробників**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Підтримка багатьох мов
+### 🌐 Підтримка кількох мов
 
 #### Підтримується через GitHub Action (автоматично та завжди актуально)
 
@@ -42,14 +42,14 @@ CO_OP_TRANSLATOR_METADATA:
 **Якщо ви хочете, щоб додаткові мови перекладу підтримувалися, вони перелічені [тут](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Вступ
 
-Ласкаво просимо до **EdgeAI для початківців** – вашого всебічного шляху у трансформаційний світ Edge штучного інтелекту. Цей курс поєднує потужні можливості ШІ з практичним, реальним впровадженням на периферійних пристроях, даючи вам змогу використовувати потенціал ШІ безпосередньо там, де генерується дані та приймаються рішення.
+Ласкаво просимо до **EdgeAI для початківців** – вашого всебічного шляху у трансформаційний світ Edge штучного інтелекту. Цей курс поєднує потужні можливості ШІ з практичним впровадженням у реальному світі на пристроях на периферії, даючи вам змогу використовувати потенціал ШІ безпосередньо там, де генерується дані та приймаються рішення.
 
-### Чому ви навчитеся
+### Чого ви навчитеся
 
 Цей курс проведе вас від базових концепцій до готових до виробництва реалізацій, охоплюючи:
 - **Малі мовні моделі (SLM)**, оптимізовані для розгортання на периферії
 - **Оптимізація з урахуванням апаратного забезпечення** на різних платформах
-- **Реальний час виведення** з можливостями збереження конфіденційності
+- **Інференс у реальному часі** з можливостями збереження конфіденційності
 - **Стратегії розгортання у виробництві** для корпоративних застосунків
 
 ### Чому EdgeAI важливий
@@ -58,15 +58,15 @@ Edge AI представляє парадигму, що вирішує крит�
 - **Конфіденційність і безпека**: Обробка чутливих даних локально без передачі в хмару
 - **Продуктивність у реальному часі**: Усунення затримок мережі для критичних за часом застосунків
 - **Економічність**: Зменшення витрат на пропускну здатність і хмарні обчислення
-- **Стійкість роботи**: Підтримка функціональності під час відсутності мережі
+- **Стійкість роботи**: Підтримка функціональності під час відключень мережі
 - **Відповідність нормативам**: Відповідність вимогам суверенітету даних
 
 ### Edge AI
 
-Edge AI означає запуск алгоритмів ШІ та мовних моделей локально на апаратному забезпеченні, близько до місця генерації даних, без залежності від хмарних ресурсів для виведення. Це зменшує затримки, підвищує конфіденційність і дозволяє приймати рішення в реальному часі.
+Edge AI означає запуск алгоритмів ШІ та мовних моделей локально на апаратному забезпеченні, близько до місця генерації даних, без залежності від хмарних ресурсів для інференсу. Це зменшує затримки, підвищує конфіденційність і дозволяє приймати рішення в реальному часі.
 
 ### Основні принципи:
-- **Виведення на пристрої**: Моделі ШІ працюють на периферійних пристроях (телефони, маршрутизатори, мікроконтролери, промислові ПК)
+- **Інференс на пристрої**: Моделі ШІ працюють на периферійних пристроях (телефони, маршрутизатори, мікроконтролери, промислові ПК)
 - **Можливість роботи офлайн**: Функціонує без постійного підключення до інтернету
 - **Низька затримка**: Миттєві відповіді, придатні для систем реального часу
 - **Суверенітет даних**: Зберігає чутливі дані локально, покращуючи безпеку та відповідність
@@ -80,7 +80,7 @@ SLM, такі як Phi-4, Mistral-7B і Gemma, є оптимізованими �
 
 Вони відкривають потужні можливості NLP, відповідаючи обмеженням:
 - **Вбудовані системи**: IoT-пристрої та промислові контролери
-- **Мобільні пристрої**: Смартфони та планшети з можливістю офлайн роботи
+- **Мобільні пристрої**: Смартфони та планшети з можливістю роботи офлайн
 - **IoT-пристрої**: Датчики та розумні пристрої з обмеженими ресурсами
 - **Периферійні сервери**: Локальні обчислювальні одиниці з обмеженими GPU ресурсами
 - **Персональні комп’ютери**: Сценарії розгортання на настільних і портативних ПК
@@ -90,13 +90,13 @@ SLM, такі як Phi-4, Mistral-7B і Gemma, є оптимізованими �
 | Модуль | Тема | Область фокусу | Ключовий зміст | Рівень | Тривалість |
 |--------|-------|------------|-------------|--------|----------|
 | [📖 00 ](./introduction.md) | [Вступ до EdgeAI](./introduction.md) | Основи та контекст | Огляд EdgeAI • Галузеві застосування • Вступ до SLM • Цілі навчання | Початковий | 1-2 год |
-| [📚 01](../../Module01) | [Основи EdgeAI](./Module01/README.md) | Порівняння хмари та Edge AI | Основи EdgeAI • Реальні кейси • Посібник з впровадження • Розгортання на периферії | Початковий | 3-4 год |
+| [📚 01](../../Module01) | [Основи EdgeAI](./Module01/README.md) | Порівняння хмари та Edge AI | Основи EdgeAI • Кейси з реального світу • Посібник з впровадження • Розгортання на периферії | Початковий | 3-4 год |
 | [🧠 02](../../Module02) | [Основи моделей SLM](./Module02/README.md) | Сімейства моделей та архітектура | Сімейство Phi • Сімейство Qwen • Сімейство Gemma • BitNET • μModel • Phi-Silica | Початковий | 4-5 год |
 | [🚀 03](../../Module03) | [Практика розгортання SLM](./Module03/README.md) | Локальне та хмарне розгортання | Поглиблене навчання • Локальне середовище • Хмарне розгортання | Середній | 4-5 год |
-| [⚙️ 04](../../Module04) | [Інструментарій оптимізації моделей](./Module04/README.md) | Кросплатформна оптимізація | Вступ • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Синтез робочих процесів | Середній | 5-6 год |
-| [🔧 05](../../Module05) | [SLMOps у виробництві](./Module05/README.md) | Операції у виробництві | Вступ до SLMOps • Дистиляція моделей • Тонке налаштування • Виробниче розгортання | Просунутий | 5-6 год |
-| [🤖 06](../../Module06) | [AI агенти та виклик функцій](./Module06/README.md) | Фреймворки агентів та MCP | Вступ до агентів • Виклик функцій • Протокол контексту моделей | Просунутий | 4-5 год |
-| [💻 07](../../Module07) | [Реалізація платформи](./Module07/README.md) | Кросплатформні приклади | AI інструментарій • Foundry Local • Розробка для Windows | Просунутий | 3-4 год |
+| [⚙️ 04](../../Module04) | [Інструментарій оптимізації моделей](./Module04/README.md) | Крос-платформна оптимізація | Вступ • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Синтез робочого процесу | Середній | 5-6 год |
+| [🔧 05](../../Module05) | [SLMOps у виробництві](./Module05/README.md) | Операції у виробництві | Вступ до SLMOps • Дистиляція моделей • Тонке налаштування • Розгортання у виробництві | Просунутий | 5-6 год |
+| [🤖 06](../../Module06) | [AI агенти та виклики функцій](./Module06/README.md) | Фреймворки агентів та MCP | Вступ до агентів • Виклики функцій • Протокол контексту моделі | Просунутий | 4-5 год |
+| [💻 07](../../Module07) | [Реалізація платформи](./Module07/README.md) | Крос-платформні приклади | AI інструментарій • Foundry Local • Розробка для Windows | Просунутий | 3-4 год |
 | [🏭 08](../../Module08) | [Інструментарій Foundry Local](./Module08/README.md) | Приклади, готові до виробництва | Зразкові застосунки (див. деталі нижче) | Експерт | 8-10 год |
 
 ### 🏭 **Модуль 08: Зразкові застосунки**
@@ -117,15 +117,15 @@ SLM, такі як Phi-4, Mistral-7B і Gemma, є оптимізованими �
 Всебічні матеріали для практичного воркшопу з готовими до виробництва реалізаціями:
 
 - **[Посібник воркшопу](./Workshop/Readme.md)** - Повні цілі навчання, результати та навігація по ресурсах
-- **Python приклади** (6 сесій) - Оновлені з найкращими практиками, обробкою помилок та повною документацією
-- **Jupyter ноутбуки** (8 інтерактивних) - Покрокові уроки з бенчмарками та моніторингом продуктивності
+- **Приклади на Python** (6 сесій) - Оновлені з найкращими практиками, обробкою помилок та повною документацією
+- **Jupyter ноутбуки** (8 інтерактивних) - Покрокові навчальні посібники з бенчмарками та моніторингом продуктивності
 - **Посібники сесій** - Детальні markdown посібники для кожної сесії воркшопу
 - **Інструменти валідації** - Скрипти для перевірки якості коду та запуску базових тестів
 
 **Що ви створите:**
 - Локальні AI чат-застосунки з підтримкою потокової передачі
 - RAG конвеєри з оцінкою якості (RAGAS)
-- Інструменти бенчмаркінгу та порівняння мульти-моделей
+- Інструменти для бенчмаркінгу та порівняння мульти-моделей
 - Системи оркестрації мультиагентів
 - Інтелектуальний маршрутизатор моделей з вибором за завданнями
 
@@ -148,7 +148,7 @@ SLM, такі як Phi-4, Mistral-7B і Gemma, є оптимізованими �
 - **Foundry Local Chat Apps**: Нативний додаток для Windows 11 з перемиканням моделей
 - **Мультиагентні системи**: Координатор зі спеціалістами-агентами для складних робочих процесів  
 - **RAG-додатки**: Локальна обробка документів з векторним пошуком
-- **Маршрутизатори моделей**: Інтелектуальний вибір між моделями на основі аналізу завдання
+- **Маршрутизатори моделей**: Інтелектуальний вибір між моделями на основі аналізу завдань
 - **API-фреймворки**: Готові до виробництва клієнти з потоковою передачею та моніторингом стану
 - **Кросплатформенні інструменти**: Патерни інтеграції LangChain/Semantic Kernel
 
@@ -171,7 +171,7 @@ SLM, такі як Phi-4, Mistral-7B і Gemma, є оптимізованими �
 
 **Технічні ролі**: Архітектор рішень EdgeAI • ML-інженер (Edge) • Розробник AI для IoT • Розробник мобільного AI
 
-**Галузеві сектори**: Виробництво 4.0 • Технології охорони здоров’я • Автономні системи • FinTech • Побутова електроніка
+**Галузеві сектори**: Виробництво 4.0 • Технології охорони здоров’я • Автономні системи • FinTech • Споживча електроніка
 
 **Проєкти портфоліо**: Мультиагентні системи • Виробничі RAG-додатки • Кросплатформне розгортання • Оптимізація продуктивності
 
@@ -210,36 +210,42 @@ edgeai-for-beginners/
 Наша команда створює й інші курси! Перегляньте:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
-### Azure / Edge / MCP / Агенти
-[![AZD для початківців](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Edge AI для початківців](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![MCP для початківців](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI агенти для початківців](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+### LangChain
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
+
+---
+
+### Azure / Edge / MCP / Agents
+[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
 ### Серія Generative AI
-[![Generative AI для початківців](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### Основне навчання
-[![ML для початківців](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![Data Science для початківців](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI для початківців](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-[![Кібербезпека для початківців](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
-[![Веб-розробка для початківців](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-[![IoT для початківців](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-[![XR Development для початківців](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+### Основи навчання
+[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
 ### Серія Copilot
-[![Copilot для AI парного програмування](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-[![Copilot для C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
@@ -256,6 +262,6 @@ edgeai-for-beginners/
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Відмова від відповідальності**:  
+**Відмова від відповідальності**:
 Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

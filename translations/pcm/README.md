@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d2366cf5031433b5a0bc78cd4a2bbe64",
-  "translation_date": "2025-12-15T16:34:10+00:00",
+  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
+  "translation_date": "2025-12-17T13:29:48+00:00",
   "source_file": "README.md",
   "language_code": "pcm"
 }
@@ -42,7 +42,7 @@ Follow dis steps to start to use dis resources:
 **If you want make dem add more translation languages wey dem dey support, dem list dem [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introduction
 
-Welcome to **EdgeAI for Beginners** – your full journey into di big change wey Edge Artificial Intelligence dey bring. Dis course go join di strong AI power and how to use am for real life for edge devices, make you fit use AI power directly where data dey come and where dem need make decision.
+Welcome to **EdgeAI for Beginners** – your full journey into di big change wey Edge Artificial Intelligence dey bring. Dis course go join di gap between strong AI power and how to use am for real life for edge devices, make you fit use AI power directly where data dey come and where dem need make decision.
 
 ### Wetin You Go Learn
 
@@ -56,27 +56,27 @@ Dis course go carry you from basic ideas go reach how to put am for production, 
 
 Edge AI na big change wey dey solve important wahala for today:
 - **Privacy & Security**: Process sensitive data for local side without cloud exposure
-- **Real-time Performance**: No delay from network for time-critical apps
+- **Real-time Performance**: Remove network delay for time-critical apps
 - **Cost Efficiency**: Reduce money wey you go spend for bandwidth and cloud computing
-- **Resilient Operations**: Work well even if network down
+- **Resilient Operations**: Make system still dey work when network down
 - **Regulatory Compliance**: Follow data law well well
 
 ### Edge AI
 
-Edge AI mean say AI algorithms and language models dey run for hardware close to where data dey come, no need to use cloud for inference. E reduce delay, improve privacy, and make decision quick quick.
+Edge AI mean say AI algorithms and language models dey run for hardware close to where data dey come from, no need depend on cloud for inference. E dey reduce delay, improve privacy, and make decision quick quick.
 
 ### Core Principles:
 - **On-device inference**: AI models dey run for edge devices (phones, routers, microcontrollers, industrial PCs)
 - **Offline capability**: E fit work without internet connection steady
-- **Low latency**: Quick response for real-time systems
-- **Data sovereignty**: Keep sensitive data local, make security and law follow well
+- **Low latency**: E respond quick quick for real-time systems
+- **Data sovereignty**: E keep sensitive data local, make security and law follow better
 
 ### Small Language Models (SLMs)
 
 SLMs like Phi-4, Mistral-7B, and Gemma na optimized versions of big LLMs—dem train or distill am for:
-- **Reduced memory footprint**: Use small memory for edge devices well
+- **Reduced memory footprint**: Use small memory well for edge devices
 - **Lower compute demand**: Optimize for CPU and edge GPU performance
-- **Faster startup times**: Quick start for responsive apps
+- **Faster startup times**: Quick to start for responsive apps
 
 Dem fit do strong NLP work but still fit inside:
 - **Embedded systems**: IoT devices and industrial controllers
@@ -210,6 +210,12 @@ edgeai-for-beginners/
 Our team produces other courses! Check out:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
+### LangChain
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
+
+---
+
 ### Azure / Edge / MCP / Agents
 [![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -257,5 +263,5 @@ If you have product feedback or errors while building visit:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:
-Dis document na AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) wey translate am. Even though we dey try make am correct, abeg sabi say automated translation fit get some mistakes or no too correct. The original document wey e dey for im own language na the correct one. If na serious matter, e better make person wey sabi do professional human translation do am. We no go responsible for any misunderstanding or wrong meaning wey fit come from this translation.
+Dis document don translate wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even though we dey try make am correct, abeg sabi say automated translation fit get some mistakes or wrong tins. Di original document wey e dey for im own language na di correct one. If na serious matter, e better make human professional translate am. We no go responsible for any misunderstanding or wrong meaning wey fit come from dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
