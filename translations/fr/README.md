@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T11:28:57+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T08:12:26+00:00",
   "source_file": "README.md",
   "language_code": "fr"
 }
@@ -73,9 +73,9 @@ Edge AI désigne l'exécution d'algorithmes d'IA et de modèles de langage local
 
 ### Petits modèles de langage (SLMs)
 
-Les SLMs comme Phi-4, Mistral-7B et Gemma sont des versions optimisées de grands LLM—entraînés ou distillés pour :
+Les SLMs comme Phi-4, Mistral-7B et Gemma sont des versions optimisées de grands LLMs — entraînées ou distillées pour :
 - **Réduction de l'empreinte mémoire** : Utilisation efficace de la mémoire limitée des dispositifs en périphérie
-- **Demande de calcul réduite** : Optimisés pour les performances CPU et GPU en périphérie
+- **Demande de calcul réduite** : Optimisé pour les performances CPU et GPU en périphérie
 - **Temps de démarrage plus rapides** : Initialisation rapide pour des applications réactives
 
 Ils débloquent des capacités NLP puissantes tout en respectant les contraintes de :
@@ -88,7 +88,7 @@ Ils débloquent des capacités NLP puissantes tout en respectant les contraintes
 ## Modules du cours & Navigation
 
 | Module | Sujet | Domaine d'intérêt | Contenu clé | Niveau | Durée |
-|--------|-------|------------|-------------|--------|----------|
+|--------|-------|-------------------|-------------|--------|-------|
 | [📖 00 ](./introduction.md) | [Introduction à EdgeAI](./introduction.md) | Fondations & Contexte | Vue d'ensemble EdgeAI • Applications industrielles • Introduction aux SLM • Objectifs d'apprentissage | Débutant | 1-2 h |
 | [📚 01](../../Module01) | [Fondamentaux EdgeAI](./Module01/README.md) | Comparaison Cloud vs Edge AI | Fondamentaux EdgeAI • Études de cas réelles • Guide d'implémentation • Déploiement en périphérie | Débutant | 3-4 h |
 | [🧠 02](../../Module02) | [Fondations des modèles SLM](./Module02/README.md) | Familles de modèles & architecture | Famille Phi • Famille Qwen • Famille Gemma • BitNET • μModel • Phi-Silica | Débutant | 4-5 h |
@@ -118,7 +118,7 @@ Matériel complet d'atelier pratique avec implémentations prêtes pour la produ
 
 - **[Guide de l'atelier](./Workshop/Readme.md)** - Objectifs d'apprentissage complets, résultats et navigation des ressources
 - **Exemples Python** (6 sessions) - Mis à jour avec les meilleures pratiques, gestion des erreurs et documentation complète
-- **Carnets Jupyter** (8 interactifs) - Tutoriels étape par étape avec benchmarks et suivi des performances
+- **Notebooks Jupyter** (8 interactifs) - Tutoriels pas à pas avec benchmarks et suivi des performances
 - **Guides de session** - Guides markdown détaillés pour chaque session d'atelier
 - **Outils de validation** - Scripts pour vérifier la qualité du code et exécuter des tests de fumée
 
@@ -194,7 +194,7 @@ edgeai-for-beginners/
 
 ✅ **Apprentissage progressif** : Théorie → Pratique → Déploiement en production  
 ✅ **Études de cas réelles** : Microsoft, Japan Airlines, implémentations en entreprise  
-✅ **Exemples pratiques** : Plus de 50 exemples, 10 démonstrations complètes Foundry Local  
+✅ **Exemples pratiques** : Plus de 50 exemples, 10 démos complètes Foundry Local  
 ✅ **Focus performance** : Améliorations de vitesse de 85 %, réductions de taille de 75 %  
 ✅ **Multiplateforme** : Windows, mobile, embarqué, hybride cloud-périphérie  
 ✅ **Prêt pour la production** : Surveillance, mise à l’échelle, sécurité, cadres de conformité
@@ -255,7 +255,7 @@ Si vous êtes bloqué ou avez des questions sur la création d’applications IA
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Si vous avez des retours produit ou des erreurs lors du développement, visitez :
+Si vous avez des retours sur le produit ou des erreurs lors du développement, visitez :
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
@@ -263,5 +263,5 @@ Si vous avez des retours produit ou des erreurs lors du développement, visitez 
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou d’interprétations erronées résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

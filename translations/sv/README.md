@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T12:31:14+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T09:14:16+00:00",
   "source_file": "README.md",
   "language_code": "sv"
 }
@@ -10,23 +10,23 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI för nybörjare 
 
 
-![Kursomslagsbild](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.sv.png)
+![Kursomslag](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.sv.png)
 
-[![GitHub-bidragsgivare](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![GitHub-ärenden](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
-[![GitHub pull-begäranden](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
-[![PRs Välkomna](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
+[![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-[![GitHub-övervakare](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
-[![GitHub-förgreningar](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-[![GitHub-stjärnor](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
+[![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+[![GitHub stars](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
 
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Följ dessa steg för att komma igång med att använda dessa resurser:
+Följ dessa steg för att komma igång med dessa resurser:
 
-1. **Fork:a Repositoriet**: Klicka [![GitHub-förgreningar](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+1. **Forka Repositoriet**: Klicka [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Klona Repositoriet**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Gå med i Azure AI Foundry Discord och träffa experter och andra utvecklare**](https://discord.com/invite/ByRwuEEgH4)
 
@@ -54,7 +54,7 @@ Denna kurs tar dig från grundläggande koncept till produktionsklara implementa
 
 ### Varför EdgeAI är viktigt
 
-Edge AI representerar ett paradigmskifte som tar itu med kritiska moderna utmaningar:
+Edge AI representerar ett paradigmskifte som adresserar kritiska moderna utmaningar:
 - **Integritet & Säkerhet**: Bearbeta känslig data lokalt utan exponering mot molnet
 - **Realtidsprestanda**: Eliminera nätverksfördröjning för tidskritiska applikationer
 - **Kostnadseffektivitet**: Minska bandbredd och molndatorutgifter
@@ -90,35 +90,35 @@ De låser upp kraftfulla NLP-funktioner samtidigt som de uppfyller begränsninga
 | Modul | Ämne | Fokusområde | Nyckelinnehåll | Nivå | Varaktighet |
 |--------|-------|------------|-------------|--------|----------|
 | [📖 00 ](./introduction.md) | [Introduktion till EdgeAI](./introduction.md) | Grund & Kontext | EdgeAI Översikt • Branschapplikationer • SLM Introduktion • Lärandemål | Nybörjare | 1-2 tim |
-| [📚 01](../../Module01) | [EdgeAI-grunder](./Module01/README.md) | Moln vs Edge AI jämförelse | EdgeAI-grunder • Verkliga fallstudier • Implementeringsguide • Edge-distribution | Nybörjare | 3-4 tim |
+| [📚 01](../../Module01) | [EdgeAI Grunder](./Module01/README.md) | Moln vs Edge AI jämförelse | EdgeAI Grunder • Verkliga fallstudier • Implementeringsguide • Edge-distribution | Nybörjare | 3-4 tim |
 | [🧠 02](../../Module02) | [SLM Modellgrunder](./Module02/README.md) | Modellfamiljer & arkitektur | Phi-familjen • Qwen-familjen • Gemma-familjen • BitNET • μModel • Phi-Silica | Nybörjare | 4-5 tim |
 | [🚀 03](../../Module03) | [SLM Implementeringspraktik](./Module03/README.md) | Lokal & molnimplementering | Avancerad inlärning • Lokal miljö • Molnimplementering | Mellannivå | 4-5 tim |
 | [⚙️ 04](../../Module04) | [Modelloptimeringsverktyg](./Module04/README.md) | Plattformoberoende optimering | Introduktion • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Arbetsflödessyntes | Mellannivå | 5-6 tim |
 | [🔧 05](../../Module05) | [SLMOps Produktion](./Module05/README.md) | Produktionsdrift | SLMOps Introduktion • Modell Destillering • Finjustering • Produktionsdistribution | Avancerad | 5-6 tim |
 | [🤖 06](../../Module06) | [AI-agenter & Funktionsanrop](./Module06/README.md) | Agentramverk & MCP | Agentintroduktion • Funktionsanrop • Modellkontextprotokoll | Avancerad | 4-5 tim |
-| [💻 07](../../Module07) | [Plattformsimplementering](./Module07/README.md) | Plattformoberoende exempel | AI-verktygslåda • Foundry Local • Windows-utveckling | Avancerad | 3-4 tim |
-| [🏭 08](../../Module08) | [Foundry Local Verktygslåda](./Module08/README.md) | Produktionsklara exempel | Exempelapplikationer (se detaljer nedan) | Expert | 8-10 tim |
+| [💻 07](../../Module07) | [Plattformsimplementering](./Module07/README.md) | Plattformoberoende exempel | AI Toolkit • Foundry Local • Windows-utveckling | Avancerad | 3-4 tim |
+| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Produktionsklara exempel | Exempelapplikationer (se detaljer nedan) | Expert | 8-10 tim |
 
 ### 🏭 **Modul 08: Exempelapplikationer**
 
 - [01: REST Chat Snabbstart](./Module08/samples/01/README.md)
 - [02: OpenAI SDK Integration](./Module08/samples/02/README.md)
 - [03: Modellupptäckt & Benchmarking](./Module08/samples/03/README.md)
-- [04: Chainlit RAG-applikation](./Module08/samples/04/README.md)
+- [04: Chainlit RAG Applikation](./Module08/samples/04/README.md)
 - [05: Multi-Agent Orkestrering](./Module08/samples/05/README.md)
 - [06: Models-as-Tools Router](./Module08/samples/06/README.md)
 - [07: Direkt API-klient](./Module08/samples/07/README.md)
-- [08: Windows 11 Chat App](./Module08/samples/08/README.md)
+- [08: Windows 11 Chattapp](./Module08/samples/08/README.md)
 - [09: Avancerat Multi-Agent System](./Module08/samples/09/README.md)
 - [10: Foundry Tools Framework](./Module08/samples/10/README.md)
 
-### 🎓 **Workshop: Praktisk Lärandeväg**
+### 🎓 **Workshop: Praktisk Lärandebana**
 
 Omfattande praktiskt workshopmaterial med produktionsklara implementationer:
 
 - **[Workshop Guide](./Workshop/Readme.md)** - Kompletta lärandemål, resultat och resursnavigering
 - **Python-exempel** (6 sessioner) - Uppdaterade med bästa praxis, felhantering och omfattande dokumentation
-- **Jupyter Notebooks** (8 interaktiva) - Steg-för-steg handledningar med benchmark och prestandaövervakning
+- **Jupyter Notebooks** (8 interaktiva) - Steg-för-steg handledningar med benchmarks och prestandaövervakning
 - **Sessionsguider** - Detaljerade markdown-guider för varje workshop-session
 - **Valideringsverktyg** - Skript för att verifiera kodkvalitet och köra röktester
 
@@ -129,19 +129,19 @@ Omfattande praktiskt workshopmaterial med produktionsklara implementationer:
 - Multi-agent orkestreringssystem
 - Intelligent modellroutning med uppgiftsbaserat urval
 
-### 📊 **Sammanfattning av lärandeväg**
+### 📊 **Sammanfattning av lärandebana**
 - **Total varaktighet**: 36-45 timmar
-- **Nybörjarväg**: Moduler 01-02 (7-9 timmar)  
-- **Mellannivåväg**: Moduler 03-04 (9-11 timmar)
-- **Avancerad väg**: Moduler 05-07 (12-15 timmar)
-- **Expertväg**: Modul 08 (8-10 timmar)
+- **Nybörjarbana**: Moduler 01-02 (7-9 timmar)  
+- **Mellannivåbana**: Moduler 03-04 (9-11 timmar)
+- **Avancerad bana**: Moduler 05-07 (12-15 timmar)
+- **Expertbana**: Modul 08 (8-10 timmar)
 
 ## Vad du kommer att bygga
 
 ### 🎯 Kärnkompetenser
-- **Edge AI-arkitektur**: Designa lokal-först AI-system med molnintegration
+- **Edge AI-arkitektur**: Designa lokalt-först AI-system med molnintegration
 - **Modelloptimering**: Kvantisera och komprimera modeller för edge-distribution (85 % snabbare, 75 % mindre storlek)  
-- **Multiplattformsdistribution**: Windows, mobil, inbäddade och moln-edge hybridssystem  
+- **Multiplattformsdistribution**: Windows, mobil, inbäddade system och moln-edge hybridlösningar  
 - **Produktionsdrift**: Övervakning, skalning och underhåll av edge-AI i produktion  
 
 ### 🏗️ Praktiska projekt  
@@ -203,7 +203,7 @@ edgeai-for-beginners/
 
 ---  
 
-**EdgeAI representerar framtiden för AI-distribution**: lokal-först, integritetsbevarande och effektiv. Bemästra dessa färdigheter för att bygga nästa generations intelligenta applikationer.  
+**EdgeAI representerar framtiden för AI-distribution**: lokalprioriterad, integritetsbevarande och effektiv. Bemästra dessa färdigheter för att bygga nästa generations intelligenta applikationer.  
 
 ## Andra kurser  
 
@@ -211,41 +211,41 @@ Vårt team producerar fler kurser! Kolla in:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
 ### LangChain  
-[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
-[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+[![LangChain4j för nybörjare](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js för nybörjare](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
 
 ---  
 
 ### Azure / Edge / MCP / Agenter  
-[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AZD för nybörjare](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Edge AI för nybörjare](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![MCP för nybörjare](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AI-agenter för nybörjare](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### Generativ AI-serie  
-[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
-[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
-[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
+[![Generativ AI för nybörjare](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Generativ AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
+[![Generativ AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
+[![Generativ AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### Kärnlärande  
-[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
-[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
-[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
-[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
-[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![ML för nybörjare](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Data Science för nybörjare](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AI för nybörjare](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Cybersäkerhet för nybörjare](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
+[![Webbutveckling för nybörjare](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
+[![IoT för nybörjare](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
+[![XR-utveckling för nybörjare](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### Copilot-serie  
-[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
-[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
+[![Copilot för AI-parprogrammering](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
+[![Copilot för C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->  
 

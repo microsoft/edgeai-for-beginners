@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T12:58:52+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T09:41:10+00:00",
   "source_file": "README.md",
   "language_code": "cs"
 }
@@ -42,7 +42,7 @@ Postupujte podle těchto kroků, abyste začali používat tyto zdroje:
 **Pokud si přejete mít podporu dalších jazyků, jsou uvedeny [zde](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Úvod
 
-Vítejte v **EdgeAI pro začátečníky** – vaší komplexní cestě do transformačního světa Edge umělé inteligence. Tento kurz překonává propast mezi výkonnými schopnostmi AI a praktickým nasazením v reálném světě na edge zařízeních, což vám umožní využít potenciál AI přímo tam, kde jsou data generována a kde je třeba činit rozhodnutí.
+Vítejte v **EdgeAI pro začátečníky** – vaší komplexní cestě do transformačního světa Edge umělé inteligence. Tento kurz překonává propast mezi výkonnými AI schopnostmi a praktickým nasazením v reálném světě na edge zařízeních, což vám umožní využít potenciál AI přímo tam, kde jsou data generována a kde je třeba činit rozhodnutí.
 
 ### Co se naučíte
 
@@ -117,7 +117,7 @@ Odemknou výkonné NLP schopnosti a zároveň splňují omezení:
 Komplexní materiály pro praktický workshop s produkčně připravenými implementacemi:
 
 - **[Průvodce workshopem](./Workshop/Readme.md)** - Kompletní cíle učení, výsledky a navigace zdrojů
-- **Python ukázky** (6 sezení) - Aktualizované s nejlepšími postupy, zpracováním chyb a podrobnou dokumentací
+- **Python ukázky** (6 sezení) - Aktualizované s nejlepšími postupy, zpracováním chyb a kompletní dokumentací
 - **Jupyter notebooky** (8 interaktivních) - Krok za krokem tutoriály s benchmarky a monitorováním výkonu
 - **Průvodci sezeními** - Podrobné markdown průvodce pro každé sezení workshopu
 - **Nástroje pro validaci** - Skripty pro ověření kvality kódu a spuštění smoke testů
@@ -139,9 +139,9 @@ Komplexní materiály pro praktický workshop s produkčně připravenými imple
 ## Co vytvoříte
 
 ### 🎯 Klíčové kompetence
-- **Architektura Edge AI**: Navrhování lokálně orientovaných AI systémů s integrací do cloudu
+- **Architektura Edge AI**: Navrhování AI systémů s prioritou lokálního provozu a integrací cloudu
 - **Optimalizace modelu**: Kvantizace a komprese modelů pro nasazení na okraji (85% zrychlení, 75% zmenšení velikosti)  
-- **Víceplatformní nasazení**: Windows, mobilní zařízení, vestavěné systémy a hybridní cloud-okrajové systémy  
+- **Víceplatformní nasazení**: Windows, mobilní zařízení, vestavěné systémy a hybridní cloud-edge systémy  
 - **Provoz v produkci**: Monitorování, škálování a údržba edge AI v produkci  
 
 ### 🏗️ Praktické projekty  
@@ -157,13 +157,13 @@ Komplexní materiály pro praktický workshop s produkčně připravenými imple
 
 ## Rychlý start  
 
-**Doporučená cesta učení** (celkem 20-30 hodin):  
+**Doporučená učební cesta** (celkem 20-30 hodin):  
 
-0. **📖 Úvod** ([Introduction.md](./introduction.md)): Základy EdgeAI + průmyslový kontext + rámec učení  
+0. **📖 Úvod** ([Introduction.md](./introduction.md)): Základy EdgeAI + průmyslový kontext + učební rámec  
 1. **📚 Základy** (Moduly 01-02): Koncepty EdgeAI + rodiny modelů SLM  
 2. **⚙️ Optimalizace** (Moduly 03-04): Nasazení + kvantizační frameworky  
 3. **🚀 Produkce** (Moduly 05-06): SLMOps + AI agenti + volání funkcí  
-4. **💻 Implementace** (Moduly 07-08): Ukázky platforem + nástroje Foundry Local  
+4. **💻 Implementace** (Moduly 07-08): Ukázky platforem + Foundry Local toolkit  
 
 Každý modul obsahuje teorii, praktická cvičení a kódové ukázky připravené pro produkci.  
 
@@ -196,10 +196,10 @@ edgeai-for-beginners/
 ✅ **Reálné případové studie**: Microsoft, Japan Airlines, podniková nasazení  
 ✅ **Praktické ukázky**: 50+ příkladů, 10 komplexních demo aplikací Foundry Local  
 ✅ **Zaměření na výkon**: 85% zrychlení, 75% zmenšení velikosti  
-✅ **Víceplatfromní**: Windows, mobil, vestavěné systémy, cloud-okrajový hybrid  
+✅ **Víceplatfromní**: Windows, mobil, vestavěné systémy, cloud-edge hybrid  
 ✅ **Připraveno pro produkci**: Monitorování, škálování, bezpečnost, rámce souladu  
 
-📖 **[Studijní průvodce k dispozici](STUDY_GUIDE.md)**: Strukturovaná 20hodinová cesta učení s doporučením časového rozvrhu a nástroji pro sebehodnocení.  
+📖 **[Studijní průvodce k dispozici](STUDY_GUIDE.md)**: Strukturovaná 20hodinová učební cesta s doporučením časového rozvržení a nástroji pro sebehodnocení.  
 
 ---  
 
@@ -236,7 +236,7 @@ Náš tým vytváří i další kurzy! Podívejte se na:
 [![ML pro začátečníky](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Data Science pro začátečníky](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
 [![AI pro začátečníky](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Kyberbezpečnost pro začátečníky](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
+[![Kybernetická bezpečnost pro začátečníky](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
 [![Webový vývoj pro začátečníky](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
 [![IoT pro začátečníky](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
 [![XR vývoj pro začátečníky](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -263,5 +263,5 @@ Pokud máte zpětnou vazbu k produktu nebo chyby při vývoji, navštivte:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

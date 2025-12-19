@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T13:03:38+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T09:45:33+00:00",
   "source_file": "README.md",
   "language_code": "ro"
 }
@@ -10,23 +10,23 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI pentru Începători 
 
 
-![Imagine copertă curs](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.ro.png)
+![Course cover image](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.ro.png)
 
-[![Contribuitori GitHub](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![Probleme GitHub](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
-[![Cereri de pull GitHub](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
-[![PR-uri Binevenite](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
+[![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-[![Urmăritori GitHub](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
-[![Fork-uri GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-[![Stele GitHub](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
+[![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+[![GitHub stars](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
 
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
 Urmați acești pași pentru a începe să folosiți aceste resurse:
 
-1. **Fork la Repozitoriu**: Click pe [![Fork-uri GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+1. **Fork la Repozitoriu**: Click pe [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Clonează Repozitoriul**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Alătură-te Discord-ului Azure AI Foundry și întâlnește experți și alți dezvoltatori**](https://discord.com/invite/ByRwuEEgH4)
 
@@ -46,30 +46,30 @@ Bine ați venit la **EdgeAI pentru Începători** – călătoria dvs. completă
 
 ### Ce Veți Stăpâni
 
-Acest curs vă conduce de la conceptele fundamentale la implementări gata de producție, acoperind:
-- **Modele de Limbaj Mici (SLM)** optimizate pentru implementare la margine
+Acest curs vă duce de la conceptele fundamentale la implementări gata de producție, acoperind:
+- **Modele de Limbaj Mici (SLM)** optimizate pentru implementarea la margine
 - **Optimizare conștientă de hardware** pe diverse platforme
 - **Inferență în timp real** cu capabilități de protejare a confidențialității
 - **Strategii de implementare în producție** pentru aplicații enterprise
 
 ### De ce Contează EdgeAI
 
-Edge AI reprezintă o schimbare de paradigmă care abordează provocările moderne critice:
+Edge AI reprezintă o schimbare de paradigmă care abordează provocările critice moderne:
 - **Confidențialitate & Securitate**: Procesează date sensibile local, fără expunere în cloud
-- **Performanță în timp real**: Elimină latența rețelei pentru aplicații critice de timp
+- **Performanță în timp real**: Elimină latența rețelei pentru aplicații critice în timp
 - **Eficiență de cost**: Reduce costurile de bandă și de calcul în cloud
 - **Operațiuni reziliente**: Menține funcționalitatea în timpul întreruperilor de rețea
 - **Conformitate cu reglementările**: Respectă cerințele de suveranitate a datelor
 
 ### Edge AI
 
-Edge AI se referă la rularea algoritmilor AI și a modelelor de limbaj local, pe hardware, aproape de locul unde datele sunt generate, fără a se baza pe resurse cloud pentru inferență. Reduce latența, îmbunătățește confidențialitatea și permite luarea deciziilor în timp real.
+Edge AI se referă la rularea algoritmilor AI și a modelelor de limbaj local pe hardware, aproape de locul unde datele sunt generate, fără a se baza pe resurse cloud pentru inferență. Reduce latența, îmbunătățește confidențialitatea și permite luarea deciziilor în timp real.
 
 ### Principii de bază:
 - **Inferență pe dispozitiv**: Modelele AI rulează pe dispozitive edge (telefoane, routere, microcontrolere, PC-uri industriale)
-- **Capacitate offline**: Funcționează fără conectivitate internet persistentă
+- **Capacitate offline**: Funcționează fără conectivitate persistentă la internet
 - **Latență scăzută**: Răspunsuri imediate potrivite pentru sisteme în timp real
-- **Suveranitatea datelor**: Păstrează datele sensibile local, îmbunătățind securitatea și conformitatea
+- **Suveranitate a datelor**: Păstrează datele sensibile local, îmbunătățind securitatea și conformitatea
 
 ### Modele de Limbaj Mici (SLM)
 
@@ -83,7 +83,7 @@ Ele deblochează capabilități puternice NLP respectând constrângerile:
 - **Dispozitive mobile**: Smartphone-uri și tablete cu capabilități offline
 - **Dispozitive IoT**: Senzori și dispozitive inteligente cu resurse limitate
 - **Servere edge**: Unități locale de procesare cu resurse GPU limitate
-- **Calculatoare personale**: Scenarii de implementare desktop și laptop
+- **Calculatoare personale**: Scenarii de implementare pe desktop și laptop
 
 ## Modulele Cursului & Navigare
 
@@ -94,14 +94,14 @@ Ele deblochează capabilități puternice NLP respectând constrângerile:
 | [🧠 02](../../Module02) | [Fundamentele Modelului SLM](./Module02/README.md) | Familii de modele & arhitectură | Familia Phi • Familia Qwen • Familia Gemma • BitNET • μModel • Phi-Silica | Începător | 4-5 ore |
 | [🚀 03](../../Module03) | [Practica Implementării SLM](./Module03/README.md) | Implementare locală & cloud | Învățare avansată • Mediu local • Implementare cloud | Intermediar | 4-5 ore |
 | [⚙️ 04](../../Module04) | [Kit de Optimizare a Modelului](./Module04/README.md) | Optimizare cross-platform | Introducere • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sinteză flux de lucru | Intermediar | 5-6 ore |
-| [🔧 05](../../Module05) | [SLMOps în Producție](./Module05/README.md) | Operațiuni de producție | Introducere SLMOps • Distilarea modelului • Fine-tuning • Implementare în producție | Avansat | 5-6 ore |
+| [🔧 05](../../Module05) | [SLMOps în Producție](./Module05/README.md) | Operațiuni în producție | Introducere SLMOps • Distilarea modelului • Fine-tuning • Implementare în producție | Avansat | 5-6 ore |
 | [🤖 06](../../Module06) | [Agenți AI & Apelarea Funcțiilor](./Module06/README.md) | Framework-uri agenți & MCP | Introducere agenți • Apelarea funcțiilor • Protocol context model | Avansat | 4-5 ore |
 | [💻 07](../../Module07) | [Implementare pe Platformă](./Module07/README.md) | Exemple cross-platform | Kit AI • Foundry Local • Dezvoltare Windows | Avansat | 3-4 ore |
 | [🏭 08](../../Module08) | [Kit Foundry Local](./Module08/README.md) | Exemple gata de producție | Aplicații exemplu (vezi detalii mai jos) | Expert | 8-10 ore |
 
 ### 🏭 **Modul 08: Aplicații Exemplu**
 
-- [01: Pornire rapidă REST Chat](./Module08/samples/01/README.md)
+- [01: REST Chat Quickstart](./Module08/samples/01/README.md)
 - [02: Integrare SDK OpenAI](./Module08/samples/02/README.md)
 - [03: Descoperire & Benchmarking Model](./Module08/samples/03/README.md)
 - [04: Aplicație Chainlit RAG](./Module08/samples/04/README.md)
@@ -112,34 +112,34 @@ Ele deblochează capabilități puternice NLP respectând constrângerile:
 - [09: Sistem Multi-Agent Avansat](./Module08/samples/09/README.md)
 - [10: Framework Foundry Tools](./Module08/samples/10/README.md)
 
-### 🎓 **Atelier: Parcurs Practic de Învățare**
+### 🎓 **Atelier: Cale de Învățare Practică**
 
 Materiale cuprinzătoare pentru atelier hands-on cu implementări gata de producție:
 
 - **[Ghid Atelier](./Workshop/Readme.md)** - Obiective complete de învățare, rezultate și navigare resurse
 - **Exemple Python** (6 sesiuni) - Actualizate cu bune practici, gestionare erori și documentație completă
 - **Jupyter Notebooks** (8 interactive) - Tutoriale pas cu pas cu benchmark-uri și monitorizare performanță
-- **Ghiduri sesiuni** - Ghiduri detaliate în markdown pentru fiecare sesiune de atelier
-- **Unelte de validare** - Scripturi pentru verificarea calității codului și teste rapide
+- **Ghiduri Sesiuni** - Ghiduri detaliate în markdown pentru fiecare sesiune de atelier
+- **Unelte de Validare** - Scripturi pentru verificarea calității codului și teste rapide
 
 **Ce Veți Construi:**
-- Aplicații locale AI chat cu suport streaming
-- Pipeline-uri RAG cu evaluare calitate (RAGAS)
+- Aplicații locale AI de chat cu suport streaming
+- Pipeline-uri RAG cu evaluare a calității (RAGAS)
 - Unelte de benchmarking și comparare multi-model
 - Sisteme de orchestrare multi-agent
 - Rutare inteligentă a modelelor cu selecție bazată pe sarcini
 
-### 📊 **Sumar Parcurs de Învățare**
-- **Durată totală**: 36-45 ore
-- **Parcurs Începător**: Modulele 01-02 (7-9 ore)  
-- **Parcurs Intermediar**: Modulele 03-04 (9-11 ore)
-- **Parcurs Avansat**: Modulele 05-07 (12-15 ore)
-- **Parcurs Expert**: Modul 08 (8-10 ore)
+### 📊 **Rezumat Cale de Învățare**
+- **Durată Totală**: 36-45 ore
+- **Cale Începător**: Modulele 01-02 (7-9 ore)  
+- **Cale Intermediară**: Modulele 03-04 (9-11 ore)
+- **Cale Avansată**: Modulele 05-07 (12-15 ore)
+- **Cale Expert**: Modulul 08 (8-10 ore)
 
 ## Ce Veți Construi
 
-### 🎯 Competențe de bază
-- **Arhitectură Edge AI**: Proiectați sisteme AI locale cu integrare cloud
+### 🎯 Competențe de Bază
+- **Arhitectura Edge AI**: Proiectați sisteme AI locale cu integrare cloud
 - **Optimizarea modelului**: Cuantificarea și comprimarea modelelor pentru implementare la margine (creștere a vitezei cu 85%, reducere a dimensiunii cu 75%)
 - **Implementare multiplatformă**: Windows, mobil, încorporat și sisteme hibride cloud-edge
 - **Operațiuni de producție**: Monitorizare, scalare și întreținere AI la margine în producție
@@ -152,7 +152,7 @@ Materiale cuprinzătoare pentru atelier hands-on cu implementări gata de produc
 - **Framework-uri API**: Clienți pregătiți pentru producție cu streaming și monitorizare a sănătății
 - **Unelte cross-platform**: Modele de integrare LangChain/Semantic Kernel
 
-### 🏢 Aplicații industriale
+### 🏢 Aplicații în industrie
 **Producție** • **Sănătate** • **Vehicule autonome** • **Orașe inteligente** • **Aplicații mobile**
 
 ## Pornire rapidă
@@ -171,7 +171,7 @@ Fiecare modul include teorie, exerciții practice și exemple de cod pregătite 
 
 **Roluri tehnice**: Arhitect soluții EdgeAI • Inginer ML (Edge) • Dezvoltator AI IoT • Dezvoltator AI mobil
 
-**Sectore industriale**: Producție 4.0 • Tehnologie în sănătate • Sisteme autonome • FinTech • Electronice de consum
+**Sectoare industriale**: Producție 4.0 • Tehnologie în sănătate • Sisteme autonome • FinTech • Electronice de consum
 
 **Proiecte portofoliu**: Sisteme multi-agent • Aplicații RAG în producție • Implementare cross-platform • Optimizare performanță
 
@@ -234,7 +234,7 @@ Echipa noastră produce și alte cursuri! Vezi:
  
 ### Învățare de bază
 [![ML pentru începători](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![Știința datelor pentru începători](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![Data Science pentru începători](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI pentru începători](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
 [![Securitate cibernetică pentru începători](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
 [![Dezvoltare web pentru începători](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)

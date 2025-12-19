@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T12:45:24+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T09:28:38+00:00",
   "source_file": "README.md",
   "language_code": "vi"
 }
@@ -24,14 +24,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Làm theo các bước sau để bắt đầu sử dụng các tài nguyên này:
+Theo các bước sau để bắt đầu sử dụng các tài nguyên này:
 
-1. **Fork Kho Lưu Trữ**: Nhấn [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Clone Kho Lưu Trữ**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+1. **Fork Repository**: Nhấn [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Clone Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Tham gia Azure AI Foundry Discord và gặp gỡ các chuyên gia cùng nhà phát triển khác**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Hỗ Trợ Đa Ngôn Ngữ
+### 🌐 Hỗ trợ Đa Ngôn Ngữ
 
 #### Hỗ trợ qua GitHub Action (Tự động & Luôn Cập Nhật)
 
@@ -40,11 +40,11 @@ Làm theo các bước sau để bắt đầu sử dụng các tài nguyên này
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 **Nếu bạn muốn có thêm các ngôn ngữ dịch được hỗ trợ, danh sách có tại [đây](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
-## Giới Thiệu
+## Giới thiệu
 
 Chào mừng bạn đến với **EdgeAI cho Người Mới Bắt Đầu** – hành trình toàn diện của bạn vào thế giới chuyển đổi của Trí tuệ Nhân tạo Biên. Khóa học này kết nối khoảng cách giữa khả năng AI mạnh mẽ và triển khai thực tế trong thế giới thực trên các thiết bị biên, giúp bạn khai thác tiềm năng AI ngay tại nơi dữ liệu được tạo ra và nơi cần ra quyết định.
 
-### Những Gì Bạn Sẽ Thành Thạo
+### Những gì bạn sẽ làm chủ
 
 Khóa học này đưa bạn từ các khái niệm cơ bản đến các triển khai sẵn sàng sản xuất, bao gồm:
 - **Mô hình Ngôn ngữ Nhỏ (SLMs)** được tối ưu hóa cho triển khai biên
@@ -52,10 +52,10 @@ Khóa học này đưa bạn từ các khái niệm cơ bản đến các triể
 - **Suy luận thời gian thực** với khả năng bảo vệ quyền riêng tư
 - **Chiến lược triển khai sản xuất** cho các ứng dụng doanh nghiệp
 
-### Tại Sao EdgeAI Quan Trọng
+### Tại sao EdgeAI quan trọng
 
 Edge AI đại diện cho một sự thay đổi mô hình giải quyết các thách thức hiện đại quan trọng:
-- **Quyền riêng tư & An ninh**: Xử lý dữ liệu nhạy cảm tại chỗ mà không cần phơi bày lên đám mây
+- **Quyền riêng tư & Bảo mật**: Xử lý dữ liệu nhạy cảm tại chỗ mà không cần phơi bày lên đám mây
 - **Hiệu suất thời gian thực**: Loại bỏ độ trễ mạng cho các ứng dụng cần thời gian phản hồi nhanh
 - **Hiệu quả chi phí**: Giảm băng thông và chi phí điện toán đám mây
 - **Hoạt động bền bỉ**: Duy trì chức năng trong thời gian mất mạng
@@ -63,9 +63,9 @@ Edge AI đại diện cho một sự thay đổi mô hình giải quyết các t
 
 ### Edge AI
 
-Edge AI đề cập đến việc chạy các thuật toán AI và mô hình ngôn ngữ ngay trên phần cứng, gần nơi dữ liệu được tạo ra mà không phụ thuộc vào tài nguyên đám mây để suy luận. Nó giảm độ trễ, tăng cường quyền riêng tư và cho phép ra quyết định thời gian thực.
+Edge AI là thuật ngữ chỉ việc chạy các thuật toán AI và mô hình ngôn ngữ ngay tại phần cứng, gần nơi dữ liệu được tạo ra mà không phụ thuộc vào tài nguyên đám mây để suy luận. Nó giảm độ trễ, tăng cường quyền riêng tư và cho phép ra quyết định thời gian thực.
 
-### Nguyên Tắc Cốt Lõi:
+### Nguyên tắc cốt lõi:
 - **Suy luận trên thiết bị**: Mô hình AI chạy trên các thiết bị biên (điện thoại, bộ định tuyến, vi điều khiển, máy tính công nghiệp)
 - **Khả năng hoạt động ngoại tuyến**: Hoạt động mà không cần kết nối internet liên tục
 - **Độ trễ thấp**: Phản hồi ngay lập tức phù hợp với hệ thống thời gian thực
@@ -87,7 +87,7 @@ Chúng mở khóa các khả năng NLP mạnh mẽ trong khi đáp ứng các gi
 
 ## Các Mô-đun Khóa Học & Điều Hướng
 
-| Mô-đun | Chủ đề | Lĩnh vực Tập trung | Nội dung Chính | Cấp độ | Thời lượng |
+| Mô-đun | Chủ đề | Lĩnh vực tập trung | Nội dung chính | Cấp độ | Thời lượng |
 |--------|-------|------------|-------------|--------|----------|
 | [📖 00 ](./introduction.md) | [Giới thiệu về EdgeAI](./introduction.md) | Nền tảng & Bối cảnh | Tổng quan EdgeAI • Ứng dụng ngành • Giới thiệu SLM • Mục tiêu học tập | Người mới bắt đầu | 1-2 giờ |
 | [📚 01](../../Module01) | [Cơ bản về EdgeAI](./Module01/README.md) | So sánh Cloud và Edge AI | Cơ bản EdgeAI • Nghiên cứu trường hợp thực tế • Hướng dẫn triển khai • Triển khai biên | Người mới bắt đầu | 3-4 giờ |
@@ -127,18 +127,18 @@ Tài liệu hội thảo thực hành toàn diện với các triển khai sẵn
 - Pipeline RAG với đánh giá chất lượng (RAGAS)
 - Công cụ đánh giá và so sánh đa mô hình
 - Hệ thống điều phối đa tác nhân
-- Định tuyến mô hình thông minh với lựa chọn dựa trên tác vụ
+- Định tuyến mô hình thông minh với lựa chọn theo tác vụ
 
 ### 📊 **Tóm tắt Lộ trình Học tập**
-- **Tổng Thời lượng**: 36-45 giờ
+- **Tổng thời lượng**: 36-45 giờ
 - **Lộ trình Người mới bắt đầu**: Mô-đun 01-02 (7-9 giờ)  
 - **Lộ trình Trung cấp**: Mô-đun 03-04 (9-11 giờ)
 - **Lộ trình Nâng cao**: Mô-đun 05-07 (12-15 giờ)
 - **Lộ trình Chuyên gia**: Mô-đun 08 (8-10 giờ)
 
-## Những Gì Bạn Sẽ Xây Dựng
+## Những gì bạn sẽ xây dựng
 
-### 🎯 Năng lực Cốt lõi
+### 🎯 Năng lực cốt lõi
 - **Kiến trúc Edge AI**: Thiết kế hệ thống AI ưu tiên cục bộ với tích hợp đám mây
 - **Tối ưu hóa mô hình**: Lượng tử hóa và nén mô hình để triển khai tại biên (tăng tốc 85%, giảm kích thước 75%)  
 - **Triển khai đa nền tảng**: Windows, di động, nhúng và hệ thống lai đám mây-biên  
@@ -149,7 +149,7 @@ Tài liệu hội thảo thực hành toàn diện với các triển khai sẵn
 - **Hệ thống đa tác nhân**: Điều phối viên với các tác nhân chuyên gia cho quy trình làm việc phức tạp  
 - **Ứng dụng RAG**: Xử lý tài liệu cục bộ với tìm kiếm vector  
 - **Bộ định tuyến mô hình**: Lựa chọn thông minh giữa các mô hình dựa trên phân tích nhiệm vụ  
-- **Khung API**: Khách hàng sẵn sàng sản xuất với phát trực tiếp và giám sát sức khỏe  
+- **Khung API**: Khách hàng sẵn sàng sản xuất với streaming và giám sát sức khỏe  
 - **Công cụ đa nền tảng**: Mẫu tích hợp LangChain/Semantic Kernel  
 
 ### 🏢 Ứng dụng ngành  
@@ -165,7 +165,7 @@ Tài liệu hội thảo thực hành toàn diện với các triển khai sẵn
 3. **🚀 Sản xuất** (Modules 05-06): SLMOps + tác nhân AI + gọi hàm  
 4. **💻 Triển khai** (Modules 07-08): Mẫu nền tảng + bộ công cụ Foundry Local  
 
-Mỗi module bao gồm lý thuyết, bài tập thực hành và mẫu mã nguồn sẵn sàng sản xuất.  
+Mỗi module bao gồm lý thuyết, bài tập thực hành và mẫu mã sẵn sàng sản xuất.  
 
 ## Tác động nghề nghiệp  
 
@@ -223,7 +223,7 @@ Nhóm chúng tôi còn sản xuất các khóa học khác! Xem thêm:
 [![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### Chuỗi AI Tạo Sinh  
 [![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
@@ -231,7 +231,7 @@ Nhóm chúng tôi còn sản xuất các khóa học khác! Xem thêm:
 [![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### Học cốt lõi  
 [![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -242,7 +242,7 @@ Nhóm chúng tôi còn sản xuất các khóa học khác! Xem thêm:
 [![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### Chuỗi Copilot  
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  

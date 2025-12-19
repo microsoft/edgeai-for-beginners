@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T11:46:23+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T08:29:40+00:00",
   "source_file": "README.md",
   "language_code": "zh"
 }
@@ -87,7 +87,7 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的优化版本——通过�
 
 ## 课程模块与导航
 
-| 模块 | 主题 | 重点领域 | 关键内容 | 级别 | 时长 |
+| 模块 | 主题 | 关注领域 | 关键内容 | 级别 | 时长 |
 |--------|-------|------------|-------------|--------|----------|
 | [📖 00 ](./introduction.md) | [EdgeAI 介绍](./introduction.md) | 基础与背景 | EdgeAI 概述 • 行业应用 • SLM 介绍 • 学习目标 | 初学者 | 1-2 小时 |
 | [📚 01](../../Module01) | [EdgeAI 基础](./Module01/README.md) | 云端与边缘 AI 对比 | EdgeAI 基础 • 真实案例研究 • 实施指南 • 边缘部署 | 初学者 | 3-4 小时 |
@@ -101,31 +101,31 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的优化版本——通过�
 
 ### 🏭 **模块 08：示例应用**
 
-- [01：REST 聊天快速入门](./Module08/samples/01/README.md)
-- [02：OpenAI SDK 集成](./Module08/samples/02/README.md)
-- [03：模型发现与基准测试](./Module08/samples/03/README.md)
-- [04：Chainlit RAG 应用](./Module08/samples/04/README.md)
-- [05：多代理编排](./Module08/samples/05/README.md)
-- [06：模型即工具路由器](./Module08/samples/06/README.md)
-- [07：直接 API 客户端](./Module08/samples/07/README.md)
-- [08：Windows 11 聊天应用](./Module08/samples/08/README.md)
-- [09：高级多代理系统](./Module08/samples/09/README.md)
-- [10：Foundry 工具框架](./Module08/samples/10/README.md)
+- [01: REST 聊天快速入门](./Module08/samples/01/README.md)
+- [02: OpenAI SDK 集成](./Module08/samples/02/README.md)
+- [03: 模型发现与基准测试](./Module08/samples/03/README.md)
+- [04: Chainlit RAG 应用](./Module08/samples/04/README.md)
+- [05: 多代理编排](./Module08/samples/05/README.md)
+- [06: 模型即工具路由器](./Module08/samples/06/README.md)
+- [07: 直接 API 客户端](./Module08/samples/07/README.md)
+- [08: Windows 11 聊天应用](./Module08/samples/08/README.md)
+- [09: 高级多代理系统](./Module08/samples/09/README.md)
+- [10: Foundry 工具框架](./Module08/samples/10/README.md)
 
 ### 🎓 **工作坊：动手学习路径**
 
 全面的动手工作坊材料，含生产级实现：
 
 - **[工作坊指南](./Workshop/Readme.md)** - 完整学习目标、成果及资源导航
-- **Python 示例**（6 课时）- 更新最佳实践、错误处理及全面文档
-- **Jupyter 笔记本**（8 个交互式）- 逐步教程，含基准测试和性能监控
-- **课程指南** - 每节工作坊的详细 markdown 指南
+- **Python 示例**（6 课时） - 更新最佳实践、错误处理及详尽文档
+- **Jupyter 笔记本**（8 个交互式） - 逐步教程，含基准测试和性能监控
+- **课程指南** - 每节工作坊的详细 Markdown 指南
 - **验证工具** - 验证代码质量和运行冒烟测试的脚本
 
 **您将构建：**
 - 支持流式传输的本地 AI 聊天应用
 - 带质量评估的 RAG 流水线（RAGAS）
-- 多模型基准测试和比较工具
+- 多模型基准测试与比较工具
 - 多代理编排系统
 - 基于任务选择的智能模型路由
 
@@ -139,7 +139,7 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的优化版本——通过�
 ## 您将构建的内容
 
 ### 🎯 核心能力
-- **Edge AI 架构**：设计以本地为先、云端集成的 AI 系统
+- **边缘 AI 架构**：设计以本地优先、云端集成的 AI 系统
 - **模型优化**：量化和压缩模型以实现边缘部署（提升85%速度，减少75%体积）  
 - **多平台部署**：Windows、移动端、嵌入式及云边混合系统  
 - **生产运维**：监控、扩展及维护生产环境中的边缘AI  
@@ -149,7 +149,7 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的优化版本——通过�
 - **多智能体系统**：协调者与专家智能体协作处理复杂工作流  
 - **RAG应用**：本地文档处理与向量搜索  
 - **模型路由器**：基于任务分析智能选择模型  
-- **API框架**：支持流式传输和健康监控的生产级客户端  
+- **API框架**：具备流式传输和健康监控的生产级客户端  
 - **跨平台工具**：LangChain/Semantic Kernel集成模式  
 
 ### 🏢 行业应用  
@@ -223,7 +223,7 @@ edgeai-for-beginners/
 [![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### 生成式AI系列  
 [![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
@@ -231,7 +231,7 @@ edgeai-for-beginners/
 [![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### 核心学习  
 [![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
 [![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
@@ -242,7 +242,7 @@ edgeai-for-beginners/
 [![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
- 
+   
 ### Copilot系列  
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
@@ -263,5 +263,5 @@ edgeai-for-beginners/
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免责声明**：  
-本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译而成。尽管我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件由人工智能翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译。虽然我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

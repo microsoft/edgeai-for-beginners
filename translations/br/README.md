@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d396a2dcca2c17bdf416bcb57d1d3db",
-  "translation_date": "2025-12-17T12:16:33+00:00",
+  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
+  "translation_date": "2025-12-19T08:59:38+00:00",
   "source_file": "README.md",
   "language_code": "br"
 }
@@ -36,13 +36,13 @@ Siga estes passos para começar a usar esses recursos:
 #### Suportado via GitHub Action (Automatizado e Sempre Atualizado)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Árabe](../ar/README.md) | [Bengali](../bn/README.md) | [Búlgaro](../bg/README.md) | [Birmanês (Myanmar)](../my/README.md) | [Chinês (Simplificado)](../zh/README.md) | [Chinês (Tradicional, Hong Kong)](../hk/README.md) | [Chinês (Tradicional, Macau)](../mo/README.md) | [Chinês (Tradicional, Taiwan)](../tw/README.md) | [Croata](../hr/README.md) | [Tcheco](../cs/README.md) | [Dinamarquês](../da/README.md) | [Holandês](../nl/README.md) | [Estoniano](../et/README.md) | [Finlandês](../fi/README.md) | [Francês](../fr/README.md) | [Alemão](../de/README.md) | [Grego](../el/README.md) | [Hebraico](../he/README.md) | [Hindi](../hi/README.md) | [Húngaro](../hu/README.md) | [Indonésio](../id/README.md) | [Italiano](../it/README.md) | [Japonês](../ja/README.md) | [Kannada](../kn/README.md) | [Coreano](../ko/README.md) | [Lituano](../lt/README.md) | [Malaio](../ms/README.md) | [Malaiala](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Pidgin Nigeriano](../pcm/README.md) | [Norueguês](../no/README.md) | [Persa (Farsi)](../fa/README.md) | [Polonês](../pl/README.md) | [Português (Brasil)](./README.md) | [Português (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romeno](../ro/README.md) | [Russo](../ru/README.md) | [Sérvio (Cirílico)](../sr/README.md) | [Eslovaco](../sk/README.md) | [Esloveno](../sl/README.md) | [Espanhol](../es/README.md) | [Suaíli](../sw/README.md) | [Sueco](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tâmil](../ta/README.md) | [Telugu](../te/README.md) | [Tailandês](../th/README.md) | [Turco](../tr/README.md) | [Ucraniano](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamita](../vi/README.md)
+[Árabe](../ar/README.md) | [Bengali](../bn/README.md) | [Búlgaro](../bg/README.md) | [Birmanês (Myanmar)](../my/README.md) | [Chinês (Simplificado)](../zh/README.md) | [Chinês (Tradicional, Hong Kong)](../hk/README.md) | [Chinês (Tradicional, Macau)](../mo/README.md) | [Chinês (Tradicional, Taiwan)](../tw/README.md) | [Croata](../hr/README.md) | [Tcheco](../cs/README.md) | [Dinamarquês](../da/README.md) | [Holandês](../nl/README.md) | [Estoniano](../et/README.md) | [Finlandês](../fi/README.md) | [Francês](../fr/README.md) | [Alemão](../de/README.md) | [Grego](../el/README.md) | [Hebraico](../he/README.md) | [Hindi](../hi/README.md) | [Húngaro](../hu/README.md) | [Indonésio](../id/README.md) | [Italiano](../it/README.md) | [Japonês](../ja/README.md) | [Kannada](../kn/README.md) | [Coreano](../ko/README.md) | [Lituano](../lt/README.md) | [Malaio](../ms/README.md) | [Malaiala](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Pidgin Nigeriano](../pcm/README.md) | [Norueguês](../no/README.md) | [Persa (Farsi)](../fa/README.md) | [Polonês](../pl/README.md) | [Português (Brasil)](./README.md) | [Português (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romeno](../ro/README.md) | [Russo](../ru/README.md) | [Sérvio (Cirílico)](../sr/README.md) | [Eslovaco](../sk/README.md) | [Esloveno](../sl/README.md) | [Espanhol](../es/README.md) | [Suaíli](../sw/README.md) | [Sueco](../sv/README.md) | [Tagalo (Filipino)](../tl/README.md) | [Tâmil](../ta/README.md) | [Telugu](../te/README.md) | [Tailandês](../th/README.md) | [Turco](../tr/README.md) | [Ucraniano](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamita](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Se desejar que idiomas adicionais sejam suportados, eles estão listados [aqui](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Se desejar que idiomas adicionais sejam suportados, estão listados [aqui](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introdução
 
-Bem-vindo ao **EdgeAI para Iniciantes** – sua jornada abrangente no mundo transformador da Inteligência Artificial na Borda. Este curso conecta as poderosas capacidades de IA com a implantação prática e real em dispositivos de borda, capacitando você a aproveitar o potencial da IA diretamente onde os dados são gerados e as decisões precisam ser tomadas.
+Bem-vindo ao **EdgeAI para Iniciantes** – sua jornada abrangente no mundo transformador da Inteligência Artificial de Borda. Este curso conecta o poder das capacidades de IA com a implantação prática e real em dispositivos de borda, capacitando você a aproveitar o potencial da IA diretamente onde os dados são gerados e as decisões precisam ser tomadas.
 
 ### O que você vai dominar
 
@@ -65,15 +65,15 @@ Edge AI representa uma mudança de paradigma que aborda desafios modernos críti
 
 Edge AI refere-se à execução de algoritmos de IA e modelos de linguagem localmente no hardware, próximo ao local onde os dados são gerados, sem depender de recursos de nuvem para inferência. Isso reduz a latência, melhora a privacidade e permite a tomada de decisões em tempo real.
 
-### Princípios fundamentais:
-- **Inferência no dispositivo**: Modelos de IA executam em dispositivos de borda (celulares, roteadores, microcontroladores, PCs industriais)
+### Princípios básicos:
+- **Inferência no dispositivo**: Modelos de IA executados em dispositivos de borda (celulares, roteadores, microcontroladores, PCs industriais)
 - **Capacidade offline**: Funciona sem conectividade persistente com a internet
 - **Baixa latência**: Respostas imediatas adequadas para sistemas em tempo real
-- **Soberania de dados**: Mantém dados sensíveis localmente, melhorando segurança e conformidade
+- **Soberania dos dados**: Mantém dados sensíveis localmente, melhorando segurança e conformidade
 
 ### Modelos de Linguagem Pequenos (SLMs)
 
-SLMs como Phi-4, Mistral-7B e Gemma são versões otimizadas de LLMs maiores—treinados ou destilados para:
+SLMs como Phi-4, Mistral-7B e Gemma são versões otimizadas de LLMs maiores — treinados ou destilados para:
 - **Redução da pegada de memória**: Uso eficiente da memória limitada dos dispositivos de borda
 - **Menor demanda computacional**: Otimizado para desempenho em CPU e GPU de borda
 - **Tempos de inicialização mais rápidos**: Inicialização rápida para aplicações responsivas
@@ -106,7 +106,7 @@ Eles desbloqueiam poderosas capacidades de PLN enquanto atendem às restrições
 - [03: Descoberta & Benchmarking de Modelos](./Module08/samples/03/README.md)
 - [04: Aplicação Chainlit RAG](./Module08/samples/04/README.md)
 - [05: Orquestração Multi-Agente](./Module08/samples/05/README.md)
-- [06: Roteador Modelos-como-Ferramentas](./Module08/samples/06/README.md)
+- [06: Roteador Models-as-Tools](./Module08/samples/06/README.md)
 - [07: Cliente API Direto](./Module08/samples/07/README.md)
 - [08: Aplicativo de Chat Windows 11](./Module08/samples/08/README.md)
 - [09: Sistema Multi-Agente Avançado](./Module08/samples/09/README.md)
@@ -117,7 +117,7 @@ Eles desbloqueiam poderosas capacidades de PLN enquanto atendem às restrições
 Materiais abrangentes de workshop prático com implementações prontas para produção:
 
 - **[Guia do Workshop](./Workshop/Readme.md)** - Objetivos completos de aprendizagem, resultados e navegação de recursos
-- **Exemplos em Python** (6 sessões) - Atualizados com melhores práticas, tratamento de erros e documentação abrangente
+- **Exemplos em Python** (6 sessões) - Atualizados com melhores práticas, tratamento de erros e documentação completa
 - **Cadernos Jupyter** (8 interativos) - Tutoriais passo a passo com benchmarks e monitoramento de desempenho
 - **Guias de Sessão** - Guias detalhados em markdown para cada sessão do workshop
 - **Ferramentas de Validação** - Scripts para verificar qualidade do código e executar testes básicos
@@ -138,7 +138,7 @@ Materiais abrangentes de workshop prático com implementações prontas para pro
 
 ## O que você vai construir
 
-### 🎯 Competências Centrais
+### 🎯 Competências Principais
 - **Arquitetura Edge AI**: Projetar sistemas de IA com prioridade local e integração com nuvem
 - **Otimização de Modelos**: Quantizar e comprimir modelos para implantação na borda (aumento de velocidade de 85%, redução de tamanho de 75%)
 - **Implantação Multiplataforma**: Windows, mobile, embarcados e sistemas híbridos cloud-edge
@@ -152,14 +152,14 @@ Materiais abrangentes de workshop prático com implementações prontas para pro
 - **Frameworks de API**: Clientes prontos para produção com streaming e monitoramento de saúde
 - **Ferramentas Multiplataforma**: Padrões de integração LangChain/Semantic Kernel
 
-### 🏢 Aplicações Industriais
+### 🏢 Aplicações na Indústria
 **Manufatura** • **Saúde** • **Veículos Autônomos** • **Cidades Inteligentes** • **Apps Mobile**
 
 ## Início Rápido
 
 **Caminho de Aprendizado Recomendado** (20-30 horas no total):
 
-0. **📖 Introdução** ([Introduction.md](./introduction.md)): Fundamentos do EdgeAI + contexto industrial + framework de aprendizado
+0. **📖 Introdução** ([Introduction.md](./introduction.md)): Fundamentos do EdgeAI + contexto da indústria + framework de aprendizado
 1. **📚 Fundamentos** (Módulos 01-02): Conceitos de EdgeAI + famílias de modelos SLM
 2. **⚙️ Otimização** (Módulos 03-04): Implantação + frameworks de quantização  
 3. **🚀 Produção** (Módulos 05-06): SLMOps + agentes de IA + chamadas de função
@@ -171,7 +171,7 @@ Cada módulo inclui teoria, exercícios práticos e exemplos de código prontos 
 
 **Funções Técnicas**: Arquiteto de Soluções EdgeAI • Engenheiro de ML (Edge) • Desenvolvedor de IA para IoT • Desenvolvedor de IA Mobile
 
-**Setores Industriais**: Manufatura 4.0 • Tecnologia em Saúde • Sistemas Autônomos • FinTech • Eletrônicos de Consumo
+**Setores da Indústria**: Manufatura 4.0 • Tecnologia em Saúde • Sistemas Autônomos • FinTech • Eletrônicos de Consumo
 
 **Projetos de Portfólio**: Sistemas multiagentes • Apps RAG em produção • Implantação multiplataforma • Otimização de desempenho
 
@@ -251,11 +251,11 @@ Nossa equipe produz outros cursos! Confira:
 
 ## Obtendo Ajuda
 
-Se você ficar preso ou tiver dúvidas sobre como construir apps de IA, participe:
+Se você ficar preso ou tiver dúvidas sobre como construir apps de IA, entre em:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Se você tiver feedback sobre o produto ou erros durante o desenvolvimento, visite:
+Se você tiver feedback sobre o produto ou erros durante a construção, visite:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
@@ -263,5 +263,5 @@ Se você tiver feedback sobre o produto ou erros durante o desenvolvimento, visi
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
