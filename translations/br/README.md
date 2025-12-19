@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T08:59:38+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T11:59:51+00:00",
   "source_file": "README.md",
   "language_code": "br"
 }
@@ -26,7 +26,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Siga estes passos para começar a usar esses recursos:
 
-1. **Faça um Fork do Repositório**: Clique [![Forks do GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+1. **Faça um Fork do Repositório**: Clique em [![Forks do GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Clone o Repositório**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Junte-se ao Azure AI Foundry Discord e conheça especialistas e outros desenvolvedores**](https://discord.com/invite/ByRwuEEgH4)
 
@@ -36,13 +36,13 @@ Siga estes passos para começar a usar esses recursos:
 #### Suportado via GitHub Action (Automatizado e Sempre Atualizado)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Árabe](../ar/README.md) | [Bengali](../bn/README.md) | [Búlgaro](../bg/README.md) | [Birmanês (Myanmar)](../my/README.md) | [Chinês (Simplificado)](../zh/README.md) | [Chinês (Tradicional, Hong Kong)](../hk/README.md) | [Chinês (Tradicional, Macau)](../mo/README.md) | [Chinês (Tradicional, Taiwan)](../tw/README.md) | [Croata](../hr/README.md) | [Tcheco](../cs/README.md) | [Dinamarquês](../da/README.md) | [Holandês](../nl/README.md) | [Estoniano](../et/README.md) | [Finlandês](../fi/README.md) | [Francês](../fr/README.md) | [Alemão](../de/README.md) | [Grego](../el/README.md) | [Hebraico](../he/README.md) | [Hindi](../hi/README.md) | [Húngaro](../hu/README.md) | [Indonésio](../id/README.md) | [Italiano](../it/README.md) | [Japonês](../ja/README.md) | [Kannada](../kn/README.md) | [Coreano](../ko/README.md) | [Lituano](../lt/README.md) | [Malaio](../ms/README.md) | [Malaiala](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Pidgin Nigeriano](../pcm/README.md) | [Norueguês](../no/README.md) | [Persa (Farsi)](../fa/README.md) | [Polonês](../pl/README.md) | [Português (Brasil)](./README.md) | [Português (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romeno](../ro/README.md) | [Russo](../ru/README.md) | [Sérvio (Cirílico)](../sr/README.md) | [Eslovaco](../sk/README.md) | [Esloveno](../sl/README.md) | [Espanhol](../es/README.md) | [Suaíli](../sw/README.md) | [Sueco](../sv/README.md) | [Tagalo (Filipino)](../tl/README.md) | [Tâmil](../ta/README.md) | [Telugu](../te/README.md) | [Tailandês](../th/README.md) | [Turco](../tr/README.md) | [Ucraniano](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamita](../vi/README.md)
+[Árabe](../ar/README.md) | [Bengali](../bn/README.md) | [Búlgaro](../bg/README.md) | [Birmanês (Myanmar)](../my/README.md) | [Chinês (Simplificado)](../zh/README.md) | [Chinês (Tradicional, Hong Kong)](../hk/README.md) | [Chinês (Tradicional, Macau)](../mo/README.md) | [Chinês (Tradicional, Taiwan)](../tw/README.md) | [Croata](../hr/README.md) | [Tcheco](../cs/README.md) | [Dinamarquês](../da/README.md) | [Holandês](../nl/README.md) | [Estoniano](../et/README.md) | [Finlandês](../fi/README.md) | [Francês](../fr/README.md) | [Alemão](../de/README.md) | [Grego](../el/README.md) | [Hebraico](../he/README.md) | [Hindi](../hi/README.md) | [Húngaro](../hu/README.md) | [Indonésio](../id/README.md) | [Italiano](../it/README.md) | [Japonês](../ja/README.md) | [Kannada](../kn/README.md) | [Coreano](../ko/README.md) | [Lituano](../lt/README.md) | [Malaio](../ms/README.md) | [Malaiala](../ml/README.md) | [Marata](../mr/README.md) | [Nepali](../ne/README.md) | [Pidgin Nigeriano](../pcm/README.md) | [Norueguês](../no/README.md) | [Persa (Farsi)](../fa/README.md) | [Polonês](../pl/README.md) | [Português (Brasil)](./README.md) | [Português (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romeno](../ro/README.md) | [Russo](../ru/README.md) | [Sérvio (Cirílico)](../sr/README.md) | [Eslovaco](../sk/README.md) | [Esloveno](../sl/README.md) | [Espanhol](../es/README.md) | [Suaíli](../sw/README.md) | [Sueco](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tâmil](../ta/README.md) | [Telugu](../te/README.md) | [Tailandês](../th/README.md) | [Turco](../tr/README.md) | [Ucraniano](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamita](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Se desejar que idiomas adicionais sejam suportados, estão listados [aqui](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Se desejar que idiomas adicionais sejam suportados, eles estão listados [aqui](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introdução
 
-Bem-vindo ao **EdgeAI para Iniciantes** – sua jornada abrangente no mundo transformador da Inteligência Artificial de Borda. Este curso conecta o poder das capacidades de IA com a implantação prática e real em dispositivos de borda, capacitando você a aproveitar o potencial da IA diretamente onde os dados são gerados e as decisões precisam ser tomadas.
+Bem-vindo ao **EdgeAI para Iniciantes** – sua jornada abrangente no mundo transformador da Inteligência Artificial na Borda. Este curso conecta as poderosas capacidades de IA com a implantação prática e real em dispositivos de borda, capacitando você a aproveitar o potencial da IA diretamente onde os dados são gerados e as decisões precisam ser tomadas.
 
 ### O que você vai dominar
 
@@ -55,11 +55,11 @@ Este curso leva você dos conceitos fundamentais até implementações prontas p
 ### Por que o EdgeAI é importante
 
 Edge AI representa uma mudança de paradigma que aborda desafios modernos críticos:
-- **Privacidade & Segurança**: Processa dados sensíveis localmente sem exposição à nuvem
+- **Privacidade e Segurança**: Processa dados sensíveis localmente sem exposição à nuvem
 - **Desempenho em tempo real**: Elimina latência de rede para aplicações críticas em tempo
 - **Eficiência de custo**: Reduz despesas com largura de banda e computação em nuvem
 - **Operações resilientes**: Mantém funcionalidade durante quedas de rede
-- **Conformidade regulatória**: Atende requisitos de soberania de dados
+- **Conformidade regulatória**: Atende aos requisitos de soberania de dados
 
 ### Edge AI
 
@@ -90,7 +90,7 @@ Eles desbloqueiam poderosas capacidades de PLN enquanto atendem às restrições
 | Módulo | Tópico | Área de Foco | Conteúdo Principal | Nível | Duração |
 |--------|-------|------------|-------------|--------|----------|
 | [📖 00 ](./introduction.md) | [Introdução ao EdgeAI](./introduction.md) | Fundamentos & Contexto | Visão Geral do EdgeAI • Aplicações na Indústria • Introdução ao SLM • Objetivos de Aprendizagem | Iniciante | 1-2 hrs |
-| [📚 01](../../Module01) | [Fundamentos do EdgeAI](./Module01/README.md) | Comparação Cloud vs Edge AI | Fundamentos do EdgeAI • Estudos de Caso Reais • Guia de Implementação • Implantação na Borda | Iniciante | 3-4 hrs |
+| [📚 01](../../Module01) | [Fundamentos do EdgeAI](./Module01/README.md) | Comparação Cloud vs Edge AI | Fundamentos do EdgeAI • Estudos de Caso do Mundo Real • Guia de Implementação • Implantação na Borda | Iniciante | 3-4 hrs |
 | [🧠 02](../../Module02) | [Fundamentos do Modelo SLM](./Module02/README.md) | Famílias de modelos & arquitetura | Família Phi • Família Qwen • Família Gemma • BitNET • μModel • Phi-Silica | Iniciante | 4-5 hrs |
 | [🚀 03](../../Module03) | [Prática de Implantação SLM](./Module03/README.md) | Implantação local & na nuvem | Aprendizado Avançado • Ambiente Local • Implantação na Nuvem | Intermediário | 4-5 hrs |
 | [⚙️ 04](../../Module04) | [Kit de Ferramentas de Otimização de Modelos](./Module04/README.md) | Otimização multiplataforma | Introdução • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Síntese de Fluxo de Trabalho | Intermediário | 5-6 hrs |
@@ -106,7 +106,7 @@ Eles desbloqueiam poderosas capacidades de PLN enquanto atendem às restrições
 - [03: Descoberta & Benchmarking de Modelos](./Module08/samples/03/README.md)
 - [04: Aplicação Chainlit RAG](./Module08/samples/04/README.md)
 - [05: Orquestração Multi-Agente](./Module08/samples/05/README.md)
-- [06: Roteador Models-as-Tools](./Module08/samples/06/README.md)
+- [06: Roteador Modelos-como-Ferramentas](./Module08/samples/06/README.md)
 - [07: Cliente API Direto](./Module08/samples/07/README.md)
 - [08: Aplicativo de Chat Windows 11](./Module08/samples/08/README.md)
 - [09: Sistema Multi-Agente Avançado](./Module08/samples/09/README.md)
@@ -117,13 +117,13 @@ Eles desbloqueiam poderosas capacidades de PLN enquanto atendem às restrições
 Materiais abrangentes de workshop prático com implementações prontas para produção:
 
 - **[Guia do Workshop](./Workshop/Readme.md)** - Objetivos completos de aprendizagem, resultados e navegação de recursos
-- **Exemplos em Python** (6 sessões) - Atualizados com melhores práticas, tratamento de erros e documentação completa
+- **Exemplos em Python** (6 sessões) - Atualizados com melhores práticas, tratamento de erros e documentação abrangente
 - **Cadernos Jupyter** (8 interativos) - Tutoriais passo a passo com benchmarks e monitoramento de desempenho
 - **Guias de Sessão** - Guias detalhados em markdown para cada sessão do workshop
 - **Ferramentas de Validação** - Scripts para verificar qualidade do código e executar testes básicos
 
 **O que você vai construir:**
-- Aplicações locais de chat de IA com suporte a streaming
+- Aplicações locais de chat com suporte a streaming
 - Pipelines RAG com avaliação de qualidade (RAGAS)
 - Ferramentas de benchmarking e comparação multi-modelo
 - Sistemas de orquestração multi-agente
@@ -145,21 +145,21 @@ Materiais abrangentes de workshop prático com implementações prontas para pro
 - **Operações em Produção**: Monitoramento, escalonamento e manutenção de IA na borda em produção
 
 ### 🏗️ Projetos Práticos
-- **Aplicativos de Chat Local Foundry**: Aplicativo nativo Windows 11 com troca de modelos
-- **Sistemas Multiagentes**: Coordenador com agentes especialistas para fluxos de trabalho complexos  
+- **Apps de Chat Local Foundry**: Aplicativo nativo Windows 11 com troca de modelos
+- **Sistemas Multi-Agentes**: Coordenador com agentes especialistas para fluxos de trabalho complexos  
 - **Aplicações RAG**: Processamento local de documentos com busca vetorial
 - **Roteadores de Modelos**: Seleção inteligente entre modelos baseada em análise de tarefas
 - **Frameworks de API**: Clientes prontos para produção com streaming e monitoramento de saúde
-- **Ferramentas Multiplataforma**: Padrões de integração LangChain/Semantic Kernel
+- **Ferramentas Cross-Platform**: Padrões de integração LangChain/Semantic Kernel
 
-### 🏢 Aplicações na Indústria
+### 🏢 Aplicações Industriais
 **Manufatura** • **Saúde** • **Veículos Autônomos** • **Cidades Inteligentes** • **Apps Mobile**
 
 ## Início Rápido
 
 **Caminho de Aprendizado Recomendado** (20-30 horas no total):
 
-0. **📖 Introdução** ([Introduction.md](./introduction.md)): Fundamentos do EdgeAI + contexto da indústria + framework de aprendizado
+0. **📖 Introdução** ([Introduction.md](./introduction.md)): Fundamentos do EdgeAI + contexto industrial + framework de aprendizado
 1. **📚 Fundamentos** (Módulos 01-02): Conceitos de EdgeAI + famílias de modelos SLM
 2. **⚙️ Otimização** (Módulos 03-04): Implantação + frameworks de quantização  
 3. **🚀 Produção** (Módulos 05-06): SLMOps + agentes de IA + chamadas de função
@@ -169,11 +169,11 @@ Cada módulo inclui teoria, exercícios práticos e exemplos de código prontos 
 
 ## Impacto na Carreira
 
-**Funções Técnicas**: Arquiteto de Soluções EdgeAI • Engenheiro de ML (Edge) • Desenvolvedor de IA para IoT • Desenvolvedor de IA Mobile
+**Funções Técnicas**: Arquiteto de Soluções EdgeAI • Engenheiro de ML (Edge) • Desenvolvedor IoT AI • Desenvolvedor Mobile AI
 
-**Setores da Indústria**: Manufatura 4.0 • Tecnologia em Saúde • Sistemas Autônomos • FinTech • Eletrônicos de Consumo
+**Setores Industriais**: Manufatura 4.0 • Tecnologia em Saúde • Sistemas Autônomos • FinTech • Eletrônicos de Consumo
 
-**Projetos de Portfólio**: Sistemas multiagentes • Apps RAG em produção • Implantação multiplataforma • Otimização de desempenho
+**Projetos de Portfólio**: Sistemas multi-agentes • Apps RAG em produção • Implantação multiplataforma • Otimização de desempenho
 
 ## Estrutura do Repositório
 
@@ -255,7 +255,7 @@ Se você ficar preso ou tiver dúvidas sobre como construir apps de IA, entre em
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Se você tiver feedback sobre o produto ou erros durante a construção, visite:
+Se você tiver feedback sobre produtos ou erros durante o desenvolvimento, visite:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 

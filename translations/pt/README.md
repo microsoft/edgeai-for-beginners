@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T08:57:04+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T11:57:35+00:00",
   "source_file": "README.md",
   "language_code": "pt"
 }
@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI para Iniciantes 
 
 
-![Imagem de capa do curso](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.pt.png)
+![Imagem da capa do curso](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.pt.png)
 
 [![Contribuidores do GitHub](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![Problemas do GitHub](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
@@ -26,7 +26,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Siga estes passos para começar a usar estes recursos:
 
-1. **Faça um Fork do Repositório**: Clique [![Forks do GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+1. **Faça um Fork do Repositório**: Clique em [![Forks do GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Clone o Repositório**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Junte-se ao Azure AI Foundry Discord e conheça especialistas e outros desenvolvedores**](https://discord.com/invite/ByRwuEEgH4)
 
@@ -47,9 +47,9 @@ Bem-vindo ao **EdgeAI para Iniciantes** – a sua jornada abrangente no mundo tr
 ### O que Vai Dominar
 
 Este curso leva-o desde conceitos fundamentais até implementações prontas para produção, cobrindo:
-- **Modelos Pequenos de Linguagem (SLMs)** otimizados para implementação na edge
+- **Modelos de Linguagem Pequenos (SLMs)** otimizados para implementação na edge
 - **Otimização consciente do hardware** em diversas plataformas
-- **Inferência em tempo real** com capacidades de preservação de privacidade
+- **Inferência em tempo real** com capacidades de preservação da privacidade
 - **Estratégias de implementação em produção** para aplicações empresariais
 
 ### Por que a EdgeAI é Importante
@@ -71,7 +71,7 @@ Edge AI refere-se à execução de algoritmos de IA e modelos de linguagem local
 - **Baixa latência**: Respostas imediatas adequadas para sistemas em tempo real
 - **Soberania dos dados**: Mantém dados sensíveis localmente, melhorando segurança e conformidade
 
-### Modelos Pequenos de Linguagem (SLMs)
+### Modelos de Linguagem Pequenos (SLMs)
 
 SLMs como Phi-4, Mistral-7B e Gemma são versões otimizadas de LLMs maiores—treinados ou destilados para:
 - **Redução da pegada de memória**: Uso eficiente da memória limitada dos dispositivos edge
@@ -89,7 +89,7 @@ Eles desbloqueiam poderosas capacidades de PLN enquanto cumprem as restrições 
 
 | Módulo | Tema | Área de Foco | Conteúdo Principal | Nível | Duração |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Introdução ao EdgeAI](./introduction.md) | Fundamentos & Contexto | Visão Geral do EdgeAI • Aplicações na Indústria • Introdução a SLM • Objetivos de Aprendizagem | Iniciante | 1-2 hrs |
+| [📖 00 ](./introduction.md) | [Introdução ao EdgeAI](./introduction.md) | Fundamentos & Contexto | Visão Geral do EdgeAI • Aplicações na Indústria • Introdução aos SLM • Objetivos de Aprendizagem | Iniciante | 1-2 hrs |
 | [📚 01](../../Module01) | [Fundamentos do EdgeAI](./Module01/README.md) | Comparação Cloud vs Edge AI | Fundamentos do EdgeAI • Estudos de Caso Reais • Guia de Implementação • Implementação na Edge | Iniciante | 3-4 hrs |
 | [🧠 02](../../Module02) | [Fundamentos do Modelo SLM](./Module02/README.md) | Famílias de modelos & arquitetura | Família Phi • Família Qwen • Família Gemma • BitNET • μModel • Phi-Silica | Iniciante | 4-5 hrs |
 | [🚀 03](../../Module03) | [Prática de Implementação SLM](./Module03/README.md) | Implementação local & cloud | Aprendizagem Avançada • Ambiente Local • Implementação na Cloud | Intermédio | 4-5 hrs |
@@ -117,7 +117,7 @@ Eles desbloqueiam poderosas capacidades de PLN enquanto cumprem as restrições 
 Materiais abrangentes para workshop prático com implementações prontas para produção:
 
 - **[Guia do Workshop](./Workshop/Readme.md)** - Objetivos completos de aprendizagem, resultados e navegação de recursos
-- **Exemplos em Python** (6 sessões) - Atualizados com melhores práticas, tratamento de erros e documentação abrangente
+- **Exemplos em Python** (6 sessões) - Atualizados com melhores práticas, tratamento de erros e documentação completa
 - **Jupyter Notebooks** (8 interativos) - Tutoriais passo a passo com benchmarks e monitorização de desempenho
 - **Guias de Sessão** - Guias detalhados em markdown para cada sessão do workshop
 - **Ferramentas de Validação** - Scripts para verificar qualidade do código e executar testes básicos
@@ -173,7 +173,7 @@ Cada módulo inclui teoria, exercícios práticos e exemplos de código prontos 
 
 **Setores Industriais**: Manufatura 4.0 • Tecnologia em Saúde • Sistemas Autónomos • FinTech • Eletrónica de Consumo
 
-**Projetos de Portfólio**: Sistemas multi-agente • Apps RAG em produção • Implementação cross-platform • Otimização de desempenho
+**Projetos de Portfólio**: Sistemas multi-agente • Aplicações RAG em produção • Implementação cross-platform • Otimização de desempenho
 
 ## Estrutura do Repositório
 
@@ -195,7 +195,7 @@ edgeai-for-beginners/
 ✅ **Aprendizagem Progressiva**: Teoria → Prática → Implementação em produção  
 ✅ **Estudos de Caso Reais**: Microsoft, Japan Airlines, implementações empresariais  
 ✅ **Exemplos Práticos**: 50+ exemplos, 10 demos completas Foundry Local  
-✅ **Foco em Desempenho**: Melhorias de velocidade de 85%, reduções de tamanho de 75%  
+✅ **Foco no Desempenho**: Melhorias de velocidade de 85%, reduções de tamanho de 75%  
 ✅ **Multi-Plataforma**: Windows, móvel, embutido, híbrido cloud-edge  
 ✅ **Pronto para Produção**: Monitorização, escalabilidade, segurança, frameworks de conformidade
 
@@ -203,7 +203,7 @@ edgeai-for-beginners/
 
 ---
 
-**EdgeAI representa o futuro da implementação de IA**: local-primeiro, preservação de privacidade e eficiente. Domine estas competências para construir a próxima geração de aplicações inteligentes.
+**EdgeAI representa o futuro da implementação de IA**: local-primeiro, preservação da privacidade e eficiente. Domine estas competências para construir a próxima geração de aplicações inteligentes.
 
 ## Outros Cursos
 
@@ -255,7 +255,7 @@ Se ficar bloqueado ou tiver dúvidas sobre como construir aplicações de IA, ju
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Se tiver feedback sobre produtos ou erros durante a construção, visite:
+Se tiver feedback sobre produtos ou erros durante o desenvolvimento, visite:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 

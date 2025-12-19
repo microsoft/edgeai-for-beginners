@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:21:32+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T12:22:20+00:00",
   "source_file": "README.md",
   "language_code": "fi"
 }
@@ -42,7 +42,7 @@ Seuraa näitä vaiheita aloittaaksesi näiden resurssien käytön:
 **Jos haluat lisätä tuettuja käännöskieliä, ne on listattu [tässä](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Johdanto
 
-Tervetuloa **EdgeAI aloittelijoille** – kattavalle matkallesi Edge-tekoälyn mullistavaan maailmaan. Tämä kurssi yhdistää tehokkaat tekoälyominaisuudet ja käytännön, todellisessa maailmassa tapahtuvan käyttöönoton reunalaitteilla, antaen sinulle voiman hyödyntää tekoälyn potentiaalia suoraan siellä, missä dataa syntyy ja päätöksiä tehdään.
+Tervetuloa **EdgeAI aloittelijoille** – kattavaan matkaasi Edge-tekoälyn mullistavaan maailmaan. Tämä kurssi yhdistää tehokkaat tekoälyominaisuudet ja käytännön, todellisessa maailmassa tapahtuvan käyttöönoton reunalaitteilla, antaen sinulle voiman hyödyntää tekoälyn potentiaalia suoraan siellä, missä dataa syntyy ja päätöksiä on tehtävä.
 
 ### Mitä hallitset
 
@@ -50,16 +50,16 @@ Tämä kurssi vie sinut peruskäsitteistä tuotantovalmiisiin toteutuksiin, katt
 - **Pienet kielimallit (SLM)**, jotka on optimoitu reunalaitteille
 - **Laitteistotietoinen optimointi** eri alustoilla
 - **Reaaliaikainen päättely** yksityisyyttä suojaavilla ominaisuuksilla
-- **Tuotantokäyttöönottostrategiat** yrityssovelluksille
+- **Tuotantokäyttöön ottamisen strategiat** yrityssovelluksille
 
 ### Miksi EdgeAI on tärkeää
 
 Edge AI edustaa paradigman muutosta, joka vastaa nykyaikaisiin kriittisiin haasteisiin:
-- **Yksityisyys ja turvallisuus**: Käsittele arkaluonteista dataa paikallisesti ilman pilvi-altistusta
+- **Yksityisyys ja turvallisuus**: Käsittele arkaluonteista dataa paikallisesti ilman pilvivälitystä
 - **Reaaliaikainen suorituskyky**: Poista verkkoviive aikakriittisissä sovelluksissa
 - **Kustannustehokkuus**: Vähennä kaistanleveyden ja pilvilaskennan kuluja
 - **Kestävä toiminta**: Säilytä toiminnallisuus verkkokatkosten aikana
-- **Säädösten noudattaminen**: Täytä datan suvereniteettivaatimukset
+- **Säädösten noudattaminen**: Täytä datan omistajuusvaatimukset
 
 ### Edge AI
 
@@ -69,7 +69,7 @@ Edge AI tarkoittaa tekoälyalgoritmien ja kielimallien suorittamista paikallises
 - **Laitteistolla tapahtuva päättely**: Tekoälymallit toimivat reunalaitteilla (puhelimet, reitittimet, mikrokontrollerit, teollisuus-PC:t)
 - **Offline-toiminnallisuus**: Toimii ilman jatkuvaa internet-yhteyttä
 - **Matala viive**: Välittömät vastaukset reaaliaikaisiin järjestelmiin
-- **Datan suvereniteetti**: Pitää arkaluonteisen datan paikallisena, parantaen turvallisuutta ja säädösten noudattamista
+- **Datan omistajuus**: Pitää arkaluonteisen datan paikallisena, parantaen turvallisuutta ja säädösten noudattamista
 
 ### Pienet kielimallit (SLM)
 
@@ -92,16 +92,16 @@ Ne avaavat tehokkaat NLP-ominaisuudet samalla kun täyttävät rajoitukset:
 | [📖 00 ](./introduction.md) | [Johdanto EdgeAI:hin](./introduction.md) | Perusta & konteksti | EdgeAI yleiskatsaus • Teollisuuden sovellukset • SLM esittely • Oppimistavoitteet | Aloittelija | 1-2 h |
 | [📚 01](../../Module01) | [EdgeAI perusteet](./Module01/README.md) | Pilvi vs Edge AI vertailu | EdgeAI perusteet • Todelliset tapaustutkimukset • Toteutusopas • Reunakäyttöönotto | Aloittelija | 3-4 h |
 | [🧠 02](../../Module02) | [SLM mallin perusteet](./Module02/README.md) | Malliperheet & arkkitehtuuri | Phi-perhe • Qwen-perhe • Gemma-perhe • BitNET • μModel • Phi-Silica | Aloittelija | 4-5 h |
-| [🚀 03](../../Module03) | [SLM käyttöönotto käytännössä](./Module03/README.md) | Paikallinen & pilvikäyttöönotto | Edistynyt oppiminen • Paikallinen ympäristö • Pilvikäyttöönotto | Keskitaso | 4-5 h |
+| [🚀 03](../../Module03) | [SLM käyttöönoton käytäntö](./Module03/README.md) | Paikallinen & pilvikäyttöönotto | Edistynyt oppiminen • Paikallinen ympäristö • Pilvikäyttöönotto | Keskitaso | 4-5 h |
 | [⚙️ 04](../../Module04) | [Mallin optimointityökalut](./Module04/README.md) | Monialustainen optimointi | Johdanto • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Työnkulun synteesi | Keskitaso | 5-6 h |
 | [🔧 05](../../Module05) | [SLMOps tuotannossa](./Module05/README.md) | Tuotantotoiminnot | SLMOps johdanto • Mallin tiivistäminen • Hienosäätö • Tuotantokäyttöönotto | Edistynyt | 5-6 h |
 | [🤖 06](../../Module06) | [AI-agentit & funktiokutsut](./Module06/README.md) | Agenttikehykset & MCP | Agenttien esittely • Funktiokutsut • Mallin kontekstiprotokolla | Edistynyt | 4-5 h |
 | [💻 07](../../Module07) | [Alustan toteutus](./Module07/README.md) | Monialustaiset esimerkit | AI-työkalut • Foundry Local • Windows-kehitys | Edistynyt | 3-4 h |
-| [🏭 08](../../Module08) | [Foundry Local -työkalut](./Module08/README.md) | Tuotantovalmiit esimerkit | Esimerkkisovellukset (katso alla tarkemmin) | Asiantuntija | 8-10 h |
+| [🏭 08](../../Module08) | [Foundry Local -työkalut](./Module08/README.md) | Tuotantovalmiit esimerkit | Esimerkkisovellukset (katso alla) | Asiantuntija | 8-10 h |
 
 ### 🏭 **Moduuli 08: Esimerkkisovellukset**
 
-- [01: REST Chat pikaopas](./Module08/samples/01/README.md)
+- [01: REST Chat pika-aloitus](./Module08/samples/01/README.md)
 - [02: OpenAI SDK -integraatio](./Module08/samples/02/README.md)
 - [03: Mallin löytäminen & vertailu](./Module08/samples/03/README.md)
 - [04: Chainlit RAG -sovellus](./Module08/samples/04/README.md)
@@ -120,7 +120,7 @@ Kattavat käytännön työpajamateriaalit tuotantovalmiilla toteutuksilla:
 - **Python-esimerkit** (6 sessiota) - Päivitetty parhailla käytännöillä, virheenkäsittelyllä ja kattavalla dokumentaatiolla
 - **Jupyter-muistikirjat** (8 interaktiivista) - Askeltavat opetusohjelmat vertailuilla ja suorituskyvyn seurannalla
 - **Sessio-oppaat** - Yksityiskohtaiset markdown-oppaat jokaiselle työpajasessiolle
-- **Varmennustyökalut** - Skriptit koodin laadun tarkistukseen ja savutestien suorittamiseen
+- **Validointityökalut** - Skriptit koodin laadun tarkistukseen ja savutestien suorittamiseen
 
 **Mitä rakennat:**
 - Paikalliset tekoälychat-sovellukset suoratoistotuen kanssa
@@ -157,7 +157,7 @@ Kattavat käytännön työpajamateriaalit tuotantovalmiilla toteutuksilla:
 
 ## Nopeasti alkuun  
 
-**Suositeltu oppimispolku** (yhteensä 20-30 tuntia):  
+**Suositeltu oppimispolku** (yhteensä 20–30 tuntia):  
 
 0. **📖 Johdanto** ([Introduction.md](./introduction.md)): EdgeAI:n perusteet + teollisuuden konteksti + oppimiskehys  
 1. **📚 Perusteet** (Moduulit 01-02): EdgeAI-käsitteet + SLM-malliperheet  
@@ -192,18 +192,18 @@ edgeai-for-beginners/
   
 ## Kurssin kohokohdat  
 
-✅ **Jatkuva oppiminen**: Teoria → Käytäntö → Tuotantokäyttö  
+✅ **Jatkuva oppiminen**: Teoria → Käytäntö → Tuotantokäyttöön  
 ✅ **Todelliset tapaustutkimukset**: Microsoft, Japan Airlines, yritysten käyttöönotot  
 ✅ **Käytännön esimerkit**: 50+ esimerkkiä, 10 kattavaa Foundry Local -demoa  
 ✅ **Suorituskyvyn painotus**: 85 % nopeuden parannus, 75 % koon pienennys  
 ✅ **Monialustainen**: Windows, mobiili, sulautetut, pilvi-reuna-hybridi  
-✅ **Tuotantovalmius**: Valvonta, skaalaus, turvallisuus, vaatimustenmukaisuus  
+✅ **Tuotantovalmius**: Valvonta, skaalaus, turvallisuus, vaatimustenmukaisuuden kehykset  
 
-📖 **[Opas saatavilla](STUDY_GUIDE.md)**: Rakenteellinen 20 tunnin oppimispolku ajankäyttöohjeilla ja itsearviointityökaluilla.  
+📖 **[Opas saatavilla](STUDY_GUIDE.md)**: Rakenteellinen 20 tunnin oppimispolku ajankäytön ohjauksella ja itsearviointityökaluilla.  
 
 ---  
 
-**EdgeAI edustaa tekoälyn tulevaisuutta**: paikallisuus ensin, yksityisyyden suoja ja tehokkuus. Hallitse nämä taidot rakentaaksesi seuraavan sukupolven älykkäitä sovelluksia.  
+**EdgeAI edustaa tekoälyn tulevaisuutta**: paikallista, yksityisyyttä suojaavaa ja tehokasta. Hallitse nämä taidot rakentaaksesi seuraavan sukupolven älykkäitä sovelluksia.  
 
 ## Muut kurssit  
 
@@ -244,14 +244,14 @@ Tiimimme tuottaa myös muita kursseja! Tutustu:
 ---  
  
 ### Copilot-sarja  
-[![Copilot tekoälypariohjelmointiin](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
+[![Copilot tekoälyn pariohjelmointiin](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
 [![Copilot C#/.NET:lle](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
 [![Copilot-seikkailu](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->  
 
 ## Apua saatavilla  
 
-Jos jumitut tai sinulla on kysyttävää AI-sovellusten rakentamisesta, liity:  
+Jos jumitut tai sinulla on kysyttävää tekoälysovellusten rakentamisesta, liity:  
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)  
 
@@ -263,5 +263,5 @@ Jos sinulla on palautetta tuotteesta tai kohtaat virheitä rakentamisen aikana, 
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Vastuuvapauslauseke**:
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on virallinen lähde. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

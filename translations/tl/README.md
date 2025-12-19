@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:35:18+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T12:37:24+00:00",
   "source_file": "README.md",
   "language_code": "tl"
 }
@@ -28,42 +28,42 @@ Sundin ang mga hakbang na ito upang makapagsimula gamit ang mga resources na ito
 
 1. **I-fork ang Repository**: I-click ang [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **I-clone ang Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Sumali sa Azure AI Foundry Discord at makipagkilala sa mga eksperto at kapwa developer**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Sumali sa Azure AI Foundry Discord at makipagkita sa mga eksperto at kapwa developer**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Suporta sa Maramihang Wika
 
-#### Sinusuportahan sa pamamagitan ng GitHub Action (Awtomatiko at Laging Napapanahon)
+#### Sinusuportahan sa pamamagitan ng GitHub Action (Awtomatik at Palaging Napapanahon)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](./README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Kung nais mong magkaroon ng karagdagang mga suportadong wika sa pagsasalin, nakalista ang mga ito [dito](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Kung nais mong magkaroon ng karagdagang mga suportadong wika ng pagsasalin ay nakalista [dito](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Panimula
 
-Maligayang pagdating sa **EdgeAI para sa mga Nagsisimula** – ang iyong komprehensibong paglalakbay sa makabagong mundo ng Edge Artificial Intelligence. Ang kursong ito ay nag-uugnay sa makapangyarihang kakayahan ng AI at praktikal na aplikasyon sa totoong mundo sa mga edge device, na nagbibigay kapangyarihan sa iyo upang gamitin ang potensyal ng AI nang direkta kung saan nabubuo ang data at kailangang gumawa ng mga desisyon.
+Maligayang pagdating sa **EdgeAI para sa mga Nagsisimula** – ang iyong komprehensibong paglalakbay sa makabagong mundo ng Edge Artificial Intelligence. Ang kursong ito ay nag-uugnay sa pagitan ng makapangyarihang kakayahan ng AI at praktikal, totoong-deploy na aplikasyon sa mga edge device, na nagbibigay kapangyarihan sa iyo upang gamitin ang potensyal ng AI nang direkta kung saan nabubuo ang data at kailangang gumawa ng mga desisyon.
 
 ### Ano ang Iyong Matututuhan
 
-Dadalahin ka ng kursong ito mula sa mga pangunahing konsepto hanggang sa mga implementasyong handa na para sa produksyon, na sumasaklaw sa:
+Dadalahin ka ng kursong ito mula sa mga pangunahing konsepto hanggang sa mga production-ready na implementasyon, na sumasaklaw sa:
 - **Maliliit na Language Models (SLMs)** na na-optimize para sa edge deployment
 - **Hardware-aware optimization** sa iba't ibang platform
-- **Real-time inference** na may kakayahang pangalagaan ang privacy
-- **Mga estratehiya sa production deployment** para sa mga aplikasyon ng enterprise
+- **Real-time inference** na may kakayahang magpanatili ng privacy
+- **Mga estratehiya sa production deployment** para sa mga enterprise application
 
 ### Bakit Mahalaga ang EdgeAI
 
 Ang Edge AI ay kumakatawan sa isang paradigm shift na tumutugon sa mga kritikal na hamon ng makabagong panahon:
 - **Privacy at Seguridad**: Iproseso ang sensitibong data nang lokal nang hindi inilalantad sa cloud
-- **Real-time Performance**: Alisin ang network latency para sa mga aplikasyon na kritikal sa oras
-- **Cost Efficiency**: Bawasan ang gastos sa bandwidth at cloud computing
+- **Real-time Performance**: Alisin ang network latency para sa mga time-critical na aplikasyon
+- **Cost Efficiency**: Bawasan ang bandwidth at gastos sa cloud computing
 - **Matatag na Operasyon**: Panatilihin ang functionality sa panahon ng network outages
-- **Pagsunod sa Regulasyon**: Matugunan ang mga kinakailangan sa data sovereignty
+- **Regulatory Compliance**: Matugunan ang mga kinakailangan sa data sovereignty
 
 ### Edge AI
 
-Ang Edge AI ay tumutukoy sa pagpapatakbo ng mga AI algorithm at language models nang lokal sa hardware, malapit sa pinanggagalingan ng data nang hindi umaasa sa cloud resources para sa inference. Binabawasan nito ang latency, pinapalakas ang privacy, at nagbibigay-daan sa real-time na paggawa ng desisyon.
+Ang Edge AI ay tumutukoy sa pagpapatakbo ng mga AI algorithm at language models nang lokal sa hardware, malapit sa pinanggagalingan ng data nang hindi umaasa sa cloud resources para sa inference. Binabawasan nito ang latency, pinapahusay ang privacy, at nagbibigay-daan sa real-time na paggawa ng desisyon.
 
 ### Pangunahing Prinsipyo:
 - **On-device inference**: Ang mga AI model ay tumatakbo sa mga edge device (mga telepono, router, microcontroller, industrial PC)
@@ -83,12 +83,12 @@ Binubuksan nila ang makapangyarihang kakayahan sa NLP habang tinutugunan ang mga
 - **Mobile devices**: Mga smartphone at tablet na may offline na kakayahan
 - **IoT Devices**: Mga sensor at smart device na may limitadong resources
 - **Edge servers**: Mga lokal na processing unit na may limitadong GPU resources
-- **Personal Computers**: Mga senaryo ng deployment sa desktop at laptop
+- **Personal Computers**: Mga desktop at laptop deployment scenarios
 
 ## Mga Module ng Kurso at Navigasyon
 
 | Module | Paksa | Pokus na Lugar | Pangunahing Nilalaman | Antas | Tagal |
-|--------|-------|----------------|----------------------|--------|----------|
+|--------|-------|----------------|-----------------------|--------|----------|
 | [📖 00 ](./introduction.md) | [Panimula sa EdgeAI](./introduction.md) | Pundasyon at Konteksto | Pangkalahatang-ideya ng EdgeAI • Mga Aplikasyon sa Industriya • Panimula sa SLM • Mga Layunin sa Pagkatuto | Nagsisimula | 1-2 oras |
 | [📚 01](../../Module01) | [Mga Pangunahing Kaalaman sa EdgeAI](./Module01/README.md) | Paghahambing ng Cloud at Edge AI | Mga Pangunahing Kaalaman sa EdgeAI • Mga Kaso sa Totoong Mundo • Gabay sa Implementasyon • Edge Deployment | Nagsisimula | 3-4 oras |
 | [🧠 02](../../Module02) | [Mga Pundasyon ng SLM Model](./Module02/README.md) | Mga pamilya ng modelo at arkitektura | Phi Family • Qwen Family • Gemma Family • BitNET • μModel • Phi-Silica | Nagsisimula | 4-5 oras |
@@ -97,7 +97,7 @@ Binubuksan nila ang makapangyarihang kakayahan sa NLP habang tinutugunan ang mga
 | [🔧 05](../../Module05) | [SLMOps Production](./Module05/README.md) | Mga operasyon sa produksyon | Panimula sa SLMOps • Model Distillation • Fine-tuning • Production Deployment | Advanced | 5-6 oras |
 | [🤖 06](../../Module06) | [AI Agents at Function Calling](./Module06/README.md) | Agent frameworks at MCP | Panimula sa Agent • Function Calling • Model Context Protocol | Advanced | 4-5 oras |
 | [💻 07](../../Module07) | [Platform Implementation](./Module07/README.md) | Mga halimbawa sa cross-platform | AI Toolkit • Foundry Local • Windows Development | Advanced | 3-4 oras |
-| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Mga sample na handa na para sa produksyon | Mga sample na aplikasyon (tingnan ang mga detalye sa ibaba) | Eksperto | 8-10 oras |
+| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Mga production-ready na halimbawa | Mga sample na aplikasyon (tingnan ang mga detalye sa ibaba) | Eksperto | 8-10 oras |
 
 ### 🏭 **Module 08: Mga Sample na Aplikasyon**
 
@@ -114,20 +114,20 @@ Binubuksan nila ang makapangyarihang kakayahan sa NLP habang tinutugunan ang mga
 
 ### 🎓 **Workshop: Hands-On Learning Path**
 
-Komprehensibong mga materyales sa hands-on workshop na may mga implementasyong handa na para sa produksyon:
+Komprehensibong mga materyales sa hands-on workshop na may production-ready na mga implementasyon:
 
 - **[Workshop Guide](./Workshop/Readme.md)** - Kumpletong mga layunin sa pagkatuto, mga resulta, at navigasyon ng mga resources
-- **Python Samples** (6 na sesyon) - Na-update gamit ang mga best practice, paghawak ng error, at komprehensibong dokumentasyon
-- **Jupyter Notebooks** (8 interactive) - Mga step-by-step na tutorial na may benchmarks at performance monitoring
-- **Session Guides** - Detalyadong mga markdown guide para sa bawat sesyon ng workshop
+- **Python Samples** (6 na sesyon) - Na-update gamit ang mga best practice, error handling, at komprehensibong dokumentasyon
+- **Jupyter Notebooks** (8 interactive) - Step-by-step na mga tutorial na may benchmarks at performance monitoring
+- **Session Guides** - Detalyadong mga markdown guide para sa bawat workshop session
 - **Validation Tools** - Mga script para beripikahin ang kalidad ng code at magpatakbo ng smoke tests
 
 **Ano ang Iyong Bubuoin:**
 - Mga lokal na AI chat application na may streaming support
 - Mga RAG pipeline na may quality evaluation (RAGAS)
-- Mga tool para sa benchmarking at paghahambing ng multi-model
+- Mga tool para sa multi-model benchmarking at paghahambing
 - Mga sistema ng multi-agent orchestration
-- Matalinong model routing na may task-based selection
+- Matalinong model routing na may task-based na pagpili
 
 ### 📊 **Buod ng Learning Path**
 - **Kabuuang Tagal**: 36-45 oras
@@ -139,10 +139,10 @@ Komprehensibong mga materyales sa hands-on workshop na may mga implementasyong h
 ## Ano ang Iyong Bubuoin
 
 ### 🎯 Pangunahing Kasanayan
-- **Edge AI Architecture**: Magdisenyo ng mga lokal-na-unang AI system na may cloud integration
+- **Edge AI Architecture**: Magdisenyo ng mga lokal-na-una na AI system na may cloud integration
 - **Pag-optimize ng Modelo**: I-quantize at i-compress ang mga modelo para sa edge deployment (85% na pagbilis, 75% na pagbawas sa laki)
 - **Multi-Platform Deployment**: Windows, mobile, embedded, at cloud-edge hybrid na mga sistema
-- **Mga Operasyon sa Produksyon**: Pagmamanman, pag-scale, at pagpapanatili ng edge AI sa produksyon
+- **Mga Operasyon sa Produksyon**: Pagmomonitor, pag-scale, at pagpapanatili ng edge AI sa produksyon
 
 ### 🏗️ Praktikal na Mga Proyekto
 - **Foundry Local Chat Apps**: Windows 11 native na aplikasyon na may model switching
@@ -160,7 +160,7 @@ Komprehensibong mga materyales sa hands-on workshop na may mga implementasyong h
 **Inirerekomendang Landas ng Pag-aaral** (20-30 oras kabuuan):
 
 0. **📖 Panimula** ([Introduction.md](./introduction.md)): Pundasyon ng EdgeAI + konteksto ng industriya + balangkas ng pag-aaral
-1. **📚 Pundasyon** (Mga Module 01-02): Mga konsepto ng EdgeAI + mga pamilya ng modelo ng SLM
+1. **📚 Pundasyon** (Mga Module 01-02): Mga konsepto ng EdgeAI + mga pamilya ng modelong SLM
 2. **⚙️ Pag-optimize** (Mga Module 03-04): Deployment + mga framework ng quantization  
 3. **🚀 Produksyon** (Mga Module 05-06): SLMOps + AI agents + function calling
 4. **💻 Implementasyon** (Mga Module 07-08): Mga sample ng platform + Foundry Local toolkit
@@ -192,22 +192,22 @@ edgeai-for-beginners/
 
 ## Mga Tampok ng Kurso
 
-✅ **Progressive Learning**: Teorya → Praktika → Deployment sa produksyon  
+✅ **Progressive Learning**: Teorya → Praktis → Deployment sa produksyon  
 ✅ **Mga Tunay na Case Study**: Microsoft, Japan Airlines, mga implementasyon sa enterprise  
 ✅ **Hands-on na Mga Halimbawa**: 50+ na halimbawa, 10 komprehensibong Foundry Local demos  
 ✅ **Pokus sa Performance**: 85% na pagpapabuti sa bilis, 75% na pagbawas sa laki  
 ✅ **Multi-Platform**: Windows, mobile, embedded, cloud-edge hybrid  
-✅ **Handa para sa Produksyon**: Pagmamanman, pag-scale, seguridad, mga framework ng pagsunod
+✅ **Handa para sa Produksyon**: Pagmomonitor, pag-scale, seguridad, mga framework ng pagsunod
 
 📖 **[Available na Gabay sa Pag-aaral](STUDY_GUIDE.md)**: Istrakturadong 20-oras na landas ng pag-aaral na may gabay sa alokasyon ng oras at mga tool sa self-assessment.
 
 ---
 
-**Kinakatawan ng EdgeAI ang hinaharap ng AI deployment**: lokal muna, nagpoprotekta ng privacy, at mahusay. Masterin ang mga kasanayang ito upang bumuo ng susunod na henerasyon ng matatalinong aplikasyon.
+**Kinakatawan ng EdgeAI ang hinaharap ng AI deployment**: lokal muna, nagpoprotekta ng privacy, at epektibo. Masterin ang mga kasanayang ito upang bumuo ng susunod na henerasyon ng matatalinong aplikasyon.
 
 ## Iba Pang Mga Kurso
 
-Gumagawa ang aming koponan ng iba pang mga kurso! Tingnan:
+Ang aming koponan ay gumagawa ng iba pang mga kurso! Tingnan ang:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain

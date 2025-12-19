@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T10:11:07+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T13:18:50+00:00",
   "source_file": "README.md",
   "language_code": "pcm"
 }
@@ -42,33 +42,33 @@ Follow dis steps to start to use dis resources:
 **If you want make dem add more translation languages wey dem dey support, dem list dem [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introduction
 
-Welcome to **EdgeAI for Beginners** – your full journey into di big change wey Edge Artificial Intelligence dey bring. Dis course go join di gap between strong AI power and how to use am for real life for edge devices, make you fit use AI power directly where data dey come and where decisions suppose happen.
+Welcome to **EdgeAI for Beginners** – your full journey into di powerful world of Edge Artificial Intelligence. Dis course dey bridge di gap between strong AI power and practical, real-world use for edge devices, to help you fit use AI power directly where data dey come and decisions suppose to happen.
 
 ### Wetin You Go Learn
 
-Dis course go carry you from basic ideas go reach how to put am for production, e go cover:
+Dis course go carry you from basic ideas go production-ready implementations, e go cover:
 - **Small Language Models (SLMs)** wey dem optimize for edge deployment
 - **Hardware-aware optimization** for different platforms
 - **Real-time inference** wey dey protect privacy
-- **Production deployment** plans for business use
+- **Production deployment** plans for business applications
 
-### Why EdgeAI Dey Important
+### Why EdgeAI Matter
 
-Edge AI na big change wey dey solve important wahala for today:
+Edge AI na big change wey dey solve important modern wahala dem:
 - **Privacy & Security**: Process sensitive data for local side without cloud exposure
-- **Real-time Performance**: Remove network delay for time-sensitive apps
-- **Cost Efficiency**: Cut down bandwidth and cloud computing cost
-- **Resilient Operations**: Work well even if network fail
+- **Real-time Performance**: Remove network delay for time-critical apps
+- **Cost Efficiency**: Reduce bandwidth and cloud computing cost
+- **Resilient Operations**: Make sure e still dey work when network down
 - **Regulatory Compliance**: Follow data sovereignty rules
 
 ### Edge AI
 
-Edge AI mean say AI algorithms and language models dey run for hardware close to where data dey come from without depending on cloud for inference. E reduce delay, improve privacy, and allow real-time decision making.
+Edge AI mean say AI algorithms and language models dey run for hardware close to where data dey come from without depending on cloud for inference. E reduce delay, improve privacy, and allow real-time decision-making.
 
 ### Core Principles:
 - **On-device inference**: AI models dey run for edge devices (phones, routers, microcontrollers, industrial PCs)
 - **Offline capability**: E fit work without constant internet connection
-- **Low latency**: Quick response for real-time systems
+- **Low latency**: Immediate response wey fit real-time systems
 - **Data sovereignty**: Keep sensitive data local, make security and compliance better
 
 ### Small Language Models (SLMs)
@@ -81,7 +81,7 @@ SLMs like Phi-4, Mistral-7B, and Gemma na optimized versions of big LLMs—dem t
 Dem fit powerful NLP skills but still fit inside:
 - **Embedded systems**: IoT devices and industrial controllers
 - **Mobile devices**: Smartphones and tablets wey fit work offline
-- **IoT Devices**: Sensors and smart devices wey get small resources
+- **IoT Devices**: Sensors and smart devices wey get limited resources
 - **Edge servers**: Local processing units wey get small GPU resources
 - **Personal Computers**: Desktop and laptop deployment cases
 
@@ -263,5 +263,5 @@ If you have product feedback or errors while building visit:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:
-Dis document don translate wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even though we dey try make am correct, abeg sabi say automated translation fit get some mistakes or no too correct. Di original document wey e dey for im own language na di correct one. If na serious matter, e better make human professional translate am. We no go responsible for any misunderstanding or wrong meaning wey fit come from dis translation.
+Dis document don translate wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even though we dey try make am correct, abeg sabi say automated translation fit get some errors or mistakes. Di original document wey dey im own language na di correct one. If na important info, e better make human professional translate am. We no go responsible for any misunderstanding or wrong meaning wey fit come from dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

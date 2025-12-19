@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:31:10+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T12:32:35+00:00",
   "source_file": "README.md",
   "language_code": "id"
 }
@@ -39,7 +39,7 @@ Ikuti langkah-langkah ini untuk memulai menggunakan sumber daya ini:
 [Arab](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgaria](../bg/README.md) | [Birma (Myanmar)](../my/README.md) | [Cina (Sederhana)](../zh/README.md) | [Cina (Tradisional, Hong Kong)](../hk/README.md) | [Cina (Tradisional, Macau)](../mo/README.md) | [Cina (Tradisional, Taiwan)](../tw/README.md) | [Kroasia](../hr/README.md) | [Ceko](../cs/README.md) | [Denmark](../da/README.md) | [Belanda](../nl/README.md) | [Estonia](../et/README.md) | [Finlandia](../fi/README.md) | [Prancis](../fr/README.md) | [Jerman](../de/README.md) | [Yunani](../el/README.md) | [Ibrani](../he/README.md) | [Hindi](../hi/README.md) | [Hungaria](../hu/README.md) | [Indonesia](./README.md) | [Italia](../it/README.md) | [Jepang](../ja/README.md) | [Kannada](../kn/README.md) | [Korea](../ko/README.md) | [Lituania](../lt/README.md) | [Melayu](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Pidgin Nigeria](../pcm/README.md) | [Norwegia](../no/README.md) | [Persia (Farsi)](../fa/README.md) | [Polandia](../pl/README.md) | [Portugis (Brasil)](../br/README.md) | [Portugis (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Rumania](../ro/README.md) | [Rusia](../ru/README.md) | [Serbia (Sirilik)](../sr/README.md) | [Slovakia](../sk/README.md) | [Slovenia](../sl/README.md) | [Spanyol](../es/README.md) | [Swahili](../sw/README.md) | [Swedia](../sv/README.md) | [Tagalog (Filipina)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turki](../tr/README.md) | [Ukraina](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnam](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Jika Anda ingin bahasa terjemahan tambahan didukung, daftar tersedia [di sini](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Jika Anda ingin mendukung bahasa terjemahan tambahan, daftar tersedia [di sini](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Pendahuluan
 
 Selamat datang di **EdgeAI untuk Pemula** – perjalanan komprehensif Anda ke dunia transformatif Kecerdasan Buatan Edge. Kursus ini menjembatani kesenjangan antara kemampuan AI yang kuat dan penerapan praktis di dunia nyata pada perangkat edge, memberdayakan Anda untuk memanfaatkan potensi AI langsung di tempat data dihasilkan dan keputusan harus dibuat.
@@ -68,7 +68,7 @@ Edge AI mengacu pada menjalankan algoritma AI dan model bahasa secara lokal pada
 ### Prinsip Inti:
 - **Inferensi di perangkat**: Model AI berjalan di perangkat edge (ponsel, router, mikrokontroler, PC industri)
 - **Kemampuan offline**: Berfungsi tanpa konektivitas internet yang persisten
-- **Latensi rendah**: Respon segera cocok untuk sistem waktu nyata
+- **Latensi rendah**: Respon langsung cocok untuk sistem waktu nyata
 - **Kedaulatan data**: Menjaga data sensitif tetap lokal, meningkatkan keamanan dan kepatuhan
 
 ### Model Bahasa Kecil (SLM)
@@ -80,7 +80,7 @@ SLM seperti Phi-4, Mistral-7B, dan Gemma adalah versi yang dioptimalkan dari LLM
 
 Mereka membuka kemampuan NLP yang kuat sambil memenuhi batasan dari:
 - **Sistem tertanam**: Perangkat IoT dan pengendali industri
-- **Perangkat seluler**: Smartphone dan tablet dengan kemampuan offline
+- **Perangkat mobile**: Smartphone dan tablet dengan kemampuan offline
 - **Perangkat IoT**: Sensor dan perangkat pintar dengan sumber daya terbatas
 - **Server edge**: Unit pemrosesan lokal dengan sumber daya GPU terbatas
 - **Komputer pribadi**: Skenario penerapan desktop dan laptop
@@ -118,7 +118,7 @@ Materi workshop praktis komprehensif dengan implementasi siap produksi:
 
 - **[Panduan Workshop](./Workshop/Readme.md)** - Tujuan pembelajaran lengkap, hasil, dan navigasi sumber daya
 - **Contoh Python** (6 sesi) - Diperbarui dengan praktik terbaik, penanganan kesalahan, dan dokumentasi lengkap
-- **Notebook Jupyter** (8 interaktif) - Tutorial langkah demi langkah dengan benchmark dan pemantauan performa
+- **Jupyter Notebooks** (8 interaktif) - Tutorial langkah demi langkah dengan benchmark dan pemantauan performa
 - **Panduan Sesi** - Panduan markdown terperinci untuk setiap sesi workshop
 - **Alat Validasi** - Skrip untuk memverifikasi kualitas kode dan menjalankan tes awal
 
@@ -263,5 +263,5 @@ Jika Anda memiliki umpan balik produk atau menemukan kesalahan saat membangun, k
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

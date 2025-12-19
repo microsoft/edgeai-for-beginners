@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:37:21+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T12:39:40+00:00",
   "source_file": "README.md",
   "language_code": "sw"
 }
@@ -42,7 +42,7 @@ Fuata hatua hizi kuanza kutumia rasilimali hizi:
 **Ikiwa unataka lugha za ziada za tafsiri zinazoungwa mkono zimetajwa [hapa](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Utangulizi
 
-Karibu kwenye **EdgeAI kwa Waanzilishi** – safari yako kamili katika dunia ya mabadiliko ya Akili Bandia ya Edge. Kozi hii inaunganisha uwezo mkubwa wa AI na utekelezaji halisi wa dunia halisi kwenye vifaa vya edge, ikikuwezesha kutumia uwezo wa AI moja kwa moja mahali data inapotengenezwa na maamuzi yanapohitajika kufanywa.
+Karibu kwenye **EdgeAI kwa Waanzilishi** – safari yako kamili katika ulimwengu wa mabadiliko wa Akili Bandia ya Edge. Kozi hii inaunganisha uwezo mkubwa wa AI na utekelezaji halisi wa dunia halisi kwenye vifaa vya edge, ikikuwezesha kutumia uwezo wa AI moja kwa moja mahali data inapotengenezwa na maamuzi yanapohitajika kufanywa.
 
 ### Utajifunza Nini
 
@@ -56,34 +56,34 @@ Kozi hii inakupeleka kutoka dhana za msingi hadi utekelezaji tayari kwa uzalisha
 
 Edge AI ni mabadiliko makubwa yanayoshughulikia changamoto muhimu za kisasa:
 - **Faragha & Usalama**: Fanya usindikaji wa data nyeti kwa ndani bila kufichuliwa kwenye wingu
-- **Utendaji wa Wakati Halisi**: Ondoa ucheleweshaji wa mtandao kwa matumizi yanayohitaji wakati
+- **Utendaji wa Wakati Halisi**: Ondoa ucheleweshaji wa mtandao kwa matumizi yanayohitaji wakati muhimu
 - **Ufanisi wa Gharama**: Punguza matumizi ya bendi ya mtandao na gharama za kompyuta za wingu
 - **Uendeshaji Imara**: Dumisha utendaji wakati wa kukatika kwa mtandao
-- **Uzingatiaji wa Sheria**: Kidhi mahitaji ya udhibiti wa data
+- **Uzingatiaji wa Sheria**: Kidhi mahitaji ya umiliki wa data
 
 ### Edge AI
 
-Edge AI inahusu kuendesha algoriti za AI na modeli za lugha kwa ndani kwenye vifaa, karibu na mahali data inapotengenezwa bila kutegemea rasilimali za wingu kwa ajili ya uchambuzi. Hii hupunguza ucheleweshaji, huongeza faragha, na kuwezesha maamuzi ya wakati halisi.
+Edge AI inahusu kuendesha algoriti za AI na modeli za lugha kwa ndani kwenye vifaa, karibu na mahali data inapotengenezwa bila kutegemea rasilimali za wingu kwa ajili ya uchambuzi. Inapunguza ucheleweshaji, huongeza faragha, na kuwezesha maamuzi ya wakati halisi.
 
 ### Kanuni Muhimu:
 - **Uchambuzi kwenye kifaa**: Modeli za AI zinaendeshwa kwenye vifaa vya edge (simu, router, microcontrollers, PC za viwandani)
 - **Uwezo wa kufanya kazi bila mtandao**: Hufanya kazi bila muunganisho wa mtandao wa kudumu
-- **Ucheleweshaji mdogo**: Majibu ya haraka yanayofaa kwa mifumo ya wakati halisi
-- **Udhibiti wa data**: Huhifadhi data nyeti kwa ndani, kuboresha usalama na ufuataji wa sheria
+- **Ucheleweshaji mdogo**: Majibu ya papo hapo yanayofaa kwa mifumo ya wakati halisi
+- **Umiliki wa data**: Huhifadhi data nyeti kwa ndani, kuboresha usalama na uzingatiaji
 
 ### Modeli Ndogo za Lugha (SLMs)
 
 SLMs kama Phi-4, Mistral-7B, na Gemma ni toleo lililoboreshwa la LLM kubwa—zilizo funzwa au kusafishwa kwa:
 - **Kupunguza matumizi ya kumbukumbu**: Matumizi bora ya kumbukumbu ndogo ya kifaa cha edge
 - **Mahitaji ya chini ya kompyuta**: Zilizoboreshwa kwa utendaji wa CPU na GPU za edge
-- **Muda mfupi wa kuanzisha**: Kuanzishwa kwa haraka kwa matumizi yanayohitaji majibu ya haraka
+- **Muda mfupi wa kuanzisha**: Kuanzisha haraka kwa matumizi yanayojibu
 
-Huzindua uwezo mkubwa wa NLP huku zikikidhi vikwazo vya:
+Zinafungua uwezo mkubwa wa NLP huku zikikidhi vikwazo vya:
 - **Mifumo iliyojumuishwa**: Vifaa vya IoT na vidhibiti vya viwandani
 - **Vifaa vya mkononi**: Simu za mkononi na vidonge vyenye uwezo wa kufanya kazi bila mtandao
 - **Vifaa vya IoT**: Vihisi na vifaa smart vyenye rasilimali ndogo
-- **Seva za Edge**: Vitengo vya usindikaji vya ndani vyenye rasilimali ndogo za GPU
-- **Kompyuta Binafsi**: Matumizi kwenye desktop na laptop
+- **Seva za edge**: Vitengo vya usindikaji vya ndani vyenye rasilimali ndogo za GPU
+- **Kompyuta Binafsi**: Matumizi ya mezani na kompyuta za mkononi
 
 ## Moduli za Kozi & Uelekezaji
 
@@ -94,7 +94,7 @@ Huzindua uwezo mkubwa wa NLP huku zikikidhi vikwazo vya:
 | [🧠 02](../../Module02) | [Misingi ya Modeli za SLM](./Module02/README.md) | Familia za modeli & usanifu | Familia ya Phi • Familia ya Qwen • Familia ya Gemma • BitNET • μModel • Phi-Silica | Mwanzo | 4-5 saa |
 | [🚀 03](../../Module03) | [Mazoezi ya Utekelezaji wa SLM](./Module03/README.md) | Utekelezaji wa ndani & wingu | Kujifunza kwa Juu • Mazingira ya Ndani • Utekelezaji wa Wingu | Kati | 4-5 saa |
 | [⚙️ 04](../../Module04) | [Kifaa cha Uboreshaji wa Modeli](./Module04/README.md) | Uboreshaji wa majukwaa mbalimbali | Utangulizi • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Muundo wa Kazi | Kati | 5-6 saa |
-| [🔧 05](../../Module05) | [Uendeshaji wa SLMOps kwa Uzalishaji](./Module05/README.md) | Uendeshaji wa uzalishaji | Utangulizi wa SLMOps • Kusafisha Modeli • Kurekebisha • Utekelezaji wa Uzalishaji | Juu | 5-6 saa |
+| [🔧 05](../../Module05) | [Uendeshaji wa SLMOps kwa Uzalishaji](./Module05/README.md) | Uendeshaji wa uzalishaji | Utangulizi wa SLMOps • Kusafisha Modeli • Urekebishaji • Utekelezaji wa Uzalishaji | Juu | 5-6 saa |
 | [🤖 06](../../Module06) | [Wakala wa AI & Kupiga Simu za Kazi](./Module06/README.md) | Mifumo ya wakala & MCP | Utangulizi wa Wakala • Kupiga Simu za Kazi • Itifaki ya Muktadha wa Modeli | Juu | 4-5 saa |
 | [💻 07](../../Module07) | [Utekelezaji wa Jukwaa](./Module07/README.md) | Sampuli za majukwaa mbalimbali | Kifaa cha AI • Foundry Local • Maendeleo ya Windows | Juu | 3-4 saa |
 | [🏭 08](../../Module08) | [Kifaa cha Foundry Local](./Module08/README.md) | Sampuli tayari kwa uzalishaji | Programu za mfano (angalia maelezo hapa chini) | Mtaalamu | 8-10 saa |
@@ -163,13 +163,13 @@ Vifaa kamili vya warsha za vitendo zenye utekelezaji tayari kwa uzalishaji:
 1. **📚 Msingi** (Moduli 01-02): Dhana za EdgeAI + familia za modeli za SLM
 2. **⚙️ Uboreshaji** (Moduli 03-04): Ueneaji + mifumo ya kupunguza ukubwa  
 3. **🚀 Uzalishaji** (Moduli 05-06): SLMOps + mawakala wa AI + kuita kazi
-4. **💻 Utekelezaji** (Moduli 07-08): Sampuli za jukwaa + zana za Foundry Local
+4. **💻 Utekelezaji** (Moduli 07-08): Sampuli za majukwaa + zana za Foundry Local
 
-Kila moduli ina nadharia, mazoezi ya vitendo, na sampuli za msimbo tayari kwa uzalishaji.
+Kila moduli inajumuisha nadharia, mazoezi ya vitendo, na sampuli za msimbo tayari kwa uzalishaji.
 
 ## Athari za Kazi
 
-**Nafasi za Kifundi**: Mhandisi wa Suluhisho za EdgeAI • Mhandisi wa ML (Edge) • Mtaalamu wa AI wa IoT • Mtaalamu wa AI wa Simu za Mkononi
+**Nafasi za Kifundi**: Mbunifu wa Suluhisho za EdgeAI • Mhandisi wa ML (Edge) • Mtaalamu wa AI wa IoT • Mtaalamu wa AI wa Simu za Mkononi
 
 **Sekta za Viwanda**: Uzalishaji 4.0 • Teknolojia ya Huduma za Afya • Mifumo ya Kujitegemea • FinTech • Vifaa vya Kielektroniki vya Watumiaji
 
@@ -196,10 +196,10 @@ edgeai-for-beginners/
 ✅ **Mifano Halisi**: Microsoft, Japan Airlines, utekelezaji wa biashara  
 ✅ **Sampuli za Vitendo**: Mifano 50+, maonyesho 10 ya kina ya Foundry Local  
 ✅ **Kuzingatia Utendaji**: Kuboresha kasi kwa 85%, kupunguza ukubwa kwa 75%  
-✅ **Majukwaa Mbalimbali**: Windows, simu, vifaa vilivyojumuishwa, mchanganyiko wa wingu-edge  
+✅ **Majukwaa Mbalimbali**: Windows, simu za mkononi, vifaa vilivyojumuishwa, mchanganyiko wa wingu-edge  
 ✅ **Tayari kwa Uzalishaji**: Ufuatiliaji, upanuzi, usalama, mifumo ya utii
 
-📖 **[Mwongozo wa Kujifunza Unapatikana](STUDY_GUIDE.md)**: Njia ya kujifunza ya masaa 20 yenye mwongozo wa mgawanyo wa muda na zana za kujitathmini.
+📖 **[Mwongozo wa Kujifunza Unapatikana](STUDY_GUIDE.md)**: Njia ya kujifunza ya masaa 20 yenye muundo na mwongozo wa mgawanyo wa muda pamoja na zana za kujitathmini.
 
 ---
 
@@ -262,6 +262,6 @@ Ikiwa una maoni kuhusu bidhaa au makosa wakati wa ujenzi tembelea:
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Kiarifu cha Kutotegemea**:
+**Kiarifu cha Msamaha**:
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

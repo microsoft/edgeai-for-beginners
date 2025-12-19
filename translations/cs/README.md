@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:41:10+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T12:44:29+00:00",
   "source_file": "README.md",
   "language_code": "cs"
 }
@@ -39,17 +39,17 @@ Postupujte podle těchto kroků, abyste začali používat tyto zdroje:
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](./README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Pokud si přejete mít podporu dalších jazyků, jsou uvedeny [zde](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Pokud si přejete mít podporu dalších překladových jazyků, jsou uvedeny [zde](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Úvod
 
-Vítejte v **EdgeAI pro začátečníky** – vaší komplexní cestě do transformačního světa Edge umělé inteligence. Tento kurz překonává propast mezi výkonnými AI schopnostmi a praktickým nasazením v reálném světě na edge zařízeních, což vám umožní využít potenciál AI přímo tam, kde jsou data generována a kde je třeba činit rozhodnutí.
+Vítejte v **EdgeAI pro začátečníky** – vaší komplexní cestě do transformačního světa Edge umělé inteligence. Tento kurz překonává propast mezi výkonnými schopnostmi AI a praktickým nasazením v reálném světě na edge zařízeních, což vám umožní využít potenciál AI přímo tam, kde jsou data generována a kde je třeba činit rozhodnutí.
 
 ### Co se naučíte
 
 Tento kurz vás provede od základních konceptů až po implementace připravené pro produkci, zahrnující:
 - **Malé jazykové modely (SLM)** optimalizované pro nasazení na edge
 - **Optimalizace s ohledem na hardware** napříč různými platformami
-- **Inference v reálném čase** s ochranou soukromí
+- **Inference v reálném čase** s funkcemi zachování soukromí
 - **Strategie produkčního nasazení** pro podnikové aplikace
 
 ### Proč je EdgeAI důležitý
@@ -76,7 +76,7 @@ Edge AI znamená spuštění AI algoritmů a jazykových modelů lokálně na ha
 SLM jako Phi-4, Mistral-7B a Gemma jsou optimalizované verze větších LLM—trénované nebo destilované pro:
 - **Sníženou paměťovou náročnost**: Efektivní využití omezené paměti edge zařízení
 - **Nižší výpočetní nároky**: Optimalizované pro výkon CPU a edge GPU
-- **Rychlejší start**: Rychlá inicializace pro responzivní aplikace
+- **Rychlejší spuštění**: Rychlá inicializace pro responzivní aplikace
 
 Odemknou výkonné NLP schopnosti a zároveň splňují omezení:
 - **Vestavěné systémy**: IoT zařízení a průmyslové kontroléry
@@ -89,9 +89,9 @@ Odemknou výkonné NLP schopnosti a zároveň splňují omezení:
 
 | Modul | Téma | Oblast zaměření | Klíčový obsah | Úroveň | Doba trvání |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Úvod do EdgeAI](./introduction.md) | Základy a kontext | Přehled EdgeAI • Průmyslové aplikace • Úvod do SLM • Cíle učení | Začátečník | 1-2 hodiny |
+| [📖 00 ](./introduction.md) | [Úvod do EdgeAI](./introduction.md) | Základy a kontext | Přehled EdgeAI • Průmyslové aplikace • Úvod do SLM • Výukové cíle | Začátečník | 1-2 hodiny |
 | [📚 01](../../Module01) | [Základy EdgeAI](./Module01/README.md) | Porovnání cloud vs edge AI | Základy EdgeAI • Případové studie z praxe • Průvodce implementací • Nasazení na edge | Začátečník | 3-4 hodiny |
-| [🧠 02](../../Module02) | [Základy SLM modelů](./Module02/README.md) | Rodiny modelů a architektura | Rodina Phi • Rodina Qwen • Rodina Gemma • BitNET • μModel • Phi-Silica | Začátečník | 4-5 hodin |
+| [🧠 02](../../Module02) | [Základy modelů SLM](./Module02/README.md) | Rodiny modelů a architektura | Rodina Phi • Rodina Qwen • Rodina Gemma • BitNET • μModel • Phi-Silica | Začátečník | 4-5 hodin |
 | [🚀 03](../../Module03) | [Praxe nasazení SLM](./Module03/README.md) | Lokální a cloudové nasazení | Pokročilé učení • Lokální prostředí • Cloudové nasazení | Středně pokročilý | 4-5 hodin |
 | [⚙️ 04](../../Module04) | [Nástroje pro optimalizaci modelů](./Module04/README.md) | Optimalizace napříč platformami | Úvod • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Syntéza workflow | Středně pokročilý | 5-6 hodin |
 | [🔧 05](../../Module05) | [SLMOps v produkci](./Module05/README.md) | Produkční provoz | Úvod do SLMOps • Destilace modelů • Doladění • Produkční nasazení | Pokročilý | 5-6 hodin |
@@ -112,12 +112,12 @@ Odemknou výkonné NLP schopnosti a zároveň splňují omezení:
 - [09: Pokročilý multi-agentní systém](./Module08/samples/09/README.md)
 - [10: Framework Foundry Tools](./Module08/samples/10/README.md)
 
-### 🎓 **Workshop: Praktická cesta učením**
+### 🎓 **Workshop: Praktická výuka**
 
 Komplexní materiály pro praktický workshop s produkčně připravenými implementacemi:
 
-- **[Průvodce workshopem](./Workshop/Readme.md)** - Kompletní cíle učení, výsledky a navigace zdrojů
-- **Python ukázky** (6 sezení) - Aktualizované s nejlepšími postupy, zpracováním chyb a kompletní dokumentací
+- **[Průvodce workshopem](./Workshop/Readme.md)** - Kompletní výukové cíle, výsledky a navigace zdrojů
+- **Python ukázky** (6 sezení) - Aktualizované s nejlepšími postupy, zpracováním chyb a podrobnou dokumentací
 - **Jupyter notebooky** (8 interaktivních) - Krok za krokem tutoriály s benchmarky a monitorováním výkonu
 - **Průvodci sezeními** - Podrobné markdown průvodce pro každé sezení workshopu
 - **Nástroje pro validaci** - Skripty pro ověření kvality kódu a spuštění smoke testů
@@ -129,7 +129,7 @@ Komplexní materiály pro praktický workshop s produkčně připravenými imple
 - Systémy orchestrace multi-agentů
 - Inteligentní směrování modelů s výběrem podle úkolu
 
-### 📊 **Shrnutí cesty učením**
+### 📊 **Shrnutí výukové cesty**
 - **Celková doba**: 36-45 hodin
 - **Cesta pro začátečníky**: Moduly 01-02 (7-9 hodin)  
 - **Středně pokročilá cesta**: Moduly 03-04 (9-11 hodin)
@@ -139,9 +139,9 @@ Komplexní materiály pro praktický workshop s produkčně připravenými imple
 ## Co vytvoříte
 
 ### 🎯 Klíčové kompetence
-- **Architektura Edge AI**: Navrhování AI systémů s prioritou lokálního provozu a integrací cloudu
+- **Architektura Edge AI**: Navrhování lokálně orientovaných AI systémů s integrací do cloudu
 - **Optimalizace modelu**: Kvantizace a komprese modelů pro nasazení na okraji (85% zrychlení, 75% zmenšení velikosti)  
-- **Víceplatformní nasazení**: Windows, mobilní zařízení, vestavěné systémy a hybridní cloud-edge systémy  
+- **Víceplatformní nasazení**: Windows, mobilní zařízení, vestavěné systémy a hybridní cloud-okrajové systémy  
 - **Provoz v produkci**: Monitorování, škálování a údržba edge AI v produkci  
 
 ### 🏗️ Praktické projekty  
@@ -157,19 +157,19 @@ Komplexní materiály pro praktický workshop s produkčně připravenými imple
 
 ## Rychlý start  
 
-**Doporučená učební cesta** (celkem 20-30 hodin):  
+**Doporučená cesta učení** (20-30 hodin celkem):  
 
-0. **📖 Úvod** ([Introduction.md](./introduction.md)): Základy EdgeAI + průmyslový kontext + učební rámec  
+0. **📖 Úvod** ([Introduction.md](./introduction.md)): Základy EdgeAI + průmyslový kontext + rámec učení  
 1. **📚 Základy** (Moduly 01-02): Koncepty EdgeAI + rodiny modelů SLM  
 2. **⚙️ Optimalizace** (Moduly 03-04): Nasazení + kvantizační frameworky  
 3. **🚀 Produkce** (Moduly 05-06): SLMOps + AI agenti + volání funkcí  
-4. **💻 Implementace** (Moduly 07-08): Ukázky platforem + Foundry Local toolkit  
+4. **💻 Implementace** (Moduly 07-08): Ukázky platforem + nástroje Foundry Local  
 
 Každý modul obsahuje teorii, praktická cvičení a kódové ukázky připravené pro produkci.  
 
 ## Kariérní dopad  
 
-**Technické role**: Architekt řešení EdgeAI • ML inženýr (Edge) • IoT AI vývojář • Mobilní AI vývojář  
+**Technické role**: Architekt řešení EdgeAI • ML inženýr (Edge) • Vývojář IoT AI • Vývojář mobilní AI  
 
 **Průmyslová odvětví**: Výroba 4.0 • Zdravotnické technologie • Autonomní systémy • FinTech • Spotřební elektronika  
 
@@ -192,18 +192,18 @@ edgeai-for-beginners/
   
 ## Hlavní body kurzu  
 
-✅ **Postupné učení**: Teorie → Praxe → Produkční nasazení  
+✅ **Postupné učení**: Teorie → Praxe → Nasazení do produkce  
 ✅ **Reálné případové studie**: Microsoft, Japan Airlines, podniková nasazení  
-✅ **Praktické ukázky**: 50+ příkladů, 10 komplexních demo aplikací Foundry Local  
-✅ **Zaměření na výkon**: 85% zrychlení, 75% zmenšení velikosti  
-✅ **Víceplatfromní**: Windows, mobil, vestavěné systémy, cloud-edge hybrid  
+✅ **Praktické ukázky**: 50+ příkladů, 10 komplexních demo Foundry Local  
+✅ **Zaměření na výkon**: 85% zlepšení rychlosti, 75% zmenšení velikosti  
+✅ **Víceplatforemní**: Windows, mobil, vestavěné systémy, cloud-okrajový hybrid  
 ✅ **Připraveno pro produkci**: Monitorování, škálování, bezpečnost, rámce souladu  
 
-📖 **[Studijní průvodce k dispozici](STUDY_GUIDE.md)**: Strukturovaná 20hodinová učební cesta s doporučením časového rozvržení a nástroji pro sebehodnocení.  
+📖 **[Studijní průvodce k dispozici](STUDY_GUIDE.md)**: Strukturovaná 20hodinová cesta učení s doporučením časového rozvržení a nástroji pro sebehodnocení.  
 
 ---  
 
-**EdgeAI představuje budoucnost nasazení AI**: lokálně orientované, chránící soukromí a efektivní. Ovládněte tyto dovednosti a vytvořte další generaci inteligentních aplikací.  
+**EdgeAI představuje budoucnost nasazení AI**: lokálně první, chránící soukromí a efektivní. Ovládněte tyto dovednosti a budujte další generaci inteligentních aplikací.  
 
 ## Další kurzy  
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:46:43+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T12:52:49+00:00",
   "source_file": "README.md",
   "language_code": "bg"
 }
@@ -57,7 +57,7 @@ CO_OP_TRANSLATOR_METADATA:
 Edge AI представлява парадигмен сдвиг, който адресира критични съвременни предизвикателства:
 - **Поверителност и сигурност**: Обработвайте чувствителни данни локално без излагане в облака
 - **Изпълнение в реално време**: Премахнете мрежовата латентност за приложения с критично време
-- **Икономическа ефективност**: Намалете разходите за честотна лента и облачни изчисления
+- **Икономия на разходи**: Намалете разходите за честотна лента и облачни изчисления
 - **Устойчиви операции**: Поддържайте функционалност при прекъсвания на мрежата
 - **Съответствие с регулации**: Спазвайте изискванията за суверенитет на данните
 
@@ -74,8 +74,8 @@ Edge AI означава изпълнение на AI алгоритми и ез
 ### Малки езикови модели (SLMs)
 
 SLMs като Phi-4, Mistral-7B и Gemma са оптимизирани версии на по-големи LLM—обучени или дистилирани за:
-- **Намален обем на паметта**: Ефективно използване на ограничената памет на edge устройствата
-- **По-ниски изисквания за изчисления**: Оптимизирани за CPU и edge GPU производителност
+- **Намален обем на паметта**: Ефективно използване на ограничената памет на edge устройства
+- **По-ниски изчислителни изисквания**: Оптимизирани за CPU и edge GPU производителност
 - **По-бързо стартиране**: Бърза инициализация за отзивчиви приложения
 
 Те отключват мощни NLP възможности, като същевременно отговарят на ограниченията на:
@@ -89,7 +89,7 @@ SLMs като Phi-4, Mistral-7B и Gemma са оптимизирани верс�
 
 | Модул | Тема | Фокусна област | Ключово съдържание | Ниво | Продължителност |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Въведение в EdgeAI](./introduction.md) | Основи и контекст | Преглед на EdgeAI • Приложения в индустрията • Въведение в SLM • Цели на обучението | Начинаещ | 1-2 ч |
+| [📖 00 ](./introduction.md) | [Въведение в EdgeAI](./introduction.md) | Основи и контекст | Преглед на EdgeAI • Приложения в индустрията • Въведение в SLM • Учебни цели | Начинаещ | 1-2 ч |
 | [📚 01](../../Module01) | [Основи на EdgeAI](./Module01/README.md) | Сравнение облак срещу Edge AI | Основи на EdgeAI • Казуси от реалния свят • Ръководство за внедряване • Edge внедряване | Начинаещ | 3-4 ч |
 | [🧠 02](../../Module02) | [Основи на SLM моделите](./Module02/README.md) | Семейства модели и архитектура | Семейство Phi • Семейство Qwen • Семейство Gemma • BitNET • μModel • Phi-Silica | Начинаещ | 4-5 ч |
 | [🚀 03](../../Module03) | [Практика по внедряване на SLM](./Module03/README.md) | Локално и облачно внедряване | Разширено обучение • Локална среда • Облачно внедряване | Средно ниво | 4-5 ч |
@@ -108,7 +108,7 @@ SLMs като Phi-4, Mistral-7B и Gemma са оптимизирани верс�
 - [05: Мултиагентна оркестрация](./Module08/samples/05/README.md)
 - [06: Рутер за модели като инструменти](./Module08/samples/06/README.md)
 - [07: Директен API клиент](./Module08/samples/07/README.md)
-- [08: Windows 11 чат приложение](./Module08/samples/08/README.md)
+- [08: Чат приложение за Windows 11](./Module08/samples/08/README.md)
 - [09: Разширена мултиагентна система](./Module08/samples/09/README.md)
 - [10: Foundry Tools Framework](./Module08/samples/10/README.md)
 
@@ -116,7 +116,7 @@ SLMs като Phi-4, Mistral-7B и Gemma са оптимизирани верс�
 
 Цялостни материали за практическа работилница с готови за продукция реализации:
 
-- **[Ръководство за работилницата](./Workshop/Readme.md)** - Пълни учебни цели, резултати и навигация на ресурсите
+- **[Ръководство за работилницата](./Workshop/Readme.md)** - Пълни учебни цели, резултати и навигация на ресурси
 - **Python примери** (6 сесии) - Актуализирани с най-добри практики, обработка на грешки и пълна документация
 - **Jupyter тетрадки** (8 интерактивни) - Стъпка по стъпка уроци с бенчмаркове и мониторинг на производителността
 - **Ръководства за сесии** - Подробни markdown ръководства за всяка сесия на работилницата
@@ -127,7 +127,7 @@ SLMs като Phi-4, Mistral-7B и Gemma са оптимизирани верс�
 - RAG потоци с оценка на качеството (RAGAS)
 - Инструменти за бенчмаркинг и сравнение на множество модели
 - Мултиагентни оркестрационни системи
-- Интелигентно маршрутизиране на модели с избор на задачи
+- Интелигентно маршрутизиране на модели с избор на база задачи
 
 ### 📊 **Обобщение на учебния път**
 - **Обща продължителност**: 36-45 часа
@@ -140,8 +140,8 @@ SLMs като Phi-4, Mistral-7B и Gemma са оптимизирани верс�
 
 ### 🎯 Основни компетенции
 - **Архитектура на Edge AI**: Проектиране на локално-първи AI системи с интеграция в облак
-- **Оптимизация на модели**: Квантизиране и компресиране на модели за внедряване на ръба (85% ускорение, 75% намаление на размера)  
-- **Мултиплатформено внедряване**: Windows, мобилни, вградени и хибридни облачно-крайни системи  
+- **Оптимизация на моделите**: Квантизиране и компресиране на модели за внедряване на ръба (85% ускорение, 75% намаление на размера)  
+- **Мултиплатформено внедряване**: Windows, мобилни устройства, вградени системи и хибридни облачно-крайни системи  
 - **Производствени операции**: Мониторинг, мащабиране и поддръжка на Edge AI в продукция  
 
 ### 🏗️ Практически проекти  
@@ -150,7 +150,7 @@ SLMs като Phi-4, Mistral-7B и Gemma са оптимизирани верс�
 - **RAG приложения**: Локална обработка на документи с векторно търсене  
 - **Маршрутизатори на модели**: Интелигентен избор между модели въз основа на анализ на задачата  
 - **API рамки**: Клиенти готови за продукция с поточно предаване и мониторинг на здравето  
-- **Инструменти за мултиплатформена интеграция**: Шаблони за интеграция на LangChain/Semantic Kernel  
+- **Инструменти за множество платформи**: Интеграционни модели LangChain/Semantic Kernel  
 
 ### 🏢 Приложения в индустрията  
 **Производство** • **Здравеопазване** • **Автономни превозни средства** • **Умни градове** • **Мобилни приложения**  
@@ -169,9 +169,9 @@ SLMs като Phi-4, Mistral-7B и Gemma са оптимизирани верс�
 
 ## Влияние върху кариерата  
 
-**Технически роли**: Архитект решения EdgeAI • ML инженер (Edge) • IoT AI разработчик • Мобилен AI разработчик  
+**Технически роли**: Архитект на EdgeAI решения • ML инженер (Edge) • IoT AI разработчик • Мобилен AI разработчик  
 
-**Индустриални сектори**: Производство 4.0 • Технологии в здравеопазването • Автономни системи • Финтех • Потребителска електроника  
+**Индустриални сектори**: Производство 4.0 • Технологии в здравеопазването • Автономни системи • ФинТех • Потребителска електроника  
 
 **Проекти в портфолиото**: Мултиагентни системи • Производствени RAG приложения • Мултиплатформено внедряване • Оптимизация на производителността  
 
@@ -196,14 +196,14 @@ edgeai-for-beginners/
 ✅ **Реални казуси**: Microsoft, Japan Airlines, корпоративни внедрявания  
 ✅ **Практически примери**: 50+ примера, 10 изчерпателни демонстрации Foundry Local  
 ✅ **Фокус върху производителността**: 85% подобрение на скоростта, 75% намаление на размера  
-✅ **Мултиплатформено**: Windows, мобилни, вградени, хибрид облак-край  
+✅ **Мултиплатформено**: Windows, мобилни устройства, вградени системи, облачно-крайна хибридна среда  
 ✅ **Готово за продукция**: Мониторинг, мащабиране, сигурност, рамки за съответствие  
 
 📖 **[Наличен учебен наръчник](STUDY_GUIDE.md)**: Структуриран 20-часов учебен път с насоки за разпределение на времето и инструменти за самооценка.  
 
 ---  
 
-**EdgeAI представлява бъдещето на внедряването на AI**: локално-първо, запазващо поверителността и ефективно. Овладейте тези умения, за да изградите следващото поколение интелигентни приложения.  
+**EdgeAI представлява бъдещето на внедряването на AI**: локално ориентиран, запазващ поверителността и ефективен. Овладейте тези умения, за да изградите следващото поколение интелигентни приложения.  
 
 ## Други курсове  
 
@@ -211,37 +211,41 @@ edgeai-for-beginners/
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
 ### LangChain  
-[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
-[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+[![LangChain4j за начинаещи](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js за начинаещи](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
 
 ---  
+
 ### Azure / Edge / MCP / Агенти  
-[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AZD за начинаещи](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Edge AI за начинаещи](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![MCP за начинаещи](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AI агенти за начинаещи](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
+   
 ### Серия за генеративен AI  
-[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
-[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
-[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
+[![Генеративен AI за начинаещи](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Генеративен AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
+[![Генеративен AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
+[![Генеративен AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
 
 ---  
+   
 ### Основно обучение  
-[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
-[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
-[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
-[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
-[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![ML за начинаещи](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Data Science за начинаещи](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AI за начинаещи](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Киберсигурност за начинаещи](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
+[![Уеб разработка за начинаещи](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
+[![IoT за начинаещи](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
+[![XR разработка за начинаещи](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
+   
 ### Серия Copilot  
-[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
-[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
+[![Copilot за AI съвместно програмиране](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
+[![Copilot за C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->  
 
@@ -258,6 +262,6 @@ edgeai-for-beginners/
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Отказ от отговорност**:
+**Отказ от отговорност**:  
 Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

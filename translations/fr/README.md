@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T08:12:26+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T11:15:50+00:00",
   "source_file": "README.md",
   "language_code": "fr"
 }
@@ -36,7 +36,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
 #### Pris en charge via GitHub Action (Automatisé & Toujours à jour)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](./README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[Arabe](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgare](../bg/README.md) | [Birman (Myanmar)](../my/README.md) | [Chinois (Simplifié)](../zh/README.md) | [Chinois (Traditionnel, Hong Kong)](../hk/README.md) | [Chinois (Traditionnel, Macao)](../mo/README.md) | [Chinois (Traditionnel, Taïwan)](../tw/README.md) | [Croate](../hr/README.md) | [Tchèque](../cs/README.md) | [Danois](../da/README.md) | [Néerlandais](../nl/README.md) | [Estonien](../et/README.md) | [Finnois](../fi/README.md) | [Français](./README.md) | [Allemand](../de/README.md) | [Grec](../el/README.md) | [Hébreu](../he/README.md) | [Hindi](../hi/README.md) | [Hongrois](../hu/README.md) | [Indonésien](../id/README.md) | [Italien](../it/README.md) | [Japonais](../ja/README.md) | [Kannada](../kn/README.md) | [Coréen](../ko/README.md) | [Lituanien](../lt/README.md) | [Malais](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Népalais](../ne/README.md) | [Pidgin nigérian](../pcm/README.md) | [Norvégien](../no/README.md) | [Persan (Farsi)](../fa/README.md) | [Polonais](../pl/README.md) | [Portugais (Brésil)](../br/README.md) | [Portugais (Portugal)](../pt/README.md) | [Pendjabi (Gurmukhi)](../pa/README.md) | [Roumain](../ro/README.md) | [Russe](../ru/README.md) | [Serbe (Cyrillique)](../sr/README.md) | [Slovaque](../sk/README.md) | [Slovène](../sl/README.md) | [Espagnol](../es/README.md) | [Swahili](../sw/README.md) | [Suédois](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamoul](../ta/README.md) | [Télougou](../te/README.md) | [Thaï](../th/README.md) | [Turc](../tr/README.md) | [Ukrainien](../uk/README.md) | [Ourdou](../ur/README.md) | [Vietnamien](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 **Si vous souhaitez que des langues supplémentaires soient prises en charge, elles sont listées [ici](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
@@ -47,7 +47,7 @@ Bienvenue dans **EdgeAI pour débutants** – votre parcours complet dans le mon
 ### Ce que vous maîtriserez
 
 Ce cours vous guide des concepts fondamentaux aux implémentations prêtes pour la production, couvrant :
-- **Petits modèles de langage (SLMs)** optimisés pour le déploiement en périphérie
+- **Petits modèles de langage (SLM)** optimisés pour le déploiement en périphérie
 - **Optimisation consciente du matériel** sur diverses plateformes
 - **Inférence en temps réel** avec des capacités de préservation de la vie privée
 - **Stratégies de déploiement en production** pour les applications d'entreprise
@@ -71,11 +71,11 @@ Edge AI désigne l'exécution d'algorithmes d'IA et de modèles de langage local
 - **Faible latence** : Réponses immédiates adaptées aux systèmes en temps réel
 - **Souveraineté des données** : Garde les données sensibles localement, améliorant la sécurité et la conformité
 
-### Petits modèles de langage (SLMs)
+### Petits modèles de langage (SLM)
 
-Les SLMs comme Phi-4, Mistral-7B et Gemma sont des versions optimisées de grands LLMs — entraînées ou distillées pour :
+Les SLM comme Phi-4, Mistral-7B et Gemma sont des versions optimisées de grands LLM—entraînés ou distillés pour :
 - **Réduction de l'empreinte mémoire** : Utilisation efficace de la mémoire limitée des dispositifs en périphérie
-- **Demande de calcul réduite** : Optimisé pour les performances CPU et GPU en périphérie
+- **Demande de calcul réduite** : Optimisés pour les performances CPU et GPU en périphérie
 - **Temps de démarrage plus rapides** : Initialisation rapide pour des applications réactives
 
 Ils débloquent des capacités NLP puissantes tout en respectant les contraintes de :
@@ -93,7 +93,7 @@ Ils débloquent des capacités NLP puissantes tout en respectant les contraintes
 | [📚 01](../../Module01) | [Fondamentaux EdgeAI](./Module01/README.md) | Comparaison Cloud vs Edge AI | Fondamentaux EdgeAI • Études de cas réelles • Guide d'implémentation • Déploiement en périphérie | Débutant | 3-4 h |
 | [🧠 02](../../Module02) | [Fondations des modèles SLM](./Module02/README.md) | Familles de modèles & architecture | Famille Phi • Famille Qwen • Famille Gemma • BitNET • μModel • Phi-Silica | Débutant | 4-5 h |
 | [🚀 03](../../Module03) | [Pratique de déploiement SLM](./Module03/README.md) | Déploiement local & cloud | Apprentissage avancé • Environnement local • Déploiement cloud | Intermédiaire | 4-5 h |
-| [⚙️ 04](../../Module04) | [Boîte à outils d'optimisation de modèle](./Module04/README.md) | Optimisation multiplateforme | Introduction • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Synthèse de workflow | Intermédiaire | 5-6 h |
+| [⚙️ 04](../../Module04) | [Boîte à outils d'optimisation](./Module04/README.md) | Optimisation multiplateforme | Introduction • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Synthèse de workflow | Intermédiaire | 5-6 h |
 | [🔧 05](../../Module05) | [SLMOps en production](./Module05/README.md) | Opérations en production | Introduction SLMOps • Distillation de modèle • Affinage • Déploiement en production | Avancé | 5-6 h |
 | [🤖 06](../../Module06) | [Agents IA & Appel de fonction](./Module06/README.md) | Frameworks d'agents & MCP | Introduction aux agents • Appel de fonction • Protocole de contexte de modèle | Avancé | 4-5 h |
 | [💻 07](../../Module07) | [Implémentation plateforme](./Module07/README.md) | Exemples multiplateformes | Boîte à outils IA • Foundry Local • Développement Windows | Avancé | 3-4 h |
@@ -118,7 +118,7 @@ Matériel complet d'atelier pratique avec implémentations prêtes pour la produ
 
 - **[Guide de l'atelier](./Workshop/Readme.md)** - Objectifs d'apprentissage complets, résultats et navigation des ressources
 - **Exemples Python** (6 sessions) - Mis à jour avec les meilleures pratiques, gestion des erreurs et documentation complète
-- **Notebooks Jupyter** (8 interactifs) - Tutoriels pas à pas avec benchmarks et suivi des performances
+- **Notebooks Jupyter** (8 interactifs) - Tutoriels étape par étape avec benchmarks et suivi des performances
 - **Guides de session** - Guides markdown détaillés pour chaque session d'atelier
 - **Outils de validation** - Scripts pour vérifier la qualité du code et exécuter des tests de fumée
 
@@ -165,7 +165,7 @@ Matériel complet d'atelier pratique avec implémentations prêtes pour la produ
 3. **🚀 Production** (Modules 05-06) : SLMOps + agents IA + appels de fonctions
 4. **💻 Implémentation** (Modules 07-08) : Exemples de plateformes + boîte à outils Foundry Local
 
-Chaque module comprend théorie, exercices pratiques et exemples de code prêts pour la production.
+Chaque module inclut théorie, exercices pratiques et exemples de code prêts pour la production.
 
 ## Impact sur la carrière
 
@@ -194,7 +194,7 @@ edgeai-for-beginners/
 
 ✅ **Apprentissage progressif** : Théorie → Pratique → Déploiement en production  
 ✅ **Études de cas réelles** : Microsoft, Japan Airlines, implémentations en entreprise  
-✅ **Exemples pratiques** : Plus de 50 exemples, 10 démos complètes Foundry Local  
+✅ **Exemples pratiques** : 50+ exemples, 10 démonstrations complètes Foundry Local  
 ✅ **Focus performance** : Améliorations de vitesse de 85 %, réductions de taille de 75 %  
 ✅ **Multiplateforme** : Windows, mobile, embarqué, hybride cloud-périphérie  
 ✅ **Prêt pour la production** : Surveillance, mise à l’échelle, sécurité, cadres de conformité
@@ -255,7 +255,7 @@ Si vous êtes bloqué ou avez des questions sur la création d’applications IA
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Si vous avez des retours sur le produit ou des erreurs lors du développement, visitez :
+Si vous avez des retours produit ou des erreurs lors du développement, visitez :
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
