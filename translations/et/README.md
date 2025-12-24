@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T10:08:46+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T13:16:04+00:00",
   "source_file": "README.md",
   "language_code": "et"
 }
@@ -36,54 +36,54 @@ Järgige neid samme, et alustada nende ressursside kasutamist:
 #### Toetatud GitHub Actioni kaudu (automatiseeritud ja alati ajakohane)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Araabia](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgaaria](../bg/README.md) | [Birma (Myanmar)](../my/README.md) | [Hiina (lihtsustatud)](../zh/README.md) | [Hiina (traditsiooniline, Hongkong)](../hk/README.md) | [Hiina (traditsiooniline, Macau)](../mo/README.md) | [Hiina (traditsiooniline, Taiwan)](../tw/README.md) | [Horvaadi](../hr/README.md) | [Tšehhi](../cs/README.md) | [Taani](../da/README.md) | [Hollandi](../nl/README.md) | [Eesti](./README.md) | [Soome](../fi/README.md) | [Prantsuse](../fr/README.md) | [Saksa](../de/README.md) | [Kreeka](../el/README.md) | [Heebrea](../he/README.md) | [Hindi](../hi/README.md) | [Ungari](../hu/README.md) | [Indoneesia](../id/README.md) | [Itaalia](../it/README.md) | [Jaapani](../ja/README.md) | [Kannada](../kn/README.md) | [Korea](../ko/README.md) | [Leedu](../lt/README.md) | [Malai](../ms/README.md) | [Malajalami](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigeeria pidžin](../pcm/README.md) | [Norra](../no/README.md) | [Pärsia (Farsi)](../fa/README.md) | [Poola](../pl/README.md) | [Portugali (Brasiilia)](../br/README.md) | [Portugali (Portugal)](../pt/README.md) | [Pandžabi (Gurmukhi)](../pa/README.md) | [Rumeenia](../ro/README.md) | [Vene](../ru/README.md) | [Serbia (kirillitsa)](../sr/README.md) | [Slovaki](../sk/README.md) | [Sloveeni](../sl/README.md) | [Hispaania](../es/README.md) | [Suaheli](../sw/README.md) | [Rootsi](../sv/README.md) | [Tagalogi (filipino)](../tl/README.md) | [Tamili](../ta/README.md) | [Telugu](../te/README.md) | [Tai](../th/README.md) | [Türgi](../tr/README.md) | [Ukraina](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnami](../vi/README.md)
+[Araabia](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgaaria](../bg/README.md) | [Birma (Myanmar)](../my/README.md) | [Hiina (lihtsustatud)](../zh/README.md) | [Hiina (traditsiooniline, Hongkong)](../hk/README.md) | [Hiina (traditsiooniline, Macau)](../mo/README.md) | [Hiina (traditsiooniline, Taiwan)](../tw/README.md) | [Horvaadi](../hr/README.md) | [Tšehhi](../cs/README.md) | [Taani](../da/README.md) | [Hollandi](../nl/README.md) | [Eesti](./README.md) | [Soome](../fi/README.md) | [Prantsuse](../fr/README.md) | [Saksa](../de/README.md) | [Kreeka](../el/README.md) | [Heebrea](../he/README.md) | [Hindi](../hi/README.md) | [Ungari](../hu/README.md) | [Indoneesia](../id/README.md) | [Itaalia](../it/README.md) | [Jaapani](../ja/README.md) | [Kannada](../kn/README.md) | [Korea](../ko/README.md) | [Leedu](../lt/README.md) | [Malai](../ms/README.md) | [Malajalami](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigeeria pidžin](../pcm/README.md) | [Norra](../no/README.md) | [Pärsia (Farsi)](../fa/README.md) | [Poola](../pl/README.md) | [Portugali (Brasiilia)](../br/README.md) | [Portugali (Portugal)](../pt/README.md) | [Pandžabi (Gurmukhi)](../pa/README.md) | [Rumeenia](../ro/README.md) | [Vene](../ru/README.md) | [Serbia (kirillitsa)](../sr/README.md) | [Slovaki](../sk/README.md) | [Sloveeni](../sl/README.md) | [Hispaania](../es/README.md) | [Suaheli](../sw/README.md) | [Rootsi](../sv/README.md) | [Tagalogi (Filipino)](../tl/README.md) | [Tamili](../ta/README.md) | [Telugu](../te/README.md) | [Tai](../th/README.md) | [Türgi](../tr/README.md) | [Ukraina](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnami](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 **Kui soovite toetada täiendavaid tõlkekeeli, on need loetletud [siin](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Sissejuhatus
 
-Tere tulemast **EdgeAI algajatele** – teie põhjalik teekond serva tehisintellekti muutuvas maailmas. See kursus ühendab võimsad tehisintellekti võimalused praktilise ja reaalse maailma juurutamisega servaseadmetel, võimaldades teil kasutada tehisintellekti potentsiaali otse seal, kus andmeid genereeritakse ja otsuseid tuleb teha.
+Tere tulemast **EdgeAI algajatele** – teie põhjalik teekond servatehisintellekti muutuvas maailmas. See kursus ühendab võimsad tehisintellekti võimalused praktilise ja reaalse maailma juurutamisega servaseadmetel, võimaldades teil kasutada tehisintellekti potentsiaali otse seal, kus andmeid genereeritakse ja otsuseid tuleb teha.
 
 ### Mida te valdama õpite
 
 See kursus viib teid aluste mõistetest tootmiskõlblike rakendusteni, hõlmates:
 - **Väikesed keelemudelid (SLM-id)**, mis on optimeeritud servale juurutamiseks
 - **Riistvarateadlik optimeerimine** erinevatel platvormidel
-- **Reaalajas järeldamine** privaatsust säilitavate võimalustega
+- **Reaalajas järeldamine** privaatsust kaitsvate võimalustega
 - **Tootmisse juurutamise strateegiad** ettevõtte rakendustele
 
 ### Miks EdgeAI on oluline
 
-Serva tehisintellekt tähistab paradigmade muutust, mis lahendab tänapäeva kriitilisi väljakutseid:
+Servatehisintellekt tähistab paradigmade muutust, mis lahendab tänapäeva kriitilisi väljakutseid:
 - **Privaatsus ja turvalisus**: Töötle tundlikke andmeid lokaalselt ilma pilve avalikustamiseta
 - **Reaalajas jõudlus**: Vähenda võrgu latentsust ajakriitiliste rakenduste jaoks
-- **Kuluefektiivsus**: Vähenda ribalaiust ja pilvearvutuse kulusid
+- **Kuluefektiivsus**: Vähenda ribalaiuse ja pilvearvutuse kulusid
 - **Vastupidav töö**: Säilita funktsionaalsus võrgu katkestuste ajal
 - **Regulatiivne vastavus**: Täida andmete suveräänsuse nõudeid
 
-### Serva tehisintellekt
+### Servatehisintellekt
 
-Serva tehisintellekt tähendab AI algoritmide ja keelemudelite käitamist lokaalselt riistvaral, lähedal andmete genereerimise kohale, ilma et järeldamiseks oleks vaja pilveressursse. See vähendab latentsust, parandab privaatsust ja võimaldab reaalajas otsuste tegemist.
+Servatehisintellekt tähendab tehisintellekti algoritmide ja keelemudelite käitamist lokaalselt riistvaral, lähedal andmete genereerimise kohale, ilma et järeldamiseks oleks vaja pilveressursse. See vähendab latentsust, parandab privaatsust ja võimaldab reaalajas otsuste tegemist.
 
 ### Põhiprintsiibid:
-- **Seadmesisesed järeldused**: AI mudelid töötavad servaseadmetel (telefonid, ruuterid, mikrokontrollerid, tööstuslikud arvutid)
-- **Võrguühenduseta võimekus**: Toimib ilma pideva internetiühenduseta
-- **Madal latentsus**: Kohesed vastused, sobilikud reaalajas süsteemidele
-- **Andmete suveräänsus**: Hoiab tundlikud andmed lokaalselt, parandades turvalisust ja vastavust
+- **Seadmesisesed järeldused**: tehisintellekti mudelid töötavad servaseadmetel (telefonid, ruuterid, mikrokontrollerid, tööstuslikud arvutid)
+- **Võrguühenduseta võimekus**: töötab ilma pideva internetiühenduseta
+- **Madal latentsus**: kohesed vastused, sobilikud reaalajas süsteemidele
+- **Andmete suveräänsus**: hoiab tundlikud andmed lokaalselt, parandades turvalisust ja vastavust
 
 ### Väikesed keelemudelid (SLM-id)
 
 SLM-id nagu Phi-4, Mistral-7B ja Gemma on suuremate LLM-ide optimeeritud versioonid — treenitud või destilleeritud selleks, et:
-- **Vähendada mälukasutust**: Tõhus kasutus piiratud servaseadme mälus
-- **Vähendada arvutusnõudeid**: Optimeeritud CPU ja serva GPU jõudluseks
-- **Kiire käivitusaeg**: Kiire initsialiseerimine reageerivate rakenduste jaoks
+- **Vähendada mälukasutust**: tõhus kasutus piiratud servaseadme mälus
+- **Vähendada arvutusnõudeid**: optimeeritud CPU ja serva GPU jõudluseks
+- **Kiirem käivitusaeg**: kiire initsialiseerimine reageerivate rakenduste jaoks
 
 Need avavad võimsad NLP võimalused, samal ajal vastates piirangutele:
 - **Sisse ehitatud süsteemid**: IoT seadmed ja tööstuslikud kontrollerid
-- **Mobiilseadmed**: Nutitelefonid ja tahvelarvutid võrguühenduseta võimalustega
-- **IoT seadmed**: Andurid ja nutiseadmed piiratud ressurssidega
-- **Serva serverid**: Kohalikud töötlemisseadmed piiratud GPU ressurssidega
-- **Isiklikud arvutid**: Laua- ja sülearvutite juurutusstsenaariumid
+- **Mobiilseadmed**: nutitelefonid ja tahvelarvutid võrguühenduseta võimalustega
+- **IoT seadmed**: andurid ja nutiseadmed piiratud ressurssidega
+- **Serva serverid**: lokaalsed töötlemisseadmed piiratud GPU ressurssidega
+- **Isiklikud arvutid**: lauaarvuti ja sülearvuti juurutusstsenaariumid
 
 ## Kursuse moodulid ja navigeerimine
 
@@ -93,11 +93,11 @@ Need avavad võimsad NLP võimalused, samal ajal vastates piirangutele:
 | [📚 01](../../Module01) | [EdgeAI alused](./Module01/README.md) | Pilve ja serva AI võrdlus | EdgeAI alused • Reaalse maailma juhtumiuuringud • Rakendamise juhend • Serva juurutamine | Algaja | 3-4 tundi |
 | [🧠 02](../../Module02) | [SLM mudelite alused](./Module02/README.md) | Mudeliperekonnad ja arhitektuur | Phi perekond • Qwen perekond • Gemma perekond • BitNET • μModel • Phi-Silica | Algaja | 4-5 tundi |
 | [🚀 03](../../Module03) | [SLM juurutamise praktika](./Module03/README.md) | Kohalik ja pilve juurutamine | Täiustatud õppimine • Kohalik keskkond • Pilve juurutamine | Kesktase | 4-5 tundi |
-| [⚙️ 04](../../Module04) | [Mudeliparandamise tööriistakomplekt](./Module04/README.md) | Platvormideülene optimeerimine | Sissejuhatus • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Töövoo süntees | Kesktase | 5-6 tundi |
+| [⚙️ 04](../../Module04) | [Mudeli optimeerimise tööriistakomplekt](./Module04/README.md) | Platvormideülene optimeerimine | Sissejuhatus • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Töövoo süntees | Kesktase | 5-6 tundi |
 | [🔧 05](../../Module05) | [SLMOps tootmine](./Module05/README.md) | Tootmistegevused | SLMOps tutvustus • Mudeli destilleerimine • Peenhäälestus • Tootmisse juurutamine | Edasijõudnud | 5-6 tundi |
 | [🤖 06](../../Module06) | [AI agendid ja funktsioonikõned](./Module06/README.md) | Agendi raamistikud ja MCP | Agendi tutvustus • Funktsioonikõned • Mudeli konteksti protokoll | Edasijõudnud | 4-5 tundi |
 | [💻 07](../../Module07) | [Platvormi rakendamine](./Module07/README.md) | Platvormideülene näidised | AI tööriistakomplekt • Foundry Local • Windowsi arendus | Edasijõudnud | 3-4 tundi |
-| [🏭 08](../../Module08) | [Foundry Local tööriistakomplekt](./Module08/README.md) | Tootmiskõlblikud näidised | Näidisarendused (vt allpool) | Ekspert | 8-10 tundi |
+| [🏭 08](../../Module08) | [Foundry Local tööriistakomplekt](./Module08/README.md) | Tootmiskõlblikud näidised | Näidisarendused (vt allpool üksikasju) | Ekspert | 8-10 tundi |
 
 ### 🏭 **Moodul 08: Näidisarendused**
 
@@ -112,14 +112,14 @@ Need avavad võimsad NLP võimalused, samal ajal vastates piirangutele:
 - [09: Täiustatud mitme agendi süsteem](./Module08/samples/09/README.md)
 - [10: Foundry tööriistade raamistik](./Module08/samples/10/README.md)
 
-### 🎓 **Töötuba: Praktiline õpitee**
+### 🎓 **Töötuba: praktiline õpitee**
 
-Põhjalikud praktilised töötoa materjalid tootmiskõlblike rakendustega:
+Põhjalikud praktilised töötubade materjalid tootmiskõlblike rakendustega:
 
-- **[Töötoa juhend](./Workshop/Readme.md)** - Täielikud õpieesmärgid, tulemused ja ressursside navigeerimine
+- **[Töötuba juhend](./Workshop/Readme.md)** - Täielikud õpieesmärgid, tulemused ja ressursside navigeerimine
 - **Python näited** (6 sessiooni) - Uuendatud parimate tavade, veahalduse ja põhjaliku dokumentatsiooniga
 - **Jupyter märkmikud** (8 interaktiivset) - Samm-sammult juhendid koos võrdlustulemuste ja jõudluse jälgimisega
-- **Sessioonijuhendid** - Üksikasjalikud markdown juhendid iga töötoa sessiooni jaoks
+- **Sessioonijuhendid** - Üksikasjalikud markdown juhendid iga töötuba sessiooni jaoks
 - **Kinnitustööriistad** - Skriptid koodi kvaliteedi kontrollimiseks ja suitsutestide läbiviimiseks
 
 **Mida te ehitate:**
@@ -139,29 +139,29 @@ Põhjalikud praktilised töötoa materjalid tootmiskõlblike rakendustega:
 ## Mida te ehitate
 
 ### 🎯 Põhioskused
-- **Serva AI arhitektuur**: Kujundage lokaalseid AI süsteeme pilve integratsiooniga
-- **Mudeli optimeerimine**: mudelite kvantimine ja tihendamine servas kasutamiseks (85% kiiruse tõus, 75% suuruse vähendamine)  
-- **Mitme platvormi juurutus**: Windows, mobiil, manustatud ja pilve-äärte hübriidsüsteemid  
+- **Servatehisintellekti arhitektuur**: kujundage lokaalseid AI süsteeme pilve integratsiooniga
+- **Mudelite optimeerimine**: mudelite kvantimine ja tihendamine servas kasutamiseks (85% kiiruse tõus, 75% suuruse vähendamine)  
+- **Mitme platvormi juurutamine**: Windows, mobiil, manustatud ja pilve-äärte hübriidsüsteemid  
 - **Tootmistegevused**: serva AI jälgimine, skaleerimine ja hooldamine tootmises  
 
 ### 🏗️ Praktilised projektid  
 - **Foundry Local vestlusrakendused**: Windows 11 natiivrakendus mudelite vahetamisega  
 - **Mitmeagendilised süsteemid**: koordinaator spetsialistagentidega keerukate töövoogude jaoks  
 - **RAG rakendused**: kohalik dokumentide töötlemine vektorotsinguga  
-- **Mudeli marsruuterid**: nutikas mudelite valik ülesande analüüsi põhjal  
+- **Mudelite marsruuterid**: nutikas mudelite valik ülesande analüüsi põhjal  
 - **API raamistikud**: tootmiskõlblikud kliendid voogedastuse ja tervise jälgimisega  
-- **Mitme platvormi tööriistad**: LangChain/Semantic Kernel integratsioonimustrid  
+- **Mitmeplatvormilised tööriistad**: LangChain/Semantic Kernel integratsioonimustrid  
 
 ### 🏢 Tööstusharude rakendused  
 **Tootmine** • **Tervishoid** • **Autonoomsed sõidukid** • **Targad linnad** • **Mobiilirakendused**  
 
 ## Kiire algus  
 
-**Soovitatud õppekava** (kokku 20-30 tundi):  
+**Soovitatud õppeteekond** (kokku 20-30 tundi):  
 
-0. **📖 Sissejuhatus** ([Introduction.md](./introduction.md)): EdgeAI alused + tööstuse kontekst + õpiraamistik  
+0. **📖 Sissejuhatus** ([Introduction.md](./introduction.md)): EdgeAI alused + tööstuse kontekst + õppimisraamistik  
 1. **📚 Alused** (Moodulid 01-02): EdgeAI mõisted + SLM mudeliperekonnad  
-2. **⚙️ Optimeerimine** (Moodulid 03-04): juurutus + kvantimisraamistikud  
+2. **⚙️ Optimeerimine** (Moodulid 03-04): juurutamine + kvantimisraamistikud  
 3. **🚀 Tootmine** (Moodulid 05-06): SLMOps + AI agendid + funktsioonikõned  
 4. **💻 Rakendamine** (Moodulid 07-08): platvorminäited + Foundry Local tööriistakomplekt  
 
@@ -173,7 +173,7 @@ Igas moodulis on teooria, praktilised harjutused ja tootmiskõlblikud koodinäit
 
 **Tööstusharud**: Tootmine 4.0 • Tervishoiutehnoloogia • Autonoomsed süsteemid • FinTech • Tarbekaupade elektroonika  
 
-**Portfoolio projektid**: Mitmeagendilised süsteemid • Tootmis-RAG rakendused • Mitme platvormi juurutus • Jõudluse optimeerimine  
+**Portfoolio projektid**: Mitmeagendilised süsteemid • Tootmis-RAG rakendused • Mitmeplatvormiline juurutamine • Jõudluse optimeerimine  
 
 ## Repositsiooni struktuur  
 
@@ -196,14 +196,14 @@ edgeai-for-beginners/
 ✅ **Tõelised juhtumiuuringud**: Microsoft, Japan Airlines, ettevõtete rakendused  
 ✅ **Praktilised näited**: 50+ näidet, 10 põhjalikku Foundry Local demo  
 ✅ **Jõudlusele keskendumine**: 85% kiiruse paranemine, 75% suuruse vähendamine  
-✅ **Mitme platvormi tugi**: Windows, mobiil, manustatud, pilve-äärte hübriid  
+✅ **Mitmeplatvormiline**: Windows, mobiil, manustatud, pilve-äärte hübriid  
 ✅ **Tootmiskõlblik**: jälgimine, skaleerimine, turvalisus, vastavusraamistikud  
 
-📖 **[Õpijuhend saadaval](STUDY_GUIDE.md)**: struktureeritud 20-tunnine õppekava koos ajajaotuse ja enesehindamise tööriistadega.  
+📖 **[Õppejuhend saadaval](STUDY_GUIDE.md)**: struktureeritud 20-tunnine õppeteekond koos ajajaotuse juhiste ja enesehindamise tööriistadega.  
 
 ---  
 
-**EdgeAI esindab AI juurutamise tulevikku**: esmalt kohalik, privaatsust kaitsev ja tõhus. Valda neid oskusi, et ehitada järgmise põlvkonna nutikaid rakendusi.  
+**EdgeAI esindab AI juurutamise tulevikku**: kohalik eelistus, privaatsust säilitav ja tõhus. Valda neid oskusi, et ehitada järgmise põlvkonna nutikaid rakendusi.  
 
 ## Teised kursused  
 
@@ -255,13 +255,13 @@ Kui jääd hätta või on küsimusi AI rakenduste loomise kohta, liitu:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)  
 
-Kui sul on toote tagasisidet või ehitamisel vigu, külasta:  
+Kui sul on toodete kohta tagasisidet või ehitamisel vigu, külasta:  
 
-[![Microsoft Foundry arendajate foorum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Vastutusest loobumine**:
-See dokument on tõlgitud kasutades tehisintellekti tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi püüame tagada täpsust, palun arvestage, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti mõistmiste eest.
+See dokument on tõlgitud kasutades tehisintellektil põhinevat tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi püüame tagada täpsust, palun arvestage, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti mõistmiste eest.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

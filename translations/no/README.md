@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:18:47+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T12:19:40+00:00",
   "source_file": "README.md",
   "language_code": "no"
 }
@@ -75,10 +75,10 @@ Edge AI refererer til å kjøre AI-algoritmer og språkmodeller lokalt på maski
 
 SLMs som Phi-4, Mistral-7B og Gemma er optimaliserte versjoner av større LLM-er—trent eller destillert for:
 - **Redusert minnebruk**: Effektiv bruk av begrenset minne på edge-enheter
-- **Lavere beregningsbehov**: Optimalisert for CPU- og edge-GPU-ytelse
+- **Lavere beregningsbehov**: Optimalisert for CPU- og edge GPU-ytelse
 - **Raskere oppstartstider**: Rask initialisering for responsive applikasjoner
 
-De åpner for kraftige NLP-muligheter samtidig som de møter begrensningene til:
+De låser opp kraftige NLP-muligheter samtidig som de møter begrensningene til:
 - **Innebygde systemer**: IoT-enheter og industrielle kontrollere
 - **Mobile enheter**: Smarttelefoner og nettbrett med offline-funksjonalitet
 - **IoT-enheter**: Sensorer og smarte enheter med begrensede ressurser
@@ -94,15 +94,15 @@ De åpner for kraftige NLP-muligheter samtidig som de møter begrensningene til:
 | [🧠 02](../../Module02) | [SLM Modellgrunnlag](./Module02/README.md) | Modellfamilier og arkitektur | Phi-familien • Qwen-familien • Gemma-familien • BitNET • μModel • Phi-Silica | Nybegynner | 4-5 t |
 | [🚀 03](../../Module03) | [SLM Distribusjonspraksis](./Module03/README.md) | Lokal og sky-distribusjon | Avansert læring • Lokalt miljø • Sky-distribusjon | Mellomnivå | 4-5 t |
 | [⚙️ 04](../../Module04) | [Modelloptimaliseringsverktøy](./Module04/README.md) | Plattformuavhengig optimalisering | Introduksjon • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Arbeidsflytsyntese | Mellomnivå | 5-6 t |
-| [🔧 05](../../Module05) | [SLMOps Produksjon](./Module05/README.md) | Produksjonsoperasjoner | SLMOps Introduksjon • Modell-destillering • Finjustering • Produksjonsdistribusjon | Avansert | 5-6 t |
-| [🤖 06](../../Module06) | [AI-agenter og funksjonskall](./Module06/README.md) | Agent-rammeverk og MCP | Agentintroduksjon • Funksjonskall • Modellkontekstprotokoll | Avansert | 4-5 t |
-| [💻 07](../../Module07) | [Plattformimplementering](./Module07/README.md) | Plattformuavhengige eksempler | AI-verktøysett • Foundry Local • Windows-utvikling | Avansert | 3-4 t |
+| [🔧 05](../../Module05) | [SLMOps Produksjon](./Module05/README.md) | Produksjonsoperasjoner | SLMOps Introduksjon • Modell destillasjon • Finjustering • Produksjonsdistribusjon | Avansert | 5-6 t |
+| [🤖 06](../../Module06) | [AI-agenter og funksjonskall](./Module06/README.md) | Agentrammeverk og MCP | Agentintroduksjon • Funksjonskall • Modellkontekstprotokoll | Avansert | 4-5 t |
+| [💻 07](../../Module07) | [Plattformimplementering](./Module07/README.md) | Plattformuavhengige eksempler | AI-verktøykasse • Foundry Local • Windows-utvikling | Avansert | 3-4 t |
 | [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Produksjonsklare eksempler | Eksempelsøknader (se detaljer nedenfor) | Ekspert | 8-10 t |
 
 ### 🏭 **Modul 08: Eksempelsøknader**
 
 - [01: REST Chat Hurtigstart](./Module08/samples/01/README.md)
-- [02: OpenAI SDK-integrasjon](./Module08/samples/02/README.md)
+- [02: OpenAI SDK Integrasjon](./Module08/samples/02/README.md)
 - [03: Modelloppdagelse og benchmarking](./Module08/samples/03/README.md)
 - [04: Chainlit RAG-applikasjon](./Module08/samples/04/README.md)
 - [05: Multi-agent orkestrering](./Module08/samples/05/README.md)
@@ -114,7 +114,7 @@ De åpner for kraftige NLP-muligheter samtidig som de møter begrensningene til:
 
 ### 🎓 **Workshop: Praktisk læringssti**
 
-Omfattende praktiske workshop-materialer med produksjonsklare implementeringer:
+Omfattende praktisk workshop-materiale med produksjonsklare implementeringer:
 
 - **[Workshop Guide](./Workshop/Readme.md)** - Fullstendige læringsmål, resultater og ressursnavigasjon
 - **Python-eksempler** (6 økter) - Oppdatert med beste praksis, feilhåndtering og omfattende dokumentasjon
@@ -148,7 +148,7 @@ Omfattende praktiske workshop-materialer med produksjonsklare implementeringer:
 - **Foundry Local Chat-apper**: Windows 11 native applikasjon med modellbytte  
 - **Multi-agent systemer**: Koordinator med spesialistagenter for komplekse arbeidsflyter  
 - **RAG-applikasjoner**: Lokal dokumentbehandling med vektorsøk  
-- **Modellrutere**: Intelligent valg mellom modeller basert på oppgaveanalyse  
+- **Modellruter**: Intelligent valg mellom modeller basert på oppgaveanalyse  
 - **API-rammeverk**: Produksjonsklare klienter med streaming og helsesjekk  
 - **Tverrplattformverktøy**: LangChain/Semantic Kernel integrasjonsmønstre  
 
@@ -197,13 +197,13 @@ edgeai-for-beginners/
 ✅ **Praktiske eksempler**: 50+ eksempler, 10 omfattende Foundry Local demoer  
 ✅ **Ytelsesfokus**: 85 % hastighetsforbedringer, 75 % størrelsesreduksjoner  
 ✅ **Multiplattform**: Windows, mobil, innebygd, sky-edge hybrid  
-✅ **Produksjonsklart**: Overvåking, skalering, sikkerhet, samsvarsrammeverk  
+✅ **Produksjonsklar**: Overvåking, skalering, sikkerhet, samsvarsrammeverk  
 
-📖 **[Studieveiledning tilgjengelig](STUDY_GUIDE.md)**: Strukturert 20-timers læringsvei med tidsallokeringsveiledning og selvvurderingsverktøy.  
+📖 **[Studieveiledning tilgjengelig](STUDY_GUIDE.md)**: Strukturert 20-timers læringsvei med tidsallokeringsveiledning og egenvurderingsverktøy.  
 
 ---  
 
-**EdgeAI representerer fremtiden for AI-distribusjon**: lokal-først, personvernbevarende og effektiv. Mestre disse ferdighetene for å bygge neste generasjon intelligente applikasjoner.  
+**EdgeAI representerer fremtiden for AI-distribusjon**: lokal-først, personvernbevarende og effektiv. Mestre disse ferdighetene for å bygge neste generasjons intelligente applikasjoner.  
 
 ## Andre kurs  
 

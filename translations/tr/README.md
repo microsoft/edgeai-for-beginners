@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:06:39+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T12:06:48+00:00",
   "source_file": "README.md",
   "language_code": "tr"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 ![Kurs kapak resmi](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.tr.png)
 
 [![GitHub katkıda bulunanlar](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![GitHub sorunlar](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
+[![GitHub sorunları](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
 [![GitHub çekme istekleri](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
 [![PR'ler Hoşgeldiniz](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
@@ -33,16 +33,16 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
 
 ### 🌐 Çok Dilli Destek
 
-#### GitHub Action ile desteklenmektedir (Otomatik ve Her Zaman Güncel)
+#### GitHub Action ile desteklenmektedir (Otomatik & Her Zaman Güncel)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arapça](../ar/README.md) | [Bengalce](../bn/README.md) | [Bulgarca](../bg/README.md) | [Burma (Myanmar)](../my/README.md) | [Çince (Basitleştirilmiş)](../zh/README.md) | [Çince (Geleneksel, Hong Kong)](../hk/README.md) | [Çince (Geleneksel, Makao)](../mo/README.md) | [Çince (Geleneksel, Tayvan)](../tw/README.md) | [Hırvatça](../hr/README.md) | [Çekçe](../cs/README.md) | [Danca](../da/README.md) | [Flemenkçe](../nl/README.md) | [Estonca](../et/README.md) | [Fince](../fi/README.md) | [Fransızca](../fr/README.md) | [Almanca](../de/README.md) | [Yunanca](../el/README.md) | [İbranice](../he/README.md) | [Hintçe](../hi/README.md) | [Macarca](../hu/README.md) | [Endonezce](../id/README.md) | [İtalyanca](../it/README.md) | [Japonca](../ja/README.md) | [Kannada](../kn/README.md) | [Korece](../ko/README.md) | [Litvanca](../lt/README.md) | [Malayca](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepalce](../ne/README.md) | [Nijerya Pidgin](../pcm/README.md) | [Norveççe](../no/README.md) | [Farsça (Farsi)](../fa/README.md) | [Lehçe](../pl/README.md) | [Portekizce (Brezilya)](../br/README.md) | [Portekizce (Portekiz)](../pt/README.md) | [Pencapça (Gurmukhi)](../pa/README.md) | [Rumence](../ro/README.md) | [Rusça](../ru/README.md) | [Sırpça (Kiril)](../sr/README.md) | [Slovakça](../sk/README.md) | [Slovence](../sl/README.md) | [İspanyolca](../es/README.md) | [Svahili](../sw/README.md) | [İsveççe](../sv/README.md) | [Tagalog (Filipinler)](../tl/README.md) | [Tamilce](../ta/README.md) | [Telugu](../te/README.md) | [Tayca](../th/README.md) | [Türkçe](./README.md) | [Ukraynaca](../uk/README.md) | [Urduca](../ur/README.md) | [Vietnamca](../vi/README.md)
+[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](./README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 **Ek çeviri dillerinin desteklenmesini istiyorsanız, bunlar [burada](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md) listelenmiştir**
 ## Giriş
 
-**Yeni Başlayanlar için EdgeAI**'ye hoş geldiniz – Edge Yapay Zekanın dönüştürücü dünyasına kapsamlı yolculuğunuz. Bu kurs, güçlü AI yetenekleri ile gerçek dünyada kenar cihazlarda pratik dağıtım arasındaki boşluğu kapatarak, verinin üretildiği ve kararların verilmesi gereken yerde AI potansiyelini doğrudan kullanmanızı sağlar.
+**Yeni Başlayanlar için EdgeAI**'ye hoş geldiniz – Edge Yapay Zekanın dönüştürücü dünyasına kapsamlı yolculuğunuz. Bu kurs, güçlü AI yetenekleri ile gerçek dünya kenar cihazlarında pratik dağıtım arasındaki boşluğu kapatır ve verinin üretildiği ve kararların verilmesi gereken yerde AI potansiyelini doğrudan kullanmanızı sağlar.
 
 ### Neleri Öğreneceksiniz
 
@@ -75,7 +75,7 @@ Edge AI, AI algoritmalarını ve dil modellerini verinin üretildiği yere yakı
 
 Phi-4, Mistral-7B ve Gemma gibi SLM'ler, daha büyük LLM'lerin optimize edilmiş versiyonlarıdır—şunlar için eğitilmiş veya damıtılmıştır:
 - **Azaltılmış bellek kullanımı**: Sınırlı kenar cihaz belleğinin verimli kullanımı
-- **Düşük hesaplama talebi**: CPU ve kenar GPU performansı için optimize edilmiş
+- **Daha düşük hesaplama talebi**: CPU ve kenar GPU performansı için optimize edilmiş
 - **Daha hızlı başlatma süreleri**: Yanıt veren uygulamalar için hızlı başlatma
 
 Bunlar, şu kısıtlamaları karşılayarak güçlü NLP yeteneklerini açığa çıkarır:
@@ -110,7 +110,7 @@ Bunlar, şu kısıtlamaları karşılayarak güçlü NLP yeteneklerini açığa 
 - [07: Doğrudan API İstemcisi](./Module08/samples/07/README.md)
 - [08: Windows 11 Sohbet Uygulaması](./Module08/samples/08/README.md)
 - [09: İleri Çoklu Ajan Sistemi](./Module08/samples/09/README.md)
-- [10: Foundry Araçları Çerçevesi](./Module08/samples/10/README.md)
+- [10: Foundry Araçlar Çerçevesi](./Module08/samples/10/README.md)
 
 ### 🎓 **Atölye: Uygulamalı Öğrenme Yolu**
 
@@ -122,7 +122,7 @@ Bunlar, şu kısıtlamaları karşılayarak güçlü NLP yeteneklerini açığa 
 - **Oturum Rehberleri** - Her atölye oturumu için detaylı markdown rehberleri
 - **Doğrulama Araçları** - Kod kalitesini doğrulamak ve duman testleri çalıştırmak için betikler
 
-**Yapacaklarınız:**
+**Neler İnşa Edeceksiniz:**
 - Akış destekli yerel AI sohbet uygulamaları
 - Kalite değerlendirmeli RAG boru hatları (RAGAS)
 - Çoklu model kıyaslama ve karşılaştırma araçları
@@ -136,46 +136,46 @@ Bunlar, şu kısıtlamaları karşılayarak güçlü NLP yeteneklerini açığa 
 - **İleri Seviye Yolu**: Modüller 05-07 (12-15 saat)
 - **Uzman Yolu**: Modül 08 (8-10 saat)
 
-## Yapacaklarınız
+## Neler İnşa Edeceksiniz
 
 ### 🎯 Temel Yetenekler
 - **Edge AI Mimarisi**: Bulut entegrasyonlu yerel öncelikli AI sistemleri tasarlayın
-- **Model Optimizasyonu**: Kenar dağıtımı için modelleri kuantize edin ve sıkıştırın (yüzde 85 hız artışı, yüzde 75 boyut azaltımı)  
-- **Çoklu Platform Dağıtımı**: Windows, mobil, gömülü ve bulut-kenar hibrit sistemler  
-- **Üretim Operasyonları**: Üretimde kenar AI izleme, ölçeklendirme ve bakım  
+- **Model Optimizasyonu**: Kenar dağıtımı için modelleri kuantize edin ve sıkıştırın (yüzde 85 hız artışı, yüzde 75 boyut azaltımı)
+- **Çoklu Platform Dağıtımı**: Windows, mobil, gömülü ve bulut-kenar hibrit sistemler
+- **Üretim Operasyonları**: Üretimde kenar AI izleme, ölçeklendirme ve bakım
 
-### 🏗️ Pratik Projeler  
-- **Foundry Yerel Sohbet Uygulamaları**: Model değiştirme özellikli Windows 11 yerel uygulaması  
+### 🏗️ Pratik Projeler
+- **Foundry Yerel Sohbet Uygulamaları**: Model değiştirme özellikli Windows 11 yerel uygulaması
 - **Çoklu Ajan Sistemleri**: Karmaşık iş akışları için uzman ajanlarla koordinatör  
-- **RAG Uygulamaları**: Vektör arama ile yerel belge işleme  
-- **Model Yönlendiriciler**: Görev analizine dayalı modeller arasında akıllı seçim  
-- **API Çerçeveleri**: Akış ve sağlık izleme özellikli üretime hazır istemciler  
-- **Çapraz Platform Araçları**: LangChain/Semantic Kernel entegrasyon kalıpları  
+- **RAG Uygulamaları**: Vektör arama ile yerel belge işleme
+- **Model Yönlendiriciler**: Görev analizine dayalı modeller arasında akıllı seçim
+- **API Çerçeveleri**: Akış ve sağlık izleme özellikli üretime hazır istemciler
+- **Çapraz Platform Araçları**: LangChain/Semantic Kernel entegrasyon kalıpları
 
-### 🏢 Endüstri Uygulamaları  
-**Üretim** • **Sağlık Hizmetleri** • **Otonom Araçlar** • **Akıllı Şehirler** • **Mobil Uygulamalar**  
+### 🏢 Endüstri Uygulamaları
+**Üretim** • **Sağlık** • **Otonom Araçlar** • **Akıllı Şehirler** • **Mobil Uygulamalar**
 
-## Hızlı Başlangıç  
+## Hızlı Başlangıç
 
-**Önerilen Öğrenme Yolu** (toplam 20-30 saat):  
+**Önerilen Öğrenme Yolu** (toplam 20-30 saat):
 
-0. **📖 Giriş** ([Introduction.md](./introduction.md)): EdgeAI temelleri + endüstri bağlamı + öğrenme çerçevesi  
-1. **📚 Temel** (Modüller 01-02): EdgeAI kavramları + SLM model aileleri  
+0. **📖 Giriş** ([Introduction.md](./introduction.md)): EdgeAI temelleri + endüstri bağlamı + öğrenme çerçevesi
+1. **📚 Temel** (Modüller 01-02): EdgeAI kavramları + SLM model aileleri
 2. **⚙️ Optimizasyon** (Modüller 03-04): Dağıtım + kuantizasyon çerçeveleri  
-3. **🚀 Üretim** (Modüller 05-06): SLMOps + AI ajanları + fonksiyon çağrısı  
-4. **💻 Uygulama** (Modüller 07-08): Platform örnekleri + Foundry Yerel araç seti  
+3. **🚀 Üretim** (Modüller 05-06): SLMOps + AI ajanları + fonksiyon çağrısı
+4. **💻 Uygulama** (Modüller 07-08): Platform örnekleri + Foundry Yerel araç seti
 
-Her modül teori, uygulamalı egzersizler ve üretime hazır kod örnekleri içerir.  
+Her modül teori, uygulamalı egzersizler ve üretime hazır kod örnekleri içerir.
 
-## Kariyer Etkisi  
+## Kariyer Etkisi
 
-**Teknik Roller**: EdgeAI Çözüm Mimarı • ML Mühendisi (Kenar) • IoT AI Geliştiricisi • Mobil AI Geliştiricisi  
+**Teknik Roller**: EdgeAI Çözüm Mimarı • ML Mühendisi (Edge) • IoT AI Geliştiricisi • Mobil AI Geliştiricisi
 
-**Endüstri Sektörleri**: Üretim 4.0 • Sağlık Teknolojisi • Otonom Sistemler • FinTech • Tüketici Elektroniği  
+**Endüstri Sektörleri**: Üretim 4.0 • Sağlık Teknolojisi • Otonom Sistemler • FinTech • Tüketici Elektroniği
 
-**Portföy Projeleri**: Çoklu ajan sistemleri • Üretim RAG uygulamaları • Çapraz platform dağıtımı • Performans optimizasyonu  
+**Portföy Projeleri**: Çoklu ajan sistemleri • Üretim RAG uygulamaları • Çapraz platform dağıtımı • Performans optimizasyonu
 
-## Depo Yapısı  
+## Depo Yapısı
 
 ```
 edgeai-for-beginners/
@@ -189,73 +189,73 @@ edgeai-for-beginners/
 ├── 🌐 translations/    # Multi-language support (8+ languages)
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
-  
-## Kurs Öne Çıkanlar  
 
-✅ **Kademeli Öğrenme**: Teori → Pratik → Üretim dağıtımı  
+## Kurs Öne Çıkanlar
+
+✅ **Kademeli Öğrenme**: Teori → Uygulama → Üretim dağıtımı  
 ✅ **Gerçek Vaka Çalışmaları**: Microsoft, Japan Airlines, kurumsal uygulamalar  
 ✅ **Uygulamalı Örnekler**: 50+ örnek, 10 kapsamlı Foundry Yerel demo  
 ✅ **Performans Odaklı**: %85 hız artışı, %75 boyut azaltımı  
 ✅ **Çoklu Platform**: Windows, mobil, gömülü, bulut-kenar hibrit  
-✅ **Üretime Hazır**: İzleme, ölçeklendirme, güvenlik, uyumluluk çerçeveleri  
+✅ **Üretime Hazır**: İzleme, ölçeklendirme, güvenlik, uyumluluk çerçeveleri
 
-📖 **[Çalışma Rehberi Mevcut](STUDY_GUIDE.md)**: Zaman tahsisi rehberi ve öz değerlendirme araçları ile yapılandırılmış 20 saatlik öğrenme yolu.  
+📖 **[Çalışma Rehberi Mevcut](STUDY_GUIDE.md)**: Zaman tahsisi rehberi ve öz-değerlendirme araçları ile yapılandırılmış 20 saatlik öğrenme yolu.
 
----  
+---
 
-**EdgeAI, AI dağıtımının geleceğini temsil eder**: yerel öncelikli, gizliliği koruyan ve verimli. Bu becerileri ustalaşarak bir sonraki nesil akıllı uygulamaları oluşturun.  
+**EdgeAI, AI dağıtımının geleceğini temsil eder**: yerel öncelikli, gizliliği koruyan ve verimli. Bu becerileri ustalaşarak bir sonraki nesil akıllı uygulamaları oluşturun.
 
-## Diğer Kurslar  
+## Diğer Kurslar
 
-Ekibimiz başka kurslar da üretiyor! Göz atın:  
+Ekibimiz başka kurslar da üretiyor! Göz atın:
 
-<!-- CO-OP TRANSLATOR OTHER COURSES START -->  
-### LangChain  
-[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
-[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+<!-- CO-OP TRANSLATOR OTHER COURSES START -->
+### LangChain
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
 
----  
+---
 
-### Azure / Edge / MCP / Ajanlar  
-[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
+### Azure / Edge / MCP / Ajanlar
+[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
----  
+---
  
-### Üretken AI Serisi  
-[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
-[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
-[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
+### Üretken AI Serisi
+[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
----  
+---
  
-### Temel Öğrenme  
-[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
-[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
-[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
-[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
-[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
+### Temel Öğrenme
+[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
----  
+---
  
-### Copilot Serisi  
-[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
-[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
-[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
-<!-- CO-OP TRANSLATOR OTHER COURSES END -->  
+### Copilot Serisi
+[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+<!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
-## Yardım Alma  
+## Yardım Alma
 
-AI uygulamaları geliştirme konusunda takılırsanız veya sorularınız olursa katılın:  
+AI uygulamaları geliştirme konusunda takılırsanız veya sorularınız olursa katılın:
 
-[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)  
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Ürün geri bildirimi veya hata bildirimi için ziyaret edin:  
+Ürün geri bildirimi veya hata bildirimi için ziyaret edin:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:45:33+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T12:49:53+00:00",
   "source_file": "README.md",
   "language_code": "ro"
 }
@@ -26,8 +26,8 @@ CO_OP_TRANSLATOR_METADATA:
 
 Urmați acești pași pentru a începe să folosiți aceste resurse:
 
-1. **Fork la Repozitoriu**: Click pe [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Clonează Repozitoriul**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+1. **Fork Repository-ul**: Click pe [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Clonează Repository-ul**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Alătură-te Discord-ului Azure AI Foundry și întâlnește experți și alți dezvoltatori**](https://discord.com/invite/ByRwuEEgH4)
 
 
@@ -54,7 +54,7 @@ Acest curs vă duce de la conceptele fundamentale la implementări gata de produ
 
 ### De ce Contează EdgeAI
 
-Edge AI reprezintă o schimbare de paradigmă care abordează provocările critice moderne:
+Edge AI reprezintă o schimbare de paradigmă care abordează provocările moderne critice:
 - **Confidențialitate & Securitate**: Procesează date sensibile local, fără expunere în cloud
 - **Performanță în timp real**: Elimină latența rețelei pentru aplicații critice în timp
 - **Eficiență de cost**: Reduce costurile de bandă și de calcul în cloud
@@ -69,7 +69,7 @@ Edge AI se referă la rularea algoritmilor AI și a modelelor de limbaj local pe
 - **Inferență pe dispozitiv**: Modelele AI rulează pe dispozitive edge (telefoane, routere, microcontrolere, PC-uri industriale)
 - **Capacitate offline**: Funcționează fără conectivitate persistentă la internet
 - **Latență scăzută**: Răspunsuri imediate potrivite pentru sisteme în timp real
-- **Suveranitate a datelor**: Păstrează datele sensibile local, îmbunătățind securitatea și conformitatea
+- **Suveranitatea datelor**: Păstrează datele sensibile local, îmbunătățind securitatea și conformitatea
 
 ### Modele de Limbaj Mici (SLM)
 
@@ -101,7 +101,7 @@ Ele deblochează capabilități puternice NLP respectând constrângerile:
 
 ### 🏭 **Modul 08: Aplicații Exemplu**
 
-- [01: REST Chat Quickstart](./Module08/samples/01/README.md)
+- [01: Pornire rapidă REST Chat](./Module08/samples/01/README.md)
 - [02: Integrare SDK OpenAI](./Module08/samples/02/README.md)
 - [03: Descoperire & Benchmarking Model](./Module08/samples/03/README.md)
 - [04: Aplicație Chainlit RAG](./Module08/samples/04/README.md)
@@ -112,15 +112,15 @@ Ele deblochează capabilități puternice NLP respectând constrângerile:
 - [09: Sistem Multi-Agent Avansat](./Module08/samples/09/README.md)
 - [10: Framework Foundry Tools](./Module08/samples/10/README.md)
 
-### 🎓 **Atelier: Cale de Învățare Practică**
+### 🎓 **Workshop: Cale de Învățare Practică**
 
-Materiale cuprinzătoare pentru atelier hands-on cu implementări gata de producție:
+Materiale cuprinzătoare pentru workshop-uri practice cu implementări gata de producție:
 
-- **[Ghid Atelier](./Workshop/Readme.md)** - Obiective complete de învățare, rezultate și navigare resurse
+- **[Ghid Workshop](./Workshop/Readme.md)** - Obiective complete de învățare, rezultate și navigare resurse
 - **Exemple Python** (6 sesiuni) - Actualizate cu bune practici, gestionare erori și documentație completă
 - **Jupyter Notebooks** (8 interactive) - Tutoriale pas cu pas cu benchmark-uri și monitorizare performanță
-- **Ghiduri Sesiuni** - Ghiduri detaliate în markdown pentru fiecare sesiune de atelier
-- **Unelte de Validare** - Scripturi pentru verificarea calității codului și teste rapide
+- **Ghiduri sesiuni** - Ghiduri detaliate în markdown pentru fiecare sesiune de workshop
+- **Unelte de validare** - Scripturi pentru verificarea calității codului și teste rapide
 
 **Ce Veți Construi:**
 - Aplicații locale AI de chat cu suport streaming
@@ -130,7 +130,7 @@ Materiale cuprinzătoare pentru atelier hands-on cu implementări gata de produc
 - Rutare inteligentă a modelelor cu selecție bazată pe sarcini
 
 ### 📊 **Rezumat Cale de Învățare**
-- **Durată Totală**: 36-45 ore
+- **Durată totală**: 36-45 ore
 - **Cale Începător**: Modulele 01-02 (7-9 ore)  
 - **Cale Intermediară**: Modulele 03-04 (9-11 ore)
 - **Cale Avansată**: Modulele 05-07 (12-15 ore)
@@ -138,7 +138,7 @@ Materiale cuprinzătoare pentru atelier hands-on cu implementări gata de produc
 
 ## Ce Veți Construi
 
-### 🎯 Competențe de Bază
+### 🎯 Competențe de bază
 - **Arhitectura Edge AI**: Proiectați sisteme AI locale cu integrare cloud
 - **Optimizarea modelului**: Cuantificarea și comprimarea modelelor pentru implementare la margine (creștere a vitezei cu 85%, reducere a dimensiunii cu 75%)
 - **Implementare multiplatformă**: Windows, mobil, încorporat și sisteme hibride cloud-edge
@@ -152,7 +152,7 @@ Materiale cuprinzătoare pentru atelier hands-on cu implementări gata de produc
 - **Framework-uri API**: Clienți pregătiți pentru producție cu streaming și monitorizare a sănătății
 - **Unelte cross-platform**: Modele de integrare LangChain/Semantic Kernel
 
-### 🏢 Aplicații în industrie
+### 🏢 Aplicații industriale
 **Producție** • **Sănătate** • **Vehicule autonome** • **Orașe inteligente** • **Aplicații mobile**
 
 ## Pornire rapidă
@@ -171,7 +171,7 @@ Fiecare modul include teorie, exerciții practice și exemple de cod pregătite 
 
 **Roluri tehnice**: Arhitect soluții EdgeAI • Inginer ML (Edge) • Dezvoltator AI IoT • Dezvoltator AI mobil
 
-**Sectoare industriale**: Producție 4.0 • Tehnologie în sănătate • Sisteme autonome • FinTech • Electronice de consum
+**Sectore industriale**: Producție 4.0 • Tehnologie în sănătate • Sisteme autonome • FinTech • Electronice de consum
 
 **Proiecte portofoliu**: Sisteme multi-agent • Aplicații RAG în producție • Implementare cross-platform • Optimizare performanță
 
@@ -234,7 +234,7 @@ Echipa noastră produce și alte cursuri! Vezi:
  
 ### Învățare de bază
 [![ML pentru începători](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![Data Science pentru începători](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![Știința datelor pentru începători](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI pentru începători](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
 [![Securitate cibernetică pentru începători](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
 [![Dezvoltare web pentru începători](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)

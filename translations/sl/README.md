@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:54:19+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T13:01:48+00:00",
   "source_file": "README.md",
   "language_code": "sl"
 }
@@ -15,7 +15,7 @@ CO_OP_TRANSLATOR_METADATA:
 [![Prispevki na GitHubu](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![Težave na GitHubu](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
 [![Zahteve za združitev na GitHubu](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
-[![PR dobrodošli](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![PRs dobrodošli](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 [![Opazovalci na GitHubu](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
 [![Razvejitev na GitHubu](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
@@ -93,7 +93,7 @@ Omogočajo zmogljive NLP zmožnosti ob upoštevanju omejitev:
 | [📚 01](../../Module01) | [Osnove EdgeAI](./Module01/README.md) | Primerjava oblak vs rob AI | Osnove EdgeAI • Primeri iz resničnega sveta • Vodnik za implementacijo • Robno nameščanje | Začetnik | 3-4 ure |
 | [🧠 02](../../Module02) | [Temelji SLM modelov](./Module02/README.md) | Družine modelov in arhitektura | Družina Phi • Družina Qwen • Družina Gemma • BitNET • μModel • Phi-Silica | Začetnik | 4-5 ur |
 | [🚀 03](../../Module03) | [Praksa nameščanja SLM](./Module03/README.md) | Lokalno in oblačno nameščanje | Napredno učenje • Lokalno okolje • Oblačno nameščanje | Srednje | 4-5 ur |
-| [⚙️ 04](../../Module04) | [Orodja za optimizacijo modelov](./Module04/README.md) | Optimizacija na več platformah | Uvod • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sestavljanje delovnega toka | Srednje | 5-6 ur |
+| [⚙️ 04](../../Module04) | [Orodja za optimizacijo modelov](./Module04/README.md) | Optimizacija na več platformah | Uvod • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sestavljanje delovnih tokov | Srednje | 5-6 ur |
 | [🔧 05](../../Module05) | [SLMOps produkcija](./Module05/README.md) | Produkcijsko upravljanje | Uvod v SLMOps • Destilacija modelov • Fino nastavljanje • Produkcijsko nameščanje | Napredno | 5-6 ur |
 | [🤖 06](../../Module06) | [AI agenti in klic funkcij](./Module06/README.md) | Okviri agentov in MCP | Uvod v agente • Klic funkcij • Protokol konteksta modela | Napredno | 4-5 ur |
 | [💻 07](../../Module07) | [Implementacija platforme](./Module07/README.md) | Vzorci za več platform | AI orodja • Foundry Local • Razvoj za Windows | Napredno | 3-4 ure |
@@ -118,8 +118,8 @@ Celoviti materiali delavnice z implementacijami pripravljenimi za produkcijo:
 
 - **[Vodnik delavnice](./Workshop/Readme.md)** - Popolni cilji učenja, rezultati in navigacija virov
 - **Python vzorci** (6 sej) - Posodobljeni z najboljšimi praksami, obravnavo napak in obsežno dokumentacijo
-- **Jupyter zvezki** (8 interaktivnih) - Korak za korakom vodiči z benchmarki in spremljanjem zmogljivosti
-- **Vodniki za seje** - Podrobni markdown vodiči za vsako delavnico
+- **Jupyter zvezki** (8 interaktivnih) - Korak za korakom vodiči z merjenjem zmogljivosti in spremljanjem
+- **Vodniki sej** - Podrobni markdown vodiči za vsako delavnico
 - **Orodja za validacijo** - Skripte za preverjanje kakovosti kode in izvajanje osnovnih testov
 
 **Kaj boste zgradili:**
@@ -150,7 +150,7 @@ Celoviti materiali delavnice z implementacijami pripravljenimi za produkcijo:
 - **RAG aplikacije**: Lokalno obdelovanje dokumentov z vektorskim iskanjem
 - **Usmerjevalniki modelov**: Inteligentna izbira med modeli na podlagi analize naloge
 - **API ogrodja**: Produkcijsko pripravljeni odjemalci s pretakanjem in nadzorom zdravja
-- **Večplatformska orodja**: Vzorce integracije LangChain/Semantic Kernel
+- **Orodja za več platform**: Vzorce integracije LangChain/Semantic Kernel
 
 ### 🏢 Industrijske uporabe
 **Proizvodnja** • **Zdravstvo** • **Avtonomna vozila** • **Pametna mesta** • **Mobilne aplikacije**
@@ -162,7 +162,7 @@ Celoviti materiali delavnice z implementacijami pripravljenimi za produkcijo:
 0. **📖 Uvod** ([Introduction.md](./introduction.md)): Osnove EdgeAI + industrijski kontekst + učni okvir
 1. **📚 Osnove** (Moduli 01-02): Koncepti EdgeAI + družine modelov SLM
 2. **⚙️ Optimizacija** (Moduli 03-04): Namestitev + ogrodja za kvantizacijo  
-3. **🚀 Produkcija** (Moduli 05-06): SLMOps + AI agenti + klici funkcij
+3. **🚀 Produkcija** (Moduli 05-06): SLMOps + AI agenti + klicanje funkcij
 4. **💻 Implementacija** (Moduli 07-08): Vzorci platform + orodja Foundry Local
 
 Vsak modul vključuje teorijo, praktične vaje in produkcijsko pripravljene vzorce kode.
@@ -194,7 +194,7 @@ edgeai-for-beginners/
 
 ✅ **Postopno učenje**: Teorija → praksa → produkcijska namestitev  
 ✅ **Resnični primeri**: Microsoft, Japan Airlines, implementacije v podjetjih  
-✅ **Praktični vzorci**: 50+ primerov, 10 obsežnih demonstracij Foundry Local  
+✅ **Praktični vzorci**: 50+ primerov, 10 obsežnih demojev Foundry Local  
 ✅ **Osredotočenost na zmogljivost**: 85 % izboljšave hitrosti, 75 % zmanjšanje velikosti  
 ✅ **Večplatformsko**: Windows, mobilno, vgrajeno, hibrid oblak-rob  
 ✅ **Pripravljeno za produkcijo**: Nadzor, skaliranje, varnost, skladnost

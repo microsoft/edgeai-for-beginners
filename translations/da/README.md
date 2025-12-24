@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:16:31+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T12:17:02+00:00",
   "source_file": "README.md",
   "language_code": "da"
 }
@@ -10,9 +10,9 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI for Begyndere 
 
 
-![Kursus forsidebillede](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.da.png)
+![Course cover image](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.da.png)
 
-[![GitHub bidragydere](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
+[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -46,11 +46,11 @@ Velkommen til **EdgeAI for Begyndere** – din omfattende rejse ind i den transf
 
 ### Hvad Du Vil Mestre
 
-Dette kursus tager dig fra grundlæggende koncepter til produktionsklare implementeringer, og dækker:
+Dette kursus tager dig fra grundlæggende koncepter til produktionsklare implementeringer, der dækker:
 - **Små Sprogmodeller (SLMs)** optimeret til edge-implementering
 - **Hardware-bevidst optimering** på tværs af forskellige platforme
 - **Real-time inferens** med privatlivsbevarende funktioner
-- **Produktionsimplementeringsstrategier** for virksomhedsapplikationer
+- **Produktionsimplementeringsstrategier** til virksomhedsapplikationer
 
 ### Hvorfor EdgeAI Er Vigtigt
 
@@ -91,12 +91,12 @@ De åbner for kraftfulde NLP-muligheder, samtidig med at de opfylder begrænsnin
 |--------|-------|------------|-------------|--------|----------|
 | [📖 00 ](./introduction.md) | [Introduktion til EdgeAI](./introduction.md) | Grundlag & Kontekst | EdgeAI Oversigt • Industriapplikationer • SLM Introduktion • Læringsmål | Begynder | 1-2 timer |
 | [📚 01](../../Module01) | [EdgeAI Grundlæggende](./Module01/README.md) | Cloud vs Edge AI sammenligning | EdgeAI Grundlæggende • Virkelige Case Studier • Implementeringsguide • Edge Implementering | Begynder | 3-4 timer |
-| [🧠 02](../../Module02) | [SLM Model Grundlag](./Module02/README.md) | Modelfamilier & arkitektur | Phi Familie • Qwen Familie • Gemma Familie • BitNET • μModel • Phi-Silica | Begynder | 4-5 timer |
-| [🚀 03](../../Module03) | [SLM Implementeringspraksis](./Module03/README.md) | Lokal & cloud implementering | Avanceret Læring • Lokalt Miljø • Cloud Implementering | Mellem | 4-5 timer |
+| [🧠 02](../../Module02) | [SLM Modelgrundlag](./Module02/README.md) | Modelfamilier & arkitektur | Phi Familie • Qwen Familie • Gemma Familie • BitNET • μModel • Phi-Silica | Begynder | 4-5 timer |
+| [🚀 03](../../Module03) | [SLM Implementeringspraksis](./Module03/README.md) | Lokal & cloud implementering | Avanceret læring • Lokalt miljø • Cloud implementering | Mellem | 4-5 timer |
 | [⚙️ 04](../../Module04) | [Modeloptimeringsværktøj](./Module04/README.md) | Tværplatformsoptimering | Introduktion • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Workflow Syntese | Mellem | 5-6 timer |
-| [🔧 05](../../Module05) | [SLMOps Produktion](./Module05/README.md) | Produktionsdrift | SLMOps Introduktion • Model Destillering • Finjustering • Produktionsimplementering | Avanceret | 5-6 timer |
+| [🔧 05](../../Module05) | [SLMOps Produktion](./Module05/README.md) | Produktionsdrift | SLMOps Introduktion • Modeldestillering • Finjustering • Produktionsimplementering | Avanceret | 5-6 timer |
 | [🤖 06](../../Module06) | [AI Agenter & Funktionskald](./Module06/README.md) | Agentrammer & MCP | Agent Introduktion • Funktionskald • Model Context Protocol | Avanceret | 4-5 timer |
-| [💻 07](../../Module07) | [Platform Implementering](./Module07/README.md) | Tværplatforms eksempler | AI Værktøjskasse • Foundry Local • Windows Udvikling | Avanceret | 3-4 timer |
+| [💻 07](../../Module07) | [Platformimplementering](./Module07/README.md) | Tværplatforms eksempler | AI Værktøjskasse • Foundry Local • Windows Udvikling | Avanceret | 3-4 timer |
 | [🏭 08](../../Module08) | [Foundry Local Værktøjskasse](./Module08/README.md) | Produktionsklare eksempler | Eksempelsapplikationer (se detaljer nedenfor) | Ekspert | 8-10 timer |
 
 ### 🏭 **Modul 08: Eksempelsapplikationer**
@@ -119,7 +119,7 @@ Omfattende praktiske workshopmaterialer med produktionsklare implementeringer:
 - **[Workshop Guide](./Workshop/Readme.md)** - Fuldstændige læringsmål, resultater og ressource-navigation
 - **Python Eksempler** (6 sessioner) - Opdateret med bedste praksis, fejlhåndtering og omfattende dokumentation
 - **Jupyter Notebooks** (8 interaktive) - Trin-for-trin tutorials med benchmarks og ydelsesovervågning
-- **Sessionsguider** - Detaljerede markdown guider for hver workshop session
+- **Sessionsguider** - Detaljerede markdown-guides for hver workshop-session
 - **Valideringsværktøjer** - Scripts til at verificere kodekvalitet og køre smoke tests
 
 **Hvad Du Vil Bygge:**
@@ -139,7 +139,7 @@ Omfattende praktiske workshopmaterialer med produktionsklare implementeringer:
 ## Hvad Du Vil Bygge
 
 ### 🎯 Kernekompetencer
-- **Edge AI Arkitektur**: Design lokale-først AI-systemer med skyintegration
+- **Edge AI Arkitektur**: Design lokale-første AI-systemer med skyintegration
 - **Modeloptimering**: Kvantificer og komprimer modeller til edge-udrulning (85 % hastighedsforøgelse, 75 % størrelsesreduktion)  
 - **Multi-platform Udrulning**: Windows, mobil, indlejrede og cloud-edge hybride systemer  
 - **Produktionsdrift**: Overvågning, skalering og vedligeholdelse af edge AI i produktion  
@@ -153,14 +153,14 @@ Omfattende praktiske workshopmaterialer med produktionsklare implementeringer:
 - **Tværplatformværktøjer**: LangChain/Semantic Kernel integrationsmønstre  
 
 ### 🏢 Brancheanvendelser  
-**Fremstilling** • **Sundhedspleje** • **Autonome Køretøjer** • **Smartere Byer** • **Mobilapps**  
+**Fremstilling** • **Sundhedspleje** • **Autonome Køretøjer** • **Smarte Byer** • **Mobilapps**  
 
 ## Kom Godt I Gang  
 
 **Anbefalet Læringsvej** (20-30 timer i alt):  
 
 0. **📖 Introduktion** ([Introduction.md](./introduction.md)): EdgeAI grundlag + branchekontekst + læringsramme  
-1. **📚 Grundlag** (Moduler 01-02): EdgeAI koncepter + SLM modelfamilier  
+1. **📚 Grundlag** (Moduler 01-02): EdgeAI begreber + SLM modelfamilier  
 2. **⚙️ Optimering** (Moduler 03-04): Udrulning + kvantificeringsframeworks  
 3. **🚀 Produktion** (Moduler 05-06): SLMOps + AI-agenter + funktionskald  
 4. **💻 Implementering** (Moduler 07-08): Platformseksempler + Foundry Local værktøjssæt  

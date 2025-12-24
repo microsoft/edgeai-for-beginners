@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T08:14:45+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T11:17:55+00:00",
   "source_file": "README.md",
   "language_code": "es"
 }
@@ -47,7 +47,7 @@ Bienvenido a **EdgeAI para Principiantes** – tu viaje completo hacia el mundo 
 ### Lo que dominarás
 
 Este curso te lleva desde conceptos fundamentales hasta implementaciones listas para producción, cubriendo:
-- **Modelos de Lenguaje Pequeños (SLMs)** optimizados para despliegue en el borde
+- **Modelos de Lenguaje Pequeños (SLMs)** optimizados para despliegue en edge
 - **Optimización consciente del hardware** en diversas plataformas
 - **Inferencia en tiempo real** con capacidades de preservación de privacidad
 - **Estrategias de despliegue en producción** para aplicaciones empresariales
@@ -59,7 +59,7 @@ Edge AI representa un cambio de paradigma que aborda desafíos modernos crítico
 - **Rendimiento en tiempo real**: Elimina la latencia de red para aplicaciones críticas en tiempo
 - **Eficiencia de costos**: Reduce gastos en ancho de banda y computación en la nube
 - **Operaciones resilientes**: Mantiene funcionalidad durante cortes de red
-- **Cumplimiento regulatorio**: Cumple con requisitos de soberanía de datos
+- **Cumplimiento normativo**: Cumple con requisitos de soberanía de datos
 
 ### Edge AI
 
@@ -74,7 +74,7 @@ Edge AI se refiere a ejecutar algoritmos de IA y modelos de lenguaje localmente 
 ### Modelos de Lenguaje Pequeños (SLMs)
 
 Los SLMs como Phi-4, Mistral-7B y Gemma son versiones optimizadas de LLMs más grandes—entrenados o destilados para:
-- **Reducción de huella de memoria**: Uso eficiente de la memoria limitada de dispositivos edge
+- **Reducir la huella de memoria**: Uso eficiente de la memoria limitada de dispositivos edge
 - **Menor demanda computacional**: Optimizado para rendimiento en CPU y GPU edge
 - **Tiempos de inicio más rápidos**: Inicialización rápida para aplicaciones responsivas
 
@@ -90,11 +90,11 @@ Desbloquean potentes capacidades de PLN mientras cumplen con las limitaciones de
 | Módulo | Tema | Área de Enfoque | Contenido Clave | Nivel | Duración |
 |--------|-------|------------|-------------|--------|----------|
 | [📖 00 ](./introduction.md) | [Introducción a EdgeAI](./introduction.md) | Fundamentos y Contexto | Visión general de EdgeAI • Aplicaciones industriales • Introducción a SLM • Objetivos de aprendizaje | Principiante | 1-2 hrs |
-| [📚 01](../../Module01) | [Fundamentos de EdgeAI](./Module01/README.md) | Comparación Cloud vs Edge AI | Fundamentos de EdgeAI • Casos de estudio reales • Guía de implementación • Despliegue en el borde | Principiante | 3-4 hrs |
+| [📚 01](../../Module01) | [Fundamentos de EdgeAI](./Module01/README.md) | Comparación Cloud vs Edge AI | Fundamentos de EdgeAI • Casos de estudio reales • Guía de implementación • Despliegue en edge | Principiante | 3-4 hrs |
 | [🧠 02](../../Module02) | [Fundamentos de Modelos SLM](./Module02/README.md) | Familias de modelos y arquitectura | Familia Phi • Familia Qwen • Familia Gemma • BitNET • μModel • Phi-Silica | Principiante | 4-5 hrs |
 | [🚀 03](../../Module03) | [Práctica de Despliegue SLM](./Module03/README.md) | Despliegue local y en la nube | Aprendizaje avanzado • Entorno local • Despliegue en la nube | Intermedio | 4-5 hrs |
-| [⚙️ 04](../../Module04) | [Kit de Herramientas para Optimización de Modelos](./Module04/README.md) | Optimización multiplataforma | Introducción • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Síntesis de flujo de trabajo | Intermedio | 5-6 hrs |
-| [🔧 05](../../Module05) | [Producción SLMOps](./Module05/README.md) | Operaciones en producción | Introducción a SLMOps • Destilación de modelos • Ajuste fino • Despliegue en producción | Avanzado | 5-6 hrs |
+| [⚙️ 04](../../Module04) | [Kit de Herramientas de Optimización](./Module04/README.md) | Optimización multiplataforma | Introducción • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Síntesis de flujo de trabajo | Intermedio | 5-6 hrs |
+| [🔧 05](../../Module05) | [Producción SLMOps](./Module05/README.md) | Operaciones en producción | Introducción a SLMOps • Destilación de modelos • Fine-tuning • Despliegue en producción | Avanzado | 5-6 hrs |
 | [🤖 06](../../Module06) | [Agentes de IA y Llamadas a Funciones](./Module06/README.md) | Frameworks de agentes y MCP | Introducción a agentes • Llamadas a funciones • Protocolo de contexto de modelo | Avanzado | 4-5 hrs |
 | [💻 07](../../Module07) | [Implementación en Plataforma](./Module07/README.md) | Ejemplos multiplataforma | Kit de herramientas de IA • Foundry Local • Desarrollo en Windows | Avanzado | 3-4 hrs |
 | [🏭 08](../../Module08) | [Kit de Herramientas Foundry Local](./Module08/README.md) | Ejemplos listos para producción | Aplicaciones de ejemplo (ver detalles abajo) | Experto | 8-10 hrs |
@@ -203,7 +203,7 @@ edgeai-for-beginners/
 
 ---  
 
-**EdgeAI representa el futuro del despliegue de IA**: local-primero, preservación de la privacidad y eficiente. Domina estas habilidades para construir la próxima generación de aplicaciones inteligentes.  
+**EdgeAI representa el futuro del despliegue de IA**: local-primero, preservación de la privacidad y eficiencia. Domina estas habilidades para construir la próxima generación de aplicaciones inteligentes.  
 
 ## Otros Cursos  
 
@@ -211,42 +211,42 @@ edgeai-for-beginners/
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->  
 ### LangChain  
-[![LangChain4j para Principiantes](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
-[![LangChain.js para Principiantes](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)  
 
 ---  
 
 ### Azure / Edge / MCP / Agentes  
-[![AZD para Principiantes](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Edge AI para Principiantes](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![MCP para Principiantes](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Agentes AI para Principiantes](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
-   
+ 
 ### Serie de IA Generativa  
-[![IA Generativa para Principiantes](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-[![IA Generativa (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
-[![IA Generativa (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
-[![IA Generativa (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
 
 ---  
-   
+ 
 ### Aprendizaje Básico  
-[![ML para Principiantes](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Ciencia de Datos para Principiantes](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
-[![IA para Principiantes](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Ciberseguridad para Principiantes](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
-[![Desarrollo Web para Principiantes](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
-[![IoT para Principiantes](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
-[![Desarrollo XR para Principiantes](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
+[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
+[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
+[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
 
 ---  
-   
+ 
 ### Serie Copilot  
-[![Copilot para Programación en Pareja con IA](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
-[![Copilot para C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
-[![Aventura Copilot](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
+[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
+[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
+[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->  
 
 ## Obtener Ayuda  
@@ -262,6 +262,6 @@ Si tienes comentarios sobre el producto o errores durante el desarrollo, visita:
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Aviso Legal**:  
+**Aviso legal**:
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

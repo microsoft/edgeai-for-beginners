@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T08:32:01+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T11:34:51+00:00",
   "source_file": "README.md",
   "language_code": "mo"
 }
@@ -27,7 +27,7 @@ CO_OP_TRANSLATOR_METADATA:
 跟隨以下步驟開始使用這些資源：
 
 1. **分支此儲存庫**：點擊 [![GitHub 分支](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **克隆此儲存庫**： `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+2. **克隆此儲存庫**：   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**加入 Azure AI Foundry Discord，與專家及開發者交流**](https://discord.com/invite/ByRwuEEgH4)
 
 
@@ -42,46 +42,46 @@ CO_OP_TRANSLATOR_METADATA:
 **如欲支援更多翻譯語言，請參閱 [此處](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## 介紹
 
-歡迎來到 **EdgeAI 初學者指南** — 您全面探索邊緣人工智能變革世界的旅程。本課程連接強大 AI 能力與實際、現場部署於邊緣裝置的橋樑，使您能直接在數據產生及決策所需之處發揮 AI 潛力。
+歡迎來到 **EdgeAI 初學者指南** — 您全面探索邊緣人工智能變革世界的旅程。本課程架起強大 AI 能力與實際、現場設備部署之間的橋樑，使您能直接在數據產生及決策所需之處發揮 AI 潛力。
 
 ### 您將掌握的內容
 
 本課程帶您從基礎概念到生產級實作，涵蓋：
 - **小型語言模型 (SLMs)**，針對邊緣部署優化
-- **硬體感知優化**，跨多平台
+- **硬件感知優化**，跨多平台
 - **即時推論**，具備隱私保護功能
 - **企業應用生產部署** 策略
 
 ### 為何 EdgeAI 重要
 
-Edge AI 代表一種範式轉移，解決現代關鍵挑戰：
+Edge AI 代表一種範式轉變，解決現代關鍵挑戰：
 - **隱私與安全**：本地處理敏感數據，無需雲端暴露
-- **即時效能**：消除網絡延遲，適用時間敏感應用
+- **即時效能**：消除網絡延遲，適用時間關鍵應用
 - **成本效益**：降低頻寬與雲端運算開銷
 - **韌性運作**：網絡中斷時仍維持功能
 - **法規遵循**：符合數據主權要求
 
 ### 邊緣人工智能
 
-邊緣 AI 指在硬體本地執行 AI 演算法與語言模型，靠近數據產生地點，無需依賴雲端資源進行推論。它降低延遲、增強隱私，並實現即時決策。
+Edge AI 指在硬件本地運行 AI 演算法與語言模型，靠近數據產生地點，無需依賴雲端資源進行推論。它降低延遲、增強隱私，並實現即時決策。
 
 ### 核心原則：
-- **裝置端推論**：AI 模型在邊緣裝置（手機、路由器、微控制器、工業電腦）上運行
-- **離線能力**：無需持續網絡連接即可運作
+- **裝置端推論**：AI 模型在邊緣設備（手機、路由器、微控制器、工業電腦）上運行
+- **離線能力**：無需持續網絡連接
 - **低延遲**：即時回應，適合即時系統
-- **數據主權**：敏感數據保留本地，提高安全與合規性
+- **數據主權**：敏感數據保留本地，提升安全與合規
 
 ### 小型語言模型 (SLMs)
 
-SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本，經過訓練或蒸餾以達成：
-- **減少記憶體佔用**：有效利用有限的邊緣裝置記憶體
+SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本—經過訓練或蒸餾以達成：
+- **減少記憶體佔用**：有效利用有限的邊緣設備記憶體
 - **降低計算需求**：優化 CPU 與邊緣 GPU 效能
 - **更快啟動時間**：快速初始化，提升應用反應速度
 
 它們在滿足以下限制條件下釋放強大 NLP 能力：
-- **嵌入式系統**：物聯網裝置與工業控制器
+- **嵌入式系統**：物聯網設備與工業控制器
 - **行動裝置**：具備離線能力的智慧手機和平板
-- **物聯網裝置**：資源有限的感測器與智慧裝置
+- **物聯網設備**：資源有限的感測器與智慧裝置
 - **邊緣伺服器**：有限 GPU 資源的本地處理單元
 - **個人電腦**：桌面與筆記型電腦部署場景
 
@@ -94,20 +94,20 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本，經過訓�
 | [🧠 02](../../Module02) | [SLM 模型基礎](./Module02/README.md) | 模型家族與架構 | Phi 家族 • Qwen 家族 • Gemma 家族 • BitNET • μModel • Phi-Silica | 初學者 | 4-5 小時 |
 | [🚀 03](../../Module03) | [SLM 部署實務](./Module03/README.md) | 本地與雲端部署 | 進階學習 • 本地環境 • 雲端部署 | 中階 | 4-5 小時 |
 | [⚙️ 04](../../Module04) | [模型優化工具包](./Module04/README.md) | 跨平台優化 | 介紹 • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • 工作流程綜合 | 中階 | 5-6 小時 |
-| [🔧 05](../../Module05) | [SLMOps 生產](./Module05/README.md) | 生產運營 | SLMOps 介紹 • 模型蒸餾 • 微調 • 生產部署 | 進階 | 5-6 小時 |
-| [🤖 06](../../Module06) | [AI 代理與函數呼叫](./Module06/README.md) | 代理框架與 MCP | 代理介紹 • 函數呼叫 • 模型上下文協議 | 進階 | 4-5 小時 |
-| [💻 07](../../Module07) | [平台實作](./Module07/README.md) | 跨平台範例 | AI 工具包 • Foundry Local • Windows 開發 | 進階 | 3-4 小時 |
+| [🔧 05](../../Module05) | [SLMOps 生產](./Module05/README.md) | 生產運營 | SLMOps 介紹 • 模型蒸餾 • 微調 • 生產部署 | 高階 | 5-6 小時 |
+| [🤖 06](../../Module06) | [AI 代理與函數呼叫](./Module06/README.md) | 代理框架與 MCP | 代理介紹 • 函數呼叫 • 模型上下文協議 | 高階 | 4-5 小時 |
+| [💻 07](../../Module07) | [平台實作](./Module07/README.md) | 跨平台範例 | AI 工具包 • Foundry Local • Windows 開發 | 高階 | 3-4 小時 |
 | [🏭 08](../../Module08) | [Foundry Local 工具包](./Module08/README.md) | 生產級範例 | 範例應用（詳見下方） | 專家 | 8-10 小時 |
 
 ### 🏭 **模組 08：範例應用**
 
 - [01: REST 聊天快速入門](./Module08/samples/01/README.md)
 - [02: OpenAI SDK 整合](./Module08/samples/02/README.md)
-- [03: 模型探索與基準測試](./Module08/samples/03/README.md)
+- [03: 模型發現與基準測試](./Module08/samples/03/README.md)
 - [04: Chainlit RAG 應用](./Module08/samples/04/README.md)
 - [05: 多代理協調](./Module08/samples/05/README.md)
 - [06: 模型即工具路由器](./Module08/samples/06/README.md)
-- [07: 直接 API 客戶端](./Module08/samples/07/README.md)
+- [07: 直接 API 用戶端](./Module08/samples/07/README.md)
 - [08: Windows 11 聊天應用](./Module08/samples/08/README.md)
 - [09: 進階多代理系統](./Module08/samples/09/README.md)
 - [10: Foundry 工具框架](./Module08/samples/10/README.md)
@@ -116,11 +116,11 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本，經過訓�
 
 完整實作工作坊材料，含生產級實作：
 
-- **[工作坊指南](./Workshop/Readme.md)** - 完整學習目標、成果與資源導覽
-- **Python 範例**（6 堂課）- 更新最佳實踐、錯誤處理與完整文件
-- **Jupyter 筆記本**（8 個互動式）- 逐步教學，含基準測試與效能監控
-- **課程指南** - 每堂工作坊課程詳細 Markdown 指南
-- **驗證工具** - 驗證程式碼品質與執行煙霧測試的腳本
+- **[工作坊指南](./Workshop/Readme.md)** — 完整學習目標、成果與資源導覽
+- **Python 範例**（6 堂課）— 更新最佳實踐、錯誤處理與完整文件
+- **Jupyter 筆記本**（8 個互動式）— 逐步教學，含基準測試與效能監控
+- **課程指南** — 每堂工作坊課程詳細 Markdown 指南
+- **驗證工具** — 驗證程式碼品質與執行煙霧測試的腳本
 
 **您將打造：**
 - 支援串流的本地 AI 聊天應用
@@ -133,7 +133,7 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本，經過訓�
 - **總時長**：36-45 小時
 - **初學者路徑**：模組 01-02（7-9 小時）  
 - **中階路徑**：模組 03-04（9-11 小時）
-- **進階路徑**：模組 05-07（12-15 小時）
+- **高階路徑**：模組 05-07（12-15 小時）
 - **專家路徑**：模組 08（8-10 小時）
 
 ## 您將打造的內容
@@ -146,7 +146,7 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本，經過訓�
 
 ### 🏗️ 實用專案
 - **Foundry 本地聊天應用**：Windows 11 原生應用，支援模型切換
-- **多代理系統**：協調者與專家代理協作處理複雜工作流程  
+- **多代理系統**：協調員與專家代理協作處理複雜工作流程  
 - **RAG 應用**：本地文件處理與向量搜尋
 - **模型路由器**：根據任務分析智能選擇模型
 - **API 框架**：具備串流與健康監控的生產級客戶端
@@ -171,7 +171,7 @@ SLMs 如 Phi-4、Mistral-7B 和 Gemma 是大型 LLM 的優化版本，經過訓�
 
 **技術職位**：EdgeAI 解決方案架構師 • 邊緣機器學習工程師 • 物聯網 AI 開發者 • 手機 AI 開發者
 
-**行業領域**：製造 4.0 • 醫療科技 • 自主系統 • 金融科技 • 消費電子
+**行業領域**：製造4.0 • 醫療科技 • 自主系統 • 金融科技 • 消費電子
 
 **作品集專案**：多代理系統 • 生產級 RAG 應用 • 跨平台部署 • 性能優化
 
@@ -199,7 +199,7 @@ edgeai-for-beginners/
 ✅ **多平台支援**：Windows、手機、嵌入式、雲端邊緣混合  
 ✅ **生產就緒**：監控、擴展、安全、合規框架
 
-📖 **[學習指南可用](STUDY_GUIDE.md)**：結構化20小時學習路徑，含時間分配指引及自我評估工具。
+📖 **[學習指南](STUDY_GUIDE.md)**：結構化20小時學習路徑，含時間分配指引及自我評估工具。
 
 ---
 
@@ -262,6 +262,6 @@ edgeai-for-beginners/
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**免責聲明**：
-本文件係使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我哋致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我哋對因使用本翻譯而引致之任何誤解或誤釋概不負責。
+**免責聲明**：  
+本文件係使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起之任何誤解或誤釋承擔責任。
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e710bc249e2d2943e8c01b16b3cee7",
-  "translation_date": "2025-12-19T09:01:55+00:00",
+  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
+  "translation_date": "2025-12-19T12:02:00+00:00",
   "source_file": "README.md",
   "language_code": "it"
 }
@@ -26,7 +26,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Segui questi passaggi per iniziare a utilizzare queste risorse:
 
-1. **Forka il Repository**: Clicca [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+1. **Forka il Repository**: Clicca su [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Clona il Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Unisciti al Discord di Azure AI Foundry e incontra esperti e altri sviluppatori**](https://discord.com/invite/ByRwuEEgH4)
 
@@ -63,7 +63,7 @@ Edge AI rappresenta un cambiamento di paradigma che affronta sfide moderne criti
 
 ### Edge AI
 
-Edge AI si riferisce all'esecuzione di algoritmi AI e modelli linguistici localmente sull'hardware, vicino al luogo in cui i dati sono generati senza fare affidamento su risorse cloud per l'inferenza. Riduce la latenza, migliora la privacy e consente decisioni in tempo reale.
+Edge AI si riferisce all'esecuzione di algoritmi AI e modelli linguistici localmente sull'hardware, vicino al luogo in cui i dati vengono generati senza fare affidamento su risorse cloud per l'inferenza. Riduce la latenza, migliora la privacy e consente decisioni in tempo reale.
 
 ### Principi Fondamentali:
 - **Inferenza on-device**: I modelli AI girano su dispositivi edge (telefoni, router, microcontrollori, PC industriali)
@@ -74,7 +74,7 @@ Edge AI si riferisce all'esecuzione di algoritmi AI e modelli linguistici localm
 ### Modelli Linguistici Piccoli (SLM)
 
 Gli SLM come Phi-4, Mistral-7B e Gemma sono versioni ottimizzate di LLM più grandi—addestrati o distillati per:
-- **Ridotto ingombro di memoria**: Uso efficiente della memoria limitata dei dispositivi edge
+- **Riduzione dell'occupazione di memoria**: Uso efficiente della memoria limitata dei dispositivi edge
 - **Minore richiesta di calcolo**: Ottimizzati per prestazioni CPU e GPU edge
 - **Tempi di avvio più rapidi**: Inizializzazione veloce per applicazioni reattive
 
@@ -140,7 +140,7 @@ Materiali completi per workshop pratici con implementazioni pronte per la produz
 
 ### 🎯 Competenze Chiave
 - **Architettura Edge AI**: Progetta sistemi AI locali con integrazione cloud
-- **Ottimizzazione del Modello**: Quantizzazione e compressione dei modelli per il deployment edge (incremento di velocità dell'85%, riduzione delle dimensioni del 75%)
+- **Ottimizzazione del Modello**: Quantizzazione e compressione dei modelli per il deployment edge (aumento della velocità dell'85%, riduzione della dimensione del 75%)
 - **Deployment Multi-Piattaforma**: Windows, mobile, embedded e sistemi ibridi cloud-edge
 - **Operazioni di Produzione**: Monitoraggio, scalabilità e manutenzione dell'AI edge in produzione
 
@@ -173,7 +173,7 @@ Ogni modulo include teoria, esercizi pratici e esempi di codice pronti per la pr
 
 **Settori Industriali**: Manifatturiero 4.0 • Tecnologia Sanitaria • Sistemi Autonomi • FinTech • Elettronica di Consumo
 
-**Progetti Portfolio**: Sistemi multi-agente • App RAG in produzione • Deployment cross-platform • Ottimizzazione delle prestazioni
+**Progetti Portfolio**: Sistemi multi-agente • App RAG di produzione • Deployment cross-platform • Ottimizzazione delle prestazioni
 
 ## Struttura del Repository
 
@@ -195,7 +195,7 @@ edgeai-for-beginners/
 ✅ **Apprendimento Progressivo**: Teoria → Pratica → Deployment in produzione  
 ✅ **Casi di Studio Reali**: Microsoft, Japan Airlines, implementazioni aziendali  
 ✅ **Esempi Pratici**: Oltre 50 esempi, 10 demo complete Foundry Local  
-✅ **Focus sulle Prestazioni**: Miglioramenti di velocità dell'85%, riduzioni di dimensioni del 75%  
+✅ **Focus sulle Prestazioni**: Miglioramenti di velocità dell'85%, riduzioni di dimensione del 75%  
 ✅ **Multi-Piattaforma**: Windows, mobile, embedded, ibrido cloud-edge  
 ✅ **Pronto per la Produzione**: Monitoraggio, scalabilità, sicurezza, framework di conformità
 
@@ -203,7 +203,7 @@ edgeai-for-beginners/
 
 ---
 
-**EdgeAI rappresenta il futuro del deployment AI**: locale per prima, rispettoso della privacy ed efficiente. Padroneggia queste competenze per costruire la prossima generazione di applicazioni intelligenti.
+**EdgeAI rappresenta il futuro del deployment AI**: locale-prima, rispettoso della privacy ed efficiente. Padroneggia queste competenze per costruire la prossima generazione di applicazioni intelligenti.
 
 ## Altri Corsi
 
