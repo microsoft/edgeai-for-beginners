@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d5ef57de60e506a5fa805de269aadc3f",
-  "translation_date": "2025-12-19T13:18:50+00:00",
+  "original_hash": "c8de8ce76af1af156b1c2dee24ed23b0",
+  "translation_date": "2025-12-25T01:53:50+00:00",
   "source_file": "README.md",
   "language_code": "pcm"
 }
@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI for Beginners 
 
 
-![Course cover image](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.pcm.png)
+![Piksha wey dey cover course](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.pcm.png)
 
 [![GitHub contributors](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
@@ -24,14 +24,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Follow dis steps to start to use dis resources:
+Follow these steps to get started using these resources:
 
-1. **Fork di Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Clone di Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Join The Azure AI Foundry Discord and meet experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
+1. **Fork di repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Clone di repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+3. [**Join di Azure AI Foundry Discord make you meet experts and oda developers**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Multi-Language Support
+### 🌐 Support for Many Languages
 
 #### Supported via GitHub Action (Automated & Always Up-to-Date)
 
@@ -39,51 +39,51 @@ Follow dis steps to start to use dis resources:
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](./README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**If you want make dem add more translation languages wey dem dey support, dem list dem [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**If you want more translations, di languages wey dem support dey listed [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introduction
 
-Welcome to **EdgeAI for Beginners** – your full journey into di powerful world of Edge Artificial Intelligence. Dis course dey bridge di gap between strong AI power and practical, real-world use for edge devices, to help you fit use AI power directly where data dey come and decisions suppose to happen.
+Welcome to **EdgeAI for Beginners** – na complete journey wey go carry you enter di transforming world of Edge Artificial Intelligence. Dis course dey bridge di gap between strong AI capabilities and practical, real-world deployment for edge devices, and e go empower you to use AI power direct where data dey generate and where decisions suppose to be made.
 
-### Wetin You Go Learn
+### Wetin You Go Master
 
-Dis course go carry you from basic ideas go production-ready implementations, e go cover:
+Dis course go carry you from basic concepts go production-ready implementations, and e go cover:
 - **Small Language Models (SLMs)** wey dem optimize for edge deployment
 - **Hardware-aware optimization** for different platforms
-- **Real-time inference** wey dey protect privacy
-- **Production deployment** plans for business applications
+- **Real-time inference** wey get privacy-preserving capabilities
+- **Production deployment** strategies for enterprise applications
 
 ### Why EdgeAI Matter
 
-Edge AI na big change wey dey solve important modern wahala dem:
-- **Privacy & Security**: Process sensitive data for local side without cloud exposure
-- **Real-time Performance**: Remove network delay for time-critical apps
-- **Cost Efficiency**: Reduce bandwidth and cloud computing cost
-- **Resilient Operations**: Make sure e still dey work when network down
-- **Regulatory Compliance**: Follow data sovereignty rules
+Edge AI na one kain shift wey dey handle important modern wahala:
+- **Privacy & Security**: Process sensitive data local without sending am to cloud
+- **Real-time Performance**: Remove network latency for time-critical applications
+- **Cost Efficiency**: Cut down bandwidth and cloud computing expenses
+- **Resilient Operations**: Make system still dey work during network outages
+- **Regulatory Compliance**: Make you meet data sovereignty requirements
 
 ### Edge AI
 
-Edge AI mean say AI algorithms and language models dey run for hardware close to where data dey come from without depending on cloud for inference. E reduce delay, improve privacy, and allow real-time decision-making.
+Edge AI mean say you dey run AI algorithms and language models local for hardware, close to where data dey generate, without depending on cloud resources for inference. E dey reduce latency, improve privacy, and enable real-time decision-making.
 
 ### Core Principles:
-- **On-device inference**: AI models dey run for edge devices (phones, routers, microcontrollers, industrial PCs)
-- **Offline capability**: E fit work without constant internet connection
-- **Low latency**: Immediate response wey fit real-time systems
+- **On-device inference**: AI models dey run on edge devices (phones, routers, microcontrollers, industrial PCs)
+- **Offline capability**: E fit work without steady internet connectivity
+- **Low latency**: Immediate responses wey fit real-time systems
 - **Data sovereignty**: Keep sensitive data local, make security and compliance better
 
 ### Small Language Models (SLMs)
 
-SLMs like Phi-4, Mistral-7B, and Gemma na optimized versions of big LLMs—dem train or distill am for:
-- **Reduced memory footprint**: Use edge device memory well well
-- **Lower compute demand**: Optimize for CPU and edge GPU performance
-- **Faster startup times**: Quick start for responsive apps
+SLMs like Phi-4, Mistral-7B, and Gemma na optimized versions of bigger LLMs—wey dem train or distill for:
+- **Reduced memory footprint**: Make efficient use of limited edge device memory
+- **Lower compute demand**: Optimized for CPU and edge GPU performance
+- **Faster startup times**: Quick initialization for responsive applications
 
-Dem fit powerful NLP skills but still fit inside:
+Dem dey unlock powerful NLP capabilities while still meeting constraints of:
 - **Embedded systems**: IoT devices and industrial controllers
 - **Mobile devices**: Smartphones and tablets wey fit work offline
 - **IoT Devices**: Sensors and smart devices wey get limited resources
-- **Edge servers**: Local processing units wey get small GPU resources
-- **Personal Computers**: Desktop and laptop deployment cases
+- **Edge servers**: Local processing units wey get limited GPU resources
+- **Personal Computers**: Desktop and laptop deployment scenarios
 
 ## Course Modules & Navigation
 
@@ -114,20 +114,20 @@ Dem fit powerful NLP skills but still fit inside:
 
 ### 🎓 **Workshop: Hands-On Learning Path**
 
-Complete hands-on workshop materials with production-ready implementations:
+Complete hands-on workshop materials wey get production-ready implementations:
 
-- **[Workshop Guide](./Workshop/Readme.md)** - Full learning objectives, outcomes, and resource navigation
+- **[Workshop Guide](./Workshop/Readme.md)** - Complete learning objectives, outcomes, and resource navigation
 - **Python Samples** (6 sessions) - Updated with best practices, error handling, and full documentation
 - **Jupyter Notebooks** (8 interactive) - Step-by-step tutorials with benchmarks and performance monitoring
 - **Session Guides** - Detailed markdown guides for each workshop session
-- **Validation Tools** - Scripts to check code quality and run smoke tests
+- **Validation Tools** - Scripts to verify code quality and run smoke tests
 
 **Wetin You Go Build:**
-- Local AI chat apps with streaming support
-- RAG pipelines with quality evaluation (RAGAS)
-- Multi-model benchmarking and comparison tools
+- Local AI chat apps wey get streaming support
+- RAG pipelines wey get quality evaluation (RAGAS)
+- Tools to benchmark and compare multiple models
 - Multi-agent orchestration systems
-- Smart model routing with task-based selection
+- Intelligent model routing wey select model based on task
 
 ### 📊 **Learning Path Summary**
 - **Total Duration**: 36-45 hours
@@ -140,32 +140,32 @@ Complete hands-on workshop materials with production-ready implementations:
 
 ### 🎯 Core Competencies
 - **Edge AI Architecture**: Design local-first AI systems with cloud integration
-- **Model Optimization**: Quantize and compress models for edge deployment (85% speed boost, 75% size reduction)
-- **Multi-Platform Deployment**: Windows, mobile, embedded, and cloud-edge hybrid systems
-- **Production Operations**: Monitoring, scaling, and maintaining edge AI in production
+- **Model Optimization**: Quantize and compress models make dem ready for edge deployment (85% speed boost, 75% size reduction)
+- **Multi-Platform Deployment**: Deploy for Windows, mobile, embedded, and cloud-edge hybrid systems
+- **Production Operations**: Monitor, scale, and maintain edge AI for production
 
-### 🏗️ Practical Projects
-- **Foundry Local Chat Apps**: Windows 11 native application with model switching
-- **Multi-Agent Systems**: Coordinator with specialist agents for complex workflows  
-- **RAG Applications**: Local document processing with vector search
-- **Model Routers**: Intelligent selection between models based on task analysis
-- **API Frameworks**: Production-ready clients with streaming and health monitoring
-- **Cross-Platform Tools**: LangChain/Semantic Kernel integration patterns
+### 🏗️ Projects wey you go do
+- **Foundry Local Chat Apps**: Windows 11 native app wey fit switch models
+- **Multi-Agent Systems**: Coordinator wey get specialist agents for complex workflows  
+- **RAG Applications**: Local document processing wey dey use vector search
+- **Model Routers**: Smart selector wey dey choose between models based on task analysis
+- **API Frameworks**: Production-ready clients wey get streaming and health monitoring
+- **Cross-Platform Tools**: Tools wey dey work for different platforms — LangChain/Semantic Kernel integration patterns
 
-### 🏢 Industry Applications
+### 🏢 How Industry Dey Use Am
 **Manufacturing** • **Healthcare** • **Autonomous Vehicles** • **Smart Cities** • **Mobile Apps**
 
 ## Quick Start
 
 **Recommended Learning Path** (20-30 hours total):
 
-0. **📖 Introduction** ([Introduction.md](./introduction.md)): EdgeAI foundation + industry context + learning framework
+0. **📖 Introduction** ([Introduction.md](./introduction.md)): EdgeAI basics + how industry dey use am + learning framework
 1. **📚 Foundation** (Modules 01-02): EdgeAI concepts + SLM model families
 2. **⚙️ Optimization** (Modules 03-04): Deployment + quantization frameworks  
 3. **🚀 Production** (Modules 05-06): SLMOps + AI agents + function calling
 4. **💻 Implementation** (Modules 07-08): Platform samples + Foundry Local toolkit
 
-Each module includes theory, hands-on exercises, and production-ready code samples.
+Each module get theory, hands-on exercises, and production-ready code samples.
 
 ## Career Impact
 
@@ -199,15 +199,15 @@ edgeai-for-beginners/
 ✅ **Multi-Platform**: Windows, mobile, embedded, cloud-edge hybrid  
 ✅ **Production Ready**: Monitoring, scaling, security, compliance frameworks
 
-📖 **[Study Guide Available](STUDY_GUIDE.md)**: Structured 20-hour learning path with time allocation guidance and self-assessment tools.
+📖 **[Study Guide Available](STUDY_GUIDE.md)**: Structured 20-hour learning path wey show how to divide time plus self-assessment tools.
 
 ---
 
-**EdgeAI represents the future of AI deployment**: local-first, privacy-preserving, and efficient. Master these skills to build the next generation of intelligent applications.
+**EdgeAI dey represent the future of AI deployment**: local-first, dey protect privacy, and e efficient. Master these skills make you fit build the next generation of intelligent applications.
 
 ## Other Courses
 
-Our team produces other courses! Check out:
+Our team dey produce other courses! Check dem:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -251,17 +251,17 @@ Our team produces other courses! Check out:
 
 ## Getting Help
 
-If you get stuck or have any questions about building AI apps, join:
+If you jam or get question about building AI apps, join:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-If you have product feedback or errors while building visit:
+If you get product feedback or bugs while building, visit:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Disclaimer**:
-Dis document don translate wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even though we dey try make am correct, abeg sabi say automated translation fit get some errors or mistakes. Di original document wey dey im own language na di correct one. If na important info, e better make human professional translate am. We no go responsible for any misunderstanding or wrong meaning wey fit come from dis translation.
+Abeg note:
+Dis document don translate wit AI translation service (Co-op Translator: https://github.com/Azure/co-op-translator). Even though we dey try make am correct, abeg sabi say automated translations fit get mistakes or no pure accurate. Di original document for im original language na di official source. If na important information, we suggest make you use professional human translator. We no go dey liable for any misunderstanding or wrong interpretation wey fit come from di use of dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
