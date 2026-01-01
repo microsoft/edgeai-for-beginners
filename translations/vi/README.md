@@ -1,181 +1,176 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c8de8ce76af1af156b1c2dee24ed23b0",
-  "translation_date": "2025-12-25T00:34:15+00:00",
+  "original_hash": "8421c922085232ba081c848d98f69f35",
+  "translation_date": "2026-01-01T11:39:08+00:00",
   "source_file": "README.md",
   "language_code": "vi"
 }
 -->
-# EdgeAI cho Người mới bắt đầu 
+# EdgeAI dành cho Người Mới Bắt Đầu 
 
 
-![Ảnh bìa khóa học](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.vi.png)
+![Ảnh bìa khóa học](../../translated_images/cover.eb18d1b9605d754b.vi.png)
 
 [![Người đóng góp GitHub](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![Vấn đề trên GitHub](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
-[![Pull request trên GitHub](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
-[![Chào mừng PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
-[![Người theo dõi GitHub](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
-[![Forks trên GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-[![Sao trên GitHub](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
-
+[![Vấn đề GitHub](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
+[![Pull requests GitHub](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
+[![Chào đón PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 [![Discord Microsoft Foundry](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
 Thực hiện các bước sau để bắt đầu sử dụng các tài nguyên này:
 
-1. **Tạo fork kho lưu trữ**: Nhấp vào [![Forks trên GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Sao chép (clone) kho lưu trữ**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Tham gia Discord Azure AI Foundry và gặp gỡ các chuyên gia cùng các nhà phát triển khác**](https://discord.com/invite/ByRwuEEgH4)
+1. **Tạo fork Kho lưu trữ**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Clone kho lưu trữ**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+3. [**Tham gia Discord Azure AI Foundry và gặp gỡ chuyên gia và các nhà phát triển**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Hỗ trợ Đa ngôn ngữ
+### 🌐 Hỗ trợ đa ngôn ngữ
 
-#### Được hỗ trợ qua GitHub Action (Tự động & Luôn được cập nhật)
+#### Được hỗ trợ qua GitHub Action (Tự động & Luôn cập nhật)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Tiếng Ả Rập](../ar/README.md) | [Tiếng Bengal](../bn/README.md) | [Tiếng Bungari](../bg/README.md) | [Tiếng Miến Điện (Myanmar)](../my/README.md) | [Tiếng Trung (Giản thể)](../zh/README.md) | [Tiếng Trung (Phồn thể, Hồng Kông)](../hk/README.md) | [Tiếng Trung (Phồn thể, Ma Cao)](../mo/README.md) | [Tiếng Trung (Phồn thể, Đài Loan)](../tw/README.md) | [Tiếng Croatia](../hr/README.md) | [Tiếng Séc](../cs/README.md) | [Tiếng Đan Mạch](../da/README.md) | [Tiếng Hà Lan](../nl/README.md) | [Tiếng Estonia](../et/README.md) | [Tiếng Phần Lan](../fi/README.md) | [Tiếng Pháp](../fr/README.md) | [Tiếng Đức](../de/README.md) | [Tiếng Hy Lạp](../el/README.md) | [Tiếng Do Thái](../he/README.md) | [Tiếng Hindi](../hi/README.md) | [Tiếng Hungary](../hu/README.md) | [Tiếng Indonesia](../id/README.md) | [Tiếng Ý](../it/README.md) | [Tiếng Nhật](../ja/README.md) | [Tiếng Kannada](../kn/README.md) | [Tiếng Hàn](../ko/README.md) | [Tiếng Litva](../lt/README.md) | [Tiếng Mã Lai](../ms/README.md) | [Tiếng Malayalam](../ml/README.md) | [Tiếng Marathi](../mr/README.md) | [Tiếng Nepal](../ne/README.md) | [Tiếng Pidgin Nigeria](../pcm/README.md) | [Tiếng Na Uy](../no/README.md) | [Tiếng Ba Tư (Farsi)](../fa/README.md) | [Tiếng Ba Lan](../pl/README.md) | [Tiếng Bồ Đào Nha (Brazil)](../br/README.md) | [Tiếng Bồ Đào Nha (Portugal)](../pt/README.md) | [Tiếng Punjabi (Gurmukhi)](../pa/README.md) | [Tiếng Rumani](../ro/README.md) | [Tiếng Nga](../ru/README.md) | [Tiếng Serbia (Cyrillic)](../sr/README.md) | [Tiếng Slovakia](../sk/README.md) | [Tiếng Slovenia](../sl/README.md) | [Tiếng Tây Ban Nha](../es/README.md) | [Tiếng Swahili](../sw/README.md) | [Tiếng Thụy Điển](../sv/README.md) | [Tiếng Tagalog (Filipino)](../tl/README.md) | [Tiếng Tamil](../ta/README.md) | [Tiếng Telugu](../te/README.md) | [Tiếng Thái](../th/README.md) | [Tiếng Thổ Nhĩ Kỳ](../tr/README.md) | [Tiếng Ukraina](../uk/README.md) | [Tiếng Urdu](../ur/README.md) | [Tiếng Việt](./README.md)
+[Tiếng Ả Rập](../ar/README.md) | [Tiếng Bengal](../bn/README.md) | [Tiếng Bulgaria](../bg/README.md) | [Tiếng Miến (Myanmar)](../my/README.md) | [Tiếng Trung (Giản thể)](../zh/README.md) | [Tiếng Trung (Phồn thể, Hồng Kông)](../hk/README.md) | [Tiếng Trung (Phồn thể, Macau)](../mo/README.md) | [Tiếng Trung (Phồn thể, Đài Loan)](../tw/README.md) | [Tiếng Croatia](../hr/README.md) | [Tiếng Séc](../cs/README.md) | [Tiếng Đan Mạch](../da/README.md) | [Tiếng Hà Lan](../nl/README.md) | [Tiếng Estonia](../et/README.md) | [Tiếng Phần Lan](../fi/README.md) | [Tiếng Pháp](../fr/README.md) | [Tiếng Đức](../de/README.md) | [Tiếng Hy Lạp](../el/README.md) | [Tiếng Do Thái](../he/README.md) | [Tiếng Hindi](../hi/README.md) | [Tiếng Hungary](../hu/README.md) | [Tiếng Indonesia](../id/README.md) | [Tiếng Ý](../it/README.md) | [Tiếng Nhật](../ja/README.md) | [Tiếng Kannada](../kn/README.md) | [Tiếng Hàn](../ko/README.md) | [Tiếng Litva](../lt/README.md) | [Tiếng Mã Lai](../ms/README.md) | [Tiếng Malayalam](../ml/README.md) | [Tiếng Marathi](../mr/README.md) | [Tiếng Nepal](../ne/README.md) | [Tiếng Pidgin (Nigeria)](../pcm/README.md) | [Tiếng Na Uy](../no/README.md) | [Tiếng Ba Tư (Farsi)](../fa/README.md) | [Tiếng Ba Lan](../pl/README.md) | [Tiếng Bồ Đào Nha (Brazil)](../br/README.md) | [Tiếng Bồ Đào Nha (Bồ Đào Nha)](../pt/README.md) | [Tiếng Punjab (Gurmukhi)](../pa/README.md) | [Tiếng Romania](../ro/README.md) | [Tiếng Nga](../ru/README.md) | [Tiếng Serbia (Chữ Cyril)](../sr/README.md) | [Tiếng Slovakia](../sk/README.md) | [Tiếng Slovenia](../sl/README.md) | [Tiếng Tây Ban Nha](../es/README.md) | [Tiếng Swahili](../sw/README.md) | [Tiếng Thụy Điển](../sv/README.md) | [Tiếng Tagalog (Filipino)](../tl/README.md) | [Tiếng Tamil](../ta/README.md) | [Tiếng Telugu](../te/README.md) | [Tiếng Thái](../th/README.md) | [Tiếng Thổ Nhĩ Kỳ](../tr/README.md) | [Tiếng Ukraina](../uk/README.md) | [Tiếng Urdu](../ur/README.md) | [Tiếng Việt](./README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Nếu bạn muốn có thêm các ngôn ngữ dịch, các ngôn ngữ được hỗ trợ được liệt kê [ở đây](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Nếu bạn muốn có thêm bản dịch, các ngôn ngữ được hỗ trợ được liệt kê [ở đây](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Giới thiệu
 
-Chào mừng đến với **EdgeAI cho Người mới bắt đầu** – hành trình toàn diện của bạn vào thế giới chuyển đổi của Trí tuệ Nhân tạo ở rìa (Edge AI). Khóa học này thu hẹp khoảng cách giữa khả năng AI mạnh mẽ và triển khai thực tế, sẵn sàng trên các thiết bị rìa, giúp bạn khai thác tiềm năng của AI ngay tại nơi dữ liệu được sinh ra và quyết định cần được thực hiện.
+Chào mừng đến với **EdgeAI for Beginners** – hành trình toàn diện của bạn vào thế giới biến đổi của Trí tuệ Nhân tạo tại biên (Edge AI). Khóa học này kết nối khoảng cách giữa các khả năng AI mạnh mẽ và việc triển khai thực tế trên các thiết bị biên, giúp bạn khai thác tiềm năng của AI ngay tại nơi dữ liệu được tạo ra và nơi cần ra quyết định.
 
-### Những gì bạn sẽ nắm vững
+### Những gì bạn sẽ thành thạo
 
-Khóa học này đưa bạn từ các khái niệm cơ bản đến triển khai sẵn sàng cho sản xuất, bao gồm:
-- **Mô hình ngôn ngữ nhỏ (SLMs)** tối ưu cho triển khai trên edge
-- **Tối ưu hóa theo phần cứng** trên nhiều nền tảng khác nhau
+Khóa học này đưa bạn từ các khái niệm cơ bản đến các triển khai sẵn sàng cho sản xuất, bao gồm:
+- **Small Language Models (SLMs)** được tối ưu hóa cho triển khai trên edge
+- **Tối ưu theo phần cứng** trên nhiều nền tảng khác nhau
 - **Suy luận thời gian thực** với khả năng bảo vệ quyền riêng tư
 - **Chiến lược triển khai sản xuất** cho các ứng dụng doanh nghiệp
 
 ### Tại sao EdgeAI quan trọng
 
-Edge AI đại diện cho một sự thay đổi mô hình nhằm giải quyết các thách thức hiện đại quan trọng:
-- **Quyền riêng tư & Bảo mật**: Xử lý dữ liệu nhạy cảm tại chỗ mà không phơi bày lên đám mây
-- **Hiệu năng thời gian thực**: Loại bỏ độ trễ mạng cho các ứng dụng nhạy thời gian
-- **Hiệu quả chi phí**: Giảm băng thông và chi phí điện toán đám mây
-- **Hoạt động bền bỉ**: Duy trì chức năng trong thời gian mất mạng
+Edge AI đại diện cho một bước ngoặt giải quyết các thách thức hiện đại trọng yếu:
+- **Quyền riêng tư & Bảo mật**: Xử lý dữ liệu nhạy cảm tại chỗ mà không phải phơi bày lên đám mây
+- **Hiệu suất thời gian thực**: Loại bỏ độ trễ mạng cho các ứng dụng yêu cầu thời gian phản hồi
+- **Tiết kiệm chi phí**: Giảm băng thông và chi phí điện toán đám mây
+- **Hoạt động bền bỉ**: Duy trì tính năng trong thời gian mất mạng
 - **Tuân thủ quy định**: Đáp ứng yêu cầu chủ quyền dữ liệu
 
 ### Edge AI
 
-Edge AI đề cập đến việc chạy các thuật toán AI và mô hình ngôn ngữ cục bộ trên phần cứng, gần nơi dữ liệu được sinh ra mà không phụ thuộc vào tài nguyên đám mây cho suy luận. Nó giảm độ trễ, tăng cường quyền riêng tư và cho phép ra quyết định thời gian thực.
+Edge AI đề cập đến việc chạy các thuật toán AI và mô hình ngôn ngữ cục bộ trên phần cứng, gần nơi dữ liệu được tạo ra mà không phụ thuộc vào tài nguyên đám mây cho việc suy luận. Nó giảm độ trễ, nâng cao quyền riêng tư và cho phép ra quyết định theo thời gian thực.
 
 ### Nguyên tắc cốt lõi:
-- **Suy luận trên thiết bị**: Mô hình AI chạy trên các thiết bị edge (điện thoại, bộ định tuyến, vi điều khiển, máy tính công nghiệp)
-- **Khả năng hoạt động khi ngoại tuyến**: Hoạt động mà không cần kết nối internet liên tục
-- **Độ trễ thấp**: Phản hồi tức thì phù hợp cho hệ thống thời gian thực
-- **Chủ quyền dữ liệu**: Giữ dữ liệu nhạy cảm tại chỗ, cải thiện bảo mật và tuân thủ
+- **Suy luận trên thiết bị**: Mô hình AI chạy trên các thiết bị biên (điện thoại, bộ định tuyến, vi điều khiển, máy tính công nghiệp)
+- **Khả năng hoạt động ngoại tuyến**: Hoạt động mà không cần kết nối internet liên tục
+- **Độ trễ thấp**: Phản hồi ngay lập tức phù hợp với các hệ thống thời gian thực
+- **Chủ quyền dữ liệu**: Giữ dữ liệu nhạy cảm cục bộ, cải thiện bảo mật và tuân thủ
 
 ### Mô hình ngôn ngữ nhỏ (SLMs)
 
-Các SLM như Phi-4, Mistral-7B và Gemma là các phiên bản tối ưu của các LLM lớn hơn — được huấn luyện hoặc chưng cất để:
-- **Giảm dung lượng bộ nhớ**: Sử dụng hiệu quả bộ nhớ hạn chế của thiết bị edge
-- **Giảm nhu cầu tính toán**: Tối ưu cho hiệu năng CPU và GPU trên edge
+SLMs như Phi-4, Mistral-7B, và Gemma là các phiên bản được tối ưu hóa của các LLM lớn hơn—được huấn luyện hoặc chưng cất để:
+- **Giảm dung lượng bộ nhớ**: Sử dụng hiệu quả bộ nhớ hạn chế của thiết bị biên
+- **Giảm nhu cầu tính toán**: Tối ưu cho hiệu năng CPU và GPU edge
 - **Thời gian khởi động nhanh hơn**: Khởi tạo nhanh cho các ứng dụng phản hồi
 
-Chúng mở khóa khả năng NLP mạnh mẽ trong khi đáp ứng các giới hạn của:
+Chúng mở khóa các khả năng NLP mạnh mẽ trong khi đáp ứng các hạn chế của:
 - **Hệ thống nhúng**: Thiết bị IoT và bộ điều khiển công nghiệp
 - **Thiết bị di động**: Điện thoại thông minh và máy tính bảng với khả năng hoạt động ngoại tuyến
 - **Thiết bị IoT**: Cảm biến và thiết bị thông minh với tài nguyên hạn chế
-- **Máy chủ Edge**: Đơn vị xử lý cục bộ với tài nguyên GPU hạn chế
-- **Máy tính cá nhân**: Kịch bản triển khai trên máy để bàn và laptop
+- **Máy chủ biên**: Đơn vị xử lý cục bộ với tài nguyên GPU hạn chế
+- **Máy tính cá nhân**: Kịch bản triển khai trên desktop và laptop
 
 ## Các mô-đun khóa học & Điều hướng
 
-| Mô-đun | Chủ đề | Lĩnh vực tập trung | Nội dung chính | Trình độ | Thời lượng |
+| Mô-đun | Chủ đề | Lĩnh vực trọng tâm | Nội dung chính | Cấp độ | Thời lượng |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Giới thiệu về EdgeAI](./introduction.md) | Nền tảng & Bối cảnh | Tổng quan EdgeAI • Ứng dụng trong ngành • Giới thiệu SLM • Mục tiêu học tập | Cơ bản | 1-2 giờ |
-| [📚 01](../../Module01) | [Các nguyên lý cơ bản của EdgeAI](./Module01/README.md) | So sánh Cloud và Edge AI | Các nguyên lý EdgeAI • Nghiên cứu tình huống thực tế • Hướng dẫn triển khai • Triển khai trên Edge | Cơ bản | 3-4 giờ |
-| [🧠 02](../../Module02) | [Nền tảng Mô hình SLM](./Module02/README.md) | Các họ mô hình & kiến trúc | Họ Phi • Họ Qwen • Họ Gemma • BitNET • μModel • Phi-Silica | Cơ bản | 4-5 giờ |
+| [📖 00 ](./introduction.md) | [Giới thiệu về EdgeAI](./introduction.md) | Nền tảng & Bối cảnh | Tổng quan EdgeAI • Ứng dụng trong ngành • Giới thiệu SLM • Mục tiêu học tập | Người mới | 1-2 giờ |
+| [📚 01](../../Module01) | [Nền tảng EdgeAI](./Module01/README.md) | So sánh Cloud và Edge AI | Nền tảng EdgeAI • Các nghiên cứu tình huống thực tế • Hướng dẫn triển khai • Triển khai trên Edge | Người mới | 3-4 giờ |
+| [🧠 02](../../Module02) | [Cơ sở Mô hình SLM](./Module02/README.md) | Dòng mô hình & kiến trúc | Phi Family • Qwen Family • Gemma Family • BitNET • μModel • Phi-Silica | Người mới | 4-5 giờ |
 | [🚀 03](../../Module03) | [Thực hành Triển khai SLM](./Module03/README.md) | Triển khai cục bộ & đám mây | Học nâng cao • Môi trường cục bộ • Triển khai trên đám mây | Trung cấp | 4-5 giờ |
 | [⚙️ 04](../../Module04) | [Bộ công cụ Tối ưu hóa Mô hình](./Module04/README.md) | Tối ưu đa nền tảng | Giới thiệu • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Tổng hợp quy trình làm việc | Trung cấp | 5-6 giờ |
-| [🔧 05](../../Module05) | [SLMOps cho Sản xuất](./Module05/README.md) | Vận hành sản xuất | Giới thiệu SLMOps • Chưng cất mô hình • Điều chỉnh tinh (fine-tuning) • Triển khai sản xuất | Nâng cao | 5-6 giờ |
-| [🤖 06](../../Module06) | [Tác nhân AI & Gọi hàm](./Module06/README.md) | Khung tác nhân & MCP | Giới thiệu tác nhân • Gọi hàm • Giao thức ngữ cảnh mô hình | Nâng cao | 4-5 giờ |
-| [💻 07](../../Module07) | [Triển khai nền tảng](./Module07/README.md) | Mẫu đa nền tảng | Bộ công cụ AI • Foundry Local • Phát triển Windows | Nâng cao | 3-4 giờ |
-| [🏭 08](../../Module08) | [Bộ công cụ Foundry Local](./Module08/README.md) | Mẫu sẵn sàng sản xuất | Ứng dụng mẫu (xem chi tiết bên dưới) | Chuyên gia | 8-10 giờ |
+| [🔧 05](../../Module05) | [SLMOps Sản xuất](./Module05/README.md) | Vận hành sản xuất | Giới thiệu SLMOps • Chưng cất mô hình • Tinh chỉnh • Triển khai sản xuất | Nâng cao | 5-6 giờ |
+| [🤖 06](../../Module06) | [Tác nhân AI & Gọi hàm](./Module06/README.md) | Khung tác nhân & MCP | Giới thiệu Tác nhân • Gọi hàm • Giao thức Ngữ cảnh Mô hình | Nâng cao | 4-5 giờ |
+| [💻 07](../../Module07) | [Triển khai Nền tảng](./Module07/README.md) | Ví dụ đa nền tảng | Bộ công cụ AI • Foundry Local • Phát triển Windows | Nâng cao | 3-4 giờ |
+| [🏭 08](../../Module08) | [Bộ công cụ Foundry Local](./Module08/README.md) | Ví dụ sẵn sàng cho sản xuất | Ứng dụng mẫu (xem chi tiết bên dưới) | Chuyên gia | 8-10 giờ |
 
 ### 🏭 **Mô-đun 08: Ứng dụng mẫu**
 
-- [01: Khởi động nhanh REST Chat](./Module08/samples/01/README.md)
+- [01: REST Chat Bắt đầu nhanh](./Module08/samples/01/README.md)
 - [02: Tích hợp OpenAI SDK](./Module08/samples/02/README.md)
-- [03: Khám phá & Đo điểm chuẩn mô hình](./Module08/samples/03/README.md)
+- [03: Khám phá mô hình & Đo điểm chuẩn](./Module08/samples/03/README.md)
 - [04: Ứng dụng Chainlit RAG](./Module08/samples/04/README.md)
-- [05: Orchestration đa tác nhân](./Module08/samples/05/README.md)
-- [06: Router Mô hình-dưới-dạng-Công cụ](./Module08/samples/06/README.md)
-- [07: Khách hàng API trực tiếp](./Module08/samples/07/README.md)
-- [08: Ứng dụng Chat Windows 11](./Module08/samples/08/README.md)
-- [09: Hệ thống đa tác nhân nâng cao](./Module08/samples/09/README.md)
+- [05: Điều phối đa tác nhân](./Module08/samples/05/README.md)
+- [06: Bộ định tuyến Mô hình như Công cụ](./Module08/samples/06/README.md)
+- [07: Khách hàng API Trực tiếp](./Module08/samples/07/README.md)
+- [08: Ứng dụng chat Windows 11](./Module08/samples/08/README.md)
+- [09: Hệ thống đa tác nhân Nâng cao](./Module08/samples/09/README.md)
 - [10: Khung công cụ Foundry](./Module08/samples/10/README.md)
 
 ### 🎓 **Hội thảo: Lộ trình học thực hành**
 
-Tài liệu hội thảo thực hành toàn diện với triển khai sẵn sàng cho sản xuất:
+Tài liệu hội thảo thực hành toàn diện với các triển khai sẵn sàng cho sản xuất:
 
-- **[Hướng dẫn Hội thảo](./Workshop/Readme.md)** - Mục tiêu học tập, kết quả và điều hướng tài nguyên đầy đủ
-- **Mẫu Python** (6 buổi) - Được cập nhật theo thực hành tốt nhất, xử lý lỗi và tài liệu chi tiết
-- **Sổ tay Jupyter** (8 tương tác) - Hướng dẫn từng bước với đo điểm chuẩn và giám sát hiệu năng
-- **Hướng dẫn Phiên** - Hướng dẫn markdown chi tiết cho từng phiên hội thảo
-- **Công cụ xác thực** - Script để kiểm tra chất lượng mã và chạy các bài kiểm tra khói
+- **[Hướng dẫn Hội thảo](./Workshop/Readme.md)** - Mục tiêu học tập hoàn chỉnh, kết quả và điều hướng tài nguyên
+- **Mẫu Python** (6 phiên) - Cập nhật với các thực hành tốt nhất, xử lý lỗi, và tài liệu đầy đủ
+- **Jupyter Notebooks** (8 tương tác) - Hướng dẫn từng bước với điểm chuẩn và giám sát hiệu suất
+- **Hướng dẫn phiên** - Hướng dẫn markdown chi tiết cho mỗi phiên hội thảo
+- **Công cụ xác thực** - Các script để kiểm tra chất lượng mã và chạy kiểm tra sơ bộ
 
-**Bạn sẽ xây dựng:**
-- Ứng dụng chat AI cục bộ với hỗ trợ streaming
+**Những gì bạn sẽ xây dựng:**
+- Ứng dụng chat AI cục bộ hỗ trợ streaming
 - Pipeline RAG với đánh giá chất lượng (RAGAS)
-- Công cụ đo điểm chuẩn và so sánh đa mô hình
+- Công cụ so sánh và đo điểm chuẩn đa mô hình
 - Hệ thống điều phối đa tác nhân
-- Định tuyến mô hình thông minh với lựa chọn theo nhiệm vụ
+- Định tuyến mô hình thông minh với chọn lựa theo tác vụ
 
-### 📊 **Tóm tắt Lộ trình Học**
+### 📊 **Tóm tắt lộ trình học**
 - **Tổng thời lượng**: 36-45 giờ
-- **Lộ trình cho Người mới bắt đầu**: Mô-đun 01-02 (7-9 giờ)  
+- **Lộ trình Người mới**: Mô-đun 01-02 (7-9 giờ)  
 - **Lộ trình Trung cấp**: Mô-đun 03-04 (9-11 giờ)
 - **Lộ trình Nâng cao**: Mô-đun 05-07 (12-15 giờ)
 - **Lộ trình Chuyên gia**: Mô-đun 08 (8-10 giờ)
 
-## Bạn sẽ xây dựng
+## Những gì bạn sẽ xây dựng
 
 ### 🎯 Năng lực cốt lõi
-- **Kiến trúc Edge AI**: Thiết kế hệ thống AI ưu tiên tại chỗ với tích hợp đám mây
-- **Tối ưu hóa mô hình**: Lượng tử hóa và nén mô hình để triển khai trên thiết bị biên (85% tăng tốc, 75% giảm kích thước)
-- **Triển khai đa nền tảng**: Windows, di động, nhúng, và hệ thống lai đám mây-edge
-- **Hoạt động sản xuất**: Giám sát, mở rộng và duy trì AI trên thiết bị biên trong môi trường sản xuất
+- **Kiến trúc Edge AI**: Thiết kế hệ thống AI ưu tiên cục bộ với tích hợp đám mây
+- **Tối ưu mô hình**: Lượng tử hóa và nén mô hình để triển khai tại biên (tăng tốc 85%, giảm kích thước 75%)
+- **Triển khai Đa nền tảng**: Windows, di động, nhúng, và hệ thống lai đám mây-biên
+- **Vận hành Sản xuất**: Giám sát, mở rộng, và duy trì AI tại biên trong môi trường sản xuất
 
-### 🏗️ Dự án thực tế
-- **Ứng dụng Chat Foundry Local**: Ứng dụng gốc trên Windows 11 với chức năng chuyển đổi mô hình
-- **Hệ thống đa tác nhân**: Điều phối viên với các tác nhân chuyên môn cho quy trình công việc phức tạp  
-- **Ứng dụng RAG**: Xử lý tài liệu cục bộ với tìm kiếm vector
-- **Bộ định tuyến mô hình**: Lựa chọn thông minh giữa các mô hình dựa trên phân tích nhiệm vụ
-- **Khung API**: Ứng dụng khách sẵn sàng cho sản xuất với phát luồng (streaming) và giám sát tình trạng
-- **Công cụ đa nền tảng**: Các mẫu tích hợp LangChain/Semantic Kernel
+### 🏗️ Dự án Thực hành
+- **Ứng dụng Chat Foundry Local**: Ứng dụng gốc Windows 11 với chuyển đổi mô hình
+- **Hệ thống Đa tác nhân**: Bộ điều phối với các tác nhân chuyên gia cho quy trình phức tạp  
+- **Ứng dụng RAG**: Xử lý tài liệu cục bộ với tìm kiếm vectơ
+- **Bộ điều hướng Mô hình**: Lựa chọn thông minh giữa các mô hình dựa trên phân tích nhiệm vụ
+- **Khung API**: Client sẵn sàng cho sản xuất với streaming và giám sát tình trạng
+- **Công cụ Đa nền tảng**: Mẫu tích hợp LangChain/Semantic Kernel
 
-### 🏢 Ứng dụng ngành
-**Sản xuất** • **Y tế** • **Phương tiện tự hành** • **Thành phố thông minh** • **Ứng dụng di động**
+### 🏢 Ứng dụng Ngành
+**Sản xuất** • **Chăm sóc sức khỏe** • **Phương tiện Tự hành** • **Thành phố Thông minh** • **Ứng dụng Di động**
 
-## Bắt đầu nhanh
+## Bắt đầu Nhanh
 
-**Lộ trình học được đề xuất** (tổng 20-30 giờ):
+**Lộ trình Học được Khuyến nghị** (20-30 giờ tổng cộng):
 
 0. **📖 Giới thiệu** ([Introduction.md](./introduction.md)): Nền tảng EdgeAI + bối cảnh ngành + khung học tập
 1. **📚 Nền tảng** (Modules 01-02): Khái niệm EdgeAI + họ mô hình SLM
 2. **⚙️ Tối ưu hóa** (Modules 03-04): Triển khai + các framework lượng tử hóa  
-3. **🚀 Vận hành** (Modules 05-06): SLMOps + tác nhân AI + gọi hàm
-4. **💻 Triển khai** (Modules 07-08): Mẫu nền tảng + bộ công cụ Foundry Local
+3. **🚀 Sản xuất** (Modules 05-06): SLMOps + tác nhân AI + gọi hàm
+4. **💻 Triển khai** (Modules 07-08): Ví dụ nền tảng + bộ công cụ Foundry Local
 
-Mỗi module bao gồm lý thuyết, bài tập thực hành, và mẫu mã nguồn sẵn sàng cho sản xuất.
+Mỗi module bao gồm lý thuyết, bài tập thực hành, và các mẫu mã nguồn sẵn sàng cho sản xuất.
 
 ## Tác động nghề nghiệp
 
-**Vai trò kỹ thuật**: Kiến trúc sư giải pháp EdgeAI • Kỹ sư ML (Edge) • Nhà phát triển AI IoT • Nhà phát triển AI trên di động
+**Vai trò Kỹ thuật**: Kiến trúc sư Giải pháp EdgeAI • Kỹ sư ML (Edge) • Nhà phát triển AI IoT • Nhà phát triển AI Di động
 
-**Lĩnh vực ngành**: Sản xuất 4.0 • Công nghệ Y tế • Hệ thống tự hành • Công nghệ Tài chính (FinTech) • Điện tử tiêu dùng
+**Ngành Nghề**: Sản xuất 4.0 • Công nghệ Chăm sóc Sức khỏe • Hệ thống Tự hành • FinTech • Điện tử Tiêu dùng
 
-**Dự án trong hồ sơ**: Hệ thống đa tác nhân • Ứng dụng RAG cho môi trường sản xuất • Triển khai đa nền tảng • Tối ưu hóa hiệu năng
+**Dự án Hồ sơ năng lực**: Hệ thống đa tác nhân • Ứng dụng RAG cho sản xuất • Triển khai đa nền tảng • Tối ưu hóa hiệu năng
 
-## Cấu trúc kho
+## Cấu trúc Kho lưu trữ
 
 ```
 edgeai-for-beginners/
@@ -190,24 +185,24 @@ edgeai-for-beginners/
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
 
-## Điểm nổi bật của khóa học
+## Điểm nổi bật của Khóa học
 
-✅ **Học tiến bộ**: Lý thuyết → Thực hành → Triển khai sản xuất  
-✅ **Nghiên cứu tình huống thực tế**: Microsoft, Japan Airlines, các triển khai doanh nghiệp  
-✅ **Mẫu thực hành**: Hơn 50 ví dụ, 10 demo Foundry Local toàn diện  
-✅ **Tập trung vào hiệu năng**: cải thiện tốc độ 85%, giảm kích thước 75%  
-✅ **Đa nền tảng**: Windows, di động, nhúng, hệ thống lai đám mây-edge  
-✅ **Sẵn sàng cho sản xuất**: Giám sát, mở rộng, bảo mật, khung tuân thủ
+✅ **Học Tăng dần**: Lý thuyết → Thực hành → Triển khai sản xuất  
+✅ **Nghiên cứu Tình huống Thực tế**: Microsoft, Japan Airlines, triển khai doanh nghiệp  
+✅ **Mẫu Thực hành**: Hơn 50 ví dụ, 10 demo Foundry Local toàn diện  
+✅ **Tập trung Hiệu năng**: Cải thiện tốc độ 85%, giảm kích thước 75%  
+✅ **Đa nền tảng**: Windows, di động, nhúng, lai đám mây-biên  
+✅ **Sẵn sàng cho Sản xuất**: Giám sát, mở rộng, bảo mật, khung tuân thủ
 
-📖 **[Hướng dẫn học tập có sẵn](STUDY_GUIDE.md)**: Lộ trình học có cấu trúc 20 giờ với hướng dẫn phân bổ thời gian và công cụ tự đánh giá.
+📖 **[Sổ tay Học tập Có sẵn](STUDY_GUIDE.md)**: Lộ trình học 20 giờ có cấu trúc với hướng dẫn phân bổ thời gian và công cụ tự đánh giá.
 
 ---
 
-**EdgeAI đại diện cho tương lai của triển khai AI**: ưu tiên cục bộ, bảo vệ quyền riêng tư, và hiệu quả. Làm chủ những kỹ năng này để xây dựng thế hệ tiếp theo của các ứng dụng thông minh.
+**EdgeAI đại diện cho tương lai của việc triển khai AI**: ưu tiên cục bộ, bảo vệ quyền riêng tư, và hiệu quả. Làm chủ những kỹ năng này để xây dựng thế hệ tiếp theo của các ứng dụng thông minh.
 
-## Các khóa học khác
+## Các Khóa học Khác
 
-Nhóm của chúng tôi còn sản xuất các khóa học khác! Tham khảo:
+Nhóm của chúng tôi còn tạo các khóa học khác! Xem:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -224,7 +219,7 @@ Nhóm của chúng tôi còn sản xuất các khóa học khác! Tham khảo:
 
 ---
  
-### Chuỗi Generative AI
+### Generative AI Series
 [![Generative AI cho Người mới bắt đầu](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
@@ -232,7 +227,7 @@ Nhóm của chúng tôi còn sản xuất các khóa học khác! Tham khảo:
 
 ---
  
-### Học nền tảng
+### Core Learning
 [![ML cho Người mới bắt đầu](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 [![Khoa học Dữ liệu cho Người mới bắt đầu](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI cho Người mới bắt đầu](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
@@ -244,18 +239,18 @@ Nhóm của chúng tôi còn sản xuất các khóa học khác! Tham khảo:
 ---
  
 ### Chuỗi Copilot
-[![Copilot cho Lập trình ghép cặp với AI](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+[![Copilot cho Lập trình Ghép đôi AI](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 [![Copilot cho C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+[![Phiêu lưu Copilot](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
-## Nhận trợ giúp
+## Nhận Trợ giúp
 
-Nếu bạn gặp trở ngại hoặc có câu hỏi về việc xây dựng ứng dụng AI, hãy tham gia:
+Nếu bạn gặp khó khăn hoặc có câu hỏi về việc xây dựng ứng dụng AI, tham gia:
 
-[![Discord của Microsoft Foundry](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Nếu bạn có phản hồi sản phẩm hoặc gặp lỗi khi xây dựng, hãy truy cập:
+Nếu bạn có phản hồi về sản phẩm hoặc lỗi khi xây dựng, hãy truy cập:
 
 [![Diễn đàn Nhà phát triển Microsoft Foundry](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
@@ -263,5 +258,5 @@ Nếu bạn có phản hồi sản phẩm hoặc gặp lỗi khi xây dựng, h�
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 Miễn trừ trách nhiệm:
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI Co-op Translator (https://github.com/Azure/co-op-translator). Mặc dù chúng tôi nỗ lực để đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Văn bản gốc bằng ngôn ngữ gốc nên được coi là nguồn chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ hiểu lầm hay cách hiểu sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI Co-op Translator (https://github.com/Azure/co-op-translator). Mặc dù chúng tôi nỗ lực để đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Văn bản gốc bằng ngôn ngữ ban đầu nên được coi là nguồn có thẩm quyền. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm đối với bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
