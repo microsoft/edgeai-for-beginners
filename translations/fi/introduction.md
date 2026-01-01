@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Johdatus Edge AI:hin aloittelijoille
 
-![Edge AI Johdatus](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.fi.png)
+![Edge AI Johdatus](../../translated_images/cover.eb18d1b9605d754b.fi.png)
 
 Tervetuloa matkalle **Edge Artificial Intelligence** -teknologian pariin – vallankumouksellinen lähestymistapa, joka tuo tekoälyn voiman suoraan sinne, missä data syntyy ja päätöksiä tarvitaan. Tämä johdanto luo perustan ymmärrykselle siitä, miksi Edge AI edustaa älykkään laskennan tulevaisuutta ja kuinka voit hallita sen käyttöönottoa.
 

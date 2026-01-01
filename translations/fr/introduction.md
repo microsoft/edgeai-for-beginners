@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Introduction à l'IA Edge pour les Débutants
 
-![Introduction à l'IA Edge](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.fr.png)
+![Introduction à l'IA Edge](../../translated_images/cover.eb18d1b9605d754b.fr.png)
 
 Bienvenue dans votre voyage au cœur de l'**Intelligence Artificielle Edge** – une approche révolutionnaire qui apporte la puissance de l'IA directement là où les données sont créées et où les décisions doivent être prises. Cette introduction vous permettra de comprendre pourquoi l'IA Edge représente l'avenir de l'informatique intelligente et comment vous pouvez maîtriser sa mise en œuvre.
 

@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Введение в Edge AI для начинающих
 
-![Edge AI Introduction](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.ru.png)
+![Edge AI Introduction](../../translated_images/cover.eb18d1b9605d754b.ru.png)
 
 Добро пожаловать в мир **Edge Artificial Intelligence** – революционного подхода, который переносит мощь ИИ непосредственно туда, где создаются данные и принимаются решения. Это введение поможет вам понять, почему Edge AI представляет будущее интеллектуальных вычислений и как освоить его внедрение.
 

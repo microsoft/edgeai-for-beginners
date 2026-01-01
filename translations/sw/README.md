@@ -1,181 +1,181 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c8de8ce76af1af156b1c2dee24ed23b0",
-  "translation_date": "2025-12-25T00:47:30+00:00",
+  "original_hash": "8421c922085232ba081c848d98f69f35",
+  "translation_date": "2026-01-01T11:53:13+00:00",
   "source_file": "README.md",
   "language_code": "sw"
 }
 -->
-# EdgeAI kwa Waanzilishi 
+# EdgeAI for Beginners 
 
 
-![Picha ya jalada la kozi](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.sw.png)
+![Picha ya kifuniko cha kozi](../../translated_images/cover.eb18d1b9605d754b.sw.png)
 
 [![Wachangiaji wa GitHub](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![Masuala ya GitHub](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
-[![Maombi ya Pull ya GitHub](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
+[![Maombi ya kuvuta ya GitHub](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
 [![PRs Zinakaribishwa](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-[![Watazamaji wa GitHub](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
+[![Wafuatiliaji wa GitHub](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
 [![Forks za GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 [![Nyota za GitHub](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
 
 
 [![Discord ya Microsoft Foundry](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Fuata hatua hizi kuanza kutumia rasilimali hizi:
+Fuata hatua hizi ili kuanza kutumia rasilimali hizi:
 
-1. **Fanya fork kwa Hazina**: Click [![Forks za GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+1. **Fanya fork ya Hazina**: Bonyeza [![Forks za GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Nakili Hazina**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Jiunge na Discord ya Azure AI Foundry na kutana na wataalam na waendelezaji wenzako**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Jiunge na Discord ya Azure AI Foundry na kutana na wataalamu na watengenezaji wenzako**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Msaada wa Lugha Nyingi
 
-#### Inayotolewa kupitia GitHub Action (Imefanywa Kiotomatiki & Daima Imeboreshwa)
+#### Imewezeshwa kupitia GitHub Action (Otomatiki & Imeboreshwa daima)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](./README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**If you wish to have additional translations languages supported are listed [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Ikiwa ungependa kuwa na tafsiri za ziada, lugha zinazotambuliwa zimetajwa [hapa](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Utangulizi
 
-Karibu katika **EdgeAI kwa Waanzilishi** – safari yako kamili kuelekea ulimwengu wa kubadilisha wa Akili Bandia ya Pembezoni. Kozi hii inavunja pengo kati ya uwezo mzito wa AI na utekelezaji wa vitendo ulimwenguni halisi kwenye vifaa vya pembezoni, ikikuwezesha kutumia uwezo wa AI moja kwa moja pale data inapotokana na maamuzi yanapohitajika kufanywa.
+Karibu kwenye **EdgeAI kwa Waanzilishi** – safari yako kamili kuelekea kwenye ulimwengu wa kubadilisha wa Akili Bandia ya Edge. Kozi hii inaunganisha pengo kati ya uwezo mkubwa wa AI na utekelezaji wa vitendo, unaofanywa kwenye vifaa vya edge, ikikupa uwezo wa kutumia uwezo wa AI moja kwa moja mahali data inapotokana na ambapo maamuzi yanapaswa kufanywa.
 
-### Utafundishwa Nini
+### Utayemjifunza
 
-Kozi hii inakupeleka kutoka dhana za msingi hadi utekelezaji tayari kwa uzalishaji, ikijumuisha:
-- **Modeli Ndogo za Lugha (SLMs)** zilizobinafsishwa kwa uwekaji pembezoni
-- **Uboreshaji unaojali vifaa** katika majukwaa mbalimbali
-- **Utekelezaji wa wakati halisi** wenye uwezo wa kuhifadhi faragha
-- **Mikakati ya uwekaji uzalishaji** kwa programu za biashara
+Kozi hii inakupeleka kutoka dhana msingi hadi utekelezaji unaotumika uzalishaji, ikijumuisha:
+- **Mifano Midogo ya Lugha (SLMs)** iliyoboreshwa kwa ajili ya uendeshaji kwenye edge
+- **Uboreshaji unaojua vifaa** katika majukwaa tofauti
+- **Utambuzi wa wakati-mweli** wenye uwezo wa kuhifadhi faragha
+- **Mikakati ya uendeshaji uzalishaji** kwa matumizi ya kampuni
 
-### Kwa Nini EdgeAI Ni Muhimu
+### Kwa Nini EdgeAI Inahitajika
 
-Edge AI inaonyesha mabadiliko ya kimsingi yanayoshughulikia changamoto muhimu za kisasa:
-- **Faragha & Usalama**: Fanya uchakataji wa data nyeti ndani bila kuonyesha kwenye wingu
-- **Utendaji wa wakati halisi**: Ondoa uchelewaji wa mtandao kwa programu zinazohitaji muda
-- **Ufanisi wa Gharama**: Punguza matumizi ya bendi ya mtandao na gharama za kompyuta za wingu
-- **Uendeshaji Imara**: Dumisha utendakazi wakati wa kukatika kwa mtandao
-- **Uzingatiaji wa Sheria**: Kukidhi mahitaji ya umiliki wa data
+Edge AI inawakilisha mabadiliko ya mtazamo yanayoshughulikia changamoto muhimu za kisasa:
+- **Faragha & Usalama**: Panga data nyeti kimojawapo bila kuifichua kwenye wingu
+- **Utendaji wa wakati-mweli**: Ondoa ucheleweshaji wa mtandao kwa matumizi yanayohitaji wakati
+- **Ufanisi wa Gharama**: Punguza matumizi ya bendi na gharama za kompyuta za wingu
+- **Uendeshaji Endelevu**: Hifadhi utendakazi wakati wa kukatika kwa mtandao
+- **Uzifuataji wa Sheria**: Kidhi mahitaji ya utawala wa data
 
 ### Edge AI
 
-Edge AI inaashiria kuendesha algoriti za AI na modeli za lugha ndani ya vifaa, karibu na mahali data inatokana, bila kutegemea rasilimali za wingu kwa uamuzi. Inapunguza uchelewaji, inaboresha faragha, na kuwezesha kufanya maamuzi kwa wakati halisi.
+Edge AI inaelezea kuendesha algoriti za AI na mifano ya lugha mahali pale kwenye vifaa vya vifaa, karibu na mahali data inatokewa bila kutegemea rasilimali za wingu kwa ajili ya utambuzi. Inapunguza ucheleweshaji, inaboresha faragha, na kuruhusu uamuzi wa wakati-mweli.
 
-### Kanuni za Msingi:
-- **Utekelezaji kwenye kifaa**: Modeli za AI zinaendeshwa kwenye vifaa vya pembezoni (simu, routers, microcontrollers, Kompyuta za Viwanda)
-- **Uwezo wa nje ya mtandao**: Inafanya kazi bila muunganisho wa mtandao wa kudumu
-- **Uchelewaji Mdogo**: Majibu ya papo hapo yanayofaa kwa mifumo ya wakati halisi
-- **Utawala wa Data**: Huweka data nyeti ndani ya eneo, ikiboresha usalama na uzingatiaji wa sheria
+### Kanuni Msingi:
+- **Utambuzi kwenye kifaa**: Mifano ya AI inaendeshwa kwenye vifaa vya edge (simu, router, microcontrollers, PC za viwandani)
+- **Uwezo wa kufanya kazi bila mtandao**: Inafanya kazi bila muunganisho thabiti wa intaneti
+- **Ucheleweshaji mdogo**: Majibu ya papo kwa papo yanayofaa kwa mifumo ya wakati-mweli
+- **Uuzaji wa data ndani ya nchi**: Hufanya data nyeti kubaki ndani, ikiboresha usalama na ufuataji wa sheria
 
-### Modeli Ndogo za Lugha (SLMs)
+### Mifano Midogo ya Lugha (SLMs)
 
-Modeli ndogo za lugha kama Phi-4, Mistral-7B, na Gemma ni toleo zilizoboreshwa za LLM kubwa—zilizo funzwa au kusafishwa kwa:
-- **Kupunguza matumizi ya kumbukumbu**: Matumizi yenye ufanisi ya kumbukumbu ndogo za vifaa vya pembezoni
-- **Mahitaji ya chini ya kompyuta**: Zimeboreshwa kwa utendaji wa CPU na GPU za pembezoni
-- **Muda mfupi wa kuanzisha**: Uzinduzi wa haraka kwa programu zinazohusisha utaratibu
+SLMs kama Phi-4, Mistral-7B, na Gemma ni matoleo yaliyoboreshwa ya LLM kubwa—yaliyofunzwa au kuyeyushwa kwa:
+- **Kuondolewa kwa ukubwa wa kumbukumbu**: Matumizi ya ufanisi ya kumbukumbu ndogo za kifaa cha edge
+- **Mahitaji madogo ya hesabu**: Yameboreshwa kwa utendaji wa CPU na GPU za edge
+- **Muda wa kuanzia haraka**: Uanzishaji wa haraka kwa programu zenye majibu ya papo kwa papo
 
-Zinafungua uwezo mkubwa wa NLP huku zikikidhi vizingiti vya:
-- **Mifumo iliyojengwa ndani**: Vifaa vya IoT na vidhibiti vya viwandani
-- **Vifaa vya Mkononi**: Simu mahiri na vidonge zenye uwezo wa nje ya mtandao
-- **Vifaa vya IoT**: Sensor na vifaa werevu vyenye rasilimali ndogo
-- **Seva za Edge**: Vitengo vya kuchakata vya eneo lenye rasilimali ndogo za GPU
-- **Kompyuta za Binafsi**: Mamlaka ya usambazaji kwenye desktop na laptop
+Yanafungua uwezo mkubwa wa NLP wakati yanakidhi vikwazo vya:
+- **Mifumo iliyojazwa**: Vifaa vya IoT na vidhibiti vya viwandani
+- **Vifaa vya Mkononi**: Simu za mkononi na kompyuta kibao zenye uwezo wa kufanya kazi bila mtandao
+- **Vifaa vya IoT**: Sensor na vifaa smart vyenye rasilimali ndogo
+- **Seva za Edge**: Vitengo vya usindikaji vya ndani vyenye rasilimali ndogo za GPU
+- **Kompyuta Binafsi**: Vigezo vya utumaji kwenye meza za kazi na kompyuta za kubebeka
 
-## Moduli za Kozi na Urambazaji
+## Moduli za Kozi & Uabiri
 
-| Moduli | Mada | Eneo la Kuzingatia | Yaliyomo Muhimu | Kiwango | Muda |
+| Moduli | Mada | Eneo la Kuzingatia | Yaliyomo Muhimu | Ngazi | Muda |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Utangulizi wa EdgeAI](./introduction.md) | Msingi & Muktadha | Muhtasari wa EdgeAI • Matumizi ya Sekta • Utangulizi wa SLM • Malengo ya Kujifunza | Msingi | 1-2 saa |
-| [📚 01](../../Module01) | [Misingi ya EdgeAI](./Module01/README.md) | Ulinganisho wa Cloud dhidi ya Edge AI | Misingi ya EdgeAI • Mifano ya Dunia Halisi • Mwongozo wa Utekelezaji • Uwekaji Pembezoni | Msingi | 3-4 saa |
-| [🧠 02](../../Module02) | [Misingi ya Modeli za SLM](./Module02/README.md) | Familia za modeli na usanifu | Phi Family • Qwen Family • Gemma Family • BitNET • μModel • Phi-Silica | Msingi | 4-5 saa |
-| [🚀 03](../../Module03) | [Mazoea ya Utekelezaji wa SLM](./Module03/README.md) | Uwekaji ndani ya eneo & cloud | Mafunzo ya Juu • Mazingira ya Ndani • Uwekaji Cloud | Wastani | 4-5 saa |
-| [⚙️ 04](../../Module04) | [Kifaa cha Uboreshaji wa Modeli](./Module04/README.md) | Uboreshaji wa kuvuka jukwaa | Utangulizi • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Uundaji wa Mtiririko wa Kazi | Wastani | 5-6 saa |
-| [🔧 05](../../Module05) | [Uzalisishaji wa SLMOps](./Module05/README.md) | Operesheni za uzalishaji | Utangulizi wa SLMOps • Distillation ya Modeli • Urekebishaji • Uwekaji kwa uzalishaji | Juu | 5-6 saa |
-| [🤖 06](../../Module06) | [Wakala za AI na Kupiga Kazi kwa Function](./Module06/README.md) | Mifumo ya wakala & MCP | Utangulizi wa Wakala • Kupiga Kazi kwa Function • Itifaki ya Muktadha wa Modeli | Juu | 4-5 saa |
-| [💻 07](../../Module07) | [Utekelezaji wa Jukwaa](./Module07/README.md) | Mfano za kuvuka jukwaa | Seti ya Vifaa vya AI • Foundry Local • Maendeleo ya Windows | Juu | 3-4 saa |
-| [🏭 08](../../Module08) | [Seti ya Vifaa za Foundry Local](./Module08/README.md) | Mifano tayari kwa uzalishaji | Programu za sampuli (tazama maelezo hapa chini) | Mtaalamu | 8-10 saa |
+| [📖 00 ](./introduction.md) | [Utangulizi wa EdgeAI](./introduction.md) | Msingi & Muktadha | Muhtasari wa EdgeAI • Matumizi ya Sekta • Utangulizi wa SLM • Malengo ya Kujifunza | Msingi | 1-2 hrs |
+| [📚 01](../../Module01) | [Kanuni za Msingi za EdgeAI](./Module01/README.md) | Ulinganisho Wingu vs Edge AI | Kanuni za EdgeAI • Somo za Uwezekano Duniani • Mwongozo wa Utekelezaji • Utekelezaji wa Edge | Msingi | 3-4 hrs |
+| [🧠 02](../../Module02) | [Misingi ya Mifano ya SLM](./Module02/README.md) | Familia za modeli & usanifu | Familia ya Phi • Familia ya Qwen • Familia ya Gemma • BitNET • μModel • Phi-Silica | Msingi | 4-5 hrs |
+| [🚀 03](../../Module03) | [Mazoezi ya Utekelezaji wa SLM](./Module03/README.md) | Utekelezaji wa ndani & wingu | Kujifunza kwa Juu • Mazingira ya Mitaa • Utekelezaji wa Wingu | Wastani | 4-5 hrs |
+| [⚙️ 04](../../Module04) | [Zana za Uboreshaji wa Modeli](./Module04/README.md) | Uboreshaji wa kuvuka majukwaa | Utangulizi • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Muundo wa Kazi | Wastani | 5-6 hrs |
+| [🔧 05](../../Module05) | [SLMOps kwa Uzalishaji](./Module05/README.md) | Operesheni za uzalishaji | Utangulizi wa SLMOps • Kuondolewa kwa modeli • Urekebishaji mdogo (Fine-tuning) • Utekelezaji wa Uzalishaji | Juu | 5-6 hrs |
+| [🤖 06](../../Module06) | [Wakala wa AI & Kufanya Kito cha Kazi](./Module06/README.md) | Mfumo wa wakala & MCP | Utangulizi wa Wakala • Kufanya Kito cha Kazi • Itifaki ya Muktadha wa Modeli | Juu | 4-5 hrs |
+| [💻 07](../../Module07) | [Utekelezaji wa Jukwaa](./Module07/README.md) | Sampuli za kuvuka majukwaa | Zana za AI • Foundry Local • Maendeleo ya Windows | Juu | 3-4 hrs |
+| [🏭 08](../../Module08) | [Zana za Foundry Local](./Module08/README.md) | Sampuli zenye utayari wa uzalishaji | Programu za mfano (angalia maelezo hapa chini) | Mtaalamu | 8-10 hrs |
 
-### 🏭 **Moduli 08: Programu za Sampuli**
+### 🏭 **Moduli 08: Sampuli za Programu**
 
-- [01: Mwongozo wa Haraka wa Chat ya REST](./Module08/samples/01/README.md)
-- [02: Uunganisho wa OpenAI SDK](./Module08/samples/02/README.md)
-- [03: Ugunduzi wa Modeli & Ulinganisho wa Utendaji](./Module08/samples/03/README.md)
+- [01: REST Chat Quickstart](./Module08/samples/01/README.md)
+- [02: OpenAI SDK Integration](./Module08/samples/02/README.md)
+- [03: Ugunduzi wa Modeli & Ulinganishaji wa Uendeshaji](./Module08/samples/03/README.md)
 - [04: Programu ya Chainlit RAG](./Module08/samples/04/README.md)
 - [05: Uratibu wa Wakala Wengi](./Module08/samples/05/README.md)
-- [06: Router ya Modeli kama Vifaa](./Module08/samples/06/README.md)
-- [07: Mteja wa API wa Moja kwa Moja](./Module08/samples/07/README.md)
-- [08: App ya Chat ya Windows 11](./Module08/samples/08/README.md)
-- [09: Mfumo wa Wakala Nyingi wa Juu](./Module08/samples/09/README.md)
-- [10: Msingi wa Vifaa vya Foundry](./Module08/samples/10/README.md)
+- [06: Router ya Models-as-Tools](./Module08/samples/06/README.md)
+- [07: Mteja wa API ya Moja kwa Moja](./Module08/samples/07/README.md)
+- [08: Programu ya Chat ya Windows 11](./Module08/samples/08/README.md)
+- [09: Mfumo wa Wakala Wengi wa Juu](./Module08/samples/09/README.md)
+- [10: Mfumo wa Zana za Foundry](./Module08/samples/10/README.md)
 
 ### 🎓 **Warsha: Njia ya Kujifunza kwa Vitendo**
 
-Nyenzo kamili za warsha za vitendo zenye utekelezaji tayari kwa uzalishaji:
+Vifaa vya warsha vya vitendo vinavyokamilika na utekelezaji unaotumika uzalishaji:
 
-- **[Mwongozo wa Warsha](./Workshop/Readme.md)** - Malengo kamili ya kujifunza, matokeo, na urambazaji wa rasilimali
-- **Sampuli za Python** (vikao 6) - Zimeboreshwa kwa mbinu bora, kushughulikia makosa, na nyaraka kamili
-- **Jupyter Notebooks** (8 zinazoingiliana) - Mafunzo hatua kwa hatua yenye vigezo na ufuatiliaji wa utendaji
-- **Mwongozo wa Vikao** - Mwongozo wa markdown wenye maelezo kwa kila kikao cha warsha
-- **Vifaa vya Uthibitishaji** - Skripti za kuthibitisha ubora wa msimbo na kuendesha vipimo vya msingi
+- **[Mwongozo wa Warsha](./Workshop/Readme.md)** - Malengo kamili ya kujifunza, matokeo, na uabiri wa rasilimali
+- **Mfano za Python** (vikao 6) - Imesasishwa na mbinu bora, usindikaji makosa, na nyaraka kamili
+- **Jupyter Notebooks** (8 za mwingiliano) - Mafunzo hatua kwa hatua na vipimo vya uendeshaji na ufuatiliaji wa utendaji
+- **Mwongozo wa Vikao** - Mwongozo wa kina wa markdown kwa kila kikao cha warsha
+- **Zana za Uthibitisho** - Skripti za kuthibitisha ubora wa msimbo na kuendesha vipimo vya awali
 
-**Utajenga Nini:**
-- Programu za chat za AI za ndani zenye msaada wa kusambaza
-- Mipipa ya RAG yenye tathmini ya ubora (RAGAS)
-- Vifaa vya kuweka kigezo na kulinganisha modeli nyingi
+**Utakachojenga:**
+- Programu za mazungumzo za AI za ndani zenye msaada wa mtiririko
+- Mifumo ya RAG na tathmini ya ubora (RAGAS)
+- Zana za ulinganishaji wa modeli nyingi na zana za kulinganisha
 - Mifumo ya uratibu wa wakala wengi
-- Utaratibu wa modeli zenye akili na uteuzi unaotegemea kazi
+- Upangaji wa kiisimu wa modeli kwa kuchagua kazi
 
 ### 📊 **Muhtasari wa Njia ya Kujifunza**
-- **Jumla ya Muda**: 36-45 saa
-- **Njia ya Msingi**: Moduli 01-02 (7-9 saa)  
-- **Njia ya Wastani**: Moduli 03-04 (9-11 saa)
-- **Njia ya Juu**: Moduli 05-07 (12-15 saa)
-- **Njia ya Mtaalamu**: Moduli 08 (8-10 saa)
+- **Muda wa Jumla**: 36-45 hours
+- **Njia ya Mwanzo**: Moduli 01-02 (7-9 hours)  
+- **Njia ya Wastani**: Moduli 03-04 (9-11 hours)
+- **Njia ya Juu**: Moduli 05-07 (12-15 hours)
+- **Njia ya Mtaalamu**: Moduli 08 (8-10 hours)
 
-## Utajenga Nini
+## Kile Utakachojenga
 
-### 🎯 Uwezo wa Msingi
-- **Mimarisha ya Edge AI**: Buni mifumo ya AI inayotoa kipaumbele kwenye eneo la ndani na ujumuishaji na mawingu
-- **Uboreshaji wa Modeli**: Fanya quantization na kubana modeli kwa usambazaji kwenye edge (ongezeko la kasi la 85%, upunguzaji la ukubwa la 75%)
-- **Uwekaji Kazi kwa Majukwaa Mengi**: Windows, simu za mkononi, vilivyowekwa, na mifumo mseto ya cloud-edge
-- **Uendeshaji wa Uzalishaji**: Ufuatiliaji, upanuzi, na matengenezo ya AI ya edge katika uzalishaji
+### 🎯 Ujuzi Muhimu
+- **Usanifu wa Edge AI**: Tengeneza mifumo ya AI inayoweka kwanza ndani ya eneo na kuunganishwa na wingu
+- **Uboreshaji wa Mfano**: Kuantiza na kushinikiza mifano kwa ajili ya utekelezaji kwenye edge (85% ongezeko la kasi, 75% upunguzaji la ukubwa)
+- **Utekelezaji kwa Majukwaa Mingi**: Windows, simu za mkononi, vifaa vilivyojumuishwa, na mifumo mchanganyiko ya cloud-edge
+- **Uendeshaji wa Uzalishaji**: Ufuatiliaji, upanuaji, na matengenezo ya AI ya edge katika uzalishaji
 
 ### 🏗️ Miradi ya Vitendo
-- **Foundry Local Chat Apps**: Programu asili ya Windows 11 yenye kubadilisha modeli
-- **Mifumo ya Wakala Wengi**: Mratibu na mawakala maalum kwa mtiririko wa kazi tata  
-- **RAG Applications**: Usindaji wa nyaraka za ndani na utafutaji wa vektori
-- **Model Routers**: Uteuzi mwenye akili kati ya modeli kulingana na uchambuzi wa kazi
-- **API Frameworks**: Wateja tayari kwa uzalishaji wenye utiririkaji wa data na ufuatiliaji wa afya
-- **Zana za Msalaba-Majukwaa**: Miundo ya ujumuishaji ya LangChain/Semantic Kernel
+- **Foundry Local Chat Apps**: Programu asili ya Windows 11 yenye kubadilisha miundo
+- **Mifumo ya Wakala Wengi**: Mratibu na wakala maalumu kwa mtiririko mgumu wa kazi  
+- **Programu za RAG**: Usindushaji wa nyaraka za ndani kwa utafutaji wa vector
+- **Model Routers**: Uchaguzi mwerevu kati ya mifano kulingana na uchambuzi wa kazi
+- **Miundombinu ya API**: Wateja tayari kwa uzalishaji wenye uondoaji wa data na ufuatiliaji wa afya
+- **Vifaa Vinavyofanya Kazi Kwenye Majukwaa Mengi**: Mifano ya muunganisho wa LangChain/Semantic Kernel
 
 ### 🏢 Matumizi ya Sekta
-**Uzalishaji** • **Afya** • **Magari Yenye Kujitegemea** • **Miji Mahiri** • **Programu za Simu**
+**Uzalishaji** • **Huduma za Afya** • **Magari Yanayojiendesha** • **Miji Mahiri** • **Programu za Mkononi**
 
 ## Anza Haraka
 
-**Njia ya Kujifunza Iliyopendekezwa** (jumla: 20-30 saa):
+**Njia ya Kujifunza Iliyopendekezwa** (masaa 20-30 jumla):
 
-0. **📖 Utangulizi** ([Introduction.md](./introduction.md)): Msingi wa EdgeAI + muktadha wa sekta + mfumo wa kujifunza
-1. **📚 Msingi** (Modules 01-02): Dhana za EdgeAI + familia za modeli za SLM
-2. **⚙️ Uboreshaji** (Modules 03-04): Uwekaji kazi + mifumo ya quantization  
-3. **🚀 Uzalishaji** (Modules 05-06): SLMOps + mawakala wa AI + uitaji wa kazi
-4. **💻 Utekelezaji** (Modules 07-08): Mifano ya majukwaa + kifaa cha Foundry Local
+0. **📖 Utangulizi** ([Introduction.md](./introduction.md)): Misingi ya EdgeAI + muktadha wa tasnia + mfumo wa kujifunza
+1. **📚 Msingi** (Modules 01-02): Dhana za EdgeAI + familia za miundo za SLM
+2. **⚙️ Uboreshaji** (Modules 03-04): Utekelezaji + mifumo ya kuantiza  
+3. **🚀 Uzalishaji** (Modules 05-06): SLMOps + wakala wa AI + kuliita kazi
+4. **💻 Utekelezaji** (Modules 07-08): Mifano ya majukwaa + kifaa cha zana cha Foundry Local
 
-Kila moduli inajumuisha nadharia, mazoezi ya vitendo, na sampuli za msimbo zinazostahili uzalishaji.
+Kila moduli inajumuisha nadharia, mazoezi ya vitendo, na sampuli za msimbo tayari kwa uzalishaji.
 
 ## Athari kwa Kazi
 
-**Nafasi za Kiufundi**: EdgeAI Solutions Architect • ML Engineer (Edge) • IoT AI Developer • Mobile AI Developer
+**Majukumu ya Kifundi**: Mwanabuni wa Suluhisho za EdgeAI • Mhandisi wa ML (Edge) • Mjenzi wa AI kwa IoT • Mjenzi wa AI wa Mkononi
 
-**Sekta za Viwanda**: Uzalishaji 4.0 • Teknolojia ya Afya • Mifumo Yenye Kujitegemea • FinTech • Vifaa vya Kielektroniki kwa Watumiaji
+**Sekta za Viwanda**: Uzalishaji 4.0 • Teknolojia ya Afya • Mifumo Yanayojiendesha • FinTech • Vifaa vya Umma vya Kielektroniki
 
-**Miradi ya Portfolio**: Mifumo ya mawakala wengi • Programu za RAG kwa uzalishaji • Uwekaji kazi msalaba-majukwaa • Uboreshaji wa utendaji
+**Miradi ya Portfolio**: Mifumo ya wakala wengi • Programu za RAG kwa uzalishaji • Utekelezaji kwa majukwaa mbali mbali • Uboreshaji wa utendaji
 
-## Repository Structure
+## Muundo wa Hifadhidata
 
 ```
 edgeai-for-beginners/
@@ -190,24 +190,24 @@ edgeai-for-beginners/
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
 
-## Vidokezo Vikuu vya Kozi
+## Vipengele vya Kozi
 
-✅ **Kujifunza kwa Hatua**: Nadharia → Vitendo → Uwekaji katika uzalishaji  
-✅ **Mifano ya Kesi Halisi**: Microsoft, Japan Airlines, utekelezaji wa kampuni  
-✅ **Sampuli za Vitendo**: mifano 50+, maonyesho 10 ya kina ya Foundry Local  
-✅ **Lengo la Utendaji**: maboresho ya kasi 85%, upunguzaji wa ukubwa 75%  
-✅ **Majukwaa Mengi**: Windows, simu, vilivyowekwa, mseto wa cloud-edge  
-✅ **Tayari kwa Uzalishaji**: Ufuatiliaji, upanuzi, usalama, mifumo ya uzingatiaji
+✅ **Mafunzo ya Hatua kwa Hatua**: Nadharia → Vitendo → Utekelezaji wa uzalishaji  
+✅ **Mifano ya Kesi za Kweli**: Microsoft, Japan Airlines, utekelezaji wa mashirika  
+✅ **Sampuli za Vitendo**: Sampuli 50+, maonyesho 10 ya kina ya Foundry Local  
+✅ **Lengo la Utendaji**: 85% ongezeko la kasi, 75% upunguzaji wa ukubwa  
+✅ **Majukwaa Mengi**: Windows, simu za mkononi, vifaa vilivyojumuishwa, mchanganyiko wa cloud-edge  
+✅ **Tayari kwa Uzalishaji**: Ufuatiliaji, upanuzi, usalama, miundombinu ya uzingatiaji
 
-📖 **[Mwongozo wa Masomo Unapatikana](STUDY_GUIDE.md)**: Njia iliyoandaliwa ya kujifunza ya saa 20 na mwongozo wa mgawanyo wa muda na zana za kujipima
+📖 **[Mwongozo wa Masomo Unapatikana](STUDY_GUIDE.md)**: Njia ya kujifunza iliyopangwa kwa masaa 20 na mwongozo wa mgawanyo wa muda na zana za kujipima.
 
 ---
 
-**EdgeAI inawakilisha mustakabali wa usambazaji wa AI**: inazingatia eneo kwanza, inahifadhi faragha, na ni yenye ufanisi. Jifunze ujuzi huu ili kujenga kizazi kijacho cha programu zenye akili.
+**EdgeAI inawakilisha mustakabali wa utekelezaji wa AI**: kwanza ndani ya eneo, inayolinda faragha, na yenye ufanisi. Zamilia ujuzi huu ili kujenga kizazi kijacho cha programu zenye akili.
 
 ## Kozi Nyingine
 
-Timu yetu inatengeneza kozi nyingine! Angalia:
+Timu yetu inazalisha kozi nyingine! Angalia:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -224,7 +224,7 @@ Timu yetu inatengeneza kozi nyingine! Angalia:
 
 ---
  
-### Generative AI Series
+### Mfululizo wa Generative AI
 [![Generative AI kwa Waanzilishi](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
@@ -232,37 +232,36 @@ Timu yetu inatengeneza kozi nyingine! Angalia:
 
 ---
  
-### Core Learning
+### Msingi wa Kujifunza
 [![ML kwa Waanzilishi](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 [![Sayansi ya Data kwa Waanzilishi](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI kwa Waanzilishi](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
 [![Usalama wa Mtandao kwa Waanzilishi](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
-[![Uendelezaji Wavuti kwa Waanzilishi](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+[![Utengenezaji wa Wavuti kwa Waanzilishi](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
 [![IoT kwa Waanzilishi](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 [![Maendeleo ya XR kwa Waanzilishi](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### Copilot Series
-[![Copilot kwa Uandishi wa Pamoja na AI](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+### Mfululizo wa Copilot
+[![Copilot kwa Uandishi wa Programu Pamoja wa AI](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 [![Copilot kwa C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
 ## Kupata Msaada
 
-Ikiwa utagonga au una maswali kuhusu ujenzi wa programu za AI, jiunge na:
+Ikiwa unashindwa au una maswali yoyote kuhusu kujenga programu za AI, jiunge na:
 
 [![Discord ya Microsoft Foundry](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Kama una maoni kuhusu bidhaa au makosa wakati wa kujenga tembelea:
+Ikiwa una maoni kuhusu bidhaa au makosa wakati wa kujenga tembelea:
 
 [![Jukwaa la Waendelezaji la Microsoft Foundry](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-Taarifa ya kutokuwa na dhamana:
-
-Nyaraka hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Nyaraka ya awali katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo chenye mamlaka. Kwa taarifa muhimu, inashauriwa kutumia tafsiri ya kitaalamu iliyofanywa na binadamu. Hatuwajibiki kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+Taarifa ya kukataa wajibu:
+Nyaraka hii imetafsiriwa kwa kutumia huduma ya kutafsiri inayotumia AI (Co-op Translator: https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za mashine zinaweza kuwa na makosa au kutokuwa sahihi. Nyaraka ya awali katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, inapendekezwa kutumia utafsiri wa kitaalamu uliofanywa na mtafsiri wa binadamu. Hatuwajibiki kwa kutokuelewana au tafsiri mbaya zitakazotokana na matumizi ya tafsiri hii.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
