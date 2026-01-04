@@ -21,6 +21,8 @@ By the end of this workshop, you'll know how to:
 
 ## Your Journey: Three Acts
 
+![arch](./imgs/arch.png)
+
 Like any good story, we've got three acts. Each one builds your AI podcast studio piece by piece:
 
 | Episode | Your Quest | What Happens | Skills Unlocked |
