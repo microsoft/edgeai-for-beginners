@@ -120,6 +120,48 @@ Comprehensive hands-on workshop materials with production-ready implementations:
 - Multi-agent orchestration systems
 - Intelligent model routing with task-based selection
 
+### 🎙️ **Workshop For Agentic: Hands-On - The AI Podcast Studio**
+
+Build an AI-powered podcast production pipeline from scratch! This immersive workshop teaches you to create a complete multi-agent system that transforms ideas into professional podcast episodes.
+
+**[🎬 Start The AI Podcast Studio Workshop](./WorkshopForAgentic/README.md)**
+
+**Your Mission**: Launch "Future Bytes" — a tech podcast powered entirely by AI agents you'll build yourself. No cloud dependencies, no API costs — everything runs locally on your machine.
+
+**What Makes This Unique:**
+- **🤖 Real Multi-Agent Orchestration** - Build specialized AI agents that research, write, and produce audio
+- **🎯 Complete Production Pipeline** - From topic selection to final podcast audio output
+- **💻 100% Local Deployment** - Uses Ollama and local models (Qwen-3-8B) for full privacy and control
+- **🎤 Text-to-Speech Integration** - Transform scripts into natural-sounding multi-speaker conversations
+- **✋ Human-in-the-Loop Workflows** - Approval gates ensure quality while maintaining automation
+
+**Three-Act Learning Journey:**
+
+| Act | Focus | Key Skills | Duration |
+|-----|-------|------------|----------|
+| **[Act 1: Meet Your AI Assistants](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Build your first AI agent | Tool integration • Web search • Problem-solving • Agentic reasoning | 2-3 hrs |
+| **[Act 2: Assemble Your Production Team](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Orchestrate multiple agents | Team coordination • Approval workflows • DevUI interface • Human oversight | 3-4 hrs |
+| **[Act 3: Bring Your Podcast to Life](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Generate podcast audio | Text-to-speech • Multi-speaker synthesis • Long-form audio • Full automation | 2-3 hrs |
+
+**Technologies Used:**
+- **Microsoft Agent Framework** - Multi-agent orchestration and coordination
+- **Ollama** - Local AI model runtime (no cloud required)
+- **Qwen-3-8B** - Open-source language model optimized for agentic tasks
+- **Text-to-Speech APIs** - Natural voice synthesis for podcast generation
+
+**Hardware Support:**
+- ✅ **CPU Mode** - Works on any modern computer (8GB+ RAM recommended)
+- 🚀 **GPU Acceleration** - Significantly faster inference with NVIDIA/AMD GPUs
+- ⚡ **NPU Support** - Next-generation neural processing unit acceleration
+
+**Perfect For:**
+- Developers learning multi-agent AI systems
+- Anyone interested in AI automation and workflows
+- Content creators exploring AI-assisted production
+- Students studying practical AI orchestration patterns
+
+**Start Building**: [🎙️ The AI Podcast Studio Workshop →](./WorkshopForAgentic/README.md)
+
 ### 📊 **Learning Path Summary**
 - **Total Duration**: 36-45 hours
 - **Beginner Path**: Modules 01-02 (7-9 hours)  
