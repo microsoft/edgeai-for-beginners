@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Sissejuhatus Edge AI-sse algajatele
 
-![Edge AI Sissejuhatus](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.et.png)
+![Edge AI Sissejuhatus](../../translated_images/cover.eb18d1b9605d754b.et.png)
 
 Tere tulemast oma teekonnale **Edge Artificial Intelligence'i** maailma – revolutsiooniline lähenemine, mis toob tehisintellekti võimekuse otse sinna, kus andmeid luuakse ja otsuseid tuleb teha. See sissejuhatus loob aluse mõistmaks, miks Edge AI esindab intelligentse arvutuse tulevikku ja kuidas selle rakendamist omandada.
 

@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Introduction to Edge AI for Beginners
 
-![Edge AI Introduction](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.pcm.png)
+![Edge AI Introduction](../../translated_images/cover.eb18d1b9605d754b.pcm.png)
 
 Welcome to di journey wey go carry you enter **Edge Artificial Intelligence** – na new way wey dey bring AI power go di place wey data dey happen and decision need to dey made. Dis introduction go help you sabi why Edge AI na di future of smart computing and how you fit learn how to use am well.
 

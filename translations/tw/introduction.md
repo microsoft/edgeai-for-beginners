@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 初學者的邊緣人工智慧入門
 
-![邊緣人工智慧介紹](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.tw.png)
+![邊緣人工智慧介紹](../../translated_images/cover.eb18d1b9605d754b.tw.png)
 
 歡迎踏上探索**邊緣人工智慧**的旅程！這是一種革命性的技術，將人工智慧的力量直接帶到數據生成和決策需要的地方。本篇介紹將幫助您建立基礎，了解為什麼邊緣人工智慧代表了智能計算的未來，以及如何掌握其實施方法。
 

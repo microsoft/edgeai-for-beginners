@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Pengantar Edge AI untuk Pemula
 
-![Pengantar Edge AI](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.id.png)
+![Pengantar Edge AI](../../translated_images/cover.eb18d1b9605d754b.id.png)
 
 Selamat datang dalam perjalanan Anda ke **Edge Artificial Intelligence** – pendekatan revolusioner yang membawa kekuatan AI langsung ke tempat data dibuat dan keputusan perlu diambil. Pengantar ini akan membangun dasar untuk memahami mengapa Edge AI mewakili masa depan komputasi cerdas dan bagaimana Anda dapat menguasai penerapannya.
 

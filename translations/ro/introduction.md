@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Introducere în Edge AI pentru Începători
 
-![Introducere Edge AI](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.ro.png)
+![Introducere Edge AI](../../translated_images/cover.eb18d1b9605d754b.ro.png)
 
 Bine ai venit în călătoria ta către **Inteligența Artificială la Margine** – o abordare revoluționară care aduce puterea AI direct acolo unde se generează datele și unde trebuie luate deciziile. Această introducere va pune bazele pentru a înțelege de ce Edge AI reprezintă viitorul calculului inteligent și cum poți stăpâni implementarea sa.
 
