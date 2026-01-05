@@ -1,0 +1,40 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
+  "translation_date": "2026-01-05T14:02:31+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
+  "language_code": "ko"
+}
+-->
+# 팟캐스트 애플리케이션
+
+AI 에이전트를 사용하여 팟캐스트 스크립트를 생성하는 콘솔 애플리케이션입니다.
+
+## 사용법
+
+```bash
+python podcast_app.py
+```
+
+## 워크플로우
+
+1. **환영 인사** - 애플리케이션이 사용자에게 인사합니다
+2. **주제 입력** - 사용자가 팟캐스트 주제를 제공합니다
+3. **검색 에이전트** - 관련 정보를 검색합니다
+4. **스크립트 생성 에이전트** - 팟캐스트 스크립트를 만듭니다
+5. **검토** - 사용자가 스크립트를 검토하고 승인/거절합니다
+6. **저장** - 승인된 스크립트는 `podcast.md`에 저장됩니다
+
+## 요구 사항
+
+- Python 3.12+
+- agent_framework
+- 02.WorkflowDevUI의 모든 종속 항목
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**면책 조항**:  
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역은 오류나 부정확성을 포함할 수 있음을 알려드립니다. 원문 문서는 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우 전문 인간 번역을 권장합니다. 본 번역 사용으로 인한 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
