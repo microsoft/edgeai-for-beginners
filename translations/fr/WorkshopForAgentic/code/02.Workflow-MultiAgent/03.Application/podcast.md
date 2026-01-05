@@ -1,0 +1,29 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
+  "translation_date": "2026-01-05T13:33:05+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
+  "language_code": "fr"
+}
+-->
+Speaker 1: Bienvenue à ce nouvel épisode du podcast ! Je suis votre animatrice Lucy, et aujourd'hui, nous avons la chance d'accueillir Ken, expert dans le domaine de l'IA, pour discuter d'Ollama, qui suscite beaucoup d'attention ces derniers temps. Ken, pourriez-vous tout d'abord nous présenter brièvement ce qu'est Ollama ?  
+Speaker 2: Bien sûr ! Ollama est un outil qui permet aux utilisateurs d'exécuter et de gérer des modèles de langage de grande taille (LLM) sur leur machine locale. Il ne dépend pas des services cloud et met l'accent sur la confidentialité, le contrôle et la personnalisation. Pour les développeurs et les entreprises, il offre une alternative flexible et respectueuse de la vie privée aux services cloud comme ChatGPT.  
+Speaker 1: Cela semble très intéressant. Quels sont donc les principaux avantages d'Ollama ?  
+Speaker 2: Il y a trois avantages majeurs. Premièrement, la confidentialité et la sécurité. Les données des utilisateurs restent toujours sur leur appareil local, évitant ainsi les risques de fuite via des services cloud tiers, ce qui est particulièrement important dans les secteurs sensibles comme la santé ou la finance. Deuxièmement, l'accès hors ligne : il est utilisable même sans connexion internet, ce qui est idéal pour les zones où le réseau est instable. Enfin, la personnalisation : les utilisateurs peuvent ajuster les paramètres du modèle via le système Modelfile, voire affiner le modèle pour répondre à des tâches ou besoins industriels spécifiques.  
+Speaker 1: Ces fonctionnalités sont effectivement très utiles. Quels sont les cas d'utilisation concrets d'Ollama ?  
+Speaker 2: Par exemple, les entreprises peuvent développer des chatbots localisés, réduisant la latence et s'adaptant au jargon spécifique de leur secteur ; les instituts de recherche peuvent effectuer des expériences sur leurs données dans un environnement respectueux de la confidentialité ; les secteurs juridique et médical peuvent créer des outils d’IA pour l’analyse de contrats ou la vérification de conformité sans exposer d’informations sensibles. De plus, Ollama s’intègre parfaitement aux systèmes existants comme les CMS ou CRM, sans nécessité de repenser l’infrastructure.  
+Speaker 1: En comparaison avec ChatGPT, qu'est-ce qui distingue Ollama ?  
+Speaker 2: ChatGPT bénéficie de l’évolutivité des services cloud et de données d’entraînement à l’échelle mondiale, mais Ollama met davantage l’accent sur la confidentialité et le contrôle local. Si votre projet nécessite une protection stricte des données ou une utilisation hors ligne, Ollama est un meilleur choix ; tandis que, pour des déploiements à grande échelle et un support linguistique mondial, ChatGPT est peut-être plus adapté.  
+Speaker 1: Compris. Est-ce que le niveau requis pour utiliser Ollama est élevé pour un utilisateur lambda ?  
+Speaker 2: Pas vraiment. L’installation et la configuration d’Ollama ressemblent à celles de Docker, ce qui convient à des utilisateurs ayant des bases techniques. Il propose aussi une documentation détaillée et un support communautaire, permettant aux débutants de se familiariser progressivement. Cependant, pour les utilisateurs sans aucune connaissance des modèles d’IA, un temps d’apprentissage est nécessaire.  
+Speaker 1: Merci beaucoup pour ces explications ! Pour conclure, avez-vous un conseil à donner à nos auditeurs ?  
+Speaker 2: Si votre projet concerne des données sensibles ou nécessite des fonctionnalités hors ligne, n’hésitez pas à tester Ollama. Je recommande de commencer par des tâches simples, comme la génération locale de texte, pour explorer ensuite son potentiel de personnalisation. Rappelez-vous que la confidentialité et la flexibilité sont les valeurs clés d’Ollama, mais il faut toujours choisir l’outil en fonction des besoins réels.  
+Speaker 1: Merci Ken pour ces précieuses informations ! Ce partage nous permet de mieux comprendre le potentiel d’Ollama. Si vous êtes intéressés par les outils d’IA, n’oubliez pas de suivre notre chaîne ; lors du prochain épisode, nous verrons comment optimiser l’efficacité du travail quotidien avec l’IA. Je suis Lucy, à la prochaine fois !
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Avis de non-responsabilité** :  
+Ce document a été traduit à l’aide du service de traduction automatisée [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous fassions de notre mieux pour assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue natale doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou d’interprétations erronées résultant de l’utilisation de cette traduction.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

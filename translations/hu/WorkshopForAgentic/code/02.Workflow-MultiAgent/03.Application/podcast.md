@@ -1,0 +1,29 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
+  "translation_date": "2026-01-05T13:50:12+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
+  "language_code": "hu"
+}
+-->
+Speaker 1: Üdvözlöm a podcast mai adásának hallgatóit! Lucy vagyok a műsorvezető, és ma szerencsénk van Ken-t, az AI szakértőt vendégül látni, hogy együtt beszélgessünk a mostanában nagy figyelmet kapott Ollama-ról. Ken, meg tudná nekünk egyszerűen bemutatni, mi is az Ollama?  
+Speaker 2: Természetesen! Az Ollama egy eszköz, amely lehetővé teszi a felhasználók számára, hogy helyben, a saját gépükön futtassák és kezeljék a nagyméretű nyelvi modelleket (LLM). Nem igényel felhőszolgáltatást, és nagy hangsúlyt fektet a magánéletre, az irányításra és a testreszabhatóságra. Fejlesztőknek és vállalkozásoknak rugalmas, adatvédelmi szempontból kedvező alternatívát kínál, mint például a ChatGPT-szerű felhőalapú szolgáltatások.  
+Speaker 1: Ez igazán vonzónak hangzik. Mi az Ollama fő előnye?  
+Speaker 2: Három fő előnye van. Először a magánélet és a biztonság. A felhasználók adatai végig helyben maradnak, így elkerülhető a harmadik féltől származó felhőszolgáltatás miatti adatvesztés veszélye, ami különösen fontos az olyan érzékeny iparágakban, mint az egészségügy vagy a pénzügy. Másodszor, az offline hozzáférés: az eszköz hálózati kapcsolat nélkül is használható, ami instabil internetkapcsolattal rendelkező területeken különösen hasznos. Végül a testreszabhatóság; a felhasználók a Modelfile rendszer segítségével módosíthatják a modell paramétereit, sőt, finomhangolhatják a modellt speciális feladatokra vagy iparági igényekre.  
+Speaker 1: Ezek a funkciók valóban nagyon praktikusak. Milyen gyakorlati felhasználási területei vannak az Ollamának?  
+Speaker 2: Például vállalatok fejleszthetnek helyi chatbotokat, amelyek csökkentik a késleltetést és alkalmazkodnak az adott iparág szakszavához; kutatóintézetek végezhetnek adatkutatást olyan környezetben, ahol fontos az adatvédelem; a jogi és egészségügyi szektor is létrehozhat AI eszközöket, például szerződés elemzést vagy megfelelőség ellenőrzést, anélkül, hogy érzékeny információk kerülnének nyilvánosságra. Emellett zökkenőmentesen integrálható meglévő rendszerekbe, mint CMS vagy CRM, új infrastruktúra kialakítása nélkül.  
+Speaker 1: Az Ollama miben különbözik a ChatGPT-től?  
+Speaker 2: A ChatGPT előnye a felhőalapú szolgáltatás skálázhatósága és a globális modellek tanításához használt hatalmas adatbázis, míg az Ollama inkább a magánélet és a helyi irányítás hangsúlyozására összpontosít. Ha a projekt szigorú adatvédelmet vagy offline működést igényel, az Ollama jobb választás; ha viszont nagy léptékű telepítésre és globális nyelvi támogatásra van szükség, akkor a ChatGPT a jobb alternatíva.  
+Speaker 1: Értem. Átlagos felhasználóknak az Ollama használata nehéz?  
+Speaker 2: Valójában nem túl bonyolult. Az Ollama telepítése és konfigurációja hasonló a Docker-hez, így inkább azoknak való, akiknek van valamennyi technikai tapasztalata. Emellett részletes dokumentáció és közösségi támogatás áll rendelkezésre, így a kezdők is lépésről lépésre el tudnak indulni. Teljesen AI modellekkel nem foglalkozó felhasználók számára azonban némi tanulásra lehet szükség.  
+Speaker 1: Köszönöm a megosztást! Végül, mit ajánlana a hallgatóknak?  
+Speaker 2: Ha a projekt érzékeny adatokat kezel vagy offline működést igényel, érdemes kipróbálni az Ollamát. Javaslom, hogy egyszerű feladatokkal kezdjék, például helyi szöveg generálással, majd fokozatosan fedezzék fel a testreszabhatóság lehetőségeit. Ne feledjék, a magánélet és a rugalmasság az Ollama alapértékei, de mindig a tényleges igények alapján válasszanak eszközt.  
+Speaker 1: Köszönöm Ken nagyszerű előadását! A mai beszélgetésből jobban megismertük az Ollama lehetőségeit. Ha érdeklik az AI eszközök, ne felejtsék el követni csatornánkat, a következő alkalommal arról lesz szó, hogyan lehet AI-val javítani a mindennapi munka hatékonyságát. Lucy vagyok, találkozunk legközelebb!
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Felelősségkizárás**:
+Ez a dokumentum az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvű változata tekintendő a hivatalos forrásnak. Kritikus információk esetén javasolt szakmai emberi fordítást igénybe venni. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
