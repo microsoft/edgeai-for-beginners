@@ -1,0 +1,29 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
+  "translation_date": "2026-01-05T13:53:46+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
+  "language_code": "sl"
+}
+-->
+Speaker 1: Dobrodošli v današnji epizodi podcasta! Jaz sem voditeljica Lucy, danes pa imamo čast gostiti strokovnjaka za področje AI, Kena, s katerim bomo spregovorili o nedavno zelo odmevnem Ollami. Ken, lahko najprej na kratko predstaviš, kaj je Ollama?  
+Speaker 2: Seveda! Ollama je orodje, ki uporabnikom omogoča zagon in upravljanje velikih jezikovnih modelov (LLM) na lokalni napravi. Ne zahteva odvisnosti od oblačnih storitev, poudarja zasebnost, nadzor in prilagodljivost. Za razvijalce in podjetja predstavlja fleksibilno in zasebnosti prijazno alternativo oblačnim storitvam, kot je ChatGPT.  
+Speaker 1: Zveni zelo privlačno. Kaj pa so glavne prednosti Ollame?  
+Speaker 2: Glavne prednosti so tri. Prva je zasebnost in varnost. Podatki uporabnikov ostanejo vedno na lokalni napravi, kar preprečuje tveganja razkritja pri uporabi oblačnih storitev tretjih oseb, kar je še posebej pomembno za področja, kot so zdravstvo in finance, kjer so podatki občutljivi. Druga je dostop brez povezave, saj lahko Ollamo uporabljate tudi brez interneta, kar je primerno za območja z nestabilno mrežo. Tretja je prilagodljivost, uporabniki lahko preko sistema Modelfile prilagajajo parametre modela, celo fino nastavljajo model, da ustreza posebnim nalogam ali potrebam industrije.  
+Speaker 1: Te funkcionalnosti zvenijo res uporabno. Kateri so praktični primeri uporabe Ollame?  
+Speaker 2: Na primer, podjetja lahko razvijejo lokalizirane klepetalne robote, ki zmanjšujejo zakasnitve in se prilagajajo specifični industrijski terminologiji; raziskovalne institucije lahko izvajajo podatkovne eksperimente v okolju z visokim varstvom zasebnosti; pravna in zdravstvena industrija lahko zgradi AI orodja za analizo pogodb ali preverjanje skladnosti brez razkrivanja občutljivih podatkov. Poleg tega se zna brezhibno integrirati v obstoječe sisteme, kot so CMS ali CRM, brez potrebe po prenovi infrastrukture.  
+Speaker 1: Kakšne so razlike med Ollamo in ChatGPT?  
+Speaker 2: Prednosti ChatGPT so razširljivost oblačnih storitev in globalni podatki za treniranje modela, medtem ko Ollama poudarja zasebnost in lokalni nadzor. Če projekt zahteva strogo varstvo podatkov ali delovanje brez povezave, je Ollama boljša izbira; za velike namestitve in globalno jezikovno podporo je morda primernejši ChatGPT.  
+Speaker 1: Razumem. Ali je Ollama za običajne uporabnike zahteven za uporabo?  
+Speaker 2: Pravzaprav ni preveč zahteven. Namestitev in konfiguracija Ollame sta podobni Dockerju, kar ustreza uporabnikom s tehničnim znanjem. Poleg tega ima podrobno dokumentacijo in podporo skupnosti, tako da lahko tudi začetniki postopoma osvojijo njegovo uporabo. Kljub temu pa bo popolnim neizkušenim uporabnikom z AI modeli verjetno potrebnega nekaj časa za učenje.  
+Speaker 1: Najlepša hvala za deljenje! Na koncu, ali imate kakšen nasvet za poslušalce?  
+Speaker 2: Če vaš projekt vključuje občutljive podatke ali potrebuje funkcionalnosti brez povezave, vsekakor preizkusite Ollamo. Priporočam, da začnete z enostavnimi nalogami, na primer lokalno generacijo besedila, in postopoma raziskujete možnosti prilagajanja. Pomembno je vedeti, da sta zasebnost in prilagodljivost glavna vrednota Ollame, a izberite orodje glede na vaše resnične potrebe.  
+Speaker 1: Hvala Ken za odlično razlago! Današnja epizoda nam je pomagala bolje razumeti potencial Ollame. Če vas zanimajo AI orodja, ne pozabite spremljati naš kanal, v naslednji epizodi bomo govorili o tem, kako z AI izboljšati učinkovitost vsakodnevnega dela. Jaz sem Lucy, se slišimo naslednjič!
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Izjava o omejitvi odgovornosti**:
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da samodejni prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
