@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8421c922085232ba081c848d98f69f35",
-  "translation_date": "2026-01-01T09:43:21+00:00",
+  "original_hash": "ac31463ae3ed21a0ce83b0a351c23dd4",
+  "translation_date": "2026-01-05T08:51:01+00:00",
   "source_file": "README.md",
   "language_code": "en"
 }
@@ -37,6 +37,16 @@ Follow these steps to get started using these resources:
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+
+> **Prefer to Clone Locally?**
+
+> This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:
+> ```bash
+> git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
+> cd edgeai-for-beginners
+> git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
+> ```
+> This gives you everything you need to complete the course with a much faster download.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 **If you wish to have additional translations languages supported are listed [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
@@ -128,6 +138,47 @@ Comprehensive hands-on workshop materials with production-ready implementations:
 - Multi-model benchmarking and comparison tools
 - Multi-agent orchestration systems
 - Intelligent model routing with task-based selection
+
+### 🎙️ **Workshop For Agentic: Hands-On - The AI Podcast Studio**
+
+Build an AI-powered podcast production pipeline from scratch! This immersive workshop teaches you to create a complete multi-agent system that transforms ideas into professional podcast episodes.
+**[🎬 Start The AI Podcast Studio Workshop](./WorkshopForAgentic/README.md)**
+
+**Your Mission**: Launch "Future Bytes" — a tech podcast powered entirely by AI agents you'll build yourself. No cloud dependencies, no API costs — everything runs locally on your machine.
+
+**What Makes This Unique:**
+- **🤖 Real Multi-Agent Orchestration** - Build specialized AI agents that research, write, and produce audio
+- **🎯 Complete Production Pipeline** - From topic selection to final podcast audio output
+- **💻 100% Local Deployment** - Uses Ollama and local models (Qwen-3-8B) for full privacy and control
+- **🎤 Text-to-Speech Integration** - Transform scripts into natural-sounding multi-speaker conversations
+- **✋ Human-in-the-Loop Workflows** - Approval gates ensure quality while maintaining automation
+
+**Three-Act Learning Journey:**
+
+| Act | Focus | Key Skills | Duration |
+|-----|-------|------------|----------|
+| **[Act 1: Meet Your AI Assistants](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Build your first AI agent | Tool integration • Web search • Problem-solving • Agentic reasoning | 2-3 hrs |
+| **[Act 2: Assemble Your Production Team](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Orchestrate multiple agents | Team coordination • Approval workflows • DevUI interface • Human oversight | 3-4 hrs |
+| **[Act 3: Bring Your Podcast to Life](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Generate podcast audio | Text-to-speech • Multi-speaker synthesis • Long-form audio • Full automation | 2-3 hrs |
+
+**Technologies Used:**
+- **Microsoft Agent Framework** - Multi-agent orchestration and coordination
+- **Ollama** - Local AI model runtime (no cloud required)
+- **Qwen-3-8B** - Open-source language model optimized for agentic tasks
+- **Text-to-Speech APIs** - Natural voice synthesis for podcast generation
+
+**Hardware Support:**
+- ✅ **CPU Mode** - Works on any modern computer (8GB+ RAM recommended)
+- 🚀 **GPU Acceleration** - Significantly faster inference with NVIDIA/AMD GPUs
+- ⚡ **NPU Support** - Next-generation neural processing unit acceleration
+
+**Perfect For:**
+- Developers learning multi-agent AI systems
+- Anyone interested in AI automation and workflows
+- Content creators exploring AI-assisted production
+- Students studying practical AI orchestration patterns
+
+**Start Building**: [🎙️ The AI Podcast Studio Workshop →](./WorkshopForAgentic/README.md)
 
 ### 📊 **Learning Path Summary**
 - **Total Duration**: 36-45 hours
@@ -262,6 +313,6 @@ If you have product feedback or errors while building visit:
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-Disclaimer:
-This document has been translated using AI translation service Co-op Translator (https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**Disclaimer**:
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
