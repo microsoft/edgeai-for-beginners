@@ -1,0 +1,29 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
+  "translation_date": "2026-01-05T13:43:01+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
+  "language_code": "tr"
+}
+-->
+Speaker 1: Bu podcast bölümüne hoş geldiniz! Ben sunucu Lucy, bugün AI alanı uzmanı Ken'i konuk ediyoruz, birlikte son zamanlarda çok ilgi gören Ollama hakkında konuşacağız. Ken, bize kısaca Ollama'nın ne olduğunu anlatabilir misiniz?  
+Speaker 2: Tabii ki! Ollama, kullanıcıların yerel makinelerinde büyük dil modellerini (LLM) çalıştırmasına ve yönetmesine olanak tanıyan bir araçtır. Bulut hizmetlerine bağlı kalmayı gerektirmez, gizlilik, kontrol ve özelleştirmeye vurgu yapar. Geliştiriciler ve işletmeler için ChatGPT gibi bulut hizmetlerine esnek ve gizlilik dostu bir alternatif sunar.  
+Speaker 1: Çok çekici geliyor. Peki Ollama'nın temel avantajları nelerdir?  
+Speaker 2: Üç ana avantajı var. İlk olarak gizlilik ve güvenlik. Kullanıcı verileri her zaman yerel cihazda kalır, üçüncü taraf bulut hizmetleri üzerinden sızıntı riskini önler, bu da sağlık, finans gibi veri hassasiyeti yüksek sektörler için özellikle önemlidir. İkinci olarak çevrimdışı erişim; internet olmasa bile kullanılabilir, bu da internetin stabil olmadığı bölgeler için uygundur. Son olarak özelleştirme; kullanıcılar Modelfile sistemiyle model parametrelerini ayarlayabilir, hatta belirli görevler veya sektör ihtiyaçlarına uyacak şekilde modeli ince ayar yapabilir.  
+Speaker 1: Bu özellikler gerçekten çok kullanışlı. Peki Ollama'nın pratik uygulama alanları nelerdir?  
+Speaker 2: Örneğin, işletmeler yerel sohbet botları geliştirebilir, gecikmeyi azaltabilir ve sektöre özgü terimlere uyum sağlayabilir; araştırma kurumları gizlilik gerektiren ortamlarda veri deneyleri yapabilir; hukuk ve sağlık sektörleri gizli bilgileri ifşa etmeden sözleşme analizi veya uyumluluk kontrolleri gibi AI araçları oluşturabilirler. Ayrıca mevcut sistemlere, örneğin CMS veya CRM’ye sorunsuz entegrasyon sağlar, altyapıyı yeniden yapılandırmaya gerek kalmaz.  
+Speaker 1: ChatGPT ile kıyaslandığında Ollama'nın farkları nelerdir?  
+Speaker 2: ChatGPT bulut hizmetlerinin ölçeklenebilirliği ve küresel model eğitimi verisi avantajına sahip, ancak Ollama gizlilik ve yerel kontrolü daha fazla ön planda tutar. Projeniz sıkı veri koruması veya çevrimdışı çalışmayı gerektiriyorsa Ollama daha iyi bir seçimdir; büyük ölçekli dağıtım ve küresel dil desteği gerekiyorsa ChatGPT daha uygun olabilir.  
+Speaker 1: Anladım. Peki sıradan kullanıcılar için Ollama’nın kullanım zorluğu nedir?  
+Speaker 2: Aslında zor değil. Ollama'nın kurulumu ve yapılandırması Docker’a benzer ve belli düzeyde teknik altyapısı olan kullanıcılar için uygundur. Ayrıca ayrıntılı belgeler ve topluluk desteği var, yeni başlayanlar bile adım adım öğrenebilir. Yine de tamamen AI modellerinden habersiz kullanıcılar için biraz öğrenme zamanı gerekebilir.  
+Speaker 1: Paylaşımlarınız için çok teşekkür ederim! Son olarak dinleyicilere bir tavsiyeniz var mı?  
+Speaker 2: Projeniz hassas veriler içeriyor veya çevrimdışı işlevsellik gerekiyorsa Ollama’yı denemenizi öneririm. Ayrıca yerel metin üretimi gibi basit görevlerle başlayıp, zamanla özelleştirme potansiyelini keşfetmenizi tavsiye ederim. Unutmayın, gizlilik ve esneklik Ollama’nın temel değerleridir, ancak aracınızı gerçek ihtiyaçlarınıza göre seçmelisiniz.  
+Speaker 1: Ken’in harika anlatımı için teşekkürler! Bugünkü paylaşım Ollama’nın potansiyelini daha iyi anlamamızı sağladı. AI araçlarıyla ilgileniyorsanız kanalımızı takip etmeyi unutmayın, sonraki bölümde AI ile günlük iş verimliliğini nasıl artıracağımızı inceleyeceğiz. Ben Lucy, bir dahaki sefere görüşmek üzere!
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Feragatname**:  
+Bu belge, yapay zeka çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum farklılıklarından sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
