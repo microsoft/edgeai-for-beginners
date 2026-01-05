@@ -1,0 +1,29 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
+  "translation_date": "2026-01-05T13:45:12+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
+  "language_code": "da"
+}
+-->
+Speaker 1: Velkommen til denne episode af podcasten! Jeg er vært Lucy, og i dag er vi heldige at have AI-ekspert Ken med, som vil tale med os om det meget omtalte Ollama. Ken, kan du starte med kort at fortælle os, hvad Ollama er?  
+Speaker 2: Selvfølgelig! Ollama er et værktøj, der gør det muligt for brugere at køre og administrere store sprogmodeller (LLM) på deres lokale maskiner. Det kræver ikke afhængighed af skyen og lægger vægt på privatliv, kontrol og tilpasning. For udviklere og virksomheder tilbyder det et fleksibelt og privatlivsvenligt alternativ til skybaserede tjenester som ChatGPT.  
+Speaker 1: Det lyder virkelig interessant. Hvad er Ollamas kernefordele?  
+Speaker 2: Der er tre hovedfordele. Først er privatliv og sikkerhed. Brugernes data forbliver altid på deres lokale enhed, hvilket undgår risikoen for lækager via tredjeparts skytjenester, hvilket er særligt vigtigt for datakritiske brancher som sundhed og finans. For det andet er offline adgang, så det kan bruges uden internet, hvilket er ideelt i områder med ustabil netværksdækning. Endelig er der tilpasning, hvor brugerne kan justere modelparametre gennem Modelfile-systemet eller endda finjustere modeller for at opfylde specifikke opgaver eller branchebehov.  
+Speaker 1: Disse funktioner er virkelig praktiske. Hvilke konkrete anvendelsesscenarier har Ollama?  
+Speaker 2: Virksomheder kan eksempelvis udvikle lokaliserede chatbots, der reducerer forsinkelse og tilpasser sig specifikke branchesprog; forskningsinstitutioner kan udføre dataeksperimenter i privacy-sensitive miljøer; og juridiske og medicinske sektorer kan bygge AI-værktøjer til kontraktanalyse eller compliance-kontrol uden at eksponere følsomme oplysninger. Derudover kan det sømløst integreres i eksisterende systemer som CMS eller CRM uden at skulle ombygge infrastrukturen.  
+Speaker 1: Hvordan adskiller Ollama sig fra ChatGPT?  
+Speaker 2: ChatGPT’s styrke ligger i skyens skalerbarhed og globalt trænede sprogmodeller, mens Ollama fokuserer mere på privatliv og lokal kontrol. Hvis et projekt kræver streng databeskyttelse eller offline funktionalitet, er Ollama et bedre valg; men hvis der er behov for storstilet udrulning og global sprogsupport, kan ChatGPT være mere passende.  
+Speaker 1: Forstår. Er Ollama svært for almindelige brugere at komme i gang med?  
+Speaker 2: Ikke nødvendigvis. Installations- og konfigurationsprocessen minder om Docker og passer til brugere med en vis teknisk baggrund. Samtidig tilbyder det detaljeret dokumentation og community-støtte, så også begyndere kan lære det trin for trin. Dog kan helt uerfarne AI-brugere skulle bruge lidt tid på at lære det.  
+Speaker 1: Mange tak for din deling! Til sidst, har du nogen råd til lytterne?  
+Speaker 2: Hvis jeres projekter involverer følsomme data eller kræver offline funktionalitet, så prøv Ollama. Jeg anbefaler også at starte med enkle opgaver, for eksempel lokal tekstgenerering, og gradvist udforske tilpasningsmulighederne. Husk, privatliv og fleksibilitet er Ollamas kerneværdi, men vælg værktøjet ud fra jeres konkrete behov.  
+Speaker 1: Tak til Ken for den fantastiske forklaring! Dagens deling har givet os større indsigt i Ollamas potentiale. Hvis du er interesseret i AI-værktøjer, så glem ikke at følge vores kanal – i næste episode vil vi udforske, hvordan AI kan optimere hverdagsarbejdsflow. Jeg er Lucy, vi ses næste gang!
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfraskrivelse**:  
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

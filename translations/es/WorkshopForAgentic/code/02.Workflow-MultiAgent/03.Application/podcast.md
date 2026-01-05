@@ -1,0 +1,29 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
+  "translation_date": "2026-01-05T13:33:32+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
+  "language_code": "es"
+}
+-->
+Speaker 1: ¡Bienvenidos a este episodio del podcast! Soy la anfitriona Lucy, y hoy tenemos el honor de contar con el experto en IA Ken, con quien hablaremos sobre Ollama, que ha recibido mucha atención recientemente. Ken, ¿podrías comenzar por darnos una breve introducción sobre qué es Ollama?  
+Speaker 2: ¡Por supuesto! Ollama es una herramienta que permite a los usuarios ejecutar y gestionar modelos de lenguaje grandes (LLM) en sus propias máquinas locales. No depende de servicios en la nube y enfatiza la privacidad, el control y la personalización. Para desarrolladores y empresas, ofrece una alternativa flexible y amigable con la privacidad, como los servicios en la nube tipo ChatGPT.  
+Speaker 1: Suena muy atractivo. ¿Cuáles son las ventajas principales de Ollama?  
+Speaker 2: Las ventajas principales son tres. Primero, privacidad y seguridad. Los datos del usuario siempre permanecen en el dispositivo local, lo que evita el riesgo de filtración a través de servicios en la nube de terceros, algo especialmente importante para industrias sensibles a los datos, como la salud y las finanzas. Segundo, acceso offline, que permite su uso incluso sin conexión, ideal para regiones con redes inestables. Y tercero, personalización, ya que los usuarios pueden ajustar parámetros del modelo mediante el sistema Modelfile, e incluso afinar el modelo para tareas o sectores específicos.  
+Speaker 1: Estas funcionalidades son realmente prácticas. ¿Cuáles son los escenarios de aplicación reales de Ollama?  
+Speaker 2: Por ejemplo, las empresas pueden desarrollar chatbots localizados para reducir la latencia y adaptarse a la jerga específica de su sector; instituciones de investigación pueden realizar experimentos con datos en entornos con alta privacidad; los sectores legal y médico pueden crear herramientas de IA para análisis de contratos o revisiones de cumplimiento sin exponer información sensible. Además, se puede integrar perfectamente con sistemas existentes, como CMS o CRM, sin necesidad de reconstruir la infraestructura.  
+Speaker 1: Comparado con ChatGPT, ¿qué características únicas tiene Ollama?  
+Speaker 2: ChatGPT destaca por la escalabilidad de su servicio en la nube y por su entrenamiento con datos globales, mientras que Ollama se centra más en la privacidad y el control local. Si un proyecto requiere protección estricta de datos o funcionamiento offline, Ollama es la mejor opción; si se necesita un despliegue a gran escala y soporte global de idiomas, ChatGPT puede ser más adecuado.  
+Speaker 1: Entiendo. ¿Es difícil para un usuario común empezar con Ollama?  
+Speaker 2: En realidad, no tanto. La instalación y configuración de Ollama es similar a Docker, adecuada para usuarios con cierto conocimiento técnico. Además, cuenta con documentación detallada y apoyo comunitario, así que hasta los principiantes pueden aprender paso a paso. Claro que, para quienes no conocen nada de modelos de IA, puede requerir algo de tiempo de aprendizaje.  
+Speaker 1: ¡Muchas gracias por compartirlo! Finalmente, ¿tienes algún consejo para nuestros oyentes?  
+Speaker 2: Si su proyecto involucra datos sensibles o necesita funcionalidades offline, vale la pena probar Ollama. Recomiendo empezar con tareas sencillas, como generación de texto local, y luego ir explorando su potencial de personalización. Recuerden que la privacidad y la flexibilidad son los valores centrales de Ollama, pero siempre es importante escoger la herramienta que mejor se adapte a las necesidades reales.  
+Speaker 1: ¡Gracias Ken por esta explicación tan completa! La charla de hoy nos ayudó a conocer mejor el potencial de Ollama. Si les interesan las herramientas de IA, no olviden seguir nuestro canal; en la próxima entrega hablaremos de cómo optimizar la eficiencia laboral diaria con IA. Soy Lucy, ¡nos vemos la próxima vez!
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Aviso Legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por un humano. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
