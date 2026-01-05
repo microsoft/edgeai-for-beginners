@@ -1,0 +1,40 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
+  "translation_date": "2026-01-05T14:03:45+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
+  "language_code": "pa"
+}
+-->
+# Podcast Application
+
+ਏਕ ਕਨਸੋਲ ਐਪਲੀਕੇਸ਼ਨ ਜੋ AI ਏਜੰਟਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਪੋਡਕਾਸਟ ਸਕ੍ਰਿਪਟਾਂ ਬਣਾਉਂਦਾ ਹੈ।
+
+## Usage
+
+```bash
+python podcast_app.py
+```
+
+## Workflow
+
+1. **Welcome** - ਐਪਲੀਕੇਸ਼ਨ ਯੂਜ਼ਰ ਦਾ ਸਵਾਗਤ ਕਰਦਾ ਹੈ
+2. **Topic Input** - ਯੂਜ਼ਰ ਪੋਡਕਾਸਟ ਲਈ ਵਿਸ਼ਾ ਦਿੰਦਾ ਹੈ
+3. **Search Agent** - ਸੰਬੰਧਿਤ ਜਾਣਕਾਰੀ ਖੋਜਦਾ ਹੈ
+4. **Generate Script Agent** - ਪੋਡਕਾਸਟ ਸਕ੍ਰਿਪਟ ਬਣਾਉਂਦਾ ਹੈ
+5. **Review** - ਯੂਜ਼ਰ ਸਕ੍ਰਿਪਟ ਦੀ ਸਮੀਖਿਆ ਕਰਦਾ ਹੈ ਅਤੇ ਮਨਜ਼ੂਰ/ਅਣਮਨਜ਼ੂਰ ਕਰਦਾ ਹੈ
+6. **Save** - ਮਨਜ਼ੂਰਸ਼ੁਦਾ ਸਕ੍ਰਿਪਟ `podcast.md` ਵਿੱਚ ਸਾਂਭਿਆ ਜਾਂਦਾ ਹੈ
+
+## Requirements
+
+- Python 3.12+
+- agent_framework
+- 02.WorkflowDevUI ਤੋਂ ਸਾਰੀਆਂ ਦੀਆਂ dependencies
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ਅਸਵੀਕਾਰੋਧ**:  
+ਇਸ ਦਸਤਾਵੇਜ਼ ਦਾ ਅਨੁਵਾਦ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਿੱਥੇ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਯਤਨਸ਼ੀਲ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਜਾਣੋ ਕਿ ਆਟੋਮੈਟਿਕ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਹਿਮਤੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪ੍ਰੋਫੈਸ਼ਨਲ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਸਿਫ਼ਾਰਸ਼ੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੇ ਇਸਤੇਮਾਲ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
