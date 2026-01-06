@@ -1,0 +1,29 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
+  "translation_date": "2026-01-05T13:51:17+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
+  "language_code": "sk"
+}
+-->
+Speaker 1: Vitajte pri dnešnom podcaste! Som moderátorka Lucy a dnes máme tú česť privítať odborníka na AI, Kena, aby sme si spolu porozprávali o nedávno veľmi diskutovanom Ollama. Ken, môžete nám najprv stručne predstaviť, čo je Ollama?  
+Speaker 2: Samozrejme! Ollama je nástroj, ktorý umožňuje používateľom spúšťať a spravovať veľké jazykové modely (LLM) priamo na lokálnom zariadení. Nepotrebuje závislosť na cloudových službách a kladie dôraz na súkromie, kontrolu a prispôsobenie. Pre vývojárov a podniky ponúka flexibilnú a súkromie rešpektujúcu alternatívu ku cloudovým službám ako ChatGPT.  
+Speaker 1: Znie to veľmi zaujímavo. Aké sú teda kľúčové výhody Ollama?  
+Speaker 2: Hlavné výhody sú tri. Po prvé, súkromie a bezpečnosť. Dáta používateľa zostávajú vždy na lokálnom zariadení, čím sa minimalizuje riziko úniku cez tretie cloudové služby, čo je obzvlášť dôležité pre oblasti ako zdravotníctvo a financie citlivé na dáta. Po druhé, možnosť offline prístupu – používatelia môžu Ollama využívať aj bez pripojenia na internet, čo je vhodné pre oblasti so slabým pripojením. A po tretie, prispôsobenie – používatelia môžu pomocou systému Modelfile ladieť parametre modelu alebo ho jemne doladiť podľa špecifických úloh či odvetvových požiadaviek.  
+Speaker 1: Tieto funkcie sú naozaj veľmi praktické. Aké sú teda reálne použitia Ollama?  
+Speaker 2: Napríklad firmy môžu vyvíjať lokálne chatovacích botov s nižšou latenciou a prispôsobených špecifickej odbornej terminológii; výskumné organizácie môžu vykonávať experimenty s dátami v prostredí citlivom na súkromie; právne a zdravotnícke odbory môžu stavať AI nástroje, ako analýzu zmlúv alebo kontrolu súladu, bez nutnosti odhaliť citlivé informácie. Okrem toho ho možno hladko integrovať do existujúcich systémov ako CMS alebo CRM bez nutnosti zásadných prestavieb infraštruktúry.  
+Speaker 1: Čím sa Ollama líši od ChatGPT?  
+Speaker 2: ChatGPT má výhodu škálovateľnosti cloudovej služby a celosvetového tréningového dátového základu, zatiaľ čo Ollama kladie väčší dôraz na súkromie a lokálnu kontrolu. Ak projekt vyžaduje prísnu ochranu dát alebo offline prevádzku, Ollama je lepšia voľba; ak je potrebné rozsiahle nasadenie a globálna jazyková podpora, vhodnejší môže byť ChatGPT.  
+Speaker 1: Rozumiem. Je Ollama náročná pre bežných používateľov?  
+Speaker 2: V skutočnosti nie. Inštalácia a konfigurácia Ollama je podobná Dockeru a je vhodná pre používateľov so základnými technickými znalosťami. Poskytuje tiež podrobnú dokumentáciu a podporu komunity, takže aj začiatočníci sa môžu postupne zorientovať. Avšak úplne noví používatelia bez znalostí AI modelov môžu potrebovať trochu času na učenie.  
+Speaker 1: Veľmi pekne ďakujem za vaše postrehy! Na záver máte pre poslucháčov nejaké odporúčanie?  
+Speaker 2: Ak váš projekt pracuje s citlivými dátami alebo potrebuje offline režim, určite sa oplatí vyskúšať Ollama. Odporúčam začať s jednoduchými úlohami, napríklad lokálnym generovaním textu, a postupne objavovať možnosti prispôsobenia. Pamätajte, že súkromie a flexibilita sú jadrom hodnoty Ollama, no vždy vyberajte nástroje podľa svojich konkrétnych potrieb.  
+Speaker 1: Ďakujem Kenovi za úžasné vysvetlenie! Dnešný rozhovor nám pomohol lepšie pochopiť potenciál Ollama. Ak vás zaujímajú AI nástroje, nezabudnite sledovať náš kanál, pretože v ďalšej epizóde budeme hovoriť o tom, ako pomocou AI zefektívniť každodennú prácu. Som Lucy, uvidíme sa nabudúce!
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Zrieknutie sa zodpovednosti**:
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, vezmite prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

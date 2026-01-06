@@ -1,0 +1,40 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
+  "translation_date": "2026-01-05T14:09:19+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
+  "language_code": "bg"
+}
+-->
+# Podcast Application
+
+Конзолно приложение за генериране на скриптове за подкасти с помощта на AI агенти.
+
+## Usage
+
+```bash
+python podcast_app.py
+```
+
+## Workflow
+
+1. **Welcome** - Приложението приветства потребителя  
+2. **Topic Input** - Потребителят предоставя тема за подкаста  
+3. **Search Agent** - Търси релевантна информация  
+4. **Generate Script Agent** - Създава скрипт за подкаст  
+5. **Review** - Потребителят преглежда и одобрява или отхвърля скрипта  
+6. **Save** - Одобреният скрипт се записва в `podcast.md`
+
+## Requirements
+
+- Python 3.12+  
+- agent_framework  
+- Всички зависимости от 02.WorkflowDevUI
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Отказ от отговорност**:  
+Този документ е преведен чрез автоматична услуга за превод [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля имайте предвид, че автоматичните преводи може да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

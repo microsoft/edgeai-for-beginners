@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8421c922085232ba081c848d98f69f35",
-  "translation_date": "2026-01-01T12:58:15+00:00",
+  "original_hash": "ac31463ae3ed21a0ce83b0a351c23dd4",
+  "translation_date": "2026-01-05T10:09:55+00:00",
   "source_file": "README.md",
   "language_code": "et"
 }
@@ -10,172 +10,223 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI algajatele 
 
 
-![Kursuse kaanepilt](../../translated_images/cover.eb18d1b9605d754b.et.png)
+![Kursuse kaanekujutis](../../translated_images/cover.eb18d1b9605d754b.et.png)
 
 [![GitHubi panustajad](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![GitHub probleemid](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
-[![GitHub pull-päringud](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
-[![PR-id on teretulnud](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![GitHubi probleemid](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
+[![GitHubi tõmbepäringud](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
+[![PRid on teretulnud](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-[![GitHub jälgijad](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
-[![GitHub forkid](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-[![GitHub tähed](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
+[![GitHubi vaatlejad](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
+[![GitHubi kahvlid](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+[![GitHubi tärnid](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
 
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Järgige neid samme, et alustada nende ressursside kasutamist:
+Alusta nende ressursside kasutamist järgmiste sammudega:
 
-1. **Forkige hoidla**: Click [![GitHub forkid](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Kloonige hoidla**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Liituge Azure AI Foundry Discordiga ja kohtuge ekspertide ning teiste arendajatega**](https://discord.com/invite/ByRwuEEgH4)
+1. **Tee hoidlast fork**: Vajuta [![GitHubi kahvlid](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Klooni hoidla**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+3. [**Liitu Azure AI Foundry Discordiga ja kohtu ekspertide ning arendajatega**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Mitmekeelne tugi
 
-#### Toetatud GitHub Actioni kaudu (automaatne ja alati värske)
+#### Toetatud GitHub Action kaudu (Automaatne ja alati ajakohane)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Araabia](../ar/README.md) | [Bengaali](../bn/README.md) | [Bulgaaria](../bg/README.md) | [Birma (Myanmar)](../my/README.md) | [Hiina (lihtsustatud)](../zh/README.md) | [Hiina (traditsiooniline, Hongkong)](../hk/README.md) | [Hiina (traditsiooniline, Macau)](../mo/README.md) | [Hiina (traditsiooniline, Taiwan)](../tw/README.md) | [Horvaadi](../hr/README.md) | [Tšehhi](../cs/README.md) | [Taani](../da/README.md) | [Hollandi](../nl/README.md) | [Eesti](./README.md) | [Soome](../fi/README.md) | [Prantsuse](../fr/README.md) | [Saksa](../de/README.md) | [Kreeka](../el/README.md) | [Heebrea](../he/README.md) | [Hindi](../hi/README.md) | [Ungari](../hu/README.md) | [Indoneesia](../id/README.md) | [Itaalia](../it/README.md) | [Jaapani](../ja/README.md) | [Kannada](../kn/README.md) | [Korea](../ko/README.md) | [Leedu](../lt/README.md) | [Malai](../ms/README.md) | [Malajalami](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigeeria pidžin](../pcm/README.md) | [Norra](../no/README.md) | [pärsia (farsi)](../fa/README.md) | [Poola](../pl/README.md) | [Portugali (Brasiilia)](../br/README.md) | [Portugali (Portugal)](../pt/README.md) | [Pandžabi (Gurmukhi)](../pa/README.md) | [Rumeenia](../ro/README.md) | [Vene](../ru/README.md) | [Serbia (kirilitsa)](../sr/README.md) | [Slovaki](../sk/README.md) | [Sloveeni](../sl/README.md) | [Hispaania](../es/README.md) | [Svahili](../sw/README.md) | [Rootsi](../sv/README.md) | [Tagalog (filipiinide)](../tl/README.md) | [Tamili](../ta/README.md) | [Telugu](../te/README.md) | [Tai](../th/README.md) | [Türgi](../tr/README.md) | [Ukraina](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnami](../vi/README.md)
+[Araabia](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgaaria](../bg/README.md) | [Birma (Myanmar)](../my/README.md) | [Hiina (lihtsustatud)](../zh/README.md) | [Hiina (traditsiooniline, Hongkong)](../hk/README.md) | [Hiina (traditsiooniline, Macao)](../mo/README.md) | [Hiina (traditsiooniline, Taiwan)](../tw/README.md) | [Horvaadi](../hr/README.md) | [Tšehhi](../cs/README.md) | [Taani](../da/README.md) | [Hollandi](../nl/README.md) | [Eesti](./README.md) | [Soome](../fi/README.md) | [Prantsuse](../fr/README.md) | [Saksa](../de/README.md) | [Kreeka](../el/README.md) | [Heebrea](../he/README.md) | [Hindi](../hi/README.md) | [Ungari](../hu/README.md) | [Indoneesia](../id/README.md) | [Itaalia](../it/README.md) | [Jaapani](../ja/README.md) | [Kannada](../kn/README.md) | [Korea](../ko/README.md) | [Leedu](../lt/README.md) | [Malai](../ms/README.md) | [Malajalami](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigeeria pidžin](../pcm/README.md) | [Norra](../no/README.md) | [Persia (Farsi)](../fa/README.md) | [Poola](../pl/README.md) | [Portugali (Brasiilia)](../br/README.md) | [Portugali (Portugal)](../pt/README.md) | [Pandžabi (Gurmukhi)](../pa/README.md) | [Rumeenia](../ro/README.md) | [Vene](../ru/README.md) | [Serbia (kirilitsa)](../sr/README.md) | [Slovaki](../sk/README.md) | [Sloveeni](../sl/README.md) | [Hispaania](../es/README.md) | [Suaheli](../sw/README.md) | [Rootsi](../sv/README.md) | [Tagaloogi (filipiini)](../tl/README.md) | [Tamili](../ta/README.md) | [Telugu](../te/README.md) | [Tai](../th/README.md) | [Türgi](../tr/README.md) | [Ukraina](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnami](../vi/README.md)
+
+> **Eelistad kloonimist lokaalselt?**
+
+> See hoidla sisaldab 50+ keele tõlkeid, mis suurendavad oluliselt allalaadimismahu. Tõlgeteta kloonimiseks kasuta sparse checkouti:
+> ```bash
+> git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
+> cd edgeai-for-beginners
+> git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
+> ```
+> See annab sulle kõik vajaliku kursuse läbimiseks palju kiirema allalaadimiskiirusega.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Kui soovite täiendavaid tõlkeid, toetatavad keeled on loetletud [siin](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Kui soovid toetada täiendavaid tõlkekeeli, on need loetletud [siin](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Sissejuhatus
 
-Tere tulemast kursusele **EdgeAI algajatele** – teie põhjalik teekond muutvasse serva-tehisintellekti maailma. See kursus ühendab võimsad tehisintellekti võimalused praktilise ja reaalmaailmas juurutatava kasutusega servaseadmetel, andes teile võimaluse kasutada AI-d otse seal, kus andmeid luuakse ja otsuseid tuleb teha.
+Tere tulemast **EdgeAI algajatele** – sinu põhjalik teekond servatehnoloogiate tehisintellekti ümberkujundavasse maailma. See kursus ühendab võimsad tehisintellekti võimalused praktilise, reaalse maailma juurutamisega servaseadmetel, võimaldades sul kasutada AI potentsiaali otse seal, kus andmeid luuakse ja otsuseid tuleb teha.
 
-### Mida te oskate
+### Mida sa valdad
 
-See kursus viib teid algetappidest tootmiskõlblike rakendusteni, hõlmates:
-- **Väikesed keeltemudelid (SLM-id)**, optimeeritud servajuurutuseks
-- **Riistvarateadlik optimeerimine** erinevatel platvormidel
-- **Reaalajas inferents** privaatsust kaitsvate võimalustega
-- **Tootmise juurutamise strateegiad** ettevõtte rakendustele
+See kursus viib sind algteadmistest tootmisvalmis lahendusteni, hõlmates:
+- **Väikesed keelemudelid (SLM-id)**, mis on optimeeritud serval töötamiseks
+- **Riistvarateadlik optimiseerimine** erinevatel platvormidel
+- **Reaalajas järeldamine** privaatsust kaitsvate võimalustega
+- **Tootmisjuurutamise** strateegiad ettevõtetele
 
 ### Miks EdgeAI on oluline
 
-Edge AI esindab paradigmanihket, mis lahendab tänapäeva kriitilised väljakutsed:
-- **Privaatsus ja turvalisus**: Töötle tundlikke andmeid lokaalselt ilma pilve avalikustamiseta
-- **Reaalajas jõudlus**: Eemaldage võrgu latentsus ajakriitiliste rakenduste jaoks
-- **Kuluefektiivsus**: Vähendage ribalaiuse ja pilvandmetöötluse kulusid
-- **Vastupidav töö**: Säilitage funktsionaalsus võrguühenduse katkestuste ajal
-- **Õiguslik nõuetele vastavus**: Täitke andmete suveräänsuse nõuded
+Edge AI tähistab paradigmade muutust, mis lahendab olulisi kaasaegseid väljakutseid:
+- **Privaatsus ja turvalisus**: Töötle tundlikke andmeid kohapeal ilma pilve avaldamata
+- **Reaalajas jõudlus**: Vähenda võrgust põhjustatud latentsust ajakriitilistes rakendustes
+- **Kuluefektiivsus**: Vähenda ribalaiuse ja pilvearvutuse kulusid
+- **Vastupidav töökindlus**: Säilita funktsionaalsus võrgu katkemisel
+- **Regulatiivne vastavus**: Järgi andmete suveräänsuse nõudeid
 
 ### Edge AI
 
-Edge AI tähendab AI algoritmide ja keeltemudelite käitamist lokaalselt riistvaral, lähedal andmete tekkekohale, ilma et inferentsiks oleks vaja pilveressursse. See vähendab latentsust, parandab privaatsust ja võimaldab otsuste tegemist reaalajas.
+Edge AI tähendab tehisintellekti algoritmide ja keelemudelite lokaalset käivitamist riistvaral, kus andmeid toodetakse, ilma pilve ressursse järeldamiseks kasutamata. See vähendab viivitust, suurendab privaatsust ja võimaldab reaalajas otsuseid teha.
 
-### Põhimõtted:
-- **Seadmel põhinev inferents**: AI mudelid jooksevad servaseadmetel (telefonid, ruuterid, mikrojuhtseadmed, tööstuslikud arvutid)
-- **Ühenduseta töövõimekus**: Toimib ilma püsiva internetiühenduseta
-- **Madal latentsus**: Kohesed vastused, sobivad reaalajas süsteemidele
-- **Andmete suveräänsus**: Hoiab tundlikud andmed lokaalsena, parandades turvalisust ja vastavust
+### Peamised põhimõtted:
+- **Sise-seadmes järeldamine**: AI mudelid jooksevad servaseadmetel (telefonid, ruuterid, mikrokontrollerid, tööstuslikud arvutid)
+- **Võrguta funktsionaalsus**: Töötavad ilma püsiva internetiühenduseta
+- **Madal latentsus**: Vahetud vastused sobivad reaalajas süsteemidele
+- **Andmete suveräänsus**: Hoidke tundlikud andmed lokaalselt, suurendades turvalisust ja vastavust
 
-### Väikesed keeltemudelid (SLM-id)
+### Väikesed keelemudelid (SLMs)
 
-SLM-id nagu Phi-4, Mistral-7B ja Gemma on optimeeritud versioonid suurematest LLM-idest—treenitud või destilleeritud eesmärgiga:
-- **Vähenenud mälumahud**: Tõhus kasutus piiratud servaseadme mälus
-- **Madalam arvutusnõudlus**: Optimeeritud CPU ja serva GPU jõudluseks
+SLMid nagu Phi-4, Mistral-7B ja Gemma on optimeeritud suurte LLM-ide versioonid — treenitud või distilleeritud:
+- **Vähenenud mälukasutus**: Piiratud servaseadme mälu tõhus kasutus
+- **Madal arvutuskoormus**: Optimeeritud CPU ja serva GPU jõudluseks
 - **Kiirem käivitus**: Kiire initsialiseerimine reageerivate rakenduste jaoks
 
-Need avavad võimsad NLP-võimalused, jäädes samal ajal kokku sobima piirangutega, nagu:
-- **Sissebyggitud süsteemid**: IoT seadmed ja tööstuslikud kontrollerid
-- **Mobiilseadmed**: Nutitelefonid ja tahvelarvutid koos offline-võimalustega
+Nad avavad võimsad NLP võimalused, säilitades nõuded:
+- **Sisse ehitatud süsteemid**: IoT seadmed ja tööstuslikud kontrollerid
+- **Mobiilsed seadmed**: Nutitelefonid ja tahvelarvutid võimega offline kasutada
 - **IoT seadmed**: Andurid ja nutiseadmed piiratud ressurssidega
-- **Servaserverid**: Kohalikud töötlemisyksused piiratud GPU ressurssidega
-- **Töölauad**: Laua- ja sülearvuti juurutusstsenaariumid
+- **Servaserverid**: Kohalikud töötlemise üksused piiratud GPU ressurssidega
+- **Isiklikud arvutid**: Lauaarvuti ja sülearvuti juurutusstsenaariumid
 
 ## Kursuse moodulid ja navigeerimine
 
-| Module | Topic | Focus Area | Key Content | Level | Duration |
+| Moodul | Teema | Fookusala | Peamine sisu | Tase | Kestus |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Sissejuhatus EdgeAI-sse](./introduction.md) | Alused & kontekst | EdgeAI ülevaade • tööstuslikud rakendused • SLM sissejuhatus • õpieesmärgid | Algaja | 1-2 hrs |
-| [📚 01](../../Module01) | [EdgeAI põhialused](./Module01/README.md) | Pilve vs Edge AI võrdlus | EdgeAI põhialused • reaalse maailma juhtumiuuringud • teostusjuhend • Edge-i juurutamine | Algaja | 3-4 hrs |
-| [🧠 02](../../Module02) | [SLM mudeli alused](./Module02/README.md) | Mudeli perekonnad & arhitektuur | Phi perekond • Qwen perekond • Gemma perekond • BitNET • μModel • Phi-Silica | Algaja | 4-5 hrs |
-| [🚀 03](../../Module03) | [SLM juurutamise praktika](./Module03/README.md) | Kohalik & pilve juurutamine | Edasijõudnud õppimine • kohalik keskkond • pilve juurutamine | Vahepealne | 4-5 hrs |
-| [⚙️ 04](../../Module04) | [Mudeli optimeerimise tööriistakomplekt](./Module04/README.md) | Platvormideülene optimeerimine | Sissejuhatus • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Töövoo süntees | Vahepealne | 5-6 hrs |
-| [🔧 05](../../Module05) | [SLMOps tootmises](./Module05/README.md) | Tootmistoimingud | SLMOps sissejuhatus • mudeli distilleerimine • peenhäälestus • tootmise juurutamine | Edasijõudnud | 5-6 hrs |
-| [🤖 06](../../Module06) | [AI agendid ja funktsioonikõned](./Module06/README.md) | Agendi raamistikud & MCP | Agendi sissejuhatus • funktsioonikõned • mudeli konteksti protokoll | Edasijõudnud | 4-5 hrs |
-| [💻 07](../../Module07) | [Platvormi rakendamine](./Module07/README.md) | Platvormideülene näidised | AI tööriistakomplekt • Foundry Local • Windows arendus | Edasijõudnud | 3-4 hrs |
-| [🏭 08](../../Module08) | [Foundry Local tööriistakomplekt](./Module08/README.md) | Tootmiseks valmis näidised | Näidistarkendused (vt allpool) | Ekspert | 8-10 hrs |
+| [📖 00 ](./introduction.md) | [Sissejuhatus EdgeAI-sse](./introduction.md) | Alused ja kontekst | EdgeAI ülevaade • Tööstusvaldkonna rakendused • SLM sissejuhatus • Õpieesmärgid | Algaja | 1-2 tundi |
+| [📚 01](../../Module01) | [EdgeAI põhialused](./Module01/README.md) | Pilve vs serva AI võrdlus | EdgeAI põhialused • Reaalsed juhtumiuuringud • Rakendamise juhend • Servale juurutamine | Algaja | 3-4 tundi |
+| [🧠 02](../../Module02) | [SLM mudeli alused](./Module02/README.md) | Mudeliperekonnad & arhitektuur | Phi perekond • Qwen perekond • Gemma perekond • BitNET • μMudel • Phi-Silica | Algaja | 4-5 tundi |
+| [🚀 03](../../Module03) | [SLM juurutamise praktika](./Module03/README.md) | Kohalik ja pilvepõhine juurutus | Täiustatud õppimine • Kohalik keskkond • Pilve juurutamine | Kesktase | 4-5 tundi |
+| [⚙️ 04](../../Module04) | [Mudelise optimeerimise tööriistad](./Module04/README.md) | Platvormideülene optimeerimine | Sissejuhatus • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Töövoo süntees | Kesktase | 5-6 tundi |
+| [🔧 05](../../Module05) | [SLMOps tootmine](./Module05/README.md) | Tootmise operatsioonid | SLMOps ülevaade • Mudeli distilleerimine • Peenhäälestus • Tootmisjuurutus | Edasijõudnu | 5-6 tundi |
+| [🤖 06](../../Module06) | [AI agendid ja funktsioonikõned](./Module06/README.md) | Agendi raamistikud ja MCP | Agendi ülevaade • Funktsioonikõned • Mudeli konteksti protokoll | Edasijõudnu | 4-5 tundi |
+| [💻 07](../../Module07) | [Platvormi rakendamine](./Module07/README.md) | Platvormideüleste näidete esitamine | AI tööriistakast • Foundry Local • Windowsi arendus | Edasijõudnu | 3-4 tundi |
+| [🏭 08](../../Module08) | [Foundry Local tööriistakomplekt](./Module08/README.md) | Tootmisvalmis näited | Näidiserakendused (vt allpool üksikasju) | Ekspert | 8-10 tundi |
 
-### 🏭 **Moodul 08: Näidisrakendused**
+### 🏭 **Moodul 08: Näidiserakendused**
 
-- [01: REST Chat kiire algus](./Module08/samples/01/README.md)
+- [01: REST Chat kiire stardijuhend](./Module08/samples/01/README.md)
 - [02: OpenAI SDK integratsioon](./Module08/samples/02/README.md)
-- [03: Mudeli avastamine & võrdlus](./Module08/samples/03/README.md)
+- [03: Mudeli avastamine ja võrdlus](./Module08/samples/03/README.md)
 - [04: Chainlit RAG rakendus](./Module08/samples/04/README.md)
-- [05: Mitmeagentide orkestreerimine](./Module08/samples/05/README.md)
-- [06: Mudelite kui tööriistade ruuter](./Module08/samples/06/README.md)
+- [05: Mitme agendi orkestreerimine](./Module08/samples/05/README.md)
+- [06: Mudelid kui tööriistad ruuter](./Module08/samples/06/README.md)
 - [07: Otsene API klient](./Module08/samples/07/README.md)
-- [08: Windows 11 vestlusrakendus](./Module08/samples/08/README.md)
-- [09: Arenenud mitmeagendi süsteem](./Module08/samples/09/README.md)
+- [08: Windows 11 Chat rakendus](./Module08/samples/08/README.md)
+- [09: Täiustatud mitme agendi süsteem](./Module08/samples/09/README.md)
 - [10: Foundry tööriistade raamistik](./Module08/samples/10/README.md)
 
-### 🎓 **Töötuba: praktiline õpeteekond**
+### 🎓 **Töötoa käeline õppeteekond**
 
-Põhjalikud praktilised töötoa materjalid tootmiseks valmis juurutustega:
+Kõikehõlmavad praktilised töötoa materjalid tootmisvalmis rakendustega:
 
-- **[Töötuba juhend](./Workshop/Readme.md)** - Täielikud õpieesmärgid, tulemused ja ressursside navigeerimine
-- **Python näited** (6 seanssi) - Uuendatud parimate tavade, veakäsitluse ja põhjaliku dokumentatsiooniga
-- **Jupyter märkmikud** (8 interaktiivset) - Samm-sammult juhendid koos benchmarkide ja jõudlusmonitooringuga
-- **Seansijuhendid** - Üksikasjalikud markdown-juhendid iga töötoa seansi kohta
-- **Valideerimise tööriistad** - Skriptid koodi kvaliteedi kontrollimiseks ja põhitestide käivitamiseks
+- **[Töötoa juhend](./Workshop/Readme.md)** - Täielikud õpieesmärgid, tulemused ja ressursside navigeerimine
+- **Python näited** (6 sessiooni) - Uuendatud parimate tavade, veakäsitluse ja põhjaliku dokumentatsiooniga
+- **Jupyteri märkmikud** (8 interaktiivset) - Samm-sammult juhendid, koos võrdlustulemuste ja jõudluse jälgimisega
+- **Sessioonijuhendid** - Põhjalikud markdown juhendid iga töötoa sessiooni jaoks
+- **Kinnitamistööriistad** - Skriptid, mis kontrollivad koodi kvaliteeti ja käivitavad suitsutestid
 
-**Mida te ehitate:**
-- Kohalikud AI-vestlusrakendused voogedastuse toetusega
-- RAG torustikud kvaliteedi hindamisega (RAGAS)
-- Mitmemudeli võrdlus- ja benchmarkimistööriistad
-- Mitmeagendi orkestreerimissüsteemid
-- Intelligentsed mudelite marsruutimissüsteemid ülesandepõhise valikuga
+**Mida sa ehitad:**
+- Kohalikud AI vestlusrakendused voogedastustugiga
+- RAG torujuhtmed kvaliteedi hindamisega (RAGAS)
+- Mitme mudeli võrdlus- ja võrdlusrakendused
+- Mitme agendi orkestreerimissüsteemid
+- Intelligentsed mudelirouterid ülesandel põhineva valikuga
 
-### 📊 **Õppeteekonna kokkuvõte**
-- **Kogu kestus**: 36-45 tundi
+### 🎙️ **Agentlik töötoa praktiline osa - AI Podcast Stuudio**
+
+Ehita AI jõul töötav podcast-tootmistorujuhe nullist! See kaasahaarav töötoa osa õpetab sind looma tervikliku mitme agendi süsteemi, mis muudab ideed professionaalseteks podcast episoodideks.
+**[🎬 Alusta AI Podcast Stuudio töötuba](./WorkshopForAgentic/README.md)**
+
+**Sinu missioon**: Käivita "Future Bytes" — tehnoloogiapodcast, mida juhivad täielikult sinu ise loodud AI agendid. Pole pilve sõltuvusi, pole API kulusid — kõik töötab kohapeal sinu arvutis.
+
+**Mis teeb selle ainulaadseks:**
+- **🤖 Tõeline mitme agendi orkestreerimine** - Ehita spetsialiseerunud AI agente, kes uurivad, kirjutavad ja toodavad heli
+- **🎯 Täielik tootmisliin** - Alates teema valimisest kuni lõpliku podcastaudio väljundini
+- **💻 100% Kohalik paigaldus** - Kasutab Ollamat ja kohalikke mudeleid (Qwen-3-8B) täieliku privaatsuse ja kontrolli jaoks
+- **🎤 Tekst kõneks integratsioon** - Muuda skriptid loomulikult kõlavate mitme kõnelejaga vestlusteks
+- **✋ Inimene protsessis** - Kinnituse väravad tagavad kvaliteedi ning säilitavad automatiseerimise
+
+**Kolme peatükiga õpiteekond:**
+
+| Peatükk | Fookus | Olulised oskused | Kestus |
+|-----|-------|------------|----------|
+| **[1. peatükk: Tutvu oma AI assistentidega](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Ehita oma esimene AI agent | Tööriistade integratsioon • Veebipõhine otsing • Probleemide lahendamine • Agentlik mõtlemine | 2-3 tundi |
+| **[2. peatükk: Koosta oma tootmismeeskond](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Orkestreeri mitu agenti | Meeskonna koordineerimine • Kinnitusprotsessid • DevUI kasutajaliides • Inimese järelvalve | 3-4 tundi |
+| **[3. peatükk: Too oma podcast ellu](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Genereeri podcasti heli | Tekst kõneks • Mitme kõneleja süntees • Pikkvormiline heli • Täielik automatiseerimine | 2-3 tundi |
+
+**Kasutatavad tehnoloogiad:**
+- **Microsoft Agent Framework** - Mitme agendi orkestreerimine ja koordineerimine
+- **Ollama** - Kohalik AI mudelite käituskeskkond (pilve pole vaja)
+- **Qwen-3-8B** - Avatud lähtekoodiga keelemudel, mis on optimeeritud agentlikeks ülesanneteks
+- **Tekst kõneks APId** - Loomuliku hääle süntees podcastide loomiseks
+
+**Riistvaraline tugi:**
+- ✅ **CPU režiim** - Töötab igal kaasaegsel arvutil (soovitatav 8GB+ RAM)
+- 🚀 **GPU kiirendus** - Tunduvalt kiirem järeldamise töö NVIDIA/AMD graafikakaartidega
+- ⚡ **NPU tugi** - Järgmise põlvkonna närvivõrgu protsessorite kiirendus
+
+**Sobib ideaalselt:**
+- Arendajatele, kes õpivad mitme agentiga AI süsteeme
+- Kõigile, kes on huvitatud AI automatiseerimisest ja töövoogudest
+- Sisuloojatele, kes uurivad AI abil abistatavat tootmist
+- Õpilastele, kes õpivad praktilisi AI orkestreerimise mustreid
+
+**Alusta ehitamist**: [🎙️ AI Podcast Stuudio töötuba →](./WorkshopForAgentic/README.md)
+
+### 📊 **Õpiteekonna kokkuvõte**
+- **Kogukestus**: 36-45 tundi
 - **Algajate tee**: Moodulid 01-02 (7-9 tundi)  
-- **Vahepealne tee**: Moodulid 03-04 (9-11 tundi)
-- **Edasijõudnud tee**: Moodulid 05-07 (12-15 tundi)
-- **Eksperttee**: Moodul 08 (8-10 tundi)
+- **Kesktaseme tee**: Moodulid 03-04 (9-11 tundi)
+- **Edasijõudnute tee**: Moodulid 05-07 (12-15 tundi)
+- **Eksperti tee**: Moodul 08 (8-10 tundi)
 
-## Mida te ehitate
+## Mida Sa Ehitatud
 
 ### 🎯 Põhioskused
-- **Edge AI arhitektuur**: kujundage lokaalne-esimene AI süsteem pilve integreerimisega
-- **Mudeli optimeerimine**: Kvantiseeri ja suru mudelid serva juurutamiseks (85% kiiruse tõus, 75% mahu vähendamine)
-- **Mitmeplatvormiline juurutus**: Windows, mobiil, manustatud ja pilve- ja serva hübriidsüsteemid
-- **Tootmisoperatsioonid**: serva-AI jälgimine, skaleerimine ja hooldamine tootmises
+- **Serva AI arhitektuur**: Kujunda kohalikud AI süsteemid, millel on pilve integratsioon
+- **Mudelite optimeerimine**: Kvantimine ja mudelite tihendamine serva juurutuseks (85% kiirendus, 75% mahu vähendus)
+- **Mitme platvormi juurutus**: Windows, mobiilne, manustatud ja pilve-serv hübriidsüsteemid
+- **Tootmise tegevused**: Serva AI jälgimine, skaleerimine ja hooldus tootmises
 
-### 🏗️ Practical Projects
-- **Foundry kohalikud vestlusrakendused**: Windows 11 natiivrakendus mudelite vahetamisega
-- **Mitmeagendilised süsteemid**: koordinaator koos spetsialiseerunud agentidega keerukate töövoogude jaoks  
-- **RAG-rakendused**: kohalik dokumentide töötlemine vektorotsinguga
-- **Mudeli ruuterid**: intelligentsed mudelite valikud ülesandeanalüüsi põhjal
-- **API raamistikke**: tootmiskõlblikud kliendid koos voogesituse ja tervise jälgimisega
+### 🏗️ Praktilised projektid
+- **Foundry kohaliku vestluse rakendused**: Windows 11 natiivrakendus koos mudelite vahetamisega
+- **Mitme agendi süsteemid**: Koordinaator ja spetsialistist agentide keerukate töövoogude jaoks  
+- **RAG rakendused**: Kohalik dokumenditöötlus vektorotsinguga
+- **Mudelite marsruuterid**: Tark mudelivalik ülesande analüüsi põhjal
+- **API raamistikud**: Tootmisvalmis kliendid voogedastuse ja tervise jälgimisega
 - **Platvormideülene tööriistad**: LangChain/Semantic Kernel integratsioonimustrid
 
-### 🏢 Industry Applications
-**Tootmine** • **Tervishoid** • **Autonoomsed sõidukid** • **Nutikad linnad** • **Mobiilirakendused**
+### 🏢 Töönduse rakendused
+**Tootmine** • **Tervishoid** • **Iseseisvad sõidukid** • **Targad linnad** • **Mobiilirakendused**
 
-## Quick Start
+## Kiire algus
 
-**Soovitatav õppekava** (kokku 20-30 tundi):
+**Soovitatav õpitee** (kokku 20-30 tundi):
 
-0. **📖 Sissejuhatus** ([Introduction.md](./introduction.md)): EdgeAI alused + tööstuse kontekst + õppe raamistik
-1. **📚 Põhitõed** (Moodulid 01-02): EdgeAI kontseptsioonid + SLM mudeliperekonnad
-2. **⚙️ Optimeerimine** (Moodulid 03-04): Juurutamine + kvantiseerimise raamistikud  
-3. **🚀 Tootmine** (Moodulid 05-06): SLMOps + AI-agendid + funktsioonikõned
-4. **💻 Rakendamine** (Moodulid 07-08): Platvormi näited + Foundry Local tööriistakomplekt
+0. **📖 Sissejuhatus** ([Introduction.md](./introduction.md)): EdgeAI alus + tööstuse kontekst + õpiraamistik
+1. **📚 Alused** (Moodulid 01-02): EdgeAI kontseptsioonid + SLM mudeliperekonnad
+2. **⚙️ Optimeerimine** (Moodulid 03-04): Juurutus + kvantimise raamistikud  
+3. **🚀 Tootmine** (Moodulid 05-06): SLMOps + AI agendid + funktsioonikutsed
+4. **💻 Rakendamine** (Moodulid 07-08): Platvorminäited + Foundry Local tööriistakomplekt
 
-Each module includes theory, hands-on exercises, and production-ready code samples.
+Igas moodulis on teooria, praktilised harjutused ja tootmisvalmis koodinäited.
 
-## Career Impact
+## Karjääri mõju
 
-**Tehnilised rollid**: EdgeAI lahenduste arhitekt • ML-insener (serv) • IoT AI arendaja • Mobiili AI arendaja
+**Tehnilised rollid**: EdgeAI lahenduste arhitekt • Masinõppe insener (Edge) • IoT AI arendaja • Mobiili AI arendaja
 
-**Tööstusharud**: Tööstus 4.0 • Tervishoiutehnoloogia • Autonoomsed süsteemid • FinTech • Tarbeelektroonika
+**Tööstusharud**: Tootmine 4.0 • Tervishoiutehnoloogia • Iseseisvad süsteemid • FinTech • Tarbijaelektroonika
 
-**Portfoolio projektid**: Mitmeagendilised süsteemid • Tootmis-RAG-rakendused • Platvormideülene juurutus • Jõudluse optimeerimine
+**Portfoolio projektid**: Mitme agendi süsteemid • Tootmis-RAG rakendused • Platvormideülene juurutus • Tulemuste optimeerimine
 
-## Repository Structure
+## Koodihoidla struktuur
 
 ```
 edgeai-for-beginners/
@@ -190,24 +241,24 @@ edgeai-for-beginners/
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
 
-## Course Highlights
+## Kursuse esiletõstud
 
 ✅ **Progressiivne õppimine**: Teooria → Praktika → Tootmisse juurutamine  
-✅ **Tõelised juhtumiuuringud**: Microsoft, Japan Airlines, ettevõtete juurutused  
+✅ **Reaalsed juhtumiuuringud**: Microsoft, Japan Airlines, ettevõtete rakendused  
 ✅ **Praktilised näited**: 50+ näidet, 10 põhjalikku Foundry Local demot  
-✅ **Tulemuslikkuse fookus**: 85% kiiruse paranemine, 75% mahu vähenemine  
-✅ **Mitmeplatvormiline**: Windows, mobiil, manustatud, pilve- ja serva hübriid  
-✅ **Tootmiskõlblik**: Jälgimine, skaleerimine, turvalisus, vastavusraamistikud
+✅ **Tulemuslikkuse fookus**: 85% kiirendused, 75% mahu vähendused  
+✅ **Mitme platvormi tugi**: Windows, mobiil, manustatud, pilve-serv hübriid  
+✅ **Tootmisvalmidus**: Jälgimine, skaleerimine, turvalisus, vastavus
 
-📖 **[Õppesisu saadaval](STUDY_GUIDE.md)**: Strukturiseeritud 20-tunnine õpeteek koos aja jaotuse juhiste ja enesehindamise tööriistadega.
+📖 **[Õpijuhend saadaval](STUDY_GUIDE.md)**: Struktureeritud 20-tunnine õpitee koos ajaplaneerimise ja enesehindamise tööriistadega.
 
 ---
 
-**EdgeAI esindab AI juurutamise tulevikku**: lokaalne-eelistuslik, privaatsust säilitav ja tõhus. Omandage need oskused, et ehitada järgmise põlvkonna nutikaid rakendusi.
+**EdgeAI on AI juurutamise tulevik**: kohalik prioriteet, privaatsust säilitav ja tõhus. Oma järgmise põlvkonna intelligentsete rakenduste loomiseks valda neid oskusi.
 
-## Other Courses
+## Teised kursused
 
-Our team produces other courses! Check out:
+Meie meeskond valmistab veel kursuseid! Vaata:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -216,52 +267,52 @@ Our team produces other courses! Check out:
 
 ---
 
-### Azure / Edge / MCP / Agents
+### Azure / Edge / MCP / Agendid
 [![AZD algajatele](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Edge AI algajatele](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![MCP algajatele](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI-agendid algajatele](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI agentide algajatele](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### Generative AI Series
+### Generatiivse AI seeria
 [![Generatiivne AI algajatele](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+[![Generatiivne AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+[![Generatiivne AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+[![Generatiivne AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### Core Learning
+### Põhiõpe
 [![ML algajatele](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 [![Andmeteadus algajatele](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI algajatele](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-[![Küberjulgeolek algajatele](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![Küberkaitse algajatele](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
 [![Veebiarendus algajatele](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
 [![IoT algajatele](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 [![XR arendus algajatele](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### Copilot Series
+### Copiloti seeria
 [![Copilot AI paarisprogrammeerimiseks](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-[![Copilot C#/.NET jaoks](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
-## Getting Help
+## Abi saamine
 
-If you get stuck or have any questions about building AI apps, join:
+Kui jääd hätta või sul on küsimusi AI rakenduste loomise kohta, liitu:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-If you have product feedback or errors while building visit:
+Kui sul on toote kohta tagasisidet või ehitamise käigus vigu, külasta:
 
-[![Microsoft Foundry arendajate foorum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-Vastutusest loobumine:
-See dokument on tõlgitud AI-tõlketeenuse Co-op Translator abil (https://github.com/Azure/co-op-translator). Kuigi püüame tagada täpsust, võivad automaatsed tõlked sisaldada vigu või ebatäpsusi. Originaaldokument originaalkeeles tuleks pidada autoriteetseks allikaks. Olulise info puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta käesoleva tõlke kasutamisest tulenevate arusaamatuste ega väärinterpreteerimiste eest.
+**Vastutusest loobumine**:
+See dokument on tõlgitud kasutades tehisintellektil põhinevat tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi püüame tagada täpsust, olge teadlikud, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleb pidada autoriteetseks allikaks. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tekkida võivate arusaamatuste või väärarusaamade eest.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

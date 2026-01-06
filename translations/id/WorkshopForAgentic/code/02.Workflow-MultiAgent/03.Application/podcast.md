@@ -1,0 +1,29 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
+  "translation_date": "2026-01-05T13:48:12+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
+  "language_code": "id"
+}
+-->
+Speaker 1: Selamat datang di podcast kali ini! Saya pembawa acara Lucy, hari ini kami berkesempatan mengundang ahli AI Ken, untuk berbicara tentang Ollama yang tengah banyak diperbincangkan. Ken, bisakah Anda jelaskan secara singkat apa itu Ollama?  
+Speaker 2: Tentu! Ollama adalah sebuah alat yang memungkinkan pengguna menjalankan dan mengelola model bahasa besar (LLM) di mesin lokal mereka. Ini tidak memerlukan layanan cloud, menekankan privasi, kontrol, dan kustomisasi. Bagi pengembang dan perusahaan, ini memberikan alternatif yang fleksibel dan ramah privasi dibandingkan layanan cloud seperti ChatGPT.  
+Speaker 1: Kedengarannya sangat menarik. Apa keunggulan utama Ollama?  
+Speaker 2: Ada tiga keunggulan utama. Pertama adalah privasi dan keamanan. Data pengguna selalu tetap di perangkat lokal, menghindari risiko kebocoran lewat layanan cloud pihak ketiga, ini sangat penting untuk industri sensitif data seperti medis dan keuangan. Kedua adalah akses offline, dapat digunakan walau tanpa jaringan, cocok untuk daerah dengan koneksi internet tidak stabil. Terakhir adalah kustomisasi, pengguna bisa mengatur parameter model lewat sistem Modelfile, bahkan melakukan fine-tuning model untuk tugas atau kebutuhan industri tertentu.  
+Speaker 1: Fitur-fitur ini memang sangat berguna. Apa saja skenario aplikasi nyata Ollama?  
+Speaker 2: Misalnya perusahaan dapat mengembangkan chatbot lokal yang mengurangi latensi dan menyesuaikan dengan terminologi industri spesifik; lembaga riset bisa melakukan eksperimen data di lingkungan dengan privasi tinggi; industri hukum dan medis juga bisa membangun alat AI seperti analisis kontrak atau pemeriksaan kepatuhan tanpa membocorkan informasi sensitif. Selain itu, Ollama dapat terintegrasi mulus ke sistem yang sudah ada seperti CMS atau CRM tanpa perlu membangun ulang infrastruktur.  
+Speaker 1: Dibandingkan dengan ChatGPT, apa keunikan Ollama?  
+Speaker 2: ChatGPT unggul pada skalabilitas layanan cloud dan data pelatihan model yang global, tapi Ollama lebih menekankan privasi dan kontrol lokal. Jika proyek Anda butuh perlindungan data ketat atau harus berjalan offline, Ollama pilihan yang lebih baik; sedangkan jika membutuhkan deployment skala besar dan dukungan bahasa global, ChatGPT mungkin lebih tepat.  
+Speaker 1: Saya mengerti. Apakah Ollama sulit digunakan bagi pengguna biasa?  
+Speaker 2: Sebenarnya tidak terlalu sulit. Proses instalasi dan konfigurasi Ollama mirip Docker, cocok untuk pengguna yang punya latar belakang teknis tertentu. Selain itu, tersedia dokumentasi lengkap dan komunitas yang mendukung, sehingga pemula pun dapat belajar secara bertahap. Namun, bagi yang benar-benar awam tentang model AI mungkin perlu waktu belajar.  
+Speaker 1: Terima kasih banyak atas sharingnya! Akhir kata, ada saran untuk pendengar?  
+Speaker 2: Jika proyek Anda melibatkan data sensitif atau butuh fungsi offline, cobalah Ollama. Mulailah dari tugas sederhana seperti generasi teks lokal untuk mengeksplorasi potensi kustomisasinya secara bertahap. Ingat, privasi dan fleksibilitas adalah nilai inti Ollama, tapi tetap pilih alat sesuai kebutuhan nyata Anda.  
+Speaker 1: Terima kasih Ken atas penjelasan yang luar biasa! Pembahasan hari ini membuat kita lebih memahami potensi Ollama. Jika Anda tertarik dengan alat AI, jangan lupa follow channel kami, di episode berikutnya kita akan membahas cara menggunakan AI untuk mengoptimalkan efisiensi kerja sehari-hari. Saya Lucy, sampai jumpa!
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Penafian**:
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul akibat penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

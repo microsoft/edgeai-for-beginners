@@ -1,0 +1,29 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
+  "translation_date": "2026-01-05T13:55:59+00:00",
+  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
+  "language_code": "lt"
+}
+-->
+Speaker 1: Sveiki atvykę į šio epizodo tinklalaidę! Aš esu vedėja Lucy, o šiandien mums garbė pasikviesti AI srities ekspertą Ken, su kuriuo pasikalbėsime apie pastaruoju metu daug dėmesio sulaukusį Ollama. Ken, ar galėtum trumpai pristatyti, kas yra Ollama?  
+Speaker 2: Žinoma! Ollama yra įrankis, leidžiantis vartotojams paleisti ir valdyti didelius kalbos modelius (LLM) vietiniame įrenginyje. Jam nereikia priklausyti nuo debesijos paslaugų, jis pabrėžia privatumą, kontrolę ir pritaikomumą. Kūrėjams ir įmonėms tai siūlo lanksčią ir privatumą gerbiančią alternatyvą, pavyzdžiui, debesijos paslaugoms kaip ChatGPT.  
+Speaker 1: Skamba patraukliai. Kokios yra pagrindinės Ollama privalumai?  
+Speaker 2: Pagrindiniai privalumai yra trys. Pirmiausia – privatumas ir saugumas. Vartotojo duomenys visada lieka vietiniame įrenginyje, taip išvengiant jų nutekėjimo per trečiųjų šalių debesijos paslaugas, kas ypač svarbu sveikatos, finansų ir kitose jautrių duomenų srityse. Antra – neprisijungus prie interneto (offline) prieiga, todėl galima naudotis net ir vietovėse su nestabiliu tinklu. Ir galiausiai – pritaikomumas, vartotojai gali reguliuoti modelio parametrus per Modelfile sistemą, netgi smulkiai derinti modelį, kad jis atitiktų specifines užduotis ar pramonės poreikius.  
+Speaker 1: Šios funkcijos tikrai labai naudingos. Kokios yra realios Ollama taikymo sritys?  
+Speaker 2: Pavyzdžiui, įmonės gali kurti vietinius pokalbių robotus, sumažinti delsą ir pritaikyti specifinei srities terminijai; mokslinės institucijos gali eksperimentuoti su duomenimis konfidencialioje aplinkoje; teisės ir medicinos sektoriai gali kurti AI įrankius, tokius kaip sutarties analizė ar atitikties tikrinimas, nesidalinant jautria informacija. Be to, Ollama gali sklandžiai integruotis į esamas sistemas, tokias kaip CMS ar CRM, nereikalaujant pertvarkyti infrastruktūros.  
+Speaker 1: Kuo Ollama skiriasi nuo ChatGPT?  
+Speaker 2: ChatGPT privalumas yra debesijos paslaugų mastelis ir pasaulinis modelio mokymo duomenų rinkinys, o Ollama labiau orientuotas į privatumą ir vietinę kontrolę. Jei projektui reikia griežtos duomenų apsaugos arba neprisijungusių (offline) sprendimų, Ollama yra geresnis pasirinkimas; o jei reikia didelio masto diegimo ir pasaulinės kalbų palaikymo, ChatGPT gali būti tinkamesnis.  
+Speaker 1: Supratau. O paprastam vartotojui ar sunku pradėti naudotis Ollama?  
+Speaker 2: Iš tiesų, naudotis nėra sudėtinga. Ollama diegimas ir konfigūracija panaši į Docker, todėl tinka vartotojams su tam tikromis techninėmis žiniomis. Be to, yra išsamūs dokumentai ir bendruomenės palaikymas, todėl net pradedantieji gali palaipsniui įsisavinti. Tačiau visiškai nesusiduriantiems su AI modeliais gali prireikti šiek tiek laiko mokytis.  
+Speaker 1: Labai ačiū už Jūsų pasidalinimą! Ir galiausiai, ar turite kokių patarimų klausytojams?  
+Speaker 2: Jei jūsų projektas apima jautrius duomenis arba reikia offline funkcionalumo, verta išbandyti Ollama. Rekomenduoju pradėti nuo paprastų užduočių, pavyzdžiui, vietinio teksto generavimo, ir palaipsniui tyrinėti jo pritaikomumo galimybes. Atminkite, kad privatumas ir lankstumas yra pagrindinės Ollama vertybės, tačiau įrankį rinkitės pagal savo realius poreikius.  
+Speaker 1: Ačiū Ken už puikų paaiškinimą! Šiandienos pasidalijimas padėjo mums geriau suprasti Ollama galimybes. Jei domitės AI įrankiais, nepamirškite sekti mūsų kanalo – kitame epizode nagrinėsime, kaip AI padeda optimizuoti kasdienį darbą. Aš esu Lucy, iki pasimatymo kitą kartą!
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:  
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas gimtąja kalba turėtų būti laikomas pagrindiniu ir autoritetingu šaltiniu. Svarbiai informacijai rekomenduojame kreiptis į profesionalius vertėjus. Mes neatsakome už bet kokius nesusipratimus ar neteisingus supratimus, kilusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
