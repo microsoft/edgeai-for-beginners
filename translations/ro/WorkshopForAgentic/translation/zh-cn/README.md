@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ Atelier AI Podcast Studio
 
-![logo](../../../../../translated_images/ro/logo.8711e39dc8257d7b.png)
+![logo](../../../../../translated_images/ro/logo.8711e39dc8257d7b.webp)
 
 ## Sarcina ta
 

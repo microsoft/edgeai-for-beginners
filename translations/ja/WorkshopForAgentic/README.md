@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Chinese Version)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/ja/logo.8711e39dc8257d7b.png)
+![logo](../../../translated_images/ja/logo.8711e39dc8257d7b.webp)
 
 ## あなたのミッション
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## あなたの旅：三幕構成
 
-![arch](../../../translated_images/ja/arch.5965fe504e4a3a93.png)
+![arch](../../../translated_images/ja/arch.5965fe504e4a3a93.webp)
 
 良い物語のように、三つの幕があります。各幕でAIポッドキャストスタジオを少しずつ構築します：
 

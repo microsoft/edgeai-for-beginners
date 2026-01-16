@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Κινεζική Έκδοση)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/el/logo.8711e39dc8257d7b.png)
+![logo](../../../translated_images/el/logo.8711e39dc8257d7b.webp)
 
 ## Η Αποστολή Σας
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Το Ταξίδι Σας: Τρεις Πράξεις
 
-![arch](../../../translated_images/el/arch.5965fe504e4a3a93.png)
+![arch](../../../translated_images/el/arch.5965fe504e4a3a93.webp)
 
 Όπως κάθε καλή ιστορία, έχουμε τρεις πράξεις. Καθεμία χτίζει το AI podcast studio σας κομμάτι-κομμάτι:
 

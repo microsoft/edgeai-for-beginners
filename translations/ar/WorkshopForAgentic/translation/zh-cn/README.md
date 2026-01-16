@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ ورشة عمل استوديو بودكاست الذكاء الاصطناعي
 
-![logo](../../../../../translated_images/ar/logo.8711e39dc8257d7b.png)
+![logo](../../../../../translated_images/ar/logo.8711e39dc8257d7b.webp)
 
 ## مهمتك
 

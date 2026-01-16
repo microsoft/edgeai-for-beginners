@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Pengenalan kepada Edge AI untuk Pemula
 
-![Pengenalan Edge AI](../../translated_images/ms/cover.eb18d1b9605d754b.png)
+![Pengenalan Edge AI](../../translated_images/ms/cover.eb18d1b9605d754b.webp)
 
 Selamat datang ke perjalanan anda dalam **Kecerdasan Buatan Edge** – pendekatan revolusioner yang membawa kuasa AI terus ke tempat data dihasilkan dan keputusan perlu dibuat. Pengenalan ini akan membina asas untuk memahami mengapa Edge AI mewakili masa depan pengkomputeran pintar dan bagaimana anda boleh menguasai pelaksanaannya.
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Chinesische Version)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/de/logo.8711e39dc8257d7b.png)
+![logo](../../../translated_images/de/logo.8711e39dc8257d7b.webp)
 
 ## Deine Mission
 
@@ -30,7 +30,7 @@ Am Ende dieses Workshops weißt du, wie du:
 
 ## Deine Reise: Drei Akte
 
-![arch](../../../translated_images/de/arch.5965fe504e4a3a93.png)
+![arch](../../../translated_images/de/arch.5965fe504e4a3a93.webp)
 
 Wie jede gute Geschichte besteht sie aus drei Akten. Jeder baut dein KI-Podcast-Studio Stück für Stück auf:
 

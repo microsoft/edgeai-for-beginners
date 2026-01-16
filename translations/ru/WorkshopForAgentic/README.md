@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Chinese Version)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/ru/logo.8711e39dc8257d7b.png)
+![logo](../../../translated_images/ru/logo.8711e39dc8257d7b.webp)
 
 ## Ваша миссия
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Ваше путешествие: Три акта
 
-![arch](../../../translated_images/ru/arch.5965fe504e4a3a93.png)
+![arch](../../../translated_images/ru/arch.5965fe504e4a3a93.webp)
 
 Как и в любой хорошей истории, у нас три акта. Каждый шаг добавляет по частичке вашей AI podcast studio:
 

@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI পডকাস্ট স্টুডিও কর্মশালা
 
-![logo](../../../../../translated_images/bn/logo.8711e39dc8257d7b.png)
+![logo](../../../../../translated_images/bn/logo.8711e39dc8257d7b.webp)
 
 ## আপনার কাজ
 

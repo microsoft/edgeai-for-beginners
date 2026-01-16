@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Toleo la Kichina)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/sw/logo.8711e39dc8257d7b.png)
+![logo](../../../translated_images/sw/logo.8711e39dc8257d7b.webp)
 
 ## Dhamira Yako
 
@@ -30,7 +30,7 @@ Mwisho wa warsha hii, utaweza:
 
 ## Safari Yako: Matamasha Matatu
 
-![arch](../../../translated_images/sw/arch.5965fe504e4a3a93.png)
+![arch](../../../translated_images/sw/arch.5965fe504e4a3a93.webp)
 
 Kama hadithi nzuri yoyote, tuna matamasha matatu. Kila moja hujenga studio yako ya podcast ya AI hatua kwa hatua:
 

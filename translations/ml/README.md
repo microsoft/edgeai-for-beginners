@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # ബിഗിന്നേഴ്സിന് എഡ്ജ്‌എഐ 
 
 
-![കോഴ്‌സ് കവർ ചിത്രം](../../translated_images/ml/cover.eb18d1b9605d754b.png)
+![കോഴ്‌സ് കവർ ചിത്രം](../../translated_images/ml/cover.eb18d1b9605d754b.webp)
 
 [![GitHub സംഭാവകർ](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub പ്രശ്നങ്ങൾ](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)

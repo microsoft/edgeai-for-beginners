@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI 播客工作室工作坊
 
-![logo](../../../../../translated_images/tw/logo.8711e39dc8257d7b.png)
+![logo](../../../../../translated_images/tw/logo.8711e39dc8257d7b.webp)
 
 ## 你的任務
 

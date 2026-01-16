@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ ਏਆਈ ਪੌਡਕਾਸਟ ਸਟੂਡੀਓ ਵਰਕਸ਼ਾਪ
 
-![logo](../../../../../translated_images/pa/logo.8711e39dc8257d7b.png)
+![logo](../../../../../translated_images/pa/logo.8711e39dc8257d7b.webp)
 
 ## ਤੁਹਾਡਾ ਕੰਮ
 

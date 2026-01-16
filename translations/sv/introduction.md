@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Introduktion till Edge AI för Nybörjare
 
-![Edge AI Introduktion](../../translated_images/sv/cover.eb18d1b9605d754b.png)
+![Edge AI Introduktion](../../translated_images/sv/cover.eb18d1b9605d754b.webp)
 
 Välkommen till din resa inom **Edge Artificial Intelligence** – ett revolutionerande tillvägagångssätt som tar AI:s kraft direkt till där data skapas och beslut behöver fattas. Denna introduktion kommer att lägga grunden för att förstå varför Edge AI representerar framtiden för intelligent databehandling och hur du kan bemästra dess implementering.
 

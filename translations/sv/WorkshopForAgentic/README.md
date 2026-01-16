@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Chinese Version)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/sv/logo.8711e39dc8257d7b.png)
+![logo](../../../translated_images/sv/logo.8711e39dc8257d7b.webp)
 
 ## Ditt Uppdrag
 
@@ -30,7 +30,7 @@ I slutet av denna workshop kommer du kunna:
 
 ## Din Resa: Tre Akter
 
-![arch](../../../translated_images/sv/arch.5965fe504e4a3a93.png)
+![arch](../../../translated_images/sv/arch.5965fe504e4a3a93.webp)
 
 Som i vilken bra berättelse som helst har vi tre akter. Var och en bygger din AI-podcaststudio bit för bit:
 

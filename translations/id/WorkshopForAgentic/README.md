@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Versi Bahasa Cina)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/id/logo.8711e39dc8257d7b.png)
+![logo](../../../translated_images/id/logo.8711e39dc8257d7b.webp)
 
 ## Misi Anda
 
@@ -30,7 +30,7 @@ Di akhir workshop ini, Anda akan tahu cara:
 
 ## Perjalanan Anda: Tiga Babak
 
-![arch](../../../translated_images/id/arch.5965fe504e4a3a93.png)
+![arch](../../../translated_images/id/arch.5965fe504e4a3a93.webp)
 
 Seperti cerita yang baik, kita punya tiga babak. Masing-masing membangun studio podcast AI Anda sedikit demi sedikit:
 

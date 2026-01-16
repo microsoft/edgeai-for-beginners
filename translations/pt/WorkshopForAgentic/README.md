@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Versão Chinesa)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/pt/logo.8711e39dc8257d7b.png)
+![logo](../../../translated_images/pt/logo.8711e39dc8257d7b.webp)
 
 ## A Sua Missão
 
@@ -30,7 +30,7 @@ No final desta oficina, vai saber como:
 
 ## A Sua Jornada: Três Atos
 
-![arch](../../../translated_images/pt/arch.5965fe504e4a3a93.png)
+![arch](../../../translated_images/pt/arch.5965fe504e4a3a93.webp)
 
 Como em qualquer boa história, temos três atos. Cada um vai construindo o seu estúdio de podcasts com IA peça a peça:
 

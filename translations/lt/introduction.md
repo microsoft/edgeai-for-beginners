@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Įvadas į Edge AI pradedantiesiems
 
-![Edge AI Įvadas](../../translated_images/lt/cover.eb18d1b9605d754b.png)
+![Edge AI Įvadas](../../translated_images/lt/cover.eb18d1b9605d754b.webp)
 
 Sveiki atvykę į savo kelionę po **Edge dirbtinį intelektą** – revoliucinį požiūrį, kuris perkelia AI galią tiesiai ten, kur kuriami duomenys ir priimami sprendimai. Šis įvadas padės suprasti, kodėl Edge AI yra ateities intelektualaus skaičiavimo kryptis ir kaip galite įvaldyti jo įgyvendinimą.
 

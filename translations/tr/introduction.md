@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Edge AI'ye Giriş: Yeni Başlayanlar İçin
 
-![Edge AI Giriş](../../translated_images/tr/cover.eb18d1b9605d754b.png)
+![Edge AI Giriş](../../translated_images/tr/cover.eb18d1b9605d754b.webp)
 
 **Edge Yapay Zeka** dünyasına hoş geldiniz – verilerin oluşturulduğu ve kararların alınması gerektiği yere yapay zekanın gücünü getiren devrim niteliğinde bir yaklaşım. Bu giriş bölümü, Edge AI'nin neden akıllı bilişimin geleceğini temsil ettiğini ve nasıl uygulanacağını öğrenebileceğinizi anlamanız için temel oluşturacak.
 

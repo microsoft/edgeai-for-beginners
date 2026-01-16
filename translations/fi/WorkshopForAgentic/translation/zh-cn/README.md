@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI-podcast-studio-työpaja
 
-![logo](../../../../../translated_images/fi/logo.8711e39dc8257d7b.png)
+![logo](../../../../../translated_images/fi/logo.8711e39dc8257d7b.webp)
 
 ## Tehtäväsi
 

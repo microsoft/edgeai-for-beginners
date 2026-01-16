@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Versione Cinese)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/it/logo.8711e39dc8257d7b.png)
+![logo](../../../translated_images/it/logo.8711e39dc8257d7b.webp)
 
 ## La Tua Missione
 
@@ -30,7 +30,7 @@ Alla fine di questo laboratorio, saprai come:
 
 ## Il Tuo Viaggio: Tre Atti
 
-![arch](../../../translated_images/it/arch.5965fe504e4a3a93.png)
+![arch](../../../translated_images/it/arch.5965fe504e4a3a93.webp)
 
 Come in una bella storia, ci sono tre atti. Ognuno costruisce il tuo studio podcast AI pezzo dopo pezzo:
 

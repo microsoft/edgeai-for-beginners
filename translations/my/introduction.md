@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Edge AI အကြောင်းအကျဉ်းချုပ်
 
-![Edge AI Introduction](../../translated_images/my/cover.eb18d1b9605d754b.png)
+![Edge AI Introduction](../../translated_images/my/cover.eb18d1b9605d754b.webp)
 
 **Edge Artificial Intelligence** အကြောင်းကို စတင်လေ့လာဖို့ ကြိုဆိုပါတယ်။ ဒါဟာ AI ရဲ့ အာနိသင်ကို ဒေတာဖန်တီးရာနေရာမှာပဲ သုံးစွဲနိုင်အောင် ပြောင်းလဲပေးတဲ့ နည်းလမ်းတစ်ခုဖြစ်ပါတယ်။ ဒီအကျဉ်းချုပ်မှာ Edge AI ရဲ့ အရေးပါမှုကို နားလည်စေဖို့အခြေခံကို တည်ဆောက်ပေးပြီး၊ Edge AI ကို အကောင်းဆုံးအသုံးချနိုင်ဖို့ နည်းလမ်းများကို လေ့လာနိုင်ပါမယ်။
 

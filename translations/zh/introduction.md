@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Edge AI 初学者指南
 
-![Edge AI 简介](../../translated_images/zh/cover.eb18d1b9605d754b.png)
+![Edge AI 简介](../../translated_images/zh/cover.eb18d1b9605d754b.webp)
 
 欢迎踏上探索**边缘人工智能（Edge AI）**的旅程！这是一种革命性的技术，将人工智能的强大功能直接带到数据生成和决策发生的地方。本指南将为您奠定基础，帮助您理解为什么边缘人工智能代表了智能计算的未来，以及如何掌握其实现方法。
 

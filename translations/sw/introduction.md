@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Utangulizi wa Edge AI kwa Anayeanza
 
-![Utangulizi wa Edge AI](../../translated_images/sw/cover.eb18d1b9605d754b.png)
+![Utangulizi wa Edge AI](../../translated_images/sw/cover.eb18d1b9605d754b.webp)
 
 Karibu katika safari yako ya kuelewa **Edge Artificial Intelligence** – mbinu ya mapinduzi inayoweka nguvu za AI moja kwa moja pale data inapotengenezwa na maamuzi yanapohitajika kufanyika. Utangulizi huu utaweka msingi wa kuelewa kwa nini Edge AI ni mustakabali wa kompyuta yenye akili na jinsi unavyoweza kuimudu.
 
