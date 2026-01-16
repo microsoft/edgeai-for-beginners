@@ -1,4 +1,10 @@
 {
+  "arch.5965fe504e4a3a93.webp": {
+    "original_hash": "157b0a0a8c476735ba005e8340447a9a",
+    "translation_date": "2026-01-16T06:29:28+00:00",
+    "source_file": "WorkshopForAgentic/imgs/arch.png",
+    "language_code": "my"
+  },
   "cover.eb18d1b9605d754b.webp": {
     "original_hash": "4804188453fec29302da6d7c6c9527dd",
     "translation_date": "2026-01-16T06:28:08+00:00",
@@ -17,10 +23,10 @@
     "source_file": "WorkshopForAgentic/imgs/lab1.png",
     "language_code": "my"
   },
-  "logo.8711e39dc8257d7b.webp": {
-    "original_hash": "de29efe0eba393377b6bd45ef56f89c1",
-    "translation_date": "2026-01-16T06:28:38+00:00",
-    "source_file": "WorkshopForAgentic/imgs/logo.png",
+  "lab2.48444b9d549e7863.webp": {
+    "original_hash": "5584ae639526515ce33f1b0ba571c51b",
+    "translation_date": "2026-01-16T06:29:51+00:00",
+    "source_file": "WorkshopForAgentic/imgs/lab2.png",
     "language_code": "my"
   },
   "lab3.b009c55c4442250b.webp": {
@@ -29,16 +35,10 @@
     "source_file": "WorkshopForAgentic/imgs/lab3.png",
     "language_code": "my"
   },
-  "arch.5965fe504e4a3a93.webp": {
-    "original_hash": "157b0a0a8c476735ba005e8340447a9a",
-    "translation_date": "2026-01-16T06:29:28+00:00",
-    "source_file": "WorkshopForAgentic/imgs/arch.png",
-    "language_code": "my"
-  },
-  "lab2.48444b9d549e7863.webp": {
-    "original_hash": "5584ae639526515ce33f1b0ba571c51b",
-    "translation_date": "2026-01-16T06:29:51+00:00",
-    "source_file": "WorkshopForAgentic/imgs/lab2.png",
+  "logo.8711e39dc8257d7b.webp": {
+    "original_hash": "de29efe0eba393377b6bd45ef56f89c1",
+    "translation_date": "2026-01-16T06:28:38+00:00",
+    "source_file": "WorkshopForAgentic/imgs/logo.png",
     "language_code": "my"
   }
 }

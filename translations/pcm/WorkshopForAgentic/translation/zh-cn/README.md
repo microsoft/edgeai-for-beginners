@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI Pọdkast Wọkshọp
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.pcm.png)
+![logo](../../../../../translated_images/pcm/logo.8711e39dc8257d7b.webp)
 
 ## Your Task
 
