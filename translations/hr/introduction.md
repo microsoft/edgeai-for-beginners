@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Uvod u Edge AI za početnike
 
-![Uvod u Edge AI](../../translated_images/cover.eb18d1b9605d754b.hr.png)
+![Uvod u Edge AI](../../translated_images/hr/cover.eb18d1b9605d754b.webp)
 
 Dobrodošli na vaše putovanje u **Edge umjetnu inteligenciju** – revolucionarni pristup koji donosi moć AI-a direktno tamo gdje se podaci stvaraju i gdje se odluke trebaju donositi. Ovaj uvod postavit će temelje za razumijevanje zašto Edge AI predstavlja budućnost inteligentnog računalstva i kako možete ovladati njegovom primjenom.
 

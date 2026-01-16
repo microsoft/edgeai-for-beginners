@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Kitajska različica)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.sl.png)
+![logo](../../../translated_images/sl/logo.8711e39dc8257d7b.webp)
 
 ## Vaša misija
 
@@ -30,7 +30,7 @@ Na koncu delavnice boste znali:
 
 ## Vaša pot: trije čini
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.sl.png)
+![arch](../../../translated_images/sl/arch.5965fe504e4a3a93.webp)
 
 Kot vsaka dobra zgodba ima tudi naša tri čine. Vsak gradi vaš AI podcast studio korak za korakom:
 

@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ کارگاه استودیو پادکست هوش مصنوعی
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.fa.png)
+![logo](../../../../../translated_images/fa/logo.8711e39dc8257d7b.webp)
 
 ## وظیفه شما
 

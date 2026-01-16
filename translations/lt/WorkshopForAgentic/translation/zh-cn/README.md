@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI Podcast Studijos dirbtuvės
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.lt.png)
+![logo](../../../../../translated_images/lt/logo.8711e39dc8257d7b.webp)
 
 ## Tavo užduotis
 

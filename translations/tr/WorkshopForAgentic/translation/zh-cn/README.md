@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI Podcast Stüdyosu Atölyesi
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.tr.png)
+![logo](../../../../../translated_images/tr/logo.8711e39dc8257d7b.webp)
 
 ## Görevin
 

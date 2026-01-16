@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI للمبتدئين
 
 
-![صورة غلاف الدورة](../../translated_images/cover.eb18d1b9605d754b.ar.png)
+![صورة غلاف الدورة](../../translated_images/ar/cover.eb18d1b9605d754b.webp)
 
 [![مساهمو GitHub](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![مشكلات GitHub](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)

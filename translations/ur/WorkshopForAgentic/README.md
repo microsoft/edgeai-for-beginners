@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (چینی ورژن)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.ur.png)
+![logo](../../../translated_images/ur/logo.8711e39dc8257d7b.webp)
 
 ## آپ کا مشن
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## آپ کا سفر: تین حصے
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.ur.png)
+![arch](../../../translated_images/ur/arch.5965fe504e4a3a93.webp)
 
 کسی بھی اچھی کہانی کی طرح، ہمارے تین حصے ہیں۔ ہر ایک آپ کے AI پوڈکاسٹ اسٹوڈیو کو ٹکڑا ٹکڑا کرکے بناتا ہے:
 

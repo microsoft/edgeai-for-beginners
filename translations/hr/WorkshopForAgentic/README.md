@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Kineska verzija)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.hr.png)
+![logo](../../../translated_images/hr/logo.8711e39dc8257d7b.webp)
 
 ## Tvoja Misija
 
@@ -30,7 +30,7 @@ Do kraja ove radionice znat ćeš kako:
 
 ## Tvoje Putovanje: Tri Čina
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.hr.png)
+![arch](../../../translated_images/hr/arch.5965fe504e4a3a93.webp)
 
 Kao i svaka dobra priča, imamo tri čina. Svaki dio gradi tvoj AI podcast studio korak po korak:
 

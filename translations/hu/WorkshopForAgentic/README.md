@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Kínai verzió)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.hu.png)
+![logo](../../../translated_images/hu/logo.8711e39dc8257d7b.webp)
 
 ## A Küldetésed
 
@@ -30,7 +30,7 @@ A műhely végére tudni fogod, hogyan:
 
 ## Az Utad: Három Felvonás
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.hu.png)
+![arch](../../../translated_images/hu/arch.5965fe504e4a3a93.webp)
 
 Mint bármely jó történetben, itt is három felvonás van. Mindegyik darabonként építi az AI podcast stúdiódat:
 

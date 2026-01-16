@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Chinese Version)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.ko.png)
+![logo](../../../translated_images/ko/logo.8711e39dc8257d7b.webp)
 
 ## 당신의 미션
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 여정: 세 개의 막
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.ko.png)
+![arch](../../../translated_images/ko/arch.5965fe504e4a3a93.webp)
 
 좋은 이야기처럼 세 개의 막으로 구성되어 있습니다. 각 막은 AI 팟캐스트 스튜디오를 조금씩 완성합니다:
 

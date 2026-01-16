@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI Studio Podcast Workshop
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.el.png)
+![logo](../../../../../translated_images/el/logo.8711e39dc8257d7b.webp)
 
 ## Η αποστολή σου
 

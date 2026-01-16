@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Chinese Version)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.zh.png)
+![logo](../../../translated_images/zh/logo.8711e39dc8257d7b.webp)
 
 ## 你的任务
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 你的旅程：三幕剧
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.zh.png)
+![arch](../../../translated_images/zh/arch.5965fe504e4a3a93.webp)
 
 就像任何一部好故事，我们有三幕。每幕逐步搭建你的 AI 播客工作室：
 

@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI kezdőknek
 
 
-![Tanfolyam borítókép](../../translated_images/cover.eb18d1b9605d754b.hu.png)
+![Tanfolyam borítókép](../../translated_images/hu/cover.eb18d1b9605d754b.webp)
 
 [![GitHub közreműködők](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub hibák](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)

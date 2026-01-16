@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Versiunea Chineză)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.ro.png)
+![logo](../../../translated_images/ro/logo.8711e39dc8257d7b.webp)
 
 ## Misiunea Ta
 
@@ -30,7 +30,7 @@ La finalul acestui atelier, vei ști cum să:
 
 ## Călătoria Ta: Trei Acte
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.ro.png)
+![arch](../../../translated_images/ro/arch.5965fe504e4a3a93.webp)
 
 Ca orice poveste bună, avem trei acte. Fiecare construiește studioul tău AI podcast, pas cu pas:
 

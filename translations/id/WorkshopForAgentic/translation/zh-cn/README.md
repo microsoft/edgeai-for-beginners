@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ Workshop Studio Podcast AI
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.id.png)
+![logo](../../../../../translated_images/id/logo.8711e39dc8257d7b.webp)
 
 ## Tugas Anda
 

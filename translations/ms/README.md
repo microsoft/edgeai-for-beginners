@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI untuk Pemula 
 
 
-![Imej kulit kursus](../../translated_images/cover.eb18d1b9605d754b.ms.png)
+![Imej kulit kursus](../../translated_images/ms/cover.eb18d1b9605d754b.webp)
 
 [![Penyumbang GitHub](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![Isu GitHub](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)

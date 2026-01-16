@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Кинеска верзија)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.sr.png)
+![logo](../../../translated_images/sr/logo.8711e39dc8257d7b.webp)
 
 ## Ваша Мисија
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Ваше Путовање: Три Чина
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.sr.png)
+![arch](../../../translated_images/sr/arch.5965fe504e4a3a93.webp)
 
 Као и свака добра прича, имамо три чина. Сваки део гради ваш AI подкаст студио корак по корак:
 

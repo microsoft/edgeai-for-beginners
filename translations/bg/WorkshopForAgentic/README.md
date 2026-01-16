@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Chinese Version)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.bg.png)
+![logo](../../../translated_images/bg/logo.8711e39dc8257d7b.webp)
 
 ## Вашата мисия
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Вашето пътешествие: Три акта
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.bg.png)
+![arch](../../../translated_images/bg/arch.5965fe504e4a3a93.webp)
 
 Както във всяка добра история, имаме три акта. Всеки един изгражда вашето AI подкаст студио на части:
 

@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ סדנת סטודיו הפודקאסט של AI
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.he.png)
+![logo](../../../../../translated_images/he/logo.8711e39dc8257d7b.webp)
 
 ## המשימה שלך
 

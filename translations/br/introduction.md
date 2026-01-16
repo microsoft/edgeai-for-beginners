@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Introdução à IA de Borda para Iniciantes
 
-![Introdução à IA de Borda](../../translated_images/cover.eb18d1b9605d754b.br.png)
+![Introdução à IA de Borda](../../translated_images/br/cover.eb18d1b9605d754b.webp)
 
 Bem-vindo à sua jornada no mundo da **Inteligência Artificial de Borda** – uma abordagem revolucionária que traz o poder da IA diretamente para onde os dados são criados e as decisões precisam ser tomadas. Esta introdução estabelecerá as bases para entender por que a IA de Borda representa o futuro da computação inteligente e como você pode dominar sua implementação.
 

@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ Bengkel Studio Podcast AI
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.ms.png)
+![logo](../../../../../translated_images/ms/logo.8711e39dc8257d7b.webp)
 
 ## Tugas Anda
 

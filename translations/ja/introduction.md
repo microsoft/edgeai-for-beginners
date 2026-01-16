@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 初心者のためのエッジAI入門
 
-![エッジAI入門](../../translated_images/cover.eb18d1b9605d754b.ja.png)
+![エッジAI入門](../../translated_images/ja/cover.eb18d1b9605d754b.webp)
 
 **エッジ人工知能（Edge AI）**の世界へようこそ！これは、AIの力をデータが生成され、意思決定が必要な場所に直接もたらす革新的なアプローチです。この入門ガイドでは、エッジAIがなぜ知能コンピューティングの未来を代表するのか、その基礎を築き、実装を習得する方法を学びます。
 

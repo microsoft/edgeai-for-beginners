@@ -1,0 +1,44 @@
+{
+  "arch.5965fe504e4a3a93.webp": {
+    "original_hash": "157b0a0a8c476735ba005e8340447a9a",
+    "translation_date": "2026-01-16T06:00:24+00:00",
+    "source_file": "WorkshopForAgentic/imgs/arch.png",
+    "language_code": "pl"
+  },
+  "cover.eb18d1b9605d754b.webp": {
+    "original_hash": "4804188453fec29302da6d7c6c9527dd",
+    "translation_date": "2026-01-16T05:59:04+00:00",
+    "source_file": "imgs/cover.png",
+    "language_code": "pl"
+  },
+  "cover1.eb9b8af9fcabd178.webp": {
+    "original_hash": "4d9ab90dd27a06422c275a536283c03c",
+    "translation_date": "2026-01-16T05:59:07+00:00",
+    "source_file": "imgs/cover1.png",
+    "language_code": "pl"
+  },
+  "lab1.1dd5210a7d114e2e.webp": {
+    "original_hash": "d05e762f0ff8a2a99ffc3f2a795b5b60",
+    "translation_date": "2026-01-16T05:59:19+00:00",
+    "source_file": "WorkshopForAgentic/imgs/lab1.png",
+    "language_code": "pl"
+  },
+  "lab2.48444b9d549e7863.webp": {
+    "original_hash": "5584ae639526515ce33f1b0ba571c51b",
+    "translation_date": "2026-01-16T06:00:50+00:00",
+    "source_file": "WorkshopForAgentic/imgs/lab2.png",
+    "language_code": "pl"
+  },
+  "lab3.b009c55c4442250b.webp": {
+    "original_hash": "493e8ee10950d9ad87456d5523999b0c",
+    "translation_date": "2026-01-16T05:59:57+00:00",
+    "source_file": "WorkshopForAgentic/imgs/lab3.png",
+    "language_code": "pl"
+  },
+  "logo.8711e39dc8257d7b.webp": {
+    "original_hash": "de29efe0eba393377b6bd45ef56f89c1",
+    "translation_date": "2026-01-16T05:59:38+00:00",
+    "source_file": "WorkshopForAgentic/imgs/logo.png",
+    "language_code": "pl"
+  }
+}

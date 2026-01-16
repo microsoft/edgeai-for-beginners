@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # ஆரம்ப நடிகர்களுக்கான எட்ஜ்ஏஐ
 
 
-![பாடநெறி மூடி படம்](../../translated_images/cover.eb18d1b9605d754b.ta.png)
+![பாடநெறி மூடி படம்](../../translated_images/ta/cover.eb18d1b9605d754b.webp)
 
 [![GitHub பங்களிப்பாளர்கள்](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub பிரச்சனைகள்](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)

@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ Oficina do Estúdio de Podcast de IA
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.br.png)
+![logo](../../../../../translated_images/br/logo.8711e39dc8257d7b.webp)
 
 ## Sua Tarefa
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (النسخة الصينية)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.ar.png)
+![logo](../../../translated_images/ar/logo.8711e39dc8257d7b.webp)
 
 ## مهمتك
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## رحلتك: ثلاثة فصول
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.ar.png)
+![arch](../../../translated_images/ar/arch.5965fe504e4a3a93.webp)
 
 مثل أي قصة جيدة، لدينا ثلاثة فصول. كل واحد يبني استوديو بودكاست الذكاء الاصطناعي الخاص بك قطعة بقطعة:
 

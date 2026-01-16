@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI pre začiatočníkov 
 
 
-![Obalový obrázok kurzu](../../translated_images/cover.eb18d1b9605d754b.sk.png)
+![Obalový obrázok kurzu](../../translated_images/sk/cover.eb18d1b9605d754b.webp)
 
 [![GitHub prispievatelia](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)

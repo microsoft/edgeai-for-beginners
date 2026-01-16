@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 초보자를 위한 엣지 AI 소개
 
-![엣지 AI 소개](../../translated_images/cover.eb18d1b9605d754b.ko.png)
+![엣지 AI 소개](../../translated_images/ko/cover.eb18d1b9605d754b.webp)
 
 **엣지 인공지능(Edge AI)**의 세계에 오신 것을 환영합니다. 엣지 AI는 데이터를 생성하고 결정을 내려야 하는 바로 그 장소에서 AI의 힘을 발휘하는 혁신적인 접근 방식입니다. 이 소개는 엣지 AI가 왜 지능형 컴퓨팅의 미래를 대표하는지, 그리고 이를 구현하는 방법을 마스터할 수 있는 기초를 제공합니다.
 

@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # ಆರಂಭಿಕರಿಗಾಗಿ ಎಡ್ಜ್ಎಐ 
 
 
-![ಕೋರ್ಸ್ ಕವರ್ ಚಿತ್ರ](../../translated_images/cover.eb18d1b9605d754b.kn.png)
+![ಕೋರ್ಸ್ ಕವರ್ ಚಿತ್ರ](../../translated_images/kn/cover.eb18d1b9605d754b.webp)
 
 [![GitHub ಕೊಡುಗೆಯಿದವರು](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub ಸಮಸ್ಯೆಗಳು](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)

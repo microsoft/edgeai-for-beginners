@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Version chinoise)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.fr.png)
+![logo](../../../translated_images/fr/logo.8711e39dc8257d7b.webp)
 
 ## Votre Mission
 
@@ -30,7 +30,7 @@ Imaginez ceci : Vous et vos amis voulez lancer un podcast sur les tendances tech
 
 ## Votre Parcours : Trois Actes
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.fr.png)
+![arch](../../../translated_images/fr/arch.5965fe504e4a3a93.webp)
 
 Comme toute bonne histoire, nous avons trois actes. Chacun construit votre studio de podcast IA pièce par pièce :
 

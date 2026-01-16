@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Bevezetés az Edge AI világába kezdőknek
 
-![Edge AI Bevezetés](../../translated_images/cover.eb18d1b9605d754b.hu.png)
+![Edge AI Bevezetés](../../translated_images/hu/cover.eb18d1b9605d754b.webp)
 
 Üdvözlünk az **Edge Mesterséges Intelligencia** világában – egy forradalmi megközelítés, amely az MI erejét közvetlenül oda hozza, ahol az adatok keletkeznek és döntéseket kell hozni. Ez a bevezető segít megérteni, miért képviseli az Edge AI az intelligens számítástechnika jövőjét, és hogyan sajátíthatod el annak alkalmazását.
 

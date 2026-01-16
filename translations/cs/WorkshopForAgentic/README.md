@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Čínská verze)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.cs.png)
+![logo](../../../translated_images/cs/logo.8711e39dc8257d7b.webp)
 
 ## Tvůj Úkol
 
@@ -30,7 +30,7 @@ Na konci tohoto workshopu budeš umět:
 
 ## Tvoje Cesta: Tři Akté
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.cs.png)
+![arch](../../../translated_images/cs/arch.5965fe504e4a3a93.webp)
 
 Jako v každém dobrém příběhu máme tři jednání. Každé postupně staví tvé AI podcastové studio:
 

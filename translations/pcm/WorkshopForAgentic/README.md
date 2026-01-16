@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Chinese Version)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.pcm.png)
+![logo](../../../translated_images/pcm/logo.8711e39dc8257d7b.webp)
 
 ## Your Mission
 
@@ -30,7 +30,7 @@ By di end of dis workshop, you go sabi how to:
 
 ## Your Journey: Three Acts
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.pcm.png)
+![arch](../../../translated_images/pcm/arch.5965fe504e4a3a93.webp)
 
 Like any correct story, we get three acts. Each one go build your AI podcast studio piece by piece:
 

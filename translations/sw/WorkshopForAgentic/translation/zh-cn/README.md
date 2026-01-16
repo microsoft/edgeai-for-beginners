@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ Warsha ya Studio ya Podcast ya AI
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.sw.png)
+![logo](../../../../../translated_images/sw/logo.8711e39dc8257d7b.webp)
 
 ## Kazi Yako
 

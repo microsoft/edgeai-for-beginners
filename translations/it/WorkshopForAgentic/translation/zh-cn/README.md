@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ Laboratorio AI Podcast Studio
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.it.png)
+![logo](../../../../../translated_images/it/logo.8711e39dc8257d7b.webp)
 
 ## Il tuo compito
 

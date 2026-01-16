@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI ポッドキャストスタジオ ワークショップ
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.ja.png)
+![logo](../../../../../translated_images/ja/logo.8711e39dc8257d7b.webp)
 
 ## あなたのタスク
 

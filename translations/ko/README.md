@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # 초보자를 위한 EdgeAI
 
 
-![과정 커버 이미지](../../translated_images/cover.eb18d1b9605d754b.ko.png)
+![과정 커버 이미지](../../translated_images/ko/cover.eb18d1b9605d754b.webp)
 
 [![GitHub 공헌자](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub 이슈](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
