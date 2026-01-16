@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ Работилница за AI студио за подкасти
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.bg.png)
+![logo](../../../../../translated_images/bg/logo.8711e39dc8257d7b.png)
 
 ## Твоята задача
 

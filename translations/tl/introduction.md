@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Panimula sa Edge AI para sa mga Baguhan
 
-![Panimula sa Edge AI](../../translated_images/cover.eb18d1b9605d754b.tl.png)
+![Panimula sa Edge AI](../../translated_images/tl/cover.eb18d1b9605d754b.png)
 
 Maligayang pagdating sa iyong paglalakbay sa **Edge Artificial Intelligence** – isang makabagong paraan na nagdadala ng kapangyarihan ng AI direkta sa lugar kung saan nalilikha ang data at kinakailangan ang mga desisyon. Ang panimulang ito ay magbibigay ng pundasyon para maunawaan kung bakit ang Edge AI ang kinabukasan ng intelligent computing at kung paano mo ito maipapatupad nang mahusay.
 

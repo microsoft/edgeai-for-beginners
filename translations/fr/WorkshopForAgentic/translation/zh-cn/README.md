@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ Atelier du studio de podcast IA
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.fr.png)
+![logo](../../../../../translated_images/fr/logo.8711e39dc8257d7b.webp)
 
 ## Ta mission
 

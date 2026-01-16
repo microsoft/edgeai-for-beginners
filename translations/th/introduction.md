@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # แนะนำ Edge AI สำหรับผู้เริ่มต้น
 
-![Edge AI Introduction](../../translated_images/cover.eb18d1b9605d754b.th.png)
+![Edge AI Introduction](../../translated_images/th/cover.eb18d1b9605d754b.png)
 
 ยินดีต้อนรับสู่การเดินทางของคุณในโลกของ **Edge Artificial Intelligence** – แนวทางปฏิวัติที่นำพลังของ AI มาสู่จุดที่ข้อมูลถูกสร้างขึ้นและการตัดสินใจต้องเกิดขึ้นทันที บทนำนี้จะช่วยสร้างพื้นฐานความเข้าใจว่าทำไม Edge AI ถึงเป็นอนาคตของการประมวลผลอัจฉริยะ และคุณจะสามารถเรียนรู้วิธีการใช้งานได้อย่างไร
 

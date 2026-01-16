@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (wersja chińska)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.pl.png)
+![logo](../../../translated_images/pl/logo.8711e39dc8257d7b.png)
 
 ## Twoja Misja
 
@@ -30,7 +30,7 @@ Pod koniec tych warsztatów nauczysz się jak:
 
 ## Twoja Podróż: Trzy Aktów
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.pl.png)
+![arch](../../../translated_images/pl/arch.5965fe504e4a3a93.png)
 
 Jak w każdej dobrej historii, mamy trzy akty. Każdy z nich buduje Twoje AI podcast studio krok po kroku:
 

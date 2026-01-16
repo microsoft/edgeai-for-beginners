@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI Podcast Studio Workshop
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.tl.png)
+![logo](../../../../../translated_images/tl/logo.8711e39dc8257d7b.png)
 
 ## Ang Iyong Gawain
 

@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # Yeni Başlayanlar için EdgeAI
 
 
-![Kurs kapak resmi](../../translated_images/cover.eb18d1b9605d754b.tr.png)
+![Kurs kapak resmi](../../translated_images/tr/cover.eb18d1b9605d754b.png)
 
 [![GitHub katkıda bulunanlar](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub sorunları](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)

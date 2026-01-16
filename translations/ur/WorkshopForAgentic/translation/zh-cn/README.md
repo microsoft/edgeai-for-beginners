@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI پوڈکاسٹ اسٹوڈیو ورکشاپ
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.ur.png)
+![logo](../../../../../translated_images/ur/logo.8711e39dc8257d7b.png)
 
 ## آپ کا کام
 

@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # EdgeAI algajatele 
 
 
-![Kursuse kaanekujutis](../../translated_images/cover.eb18d1b9605d754b.et.png)
+![Kursuse kaanekujutis](../../translated_images/et/cover.eb18d1b9605d754b.png)
 
 [![GitHubi panustajad](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHubi probleemid](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)

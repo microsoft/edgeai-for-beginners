@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Chinese Version)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.my.png)
+![logo](../../../translated_images/my/logo.8711e39dc8257d7b.png)
 
 ## Your Mission
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Your Journey: Three Acts
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.my.png)
+![arch](../../../translated_images/my/arch.5965fe504e4a3a93.png)
 
  ကောင်းမွန်သောဇာတ်လမ်းလိုပဲ သုံးပတ်လမ်းရှိတယ်။ ပတ်လမ်းတိုင်းက သင့် AI ပေါ်ဒ်ကတ်စတူဒီယိုကို ဖြည်းဖြည်းချင်း တည်ဆောက်ပေးပါမယ်-
 

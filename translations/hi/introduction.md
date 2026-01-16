@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # शुरुआती लोगों के लिए Edge AI का परिचय
 
-![Edge AI Introduction](../../translated_images/cover.eb18d1b9605d754b.hi.png)
+![Edge AI Introduction](../../translated_images/hi/cover.eb18d1b9605d754b.png)
 
 **Edge Artificial Intelligence** की दुनिया में आपका स्वागत है – एक क्रांतिकारी दृष्टिकोण जो AI की शक्ति को सीधे उस स्थान पर लाता है जहां डेटा उत्पन्न होता है और निर्णय लेने की आवश्यकता होती है। यह परिचय आपको यह समझने की नींव प्रदान करेगा कि Edge AI क्यों बुद्धिमान कंप्यूटिंग का भविष्य है और आप इसे कैसे लागू कर सकते हैं।
 

@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Úvod do Edge AI pro začátečníky
 
-![Úvod do Edge AI](../../translated_images/cover.eb18d1b9605d754b.cs.png)
+![Úvod do Edge AI](../../translated_images/cs/cover.eb18d1b9605d754b.png)
 
 Vítejte na cestě do světa **Edge Artificial Intelligence** – revolučního přístupu, který přináší sílu AI přímo tam, kde se data vytvářejí a kde je třeba činit rozhodnutí. Tento úvod vám poskytne základy pro pochopení, proč Edge AI představuje budoucnost inteligentního výpočtu a jak se naučit jeho implementaci.
 

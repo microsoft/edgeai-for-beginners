@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ KI-Podcast-Studio Workshop
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.de.png)
+![logo](../../../../../translated_images/de/logo.8711e39dc8257d7b.png)
 
 ## Deine Aufgabe
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Versión en chino)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.es.png)
+![logo](../../../translated_images/es/logo.8711e39dc8257d7b.webp)
 
 ## Tu Misión
 
@@ -30,7 +30,7 @@ Al final de este taller, sabrás cómo:
 
 ## Tu Viaje: Tres Actos
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.es.png)
+![arch](../../../translated_images/es/arch.5965fe504e4a3a93.webp)
 
 Como en toda buena historia, tenemos tres actos. Cada uno construye tu estudio de podcast de IA pieza por pieza:
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Kinų Versija)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.lt.png)
+![logo](../../../translated_images/lt/logo.8711e39dc8257d7b.png)
 
 ## Tavo Misija
 
@@ -30,7 +30,7 @@ Po šių dirbtuvių tu sužinosi, kaip:
 
 ## Tavo Kelionė: Trys Veiksmai
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.lt.png)
+![arch](../../../translated_images/lt/arch.5965fe504e4a3a93.png)
 
 Kaip ir kiekvienoje geroje istorijoje, yra trys veiksmai. Kiekvienas po truputį kuria tavo AI podcast studiją:
 

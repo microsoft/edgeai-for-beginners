@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI पॉडकास्ट स्टुडिओ कार्यशाळा
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.mr.png)
+![logo](../../../../../translated_images/mr/logo.8711e39dc8257d7b.png)
 
 ## तुमचे कार्य
 

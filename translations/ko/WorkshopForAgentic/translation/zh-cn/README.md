@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI 팟캐스트 스튜디오 워크숍
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.ko.png)
+![logo](../../../../../translated_images/ko/logo.8711e39dc8257d7b.png)
 
 ## 당신의 임무
 

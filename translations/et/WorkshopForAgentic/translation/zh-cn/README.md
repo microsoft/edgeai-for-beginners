@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI Podcast Stuudio Töötuba
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.et.png)
+![logo](../../../../../translated_images/et/logo.8711e39dc8257d7b.png)
 
 ## Sinu ülesanne
 

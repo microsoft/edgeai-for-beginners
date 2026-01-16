@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Čínska verzia)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.sk.png)
+![logo](../../../translated_images/sk/logo.8711e39dc8257d7b.png)
 
 ## Tvoja Misia
 
@@ -30,7 +30,7 @@ Na konci tohto workshopu budeš vedieť:
 
 ## Tvoja Cesta: Tri Dejstvá
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.sk.png)
+![arch](../../../translated_images/sk/arch.5965fe504e4a3a93.png)
 
 Ako v každom dobrom príbehu, máme tri dejstvá. Každé postupne buduje tvoje AI podcastové štúdio:
 

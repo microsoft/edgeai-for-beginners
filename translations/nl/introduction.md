@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Introductie tot Edge AI voor Beginners
 
-![Edge AI Introductie](../../translated_images/cover.eb18d1b9605d754b.nl.png)
+![Edge AI Introductie](../../translated_images/nl/cover.eb18d1b9605d754b.png)
 
 Welkom bij jouw reis in **Edge Artificial Intelligence** – een revolutionaire aanpak die de kracht van AI direct brengt naar waar data wordt gecreëerd en beslissingen moeten worden genomen. Deze introductie legt de basis voor het begrijpen waarom Edge AI de toekomst van intelligente computing vertegenwoordigt en hoe je de implementatie ervan kunt beheersen.
 

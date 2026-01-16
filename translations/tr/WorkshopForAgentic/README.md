@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Çince Versiyonu)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.tr.png)
+![logo](../../../translated_images/tr/logo.8711e39dc8257d7b.png)
 
 ## Göreviniz
 
@@ -30,7 +30,7 @@ Bu atölye sonunda şunları bileceksiniz:
 
 ## Yolculuğunuz: Üç Perde
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.tr.png)
+![arch](../../../translated_images/tr/arch.5965fe504e4a3a93.png)
 
 İyi bir hikaye gibi, üç perdemiz var. Her biri AI podcast stüdyonuzu parça parça inşa eder:
 

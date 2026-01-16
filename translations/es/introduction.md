@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Introducción a la IA en el Edge para Principiantes
 
-![Introducción a la IA en el Edge](../../translated_images/cover.eb18d1b9605d754b.es.png)
+![Introducción a la IA en el Edge](../../translated_images/es/cover.eb18d1b9605d754b.webp)
 
 Bienvenido a tu viaje hacia la **Inteligencia Artificial en el Edge** – un enfoque revolucionario que lleva el poder de la IA directamente al lugar donde se genera la información y se toman las decisiones. Esta introducción establecerá las bases para entender por qué la IA en el Edge representa el futuro de la computación inteligente y cómo puedes dominar su implementación.
 

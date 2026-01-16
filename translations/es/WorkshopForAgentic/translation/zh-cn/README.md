@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ Taller del Estudio de Podcast AI
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.es.png)
+![logo](../../../../../translated_images/es/logo.8711e39dc8257d7b.webp)
 
 ## Tu misión
 

@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI Подкаст студия мастерская
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.ru.png)
+![logo](../../../../../translated_images/ru/logo.8711e39dc8257d7b.png)
 
 ## Твоя задача
 

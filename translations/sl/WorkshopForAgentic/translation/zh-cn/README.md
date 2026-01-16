@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ Delavnica AI podcast studia
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.sl.png)
+![logo](../../../../../translated_images/sl/logo.8711e39dc8257d7b.png)
 
 ## Tvoja naloga
 

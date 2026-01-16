@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Introduzione all'Edge AI per Principianti
 
-![Introduzione all'Edge AI](../../translated_images/cover.eb18d1b9605d754b.it.png)
+![Introduzione all'Edge AI](../../translated_images/it/cover.eb18d1b9605d754b.png)
 
 Benvenuto nel tuo viaggio nell'**Intelligenza Artificiale Edge** – un approccio rivoluzionario che porta la potenza dell'AI direttamente dove i dati vengono creati e le decisioni devono essere prese. Questa introduzione ti fornirà le basi per comprendere perché l'Edge AI rappresenta il futuro del computing intelligente e come puoi padroneggiarne l'implementazione.
 

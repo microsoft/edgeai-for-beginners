@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI పోडकాస్ట్ స్టూడియో వర్క్‌షాప్
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.te.png)
+![logo](../../../../../translated_images/te/logo.8711e39dc8257d7b.png)
 
 ## మీ పనిని
 

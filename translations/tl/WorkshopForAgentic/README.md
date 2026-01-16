@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Chinese Version)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.tl.png)
+![logo](../../../translated_images/tl/logo.8711e39dc8257d7b.png)
 
 ## Your Mission
 
@@ -30,7 +30,7 @@ Sa pagtatapos ng workshop na ito, malalaman mo kung paano:
 
 ## Your Journey: Three Acts
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.tl.png)
+![arch](../../../translated_images/tl/arch.5965fe504e4a3a93.png)
 
 Tulad ng magandang kwento, may tatlong acts tayo. Bawat isa ay bubuo ng iyong AI podcast studio nang paunti-unti:
 

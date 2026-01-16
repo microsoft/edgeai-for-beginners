@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # מבוא ל-AI בקצה למתחילים
 
-![Edge AI Introduction](../../translated_images/cover.eb18d1b9605d754b.he.png)
+![Edge AI Introduction](../../translated_images/he/cover.eb18d1b9605d754b.png)
 
 ברוכים הבאים למסע שלכם אל תוך **בינה מלאכותית בקצה** – גישה מהפכנית שמביאה את עוצמת ה-AI ישירות למקום שבו נוצרים הנתונים ונדרשות החלטות. מבוא זה יניח את היסודות להבנת הסיבה לכך ש-AI בקצה מייצגת את העתיד של מחשוב חכם וכיצד תוכלו לשלוט ביישומה.
 

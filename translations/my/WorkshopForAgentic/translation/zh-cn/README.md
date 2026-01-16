@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # 🎙️ AI ပေါက်ကတ်စတူဒီယို အလုပ်ရုံဆွေးနွေးပွဲ
 
-![logo](../../../../../translated_images/logo.8711e39dc8257d7b.my.png)
+![logo](../../../../../translated_images/my/logo.8711e39dc8257d7b.png)
 
 ## သင့်တာဝန်
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Chinese Version)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.nl.png)
+![logo](../../../translated_images/nl/logo.8711e39dc8257d7b.png)
 
 ## Jouw Missie
 
@@ -30,7 +30,7 @@ Aan het einde van deze workshop weet je hoe je:
 
 ## Jouw Reis: Drie Acts
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.nl.png)
+![arch](../../../translated_images/nl/arch.5965fe504e4a3a93.png)
 
 Zoals elk goed verhaal hebben we drie acts. Elk bouwt je AI podcaststudio stukje bij beetje op:
 

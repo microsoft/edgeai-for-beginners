@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Phiên bản tiếng Trung)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.vi.png)
+![logo](../../../translated_images/vi/logo.8711e39dc8257d7b.png)
 
 ## Nhiệm vụ của bạn
 
@@ -30,7 +30,7 @@ Sau khi kết thúc workshop này, bạn sẽ biết cách:
 
 ## Hành trình của bạn: Ba phần
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.vi.png)
+![arch](../../../translated_images/vi/arch.5965fe504e4a3a93.png)
 
 Như bất kỳ câu chuyện hay nào, chúng tôi có ba phần. Mỗi phần xây dựng studio podcast AI của bạn từng chút một:
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > 🌏 [中文版 (Hiina versioon)](translation/zh-cn/README.md)
 
-![logo](../../../translated_images/logo.8711e39dc8257d7b.et.png)
+![logo](../../../translated_images/et/logo.8711e39dc8257d7b.png)
 
 ## Sinu Missioon
 
@@ -30,7 +30,7 @@ Selle töötuba lõpuks tead, kuidas:
 
 ## Sinu Teekond: Kolm vaatus
 
-![arch](../../../translated_images/arch.5965fe504e4a3a93.et.png)
+![arch](../../../translated_images/et/arch.5965fe504e4a3a93.png)
 
 Nagu igas heas loos, on meil kolm vaatust. Igaüks ehitab sinu AI taskuhäälingustuudiot samm-sammult:
 

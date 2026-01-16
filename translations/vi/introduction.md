@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # Giới thiệu về Edge AI cho Người Mới Bắt Đầu
 
-![Giới thiệu Edge AI](../../translated_images/cover.eb18d1b9605d754b.vi.png)
+![Giới thiệu Edge AI](../../translated_images/vi/cover.eb18d1b9605d754b.png)
 
 Chào mừng bạn đến với hành trình khám phá **Trí tuệ Nhân tạo tại Biên (Edge AI)** – một cách tiếp cận đột phá mang sức mạnh của AI trực tiếp đến nơi dữ liệu được tạo ra và quyết định cần được thực hiện. Phần giới thiệu này sẽ giúp bạn hiểu tại sao Edge AI là tương lai của tính toán thông minh và cách bạn có thể làm chủ việc triển khai nó.
 
