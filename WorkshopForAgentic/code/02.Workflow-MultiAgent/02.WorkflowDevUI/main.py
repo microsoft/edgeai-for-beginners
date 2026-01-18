@@ -15,7 +15,7 @@ def main():
     logger.info("Entity ID: workflow_basic")
 
     # Launch server with the workflow
-    serve(entities=[workflow], port=8090, auto_open=True)
+    serve(entities=[workflow], port=8090, auto_open=True, instrumentation_enabled=True)
 
 
 if __name__ == "__main__":

@@ -33,7 +33,7 @@ class ReviewExecutor(Executor):
     async def review_script(self, response: AgentExecutorResponse, ctx: WorkflowContext) -> None:
         """Handle the generated script from genscriptagent and request approval."""
         # Extract the generated script text
-        script_text = response.agent_run_response.text
+        script_text = response.agent_response.text
 
         # Request user approval
         await ctx.request_info(

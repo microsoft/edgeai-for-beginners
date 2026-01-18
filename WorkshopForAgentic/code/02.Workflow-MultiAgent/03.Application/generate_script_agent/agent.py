@@ -22,7 +22,7 @@ def setup_gen_script_agent():
     client = OllamaChatClient(model_id=os.getenv("OLLAMA_CHAT_MODEL_ID"))
     
     # Agent instance following Agent Framework conventions
-    agent = client.create_agent(
+    agent = client.as_agent(
         name="GenerateScriptAgent",
         instructions="""
         您是我的播客中文脚本生成助手。请根据提供的内容，生成10分钟中文播客脚本。

@@ -50,7 +50,7 @@ def setup_agent():
     client = OllamaChatClient(model_id=os.getenv("OLLAMA_CHAT_MODEL_ID"))
     
     # Agent instance following Agent Framework conventions
-    agent = client.create_agent(
+    agent = client.as_agent(
         name="SearchAgent",
         instructions="You are my assistant. Answer the questions based on the search engine.",
         tools=[web_search],
@@ -77,7 +77,7 @@ def main():
     agent = setup_agent()
 
     # Launch server with the agent
-    serve(entities=[agent], port=8090, auto_open=True, tracing_enabled=True)
+    serve(entities=[agent], port=8090, auto_open=True, instrumentation_enabled=True)
 
 if __name__ == "__main__":
     main()
