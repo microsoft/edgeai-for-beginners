@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-11T22:39:35+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "pa"
-}
--->
 # ਵਰਕਸ਼ਾਪ ਨਮੂਨੇ - ਤੁਰੰਤ ਸੰਦਰਭ ਕਾਰਡ
 
 **ਆਖਰੀ ਅਪਡੇਟ**: ਅਕਤੂਬਰ 8, 2025

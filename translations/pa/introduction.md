@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-09-26T10:30:00+00:00",
-  "source_file": "introduction.md",
-  "language_code": "pa"
-}
--->
 # ਬਿਗਿਨਰਜ਼ ਲਈ ਐਜ ਏਆਈ ਦਾ ਪਰਚੇ
 
 ![Edge AI Introduction](../../translated_images/pa/cover.eb18d1b9605d754b.webp)

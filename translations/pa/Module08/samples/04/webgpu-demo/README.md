@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-09-24T21:39:26+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "pa"
-}
--->
 # WebGPU + ONNX Runtime ਡੈਮੋ
 
 ਇਹ ਡੈਮੋ ਦਿਖਾਉਂਦਾ ਹੈ ਕਿ ਕਿਵੇਂ AI ਮਾਡਲਾਂ ਨੂੰ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਹੀ WebGPU ਦੀ ਹਾਰਡਵੇਅਰ ਐਕਸਲੇਰੇਸ਼ਨ ਅਤੇ ONNX Runtime Web ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਚਲਾਇਆ ਜਾ ਸਕਦਾ ਹੈ।

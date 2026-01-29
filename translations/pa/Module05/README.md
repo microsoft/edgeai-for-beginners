@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2db7a2f6e9873c3cd09fea6736bf360b",
-  "translation_date": "2025-09-17T23:46:37+00:00",
-  "source_file": "Module05/README.md",
-  "language_code": "pa"
-}
--->
 # ਚੈਪਟਰ 05 : SLMOps - ਛੋਟੇ ਭਾਸ਼ਾ ਮਾਡਲ ਓਪਰੇਸ਼ਨ ਲਈ ਵਿਸਤ੍ਰਿਤ ਗਾਈਡ
 
 ## ਝਲਕ

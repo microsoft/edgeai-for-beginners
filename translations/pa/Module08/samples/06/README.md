@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T00:02:55+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "pa"
-}
--->
 # ਸੈਸ਼ਨ 6 ਨਮੂਨਾ: ਮਾਡਲਾਂ ਨੂੰ ਸੰਦ ਵਜੋਂ ਵਰਤਣਾ
 
 ਇਸ ਨਮੂਨੇ ਵਿੱਚ ਇੱਕ ਘੱਟੋ-ਘੱਟ ਰਾਊਟਰ + ਸੰਦ ਰਜਿਸਟਰੀ ਸ਼ਾਮਲ ਹੈ ਜੋ ਯੂਜ਼ਰ ਪ੍ਰਾਂਪਟ ਦੇ ਆਧਾਰ 'ਤੇ ਮਾਡਲ ਚੁਣਦਾ ਹੈ ਅਤੇ Foundry Local ਦੇ OpenAI-ਅਨੁਕੂਲ ਐਂਡਪੌਇੰਟ ਨੂੰ ਕਾਲ ਕਰਦਾ ਹੈ।

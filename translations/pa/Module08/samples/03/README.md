@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-09-22T18:35:09+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "pa"
-}
--->
 # ਸੈਸ਼ਨ 3 ਨਮੂਨਾ: ਮਾਡਲ ਖੋਜ ਅਤੇ ਤੇਜ਼ ਬੈਂਚ
 
 ਮਾਡਲਾਂ ਦੀ ਸੂਚੀ ਬਣਾਉਣ ਅਤੇ ਵਿਸਤ੍ਰਿਤ ਲਾਗਾਂ ਨਾਲ ਇੱਕ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਘੱਟੋ-ਘੱਟ ਸਹਾਇਕ।

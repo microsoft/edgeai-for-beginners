@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T12:27:53+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "pa"
-}
--->
 # ਫਾਊਂਡਰੀ ਲੋਕਲ Windows ਅਤੇ Mac 'ਤੇ
 
 ਇਹ ਗਾਈਡ ਤੁਹਾਨੂੰ Windows ਅਤੇ Mac 'ਤੇ Microsoft Foundry Local ਨੂੰ ਇੰਸਟਾਲ, ਚਲਾਉਣ ਅਤੇ ਇੰਟਿਗ੍ਰੇਟ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦੀ ਹੈ। ਸਾਰੇ ਕਦਮ ਅਤੇ ਕਮਾਂਡ Microsoft Learn ਦਸਤਾਵੇਜ਼ਾਂ ਦੇ ਅਨੁਸਾਰ ਪ੍ਰਮਾਣਿਤ ਹਨ।

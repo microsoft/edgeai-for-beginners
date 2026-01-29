@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T21:35:34+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "pa"
-}
--->
 # Foundry Local ਨੂੰ ਟੂਲਸ ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਵਜੋਂ
 
 ਵੱਡੇ ਐਪਲੀਕੇਸ਼ਨ ਵਿੱਚ Microsoft Foundry Local ਨੂੰ ਕਾਲ ਕਰਨ ਯੋਗ ਟੂਲਸ ਵਜੋਂ ਇੰਟੀਗ੍ਰੇਟ ਕਰਨ ਲਈ ਇੱਕ ਵਿਸਤ੍ਰਿਤ ਫਰੇਮਵਰਕ, ਜੋ Microsoft ਦੇ ਅਧਿਕਾਰਕ ਪੈਟਰਨਾਂ ਦਾ ਪਾਲਣ ਕਰਦਾ ਹੈ।

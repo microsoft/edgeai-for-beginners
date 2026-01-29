@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T18:34:20+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "pa"
-}
--->
 # ਸੈਸ਼ਨ 5 ਨਮੂਨਾ: ਮਲਟੀ-ਏਜੰਟ ਆਰਕਸਟ੍ਰੇਸ਼ਨ
 
 ਇਹ ਨਮੂਨਾ Foundry Local ਦੇ OpenAI-ਅਨੁਕੂਲ ਐਂਡਪੌਇੰਟ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹੋਏ ਇੱਕ ਕੋਆਰਡੀਨੇਟਰ + ਸਪੈਸ਼ਲਿਸਟ ਪੈਟਰਨ ਨੂੰ ਦਰਸਾਉਂਦਾ ਹੈ।

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-11T22:34:14+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "pa"
-}
--->
 # ਸੈਸ਼ਨ 4: ਅਧੁਨਿਕ ਮਾਡਲਾਂ ਦੀ ਖੋਜ – LLMs, SLMs ਅਤੇ ਔਨ-ਡਿਵਾਈਸ ਇੰਫਰੈਂਸ
 
 ## ਸਾਰ
