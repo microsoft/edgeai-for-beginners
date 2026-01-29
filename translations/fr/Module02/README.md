@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-07-22T03:27:09+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "fr"
-}
--->
 # Chapitre 02 : Fondations des modèles de langage compact
 
 Ce chapitre fondamental offre une exploration essentielle des modèles de langage compact (SLMs), couvrant les principes théoriques, les stratégies de mise en œuvre pratique et les solutions de déploiement prêtes à l'emploi. Il établit une base de connaissances critique pour comprendre les architectures modernes d'IA efficaces et leur déploiement stratégique dans divers environnements informatiques.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-11T21:17:19+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "en"
-}
--->
 # Workshop Samples - Quick Reference Card
 
 **Last Updated**: October 8, 2025

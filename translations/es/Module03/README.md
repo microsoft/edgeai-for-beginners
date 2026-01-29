@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-17T13:44:00+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "es"
-}
--->
 # Capítulo 03: Desplegando Modelos de Lenguaje Pequeños (SLMs)
 
 Este capítulo completo explora el ciclo de vida completo del despliegue de Modelos de Lenguaje Pequeños (SLMs), abarcando fundamentos teóricos, estrategias prácticas de implementación y soluciones listas para producción en contenedores. El capítulo está estructurado en tres secciones progresivas que llevan a los lectores desde conceptos fundamentales hasta escenarios avanzados de despliegue.

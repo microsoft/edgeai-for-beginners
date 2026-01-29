@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T10:38:40+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "es"
-}
--->
 # Capítulo 04: Conversión de Formato de Modelo y Cuantización - Resumen del Capítulo
 
 La aparición de EdgeAI ha hecho que la conversión de formato de modelo y la cuantización sean tecnologías esenciales para implementar capacidades avanzadas de aprendizaje automático en dispositivos con recursos limitados. Este capítulo completo ofrece una guía integral para comprender, implementar y optimizar modelos en escenarios de implementación en el borde.

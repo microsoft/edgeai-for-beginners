@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T10:53:15+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "es"
-}
--->
 # Capítulo 07: Ejemplos de EdgeAI
 
 Edge AI representa la convergencia de la inteligencia artificial con la computación en el borde, permitiendo el procesamiento inteligente directamente en los dispositivos sin depender de la conectividad en la nube. Este capítulo explora cinco implementaciones distintas de EdgeAI en diferentes plataformas y marcos, mostrando la versatilidad y el poder de ejecutar modelos de IA en el borde.

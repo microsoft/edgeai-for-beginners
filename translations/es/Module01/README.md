@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-17T13:12:39+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "es"
-}
--->
 # Capítulo 01: Transformando el Despliegue de IA para el Edge
 
 EdgeAI representa un cambio de paradigma en el despliegue de inteligencia artificial, trasladando las capacidades de IA desde el procesamiento basado en la nube a dispositivos locales en el edge. Este capítulo explora los conceptos fundamentales, las tecnologías clave y las aplicaciones prácticas que definen este enfoque transformador de implementación de IA.

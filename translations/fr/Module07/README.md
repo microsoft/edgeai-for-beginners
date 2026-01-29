@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T10:49:43+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "fr"
-}
--->
 # Chapitre 07 : Exemples d'EdgeAI
 
 Edge AI représente la convergence de l'intelligence artificielle et du calcul en périphérie, permettant un traitement intelligent directement sur les appareils sans dépendre de la connectivité au cloud. Ce chapitre explore cinq implémentations distinctes d'EdgeAI sur différentes plateformes et frameworks, mettant en avant la polyvalence et la puissance des modèles d'IA exécutés en périphérie.

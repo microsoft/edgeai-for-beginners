@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-07-22T02:48:15+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "fr"
-}
--->
 ## Sécurité
 
 Microsoft accorde une grande importance à la sécurité de ses produits logiciels et services, y compris tous les dépôts de code source dans nos organisations GitHub.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2db7a2f6e9873c3cd09fea6736bf360b",
-  "translation_date": "2025-09-19T01:02:30+00:00",
-  "source_file": "Module05/README.md",
-  "language_code": "en"
-}
--->
 # Chapter 05: SLMOps - A Comprehensive Guide to Small Language Model Operations
 
 ## Overview

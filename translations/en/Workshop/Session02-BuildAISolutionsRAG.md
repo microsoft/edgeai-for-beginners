@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
-  "translation_date": "2025-11-17T18:25:53+00:00",
-  "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
-  "language_code": "en"
-}
--->
 # Session 2: Build AI Solutions with Azure AI Foundry
 
 ## Abstract

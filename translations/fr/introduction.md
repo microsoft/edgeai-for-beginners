@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-09-26T10:19:28+00:00",
-  "source_file": "introduction.md",
-  "language_code": "fr"
-}
--->
 # Introduction à l'IA Edge pour les Débutants
 
 ![Introduction à l'IA Edge](../../translated_images/fr/cover.eb18d1b9605d754b.webp)

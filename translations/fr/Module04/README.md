@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T10:33:30+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "fr"
-}
--->
 # Chapitre 04 : Conversion de format de modèle et quantification - Aperçu du chapitre
 
 L'émergence de l'EdgeAI a rendu la conversion de format de modèle et la quantification des technologies essentielles pour déployer des capacités avancées de machine learning sur des appareils aux ressources limitées. Ce chapitre complet offre un guide détaillé pour comprendre, implémenter et optimiser les modèles dans des scénarios de déploiement en périphérie.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-11T21:25:38+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "es"
-}
--->
 # Muestras del Taller - Tarjeta de Referencia Rápida
 
 **Última Actualización**: 8 de octubre de 2025

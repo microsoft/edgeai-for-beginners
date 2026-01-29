@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T12:27:57+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "fr"
-}
--->
 # Session 5 Exemple : Orchestration Multi-Agent
 
 Cet exemple illustre un modèle de coordination + spécialistes en utilisant le point de terminaison compatible OpenAI de Foundry Local.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-09-30T22:58:44+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "es"
-}
--->
 # Ejemplo 04: Aplicaciones de Chat de Producción con Chainlit
 
 Un ejemplo completo que demuestra múltiples enfoques para construir aplicaciones de chat listas para producción utilizando Microsoft Foundry Local, con interfaces web modernas, respuestas en streaming y tecnologías avanzadas de navegador.

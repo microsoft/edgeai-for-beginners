@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T10:42:37+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "fr"
-}
--->
 # Intégration de Foundry Local en tant qu'outils
 
 Un cadre complet pour intégrer Microsoft Foundry Local en tant qu'outils appelables dans des applications plus vastes, conformément aux modèles officiels de Microsoft pour l'intégration d'IA basée sur des outils.

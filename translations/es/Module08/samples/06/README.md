@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-09-30T22:58:39+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "es"
-}
--->
 # Sesión 6 Ejemplo: Modelos como Herramientas
 
 Este ejemplo implementa un router mínimo + registro de herramientas que selecciona un modelo basado en el mensaje del usuario y llama al endpoint compatible con OpenAI de Foundry Local.

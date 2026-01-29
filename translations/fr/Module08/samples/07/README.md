@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "254150b7d7854ec87ffcd88824d98079",
-  "translation_date": "2025-09-24T10:47:47+00:00",
-  "source_file": "Module08/samples/07/README.md",
-  "language_code": "fr"
-}
--->
 # Exemple d'utilisation de Foundry Local comme API
 
 Cet exemple montre comment utiliser Microsoft Foundry Local comme service REST API sans dépendre du SDK OpenAI. Il illustre des modèles d'intégration HTTP directe pour un contrôle et une personnalisation maximaux.
