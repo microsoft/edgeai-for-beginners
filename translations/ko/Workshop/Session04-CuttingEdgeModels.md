@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-11T22:10:15+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "ko"
-}
--->
 # 세션 4: 최첨단 모델 탐구 – LLM, SLM 및 디바이스 내 추론
 
 ## 개요

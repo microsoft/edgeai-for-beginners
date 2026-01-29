@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
-  "translation_date": "2026-01-05T14:02:44+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
-  "language_code": "hi"
-}
--->
 # पॉडकास्ट एप्लीकेशन
 
 एआई एजेंट्स का उपयोग करके पॉडकास्ट स्क्रिप्ट बनाने के लिए एक कंसोल एप्लीकेशन।

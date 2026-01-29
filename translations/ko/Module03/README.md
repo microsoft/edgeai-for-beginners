@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-07-22T04:52:03+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "ko"
-}
--->
 # Chapter 03: 소형 언어 모델(SLM) 배포
 
 이 포괄적인 챕터는 소형 언어 모델(SLM)의 배포 전 과정을 탐구하며, 이론적 기초, 실질적인 구현 전략, 그리고 생산 준비가 된 컨테이너화된 솔루션을 다룹니다. 챕터는 독자들을 기본 개념에서 고급 배포 시나리오로 안내하는 세 가지 점진적인 섹션으로 구성되어 있습니다.

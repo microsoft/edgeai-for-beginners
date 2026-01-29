@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T11:31:13+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "ko"
-}
--->
 # 변경 로그
 
 EdgeAI for Beginners의 모든 주요 변경 사항은 여기에서 문서화됩니다. 이 프로젝트는 날짜 기반 항목과 Keep a Changelog 스타일(추가됨, 변경됨, 수정됨, 제거됨, 문서화됨, 이동됨)을 사용합니다.

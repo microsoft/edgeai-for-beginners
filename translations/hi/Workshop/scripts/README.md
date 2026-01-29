@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T21:05:15+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "hi"
-}
--->
 # वर्कशॉप स्क्रिप्ट्स
 
 यह डायरेक्टरी वर्कशॉप सामग्री में गुणवत्ता और स्थिरता बनाए रखने के लिए उपयोग किए जाने वाले ऑटोमेशन और सपोर्ट स्क्रिप्ट्स को संग्रहीत करती है।

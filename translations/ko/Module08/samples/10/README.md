@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T10:43:07+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "ko"
-}
--->
 # Foundry Local을 도구로 통합하기
 
 Microsoft Foundry Local을 호출 가능한 도구로 더 큰 애플리케이션에 통합하는 포괄적인 프레임워크로, Microsoft의 공식적인 도구 기반 AI 통합 패턴을 따릅니다.

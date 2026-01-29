@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T11:46:29+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "ja"
-}
--->
 # WindowsとMacでFoundry Localを使用する
 
 このガイドでは、WindowsとMacでMicrosoft Foundry Localをインストール、実行、統合する方法を説明します。すべての手順とコマンドはMicrosoft Learnのドキュメントに基づいて検証されています。

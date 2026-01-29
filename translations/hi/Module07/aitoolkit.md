@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-  "translation_date": "2025-10-21T06:59:47+00:00",
-  "source_file": "Module07/aitoolkit.md",
-  "language_code": "hi"
-}
--->
 # एआई टूलकिट फॉर विजुअल स्टूडियो कोड - एज एआई डेवलपमेंट गाइड
 
 ## परिचय

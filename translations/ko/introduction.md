@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-09-26T10:26:00+00:00",
-  "source_file": "introduction.md",
-  "language_code": "ko"
-}
--->
 # 초보자를 위한 엣지 AI 소개
 
 ![엣지 AI 소개](../../translated_images/ko/cover.eb18d1b9605d754b.webp)

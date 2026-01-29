@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T21:00:09+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "ko"
-}
--->
 # 워크숍 스크립트
 
 이 디렉토리에는 워크숍 자료의 품질과 일관성을 유지하기 위해 사용되는 자동화 및 지원 스크립트가 포함되어 있습니다.

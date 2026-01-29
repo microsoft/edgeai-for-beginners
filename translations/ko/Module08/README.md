@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-09-30T23:35:43+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "ko"
-}
--->
 # 모듈 08: Microsoft Foundry Local - 완벽한 개발자 도구 키트 실습
 
 ## 개요

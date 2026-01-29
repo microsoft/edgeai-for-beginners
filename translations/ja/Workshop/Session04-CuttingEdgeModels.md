@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-11T22:06:03+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "ja"
-}
--->
 # セッション4: 最新モデルの探求 – LLMs、SLMs & デバイス上での推論
 
 ## 概要

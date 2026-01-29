@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T10:43:59+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "ko"
-}
--->
 # 다중 에이전트 오케스트레이션 시스템 - Foundry Local
 
 Microsoft Foundry Local이 제공하는 고급 다중 에이전트 시스템으로, 지능형 에이전트 조정, 전문화된 작업 위임, 협업 문제 해결 패턴을 시연합니다.

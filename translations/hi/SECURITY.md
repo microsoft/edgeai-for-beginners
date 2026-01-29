@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-17T14:24:47+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "hi"
-}
--->
 ## सुरक्षा
 
 Microsoft हमारे सॉफ़्टवेयर उत्पादों और सेवाओं की सुरक्षा को गंभीरता से लेता है, जिसमें हमारे GitHub संगठनों में सभी स्रोत कोड रिपॉजिटरी शामिल हैं।

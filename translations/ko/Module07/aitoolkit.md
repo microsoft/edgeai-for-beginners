@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-  "translation_date": "2025-10-21T06:58:10+00:00",
-  "source_file": "Module07/aitoolkit.md",
-  "language_code": "ko"
-}
--->
 # AI Toolkit for Visual Studio Code - 엣지 AI 개발 가이드
 
 ## 소개

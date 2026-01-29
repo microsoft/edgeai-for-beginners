@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-11T22:14:44+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "hi"
-}
--->
 # सत्र 4: अत्याधुनिक मॉडल्स का अन्वेषण – LLMs, SLMs और ऑन-डिवाइस इंफेरेंस
 
 ## सारांश

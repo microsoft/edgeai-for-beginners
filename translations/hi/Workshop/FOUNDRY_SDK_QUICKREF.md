@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1a52481fe75c7692d785aef8da50e5e7",
-  "translation_date": "2025-10-08T21:53:06+00:00",
-  "source_file": "Workshop/FOUNDRY_SDK_QUICKREF.md",
-  "language_code": "hi"
-}
--->
 # Foundry Local SDK - त्वरित संदर्भ
 
 ## स्थापना

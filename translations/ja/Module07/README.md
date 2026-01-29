@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T11:42:48+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "ja"
-}
--->
 # 第7章 : EdgeAI サンプル
 
 Edge AIは、人工知能とエッジコンピューティングの融合を表し、クラウド接続に依存せずにデバイス上で直接インテリジェントな処理を可能にします。この章では、異なるプラットフォームとフレームワークを使用した5つの独自のEdgeAI実装を探り、エッジでAIモデルを実行する際の多様性と強力さを紹介します。

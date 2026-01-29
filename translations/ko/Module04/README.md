@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T11:34:44+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "ko"
-}
--->
 # Chapter 04 : 모델 형식 변환 및 양자화 - 챕터 개요
 
 EdgeAI의 등장으로 인해 자원이 제한된 장치에서 고급 머신 러닝 기능을 배포하기 위해 모델 형식 변환 및 양자화가 필수 기술로 자리 잡았습니다. 이 포괄적인 챕터는 엣지 배포 시나리오를 위한 모델을 이해하고 구현하며 최적화하는 데 필요한 완벽한 가이드를 제공합니다.

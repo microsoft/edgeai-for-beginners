@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-09-30T23:42:39+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "hi"
-}
--->
 # सत्र 6 नमूना: उपकरण के रूप में मॉडल
 
 यह नमूना एक न्यूनतम राउटर + टूल रजिस्ट्री को लागू करता है, जो उपयोगकर्ता के प्रॉम्प्ट के आधार पर एक मॉडल का चयन करता है और Foundry Local के OpenAI-संगत एंडपॉइंट को कॉल करता है।

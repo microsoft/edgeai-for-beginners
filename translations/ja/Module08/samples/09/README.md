@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T10:43:39+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "ja"
-}
--->
 # マルチエージェントオーケストレーションシステム - Foundry Local
 
 Microsoft Foundry Localによる高度なマルチエージェントシステムで、知的エージェントの連携、専門的なタスクの委任、協調的な問題解決パターンを実現します。

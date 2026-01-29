@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8c30436578b1bd604c48233ecdd39701",
-  "translation_date": "2025-11-11T22:15:55+00:00",
-  "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
-  "language_code": "hi"
-}
--->
 # सत्र 1: Foundry Local के साथ शुरुआत करना
 
 ## सारांश

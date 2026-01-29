@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-07-22T02:48:27+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "ko"
-}
--->
 ## 보안
 
 Microsoft는 소프트웨어 제품과 서비스의 보안을 매우 중요하게 생각하며, 이는 GitHub 조직 내 모든 소스 코드 저장소를 포함합니다.
