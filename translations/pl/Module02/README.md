@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-17T14:26:02+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "pl"
-}
--->
 # Rozdział 02: Podstawy Małych Modeli Językowych
 
 Ten obszerny rozdział wprowadzający oferuje kluczowe spojrzenie na Małe Modele Językowe (SLM), obejmując zasady teoretyczne, strategie praktycznej implementacji oraz rozwiązania gotowe do wdrożenia w produkcji. Rozdział ten tworzy niezbędną bazę wiedzy do zrozumienia nowoczesnych, wydajnych architektur AI i ich strategicznego zastosowania w różnych środowiskach obliczeniowych.

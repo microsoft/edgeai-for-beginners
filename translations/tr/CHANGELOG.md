@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T12:36:20+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "tr"
-}
--->
 # Değişiklik Günlüğü
 
 EdgeAI for Beginners'deki tüm önemli değişiklikler burada belgelenmiştir. Bu proje, tarih bazlı girişler ve Keep a Changelog stilini (Eklendi, Değiştirildi, Düzeltildi, Kaldırıldı, Belgeler, Taşındı) kullanır.

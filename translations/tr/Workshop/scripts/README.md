@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T21:51:06+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "tr"
-}
--->
 # Atölye Betikleri
 
 Bu dizin, Atölye materyalleri arasında kalite ve tutarlılığı sağlamak için kullanılan otomasyon ve destek betiklerini içerir.

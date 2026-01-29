@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-17T15:13:56+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "pl"
-}
--->
 # Rozdział 06: Systemy Agentowe SLM: Kompleksowy Przegląd
 
 Krajobraz sztucznej inteligencji przechodzi fundamentalną transformację, gdy przechodzimy od prostych chatbotów do zaawansowanych agentów AI opartych na Małych Modelach Językowych (SLM). Ten kompleksowy przewodnik bada trzy kluczowe aspekty nowoczesnych systemów agentowych SLM: podstawowe koncepcje i strategie wdrożeniowe, możliwości wywoływania funkcji oraz rewolucyjną integrację Model Context Protocol (MCP).

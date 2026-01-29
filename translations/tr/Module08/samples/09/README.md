@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T21:37:30+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "tr"
-}
--->
 # Çoklu Ajan Orkestrasyon Sistemi - Foundry Local
 
 Microsoft Foundry Local tarafından desteklenen, akıllı ajan koordinasyonu, uzmanlaşmış görev dağıtımı ve iş birliğine dayalı problem çözme modellerini sergileyen gelişmiş bir çoklu ajan sistemi.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-24T21:35:04+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "tr"
-}
--->
 # Örnek 02: OpenAI SDK Entegrasyonu
 
 Microsoft Foundry Local ve Azure OpenAI ile gelişmiş entegrasyonu, akış yanıtları ve doğru hata yönetimini destekleyen bir örnek.

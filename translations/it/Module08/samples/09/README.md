@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T21:37:13+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "it"
-}
--->
 # Sistema di Orchestrazione Multi-Agente - Foundry Local
 
 Un sistema avanzato multi-agente alimentato da Microsoft Foundry Local che dimostra il coordinamento intelligente degli agenti, la delega di compiti specializzati e modelli di risoluzione collaborativa dei problemi.

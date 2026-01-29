@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2db7a2f6e9873c3cd09fea6736bf360b",
-  "translation_date": "2025-09-17T23:47:26+00:00",
-  "source_file": "Module05/README.md",
-  "language_code": "it"
-}
--->
 # Capitolo 05: SLMOps - Una Guida Completa alle Operazioni con Modelli Linguistici Compatti
 
 ## Panoramica

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-17T22:17:23+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "tr"
-}
--->
 ## Güvenlik
 
 Microsoft, yazılım ürünleri ve hizmetlerinin güvenliğini ciddiye alır; bu, GitHub organizasyonlarımızdaki tüm kaynak kodu depolarını da kapsar.

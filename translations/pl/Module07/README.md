@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T12:44:04+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "pl"
-}
--->
 # Rozdział 07: Przykłady EdgeAI
 
 Edge AI to połączenie sztucznej inteligencji z obliczeniami brzegowymi, umożliwiające inteligentne przetwarzanie bezpośrednio na urządzeniach, bez konieczności korzystania z chmury. Ten rozdział przedstawia pięć różnych implementacji EdgeAI na różnych platformach i w różnych środowiskach, ukazując wszechstronność i możliwości uruchamiania modeli AI na brzegu.

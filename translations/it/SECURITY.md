@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-17T22:17:19+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "it"
-}
--->
 ## Sicurezza
 
 Microsoft prende molto seriamente la sicurezza dei propri prodotti software e servizi, inclusi tutti i repository di codice sorgente nelle nostre organizzazioni su GitHub.

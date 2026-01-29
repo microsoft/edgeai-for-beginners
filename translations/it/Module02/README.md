@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-17T22:19:07+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "it"
-}
--->
 # Capitolo 02: Fondamenti dei Modelli Linguistici Compatti
 
 Questo capitolo fondamentale offre un'esplorazione essenziale dei Modelli Linguistici Compatti (SLM), trattando principi teorici, strategie di implementazione pratica e soluzioni per il deployment in produzione. Il capitolo stabilisce una base di conoscenza critica per comprendere le moderne architetture AI efficienti e il loro utilizzo strategico in ambienti computazionali diversificati.

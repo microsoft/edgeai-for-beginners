@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-09-24T21:40:10+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "tr"
-}
--->
 # WebGPU + ONNX Runtime Demo
 
 Bu demo, AI modellerini doğrudan tarayıcıda WebGPU donanım hızlandırması ve ONNX Runtime Web kullanarak çalıştırmayı gösterir.

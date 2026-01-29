@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:42:29+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "pl"
-}
--->
 Speaker 1: Witamy w najnowszym odcinku podcastu! Jestem prowadzącą Lucy, a dziś mamy zaszczyt gościć eksperta z dziedziny AI, Kena, aby porozmawiać o ostatnio bardzo popularnym Ollama. Ken, czy mógłbyś najpierw krótko przedstawić, czym jest Ollama?  
 Speaker 2: Oczywiście! Ollama to narzędzie, które pozwala użytkownikom uruchamiać i zarządzać dużymi modelami językowymi (LLM) na lokalnych maszynach. Nie wymaga korzystania z usług chmurowych, kładzie nacisk na prywatność, kontrolę i personalizację. Dla deweloperów i firm jest to elastyczna i przyjazna prywatności alternatywa dla usług chmurowych takich jak ChatGPT.  
 Speaker 1: Brzmi bardzo interesująco. A jakie są kluczowe zalety Ollamy?  

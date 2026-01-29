@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-17T23:15:34+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "tr"
-}
--->
 # Bölüm 01: Kenar için Yapay Zeka Dağıtımını Dönüştürmek
 
 EdgeAI, yapay zeka dağıtımında bir paradigma değişimini temsil eder ve yapay zeka yeteneklerini bulut tabanlı işlemden yerel kenar cihazlarına taşır. Bu bölüm, yapay zekanın bu dönüştürücü uygulama yaklaşımını tanımlayan temel kavramları, anahtar teknolojileri ve pratik uygulamaları inceler.

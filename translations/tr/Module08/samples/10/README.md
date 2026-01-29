@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T21:36:24+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "tr"
-}
--->
 # Foundry Local'ı Araç Olarak Entegrasyon
 
 Microsoft Foundry Local'ı daha büyük uygulamalar içinde çağrılabilir araçlar olarak entegre etmek için Microsoft'un resmi araç tabanlı yapay zeka entegrasyon desenlerini takip eden kapsamlı bir çerçeve.

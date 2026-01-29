@@ -1,21 +1,12 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ac31463ae3ed21a0ce83b0a351c23dd4",
-  "translation_date": "2026-01-05T09:24:28+00:00",
-  "source_file": "README.md",
-  "language_code": "tr"
-}
--->
-# Yeni Başlayanlar için EdgeAI
+# Yeni Başlayanlar için EdgeAI 
 
 
-![Kurs kapak resmi](../../translated_images/tr/cover.eb18d1b9605d754b.webp)
+![Kurs kapak görseli](../../translated_images/tr/cover.eb18d1b9605d754b.webp)
 
 [![GitHub katkıda bulunanlar](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![GitHub sorunları](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
+[![GitHub sorunlar](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
 [![GitHub çekme istekleri](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![PR'ler Hoşgeldiniz](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 [![GitHub izleyiciler](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
 [![GitHub çatallar](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
@@ -26,182 +17,182 @@ CO_OP_TRANSLATOR_METADATA:
 
 Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
 
-1. **Depoyu çatallayın**: Tıklayın [![GitHub çatallar](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Depoyu klonlayın**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Azure AI Foundry Discord’a Katılın ve uzmanlar ile diğer geliştiricilerle tanışın**](https://discord.com/invite/ByRwuEEgH4)
+1. **Depoyu Çatalla**: Tıklayın [![GitHub çatallar](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Depoyu Klonla**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+3. [**Azure AI Foundry Discord'a Katılın ve uzmanlar ile diğer geliştiricilerle tanışın**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Çok Dilli Destek
+### 🌐 Çoklu Dil Desteği
 
-#### GitHub Action ile desteklenir (Otomatik ve Her Zaman Güncel)
+#### GitHub Action aracılığıyla desteklenmektedir (Otomatik ve Her Zaman Güncel)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arapça](../ar/README.md) | [Bengalce](../bn/README.md) | [Bulgarca](../bg/README.md) | [Birmanca (Myanmar)](../my/README.md) | [Çince (Basitleştirilmiş)](../zh/README.md) | [Çince (Geleneksel, Hong Kong)](../hk/README.md) | [Çince (Geleneksel, Makao)](../mo/README.md) | [Çince (Geleneksel, Tayvan)](../tw/README.md) | [Hırvatça](../hr/README.md) | [Çekçe](../cs/README.md) | [Danca](../da/README.md) | [Felemenkçe](../nl/README.md) | [Estonca](../et/README.md) | [Fince](../fi/README.md) | [Fransızca](../fr/README.md) | [Almanca](../de/README.md) | [Yunanca](../el/README.md) | [İbranice](../he/README.md) | [Hintçe](../hi/README.md) | [Macarca](../hu/README.md) | [Endonezce](../id/README.md) | [İtalyanca](../it/README.md) | [Japonca](../ja/README.md) | [Kannada](../kn/README.md) | [Korece](../ko/README.md) | [Litvanca](../lt/README.md) | [Malayca](../ms/README.md) | [Malayalamca](../ml/README.md) | [Marathi](../mr/README.md) | [Nepalce](../ne/README.md) | [Nijerya Pidgin](../pcm/README.md) | [Norveççe](../no/README.md) | [Farsça (Farsi)](../fa/README.md) | [Lehçe](../pl/README.md) | [Portekizce (Brezilya)](../br/README.md) | [Portekizce (Portekiz)](../pt/README.md) | [Pencapça (Gurmukhi)](../pa/README.md) | [Rumence](../ro/README.md) | [Rusça](../ru/README.md) | [Sırpça (Kiril)](../sr/README.md) | [Slovakça](../sk/README.md) | [Slovence](../sl/README.md) | [İspanyolca](../es/README.md) | [Svahili](../sw/README.md) | [İsveççe](../sv/README.md) | [Tagalogca (Filipince)](../tl/README.md) | [Tamilce](../ta/README.md) | [Telugu](../te/README.md) | [Tayca](../th/README.md) | [Türkçe](./README.md) | [Ukraynaca](../uk/README.md) | [Urduca](../ur/README.md) | [Vietnamca](../vi/README.md)
+[Arapça](../ar/README.md) | [Bengalce](../bn/README.md) | [Bulgarca](../bg/README.md) | [Burma (Myanmar)](../my/README.md) | [Çince (Basitleştirilmiş)](../zh-CN/README.md) | [Çince (Geleneksel, Hong Kong)](../zh-HK/README.md) | [Çince (Geleneksel, Makao)](../zh-MO/README.md) | [Çince (Geleneksel, Tayvan)](../zh-TW/README.md) | [Hırvatça](../hr/README.md) | [Çekçe](../cs/README.md) | [Danca](../da/README.md) | [Flemenkçe](../nl/README.md) | [Estonca](../et/README.md) | [Fince](../fi/README.md) | [Fransızca](../fr/README.md) | [Almanca](../de/README.md) | [Yunanca](../el/README.md) | [İbranice](../he/README.md) | [Hintçe](../hi/README.md) | [Macarca](../hu/README.md) | [Endonezce](../id/README.md) | [İtalyanca](../it/README.md) | [Japonca](../ja/README.md) | [Kannada](../kn/README.md) | [Korece](../ko/README.md) | [Litvanca](../lt/README.md) | [Malayca](../ms/README.md) | [Malayalamca](../ml/README.md) | [Marathice](../mr/README.md) | [Nepalce](../ne/README.md) | [Nijerya Pidgin](../pcm/README.md) | [Norveççe](../no/README.md) | [Farsça (Persçe)](../fa/README.md) | [Lehçe](../pl/README.md) | [Portekizce (Brezilya)](../pt-BR/README.md) | [Portekizce (Portekiz)](../pt-PT/README.md) | [Pencapça (Gurmuki)](../pa/README.md) | [Romen](../ro/README.md) | [Rusça](../ru/README.md) | [Sırpça (Kiril)](../sr/README.md) | [Slovakça](../sk/README.md) | [Slovence](../sl/README.md) | [İspanyolca](../es/README.md) | [Svahili](../sw/README.md) | [İsveççe](../sv/README.md) | [Tagalogca (Filipinler)](../tl/README.md) | [Tamilce](../ta/README.md) | [Telugu](../te/README.md) | [Tayca](../th/README.md) | [Türkçe](./README.md) | [Ukraynaca](../uk/README.md) | [Urduca](../ur/README.md) | [Vietnamca](../vi/README.md)
 
 > **Yerel Olarak Klonlamayı Tercih Ediyor musunuz?**
 
-> Bu depo, indirme boyutunu önemli ölçüde artıran 50+ dil çevirisini içerir. Çeviriler olmadan klonlamak için, seyrek checkout kullanın:
+> Bu depo, indirilen boyutu önemli ölçüde artıran 50'den fazla dil çevirisi içerir. Çeviriler olmadan klonlamak için, seyrek checkout kullanın:  
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
 > cd edgeai-for-beginners
 > git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
 > ```
-> Bu, kursu tamamlamak için ihtiyacınız olan her şeyi çok daha hızlı bir indirme ile size verir.
+> Bu size kursu tamamlamak için ihtiyacınız olan her şeyi çok daha hızlı indirme imkanı sağlar.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Ek çeviri dillerinin desteklenmesini istiyorsanız, bunlar [burada](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md) listelenmiştir**
+**Ek çeviri dillerinin desteklenmesini istiyorsanız, listeye [buradan](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md) bakabilirsiniz**
 ## Giriş
 
-**Yeni Başlayanlar için EdgeAI'ye** hoş geldiniz – Edge Yapay Zeka'nın dönüştürücü dünyasına kapsamlı yolculuğunuz. Bu kurs güçlü AI yetenekleri ile gerçek dünyada cihazlarda uygulama arasındaki boşluğu kapatır ve verilerin üretildiği ve kararların verilmesi gereken yerlerde AI’nın potansiyelini doğrudan kullanmanızı sağlar.
+**Yeni Başlayanlar için EdgeAI**'ya hoş geldiniz – Edge Yapay Zekanın dönüştürücü dünyasına kapsamlı yolculuğunuz. Bu kurs, güçlü AI yetenekleri ile gerçek dünya edge cihazlarında uygulama arasında köprü kurarak, verilerin üretildiği ve kararların verilmesi gerektiği yerde doğrudan AI potansiyelini kullanmanızı sağlar.
 
-### Öğrenecekleriniz
+### Neleri Öğreneceksiniz
 
-Bu kurs sizi temel kavramlardan üretime hazır uygulamalara götürür ve şunları kapsar:
-- Kenar dağıtımı için optimize edilmiş **Küçük Dil Modelleri (SLM'ler)**
-- Çeşitli platformlarda **donanım farkındalığı ile optimizasyon**
-- **Gizliliği koruyan yeteneklerle gerçek zamanlı çıkarım**
+Bu kurs, temel kavramlardan üretime hazır uygulamalara kadar sizi götürür, kapsar:
+- Edge dağıtımı için optimize edilmiş **Küçük Dil Modelleri (SLM)**
+- Çeşitli platformlarda **donanım farkındalıklı optimizasyon**
+- **Gizliliği koruyan gerçek zamanlı çıkarımlar**
 - Kurumsal uygulamalar için **üretim dağıtım** stratejileri
 
 ### Neden EdgeAI Önemlidir
 
-Edge AI, kritik modern zorlukları ele alan bir paradigma değişimini temsil eder:
-- **Gizlilik ve Güvenlik**: Bulut erişimi olmadan hassas verileri yerel olarak işleyin
-- **Gerçek Zamanlı Performans**: Zaman kritik uygulamalar için ağ gecikmesini ortadan kaldırır
-- **Maliyet Verimliliği**: Bant genişliği ve bulut bilgi işlem giderlerini azaltır
-- **Dayanıklı Operasyonlar**: Ağ kesintileri sırasında işlevselliği sürdürür
-- **Regülasyonlara Uyum**: Veri egemenliği gereksinimlerini karşılar
+Edge AI, kritik modern zorluklara çözüm getiren paradigmayı temsil eder:
+- **Gizlilik ve Güvenlik**: Bulut erişimi olmadan hassas verileri yerel olarak işleme
+- **Gerçek Zamanlı Performans**: Zaman kritik uygulamalarda ağ gecikmesini ortadan kaldırma
+- **Maliyet Verimliliği**: Bant genişliği ve bulut bilişim giderlerini azaltma
+- **Dayanıklı Operasyonlar**: Ağ kesintilerinde bile işlevsellik sağlama
+- **Regülasyon Uyumu**: Veri egemenliği gereksinimlerini karşılama
 
 ### Edge AI
 
-Edge AI, yapay zeka algoritmalarının ve dil modellerinin verinin üretildiği yere yakın donanımda yerel olarak çalıştırılması anlamına gelir, çıkarım için bulut kaynaklarına bağlı değildir. Gecikmeyi azaltır, gizliliği artırır ve gerçek zamanlı karar almayı mümkün kılar.
+Edge AI, AI algoritmalarını ve dil modellerini verilerin üretildiği donanımda, bulut kaynaklarına bağımlı olmadan yerelde çalıştırmayı ifade eder. Gecikmeyi azaltır, gizliliği artırır ve gerçek zamanlı karar almayı mümkün kılar.
 
 ### Temel İlkeler:
-- **Cihazda çıkarım**: Yapay zeka modelleri kenar cihazlarda (telefonlar, yönlendiriciler, mikrodenetleyiciler, endüstriyel PC'ler) çalışır
-- **Çevrimdışı yetenek**: Sürekli internet bağlantısı olmadan çalışır
-- **Düşük gecikme**: Gerçek zamanlı sistemlere uygun anlık yanıtlar
-- **Veri egemenliği**: Hassas verileri yerel tutarak güvenlik ve uyumu artırır
+- **Cihaz üzerinde çıkarım**: AI modelleri edge cihazlarda (telefonlar, yönlendiriciler, mikrodenetleyiciler, endüstriyel PC'ler) çalışır
+- **Çevrimdışı çalışma**: Sürekli internet bağlantısı olmadan işlevsellik sağlar
+- **Düşük gecikme**: Gerçek zamanlı sistemlere uygun anında yanıtlar
+- **Veri egemenliği**: Hassas veriler yerelde saklanır, güvenlik ve uyumu artırır
 
-### Küçük Dil Modelleri (SLM'ler)
+### Küçük Dil Modelleri (SLM)
 
-Phi-4, Mistral-7B ve Gemma gibi SLM'ler, daha büyük LLM’lerin optimize edilmiş versiyonlarıdır—eğitilmiş veya distill edilmiş:
-- **Azaltılmış bellek kullanımı**: Sınırlı kenar cihaz belleğinin verimli kullanımı
-- **Düşük işlem talebi**: CPU ve kenar GPU performansı için optimize edilmiş
-- **Daha hızlı başlatma süreleri**: Yanıt veren uygulamalar için hızlı başlatma
+Phi-4, Mistral-7B ve Gemma gibi SLM'ler, daha büyük büyük dil modellerinin optimize edilmiş versiyonlarıdır—şu amaçlarla eğitimli veya distile edilmişlerdir:
+- **Azaltılmış bellek kullanımı**: Sınırlı edge cihaz belleğini verimli kullanma
+- **Düşük işlem gücü ihtiyacı**: CPU ve edge GPU performansına göre optimize edilmiş
+- **Daha hızlı başlatma süreleri**: Hızlı başlatma ile yanıt veren uygulamalar için uygun
 
-Aşağıdaki sınırlamalara uyarken güçlü NLP yeteneklerini sunarlar:
-- **Gömülü sistemler**: Nesnelerin İnterneti cihazları ve endüstriyel kontrolörler
-- **Mobil cihazlar**: Çevrimdışı yeteneklere sahip akıllı telefonlar ve tabletler
-- **IoT Cihazları**: Sınırlı kaynaklara sahip sensörler ve akıllı cihazlar
-- **Kenar sunucuları**: Sınırlı GPU kaynakları ile yerel işleme birimleri
-- **Kişisel Bilgisayarlar**: Masaüstü ve dizüstü dağıtım senaryoları
+Şunların kısıtlamalarını karşılayarak güçlü NLP yeteneklerini açığa çıkarırlar:
+- **Gömülü sistemler**: IoT cihazları ve endüstriyel kontrolörler
+- **Mobil cihazlar**: Çevrimdışı çalışma yeteneğine sahip akıllı telefonlar ve tabletler
+- **IoT Cihazları**: Kısıtlı kaynaklı sensörler ve akıllı cihazlar
+- **Edge sunucular**: Sınırlı GPU kaynaklarına sahip yerel işlem birimleri
+- **Kişisel Bilgisayarlar**: Masaüstü ve dizüstü uygulama senaryoları
 
 ## Kurs Modülleri ve Navigasyon
 
-| Modül | Konu | Odak Alanı | Temel İçerik | Seviye | Süre |
+| Modül | Konu | Odak Alanı | Ana İçerik | Seviye | Süre |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [EdgeAI’ye Giriş](./introduction.md) | Temel ve Bağlam | EdgeAI Genel Bakış • Sektör Uygulamaları • SLM Tanıtımı • Öğrenme Hedefleri | Başlangıç | 1-2 saat |
-| [📚 01](../../Module01) | [EdgeAI Temelleri](./Module01/README.md) | Bulut ve Edge AI karşılaştırması | EdgeAI Temelleri • Gerçek Dünya Vaka Çalışmaları • Uygulama Kılavuzu • Kenar Dağıtımı | Başlangıç | 3-4 saat |
-| [🧠 02](../../Module02) | [SLM Model Temelleri](./Module02/README.md) | Model aileleri ve mimari | Phi Ailesi • Qwen Ailesi • Gemma Ailesi • BitNET • μModel • Phi-Silica | Başlangıç | 4-5 saat |
-| [🚀 03](../../Module03) | [SLM Dağıtım Uygulaması](./Module03/README.md) | Yerel ve bulut dağıtımı | İleri Öğrenim • Yerel Ortam • Bulut Dağıtımı | Orta | 4-5 saat |
-| [⚙️ 04](../../Module04) | [Model Optimizasyon Araçları](./Module04/README.md) | Çok platformlu optimizasyon | Giriş • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • İş Akışı Sentezi | Orta | 5-6 saat |
-| [🔧 05](../../Module05) | [SLMOps Üretim](./Module05/README.md) | Üretim operasyonları | SLMOps Tanıtımı • Model Distillasyonu • İnce Ayar • Üretim Dağıtımı | İleri | 5-6 saat |
-| [🤖 06](../../Module06) | [AI Ajanları ve Fonksiyon Çağrısı](./Module06/README.md) | Ajan çerçeveleri ve MCP | Ajan Tanıtımı • Fonksiyon Çağrısı • Model Bağlam Protokolü | İleri | 4-5 saat |
-| [💻 07](../../Module07) | [Platform Uygulaması](./Module07/README.md) | Çok platformlu örnekler | AI Araç Takımı • Foundry Local • Windows Geliştirme | İleri | 3-4 saat |
-| [🏭 08](../../Module08) | [Foundry Local Araç Takımı](./Module08/README.md) | Üretime hazır örnekler | Örnek uygulamalar (detaylar aşağıda) | Uzman | 8-10 saat |
+| [📖 00 ](./introduction.md) | [EdgeAI'ya Giriş](./introduction.md) | Temel & Bağlam | EdgeAI Genel Bakış • Sektör Uygulamaları • SLM Tanıtımı • Öğrenme Hedefleri | Başlangıç | 1-2 sa |
+| [📚 01](../../Module01) | [EdgeAI Temelleri](./Module01/README.md) | Bulut ve Edge AI karşılaştırması | EdgeAI Temelleri • Gerçek Dünya Vaka Çalışmaları • Uygulama Rehberi • Edge Dağıtımı | Başlangıç | 3-4 sa |
+| [🧠 02](../../Module02) | [SLM Model Temelleri](./Module02/README.md) | Model aileleri & mimari | Phi Ailesi • Qwen Ailesi • Gemma Ailesi • BitNET • μModel • Phi-Silica | Başlangıç | 4-5 sa |
+| [🚀 03](../../Module03) | [SLM Dağıtım Pratiği](./Module03/README.md) | Yerel & bulut dağıtımı | İleri Seviye Öğrenme • Yerel Ortam • Bulut Dağıtımı | Orta | 4-5 sa |
+| [⚙️ 04](../../Module04) | [Model Optimizasyon Araç Takımı](./Module04/README.md) | Platformlar arası optimizasyon | Giriş • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • İş Akışı Sentezi | Orta | 5-6 sa |
+| [🔧 05](../../Module05) | [SLMOps Üretim](./Module05/README.md) | Üretim operasyonları | SLMOps Tanıtımı • Model Distilasyonu • İnce Ayar • Üretim Dağıtımı | İleri | 5-6 sa |
+| [🤖 06](../../Module06) | [AI Agentları & Fonksiyon Çağrısı](./Module06/README.md) | Agent çerçeveleri & MCP | Agent Tanıtımı • Fonksiyon Çağrısı • Model Bağlam Protokolü | İleri | 4-5 sa |
+| [💻 07](../../Module07) | [Platform Uygulaması](./Module07/README.md) | Platformlar arası örnekler | AI Araç Takımı • Foundry Yerel • Windows Geliştirme | İleri | 3-4 sa |
+| [🏭 08](../../Module08) | [Foundry Yerel Araç Takımı](./Module08/README.md) | Üretim hazır örnekler | Örnek uygulamalar (aşağıda detaylar) | Uzman | 8-10 sa |
 
 ### 🏭 **Modül 08: Örnek Uygulamalar**
 
 - [01: REST Chat Hızlı Başlangıç](./Module08/samples/01/README.md)
 - [02: OpenAI SDK Entegrasyonu](./Module08/samples/02/README.md)
-- [03: Model Keşfi ve Kıyaslama](./Module08/samples/03/README.md)
+- [03: Model Keşfi & Kıyaslama](./Module08/samples/03/README.md)
 - [04: Chainlit RAG Uygulaması](./Module08/samples/04/README.md)
-- [05: Çoklu Ajan Orkestrasyonu](./Module08/samples/05/README.md)
-- [06: Araç Olarak Modeller Yönlendiricisi](./Module08/samples/06/README.md)
+- [05: Çoklu Agent Orkestrasyonu](./Module08/samples/05/README.md)
+- [06: Araç olarak Modeller Yönlendiricisi](./Module08/samples/06/README.md)
 - [07: Doğrudan API İstemcisi](./Module08/samples/07/README.md)
 - [08: Windows 11 Sohbet Uygulaması](./Module08/samples/08/README.md)
-- [09: Gelişmiş Çoklu Ajan Sistemi](./Module08/samples/09/README.md)
+- [09: İleri Düzey Çoklu Agent Sistemi](./Module08/samples/09/README.md)
 - [10: Foundry Araçları Çerçevesi](./Module08/samples/10/README.md)
 
 ### 🎓 **Atölye: Uygulamalı Öğrenme Yolu**
 
-Üretime hazır uygulamalarla kapsamlı uygulamalı atölye materyalleri:
+Üretim hazır uygulamalarla kapsamlı uygulamalı atölye malzemeleri:
 
-- **[Atölye Kılavuzu](./Workshop/Readme.md)** - Tam öğrenme hedefleri, çıktı ve kaynak navigasyonu
-- **Python Örnekleri** (6 oturum) - En iyi uygulamalar, hata yönetimi ve kapsamlı dokümantasyon ile güncellendi
-- **Jupyter Not Defterleri** (8 interaktif) - Benchmark ve performans izlemeli adım adım öğreticiler
-- **Oturum Kılavuzları** - Her atölye oturumu için detaylı markdown rehberleri
-- **Doğrulama Araçları** - Kod kalitesini doğrulamak ve hızlı testler çalıştırmak için betikler
+- **[Atölye Rehberi](./Workshop/Readme.md)** - Tam öğrenme hedefleri, sonuçlar ve kaynak navigasyonu
+- **Python Örnekleri** (6 oturum) - En iyi uygulamalar, hata yönetimi ve kapsamlı dokümantasyon ile güncellenmiş
+- **Jupyter Defterleri** (8 etkileşimli) - Adım adım eğitimler, kıyaslamalar ve performans izleme
+- **Oturum Rehberleri** - Her atölye oturumu için detaylı markdown rehberleri
+- **Doğrulama Araçları** - Kod kalitesini doğrulama ve temel testler için betikler
 
-**Ne İnşa Edeceksiniz:**
-- Akış desteğiyle yerel AI sohbet uygulamaları
+**Neler İnşa Edeceksiniz:**
+- Akış destekli yerel AI sohbet uygulamaları
 - Kalite değerlendirmeli RAG boru hatları (RAGAS)
 - Çoklu model kıyaslama ve karşılaştırma araçları
-- Çoklu ajan orkestrasyon sistemleri
-- Göreve dayalı seçimle akıllı model yönlendirme
+- Çoklu agent orkestrasyon sistemleri
+- Görev tabanlı seçme ile akıllı model yönlendirme
 
-### 🎙️ **Agentic için Atölye: Uygulamalı - AI Podcast Stüdyosu**
+### 🎙️ **Agentic Atölyesi: Uygulamalı - AI Podcast Stüdyosu**
 
-Başından sona AI destekli bir podcast üretim hattı oluşturun! Bu kapsamlı atölye, fikirleri profesyonel podcast bölümlerine dönüştüren tam kapsamlı çoklu ajan sistemi oluşturmayı öğretir.
-**[🎬 AI Podcast Stüdyosu Atölyesine Başlayın](./WorkshopForAgentic/README.md)**
+Başından sonuna kadar AI destekli bir podcast prodüksiyon boru hattı oluşturun! Bu etkileyici atölye, fikirlerinizi profesyonel podcast bölümlerine dönüştüren tam bir çoklu agent sistemi oluşturmayı öğretir.
+**[🎬 AI Podcast Stüdyo Atölyesine Başla](./WorkshopForAgentic/README.md)**
 
-**Göreviniz**: Tamamen kendinizin oluşturacağı AI ajanları tarafından desteklenen "Future Bytes" adlı bir teknoloji podcast'i başlatın. Bulut bağımlılığı yok, API maliyeti yok — her şey yerel olarak makinenizde çalışıyor.
+**Göreviniz**: Tamamen kendi oluşturacağınız AI ajanları tarafından desteklenen "Future Bytes" adlı bir teknoloji podcast'i başlatın. Bulut bağımlılığı yok, API maliyeti yok — her şey yerel olarak bilgisayarınızda çalışır.
 
-**Bunu Özel Kılan Nedir:**
-- **🤖 Gerçek Çoklu Ajan Orkestrasyonu** - Araştıran, yazan ve ses üretimi yapan uzman AI ajanları oluşturun
-- **🎯 Tam Üretim Hattı** - Konu seçmeden son podcast ses çıktısına kadar
-- **💻 %100 Yerel Kurulum** - Tam gizlilik ve kontrol için Ollama ve yerel modelleri (Qwen-3-8B) kullanır
-- **🎤 Metinden Sese Entegrasyonu** - Metinleri doğal konuşmalar gibi çok konuşmacılı diyaloglara dönüştürün
-- **✋ İnsan-Onaylı İş Akışları** - Onay kapıları kaliteyi garanti ederken otomasyonu sürdürür
+**Bu Projeyi Benzersiz Yapan Nedir:**
+- **🤖 Gerçek Çoklu Ajan Orkestrasyonu** - Araştıran, yazan ve ses üreten uzman AI ajanları oluşturun
+- **🎯 Tam Üretim Hattı** - Konu seçiminden final podcast ses çıktısına kadar
+- **💻 %100 Yerel Dağıtım** - Ollama ve yerel modeller (Qwen-3-8B) kullanarak tam gizlilik ve kontrol
+- **🎤 Metinden Konuşmaya Entegrasyon** - Metinleri doğal ses tonlu çoklu konuşmacı diyaloglarına dönüştürün
+- **✋ İnsan Döngüde İş Akışları** - Onay kapıları kaliteyi sağlarken otomasyonu sürdürür
 
 **Üç Perdelik Öğrenme Yolculuğu:**
 
 | Perde | Odak | Temel Beceriler | Süre |
-|-------|-------|-----------------|-------|
-| **[Perde 1: AI Asistanlarınla Tanış](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | İlk AI ajanınla kurulum | Araç entegrasyonu • Web araması • Problem çözme • Ajanik muhakeme | 2-3 saat |
-| **[Perde 2: Üretim Ekibini Kur](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Birden fazla ajanı yönetin | Takım koordinasyonu • Onay iş akışları • DevUI arayüzü • İnsan gözetimi | 3-4 saat |
-| **[Perde 3: Podcast’ini Hayata Geçir](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Podcast sesini üret | Metinden sese • Çok konuşmacılı sentez • Uzun form ses • Tam otomasyon | 2-3 saat |
+|-------|-------|-----------------|------|
+| **[Perde 1: AI Asistanlarınızla Tanışın](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | İlk AI ajanınızı oluşturun | Araç entegrasyonu • Web araması • Problem çözme • Ajan muhakemesi | 2-3 saat |
+| **[Perde 2: Üretim Ekibinizi Kurun](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Birden çok ajanın orkestrasyonu | Ekip koordinasyonu • Onay iş akışları • DevUI arayüzü • İnsan denetimi | 3-4 saat |
+| **[Perde 3: Podcast’inizi Hayata Geçirin](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Podcast sesini oluşturun | Metinden konuşmaya • Çok konuşmacılı sentez • Uzun format ses • Tam otomasyon | 2-3 saat |
 
 **Kullanılan Teknolojiler:**
 - **Microsoft Agent Framework** - Çoklu ajan orkestrasyonu ve koordinasyonu
 - **Ollama** - Yerel AI model çalışma zamanı (bulut gerektirmez)
-- **Qwen-3-8B** - Ajanik görevler için optimize edilmiş açık kaynak dil modeli
-- **Metinden Sese API'leri** - Podcast üretimi için doğal ses sentezi
+- **Qwen-3-8B** - Ajan görevleri için optimize edilmiş açık kaynaklı dil modeli
+- **Metinden Konuşmaya API’leri** - Podcast üretimi için doğal ses sentezi
 
 **Donanım Desteği:**
 - ✅ **CPU Modu** - Her modern bilgisayarda çalışır (8GB+ RAM önerilir)
-- 🚀 **GPU Hızlandırma** - NVIDIA/AMD GPU'larla önemli ölçüde daha hızlı çıkarım
+- 🚀 **GPU Hızlandırma** - NVIDIA/AMD GPU’larla önemli ölçüde daha hızlı çıkarım
 - ⚡ **NPU Desteği** - Yeni nesil sinir işleme birimi hızlandırması
 
-**Mükemmel Kullanım Alanları:**
+**Mükemmel Uygunluk:**
 - Çoklu ajan AI sistemleri öğrenen geliştiriciler
 - AI otomasyonu ve iş akışlarıyla ilgilenen herkes
 - AI destekli üretimi keşfeden içerik oluşturucular
 - Pratik AI orkestrasyon kalıplarını inceleyen öğrenciler
 
-**İnşa Etmeye Başlayın**: [🎙️ AI Podcast Stüdyosu Atölyesi →](./WorkshopForAgentic/README.md)
+**Başlamaya Hazır mısınız?** [🎙️ AI Podcast Stüdyo Atölyesine Başla →](./WorkshopForAgentic/README.md)
 
 ### 📊 **Öğrenme Yolu Özeti**
 - **Toplam Süre**: 36-45 saat
-- **Başlangıç Yolu**: Modüller 01-02 (7-9 saat)  
-- **Orta Seviye Yolu**: Modüller 03-04 (9-11 saat)
-- **İleri Seviye Yolu**: Modüller 05-07 (12-15 saat)
-- **Uzman Yolu**: Modül 08 (8-10 saat)
+- **Başlangıç Seviyesi**: Modüller 01-02 (7-9 saat)  
+- **Orta Seviye**: Modüller 03-04 (9-11 saat)
+- **İleri Seviye**: Modüller 05-07 (12-15 saat)
+- **Uzman Seviyesi**: Modül 08 (8-10 saat)
 
 ## Neler İnşa Edeceksiniz
 
-### 🎯 Temel Yetkinlikler
-- **Edge AI Mimarisi**: Bulut entegrasyonlu yerel öncelikli AI sistemleri tasarlama
-- **Model Optimizasyonu**: Edge dağıtımı için modelleri kuantize ve sıkıştırma (yüzde 85 hız artışı, yüzde 75 boyut azaltma)
-- **Çoklu Platform Dağıtımı**: Windows, mobil, gömülü ve bulut-edge hibrit sistemleri
-- **Üretim Operasyonları**: Edge AI’yı üretimde izleme, ölçeklendirme ve sürdürme
+### 🎯 Temel Yetenekler
+- **Edge AI Mimarisi**: Bulut entegrasyonlu yerel öncelikli AI sistemleri tasarlayın
+- **Model Optimizasyonu**: Kenar dağıtımı için modelleri kuantize ve sıkıştırın (yüzde 85 hız artırma, yüzde 75 boyut küçültme)
+- **Çoklu Platform Dağıtımı**: Windows, mobil, gömülü ve bulut-kenar hibrit sistemler
+- **Üretim Operasyonları**: Kenar AI’nı izleme, ölçeklendirme ve sürdürme
 
 ### 🏗️ Pratik Projeler
-- **Foundry Yerel Sohbet Uygulamaları**: Windows 11 yerel uygulaması ile model geçişi
+- **Foundry Yerel Sohbet Uygulamaları**: Model değiştirme destekli Windows 11 yerel uygulaması
 - **Çoklu Ajan Sistemleri**: Karmaşık iş akışları için koordinatör ve uzman ajanlar  
 - **RAG Uygulamaları**: Yerel belge işleme ve vektör araması
-- **Model Yönlendiriciler**: Görev analizine göre modeller arasında akıllı seçim
-- **API Çerçeveleri**: Yayın ve sağlık izlemesi özellikli üretime hazır istemciler
-- **Çapraz Platform Araçları**: LangChain/Semantik Kernel entegrasyon kalıpları
+- **Model Yöneticileri**: Görev analizine göre modeller arasında akıllı seçim
+- **API Çerçeveleri**: Akışlı ve sağlık izlemeli üretim hazır istemciler
+- **Çapraz Platform Araçları**: LangChain/Semantic Kernel entegrasyon kalıpları
 
 ### 🏢 Endüstri Uygulamaları
 **Üretim** • **Sağlık** • **Otonom Araçlar** • **Akıllı Şehirler** • **Mobil Uygulamalar**
@@ -210,19 +201,19 @@ Başından sona AI destekli bir podcast üretim hattı oluşturun! Bu kapsamlı 
 
 **Önerilen Öğrenme Yolu** (toplam 20-30 saat):
 
-0. **📖 Giriş** ([Introduction.md](./introduction.md)): EdgeAI temelleri + sektör bağlamı + öğrenme çerçevesi
-1. **📚 Temel** (Modüller 01-02): EdgeAI kavramları + SLM model aileleri
+0. **📖 Giriş** ([Introduction.md](./introduction.md)): EdgeAI temeli + endüstri bağlamı + öğrenme çerçevesi  
+1. **📚 Temel** (Modüller 01-02): EdgeAI kavramları + SLM model aileleri  
 2. **⚙️ Optimizasyon** (Modüller 03-04): Dağıtım + kuantizasyon çerçeveleri  
-3. **🚀 Üretim** (Modüller 05-06): SLMOps + AI ajanları + fonksiyon çağırma
-4. **💻 Uygulama** (Modüller 07-08): Platform örnekleri + Foundry Yerel araç kiti
+3. **🚀 Üretim** (Modüller 05-06): SLMOps + AI ajanları + işlev çağrısı  
+4. **💻 Uygulama** (Modüller 07-08): Platform örnekleri + Foundry Yerel araç paketi  
 
-Her modül teori, uygulamalı egzersizler ve üretime hazır kod örnekleri içerir.
+Her modül teori, uygulamalı alıştırmalar ve üretime hazır kod örnekleri içerir.
 
 ## Kariyer Etkisi
 
-**Teknik Roller**: EdgeAI Çözüm Mimarı • ML Mühendisi (Edge) • IoT AI Geliştiricisi • Mobil AI Geliştiricisi
+**Teknik Roller**: EdgeAI Çözümler Mimarı • ML Mühendisi (Edge) • IoT AI Geliştiricisi • Mobil AI Geliştiricisi
 
-**Sektörler**: Üretim 4.0 • Sağlık Teknolojisi • Otonom Sistemler • FinTech • Tüketici Elektroniği
+**Endüstri Sektörleri**: Üretim 4.0 • Sağlık Teknolojisi • Otonom Sistemler • FinTech • Tüketici Elektroniği
 
 **Portföy Projeleri**: Çoklu ajan sistemleri • Üretim RAG uygulamaları • Çapraz platform dağıtımı • Performans optimizasyonu
 
@@ -241,24 +232,24 @@ edgeai-for-beginners/
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
 
-## Kurs Öne Çıkanlar
+## Kursun Öne Çıkanları
 
-✅ **Aşamalandırılmış Öğrenme**: Teori → Pratik → Üretim dağıtımı  
+✅ **Kademeli Öğrenme**: Teori → Uygulama → Üretim dağıtımı  
 ✅ **Gerçek Vaka İncelemeleri**: Microsoft, Japan Airlines, kurumsal uygulamalar  
-✅ **Uygulamalı Örnekler**: 50+ örnek, 10 kapsamlı Foundry Yerel demosu  
-✅ **Performans Odaklı**: %85 hız artışı, %75 boyut azalması  
-✅ **Çoklu Platform**: Windows, mobil, gömülü, bulut-edge hibrit  
+✅ **Uygulamalı Örnekler**: 50+ örnek, 10 kapsamlı Foundry Local demosu  
+✅ **Performans Odaklı**: %85 hız artışı, %75 boyut azaltımı  
+✅ **Çoklu Platform**: Windows, mobil, gömülü, bulut-kenar hibrit  
 ✅ **Üretime Hazır**: İzleme, ölçeklendirme, güvenlik, uyumluluk çerçeveleri
 
-📖 **[Çalışma Rehberi Mevcut](STUDY_GUIDE.md)**: Zaman dağılımı rehberi ve öz-değerlendirme araçlarıyla yapılandırılmış 20 saatlik öğrenme yolu.
+📖 **[Çalışma Rehberi Mevcut](STUDY_GUIDE.md)**: Zaman tahsisi rehberi ve öz değerlendirme araçlarıyla yapılandırılmış 20 saatlik öğrenme yolu.
 
 ---
 
-**EdgeAI, AI dağıtımının geleceğini temsil eder**: yerel öncelikli, gizliliğe saygılı ve verimli. Bu becerileri öğrenerek yeni nesil zeki uygulamalar geliştirin.
+**EdgeAI, AI dağıtımının geleceğini temsil eder**: yerel öncelikli, gizlilik koruyucu ve verimli. Bu becerileri ustalaşarak bir sonraki nesil akıllı uygulamaları geliştirin.
 
 ## Diğer Kurslar
 
-Ekibimiz başka kurslar da üretiyor! Şunlara göz atın:
+Ekibimiz başka kurslar da sunuyor! Bakınız:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -302,11 +293,11 @@ Ekibimiz başka kurslar da üretiyor! Şunlara göz atın:
 
 ## Yardım Alma
 
-Takılırsanız veya AI uygulamaları geliştirme hakkında herhangi bir sorunuz olursa, katılın:
+Yapay zeka uygulamaları geliştirirken takılırsanız veya herhangi bir sorunuz olursa, katılın:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Ürün geri bildirimi veya geliştirme sırasında oluşan hatalar için ziyaret edin:
+Ürün geri bildirimi veya hata bildirimi için ziyaret edin:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
@@ -314,5 +305,5 @@ Takılırsanız veya AI uygulamaları geliştirme hakkında herhangi bir sorunuz
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf edilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum farklılıklarından dolayı sorumluluk kabul edilmemektedir.
+Bu belge, yapay zeka çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstermemize rağmen, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belgede yer alan ana dilindeki metin, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi tavsiye edilir. Bu çevirinin kullanımı sonucu oluşabilecek her türlü yanlış anlama veya yorum hatasından sorumlu değiliz.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
