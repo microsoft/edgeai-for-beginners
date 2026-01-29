@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T11:48:18+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "nl"
-}
--->
 # Hoofdstuk 02: Basisprincipes van Kleine Taalmodellen
 
 Dit uitgebreide hoofdstuk biedt een essentiële verkenning van Kleine Taalmodellen (SLMs), met aandacht voor theoretische principes, praktische implementatiestrategieën en oplossingen voor productieklare implementatie. Het hoofdstuk legt de kritische kennisbasis voor het begrijpen van moderne, efficiënte AI-architecturen en hun strategische inzet in diverse computatieve omgevingen.

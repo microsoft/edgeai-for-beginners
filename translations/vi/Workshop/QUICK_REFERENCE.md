@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-11T23:43:25+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "vi"
-}
--->
 # Thẻ Tham Khảo Nhanh - Mẫu Workshop
 
 **Cập nhật lần cuối**: Ngày 8 tháng 10, 2025

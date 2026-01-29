@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-09-25T00:13:22+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "he"
-}
--->
 # WebGPU + ONNX Runtime Demo
 
 הדמו הזה מציג כיצד להריץ מודלים של AI ישירות בדפדפן באמצעות WebGPU להאצת חומרה ו-ONNX Runtime Web.

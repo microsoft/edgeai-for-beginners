@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T12:33:21+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "vi"
-}
--->
 # Chương 01: Chuyển đổi Triển khai AI cho Edge
 
 EdgeAI đại diện cho một sự thay đổi mang tính cách mạng trong triển khai trí tuệ nhân tạo, chuyển đổi khả năng AI từ xử lý dựa trên đám mây sang các thiết bị cục bộ tại biên. Chương này khám phá các khái niệm cơ bản, công nghệ chủ chốt, và các ứng dụng thực tiễn định hình cách tiếp cận đổi mới này trong triển khai AI.

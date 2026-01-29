@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:47:44+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "vi"
-}
--->
 Speaker 1: Chào mừng quý vị đến với tập podcast lần này! Tôi là người dẫn chương trình Lucy, hôm nay chúng ta rất vinh dự được mời chuyên gia lĩnh vực AI Ken cùng trò chuyện về Ollama - chủ đề đang thu hút rất nhiều sự chú ý gần đây. Ken, ông có thể giới thiệu ngắn gọn về Ollama là gì không?  
 Speaker 2: Tất nhiên! Ollama là một công cụ cho phép người dùng chạy và quản lý các mô hình ngôn ngữ lớn (LLM) ngay trên máy cục bộ. Nó không cần phụ thuộc dịch vụ đám mây, nhấn mạnh vào quyền riêng tư, kiểm soát và tùy chỉnh. Đối với nhà phát triển và doanh nghiệp, đây là một giải pháp thay thế linh hoạt và thân thiện với quyền riêng tư, chẳng hạn như các dịch vụ đám mây kiểu ChatGPT.  
 Speaker 1: Nghe rất hấp dẫn. Vậy điểm mạnh cốt lõi của Ollama là gì?  

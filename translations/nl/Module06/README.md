@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T12:26:50+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "nl"
-}
--->
 # Hoofdstuk 06: SLM Agentische Systemen: Een Uitgebreid Overzicht
 
 Het landschap van kunstmatige intelligentie ondergaat een fundamentele transformatie terwijl we evolueren van eenvoudige chatbots naar geavanceerde AI-agenten aangedreven door Small Language Models (SLMs). Deze uitgebreide gids verkent drie cruciale aspecten van moderne SLM-agentische systemen: fundamentele concepten en implementatiestrategieën, mogelijkheden voor functieaanroepen, en de revolutionaire integratie van het Model Context Protocol (MCP).

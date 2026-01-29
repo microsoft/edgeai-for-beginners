@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-25T00:13:44+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "nl"
-}
--->
 # Foundry Local als Tools-integratie
 
 Een uitgebreid framework voor het integreren van Microsoft Foundry Local als oproepbare tools binnen grotere applicaties, volgens de officiële patronen van Microsoft voor AI-integratie op basis van tools.

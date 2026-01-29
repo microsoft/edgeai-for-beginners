@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T00:56:17+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "vi"
-}
--->
 # Mẫu 04: Ứng dụng Chat Sản xuất với Chainlit
 
 Một mẫu toàn diện trình bày nhiều cách tiếp cận để xây dựng các ứng dụng chat sẵn sàng cho sản xuất sử dụng Microsoft Foundry Local, với giao diện web hiện đại, phản hồi theo luồng và các công nghệ trình duyệt tiên tiến.

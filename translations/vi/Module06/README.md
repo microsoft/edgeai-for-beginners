@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T12:27:34+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "vi"
-}
--->
 # Chương 06: Hệ Thống Đại Diện SLM: Tổng Quan Toàn Diện
 
 Cảnh quan trí tuệ nhân tạo đang trải qua một sự chuyển đổi cơ bản khi chúng ta tiến từ các chatbot đơn giản đến các đại diện AI phức tạp được hỗ trợ bởi Mô Hình Ngôn Ngữ Nhỏ (SLM). Hướng dẫn toàn diện này khám phá ba khía cạnh quan trọng của các hệ thống đại diện SLM hiện đại: các khái niệm nền tảng và chiến lược triển khai, khả năng gọi hàm, và tích hợp giao thức ngữ cảnh mô hình (MCP) mang tính cách mạng.

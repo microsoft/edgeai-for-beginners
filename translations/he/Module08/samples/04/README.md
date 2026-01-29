@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T00:52:43+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "he"
-}
--->
 # דוגמה 04: אפליקציות צ'אט לייצור עם Chainlit
 
 דוגמה מקיפה המציגה גישות שונות לבניית אפליקציות צ'אט מוכנות לייצור באמצעות Microsoft Foundry Local, עם ממשקי אינטרנט מודרניים, תגובות זורמות וטכנולוגיות דפדפן מתקדמות.

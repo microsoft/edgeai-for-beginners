@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T13:38:14+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "vi"
-}
--->
 # Chương 07: Các mẫu EdgeAI
 
 Edge AI là sự kết hợp giữa trí tuệ nhân tạo và điện toán biên, cho phép xử lý thông minh trực tiếp trên thiết bị mà không cần kết nối đám mây. Chương này khám phá năm triển khai EdgeAI khác nhau trên các nền tảng và framework, thể hiện sự linh hoạt và sức mạnh của việc chạy các mô hình AI tại biên.

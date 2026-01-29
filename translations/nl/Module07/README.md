@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T13:26:31+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "nl"
-}
--->
 # Hoofdstuk 07: EdgeAI Voorbeelden
 
 Edge AI combineert kunstmatige intelligentie met edge computing, waardoor intelligente verwerking direct op apparaten mogelijk wordt zonder afhankelijk te zijn van cloudconnectiviteit. Dit hoofdstuk verkent vijf verschillende EdgeAI-implementaties op diverse platforms en frameworks, en toont de veelzijdigheid en kracht van AI-modellen die aan de rand worden uitgevoerd.

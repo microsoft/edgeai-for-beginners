@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T13:26:16+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "he"
-}
--->
 # יומן שינויים
 
 כל השינויים המשמעותיים ב-EdgeAI למתחילים מתועדים כאן. הפרויקט משתמש ברישומים מבוססי תאריכים ובסגנון Keep a Changelog (נוסף, שונה, תוקן, הוסר, תיעוד, הועבר).

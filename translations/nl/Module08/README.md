@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-10-01T00:46:34+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "nl"
-}
--->
 # Module 08: Praktisch aan de slag met Microsoft Foundry Local - Complete ontwikkeltoolkit
 
 ## Overzicht

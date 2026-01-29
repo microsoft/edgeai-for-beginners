@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T21:53:38+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "he"
-}
--->
 # דוגמה למפגש 5: תזמור רב-סוכנים
 
 דוגמה זו מציגה תבנית של מתאם + מומחים באמצעות נקודת הקצה התואמת ל-OpenAI של Foundry Local.

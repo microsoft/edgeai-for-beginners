@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T13:22:05+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "nl"
-}
--->
 # Wijzigingslogboek
 
 Alle belangrijke wijzigingen aan EdgeAI voor Beginners worden hier gedocumenteerd. Dit project gebruikt datumgebaseerde vermeldingen en de Keep a Changelog-stijl (Toegevoegd, Gewijzigd, Gerepareerd, Verwijderd, Documentatie, Verplaatst).

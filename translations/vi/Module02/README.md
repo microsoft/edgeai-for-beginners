@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T11:49:24+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "vi"
-}
--->
 # Chương 02: Nền tảng Mô hình Ngôn ngữ Nhỏ
 
 Chương nền tảng toàn diện này cung cấp một cái nhìn sâu sắc về Mô hình Ngôn ngữ Nhỏ (SLMs), bao gồm các nguyên lý lý thuyết, chiến lược triển khai thực tiễn, và giải pháp triển khai sẵn sàng cho sản xuất. Chương này thiết lập cơ sở kiến thức quan trọng để hiểu các kiến trúc AI hiện đại hiệu quả và cách triển khai chiến lược của chúng trong các môi trường tính toán đa dạng.
