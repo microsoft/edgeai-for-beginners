@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-25T02:24:44+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "my"
-}
--->
 # နမူနာ 02: OpenAI SDK ပေါင်းစည်းမှု
 
 Microsoft Foundry Local နှင့် Azure OpenAI နှစ်ခုလုံးကို ပေါင်းစည်းပြီး Streaming Responses နှင့် မှန်ကန်သော Error Handling ကို ပံ့ပိုးပေးသော OpenAI Python SDK နှင့် အဆင့်မြင့်ပေါင်းစည်းမှုကို ပြသထားသည်။

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-  "translation_date": "2025-10-08T12:26:36+00:00",
-  "source_file": "Workshop/notebooks/README.md",
-  "language_code": "my"
-}
--->
 # Workshop Notebooks
 
 > **Edge AI သင်ယူမှုအတွက် လက်တွေ့ကျကျ Interactive Jupyter Notebooks**

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-23T01:18:59+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "uk"
-}
--->
 # Сесія 5: Зразок оркестрації багатьох агентів
 
 Цей зразок демонструє шаблон координатора + спеціалістів, використовуючи сумісну з OpenAI кінцеву точку Foundry Local.

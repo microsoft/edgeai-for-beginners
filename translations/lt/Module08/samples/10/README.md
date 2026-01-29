@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-25T03:15:43+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "lt"
-}
--->
 # Foundry Local kaip įrankių integracija
 
 Išsamus pagrindas, skirtas Microsoft Foundry Local integravimui kaip kviečiamų įrankių į didesnes programas, laikantis oficialių Microsoft modelių, skirtų AI įrankių integracijai.

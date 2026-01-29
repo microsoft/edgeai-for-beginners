@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-12T00:48:09+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "uk"
-}
--->
 # EdgeAI для початківців - Воркшоп
 
 > **Практичний навчальний шлях для створення готових до виробництва додатків Edge AI**

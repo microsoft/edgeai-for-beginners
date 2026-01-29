@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T01:56:26+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "uk"
-}
--->
 # Сесія 6: Моделі як інструменти
 
 Цей приклад реалізує мінімальний маршрутизатор + реєстр інструментів, який вибирає модель на основі запиту користувача та викликає сумісну з OpenAI кінцеву точку Foundry Local.

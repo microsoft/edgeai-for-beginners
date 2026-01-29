@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-19T01:24:59+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "lt"
-}
--->
 # 3 skyrius: Mažų kalbos modelių (SLM) diegimas
 
 Šiame išsamiame skyriuje nagrinėjamas visas mažų kalbos modelių (SLM) diegimo gyvavimo ciklas, apimantis teorinius pagrindus, praktines įgyvendinimo strategijas ir paruoštus gamybai konteinerizuotus sprendimus. Skyrius suskirstytas į tris progresyvius poskyrius, kurie skaitytojus veda nuo pagrindinių sąvokų iki pažangių diegimo scenarijų.

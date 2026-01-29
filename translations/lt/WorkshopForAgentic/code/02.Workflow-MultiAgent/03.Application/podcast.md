@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:55:59+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "lt"
-}
--->
 Speaker 1: Sveiki atvykę į šio epizodo tinklalaidę! Aš esu vedėja Lucy, o šiandien mums garbė pasikviesti AI srities ekspertą Ken, su kuriuo pasikalbėsime apie pastaruoju metu daug dėmesio sulaukusį Ollama. Ken, ar galėtum trumpai pristatyti, kas yra Ollama?  
 Speaker 2: Žinoma! Ollama yra įrankis, leidžiantis vartotojams paleisti ir valdyti didelius kalbos modelius (LLM) vietiniame įrenginyje. Jam nereikia priklausyti nuo debesijos paslaugų, jis pabrėžia privatumą, kontrolę ir pritaikomumą. Kūrėjams ir įmonėms tai siūlo lanksčią ir privatumą gerbiančią alternatyvą, pavyzdžiui, debesijos paslaugoms kaip ChatGPT.  
 Speaker 1: Skamba patraukliai. Kokios yra pagrindinės Ollama privalumai?  

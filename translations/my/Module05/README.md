@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2db7a2f6e9873c3cd09fea6736bf360b",
-  "translation_date": "2025-09-19T01:04:11+00:00",
-  "source_file": "Module05/README.md",
-  "language_code": "my"
-}
--->
 # အခန်း ၀၅ : SLMOps - သေးငယ်သော ဘာသာစကား မော်ဒယ် လုပ်ဆောင်မှုများအတွက် အပြည့်အစုံ လမ်းညွှန်
 
 ## အကျဉ်းချုပ်

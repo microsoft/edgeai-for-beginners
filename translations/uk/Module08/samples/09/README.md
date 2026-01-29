@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T03:01:23+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "uk"
-}
--->
 # Система оркестрації мультиагентів - Foundry Local
 
 Розвинена мультиагентна система, створена на основі Microsoft Foundry Local, яка демонструє координацію інтелектуальних агентів, делегування спеціалізованих завдань та шаблони спільного вирішення проблем.

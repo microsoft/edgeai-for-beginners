@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T01:51:31+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "my"
-}
--->
 # အခန်း ၆ နမူနာ: ကိရိယာများအဖြစ် မော်ဒယ်များ
 
 ဒီနမူနာမှာ အသုံးပြုသူရဲ့ prompt အပေါ်မူတည်ပြီး မော်ဒယ်ကို ရွေးချယ်ပြီး Foundry Local ရဲ့ OpenAI-compatible endpoint ကို ခေါ်ယူတဲ့ အနည်းဆုံး router + tool registry ကို အကောင်အထည်ဖော်ထားပါတယ်။

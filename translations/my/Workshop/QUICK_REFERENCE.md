@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-12T00:45:25+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "my"
-}
--->
 # Workshop Samples - အမြန်ကိုးကားကတ်
 
 **နောက်ဆုံးအပ်ဒိတ်**: အောက်တိုဘာ ၈၊ ၂၀၂၅

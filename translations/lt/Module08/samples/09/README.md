@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T03:01:41+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "lt"
-}
--->
 # Multi-Agent Orchestration System - Foundry Local
 
 Pažangi daugiaveiksnių sistema, sukurta naudojant Microsoft Foundry Local, demonstruojanti intelektualių agentų koordinaciją, specializuotų užduočių delegavimą ir bendradarbiavimo problemų sprendimo modelius.

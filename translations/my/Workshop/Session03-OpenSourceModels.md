@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
-  "translation_date": "2025-11-12T00:44:50+00:00",
-  "source_file": "Workshop/Session03-OpenSourceModels.md",
-  "language_code": "my"
-}
--->
 # အစည်းအဝေး ၃: Foundry Local တွင် Open-Source မော်ဒယ်များ
 
 ## အကျဉ်းချုပ်

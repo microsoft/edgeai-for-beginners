@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c49526c7abc56b0b5f1e835c1739f18e",
-  "translation_date": "2025-09-25T02:46:03+00:00",
-  "source_file": "Module08/chainlit.md",
-  "language_code": "my"
-}
--->
 # Chainlit မှ ကြိုဆိုပါတယ်! 🚀🤖
 
 Developer မင်္ဂလာပါ! 👋 သင့်ရဲ့ လာရောက်ပူးပေါင်းမှုကို ကျွန်တော်တို့ အရမ်းဝမ်းသာပါတယ်။ Chainlit က LLMs အပေါ်မှာ တည်ဆောက်ထားတဲ့ အက်ပလီကေးရှင်းတွေကို prototype, debug, နဲ့ share လုပ်ဖို့အတွက် အထောက်အကူပြုတဲ့ အင်အားကြီး tool တစ်ခုဖြစ်ပါတယ်။

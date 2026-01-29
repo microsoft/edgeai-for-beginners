@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-10-08T11:54:13+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "my"
-}
--->
 # EdgeAI အတွက် အခြေခံသင်တန်း: သင်ကြားမှုလမ်းကြောင်းများနှင့် သင်ကြားမှု အချိန်ဇယား
 
 ### အကျယ်အဝန်း သင်ကြားမှုလမ်းကြောင်း (၁ ပတ်)

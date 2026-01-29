@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T01:51:40+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "my"
-}
--->
 # နမူနာ 04: Chainlit ဖြင့် Chat Application ထုတ်လုပ်ခြင်း
 
 Microsoft Foundry Local ကို အသုံးပြု၍ ထုတ်လုပ်မှုအဆင့် chat application များကို တည်ဆောက်ရန် နည်းလမ်းများကို ပြသထားသော နမူနာတစ်ခုဖြစ်ပြီး၊ ခေတ်မီ web interface များ၊ streaming response များနှင့် အဆင့်မြင့် browser နည်းပညာများပါဝင်သည်။

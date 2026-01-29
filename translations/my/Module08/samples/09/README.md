@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T03:01:06+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "my"
-}
--->
 # Multi-Agent Orchestration System - Foundry Local
 
 Microsoft Foundry Local မှ အဆင့်မြင့် multi-agent စနစ်တစ်ခုဖြစ်ပြီး၊ ဉာဏ်ရည်ရှိသော agent များကို စီမံခန့်ခွဲခြင်း၊ အထူးပြုလုပ်ငန်းများကို အပ်နှံခြင်းနှင့် ပူးပေါင်းဖြေရှင်းမှု ပုံစံများကို ပြသထားသည်။

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T15:04:09+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "my"
-}
--->
 # Foundry Local ကို Windows နှင့် Mac တွင် အသုံးပြုခြင်း
 
 ဤလမ်းညွှန်သည် Microsoft Foundry Local ကို Windows နှင့် Mac တွင် ထည့်သွင်းခြင်း၊ အလုပ်လုပ်ခြင်းနှင့် ပေါင်းစပ်အသုံးပြုခြင်းအတွက် အကူအညီပေးပါသည်။ အဆင့်ဆင့်လုပ်ဆောင်မှုများနှင့် အမိန့်များကို Microsoft Learn စာရွက်စာတမ်းများနှင့်အညီ စစ်ဆေးပြီးဖြစ်သည်။

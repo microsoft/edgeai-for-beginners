@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-25T02:51:59+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "uk"
-}
--->
 # Windows 11 Chat Sample - Foundry Local
 
 Сучасний чат-додаток для Windows 11, який інтегрує Microsoft Foundry Local з красивим нативним інтерфейсом. Побудований на Electron і відповідає офіційним шаблонам Foundry Local від Microsoft.

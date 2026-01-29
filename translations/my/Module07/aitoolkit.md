@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-  "translation_date": "2025-10-21T07:42:53+00:00",
-  "source_file": "Module07/aitoolkit.md",
-  "language_code": "my"
-}
--->
 # Visual Studio Code အတွက် AI Toolkit - Edge AI ဖွံ့ဖြိုးတိုးတက်မှုလမ်းညွှန်
 
 ## အကျဉ်းချုပ်

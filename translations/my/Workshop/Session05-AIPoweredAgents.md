@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-  "translation_date": "2025-10-28T23:35:44+00:00",
-  "source_file": "Workshop/Session05-AIPoweredAgents.md",
-  "language_code": "my"
-}
--->
 # အစည်းအဝေး ၅: Foundry Local ဖြင့် AI အင်ဂျင်များကို အလျင်အမြန် တည်ဆောက်ခြင်း
 
 ## အကျဉ်းချုပ်
