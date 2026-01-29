@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-10-11T12:55:37+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "ta"
-}
--->
 # மாதிரி 01: OpenAI SDK மூலம் விரைவான உரையாடல்
 
 Microsoft Foundry Local உடன் உள்ளூர் AI கணிப்பு செய்ய OpenAI SDK ஐ எப்படி பயன்படுத்துவது என்பதை விளக்கும் ஒரு எளிய உரையாடல் எடுத்துக்காட்டு.

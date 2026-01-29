@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-10-11T13:00:26+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "ta"
-}
--->
 # Foundry Local as Tools Integration
 
 மிகப்பெரிய பயன்பாடுகளில் Microsoft Foundry Local-ஐ அழைக்கக்கூடிய கருவிகளாக ஒருங்கிணைக்க Microsoft-இன் அதிகாரப்பூர்வ முறைகளைப் பின்பற்றும் விரிவான கட்டமைப்பு.

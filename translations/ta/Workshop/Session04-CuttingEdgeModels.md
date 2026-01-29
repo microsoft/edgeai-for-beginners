@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-12T00:55:23+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "ta"
-}
--->
 # அமர்வு 4: முன்னணி மாடல்களை ஆராயுங்கள் – LLMs, SLMs மற்றும் சாதனத்தில் தீர்மானம்
 
 ## சுருக்கம்

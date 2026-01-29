@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-11T12:56:41+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "et"
-}
--->
 # Sessioon 6 Näidis: Mudelid tööriistadena
 
 See näidis rakendab minimaalset ruuterit + tööriistade registrit, mis valib mudeli kasutaja päringu põhjal ja kutsub Foundry Locali OpenAI-ga ühilduvat lõpp-punkti.

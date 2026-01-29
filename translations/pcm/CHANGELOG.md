@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-11-11T17:16:14+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "pcm"
-}
--->
 # Changelog
 
 All di beta wey don change for EdgeAI for Beginners dey here. Dis project dey use date-based entries and di Keep a Changelog style (Added, Changed, Fixed, Removed, Docs, Moved).

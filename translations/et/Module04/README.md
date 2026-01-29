@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T15:42:08+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "et"
-}
--->
 # 4. peatükk: Mudeli formaadi konverteerimine ja kvantiseerimine - peatüki ülevaade
 
 EdgeAI esiletõus on muutnud mudeli formaadi konverteerimise ja kvantiseerimise oluliseks tehnoloogiaks, et rakendada keerukaid masinõppe võimalusi piiratud ressurssidega seadmetel. See põhjalik peatükk pakub täielikku juhendit mudelite mõistmiseks, rakendamiseks ja optimeerimiseks serva kasutuselevõtu stsenaariumides.

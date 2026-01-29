@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-12T00:58:14+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "ta"
-}
--->
 # EdgeAI தொடக்கத்திற்கான பயிற்சி - வேலைநிறுவனம்
 
 > **உற்பத்திக்கு தயாரான Edge AI பயன்பாடுகளை உருவாக்க கற்றல் பாதை**

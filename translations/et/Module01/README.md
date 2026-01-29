@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-10-11T11:15:07+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "et"
-}
--->
 # Peatükk 01: AI juurutamise muutmine serva jaoks
 
 EdgeAI esindab paradigmat, kus tehisintellekti juurutamine liigub pilvepõhisest töötlemisest kohalikele servaseadmetele. Selles peatükis uuritakse põhimõisteid, võtmetehnoloogiaid ja praktilisi rakendusi, mis määratlevad selle tehisintellekti rakendamise muutva lähenemisviisi.

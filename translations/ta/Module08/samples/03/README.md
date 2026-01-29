@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-10-11T12:56:59+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "ta"
-}
--->
 # அமர்வு 3 மாதிரி: மாடல் கண்டுபிடிப்பு மற்றும் விரைவான பெஞ்ச்
 
 மாடல்களை பட்டியலிடவும், விரிவான பதிவு தகவல்களுடன் ஒன்றை தொடங்கவும் ஒரு குறைந்தபட்ச உதவியாளர்.

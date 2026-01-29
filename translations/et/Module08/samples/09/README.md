@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-10-11T12:56:16+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "et"
-}
--->
 # Multi-agent Orkestreerimissüsteem - Foundry Local
 
 Täiustatud multi-agent süsteem, mida toetab Microsoft Foundry Local, näitab intelligentsete agentide koordineerimist, spetsialiseeritud ülesannete jaotamist ja koostööl põhinevaid probleemilahendusmustreid.

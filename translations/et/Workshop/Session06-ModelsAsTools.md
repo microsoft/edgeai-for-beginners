@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
-  "translation_date": "2025-10-29T00:00:52+00:00",
-  "source_file": "Workshop/Session06-ModelsAsTools.md",
-  "language_code": "et"
-}
--->
 # Sessioon 6: Foundry Local – Mudelid kui tööriistad
 
 ## Kokkuvõte

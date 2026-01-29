@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-10-11T12:58:56+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "ta"
-}
--->
 # WebGPU + ONNX Runtime டெமோ
 
 இந்த டெமோ, WebGPU மூலம் ஹார்ட்வேரை வேகப்படுத்தி, ONNX Runtime Web பயன்படுத்தி AI மாடல்களை நேரடியாக உலாவியில் இயக்குவது எப்படி என்பதை காட்டுகிறது.

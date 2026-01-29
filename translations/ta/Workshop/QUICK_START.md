@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "eee296ca63673b7520d15942f6a01826",
-  "translation_date": "2025-11-12T00:54:46+00:00",
-  "source_file": "Workshop/QUICK_START.md",
-  "language_code": "ta"
-}
--->
 # வேலைநிறுவனத்தின் விரைவான தொடக்க வழிகாட்டி
 
 ## முன்பதிவுகள்

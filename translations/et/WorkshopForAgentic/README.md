@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f94e745264597bc5d8df967ead2eff97",
-  "translation_date": "2026-01-05T11:00:44+00:00",
-  "source_file": "WorkshopForAgentic/README.md",
-  "language_code": "et"
-}
--->
 # 🎙️ AI Podcast Stuudio Töötuba
 
 > 🌏 [中文版 (Hiina versioon)](translation/zh-cn/README.md)

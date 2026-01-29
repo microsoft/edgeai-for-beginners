@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T15:36:07+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "et"
-}
--->
 # Muudatuste logi
 
 Kõik olulised muudatused EdgeAI algajatele on dokumenteeritud siin. Projekt kasutab kuupäevapõhiseid kirjeid ja Keep a Changelog stiili (Lisatud, Muudetud, Parandatud, Eemaldatud, Dokumentatsioon, Ümber paigutatud).

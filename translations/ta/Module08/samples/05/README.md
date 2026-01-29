@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-10-11T12:56:47+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "ta"
-}
--->
 # அமர்வு 5 மாதிரி: பல முகவர் ஒருங்கிணைப்பு
 
 இந்த மாதிரி Foundry Local இன் OpenAI-இக்கு இணக்கமான முடிவுநிலைப் பயன்பாட்டை பயன்படுத்தி ஒருங்கிணைப்பாளர் + நிபுணர்கள் முறைமையை விளக்குகிறது.

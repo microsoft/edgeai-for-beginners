@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-11-11T17:54:06+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "pcm"
-}
--->
 # Chapter 07 : EdgeAI Samples
 
 Edge AI na di mix wey dey happen between artificial intelligence and edge computing, wey go make am possible to process things wey dey smart directly for device, no need to depend on cloud connection. Dis chapter go show five different EdgeAI setups for different platforms and frameworks, wey go show how flexible and strong AI models fit run for edge.

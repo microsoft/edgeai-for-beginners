@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-12T01:06:16+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "pcm"
-}
--->
 # Session 4: Explore Cutting-Edge Models – LLMs, SLMs & On-Device Inference
 
 ## Abstract

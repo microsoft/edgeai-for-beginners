@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-10-11T12:55:58+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "ta"
-}
--->
 # மல்டி-ஏஜென்ட் ஒர்கெஸ்ட்ரேஷன் சிஸ்டம் - Foundry Local
 
 Microsoft Foundry Local மூலம் இயக்கப்படும் ஒரு மேம்பட்ட மல்டி-ஏஜென்ட் சிஸ்டம், புத்திசாலியான ஏஜென்ட் ஒருங்கிணைப்பு, சிறப்பு பணிகளை ஒதுக்கல் மற்றும் கூட்டுறவு பிரச்சினை தீர்வு முறைகளை வெளிப்படுத்துகிறது.

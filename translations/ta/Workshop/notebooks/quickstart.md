@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddaad917d0c16fc3d498a6b4eabc8088",
-  "translation_date": "2025-10-11T12:07:14+00:00",
-  "source_file": "Workshop/notebooks/quickstart.md",
-  "language_code": "ta"
-}
--->
 # வேலைநிறுத்த நோட்புக் - விரைவான தொடக்க வழிகாட்டி
 
 ## உள்ளடக்க அட்டவணை

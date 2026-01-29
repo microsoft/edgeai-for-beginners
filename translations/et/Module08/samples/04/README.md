@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-11T12:58:18+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "et"
-}
--->
 # Näidis 04: Tootmiskõlblikud vestlusrakendused Chainlitiga
 
 Põhjalik näidis, mis demonstreerib mitmeid lähenemisviise tootmiskõlblike vestlusrakenduste loomiseks, kasutades Microsoft Foundry Locali. Sisaldab kaasaegseid veebiliideseid, voogesituse vastuseid ja tipptasemel brauseritehnoloogiaid.

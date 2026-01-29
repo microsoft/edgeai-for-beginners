@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-11-11T17:34:16+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "pcm"
-}
--->
 # Chapter 04 : Model Format Conversion and Quantization - Chapter Overview
 
 Di way wey EdgeAI don dey grow don make model format conversion and quantization become important technology wey go help deploy advanced machine learning for devices wey no get plenty resources. Dis chapter go give full guide on how to sabi, implement, and optimize models for edge deployment.

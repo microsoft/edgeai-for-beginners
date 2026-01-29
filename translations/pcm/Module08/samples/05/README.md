@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-11-11T18:01:40+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "pcm"
-}
--->
 # Session 5 Sample: Multi-Agent Orchestration
 
 Dis sample dey show how coordinator + specialists pattern dey work wit Foundry Local wey dey compatible wit OpenAI endpoint.

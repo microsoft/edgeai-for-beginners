@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-10-11T11:33:24+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "et"
-}
--->
 # 3. peatükk: Väikeste keelemudelite (SLM) juurutamine
 
 See põhjalik peatükk käsitleb väikeste keelemudelite (SLM) juurutamise täielikku elutsüklit, hõlmates teoreetilisi aluseid, praktilisi rakendusstrateegiaid ja tootmiskõlblikke konteinerlahendusi. Peatükk on jaotatud kolme järjestikusse sektsiooni, mis viivad lugejaid põhimõistetest keerukamate juurutamisstsenaariumideni.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2305e750e93ad4bd79898cf149e01b49",
-  "translation_date": "2025-10-11T12:42:57+00:00",
-  "source_file": "Module07/windowdeveloper.md",
-  "language_code": "et"
-}
--->
 # Windows Edge AI Arenduse Juhend
 
 ## Sissejuhatus

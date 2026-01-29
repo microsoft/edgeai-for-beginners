@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-10-11T12:59:41+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "ta"
-}
--->
 # மாதிரி 02: OpenAI SDK ஒருங்கிணைப்பு
 
 OpenAI Python SDK-யுடன் மேம்பட்ட ஒருங்கிணைப்பை விளக்குகிறது, Microsoft Foundry Local மற்றும் Azure OpenAI ஆகியவற்றுடன் ஸ்ட்ரீமிங் பதில்கள் மற்றும் சரியான பிழை கையாளுதலை ஆதரிக்கிறது.

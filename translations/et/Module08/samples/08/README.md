@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-10-11T12:54:30+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "et"
-}
--->
 # Windows 11 Vestlusrakenduse Näidis - Foundry Local
 
 Kaasaegne vestlusrakendus Windows 11 jaoks, mis integreerib Microsoft Foundry Locali kauni ja loomuliku kasutajaliidesega. Ehitatud Electroni abil ja järgides Microsofti ametlikke Foundry Locali mustreid.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2305e750e93ad4bd79898cf149e01b49",
-  "translation_date": "2025-10-11T12:40:22+00:00",
-  "source_file": "Module07/windowdeveloper.md",
-  "language_code": "ta"
-}
--->
 # விண்டோஸ் எட்ஜ் AI மேம்பாட்டு வழிகாட்டி
 
 ## அறிமுகம்

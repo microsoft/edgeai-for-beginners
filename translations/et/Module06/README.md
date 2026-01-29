@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-10-11T11:27:34+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "et"
-}
--->
 # 6. peatükk: SLM Agentlikud Süsteemid: Põhjalik Ülevaade
 
 Tehisintellekti maastik kogeb põhjalikku muutust, liikudes lihtsatest vestlusrobotitest keerukate AI-agentide suunas, mida juhivad Väikesed Keelemudelid (SLM-id). See põhjalik juhend uurib kolme olulist aspekti kaasaegsetes SLM-agentlikes süsteemides: põhimõisted ja juurutusstrateegiad, funktsioonikutsumise võimekus ning revolutsiooniline Mudeli Konteksti Protokolli (MCP) integreerimine.

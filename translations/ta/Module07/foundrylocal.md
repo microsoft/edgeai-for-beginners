@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-11T12:44:12+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "ta"
-}
--->
 # Windows மற்றும் Mac-ல் Foundry Local
 
 இந்த வழிகாட்டி Microsoft Foundry Local-ஐ Windows மற்றும் Mac-ல் நிறுவ, இயக்க மற்றும் ஒருங்கிணைக்க உதவுகிறது. அனைத்து படிகளும் மற்றும் கட்டளைகளும் Microsoft Learn ஆவணங்களின் அடிப்படையில் சரிபார்க்கப்பட்டவை.

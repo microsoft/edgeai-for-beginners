@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddaad917d0c16fc3d498a6b4eabc8088",
-  "translation_date": "2025-10-11T12:07:37+00:00",
-  "source_file": "Workshop/notebooks/quickstart.md",
-  "language_code": "et"
-}
--->
 # Töötuba Märkmikud - Kiire Alustamise Juhend
 
 ## Sisukord

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2db7a2f6e9873c3cd09fea6736bf360b",
-  "translation_date": "2025-10-11T11:18:37+00:00",
-  "source_file": "Module05/README.md",
-  "language_code": "ta"
-}
--->
 # அத்தியாயம் 05 : SLMOps - சிறிய மொழி மாடல் செயல்பாடுகளுக்கான முழுமையான வழிகாட்டி
 
 ## கண்ணோட்டம்

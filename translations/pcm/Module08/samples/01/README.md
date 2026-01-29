@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-11-11T18:00:52+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "pcm"
-}
--->
 # Sample 01: Quick Chat wit OpenAI SDK
 
 Dis na simple chat example wey dey show how pesin fit use OpenAI SDK wit Microsoft Foundry Local for local AI inference.
