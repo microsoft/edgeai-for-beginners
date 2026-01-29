@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T13:54:05+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "sw"
-}
--->
 # Rekodi ya Mabadiliko
 
 Mabadiliko yote muhimu kwa EdgeAI kwa Kompyuta yameandikwa hapa. Mradi huu hutumia maingizo ya tarehe na mtindo wa Keep a Changelog (Imeongezwa, Imebadilishwa, Imetatuliwa, Imeondolewa, Nyaraka, Imehama).

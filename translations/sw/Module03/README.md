@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T17:15:00+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "sw"
-}
--->
 # Sura ya 03: Kusambaza Small Language Models (SLMs)
 
 Sura hii ya kina inachunguza mzunguko mzima wa maisha wa usambazaji wa Small Language Models (SLMs), ikijumuisha misingi ya nadharia, mikakati ya utekelezaji wa vitendo, na suluhisho za uzalishaji zilizo kwenye kontena. Sura imegawanywa katika sehemu tatu za maendeleo zinazowapeleka wasomaji kutoka dhana za msingi hadi hali za juu za usambazaji.

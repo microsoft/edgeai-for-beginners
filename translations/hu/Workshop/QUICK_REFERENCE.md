@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-12T00:06:41+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "hu"
-}
--->
 # Workshop Minták - Gyors Referencia Kártya
 
 **Utolsó frissítés**: 2025. október 8.

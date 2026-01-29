@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:50:12+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "hu"
-}
--->
 Speaker 1: Üdvözlöm a podcast mai adásának hallgatóit! Lucy vagyok a műsorvezető, és ma szerencsénk van Ken-t, az AI szakértőt vendégül látni, hogy együtt beszélgessünk a mostanában nagy figyelmet kapott Ollama-ról. Ken, meg tudná nekünk egyszerűen bemutatni, mi is az Ollama?  
 Speaker 2: Természetesen! Az Ollama egy eszköz, amely lehetővé teszi a felhasználók számára, hogy helyben, a saját gépükön futtassák és kezeljék a nagyméretű nyelvi modelleket (LLM). Nem igényel felhőszolgáltatást, és nagy hangsúlyt fektet a magánéletre, az irányításra és a testreszabhatóságra. Fejlesztőknek és vállalkozásoknak rugalmas, adatvédelmi szempontból kedvező alternatívát kínál, mint például a ChatGPT-szerű felhőalapú szolgáltatások.  
 Speaker 1: Ez igazán vonzónak hangzik. Mi az Ollama fő előnye?  

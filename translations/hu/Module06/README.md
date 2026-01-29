@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T16:31:08+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "hu"
-}
--->
 # 6. fejezet: SLM Agentikus Rendszerek: Átfogó Áttekintés
 
 A mesterséges intelligencia világa alapvető átalakuláson megy keresztül, ahogy az egyszerű chatbotoktól a Small Language Models (SLM) által működtetett kifinomult AI ügynökök felé haladunk. Ez az átfogó útmutató három kritikus aspektust vizsgál a modern SLM agentikus rendszerek kapcsán: az alapvető fogalmakat és telepítési stratégiákat, a funkcióhívási képességeket, valamint a forradalmi Model Context Protocol (MCP) integrációt.

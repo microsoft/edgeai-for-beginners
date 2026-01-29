@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "254150b7d7854ec87ffcd88824d98079",
-  "translation_date": "2025-09-25T02:54:16+00:00",
-  "source_file": "Module08/samples/07/README.md",
-  "language_code": "hu"
-}
--->
 # Foundry Local mint API példa
 
 Ez a példa bemutatja, hogyan használható a Microsoft Foundry Local REST API szolgáltatásként az OpenAI SDK használata nélkül. Közvetlen HTTP integrációs mintákat mutat be a maximális irányítás és testreszabás érdekében.

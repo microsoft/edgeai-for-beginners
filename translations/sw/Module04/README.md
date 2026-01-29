@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T14:00:40+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "sw"
-}
--->
 # Sura ya 04: Ubadilishaji wa Muundo wa Modeli na Quantization - Muhtasari wa Sura
 
 Kuibuka kwa EdgeAI kumeifanya teknolojia ya ubadilishaji wa muundo wa modeli na quantization kuwa muhimu kwa kuwezesha uwezo wa hali ya juu wa kujifunza kwa mashine kwenye vifaa vyenye rasilimali chache. Sura hii ya kina inatoa mwongozo kamili wa kuelewa, kutekeleza, na kuboresha modeli kwa mazingira ya utekelezaji wa edge.

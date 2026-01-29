@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T17:15:27+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "hu"
-}
--->
 # 3. fejezet: Kis Nyelvi Modellek (SLM-ek) telepítése
 
 Ez az átfogó fejezet bemutatja a Kis Nyelvi Modellek (SLM-ek) telepítésének teljes életciklusát, beleértve az elméleti alapokat, gyakorlati megvalósítási stratégiákat és a gyártásra kész konténeres megoldásokat. A fejezet három egymást követő szakaszra van osztva, amelyek az olvasókat az alapfogalmaktól a fejlett telepítési forgatókönyvekig vezetik.

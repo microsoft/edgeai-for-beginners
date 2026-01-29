@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T14:09:27+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "hu"
-}
--->
 # 4. fejezet: Modellformátum átalakítás és kvantálás - Fejezet áttekintése
 
 Az EdgeAI megjelenése a modellformátum átalakítást és kvantálást alapvető technológiává tette a fejlett gépi tanulási képességek erőforrás-korlátozott eszközökön történő telepítéséhez. Ez az átfogó fejezet teljes útmutatót nyújt a modellek megértéséhez, megvalósításához és optimalizálásához az edge telepítési környezetekben.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c49526c7abc56b0b5f1e835c1739f18e",
-  "translation_date": "2025-09-25T02:45:34+00:00",
-  "source_file": "Module08/chainlit.md",
-  "language_code": "cs"
-}
--->
 # Vítejte v Chainlit! 🚀🤖
 
 Ahoj, vývojáři! 👋 Jsme nadšeni, že jste s námi. Chainlit je výkonný nástroj navržený tak, aby vám pomohl prototypovat, ladit a sdílet aplikace postavené na LLMs.

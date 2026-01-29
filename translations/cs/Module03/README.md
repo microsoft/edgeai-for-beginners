@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T17:16:00+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "cs"
-}
--->
 # Kapitola 03: Nasazení malých jazykových modelů (SLM)
 
 Tato obsáhlá kapitola se zabývá celým životním cyklem nasazení malých jazykových modelů (SLM), pokrývá teoretické základy, praktické implementační strategie a produkčně připravená kontejnerová řešení. Kapitola je strukturována do tří postupných sekcí, které čtenáře vedou od základních konceptů k pokročilým scénářům nasazení.

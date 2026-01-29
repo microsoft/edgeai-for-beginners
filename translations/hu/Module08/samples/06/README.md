@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T01:16:05+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "hu"
-}
--->
 # 6. munkamenet minta: Modellek mint eszközök
 
 Ez a minta egy minimális routert és eszközregisztert valósít meg, amely a felhasználói kérés alapján kiválaszt egy modellt, és meghívja a Foundry Local OpenAI-kompatibilis végpontját.

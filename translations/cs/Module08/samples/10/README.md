@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-25T03:13:09+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "cs"
-}
--->
 # Foundry Local jako integrace nástrojů
 
 Komplexní rámec pro integraci Microsoft Foundry Local jako volatelných nástrojů v rámci větších aplikací, podle oficiálních vzorů Microsoftu pro integraci AI založené na nástrojích.

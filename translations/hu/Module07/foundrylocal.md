@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T14:06:57+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "hu"
-}
--->
 # Foundry Local Windows és Mac rendszeren
 
 Ez az útmutató segít telepíteni, futtatni és integrálni a Microsoft Foundry Local-t Windows és Mac rendszeren. Minden lépés és parancs a Microsoft Learn dokumentáció alapján lett ellenőrizve.

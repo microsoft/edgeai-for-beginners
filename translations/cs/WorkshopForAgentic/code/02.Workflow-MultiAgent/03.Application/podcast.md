@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:50:44+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "cs"
-}
--->
 Speaker 1: Vítejte u další epizody podcastu! Jsem moderátorka Lucy, a dnes máme tu čest pozvat si odborníka na AI Kena, abychom si společně pověděli o nedávno populárním Ollama. Kene, mohl byste nám nejdříve stručně představit, co je to Ollama?  
 Speaker 2: Samozřejmě! Ollama je nástroj, který umožňuje uživatelům provozovat a spravovat velké jazykové modely (LLM) přímo na jejich lokálním zařízení. Nepotřebuje závislost na cloudových službách, a klade důraz na soukromí, kontrolu a přizpůsobení. Pro vývojáře a firmy nabízí flexibilní a soukromí přátelskou alternativu ke cloudovým službám jako ChatGPT.  
 Speaker 1: Zní to velmi zajímavě. Jaké jsou tedy hlavní přednosti Ollama?  

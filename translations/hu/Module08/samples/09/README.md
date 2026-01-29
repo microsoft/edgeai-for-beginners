@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T02:58:52+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "hu"
-}
--->
 # Többügynökös Orkesztrációs Rendszer - Foundry Local
 
 Egy fejlett többügynökös rendszer, amelyet a Microsoft Foundry Local működtet, és bemutatja az intelligens ügynökök koordinációját, a specializált feladatok delegálását, valamint az együttműködő problémamegoldási mintákat.

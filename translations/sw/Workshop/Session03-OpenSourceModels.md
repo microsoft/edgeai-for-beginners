@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
-  "translation_date": "2025-11-12T00:01:38+00:00",
-  "source_file": "Workshop/Session03-OpenSourceModels.md",
-  "language_code": "sw"
-}
--->
 # Kikao cha 3: Miundo ya Chanzo Huria katika Foundry Local
 
 ## Muhtasari

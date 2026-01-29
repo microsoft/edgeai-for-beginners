@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T01:10:45+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "sw"
-}
--->
 # Mfano 04: Programu za Gumzo za Uzalishaji na Chainlit
 
 Mfano wa kina unaoonyesha mbinu mbalimbali za kujenga programu za gumzo zinazofaa kwa uzalishaji kwa kutumia Microsoft Foundry Local, zikiwa na miingiliano ya kisasa ya wavuti, majibu ya mtiririko, na teknolojia za kisasa za kivinjari.

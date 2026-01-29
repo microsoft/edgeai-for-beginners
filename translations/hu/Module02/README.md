@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T15:37:06+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "hu"
-}
--->
 # 2. fejezet: Kis nyelvi modellek alapjai
 
 Ez az átfogó alapozó fejezet elengedhetetlen betekintést nyújt a kis nyelvi modellek (SLM-ek) világába, lefedve az elméleti alapelveket, gyakorlati megvalósítási stratégiákat és a termelésre kész telepítési megoldásokat. A fejezet létrehozza azt a kritikus tudásbázist, amely szükséges a modern, hatékony AI architektúrák megértéséhez és azok stratégiai alkalmazásához különböző számítástechnikai környezetekben.

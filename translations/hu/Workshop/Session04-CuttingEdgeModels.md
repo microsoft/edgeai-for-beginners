@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-12T00:03:12+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "hu"
-}
--->
 # 4. szekció: Fedezd fel a legmodernebb modelleket – LLM-ek, SLM-ek és eszközön belüli következtetés
 
 ## Összefoglaló

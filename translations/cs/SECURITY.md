@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-18T15:35:58+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "cs"
-}
--->
 ## Zabezpečení
 
 Microsoft bere zabezpečení svých softwarových produktů a služeb vážně, což zahrnuje všechny repozitáře zdrojového kódu v našich organizacích na GitHubu.

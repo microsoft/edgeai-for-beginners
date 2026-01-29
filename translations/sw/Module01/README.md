@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T16:39:16+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "sw"
-}
--->
 # Sura ya 01: Kubadilisha Utekelezaji wa AI kwa Vifaa vya Edge
 
 EdgeAI inawakilisha mabadiliko makubwa katika utekelezaji wa akili bandia, ikihamisha uwezo wa AI kutoka kwa usindikaji unaotegemea wingu hadi vifaa vya ndani vya edge. Sura hii inachunguza dhana za msingi, teknolojia muhimu, na matumizi ya vitendo yanayofafanua mbinu hii ya kubadilisha utekelezaji wa AI.

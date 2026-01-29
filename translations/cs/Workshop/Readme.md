@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-12T00:09:56+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "cs"
-}
--->
 # EdgeAI pro začátečníky - Workshop
 
 > **Praktická cesta k vytvoření produkčně připravených Edge AI aplikací**

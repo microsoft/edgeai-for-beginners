@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-12T00:02:10+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "sw"
-}
--->
 # Kadi ya Marejeleo ya Haraka - Sampuli za Warsha
 
 **Imesasishwa Mwisho**: Oktoba 8, 2025

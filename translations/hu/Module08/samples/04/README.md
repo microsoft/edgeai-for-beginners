@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T01:16:11+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "hu"
-}
--->
 # Minta 04: Chatalkalmazások gyártási környezetben Chainlit segítségével
 
 Egy átfogó példa, amely bemutatja a gyártásra kész chatalkalmazások különböző megközelítéseit a Microsoft Foundry Local használatával, modern webes felületekkel, streaming válaszokkal és legújabb böngészőtechnológiákkal.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T13:55:59+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "sw"
-}
--->
 # Sura ya 07: Sampuli za EdgeAI
 
 Edge AI inawakilisha muunganiko wa akili bandia na kompyuta ya ukingo, ikiruhusu usindikaji wa akili moja kwa moja kwenye vifaa bila kutegemea muunganisho wa wingu. Sura hii inachunguza utekelezaji tano tofauti wa EdgeAI kwenye majukwaa na mifumo mbalimbali, ikionyesha uwezo na nguvu ya kuendesha mifano ya AI kwenye ukingo.

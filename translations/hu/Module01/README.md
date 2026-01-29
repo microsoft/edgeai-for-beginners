@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T16:39:28+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "hu"
-}
--->
 # 1. fejezet: Az AI telepítésének átalakítása az Edge számára
 
 Az EdgeAI az mesterséges intelligencia telepítésének paradigmaváltását jelenti, amely során az AI képességei a felhőalapú feldolgozásról helyi edge eszközökre kerülnek át. Ez a fejezet bemutatja az alapvető fogalmakat, kulcsfontosságú technológiákat és gyakorlati alkalmazásokat, amelyek meghatározzák az AI megvalósításának ezt az átalakító megközelítését.

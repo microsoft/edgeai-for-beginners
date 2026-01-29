@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T14:17:02+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "cs"
-}
--->
 # Kapitola 04: Konverze formátů modelů a kvantizace - Přehled kapitoly
 
 Vzestup EdgeAI učinil konverzi formátů modelů a kvantizaci klíčovými technologiemi pro nasazení pokročilých schopností strojového učení na zařízeních s omezenými zdroji. Tato komplexní kapitola poskytuje kompletní průvodce porozuměním, implementací a optimalizací modelů pro scénáře nasazení na okraji.
