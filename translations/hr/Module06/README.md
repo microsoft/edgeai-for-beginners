@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T23:38:05+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "hr"
-}
--->
 # Poglavlje 06: SLM Agentni Sustavi: Sveobuhvatan Pregled
 
 Krajolik umjetne inteligencije prolazi kroz temeljnu transformaciju dok prelazimo od jednostavnih chatbotova do sofisticiranih AI agenata koje pokreću Mali Jezični Modeli (SLM). Ovaj sveobuhvatan vodič istražuje tri ključna aspekta modernih SLM agentnih sustava: temeljne koncepte i strategije implementacije, mogućnosti pozivanja funkcija te revolucionarnu integraciju Model Context Protocol (MCP).

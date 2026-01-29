@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-25T03:14:53+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "sl"
-}
--->
 # Foundry Local kot integracija orodij
 
 Celovit okvir za integracijo Microsoft Foundry Local kot klicljivih orodij v večje aplikacije, skladno z uradnimi Microsoftovimi vzorci za integracijo AI na osnovi orodij.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T14:55:06+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "hr"
-}
--->
 # Poglavlje 04: Pretvorba formata modela i kvantizacija - Pregled poglavlja
 
 Pojava EdgeAI-a učinila je pretvorbu formata modela i kvantizaciju ključnim tehnologijama za implementaciju naprednih mogućnosti strojnog učenja na uređajima s ograničenim resursima. Ovo sveobuhvatno poglavlje pruža potpuni vodič za razumijevanje, implementaciju i optimizaciju modela za scenarije implementacije na rubnim uređajima.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T14:42:02+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "sr"
-}
--->
 # Foundry Local на Windows и Mac
 
 Овај водич вам помаже да инсталирате, покренете и интегришете Microsoft Foundry Local на Windows и Mac. Сви кораци и команде су проверени према Microsoft Learn документацији.

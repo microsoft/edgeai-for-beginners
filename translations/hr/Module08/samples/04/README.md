@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T01:42:07+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "hr"
-}
--->
 # Primjer 04: Produkcijske aplikacije za chat s Chainlitom
 
 Sveobuhvatan primjer koji prikazuje različite pristupe izradi produkcijski spremnih aplikacija za chat koristeći Microsoft Foundry Local, s modernim web sučeljima, streaming odgovorima i najnovijim tehnologijama preglednika.

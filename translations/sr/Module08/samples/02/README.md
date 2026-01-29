@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-25T01:59:45+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "sr"
-}
--->
 # Пример 02: Интеграција са OpenAI SDK-ом
 
 Демонстрира напредну интеграцију са OpenAI Python SDK-ом, уз подршку за Microsoft Foundry Local и Azure OpenAI, са стриминг одговорима и правилним руковањем грешкама.

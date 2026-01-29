@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-12T00:36:20+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "sl"
-}
--->
 # Seja 4: Raziskovanje najsodobnejših modelov – LLM-ji, SLM-ji in inferenca na napravi
 
 ## Povzetek

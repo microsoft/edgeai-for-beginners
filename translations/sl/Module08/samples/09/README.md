@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T03:00:50+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "sl"
-}
--->
 # Sistem za orkestracijo več agentov - Foundry Local
 
 Napreden sistem več agentov, ki ga poganja Microsoft Foundry Local, prikazuje koordinacijo inteligentnih agentov, delegiranje specializiranih nalog in vzorce sodelovalnega reševanja problemov.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-19T01:23:05+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "hr"
-}
--->
 # Poglavlje 03: Implementacija Malih Jezičnih Modela (SLM-ova)
 
 Ovo sveobuhvatno poglavlje istražuje cjelokupni životni ciklus implementacije Malih Jezičnih Modela (SLM-ova), obuhvaćajući teorijske osnove, praktične strategije implementacije i proizvodno spremna rješenja temeljena na kontejnerima. Poglavlje je strukturirano u tri progresivna dijela koji čitatelje vode od osnovnih koncepata do naprednih scenarija implementacije.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8c30436578b1bd604c48233ecdd39701",
-  "translation_date": "2025-11-12T00:32:22+00:00",
-  "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
-  "language_code": "hr"
-}
--->
 # Sesija 1: Početak rada s Foundry Local
 
 ## Sažetak

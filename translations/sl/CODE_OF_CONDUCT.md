@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c06b12caf3c901eb3156e3dd5b0aea56",
-  "translation_date": "2025-09-18T21:44:45+00:00",
-  "source_file": "CODE_OF_CONDUCT.md",
-  "language_code": "sl"
-}
--->
 # Microsoftov kodeks ravnanja za odprto kodo
 
 Ta projekt je sprejel [Microsoftov kodeks ravnanja za odprto kodo](https://opensource.microsoft.com/codeofconduct/).

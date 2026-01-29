@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T14:56:38+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "sl"
-}
--->
 # Dnevnik sprememb
 
 Vse pomembne spremembe v projektu EdgeAI za začetnike so dokumentirane tukaj. Projekt uporablja zapise, ki temeljijo na datumih, in slog "Keep a Changelog" (Dodano, Spremenjeno, Popravljeno, Odstranjeno, Dokumentacija, Premaknjeno).

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T23:56:06+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "sl"
-}
--->
 # Poglavje 01: Preoblikovanje uvajanja umetne inteligence za robne naprave
 
 EdgeAI predstavlja paradigmatski premik v uvajanju umetne inteligence, saj prenaša zmogljivosti AI iz obdelave v oblaku na lokalne robne naprave. To poglavje raziskuje temeljne koncepte, ključne tehnologije in praktične aplikacije, ki opredeljujejo ta preoblikovalni pristop k implementaciji umetne inteligence.

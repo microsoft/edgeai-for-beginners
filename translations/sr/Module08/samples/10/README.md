@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-25T03:14:14+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "sr"
-}
--->
 # Foundry Local као интеграција алата
 
 Свеобухватан оквир за интеграцију Microsoft Foundry Local као позивних алата унутар већих апликација, пратећи званичне Microsoft обрасце за интеграцију алата заснованих на вештачкој интелигенцији.

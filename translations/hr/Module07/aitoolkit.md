@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-  "translation_date": "2025-10-21T07:39:13+00:00",
-  "source_file": "Module07/aitoolkit.md",
-  "language_code": "hr"
-}
--->
 # AI alat za Visual Studio Code - Vodič za razvoj Edge AI-a
 
 ## Uvod

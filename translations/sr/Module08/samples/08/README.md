@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-25T02:50:18+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "sr"
-}
--->
 # Windows 11 Chat Sample - Foundry Local
 
 Модерна апликација за ћаскање за Windows 11 која интегрише Microsoft Foundry Local са прелепим, природним интерфејсом. Направљена уз помоћ Electron-а и у складу са званичним Microsoft Foundry Local шаблонима.

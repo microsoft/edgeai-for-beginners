@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T21:46:46+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "hr"
-}
--->
 # Poglavlje 02: Osnove malih jezičnih modela
 
 Ovo sveobuhvatno uvodno poglavlje pruža ključni pregled malih jezičnih modela (SLM), obuhvaćajući teorijske principe, strategije praktične implementacije i rješenja za primjenu u produkciji. Poglavlje uspostavlja temeljno znanje za razumijevanje modernih učinkovitih AI arhitektura i njihove strateške primjene u raznolikim računalnim okruženjima.

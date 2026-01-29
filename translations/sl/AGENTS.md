@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-  "translation_date": "2025-10-30T14:57:22+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "sl"
-}
--->
 # AGENTS.md
 
 > **Razvijalčev vodnik za prispevanje k EdgeAI za začetnike**
