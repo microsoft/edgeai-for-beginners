@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-09-24T13:46:53+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "ar"
-}
--->
 # عرض WebGPU + ONNX Runtime
 
 هذا العرض يوضح كيفية تشغيل نماذج الذكاء الاصطناعي مباشرة في المتصفح باستخدام WebGPU لتسريع الأجهزة وONNX Runtime Web.

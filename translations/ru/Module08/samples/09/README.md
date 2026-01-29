@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T13:43:32+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "ru"
-}
--->
 # Система оркестрации мультиагентов - Foundry Local
 
 Продвинутая система мультиагентов, разработанная Microsoft Foundry Local, демонстрирующая координацию интеллектуальных агентов, специализированное распределение задач и модели совместного решения проблем.

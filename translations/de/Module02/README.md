@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-17T12:31:53+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "de"
-}
--->
 # Kapitel 02: Grundlagen kleiner Sprachmodelle
 
 Dieses umfassende Grundlagenkapitel bietet eine essenzielle Einführung in kleine Sprachmodelle (SLMs), einschließlich theoretischer Prinzipien, praktischer Implementierungsstrategien und produktionsreifer Einsatzlösungen. Das Kapitel schafft die entscheidende Wissensbasis für das Verständnis moderner, effizienter KI-Architekturen und deren strategische Anwendung in verschiedenen Rechenumgebungen.

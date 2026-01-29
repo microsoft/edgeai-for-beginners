@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-09-24T11:49:09+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "de"
-}
--->
 # WebGPU + ONNX Runtime Demo
 
 Dieses Demo zeigt, wie KI-Modelle direkt im Browser mit WebGPU für Hardware-Beschleunigung und ONNX Runtime Web ausgeführt werden können.

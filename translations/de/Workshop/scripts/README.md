@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T20:12:41+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "de"
-}
--->
 # Workshop-Skripte
 
 Dieses Verzeichnis enthält Automatisierungs- und Unterstützungsskripte, die verwendet werden, um die Qualität und Konsistenz der Workshop-Materialien zu gewährleisten.

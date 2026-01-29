@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T13:47:53+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "ar"
-}
--->
 # نموذج دردشة Windows 11 - Foundry Local
 
 تطبيق دردشة حديث لنظام Windows 11 يدمج Microsoft Foundry Local بواجهة أصلية جميلة. تم بناؤه باستخدام Electron ويتبع أنماط Foundry Local الرسمية من Microsoft.

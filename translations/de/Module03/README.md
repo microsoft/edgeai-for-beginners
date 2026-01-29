@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-17T13:44:36+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "de"
-}
--->
 # Kapitel 03: Bereitstellung von Small Language Models (SLMs)
 
 Dieses umfassende Kapitel beleuchtet den gesamten Lebenszyklus der Bereitstellung von Small Language Models (SLMs), einschließlich theoretischer Grundlagen, praktischer Implementierungsstrategien und produktionsreifer containerisierter Lösungen. Das Kapitel ist in drei aufeinander aufbauende Abschnitte gegliedert, die die Leser von grundlegenden Konzepten bis hin zu fortgeschrittenen Bereitstellungsszenarien führen.

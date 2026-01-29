@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-  "translation_date": "2025-10-30T10:45:26+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "ru"
-}
--->
 # AGENTS.md
 
 > **Руководство разработчика по работе с EdgeAI для начинающих**

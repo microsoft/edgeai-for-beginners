@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
-  "translation_date": "2026-01-05T14:00:47+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
-  "language_code": "ar"
-}
--->
 # تطبيق البودكاست
 
 تطبيق وحدة تحكم لإنشاء نصوص بودكاست باستخدام وكلاء الذكاء الاصطناعي.

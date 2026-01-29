@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T12:58:00+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "de"
-}
--->
 # Sitzung 5 Beispiel: Multi-Agenten-Orchestrierung
 
 Dieses Beispiel demonstriert ein Koordinator- + Spezialisten-Muster unter Verwendung des OpenAI-kompatiblen Endpunkts von Foundry Local.

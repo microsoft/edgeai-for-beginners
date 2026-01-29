@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T13:43:56+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "ar"
-}
--->
 # نظام تنسيق متعدد الوكلاء - Foundry Local
 
 نظام متقدم متعدد الوكلاء مدعوم من Microsoft Foundry Local، يوضح تنسيق الوكلاء الذكي، تفويض المهام المتخصصة، وأنماط حل المشكلات التعاونية.

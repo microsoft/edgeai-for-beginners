@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-11T21:30:47+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "ru"
-}
--->
 # Сессия 4: Исследование передовых моделей – LLM, SLM и локальное выполнение
 
 ## Аннотация

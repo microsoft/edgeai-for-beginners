@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-09-24T13:46:33+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "ru"
-}
--->
 # Демонстрация WebGPU + ONNX Runtime
 
 Этот демонстрационный проект показывает, как запускать модели ИИ прямо в браузере, используя WebGPU для аппаратного ускорения и ONNX Runtime Web.

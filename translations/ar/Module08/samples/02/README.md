@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-24T13:28:07+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "ar"
-}
--->
 # العينة 02: تكامل OpenAI SDK
 
 عرض تكامل متقدم مع OpenAI Python SDK، يدعم كل من Microsoft Foundry Local وAzure OpenAI مع استجابات متدفقة ومعالجة أخطاء بشكل صحيح.

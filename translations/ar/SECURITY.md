@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-17T16:50:02+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "ar"
-}
--->
 ## الأمان
 
 تأخذ Microsoft أمان منتجاتها وخدماتها البرمجية على محمل الجد، بما في ذلك جميع مستودعات التعليمات البرمجية المصدرية في منظماتنا على GitHub.

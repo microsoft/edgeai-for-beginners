@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-09-30T23:05:15+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "ru"
-}
--->
 # Сессия 6 Пример: Модели как инструменты
 
 Этот пример реализует минимальный маршрутизатор + реестр инструментов, который выбирает модель на основе пользовательского запроса и вызывает совместимый с OpenAI конечный пункт Foundry Local.

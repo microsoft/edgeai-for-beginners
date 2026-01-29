@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T13:42:43+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "ar"
-}
--->
 # دمج Foundry Local كأدوات
 
 إطار عمل شامل لدمج Microsoft Foundry Local كأدوات قابلة للاستدعاء داخل التطبيقات الأكبر، وفقًا لأنماط مايكروسوفت الرسمية لدمج الذكاء الاصطناعي القائم على الأدوات.

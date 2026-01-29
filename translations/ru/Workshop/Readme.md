@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-11T21:32:58+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "ru"
-}
--->
 # EdgeAI для начинающих - мастер-класс
 
 > **Практический путь обучения для создания готовых к производству приложений Edge AI**

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-09-30T23:08:56+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "ar"
-}
--->
 # الجلسة 6: النماذج كأدوات
 
 يقدم هذا المثال مسجلًا بسيطًا + سجل أدوات يختار نموذجًا بناءً على طلب المستخدم ويستدعي نقطة النهاية المتوافقة مع OpenAI الخاصة بـ Foundry Local.

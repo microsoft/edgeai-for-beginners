@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T10:58:11+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "de"
-}
--->
 # Kapitel 07: EdgeAI-Beispiele
 
 Edge AI steht für die Verschmelzung von künstlicher Intelligenz mit Edge Computing und ermöglicht intelligente Verarbeitung direkt auf Geräten, ohne auf Cloud-Konnektivität angewiesen zu sein. Dieses Kapitel untersucht fünf verschiedene EdgeAI-Implementierungen auf unterschiedlichen Plattformen und Frameworks und zeigt die Vielseitigkeit und Leistungsfähigkeit von KI-Modellen am Edge.
