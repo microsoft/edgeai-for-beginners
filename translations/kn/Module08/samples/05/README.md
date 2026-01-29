@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-12-16T00:37:51+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "kn"
-}
--->
 # ಸೆಷನ್ 5 ಮಾದರಿ: ಬಹು-ಏಜೆಂಟ್ ಸಂಯೋಜನೆ
 
 ಈ ಮಾದರಿ ಫೌಂಡ್ರಿ ಲೋಕಲ್‌ನ OpenAI-ಸಮ್ಮತ ಎಂಡ್‌ಪಾಯಿಂಟ್ ಬಳಸಿ ಸಂಯೋಜಕ + ತಜ್ಞರ ಮಾದರಿಯನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ.

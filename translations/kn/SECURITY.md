@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-12-15T17:19:38+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "kn"
-}
--->
 ## ಭದ್ರತೆ
 
 Microsoft ನಮ್ಮ ಸಾಫ್ಟ್‌ವೇರ್ ಉತ್ಪನ್ನಗಳು ಮತ್ತು ಸೇವೆಗಳ ಭದ್ರತೆಯನ್ನು ಗಂಭೀರವಾಗಿ ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ, ಇದರಲ್ಲಿ ನಮ್ಮ GitHub ಸಂಸ್ಥೆಗಳಲ್ಲಿನ ಎಲ್ಲಾ ಮೂಲ ಕೋಡ್ ಸಂಗ್ರಹಣೆಗಳು ಸೇರಿವೆ.

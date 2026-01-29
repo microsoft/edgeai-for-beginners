@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2db7a2f6e9873c3cd09fea6736bf360b",
-  "translation_date": "2025-12-15T19:51:28+00:00",
-  "source_file": "Module05/README.md",
-  "language_code": "te"
-}
--->
 # Chapter 05 : SLMOps - చిన్న భాషా మోడల్ ఆపరేషన్స్‌కు సమగ్ర మార్గదర్శకం
 
 ## అవలోకనం

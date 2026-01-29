@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-12-16T00:40:36+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "ml"
-}
--->
 # സാമ്പിൾ 02: OpenAI SDK ഇന്റഗ്രേഷൻ
 
 OpenAI Python SDK-യുമായി ആധുനിക ഇന്റഗ്രേഷൻ പ്രദർശിപ്പിക്കുന്നു, Microsoft Foundry Local-നും Azure OpenAI-നും സ്ട്രീമിംഗ് പ്രതികരണങ്ങളോടും ശരിയായ പിശക് കൈകാര്യം ചെയ്യലോടും പിന്തുണ നൽകുന്നു.

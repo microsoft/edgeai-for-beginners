@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-12-16T00:45:37+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "ml"
-}
--->
 # Foundry Local as Tools Integration
 
 വലിയ ആപ്ലിക്കേഷനുകളിൽ വിളിക്കാവുന്ന ടൂളുകളായി Microsoft Foundry Local സംയോജിപ്പിക്കുന്നതിന് ഒരു സമഗ്രമായ ഫ്രെയിംവർക്ക്, ടൂൾ അടിസ്ഥാനമാക്കിയ AI സംയോജിപ്പിക്കലിനുള്ള Microsoft ന്റെ ഔദ്യോഗിക മാതൃകകൾ പിന്തുടരുന്നു.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-12-16T00:41:13+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "kn"
-}
--->
 # ಮಾದರಿ 02: OpenAI SDK ಏಕೀಕರಣ
 
 OpenAI Python SDK ನೊಂದಿಗೆ ಉನ್ನತ ಮಟ್ಟದ ಏಕೀಕರಣವನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ, Microsoft Foundry Local ಮತ್ತು Azure OpenAI ಎರಡನ್ನೂ ಸ್ಟ್ರೀಮಿಂಗ್ ಪ್ರತಿಕ್ರಿಯೆಗಳೊಂದಿಗೆ ಮತ್ತು ಸರಿಯಾದ ದೋಷ ನಿರ್ವಹಣೆಯೊಂದಿಗೆ ಬೆಂಬಲಿಸುತ್ತದೆ.

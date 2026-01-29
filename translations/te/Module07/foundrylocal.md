@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-12-15T20:19:02+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "te"
-}
--->
 # Windows & Mac పై Foundry Local
 
 ఈ గైడ్ Windows మరియు Mac పై Microsoft Foundry Local ను ఇన్‌స్టాల్ చేయడం, నడపడం మరియు ఇంటిగ్రేట్ చేయడంలో మీకు సహాయపడుతుంది. అన్ని దశలు మరియు కమాండ్లు Microsoft Learn డాక్స్‌తో ధృవీకరించబడ్డాయి.

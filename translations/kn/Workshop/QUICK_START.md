@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "eee296ca63673b7520d15942f6a01826",
-  "translation_date": "2025-12-15T20:34:53+00:00",
-  "source_file": "Workshop/QUICK_START.md",
-  "language_code": "kn"
-}
--->
 # ಕಾರ್ಯಾಗಾರ ತ್ವರಿತ ಪ್ರಾರಂಭ ಮಾರ್ಗದರ್ಶಿ
 
 ## ಪೂರ್ವಾಪೇಕ್ಷೆಗಳು

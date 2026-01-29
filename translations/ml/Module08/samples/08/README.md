@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-12-16T00:59:35+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "ml"
-}
--->
 # Windows 11 ചാറ്റ് സാമ്പിൾ - Foundry Local
 
 Windows 11-നുള്ള ഒരു ആധുനിക ചാറ്റ് അപ്ലിക്കേഷൻ, Microsoft Foundry Local-നെ മനോഹരമായ നേറ്റീവ് ഇന്റർഫേസുമായി സംയോജിപ്പിച്ചിരിക്കുന്നു. Electron ഉപയോഗിച്ച് നിർമ്മിച്ചും Microsoft-ന്റെ ഔദ്യോഗിക Foundry Local മാതൃകകൾ പിന്തുടർന്ന്.

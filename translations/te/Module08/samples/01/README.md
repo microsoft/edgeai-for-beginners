@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-12-16T00:38:15+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "te"
-}
--->
 # నమూనా 01: OpenAI SDK ద్వారా త్వరిత చాట్
 
 స్థానిక AI ఇన్ఫరెన్స్ కోసం Microsoft Foundry Local తో OpenAI SDK ను ఎలా ఉపయోగించాలో చూపించే ఒక సాదా చాట్ ఉదాహరణ.

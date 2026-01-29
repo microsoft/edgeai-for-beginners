@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddaad917d0c16fc3d498a6b4eabc8088",
-  "translation_date": "2025-12-16T00:12:09+00:00",
-  "source_file": "Workshop/notebooks/quickstart.md",
-  "language_code": "kn"
-}
--->
 # ವರ್ಕ್‌ಶಾಪ್ ನೋಟ್ಬುಕ್‌ಗಳು - ತ್ವರಿತ ಪ್ರಾರಂಭ ಮಾರ್ಗದರ್ಶಿ
 
 ## ವಿಷಯಗಳ ಪಟ್ಟಿಕೆ

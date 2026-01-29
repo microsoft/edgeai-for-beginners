@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-12-15T16:42:26+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "ml"
-}
--->
 # EdgeAI ആരംഭിക്കുന്നവർക്ക്: പഠന പാതകളും പഠന ഷെഡ്യൂളും
 
 ### കേന്ദ്രീകൃത പഠന പാത (1 ആഴ്ച)

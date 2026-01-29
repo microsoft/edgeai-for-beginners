@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "368870f8ab79f903ad80b6a985829516",
-  "translation_date": "2025-12-15T16:55:53+00:00",
-  "source_file": "SUPPORT.md",
-  "language_code": "ml"
-}
--->
 # പിന്തുണ
 
 ## പ്രശ്നങ്ങൾ ഫയൽ ചെയ്യാനും സഹായം ലഭിക്കാനും  

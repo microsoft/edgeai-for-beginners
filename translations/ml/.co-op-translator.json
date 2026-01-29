@@ -1,0 +1,554 @@
+{
+  "AGENTS.md": {
+    "original_hash": "58a69ffb43295827eb8cf45c0617a245",
+    "translation_date": "2025-12-15T17:07:01+00:00",
+    "source_file": "AGENTS.md",
+    "language_code": "ml"
+  },
+  "CHANGELOG.md": {
+    "original_hash": "78ca68df03ae43371b203ea43d346dec",
+    "translation_date": "2025-12-15T16:57:48+00:00",
+    "source_file": "CHANGELOG.md",
+    "language_code": "ml"
+  },
+  "CODE_OF_CONDUCT.md": {
+    "original_hash": "c06b12caf3c901eb3156e3dd5b0aea56",
+    "translation_date": "2025-12-15T17:18:59+00:00",
+    "source_file": "CODE_OF_CONDUCT.md",
+    "language_code": "ml"
+  },
+  "Module01/01.EdgeAIFundamentals.md": {
+    "original_hash": "be25052ac4c842765e7f6f7eb4d7dcc5",
+    "translation_date": "2025-12-15T17:53:22+00:00",
+    "source_file": "Module01/01.EdgeAIFundamentals.md",
+    "language_code": "ml"
+  },
+  "Module01/02.RealWorldCaseStudies.md": {
+    "original_hash": "2960b52fb422d7cef5f4755eb07ef44b",
+    "translation_date": "2025-12-15T17:40:30+00:00",
+    "source_file": "Module01/02.RealWorldCaseStudies.md",
+    "language_code": "ml"
+  },
+  "Module01/03.PracticalImplementationGuide.md": {
+    "original_hash": "c37dfe660161e652077f6b7b23bb2167",
+    "translation_date": "2025-12-15T17:46:02+00:00",
+    "source_file": "Module01/03.PracticalImplementationGuide.md",
+    "language_code": "ml"
+  },
+  "Module01/04.EdgeDeployment.md": {
+    "original_hash": "b1f5ed7b55962c3dccafd3da6f9ec252",
+    "translation_date": "2025-12-15T17:33:16+00:00",
+    "source_file": "Module01/04.EdgeDeployment.md",
+    "language_code": "ml"
+  },
+  "Module01/README.md": {
+    "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
+    "translation_date": "2025-12-15T17:58:19+00:00",
+    "source_file": "Module01/README.md",
+    "language_code": "ml"
+  },
+  "Module02/01.PhiFamily.md": {
+    "original_hash": "20892f7994d9e5d2473ad19dfa93cf6d",
+    "translation_date": "2025-12-15T18:54:57+00:00",
+    "source_file": "Module02/01.PhiFamily.md",
+    "language_code": "ml"
+  },
+  "Module02/02.QwenFamily.md": {
+    "original_hash": "1c8c05964be6fb235b026feed0bf066e",
+    "translation_date": "2025-12-15T19:06:04+00:00",
+    "source_file": "Module02/02.QwenFamily.md",
+    "language_code": "ml"
+  },
+  "Module02/03.GemmaFamily.md": {
+    "original_hash": "c6ab7eb1b8009ae984eaf6b85568f77a",
+    "translation_date": "2025-12-15T18:06:29+00:00",
+    "source_file": "Module02/03.GemmaFamily.md",
+    "language_code": "ml"
+  },
+  "Module02/04.BitNETFamily.md": {
+    "original_hash": "a56a3241aec9dc147b111ec10a2b3f2a",
+    "translation_date": "2025-12-15T18:24:48+00:00",
+    "source_file": "Module02/04.BitNETFamily.md",
+    "language_code": "ml"
+  },
+  "Module02/05.mumodel.md": {
+    "original_hash": "e6f3e5aa0ea2aa936a8631279e4c192f",
+    "translation_date": "2025-12-15T19:25:18+00:00",
+    "source_file": "Module02/05.mumodel.md",
+    "language_code": "ml"
+  },
+  "Module02/06.phisilica.md": {
+    "original_hash": "cb61871a6c3c38a50c2854b7f3c7bdad",
+    "translation_date": "2025-12-15T18:49:53+00:00",
+    "source_file": "Module02/06.phisilica.md",
+    "language_code": "ml"
+  },
+  "Module02/README.md": {
+    "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
+    "translation_date": "2025-12-15T19:19:50+00:00",
+    "source_file": "Module02/README.md",
+    "language_code": "ml"
+  },
+  "Module03/01.SLMAdvancedLearning.md": {
+    "original_hash": "38b68a204a9621126d056b0e5b51ab7c",
+    "translation_date": "2025-12-15T22:57:47+00:00",
+    "source_file": "Module03/01.SLMAdvancedLearning.md",
+    "language_code": "ml"
+  },
+  "Module03/02.DeployingSLMinLocalEnv.md": {
+    "original_hash": "0d9a6cd24a08aeac1328626abcc18ba8",
+    "translation_date": "2025-12-15T22:50:08+00:00",
+    "source_file": "Module03/02.DeployingSLMinLocalEnv.md",
+    "language_code": "ml"
+  },
+  "Module03/03.DeployingSLMinCloud.md": {
+    "original_hash": "5b46b107cab1e90ad43db8e792794fe8",
+    "translation_date": "2025-12-15T22:43:04+00:00",
+    "source_file": "Module03/03.DeployingSLMinCloud.md",
+    "language_code": "ml"
+  },
+  "Module03/README.md": {
+    "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
+    "translation_date": "2025-12-15T23:03:34+00:00",
+    "source_file": "Module03/README.md",
+    "language_code": "ml"
+  },
+  "Module04/01.Introduce.md": {
+    "original_hash": "49e18143f97a802a8647f4be28355348",
+    "translation_date": "2025-12-15T23:40:05+00:00",
+    "source_file": "Module04/01.Introduce.md",
+    "language_code": "ml"
+  },
+  "Module04/02.Llamacpp.md": {
+    "original_hash": "2a3860eff326dd58983100cc3d5dc685",
+    "translation_date": "2025-12-15T23:53:27+00:00",
+    "source_file": "Module04/02.Llamacpp.md",
+    "language_code": "ml"
+  },
+  "Module04/03.MicrosoftOlive.md": {
+    "original_hash": "1d2f37246d3818c5a66b951850225082",
+    "translation_date": "2025-12-15T23:08:41+00:00",
+    "source_file": "Module04/03.MicrosoftOlive.md",
+    "language_code": "ml"
+  },
+  "Module04/04.openvino.md": {
+    "original_hash": "35b57399d00d5d7cf4a78fa05f5b631e",
+    "translation_date": "2025-12-15T23:15:43+00:00",
+    "source_file": "Module04/04.openvino.md",
+    "language_code": "ml"
+  },
+  "Module04/05.AppleMLX.md": {
+    "original_hash": "7084ef66b0602790ea6a864a89b6fd0c",
+    "translation_date": "2025-12-15T23:24:06+00:00",
+    "source_file": "Module04/05.AppleMLX.md",
+    "language_code": "ml"
+  },
+  "Module04/06.workflow-synthesis.md": {
+    "original_hash": "6fbccc3e9d5911e3df32090724daac13",
+    "translation_date": "2025-12-15T23:46:20+00:00",
+    "source_file": "Module04/06.workflow-synthesis.md",
+    "language_code": "ml"
+  },
+  "Module04/07.QualcommQNN.md": {
+    "original_hash": "258ecb2013d1666fca92cc5ba7e9a4a0",
+    "translation_date": "2025-12-15T23:32:55+00:00",
+    "source_file": "Module04/07.QualcommQNN.md",
+    "language_code": "ml"
+  },
+  "Module04/README.md": {
+    "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
+    "translation_date": "2025-12-15T23:58:21+00:00",
+    "source_file": "Module04/README.md",
+    "language_code": "ml"
+  },
+  "Module05/01.IntroduceSLMOps.md": {
+    "original_hash": "3d1708c413d3ea9ffcfb6f73ade3a07b",
+    "translation_date": "2025-12-15T19:39:46+00:00",
+    "source_file": "Module05/01.IntroduceSLMOps.md",
+    "language_code": "ml"
+  },
+  "Module05/02.SLMOps-Distillation.md": {
+    "original_hash": "00583bdd288194f0c4e7d71363e4c48a",
+    "translation_date": "2025-12-15T19:35:25+00:00",
+    "source_file": "Module05/02.SLMOps-Distillation.md",
+    "language_code": "ml"
+  },
+  "Module05/03.SLMOps-Finetuing.md": {
+    "original_hash": "6485323e2963241723d26eb0e0e9a492",
+    "translation_date": "2025-12-15T19:45:06+00:00",
+    "source_file": "Module05/03.SLMOps-Finetuing.md",
+    "language_code": "ml"
+  },
+  "Module05/04.SLMOps.Deployment.md": {
+    "original_hash": "ad0c054ebd3de404d997d1707a513c70",
+    "translation_date": "2025-12-15T19:50:06+00:00",
+    "source_file": "Module05/04.SLMOps.Deployment.md",
+    "language_code": "ml"
+  },
+  "Module05/README.md": {
+    "original_hash": "2db7a2f6e9873c3cd09fea6736bf360b",
+    "translation_date": "2025-12-15T19:52:22+00:00",
+    "source_file": "Module05/README.md",
+    "language_code": "ml"
+  },
+  "Module06/01.IntroduceAgent.md": {
+    "original_hash": "44bc28c27b993c5fb988791b7a115705",
+    "translation_date": "2025-12-15T21:42:25+00:00",
+    "source_file": "Module06/01.IntroduceAgent.md",
+    "language_code": "ml"
+  },
+  "Module06/02.FunctionCalling.md": {
+    "original_hash": "8b05633cf46af274b3724ee2f7140100",
+    "translation_date": "2025-12-15T22:02:59+00:00",
+    "source_file": "Module06/02.FunctionCalling.md",
+    "language_code": "ml"
+  },
+  "Module06/03.IntroduceMCP.md": {
+    "original_hash": "8a7765b85f123e8a62aa3847141ca072",
+    "translation_date": "2025-12-15T21:25:28+00:00",
+    "source_file": "Module06/03.IntroduceMCP.md",
+    "language_code": "ml"
+  },
+  "Module06/README.md": {
+    "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
+    "translation_date": "2025-12-15T21:56:40+00:00",
+    "source_file": "Module06/README.md",
+    "language_code": "ml"
+  },
+  "Module07/README.md": {
+    "original_hash": "c86f39ae10a967d9b337934c067b64f9",
+    "translation_date": "2025-12-15T20:23:11+00:00",
+    "source_file": "Module07/README.md",
+    "language_code": "ml"
+  },
+  "Module07/aitoolkit.md": {
+    "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
+    "translation_date": "2025-12-15T20:12:56+00:00",
+    "source_file": "Module07/aitoolkit.md",
+    "language_code": "ml"
+  },
+  "Module07/foundrylocal.md": {
+    "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
+    "translation_date": "2025-12-15T20:19:37+00:00",
+    "source_file": "Module07/foundrylocal.md",
+    "language_code": "ml"
+  },
+  "Module07/windowdeveloper.md": {
+    "original_hash": "2305e750e93ad4bd79898cf149e01b49",
+    "translation_date": "2025-12-15T19:58:48+00:00",
+    "source_file": "Module07/windowdeveloper.md",
+    "language_code": "ml"
+  },
+  "Module08/01.FoundryLocalSetup.md": {
+    "original_hash": "6a574846c3919c56f1d02bf1de2003ca",
+    "translation_date": "2025-12-15T22:19:03+00:00",
+    "source_file": "Module08/01.FoundryLocalSetup.md",
+    "language_code": "ml"
+  },
+  "Module08/02.AzureAIFoundryIntegration.md": {
+    "original_hash": "92120c9492ba50fd155393e042143bdb",
+    "translation_date": "2025-12-15T22:28:48+00:00",
+    "source_file": "Module08/02.AzureAIFoundryIntegration.md",
+    "language_code": "ml"
+  },
+  "Module08/03.OpenSourceModels.md": {
+    "original_hash": "e3d7e45c04a9946ff6f9a3358db9ba74",
+    "translation_date": "2025-12-15T22:33:38+00:00",
+    "source_file": "Module08/03.OpenSourceModels.md",
+    "language_code": "ml"
+  },
+  "Module08/04.CuttingEdgeModels.md": {
+    "original_hash": "8ccc4f76611daedf918e34460128fc21",
+    "translation_date": "2025-12-15T22:13:41+00:00",
+    "source_file": "Module08/04.CuttingEdgeModels.md",
+    "language_code": "ml"
+  },
+  "Module08/05.AIPoweredAgents.md": {
+    "original_hash": "a534c7d108d29f908a8f9f693d694664",
+    "translation_date": "2025-12-15T22:08:31+00:00",
+    "source_file": "Module08/05.AIPoweredAgents.md",
+    "language_code": "ml"
+  },
+  "Module08/06.ModelsAsTools.md": {
+    "original_hash": "33ecd8ecf0e9347a2b4839a9916e49fb",
+    "translation_date": "2025-12-15T22:24:03+00:00",
+    "source_file": "Module08/06.ModelsAsTools.md",
+    "language_code": "ml"
+  },
+  "Module08/README.md": {
+    "original_hash": "8d9324f9751f93e152a2f706afe8de99",
+    "translation_date": "2025-12-15T22:36:50+00:00",
+    "source_file": "Module08/README.md",
+    "language_code": "ml"
+  },
+  "Module08/chainlit.md": {
+    "original_hash": "c49526c7abc56b0b5f1e835c1739f18e",
+    "translation_date": "2025-12-15T22:39:55+00:00",
+    "source_file": "Module08/chainlit.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/01/README.md": {
+    "original_hash": "fb649a75048715165e76e20b366620a9",
+    "translation_date": "2025-12-16T00:38:50+00:00",
+    "source_file": "Module08/samples/01/README.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/02/README.md": {
+    "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
+    "translation_date": "2025-12-16T00:40:36+00:00",
+    "source_file": "Module08/samples/02/README.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/03/README.md": {
+    "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
+    "translation_date": "2025-12-16T00:42:33+00:00",
+    "source_file": "Module08/samples/03/README.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/04/README.md": {
+    "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
+    "translation_date": "2025-12-16T01:11:05+00:00",
+    "source_file": "Module08/samples/04/README.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/04/chainlit.md": {
+    "original_hash": "c49526c7abc56b0b5f1e835c1739f18e",
+    "translation_date": "2025-12-16T01:13:26+00:00",
+    "source_file": "Module08/samples/04/chainlit.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/04/open-webui-guide.md": {
+    "original_hash": "b64f4a8cbb9b8d57863b1101b111b05d",
+    "translation_date": "2025-12-16T01:07:14+00:00",
+    "source_file": "Module08/samples/04/open-webui-guide.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/04/webgpu-demo/README.md": {
+    "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
+    "translation_date": "2025-12-16T01:14:47+00:00",
+    "source_file": "Module08/samples/04/webgpu-demo/README.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/05/README.md": {
+    "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
+    "translation_date": "2025-12-16T00:37:35+00:00",
+    "source_file": "Module08/samples/05/README.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/06/README.md": {
+    "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
+    "translation_date": "2025-12-16T00:41:52+00:00",
+    "source_file": "Module08/samples/06/README.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/07/README.md": {
+    "original_hash": "254150b7d7854ec87ffcd88824d98079",
+    "translation_date": "2025-12-16T01:04:09+00:00",
+    "source_file": "Module08/samples/07/README.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/08/README.md": {
+    "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
+    "translation_date": "2025-12-16T00:59:35+00:00",
+    "source_file": "Module08/samples/08/README.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/09/README.md": {
+    "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
+    "translation_date": "2025-12-16T00:51:53+00:00",
+    "source_file": "Module08/samples/09/README.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/10/README.md": {
+    "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
+    "translation_date": "2025-12-16T00:45:37+00:00",
+    "source_file": "Module08/samples/10/README.md",
+    "language_code": "ml"
+  },
+  "Module08/samples/README.md": {
+    "original_hash": "729f809c84e99609364180c090c43405",
+    "translation_date": "2025-12-16T00:36:25+00:00",
+    "source_file": "Module08/samples/README.md",
+    "language_code": "ml"
+  },
+  "README.md": {
+    "original_hash": "1503c26e4e083aa4e5aabddf29cd27a9",
+    "translation_date": "2026-01-29T19:15:02+00:00",
+    "source_file": "README.md",
+    "language_code": "ml"
+  },
+  "SECURITY.md": {
+    "original_hash": "7229f7490ea61a04330b79651ac4d37e",
+    "translation_date": "2025-12-15T17:19:29+00:00",
+    "source_file": "SECURITY.md",
+    "language_code": "ml"
+  },
+  "STUDY_GUIDE.md": {
+    "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
+    "translation_date": "2025-12-15T16:42:26+00:00",
+    "source_file": "STUDY_GUIDE.md",
+    "language_code": "ml"
+  },
+  "SUPPORT.md": {
+    "original_hash": "368870f8ab79f903ad80b6a985829516",
+    "translation_date": "2025-12-15T16:55:53+00:00",
+    "source_file": "SUPPORT.md",
+    "language_code": "ml"
+  },
+  "Workshop/ENV_CONFIGURATION.md": {
+    "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
+    "translation_date": "2025-12-15T20:28:48+00:00",
+    "source_file": "Workshop/ENV_CONFIGURATION.md",
+    "language_code": "ml"
+  },
+  "Workshop/FOUNDRY_SDK_QUICKREF.md": {
+    "original_hash": "1a52481fe75c7692d785aef8da50e5e7",
+    "translation_date": "2025-12-15T21:08:59+00:00",
+    "source_file": "Workshop/FOUNDRY_SDK_QUICKREF.md",
+    "language_code": "ml"
+  },
+  "Workshop/QUICK_REFERENCE.md": {
+    "original_hash": "f4b84b08208b791e7822f88127e498f5",
+    "translation_date": "2025-12-15T20:54:53+00:00",
+    "source_file": "Workshop/QUICK_REFERENCE.md",
+    "language_code": "ml"
+  },
+  "Workshop/QUICK_START.md": {
+    "original_hash": "eee296ca63673b7520d15942f6a01826",
+    "translation_date": "2025-12-15T20:33:52+00:00",
+    "source_file": "Workshop/QUICK_START.md",
+    "language_code": "ml"
+  },
+  "Workshop/Readme.md": {
+    "original_hash": "04951692a100dcd716df01efca2d3f0d",
+    "translation_date": "2025-12-15T20:48:22+00:00",
+    "source_file": "Workshop/Readme.md",
+    "language_code": "ml"
+  },
+  "Workshop/Session01-GettingStartedFoundryLocal.md": {
+    "original_hash": "8c30436578b1bd604c48233ecdd39701",
+    "translation_date": "2025-12-15T21:00:04+00:00",
+    "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
+    "language_code": "ml"
+  },
+  "Workshop/Session02-BuildAISolutionsRAG.md": {
+    "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
+    "translation_date": "2025-12-15T21:13:55+00:00",
+    "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
+    "language_code": "ml"
+  },
+  "Workshop/Session03-OpenSourceModels.md": {
+    "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
+    "translation_date": "2025-12-15T20:37:22+00:00",
+    "source_file": "Workshop/Session03-OpenSourceModels.md",
+    "language_code": "ml"
+  },
+  "Workshop/Session04-CuttingEdgeModels.md": {
+    "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
+    "translation_date": "2025-12-15T21:19:23+00:00",
+    "source_file": "Workshop/Session04-CuttingEdgeModels.md",
+    "language_code": "ml"
+  },
+  "Workshop/Session05-AIPoweredAgents.md": {
+    "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
+    "translation_date": "2025-12-15T21:05:45+00:00",
+    "source_file": "Workshop/Session05-AIPoweredAgents.md",
+    "language_code": "ml"
+  },
+  "Workshop/Session06-ModelsAsTools.md": {
+    "original_hash": "66985bbc1a3f888335c827173a58bc5e",
+    "translation_date": "2025-12-15T20:41:16+00:00",
+    "source_file": "Workshop/Session06-ModelsAsTools.md",
+    "language_code": "ml"
+  },
+  "Workshop/notebooks/README.md": {
+    "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
+    "translation_date": "2025-12-16T00:22:39+00:00",
+    "source_file": "Workshop/notebooks/README.md",
+    "language_code": "ml"
+  },
+  "Workshop/notebooks/TROUBLESHOOTING.md": {
+    "original_hash": "e88a16101de37838f7cf256a9cd0f199",
+    "translation_date": "2025-12-16T00:03:26+00:00",
+    "source_file": "Workshop/notebooks/TROUBLESHOOTING.md",
+    "language_code": "ml"
+  },
+  "Workshop/notebooks/quickstart.md": {
+    "original_hash": "ddaad917d0c16fc3d498a6b4eabc8088",
+    "translation_date": "2025-12-16T00:10:11+00:00",
+    "source_file": "Workshop/notebooks/quickstart.md",
+    "language_code": "ml"
+  },
+  "Workshop/scripts/README.md": {
+    "original_hash": "4ace56b24e2799407b9972a7da6a7517",
+    "translation_date": "2025-12-16T00:33:57+00:00",
+    "source_file": "Workshop/scripts/README.md",
+    "language_code": "ml"
+  },
+  "WorkshopForAgentic/README.md": {
+    "original_hash": "f94e745264597bc5d8df967ead2eff97",
+    "translation_date": "2026-01-05T11:03:33+00:00",
+    "source_file": "WorkshopForAgentic/README.md",
+    "language_code": "ml"
+  },
+  "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md": {
+    "original_hash": "4d17537bea40917b825c06fd0bba5baf",
+    "translation_date": "2026-01-05T14:11:56+00:00",
+    "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
+    "language_code": "ml"
+  },
+  "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md": {
+    "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
+    "translation_date": "2026-01-05T13:58:50+00:00",
+    "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
+    "language_code": "ml"
+  },
+  "WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md": {
+    "original_hash": "7868fa418386aa7167bea3ff5ba8390b",
+    "translation_date": "2026-01-05T13:30:30+00:00",
+    "source_file": "WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md",
+    "language_code": "ml"
+  },
+  "WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md": {
+    "original_hash": "93f84b804ced67c5cd017c3c4bb476ff",
+    "translation_date": "2026-01-05T11:56:48+00:00",
+    "source_file": "WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md",
+    "language_code": "ml"
+  },
+  "WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md": {
+    "original_hash": "bb2a3cf5ebd0ec8211af960a004fc23d",
+    "translation_date": "2026-01-05T12:35:56+00:00",
+    "source_file": "WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md",
+    "language_code": "ml"
+  },
+  "WorkshopForAgentic/translation/zh-cn/01.BuildAIAgentWithSLM.md": {
+    "original_hash": "21779ce57b388adecb26881a35d9cbcf",
+    "translation_date": "2026-01-05T17:18:08+00:00",
+    "source_file": "WorkshopForAgentic/translation/zh-cn/01.BuildAIAgentWithSLM.md",
+    "language_code": "ml"
+  },
+  "WorkshopForAgentic/translation/zh-cn/02.AIAgentOrchestrationAndWorkflows.md": {
+    "original_hash": "2a2578dc4f813ca93ca7952d842a4b59",
+    "translation_date": "2026-01-05T15:39:59+00:00",
+    "source_file": "WorkshopForAgentic/translation/zh-cn/02.AIAgentOrchestrationAndWorkflows.md",
+    "language_code": "ml"
+  },
+  "WorkshopForAgentic/translation/zh-cn/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md": {
+    "original_hash": "d5c8bb53a007e77e7f8afe3067e64c55",
+    "translation_date": "2026-01-05T16:22:45+00:00",
+    "source_file": "WorkshopForAgentic/translation/zh-cn/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md",
+    "language_code": "ml"
+  },
+  "WorkshopForAgentic/translation/zh-cn/README.md": {
+    "original_hash": "aa775a734bda4590ecbe3a94a3b62197",
+    "translation_date": "2026-01-05T18:08:22+00:00",
+    "source_file": "WorkshopForAgentic/translation/zh-cn/README.md",
+    "language_code": "ml"
+  },
+  "introduction.md": {
+    "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
+    "translation_date": "2025-12-15T17:16:01+00:00",
+    "source_file": "introduction.md",
+    "language_code": "ml"
+  }
+}

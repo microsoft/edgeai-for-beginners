@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-12-16T00:35:03+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "kn"
-}
--->
 # ಕಾರ್ಯಾಗಾರ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು
 
 ಈ ಡೈರೆಕ್ಟರಿ ಕಾರ್ಯಾಗಾರ ಸಾಮಗ್ರಿಗಳ ಗುಣಮಟ್ಟ ಮತ್ತು ಸತತತೆಯನ್ನು ನಿರ್ವಹಿಸಲು ಬಳಸುವ ಸ್ವಯಂಚಾಲಿತ ಮತ್ತು ಬೆಂಬಲ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಹೊಂದಿದೆ.

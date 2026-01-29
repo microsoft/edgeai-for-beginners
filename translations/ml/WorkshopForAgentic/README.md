@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f94e745264597bc5d8df967ead2eff97",
-  "translation_date": "2026-01-05T11:03:33+00:00",
-  "source_file": "WorkshopForAgentic/README.md",
-  "language_code": "ml"
-}
--->
 # 🎙️ ദി എഐ പോഡ്കാസ്റ്റ് സ്റ്റുഡിയോ വർക്ക്‌ഷോപ്പ്
 
 > 🌏 [中文版 (ചൈനീസ് പതിപ്പ്)](translation/zh-cn/README.md)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-12-15T17:14:04+00:00",
-  "source_file": "introduction.md",
-  "language_code": "te"
-}
--->
 # ప్రారంభికుల కోసం ఎడ్జ్ AI పరిచయం
 
 ![Edge AI Introduction](../../translated_images/te/cover.eb18d1b9605d754b.webp)

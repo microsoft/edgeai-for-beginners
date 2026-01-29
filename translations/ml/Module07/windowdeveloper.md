@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2305e750e93ad4bd79898cf149e01b49",
-  "translation_date": "2025-12-15T19:58:48+00:00",
-  "source_file": "Module07/windowdeveloper.md",
-  "language_code": "ml"
-}
--->
 # Windows Edge AI വികസന ഗൈഡ്
 
 ## പരിചയം

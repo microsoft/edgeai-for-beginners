@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
-  "translation_date": "2025-12-15T20:42:29+00:00",
-  "source_file": "Workshop/Session06-ModelsAsTools.md",
-  "language_code": "kn"
-}
--->
 # ಸೆಷನ್ 6: ಫೌಂಡ್ರಿ ಲೋಕಲ್ – ಮಾದರಿಗಳನ್ನು ಉಪಕರಣಗಳಾಗಿ ಬಳಸುವುದು
 
 ## ಸಾರಾಂಶ

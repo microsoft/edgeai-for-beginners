@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-  "translation_date": "2025-12-15T21:05:45+00:00",
-  "source_file": "Workshop/Session05-AIPoweredAgents.md",
-  "language_code": "ml"
-}
--->
 # സെഷൻ 5: Foundry Local ഉപയോഗിച്ച് എഐ-പവർഡ് ഏജന്റുകൾ വേഗത്തിൽ നിർമ്മിക്കുക
 
 ## സംക്ഷേപം

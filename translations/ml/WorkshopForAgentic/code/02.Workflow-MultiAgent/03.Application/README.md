@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
-  "translation_date": "2026-01-05T14:11:56+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
-  "language_code": "ml"
-}
--->
 # പോഡ്കാസ്റ്റ് അപ്ലിക്കേഷന്‍
 
 AI എജന്റുമാരുടെ സഹായത്തോടെ പോഡ്കാസ്റ്റ് സ്‌ക്രിപ്പ്റ്റുകൾ സൃഷ്‌ടിക്കാൻ کنസോൾ അപ്ലിക്കേഷൻ.

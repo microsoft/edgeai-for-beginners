@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f94e745264597bc5d8df967ead2eff97",
-  "translation_date": "2026-01-05T11:02:28+00:00",
-  "source_file": "WorkshopForAgentic/README.md",
-  "language_code": "te"
-}
--->
 # 🎙️ ది ఎ ఐ పోडकాస్ట్ స్టూడియో వర్క్‌షాప్
 
 > 🌏 [中文版 (చైనీస్ వెర్షన్)](translation/zh-cn/README.md)

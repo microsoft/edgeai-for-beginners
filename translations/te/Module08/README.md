@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-12-15T22:35:20+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "te"
-}
--->
 # మాడ్యూల్ 08: Microsoft Foundry Local తో ప్రాక్టికల్ - పూర్తి డెవలపర్ టూల్‌కిట్
 
 ## అవలోకనం

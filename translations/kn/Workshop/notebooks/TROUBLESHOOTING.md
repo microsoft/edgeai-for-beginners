@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e88a16101de37838f7cf256a9cd0f199",
-  "translation_date": "2025-12-16T00:05:55+00:00",
-  "source_file": "Workshop/notebooks/TROUBLESHOOTING.md",
-  "language_code": "kn"
-}
--->
 # ಕಾರ್ಯಾಗಾರ ನೋಟ್ಬುಕ್‌ಗಳು - ಸಮಸ್ಯೆ ಪರಿಹಾರ ಮಾರ್ಗದರ್ಶಿ
 
 ## ವಿಷಯಗಳ ಪಟ್ಟಿಕೆ

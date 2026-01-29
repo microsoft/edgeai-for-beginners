@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-  "translation_date": "2025-12-16T00:22:39+00:00",
-  "source_file": "Workshop/notebooks/README.md",
-  "language_code": "ml"
-}
--->
 # വർക്‌ഷോപ്പ് നോട്ട്‌ബുക്കുകൾ
 
 > **ഹാൻഡ്‌സ്-ഓൺ എഡ്ജ് എഐ പഠനത്തിനുള്ള ഇന്ററാക്ടീവ് ജൂപ്പിറ്റർ നോട്ട്‌ബുക്കുകൾ**

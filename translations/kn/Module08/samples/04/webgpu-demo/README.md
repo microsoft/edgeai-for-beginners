@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-12-16T01:15:23+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "kn"
-}
--->
 # WebGPU + ONNX Runtime ಡೆಮೊ
 
 ಈ ಡೆಮೊ WebGPU ಬಳಸಿ ಹಾರ್ಡ್‌ವೇರ್ ವೇಗವರ್ಧನೆಗಾಗಿ ಮತ್ತು ONNX Runtime ವೆಬ್ ಬಳಸಿ ಬ್ರೌಸರ್‌ನಲ್ಲಿ ನೇರವಾಗಿ AI ಮಾದರಿಗಳನ್ನು ಹೇಗೆ ಚಾಲನೆ ಮಾಡುವುದು ಎಂದು ತೋರಿಸುತ್ತದೆ.

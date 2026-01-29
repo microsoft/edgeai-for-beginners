@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
-  "translation_date": "2025-12-15T21:13:55+00:00",
-  "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
-  "language_code": "ml"
-}
--->
 # സെഷൻ 2: Azure AI Foundry ഉപയോഗിച്ച് AI പരിഹാരങ്ങൾ നിർമ്മിക്കുക
 
 ## സംക്ഷേപം

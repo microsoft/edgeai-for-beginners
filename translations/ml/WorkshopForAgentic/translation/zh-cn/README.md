@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aa775a734bda4590ecbe3a94a3b62197",
-  "translation_date": "2026-01-05T18:08:22+00:00",
-  "source_file": "WorkshopForAgentic/translation/zh-cn/README.md",
-  "language_code": "ml"
-}
--->
 # 🎙️ AI പോഡ്കാസ്റ്റ് സ്റ്റുഡിയോ വർക്‌ഷോപ്പ്
 
 ![logo](../../../../../translated_images/ml/logo.8711e39dc8257d7b.webp)

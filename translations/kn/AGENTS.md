@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-  "translation_date": "2025-12-15T17:11:06+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "kn"
-}
--->
 # AGENTS.md
 
 > **ಆರಂಭಿಕರಿಗಾಗಿ EdgeAI ಗೆ ಕೊಡುಗೆ ನೀಡುವ ಡೆವಲಪರ್ ಮಾರ್ಗದರ್ಶಿ**

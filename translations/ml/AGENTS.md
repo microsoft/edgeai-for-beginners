@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-  "translation_date": "2025-12-15T17:07:01+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "ml"
-}
--->
 # AGENTS.md
 
 > **ആരംഭക്കാർക്കായി EdgeAI-യിൽ സംഭാവന നൽകുന്നതിനുള്ള ഡെവലപ്പർ ഗൈഡ്**

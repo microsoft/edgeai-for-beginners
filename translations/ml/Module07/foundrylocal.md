@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-12-15T20:19:37+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "ml"
-}
--->
 # Windows & Mac-ൽ Foundry Local
 
 Windows-ലും Mac-ലും Microsoft Foundry Local ഇൻസ്റ്റാൾ ചെയ്യാനും, പ്രവർത്തിപ്പിക്കാനും, സംയോജിപ്പിക്കാനും ഈ ഗൈഡ് സഹായിക്കുന്നു. എല്ലാ ഘട്ടങ്ങളും കമാൻഡുകളും Microsoft Learn ഡോക്യുമെന്റേഷനുമായി സ്ഥിരീകരിച്ചവയാണ്.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-12-15T21:17:58+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "te"
-}
--->
 # సెషన్ 4: ఆధునిక మోడల్స్ అన్వేషణ – LLMs, SLMs & ఆన్-డివైస్ ఇన్ఫరెన్స్
 
 ## సారాంశం

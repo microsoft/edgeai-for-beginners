@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-12-16T00:41:38+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "te"
-}
--->
 # సెషన్ 6 నమూనా: టూల్స్‌గా మోడల్స్
 
 ఈ నమూనా ఒక కనిష్ట రౌటర్ + టూల్ రిజిస్ట్రీని అమలు చేస్తుంది, ఇది యూజర్ ప్రాంప్ట్ ఆధారంగా ఒక మోడల్‌ను ఎంచుకుని Foundry Local యొక్క OpenAI-అనుకూల ఎండ్‌పాయింట్‌ను పిలుస్తుంది.

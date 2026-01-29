@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-12-16T00:37:18+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "te"
-}
--->
 # సెషన్ 5 నమూనా: బహుళ-ఏజెంట్ సమన్వయం
 
 ఈ నమూనా Foundry Local యొక్క OpenAI-అనుకూల ఎండ్‌పాయింట్ ఉపయోగించి కోఆర్డినేటర్ + నిపుణుల నమూనాను చూపిస్తుంది.

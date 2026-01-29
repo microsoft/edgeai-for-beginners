@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-12-15T20:51:42+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "kn"
-}
--->
 # ಆರಂಭಿಕರಿಗಾಗಿ ಎಡ್ಜ್‌ಎಐ - ಕಾರ್ಯಾಗಾರ
 
 > **ಉತ್ಪಾದನಾ-ಸಿದ್ಧ ಎಡ್ಜ್ ಎಐ ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ನಿರ್ಮಿಸಲು ಕೈಯಿಂದ ಕಲಿಕೆಯ ಮಾರ್ಗ**

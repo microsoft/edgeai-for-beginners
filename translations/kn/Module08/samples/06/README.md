@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-12-16T00:42:08+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "kn"
-}
--->
 # ಸೆಷನ್ 6 ಮಾದರಿಗಳು: ಸಾಧನಗಳಾಗಿ
 
 ಈ ಮಾದರಿ ಬಳಕೆದಾರ ಪ್ರಾಂಪ್ಟ್ ಆಧಾರಿತವಾಗಿ ಮಾದರಿಯನ್ನು ಆಯ್ಕೆಮಾಡುವ ಮತ್ತು Foundry Local ನ OpenAI-ಸಮ್ಮತ ಎಂಡ್‌ಪಾಯಿಂಟ್ ಅನ್ನು ಕರೆ ಮಾಡುವ ಕನಿಷ್ಠ ರೌಟರ್ + ಸಾಧನ ರಿಜಿಸ್ಟ್ರಿಯನ್ನು ಅನುಷ್ಠಾನಗೊಳಿಸುತ್ತದೆ.

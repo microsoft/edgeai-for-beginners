@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-12-16T00:42:45+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "kn"
-}
--->
 # ಸೆಷನ್ 3 ಮಾದರಿ: ಮಾದರಿ ಅನ್ವೇಷಣೆ ಮತ್ತು ತ್ವರಿತ ಬೆಂಚ್
 
 ಮಾದರಿಗಳನ್ನು ಪಟ್ಟಿ ಮಾಡಲು ಮತ್ತು ವಿವರವಾದ ಲಾಗ್‌ಗಳೊಂದಿಗೆ ಒಂದನ್ನು ಪ್ರಾರಂಭಿಸಲು ಕನಿಷ್ಠ ಸಹಾಯಕ.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-12-15T17:16:01+00:00",
-  "source_file": "introduction.md",
-  "language_code": "ml"
-}
--->
 # തുടക്കക്കാർക്കുള്ള എഡ്ജ് എഐ പരിചയം
 
 ![Edge AI Introduction](../../translated_images/ml/cover.eb18d1b9605d754b.webp)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-12-15T20:55:51+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "kn"
-}
--->
 # ಕಾರ್ಯಾಗಾರ ಮಾದರಿಗಳು - ತ್ವರಿತ ಉಲ್ಲೇಖ ಕಾರ್ಡ್
 
 **ಕೊನೆಯದಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ**: ಅಕ್ಟೋಬರ್ 8, 2025
