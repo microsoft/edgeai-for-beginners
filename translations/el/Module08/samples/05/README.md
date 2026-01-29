@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T19:22:59+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "el"
-}
--->
 # Δείγμα Συνεδρίας 5: Ορχήστρωση Πολλαπλών Πρακτόρων
 
 Αυτό το δείγμα παρουσιάζει ένα μοτίβο συντονιστή + ειδικών χρησιμοποιώντας το OpenAI-compatible endpoint του Foundry Local.

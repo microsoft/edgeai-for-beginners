@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T22:51:22+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "th"
-}
--->
 # ตัวอย่างแชท Windows 11 - Foundry Local
 
 แอปพลิเคชันแชทสมัยใหม่สำหรับ Windows 11 ที่ผสานรวม Microsoft Foundry Local เข้ากับอินเทอร์เฟซที่สวยงามและเป็นธรรมชาติ สร้างขึ้นด้วย Electron และปฏิบัติตามรูปแบบ Foundry Local อย่างเป็นทางการของ Microsoft

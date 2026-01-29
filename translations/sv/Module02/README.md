@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T06:28:08+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "sv"
-}
--->
 # Kapitel 02: Grunder för små språkmodeller
 
 Detta omfattande grundkapitel ger en viktig genomgång av små språkmodeller (SLMs), med fokus på teoretiska principer, praktiska implementeringsstrategier och lösningar för produktionsklar distribution. Kapitlet etablerar den kritiska kunskapsbasen för att förstå moderna effektiva AI-arkitekturer och deras strategiska användning i olika beräkningsmiljöer.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-18T06:26:05+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "th"
-}
--->
 ## ความปลอดภัย
 
 Microsoft ให้ความสำคัญกับความปลอดภัยของผลิตภัณฑ์และบริการซอฟต์แวร์ของเรา ซึ่งรวมถึงคลังซอร์สโค้ดทั้งหมดในองค์กร GitHub ของเรา

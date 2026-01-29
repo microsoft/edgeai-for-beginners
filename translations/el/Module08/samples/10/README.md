@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T22:55:48+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "el"
-}
--->
 # Foundry Local ως Ενσωμάτωση Εργαλείων
 
 Ένα ολοκληρωμένο πλαίσιο για την ενσωμάτωση του Microsoft Foundry Local ως κλήσιμα εργαλεία μέσα σε μεγαλύτερες εφαρμογές, ακολουθώντας τα επίσημα πρότυπα της Microsoft για ενσωμάτωση AI με βάση εργαλεία.

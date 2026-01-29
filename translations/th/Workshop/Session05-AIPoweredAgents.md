@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-  "translation_date": "2025-10-28T21:59:03+00:00",
-  "source_file": "Workshop/Session05-AIPoweredAgents.md",
-  "language_code": "th"
-}
--->
 # เซสชัน 5: สร้างตัวแทน AI ที่ทรงพลังได้อย่างรวดเร็วด้วย Foundry Local
 
 ## บทคัดย่อ

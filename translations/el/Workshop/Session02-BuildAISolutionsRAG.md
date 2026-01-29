@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
-  "translation_date": "2025-11-17T18:56:13+00:00",
-  "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
-  "language_code": "el"
-}
--->
 # Συνεδρία 2: Δημιουργία Λύσεων AI με το Azure AI Foundry
 
 ## Περίληψη

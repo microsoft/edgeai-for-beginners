@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f94e745264597bc5d8df967ead2eff97",
-  "translation_date": "2026-01-05T10:38:47+00:00",
-  "source_file": "WorkshopForAgentic/README.md",
-  "language_code": "th"
-}
--->
 # 🎙️ เวิร์กช็อปสตูดิโอพอดแคสต์ AI
 
 > 🌏 [中文版 (เวอร์ชันภาษาจีน)](translation/zh-cn/README.md)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-  "translation_date": "2025-10-30T12:53:01+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "th"
-}
--->
 # AGENTS.md
 
 > **คู่มือสำหรับนักพัฒนาในการมีส่วนร่วมกับ EdgeAI สำหรับผู้เริ่มต้น**

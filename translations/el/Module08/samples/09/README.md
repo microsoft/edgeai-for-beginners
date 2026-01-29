@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T22:53:03+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "el"
-}
--->
 # Σύστημα Ορχήστρωσης Πολλαπλών Πρακτόρων - Foundry Local
 
 Ένα προηγμένο σύστημα πολλαπλών πρακτόρων που υποστηρίζεται από το Microsoft Foundry Local, το οποίο επιδεικνύει συντονισμό ευφυών πρακτόρων, εξειδικευμένη ανάθεση εργασιών και μοτίβα συνεργατικής επίλυσης προβλημάτων.

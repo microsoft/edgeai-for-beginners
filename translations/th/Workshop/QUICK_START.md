@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "eee296ca63673b7520d15942f6a01826",
-  "translation_date": "2025-11-11T23:07:11+00:00",
-  "source_file": "Workshop/QUICK_START.md",
-  "language_code": "th"
-}
--->
 # คู่มือเริ่มต้นใช้งาน Workshop
 
 ## สิ่งที่ต้องเตรียม

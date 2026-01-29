@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T22:02:55+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "th"
-}
--->
 # สคริปต์สำหรับ Workshop
 
 ไดเรกทอรีนี้ประกอบด้วยสคริปต์อัตโนมัติและสนับสนุนที่ใช้เพื่อรักษาคุณภาพและความสม่ำเสมอในเนื้อหาของ Workshop

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-24T22:43:19+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "th"
-}
--->
 # ตัวอย่าง 02: การผสานรวม OpenAI SDK
 
 แสดงการผสานรวมขั้นสูงกับ OpenAI Python SDK ที่รองรับทั้ง Microsoft Foundry Local และ Azure OpenAI พร้อมการตอบกลับแบบสตรีมและการจัดการข้อผิดพลาดอย่างเหมาะสม
