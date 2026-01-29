@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-09-23T01:20:52+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "sk"
-}
--->
 # Ukážka relácie 3: Objavovanie modelov a rýchle testovanie
 
 Jednoduchý pomocník na zoznam modelov a spustenie jedného s podrobnými logmi.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-12T00:12:28+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "sk"
-}
--->
 # Session 4: Preskúmajte najmodernejšie modely – LLM, SLM a inferencia na zariadení
 
 ## Abstrakt

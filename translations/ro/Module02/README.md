@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T18:08:23+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "ro"
-}
--->
 # Capitolul 02: Fundamentele Modelelor de Limbaj Mici
 
 Acest capitol fundamental cuprinzător oferă o explorare esențială a Modelelor de Limbaj Mici (SLM), acoperind principii teoretice, strategii practice de implementare și soluții de implementare pregătite pentru producție. Capitolul stabilește baza critică de cunoștințe pentru înțelegerea arhitecturilor AI moderne eficiente și a implementării lor strategice în diverse medii computaționale.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T01:24:49+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "sk"
-}
--->
 # Session 6 Ukážka: Modely ako nástroje
 
 Táto ukážka implementuje minimálny router + registráciu nástrojov, ktorý vyberá model na základe používateľského zadania a volá OpenAI-kompatibilný endpoint Foundry Local.

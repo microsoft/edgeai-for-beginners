@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8c30436578b1bd604c48233ecdd39701",
-  "translation_date": "2025-11-12T00:13:36+00:00",
-  "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
-  "language_code": "sk"
-}
--->
 # Session 1: Začíname s Foundry Local
 
 ## Abstrakt

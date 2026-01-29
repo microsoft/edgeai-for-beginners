@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-25T03:13:56+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "bg"
-}
--->
 # Foundry Local като интеграция на инструменти
 
 Изчерпателна рамка за интегриране на Microsoft Foundry Local като извикваеми инструменти в по-големи приложения, следвайки официалните модели на Microsoft за интеграция на инструменти с AI.

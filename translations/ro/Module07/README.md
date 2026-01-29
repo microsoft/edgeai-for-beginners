@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T14:23:12+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "ro"
-}
--->
 # Capitolul 07: Exemple de EdgeAI
 
 Edge AI reprezintă convergența dintre inteligența artificială și edge computing, permițând procesarea inteligentă direct pe dispozitive, fără a depinde de conectivitatea cloud. Acest capitol explorează cinci implementări distincte de EdgeAI pe diverse platforme și cadre, evidențiind versatilitatea și puterea rulării modelelor AI la margine.

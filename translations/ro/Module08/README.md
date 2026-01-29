@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-10-01T01:25:22+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "ro"
-}
--->
 # Modulul 08: Practică cu Microsoft Foundry Local - Kit complet pentru dezvoltatori
 
 ## Prezentare generală

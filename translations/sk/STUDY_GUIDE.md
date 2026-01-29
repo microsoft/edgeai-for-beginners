@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-10-08T15:07:04+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "sk"
-}
--->
 # EdgeAI pre začiatočníkov: Študijné cesty a harmonogram
 
 ### Intenzívna študijná cesta (1 týždeň)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T14:31:32+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "ro"
-}
--->
 # Capitolul 04: Conversia Formatului Modelului și Cuantificare - Prezentare Generală a Capitolului
 
 Apariția EdgeAI a făcut ca conversia formatului modelului și cuantificarea să fie tehnologii esențiale pentru implementarea capacităților avansate de învățare automată pe dispozitive cu resurse limitate. Acest capitol cuprinzător oferă un ghid complet pentru înțelegerea, implementarea și optimizarea modelelor pentru scenarii de implementare la margine.

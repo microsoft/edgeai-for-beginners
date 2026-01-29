@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T18:07:44+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "sk"
-}
--->
 # Kapitola 02: Základy malých jazykových modelov
 
 Táto komplexná úvodná kapitola poskytuje zásadný pohľad na malé jazykové modely (SLM), zahŕňajúc teoretické princípy, praktické implementačné stratégie a riešenia pripravené na produkčné nasadenie. Kapitola vytvára kritický základ pre pochopenie moderných efektívnych AI architektúr a ich strategického nasadenia v rôznych výpočtových prostrediach.

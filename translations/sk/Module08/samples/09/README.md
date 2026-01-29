@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T02:59:27+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "sk"
-}
--->
 # Multi-Agent Orchestration System - Foundry Local
 
 Pokročilý systém viacerých agentov poháňaný Microsoft Foundry Local, ktorý demonštruje koordináciu inteligentných agentov, špecializované delegovanie úloh a vzory spolupráce pri riešení problémov.

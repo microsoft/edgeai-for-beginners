@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
-  "translation_date": "2025-11-17T19:19:46+00:00",
-  "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
-  "language_code": "ro"
-}
--->
 # Sesiunea 2: Construirea Soluțiilor AI cu Azure AI Foundry
 
 ## Rezumat

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-23T01:18:36+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "ro"
-}
--->
 # Sesiunea 5 Exemplu: Orchestrare Multi-Agent
 
 Acest exemplu demonstrează un model de coordonator + specialiști utilizând endpoint-ul compatibil OpenAI al Foundry Local.

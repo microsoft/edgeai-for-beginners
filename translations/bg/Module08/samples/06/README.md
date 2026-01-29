@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T01:33:08+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "bg"
-}
--->
 # Сесия 6 Пример: Модели като инструменти
 
 Този пример реализира минимален рутер + регистър на инструменти, който избира модел въз основа на потребителския въпрос и извиква OpenAI-съвместимия крайна точка на Foundry Local.

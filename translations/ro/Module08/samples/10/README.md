@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-25T03:13:43+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "ro"
-}
--->
 # Foundry Local ca Integrare de Instrumente
 
 Un cadru cuprinzător pentru integrarea Microsoft Foundry Local ca instrumente apelabile în aplicații mai mari, urmând modelele oficiale Microsoft pentru integrarea AI bazată pe instrumente.

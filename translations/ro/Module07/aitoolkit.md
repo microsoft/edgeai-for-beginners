@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-  "translation_date": "2025-10-21T07:33:56+00:00",
-  "source_file": "Module07/aitoolkit.md",
-  "language_code": "ro"
-}
--->
 # AI Toolkit pentru Visual Studio Code - Ghid de Dezvoltare Edge AI
 
 ## Introducere
