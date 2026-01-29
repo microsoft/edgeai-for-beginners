@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T12:45:51+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "fa"
-}
--->
 # ادغام Foundry Local به عنوان ابزارها
 
 یک چارچوب جامع برای ادغام Microsoft Foundry Local به عنوان ابزارهای قابل فراخوانی در برنامه‌های بزرگ‌تر، مطابق با الگوهای رسمی مایکروسافت برای ادغام هوش مصنوعی مبتنی بر ابزار.

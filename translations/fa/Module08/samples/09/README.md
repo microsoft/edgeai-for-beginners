@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T12:46:52+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "fa"
-}
--->
 # سیستم هماهنگی چندعاملی - Foundry Local
 
 یک سیستم پیشرفته چندعاملی که توسط Microsoft Foundry Local طراحی شده و هماهنگی هوشمند عوامل، واگذاری وظایف تخصصی و الگوهای حل مسئله مشارکتی را به نمایش می‌گذارد.

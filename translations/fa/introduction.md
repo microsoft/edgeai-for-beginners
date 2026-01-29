@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-09-26T10:22:06+00:00",
-  "source_file": "introduction.md",
-  "language_code": "fa"
-}
--->
 # مقدمه‌ای بر هوش مصنوعی لبه برای مبتدیان
 
 ![معرفی هوش مصنوعی لبه](../../translated_images/fa/cover.eb18d1b9605d754b.webp)

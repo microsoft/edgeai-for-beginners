@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T10:54:41+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "fa"
-}
--->
 # تغییرات
 
 تمام تغییرات قابل توجه در EdgeAI برای مبتدیان در اینجا مستند شده‌اند. این پروژه از ورودی‌های مبتنی بر تاریخ و سبک Keep a Changelog (افزوده شده، تغییر یافته، اصلاح شده، حذف شده، مستندات، منتقل شده) استفاده می‌کند.

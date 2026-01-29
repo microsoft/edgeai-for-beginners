@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-11T21:46:24+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "ur"
-}
--->
 # ایج اے آئی کے ابتدائی افراد کے لیے - ورکشاپ
 
 > **پروڈکشن کے لیے تیار ایج اے آئی ایپلیکیشنز بنانے کا عملی راستہ**

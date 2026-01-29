@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T13:43:07+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "ur"
-}
--->
 # Foundry Local بطور ٹولز انضمام
 
 Microsoft Foundry Local کو بڑے ایپلیکیشنز میں قابل کال ٹولز کے طور پر ضم کرنے کے لیے ایک جامع فریم ورک، جو Microsoft کے آفیشل پیٹرنز پر مبنی ہے۔

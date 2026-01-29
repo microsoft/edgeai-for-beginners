@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-24T12:21:49+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "fa"
-}
--->
 # نمونه ۰۲: یکپارچه‌سازی SDK OpenAI
 
 نمایش یکپارچه‌سازی پیشرفته با SDK پایتون OpenAI، پشتیبانی از Foundry Local مایکروسافت و Azure OpenAI با پاسخ‌های استریم و مدیریت صحیح خطا.

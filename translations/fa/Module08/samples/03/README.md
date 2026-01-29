@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-09-22T13:41:23+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "fa"
-}
--->
 # نمونه جلسه ۳: کشف مدل و آزمایش سریع
 
 یک ابزار کمکی ساده برای فهرست کردن مدل‌ها و شروع یکی از آن‌ها با گزارش‌های مفصل.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T12:49:53+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "fa"
-}
--->
 # نمونه چت ویندوز 11 - Foundry Local
 
 یک برنامه چت مدرن برای ویندوز 11 که Microsoft Foundry Local را با یک رابط کاربری زیبا و بومی ادغام می‌کند. این برنامه با Electron ساخته شده و از الگوهای رسمی Foundry Local مایکروسافت پیروی می‌کند.

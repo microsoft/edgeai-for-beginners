@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T11:19:19+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "ur"
-}
--->
 # ونڈوز اور میک پر Foundry Local
 
 یہ گائیڈ آپ کو ونڈوز اور میک پر Microsoft Foundry Local انسٹال، چلانے اور انٹیگریٹ کرنے میں مدد دیتی ہے۔ تمام مراحل اور کمانڈز Microsoft Learn ڈاکیومنٹس کے مطابق تصدیق شدہ ہیں۔

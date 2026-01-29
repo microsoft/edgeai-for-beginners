@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-09-30T23:12:00+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "fa"
-}
--->
 # نمونه جلسه ۶: مدل‌ها به عنوان ابزار
 
 این نمونه یک مسیریاب ساده + ثبت ابزار را پیاده‌سازی می‌کند که بر اساس درخواست کاربر یک مدل را انتخاب کرده و نقطه پایانی سازگار با OpenAI در Foundry Local را فراخوانی می‌کند.

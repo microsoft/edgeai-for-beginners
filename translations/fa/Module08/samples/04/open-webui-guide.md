@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b64f4a8cbb9b8d57863b1101b111b05d",
-  "translation_date": "2025-09-24T12:48:01+00:00",
-  "source_file": "Module08/samples/04/open-webui-guide.md",
-  "language_code": "fa"
-}
--->
 # راهنمای اتصال Open WebUI + Foundry Local
 
 این راهنما نحوه اتصال Open WebUI به Microsoft Foundry Local را برای یک رابط حرفه‌ای مشابه ChatGPT که توسط مدل‌های هوش مصنوعی محلی شما قدرت گرفته است، نشان می‌دهد.
