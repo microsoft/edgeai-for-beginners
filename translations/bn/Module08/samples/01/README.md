@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T15:06:12+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "bn"
-}
--->
 # নমুনা ০১: OpenAI SDK ব্যবহার করে দ্রুত চ্যাট
 
 Microsoft Foundry Local-এর মাধ্যমে স্থানীয় AI ইনফারেন্সের জন্য OpenAI SDK ব্যবহারের একটি সহজ চ্যাট উদাহরণ।

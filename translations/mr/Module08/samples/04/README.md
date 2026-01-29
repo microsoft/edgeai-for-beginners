@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-09-30T23:53:16+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "mr"
-}
--->
 # नमुना 04: Chainlit सह उत्पादन चॅट अनुप्रयोग
 
 Microsoft Foundry Local वापरून उत्पादन-तयार चॅट अनुप्रयोग तयार करण्यासाठी विविध पद्धतींचे सविस्तर उदाहरण, ज्यामध्ये आधुनिक वेब इंटरफेस, स्ट्रीमिंग प्रतिसाद आणि अत्याधुनिक ब्राउझर तंत्रज्ञान समाविष्ट आहे.

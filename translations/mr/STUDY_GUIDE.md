@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-10-09T09:04:20+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "mr"
-}
--->
 # EdgeAI नवशिक्यांसाठी: शिकण्याचे मार्ग आणि अभ्यास वेळापत्रक
 
 ### एकाग्र अभ्यास मार्ग (1 आठवडा)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T15:35:37+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "ne"
-}
--->
 # Windows 11 च्याट नमूना - Foundry Local
 
 Windows 11 को लागि आधुनिक च्याट एप्लिकेसन, जसले Microsoft Foundry Local लाई सुन्दर र प्राकृतिक इन्टरफेससँग एकीकृत गर्दछ। Electron प्रयोग गरेर निर्माण गरिएको र Microsoft को आधिकारिक Foundry Local ढाँचाहरू अनुसरण गरिएको।

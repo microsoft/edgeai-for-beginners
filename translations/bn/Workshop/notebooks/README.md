@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-  "translation_date": "2025-10-09T09:45:37+00:00",
-  "source_file": "Workshop/notebooks/README.md",
-  "language_code": "bn"
-}
--->
 # ওয়ার্কশপ নোটবুক
 
 > **হ্যান্ডস-অন এজ এআই শেখার জন্য ইন্টারঅ্যাকটিভ জুপিটার নোটবুক**

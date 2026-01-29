@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T15:28:48+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "ne"
-}
--->
 # नमूना ०१: OpenAI SDK मार्फत छिटो कुराकानी
 
 Microsoft Foundry Local को साथमा स्थानीय AI इनफरेन्सको लागि OpenAI SDK प्रयोग गर्ने तरिका देखाउने एउटा साधारण कुराकानी उदाहरण।

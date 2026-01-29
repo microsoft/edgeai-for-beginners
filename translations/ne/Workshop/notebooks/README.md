@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-  "translation_date": "2025-10-09T09:50:06+00:00",
-  "source_file": "Workshop/notebooks/README.md",
-  "language_code": "ne"
-}
--->
 # कार्यशाला नोटबुकहरू
 
 > **ह्यान्ड्स-अन एज एआई सिकाइका लागि अन्तरक्रियात्मक जुपिटर नोटबुकहरू**

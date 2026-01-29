@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-09-30T23:57:48+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "ne"
-}
--->
 # सत्र ६ नमूना: उपकरणको रूपमा मोडेलहरू
 
 यो नमूनाले न्यूनतम राउटर + उपकरण रजिस्ट्री कार्यान्वयन गर्दछ जसले प्रयोगकर्ताको प्रम्प्टको आधारमा मोडेल चयन गर्दछ र Foundry Local को OpenAI-संग मिल्दो अन्त बिन्दुमा कल गर्दछ।

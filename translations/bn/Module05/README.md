@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2db7a2f6e9873c3cd09fea6736bf360b",
-  "translation_date": "2025-09-17T21:13:36+00:00",
-  "source_file": "Module05/README.md",
-  "language_code": "bn"
-}
--->
 # অধ্যায় ০৫ : SLMOps - ছোট ভাষা মডেল অপারেশনের একটি বিস্তৃত গাইড
 
 ## সংক্ষিপ্ত বিবরণ

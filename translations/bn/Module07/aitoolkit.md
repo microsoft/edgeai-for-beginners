@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-  "translation_date": "2025-10-21T07:01:42+00:00",
-  "source_file": "Module07/aitoolkit.md",
-  "language_code": "bn"
-}
--->
 # ভিজ্যুয়াল স্টুডিও কোডের জন্য AI টুলকিট - এজ AI ডেভেলপমেন্ট গাইড
 
 ## পরিচিতি

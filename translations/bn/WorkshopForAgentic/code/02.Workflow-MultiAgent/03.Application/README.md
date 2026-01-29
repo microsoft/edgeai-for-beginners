@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
-  "translation_date": "2026-01-05T14:02:58+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
-  "language_code": "bn"
-}
--->
 # পডকাস্ট অ্যাপ্লিকেশন
 
 এআই এজেন্ট ব্যবহার করে পডকাস্ট স্ক্রিপ্ট তৈরি করার জন্য একটি কনসোল অ্যাপ্লিকেশন।

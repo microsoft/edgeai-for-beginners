@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f94e745264597bc5d8df967ead2eff97",
-  "translation_date": "2026-01-05T10:30:39+00:00",
-  "source_file": "WorkshopForAgentic/README.md",
-  "language_code": "mr"
-}
--->
 # 🎙️ द AI पॉडकास्ट स्टुडिओ कार्यशाळा
 
 > 🌏 [中文版 (Chinese Version)](translation/zh-cn/README.md)

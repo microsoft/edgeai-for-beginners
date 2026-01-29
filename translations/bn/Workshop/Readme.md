@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-11T22:21:33+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "bn"
-}
--->
 # EdgeAI for Beginners - কর্মশালা
 
 > **প্রোডাকশন-রেডি এজ এআই অ্যাপ্লিকেশন তৈরির জন্য হাতে-কলমে শেখার পথ**

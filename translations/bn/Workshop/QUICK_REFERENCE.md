@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-11T22:23:16+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "bn"
-}
--->
 # ওয়ার্কশপ নমুনা - দ্রুত রেফারেন্স কার্ড
 
 **সর্বশেষ আপডেট**: ৮ অক্টোবর, ২০২৫

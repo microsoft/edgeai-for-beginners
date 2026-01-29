@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-09-26T10:28:39+00:00",
-  "source_file": "introduction.md",
-  "language_code": "ne"
-}
--->
 # किनारा एआईको परिचय: शुरुवातका लागि
 
 ![किनारा एआई परिचय](../../translated_images/ne/cover.eb18d1b9605d754b.webp)

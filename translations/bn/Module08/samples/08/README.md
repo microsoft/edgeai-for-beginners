@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T15:34:38+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "bn"
-}
--->
 # Windows 11 চ্যাট নমুনা - Foundry Local
 
 Windows 11-এর জন্য একটি আধুনিক চ্যাট অ্যাপ্লিকেশন যা Microsoft Foundry Local-এর সাথে একটি সুন্দর নেটিভ ইন্টারফেসে সংযুক্ত। এটি Electron ব্যবহার করে তৈরি এবং Microsoft-এর অফিসিয়াল Foundry Local প্যাটার্ন অনুসরণ করে।

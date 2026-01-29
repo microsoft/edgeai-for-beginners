@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-11T22:24:17+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "mr"
-}
--->
 # सत्र ४: अत्याधुनिक मॉडेल्सचा अभ्यास – LLMs, SLMs आणि ऑन-डिव्हाइस इनफरन्स
 
 ## सारांश

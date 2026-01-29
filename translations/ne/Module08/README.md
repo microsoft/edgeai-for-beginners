@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-09-30T23:54:31+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "ne"
-}
--->
 # मोड्युल ०८: माइक्रोसफ्ट फाउन्ड्री लोकलसँग व्यावहारिक अनुभव - पूर्ण डेभलपर टूलकिट
 
 ## अवलोकन

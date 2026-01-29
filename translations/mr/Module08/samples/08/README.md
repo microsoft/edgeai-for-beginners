@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T15:35:04+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "mr"
-}
--->
 # Windows 11 चॅट नमुना - Foundry Local
 
 Windows 11 साठी एक आधुनिक चॅट अॅप्लिकेशन जे Microsoft Foundry Local सह एक सुंदर नेटिव्ह इंटरफेसमध्ये समाकलित आहे. Electron वापरून तयार केलेले आणि Microsoft च्या अधिकृत Foundry Local पॅटर्नचे अनुसरण करणारे.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddaad917d0c16fc3d498a6b4eabc8088",
-  "translation_date": "2025-10-09T09:52:32+00:00",
-  "source_file": "Workshop/notebooks/quickstart.md",
-  "language_code": "ne"
-}
--->
 # कार्यशाला नोटबुकहरू - छिटो सुरु गर्ने मार्गदर्शन
 
 ## सामग्री तालिका

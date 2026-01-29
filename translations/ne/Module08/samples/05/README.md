@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T17:47:35+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "ne"
-}
--->
 # सत्र ५ नमूना: बहु-एजेन्ट समन्वय
 
 यो नमूनाले Foundry Local को OpenAI-संग मिल्दो अन्तर्क्रियात्मक अन्त्य बिन्दु प्रयोग गर्दै समन्वयकर्ता + विशेषज्ञहरूको ढाँचा प्रदर्शन गर्दछ।

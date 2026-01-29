@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T12:05:41+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "bn"
-}
--->
 # উইন্ডোজ এবং ম্যাক-এ Foundry Local
 
 এই গাইডটি আপনাকে উইন্ডোজ এবং ম্যাক-এ Microsoft Foundry Local ইনস্টল, চালানো এবং ইন্টিগ্রেট করতে সাহায্য করবে। সমস্ত ধাপ এবং কমান্ড Microsoft Learn ডকুমেন্টেশনের সাথে যাচাই করা হয়েছে।

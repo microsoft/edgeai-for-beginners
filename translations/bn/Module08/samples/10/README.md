@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T15:30:13+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "bn"
-}
--->
 # Foundry Local as Tools Integration
 
 মাইক্রোসফট Foundry Local-কে বৃহত্তর অ্যাপ্লিকেশনের অংশ হিসেবে কলযোগ্য টুল হিসেবে সংযুক্ত করার জন্য একটি বিস্তৃত কাঠামো, যা মাইক্রোসফটের টুল-ভিত্তিক AI ইন্টিগ্রেশনের অফিসিয়াল প্যাটার্ন অনুসরণ করে।

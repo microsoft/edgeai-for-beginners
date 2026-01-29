@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T15:31:53+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "ne"
-}
--->
 # मल्टी-एजेन्ट समन्वय प्रणाली - फाउन्ड्री लोकल
 
 Microsoft Foundry Local द्वारा संचालित एक उन्नत मल्टी-एजेन्ट प्रणाली जसले बौद्धिक एजेन्ट समन्वय, विशेष कार्य प्रतिनिधि, र सहकार्यात्मक समस्या समाधान ढाँचाहरू प्रदर्शन गर्दछ।

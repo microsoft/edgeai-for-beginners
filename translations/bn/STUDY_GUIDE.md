@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-10-09T08:55:53+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "bn"
-}
--->
 # EdgeAI শিক্ষার্থীদের জন্য: শেখার পথ এবং অধ্যয়নের সময়সূচি
 
 ### কেন্দ্রীভূত শেখার পথ (১ সপ্তাহ)

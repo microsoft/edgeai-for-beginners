@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2db7a2f6e9873c3cd09fea6736bf360b",
-  "translation_date": "2025-09-17T21:14:27+00:00",
-  "source_file": "Module05/README.md",
-  "language_code": "ne"
-}
--->
 # अध्याय ०५ : SLMOps - सानो भाषा मोडेल अपरेसनहरूको विस्तृत मार्गदर्शन
 
 ## परिचय

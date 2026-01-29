@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T12:19:28+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "ne"
-}
--->
 # Foundry Local Windows र Mac मा
 
 यो मार्गदर्शनले तपाईंलाई Microsoft Foundry Local Windows र Mac मा स्थापना, सञ्चालन, र एकीकृत गर्न मद्दत गर्दछ। सबै चरणहरू र आदेशहरू Microsoft Learn दस्तावेजहरूसँग प्रमाणित छन्।
