@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T10:02:58+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "da"
-}
--->
 # Kapitel 01: Transformering af AI-implementering til Edge
 
 EdgeAI repræsenterer et paradigmeskift inden for implementering af kunstig intelligens, hvor AI-funktioner flyttes fra cloud-baseret behandling til lokale edge-enheder. Dette kapitel udforsker de grundlæggende begreber, nøgleteknologier og praktiske anvendelser, der definerer denne transformative tilgang til AI-implementering.

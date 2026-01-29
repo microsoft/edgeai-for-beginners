@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T23:33:59+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "da"
-}
--->
 # Windows 11 Chat Eksempel - Foundry Local
 
 En moderne chatapplikation til Windows 11, der integrerer Microsoft Foundry Local med en smuk, indbygget grænseflade. Bygget med Electron og følger Microsofts officielle Foundry Local-mønstre.

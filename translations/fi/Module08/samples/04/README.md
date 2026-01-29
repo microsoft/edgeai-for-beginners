@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T00:46:07+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "fi"
-}
--->
 # Esimerkki 04: Tuotantovalmiit chat-sovellukset Chainlitillä
 
 Kattava esimerkki, joka esittelee useita lähestymistapoja tuotantovalmiiden chat-sovellusten rakentamiseen Microsoft Foundry Localin avulla. Mukana modernit verkkokäyttöliittymät, suoratoistovastaukset ja huippuluokan selainteknologiat.

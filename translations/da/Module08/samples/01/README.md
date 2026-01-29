@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T23:15:18+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "da"
-}
--->
 # Eksempel 01: Hurtig Chat via OpenAI SDK
 
 Et simpelt chat-eksempel, der demonstrerer, hvordan man bruger OpenAI SDK med Microsoft Foundry Local til lokal AI-inferens.

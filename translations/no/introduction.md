@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-09-26T10:36:42+00:00",
-  "source_file": "introduction.md",
-  "language_code": "no"
-}
--->
 # Introduksjon til Edge AI for Nybegynnere
 
 ![Edge AI Introduksjon](../../translated_images/no/cover.eb18d1b9605d754b.webp)

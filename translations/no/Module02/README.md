@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T09:05:34+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "no"
-}
--->
 # Kapittel 02: Grunnleggende om små språkmodeller
 
 Dette omfattende grunnleggende kapittelet gir en essensiell utforskning av små språkmodeller (SLMs), med fokus på teoretiske prinsipper, praktiske implementeringsstrategier og løsninger klare for produksjon. Kapittelet etablerer den kritiske kunnskapsbasen for å forstå moderne effektive AI-arkitekturer og deres strategiske bruk i ulike datamiljøer.

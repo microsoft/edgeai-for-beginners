@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T00:38:34+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "da"
-}
--->
 # Session 6 Eksempel: Modeller som Værktøjer
 
 Dette eksempel implementerer en minimal router + værktøjsregister, der vælger en model baseret på brugerens prompt og kalder Foundry Locals OpenAI-kompatible endpoint.

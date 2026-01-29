@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T09:56:10+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "fi"
-}
--->
 # Luku 06: SLM-agenttijärjestelmät: Kattava yleiskatsaus
 
 Tekoälyn kenttä kokee merkittävän muutoksen, kun siirrymme yksinkertaisista chatbot-ohjelmista kehittyneisiin AI-agentteihin, joita tukevat pienet kielimallit (SLM). Tämä kattava opas käsittelee kolmea keskeistä osa-aluetta nykyaikaisissa SLM-agenttijärjestelmissä: perustavanlaatuiset käsitteet ja käyttöönoton strategiat, toimintojen kutsumiskyvyt sekä vallankumouksellinen Model Context Protocol (MCP) -integraatio.

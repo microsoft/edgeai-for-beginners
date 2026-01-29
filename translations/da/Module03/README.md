@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T10:37:57+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "da"
-}
--->
 # Kapitel 03: Implementering af Small Language Models (SLMs)
 
 Dette omfattende kapitel udforsker hele livscyklussen for implementering af Small Language Models (SLMs), herunder teoretiske fundamenter, praktiske implementeringsstrategier og produktionsklare containerløsninger. Kapitlet er struktureret i tre progressive sektioner, der fører læserne fra grundlæggende begreber til avancerede implementeringsscenarier.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T09:04:55+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "da"
-}
--->
 # Kapitel 02: Grundlæggende om små sproglige modeller
 
 Dette omfattende kapitel giver en essentiel introduktion til små sproglige modeller (SLM'er), med fokus på teoretiske principper, praktiske implementeringsstrategier og løsninger klar til produktion. Kapitlet etablerer den nødvendige viden for at forstå moderne, effektive AI-arkitekturer og deres strategiske anvendelse på tværs af forskellige computermiljøer.

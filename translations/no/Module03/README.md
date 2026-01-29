@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T10:38:23+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "no"
-}
--->
 # Kapittel 03: Distribuering av Små Språkmodeller (SLMs)
 
 Dette omfattende kapittelet utforsker hele livssyklusen for distribusjon av Små Språkmodeller (SLMs), og dekker teoretiske grunnlag, praktiske implementeringsstrategier og produksjonsklare containeriserte løsninger. Kapittelet er strukturert i tre progressive seksjoner som tar leseren fra grunnleggende konsepter til avanserte distribusjonsscenarier.

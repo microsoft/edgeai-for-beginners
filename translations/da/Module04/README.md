@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T13:08:20+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "da"
-}
--->
 # Kapitel 04: Konvertering af Modelformat og Kvantisering - Kapiteloversigt
 
 Fremkomsten af EdgeAI har gjort konvertering af modelformat og kvantisering til essentielle teknologier for at implementere avancerede maskinlæringsfunktioner på enheder med begrænsede ressourcer. Dette omfattende kapitel giver en komplet guide til at forstå, implementere og optimere modeller til edge-implementeringsscenarier.

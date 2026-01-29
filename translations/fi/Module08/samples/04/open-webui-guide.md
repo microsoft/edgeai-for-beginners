@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b64f4a8cbb9b8d57863b1101b111b05d",
-  "translation_date": "2025-09-24T23:37:13+00:00",
-  "source_file": "Module08/samples/04/open-webui-guide.md",
-  "language_code": "fi"
-}
--->
 # Open WebUI + Foundry Local - Integraatio-opas
 
 Tämä opas näyttää, kuinka yhdistää Open WebUI Microsoft Foundry Localiin, jotta saat ammattimaisen ChatGPT-tyylisen käyttöliittymän, joka hyödyntää paikallisia AI-mallejasi.

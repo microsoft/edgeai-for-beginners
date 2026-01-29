@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c49526c7abc56b0b5f1e835c1739f18e",
-  "translation_date": "2025-09-24T23:37:41+00:00",
-  "source_file": "Module08/samples/04/chainlit.md",
-  "language_code": "fi"
-}
--->
 # Tervetuloa Chainlitiin! 🚀🤖
 
 Hei kehittäjä! 👋 Olemme innoissamme, että olet mukana. Chainlit on tehokas työkalu, joka auttaa sinua prototyyppien luomisessa, virheiden korjaamisessa ja LLM-pohjaisten sovellusten jakamisessa.

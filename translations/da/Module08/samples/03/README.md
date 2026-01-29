@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-09-22T20:26:31+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "da"
-}
--->
 # Session 3 Eksempel: Modelopdagelse og Hurtig Test
 
 En minimal hjælper til at liste modeller og starte en med detaljerede logfiler.

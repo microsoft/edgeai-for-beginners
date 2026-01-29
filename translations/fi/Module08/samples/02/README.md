@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-24T23:33:34+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "fi"
-}
--->
 # Esimerkki 02: OpenAI SDK -integraatio
 
 Esittelee edistyneen integraation OpenAI Python SDK:n kanssa, tukien sekä Microsoft Foundry Localia että Azure OpenAI:ta suoratoistovastauksilla ja asianmukaisella virheenkäsittelyllä.

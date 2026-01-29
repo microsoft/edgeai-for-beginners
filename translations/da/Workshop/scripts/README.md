@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T22:11:48+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "da"
-}
--->
 # Workshop Scripts
 
 Denne mappe indeholder automatiserings- og supportskripter, der bruges til at opretholde kvalitet og konsistens i Workshop-materialerne.

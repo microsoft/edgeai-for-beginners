@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T10:03:14+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "no"
-}
--->
 # Kapittel 01: Transformere AI-implementering for kanten
 
 EdgeAI representerer et paradigmeskifte i implementeringen av kunstig intelligens, der AI-funksjoner flyttes fra skybasert prosessering til lokale enheter på kanten. Dette kapittelet utforsker de grunnleggende konseptene, nøkkelteknologiene og praktiske anvendelsene som definerer denne transformative tilnærmingen til AI-implementering.

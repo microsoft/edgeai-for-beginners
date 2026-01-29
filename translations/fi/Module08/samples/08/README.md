@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T23:34:42+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "fi"
-}
--->
 # Windows 11 Chat Sample - Foundry Local
 
 Moderni chat-sovellus Windows 11:lle, joka yhdistää Microsoft Foundry Localin kauniiseen natiivikäyttöliittymään. Rakennettu Electronilla ja noudattaen Microsoftin virallisia Foundry Local -malleja.

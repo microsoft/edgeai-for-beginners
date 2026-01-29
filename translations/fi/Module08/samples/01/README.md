@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T23:32:26+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "fi"
-}
--->
 # Esimerkki 01: Nopea keskustelu OpenAI SDK:n avulla
 
 Yksinkertainen keskusteluesimerkki, joka näyttää, miten käyttää OpenAI SDK:ta Microsoft Foundry Localin kanssa paikalliseen AI-päätöksentekoon.

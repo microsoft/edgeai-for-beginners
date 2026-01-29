@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T23:38:23+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "da"
-}
--->
 # Foundry Local som værktøjsintegration
 
 En omfattende ramme for integration af Microsoft Foundry Local som kaldbare værktøjer i større applikationer, i overensstemmelse med Microsofts officielle mønstre for værktøjsbaseret AI-integration.

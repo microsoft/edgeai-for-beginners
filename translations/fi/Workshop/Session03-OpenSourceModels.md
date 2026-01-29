@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
-  "translation_date": "2025-11-11T23:28:42+00:00",
-  "source_file": "Workshop/Session03-OpenSourceModels.md",
-  "language_code": "fi"
-}
--->
 # Istunto 3: Avoimen lähdekoodin mallit Foundry Localissa
 
 ## Tiivistelmä

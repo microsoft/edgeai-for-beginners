@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
-  "translation_date": "2025-11-17T19:01:38+00:00",
-  "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
-  "language_code": "no"
-}
--->
 # Sesjon 2: Bygg AI-løsninger med Azure AI Foundry
 
 ## Sammendrag

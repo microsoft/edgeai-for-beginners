@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T13:12:22+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "da"
-}
--->
 # Kapitel 07: EdgeAI Eksempler
 
 Edge AI repræsenterer sammensmeltningen af kunstig intelligens og edge computing, hvilket muliggør intelligent databehandling direkte på enheder uden behov for cloud-forbindelse. Dette kapitel udforsker fem forskellige EdgeAI-implementeringer på tværs af forskellige platforme og frameworks, der viser alsidigheden og styrken ved at køre AI-modeller på kanten.
