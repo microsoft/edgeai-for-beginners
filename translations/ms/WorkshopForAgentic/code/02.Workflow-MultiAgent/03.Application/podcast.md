@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:48:38+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "ms"
-}
--->
 Speaker 1: Selamat datang ke podcast kali ini! Saya hos Lucy, hari ini kami berpeluang menjemput pakar dalam bidang AI, Ken, untuk berbincang tentang Ollama yang kini berada dalam perhatian ramai. Ken, bolehkah anda perkenalkan secara ringkas apa itu Ollama?  
 Speaker 2: Sudah tentu! Ollama adalah alat yang membolehkan pengguna menjalankan dan mengurus model bahasa besar (LLM) secara setempat di mesin mereka. Ia tidak bergantung kepada perkhidmatan awan, menekankan privasi, kawalan dan pengkhususan. Untuk pembangun dan perniagaan, ia menawarkan alternatif yang fleksibel dan mesra privasi seperti perkhidmatan awan seperti ChatGPT.  
 Speaker 1: Kedengaran sangat menarik. Jadi apa kelebihan utama Ollama?  

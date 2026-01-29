@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T00:59:35+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "id"
-}
--->
 # Contoh 04: Aplikasi Chat Produksi dengan Chainlit
 
 Contoh lengkap yang menunjukkan berbagai pendekatan untuk membangun aplikasi chat siap produksi menggunakan Microsoft Foundry Local, dengan antarmuka web modern, respons streaming, dan teknologi browser terkini.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T13:48:28+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "tl"
-}
--->
 # Changelog
 
 Ang lahat ng mahahalagang pagbabago sa EdgeAI para sa mga Nagsisimula ay dokumentado dito. Ang proyektong ito ay gumagamit ng mga entry na nakabase sa petsa at ang estilo ng Keep a Changelog (Idinagdag, Binago, Naayos, Tinanggal, Dokumentasyon, Inilipat).

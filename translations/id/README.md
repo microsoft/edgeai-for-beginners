@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ac31463ae3ed21a0ce83b0a351c23dd4",
-  "translation_date": "2026-01-05T09:45:39+00:00",
-  "source_file": "README.md",
-  "language_code": "id"
-}
--->
 # EdgeAI untuk Pemula 
 
 
@@ -14,20 +5,20 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Kontributor GitHub](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![Isu GitHub](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
-[![Permintaan penggabungan GitHub](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
-[![PRs Disambut](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Permintaan tarik GitHub](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 [![Pengamat GitHub](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
-[![Forks GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+[![Fork GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 [![Bintang GitHub](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
 
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Ikuti langkah-langkah berikut untuk memulai menggunakan sumber daya ini:
+Ikuti langkah-langkah ini untuk mulai menggunakan sumber daya ini:
 
-1. **Fork Repositori**: Klik [![Forks GitHub](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Clone Repositori**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+1. **Fork Repository**: Klik [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Clone Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Bergabung dengan Azure AI Foundry Discord dan temui para ahli serta pengembang lain**](https://discord.com/invite/ByRwuEEgH4)
 
 
@@ -36,11 +27,11 @@ Ikuti langkah-langkah berikut untuk memulai menggunakan sumber daya ini:
 #### Didukung melalui GitHub Action (Otomatis & Selalu Terbaru)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arab](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgaria](../bg/README.md) | [Birma (Myanmar)](../my/README.md) | [Cina (Sederhana)](../zh/README.md) | [Cina (Tradisional, Hong Kong)](../hk/README.md) | [Cina (Tradisional, Macau)](../mo/README.md) | [Cina (Tradisional, Taiwan)](../tw/README.md) | [Kroasia](../hr/README.md) | [Ceko](../cs/README.md) | [Denmark](../da/README.md) | [Belanda](../nl/README.md) | [Estonia](../et/README.md) | [Finlandia](../fi/README.md) | [Prancis](../fr/README.md) | [Jerman](../de/README.md) | [Yunani](../el/README.md) | [Ibrani](../he/README.md) | [Hindi](../hi/README.md) | [Hungaria](../hu/README.md) | [Indonesia](./README.md) | [Italia](../it/README.md) | [Jepang](../ja/README.md) | [Kannada](../kn/README.md) | [Korea](../ko/README.md) | [Lituania](../lt/README.md) | [Melayu](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Pidgin Nigeria](../pcm/README.md) | [Norwegia](../no/README.md) | [Persia (Farsi)](../fa/README.md) | [Polandia](../pl/README.md) | [Portugis (Brasil)](../br/README.md) | [Portugis (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Rumania](../ro/README.md) | [Rusia](../ru/README.md) | [Serbia (Sirilik)](../sr/README.md) | [Slovakia](../sk/README.md) | [Slovenia](../sl/README.md) | [Spanyol](../es/README.md) | [Swahili](../sw/README.md) | [Swedia](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thailand](../th/README.md) | [Turki](../tr/README.md) | [Ukraina](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnam](../vi/README.md)
+[Arab](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgaria](../bg/README.md) | [Burma (Myanmar)](../my/README.md) | [Cina (Sederhana)](../zh-CN/README.md) | [Cina (Tradisional, Hong Kong)](../zh-HK/README.md) | [Cina (Tradisional, Macau)](../zh-MO/README.md) | [Cina (Tradisional, Taiwan)](../zh-TW/README.md) | [Kroasia](../hr/README.md) | [Ceko](../cs/README.md) | [Denmark](../da/README.md) | [Belanda](../nl/README.md) | [Estonia](../et/README.md) | [Finlandia](../fi/README.md) | [Perancis](../fr/README.md) | [Jerman](../de/README.md) | [Yunani](../el/README.md) | [Ibrani](../he/README.md) | [Hindi](../hi/README.md) | [Hungaria](../hu/README.md) | [Indonesia](./README.md) | [Italia](../it/README.md) | [Jepang](../ja/README.md) | [Kannada](../kn/README.md) | [Korea](../ko/README.md) | [Litauen](../lt/README.md) | [Melayu](../ms/README.md) | [Maladalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Pidgin Nigeria](../pcm/README.md) | [Norwegia](../no/README.md) | [Persia (Farsi)](../fa/README.md) | [Polandia](../pl/README.md) | [Portugis (Brasil)](../pt-BR/README.md) | [Portugis (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Rumania](../ro/README.md) | [Rusia](../ru/README.md) | [Serbia (Sirilik)](../sr/README.md) | [Slovakia](../sk/README.md) | [Slovenia](../sl/README.md) | [Spanyol](../es/README.md) | [Swahili](../sw/README.md) | [Swedia](../sv/README.md) | [Tagalog (Filipina)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turki](../tr/README.md) | [Ukraina](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnam](../vi/README.md)
 
-> **Lebih suka Clone Lokal?**
+> **Lebih suka Clone Secara Lokal?**
 
-> Repositori ini mencakup lebih dari 50 terjemahan bahasa yang secara signifikan meningkatkan ukuran unduhan. Untuk meng-clone tanpa terjemahan, gunakan sparse checkout:
+> Repository ini mencakup lebih dari 50 terjemahan bahasa yang secara signifikan meningkatkan ukuran unduhan. Untuk meng-clone tanpa terjemahan, gunakan sparse checkout:
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
 > cd edgeai-for-beginners
@@ -49,139 +40,139 @@ Ikuti langkah-langkah berikut untuk memulai menggunakan sumber daya ini:
 > Ini memberikan semua yang Anda butuhkan untuk menyelesaikan kursus dengan unduhan yang jauh lebih cepat.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Jika Anda ingin dukungan bahasa terjemahan tambahan, yang didukung tercantum [di sini](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Jika Anda ingin mendukung bahasa terjemahan tambahan yang didukung tercantum [di sini](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Pendahuluan
 
-Selamat datang di **EdgeAI untuk Pemula** – perjalanan komprehensif Anda ke dalam dunia Transformasi Kecerdasan Buatan Edge. Kursus ini menjembatani kesenjangan antara kemampuan AI yang kuat dan penerapan praktis di dunia nyata pada perangkat edge, memberdayakan Anda memanfaatkan potensi AI langsung di tempat data dihasilkan dan keputusan harus dibuat.
+Selamat datang di **EdgeAI untuk Pemula** – perjalanan komprehensif Anda ke dalam dunia transformatif Kecerdasan Buatan Edge. Kursus ini menjembatani kesenjangan antara kemampuan AI yang kuat dan penerapan praktis di dunia nyata pada perangkat edge, memberdayakan Anda untuk memanfaatkan potensi AI langsung di tempat data dihasilkan dan keputusan perlu dibuat.
 
-### Apa Yang Akan Anda Kuasai
+### Apa yang Akan Anda Kuasai
 
-Kursus ini membawa Anda dari konsep dasar hingga implementasi siap produksi, meliputi:
-- **Model Bahasa Kecil (SLM)** yang dioptimalkan untuk penerapan edge
+Kursus ini membawa Anda dari konsep dasar hingga implementasi siap produksi, mencakup:
+- **Model Bahasa Kecil (SLMs)** yang dioptimalkan untuk penerapan edge
 - **Optimasi sadar perangkat keras** di berbagai platform
-- **Inferensi waktu nyata** dengan kemampuan pelindung privasi
+- **Inferensi waktu nyata** dengan kemampuan menjaga privasi
 - **Strategi penerapan produksi** untuk aplikasi perusahaan
 
 ### Mengapa EdgeAI Penting
 
-Edge AI mewakili pergeseran paradigma yang menangani tantangan modern penting:
+Edge AI mewakili pergeseran paradigma yang menangani tantangan modern yang kritis:
 - **Privasi & Keamanan**: Memproses data sensitif secara lokal tanpa paparan cloud
-- **Kinerja Waktu Nyata**: Menghilangkan latensi jaringan untuk aplikasi kritis waktu
-- **Efisiensi Biaya**: Mengurangi biaya bandwidth dan komputasi cloud
-- **Operasi Tangguh**: Mempertahankan fungsi selama gangguan jaringan
+- **Performa Waktu Nyata**: Menghilangkan latensi jaringan untuk aplikasi yang kritis waktu
+- **Efisiensi Biaya**: Mengurangi bandwidth dan biaya komputasi cloud
+- **Operasi Tangguh**: Mempertahankan fungsi selama pemutusan jaringan
 - **Kepatuhan Regulasi**: Memenuhi persyaratan kedaulatan data
 
 ### Edge AI
 
-Edge AI merujuk pada menjalankan algoritma AI dan model bahasa secara lokal pada perangkat keras, dekat dengan tempat data dihasilkan tanpa bergantung pada sumber daya cloud untuk inferensi. Ini mengurangi latensi, meningkatkan privasi, dan memungkinkan pengambilan keputusan waktu nyata.
+Edge AI mengacu pada menjalankan algoritma AI dan model bahasa secara lokal pada perangkat keras, dekat dengan tempat data dihasilkan tanpa bergantung pada sumber daya cloud untuk inferensi. Ini mengurangi latensi, meningkatkan privasi, dan memungkinkan pengambilan keputusan waktu nyata.
 
 ### Prinsip Inti:
-- **Inferensi di perangkat**: Model AI berjalan pada perangkat edge (telepon, router, mikrokontroler, PC industri)
-- **Kemampuan offline**: Berfungsi tanpa konektivitas internet yang persisten
-- **Latensi rendah**: Respon segera sesuai untuk sistem waktu nyata
+- **Inferensi di perangkat**: Model AI berjalan di perangkat edge (ponsel, router, mikrokontroler, PC industri)
+- **Kemampuan offline**: Berfungsi tanpa konektivitas internet persisten
+- **Latensi rendah**: Respons langsung yang sesuai untuk sistem waktu nyata
 - **Kedaulatan data**: Menjaga data sensitif tetap lokal, meningkatkan keamanan dan kepatuhan
 
 ### Model Bahasa Kecil (SLMs)
 
-SLM seperti Phi-4, Mistral-7B, dan Gemma adalah versi optimal dari LLM besar—dilatih atau didistilasi untuk:
-- **Jejak memori berkurang**: Penggunaan memori perangkat edge yang terbatas secara efisien
-- **Permintaan komputasi rendah**: Dioptimalkan untuk kinerja CPU dan GPU edge
-- **Waktu startup lebih cepat**: Inisialisasi cepat untuk aplikasi responsif
+SLM seperti Phi-4, Mistral-7B, dan Gemma adalah versi yang dioptimalkan dari LLM yang lebih besar—dilatih atau didestilasi untuk:
+- **Jejak memori yang lebih kecil**: Penggunaan efisien memori perangkat edge yang terbatas
+- **Permintaan komputasi lebih rendah**: Dioptimalkan untuk performa CPU dan GPU edge
+- **Waktu mulai lebih cepat**: Inisialisasi cepat untuk aplikasi responsif
 
-Mereka membuka kemampuan NLP yang kuat sekaligus memenuhi keterbatasan:
-- **Sistem tertanam**: Perangkat IoT dan pengendali industri
+Mereka membuka kemampuan NLP yang kuat sambil memenuhi batasan dari:
+- **Sistem tertanam**: Perangkat IoT dan pengontrol industri
 - **Perangkat seluler**: Smartphone dan tablet dengan kemampuan offline
 - **Perangkat IoT**: Sensor dan perangkat pintar dengan sumber daya terbatas
 - **Server edge**: Unit pemrosesan lokal dengan sumber daya GPU terbatas
-- **Komputer pribadi**: Skenario penerapan desktop dan laptop
+- **Komputer Pribadi**: Skenario penerapan desktop dan laptop
 
 ## Modul Kursus & Navigasi
 
-| Modul | Topik | Area Fokus | Isi Utama | Tingkat | Durasi |
+| Modul | Topik | Fokus | Konten Kunci | Level | Durasi |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Pendahuluan ke EdgeAI](./introduction.md) | Dasar & Konteks | Ikhtisar EdgeAI • Aplikasi Industri • Pengenalan SLM • Tujuan Pembelajaran | Pemula | 1-2 jam |
-| [📚 01](../../Module01) | [Dasar-dasar EdgeAI](./Module01/README.md) | Perbandingan Cloud vs Edge AI | Dasar-dasar EdgeAI • Studi Kasus Dunia Nyata • Panduan Implementasi • Penerapan Edge | Pemula | 3-4 jam |
+| [📖 00 ](./introduction.md) | [Pendahuluan ke EdgeAI](./introduction.md) | Fondasi & Konteks | Ikhtisar EdgeAI • Aplikasi Industri • Pengantar SLM • Tujuan Pembelajaran | Pemula | 1-2 jam |
+| [📚 01](../../Module01) | [Fundamental EdgeAI](./Module01/README.md) | Perbandingan Cloud vs Edge AI | Fundamental EdgeAI • Studi Kasus Dunia Nyata • Panduan Implementasi • Penerapan Edge | Pemula | 3-4 jam |
 | [🧠 02](../../Module02) | [Dasar Model SLM](./Module02/README.md) | Keluarga model & arsitektur | Keluarga Phi • Keluarga Qwen • Keluarga Gemma • BitNET • μModel • Phi-Silica | Pemula | 4-5 jam |
 | [🚀 03](../../Module03) | [Praktik Penerapan SLM](./Module03/README.md) | Penerapan lokal & cloud | Pembelajaran Lanjutan • Lingkungan Lokal • Penerapan Cloud | Menengah | 4-5 jam |
-| [⚙️ 04](../../Module04) | [Toolkit Optimasi Model](./Module04/README.md) | Optimasi lintas platform | Pengenalan • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sintesis Alur Kerja | Menengah | 5-6 jam |
-| [🔧 05](../../Module05) | [Produksi SLMOps](./Module05/README.md) | Operasi produksi | Pengenalan SLMOps • Distilasi Model • Fine-tuning • Penerapan Produksi | Lanjutan | 5-6 jam |
-| [🤖 06](../../Module06) | [Agen AI & Pemanggilan Fungsi](./Module06/README.md) | Kerangka kerja agen & MCP | Pengenalan Agen • Pemanggilan Fungsi • Protokol Konteks Model | Lanjutan | 4-5 jam |
-| [💻 07](../../Module07) | [Implementasi Platform](./Module07/README.md) | Sampel lintas platform | Toolkit AI • Foundry Lokal • Pengembangan Windows | Lanjutan | 3-4 jam |
-| [🏭 08](../../Module08) | [Toolkit Foundry Lokal](./Module08/README.md) | Sampel siap produksi | Aplikasi sampel (lihat rincian di bawah) | Ahli | 8-10 jam |
+| [⚙️ 04](../../Module04) | [Toolkit Optimasi Model](./Module04/README.md) | Optimasi lintas platform | Pengantar • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Sintesis Alur Kerja | Menengah | 5-6 jam |
+| [🔧 05](../../Module05) | [Produksi SLMOps](./Module05/README.md) | Operasi produksi | Pengantar SLMOps • Distilasi Model • Fine-tuning • Penerapan Produksi | Lanjutan | 5-6 jam |
+| [🤖 06](../../Module06) | [AI Agent & Pemanggilan Fungsi](./Module06/README.md) | Kerangka agen & MCP | Pengantar Agen • Pemanggilan Fungsi • Protokol Konteks Model | Lanjutan | 4-5 jam |
+| [💻 07](../../Module07) | [Implementasi Platform](./Module07/README.md) | Contoh lintas platform | Toolkit AI • Foundry Lokal • Pengembangan Windows | Lanjutan | 3-4 jam |
+| [🏭 08](../../Module08) | [Toolkit Foundry Lokal](./Module08/README.md) | Contoh siap produksi | Aplikasi contoh (lihat detail di bawah) | Ahli | 8-10 jam |
 
-### 🏭 **Modul 08: Aplikasi Sampel**
+### 🏭 **Modul 08: Aplikasi Contoh**
 
-- [01: Mulai Cepat Chat REST](./Module08/samples/01/README.md)
+- [01: REST Chat Quickstart](./Module08/samples/01/README.md)
 - [02: Integrasi SDK OpenAI](./Module08/samples/02/README.md)
 - [03: Penemuan Model & Benchmarking](./Module08/samples/03/README.md)
 - [04: Aplikasi Chainlit RAG](./Module08/samples/04/README.md)
-- [05: Orkestrasi Multi-Agen](./Module08/samples/05/README.md)
+- [05: Orkestrasi Multi-Agent](./Module08/samples/05/README.md)
 - [06: Router Models-as-Tools](./Module08/samples/06/README.md)
 - [07: Klien API Langsung](./Module08/samples/07/README.md)
 - [08: Aplikasi Chat Windows 11](./Module08/samples/08/README.md)
-- [09: Sistem Multi-Agen Lanjutan](./Module08/samples/09/README.md)
-- [10: Kerangka Kerja Foundry Tools](./Module08/samples/10/README.md)
+- [09: Sistem Multi-Agent Lanjutan](./Module08/samples/09/README.md)
+- [10: Kerangka Alat Foundry](./Module08/samples/10/README.md)
 
-### 🎓 **Workshop: Jalur Pembelajaran Praktik**
+### 🎓 **Workshop: Jalur Pembelajaran Praktis**
 
 Materi workshop praktis komprehensif dengan implementasi siap produksi:
 
 - **[Panduan Workshop](./Workshop/Readme.md)** - Tujuan pembelajaran lengkap, hasil, dan navigasi sumber daya
-- **Contoh Python** (6 sesi) - Diperbarui dengan praktik terbaik, penanganan kesalahan, dan dokumentasi lengkap
-- **Notebook Jupyter** (8 interaktif) - Tutorial langkah demi langkah dengan benchmark dan pemantauan kinerja
-- **Panduan Sesi** - Panduan markdown rinci untuk setiap sesi workshop
-- **Alat Validasi** - Skrip untuk memverifikasi kualitas kode dan menjalankan pengujian dasar
+- **Contoh Python** (6 sesi) - Diperbarui dengan praktik terbaik, penanganan kesalahan, dan dokumentasi komprehensif
+- **Jupyter Notebooks** (8 interaktif) - Tutorial langkah demi langkah dengan benchmark dan pemantauan performa
+- **Panduan Sesi** - Panduan markdown terperinci untuk setiap sesi workshop
+- **Alat Validasi** - Skrip untuk memverifikasi kualitas kode dan menjalankan tes awal
 
 **Apa yang Akan Anda Bangun:**
 - Aplikasi chat AI lokal dengan dukungan streaming
 - Pipeline RAG dengan evaluasi kualitas (RAGAS)
 - Alat benchmarking dan perbandingan multi-model
-- Sistem orkestrasi multi-agen
+- Sistem orkestrasi multi-agent
 - Routing model cerdas dengan seleksi berbasis tugas
 
-### 🎙️ **Workshop Untuk Agentic: Praktik - Studio Podcast AI**
+### 🎙️ **Workshop For Agentic: Praktis - Studio Podcast AI**
 
-Bangun pipeline produksi podcast bertenaga AI dari nol! Workshop imersif ini mengajarkan Anda membuat sistem multi-agen lengkap yang mengubah ide menjadi episode podcast profesional.
+Bangun pipeline produksi podcast bertenaga AI dari awal! Workshop imersif ini mengajarkan Anda membuat sistem multi-agent lengkap yang mengubah ide menjadi episode podcast profesional.
 **[🎬 Mulai Workshop Studio Podcast AI](./WorkshopForAgentic/README.md)**
 
-**Misi Anda**: Luncurkan "Future Bytes" — podcast teknologi yang sepenuhnya digerakkan oleh agen AI yang akan Anda bangun sendiri. Tanpa ketergantungan cloud, tanpa biaya API — semuanya berjalan lokal di mesin Anda.
+**Misi Anda**: Luncurkan "Future Bytes" — sebuah podcast teknologi yang sepenuhnya didukung oleh agen AI yang akan Anda bangun sendiri. Tanpa ketergantungan cloud, tanpa biaya API — semuanya berjalan secara lokal di mesin Anda.
 
 **Apa yang Membuat Ini Unik:**
 - **🤖 Orkestrasi Multi-Agen Nyata** - Bangun agen AI khusus yang melakukan riset, menulis, dan memproduksi audio
-- **🎯 Jalur Produksi Lengkap** - Dari pemilihan topik hingga output audio podcast akhir
-- **💻 Penempatan 100% Lokal** - Menggunakan Ollama dan model lokal (Qwen-3-8B) untuk privasi dan kontrol penuh
-- **🎤 Integrasi Text-to-Speech** - Mengubah skrip menjadi percakapan multi-pembicara dengan suara alami
-- **✋ Alur Kerja Human-in-the-Loop** - Gerbang persetujuan memastikan kualitas sambil mempertahankan otomatisasi
+- **🎯 Jalur Produksi Lengkap** - Dari pemilihan topik hingga keluaran audio podcast akhir
+- **💻 100% Penempatan Lokal** - Menggunakan Ollama dan model lokal (Qwen-3-8B) untuk privasi dan kontrol penuh
+- **🎤 Integrasi Teks-ke-Ucapan** - Mengubah skrip menjadi percakapan multi-pembicara yang terdengar alami
+- **✋ Alur Kerja Manusia-dalam-Siklus** - Gerbang persetujuan memastikan kualitas sambil mempertahankan otomatisasi
 
-**Perjalanan Pembelajaran Tiga Babak:**
+**Perjalanan Belajar Tiga Babak:**
 
-| Babak | Fokus | Keahlian Utama | Durasi |
+| Babak | Fokus | Keterampilan Utama | Durasi |
 |-----|-------|------------|----------|
-| **[Babak 1: Kenali Asisten AI Anda](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Bangun agen AI pertama Anda | Integrasi alat • Pencarian web • Pemecahan masalah • Penalaran agen | 2-3 jam |
-| **[Babak 2: Rakit Tim Produksi Anda](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Orkestrasi beberapa agen | Koordinasi tim • Alur persetujuan • Antarmuka DevUI • Pengawasan manusia | 3-4 jam |
-| **[Babak 3: Hidupkan Podcast Anda](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Hasilkan audio podcast | Text-to-speech • Sintesis multi-pembicara • Audio format panjang • Otomatisasi penuh | 2-3 jam |
+| **[Babak 1: Temui Asisten AI Anda](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Bangun agen AI pertama Anda | Integrasi alat • Pencarian web • Pemecahan masalah • Penalaran agentik | 2-3 jam |
+| **[Babak 2: Rakit Tim Produksi Anda](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Orkestrasi banyak agen | Koordinasi tim • Alur kerja persetujuan • Antarmuka DevUI • Pengawasan manusia | 3-4 jam |
+| **[Babak 3: Hidupkan Podcast Anda](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Hasilkan audio podcast | Teks-ke-ucapan • Sintesis multi-pembicara • Audio bentuk panjang • Otomatisasi penuh | 2-3 jam |
 
 **Teknologi yang Digunakan:**
 - **Microsoft Agent Framework** - Orkestrasi dan koordinasi multi-agen
 - **Ollama** - Runtime model AI lokal (tanpa cloud)
-- **Qwen-3-8B** - Model bahasa open-source yang dioptimalkan untuk tugas agen
-- **API Text-to-Speech** - Sintesis suara alami untuk pembuatan podcast
+- **Qwen-3-8B** - Model bahasa open-source yang dioptimalkan untuk tugas agentik
+- **API Teks-ke-Ucapan** - Sintesis suara alami untuk pembuatan podcast
 
 **Dukungan Perangkat Keras:**
-- ✅ **Mode CPU** - Bekerja di komputer modern mana pun (disarankan RAM 8GB+)
+- ✅ **Mode CPU** - Berfungsi di komputer modern mana saja (disarankan RAM 8GB+)
 - 🚀 **Akselerasi GPU** - Inferensi jauh lebih cepat dengan GPU NVIDIA/AMD
-- ⚡ **Dukungan NPU** - Akselerasi unit proses neural generasi berikutnya
+- ⚡ **Dukungan NPU** - Akselerasi unit pemrosesan neural generasi berikutnya
 
-**Sangat Cocok Untuk:**
+**Cocok Untuk:**
 - Pengembang yang belajar sistem AI multi-agen
-- Siapa saja yang tertarik dengan otomatisasi AI dan alur kerja
-- Kreator konten yang mengeksplor AI untuk produksi
+- Siapa saja yang tertarik dengan otomatisasi dan alur kerja AI
+- Kreator konten yang mengeksplorasi produksi berbantuan AI
 - Mahasiswa yang mempelajari pola orkestrasi AI praktis
 
 **Mulai Membangun**: [🎙️ Workshop Studio Podcast AI →](./WorkshopForAgentic/README.md)
 
-### 📊 **Ringkasan Jalur Pembelajaran**
-- **Durasi Total**: 36-45 jam
+### 📊 **Ringkasan Jalur Belajar**
+- **Total Durasi**: 36-45 jam
 - **Jalur Pemula**: Modul 01-02 (7-9 jam)  
 - **Jalur Menengah**: Modul 03-04 (9-11 jam)
 - **Jalur Lanjutan**: Modul 05-07 (12-15 jam)
@@ -191,16 +182,16 @@ Bangun pipeline produksi podcast bertenaga AI dari nol! Workshop imersif ini men
 
 ### 🎯 Kompetensi Inti
 - **Arsitektur Edge AI**: Rancang sistem AI lokal-pertama dengan integrasi cloud
-- **Optimasi Model**: Kuantisasi dan kompresi model untuk penempatan di edge (peningkatan kecepatan 85%, pengurangan ukuran 75%)
-- **Penempatan Multi-Platform**: Windows, mobile, embedded, dan sistem hybrid cloud-edge
-- **Operasi Produksi**: Pemantauan, penskalaan, dan pemeliharaan edge AI dalam produksi
+- **Optimasi Model**: Kuantisasi dan kompresi model untuk penempatan tepi (peningkatan kecepatan 85%, pengurangan ukuran 75%)
+- **Penempatan Multi-Platform**: Windows, mobile, embedded, dan sistem hybrid cloud-tepi
+- **Operasi Produksi**: Pemantauan, penskalaan, dan pemeliharaan AI tepi dalam produksi
 
 ### 🏗️ Proyek Praktis
-- **Aplikasi Chat Foundry Lokal**: Aplikasi native Windows 11 dengan pengalih model
+- **Aplikasi Chat Foundry Lokal**: Aplikasi asli Windows 11 dengan penggantian model
 - **Sistem Multi-Agen**: Koordinator dengan agen spesialis untuk alur kerja kompleks  
-- **Aplikasi RAG**: Pemrosesan dokumen lokal dengan pencarian vektor
-- **Router Model**: Pemilihan cerdas antar model berdasarkan analisis tugas
-- **Framework API**: Klien siap produksi dengan streaming dan pemantauan kesehatan
+- **Aplikasi RAG**: Pengolahan dokumen lokal dengan pencarian vektor
+- **Router Model**: Pemilihan cerdas antara model berdasarkan analisis tugas
+- **Kerangka API**: Klien siap produksi dengan streaming dan pemantauan kesehatan
 - **Alat Lintas Platform**: Pola integrasi LangChain/Semantic Kernel
 
 ### 🏢 Aplikasi Industri
@@ -208,15 +199,15 @@ Bangun pipeline produksi podcast bertenaga AI dari nol! Workshop imersif ini men
 
 ## Mulai Cepat
 
-**Jalur Pembelajaran yang Disarankan** (total 20-30 jam):
+**Jalur Belajar yang Disarankan** (total 20-30 jam):
 
-0. **📖 Pengenalan** ([Introduction.md](./introduction.md)): Dasar EdgeAI + konteks industri + kerangka pembelajaran
-1. **📚 Fondasi** (Modul 01-02): Konsep EdgeAI + keluarga model SLM
-2. **⚙️ Optimasi** (Modul 03-04): Kerangka penempatan + kuantisasi  
+0. **📖 Pengantar** ([Introduction.md](./introduction.md)): Dasar EdgeAI + konteks industri + kerangka pembelajaran
+1. **📚 Dasar** (Modul 01-02): Konsep EdgeAI + keluarga model SLM
+2. **⚙️ Optimasi** (Modul 03-04): Penempatan + kerangka kuantisasi  
 3. **🚀 Produksi** (Modul 05-06): SLMOps + agen AI + pemanggilan fungsi
 4. **💻 Implementasi** (Modul 07-08): Contoh platform + toolkit Foundry Local
 
-Setiap modul mencakup teori, latihan langsung, dan contoh kode siap produksi.
+Setiap modul mencakup teori, latihan praktis, dan contoh kode siap produksi.
 
 ## Dampak Karir
 
@@ -224,9 +215,9 @@ Setiap modul mencakup teori, latihan langsung, dan contoh kode siap produksi.
 
 **Sektor Industri**: Manufaktur 4.0 • Teknologi Kesehatan • Sistem Otonom • FinTech • Elektronik Konsumen
 
-**Proyek Portofolio**: Sistem multi-agen • Aplikasi produksi RAG • Penempatan lintas platform • Optimasi performa
+**Proyek Portofolio**: Sistem multi-agen • Aplikasi RAG produksi • Penempatan lintas platform • Optimasi kinerja
 
-## Struktur Repositori
+## Struktur Repository
 
 ```
 edgeai-for-beginners/
@@ -243,22 +234,22 @@ edgeai-for-beginners/
 
 ## Sorotan Kursus
 
-✅ **Pembelajaran Progresif**: Teori → Praktik → Penempatan produksi  
+✅ **Pembelajaran Bertahap**: Teori → Praktik → Penempatan produksi  
 ✅ **Studi Kasus Nyata**: Microsoft, Japan Airlines, implementasi perusahaan  
 ✅ **Contoh Praktis**: 50+ contoh, 10 demo Foundry Local komprehensif  
 ✅ **Fokus Performa**: Peningkatan kecepatan 85%, pengurangan ukuran 75%  
-✅ **Multi-Platform**: Windows, mobile, embedded, hybrid cloud-edge  
+✅ **Multi-Platform**: Windows, mobile, embedded, hybrid cloud-tepi  
 ✅ **Siap Produksi**: Pemantauan, penskalaan, keamanan, kerangka kepatuhan
 
-📖 **[Panduan Studi Tersedia](STUDY_GUIDE.md)**: Jalur pembelajaran terstruktur 20 jam dengan panduan alokasi waktu dan alat penilaian mandiri.
+📖 **[Panduan Studi Tersedia](STUDY_GUIDE.md)**: Jalur belajar 20 jam yang terstruktur dengan panduan alokasi waktu dan alat penilaian mandiri.
 
 ---
 
-**EdgeAI adalah masa depan penempatan AI**: lokal-pertama, menjaga privasi, dan efisien. Kuasai keahlian ini untuk membangun generasi aplikasi cerdas berikutnya.
+**EdgeAI mewakili masa depan penempatan AI**: lokal-pertama, menjaga privasi, dan efisien. Kuasai keahlian ini untuk membangun aplikasi cerdas generasi berikutnya.
 
 ## Kursus Lain
 
-Tim kami menghasilkan kursus lain! Lihat:
+Tim kami juga memproduksi kursus lain! Lihat:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -285,7 +276,7 @@ Tim kami menghasilkan kursus lain! Lihat:
  
 ### Pembelajaran Inti
 [![ML untuk Pemula](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![Data Science untuk Pemula](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![Ilmu Data untuk Pemula](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI untuk Pemula](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
 [![Keamanan Siber untuk Pemula](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
 [![Pengembangan Web untuk Pemula](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
@@ -296,7 +287,7 @@ Tim kami menghasilkan kursus lain! Lihat:
  
 ### Seri Copilot
 [![Copilot untuk Pemrograman Berpasangan AI](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+[![Copilot untuk C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
@@ -314,5 +305,5 @@ Jika Anda memiliki masukan produk atau menemukan kesalahan saat membangun, kunju
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya mencapai ketepatan, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi penting, disarankan menggunakan jasa terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk menjaga ketepatan, harap diingat bahwa terjemahan otomatis dapat mengandung kesalahan atau ketidaktepatan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

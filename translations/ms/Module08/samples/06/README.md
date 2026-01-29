@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T01:02:33+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "ms"
-}
--->
 # Sesi 6 Contoh: Model sebagai Alat
 
 Contoh ini melaksanakan router + pendaftaran alat yang minimum, yang memilih model berdasarkan arahan pengguna dan memanggil endpoint Foundry Local yang serasi dengan OpenAI.

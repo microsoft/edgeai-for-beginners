@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T22:41:06+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "ms"
-}
--->
 # Sesi 5 Contoh: Orkestrasi Multi-Ejen
 
 Contoh ini menunjukkan corak penyelaras + pakar menggunakan endpoint Foundry Local yang serasi dengan OpenAI.

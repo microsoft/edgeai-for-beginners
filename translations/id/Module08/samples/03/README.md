@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-09-22T22:41:35+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "id"
-}
--->
 # Sesi 3 Contoh: Penemuan Model dan Uji Cepat
 
 Sebuah alat bantu minimal untuk mencantumkan model dan memulai satu dengan log yang rinci.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-11T23:46:14+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "id"
-}
--->
 # EdgeAI untuk Pemula - Workshop
 
 > **Jalur Pembelajaran Praktis untuk Membangun Aplikasi Edge AI Siap Produksi**

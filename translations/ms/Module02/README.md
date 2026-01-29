@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T13:42:40+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "ms"
-}
--->
 # Bab 02: Asas Model Bahasa Kecil
 
 Bab asas yang komprehensif ini menyediakan penerokaan penting tentang Model Bahasa Kecil (SLM), merangkumi prinsip teori, strategi pelaksanaan praktikal, dan penyelesaian penyebaran yang sedia untuk pengeluaran. Bab ini membina asas pengetahuan kritikal untuk memahami seni bina AI moden yang cekap dan penyebarannya secara strategik dalam pelbagai persekitaran pengkomputeran.

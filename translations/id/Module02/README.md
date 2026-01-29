@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T13:42:06+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "id"
-}
--->
 # Bab 02: Dasar-Dasar Model Bahasa Kecil
 
 Bab dasar yang komprehensif ini memberikan eksplorasi penting tentang Model Bahasa Kecil (SLM), mencakup prinsip-prinsip teoretis, strategi implementasi praktis, dan solusi penerapan siap produksi. Bab ini membangun basis pengetahuan kritis untuk memahami arsitektur AI modern yang efisien dan penerapannya secara strategis di berbagai lingkungan komputasi.

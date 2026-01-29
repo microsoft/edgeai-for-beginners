@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T14:23:16+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "ms"
-}
--->
 # Bab 01: Transformasi Penggunaan AI untuk Peranti Edge
 
 EdgeAI mewakili perubahan paradigma dalam penggunaan kecerdasan buatan, mengalihkan keupayaan AI daripada pemprosesan berasaskan awan kepada peranti edge tempatan. Bab ini meneroka konsep asas, teknologi utama, dan aplikasi praktikal yang mendefinisikan pendekatan transformasi ini dalam pelaksanaan AI.

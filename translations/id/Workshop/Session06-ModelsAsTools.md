@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
-  "translation_date": "2025-10-28T22:38:56+00:00",
-  "source_file": "Workshop/Session06-ModelsAsTools.md",
-  "language_code": "id"
-}
--->
 # Sesi 6: Foundry Lokal – Model sebagai Alat
 
 ## Abstrak

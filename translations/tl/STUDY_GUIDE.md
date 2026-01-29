@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-10-09T19:08:11+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "tl"
-}
--->
 # EdgeAI para sa mga Baguhan: Mga Landas ng Pag-aaral at Iskedyul ng Pag-aaral
 
 ### Konsentradong Landas ng Pag-aaral (1 linggo)

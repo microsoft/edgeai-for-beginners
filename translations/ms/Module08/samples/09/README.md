@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T02:58:04+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "ms"
-}
--->
 # Sistem Orkestrasi Multi-Ejen - Foundry Local
 
 Sistem multi-ejen canggih yang dikuasakan oleh Microsoft Foundry Local, menunjukkan koordinasi ejen pintar, delegasi tugas khusus, dan corak penyelesaian masalah secara kolaboratif.

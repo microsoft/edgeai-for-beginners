@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:49:11+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "tl"
-}
--->
 Speaker 1: Maligayang pagdating sa aming podcast ngayong episode! Ako si host Lucy, at ngayong araw ay may karangalan kaming makapanayam ang eksperto sa AI na si Ken, upang talakayin ang patok na-pansin na Ollama. Ken, maaari mo bang ipaliwanag nang simple kung ano ang Ollama?  
 Speaker 2: Siyempre! Ang Ollama ay isang tool na nagpapahintulot sa mga user na magpatakbo at mag-manage ng malalaking language model (LLM) sa lokal nilang makina. Hindi ito umaasa sa cloud services, at nagbibigay-diin sa privacy, kontrol, at customisasyon. Para sa mga developer at negosyo, ito ay isang flexible at privacy-friendly na alternatibo sa mga cloud service tulad ng ChatGPT.  
 Speaker 1: Mukhang kaakit-akit nga. Ano naman ang mga pangunahing benepisyo ng Ollama?  

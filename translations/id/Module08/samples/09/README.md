@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T02:57:53+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "id"
-}
--->
 # Sistem Orkestrasi Multi-Agen - Foundry Local
 
 Sistem multi-agen canggih yang didukung oleh Microsoft Foundry Local, menunjukkan koordinasi agen yang cerdas, delegasi tugas khusus, dan pola pemecahan masalah kolaboratif.

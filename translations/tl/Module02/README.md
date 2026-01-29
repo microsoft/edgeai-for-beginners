@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T13:43:12+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "tl"
-}
--->
 # Kabanata 02: Mga Pundasyon ng Maliit na Modelo ng Wika
 
 Ang komprehensibong pundasyong kabanatang ito ay nagbibigay ng mahalagang pagsusuri sa Maliit na Modelo ng Wika (Small Language Models o SLMs), na sumasaklaw sa mga teoretikal na prinsipyo, praktikal na estratehiya sa implementasyon, at mga solusyon para sa deployment na handa sa produksyon. Itinataguyod ng kabanata ang kritikal na kaalaman para maunawaan ang makabagong mga arkitektura ng AI na epektibo at ang kanilang estratehikong paggamit sa iba't ibang computational na kapaligiran.

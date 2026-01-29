@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T14:23:30+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "tl"
-}
--->
 # Kabanata 01: Pagbabago ng Pag-deploy ng AI para sa Edge
 
 Ang EdgeAI ay kumakatawan sa isang makabagong pagbabago sa pag-deploy ng artificial intelligence, kung saan ang mga kakayahan ng AI ay inilipat mula sa cloud-based na pagproseso patungo sa mga lokal na edge device. Ang kabanatang ito ay naglalahad ng mga pangunahing konsepto, mahahalagang teknolohiya, at praktikal na aplikasyon na tumutukoy sa makabagong paraan ng pagpapatupad ng AI.

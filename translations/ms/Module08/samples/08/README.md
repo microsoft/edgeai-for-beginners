@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-25T02:47:01+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "ms"
-}
--->
 # Windows 11 Chat Sample - Foundry Local
 
 Aplikasi sembang moden untuk Windows 11 yang mengintegrasikan Microsoft Foundry Local dengan antara muka asli yang menarik. Dibangunkan menggunakan Electron dan mengikuti corak rasmi Microsoft Foundry Local.

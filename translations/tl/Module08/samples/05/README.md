@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T22:41:09+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "tl"
-}
--->
 # Session 5 Sample: Multi-Agent Orchestration
 
 Ang sample na ito ay nagpapakita ng pattern na coordinator + specialists gamit ang OpenAI-compatible endpoint ng Foundry Local.

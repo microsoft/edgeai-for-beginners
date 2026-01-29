@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-09-22T22:41:37+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "ms"
-}
--->
 # Sesi 3 Contoh: Penemuan Model dan Ujian Pantas
 
 Pembantu ringkas untuk menyenaraikan model dan memulakan satu dengan log terperinci.

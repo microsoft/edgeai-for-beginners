@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T13:42:43+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "id"
-}
--->
 # Bab 04: Konversi Format Model dan Kuantisasi - Ikhtisar Bab
 
 Kemunculan EdgeAI telah menjadikan konversi format model dan kuantisasi sebagai teknologi penting untuk menerapkan kemampuan pembelajaran mesin canggih pada perangkat dengan sumber daya terbatas. Bab ini memberikan panduan lengkap untuk memahami, menerapkan, dan mengoptimalkan model untuk skenario penerapan di edge.

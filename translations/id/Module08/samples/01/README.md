@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-25T00:43:10+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "id"
-}
--->
 # Contoh 01: Obrolan Cepat dengan OpenAI SDK
 
 Contoh sederhana obrolan yang menunjukkan cara menggunakan OpenAI SDK dengan Microsoft Foundry Local untuk inferensi AI lokal.
