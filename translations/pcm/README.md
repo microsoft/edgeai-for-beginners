@@ -15,7 +15,7 @@
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Follow dis steps to start to use dis resources:
+Follow dis step dem to start to use dis resources:
 
 1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Clone the Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
@@ -31,60 +31,60 @@ Follow dis steps to start to use dis resources:
 
 > **Prefer to Clone Locally?**
 
-> Dis repository get 50+ language translations wey dey add the size of wetin you go download. To clone without translations, use sparse checkout:
+> Dis repo get 50+ language translations wey dey make di download size big well-well. If you wan clone without translations, use sparse checkout:
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
 > cd edgeai-for-beginners
 > git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
 > ```
-> Dis go give you everytin wey you need to complete the course sharp sharp.
+> Dis go give you everything wey you need to complete di course sharp-sharp.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**If you want make we add more translations, di languages wey fit still join dey listed [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**If you want make dem add more translations language, di ones wey dem dey support dey list [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introduction
 
-Welcome to **EdgeAI for Beginners** – your complete journey into di changing world of Edge Artificial Intelligence. Dis course go join di powerful AI skills with how to use am for real-life edge devices, make you fit use AI power for place wey data dey come from and where decision suppose happen.
+Welcome to **EdgeAI for Beginners** – your complete journey into di changing world of Edge Artificial Intelligence. Dis course na bridge wey connect strong AI powers and how to use am for real-world edge devices, so you fit use AI power where data dey come and decisions suppose happen.
 
 ### Wetin You Go Master
 
-Dis course go carry you from di basics enter full production way, e go cover:
-- **Small Language Models (SLMs)** wey dem optimize for edge deployment
+Dis course go carry you from basic concepts go production-ready tori, e cover:
+- **Small Language Models (SLMs)** wey dem optimize make dem fit work for edge
 - **Hardware-aware optimization** for different platforms
 - **Real-time inference** wey dey protect privacy
-- **Production deployment** ways for big company use
+- **Production deployment** ways for big company apps
 
 ### Why EdgeAI Matter
 
-Edge AI na new way wey fit solve big problems for now:
-- **Privacy & Security**: Make you fit handle important data for your side without put am for cloud
-- **Real-time Performance**: No delay from internet for apps weh need quick work
-- **Cost Efficiency**: Save money on internet use and cloud computer work
-- **Resilient Operations**: Make things still dey work when internet go down
-- **Regulatory Compliance**: Follow law about where data suppose stay
+Edge AI na new way wey dey solve important wahala for now:
+- **Privacy & Security**: Make you handle private data for your side without cloud wahala
+- **Real-time Performance**: No delay from network for apps wey need speed
+- **Cost Efficiency**: Save money for bandwidth and cloud computing
+- **Resilient Operations**: E go still work if network down
+- **Regulatory Compliance**: Follow rules about data keeping
 
 ### Edge AI
 
-Edge AI mean say AI algorithms and language models go run for hardware close to where data dey come from, without need cloud to help run dem. E reduce delay, make privacy better, and allow quick decision making.
+Edge AI mean say you dey run AI algorithms and language models for hardware for near where data dey come from, no need to use cloud to do inference. Dis one go reduce delay, protect privacy, and allow decision-making for real-time.
 
 ### Core Principles:
-- **On-device inference**: AI models go run for edge devices (phone, routers, microcontrollers, industrial PCs)
-- **Offline capability**: E fit work without internet connection all di time
-- **Low latency**: E respond quick for real-time system
-- **Data sovereignty**: Keep sensitive data local, make security and law obeying beta
+- **On-device inference**: AI models dey run for edge devices (phones, routers, microcontrollers, industrial PCs)
+- **Offline capability**: E fit work even if internet no dey steady
+- **Low latency**: Quick quick answer for real-time systems
+- **Data sovereignty**: E keep private data local, na so e go better security and follow rules
 
 ### Small Language Models (SLMs)
 
-SLMs like Phi-4, Mistral-7B, and Gemma na small versions of big LLMs—dem train or distill for:
-- **Reduced memory footprint**: Use small space on edge device memory well
-- **Lower compute demand**: Make e work fine for CPU and edge GPU
-- **Faster startup times**: Quick start so app go respond fast
+SLMs like Phi-4, Mistral-7B, and Gemma na better versions of big LLMs—dem train or distill am for:
+- **Reduced memory footprint**: E use memory for edge devices well-well
+- **Lower compute demand**: Optimized for CPU and edge GPU performance
+- **Faster startup times**: Sharp initialization for quick response apps
 
-Dem fit give strong NLP powers plus meet requirement for:
-- **Embedded systems**: IoT devices and industrial control
-- **Mobile devices**: Smartphones and tablets wey fit work offline
-- **IoT Devices**: Sensors and clever devices wey no get plenty resource
-- **Edge servers**: Local computers wey no get big GPU power
-- **Personal Computers**: Desktop and laptop way to deploy
+Dem fit do strong NLP work but still follow dis limits:
+- **Embedded systems**: IoT devices and industrial controllers
+- **Mobile devices**: Smartphones and tablets wey no need internet all time
+- **IoT Devices**: Sensors and smart devices wey get small resources
+- **Edge servers**: Local processing units wey get small GPU resources
+- **Personal Computers**: Desktop and laptop use cases
 
 ## Course Modules & Navigation
 
@@ -115,34 +115,34 @@ Dem fit give strong NLP powers plus meet requirement for:
 
 ### 🎓 **Workshop: Hands-On Learning Path**
 
-Complete hands-on workshop materials with production-ready work:
+Complete hands-on workshop materials wey get production-ready implementations:
 
-- **[Workshop Guide](./Workshop/Readme.md)** - Full learning goals, results, and resource directions
-- **Python Samples** (6 sessions) - Updated with best way to do am, error handling, and full docs
-- **Jupyter Notebooks** (8 interactive) - Step-by-step lessons with benchmark and performance check
-- **Session Guides** - Full markdown guides for each workshop session
-- **Validation Tools** - Scripts to check code quality and run simple tests
+- **[Workshop Guide](./Workshop/Readme.md)** - Complete learning objectives, outcomes, and resource navigation
+- **Python Samples** (6 sessions) - Updated with best practices, error handling, and complete documentation
+- **Jupyter Notebooks** (8 interactive) - Step-by-step tutorials with benchmarks and performance monitoring
+- **Session Guides** - Detailed markdown guides for each workshop session
+- **Validation Tools** - Scripts to check code quality and run smoke tests
 
 **Wetin You Go Build:**
-- Local AI chat apps wey get streaming support
-- RAG pipelines wey get quality check (RAGAS)
+- Local AI chat apps wey dey support streaming
+- RAG pipelines with quality evaluation (RAGAS)
 - Multi-model benchmarking and comparison tools
-- Multi-agent systems wey fit work together
-- Smart model routing wey choose task well
+- Multi-agent orchestration systems
+- Smart model routing with task-based selection
 
 ### 🎙️ **Workshop For Agentic: Hands-On - The AI Podcast Studio**
 
-Build AI-powered podcast production pipeline from start! Dis workshop go teach you how to create full multi-agent system wey go turn ideas into pro podcast episodes.
+Build AI-powered podcast production pipeline from scratch! Dis workshop go teach you how to create complete multi-agent system wey go change ideas to professional podcast episodes.
 **[🎬 Start The AI Podcast Studio Workshop](./WorkshopForAgentic/README.md)**
 
-**Your Mission**: Launch "Future Bytes" — a tech podcast wey AI agents weh you go build by yourself dey power am. No cloud dependencies, no API costs — everything dey run local for your machine.
+**Your Mission**: Launch "Future Bytes" — one tech podcast wey AI agents go run fully, wey you go build yourself. No cloud, no API cost — everything dey run for your machine.
 
-**Wetyn Make This Different:**
-- **🤖 Real Multi-Agent Orchestration** - Build specialized AI agents wey go do research, write, and produce audio
+**Wetin Make Dis Special:**
+- **🤖 Real Multi-Agent Orchestration** - Build AI agents wey dey research, write, and produce audio
 - **🎯 Complete Production Pipeline** - From topic selection reach final podcast audio output
 - **💻 100% Local Deployment** - Use Ollama and local models (Qwen-3-8B) for full privacy and control
-- **🎤 Text-to-Speech Integration** - Turn scripts to natural-sounding multi-speaker conversations
-- **✋ Human-in-the-Loop Workflows** - Approval gates wey dey make sure quality dey while automation still dey work
+- **🎤 Text-to-Speech Integration** - Turn scripts to natural-sounding multi-speaker talk
+- **✋ Human-in-the-Loop Workflows** - Approval gates dey sure quality but still keep automation
 
 **Three-Act Learning Journey:**
 
@@ -152,20 +152,20 @@ Build AI-powered podcast production pipeline from start! Dis workshop go teach y
 | **[Act 2: Assemble Your Production Team](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Orchestrate multiple agents | Team coordination • Approval workflows • DevUI interface • Human oversight | 3-4 hrs |
 | **[Act 3: Bring Your Podcast to Life](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Generate podcast audio | Text-to-speech • Multi-speaker synthesis • Long-form audio • Full automation | 2-3 hrs |
 
-**Technologies We Dey Use:**
+**Technologies Used:**
 - **Microsoft Agent Framework** - Multi-agent orchestration and coordination
-- **Ollama** - Local AI model runtime (no cloud required)
+- **Ollama** - Local AI model runtime (no cloud needed)
 - **Qwen-3-8B** - Open-source language model wey dem optimize for agentic tasks
 - **Text-to-Speech APIs** - Natural voice synthesis for podcast generation
 
 **Hardware Support:**
-- ✅ **CPU Mode** - E dey work for any modern computer (8GB+ RAM recommended)
-- 🚀 **GPU Acceleration** - E dey reason well well wit NVIDIA/AMD GPUs, e go quick pass
+- ✅ **CPU Mode** - Works on any modern computer (8GB+ RAM recommended)
+- 🚀 **GPU Acceleration** - Much faster inference with NVIDIA/AMD GPUs
 - ⚡ **NPU Support** - Next-generation neural processing unit acceleration
 
 **Perfect For:**
 - Developers wey dey learn multi-agent AI systems
-- People wey get interest for AI automation and workflows
+- Anybody wey dey interested in AI automation and workflows
 - Content creators wey dey explore AI-assisted production
 - Students wey dey study practical AI orchestration patterns
 
@@ -178,19 +178,19 @@ Build AI-powered podcast production pipeline from start! Dis workshop go teach y
 - **Advanced Path**: Modules 05-07 (12-15 hours)
 - **Expert Path**: Module 08 (8-10 hours)
 
-## Wetin You Go Build
+## What You'll Build
 
 ### 🎯 Core Competencies
-- **Edge AI Architecture**: Design local-first AI systems with cloud integration
+- **Edge AI Architecture**: Design local-first AI systems wey get cloud integration
 - **Model Optimization**: Quantize and compress models for edge deployment (85% speed boost, 75% size reduction)
 - **Multi-Platform Deployment**: Windows, mobile, embedded, and cloud-edge hybrid systems
 - **Production Operations**: Monitoring, scaling, and maintaining edge AI for production
 
 ### 🏗️ Practical Projects
-- **Foundry Local Chat Apps**: Windows 11 native app wey fit switch model
+- **Foundry Local Chat Apps**: Windows 11 native app wey get model switching
 - **Multi-Agent Systems**: Coordinator with specialist agents for complex workflows  
 - **RAG Applications**: Local document processing with vector search
-- **Model Routers**: Intelligent selection between models based on task analysis
+- **Model Routers**: Smart selection between models based on task analysis
 - **API Frameworks**: Production-ready clients with streaming and health monitoring
 - **Cross-Platform Tools**: LangChain/Semantic Kernel integration patterns
 
@@ -207,7 +207,7 @@ Build AI-powered podcast production pipeline from start! Dis workshop go teach y
 3. **🚀 Production** (Modules 05-06): SLMOps + AI agents + function calling
 4. **💻 Implementation** (Modules 07-08): Platform samples + Foundry Local toolkit
 
-Every module get theory, hands-on exercises, and production-ready code samples.
+Each module get theory, hands-on exercises, and production-ready code samples.
 
 ## Career Impact
 
@@ -245,17 +245,17 @@ edgeai-for-beginners/
 
 ---
 
-**EdgeAI na di future of AI deployment**: local-first, privacy-preserving, and efficient. Master dis skills to build di next generation of intelligent applications.
+**EdgeAI mean future of AI deployment**: local-first, privacy-preserving, and efficient. Master these skills make you fit build next-gen intelligent apps.
 
 ## Other Courses
 
-Our team dey produce other courses! Check am out:
+Our team dey do other courses! Check am out:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
 [![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
 [![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
-
+[![LangChain for Beginners](https://img.shields.io/badge/LangChain%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://github.com/microsoft/langchain-for-beginners?WT.mc_id=m365-94501-dwahlin)
 ---
 
 ### Azure / Edge / MCP / Agents
@@ -291,13 +291,13 @@ Our team dey produce other courses! Check am out:
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
-## How to Get Help
+## How to Comot Help
 
-If you jam or get any question about how to build AI apps, join:
+If you jam kasa or get any question about to dey build AI apps, make you join:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-If you get product feedback or error wen you dey build, check:
+If you get product talk or wahala wen you dey build, commot go:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
@@ -305,5 +305,5 @@ If you get product feedback or error wen you dey build, check:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dis dokumment don translate wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even though we dey try make am correct, abeg sabi say automated translation fit get some errors or dem no too correct. Di original dokumment wey dem write for di og language na di main one wey get authority. For important mata dem, make person wey sabi do proper human translation help you. We no go responsible for any wahala or wrong understanding wey fit happen because you use dis translation.
+Dis document na so AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) translate am. Even though we dey try make am correct, abeg sabi say automatic translation fit get some mistakes or no too correct. The original document wey e dey for im own language na di correct source. If na important info, e better make human professional translate am. We no go responsible for any wrong understanding or wahala wey fit come from dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
