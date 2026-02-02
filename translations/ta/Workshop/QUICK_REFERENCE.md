@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-12T01:00:03+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "ta"
-}
--->
 # வேலைகள் மாதிரிகள் - விரைவான குறிப்புகள் அட்டை
 
 **கடைசியாக புதுப்பிக்கப்பட்டது**: அக்டோபர் 8, 2025

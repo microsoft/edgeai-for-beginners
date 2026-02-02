@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-25T02:43:59+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "lt"
-}
--->
 # Pavyzdys 01: Greitas pokalbis naudojant OpenAI SDK
 
 Paprastas pokalbio pavyzdys, parodantis, kaip naudoti OpenAI SDK su Microsoft Foundry Local vietinei AI analizei.

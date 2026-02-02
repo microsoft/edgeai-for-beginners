@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-10-01T01:47:11+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "my"
-}
--->
 # အပိုင်း 08: Microsoft Foundry Local - အပြည့်အစုံ Developer Toolkit ကို လက်တွေ့ကျကျ လေ့လာခြင်း
 
 ## အကျဉ်းချုပ်

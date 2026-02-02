@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
-  "translation_date": "2026-01-05T14:06:28+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
-  "language_code": "fi"
-}
--->
 # Podcast-sovellus
 
 Komentorivisovellus podcast-käsikirjoitusten luomiseen AI-agenttien avulla.

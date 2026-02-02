@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T22:48:15+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "tl"
-}
--->
 # Mga Script ng Workshop
 
 Ang direktoryong ito ay naglalaman ng mga automation at support script na ginagamit upang mapanatili ang kalidad at pagkakapare-pareho sa mga materyales ng Workshop.

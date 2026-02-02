@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-11T22:26:06+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "mr"
-}
--->
 # EdgeAI नवशिक्यांसाठी - कार्यशाळा
 
 > **स्थानीय हार्डवेअरवर उत्पादन-तयार Edge AI अनुप्रयोग तयार करण्यासाठी हाताळण्यायोग्य शिक्षण मार्ग**

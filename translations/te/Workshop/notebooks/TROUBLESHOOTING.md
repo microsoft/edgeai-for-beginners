@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e88a16101de37838f7cf256a9cd0f199",
-  "translation_date": "2025-12-16T00:01:14+00:00",
-  "source_file": "Workshop/notebooks/TROUBLESHOOTING.md",
-  "language_code": "te"
-}
--->
 # వర్క్‌షాప్ నోట్‌బుక్స్ - సమస్య పరిష్కార మార్గదర్శకం
 
 ## విషయ సూచిక

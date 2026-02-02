@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-10-08T19:03:37+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "ko"
-}
--->
 # EdgeAI 초보자를 위한 학습 경로 및 학습 일정
 
 ### 집중 학습 경로 (1주)

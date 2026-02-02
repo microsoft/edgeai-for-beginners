@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-  "translation_date": "2025-10-30T14:26:53+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "ro"
-}
--->
 # AGENTS.md
 
 > **Ghid pentru dezvoltatori care contribuie la EdgeAI pentru începători**

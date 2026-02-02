@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T21:36:40+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "pa"
-}
--->
 # ਮਲਟੀ-ਏਜੰਟ ਆਰਕਸਟ੍ਰੇਸ਼ਨ ਸਿਸਟਮ - Foundry Local
 
 ਇਹ Microsoft Foundry Local ਦੁਆਰਾ ਚਲਾਇਆ ਗਿਆ ਇੱਕ ਅਗਰਗਣ ਮਲਟੀ-ਏਜੰਟ ਸਿਸਟਮ ਹੈ ਜੋ ਸਮਰਥ ਏਜੰਟ ਕੋਆਰਡੀਨੇਸ਼ਨ, ਵਿਸ਼ੇਸ਼ ਟਾਸਕ ਡੈਲੀਗੇਸ਼ਨ, ਅਤੇ ਸਹਿਯੋਗੀ ਸਮੱਸਿਆ-ਸੁਲਝਾਉਣ ਪੈਟਰਨਾਂ ਨੂੰ ਦਰਸਾਉਂਦਾ ਹੈ।

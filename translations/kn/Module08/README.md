@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-12-15T22:38:08+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "kn"
-}
--->
 # Module 08: Microsoft Foundry Local ನೊಂದಿಗೆ ಕೈಯಿಂದ ಕೆಲಸ - ಸಂಪೂರ್ಣ ಡೆವಲಪರ್ ಟೂಲ್‌ಕಿಟ್
 
 ## ಅವಲೋಕನ

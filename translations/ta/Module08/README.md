@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-10-11T12:45:17+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "ta"
-}
--->
 # Module 08: Microsoft Foundry Local - முழுமையான டெவலப்பர் கருவிகள் தொகுப்பு
 
 ## கண்ணோட்டம்

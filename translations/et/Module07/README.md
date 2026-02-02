@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-11T12:38:25+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "et"
-}
--->
 # Peatükk 07: EdgeAI näited
 
 Edge AI ühendab tehisintellekti ja serva-arvutuse, võimaldades intelligentset töötlemist otse seadmetes ilma pilveühenduse vajaduseta. Selles peatükis uuritakse viit erinevat EdgeAI rakendust erinevatel platvormidel ja raamistikus, näidates AI mudelite servas käitamise mitmekülgsust ja võimsust.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T13:40:48+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "pl"
-}
--->
 # Sesja 5 Przykład: Orkiestracja Wieloagentowa
 
 Ten przykład demonstruje wzorzec koordynatora + specjalistów, korzystając z kompatybilnego z OpenAI punktu końcowego Foundry Local.

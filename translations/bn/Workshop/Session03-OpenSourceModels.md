@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
-  "translation_date": "2025-11-11T22:22:47+00:00",
-  "source_file": "Workshop/Session03-OpenSourceModels.md",
-  "language_code": "bn"
-}
--->
 # সেশন ৩: ফাউন্ড্রি লোকাল-এ ওপেন-সোর্স মডেল
 
 ## সারসংক্ষেপ

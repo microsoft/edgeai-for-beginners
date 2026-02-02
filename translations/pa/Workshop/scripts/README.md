@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T21:28:58+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "pa"
-}
--->
 # ਵਰਕਸ਼ਾਪ ਸਕ੍ਰਿਪਟਸ
 
 ਇਹ ਡਾਇਰੈਕਟਰੀ ਵਰਕਸ਼ਾਪ ਸਮੱਗਰੀ ਵਿੱਚ ਗੁਣਵੱਤਾ ਅਤੇ ਸਥਿਰਤਾ ਨੂੰ ਬਣਾਈ ਰੱਖਣ ਲਈ ਵਰਤੇ ਜਾਣ ਵਾਲੇ ਆਟੋਮੇਸ਼ਨ ਅਤੇ ਸਹਾਇਕ ਸਕ੍ਰਿਪਟਸ ਨੂੰ ਸ਼ਾਮਲ ਕਰਦੀ ਹੈ।

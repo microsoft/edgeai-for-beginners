@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c49526c7abc56b0b5f1e835c1739f18e",
-  "translation_date": "2025-09-24T13:44:59+00:00",
-  "source_file": "Module08/samples/04/chainlit.md",
-  "language_code": "ur"
-}
--->
 # چینلٹ میں خوش آمدید! 🚀🤖
 
 ہیلو، ڈیولپر! 👋 ہمیں خوشی ہے کہ آپ ہمارے ساتھ ہیں۔ چینلٹ ایک طاقتور ٹول ہے جو آپ کو LLMs پر مبنی ایپلیکیشنز کو پروٹوٹائپ، ڈیبگ اور شیئر کرنے میں مدد فراہم کرتا ہے۔

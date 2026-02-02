@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-12-15T21:20:42+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "kn"
-}
--->
 # ಸೆಷನ್ 4: ಅಗ್ರಗಣ್ಯ ಮಾದರಿಗಳನ್ನು ಅನ್ವೇಷಿಸಿ – LLMಗಳು, SLMಗಳು ಮತ್ತು ಡಿವೈಸ್‌ನಲ್ಲಿ ಇನ್ಫರೆನ್ಸ್
 
 ## ಸಾರಾಂಶ

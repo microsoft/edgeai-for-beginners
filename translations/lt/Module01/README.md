@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T23:56:47+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "lt"
-}
--->
 # 1 skyrius: AI diegimo transformacija kraštiniuose įrenginiuose
 
 EdgeAI reiškia paradigmos pokytį dirbtinio intelekto diegime, perkeliant AI galimybes iš debesų kompiuterijos į vietinius kraštinius įrenginius. Šiame skyriuje nagrinėjami pagrindiniai konceptai, svarbiausios technologijos ir praktinės taikymo sritys, apibrėžiančios šį transformacinį požiūrį į AI įgyvendinimą.

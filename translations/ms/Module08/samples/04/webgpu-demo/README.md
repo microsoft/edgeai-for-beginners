@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-09-25T03:08:44+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "ms"
-}
--->
 # WebGPU + ONNX Runtime Demo
 
 Demo ini menunjukkan cara menjalankan model AI secara langsung dalam pelayar menggunakan WebGPU untuk pecutan perkakasan dan ONNX Runtime Web.

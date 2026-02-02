@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T14:03:09+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "hu"
-}
--->
 # Változásnapló
 
 Az EdgeAI for Beginners minden jelentős változása itt van dokumentálva. Ez a projekt dátum-alapú bejegyzéseket és a Keep a Changelog stílust használja (Hozzáadva, Módosítva, Javítva, Eltávolítva, Dokumentáció, Áthelyezve).

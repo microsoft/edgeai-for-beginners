@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T11:08:02+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "ar"
-}
--->
 # Foundry Local على ويندوز وماك
 
 هذا الدليل يساعدك على تثبيت وتشغيل ودمج Microsoft Foundry Local على ويندوز وماك. جميع الخطوات والأوامر تم التحقق منها وفقًا لوثائق Microsoft Learn.

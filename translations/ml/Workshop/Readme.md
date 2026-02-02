@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-12-15T20:48:22+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "ml"
-}
--->
 # EdgeAI for Beginners - വർക്‌ഷോപ്പ്
 
 > **പ്രൊഡക്ഷൻ-റെഡി എഡ്ജ് AI ആപ്ലിക്കേഷനുകൾ നിർമ്മിക്കാൻ ഹാൻഡ്‌സ്-ഓൺ പഠന പാത**

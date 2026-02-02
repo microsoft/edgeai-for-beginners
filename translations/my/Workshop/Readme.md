@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-12T00:43:30+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "my"
-}
--->
 # EdgeAI အတွက် မူလတန်း - Workshop
 
 > **ထုတ်လုပ်မှုအဆင်သင့် Edge AI အက်ပလီကေးရှင်းများ တည်ဆောက်ရန် လက်တွေ့လေ့လာမှု လမ်းကြောင်း**

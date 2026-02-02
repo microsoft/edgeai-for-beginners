@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-11-11T17:56:10+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "pcm"
-}
--->
 # Foundry Local for Windows & Mac
 
 Dis guide go show you how you fit install, run, and connect Microsoft Foundry Local for Windows and Mac. All di steps and commands don dey confirm with Microsoft Learn docs.

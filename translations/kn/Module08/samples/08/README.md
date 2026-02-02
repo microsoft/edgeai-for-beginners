@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-12-16T01:01:33+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "kn"
-}
--->
 # Windows 11 ಚಾಟ್ ಮಾದರಿ - Foundry Local
 
 Windows 11 ಗಾಗಿ ಆಧುನಿಕ ಚಾಟ್ ಅಪ್ಲಿಕೇಶನ್, ಇದು Microsoft Foundry Local ಅನ್ನು ಸುಂದರ ಸ್ಥಳೀಯ ಇಂಟರ್ಫೇಸ್ ಜೊತೆಗೆ ಸಂಯೋಜಿಸುತ್ತದೆ. Electron ಬಳಸಿ ನಿರ್ಮಿಸಲಾಗಿದೆ ಮತ್ತು Microsoft ನ ಅಧಿಕೃತ Foundry Local ಮಾದರಿಗಳನ್ನು ಅನುಸರಿಸುತ್ತದೆ.

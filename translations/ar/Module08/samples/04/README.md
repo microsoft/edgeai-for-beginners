@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-09-30T23:09:01+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "ar"
-}
--->
 # نموذج 04: تطبيقات الدردشة الإنتاجية باستخدام Chainlit
 
 نموذج شامل يوضح طرق متعددة لبناء تطبيقات دردشة جاهزة للإنتاج باستخدام Microsoft Foundry Local، مع واجهات ويب حديثة، استجابات متدفقة، وتقنيات متقدمة للمتصفح.

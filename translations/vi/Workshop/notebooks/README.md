@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-  "translation_date": "2025-10-09T17:05:16+00:00",
-  "source_file": "Workshop/notebooks/README.md",
-  "language_code": "vi"
-}
--->
 # Sổ Tay Workshop
 
 > **Sổ tay Jupyter tương tác để học Edge AI thực hành**

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T12:44:08+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "hi"
-}
--->
 # नमूना 01: OpenAI SDK के माध्यम से त्वरित चैट
 
 Microsoft Foundry Local के साथ स्थानीय AI अनुमान के लिए OpenAI SDK का उपयोग करने का एक सरल चैट उदाहरण।

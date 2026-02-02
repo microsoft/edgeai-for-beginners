@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T23:38:51+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "fi"
-}
--->
 # Foundry Local työkalujen integrointina
 
 Kattava kehys Microsoft Foundry Local -mallien integroimiseksi kutsuttavina työkaluina suurempiin sovelluksiin, noudattaen Microsoftin virallisia malleja työkalupohjaiselle tekoälyn integroinnille.

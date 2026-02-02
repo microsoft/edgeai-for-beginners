@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-12-15T16:52:37+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "kn"
-}
--->
 # ಆರಂಭಿಕರಿಗಾಗಿ ಎಡ್ಜ್‌ಎಐ: ಕಲಿಕೆಯ ಮಾರ್ಗಗಳು ಮತ್ತು ಅಧ್ಯಯನ ವೇಳಾಪಟ್ಟಿ
 
 ### ಕೇಂದ್ರೀಕೃತ ಕಲಿಕೆಯ ಮಾರ್ಗ (1 ವಾರ)

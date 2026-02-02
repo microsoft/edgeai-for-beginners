@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T20:26:04+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "fi"
-}
--->
 # Istunto 5 Esimerkki: Moniagenttinen Orkestrointi
 
 Tämä esimerkki havainnollistaa koordinaattorin + asiantuntijoiden mallia käyttämällä Foundry Localin OpenAI-yhteensopivaa päätepistettä.

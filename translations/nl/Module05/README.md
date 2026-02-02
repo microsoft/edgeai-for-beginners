@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2db7a2f6e9873c3cd09fea6736bf360b",
-  "translation_date": "2025-09-18T12:58:46+00:00",
-  "source_file": "Module05/README.md",
-  "language_code": "nl"
-}
--->
 # Hoofdstuk 05: SLMOps - Een Uitgebreide Gids voor Small Language Model Operations
 
 ## Overzicht

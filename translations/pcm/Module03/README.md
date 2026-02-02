@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-11-11T17:30:27+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "pcm"
-}
--->
 # Chapter 03: How to Deploy Small Language Models (SLMs)
 
 Dis chapter go show di full process wey dey involve for how to deploy Small Language Models (SLMs), e go cover di theory, how to do am practically, and how to use containerized solutions wey fit work for production. Di chapter get three sections wey dey build on top each oda, from di basic idea to di advanced way wey you fit deploy am.

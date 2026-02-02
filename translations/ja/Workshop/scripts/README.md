@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T20:55:47+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "ja"
-}
--->
 # ワークショップスクリプト
 
 このディレクトリには、ワークショップ資料の品質と一貫性を維持するための自動化およびサポートスクリプトが含まれています。

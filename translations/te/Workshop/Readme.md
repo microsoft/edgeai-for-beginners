@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-12-15T20:44:59+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "te"
-}
--->
 # EdgeAI ప్రారంభికులకు - వర్క్‌షాప్
 
 > **ప్రొడక్షన్-రెడీ ఎడ్జ్ AI అప్లికేషన్లను నిర్మించడానికి హ్యాండ్స్-ఆన్ లెర్నింగ్ పాత్**

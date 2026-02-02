@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T13:06:44+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "vi"
-}
--->
 # Chương 03: Triển khai Mô hình Ngôn ngữ Nhỏ (SLMs)
 
 Chương này cung cấp một cái nhìn toàn diện về toàn bộ vòng đời triển khai Mô hình Ngôn ngữ Nhỏ (SLMs), bao gồm các nền tảng lý thuyết, chiến lược triển khai thực tiễn, và các giải pháp container hóa sẵn sàng cho sản xuất. Chương được cấu trúc thành ba phần tiến bộ, dẫn dắt người đọc từ các khái niệm cơ bản đến các kịch bản triển khai nâng cao.

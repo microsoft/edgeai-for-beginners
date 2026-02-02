@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
-  "translation_date": "2025-12-15T20:38:36+00:00",
-  "source_file": "Workshop/Session03-OpenSourceModels.md",
-  "language_code": "kn"
-}
--->
 # ಸೆಷನ್ 3: ಫೌಂಡ್ರಿ ಲೋಕಲ್‌ನಲ್ಲಿ ಓಪನ್-ಸೋರ್ಸ್ ಮಾದರಿಗಳು
 
 ## ಸಾರಾಂಶ

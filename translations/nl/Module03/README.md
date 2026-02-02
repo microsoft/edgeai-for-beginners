@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T13:05:52+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "nl"
-}
--->
 # Hoofdstuk 03: Het Implementeren van Small Language Models (SLMs)
 
 Dit uitgebreide hoofdstuk behandelt de volledige levenscyclus van de implementatie van Small Language Models (SLMs), inclusief theoretische basisprincipes, praktische implementatiestrategieën en productieklare containeroplossingen. Het hoofdstuk is opgedeeld in drie progressieve secties die lezers meenemen van fundamentele concepten naar geavanceerde implementatiescenario's.

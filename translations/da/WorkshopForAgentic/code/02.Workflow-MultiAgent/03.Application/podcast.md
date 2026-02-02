@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:45:12+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "da"
-}
--->
 Speaker 1: Velkommen til denne episode af podcasten! Jeg er vært Lucy, og i dag er vi heldige at have AI-ekspert Ken med, som vil tale med os om det meget omtalte Ollama. Ken, kan du starte med kort at fortælle os, hvad Ollama er?  
 Speaker 2: Selvfølgelig! Ollama er et værktøj, der gør det muligt for brugere at køre og administrere store sprogmodeller (LLM) på deres lokale maskiner. Det kræver ikke afhængighed af skyen og lægger vægt på privatliv, kontrol og tilpasning. For udviklere og virksomheder tilbyder det et fleksibelt og privatlivsvenligt alternativ til skybaserede tjenester som ChatGPT.  
 Speaker 1: Det lyder virkelig interessant. Hvad er Ollamas kernefordele?  

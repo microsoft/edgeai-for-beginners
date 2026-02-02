@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e88a16101de37838f7cf256a9cd0f199",
-  "translation_date": "2025-10-08T14:33:05+00:00",
-  "source_file": "Workshop/notebooks/TROUBLESHOOTING.md",
-  "language_code": "sr"
-}
--->
 # Водич за решавање проблема - Радне свеске
 
 ## Садржај

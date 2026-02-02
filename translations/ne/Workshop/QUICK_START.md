@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "eee296ca63673b7520d15942f6a01826",
-  "translation_date": "2025-11-11T22:28:24+00:00",
-  "source_file": "Workshop/QUICK_START.md",
-  "language_code": "ne"
-}
--->
 # कार्यशाला छिटो सुरु गर्ने मार्गदर्शन
 
 ## आवश्यकताहरू

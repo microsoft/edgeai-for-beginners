@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-17T23:07:44+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "tr"
-}
--->
 # Bölüm 06: SLM Agentik Sistemler: Kapsamlı Bir Genel Bakış
 
 Yapay zeka dünyası, basit sohbet botlarından Küçük Dil Modelleri (SLM) tarafından desteklenen sofistike AI ajanlarına doğru temel bir dönüşüm geçiriyor. Bu kapsamlı rehber, modern SLM agentik sistemlerinin üç kritik yönünü inceliyor: temel kavramlar ve dağıtım stratejileri, fonksiyon çağırma yetenekleri ve devrim niteliğindeki Model Context Protocol (MCP) entegrasyonu.

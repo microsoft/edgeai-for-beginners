@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T12:21:01+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "fa"
-}
--->
 # نمونه ۰۱: گفتگوی سریع با استفاده از OpenAI SDK
 
 یک مثال ساده از چت که نشان می‌دهد چگونه می‌توان از OpenAI SDK همراه با Microsoft Foundry Local برای استنتاج محلی هوش مصنوعی استفاده کرد.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-  "translation_date": "2025-10-11T12:06:12+00:00",
-  "source_file": "Workshop/notebooks/README.md",
-  "language_code": "et"
-}
--->
 # Töötuba Märkmikud
 
 > **Interaktiivsed Jupyter Notebookid praktiliseks Edge AI õppimiseks**

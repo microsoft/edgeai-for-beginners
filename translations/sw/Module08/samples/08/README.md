@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-25T02:47:48+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "sw"
-}
--->
 # Mfano wa Mazungumzo ya Windows 11 - Foundry Local
 
 Programu ya kisasa ya mazungumzo kwa Windows 11 inayojumuisha Microsoft Foundry Local na kiolesura cha asili chenye mvuto. Imejengwa kwa kutumia Electron na kufuata mifumo rasmi ya Microsoft Foundry Local.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T00:11:54+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "vi"
-}
--->
 # Hệ Thống Điều Phối Đa Tác Nhân - Foundry Local
 
 Một hệ thống đa tác nhân tiên tiến được hỗ trợ bởi Microsoft Foundry Local, thể hiện khả năng phối hợp tác nhân thông minh, phân công nhiệm vụ chuyên biệt và các mô hình giải quyết vấn đề hợp tác.

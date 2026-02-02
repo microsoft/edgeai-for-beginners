@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T07:32:06+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "sv"
-}
--->
 # Kapitel 01: Transformera AI-distribution för Edge
 
 EdgeAI representerar ett paradigmskifte inom artificiell intelligens, där AI-funktioner flyttas från molnbaserad bearbetning till lokala edge-enheter. Detta kapitel utforskar de grundläggande koncepten, nyckelteknologierna och praktiska tillämpningarna som definierar detta transformativa tillvägagångssätt för AI-implementering.

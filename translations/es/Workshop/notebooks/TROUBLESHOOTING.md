@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e88a16101de37838f7cf256a9cd0f199",
-  "translation_date": "2025-10-08T21:04:16+00:00",
-  "source_file": "Workshop/notebooks/TROUBLESHOOTING.md",
-  "language_code": "es"
-}
--->
 # Cuadernos del Taller - Guía de Solución de Problemas
 
 ## Tabla de Contenidos

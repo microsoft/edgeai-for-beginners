@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T23:38:47+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "my"
-}
--->
 # အခန်း ၀၆ : SLM Agentic Systems: အကျယ်အဝန်းအကြောင်းအရာ
 
 အတုအမြင်တု (Artificial Intelligence) အခန်းကဏ္ဍသည် ရိုးရှင်းသော chatbot များမှ စတင်၍ Small Language Models (SLMs) အားဖြင့် အင်အားကြီးသော AI အေးဂျင့်များသို့ ပြောင်းလဲနေသော အခြေခံပြောင်းလဲမှုကို ကြုံတွေ့နေရသည်။ ဤလမ်းညွှန်အကျယ်အဝန်းသည် ခေတ်သစ် SLM agentic systems ၏ အရေးပါသော အချက်သုံးခုကို လေ့လာဆန်းစစ်ထားသည်။ အခြေခံအယူအဆနှင့် အသုံးချမှု မဟာဗျူဟာများ၊ function calling စွမ်းရည်များ၊ နှင့် Model Context Protocol (MCP) ၏ အရေးပါသော ပေါင်းစည်းမှုတို့ဖြစ်သည်။

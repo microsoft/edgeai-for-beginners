@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T14:02:55+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "hu"
-}
--->
 # 7. fejezet: EdgeAI minták
 
 Az Edge AI az intelligens feldolgozás lehetőségét hozza el közvetlenül az eszközökre, a felhőkapcsolattól függetlenül, az edge computing és a mesterséges intelligencia konvergenciáját képviselve. Ez a fejezet öt különböző EdgeAI megvalósítást mutat be különböző platformokon és keretrendszereken, bemutatva az AI modellek edge környezetben történő futtatásának sokoldalúságát és erejét.

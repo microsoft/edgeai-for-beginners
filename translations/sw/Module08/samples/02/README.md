@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-25T01:05:39+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "sw"
-}
--->
 # Mfano 02: Ujumuishaji wa OpenAI SDK
 
 Inaonyesha ujumuishaji wa hali ya juu na OpenAI Python SDK, ikisaidia Microsoft Foundry Local na Azure OpenAI kwa majibu ya mtiririko na usimamizi sahihi wa makosa.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T12:34:52+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "pl"
-}
--->
 # Rozdział 04: Konwersja formatów modeli i kwantyzacja - Przegląd rozdziału
 
 Pojawienie się EdgeAI sprawiło, że konwersja formatów modeli i kwantyzacja stały się kluczowymi technologiami umożliwiającymi wdrażanie zaawansowanych możliwości uczenia maszynowego na urządzeniach o ograniczonych zasobach. Ten kompleksowy rozdział oferuje pełny przewodnik po zrozumieniu, wdrażaniu i optymalizacji modeli w scenariuszach wdrożeń na krawędzi.

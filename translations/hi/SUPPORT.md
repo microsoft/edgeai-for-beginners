@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "368870f8ab79f903ad80b6a985829516",
-  "translation_date": "2025-09-17T14:24:26+00:00",
-  "source_file": "SUPPORT.md",
-  "language_code": "hi"
-}
--->
 # सहायता
 
 ## समस्याएँ दर्ज करना और मदद प्राप्त करना  

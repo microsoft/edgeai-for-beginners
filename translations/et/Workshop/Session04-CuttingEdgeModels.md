@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-12T01:01:08+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "et"
-}
--->
 # Sessioon 4: Uurige tipptasemel mudeleid – LLM-id, SLM-id ja seadmesisene järeldamine
 
 ## Kokkuvõte

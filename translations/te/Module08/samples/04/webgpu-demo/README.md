@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-12-16T01:14:08+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "te"
-}
--->
 # WebGPU + ONNX Runtime డెమో
 
 ఈ డెమో బ్రౌజర్‌లో నేరుగా AI మోడల్స్‌ను WebGPU హార్డ్‌వేర్ వేగవంతీకరణ కోసం మరియు ONNX Runtime Web ఉపయోగించి ఎలా నడపాలో చూపిస్తుంది.

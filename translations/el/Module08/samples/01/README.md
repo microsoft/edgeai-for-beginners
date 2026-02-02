@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T22:31:45+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "el"
-}
--->
 # Παράδειγμα 01: Γρήγορη Συνομιλία μέσω OpenAI SDK
 
 Ένα απλό παράδειγμα συνομιλίας που δείχνει πώς να χρησιμοποιήσετε το OpenAI SDK με το Microsoft Foundry Local για τοπική επεξεργασία AI.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-11T23:44:17+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "id"
-}
--->
 # Sesi 4: Jelajahi Model Terkini – LLM, SLM & Inferensi di Perangkat
 
 ## Abstrak

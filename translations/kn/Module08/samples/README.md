@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "729f809c84e99609364180c090c43405",
-  "translation_date": "2025-12-16T00:36:55+00:00",
-  "source_file": "Module08/samples/README.md",
-  "language_code": "kn"
-}
--->
 # Module 08 ಮಾದರಿಗಳು: Foundry ಸ್ಥಳೀಯ ಅಭಿವೃದ್ಧಿ ಮಾರ್ಗದರ್ಶಿ
 
 ## ಅವಲೋಕನ

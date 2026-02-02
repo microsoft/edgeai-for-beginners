@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T23:55:55+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "hr"
-}
--->
 # Poglavlje 01: Transformacija implementacije AI-a za rubne uređaje
 
 EdgeAI predstavlja promjenu paradigme u implementaciji umjetne inteligencije, premještajući AI mogućnosti s obrade u oblaku na lokalne rubne uređaje. Ovo poglavlje istražuje temeljne pojmove, ključne tehnologije i praktične primjene koje definiraju ovaj transformativni pristup implementaciji AI-a.

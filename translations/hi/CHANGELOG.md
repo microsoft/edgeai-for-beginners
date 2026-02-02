@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T11:36:05+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "hi"
-}
--->
 # चेंजलॉग
 
 EdgeAI for Beginners में सभी महत्वपूर्ण बदलाव यहां दर्ज किए गए हैं। इस प्रोजेक्ट में तारीख-आधारित प्रविष्टियों और Keep a Changelog शैली (जोड़े गए, बदले गए, ठीक किए गए, हटाए गए, दस्तावेज़, स्थानांतरित) का उपयोग किया गया है।

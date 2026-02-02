@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-  "translation_date": "2025-12-16T00:14:54+00:00",
-  "source_file": "Workshop/notebooks/README.md",
-  "language_code": "te"
-}
--->
 # వర్క్‌షాప్ నోట్‌బుక్స్
 
 > **హ్యాండ్స్-ఆన్ ఎడ్జ్ AI నేర్చుకునేందుకు ఇంటరాక్టివ్ జూపిటర్ నోట్‌బుక్స్**

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-09-30T23:38:23+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "ko"
-}
--->
 # 세션 6 샘플: 도구로서의 모델
 
 이 샘플은 사용자 프롬프트에 따라 모델을 선택하고 Foundry Local의 OpenAI 호환 엔드포인트를 호출하는 최소한의 라우터 + 도구 레지스트리를 구현합니다.

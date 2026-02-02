@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-07-22T03:00:34+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "ko"
-}
--->
 # Chapter 01: 엣지 AI 배포의 변혁
 
 엣지 AI는 인공지능 배포의 패러다임 전환을 의미하며, 클라우드 기반 처리에서 로컬 엣지 디바이스로 AI 기능을 이동시키는 것을 말합니다. 이 장에서는 AI 구현의 이 혁신적인 접근 방식을 정의하는 기본 개념, 핵심 기술, 실용적인 응용 사례를 탐구합니다.

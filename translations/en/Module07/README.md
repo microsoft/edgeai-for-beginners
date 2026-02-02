@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T10:45:27+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "en"
-}
--->
 # Chapter 07: EdgeAI Examples
 
 Edge AI combines artificial intelligence with edge computing, enabling intelligent processing directly on devices without relying on cloud connectivity. This chapter explores five distinct EdgeAI implementations across various platforms and frameworks, showcasing the flexibility and power of running AI models at the edge.

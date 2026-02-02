@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-10-11T12:54:07+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "ta"
-}
--->
 # Windows 11 அரட்டை மாதிரி - Foundry Local
 
 Windows 11 க்கான ஒரு நவீன அரட்டை பயன்பாடு, Microsoft Foundry Local ஐ அழகான இயல்பான இடைமுகத்துடன் ஒருங்கிணைக்கிறது. இது Electron மூலம் உருவாக்கப்பட்டு, Microsoft இன் Foundry Local முறைமைகளைக் கடைபிடிக்கிறது.

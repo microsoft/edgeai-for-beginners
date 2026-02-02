@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-12T01:03:40+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "et"
-}
--->
 # EdgeAI algajatele - Töötuba
 
 > **Praktiline õppeprogramm tootmisvalmis Edge AI rakenduste loomiseks**

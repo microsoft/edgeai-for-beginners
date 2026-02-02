@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
-  "translation_date": "2025-12-15T21:11:40+00:00",
-  "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
-  "language_code": "te"
-}
--->
 # సెషన్ 2: Azure AI Foundry తో AI పరిష్కారాలను నిర్మించండి
 
 ## సారాంశం

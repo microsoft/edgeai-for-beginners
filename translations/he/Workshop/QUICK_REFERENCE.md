@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-11T23:38:32+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "he"
-}
--->
 # דף עזר מהיר - דוגמאות לסדנה
 
 **עודכן לאחרונה**: 8 באוקטובר, 2025

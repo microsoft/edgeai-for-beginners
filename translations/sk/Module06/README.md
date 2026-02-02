@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T18:36:04+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "sk"
-}
--->
 # Kapitola 06: SLM Agentické Systémy: Komplexný Prehľad
 
 Oblasť umelej inteligencie prechádza zásadnou transformáciou, keď sa posúvame od jednoduchých chatbotov k sofistikovaným AI agentom poháňaným Malými Jazykovými Modelmi (SLM). Tento komplexný sprievodca skúma tri kľúčové aspekty moderných agentických systémov SLM: základné koncepty a stratégie nasadenia, schopnosti volania funkcií a revolučnú integráciu Model Context Protocol (MCP).

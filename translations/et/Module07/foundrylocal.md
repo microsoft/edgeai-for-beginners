@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-11T12:44:22+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "et"
-}
--->
 # Foundry Local Windowsil ja Macil
 
 See juhend aitab teil installida, käivitada ja integreerida Microsoft Foundry Locali Windowsil ja Macil. Kõik sammud ja käsud on valideeritud Microsoft Learn dokumentide alusel.

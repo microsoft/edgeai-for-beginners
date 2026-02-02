@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-  "translation_date": "2025-11-11T17:17:44+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "pcm"
-}
--->
 # AGENTS.md
 
 > **Developer Guide wey go help you contribute to EdgeAI for Beginners**

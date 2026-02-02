@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-11-11T18:01:29+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "pcm"
-}
--->
 # Session 6 Sample: Models as Tools
 
 Dis sample dey show how to do small router + tool registry wey go fit choose model based on wetin user type and go call Foundry Local OpenAI-compatible endpoint.

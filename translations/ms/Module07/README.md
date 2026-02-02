@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T13:47:10+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "ms"
-}
--->
 # Bab 07: Contoh EdgeAI
 
 Edge AI menggabungkan kecerdasan buatan dengan pengkomputeran tepi, membolehkan pemprosesan pintar terus pada peranti tanpa bergantung kepada sambungan awan. Bab ini meneroka lima pelaksanaan EdgeAI yang berbeza merentasi pelbagai platform dan rangka kerja, menunjukkan kepelbagaian dan kekuatan menjalankan model AI di tepi.

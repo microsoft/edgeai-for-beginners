@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-11T22:12:24+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "ko"
-}
--->
 # EdgeAI 초보자를 위한 워크숍
 
 > **생산 준비가 완료된 Edge AI 애플리케이션 구축을 위한 실습 학습 경로**

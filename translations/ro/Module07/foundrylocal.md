@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T14:25:39+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "ro"
-}
--->
 # Foundry Local pe Windows și Mac
 
 Acest ghid te ajută să instalezi, rulezi și integrezi Microsoft Foundry Local pe Windows și Mac. Toți pașii și comenzile sunt validate conform documentației Microsoft Learn.

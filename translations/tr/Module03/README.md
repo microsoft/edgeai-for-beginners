@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-17T23:58:10+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "tr"
-}
--->
 # Bölüm 03: Küçük Dil Modellerinin (SLM) Dağıtımı
 
 Bu kapsamlı bölüm, Küçük Dil Modellerinin (SLM) dağıtımının tam yaşam döngüsünü ele alır; teorik temellerden, pratik uygulama stratejilerine ve üretime hazır konteyner çözümlerine kadar. Bölüm, okuyucuları temel kavramlardan ileri düzey dağıtım senaryolarına taşıyan üç aşamalı bir yapıya sahiptir.

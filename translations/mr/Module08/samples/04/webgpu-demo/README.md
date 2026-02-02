@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-09-24T15:33:58+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "mr"
-}
--->
 # WebGPU + ONNX Runtime डेमो
 
 हा डेमो दाखवतो की AI मॉडेल्स थेट ब्राउझरमध्ये WebGPU च्या हार्डवेअर प्रवेगाचा वापर करून कसे चालवायचे आणि ONNX Runtime Web कसे वापरायचे.

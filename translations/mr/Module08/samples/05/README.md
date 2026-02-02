@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T17:47:30+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "mr"
-}
--->
 # सत्र ५ नमुना: मल्टी-एजंट ऑर्केस्ट्रेशन
 
 हा नमुना Foundry Local च्या OpenAI-सुसंगत एन्डपॉइंट वापरून समन्वयक + विशेषज्ञ पद्धतीचे प्रदर्शन करतो.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-  "translation_date": "2025-12-15T21:06:56+00:00",
-  "source_file": "Workshop/Session05-AIPoweredAgents.md",
-  "language_code": "kn"
-}
--->
 # ಸೆಷನ್ 5: Foundry Local ಬಳಸಿ AI-ಚಾಲಿತ ಏಜೆಂಟ್ಗಳನ್ನು ವೇಗವಾಗಿ ನಿರ್ಮಿಸಿ
 
 ## ಸಾರಾಂಶ

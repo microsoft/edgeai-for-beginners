@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-  "translation_date": "2025-10-09T09:47:45+00:00",
-  "source_file": "Workshop/notebooks/README.md",
-  "language_code": "mr"
-}
--->
 # कार्यशाळा नोटबुक्स
 
 > **हँड्स-ऑन एज AI शिकण्यासाठी इंटरएक्टिव्ह जुपिटर नोटबुक्स**

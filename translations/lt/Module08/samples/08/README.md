@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-25T02:52:27+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "lt"
-}
--->
 # Windows 11 Pokalbio Pavyzdys - Foundry Local
 
 Moderni pokalbių programa, skirta Windows 11, integruojanti Microsoft Foundry Local su gražia natūralia sąsaja. Sukurta naudojant Electron ir laikantis oficialių Microsoft Foundry Local šablonų.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T14:18:35+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "sk"
-}
--->
 # Zmeny
 
 Všetky významné zmeny v EdgeAI pre začiatočníkov sú zdokumentované tu. Tento projekt používa záznamy založené na dátume a štýl Keep a Changelog (Pridané, Zmenené, Opravené, Odstránené, Dokumentácia, Presunuté).

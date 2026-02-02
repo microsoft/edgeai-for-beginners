@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
-  "translation_date": "2026-01-05T14:03:13+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
-  "language_code": "mr"
-}
--->
 # पॉडकास्ट अनुप्रयोग
 
 एआय एजंट्स वापरून पॉडकास्ट स्क्रिप्ट तयार करण्यासाठी एक कन्सोल अनुप्रयोग.

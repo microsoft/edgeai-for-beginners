@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-11-11T18:01:13+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "pcm"
-}
--->
 # Multi-Agent Orchestration System - Foundry Local
 
 Na one advanced multi-agent system wey Microsoft Foundry Local dey power, e dey show how agents fit work together, share tasks, and solve problems as team.

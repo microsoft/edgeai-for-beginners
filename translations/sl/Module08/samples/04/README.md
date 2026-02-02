@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T01:45:58+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "sl"
-}
--->
 # Vzorec 04: Produkcijske klepetalne aplikacije s Chainlit
 
 Celovit primer, ki prikazuje različne pristope za izdelavo produkcijsko pripravljenih klepetalnih aplikacij z uporabo Microsoft Foundry Local, vključno z modernimi spletnimi vmesniki, pretočnimi odgovori in najsodobnejšimi tehnologijami brskalnika.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddaad917d0c16fc3d498a6b4eabc8088",
-  "translation_date": "2025-10-09T07:08:58+00:00",
-  "source_file": "Workshop/notebooks/quickstart.md",
-  "language_code": "ru"
-}
--->
 # Рабочие тетради - Краткое руководство
 
 ## Содержание

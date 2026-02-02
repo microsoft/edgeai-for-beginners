@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-12-16T01:14:47+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "ml"
-}
--->
 # WebGPU + ONNX Runtime ഡെമോ
 
 ഈ ഡെമോ WebGPU ഉപയോഗിച്ച് ഹാർഡ്‌വെയർ ആക്സിലറേഷനുമായി ബ്രൗസറിൽ നേരിട്ട് AI മോഡലുകൾ എങ്ങനെ ഓടിക്കാമെന്ന് കാണിക്കുന്നു, കൂടാതെ ONNX Runtime Web ഉപയോഗിക്കുന്നു.

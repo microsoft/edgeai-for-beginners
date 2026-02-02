@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T03:00:34+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "hr"
-}
--->
 # Sustav za Orkestraciju Više Agenta - Foundry Local
 
 Napredni sustav više agenata koji pokreće Microsoft Foundry Local, demonstrira koordinaciju inteligentnih agenata, delegiranje specijaliziranih zadataka i obrasce suradničkog rješavanja problema.

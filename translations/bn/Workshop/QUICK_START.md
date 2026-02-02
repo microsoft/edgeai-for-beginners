@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "eee296ca63673b7520d15942f6a01826",
-  "translation_date": "2025-11-11T22:19:08+00:00",
-  "source_file": "Workshop/QUICK_START.md",
-  "language_code": "bn"
-}
--->
 # ওয়ার্কশপ দ্রুত শুরু করার গাইড
 
 ## প্রয়োজনীয়তা

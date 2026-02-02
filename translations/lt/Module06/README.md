@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T23:39:31+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "lt"
-}
--->
 # 6 skyrius: SLM agentinės sistemos: išsamus apžvalga
 
 Dirbtinio intelekto sritis patiria esminę transformaciją, pereinant nuo paprastų pokalbių robotų prie pažangių AI agentų, kuriuos valdo Mažieji Kalbos Modeliai (SLM). Ši išsami apžvalga nagrinėja tris svarbiausius šiuolaikinių SLM agentinių sistemų aspektus: pagrindines sąvokas ir diegimo strategijas, funkcijų iškvietimo galimybes bei revoliucinę Modelio Konteksto Protokolo (MCP) integraciją.

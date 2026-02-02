@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-12-16T00:57:33+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "te"
-}
--->
 # Windows 11 చాట్ నమూనా - Foundry Local
 
 Windows 11 కోసం ఆధునిక చాట్ అప్లికేషన్, ఇది Microsoft Foundry Local ను అందమైన స్థానిక ఇంటర్‌ఫేస్‌తో సమన్వయపరచుతుంది. Electron తో నిర్మించబడింది మరియు Microsoft యొక్క అధికారిక Foundry Local నమూనాలను అనుసరిస్తుంది.

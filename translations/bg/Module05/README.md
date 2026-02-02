@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2db7a2f6e9873c3cd09fea6736bf360b",
-  "translation_date": "2025-09-19T01:02:42+00:00",
-  "source_file": "Module05/README.md",
-  "language_code": "bg"
-}
--->
 # Глава 05: SLMOps - Изчерпателно ръководство за операции с малки езикови модели
 
 ## Преглед

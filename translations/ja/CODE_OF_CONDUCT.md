@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c06b12caf3c901eb3156e3dd5b0aea56",
-  "translation_date": "2025-07-22T02:53:12+00:00",
-  "source_file": "CODE_OF_CONDUCT.md",
-  "language_code": "ja"
-}
--->
 # Microsoft オープンソース行動規範
 
 このプロジェクトは、[Microsoft オープンソース行動規範](https://opensource.microsoft.com/codeofconduct/)を採用しています。

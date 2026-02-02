@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aa775a734bda4590ecbe3a94a3b62197",
-  "translation_date": "2026-01-05T17:36:08+00:00",
-  "source_file": "WorkshopForAgentic/translation/zh-cn/README.md",
-  "language_code": "pa"
-}
--->
 # 🎙️ ਏਆਈ ਪੌਡਕਾਸਟ ਸਟੂਡੀਓ ਵਰਕਸ਼ਾਪ
 
 ![logo](../../../../../translated_images/pa/logo.8711e39dc8257d7b.webp)

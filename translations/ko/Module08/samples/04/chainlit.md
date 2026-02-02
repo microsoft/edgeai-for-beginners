@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c49526c7abc56b0b5f1e835c1739f18e",
-  "translation_date": "2025-09-24T10:44:22+00:00",
-  "source_file": "Module08/samples/04/chainlit.md",
-  "language_code": "ko"
-}
--->
 # Chainlit에 오신 것을 환영합니다! 🚀🤖
 
 안녕하세요, 개발자님! 👋 여러분을 만나게 되어 정말 기쁩니다. Chainlit은 LLM 기반 애플리케이션을 프로토타입, 디버그 및 공유할 수 있도록 설계된 강력한 도구입니다.

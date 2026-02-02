@@ -1,16 +1,7 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ac31463ae3ed21a0ce83b0a351c23dd4",
-  "translation_date": "2026-01-05T09:37:10+00:00",
-  "source_file": "README.md",
-  "language_code": "nl"
-}
--->
 # EdgeAI voor Beginners 
 
 
-![Course cover image](../../translated_images/nl/cover.eb18d1b9605d754b.webp)
+![Coverafbeelding van cursus](../../translated_images/nl/cover.eb18d1b9605d754b.webp)
 
 [![GitHub contributors](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
@@ -24,7 +15,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Volg deze stappen om te beginnen met het gebruik van deze bronnen:
+Volg deze stappen om aan de slag te gaan met deze bronnen:
 
 1. **Fork de Repository**: Klik [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Clone de Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
@@ -36,11 +27,11 @@ Volg deze stappen om te beginnen met het gebruik van deze bronnen:
 #### Ondersteund via GitHub Action (Geautomatiseerd & Altijd Up-to-Date)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabisch](../ar/README.md) | [Bengaals](../bn/README.md) | [Bulgaars](../bg/README.md) | [Birmaans (Myanmar)](../my/README.md) | [Chinees (Vereenvoudigd)](../zh/README.md) | [Chinees (Traditioneel, Hong Kong)](../hk/README.md) | [Chinees (Traditioneel, Macau)](../mo/README.md) | [Chinees (Traditioneel, Taiwan)](../tw/README.md) | [Kroatisch](../hr/README.md) | [Tsjechisch](../cs/README.md) | [Deens](../da/README.md) | [Nederlands](./README.md) | [Ests](../et/README.md) | [Fins](../fi/README.md) | [Frans](../fr/README.md) | [Duits](../de/README.md) | [Grieks](../el/README.md) | [Hebreeuws](../he/README.md) | [Hindi](../hi/README.md) | [Hongaars](../hu/README.md) | [Indonesisch](../id/README.md) | [Italiaans](../it/README.md) | [Japans](../ja/README.md) | [Kannada](../kn/README.md) | [Koreaans](../ko/README.md) | [Litouws](../lt/README.md) | [Maleis](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepalees](../ne/README.md) | [Nigeriaans Pidgin](../pcm/README.md) | [Noors](../no/README.md) | [Perzisch (Farsi)](../fa/README.md) | [Pools](../pl/README.md) | [Portugees (Brazilië)](../br/README.md) | [Portugees (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Roemeens](../ro/README.md) | [Russisch](../ru/README.md) | [Servisch (Cyrillisch)](../sr/README.md) | [Slowaaks](../sk/README.md) | [Sloveens](../sl/README.md) | [Spaans](../es/README.md) | [Swahili](../sw/README.md) | [Zweeds](../sv/README.md) | [Tagalog (Filipijns)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turks](../tr/README.md) | [Oekraïens](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamees](../vi/README.md)
+[Arabisch](../ar/README.md) | [Bengaals](../bn/README.md) | [Bulgaars](../bg/README.md) | [Birmaans (Myanmar)](../my/README.md) | [Chinees (Vereenvoudigd)](../zh-CN/README.md) | [Chinees (Traditioneel, Hong Kong)](../zh-HK/README.md) | [Chinees (Traditioneel, Macau)](../zh-MO/README.md) | [Chinees (Traditioneel, Taiwan)](../zh-TW/README.md) | [Kroatisch](../hr/README.md) | [Tsjechisch](../cs/README.md) | [Deens](../da/README.md) | [Nederlands](./README.md) | [Ests](../et/README.md) | [Fins](../fi/README.md) | [Frans](../fr/README.md) | [Duits](../de/README.md) | [Grieks](../el/README.md) | [Hebreeuws](../he/README.md) | [Hindi](../hi/README.md) | [Hongaars](../hu/README.md) | [Indonesisch](../id/README.md) | [Italiaans](../it/README.md) | [Japans](../ja/README.md) | [Kannada](../kn/README.md) | [Koreaans](../ko/README.md) | [Litouws](../lt/README.md) | [Maleis](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepalees](../ne/README.md) | [Nigeriaans Pidgin](../pcm/README.md) | [Noors](../no/README.md) | [Perzisch (Farsi)](../fa/README.md) | [Pools](../pl/README.md) | [Portugees (Brazilië)](../pt-BR/README.md) | [Portugees (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Roemeens](../ro/README.md) | [Russisch](../ru/README.md) | [Servisch (Cyrillisch)](../sr/README.md) | [Slowaaks](../sk/README.md) | [Sloveens](../sl/README.md) | [Spaans](../es/README.md) | [Swahili](../sw/README.md) | [Zweeds](../sv/README.md) | [Tagalog (Filipijns)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turks](../tr/README.md) | [Oekraïens](../uk/README.md) | [Urdu](../ur/README.md) | [ Vietnamees](../vi/README.md)
 
-> **Verkies je lokaal te clonen?**
+> **Lieber lokaal clonen?**
 
-> Deze repository bevat meer dan 50 taalvertalingen die de downloadgrootte aanzienlijk vergroten. Om te clonen zonder vertalingen, gebruik sparse checkout:
+> Deze repository bevat meer dan 50 vertalingen wat de downloadgrootte aanzienlijk vergroot. Om te clonen zonder vertalingen, gebruik sparse checkout:
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
 > cd edgeai-for-beginners
@@ -49,71 +40,71 @@ Volg deze stappen om te beginnen met het gebruik van deze bronnen:
 > Dit geeft je alles wat je nodig hebt om de cursus te voltooien met een veel snellere download.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Als je extra vertalingen wilt laten ondersteunen, staan de ondersteunde talen [hier](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md) listed**
+**Als je aanvullende vertalingen wilt, worden ondersteunde talen hier vermeld [hier](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introductie
 
-Welkom bij **EdgeAI voor Beginners** – jouw uitgebreide reis in de transformerende wereld van Edge Kunstmatige Intelligentie. Deze cursus overbrugt de kloof tussen krachtige AI-mogelijkheden en praktische, real-world implementatie op edge-apparaten, waarmee je AI direct kunt benutten waar data wordt gegenereerd en beslissingen moeten worden genomen.
+Welkom bij **EdgeAI voor Beginners** – jouw complete reis in de transformerende wereld van Edge Kunstmatige Intelligentie. Deze cursus overbrugt de kloof tussen krachtige AI-mogelijkheden en praktische, real-world implementatie op edge-apparaten, waarmee je de potentie van AI rechtstreeks kunt benutten waar gegevens worden gegenereerd en beslissingen doivent worden genomen.
 
-### Wat je zult beheersen
+### Wat Je Zal Beheersen
 
-Deze cursus neemt je mee van fundamentele concepten tot productieklare implementaties, met onder andere:
-- **Kleine taalmodellen (SLM's)** geoptimaliseerd voor edge-implementatie
+Deze cursus neemt je mee van fundamentele concepten tot productieklaar implementaties, met de volgende onderwerpen:
+- **Kleine Taalmodellen (SLM’s)** geoptimaliseerd voor edge-implementatie
 - **Hardware-bewuste optimalisatie** over diverse platforms
-- **Real-time inferentie** met privacybeschermende functies
-- **Productie-implementatiestrategieën** voor enterprise-toepassingen
+- **Realtime inferentie** met privacy-beschermende mogelijkheden
+- **Productie-implementatie** strategieën voor enterprise toepassingen
 
-### Waarom EdgeAI belangrijk is
+### Waarom EdgeAI Belangrijk Is
 
 Edge AI vertegenwoordigt een paradigmaverschuiving die kritieke moderne uitdagingen aanpakt:
-- **Privacy & Veiligheid**: Verwerk gevoelige data lokaal zonder blootstelling aan de cloud
-- **Real-time prestaties**: Elimineren van netwerkvertraging voor tijdkritische toepassingen
-- **Kostenbesparing**: Verminder bandbreedte en cloud computing kosten
-- **Robuuste operaties**: Behoud functionaliteit tijdens netwerkuitval
-- **Naleving van regelgeving**: Voldoe aan data-soevereiniteitseisen
+- **Privacy & Beveiliging**: Verwerk gevoelige data lokaal zonder blootstelling aan de cloud
+- **Realtime Prestaties**: Elimineer netwerkvertraging voor tijdkritische toepassingen
+- **Kostenbesparing**: Verminder bandbreedte- en cloudcomputingkosten
+- **Veerkrachtige Operaties**: Behoud functionaliteit tijdens netwerkuitval
+- **Naleving van regelgeving**: Voldoe aan eisen voor data-soevereiniteit
 
 ### Edge AI
 
-Edge AI verwijst naar het lokaal uitvoeren van AI-algoritmen en taalmodellen op hardware, dicht bij waar data wordt gegenereerd, zonder afhankelijk te zijn van cloud resources voor inferentie. Het vermindert latentie, verbetert privacy en maakt real-time besluitvorming mogelijk.
+Edge AI verwijst naar het uitvoeren van AI-algoritmes en taalmodellen lokaal op hardware, dicht bij waar data wordt gegenereerd, zonder afhankelijk te zijn van cloudbronnen voor inferentie. Het vermindert latency, verhoogt privacy, en maakt realtime besluitvorming mogelijk.
 
 ### Kernprincipes:
-- **On-device inferentie**: AI-modellen draaien op edge-apparaten (telefoons, routers, microcontrollers, industriële pc's)
-- **Offline functionaliteit**: Werkt zonder voortdurende internetverbinding
-- **Lage latentie**: Onmiddellijke reacties geschikt voor real-time systemen
-- **Data-soevereiniteit**: Houdt gevoelige data lokaal, verbetert beveiliging en naleving
+- **Inference op apparaat**: AI-modellen draaien op edge-apparaten (telefoons, routers, microcontrollers, industriële pc’s)
+- **Offline mogelijkheid**: Werkt zonder blijvende internetverbinding
+- **Lage latency**: Onmiddellijke reacties geschikt voor realtime systemen
+- **Data-soevereiniteit**: Houdt gevoelige data lokaal, wat veiligheid en naleving verbetert
 
-### Kleine Taalmodellen (SLM's)
+### Kleine Taalmodellen (SLM’s)
 
-SLM's zoals Phi-4, Mistral-7B en Gemma zijn geoptimaliseerde versies van grotere LLM's – getraind of gedistilleerd voor:
-- **Verminderde geheugendruk**: Efficiënt gebruik van het beperkte geheugen van edge-apparaten
-- **Lagere rekenkracht vereiste**: Geoptimaliseerd voor CPU en edge GPU prestaties
-- **Snellere opstarttijden**: Snelle initialisatie voor responsieve toepassingen
+SLM’s zoals Phi-4, Mistral-7B, en Gemma zijn geoptimaliseerde versies van grotere LLM’s—getraind of gefinetuned voor:
+- **Verminderde geheugenvraag**: Efficiënt gebruik van beperkt geheugen op edge-apparaten
+- **Lager rekenvermogen**: Geoptimaliseerd voor CPU en edge GPU-prestaties
+- **Snellere opstarttijden**: Snelle initialisatie voor responsieve apps
 
-Ze ontsluiten krachtige NLP-mogelijkheden terwijl ze voldoen aan de beperkingen van:
-- **Ingebedde systemen**: IoT-apparaten en industriële controllers
-- **Mobiele apparaten**: Smartphones en tablets met offline mogelijkheden
-- **IoT-apparaten**: Sensoren en slimme apparaten met beperkte resources
-- **Edge-servers**: Lokale verwerkingsunits met beperkte GPU-resources
-- **Persoonlijke computers**: Desktop- en laptopimplementatiescenario's
+Ze ontgrendelen krachtige NLP-mogelijkheden terwijl ze voldoen aan de beperkingen van:
+- **Embedded systemen**: IoT-apparaten en industriële controllers
+- **Mobiele apparaten**: Smartphones en tablets met offline-mogelijkheden
+- **IoT Apparaten**: Sensoren en slimme apparaten met beperkte resources
+- **Edge servers**: Lokale verwerkingsunits met beperkte GPU-resources
+- **Persoonlijke computers**: Desktop- en laptop-implementatiescenario’s
 
 ## Cursusmodules & Navigatie
 
-| Module | Onderwerp | Focusgebied | Belangrijkste Inhoud | Niveau | Duur |
-|--------|-----------|-------------|---------------------|--------|-------|
-| [📖 00 ](./introduction.md) | [Introductie tot EdgeAI](./introduction.md) | Basis & Context | EdgeAI Overzicht • Industry Applications • SLM Introductie • Leerdoelen | Beginner | 1-2 uur |
-| [📚 01](../../Module01) | [EdgeAI Basisprincipes](./Module01/README.md) | Cloud vs Edge AI vergelijking | EdgeAI Basisprincipes • Praktijkvoorbeelden • Implementatie Gids • Edge Deployment | Beginner | 3-4 uur |
-| [🧠 02](../../Module02) | [SLM Model Fundamenten](./Module02/README.md) | Modelfamilies & architectuur | Phi Family • Qwen Family • Gemma Family • BitNET • μModel • Phi-Silica | Beginner | 4-5 uur |
-| [🚀 03](../../Module03) | [SLM Deploy Praktijk](./Module03/README.md) | Lokale & cloud implementatie | Gevorderd leren • Lokale omgeving • Cloud implementatie | Gevorderd beginner | 4-5 uur |
-| [⚙️ 04](../../Module04) | [Model Optimalisatie Toolkit](./Module04/README.md) | Cross-platform optimalisatie | Introductie • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Workflow Synthese | Gevorderd beginner | 5-6 uur |
-| [🔧 05](../../Module05) | [SLMOps Productie](./Module05/README.md) | Productieoperaties | SLMOps Introductie • Model Distillatie • Fine-tuning • Productie Deploy | Gevorderd | 5-6 uur |
-| [🤖 06](../../Module06) | [AI Agents & Function Calling](./Module06/README.md) | Agent frameworks & MCP | Agent Introductie • Function Calling • Model Context Protocol | Gevorderd | 4-5 uur |
-| [💻 07](../../Module07) | [Platform Implementatie](./Module07/README.md) | Cross-platform voorbeelden | AI Toolkit • Foundry Local • Windows Development | Gevorderd | 3-4 uur |
-| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Productieklaar voorbeelden | Voorbeeldapplicaties (zie details hieronder) | Expert | 8-10 uur |
+| Module | Onderwerp | Focusgebied | Kerninhoud | Niveau | Duur |
+|--------|-------|------------|-------------|--------|----------|
+| [📖 00 ](./introduction.md) | [Introductie tot EdgeAI](./introduction.md) | Basis & Context | Overzicht EdgeAI • Industrie toepassingen • Intro SLM • Leerdoelen | Beginner | 1-2 uur |
+| [📚 01](../../Module01) | [EdgeAI Fundamentals](./Module01/README.md) | Cloud vs Edge AI vergelijking | EdgeAI fundamentals • Praktijkvoorbeelden • Implementatiegids • Edge deployment | Beginner | 3-4 uur |
+| [🧠 02](../../Module02) | [SLM Modelfundamenten](./Module02/README.md) | Modelfamilies & architectuur | Phi Familie • Qwen Familie • Gemma Familie • BitNET • μModel • Phi-Silica | Beginner | 4-5 uur |
+| [🚀 03](../../Module03) | [SLM Deployment Praktijk](./Module03/README.md) | Lokale & cloud deployment | Geavanceerd leren • Lokale omgeving • Cloud deployment | Gemiddeld | 4-5 uur |
+| [⚙️ 04](../../Module04) | [Model Optimalisatie Toolkit](./Module04/README.md) | Cross-platform optimalisatie | Introductie • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Workflow synthese | Gemiddeld | 5-6 uur |
+| [🔧 05](../../Module05) | [SLMOps Productie](./Module05/README.md) | Productie-operaties | Intro SLMOps • Model distillatie • Fine-tuning • Productie implementatie | Gevorderd | 5-6 uur |
+| [🤖 06](../../Module06) | [AI Agenten & Functie-aanroepen](./Module06/README.md) | Agent frameworks & MCP | Intro agenten • Functie-aanroepen • Model Context Protocol | Gevorderd | 4-5 uur |
+| [💻 07](../../Module07) | [Platform Implementatie](./Module07/README.md) | Cross-platform voorbeelden | AI Toolkit • Foundry lokaal • Windows ontwikkeling | Gevorderd | 3-4 uur |
+| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Productieklaar voorbeelden | Voorbeeld-apps (zie details hieronder) | Expert | 8-10 uur |
 
 ### 🏭 **Module 08: Voorbeeldapplicaties**
 
 - [01: REST Chat Quickstart](./Module08/samples/01/README.md)
 - [02: OpenAI SDK Integratie](./Module08/samples/02/README.md)
-- [03: Model Discovery & Benchmarking](./Module08/samples/03/README.md)
+- [03: Model Ontdekking & Benchmarking](./Module08/samples/03/README.md)
 - [04: Chainlit RAG Applicatie](./Module08/samples/04/README.md)
 - [05: Multi-Agent Orkestratie](./Module08/samples/05/README.md)
 - [06: Models-as-Tools Router](./Module08/samples/06/README.md)
@@ -122,111 +113,111 @@ Ze ontsluiten krachtige NLP-mogelijkheden terwijl ze voldoen aan de beperkingen 
 - [09: Geavanceerd Multi-Agent Systeem](./Module08/samples/09/README.md)
 - [10: Foundry Tools Framework](./Module08/samples/10/README.md)
 
-### 🎓 **Workshop: Praktische Leerroute**
+### 🎓 **Workshop: Praktijkgerichte Leerroute**
 
-Uitgebreide workshopmaterialen met productieklare implementaties:
+Uitgebreid workshopmateriaal met productieklaar implementaties:
 
-- **[Workshop Gids](./Workshop/Readme.md)** - Volledige leerdoelen, resultaten en resource navigatie
-- **Python Voorbeelden** (6 sessies) - Bijgewerkt met best practices, foutafhandeling en uitgebreide documentatie
-- **Jupyter Notebooks** (8 interactieve) - Stapsgewijze tutorials met benchmarks en prestatietoezicht
+- **[Workshopgids](./Workshop/Readme.md)** - Volledige leerdoelen, uitkomsten en bron-navigatie
+- **Python Voorbeelden** (6 sessies) - Geüpdatet met best practices, foutafhandeling en uitgebreide documentatie
+- **Jupyter Notebooks** (8 interactieve) - Stapsgewijze tutorials met benchmarks en performance monitoring
 - **Sessie Gidsen** - Gedetailleerde markdown gidsen voor elke workshopsessie
-- **Validatie Tools** - Scripts om codekwaliteit te controleren en smoke tests uit te voeren
+- **Validatietools** - Scripts om codekwaliteit te verifiëren en smoke tests uit te voeren
 
-**Wat je bouwt:**
-- Lokale AI chatapplicaties met streaming ondersteuning
-- RAG pipelines met kwaliteitsbeoordeling (RAGAS)
-- Benchmark- en vergelijkingstools voor multimodellen
+**Wat je gaat bouwen:**
+- Lokale AI-chatapplicaties met streaming-ondersteuning
+- RAG-pijplijnen met kwaliteitsbeoordeling (RAGAS)
+- Multi-model benchmarking- en vergelijkingstools
 - Multi-agent orkestratiesystemen
 - Intelligente modelroutering met taakgebaseerde selectie
 
-### 🎙️ **Workshop voor Agentic: Hands-On - The AI Podcast Studio**
+### 🎙️ **Workshop Voor Agentic: Hands-On - De AI Podcaststudio**
 
-Bouw vanaf nul een AI-gedreven podcast-productiepipeline! Deze meeslepende workshop leert je een compleet multi-agent systeem te creëren dat ideeën omzet in professionele podcastafleveringen.
+Bouw een AI-gestuurde podcastproductiepijplijn vanaf nul! Deze intensieve workshop leert je een compleet multi-agent systeem te creëren dat ideeën omzet in professionele podcastafleveringen.
 **[🎬 Start de AI Podcast Studio Workshop](./WorkshopForAgentic/README.md)**
 
-**Jouw Missie**: Lanceer "Future Bytes" — een techpodcast volledig aangedreven door AI-agenten die jij zelf bouwt. Geen cloudafhankelijkheden, geen API-kosten — alles draait lokaal op jouw machine.
+**Je Missie**: Lanceer "Future Bytes" — een tech-podcast volledig aangedreven door AI-agenten die je zelf bouwt. Geen cloud-afhankelijkheden, geen API-kosten — alles draait lokaal op jouw computer.
 
 **Wat Dit Uniek Maakt:**
 - **🤖 Echte Multi-Agent Orkestratie** - Bouw gespecialiseerde AI-agenten die onderzoek doen, schrijven en audio produceren
-- **🎯 Compleet Productieproces** - Van onderwerpselectie tot de uiteindelijke podcast audio-uitvoer
-- **💻 100% Lokale Implementatie** - Maakt gebruik van Ollama en lokale modellen (Qwen-3-8B) voor volledige privacy en controle
+- **🎯 Volledige Productie Pipeline** - Van het kiezen van een onderwerp tot de uiteindelijke podcast-audio-output
+- **💻 100% Lokale Implementatie** - Gebruikt Ollama en lokale modellen (Qwen-3-8B) voor volledige privacy en controle
 - **🎤 Tekst-naar-Spraak Integratie** - Zet scripts om in natuurlijk klinkende gesprekken met meerdere sprekers
-- **✋ Mens-in-de-Lus Werkstromen** - Goedkeuringspoorten garanderen kwaliteit terwijl automatisering wordt behouden
+- **✋ Mens-in-de-Lus Werkstromen** - Goedkeuringsmomenten zorgen voor kwaliteit met behoud van automatisering
 
 **Drie-Act Leertraject:**
 
-| Act | Focus | Belangrijke Vaardigheden | Duur |
-|-----|-------|--------------------------|-------|
-| **[Act 1: Ontmoet Je AI Assistants](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Bouw je eerste AI-agent | Toolintegratie • Webzoekmachine • Probleemoplossing • Agentisch redeneren | 2-3 uur |
-| **[Act 2: Stel Je Productieteam Samen](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Orkestreer meerdere agenten | Teamcoördinatie • Goedkeuringswerkstromen • DevUI-interface • Menselijk toezicht | 3-4 uur |
-| **[Act 3: Breng Je Podcast Tot Leven](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Genereer podcast audio | Tekst-naar-spraak • Synthese met meerdere sprekers • Langdurige audio • Volledige automatisering | 2-3 uur |
+| Act | Focus | Kernvaardigheden | Duur |
+|-----|-------|------------------|-------|
+| **[Act 1: Ontmoet Je AI Assistenten](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Bouw je eerste AI-agent | Tool integratie • Web zoeken • Probleemoplossing • Agentisch redeneren | 2-3 uur |
+| **[Act 2: Stel Je Productieteam Samen](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Orkestreer meerdere agenten | Teamcoördinatie • Goedkeuringsworkflows • DevUI interface • Menselijk toezicht | 3-4 uur |
+| **[Act 3: Breng Je Podcast tot Leven](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Genereer podcast-audio | Tekst-naar-spraak • Multi-spreker synthese • Lange audio • Volledige automatisering | 2-3 uur |
 
 **Gebruikte Technologieën:**
 - **Microsoft Agent Framework** - Multi-agent orkestratie en coördinatie
-- **Ollama** - Lokale AI model runtime (geen cloud nodig)
-- **Qwen-3-8B** - Open source taalmodel geoptimaliseerd voor agentische taken
-- **Tekst-naar-Spraak API’s** - Natuurlijke synthetische stemmen voor podcast productie
+- **Ollama** - Lokale AI-model runtime (geen cloud nodig)
+- **Qwen-3-8B** - Open-source taalmodel geoptimaliseerd voor agentische taken
+- **Tekst-naar-Spraak API's** - Natuurlijke stem-synthese voor podcastgeneratie
 
 **Hardware Ondersteuning:**
-- ✅ **CPU-modus** - Werkt op elke moderne computer (8GB+ RAM aanbevolen)
-- 🚀 **GPU-versnelling** - Significante snellere inferentie met NVIDIA/AMD GPU’s
-- ⚡ **NPU-ondersteuning** - Versnelling met next-gen neurale verwerkingsunits
+- ✅ **CPU Modus** - Werkt op elke moderne computer (8GB+ RAM aanbevolen)
+- 🚀 **GPU Versnelling** - Veel snellere inferentie met NVIDIA/AMD GPU's
+- ⚡ **NPU Ondersteuning** - Versnelling met next-generation neurale verwerkingsunits
 
 **Perfect Voor:**
-- Ontwikkelaars die multi-agent AI-systemen willen leren
+- Ontwikkelaars die leren over multi-agent AI-systemen
 - Iedereen geïnteresseerd in AI-automatisering en werkstromen
-- Content creators die AI-geassisteerde productie verkennen
+- Contentmakers die AI-ondersteunde productie willen verkennen
 - Studenten die praktische AI-orkestratiepatronen bestuderen
 
-**Begin Met Bouwen**: [🎙️ De AI Podcast Studio Workshop →](./WorkshopForAgentic/README.md)
+**Begin met Bouwen**: [🎙️ The AI Podcast Studio Workshop →](./WorkshopForAgentic/README.md)
 
-### 📊 **Samenvatting Leertraject**
+### 📊 **Samenvatting Leerpad**
 - **Totale Duur**: 36-45 uur
-- **Beginnerspad**: Modules 01-02 (7-9 uur)  
-- **Middenniveau Pad**: Modules 03-04 (9-11 uur)
-- **Gevorderd Pad**: Modules 05-07 (12-15 uur)
-- **Expertpad**: Module 08 (8-10 uur)
+- **Beginner Pad**: Modules 01-02 (7-9 uur)  
+- **Gemiddeld Pad**: Modules 03-04 (9-11 uur)
+- **Geavanceerd Pad**: Modules 05-07 (12-15 uur)
+- **Expert Pad**: Module 08 (8-10 uur)
 
 ## Wat Je Gaat Bouwen
 
 ### 🎯 Kerncompetenties
-- **Edge AI Architectuur**: Ontwerp lokaal-primair AI-systemen met cloudintegratie
-- **Modeloptimalisatie**: Kwantisatie en compressie van modellen voor edge-deployments (85% snelheidsverbetering, 75% verkleining)
+- **Edge AI Architectuur**: Ontwerp lokaal-eerst AI-systemen met cloudintegratie
+- **Modeloptimalisatie**: Kwantiseer en comprimeer modellen voor edge-implementatie (85% snelheidsverbetering, 75% kleiner)
 - **Multi-Platform Implementatie**: Windows, mobiel, embedded en cloud-edge hybride systemen
-- **Productie Operaties**: Monitoring, schalen en onderhouden van edge AI in productie
+- **Productie Operaties**: Monitoring, opschalen en onderhoud van edge AI in productie
 
 ### 🏗️ Praktische Projecten
-- **Foundry Local Chat Apps**: Windows 11 native toepassing met modelwisselopties
+- **Foundry Lokale Chat Apps**: Windows 11 native applicatie met modelwisselopties
 - **Multi-Agent Systemen**: Coördinator met specialistische agenten voor complexe werkstromen  
-- **RAG Applicaties**: Lokale documentverwerking met vectorzoekfunctie
-- **Model Routers**: Intelligente selectie tussen modellen op basis van taak-analyse
-- **API Frameworks**: Productieklaar clients met streaming en health monitoring
-- **Cross-Platform Tools**: Integratiepatronen LangChain/Semantic Kernel
+- **RAG Toepassingen**: Lokale documentverwerking met vectorzoekfunctie
+- **Model Routers**: Intelligente selectie tussen modellen gebaseerd op taak-analyse
+- **API Frameworks**: Productieklaar met streaming en gezondheidsmonitoring
+- **Cross-Platform Tools**: LangChain/Semantic Kernel integratiepatronen
 
-### 🏢 Industrie Toepassingen
+### 🏢 Toepassingen in de Industrie
 **Productie** • **Gezondheidszorg** • **Autonome Voertuigen** • **Slimme Steden** • **Mobiele Apps**
 
-## Snel Beginnen
+## Snel aan de Slag
 
-**Aanbevolen Leertraject** (20-30 uur totaal):
+**Aanbevolen Leerpad** (20-30 uur totaal):
 
-0. **📖 Introductie** ([Introduction.md](./introduction.md)): Basis EdgeAI + industrieel kader + leerframework  
-1. **📚 Fundament** (Modules 01-02): EdgeAI-concepten + SLM modelfamilies  
-2. **⚙️ Optimalisatie** (Modules 03-04): Deployment + kwantisatie frameworks  
-3. **🚀 Productie** (Modules 05-06): SLMOps + AI-agenten + functie-aanroepen  
+0. **📖 Introductie** ([Introduction.md](./introduction.md)): EdgeAI basis + industriecontext + leerframework
+1. **📚 Fundamenten** (Modules 01-02): EdgeAI concepten + SLM model families
+2. **⚙️ Optimalisatie** (Modules 03-04): Implementatie + kwantisatie frameworks  
+3. **🚀 Productie** (Modules 05-06): SLMOps + AI-agenten + functie-aanroepen
 4. **💻 Implementatie** (Modules 07-08): Platformvoorbeelden + Foundry Local toolkit
 
-Elke module bevat theorie, praktische oefeningen en productieklaar codevoorbeeld.
+Elke module bevat theorie, hands-on oefeningen en productieklaar voorbeeldcode.
 
-## Carrière-impact
+## Carrière Impact
 
-**Technische Rollen**: EdgeAI Solution Architect • ML Engineer (Edge) • IoT AI Developer • Mobiele AI Ontwikkelaar
+**Technische Rollen**: EdgeAI Solutions Architect • ML Engineer (Edge) • IoT AI Developer • Mobile AI Developer
 
-**Industriesectoren**: Manufacturing 4.0 • HealthTech • Autonome Systemen • FinTech • Consumentenelektronica
+**Industrie Sectoren**: Manufacturing 4.0 • Healthcare Tech • Autonome Systemen • FinTech • Consumentenelektronica
 
-**Portfolio Projecten**: Multi-agent systemen • Productie RAG-apps • Cross-platform implementatie • Prestatie-optimalisatie
+**Portfolio Projecten**: Multi-agent systemen • Productie RAG apps • Cross-platform implementatie • Prestatieoptimalisatie
 
-## Repository Structuur
+## Repositoriumstructuur
 
 ```
 edgeai-for-beginners/
@@ -243,18 +234,18 @@ edgeai-for-beginners/
 
 ## Hoogtepunten van de Cursus
 
-✅ **Geleidelijke Leerprogressie**: Theorie → Praktijk → Productie-implementatie  
+✅ **Geleidelijke Leeropbouw**: Theorie → Praktijk → Productie-implementatie  
 ✅ **Echte Casestudies**: Microsoft, Japan Airlines, enterprise implementaties  
-✅ **Hands-on Voorbeelden**: 50+ voorbeelden, 10 uitgebreide Foundry Local demo’s  
-✅ **Prestatiefocus**: 85% snelheidsverbeteringen, 75% verkleining  
+✅ **Hands-on Voorbeelden**: 50+ voorbeelden, 10 uitgebreide Foundry Local demos  
+✅ **Prestatiegericht**: 85% snelheidsverbeteringen, 75% groottevermindering  
 ✅ **Multi-Platform**: Windows, mobiel, embedded, cloud-edge hybride  
-✅ **Productieklaar**: Monitoring, schalen, beveiliging, compliance frameworks
+✅ **Productieklaar**: Monitoring, opschaling, beveiliging, compliance frameworks
 
-📖 **[Studiegids Beschikbaar](STUDY_GUIDE.md)**: Gestructureerd 20-uur leertraject met tijdsplanning en zelfevaluatie-instrumenten.
+📖 **[Studiegids Beschikbaar](STUDY_GUIDE.md)**: Gestructureerd 20-uur leerpad met tijdaanwijzingen en zelfevaluatietools.
 
 ---
 
-**EdgeAI vertegenwoordigt de toekomst van AI-implementatie**: lokaal-primair, privacy-beschermend en efficiënt. Beheers deze vaardigheden om de volgende generatie intelligente applicaties te bouwen.
+**EdgeAI vertegenwoordigt de toekomst van AI-implementatie**: lokaal-eerst, privacybeschermend en efficiënt. Beheers deze vaardigheden om de volgende generatie intelligente applicaties te bouwen.
 
 ## Andere Cursussen
 
@@ -267,11 +258,11 @@ Ons team maakt ook andere cursussen! Bekijk:
 
 ---
 
-### Azure / Edge / MCP / Agents
+### Azure / Edge / MCP / Agenten
 [![AZD voor Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Edge AI voor Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![MCP voor Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI Agents voor Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI Agenten voor Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
@@ -295,14 +286,14 @@ Ons team maakt ook andere cursussen! Bekijk:
 ---
  
 ### Copilot Serie
-[![Copilot voor AI Geassisteerd Programmeren](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+[![Copilot voor AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
 ## Hulp krijgen
 
-Als je vastloopt of vragen hebt over het bouwen van AI-apps, sluit je dan aan bij:
+Als je vastloopt of vragen hebt over het bouwen van AI-apps, doe dan mee aan:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
@@ -314,5 +305,5 @@ Als je productfeedback of fouten hebt tijdens het bouwen, bezoek dan:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, verzoeken wij u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de moedertaal dient als de gezaghebbende bron te worden beschouwd. Voor kritieke informatie wordt een professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal dient als de gezaghebbende bron te worden beschouwd. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

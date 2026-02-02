@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "368870f8ab79f903ad80b6a985829516",
-  "translation_date": "2025-09-18T15:35:40+00:00",
-  "source_file": "SUPPORT.md",
-  "language_code": "cs"
-}
--->
 # Podpora
 
 ## Jak nahlásit problémy a získat pomoc  

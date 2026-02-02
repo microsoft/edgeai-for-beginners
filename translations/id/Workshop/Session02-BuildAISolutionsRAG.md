@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
-  "translation_date": "2025-11-17T19:09:08+00:00",
-  "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
-  "language_code": "id"
-}
--->
 # Sesi 2: Membangun Solusi AI dengan Azure AI Foundry
 
 ## Abstrak

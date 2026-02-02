@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-12-15T16:38:51+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "te"
-}
--->
 # ప్రారంభికుల కోసం ఎడ్జ్‌ఏఐ: నేర్చుకునే మార్గాలు మరియు అధ్యయన షెడ్యూల్
 
 ### కేంద్రీకృత అధ్యయన మార్గం (1 వారం)

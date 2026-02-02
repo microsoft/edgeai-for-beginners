@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-11T22:37:32+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "pa"
-}
--->
 # EdgeAI ਸ਼ੁਰੂਆਤੀ ਲਈ - ਵਰਕਸ਼ਾਪ
 
 > **ਪ੍ਰੋਡਕਸ਼ਨ-ਤਿਆਰ ਐਜ AI ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਉਣ ਲਈ ਹੈਂਡਸ-ਆਨ ਲਰਨਿੰਗ ਪਾਥ**

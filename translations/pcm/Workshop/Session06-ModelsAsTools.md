@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
-  "translation_date": "2025-11-11T17:41:35+00:00",
-  "source_file": "Workshop/Session06-ModelsAsTools.md",
-  "language_code": "pcm"
-}
--->
 # Session 6: Foundry Local – Models as Tools
 
 ## Abstract

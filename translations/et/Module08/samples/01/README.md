@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-10-11T12:55:47+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "et"
-}
--->
 # Näidis 01: Kiirvestlus OpenAI SDK kaudu
 
 Lihtne vestluse näide, mis demonstreerib, kuidas kasutada OpenAI SDK-d koos Microsoft Foundry Localiga lokaalse AI järelduse jaoks.

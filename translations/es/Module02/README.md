@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-17T12:31:22+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "es"
-}
--->
 # Capítulo 02: Fundamentos de Modelos de Lenguaje Pequeños
 
 Este capítulo fundamental proporciona una exploración esencial de los Modelos de Lenguaje Pequeños (SLMs), abarcando principios teóricos, estrategias prácticas de implementación y soluciones listas para producción. El capítulo establece la base de conocimiento crítica para comprender las arquitecturas modernas de IA eficientes y su implementación estratégica en diversos entornos computacionales.

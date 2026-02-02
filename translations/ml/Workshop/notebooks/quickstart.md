@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddaad917d0c16fc3d498a6b4eabc8088",
-  "translation_date": "2025-12-16T00:10:11+00:00",
-  "source_file": "Workshop/notebooks/quickstart.md",
-  "language_code": "ml"
-}
--->
 # വർക്‌ഷോപ്പ് നോട്ട്‌ബുക്കുകൾ - ക്വിക്ക് സ്റ്റാർട്ട് ഗൈഡ്
 
 ## ഉള്ളടക്ക പട്ടിക

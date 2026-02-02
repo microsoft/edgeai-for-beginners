@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:49:41+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "sw"
-}
--->
 Speaker 1: Karibu kusikiliza toleo hili la podcast! Mimi ni mwenyeji Lucy, leo tuna bahati ya kuwa na mtaalamu wa AI, Ken, kuzungumza kuhusu Ollama ambayo hivi karibuni imetajwa sana. Ken, unaweza kutuambia kwa kifupi Ollama ni nini?  
 Speaker 2: Bila shaka! Ollama ni zana inayowezesha watumiaji kuendesha na kusimamia mifano mikubwa ya lugha (LLM) kwenye mashine zao za nyumbani. Hainategemei huduma za wingu, inasisitiza faragha, udhibiti na ubinafsishaji. Kwa waendelezaji na biashara, inatoa mbadala wenye kubadilika na rafiki kwa faragha, kama vile huduma za wingu za ChatGPT.  
 Speaker 1: Inasikika kuvutia sana. Je, faida kuu za Ollama ni zipi?  

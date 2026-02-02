@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-17T15:21:52+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "pl"
-}
--->
 # Rozdział 01: Transformacja wdrażania AI na urządzeniach brzegowych
 
 EdgeAI reprezentuje przełomowy kierunek w wdrażaniu sztucznej inteligencji, przenosząc możliwości AI z przetwarzania w chmurze na lokalne urządzenia brzegowe. Ten rozdział omawia podstawowe pojęcia, kluczowe technologie oraz praktyczne zastosowania, które definiują tę transformacyjną metodę implementacji AI.

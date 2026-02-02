@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T20:04:18+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "fr"
-}
--->
 # Scripts de l'atelier
 
 Ce répertoire contient des scripts d'automatisation et de support utilisés pour maintenir la qualité et la cohérence des matériaux de l'atelier.

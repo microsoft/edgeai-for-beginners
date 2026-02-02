@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T21:21:38+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "ne"
-}
--->
 # कार्यशाला स्क्रिप्टहरू
 
 यो डाइरेक्टरीले कार्यशाला सामग्रीहरूमा गुणस्तर र स्थिरता कायम राख्न प्रयोग गरिने स्वचालन र समर्थन स्क्रिप्टहरू समावेश गर्दछ।

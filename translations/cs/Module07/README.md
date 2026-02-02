@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T14:09:50+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "cs"
-}
--->
 # Kapitola 07: Ukázky EdgeAI
 
 Edge AI představuje spojení umělé inteligence s edge computingem, což umožňuje inteligentní zpracování přímo na zařízeních bez nutnosti připojení ke cloudu. Tato kapitola zkoumá pět různých implementací EdgeAI na různých platformách a v různých rámcích, které ukazují všestrannost a sílu provozování AI modelů na okraji.

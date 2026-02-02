@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e88a16101de37838f7cf256a9cd0f199",
-  "translation_date": "2025-12-16T00:03:26+00:00",
-  "source_file": "Workshop/notebooks/TROUBLESHOOTING.md",
-  "language_code": "ml"
-}
--->
 # വർക്‌ഷോപ്പ് നോട്ട്‌ബുക്കുകൾ - പ്രശ്‌നപരിഹാര ഗൈഡ്
 
 ## ഉള്ളടക്ക പട്ടിക

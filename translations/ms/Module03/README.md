@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T14:53:21+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "ms"
-}
--->
 # Bab 03: Melaksanakan Model Bahasa Kecil (SLM)
 
 Bab yang komprehensif ini meneroka keseluruhan kitaran hayat pelaksanaan Model Bahasa Kecil (SLM), merangkumi asas teori, strategi pelaksanaan praktikal, dan penyelesaian kontena yang sedia untuk pengeluaran. Bab ini disusun dalam tiga bahagian progresif yang membawa pembaca daripada konsep asas kepada senario pelaksanaan yang lebih maju.

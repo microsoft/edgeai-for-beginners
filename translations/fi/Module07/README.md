@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T13:21:07+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "fi"
-}
--->
 # Luku 07: EdgeAI-esimerkit
 
 Edge AI yhdistää tekoälyn ja reunalaskennan, mahdollistaen älykkään tiedonkäsittelyn suoraan laitteilla ilman pilviyhteyttä. Tässä luvussa tarkastellaan viittä erilaista EdgeAI-toteutusta eri alustoilla ja kehyksillä, jotka osoittavat tekoälymallien monipuolisuuden ja tehon reunalaitteilla.

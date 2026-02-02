@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T15:24:37+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "lt"
-}
--->
 # 4 skyrius: Modelių formato konvertavimas ir kvantizavimas - skyrius apžvalga
 
 EdgeAI atsiradimas padarė modelių formato konvertavimą ir kvantizavimą esminėmis technologijomis, leidžiančiomis diegti pažangias mašininio mokymosi galimybes ribotų resursų įrenginiuose. Šis išsamus skyrius pateikia pilną vadovą, kaip suprasti, įgyvendinti ir optimizuoti modelius kraštinių įrenginių diegimo scenarijams.

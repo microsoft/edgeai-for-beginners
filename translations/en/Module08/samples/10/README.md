@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-25T03:11:50+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "en"
-}
--->
 # Foundry Local as Tools Integration
 
 A detailed framework for incorporating Microsoft Foundry Local as callable tools within larger applications, adhering to Microsoft's official guidelines for AI tool integration.

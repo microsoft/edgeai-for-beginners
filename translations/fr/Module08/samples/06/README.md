@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-09-30T22:55:48+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "fr"
-}
--->
 # Session 6 Exemple : Les modèles comme outils
 
 Cet exemple implémente un routeur minimal + un registre d'outils qui sélectionne un modèle en fonction de la requête utilisateur et appelle le point de terminaison compatible OpenAI de Foundry Local.

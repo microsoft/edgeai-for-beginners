@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T15:30:35+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "mr"
-}
--->
 # Foundry Local as Tools Integration
 
 मायक्रोसॉफ्ट Foundry Local ला मोठ्या अनुप्रयोगांमध्ये कॉल करण्यायोग्य साधन म्हणून समाकलित करण्यासाठी मायक्रोसॉफ्टच्या अधिकृत पद्धतींचे अनुसरण करणारे एक व्यापक फ्रेमवर्क.

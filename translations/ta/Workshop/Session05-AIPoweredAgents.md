@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-  "translation_date": "2025-10-28T23:52:24+00:00",
-  "source_file": "Workshop/Session05-AIPoweredAgents.md",
-  "language_code": "ta"
-}
--->
 # அமர்வு 5: Foundry Local உடன் AI-இயக்கப்பட்ட முகவர்களை விரைவாக உருவாக்குங்கள்
 
 ## சுருக்கம்

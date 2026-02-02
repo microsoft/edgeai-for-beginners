@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T13:40:31+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "vi"
-}
--->
 # Foundry Local trên Windows & Mac
 
 Hướng dẫn này giúp bạn cài đặt, chạy và tích hợp Microsoft Foundry Local trên Windows và Mac. Tất cả các bước và lệnh đều được xác thực dựa trên tài liệu Microsoft Learn.

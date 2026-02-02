@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-12T00:07:35+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "cs"
-}
--->
 # Sezení 4: Prozkoumejte nejmodernější modely – LLM, SLM a inference na zařízení
 
 ## Abstrakt

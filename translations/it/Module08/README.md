@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-10-01T00:10:44+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "it"
-}
--->
 # Modulo 08: Pratica con Microsoft Foundry Local - Toolkit Completo per Sviluppatori
 
 ## Panoramica

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T12:41:19+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "tr"
-}
--->
 # Bölüm 04: Model Format Dönüşümü ve Kuantizasyon - Bölüm Genel Bakış
 
 EdgeAI'nin yükselişi, kaynakları sınırlı cihazlarda gelişmiş makine öğrenimi yeteneklerini dağıtmak için model format dönüşümü ve kuantizasyonu önemli teknolojiler haline getirdi. Bu kapsamlı bölüm, kenar dağıtım senaryoları için modelleri anlamak, uygulamak ve optimize etmek konusunda eksiksiz bir rehber sunar.

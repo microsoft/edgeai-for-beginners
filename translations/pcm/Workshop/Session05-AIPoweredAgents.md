@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-  "translation_date": "2025-11-11T17:38:16+00:00",
-  "source_file": "Workshop/Session05-AIPoweredAgents.md",
-  "language_code": "pcm"
-}
--->
 # Session 5: How to Build AI-Powered Agents Quick with Foundry Local
 
 ## Abstract

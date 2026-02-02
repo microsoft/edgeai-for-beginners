@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c49526c7abc56b0b5f1e835c1739f18e",
-  "translation_date": "2025-09-24T10:44:14+00:00",
-  "source_file": "Module08/samples/04/chainlit.md",
-  "language_code": "fr"
-}
--->
 # Bienvenue sur Chainlit ! 🚀🤖
 
 Bonjour, Développeur ! 👋 Nous sommes ravis de vous accueillir. Chainlit est un outil puissant conçu pour vous aider à prototyper, déboguer et partager des applications basées sur des LLMs.

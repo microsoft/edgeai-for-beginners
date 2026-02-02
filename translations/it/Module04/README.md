@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T12:28:19+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "it"
-}
--->
 # Capitolo 04: Conversione del Formato del Modello e Quantizzazione - Panoramica del Capitolo
 
 L'emergere dell'EdgeAI ha reso la conversione del formato del modello e la quantizzazione tecnologie essenziali per implementare capacità avanzate di machine learning su dispositivi con risorse limitate. Questo capitolo completo offre una guida completa per comprendere, implementare e ottimizzare i modelli per scenari di distribuzione edge.

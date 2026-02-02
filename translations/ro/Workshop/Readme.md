@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-12T00:19:37+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "ro"
-}
--->
 # EdgeAI pentru Începători - Atelier
 
 > **Cale de învățare practică pentru construirea aplicațiilor Edge AI gata de producție**

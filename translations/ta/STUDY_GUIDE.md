@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-10-11T11:01:35+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "ta"
-}
--->
 # EdgeAI ஆரம்பக்கட்டம்: கற்றல் பாதைகள் மற்றும் படிப்பு அட்டவணை
 
 ### தீவிர கற்றல் பாதை (1 வாரம்)

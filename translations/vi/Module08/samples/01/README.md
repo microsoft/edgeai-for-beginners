@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-25T00:08:36+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "vi"
-}
--->
 # Mẫu 01: Trò chuyện nhanh qua OpenAI SDK
 
 Một ví dụ đơn giản về trò chuyện, minh họa cách sử dụng OpenAI SDK với Microsoft Foundry Local để suy luận AI cục bộ.

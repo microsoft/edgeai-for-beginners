@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T11:29:41+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "ja"
-}
--->
 # 第4章: モデル形式変換と量子化 - 概要
 
 EdgeAIの台頭により、モデル形式変換と量子化は、リソースが限られたデバイス上で高度な機械学習機能を展開するための重要な技術となりました。この包括的な章では、エッジ展開シナリオに向けたモデルの理解、実装、最適化について完全なガイドを提供します。

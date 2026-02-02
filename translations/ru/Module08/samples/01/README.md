@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T13:18:36+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "ru"
-}
--->
 # Пример 01: Быстрый чат через OpenAI SDK
 
 Простой пример чата, демонстрирующий использование OpenAI SDK с Microsoft Foundry Local для локального AI-анализа.

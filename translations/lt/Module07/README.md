@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T15:15:02+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "lt"
-}
--->
 # 7 skyrius: EdgeAI pavyzdžiai
 
 Edge AI – tai dirbtinio intelekto ir kraštinio skaičiavimo susiliejimas, leidžiantis vykdyti išmanųjį apdorojimą tiesiogiai įrenginiuose, nereikalaujant ryšio su debesimi. Šiame skyriuje nagrinėjami penki skirtingi EdgeAI įgyvendinimo būdai įvairiose platformose ir sistemose, demonstruojantys AI modelių veikimo krašte universalumą ir galią.

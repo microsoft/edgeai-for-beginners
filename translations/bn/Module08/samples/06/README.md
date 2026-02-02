@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-09-30T23:47:43+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "bn"
-}
--->
 # সেশন ৬ উদাহরণ: টুল হিসেবে মডেল
 
 এই উদাহরণটি একটি ন্যূনতম রাউটার + টুল রেজিস্ট্রি বাস্তবায়ন করে যা ব্যবহারকারীর প্রম্পটের উপর ভিত্তি করে একটি মডেল নির্বাচন করে এবং Foundry Local-এর OpenAI-সামঞ্জস্যপূর্ণ এন্ডপয়েন্টকে কল করে।

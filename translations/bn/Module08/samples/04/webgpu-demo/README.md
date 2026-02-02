@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-09-24T15:33:40+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "bn"
-}
--->
 # WebGPU + ONNX Runtime ডেমো
 
 এই ডেমোটি দেখায় কীভাবে AI মডেলগুলো সরাসরি ব্রাউজারে চালানো যায়, যেখানে হার্ডওয়্যার অ্যাক্সিলারেশনের জন্য WebGPU এবং ONNX Runtime Web ব্যবহার করা হয়েছে।

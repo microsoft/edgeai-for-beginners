@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-11-11T18:03:53+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "pcm"
-}
--->
 # Foundry Local as Tools Integration
 
 Na one better framework wey go help you take Microsoft Foundry Local models use as tools wey you fit call inside big applications, dey follow Microsoft official way for tool-based AI integration.

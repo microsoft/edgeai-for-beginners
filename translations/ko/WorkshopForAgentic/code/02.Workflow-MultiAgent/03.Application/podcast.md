@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:38:08+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "ko"
-}
--->
 Speaker 1: 이번 팟캐스트에 오신 것을 환영합니다! 저는 진행자 Lucy입니다. 오늘은 AI 분야 전문가 Ken님을 모시고 최근 많은 주목을 받고 있는 Ollama에 대해 이야기해보겠습니다. Ken님, 먼저 Ollama가 무엇인지 간단히 소개해 주시겠어요?  
 Speaker 2: 물론입니다! Ollama는 사용자가 로컬 기기에서 대형 언어 모델(LLM)을 실행하고 관리할 수 있게 해주는 도구입니다. 클라우드 서비스에 의존할 필요가 없으며, 개인정보 보호, 통제, 맞춤화를 강조합니다. 개발자와 기업에게는 ChatGPT 같은 클라우드 서비스의 유연하고 개인정보 친화적인 대안이 됩니다.  
 Speaker 1: 정말 흥미롭네요. 그렇다면 Ollama의 핵심 장점은 무엇인가요?  

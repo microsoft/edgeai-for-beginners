@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-18T11:47:49+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "he"
-}
--->
 ## אבטחה
 
 מיקרוסופט מתייחסת ברצינות לאבטחת מוצרי התוכנה והשירותים שלה, כולל כל מאגרי הקוד במוסדות GitHub שלנו.

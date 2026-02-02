@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T16:39:44+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "cs"
-}
--->
 # Kapitola 01: Transformace nasazení AI pro Edge
 
 EdgeAI představuje zásadní změnu v nasazení umělé inteligence, kdy se schopnosti AI přesouvají z cloudového zpracování na lokální edge zařízení. Tato kapitola zkoumá základní koncepty, klíčové technologie a praktické aplikace, které definují tento transformační přístup k implementaci AI.

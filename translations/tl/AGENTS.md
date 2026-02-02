@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-  "translation_date": "2025-10-30T13:49:06+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "tl"
-}
--->
 # AGENTS.md
 
 > **Gabay para sa mga Developer sa Pag-aambag sa EdgeAI para sa mga Baguhan**

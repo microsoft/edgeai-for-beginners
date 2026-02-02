@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-11T21:37:39+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "ar"
-}
--->
 # EdgeAI للمبتدئين - ورشة عمل
 
 > **مسار تعليمي عملي لبناء تطبيقات Edge AI جاهزة للإنتاج**

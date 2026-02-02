@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T13:47:27+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "ms"
-}
--->
 # Bab 04: Penukaran Format Model dan Kuantisasi - Gambaran Bab
 
 Kemunculan EdgeAI telah menjadikan penukaran format model dan kuantisasi sebagai teknologi penting untuk melaksanakan keupayaan pembelajaran mesin yang canggih pada peranti dengan sumber yang terhad. Bab yang komprehensif ini menyediakan panduan lengkap untuk memahami, melaksanakan, dan mengoptimumkan model bagi senario pelaksanaan di peranti tepi.

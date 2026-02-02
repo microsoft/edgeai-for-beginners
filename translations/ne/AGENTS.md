@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-  "translation_date": "2025-10-30T11:58:19+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "ne"
-}
--->
 # AGENTS.md
 
 > **एज डेभलपरहरूको लागि EdgeAI मा योगदान गर्ने मार्गदर्शन**

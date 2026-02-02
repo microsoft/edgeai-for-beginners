@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "05db93129bdc4889e0c5dd3c5ea21498",
-  "translation_date": "2025-11-11T23:12:20+00:00",
-  "source_file": "Workshop/ENV_CONFIGURATION.md",
-  "language_code": "sv"
-}
--->
 # Guide för miljökonfiguration
 
 ## Översikt

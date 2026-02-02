@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-12-15T21:19:23+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "ml"
-}
--->
 # സെഷൻ 4: ആധുനിക മോഡലുകൾ അന്വേഷിക്കുക – LLMs, SLMs & ഓൺ-ഡിവൈസ് ഇൻഫറൻസ്
 
 ## സംഗ്രഹം

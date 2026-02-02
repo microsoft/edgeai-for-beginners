@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T00:49:34+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "nl"
-}
--->
 # Voorbeeld 04: Productie Chattoepassingen met Chainlit
 
 Een uitgebreide demonstratie van verschillende benaderingen om productieklare chattoepassingen te bouwen met Microsoft Foundry Local, inclusief moderne webinterfaces, streamingreacties en geavanceerde browsertechnologieën.

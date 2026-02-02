@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T12:32:56+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "nl"
-}
--->
 # Hoofdstuk 01: AI-implementatie transformeren voor de Edge
 
 EdgeAI vertegenwoordigt een paradigmaverschuiving in de implementatie van kunstmatige intelligentie, waarbij AI-capaciteiten worden verplaatst van cloud-gebaseerde verwerking naar lokale edge-apparaten. Dit hoofdstuk verkent de fundamentele concepten, sleuteltechnologieën en praktische toepassingen die deze transformatieve benadering van AI-implementatie definiëren.

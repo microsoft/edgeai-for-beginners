@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-12-15T16:56:09+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "te"
-}
--->
 # మార్పుల చరిత్ర
 
 EdgeAI for Beginners కి సంబంధించిన అన్ని ముఖ్యమైన మార్పులు ఇక్కడ నమోదు చేయబడ్డాయి. ఈ ప్రాజెక్ట్ తేదీ ఆధారిత ఎంట్రీలు మరియు Keep a Changelog శైలిని (చేర్చబడింది, మార్చబడింది, సరిచేయబడింది, తొలగించబడింది, డాక్స్, తరలించబడింది) ఉపయోగిస్తుంది.

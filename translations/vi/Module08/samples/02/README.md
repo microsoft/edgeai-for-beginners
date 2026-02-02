@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-25T00:09:19+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "vi"
-}
--->
 # Mẫu 02: Tích hợp OpenAI SDK
 
 Trình bày tích hợp nâng cao với OpenAI Python SDK, hỗ trợ cả Microsoft Foundry Local và Azure OpenAI với phản hồi dạng streaming và xử lý lỗi đúng cách.

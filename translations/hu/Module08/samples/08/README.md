@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-25T02:48:12+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "hu"
-}
--->
 # Windows 11 Chat Minta - Foundry Local
 
 Egy modern chatalkalmazás Windows 11-hez, amely integrálja a Microsoft Foundry Local szolgáltatást egy gyönyörű, natív felülettel. Electronnal készült, és követi a Microsoft hivatalos Foundry Local mintáit.

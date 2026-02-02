@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
-  "translation_date": "2025-12-15T20:36:03+00:00",
-  "source_file": "Workshop/Session03-OpenSourceModels.md",
-  "language_code": "te"
-}
--->
 # సెషన్ 3: ఫౌండ్రీ లోకల్‌లో ఓపెన్-సోర్స్ మోడల్స్
 
 ## సారాంశం

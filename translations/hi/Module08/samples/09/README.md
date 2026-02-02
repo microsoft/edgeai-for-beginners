@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T12:47:29+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "hi"
-}
--->
 # मल्टी-एजेंट ऑर्केस्ट्रेशन सिस्टम - फाउंड्री लोकल
 
 Microsoft Foundry Local द्वारा संचालित एक उन्नत मल्टी-एजेंट सिस्टम, जो बुद्धिमान एजेंट समन्वय, विशेष कार्य वितरण, और सहयोगात्मक समस्या समाधान पैटर्न को प्रदर्शित करता है।

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T01:28:19+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "ro"
-}
--->
 # Sesiunea 6 Exemplu: Modele ca Instrumente
 
 Acest exemplu implementează un router minimal + registru de instrumente care selectează un model pe baza solicitării utilizatorului și apelează endpoint-ul compatibil OpenAI al Foundry Local.

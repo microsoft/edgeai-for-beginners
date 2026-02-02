@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T13:38:27+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "vi"
-}
--->
 # Chương 04: Chuyển đổi định dạng mô hình và lượng hóa - Tổng quan chương
 
 Sự xuất hiện của EdgeAI đã khiến việc chuyển đổi định dạng mô hình và lượng hóa trở thành những công nghệ thiết yếu để triển khai các khả năng học máy tiên tiến trên các thiết bị có tài nguyên hạn chế. Chương này cung cấp hướng dẫn toàn diện để hiểu, triển khai và tối ưu hóa mô hình cho các kịch bản triển khai tại biên.

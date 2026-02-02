@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-25T00:09:59+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "he"
-}
--->
 # דוגמת צ'אט ל-Windows 11 - Foundry Local
 
 אפליקציית צ'אט מודרנית ל-Windows 11 שמשלבת את Microsoft Foundry Local עם ממשק מקומי יפהפה. נבנתה באמצעות Electron ועוקבת אחר דפוסי Foundry Local הרשמיים של מיקרוסופט.

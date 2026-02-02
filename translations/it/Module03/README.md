@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-17T23:57:47+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "it"
-}
--->
 # Capitolo 03: Distribuzione di Small Language Models (SLMs)
 
 Questo capitolo completo esplora l'intero ciclo di vita della distribuzione di Small Language Models (SLMs), coprendo le basi teoriche, le strategie di implementazione pratica e soluzioni containerizzate pronte per la produzione. Il capitolo è strutturato in tre sezioni progressive che guidano i lettori dai concetti fondamentali agli scenari di distribuzione avanzati.

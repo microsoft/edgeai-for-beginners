@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-09-30T23:35:10+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "ja"
-}
--->
 # サンプル 04: Chainlit を使ったプロダクションチャットアプリケーション
 
 Microsoft Foundry Local を活用し、モダンなウェブインターフェース、ストリーミング応答、最新のブラウザ技術を備えたプロダクション対応のチャットアプリケーションを構築する複数のアプローチを包括的に紹介します。

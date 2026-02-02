@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-  "translation_date": "2025-10-08T21:00:54+00:00",
-  "source_file": "Workshop/notebooks/README.md",
-  "language_code": "es"
-}
--->
 # Cuadernos del Taller
 
 > **Cuadernos Interactivos de Jupyter para Aprender Edge AI Prácticamente**

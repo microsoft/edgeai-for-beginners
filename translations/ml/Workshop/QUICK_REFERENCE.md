@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-12-15T20:54:53+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "ml"
-}
--->
 # വർക്‌ഷോപ്പ് സാമ്പിളുകൾ - ക്വിക്ക് റഫറൻസ് കാർഡ്
 
 **അവസാനമായി അപ്ഡേറ്റ് ചെയ്തത്**: ഒക്ടോബർ 8, 2025

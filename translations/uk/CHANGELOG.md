@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T15:11:30+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "uk"
-}
--->
 # Журнал змін
 
 Усі важливі зміни в EdgeAI для початківців задокументовані тут. Цей проєкт використовує записи на основі дат і стиль "Keep a Changelog" (Додано, Змінено, Виправлено, Видалено, Документація, Переміщено).

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T10:41:23+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "ko"
-}
--->
 # Sample 01: OpenAI SDK를 활용한 빠른 채팅
 
 Microsoft Foundry Local을 사용하여 로컬 AI 추론을 수행하는 OpenAI SDK 사용법을 보여주는 간단한 채팅 예제입니다.

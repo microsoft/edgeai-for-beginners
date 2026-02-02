@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-09-26T10:40:13+00:00",
-  "source_file": "introduction.md",
-  "language_code": "ms"
-}
--->
 # Pengenalan kepada Edge AI untuk Pemula
 
 ![Pengenalan Edge AI](../../translated_images/ms/cover.eb18d1b9605d754b.webp)

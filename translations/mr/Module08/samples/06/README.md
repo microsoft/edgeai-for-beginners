@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-09-30T23:53:09+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "mr"
-}
--->
 # सत्र 6 नमुना: साधन म्हणून मॉडेल्स
 
 हा नमुना एक साधा राउटर + टूल रजिस्ट्रेशन अंमलात आणतो जो वापरकर्त्याच्या प्रॉम्प्टवर आधारित मॉडेल निवडतो आणि Foundry Local च्या OpenAI-सुसंगत एन्डपॉइंटला कॉल करतो.

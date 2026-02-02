@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-09-23T01:20:47+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "hu"
-}
--->
 # 3. munkamenet mintája: Modell felfedezése és gyors tesztelés
 
 Egy minimális segédprogram a modellek listázásához és egy indításához részletes naplókkal.

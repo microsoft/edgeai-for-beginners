@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-18T11:47:55+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "vi"
-}
--->
 ## Bảo mật
 
 Microsoft coi trọng vấn đề bảo mật cho các sản phẩm và dịch vụ phần mềm của mình, bao gồm tất cả các kho mã nguồn trong các tổ chức GitHub của chúng tôi.

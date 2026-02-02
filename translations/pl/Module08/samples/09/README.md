@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-24T12:47:09+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "pl"
-}
--->
 # System Orkiestracji Wieloagentowej - Foundry Local
 
 Zaawansowany system wieloagentowy opracowany przez Microsoft Foundry Local, który demonstruje koordynację inteligentnych agentów, delegowanie wyspecjalizowanych zadań oraz wzorce współpracy w rozwiązywaniu problemów.

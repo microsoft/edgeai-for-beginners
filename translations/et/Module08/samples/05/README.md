@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-10-11T12:56:53+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "et"
-}
--->
 # Sessioon 5 Näidis: Mitmeagendi Orkestreerimine
 
 See näidis demonstreerib koordinaatori + spetsialistide mustrit, kasutades Foundry Locali OpenAI-ühilduvat lõpp-punkti.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
-  "translation_date": "2026-01-05T14:12:10+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
-  "language_code": "kn"
-}
--->
 # ಪಾಡ್‌ಕಾಸ್ಟ್ ಅಪ್ಲಿಕೇಶನ್
 
 ಎಐ ಏಜೆಂಟ್ಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಪಾಡ್‌ಕಾಸ್ಟ್ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಉತ್ಪಾದಿಸುವ ಕನ್ಸೋಲ್ ಅಪ್ಲಿಕೇಶನ್.

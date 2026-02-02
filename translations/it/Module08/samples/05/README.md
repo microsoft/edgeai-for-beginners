@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T18:34:30+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "it"
-}
--->
 # Sessione 5 Esempio: Orchestrazione Multi-Agente
 
 Questo esempio dimostra un modello di coordinatore + specialisti utilizzando l'endpoint compatibile con OpenAI di Foundry Local.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-18T15:35:52+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "hu"
-}
--->
 ## Biztonság
 
 A Microsoft komolyan veszi szoftvertermékeinek és szolgáltatásainak biztonságát, beleértve a GitHub szervezeteinkben található összes forráskód-tárhelyet.

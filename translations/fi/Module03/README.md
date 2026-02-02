@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T10:38:48+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "fi"
-}
--->
 # Luku 03: Pienten kielimallien (SLM) käyttöönotto
 
 Tämä kattava luku käsittelee pienten kielimallien (SLM) käyttöönoton koko elinkaarta, sisältäen teoreettiset perusteet, käytännön toteutusstrategiat ja tuotantovalmiit konttipohjaiset ratkaisut. Luku on jaettu kolmeen edistyvään osioon, jotka vievät lukijan peruskäsitteistä kehittyneisiin käyttöönoton skenaarioihin.

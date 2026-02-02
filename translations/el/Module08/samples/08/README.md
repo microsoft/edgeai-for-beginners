@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T22:50:55+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "el"
-}
--->
 # Windows 11 Chat Sample - Foundry Local
 
 Μια σύγχρονη εφαρμογή συνομιλίας για Windows 11 που ενσωματώνει το Microsoft Foundry Local με μια όμορφη, εγγενή διεπαφή. Χτισμένη με Electron και ακολουθώντας τα επίσημα πρότυπα του Foundry Local της Microsoft.

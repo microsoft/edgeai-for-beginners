@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-17T14:24:34+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "fa"
-}
--->
 ## امنیت
 
 مایکروسافت امنیت محصولات نرم‌افزاری و خدمات خود را جدی می‌گیرد، که شامل تمامی مخازن کد منبع در سازمان‌های GitHub ما می‌شود.

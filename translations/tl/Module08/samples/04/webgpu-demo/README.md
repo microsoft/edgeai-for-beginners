@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-09-25T03:08:57+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "tl"
-}
--->
 # WebGPU + ONNX Runtime Demo
 
 Ang demo na ito ay nagpapakita kung paano patakbuhin ang mga AI model nang direkta sa browser gamit ang WebGPU para sa hardware acceleration at ONNX Runtime Web.

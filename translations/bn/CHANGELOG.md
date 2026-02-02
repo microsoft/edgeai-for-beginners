@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T11:42:16+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "bn"
-}
--->
 # পরিবর্তন তালিকা
 
 EdgeAI for Beginners-এ সমস্ত উল্লেখযোগ্য পরিবর্তন এখানে নথিভুক্ত করা হয়েছে। এই প্রকল্পটি তারিখ-ভিত্তিক এন্ট্রি এবং Keep a Changelog স্টাইল (Added, Changed, Fixed, Removed, Docs, Moved) ব্যবহার করে।

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-17T15:56:00+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "pl"
-}
--->
 # Rozdział 03: Wdrażanie Małych Modeli Językowych (SLM)
 
 Ten obszerny rozdział omawia pełny cykl życia wdrażania Małych Modeli Językowych (SLM), obejmując podstawy teoretyczne, praktyczne strategie implementacji oraz gotowe do produkcji rozwiązania konteneryzowane. Rozdział jest podzielony na trzy progresywne sekcje, które prowadzą czytelników od podstawowych po zaawansowane scenariusze wdrożeniowe.

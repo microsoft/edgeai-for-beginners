@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-24T15:07:52+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "bn"
-}
--->
 # নমুনা ০২: OpenAI SDK ইন্টিগ্রেশন
 
 OpenAI Python SDK-এর সাথে উন্নত ইন্টিগ্রেশন প্রদর্শন করে, যা Microsoft Foundry Local এবং Azure OpenAI উভয়কেই সমর্থন করে, স্ট্রিমিং রেসপন্স এবং সঠিক ত্রুটি পরিচালনার সাথে।

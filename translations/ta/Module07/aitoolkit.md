@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-  "translation_date": "2025-10-21T07:47:42+00:00",
-  "source_file": "Module07/aitoolkit.md",
-  "language_code": "ta"
-}
--->
 # Visual Studio Code க்கான AI Toolkit - Edge AI மேம்பாட்டு வழிகாட்டி
 
 ## அறிமுகம்

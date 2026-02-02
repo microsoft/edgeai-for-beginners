@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-10-09T10:26:32+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "it"
-}
--->
 # EdgeAI per Principianti: Percorsi di Apprendimento e Programma di Studio
 
 ### Percorso di Apprendimento Concentrato (1 settimana)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
-  "translation_date": "2025-12-15T21:16:05+00:00",
-  "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
-  "language_code": "kn"
-}
--->
 # ಸೆಷನ್ 2: ಅಜೂರ್ AI ಫೌಂಡ್ರಿಯೊಂದಿಗೆ AI ಪರಿಹಾರಗಳನ್ನು ನಿರ್ಮಿಸಿ
 
 ## ಸಾರಾಂಶ

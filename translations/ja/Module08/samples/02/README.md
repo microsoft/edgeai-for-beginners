@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-24T10:34:06+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "ja"
-}
--->
 # サンプル 02: OpenAI SDK 統合
 
 Microsoft Foundry Local と Azure OpenAI の両方をサポートし、ストリーミングレスポンスと適切なエラーハンドリングを備えた OpenAI Python SDK の高度な統合をデモンストレーションします。

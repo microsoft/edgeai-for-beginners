@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T08:17:53+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "sv"
-}
--->
 # Kapitel 03: Implementering av Små Språkmodeller (SLMs)
 
 Det här omfattande kapitlet utforskar hela livscykeln för implementering av Små Språkmodeller (SLMs), med fokus på teoretiska grunder, praktiska implementeringsstrategier och produktionsklara containerlösningar. Kapitlet är strukturerat i tre progressiva avsnitt som tar läsaren från grundläggande koncept till avancerade implementeringsscenarier.

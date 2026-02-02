@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
-  "translation_date": "2025-10-28T20:07:37+00:00",
-  "source_file": "Workshop/Session06-ModelsAsTools.md",
-  "language_code": "es"
-}
--->
 # Sesión 6: Foundry Local – Modelos como Herramientas
 
 ## Resumen

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T12:52:23+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "th"
-}
--->
 # บันทึกการเปลี่ยนแปลง
 
 การเปลี่ยนแปลงที่สำคัญทั้งหมดใน EdgeAI สำหรับผู้เริ่มต้นจะถูกบันทึกไว้ที่นี่ โครงการนี้ใช้การบันทึกตามวันที่และรูปแบบ Keep a Changelog (เพิ่ม, เปลี่ยน, แก้ไข, ลบ, เอกสาร, ย้าย)

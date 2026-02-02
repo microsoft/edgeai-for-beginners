@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddaad917d0c16fc3d498a6b4eabc8088",
-  "translation_date": "2025-11-11T17:44:56+00:00",
-  "source_file": "Workshop/notebooks/quickstart.md",
-  "language_code": "pcm"
-}
--->
 # Workshop Notebooks - Quick Start Guide
 
 ## Table of Contents

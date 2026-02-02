@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
-  "translation_date": "2025-11-17T18:54:44+00:00",
-  "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
-  "language_code": "tr"
-}
--->
 # Oturum 2: Azure AI Foundry ile Yapay Zeka Çözümleri Oluşturma
 
 ## Özet

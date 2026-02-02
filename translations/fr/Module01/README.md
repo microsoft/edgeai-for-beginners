@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-07-22T03:00:04+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "fr"
-}
--->
 # Chapitre 01 : Transformer le Déploiement de l'IA pour l'Edge
 
 EdgeAI représente un changement de paradigme dans le déploiement de l'intelligence artificielle, en transférant les capacités de l'IA du traitement basé sur le cloud vers des dispositifs locaux en périphérie. Ce chapitre explore les concepts fondamentaux, les technologies clés et les applications pratiques qui définissent cette approche transformatrice de la mise en œuvre de l'IA.

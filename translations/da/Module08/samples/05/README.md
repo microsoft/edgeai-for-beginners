@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T20:25:56+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "da"
-}
--->
 # Session 5 Eksempel: Multi-Agent Orkestrering
 
 Dette eksempel demonstrerer et koordinator + specialister mønster ved brug af Foundry Locals OpenAI-kompatible endpoint.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f94e745264597bc5d8df967ead2eff97",
-  "translation_date": "2026-01-05T10:46:46+00:00",
-  "source_file": "WorkshopForAgentic/README.md",
-  "language_code": "ms"
-}
--->
 # 🎙️ Bengkel Studio Podcast AI
 
 > 🌏 [中文版 (Versi Cina)](translation/zh-cn/README.md)

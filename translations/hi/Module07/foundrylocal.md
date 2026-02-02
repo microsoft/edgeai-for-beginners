@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T11:58:34+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "hi"
-}
--->
 # विंडोज और मैक पर Foundry Local
 
 यह गाइड आपको Microsoft Foundry Local को विंडोज और मैक पर इंस्टॉल, रन और इंटीग्रेट करने में मदद करता है। सभी चरण और कमांड Microsoft Learn डॉक्यूमेंट्स के अनुसार सत्यापित हैं।

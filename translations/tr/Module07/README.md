@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T12:49:46+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "tr"
-}
--->
 # Bölüm 07: EdgeAI Örnekleri
 
 Edge AI, yapay zekanın uç bilişimle birleşimini temsil eder ve cihazlarda bulut bağlantısına ihtiyaç duymadan akıllı işlem yapmayı mümkün kılar. Bu bölüm, farklı platformlar ve çerçeveler üzerinde beş farklı EdgeAI uygulamasını inceleyerek, yapay zeka modellerini uçta çalıştırmanın esnekliğini ve gücünü gözler önüne seriyor.

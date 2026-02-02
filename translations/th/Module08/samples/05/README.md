@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T19:23:04+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "th"
-}
--->
 # ตัวอย่างเซสชัน 5: การจัดการหลายตัวแทน
 
 ตัวอย่างนี้แสดงรูปแบบผู้ประสานงาน + ผู้เชี่ยวชาญ โดยใช้ปลายทางที่เข้ากันได้กับ OpenAI ของ Foundry Local

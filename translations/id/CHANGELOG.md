@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T13:39:22+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "id"
-}
--->
 # Catatan Perubahan
 
 Semua perubahan penting pada EdgeAI untuk Pemula didokumentasikan di sini. Proyek ini menggunakan entri berbasis tanggal dan gaya Keep a Changelog (Ditambahkan, Diubah, Diperbaiki, Dihapus, Dokumentasi, Dipindahkan).

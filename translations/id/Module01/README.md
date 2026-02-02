@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T14:23:06+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "id"
-}
--->
 # Bab 01: Transformasi Penerapan AI untuk Edge
 
 EdgeAI mewakili perubahan paradigma dalam penerapan kecerdasan buatan, mengalihkan kemampuan AI dari pemrosesan berbasis cloud ke perangkat edge lokal. Bab ini membahas konsep dasar, teknologi utama, dan aplikasi praktis yang mendefinisikan pendekatan transformasi ini dalam implementasi AI.

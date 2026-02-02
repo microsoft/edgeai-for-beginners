@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-11T21:21:25+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "fr"
-}
--->
 # Échantillons de l'atelier - Carte de référence rapide
 
 **Dernière mise à jour** : 8 octobre 2025

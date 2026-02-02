@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T13:16:01+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "no"
-}
--->
 # Kapittel 07: EdgeAI Eksempler
 
 Edge AI kombinerer kunstig intelligens med edge computing, og muliggjør intelligent behandling direkte på enheter uten behov for skytilkobling. Dette kapittelet utforsker fem ulike EdgeAI-implementeringer på forskjellige plattformer og rammeverk, og viser frem allsidigheten og kraften ved å kjøre AI-modeller på kanten.

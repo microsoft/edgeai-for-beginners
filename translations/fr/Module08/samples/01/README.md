@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T10:21:10+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "fr"
-}
--->
 # Exemple 01 : Discussion rapide via le SDK OpenAI
 
 Un exemple simple de discussion montrant comment utiliser le SDK OpenAI avec Microsoft Foundry Local pour une inférence IA locale.

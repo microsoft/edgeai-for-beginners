@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-  "translation_date": "2025-12-15T17:02:52+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "te"
-}
--->
 # AGENTS.md
 
 > **ఆరంభదారుల కోసం EdgeAI కి సహకరించడానికి డెవలపర్ గైడ్**

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "254150b7d7854ec87ffcd88824d98079",
-  "translation_date": "2025-10-11T12:54:53+00:00",
-  "source_file": "Module08/samples/07/README.md",
-  "language_code": "ta"
-}
--->
 # Foundry Local API மாதிரி
 
 இந்த மாதிரி Microsoft Foundry Local-ஐ REST API சேவையாக OpenAI SDK-ஐ நம்பாமல் பயன்படுத்துவது எப்படி என்பதை விளக்குகிறது. இது அதிக கட்டுப்பாடு மற்றும் தனிப்பயனாக்கத்திற்கான நேரடி HTTP ஒருங்கிணைப்பு முறைகளை காட்டுகிறது.

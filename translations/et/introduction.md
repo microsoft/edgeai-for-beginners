@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-10-11T10:57:40+00:00",
-  "source_file": "introduction.md",
-  "language_code": "et"
-}
--->
 # Sissejuhatus Edge AI-sse algajatele
 
 ![Edge AI Sissejuhatus](../../translated_images/et/cover.eb18d1b9605d754b.webp)

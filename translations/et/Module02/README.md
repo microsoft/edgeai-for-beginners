@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-10-11T12:25:52+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "et"
-}
--->
 # 2. peatükk: Väikeste keelemudelite alused
 
 See põhjalik sissejuhatav peatükk pakub olulist ülevaadet väikestest keelemudelitest (SLM), hõlmates teoreetilisi põhimõtteid, praktilisi rakendusstrateegiaid ja tootmiskõlblikke juurutuslahendusi. Peatükk loob kriitilise teadmiste baasi, et mõista kaasaegseid tõhusaid tehisintellekti arhitektuure ja nende strateegilist rakendamist erinevates arvutuskeskkondades.

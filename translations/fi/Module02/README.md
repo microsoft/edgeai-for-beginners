@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T09:06:08+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "fi"
-}
--->
 # Luku 02: Pienten kielimallien perusteet
 
 Tämä kattava perustason luku tarjoaa olennaisen katsauksen pieniin kielimalleihin (SLM), käsitellen teoreettisia periaatteita, käytännön toteutusstrategioita ja tuotantovalmiita käyttöönoton ratkaisuja. Luku luo kriittisen tietopohjan modernien tehokkaiden tekoälyarkkitehtuurien ymmärtämiseksi ja niiden strategiseksi hyödyntämiseksi erilaisissa laskentaympäristöissä.

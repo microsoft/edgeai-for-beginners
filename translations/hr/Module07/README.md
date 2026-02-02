@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T14:45:29+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "hr"
-}
--->
 # Poglavlje 07: EdgeAI Primjeri
 
 Edge AI predstavlja spoj umjetne inteligencije i rubnog računalstva, omogućujući inteligentnu obradu izravno na uređajima bez oslanjanja na povezivost s oblakom. Ovo poglavlje istražuje pet različitih implementacija EdgeAI-a na različitim platformama i okvirima, prikazujući svestranost i snagu pokretanja AI modela na rubu.

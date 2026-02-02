@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-10-09T06:34:57+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "ur"
-}
--->
 # ایج اے آئی کے ابتدائی افراد کے لیے: سیکھنے کے راستے اور مطالعہ کا شیڈول
 
 ### مرکوز سیکھنے کا راستہ (1 ہفتہ)

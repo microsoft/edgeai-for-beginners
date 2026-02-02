@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-17T13:07:16+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "es"
-}
--->
 # Capítulo 06: Sistemas Agénticos SLM: Una Visión Integral
 
 El panorama de la inteligencia artificial está experimentando una transformación fundamental al pasar de simples chatbots a agentes de IA sofisticados impulsados por Modelos de Lenguaje Pequeños (SLMs). Esta guía integral explora tres aspectos críticos de los sistemas agénticos modernos basados en SLM: conceptos fundamentales y estrategias de implementación, capacidades de llamada a funciones y la revolucionaria integración del Protocolo de Contexto del Modelo (MCP).

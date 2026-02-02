@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T20:27:18+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "fa"
-}
--->
 # اسکریپت‌های کارگاه
 
 این پوشه شامل اسکریپت‌های خودکارسازی و پشتیبانی است که برای حفظ کیفیت و هماهنگی در مواد کارگاه استفاده می‌شوند.

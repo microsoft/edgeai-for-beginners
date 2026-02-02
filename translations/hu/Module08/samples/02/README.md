@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-25T01:15:04+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "hu"
-}
--->
 # Minta 02: OpenAI SDK Integráció
 
 Bemutatja az OpenAI Python SDK fejlett integrációját, amely támogatja a Microsoft Foundry Local és az Azure OpenAI szolgáltatásokat, streaming válaszokkal és megfelelő hibakezeléssel.

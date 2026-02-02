@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T01:24:55+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "sk"
-}
--->
 # Ukážka 04: Produkčné chatovacie aplikácie s Chainlit
 
 Komplexná ukážka, ktorá demonštruje rôzne prístupy k vytváraniu produkčne pripravených chatovacích aplikácií pomocou Microsoft Foundry Local, vrátane moderných webových rozhraní, streamovania odpovedí a najnovších technológií prehliadača.

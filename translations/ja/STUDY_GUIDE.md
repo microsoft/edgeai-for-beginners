@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-10-08T18:59:22+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "ja"
-}
--->
 # EdgeAI初心者向け：学習パスと学習スケジュール
 
 ### 集中学習パス（1週間）

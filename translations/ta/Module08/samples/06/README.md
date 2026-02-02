@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-11T12:56:34+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "ta"
-}
--->
 # அமர்வு 6 மாதிரி: கருவிகளாக மாடல்கள்
 
 இந்த மாதிரி, பயனர் உத்தரவின் அடிப்படையில் ஒரு மாடலை தேர்ந்தெடுத்து Foundry Local இன் OpenAI-இன் இணக்கமான இறுதிப்புள்ளியை அழைக்கும் குறைந்தபட்ச ரவுடர் + கருவி பதிவேட்டை செயல்படுத்துகிறது.

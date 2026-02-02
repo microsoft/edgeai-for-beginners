@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-  "translation_date": "2025-12-15T21:04:30+00:00",
-  "source_file": "Workshop/Session05-AIPoweredAgents.md",
-  "language_code": "te"
-}
--->
 # సెషన్ 5: Foundry Local తో AI-పవర్డ్ ఏజెంట్లను వేగంగా నిర్మించండి
 
 ## సారాంశం

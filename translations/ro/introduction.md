@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-09-26T10:43:54+00:00",
-  "source_file": "introduction.md",
-  "language_code": "ro"
-}
--->
 # Introducere în Edge AI pentru Începători
 
 ![Introducere Edge AI](../../translated_images/ro/cover.eb18d1b9605d754b.webp)

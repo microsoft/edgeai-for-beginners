@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T13:40:52+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "hi"
-}
--->
 # सत्र 5 नमूना: मल्टी-एजेंट ऑर्केस्ट्रेशन
 
 यह नमूना Foundry Local के OpenAI-संगत एंडपॉइंट का उपयोग करके एक समन्वयक + विशेषज्ञ पैटर्न को प्रदर्शित करता है।

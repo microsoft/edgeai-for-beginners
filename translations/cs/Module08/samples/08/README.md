@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-25T02:48:40+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "cs"
-}
--->
 # Windows 11 Chat Ukázka - Foundry Local
 
 Moderní chatovací aplikace pro Windows 11, která integruje Microsoft Foundry Local s krásným nativním rozhraním. Postaveno pomocí Electronu a podle oficiálních vzorů Foundry Local od Microsoftu.

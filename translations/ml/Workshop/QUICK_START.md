@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "eee296ca63673b7520d15942f6a01826",
-  "translation_date": "2025-12-15T20:33:52+00:00",
-  "source_file": "Workshop/QUICK_START.md",
-  "language_code": "ml"
-}
--->
 # വർക്‌ഷോപ്പ് ക്വിക്ക് സ്റ്റാർട്ട് ഗൈഡ്
 
 ## മുൻ‌വശം ആവശ്യങ്ങൾ

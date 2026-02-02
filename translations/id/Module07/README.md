@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T13:41:56+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "id"
-}
--->
 # Bab 07: Contoh EdgeAI
 
 Edge AI adalah perpaduan antara kecerdasan buatan dan komputasi edge, memungkinkan pemrosesan cerdas langsung pada perangkat tanpa bergantung pada konektivitas cloud. Bab ini membahas lima implementasi EdgeAI yang berbeda di berbagai platform dan kerangka kerja, menunjukkan fleksibilitas dan kekuatan menjalankan model AI di edge.

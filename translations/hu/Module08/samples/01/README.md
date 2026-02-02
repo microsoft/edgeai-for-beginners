@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-25T01:14:16+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "hu"
-}
--->
 # Minta 01: Gyors csevegés az OpenAI SDK-val
 
 Egy egyszerű csevegési példa, amely bemutatja, hogyan használható az OpenAI SDK a Microsoft Foundry Local-lal helyi AI következtetéshez.

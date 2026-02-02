@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-25T02:23:30+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "my"
-}
--->
 # Sample 01: OpenAI SDK ကို အသုံးပြု၍ အမြန်စကားပြော
 
 Microsoft Foundry Local ကို အသုံးပြု၍ ဒေသခံ AI အတိအကျကို OpenAI SDK ဖြင့် အသုံးပြုနည်းကို ပြသထားသော ရိုးရှင်းသော စကားပြောနမူနာ။

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
-  "translation_date": "2026-01-05T14:11:41+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
-  "language_code": "te"
-}
--->
 # పోడ్కాస్ట్ అప్లికేషన్
 
 AI ఏజెంట్లు ఉపయోగించి పోడ్కాస్ట్ స్క్రిప్ట్‌లను తయారు చేసే ఒక కన్సోల్ అప్లికేషన్.

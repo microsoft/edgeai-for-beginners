@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-25T01:38:23+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "ro"
-}
--->
 # Exemplu 01: Chat Rapid prin OpenAI SDK
 
 Un exemplu simplu de chat care demonstrează cum să folosești OpenAI SDK împreună cu Microsoft Foundry Local pentru inferență AI locală.

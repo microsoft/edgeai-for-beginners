@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-12-16T00:42:21+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "te"
-}
--->
 # సెషన్ 3 నమూనా: మోడల్ డిస్కవరీ మరియు క్విక్ బెంచ్
 
 మోడల్స్‌ను జాబితా చేయడానికి మరియు విస్తృత లాగ్‌లతో ఒకదాన్ని ప్రారంభించడానికి ఒక కనిష్ట సహాయకుడు.

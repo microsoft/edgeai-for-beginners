@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-  "translation_date": "2025-10-09T16:34:40+00:00",
-  "source_file": "STUDY_GUIDE.md",
-  "language_code": "vi"
-}
--->
 # EdgeAI cho Người Mới Bắt Đầu: Lộ Trình Học và Lịch Trình Học Tập
 
 ### Lộ Trình Học Tập Tập Trung (1 tuần)

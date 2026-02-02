@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-17T12:30:29+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "de"
-}
--->
 ## Sicherheit
 
 Microsoft nimmt die Sicherheit seiner Softwareprodukte und -dienstleistungen ernst, einschließlich aller Quellcode-Repositories in unseren GitHub-Organisationen.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
-  "translation_date": "2025-10-28T23:38:28+00:00",
-  "source_file": "Workshop/Session06-ModelsAsTools.md",
-  "language_code": "my"
-}
--->
 # အစည်းအဝေး ၆: Foundry Local – မော်ဒယ်များကို ကိရိယာများအဖြစ် အသုံးပြုခြင်း
 
 ## အကျဉ်းချုပ်

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-12-16T00:42:33+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "ml"
-}
--->
 # സെഷൻ 3 സാമ്പിൾ: മോഡൽ കണ്ടെത്തൽ மற்றும் ക്വിക്ക് ബെഞ്ച്
 
 മോഡലുകൾ പട്ടികപ്പെടുത്താനും വിശദമായ ലോഗുകളോടെ ഒരു മോഡൽ ആരംഭിക്കാനും ഒരു ലഘു സഹായി.

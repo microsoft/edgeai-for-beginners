@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T02:59:58+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "bg"
-}
--->
 # Система за оркестрация на множество агенти - Foundry Local
 
 Напреднала система за множество агенти, захранвана от Microsoft Foundry Local, която демонстрира координация между интелигентни агенти, специализирано разпределение на задачи и модели за съвместно решаване на проблеми.

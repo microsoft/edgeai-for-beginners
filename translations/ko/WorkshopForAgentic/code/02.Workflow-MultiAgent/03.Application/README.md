@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d17537bea40917b825c06fd0bba5baf",
-  "translation_date": "2026-01-05T14:02:31+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/README.md",
-  "language_code": "ko"
-}
--->
 # 팟캐스트 애플리케이션
 
 AI 에이전트를 사용하여 팟캐스트 스크립트를 생성하는 콘솔 애플리케이션입니다.

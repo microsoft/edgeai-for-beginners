@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-11-11T18:00:11+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "pcm"
-}
--->
 # Windows 11 Chat Sample - Foundry Local
 
 Na modern chat app wey dem build for Windows 11 wey dey use Microsoft Foundry Local with fine native interface. Dem build am with Electron and e dey follow Microsoft official Foundry Local pattern.

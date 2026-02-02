@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
-  "translation_date": "2025-11-11T23:38:02+00:00",
-  "source_file": "Workshop/Session03-OpenSourceModels.md",
-  "language_code": "he"
-}
--->
 # מפגש 3: מודלים בקוד פתוח ב-Foundry Local
 
 ## תקציר

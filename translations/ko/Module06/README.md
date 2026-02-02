@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-07-22T04:27:22+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "ko"
-}
--->
 # Chapter 06 : SLM 에이전트 시스템: 종합 개요
 
 인공지능의 세계는 단순한 챗봇에서 소형 언어 모델(SLM)로 구동되는 정교한 AI 에이전트로의 근본적인 변화를 경험하고 있습니다. 이 종합 가이드는 현대 SLM 에이전트 시스템의 세 가지 핵심 측면을 탐구합니다: 기본 개념과 배포 전략, 함수 호출 기능, 그리고 혁신적인 모델 컨텍스트 프로토콜(MCP) 통합.

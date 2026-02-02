@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:58:50+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "ml"
-}
--->
 Speaker 1: 本പോഡ്‌കാസ്റ്റിലേക്ക് സ്വാഗതം! ഞാൻ അവതാരകയായി Lucy ആണ്, ഇന്ന്我们有幸邀请到AI领域专家Ken，一起聊聊最近备受关注的Ollama。Ken, ഞങ്ങൾക്കായി ഒപ്പം 简单介绍一下Ollama是什么吗？  
 Speaker 2: തീർച്ചയായും! Ollama 是一个能让用户在本地机器上运行和管理大型语言模型（LLM）的工具。它不需要依赖云服务，强调隐私、控制和定制化。对于开发者和企业来说，它提供了一种灵活且隐私友好的替代方案，比如ChatGPT之类的云服务。  
 Speaker 1: 听起来很吸引人。那Ollama的核心优势是什么呢？  

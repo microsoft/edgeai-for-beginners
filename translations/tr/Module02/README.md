@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-17T22:19:37+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "tr"
-}
--->
 # Bölüm 02: Küçük Dil Modeli Temelleri
 
 Bu kapsamlı temel bölüm, Küçük Dil Modelleri (SLM) üzerine teorik prensipler, pratik uygulama stratejileri ve üretime hazır dağıtım çözümlerini içeren önemli bir keşif sunar. Bölüm, modern verimli yapay zeka mimarilerini ve bunların çeşitli hesaplama ortamlarında stratejik dağıtımını anlamak için kritik bilgi tabanını oluşturur.

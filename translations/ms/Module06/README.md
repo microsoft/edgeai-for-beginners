@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T14:17:47+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "ms"
-}
--->
 # Bab 06: Sistem Agen SLM: Gambaran Menyeluruh
 
 Landskap kecerdasan buatan sedang mengalami transformasi asas apabila kita beralih daripada chatbot sederhana kepada agen AI canggih yang dikuasakan oleh Small Language Models (SLMs). Panduan menyeluruh ini meneroka tiga aspek kritikal sistem agen SLM moden: konsep asas dan strategi pelaksanaan, keupayaan pemanggilan fungsi, dan integrasi revolusioner Model Context Protocol (MCP).

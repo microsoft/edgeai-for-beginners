@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-09-25T00:02:49+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "he"
-}
--->
 # דוגמה 02: אינטגרציה עם OpenAI SDK
 
 מדגים אינטגרציה מתקדמת עם OpenAI Python SDK, תומך גם ב-Microsoft Foundry Local וגם ב-Azure OpenAI עם תגובות סטרימינג וטיפול נכון בשגיאות.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b64f4a8cbb9b8d57863b1101b111b05d",
-  "translation_date": "2025-12-16T01:06:14+00:00",
-  "source_file": "Module08/samples/04/open-webui-guide.md",
-  "language_code": "te"
-}
--->
 # Open WebUI + Foundry Local ఇంటిగ్రేషన్ గైడ్
 
 ఈ గైడ్ Open WebUIని Microsoft Foundry Localకి ఎలా కనెక్ట్ చేయాలో చూపిస్తుంది, మీ స్థానిక AI మోడల్స్ ద్వారా శక్తివంతమైన ప్రొఫెషనల్ ChatGPT-లాగా ఇంటర్‌ఫేస్ కోసం.

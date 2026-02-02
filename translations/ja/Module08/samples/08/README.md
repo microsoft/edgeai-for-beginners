@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T10:46:34+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "ja"
-}
--->
 # Windows 11 Chat Sample - Foundry Local
 
 Windows 11向けのモダンなチャットアプリケーションで、美しいネイティブインターフェイスとMicrosoft Foundry Localを統合しています。Electronを使用し、Microsoftの公式Foundry Localパターンに従って構築されています。

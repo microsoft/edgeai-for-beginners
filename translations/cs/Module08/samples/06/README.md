@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T01:20:03+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "cs"
-}
--->
 # Ukázka ze 6. lekce: Modely jako nástroje
 
 Tato ukázka implementuje minimální router + registr nástrojů, který vybírá model na základě uživatelského dotazu a volá OpenAI-kompatibilní endpoint Foundry Local.

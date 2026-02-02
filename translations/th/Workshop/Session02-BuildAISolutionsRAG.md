@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bb6014013b4adb7d7bfc60504eafed5d",
-  "translation_date": "2025-11-17T18:57:40+00:00",
-  "source_file": "Workshop/Session02-BuildAISolutionsRAG.md",
-  "language_code": "th"
-}
--->
 # เซสชัน 2: สร้างโซลูชัน AI ด้วย Azure AI Foundry
 
 ## บทคัดย่อ

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T21:40:23+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "pa"
-}
--->
 # Windows 11 ਚੈਟ ਸੈਂਪਲ - Foundry Local
 
 Windows 11 ਲਈ ਇੱਕ ਆਧੁਨਿਕ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ ਜੋ Microsoft Foundry Local ਨੂੰ ਸੁੰਦਰ ਨੈਟਿਵ ਇੰਟਰਫੇਸ ਨਾਲ ਜੋੜਦਾ ਹੈ। ਇਹ Electron ਨਾਲ ਬਣਾਇਆ ਗਿਆ ਹੈ ਅਤੇ Microsoft ਦੇ ਅਧਿਕਾਰਕ Foundry Local ਪੈਟਰਨਾਂ ਦੀ ਪਾਲਣਾ ਕਰਦਾ ਹੈ।

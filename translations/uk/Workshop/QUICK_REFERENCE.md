@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-12T00:49:51+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "uk"
-}
--->
 # Зразки для воркшопу - Швидка довідкова картка
 
 **Останнє оновлення**: 8 жовтня 2025 року

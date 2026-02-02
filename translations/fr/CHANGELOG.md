@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T10:28:51+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "fr"
-}
--->
 # Journal des modifications
 
 Tous les changements notables apportés à EdgeAI pour les débutants sont documentés ici. Ce projet utilise des entrées basées sur les dates et le style Keep a Changelog (Ajouté, Modifié, Corrigé, Supprimé, Documentation, Déplacé).

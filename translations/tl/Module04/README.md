@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T13:52:23+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "tl"
-}
--->
 # Kabanata 04: Pag-convert ng Format ng Modelo at Quantization - Pangkalahatang-ideya ng Kabanata
 
 Ang pag-usbong ng EdgeAI ay nagdala ng kahalagahan sa teknolohiya ng pag-convert ng format ng modelo at quantization para ma-deploy ang mga advanced na kakayahan ng machine learning sa mga device na may limitadong resources. Ang detalyadong kabanatang ito ay nagbibigay ng kumpletong gabay sa pag-unawa, pagpapatupad, at pag-optimize ng mga modelo para sa mga senaryo ng edge deployment.

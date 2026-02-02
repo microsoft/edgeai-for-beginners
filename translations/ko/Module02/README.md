@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-07-22T03:28:22+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "ko"
-}
--->
 # 2장: 소형 언어 모델(SLM) 기초
 
 이 포괄적인 기초 장에서는 소형 언어 모델(SLM)에 대한 이론적 원칙, 실용적인 구현 전략, 그리고 실전 배포 솔루션을 다룹니다. 이 장은 현대의 효율적인 AI 아키텍처를 이해하고 다양한 컴퓨팅 환경에서 전략적으로 배포하는 데 필요한 핵심 지식 기반을 제공합니다.

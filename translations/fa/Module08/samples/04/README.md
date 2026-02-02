@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-09-30T23:12:07+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "fa"
-}
--->
 # نمونه ۰۴: برنامه‌های چت تولیدی با Chainlit
 
 یک نمونه جامع که روش‌های مختلفی برای ساخت برنامه‌های چت آماده تولید با استفاده از Microsoft Foundry Local را نشان می‌دهد، شامل رابط‌های وب مدرن، پاسخ‌های استریم و فناوری‌های پیشرفته مرورگر.

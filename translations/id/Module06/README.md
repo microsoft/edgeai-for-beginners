@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T14:17:24+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "id"
-}
--->
 # Bab 06: Sistem Agenik SLM: Tinjauan Komprehensif
 
 Lanskap kecerdasan buatan sedang mengalami transformasi mendasar saat kita beralih dari chatbot sederhana ke agen AI canggih yang didukung oleh Small Language Models (SLMs). Panduan komprehensif ini mengeksplorasi tiga aspek penting dari sistem agenik SLM modern: konsep dasar dan strategi penerapan, kemampuan pemanggilan fungsi, dan integrasi revolusioner Model Context Protocol (MCP).

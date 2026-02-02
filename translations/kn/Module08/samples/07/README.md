@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "254150b7d7854ec87ffcd88824d98079",
-  "translation_date": "2025-12-16T01:05:16+00:00",
-  "source_file": "Module08/samples/07/README.md",
-  "language_code": "kn"
-}
--->
 # ಫೌಂಡ್ರಿ ಲೋಕಲ್ ಅನ್ನು API ಮಾದರಿಯಾಗಿ ಬಳಸುವುದು
 
 ಈ ಮಾದರಿ Microsoft ಫೌಂಡ್ರಿ ಲೋಕಲ್ ಅನ್ನು OpenAI SDK ಮೇಲೆ ಅವಲಂಬಿಸದೆ REST API ಸೇವೆಯಾಗಿ ಹೇಗೆ ಬಳಸುವುದು ಎಂಬುದನ್ನು ತೋರಿಸುತ್ತದೆ. ಇದು ಗರಿಷ್ಠ ನಿಯಂತ್ರಣ ಮತ್ತು ಕಸ್ಟಮೈಜೇಶನ್‌ಗಾಗಿ ನೇರ HTTP ಸಂಯೋಜನೆ ಮಾದರಿಗಳನ್ನು ತೋರಿಸುತ್ತದೆ.

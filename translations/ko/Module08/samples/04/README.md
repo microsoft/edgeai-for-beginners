@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-09-30T23:38:29+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "ko"
-}
--->
 # 샘플 04: Chainlit을 활용한 프로덕션 채팅 애플리케이션
 
 Microsoft Foundry Local을 사용하여 프로덕션 준비가 완료된 채팅 애플리케이션을 구축하는 다양한 접근 방식을 보여주는 포괄적인 샘플입니다. 현대적인 웹 인터페이스, 스트리밍 응답, 최첨단 브라우저 기술을 포함합니다.

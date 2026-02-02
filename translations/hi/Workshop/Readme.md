@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-11T22:17:08+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "hi"
-}
--->
 # शुरुआती लोगों के लिए EdgeAI - कार्यशाला
 
 > **स्थानीय हार्डवेयर पर उत्पादन-तैयार Edge AI एप्लिकेशन बनाने के लिए व्यावहारिक मार्गदर्शन**

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-11-11T17:27:35+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "pcm"
-}
--->
 # Chapter 06 : SLM Agentic Systems: A Comprehensive Overview
 
 Di way wey artificial intelligence dey change don big well-well as we dey move from simple chatbot go advanced AI agents wey Small Language Models (SLMs) dey power. Dis guide go show three important things about modern SLM agentic systems: di basic idea and how dem dey deploy am, di way dem dey call function, and di Model Context Protocol (MCP) wey dey change di game.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-19T01:23:31+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "sl"
-}
--->
 # Poglavje 03: Uvajanje malih jezikovnih modelov (SLM)
 
 To poglobljeno poglavje raziskuje celoten življenjski cikel uvajanja malih jezikovnih modelov (SLM), vključno s teoretičnimi osnovami, praktičnimi strategijami implementacije in rešitvami za produkcijsko uporabo v obliki kontejnerjev. Poglavje je strukturirano v tri progresivne dele, ki bralce vodijo od osnovnih konceptov do naprednih scenarijev uvajanja.

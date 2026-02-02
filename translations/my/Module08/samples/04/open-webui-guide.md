@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b64f4a8cbb9b8d57863b1101b111b05d",
-  "translation_date": "2025-09-25T03:06:09+00:00",
-  "source_file": "Module08/samples/04/open-webui-guide.md",
-  "language_code": "my"
-}
--->
 # Open WebUI + Foundry Local အတူတကွ ပေါင်းစပ်အသုံးပြုရန် လမ်းညွှန်
 
 ဤလမ်းညွှန်သည် Open WebUI ကို Microsoft Foundry Local နှင့် ချိတ်ဆက်ပြီး သင့်ဒေသခံ AI မော်ဒယ်များအား အားထားနိုင်သော ChatGPT ပုံစံမျိုးဖြင့် အသုံးပြုရန် လမ်းညွှန်ပေးသည်။

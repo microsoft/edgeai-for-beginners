@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ac31463ae3ed21a0ce83b0a351c23dd4",
-  "translation_date": "2026-01-05T09:32:37+00:00",
-  "source_file": "README.md",
-  "language_code": "no"
-}
--->
 # EdgeAI for nybegynnere 
 
 
@@ -26,21 +17,21 @@ CO_OP_TRANSLATOR_METADATA:
 
 Følg disse trinnene for å komme i gang med disse ressursene:
 
-1. **Fork depotet**: Klikk [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Klon depotet**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+1. **Fork Repositoryet**: Klikk [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Klon Repositoryet**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
 3. [**Bli med i Azure AI Foundry Discord og møt eksperter og medutviklere**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Støtte for flere språk
+### 🌐 Flerspråklig støtte
 
 #### Støttet via GitHub Action (Automatisert og alltid oppdatert)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](./README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](./README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
 > **Foretrekker du å klone lokalt?**
 
-> Dette depotet inkluderer 50+ språkoversettelser som øker nedlastingsstørrelsen betydelig. For å klone uten oversettelser, bruk sparsjeklone:
+> Dette repositoryet inkluderer 50+ språkoversettelser som betydelig øker nedlastingsstørrelsen. For å klone uten oversettelser, bruk sparse checkout:
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
 > cd edgeai-for-beginners
@@ -49,182 +40,182 @@ Følg disse trinnene for å komme i gang med disse ressursene:
 > Dette gir deg alt du trenger for å fullføre kurset med mye raskere nedlasting.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Hvis du ønsker å støtte flere oversettelsesspråk, er de oppført [her](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Hvis du ønsker flere støttede oversettelsesspråk, er disse listet [her](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Introduksjon
 
-Velkommen til **EdgeAI for nybegynnere** – din omfattende reise inn i den transformative verdenen av Edge kunstig intelligens. Dette kurset bygger bro mellom kraftige AI-muligheter og praktisk, reell implementering på edge-enheter, og gir deg muligheten til å utnytte AI direkte der data genereres og beslutninger må tas.
+Velkommen til **EdgeAI for nybegynnere** – din omfattende reise inn i den transformerende verden av Edge Kunstig intelligens. Dette kurset bygger bro mellom kraftfulle AI-muligheter og praktisk, reell distribusjon på edge-enheter, og gir deg muligheten til å utnytte AI sitt potensial direkte der data genereres og avgjørelser må tas.
 
 ### Hva du vil mestre
 
-Dette kurset tar deg fra grunnleggende konsepter til produksjonsklare implementeringer, inkludert:
-- **Små språkmodeller (SLM)** optimalisert for edge-utrulling
+Dette kurset tar deg fra grunnleggende konsepter til produksjonsklare implementeringer, og dekker:
+- **Små språkmodeller (SLMs)** optimalisert for edge-distribusjon
 - **Maskinvarebevisst optimalisering** på tvers av ulike plattformer
-- **Sanntidsinferenz** med personvernbevarende funksjoner
-- **Strategier for produksjonsutrulling** i bedriftsapplikasjoner
+- **Sanntidsinferenz** med personvernbeskyttelse
+- **Strategier for produksjonsdistribusjon** for bedriftsapplikasjoner
 
 ### Hvorfor EdgeAI er viktig
 
-Edge AI representerer et paradigmeskifte som tar tak i kritiske moderne utfordringer:
-- **Personvern og sikkerhet**: Behandle sensitiv data lokalt uten skyeksponering
-- **Sanntidsytelse**: Fjern nettverksforsinkelse for tidssensitive applikasjoner
-- **Kostnadseffektivitet**: Reduser båndbredde og skybaserte utgifter
-- **Robuste operasjoner**: Oppretthold funksjonalitet under nettverksavbrudd
-- **Overholdelse av lover**: Oppfyll krav til datasuverenitet
+Edge AI representerer et paradigmeskift som adresserer kritiske moderne utfordringer:
+- **Personvern og sikkerhet**: Behandle sensitiv data lokalt uten sky-eksponering
+- **Sanntidsytelse**: Eliminere nettverksforsinkelse for tidskritiske applikasjoner
+- **Kostnadseffektivitet**: Redusere båndbredde og skylagringsutgifter
+- **Robust drift**: Opprettholde funksjonalitet under nettverksbrudd
+- **Regulatorisk etterlevelse**: Oppfylle krav til datasuverenitet
 
 ### Edge AI
 
-Edge AI refererer til kjøring av AI-algoritmer og språkmodeller lokalt på maskinvare, nær der data genereres, uten å stole på skyressurser for inferens. Det reduserer forsinkelse, forbedrer personvern og muliggjør sanntidsbeslutninger.
+Edge AI refererer til å kjøre AI-algoritmer og språkmodeller lokalt på maskinvare, nær der data genereres uten å stole på skyressurser for inferens. Det reduserer ventetid, forbedrer personvern og muliggjør sanntidsbeslutninger.
 
 ### Kjerneprinsipper:
 - **Inferens på enheten**: AI-modeller kjører på edge-enheter (telefoner, rutere, mikrokontrollere, industrielle PCer)
-- **Offline-funksjonalitet**: Fungerer uten kontinuerlig internettforbindelse
-- **Lav forsinkelse**: Umiddelbare responser egnet for sanntidssystemer
-- **Datasuverenitet**: Holder sensitiv data lokalt, forbedrer sikkerhet og etterlevelse
+- **Offline kapasitet**: Fungerer uten vedvarende internett-tilkobling
+- **Lav ventetid**: Umiddelbare responser egnet for sanntidssystemer
+- **Datasuverenitet**: Holder sensitiv informasjon lokalt, noe som forbedrer sikkerhet og etterlevelse
 
-### Små språkmodeller (SLM)
+### Små språkmodeller (SLMs)
 
-SLM-er som Phi-4, Mistral-7B og Gemma er optimaliserte versjoner av større LLM-er—trent eller destillert for:
-- **Redusert minneavtrykk**: Effektiv bruk av begrenset minne på edge-enheter
-- **Lavere beregningsbehov**: Optimalisert for CPU og edge GPU-ytelse
-- **Raske oppstartstider**: Rask initialisering for responsive applikasjoner
+SLMer som Phi-4, Mistral-7B og Gemma er optimaliserte versjoner av større LLM-er—trent eller destillert for:
+- **Redusert minnebruk**: Effektiv utnyttelse av begrenset minne på edge-enheter
+- **Lavere beregningsbehov**: Optimalisert for CPU- og edge-GPU-ytelse
+- **Raskere oppstartstider**: Rask initialisering for responsive applikasjoner
 
-De låser opp kraftige NLP-muligheter samtidig som de møter kravene til:
-- **Innebygde systemer**: IoT-enheter og industrielle kontrollere
-- **Mobilenheter**: Smarttelefoner og nettbrett med offline-funksjonalitet
+De åpner for kraftige NLP-muligheter samtidig som de oppfyller krav til:
+- **Innbygde systemer**: IoT-enheter og industrielle kontrollere
+- **Mobilt utstyr**: Smarttelefoner og nettbrett med offline funksjonalitet
 - **IoT-enheter**: Sensorer og smarte enheter med begrensede ressurser
-- **Edge-servere**: Lokale behandlingsenheter med begrensede GPU-ressurser
-- **Personlige datamaskiner**: Scenarier for desktop- og laptop-utrulling
+- **Edge-servere**: Lokale prosesseringsenheter med begrensede GPU-ressurser
+- **Personlige datamaskiner**: Desktop- og laptop-distribusjonsscenarier
 
 ## Kursmoduler og navigasjon
 
-| Modul | Emne | Fokusområde | Nøkkelinnhold | Nivå | Varighet |
+| Modul | Emne | Fokusområde | Viktig innhold | Nivå | Varighet |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Introduksjon til EdgeAI](./introduction.md) | Grunnlag og kontekst | EdgeAI oversikt • Bransjeapplikasjoner • SLM introduksjon • Læringsmål | Nybegynner | 1-2 t |
-| [📚 01](../../Module01) | [EdgeAI Grunnprinsipper](./Module01/README.md) | Sammenligning sky vs edge AI | EdgeAI grunnprinsipper • Virkelige casestudier • Implementeringsveiledning • Edge-utrulling | Nybegynner | 3-4 t |
-| [🧠 02](../../Module02) | [SLM Modellgrunnlag](./Module02/README.md) | Modellfamilier og arkitektur | Phi-familien • Qwen-familien • Gemma-familien • BitNET • μModel • Phi-Silica | Nybegynner | 4-5 t |
-| [🚀 03](../../Module03) | [SLM Distribusjonspraksis](./Module03/README.md) | Lokal og sky-distribusjon | Avansert læring • Lokalt miljø • Sky-distribusjon | Middels | 4-5 t |
-| [⚙️ 04](../../Module04) | [Verktøykasse for modelloptimalisering](./Module04/README.md) | Plattformovergripende optimalisering | Introduksjon • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Arbeidsflytsyntese | Middels | 5-6 t |
-| [🔧 05](../../Module05) | [SLMOps Produksjon](./Module05/README.md) | Produksjonsoperasjoner | SLMOps introduksjon • Modell-destillering • Finjustering • Produksjonsutrulling | Avansert | 5-6 t |
-| [🤖 06](../../Module06) | [AI-agenter og funksjonskall](./Module06/README.md) | Agent-rammeverk og MCP | Agentintroduksjon • Funksjonskall • Modell-kontekstprotokoll | Avansert | 4-5 t |
-| [💻 07](../../Module07) | [Plattformimplementering](./Module07/README.md) | Platformovergripende eksempler | AI-verktøykasse • Foundry Local • Windows-utvikling | Avansert | 3-4 t |
-| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Produksjonsklare eksempler | Eksempelsøknader (se detaljer under) | Ekspert | 8-10 t |
+| [📖 00 ](./introduction.md) | [Introduksjon til EdgeAI](./introduction.md) | Grunnlag og kontekst | Oversikt over EdgeAI • Bransjeapplikasjoner • SLM-introduksjon • Læringsmål | Nybegynner | 1-2 t |
+| [📚 01](../../Module01) | [EdgeAI Grunnleggende](./Module01/README.md) | Sky vs Edge AI sammenligning | Grunnleggende EdgeAI • Virkelige casestudier • Implementeringsguide • Edge-distribusjon | Nybegynner | 3-4 t |
+| [🧠 02](../../Module02) | [SLM modellgrunnlag](./Module02/README.md) | Modellfamilier og arkitektur | Phi Family • Qwen Family • Gemma Family • BitNET • μModel • Phi-Silica | Nybegynner | 4-5 t |
+| [🚀 03](../../Module03) | [SLM distribusjonspraksis](./Module03/README.md) | Lokal og sky-distribusjon | Avansert læring • Lokalt miljø • Sky-distribusjon | Mellomnivå | 4-5 t |
+| [⚙️ 04](../../Module04) | [Modelloptimaliseringsverktøy](./Module04/README.md) | Tverrplattform optimalisering | Introduksjon • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Arbeidsflytssyntese | Mellomnivå | 5-6 t |
+| [🔧 05](../../Module05) | [SLMOps Produksjon](./Module05/README.md) | Driftsoperasjoner | SLMOps introduksjon • Modell destillering • Finjustering • Produksjonsdistribusjon | Avansert | 5-6 t |
+| [🤖 06](../../Module06) | [AI-agenter & Funksjonskalling](./Module06/README.md) | Agent-rammeverk og MCP | Agent introduksjon • Funksjonskalling • Modellkontekstprotokoll | Avansert | 4-5 t |
+| [💻 07](../../Module07) | [Plattformimplementering](./Module07/README.md) | Tverrplattformeksempler | AI-verktøykasse • Foundry Local • Windows-utvikling | Avansert | 3-4 t |
+| [🏭 08](../../Module08) | [Foundry Local verktøykasse](./Module08/README.md) | Produksjonsklare eksempler | Eksempelsapplikasjoner (se detaljer nedenfor) | Ekspert | 8-10 t |
 
-### 🏭 **Modul 08: Eksempelapplikasjoner**
+### 🏭 **Modul 08: Eksempelsapplikasjoner**
 
-- [01: REST Chat Quickstart](./Module08/samples/01/README.md)
-- [02: OpenAI SDK Integrasjon](./Module08/samples/02/README.md)
+- [01: REST Chat Hurtigstart](./Module08/samples/01/README.md)
+- [02: OpenAI SDK-integrasjon](./Module08/samples/02/README.md)
 - [03: Modelloppdagelse og benchmarking](./Module08/samples/03/README.md)
 - [04: Chainlit RAG-applikasjon](./Module08/samples/04/README.md)
 - [05: Multi-agent orkestrering](./Module08/samples/05/README.md)
-- [06: Modeller-som-verktøy-ruter](./Module08/samples/06/README.md)
+- [06: Models-as-Tools Router](./Module08/samples/06/README.md)
 - [07: Direkte API-klient](./Module08/samples/07/README.md)
 - [08: Windows 11 Chat-app](./Module08/samples/08/README.md)
 - [09: Avansert multi-agent system](./Module08/samples/09/README.md)
-- [10: Foundry Tools Framework](./Module08/samples/10/README.md)
+- [10: Foundry verktøy-rammeverk](./Module08/samples/10/README.md)
 
 ### 🎓 **Workshop: Praktisk læringssti**
 
 Omfattende praktisk workshop-materiale med produksjonsklare implementeringer:
 
-- **[Workshop-veiledning](./Workshop/Readme.md)** - Fullstendige læringsmål, utfall og ressursnavigering
-- **Python-eksempler** (6 økter) - Oppdatert med beste praksis, feilhåndtering og grundig dokumentasjon
-- **Jupyter notebooks** (8 interaktive) - Trinnvise veiledninger med benchmark og ytelsesovervåking
-- **Øktveiledninger** - Detaljerte markdown-guider for hver workshopp
-- **Valideringsverktøy** - Skript for å verifisere kodekvalitet og kjøre enkle tester
+- **[Workshop Guide](./Workshop/Readme.md)** - Fullstendige læringsmål, resultater og ressursnavigasjon
+- **Python-eksempler** (6 økter) - Oppdatert med beste praksis, feilhåndtering og omfattende dokumentasjon
+- **Jupyter Notebooks** (8 interaktive) - Trinnvise veiledninger med benchmarking og ytelsesovervåking
+- **Øktguider** - Detaljerte markdown-guider for hver workshop-økt
+- **Valideringsverktøy** - Skript for å verifisere kodekvalitet og kjøre røyktester
 
-**Det du vil bygge:**
-- Lokale AI-chatapplikasjoner med støttet strømming
-- RAG-pipelines med kvalitetsvurdering (RAGAS)
-- Multi-modell benchmarking og sammenligningsverktøy
+**Hva du vil bygge:**
+- Lokale AI-chat-applikasjoner med streamingstøtte
+- RAG-rørledninger med kvalitetsvurdering (RAGAS)
+- Multi-modell benchmark- og sammenligningsverktøy
 - Multi-agent orkestreringssystemer
-- Intelligent modellruting med oppgavebasert utvalg
+- Intelligent modellruting med oppgavebasert valg
 
-### 🎙️ **Workshop For Agentic: Hands-On - AI Podcast Studio**
+### 🎙️ **Workshop For Agentic: Praktisk - The AI Podcast Studio**
 
-Bygg en AI-drevet podkastproduksjonspipeline fra bunnen av! Denne immersive workshopen lærer deg å lage et komplett multi-agent system som forvandler ideer til profesjonelle podkastepisoder.
+Bygg en AI-drevet produksjonsrørledning for podcaster fra bunnen av! Denne engasjerende workshoppen lærer deg å lage et komplett multi-agent system som forvandler ideer til profesjonelle podcastepisoder.
 **[🎬 Start AI Podcast Studio Workshop](./WorkshopForAgentic/README.md)**
 
-**Din oppgave**: Lanser "Future Bytes" — en teknologipodcast drevet helt av AI-agenter du bygger selv. Ingen skyavhengigheter, ingen API-kostnader — alt kjører lokalt på din maskin.
+**Din Oppgave**: Lanser "Future Bytes" — en teknologipodcast drevet helt av AI-agenter du bygger selv. Ingen skyløsninger, ingen API-kostnader — alt kjører lokalt på din maskin.
 
-**Hva som gjør dette unikt:**
-- **🤖 Ekte multi-agent orkestrering** - Bygg spesialiserte AI-agenter som forsker, skriver og produserer lyd
-- **🎯 Komplett produksjonspipeline** - Fra valg av tema til endelig podcast-lydoutput
-- **💻 100 % lokal distribusjon** - Bruker Ollama og lokale modeller (Qwen-3-8B) for full personvern og kontroll
-- **🎤 Tekst-til-tale-integrasjon** - Konverter manuser til naturlig lydende samtaler med flere talere
-- **✋ Menneskelig i sløyfen-arbeidsflyter** - Godkjenningsporter sikrer kvalitet samtidig som automatisering opprettholdes
+**Hva Gjør Dette Unikt:**
+- **🤖 Ekte Multi-Agent Orkestrering** - Bygg spesialiserte AI-agenter som forsker, skriver og produserer lyd
+- **🎯 Fullstendig Produksjonspipeline** - Fra valg av tema til endelig podkastlyd
+- **💻 100 % Lokal Distribusjon** - Bruker Ollama og lokale modeller (Qwen-3-8B) for full personvern og kontroll
+- **🎤 Tekst-til-Tale Integrasjon** - Omform manus til naturlig lydende flerforeleser-samtaler
+- **✋ Menneske-i-Loop Arbeidsflyter** - Godkjenningsporter sikrer kvalitet samtidig som automatisering opprettholdes
 
-**Tre-akt læringsreise:**
+**Tre-Akts Læringsreise:**
 
 | Akt | Fokus | Nøkkelferdigheter | Varighet |
-|-----|-------|------------|----------|
-| **[Akt 1: Møt dine AI-assistenter](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Bygg din første AI-agent | Verktøy-integrasjon • Netsøk • Problemløsning • Agentisk resonnering | 2-3 t |
-| **[Akt 2: Sett sammen produksjonsteamet](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Orkestrer flere agenter | Teamkoordinering • Godkjenningsarbeidsflyter • DevUI-grensesnitt • Menneskelig tilsyn | 3-4 t |
-| **[Akt 3: Gi liv til podcasten din](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Generer podcast-lyd | Tekst-til-tale • Flere talere-syntese • Langformet lyd • Full automatisering | 2-3 t |
+|-----|-------|-------------------|----------|
+| **[Akt 1: Møt Dine AI-assistenter](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Bygg din første AI-agent | Verktøyintegrasjon • Nett-søk • Problemløsing • Agentisk resonnering | 2-3 t |
+| **[Akt 2: Sett Sammen Produksjonsteamet](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Orkestrer flere agenter | Teamkoordinasjon • Godkjenningsflyter • DevUI-grensesnitt • Menneskelig overvåkning | 3-4 t |
+| **[Akt 3: Gi Liv Til Podkasten Din](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Generer podkastlyd | Tekst-til-tale • Flerspiller-syntese • Langformet lyd • Full automatisering | 2-3 t |
 
-**Teknologier i bruk:**
-- **Microsoft Agent Framework** - Multi-agent orkestrering og koordinering
+**Teknologier Som Brukes:**
+- **Microsoft Agent Framework** - Orkestrering og koordinering av multi-agenter
 - **Ollama** - Lokal AI-modell runtime (ingen sky nødvendig)
-- **Qwen-3-8B** - Open-source språkmodell optimalisert for agentiske oppgaver
-- **Tekst-til-tale-APIer** - Naturlig stemmesyntese for podkastgenerering
+- **Qwen-3-8B** - Åpen kildekode språkmodell optimalisert for agentiske oppgaver
+- **Tekst-til-Tale APIer** - Naturlig stemmesyntese for podkastgenerering
 
 **Maskinvarestøtte:**
-- ✅ **CPU-modus** - Fungerer på enhver moderne datamaskin (8 GB+ RAM anbefalt)
+- ✅ **CPU-modus** - Fungerer på hvilken som helst moderne datamaskin (8GB+ RAM anbefalt)
 - 🚀 **GPU-akselerasjon** - Betydelig raskere inferens med NVIDIA/AMD GPUer
-- ⚡ **NPU-støtte** - Neste generasjons neural prosesseringsenhet-akselerasjon
+- ⚡ **NPU-støtte** - Neste generasjons akselerasjon med nevral prosesseringsenhet
 
-**Perfekt for:**
-- Utviklere som lærer om multi-agent AI-systemer
-- Alle interesserte i AI-automatisering og arbeidsflyter
+**Perfekt For:**
+- Utviklere som lærer seg multi-agent AI-systemer
+- Alle som er interessert i AI-automatisering og arbeidsflyter
 - Innholdsprodusenter som utforsker AI-assistert produksjon
 - Studenter som studerer praktiske AI-orkestreringsmønstre
 
-**Start byggingen**: [🎙️ The AI Podcast Studio Workshop →](./WorkshopForAgentic/README.md)
+**Begynn Å Bygge**: [🎙️ The AI Podcast Studio Workshop →](./WorkshopForAgentic/README.md)
 
-### 📊 **Læringssti sammendrag**
-- **Total varighet**: 36-45 timer
-- **Nybegynnersti**: Moduler 01-02 (7-9 timer)  
-- **Mellomnivåsti**: Moduler 03-04 (9-11 timer)
-- **Avansert sti**: Moduler 05-07 (12-15 timer)
-- **Ekspertsti**: Modul 08 (8-10 timer)
+### 📊 **Læringsveiens Sammendrag**
+- **Total Varighet**: 36-45 timer
+- **Nybegynnerveien**: Moduler 01-02 (7-9 timer)  
+- **Mellomnivåvei**: Moduler 03-04 (9-11 timer)
+- **Avansert Vei**: Moduler 05-07 (12-15 timer)
+- **Ekspertvei**: Modul 08 (8-10 timer)
 
-## Hva du vil bygge
+## Hva Du Vil Bygge
 
 ### 🎯 Kjernekompetanser
-- **Edge AI-arkitektur**: Design lokale-først AI-systemer med skyintegrasjon
-- **Modelloptimalisering**: Kvantisere og komprimere modeller for edge-distribusjon (85 % hastighetsøkning, 75 % størrelsesreduksjon)
-- **Multi-plattform distribusjon**: Windows, mobil, innebygde og sky-edge hybride systemer
-- **Produksjonsdrift**: Overvåkning, skalering og vedlikehold av edge AI i produksjon
+- **Edge AI-arkitektur**: Design lokale-første AI-systemer med skykobling
+- **Modelloptimalisering**: Kvantiser og komprimer modeller for edge-distribusjon (85 % hastighetsøkning, 75 % størrelse-reduksjon)
+- **Multi-Plattform Distribusjon**: Windows, mobil, innebygd og sky-edge-hybride systemer
+- **Produksjonsoperasjoner**: Overvåking, skalering og vedlikehold av edge AI i produksjon
 
-### 🏗️ Praktiske prosjekter
-- **Foundry Local Chat-apper**: Windows 11 native applikasjon med modellbytte
-- **Multi-agent systemer**: Koordinator med spesialistagenter for komplekse arbeidsflyter  
+### 🏗️ Praktiske Prosjekter
+- **Foundry Local Chat Apps**: Windows 11 innfødt applikasjon med modellbytte
+- **Multi-Agent Systemer**: Koordinator med spesialistagenter for komplekse arbeidsflyter  
 - **RAG-applikasjoner**: Lokal dokumentbehandling med vektorsøk
-- **Modellrutere**: Intelligent valg mellom modeller basert på oppgaveanalyse
+- **Modellruter**: Intelligent valg mellom modeller basert på oppgaveanalyse
 - **API-rammeverk**: Produksjonsklare klienter med streaming og helsesjekk
-- **Kryssplattform-verktøy**: LangChain/Semantic Kernel integrasjonsmønstre
+- **Tverrplattform-verktøy**: LangChain/Semantic Kernel integrasjonsmønstre
 
-### 🏢 Bransjeapplikasjoner
-**Produksjon** • **Helse** • **Autonome kjøretøy** • **Smarta byer** • **Mobilapper**
+### 🏢 Industribruk
+**Produksjon** • **Helsevesen** • **Autonome Kjøretøy** • **Smarte Byer** • **Mobilapper**
 
-## Rask start
+## Rask Start
 
-**Anbefalt læringssti** (20-30 timer totalt):
+**Anbefalt Læringsvei** (20-30 timer totalt):
 
-0. **📖 Introduksjon** ([Introduction.md](./introduction.md)): EdgeAI-grunnlag + bransjekontekst + læringsrammeverk
-1. **📚 Grunnlag** (Moduler 01-02): EdgeAI-konsepter + SLM-modellfamilier
+0. **📖 Introduksjon** ([Introduction.md](./introduction.md)): EdgeAI-grunnlag + industrikontekst + læringsrammeverk  
+1. **📚 Grunnlag** (Moduler 01-02): EdgeAI-konsepter + SLM modellfamilier  
 2. **⚙️ Optimalisering** (Moduler 03-04): Distribusjon + kvantiseringsrammeverk  
-3. **🚀 Produksjon** (Moduler 05-06): SLMOps + AI-agenter + funksjonskall
+3. **🚀 Produksjon** (Moduler 05-06): SLMOps + AI-agenter + funksjonskall  
 4. **💻 Implementering** (Moduler 07-08): Plattformeksempler + Foundry Local verktøykasse
 
-Hver modul inneholder teori, praktiske øvelser og produksjonsklare kodeeksempler.
+Hver modul inkluderer teori, praktiske øvelser og produksjonsklare kodeeksempler.
 
-## Karriereinnvirkning
+## Karriereeffekt
 
-**Tekniske roller**: EdgeAI løsningsarkitekt • ML-ingeniør (Edge) • IoT AI-utvikler • Mobil AI-utvikler
+**Tekniske Roller**: EdgeAI-løsningsarkitekt • ML-ingeniør (Edge) • IoT AI-utvikler • Mobil AI-utvikler
 
-**Bransjesektorer**: Manufacturing 4.0 • Helse-teknologi • Autonome systemer • FinTech • Forbrukerelektronikk
+**Bransjesektorer**: Produksjon 4.0 • Helse teknologi • Autonome systemer • FinTech • Forbrukerelektronikk
 
-**Porteføljeprosjekter**: Multi-agent systemer • Produksjons-RAG apper • Kryssplattform distribusjon • Ytelsesoptimalisering
+**Porteføljeprosjekter**: Multi-agent systemer • Produksjon RAG apper • Tverrplattform distribusjon • Ytelsesoptimalisering
 
 ## Repositoriumstruktur
 
@@ -241,24 +232,24 @@ edgeai-for-beginners/
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
 
-## Kurs høydepunkter
+## Kurs Høydepunkter
 
-✅ **Progressiv læring**: Teori → Praktisk → Produksjonsdistribusjon  
-✅ **Virkelige casestudier**: Microsoft, Japan Airlines, bedriftsimplementasjoner  
-✅ **Praktiske eksempler**: 50+ eksempler, 10 omfattende Foundry Local demoer  
+✅ **Progressiv Læring**: Teori → Praksis → Produksjonsdistribusjon  
+✅ **Reelle Case Studier**: Microsoft, Japan Airlines, bedriftsimplementeringer  
+✅ **Hands-on Eksempler**: 50+ eksempler, 10 omfattende Foundry Local demonstrasjoner  
 ✅ **Ytelsesfokus**: 85 % hastighetsforbedringer, 75 % størrelsesreduksjoner  
-✅ **Multi-plattform**: Windows, mobil, innebygde, sky-edge hybride  
-✅ **Produksjonsklar**: Overvåkning, skalering, sikkerhet, samsvarsrammeverk
+✅ **Multi-Plattform**: Windows, mobil, innebygd, sky-edge-hybrid  
+✅ **Produksjonsklart**: Overvåking, skalering, sikkerhet, samsvarsrammeverk
 
-📖 **[Studieveiledning tilgjengelig](STUDY_GUIDE.md)**: Strukturert 20-timers læringssti med tidsfordelingsveiledning og selvvurderingsverktøy.
+📖 **[Studieveiledning Tilgjengelig](STUDY_GUIDE.md)**: Strukturert 20-timers læringsvei med tidallokeringsguidance og selvvurderingsverktøy.
 
 ---
 
 **EdgeAI representerer fremtiden for AI-distribusjon**: lokal-først, personvernbevarende og effektiv. Mestre disse ferdighetene for å bygge neste generasjon intelligente applikasjoner.
 
-## Andre kurs
+## Andre Kurs
 
-Teamet vårt produserer andre kurs! Sjekk ut:
+Vårt team produserer andre kurs! Sjekk ut:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -302,11 +293,11 @@ Teamet vårt produserer andre kurs! Sjekk ut:
 
 ## Få hjelp
 
-Hvis du står fast eller har spørsmål om å bygge AI-apper, bli med i:
+Hvis du står fast eller har spørsmål om å bygge AI-apper, bli med på:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Hvis du har produktinnspill eller feil mens du bygger, besøk:
+Hvis du har produktfeedback eller opplever feil under utvikling, besøk:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
@@ -314,5 +305,5 @@ Hvis du har produktinnspill eller feil mens du bygger, besøk:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på det opprinnelige språket skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på dets opprinnelige språk skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi tar ikke ansvar for eventuelle misforståelser eller feiltolkninger som følge av bruken av denne oversettelsen.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

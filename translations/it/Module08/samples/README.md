@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "729f809c84e99609364180c090c43405",
-  "translation_date": "2025-10-01T02:06:14+00:00",
-  "source_file": "Module08/samples/README.md",
-  "language_code": "it"
-}
--->
 # Modulo 08 Esempi: Guida allo Sviluppo Locale di Foundry
 
 ## Panoramica

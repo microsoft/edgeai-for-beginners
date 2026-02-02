@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-  "translation_date": "2025-12-15T20:08:47+00:00",
-  "source_file": "Module07/aitoolkit.md",
-  "language_code": "te"
-}
--->
 # Visual Studio Code కోసం AI టూల్‌కిట్ - ఎడ్జ్ AI అభివృద్ధి గైడ్
 
 ## పరిచయం

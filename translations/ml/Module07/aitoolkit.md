@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-  "translation_date": "2025-12-15T20:12:56+00:00",
-  "source_file": "Module07/aitoolkit.md",
-  "language_code": "ml"
-}
--->
 # Visual Studio Code-നുള്ള AI ടൂൾകിറ്റ് - എഡ്ജ് AI വികസന ഗൈഡ്
 
 ## പരിചയം

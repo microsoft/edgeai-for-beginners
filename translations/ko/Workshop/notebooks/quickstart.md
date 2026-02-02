@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddaad917d0c16fc3d498a6b4eabc8088",
-  "translation_date": "2025-10-08T19:36:15+00:00",
-  "source_file": "Workshop/notebooks/quickstart.md",
-  "language_code": "ko"
-}
--->
 # 워크숍 노트북 - 빠른 시작 가이드
 
 ## 목차

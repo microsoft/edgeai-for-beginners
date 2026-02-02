@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed8edea2fc43898c2537130fb3ae6878",
-  "translation_date": "2025-09-22T12:58:34+00:00",
-  "source_file": "Module08/samples/03/README.md",
-  "language_code": "de"
-}
--->
 # Sitzung 3 Beispiel: Modellentdeckung und Schnelltest
 
 Ein einfacher Helfer, um Modelle aufzulisten und eines mit ausführlichen Logs zu starten.

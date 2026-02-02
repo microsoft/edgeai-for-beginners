@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-09-30T23:44:02+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "bn"
-}
--->
 # Module 08: Microsoft Foundry Local - সম্পূর্ণ ডেভেলপার টুলকিট
 
 ## সংক্ষিপ্ত বিবরণ

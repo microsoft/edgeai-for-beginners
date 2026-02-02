@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-12-15T16:57:48+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "ml"
-}
--->
 # മാറ്റം രേഖപ്പെടുത്തൽ
 
 EdgeAI for Beginners-ലുള്ള എല്ലാ ശ്രദ്ധേയമായ മാറ്റങ്ങളും ഇവിടെ രേഖപ്പെടുത്തിയിരിക്കുന്നു. ഈ പ്രോജക്ട് തീയതി അടിസ്ഥാനത്തിലുള്ള എൻട്രികളും Keep a Changelog ശൈലിയും (Added, Changed, Fixed, Removed, Docs, Moved) ഉപയോഗിക്കുന്നു.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-10-01T01:52:52+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "uk"
-}
--->
 # Модуль 08: Практичне використання Microsoft Foundry Local - Повний набір інструментів для розробників
 
 ## Огляд

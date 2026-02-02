@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T22:35:40+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "vi"
-}
--->
 # Tập lệnh Workshop
 
 Thư mục này chứa các tập lệnh tự động hóa và hỗ trợ được sử dụng để duy trì chất lượng và tính nhất quán cho tài liệu Workshop.

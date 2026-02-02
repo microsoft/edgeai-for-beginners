@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T13:50:56+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "tl"
-}
--->
 # Kabanata 07: Mga Halimbawa ng EdgeAI
 
 Ang Edge AI ay ang pagsasanib ng artificial intelligence at edge computing, na nagbibigay-daan sa matalinong pagproseso direkta sa mga device nang hindi umaasa sa koneksyon sa cloud. Ang kabanatang ito ay nagtatampok ng limang magkakaibang implementasyon ng EdgeAI sa iba't ibang platform at framework, na nagpapakita ng kakayahan at lakas ng pagpapatakbo ng AI models sa edge.

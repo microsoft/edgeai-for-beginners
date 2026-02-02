@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-09-30T23:42:45+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "hi"
-}
--->
 # नमूना 04: Chainlit के साथ प्रोडक्शन चैट एप्लिकेशन
 
 Microsoft Foundry Local का उपयोग करके प्रोडक्शन-रेडी चैट एप्लिकेशन बनाने के कई तरीकों को दिखाने वाला एक व्यापक नमूना, जिसमें आधुनिक वेब इंटरफेस, स्ट्रीमिंग प्रतिक्रियाएँ, और नवीनतम ब्राउज़र तकनीकें शामिल हैं।

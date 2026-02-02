@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "254150b7d7854ec87ffcd88824d98079",
-  "translation_date": "2025-12-16T01:04:09+00:00",
-  "source_file": "Module08/samples/07/README.md",
-  "language_code": "ml"
-}
--->
 # ഫൗണ്ട്രി ലോക്കൽ എഎപി സാമ്പിൾ
 
 OpenAI SDK-യിൽ ആശ്രയിക്കാതെ Microsoft Foundry Local-നെ REST API സേവനമായി എങ്ങനെ ഉപയോഗിക്കാമെന്ന് ഈ സാമ്പിൾ കാണിക്കുന്നു. പരമാവധി നിയന്ത്രണത്തിനും ഇഷ്ടാനുസൃതീകരണത്തിനും നേരിട്ട് HTTP ഇന്റഗ്രേഷൻ മാതൃകകൾ ഇത് പ്രദർശിപ്പിക്കുന്നു.

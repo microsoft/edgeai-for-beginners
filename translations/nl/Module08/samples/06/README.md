@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T00:49:29+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "nl"
-}
--->
 # Sessie 6 Voorbeeld: Modellen als Hulpmiddelen
 
 Dit voorbeeld implementeert een minimale router + toolregister die een model selecteert op basis van de gebruikersprompt en een oproep doet naar Foundry Local's OpenAI-compatibele endpoint.

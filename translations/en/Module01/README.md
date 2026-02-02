@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T23:55:15+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "en"
-}
--->
 # Chapter 01: Transforming AI Deployment for the Edge
 
 EdgeAI represents a significant shift in how artificial intelligence is deployed, moving AI capabilities from cloud-based processing to local edge devices. This chapter delves into the core concepts, essential technologies, and practical applications that define this transformative approach to implementing AI.

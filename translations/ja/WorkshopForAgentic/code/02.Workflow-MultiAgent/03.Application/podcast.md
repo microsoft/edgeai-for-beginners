@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:37:42+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "ja"
-}
--->
 Speaker 1: 本日のポッドキャストへようこそ！私はホストのLucyです。今日はAI分野の専門家Kenさんをお招きして、注目を集めているOllamaについてお話を伺います。Kenさん、まずOllamaとは何か簡単にご紹介いただけますか？  
 Speaker 2: もちろんです！Ollamaはユーザーがローカルマシン上で大型言語モデル（LLM）を実行・管理できるツールです。クラウドサービスに依存せず、プライバシー、コントロール、カスタマイズ性を重視しています。開発者や企業にとっては、ChatGPTのようなクラウドサービスの柔軟でプライバシーに優しい代替手段を提供します。  
 Speaker 1: とても魅力的ですね。ではOllamaの核心的な強みは何でしょうか？  

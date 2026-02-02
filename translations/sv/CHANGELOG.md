@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T13:00:28+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "sv"
-}
--->
 # Ändringslogg
 
 Alla betydande ändringar i EdgeAI för nybörjare dokumenteras här. Projektet använder datum-baserade poster och stilen "Keep a Changelog" (Lagt till, Ändrat, Fixat, Borttaget, Dokumentation, Flyttat).

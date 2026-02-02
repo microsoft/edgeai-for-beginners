@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T21:49:11+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "lt"
-}
--->
 # 2 skyrius: Mažų kalbos modelių pagrindai
 
 Šis išsamus pagrindinis skyrius suteikia esminę apžvalgą apie mažus kalbos modelius (SLM), apimant teorinius principus, praktines įgyvendinimo strategijas ir sprendimus, paruoštus diegimui gamyboje. Skyrius sukuria kritinę žinių bazę, leidžiančią suprasti šiuolaikines efektyvias dirbtinio intelekto architektūras ir jų strateginį pritaikymą įvairiose skaičiavimo aplinkose.

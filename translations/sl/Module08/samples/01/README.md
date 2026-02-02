@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-25T02:13:17+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "sl"
-}
--->
 # Primer 01: Hitri klepet prek OpenAI SDK
 
 Preprost primer klepeta, ki prikazuje uporabo OpenAI SDK z Microsoft Foundry Local za lokalno AI inferenco.

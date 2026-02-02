@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T01:10:39+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "sw"
-}
--->
 # Kipindi cha 6 Mfano: Miundo kama Vifaa
 
 Mfano huu unatekeleza router ndogo + usajili wa zana ambao huchagua mfano kulingana na maelezo ya mtumiaji na kuita mwisho wa Foundry Local unaoendana na OpenAI.

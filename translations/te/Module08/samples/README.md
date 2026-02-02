@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "729f809c84e99609364180c090c43405",
-  "translation_date": "2025-12-16T00:35:54+00:00",
-  "source_file": "Module08/samples/README.md",
-  "language_code": "te"
-}
--->
 # Module 08 నమూనాలు: Foundry స్థానిక అభివృద్ధి గైడ్
 
 ## అవలోకనం

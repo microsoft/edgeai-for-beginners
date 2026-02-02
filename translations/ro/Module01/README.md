@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-18T18:41:17+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "ro"
-}
--->
 # Capitolul 01: Transformarea Implementării AI pentru Edge
 
 EdgeAI reprezintă o schimbare de paradigmă în implementarea inteligenței artificiale, mutând capabilitățile AI de la procesarea bazată pe cloud la dispozitivele locale de tip edge. Acest capitol explorează conceptele fundamentale, tehnologiile cheie și aplicațiile practice care definesc această abordare transformatoare a implementării AI.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:51:44+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "ro"
-}
--->
 Speaker 1: Bine ați venit la acest episod al podcastului! Eu sunt gazda Lucy, iar astăzi avem onoarea să îl avem alături pe expertul în domeniul AI, Ken, pentru a discuta despre Ollama, care a atras recent multă atenție. Ken, ne poți face o scurtă prezentare a ceea ce este Ollama?  
 Speaker 2: Desigur! Ollama este un instrument care le permite utilizatorilor să ruleze și să gestioneze modele mari de limbaj (LLM) pe mașina locală. Nu necesită să se bazeze pe servicii cloud, punând accent pe confidențialitate, control și personalizare. Pentru dezvoltatori și afaceri, oferă o alternativă flexibilă și prietenoasă cu intimitatea, precum serviciile cloud de tip ChatGPT.  
 Speaker 1: Sună foarte atractiv. Care sunt avantajele principale ale Ollama?  

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-11T22:13:52+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "ko"
-}
--->
 # 워크숍 샘플 - 빠른 참조 카드
 
 **최종 업데이트**: 2025년 10월 8일

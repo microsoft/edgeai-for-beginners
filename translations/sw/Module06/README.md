@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T16:30:47+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "sw"
-}
--->
 # Sura ya 06: Mifumo ya Wakala wa SLM: Muhtasari wa Kina
 
 Mandhari ya akili bandia yanapitia mabadiliko makubwa tunapohama kutoka kwa chatbots rahisi hadi mawakala wa AI wenye uwezo mkubwa wanaotumia Small Language Models (SLMs). Mwongozo huu wa kina unachunguza vipengele vitatu muhimu vya mifumo ya kisasa ya wakala wa SLM: dhana za msingi na mikakati ya utekelezaji, uwezo wa kuita kazi, na ujumuishaji wa Mapinduzi ya Model Context Protocol (MCP).

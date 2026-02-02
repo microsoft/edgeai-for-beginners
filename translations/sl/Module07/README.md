@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T14:51:59+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "sl"
-}
--->
 # Poglavje 07: Primeri EdgeAI
 
 Edge AI predstavlja združitev umetne inteligence z robnim računalništvom, kar omogoča inteligentno obdelavo neposredno na napravah, ne da bi se zanašali na povezavo s cloudom. To poglavje raziskuje pet različnih implementacij EdgeAI na različnih platformah in okvirjih, ki prikazujejo vsestranskost in moč izvajanja AI modelov na robu.

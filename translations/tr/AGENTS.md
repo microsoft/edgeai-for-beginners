@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-  "translation_date": "2025-10-30T12:36:58+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "tr"
-}
--->
 # AGENTS.md
 
 > **EdgeAI için Başlangıç Seviyesinde Katkıda Bulunanlar İçin Geliştirici Kılavuzu**

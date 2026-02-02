@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-09-30T23:17:21+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "ur"
-}
--->
 # سیشن 6 نمونہ: ماڈلز بطور اوزار
 
 یہ نمونہ ایک سادہ روٹر + ٹول رجسٹری کو نافذ کرتا ہے جو صارف کے پرامپٹ کی بنیاد پر ماڈل منتخب کرتا ہے اور Foundry Local کے OpenAI-compatible endpoint کو کال کرتا ہے۔

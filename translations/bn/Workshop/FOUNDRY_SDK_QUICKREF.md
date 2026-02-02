@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1a52481fe75c7692d785aef8da50e5e7",
-  "translation_date": "2025-10-09T09:36:14+00:00",
-  "source_file": "Workshop/FOUNDRY_SDK_QUICKREF.md",
-  "language_code": "bn"
-}
--->
 # Foundry Local SDK - দ্রুত রেফারেন্স
 
 ## ইনস্টলেশন

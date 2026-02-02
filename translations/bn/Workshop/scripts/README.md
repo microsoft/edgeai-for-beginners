@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T21:10:38+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "bn"
-}
--->
 # ওয়ার্কশপ স্ক্রিপ্ট
 
 এই ডিরেক্টরিতে এমন অটোমেশন এবং সাপোর্ট স্ক্রিপ্ট রয়েছে যা ওয়ার্কশপ উপকরণগুলির গুণমান এবং সামঞ্জস্য বজায় রাখতে ব্যবহৃত হয়।

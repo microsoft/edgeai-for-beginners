@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T13:20:30+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "fi"
-}
--->
 # Luku 04: Mallimuodon muunnos ja kvantisointi - Luvun yleiskatsaus
 
 EdgeAI:n nousu on tehnyt mallimuodon muunnoksesta ja kvantisoinnista keskeisiä teknologioita kehittyneiden koneoppimiskykyjen käyttöönotossa resurssirajoitteisilla laitteilla. Tämä kattava luku tarjoaa täydellisen oppaan mallien ymmärtämiseen, toteuttamiseen ja optimointiin reunalaitteiden käyttöönottoskenaarioita varten.

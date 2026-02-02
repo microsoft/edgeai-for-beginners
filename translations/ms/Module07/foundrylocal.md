@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T13:49:31+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "ms"
-}
--->
 # Foundry Local pada Windows & Mac
 
 Panduan ini membantu anda memasang, menjalankan, dan mengintegrasikan Microsoft Foundry Local pada Windows dan Mac. Semua langkah dan arahan telah disahkan berdasarkan dokumen Microsoft Learn.

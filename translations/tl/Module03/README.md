@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T14:53:49+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "tl"
-}
--->
 # Kabanata 03: Pag-deploy ng Maliit na Language Models (SLMs)
 
 Ang komprehensibong kabanatang ito ay tumatalakay sa buong lifecycle ng pag-deploy ng Maliit na Language Models (SLMs), mula sa teoretikal na pundasyon, praktikal na mga estratehiya sa implementasyon, hanggang sa mga solusyong handa para sa produksyon gamit ang containerized na teknolohiya. Ang kabanata ay nahahati sa tatlong progresibong seksyon na nagdadala sa mga mambabasa mula sa mga pangunahing konsepto hanggang sa mga advanced na senaryo ng pag-deploy.

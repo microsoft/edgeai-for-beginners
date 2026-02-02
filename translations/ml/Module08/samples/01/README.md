@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-12-16T00:38:50+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "ml"
-}
--->
 # സാമ്പിൾ 01: OpenAI SDK വഴി വേഗത്തിലുള്ള ചാറ്റ്
 
 പ്രാദേശിക AI ഇൻഫറൻസിനായി Microsoft Foundry Local ഉപയോഗിച്ച് OpenAI SDK എങ്ങനെ ഉപയോഗിക്കാമെന്ന് കാണിക്കുന്ന ഒരു ലളിതമായ ചാറ്റ് ഉദാഹരണം.

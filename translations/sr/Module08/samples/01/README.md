@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-25T01:58:53+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "sr"
-}
--->
 # Пример 01: Брзи разговор преко OpenAI SDK-а
 
 Једноставан пример разговора који показује како користити OpenAI SDK са Microsoft Foundry Local за локалну AI обраду.

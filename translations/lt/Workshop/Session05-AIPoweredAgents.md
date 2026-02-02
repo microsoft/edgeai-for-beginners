@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-  "translation_date": "2025-10-28T23:46:48+00:00",
-  "source_file": "Workshop/Session05-AIPoweredAgents.md",
-  "language_code": "lt"
-}
--->
 # Sesija 5: Greitai kurkite AI valdomus agentus su Foundry Local
 
 ## Santrauka

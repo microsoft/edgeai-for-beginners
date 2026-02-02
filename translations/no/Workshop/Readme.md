@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-11T23:22:34+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "no"
-}
--->
 # EdgeAI for Nybegynnere - Workshop
 
 > **Praktisk læringssti for å bygge produksjonsklare Edge AI-applikasjoner**

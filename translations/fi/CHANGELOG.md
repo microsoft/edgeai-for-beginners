@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T13:14:43+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "fi"
-}
--->
 # Muutosloki
 
 Kaikki merkittävät muutokset EdgeAI for Beginners -projektiin dokumentoidaan täällä. Tämä projekti käyttää päivämääräperusteisia merkintöjä ja Keep a Changelog -tyyliä (Lisätty, Muutettu, Korjattu, Poistettu, Dokumentaatio, Siirretty).

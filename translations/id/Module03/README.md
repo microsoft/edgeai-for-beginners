@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6cf75ae5b01949656a3ad41425c7ffe4",
-  "translation_date": "2025-09-18T14:52:57+00:00",
-  "source_file": "Module03/README.md",
-  "language_code": "id"
-}
--->
 # Bab 03: Menerapkan Small Language Models (SLMs)
 
 Bab ini secara komprehensif membahas siklus hidup lengkap penerapan Small Language Models (SLMs), mencakup dasar teori, strategi implementasi praktis, dan solusi containerized siap produksi. Bab ini disusun dalam tiga bagian progresif yang membawa pembaca dari konsep dasar hingga skenario penerapan tingkat lanjut.

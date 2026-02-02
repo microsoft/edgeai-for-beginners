@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-  "translation_date": "2025-10-28T20:28:40+00:00",
-  "source_file": "Workshop/Session05-AIPoweredAgents.md",
-  "language_code": "ur"
-}
--->
 # سیشن 5: فاؤنڈری لوکل کے ساتھ تیزی سے AI ایجنٹس بنائیں
 
 ## خلاصہ

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-12T00:50:52+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "lt"
-}
--->
 # Sesija 4: Pažangiausių modelių tyrinėjimas – LLM, SLM ir įrenginių vidinė analizė
 
 ## Santrauka

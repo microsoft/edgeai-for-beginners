@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T13:32:55+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "vi"
-}
--->
 # Nhật ký thay đổi
 
 Tất cả các thay đổi đáng chú ý đối với EdgeAI for Beginners được ghi lại tại đây. Dự án này sử dụng các mục nhập theo ngày và phong cách Keep a Changelog (Thêm mới, Thay đổi, Sửa lỗi, Loại bỏ, Tài liệu, Di chuyển).

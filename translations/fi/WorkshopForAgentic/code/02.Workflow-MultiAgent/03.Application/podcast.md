@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:46:16+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "fi"
-}
--->
 Speaker 1: Tervetuloa kuuntelemaan tämän jakson podcastia! Olen juontaja Lucy, ja tänään meillä on ilo kutsua tekoälyalan asiantuntija Ken keskustelemaan viime aikoina paljon huomiota herättäneestä Ollamasta. Ken, voisitko aluksi kertoa meille lyhyesti, mitä Ollama on?  
 Speaker 2: Tottakai! Ollama on työkalu, jonka avulla käyttäjät voivat ajaa ja hallita suuria kielimalleja (LLM) paikallisilla koneilla. Se ei vaadi pilvipalveluita, ja korostaa yksityisyyttä, hallintaa ja räätälöitävyyttä. Kehittäjille ja yrityksille se tarjoaa joustavan ja yksityisyysystävällisen vaihtoehdon, kuten ChatGPT:n kaltaisille pilvipalveluille.  
 Speaker 1: Kuulostaa hyvin houkuttelevalta. Mitkä ovat siis Ollaman keskeiset edut?  

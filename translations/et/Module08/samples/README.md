@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "729f809c84e99609364180c090c43405",
-  "translation_date": "2025-10-11T12:53:56+00:00",
-  "source_file": "Module08/samples/README.md",
-  "language_code": "et"
-}
--->
 # Moodul 08 Näited: Foundry kohalik arendamise juhend
 
 ## Ülevaade

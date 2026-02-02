@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T17:47:26+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "bn"
-}
--->
 # সেশন ৫ নমুনা: মাল্টি-এজেন্ট অর্কেস্ট্রেশন
 
 এই নমুনাটি Foundry Local-এর OpenAI-সামঞ্জস্যপূর্ণ এন্ডপয়েন্ট ব্যবহার করে কোঅর্ডিনেটর + বিশেষজ্ঞদের প্যাটার্ন প্রদর্শন করে।

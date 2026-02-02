@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-11T22:57:57+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "tr"
-}
--->
 # Oturum 4: En Son Modelleri Keşfet – LLM'ler, SLM'ler ve Cihaz Üzerinde Çıkarım
 
 ## Özet

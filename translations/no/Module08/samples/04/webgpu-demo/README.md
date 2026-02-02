@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-09-24T23:37:58+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "no"
-}
--->
 # WebGPU + ONNX Runtime Demo
 
 Denne demoen viser hvordan man kan kjøre AI-modeller direkte i nettleseren ved hjelp av WebGPU for maskinvareakselerasjon og ONNX Runtime Web.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-09-30T23:09:24+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "fa"
-}
--->
 # ماژول ۰۸: کار عملی با Microsoft Foundry Local - ابزار کامل توسعه‌دهنده
 
 ## مرور کلی

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T13:04:47+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "da"
-}
--->
 # Ændringslog
 
 Alle væsentlige ændringer i EdgeAI for Beginners er dokumenteret her. Dette projekt bruger dato-baserede indgange og Keep a Changelog-stilen (Tilføjet, Ændret, Rettet, Fjernet, Dokumentation, Flyttet).

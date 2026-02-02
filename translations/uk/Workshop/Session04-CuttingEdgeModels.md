@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-12T00:46:29+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "uk"
-}
--->
 # Сесія 4: Дослідження передових моделей – LLM, SLM та локальне виконання
 
 ## Анотація

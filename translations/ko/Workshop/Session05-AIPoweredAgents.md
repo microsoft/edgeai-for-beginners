@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-  "translation_date": "2025-10-28T20:57:02+00:00",
-  "source_file": "Workshop/Session05-AIPoweredAgents.md",
-  "language_code": "ko"
-}
--->
 # 세션 5: Foundry Local로 AI 기반 에이전트를 빠르게 구축하기
 
 ## 개요

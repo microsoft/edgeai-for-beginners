@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T02:01:38+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "lt"
-}
--->
 # Pavyzdys 04: Produkcijos pokalbių programos su Chainlit
 
 Išsamus pavyzdys, parodantis įvairius būdus, kaip kurti produkcijai paruoštas pokalbių programas naudojant Microsoft Foundry Local, įskaitant modernias interneto sąsajas, srautinį atsakymų pateikimą ir pažangias naršyklės technologijas.

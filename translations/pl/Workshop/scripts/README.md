@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-10-28T21:46:20+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "pl"
-}
--->
 # Skrypty Warsztatowe
 
 Ten katalog zawiera skrypty automatyzacji i wsparcia używane do utrzymania jakości i spójności materiałów warsztatowych.

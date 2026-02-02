@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4ace56b24e2799407b9972a7da6a7517",
-  "translation_date": "2025-11-11T17:43:21+00:00",
-  "source_file": "Workshop/scripts/README.md",
-  "language_code": "pcm"
-}
--->
 # Workshop Scripts
 
 Dis folder get automation and support scripts wey dem dey use to keep quality and consistency for Workshop materials.

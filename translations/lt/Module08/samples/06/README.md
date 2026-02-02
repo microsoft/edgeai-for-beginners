@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T02:01:30+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "lt"
-}
--->
 # 6 sesijos pavyzdys: Modeliai kaip įrankiai
 
 Šiame pavyzdyje įgyvendinamas minimalus maršrutizatorius + įrankių registras, kuris parenka modelį pagal vartotojo užklausą ir naudoja Foundry Local OpenAI suderinamą galinį tašką.

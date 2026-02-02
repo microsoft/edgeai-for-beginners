@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7229f7490ea61a04330b79651ac4d37e",
-  "translation_date": "2025-09-18T09:04:24+00:00",
-  "source_file": "SECURITY.md",
-  "language_code": "no"
-}
--->
 ## Sikkerhet
 
 Microsoft tar sikkerheten til våre programvareprodukter og tjenester på alvor, inkludert alle kildekoderepositorier i våre GitHub-organisasjoner.

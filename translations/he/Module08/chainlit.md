@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c49526c7abc56b0b5f1e835c1739f18e",
-  "translation_date": "2025-09-25T00:09:36+00:00",
-  "source_file": "Module08/chainlit.md",
-  "language_code": "he"
-}
--->
 # ברוכים הבאים ל-Chainlit! 🚀🤖
 
 שלום לך, מפתח! 👋 אנחנו נרגשים שאתה מצטרף אלינו. Chainlit הוא כלי עוצמתי שנועד לעזור לך ליצור אב-טיפוס, לנפות שגיאות ולשתף יישומים המבוססים על LLMs.

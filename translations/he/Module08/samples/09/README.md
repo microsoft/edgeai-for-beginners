@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "de485a95e80a332f14ca1dcf2aca3961",
-  "translation_date": "2025-09-25T00:11:38+00:00",
-  "source_file": "Module08/samples/09/README.md",
-  "language_code": "he"
-}
--->
 # מערכת תזמור רב-סוכנים - Foundry Local
 
 מערכת רב-סוכנים מתקדמת מבית Microsoft Foundry Local המדגימה תיאום סוכנים חכם, חלוקת משימות מתמחות ודפוסי פתרון בעיות בשיתוף פעולה.

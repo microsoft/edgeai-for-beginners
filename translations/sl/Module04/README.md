@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T15:02:08+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "sl"
-}
--->
 # Poglavje 04: Pretvorba modelov in kvantizacija - Pregled poglavja
 
 Pojav EdgeAI je naredil pretvorbo modelov in kvantizacijo ključni tehnologiji za uvajanje naprednih zmogljivosti strojnega učenja na napravah z omejenimi viri. To obsežno poglavje ponuja celovit vodnik za razumevanje, izvajanje in optimizacijo modelov za scenarije uvajanja na robu.

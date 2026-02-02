@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T14:17:24+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "sk"
-}
--->
 # Kapitola 07: EdgeAI Príklady
 
 Edge AI predstavuje spojenie umelej inteligencie s edge computingom, umožňujúce inteligentné spracovanie priamo na zariadeniach bez závislosti na cloudovej konektivite. Táto kapitola skúma päť rôznych implementácií EdgeAI na rôznych platformách a frameworkoch, ktoré ukazujú všestrannosť a silu spúšťania AI modelov na okraji.

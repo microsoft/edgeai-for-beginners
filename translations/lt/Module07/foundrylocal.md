@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ba4a0e432e3b6bfed9026383b0b56cf4",
-  "translation_date": "2025-10-02T15:19:21+00:00",
-  "source_file": "Module07/foundrylocal.md",
-  "language_code": "lt"
-}
--->
 # Foundry Local Windows ir Mac
 
 Šis vadovas padės jums įdiegti, paleisti ir integruoti Microsoft Foundry Local Windows ir Mac operacinėse sistemose. Visi žingsniai ir komandos patikrinti pagal Microsoft Learn dokumentaciją.

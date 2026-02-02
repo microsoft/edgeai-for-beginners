@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-09-17T13:12:53+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "de"
-}
--->
 # Kapitel 01: Transformation der KI-Bereitstellung für Edge-Geräte
 
 EdgeAI stellt einen Paradigmenwechsel in der Bereitstellung von künstlicher Intelligenz dar, bei dem KI-Funktionen von cloudbasiertem Processing auf lokale Edge-Geräte verlagert werden. Dieses Kapitel untersucht die grundlegenden Konzepte, Schlüsseltechnologien und praktischen Anwendungen, die diesen transformativen Ansatz der KI-Implementierung definieren.

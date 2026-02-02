@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7a474b8e201d5316c0095cdbc3bf0555",
-  "translation_date": "2025-10-11T12:59:11+00:00",
-  "source_file": "Module08/samples/04/webgpu-demo/README.md",
-  "language_code": "et"
-}
--->
 # WebGPU + ONNX Runtime Demo
 
 See demo näitab, kuidas käivitada AI-mudeleid otse brauseris, kasutades WebGPU-d riistvarakiirenduseks ja ONNX Runtime Webi.

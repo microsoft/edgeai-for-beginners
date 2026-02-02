@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T23:37:06+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "en"
-}
--->
 # Chapter 06: SLM Agentic Systems: A Comprehensive Overview
 
 The field of artificial intelligence is undergoing a major shift, moving beyond simple chatbots to advanced AI agents powered by Small Language Models (SLMs). This guide provides an in-depth look at three key aspects of modern SLM agentic systems: foundational concepts and deployment strategies, function calling capabilities, and the groundbreaking integration of the Model Context Protocol (MCP).

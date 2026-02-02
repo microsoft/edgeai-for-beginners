@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-17T13:07:33+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "de"
-}
--->
 # Kapitel 06: SLM-Agentensysteme: Ein umfassender Überblick
 
 Die Landschaft der künstlichen Intelligenz erlebt eine grundlegende Transformation, da wir uns von einfachen Chatbots hin zu fortschrittlichen KI-Agenten bewegen, die von Small Language Models (SLMs) angetrieben werden. Dieser umfassende Leitfaden beleuchtet drei entscheidende Aspekte moderner SLM-Agentensysteme: grundlegende Konzepte und Einsatzstrategien, Funktionalitäten zur Funktionsaufruf und die revolutionäre Integration des Model Context Protocol (MCP).

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T22:41:56+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "th"
-}
--->
 # ตัวอย่าง 01: แชทอย่างรวดเร็วผ่าน OpenAI SDK
 
 ตัวอย่างแชทง่ายๆ ที่แสดงวิธีการใช้ OpenAI SDK ร่วมกับ Microsoft Foundry Local สำหรับการประมวลผล AI ในเครื่อง

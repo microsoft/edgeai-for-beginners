@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-11-11T17:22:50+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "pcm"
-}
--->
 # Chapter 01: How AI dey Change Deployment for Edge
 
 EdgeAI na new way wey AI dey work, e dey move AI power from cloud-based processing go local edge devices. Dis chapter go talk about di basic ideas, di main technology, and di practical ways wey dis new style of AI dey work.

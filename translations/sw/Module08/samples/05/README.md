@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-23T01:18:20+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "sw"
-}
--->
 # Kipindi cha 5 Mfano: Uratibu wa Wakala Wengi
 
 Mfano huu unaonyesha muundo wa mratibu + wataalamu kwa kutumia mwisho wa Foundry Local unaoendana na OpenAI.

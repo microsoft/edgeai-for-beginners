@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4b84b08208b791e7822f88127e498f5",
-  "translation_date": "2025-11-11T22:18:45+00:00",
-  "source_file": "Workshop/QUICK_REFERENCE.md",
-  "language_code": "hi"
-}
--->
 # वर्कशॉप सैंपल्स - त्वरित संदर्भ कार्ड
 
 **अंतिम अपडेट**: 8 अक्टूबर, 2025

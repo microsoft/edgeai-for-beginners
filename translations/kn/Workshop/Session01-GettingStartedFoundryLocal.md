@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8c30436578b1bd604c48233ecdd39701",
-  "translation_date": "2025-12-15T21:02:32+00:00",
-  "source_file": "Workshop/Session01-GettingStartedFoundryLocal.md",
-  "language_code": "kn"
-}
--->
 # ಸೆಷನ್ 1: ಫೌಂಡ್ರಿ ಲೋಕಲ್‌ನೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸುವುದು
 
 ## ಸಾರಾಂಶ

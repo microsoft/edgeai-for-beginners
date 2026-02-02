@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2f1754a482b6a84e07287a5b775e65b6",
-  "translation_date": "2025-10-01T00:17:58+00:00",
-  "source_file": "Module08/samples/04/README.md",
-  "language_code": "pl"
-}
--->
 # Przykład 04: Produkcyjne aplikacje czatowe z Chainlit
 
 Kompleksowy przykład prezentujący różne podejścia do budowy gotowych do produkcji aplikacji czatowych z wykorzystaniem Microsoft Foundry Local, z nowoczesnymi interfejsami webowymi, strumieniowymi odpowiedziami i najnowszymi technologiami przeglądarkowymi.

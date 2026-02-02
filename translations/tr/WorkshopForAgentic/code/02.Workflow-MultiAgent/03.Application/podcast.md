@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f3f51b3c0edfef19d0ef4a9da47667d0",
-  "translation_date": "2026-01-05T13:43:01+00:00",
-  "source_file": "WorkshopForAgentic/code/02.Workflow-MultiAgent/03.Application/podcast.md",
-  "language_code": "tr"
-}
--->
 Speaker 1: Bu podcast bölümüne hoş geldiniz! Ben sunucu Lucy, bugün AI alanı uzmanı Ken'i konuk ediyoruz, birlikte son zamanlarda çok ilgi gören Ollama hakkında konuşacağız. Ken, bize kısaca Ollama'nın ne olduğunu anlatabilir misiniz?  
 Speaker 2: Tabii ki! Ollama, kullanıcıların yerel makinelerinde büyük dil modellerini (LLM) çalıştırmasına ve yönetmesine olanak tanıyan bir araçtır. Bulut hizmetlerine bağlı kalmayı gerektirmez, gizlilik, kontrol ve özelleştirmeye vurgu yapar. Geliştiriciler ve işletmeler için ChatGPT gibi bulut hizmetlerine esnek ve gizlilik dostu bir alternatif sunar.  
 Speaker 1: Çok çekici geliyor. Peki Ollama'nın temel avantajları nelerdir?  

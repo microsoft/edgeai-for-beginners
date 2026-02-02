@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T15:09:03+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "my"
-}
--->
 # အခန်း ၀၄ : မော်ဒယ်ဖော်မတ်ပြောင်းလဲခြင်းနှင့် Quantization - အခန်းအကျဉ်းချုပ်
 
 EdgeAI ရဲ့တိုးတက်မှုက resource-constrained devices တွေမှာ အဆင့်မြင့် machine learning စွမ်းရည်တွေကို အသုံးချနိုင်ဖို့ မော်ဒယ်ဖော်မတ်ပြောင်းလဲခြင်းနှင့် Quantization ကို အရေးကြီးတဲ့နည်းပညာတွေဖြစ်စေပါတယ်။ ဒီအခန်းက edge deployment scenarios တွေအတွက် မော်ဒယ်တွေကို နားလည်ခြင်း၊ အကောင်အထည်ဖော်ခြင်းနှင့် အကောင်းဆုံးလုပ်ဆောင်နိုင်ဖို့ လမ်းညွှန်ချက်အပြည့်အစုံကို ပေးထားပါတယ်။

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fb649a75048715165e76e20b366620a9",
-  "translation_date": "2025-09-24T13:40:19+00:00",
-  "source_file": "Module08/samples/01/README.md",
-  "language_code": "ur"
-}
--->
 # نمونہ 01: اوپن اے آئی SDK کے ذریعے فوری چیٹ
 
 ایک سادہ چیٹ کی مثال جو دکھاتی ہے کہ مائیکروسافٹ فاؤنڈری لوکل کے ساتھ اوپن اے آئی SDK کو کیسے استعمال کیا جائے۔

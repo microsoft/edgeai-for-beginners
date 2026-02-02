@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-  "translation_date": "2025-09-30T23:49:10+00:00",
-  "source_file": "Module08/README.md",
-  "language_code": "mr"
-}
--->
 # मॉड्यूल 08: Microsoft Foundry Local सह प्रत्यक्ष अनुभव - संपूर्ण डेव्हलपर टूलकिट
 
 ## आढावा

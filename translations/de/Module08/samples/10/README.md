@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T11:46:30+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "de"
-}
--->
 # Foundry Local als Tool-Integration
 
 Ein umfassendes Framework zur Integration von Microsoft Foundry Local als aufrufbare Tools in größere Anwendungen, basierend auf den offiziellen Mustern von Microsoft für KI-Tool-Integration.

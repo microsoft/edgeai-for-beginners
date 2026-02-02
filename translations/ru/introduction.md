@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "22c6dae04591abc5f0d80f944ed663d5",
-  "translation_date": "2025-09-26T10:21:00+00:00",
-  "source_file": "introduction.md",
-  "language_code": "ru"
-}
--->
 # Введение в Edge AI для начинающих
 
 ![Edge AI Introduction](../../translated_images/ru/cover.eb18d1b9605d754b.webp)

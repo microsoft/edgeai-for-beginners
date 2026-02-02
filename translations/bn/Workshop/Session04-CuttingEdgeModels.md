@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-11T22:19:44+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "bn"
-}
--->
 # সেশন ৪: আধুনিক মডেলগুলি অন্বেষণ করুন – LLMs, SLMs এবং অন-ডিভাইস ইনফারেন্স
 
 ## সারসংক্ষেপ

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "254150b7d7854ec87ffcd88824d98079",
-  "translation_date": "2025-09-24T10:48:34+00:00",
-  "source_file": "Module08/samples/07/README.md",
-  "language_code": "ko"
-}
--->
 # Foundry Local을 API로 활용한 샘플
 
 이 샘플은 Microsoft Foundry Local을 OpenAI SDK에 의존하지 않고 REST API 서비스로 사용하는 방법을 보여줍니다. 최대한의 제어와 맞춤화를 위해 직접적인 HTTP 통합 패턴을 제공합니다.

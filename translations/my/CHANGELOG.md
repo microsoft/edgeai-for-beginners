@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T15:03:41+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "my"
-}
--->
 # ပြောင်းလဲမှုမှတ်တမ်း
 
 EdgeAI for Beginners တွင် အရေးပါသော ပြောင်းလဲမှုများအားလုံးကို ဒီမှာ မှတ်တမ်းတင်ထားသည်။ ဒီပရောဂျက်သည် ရက်စွဲအခြေခံသော မှတ်တမ်းများနှင့် Keep a Changelog စတိုင် (Added, Changed, Fixed, Removed, Docs, Moved) ကို အသုံးပြုသည်။

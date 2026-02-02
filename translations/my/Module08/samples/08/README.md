@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-25T02:51:37+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "my"
-}
--->
 # Windows 11 Chat Sample - Foundry Local
 
 Windows 11 အတွက် Microsoft Foundry Local ကိုလှပသော native interface ဖြင့်ပေါင်းစပ်ထားသော chat application တစ်ခု။ Electron ဖြင့်တည်ဆောက်ပြီး Microsoft ရဲ့ Foundry Local ပုံစံများကိုလိုက်နာထားသည်။

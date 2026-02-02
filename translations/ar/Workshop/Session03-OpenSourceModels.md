@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "15a93babfc2b8a0bf8dadb2418637629",
-  "translation_date": "2025-11-11T21:38:45+00:00",
-  "source_file": "Workshop/Session03-OpenSourceModels.md",
-  "language_code": "ar"
-}
--->
 # الجلسة الثالثة: النماذج مفتوحة المصدر في Foundry Local
 
 ## الملخص

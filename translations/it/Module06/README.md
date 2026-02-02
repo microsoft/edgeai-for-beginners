@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-17T23:07:25+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "it"
-}
--->
 # Capitolo 06: Sistemi Agentici SLM: Una Panoramica Completa
 
 Il panorama dell'intelligenza artificiale sta vivendo una trasformazione fondamentale, passando da semplici chatbot a sofisticati agenti AI alimentati da Small Language Models (SLM). Questa guida completa esplora tre aspetti critici dei moderni sistemi agentici SLM: concetti fondamentali e strategie di implementazione, capacità di chiamata di funzioni e l'integrazione rivoluzionaria del Model Context Protocol (MCP).

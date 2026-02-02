@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fea4cb0f47a5011f0df128f5635133a5",
-  "translation_date": "2025-11-12T00:17:17+00:00",
-  "source_file": "Workshop/Session04-CuttingEdgeModels.md",
-  "language_code": "ro"
-}
--->
 # Sesiunea 4: Explorarea modelelor de ultimă generație – LLM-uri, SLM-uri și inferență pe dispozitiv
 
 ## Rezumat

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-  "translation_date": "2025-10-08T19:34:21+00:00",
-  "source_file": "Workshop/notebooks/README.md",
-  "language_code": "ko"
-}
--->
 # 워크숍 노트북
 
 > **실습형 엣지 AI 학습을 위한 인터랙티브 Jupyter 노트북**

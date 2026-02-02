@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "729f809c84e99609364180c090c43405",
-  "translation_date": "2025-10-01T02:07:13+00:00",
-  "source_file": "Module08/samples/README.md",
-  "language_code": "sv"
-}
--->
 # Modul 08 Exempel: Foundry Lokal Utvecklingsguide
 
 ## Översikt

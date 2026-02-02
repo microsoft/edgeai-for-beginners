@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ddfe62b8e130979b7034bc6fbb7d510c",
-  "translation_date": "2025-07-22T03:00:18+00:00",
-  "source_file": "Module01/README.md",
-  "language_code": "ja"
-}
--->
 # 第1章: エッジ向けAI展開の変革
 
 EdgeAIは人工知能展開におけるパラダイムシフトを表しており、クラウドベースの処理からローカルエッジデバイスへのAI機能の移行を意味します。この章では、AI実装のこの革新的なアプローチを定義する基本概念、主要技術、実用的な応用について探ります。

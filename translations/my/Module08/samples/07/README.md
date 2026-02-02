@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "254150b7d7854ec87ffcd88824d98079",
-  "translation_date": "2025-09-25T02:56:46+00:00",
-  "source_file": "Module08/samples/07/README.md",
-  "language_code": "my"
-}
--->
 # Foundry Local ကို API အဖြစ် အသုံးပြုခြင်း နမူနာ
 
 ဒီနမူနာက Microsoft Foundry Local ကို REST API ဝန်ဆောင်မှုအဖြစ် OpenAI SDK ကိုမသုံးဘဲ အသုံးပြုနည်းကို ပြသထားပါတယ်။ HTTP ကိုတိုက်ရိုက် ပေါင်းစည်းသုံးစွဲခြင်းနည်းလမ်းများကို ပြသပြီး အမြင့်ဆုံးထိန်းချုပ်မှုနှင့် အပြင်အဆင်ပြုလုပ်နိုင်စွမ်းကို ပေးစွမ်းပါတယ်။

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-24T11:46:15+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "es"
-}
--->
 # Foundry Local como Integración de Herramientas
 
 Un marco integral para integrar Microsoft Foundry Local como herramientas invocables dentro de aplicaciones más grandes, siguiendo los patrones oficiales de Microsoft para la integración de IA basada en herramientas.

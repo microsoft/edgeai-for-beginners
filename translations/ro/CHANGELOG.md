@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "78ca68df03ae43371b203ea43d346dec",
-  "translation_date": "2025-10-30T14:26:14+00:00",
-  "source_file": "CHANGELOG.md",
-  "language_code": "ro"
-}
--->
 # Jurnal de modificări
 
 Toate modificările notabile ale EdgeAI pentru Începători sunt documentate aici. Acest proiect utilizează intrări bazate pe date și stilul Keep a Changelog (Adăugat, Modificat, Reparat, Eliminat, Documentație, Mutat).

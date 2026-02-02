@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-23T01:18:32+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "sk"
-}
--->
 # Ukážka relácie 5: Orchestrácia viacerých agentov
 
 Táto ukážka demonštruje vzor koordinátora + špecialistov pomocou OpenAI-kompatibilného koncového bodu Foundry Local.

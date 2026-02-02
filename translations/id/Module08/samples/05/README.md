@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4f786f5ea706270620f8e5dfb088e0c0",
-  "translation_date": "2025-09-22T22:41:02+00:00",
-  "source_file": "Module08/samples/05/README.md",
-  "language_code": "id"
-}
--->
 # Sesi 5 Contoh: Orkestrasi Multi-Agen
 
 Contoh ini menunjukkan pola koordinator + spesialis menggunakan endpoint Foundry Local yang kompatibel dengan OpenAI.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-  "translation_date": "2025-12-15T20:16:50+00:00",
-  "source_file": "Module07/aitoolkit.md",
-  "language_code": "kn"
-}
--->
 # ವಿಸುಯಲ್ ಸ್ಟುಡಿಯೋ ಕೋಡ್‌ಗಾಗಿ AI ಟೂಲ್ಕಿಟ್ - ಎಡ್ಜ್ AI ಅಭಿವೃದ್ಧಿ ಮಾರ್ಗದರ್ಶಿ
 
 ## ಪರಿಚಯ

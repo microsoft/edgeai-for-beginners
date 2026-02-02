@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13cb0371a2aea01d721186ced4a25e1a",
-  "translation_date": "2025-09-24T10:47:09+00:00",
-  "source_file": "Module08/samples/08/README.md",
-  "language_code": "ko"
-}
--->
 # Windows 11 채팅 샘플 - Foundry Local
 
 Windows 11용 현대적인 채팅 애플리케이션으로, Microsoft Foundry Local을 아름다운 네이티브 인터페이스와 통합했습니다. Electron으로 제작되었으며 Microsoft의 공식 Foundry Local 패턴을 따릅니다.

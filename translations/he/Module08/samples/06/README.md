@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T00:52:36+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "he"
-}
--->
 # דוגמה למפגש 6: מודלים ככלים
 
 הדוגמה הזו מיישמת רישום כלים מינימלי + נתב שמבחר מודל על בסיס בקשת המשתמש ומבצע קריאה לנקודת הקצה של Foundry Local התואמת ל-OpenAI.

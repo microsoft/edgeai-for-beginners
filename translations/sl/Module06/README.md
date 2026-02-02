@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T23:38:27+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "sl"
-}
--->
 # Poglavje 06: Sistemi SLM Agentic: Celovit Pregled
 
 Pokrajina umetne inteligence doživlja temeljno preobrazbo, saj prehajamo od preprostih klepetalnih robotov k naprednim AI agentom, ki jih poganjajo Mali Jezikovni Modeli (SLM). Ta celovit vodnik raziskuje tri ključne vidike sodobnih agentnih sistemov SLM: osnovne koncepte in strategije uvajanja, zmožnosti klicanja funkcij ter revolucionarno integracijo Model Context Protocol (MCP).

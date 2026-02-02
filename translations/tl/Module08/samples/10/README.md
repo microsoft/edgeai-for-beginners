@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4a988dfc121c969bcc37d9c1a04fcd6c",
-  "translation_date": "2025-09-25T03:12:26+00:00",
-  "source_file": "Module08/samples/10/README.md",
-  "language_code": "tl"
-}
--->
 # Foundry Local bilang Pagsasama ng Mga Tool
 
 Isang komprehensibong balangkas para sa pagsasama ng Microsoft Foundry Local bilang mga maaring tawaging tool sa loob ng mas malalaking aplikasyon, alinsunod sa opisyal na mga pattern ng Microsoft para sa integrasyon ng AI na nakabatay sa tool.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f0c6af41a1ae2c5a770c8170da8bd6e",
-  "translation_date": "2025-10-01T01:05:42+00:00",
-  "source_file": "Module08/samples/06/README.md",
-  "language_code": "tl"
-}
--->
 # Session 6 Sample: Mga Modelo bilang Kasangkapan
 
 Ang sample na ito ay nagpatupad ng isang minimal na router + tool registry na pumipili ng modelo batay sa prompt ng user at tumatawag sa OpenAI-compatible endpoint ng Foundry Local.

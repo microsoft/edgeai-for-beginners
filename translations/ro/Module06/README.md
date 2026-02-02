@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T18:36:27+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "ro"
-}
--->
 # Capitolul 06: Sisteme Agentice SLM: O Privire de Ansamblu
 
 Peisajul inteligenței artificiale trece printr-o transformare fundamentală, evoluând de la chatbot-uri simple la agenți AI sofisticați alimentați de Modele de Limbaj Mic (SLM). Acest ghid cuprinzător explorează trei aspecte critice ale sistemelor agentice moderne SLM: concepte fundamentale și strategii de implementare, capacități de apelare a funcțiilor și integrarea revoluționară a Protocolului de Context al Modelului (MCP).

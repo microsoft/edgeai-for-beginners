@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c86f39ae10a967d9b337934c067b64f9",
-  "translation_date": "2025-10-02T11:47:59+00:00",
-  "source_file": "Module07/README.md",
-  "language_code": "ko"
-}
--->
 # Chapter 07 : EdgeAI 샘플
 
 Edge AI는 인공지능과 엣지 컴퓨팅의 융합을 통해 클라우드 연결 없이도 디바이스에서 직접 지능형 처리를 가능하게 합니다. 이 장에서는 다양한 플랫폼과 프레임워크를 활용한 다섯 가지 독창적인 EdgeAI 구현 사례를 탐구하며, 엣지에서 AI 모델을 실행하는 데 있어 그 다양성과 강력함을 보여줍니다.

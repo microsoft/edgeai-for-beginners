@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "66985bbc1a3f888335c827173a58bc5e",
-  "translation_date": "2025-10-28T20:59:16+00:00",
-  "source_file": "Workshop/Session06-ModelsAsTools.md",
-  "language_code": "ko"
-}
--->
 # 세션 6: Foundry Local – 도구로서의 모델
 
 ## 개요

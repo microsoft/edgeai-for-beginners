@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "03a45997306e55f466aa93ae0d4a1e25",
-  "translation_date": "2025-12-16T00:39:57+00:00",
-  "source_file": "Module08/samples/02/README.md",
-  "language_code": "te"
-}
--->
 # నమూనా 02: OpenAI SDK ఇంటిగ్రేషన్
 
 OpenAI Python SDKతో అధునాతన ఇంటిగ్రేషన్‌ను ప్రదర్శిస్తుంది, Microsoft Foundry Local మరియు Azure OpenAI రెండింటినీ స్ట్రీమింగ్ ప్రతిస్పందనలతో మరియు సరైన లోపాల నిర్వహణతో మద్దతు ఇస్తుంది.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "04951692a100dcd716df01efca2d3f0d",
-  "translation_date": "2025-11-11T23:41:49+00:00",
-  "source_file": "Workshop/Readme.md",
-  "language_code": "vi"
-}
--->
 # EdgeAI cho Người Mới Bắt Đầu - Hội Thảo
 
 > **Lộ trình học thực hành để xây dựng các ứng dụng Edge AI sẵn sàng cho sản xuất**

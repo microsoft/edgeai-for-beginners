@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7c65ab2fd757b5fce2f114a3118d05da",
-  "translation_date": "2025-09-18T15:36:21+00:00",
-  "source_file": "Module02/README.md",
-  "language_code": "sw"
-}
--->
 # Sura ya 02: Misingi ya Miundo Midogo ya Lugha
 
 Sura hii ya msingi inatoa uchunguzi muhimu wa Miundo Midogo ya Lugha (SLMs), ikijumuisha kanuni za kinadharia, mikakati ya utekelezaji wa vitendo, na suluhisho za kupeleka katika uzalishaji. Sura hii inaweka msingi wa maarifa muhimu kwa kuelewa usanifu wa kisasa wa AI wenye ufanisi na matumizi yake ya kimkakati katika mazingira mbalimbali ya kompyuta.

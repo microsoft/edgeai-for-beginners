@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e8d157e0a282083a1e1c7bb5dda28646",
-  "translation_date": "2025-10-30T13:25:24+00:00",
-  "source_file": "Module04/README.md",
-  "language_code": "nl"
-}
--->
 # Hoofdstuk 04: Modelformaatconversie en kwantisering - Overzicht van het hoofdstuk
 
 De opkomst van EdgeAI heeft modelformaatconversie en kwantisering tot essentiële technologieën gemaakt voor het implementeren van geavanceerde machine learning-mogelijkheden op apparaten met beperkte middelen. Dit uitgebreide hoofdstuk biedt een complete gids om modellen te begrijpen, te implementeren en te optimaliseren voor edge deployment-scenario's.

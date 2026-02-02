@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b17bf7f849519fac995c24ab9e2d0be8",
-  "translation_date": "2025-09-18T14:18:06+00:00",
-  "source_file": "Module06/README.md",
-  "language_code": "tl"
-}
--->
 # Kabanata 06: SLM Agentic Systems: Isang Komprehensibong Pangkalahatang-ideya
 
 Ang tanawin ng artificial intelligence ay dumaranas ng isang mahalagang pagbabago habang lumilipat tayo mula sa simpleng chatbots patungo sa mas sopistikadong AI agents na pinapagana ng Small Language Models (SLMs). Ang komprehensibong gabay na ito ay sumisiyasat sa tatlong mahahalagang aspeto ng modernong SLM agentic systems: mga pangunahing konsepto at estratehiya sa deployment, kakayahan sa pagtawag ng function, at ang rebolusyonaryong integrasyon ng Model Context Protocol (MCP).
