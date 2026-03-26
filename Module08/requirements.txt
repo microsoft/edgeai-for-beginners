@@ -1,4 +1,4 @@
-requests==2.32.4
+requests==2.33.0
 chainlit==2.9.4
 openai>=1.30.0
 foundry-local-sdk
