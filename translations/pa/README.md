@@ -15,209 +15,219 @@
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Follow these steps to get started using these resources:
+ਇਹ ਸਾਧਨਾਂ ਦੀ ਵਰਤੋਂ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਇਹ ਕਦਮ ਪਾਲਣਾ ਕਰੋ:
 
-1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Clone the Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Join The Azure AI Foundry Discord and meet experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
+1. **ਰੀਪੋਜ਼ਿਟਰੀ ਫੋਰਕ ਕਰੋ**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **ਰੀਪੋਜ਼ਿਟਰੀ ਕਲੋਨ ਕਰੋ**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+3. [**Azure AI Foundry Discord ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ ਅਤੇ ਵਿਸ਼ੇਸ਼ਜਿਆਂ ਅਤੇ ਹੋਰ ਵਿਕਾਸਕਾਰਾਂ ਨਾਲ ਮਿਲੋ**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Multi-Language Support
+### 🌐 ਬਹੁ-ਭਾਸ਼ਾ ਸਹਿਯੋਗ
 
-#### Supported via GitHub Action (Automated & Always Up-to-Date)
+#### GitHub ਐਕਸ਼ਨ ਦੁਆਰਾ ਸਮਰਥਿਤ (ਆਟੋਮੇਟਿਕ ਅਤੇ ਹਮੇਸ਼ਾਂ ਅੱਪ-ਟੂ-ਡੇਟ)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](./README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Khmer](../km/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](./README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
-> **Prefer to Clone Locally?**
-
-> This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:
+> **ਛੇਤੀ ਕਲੋਨ ਕਰਨਾ ਪਸੰਦ ਹੈ?**
+>
+> ਇਸ ਰੀਪੋਜ਼ਿਟਰੀ ਵਿੱਚ 50+ ਭਾਸ਼ਾ ਅਨੁਵਾਦ ਸ਼ਾਮਲ ਹਨ, ਜੋ ਡਾਊਨਲੋਡ ਆਕਾਰ ਵਧਾਉਂਦੇ ਹਨ। ਬਿਨਾਂ ਅਨੁਵਾਦਾਂ ਦੇ ਕਲੋਨ ਕਰਨ ਲਈ, sparse checkout ਦੀ ਵਰਤੋਂ ਕਰੋ:
+>
+> **Bash / macOS / Linux:**
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
 > cd edgeai-for-beginners
 > git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
 > ```
-> This gives you everything you need to complete the course with a much faster download.
+>
+> **CMD (Windows):**
+> ```cmd
+> git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
+> cd edgeai-for-beginners
+> git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
+> ```
+>
+> ਇਹ ਤੁਹਾਨੂੰ ਕੋਰਸ ਮੁਕੰਮਲ ਕਰਨ ਲਈ ਸਭ ਕੁਝ ਤੇਜ਼ ਡਾਊਨਲੋਡ ਨਾਲ ਦਿੰਦਾ ਹੈ।
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**If you wish to have additional translations languages supported are listed [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
-## Introduction
+**ਜੇ ਤੁਸੀਂ ਹੋਰ ਅਨੁਵਾਦ ਭਾਸ਼ਾਵਾਂ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਉਹ [ਇੱਥੇ](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md) ਦਰਜ ਹਨ।**
+## ਪਰਿਚਯ
 
-Welcome to **EdgeAI for Beginners** – your comprehensive journey into the transformative world of Edge Artificial Intelligence. This course bridges the gap between powerful AI capabilities and practical, real-world deployment on edge devices, empowering you to harness AI's potential directly where data is generated and decisions need to be made.
+ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ **EdgeAI for Beginners** ਵਿੱਚ – ਐਜ ਕ੍ਰਿਤ੍ਰਿਮ ਬੁੱਧੀ ਦੇ ਬਦਲਦੇ ਸੰਸਾਰ ਵਿੱਚ ਤੁਹਾਡੀ ਵਿਸਤ੍ਰਿਤ ਯਾਤਰਾ। ਇਹ ਕੋਰਸ ਸ਼ਕਤੀਸ਼ਾਲੀ ਐਆਈ ਸਮਰੱਥਾਵਾਂ ਅਤੇ ਪ੍ਰਯੋਗਕਰਤਾ-ਵਾਸਤਵਿਕ ਤੌਰ ਤੇ ਏਜ ਡਿਵਾਈਸਾਂ ‘ਤੇ ਡਿਪਲੋਇਮੈਂਟ ਵਿਚਕਾਰ ਦੇ ਫਰਕ ਨੂੰ ਮਿਟਾਉਂਦਾ ਹੈ, ਜੋ ਤੁਹਾਨੂੰ ਡਾਟਾ ਬਣਾਈ ਜਾਂਦੀ ਥਾਂ ਤੇ ਅਤੇ ਫੈਸਲੇ ਲੈਣ ਦੀ ਲੋੜ ਵਾਲੀ ਥਾਂ ਤੇ ਸਿੱਧਾ ਐਆਈ ਦੀ ਸਮਰੱਥਾ ਵਰਤਣ ਲਈ ਸਮਰੱਥ ਬਣਾਉਂਦਾ ਹੈ।
 
-### What You'll Master
+### ਤੁਹਾਡੇ ਕੁਝ ਯੋਗਤਾ ਪ੍ਰਾਪਤ ਕਰਨਗੇ
 
-This course takes you from fundamental concepts to production-ready implementations, covering:
-- **Small Language Models (SLMs)** optimized for edge deployment
-- **Hardware-aware optimization** across diverse platforms
-- **Real-time inference** with privacy-preserving capabilities
-- **Production deployment** strategies for enterprise applications
+ਇਹ ਕੋਰਸ ਤੁਹਾਨੂੰ ਮੁੱਢਲੀ ਧਾਰਨਾਵਾਂ ਤੋਂ ਲੈ ਕੇ ਉਤਪਾਦ ਦੀ ਤਿਆਰੀ ਤੱਕ ਦੇ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨਾਂ ਤੱਕ ਲੈ ਜਾਂਦਾ ਹੈ, ਜਿਸ ਵਿੱਚ ਸ਼ਾਮਲ ਹੈ:
+- **ਸਮਾਲ ਲੈਂਗਵੇਜ ਮਾਡਲਜ਼ (SLMs)** ਜੋ ਏਜ ਡਿਪਲੋਇਮੈਂਟ ਲਈ ਅਪਟਿਮਾਈਜ਼ਡ ਹਨ
+- **ਹਾਰਡਵੇਅਰ-ਆਵਰ ਸੰਵਰਧਨ** ਵੱਖ-ਵੱਖ ਪਲੇਟਫਾਰਮਾਂ ਲਈ
+- **ਰਿਆਲ-ਟਾਈਮ ਇੰਫਰੰਸ** ਪ੍ਰਾਈਵੇਸੀ ਸੁਰੱਖਿਆ ਸਮਰੱਥਾਵਾਂ ਨਾਲ
+- **ਉਤਪਾਦਨ ਡਿਪਲੋਇਮੈਂਟ** ਰਣਨੀਤੀਆਂ ਉਦਯੋਗਕ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ
 
-### Why EdgeAI Matters
+### EdgeAI ਕਿਉਂ ਮਹੱਤਵਪੂਰਨ ਹੈ
 
-Edge AI represents a paradigm shift that addresses critical modern challenges:
-- **Privacy & Security**: Process sensitive data locally without cloud exposure
-- **Real-time Performance**: Eliminate network latency for time-critical applications
-- **Cost Efficiency**: Reduce bandwidth and cloud computing expenses
-- **Resilient Operations**: Maintain functionality during network outages
-- **Regulatory Compliance**: Meet data sovereignty requirements
+ਏਜ ਐਆਈ ਇੱਕ ਇੰਨਾ ਵੱਡਾ ਬਦਲਾਵ ਹੈ ਜੋ ਆਧੁਨਿਕ ਮੁਸ਼ਕਲਾਂ ਦਾ ਸਮਾਧਾਨ ਕਰਦਾ ਹੈ:
+- **ਪ੍ਰਾਈਵੇਸੀ ਅਤੇ ਸੁਰੱਖਿਆ**: ਸੰਵੇਦਨਸ਼ੀਲ ਡਾਟਾ ਨੂੰ ਲੋਕਲ ਤੌਰ ਤੇ ਪ੍ਰੋਸੈਸ ਕਰੋ ਬਿਨਾਂ ਕਲਾਉਡ ਮਾਰਫਤ ਪਰਦਰਸ਼ਿਤ ਹੋਣ ਦੇ
+- **ਰਿਆਲ-ਟਾਈਮ ਪ੍ਰਦਰਸ਼ਨ**: ਸਮੇਂ-ਸੰਵੇਦਨਸ਼ੀਲ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਨੈੱਟਵਰਕ ਦੇਰਾ ਖਤਮ ਕਰੋ
+- **ਖਰਚੇ ਦੀ ਬਚਤ**: ਬੈਂਡਵਿਡਥ ਅਤੇ ਕਲਾਉਡ ਕਮਪਿਊਟਿੰਗ ਖ਼ਰਚੇ ਘਟਾਓ
+- **ਟਿਕਾਊ ਕਾਰਜ**: ਨੈੱਟਵਰਕ ਗੜਬੜਾਂ ਦੌਰਾਨ ਕਾਰਜਕੁਸ਼ਲਤਾ ਬਣਾਈ ਰੱਖੋ
+- **ਨਿਯਮਕ ਅਨੁਕੂਲਤਾ**: ਡਾਟਾ ਸਾਰਥਿਕਤਾ ਦੀਆਂ ਲੋੜਾਂ ਪੂਰੀਆਂ ਕਰੋ
 
 ### Edge AI
 
-Edge AI refers to running AI algorithms and language models locally on hardware, close to where data is generated without relying on cloud resources for inference. It reduces latency, enhances privacy, and enables real-time decision-making.
+Edge AI ਦਾ ਅਰਥ ਹੈ ਕਿ AI ਅਲਗੋਰਿਦਮ ਅਤੇ ਭਾਸ਼ਾ ਮਾਡਲ ਨੂੰ ਲੋਕਲ ਹਾਰਡਵੇਅਰ ਤੇ, ਜਿੱਥੇ ਡਾਟਾ ਬਣਦਾ ਹੈ, ਉਥੇ ਚਲਾਇਆ ਜਾਣਾ ਬਿਨਾਂ ਕਲਾਉਡ ਸਾਧਨਾਂ ਦੇ ਭਰੋਸੇ ਤੇ। ਇਸ ਨਾਲ ਲੇਟੈਂਸੀ ਘਟਦੀ ਹੈ, ਪ੍ਰਾਈਵੇਸੀ ਵਧਦੀ ਹੈ ਅਤੇ ਤੁਰੰਤ ਫੈਸਲੇ ਲੈਣ ਦੀ ਸਮਰੱਥਾ ਹੁੰਦੀ ਹੈ।
 
-### Core Principles:
-- **On-device inference**: AI models run on edge devices (phones, routers, microcontrollers, industrial PCs)
-- **Offline capability**: Functions without persistent internet connectivity
-- **Low latency**: Immediate responses suited for real-time systems
-- **Data sovereignty**: Keeps sensitive data local, improving security and compliance
+### ਮੁੱਖ ਨਿਯਮ:
+- **ਉਪਕਰਣ ਤੇ ਇੰਫਰੰਸ**: ਐਆਈ ਮਾਡਲ ਏਜ ਯੰਤਰਾਂ (ਫੋਨ, ਰਾਊਟਰ, ਮਾਇਕ੍ਰੋਕੰਟਰੋਲਰ, ਉਦਯੋਗਕ ਪੀਸੀ) ‘ਤੇ ਚਲਦੇ ਹਨ
+- **ਆਫਲਾਈਨ ਸਮਰੱਥਾ**: ਇਹ ਸਥਿਰ ਇੰਟਰਨੈੱਟ ਕਨੈਕਸ਼ਨ ਤੋਂ ਬਿਨਾਂ ਕੰਮ ਕਰਦਾ ਹੈ
+- **ਘੱਟ ਲੇਟੈਂਸੀ**: ਤੁਰੰਤ ਜਵਾਬ ਜੋ ਰਿਆਲ-ਟਾਈਮ ਪ੍ਰਣਾਲੀਆਂ ਲਈ ਉਚਿਤ ਹੈ
+- **ਡਾਟਾ ਸਰੋਤ ਦਾ ਨਿਯੰਤਰਣ**: ਸੰਵੇਦਨਸ਼ੀਲ ਡਾਟਾ ਨੂੰ ਸਥਾਨਕ ਰੱਖਦਾ ਹੈ, ਸੁਰੱਖਿਆ ਅਤੇ ਅਨੁਕੂਲਤਾ ਵਧਾਉਂਦਾ ਹੈ
 
-### Small Language Models (SLMs)
+### ਸਮਾਲ ਲੈਂਗਵੇਜ ਮਾਡਲਜ਼ (SLMs)
 
-SLMs like Phi-4, Mistral-7B, and Gemma are optimized versions of larger LLMs—trained or distilled for:
-- **Reduced memory footprint**: Efficient use of limited edge device memory
-- **Lower compute demand**: Optimized for CPU and edge GPU performance
-- **Faster startup times**: Quick initialization for responsive applications
+SLMs ਜਿਵੇਂ ਕਿ Phi-4, Mistral-7B, ਅਤੇ Gemma ਵੱਡੇ LLMs ਦੇ ਅਪਟਿਮਾਈਜ਼ਡ ਵਰਜਨ ਹਨ—ਜੋ ਤਿਆਰ ਕੀਤੇ ਜਾਂ ਡਿਸਟੀਲ ਕੀਤੇ ਜਾਂਦੇ ਹਨ:
+- **ਘੱਟ ਮੇਮੋਰੀ ਖਪਤ**: ਸੀਮਿਤ ਏਜ ਯੰਤਰ ਦੀ ਯਾਦ ਦੀ ਕੁਸ਼ਲ ਵਰਤੋਂ
+- **ਘੱਟ ਕਮਪਿਊਟ ਮੰਗ**: CPU ਅਤੇ ਏਜ GPU ਪ੍ਰਦਰਸ਼ਨ ਲਈ ਅਪਟਿਮਾਈਜ਼ਡ
+- **ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ ਸਮਾਂ**: ਜ਼ਰੂਰੀ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਤੇਜ਼ ਸ਼ੁਰੂਅਾਤ
 
-They unlock powerful NLP capabilities while meeting the constraints of:
-- **Embedded systems**: IoT devices and industrial controllers
-- **Mobile devices**: Smartphones and tablets with offline capabilities
-- **IoT Devices**: Sensors and smart devices with limited resources
-- **Edge servers**: Local processing units with limited GPU resources
-- **Personal Computers**: Desktop and laptop deployment scenarios
+ਇਹ ਸ਼ਕਤੀਸ਼ਾਲੀ NLP ਸਮਰੱਥਾਵਾਂ ਨੂੰ ਖੋਲ੍ਹਦੇ ਹਨ ਜਦੋਂਕਿ ਇਹ ਸੀਮਾਵਾਂ ਨੂੰ ਪੂਰਾ ਕਰਦੇ ਹਨ:
+- **ਐਂਬੈਡਡ ਸਿਸਟਮ**: IoT ਯੰਤਰ ਅਤੇ ਉਦਯੋਗਕ ਕੰਟਰੋਲਰ
+- **ਮੋਬਾਈਲ ਯੰਤਰ**: ਸਮਾਰਟਫੋਨ ਅਤੇ ਟੈਬਲੇਟ ਸਾਫ਼ ਆਫਲਾਈਨ ਸਮਰੱਥਾਵਾਂ ਨਾਲ
+- **IoT ਯੰਤਰ**: ਸੀਮਾ ਵਾਲੇ ਸਰੋਤਾਂ ਦੇ ਨਾਲ ਸੈਂਸਰ ਅਤੇ ਸਮਾਰਟ ਯੰਤਰ
+- **ਏਜ ਸਰਵਰ**: ਸੀਮਿਤ GPU ਵਾਲੇ ਸਥਾਨਕ ਪ੍ਰੋਸੈਸਿੰਗ ਯੂਨਿਟ
+- **ਪर्सਨਲ ਕੰਪਿੂਟਰ**: ਡੈਸਕਟਾਪ ਅਤੇ ਲੈਪਟਾਪ ਡਿਪਲੋਇਮੈਂਟ ਸਥਿਤੀਆਂ
 
-## Course Modules & Navigation
+## ਕੋਰਸ ਮੋਡੀਊਲ ਅਤੇ ਨੈਵੀਗੇਸ਼ਨ
 
-| Module | Topic | Focus Area | Key Content | Level | Duration |
+| ਮੋਡੀਊਲ | ਵਿਸ਼ਾ | ਧਿਆਨ ਖੇਤਰ | ਪ੍ਰਮੁੱਖ ਸਮਗਰੀ | ਪੱਧਰ | ਅਵਧੀ |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Introduction to EdgeAI](./introduction.md) | Foundation & Context | EdgeAI Overview • Industry Applications • SLM Introduction • Learning Objectives | Beginner | 1-2 hrs |
-| [📚 01](../../Module01) | [EdgeAI Fundamentals](./Module01/README.md) | Cloud vs Edge AI comparison | EdgeAI Fundamentals • Real World Case Studies • Implementation Guide • Edge Deployment | Beginner | 3-4 hrs |
-| [🧠 02](../../Module02) | [SLM Model Foundations](./Module02/README.md) | Model families & architecture | Phi Family • Qwen Family • Gemma Family • BitNET • μModel • Phi-Silica | Beginner | 4-5 hrs |
-| [🚀 03](../../Module03) | [SLM Deployment Practice](./Module03/README.md) | Local & cloud deployment | Advanced Learning • Local Environment • Cloud Deployment | Intermediate | 4-5 hrs |
-| [⚙️ 04](../../Module04) | [Model Optimization Toolkit](./Module04/README.md) | Cross-platform optimization | Introduction • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Workflow Synthesis | Intermediate | 5-6 hrs |
-| [🔧 05](../../Module05) | [SLMOps Production](./Module05/README.md) | Production operations | SLMOps Introduction • Model Distillation • Fine-tuning • Production Deployment | Advanced | 5-6 hrs |
-| [🤖 06](../../Module06) | [AI Agents & Function Calling](./Module06/README.md) | Agent frameworks & MCP | Agent Introduction • Function Calling • Model Context Protocol | Advanced | 4-5 hrs |
-| [💻 07](../../Module07) | [Platform Implementation](./Module07/README.md) | Cross-platform samples | AI Toolkit • Foundry Local • Windows Development | Advanced | 3-4 hrs |
-| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Production-ready samples | Sample applications (see details below) | Expert | 8-10 hrs |
+| [📖 00 ](./introduction.md) | [EdgeAI ਦਾ ਪਰਿਚਯ](./introduction.md) | ਬੁਨਿਆਦ ਅਤੇ ਸੰਦਰਭ | EdgeAI ਦਾ ਸੰਖੇਪ • ਉਦਯੋਗ ਐਪਲੀਕੇਸ਼ਨ • SLM ਦਾ ਪਰਿਚਯ • ਸਿੱਖਣ ਦੇ ਉਦੇਸ਼ | ਸ਼ੁਰੂਆਤੀ | 1-2 ਘੰਟੇ |
+| [📚 01](../../Module01) | [EdgeAI ਮੁਲਤਾਨ](./Module01/README.md) | ਕਲਾਉਡ ਵਿਰੁੱਧ Edge AI ਦੀ ਤੁਲਨਾ | EdgeAI ਦੇ ਨਿਯਮ • ਅਸਲੀ ਦੁਨੀਆਂ ਦੇ ਕੇਸ ਸਟੱਡੀ • ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ ਗਾਈਡ • ਏਜ ਡਿਪਲੋਇਮੈਂਟ | ਸ਼ੁਰੂਆਤੀ | 3-4 ਘੰਟੇ |
+| [🧠 02](../../Module02) | [SLM ਮਾਡਲ ਦੀਆਂ ਬੁਨਿਆਦਾਂ](./Module02/README.md) | ਮਾਡਲ ਪਰਿਵਾਰ ਤੇ ਬਣਤਰ | Phi ਪਰਿਵਾਰ • Qwen ਪਰਿਵਾਰ • Gemma ਪਰਿਵਾਰ • BitNET • μModel • Phi-Silica | ਸ਼ੁਰੂਆਤੀ | 4-5 ਘੰਟੇ |
+| [🚀 03](../../Module03) | [SLM ਡਿਪਲੋਇਮੈਂਟ ਅਭਿਆਸ](./Module03/README.md) | ਲੋਕਲ ਅਤੇ ਕਲਾਉਡ ਡਿਪਲੋਇਮੈਂਟ | ਅੱਗੇ ਦੀ ਸਿੱਖਿਆ • ਲੋਕਲ ਮਾਹੌਲ • ਕਲਾਉਡ ਡਿਪਲੋਇਮੈਂਟ | ਦਰਮਿਆਨਾ | 4-5 ਘੰਟੇ |
+| [⚙️ 04](../../Module04) | [ਮਾਡਲ ਸੰਵਰਧਨ ਟੂਲਕਿਟ](./Module04/README.md) | ਕ੍ਰਾਸ-ਪਲੇਟਫਾਰਮ ਸੰਵਰਧਨ | ਪਰਿਚਯ • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • ਕੰਮਕਾਰ ਪ੍ਰਕਿਰਿਆ ਸੰਯੋਜਨ | ਦਰਮਿਆਨਾ | 5-6 ਘੰਟੇ |
+| [🔧 05](../../Module05) | [SLMOps ਉਤਪਾਦਨ](./Module05/README.md) | ਉਤਪਾਦਨ ਸੰਚਾਲਨ | SLMOps ਪਰਿਚਯ • ਮਾਡਲ ਡਿਸਟੀਲੇਸ਼ਨ • ਫਾਈਨ-ਟਿਊਨਿੰਗ • ਉਤਪਾਦਨ ਡਿਪਲੋਇਮੈਂਟ | ਉੱਚ ਪੱਧਰ | 5-6 ਘੰਟੇ |
+| [🤖 06](../../Module06) | [AI ਏਜੰਟ ਅਤੇ ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ](./Module06/README.md) | ਏਜੰਟ ਫਰੇਮਵਰਕ ਅਤੇ MCP | ਏਜੰਟ ਪਰਿਚਯ • ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ • ਮਾਡਲ ਸੰਦਰਭ ਪ੍ਰੋਟੋਕੋਲ | ਉੱਚ ਪੱਧਰ | 4-5 ਘੰਟੇ |
+| [💻 07](../../Module07) | [ਪਲੇਟਫਾਰਮ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ](./Module07/README.md) | ਕ੍ਰਾਸ-ਪਲੇਟਫਾਰਮ ਨਮੂਨੇ | AI ਟੂਲਕਿਟ • Foundry ਲੋਕਲ • Windows ਵਿਕਾਸ | ਉੱਚ ਪੱਧਰ | 3-4 ਘੰਟੇ |
+| [🏭 08](../../Module08) | [Foundry ਲੋਕਲ ਟੂਲਕਿਟ](./Module08/README.md) | ਉਤਪਾਦਨ-ਤਿਆਰ ਨਮੂਨੇ | ਨਮੂਨਾ ਐਪਲੀਕੇਸ਼ਨ (ਹੇਠ ਲਿਖਿਆ ਵੇਰਵਾ ਦੇਖੋ) | ਵਿਸ਼ੇਸ਼ਗਿਆ | 8-10 ਘੰਟੇ |
 
-### 🏭 **Module 08: Sample Applications**
+### 🏭 **ਮੋਡੀਊਲ 08: ਨਮੂਨਾ ਐਪਲੀਕੇਸ਼ਨ**
 
-- [01: REST Chat Quickstart](./Module08/samples/01/README.md)
-- [02: OpenAI SDK Integration](./Module08/samples/02/README.md)
-- [03: Model Discovery & Benchmarking](./Module08/samples/03/README.md)
-- [04: Chainlit RAG Application](./Module08/samples/04/README.md)
-- [05: Multi-Agent Orchestration](./Module08/samples/05/README.md)
-- [06: Models-as-Tools Router](./Module08/samples/06/README.md)
-- [07: Direct API Client](./Module08/samples/07/README.md)
-- [08: Windows 11 Chat App](./Module08/samples/08/README.md)
-- [09: Advanced Multi-Agent System](./Module08/samples/09/README.md)
-- [10: Foundry Tools Framework](./Module08/samples/10/README.md)
+- [01: REST ਚੈਟ ਕਵਿਕਸਟਾਰਟ](./Module08/samples/01/README.md)
+- [02: OpenAI SDK ਇੰਟਿਗ੍ਰੇਸ਼ਨ](./Module08/samples/02/README.md)
+- [03: ਮਾਡਲ ਡਿਸਕਵਰੀ ਅਤੇ ਬੇਨਚਮਾਰਕਿੰਗ](./Module08/samples/03/README.md)
+- [04: Chainlit RAG ਐਪਲੀਕੇਸ਼ਨ](./Module08/samples/04/README.md)
+- [05: ਮਲਟੀ-ਏਜੰਟ ਓਰਕੈਸਟਰੈਸ਼ਨ](./Module08/samples/05/README.md)
+- [06: ਮਾਡਲਜ਼-ਅਜ਼-ਟੂਲਜ਼ ਰਾਊਟਰ](./Module08/samples/06/README.md)
+- [07: ਡਾਇਰੈਕਟ API ਕਲਾਇੰਟ](./Module08/samples/07/README.md)
+- [08: Windows 11 ਚੈਟ ਐਪ](./Module08/samples/08/README.md)
+- [09: ਅਡਵਾਂਸਡ ਮਲਟੀ-ਏਜੰਟ ਸਿਸਟਮ](./Module08/samples/09/README.md)
+- [10: Foundry ਟੂਲਜ਼ ਫਰੇਮਵਰਕ](./Module08/samples/10/README.md)
 
-### 🎓 **Workshop: Hands-On Learning Path**
+### 🎓 **ਵਰਕਸ਼ਾਪ: ਹੱਥ-ਅਨ ਲਰਨਿੰਗ ਪਾਥ**
 
-Comprehensive hands-on workshop materials with production-ready implementations:
+ਉਤਪਾਦਨ-ਤਿਆਰ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨਾਂ ਨਾਲ ਵਿਸਤ੍ਰਿਤ ਹੱਥ-ਅਨ ਵਰਕਸ਼ਾਪ ਸਮੱਗਰੀ:
 
-- **[Workshop Guide](./Workshop/Readme.md)** - Complete learning objectives, outcomes, and resource navigation
-- **Python Samples** (6 sessions) - Updated with best practices, error handling, and comprehensive documentation
-- **Jupyter Notebooks** (8 interactive) - Step-by-step tutorials with benchmarks and performance monitoring
-- **Session Guides** - Detailed markdown guides for each workshop session
-- **Validation Tools** - Scripts to verify code quality and run smoke tests
+- **[ਵਰਕਸ਼ਾਪ ਗਾਈਡ](./Workshop/Readme.md)** - ਪੂਰੇ ਸਿੱਖਣ ਦੇ ਉਦੇਸ਼, ਨਤੀਜੇ ਅਤੇ ਸਾਧਨ ਨੈਵੀਗੇਸ਼ਨ
+- **ਪਾਇਥਨ ਨਮੂਨੇ** (6 ਸੈਸ਼ਨ) - ਵਧੀਆ ਅਭਿਆਸਾਂ, ਤ੍ਰੁੱਟੀ ਹਲ ਕਰਨ ਅਤੇ ਵਿਸਤ੍ਰਿਤ ਦਸਤਾਵੇਜ਼ੀਕਰਨ ਨਾਲ ਅੱਪਡੇਟ ਕੀਤੇ
+- **ਜੁਪਾਈਟਰ ਨੋਟਬੁੱਕਸ** (8 ਇੰਟਰਐਕਟਿਵ) - ਕਦਮ-ਦਰ-ਕਦਮ ਟਿਊਟੋਰਿਯਲਸ, ਬੇਨਚਮਾਰਕ ਅਤੇ ਪ੍ਰਦਰਸ਼ਨ ਨਿਗਰਾਨੀ ਨਾਲ
+- **ਸੈਸ਼ਨ ਗਾਈਡਸ** - ਹਰ ਵਰਕਸ਼ਾਪ ਸੈਸ਼ਨ ਲਈ ਵਿਸਤ੍ਰਿਤ ਮਾਰਕਡਾਊਨ ਗਾਈਡਜ਼
+- **ਵੈਧਤਾ ਟੂਲਜ਼** - ਕੋਡ ਕੁਆਲਿਟੀ ਦੀ ਪੜਤਾਲ ਅਤੇ ਸਮੋਕ ਟੈਸਟ ਚਲਾਉਣ ਲਈ ਸਕ੍ਰਿਪਟ
 
-**What You'll Build:**
-- Local AI chat applications with streaming support
-- RAG pipelines with quality evaluation (RAGAS)
-- Multi-model benchmarking and comparison tools
-- Multi-agent orchestration systems
-- Intelligent model routing with task-based selection
+**ਤੁਸੀਂ ਇਹ ਬਣਾਉਂਦੇ ਹੋ:**
+- ਸਟ੍ਰੀਮਿੰਗ ਸਹਾਇਤਾ ਨਾਲ ਲੋਕਲ ਐਆਈ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ
+- ਗੁਣਵੱਤਾ ਮੁਲਾਂਕਣ ਨਾਲ RAG ਪਾਈਪਲਾਈਨਾਂ (RAGAS)
+- ਮਲਟੀ-ਮਾਡਲ ਬੇਨਚਮਾਰਕਿੰਗ ਅਤੇ ਤੁਲਨਾਤਮਕ ਸੰਦ
+- ਮਲਟੀ-ਏਜੰਟ ਓਰਕੈਸਟਰੈਸ਼ਨ ਸਿਸਟਮ
+- ਕੰਮ-ਆਧਾਰਿਤ ਚੋਣ ਨਾਲ ਬੁੱਧੀਮਾਨ ਮਾਡਲ ਰਾਊਟਿੰਗ
 
-### 🎙️ **Workshop For Agentic: Hands-On - The AI Podcast Studio**
+### 🎙️ **ਵਰਕਸ਼ਾਪ ਫਾਰ ਏਜੈਂਟਿਕ: ਹੱਥ-ਅਨ - ਦ ਐਆਈ ਪੋਡਕਾਸਟ ਸਟੂਡੀਓ**
+ਸ਼ੁਰੂ ਤੋਂ ਇੱਕ AI-ਸੰਚਾਲਿਤ ਪੋਡਕਾਸਟ ਨਿਰਮਾਣ ਪਾਈਪਲਾਈਨ ਬਣਾਓ! ਇਹ ਗਹਿਰੀ ਵਰਕਸ਼ਾਪ ਤੁਹਾਨੂੰ ਇੱਕ ਪੂਰੀ ਮਲਟੀ-ਏਜੰਟ ਸਿਸਟਮ ਬਣਾਉਣੀ ਸਿਖਾਉਂਦੀ ਹੈ ਜੋ ਵਿਚਾਰਾਂ ਨੂੰ ਪ੍ਰੋਫੈਸ਼ਨਲ ਪੋਡਕਾਸਟ ਐਪੀਸੋਡਾਂ ਵਿੱਚ ਬਦਲਦਾ ਹੈ।
 
-Build an AI-powered podcast production pipeline from scratch! This immersive workshop teaches you to create a complete multi-agent system that transforms ideas into professional podcast episodes.
-**[🎬 AI ਪੋਡਕਾਸਟ ਸਟੂਡੀਓ ਵਰਕਸ਼ਾਪ ਸ਼ੁਰੂ ਕਰੋ](./WorkshopForAgentic/README.md)**
+**[🎬 The AI Podcast Studio Workshop ਸ਼ੁਰੂ ਕਰੋ](./WorkshopForAgentic/README.md)**
 
-**ਤੁਹਾਡਾ ਮਿਸ਼ਨ**: "Future Bytes" ਲਾਂਚ ਕਰੋ — ਇੱਕ ਤਕਨਾਲੋਜੀ ਪੋਡਕਾਸਟ ਜੋ ਪੂਰੀ ਤਰ੍ਹਾਂ ਤੁਹਾਡੇ ਦੁਆਰਾ ਬਣਾਏ ਗਏ AI ਏਜੰਟਾਂ ਨਾਲ ਚਲਾਇਆ ਜਾਏਗਾ। ਕੋਈ ਕਲਾਉਡ ਨਿਰਭਰਤਾ ਨਹੀਂ, ਕੋਈ API ਖ਼ਰਚ ਨਹੀਂ — ਸਾਰਾ ਕੁਝ ਤੁਹਾਡੇ ਮਸ਼ੀਨ 'ਤੇ ਲੋਕਲ ਚਲਦਾ ਹੈ।
+**ਤੁਹਾਡਾ ਮਿਸ਼ਨ**: "Future Bytes" ਲਾਂਚ ਕਰੋ — ਇੱਕ ਟੈਕ ਪੋਡਕਾਸਟ ਜੋ ਪੂਰੀ ਤਰ੍ਹਾਂ ਤੁਹਾਡੇ ਦੁਆਰਾ ਬਣਾਏ ਗਏ AI ਏਜੰਟਾਂ ਦੁਆਰਾ ਚੱਲਦਾ ਹੈ। ਕੋਈ ਕਲਾਉਡ ਨਿਰਭਰਤਾ ਨਹੀਂ, ਕੋਈ API ਖਰਚੇ ਨਹੀਂ — ਸਭ ਕੁਝ ਤੁਹਾਡੇ ਮਸ਼ੀਨ ਤੇ ਸਥਾਨਕ ਤੌਰ ਤੇ ਚੱਲਦਾ ਹੈ।
 
-**ਇਹਨੂੰ ਵਿਲੱਖਣ ਬਨਾਉਣ ਵਾਲੀ ਗੱਲ:**
-- **🤖 ਅਸਲ ਮਲਟੀ-ਏਜੰਟ ਆਰਕਸਟਰੈਸ਼ਨ** - ਖ਼ਾਸ AI ਏਜੰਟ ਬਣਾਓ ਜੋ ਰਿਸਰਚ, ਲਿਖਣ ਅਤੇ ਆਡੀਓ ਉਤਪਾਦਨ ਕਰਦੇ ਹਨ  
-- **🎯 ਪੂਰੀ ਉਤਪਾਦਨ ਪਾਈਪਲਾਈਨ** - ਵਿਸ਼ੇ ਦੀ ਚੋਣ ਤੋਂ ਲੈ ਕੇ ਅੰਤਿਮ ਪੋਡਕਾਸਟ ਆਡੀਓ ਤੱਕ  
-- **💻 100% ਲੋਕਲ ਡਿਪਲਾਇਮੈਂਟ** - ਪੂਰੀ ਗੁਪਤਤਾ ਅਤੇ ਕੰਟਰੋਲ ਲਈ Ollama ਅਤੇ ਲੋਕਲ ਮਾਡਲ (Qwen-3-8B) ਵਰਤੇ ਜਾਂਦੇ ਹਨ  
-- **🎤 ਟੈਕਸਟ-ਟੂ-ਸਪੀਚ ਇਨਟੀਗ੍ਰੇਸ਼ਨ** - ਸਕ੍ਰਿਪਟਾਂ ਨੂੰ ਕੁਦਰਤੀ ਆਵਾਜ਼ ਵਾਲੀ ਬਹੁਲੇਖਕ ਗੱਲਬਾਤਾਂ ਵਿੱਚ ਬਦਲੋ  
-- **✋ ਮਨੁੱਖੀ-ਰੂਪ ਅੰਦਰ ਵਾਲੇ ਵਰਕਫਲੋਜ਼** - ਮਾਨਤਾ ਦੇ ਦਰਵਾਜ਼ੇ ਗੁਣਵੱਤਾ ਯਕੀਨੀ ਬਣਾ ਰਹੇ ਹਨ ਅਤੇ ਆਟੋਮੇਸ਼ਨ ਨੂੰ ਜਾਰੀ ਰੱਖਦੇ ਹਨ  
+**ਇਹ ਵੱਖਰਾ ਕੀ ਬਣਾਉਂਦਾ ਹੈ:**
+- **🤖 ਅਸਲੀ ਮਲਟੀ-ਏਜੰਟ ਆਰਕੀਸਟ੍ਰੇਸ਼ਨ** - ਵਿਸ਼ੇਸ਼ AI ਏਜੰਟ ਬਣਾਓ ਜੋ ਸੰਦਰਭ ਖੋਜ, ਲਿਖਣ ਅਤੇ ਆਡੀਓ ਉਤਪਾਦਨ ਕਰਦੇ ਹਨ
+- **🎯 ਪੂਰੀ ਪ੍ਰੋਡਕਸ਼ਨ ਪਾਈਪਲਾਈਨ** - ਵਿਸ਼ਾ ਚੋਣ ਤੋਂ ਲੈ ਕੇ ਆਖਰੀ ਪੋਡਕਾਸਟ ਆਡੀਓ ਆਉਟਪੁੱਟ ਤੱਕ
+- **💻 100% ਸਥਾਨਕ ਤੈਨਾਤੀ** - Ollama ਅਤੇ ਸਥਾਨਕ ਮਾਡਲਾਂ (Qwen-3-8B) ਦੀ ਵਰਤੋਂ ਨਾਲ ਪੂਰੀ ਗੋਪਨੀਯਤਾ ਅਤੇ ਕੰਟਰੋਲ
+- **🎤 ਟੈਕਸਟ-ਟੂ-ਸਪੀਚ ਇੰਟੀਗ੍ਰੇਸ਼ਨ** - ਸਕ੍ਰਿਪਟਾਂ ਨੂੰ ਪ੍ਰਾਕ਼੍ਰਿਤਿਕ-ਸੁਨਣ ਵਾਲੇ ਮਲਟੀ-ਸਪੀਕਰ ਗੱਲਬਾਤਾਂ ਵਿੱਚ ਬਦਲੋ
+- **✋ ਮਨੁੱਖ-ਇਨ-ਦ-ਲੂਪ ਵਰਕਫਲੋਜ਼** - ਮਨਜ਼ੂਰੀ ਦੇ ਦਰਵਾਜੇ ਗੁਣਵੱਤਾ ਨੂੰ ਯਕੀਨੀ ਬਨਾਉਂਦੇ ਹੋਏ ਆਟੋਮੇਸ਼ਨ ਨੂੰ ਕਾਇਮ ਰੱਖਦੇ ਹਨ
 
-**ਤਿੰਨ ਅਧਿਆਇ ਸਿੱਖਣ ਯਾਤਰਾ:**
+**ਤਿੰਨ-ਅਧਿਆਇ ਸਿੱਖਣ ਯਾਤਰਾ:**
 
-| ਅਧਿਆਇ | ਧਿਆਨ | ਮੁੱਖ ਕੁਸ਼ਲਤਾ | ਸਮਾਂ ਅਵਧੀ |
+| ਅਧਿਆਇ | ਧਿਆਨ | ਮੁੱਖ ਹੁਨਰ | ਸਮਾਂ |
 |-----|-------|------------|----------|
-| **[ਅਧਿਆਇ 1: ਆਪਣੇ AI ਸਹਾਇਕਾਂ ਨਾਲ ਮਿਲੋ](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | ਆਪਣਾ ਪਹਿਲਾ AI ਏਜੰਟ ਬਣਾਓ | ਕੁਝ ਚੀਜ਼ਾਂ ਦਾ ਇਨਟੀਗ੍ਰੇਸ਼ਨ • ਵੈੱਬ ਖੋਜ • ਸਮੱਸਿਆ ਸਮਾਧਾਨ • ਏਜੰਟਿਕ ਵਿਚਾਰਧਾਰਾ | 2-3 ਘੰਟੇ |
-| **[ਅਧਿਆਇ 2: ਆਪਣੀ ਉਤਪਾਦਨ ਟੀਮ ਜੋੜੋ](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | ਕਈ ਏਜੰਟਾਂ ਦੀ ਆਰਕੀਸਟ੍ਰੇਸ਼ਨ | ਟੀਮ ਸਹਿਯੋਗ • ਮਾਨਤਾ ਵਰਕਫਲੋਜ਼ • DevUI ਇੰਟਰਫੇਸ • ਮਨੁੱਖੀ ਨਿਗਰਾਨੀ | 3-4 ਘੰਟੇ |
-| **[ਅਧਿਆਇ 3: ਆਪਣਾ ਪੋਡਕਾਸਟ ਜੀਵੰਤ ਬਣਾਓ](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | ਪੋਡਕਾਸਟ ਆਡੀਓ ਤਿਆਰ ਕਰੋ | ਟੈਕਸਟ-ਟੂ-ਸਪੀਚ • ਬਹੁਲੇਖਕ ਸੁਤੰਤਰਤਾ • ਲੰਬੀ ਸ਼ੈਲੀ ਆਡੀਓ • ਪੂਰੀ ਆਟੋਮੇਸ਼ਨ | 2-3 ਘੰਟੇ |
+| **[ਅਧਿਆਇ 1: ਆਪਣੇ AI ਸਹਾਇਕਾਂ ਨਾਲ ਮਿਲੋ](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | ਆਪਣਾ ਪਹਿਲਾ AI ਏਜੰਟ ਬਣਾਓ | ਟੂਲ ਇੰਟੀਗ੍ਰੇਸ਼ਨ • ਵੈੱਬ ਖੋਜ • ਸਮੱਸਿਆ ਹੱਲ • ਏਜੰਟਿਕ ਤਰਕ | 2-3 ਘੰਟੇ |
+| **[ਅਧਿਆਇ 2: ਆਪਣੀ ਉਤਪਾਦਨ ਟੀਮ ਇਕੱਠੀ ਕਰੋ](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | ਕਈ ਏਜੰਟਾਂ ਨੂੰ ਆਰਕੀਸਟ੍ਰੇਟ ਕਰੋ | ਟੀਮ ਸਮਨ્વਯ • ਮਨਜ਼ੂਰੀ ਵਰਕਫਲੋਜ਼ • DevUI ਇੰਟਰਫੇਸ • ਮਨੁੱਖੀ ਨਿਗਰਾਨੀ | 3-4 ਘੰਟੇ |
+| **[ਅਧਿਆਇ 3: ਆਪਣੇ ਪੋਡਕਾਸਟ ਨੂੰ ਜੀਵੰਤ ਬਣਾਓ](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | ਪੋਡਕਾਸਟ ਆਡੀਓ ਬਣਾਓ | ਟੈਕਸਟ-ਟੂ-ਸਪੀਚ • ਮਲਟੀ-ਸਪੀਕਰ ਸਿੰਥੈਸਿਸ • ਲੰਮੀ ਆਖਰ ਵਾਲਾ ਆਡੀਓ • ਪੂਰਾ ਆਟੋਮੇਸ਼ਨ | 2-3 ਘੰਟੇ |
 
-**ਟੈਕਨੋਲੋਜੀਆਂ ਵਰਤੀ ਗਈਆਂ:**
-- **Microsoft Agent Framework** - ਮਲਟੀ-ਏਜੰਟ ਆਰਕਸਟਰੈਸ਼ਨ ਅਤੇ ਸਹਿਯੋਗ  
-- **Ollama** - ਲੋਕਲ AI ਮਾਡਲ ਰਨਟਾਈਮ (ਕੋਈ ਕਲਾਉਡ కావਾਂ ਨਹੀਂ)  
-- **Qwen-3-8B** - ਏਜੰਟਿਕ ਕੰਮਾਂ ਲਈ ਓਪਨ-ਸੋਰਸ ਭਾਸ਼ਾ ਮਾਡਲ  
-- **ਟੈਕਸਟ-ਟੂ-ਸਪੀਚ API** - ਪੋਡਕਾਸਟ ਬਣਾਉਣ ਲਈ ਕੁਦਰਤੀ ਆਵਾਜ਼ ਬਣਾਉਣਾ  
+**ਵਰਤੇ ਗਏ ਤਕਨਾਲੋਜੀ:**
+- **Microsoft Agent Framework** - ਮਲਟੀ-ਏਜੰਟ ਆਰਕੀਸਟ੍ਰੇਸ਼ਨ ਅਤੇ ਕੋਆਰਡੀਨੇਸ਼ਨ
+- **Ollama** - ਸਥਾਨਕ AI ਮਾਡਲ ਰਨਟਾਈਮ (ਕੋਈ ਕਲਾਉਡ ਲੋੜੀਂਦਾ ਨਹੀਂ)
+- **Qwen-3-8B** - ਏਜੰਟਿਕ ਕੰਮਾਂ ਲਈ ਅਨੁਕੂਲਿਤ ਉਪਲਬਧ-ਸਰੋਤ ਭਾਸ਼ਾ ਮਾਡਲ
+- **ਟੈਕਸਟ-ਟੂ-ਸਪੀਚ APIs** - ਪੋਡਕਾਸਟ ਨਿਰਮਾਣ ਲਈ ਪ੍ਰਾਕ਼੍ਰਿਤਿਕ ਆਵਾਜ਼ ਸਿੰਥੈਸਿਸ
 
-**ਹਾਰਡਵੇਅਰ ਸਹਾਇਤਾ:**
-- ✅ **CPU ਮੋਡ** - ਕਿਸੇ ਵੀ ਅਧੁਨਿਕ ਕੰਪਿਊਟਰ 'ਤੇ ਕੰਮ ਕਰਦਾ ਹੈ (8GB+ RAM ਦੀ ਸਿਫਾਰਸ਼)  
-- 🚀 **GPU ਤੀਜ਼ੀ** - NVIDIA/AMD GPUs ਨਾਲ ਬਹੁਤ ਤੇਜ਼ ਇੰਫਰੈਂਸ  
-- ⚡ **NPU ਸਹਾਇਤਾ** - ਅਗਲੀ ਪੀੜੀ ਦਾ ਨਿਊਰਲ ਪ੍ਰੋਸੈਸਿੰਗ ਯੂਨਿਟ ਤੇਜ਼ੀ  
+**ਹਾਰਡਵੇਅਰ ਸਹਿਯੋਗ:**
+- ✅ **CPU ਮੋਡ** - ਕਿਸੇ ਵੀ ਆਧੁਨਿਕ ਕੰਪਿਊਟਰ ਤੇ ਚੱਲਦਾ ਹੈ (8GB+ ਰੈਮ ਸੁਝਾਇਆ ਗਿਆ)
+- 🚀 **GPU ਤੇਜ਼ੀ** - NVIDIA/AMD GPUs ਨਾਲ ਬਹੁਤ ਤੇਜ਼ ਇੰਫ਼ਰੈਂਸ
+- ⚡ **NPU ਸਹਿਯੋਗ** - ਅਗਲੀ ਪੀੜੀ ਦਾ ਨਿਊਰਲ ਪ੍ਰੋਸੈਸਿੰਗ ਯੂਨਿਟ ਤੇਜ਼ੀ
 
-**ਇਹ ਕਿਸ ਲਈ ਬੇਹਤਰੀਨ ਹੈ:**
-- ਮਲਟੀ-ਏਜੰਟ AI ਪ੍ਰਣਾਲੀਆਂ ਸਿੱਖਣ ਵਾਲੇ ਵਿਕਾਸਕਾਰ  
-- AI ਆਟੋਮੇਸ਼ਨ ਅਤੇ ਵਰਕਫਲੋਜ਼ ਵਿੱਚ ਰੁਚੀ ਰੱਖਣ ਵਾਲੇ  
-- AI ਸਹਾਇਤਾ ਪ੍ਰੋਡਕਸ਼ਨ ਵਿੱਚ ਦਿਲਚਸਪੀ ਰੱਖਣ ਵਾਲੇ ਸਮੱਗਰੀ ਸਿਰਜਣਹਾਰ  
-- ਪ੍ਰਯੋਗਾਤਮਕ AI ਆਰਕਸਟਰੈਸ਼ਨ ਪੈਟਰਨ ਦਾ ਅਧਿਐਨ ਕਰਨ ਵਾਲੇ ਵਿਦਿਆਰਥੀ  
+**ਪੂਰੀ ਤਰ੍ਹਾਂ ਲਈ:**
+- ਮਲਟੀ-ਏਜੰਟ AI ਸਿਸਟਮ ਸਿੱਖ ਰਹੇ ਵਿਕਾਸਕਾਰ
+- AI ਆਟੋਮੇਸ਼ਨ ਅਤੇ ਵਰਕਫਲੋਜ਼ ਵਿਚ ਰੁਚੀ ਰੱਖਣ ਵਾਲੇ
+- ਸਮੱਗਰੀ ਨਿਰਮਾਤਾ ਜੋ AI-ਸਹਾਇਤ ਪ੍ਰੋਡਕਸ਼ਨ ਟੂਲ ਖੋਜ ਰਹੇ ਹਨ
+- ਵਿਦਿਆਰਥੀ ਜੋ ਪ੍ਰਾਇਗਮਿਕ AI ਆਰਕੀਸਟ੍ਰੇਸ਼ਨ ਪੈਟਰਨ ਸਿੱਖ ਰਹੇ ਹਨ
 
-**ਸਿਲੇਬਸ ਸ਼ੁਰੂ ਕਰੋ**: [🎙️ AI ਪੋਡਕਾਸਟ ਸਟੂਡੀਓ ਵਰਕਸ਼ਾਪ →](./WorkshopForAgentic/README.md)
+**ਬਣਾਉਣਾ ਸ਼ੁਰੂ ਕਰੋ**: [🎙️ The AI Podcast Studio Workshop →](./WorkshopForAgentic/README.md)
 
-### 📊 **ਸਿੱਖਣ ਰਾਹ ਦਾ ਸਾਰ**
-- **ਮੁੱਲ ਸਮਾਂ**: 36-45 ਘੰਟੇ  
+### 📊 **ਸਿੱਖਣ ਰਾਹ ਦਾ ਸਾਰਾਂਸ਼**
+- **ਕੁੱਲ ਸਮਾਂ**: 36-45 ਘੰਟੇ
 - **ਸ਼ੁਰੂਆਤੀ ਰਾਹ**: ਮੋਡਿਊਲ 01-02 (7-9 ਘੰਟੇ)  
-- **ਮੱਧਮ ਦਰਜੇ ਦਾ ਰਾਹ**: ਮੋਡਿਊਲ 03-04 (9-11 ਘੰਟੇ)  
-- **ਉੱਚ ਦਰਜੇ ਦਾ ਰਾਹ**: ਮੋਡਿਊਲ 05-07 (12-15 ਘੰਟੇ)  
-- **ਮਾਹਰ ਰਾਹ**: ਮੋਡਿਊਲ 08 (8-10 ਘੰਟੇ)  
+- **ਦਰਮਿਆਨਾ ਰਾਹ**: ਮੋਡਿਊਲ 03-04 (9-11 ਘੰਟੇ)
+- **ਅਡਵਾਂਸਡ ਰਾਹ**: ਮੋਡਿਊਲ 05-07 (12-15 ਘੰਟੇ)
+- **ਮਾਹਿਰ ਰਾਹ**: ਮੋਡਿਊਲ 08 (8-10 ਘੰਟੇ)
 
-## ਤੁਸੀਂ ਜੋ ਬਣਾਉਂਦੇ ਹੋ
+## ਤੁਸੀਂ ਕੀ ਬਣਾਉਂਗੇ
 
-### 🎯 ਮੁੱਖ ਕੁਸ਼ਲਤਾਵਾਂ
-- **ਐਜ AI ਵਾਸ਼ਤਵਿਕਤਾ**: ਕਲਾਉਡ ਇਨਟੀਗ੍ਰੇਸ਼ਨ ਵਾਲੇ ਲੋਕਲ-ਪਹਿਲਾਂ AI ਪ੍ਰਣਾਲੀ डिजाइन ਕਰੋ  
-- **ਮਾਡਲ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ**: ਏਜ ਡਿਪਲਾਇਮੈਂਟ ਲਈ ਮਾਡਲਾਂ ਨੂੰ ਕਵਾਂਟਾਈਜ਼ ਅਤੇ ਕੰਪ੍ਰੈਸ ਕਰੋ (85% ਤੇਜ਼, 75% ਅਕਾਰ ਘਟਾਓ)  
-- **ਮਲਟੀ-ਪਲੇਟਫਾਰਮ ਡਿਪਲਾਇਮੈਂਟ**: ਵਿਂਡੋਜ਼, ਮੋਬਾਈਲ, ਐਮਬੈਡਡ ਅਤੇ ਕਲਾਉਡ-ਇਜ ਹਾਈਬ੍ਰਿਡ ਪ੍ਰਣਾਲੀਆਂ  
-- **ਉਤਪਾਦਨ ਕਾਰਜ**: ਉਤਪਾਦਨ ਵਿੱਚ ਐਜ AI ਦਾ ਨਿਰੀਖਣ, ਪੈਮਾਨਾ ਅਤੇ ਬਨਾਏ ਰੱਖਣਾ  
+### 🎯 ਮੁੱਖ ਦੱਖਲ
+- **Edge AI ਇਮਾਰਤ**: ਕਲਾਉਡ ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਵਾਲੇ ਸਥਾਨਕ-ਪਹਿਲਾਂ AI ਸਿਸਟਮ ਨੂੰ ਡਿਜ਼ਾਈਨ ਕਰੋ
+- **ਮਾਡਲ ਅਨੁਕੂਲਨ**: ਐੱਜ ਤੈਨਾਤੀ ਲਈ ਮਾਡਲਾਂ ਨੂੰ ਗੁਣਵਤਮਕ ਬਨਾਉਣਾ ਅਤੇ ਕੱਸਪ੍ਰੈੱਸ ਕਰਨਾ (85% ਤੇਜ਼ੀ, 75% ਆਕਾਰ ਘਟਾਓ)
+- **ਮਲਟੀ-ਪਲੇਟਫਾਰਮ ਤੈਨਾਤੀ**: ਵਿਂਡੋਜ, ਮੋਬਾਈਲ, ਐਂਬੈਡਡ ਅਤੇ ਕਲਾਉਡ-ਏਜ ਹਾਈਬ੍ਰਿਡ ਸਿਸਟਮ
+- **ਪ੍ਰੋਡਕਸ਼ਨ ਓਪਰੇਸ਼ਨਜ਼**: ਐੱਜ AI ਦਾ ਨਿਗਰਾਨੀ, ਪਰੇਮਾਣ, ਅਤੇ ਰਖ-ਰਖਾਅ
 
-### 🏗️ ਪ੍ਰਯੋਗਿਕ ਪ੍ਰਾਜੈਕਟ
-- **Foundry ਲੋਕਲ ਚੈਟ ਐਪਲਿਕੇਸ਼ਨ**: ਮਾਡਲ ਬਦਲਣ ਵਾਲਾ ਵਿੰਡੋਜ਼ 11 ਮੂਲ ਐਪ  
-- **ਮਲਟੀ-ਏਜੰਟ ਪ੍ਰਣਾਲੀਆਂ**: ਜਟਿਲ ਵਰਕਫਲੋਜ਼ ਲਈ ਕੋਆਰਡੀਨੇਟਰ ਅਤੇ ਖ਼ਾਸ ਏਜੰਟ  
-- **RAG ਐਪਲੀਕੇਸ਼ਨ**: ਲੋਕਲ ਦਸਤਾਵੇਜ਼ ਪ੍ਰਕਿਰਿਆਵਾਂ ਅਤੇ ਵੇਕਟਰ ਖੋਜ  
-- **ਮਾਡਲ ਰੂਟਰ**: ਕੰਮ ਦੇ ਵਿਸ਼ਲੇਸ਼ਣ ਦੇ ਆਧਾਰ 'ਤੇ ਮਾਡਲ ਚੁਣਨਾ  
-- **API ਫਰੇਮਵਰਕਸ**: ਸਟ੍ਰੀਮਿੰਗ ਅਤੇ ਹੈਲਥ ਮੋਨੀਟਰਿੰਗ ਨਾਲ ਪ੍ਰੋਡਕਸ਼ਨ-ਤਿਆਰ ਕਲਾਇੰਟ  
-- **ਕ੍ਰਾਸ-ਪਲੇਟਫਾਰਮ ਟੂਲਜ਼**: LangChain/ਸੈਮੈਂਟਿਕ ਕਰਨਲ ਇਨਟੀਗ੍ਰੇਸ਼ਨ ਪੈਟਰਨ  
+### 🏗️ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਪ੍ਰੋਜੈਕਟ
+- **Foundry ਸਥਾਨਕ ਚੈਟ ਐਪਸ**: ਵਿਂਡੋਜ 11 ਦੇ ਕੂਲ ਐਪ ਨਾਲ ਮਾਡਲ ਸਵਿੱਚਿੰਗ
+- **ਮਲਟੀ-ਏਜੰਟ ਸਿਸਟਮ**: ਜਟਿਲ ਵਰਕਫਲੋਜ਼ ਲਈ ਕੋਆਰਡੀਨੇਟਰ ਅਤੇ ਖਾਸ ਏਜੰਟ  
+- **RAG ਐਪਲੀਕੇਸ਼ਨਜ਼**: ਸਥਾਨਕ ਦਸਤਾਵੇਜ਼ ਪ੍ਰੋਸੈਸਿੰਗ ਅਤੇ ਵੈਕਟਰ ਖੋਜ
+- **ਮਾਡਲ ਰਾਊਟਰਜ਼**: ਕੰਮ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰਕੇ ਇੰਟੈਲੀਜੈਂਟ ਮਾਡਲ ਚੋਣ
+- **API ਫਰੇਮਵਰਕਸ**: ਸਟਰੀਮਿੰਗ ਅਤੇ ਸਿਹਤ ਨਿਗਰਾਨੀ ਸਮੇਤ ਪ੍ਰੋਡਕਸ਼ਨ-ਤਿਆਰ ਕਲਾਇੰਟ
+- **ਕ੍ਰਾਸ-ਪਲੇਟਫਾਰਮ ਟੂਲਜ਼**: LangChain/ਸੈਮਾਂਟਿਕ ਕੇਰਨਲ ਏਕਤਾ ਪੈਟਰਨ
 
-### 🏢 ਉਦਯੋਗਿਕ ਐਪਲੀਕੇਸ਼ਨ
-**ਉਤਪਾਦਨ** • **ਹੈਲਥਕੇਅਰ** • **ਆਟੋਨੋਮਸ ਵਾਹਨ** • **ਸਮਾਰਟ ਸ਼ਹਿਰ** • **ਮੋਬਾਈਲ ਐਪਸ**
+### 🏢 ਉਦਯੋਗਿਕ ਲਾਗੂ
+**ਮੈਨੂਫੈਕਚਰਿੰਗ** • **ਹੈਲਥਕੇਅਰ** • **ਆਟੋਨੋਮਸ ਵਾਹਨ** • **ਸਮਾਰਟ ਸ਼ਹਿਰ** • **ਮੋਬਾਈਲ ਐਪ**
 
-## ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ
+## ਫਟਾਫਟ ਸ਼ੁਰੂਆਤ
 
-**ਸਿਫਾਰਸ਼ੀ ਸਿੱਖਣ ਰਾਹ** (20-30 ਘੰਟੇ ਕੁੱਲ):
+**ਸਿਫ਼ਾਰਸ਼ੀ ਸਿੱਖਣ ਰਾਹ** (ਕੁੱਲ 20-30 ਘੰਟੇ):
 
-0. **📖 ਪਰਿਚਯ** ([Introduction.md](./introduction.md)): EdgeAI ਬੁਨਿਆਦ + ਉਦਯੋਗ ਸੰਦਰਭ + ਸਿੱਖਣ ਦਾ ਫਰੇਮਵਰਕ  
-1. **📚 ਬੁਨਿਆਦ** (ਮੋਡਿਊਲ 01-02): EdgeAI ਧਾਰਣਾਵਾਂ + SLM ਮਾਡਲ ਪਰਿਵਾਰ  
-2. **⚙️ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ** (ਮੋਡਿਊਲ 03-04): ਡਿਪਲਾਇਮੈਂਟ + ਕਵਾਂਟਾਈਜ਼ੇਸ਼ਨ ਫਰੇਮਵਰਕ  
-3. **🚀 ਉਤਪਾਦਨ** (ਮੋਡਿਊਲ 05-06): SLMOps + AI ਏਜੰਟ + ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ  
-4. **💻 ਲਾਗੂ ਕਰਨ ਦੀ ਕਾਰਵਾਈ** (ਮੋਡਿਊਲ 07-08): ਪਲੇਟਫਾਰਮ ਨਮੂਨੇ + Foundry ਲੋਕਲ ਟੂਲਕਿਟ  
+0. **📖 ਪਰਿਚਯ** ([Introduction.md](./introduction.md)): EdgeAI ਮੂਢ + ਉਦਯੋਗ ਸੰਦਰਭ + ਸਿੱਖਣ ਫਰੇਮਵਰਕ  
+1. **📚 ਬੁਨਿਆਦ** (ਮੋਡਿਊਲ 01-02): EdgeAI ਵਿਚਾਰ + SLM ਮਾਡਲ ਪਰਿਵਾਰ  
+2. **⚙️ ਅਨੁਕੂਲਨ** (ਮੋਡਿਊਲ 03-04): ਤੈਨਾਤੀ + ਕਵਾਂਟਾਈਜ਼ੇਸ਼ਨ ਫਰੇਮਵਰਕ  
+3. **🚀 ਪ੍ਰੋਡਕਸ਼ਨ** (ਮੋਡਿਊਲ 05-06): SLMOps + AI ਏਜੰਟ + ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ  
+4. **💻 ਕਾਰਜਨਵਾਈ** (ਮੋਡਿਊਲ 07-08): ਪਲੇਟਫਾਰਮ ਨਮੂਨੇ + Foundry ਸਥਾਨਕ ਟੂਲਕਿੱਟ  
 
-ਹਰੇਕ ਮੋਡਿਊਲ ਵਿੱਚ ਥਿਊਰੀ, ਪ੍ਰੈਟਿਕਲ ਅਭਿਆਸ ਅਤੇ ਪ੍ਰੋਡਕਸ਼ਨ-ਤਿਆਰ ਗਿਣਤੀ ਦੇ ਉਦਾਹਰਣ ਸ਼ਾਮਲ ਹਨ।
+ਹਰ ਮੋਡਿਊਲ ਵਿਚ ਸਿਧਾਂਤ, ਪ੍ਰਯੋਗ ਅਤੇ ਪ੍ਰੋਡਕਸ਼ਨ-ਤਿਆਰ ਕੋਡ ਨਮੂਨੇ ਸ਼ਾਮਲ ਹਨ।
 
 ## ਕਰੀਅਰ ਪ੍ਰਭਾਵ
 
-**ਟੈਕਨੀਕਲ ਭੂਮਿਕਾਵਾਂ**: EdgeAI ਸੌਲੂਸ਼ਨ ਆਰਕੀਟੈਕਟ • ML ਇੰਜੀਨੀਅਰ (ਐਜ) • IoT AI ਡਿਵੈਲਪਰ • ਮੋਬਾਈਲ AI ਡਿਵੈਲਪਰ
+**ਤਕਨੀਕੀ ਭੂਮਿਕਾਵਾਂ**: EdgeAI ਸਾਲੂਸ਼ਨ ਆਰਕੀਟੈਕਟ • ML ਇੰਜੀਨੀਅਰ (ਐੱਜ) • IoT AI ਡਿਵੈਲਪਰ • ਮੋਬਾਈਲ AI ਡਿਵੈਲਪਰ
 
-**ਉਦਯੋਗ ਖੇਤਰ**: ਉਤਪਾਦਨ 4.0 • ਹੈਲਥਕੇਅਰ ਤਕਨਾਲੋਜੀ •ਆਟੋਨੋਮਸ ਪ੍ਰਣਾਲੀਆਂ • ਫਿਨਟੈਕ • ਉਪਭੋਗਤਾ ਇਲੈਕਟ੍ਰਾਨਿਕਸ
+**ਉਦਯੋਗ ਖੰਡ**: ਮੈਨੂਫੈਕਚਰਿੰਗ 4.0 • ਹੈਲਥਕੇਅਰ ਟੈਕ • ਆਟੋਨੋਮਸ ਸਿਸਟਮ • ਫਿਨਟੈਕ • ਉਪਭੋਗਤਾ ਇਲੈਕਟ੍ਰਾਨਿਕਸ
 
-**ਪੋਰਟਫੋਲਿਓ ਪ੍ਰਾਜੈਕਟ**: ਮਲਟੀ-ਏਜੰਟ ਪ੍ਰਣਾਲੀਆਂ • ਉਤਪਾਦਨ RAG ਐਪ • ਕ੍ਰਾਸ-ਪਲੇਟਫਾਰਮ ਡਿਪਲਾਇਮੈਂਟ • ਕਾਰਗੁਜ਼ਾਰੀ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ
+**ਪੋਰਟਫੋਲਿਓ ਪ੍ਰੋਜੈਕਟ**: ਮਲਟੀ-ਏਜੰਟ ਸਿਸਟਮ • ਪ੍ਰੋਡਕਸ਼ਨ RAG ਐਪ • ਕ੍ਰਾਸ-ਪਲੇਟਫਾਰਮ ਤੈਨਾਤੀ • ਪ੍ਰਦਰਸ਼ਨ ਅਨੁਕੂਲਨ
 
-## ਰਿਪੋਜ਼ਿਟਰੀ ਢਾਂਚਾ
+## ਰੈਪੋਜ਼ਟਰੀ ਸੰਰਚਨਾ
 
 ```
 edgeai-for-beginners/
@@ -232,24 +242,24 @@ edgeai-for-beginners/
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
 
-## ਕੋਰਸ ਹਾਈਲਾਈਟਸ
+## ਕੋਰਸ ਦੇ ਮੁੱਖ ਬਿੰਦੂ
 
-✅ **ਤਰੱਕੀਸ਼ੀਲ ਸਿੱਖਿਆ**: ਥਿਊਰੀ → ਅਮਲ → ਉਤਪਾਦਨ ਡਿਪਲਾਇਮੈਂਟ  
-✅ **ਅਸਲੀ ਕੇਸ ਅਧਿਐਨ**: Microsoft, ਜਪਾਨ ਏਅਰਲਾਇਨਜ਼, ਉਦਯੋਗ ਅਮਲ  
-✅ **ਹੈਂਡਸ-ਆਨ ਉਦਾਹਰਣ**: 50+ ਉਦਾਹਰਣ, 10 ਵਿਆਪਕ Foundry ਲੋਕਲ ਡੈਮੋਜ਼  
-✅ **ਕਾਰਗੁਜ਼ਾਰੀ ਧਿਆਨ**: 85% ਤੇਜ਼ੀ, 75% ਅਕਾਰ ਘਟਾਓ  
-✅ **ਮਲਟੀ-ਪਲੇਟਫਾਰਮ**: ਵਿਂਡੋਜ਼, ਮੋਬਾਈਲ, ਐਮਬੈਡਡ, ਕਲਾਉਡ-ਇਜ ਹਾਈਬ੍ਰਿਡ  
-✅ **ਉਤਪਾਦਨ ਤਿਆਰ**: ਨਿਗਰਾਨੀ, ਮਾਪਬੰਦੀ, ਸੁਰੱਖਿਆ, ਅਨੁਕੂਲਤਾ ਫਰੇਮਵਰਕ  
+✅ **ਕ੍ਰਮਵੱਧ ਸਿੱਖਿਆ**: ਸਿਧਾਂਤ → ਅਭਿਆਸ → ਪ੍ਰੋਡਕਸ਼ਨ ਤੈਨਾਤੀ  
+✅ **ਅਸਲੀ ਕੇਸ ਅਧਿਐਨ**: Microsoft, ਜਪਾਨ ਏਅਰਲਾਈਨਜ਼, ਉਦਯੋਗ ਲਾਗੂ  
+✅ **ਹੱਥੋਂ ਨਮੂਨੇ**: 50+ ਉਦਾਹਰਨਾਂ, 10 ਵਿਸਤ੍ਰਿਤ Foundry ਸਥਾਨਕ ਡੈਮੋ  
+✅ **ਪਰਦਰਸ਼ਨ ਥਾਣਾ**: 85% ਤੇਜ਼ੀ, 75% ਆਕਾਰ ਵਿੱਚ ਕਮੀ  
+✅ **ਮਲਟੀ-ਪਲੇਟਫਾਰਮ**: ਵਿਂਡੋਜ਼, ਮੋਬਾਈਲ, ਐਂਬੈਡਡ, ਕਲਾਉਡ-ਏਜ ਹਾਈਬ੍ਰਿਡ  
+✅ **ਪ੍ਰੋਡਕਸ਼ਨ ਤਿਆਰ**: ਨਿਗਰਾਨੀ, ਪਰੇਮਾਣ, ਸੁਰੱਖਿਆ, ਅਨੁਕੂਲਨਾ ਫਰੇਮਵਰਕ
 
-📖 **[ਅਧਿਐਨ ਗਾਈਡ ਉਪਲਬਧ](STUDY_GUIDE.md)**: ਢਾਂਚਾਬੱਧ 20 ਘੰਟਿਆਂ ਦਾ ਸਿੱਖਣ ਰਾਹ ਸਮੇਂ ਦੀ ਵੰਡ ਅਤੇ ਸਵੈ-ਮੂਲਾਂਕਣ ਸੰਦ ਦੇ ਨਾਲ।
+📖 **[ਸਟੱਡੀ ਗਾਈਡ ਉਪਲਬਧ](STUDY_GUIDE.md)**: 20-ਘੰਟੇ ਦਾ ਢਾਂਚਾਓ ਸਿੱਖਣ ਰਾਹ ਸਮੇਂ ਦੀ ਰਾਹ-ਮੁਖ਼ੀ ਸਲਾਹ ਅਤੇ ਸਵੈ-ਮੂਲਾਂਕਣ ਟੂਲਾਂ ਸਹਿਤ।
 
 ---
 
-**EdgeAI ਭਵਿੱਖ ਦੀ AI ਡਿਪਲਾਇਮੈਂਟ ਦਾ ਪ੍ਰਤੀਕ ਹੈ**: ਲੋਕਲ-ਪਹਿਲਾਂ, ਗੁਪਤਤਾ ਸੰਭਾਲਦਾ ਅਤੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ। ਇਹ ਕੁਸ਼ਲਤਾਵਾਂ ਸਿੱਖੋ ਤੇ ਅਗਲੀ ਪੀੜੀ ਦੇ ਬੁੱਧੀਮਾਨ ਐਪਲੀਕੇਸ਼ਨਾਂ ਦਾ ਨਿਰਮਾਣ ਕਰੋ।
+**EdgeAI AI ਤੈਨਾਤੀ ਦਾ ਭਵਿੱਖ ਹੈ**: ਸਥਾਨਕ-ਪਹਿਲਾਂ, ਨਿੱਜਤਾ-ਪ੍ਰਤੀਰੋਧਕ ਅਤੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ। ਇਨਾਂ ਹੁਨਰਾਂ ਵਿੱਚ ਮਹਿਰਤ ਹਾਸਲ ਕਰੋ, ਤੇ ਅਗਲੀ ਪੀੜ੍ਹੀ ਦੀ ਸਮਰਥ ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਉ।
 
 ## ਹੋਰ ਕੋਰਸ
 
-ਸਾਡੇ ਟੀਮ ਹੋਰ ਕੋਰਸ ਤਿਆਰ ਕਰਦੀ ਹੈ! ਵੇਖੋ:
+ਸਾਡੀ ਟੀਮ ਹੋਰ ਕੋਰਸ ਬਣਾਉਂਦੀ ਹੈ! ਵੇਖੋ:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -262,48 +272,48 @@ edgeai-for-beginners/
 [![AZD ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Edge AI ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![MCP ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI Agents ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI ਏਜੰਟਾਂ ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
-
-### ਜਨਰੇਟਿਵ AI ਸਿਰੀਜ਼
-[![ਜਨਰੇਟਿਵ AI ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![ਜਨਰੇਟਿਵ AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-[![ਜਨਰੇਟਿਵ AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
-[![ਜਨਰੇਟਿਵ AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+ 
+### ਸਿਰਜਣਹਾਰ AI ਸੀਰੀਜ਼
+[![ਸਿਰਜਣਹਾਰ AI ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![ਸਿਰਜਣਹਾਰ AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+[![ਸਿਰਜਣਹਾਰ AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+[![ਸਿਰਜਣਹਾਰ AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
-
-### ਮੂਲ ਸਿੱਖਿਆ
+ 
+### ਕੋਰ ਸਿੱਖਣ
 [![ML ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![ਡਾਟਾ ਸਕਾਇੰਸ ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![ਡੇਟਾ ਸਾਇੰਸ ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-[![ਸਾਈਬਰਸੁਰੱਖਿਆ ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![ਸਾਇਬਰਸੁਰੱਖਿਆ ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
 [![ਵੈੱਬ ਡੈਵ ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
 [![IoT ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-[![XR ਵਿਕਾਸ ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![XR ਡੈਵ ਲਈ ਸ਼ੁਰੂਆਤੀ](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
-
-### ਕੋਪਾਇਲਟ ਸਿਰੀਜ਼
+ 
+### ਕੋਪਾਇਲਟ ਸੀਰੀਜ਼
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
-## ਮਦਦ ਪ੍ਰਾਪਤ ਕਰਨਾ
+## ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਕਰਨਾ
 
-ਜੇ ਤੁਸੀਂ ਅਟਕ ਜਾਂਦੇ ਹੋ ਜਾਂ AI ਐਪ ਬਣਾਉਣ ਬਾਰੇ ਕੋਈ ਸਵਾਲ ਹੈ, ਤਾਂ ਸ਼ਾਮਲ ਹੋਵੋ:
+ਜੇ ਤੁਸੀਂ ਫਸ ਜਾਂਦੇ ਹੋ ਜਾਂ AI ਐਪ ਬਣਾਉਣ ਬਾਰੇ ਕੋਈ ਸਵਾਲ ਹੈ, ਤਾਂ ਜੁੜੋ:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-ਜੇ ਤੁਹਾਡੇ ਕੋਲ ਉਤਪਾਦ 'ਤੇ ਪ੍ਰਤੀਕ੍ਰਿਆ ਜਾਂ ਗਲਤੀਆਂ ਹਨ ਤਾਂ ਜਦੋਂ ਤੁਸੀਂ ਬਣਾਉਂਦੇ ਹੋ ਉਦੋਂ ਜਾਓ:
+ਜੇ ਤੁਹਾਡੇ ਕੋਲ ਪ੍ਰੋਡਕਟ ਫੀਡਬੈਕ ਜਾਂ ਗਲਤੀਆਂ ਹਨ ਬਣਾਉਣ ਸਮੇਂ ਤਾਂ ਵੇਖੋ:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**ਅਸਵੀਕਾਰੋਪੱਤਰ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਨਾਲ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਯਤਨਸ਼ੀਲ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵਚालित ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੇ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਅਧਿਕਾਰਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਣ ਜਾਣਕਾਰੀ ਲਈ, ਪ੍ਰੋਫੈਸ਼ਨਲ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਪਜੀਆਂ ਸਮਝਦਾਰੀਆਂ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆਵਾਂ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਾਹੀਂ ਹਾਂ।
+**ਅਸਥਿਰਤਾ**:  
+ਇਸ ਦਸਤਾਵੇਜ਼ ਨੂੰ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਦਿਓ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੰਤੁਲਨ ਹੋ ਸਕਦੇ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੇ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਹੀ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਵਜੋਂ ਲਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਜਰੂਰੀ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਸਲਾਹਯੋਗ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਮੀ ਜਾਂ ਗਲਤ ਅਰਥ ਲੱਗਾਉਣ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
