@@ -1,7 +1,7 @@
-# EdgeAI शुरुआती के लिए
+# शुरुआती लोगों के लिए EdgeAI
 
 
-![कोर्स कवर छवि](../../translated_images/hi/cover.eb18d1b9605d754b.webp)
+![कोर्स कवर इमेज](../../translated_images/hi/cover.eb18d1b9605d754b.webp)
 
 [![GitHub contributors](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
@@ -15,207 +15,218 @@
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-इन संसाधनों का उपयोग शुरू करने के लिए निम्न कदमों का पालन करें:
+इन संसाधनों का उपयोग शुरू करने के लिए ये चरण फ़ॉलो करें:
 
-1. **रिपॉजिटरी को फोर्क करें**: क्लिक करें [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **रिपॉजिटरी क्लोन करें**: `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Azure AI Foundry Discord से जुड़ें और विशेषज्ञों तथा अन्य डेवलपर्स से मिलें**](https://discord.com/invite/ByRwuEEgH4)
+1. **रिपोजिटरी को फोर्क करें**: क्लिक करें [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **रिपोजिटरी को क्लोन करें**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+3. [**Azure AI Foundry Discord में शामिल हों और विशेषज्ञों व अन्य डेवलपर्स से मिलें**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 बहुभाषी समर्थन
 
-#### GitHub Action द्वारा समर्थित (स्वचालित एवं सदैव अद्यतित)
+#### GitHub Action के माध्यम से समर्थित (स्वचालित और हमेशा अपडेटेड)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](./README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](./README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Khmer](../km/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
-> **स्थानीय तौर पर क्लोन करना चाहेंगे?**
-
-> यह रिपॉजिटरी 50+ भाषाओं में अनुवाद शामिल करता है जिससे डाउनलोड का आकार काफी बड़ा हो जाता है। बिना अनुवाद के क्लोन करने के लिए sparse checkout का उपयोग करें:
+> **स्थानीय रूप से क्लोन करना पसंद करते हैं?**
+>
+> इस रिपोजिटरी में 50+ भाषा अनुवाद शामिल हैं जो डाउनलोड आकार को काफी बढ़ाते हैं। अनुवाद के बिना क्लोन करने के लिए, sparse checkout का उपयोग करें:
+>
+> **Bash / macOS / Linux:**
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
 > cd edgeai-for-beginners
 > git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
 > ```
-> इससे आप कोर्स पूरा करने के लिए जरूरी सभी चीजें बहुत तेजी से डाउनलोड कर सकते हैं।
+>
+> **CMD (Windows):**
+> ```cmd
+> git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
+> cd edgeai-for-beginners
+> git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
+> ```
+>
+> इससे आपको तेज़ डाउनलोड के साथ पूरा कोर्स पूरा करने के लिए सब कुछ मिलेगा।
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**यदि आप अन्य अनुवाद भाषाओं को जोड़ना चाहते हैं, तो वे [यहां](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md) सूचीबद्ध हैं।**  
+**यदि आप अतिरिक्त अनुवाद भाषाओं को समर्थित करवाना चाहते हैं, तो वो [यहाँ](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md) सूचीबद्ध हैं।**
+
 ## परिचय
 
-स्वागत है **EdgeAI for Beginners** में – आपके लिए एज़ आर्टिफिशियल इंटेलिजेंस की परिवर्तनकारी दुनिया की व्यापक यात्रा। यह कोर्स शक्तिशाली एआई क्षमताओं और वास्तविक दुनिया में एज डिवाइसों पर व्यावहारिक तैनाती के बीच पुल बनाता है, जिससे आप सीधे जहां डेटा उत्पन्न होता है और निर्णय लेने होते हैं, वहां एआई की क्षमता का उपयोग कर सकें।
+**EdgeAI for Beginners** में आपका स्वागत है – Edge आर्टिफिशियल इंटेलिजेंस की परिवर्तनकारी दुनिया की आपकी व्यापक यात्रा। यह कोर्स शक्तिशाली AI क्षमताओं और एज डिवाइसेस पर व्यावहारिक, वास्तविक दुनिया की तैनाती के बीच की खाई को पाटता है, जिससे आप सीधे उन स्थानों पर AI की शक्ति का उपयोग कर सकते हैं जहाँ डेटा उत्पन्न होता है और निर्णय लेने की आवश्यकता होती है।
 
-### आप क्या सीखेंगे
+### आप जो सीखेंगे
 
-यह कोर्स आपको बुनियादी अवधारणाओं से लेकर प्रोडक्शन-तैयार कार्यान्वयन तक ले जाता है, जिसमें शामिल हैं:
-- एज तैनाती के लिए अनुकूलित **स्मॉल लैंग्वेज मॉडल्स (SLMs)**
-- विविध प्लेटफ़ॉर्म्स में **हार्डवेयर-अवेयर ऑप्टिमाइजेशन**
-- **प्राइवेसी-प्रिज़र्विंग** क्षमताओं के साथ रियल-टाइम इन्फ़ेरेंस
-- एंटरप्राइज एप्लिकेशन के लिए **प्रोडक्शन तैनाती** रणनीतियाँ
+यह कोर्स आपको बुनियादी अवधारणाओं से लेकर उत्पादन-योग्य कार्यान्वयन तक ले जाता है, जिनमें शामिल है:
+- एज तैनाती के लिए अनुकूलित **छोटे भाषा मॉडल (SLMs)**
+- विविध प्लेटफार्मों पर **हार्डवेयर-जानकारी वाले अनुकूलन**
+- **गोपनीयता-संरक्षित वास्तविक समय पूर्वानुमान**
+- उद्यम अनुप्रयोगों के लिए **प्रोडक्शन तैनाती** रणनीतियाँ
 
 ### EdgeAI क्यों महत्वपूर्ण है
 
-Edge AI एक नया दृष्टिकोण है जो आधुनिक चुनौतियों को संबोधित करता है:
-- **प्राइवेसी और सुरक्षा**: संवेदनशील डेटा को क्लाउड के बिना स्थानीय रूप से संसाधित करें
-- **रियल-टाइम प्रदर्शन**: समय-संवेदनशील एप्लिकेशन के लिए नेटवर्क विलंबता को समाप्त करें
-- **लागत दक्षता**: बैंडविड्थ और क्लाउड कंप्यूटिंग खर्चों को कम करें
-- **मजबूत संचालन**: नेटवर्क आउटेज के दौरान कार्यक्षमता बनाए रखें
+Edge AI एक ऐसा दृष्टिकोण है जो आधुनिक चुनौतियों को संबोधित करता है:
+- **गोपनीयता और सुरक्षा**: संवेदनशील डेटा को क्लाउड एक्सपोज़र के बिना स्थानीय रूप से संसाधित करें
+- **रियल-टाइम प्रदर्शन**: समय-संवेदनशील अनुप्रयोगों के लिए नेटवर्क विलंबता समाप्त करें
+- **लागत दक्षता**: बैंडविड्थ और क्लाउड कंप्यूटिंग खर्च कम करें
+- **लचीला संचालन**: नेटवर्क आउटेज के दौरान कार्यक्षमता बनाए रखें
 - **नियामक अनुपालन**: डेटा संप्रभुता आवश्यकताओं को पूरा करें
 
-### Edge AI क्या है
+### Edge AI
 
-Edge AI का अर्थ है AI एल्गोरिदम और भाषा मॉडलों को स्थानीय रूप से हार्डवेयर पर चलाना, जहां डेटा उत्पन्न होता है, क्लाउड संसाधनों पर निर्भर किए बिना। यह विलंबता को कम करता है, गोपनीयता बढ़ाता है, और रियल-टाइम निर्णय लेने को सक्षम बनाता है।
+Edge AI का मतलब है AI एल्गोरिदम और भाषा मॉडल को हार्डवेयर पर स्थानीय रूप से चलाना, जहाँ डेटा उत्पन्न होता है, बिना क्लाउड संसाधनों पर निर्भर रहकर पूर्वानुमान के लिए। यह विलंबता कम करता है, गोपनीयता बढ़ाता है, और वास्तविक समय निर्णय लेने को सक्षम बनाता है।
 
-### मूल सिद्धांत:
-- **ऑन-डिवाइस इन्फ़ेरेंस**: AI मॉडल एज डिवाइसों (फोन, राउटर, माइक्रोकंट्रोलर, औद्योगिक पीसी) पर चलते हैं
-- **ऑफ़लाइन क्षमता**: इंटरनेट कनेक्टिविटी के बिना काम कर सकता है
-- **कम विलंबता**: रियल-टाइम सिस्टम के लिए त्वरित प्रतिक्रियाएँ
-- **डेटा संप्रभुता**: संवेदनशील डेटा स्थानीय रखता है, सुरक्षा और अनुपालन बेहतर बनाता है
+### मुख्य सिद्धांत:
+- **डिवाइस पर पूर्वानुमान**: AI मॉडल एज डिवाइसेस (फोन, रूटर, माइक्रोकंट्रोलर, औद्योगिक पीसी) पर चलते हैं
+- **ऑफ़लाइन क्षमता**: लगातार इंटरनेट कनेक्टिविटी के बिना कार्य करता है
+- **कम विलंबता**: रियल-टाइम सिस्टम के लिए तुरंत प्रतिक्रियाएँ
+- **डेटा संप्रभुता**: संवेदनशील डेटा को स्थानीय रखें, सुरक्षा और अनुपालन में सुधार करें
 
-### स्मॉल लैंग्वेज मॉडल्स (SLMs)
+### छोटे भाषा मॉडल (SLMs)
 
-Phi-4, Mistral-7B, और Gemma जैसे SLMs बड़े LLMs के अनुकूलित संस्करण हैं, जो ट्रेनिंग या डिस्टिलेशन द्वारा बनाए जाते हैं ताकि:
-- **मेमोरी कम लें**: सीमित एज डिवाइस मेमोरी का कुशल उपयोग
-- **कम कंप्यूटिंग आवश्यकताएं**: CPU और एज GPU प्रदर्शन के लिए ऑप्टिमाइज़ेशन
-- **तेज़ स्टार्टअप समय**: प्रतिक्रियाशील एप्लिकेशन के लिए त्वरित प्रारंभ
+Phi-4, Mistral-7B, और Gemma जैसे SLM बड़े LLMs के अनुकूलित संस्करण हैं — प्रशिक्षित या संक्षिप्त किए गए:
+- **कम मेमोरी खपत**: सीमित एज डिवाइस मेमोरी का कुशल उपयोग
+- **कम कंप्यूटिंग आवश्यकताएं**: CPU और एज GPU प्रदर्शन के लिए अनुकूलित
+- **तेज़ स्टार्टअप समय**: प्रतिक्रियाशील अनुप्रयोगों के लिए शीघ्र प्रारंभ
 
-वे मज़बूत NLP क्षमताओं को खोलते हैं और निम्नलिखित प्रतिबंधों को पूरा करते हैं:
-- **एम्बेडेड सिस्टम**: IoT डिवाइस और औद्योगिक नियंत्रक
-- **मोबाइल डिवाइस**: स्मार्टफोन और टैबलेट जो ऑफ़लाइन काम करते हैं
-- **IoT डिवाइस**: सीमित संसाधनों वाले सेंसर और स्मार्ट उपकरण
-- **एज सर्वर**: सीमित GPU संसाधनों वाले स्थानीय प्रोसेसिंग यूनिट
-- **पर्सनल कंप्यूटर**: डेस्कटॉप और लैपटॉप पर तैनाती
+वे शक्तिशाली NLP क्षमताओं को अनलॉक करते हैं जबकि निम्नलिखित प्रतिबंधों को पूरा करते हैं:
+- **एम्बेडेड सिस्टम**: IoT उपकरण और औद्योगिक नियंत्रक
+- **मोबाइल डिवाइसेस**: ऑफलाइन क्षमताओं वाले स्मार्टफोन और टैबलेट
+- **IoT डिवाइसेस**: सीमित संसाधनों वाले सेंसर और स्मार्ट उपकरण
+- **एज सर्वर**: सीमित GPU संसाधनों वाले स्थानीय प्रसंस्करण इकाइयां
+- **पर्सनल कंप्यूटर**: डेस्कटॉप और लैपटॉप तैनाती परिदृश्य
 
 ## कोर्स मॉड्यूल और नेविगेशन
 
 | मॉड्यूल | विषय | फोकस क्षेत्र | मुख्य सामग्री | स्तर | अवधि |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [EdgeAI परिचय](./introduction.md) | मूलभूत और संदर्भ | EdgeAI अवलोकन • उद्योग अनुप्रयोग • SLM परिचय • शिक्षण उद्देश्य | शुरुआती | 1-2 घंटे |
-| [📚 01](../../Module01) | [EdgeAI मूल बातें](./Module01/README.md) | क्लाउड बनाम एज AI तुलना | EdgeAI मूल बातें • वास्तविक दुनिया केस स्टडीज़ • कार्यान्वयन गाइड • एज डिप्लॉयमेंट | शुरुआती | 3-4 घंटे |
-| [🧠 02](../../Module02) | [SLM मॉडल आधार](./Module02/README.md) | मॉडल परिवार और आर्किटेक्चर | Phi परिवार • Qwen परिवार • Gemma परिवार • BitNET • μModel • Phi-Silica | शुरुआती | 4-5 घंटे |
-| [🚀 03](../../Module03) | [SLM तैनाती अभ्यास](./Module03/README.md) | स्थानीय और क्लाउड तैनाती | उन्नत सीखना • स्थानीय पर्यावरण • क्लाउड तैनाती | मध्यवर्ती | 4-5 घंटे |
-| [⚙️ 04](../../Module04) | [मॉडल ऑप्टिमाइजेशन टूलकिट](./Module04/README.md) | क्रॉस-प्लेटफ़ॉर्म ऑप्टिमाइजेशन | परिचय • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • वर्कफ़्लो सिंथेसिस | मध्यवर्ती | 5-6 घंटे |
-| [🔧 05](../../Module05) | [SLMOps प्रोडक्शन](./Module05/README.md) | प्रोडक्शन संचालन | SLMOps परिचय • मॉडल डिस्टिलेशन • फाइन-ट्यूनिंग • प्रोडक्शन तैनाती | उन्नत | 5-6 घंटे |
-| [🤖 06](../../Module06) | [AI एजेंट्स और फ़ंक्शन कॉलिंग](./Module06/README.md) | एजेंट फ्रेमवर्क और MCP | एजेंट परिचय • फ़ंक्शन कॉलिंग • मॉडल कंटेक्स्ट प्रोटोकॉल | उन्नत | 4-5 घंटे |
-| [💻 07](../../Module07) | [प्लेटफ़ॉर्म कार्यान्वयन](./Module07/README.md) | क्रॉस-प्लेटफ़ॉर्म उदाहरण | AI टूलकिट • Foundry Local • Windows विकास | उन्नत | 3-4 घंटे |
-| [🏭 08](../../Module08) | [Foundry Local टूलकिट](./Module08/README.md) | प्रोडक्शन-तैयार उदाहरण | नमूना एप्लिकेशन (नीचे विवरण देखें) | विशेषज्ञ | 8-10 घंटे |
+| [📖 00 ](./introduction.md) | [EdgeAI का परिचय](./introduction.md) | बुनियाद और संदर्भ | EdgeAI अवलोकन • उद्योग अनुप्रयोग • SLM परिचय • शिक्षण उद्देश्यों | शुरुआती | 1-2 घंटे |
+| [📚 01](../../Module01) | [EdgeAI मूल बातें](./Module01/README.md) | क्लाउड बनाम एज AI तुलना | EdgeAI मूल बातें • वास्तविक विश्व केस स्टडीज • कार्यान्वयन गाइड • एज तैनाती | शुरुआती | 3-4 घंटे |
+| [🧠 02](../../Module02) | [SLM मॉडल आधार](./Module02/README.md) | मॉडल परिवार और वास्तुकला | Phi परिवार • Qwen परिवार • Gemma परिवार • BitNET • μमॉडल • Phi-Silica | शुरुआती | 4-5 घंटे |
+| [🚀 03](../../Module03) | [SLM तैनाती प्रैक्टिस](./Module03/README.md) | स्थानीय और क्लाउड तैनाती | उन्नत सीखने • स्थानीय पर्यावरण • क्लाउड तैनाती | मध्यवर्ती | 4-5 घंटे |
+| [⚙️ 04](../../Module04) | [मॉडल अनुकूलन टूलकिट](./Module04/README.md) | क्रॉस-प्लेटफ़ॉर्म अनुकूलन | परिचय • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • वर्कफ़्लो संश्लेषण | मध्यवर्ती | 5-6 घंटे |
+| [🔧 05](../../Module05) | [SLMOps उत्पादन](./Module05/README.md) | प्रोडक्शन संचालन | SLMOps परिचय • मॉडल डिस्टिलेशन • फाइन-ट्यूनिंग • प्रोडक्शन तैनाती | उन्नत | 5-6 घंटे |
+| [🤖 06](../../Module06) | [AI एजेंट और फंक्शन कॉलिंग](./Module06/README.md) | एजेंट फ्रेमवर्क और MCP | एजेंट परिचय • फंक्शन कॉलिंग • मॉडल कॉन्टेक्स्ट प्रोटोकॉल | उन्नत | 4-5 घंटे |
+| [💻 07](../../Module07) | [प्लेटफ़ॉर्म कार्यान्वयन](./Module07/README.md) | क्रॉस-प्लेटफ़ॉर्म नमूने | AI टूलकिट • Foundry Local • विंडोज डेवलपमेंट | उन्नत | 3-4 घंटे |
+| [🏭 08](../../Module08) | [Foundry Local टूलकिट](./Module08/README.md) | प्रोडक्शन-तैयार नमूने | नमूना अनुप्रयोग (नीचे विवरण देखें) | विशेषज्ञ | 8-10 घंटे |
 
-### 🏭 **मॉड्यूल 08: नमूना एप्लिकेशन**
+### 🏭 **मॉड्यूल 08: नमूना अनुप्रयोग**
 
 - [01: REST चैट क्विकस्टार्ट](./Module08/samples/01/README.md)
 - [02: OpenAI SDK इंटीग्रेशन](./Module08/samples/02/README.md)
 - [03: मॉडल डिस्कवरी और बेंचमार्किंग](./Module08/samples/03/README.md)
 - [04: Chainlit RAG एप्लिकेशन](./Module08/samples/04/README.md)
 - [05: मल्टी-एजेंट ऑर्केस्ट्रेशन](./Module08/samples/05/README.md)
-- [06: मॉडल्स-एज़-टूल्स राउटर](./Module08/samples/06/README.md)
+- [06: मॉडल-एज-टूल्स राउटर](./Module08/samples/06/README.md)
 - [07: डायरेक्ट API क्लाइंट](./Module08/samples/07/README.md)
-- [08: Windows 11 चैट ऐप](./Module08/samples/08/README.md)
+- [08: विंडोज 11 चैट ऐप](./Module08/samples/08/README.md)
 - [09: उन्नत मल्टी-एजेंट सिस्टम](./Module08/samples/09/README.md)
 - [10: Foundry टूल्स फ्रेमवर्क](./Module08/samples/10/README.md)
 
-### 🎓 **कार्यशाला: व्यावहारिक शिक्षण पथ**
+### 🎓 **वर्कशॉप: हैंड्स-ऑन सीखने का रास्ता**
 
-प्रोडक्शन-तैयार कार्यान्वयन के साथ व्यापक व्यावहारिक कार्यशाला सामग्री:
+पूरक हैंड्स-ऑन कार्यशाला सामग्री प्रोडक्शन-तैयार कार्यान्वयन के साथ:
 
-- **[कार्यशाला गाइड](./Workshop/Readme.md)** - पूर्ण शिक्षण उद्देश्य, परिणाम, और संसाधन नेविगेशन
-- **पायथन सैंपल्स** (6 सत्र) - सर्वोत्तम प्रथाओं, त्रुटि हैंडलिंग, और पूर्ण दस्तावेज़ीकरण के साथ अपडेट
-- **जुपिटर नोटबुक्स** (8 इंटरैक्टिव) - चरण-दर-चरण ट्यूटोरियल्स के साथ बेंचमार्क और प्रदर्शन निगरानी
-- **सत्र गाइड्स** - प्रत्येक कार्यशाला सत्र के लिए विस्तृत मार्कडाउन गाइड्स
-- **मान्यता उपकरण** - कोड गुणवत्ता सत्यापित करने और स्मोक टेस्ट चलाने के लिए स्क्रिप्ट
+- **[वर्कशॉप गाइड](./Workshop/Readme.md)** - पूर्ण सीखने के उद्देश्य, परिणाम, और संसाधन नेविगेशन
+- **Python नमूने** (6 सत्र) - बेहतरीन प्रथाओं, त्रुटि हैंडलिंग, और व्यापक दस्तावेज़ों के साथ अपडेटेड
+- **Jupyter नोटबुक्स** (8 इंटरैक्टिव) - चरण-दर-चरण ट्यूटोरियल्स के साथ बेंचमार्क और प्रदर्शन निगरानी
+- **सत्र गाइड** - प्रत्येक कार्यशाला सत्र के लिए विस्तृत मार्कडाउन गाइड
+- **मान्यता उपकरण** - कोड गुणवत्ता जांचने और स्मोक टेस्ट चलाने के लिए स्क्रिप्ट
 
 **आप क्या बनाएंगे:**
-- स्ट्रीमिंग समर्थन के साथ स्थानीय AI चैट एप्लिकेशन
-- गुणवत्ता मूल्यांकन (RAGAS) के साथ RAG पाइपलाइन
+- स्थानीय AI चैट एप्लिकेशन with स्ट्रीमिंग समर्थन
+- गुणवत्ता मूल्यांकन (RAGAS) के साथ RAG पाइपलाइन्स
 - मल्टी-मॉडल बेंचमार्किंग और तुलना उपकरण
 - मल्टी-एजेंट ऑर्केस्ट्रेशन सिस्टम
 - कार्य-आधारित चयन के साथ बुद्धिमान मॉडल राउटिंग
 
-### 🎙️ **एजेंटिक के लिए कार्यशाला: व्यावहारिक - AI पॉडकास्ट स्टूडियो**
+### 🎙️ **एजेंटिक के लिए वर्कशॉप: हैंड्स-ऑन – द AI पॉडकास्ट स्टूडियो**
+शुरुआत से एक AI-पावर्ड पॉडकास्ट प्रोडक्शन पाइपलाइन बनाएं! यह इमर्सिव वर्कशॉप आपको एक पूर्ण मल्टी-एजेंट सिस्टम बनाने सिखाती है जो विचारों को पेशेवर पॉडकास्ट एपिसोड में बदलता है।
 
-शून्य से AI-संचालित पॉडकास्ट उत्पादन पाइपलाइन बनाएं! यह इंटेंसिव कार्यशाला आपको एक पूर्ण मल्टी-एजेंट सिस्टम बनाने की शिक्षा देती है जो विचारों को पेशेवर पॉडकास्ट एपिसोड में बदल देता है।
-**[🎬 AI पॉडकास्ट स्टूडियो कार्यशाला शुरू करें](./WorkshopForAgentic/README.md)**
+**[🎬 AI पॉडकास्ट स्टूडियो वर्कशॉप शुरू करें](./WorkshopForAgentic/README.md)**
 
-**आपका मिशन**: "फ्यूचर बाइट्स" लॉन्च करें — एक टेक पॉडकास्ट जो पूरी तरह आपके द्वारा बनाए गए AI एजेंट्स द्वारा संचालित हो। कोई क्लाउड निर्भरता नहीं, कोई API लागत नहीं — सब कुछ आपके मशीन पर स्थानीय रूप से चलता है।
+**आपका मिशन**: "Future Bytes" लॉन्च करें — एक टेक पॉडकास्ट जो पूरी तरह से आपके द्वारा बनाए गए AI एजेंट्स द्वारा संचालित होगा। कोई क्लाउड निर्भरता नहीं, कोई API लागत नहीं — सब कुछ आपके मशीन पर स्थानीय रूप से चलता है।
 
-**इसकी खासियत क्या है:**
-- **🤖 असली मल्टी-एजेंट ऑर्केस्ट्रेशन** - विशेषज्ञ AI एजेंट बनाएं जो रिसर्च करें, लिखें, और ऑडियो उत्पादित करें
-- **🎯 पूर्ण उत्पादन पाइपलाइन** - विषय चयन से लेकर अंतिम पॉडकास्ट ऑडियो आउटपुट तक
-- **💻 100% स्थानीय डिप्लॉयमेंट** - पूर्ण गोपनीयता और नियंत्रण के लिए Ollama और स्थानीय मॉडल (Qwen-3-8B) का उपयोग
-- **🎤 टेक्स्ट-टू-स्पीच इंटीग्रेशन** - स्क्रिप्ट को प्राकृतिक-साउंडिंग मल्टी-स्पीकर संवादों में बदलें
-- **✋ मानव-इन-द-लूप वर्कफ़्लोज़** - स्वीकृति गेट गुणवत्ता सुनिश्चित करते हैं जबकि स्वचालन बरकरार रहता है
+**इसको खास क्या बनाता है:**
+- **🤖 वास्तविक मल्टी-एजेंट ऑर्केस्ट्रेशन** - विशेषज्ञ AI एजेंट बनाएं जो शोध करें, लिखें, और ऑडियो बनाएं
+- **🎯 पूर्ण प्रोडक्शन पाइपलाइन** - विषय चयन से लेकर अंतिम पॉडकास्ट ऑडियो आउटपुट तक
+- **💻 100% स्थानीय तैनाती** - पूरे गोपनीयता और नियंत्रण के लिए Ollama और स्थानीय मॉडल (Qwen-3-8B) का उपयोग
+- **🎤 टेक्स्ट-टू-स्पीच इंटीग्रेशन** - स्क्रिप्ट्स को प्राकृतिक सुनाई देने वाली मल्टी-स्पीकर बातचीत में बदलना
+- **✋ मानव-इन-द-लूप वर्कफ्लोज़** - स्वीकृति गेट गुणवत्ता सुनिश्चित करते हैं जबकि स्वचालन जारी रहता है
 
-**तीन-अंक की सीख यात्रा:**
+**तीन-अधिनायक सीखने की यात्रा:**
 
-| अंक | फोकस | मुख्य कौशल | अवधि |
+| अधिनायक | फोकस | प्रमुख कौशल | अवधि |
 |-----|-------|------------|----------|
-| **[अंक 1: अपने AI सहायकों से मिलें](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | अपना पहला AI एजेंट बनाएं | टूल इंटीग्रेशन • वेब सर्च • समस्या समाधान • एजेंटिक तर्क | 2-3 घंटे |
-| **[अंक 2: अपनी उत्पादन टीम बनाएं](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | कई एजेंट्स का समन्वय करें | टीम कोऑर्डिनेशन • अप्रूवल वर्कफ़्लोज़ • DevUI इंटरफ़ेस • मानव निगरानी | 3-4 घंटे |
-| **[अंक 3: अपने पॉडकास्ट को जीवंत बनाएं](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | पॉडकास्ट ऑडियो जनरेट करें | टेक्स्ट-टू-स्पीच • मल्टी-स्पीकर सिंथेसिस • लम्बा ऑडियो • पूर्ण स्वचालन | 2-3 घंटे |
+| **[अधिनायक 1: अपने AI सहायक से मिलें](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | अपना पहला AI एजेंट बनाएं | टूल इंटीग्रेशन • वेब सर्च • समस्या समाधान • एजेंटिक तर्क | 2-3 घंटे |
+| **[अधिनायक 2: अपनी प्रोडक्शन टीम बनाएं](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | कई एजेंट्स का समन्वय करें | टीम समन्वय • स्वीकृति वर्कफ्लोज़ • DevUI इंटरफ़ेस • मानवीय निरीक्षण | 3-4 घंटे |
+| **[अधिनायक 3: अपने पॉडकास्ट को जीवन दें](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | पॉडकास्ट ऑडियो जेनरेट करें | टेक्स्ट-टू-स्पीच • मल्टी-स्पीकर सिंथेसिस • लॉन्ग-फॉर्म ऑडियो • पूर्ण स्वचालन | 2-3 घंटे |
 
-**प्रयुक्त तकनीकें:**
+**प्रयुक्त प्रौद्योगिकियाँ:**
 - **Microsoft Agent Framework** - मल्टी-एजेंट ऑर्केस्ट्रेशन और समन्वय
 - **Ollama** - स्थानीय AI मॉडल रनटाइम (कोई क्लाउड आवश्यक नहीं)
-- **Qwen-3-8B** - एजेंटिक कार्यों के लिए ऑप्टिमाइज़्ड ओपन-सोर्स भाषा मॉडल
-- **टेक्स्ट-टू-स्पीच API** - पॉडकास्ट निर्माण के लिए प्राकृतिक आवाज़ सिंथेसिस
+- **Qwen-3-8B** - एजेंटिक कार्यों के लिए अनुकूलित ओपन-सोर्स भाषा मॉडल
+- **텍्स्ट-टू-स्पीच एपीआई** - पॉडकास्ट उत्पादन के लिए प्राकृतिक आवाज सिंथेसिस
 
-**हार्डवेयर सपोर्ट:**
-- ✅ **CPU मोड** - किसी भी आधुनिक कंप्यूटर पर काम करता है (8GB+ RAM अनुशंसित)
-- 🚀 **GPU एक्सेलेरेशन** - NVIDIA/AMD GPU के साथ काफी तेज़ पूर्वानुमान
-- ⚡ **NPU सपोर्ट** - अगली पीढ़ी के न्यूरल प्रोसेसिंग यूनिट एक्सेलेरेशन
+**हार्डवेयर समर्थन:**
+- ✅ **CPU मोड** - किसी भी आधुनिक कंप्यूटर पर काम करता है (8GB+ RAM की सिफारिश)
+- 🚀 **GPU एक्सेलेरेशन** - NVIDIA/AMD GPUs के साथ काफी तेज़ पूर्वानुमान
+- ⚡ **NPU समर्थन** - अगली पीढ़ी के न्यूरल प्रोसेसिंग यूनिट एक्सेलेरेशन
 
-**उपयुक्त है:**
-- मल्टी-एजेंट AI सिस्टम सीख रहे डेवलपर्स के लिए
-- AI ऑटोमेशन और वर्कफ़्लोज़ में रुचि रखने वालों के लिए
-- AI-सहायित उत्पादन का अन्वेषण कर रहे कंटेंट क्रिएटर्स के लिए
-- व्यावहारिक AI ऑर्केस्ट्रेशन पैटर्न पढ़ रहे छात्रों के लिए
+**सभी के लिए उपयुक्त:**
+- मल्टी-एजेंट AI सिस्टम सीखने वाले डेवलपर्स
+- AI स्वचालन और वर्कफ्लोज़ में रुचि रखने वाले
+- AI-सहायता प्राप्त उत्पादन खोजने वाले कंटेंट क्रिएटर्स
+- व्यावहारिक AI ऑर्केस्ट्रेशन पैटर्न पढ़ने वाले छात्र
 
-**शुरू करें**: [🎙️ AI पॉडकास्ट स्टूडियो कार्यशाला →](./WorkshopForAgentic/README.md)
+**शुरू करें**: [🎙️ AI पॉडकास्ट स्टूडियो वर्कशॉप →](./WorkshopForAgentic/README.md)
 
-### 📊 **सीखने के मार्ग का सारांश**
+### 📊 **सीखने का पथ सारांश**
 - **कुल अवधि**: 36-45 घंटे
-- **शुरुआती मार्ग**: मॉड्यूल 01-02 (7-9 घंटे)  
-- **मध्यम मार्ग**: मॉड्यूल 03-04 (9-11 घंटे)
-- **उन्नत मार्ग**: मॉड्यूल 05-07 (12-15 घंटे)
-- **विशेषज्ञ मार्ग**: मॉड्यूल 08 (8-10 घंटे)
+- **शुरुआती पथ**: मॉड्यूल 01-02 (7-9 घंटे)  
+- **मध्यम पथ**: मॉड्यूल 03-04 (9-11 घंटे)
+- **उन्नत पथ**: मॉड्यूल 05-07 (12-15 घंटे)
+- **विशेषज्ञ पथ**: मॉड्यूल 08 (8-10 घंटे)
 
 ## आप क्या बनाएंगे
 
-### 🎯 मुख्य क्षमताएं
+### 🎯 मुख्य कौशल
 - **एज AI आर्किटेक्चर**: क्लाउड इंटीग्रेशन के साथ स्थानीय-प्रथम AI सिस्टम डिज़ाइन करें
-- **मॉडल अनुकूलन**: एज डिप्लॉयमेंट के लिए मॉडल क्वांटाइज और कंप्रेस करें (85% स्पीड बढ़ोतरी, 75% साइज़ कम करना)
+- **मॉडल ऑप्टिमाइज़ेशन**: एज डिप्लॉयमेंट के लिए मॉडल को क्वांटाइज़ और कंप्रेस करें (85% गति वृद्धि, 75% आकार कमी)
 - **मल्टी-प्लेटफ़ॉर्म डिप्लॉयमेंट**: विंडोज़, मोबाइल, एम्बेडेड, और क्लाउड-एज हाइब्रिड सिस्टम
-- **उत्पादन संचालन**: एज AI की निगरानी, स्केलिंग, और रखरखाव
+- **प्रोडक्शन संचालन**: एज AI की निगरानी, स्केलिंग, और रखरखाव
 
-### 🏗️ व्यावहारिक परियोजनाएं
-- **Foundry Local चैट ऐप्स**: विंडोज़ 11 नेटिव ऐप्लिकेशन मॉडल स्विचिंग के साथ
-- **मल्टी-एजेंट सिस्टम**: जटिल वर्कफ़्लोज़ के लिए विशेषज्ञ एजेंट्स के साथ समन्वयक  
-- **RAG ऐप्लिकेशन**: वेक्टर सर्च के साथ स्थानीय दस्तावेज़ प्रसंस्करण
-- **मॉडल राउटर्स**: कार्य विश्लेषण के आधार पर मॉडल चयन बुद्धिमानी से
-- **API फ्रेमवर्क्स**: स्ट्रीमिंग और हेल्थ मॉनिटरिंग के साथ उत्पादन-तैयार क्लाइंट्स
+### 🏗️ व्यावहारिक प्रोजेक्ट्स
+- **Foundry Local चैट ऐप्स**: मॉडल स्विचिंग के साथ विंडोज़ 11 नेटिव ऐप्लिकेशन
+- **मल्टी-एजेंट सिस्टम्स**: जटिल वर्कफ्लोज़ के लिए समन्वयक के साथ विशेषज्ञ एजेंट  
+- **RAG ऐप्लिकेशन**: वektor खोज के साथ स्थानीय दस्तावेज़ प्रसंस्करण
+- **मॉडल राउटर्स**: कार्य विश्लेषण पर आधारित मॉडल के बीच बुद्धिमान चयन
+- **एपीआई फ्रेमवर्क**: स्ट्रीमिंग और स्वास्थ्य निगरानी के साथ प्रोडक्शन-तैयार क्लाइंट
 - **क्रॉस-प्लेटफ़ॉर्म टूल्स**: LangChain/Semantic Kernel इंटीग्रेशन पैटर्न
 
-### 🏢 उद्योग अनुप्रयोग
-**निर्माण** • **हेALTHकेयर** • **स्वायत्त वाहन** • **स्मार्ट शहर** • **मोबाइल ऐप्स**
+### 🏢 औद्योगिक अनुप्रयोग
+**मैन्युफैक्चरिंग** • **हेल्थकेयर** • **स्वायत्त वाहन** • **स्मार्ट सिटीज़** • **मोबाइल ऐप्स**
 
-## त्वरित शुरुआत
+## क्विक स्टार्ट
 
-**अनुशंसित सीखने का मार्ग** (कुल 20-30 घंटे):
+**अनुशंसित सीखने का पथ** (कुल 20-30 घंटे):
 
-0. **📖 परिचय** ([Introduction.md](./introduction.md)): EdgeAI नींव + उद्योग संदर्भ + सीखने का ढांचा
-1. **📚 आधार** (मॉड्यूल 01-02): EdgeAI सिद्धांत + SLM मॉडल परिवार
-2. **⚙️ अनुकूलन** (मॉड्यूल 03-04): डिप्लॉयमेंट + क्वांटाइजेशन फ्रेमवर्क  
-3. **🚀 उत्पादन** (मॉड्यूल 05-06): SLMOps + AI एजेंट्स + फ़ंक्शन कॉलिंग
-4. **💻 कार्यान्वयन** (मॉड्यूल 07-08): प्लेटफ़ॉर्म नमूने + Foundry Local टूलकिट
+0. **📖 परिचय** ([Introduction.md](./introduction.md)): EdgeAI आधार + उद्योग संदर्भ + सीखने का फ्रेमवर्क  
+1. **📚 आधार** (मॉड्यूल 01-02): EdgeAI अवधारणाएं + SLM मॉडल फैमिलीज़  
+2. **⚙️ ऑप्टिमाइज़ेशन** (मॉड्यूल 03-04): डिप्लॉयमेंट + क्वांटाइज़ेशन फ्रेमवर्क  
+3. **🚀 प्रोडक्शन** (मॉड्यूल 05-06): SLMOps + AI एजेंट्स + फंक्शन कॉलिंग  
+4. **💻 कार्यान्वयन** (मॉड्यूल 07-08): प्लेटफॉर्म नमूने + Foundry Local टूलकिट
 
-प्रत्येक मॉड्यूल में सिद्धांत, व्यावहारिक अभ्यास, और उत्पादन-तैयार कोड उदाहरण शामिल हैं।
+हर मॉड्यूल में थ्योरी, प्रायोगिक अभ्यास, और प्रोडक्शन-तैयार कोड उदाहरण शामिल हैं।
 
-## करियर प्रभाव
+## कैरियर प्रभाव
 
 **तकनीकी भूमिकाएं**: EdgeAI सॉल्यूशंस आर्किटेक्ट • ML इंजीनियर (एज) • IoT AI डेवलपर • मोबाइल AI डेवलपर
 
-**उद्योग क्षेत्र**: मैन्युफैक्चरिंग 4.0 • हेल्थकेयर टेक • स्वत: सिस्टम • फिनटेक • उपभोक्ता इलेक्ट्रॉनिक्स
+**औद्योगिक क्षेत्र**: मैन्युफैक्चरिंग 4.0 • हेल्थकेयर टेक • स्वायत्त सिस्टम्स • फिनटेक • कंज्यूमर इलेक्ट्रॉनिक्स
 
-**पोर्टफोलियो परियोजनाएं**: मल्टी-एजेंट सिस्टम • उत्पादन RAG ऐप्स • क्रॉस-प्लेटफ़ॉर्म डिप्लॉयमेंट • प्रदर्शन अनुकूलन
+**पोर्टफोलियो प्रोजेक्ट्स**: मल्टी-एजेंट सिस्टम्स • प्रोडक्शन RAG ऐप्स • क्रॉस-प्लेटफ़ॉर्म डिप्लॉयमेंट • प्रदर्शन अनुकूलन
 
 ## रिपॉजिटरी संरचना
 
@@ -234,18 +245,18 @@ edgeai-for-beginners/
 
 ## कोर्स हाइलाइट्स
 
-✅ **प्रगतिशील सीखना**: सिद्धांत → अभ्यास → उत्पादन डिप्लॉयमेंट  
-✅ **वास्तविक केस अध्ययन**: Microsoft, जापान एयरलाइंस, एंटरप्राइज इम्प्लीमेंटेशन  
-✅ **हैंड्स-ऑन उदाहरण**: 50+ उदाहरण, 10 व्यापक Foundry Local डेमो  
-✅ **प्रदर्शन पर ध्यान**: 85% गति सुधार, 75% आकार कमी  
-✅ **मल्टी-प्लेटफ़ॉर्म**: विंडोज, मोबाइल, एम्बेडेड, क्लाउड-एज हाइब्रिड  
-✅ **उत्पादन-तैयार**: निगरानी, स्केलिंग, सुरक्षा, अनुपालन फ्रेमवर्क
+✅ **प्रगतिशील सीखना**: सिद्धांत → अभ्यास → प्रोडक्शन डिप्लॉयमेंट  
+✅ **वास्तविक केस स्टडीज़**: माइक्रोसॉफ्ट, जापान एयरलाइंस, उद्यम कार्यान्वयन  
+✅ **हैंड्स-ऑन सैंपल्स**: 50+ उदाहरण, 10 व्यापक Foundry Local डेमो  
+✅ **प्रदर्शन फोकस**: 85% गति सुधार, 75% आकार कमी  
+✅ **मल्टी-प्लेटफ़ॉर्म**: विंडोज़, मोबाइल, एम्बेडेड, क्लाउड-एज हाइब्रिड  
+✅ **प्रोडक्शन रेडी**: मॉनिटरिंग, स्केलिंग, सुरक्षा, अनुपालन फ्रेमवर्क
 
-📖 **[अध्ययन गाइड उपलब्ध](STUDY_GUIDE.md)**: संरचित 20-घंटे सीखने का मार्ग, समय आवंटन मार्गदर्शन और स्व-मूल्यांकन उपकरण के साथ।
+📖 **[अध्ययन मार्गदर्शिका उपलब्ध](STUDY_GUIDE.md)**: 20 घंटे के संरचित सीखने का पथ जिसमें समय आवंटन मार्गदर्शन और आत्म-मूल्यांकन उपकरण शामिल हैं।
 
 ---
 
-**EdgeAI AI डिप्लॉयमेंट का भविष्य है**: स्थानीय-प्रथम, गोपनीयता-संरक्षित, और कुशल। इन कौशलों को मास्टर करें और अगली पीढ़ी के बुद्धिमान ऐप्लिकेशन बनाएं।
+**EdgeAI AI डिप्लॉयमेंट का भविष्य है**: स्थानीय-प्रथम, गोपनीयता-संरक्षित, और प्रभावी। इन कौशलों में महारत हासिल करें और बुद्धिमान अनुप्रयोगों की अगली पीढ़ी बनाएं।
 
 ## अन्य कोर्स
 
@@ -253,39 +264,39 @@ edgeai-for-beginners/
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
-[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
-[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
-[![LangChain for Beginners](https://img.shields.io/badge/LangChain%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://github.com/microsoft/langchain-for-beginners?WT.mc_id=m365-94501-dwahlin)
+[![LangChain4j शुरुआती के लिए](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
+[![LangChain.js शुरुआती के लिए](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
+[![LangChain शुरुआती के लिए](https://img.shields.io/badge/LangChain%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://github.com/microsoft/langchain-for-beginners?WT.mc_id=m365-94501-dwahlin)
 ---
 
 ### Azure / Edge / MCP / Agents
-[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AZD शुरुआती के लिए](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Edge AI शुरुआती के लिए](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![MCP शुरुआती के लिए](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI Agents शुरुआती के लिए](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
-### Generative AI Series
-[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+
+### जनरेटिव AI सीरीज
+[![जनरेटिव AI शुरुआती के लिए](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![जनरेटिव AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+[![जनरेटिव AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+[![जनरेटिव AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
-### Core Learning
-[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
-[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+
+### मुख्य सीखना
+[![एमएल शुरुआती के लिए](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+[![डेटा साइंस शुरुआती के लिए](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI शुरुआती के लिए](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+[![साइबरसिक्योरिटी शुरुआती के लिए](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![वेब डेवलपमेंट शुरुआती के लिए](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+[![IoT शुरुआती के लिए](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+[![XR डेवलपमेंट शुरुआती के लिए](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
-### Copilot Series
+
+### कोपाइलट सीरीज
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
@@ -293,11 +304,11 @@ edgeai-for-beginners/
 
 ## सहायता प्राप्त करना
 
-यदि आप अटके हुए हैं या AI ऐप्स बनाने के बारे में कोई प्रश्न है, तो शामिल हों:
+यदि आप अटके हुए हैं या AI ऐप्स बनाने के बारे में कोई प्रश्न हैं, तो जुड़ें:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-यदि आपके पास उत्पाद प्रतिक्रिया या बिल्ड करते समय त्रुटियाँ हैं, तो जाएँ:
+यदि आपके पास उत्पाद प्रतिक्रिया या निर्माण के दौरान त्रुटियाँ हैं, तो जाएं:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
@@ -305,5 +316,5 @@ edgeai-for-beginners/
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **अस्वीकरण**:  
-इस दस्तावेज़ का अनुवाद AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके किया गया है। जबकि हम सटीकता के लिए प्रयासरत हैं, कृपया यह ध्यान रखें कि स्वचालित अनुवादों में त्रुटियाँ या अशुद्धियाँ हो सकती हैं। मूल दस्तावेज़ अपनी मातृभाषा में ही प्रामाणिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या व्याख्या के लिए हम जिम्मेदार नहीं हैं।
+यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनूदित किया गया है। जबकि हम सटीकता के लिए प्रयासरत हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियाँ या अशुद्धियाँ हो सकती हैं। मूल भाषा में मूल दस्तावेज़ को अधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम जिम्मेदार नहीं हैं।
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
