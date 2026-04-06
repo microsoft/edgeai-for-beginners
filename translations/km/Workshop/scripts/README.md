@@ -1,0 +1,207 @@
+# ស្គ្រីបសិក្ខាសាលា
+
+ថតនេះផ្ទុកស្គ្រីបអូតូម៉ាស៊ីន និងស្គ្រីបគាំទ្រដែលប្រើក្នុងការរក្សាគុណភាព និងភាពឯកសណ្ឋាននៅលើឯកសារ Workshop។
+
+## មាតិកា
+
+| File | Purpose |
+|------|---------|
+| `lint_markdown_cli.py` | ធ្វើការ lint លើកូដបិទក្នុង Markdown ដើម្បីរារាំងលំនាំពាក្យ Foundry Local CLI ដែលអស់ប្រើប្រាស់។ |
+| `export_benchmark_markdown.py` | រត់ការ​វាស់ល្បឿន (latency) សម្រាប់ម៉ូដែលច្រើន និងបញ្ចេញរបាយការណ៍ជា Markdown + JSON។ |
+
+## 1. លិនធ័រលំនាំ CLI ក្នុង Markdown
+
+`lint_markdown_cli.py` ស្កេនឯកសារ `.md` ទាំងអស់ដែលមិនមែនជាការបកប្រែ សម្រាប់លំនាំ Foundry Local CLI ដែលមិនអនុញ្ញាត **នៅក្នុងប្លុកកូដដែលមានជួរដេក** (``` ... ```). អត្ថបទពត៌មាននៅខាងក្រៅអាចបញ្ជាក់ពីពាក្យបញ្ជាដែលបានដកចេញសម្រាប់បរិបទប្រវត្តិសាស្ត្រ។
+
+### លំនាំដែលបានដកចេញ (រារាំងនៅក្នុងប្លុកកូដដែលមានជួរដេក)
+
+លិនធ័រនេះរារាំងលំនាំ CLI ដែលបានដកចេញ។ សូមប្រើជំនួសទំនើបជំនួស។
+
+### ជំនួសដែលត្រូវការ
+| Deprecated | Use Instead |
+|------------|-------------|
+| `foundry model chat <a> "..."` | `foundry model run <a> --prompt "..."` |
+| `foundry model list --running` | `foundry model list` |
+| `foundry model list --cached` | `foundry cache list` |
+| `foundry model stats` | ស្គ្រីប Benchmark និងឧបករណ៍ប្រព័ន្ធ (`Task Manager`, `nvidia-smi`) |
+| `foundry model benchmark` | `samples/session03/benchmark_oss_models.py` |
+| `foundry model list --available` | `foundry model list` |
+
+### Exit Codes
+| Code | Meaning |
+|------|---------|
+| 0 | មិនមានការរំលោភណាមួយដែលបានរកឃើញ |
+| 1 | មានលំនាំដែលបានដកចេញមួយឬច្រើនត្រូវបានរកឃើញ |
+
+### Running Locally
+From the repository root (recommended):
+
+Windows (PowerShell):
+```powershell
+python Workshop\scripts\lint_markdown_cli.py --verbose
+```
+
+macOS / Linux:
+```bash
+python Workshop/scripts/lint_markdown_cli.py --verbose
+```
+
+### Pre-Commit Hook (Optional)
+```bash
+echo "python Workshop/scripts/lint_markdown_cli.py" > .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+```
+This blocks commits that introduce deprecated patterns.
+
+### CI Integration
+A GitHub Action workflow (`.github/workflows/markdown-cli-lint.yml`) runs the linter on every push and pull request to `main` and `Reactor` branches. Failing jobs must be fixed before merging.
+
+### Adding New Deprecated Patterns
+1. បើក `lint_markdown_cli.py`.
+2. បញ្ចូល tuple `(regex, suggestion)` ទៅក្នុងបញ្ជី `DEPRECATED`។ ប្រើ raw string និងបញ្ចូល `\b` ជាកំណត់ពាក្យនៅកន្លែងដែលសមរម្យ។
+3. រត់លិនធ័រនៅលើម៉ាស៊ីនរបស់អ្នក ដើម្បីផ្ទៀងផ្ទាត់ការរកឃើញ។
+4. Commit and push; CI នឹងអនុវត្តច្បាប់ថ្មី។
+
+Example addition:
+```python
+DEPRECATED.append((r"\\bfoundry\\s+experimental\\s+foo\\b", "Remove experimental foo usage"))
+```
+
+### Allowing Explanatory Mentions
+ដោយសារតែតែប្លុកកូដដែលមានជួរដេកត្រូវបានអនុវត្ត អ្នកអាចពិពណ៌នាពាក្យបញ្ជាដែលបានដកចេញនៅក្នុងអត្ថបទរោទ៍បានយ៉ាងសុវត្ថិភាព។ ប្រសិនបើអ្នក *ត្រូវតែ* បង្ហាញពួកវាភាគក្នុងប្លុកដើម្បីបង្កើតភាពខុសគ្នា, បូកបញ្ចូលប្លុកដែលមានជួរដេក **ដោយគ្មាន** triple backticks (ឧ. indent ឬ quote) ឬសរសេរឡើងវិញទៅទ្រង់ទ្រាយ pseudo។
+
+### Skipping Specific Files (Advanced)
+បើចាំបាច់, ថតឧទាហរណ៍ចាស់ៗក្នុងឯកសារផ្សេងនៅខាងក្រៅ repo ឬប្តូរឈ្មោះឯកសារជាមួយរាងផ្នែកបន្ថែមផ្សេងៗនៅពេលសរសេរការគូរ។ ការលើកលែងចេតនាសម្រាប់ច្បាប់បកប្រែ គឺស្វ័យប្រវត្តិ (ផ្លូវដែលមាន `translations`)។
+
+### Troubleshooting
+| Issue | Cause | Resolution |
+|-------|-------|-----------|
+| Linter flags a line you updated | Regex too broad | Narrow pattern with additional word boundary (`\b`) or anchors |
+| CI fails but local passes | Different Python version or uncommitted changes | Re-run locally, ensure clean working tree, check workflow Python version (3.11) |
+| Need to temporarily bypass | Emergency hotfix | Apply fix immediately after; consider using a temporary branch and follow-up PR (avoid adding bypass switches) |
+
+### Rationale
+ការរក្សាឯកសារ​ឲ្យស្របជាមួយផ្ទៃ CLI ដែលមានស្ថិរភាពនាពេលបច្ចុប្បន្ន ជួយទប់ស្កាត់ការមួកចិត្តក្នុងសិក្ខាសាលា ជៀសវាងការភាន់ច្រឡំរបស់អ្នករៀន និងម៉ាស៊ីនកំណត់ការវាស់ប្រសិទ្ធភាពតាមស្គ្រីប Python ដែលបានថែទាំ ជំនួសការរម្លេចបញ្ជា CLI។
+
+---
+Maintained as part of the workshop quality toolchain. For enhancements (e.g., auto-fixing suggestions or HTML report generation), open an issue or submit a PR.
+
+## 2. ស្គ្រីបផ្ទៀងផ្ទាត់គំរូ
+
+`validate_samples.py` ផ្ទៀងផ្ទាត់ឯកសារ​គំរូ Python ទាំងអស់សម្រាប់សុពលភាពសញ្ញាសរសេរ, ការ import, និងការអនុវត្តតាមលំនាំអនុសាសន៍ល្អបំផុត។
+
+### Usage
+```bash
+# ផ្ទៀងផ្ទាត់គំរូទាំងអស់
+python scripts/validate_samples.py
+
+# ផ្ទៀងផ្ទាត់សេស្យុងជាក់លាក់
+python scripts/validate_samples.py --session 01
+
+# ម៉ូដលម្អិត (រួមមានការព្រមានអំពីការអនុវត្តិល្អបំផុត)
+python scripts/validate_samples.py --verbose
+
+# សង្ខេបតែប៉ុណ្ណោះ
+python scripts/validate_samples.py --summary
+```
+
+### What it checks
+- ✅ សុពលភាពសញ្ញាសរសេរ Python
+- ✅ មានការនាំចូលដែលចាំបាច់
+- ✅ ការអនុវត្តការដោះស្រាយកំហុស (ម៉ូដលម្អិត)
+- ✅ ការប្រើប្រាស់ type hints (ម៉ូដលម្អិត)
+- ✅ docstrings របស់មុខងារ (ម៉ូដលម្អិត)
+- ✅ តំណភ្ជាប់យោង SDK (ម៉ូដលម្អិត)
+
+### Environment Variables
+- `SKIP_IMPORT_CHECK=1` - រំលងការផ្ទៀងផ្ទាត់ import
+- `SKIP_SYNTAX_CHECK=1` - រំលងការផ្ទៀងផ្ទាត់សញ្ញាសរសេរ
+
+### Exit Codes
+- `0` - គំរូទាំងអស់ឆ្លងការផ្ទៀងផ្ទាត់
+- `1` - គំរូមួយឬច្រើនបរាជ័យ
+
+## 3. ប្រតិបត្តិការតេស្តគំរូ
+
+`test_samples.py` រត់តេស្ត smoke លើគំរូទាំងអស់ ដើម្បីផ្ទៀងផ្ទាត់ថាពួកវាចេញដំណើរការដោយគ្មានកំហុស។
+
+### Usage
+```bash
+# សាកល្បងគំរូទាំងអស់
+python scripts/test_samples.py
+
+# សាកល្បងសម័យជាក់លាក់
+python scripts/test_samples.py --session 01
+
+# របៀបលឿន (ពេលផុតកំណត់ខ្លីជាង)
+python scripts/test_samples.py --quick
+
+# របៀបលម្អិត (បង្ហាញលទ្ធផល)
+python scripts/test_samples.py --verbose
+```
+
+### Prerequisites
+- សេវាកម្ម Foundry Local កំពុងដំណើរការ: `foundry service start`
+- ម៉ូដែលបានផ្ទុក: `foundry model run phi-4-mini`
+- អាស្រ័យភាពបានដំឡើង: `pip install -r requirements.txt`
+
+### What it tests
+- ✅ គំរូអាចធ្វើការប្រតិបត្តិបានដោយគ្មានកំហុស runtime
+- ✅ លទ្ធផលដែលចាំបាច់ត្រូវបានផលិត
+- ✅ មានការដោះស្រាយកំហុសយ៉ាងត្រឹមត្រូវពេលបរាជ័យ
+- ✅ ប្រសិទ្ធភាព (ពេលវេលាប្រតិបត្តិការ)
+
+### Environment Variables
+- `FOUNDRY_LOCAL_ALIAS=phi-4-mini` - ម៉ូដែលសម្រាប់ប្រើក្នុងការធ្វើតេស្ត
+- `TEST_TIMEOUT=30` - ពេលកំណត់ពេលវេលាសម្រាប់គំរូក្នុងវិនាទី
+
+### Expected Failures
+តេស្តខ្លះប្រហែលបរាជ័យ ប្រសិនបើអាស្រ័យភាពជាជម្រើសមិនបានដំឡើង (ឧ. `ragas`, `sentence-transformers`)។ ដំឡើងជាមួយ:
+```bash
+pip install sentence-transformers ragas datasets
+```
+
+### Exit Codes
+- `0` - ការធ្វើតេស្តទាំងអស់ជោគជ័យ
+- `1` - ការធ្វើតេស្តមួយឬច្រើនបរាជ័យ
+
+## 4. កម្មវិធីនាំចេញ Benchmark ទៅ Markdown
+
+Script: `export_benchmark_markdown.py`
+
+បង្កើតតារាងសមត្ថភាពដែលអាចធ្វើឲ្យឡើងវិញសម្រាប់ក្រុមម៉ូដែលមួយ។
+
+### Usage
+```powershell
+python Workshop\scripts\export_benchmark_markdown.py --models "qwen2.5-0.5b" --prompt "Explain retrieval augmented generation briefly." --rounds 3 --output benchmark_report.md
+```
+
+### Outputs
+| File | Description |
+|------|-------------|
+| `benchmark_report.md` | តារាង Markdown (avg, p95, tokens/sec, latency នៃ token ដំបូង ជាជម្រើស) |
+| `benchmark_report.json` | ស៊ុមម៉េត្រិកដើមសម្រាប់ធៀប និងប្រវត្តិសាស្ត្រ |
+
+### Options
+| Flag | Description | Default |
+|------|-------------|---------|
+| `--models` | Comma-separated model aliases | (required) |
+| `--prompt` | Prompt used each round | (required) |
+| `--rounds` | Rounds per model | 3 |
+| `--output` | Markdown output file | `benchmark_report.md` |
+| `--json` | JSON output file | `benchmark_report.json` |
+| `--fail-on-empty` | Non-zero exit if all benchmarks fail | off |
+
+Environment variable `BENCH_STREAM=1` adds first token latency measurement.
+
+### Notes
+- ប្រើឡើងវិញ `workshop_utils` សម្រាប់ការចាប់ផ្តើមម៉ូដែល និង caching ដើម្បីរក្សារៀបរយភាព។
+- បើរត់ពីថតការងារផ្សេងទៀត ស្គ្រីបនេះព្យាយាម fallback ផ្លូវដើម្បីស្វែងរក `workshop_utils`។
+- សម្រាប់ការប្រៀបធៀប GPU៖ រត់ម្តង, បើកកម្រិតលឿនតាមកំណត់ CLI, រត់ម្តងទៀត និងធៀប JSON ។
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
+ឯកសារនេះត្រូវបានបកប្រែដោយប្រើសេវាកម្មបកប្រែដោយ AI [Co-op Translator](https://github.com/Azure/co-op-translator)។ ទោះបីជា​យើងខិតខំសម្រាប់ភាពត្រឹមត្រូវក៏ដោយ សូមយល់ថាការបកប្រែដោយស្វ័យប្រវត្តិអាចមានកំហុស ឬមិនបានច្បាស់លាស់។ ឯកសារដើមក្នុងភាសាដើមគួរត្រូវបានទទួលស្គាល់ថាជាប្រភពផ្លូវការ។ សម្រាប់ព័ត៌មានសំខាន់ យើងស្នើឲ្យប្រើការបកប្រែដោយអ្នកជំនាញមនុស្សវិជ្ជាជីវៈ។ យើងមិនទទួលខុសត្រូវចំពោះការយល់ច្រឡំនៃសារ ឬការបកស្រាយខុសផ្សេងៗដែលកើតឡើងពីការប្រើប្រាស់ការបកប្រែនេះទេ។
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
