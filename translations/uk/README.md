@@ -15,209 +15,219 @@
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Виконайте ці кроки, щоб розпочати роботу з цими ресурсами:
+Слідуйте цим крокам, щоб розпочати використання цих ресурсів:
 
-1. **Зробіть форк репозиторію**: Клацніть [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+1. **Форкніть репозиторій**: Натисніть [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
 2. **Клонуйте репозиторій**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Приєднуйтесь до Azure AI Foundry Discord та зустрічайте експертів і колег-розробників**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Приєднуйтесь до Azure AI Foundry Discord та знайомтесь з експертами і іншими розробниками**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Підтримка кількох мов
 
-#### Підтримується через GitHub Action (автоматично і завжди актуально)
+#### Підтримується через GitHub Action (автоматизовано та завжди актуально)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Арабська](../ar/README.md) | [Бенгальська](../bn/README.md) | [Болгарська](../bg/README.md) | [Бірманська (Мʼянма)](../my/README.md) | [Китайська (спрощена)](../zh-CN/README.md) | [Китайська (традиційна, Гонконг)](../zh-HK/README.md) | [Китайська (традиційна, Макао)](../zh-MO/README.md) | [Китайська (традиційна, Тайвань)](../zh-TW/README.md) | [Хорватська](../hr/README.md) | [Чеська](../cs/README.md) | [Данська](../da/README.md) | [Нідерландська](../nl/README.md) | [Естонська](../et/README.md) | [Фінська](../fi/README.md) | [Французька](../fr/README.md) | [Німецька](../de/README.md) | [Грецька](../el/README.md) | [Іврит](../he/README.md) | [Хінді](../hi/README.md) | [Угорська](../hu/README.md) | [Індонезійська](../id/README.md) | [Італійська](../it/README.md) | [Японська](../ja/README.md) | [Каннада](../kn/README.md) | [Корейська](../ko/README.md) | [Литовська](../lt/README.md) | [Малайська](../ms/README.md) | [Малаялам](../ml/README.md) | [Мараті](../mr/README.md) | [Непальська](../ne/README.md) | [Нігерійський Піджин](../pcm/README.md) | [Норвезька](../no/README.md) | [Перська (фарсі)](../fa/README.md) | [Польська](../pl/README.md) | [Португальська (Бразилія)](../pt-BR/README.md) | [Португальська (Португалія)](../pt-PT/README.md) | [Пенджабі (гурмухі)](../pa/README.md) | [Румунська](../ro/README.md) | [Російська](../ru/README.md) | [Сербська (кирилиця)](../sr/README.md) | [Словацька](../sk/README.md) | [Словенська](../sl/README.md) | [Іспанська](../es/README.md) | [Свахілі](../sw/README.md) | [Шведська](../sv/README.md) | [Тагалог (філіппінська)](../tl/README.md) | [Тамільська](../ta/README.md) | [Телугу](../te/README.md) | [Тайська](../th/README.md) | [Турецька](../tr/README.md) | [Українська](./README.md) | [Урду](../ur/README.md) | [Вʼєтнамська](../vi/README.md)
+[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Khmer](../km/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](./README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
-> **Віддаєте перевагу клонувати локально?**
-
-> Цей репозиторій містить понад 50 перекладів мов, що значно збільшує розмір завантаження. Щоб клонувати без перекладів, використовуйте sparse checkout:
+> **Віддаєте перевагу клонуванню локально?**
+>
+> Цей репозиторій містить переклади більш ніж 50 мовами, що значно збільшує розмір завантаження. Щоб клонувати без перекладів, використовуйте sparse checkout:
+>
+> **Bash / macOS / Linux:**
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
 > cd edgeai-for-beginners
 > git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
 > ```
-> Це дає вам усе необхідне для проходження курсу з набагато швидшим завантаженням.
+>
+> **CMD (Windows):**
+> ```cmd
+> git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
+> cd edgeai-for-beginners
+> git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
+> ```
+>
+> Це дасть вам все необхідне для проходження курсу набагато швидше.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Якщо ви бажаєте підтримувати додаткові мови перекладу, вони перелічені [тут](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Якщо ви бажаєте, щоб підтримувались додаткові мови перекладів, вони перераховані [тут](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Вступ
 
-Ласкаво просимо до **EdgeAI для початківців** – вашого всебічного шляху у трансформаційний світ Edge штучного інтелекту. Цей курс з’єднує потужні можливості ШІ з практичним, реальним розгортанням на крайових пристроях, надаючи вам змогу використовувати потенціал ШІ безпосередньо там, де генерується дані та приймаються рішення.
+Ласкаво просимо до **EdgeAI для початківців** – вашої всебічної подорожі у трансформаційний світ Edge штучного інтелекту. Цей курс поєднує потужні можливості ШІ з практичним впровадженням у реальному світі на edge-пристроях, дозволяючи вам використовувати потенціал ШІ безпосередньо там, де генерується дані та потрібно приймати рішення.
 
-### Чого ви навчитесь
+### Чому Ви Навчитесь
 
-Цей курс проведе вас від базових концепцій до готових до виробництва реалізацій, охоплюючи:
-- **Малі мовні моделі (SLM)**, оптимізовані для розгортання на краю
+Цей курс проведе вас від базових концепцій до рішень, готових для виробництва, охоплюючи:
+- **Малі мовні моделі (SLM)**, оптимізовані для edge впровадження
 - **Оптимізація з урахуванням апаратного забезпечення** на різних платформах
-- **Інференс у реальному часі** з можливостями збереження конфіденційності
-- **Стратегії розгортання виробництва** для корпоративних застосунків
+- **Реальний час для висновків** з можливостями захисту конфіденційності
+- **Стратегії виробничого впровадження** для корпоративних застосунків
 
-### Чому EdgeAI важливий
+### Чому EdgeAI Важливий
 
-Edge AI представляє парадигму, яка вирішує критичні сучасні виклики:
-- **Конфіденційність і безпека**: Обробляйте чутливі дані локально без втручання хмари
-- **Продуктивність у реальному часі**: Усуньте затримки мережі для критично-часових додатків
-- **Вартісна ефективність**: Зменшіть витрати на пропускну спроможність і обчислення у хмарі
-- **Стійка робота**: Підтримуйте функціональність під час збоїв мережі
-- **Відповідність регуляторним вимогам**: Виконуйте вимоги щодо суверенітету даних
+Edge AI означає змінити парадигму для вирішення критичних сучасних викликів:
+- **Конфіденційність і безпека**: Обробка чутливих даних локально без передачі у хмару
+- **Продуктивність у реальному часі**: Усунення затримок мережі для критичних додатків
+- **Економія коштів**: Зменшення витрат на пропускну здатність та хмарні обчислення
+- **Стійкість роботи**: Підтримка функціоналу під час збоїв мережі
+- **Відповідність регуляторним нормам**: Відповідність вимогам до суверенітету даних
 
 ### Edge AI
 
-Edge AI означає запуск алгоритмів ШІ та мовних моделей локально на апаратному забезпеченні, близько до того, де генерується дані, без покладання на хмарні ресурси для інференсу. Це зменшує затримки, покращує конфіденційність і дозволяє ухвалювати рішення у реальному часі.
+Edge AI означає запуск AI алгоритмів і мовних моделей локально на обладнанні, близько до місця генерації даних без залежності від хмарних ресурсів для висновків. Це знижує затримку, покращує конфіденційність і забезпечує прийняття рішень у реальному часі.
 
 ### Основні принципи:
-- **Інференс на пристрої**: Моделі ШІ працюють на крайових пристроях (телефонах, маршрутизаторах, мікроконтролерах, промислових ПК)
+- **Виведення на пристрої**: AI моделі працюють на edge-пристроях (телефонах, маршрутизаторах, мікроконтролерах, промислових ПК)
 - **Робота офлайн**: Функціонує без постійного підключення до інтернету
-- **Низька затримка**: Миттєві відповіді для систем у реальному часі
-- **Суверенітет даних**: Зберігає чутливі дані локально, покращуючи безпеку й відповідність
+- **Низька затримка**: Миттєві відповіді для систем реального часу
+- **Суверенітет даних**: Чутливі дані залишаються локально, підвищуючи безпеку та відповідність
 
-### Малі мовні моделі (SLM)
+### Малі Мовні Моделі (SLM)
 
-SLM як Phi-4, Mistral-7B і Gemma — це оптимізовані версії більших LLM, навчені або дистильовані для:
-- **Зменшеного обсягу пам’яті**: Ефективне використання обмеженої пам’яті крайових пристроїв
-- **Меншої обчислювальної вимоги**: Оптимізовані для продуктивності CPU та крайового GPU
-- **Швидкого запуску**: Швидка ініціалізація для чутливих додатків
+SLM, такі як Phi-4, Mistral-7B та Gemma, — це оптимізовані версії великих LLM, навчені або дистильовані для:
+- **Зменшеного використання пам’яті**: Ефективне використання обмеженої пам’яті edge-пристроїв
+- **Менших обчислювальних затрат**: Оптимізовані для продуктивності CPU та edge GPU
+- **Швидшого запуску**: Швидка ініціалізація для чутливих застосунків
 
 Вони відкривають потужні можливості NLP, відповідаючи обмеженням:
-- **Вбудовані системи**: IoT-пристрої та промислові контролери
-- **Мобільні пристрої**: Смартфони і планшети з офлайн-можливостями
-- **IoT-пристрої**: Сенсори та розумні пристрої з обмеженими ресурсами
-- **Крайові сервери**: Локальні обчислювальні одиниці з обмеженими GPU-ресурсами
-- **Персональні комп’ютери**: Сценарії розгортання для настільних і портативних ПК
+- **Вбудовані системи**: IoT пристрої та промислові контролери
+- **Мобільні пристрої**: Смартфони та планшети з офлайн-функціональністю
+- **IoT пристрої**: Датчики і розумні пристрої з обмеженими ресурсами
+- **Edge сервери**: Локальні обчислювальні блоки з обмеженими GPU ресурсами
+- **Персональні комп’ютери**: Десктопні і ноутбучні сценарії впровадження
 
 ## Модулі курсу та навігація
 
-| Модуль | Тема | Область Зосередження | Ключовий зміст | Рівень | Тривалість |
+| Модуль | Тема | Напрямок | Ключовий контент | Рівень | Тривалість |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Вступ до EdgeAI](./introduction.md) | Основи та контекст | Огляд EdgeAI • Застосування в індустрії • Вступ до SLM • Цілі навчання | Початковий | 1-2 год |
-| [📚 01](../../Module01) | [Основи EdgeAI](./Module01/README.md) | Порівняння хмари та Edge AI | Основи EdgeAI • Кейси з реального світу • Посібник з впровадження • Розгортання на краю | Початковий | 3-4 год |
-| [🧠 02](../../Module02) | [Основи моделей SLM](./Module02/README.md) | Родини моделей та архітектура | Родина Phi • Родина Qwen • Родина Gemma • BitNET • μModel • Phi-Silica | Початковий | 4-5 год |
-| [🚀 03](../../Module03) | [Практика розгортання SLM](./Module03/README.md) | Локальне та хмарне розгортання | Поглиблене навчання • Локальне середовище • Хмарне розгортання | Середній | 4-5 год |
-| [⚙️ 04](../../Module04) | [Набір інструментів оптимізації моделі](./Module04/README.md) | Оптимізація на різних платформах | Вступ • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Синтез робочого процесу | Середній | 5-6 год |
-| [🔧 05](../../Module05) | [Виробничі SLMOps](./Module05/README.md) | Виробничі операції | Вступ до SLMOps • Дистиляція моделей • Додаткове навчання • Виробниче розгортання | Поглиблений | 5-6 год |
-| [🤖 06](../../Module06) | [AI Агенти і виклик функцій](./Module06/README.md) | Фреймворки агентів та MCP | Вступ до агентів • Виклик функцій • Протокол контексту моделі | Поглиблений | 4-5 год |
-| [💻 07](../../Module07) | [Реалізація платформи](./Module07/README.md) | Зразки для різних платформ | AI Toolkit • Foundry Local • Розробка для Windows | Поглиблений | 3-4 год |
-| [🏭 08](../../Module08) | [Foundry Local Toolkit](./Module08/README.md) | Готові до виробництва приклади | Зразкові додатки (див. докладніше нижче) | Експерт | 8-10 год |
+| [📖 00 ](./introduction.md) | [Вступ до EdgeAI](./introduction.md) | Основи і контекст | Огляд EdgeAI • Галузеві застосування • Вступ до SLM • Навчальні цілі | Для початківців | 1-2 год |
+| [📚 01](../../Module01) | [Основи EdgeAI](./Module01/README.md) | Порівняння Cloud vs Edge AI | Основи EdgeAI • Кейс-стаді у реальному світі • Посібник із впровадження • Edge Deployment | Для початківців | 3-4 год |
+| [🧠 02](../../Module02) | [Основи моделей SLM](./Module02/README.md) | Сімейства моделей та архітектура | Сімейство Phi • Сімейство Qwen • Сімейство Gemma • BitNET • μModel • Phi-Silica | Для початківців | 4-5 год |
+| [🚀 03](../../Module03) | [Практика впровадження SLM](./Module03/README.md) | Локальне та хмарне впровадження | Поглиблене навчання • Локальне середовище • Хмарне впровадження | Середній | 4-5 год |
+| [⚙️ 04](../../Module04) | [Інструменти оптимізації моделей](./Module04/README.md) | Кросплатформна оптимізація | Вступ • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Синтез робочих процесів | Середній | 5-6 год |
+| [🔧 05](../../Module05) | [SLMOps для виробництва](./Module05/README.md) | Операції у виробництві | Вступ до SLMOps • Дистиляція моделей • Донастройка • Виробниче впровадження | Просунутий | 5-6 год |
+| [🤖 06](../../Module06) | [AI агенти та виклик функцій](./Module06/README.md) | Фреймворки агентів та MCP | Вступ до агентів • Виклик функцій • Протокол контексту моделей | Просунутий | 4-5 год |
+| [💻 07](../../Module07) | [Реалізація платформи](./Module07/README.md) | Кросплатформені приклади | AI інструментарій • Foundry Local • Розробка для Windows | Просунутий | 3-4 год |
+| [🏭 08](../../Module08) | [Foundry Local Інструментарій](./Module08/README.md) | Зразки, готові до виробництва | Зразкові застосунки (див. деталі нижче) | Експерт | 8-10 год |
 
-### 🏭 **Модуль 08: Зразкові додатки**
+### 🏭 **Модуль 08: Зразкові застосунки**
 
-- [01: REST Chat Quickstart](./Module08/samples/01/README.md)
+- [01: REST Chat Квікстарт](./Module08/samples/01/README.md)
 - [02: Інтеграція OpenAI SDK](./Module08/samples/02/README.md)
-- [03: Виявлення моделі та бенчмаркінг](./Module08/samples/03/README.md)
-- [04: Chainlit RAG-додаток](./Module08/samples/04/README.md)
-- [05: Оркестрація мультиагентів](./Module08/samples/05/README.md)
-- [06: Маршрутизатор Models-as-Tools](./Module08/samples/06/README.md)
+- [03: Виявлення моделей і бенчмаркінг](./Module08/samples/03/README.md)
+- [04: Chainlit RAG застосунок](./Module08/samples/04/README.md)
+- [05: Оркестрація мульти-агентів](./Module08/samples/05/README.md)
+- [06: Роутер "Моделі як інструменти"](./Module08/samples/06/README.md)
 - [07: Прямий клієнт API](./Module08/samples/07/README.md)
-- [08: Chat App для Windows 11](./Module08/samples/08/README.md)
-- [09: Розширена система мультиагентів](./Module08/samples/09/README.md)
-- [10: Фреймворк Foundry Tools](./Module08/samples/10/README.md)
+- [08: Chat додаток для Windows 11](./Module08/samples/08/README.md)
+- [09: Просунута мульти-агентська система](./Module08/samples/09/README.md)
+- [10: Foundry Tools Framework](./Module08/samples/10/README.md)
 
 ### 🎓 **Воркшоп: Практичний шлях навчання**
 
-Всебічні матеріали для практичного воркшопу з готовими до виробництва реалізаціями:
+Повний набір матеріалів практичного воркшопу з реалізаціями, готовими для виробництва:
 
-- **[Посібник з воркшопу](./Workshop/Readme.md)** - Повні цілі навчання, результати та навігація по ресурсах
-- **Приклади на Python** (6 сесій) - Оновлені з найкращими практиками, обробкою помилок та докладною документацією
-- **Jupyter Ноутбуки** (8 інтерактивних) - Покрокові навчальні посібники з бенчмарками та моніторингом продуктивності
-- **Посібники сесій** - Детальні markdown-посібники для кожної сесії воркшопу
-- **Інструменти валідації** - Скрипти для перевірки якості коду та запуску тестів
+- **[Керівництво до воркшопу](./Workshop/Readme.md)** - Повні навчальні цілі, результати та навігація по ресурсах
+- **Python приклади** (6 сесій) - Оновлені з найкращими практиками, обробкою помилок та докладною документацією
+- **Jupyter ноутбуки** (8 інтерактивних) - Покрокові підручники з бенчмарками та моніторингом продуктивності
+- **Керівництва по сесіях** - Детальні markdown інструкції для кожної сесії воркшопу
+- **Інструменти валідації** - Скрипти для перевірки якості коду та запуску smoke тестів
 
 **Що ви створите:**
-- Локальні AI чат-додатки з підтримкою стрімінгу
-- RAG конвеєри з оцінкою якості (RAGAS)
-- Інструменти бенчмаркінгу та порівняння кількох моделей
-- Системи оркестрації мультиагентів
-- Інтелектуальний маршрутизатор моделей із вибором завдань
+- Локальні AI чат-застосунки з підтримкою стрімінгу
+- RAG пайплайни з оцінкою якості (RAGAS)
+- Інструменти порівняння та бенчмаркінгу мульти-моделей
+- Системи оркестрації мульти-агентів
+- Інтелектуальний роутинг моделей з вибором за завданням
 
-### 🎙️ **Воркшоп для Agentic: Практика - AI Podcast Studio**
+### 🎙️ **Воркшоп For Agentic: Практичне – AI подкаст студія**
+Побудуйте конвеєр виробництва подкастів на основі штучного інтелекту з нуля! Цей захоплюючий воркшоп навчає створювати повну систему з кількох агентів, яка перетворює ідеї на професійні епізоди подкастів.
 
-Створіть з нуля конвеєр виробництва подкастів на базі ШІ! Цей інтерактивний воркшоп навчить вас створювати повністю мультиагентську систему, яка перетворює ідеї у професійні епізоди подкасту.
-**[🎬 Початок Майстер-класу AI Podcast Studio](./WorkshopForAgentic/README.md)**
+**[🎬 Почати воркшоп AI Podcast Studio](./WorkshopForAgentic/README.md)**
 
-**Ваша Місія**: Запустіть "Future Bytes" — техно-подкаст, цілком створений AI агентами, яких ви побудуєте самі. Без залежностей від хмари, без витрат на API — все працює локально на вашому комп’ютері.
+**Ваше завдання**: Запустити "Future Bytes" — технічний подкаст, створений повністю штучними агентами AI, яких ви створите самі. Без використання хмари, без витрат на API — усе виконується локально на вашому комп’ютері.
 
 **Що робить це унікальним:**
-- **🤖 Реальна мультиагентна оркестрація** - Створюйте спеціалізованих AI агентів, які досліджують, пишуть і виробляють аудіо
-- **🎯 Повний виробничий конвеєр** - Від вибору теми до кінцевого звуку подкасту
-- **💻 100% локальне розгортання** - Використовує Ollama і локальні моделі (Qwen-3-8B) для повної конфіденційності та контролю
-- **🎤 Інтеграція текст-в-мову** - Перетворюйте сценарії у природні розмови з кількома спікерами
-- **✋ Робочі процеси за участю людини** - Ворота схвалення забезпечують якість, зберігаючи автоматизацію
+- **🤖 Справжня оркестрація багатьох агентів** — побудуйте спеціалізованих агентів AI, які досліджують, пишуть і виробляють аудіо
+- **🎯 Повний виробничий конвеєр** — від вибору теми до фінального аудіо до подкасту
+- **💻 100% локальне розгортання** — використовує Ollama та локальні моделі (Qwen-3-8B) для повної конфіденційності та контролю
+- **🎤 Інтеграція текст-в-мову** — перетворюйте скрипти у природні розмови з кількома доповідачами
+- **✋ Робочі процеси з участю людини** — етапи затвердження гарантують якість при збереженні автоматизації
 
-**Триактовий навчальний маршрут:**
+**Навчання у три акти:**
 
 | Акт | Фокус | Ключові навички | Тривалість |
 |-----|-------|-----------------|------------|
-| **[Акт 1: Знайомство з Вашими AI Асистентами](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Створіть свій перший AI агент | Інтеграція інструментів • Веб-пошук • Розв’язання проблем • Агентне мислення | 2-3 год |
-| **[Акт 2: Зберіть свою виробничу команду](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Оркеструйте декількох агентів | Координація команди • Робочі процеси схвалення • Інтерфейс DevUI • Контроль людини | 3-4 год |
-| **[Акт 3: Втілення Вашого Подкасту в Життя](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Генеруйте аудіо подкасту | Текст-в-мову • Синтез з кількома спікерами • Довге аудіо • Повна автоматизація | 2-3 год |
+| **[Акт 1: Познайомтесь зі своїми AI-асистентами](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Створіть свого першого агента AI | Інтеграція інструментів • Веб-пошук • Розв’язання проблем • Агентне мислення | 2-3 год |
+| **[Акт 2: Зберіть команду виробництва](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Організуйте кількох агентів | Координація команди • Робочі процеси затвердження • Інтерфейс DevUI • Контроль людиною | 3-4 год |
+| **[Акт 3: Реалізуйте свій подкаст**](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Згенеруйте аудіо подкасту | Текст-в-мову • Синтез для кількох доповідачів • Довге аудіо • Повна автоматизація | 2-3 год |
 
 **Використані технології:**
-- **Microsoft Agent Framework** - Оркестрація та координація мультиагентів
-- **Ollama** - Локальне виконання AI моделей (без потреби у хмарі)
-- **Qwen-3-8B** - Відкрита мовна модель, оптимізована для агентних завдань
-- **API Текст-в-Мову** - Природний синтез голосу для створення подкастів
+- **Microsoft Agent Framework** — оркестрація та координація багатьох агентів
+- **Ollama** — локальний AI-рушій (без потреби у хмарі)
+- **Qwen-3-8B** — відкрита мовна модель, оптимізована для агентних задач
+- **API текст-в-мову** — природний синтез голосу для створення подкастів
 
 **Підтримка апаратного забезпечення:**
-- ✅ **Режим CPU** - Працює на будь-якому сучасному комп’ютері (рекомендовано 8ГБ+ ОЗП)
-- 🚀 **Акселерація GPU** - Значно швидше виконання на NVIDIA/AMD GPU
-- ⚡ **Підтримка NPU** - Акселерація на нових нейропроцесорах
+- ✅ **Режим CPU** — працює на будь-якому сучасному комп’ютері (рекомендовано 8 ГБ+ ОЗП)
+- 🚀 **Акселерація GPU** — значно швидше виконання з NVIDIA/AMD GPU
+- ⚡ **Підтримка NPU** — прискорення на нейронних процесорах нового покоління
 
-**Ідеально підійде для:**
-- Розробників, що вивчають мультиагентні AI системи
-- Усіх, хто цікавиться AI автоматизацією і робочими процесами
-- Контент-крієйторів, які досліджують AI-підтримане виробництво
+**Ідеально підходить для:**
+- Розробників, які вивчають багатоагентні системи AI
+- Усієї, хто цікавиться AI-автоматизацією і робочими процесами
+- Творців контенту, які досліджують AI-підтримане виробництво
 - Студентів, що вивчають практичні патерни оркестрації AI
 
-**Почніть створювати**: [🎙️ Майстер-клас AI Podcast Studio →](./WorkshopForAgentic/README.md)
+**Почати будувати**: [🎙️ Воркшоп AI Podcast Studio →](./WorkshopForAgentic/README.md)
 
-### 📊 **Короткий Підсумок Навчання**
+### 📊 **Підсумок навчального шляху**
 - **Загальна тривалість**: 36-45 годин
-- **Початковий рівень**: Модулі 01-02 (7-9 годин)  
-- **Середній рівень**: Модулі 03-04 (9-11 годин)
-- **Високий рівень**: Модулі 05-07 (12-15 годин)
-- **Експертний рівень**: Модуль 08 (8-10 годин)
+- **Початковий рівень**: модулі 01-02 (7-9 год)  
+- **Середній рівень**: модулі 03-04 (9-11 год)
+- **Високий рівень**: модулі 05-07 (12-15 год)
+- **Експертний рівень**: модуль 08 (8-10 год)
 
-## Що Ви Побудуєте
+## Що ви побудуєте
 
-### 🎯 Основні Компетенції
-- **Архітектура Edge AI**: Проєктуйте локально-орієнтовані AI системи з інтеграцією хмари
-- **Оптимізація моделей**: Квантизуйте та стискайте моделі для розгортання на краю (прискорення на 85%, зменшення розміру на 75%)
-- **Мультиплатформне розгортання**: Windows, мобільні, вбудовані системи та гібриди хмари/краю
-- **Виробничі операції**: Моніторинг, масштабування і підтримка Edge AI на виробництві
+### 🎯 Основні компетенції
+- **Архітектура Edge AI**: Проєктування AI-систем локального рівня з інтеграцією хмари
+- **Оптимізація моделей**: Квантизація і стиснення моделей для локального розгортання (прискорення на 85%, зменшення розміру на 75%)
+- **Мультиплатформенне розгортання**: Windows, мобільні пристрої, вбудовані системи, гібриди хмари та краю
+- **Виробничі операції**: Моніторинг, масштабування та підтримка Edge AI у виробництві
 
-### 🏗️ Практичні Проєкти
-- **Foundry Local Chat Apps**: Нативний застосунок Windows 11 з перемиканням моделей
-- **Мультиагентні системи**: Координатор зі спеціалістами для складних робочих процесів  
-- **RAG застосунки**: Локальна обробка документів з векторним пошуком
-- **Маршрутизатори моделей**: Інтелектуальний вибір моделей на основі аналізу задач
-- **API фреймворки**: Готові до виробництва клієнти зі стрімінгом і моніторингом здоров’я
-- **Крос-платформенні інструменти**: Шаблони інтеграції LangChain/Semantic Kernel
+### 🏗️ Практичні проєкти
+- **Foundry Local Chat Apps**: нативний додаток для Windows 11 з перемиканням моделей
+- **Системи з багатьма агентами**: координатор зі спеціалістами для складних робочих процесів  
+- **RAG-додатки**: локальна обробка документів із векторним пошуком
+- **Маршрутизатори моделей**: інтелектуальний вибір між моделями за аналізом завдань
+- **API-фреймворки**: клієнти, готові до виробництва, з потоковою передачею та моніторингом стану здоров’я
+- **Кросплатформенні інструменти**: патерни інтеграції LangChain/Semantic Kernel
 
-### 🏢 Галузеві Застосування
-**Виробництво** • **Охорона здоров’я** • **Автономні транспортні засоби** • **Розумні міста** • **Мобільні застосунки**
+### 🏢 Галузеві застосування
+**Виробництво** • **Охорона здоров’я** • **Автономний транспорт** • **Розумні міста** • **Мобільні додатки**
 
-## Швидкий Старт
+## Швидкий старт
 
-**Рекомендований маршрут навчання** (загалом 20-30 годин):
+**Рекомендований навчальний шлях** (загалом 20-30 годин):
 
-0. **📖 Вступ** ([Introduction.md](./introduction.md)): Основи EdgeAI + контекст галузі + навчальна структура
-1. **📚 Основи** (Модулі 01-02): Концепції EdgeAI + сімейства моделей SLM
-2. **⚙️ Оптимізація** (Модулі 03-04): Розгортання + фреймворки квантизації  
-3. **🚀 Виробництво** (Модулі 05-06): SLMOps + AI агенти + виклик функцій
-4. **💻 Впровадження** (Модулі 07-08): Зразки платформ + інструментарій Foundry Local
+0. **📖 Вступ** ([Introduction.md](./introduction.md)): основи EdgeAI + галузевий контекст + навчальна структура
+1. **📚 Основи** (Модулі 01-02): концепції EdgeAI + сімейства моделей SLM
+2. **⚙️ Оптимізація** (Модулі 03-04): розгортання + фреймворки квантизації  
+3. **🚀 Виробництво** (Модулі 05-06): SLMOps + агенти AI + виклики функцій
+4. **💻 Реалізація** (Модулі 07-08): зразки платформ + інструментарій Foundry Local
 
-Кожен модуль включає теорію, практичні вправи та приклади, готові до виробництва.
+Кожен модуль містить теорію, практичні вправи та готові до виробництва приклади коду.
 
-## Вплив на Кар’єру
+## Кар’єрний вплив
 
-**Технічні ролі**: Архітектор рішень EdgeAI • ML інженер (Edge) • Розробник IoT AI • Мобільний AI розробник
+**Технічні ролі**: архітектор рішень EdgeAI • ML-інженер (Edge) • розробник IoT AI • мобільний AI-розробник
 
-**Галузеві сектори**: Виробництво 4.0 • Технолгії охорони здоров’я • Автономні системи • FinTech • Споживча електроніка
+**Галузеві сектори**: Виробництво 4.0 • Медична технологія • Автономні системи • FinTech • Споживча електроніка
 
-**Проєкти портфоліо**: Мультиагентні системи • Виробничі RAG додатки • Крос-платформне розгортання • Оптимізація продуктивності
+**Проєкти портфоліо**: багатоагентні системи • RAG-додатки для виробництва • кросплатформне розгортання • оптимізація продуктивності
 
-## Структура Репозиторію
+## Структура репозиторію
 
 ```
 edgeai-for-beginners/
@@ -232,59 +242,59 @@ edgeai-for-beginners/
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
 
-## Основні Переваги Курсу
+## Основні переваги курсу
 
-✅ **Прогресивне навчання**: Теорія → Практика → Виробниче розгортання  
-✅ **Реальні кейс-стаді**: Microsoft, Japan Airlines, корпоративні впровадження  
-✅ **Практичні приклади**: 50+ зразків, 10 комплексних демонстрацій Foundry Local  
-✅ **Фокус на продуктивність**: Прискорення на 85%, зменшення розміру на 75%  
-✅ **Мультиплатформа**: Windows, мобільні, вбудовані, гібриди хмара-край  
-✅ **Готовність до виробництва**: Моніторинг, масштабування, безпека, відповідність
+✅ **Поступове навчання**: Теорія → Практика → Розгортання у виробництві  
+✅ **Реальні кейси**: Microsoft, Japan Airlines, корпоративні впровадження  
+✅ **Приклади коду**: понад 50 прикладів, 10 комплексних демонстрацій Foundry Local  
+✅ **Акцент на продуктивність**: покращення швидкості на 85%, зменшення розміру на 75%  
+✅ **Мультиплатформність**: Windows, мобільні, вбудовані системи, гібриди хмара-край  
+✅ **Готовність до виробництва**: моніторинг, масштабування, безпека, відповідність стандартам
 
-📖 **[Доступний Навчальний Посібник](STUDY_GUIDE.md)**: Структурований 20-годинний навчальний маршрут з рекомендаціями по часу та інструментами для самооцінки.
+📖 **[Доступний навчальний посібник](STUDY_GUIDE.md)**: структурований 20-годинний навчальний шлях з порадами щодо розподілу часу та інструментами самооцінки.
 
 ---
 
-**EdgeAI — це майбутнє розгортання AI**: локальний пріоритет, захист приватності та ефективність. Опановуйте ці навички, щоб створювати наступне покоління інтелектуальних додатків.
+**EdgeAI — це майбутнє розгортання AI**: перш за все локальний, збереження приватності та ефективний. Освойте ці навички, щоб створювати нове покоління інтелектуальних додатків.
 
-## Інші Курси
+## Інші курси
 
-Наша команда випускає і інші курси! Перегляньте:
+Наша команда створює інші курси! Ознайомтесь з ними:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
-[![LangChain4j для Початківців](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
-[![LangChain.js для Початківців](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
-[![LangChain для Початківців](https://img.shields.io/badge/LangChain%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://github.com/microsoft/langchain-for-beginners?WT.mc_id=m365-94501-dwahlin)
+[![LangChain4j для початківців](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
+[![LangChain.js для початківців](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
+[![LangChain для початківців](https://img.shields.io/badge/LangChain%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://github.com/microsoft/langchain-for-beginners?WT.mc_id=m365-94501-dwahlin)
 ---
 
-### Azure / Edge / MCP / Agents
-[![AZD для Початківців](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Edge AI для Початківців](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![MCP для Початківців](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI Агенти для Початківців](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+### Azure / Edge / MCP / Агенті
+[![AZD для початківців](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Edge AI для початківців](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![MCP для початківців](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI агенти для початківців](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
-### Серія Generative AI
-[![Generative AI для Початківців](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+
+### Серія генеративного AI
+[![Генеративний AI для початківців](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Генеративний AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+[![Генеративний AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+[![Генеративний AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
-### Основне Навчання
-[![ML для Початківців](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![Data Science для Початківців](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI для Початківців](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-[![Кібербезпека для Початківців](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
-[![Web Розробка для Початківців](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-[![IoT для Початківців](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-[![XR Розробка для Початківців](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+
+### Основи навчання
+[![ML для початківців](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+[![Data Science для початківців](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI для початківців](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+[![Кібербезпека для початківців](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![Веб-розробка для початківців](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+[![IoT для початківців](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+[![XR Development для початківців](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
+
 ### Серія Copilot
 
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
@@ -294,17 +304,17 @@ edgeai-for-beginners/
 
 ## Отримання допомоги
 
-Якщо ви застрягли або у вас є питання про створення AI-застосунків, приєднуйтесь:
+Якщо ви застрягли або маєте будь-які питання щодо створення AI-додатків, приєднуйтесь:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Якщо у вас є відгуки про продукт або помилки під час розробки, відвідайте:
+Якщо у вас є відгуки про продукт або виникають помилки під час створення, відвідайте:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Відмова від відповідальності**:
-Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, просимо враховувати, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного перекладача. Ми не несемо відповідальності за будь-які непорозуміння чи неправильні тлумачення, що можуть виникнути при використанні цього перекладу.
+**Відмова від відповідальності**:  
+Цей документ був перекладений за допомогою сервісу AI-перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критичної інформації рекомендується професійний переклад людиною. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
