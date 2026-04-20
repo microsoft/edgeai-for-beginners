@@ -27,16 +27,26 @@ Follow these steps to get started using these resources:
 #### Supported via GitHub Action (Automated & Always Up-to-Date)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](./README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](./README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Khmer](../km/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
 > **Prefer to Clone Locally?**
-
+>
 > This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:
+>
+> **Bash / macOS / Linux:**
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
 > cd edgeai-for-beginners
 > git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
 > ```
+>
+> **CMD (Windows):**
+> ```cmd
+> git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
+> cd edgeai-for-beginners
+> git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
+> ```
+>
 > This gives you everything you need to complete the course with a much faster download.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
@@ -131,93 +141,93 @@ Comprehensive hands-on workshop materials with production-ready implementations:
 - Intelligent model routing with task-based selection
 
 ### 🎙️ **Workshop For Agentic: Hands-On - The AI Podcast Studio**
+စတင်ကတည်းက AI အားဖြင့် ထောက်ပံ့ထားသော podcast ထုတ်လုပ်မှု လုပ်ငန်းစဉ်ကို တည်ဆောက်လိုက်ပါ! ဒီ immersive အလုပ်ရုံဆွေးနွေးပွဲက သင်ကို အကြောင်းအရာများကို ပရော်ဖက်ရှင်နယ် podcast အပိုင်းအစများအဖြစ် ပြောင်းလဲပေးမည့် စုံလင်သော multi-agent စနစ်တစ်ခု ဖန်တီးပေးတယ်။
 
-Build an AI-powered podcast production pipeline from scratch! This immersive workshop teaches you to create a complete multi-agent system that transforms ideas into professional podcast episodes.
-**[🎬 AI Podcast Studio အလုပ်ရုံဆွေးနွေးပွဲ စတင်ရန်](./WorkshopForAgentic/README.md)**
+**[🎬 Start The AI Podcast Studio Workshop](./WorkshopForAgentic/README.md)**
 
-**သင်၏ မစ်ရှင်**: "Future Bytes" ဟုခေါ်သော AI အေဂျင့်များဖြင့် တည်ဆောက်ထားသည့် နည်းပညာပေါ်ဒ်ကတ်စ်ကို စတင်မိတ်ဆက်ပါ။ တိတိကျကျက်ျပ်၍ ကမ်းလှမ်းချက်မရှိ၊ API ကုန်ကျစရိတ်မရှိ— အားလုံးကို သင်၏ ကွန်ပျူတာတွင် တစ်ပြိုင်နက် ပြေးဆဲဖြစ်စေပါ။
+**သင့်မစ်ရှင်**: "Future Bytes" — သင့်ကိုယ်ပိုင် AI အေးဂျင့်များဖြင့် အပြည့်အဝ ထောက်ပံ့ပေးသည့် နောက်လာမည့် နည်းပညာ podcast ကို စတင်ဖွင့်လှစ်ပါ။ မည်သည့် cloud ဆက်သွယ်မှုမရှိ၊ API ကုန်ကျစရိတ်မရှိပါ။ အားလုံးကို သင့်ကွန်ပျူတာပေါ်တွင် တိကျစွာ လည်ပတ်စေမည်။
 
-**ဤအရာကို ထူးခြားစေသည့် အချက်များ:**
-- **🤖 အမှန်တကယ် Multi-Agent စီမံခန့်ခွဲမှု** - သုတေသနလုပ်၊ ရေးသား၊ အသံထုတ်လုပ်မှုကို စီမံပေးသည့် အထူးပြု AI အေဂျင့်များတည်ဆောက်ပါ
-- **🎯 အပြည့်အစုံ ဖော်ပြည့်စုံသော ထုတ်လုပ်မှု လမ်းကြောင်း** - ခေါင်းစဉ်ရွေးချယ်မှုမှ နောက်ဆုံး Podcast အသံထုတ်ရလဒ်အထိ
-- **💻 ၁၀၀% ဒေသတွင်း စက်ပေါ်တွင် စစ်ဆေးအသုံးပြုမှု** - Ollama နှင့် ဒေသတွင်း မော်ဒယ်များ (Qwen-3-8B) ကို သုံး၍ လုံခြုံရေးနှင့် ထိန်းချုပ်မှုအပြည့်အဝ
-- **🎤 စာသားမှ အသံပြောင်းသွားခြင်း အတွဲအဆက်** - စာသားများကို သဘာဝကျပြီး စကားပြောသည်များစွာပါဝင်သော စကားဝိုင်းတစ်ခုအဖြစ် ပြောင်းလဲပေးသည်
-- **✋ လူ့စွမ်းအားပါ အလုပ်ဆောင်ခြင်းလမ်းကြောင်းများ** - အရည်အသွေးအတည်ပြုရန် ခွင့်ပြုချက်တံခါးများဖြင့် အလိုအလျောက် ဆောင်ရွက်မှုကို ထိန်းသိမ်းသည်
+**ဒီအရာကို အထူးကောင်းမြန်သောအချက်များ:**
+- **🤖 အမှန်တကယ် Multi-Agent စီမံခန့်ခွဲမှု** - သုတေသနလုပ်ခြင်း၊ စာရေးခြင်းနှင့် အသံထုတ်လုပ်ခြင်းအတွက် အထူးပြု AI အေးဂျင့်များ တည်ဆောက်ပါ
+- **🎯 စုံလင်သော ထုတ်လုပ်မှု လုပ်ငန်းစဉ်** - အကြောင်းအရာ ရွေးချယ်မှုမှ နောက်ဆုံး podcast အသံထွက်ထိ
+- **💻 100% ဒေသတွင်း ထည့်သွင်းခြင်း** - Ollama နှင့် ဒေသတွင်း မော်ဒယ်များ (Qwen-3-8B) ကို အသုံးပြု၍ ကိုယ်ပိုင် တာဝန်ယူမှုနှင့် လုံခြုံမှုထိန်းသိမ်းမှု
+- **🎤 စာသားမှ အသံပုံဖော်ခြင်း ပေါင်းစပ်မှု** - စာရိုက်ချက်များကို သဘာဝအသံတွေနဲ့ နာရီမောင်းပြောဆိုခြင်းများသို့ ပြောင်းလဲပေးသည်
+- **✋ လူ့အကျိုးအမြတ်လတ်တလော လုပ်ငန်းစဉ်များ** - အတည်ပြုခြင်း အဆင့်များက လုပ်ငန်းအရည်အသွေးကို သိပ်သိပ် ထိန်းသိမ်းပေးပြီး အလိုအလျောက်စနစ်ကို အားမနည်းစေ
 
-**သံုးဆု အတွဲသင်ယူခရီး:**
+**သုံးအပိုင်းခွဲ သင်ယူမှု ခရီး:**
 
-| အတွဲ | အာရုံစိုက်ရာ | အဓိက ကျွမ်းကျင်မှုများ | ကြာချိန် |
+| အပိုင်း | ဂရုပြုရန် | တတ်မြောက်ရမည့် ကျွမ်းကျင်မှုများ | အချိန်ကြာမြင့်ချိန် |
 |-----|-------|------------|----------|
-| **[အတွဲ ၁: သင်၏ AI အကူအညီများနှင့် မိတ်ဆက်ခြင်း](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | သင်၏ ပထမဆုံး AI အေဂျင့် တည်ဆောက်ခြင်း | ကိရိယာ ပေါင်းစပ်မှု • ဝက်ဘ် ရှာဖွေရေး • ပြဿနာဖြေရှင်းမှု • Agentic စဉ်းစားမှု | ၂-၃ နာရီ |
-| **[အတွဲ ၂: သင်၏ ထုတ်လုပ်ရေး အဖွဲ့ကို စုစည်းခြင်း](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | အစိတ်အပိုင်း အများအပြားကို စီမံခန့်ခွဲခြင်း | အဖွဲ့ညီညွတ်မှု • ခွင့်ပြုလမ်းကြောင်းများ • DevUI မျက်နှာပြင် • လူ့ကြီးကြပ်ခြင်း | ၃-၄ နာရီ |
-| **[အတွဲ ၃: သင်၏ ပြောကြားပွဲကို ဘဝသို့ ဖန်တီးခြင်း](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | ပေါ်ဒ်ကတ်စ် အသံထုတ်လုပ်ခြင်း | စာသားမှ အသံပြောင်းခြင်း • စကားပြောသူများစွာပါဝင်ခြင်း • ရုပ်သံတစ်လျှောက်အသံ • အလိုအလျောက်ပြုလုပ်မှု | ၂-၃ နာရီ |
+| **[အပိုင်း ၁: သင့် AI အကူအညီပေးအေးဂျင့်များနှင့် တွေ့ဆုံခြင်း](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | သင့် ပထမဆုံး AI အေးဂျင့်ကို တည်ဆောက်ခြင်း | ကိရိယာ ပေါင်းစပ်ခြင်း • ဝက်ဘ် ရှာဖွေရေး • ပြဿနာ ဖြေရှင်းခြင်း • Agentic ဒေါ်ယာနစ် | ၂-၃ နာရီ |
+| **[အပိုင်း ၂: သင့် ထုတ်လုပ်မှု အဖွဲ့ကို စုပေါင်းခြင်း](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | အေးဂျင့်များစွာ ကို စီမံခန့်ခွဲခြင်း | အဖွဲ့ စီမံခြင်း • အတည်ပြု လုပ်ငန်းစဉ်များ • DevUI အင်တာဖေ့စ် • လူ့ ကြီးကြပ်မှု | ၃-၄ နာရီ |
+| **[အပိုင်း ၃: သင့် podcast ကို ဘဝသို့ သွားစေခြင်း](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Podcast အသံ ထုတ်လုပ်ခြင်း | စာသားမှ အသံ • စကားပြောသူများစွာ • ကြာရှည်အသံ • အလိုအလျောက်စနစ် | ၂-၃ နာရီ |
 
 **အသုံးပြုသော နည်းပညာများ:**
-- **Microsoft Agent Framework** - Multi-agent စီမံခန့်ခွဲမှုနှင့် ညှိနှိုင်းမှု
-- **Ollama** - ဒေသတွင်း AI မော်ဒယ် လည်ပတ်မှု (Cloud မလိုအပ်ပါ)
-- **Qwen-3-8B** - agentic လုပ်ဆောင်မှုများအတွက် အထူးတင်ပြု လွတ်လပ်သောဘာသာစကားမော်ဒယ်
-- **စာသားမှ အသံပြောင်း API များ** - ပေါ်ဒ်ကတ်စ် ဖန်တီးမှုအတွက် သဘာဝအသံဖြင့် ပေါင်းစပ်ခြင်း
+- **Microsoft Agent Framework** - Multi-agent စီမံခန့်ခွဲခြင်းနှင့် ပူးပေါင်းဆောင်ရွက်မှု
+- **Ollama** - ဒေသတွင်း AI မော်ဒယ် အသုံးပြုမှု (cloud မလိုအပ်)
+- **Qwen-3-8B** - Agentic လုပ်ငန်းများအတွက် အကောင်းဆုံး ရရှိထားသော open-source ဘာသာစကား မော်ဒယ်
+- **စာသားမှ အသံ API များ** - Podcast ထုတ်လုပ်ရန် သဘာဝအသံ ဖန်တီးမှု
 
-**ဟာ့ဒ်ဝဲ ထောက်ပံ့မှု:**
-- ✅ **CPU မုဒ်** - ခေတ္တကွန်ပျူတာ များပေါ်တွင် လည်ပတ်နိုင်သည် (8GB+ RAM အကြံပြု)
-- 🚀 **GPU အားမြှင့်နှုန်း** - NVIDIA/AMD GPU များဖြင့် အလွန်လျင်မြန်သော မှတ်ချက်တင်မှု
-- ⚡ **NPU ထောက်ပံ့မှု** - နောက်တန်း Neural Processing Unit အမြန်မြှင့်မှု
+**ဟာဒ်ဝဲ ထောက်ခံမှု:**
+- ✅ **CPU မုဒ်** - မည်သည့် ခေတ်သစ် ကွန်ပြူတာမျိုးမဆို လည်ပတ်နိုင်သည် (8GB+ RAM အကြံပြု)
+- 🚀 **GPU အားဖြည့်မှု** - NVIDIA/AMD GPU များဖြင့် အပြိုင်မြန်ဆန်မှု ပေးစွမ်းနိုင်သည်
+- ⚡ **NPU ထောက်ခံမှု** - နောက်တန်း Neural Processing Unit အားဖြည့်မှု
 
-**အတော်လေး သင့်တော်သောသူများ:**
-- Multi-agent AI စနစ်များ သင်ယူလိုသူများ
-- AI အလိုအလျောက်လုပ်ဆောင်မှုနှင့် လုပ်ငန်းစဉ်များ စိတ်ဝင်စားသူ
-- AI အကူအညီဖြင့် ထုတ်လုပ်မှု ရေးသားသူများ
-- တက်ကြွစွာ AI စီမံခန့်ခွဲမှု နည်းပညာများ လေ့လာနေသူ ကျောင်းသားများ
+**သင့်တော်သော ပါးစပ်များ:**
+- Multi-agent AI စနစ်များ သင်ကြားလိုသူများ
+- AI အလိုအလျောက်စနစ်နှင့် လုပ်ငန်းစဉ်များစိတ်ဝင်စားသူ မည်သူမဆို
+- AI ကူညီမှုဖြင့် ထုတ်လုပ်မှု လုပ်ကိုင်သူများ
+- အသုံးချနိုင်သော AI စီမံခန့်ခွဲမှု နမူနာများ လေ့လာနေသော ကျောင်းသားများ
 
-**တည်ဆောက်ရန် စတင်ပါ**: [🎙️ AI Podcast Studio အလုပ်ရုံဆွေးနွေးပွဲ →](./WorkshopForAgentic/README.md)
+**စတင် တည်ဆောက်ရန်**: [🎙️ The AI Podcast Studio Workshop →](./WorkshopForAgentic/README.md)
 
-### 📊 **သင်ယူမှုလမ်းကြောင်း အကျဉ်းချုပ်**
-- **စုစုပေါင်း ကြာချိန်**: ၃၆-၄၅ နာရီ
-- **အစပြုလမ်းကြောင်း**: အပိုင်း ၀၁-၀၂ (၇-၉ နာရီ)  
-- **အလတ်အလတ်လမ်းကြောင်း**: အပိုင်း ၀၃-၀၄ (၉-၁၁ နာရီ)
-- **အဆင့်မြင့်လမ်းကြောင်း**: အပိုင်း ၀၅-၀၇ (၁၂-၁၅ နာရီ)
-- **ကျွမ်းကျင်မှုလမ်းကြောင်း**: အပိုင်း ၀၈ (၈-၁၀ နာရီ)
+### 📊 **သင်ယူရေး လမ်းကြောင်း အကျဉ်းချုပ်**
+- **စုစုပေါင်းကာလ**: ၃၆-၄၅ နာရီ
+- **အစပြုပန်းတိုင်**: မော်ဂျူး ၀၁-၀၂ (၇-၉ နာရီ)  
+- **အလယ်အလတ်ပန်းတိုင်**: မော်ဂျူး ၀၃-၀၄ (၉-၁၁ နာရီ)
+- **အဆင့်မြင့်ပန်းတိုင်**: မော်ဂျူး ၀၅-၀၇ (၁၂-၁၅ နာရီ)
+- **ကျွမ်းကျင်သူ ပန်းတိုင်**: မော်ဂျူး ၀၈ (၈-၁၀ နာရီ)
 
-## သင် တည်ဆောက်မည့် အရာများ
+## သင့်တည်ဆောက်မည့် အရာများ
 
-### 🎯 အဓိက ကျွမ်းကျင်မှုများ
-- **Edge AI ဖွဲ့စည်းမှု**: ဒေသတွင်းပထမ AI စနစ်များ လက်တင်တပ်ဆင်၍ Cloud ပေါင်းစပ်မှုပါ
-- **မော်ဒယ်များ ဖော်ပြင်တိုးတက်မှု**: မော်ဒယ်များကို အတိုအပွှာနှင့် မှုတ်ချ၍ Edge စနစ်တွင် အသုံးပြုရမည့်အတွက်တိုးမြှင့်ခြင်း (အမြန်နှုန်း ၈၅% ပိုမိုမြန်၊ အရွယ်အစား ၇၅% လျော့နည်းခြင်း)
-- **စက်ပလက်ဖောင်းများစွာ အကောင်အထည်ဖော်ခြင်း**: Windows, မိုဘိုင်း, ထည့်သွင်းထားသောစနစ်များနှင့် Cloud-Edge ပေါင်းစပ်စနစ်များ
-- **ထုတ်လုပ်မှု လုပ်ငန်းစဉ်များ**: ထုတ်လုပ်မှုအတွင်း Edge AI ကို ကြည့်ရှု့ခြင်း၊ တိုးချဲ့ခြင်းနှင့် ထိန်းသိမ်းခြင်း
+### 🎯 အဓိကကျသော ကျွမ်းကျင်မှုများ
+- **Edge AI စနစ်ပုံစံ**: ဒေသတွင်းနှင့် cloud ပေါင်းစပ်သော AI စနစ်များ ဒီဇိုင်းဆွဲခြင်း
+- **မော်ဒယ်ထိရောက်မှုတိုးတက်မှု**: မော်ဒယ်များကို quantify လုပ်ကာ ဖိထားခြင်း (အရှိန် ၈၅% မြန်ဆန်၊ အရွယ်အစား ၇၅% လျော့နည်း)
+- **Multi-Platform ထည့်သွင်းခြင်း**: Windows၊ မိုဘိုင်း၊ embedded နှင့် cloud-edge ပေါင်းစပ်စနစ်များ
+- **ထုတ်လုပ်မှု လုပ်ငန်းစဉ်များ**: Edge AI ကို စောင့်ကြည့်ခြင်း၊ တိုးချဲ့ခြင်းနှင့် ထိန်းသိမ်းခြင်း
 
-### 🏗️ လက်တွေ့ ပရောဂျက်များ
-- **Foundry ဒေသတွင်း စကားပြော App များ**: Windows 11 သဘာဝ native application များနှင့် မော်ဒယ်များရွေးချယ်မှု
-- **Multi-Agent စနစ်များ**: လုပ်ငန်းစဉ်ရှုပ်ထွေးမှုများအတွက် အထူးကွက်ဆက်တူအရေးပါတဲ့ အေဂျင့်များဖြင့်ညှိနှိုင်းသူ
-- **RAG အက်ပ်များ**: ဒေသတွင်း စာရွက်စာတမ်းများကို လက်တွဲ ရှာဖွေရေးဖြင့် ကိုင်တွယ်ခြင်း
-- **မော်ဒယ် ရွေးချယ်သူများ**: တာဝန်အရနည်းပညာမျိုးစုံမှ မော်ဒယ်ကို ထူးခြားသိမြင်ရွေးချယ်မှု
-- **API ဖရိမ်ဝန်များ**: ထုတ်လုပ်ရန် အသင့်ပြင်သော client များ၊ စီးဆင်းမှုနှင့် ကျန်းမာရေး ထိန်းသိမ်းမှုတို့ပါဝင်သည်
-- **Cross-Platform ကိရိယာများ**: LangChain/Semantic Kernel ပေါင်းစပ်အသုံးပြုမှု နည်းပညာ များ
+### 🏗️ လက်တွေ့ စီမံကိန်းများ
+- **Foundry ဒေသတွင်း စကားပြော အက်ပ်များ**: Windows 11 native အက်ပ်၊ မော်ဒယ်ရွေးချယ်မှုပါ
+- **Multi-Agent စနစ်များ**: အထူးပြု အေးဂျင့်များဖြင့် စီမံခန့်ခွဲသူ  
+- **RAG အက်ပ်များ**: ဒေသတွင်းစာရွက်များကို vector ရှာဖွေရေးဖြင့် ပြုပြင်ခြင်း
+- **မော်ဒယ်ရွေးချယ်စနစ်များ**: လုပ်ငန်းတာဝန် များအလိုက် မော်ဒယ်ရွေးချယ်မှု စွမ်းရည်သုံးပြုမည်
+- **API ဖြတ်တောက်မှုများ**: ထုတ်လုပ်မှုအဆင့် client များ၊ streaming နှင့်ဆေးခန်း စောင့်ကြည့်မှု
+- **Cross-Platform ကိရိယာများ**: LangChain/Semantic Kernel ပေါင်းစပ်မှု နမူနာများ
 
-### 🏢 စက်မှုလုပ်ငန်း အက်ပ်လီကေးရှင်းများ
-**ထုတ်လုပ်မှု** • **ကျန်းမာရေး** • **အလိုအလျောက် ယာဉ်များ** • **Smart မြို့ပြ** • **မိုဘိုင်း အက်ပ်များ**
+### 🏢 စက်မှုလုပ်ငန်း အသုံးချမှုများ
+**စက်မှုလုပ်ငန်း** • **ကျန်းမာရေး** • **မောင်းနှင်သူမရှိကားများ** • **မြို့များ လူ့ဘောင် အသိပညာနည်းပညာ** • **မိုဘိုင်း အက်ပ်များ**
 
-## မျက်နှာဖုံး စတင်ခြင်း
+## စတင်ရန် လမ်းညွှန်
 
-**အကြံပြုသင်ယူမှု လမ်းကြောင်း** (စုစုပေါင်း ၂၀-၃၀ နာရီ):
+**အကြံပြုသည့် သင်ယူရေး လမ်းကြောင်း** (စုစုပေါင်း ၂၀-၃၀ နာရီ):
 
-0. **📖 နိဒါန်း** ([Introduction.md](./introduction.md)): EdgeAI အခြေခံ + စက်မှုလုပ်ငန်း ပတ်ဝန်းကျင် + သင်ယူမှု ဖွဲ့စည်းချက်  
-1. **📚 အခြေခံ** (Module 01-02): EdgeAI မှတ်သားချက်များ + SLM မော်ဒယ် မျိုးစုံ  
-2. **⚙️ ဖွဲ့စည်းတိုးတက်မှု** (Module 03-04): တပ်ဆင်မှု + မော်ဒယ် အတိုအပွှာ ဖွဲ့စည်းမှု  
-3. **🚀 ထုတ်လုပ်မှု** (Module 05-06): SLMOps + AI အေဂျင့်များ + Function Calling  
-4. **💻 အကောင်အထည်ဖော်ခြင်း** (Module 07-08): ပလက်ဖောင်း ဥပမာများ + Foundry ဒေသတွင်း ကိရိယာများ
+0. **📖 မိတ်ဆက်** ([Introduction.md](./introduction.md)): EdgeAI အခြေခံ + စက်မှုနယ်ပယ် အကြောင်း + သင်ယူရေး စနစ်
+1. **📚 အခြေခံ** (မော်ဂျူး ၀၁-၀၂): EdgeAI သဘောတရားများ + SLM မော်ဒယ် မိသားစုများ
+2. **⚙️ ထိရောက်မှု** (မော်ဂျူး ၀၃-၀၄): ထည့်သွင်းခြင်း + quantify စနစ်များ  
+3. **🚀 ထုတ်လုပ်မှု** (မော်ဂျူး ၀၅-၀၆): SLMOps + AI အေးဂျင့်များ + function ဖုန်းခေါ်ခြင်း
+4. **💻 အကောင်အထည်ဖော်ခြင်း** (မော်ဂျူး ၀၇-၀၈): စနစ် နမူနာများ + Foundry ဒေသတွင်း ကိရိယာ
 
-အသီးသီး မော်ဂျူးများမှာ သဘောတရား၊ လက်တွေ့ လေ့ကျင့်မှုများနှင့် ထုတ်လုပ်မှု အသုံးပြုရန် ကုဒ် နမူနာများ ပါဝင်သည်။
+မော်ဂျူးတိုင်းတွင် သီအိုရီ၊ လက်တွေ့ လေ့ကျင့်မှုများနှင့် ထုတ်လုပ်မှုကို ပြင်ဆင်ထားသော ကုဒ်နမူနာများ ပါဝင်သည်။
 
-## အလုပ်အကိုင် အကျိုးသက်ရောက်မှု
+## အလုပ်အကိုင် လမ်းကြောင်း
 
-**နည်းပညာဆိုင်ရာ အခန်းကဏ္ဍများ**: EdgeAI ဖြေရှင်းရေး ဆောက်လုပ်သူ • ML အင်ဂျင်နီယာ (Edge) • IoT AI ဖော်ပြသူ • မိုဘိုင်း AI ဖော်ပြသူ
+**နည်းပညာ အခန်းကဏ္ဍများ**: EdgeAI Solutions Architect • ML Engineer (Edge) • IoT AI Developer • Mobile AI Developer
 
-**စက်မှုလုပ်ငန်း ဌာနများ**: ထုတ်လုပ်မှု 4.0 • ကျန်းမာရေး နည်းပညာ • အလိုအလျောက် စနစ်များ • FinTech • စားသုံးသူ လျှပ်စစ်ပစ္စည်းများ
+**စက်မှုနယ်ပယ်များ**: စက်မှု ၄.၀ • ကျန်းမာရေး နည်းပညာ • မောင်းနှင်သူမရှိ စနစ်များ • FinTech • စားသုံးသူ လျှပ်စစ်ပစ္စည်းများ
 
-**ပေါ်ဘုတ်ဖိုလ်ရာ ပရောဂျက်များ**: Multi-agent စနစ်များ • ထုတ်လုပ်ရေး RAG အက်ပ်များ • Cross-platform တပ်ဆင်မှု • လုပ်ဆောင်မှု တိုးတက်မှု
+**ပရောဖိုလီယို စီမံကိန်းများ**: Multi-agent စနစ်များ • ထုတ်လုပ်မှု RAG အက်ပ်များ • Cross-platform ထည့်သွင်းမှုများ • စွမ်းဆောင်ရည် တိုးတတ်မှု
 
-## Repository ဖွဲ့စည်းမှု
+## ရှယ်ယာစားသောက်မှု ဖွဲ့စည်းမှု
 
 ```
 edgeai-for-beginners/
@@ -232,78 +242,78 @@ edgeai-for-beginners/
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
 
-## သင်တန်း အထူးအချက်များ
+## သင်တန်းအထူးအင်္ဂါရပ်များ
 
-✅ **တိုးတက်မှု သင်ယူမှု**: သဘောတရား → လက်တွေ့ → ထုတ်လုပ်မှု တပ်ဆင်မှု  
-✅ **လက်တွေ့ ဥပမာ များ**: Microsoft, Japan Airlines, စက်မှုလုပ်ငန်း လုပ်ဆောင်မှုများ  
-✅ **လက်တွေ့ နမူနာများ**: ၅၀+ ဥပမာများ၊ Foundry ဒေသတွင်း ၁၀ ခုပေါင်းစပ်  
-✅ **လုပ်ဆောင်မှု အာရုံစိုက်မှု**: အမြန်နှုန်း ၈၅% တိုးတက်မှု၊ အရွယ်အစား ၇၅% လျော့ချမှု  
-✅ **စက်ပလက်ဖောင်း များစွာ**: Windows, မိုဘိုင်း, ထည့်သွင်းစနစ်များ, Cloud-Edge ပေါင်းစပ်  
-✅ **ထုတ်လုပ်ရန် အသင့်ပြင်**: ကြည့်ရှု့မှု၊ တိုးချဲ့မှု၊ လုံခြုံရေး၊ သတ်မှတ်ချက်များအားဖြင့်
+✅ **တိုးတက်စွာ လေ့လာခြင်း**: သီအိုရီ → လက်တွေ့ → ထုတ်လုပ်မှု စနစ်ထည့်သွင်းခြင်း  
+✅ **အမှန်တကယ် ကိစ္စစဥ်များ**: Microsoft, Japan Airlines, စီးပွားရေး အကောင်အထည်ဖော်မှုများ  
+✅ **လက်တွေ့ နမူနာများ**: နမူနာ ၅၀ ကျော်၊ Foundry ဒေသတွင်း demo ၁၀ ခုပေါင်းစပ်မှု  
+✅ **စွမ်းဆောင်ရည် အာရုံစိုက်မှု**: အရှိန် ၈၅% မြန်ဆန်မှု၊ အရွယ်အစား ၇၅% လျော့နည်းမှု  
+✅ **အမျိုးမျိုး ပလက်ဖောင်းများ**: Windows, မိုဘိုင်း, embedded, cloud-edge ပေါင်းစပ်မှု  
+✅ **ထုတ်လုပ်မှု အဆင့်သင့်**: စောင့်ကြည့်မှု၊ တိုးချဲ့မှု၊ လုံခြုံမှုနှင့် ညီညွတ်မှု စနစ်များ
 
-📖 **[လေ့လာမှု လမ်းညွှန် ရရှိနိုင်သည်](STUDY_GUIDE.md)**: သတ်မှတ်ထားသော ၂၀ နာရီ သင်ယူမှု လမ်းကြောင်း၊ အချိန် ခွဲဝေမှု လမ်းညွှန်ချက်များနှင့် ကိုယ်တိုင် အကဲဖြတ်ခြင်းကိရိယာများပါရှိသည်။
+📖 **[လေ့လာရန် လမ်းညွှန် ရရှိနိုင်ပါသည်](STUDY_GUIDE.md)**: သတ်မှတ်ထားသော ၂၀ နာရီ သင်ယူသော လမ်းကြောင်း၊ အချိန်ခွဲဝေပေးခြင်းနှင့် ကိုယ်တိုင် သုံးသပ်ရေး ကိရိယာများပါဝင်သည်။
 
 ---
 
-**EdgeAI သည် AI တပ်ဆင်မှု၏ အနာဂတ် ကိုယ်စားလှယ် ဖြစ်သည်**: ဒေသတွင်း ပထမ၊ ကိုယ်ရေးကိုယ်တာ လုံခြုံမှုနှင့် ထိရောက်မှုရှိသည်။ ဤကျွမ်းကျင်မှုများကို ကျွမ်းကျင်မှုပြု၍ အနာဂတ်နည်းပညာဆန်းသစ်မှုများ ဖန်တီးပါ။
+**EdgeAI သည် AI ထည့်သွင်းခြင်းအနာဂတ်ကို တင်ပြသည်**: ဒေသတွင်းစနစ် အရင်တင်၊ ကိုယ်ပိုင်ရေးရာ အတွက် ထိန်းသိမ်းမှုနှင့် ထိရောက်မှုရှိစေသည်။ ဤကျွမ်းကျင်မှုများကို ကျွမ်းကျင်မှု အဆင့်မြှင့်စေပြီး မာနိက အဆင့်အသစ်အတွက် ရည်ရွယ်ကာ ဉာဏ်ရည်မြင့် ပရိုဂရမ်များ ဖန်တီးပါ။
 
 ## အခြား သင်တန်းများ
 
-ကျွန်ုပ်တို့အဖွဲ့ အခြား သင်တန်းများ ထုတ်လုပ်ပေးသည်! ကြည့်ရှုပါ:
+ကျွန်ုပ်တို့အဖွဲ့သည် အခြား သင်တန်းများကို ထုတ်လုပ်ပါသည်! စဉ်းစားကြည့်ပါ:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
-[![LangChain4j စတင်သူများအတွက်](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
-[![LangChain.js စတင်သူများအတွက်](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
-[![LangChain စတင်သူများအတွက်](https://img.shields.io/badge/LangChain%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://github.com/microsoft/langchain-for-beginners?WT.mc_id=m365-94501-dwahlin)
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
+[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
+[![LangChain for Beginners](https://img.shields.io/badge/LangChain%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://github.com/microsoft/langchain-for-beginners?WT.mc_id=m365-94501-dwahlin)
 ---
 
 ### Azure / Edge / MCP / Agents
-[![AZD စတင်သူများအတွက်](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Edge AI စတင်သူများအတွက်](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![MCP စတင်သူများအတွက်](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI Agents စတင်သူများအတွက်](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### Generative AI စီးရီး
-[![Generative AI စတင်သူများအတွက်](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+### Generative AI Series
+[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### အခြေခံသင်ယူမှု
-[![ML စတင်သူများအတွက်](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![ဒေတာသိပ္ပံ စတင်သူများအတွက်](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI စတင်သူများအတွက်](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-[![Cybersecurity စတင်သူများအတွက်](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
-[![Web Dev စတင်သူများအတွက်](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-[![IoT စတင်သူများအတွက်](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-[![XR ဖွံ့ဖြိုးတိုးတက်မှု စတင်သူများအတွက်](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+### Core Learning
+[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### Copilot စီးရီး
+### Copilot Series
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
-## အကူအညီရယူခြင်း
+## ကူညီမှု ရယူခြင်း
 
-AI အက်ပ်များ ဖန်တီးရာတွင် အခက်အခဲရှိပါက သို့မဟုတ် မေးခွန်းများရှိပါက ဝင်ရောက်ပါ-
+AI အက်ပ်များ တည်ဆောက်ရာတွင် စိန်ခေါ်မှု ဖြစ်ခဲ့ပါက သို့မဟုတ် မေးခွန်းများ ရှိပါက ဆက်သွယ်ရန် -
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-ထုတ်ကုန်တုံ့ပြန်ချက်များ သို့မဟုတ် တည်ဆောက်စဉ်တွင် အမှားများရှိပါက အောက်တွင် သွားရောက်ပါ-
+ထုတ်ကုန် တုံ့ပြန်ချက် သို့မဟုတ် အားနည်းချက်များရှိပါက -
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**အသိပေးချက်**  
-ဤစာရွက်ကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးပမ်းပေမယ့်၊ အလိုအလျောက်ဘာသာပြန်ခြင်းကြောင့် ထွက်ပေါ်နိုင်သည့် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ရှိနိုင်ပါကြောင်း သတိပြုပါရန်။ မူလစာရွက်ကို မိမိဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အမြစ်အနေဖြင့် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် ကျွမ်းကျင်သော လူမှုဘာသာပြန်၏ ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်အသုံးပြုမှုကြောင့် ဖြစ်ပေါ်နိုင်သည့် နားလည်မှုလွဲမှားမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။
+**ပယ်ချခြင်း**:
+ဤစာတမ်းကို AI ဘာသာပြန်ခြင်းဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားခြင်း ဖြစ်ပါသည်။ ကျနော်တို့သည် တိကျမှုအတွက် ကြိုးပမ်းဆောင်ရွက်သည်ဖြစ်ပေမယ့် အလိုအလျှောက်ဘာသာပြန်မှုများတွင် ပြဿနာများ သို့မဟုတ် မှားယွင်းမှုများ ပါရှိနိုင်ကြောင်း သတိပြုပါရန် လိုအပ်ပါသည်။ မူရင်းစာတမ်းကို မှန်ကန်သောအချက်အလက်ရင်းမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသောသတင်းအချက်အလက်များအတွက် မူရင်းလူကြီးများ၏ ဘာသာပြန်မှုကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်ပြီးစာမျက်နှာကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သော နားမလည်မှုများ သို့မဟုတ် မှားယွင်းနားလည်မှုများအတွက် ကျွန်ုပ်တို့မှာ တာဝန်မရှိပါ။
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

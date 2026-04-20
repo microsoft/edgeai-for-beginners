@@ -1,198 +1,208 @@
-# EdgeAI kezdőknek 
+# EdgeAI kezdőknek
 
 
-![Course cover image](../../translated_images/hu/cover.eb18d1b9605d754b.webp)
+![Tanfolyam borítókép](../../translated_images/hu/cover.eb18d1b9605d754b.webp)
 
-[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![GitHub közreműködők](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
+[![GitHub hibák](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
+[![GitHub pull-kérések](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
+[![PR-k üdvözölve](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-[![GitHub stars](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
+[![GitHub figyelők](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
+[![GitHub elágazások](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+[![GitHub csillagok](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
 
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Kövesse ezeket a lépéseket, hogy elkezdje használni ezeket az erőforrásokat:
+Kövesd ezeket a lépéseket, hogy elkezdhess dolgozni ezekkel az erőforrásokkal:
 
-1. **Repository forkolása**: Kattintson a [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork) gombra
-2. **Repository klónozása**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Csatlakozás az Azure AI Foundry Discordhoz, hogy találkozzon szakértőkkel és fejlesztőtársaival**](https://discord.com/invite/ByRwuEEgH4)
+1. **Forkold a tárat**: Kattints ide [![GitHub elágazások](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
+2. **Klónozd a tárat**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
+3. [**Csatlakozz az Azure AI Foundry Discordhoz, és találkozz szakértőkkel és más fejlesztőkkel**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Többnyelvű támogatás
 
-#### GitHub Action által támogatott (Automatikus és Mindig naprakész)
+#### GitHub Action által támogatott (Automatizált & Mindig naprakész)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](./README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](./README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Khmer](../km/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
-> **Inkább helyileg szeretnéd klónozni?**
-
-> Ez a repository több mint 50 nyelvi fordítást tartalmaz, ami jelentősen megnöveli a letöltési méretet. Ha fordítások nélkül szeretnéd klónozni, használd a sparse checkout-ot:
+> **Szeretnéd helyileg klónozni?**
+>
+> Ez a tár több mint 50 nyelvi fordítást tartalmaz, ami jelentősen megnöveli a letöltési méretet. Ha fordítások nélkül szeretnéd klónozni, használd a sparse checkoutot:
+>
+> **Bash / macOS / Linux:**
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
 > cd edgeai-for-beginners
 > git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
 > ```
-> Ez mindent megad, amire a kurzus elvégzéséhez szükséged van, sokkal gyorsabb letöltéssel.
+>
+> **CMD (Windows):**
+> ```cmd
+> git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
+> cd edgeai-for-beginners
+> git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
+> ```
+>
+> Így minden szükséges fájl meglesz a kurzus elvégzéséhez sokkal gyorsabb letöltéssel.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-**Ha további nyelvi támogatást szeretnél, a támogatott nyelvek listája megtalálható [itt](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Ha további fordítási nyelveket szeretnél támogatni, ezek megtalálhatók [itt](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 ## Bevezetés
 
-Üdvözlünk a **EdgeAI kezdőknek** kurzuson – az átfogó utadon az Edge Mesterséges Intelligencia átalakító világába. Ez a tanfolyam áthidalja az erőteljes MI képességek és a gyakorlati, valós világban történő élőhelyi eszközökre történő telepítés közötti szakadékot, lehetővé téve számodra, hogy közvetlenül ott használd az MI lehetőségeit, ahol az adat keletkezik és a döntéseket meg kell hozni.
+Üdvözlünk a **EdgeAI kezdőknek** kurzuson – a teljes körű utazásodon a Edge Mesterséges Intelligencia átalakító világában. Ez a tanfolyam hidat képez a hatékony AI képességek és a gyakorlati, valós környezetben történő telepítés között az élő eszközökön, lehetővé téve, hogy a mesterséges intelligencia potenciálját közvetlenül ott használd ki, ahol az adatok keletkeznek és döntéseket kell hozni.
 
-### Mit sajátíthatsz el
+### Amit elsajátítasz
 
-Ez a tanfolyam az alapfogalmaktól vezet el a gyártásra kész megvalósításokig, beleértve:
-- **Kis Nyelvi Modellek (SLM-ek)**, amelyek az edge telepítéshez vannak optimalizálva
-- **Hardver-tudatos optimalizáció** különböző platformokon
-- **Valós idejű következtetés** adatvédelmi képességekkel
-- **Gyártási telepítési** stratégiák vállalati alkalmazásokhoz
+Ez a tanfolyam az alapvető fogalmaktól a gyártásra kész megvalósításokig vezet végig, lefedve:
+- **Kis nyelvi modellek (SLM-ek)** élő környezetre optimalizálva
+- **Hardver tudatos optimalizáció** különböző platformokon
+- **Valós idejű inferencia** adatvédelemmel
+- **Gyártásba telepítési stratégiák** vállalati alkalmazásokhoz
 
 ### Miért fontos az EdgeAI
 
-Az Edge AI paradigmaváltást jelent, amely a modern kritikus kihívásokat kezeli:
-- **Adatvédelem és biztonság**: Érzékeny adatokat kezel helyileg, cloud kitettség nélkül
-- **Valós idejű teljesítmény**: Hálózati késleltetés kiküszöbölése időkritikus alkalmazásokhoz
-- **Költséghatékonyság**: Csökkenti a sávszélesség és felhőszámítás költségeit
-- **Ellenálló működés**: Funkcionalitás fenntartása hálózati kiesések esetén is
-- **Szabályozási megfelelés**: Adat-szuverenitási előírások betartása
+Az Edge AI paradigmaváltást jelent, amely a modern kihívásokra ad választ:
+- **Adatvédelem és biztonság**: Érzékeny adatok helyi feldolgozása felhő kiadása nélkül
+- **Valós idejű teljesítmény**: Hálózati késleltetés kiküszöbölése időkritikus alkalmazásoknál
+- **Költséghatékonyság**: Sávszélesség és felhő alapú számítási költségek csökkentése
+- **Rugalmas működés**: Funkcionalitás fenntartása hálózati kiesés esetén
+- **Szabályozási megfelelőség**: Adat-szuverenitási követelmények betartása
 
 ### Edge AI
 
-Az Edge AI azt jelenti, hogy MI algoritmusokat és nyelvi modelleket helyben, a hardveren futtatunk, közel az adatok keletkezési helyéhez, felhőforrások használata nélkül az inferencia során. Csökkenti a késleltetést, növeli az adatvédelmet és lehetővé teszi a valós idejű döntéshozatalt.
+Az Edge AI azt jelenti, hogy AI algoritmusok és nyelvi modellek helyileg futnak a hardveren, közel az adatok keletkezési helyéhez, anélkül, hogy a cloud erőforrásokra támaszkodnánk az inferencia során. Ez csökkenti a késleltetést, növeli az adatvédelmet és valós idejű döntéshozatalt tesz lehetővé.
 
 ### Alapelvek:
-- **Helyi inferencia**: MI modellek futtatása edge eszközökön (telefonok, routerek, mikrokontrollerek, ipari számítógépek)
-- **Offline képesség**: Internetkapcsolat nélkül is működik
-- **Alacsony késleltetés**: Azonnali válaszok valós idejű rendszerekhez
-- **Adatszuverenitás**: Érzékeny adatok helyben tartása, ezáltal növelve a biztonságot és megfelelést
+- **Interferencia az eszközön**: AI modellek helyi eszközökön futnak (telefonok, routerek, mikrovezérlők, ipari PC-k)
+- **Offline funkció**: Internetkapcsolat nélkül is működik
+- **Alacsony késleltetés**: Azonnali válaszok valós idejű rendszereknek
+- **Adat-szuverenitás**: Az érzékeny adatok helyben maradnak, javítva a biztonságot és megfelelést
 
-### Kis Nyelvi Modellek (SLM-ek)
+### Kis nyelvi modellek (SLM-ek)
 
-Az olyan SLM-ek, mint Phi-4, Mistral-7B és Gemma, optimalizált nagyobb LLM-ek változatai—kiképzettek vagy letisztítottak a következőkre:
-- **Csökkentett memóriaigény**: Hatékony használat a korlátozott edge eszköz memóriából
-- **Alacsonyabb számítási igény**: CPU és edge GPU teljesítményre optimalizálva
-- **Gyorsabb indítási idő**: Gyors inicializáció a reszponzív alkalmazásokhoz
+Az SLM-ek, mint például a Phi-4, Mistral-7B és Gemma, nagyobb LLM-ek optimalizált változatai—kiképzett vagy „kondenzált” alakban:
+- **Csökkentett memóriaigény**: Hatékony kihasználása a korlátozott élő eszköz memóriának
+- **Alacsonyabb számítási igény**: CPU és élő GPU teljesítményre optimalizálva
+- **Gyorsabb indulás**: Gyors inicializálás a gyors reakciókért
 
-Lehetővé teszik az erőteljes NLP képességeket miközben megfelelnek az alábbi korlátoknak:
+Ezek lehetővé teszik a hatékony NLP képességeket miközben megfelelnek az alábbi korlátoknak:
 - **Beágyazott rendszerek**: IoT eszközök és ipari vezérlők
-- **Mobil eszközök**: Okostelefonok és tabletek offline képességekkel
-- **IoT eszközök**: Érzékelők és okoseszközök korlátozott erőforrásokkal
+- **Mobil eszközök**: Okostelefonok és táblagépek offline képességekkel
+- **IoT eszközök**: Szenzorok és okos eszközök korlátozott erőforrásokkal
 - **Edge szerverek**: Helyi feldolgozó egységek korlátozott GPU erőforrásokkal
 - **Személyi számítógépek**: Asztali és laptop telepítési forgatókönyvek
 
 ## Tanfolyam modulok és navigáció
 
-| Modul | Téma | Fókuszterület | Kulcstartalom | Szint | Időtartam |
+| Modul | Téma | Fókuszterület | Fő tartalom | Szint | Időtartam |
 |--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Bevezetés az EdgeAI-be](./introduction.md) | Alapok és kontextus | EdgeAI áttekintés • Ipari alkalmazások • SLM bemutatása • Tanulási célok | Kezdő | 1-2 óra |
-| [📚 01](../../Module01) | [EdgeAI alapjai](./Module01/README.md) | Felhő- és Edge AI összehasonlítás | EdgeAI alapok • Valós esettanulmányok • Megvalósítási útmutató • Edge telepítés | Kezdő | 3-4 óra |
-| [🧠 02](../../Module02) | [SLM modellalapok](./Module02/README.md) | Modellcsaládok és architektúra | Phi család • Qwen család • Gemma család • BitNET • μModel • Phi-Silica | Kezdő | 4-5 óra |
-| [🚀 03](../../Module03) | [SLM telepítési gyakorlat](./Module03/README.md) | Helyi és felhő alapú telepítés | Haladó tanulás • Helyi környezet • Felhő telepítés | Középhaladó | 4-5 óra |
-| [⚙️ 04](../../Module04) | [Model optimalizációs eszköztár](./Module04/README.md) | Többplatformos optimalizáció | Bevezetés • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Munkafolyamat szintézis | Középhaladó | 5-6 óra |
-| [🔧 05](../../Module05) | [SLMOps gyártási működés](./Module05/README.md) | Gyártási operációk | SLMOps bevezetés • Modell desztilláció • Finomhangolás • Gyártási telepítés | Haladó | 5-6 óra |
-| [🤖 06](../../Module06) | [MI ügynökök és függvényhívás](./Module06/README.md) | Ügynök keretrendszerek és MCP | Ügynök bevezetés • Függvényhívás • Modell kontextus protokoll | Haladó | 4-5 óra |
-| [💻 07](../../Module07) | [Platform megvalósítás](./Module07/README.md) | Többplatformos minták | MI eszközkészlet • Foundry Local • Windows fejlesztés | Haladó | 3-4 óra |
-| [🏭 08](../../Module08) | [Foundry Local eszköztár](./Module08/README.md) | Gyártásra kész minták | Mintaalkalmazások (lásd lejjebb részletezve) | Szakértő | 8-10 óra |
+| [📖 00 ](./introduction.md) | [Bevezetés az EdgeAI-be](./introduction.md) | Alapok és kontextus | EdgeAI áttekintés • Iparági alkalmazások • SLM bemutatás • Tanulási célok | Kezdő | 1-2 óra |
+| [📚 01](../../Module01) | [EdgeAI alapok](./Module01/README.md) | Felhő vs Edge AI összehasonlítás | EdgeAI alapok • Valós esettanulmányok • Megvalósítási útmutató • Edge telepítés | Kezdő | 3-4 óra |
+| [🧠 02](../../Module02) | [SLM modell alapok](./Module02/README.md) | Modellcsaládok és architektúra | Phi család • Qwen család • Gemma család • BitNET • μModel • Phi-Silica | Kezdő | 4-5 óra |
+| [🚀 03](../../Module03) | [SLM telepítési gyakorlat](./Module03/README.md) | Helyi és felhőbeli telepítés | Haladó tanulás • Helyi környezet • Felhő telepítés | Középhaladó | 4-5 óra |
+| [⚙️ 04](../../Module04) | [Modell optimalizációs eszköztár](./Module04/README.md) | Platformok közötti optimalizáció | Bevezetés • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Munkafolyamat szintézis | Középhaladó | 5-6 óra |
+| [🔧 05](../../Module05) | [SLMOps gyártásban](./Module05/README.md) | Gyártásbeli működés | SLMOps bevezetés • Modell desztilláció • Finomhangolás • Gyártásbeli telepítés | Haladó | 5-6 óra |
+| [🤖 06](../../Module06) | [AI ügynökök & függvényhívás](./Module06/README.md) | Ügynök keretrendszerek & MCP | Ügynök bevezetés • Függvényhívás • Modell Kontextus Protokoll | Haladó | 4-5 óra |
+| [💻 07](../../Module07) | [Platform megvalósítás](./Module07/README.md) | Többplatformos példák | AI eszköztár • Foundry Local • Windows fejlesztés | Haladó | 3-4 óra |
+| [🏭 08](../../Module08) | [Foundry Local eszköztár](./Module08/README.md) | Gyártásra kész példák | Mintaalkalmazások (lásd alább részletezve) | Szakértő | 8-10 óra |
 
-### 🏭 **8. modul: Mintaalkalmazások**
+### 🏭 **08. modul: Mintaalkalmazások**
 
-- [01: REST Chat gyors kezdés](./Module08/samples/01/README.md)
-- [02: OpenAI SDK integráció](./Module08/samples/02/README.md)
-- [03: Modell felfedezés és teljesítményteszt](./Module08/samples/03/README.md)
+- [01: REST Chat Gyorsindítás](./Module08/samples/01/README.md)
+- [02: OpenAI SDK Integráció](./Module08/samples/02/README.md)
+- [03: Modell felfedezés & benchmark](./Module08/samples/03/README.md)
 - [04: Chainlit RAG alkalmazás](./Module08/samples/04/README.md)
-- [05: Több-ügynökös összehangolás](./Module08/samples/05/README.md)
-- [06: Modellek eszközként router](./Module08/samples/06/README.md)
+- [05: Többügynökös összehangolás](./Module08/samples/05/README.md)
+- [06: Modellek mint Eszközök Router](./Module08/samples/06/README.md)
 - [07: Közvetlen API kliens](./Module08/samples/07/README.md)
 - [08: Windows 11 Chat alkalmazás](./Module08/samples/08/README.md)
-- [09: Fejlett több-ügynökös rendszer](./Module08/samples/09/README.md)
-- [10: Foundry eszköz keretrendszer](./Module08/samples/10/README.md)
+- [09: Haladó többügynök rendszer](./Module08/samples/09/README.md)
+- [10: Foundry Tools keretrendszer](./Module08/samples/10/README.md)
 
 ### 🎓 **Workshop: Gyakorlati tanulási út**
 
-Átfogó, gyakorlati workshop anyagok gyártásra kész megvalósításokkal:
+Teljes körű gyakorlati workshop anyagok gyártásra kész megvalósításokkal:
 
-- **[Workshop útmutató](./Workshop/Readme.md)** - Teljes tanulási célok, eredmények és erőforrás navigáció
-- **Python minták** (6 alkalom) - Frissítve a legjobb gyakorlatokkal, hibakezeléssel és átfogó dokumentációval
-- **Jupyter füzetek** (8 interaktív) - Lépésről lépésre bemutatók benchmarkokkal és teljesítményfigyeléssel
-- **Ülési útmutatók** - Részletes markdown útmutatók az egyes workshop alkalmakhoz
+- **[Workshop Útmutató](./Workshop/Readme.md)** - Teljes tanulási célok, eredmények és erőforrás navigáció
+- **Python példák** (6 alkalom) - Frissítve a legjobb gyakorlatokkal, hibakezeléssel és átfogó dokumentációval
+- **Jupyter jegyzetfüzetek** (8 interaktív) - Lépésről lépésre oktatóanyagok benchmarkokkal és teljesítmény monitorozással
+- **Ülés útmutatók** - Részletes markdown útmutatók az egyes workshop ülésekhez
 - **Validációs eszközök** - Szkriptek a kódminőség ellenőrzésére és smoke tesztek futtatására
 
-**Amit építeni fogsz:**
-- Helyi MI chat alkalmazások streaming támogatással
-- RAG pipeline-ok minőség-értékeléssel (RAGAS)
-- Többmodell teljesítménytesztelő és összehasonlító eszközök
-- Több-ügynökös összehangoló rendszerek
-- Intelligens modell irányítás feladatalapú kiválasztással
+**Amit készíteni fogsz:**
+- Helyi AI chat alkalmazások streaming támogatással
+- RAG adatfolyamok minőségi értékeléssel (RAGAS)
+- Többmodell benchmark és összehasonlító eszközök
+- Többügynökös összehangoló rendszerek
+- Intelligens modellirányítás feladat alapú kiválasztással
 
-### 🎙️ **Workshop Agentic-nek: Gyakorlati – Az MI Podcast Stúdió**
+### 🎙️ **Workshop Agentic számára: Gyakorlati - Az AI Podcast Stúdió**
+Építs egy mesterséges intelligencia által működtetett podcast gyártási folyamatot a semmiből! Ez az elmélyült workshop megtanít arra, hogyan hozz létre egy teljes többügynökös rendszert, amely az ötleteket professzionális podcast epizódokká alakítja.
 
-Építs egy MI-alapú podcast gyártási folyamatot a nulláról! Ez az elmélyítő workshop megtanít arra, hogyan készíts egy komplett több-ügynökös rendszert, amely ötleteket alakít profi podcast epizódokká.
-**[🎬 Indítsd el az AI Podcast Studio műhelyt](./WorkshopForAgentic/README.md)**
+**[🎬 Kezdd el az AI Podcast Studio Workshopot](./WorkshopForAgentic/README.md)**
 
-**A küldetésed**: Indítsd el a "Future Bytes" nevű tech podcastot, amelyet teljes egészében az általad épített AI ügynökök működtetnek. Nincs felhőalapú függőség, nincs API-költség — minden helyben, a gépeden fut.
+**Feladatod**: Indítsd el a "Future Bytes" nevű technológiai podcastot — egy teljesen AI ügynökök által működtetett műsort, amelyet te magad építesz fel. Nincsenek felhőfüggőségek, nincsenek API-költségek — minden helyileg, a gépeden fut.
 
 **Mi teszi egyedivé:**
-- **🤖 Valódi többügynökös összehangolás** – Építs speciális AI ügynököket, akik kutatnak, írnak és hanganyagot készítenek
-- **🎯 Teljes gyártási folyamat** – A témaválasztástól a végleges podcast hanganyagig
-- **💻 100%-ban helyi telepítés** – Ollama és helyi modellek (Qwen-3-8B) felhasználásával teljes adatvédelem és kontroll
-- **🎤 Szöveg-beszéddé integráció** – Alakítsd a szkripteket természetes hangzású, többbeszélős beszélgetésekké
-- **✋ Emberi felügyelettel működő munkafolyamatok** – Jóváhagyási pontok biztosítják a minőséget az automatizálás mellett
+- **🤖 Valódi többügynökös koordináció** – Specializált AI ügynökök építése, amelyek kutatnak, írnak és hanganyagot készítenek
+- **🎯 Teljes gyártási folyamat** – Témaválasztástól a végső podcast hanganyagig
+- **💻 100% helyi telepítés** – Ollama és helyi modellek (Qwen-3-8B) a teljes adatvédelem és irányítás érdekében
+- **🎤 Szöveg-beszéd integráció** – Szkriptet alakít természetes hangzású, több beszélőből álló beszélgetéssé
+- **✋ Ember a folyamatban** – Jóváhagyási pontok a minőség biztosítására miközben az automatizálás megmarad
 
-**Háromfelvonásos tanulási út:**
+**Háromrészes tanulási út:**
 
-| Felvonás | Fókusz | Kulcsképességek | Időtartam |
+| Felvonás | Fókusz | Kulcskészségek | Időtartam |
 |-----|-------|------------|----------|
-| **[1. felvonás: Ismerkedj meg az AI asszisztenseiddel](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Építsd meg első AI ügynöködet | Eszközintegráció • Webes keresés • Problémamegoldás • Ügynöki gondolkodás | 2-3 óra |
-| **[2. felvonás: Állítsd össze a gyártási csapatodat](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Hangold össze több ügynök munkáját | Csapatkoordináció • Jóváhagyási munkafolyamatok • DevUI felület • Emberi felügyelet | 3-4 óra |
-| **[3. felvonás: Keltsd életre a podcastod](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Generálj podcast hanganyagot | Szöveg-beszéd • Többbeszélős szintézis • Hosszú formátumú hanganyag • Teljes automatizálás | 2-3 óra |
+| **[1. felvonás: Ismerd meg AI asszisztenseidet](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Építsd meg első AI ügynöködet | Eszközintegráció • Webes keresés • Problémamegoldás • Ügynöki gondolkodás | 2-3 óra |
+| **[2. felvonás: Állítsd össze a gyártó csapatodat](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Több ügynök koordinálása | Csapatkoordináció • Jóváhagyási munkafolyamatok • DevUI felület • Emberi felügyelet | 3-4 óra |
+| **[3. felvonás: Keltsd életre podcastodat](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Podcast hanganyag generálás | Szöveg-beszéd • Több beszélős szintézis • Hosszú hanganyag • Teljes automatizálás | 2-3 óra |
 
 **Használt technológiák:**
-- **Microsoft Agent Framework** – Többügynökös összehangolás és koordináció
-- **Ollama** – Helyi AI modell futtató környezet (felhő nélkül)
-- **Qwen-3-8B** – Nyílt forráskódú nyelvi modell ügynöki feladatokra optimalizálva
-- **Szöveg-beszéd API-k** – Természetes hangszintézis podcast generáláshoz
+- **Microsoft Agent Framework** – Többügynökös koordináció és együttműködés
+- **Ollama** – Helyi AI modell futtatókörnyezet (nem igényel felhőt)
+- **Qwen-3-8B** – Nyílt forráskódú nyelvi modell, ügynöki feladatokra optimalizálva
+- **Szöveg-beszéd API-k** – Természetes hangú szintézis a podcast készítéshez
 
-**Hardvertámogatás:**
-- ✅ **CPU mód** – Tetszőleges modern számítógépen működik (ajánlott 8GB+ RAM)
-- 🚀 **GPU gyorsítás** – Jelentősen gyorsabb következtetés NVIDIA/AMD GPU-kkal
+**Hardver támogatás:**
+- ✅ **CPU mód** – Bármely modern számítógépen működik (ajánlott minimum 8GB RAM)
+- 🚀 **GPU gyorsítás** – Jelentősen gyorsabb inferálás NVIDIA/AMD GPU-kon
 - ⚡ **NPU támogatás** – Következő generációs neurális feldolgozó egység gyorsítás
 
-**Kinek ideális:**
-- Többügynökös AI rendszereket tanuló fejlesztőknek
-- AI automatizáció és munkafolyamatok iránt érdeklődőknek
-- AI által segített tartalomkészítőknek
-- Praktikus AI összehangolási mintákat tanuló hallgatóknak
+**Kiknek ideális:**
+- Fejlesztők, akik többügynökös AI rendszereket tanulnak
+- Mindenki, akit érdekel az AI automatizálás és munkafolyamatok
+- Tartalomkészítők, akik AI által segített gyártást szeretnének felfedezni
+- Hallgatók, akik a gyakorlati AI koordinációs mintákat tanulmányozzák
 
-**Kezdd el építeni**: [🎙️ AI Podcast Studio műhely →](./WorkshopForAgentic/README.md)
+**Kezdj el építeni**: [🎙️ The AI Podcast Studio Workshop →](./WorkshopForAgentic/README.md)
 
-### 📊 **Tanulási út összefoglaló**
+### 📊 **Tanulási Út Összegzés**
 - **Teljes időtartam**: 36-45 óra
-- **Kezdő út**: 01-02 modulok (7-9 óra)  
-- **Középhaladó út**: 03-04 modulok (9-11 óra)
-- **Haladó út**: 05-07 modulok (12-15 óra)
-- **Szakértői út**: 08 modul (8-10 óra)
+- **Kezdő szint**: 01-02 modulok (7-9 óra)  
+- **Középhaladó szint**: 03-04 modulok (9-11 óra)
+- **Haladó szint**: 05-07 modulok (12-15 óra)
+- **Szakértői szint**: 08 modul (8-10 óra)
 
-## Mit építesz meg
+## Amit felépítesz
 
-### 🎯 Alapképességek
-- **Edge AI architektúra**: Helyi-először AI rendszerek tervezése felhőintegrációval
-- **Modelloptimalizálás**: Modellek kvantálása és tömörítése edge telepítéshez (85% sebességnövekedés, 75% méretcsökkentés)
-- **Többplatformos telepítés**: Windows, mobileszköz, beágyazott és felhő-edge hibrid rendszerek
-- **Gyártási műveletek**: Edge AI monitorozása, méretezése és karbantartása élesben
+### 🎯 Alapkészségek
+- **Edge AI architektúra**: Helyileg előtérbe helyezett AI rendszerek tervezése felhőintegrációval
+- **Modell optimalizálás**: Modellek kvantálása és tömörítése élőhelyi telepítéshez (85% sebességnövekedés, 75% méretcsökkenés)
+- **Többplatformos telepítés**: Windows, mobil, beágyazott és felhő-él hibrid rendszerek
+- **Gyártási műveletek**: Élőhelyi AI monitorozása, skálázása és karbantartása termelésben
 
 ### 🏗️ Gyakorlati projektek
-- **Foundry helyi chat alkalmazások**: Windows 11 natív app modellváltással
+- **Foundry Local Chat alkalmazások**: Windows 11 natív alkalmazás modellváltással
 - **Többügynökös rendszerek**: Koordinátor speciális ügynökökkel komplex munkafolyamatokhoz  
-- **RAG alkalmazások**: Helyi dokumentumfeldolgozás vektorkereséssel
-- **Modell útválasztók**: Intelligens modellválasztás feladat elemzés alapján
-- **API keretrendszerek**: Éles környezetre kész kliensek streaminggel és egészségügyi monitorozással
-- **Többplatformos eszközök**: LangChain/Semantic Kernel integrációs minták
+- **RAG alkalmazások**: Helyi dokumentumfeldolgozás vektoros kereséssel
+- **Modellválasztók**: Intelligens válogatás modellek között feladatelemzés alapján
+- **API keretrendszerek**: Termelésre kész kliens streaminggel és egészségügyi monitorozással
+- **Cross-platform eszközök**: LangChain/Semantic Kernel integrációs minták
 
 ### 🏢 Ipari alkalmazások
 **Gyártás** • **Egészségügy** • **Autonóm járművek** • **Okos városok** • **Mobilalkalmazások**
@@ -201,23 +211,23 @@ Lehetővé teszik az erőteljes NLP képességeket miközben megfelelnek az alá
 
 **Ajánlott tanulási út** (összesen 20-30 óra):
 
-0. **📖 Bevezetés** ([Introduction.md](./introduction.md)): EdgeAI alapok + ipari kontextus + tanulási keretrendszer
-1. **📚 Alapozás** (01-02 modulok): EdgeAI fogalmak + SLM modellcsaládok
-2. **⚙️ Optimalizálás** (03-04 modulok): Telepítés + kvantálás keretrendszerek  
-3. **🚀 Gyártás** (05-06 modulok): SLMOps + AI ügynökök + függvényhívások
-4. **💻 Megvalósítás** (07-08 modulok): Platform minták + Foundry Local eszköztár
+0. **📖 Bevezetés** ([Introduction.md](./introduction.md)): EdgeAI alapok + iparági kontextus + tanulási keretrendszer  
+1. **📚 Alapozás** (01-02 modulok): EdgeAI fogalmak + SLM modell családok  
+2. **⚙️ Optimalizálás** (03-04 modulok): Telepítés + kvantálási keretrendszerek  
+3. **🚀 Termelés** (05-06 modulok): SLMOps + AI ügynökök + függvényhívás  
+4. **💻 Implementáció** (07-08 modulok): Platformminták + Foundry Local eszköztár  
 
-Minden modul elméletet, gyakorlati feladatokat és éles kódmintákat tartalmaz.
+Minden modul magába foglal elméletet, gyakorlati feladatokat és termelésre kész kódmintákat.
 
-## Karrier hatás
+## Karrierhatás
 
-**Technikai szerepek**: EdgeAI megoldás architekt • ML mérnök (Edge) • IoT AI fejlesztő • Mobil AI fejlesztő
+**Technikai szerepek**: EdgeAI megoldástervező • ML mérnök (Edge) • IoT AI fejlesztő • Mobil AI fejlesztő
 
-**Ipari szektorok**: Gyártás 4.0 • Egészségügyi technológia • Autonóm rendszerek • FinTech • Fogyasztói elektronika
+**Iparági szektorok**: Gyártás 4.0 • Egészségügyi technológia • Autonóm rendszerek • FinTech • Fogyasztói elektronika
 
-**Portfólió projektek**: Többügynökös rendszerek • Éles RAG alkalmazások • Többplatformos telepítés • Teljesítmény optimalizálás
+**Portfólió projektek**: Többügynökös rendszerek • Termelési RAG alkalmazások • Többplatformos telepítés • Teljesítmény-optimalizálás
 
-## Könyvtárszerkezet
+## Könyvtár struktúra
 
 ```
 edgeai-for-beginners/
@@ -232,24 +242,24 @@ edgeai-for-beginners/
 └── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
 ```
 
-## Tanfolyam kiemelések
+## Kurzus kiemelések
 
-✅ **Fokozatos tanulás**: Elmélet → Gyakorlat → Éles telepítés  
-✅ **Valódi esettanulmányok**: Microsoft, Japan Airlines, vállalati megvalósítások  
+✅ **Fokozatos tanulás**: Elmélet → Gyakorlat → Termelési telepítés  
+✅ **Valódi esettanulmányok**: Microsoft, Japan Airlines, vállalati implementációk  
 ✅ **Gyakorlati példák**: 50+ példa, 10 átfogó Foundry Local demó  
 ✅ **Teljesítmény fókusz**: 85%-os sebességnövekedés, 75%-os méretcsökkenés  
-✅ **Többplatformos megoldás**: Windows, mobil, beágyazott, felhő-edge hibrid  
-✅ **Éles környezetre készen**: Monitorozás, méretezés, biztonság, megfelelőségi keretrendszerek
+✅ **Többplatformos**: Windows, mobil, beágyazott, felhő-él hibrid  
+✅ **Termelésre kész**: Monitorozás, skálázás, biztonság, megfelelőségi keretek
 
-📖 **[Tanulási útmutató elérhető](STUDY_GUIDE.md)**: Strukturált 20 órás tanulási út időbeosztási útmutatóval és önértékelő eszközökkel.
+📖 **[Elérhető tanulmányi útmutató](STUDY_GUIDE.md)**: Strukturált 20 órás tanulási út időbeosztással és önértékelő eszközökkel.
 
 ---
 
-**Az EdgeAI az AI telepítés jövőjét jelenti**: helyi-először, adatvédelmet megőrző és hatékony megoldások. Sajátítsd el ezeket a készségeket a következő generáció intelligens alkalmazásainak építéséhez.
+**Az EdgeAI az AI telepítés jövője**: helyileg elsődleges, adatvédelmet szem előtt tartó és hatékony. Sajátítsd el ezeket a készségeket, hogy felépítsd a következő generációs intelligens alkalmazásokat.
 
-## Más tanfolyamok
+## Egyéb kurzusok
 
-Csapatunk más tanfolyamokat is készít! Nézd meg:
+Csapatunk más kurzusokat is készít! Nézd meg:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -274,7 +284,7 @@ Csapatunk más tanfolyamokat is készít! Nézd meg:
 
 ---
  
-### Alapvető tanfolyamok
+### Alap tanulás
 [![ML kezdőknek](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 [![Adattudomány kezdőknek](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI kezdőknek](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
@@ -286,25 +296,24 @@ Csapatunk más tanfolyamokat is készít! Nézd meg:
 ---
  
 ### Copilot sorozat
-
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
-## Segítség kérése
+## Segítségkérés
 
-Ha elakadsz vagy kérdéseid vannak az AI alkalmazások fejlesztésével kapcsolatban, csatlakozz:
+Ha elakad, vagy bármilyen kérdése van az AI alkalmazások fejlesztésével kapcsolatban, csatlakozzon:
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Ha termék-visszajelzésed vagy hibákba ütközöl fejlesztés közben, látogass el ide:
+Ha termék-visszajelzése vagy hibái vannak a fejlesztés során, látogasson el ide:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Felelősségkizárás**:
-Ez a dokumentum az AI fordítószolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvű változata tekinthető hiteles forrásnak. Fontos információk esetén javasoljuk szakmai, emberi fordítás igénybevételét. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) mesterséges intelligencia fordító szolgáltatásával készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén az irányadó forrás. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy félremagyarázásokért.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
