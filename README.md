@@ -1,313 +1,148 @@
-# EdgeAI for Beginners 
+# 🎙️ The AI Podcast Studio Workshop
 
 
-![Course cover image](./imgs/cover.png)
+![logo](./imgs/logo.png)
 
-[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/graphs/contributors)
-[![GitHub issues](https://img.shields.io/github/issues/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/issues)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/edgeai-for-beginners.svg)](https://GitHub.com/microsoft/edgeai-for-beginners/pulls)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+## Your Mission
 
-[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/edgeai-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/edgeai-for-beginners/watchers)
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-[![GitHub stars](https://img.shields.io/github/stars/microsoft/edgeai-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/edgeai-for-beginners/stargazers)
+Welcome to **The AI Podcast Studio**! You're about to launch your own tech podcast called "Future Bytes" — but here's the twist: you'll build an AI-powered production team to help you create it. No more endless hours of research, scriptwriting, and audio editing. Instead, you'll code your way to becoming a podcast producer with AI superpowers.
+
+## The Story
+
+Imagine this: You and your friends want to start a podcast about the coolest tech trends, but everyone's busy with school, work, or just life. What if you could build a team of AI agents to do the heavy lifting? One agent researches topics, another writes engaging scripts, and a third turns text into natural-sounding conversations. Sound like sci-fi? Let's make it real.
+
+## What You'll Learn
+
+By the end of this workshop, you'll know how to:
+- 🤖 Deploy your own local AI model (no API costs, no cloud dependency!)
+- 🔧 Build specialized AI agents that actually work together
+- 🎬 Create a complete podcast production pipeline from idea to audio
+
+## Your Journey: Three Acts
+
+![arch](./imgs/arch.png)
+
+Like any good story, we've got three acts. Each one builds your AI podcast studio piece by piece:
+
+| Episode | Your Quest | What Happens | Skills Unlocked |
+|---------|-----------|--------------|----------------|
+| **Act 1** | [Meet Your AI Assistants](md/01.BuildAIAgentWithSLM.md) | You discover how to create AI agents that can chat, search the web, and even solve problems. Think of them as your research interns who never sleep. | 🎯 Build your first agent<br>🛠️ Give it superpowers (tools!)<br>🧠 Teach it to think<br>🌐 Connect it to the internet |
+| **Act 2** | [Assemble Your Production Team](md/02.AIAgentOrchestrationAndWorkflows.md) | Now things get interesting! You'll orchestrate multiple AI agents to work together like a real podcast team. One researches, one writes, you approve — teamwork makes the dream work. | 🎭 Coordinate multiple agents<br>🔄 Build approval workflows<br>🖥️ Test with DevUI interface<br>✋ Keep humans in control |
+| **Act 3** | [Bring Your Podcast to Life](md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md) | The finale! Transform your text scripts into actual podcast audio with realistic voices and natural conversations. Your "Future Bytes" podcast is ready to ship! | 🎤 Text-to-speech magic<br>👥 Multiple speaker voices<br>⏱️ Long-form audio<br>🚀 Full automation |
+
+Each act unlocks new abilities. Skip ahead if you're brave, but we recommend following the story!
+
+## Environment Requirements
+
+This workshop supports various hardware environments:
+- **CPU**: Suitable for testing and small-scale usage
+- **GPU**: Recommended for production environments, significantly improves inference speed
+- **NPU**: Supports next-generation neural processing unit acceleration
+
+## What You'll Need
+
+### Software Checklist ✅
+- **Python 3.10+** (Your coding language)
+- **Ollama** (Runs AI models on your machine)
+- **LM Studio** (If you want to see more than Ollama)
+- **VS Code** (Your code editor)
+- **Python Extension** (Makes VS Code smarter)
+- **Git** (For grabbing code)
+
+### Hardware Check 💻
+- **Can I run this?**: 8GB RAM, 10GB free space (works, but might be slow)
+- **Ideal setup**: 16GB+ RAM, a decent GPU (smooth sailing!)
+- **Got an NPU?**: Even better! Next-gen performance unlocked 🚀
+
+## Setup Your Studio 🎬
+
+### Step 1: Python Power-Up
+
+Make sure you've got Python 3.10 or newer:
+
+1) Install UV
+- https://docs.astral.sh/uv/getting-started/installation/
 
 
-[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
+### Step 2: Get Ollama (Your AI Model Runner)
 
-Follow these steps to get started using these resources:
+Head to [ollama.ai](https://ollama.ai) and download Ollama for your OS. Think of it as the engine that runs your AI models locally.
 
-1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/edgeai-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/edgeai-for-beginners/fork)
-2. **Clone the Repository**:   `git clone https://github.com/microsoft/edgeai-for-beginners.git`
-3. [**Join The Azure AI Foundry Discord and meet experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
+OR
 
+Download [LM Studio](https://lmstudio.ai/) - A friendly (and MORE powerful) version
 
-### 🌐 Multi-Language Support
+Check if it's ready:
 
-#### Supported via GitHub Action (Automated & Always Up-to-Date)
-
-<!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](./translations/ar/README.md) | [Bengali](./translations/bn/README.md) | [Bulgarian](./translations/bg/README.md) | [Burmese (Myanmar)](./translations/my/README.md) | [Chinese (Simplified)](./translations/zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](./translations/zh-HK/README.md) | [Chinese (Traditional, Macau)](./translations/zh-MO/README.md) | [Chinese (Traditional, Taiwan)](./translations/zh-TW/README.md) | [Croatian](./translations/hr/README.md) | [Czech](./translations/cs/README.md) | [Danish](./translations/da/README.md) | [Dutch](./translations/nl/README.md) | [Estonian](./translations/et/README.md) | [Finnish](./translations/fi/README.md) | [French](./translations/fr/README.md) | [German](./translations/de/README.md) | [Greek](./translations/el/README.md) | [Hebrew](./translations/he/README.md) | [Hindi](./translations/hi/README.md) | [Hungarian](./translations/hu/README.md) | [Indonesian](./translations/id/README.md) | [Italian](./translations/it/README.md) | [Japanese](./translations/ja/README.md) | [Kannada](./translations/kn/README.md) | [Khmer](./translations/km/README.md) | [Korean](./translations/ko/README.md) | [Lithuanian](./translations/lt/README.md) | [Malay](./translations/ms/README.md) | [Malayalam](./translations/ml/README.md) | [Marathi](./translations/mr/README.md) | [Nepali](./translations/ne/README.md) | [Nigerian Pidgin](./translations/pcm/README.md) | [Norwegian](./translations/no/README.md) | [Persian (Farsi)](./translations/fa/README.md) | [Polish](./translations/pl/README.md) | [Portuguese (Brazil)](./translations/pt-BR/README.md) | [Portuguese (Portugal)](./translations/pt-PT/README.md) | [Punjabi (Gurmukhi)](./translations/pa/README.md) | [Romanian](./translations/ro/README.md) | [Russian](./translations/ru/README.md) | [Serbian (Cyrillic)](./translations/sr/README.md) | [Slovak](./translations/sk/README.md) | [Slovenian](./translations/sl/README.md) | [Spanish](./translations/es/README.md) | [Swahili](./translations/sw/README.md) | [Swedish](./translations/sv/README.md) | [Tagalog (Filipino)](./translations/tl/README.md) | [Tamil](./translations/ta/README.md) | [Telugu](./translations/te/README.md) | [Thai](./translations/th/README.md) | [Turkish](./translations/tr/README.md) | [Ukrainian](./translations/uk/README.md) | [Urdu](./translations/ur/README.md) | [Vietnamese](./translations/vi/README.md)
-
-> **Prefer to Clone Locally?**
->
-> This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:
->
-> **Bash / macOS / Linux:**
-> ```bash
-> git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
-> cd edgeai-for-beginners
-> git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
-> ```
->
-> **CMD (Windows):**
-> ```cmd
-> git clone --filter=blob:none --sparse https://github.com/microsoft/edgeai-for-beginners.git
-> cd edgeai-for-beginners
-> git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
-> ```
->
-> This gives you everything you need to complete the course with a much faster download.
-<!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
-
-**If you wish to have additional translations languages supported are listed [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
-## Introduction
-
-Welcome to **EdgeAI for Beginners** – your comprehensive journey into the transformative world of Edge Artificial Intelligence. This course bridges the gap between powerful AI capabilities and practical, real-world deployment on edge devices, empowering you to harness AI's potential directly where data is generated and decisions need to be made.
-
-### What You'll Master
-
-This course takes you from fundamental concepts to production-ready implementations, covering:
-- **Small Language Models (SLMs)** optimized for edge deployment
-- **Hardware-aware optimization** across diverse platforms
-- **Real-time inference** with privacy-preserving capabilities
-- **Production deployment** strategies for enterprise applications
-
-### Why EdgeAI Matters
-
-Edge AI represents a paradigm shift that addresses critical modern challenges:
-- **Privacy & Security**: Process sensitive data locally without cloud exposure
-- **Real-time Performance**: Eliminate network latency for time-critical applications
-- **Cost Efficiency**: Reduce bandwidth and cloud computing expenses
-- **Resilient Operations**: Maintain functionality during network outages
-- **Regulatory Compliance**: Meet data sovereignty requirements
-
-### Edge AI
-
-Edge AI refers to running AI algorithms and language models locally on hardware, close to where data is generated without relying on cloud resources for inference. It reduces latency, enhances privacy, and enables real-time decision-making.
-
-### Core Principles:
-- **On-device inference**: AI models run on edge devices (phones, routers, microcontrollers, industrial PCs)
-- **Offline capability**: Functions without persistent internet connectivity
-- **Low latency**: Immediate responses suited for real-time systems
-- **Data sovereignty**: Keeps sensitive data local, improving security and compliance
-
-### Small Language Models (SLMs)
-
-SLMs like Phi-4, Mistral-7B, and Gemma are optimized versions of larger LLMs—trained or distilled for:
-- **Reduced memory footprint**: Efficient use of limited edge device memory
-- **Lower compute demand**: Optimized for CPU and edge GPU performance
-- **Faster startup times**: Quick initialization for responsive applications
-
-They unlock powerful NLP capabilities while meeting the constraints of:
-- **Embedded systems**: IoT devices and industrial controllers
-- **Mobile devices**: Smartphones and tablets with offline capabilities
-- **IoT Devices**: Sensors and smart devices with limited resources
-- **Edge servers**: Local processing units with limited GPU resources
-- **Personal Computers**: Desktop and laptop deployment scenarios
-
-## Course Modules & Navigation
-
-| Module | Topic | Focus Area | Key Content | Level | Duration |
-|--------|-------|------------|-------------|--------|----------|
-| [📖 00 ](./introduction.md) | [Introduction to EdgeAI](./introduction.md) | Foundation & Context | EdgeAI Overview • Industry Applications • SLM Introduction • Learning Objectives | Beginner | 1-2 hrs |
-| [📚 01](./Module01/) | [EdgeAI Fundamentals](./Module01/README.md) | Cloud vs Edge AI comparison | EdgeAI Fundamentals • Real World Case Studies • Implementation Guide • Edge Deployment | Beginner | 3-4 hrs |
-| [🧠 02](./Module02/) | [SLM Model Foundations](./Module02/README.md) | Model families & architecture | Phi Family • Qwen Family • Gemma Family • BitNET • μModel • Phi-Silica | Beginner | 4-5 hrs |
-| [🚀 03](./Module03/) | [SLM Deployment Practice](./Module03/README.md) | Local & cloud deployment | Advanced Learning • Local Environment • Cloud Deployment | Intermediate | 4-5 hrs |
-| [⚙️ 04](./Module04/) | [Model Optimization Toolkit](./Module04/README.md) | Cross-platform optimization | Introduction • Llama.cpp • Microsoft Olive • OpenVINO • Apple MLX • Workflow Synthesis | Intermediate | 5-6 hrs |
-| [🔧 05](./Module05/) | [SLMOps Production](./Module05/README.md) | Production operations | SLMOps Introduction • Model Distillation • Fine-tuning • Production Deployment | Advanced | 5-6 hrs |
-| [🤖 06](./Module06/) | [AI Agents & Function Calling](./Module06/README.md) | Agent frameworks & MCP | Agent Introduction • Function Calling • Model Context Protocol | Advanced | 4-5 hrs |
-| [💻 07](./Module07/) | [Platform Implementation](./Module07/README.md) | Cross-platform samples | AI Toolkit • Foundry Local • Windows Development | Advanced | 3-4 hrs |
-| [🏭 08](./Module08/) | [Foundry Local Toolkit](./Module08/README.md) | Production-ready samples | Sample applications (see details below) | Expert | 8-10 hrs |
-
-### 🏭 **Module 08: Sample Applications**
-
-- [01: REST Chat Quickstart](./Module08/samples/01/README.md)
-- [02: OpenAI SDK Integration](./Module08/samples/02/README.md)
-- [03: Model Discovery & Benchmarking](./Module08/samples/03/README.md)
-- [04: Chainlit RAG Application](./Module08/samples/04/README.md)
-- [05: Multi-Agent Orchestration](./Module08/samples/05/README.md)
-- [06: Models-as-Tools Router](./Module08/samples/06/README.md)
-- [07: Direct API Client](./Module08/samples/07/README.md)
-- [08: Windows 11 Chat App](./Module08/samples/08/README.md)
-- [09: Advanced Multi-Agent System](./Module08/samples/09/README.md)
-- [10: Foundry Tools Framework](./Module08/samples/10/README.md)
-
-### 🎓 **Workshop: Hands-On Learning Path**
-
-Comprehensive hands-on workshop materials with production-ready implementations:
-
-- **[Workshop Guide](./Workshop/Readme.md)** - Complete learning objectives, outcomes, and resource navigation
-- **Python Samples** (6 sessions) - Updated with best practices, error handling, and comprehensive documentation
-- **Jupyter Notebooks** (8 interactive) - Step-by-step tutorials with benchmarks and performance monitoring
-- **Session Guides** - Detailed markdown guides for each workshop session
-- **Validation Tools** - Scripts to verify code quality and run smoke tests
-
-**What You'll Build:**
-- Local AI chat applications with streaming support
-- RAG pipelines with quality evaluation (RAGAS)
-- Multi-model benchmarking and comparison tools
-- Multi-agent orchestration systems
-- Intelligent model routing with task-based selection
-
-### 🎙️ **Workshop For Agentic: Hands-On - The AI Podcast Studio**
-
-Build an AI-powered podcast production pipeline from scratch! This immersive workshop teaches you to create a complete multi-agent system that transforms ideas into professional podcast episodes.
-
-**[🎬 Start The AI Podcast Studio Workshop](./WorkshopForAgentic/README.md)**
-
-**Your Mission**: Launch "Future Bytes" — a tech podcast powered entirely by AI agents you'll build yourself. No cloud dependencies, no API costs — everything runs locally on your machine.
-
-**What Makes This Unique:**
-- **🤖 Real Multi-Agent Orchestration** - Build specialized AI agents that research, write, and produce audio
-- **🎯 Complete Production Pipeline** - From topic selection to final podcast audio output
-- **💻 100% Local Deployment** - Uses Ollama and local models (Qwen-3-8B) for full privacy and control
-- **🎤 Text-to-Speech Integration** - Transform scripts into natural-sounding multi-speaker conversations
-- **✋ Human-in-the-Loop Workflows** - Approval gates ensure quality while maintaining automation
-
-**Three-Act Learning Journey:**
-
-| Act | Focus | Key Skills | Duration |
-|-----|-------|------------|----------|
-| **[Act 1: Meet Your AI Assistants](./WorkshopForAgentic/md/01.BuildAIAgentWithSLM.md)** | Build your first AI agent | Tool integration • Web search • Problem-solving • Agentic reasoning | 2-3 hrs |
-| **[Act 2: Assemble Your Production Team](./WorkshopForAgentic/md/02.AIAgentOrchestrationAndWorkflows.md)** | Orchestrate multiple agents | Team coordination • Approval workflows • DevUI interface • Human oversight | 3-4 hrs |
-| **[Act 3: Bring Your Podcast to Life](./WorkshopForAgentic/md/03.Multi-SpeakerPodcastGenerationWithVibeVoice.md)** | Generate podcast audio | Text-to-speech • Multi-speaker synthesis • Long-form audio • Full automation | 2-3 hrs |
-
-**Technologies Used:**
-- **Microsoft Agent Framework** - Multi-agent orchestration and coordination
-- **Ollama** - Local AI model runtime (no cloud required)
-- **Qwen-3-8B** - Open-source language model optimized for agentic tasks
-- **Text-to-Speech APIs** - Natural voice synthesis for podcast generation
-
-**Hardware Support:**
-- ✅ **CPU Mode** - Works on any modern computer (8GB+ RAM recommended)
-- 🚀 **GPU Acceleration** - Significantly faster inference with NVIDIA/AMD GPUs
-- ⚡ **NPU Support** - Next-generation neural processing unit acceleration
-
-**Perfect For:**
-- Developers learning multi-agent AI systems
-- Anyone interested in AI automation and workflows
-- Content creators exploring AI-assisted production
-- Students studying practical AI orchestration patterns
-
-**Start Building**: [🎙️ The AI Podcast Studio Workshop →](./WorkshopForAgentic/README.md)
-
-### 📊 **Learning Path Summary**
-- **Total Duration**: 36-45 hours
-- **Beginner Path**: Modules 01-02 (7-9 hours)  
-- **Intermediate Path**: Modules 03-04 (9-11 hours)
-- **Advanced Path**: Modules 05-07 (12-15 hours)
-- **Expert Path**: Module 08 (8-10 hours)
-
-## What You'll Build
-
-### 🎯 Core Competencies
-- **Edge AI Architecture**: Design local-first AI systems with cloud integration
-- **Model Optimization**: Quantize and compress models for edge deployment (85% speed boost, 75% size reduction)
-- **Multi-Platform Deployment**: Windows, mobile, embedded, and cloud-edge hybrid systems
-- **Production Operations**: Monitoring, scaling, and maintaining edge AI in production
-
-### 🏗️ Practical Projects
-- **Foundry Local Chat Apps**: Windows 11 native application with model switching
-- **Multi-Agent Systems**: Coordinator with specialist agents for complex workflows  
-- **RAG Applications**: Local document processing with vector search
-- **Model Routers**: Intelligent selection between models based on task analysis
-- **API Frameworks**: Production-ready clients with streaming and health monitoring
-- **Cross-Platform Tools**: LangChain/Semantic Kernel integration patterns
-
-### 🏢 Industry Applications
-**Manufacturing** • **Healthcare** • **Autonomous Vehicles** • **Smart Cities** • **Mobile Apps**
-
-## Quick Start
-
-**Recommended Learning Path** (20-30 hours total):
-
-0. **📖 Introduction** ([Introduction.md](./introduction.md)): EdgeAI foundation + industry context + learning framework
-1. **📚 Foundation** (Modules 01-02): EdgeAI concepts + SLM model families
-2. **⚙️ Optimization** (Modules 03-04): Deployment + quantization frameworks  
-3. **🚀 Production** (Modules 05-06): SLMOps + AI agents + function calling
-4. **💻 Implementation** (Modules 07-08): Platform samples + Foundry Local toolkit
-
-Each module includes theory, hands-on exercises, and production-ready code samples.
-
-## Career Impact
-
-**Technical Roles**: EdgeAI Solutions Architect • ML Engineer (Edge) • IoT AI Developer • Mobile AI Developer
-
-**Industry Sectors**: Manufacturing 4.0 • Healthcare Tech • Autonomous Systems • FinTech • Consumer Electronics
-
-**Portfolio Projects**: Multi-agent systems • Production RAG apps • Cross-platform deployment • Performance optimization
-
-## Repository Structure
-
-```
-edgeai-for-beginners/
-├── 📖 introduction.md  # Foundation: EdgeAI Overview & Learning Framework
-├── 📚 Module01-04/     # Fundamentals → SLMs → Deployment → Optimization  
-├── 🔧 Module05-06/     # SLMOps → AI Agents → Function Calling
-├── 💻 Module07/        # Platform Samples (VS Code, Windows, Jetson, Mobile)
-├── 🏭 Module08/        # Foundry Local Toolkit + 10 Comprehensive Samples
-│   ├── samples/01-06/  # Foundation: REST, SDK, RAG, Agents, Routing
-│   └── samples/07-10/  # Advanced: API Client, Windows App, Enterprise Agents, Tools
-├── 🌐 translations/    # Multi-language support (8+ languages)
-└── 📋 STUDY_GUIDE.md   # Structured learning paths & time allocation
+```bash
+ollama --version
 ```
 
-## Course Highlights
+### Step 3: Download Your AI Brain 🧠
 
-✅ **Progressive Learning**: Theory → Practice → Production deployment  
-✅ **Real Case Studies**: Microsoft, Japan Airlines, enterprise implementations  
-✅ **Hands-on Samples**: 50+ examples, 10 comprehensive Foundry Local demos  
-✅ **Performance Focus**: 85% speed improvements, 75% size reductions  
-✅ **Multi-Platform**: Windows, mobile, embedded, cloud-edge hybrid  
-✅ **Production Ready**: Monitoring, scaling, security, compliance frameworks
+Time to grab the Google's Gemma4 model (it's like hiring your first AI assistant):
 
-📖 **[Study Guide Available](STUDY_GUIDE.md)**: Structured 20-hour learning path with time allocation guidance and self-assessment tools.
+```bash
+ollama pull gemma4:latest
+```
 
----
+*This might take a few minutes. Perfect time for a coffee break! ☕*
 
-**EdgeAI represents the future of AI deployment**: local-first, privacy-preserving, and efficient. Master these skills to build the next generation of intelligent applications.
 
-## Other Courses
 
-Our team produces other courses! Check out:
+### Step 4: Set Up VS Code
 
-<!-- CO-OP TRANSLATOR OTHER COURSES START -->
-### LangChain
-[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
-[![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
-[![LangChain for Beginners](https://img.shields.io/badge/LangChain%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://github.com/microsoft/langchain-for-beginners?WT.mc_id=m365-94501-dwahlin)
----
+Grab [Visual Studio Code](https://code.visualstudio.com/) if you don't have it. It's the best code editor around (fight me 😄).
 
-### Azure / Edge / MCP / Agents
-[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+### Step 5: Python Extension
 
----
- 
-### Generative AI Series
-[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+In VS Code:
+1. Hit `Ctrl+Shift+X` (or `Cmd+Shift+X` on Mac)
+2. Search "Python"
+3. Install the official Microsoft Python extension
 
----
- 
-### Core Learning
-[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
-[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-[![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+### Step 6: You're All Set! 🎉
 
----
- 
-### Copilot Series
-[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
-<!-- CO-OP TRANSLATOR OTHER COURSES END -->
+Seriously, you're ready to rock. Let's build some AI magic!
 
-## Getting Help
+### Step 7: Install Microsoft Agent Framework and Related Packages 📦
 
-If you get stuck or have any questions about building AI apps, join:
+Install all required dependencies for the workshop:
 
-[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
+```bash
+uv venv
+  -->  Activate the green line
+uv sync
+```
 
-If you have product feedback or errors while building visit:
+*This will install Microsoft Agent Framework and all necessary packages. Grab a coffee — first-time setup might take a few minutes! ☕*
 
-[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+## Workshop Instructions
+
+Detailed project structure, configuration steps, and execution methods will be explained step-by-step during the workshop.
+
+## Troubleshooting (When Things Go Wrong) 🔧
+
+### "Ugh, the model download is taking forever!"
+**Fix**: Use a VPN or configure Ollama with a mirror source. Sometimes the internet just hates us.
+
+### "My computer is dying! Out of memory!"
+**Fix**: Switch to a smaller model or tweak the `num_ctx` setting to use less memory. Think of it as putting your AI on a diet.
+
+### "Can I make this faster with my GPU?"
+**Fix**: Ollama auto-detects GPUs! Just make sure your GPU drivers are up to date. Free speed boost! 🏎️
+
+## Extra Resources (For the Curious) 📚
+
+- [Ollama Docs](https://github.com/ollama/ollama) — Deep dive into local AI models
+- [Microsoft Agent Framework](https://microsoft.github.io/autogen/) — Learn more about building agent teams
+- [Qwen Model Info](https://qwenlm.github.io/) — Meet your AI assistant's brain
+
+## License
+
+MIT License — Build cool stuff, share it, make the world better! 🌍
+
+## Want to Contribute?
+
+Found a bug? Got an idea? Drop an Issue or PR! We love community vibes. ✨
+

@@ -1,0 +1,17 @@
+[project]
+name = "edgeai-for-beginners"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "agent-framework-azure-ai>=1.0.0rc6",
+    "agent-framework-core",
+    "agent-framework-devui",
+    "openai>=2.35.1",
+]
+
+[tool.uv.sources]
+agent-framework-core = { git = "https://github.com/microsoft/agent-framework.git", subdirectory = "python/packages/core", rev = "main" }
+agent-framework-devui = { git = "https://github.com/microsoft/agent-framework.git", subdirectory = "python/packages/devui", rev = "main" }
+agent-framework-ollama = { git = "https://github.com/microsoft/agent-framework.git", subdirectory = "python/packages/ollama", rev = "main" }
