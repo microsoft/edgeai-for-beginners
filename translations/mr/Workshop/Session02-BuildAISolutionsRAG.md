@@ -2,26 +2,26 @@
 
 ## सारांश
 
-Foundry Local आणि Azure AI Foundry वापरून उपयुक्त GenAI वर्कफ्लो कसे तयार करायचे ते शोधा. प्रगत प्रॉम्प्ट इंजिनिअरिंग, संरचित डेटा समाकलित करणे आणि पुनरुत्पादक पाइपलाइनसह कार्ये समन्वयित करणे शिकून घ्या. दस्तऐवज आणि डेटा Q&A साठी Retrieval-Augmented Generation (RAG) वर लक्ष केंद्रित करत असताना, नमुने व्यापक GenAI सोल्यूशन डिझाइनसाठी सामान्यीकृत आहेत.
+Foundry Local आणि Azure AI Foundry वापरून कृतीक्षम GenAI वर्कफ्लो कसे तयार करायचे ते शोधा. प्रगत प्रॉम्प्ट अभियांत्रिकी शिकून, संरचित डेटा एकत्रित करा, आणि पुनरुत्पादित होणाऱ्या पाईपलाईन्ससह कार्ये संघटित करा. दस्तऐवज आणि डेटा Q&A साठी Retrieval-Augmented Generation (RAG) या विषयावर लक्ष केंद्रित असले तरी ही पद्धत व्यापक GenAI सोल्यूशन डिझाइनसाठी सामान्य आहे.
 
-## शिकण्याची उद्दिष्टे
+## शिक्षण उद्दिष्टे
 
-या सत्राच्या शेवटी, तुम्ही:
+या सत्राच्या शेवटी, आपण सक्षम असाल:
 
-- **प्रॉम्प्ट इंजिनिअरिंगमध्ये प्राविण्य मिळवा**: प्रभावी सिस्टम प्रॉम्प्ट्स आणि ग्राउंडिंग स्ट्रॅटेजी डिझाइन करा
-- **RAG नमुने अंमलात आणा**: व्हेक्टर शोधासह दस्तऐवज-आधारित Q&A प्रणाली तयार करा
-- **संरचित डेटा समाकलित करा**: AI वर्कफ्लोमध्ये CSV, JSON आणि टॅब्युलर डेटा वापरा
-- **प्रॉडक्शन RAG तयार करा**: Chainlit सह स्केलेबल RAG अनुप्रयोग तयार करा
-- **लोकल ते क्लाउड ब्रिज करा**: Foundry Local पासून Azure AI Foundry पर्यंत स्थलांतर मार्ग समजून घ्या
+- **प्रॉम्प्ट अभियांत्रिकीमध्ये प्रभुत्व मिळवा**: प्रभावी सिस्टम प्रॉम्प्ट आणि ग्राउंडिंग धोरणे डिझाइन करा
+- **RAG पॅटर्न अंमलात आणा**: व्हेक्टर शोध वापरून दस्तऐवज-आधारित Q&A सिस्टम तयार करा
+- **संरचित डेटा एकत्र करा**: AI वर्कफ्लोमध्ये CSV, JSON आणि तक्त्याच्या डेटासह कार्य करा
+- **उत्पादन RAG तयार करा**: Chainlit वापरून स्केलेबल RAG अनुप्रयोग तयार करा
+- **स्थानिक ते क्लाऊड सेतू उभारणी करा**: Foundry Local कडून Azure AI Foundry कडे स्थलांतर मार्ग समजून घ्या
 
 ## पूर्वतयारी
 
-- सत्र 1 पूर्ण केले (Foundry Local सेटअप)
-- व्हेक्टर डेटाबेस आणि एम्बेडिंग्सची मूलभूत समज
+- सत्र 1 पूर्ण केलेले (Foundry Local सेटअप)
+- व्हेक्टर डेटाबेस आणि एम्बेडिंगची मूलभूत समज
 - Python प्रोग्रामिंगचा अनुभव
 - दस्तऐवज प्रक्रिया संकल्पनांची ओळख
-
-### क्रॉस-प्लॅटफॉर्म वातावरण जलद प्रारंभ (Windows आणि macOS)
+ 
+### क्रॉस-प्लॅटफॉर्म वातावरण त्वरित प्रारंभ (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -39,30 +39,29 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-जर Foundry Local macOS बायनरीज तुमच्या वातावरणात उपलब्ध नसतील, तर Windows VM किंवा कंटेनरवर सेवा चालवा आणि सेट करा:
+आपल्या वातावरणात Foundry Local macOS बायनरीज अजून उपलब्ध नसल्यास, Windows VM किंवा कंटेनरवर सेवा चालवा आणि सेट करा:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
+## पडताळणी: Foundry Local पर्यावरण तपासणी
 
-## पडताळणी: Foundry Local वातावरण तपासणी
-
-डेमो सुरू करण्यापूर्वी, तुमचे स्थानिक वातावरण पडताळा:
+डेमो सुरु करण्यापूर्वी आपल्या स्थानिक पर्यावरणाची पडताळणी करा:
 
 ```powershell
-foundry --version              # Ensure CLI is installed
-foundry status                 # Service status
-foundry model run phi-4-mini   # Start baseline SLM
-curl http://localhost:5273/v1/models  # Validate API (should list running model)
+foundry --version              # CLI स्थापित आहे याची खात्री करा
+foundry status                 # सेवा स्थिती
+foundry model run phi-4-mini   # बेसलाइन SLM सुरू करा
+curl http://localhost:5273/v1/models  # API चे प्रमाणीकरण करा (रनिंग मॉडेलची यादी करावी)
 ```
 
-जर शेवटचा आदेश अयशस्वी झाला, तर सेवा सुरू (किंवा पुन्हा सुरू) करा: `foundry service start`.
+शेवटचा आदेश अयशस्वी झाला तर, सेवा सुरु करा (किंवा पुनः सुरु करा): `foundry service start`.
 
-## डेमो फ्लो (30 मिनिटे)
+## डेमो प्रवाह (30 मिनिटे)
 
-### 1. सिस्टम प्रॉम्प्ट्स आणि ग्राउंडिंग स्ट्रॅटेजी (10 मिनिटे)
+### 1. सिस्टम प्रॉम्प्ट आणि ग्राउंडिंग धोरणे (10 मिनिटे)
 
-#### पायरी 1.1: प्रगत प्रॉम्प्ट इंजिनिअरिंग
+#### पाऊल 1.1: प्रगत प्रॉम्प्ट अभियांत्रिकी
 
 `samples/02-rag-solutions/prompt_engineering.py` तयार करा:
 
@@ -133,7 +132,7 @@ class PromptEngineer:
                 model=model,
                 messages=messages,
                 max_tokens=1000,
-                temperature=0.3,  # Lower temperature for more consistent responses
+                temperature=0.3,  # अधिक सुसंगत प्रतिसादांसाठी तापमान कमी करा
                 top_p=0.9
             )
             
@@ -153,7 +152,7 @@ def demo_grounding_strategies():
     
     engineer = PromptEngineer()
     
-    # Sample contexts for different domains
+    # वेगवेगळ्या क्षेत्रांसाठी नमुना संदर्भ
     contexts = {
         "technical": """
         Microsoft Foundry Local is a development platform that enables running AI models locally on Windows devices. 
@@ -197,21 +196,19 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-
-#### पायरी 1.2: ग्राउंडिंग स्ट्रॅटेजी तपासा
+#### पाऊल 1.2: ग्राउंडिंग धोरणे तपासा
 
 ```powershell
-# Ensure phi-4-mini is running
+# phi-4-mini चालू आहे याची खात्री करा
 foundry model run phi-4-mini
 
-# Run the prompt engineering demo
+# प्रॉम्प्ट अभियांत्रिकी डेमो चालवा
 python samples/02-rag-solutions/prompt_engineering.py
 ```
 
+### 2. प्रॉम्प्ट्ससह तक्त्यांचा डेटा एकत्र करा (CSV Q&A) (10 मिनिटे)
 
-### 2. प्रॉम्प्ट्ससह टॅब्युलर डेटा समाकलित करा (CSV Q&A) (10 मिनिटे)
-
-#### पायरी 2.1: CSV डेटा समाकलन
+#### पाऊल 2.1: CSV डेटा एकत्रीकरण
 
 `samples/02-rag-solutions/csv_qa_system.py` तयार करा:
 
@@ -261,12 +258,12 @@ class CSVQASystem:
             "sample_rows": self.data.head(3).to_dict('records')
         }
         
-        # Add numerical statistics for numeric columns
+        # संख्यात्मक स्तंभांसाठी संख्यात्मक आकडेवारी जोडा
         numeric_cols = self.data.select_dtypes(include=['number']).columns
         if len(numeric_cols) > 0:
             stats["numeric_summary"] = self.data[numeric_cols].describe().to_dict()
         
-        # Add categorical summaries
+        # वर्गवारी संदर्भ माहिती जोडा
         categorical_cols = self.data.select_dtypes(include=['object']).columns
         if len(categorical_cols) > 0:
             stats["categorical_summary"] = {}
@@ -286,12 +283,12 @@ class CSVQASystem:
             f"- Columns: {', '.join(self.summary_stats['columns'])}"
         ]
         
-        # Add sample data
+        # नमुना डेटा जोडा
         context_parts.append("\nSample Data:")
         for i, row in enumerate(self.summary_stats['sample_rows'][:3]):
             context_parts.append(f"Row {i+1}: {json.dumps(row, default=str)}")
         
-        # Add relevant statistics based on question content
+        # प्रश्नाच्या सामग्रीनुसार संबंधित आकडेवारी जोडा
         question_lower = question.lower()
         
         if any(word in question_lower for word in ['average', 'mean', 'sum', 'count', 'max', 'min', 'statistics']):
@@ -344,7 +341,7 @@ class CSVQASystem:
                 model=model,
                 messages=messages,
                 max_tokens=800,
-                temperature=0.2  # Low temperature for factual data analysis
+                temperature=0.2  # तथ्यात्मक डेटाच्या विश्लेषणासाठी कमी तापमान
             )
             
             return {
@@ -360,7 +357,7 @@ class CSVQASystem:
 def create_sample_dataset():
     """Create a sample dataset for demonstration"""
     
-    # Create sample sales data
+    # नमुना विक्री डेटा तयार करा
     sales_data = {
         'Date': ['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-04', '2024-01-05',
                  '2024-01-06', '2024-01-07', '2024-01-08', '2024-01-09', '2024-01-10'],
@@ -377,7 +374,7 @@ def create_sample_dataset():
     df = pd.DataFrame(sales_data)
     csv_path = "samples/02-rag-solutions/sample_sales_data.csv"
     
-    # Ensure directory exists
+    # निर्देशिका अस्तित्वात असल्याची खात्री करा
     os.makedirs(os.path.dirname(csv_path), exist_ok=True)
     
     df.to_csv(csv_path, index=False)
@@ -386,21 +383,21 @@ def create_sample_dataset():
 def demo_csv_qa():
     """Demonstrate CSV Q&A capabilities"""
     
-    # Create sample dataset
+    # नमुना डेटा संच तयार करा
     csv_path = create_sample_dataset()
     print(f"Created sample dataset: {csv_path}")
     
-    # Initialize Q&A system
+    # प्रश्नोत्तरे प्रणाली प्रारंभ करा
     qa_system = CSVQASystem()
     
-    # Load data
+    # डेटा लोड करा
     if not qa_system.load_csv_data(csv_path):
         print("Failed to load CSV data")
         return
     
     print(f"\nLoaded dataset with shape: {qa_system.data.shape}")
     
-    # Example questions
+    # उदाहरण प्रश्न
     questions = [
         "What is the total sales amount?",
         "Which product has the highest average sales amount?",
@@ -426,18 +423,16 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-
-#### पायरी 2.2: CSV Q&A प्रणाली तपासा
+#### पाऊल 2.2: CSV Q&A सिस्टम तपासा
 
 ```powershell
-# Run the CSV Q&A demo
+# CSV Q&A डेमो चालवा
 python samples/02-rag-solutions/csv_qa_system.py
 ```
 
+### 3. प्रारंभिक प्रोजेक्ट: 02-grounding-data मध्ये सुधारणा करा (5 मिनिटे)
 
-### 3. स्टार्टर प्रोजेक्ट: 02-grounding-data अडॅप्ट करा (5 मिनिटे)
-
-#### पायरी 3.1: सुधारित दस्तऐवज RAG प्रणाली
+#### पाऊल 3.1: सुधारित दस्तऐवज RAG सिस्टम
 
 `samples/02-rag-solutions/document_rag.py` तयार करा:
 
@@ -493,18 +488,18 @@ class SimpleRAGSystem:
         if not self.documents or self.vectorizer is None:
             return []
         
-        # Vectorize query
+        # क्वेरी व्हेक्टर करणे
         query_vector = self.vectorizer.transform([query])
         
-        # Calculate similarities
+        # सारखेपणा मोजा
         similarities = cosine_similarity(query_vector, self.doc_vectors).flatten()
         
-        # Get top-k documents
+        # टॉप-क दस्तऐवज मिळवा
         top_indices = np.argsort(similarities)[::-1][:top_k]
         
         results = []
         for idx in top_indices:
-            if similarities[idx] > 0.1:  # Minimum similarity threshold
+            if similarities[idx] > 0.1:  # किमान सारखेपणा मर्यादा
                 results.append({
                     "content": self.documents[idx],
                     "similarity": float(similarities[idx]),
@@ -519,7 +514,7 @@ class SimpleRAGSystem:
                        max_context_docs: int = 3) -> Dict[str, Any]:
         """Generate answer using retrieved documents"""
         
-        # Retrieve relevant documents
+        # संबंधित दस्तऐवज मिळवा
         relevant_docs = self.retrieve_relevant_docs(question, max_context_docs)
         
         if not relevant_docs:
@@ -618,16 +613,16 @@ def create_sample_knowledge_base() -> List[str]:
 def demo_document_rag():
     """Demonstrate document RAG capabilities"""
     
-    # Create RAG system
+    # RAG प्रणाली तयार करा
     rag_system = SimpleRAGSystem()
     
-    # Add sample knowledge base
+    # नमुना ज्ञानआधार जोडा
     documents = create_sample_knowledge_base()
     rag_system.add_documents(documents)
     
     print(f"Loaded {len(documents)} documents into knowledge base")
     
-    # Example questions
+    # उदाहरण प्रश्न
     questions = [
         "What is Microsoft Foundry Local and what are its key features?",
         "How do Small Language Models differ from regular language models?",
@@ -654,10 +649,9 @@ if __name__ == "__main__":
     demo_document_rag()
 ```
 
+### 4. CLI ते Azure स्थलांतर मार्ग दाखवा (5 मिनिटे)
 
-### 4. CLI ते Azure स्थलांतर मार्ग दर्शवा (5 मिनिटे)
-
-#### पायरी 4.1: स्थलांतर धोरणाचा आढावा
+#### पाऊल 4.1: स्थलांतर धोरणाचा आढावा
 
 `samples/02-rag-solutions/migration_guide.py` तयार करा:
 
@@ -685,7 +679,7 @@ class UnifiedAIClient:
         self.environment = environment
         
         if environment == "local":
-            # Foundry Local configuration
+            # फाउंड्री लोकल कॉन्फिगरेशन
             self.client = OpenAI(
                 base_url="http://localhost:5273/v1",
                 api_key="not-needed"
@@ -693,7 +687,7 @@ class UnifiedAIClient:
             self.default_model = "phi-4-mini"
             
         elif environment == "azure":
-            # Azure AI Foundry configuration
+            # Azure AI फाउंड्री कॉन्फिगरेशन
             if not azure_endpoint or not azure_api_key:
                 raise ValueError("Azure endpoint and API key required for Azure environment")
             
@@ -702,7 +696,7 @@ class UnifiedAIClient:
                 api_key=azure_api_key,
                 default_headers={"api-version": azure_api_version}
             )
-            self.default_model = "gpt-4"  # Or your Azure deployment name
+            self.default_model = "gpt-4"  # किंवा तुमचे Azure डिप्लॉयमेंट नाव
             
         else:
             raise ValueError("Environment must be 'local' or 'azure'")
@@ -742,15 +736,15 @@ class UnifiedAIClient:
         
         try:
             if self.environment == "local":
-                # For Foundry Local, we'd typically use the CLI
-                # This is a simplified example
+                # फाउंड्री लोकसाठी, आम्ही सामान्यपणे CLI वापरतो
+                # हे एक साधी उदाहरण आहे
                 return {
                     "success": True,
                     "models": ["phi-4-mini", "qwen2.5-0.5b", "deepseek-coder-1.3b"],
                     "environment": "local"
                 }
             else:
-                # For Azure, you might query the deployments endpoint
+                # Azure साठी, तुम्ही डिप्लॉयमेंट्स एंडपॉईंट क्वेरी करू शकता
                 models_response = self.client.models.list()
                 return {
                     "success": True,
@@ -771,7 +765,7 @@ def demo_migration_patterns():
     print("Foundry Local to Azure AI Foundry Migration Demo")
     print("=" * 60)
     
-    # Test message
+    # चाचणी संदेश
     test_messages = [
         {
             "role": "system",
@@ -783,7 +777,7 @@ def demo_migration_patterns():
         }
     ]
     
-    # Test with Foundry Local
+    # फाउंड्री लोकसह चाचणी
     print("\n1. Testing with Foundry Local:")
     print("-" * 40)
     
@@ -805,11 +799,11 @@ def demo_migration_patterns():
     except Exception as e:
         print(f"✗ Local Setup Error: {e}")
     
-    # Show Azure configuration (commented out as it requires credentials)
+    # Azure कॉन्फिगरेशन दाखवा (क्रेडेन्शियल्स आवश्यक असल्याने टिप्पणी केलेले)
     print("\n2. Azure AI Foundry Configuration:")
     print("-" * 40)
     print("""
-    # To migrate to Azure AI Foundry, configure as follows:
+    # Azure AI फाउंड्री कडे स्थलांतर करण्यासाठी, खालीलप्रमाणे कॉन्फिगर करा:
     
     azure_client = UnifiedAIClient(
         environment="azure",
@@ -818,7 +812,7 @@ def demo_migration_patterns():
         azure_api_version="2024-08-01-preview"
     )
     
-    # Same API calls work in both environments!
+    # दोन्ही पर्यावरणात एकसारखे API कॉल कार्य करतात!
     azure_result = azure_client.chat_completion(
         messages=test_messages,
         max_tokens=200,
@@ -826,7 +820,7 @@ def demo_migration_patterns():
     )
     """)
     
-    # Migration strategy
+    # स्थलांतर धोरण
     print("\n3. Migration Strategy:")
     print("-" * 40)
     print("""
@@ -842,16 +836,16 @@ def demo_migration_patterns():
     ✓ Easy scaling to production (same API)
     """)
     
-    # Configuration examples
+    # कॉन्फिगरेशन उदाहरणे
     print("\n4. Environment-based Configuration:")
     print("-" * 40)
     print("""
-    # .env file for development
+    # विकासासाठी .env फाइल
     AI_ENVIRONMENT=local
     FOUNDRY_LOCAL_URL=http://localhost:5273/v1
     DEFAULT_MODEL=phi-4-mini
     
-    # .env file for production
+    # उत्पादनासाठी .env फाइल
     AI_ENVIRONMENT=azure
     AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com
     AZURE_OPENAI_API_KEY=your-api-key
@@ -863,51 +857,49 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-
-#### पायरी 4.2: स्थलांतर नमुने तपासा
+#### पाऊल 4.2: स्थलांतर पॅटर्न तपासा
 
 ```powershell
-# Run the migration demo
+# स्थलांतर डेमो चालवा
 python samples/02-rag-solutions/migration_guide.py
 ```
 
+## महत्वाचे संकल्पना आढळले
 
-## कव्हर केलेली मुख्य संकल्पना
+### 1. प्रगत प्रॉम्प्ट अभियांत्रिकी
 
-### 1. प्रगत प्रॉम्प्ट इंजिनिअरिंग
-
-- **सिस्टम प्रॉम्प्ट्स**: डोमेन-विशिष्ट तज्ञ व्यक्तिमत्वे
-- **ग्राउंडिंग स्ट्रॅटेजी**: संदर्भ समाकलन तंत्र
-- **तापमान नियंत्रण**: सर्जनशीलता विरुद्ध सुसंगततेचे संतुलन
+- **सिस्टम प्रॉम्प्ट्स**: क्षेत्र-विशिष्ट विशेषज्ञ व्यक्तिमत्त्वे
+- **ग्राउंडिंग धोरणे**: संदर्भ समाकलन तंत्र
+- **तापमान नियंत्रण**: सर्जनशीलता विरुद्ध सातत्य संतुलित करणे
 - **टोकन व्यवस्थापन**: कार्यक्षम संदर्भ वापर
 
-### 2. संरचित डेटा समाकलन
+### 2. संरचित डेटा एकत्रीकरण
 
-- **CSV प्रक्रिया**: Pandas सह AI मॉडेल्स समाकलित करा
-- **सांख्यिकीय विश्लेषण**: स्वयंचलित डेटा संक्षेपण
-- **संदर्भ निर्मिती**: क्वेरींवर आधारित डायनॅमिक संदर्भ निर्मिती
-- **मल्टी-फॉर्मॅट सपोर्ट**: JSON, CSV आणि टॅब्युलर डेटा
+- **CSV प्रक्रिया**: AI मॉडेल्ससह Pandas एकत्रीकरण
+- **सांख्यिकीय विश्लेषण**: स्वयंचलित डेटा संक्षेप
+- **संदर्भ निर्मिती**: क्वेरीजनुसार डायनॅमिक संदर्भ निर्मिती
+- **मुल्टी-फॉरमॅट समर्थन**: JSON, CSV आणि तक्त्याचा डेटा
 
-### 3. RAG अंमलबजावणी नमुने
+### 3. RAG अंमलबजावणी पॅटर्न
 
-- **व्हेक्टर शोध**: TF-IDF आणि कोसाइन साम्य
-- **दस्तऐवज पुनर्प्राप्ती**: प्रासंगिकता स्कोअरिंग आणि रँकिंग
-- **संदर्भ संयोजन**: मल्टी-दस्तऐवज संश्लेषण
-- **उत्तर निर्मिती**: ग्राउंडेड प्रतिसाद निर्मिती
+- **व्हेक्टर शोध**: TF-IDF आणि कॉसाईन सादृश्यता
+- **दस्तऐवज पुनर्प्राप्ती**: संबंधिततेचा गुणांकन आणि क्रमवारी
+- **संदर्भ संयोजन**: बहु-दस्तऐवज संश्लेषण
+- **उत्तर निर्मिती**: आधारित प्रतिसाद तयार करणे
 
-### 4. क्लाउड स्थलांतर धोरणे
+### 4. क्लाऊड स्थलांतर धोरणे
 
-- **एकत्रित API**: स्थानिक आणि क्लाउडसाठी एकच कोडबेस
-- **वातावरण अब्स्ट्रॅक्शन**: कॉन्फिगरेशन-चालित तैनाती
-- **विकसन कार्यप्रवाह**: स्थानिक → स्टेजिंग → उत्पादन
-- **खर्च अनुकूलन**: स्थानिक विकास, क्लाउड उत्पादन
+- **एकत्रित API**: स्थानिक आणि क्लाऊडसाठी एकच कोडबेस
+- **पर्यावरण सारांश**: कॉन्फिगरेशन-चालित आयडीप्लॉइमेंट
+- **विकास वर्कफ्लो**: स्थानिक → स्टेजिंग → उत्पादन
+- **खर्च अनुकूलन**: स्थानिक विकास, क्लाऊड उत्पादन
 
 ## उत्पादन विचार
 
 ### 1. कार्यक्षमता अनुकूलन
 
 ```python
-# Optimize for production RAG
+# उत्पादन RAG साठी ऑप्टिमाइझ करा
 rag_config = {
     "max_context_docs": 5,
     "similarity_threshold": 0.15,
@@ -918,29 +910,27 @@ rag_config = {
 }
 ```
 
-
 ### 2. त्रुटी हाताळणी
 
 ```python
-# Robust error handling
+# मजबूत त्रुटी हाताळणी
 try:
     result = rag_system.generate_answer(question)
     if "error" in result:
-        # Fallback to general knowledge
+        # सामान्य ज्ञानाकडे पुनर्बाँड
         fallback_result = client.chat.completions.create(
             model="phi-4-mini",
             messages=[{"role": "user", "content": question}]
         )
 except Exception as e:
-    # Log error and provide graceful degradation
+    # त्रुटीची नोंद करा आणि सौम्य ऱ्हास प्रदान करा
     logger.error(f"RAG system error: {e}")
 ```
 
-
-### 3. निरीक्षण आणि निरीक्षणक्षमता
+### 3. निरीक्षण आणि दृष्यते
 
 ```python
-# Track RAG performance
+# RAG कार्यक्षमता ट्रॅक करा
 metrics = {
     "retrieval_time": time.time() - start_time,
     "context_relevance": avg_similarity_score,
@@ -949,31 +939,30 @@ metrics = {
 }
 ```
 
+## पुढील पावले
 
-## पुढील पायऱ्या
+हे सत्र पूर्ण केल्यावर:
 
-हे सत्र पूर्ण केल्यानंतर:
+1. **सत्र 3 शोधा**: Foundry Local मध्ये ओपन-सोर्स मॉडेल्स
+2. **उत्पादन RAG तयार करा**: Chainlit वापरून अंमलात आणा (नमुना 04)
+3. **प्रगत व्हेक्टर शोध**: Chroma किंवा Pinecone सह एकत्रित करा
+4. **क्लाऊड स्थलांतर**: Azure AI Foundry मध्ये तैनात करा
+5. **RAG गुणवत्ता मूल्यांकन**: `cd Workshop/samples;python -m session02.rag_eval_ragas` चालवा जेणेकरून उत्तर_संबंध, प्रामाणिकपणा, आणि संदर्भ_अचूकता ragas वापरून मोजली जाईल
 
-1. **सत्र 3 एक्सप्लोर करा**: Foundry Local मधील ओपन-सोर्स मॉडेल्स
-2. **प्रॉडक्शन RAG तयार करा**: Chainlit सह अंमलात आणा (नमुना 04)
-3. **प्रगत व्हेक्टर शोध**: Chroma किंवा Pinecone सह समाकलित करा
-4. **क्लाउड स्थलांतर**: Azure AI Foundry वर तैनात करा
-5. **RAG गुणवत्ता मूल्यांकन करा**: `cd Workshop/samples;python -m session02.rag_eval_ragas` चालवा आणि ragas वापरून answer_relevancy, faithfulness, आणि context_precision मोजा
-
-### पर्यायी सुधारणा
+### ऐच्छिक सुधारणा
 
 | श्रेणी | सुधारणा | कारण | दिशा |
 |----------|-------------|-----------|-----------|
-| पुनर्प्राप्ती | TF-IDF च्या जागी व्हेक्टर स्टोअर (FAISS / Chroma) वापरा | चांगले सिमॅंटिक रिकॉल आणि स्केलेबिलिटी | डॉक्युमेंट्स चंक्स करा (500–800 अक्षरे), एम्बेड करा, इंडेक्स कायम ठेवा |
-| हायब्रिड इंडेक्स | द्वंद्वात्मक सिमॅंटिक + कीवर्ड फिल्टरिंग | संख्यात्मक / कोड क्वेरींवर अचूकता सुधारते | कीवर्डद्वारे फिल्टर करा आणि नंतर कोसाइन साम्याने रँक करा |
-| एम्बेडिंग्स | एकाधिक एम्बेडिंग मॉडेल्सचे मूल्यांकन करा | प्रासंगिकता विरुद्ध गती अनुकूलित करा | A/B: MiniLM vs E5-small vs स्थानिक होस्ट केलेला एन्कोडर |
-| कॅशिंग | एम्बेडिंग्स आणि पुनर्प्राप्ती परिणाम कॅश करा | पुनरावृत्त क्वेरी विलंब कमी करा | साधे ऑन-डिस्क पिकल / sqlite हॅश कीसह |
-| मूल्यांकन | ragas डेटासेट विस्तृत करा | सांख्यिकदृष्ट्या अर्थपूर्ण गुणवत्ता | 50–100 Q/A + संदर्भ क्युरेट करा; विषयानुसार स्तरित करा |
-| मेट्रिक्स | पुनर्प्राप्ती आणि निर्मिती वेळा ट्रॅक करा | कार्यक्षमता प्रोफाइलिंग | प्रत्येक कॉलसाठी `retrieval_ms`, `gen_ms`, `tokens` कॅप्चर करा |
-| गार्डरेल्स | भ्रमFallback जोडा | सुरक्षित उत्तरे | faithfulness < threshold असल्यास → उत्तर: "अपुरा संदर्भ." |
-| फॉलबॅक | स्थानिक → Azure मॉडेल कॅस्केड करा | हायब्रिड गुणवत्ता सुधारणा | कमी विश्वासावर OpenAI API द्वारे क्लाउडकडे मार्ग |
-| निर्धारकता | स्थिर तुलना चालवा | पुनरावृत्त मूल्यांकन संच | बीज निश्चित करा, `temperature=0`, सॅम्पलर यादृच्छिकता अक्षम करा |
-| निरीक्षण | मूल्यांकन रन इतिहास कायम ठेवा | पुनरावृत्ती शोध | JSON ओळींसह टाइमस्टॅम्प + मेट्रिक डेल्टा जोडणे |
+| पुनर्प्राप्ती | TF-IDF ऐवजी व्हेक्टर स्टोअर (FAISS / Chroma) बदला | चांगले सेमँटिक रीकॉल व स्केलेबिलिटी | दस्तऐवज भाग करा (500–800 अक्षरे), एम्बेड करा, सूची टिकवा |
+| हायब्रिड निर्देशांक | द्वैत सेमँटिक + कीवर्ड फिल्टरिंग | संख्यात्मक / कोड प्रश्नांवरील अचूकता सुधारते | आधी कीवर्डने फिल्टर करा, नंतर कॉसाईन सादृश्यतेनुसार क्रम लावा |
+| एम्बेडिंग | एकाधिक एम्बेडिंग मॉडेल चाचणी करा | सुसंगतता विरुद्ध गती सुधारित करा | A/B: MiniLM विरुद्ध E5-small विरुद्ध स्थानिक होस्टेड एनकोडर |
+| कॅशिंग | एम्बेडिंग् आणि पुनर्प्राप्ती निकाल कॅश करा | पुनरावृत्ती क्वेरी विलंबता कमी करा | सोपा ऑन-डिस्क पिकल / sqlite सह हॅश की |
+| मूल्यांकन | ragas डेटासेट विस्तारित करा | सांख्यिकीय अर्थपूर्ण गुणवत्ता | 50–100 Q/A + संदर्भ तयार करा; विषयानुसार वर्गीकरण करा |
+| मेट्रिक्स | पुनर्प्राप्ती आणि निर्मिती वेळ नोंदवा | कार्यक्षमतेचे प्रोफाइलिंग | प्रत्येकी कॉलसाठी `retrieval_ms`, `gen_ms`, `tokens` टिपा |
+| गार्डरेल्स | हलुसिनेशन फॉलबॅक जोडा | अधिक सुरक्षित उत्तरे | जर प्रामाणिकपणा < मर्यादा → उत्तर द्या: "पुरेशा संदर्भाशिवाय." |
+| फॉलबॅक | स्थानिक → Azure मॉडेल कॅस्केड | हायब्रिड गुणवत्ता वाढवा | कमी आत्मविश्वास असलेल्या प्रश्नांना स्थानिक मॉडेलपासून OpenAI API द्वारे क्लाऊडवर मार्गदर्शन करा |
+| निश्चितता | स्थिर तुलना रन | पुनरावृत्तीयोग्य मूल्यांकन संच | बीज निश्चित करा, `temperature=0`, सॅम्पलर रॅन्डमनेस बंद करा |
+| निरीक्षण | मूल्यांकन रन इतिहास टिकवा | अभिगमन शोधा | टाइमस्टँप + मेट्रिक फरकांसह JSON लाईन्स जोडा |
 
 #### उदाहरण: पुनर्प्राप्ती वेळ जोडणे
 
@@ -988,56 +977,55 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
+#### ragas सह प्रमाणपत्र मूल्यांकन वाढवा
 
-#### ragas सह मूल्यांकन स्केलिंग
-
-1. फील्डसह JSONL एकत्र करा: `question`, `answer`, `contexts`, `ground_truths` (यादी)
-2. `Dataset.from_list(list_of_dicts)` मध्ये रूपांतरित करा
+1. `question`, `answer`, `contexts`, `ground_truths` (यादी) या फील्डसह JSONL तयार करा
+2. `Dataset.from_list(list_of_dicts)` मध्ये रूपांतर करा
 3. `evaluate(dataset, metrics=[...])` चालवा
-4. ट्रेंड विश्लेषणासाठी मेट्रिक्स (CSV/JSON) संग्रहित करा.
+4. ट्रेंड विश्लेषणासाठी मेट्रिक्स (CSV/JSON) साठवून ठेवा.
 
-#### व्हेक्टर स्टोअर जलद प्रारंभ (FAISS)
+#### व्हेक्टर स्टोअर त्वरित प्रारंभ (FAISS)
 
 ```python
 import faiss, numpy as np
 index = faiss.IndexFlatIP(embeddings.shape[1])
-index.add(embeddings)  # embeddings = np.array([...]) normalized
+index.add(embeddings)  # embeddings = np.array([...]) सामान्यीकृत
 D, I = index.search(query_vec, k)
 ```
 
-डिस्क टिकावासाठी `faiss.write_index(index, "kb.index")` वापरा.
+डिस्क टिकवणीसाठी `faiss.write_index(index, "kb.index")` वापरा.
 
 ## अतिरिक्त संसाधने
 
 ### दस्तऐवज
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
-- [Azure AI Foundry RAG Patterns](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [Prompt Engineering Guide](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
-- [Ragas Evaluation Docs](https://docs.ragas.io)
+- [Azure AI Foundry RAG पॅटर्न्स](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
+- [प्रॉम्प्ट अभियांत्रिकी मार्गदर्शक](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [Ragas मूल्यांकन दस्तऐवज](https://docs.ragas.io)
 
 ### नमुना कोड
-- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG Application
-- [Advanced Multi-Agent System](./samples/09/README.md) - Agent coordination patterns
+- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG अनुप्रयोग
+- [प्रगत मल्टि-एजंट सिस्टम](./samples/09/README.md) - एजंट समन्वय पॅटर्न्स
 
 ---
 
-**सत्र कालावधी**: 30 मिनिटे हाताळणी + 15 मिनिटे Q&A  
-**अडचणीची पातळी**: मध्यम  
-**पूर्वतयारी**: सत्र 1 पूर्ण केले, Python ची मूलभूत माहिती
+**सत्र कालावधी**: 30 मिनिटे हस्तगत + 15 मिनिटे Q&A
+**कठीणाई पातळी**: मध्यम
+**पूर्वतयारी**: सत्र 1 पूर्ण केलेले, मूलभूत Python ज्ञान
 
-## नमुना परिस्थिती आणि कार्यशाळा मॅपिंग
+## नमुना परिस्थिती आणि कार्यशाळेची मॅपिंग
 
-| कार्यशाळा स्क्रिप्ट / नोटबुक | परिस्थिती | उद्दिष्ट | मुख्य डेटासेट / स्रोत | उदाहरण प्रश्न |
+| कार्यशाळा स्क्रिप्ट / नोटबुक | परिस्थिती | लक्ष्य | मुख्य डेटासेट / स्रोत | उदाहरण प्रश्न |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | अंतर्गत समर्थन ज्ञान तळ गोपनीयता + कार्यक्षमता FAQs उत्तर देणे | एम्बेडिंग्ससह मिनिमल इन-मेमरी RAG | स्क्रिप्टमधील `DOCS` यादी (5 लहान उतारे) | स्थानिक अनुमानासह RAG का वापरावे? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | गुणवत्ता विश्लेषक बेसलाइन पुनर्प्राप्ती विश्वासार्हता मेट्रिक्स स्थापित करणे | लहान सिंथेटिक डेटासेटवर ragas मेट्रिक्स गणना करा | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` अ‍ॅरे | स्थानिक अनुमानाचा फायदा काय आहे? |
-| `prompt_engineering.py` (प्रगत) | डोमेन SME अनेक क्षेत्रांसाठी ग्राउंडेड प्रॉम्प्ट्स तयार करणे | डोमेन सिस्टम प्रॉम्प्ट्स आणि टोकन प्रभावाची तुलना करा | इनलाइन `contexts` dict | Foundry Local मॉडेल कॅशिंग कसे हाताळते? |
-| `csv_qa_system.py` | विक्री ऑप्स निर्यातांवर परस्पर विश्लेषण शोधत आहेत | लहान विक्री स्लाइस संक्षेपित करा आणि क्वेरी करा | व्युत्पन्न `sample_sales_data.csv` (10 ओळी) | कोणत्या उत्पादनाचा सरासरी विक्री रक्कम सर्वाधिक आहे? |
-| `document_rag.py` | उत्पादन संघ अंतर्गत विकीसाठी दस्तऐवज RAG एक्सप्लोर करत आहे | संबंधित दस्तऐवज पुनर्प्राप्त करा + उद्धृत करा | `create_sample_knowledge_base()` यादी | Edge AI चे फायदे काय आहेत? |
-| `migration_guide.py` | आर्किटेक्ट क्लाउड स्थलांतर योजना तयार करत आहे | स्थानिक→Azure API समता प्रदर्शित करा | स्थिर चाचणी प्रॉम्प्ट्स | Edge AI चे फायदे 2–3 वाक्यांत स्पष्ट करा. |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | अंतर्गत समर्थन ज्ञान आधार ज्याने गोपनीयता आणि कार्यक्षमतेच्या FAQ उत्तर दिले | अतिमिती RAG सह एम्बेडिंग्ज | स्क्रिप्टमधील `DOCS` सूची (5 लहान परिच्छेद) | स्थानिक अनुमानासह RAG का वापरता? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | गुणवत्ता विश्लेषकाने बेसलाइन पुनर्प्राप्ती प्रामाणिकपणे मोजणी स्थापित केली | लहान कृत्रिम डेटासेटवर ragas मेट्रिक्स सांगा | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` अ‍ॅरे | स्थानिक अनुमानाचा काय फायदा आहे? |
+| `prompt_engineering.py` (प्रगत) | क्षेत्र तज्ज्ञाने विविध क्षेत्रांकरिता आधारित प्रॉम्प्ट तयार केले | क्षेत्रीय सिस्टम प्रॉम्प्ट्स आणि टोकन प्रभावाची तुलना करा | इनलाइन `contexts` डिक्शनरी | Foundry Local मॉडेल कॅशिंग कसे हाताळते? |
+| `csv_qa_system.py` | विक्री ऑपरेशन्स लहान विक्री विभागांवर संवादात्मक विश्लेषण शोधतात | संक्षेप व क्वेरी लहान विक्री विभाग | तयार केलेले `sample_sales_data.csv` (10 रकाने) | कोणत्या उत्पादनाची सरासरी विक्री सर्वाधिक आहे? |
+| `document_rag.py` | उत्पादन टीम अंतर्गत विकी करीता दस्तऐवज RAG तपासते | संबंधित दस्तऐवज पुनर्प्राप्ति आणि उद्धृत करा | `create_sample_knowledge_base()` सूची | Edge AI चे फायदे काय आहेत? |
+| `migration_guide.py` | आर्किटेक्ट क्लाऊड स्थलांतर योजना तयार करतो | स्थानिक→Azure API समतोल दाखवा | स्थिर चाचणी प्रॉम्प्ट्स | Edge AI च्या फायद्यांचे 2–3 वाक्यांत स्पष्टीकरण द्या. |
 
-### डेटासेट स्निपेट्स
-इनलाइन RAG पाइपलाइन डॉक यादी:
+### डेटासेट तुकडे
+इनलाइन RAG पाईपलाईन दस्तऐवज सूची:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1048,8 +1036,7 @@ DOCS = [
 ]
 ```
 
-
-Ragas मूल्यांकन सत्य जोड्या:
+Ragas मूल्यांकन सत्य जोडी:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1058,16 +1045,15 @@ GROUND_TRUTH = [
 ]
 ```
 
-
-### परिस्थिती कथन
-सपोर्ट इंजिनिअरिंग ग्रुपला ग्राहक डेटा बाहेर उघड न करता अंतर्गत FAQs उत्तर देण्यासाठी जलद प्रोटोटाइप हवे आहे. सत्र 2 आर्टिफॅक्ट्स मिनिमल इफेमरल RAG (कोणतेही टिकाव नाही) → संरचित CSV Q&A → दस्तऐवज पुनर्प्राप्ती उद्धरणासह → उद्देशपूर्ण गुणवत्ता मूल्यांकन (ragas) → Azure स्टेजिंगसाठी तयार स्थलांतर धोरणापर्यंत प्रगती करतात.
+### परिस्थिती कथा
+समर्थन अभियांत्रिकी गटाला ग्राहक डेटा बाह्यरित्या प्रदर्शित न करता अंतर्गत FAQ उत्तर देणारा जलद प्रोटोटाइप आवश्यक आहे. सत्र 2 चे घटक एक अतिमिती तात्पुरता RAG (टिकाऊपणा नाही) → संरचित CSV Q&A → दस्तऐवज पुनःप्राप्ति उद्धृत करत → वस्तुनिष्ठ गुणवत्ता मूल्यांकन (ragas) → Azure स्टेजिंगसाठी तयार स्थलांतर धोरण वेगवेगळ्या टप्प्यांत प्रगती करतात.
 
 ### विस्तार मार्ग
-पर्यायी सुधारणा टेबल वापरून विकसित करा: TF‑IDF च्या जागी FAISS/Chroma वापरा, मूल्यांकन कॉर्पस (50–100 Q/A) मोठा करा, faithfulness < threshold असताना मोठ्या मॉडेलकडे फॉलबॅक एस्कलेशन जोडा.
+ऐच्छिक सुधारणा तक्त्याचा वापर करून विकसित करा: TF-IDF चे FAISS/Chroma ने स्थानापन्न करा, मूल्यांकन कॉर्पस वाढवा (50–100 Q/A), प्रामाणिकपणा < मर्यादा ठेवल्यास मोठ्या मॉडेलकडे फॉलबॅक एस्केलेशन जोडा.
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**अस्वीकरण**:  
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित करण्यात आला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपयास लक्षात ठेवा की स्वयंचलित भाषांतरे त्रुटी किंवा अचूकतेच्या अभावाने युक्त असू शकतात. मूळ भाषेतील दस्तऐवज हा अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी, व्यावसायिक मानवी भाषांतराची शिफारस केली जाते. या भाषांतराचा वापर करून उद्भवलेल्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार राहणार नाही.
+**अस्वीकरण**:
+हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) चा वापर करून अनुवादित केला आहे. जरी आम्ही अचूकतेसाठी प्रयत्न करतो, तरी कृपया लक्षात घ्या की स्वयंचलित भाषांतरांमध्ये त्रुटी किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या मूळ भाषेत अधिकृत स्रोत मानला पाहिजे. महत्त्वाची माहिती असल्यास, व्यावसायिक मानवी भाषांतराची शिफारस केली जाते. या भाषांतराच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थलावणीसाठी आम्ही जबाबदार नाही.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
