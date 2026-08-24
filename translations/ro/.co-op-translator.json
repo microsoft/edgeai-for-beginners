@@ -7,7 +7,7 @@
   },
   "CHANGELOG.md": {
     "original_hash": "78ca68df03ae43371b203ea43d346dec",
-    "translation_date": "2025-10-30T14:26:14+00:00",
+    "translation_date": "2026-08-24T12:34:05+00:00",
     "source_file": "CHANGELOG.md",
     "language_code": "ro"
   },
@@ -19,7 +19,7 @@
   },
   "Module01/01.EdgeAIFundamentals.md": {
     "original_hash": "be25052ac4c842765e7f6f7eb4d7dcc5",
-    "translation_date": "2025-10-20T09:58:39+00:00",
+    "translation_date": "2026-08-24T12:38:33+00:00",
     "source_file": "Module01/01.EdgeAIFundamentals.md",
     "language_code": "ro"
   },
@@ -49,25 +49,25 @@
   },
   "Module02/01.PhiFamily.md": {
     "original_hash": "20892f7994d9e5d2473ad19dfa93cf6d",
-    "translation_date": "2025-09-18T18:24:16+00:00",
+    "translation_date": "2026-08-24T12:47:53+00:00",
     "source_file": "Module02/01.PhiFamily.md",
     "language_code": "ro"
   },
   "Module02/02.QwenFamily.md": {
     "original_hash": "1c8c05964be6fb235b026feed0bf066e",
-    "translation_date": "2025-10-01T21:45:10+00:00",
+    "translation_date": "2026-08-24T12:50:50+00:00",
     "source_file": "Module02/02.QwenFamily.md",
     "language_code": "ro"
   },
   "Module02/03.GemmaFamily.md": {
     "original_hash": "c6ab7eb1b8009ae984eaf6b85568f77a",
-    "translation_date": "2025-09-18T18:29:09+00:00",
+    "translation_date": "2026-08-24T12:54:33+00:00",
     "source_file": "Module02/03.GemmaFamily.md",
     "language_code": "ro"
   },
   "Module02/04.BitNETFamily.md": {
     "original_hash": "a56a3241aec9dc147b111ec10a2b3f2a",
-    "translation_date": "2025-09-18T18:14:28+00:00",
+    "translation_date": "2026-08-24T12:58:50+00:00",
     "source_file": "Module02/04.BitNETFamily.md",
     "language_code": "ro"
   },
@@ -97,7 +97,7 @@
   },
   "Module03/02.DeployingSLMinLocalEnv.md": {
     "original_hash": "0d9a6cd24a08aeac1328626abcc18ba8",
-    "translation_date": "2025-10-24T09:58:25+00:00",
+    "translation_date": "2026-08-24T12:45:43+00:00",
     "source_file": "Module03/02.DeployingSLMinLocalEnv.md",
     "language_code": "ro"
   },
@@ -193,7 +193,7 @@
   },
   "Module06/01.IntroduceAgent.md": {
     "original_hash": "44bc28c27b993c5fb988791b7a115705",
-    "translation_date": "2025-10-30T14:29:01+00:00",
+    "translation_date": "2026-08-24T12:43:55+00:00",
     "source_file": "Module06/01.IntroduceAgent.md",
     "language_code": "ro"
   },
@@ -235,7 +235,7 @@
   },
   "Module07/windowdeveloper.md": {
     "original_hash": "2305e750e93ad4bd79898cf149e01b49",
-    "translation_date": "2025-10-03T06:53:13+00:00",
+    "translation_date": "2026-08-24T12:37:02+00:00",
     "source_file": "Module07/windowdeveloper.md",
     "language_code": "ro"
   },
