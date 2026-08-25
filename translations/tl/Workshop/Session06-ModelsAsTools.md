@@ -1,21 +1,21 @@
-# Session 6: Foundry Local – Mga Modelo bilang Kasangkapan
+# Session 6: Foundry Local – Mga Modelo bilang mga Kasangkapan
 
 ## Abstrak
 
-Tratuhin ang mga modelo bilang mga kasangkapan na maaaring pagsamahin sa isang lokal na AI operating layer. Sa sesyong ito, ipapakita kung paano pagsamahin ang maraming espesyal na tawag sa SLM/LLM, piliing i-route ang mga gawain, at magbigay ng isang pinagsamang SDK surface para sa mga aplikasyon. Magtatayo ka ng magaan na model router + task planner, isasama ito sa isang app script, at ilalapat ang scaling path sa Azure AI Foundry para sa mga production workload.
+Ituring ang mga modelo bilang mga komposableng kasangkapan sa loob ng lokal na AI operating layer. Ipinapakita ng sesyon na ito kung paano i-chain ang maraming espesyalisadong tawag sa SLM/LLM, piliing i-route ang mga gawain, at i-expose ang isang pinag-isang SDK surface sa mga aplikasyon. Bubuo ka ng magaan na model router + task planner, isasama ito sa isang app script, at ilalahad ang scaling path patungo sa Azure AI Foundry para sa mga production workload.
 
 ## Mga Layunin sa Pagkatuto
 
-- **Pag-isipan** ang mga modelo bilang atomic tools na may deklaradong kakayahan
-- **I-route** ang mga kahilingan batay sa intensyon / heuristic scoring
-- **Pagsamahin** ang mga output sa multi-step na mga gawain (i-decompose → lutasin → i-refine)
-- **Isama** ang isang pinagsamang client API para sa mga downstream application
-- **I-scale** ang disenyo sa cloud (parehong OpenAI-compatible na kontrata)
+- **I-konsepto** ang mga modelo bilang atomic na kasangkapan na may ideklara na kakayahan
+- **I-route** ang mga kahilingan base sa intensyon / heuristic scoring
+- **I-chain** ang mga output sa multi-step na mga gawain (i-decompose → lutasin → pinuhin)
+- **I-integrate** ang isang pinag-isang client API para sa downstream na mga aplikasyon
+- **I-scale** ang disenyo sa cloud (parehong OpenAI-compatible contract)
 
 ## Mga Kinakailangan
 
-- Nakumpleto ang Sessions 1–5
-- Maraming lokal na modelo na naka-cache (hal., `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
+- Natapos ang Sessions 1–5
+- Maraming lokal na mga modelo ang naka-cache (hal., `phi-4-mini`, `deepseek-coder-1.3b`, `qwen2.5-0.5b`)
 
 ### Cross-Platform Environment Snippet
 
@@ -40,10 +40,9 @@ Remote/VM service access mula sa macOS:
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
+## Daloy ng Demo (30 min)
 
-## Demo Flow (30 min)
-
-### 1. Deklarasyon ng Kakayahan ng Kasangkapan (5 min)
+### 1. Pagdeklara ng Kakayahan ng Kasangkapan (5 min)
 
 Gumawa ng `samples/06-tools/models_catalog.py`:
 
@@ -64,8 +63,7 @@ CATALOG = {
 }
 ```
 
-
-### 2. Pagtukoy ng Intensyon at Routing (8 min)
+### 2. Pag-detekta ng Intensyon at Routing (8 min)
 
 Gumawa ng `samples/06-tools/router.py`:
 
@@ -91,13 +89,13 @@ def detect_intent(prompt: str) -> str:
     return "general"
 
 def select_model(intent: str) -> str:
-    # Score catalog: capability match first, then priority
+    # Iskor katalogo: unahin ang pagtugma ng kakayahan, pagkatapos ang prayoridad
     scored = []
     for name, meta in CATALOG.items():
         caps = meta["capabilities"]
         match = intent in caps
         scored.append((name, match, meta["priority"]))
-    # Sort: match True first, then lowest priority value
+    # Ayusin: unahin ang tumugmang True, pagkatapos ang pinakamababang halaga ng prayoridad
     scored.sort(key=lambda t: (not t[1], t[2]))
     return scored[0][0]
 
@@ -123,8 +121,7 @@ if __name__ == "__main__":
         print(f"Prompt: {t}\nModel: {r['model']} (intent={r['intent']})\nOutput: {r['output'][:160]}...\n")
 ```
 
-
-### 3. Multi-Step Task Chaining (7 min)
+### 3. Pagkadena ng Multi-Step na Gawain (7 min)
 
 Gumawa ng `samples/06-tools/pipeline.py`:
 
@@ -166,26 +163,25 @@ if __name__ == '__main__':
     print("FINAL:\n", result['final'][:400])
 ```
 
-
 ### 4. Starter Project: I-adapt ang `06-models-as-tools` (5 min)
 
 Mga Pagpapahusay:
-- Magdagdag ng streaming token support (progressive UI update)
+- Magdagdag ng suporta sa streaming token (progressive UI update)
 - Magdagdag ng confidence scoring: lexical overlap o prompt rubric
-- I-export ang trace JSON (intent → model → latency → token usage)
-- Ipatupad ang cache reuse para sa mga paulit-ulit na substeps
+- Mag-export ng trace JSON (intensyon → modelo → latency → paggamit ng token)
+- Ipatupad ang reuse ng cache para sa paulit-ulit na mga substep
 
-### 5. Scaling Path sa Azure (5 min)
+### 5. Path ng Pag-scale patungo sa Azure (5 min)
 
-| Layer | Lokal (Foundry) | Cloud (Azure AI Foundry) | Estratehiya sa Paglipat |
-|-------|-----------------|--------------------------|-------------------------|
-| Routing | Heuristic Python | Durable microservice | I-containerize at i-deploy ang API |
-| Models | SLMs na naka-cache | Managed deployments | I-map ang mga lokal na pangalan sa deployment IDs |
-| Observability | CLI stats/manual | Central logging & metrics | Magdagdag ng structured trace events |
-| Security | Lokal na host lamang | Azure auth / networking | Magdagdag ng key vault para sa mga lihim |
-| Cost | Resource ng device | Consumption billing | Magdagdag ng budget guardrails |
+| Layer | Lokal (Foundry) | Cloud (Azure AI Foundry) | Estratehiya sa Transisyon |
+|-------|-----------------|--------------------------|---------------------|
+| Routing | Heuristic Python | Durable microservice | Containerize & mag-deploy ng API |
+| Mga Modelo | SLMs na naka-cache | Managed deployments | I-map ang lokal na mga pangalan sa deployment IDs |
+| Observability | CLI stats/manwal | Central logging at metrics | Magdagdag ng mga structured trace events |
+| Seguridad | Lokal lang ang host | Azure auth / networking | Magpakilala ng key vault para sa mga lihim |
+| Gastos | Device resource | Consumption billing | Magdagdag ng mga budget guardrails |
 
-## Validation Checklist
+## Checklist sa Pag-validate
 
 ```powershell
 foundry model run phi-4-mini
@@ -194,40 +190,38 @@ python samples/06-tools/router.py
 python samples/06-tools/pipeline.py
 ```
 
-Asahan ang model selection batay sa intensyon at ang huling refined output.
+Inaasahan ang intensyon-based na pagpili ng modelo at panghuling pinaayos na output.
 
-## Troubleshooting
+## Pag-troubleshoot
 
 | Problema | Sanhi | Solusyon |
-|----------|-------|----------|
-| Lahat ng gawain ay na-route sa parehong modelo | Mahinang mga patakaran | Palawakin ang INTENT_RULES regex set |
-| Nabigo ang pipeline sa gitna ng hakbang | Walang na-load na modelo | Patakbuhin ang `foundry model run <model>` |
-| Mababa ang cohesion ng output | Walang refine phase | Magdagdag ng summarization/validation pass |
+|---------|-------|-----|
+| Lahat ng gawain ay naka-route sa parehong modelo | Mahinang mga panuntunan | Pagyamanin ang INTENT_RULES regex set |
+| Nabibigo ang pipeline sa kalagitnaan ng hakbang | Hindi na-load ang modelo | Patakbuhin ang `foundry model run <model>` |
+| Mababa ang pagkakaugnay-ugnay ng output | Walang refine phase | Magdagdag ng summarization/validation pass |
 
 ## Mga Sanggunian
 
 - Foundry Local SDK: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
 - Azure AI Foundry Docs: https://learn.microsoft.com/azure/ai-foundry
-- Prompt Quality Patterns: Tingnan ang Session 2
+- Mga Pattern sa Kalidad ng Prompt: Tingnan ang Session 2
 
 ---
 
 **Tagal ng Session**: 30 min  
-**Kahirapan**: Expert
+**Kahirapan**: Eksperto
 
-## Halimbawang Scenario at Workshop Mapping
+## Halimbawang Senaryo at Pagsasaayos sa Workshop
 
-| Workshop Scripts / Notebooks | Scenario | Layunin | Dataset / Catalog Source |
-|------------------------------|----------|---------|---------------------------|
-| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Developer assistant na humahawak ng mixed intent prompts (refactor, summarize, classify) | Heuristic intent → model alias routing na may token usage | Inline `CATALOG` + regex `RULES` |
-| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Multi-step planning & refinement para sa complex coding assistance task | Decompose → specialized execution → summarization refine step | Parehong `CATALOG`; mga hakbang na nagmula sa plan output |
+| Mga Workshop Script / Notebook | Senaryo | Layunin | Pinagmulan ng Dataset / Katalog |
+|------------------------------|----------|-----------|---------------------------|
+| `samples/session06/models_router.py` / `notebooks/session06_models_router.ipynb` | Assistant sa developer na humahawak ng halo-halong intensyon na mga prompt (refactor, summarize, classify) | Heuristic intent → model alias routing gamit ang paggamit ng token | Inline na `CATALOG` + regex `RULES` |
+| `samples/session06/models_pipeline.py` / `notebooks/session06_models_pipeline.ipynb` | Multi-step na pagpaplano & pag-refine para sa komplikadong coding assistance task | I-decompose → espesyalisadong pagpapatupad → hakbang ng summarization refine | Parehong `CATALOG`; mga hakbang na nagmula sa output ng plano |
 
-### Narrative ng Scenario
+### Kwento ng Senaryo
+Isang kasangkapan sa produktibidad ng engineering ang tumatanggap ng iba't ibang gawain: pag-refactor ng code, pag-summarize ng mga tala sa arkitektura, pag-classify ng feedback. Upang mabawasan ang latency at paggamit ng resource, isang maliit na general na modelo ang nagpaplano at nagsusuma, isang code-specialized na modelo ang humahawak ng refactoring, at isang magaan na modelo na may kakayahan sa classification ang naglalagay ng label sa feedback. Ipinapakita ng pipeline script ang chaining + refinement; ang router script ay nag-iisolate ng adaptive single-prompt routing.
 
-Isang engineering productivity tool ang tumatanggap ng iba't ibang gawain: pag-refactor ng code, pag-summarize ng architectural notes, pag-classify ng feedback. Upang mabawasan ang latency at paggamit ng resource, isang maliit na general model ang nagpa-plano at nag-summarize, isang code-specialized model ang humahawak sa refactoring, at isang lightweight classification-capable model ang naglalagay ng label sa feedback. Ang pipeline script ay nagpapakita ng chaining + refinement; ang router script ay nag-i-isolate ng adaptive single-prompt routing.
-
-### Catalog Snapshot
-
+### Snapshot ng Katalogo
 ```python
 CATALOG = {
     "phi-4-mini": {"capabilities": ["general", "summarize"], "priority": 2},
@@ -236,9 +230,7 @@ CATALOG = {
 }
 ```
 
-
-### Halimbawa ng Test Prompts
-
+### Mga Halimbawang Test Prompt
 ```json
 [
     "Refactor this Python function for readability",
@@ -248,11 +240,8 @@ CATALOG = {
 ]
 ```
 
-
-### Trace Extension (Opsyonal)
-
-Magdagdag ng per-step trace JSON lines para sa `models_pipeline.py`:
-
+### Extension ng Trace (Opsyonal)
+Magdagdag ng bawat-hakbang ng trace JSON lines para sa `models_pipeline.py`:
 ```python
 trace.append({
     "step": step_idx,
@@ -263,27 +252,25 @@ trace.append({
 })
 ```
 
+### Heuristic ng Escalation (Ideya)
+Kung ang plano ay may mga keyword na tulad ng "optimize", "security", o ang haba ng hakbang > 280 na mga character → i-escalate sa mas malaking modelo (hal., `gpt-oss-20b`) para sa hakbang na iyon lamang.
 
-### Escalation Heuristic (Ideya)
-
-Kung ang plano ay naglalaman ng mga keyword tulad ng "optimize", "security", o ang haba ng hakbang ay > 280 chars → i-escalate sa mas malaking modelo (hal., `gpt-oss-20b`) para sa hakbang na iyon lamang.
-
-### Opsyonal na Mga Pagpapahusay
+### Opsyonal na mga Pagpapahusay
 
 | Lugar | Pagpapahusay | Halaga | Pahiwatig |
-|------|--------------|--------|-----------|
-| Caching | Reuse manager + client objects | Mas mababang latency, mas kaunting overhead | Gamitin ang `workshop_utils.get_client` |
-| Usage Metrics | I-capture ang tokens & per-step latency | Profiling & optimization | I-time ang bawat routed call; i-store sa trace list |
-| Adaptive Routing | Confidence / cost aware | Mas mahusay na quality-cost trade-off | Magdagdag ng scoring: kung ang prompt > N chars o regex ay tumutugma sa domain → i-escalate sa mas malaking modelo |
-| Dynamic Capability Registry | Hot reload catalog | Walang restart redeploy | I-load ang `catalog.json` sa runtime; bantayan ang file timestamp |
-| Fallback Strategy | Robustness sa ilalim ng failures | Mas mataas na availability | Subukan ang primary → sa exception fallback alias |
-| Streaming Pipeline | Maagang feedback | Pagpapabuti ng UX | I-stream ang bawat hakbang at i-buffer ang final refine input |
-| Vector Intent Embeddings | Mas nuanced na routing | Mas mataas na intent accuracy | I-embed ang prompt, i-cluster & i-map ang centroid → capability |
-| Trace Export | Auditable chain | Compliance/reporting | Maglabas ng JSON lines: step, intent, model, latency_ms, tokens |
-| Cost Simulation | Pre-cloud estimation | Budget planning | Mag-assign ng notional cost/token bawat modelo & i-aggregate bawat task |
-| Deterministic Mode | Repro reproducibility | Stable benchmarking | Env: `temperature=0`, fixed steps count |
+|------|-------------|-------|------|
+| Caching | Muling paggamit ng manager + client objects | Mas mababang latency, mas kaunting overhead | Gamitin ang `workshop_utils.get_client` |
+| Usage Metrics | Kunin ang tokens & bawat-hakbang latency | Profiling at optimisasyon | Sukatin bawat routed na tawag; itago sa trace list |
+| Adaptive Routing | Confidence / kamalayan sa gastos | Mas magandang kalakalan sa kalidad-gastos | Magdagdag ng scoring: kung ang prompt > N na mga character o tumutugma ang regex sa domain → i-escalate sa mas malaking modelo |
+| Dynamic Capability Registry | Hot reload ng katalogo | Walang restart na pag-redeploy | I-load ang `catalog.json` sa runtime; bantayan ang timestamp ng file |
+| Fallback Strategy | Katatagan sa ilalim ng mga pagkabigo | Mas mataas na availability | Subukan ang pangunahing → sa exception fallback alias |
+| Streaming Pipeline | Maagang feedback | Pagpapabuti ng UX | I-stream ang bawat hakbang at i-buffer ang panghuling refine input |
+| Vector Intent Embeddings | Mas masalimuot na routing | Mas mataas na katumpakan ng intensyon | I-embed ang prompt, i-cluster at i-map ang centroid → kakayahan |
+| Trace Export | Chain na ma-audit | Compliance/pag-uulat | Maglabas ng mga JSON lines: hakbang, intensyon, modelo, latency_ms, tokens |
+| Cost Simulation | Estimasyong bago ang cloud | Pagpaplano sa budget | Magtalaga ng notional na gastos/token bawat modelo at i-aggregate bawat gawain |
+| Deterministic Mode | Pag-uulit ng reproduktibilidad | Matatag na benchmarking | Env: `temperature=0`, nakapirming bilang ng mga hakbang |
 
-#### Halimbawa ng Trace Structure
+#### Halimbawa ng Estruktura ng Trace
 
 ```python
 trace.append({
@@ -295,17 +282,15 @@ trace.append({
 })
 ```
 
-
-#### Adaptive Escalation Sketch
+#### Sketch ng Adaptive Escalation
 
 ```python
 if len(prompt) > 280 or 'compliance' in prompt.lower():
-    # escalate to larger reasoning model if available
+    # itaas sa mas malaking modelo ng pangangatwiran kung available
     alias = 'gpt-oss-20b'
 ```
 
-
-#### Model Catalog Hot Reload
+#### Hot Reload ng Model Catalog
 
 ```python
 import json, time, os
@@ -322,5 +307,7 @@ def get_catalog():
 
 ---
 
-**Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na mapagkakatiwalaang pinagmulan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Pagtatanggi**:
+Ang dokumentong ito ay isinalin gamit ang serbisyo ng AI translation na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't nagsusumikap kami para sa katumpakan, pakatandaan na ang awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang maling pagkakaintindi o maling interpretasyon na nagmula sa paggamit ng pagsasaling ito.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
