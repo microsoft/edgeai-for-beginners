@@ -1,16 +1,16 @@
-# Sesija 5: Brzo izgradite AI-agente uz Foundry Local
+# Sesija 5: Brzo izgradite AI-agentove pomoću Foundry Local
 
 ## Sažetak
 
-Dizajnirajte i koordinirajte AI agente s više uloga koristeći Foundry Local za rad u okruženju s niskom latencijom i očuvanjem privatnosti. Definirat ćete uloge agenata, strategije memorije, obrasce pozivanja alata i grafove izvršenja. Sesija uvodi obrasce za izgradnju koje možete proširiti pomoću Chainlit ili LangGraph. Početni projekt proširuje postojeći uzorak arhitekture agenata dodavanjem trajne memorije i evaluacijskih kuka.
+Dizajnirajte i orkestrirajte AI-agentove s višestrukim ulogama koristeći Foundry Local runtime s niskom latencijom i zaštitom privatnosti. Definirat ćete uloge agenata, strategije memorije, obrasce pozivanja alata i izvršne grafove. Sesija uvodi obrasce za strukturu koje možete proširiti pomoću Chainlit ili LangGraph. Početni projekt proširuje postojeći primjer arhitekture agenta kako bi dodao trajnu memoriju i kukice za evaluaciju.
 
 ## Ciljevi učenja
 
-- **Definiranje uloga**: Sistemski upiti i granice sposobnosti
-- **Implementacija memorije**: Kratkoročna (razgovor), dugoročna (vektor / datoteka), privremene bilješke
-- **Izgradnja tijeka rada**: Sekvencijalni, razgranati i paralelni koraci agenata
-- **Integracija alata**: Lagani obrazac pozivanja funkcijskih alata
-- **Evaluacija**: Osnovno praćenje + ocjenjivanje rezultata prema kriterijima
+- **Definirajte uloge**: Sistemske upute i granice mogućnosti
+- **Implementirajte memoriju**: Kratkoročna (razgovor), dugoročna (vektorska / datotečna), efemerne radne ploče
+- **Strukturirajte tijek rada**: Sekvencijalni, razgranati i paralelni koraci agenta
+- **Integrirajte alate**: Lagani obrazac poziva funkcijskih alata
+- **Evaluirajte**: Osnovno praćenje + ocjenjivanje prema rubrici
 
 ## Preduvjeti
 
@@ -18,7 +18,7 @@ Dizajnirajte i koordinirajte AI agente s više uloga koristeći Foundry Local za
 - Python s `foundry-local-sdk`, `openai`, opcionalno `chainlit`
 - Lokalni modeli pokrenuti (barem `phi-4-mini`)
 
-### Snippet za više platformi
+### Okruženje za više platformi – isječak
 
 Windows:
 ```powershell
@@ -36,15 +36,14 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai
 ```
 
-Ako pokrećete agente s macOS-a na udaljenom Windows host servisu:
+Ako pokrećete agente s macOS na udaljenom Windows host servisu:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
+## Tijek demonstracije (30 min)
 
-## Demo tijek (30 min)
-
-### 1. Definiranje uloga agenata i memorije (7 min)
+### 1. Definirajte uloge agenata i memoriju (7 min)
 
 Kreirajte `samples/05-agents/agents_core.py`:
 
@@ -112,15 +111,13 @@ if __name__ == "__main__":
     demo()
 ```
 
-
-### 2. CLI obrazac za izgradnju (3 min)
+### 2. Struktura CLI-a (3 min)
 
 ```powershell
 python samples/05-agents/agents_core.py
 ```
 
-
-### 3. Dodavanje pozivanja alata (7 min)
+### 3. Dodajte pozivanje alata (7 min)
 
 Proširite s `samples/05-agents/tools.py`:
 
@@ -141,8 +138,7 @@ TOOLS = {
 }
 ```
 
-
-Izmijenite `agents_core.py` kako biste omogućili jednostavnu sintaksu alata: korisnik piše `#tool:get_time`, a agent proširuje izlaz alata u kontekst prije generiranja.
+Izmijenite `agents_core.py` da dopustite jednostavnu sintaksu alata: korisnik piše `#tool:get_time` i agent proširuje izlaz alata u kontekst prije generiranja.
 
 ### 4. Orkestrirani tijek rada (6 min)
 
@@ -176,39 +172,37 @@ if __name__ == '__main__':
         print(f"== {k.upper()} ==\n{v}\n")
 ```
 
-
-### 5. Početni projekt: Proširenje `05-agent-architecture` (7 min)
+### 5. Početni projekt: Proširite `05-agent-architecture` (7 min)
 
 Dodajte:
-1. Sloj trajne memorije (npr. dodavanje JSON linija razgovora)
-2. Jednostavni evaluacijski kriterij: točnost / jasnoća / stil
-3. Opcionalni Chainlit front-end (dva taba: razgovor i praćenje)
-4. Opcionalni LangGraph stil stroja stanja (ako dodajete ovisnost) za odluke o grananju
+1. Trajni sloj memorije (npr. dodavanje razgovora u JSON linijama)
+2. Jednostavnomérica evaluacije: mjesta za faktografiju / jasnoću / stil
+3. Opcionalno Chainlit sučelje (dvije kartice: razgovor i tragovi)
+4. Opcionalna LangGraph stil stanja stroja (ako se dodaje ovisnost) za razgranate odluke
 
-## Provjera valjanosti
+## Popis za provjeru validacije
 
 ```powershell
 foundry model run phi-4-mini
 python samples/05-agents/orchestrator.py
 ```
 
-
-Očekujte strukturirani izlaz cjevovoda s bilješkom o ubrizgavanju alata.
+Očekujte strukturiran izlaz pipelinea s napomenom o umetnutom alatu.
 
 ## Pregled strategija memorije
 
 | Sloj | Svrha | Primjer |
-|------|-------|---------|
-| Kratkoročna | Kontinuitet dijaloga | Posljednjih N poruka |
-| Epizodna | Podsjećanje na sesiju | JSON po sesiji |
-| Semantička | Dugoročno dohvaćanje | Vektorska pohrana sažetaka |
-| Privremena bilješka | Koraci razmišljanja | Privatan lanac misli |
+|-------|---------|---------|
+| Kratkoročna | Kontinuitet dijaloga | Zadnjih N poruka |
+| Epizodna | Sjećanje na sesiju | JSON po sesiji |
+| Semantička | Dugoročno dohvaćanje | Vektorska baza sažetaka |
+| Radna ploča | Koraci rezoniranja | Ugrađeni lanac misli (privatno) |
 
-## Evaluacijski kukovi (konceptualno)
+## Kukice za evaluaciju (Konceptualno)
 
 ```python
 evaluation = {
-  "factuality": None,  # manual or heuristic
+  "factuality": None,  # ručno ili heuristički
   "clarity": None,
   "style": None,
   "latency_sec": generation_time,
@@ -216,14 +210,13 @@ evaluation = {
 }
 ```
 
-
 ## Rješavanje problema
 
 | Problem | Uzrok | Rješenje |
-|---------|-------|---------|
-| Ponavljajući odgovori | Prozor konteksta prevelik/premalen | Prilagodite parametar prozora memorije |
-| Alat nije pozvan | Pogrešna sintaksa | Koristite format `#tool:tool_name` |
-| Spora orkestracija | Više hladnih modela | Pokrenite zagrijavanje upita unaprijed |
+|-------|------|------------|
+| Ponavljajući odgovori | Prozor konteksta prevelik/previše mali | Podešavanje parametra memorijskog prozora |
+| Alat nije pozvan | Pogrešna sintaksa | Koristite format `#tool:naziv_alata` |
+| Spora orkestracija | Više hladnih modela | Pokrenuti zagrijavajuće upute unaprijed |
 
 ## Reference
 
@@ -238,17 +231,15 @@ evaluation = {
 
 ## Primjer scenarija i mapiranje radionice
 
-| Skripta radionice | Scenarij | Cilj | Primjer upita |
-|-------------------|----------|------|---------------|
-| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot za istraživanje znanja koji proizvodi sažetke prilagođene izvršnim osobama | Cjevovod s dva agenta (istraživanje → uređivačko poliranje) s opcionalnim različitim modelima | Objasnite zašto je inferencija na rubu važna za usklađenost. |
-| (Prošireni) koncept `tools.py` | Dodavanje alata za procjenu vremena i tokena | Demonstracija laganog obrasca pozivanja alata | #tool:get_time |
+| Scenarij radionice | Scenarij | Cilj | Primjer upute |
+|-----------------|----------|-----------|----------------|
+| `samples/session05/agents_orchestrator.py` / `notebooks/session05_agents_orchestrator.ipynb` | Bot za istraživanje znanja koji proizvodi sažetke prilagođene rukovodstvu | Dvostruki agent pipeline (istraživanje → urednička dorada) s opcionalnim posebnim modelima | Objasnite zašto edge inferencija ima važnost za usklađenost. |
+| (Prošireni) koncept `tools.py` | Dodajte alate za procjenu vremena i tokena | Prikaz laganog poziva alata | #tool:get_time |
 
 ### Narativ scenarija
+Tim za usklađenost dokumentacije treba brze interne sažetke temeljene na lokalnom znanju bez slanja nacrta u cloud servise. Istraživački agent prikuplja sažete činjenice; urednički agent prepisuje radi jasnoće za rukovodstvo. Mogu se dodijeliti različiti modeli za optimizaciju latencije (brzi SLM) vs stilsku doradu (veći model samo po potrebi).
 
-Tim za dokumentaciju usklađenosti treba brze interne sažetke iz lokalnog znanja bez slanja nacrta u cloud servise. Agent istraživač prikuplja sažete činjenične točke; agent urednik prepisuje za jasnoću prilagođenu izvršnim osobama. Različiti aliasi modela mogu se dodijeliti za optimizaciju latencije (brzi SLM) naspram stilskog poliranja (veći model samo kad je potrebno).
-
-### Primjer okruženja s više modela
-
+### Primjer višemodelnog okruženja
 ```powershell
 cd Workshop/samples
 set AGENT_MODEL_PRIMARY=phi-4-mini
@@ -256,9 +247,7 @@ set AGENT_MODEL_EDITOR=gpt-oss-20b
 python -m session05.agents_orchestrator
 ```
 
-
-### Struktura praćenja (opcionalno)
-
+### Struktura traga (opcionalno)
 ```json
 {
     "step": 1,
@@ -270,25 +259,24 @@ python -m session05.agents_orchestrator
 }
 ```
 
-
-Svaki korak spremite u JSONL datoteku za kasnije ocjenjivanje prema kriterijima.
+Sačuvajte svaki korak u JSONL datoteku za kasnije ocjenjivanje prema rubrici.
 
 ### Opcionalna poboljšanja
 
-| Tema | Poboljšanje | Prednost | Skica implementacije |
-|------|-------------|----------|-----------------------|
-| Uloge s više modela | Različiti modeli po agentu (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specijalizacija i brzina | Odaberite alias varijable okruženja, pozovite `chat_once` s aliasom po ulozi |
-| Strukturirano praćenje | JSON praćenje svakog koraka (alat, unos, latencija, tokeni) | Debug i evaluacija | Dodajte dict u listu; napišite `.jsonl` na kraju |
-| Trajna memorija | Ponovno učitavanje konteksta dijaloga | Kontinuitet sesije | Spremite `Agent.memory` u `sessions/<ts>.json` |
-| Registar alata | Dinamičko otkrivanje alata | Proširivost | Održavajte `TOOLS` dict i introspektirajte imena/opise |
-| Ponovno pokušavanje i odgoda | Robusni dugi lanci | Smanjenje privremenih grešaka | Omotajte `act` s try/except + eksponencijalnom odgodom |
-| Ocjenjivanje prema kriterijima | Automatske kvalitativne oznake | Praćenje poboljšanja | Sekundarni prolaz modela: "Ocijeni jasnoću 1-5" |
-| Vektorska memorija | Semantičko dohvaćanje | Bogat dugoročni kontekst | Ugradite sažetke, dohvatite top-k u sistemsku poruku |
-| Streaming odgovori | Brži percipirani odgovor | Poboljšanje korisničkog iskustva | Koristite streaming kad bude dostupno i ispisujte djelomične tokene |
+| Tema | Poboljšanje | Korist | Skica implementacije |
+|-------|------------|---------|-----------------------|
+| Višemodelne uloge | Različiti modeli po agentu (`AGENT_MODEL_PRIMARY`, `AGENT_MODEL_EDITOR`) | Specijalizacija i brzina | Odaberite alias varijable okruženja, pozovite `chat_once` s aliasom po ulozi |
+| Strukturirani tragovi | JSON trag svakog čina (alat, unos, latencija, tokeni) | Debug i evaluacija | Dodajte dict na listu; na kraju zapišite `.jsonl` |
+| Trajnost memorije | Ponavljajoći kontekst razgovora | Kontinuitet sesije | Izvezite `Agent.memory` u `sessions/<ts>.json` |
+| Registar alata | Dinamičko otkrivanje alata | Proširivost | Održavajte riječnik `TOOLS` i introspektirajte imena/opise |
+| Ponavljanje i povlačenje | Robusne duge lančane operacije | Smanjenje privremenih pogrešaka | Zamotajte `act` s try/except + eksponencijalnim povlačenjem |
+| Ocjenjivanje prema rubrici | Automatske kvalitativne oznake | Praćenje poboljšanja | Sekundarni prolaz potiče model: "Ocijenite jasnoću 1-5" |
+| Vektorska memorija | Semantičko sjećanje | Bogat dugoročni kontekst | Ugradite sažetke, dohvatite top-k u sistemsku poruku |
+| Streaming odgovori | Brže percipirani odgovor | Poboljšanje korisničkog iskustva | Koristite streaming kad je dostupan i isperite djelomične tokene |
 | Deterministički testovi | Kontrola regresije | Stabilan CI | Pokrenite s `temperature=0`, fiksnim sjemenkama upita |
-| Paralelno grananje | Brže istraživanje | Propusnost | Koristite `concurrent.futures` za neovisne korake agenata |
+| Paralelno razgrananje | Brže ispitivanje | Protok | Koristite `concurrent.futures` za neovisne korake agenata |
 
-#### Primjer zapisa praćenja
+#### Primjer zapisa traga
 
 ```python
 trace.append({
@@ -300,18 +288,18 @@ trace.append({
 })
 ```
 
-
-#### Jednostavni evaluacijski upit
+#### Jednostavna evaluacija upita
 
 ```python
 score_prompt = f"Rate clarity (1-5) ONLY as a number for this answer:\n{answer}"
 rating, _ = chat_once(PRIMARY_ALIAS, messages=[{"role":"user","content":score_prompt}], max_tokens=4, temperature=0)
 ```
 
-
-Spremite parove (`answer`, `rating`) za izgradnju povijesnog grafikona kvalitete.
+Snimite parove (`answer`, `rating`) da biste izgradili povijesni graf kvalitete.
 
 ---
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Napomena**:
+Ovaj dokument je preveden korištenjem AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati greške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za važne informacije preporuča se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakva nesporazumevanja ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
