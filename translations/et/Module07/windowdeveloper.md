@@ -1,304 +1,313 @@
-# Windows Edge AI Arenduse Juhend
+# Windows Edge AI arendusjuhend
 
 ## Sissejuhatus
 
-Tere tulemast Windows Edge AI arenduse juhendisse – teie põhjalik juhend intelligentsete rakenduste loomiseks, mis kasutavad Microsofti Windows AI Foundry platvormi seadmesisest tehisintellekti. See juhend on mõeldud spetsiaalselt Windowsi arendajatele, kes soovivad integreerida oma rakendustesse tipptasemel Edge AI võimalusi, kasutades ära Windowsi riistvara kiirenduse täielikku potentsiaali.
+Tere tulemast Windows Edge AI arendusse – teie põhjalik juhend intelligentsete rakenduste loomiseks, mis kasutavad seadmesisese AI jõudu Microsofti Windows AI Foundry platvormi abil. See juhend on spetsiaalselt loodud Windowsi arendajatele, kes soovivad oma rakendustesse integreerida tipptasemel Edge AI võimekused, samal ajal kasutades Windowsi riistvara kiirenduse kogu spektrit.
 
-### Windows AI eelised
+### Windows AI eelis
 
-Windows AI Foundry on ühtne, usaldusväärne ja turvaline platvorm, mis toetab kogu tehisintellekti arenduse elutsüklit – alates mudeli valikust ja peenhäälestusest kuni optimeerimise ja juurutamiseni CPU, GPU, NPU ja hübriidpilve arhitektuurides. See platvorm demokratiseerib tehisintellekti arendust, pakkudes:
+Windows AI Foundry esindab ühtset, usaldusväärset ja turvalist platvormi, mis toetab AI arendaja kogu elutsüklit – mudeli valimisest ja täpsustamisest optimeerimise ja juurutamiseni CPU, GPU, NPU ja hübriidpilve arhitektuurides. See platvorm demokraatiseerib AI arenduse, pakkudes:
 
-- **Riistvara abstraktsioon**: sujuv juurutamine AMD, Inteli, NVIDIA ja Qualcomi kiipidel
-- **Seadmesisene intelligentsus**: privaatsust säilitav tehisintellekt, mis töötab täielikult kohalikul riistvaral
-- **Optimeeritud jõudlus**: mudelid, mis on eeloptimeeritud Windowsi riistvara konfiguratsioonide jaoks
-- **Ettevõttevalmidus**: tootmisklassi turvalisus ja vastavusnõuded
+- **Riistvara abstraktsioon**: sujuv juurutamine AMD, Inteli, NVIDIA ja Qualcommi kiibistikel
+- **Seadmesisene intelligentsus**: privaatsust tagav AI, mis töötab täielikult lokaalsel riistvaral
+- **Optimeeritud jõudlus**: mudelid on Windowsi riistvarakokkuvõtetele eeloptimeeritud
+- **Ettevõttevalmidus**: tootmisklassi turvafunktsioonid ja nõuetekohasus
 
-### Windows ML
-Windows Machine Learning (ML) võimaldab C#, C++ ja Python arendajatel käivitada ONNX tehisintellekti mudeleid kohapeal Windowsi arvutites, kasutades ONNX Runtime'i, mis haldab automaatselt erinevate riistvarade (CPU, GPU, NPU) täitmise pakkujaid. [ONNX Runtime](https://onnxruntime.ai/docs/) ühildub mudelitega, mis on loodud PyTorch, Tensorflow/Keras, TFLite, scikit-learn ja teiste raamistikudega.
+### Windows ML 
+Windows Machine Learning (ML) võimaldab C#, C++ ja Python arendajatel käivitada ONNX AI mudeleid lokaalselt Windowsi arvutites ONNX Runtime'i kaudu, automaatse käituse pakkujate haldusega erinevate riistvarade (CPU, GPU, NPU) jaoks. [ONNX Runtime](https://onnxruntime.ai/docs/) saab kasutada PyTorchi, Tensorflow/Keras, TFLite, scikit-learn ja teiste raamistike mudelitega.
 
-![WindowsML Diagramm, mis illustreerib ONNX mudeli liikumist Windows ML kaudu NPU-de, GPU-de ja CPU-de juurde.](https://learn.microsoft.com/en-us/windows/ai/images/winml-diagram.png)
 
-Windows ML pakub jagatud Windowsi ulatuses ONNX Runtime'i koopiat ning võimalust dünaamiliselt alla laadida täitmise pakkujaid (EP-sid).
+![WindowsML Joonis, mis illustreerib ONNX mudeli liikumist läbi Windows ML, et jõuda NPUsse, GPUdesse ja CPDesse.](https://learn.microsoft.com/en-us/windows/ai/images/winml-diagram.png)
 
-### Miks valida Windows Edge AI jaoks?
+Windows ML pakub jagatud kogu Windowsi ulatuses ONNX Runtime'i koopiat ning võimalust dünaamiliselt alla laadida käituse pakkujaid (EP-sid).
 
-**Universaalne riistvaratugi**  
-Windows ML pakub automaatset riistvara optimeerimist kogu Windowsi ökosüsteemis, tagades, et teie tehisintellekti rakendused töötavad optimaalselt sõltumata aluseks olevast kiipide arhitektuurist.
+### Miks Windows Edge AI jaoks?
 
-**Integreeritud tehisintellekti käitusaeg**  
-Sisseehitatud Windows ML järeldusmootor kõrvaldab keerulised seadistamisnõuded, võimaldades arendajatel keskenduda rakenduse loogikale, mitte infrastruktuuri probleemidele.
+**Ülemaailmne riistvaratugi**
+Windows ML pakub automaatset riistvara optimeerimist kogu Windowsi ökosüsteemis, tagades, et teie AI rakendused töötavad optimaalselt sõltumata põhialusest kiibistiku arhitektuurist.
 
-**Copilot+ PC optimeerimine**  
-Spetsiaalselt loodud API-d järgmise põlvkonna Windowsi seadmete jaoks, millel on pühendatud närvitöötlusüksused (NPU-d), pakkudes erakordset jõudlust vati kohta.
+**Integreeritud AI käituskeskkond**
+Windows ML sisseehitatud järeldusmootor kõrvaldab keerukad seadistamisnõuded, võimaldades arendajatel keskenduda rakenduse loogikale, mitte infrastruktuurile.
 
-**Arendajate ökosüsteem**  
-Rikkalik tööriistakomplekt, sealhulgas Visual Studio integratsioon, põhjalik dokumentatsioon ja näidisrakendused, mis kiirendavad arendustsükleid.
+**Copilot+ PC optimeerimine**
+Eesmärgipärased API-d, mis on spetsiaalselt loodud järgmise põlvkonna Windowsi seadmete jaoks, kus on pühendatud närvivõrgu töötlemise üksused (NPUd), pakkudes erakordset jõudlust vatt.
+
+**Arendajate ökosüsteem**
+Rikkalikud tööriistad, sh Visual Studio integratsioon, põhjalik dokumentatsioon ja näidisarendused, mis kiirendavad arendusprotsesse.
 
 ## Õpieesmärgid
 
-Selle Windows Edge AI arenduse juhendi läbimisega omandate olulised oskused tootmisvalmis tehisintellekti rakenduste loomiseks Windowsi platvormil.
+Selle Windows Edge AI arendusjuhendi lõpetamisel omandate põhioskused tootmisvalmis AI rakenduste loomiseks Windowsi platvormil.
 
-### Põhitehnilised pädevused
+### Põhilised tehnilised pädevused
 
-**Windows AI Foundry valdamine**  
-- Mõista Windows AI Foundry platvormi arhitektuuri ja komponente  
-- Navigeerida kogu tehisintellekti arenduse elutsüklis Windowsi ökosüsteemis  
-- Rakendada turvalisuse parimaid tavasid seadmesiseste tehisintellekti rakenduste jaoks  
-- Optimeerida rakendusi erinevate Windowsi riistvara konfiguratsioonide jaoks  
+**Windows AI Foundry valdamine**
+- Mõista Windows AI Foundry platvormi arhitektuuri ja komponente
+- Navigeerida kogu AI arenduse elutsüklis Windowsi ökosüsteemis
+- Rakendada turvalisuse parimaid praktikaid seadmesiseste AI rakenduste jaoks
+- Optimeerida rakendusi erinevate Windowsi riistvara konfiguratsioonide jaoks
 
-**API integratsiooni ekspertiis**  
-- Valda Windows AI API-sid teksti, visiooni ja multimodaalsete rakenduste jaoks  
-- Rakenda Phi Silica keelemudeli integreerimist teksti genereerimiseks ja põhjendamiseks  
-- Juuruta arvutinägemise võimalusi, kasutades sisseehitatud pilditöötluse API-sid  
-- Kohanda eelnevalt treenitud mudeleid, kasutades LoRA (Low-Rank Adaptation) tehnikaid  
+**API integratsiooni ekspertteadmised**
+- Valdada Windows AI API-sid teksti, nägemise ja multimodaalsete rakenduste jaoks
+- Integreerida Phi Silica keelemudeli kasutus teksti genereerimiseks ja järeldamiseks
+- Juurutada arvutinägemise võimekusi sisseehitatud pilditöötluse API-dega
+- Kohandada eelõpetatud mudeleid LoRA (madala järjestusega adapteerimine) tehnikate abil
 
-**Foundry Local rakendamine**  
-- Sirvi, hinda ja juuruta avatud lähtekoodiga keelemudeleid, kasutades Foundry Local CLI-d  
-- Mõista mudelite optimeerimist ja kvantifitseerimist kohalikuks juurutamiseks  
-- Rakenda võrguühenduseta tehisintellekti võimalusi, mis töötavad ilma internetiühenduseta  
-- Halda mudelite elutsükleid ja värskendusi tootmiskeskkondades  
+**Foundry Local rakendamine**
+- Sirvida, hinnata ja juurutada avatud lähtekoodiga keelemudeleid Foundry Local CLI kaudu
+- Mõista mudelite optimeerimist ja kvantiseerimist lokaalseks juurutamiseks
+- Rakendada võrguühenduseta AI võimekusi, mis toimivad ilma internetiühenduseta
+- Hallata mudelite elutsükleid ja uuendusi tootmiskeskkonnas
 
-**Windows ML juurutamine**  
-- Too kohandatud ONNX mudelid Windowsi rakendustesse, kasutades Windows ML-i  
-- Kasuta automaatset riistvara kiirendust CPU, GPU ja NPU arhitektuurides  
-- Rakenda reaalajas järeldusi optimaalse ressursikasutusega  
-- Kujunda skaleeritavaid tehisintellekti rakendusi erinevatele Windowsi seadmekategooriatele  
+**Windows ML juurutus**
+- Too kohandatud ONNX mudelid Windowsi rakendustesse Windows ML abil
+- Kasuta automaatset riistvarakiirendust CPU, GPU ja NPU arhitektuuridel
+- Rakenda reaalajas järeldust optimaalse ressursside kasutusega
+- Kujunda skaleeritavaid AI rakendusi erinevatesse Windowsi seadmete kategooriatesse
 
-### Rakenduste arendamise oskused
+### Rakenduste arendusoskused
 
-**Platvormidevaheline Windowsi arendus**  
-- Loo tehisintellektiga varustatud rakendusi, kasutades .NET MAUI-d universaalseks Windowsi juurutamiseks  
-- Integreeri tehisintellekti võimalusi Win32, UWP ja progressiivsetesse veebirakendustesse  
-- Rakenda reageerivaid kasutajaliidese kujundusi, mis kohanduvad tehisintellekti töötlemise olekutega  
-- Käsitle asünkroonseid tehisintellekti toiminguid, järgides õigeid kasutajakogemuse mustreid  
+**Platvormideülene Windowsi arendus**
+- Ehita AI toetatud rakendusi .NET MAUI abil universaalseks Windowsi juurutuseks
+- Integreeri AI võimekused Win32, UWP ja Progressiivsetesse Veebirakendustesse
+- Rakenda reageerivaid kasutajaliidese kujundusi, mis kohanduvad AI töötlemise olekuga
+- Halda asünkroonseid AI operatsioone, järgides korrapärast kasutajakogemuse mustrit
 
-**Jõudluse optimeerimine**  
-- Profiili ja optimeeri tehisintellekti järelduste jõudlust erinevate riistvara konfiguratsioonide vahel  
-- Rakenda tõhusat mäluhaldust suurte keelemudelite jaoks  
-- Kujunda rakendusi, mis degradeeruvad sujuvalt vastavalt saadaolevatele riistvaravõimalustele  
-- Kasuta vahemälu strateegiaid sageli kasutatavate tehisintellekti toimingute jaoks  
+**Jõudluse optimeerimine**
+- Profiili ja optimeeri AI järelduste jõudlust erinevates riistvarakonfiguratsioonides
+- Rakenda tõhusat mäluhaldust suurte keelemudelite jaoks
+- Kujunda rakendusi nii, et need degradeeruksid sujuvalt vastavalt riistvara võimekusele
+- Kasuta vahemällu salvestamise strateegiaid sagedasti kasutatavate AI toimingute jaoks
 
-**Tootmisvalmidus**  
-- Rakenda põhjalikku vigade käsitlemist ja varumehhanisme  
-- Kujunda telemeetria ja jälgimine tehisintellekti rakenduste jõudluse jaoks  
-- Rakenda turvalisuse parimaid tavasid kohalike tehisintellekti mudelite salvestamiseks ja käitamiseks  
-- Planeeri juurutusstrateegiaid ettevõtete ja tarbijarakenduste jaoks  
+**Tootmisvalmidus**
+- Rakenda põhjalikku veakäsitlust ja varuplaanimehhanisme
+- Kujunda telemeetriat ja jälgimist AI rakenduse jõudluse jaoks
+- Kasuta turvalisi praktikaid lokaalse AI mudeli salvestamisel ja täitmisel
+- Plaanita juurutusstrateegiaid ettevõtte- ja tarbijarakendustele
 
 ### Äri- ja strateegiline arusaam
 
-**Tehisintellekti rakenduste arhitektuur**  
-- Kujunda hübriidarhitektuure, mis optimeerivad kohaliku ja pilve tehisintellekti töötlemise vahel  
-- Hinda kompromisse mudeli suuruse, täpsuse ja järelduskiiruse vahel  
-- Planeeri andmevoo arhitektuure, mis säilitavad privaatsuse, võimaldades samal ajal intelligentsust  
-- Rakenda kulutõhusaid tehisintellekti lahendusi, mis skaleeruvad vastavalt kasutajate nõudmistele  
+**AI rakenduse arhitektuur**
+- Kujunda hübriidseid arhitektuure, mis optimeerivad lokaalse ja pilve AI töötlemise vahel
+- Hinda kompromisse mudeli suuruse, täpsuse ja järelduse kiiruse vahel
+- Planeeri andmevoo arhitektuure, mis säilitavad privaatsuse, võimaldades intelligentsust
+- Rakenda kuluefektiivseid AI lahendusi, mis skaleeruvad kasutajate nõudlusega
 
-**Turupositsioneerimine**  
-- Mõista Windowsi-põhiste tehisintellekti rakenduste konkurentsieeliseid  
-- Tuvasta kasutusjuhtumid, kus seadmesisene tehisintellekt pakub paremat kasutajakogemust  
-- Arenda turule sisenemise strateegiaid tehisintellektiga täiustatud Windowsi rakenduste jaoks  
-- Positsioneeri rakendusi, et kasutada ära Windowsi ökosüsteemi eeliseid  
+**Turupositsioneerimine**
+- Mõista Windowsi natiivsete AI rakenduste konkurentsieeliseid
+- Tuvasta kasutusjuhtumid, kus seadmesisene AI pakub paremat kasutajakogemust
+- Arenda turuletoomise strateegiaid AI-võimendatud Windowsi rakendustele
+- Positsioneeri rakendused nii, et nad kasutaksid Windowsi ökosüsteemi eeliseid
 
 ## Windows App SDK AI näidised
 
-Windows App SDK pakub põhjalikke näidiseid, mis demonstreerivad tehisintellekti integreerimist mitmesugustes raamistikus ja juurutusstsenaariumides. Need näidised on olulised viited Windowsi tehisintellekti arenduse mustrite mõistmiseks.
+Windows App SDK pakub kõikehõlmavaid näidiseid, mis demonstreerivad AI integreerimist mitme raamistiku ja juurutusstsenaariumi vahel. Need näidised on olulised viited Windows AI arendusmustrite mõistmiseks.
 
 ### Windows AI Foundry näidised
 
-| Näidis | Raamistik | Fookusala | Põhifunktsioonid |
-|--------|-----------|-----------|------------------|
-| [cs-winui](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsAIFoundry/cs-winui) | C# WinUI 3 | Windows AI API-de integreerimine | Täielik WinUI rakendus, mis demonstreerib Windows AI API-sid, ARM64 optimeerimist, pakendatud juurutust |
+| Näidis | Raamistik | Keskendunud valdkond | Põhifunktsioonid |
+|--------|-----------|---------------------|-------------------|
+| [cs-winui](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsAIFoundry/cs-winui) | C# WinUI 3 | Windows AI API-de integratsioon | Täielik WinUI rakendus, mis demonstreerib Windows AI API-sid, ARM64 optimeerimist, pakendatud juurutust |
 
-**Põhitehnoloogiad:**  
-- Windows AI API-d  
-- WinUI 3 raamistik  
-- ARM64 platvormi optimeerimine  
-- Copilot+ PC ühilduvus  
-- Pakendatud rakenduse juurutus  
+**Põhitehnoloogiad:**
+- Windows AI API-d
+- WinUI 3 raamistik
+- ARM64 platvormi optimeerimine
+- Copilot+ PC ühilduvus
+- Pakendatud rakenduse juurutus
 
-**Eeltingimused:**  
-- Windows 11 koos Copilot+ PC soovitatav  
-- Visual Studio 2022  
-- ARM64 ehituse konfiguratsioon  
-- Windows App SDK 1.8.1+  
+**Eeltingimused:**
+- Windows 11 koos Copilot+ PC soovituslik
+- Visual Studio 2022
+- ARM64 build konfiguratsioon
+- Windows App SDK 1.8.1 või uuem
 
 ### Windows ML näidised
 
 #### C++ näidised
 
-| Näidis | Tüüp | Fookusala | Põhifunktsioonid |
-|--------|------|-----------|------------------|
+| Näidis | Tüüp | Keskendunud valdkond | Põhifunktsioonid |
+|--------|------|---------------------|-------------------|
 | [CppConsoleDesktop](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Konsoolirakendus | Põhiline Windows ML | EP avastamine, käsurea valikud, mudeli kompileerimine |
-| [CppConsoleDesktop.FrameworkDependent](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Konsoolirakendus | Raamistiku juurutus | Jagatud käitusaeg, väiksem juurutusmaht |
-| [CppConsoleDesktop.SelfContained](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Konsoolirakendus | Iseseisev juurutus | Iseseisev juurutus, ilma käitusaja sõltuvusteta |
-| [CppConsoleDll](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | DLL | Raamatukogu kasutamine | WindowsML jagatud raamatukogus, mäluhaldus |
-| [CppResnetBuildDemo](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Demo | ResNet õpetus | Mudeli teisendamine, EP kompileerimine, Build 2025 õpetus |
+| [CppConsoleDesktop.FrameworkDependent](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Konsoolirakendus | Raamistiku juurutus | Jagatud runtime, väiksem juurutuse maht |
+| [CppConsoleDesktop.SelfContained](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Konsoolirakendus | Isoleeritud juurutus | Isoleeritud juurutus, ilma runtime sõltuvusteta |
+| [CppConsoleDll](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | DLL | Raamatukogu kasutus | WindowsML jagatud raamatukogus, mäluhaldus |
+| [CppResnetBuildDemo](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Demo | ResNet õpetus | Mudelite teisendamine, EP kompileerimine, Build 2025 õpetus |
 
 #### C# näidised
 
 **Konsoolirakendused**
 
-| Näidis | Tüüp | Fookusala | Põhifunktsioonid |
-|--------|------|-----------|------------------|
-| [CSharpConsoleDesktop](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs) | Konsoolirakendus | Põhiline C# integreerimine | Jagatud abivahendite kasutamine, käsurealiides |
-| [ResnetBuildDemoCS](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs) | Demo | ResNet õpetus | Mudeli teisendamine, EP kompileerimine, Build 2025 õpetus |
+| Näidis | Tüüp | Keskendunud valdkond | Põhifunktsioonid |
+|--------|------|---------------------|-------------------|
+| [CSharpConsoleDesktop](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs) | Konsoolirakendus | Põhiline C# integratsioon | Jagatud abistaja kasutus, käsurea liides |
+| [ResnetBuildDemoCS](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs) | Demo | ResNet õpetus | Mudelite teisendamine, EP kompileerimine, Build 2025 õpetus |
 
 **GUI rakendused**
 
-| Näidis | Raamistik | Fookusala | Põhifunktsioonid |
-|--------|-----------|-----------|------------------|
-| [cs-wpf](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs-wpf) | WPF | Lauaarvuti GUI | Pildiklassifikatsioon WPF liidesega |
-| [cs-winforms](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs-winforms) | Windows Forms | Traditsiooniline GUI | Pildiklassifikatsioon Windows Formsiga |
-| [cs-winui](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs-winui) | WinUI 3 | Kaasaegne GUI | Pildiklassifikatsioon WinUI 3 liidesega |
+| Näidis | Raamistik | Keskendunud valdkond | Põhifunktsioonid |
+|--------|-----------|---------------------|-------------------|
+| [cs-wpf](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs-wpf) | WPF | Töölaua GUI | Pildi klassifitseerimine WPF liidesega |
+| [cs-winforms](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs-winforms) | Windows Forms | Traditsiooniline GUI | Pildi klassifitseerimine Windows Formsiga |
+| [cs-winui](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs-winui) | WinUI 3 | Moodne GUI | Pildi klassifitseerimine WinUI 3 liidesega |
 
 #### Python näidised
 
-| Näidis | Keel | Fookusala | Põhifunktsioonid |
-|--------|------|-----------|------------------|
-| [SqueezeNetPython](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/python) | Python | Pildiklassifikatsioon | WinML Python sidumised, partii pilditöötlus |
+| Näidis | Keelel | Keskendunud valdkond | Põhifunktsioonid |
+|--------|----------|---------------------|-------------------|
+| [SqueezeNetPython](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/python) | Python | Pildi klassifitseerimine | WinML Python sidemed, partii pilditöötlus |
 
 ### Näidiste eeltingimused
 
-**Süsteeminõuded:**  
-- Windows 11 arvuti, mis töötab versioonil 24H2 (ehitus 26100) või uuemal  
-- Visual Studio 2022 koos C++ ja .NET töökoormustega  
-- Windows App SDK 1.8.1 või uuem  
-- Python 3.10-3.13 Python näidiste jaoks x64 ja ARM64 seadmetel  
+**Süsteeminõuded:**
+- Windows 11 arvuti, mis töötab versiooniga 24H2 (build 26100) või hilisem
+- Visual Studio 2022 koos C++ ja .NET töökoormustega
+- Windows App SDK 1.8.1 või uuem
+- Python 3.10-3.13 Python näidiste jaoks x64 ja ARM64 seadmetel
 
-**Windows AI Foundry spetsiifiline:**  
-- Copilot+ PC soovitatav optimaalse jõudluse jaoks  
-- ARM64 ehituse konfiguratsioon Windows AI näidiste jaoks  
-- Paketi identiteet vajalik (pakendamata rakendusi enam ei toetata)  
+**Windows AI Foundry spetsiifilised:**
+- Copilot+ PC optimaalset jõudlust soovitatakse
+- ARM64 build konfiguratsioon Windows AI näidiste jaoks
+- Vajalik pakendi identiteet (pakendamata rakendusi enam ei toetata)
 
-### Tavaline näidiste töövoog
+### Üldine näidise töövoog
 
-Enamik Windows ML näidiseid järgib seda standardset mustrit:
+Enamik Windows ML näidiseid järgib seda standardmustrit:
 
-1. **Keskkonna algatamine** – Loo ONNX Runtime keskkond  
-2. **Täitmise pakkujate registreerimine** – Avasta ja registreeri saadaolevad riistvara kiirendid (CPU, GPU, NPU)  
-3. **Mudeli laadimine** – Laadi ONNX mudel, vajadusel kompileeri sihtriistvara jaoks  
-4. **Sisendi eeltöötlus** – Konverteeri pildid/andmed mudeli sisendi formaati  
-5. **Järelduse käivitamine** – Käivita mudel ja saa prognoosid  
-6. **Tulemuste töötlemine** – Rakenda softmax ja kuva parimad prognoosid  
+1. **Keskkonna algatamine** - Loo ONNX Runtime keskkond
+2. **Käituse pakkujate registreerimine** - Otsi ja registreeri saadaval olevad riistvarakiirendid (CPU, GPU, NPU)
+3. **Mudeli laadimine** - Laadi ONNX mudel, vajadusel kompileeri sihtseadmele
+4. **Sisendi eeltöötlus** - Muuda pildid/andmed mudeli sisendvormingusse
+5. **Järelduse käivitamine** - Käivita mudel ja saa prognoosid
+6. **Tulemuste töötlemine** - Rakenda softmax ja kuva tipptulemused
 
-### Kasutatavad mudelid
+### Kasutatavad mudelifailid
 
 | Mudel | Eesmärk | Kaasas | Märkused |
-|-------|---------|--------|----------|
-| SqueezeNet | Kerge pildiklassifikatsioon | ✅ Kaasas | Eeltreenitud, kasutusvalmis |
-| ResNet-50 | Kõrge täpsusega pildiklassifikatsioon | ❌ Vajab teisendamist | Kasuta [AI Toolkit](https://code.visualstudio.com/docs/intelligentapps/modelconversion) teisendamiseks |
+|-------|---------|---------|----------|
+| SqueezeNet | Kerge pildi klassifitseerimine | ✅ Kaasas | Eelõpetatud, kasutamiseks valmis |
+| ResNet-50 | Kõrgtäpsusega pildi klassifitseerimine | ❌ Vajab teisendamist | Kasuta teisendamiseks [AI Toolkit](https://code.visualstudio.com/docs/intelligentapps/modelconversion) tööriista |
 
-### Riistvara tugi
+### Riistvaratoetus
 
-Kõik näidised avastavad ja kasutavad automaatselt saadaolevat riistvara:  
-- **CPU** – Universaalne tugi kõigil Windowsi seadmetel  
-- **GPU** – Automaatne avastamine ja optimeerimine saadaoleva graafikariistvara jaoks  
-- **NPU** – Kasutab närvitöötlusüksusi toetatud seadmetel (Copilot+ PC-d)  
+Kõik näidised avastavad ja kasutavad automaatselt saadaval olevat riistvara:
+- **CPU** - Universaalne tugi kõigis Windowsi seadmetes
+- **GPU** - Automaatne avastamine ja optimeerimine saadaval olevale graafikakiirendusele
+- **NPU** - Kasutab närvivõrgu töötlemise üksusi toetatud seadmetes (Copilot+ PC-d)
 
 ## Windows AI Foundry platvormi komponendid
 
 ### 1. Windows AI API-d
 
-Windows AI API-d pakuvad kasutusvalmis tehisintellekti võimalusi, mida toetavad seadmesisesed mudelid, optimeeritud tõhususe ja jõudluse jaoks Copilot+ PC seadmetel, vajades minimaalset seadistust.
+Windows AI API-d pakuvad kasutusvalmis AI võimekusi seadmesiseste mudelite abil, mis on optimeeritud efektiivsuseks ja jõudluseks Copilot+ PC seadmetel, nõudes minimaalset seadistust.
 
-#### Põhilised API kategooriad
+#### Põhiseeria API kategooriad
 
-**Phi Silica keelemudel**  
-- Väike, kuid võimas keelemudel teksti genereerimiseks ja põhjendamiseks  
-- Optimeeritud reaalajas järelduste jaoks minimaalse energiatarbega  
-- Toetus kohandatud peenhäälestusele, kasutades LoRA tehnikaid  
-- Integreerimine Windowsi semantilise otsingu ja teadmiste hankimisega  
+**Phi Silica keelemudel**
+- Väike, kuid võimas keelemudel teksti genereerimiseks ja mõtlemiseks
+- Optimeeritud reaalajas järelduseks minimaalse energiatarbega
+- Toetus kohandatud täpsustamiseks LoRA tehnikate abil
+- Integratsioon Windowsi semantilise otsingu ja teadmiste taaskasutusega
 
-**Arvutinägemise API-d**  
-- **Tekstituvastus (OCR)**: Ekstraktige teksti piltidelt suure täpsusega  
-- **Pildi superresolutsioon**: Suurendage pilte, kasutades kohalikke tehisintellekti mudeleid  
-- **Pildi segmenteerimine**: Tuvastage ja eraldage piltidel kindlaid objekte  
-- **Pildi kirjeldus**: Genereerige visuaalse sisu jaoks üksikasjalikke tekstikirjeldusi  
-- **Objekti kustutamine**: Eemaldage soovimatud objektid piltidelt, kasutades tehisintellekti-põhist täitmist  
+**Arvutinägemise API-d**
+- **Teksti tuvastus (OCR)**: Ekstrakti tekst pilteelt suure täpsusega
+- **Pildi kõrgresolutsiooni suurendamine**: Suurenda pilte lokaalsete AI mudelite abil
+- **Pildi segmentimine**: Tuvasta ja eralda kindlad objektid piltidelt
+- **Pildi kirjeldus**: Genereeri detailsed tekstikirjeldused visuaalse sisu jaoks
+- **Objekti eemaldamine**: Eemalda soovimatud objektid AI-põhise maalimise abil piltidelt
 
-**Multimodaalsed võimalused**  
-- **Visiooni ja keele integreerimine**: Kombineerige teksti ja pildi mõistmine  
-- **Semantiline otsing**: Võimaldage loomuliku keele päringuid multimeediumisisu kaudu  
-- **Teadmiste hankimine**: Looge intelligentsed otsingukogemused kohalike andmetega  
+**Multimodaalsed võimekused**
+- **Nägemise ja keele integratsioon**: Ühenda teksti ja pildi mõistmine
+- **Semantiline otsing**: Võimalda loomuliku keele päringud multimeediumisisus
+- **Teadmiste taaskasutus**: Loo intelligentseid otsingukogemusi kohalike andmetega
 
 ### 2. Foundry Local
 
-Foundry Local pakub arendajatele kiiret juurdepääsu kasutusvalmis avatud lähtekoodiga keelemudelitele Windowsi kiipidel, võimaldades mudeleid sirvida, testida, kasutada ja juurutada kohalikes rakendustes.
+Foundry Local annab arendajatele kiire juurdepääsu kasutusvalmis avatud lähtekoodiga keelemudelitele Windowsi kiibil, pakkudes võimalust sirvida, testida, suhelda ja juurutada mudeleid kohalikes rakendustes.
 
-#### Foundry Local näidisrakendused
+#### Foundry Local näidiserakendused
 
-[Foundry Local repository](https://github.com/microsoft/Foundry
-| [rust/hello-foundry-local](https://github.com/microsoft/Foundry-Local/tree/main/samples/rust/hello-foundry-local) | Rust | Süsteemide integreerimine | Madala taseme SDK kasutamine, asünkroonsed operatsioonid, reqwest HTTP klient |
+[Foundry Local hoidla](https://github.com/microsoft/Foundry-Local/tree/main/samples) pakub põhjalikke näidiseid mitmes programmeerimiskeeles ja -raamistikus, demonstreerides erinevaid integratsioonimustreid ja kasutusjuhtumeid.
 
-#### Näidiskategooriad kasutusjuhtude järgi
+| Näidis | Keel/raamistik | Keskendunud valdkond | Põhifunktsioonid |
+|--------|-----------------|---------------------|-------------------|
+| [dotNET/rag](https://github.com/microsoft/Foundry-Local/tree/main/samples/dotNET/rag) | C# / .NET | RAG rakendus | Semantic Kernel integratsioon, Qdrant vektoripood, JINA kirjeldused, dokumentide import, reaalajas vestlus |
+| [electron/foundry-chat](https://github.com/microsoft/Foundry-Local/tree/main/samples/electron/foundry-chat) | JavaScript / Electron | Töölaua vestlusapp | Platvormideülene vestlus, lokaalse/pilve mudeli vahetamine, OpenAI SDK integratsioon, reaalajas voogesitus |
+| [js/hello-foundry-local](https://github.com/microsoft/Foundry-Local/tree/main/samples/js/hello-foundry-local) | JavaScript / Node.js | Põhiline integratsioon | Lihtne SDK kasutus, mudeli algatamine, põhiline vestlusfunktsioon |
+| [python/hello-foundry-local](https://github.com/microsoft/Foundry-Local/tree/main/samples/python/hello-foundry-local) | Python | Põhiline integratsioon | Python SDK kasutus, voogesituse vastused, OpenAI-ga ühilduv API |
 
-**RAG (Retrieval-Augmented Generation)**
-- **dotNET/rag**: Täielik RAG-i rakendus, mis kasutab Semantic Kernelit, Qdrant vektoriandmebaasi ja JINA embeddings'eid
-- **Arhitektuur**: Dokumentide sisestamine → Teksti tükeldamine → Vektori embeddings → Sarnasuse otsing → Kontekstitundlikud vastused
-- **Tehnoloogiad**: Microsoft.SemanticKernel, Qdrant.Client, BERT ONNX embeddings, voogedastusega vestluse lõpetamine
+| [rust/hello-foundry-local](https://github.com/microsoft/Foundry-Local/tree/main/samples/rust/hello-foundry-local) | Rust | Süsteemide integratsioon | Madala taseme SDK kasutamine, asünkroonsed operatsioonid, reqwest HTTP klient |
 
-**Töölauarakendused**
-- **electron/foundry-chat**: Tootmisvalmis vestlusrakendus, mis võimaldab mudelite vahetamist lokaalse ja pilve vahel
-- **Funktsioonid**: Mudeli valik, voogedastusega vastused, veakäsitlus, platvormidevaheline juurutamine
-- **Arhitektuur**: Electroni põhiprotsess, IPC suhtlus, turvalised eelkoormusskriptid
+#### Näidiste kategooriad kasutusjuhtumite järgi
 
-**SDK integreerimise näited**
-- **JavaScript (Node.js)**: Põhiline mudeli interaktsioon ja voogedastusega vastused
-- **Python**: OpenAI-ga ühilduva API kasutamine asünkroonse voogedastusega
-- **Rust**: Madala taseme integreerimine reqwest'i ja tokio abil asünkroonsete operatsioonide jaoks
+**RAG (Andmete täiendatud genereerimine)**
+- **dotNET/rag**: Täielik RAG-i rakendus Semantic Kerneliga, Qdrant vektorandmebaasiga ja JINA manustega
+- **Arhitektuur**: Dokumentide sisestamine → Tekstijuppide moodustamine → Vektormanused → Sarnasuse otsing → Kontekstitundlikud vastused
+- **Tehnoloogiad**: Microsoft.SemanticKernel, Qdrant.Client, BERT ONNX manused, voogedastuse vestluse täitmine
 
-#### Foundry Local näidiste eeldused
+**Lauaarvuti rakendused**
+- **electron/foundry-chat**: Tootmiseks valmis vestlusrakendus kohaliku/pilve mudelivahetusega
+- **Funktsioonid**: Mudeli valija, voogesituse vastused, veahaldus, platvormideülene juurutus
+- **Arhitektuur**: Electrone põhiprotsess, IPC suhtlus, turvalised eellaadimisskriptid
+
+**SDK integratsiooni näited**
+- **JavaScript (Node.js)**: Põhiline mudeliga suhtlemine ja voogesituse vastused
+- **Python**: OpenAI-ühildumisega API kasutamine asünkroonse voogesitusega
+- **Rust**: Madala taseme integratsioon reqwesti ja tokio abil asünkroonsete operatsioonide jaoks
+
+#### Eeltingimused Foundry Local näidiste jaoks
 
 **Süsteeminõuded:**
-- Windows 11 koos paigaldatud Foundry Localiga
-- Node.js v16+ JavaScripti/Electroni näidiste jaoks
+- Windows 11 koos Foundry Local paigaldusega
+- Node.js v16+ JavaScript/Electron näidiste jaoks
 - .NET 8.0+ C# näidiste jaoks
-- Python 3.10+ Pythoni näidiste jaoks
-- Rust 1.70+ Rusti näidiste jaoks
+- Python 3.10+ Python näidiste jaoks
+- Rust 1.70+ Rust näidiste jaoks
 
 **Paigaldamine:**
 ```powershell
-# Install Foundry Local
+# Paigalda Foundry kohalikult
 winget install Microsoft.FoundryLocal
 
-# Verify installation
+# Kontrolli paigaldust
 foundry --version
 foundry model list
 ```
 
-#### Näidispõhine seadistus
+#### Näidispõhine seadistamine
 
-**dotNET RAG näidis:**
+**dotNET RAG näide:**
 ```powershell
-# Install required packages via NuGet
+# Paigalda vajalikud paketid NuGeti kaudu
 # Microsoft.SemanticKernel.Connectors.Onnx
 # Microsoft.SemanticKernel.Connectors.Qdrant
 # Qdrant.Client
 
-# Start Qdrant vector database
+# Käivita Qdrant vektorandmebaas
 docker run -p 6333:6333 qdrant/qdrant
 
-# Run Jupyter notebook
+# Käivita Jupyteri märkmik
 jupyter notebook rag_foundrylocal_demo.ipynb
 ```
 
-**Electroni vestlusrakenduse näidis:**
+**Electroni vestluse näide:**
 ```powershell
-# Set environment variables for cloud fallback
+# Määra pilve varufunktsiooni jaoks keskkonnamuutujad
 $env:YOUR_API_KEY="your-cloud-api-key"
 $env:YOUR_ENDPOINT="your-cloud-endpoint"
 $env:YOUR_MODEL_NAME="your-cloud-model"
 
-# Install dependencies and run
+# Paigalda sõltuvused ja käivita
 npm install
 npm start
 ```
 
-**JavaScripti/Pythoni/Rusti näidised:**
+**JavaScript/Python/Rust näited:**
 ```powershell
-# Download model (example with phi-3.5-mini)
+# Lae alla mudel (näide phi-3.5-mini)
 foundry model run phi-3.5-mini
 
-# Run respective sample
+# Käivita vastav näidis
 node src/app.js          # JavaScript
 python src/app.py        # Python
 cargo run               # Rust
@@ -306,299 +315,356 @@ cargo run               # Rust
 
 #### Põhifunktsioonid
 
-**Mudelikataloog**
-- Ulatuslik kollektsioon eeloptimeeritud avatud lähtekoodiga mudeleid
-- Mudelid optimeeritud CPU-de, GPU-de ja NPU-de jaoks koheseks juurutamiseks
-- Tugi populaarsetele mudeliperekondadele, sealhulgas Llama, Mistral, Phi ja spetsialiseeritud valdkonnamudelid
+**Mudelite kataloog**
+- Ulatuslik kogumik eeloptimeeritud avatud lähtekoodiga mudeleid
+- Mudelid optimeeritud CPU-de, GPU-de ja NPU-de jaoks kohe kasutuseks
+- Tugi populaarsetele mudeliperele nagu Llama, Mistral, Phi ja spetsialiseeritud domeenimudelid
 
-**CLI integreerimine**
-- Käsurealiides mudelite haldamiseks ja juurutamiseks
-- Automaatne optimeerimise ja kvantimise töövoog
-- Integreerimine populaarsete arenduskeskkondade ja CI/CD torujuhtmetega
+**CLI integratsioon**
+- Käsklussuhtluse liides mudelite haldamiseks ja juurutamiseks
+- Automaatne optimeerimise ja kvantiseerimise töövoog
+- Integratsioon populaarsete arendusvahendite ja CI/CD torujuhtmetega
 
-**Lokaalne juurutamine**
-- Täielik võrguühenduseta töö ilma pilve sõltuvusteta
-- Tugi kohandatud mudeliformaatidele ja konfiguratsioonidele
+**Kohalik juurutus**
+- Täielik võrguühenduseta töö ilma pilve sõltuvuseta
+- Tugi kohandatud mudelifailidele ja konfiguratsioonidele
 - Tõhus mudelite teenindamine automaatse riistvara optimeerimisega
 
 ### 3. Windows ML
 
-Windows ML toimib Windowsi põhitehisintellekti platvormina ja integreeritud järeldusmootorina, võimaldades arendajatel tõhusalt juurutada kohandatud mudeleid laias Windowsi riistvarakeskkonnas.
+Windows ML on Windowsi põhiline tehisintellekti platvorm ja integreeritud järeldamise käitusaja süsteem, mis võimaldab arendajatel efektiivselt juurutada kohandatud mudeleid kogu laia Windowsi riistvaramaastiku ulatuses.
 
 #### Arhitektuuri eelised
 
-**Universaalne riistvaratugi**
-- Automaatne optimeerimine AMD, Inteli, NVIDIA ja Qualcomi kiipide jaoks
-- Tugi CPU, GPU ja NPU täitmisele koos läbipaistva vahetamisega
-- Riistvara abstraktsioon, mis kõrvaldab platvormispetsiifilise optimeerimistöö
+**Üldine riistvara tugi**
+- Automaatne optimeerimine AMD, Inteli, NVIDIA ja Qualcommi kiipide jaoks
+- Tugi CPU, GPU ja NPU täitmiseks läbipaistva vaheldumisega
+- Riistvara abstraktsioon, mis kõrvaldab platvormispetsiifilise optimeerimise töö
 
-**Mudelite paindlikkus**
-- Tugi ONNX mudeliformaadile koos automaatse konversiooniga populaarsetest raamistikest
-- Kohandatud mudelite juurutamine tootmiskvaliteediga jõudlusega
-- Integreerimine olemasolevate Windowsi rakenduste arhitektuuridega
+**Mudelide paindlikkus**
+- Tugi ONNX mudelivormingule automaatse konverteerimisega populaarsetest raamistikest
+- Kohandatud mudelite juurutus tootmistaseme jõudlusega
+- Integratsioon olemasolevate Windowsi rakendusarhitektuuridega
 
-**Ettevõtte integreerimine**
-- Ühilduvus Windowsi turvalisuse ja vastavusraamistikega
-- Tugi ettevõtte juurutamise ja haldustööriistadele
-- Integreerimine Windowsi seadmehalduse ja jälgimissüsteemidega
+**Ettevõtte integratsioon**
+- Ühilduvus Windowsi turbe- ja vastavusraamistikuga
+- Tugi ettevõtte juurutuse ja haldustööriistadele
+- Integratsioon Windowsi seadmete halduse ja jälgimissüsteemidega
 
-## Arendustöövoog
+## Arendusprotsess
 
-### Faas 1: Keskkonna seadistamine ja tööriistade konfigureerimine
+### Faas 1: Keskkonna seadistamine ja tööriistade konfiguratsioon
 
-**Arenduskeskkonna ettevalmistamine**
+**Arenduskeskkonna ettevalmistus**
 1. Paigalda Visual Studio 2022 koos C++ ja .NET töökoormustega
-2. Paigalda Windows App SDK 1.8.1 või uuem
+2. Paigalda Windows App SDK 1.8.1 või uuem versioon
 3. Konfigureeri Windows AI Foundry CLI tööriistad
-4. Seadista AI Toolkit laiendus Visual Studio Code'i jaoks
-5. Loo jõudluse profileerimise ja jälgimise tööriistad
-6. Veendu ARM64 ehituse konfiguratsioonis Copilot+ PC optimeerimiseks
+4. Seadista AI toolkit laiendus Visual Studio Code’ile
+5. Loo jõudluse profiilimise ja jälgimise tööriistad
+6. Tagada ARM64 ehituskonfiguratsioon Copilot+ PC optimeerimiseks
 
-**Näidiste repo seadistamine**
-1. Klooni [Windows App SDK näidiste repo](https://github.com/microsoft/WindowsAppSDK-Samples)
-2. Liigu `Samples/WindowsAIFoundry/cs-winui` kataloogi Windows AI API näidiste jaoks
-3. Liigu `Samples/WindowsML` kataloogi põhjalike Windows ML näidiste jaoks
-4. Vaata üle [ehitusnõuded](https://learn.microsoft.com/windows/apps/windows-app-sdk/system-requirements) sihtplatvormide jaoks
+**Näidiste hoidla seadistamine**
+1. Kloneeri [Windows App SDK näidiste hoidla](https://github.com/microsoft/WindowsAppSDK-Samples)
+2. Liigu kataloogi `Samples/WindowsAIFoundry/cs-winui` Windows AI API näidiste jaoks
+3. Liigu kataloogi `Samples/WindowsML` Windows ML põhjalike näidiste jaoks
+4. Vaata üle [ehitusnõuded](https://learn.microsoft.com/windows/apps/windows-app-sdk/system-requirements) sihtplatvormidele
 
-**AI arenduse galerii uurimine**
-- Uuri näidisrakendusi ja viiteimplementatsioone
+**AI arenduse galeriis tutvumine**
+- Uuri näidiserakendusi ja viitamisrakendusi
 - Testi Windows AI API-sid interaktiivsete demonstratsioonidega
-- Vaata lähtekoodi parimate praktikate ja mustrite jaoks
-- Tuvasta asjakohased näidised oma konkreetse kasutusjuhtumi jaoks
+- Vaata lähtekoodi parimate tavade ja mustrite jaoks
+- Määra oma konkreetse kasutusjuhtumi jaoks asjakohased näited
 
-### Faas 2: Mudeli valik ja integreerimine
+### Faas 2: Mudeli valimine ja integratsioon
 
 **Nõuete analüüs**
-- Määra tehisintellekti funktsionaalsed nõuded
+- Määra AI võimekuste funktsionaalsed nõuded
 - Sea jõudluspiirangud ja optimeerimise eesmärgid
-- Hinda privaatsuse ja turvalisuse nõudeid
-- Planeeri juurutamise arhitektuur ja skaleerimisstrateegiad
+- Hinda privaatsuse ja turbenõudeid
+- Plaani juurutusarhitektuur ja skaleerimisstrateegiad
 
 **Mudeli hindamine**
-- Kasuta Foundry Locali avatud lähtekoodiga mudelite testimiseks oma kasutusjuhtumi jaoks
-- Võrdle Windows AI API-sid kohandatud mudelinõuete vastu
+- Kasuta Foundry Local’i avatud lähtekoodiga mudelite testimiseks oma kasutusjuhtumi jaoks
+- Võrdle Windows AI API-de jõudlust kohandatud mudelinõuetega
 - Hinda kompromisse mudeli suuruse, täpsuse ja järelduskiiruse vahel
-- Prototüübi integreerimisviise valitud mudelitega
+- Prototüübi integratsioonimeetodeid valitud mudelitega
 
-### Faas 3: Rakenduse arendamine
+### Faas 3: Rakenduse arendus
 
-**Põhiintegreerimine**
-- Rakenda Windows AI API integreerimine koos korrektse veakäsitlusega
-- Kujunda kasutajaliidesed, mis arvestavad tehisintellekti töövoogudega
-- Rakenda vahemälu ja optimeerimisstrateegiad mudeli järeldamiseks
-- Lisa telemeetria ja jälgimine tehisintellekti tööjõudluse jaoks
+**Tuumikintegratsioon**
+- Rakenda Windows AI API integratsioon koos korrapärase veahaldusega
+- Kujunda kasutajaliidesed, mis mahutavad AI töövoogudega
+- Rakenda vahemällu salvestamise ja optimeerimise strateegiad mudeli järeldamiseks
+- Lisa telemeetria ja jõudluse jälgimine AI operatsioonide jaoks
 
 **Testimine ja valideerimine**
-- Testi rakendusi erinevates Windowsi riistvarakonfiguratsioonides
-- Kinnita jõudlusmõõdikud erinevate koormustingimuste all
-- Rakenda automatiseeritud testimine tehisintellekti funktsionaalsuse usaldusväärsuse jaoks
-- Teosta kasutajakogemuse testimine tehisintellekti täiustatud funktsioonidega
+- Testi rakendusi erinevate Windowsi riistvarakonfiguratsioonide puhul
+- Kontrolli jõudlusmõõdikuid erinevate koormustingimuste all
+- Rakenda automatiseeritud testimine AI funktsionaalsuse usaldusväärsuse tagamiseks
+- Viige läbi kasutajakogemuse testimine AI-lisanditega funktsioonidega
 
-### Faas 4: Optimeerimine ja juurutamine
+### Faas 4: Optimeerimine ja juurutus
 
 **Jõudluse optimeerimine**
-- Profileeri rakenduse jõudlust sihtriistvara konfiguratsioonides
-- Optimeeri mälu kasutust ja mudeli laadimisstrateegiaid
-- Rakenda adaptiivne käitumine vastavalt saadavalolevale riistvarale
-- Peenhäälesta kasutajakogemus erinevate jõudlusstsenaariumide jaoks
+- Profiili rakenduse jõudlust sihtriistvara konfiguratsioonide ulatuses
+- Optimeeri mälu kasutust ja mudeli laadimise strateegiaid
+- Rakenda adaptiivset käitumist olemasolevate riistvaravõimaluste põhjal
+- Täiusta kasutajakogemust erinevate jõudlusstsenaariumite jaoks
 
-**Tootmise juurutamine**
-- Paki rakendused koos korrektsete tehisintellekti mudelite sõltuvustega
+**Tootmisjuurutus**
+- Paki rakendused koos korras AI mudelite sõltuvustega
 - Rakenda mudelite ja rakendusloogika uuendusmehhanismid
-- Konfigureeri jälgimine ja analüütika tootmiskeskkondade jaoks
-- Planeeri juurutusstrateegiad ettevõtte ja tarbijate jaoks
+- Konfigureeri tootmiskeskkonna jälgimine ja analüütika
+- Planeeri järkjärgulise levitamise strateegiad ettevõtetele ja tarbijatele
 
-## Praktilised rakendusnäited
+## Praktilised rakenduse näited
 
-### Näide 1: Nutikas dokumenditöötlusrakendus
+### Näide 1: Intelligentsed dokumenditöötluse rakendus
 
-Loo Windowsi rakendus, mis töötleb dokumente mitme tehisintellekti funktsiooni abil:
+Arenda Windowsi rakendus, mis töötleb dokumente mitme AI võimekusega:
 
-**Kasutatud tehnoloogiad:**
-- Phi Silica dokumentide kokkuvõtete ja küsimustele vastamise jaoks
-- OCR API-d skaneeritud dokumentidest teksti eraldamiseks
+**Kasutatavad tehnoloogiad:**
+- Phi Silica dokumentide kokkuvõtmiseks ja küsimuste vastamiseks
+- OCR API-d skaneeritud dokumentide tekstieksktraktsiooniks
 - Pildikirjelduse API-d diagrammide ja graafikute analüüsiks
 - Kohandatud ONNX mudelid dokumentide klassifitseerimiseks
 
-**Rakendamise lähenemine:**
-- Kujunda modulaarne arhitektuur koos pistikprogrammidega tehisintellekti komponentide jaoks
-- Rakenda asünkroonne töötlemine suurte dokumentide partiide jaoks
-- Lisa edenemise indikaatorid ja tühistamise tugi pikaajaliste operatsioonide jaoks
-- Kaasa võrguühenduseta võimekus tundlike dokumentide töötlemiseks
+**Rakenduse lähenemine:**
+- Kujunda moodulaarne arhitektuur liigendatavate AI komponentidega
+- Rakenda asünkroonset töötlemist suurtes dokumendipakettides
+- Lisa edenemisindikaatorid ja tühistamise tugi pikaajalistele operatsioonidele
+- Kaasa võrguühenduseta töövõime tundlike dokumentide töötlemiseks
 
-### Näide 2: Jaemüügi inventari haldussüsteem
+### Näide 2: Jaemüügivarude haldussüsteem
 
-Loo tehisintellekti juhitud inventari haldussüsteem jaemüügirakenduste jaoks:
+Loo AI-põhine varude haldussüsteem jaemüügi rakendustele:
 
-**Kasutatud tehnoloogiad:**
-- Pildisegmentatsioon toodete tuvastamiseks
-- Kohandatud visioonimudelid brändi ja kategooria klassifitseerimiseks
-- Foundry Locali juurutatud spetsialiseeritud jaemüügi keelemudelid
-- Integreerimine olemasolevate POS- ja inventarisüsteemidega
+**Kasutatavad tehnoloogiad:**
+- Pildilõikamise tehnoloogia toote identifitseerimiseks
+- Kohandatud nägemismudelid kaubamärgi ja kategooria klassifitseerimiseks
+- Foundry Local juurutus spetsialiseeritud jaemüügikeele mudelite jaoks
+- Integratsioon olemasolevate kassasüsteemide ja varude haldusega
 
-**Rakendamise lähenemine:**
-- Loo kaameraintegratsioon reaalajas toodete skaneerimiseks
-- Rakenda triipkoodide ja visuaalsete toodete tuvastamine
-- Lisa loomuliku keele inventari päringud kohalike keelemudelite abil
-- Kujunda skaleeritav arhitektuur mitme poe juurutamiseks
+**Rakenduse lähenemine:**
+- Loo kaamera integratsioon reaalajas toodete skannimiseks
+- Rakenda vöötkoodi ja visuaalse toote tuvastamine
+- Lisa loodusliku keele varude päringud kohalike keelemudelitega
+- Kujunda skaleeritav arhitektuur mitme kaupluse juurutuseks
 
 ### Näide 3: Tervishoiu dokumentatsiooni assistent
 
-Arenda privaatsust säilitav tervishoiu dokumentatsiooni tööriist:
+Arenda privaatsust kaitsev tervishoiu dokumentatsiooni tööriist:
 
-**Kasutatud tehnoloogiad:**
-- Phi Silica meditsiiniliste märkmete genereerimiseks ja kliiniliste otsuste toetamiseks
-- OCR käsitsi kirjutatud meditsiiniliste dokumentide digiteerimiseks
-- Kohandatud meditsiinilised keelemudelid, mis on juurutatud Windows ML-i kaudu
-- Kohalik vektorite salvestus meditsiiniliste teadmiste otsimiseks
+**Kasutatavad tehnoloogiad:**
+- Phi Silica meditsiiniliste märkmete genereerimiseks ja kliinilise otsuse toetuseks
+- OCR käsitsi kirjutatud meditsiiniliste dokumentide digitaliseerimiseks
+- Kohandatud meditsiinilised keelemudelid Windows ML kaudu juurutatult
+- Kohalik vektorisalvestus meditsiinilise teadmise kuvamiseks
 
-**Rakendamise lähenemine:**
-- Tagada täielik võrguühenduseta töö patsiendi privaatsuse jaoks
-- Rakenda meditsiinilise terminoloogia valideerimine ja soovitused
-- Lisa auditi logimine regulatiivse vastavuse jaoks
-- Kujunda integratsioon olemasolevate elektrooniliste tervisekaardisüsteemidega
+**Rakenduse lähenemine:**
+- Tagada täielik võrguühenduseta töö patsiendi privaatsuse kaitseks
+- Rakenda meditsiinilise terminoloogia valideerimist ja soovitusi
+- Lisa auditeerimise logimine regulatiivse vastavuse tagamiseks
+- Kujunda integratsioon olemasolevate elektrooniliste tervisekannete süsteemidega
 
 ## Jõudluse optimeerimise strateegiad
 
 ### Riistvarateadlik arendus
 
 **NPU optimeerimine**
-- Kujunda rakendused, et kasutada NPU võimekust Copilot+ PC-del
-- Rakenda sujuv üleminek GPU/CPU-le seadmetel, kus NPU puudub
-- Optimeeri mudeliformaadid NPU-spetsiifiliseks kiirenduseks
-- Jälgi NPU kasutust ja termilisi omadusi
+- Kujunda rakendusi, mis kasutavad ära NPU võimalusi Copilot+ PC-del
+- Rakenda sujuv langemine GPU/CPU peale seadmetel, kus NPU puudub
+- Optimeeri mudelivormingud NPU-spetsiifilise kiirenduse jaoks
+- Jälgi NPU kasutust ja soojusomadusi
 
-**Mälu haldamine**
-- Rakenda tõhusad mudeli laadimis- ja vahemälu strateegiad
-- Kasuta mälukaardistust suurte mudelite jaoks, et vähendada käivitusaega
-- Kujunda mälusäästlikud rakendused ressursipiiratud seadmete jaoks
-- Rakenda mudeli kvantimine mälu optimeerimiseks
+**Mälu haldus**
+- Rakenda tõhusaid mudelite laadimise ja vahemällu salvestamise strateegiaid
+- Kasuta mälumappingut suurte mudelite puhul käivitamisaja vähendamiseks
+- Kujunda mälu säästvaid rakendusi piiratud ressurssidega seadmete jaoks
+- Rakenda mudelite kvantiseerimist mälu optimeerimiseks
 
 **Aku efektiivsus**
-- Optimeeri tehisintellekti operatsioonid minimaalse energiatarbimise jaoks
+- Optimeeri AI operatsioone minimaalsete energiakuludega
 - Rakenda adaptiivne töötlemine vastavalt aku olekule
-- Kujunda tõhus tausttöötlus pidevate tehisintellekti operatsioonide jaoks
-- Kasuta energiakasutuse profileerimise tööriistu energiatarbimise optimeerimiseks
+- Kujunda tõhus taustatöötlus jätkuvateks AI operatsioonideks
+- Kasuta võimu profiili tööriistu energiakasutuse optimeerimiseks
 
-### Skaleeritavuse kaalutlused
+### Skalale mõeldes
 
 **Mitme lõime kasutamine**
-- Kujunda lõimeohutud tehisintellekti operatsioonid samaaegseks töötlemiseks
-- Rakenda tõhus tööjaotus olemasolevate tuumade vahel
-- Kasuta asünkroonseid mustreid mitteblokeerivate tehisintellekti operatsioonide jaoks
-- Planeeri lõimebasseini optimeerimine erinevate riistvarakonfiguratsioonide jaoks
+- Kujunda lõimesõbralikke AI operatsioone paralleelseks töötlemiseks
+- Rakenda tõhus tööjaotus saadaval olevate tuumade vahel
+- Kasuta asünkroonne/oota mustreid mittetalitavate AI operatsioonide jaoks
+- Plaani lõimepuni optimeerimine erinevate riistvarakonfiguratsioonide jaoks
 
 **Vahemälu strateegiad**
-- Rakenda intelligentne vahemälu sageli kasutatavate tehisintellekti operatsioonide jaoks
-- Kujunda vahemälu tühistamise strateegiad mudeli uuenduste jaoks
-- Kasuta püsivat vahemälu kulukate eeltöötlusoperatsioonide jaoks
-- Rakenda hajutatud vahemälu mitme kasutaja stsenaariumide jaoks
+- Rakenda intelligentset vahemälu sagedasti kasutatavate AI operatsioonide jaoks
+- Kujunda vahemälu kehtetuks muutmise strateegiad mudelite uuenduste jaoks
+- Kasuta püsivat vahemälu kallite eeltöötluste jaoks
+- Rakenda hajutatud vahemälu mitme kasutajaga stsenaariumide jaoks
 
-## Turvalisuse ja privaatsuse parimad praktikad
+## Turvalisus ja privaatsus parimad tavad
 
 ### Andmekaitse
 
 **Kohalik töötlemine**
-- Tagada, et tundlikud andmed ei lahku kunagi kohalikust seadmest
-- Rakenda turvaline salvestus tehisintellekti mudelite ja ajutiste andmete jaoks
-- Kasuta Windowsi turvafunktsioone rakenduse liivakastiks
-- Rakenda krüpteerimine salvestatud mudelite ja vahepealsete töötlemistulemuste jaoks
+- Tagada, et tundlikud andmed ei lahkuks kunagi lokaalsest seadmest
+- Rakenda turvalist hoiustamist AI mudelitele ja ajutistele andmetele
+- Kasuta Windowsi turvaeesmärke rakenduste liivakastimiseks
+- Kasuta krüptimist salvestatud mudelite ja vaheprotsesside tulemuste jaoks
 
 **Mudeli turvalisus**
-- Kinnita mudeli terviklikkus enne laadimist ja täitmist
+- Kontrolli mudeli terviklikkust enne laadimist ja täitmist
 - Rakenda turvalised mudeli uuendusmehhanismid
-- Kasuta allkirjastatud mudeleid, et vältida manipuleerimist
-- Rakenda juurdepääsukontrollid mudelifailidele ja konfiguratsioonile
+- Kasuta allkirjastatud mudeleid, et takistada manipuleerimist
+- Rakenda juurdepääsu kontrolli mudelifailidele ja konfiguratsioonile
 
-### Vastavuse kaalutlused
+### Vastavusnõuded
 
 **Regulatiivne vastavus**
-- Kujunda rakendused vastavusse GDPR-i, HIPAA ja teiste regulatiivsete nõuetega
-- Rakenda auditi logimine tehisintellekti otsustusprotsesside jaoks
-- Paku läbipaistvuse funktsioone tehisintellekti genereeritud tulemuste jaoks
-- Võimalda kasutajatel kontrollida tehisintellekti andmetöötlust
+- Kujunda rakendusi GDPR-i, HIPAA ja teiste regulatiivsete nõuete täitmiseks
+- Rakenda auditeerimise logimine AI otsuste protsesside jaoks
+- Paku läbipaistvuse funktsioone AI genereeritud tulemuste jaoks
+- Võimalda kasutajal juhtida AI andmetöötlust
 
 **Ettevõtte turvalisus**
-- Integreeri Windowsi ettevõtte turvapoliitikatega
-- Tugi hallatud juurutamisele ettevõtte haldustööriistade kaudu
-- Rakenda rollipõhine juurdepääsukontroll tehisintellekti funktsioonidele
-- Paku administratiivseid kontrolli tehisintellekti funktsionaalsuse jaoks
+- Integreeru Windowsi ettevõtte turvapoliitikatega
+- Tugi hallatud juurutust ettevõtte haldustööriistade kaudu
+- Rakenda rollipõhised juurdepääsu kontrollid AI funktsioonidele
+- Paku administraatori kontrolli AI funktsionaalsuse üle
 
 ## Tõrkeotsing ja silumine
 
-### Tavalised arendusprobleemid
+### Tavalised arenduse väljakutsed
 
-**Ehituse konfiguratsiooni probleemid**
-- Veendu ARM64 platvormi konfiguratsioonis Windows AI API näidiste jaoks
-- Kontrolli Windows App SDK versiooni ühilduvust (vajalik 1.8.1+)
-- Kontrolli, et paketi identiteet oleks korrektselt konfigureeritud (vajalik Windows AI API-de jaoks)
-- Kinnita, et ehitustööriistad toetavad sihtraamistiku versiooni
+**Ehituse konfiguratsiooniprobleemid**
+- Tagada ARM64 platvormikonfiguratsioon Windows AI API näidiste jaoks
+- Kontrolli Windows App SDK versiooni ühilduvust (vaja vähemalt 1.8.1)
+- Veendu, et paketi identiteet oleks õigesti seadistatud (nõutud Windows AI API-de jaoks)
+- Kontrolli, et ehitustööriistad toetaksid sihtsüsteemi raamistiku versiooni
 
-**Mudeli laadimise probleemid**
-- Kinnita ONNX mudeli ühilduvus Windows ML-iga
-- Kontrolli mudelifaili terviklikkust ja formaadinõudeid
-- Kinnita riistvara võimekuse nõuded konkreetsete mudelite jaoks
-- Silu mälukasutuse probleeme mudeli laadimise ajal
-- Veendu täitmispakkuja registreerimises riistvarakiirenduse jaoks
+**Mudelite laadimise probleemid**
+- Kontrolli ONNX mudelite ühilduvust Windows ML-iga
+- Kontrolli mudelifailide terviklikkust ja vormingu nõudeid
+- Kontrolli riistvaravõime nõudeid konkreetsete mudelite jaoks
+- Silu mäluhaldusprobleeme mudeli laadimise ajal
+- Tagada täitmismeetodi pakkuja registreerimine riistvara kiirenduseks
 
-**Juurutamise režiimi kaalutlused**
-- **Isemajandav režiim**: Täielikult toetatud suurema juurutuse suurusega
-- **Raamistiku sõltuv režiim**: Väiksem jalajälg, kuid vajab jagatud tööaega
-- **Pakendamata rakendused**: Windows AI API-de jaoks enam ei toetata
-- Kasuta `dotnet run -p:Platform=ARM64 -p:SelfContained=true` isemajandava ARM64 juurutuse jaoks
+**Juurutusrežiimi kaalutlused**
+- **Iseseisev režiim**: Täielikult toetatud suurema juurutamise mahuga
+- **Raamistiku sõltuv režiim**: Väiksem jalajälg, kuid nõuab jagatud käitusaega
+- **Pakendamata rakendused**: Windows AI API-de jaoks enam toetatud ei ole
+- Kasuta `dotnet run -p:Platform=ARM64 -p:SelfContained=true` iseseisva ARM64 juurutuse jaoks
 
 **Jõudlusprobleemid**
-- Profileeri rakenduse jõudlust erinevates riistvarakonfiguratsioonides
-- Tuvasta kitsaskohad tehisintellekti töötlemistorudes
-- Optimeeri andmete eeltöötlus ja järelprotsessimine
+- Profiili rakenduse jõudlust erinevate riistvarakonfiguratsioonide järgi
+- Tuvasta kitsaskohad AI töötlemistorudes
+- Optimeeri andmete eeltöötlust ja järgtöötlust
 - Rakenda jõudluse jälgimine ja hoiatused
 
-**Integreerimisraskused**
-- Silu API integreerimisprobleeme korrektse veakäsitlusega
-- Kinnita sisendandmete formaadid ja eeltöötlusnõuded
-- Testi äärejuhtumeid ja veatingimusi põhjalikult
-- Rakenda ulatuslik logimine tootmisprobleemide silumiseks
+**Integratsiooniraskused**
+- Silu API integratsiooniprobleeme korrapärase veahaldusega
+- Kontrolli sisendandmete formaate ja eeltöötluse nõudeid
+- Testi põhjalikult ääritingimusi ja veatujusid
+- Rakenda ulatuslik logimine tootmisvea silumiseks
 
-### Silumistööriistad ja -tehnikad
+### Silumisseadmed ja tehnikad
 
-**Visual Studio integreerimine**
-- Kasuta AI Toolkit silurit mudelite täitmise analüüsiks
-- Rakenda jõud
-- [Windows ML Ülevaade](https://learn.microsoft.com/windows/ai/new-windows-ml/overview/)
-- [Windows App SDK Süsteeminõuded](https://docs.microsoft.com/windows/apps/windows-app-sdk/system-requirements)
-- [Windows App SDK Arenduskeskkonna Seadistamine](https://docs.microsoft.com/windows/apps/windows-app-sdk/set-up-your-development-environment)
+**Visual Studio integratsioon**
+- Kasuta AI toolkit silurit mudelite täitmise analüüsiks
+- Rakenda jõudluse profiilimine AI operatsioonide jaoks
+- Silu asünkroonsed AI operatsioonid korrektses erindite käsitlemises
+- Kasuta mälu profiilimise tööriistu optimeerimiseks
+
+**Windows AI Foundry tööriistad**
+- Kasuta Foundry Local CLI mudelite testimiseks ja valideerimiseks
+- Kasuta Windows AI API testimistööriistu integratsiooni kinnitamiseks
+- Rakenda kohandatud logimine AI operatsioonide jälgimiseks
+- Loo automatiseeritud testimine AI funktsionaalsuse usaldusväärsuse tagamiseks
+
+## Teie rakenduste tulevikukindlus
+
+### Tuleviku tehnoloogiad
+
+**Järgmise põlvkonna riistvara**
+- Kujunda rakendusi, mis kasutavad tulevasi NPU võimeid
+- Planeeri suurenevaid mudeli suurusi ja keerukust
+- Rakenda adaptiivseid arhitektuure areneva riistvara jaoks
+- Mõtle kvantvalmis algoritmidele tulevase ühilduvuse tagamiseks
+
+**Arenenud AI võimed**
+- Valmista multimodaalse AI integratsiooniks rohkemate andmetüüpidega
+- Planeeri reaalajas koostööl põhinevat AI-d mitme seadme vahel
+- Kujunda föderaalse õppimise võimed
+- Mõtle serva-pilve hübriidintelligentsuse arhitektuuridele
+
+### Jätkuv õppimine ja kohanemine
+
+**Mudeliuuendused**
+- Rakenda sujuvaid mudeli uuendusmehhanisme
+- Kujunda rakendusi, mis kohanevad täiustatud mudelivõimekustega
+- Planeeri tagurpidi ühilduvust olemasolevate mudelitega
+- Rakenda A/B testimist mudeli jõudluse hindamiseks
+
+**Funktsioonide areng**
+- Kujunda moodulaarseid arhitektuure, mis mahutavad uusi AI võimeid
+- Planeeri uuenevate Windows AI API-de integratsiooni
+- Rakenda funktsioonilipu süsteemi järkjärgulise võimekuse lansseerimiseks
+- Kujunda kasutajaliideseid, mis kohanevad täiustatud AI omadustega
+
+## Kokkuvõte
+
+Windows Edge AI arendus tähistab võimsate AI võimekuste ühendamist tugeva, turvalise ja skaleeritava Windowsi platvormiga. Windows AI Foundry ökosüsteemi valdamisega suudavad arendajad luua intelligentseid rakendusi, mis pakuvad erakordset kasutajakogemust, säilitades samas kõrgeimad privaatsuse, turvalisuse ja jõudluse standardid.
+
+Windows AI API-de, Foundry Local ja Windows ML kombinatsioon pakub ületamatut alust järgmise põlvkonna intelligentsete Windowsi rakenduste ehitamiseks. Nagu AI jätkab arenemist, tagab Windows platvorm, et teie rakendused skaleeruvad koos tekkivate tehnoloogiate ja säilitavad ühilduvuse ning jõudluse mitmekesises Windowsi riistvaramaastikus.
+
+Olenemata sellest, kas loote tarbijarakendusi, ettevõtterakendusi või spetsialiseeritud tööstusvahendeid, võimaldab Windows Edge AI arendus teil luua intelligentseid, reageerivaid ja sügavalt integreeritud kogemusi, mis kasutavad täielikult kaasaegsete Windowsi seadmete potentsiaali.
+
+## Täiendavad ressursid
+
+### Dokumentatsioon ja õppematerjalid
+- [Windows AI Foundry dokumentatsioon](https://learn.microsoft.com/windows/ai/)
+- [Windows AI API-de viited](https://learn.microsoft.com/windows/ai/apis/)
+- [Alustamine rakenduse loomisel Windows AI API-dega](https://learn.microsoft.com/windows/ai/apis/model-setup)
+- [Foundry Local alustamine](https://learn.microsoft.com/windows/ai/foundry-local/get-started/)
+- [Windows ML ülevaade](https://learn.microsoft.com/windows/ai/new-windows-ml/overview/)
+- [Windows App SDK süsteeminõuded](https://docs.microsoft.com/windows/apps/windows-app-sdk/system-requirements)
+
+- [Windowsi rakenduste SDK arenduskeskkonna häälestus](https://docs.microsoft.com/windows/apps/windows-app-sdk/set-up-your-development-environment)
 - 
 
-### Näidiskood ja Repositooriumid
-- [Windows App SDK Näidised - Windows AI Foundry](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsAIFoundry)
-- [Windows App SDK Näidised - Windows ML](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML)
-- [ONNX Runtime Järelduste Näited](https://github.com/microsoft/onnxruntime-inference-examples)
-- [Windows App SDK Näidiste Repositoorium](https://github.com/microsoft/WindowsAppSDK-Samples)
+### Näidisvaramu ja kood
+- [Windowsi rakenduste SDK näidised - Windows AI Foundry](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsAIFoundry)
+- [Windowsi rakenduste SDK näidised - Windows ML](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML)
+- [ONNX Runtime järelduse näited](https://github.com/microsoft/onnxruntime-inference-examples)
+- [Windowsi rakenduste SDK näidiste varamu](https://github.com/microsoft/WindowsAppSDK-Samples)
 
 ### Arendustööriistad
-- [AI Tööriistakomplekt Visual Studio Code'i jaoks](https://learn.microsoft.com/windows/ai/toolkit/)
-- [AI Arendajate Galerii](https://learn.microsoft.com/windows/ai/ai-dev-gallery/)
-- [Windows AI Näidised](https://learn.microsoft.com/windows/ai/samples/)
-- [Mudelikonversiooni Tööriistad](https://code.visualstudio.com/docs/intelligentapps/modelconversion)
+- [AI tööriistakomplekt Visual Studio Code jaoks](https://learn.microsoft.com/windows/ai/toolkit/)
+- [AI arenduse galerii](https://learn.microsoft.com/windows/ai/ai-dev-gallery/)
+- [Windows AI näidised](https://learn.microsoft.com/windows/ai/samples/)
+- [Mudelite teisendamise tööriistad](https://code.visualstudio.com/docs/intelligentapps/modelconversion)
 
-### Tehniline Tugi
-- [Windows ML Dokumentatsioon](https://learn.microsoft.com/windows/ai/new-windows-ml/overview)
-- [ONNX Runtime Dokumentatsioon](https://onnxruntime.ai/docs/)
-- [Windows App SDK Dokumentatsioon](https://docs.microsoft.com/windows/apps/windows-app-sdk/)
-- [Teata Probleemidest - Windows App SDK Näidised](https://github.com/microsoft/WindowsAppSDK-Samples/issues)
+### Tehniline tugi
+- [Windows ML dokumentatsioon](https://learn.microsoft.com/windows/ai/new-windows-ml/overview)
+- [ONNX Runtime dokumentatsioon](https://onnxruntime.ai/docs/)
+- [Windowsi rakenduste SDK dokumentatsioon](https://docs.microsoft.com/windows/apps/windows-app-sdk/)
+- [Vigade teatamine - Windowsi rakenduste SDK näidised](https://github.com/microsoft/WindowsAppSDK-Samples/issues)
 
-### Kogukond ja Tugi
-- [Windows Arendajate Kogukond](https://developer.microsoft.com/en-us/windows/)
-- [Windows AI Foundry Blogi](https://blogs.windows.com/windowsdeveloper/)
-- [Microsoft Learn AI Koolitus](https://learn.microsoft.com/training/browse/?products=windows&subjects=artificial-intelligence)
-
----
-
-*See juhend on loodud arenema koos kiiresti areneva Windows AI ökosüsteemiga. Regulaarsete uuendustega tagatakse vastavus uusimate platvormivõimaluste ja arenduse parimate tavadega.*
-
-[08. Praktiline Töö Microsoft Foundry Localiga - Täielik Arendajate Tööriistakomplekt](../Module08/README.md)
+### Kogukond ja tugi
+- [Windowsi arendajakogukond](https://developer.microsoft.com/en-us/windows/)
+- [Windows AI Foundry blogi](https://blogs.windows.com/windowsdeveloper/)
+- [Microsoft Learn AI koolitus](https://learn.microsoft.com/training/browse/?products=windows&subjects=artificial-intelligence)
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+*See juhend on loodud arenema koos kiiresti areneva Windows AI ökosüsteemiga. Regulaarsete uuenduste kaudu tagatakse ühilduvus uusimate platvormi võimekuste ja arendusparimate tavadega.*
+
+[08. Microsoft Foundry Local praktiline kasutus - Täielik arendustööriistade komplekt](../Module08/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Lahtiütlus**:
+See dokument on tõlgitud kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi me püüdleme täpsuse poole, palun pange tähele, et automatiseeritud tõlgetes võib esineda vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta selle tõlkega seotud eksimustest või valesti mõistmistest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

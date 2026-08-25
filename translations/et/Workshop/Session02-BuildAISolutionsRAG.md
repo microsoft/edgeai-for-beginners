@@ -1,27 +1,27 @@
-# Sessioon 2: Ehita AI lahendusi Azure AI Foundry abil
+# Seanss 2: Ehita tehisintellekti lahendusi Azure AI Foundry abil
 
 ## Kokkuvõte
 
-Uuri, kuidas luua praktilisi GenAI töövooge, kasutades Foundry Local ja Azure AI Foundry. Õpi täiustatud promptide loomist, struktureeritud andmete integreerimist ja ülesannete orkestreerimist korduvkasutatavate torujuhtmete abil. Kuigi keskendutakse Retrieval-Augmented Generation (RAG) meetodile dokumentide ja andmete küsimuste-vastuste jaoks, on mustrid rakendatavad laiemalt GenAI lahenduste disainis.
+Uuri, kuidas ehitada toimivaid GenAI töövooge, kasutades Foundry Local ja Azure AI Foundry. Õpi täiustatud prompt-ehitust, integreeri struktureeritud andmeid ja orkestreeri ülesandeid korduvkasutatavate torujuhtmetega. Kuigi keskendutakse dokumendi- ja andmetega Q&A-le Retrieval-Augmented Generation (RAG) kaudu, on mustrid üldistatavad laiema GenAI lahenduste disaini jaoks.
 
 ## Õpieesmärgid
 
-Sessiooni lõpuks oskad:
+Selle seansi lõpuks saad:
 
-- **Valdada promptide loomist**: Kujundada tõhusaid süsteemipromptide ja konteksti loomise strateegiaid
-- **Rakendada RAG mustreid**: Luua dokumentidel põhinevaid küsimuste-vastuste süsteeme vektoriotsinguga
-- **Integreerida struktureeritud andmeid**: Töötada CSV, JSON ja tabelandmetega AI töövoogudes
-- **Ehita tootmiskõlblik RAG**: Loo skaleeritavaid RAG rakendusi Chainlit abil
-- **Ühenda kohalik ja pilv**: Mõista ülemineku teid Foundry Localist Azure AI Foundry'le
+- **Valda prompt-ehitust**: Disaini tõhusaid süsteemiprompte ja alustamisstrateegiaid
+- **Rakenda RAG mustreid**: Ehitada dokumendipõhiseid Q&A süsteeme vektorotsinguga
+- **Integreeri struktureeritud andmeid**: Töötada CSV, JSON ja tabelandmetega tehisintellekti töövoogudes
+- **Ehita tootmiskõlbulik RAG**: Loo skaleeritavaid RAG rakendusi Chainlit abil
+- **Ühenda kohalik ja pilv**: Mõista migratsiooniteid Foundry Local'ist Azure AI Foundry'sse
 
-## Eeltingimused
+## Eelteadmised
 
-- Sessioon 1 (Foundry Local seadistamine) lõpetatud
-- Põhiline arusaam vektorandmebaasidest ja embeddingutest
-- Python programmeerimise kogemus
-- Tuttav dokumentide töötlemise kontseptsioonidega
-
-### Platvormideülene keskkonna kiirseadistus (Windows & macOS)
+- Läbitud Seanss 1 (Foundry Local seadistus)
+- Põhilised teadmised vektandmebaasidest ja embeddingsitest
+- Python programmeerimiskogemus
+- Tutvumus dokumenditöötluse mõistetega
+ 
+### Platvormideülene keskkonna kiirstart (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -39,30 +39,29 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Kui Foundry Local macOS binaarid pole veel saadaval, käivita teenus Windows VM-is või konteineris ja määra:
+Kui Foundry Local macOS binaarsed failid pole veel sinu keskkonnas saadaval, käivita teenus Windowsi VM-is või konteineris ja määra:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
+## Kontroll: Foundry Local keskkonna ülevaatus
 
-## Valideerimine: Foundry Local keskkonna kontroll
-
-Enne demode alustamist kontrolli oma kohalikku keskkonda:
+Enne demo alustamist kontrolli oma kohalikku keskkonda:
 
 ```powershell
-foundry --version              # Ensure CLI is installed
-foundry status                 # Service status
-foundry model run phi-4-mini   # Start baseline SLM
-curl http://localhost:5273/v1/models  # Validate API (should list running model)
+foundry --version              # Veendu, et CLI on installitud
+foundry status                 # Teenuse olek
+foundry model run phi-4-mini   # Käivita baasjoon SLM
+curl http://localhost:5273/v1/models  # Kontrolli API-d (peaks loetlema töötava mudeli)
 ```
 
-Kui viimane käsk ebaõnnestub, käivita (või taaskäivita) teenus: `foundry service start`.
+Kui viimane käsk ebaõnnestub, alusta (või taaskäivita) teenus: `foundry service start`.
 
-## Demo voog (30 minutit)
+## Demo käik (30 minutit)
 
-### 1. Süsteemipromptid ja konteksti loomise strateegiad (10 minutit)
+### 1. Süsteemi promptid ja alustamisstrateegiad (10 minutit)
 
-#### Samm 1.1: Täiustatud promptide loomine
+#### Samm 1.1: Täiustatud prompt-ehitus
 
 Loo `samples/02-rag-solutions/prompt_engineering.py`:
 
@@ -133,7 +132,7 @@ class PromptEngineer:
                 model=model,
                 messages=messages,
                 max_tokens=1000,
-                temperature=0.3,  # Lower temperature for more consistent responses
+                temperature=0.3,  # Madalam temperatuur ühtlasemate vastuste jaoks
                 top_p=0.9
             )
             
@@ -153,7 +152,7 @@ def demo_grounding_strategies():
     
     engineer = PromptEngineer()
     
-    # Sample contexts for different domains
+    # Erinevate valdkondade kontekstide proovimiseks
     contexts = {
         "technical": """
         Microsoft Foundry Local is a development platform that enables running AI models locally on Windows devices. 
@@ -197,18 +196,17 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-#### Samm 1.2: Testi konteksti loomise strateegiaid
+#### Samm 1.2: Katseta alustamisstrateegiaid
 
 ```powershell
-# Ensure phi-4-mini is running
+# Veendu, et phi-4-mini töötab
 foundry model run phi-4-mini
 
-# Run the prompt engineering demo
+# Käivita prompti insenerinduse demo
 python samples/02-rag-solutions/prompt_engineering.py
 ```
 
-
-### 2. Tabelandmete integreerimine promptidega (CSV Q&A) (10 minutit)
+### 2. Integreeri tabelandmed promptidega (CSV Q&A) (10 minutit)
 
 #### Samm 2.1: CSV andmete integreerimine
 
@@ -260,12 +258,12 @@ class CSVQASystem:
             "sample_rows": self.data.head(3).to_dict('records')
         }
         
-        # Add numerical statistics for numeric columns
+        # Lisa numbrilised statistika numbriliste veergude kohta
         numeric_cols = self.data.select_dtypes(include=['number']).columns
         if len(numeric_cols) > 0:
             stats["numeric_summary"] = self.data[numeric_cols].describe().to_dict()
         
-        # Add categorical summaries
+        # Lisa kategoorilised kokkuvõtted
         categorical_cols = self.data.select_dtypes(include=['object']).columns
         if len(categorical_cols) > 0:
             stats["categorical_summary"] = {}
@@ -285,12 +283,12 @@ class CSVQASystem:
             f"- Columns: {', '.join(self.summary_stats['columns'])}"
         ]
         
-        # Add sample data
+        # Lisa näidandmed
         context_parts.append("\nSample Data:")
         for i, row in enumerate(self.summary_stats['sample_rows'][:3]):
             context_parts.append(f"Row {i+1}: {json.dumps(row, default=str)}")
         
-        # Add relevant statistics based on question content
+        # Lisa asjakohased statistilised andmed vastavalt küsimuse sisule
         question_lower = question.lower()
         
         if any(word in question_lower for word in ['average', 'mean', 'sum', 'count', 'max', 'min', 'statistics']):
@@ -343,7 +341,7 @@ class CSVQASystem:
                 model=model,
                 messages=messages,
                 max_tokens=800,
-                temperature=0.2  # Low temperature for factual data analysis
+                temperature=0.2  # Madal temperatuur faktipõhiseks andmeanalüüsiks
             )
             
             return {
@@ -359,7 +357,7 @@ class CSVQASystem:
 def create_sample_dataset():
     """Create a sample dataset for demonstration"""
     
-    # Create sample sales data
+    # Loo näidis müügiandmed
     sales_data = {
         'Date': ['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-04', '2024-01-05',
                  '2024-01-06', '2024-01-07', '2024-01-08', '2024-01-09', '2024-01-10'],
@@ -376,7 +374,7 @@ def create_sample_dataset():
     df = pd.DataFrame(sales_data)
     csv_path = "samples/02-rag-solutions/sample_sales_data.csv"
     
-    # Ensure directory exists
+    # Veendu, et kataloog eksisteerib
     os.makedirs(os.path.dirname(csv_path), exist_ok=True)
     
     df.to_csv(csv_path, index=False)
@@ -385,21 +383,21 @@ def create_sample_dataset():
 def demo_csv_qa():
     """Demonstrate CSV Q&A capabilities"""
     
-    # Create sample dataset
+    # Loo näidishulk andmeid
     csv_path = create_sample_dataset()
     print(f"Created sample dataset: {csv_path}")
     
-    # Initialize Q&A system
+    # Algata K&V süsteem
     qa_system = CSVQASystem()
     
-    # Load data
+    # Laadi andmed
     if not qa_system.load_csv_data(csv_path):
         print("Failed to load CSV data")
         return
     
     print(f"\nLoaded dataset with shape: {qa_system.data.shape}")
     
-    # Example questions
+    # Näidisküsimused
     questions = [
         "What is the total sales amount?",
         "Which product has the highest average sales amount?",
@@ -425,17 +423,16 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-#### Samm 2.2: Testi CSV Q&A süsteemi
+#### Samm 2.2: Katseta CSV Q&A süsteemi
 
 ```powershell
-# Run the CSV Q&A demo
+# Käivita CSV küsimuste ja vastuste demo
 python samples/02-rag-solutions/csv_qa_system.py
 ```
 
+### 3. Algusprojekt: kohanda 02-grounding-data (5 minutit)
 
-### 3. Algprojekt: Kohanda 02-grounding-data (5 minutit)
-
-#### Samm 3.1: Täiustatud dokumentide RAG süsteem
+#### Samm 3.1: Täiustatud dokumendi RAG süsteem
 
 Loo `samples/02-rag-solutions/document_rag.py`:
 
@@ -491,18 +488,18 @@ class SimpleRAGSystem:
         if not self.documents or self.vectorizer is None:
             return []
         
-        # Vectorize query
+        # Päringu vektoriseerimine
         query_vector = self.vectorizer.transform([query])
         
-        # Calculate similarities
+        # Sarnasuste arvutamine
         similarities = cosine_similarity(query_vector, self.doc_vectors).flatten()
         
-        # Get top-k documents
+        # Hankige top-k dokumendid
         top_indices = np.argsort(similarities)[::-1][:top_k]
         
         results = []
         for idx in top_indices:
-            if similarities[idx] > 0.1:  # Minimum similarity threshold
+            if similarities[idx] > 0.1:  # Minimaalne sarnasuse lävi
                 results.append({
                     "content": self.documents[idx],
                     "similarity": float(similarities[idx]),
@@ -517,7 +514,7 @@ class SimpleRAGSystem:
                        max_context_docs: int = 3) -> Dict[str, Any]:
         """Generate answer using retrieved documents"""
         
-        # Retrieve relevant documents
+        # Hankige asjakohased dokumendid
         relevant_docs = self.retrieve_relevant_docs(question, max_context_docs)
         
         if not relevant_docs:
@@ -616,16 +613,16 @@ def create_sample_knowledge_base() -> List[str]:
 def demo_document_rag():
     """Demonstrate document RAG capabilities"""
     
-    # Create RAG system
+    # Loo RAG süsteem
     rag_system = SimpleRAGSystem()
     
-    # Add sample knowledge base
+    # Lisa näidis teadmistebaas
     documents = create_sample_knowledge_base()
     rag_system.add_documents(documents)
     
     print(f"Loaded {len(documents)} documents into knowledge base")
     
-    # Example questions
+    # Näidisküsimused
     questions = [
         "What is Microsoft Foundry Local and what are its key features?",
         "How do Small Language Models differ from regular language models?",
@@ -652,8 +649,7 @@ if __name__ == "__main__":
     demo_document_rag()
 ```
 
-
-### 4. Näita CLI-st Azure'i migratsiooni teed (5 minutit)
+### 4. Näita CLI → Azure migratsioonirada (5 minutit)
 
 #### Samm 4.1: Migratsioonistrateegia ülevaade
 
@@ -683,7 +679,7 @@ class UnifiedAIClient:
         self.environment = environment
         
         if environment == "local":
-            # Foundry Local configuration
+            # Foundry lokaalne konfiguratsioon
             self.client = OpenAI(
                 base_url="http://localhost:5273/v1",
                 api_key="not-needed"
@@ -691,7 +687,7 @@ class UnifiedAIClient:
             self.default_model = "phi-4-mini"
             
         elif environment == "azure":
-            # Azure AI Foundry configuration
+            # Azure AI Foundry konfiguratsioon
             if not azure_endpoint or not azure_api_key:
                 raise ValueError("Azure endpoint and API key required for Azure environment")
             
@@ -700,7 +696,7 @@ class UnifiedAIClient:
                 api_key=azure_api_key,
                 default_headers={"api-version": azure_api_version}
             )
-            self.default_model = "gpt-4"  # Or your Azure deployment name
+            self.default_model = "gpt-4"  # Või teie Azure juurutamise nimi
             
         else:
             raise ValueError("Environment must be 'local' or 'azure'")
@@ -740,15 +736,15 @@ class UnifiedAIClient:
         
         try:
             if self.environment == "local":
-                # For Foundry Local, we'd typically use the CLI
-                # This is a simplified example
+                # Foundry Locali puhul kasutame tavaliselt CLI-d
+                # See on lihtsustatud näide
                 return {
                     "success": True,
                     "models": ["phi-4-mini", "qwen2.5-0.5b", "deepseek-coder-1.3b"],
                     "environment": "local"
                 }
             else:
-                # For Azure, you might query the deployments endpoint
+                # Azure jaoks võite pärida juurutuste otspunkti
                 models_response = self.client.models.list()
                 return {
                     "success": True,
@@ -769,7 +765,7 @@ def demo_migration_patterns():
     print("Foundry Local to Azure AI Foundry Migration Demo")
     print("=" * 60)
     
-    # Test message
+    # Testsõnum
     test_messages = [
         {
             "role": "system",
@@ -781,7 +777,7 @@ def demo_migration_patterns():
         }
     ]
     
-    # Test with Foundry Local
+    # Testimine Foundry Localiga
     print("\n1. Testing with Foundry Local:")
     print("-" * 40)
     
@@ -803,11 +799,11 @@ def demo_migration_patterns():
     except Exception as e:
         print(f"✗ Local Setup Error: {e}")
     
-    # Show Azure configuration (commented out as it requires credentials)
+    # Näita Azure konfiguratsiooni (kommenteeritud, kuna nõuab mandaate)
     print("\n2. Azure AI Foundry Configuration:")
     print("-" * 40)
     print("""
-    # To migrate to Azure AI Foundry, configure as follows:
+    # Azure AI Foundryle migreerimiseks seadistage järgmiselt:
     
     azure_client = UnifiedAIClient(
         environment="azure",
@@ -816,7 +812,7 @@ def demo_migration_patterns():
         azure_api_version="2024-08-01-preview"
     )
     
-    # Same API calls work in both environments!
+    # Samad API kõned toimivad mõlemas keskkonnas!
     azure_result = azure_client.chat_completion(
         messages=test_messages,
         max_tokens=200,
@@ -824,7 +820,7 @@ def demo_migration_patterns():
     )
     """)
     
-    # Migration strategy
+    # Migratsioonistrateegia
     print("\n3. Migration Strategy:")
     print("-" * 40)
     print("""
@@ -840,16 +836,16 @@ def demo_migration_patterns():
     ✓ Easy scaling to production (same API)
     """)
     
-    # Configuration examples
+    # Konfiguratsiooni näited
     print("\n4. Environment-based Configuration:")
     print("-" * 40)
     print("""
-    # .env file for development
+    # .env fail arenduseks
     AI_ENVIRONMENT=local
     FOUNDRY_LOCAL_URL=http://localhost:5273/v1
     DEFAULT_MODEL=phi-4-mini
     
-    # .env file for production
+    # .env fail tootmiseks
     AI_ENVIRONMENT=azure
     AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com
     AZURE_OPENAI_API_KEY=your-api-key
@@ -861,50 +857,49 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-#### Samm 4.2: Testi migratsioonimustreid
+#### Samm 4.2: Katseta migratsioonimustreid
 
 ```powershell
-# Run the migration demo
+# Käivita migratsiooni demo
 python samples/02-rag-solutions/migration_guide.py
 ```
 
+## Kaasatud põhikontseptsioonid
 
-## Kaetud põhikontseptsioonid
+### 1. Täiustatud prompt-ehitus
 
-### 1. Täiustatud promptide loomine
-
-- **Süsteemipromptid**: Valdkonnaspetsiifilised eksperdirollid
-- **Konteksti loomise strateegiad**: Tehnika konteksti integreerimiseks
-- **Temperatuuri kontroll**: Loovuse ja järjepidevuse tasakaal
-- **Tokenite haldamine**: Efektiivne konteksti kasutamine
+- **Süsteemipromptid**: Domeenipõhised eksperdirollid
+- **Alustamisstrateegiad**: Konteksti integreerimise tehnikaid
+- **Temperatuuri juhtimine**: Loovuse ja järjekindluse balansseerimine
+- **Tokenite haldus**: Tõhus konteksti kasutamine
 
 ### 2. Struktureeritud andmete integreerimine
 
-- **CSV töötlemine**: Pandase integreerimine AI mudelitega
-- **Statistiline analüüs**: Automaatne andmete kokkuvõte
+- **CSV töötlemine**: Pandas integratsioon AI mudelitega
+- **Statistiline analüüs**: Automatiseeritud andmete kokkuvõte
 - **Konteksti loomine**: Dünaamiline konteksti genereerimine päringute põhjal
-- **Mitmeformaadi tugi**: JSON, CSV ja tabelandmed
+- **Mitme formaadi tugi**: JSON, CSV ja tabelandmed
 
-### 3. RAG rakendamise mustrid
+### 3. RAG rakendusmustrid
 
-- **Vektoriotsing**: TF-IDF ja kosinussarnasus
-- **Dokumentide otsing**: Asjakohasuse skoorimine ja järjestamine
-- **Konteksti kombineerimine**: Mitme dokumendi süntees
-- **Vastuste genereerimine**: Konteksti põhjal vastuste loomine
+- **Vektorotsing**: TF-IDF ja kosinuse sarnasus
+- **Dokumendi otsing**: Asjakohasuse hindamine ja järjestamine
+- **Kontekstide kombineerimine**: Mitme dokumendi süntees
+- **Vastuse genereerimine**: Alustatud vastuse loomine
 
-### 4. Pilvemigratsiooni strateegiad
+### 4. Pilve migratsioonistrateegiad
 
 - **Ühtsed API-d**: Üks koodibaas kohaliku ja pilve jaoks
-- **Keskkonna abstraktsioon**: Konfiguratsioonipõhine juurutamine
-- **Arendustöövoog**: Kohalik → Staging → Tootmine
-- **Kulude optimeerimine**: Kohalik arendus, pilve tootmine
+- **Keskkonna abstraktsioon**: Konfiguratsioonipõhine juurutus
+- **Arendusvoog**: Kohalik → Staging → Tootmine
+- **Kuluoptimeerimine**: Kohalik areng, pilve tootmine
 
-## Tootmiskõlblikkuse kaalutlused
+## Tootmise kaalutlused
 
 ### 1. Jõudluse optimeerimine
 
 ```python
-# Optimize for production RAG
+# Optimeeri tootmiseks RAG
 rag_config = {
     "max_context_docs": 5,
     "similarity_threshold": 0.15,
@@ -918,24 +913,24 @@ rag_config = {
 ### 2. Vigade käsitlemine
 
 ```python
-# Robust error handling
+# Tugev vigade käsitlemine
 try:
     result = rag_system.generate_answer(question)
     if "error" in result:
-        # Fallback to general knowledge
+        # Tagasiühendus üldteadmistele
         fallback_result = client.chat.completions.create(
             model="phi-4-mini",
             messages=[{"role": "user", "content": question}]
         )
 except Exception as e:
-    # Log error and provide graceful degradation
+    # Logi viga ja võimalda sujuv degradatsioon
     logger.error(f"RAG system error: {e}")
 ```
 
-### 3. Jälgimine ja nähtavus
+### 3. Jälgimine ja seire
 
 ```python
-# Track RAG performance
+# Jälgi RAG-i jõudlust
 metrics = {
     "retrieval_time": time.time() - start_time,
     "context_relevance": avg_similarity_score,
@@ -944,33 +939,32 @@ metrics = {
 }
 ```
 
-
 ## Järgmised sammud
 
-Pärast sessiooni lõpetamist:
+Pärast selle seansi läbimist:
 
-1. **Uuri sessiooni 3**: Avatud lähtekoodiga mudelid Foundry Localis
-2. **Ehita tootmiskõlblik RAG**: Rakenda Chainlitiga (Näidis 04)
-3. **Täiustatud vektoriotsing**: Integreeri Chroma või Pinecone'iga
-4. **Pilvemigratsioon**: Juuruta Azure AI Foundry'sse
-5. **Hinda RAG kvaliteeti**: Käivita `cd Workshop/samples;python -m session02.rag_eval_ragas`, et mõõta vastuste asjakohasust, täpsust ja konteksti täpsust ragas abil
+1. **Uuri Seanss 3**: Avatud lähtekoodiga mudelid Foundry Local'is
+2. **Ehita tootmiskõlbulik RAG**: Rakenda Chainlit'iga (Näide 04)
+3. **Täiustatud vektorotsing**: Integreeri Chroma või Pineconega
+4. **Pilve migratsioon**: Juuruta Azure AI Foundry'sse
+5. **Hinda RAG kvaliteeti**: Käivita `cd Workshop/samples;python -m session02.rag_eval_ragas` mõõtmaks answer_relevancy, faithfulness ja context_precision ragaste abil
 
 ### Valikulised täiustused
 
 | Kategooria | Täiustus | Põhjendus | Suund |
-|------------|----------|-----------|-------|
-| Otsing | Asenda TF-IDF vektorihoidlaga (FAISS / Chroma) | Parem semantiline tagasikutsumine ja skaleeritavus | Tükelda dokumendid (500–800 tähemärki), loo embeddingud, salvesta indeks |
-| Hübriidindeks | Semantiline + märksõna filtreerimine | Parandab täpsust numbriliste / koodipäringute puhul | Filtreeri märksõnade järgi, seejärel järjest kosinussarnasuse järgi |
-| Embeddingud | Hinda mitut embeddingu mudelit | Optimeeri asjakohasus vs kiirus | A/B: MiniLM vs E5-small vs kohalikult hostitud kodeerija |
-| Vahemälu | Vahemälu embeddingud ja otsingutulemused | Vähenda korduvate päringute latentsust | Lihtne kettal põhinev pickle / sqlite hash-võtmega |
-| Hindamine | Laienda ragas andmekogumit | Statistiliselt tähenduslik kvaliteet | Kogu 50–100 Q/A + kontekstid; stratifitseeri teemade järgi |
-| Metrika | Jälgi otsingu ja genereerimise ajastusi | Jõudluse profiilimine | Kogu `retrieval_ms`, `gen_ms`, `tokens` iga kõne kohta |
-| Turvameetmed | Lisa hallutsinatsioonide varuvariant | Turvalisemad vastused | Kui täpsus < lävi → vastus: "Ebapiisav kontekst." |
-| Varuvariant | Kohalik → Azure mudeli kaskaad | Hübriidkvaliteedi tõus | Madala kindluse korral suuna pilvele sama OpenAI API kaudu |
-| Determinism | Stabiilsed võrdluskatsetused | Korduvate hindamiskomplektide jaoks | Fikseeri seeme, `temperature=0`, keela juhuslikkus proovivõtjas |
-| Jälgimine | Säilita hindamiskatsete ajalugu | Regressiooni tuvastamine | Lisa JSON read ajatempli + metrika muutustega |
+|----------|-------------|-----------|-----------|
+| Otsing | Asenda TF-IDF vektoripoe (FAISS / Chroma) vastu | Parema semantilise mälu ja skaleeritavuse jaoks | Lõika dokumendid (500–800 tähemärki), embedda, säilita indeks |
+| Hübriidindeks | Kahepoolne semantiline + märksõna filter | Täpsust parandab numbriliste / koodipäringute puhul | Filtreeri esmalt märksõna järgi, seejärel skoorita kosinuse järgi |
+| Embedid | Hinda mitut embeding mudelit | Optimeeri asjakohasust ja kiirust | A/B test MiniLM vs E5-small vs kohalikult hostitud kodeerija |
+| Vahemälu | Vahemälu embedidele ja otsingu tulemustele | Vähenenud korduvate päringute latentsus | Lihtne kettal pickle / sqlite hashi võtmega |
+| Hindamine | Laienda ragas andmekogu | Statistiliselt tähenduslik kvaliteet | Kurateeri 50–100 Q/A + kontekstid, stratifeeri teemade järgi |
+| Mõõdikud | Jälgi otsingu ja genereerimise ajastust | Jõudlusprofiilimine | Kogu `retrieval_ms`, `gen_ms`, `tokens` iga kõne kohta |
+| Kaitseredelid | Lisa hallutsinatsioonide fallback | Turvalisemad vastused | Kui tõepärasus < lävi → vasta: "Ebapiisav kontekst." |
+| Fallback | Kaskaad kohalik → Azure mudel | Hübriidne kvaliteedi tõus | Madala usalduse korral suuna pilve sama OpenAI API kaudu |
+| Determinism | Stabiilsed võrdlusjooksud | Korduvad hindamise komplektid | Fikseeri seeme, `temperature=0`, lülita sampler juhuslikkus välja |
+| Jälgimine | Säilita hindamise jooksude ajalugu | Regresiooni tuvastus | Lisa JSON read ajatempliga + mõõdikute muutuste info |
 
-#### Näide: Otsingu ajastuse lisamine
+#### Näide: Lisades otsingu ajastuse
 
 ```python
 import time
@@ -983,57 +977,55 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
+#### Hindamise skaleerimine ragastega
 
-#### Hindamise skaleerimine ragas abil
-
-1. Koosta JSONL väljadega: `question`, `answer`, `contexts`, `ground_truths` (loend)
+1. Koosta JSONL koos väljadega: `question`, `answer`, `contexts`, `ground_truths` (loend)
 2. Konverteeri `Dataset.from_list(list_of_dicts)`
 3. Käivita `evaluate(dataset, metrics=[...])`
-4. Salvesta metrikad (CSV/JSON) trendianalüüsiks.
+4. Säilita mõõdikud (CSV/JSON) trendianalüüsiks.
 
-#### Vektorihoidla kiirseadistus (FAISS)
+#### Vektoripoe kiirstart (FAISS)
 
 ```python
 import faiss, numpy as np
 index = faiss.IndexFlatIP(embeddings.shape[1])
-index.add(embeddings)  # embeddings = np.array([...]) normalized
+index.add(embeddings)  # embeddings = np.array([...]) normaliseeritud
 D, I = index.search(query_vec, k)
 ```
 
-Kettal salvestamiseks kasuta `faiss.write_index(index, "kb.index")`.
+Ketastel püsimiseks kasuta `faiss.write_index(index, "kb.index")`.
 
 ## Lisamaterjalid
 
 ### Dokumentatsioon
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
 - [Azure AI Foundry RAG mustrid](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
-- [Promptide loomise juhend](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
-- [Ragas hindamise dokumentatsioon](https://docs.ragas.io)
+- [Prompt Engineering juhend](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [Ragas hindamise dokumendid](https://docs.ragas.io)
 
 ### Näidiskood
-- [Module08 Näidis 04](./samples/04/README.md) - Chainlit RAG rakendus
-- [Täiustatud multi-agent süsteem](./samples/09/README.md) - Agentide koordineerimise mustrid
+- [Module08 Näide 04](./samples/04/README.md) - Chainlit RAG rakendus
+- [Täiustatud multiagent süsteem](./samples/09/README.md) - Agendi koordinatsioonimustrid
 
 ---
 
-**Sessiooni kestus**: 30 minutit praktilist + 15 minutit küsimusi ja vastuseid  
-**Raskusaste**: Keskmine  
-**Eeltingimused**: Sessioon 1 lõpetatud, Pythoni põhiteadmised
+**Seansi kestus**: 30 minutit praktilist tööd + 15 min Q&A
+**Raskusaste**: Kesktase
+**Eelteadmised**: Läbitud Seanss 1, põhiteadmised Pythonist
 
-## Näidistsenaarium ja töötoa kaardistus
+## Näidisstsenaarium & töötuba vaste
 
-| Töötoa skript / märkmik | Stsenaarium | Eesmärk | Põhiandmestik / allikas | Näidisküsimus |
-|-------------------------|-------------|---------|-------------------------|---------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Sisemine tugiteenuste teadmistebaas, mis vastab privaatsuse ja jõudluse KKK-le | Minimaalne mälupõhine RAG embeddingutega | `DOCS` loend skriptis (5 lühikest lõiku) | Miks kasutada RAG-i kohaliku inferentsiga? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kvaliteedianalüütik, kes määrab baasjoone otsingu täpsuse metrikad | Arvuta ragas metrikad väikese sünteetilise andmestiku põhjal | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` massiivid | Millist eelist pakub kohalik inferents? |
-| `prompt_engineering.py` (täiustatud) | Valdkonna ekspert, kes loob konteksti põhjal promptide erinevates vertikaalides | Võrdle valdkonna süsteemipromptide ja tokenite mõju | Inline `contexts` sõnastik | Kuidas Foundry Local haldab mudeli vahemälu? |
-| `csv_qa_system.py` | Müügitoimingud, kes uurivad interaktiivset analüütikat eksportide üle | Kokkuvõte ja päring väikese müügiandmete lõigu kohta | Genereeritud `sample_sales_data.csv` (10 rida) | Millisel tootel on kõrgeim keskmine müügisumma? |
-| `document_rag.py` | Tootemeeskond, kes uurib dokumendi RAG-i sisemise wiki jaoks | Otsi ja viita asjakohaseid dokumente | `create_sample_knowledge_base()` loend | Millised on Edge AI eelised? |
-| `migration_guide.py` | Arhitekt, kes valmistab ette pilvemigratsiooni plaani | Näita kohaliku → Azure API vastavust | Staatilised testpromptid | Selgita Edge AI eeliseid 2–3 lauses. |
+| Töötuba skript / märkmeraamat | Stsenaarium | Eesmärk | Peamine andmestik / allikas | Näidisküsimus |
+|----------------------------|----------|------|-----------------------|------------------|
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Sisemine tugiteadmiste alus, mis vastab privaatsuse ja jõudluse korduma kippuvatele küsimustele | Minimaalne mälus olev RAG koos embedidega | Skripti DOCS nimekiri (5 lühikest lõiku) | Miks kasutada RAG-i kohaliku järeldamisega? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Kvaliteedi analüütik, kes loob võrdlusbaasi otsingu tõepärasuse mõõtjatele | Arvuta ragaste mõõdikud väikese sünteetilise andmestiku peal | DOCS, QUESTIONS, GROUND_TRUTH massiivid | Milline eelis on kohalikul järeldamisel? |
+| `prompt_engineering.py` (edasijõudnud) | Domeeni ekspert koostab grounditud promte mitmele valdkonnale | Võrdle domeeni süsteemiprompte ja tokeni mõju | Inline 'contexts' sõnastik | Kuidas Foundry Local mudelivahemälu haldab? |
+| `csv_qa_system.py` | Müügi operatsioonid uurivad interaktiivset analüütikat eksportide peal | Kokkuvõtted ja päringud väikese müügilõigu kohta | Genereeritud `sample_sales_data.csv` (10 rida) | Millisel tootel on kõrgeim keskmine müügimaht? |
+| `document_rag.py` | Tootemeeskond uurib dokumendi RAG-i sisemise vikipeedia jaoks | Otsi ja tsitaadi asjakohaseid dokumente | `create_sample_knowledge_base()` nimekiri | Millised on Edge AI eelised? |
+| `migration_guide.py` | Arhitekt valmistab pilve migratsiooniplaani | Demonstreeri kohalik → Azure API pariteeti | Staatilised testpromptid | Selgita Edge AI eeliseid 2-3 lauses. |
 
-### Andmestiku näited
-
-RAG torujuhtme dokumendiloend:
+### Andmekogu lõigud
+Inline RAG torujuhtme dokumendi nimekiri:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1053,18 +1045,15 @@ GROUND_TRUTH = [
 ]
 ```
 
+### Stsenaariumi jutustus
+Tugitehnikute grupp soovib kiiret prototüüpi sisemiste Q&A-de vastamiseks, ilma kliendiandmeid väljastpoolt avaldamata. Seanss 2 materjalid arenevad minimaalsest mööduvast RAG-ist (ilma püsivuseta) → struktureeritud CSV Q&A → dokumendi otsing tsitaadiga → objektiivne kvaliteedi hindamine (ragas) → pilve migreerimise strateegia valmis Azure staginguks.
 
-### Stsenaariumi narratiiv
-
-Tugiteenuste inseneride grupp soovib kiiret prototüüpi, et vastata sisemistele KKK-dele, ilma et kliendiandmeid väliselt avaldataks. Sessioon 2 artefaktid arenevad minimaalsest ajutisest RAG-ist (ilma püsivuseta) → struktureeritud CSV Q&A → dokumentide otsing viidetega → objektiivne kvaliteedi hindamine (ragas) → migratsioonistrateegia, mis on valmis Azure'i lavastamiseks.
-
-### Laiendusteed
-
-Kasuta valikuliste täiustuste tabelit, et areneda: asenda TF-IDF FAISS/Chroma vastu, suurenda hindamiskorpust (50–100 Q/A), lisa varuvariant suuremale mudelile, kui täpsus < lävi.
+### Laiendusvõimalused
+Kasuta valikuliste täiustuste tabelit arendusena: asenda TF-IDF FAISS/Chroma vastu, suurenda hindamiskogu (50–100 Q/A), lisa kõrvalekalde eskalatsioon suuremale mudelile, kui tõepärasus on alla läve.
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+**Lahtiütlus**:
+See dokument on tõlgitud kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi me püüdleme täpsuse poole, palun pange tähele, et automatiseeritud tõlgetes võib esineda vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta selle tõlkega seotud eksimustest või valesti mõistmistest.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

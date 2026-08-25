@@ -1,762 +1,825 @@
-# EdgeAI algajatele: Õppeteed ja õppeplaan
+# EdgeAI algajatele: õpiteed ja õppeplaan
 
-### Kiirendatud õppeprogramm (1 nädal)
+### Koondatud õpitee (1 nädal)
 
-| Päev | Fookus | Eeldatav kestus |
-|------|--------|-----------------|
+| Päev | Fookus | Eeldatav aeg |
+|------|-------|------------------|
 | Päev 0 | Moodul 0: Sissejuhatus EdgeAI-sse | 1-2 tundi |
 | Päev 1 | Moodul 1: EdgeAI põhialused | 3 tundi |
 | Päev 2 | Moodul 2: SLM alused | 3 tundi |
-| Päev 3 | Moodul 3: SLM juurutamine | 2 tundi |
+| Päev 3 | Moodul 3: SLM kasutuselevõtt | 2 tundi |
 | Päev 4-5 | Moodul 4: Mudeli optimeerimine (6 raamistikku) | 4 tundi |
 | Päev 6 | Moodul 5: SLMOps | 3 tundi |
-| Päev 7 | Moodul 6-7: AI agendid ja arendustööriistad | 4 tundi |
-| Päev 8 | Moodul 8: Foundry Local Toolkit (kaasaegne rakendus) | 1 tund |
+| Päev 7 | Moodul 6-7: AI agentid ja arendustööriistad | 4 tundi |
+| Päev 8 | Moodul 8: Foundry Local tööriistakomplekt (kaasaegne rakendus) | 1 tund |
 
-### Kiirendatud õppeprogramm (2 nädalat)
+### Koondatud õpitee (2 nädalat)
 
-| Päev | Fookus | Eeldatav kestus |
-|------|--------|-----------------|
+| Päev | Fookus | Eeldatav aeg |
+|------|-------|------------------|
 | Päev 1-2 | Moodul 1: EdgeAI põhialused | 3 tundi |
 | Päev 3-4 | Moodul 2: SLM alused | 3 tundi |
-| Päev 5-6 | Moodul 3: SLM juurutamine | 2 tundi |
+| Päev 5-6 | Moodul 3: SLM kasutuselevõtt | 2 tundi |
 | Päev 7-8 | Moodul 4: Mudeli optimeerimine | 4 tundi |
 | Päev 9-10 | Moodul 5: SLMOps | 3 tundi |
-| Päev 11-12 | Moodul 6: AI agendid | 2 tundi |
+| Päev 11-12 | Moodul 6: AI agentid | 2 tundi |
 | Päev 13-14 | Moodul 7: Arendustööriistad | 3 tundi |
 
-### Osalise ajaga õpe (4 nädalat)
+### Osaline õpe (4 nädalat)
 
-| Nädal | Fookus | Eeldatav kestus |
-|-------|--------|-----------------|
+| Nädal | Fookus | Eeldatav aeg |
+|------|-------|------------------|
 | Nädal 1 | Moodul 1-2: Põhitõed ja SLM alused | 6 tundi |
-| Nädal 2 | Moodul 3-4: Juurutamine ja optimeerimine | 6 tundi |
-| Nädal 3 | Moodul 5-6: SLMOps ja AI agendid | 5 tundi |
-| Nädal 4 | Moodul 7: Arendustööriistad ja integreerimine | 3 tundi |
+| Nädal 2 | Moodul 3-4: Kasutuselevõtt ja optimeerimine | 6 tundi |
+| Nädal 3 | Moodul 5-6: SLMOps ja AI agentid | 5 tundi |
+| Nädal 4 | Moodul 7: Arendustööriistad ja integratsioon | 3 tundi |
 
-| Päev | Fookus | Eeldatav kestus |
-|------|--------|-----------------|
+| Päev | Fookus | Eeldatav aeg |
+|------|-------|------------------|
 | Päev 0 | Moodul 0: Sissejuhatus EdgeAI-sse | 1-2 tundi |
 | Päev 1-2 | Moodul 1: EdgeAI põhialused | 3 tundi |
 | Päev 3-4 | Moodul 2: SLM alused | 3 tundi |
-| Päev 5-6 | Moodul 3: SLM juurutamine | 2 tundi |
+| Päev 5-6 | Moodul 3: SLM kasutuselevõtt | 2 tundi |
 | Päev 7-8 | Moodul 4: Mudeli optimeerimine | 4 tundi |
 | Päev 9-10 | Moodul 5: SLMOps | 3 tundi |
-| Päev 11-12 | Moodul 6: SLM agentide süsteemid | 2 tundi |
-| Päev 13-14 | Moodul 7: EdgeAI rakenduste näited | 2 tundi |
+| Päev 11-12 | Moodul 6: SLM agentuursed süsteemid | 2 tundi |
+| Päev 13-14 | Moodul 7: EdgeAI rakenduse näited | 2 tundi |
 
-| Moodul | Lõpetamise kuupäev | Kulutatud tunnid | Peamised õppetunnid |
-|--------|--------------------|------------------|--------------------|
+| Moodul | Valmistõuskuupäev | Kulutatud tunnid | Peamised õppetükid |
+|--------|----------------|-------------|--------------|
 | Moodul 0: Sissejuhatus EdgeAI-sse | | | |
 | Moodul 1: EdgeAI põhialused | | | |
 | Moodul 2: SLM alused | | | |
-| Moodul 3: SLM juurutamine | | | |
+| Moodul 3: SLM kasutuselevõtt | | | |
 | Moodul 4: Mudeli optimeerimine (6 raamistikku) | | | |
 | Moodul 5: SLMOps | | | |
-| Moodul 6: SLM agentide süsteemid | | | |
-| Moodul 7: EdgeAI rakenduste näited | | | |
-| Praktilised harjutused | | | |
+| Moodul 6: SLM agentuursed süsteemid | | | |
+| Moodul 7: EdgeAI rakenduse näited | | | |
+| Praktilised ülesanded | | | |
 | Mini-projekt | | | |
 
-### Osalise ajaga õpe (4 nädalat)
+### Osaline õpe (4 nädalat)
 
-| Nädal | Fookus | Eeldatav kestus |
-|-------|--------|-----------------|
+| Nädal | Fookus | Eeldatav aeg |
+|------|-------|------------------|
 | Nädal 1 | Moodul 1-2: Põhitõed ja SLM alused | 6 tundi |
-| Nädal 2 | Moodul 3-4: Juurutamine ja optimeerimine | 6 tundi |
-| Nädal 3 | Moodul 5-6: SLMOps ja AI agendid | 5 tundi |
-| Nädal 4 | Moodul 7: Arendustööriistad ja integreerimine | 3 tundi |
+| Nädal 2 | Moodul 3-4: Kasutuselevõtt ja optimeerimine | 6 tundi |
+| Nädal 3 | Moodul 5-6: SLMOps ja AI agentid | 5 tundi |
+| Nädal 4 | Moodul 7: Arendustööriistad ja integratsioon | 3 tundi |
 
 ## Sissejuhatus
 
-Tere tulemast EdgeAI algajatele mõeldud õppejuhendisse! See dokument on loodud selleks, et aidata teil kursuse materjalides tõhusalt orienteeruda ja maksimeerida oma õpikogemust. Siit leiate struktureeritud õppeprogrammid, soovitatud õppeplaanid, võtmekontseptsioonide kokkuvõtted ja täiendavad ressursid, et süvendada oma arusaamist EdgeAI tehnoloogiatest.
+Tere tulemast EdgeAI algajate õpi juhendisse! See dokument on loodud selleks, et aidata sul kursuse materjale tõhusalt läbi töötada ja maksimeerida oma õpikogemust. See pakub struktureeritud õpiteid, soovitatud õppegraafikuid, võtmekontseptsioonide kokkuvõtteid ning täiendavaid ressursse Edge AI tehnoloogiate parema mõistmise jaoks.
 
-See on lühike 20-tunnine kursus, mis annab olulisi teadmisi EdgeAI-st ajasäästlikus formaadis, muutes selle ideaalseks nii hõivatud spetsialistidele kui ka tudengitele, kes soovivad kiiresti omandada praktilisi oskusi selles arenevas valdkonnas.
+See on kompaktne 20-tunnine kursus, mis annab olulisi teadmisi EdgeAI-st ajasäästlikus formaadis, sobides ideaalselt hõivatud spetsialistidele ja tudengitele, kes soovivad kiiresti omandada praktilisi oskusi selles kasvavas valdkonnas.
 
 ## Kursuse ülevaade
 
-Kursus on jaotatud kaheksaks põhjalikuks mooduliks:
+Kursus on organiseeritud kaheksasse põhjalikku moodulisse:
 
-0. **Sissejuhatus EdgeAI-sse** - Aluste ja konteksti loomine koos tööstuslike rakenduste ja õpieesmärkidega  
-1. **EdgeAI põhialused ja transformatsioon** - Põhikontseptsioonide ja tehnoloogilise muutuse mõistmine  
-2. **Väikeste keelemudelite (SLM) alused** - Erinevate SLM perekondade ja nende arhitektuuride uurimine  
-3. **Väikeste keelemudelite juurutamine** - Praktiliste juurutusstrateegiate rakendamine  
-4. **Mudeli formaadi konverteerimine ja kvantiseerimine** - Täiustatud optimeerimine 6 raamistikuga, sealhulgas OpenVINO  
-5. **SLMOps - Väikeste keelemudelite haldamine** - Tootmistsükli haldamine ja juurutamine  
-6. **SLM agentide süsteemid** - AI agendid, funktsioonide kutsumine ja mudeli konteksti protokoll  
-7. **EdgeAI rakenduste näited** - AI tööriistakomplekt, Windowsi arendus ja platvormipõhised rakendused  
-8. **Microsoft Foundry Local – täielik arendustööriistakomplekt** - Kohalikule arendusele keskenduv hübriidne Azure'i integreerimine (Moodul 08)
+0. **Sissejuhatus EdgeAI-sse** - Alus ja konteksti määratlemine tööstuslike rakenduste ja õpieesmärkidega
+1. **EdgeAI põhialused ja transformatsioon** - Põhikonceptide ja tehnoloogilise muutuse mõistmine
+2. **Väikeste keelemudelite alused** - Erinevate SLM perede ja nende arhitektuuride uurimine
+3. **Väikeste keelemudelite kasutuselevõtt** - Praktiliste rakendusstrateegiate elluviimine
+4. **Mudeli formaadi teisendus ja kvantimine** - Täiustatud optimeerimine 6 raamistikuga, sh OpenVINO
+5. **SLMOps - Väikeste keelemudelite operatsioonid** - Tootmistsükli haldamine ja kasutuselevõtt
+6. **SLM agentuursed süsteemid** - AI agentide, funktsioonikõnede ja mudelikonteksti protokolli käsitlemine
+7. **EdgeAI rakendusnäited** - AI tööriistakomplekt, Windowsi arendus ja platvormipõhised lahendused
+8. **Microsoft Foundry Local – Täielik arendustööriistakomplekt** - Kohalik areng hübriidpilve Azure integratsiooniga (Moodul 08)
 
-## Kuidas seda õppejuhendit kasutada
+## Kuidas seda õpijuhti kasutada
 
-- **Järjestikune õppimine**: Järgige mooduleid järjest, et saavutada kõige sidusam õpikogemus  
-- **Teadmiste kontrollpunktid**: Kasutage iga jaotise lõpus olevaid enesekontrolli küsimusi  
-- **Praktiline harjutamine**: Tehke soovitatud harjutusi, et tugevdada teoreetilisi teadmisi  
-- **Täiendavad ressursid**: Uurige lisamaterjale teemade kohta, mis teid kõige rohkem huvitavad  
+- **Järkjärguline õppimine**: Järgi mooduleid saatekooskõlastatud õpikogemuse jaoks
+- **Teadmuspunktide kontroll**: Kasuta enesehindamise küsimusi pärast iga sektsiooni
+- **Praktiline harjutamine**: Täida soovitatud ülesanded teoreetiliste kontseptsioonide kinnistamiseks
+- **Täiendavad ressursid**: Uuri täiendavaid materjale teemadel, mis sind enim huvitavad
 
 ## Õppeplaani soovitused
 
-### Kiirendatud õppeprogramm (1 nädal)
+### Koondatud õpitee (1 nädal)
 
-| Päev | Fookus | Eeldatav kestus |
-|------|--------|-----------------|
+| Päev | Fookus | Eeldatav aeg |
+|------|-------|------------------|
 | Päev 0 | Moodul 0: Sissejuhatus EdgeAI-sse | 1-2 tundi |
 | Päev 1-2 | Moodul 1: EdgeAI põhialused | 6 tundi |
 | Päev 3-4 | Moodul 2: SLM alused | 8 tundi |
-| Päev 5 | Moodul 3: SLM juurutamine | 3 tundi |
-| Päev 6 | Moodul 8: Foundry Local Toolkit | 3 tundi |
+| Päev 5 | Moodul 3: SLM kasutuselevõtt | 3 tundi |
+| Päev 6 | Moodul 8: Foundry Local tööriistakomplekt | 3 tundi |
 
-### Osalise ajaga õpe (3 nädalat)
+### Osaline õpe (3 nädalat)
 
-| Nädal | Fookus | Eeldatav kestus |
-|-------|--------|-----------------|
+| Nädal | Fookus | Eeldatav aeg |
+|------|-------|------------------|
 | Nädal 1 | Moodul 0: Sissejuhatus + Moodul 1: EdgeAI põhialused | 7-9 tundi |
 | Nädal 2 | Moodul 2: SLM alused | 7-8 tundi |
-| Nädal 3 | Moodul 3: SLM juurutamine (3h) + Moodul 8: Foundry Local Toolkit (2-3h) | 5-6 tundi |
+| Nädal 3 | Moodul 3: SLM kasutuselevõtt (3 tundi) + Moodul 8: Foundry Local tööriistakomplekt (2-3 tundi) | 5-6 tundi |
 
 ## Moodul 0: Sissejuhatus EdgeAI-sse
 
-### Peamised õpieesmärgid
+### Olulised õpieesmärgid
 
-- Mõista, mis on EdgeAI ja miks see on tänapäeva tehnoloogiamaastikul oluline  
-- Tuvastada peamised tööstusharud, mida EdgeAI on muutnud, ja nende konkreetsed kasutusjuhtumid  
-- Mõista väikeste keelemudelite (SLM) eeliseid serva juurutamisel  
-- Seada selged õpieesmärgid ja ootused kogu kursuse jaoks  
-- Tunda ära karjäärivõimalused ja oskuste nõuded EdgeAI valdkonnas  
+- Mõista, mis on Edge AI ja miks see tänapäeva tehnoloogiamaastikul oluline on
+- Tuvastada peamised tööstusharud, mida Edge AI on muutnud, ja nende spetsiifilised kasutusjuhtumid
+- Mõista väikeste keelemudelite (SLM) eeliseid servarakkendustes
+- Määratleda selged õppeootused ja tulemused kogu kursuse peale
+- Tunda ära karjäärivõimalused ja oskustenõuded Edge AI valdkonnas
 
-### Õppe fookusvaldkonnad
+### Õppe peamised fookusvaldkonnad
 
-#### Jaotis 1: EdgeAI paradigma ja definitsioon
-- **Prioriteetsed kontseptsioonid**:  
-  - EdgeAI vs traditsiooniline pilvepõhine AI töötlemine  
-  - Riistvara, mudeli optimeerimise ja ärivajaduste koostoime  
-  - Reaalajas, privaatsust säilitav ja kulutõhus AI juurutamine  
+#### Sektsioon 1: Edge AI paradigma ja määratlus
+- **Esmased kontseptsioonid**: 
+  - Edge AI vs traditsiooniline pilvandmetöötlus AI
+  - Riistvara, mudeli optimeerimise ja ärivajaduste kokkupuutepunkt
+  - Reaalajas, privaatsust kaitsev ja kulutõhus AI kasutuselevõtt
 
-#### Jaotis 2: Tööstuslikud rakendused
-- **Prioriteetsed kontseptsioonid**:  
-  - Tootmine ja tööstus 4.0: prognoosiv hooldus ja kvaliteedikontroll  
-  - Tervishoid: diagnostiline pildistamine ja patsiendi jälgimine  
-  - Autonoomsed süsteemid: isesõitvad sõidukid ja transport  
-  - Nutikad linnad: liikluse juhtimine ja avalik turvalisus  
-  - Tarbijatehnoloogia: nutitelefonid, kantavad seadmed ja nutikad kodud  
+#### Sektsioon 2: Tööstuslikud rakendused
+- **Esmased kontseptsioonid**: 
+  - Tootmine ja tööstus 4.0: Ennetav hooldus ja kvaliteedikontroll
+  - Tervishoid: Diagnostiline pildistamine ja patsiendi jälgimine
+  - Autonoomsed süsteemid: Isetuvi sõidukid ja transport
+  - Nutikad linnad: Liiklussageduse juhtimine ja avalik turvalisus
+  - Tarbija tehnoloogiad: Nutitelefonid, kantavad seadmed ja nutikodud
 
-#### Jaotis 3: Väikeste keelemudelite alused
-- **Prioriteetsed kontseptsioonid**:  
-  - SLM-i omadused ja jõudluse võrdlused  
-  - Parameetrite efektiivsus vs võimekuse kompromissid  
-  - Serva juurutamise piirangud ja optimeerimisstrateegiad  
+#### Sektsioon 3: Väikeste keelemudelite alus
+- **Esmased kontseptsioonid**: 
+  - SLM omadused ja jõudluse võrdlus
+  - Parameetrite tõhusus vs võimekuse kompromissid
+  - Serva disainipiirangud ja optimeerimisstrateegiad
 
-#### Jaotis 4: Õppe raamistik ja karjäärivõimalused
-- **Prioriteetsed kontseptsioonid**:  
-  - Kursuse ülesehitus ja järkjärgulise meisterlikkuse lähenemine  
-  - Tehnilised oskused ja praktilised rakenduseesmärgid  
-  - Karjääri edendamise võimalused ja tööstuslikud rakendused  
+#### Sektsioon 4: Õppe raamistik ja karjääritee
+- **Esmased kontseptsioonid**: 
+  - Kursuse struktuur ja järkjärgulise valdamise lähenemine
+  - Tehnilised oskused ja praktilised rakenduseesmärgid
+  - Karjäärivõimalused ja tööstuslikud rakendused
 
-### Enesekontrolli küsimused
+### Enesehindamisküsimused
 
-1. Millised on kolm peamist tehnoloogilist suundumust, mis on võimaldanud EdgeAI arengut?  
-2. Võrdle EdgeAI ja pilvepõhise AI eeliseid ja väljakutseid.  
-3. Nimeta kolm tööstusharu, kus EdgeAI pakub olulist äriväärtust, ja selgita, miks.  
-4. Kuidas muudavad väiksed keelemudelid EdgeAI reaalseks juurutamiseks praktiliseks?  
-5. Millised on peamised tehnilised oskused, mida selle kursuse jooksul arendad?  
-6. Kirjelda kursuse neljaetapilist õppe lähenemist.  
+1. Millised on kolm peamist tehnoloogilist suundumust, mis on võimaldanud Edge AI arenemise?
+2. Võrdle Edge AI ja pilvepõhise AI eeliseid ja väljakutseid.
+3. Nimeta kolm tööstusharu, kus Edge AI pakub olulist ärilist väärtust, ja selgita miks.
+4. Kuidas teevad väiksed keelemudelid Edge AI praktiliseks reaalses kasutuses?
+5. Milliseid olulisi tehnilisi oskusi sa selle kursuse jooksul arendad?
+6. Kirjelda nelja etappi, mille kaudu see kursus su õppimist juhendab.
 
 ### Praktilised harjutused
 
-1. **Tööstuse uurimine**: Vali üks tööstuslik rakendus ja uuri selle tegelikku EdgeAI rakendust (30 minutit)  
-2. **Mudeli uurimine**: Sirvi Hugging Face'i platvormil saadaolevaid väikseid keelemudeleid ja võrdle nende parameetrite arvu ja võimekust (30 minutit)  
-3. **Õppe planeerimine**: Vaata üle kogu kursuse struktuur ja loo oma isiklik õppeplaan (15 minutit)  
+1. **Tööstuse uurimine**: Vali üks tööstuslik rakendus ja otsi reaalseid Edge AI näiteid (30 minutit)
+2. **Mudeli uurimine**: Sirvi Hugging Face'is saadaolevaid väikeseid keelemudeleid ja võrdle nende parameetrite arvu ja võimeid (30 minutit)
+3. **Õppimise planeerimine**: Vaata üle kogu kursuse struktuur ja loo oma isiklik õppeplaan (15 minutit)
 
 ### Täiendavad materjalid
 
-- [EdgeAI turu ülevaade - McKinsey](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-age-of-ai)  
-- [Väikeste keelemudelite ülevaade - Hugging Face](https://huggingface.co/blog/small-language-models)  
-- [Edge Computing Foundation](https://www.edgecomputing.org/)  
+- [Edge AI turu ülevaade - McKinsey](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-age-of-ai)
+- [Väikesed keelemudelid - Hugging Face](https://huggingface.co/blog/small-language-models)
+- [Edge Computing Foundation](https://www.edgecomputing.org/)
 
 ## Moodul 1: EdgeAI põhialused ja transformatsioon
 
-### Peamised õpieesmärgid
+### Olulised õpieesmärgid
 
-- Mõista erinevusi pilvepõhise ja servapõhise AI vahel  
-- Omandada põhilised optimeerimistehnikad ressursipiirangutega keskkondade jaoks  
-- Analüüsida EdgeAI tehnoloogiate reaalseid rakendusi  
-- Seadistada arenduskeskkond EdgeAI projektide jaoks  
+- Mõista pilvepõhise ja servapõhise AI erinevusi
+- Õpi võimsaid optimeerimistehnikaid piiratud ressurssidega keskkondades
+- Analüüsi reaalse maailma EdgeAI tehnoloogiate rakendusi
+- Loo EdgeAI projektide arenduskeskkond
 
-### Õppe fookusvaldkonnad
+### Õppe fookusalad
 
-#### Jaotis 1: EdgeAI põhialused
-- **Prioriteetsed kontseptsioonid**:  
-  - Edge vs pilvearvutuse paradigmad  
-  - Mudelite kvantiseerimise tehnikad  
-  - Riistvara kiirendamise võimalused (NPU-d, GPU-d, CPU-d)  
-  - Privaatsuse ja turvalisuse eelised  
+#### Sektsioon 1: EdgeAI põhialused
+- **Esmased kontseptsioonid**: 
+  - Serva vs pilvandmetöötluse paradigma
+  - Mudeli kvantimise tehnikaid
+  - Riistvara kiirendamise valikud (NPU-d, GPU-d, CPU-d)
+  - Privaatsuse ja turvalisuse eelised
 
-- **Täiendavad materjalid**:  
-  - [TensorFlow Lite dokumentatsioon](https://www.tensorflow.org/lite)  
-  - [ONNX Runtime GitHub](https://github.com/microsoft/onnxruntime)  
-  - [Edge Impulse dokumentatsioon](https://docs.edgeimpulse.com)  
+- **Täiendavad materjalid**:
+  - [TensorFlow Lite dokumentatsioon](https://www.tensorflow.org/lite)
+  - [ONNX Runtime GitHub](https://github.com/microsoft/onnxruntime)
+  - [Edge Impulse dokumentatsioon](https://docs.edgeimpulse.com)
 
-#### Jaotis 2: Reaalsed juhtumiuuringud
-- **Prioriteetsed kontseptsioonid**:  
-  - Microsoft Phi & Mu mudelite ökosüsteem  
-  - Praktilised rakendused erinevates tööstusharudes  
-  - Juurutamise kaalutlused  
+#### Sektsioon 2: Reaalse maailma juhtumiuuringud
+- **Esmased kontseptsioonid**: 
+  - Microsoft Phi ja Mu mudeliekosüsteemid
+  - Praktilised rakendused erinevates tööstusharudes
+  - Kasutuselevõtu kaalutlused
 
-#### Jaotis 3: Praktiline rakendusjuhend
-- **Prioriteetsed kontseptsioonid**:  
-  - Arenduskeskkonna seadistamine  
-  - Kvantiseerimis- ja optimeerimistööriistad  
-  - EdgeAI rakenduste hindamismeetodid  
+#### Sektsioon 3: Praktiline rakendamisjuhend
+- **Esmased kontseptsioonid**: 
+  - Arenduskeskkonna seadistamine
+  - Kvantimise ja optimeerimise tööriistad
+  - EdgeAI rakenduste hindamismeetodid
 
-#### Jaotis 4: Serva juurutamise riistvara
-- **Prioriteetsed kontseptsioonid**:  
-  - Riistvaraplatvormide võrdlus  
-  - Optimeerimisstrateegiad konkreetse riistvara jaoks  
-  - Juurutamise kaalutlused  
+#### Sektsioon 4: Edge kasutuselevõtu riistvara
+- **Esmased kontseptsioonid**: 
+  - Riistplatvormide võrdlus
+  - Optimeerimisstrateegiad konkreetsete riistvarade jaoks
+  - Kasutuselevõtu kaalutlused
 
-### Enesekontrolli küsimused
+### Enesehindamisküsimused
 
-1. Võrdle ja vastanda pilvepõhise ja servapõhise AI juurutusi.  
-2. Selgita kolme peamist tehnikat mudelite optimeerimiseks serva juurutamiseks.  
-3. Millised on peamised eelised AI mudelite käitamisel servas?  
-4. Kirjelda mudeli kvantiseerimise protsessi ja kuidas see mõjutab jõudlust.  
-5. Selgita, kuidas erinevad riistvarakiirendid (NPU-d, GPU-d, CPU-d) mõjutavad EdgeAI juurutamist.  
+1. Võrdle pilvepõhiseid ja servapõhiseid AI lahendusi.
+2. Selgita kolme peamist tehnikat mudelite optimeerimiseks servakasutuseks.
+3. Millised on peamised eelised AI mudelite kohapealseks jooksutamiseks?
+4. Kirjelda mudeli kvantimise protsessi ja selle mõju jõudlusele.
+5. Selgita, kuidas erinevad riistvarakiirendid (NPU-d, GPU-d, CPU-d) mõjutavad EdgeAI kasutuselevõttu.
 
 ### Praktilised harjutused
 
-1. **Kiire keskkonna seadistamine**: Seadista minimaalne arenduskeskkond vajalike pakettidega (30 minutit)  
-2. **Mudeli uurimine**: Laadi alla ja analüüsi eelnevalt treenitud väikest keelemudelit (1 tund)  
-3. **Põhikvantiseerimine**: Proovi lihtsat mudeli kvantiseerimist (1 tund)  
+1. **Kiire keskkonna seadistus**: Konfigureeri minimaalne arenduskeskkond vajalike pakettidega (30 minutit)
+2. **Mudeli uurimine**: Laadi alla ja analüüsi eelkoolitatud väikest keelemudelit (1 tund)
+3. **Põhiline kvantimine**: Proovi lihtsat kvantimist väikese mudeli peal (1 tund)
 
 ## Moodul 2: Väikeste keelemudelite alused
 
-### Peamised õpieesmärgid
+### Olulised õpieesmärgid
 
-- Mõista erinevate SLM perekondade arhitektuurilisi põhimõtteid  
-- Võrrelda mudelite võimekust erinevate parameetrite skaalade lõikes  
-- Hinnata mudeleid tõhususe, võimekuse ja juurutamisnõuete põhjal  
-- Tuvastada erinevate mudeliperekondade sobivad kasutusjuhud  
+- Mõista erinevate SLM perede arhitektuurilisi põhimõtteid
+- Võrdle mudelite võimeid erinevatel parameetrite skaala tasemetel
+- Hinda mudeleid efektiivsuse, võimekuse ja kasutuselevõtu nõuete põhjal
+- Tuvasta sobivad kasutusjuhtumid erinevate mudelite perekondade jaoks
 
-### Õppe fookusvaldkonnad
+### Õppe fookusalad
 
-#### Jaotis 1: Microsoft Phi mudeliperekond
-- **Prioriteetsed kontseptsioonid**:  
-  - Kujundusfilosoofia areng  
-  - Tõhususele orienteeritud arhitektuur  
-  - Spetsialiseeritud võimekused  
+#### Sektsioon 1: Microsoft Phi mudeliperekond
+- **Esmased kontseptsioonid**: 
+  - Disainifilosoofia areng
+  - Efektiivsusele keskenduv arhitektuur
+  - Spetsialiseeritud võimed
 
-#### Jaotis 2: Qwen perekond
-- **Prioriteetsed kontseptsioonid**:  
-  - Avatud lähtekoodiga panused  
-  - Skaalautuvad juurutusvõimalused  
-  - Täiustatud põhjendusarhitektuur  
+#### Sektsioon 2: Qwen perekond
+- **Esmased kontseptsioonid**: 
+  - Avatud lähtekoodi panused
+  - Skaalautuvad kasutuselevõtu võimalused
+  - Täiustatud põhjendusarhitektuur
 
-#### Jaotis 3: Gemma perekond
-- **Prioriteetsed kontseptsioonid**:  
- 
-3. Millised on Mu mudeli unikaalsed eelised Windowsi integreerimisel?
+#### Sektsioon 3: Gemma perekond
+- **Esmased kontseptsioonid**: 
+  - Uurimustöö juhitud innovatsioon
+  - Multimodaalsed võimed
+  - Mobiilne optimeerimine
+
+#### Sektsioon 4: BitNET perekond
+- **Esmased kontseptsioonid**: 
+  - 1-bit kvantimistehnoloogia
+  - Järelduste optimeerimise raamistik
+  - Jätkusuutlikkuse kaalutlused
+
+#### Sektsioon 5: Microsoft Mu mudel
+- **Esmased kontseptsioonid**: 
+  - Seadmekeskne arhitektuur
+  - Süsteemi integratsioon Windowsiga
+  - Privaatsust kaitsev toimimine
+
+#### Sektsioon 6: Phi-Silica
+- **Esmased kontseptsioonid**: 
+  - NPU optimeeritud arhitektuur
+  - Jõudlusmõõdikud
+  - Arendaja integratsioon
+
+### Enesehindamisküsimused
+
+1. Võrdle Phi ja Qwen mudeliperekondade arhitektuurilisi lähenemisi.
+2. Selgita, kuidas BitNET kvantimistehnoloogia erineb tavapärasest kvantimisest.
+3. Millised on Mu mudeli unikaalsed eelised Windowsi integratsiooni jaoks?
 4. Kirjelda, kuidas Phi-Silica kasutab NPU riistvara jõudluse optimeerimiseks.
-5. Milline mudeliperekond sobiks kõige paremini mobiilirakendusele, millel on piiratud ühenduvus, ja miks?
 
-### Praktilised harjutused
+5. Milline mudelifamiljone on piiratud ühenduvusega mobiilirakenduse jaoks kõige sobivam ja miks?
 
-1. **Mudelite võrdlus**: Kiire kahe erineva SLM mudeli võrdlus (1 tund)
-2. **Lihtne tekstigeneratsioon**: Tekstigeneratsiooni põhiline rakendamine väikese mudeliga (1 tund)
-3. **Kiire optimeerimine**: Ühe optimeerimistehnika rakendamine järelduskiiruse parandamiseks (1 tund)
+### Praktikumid
+
+1. **Mudelite võrdlus**: Kiire võrdlus kahe erineva SLM mudeli vahel (1 tund)
+2. **Lihtne teksti genereerimine**: Teksti genereerimise lihtne rakendus väikese mudeliga (1 tund)
+3. **Kiire optimeerimine**: Rakenda üks optimeerimistehnika inferentsikiiruse parandamiseks (1 tund)
 
 ## Moodul 3: Väikeste keelemudelite juurutamine
 
 ### Peamised õpieesmärgid
 
-- Valida sobivad mudelid juurutamise piirangute alusel
-- Valdada optimeerimistehnikaid erinevate juurutamisskeemide jaoks
-- Rakendada SLM-e nii lokaalses kui ka pilvekeskkonnas
-- Kujundada tootmisvalmis konfiguratsioone EdgeAI rakenduste jaoks
+- Vali sobivad mudelid juurutamise piirangute põhjal
+- Õpi valitsema optimeerimistehnikaid erinevates juurutamisskenaarumites
+- Rakenda SLM-e nii kohalikus kui pilvekeskkonnas
+- Kujunda tootmiseks valmis konfiguratsioonid EdgeAI rakendustele
 
-### Õppevaldkonnad
+### Õppe keskused
 
-#### Sektsioon 1: SLM-i edasijõudnud õppimine
-- **Prioriteetsed kontseptsioonid**: 
+#### Sektsioon 1: SLM edasijõudnud õppimine
+- **Prioriteetsete kontseptsioonid**: 
   - Parameetrite klassifitseerimise raamistik
   - Täiustatud optimeerimistehnikad
-  - Mudelite hankimise strateegiad
+  - Mudeli hankimise strateegiad
 
-#### Sektsioon 2: Lokaalne juurutamine
-- **Prioriteetsed kontseptsioonid**: 
+#### Sektsioon 2: Kohalik keskkonna juurutamine
+- **Prioriteetsete kontseptsioonid**: 
   - Ollama platvormi juurutamine
-  - Microsoft Foundry lokaalsed lahendused
-  - Raamistike võrdlev analüüs
+  - Microsoft Foundry kohalikud lahendused
+  - Raamistiku võrdlev analüüs
 
-#### Sektsioon 3: Konteineripõhine pilvejuurutamine
-- **Prioriteetsed kontseptsioonid**: 
-  - vLLM kõrge jõudlusega järeldus
+#### Sektsioon 3: Konteineripõhine pilvejuurutus
+- **Prioriteetsete kontseptsioonid**: 
+  - vLLM kõrge jõudlusega inferents
   - Konteinerite orkestreerimine
   - ONNX Runtime rakendamine
 
-### Enesekontrolli küsimused
+### Enesehindamisküsimused
 
-1. Milliseid tegureid tuleks arvestada kohaliku ja pilvejuurutamise vahel valides?
-2. Võrdle Ollama ja Microsoft Foundry Local juurutamisvõimalusi.
-3. Selgita konteineriseerimise eeliseid SLM-i juurutamisel.
-4. Millised on peamised jõudlusmõõdikud, mida jälgida serva juurutatud SLM-i puhul?
-5. Kirjelda täielikku juurutamise töövoogu mudeli valikust tootmise rakendamiseni.
+1. Milliseid tegureid tuleks arvestada kohaliku ja pilve juurutamise vahel valides?
+2. Võrdle Ollamat ja Microsoft Foundry Local-i juurutamisvõimalustena.
+3. Kirjelda konteineriseerimise eeliseid SLM juurutamisel.
+4. Millised on olulised jõudlusmõõdikud serval juurutatud SLM-i jälgimiseks?
+5. Kirjelda täielik juurutustöövoog mudeli valimisest tootmiseni.
 
-### Praktilised harjutused
+### Praktikumid
 
-1. **Lihtne lokaalne juurutamine**: Juuruta lihtne SLM Ollama abil (1 tund)
-2. **Jõudluse kontroll**: Käivita kiire võrdlus oma juurutatud mudelil (30 minutit)
-3. **Lihtne integreerimine**: Loo minimaalne rakendus, mis kasutab sinu juurutatud mudelit (1 tund)
+1. **Põhiline kohalik juurutamine**: Juuruta lihtne SLM Ollama abil (1 tund)
+2. **Jõudluse kontroll**: Tee kiirtest oma juurutatud mudelile (30 minutit)
+3. **Lihtne integratsioon**: Loo minimaalne rakendus, mis kasutab SLM-i (1 tund)
 
-## Moodul 4: Mudeli formaadi konverteerimine ja kvantiseerimine
+## Moodul 4: Mudeli formaadi konverteerimine ja kvantimine
 
 ### Peamised õpieesmärgid
 
-- Valdada täiustatud kvantiseerimistehnikaid 1-bitist kuni 8-bitise täpsuseni
+- Oman täpseid kvantimistehnikaid vahemikus 1-bitist kuni 8-bitini
 - Mõista formaadi konverteerimise strateegiaid (GGUF, ONNX)
-- Rakendada optimeerimist kuue erineva raamistiku kaudu (Llama.cpp, Olive, OpenVINO, MLX, töövoo süntees)
-- Juurutada optimeeritud mudeleid tootmise servakeskkondades Inteli, Apple'i ja platvormideülese riistvara jaoks
+- Rakenda optimeerimist kuues raamistikus (Llama.cpp, Olive, OpenVINO, MLX, töövoogude süntees)
+- Juuruta optimeeritud mudeleid tootmiskeskkondades Intel, Apple ja platvormideüleste riistvarade jaoks
 
-### Õppevaldkonnad
+### Õppe keskused
 
-#### Sektsioon 1: Kvantiseerimise alused
-- **Prioriteetsed kontseptsioonid**: 
-  - Täpsuse klassifitseerimise raamistik
+#### Sektsioon 1: Kvantimise alused
+- **Prioriteetsete kontseptsioonid**: 
+  - Täpsuse klassifikatsiooni raamistik
   - Jõudluse ja täpsuse kompromissid
-  - Mälujälje optimeerimine
+  - Mälu jalajälje optimeerimine
 
-#### Sektsioon 2: Llama.cpp rakendamine
-- **Prioriteetsed kontseptsioonid**: 
-  - Platvormideülene juurutamine
+#### Sektsioon 2: Llama.cpp rakendus
+- **Prioriteetsete kontseptsioonid**: 
+  - Platvormideülene juurutus
   - GGUF formaadi optimeerimine
-  - Riistvara kiirendamise tehnikad
+  - Riistvara kiirendustehnikad
 
 #### Sektsioon 3: Microsoft Olive Suite
-- **Prioriteetsed kontseptsioonid**: 
-  - Riistvara-teadlik optimeerimine
-  - Ettevõtte tasemel juurutamine
-  - Automaatse optimeerimise töövood
+- **Prioriteetsete kontseptsioonid**: 
+  - Riistvarateadlik optimeerimine
+  - Ettevõtte taseme juurutamine
+  - Automaatsete optimeerimistöövoogude kasutamine
 
 #### Sektsioon 4: OpenVINO tööriistakomplekt
-- **Prioriteetsed kontseptsioonid**: 
-  - Inteli riistvara optimeerimine
-  - Neuraalvõrkude kompressiooni raamistik (NNCF)
-  - Platvormideülene järelduse juurutamine
-  - OpenVINO GenAI LLM-i juurutamiseks
+- **Prioriteetsete kontseptsioonid**: 
+  - Intel riistvara optimeerimine
+  - Närvivõrgu kompressiooniraamistik (NNCF)
+  - Platvormideülene inferentsi juurutus
+  - OpenVINO GenAI LLM juurutamiseks
 
 #### Sektsioon 5: Apple MLX raamistik
-- **Prioriteetsed kontseptsioonid**: 
-  - Apple Silicon optimeerimine
-  - Ühtne mälustruktuur
-  - LoRA peenhäälestamise võimalused
+- **Prioriteetsete kontseptsioonid**: 
+  - Apple Silicoon optimeerimine
+  - Ühtne mäluarhitektuur
+  - LoRA peentöötlusvõimalused
 
-#### Sektsioon 6: Serva AI arendamise töövoo süntees
-- **Prioriteetsed kontseptsioonid**: 
-  - Ühtne töövoo arhitektuur
-  - Raamistiku valiku otsustuspuud
+#### Sektsioon 6: Edge AI arenduse töövoogude süntees
+- **Prioriteetsete kontseptsioonid**: 
+  - Ühtne töövoogude arhitektuur
+  - Raamistiku valiku otsustamispuud
   - Tootmisvalmiduse valideerimine
   - Tulevikukindlad strateegiad
 
-### Enesekontrolli küsimused
+### Enesehindamisküsimused
 
-1. Võrdle kvantiseerimisstrateegiaid erinevate täpsustasandite vahel (1-bitist kuni 8-bitini).
-2. Selgita GGUF formaadi eeliseid serva juurutamiseks.
-3. Kuidas riistvara-teadlik optimeerimine Microsoft Olive'is parandab juurutamise efektiivsust?
-4. Millised on OpenVINO NNCF-i peamised eelised mudeli kompressiooniks?
-5. Kirjelda, kuidas Apple MLX kasutab ühtset mälustruktuuri optimeerimiseks.
-6. Kuidas töövoo süntees aitab valida optimaalseid optimeerimisraamistikke?
+1. Võrdle kvantimistehnikaid erinevatel täpsusetasemetel (1-bitist kuni 8-bitini).
+2. Selgita GGUF formaadi eeliseid serval juurutamisel.
+3. Kuidas parandab Microsoft Olive riistvarateadlik optimeerimine juurutuse efektiivsust?
+4. Millised on OpenVINO NNCF mudelikompressiooni peamised eelised?
+5. Kirjelda, kuidas Apple MLX kasutab ühtset mäluarhitektuuri optimeerimiseks.
+6. Kuidas aitab töövoogude süntees optimaalsete optimeerimisraamistike valikul?
 
-### Praktilised harjutused
+### Praktikumid
 
-1. **Mudeli kvantiseerimine**: Rakenda mudelile erinevaid kvantiseerimistasemeid ja võrdle tulemusi (1 tund)
-2. **OpenVINO optimeerimine**: Kasuta NNCF-i mudeli kompressiooniks Inteli riistvara jaoks (1 tund)
-3. **Raamistike võrdlus**: Testi sama mudelit kolmes erinevas optimeerimisraamistikus (1 tund)
-4. **Jõudluse võrdlus**: Mõõda optimeerimise mõju järelduskiirusele ja mälukasutusele (1 tund)
+1. **Mudeli kvantimine**: Rakenda erinevaid kvantimistasemeid mudelile ja võrdle tulemusi (1 tund)
+2. **OpenVINO optimeerimine**: Kasuta NNCF mudeli kokkusurumiseks Intel riistvarale (1 tund)
+3. **Raamistiku võrdlus**: Testi sama mudelit kolmes erinevas optimeerimisraamistikus (1 tund)
+4. **Jõudlusmõõtmised**: Mõõda optimeerimise mõju inferentsikiirusele ja mälukasutusele (1 tund)
 
 ## Moodul 5: SLMOps - Väikeste keelemudelite operatsioonid
 
 ### Peamised õpieesmärgid
 
-- Mõista SLMOps elutsükli haldamise põhimõtteid
-- Valdada destilleerimise ja peenhäälestamise tehnikaid serva juurutamiseks
-- Rakendada tootmise juurutamise strateegiaid koos jälgimisega
-- Luua ettevõtte tasemel SLM-i operatsioonide ja hoolduse töövood
+- Mõista SLMOps elutsükli juhtimise põhimõtteid
+- Valda distilleerimise ja peentöötluse tehnikaid serval juurutamiseks
+- Rakenda tootmise juurutamise strateegiaid koos monitooringuga
+- Ehita ettevõttetasemel SLM operatsioonide ja hooldamise töövooge
 
-### Õppevaldkonnad
+### Õppe keskused
 
 #### Sektsioon 1: Sissejuhatus SLMOps-i
-- **Prioriteetsed kontseptsioonid**: 
-  - SLMOps-i paradigma muutus AI operatsioonides
-  - Kuluefektiivsus ja privaatsus-keskne arhitektuur
-  - Strateegiline äriline mõju ja konkurentsieelised
+- **Prioriteetsete kontseptsioonid**: 
+  - SLMOps paradigmade muutus tehisintellekti operatsioonides
+  - Kulu-efektiivsus ja privaatsust esiplaanile seadnud arhitektuur
+  - Strateegiline äri mõju ja konkurentsieelised
 
-#### Sektsioon 2: Mudeli destilleerimine
-- **Prioriteetsed kontseptsioonid**: 
-  - Teadmiste ülekande tehnikad
-  - Kaheastmelise destilleerimisprotsessi rakendamine
-  - Azure ML destilleerimise töövood
+#### Sektsioon 2: Mudeli distilleerimine
+- **Prioriteetsete kontseptsioonid**: 
+  - Teadmiste ülekande tehnikaid
+  - Kaheastmeline distilleerimisprotsess
+  - Azure ML distilleerimistöövood
 
-#### Sektsioon 3: Peenhäälestamise strateegiad
-- **Prioriteetsed kontseptsioonid**: 
-  - Parameetrite efektiivne peenhäälestamine (PEFT)
-  - LoRA ja QLoRA täiustatud meetodid
-  - Multi-adapteri treenimine ja hüperparameetrite optimeerimine
+#### Sektsioon 3: Peentöötluse strateegiad
+- **Prioriteetsete kontseptsioonid**: 
+  - Parameetrite tõhus kasutamine peentöötluses (PEFT)
+  - Täiustatud meetodid LoRA ja QLoRA
+  - Mitme adapteri treening ja hüperparameetrite optimeerimine
 
 #### Sektsioon 4: Tootmise juurutamine
-- **Prioriteetsed kontseptsioonid**: 
-  - Mudeli konverteerimine ja kvantiseerimine tootmiseks
-  - Foundry Local juurutamise konfiguratsioon
+- **Prioriteetsete kontseptsioonid**: 
+  - Mudeli konverteerimine ja kvantimine tootmiseks
+  - Foundry Local juurutuskonfiguratsioon
   - Jõudluse võrdlus ja kvaliteedi valideerimine
 
-### Enesekontrolli küsimused
+### Enesehindamisküsimused
 
-1. Kuidas SLMOps erineb traditsioonilisest MLOps-ist?
-2. Selgita mudeli destilleerimise eeliseid serva juurutamiseks.
-3. Millised on peamised kaalutlused SLM-ide peenhäälestamisel ressursipiirangutega keskkondades?
-4. Kirjelda täielikku tootmise juurutamise torujuhet serva AI rakenduste jaoks.
+1. Kuidas erineb SLMOps traditsioonilisest MLOps-ist?
+2. Selgita mudeli distilleerimise eeliseid serval juurutamisel.
+3. Millised on olulised kaalutlused SLM-ide peentöötlusel piiratud ressurssidega keskkondades?
+4. Kirjelda terviklikku tootmise juurutamise töövoogu serva AI rakendustele.
 
-### Praktilised harjutused
+### Praktikumid
 
-1. **Lihtne destilleerimine**: Loo väiksem mudel suuremast õpetajamudelist (1 tund)
-2. **Peenhäälestamise eksperiment**: Peenhäälesta mudel konkreetse valdkonna jaoks (1 tund)
-3. **Juurutamise torujuhe**: Loo põhiline CI/CD torujuhe mudeli juurutamiseks (1 tund)
+1. **Põhiline distilleerimine**: Loo väiksem mudel suuremast õpetajamudelist (1 tund)
+2. **Peentöötluse eksperiment**: Peentöötlus mudelile konkreetseks valdkonnaks (1 tund)
+3. **Juurutuse torujuhe**: Loo põhiline CI/CD torujuhe mudeli juurutamiseks (1 tund)
 
-## Moodul 6: SLM Agentlikud süsteemid - AI agendid ja funktsioonide kutsumine
+## Moodul 6: SLM agente süsteemid - AI agendid ja funktsioonikutsed
 
 ### Peamised õpieesmärgid
 
-- Luua intelligentsed AI agendid servakeskkondade jaoks, kasutades väikeseid keelemudeleid
-- Rakendada funktsioonide kutsumise võimalusi süsteemsete töövoogudega
-- Valdada Model Context Protocol (MCP) integreerimist standardiseeritud tööriistade interaktsiooniks
-- Luua keerukaid agentlikke süsteeme minimaalse inimsekkumisega
+- Ehita intelligentseid AI agente servakeskkondades väikeste keelemudelite abil
+- Rakenda funktsioonikutsed süsteemsete töövoogudega
+- Valda Model Context Protocol (MCP) integratsiooni standardiseeritud tööriistadega suhtlemiseks
+- Loo keerukad agente süsteemid minimaalse inimsekkumisega
 
-### Õppevaldkonnad
+### Õppe keskused
 
-#### Sektsioon 1: AI agendid ja SLM-i alused
-- **Prioriteetsed kontseptsioonid**: 
-  - Agentide klassifitseerimise raamistik (refleksiivsed, mudelipõhised, eesmärgipõhised, õppivad agendid)
-  - SLM vs LLM kompromisside analüüs
-  - Serva-spetsiifilised agentide disainimustrid
-  - Ressursside optimeerimine agentide jaoks
+#### Sektsioon 1: AI agendid ja SLM alused
+- **Prioriteetsete kontseptsioonid**: 
+  - Agentide klassifikatsiooni raamistik (refleks, mudelipõhised, eesmärgipõhised, õppivad agentid)
+  - SLM ja LLM kompromisside analüüs
+  - Serva spetsiifilised agente disainimustrid
+  - Ressursside optimeerimine agentidele
 
-#### Sektsioon 2: Funktsioonide kutsumine väikestes keelemudelites
-- **Prioriteetsed kontseptsioonid**: 
-  - Süsteemsete töövoogude rakendamine (eesmärgi tuvastamine, JSON väljund, väline täitmine)
+#### Sektsioon 2: Funktsioonikutsete rakendamine väikestes keelemudelites
+- **Prioriteetsete kontseptsioonid**: 
+  - Süsteemse töövoo rakendamine (intentsiooni tuvastus, JSON-väljund, väline täitmine)
   - Platvormispetsiifilised rakendused (Phi-4-mini, valitud Qwen mudelid, Microsoft Foundry Local)
-  - Täiustatud näited (multi-agent koostöö, dünaamiline tööriistade valik)
-  - Tootmise kaalutlused (kiiruse piiramine, logimine, turvameetmed)
+  - Täiustatud näited (multi-agentide koostöö, dünaamiline tööriistade valik)
+  - Tootmise kaalutlused (kiirusepiirangud, audiitlogimine, turvameetmed)
 
-#### Sektsioon 3: Model Context Protocol (MCP) integreerimine
-- **Prioriteetsed kontseptsioonid**: 
+#### Sektsioon 3: Model Context Protocol (MCP) integratsioon
+- **Prioriteetsete kontseptsioonid**: 
   - Protokolli arhitektuur ja kihiline süsteemidisain
-  - Multi-backendi tugi (Ollama arenduseks, vLLM tootmiseks)
+  - Mitme tagasisüsteemi tugi (Ollama arenduseks, vLLM tootmiseks)
   - Ühendusprotokollid (STDIO ja SSE režiimid)
-  - Reaalsed rakendused (veebi automatiseerimine, andmetöötlus, API integreerimine)
+  - Reaalmaailma rakendused (veebi automatiseerimine, andmetöötlus, API integratsioon)
 
-### Enesekontrolli küsimused
+### Enesehindamisküsimused
 
-1. Millised on peamised arhitektuurilised kaalutlused serva AI agentide jaoks?
-2. Kuidas funktsioonide kutsumine parandab agentide võimekust?
-3. Selgita Model Context Protocol rolli agentide kommunikatsioonis.
+1. Millised on peamised arhitektuursed kaalutlused serval AI agentide puhul?
+2. Kuidas parandab funktsioonikutsete kasutamine agente võimekust?
+3. Selgita Model Context Protocol rolli agentide omavahelises suhtluses.
 
-### Praktilised harjutused
+### Praktikumid
 
-1. **Lihtne agent**: Loo põhiline AI agent funktsioonide kutsumisega (1 tund)
-2. **MCP integreerimine**: Rakenda MCP agentide rakenduses (30 minutit)
+1. **Lihtne agent**: Loo põhiline AI agent funktsioonikutsetega (1 tund)
+2. **MCP integratsioon**: Rakenda MCP agentide rakenduses (30 minutit)
 
-## Töötuba: Praktiline õppeprogramm
+## Töötoa: Praktikal põhinev õppekursus
 
 ### Peamised õpieesmärgid
 
-- Luua tootmisvalmis AI rakendusi Foundry Local SDK ja parimate praktikate abil
-- Rakendada põhjalikku veakäsitlust ja kasutajate tagasiside mustreid
-- Luua RAG torujuhtmeid kvaliteedi hindamise ja jõudluse jälgimisega
-- Arendada multi-agent süsteeme koordinaatori mustritega
-- Valdada intelligentset mudelite suunamist ülesandepõhise mudelivaliku jaoks
-- Juurutada lokaalsed AI lahendused privaatsust säilitavate arhitektuuridega
+- Loo tootmisvalmis AI rakendused Foundry Local SDK ja parimate tavade abil
+- Rakenda põhjalikku veahaldust ja kasutajate tagasiside mustreid
+- Loo RAG töövood kvaliteedi hindamise ja jõudluse jälgimisega
+- Arenda multi-agente süsteeme koordinaatori mustritega
+- Valda intelligentset mudelite marsruutimist ülesandepõhise valiku jaoks
+- Juuruta esmalt kohalikud AI lahendused privaatsust säästvate arhitektuuridega
 
-### Õppevaldkonnad
+### Õppe keskused
 
-#### Sessioon 01: Foundry Localiga alustamine
-- **Prioriteetsed kontseptsioonid**:
-  - FoundryLocalManager SDK integreerimine ja automaatne teenuste avastamine
-  - Põhilised ja voogedastusega vestlusrakendused
-  - Veakäsitluse mustrid ja kasutajate tagasiside
+#### Seanss 01: Alustamine Foundry Localiga
+- **Prioriteetsete kontseptsioonid**:
+  - FoundryLocalManager SDK integratsioon ja automaatne teenuste leidmine
+  - Põhilised ja voogedastuse jututoe rakendused
+  - Veahalduse mustrid ja kasutajate tagasiside
   - Keskkonnapõhine konfiguratsioon
 
-#### Sessioon 02: AI lahenduste loomine RAG-iga
-- **Prioriteetsed kontseptsioonid**:
-  - Mäluvektorite sisseehitatud laused-transformeritega
-  - RAG torujuhtme rakendamine (otsimine → genereerimine)
-  - Kvaliteedi hindamine RAGAS mõõdikutega
-  - Impordi turvalisus valikuliste sõltuvuste jaoks
+#### Seanss 02: AI lahenduste loomine RAG-ga
+- **Prioriteetsete kontseptsioonid**:
+  - Mäluvektorite manused sentence-transformersi abil
+  - RAG töövoo rakendamine (otsi → loo)
+  - Kvaliteedi hindamine RAGAS mõõdikute abil
+  - Valikuliste sõltuvuste turvaline importimine
 
-#### Sessioon 03: Avatud lähtekoodiga mudelid
-- **Prioriteetsed kontseptsioonid**:
-  - Multi-mudeli võrdlusstrateegiad
+#### Seanss 03: Avatud lähtekoodiga mudelid
+- **Prioriteetsete kontseptsioonid**:
+  - Mitme mudeli võrdlev testimine
   - Latentsuse ja läbilaskevõime mõõtmised
-  - Graatsiline degradeerumine ja veataastus
-  - Jõudluse võrdlus mudeliperekondade vahel
+  - Ladus degradatsioon ja vea taastumine
+  - Jõudluse võrdlus mudelifamiljade vahel
 
-#### Sessioon 04: Tipptasemel mudelid
-- **Prioriteetsed kontseptsioonid**:
-  - SLM vs LLM võrdlusmetoodika
-  - Tüüpide vihjed ja põhjalik väljundi vormindamine
-  - Mudelipõhine veakäsitlus
+#### Seanss 04: Tippmudelid
+- **Prioriteetsete kontseptsioonid**:
+  - SLM ja LLM võrdlusmeetodid
+  - Tüübiviited ja põhjalik väljundi vormindus
+  - Mudelipõhine veahaldus
   - Struktureeritud tulemused analüüsiks
 
-#### Sessioon 05: AI-põhised agendid
-- **Prioriteetsed kontseptsioonid**:
-  - Multi-agent orkestreerimine koordinaatori mustriga
+#### Seanss 05: AI-toega agendid
+- **Prioriteetsete kontseptsioonid**:
+  - Multi-agentide orkestreerimine koordinaatori mustriga
   - Agendi mälu haldamine ja oleku jälgimine
-  - Torujuhtme veakäsitlus ja etappide logimine
+  - Töövoo vigade haldus ja etappide logimine
   - Jõudluse jälgimine ja statistika
 
-#### Sessioon 06: Mudelid tööriistadena
-- **Prioriteetsed kontseptsioonid**:
-  - Eesmärgi tuvastamine ja mustrite sobitamine
-  - Märksõnapõhised mudelite suunamisalgoritmid
-  - Mitmeastmelised torujuhtmed (plaan → täitmine → täpsustamine)
+#### Seanss 06: Mudelid tööriistadena
+- **Prioriteetsete kontseptsioonid**:
+  - Intentsiooni tuvastamine ja mustrite sobitamine
+  - Märksõnapõhised mudelite marsruutimise algoritmid
+  - Mitmeastmelised torujuhtmed (planeeri → käivita → täienda)
   - Põhjalik funktsioonide dokumentatsioon
 
-### Enesekontrolli küsimused
+### Enesehindamisküsimused
 
-1. Kuidas FoundryLocalManager lihtsustab teenuste haldamist võrreldes käsitsi REST-kõnedega?
-2. Selgita impordikaitse olulisust valikuliste sõltuvuste, nagu laused-transformerid, jaoks.
-3. Millised strateegiad tagavad graatsilise degradeerumise multi-mudeli võrdluses?
-4. Kuidas koordinaatori muster orkestreerib mitut spetsialisti agenti?
-5. Kirjelda intelligentse mudelite suunaja komponente.
-6. Millised on tootmisvalmis veakäsitluse peamised elemendid?
+1. Kuidas lihtsustab FoundryLocalManager teenuste haldamist võrreldes käsitsi REST-põhiste võimalustega?
+2. Selgita import-kaitsete tähtsust valikuliste sõltuvuste, nagu sentence-transformers, puhul.
+3. Milliseid strateegiaid kasutatakse mitme mudeli võrdleval testimisel ladusaks degradatsiooniks?
+4. Kuidas koordineerija muster orkestreerib mitut spetsialistagentu?
+5. Kirjelda intelligentse mudelimarsruuti komponente.
+6. Millised on tootmisvalmis veahalduse põhielemendid?
 
-### Praktilised harjutused
+### Praktikumid
 
-1. **Vestlusrakendus**: Rakenda voogedastusega vestlus veakäsitlusega (45 minutit)
-2. **RAG torujuhe**: Loo minimaalne RAG kvaliteedi hindamisega (1 tund)
-3. **Mudelite võrdlus**: Võrdle 3+ mudelit jõudluse alusel (1 tund)
-4. **Multi-agent süsteem**: Loo koordinaator 2 spetsialisti agendiga (1,5 tundi)
-5. **Intelligentne suunaja**: Loo ülesandepõhine mudelivalik (1 tund)
-6. **Tootmise juurutamine**: Lisa jälgimine ja põhjalik veakäsitlus (45 minutit)
+1. **Jutuvestleja rakendus**: Rakenda voogedastuse jututugi koos veahaldusega (45 minutit)
+2. **RAG töövoog**: Ehita minimaalne RAG koos kvaliteedi hindamisega (1 tund)
+3. **Mudelite võrdlus**: Võrdle üle 3 mudeli jõudlust (1 tund)
+4. **Mitme agendi süsteem**: Loo koordinaator kahe spetsialistagendiga (1,5 tundi)
+5. **Intelligentne marsruutija**: Ehita ülesandepõhine mudelivalik (1 tund)
+6. **Tootmise juurutus**: Lisa monitooring ja põhjalik veahaldus (45 minutit)
 
-### Aja jaotus
+### Ajaplaneerimine
 
-**Kontsentreeritud õpe (1 nädal)**:
-- Päev 1: Sessioonid 01-02 (Vestlus + RAG) - 3 tundi
-- Päev 2: Sessioonid 03-04 (Võrdlus + võrdlus) - 3 tundi
-- Päev 3: Sessioonid 05-06 (Agendid + suunamine) - 3 tundi
-- Päev 4: Praktilised harjutused ja valideerimine - 2 tundi
+**Kontsentreeritud õppimine (1 nädal)**:
+- 1. päev: Seansid 01-02 (Jutt + RAG) - 3 tundi
+- 2. päev: Seansid 03-04 (Võrdlus + hinnang) - 3 tundi
+- 3. päev: Seansid 05-06 (Agendid + marsruutimine) - 3 tundi
+- 4. päev: Praktikumid ja valideerimine - 2 tundi
 
-**Osalise ajaga õpe (2 nädalat)**:
-- Nädal 1: Sessioonid 01-03 (6 tundi kokku)
-- Nädal 2: Sessioonid 04-06 + harjutused (5 tundi kokku)
+**Osaline õpe (2 nädalat)**:
+- 1. nädal: Seansid 01-03 (kokku 6 tundi)
+- 2. nädal: Seansid 04-06 + praktikumid (kokku 5 tundi)
 
-## Moodul 7: EdgeAI rakenduste näited
+## Moodul 7: EdgeAI rakendamise näited
 
 ### Peamised õpieesmärgid
 
+- Valda AI tööriistakomplekti Visual Studio Code jaoks kõikehõlmavate EdgeAI arendusprotsesside jaoks
+- Saavuta oskused Windows AI Foundry platvormi ja NPU optimeerimisstrateegiates
+- Rakenda EdgeAI lahendusi mitmel riistvaraplatvormil ja juurutussituatsioonis
+- Ehita tootmisvalmis EdgeAI rakendusi platvormispetsiifiliste optimeerimistega
 
-4. Selgitage NPU optimeerimise rolli kaasaegsetes serva AI rakendustes.  
-5. Kuidas kasutab Phi Silica API NPU riistvara jõudluse optimeerimiseks?  
-6. Võrrelge kohaliku ja pilvepõhise juurutamise eeliseid privaatsustundlike rakenduste puhul.  
+### Õppe keskused
 
-### Praktilised harjutused  
+#### Sektsioon 1: AI tööriistakomplekt Visual Studio Code jaoks
+- **Prioriteetsete kontseptsioonid**: 
+  - Kõikehõlmav Edge AI arenduskeskkond VS Code sees
+  - Mudeliallkirjade kataloog ja leidmine servi juurutamiseks
+  - Kohalik testimine, optimeerimine ja agendi arenduse töövood
+  - Jõudluse jälgimine ja hindamine servakeskkondades
 
-1. **AI tööriistakomplekti seadistamine**: Konfigureerige AI tööriistakomplekt ja optimeerige mudel (1 tund)  
-2. **Windows AI Foundry**: Looge lihtne Windows AI rakendus, kasutades Phi Silica API-d (1 tund)  
-3. **Platvormidevaheline juurutamine**: Juurutage sama mudel kahel erineval platvormil (1 tund)  
-4. **NPU optimeerimine**: Testige NPU jõudlust Windows AI Foundry tööriistadega (30 minutit)  
+#### Sektsioon 2: Windows EdgeAI arenduse juhend
+- **Prioriteetsete kontseptsioonid**: 
+  - Windows AI Foundry platvormi põhjalik ülevaade
+  - Phi Silica API efektiivseks NPU inferentsiks
+  - Arvutinägemise API-d pilditöötluseks ja OCR-iks
+  - Foundry Local CLI kohalikuks arenduseks ja testimiseks
 
-## Moodul 8: Microsoft Foundry Local – Täielik arendaja tööriistakomplekt (kaasaegne)  
+#### Sektsioon 3: Platvormispetsiifilised rakendused
+- **Prioriteetsete kontseptsioonid**: 
+  - NVIDIA Jetson Orin Nano juurutus (67 TOPS AI jõudlus)
+  - Mobiilirakendused .NET MAUI ja ONNX Runtime GenAI abil
+  - Azure EdgeAI lahendused pilve- ja servahübriidiga
+  - Windows ML optimeerimine universaalse riistvara toega
+  - Foundry Local rakendused privaatsusele keskenduva RAG rakendusega
 
-### Peamised õpieesmärgid  
+### Enesehindamisküsimused
 
-- Paigaldage ja konfigureerige Foundry Local koos kaasaegse SDK integratsiooniga  
-- Rakendage täiustatud multi-agent süsteeme koordinaatori mustritega  
-- Looge intelligentsed mudeliruuterid automaatse ülesandepõhise valikuga  
-- Juurutage tootmisvalmis AI lahendusi koos tervikliku jälgimisega  
-- Integreerige Azure AI Foundryga hübriidjuurutamise stsenaariumide jaoks  
-- Valdage kaasaegseid SDK mustreid FoundryLocalManageri ja OpenAI kliendiga  
+1. Kuidas lihtsustab AI tööriistakomplekt EdgeAI arendusprotsessi?
+2. Võrdle juurutamisstrateegiaid erinevatel riistvaraplatvormidel.
+3. Millised on Windows AI Foundry eelised servaarenduses?
+4. Selgita NPU optimeerimise rolli tänapäeva serva AI rakendustes.
+5. Kuidas kasutab Phi Silica API NPU riistvara jõudluse optimeerimiseks?
+6. Võrdle kohaliku ja pilve juurutuse eeliseid privaatsust tundlike rakenduste jaoks.
 
-### Õppevaldkonnad  
+### Praktikumid
 
-#### Sektsioon 1: Kaasaegne paigaldamine ja konfigureerimine  
-- **Prioriteetsed kontseptsioonid**:  
-  - FoundryLocalManager SDK integratsioon  
-  - Automaatne teenuste avastamine ja tervise jälgimine  
-  - Keskkonnapõhised konfiguratsioonimustrid  
-  - Tootmisjuurutamise kaalutlused  
+1. **AI tööriistakomplekti seadistamine**: Konfigureeri AI tööriistakomplekt ja optimeeri mudelit (1 tund)
 
-#### Sektsioon 2: Täiustatud multi-agent süsteemid  
-- **Prioriteetsed kontseptsioonid**:  
-  - Koordinaatori muster spetsialist-agentidega  
-  - Tagasivõtmise, arutlemise ja täitmise agentide spetsialiseerumine  
-  - Tagasiside mehhanismid täpsustamiseks  
-  - Jõudluse jälgimine ja statistika kogumine  
+2. **Windows AI Foundry**: Ehita lihtne Windowsi AI rakendus, kasutades Phi Silica API-d (1 tund)
+3. **Platvormideülene juurutamine**: Juuruta sama mudel kahel erineval platvormil (1 tund)
+4. **NPU optimeerimine**: Testi NPU jõudlust Windows AI Foundry tööriistadega (30 minutit)
 
-#### Sektsioon 3: Intelligentsed mudeliruuterid  
-- **Prioriteetsed kontseptsioonid**:  
-  - Märksõnapõhised mudelivaliku algoritmid  
-  - Mitme mudeli tugi (üldine, arutlemine, kood, loovus)  
-  - Keskkonnamuutujate konfiguratsioon paindlikkuse tagamiseks  
-  - Teenuse tervise kontrollimine ja vigade käsitlemine  
+## Moodul 8: Microsoft Foundry Local – Täielik arendajate tööriistakomplekt (moderniseeritud)
 
-#### Sektsioon 4: Tootmisvalmis rakendamine  
-- **Prioriteetsed kontseptsioonid**:  
-  - Terviklik vigade käsitlemine ja varumehhanismid  
-  - Päringute jälgimine ja jõudluse jälgimine  
-  - Interaktiivsed Jupyteri märkmiku näited koos võrdlusuuringutega  
-  - Integreerimismustrid olemasolevate rakendustega  
+### Peamised õpieesmärgid
 
-### Enesekontrolli küsimused  
+- Paigalda ja konfigureeri Foundry Local kaasaegse SDK integreerimisega
+- Rakenda täiustatud mitme agendi süsteemid koordinaatori mustritega
+- Ehita intelligentseid mudeliredelid automaatse ülesandevalikuga
+- Juuruta tootmiseks valmis AI lahendusi tervikliku jälgimisega
+- Integreeru Azure AI Foundryga hübriidjuurutuse stsenaariumide jaoks
+- Masterda kaasaegseid SDK mustreid FoundryLocalManageri ja OpenAI kliendiga
 
-1. Kuidas erineb kaasaegne FoundryLocalManager lähenemine käsitsi REST-kõnedest?  
-2. Selgitage koordinaatori mustrit ja kuidas see korraldab spetsialist-agente.  
-3. Kuidas valib intelligentne ruuter sobivad mudelid päringu sisu põhjal?  
-4. Millised on tootmisvalmis AI agentide süsteemi põhikomponendid?  
-5. Kuidas rakendada terviklikku tervise jälgimist Foundry Local teenuste jaoks?  
-6. Võrrelge moderniseeritud lähenemise eeliseid traditsiooniliste rakendusmustritega.  
+### Õpiperioodi fookusalad
 
-### Praktilised harjutused  
+#### Jaotis 1: Kaasaegne paigaldus ja konfiguratsioon
+- **Prioriteetsed mõisted**: 
+  - FoundryLocalManager SDK integratsioon
+  - Automaatne teenuse avastamine ja tervise jälgimine
+  - Keskkonnapõhised konfiguratsioonimustrid
+  - Tootmisjuurutuse kaalutlused
 
-1. **Kaasaegse SDK seadistamine**: Konfigureerige FoundryLocalManager automaatse teenuste avastamisega (30 minutit)  
-2. **Multi-agent süsteem**: Käivitage täiustatud koordinaator spetsialist-agentidega (30 minutit)  
-3. **Intelligentne ruuter**: Testige mudeliruuterit erinevate päringutüüpidega (30 minutit)  
-4. **Interaktiivne uurimine**: Kasutage Jupyteri märkmikke, et uurida täiustatud funktsioone (45 minutit)  
-5. **Tootmisjuurutamine**: Rakendage jälgimise ja vigade käsitlemise mustreid (30 minutit)  
-6. **Hübriidintegreerimine**: Konfigureerige Azure AI Foundry varumehhanismid (30 minutit)  
+#### Jaotis 2: Täiustatud mitmeagendi süsteemid
+- **Prioriteetsed mõisted**: 
+  - Koordinaatori muster spetsialistagentidega
+  - Päringute, põhjendamise ja täitmise agendi spetsialiseerumine
+  - Tagasisidesilmuste mehhanismid täiustamiseks
+  - Tulemuslikkuse jälgimine ja statistika kogumine
 
-## Aja jaotamise juhend  
+#### Jaotis 3: Intelligentne mudeliredel
+- **Prioriteetsed mõisted**: 
+  - Märksõnapõhised mudelivaliku algoritmid
+  - Mitme mudeli tugi (üldine, põhjendav, kodeeriv, loominguline)
+  - Paindlikkuse tagamiseks keskkonnamuutujate konfiguratsioon
+  - Teenuste seisundi kontroll ja vigade käsitlemine
 
-Et aidata teil maksimaalselt ära kasutada 30-tunnist kursuse ajakava (sh töötuba), on siin soovituslik jaotus:  
+#### Jaotis 4: Tootmiseks valmis rakendamine
+- **Prioriteetsed mõisted**: 
+  - Terviklik veakäsitlus ja varumehhanismid
+  - Päringute jälgimine ja jõudluse mõõtmine
+  - Interaktiivsed Jupyteri märkmikud koos võrdlusnäitajatega
+  - Olemasolevate rakendustega integreerimise mustrid
 
-| Tegevus | Aja jaotus | Kirjeldus |  
-|----------|----------------|-------------|  
-| Põhimaterjalide lugemine | 12 tundi | Keskendumine iga mooduli olulistele kontseptsioonidele |  
-| Praktilised harjutused | 10 tundi | Oluliste tehnikate praktiline rakendamine (sh töötuba) |  
-| Enesekontroll | 3 tundi | Teadmiste testimine küsimuste ja refleksiooni kaudu |  
-| Miniprojekt | 5 tundi | Teadmiste rakendamine väikese praktilise rakenduse kaudu |  
+### Enesehindamisküsimused
 
-### Aja piirangute põhjal keskendumise valdkonnad  
+1. Kuidas erineb kaasaegne FoundryLocalManageri lähenemine käsitsi REST-kõnedest?
+2. Selgita koordinaatori mustrit ja kuidas see korraldab spetsialistagente.
+3. Kuidas valib intelligentne redel päringu sisu põhjal sobivad mudelid?
+4. Millised on tootmiseks valmis AI agendi süsteemi põhikomponendid?
+5. Kuidas rakendada terviklikku tervise jälgimist Foundry Local teenuste jaoks?
+6. Võrdle moderniseeritud lähenemise ja traditsiooniliste rakendusmustrite eeliseid.
 
-**Kui teil on ainult 10 tundi:**  
-- Lõpetage moodul 0 (Sissejuhatus) ja moodulid 1, 2 ja 3 (põhilised EdgeAI kontseptsioonid)  
-- Tehke vähemalt üks praktiline harjutus iga mooduli kohta  
-- Keskenduge põhimõistete mõistmisele, mitte rakenduse detailidele  
+### Praktikumid
 
-**Kui saate pühendada 20 tundi:**  
-- Lõpetage kõik kaheksa moodulit (sh sissejuhatus)  
-- Tehke iga mooduli põhiharjutused  
-- Lõpetage üks miniprojekt moodulist 7  
-- Uurige vähemalt 2-3 täiendavat ressurssi  
+1. **Kaasaegse SDK seadistamine**: Konfigureeri FoundryLocalManager automaatse teenuse avastamisega (30 minutit)
+2. **Mitmeagendi süsteem**: Käivita täiustatud koordinaator spetsialistagentidega (30 minutit)
+3. **Intelligentne marsruutimine**: Testi mudeliredelit erinevate päringutüüpidega (30 minutit)
+4. **Interaktiivne uurimine**: Kasuta Jupyteri märkmikke täiustatud funktsioonide uurimiseks (45 minutit)
+5. **Tootmisjuurutus**: Rakenda jälgimise ja veakäsitluse mustreid (30 minutit)
+6. **Hübriidintegreerimine**: Konfigureeri Azure AI Foundry varumehhanisme (30 minutit)
 
-**Kui teil on rohkem kui 20 tundi:**  
-- Lõpetage kõik moodulid (sh sissejuhatus) koos detailsete harjutustega  
-- Looge mitu miniprojekti  
-- Uurige täiustatud optimeerimistehnikaid moodulis 4  
-- Rakendage tootmisjuurutamine moodulist 5  
 
-## Olulised ressursid  
+## Aja jaotusjuhend
 
-Need hoolikalt valitud ressursid pakuvad teie piiratud õppeaja jaoks kõige suuremat väärtust:  
+Selleks, et aidata sul maksimaalselt ära kasutada 30-tunnise pikendatud kursuse ajakava (sh töötuba), on siin soovitus, kuidas oma aega jaotada:
 
-### Kohustuslik lugemine  
-- [ONNX Runtime Getting Started](https://onnxruntime.ai/docs/get-started/with-python.html) – Kõige tõhusam mudeli optimeerimise tööriist  
-- [Ollama Quick Start](https://github.com/ollama/ollama#get-started) – Kiireim viis SLM-de kohalikuks juurutamiseks  
-- [Microsoft Phi Model Card](https://huggingface.co/microsoft/phi-2) – Viide juhtivale serva optimeeritud mudelile  
-- [OpenVINO Documentation](https://docs.openvino.ai/2025/index.html) – Inteli terviklik optimeerimise tööriistakomplekt  
-- [AI Toolkit for VS Code](https://code.visualstudio.com/docs/intelligentapps/overview) – Integreeritud EdgeAI arenduskeskkond  
-- [Windows AI Foundry](https://docs.microsoft.com/en-us/windows/ai/) – Windowsi spetsiifiline EdgeAI arendusplatvorm  
+| Tegevus | Aja jaotus | Kirjeldus |
+|----------|----------------|-------------|
+| Tuummaterjalide lugemine | 12 tundi | Keskendumine iga mooduli olulisematele kontseptsioonidele |
+| Praktikumid | 10 tundi | Oluliste tehnikate praktiline rakendamine (sh töötuba) |
+| Enesehindamine | 3 tundi | Oma arusaamise testimine küsimuste ja refleksiooni kaudu |
+| Mini-projekt | 5 tundi | Teadmiste rakendamine väikese praktilise ülesandena |
 
-### Ajasäästlikud tööriistad  
-- [Hugging Face Transformers](https://huggingface.co/docs/transformers/index) – Kiire mudelite juurdepääs ja juurutamine  
-- [Gradio](https://www.gradio.app/docs/interface) – Kiire UI arendus AI demode jaoks  
-- [Microsoft Olive](https://github.com/microsoft/Olive) – Lihtsustatud mudeli optimeerimine  
-- [Llama.cpp](https://github.com/ggml-ai/llama.cpp) – Tõhus CPU inferents  
-- [OpenVINO NNCF](https://github.com/openvinotoolkit/nncf) – Neuraalvõrkude kompressiooni raamistik  
-- [OpenVINO GenAI](https://github.com/openvinotoolkit/openvino.genai) – Suurte keelemudelite juurutamise tööriistakomplekt  
+### Peamised fookusalad vastavalt ajapiirangule
 
-## Edusammude jälgimise mall  
+**Kui sul on ainult 10 tundi:**
+- Lõpeta moodul 0 (Sissejuhatus) ning moodulid 1, 2 ja 3 (EdgeAI põhikontseptsioonid)
+- Tee vähemalt üks praktikum igas moodulis
+- Keskendu põhikontseptsioonide mõistmisele, mitte rakenduse detailidele
 
-Kasutage seda lihtsustatud malli, et jälgida oma õppeprogressi 20-tunnise kursuse jooksul:  
+**Kui saad pühendada kogu 20 tundi:**
+- Lõpeta kõik kaheksa moodulit (sh sissejuhatus)
+- Tee iga mooduli olulisemad praktikumid
+- Lõpeta üks mini-projekt moodulist 7
+- Uuri vähemalt 2-3 täiendavat ressurssi
 
-| Moodul | Lõpetamise kuupäev | Kulutatud tunnid | Peamised õppetunnid |  
-|--------|----------------|-------------|---------------|  
-| Moodul 0: Sissejuhatus EdgeAI-sse | | | |  
-| Moodul 1: EdgeAI põhialused | | | |  
-| Moodul 2: SLM-i alused | | | |  
-| Moodul 3: SLM-i juurutamine | | | |  
-| Moodul 4: Mudeli optimeerimine | | | |  
-| Moodul 5: SLMOps | | | |  
-| Moodul 6: AI agendid | | | |  
-| Moodul 7: Arendustööriistad | | | |  
-| Töötuba: Praktiline õpe | | | |  
-| Moodul 8: Foundry Local tööriistakomplekt | | | |  
-| Praktilised harjutused | | | |  
-| Miniprojekt | | | |  
+**Kui sul on rohkem kui 20 tundi:**
+- Lõpeta kõik moodulid (sh sissejuhatus) koos põhjalike praktikumidega
+- Ehita mitu mini-projekti
+- Uuri täiustatud optimeerimistehnikaid moodulis 4
+- Rakenda tootmisjuurutus moodulist 5
 
-## Miniprojekti ideed  
+## Olulised ressursid
 
-Kaaluge ühe neist projektidest lõpetamist, et harjutada EdgeAI kontseptsioone (igaüks on kavandatud kestma 2–4 tundi):  
+Need hoolikalt valitud ressursid annavad sulle kõige rohkem väärtust piiratud õppimise aja jooksul:
 
-### Algajate projektid (2–3 tundi)  
-1. **Serva tekstiline assistent**: Looge lihtne võrguühenduseta tekstitäiendamise tööriist, kasutades väikest keelemudelit  
-2. **Mudelite võrdluse armatuurlaud**: Looge põhiline visualiseerimine erinevate SLM-ide jõudlusmõõdikute kohta  
-3. **Optimeerimise eksperiment**: Mõõtke erinevate kvantiseerimistasemete mõju samale baasmudelile  
+### Kohustuslik lugemine
+- [ONNX Runtime alustamine](https://onnxruntime.ai/docs/get-started/with-python.html) - Kõige tõhusam mudeli optimeerimise tööriist
+- [Ollama kiire käivitus](https://github.com/ollama/ollama#get-started) - Kiireim viis SLM-ide kohapealseks juurutamiseks
+- [Microsoft Phi mudelikaart](https://huggingface.co/microsoft/phi-2) - Viide tipptasemel Edge-optimiseeritud mudelile
+- [OpenVINO dokumentatsioon](https://docs.openvino.ai/2025/index.html) - Inteli terviklik optimeerimiskomplekt
+- [AI tööriist VS Code jaoks](https://code.visualstudio.com/docs/intelligentapps/overview) - Integreeritud EdgeAI arenduskeskkond
+- [Windows AI Foundry](https://docs.microsoft.com/en-us/windows/ai/) - Windowsi spetsiifiline EdgeAI arendusplatvorm
 
-### Kesktaseme projektid (3–4 tundi)  
-4. **AI tööriistakomplekti töövoog**: Kasutage VS Code AI tööriistakomplekti mudeli optimeerimiseks ja juurutamiseks algusest lõpuni  
-5. **Windows AI Foundry rakendus**: Looge Windowsi rakendus, kasutades Phi Silica API-d ja NPU optimeerimist  
-6. **Platvormidevaheline juurutamine**: Juurutage sama optimeeritud mudel Windowsis (OpenVINO) ja mobiilis (.NET MAUI)  
-7. **Funktsioonikutsumise agent**: Looge AI agent funktsioonikutsumise võimalustega serva stsenaariumide jaoks  
+### Ajakokkuhoidvad tööriistad
+- [Hugging Face Transformers](https://huggingface.co/docs/transformers/index) - Kiire mudelitele ligipääs ja juurutamine
+- [Gradio](https://www.gradio.app/docs/interface) - Kiire kasutajaliidese arendus AI demo jaoks
+- [Microsoft Olive](https://github.com/microsoft/Olive) - Lihtsustatud mudeli optimeerimine
+- [Llama.cpp](https://github.com/ggml-ai/llama.cpp) - Tõhus CPU järeldamine
+- [OpenVINO NNCF](https://github.com/openvinotoolkit/nncf) - Närvivõrgu kokkusurumise raamistik
+- [OpenVINO GenAI](https://github.com/openvinotoolkit/openvino.genai) - Suure keelemudeli juurutustööriistakomplekt
 
-### Täiustatud integreerimisprojektid (4–5 tundi)  
-8. **OpenVINO optimeerimise torujuhe**: Rakendage täielik mudeli optimeerimine NNCF-i ja GenAI tööriistakomplektiga  
-9. **SLMOps torujuhe**: Rakendage täielik mudeli elutsükkel treenimisest serva juurutamiseni  
-10. **Mitme mudeliga servasüsteem**: Juurutage mitu spetsialiseeritud mudelit, mis töötavad koos serva riistvaral  
-11. **MCP integreerimissüsteem**: Looge agentide süsteem, kasutades Model Context Protocoli tööriistade interaktsiooniks  
+## Edusammude jälgimise mall
 
-## Viited  
+Kasuta seda lihtsustatud malli, et jälgida oma õppimise edenemist 20-tunnise kursuse jooksul:
 
-- Microsoft Learn (Foundry Local)  
-  - Ülevaade: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/  
-  - Alustamine: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/get-started  
-  - CLI viide: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-cli  
-  - Integreerimine inferentsi SDK-dega: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-integrate-with-inference-sdks  
-  - Open WebUI kasutusjuhend: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-chat-application-with-open-web-ui  
-  - Hugging Face mudelite kompileerimine: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-compile-hugging-face-models  
-- Azure AI Foundry  
-  - Ülevaade: https://learn.microsoft.com/en-us/azure/ai-foundry/  
-  - Agendid (ülevaade): https://learn.microsoft.com/en-us/azure/ai-services/agents/overview  
-- Optimeerimise ja inferentsi tööriistad  
-  - Microsoft Olive (dokumentatsioon): https://microsoft.github.io/Olive/  
-  - Microsoft Olive (GitHub): https://github.com/microsoft/Olive  
-  - ONNX Runtime (alustamine): https://onnxruntime.ai/docs/get-started/with-python.html  
-  - ONNX Runtime Olive integratsioon: https://onnxruntime.ai/docs/performance/olive.html  
-  - OpenVINO (dokumentatsioon): https://docs.openvino.ai/2025/index.html  
-  - Apple MLX (dokumentatsioon): https://ml-explore.github.io/mlx/build/html/index.html  
-- Juurutamise raamistikud ja mudelid  
-  - Llama.cpp: https://github.com/ggml-ai/llama.cpp  
-  - Hugging Face Transformers: https://huggingface.co/docs/transformers/index  
-  - vLLM (dokumentatsioon): https://docs.vllm.ai/  
-  - Ollama (kiire alustamine): https://github.com/ollama/ollama#get-started  
-- Arendustööriistad (Windows ja VS Code)  
-  - AI tööriistakomplekt VS Code jaoks: https://learn.microsoft.com/en-us/azure/ai-toolkit/overview  
-  - Windows ML (ülevaade): https://learn.microsoft.com/en-us/windows/ai/new-windows-ml/overview  
+| Moodul | Lõpetamise kuupäev | Kulutatud tunnid | Peamised õppetunnid |
+|--------|----------------|-------------|---------------|
+| Moodul 0: Sissejuhatus EdgeAI-sse | | | |
+| Moodul 1: EdgeAI alused | | | |
+| Moodul 2: SLM alused | | | |
+| Moodul 3: SLM juurutus | | | |
+| Moodul 4: Mudeli optimeerimine | | | |
+| Moodul 5: SLMOps | | | |
+| Moodul 6: AI agendid | | | |
+| Moodul 7: Arendustööriistad | | | |
+| Töötuba: Praktiline õppimine | | | |
+| Moodul 8: Foundry Local tööriistakomplekt | | | |
+| Praktikumid | | | |
+| Mini-projekt | | | |
 
-## Õppekogukond  
+## Mini-projektide ideed
 
-Liituge aruteluga ja ühenduge kaasõppijatega:  
-- GitHubi arutelud [EdgeAI algajatele repository](https://github.com/microsoft/edgeai-for-beginners/discussions)  
-- [Microsoft Tech Community](https://techcommunity.microsoft.com/)  
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/edge-ai)  
+Mõtle nende projektide lõpetamisele, et harjutada EdgeAI kontseptsioone (igaühe ettevalmistusaeg 2–4 tundi):
 
-## Kokkuvõte  
+### Algajate projektid (igaüks 2–3 tundi)
+1. **Edge tekstiline assistent**: Loo lihtne võrguühenduseta teksti täitmise tööriist väikese keelemudeli abil
+2. **Mudelivõrdlusjuhtpaneel**: Ehita põhjalik visualiseerimine erinevate SLM-ide jõudlusnäitajatest
+3. **Optimeerimise eksperiment**: Mõõda erinevate kvantiseerimistasemete mõju samale baas-mudelile
 
-EdgeAI esindab tehisintellekti rakendamise esirinnet, tuues võimsad võimalused otse seadmetesse, samal ajal lahendades olulisi privaatsuse, latentsuse ja ühenduvuse probleeme. See 20-tunnine kursus annab teile olulised teadmised ja praktilised oskused, et hakata EdgeAI tehnoloogiatega kohe töötama.  
+### Kesktaseme projektid (igaüks 3–4 tundi)
+4. **AI tööriistakomplekti töövoog**: Kasuta VS Code AI tööriista mudeli optimeerimiseks ja juurutamiseks algusest lõpuni
+5. **Windows AI Foundry rakendus**: Loo Windowsi rakendus, kasutades Phi Silica API-d ja NPU optimeerimist
+6. **Platvormideülene juurutus**: Juuruta sama optimeeritud mudel Windowsis (OpenVINO) ja mobiilis (.NET MAUI)
+7. **Funktsioonikõne agendi loomine**: Ehita AI agent funktsioonide kutsumise võimekusega edge-stsenaariumide jaoks
 
-Kursus on tahtlikult lühike ja keskendub kõige olulisematele kontseptsioonidele, võimaldades teil kiiresti omandada väärtuslikke teadmisi ilma ülekaaluka ajakohustuseta. Pidage meeles, et praktiline harjutamine, isegi lihtsate näidete abil, on õpitu kinnistamise võti.  
+### Täiustatud integreerimise projektid (igaüks 4–5 tundi)
+8. **OpenVINO optimeerimisliin**: Rakenda täielik mudeloptimeerimine, kasutades NNCF ja GenAI tööriistakomplekti
+9. **SLMOps liin**: Rakenda mudeli elutsükli haldus alates treeningust kuni edge-juyerutamiseni
+10. **Mitmemudeli edge süsteem**: Juuruta mitu spetsialiseerunud mudelit, mis töötavad koos edge riistvaral
+11. **MCP integreerimissüsteem**: Ehita agentne süsteem, kasutades Model Context Protocoli tööriistade suhtluseks
 
-Head õppimist!  
+## Viited
+
+- Microsoft Learn (Foundry Local)
+  - Ülevaade: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/
+  - Alustamine: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/get-started
+  - CLI viide: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-cli
+  - Integreerimine inference SDK-dega: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-integrate-with-inference-sdks
+  - Open WebUI juhend: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-chat-application-with-open-web-ui
+  - Hugging Face mudelite kompileerimine: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-compile-hugging-face-models
+- Azure AI Foundry
+  - Ülevaade: https://learn.microsoft.com/en-us/azure/ai-foundry/
+  - Agendid (ülevaade): https://learn.microsoft.com/en-us/azure/ai-services/agents/overview
+- Optimeerimise ja inference tööriistad
+  - Microsoft Olive (dokumentatsioon): https://microsoft.github.io/Olive/
+  - Microsoft Olive (GitHub): https://github.com/microsoft/Olive
+  - ONNX Runtime (alustamine): https://onnxruntime.ai/docs/get-started/with-python.html
+  - ONNX Runtime Olive integratsioon: https://onnxruntime.ai/docs/performance/olive.html
+  - OpenVINO (dokumentatsioon): https://docs.openvino.ai/2025/index.html
+  - Apple MLX (dokumentatsioon): https://ml-explore.github.io/mlx/build/html/index.html
+- Juurutusraamistikud ja mudelid
+  - Llama.cpp: https://github.com/ggml-ai/llama.cpp
+  - Hugging Face Transformers: https://huggingface.co/docs/transformers/index
+  - vLLM (dokumentatsioon): https://docs.vllm.ai/
+  - Ollama (kiire käivitus): https://github.com/ollama/ollama#get-started
+- Arendustööriistad (Windows ja VS Code)
+  - AI tööriist VS Code jaoks: https://learn.microsoft.com/en-us/azure/ai-toolkit/overview
+  - Windows ML (ülevaade): https://learn.microsoft.com/en-us/windows/ai/new-windows-ml/overview
+
+## Õppimiskogukond
+
+Liitu aruteluga ja loo kontakte teiste õppijatega:
+- GitHubi arutelud [EdgeAI for Beginners repos](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- [Microsoft Tech Community](https://techcommunity.microsoft.com/)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/edge-ai)
+
+## Kokkuvõte
+
+EdgeAI tähistab tehisintellekti rakendamise piiri, tuues võimsad võimalused otse seadmetele, samal ajal lahendades olulisi privaatsuse, latentsuse ja ühenduvuse küsimusi. See 20-tunnine kursus annab sulle olulised teadmised ja praktilised oskused EdgeAI tehnoloogiatega kohe alustamiseks.
+
+Kursus on teadlikult lühike ja keskendunud kõige olulisematele kontseptsioonidele, võimaldades sul kiiresti omandada väärtuslikku ekspertteadmisi ilma ülekoormava ajakohustuseta. Pea meeles, et praktiline harjutamine, isegi lihtsate näidetega, on võtmetähtsusega õpitu kinnistamiseks.
+
+Head õppimist!
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Lahtiütlus**:
+See dokument on tõlgitud kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi me püüdleme täpsuse poole, palun pange tähele, et automatiseeritud tõlgetes võib esineda vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta selle tõlkega seotud eksimustest või valesti mõistmistest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,367 +1,415 @@
-# AI Toolkit Visual Studio Code'i jaoks - Edge AI arendamise juhend
+# AI-tööriistakomplekt Visual Studio Code’ile – Edge AI arendusjuhend
 
 ## Sissejuhatus
 
-Tere tulemast põhjalikku juhendisse, kuidas kasutada AI Toolkit'i Visual Studio Code'is Edge AI arendamiseks. Kuna tehisintellekt liigub tsentraliseeritud pilvearvutustest hajutatud servaseadmetele, vajavad arendajad võimsaid ja integreeritud tööriistu, mis suudavad toime tulla serva juurutamise unikaalsete väljakutsetega - alates ressursipiirangutest kuni võrguühenduseta töö nõueteni.
+Tere tulemast põhjalikku juhendisse AI-tööriistakomplekti kasutamiseks Visual Studio Code’is Edge AI arendamiseks. Kuna tehisintellekt liigub tsentraliseeritud pilvandmetöötlusest hajutatud ääreseadmeteni, vajavad arendajad võimsaid, integreeritud tööriistu, mis suudavad toime tulla ääredelevõtmise ainulaadsete väljakutsetega – alates ressursside piirangutest kuni võrguvabaduse nõueteni.
 
-AI Toolkit Visual Studio Code'i jaoks täidab selle tühimiku, pakkudes terviklikku arenduskeskkonda, mis on spetsiaalselt loodud tõhusalt servaseadmetel töötavate tehisintellekti rakenduste loomiseks, testimiseks ja optimeerimiseks. Olgu tegemist IoT sensorite, mobiilseadmete, manussüsteemide või servaserveritega, see tööriistakomplekt lihtsustab kogu arendusprotsessi tuttavas VS Code'i keskkonnas.
+AI-tööriistakomplekt Visual Studio Code’ile täidab selle lünga, pakkudes täielikku arenduskeskkonda, mis on spetsiaalselt loodud AI-rakenduste ehitamiseks, testimiseks ja optimeerimiseks, mis töötavad tõhusalt ääreseadmetel. Olenemata sellest, kas arendate IoT-andurite, mobiilseadmete, sisse ehitatud süsteemide või ääreserverite jaoks, lihtsustab see tööriistakomplekt kogu teie arendusvoogu tuttavas VS Code keskkonnas.
 
-See juhend tutvustab olulisi kontseptsioone, tööriistu ja parimaid praktikaid, kuidas kasutada AI Toolkit'i oma Edge AI projektides, alates mudeli valikust kuni tootmisjuurutamiseni.
+See juhend viib teid läbi põhikontseptsioonide, tööriistade ja parimate tavade, kuidas AI-tööriistakomplekti kasutada oma Edge AI projektides, alates mudeli valimisest kuni tootmisse viimiseni.
 
 ## Ülevaade
 
-AI Toolkit Visual Studio Code'i jaoks on võimas laiendus, mis lihtsustab agentide arendamist ja tehisintellekti rakenduste loomist. Tööriistakomplekt pakub laiaulatuslikke võimalusi tehisintellekti mudelite uurimiseks, hindamiseks ja juurutamiseks mitmetelt pakkujatelt, sealhulgas Anthropic, OpenAI, GitHub, Google, ning toetab kohalikke mudelite täitmisi ONNX-i ja Ollama abil.
+AI-tööriistakomplekt Visual Studio Code’ile on võimas laiendus, mis lihtsustab agentide arendamist ja AI-rakenduste loomist. See tööriistakomplekt pakub ulatuslikke võimalusi AI mudelite uurimiseks, hindamiseks ja juurutamiseks mitmelt pakkujalt – sh Anthropic, OpenAI, GitHub, Google – võimaldades samal ajal kohaliku mudelieksekutsiooni ONNX ja Ollama abil.
 
-Mis eristab AI Toolkit'i teistest, on selle terviklik lähenemine kogu tehisintellekti arendustsüklile. Erinevalt traditsioonilistest tehisintellekti arendustööriistadest, mis keskenduvad üksikutele aspektidele, pakub AI Toolkit integreeritud keskkonda, mis hõlmab mudelite avastamist, katsetamist, agentide arendamist, hindamist ja juurutamist - kõik see toimub tuttavas VS Code'i keskkonnas.
+Mis eristab AI-tööriistakomplekti, on selle terviklik lähenemine kogu AI arenduse elutsüklile. Erinevalt traditsioonilistest AI arendustööriistadest, mis keskenduvad ühelegi aspektile, pakub AI-tööriistakomplekt integreeritud keskkonda, mis hõlmab mudelite avastamist, eksperimenteerimist, agentide arendamist, hindamist ja juurutamist – kõik tuttavas VS Code keskkonnas.
 
-Platvorm on spetsiaalselt loodud kiireks prototüüpimiseks ja tootmisjuurutamiseks, pakkudes selliseid funktsioone nagu promptide genereerimine, kiirstardid, sujuvad MCP (Model Context Protocol) tööriistade integreerimised ja ulatuslikud hindamisvõimalused. Edge AI arenduse jaoks tähendab see, et saate tõhusalt arendada, testida ja optimeerida tehisintellekti rakendusi serva juurutamise stsenaariumide jaoks, säilitades samal ajal kogu arendusprotsessi VS Code'i keskkonnas.
+Platvorm on loodud kiirprototüüpimiseks ja tootmisjuurutuseks, sisaldades funktsioone nagu kiirkirjutiste genereerimine, kiire algus, sujuvad MCP (Model Context Protocol) tööriista integratsioonid ja laialdased hindamisvõimalused. Edge AI arenduse puhul tähendab see, et saate tõhusalt arendada, testida ja optimeerida AI-rakendusi ääres olevate juurutusstsenaariumite jaoks, hoides samal ajal kogu arendusvoogu VS Code’is.
 
 ## Õpieesmärgid
 
-Selle juhendi lõpuks suudate:
+Selle juhendi lõpus oskate:
 
 ### Põhioskused
-- **Installida ja seadistada** AI Toolkit Visual Studio Code'i jaoks Edge AI arenduse töövoogude jaoks
-- **Navigeerida ja kasutada** AI Toolkit'i liidest, sealhulgas Model Catalog, Playground ja Agent Builder
-- **Valida ja hinnata** tehisintellekti mudeleid, mis sobivad serva juurutamiseks, lähtudes jõudlusest ja ressursipiirangutest
-- **Konverteerida ja optimeerida** mudeleid ONNX-i formaadi ja kvantiseerimistehnikate abil servaseadmete jaoks
+- **Paigaldada ja konfigureerida** AI-tööriistakomplekt Visual Studio Code’i Edge AI arendusvoogude jaoks
+- **Navigeerida ja kasutada** AI-tööriistakomplekti liidest, sealhulgas Mudelide kataloogi, Mänguväljakut ja Agentide ehitajat
+- **Valida ja hinnata** AI-mudeleid, mis sobivad ääres kasutamiseks, arvestades jõudlust ja ressursse
+- **Konverteerida ja optimeerida** mudeleid ONNX formaadis ja kvantiseerimistehnikatega ääreseadmete jaoks
 
-### Edge AI arendamise oskused
-- **Kavandada ja rakendada** Edge AI rakendusi integreeritud arenduskeskkonna abil
-- **Teostada mudelite testimist** servasarnastes tingimustes, kasutades kohalikku järeldamist ja ressursimonitooringut
-- **Luua ja kohandada** tehisintellekti agente, mis on optimeeritud serva juurutamise stsenaariumide jaoks
-- **Hinnata mudelite jõudlust** serva arvutamise jaoks oluliste mõõdikute (latentsus, mälukasutus, täpsus) abil
+### Edge AI arendusoskused
+- **Disainida ja rakendada** Edge AI rakendusi integreeritud arenduskeskkonnas
+- **Teha mudeliteste** ääresarnastes tingimustes, kasutades kohaliku inferentsi ja ressursi jälgimist
+- **Luua ja kohandada** AI-agente, mis on optimeeritud ääreluurestsenaariumide jaoks
+- **Hinnata mudelite jõudlust** ääres kasutatavate mõõdikute järgi (latentsus, mälukasutus, täpsus)
 
-### Optimeerimine ja juurutamine
-- **Rakendada kvantiseerimise ja kärpimise tehnikaid**, et vähendada mudeli suurust, säilitades samal ajal vastuvõetava jõudluse
-- **Optimeerida mudeleid** konkreetsete serva riistvaraplatvormide jaoks, sealhulgas CPU, GPU ja NPU kiirendus
-- **Rakendada parimaid praktikaid** Edge AI arendamiseks, sealhulgas ressursihaldus ja varuplaanid
-- **Valmistada mudeleid ja rakendusi** tootmisjuurutamiseks servaseadmetel
+### Optimeerimine ja juurutus
+- **Rakendada kvantiseerimise ja kärpimise** tehnikaid mudeli suuruse vähendamiseks, säilitades samas aktsepteeritava jõudluse
+- **Optimeerida mudeleid** spetsiifilistele ääre riistvaraplatvormidele, sealhulgas CPU, GPU ja NPU kiirendusele
+- **Rakendada parimaid tavasid** ääre AI arenduses, sisaldades ressursside haldamist ja varuplaanide strateegiaid
+- **Valmistada mudeleid ja rakendusi ette** tootmisjuurutuseks ääreseadmetele
 
 ### Täiustatud Edge AI kontseptsioonid
-- **Integreerida serva tehisintellekti raamistikud**, sealhulgas ONNX Runtime, Windows ML ja TensorFlow Lite
-- **Rakendada mitme mudeli arhitektuure** ja föderatiivse õppimise stsenaariume servakeskkondades
-- **Lahendada levinud serva tehisintellekti probleeme**, sealhulgas mälupiirangud, järeldamise kiirus ja riistvara ühilduvus
-- **Kavandada monitooringu ja logimise strateegiaid** serva tehisintellekti rakenduste jaoks tootmises
+- **Integreerida ääre AI raamistikud** sh ONNX Runtime, Windows ML ja TensorFlow Lite
+- **Rakendada mitme mudeli arhitektuure** ja föderatiivõppe stsenaariumeid ääre keskkondades
+- **Lahendada sagedasi ääre AI probleeme** nagu mälupiirangud, inferentsikiirus ja riistvaraline ühilduvus
+- **Disainida jälgimis- ja logimisstrateegiaid** ääre AI rakendustele tootmises
 
-### Praktiline rakendus
-- **Luua terviklikke Edge AI lahendusi** alates mudeli valikust kuni juurutamiseni
-- **Näidata oskusi** servaspetsiifilistes arendustöövoogudes ja optimeerimistehnikates
-- **Rakendada õpitud kontseptsioone** reaalse maailma Edge AI kasutusjuhtumites, sealhulgas IoT, mobiil- ja manusrakendustes
-- **Hinnata ja võrrelda** erinevaid serva tehisintellekti juurutamise strateegiaid ja nende kompromisse
+### Praktiline rakendamine
+- **Ehita otse-otsast ääre AI lahendusi** mudeli valimisest kuni juurutuseni
+- **Näita pädevust** ääre-spetsiifilistes arendusvoogudes ja optimeerimistehnikates
+- **Rakenda õpitud kontseptsioone** reaalse maailma ääre AI kasutusjuhtudel, sealhulgas IoT, mobiilne ja sisse ehitatud rakendused
+- **Hinnata ja võrrelda** erinevaid ääre AI juurutusstrateegiaid ja nende kompromisse
 
-## Olulised funktsioonid Edge AI arendamiseks
+## Peamised funktsioonid Edge AI arenduseks
 
-### 1. Mudelikataloog ja avastamine
-- **Mitme pakkuja tugi**: Sirvige ja pääsege ligi tehisintellekti mudelitele Anthropic, OpenAI, GitHub, Google ja teistelt pakkujatelt
-- **Kohalike mudelite integreerimine**: ONNX-i ja Ollama mudelite lihtsustatud avastamine serva juurutamiseks
-- **GitHub mudelid**: Otsene integreerimine GitHub'i mudelite hostimisega lihtsustatud juurdepääsuks
-- **Mudelite võrdlemine**: Võrrelge mudeleid kõrvuti, et leida optimaalne tasakaal servaseadmete piirangute jaoks
+### 1. Mudelite kataloog ja avastamine
+- **Mitme pakkuja tugi**: Sirvi ja kasuta AI-mudeleid Anthropicu, OpenAI, GitHubi, Google’i ja teiste pakkujate hulgast
+- **Kohalik mudelite integratsioon**: Lihtsustatud ONNX ja Ollama mudelite avastamine ääres kasutamiseks
+- **GitHubi mudelid**: Otseühendus GitHubi mudelihostingu teenusega sujuvamaks ligipääsuks
+- **Mudelite võrdlus**: Võrdle mudeleid kõrvuti, et leida optimaalne tasakaal ääreseadme piirangute vahel
 
-### 2. Interaktiivne Playground
-- **Interaktiivne testimiskeskkond**: Kiire katsetamine mudeli võimekustega kontrollitud keskkonnas
-- **Mitme modaalsuse tugi**: Testige pilte, teksti ja muid sisendeid, mis on tüüpilised serva stsenaariumides
-- **Reaalajas katsetamine**: Kohene tagasiside mudeli vastuste ja jõudluse kohta
-- **Parameetrite optimeerimine**: Häälestage mudeli parameetreid serva juurutamise nõuete jaoks
+### 2. Interaktiivne mänguväljak
+- **Interaktiivne testimiskeskkond**: Kiire mudelivõimaluste katsetamine kontrollitud keskkonnas
+- **Mitmemodaalne tugi**: Testi pilte, teksti ja muid sisendeid, mis on tüüpilised ääre stsenaariumites
+- **Reaalajas eksperimenteerimine**: Kohene tagasiside mudeli vastuste ja jõudluse kohta
+- **Parameetrite optimeerimine**: Häälesta mudeli parameetreid ääre juurutuse nõuetele vastavaks
 
-### 3. Prompt (Agent) Builder
-- **Loodusliku keele genereerimine**: Looge alguspromptid looduslike keelekirjelduste abil
-- **Iteratiivne täiustamine**: Parandage promptide kvaliteeti mudeli vastuste ja jõudluse põhjal
-- **Ülesannete jaotamine**: Jagage keerulised ülesanded promptide ahelate ja struktureeritud väljundite abil
-- **Muutujate tugi**: Kasutage muutujaid promptides dünaamilise agentide käitumise jaoks
-- **Tootmiskoodi genereerimine**: Looge tootmiskõlblik kood kiireks rakenduste arendamiseks
+### 3. Käskluste (agentide) ehitaja
+- **Loomuliku keele genereerimine**: Genereeri stardikäsklused loomuliku keele kirjelduste põhjal
+- **Iteratiivne täiustamine**: Paranda käsklusi mudeli vastuste ja jõudluse põhjal
+- **Tööülesannete jaotus**: Jaga keerulised ülesanded käskluse ahelduse ja struktureeritud väljundite abil
+- **Muutujate tugi**: Kasuta käsklustes muutujaid dünaamilise agendi käitumise jaoks
+- **Tootmiskoodi genereerimine**: Genereeri tootmiseks valmis kood kiireks rakenduse arenduseks
 
-### 4. Massiline käitamine ja hindamine
-- **Mitme mudeli testimine**: Käivitage mitu prompti valitud mudelite vahel samaaegselt
-- **Tõhus testimine suurel skaalal**: Testige erinevaid sisendeid ja konfiguratsioone tõhusalt
-- **Kohandatud testjuhtumid**: Käivitage agente testjuhtumitega funktsionaalsuse valideerimiseks
-- **Jõudluse võrdlemine**: Võrrelge tulemusi erinevate mudelite ja konfiguratsioonide vahel
+### 4. Suur hulk korraga jooksmist ja hindamist
+- **Mitme mudeli testimine**: Käivita samaaegselt mitu käsklust valitud mudelitel
+- **Tõhus testimine suurel hulgal**: Testi erinevaid sisendeid ja konfiguratsioone efektiivselt
+- **Kohandatud testjuhtumid**: Käivita agente testjuhtumitega funktsionaalsuse valideerimiseks
+- **Jõudluse võrdlus**: Võrdle tulemusi erinevate mudelite ja konfiguratsioonide lõikes
 
-### 5. Mudelite hindamine andmekogumitega
-- **Standardmõõdikud**: Testige tehisintellekti mudeleid sisseehitatud hindajate abil (F1 skoor, asjakohasus, sarnasus, sidusus)
-- **Kohandatud hindajad**: Looge oma hindamismõõdikud konkreetsete kasutusjuhtumite jaoks
-- **Andmekogumite integreerimine**: Testige mudeleid ulatuslike andmekogumite vastu
-- **Jõudluse mõõtmine**: Kvantifitseerige mudeli jõudlust serva juurutamise otsuste jaoks
+### 5. Mudelite hindamine andmestike abil
+- **Standardsed mõõdikud**: Testi AI mudeleid sisseehitatud hindajatega (F1 skoor, asjakohasus, sarnasus, sidusus)
+- **Kohandatud hindajad**: Loo oma hindamismõõdikuid spetsiifiliste kasutusjuhtude jaoks
+- **Andmestike integratsioon**: Testi mudeleid ulatuslike andmestike vastu
+- **Jõudluse mõõtmine**: Kvanteeri mudelite jõudlust ääre juurutusotsuste tegemiseks
 
-### 6. Peenhäälestamise võimalused
-- **Mudelite kohandamine**: Kohandage mudeleid konkreetsete kasutusjuhtumite ja valdkondade jaoks
-- **Spetsialiseeritud kohandamine**: Kohandage mudeleid spetsialiseeritud valdkondade ja nõuete jaoks
-- **Serva optimeerimine**: Häälestage mudeleid spetsiaalselt serva juurutamise piirangute jaoks
-- **Valdkonnaspetsiifiline treenimine**: Looge mudeleid, mis on kohandatud konkreetsete serva kasutusjuhtumite jaoks
+### 6. Peenhäälestamise võimed
+- **Mudeli kohandamine**: Kohanda mudeleid spetsiifiliste kasutusjuhtude ja domeenide jaoks
+- **Spetsialiseeritud adapteerimine**: Kohanda mudeleid eriliste domeenide ja nõudmiste jaoks
+- **Ääre optimeerimine**: Peenhäälesta mudeleid spetsiifiliste ääre juurutuspiirangute jaoks
+- **Domeenispetsiifiline koolitus**: Loo mudeleid, mis on kohandatud konkreetsetele ääre kasutusjuhtudele
 
-### 7. MCP tööriistade integreerimine
-- **Väliste tööriistade ühenduvus**: Ühendage agendid väliste tööriistadega Model Context Protocol serverite kaudu
-- **Reaalmaailma tegevused**: Võimaldage agentidel päringuid teha andmebaasidesse, pääseda API-dele või täita kohandatud loogikat
-- **Olemasolevad MCP serverid**: Kasutage tööriistu käsurea (stdio) või HTTP (server-sent event) protokollide kaudu
-- **Kohandatud MCP arendus**: Looge ja testige uusi MCP servereid Agent Builder'i abil
+### 7. MCP tööriista integratsioon
+- **Välistööriistade ühenduvus**: Ühenda agente väliste tööriistadega mudelikonteksti protokolliserverite kaudu
+- **Reaalmaailma tegevused**: Luba agentidel esitada päringuid andmebaasidele, kasutada API-sid või käivitada kohandatud loogikat
+- **Olemasolevad MCP serverid**: Kasuta tööriistu käskluste (stdio) või HTTP (server-sent event) protokollide kaudu
+- **Kohandatud MCP arendus**: Ehitada ja toe uusi MCP servereid koos testimisega Agentide ehitajas
 
-### 8. Agentide arendamine ja testimine
-- **Funktsioonikutsumise tugi**: Võimaldage agentidel dünaamiliselt väliseid funktsioone kutsuda
-- **Reaalajas integreerimise testimine**: Testige integreerimisi reaalajas käituste ja tööriistade kasutamisega
-- **Agentide versioonihaldus**: Versioonihaldus agentidele koos võrdlusvõimalustega hindamistulemuste jaoks
-- **Silumine ja jälgimine**: Kohalik jälgimine ja silumine agentide arendamiseks
+### 8. Agentide arendus ja testimine
+- **Funktsioonikõnede tugi**: Luba agentidel dünaamiliselt väliseid funktsioone kutsuda
+- **Reaalajas integreerimise testimine**: Testi integratsioone reaalajas käivituste ja tööriistakasutuse kaudu
+- **Agentide versioonihaldus**: Versioonihaldus agentidele koos võrdlusvõimalustega hindamistulemusteks
+- **Silumine ja jälgimine**: Kohalik jälgimine ja silumise võimalused agentide arendamiseks
 
-## Edge AI arenduse töövoog
+## Edge AI arendusvoog
 
 ### Faas 1: Mudelite avastamine ja valik
-1. **Uurige mudelikataloogi**: Kasutage mudelikataloogi, et leida mudeleid, mis sobivad serva juurutamiseks
-2. **Võrrelge jõudlust**: Hinnake mudeleid suuruse, täpsuse ja järeldamise kiiruse põhjal
-3. **Testige kohapeal**: Kasutage Ollama või ONNX-i mudeleid, et testida kohapeal enne serva juurutamist
-4. **Hinnake ressursinõudeid**: Määrake mälukasutus ja arvutusvajadused sihtservaseadmete jaoks
+1. **Sirvi mudelite kataloogi**: Kasuta mudelikataloogi sobivate ääres kasutamiseks mõeldud mudelite leidmiseks
+2. **Võrdle jõudlust**: Hinda mudeleid suuruse, täpsuse ja inferentsikiiruse alusel
+3. **Testi lokaalsetes tingimustes**: Kasuta Ollama või ONNX mudeleid lokaalselt testimiseks enne ääres kasutamist
+4. **Hinda ressursside nõudeid**: Määra sihtääreseadmete mälu- ja arvutusvajadused
 
 ### Faas 2: Mudelite optimeerimine
-1. **Konverteerige ONNX-i**: Konverteerige valitud mudelid ONNX-i formaati serva ühilduvuse jaoks
-2. **Rakendage kvantiseerimist**: Vähendage mudeli suurust INT8 või INT4 kvantiseerimise abil
-3. **Riistvara optimeerimine**: Optimeerige sihtserva riistvara jaoks (ARM, x86, spetsialiseeritud kiirendid)
-4. **Jõudluse valideerimine**: Kontrollige, et optimeeritud mudelid säilitaksid vastuvõetava täpsuse
+1. **Konverteeri ONNX formaati**: Konverteeri valitud mudelid ONNX formaati ääre ühilduvuseks
+2. **Rakenda kvantiseerimine**: Vähenda mudeli suurust INT8 või INT4 kvantiseerimisega
+3. **Riistvara optimeerimine**: Optimeeri sihtääre riistvarale (ARM, x86, spetsialiseeritud kiirendid)
+4. **Jõudluse valideerimine**: Kontrolli, et optimeeritud mudel säilitab aktsepteeritava täpsuse
 
-### Faas 3: Rakenduste arendamine
-1. **Agentide disain**: Kasutage Agent Builder'it, et luua serva optimeeritud tehisintellekti agente
-2. **Promptide insenerimine**: Arendage promptid, mis töötavad tõhusalt väiksemate serva mudelitega
-3. **Integreerimise testimine**: Testige agente simuleeritud servatingimustes
-4. **Koodi genereerimine**: Genereerige tootmiskood, mis on optimeeritud serva juurutamiseks
+### Faas 3: Rakenduse arendus
+1. **Agendi disain**: Kasuta Agentide ehitajat ääreoptimeeritud AI agentide loomisel
+2. **Käskluste konstrueerimine**: Arenda välja käsklused, mis toimivad efektiivselt väiksemate ääremudelitega
+3. **Integreerimise testimine**: Testi agente simuleeritud ääre tingimustes
+4. **Koodi genereerimine**: Genereeri tootmiskõlbulik kood, mis on optimeeritud äärde juurutamiseks
 
 ### Faas 4: Hindamine ja testimine
-1. **Massiline hindamine**: Testige mitmeid konfiguratsioone, et leida optimaalsed servaseaded
-2. **Jõudluse profiilimine**: Analüüsige järeldamise kiirust, mälukasutust ja täpsust
-3. **Serva simulatsioon**: Testige tingimustes, mis sarnanevad sihtserva juurutamise keskkonnaga
-4. **Koormustestimine**: Hinnake jõudlust erinevate koormustingimuste korral
+1. **Massihindamine**: Testi mitut konfiguratsiooni, et leida optimaalne ääreseaded
+2. **Jõudluse profiilimine**: Analüüsi inferentsikiirust, mälukasutust ja täpsust
+3. **Ääre simulatsioon**: Testi tingimustes, mis sarnanevad sihtääre juurutuskeskkonnale
+4. **Koormustestimine**: Hinda jõudlust erinevate koormustingimuste all
 
-### Faas 5: Juurutamise ettevalmistamine
-1. **Lõplik optimeerimine**: Rakendage lõplikud optimeerimised testitulemuste põhjal
-2. **Juurutamise pakendamine**: Pakendage mudelid ja kood serva juurutamiseks
-3. **Dokumentatsioon**: Dokumenteerige juurutamise nõuded ja konfiguratsioon
-4. **Monitooringu seadistamine**: Valmistage ette monitooring ja logimine serva juurutamiseks
+### Faas 5: Juurutusvalmidus
+1. **Lõplik optimeerimine**: Rakenda lõplikud optimeerimised testitulemuste põhjal
+2. **Juurutuspakendamine**: Paki mudelid ja kood ääre juurutuseks
+3. **Dokumentatsioon**: Dokumenteeri juurutuse nõuded ja konfiguratsioon
+4. **Järelvalve seadistamine**: Valmista ette jälgimine ja logimine ääre juurutuseks
 
 ## Sihtgrupp Edge AI arendamiseks
 
 ### Edge AI arendajad
-- Rakenduste arendajad, kes loovad tehisintellekti võimekusega servaseadmeid ja IoT lahendusi
-- Manussüsteemide arendajad, kes integreerivad tehisintellekti võimekusi ressursipiirangutega seadmetesse
-- Mobiiliarendajad, kes loovad seadmesiseseid tehisintellekti rakendusi nutitelefonidele ja tahvelarvutitele
+- Rakenduste arendajad, kes loovad AI-toega ääreseadmeid ja IoT lahendusi
+- Sisse ehitatud süsteemide arendajad, kes integreerivad AI võimalusi ressursside piiratud seadmetesse
+- Mobiiliarendajad, kes loovad seadmesisesi AI rakendusi nutitelefonidele ja tahvelarvutitele
 
 ### Edge AI insenerid
-- Tehisintellekti insenerid, kes optimeerivad mudeleid serva juurutamiseks ja haldavad järeldustorustikke
-- DevOps insenerid, kes juurutavad ja haldavad tehisintellekti mudeleid hajutatud servainfrastruktuuris
-- Jõudlusinsenerid, kes optimeerivad tehisintellekti töökoormusi serva riistvara piirangute jaoks
+- AI insenerid, kes optimeerivad mudeleid ääre juurutuseks ja haldavad inferentsitorusid
+- DevOps insenerid, kes juurutavad ja haldavad AI mudeleid hajutatud ääre infrastruktuuris
+- Jõudlusinsenerid, kes optimeerivad AI töökoormusi ääre riistvaraliste piirangute jaoks
 
-### Teadlased ja õpetajad
-- Tehisintellekti teadlased, kes arendavad tõhusaid mudeleid ja algoritme serva arvutamiseks
-- Õpetajad, kes õpetavad Edge AI kontseptsioone ja demonstreerivad optimeerimistehnikaid
-- Õpilased, kes õpivad serva tehisintellekti juurutamise väljakutsete ja lahenduste kohta
+### Teadlased ja haridustöötajad
+- AI teadlased, kes arendavad tõhusaid mudeleid ja algoritme ääre arvutuseks
+- Õpetajad, kes õpetavad Edge AI kontseptsioone ja demonstreerivad optimeerimisvõtteid
+- Õpilased, kes õpivad ääre AI juurutamise väljakutseid ja lahendusi
 
-## Edge AI kasutusjuhtumid
+## Edge AI kasutusstsenaariumid
 
 ### Nutikad IoT seadmed
-- **Reaalajas pildituvastus**: Juurutage arvutinägemise mudeleid IoT kaamerates ja sensorites
-- **Hääletöötlus**: Rakendage kõnetuvastust ja loodusliku keele töötlemist nutikõlarites
-- **Ennetav hooldus**: Käitage anomaaliatuvastuse mudeleid tööstuslikel servaseadmetel
-- **Keskkonnaseire**: Juurutage sensorite andmeanalüüsi mudeleid keskkonnarakenduste jaoks
+- **Reaalaegne pildituvastus**: Juuruta arvutinägemise mudeleid IoT kaameratesse ja anduritesse
+- **Häälitöötlus**: Rakenda kõnetuvastust ja loomuliku keele töötlemist nutikates kõlarites
+- **Ennetav hooldus**: Käivita anomaaliate tuvastamise mudeleid tööstuslikes ääreseadmetes
+- **Keskkonnajälgimine**: Juuruta andurite andmete analüüsiks mudeleid keskkonnaalaste rakenduste jaoks
 
-### Mobiil- ja manusrakendused
-- **Seadmesisene tõlkimine**: Rakendage keele tõlkimise mudeleid, mis töötavad võrguühenduseta
-- **Liitreaalsus**: Juurutage reaalajas objektituvastust ja jälgimist AR rakenduste jaoks
-- **Tervise jälgimine**: Käitage terviseanalüüsi mudeleid kantavatel seadmetel ja meditsiiniseadmetel
-- **Autonoomsed süsteemid**: Rakendage otsuste tegemise mudeleid droonide, robotite ja sõidukite jaoks
+### Mobiil- ja sisse ehitatud rakendused
+- **Seadmesisest tõlget**: Rakenda keele tõlkemudeleid, mis töötavad võrguühenduseta
+- **Liitreaalsus**: Juuruta objekti tuvastust ja jälgimist AR rakendustele reaalaajas
+- **Tervise jälgimine**: Käivita terviseanalüüsi mudeleid kantavatel seadmetel ja meditsiiniseadmetel
+- **Autonoomsed süsteemid**: Rakenda otsustusmudeleid droonidele, robotitele ja sõidukitele
 
-### Serva arvutamise infrastruktuur
-- **Serva andmekeskused**: Juurutage tehisintellekti mudeleid serva andmekeskustes madala latentsusega rakenduste jaoks
-- **CDN integreerimine**: Integreerige tehisintellekti töötlemisvõimekus sisuedastusvõrkudesse
-- **5G serv**: Kasutage 5G serva arvutamist tehisintellekti võimekusega rakenduste jaoks
-- **Fog Computing**: Rakendage tehisintellekti töötlemist fog computing keskkondades
+### Ääre arvutamise infrastruktuur
+- **Ääre andmekeskused**: Juuruta AI mudeleid ääre andmekeskustesse madala latentsusega rakenduste jaoks
+- **CDN integratsioon**: Integreeri AI töötlusvõimeid sisujagamisvõrkudesse
+- **5G Edge**: Kasuta 5G äre arvutust AI-toega rakendusteks
+- **Uduarvutus**: Rakenda AI töötlust uduarvutuse keskkondades
 
-## Paigaldamine ja seadistamine
+## Paigaldus ja seadistamine
 
 ### Laienduse paigaldamine
-Paigaldage AI Toolkit laiendus otse Visual Studio Code'i Marketplace'ist:
+Paigalda AI-tööriistakomplekti laiendus otse Visual Studio Code Marketplace’ist:
 
 **Laienduse ID**: `ms-windows-ai-studio.windows-ai-studio`
 
-**Paigaldamise meetodid**:
-1. **VS Code Marketplace**: Otsige Extensions vaates "AI Toolkit"
-2
-2. Loo algsed viited, kasutades loomuliku keele kirjeldusi  
-3. Iteratsiooni ja täpsusta viiteid mudeli vastuste põhjal  
-4. Integreeri MCP tööriistad agentide võimekuse suurendamiseks  
+**Paigaldusmeetodid**:
+1. **VS Code Marketplace**: Otsi laienduste vaates "AI Toolkit"
+2. **Käsurealt**: `code --install-extension ms-windows-ai-studio.windows-ai-studio`
+3. **Otsepaigaldus**: Laadi alla aadressilt [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-#### Samm 3: Testimine ja hindamine  
-1. Kasuta **Bulk Run** funktsiooni, et testida mitmeid viiteid valitud mudelitega  
-2. Käivita agendid testjuhtumitega, et valideerida funktsionaalsust  
-3. Hinda täpsust ja jõudlust sisseehitatud või kohandatud mõõdikute abil  
-4. Võrdle erinevaid mudeleid ja konfiguratsioone  
+### Eeltingimused Edge AI arenduseks
+- **Visual Studio Code**: Soovitatav on uusim versioon
+- **Python keskkond**: Python 3.8+ koos vajalike AI teekidega
+- **ONNX Runtime** (vabatahtlik): ONNX mudelite inferentsiks
+- **Ollama** (vabatahtlik): Kohaliku mudelite teenindamiseks
+- **Riistvara kiirendustööriistad**: CUDA, OpenVINO või platvormipõhised kiirendid
 
-#### Samm 4: Peenhäälestamine ja optimeerimine  
-1. Kohanda mudeleid spetsiifiliste erijuhtumite jaoks  
-2. Rakenda valdkonnaspetsiifilist peenhäälestamist  
-3. Optimeeri piiratud ressursiga kasutuselevõtu jaoks  
-4. Versiooni ja võrdle erinevaid agentide konfiguratsioone  
+### Esialgne seadistus
+1. **Laienduse aktiveerimine**: Ava VS Code ja veendu, et AI-tööriistakomplekt kuvatakse tegevuse ribal
+2. **Mudeli pakkuja seadistus**: Sea sisse ligipääs GitHubi, OpenAI, Anthropicu või teiste mudeli pakkujatele
+3. **Kohalik keskkond**: Sea sisse Python keskkond ja paigalda vajalikud paketid
+4. **Riistvara kiirendus**: Kui võimalik, konfigureeri GPU/NPU kiirendus
+5. **MCP integratsioon**: Sea vajadusel sisse Model Context Protocol teenused
 
-#### Samm 5: Kasutuselevõtu ettevalmistus  
-1. Loo tootmisvalmis kood Agent Builderi abil  
-2. Sea üles MCP serveri ühendused tootmiskasutuseks  
-3. Valmista kasutuselevõtupaketid servaseadmete jaoks  
-4. Konfigureeri jälgimise ja hindamise mõõdikud  
+### Esmakordse seadistuse kontrollnimekiri
+- [ ] AI-tööriistakomplekti laiendus installitud ja aktiveeritud
+- [ ] Mudelite kataloogi ligipääsetavus ja mudelite leitavus
+- [ ] Mänguväljak töötab mudelite testimiseks
+- [ ] Agentide ehitaja ligipääsetav käskluste arendamiseks
+- [ ] Kohalik arenduskeskkond seadistatud
+- [ ] Riistvara kiirendus (kui saadaval) õigesti konfigureeritud
 
-## Näidised AI tööriistakomplekti jaoks  
+## AI-tööriistakomplektiga alustamine
 
-Proovi meie näidiseid  
-[AI Toolkit näidised](https://github.com/Azure-Samples/AI_Toolkit_Samples) on loodud selleks, et aidata arendajatel ja teadlastel tõhusalt uurida ja rakendada AI lahendusi.  
+### Kiirkäivitusjuhend
 
-Meie näidised sisaldavad:  
+Soovitame alustada GitHubi majutatud mudelitega, mis pakuvad kõige sujuvamat kogemust:
 
-Näidiskood: Eelvalmistatud näited, mis demonstreerivad AI funktsionaalsusi, nagu mudelite treenimine, kasutuselevõtt või rakendustesse integreerimine.  
-Dokumentatsioon: Juhendid ja õpetused, mis aitavad kasutajatel mõista AI Toolkit funktsioone ja nende kasutamist.  
-Eeltingimused  
+1. **Paigaldus**: Järgi [paigaldusjuhendit](https://code.visualstudio.com/docs/intelligentapps/overview#_install-and-setup), et seadistada AI-tööriistakomplekt oma seadmele
+2. **Mudeli avastamine**: Laienduse puuvaates vali **CATALOG > Models**, et sirvida saadaval olevaid mudeleid
+3. **GitHubi mudelid**: Alusta GitHubi majutatud mudelitega optimaalseks integratsiooniks
+4. **Mänguväljaku testimine**: Igas mudeli kaardil vali **Try in Playground**, et hakata mudeli võimalustega katsetama
 
-- Visual Studio Code  
-- AI Toolkit Visual Studio Code jaoks  
-- GitHubi peeneteraline isiklik juurdepääsutoken (PAT)  
-- Foundry Local  
+### Samm-sammult Edge AI arendus
 
-## Parimad tavad serva AI arendamiseks  
+#### Samm 1: Mudelite uurimine ja valik
+1. Ava VS Code’i tegevusribal AI-tööriistakomplekti vaade
+2. Sirvi mudelite kataloogi, et leida sobivaid mudeleid ääres kasutamiseks
+3. Filtreeri vastavalt pakkujale (GitHub, ONNX, Ollama) oma edge nõuetele
+4. Kasuta **Try in Playground**, et kohe mudeli võimalusi testida
 
-### Mudeli valik  
-- **Suuruse piirangud**: Valige mudelid, mis sobivad sihtseadmete mälupiirangutega  
-- **Järeldamise kiirus**: Eelistage mudeleid, millel on kiire järeldamise aeg reaalajas rakenduste jaoks  
-- **Täpsuse kompromissid**: Tasakaalustage mudeli täpsus ressursipiirangutega  
-- **Formaatide ühilduvus**: Eelistage ONNX või riistvarale optimeeritud formaate serva kasutuselevõtuks  
+#### Samm 2: Agentide arendus
+1. Kasuta **Käskluste (Agent) ehitajat** ääre-optimiseeritud AI agentide loomiseks
+2. Genereeri stardikäsklused loomuliku keele kirjelduste põhjal
+3. Itereeri ja täiusta käsklusi mudeli vastuste põhjal
+4. Integreeri MCP tööriistu agentide võimete tõstmiseks
 
-### Optimeerimistehnikad  
-- **Kvantiseerimine**: Kasutage INT8 või INT4 kvantiseerimist, et vähendada mudeli suurust ja parandada kiirust  
-- **Pügamine**: Eemaldage mittevajalikud mudeli parameetrid, et vähendada arvutusnõudeid  
-- **Teadmiste destilleerimine**: Looge väiksemad mudelid, mis säilitavad suuremate mudelite jõudluse  
-- **Riistvara kiirendus**: Kasutage NPUsid, GPUsid või spetsialiseeritud kiirendeid, kui need on saadaval  
 
-### Arenduse töövoog  
-- **Iteratiivne testimine**: Testige arenduse ajal sageli servasarnastes tingimustes  
-- **Jõudluse jälgimine**: Jälgige pidevalt ressursikasutust ja järeldamise kiirust  
-- **Versioonihaldus**: Jälgige mudeli versioone ja optimeerimisseadeid  
-- **Dokumentatsioon**: Dokumenteerige kõik optimeerimisotsused ja jõudluse kompromissid  
+#### 3. samm: testimine ja hindamine
+1. Kasutage **Bulk Run**-i, et testida mitut prompti valitud mudelites
+2. Käivitage agendid testjuhtudega, et valideerida funktsionaalsust
+3. Hinnake täpsust ja jõudlust sisseehitatud või kohandatud mõõdikute abil
+4. Võrrelge erinevaid mudeleid ja konfiguratsioone
 
-### Kasutuselevõtu kaalutlused  
-- **Ressursside jälgimine**: Jälgige tootmises mälu, CPU ja energiakasutust  
-- **Tagasipöördumisstrateegiad**: Rakendage mehhanisme mudeli rikete korral  
-- **Uuenduste mehhanismid**: Planeerige mudeli uuendused ja versioonihaldus  
-- **Turvalisus**: Rakendage sobivaid turvameetmeid serva AI rakenduste jaoks  
+#### 4. samm: peenhäälestus ja optimeerimine
+1. Kohandage mudeleid konkreetseteks servakasutuse juhtudeks
+2. Rakendage domeenispetsiifilist peenhäälestust
+3. Optimeerige servapaigutuse piirangute jaoks
+4. Versioonige ja võrrelge erinevaid agendi konfiguratsioone
 
-## Integreerimine serva AI raamistikuga  
+#### 5. samm: juurutuseks ettevalmistamine
+1. Genereerige tootmisvalmis kood, kasutades Agent Builderit
+2. Seadistage MCP serveri ühendused tootmiseks
+3. Valmistage ette juurutuspakkide komplektid servaseadmetele
+4. Konfigureerige jälgimise ja hindamise mõõdikud
 
-### ONNX Runtime  
-- **Platvormidevaheline kasutuselevõtt**: Kasutage ONNX mudeleid erinevatel servaplatvormidel  
-- **Riistvara optimeerimine**: Kasutage ONNX Runtime'i riistvaraspetsiifilisi optimeerimisi  
-- **Mobiilne tugi**: Kasutage ONNX Runtime Mobile'i nutitelefonide ja tahvelarvutite rakenduste jaoks  
-- **IoT integratsioon**: Kasutage ONNX Runtime'i kergeid jaotusi IoT seadmetel  
+## Näited AI tööriistakomplektist 
 
-### Windows ML  
-- **Windowsi seadmed**: Optimeerige Windowsi-põhiste servaseadmete ja arvutite jaoks  
-- **NPU kiirendus**: Kasutage Windowsi seadmetel Neural Processing Units  
-- **DirectML**: Kasutage DirectML-i GPU kiirenduseks Windowsi platvormidel  
-- **UWP integratsioon**: Integreerige Universal Windows Platform rakendustega  
+Proovige meie näiteid
+[AI tööriistakomplekti näited](https://github.com/Azure-Samples/AI_Toolkit_Samples) on loodud selleks, et aidata arendajatel ja teadlastel tõhusalt uurida ja rakendada tehisintellekti lahendusi.
 
-### TensorFlow Lite  
-- **Mobiilne optimeerimine**: Kasutage TensorFlow Lite mudeleid mobiil- ja manusseadmetel  
-- **Riistvara delegaadid**: Kasutage spetsialiseeritud riistvara delegaate kiirenduseks  
-- **Mikrokontrollerid**: Kasutage TensorFlow Lite Micro't mikrokontrolleritel  
-- **Platvormidevaheline tugi**: Kasutage Androidi, iOS-i ja manustatud Linuxi süsteemidel  
+Meie näidetes on:
 
-### Azure IoT Edge  
-- **Pilv-serva hübriid**: Kombineerige pilvetreening serva järeldamisega  
-- **Mooduli kasutuselevõtt**: Kasutage AI mudeleid IoT Edge moodulitena  
-- **Seadme haldamine**: Hallake servaseadmeid ja mudeli uuendusi kaugelt  
-- **Telemeetria**: Koguge jõudluse andmeid ja mudeli mõõdikuid serva kasutuselevõtust  
+Näidiskood: eelnevalt ehitatud näited AI funktsioonide demonstreerimiseks, nagu mudelite treenimine, juurutamine või integreerimine rakendustesse.
+Dokumentatsioon: juhendid ja õppetunnid, mis aitavad kasutajatel mõista AI tööriistakomplekti funktsioone ja nende kasutamist.
+Eeltingimused
 
-## Täiustatud serva AI stsenaariumid  
+- Visual Studio Code
+- AI tööriistakogu Visual Studio Code'i jaoks
+- GitHubi peenhäälestatud isiklik juurdepääsutoken (PAT)
+- Foundry Local
 
-### Mitme mudeli kasutuselevõtt  
-- **Mudeli ansamblid**: Kasutage mitut mudelit täpsuse parandamiseks või redundantsuse tagamiseks  
-- **A/B testimine**: Testige erinevaid mudeleid samaaegselt servaseadmetel  
-- **Dünaamiline valik**: Valige mudelid vastavalt seadme hetkeolukorrale  
-- **Ressursside jagamine**: Optimeerige ressursikasutust mitme kasutusele võetud mudeli vahel  
+## Parimad tavad serva AI arendamisel
 
-### Federatiivne õppimine  
-- **Jaotatud treening**: Treenige mudeleid mitmel servaseadmel  
-- **Privaatsuse säilitamine**: Hoidke treeningandmed lokaalsed, jagades samal ajal mudeli täiustusi  
-- **Koostööõpe**: Võimaldage seadmetel õppida kollektiivsetest kogemustest  
-- **Serva-pilve koordineerimine**: Koordineerige õppimist servaseadmete ja pilve infrastruktuuri vahel  
+### Mudeli valik
+- **Suuruse piirangud**: valige mudeleid, mis mahuvad sihtseadmete mälupiirangutesse
+- **Järeldamise kiirus**: eelistage kiire järeldamisajaga mudeleid reaalajas rakenduste jaoks
+- **Täpsuse kompromissid**: tasakaalustage mudeli täpsus ressursipiirangutega
+- **Vormingu ühilduvus**: eelistage ONNX- või riistvarale optimeeritud vorminguid serva juurutamisel
 
-### Reaalajas töötlemine  
-- **Voogtöötlus**: Töötlege pidevaid andmevooge servaseadmetel  
-- **Madal latentsus järeldamine**: Optimeerige minimaalsete järeldamise viivituste jaoks  
-- **Partiitöötlus**: Töötlege tõhusalt andmepartiisid servaseadmetel  
-- **Kohanduv töötlemine**: Kohandage töötlemist vastavalt seadme hetkevõimekusele  
+### Optimeerimistehnikad
+- **Kvantimine**: kasutage INT8 või INT4 kvantimist, et vähendada mudeli suurust ja parandada kiirust
+- **Puhastamine**: eemaldage mudelist mittevajalikud parameetrid, et vähendada arvutuskoormust
+- **Teadmusdistillatsioon**: looge väiksemaid mudeleid, mis säilitavad suuremate omade jõudluse
+- **Riistvara kiirendus**: kasutage NPUs, GPU-sid või spetsiaalseid kiirendajaid, kui need on olemas
 
-## Serva AI arenduse tõrkeotsing  
+### Arendusprotsess
+- **Iteratiivne testimine**: testige sageli servaga sarnastes tingimustes arenduse jooksul
+- **Jõudluse jälgimine**: jälgige pidevalt ressursside kasutust ja järeldamise kiirust
+- **Versioonihaldus**: jälgige mudelite versioone ja optimeerimise sätteid
+- **Dokumentatsioon**: dokumenteerige kõik optimeerimisotsused ja jõudluse kompromissid
 
-### Levinud probleemid  
-- **Mälupiirangud**: Mudel on sihtseadme mälu jaoks liiga suur  
-- **Järeldamise kiirus**: Mudeli järeldamine on reaalajas nõuete jaoks liiga aeglane  
-- **Täpsuse halvenemine**: Optimeerimine vähendab mudeli täpsust vastuvõetamatult  
-- **Riistvara ühilduvus**: Mudel ei ühildu sihtseadme riistvaraga  
+### Juurutamise kaalutlused
+- **Ressursside jälgimine**: jälgige tootmises mälu, CPU ja energiatarbimist
+- **Tagasilangemehhanismid**: rakendage mudeli rikete jaoks varumehhanisme
+- **Uuendamise mehhanismid**: planeerige mudelite uuendusi ja versioonihaldust
+- **Turvalisus**: rakendage sobivad turvameetmed serva AI rakenduste jaoks
 
-### Silumisstrateegiad  
-- **Jõudluse profiilimine**: Kasutage AI Toolkit'i jälgimisfunktsioone pudelikaelade tuvastamiseks  
-- **Ressursside jälgimine**: Jälgige arenduse ajal mälu ja CPU kasutust  
-- **Järk-järguline testimine**: Testige optimeerimisi järk-järgult, et probleeme isoleerida  
-- **Riistvara simulatsioon**: Kasutage arendustööriistu sihtseadme riistvara simuleerimiseks  
+## Integreerimine serva AI raamistikudega
 
-### Optimeerimislahendused  
-- **Täiendav kvantiseerimine**: Rakendage agressiivsemaid kvantiseerimistehnikaid  
-- **Mudeli arhitektuur**: Kaaluge erinevaid mudeli arhitektuure, mis on optimeeritud serva jaoks  
-- **Eeltöötluse optimeerimine**: Optimeerige andmete eeltöötlust serva piirangute jaoks  
-- **Järeldamise optimeerimine**: Kasutage riistvaraspetsiifilisi järeldamise optimeerimisi  
+### ONNX Runtime
+- **Platvormideülene juurutamine**: juurutage ONNX mudeleid erinevatel servaplatvormidel
+- **Riistvara optimeerimine**: kasutage ONNX Runtime riistvaraspetsiifilisi optimeerimisi
+- **Mobiilne tugi**: kasutage ONNX Runtime Mobile'i nutitelefonide ja tahvelarvutite rakendusteks
+- **IoT integratsioon**: juurutage IoT seadmetel, kasutades ONNX Runtime kerge versiooni
 
-## Ressursid ja järgmised sammud  
+### Windows ML
+- **Windowsi seadmed**: optimeerige Windowsi-põhistele servaseadmetele ja arvutitele
+- **NPU kiirendus**: kasutage Windowsi seadmetel neuronprotsessori üksusi
+- **DirectML**: kasutage DirectML-i GPU kiirenduseks Windowsi platvormidel
+- **UWP integreerimine**: integreerige Universal Windows Platformi rakendustega
 
-### Ametlik dokumentatsioon  
-- [AI Toolkit arendaja dokumentatsioon](https://aka.ms/AIToolkit/doc)  
-- [Paigaldamise ja seadistamise juhend](https://code.visualstudio.com/docs/intelligentapps/overview#_install-and-setup)  
-- [VS Code Intelligent Apps dokumentatsioon](https://code.visualstudio.com/docs/intelligentapps)  
-- [Model Context Protocol (MCP) dokumentatsioon](https://modelcontextprotocol.io/)  
+### TensorFlow Lite
+- **Mobiili optimeerimine**: juurutage TensorFlow Lite mudeleid mobiili ja sisseehitatud seadmetes
+- **Riistvaradelegaadid**: kasutage spetsiaalseid riistvaradelegaate kiirenduseks
+- **Mikrokontrollerid**: juurutage mikrokontrollerites, kasutades TensorFlow Lite Micro-t
+- **Platvormideülene tugi**: juurutage Androidis, iOS-is ja sisseehitatud Linuxisüsteemides
 
-### Kogukond ja tugi  
-- [AI Toolkit GitHubi repositoorium](https://github.com/microsoft/vscode-ai-toolkit)  
-- [GitHubi probleemid ja funktsioonisoovid](https://aka.ms/AIToolkit/feedback)  
-- [Azure AI Foundry Discordi kogukond](https://aka.ms/azureaifoundry/discord)  
-- [VS Code laienduste turg](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)  
+### Azure IoT Edge
+- **Pilve- ja serva hübriid**: kombineerige pilvepõhine treening servajäreldustega
+- **Moodulite juurutamine**: juurutage AI mudeleid IoT Edge moodulitena
+- **Seadmete haldus**: hallake servaseadmeid ja mudelite uuendusi kaugjuhtimise teel
+- **Telemeetria**: koguge jõudlusandmeid ja mudeli mõõdikuid servajuurutustest
 
-### Tehnilised ressursid  
-- [ONNX Runtime dokumentatsioon](https://onnxruntime.ai/)  
-- [Ollama dokumentatsioon](https://ollama.ai/)  
-- [Windows ML dokumentatsioon](https://docs.microsoft.com/en-us/windows/ai/)  
-- [Azure AI Foundry dokumentatsioon](https://learn.microsoft.com/en-us/azure/ai-foundry/)  
+## Arenenud serva AI stsenaariumid
 
-### Õppeprogrammid  
-- [Serva AI põhialuste kursus](../Module01/README.md)  
-- [Väikeste keelemudelite juhend](../Module02/README.md)  
-- [Serva kasutuselevõtu strateegiad](../Module03/README.md)  
-- [Windows serva AI arendus](./windowdeveloper.md)  
+### Mitme mudeli juurutamine
+- **Mudelite ansamblid**: juurutage mitmeid mudeleid täpsuse või redundantsuse parandamiseks
+- **A/B testimine**: testige erinevaid mudeleid samaaegselt servaseadmetel
+- **Dünaamiline valik**: valige mudeleid vastavalt praegustele seadme tingimustele
+- **Ressursside jagamine**: optimeerige ressursside kasutust mitme juurutatud mudeli vahel
 
-### Täiendavad ressursid  
-- **Repositooriumi statistika**: 1.8k+ tähte, 150+ haru, 18+ kaastöölist  
-- **Litsents**: MIT litsents  
-- **Turvalisus**: Microsofti turvapoliitikad kehtivad  
-- **Telemeetria**: Austab VS Code telemeetria seadeid  
+### Föderaalõpe
+- **Hajutatud treening**: treenige mudeleid mitmel servaseadmel
+- **Privaatsuse säilitamine**: hoidke treeningandmed lokaalsena, jagades mudeli täiustusi
+- **Koostööõpe**: võimaldage seadmetel õppida kollektiivsetest kogemustest
+- **Serva- ja pilvekoostöö**: koordineerige õppimist serva seadmete ja pilve infrastruktuuri vahel
 
-## Kokkuvõte  
+### Reaalajas töötlemine
+- **Vooprotsessimine**: töötle servaseadmetel pidevaid andmevooge
+- **Madal latentsus järeldamisel**: optimeerige miinimumlatentsuse saavutamiseks
+- **Pakkide töötlemine**: töötle andmepakke efektiivselt servaseadmetel
+- **Kohanemine töötlemisega**: reguleeri töötlemist vastavalt seadme võimetele
 
-AI Toolkit Visual Studio Code jaoks esindab terviklikku platvormi kaasaegseks AI arenduseks, pakkudes sujuvaid agentide arendamise võimalusi, mis on eriti väärtuslikud serva AI rakenduste jaoks. Selle ulatuslik mudelikataloog, mis toetab pakkujaid nagu Anthropic, OpenAI, GitHub ja Google, koos kohaliku täitmisega ONNXi ja Ollama kaudu, pakub paindlikkust mitmekesiste serva kasutuselevõtu stsenaariumide jaoks.  
+## Serva AI arenduse tõrkeotsing
 
-Tööriistakomplekti tugevus seisneb selle integreeritud lähenemises—alates mudelite avastamisest ja katsetamisest Playgroundis kuni keerukate agentide arendamiseni Prompt Builderiga, põhjalike hindamisvõimaluste ja sujuva MCP tööriistade integreerimiseni. Serva AI arendajatele tähendab see AI agentide kiiret prototüüpimist ja testimist enne serva kasutuselevõttu, võimalusega kiiresti iteratsiooni teha ja optimeerida ressursipiiratud keskkondade jaoks.  
+### Levinumad probleemid
+- **Mälupiirangud**: mudel on sihtseadme mälust liiga suur
+- **Järeldamise kiirus**: mudeli järeldamine on reaalaja nõuetest aeglane
+- **Täpsuse halvenemine**: optimeerimine vähendab mudeli täpsust aktsepteeritamatult
+- **Riistvaraline ühilduvus**: mudel ei ühildu sihtseadme riistvaraga
 
-Peamised eelised serva AI arendamiseks hõlmavad:  
-- **Kiire katsetamine**: Testige mudeleid ja agente kiiresti enne serva kasutuselevõttu  
-- **Mitme pakkuja paindlikkus**: Juurdepääs mudelitele erinevatest allikatest, et leida optimaalsed serva lahendused  
-- **Kohalik arendus**: Testige ONNXi ja Ollama abil võrguühenduseta ja privaatsust säilitavat arendust  
-- **Tootmisvalmidus**: Loo tootmisvalmis kood ja integreeri väliste tööriistadega MCP kaudu  
-- **Põhjalik hindamine**: Kasutage sisseehitatud ja kohandatud mõõdikuid serva AI jõudluse valideerimiseks  
+### Silumise strateegiad
+- **Jõudluse profiilimine**: kasutage AI tööriistakomplekti jälgimisfunktsioone kitsaskohtade avastamiseks
+- **Ressursside jälgimine**: jälgige mälu ja CPU kasutust arenduse ajal
+- **Järkjärguline testimine**: testige optimeeringuid järk-järgult, et isoleerida probleemid
+- **Riistvarasimulatsioon**: kasutage arendustööriistu sihtseadme riistvara simuleerimiseks
 
-Kuna AI liigub üha enam serva kasutuselevõtu stsenaariumide suunas, pakub AI Toolkit VS Code jaoks arenduskeskkonda ja töövoogu, mis on vajalik intelligentsete rakenduste loomiseks, testimiseks ja optimeerimiseks ressursipiiratud keskkondade jaoks. Olgu tegemist IoT lahenduste, mobiilsete AI rakenduste või manustatud intelligentsussüsteemidega, tööriistakomplekti terviklik funktsioonide komplekt ja integreeritud töövoog toetavad kogu serva AI arenduse elutsüklit.  
+### Optimeerimislahendused
+- **Veelgi agressiivsem kvantimine**: rakendage põhjalikumaid kvantimistehnikaid
+- **Mudeli arhitektuur**: kaaluge erinevaid servale optimeeritud mudeli arhitektuure
+- **Eeltöötluse optimeerimine**: optimeerige andmete eeltöötlust servapiirangute jaoks
+- **Järeldamise optimeerimine**: kasutage riistvaraspetsiifilisi järeldamise optimeerimisi
 
-Jätkuva arenduse ja aktiivse kogukonnaga (1.8k+ GitHubi tähte) jääb AI Toolkit AI arendustööriistade esirinnas, arenedes pidevalt, et vastata kaasaegsete AI arendajate vajadustele, kes loovad serva kasutuselevõtu stsenaariume.  
+## Ressursid ja järgmised sammud
 
-[Next Foundry Local](./foundrylocal.md)  
+### Ametlik dokumentatsioon
+- [AI tööriistakomplekti arendajate dokumentatsioon](https://aka.ms/AIToolkit/doc)
+- [Installatsiooni ja seadistamise juhend](https://code.visualstudio.com/docs/intelligentapps/overview#_install-and-setup)
+- [VS Code Intelligent Apps dokumentatsioon](https://code.visualstudio.com/docs/intelligentapps)
+- [Mudelikonteksti protokolli (MCP) dokumentatsioon](https://modelcontextprotocol.io/)
+
+### Kogukond ja tugi
+- [AI tööriistakomplekti GitHub repositoorium](https://github.com/microsoft/vscode-ai-toolkit)
+- [GitHub probleemide ja funktsioonisoovide jälgimine](https://aka.ms/AIToolkit/feedback)
+- [Azure AI Foundry Discordi kogukond](https://aka.ms/azureaifoundry/discord)
+- [VS Code laienduste turg](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+
+### Tehnilised ressursid
+- [ONNX Runtime dokumentatsioon](https://onnxruntime.ai/)
+- [Ollama dokumentatsioon](https://ollama.ai/)
+- [Windows ML dokumentatsioon](https://docs.microsoft.com/en-us/windows/ai/)
+- [Azure AI Foundry dokumentatsioon](https://learn.microsoft.com/en-us/azure/ai-foundry/)
+
+### Õpiväljad
+- [Serva AI alused kursus](../Module01/README.md)
+- [Väikeste keeltemudelite juhend](../Module02/README.md)
+- [Servajuhtimise strateegiad](../Module03/README.md)
+- [Windows serva AI arendus](./windowdeveloper.md)
+
+### Täiendavad ressursid
+- **Repositsiooni statistika**: 1800+ tähte, 150+ täringut, 18+ kaastöötajat
+- **Litsents**: MIT litsents
+- **Turvalisus**: kehtivad Microsofti turvapoliitikad
+- **Telemeetria**: austab VS Code'i telemeetria seadeid
+
+## Kokkuvõte
+
+AI tööriistakogu Visual Studio Code'i jaoks on kaasaegse AI arenduse kõikehõlmav platvorm, mis pakub voolavat agendiarenduse võimalusi, mis on eriti väärtuslikud serva AI rakendustele. Oma ulatusliku mudelikataloogiga, mis toetab pakkujaid nagu Anthropic, OpenAI, GitHub ja Google, koos kohaliku täitmisega ONNX ja Ollama kaudu, pakub tööriistakogu mitmekülgsust, mida vajatakse mitmekesistes servajuurutusstsenaariumides.
+
+Tööriistakogu tugevus seisneb selle integreeritud lähenemises—mudeli leidmisest ja katsetamisest Kohtumispaigas kuni keeruka agendiarenduseni Prompt Builderiga, põhjalike hindamisvõimalusteni ja sujuva MCP tööriistade integratsioonini. Serva AI arendajatele tähendab see kiiret prototüüpimist ja agentide testimist enne servajuurutust võimalusega kiiresti iteratsioonideks ja optimeerimiseks piiratud ressurssidega keskkondades.
+
+Peamised eelised serva AI arendamisel hõlmavad:
+- **Kiire katsetamine**: testige mudeleid ja agente kiiresti enne servajuurutust
+- **Mitme pakkuja paindlikkus**: ligipääs mudelitele erinevatest allikatest parimate servalahenduste leidmiseks
+- **Kohalik arendus**: testige ONNX ja Ollama abil võrguühenduseta ja privaatsust säilitavas keskkonnas
+- **Tootmisvalmidus**: genereerige tootmisvalmis kood ja integreerige väliste tööriistadega MCP kaudu
+- **Põhjalik hindamine**: kasutage sisseehitatud ja kohandatud mõõdikuid serva AI jõudluse valideerimiseks
+
+Kuna AI liigutab end üha enam servajuurutusstsenaariumite suunas, pakub AI tööriistakogu VS Code'ile arenduskeskkonna ja töövoo nutikate rakenduste ehitamiseks, testimiseks ja optimeerimiseks piiratud ressurssidega keskkondades. Olgu tegemist IoT lahenduste, mobiili AI rakenduste või sisseehitatud intelligentsussüsteemidega, saab tööriistakogu ulatuslik funktsioonikomplekt ja integreeritud töövoog toetada kogu serva AI arenduse elutsüklit.
+
+Jätkuva arenduse ja aktiivse kogukonnaga (1800+ GitHubi tähte) on AI tööriistakogu jätkuvalt AI arendustööriistade eesliinil, arenedes pidevalt, et rahuldada kaasaegsete AI arendajate vajadusi servajuurutusstsenaariumite jaoks.
+
+[Järgmine Foundry Local](./foundrylocal.md)
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Lahtiütlus**:
+See dokument on tõlgitud kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi me püüdleme täpsuse poole, palun pange tähele, et automatiseeritud tõlgetes võib esineda vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta selle tõlkega seotud eksimustest või valesti mõistmistest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
