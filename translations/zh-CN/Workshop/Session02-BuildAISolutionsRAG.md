@@ -1,27 +1,27 @@
-# 第2节：使用 Azure AI Foundry 构建 AI 解决方案
+# 第二部分：使用 Azure AI Foundry 构建 AI 解决方案
 
 ## 摘要
 
-探索如何使用 Foundry Local 和 Azure AI Foundry 构建可操作的生成式 AI（GenAI）工作流。学习高级提示工程、集成结构化数据，并通过可复现的管道协调任务。尽管重点是文档和数据问答的检索增强生成（RAG），但这些模式可以推广到更广泛的生成式 AI 解决方案设计。
+探索如何使用 Foundry Local 和 Azure AI Foundry 构建可操作的生成式 AI 工作流。学习高级提示工程，集成结构化数据，并使用可复现的流水线协调任务。虽然重点是针对文档和数据问答的检索增强生成（RAG），但这些模式可推广到更广泛的生成式 AI 解决方案设计。
 
 ## 学习目标
 
-在本节结束时，您将能够：
+本部分结束后，您将能够：
 
-- **掌握提示工程**：设计有效的系统提示和基础策略
-- **实现 RAG 模式**：使用向量搜索构建基于文档的问答系统
-- **集成结构化数据**：在 AI 工作流中处理 CSV、JSON 和表格数据
+- <strong>精通提示工程</strong>：设计有效的系统提示和落地策略
+- **实现 RAG 模式**：构建基于文档的问答系统并集成向量搜索
+- <strong>集成结构化数据</strong>：在 AI 工作流中处理 CSV、JSON 和表格数据
 - **构建生产级 RAG**：使用 Chainlit 创建可扩展的 RAG 应用
-- **连接本地与云端**：了解从 Foundry Local 到 Azure AI Foundry 的迁移路径
+- <strong>连接本地到云端</strong>：理解从 Foundry Local 到 Azure AI Foundry 的迁移路径
 
 ## 前置条件
 
-- 完成第1节（Foundry Local 设置）
-- 基本了解向量数据库和嵌入
+- 完成第一部分（Foundry Local 设置）
+- 具备向量数据库和嵌入的基本知识
 - 具备 Python 编程经验
 - 熟悉文档处理概念
-
-### 跨平台环境快速启动（Windows 和 macOS）
+ 
+### 跨平台环境快速入门（Windows 和 macOS）
 
 Windows PowerShell:
 ```powershell
@@ -30,7 +30,7 @@ py -m venv .venv
 pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
-  
+
 macOS / Linux:
 ```bash
 python3 -m venv .venv
@@ -38,31 +38,30 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
-  
-如果您的环境中尚未提供 Foundry Local 的 macOS 二进制文件，请在 Windows 虚拟机或容器中运行服务并设置：
+
+如果您环境中尚无 Foundry Local macOS 二进制文件，请在 Windows 虚拟机或容器中运行服务，并设置：
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-  
 
 ## 验证：Foundry Local 环境检查
 
 在开始演示之前，验证您的本地环境：
 
 ```powershell
-foundry --version              # Ensure CLI is installed
-foundry status                 # Service status
-foundry model run phi-4-mini   # Start baseline SLM
-curl http://localhost:5273/v1/models  # Validate API (should list running model)
+foundry --version              # 确保已安装CLI
+foundry status                 # 服务状态
+foundry model run phi-4-mini   # 启动基线SLM
+curl http://localhost:5273/v1/models  # 验证API（应列出正在运行的模型）
 ```
-  
+
 如果最后一条命令失败，请启动（或重启）服务：`foundry service start`。
 
 ## 演示流程（30分钟）
 
-### 1. 系统提示和基础策略（10分钟）
+### 1. 系统提示与落地策略（10分钟）
 
-#### 步骤 1.1：高级提示工程
+#### 第1.1步：高级提示工程
 
 创建 `samples/02-rag-solutions/prompt_engineering.py`：
 
@@ -133,7 +132,7 @@ class PromptEngineer:
                 model=model,
                 messages=messages,
                 max_tokens=1000,
-                temperature=0.3,  # Lower temperature for more consistent responses
+                temperature=0.3,  # 降低温度以获得更一致的响应
                 top_p=0.9
             )
             
@@ -153,7 +152,7 @@ def demo_grounding_strategies():
     
     engineer = PromptEngineer()
     
-    # Sample contexts for different domains
+    # 不同领域的示例上下文
     contexts = {
         "technical": """
         Microsoft Foundry Local is a development platform that enables running AI models locally on Windows devices. 
@@ -196,22 +195,20 @@ def demo_grounding_strategies():
 if __name__ == "__main__":
     demo_grounding_strategies()
 ```
-  
 
-#### 步骤 1.2：测试基础策略
+#### 第1.2步：测试落地策略
 
 ```powershell
-# Ensure phi-4-mini is running
+# 确保 phi-4-mini 正在运行
 foundry model run phi-4-mini
 
-# Run the prompt engineering demo
+# 运行提示工程演示
 python samples/02-rag-solutions/prompt_engineering.py
 ```
-  
 
-### 2. 集成表格数据与提示（CSV 问答）（10分钟）
+### 2. 融合表格数据与提示（CSV 问答）（10分钟）
 
-#### 步骤 2.1：CSV 数据集成
+#### 第2.1步：CSV 数据集成
 
 创建 `samples/02-rag-solutions/csv_qa_system.py`：
 
@@ -261,12 +258,12 @@ class CSVQASystem:
             "sample_rows": self.data.head(3).to_dict('records')
         }
         
-        # Add numerical statistics for numeric columns
+        # 为数值列添加数值统计信息
         numeric_cols = self.data.select_dtypes(include=['number']).columns
         if len(numeric_cols) > 0:
             stats["numeric_summary"] = self.data[numeric_cols].describe().to_dict()
         
-        # Add categorical summaries
+        # 添加分类汇总
         categorical_cols = self.data.select_dtypes(include=['object']).columns
         if len(categorical_cols) > 0:
             stats["categorical_summary"] = {}
@@ -286,12 +283,12 @@ class CSVQASystem:
             f"- Columns: {', '.join(self.summary_stats['columns'])}"
         ]
         
-        # Add sample data
+        # 添加示例数据
         context_parts.append("\nSample Data:")
         for i, row in enumerate(self.summary_stats['sample_rows'][:3]):
             context_parts.append(f"Row {i+1}: {json.dumps(row, default=str)}")
         
-        # Add relevant statistics based on question content
+        # 根据问题内容添加相关统计信息
         question_lower = question.lower()
         
         if any(word in question_lower for word in ['average', 'mean', 'sum', 'count', 'max', 'min', 'statistics']):
@@ -344,7 +341,7 @@ class CSVQASystem:
                 model=model,
                 messages=messages,
                 max_tokens=800,
-                temperature=0.2  # Low temperature for factual data analysis
+                temperature=0.2  # 用于事实数据分析的低温参数
             )
             
             return {
@@ -360,7 +357,7 @@ class CSVQASystem:
 def create_sample_dataset():
     """Create a sample dataset for demonstration"""
     
-    # Create sample sales data
+    # 创建示例销售数据
     sales_data = {
         'Date': ['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-04', '2024-01-05',
                  '2024-01-06', '2024-01-07', '2024-01-08', '2024-01-09', '2024-01-10'],
@@ -377,7 +374,7 @@ def create_sample_dataset():
     df = pd.DataFrame(sales_data)
     csv_path = "samples/02-rag-solutions/sample_sales_data.csv"
     
-    # Ensure directory exists
+    # 确保目录存在
     os.makedirs(os.path.dirname(csv_path), exist_ok=True)
     
     df.to_csv(csv_path, index=False)
@@ -386,21 +383,21 @@ def create_sample_dataset():
 def demo_csv_qa():
     """Demonstrate CSV Q&A capabilities"""
     
-    # Create sample dataset
+    # 创建示例数据集
     csv_path = create_sample_dataset()
     print(f"Created sample dataset: {csv_path}")
     
-    # Initialize Q&A system
+    # 初始化问答系统
     qa_system = CSVQASystem()
     
-    # Load data
+    # 加载数据
     if not qa_system.load_csv_data(csv_path):
         print("Failed to load CSV data")
         return
     
     print(f"\nLoaded dataset with shape: {qa_system.data.shape}")
     
-    # Example questions
+    # 示例问题
     questions = [
         "What is the total sales amount?",
         "Which product has the highest average sales amount?",
@@ -425,19 +422,17 @@ def demo_csv_qa():
 if __name__ == "__main__":
     demo_csv_qa()
 ```
-  
 
-#### 步骤 2.2：测试 CSV 问答系统
+#### 第2.2步：测试 CSV 问答系统
 
 ```powershell
-# Run the CSV Q&A demo
+# 运行 CSV 问答演示
 python samples/02-rag-solutions/csv_qa_system.py
 ```
-  
 
-### 3. 初始项目：改进 02-grounding-data（5分钟）
+### 3. 入门项目：改造 02-grounding-data（5分钟）
 
-#### 步骤 3.1：增强的文档 RAG 系统
+#### 第3.1步：增强文档 RAG 系统
 
 创建 `samples/02-rag-solutions/document_rag.py`：
 
@@ -493,18 +488,18 @@ class SimpleRAGSystem:
         if not self.documents or self.vectorizer is None:
             return []
         
-        # Vectorize query
+        # 向量化查询
         query_vector = self.vectorizer.transform([query])
         
-        # Calculate similarities
+        # 计算相似度
         similarities = cosine_similarity(query_vector, self.doc_vectors).flatten()
         
-        # Get top-k documents
+        # 获取前k个文档
         top_indices = np.argsort(similarities)[::-1][:top_k]
         
         results = []
         for idx in top_indices:
-            if similarities[idx] > 0.1:  # Minimum similarity threshold
+            if similarities[idx] > 0.1:  # 最小相似度阈值
                 results.append({
                     "content": self.documents[idx],
                     "similarity": float(similarities[idx]),
@@ -519,7 +514,7 @@ class SimpleRAGSystem:
                        max_context_docs: int = 3) -> Dict[str, Any]:
         """Generate answer using retrieved documents"""
         
-        # Retrieve relevant documents
+        # 检索相关文档
         relevant_docs = self.retrieve_relevant_docs(question, max_context_docs)
         
         if not relevant_docs:
@@ -618,16 +613,16 @@ def create_sample_knowledge_base() -> List[str]:
 def demo_document_rag():
     """Demonstrate document RAG capabilities"""
     
-    # Create RAG system
+    # 创建RAG系统
     rag_system = SimpleRAGSystem()
     
-    # Add sample knowledge base
+    # 添加示例知识库
     documents = create_sample_knowledge_base()
     rag_system.add_documents(documents)
     
     print(f"Loaded {len(documents)} documents into knowledge base")
     
-    # Example questions
+    # 示例问题
     questions = [
         "What is Microsoft Foundry Local and what are its key features?",
         "How do Small Language Models differ from regular language models?",
@@ -653,11 +648,10 @@ def demo_document_rag():
 if __name__ == "__main__":
     demo_document_rag()
 ```
-  
 
 ### 4. 展示 CLI 到 Azure 的迁移路径（5分钟）
 
-#### 步骤 4.1：迁移策略概述
+#### 第4.1步：迁移策略概览
 
 创建 `samples/02-rag-solutions/migration_guide.py`：
 
@@ -685,7 +679,7 @@ class UnifiedAIClient:
         self.environment = environment
         
         if environment == "local":
-            # Foundry Local configuration
+            # Foundry 本地配置
             self.client = OpenAI(
                 base_url="http://localhost:5273/v1",
                 api_key="not-needed"
@@ -693,7 +687,7 @@ class UnifiedAIClient:
             self.default_model = "phi-4-mini"
             
         elif environment == "azure":
-            # Azure AI Foundry configuration
+            # Azure AI Foundry 配置
             if not azure_endpoint or not azure_api_key:
                 raise ValueError("Azure endpoint and API key required for Azure environment")
             
@@ -702,7 +696,7 @@ class UnifiedAIClient:
                 api_key=azure_api_key,
                 default_headers={"api-version": azure_api_version}
             )
-            self.default_model = "gpt-4"  # Or your Azure deployment name
+            self.default_model = "gpt-4"  # 或者您的 Azure 部署名称
             
         else:
             raise ValueError("Environment must be 'local' or 'azure'")
@@ -742,15 +736,15 @@ class UnifiedAIClient:
         
         try:
             if self.environment == "local":
-                # For Foundry Local, we'd typically use the CLI
-                # This is a simplified example
+                # 对于 Foundry 本地，我们通常使用 CLI
+                # 这是一个简化的示例
                 return {
                     "success": True,
                     "models": ["phi-4-mini", "qwen2.5-0.5b", "deepseek-coder-1.3b"],
                     "environment": "local"
                 }
             else:
-                # For Azure, you might query the deployments endpoint
+                # 对于 Azure，您可以查询部署端点
                 models_response = self.client.models.list()
                 return {
                     "success": True,
@@ -771,7 +765,7 @@ def demo_migration_patterns():
     print("Foundry Local to Azure AI Foundry Migration Demo")
     print("=" * 60)
     
-    # Test message
+    # 测试消息
     test_messages = [
         {
             "role": "system",
@@ -783,7 +777,7 @@ def demo_migration_patterns():
         }
     ]
     
-    # Test with Foundry Local
+    # 使用 Foundry 本地测试
     print("\n1. Testing with Foundry Local:")
     print("-" * 40)
     
@@ -805,11 +799,11 @@ def demo_migration_patterns():
     except Exception as e:
         print(f"✗ Local Setup Error: {e}")
     
-    # Show Azure configuration (commented out as it requires credentials)
+    # 显示 Azure 配置（已注释，因为需要凭据）
     print("\n2. Azure AI Foundry Configuration:")
     print("-" * 40)
     print("""
-    # To migrate to Azure AI Foundry, configure as follows:
+    # 迁移到 Azure AI Foundry，请按如下配置：
     
     azure_client = UnifiedAIClient(
         environment="azure",
@@ -818,7 +812,7 @@ def demo_migration_patterns():
         azure_api_version="2024-08-01-preview"
     )
     
-    # Same API calls work in both environments!
+    # 相同的 API 调用在两个环境中都有效！
     azure_result = azure_client.chat_completion(
         messages=test_messages,
         max_tokens=200,
@@ -826,7 +820,7 @@ def demo_migration_patterns():
     )
     """)
     
-    # Migration strategy
+    # 迁移策略
     print("\n3. Migration Strategy:")
     print("-" * 40)
     print("""
@@ -842,16 +836,16 @@ def demo_migration_patterns():
     ✓ Easy scaling to production (same API)
     """)
     
-    # Configuration examples
+    # 配置示例
     print("\n4. Environment-based Configuration:")
     print("-" * 40)
     print("""
-    # .env file for development
+    # 开发环境的 .env 文件
     AI_ENVIRONMENT=local
     FOUNDRY_LOCAL_URL=http://localhost:5273/v1
     DEFAULT_MODEL=phi-4-mini
     
-    # .env file for production
+    # 生产环境的 .env 文件
     AI_ENVIRONMENT=azure
     AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com
     AZURE_OPENAI_API_KEY=your-api-key
@@ -862,52 +856,50 @@ def demo_migration_patterns():
 if __name__ == "__main__":
     demo_migration_patterns()
 ```
-  
 
-#### 步骤 4.2：测试迁移模式
+#### 第4.2步：测试迁移模式
 
 ```powershell
-# Run the migration demo
+# 运行迁移演示
 python samples/02-rag-solutions/migration_guide.py
 ```
-  
 
-## 涵盖的关键概念
+## 涉及的关键概念
 
 ### 1. 高级提示工程
 
-- **系统提示**：领域特定的专家角色
-- **基础策略**：上下文集成技术
-- **温度控制**：平衡创造力与一致性
-- **Token 管理**：高效使用上下文
+- <strong>系统提示</strong>：领域特定专家角色
+- <strong>落地策略</strong>：上下文集成技术
+- <strong>温度控制</strong>：在创造性与一致性间平衡
+- <strong>令牌管理</strong>：高效利用上下文
 
 ### 2. 结构化数据集成
 
-- **CSV 处理**：Pandas 与 AI 模型的集成
-- **统计分析**：自动化数据总结
-- **上下文创建**：基于查询动态生成上下文
-- **多格式支持**：JSON、CSV 和表格数据
+- **CSV 处理**：Pandas 与 AI 模型集成
+- <strong>统计分析</strong>：自动化数据汇总
+- <strong>上下文创建</strong>：基于查询的动态上下文生成
+- <strong>多格式支持</strong>：JSON、CSV 及表格数据
 
 ### 3. RAG 实现模式
 
-- **向量搜索**：TF-IDF 和余弦相似度
-- **文档检索**：相关性评分和排序
-- **上下文组合**：多文档综合
-- **答案生成**：基于上下文的回答生成
+- <strong>向量搜索</strong>：TF-IDF 和余弦相似度
+- <strong>文档检索</strong>：相关性评分与排序
+- <strong>上下文组合</strong>：多文档综合
+- <strong>答案生成</strong>：基于落地的响应创建
 
-### 4. 云迁移策略
+### 4. 云端迁移策略
 
-- **统一 API**：本地和云端的单一代码库
-- **环境抽象**：基于配置的部署
-- **开发工作流**：本地 → 测试环境 → 生产环境
-- **成本优化**：本地开发，云端生产
+- **统一 API**：本地与云端单一代码库
+- <strong>环境抽象</strong>：配置驱动部署
+- <strong>开发工作流</strong>：本地 → 预生产 → 生产
+- <strong>成本优化</strong>：本地开发，云端生产
 
-## 生产环境注意事项
+## 生产考虑事项
 
 ### 1. 性能优化
 
 ```python
-# Optimize for production RAG
+# 优化生产环境中的检索增强生成（RAG）
 rag_config = {
     "max_context_docs": 5,
     "similarity_threshold": 0.15,
@@ -917,30 +909,28 @@ rag_config = {
     "chunk_overlap": 50
 }
 ```
-  
 
 ### 2. 错误处理
 
 ```python
-# Robust error handling
+# 强大的错误处理
 try:
     result = rag_system.generate_answer(question)
     if "error" in result:
-        # Fallback to general knowledge
+        # 回退到一般知识
         fallback_result = client.chat.completions.create(
             model="phi-4-mini",
             messages=[{"role": "user", "content": question}]
         )
 except Exception as e:
-    # Log error and provide graceful degradation
+    # 记录错误并提供优雅降级
     logger.error(f"RAG system error: {e}")
 ```
-  
 
 ### 3. 监控与可观测性
 
 ```python
-# Track RAG performance
+# 跟踪RAG性能
 metrics = {
     "retrieval_time": time.time() - start_time,
     "context_relevance": avg_similarity_score,
@@ -948,34 +938,33 @@ metrics = {
     "user_satisfaction": feedback_score
 }
 ```
-  
 
-## 后续步骤
+## 下一步
 
-完成本节后：
+完成本部分后：
 
-1. **探索第3节**：Foundry Local 中的开源模型
+1. <strong>探索第三部分</strong>：Foundry Local 中的开源模型
 2. **构建生产级 RAG**：使用 Chainlit 实现（示例 04）
-3. **高级向量搜索**：与 Chroma 或 Pinecone 集成
-4. **云迁移**：部署到 Azure AI Foundry
-5. **评估 RAG 质量**：运行 `cd Workshop/samples;python -m session02.rag_eval_ragas`，测量答案相关性、真实性和上下文精确度
+3. <strong>高级向量搜索</strong>：集成 Chroma 或 Pinecone
+4. <strong>云端迁移</strong>：部署到 Azure AI Foundry
+5. **评估 RAG 质量**：运行 `cd Workshop/samples;python -m session02.rag_eval_ragas`，使用 ragas 测量 answer_relevancy、faithfulness 和 context_precision
 
 ### 可选增强
 
-| 类别 | 增强 | 理由 | 指导方向 |
-|------|------|------|----------|
-| 检索 | 用向量存储（FAISS / Chroma）替换 TF-IDF | 提高语义召回率和可扩展性 | 分块文档（500–800 字符），嵌入，持久化索引 |
-| 混合索引 | 语义 + 关键词双重过滤 | 提高数值/代码查询的精确度 | 先按关键词过滤，再按余弦相似度排序 |
-| 嵌入 | 评估多种嵌入模型 | 优化相关性与速度 | A/B 测试：MiniLM vs E5-small vs 本地托管编码器 |
-| 缓存 | 缓存嵌入和检索结果 | 降低重复查询延迟 | 使用简单的磁盘 pickle / sqlite 和哈希键 |
-| 评估 | 扩展 ragas 数据集 | 提供统计意义上的质量 | 策划 50–100 个问答 + 上下文；按主题分层 |
-| 指标 | 跟踪检索和生成时间 | 性能分析 | 捕获 `retrieval_ms`、`gen_ms`、`tokens` 每次调用 |
-| 安全措施 | 添加幻觉回退机制 | 提供更安全的答案 | 如果真实性 < 阈值 → 答复：“上下文不足。” |
-| 回退 | 本地 → Azure 模型级联 | 提升混合质量 | 在低置信度时通过相同的 OpenAI API 路由到云端 |
-| 确定性 | 稳定的比较运行 | 可重复的评估集 | 固定种子，`temperature=0`，禁用采样随机性 |
-| 监控 | 持久化评估运行历史 | 回归检测 | 追加 JSON 行，包含时间戳 + 指标变化 |
+| 分类 | 增强 | 理由 | 方向 |
+|----------|-------------|-----------|-----------|
+| 检索 | 用向量存储替代 TF-IDF（FAISS / Chroma） | 语义召回和可扩展性更优 | 分块文档（500–800 字符），嵌入，持久化索引 |
+| 混合索引 | 语义 + 关键词双重过滤 | 提升数值/代码查询精确度 | 先按关键词过滤，再按余弦相似度排序 |
+| 嵌入 | 评估多种嵌入模型 | 优化相关性与速度 | A/B 测试：MiniLM 对比 E5-small 及本地编码器 |
+| 缓存 | 缓存嵌入和检索结果 | 降低重复查询延迟 | 简单的磁盘pickle / sqlite 哈希键缓存 |
+| 评估 | 扩充 ragas 数据集 | 提供统计学意义的质量保证 | 筛选 50–100 Q/A + 上下文，按主题分层 |
+| 指标 | 跟踪检索与生成耗时 | 性能分析 | 捕获每次调用的 `retrieval_ms`、`gen_ms`、`tokens` |
+| 安全保护 | 添加幻觉回退机制 | 答案更安全 | 若忠实度 < 阈值 → 回答：“上下文不足。” |
+| 回退 | 本地 → Azure 模型级联 | 混合质量提升 | 在置信度低时通过相同 OpenAI API 路由到云端 |
+| 确定性 | 稳定的比较测试 | 可重复评估集 | 固定随机种子，`temperature=0`，禁用采样随机性 |
+| 监控 | 保留评估运行历史 | 回归检测 | 追加 JSON 行，含时间戳和指标差异 |
 
-#### 示例：添加检索时间
+#### 示例：添加检索耗时
 
 ```python
 import time
@@ -987,57 +976,56 @@ text, usage = chat_once(alias, messages=messages, max_tokens=250, temperature=0.
 gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
-  
 
-#### 使用 ragas 扩展评估
+#### 使用 ragas 扩展评估规模
 
-1. 准备一个包含字段的 JSONL：`question`、`answer`、`contexts`、`ground_truths`（列表）  
-2. 转换为 `Dataset.from_list(list_of_dicts)`  
-3. 运行 `evaluate(dataset, metrics=[...])`  
-4. 存储指标（CSV/JSON）以进行趋势分析。
+1. 组装一个包含字段：`question`、`answer`、`contexts`、`ground_truths`（列表）的 JSONL 文件
+2. 转换为 `Dataset.from_list(list_of_dicts)`
+3. 运行 `evaluate(dataset, metrics=[...])`
+4. 存储指标（CSV/JSON）以便趋势分析。
 
 #### 向量存储快速入门（FAISS）
 
 ```python
 import faiss, numpy as np
 index = faiss.IndexFlatIP(embeddings.shape[1])
-index.add(embeddings)  # embeddings = np.array([...]) normalized
+index.add(embeddings)  # embeddings = np.array([...]) 已归一化
 D, I = index.search(query_vec, k)
 ```
-  
-对于磁盘持久化，使用 `faiss.write_index(index, "kb.index")`。
 
-## 附加资源
+磁盘持久化使用 `faiss.write_index(index, "kb.index")`。
+
+## 额外资源
 
 ### 文档
-- [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)  
-- [Azure AI Foundry RAG 模式](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)  
-- [提示工程指南](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)  
-- [Ragas 评估文档](https://docs.ragas.io)  
+- [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
+- [Azure AI Foundry RAG 模式](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation)
+- [提示工程指南](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
+- [Ragas 评估文档](https://docs.ragas.io)
 
 ### 示例代码
-- [模块08 示例 04](./samples/04/README.md) - Chainlit RAG 应用  
-- [高级多代理系统](./samples/09/README.md) - 代理协调模式  
+- [模块08 示例 04](./samples/04/README.md) - Chainlit RAG 应用
+- [高级多代理系统](./samples/09/README.md) - 代理协调模式
 
 ---
 
-**课程时长**：30 分钟实践 + 15 分钟问答  
-**难度级别**：中级  
-**前置条件**：完成第1节，具备基础 Python 知识  
+<strong>课程时长</strong>：30 分钟实践 + 15 分钟问答
+<strong>难度等级</strong>：中级
+<strong>前置条件</strong>：完成第一部分，具备基本 Python 知识
 
 ## 示例场景与工作坊映射
 
-| 工作坊脚本 / 笔记本 | 场景 | 目标 | 核心数据集 / 来源 | 示例问题 |
-|---------------------|------|------|------------------|----------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | 内部支持知识库回答隐私和性能常见问题 | 使用嵌入实现最小内存 RAG | 脚本中的 `DOCS` 列表（5 个短段落） | 为什么使用 RAG 进行本地推理？ |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | 质量分析员建立检索真实性基线指标 | 在小型合成数据集上计算 ragas 指标 | `DOCS`、`QUESTIONS`、`GROUND_TRUTH` 数组 | 本地推理的优势是什么？ |
-| `prompt_engineering.py`（高级） | 领域专家设计多领域的基础提示 | 比较领域系统提示和 token 影响 | 内联 `contexts` 字典 | Foundry Local 如何处理模型缓存？ |
-| `csv_qa_system.py` | 销售运营探索导出数据的交互式分析 | 总结并查询小型销售数据片段 | 生成的 `sample_sales_data.csv`（10 行） | 哪种产品的平均销售额最高？ |
-| `document_rag.py` | 产品团队探索内部 Wiki 的文档 RAG | 检索并引用相关文档 | `create_sample_knowledge_base()` 列表 | 边缘 AI 的优势是什么？ |
-| `migration_guide.py` | 架构师准备云迁移计划 | 演示本地 → Azure API 的一致性 | 静态测试提示 | 用 2–3 句话解释边缘 AI 的优势。 |
+| 工作坊脚本 / 笔记本 | 场景 | 目标 | 核心数据集 / 源 | 示例问题 |
+|----------------------------|----------|------|-----------------------|------------------|
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | 内部支持知识库回答隐私和性能常见问题 | 带嵌入的最简内存 RAG | 脚本中的 `DOCS` 列表（5 段简短内容） | 为什么使用本地推理的 RAG？ |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | 质量分析员建立基线检索忠实度指标 | 在小型合成数据集上计算 ragas 指标 | `DOCS`、`QUESTIONS`、`GROUND_TRUTH` 数组 | 本地推理有什么优势？ |
+| `prompt_engineering.py`（高级） | 领域专家为多垂直场景制作落地提示 | 比较领域系统提示及令牌影响 | 内联的 `contexts` 字典 | Foundry Local 如何管理模型缓存？ |
+| `csv_qa_system.py` | 销售运维探索导出的交互式分析 | 汇总并查询小型销售切片 | 生成的 `sample_sales_data.csv`（10 行） | 哪个产品的平均销售额最高？ |
+| `document_rag.py` | 产品团队探索内部 Wiki 的文档 RAG | 检索并引用相关文档 | `create_sample_knowledge_base()` 列表 | Edge AI 的好处是什么？ |
+| `migration_guide.py` | 架构师准备云迁移计划 | 展示本地→Azure API 等效性 | 静态测试提示 | 用 2-3 句说明边缘 AI 的优势。 |
 
 ### 数据集片段
-内联 RAG 管道文档列表：  
+内联 RAG 流水线文档列表：
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1047,8 +1035,8 @@ DOCS = [
     "Vector similarity search retrieves semantically relevant documents for a query.",
 ]
 ```
-  
-Ragas 评估真实值元组：  
+
+Ragas 评估真值元组：
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1056,17 +1044,16 @@ GROUND_TRUTH = [
     "RAG adds retrieved context snippets to improve factual grounding."
 ]
 ```
-  
 
 ### 场景叙述
-支持工程团队希望快速原型化一个系统，用于回答内部常见问题，同时避免将客户数据暴露到外部。第2节的成果从最小的临时 RAG（无持久化）→ 结构化 CSV 问答 → 带引用的文档检索 → 客观质量评估（ragas）→ 准备好 Azure 测试的迁移策略。
+支持工程组希望快速原型化以回答内部常见问题，且不将客户数据暴露给外部。第二部分工件从最简的短暂 RAG（无持久化） → 结构化 CSV 问答 → 带引用的文档检索 → 客观质量评估（ragas）→ Azure 预生产就绪迁移策略逐步推进。
 
 ### 扩展路径
-使用可选增强表进行改进：用 FAISS/Chroma 替换 TF-IDF，扩大评估语料库（50–100 问答），在真实性 < 阈值时添加回退机制到更大的模型。
+使用可选增强表演进：用 FAISS/Chroma 替换 TF-IDF，扩大评估语料库（50-100 Q/A），在忠实度低于阈值时增加回退升级到更大模型。
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**免责声明**：  
-本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们对因使用此翻译而产生的任何误解或误读不承担责任。
+**免责声明**：
+本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译完成。尽管我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始语言版文件应视为权威来源。对于重要信息，建议使用专业人工翻译。我们对因使用本翻译而产生的任何误解或误释不承担责任。
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
