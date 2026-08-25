@@ -1,291 +1,317 @@
 # ပြောင်းလဲမှုမှတ်တမ်း
 
-EdgeAI for Beginners တွင် အရေးပါသော ပြောင်းလဲမှုများအားလုံးကို ဒီမှာ မှတ်တမ်းတင်ထားသည်။ ဒီပရောဂျက်သည် ရက်စွဲအခြေခံသော မှတ်တမ်းများနှင့် Keep a Changelog စတိုင် (Added, Changed, Fixed, Removed, Docs, Moved) ကို အသုံးပြုသည်။
+EdgeAI for Beginners အတွက် အထင်ကရ ပြောင်းလဲမှုအားလုံးကို ဒီမှာ မှတ်တမ်းတင်ထားသည်။ ဒီပရောဂျက်သည် ရက်စွဲအခြေပြု မှတ်တမ်းများနှင့် Keep a Changelog ပုံစံ (Added, Changed, Fixed, Removed, Docs, Moved) ကို အသုံးပြုသည်။
 
 ## 2025-10-30
 
-### အသစ်ထည့်ထားသည် - Module06 AI Agents Comprehensive Enhancement
-- **Microsoft Agent Framework Integration** (`Module06/01.IntroduceAgent.md`):
-  - Agent ဖွံ့ဖြိုးမှုအတွက် Microsoft Agent Framework အပိုင်းကို ပြည့်စုံစွာ ထည့်သွင်းထားသည်
-  - Foundry Local နှင့် edge deployment အတွက် အသေးစိတ် ပေါင်းစည်းမှု ပုံစံများ
-  - SLM မော်ဒယ်များနှင့် အထူး Multi-agent orchestration နမူနာများ
-  - အရင်းအမြစ် စီမံခန့်ခွဲမှုနှင့် စောင့်ကြည့်မှုများပါဝင်သော Enterprise deployment ပုံစံများ
-  - edge agent စနစ်များအတွက် လုံခြုံရေးနှင့် အညီအနွယ် အင်္ဂါရပ်များ
-  - အမှန်တကယ် အကောင်အထည်ဖော်မှု နမူနာများ (လက်လီ, ကျန်းမာရေး, ဖောက်သည်ဝန်ဆောင်မှု)
+### ထည့်သွင်းချက် - Module06 AI အေးဂျင့်များ စုံလင်သော တိုးတက်မှု
+- **Microsoft Agent Framework ပေါင်းစည်းခြင်း** (`Module06/01.IntroduceAgent.md`):
+  - ထုတ်လုပ်မှုအဆင်သင့် အေးဂျင့်ဖန်တီးမှုအတွက် Microsoft Agent Framework အပေါ် စုံလင်သော အပိုင်း
+  - ထောင့် deployment အတွက် Foundry Local နှင့် ဖက်ပြီး ပေါင်းစည်းမှုနည်းလမ်းအသေးစိတ်
+  - အမျိုးမျိုးသော SLM မော်ဒယ်များဖြင့် မျိုးစုံ-အေးဂျင့် စုပေါင်းနမူနာများ
+  - ကုမ္ပဏီ deployment နည်းလမ်းများနှင့် အရင်းအမြစ်စီမံခန့်ခွဲမှု၊ သတိထားမည့် ပုံစံများ
+  - edge အေးဂျင့်စနစ်များအတွက် လုံခြုံရေးနှင့် လိုက်နာမှု လက္ခဏာများ
+  - လက်တွေ့ ကွက်တိကိစ္စ (လက်လီရောင်း, ကျန်းမာရေး, ဖောက်သည်ဝန်ဆောင်မှု)
 
-- **Production SLM Agent Deployment Strategies**:
-  - **Foundry Local**: Enterprise-grade edge AI runtime အတွက် ပြည့်စုံသော documentation (installation, configuration, production patterns)
-  - **Ollama**: Monitoring နှင့် model management အတွက် community-focused deployment
-  - **VLLM**: အဆင့်မြင့် optimization နည်းလမ်းများနှင့် Enterprise အင်္ဂါရပ်များပါဝင်သော High-performance inference engine
-  - Production deployment checklists နှင့် platform သုံးခုအတွက် နှိုင်းယှဉ်ဇယားများ
+- **ထုတ်လုပ်မှု SLM အေးဂျင့် Deployment မူဝါဒများ**:
+  - **Foundry Local**: တပ်ဆင်ခြင်း၊ ဖွဲ့စည်းခြင်း၊ ထုတ်လုပ်မှုနမူနာများဖြင့် အပြည့်အစုံကုမ္ပဏီအဆင့် edge AI runtime စာရွက်စာတမ်း
+  - **Ollama**: လုပ်ငန်းစုအာရုံစိုက် deployment တိုးတက်မှုနှင့် စုံလင်သော ကြည့်ရှုမှုနှင့် မော်ဒယ်စီမံခန့်ခွဲမှု
+  - **VLLM**: မြင့်မားသော အဆင့်မြှင့်ဒီဇိုင်း inference engine နှင့် တိုးတက်မှု နည်းစနစ်များ၊ ကုမ္ပဏီအင်္ဂါရပ်များ
+  - အသုံးပြုမှုစစ်ဆေးစာရင်းများနှင့် များစွာသော ပလက်ဖောင်းသုံး ပြိုင်ဆိုင်မှုဇယားများ
 
-- **Edge-Optimized SLM Frameworks Enhancement**:
-  - **ONNX Runtime**: Cross-platform SLM agent deployment အတွက် Comprehensive အပိုင်းအသစ်
-  - Windows, Linux, macOS, iOS, Android အတွက် Universal deployment patterns
-  - Hardware acceleration options (CPU, GPU, NPU) နှင့် automatic detection
-  - Production-ready အင်္ဂါရပ်များနှင့် agent-specific optimizations
-  - Microsoft Agent Framework integration ပါဝင်သော အကောင်အထည်ဖော်မှု နမူနာများ
+- **Edge မြှင့်တင်ပြီး SLM Frameworks တိုးတက်မှု**:
+  - **ONNX Runtime**: အစိတ်အပိုင်းအသစ်တစ်ခု စုံလင်သော cross-platform SLM အေးဂျင့် deployment အချက်အလက်များ
+  - Windows, Linux, macOS, iOS, Android တို့တွင် ပြုလုပ်နိုင်သော တပ်ဆင်မှုပုံစံများ
+  - Hardware acceleration ရွေးချယ်စရာများ (CPU, GPU, NPU) နှင့် အလိုအလျောက်သိရှိခြင်း
+  - ထုတ်လုပ်ရန်အဆင်သင့် လက္ခဏာများနှင့် အေးဂျင့် အခြားဆုံးဖြတ်ချက်များ
+  - Microsoft Agent Framework ပေါင်းစည်းမှုဖြင့် လက်တွေ့ဆောင်ရွက်မှုနမူနာများ
 
-- **References and Further Reading**:
-  - 100+ အာဏာရှိသော အရင်းအမြစ်များပါဝင်သော Comprehensive resource library
-  - AI agents နှင့် Small Language Models အပေါ် Core research papers
-  - Frameworks နှင့် tools အတွက် တရားဝင် documentation
-  - စက်မှုလုပ်ငန်းများ၏ အစီရင်ခံစာများ၊ စျေးကွက်ခွဲခြမ်းစိတ်ဖြာမှုများနှင့် နည်းပညာအဆင့်များ
-  - ပညာရေးအရင်းအမြစ်များ၊ ဆွေးနွေးပွဲများနှင့် community forums
-  - စံနှုန်းများ၊ သတ်မှတ်ချက်များနှင့် အညီအနွယ် frameworks
+- **ကိုးကားမှုများနှင့် နောက်ထပ် ဖတ်ရှုရန်**:
+  - အာဏာရှိ ၁ဝဝ+ စာမျက်နှာဖြင့် အသင်းလိုက်ထုတ်လွင့်ထားသော အရင်းအမြစ်စာကြည့်တိုက်
+  - AI အေးဂျင့်များနှင့် Small Language Models ပေါ် အခြေခံသုတေသနစာတမ်းများ
+  - အဓိက Frameworks နှင့် ကိရိယာများ အတွက် တရားဝင်စာတမ်းများ
+  - စက်မှုအစီရင်ခံစာများ၊ ဈေးကွက် ခွဲခြမ်းစိတ်ဖြာမှုများ၊ နည်းပညာ စမ်းသပ်ခြင်းများ
+  - ပညာရေးအရင်းအမြစ်များ၊ ဆွေးနွေးပွဲများနှင့် လူမှုအသိုင်းအဝိုင်းဖိုရမ်များ
+  - စံသတ်မှတ်ချက်များ၊ မူဝါဒများနှင့် လိုက်နာမှု framework များ
 
-### ပြောင်းလဲထားသည် - Module06 Content Modernization
-- **Learning Objectives တိုးမြှင့်ထားသည်**: Microsoft Agent Framework mastery နှင့် edge deployment capabilities ထည့်သွင်းထားသည်
-- **Production အာရုံစိုက်မှု**: အယူအဆမှ အကောင်အထည်ဖော်မှုအဆင့်သို့ ပြောင်းလဲထားပြီး production နမူနာများပါဝင်သည်
-- **Code Examples**: SDK patterns နှင့် အကောင်းဆုံးအလေ့အကျင့်များကို အသုံးပြုရန် အားလုံးကို update လုပ်ထားသည်
-- **Architecture Patterns**: Hierarchical agent architectures နှင့် edge-to-cloud coordination ထည့်သွင်းထားသည်
-- **Performance Optimization**: အရင်းအမြစ် စီမံခန့်ခွဲမှုနှင့် auto-scaling အကြံပြုချက်များဖြင့် တိုးမြှင့်ထားသည်
+### ပြောင်းလဲချက် - Module06 အကြောင်းအရာ ခေတ်မီသည့် ပြင်ဆင်မှု
+- **သင်ယူမည့် ရည်မှန်းချက်များ တိုးတက်မှု**: Microsoft Agent Framework ကျွမ်းကျင်မှုနှင့် edge deployment စွမ်းဆောင်ရည်များ ထည့်သွင်းသည်
+- **ထုတ်လုပ်မှု ဦးတည်ချက်**: အယူအဆမှ စ၍ အကောင်အထည်ဖော်နိုင်သည့် လမ်းညွှန်ချက်များသို့ ပြောင်းရွှေ့
+- **ကိုဒ် နမူနာများ**: အားလုံးကို ခေတ်မီ SDK ပုံစံနှင့် အကောင်းဆုံး လေ့လာမှုများဖြင့် အသစ်ပြင်ဆင်
+- **ဖွဲ့စည်းမှု ပုံစံများ**: အဆင့်ဆင့် အေးဂျင့် ဖွဲ့စည်းမှုများနှင့် edge မှ cloud ကို ညှိနှိုင်းမှု ထည့်သွင်း
+- **စွမ်းဆောင်ရည် တိုးတက်မှု**: အရင်းအမြစ် စီမံခန့်ခွဲမှုနှင့် အလိုအလျောက် ဖြန့်ခွဲမှု အညွှန်းများ တိုးတက်စေ
 
-### Docs - Module06 Structure Enhancement
-- **Agent Framework Coverage ပြည့်စုံစွာ**: အခြေခံအယူအဆမှ Enterprise deployment အထိ
-- **Production Deployment Strategies**: Foundry Local, Ollama, VLLM အတွက် လမ်းညွှန်ချက်များ
-- **Cross-Platform Optimization**: Universal deployment အတွက် ONNX Runtime ထည့်သွင်းထားသည်
-- **Resource Library**: ဆက်လက်လေ့လာမှုနှင့် အကောင်အထည်ဖော်မှုအတွက် အကျယ်အဝ reference များ
+### စာရွက်စာတမ်းများ - Module06 ဖွဲ့စည်းမှု တိုးတက်မှု
+- **စုံလင်သော Agent Framework အုပ်စု**: အခြေခံအယူအဆမှ ကုမ္ပဏီ deployment အထိ
+- **ထုတ်လုပ်မှု deployment နည်းလမ်းများ**: Foundry Local, Ollama နှင့် VLLM အတွက် အပြည့်အစုံလမ်းညွှန်များ
+- **Cross-Platform အမြှင့်တင်မှု**: ONNX Runtime ဖြင့် ပြန်လည်ထည့်သွင်း
+- **အရင်းအမြစ် စာကြည့်တိုက်**: ဆက်လက်လေ့လာရန်နှင့် မူပိုင်ရန် အာရုံစိုက်သော ကိုးကားချက်များ
 
-### အသစ်ထည့်ထားသည် - Module06 Model Context Protocol (MCP) Documentation Update
-- **MCP Introduction Modernization** (`Module06/03.IntroduceMCP.md`):
-  - modelcontextprotocol.io (2025-06-18 version) မှ MCP specifications အသစ်များဖြင့် update လုပ်ထားသည်
-  - AI application connections အတွက် USB-C အနုပညာကို ထည့်သွင်းထားသည်
-  - Data Layer + Transport Layer ပါဝင်သော two-layer design ကို architecture အပိုင်းတွင် update လုပ်ထားသည်
-  - Server primitives (Tools, Resources, Prompts) နှင့် client primitives (Sampling, Elicitation, Logging) ပါဝင်သော core primitives documentation ကို တိုးမြှင့်ထားသည်
+### ထည့်သွင်းချက် - Module06 Model Context Protocol (MCP) စာရွက်စာတမ်း ဖွင့်လှစ်မှု ပြင်ဆင်ချက်
+- **MCP မိတ်ဆက် ခေတ်မီစေခြင်း** (`Module06/03.IntroduceMCP.md`):
+  - modelcontextprotocol.io မှ လူကြိုက်များသော MCP နောက်ဆုံးအစိတ်အပိုင်းများ ဖြည့်စွက်သွားသည် (2025-06-18 ဗားရှင်း)
+  - စံပုံ USB-C အသုံးပြုမှု အတည်ပြုချက် ထည့်သွင်း
+  - တစ်ခုတည်းအဆင့်နှင့် ၂-အလွှာဒီဇိုင်း (Data Layer + Transport Layer) ကို တရားဝင်မြှင့်တင် မှတ်တမ်းတင်
+  - လုပ်ငန်းတည်ဆောက်မှုအပိုင်းများ (Tools, Resources, Prompts) နှင့် client အသုံးပြုမှု (Sampling, Elicitation, Logging) အတွက် အကြောင်းအရာများ မြှင့်တင်
 
-- **Comprehensive MCP References and Resources**:
-  - **MCP for Beginners** link (https://aka.ms/mcp-for-beginners) ထည့်သွင်းထားသည်
-  - modelcontextprotocol.io မှ တရားဝင် MCP documentation နှင့် specifications
-  - MCP Inspector နှင့် reference implementations ပါဝင်သော ဖွံ့ဖြိုးမှုအရင်းအမြစ်များ
-  - Technical standards (JSON-RPC 2.0, JSON Schema, OpenAPI, Server-Sent Events)
+- **MCP ကိုးကားချက်နှင့် အရင်းအမြစ်ပြည့်စုံ**:
+  - **MCP for Beginners** လင့်ခ် ထည့်သွင်း (https://aka.ms/mcp-for-beginners) 
+  - တရားဝင် MCP စာရွက်စာတမ်းနှင့် ပုဂ္ဂိုလ်ရေး စည်းမျဉ်းများ (modelcontextprotocol.io)
+  - MCP Inspector နှင့် ကိုးကားမှု စာရွက်များ၊ မှုခင်းများ
+  - နည်းပညာ စံချိန်များ (JSON-RPC 2.0, JSON Schema, OpenAPI, Server-Sent Events)
 
-### အသစ်ထည့်ထားသည် - Module04 Qualcomm QNN Integration
-- **Section 7: Qualcomm QNN Optimization Suite** (`Module04/05.QualcommQNN.md`) အသစ်ထည့်ထားသည်:
-  - Qualcomm ရဲ့ AI inference framework အတွက် 400+ လိုင်း guide
-  - Hexagon NPU, Adreno GPU, Kryo CPU အတွက် heterogeneous computing ကို အသေးစိတ်ဖော်ပြထားသည်
-  - Snapdragon platforms အတွက် hardware-aware optimization
-  - Mobile deployment အတွက် INT8, INT16, mixed-precision quantization techniques
-  - Battery-powered devices နှင့် real-time applications အတွက် power-efficient inference optimization
-  - QNN SDK setup နှင့် environment configuration အတွက် installation guide
-  - PyTorch to QNN conversion, multi-backend optimization, context binary generation အတွက် နမူနာများ
-  - Custom backend configuration, dynamic quantization, performance profiling အတွက် advanced usage patterns
-  - Troubleshooting section နှင့် community resources
 
-- **Module04 structure တိုးမြှင့်ထားသည်**:
-  - README.md ကို 7 progressive sections (ယခင် 6) အထိ update လုပ်ထားသည်
-  - Qualcomm QNN ကို performance benchmarks table (5-15x speed improvement, 50-80% memory reduction) တွင် ထည့်သွင်းထားသည်
-  - Mobile AI deployment နှင့် power optimization အတွက် learning outcomes တိုးမြှင့်ထားသည်
+### ထည့်သွင်းချက် - Module04 Qualcomm QNN ပေါင်းစည်းမှု
+- **အပိုင်း ၇ အသစ်: Qualcomm QNN တိုးတက်မှု စနစ်** (`Module04/05.QualcommQNN.md`):
+  - Qualcomm ၏ ပေါင်းစည်း AI inference framework အတွက် ၄၀၀+ လိုင်းများအပြည့်အဝ ဦးတည်ချက်
+  - heterogenous computing (Hexagon NPU, Adreno GPU, Kryo CPU) ကို အသေးစိတ်ဖော်ပြ
+  - Snapdragon ပလက်ဖောင်းများအတွက် hardware အသိအမှတ်ပြု စနစ် များနှင့် အလုပ်တစ်ခုခြားအလုပ် ပျံ့နှံ့မှု
+  - မိုဘိုင်းပြင်ဆင်ရေးအတွက် advanced quantization နည်းစနစ်များ (INT8, INT16, mixed-precision)
+  - ဘက်ထရီသုံး ကိရိယာများနှင့် အချိန်ပြည့်လိုအပ်ချက်များအတွက် စွမ်းအင်သက်သာစေသော inferencing တိုးတက်မှု
+  - QNN SDK ထည့်သွင်းခြင်းနှင့် ပတ်ဝန်းကျင်ဖန်တီးခြင်း လမ်းညွှန်ချက် အပြည့်အစုံ
+  - လက်တွေ့နမူနာများ: PyTorch မှ QNN ပြောင်းလဲခြင်း, multi-backend optimization, context binary အသစ်ဖန်တီးခြင်း
+  - တိုးတက်သော အသုံးပြုမှု ပုံစံများ: custom backend ဖွဲ့စည်းခြင်း, dynamic quantization, စွမ်းဆောင်ရည် ကြည့်ရှုခြင်း
+  - ပြဿနာဖြေရှင်း မျဉ်းစောင်းကဏ္ဍနှင့် လူမှုအသိုင်းအဝိုင်း အရင်းအမြစ်များ
 
-### ပြောင်းလဲထားသည် - Module04 Documentation Updates
-- **Microsoft Olive documentation enhancement** (`Module04/03.MicrosoftOlive.md`):
-  - Olive Recipes Repository အပိုင်းကို ထည့်သွင်းထားပြီး 100+ pre-built optimization recipes ပါဝင်သည်
-  - Supported model families (Phi, Llama, Qwen, Gemma, Mistral, DeepSeek) အပေါ် အသေးစိတ် coverage
-  - Recipe customization နှင့် community contributions အတွက် နမူနာများ
-  - Performance benchmarks နှင့် integration guidance ဖြင့် တိုးမြှင့်ထားသည်
+- **Module04 ဖွဲ့စည်းမှု တိုးတက်မှု**:
+  - README.md ကို မူလ ၆ အပိုင်းမှ ၇ အပိုင်းဖြင့် ပြုပြင်ထည့်သွင်း
+  - Qualcomm QNN ကို စွမ်းဆောင်ရည် စမ်းသပ်ဇယားတွင် ထည့်သွင်း (5-15x မြန်ဆန်မှု၊ 50-80% သတ္တု သက်သာမှု)
+  - မိုဘိုင်း AI အချက်ပြတပ်ဆင်ခြင်းနှင့် စွမ်းအင်သက်သာစေမှုအတွက် သင်ယူမှု အကျိုးရလဒ်များ
 
-- **Module04 အပိုင်းများကို ပြောင်းလဲထားသည်**:
-  - Apple MLX ကို Section 5 (ယခင် Section 6) သို့ ရွှေ့ထားသည်
-  - Workflow Synthesis ကို Section 6 (ယခင် Section 7) သို့ ရွှေ့ထားသည်  
-  - Qualcomm QNN ကို Section 7 (specialized mobile/edge focus) အဖြစ်ထားရှိထားသည်
-  - File references နှင့် navigation links အားလုံးကို update လုပ်ထားသည်
+### ပြောင်းလဲချက် - Module04 စာရွက်စာတမ်းများ အပ်ဒိတ်
+- **Microsoft Olive စာရွက်စာတမ်း တိုးတက်မှု** (`Module04/03.MicrosoftOlive.md`):
+  - အချင်းချင်းချိတ်ဆက်မှု ၁၀ဝ+ သည် "Olive Recipes Repository" ကို ဖြည့်စွက် ထည့်သွင်း
+  - ထောက်ပံ့သော မော်ဒယ် မျိုးစုံ (Phi, Llama, Qwen, Gemma, Mistral, DeepSeek) အသေးစိတ် ဖော်ပြချက်
+  - recipe ကို ပုံချ နည်းပြမှုနဲ့ လူမှုကွန်ယက် အားဖြည့်မှုများ အတွက် လက်တွေ့ အသုံးပြုနမူနာများ
+  - စွမ်းဆောင်ရည် စမ်းသပ်မှုများနှင့် ပေါင်းစည်းမှု လမ်းညွှန်ချက်များ တိုးတက်စွာ ထည့်သွင်း
 
-### Fixed - Workshop Sample Validation
-- **chat_bootstrap.py validation and repair**:
-  - Corrupted import statement (`util.util.workshop_utils` → `util.workshop_utils`) ကို ပြင်ထားသည်
-  - Python module resolution အတွက် util package တွင် `__init__.py` ဖန်တီးထားသည်
-  - Conda environment တွင် လိုအပ်သော dependencies (openai, foundry-local-sdk) ကို install လုပ်ထားသည်
-  - Default နှင့် custom prompts နှစ်ခုစလုံးဖြင့် sample execution ကို အောင်မြင်စွာ validate လုပ်ထားသည်
-  - Foundry Local service နှင့် model loading (phi-4-mini with CUDA optimization) ကို အတည်ပြုထားသည်
+- **Module04 အတွင်း အပိုင်းများ တင်သွင်းမူပြောင်းပြန်**:
+  - Apple MLX ကို အပိုင်း ၆ မှ အပိုင်း ၅ သို့ ရွှေ့ပြောင်းထားသည်
+  - Workflow Synthesis ကို အပိုင်း ၇ မှ အပိုင်း ၆ သို့ ရွှေ့ပြောင်းထားသည်  
+  - Qualcomm QNN အပိုင်း ၇ အဖြစ် ရွှေ့ထားသည် (မိုဘိုင်းနှင့် edge အထူးအာရုံစိုက်)
+  - ဖိုင်နာမည်များ နှင့် လမ်းညွှန်လင့်ခ်များကို လိုက်လျောညီထွေ ပြုလုပ်
 
-### Docs - Comprehensive Guide Updates
-- **Module04 README.md ကို ပြည့်စုံစွာ ပြင်ဆင်ထားသည်**:
-  - Qualcomm QNN ကို OpenVINO, Olive, MLX နှင့်အတူ major optimization framework အဖြစ် ထည့်သွင်းထားသည်
-  - Mobile AI deployment နှင့် power optimization အတွက် chapter learning outcomes ကို update လုပ်ထားသည်
-  - QNN metrics နှင့် mobile/edge use cases ပါဝင်သော performance comparison table ကို တိုးမြှင့်ထားသည်
-  - Enterprise solutions မှ platform-specific optimizations သို့ logical progression ကို ထိန်းသိမ်းထားသည်
+### ပြင်ဆင်ချက် - အလုပ်ရုံ မူကွဲ စစ်ဆေးခြင်း
+- **chat_bootstrap.py ကိုစစ်ဆေးပြီး ပြင်ဆင်မှု**:
+  - မှားယွင်းပျက်စီးနေသော import ကြေညာချက် ( `util.util.workshop_utils` → `util.workshop_utils` ) ပြင်ဆင်လိုက်သည်
+  - Python module မှန်မှန်ကန်ကန် သတ်မှတ်ချက်အတွက် util package တွင် `__init__.py` မရှိမှု ပြည့်စုံ
+  - conda ပတ်ဝန်းကျင်၌ လိုအပ်သော dependencies(openai, foundry-local-sdk) တပ်ဆင်ထား
+  - နမူနာများကို default နဲ့ custom prompts နှစ်မျိုးစလုံး ဖြင့် အောင်မြင်စွာ အတည်ပြုခဲ့သည်
+  - Foundry Local ဝန်ဆောင်မှုနှင့် model loading (phi-4-mini with CUDA optimization) တွင် ပေါင်းစည်းမှု အတည်ပြုမှုရှိ
 
-- **Cross-references နှင့် navigation**:
-  - Section numbering အသစ်အတွက် internal links နှင့် file references အားလုံးကို update လုပ်ထားသည်
-  - Mobile, desktop, cloud environments အတွက် workflow synthesis ဖော်ပြချက်ကို တိုးမြှင့်ထားသည်
-  - Qualcomm developer ecosystem အတွက် resource links ထည့်သွင်းထားသည်
+### စာရွက်စာတမ်းများ - လမ်းညွှန် စုစည်းခြင်းအပ်ဒိတ်များ
+- **Module04 README.md ကို ပြန်လည် ဖွဲ့စည်းမှု**:
+  - OpenVINO, Olive, MLX နဲ့အတူ Qualcomm QNN ကို ထည့်သွင်းသော မူလစွမ်းဆောင်ရည် တိုးတက်သော framework အဖြစ်
+  - မိုဘိုင်း AI တပ်ဆင်ခြင်းနှင့် စွမ်းအင် ကျွမ်းကျင်မှု တိုးတက်မှုများကို သင်ယူမှု ရလဒ်များသို့ထည့်သွင်း
+  - Qualcomm QNN မှ စွမ်းဆောင်ရည် နှိုင်းယှဉ်ဇယားအတိုးတက်မှု
+  - ကုမ္ပဏီဖြေရှင်းချက်မှ platform-specific optimization သို့ အဆင့်တက် ဆက်လက်နက်ရှိုင်းမှု
+
+- **ကိုးကားချက်များနှင့် လမ်းညွှန်မှုများ**:
+  - အသစ်အပိုင်း အမှတ်အသားအလိုက် တစ်ချိန်တည်း နောက်ခံလင့်ခ်များအားလုံး ပြုပြင်ပြောင်းလဲ
+  - မိုဘိုင်း၊ desktop နှင့် cloud ပတ်ဝန်းကျင်များအတွက် workflow synthesis ဖော်ပြချက် တိုးတက်စေ
+  - Qualcomm developer နယ်ပယ်အတွက် လုံးဝ resource လင့်ခ်များ ထည့်သွင်း
 
 ## 2025-10-08
 
-### အသစ်ထည့်ထားသည် - Workshop Comprehensive Update
-- **Workshop README.md ကို ပြည့်စုံစွာ ပြင်ဆင်ထားသည်**:
-  - Edge AI ရဲ့ privacy, performance, cost အကျိုးကျေးဇူးများကို ရှင်းလင်းဖော်ပြထားသည်
-  - 6 core learning objectives နှင့် အသေးစိတ် competencies ဖန်တီးထားသည်
-  - Learning outcomes table ကို deliverables နှင့် competency matrix ဖြင့် ထည့်သွင်းထားသည်
-  - Career-ready skills အပိုင်းကို စက်မှုလုပ်ငန်း relevance အတွက် ထည့်သွင်းထားသည်
-  - Prerequisites နှင့် 3-step setup ပါဝင်သော quick start guide ဖန်တီးထားသည်
-  - Python samples (8 files with run times) အတွက် resource tables ဖန်တီးထားသည်
-  - Jupyter notebooks table (8 notebooks with difficulty ratings) ဖန်တီးထားသည်
-  - Documentation table (7 key docs with "Use When" guidance) ဖန်တီးထားသည်
-  - Skill levels အမျိုးမျိုးအတွက် learning path recommendations ထည့်သွင်းထားသည်
+### ထည့်သွင်းချက် - အလုပ်ရုံ အပြည့်အစုံ အပ်ဒိတ်
+- **အလုပ်ရုံ README.md ကို ပြန်ရေးခြင်း အပြည့်အစုံ**:
+  - Edge AI တန်ဖိုးအကြောင်း (privacy, performance, cost) ရှင်းလင်းချက် တိုးတက်စွာ ထည့်သွင်း
+  - ၆ ချက် သင်ယူရမည့် ရည်မှန်းချက်များကို အတိအကျ
+  - deliverables နှင့် တတ်နိုင်မှု matrix ပါဝင်သည့် သင်ယူမှုရလဒ်ဇယား ထည့်သွင်း
+  - စက်မှုနယ်ပယ်အတွက်အဆင်သင့် ကျွမ်းကျင်မှု အပိုင်းထည့်
+  - လျင်မြန်စွာစတင်ရန် လမ်းညွှန်နှင့် အဆင့် ၃ ပြုလုပ်မှု
+  - Python နမူနာများအတွက် အချိန်ပြတင်းပေါက် စာရင်း (ဖိုင် ၈ ခု)
+  - Jupyter notebook များ (notebooks ၈ ခု၊ အခက်အခဲ အဆင့်များပါ)
+  - စာရွက်စာတမ်း (အဓိက docs ၇ ခု၊ "အသုံးပြုချိန်" လမ်းညွှန်များ)
+  - အရည်အချင်း အဆင့်အလိုက် သင်ယူခရီးစဉ် အကြံပြုချက်များ
 
-- **Workshop validation နှင့် testing infrastructure**:
-  - `scripts/validate_samples.py` ဖန်တီးထားသည် - Syntax, imports, best practices အတွက် validation tool
-  - `scripts/test_samples.py` ဖန်တီးထားသည် - Python samples အားလုံးအတွက် Smoke test runner
-  - Validation documentation ကို `scripts/README.md` တွင် ထည့်သွင်းထားသည်
+- **အလုပ်ရုံ စစ်ဆေးနည်း ပစ္စည်းများ**:
+  - `scripts/validate_samples.py` ဖန်တီးပြီး စာလုံးပုံစံ၊ import, အကောင်းဆုံးလုပ်ထုံးလုပ်နည်း စစ်ဆေးရန်ကိရိယာ
+  - `scripts/test_samples.py` ဖန်တီးပြီး Python နမူနာအားလုံး အရေးပေါ် စမ်းသပ်သူ
+  - `scripts/README.md` တွင် စစ်ဆေးနည်းစာရွက် ထည့်သွင်း
 
-- **Comprehensive documentation**:
-  - `SAMPLES_UPDATE_SUMMARY.md` - 400+ လိုင်းအပြည့်စုံ guide
-  - `UPDATE_COMPLETE.md` - Update completion အတွက် Executive summary
-  - `QUICK_REFERENCE.md` - Workshop အတွက် Quick reference card
+- **စာရွက်စာတမ်း အပြည့်အစုံ**:
+  - `SAMPLES_UPDATE_SUMMARY.md` (၄၀၀+ လိုင်း) တိုးတက်မှု သေချာဖော်ပြချက်
+  - `UPDATE_COMPLETE.md` အပ်ဒိတ် အပြီးသတ် အကျဉ်းချုပ်
+  - `QUICK_REFERENCE.md` အလုပ်ရုံအတွက် အမြန်လမ်းညွှန် ကဒ်
 
-### ပြောင်းလဲထားသည် - Workshop Python Sample Modernization
-- **Python samples 8 ခုအားလုံးကို အကောင်းဆုံးအလေ့အကျင့်များဖြင့် update လုပ်ထားသည်**:
-  - Error handling ကို try-except blocks ဖြင့် တိုးမြှင့်ထားသည်
-  - Type hints နှင့် comprehensive docstrings ထည့်သွင်းထားသည်
-  - [INFO]/[ERROR]/[RESULT] logging pattern ကို တိကျစွာ အသုံးပြုထားသည်
-  - Optional imports ကို installation hints ဖြင့် ကာကွယ်ထားသည်
-  - User feedback ကို အားလုံးတွင် တိုးမြှင့်ထားသည်
+### ပြောင်းလဲချက် - အလုပ်ရုံ Python နမူနာ ခေတ်မီဖြစ်မှု
+- **Python နမူနာ ၈ ခုအားလုံး အကောင်းဆုံးလုပ်ထုံးလုပ်နည်းဖြင့် မြှင့်တင်**:
+  - အားလုံး I/O လုပ်ဆောင်မှုများတွင် try-except ဖြင့် အမှားများ ကာကွယ်
+  - type hints နှင့် အပြည့်အစုံ docstrings ထည့်သွင်း
+  - အဆက်သွယ် [INFO]/[ERROR]/[RESULT] စနစ်တကျ စီမံခန့်ခွဲထား
+  - ရွေးချယ်နိုင်သော imports ကို တပ်ဆင်ရန် အကြံပြုချက်များ ဖြင့် ကာကွယ်ထားသည်
+  - အသုံးပြုသူ တုံ့ပြန်မှု ပြီးပြည့်စုံစေခဲ့သည်
 
 - **session01/chat_bootstrap.py**:
-  - Client initialization ကို error messages ဖြင့် တိုးမြှင့်ထားသည်
-  - Streaming error handling ကို chunk validation ဖြင့် တိုးမြှင့်ထားသည်
-  - Service unavailability အတွက် exception handling ကို တိုးမြှင့်ထားသည်
+  - client initialization အတွက် အပြည့်အစုံ အမှားစိတ်ကြားစာများ တိုးတက်စေ
+  - streaming error handling ကို chunk စစ်ဆေးခြင်းဖြင့် မြှင့်တင်
+  - ဝန်ဆောင်မှု မရရှိနိုင်ခြင်းအတွက် ထူးခြားသော exception handling ထည့်သွင်း
 
 - **session02/rag_pipeline.py**:
-  - Sentence-transformers အတွက် import guards ထည့်သွင်းထားသည်
-  - Error handling ကို embedding နှင့် generation operations အတွက် တိုးမြှင့်ထားသည်
-  - Structured results ဖြင့် output formatting ကို တိုးမြှင့်ထားသည်
+  - sentence-transformers မော်ဂျူး import ကင်းမှု တားဆီးပြီး တပ်ဆင်ခြင်း သတိပေးချက် ထည့်သွင်း
+  - embedding နှင့် generation လုပ်ငန်းစဉ် error handling တိုးတက်စေ
+  - ရလဒ် အစီအစဉ်သစ် ဖော်ပြမှု တိုးတက်မှု
 
 - **session02/rag_eval_ragas.py**:
-  - Optional imports (ragas, datasets) ကို user-friendly error messages ဖြင့် ကာကွယ်ထားသည်
-  - Evaluation metrics အတွက် error handling ကို တိုးမြှင့်ထားသည်
-  - Evaluation results အတွက် output formatting ကို တိုးမြှင့်ထားသည်
+  - ရွေးချယ်မှု imports (ragas, datasets) ကို error message သင့်တော်စွာနှင့် ကာကွယ်ထား
+  - သုံးသပ်ခြင်းရလဒ်များ error handling ထည့်သွင်း
+  - သုံးသပ်မှု ရလဒ် output စနစ်တကျ ပြုပြင်
 
 - **session03/benchmark_oss_models.py**:
-  - Model failures အတွက် graceful degradation ကို အကောင်အထည်ဖော်ထားသည်
-  - Progress reporting နှင့် per-model error handling ကို တိုးမြှင့်ထားသည်
-  - Error recovery ဖြင့် statistics calculation ကို တိုးမြှင့်ထားသည်
+  - မော်ဒယ် မအောင်မြင်မှုမှာ သက်သာစွာဆက်လက် လုပ်ဆောင်နိုင်ခြင်းဖြင့် ဆောင်ရွက်
+  - တိုးတက်သော ကြိုတင်ဖော်ပြချက်နှင့် မော်ဒယ်တစ်ခုစီအတွက် error handling
+  - အချက်အလက် စုဆောင်းမှုနှင့် error recovery တိုးတက်စေ
 
 - **session04/model_compare.py**:
-  - Type hints (Tuple return types) ထည့်သွင်းထားသည်
-  - Structured JSON results ဖြင့် output formatting ကို တိုးမြှင့်ထားသည်
-  - Per-model error handling ကို recovery ဖြင့် အကောင်အထည်ဖော်ထားသည်
+  - type hints (Tuple return types) ထည့်သွင်း
+  - structure ပုံစံ JSON ရလဒ် output ပြုပြင်တိုးတက်
+  - per-model error handling နှင့် error recovery လုပ်ဆောင်မှု
 
 - **session05/agents_orchestrator.py**:
-  - Agent.act() ကို comprehensive docstrings ဖြင့် တိုးမြှင့်ထားသည်
-  - Pipeline error handling ကို stage-by-stage logging ဖြင့် တိုးမြှင့်ထားသည်
-  - Memory management နှင့် state tracking ကို တိုးမြှင့်ထားသည်
+  - Agent.act() အတွက် အပြည့်အစုံ docstrings များ ထည့်သွင်း
+  - အဆင့်လိုက် error handling နှင့် ပတ်သက်သည့် လုပ်ငန်းစဥ် log ရေးခြင်း
+  - မှတ်ဉာဏ် စီမံခန့်ခွဲမှုနှင့် အခြေအနေ ထိန်းချုပ်မှု တိုးတက်စေ
 
 - **session06/models_router.py**:
-  - Routing components အားလုံးအတွက် function documentation ကို တိုးမြှင့်ထားသည်
-  - Route() function တွင် detailed logging ကို ထည့်သွင်းထားသည်
-  - Test output ကို structured results ဖြင့် တိုးမြှင့်ထားသည်
+  - routing အစိတ်အပိုင်းအားလုံးအတွက် function လူနည်းတတ် docstrings ထည့်သွင်း
+  - route() function တွင် စာရင်းသွင်းလွှာ တိုးတက်စေ
+  - စနစ်တကျ ရလဒ်များနှင့် စမ်းသပ်မှု output ပြုပြင်တိုးတက်
 
 - **session06/models_pipeline.py**:
-  - Chat() helper function အတွက် error handling ကို ထည့်သွင်းထားသည်
-  - Pipeline() ကို stage logging နှင့် progress reporting ဖြင့် တိုးမြှင့်ထားသည်
-  - Main() ကို comprehensive error recovery ဖြင့် တိုးမြှင့်ထားသည်
+  - chat() ကူညီ-function အတွက် error handling ထည့်သွင်း
+  - pipeline() အတွက် အဆင့်များ log ရေးခြင်း၊ ကြိုတင်စာရင်းအင်း တိုးတက်မှု
+  - main() အတွက် error recovery အပြည့်အစုံ ပြုလုပ်မှု
 
-### Docs - Workshop Documentation Enhancement
-- Main README.md ကို Workshop section ဖြင့် update လုပ်ထားပြီး hands-on learning path ကို အထူးပြောထားသည်
-- STUDY_GUIDE.md ကို Workshop section ဖြင့် တိုးမြှင့်ထားပြီး:
-  - Learning objectives နှင့် study focus areas
-  - Self-assessment questions
-  - Hands-on exercises နှင့် အချိန်ခန့်မှန်းချက်များ
-  - Concentrated နှင့် part-time study အတွက် အချိန် allocation
-  - Workshop ကို progress tracking template တွင် ထည့်သွင်းထားသည်
-- အချိန် allocation guide ကို 20 နာရီမှ 30 နာရီသို့ (Workshop အပါအဝင်) update လုပ်ထားသည်
-- Workshop sample ဖော်ပြချက်များနှင့် learning outcomes ကို README တွင် ထည့်သွင်းထားသည်
+### စာရွက်စာတမ်းများ - အလုပ်ရုံ စာရွက်စာတမ်း တိုးတက်မှု
+- Workshop အပိုင်းကို ဦးစားပေး သင်ယူမှု ခရီးစဉ်ထဲတွင် ဖော်ပြထားသည့် main README.md ပြောင်းလဲမှု
+- STUDY_GUIDE.md ကို အလုပ်ရုံ အပိုင်းနှင့် ဆက်စပ်၍ တိုးတက်စေ 
+  - သင်ယူရမည့် ရည်မှန်းချက်နှင့် လေ့လာရန်အချက်
+  - ကိုယ်တိုင် ကြိုတင်စစ်ဆေးမေးခွန်းများ
+  - လက်တွေ့ လေ့ကျင့်ခန်းများနှင့် အချိန် ခန့်မှန်းချက်များ
+  - အင်မတန်ပူဇော်စေဖြစ်စေသော သင်ယူမှုနှင့် အနားယူဖြစ်စေသော သင်ယူမှုအချိန်
+  - Workshop အပေါ် တိုးတက်မှု ဇယားထည့်သွင်း
+- အလုပ်ရုံ ပါဝင်သည့် အချိန် ခန့်မှန်းချက်ကို ၂ဝ နာရီမှ ၃ဝ နာရီသို့ ထပ်မံမြှင့်တင်
+- README တွင် Workshop နမူနာ ဖော်ပြချက်များနှင့် သင်ယူမှု ရလဒ်များ ထည့်သွင်း
 
-### Fixed
-- Workshop samples တွင် error handling patterns မညီညွတ်မှုများကို ဖြေရှင်းထားသည်
-- Optional dependency import errors ကို proper guards ဖြင့် ပြင်ထားသည်
-- Critical functions တွင် မရှိသော type hints ကို ပြင်ထားသည်
-- Error scenarios တွင် user feedback မလုံလောက်မှုကို ဖြေရှင်းထားသည်
-- Validation issues ကို comprehensive testing infrastructure ဖြင့် ဖြေရှင်းထားသည်
+### ပြင်ဆင်ချက်များ
+- အလုပ်ရုံ နမူနာများအတွင်း error handling pattern မတူညီချက်များ ပြန်လည်ဖြေရှင်း
+- ရွေးချယ်မှုပစ္စည်း import error များကို တက်ကြွစွာ ကာကွယ်
+- အရေးကြီး function များတွင် type hints မပါရှိမှု ပြန်လည် ပြင်ဆင်
+- အမှားဖြစ်ပွားနိုင်သည့် နေရာများတွင် အသုံးပြုသူ တုံ့ပြန်မှု ပြည့်စုံမှုမရှိခြင်း ဖြေရှင်း
+- စမ်းသပ်မှု အင်ဖရာစတပ်ချာဖွဲ့စည်းမှုဖြင့် အတည်ပြုမူများ စုံလင်စွာ ပြန်လည် စစ်ဆေး
 
 ---
 
 ## 2025-09-23
 
-### ပြောင်းလဲထားသည် - Major Module 08 Modernization
-- **Microsoft Foundry-Local repository patterns နှင့် အပြည့်အဝ ကိုက်ညီမှု**:
-  - Code examples အားလုံးကို modern `FoundryLocalManager` နှင့် OpenAI SDK integration အသုံးပြုရန် update လုပ်ထားသည်
-  - Manual `requests` calls ကို SDK usage ဖြင့် အစားထိုးထားသည်
-  - Microsoft documentation နှင့် samples နှင့် implementation patterns ကို alignment လုပ်ထားသည်
+### ပြောင်းလဲမှု - အဓိက Module 08 ခေတ်မီဖြစ်မှု
+- **Microsoft Foundry-Local repository ပုံစံများနှင့် အပြည့်စုံ ကိုက်ညီမှု**
+  - ကျွမ်းကျင်သော `FoundryLocalManager` နှင့် OpenAI SDK ပေါင်းစည်းမှု အသုံးပြု၍ အားလုံး code နမူနာများ ပြင်ဆင်တင်သွင်း
+  - သံုးစွဲမှု မဖြစ်တော့သော manual `requests` ဖုန်းခေါ်ကို့များကို SDK အသုံးပြုပြီးမှ ပြန်လဲ
+  - Microsoft ၏ တရားဝင် စာရွက်စာတမ်းနှင့် နမူနာများအတိုင်း အကောင်အထည်ဖော်မှု ပုံစံများ ကိုက်ညီစေရန် ပြုပြင်
 
-- **05.AIPoweredAgents.md modernization**:
-  - Multi-agent orchestration ကို modern SDK patterns ဖြင့် update လုပ်ထားသည်
-  - Coordinator implementation ကို feedback loops, performance monitoring အင်္ဂါရပ်များဖြင့် တိုးမြှင့်ထားသည်
-  - Error handling နှင့် service health checking ကို တိုးမြှင့်ထားသည်
-  - Local samples (`samples/05/multi_agent_orchestration.ipynb`) ကို proper references ဖြင့် ထည့်သွင်းထားသည်
-  - Deprecated `functions` အစား modern `tools` parameter ကို အသုံးပြုထားသည်
-  - Monitoring နှင့် statistics tracking ပါဝင်သော production-ready patterns ကို ထည့်သွင်းထားသည်
+- **05.AIPoweredAgents.md ခေတ်မီဖြစ်မှု**:
+  - မျိုးစုံ အေးဂျင့် စုပေါင်းထိန်းချုပ်မှုကို ခေတ်မီ SDK ပုံစံများဖြင့် ပြုလုပ်
+  - ကျွမ်းကျင်သော အင်္ဂါရပ်များ (ထောက်ပြန်ချက်ဖြတ်သန်းမှု, စွမ်းဆောင်ရည် ကြည့်ရူမှု) နှင့် coordinator အကောင်အထည်ဖော်မှု တိုးတက်
+  - comprehensive error handling နှင့် ဝန်ဆောင်မှု ကျန်းမာရေး စစ်ဆေးမှု ထည့်သွင်း
+  - ဒေသীয় နမူနာများ (`samples/05/multi_agent_orchestration.ipynb`) သို့ သေချာ သွင်းသုံးမှု
+  - functions ပြောင်းလဲသည့် deprecated ဖြစ်သော `functions` parameter ကို ခေတ်မီသော `tools` parameter ဖြင့် update လုပ်
+  - ထုတ်လုပ်ရေးအဆင့် အတွက် စနစ်တကျ နမူနာနှင့် စာရင်းစစ်တာများ ထည့်သွင်း
 
-- **06.ModelsAsTools.md complete rewrite**:
-  - Basic tool registry ကို intelligent model router implementation ဖြင့် အစားထိုးထားသည်
-  - General, reasoning, code, creative tasks အတွက် keyword-based model selection ကို ထည့်သွင်းထားသည်
-  - Flexible model assignment အတွက် environment-based configuration ကို ထည့်သွင်းထားသည်
-  - Service health monitoring နှင့် error handling ကို တိုးမြှင့်ထားသည်
-  - Request monitoring နှင့် performance tracking ပါဝင်သော production deployment patterns ကို ထည့်သွင်းထားသည်
-  - Local implementation (`samples/06/router.py` နှင့် `samples/06/model_router.ipynb`) နှင့် alignment လုပ်ထားသည်
+- **06.ModelsAsTools.md ပြန်ရေးခြင်း**:
+  - အခြေခံ tool registry ကို intelligent model router ကို အသုံးပြုသော implementation ဖြင့်ပြောင်းလဲ
+  - အလုပ်အမျိုးအစားများအတွက် keyword-based model ရွေးချယ်မှု ထည့်သွင်း (general, reasoning, code, creative)
+  - ပတ်ဝန်းကျင်အခြေပြု configuration နဲ့ သက်ဆိုင်ရာ model ကို ချိန်းညှိ ပေးခြင်း
+  - ဝန်ဆောင်မှု ကျန်းမာရေး ကြည့်ရှုမှုနှင့် အမှားဆိုင်ရာ ကာကွယ်မှု တိုးတက်စေ
+  - ထုတ်လုပ်မှု deployment ပုံစံများနှင့် စစ်ဆေးမှု၊ စွမ်းဆောင်ရည် ချိန်တွင် စနစ်တကျ ထည့်သွင်း
+  - ဒေသတွင်း `samples/06/router.py` နှင့် `samples/06/model_router.ipynb` တွင် မူအသုံး ပြုမှုနှင့် ကိုက်ညီမှု
 
-- **Documentation structure improvements**:
-  - Modernization နှင့် SDK alignment ကို highlight လုပ်ထားသော overview sections ထည့်သွင်းထားသည်
-  - Emojis နှင့် formatting ကို တိုးမြှင့်ထားပြီး readability ကို မြှင့်တင်ထားသည်
-  - Local sample files ကို proper references ဖြင့် documentation တွ
-  - `Module08/samples/01`–`06` တွင် Windows cmd အညွှန်းများနှင့်အတူ အသုံးပြုနိုင်သော နမူနာများ
-    - `01` REST အမြန်စကားပြော (`chat_quickstart.py`)
-    - `02` SDK အမြန်စတင်မှု OpenAI/Foundry Local နှင့် Azure OpenAI ပံ့ပိုးမှု (`sdk_quickstart.py`)
-    - `03` CLI စာရင်းနှင့် စမ်းသပ်မှု (`list_and_bench.cmd`)
-    - `04` Chainlit အထူးပြသမှု (`app.py`)
-    - `05` Multi-agent စီမံခန့်ခွဲမှု (`python -m samples.05.agents.coordinator`)
+- **စာရွက်စာတမ်း ဖွဲ့စည်းမှု တိုးတက်မှု**:
+  - ခေတ်မီဖြစ်မှုနှင့် SDK ပေါင်းစည်းမှု ဖော်ပြသည့် ကြည့်ရှုနံပါတ်များ ထည့်သွင်း
+  - အသုံးပြုမှု မြှင့်တင်ရေးအတွက် Emoji များနှင့် ပိုမိုစိုးမိုးသော ဖော်ပြမှု
+  - ဒေသတွင်း နမူနာဖိုင်များအား ဒါရိုက်တာက ဖော်ပြချက်များ ထည့်သွင်း
+  - ထုတ်လုပ်ရေး အဆင့်အတွက် မူလီနာူးနှင့် အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများ အတူရှိ
+
+### ထည့်သွင်းချက်
+- Module 08 ဖိုင်များတွင် ခေတ်မီ SDK ပေါင်းစည်းမှု အစိတ်အပိုင်းများ တိုးမြှင့်
+- အဆင့်မြှင့် အင်္ဂါရပ်များ (မျိုးစုံအေးဂျင့် စနစ်များ, ချိုချောသော routing) ကို ဖော်ထုတ်
+- လက်တွေ့ ပြုလုပ်နိုင်သော ဒေသတွင်း နမူနာများကို တိုက်ရိုက် ကိုးကား
+- စောင့်ကြည့်မှု နှင့် အမှား ကာကွယ်မှု ပုံစံများ ပါဝင်သည့် ထုတ်လုပ်မှု deployment လမ်းညွှန်
+- အဆင့်မြင့် အင်္ဂါရပ်များနှင့် စွမ်းဆောင်ရည်စမ်းသပ်မှုပါဝင်သည့် Jupyter notebook များ ပါဝင်
+
+### ပြင်ဆင်ချက်
+- စာရွက်စာတမ်းများနှင့် လက်တွေ့ နမူနာ ဖော်ပြမှုများအကြား ကိုက်ညီမှု မရှိမှုဖြေရှင်း
+- Module 08 အားလုံးတွင် ဘာလောက်ပေါ် SDK ပုံစံ များ ရှုံးနေမှု ပြန်လည် ပြင်ဆင်
+- ကြီးမားသော ဒေသတွင်း နမူနာ စာကြည့်တိုက်ကို မပါရှိမှု ဖြေရှင်း
+- အပိုင်းအလိုက် ကျဉ်းမြောင်းသော implementation နည်းလမ်းများ ပြန်လည် ဒါမှမဟုတ် ထိန်းသိမ်း
+
+---
+
+## 2025-09-18
+
+### ထည့်သွင်းချက်
+- Module 08: Microsoft Foundry Local – ဖွံ့ဖြိုးရေးသူများအတွက် စုံလင်သော ကိရိယာစု
+  - ခြောက်ခု အစိတ်အပိုင်းများ: တပ်ဆင်ခြင်း၊ Azure AI Foundry ပေါင်းစည်းမှု၊ ဖြန့်ချိရေး မော်ဒယ်များ၊ နောက်ဆုံးနည်းပညာ ရှင်းလင်းချက်များ၊ အေးဂျင့်များနှင့် tools အဖြစ် မော်ဒယ်များ
+  - `Module08/samples/01` မှ `06` အထိ Windows cmd အသုံးပြု နမူနာများ
+    - `01` REST quick chat (`chat_quickstart.py`)
+
+    - `02` OpenAI/Foundry Local နှင့် Azure OpenAI ထောက်ခံမှုပါရှိသော SDK quickstart (`sdk_quickstart.py`)
+    - `03` CLI list-and-bench (`list_and_bench.cmd`)
+    - `04` Chainlit demonstration (`app.py`)
+    - `05` များစွာရှိသော agent များစီမံခန့်ခွဲမှု (`python -m samples.05.agents.coordinator`)
     - `06` Models-as-Tools router (`router.py`)
-- Session 2 SDK နမူနာတွင် Azure OpenAI ပံ့ပိုးမှုနှင့် ပတ်ဝန်းကျင် အပြောင်းအလဲများကို ဖော်ပြထားသည်
-- `.vscode/settings.json` ကို `Module08/.venv` သို့ ညွှန်ပြပြီး Python အကဲဖြတ်မှု အကောင်းဆုံးဖြစ်စေရန် တိုးတက်မှုများ
-- `.env` တွင် `PYTHONPATH` အညွှန်းကို VS Code/Pylance အသိအမှတ်ပြုမှုအတွက် ထည့်သွင်းထားသည်
+- Azure OpenAI ထောက်ခံမှု Session 2 SDK နမူနာတွင် environment variable ဖြင့် ပြင်ဆင်ထားခြင်း
+- `.vscode/settings.json` ကို `Module08/.venv` သို့ညွှန်ပြပြီး Python analysis solution မြှင့်တင်ခြင်း
+- `.env` တွင် VS Code/Pylance အသိပေးရန် `PYTHONPATH` အကြံပြုချက်ဖြင့် ဖြည့်စွက်ထားခြင်း
 
-### ပြောင်းလဲမှုများ
-- Module 08 စာရွက်စာတမ်းများနှင့် နမူနာများတွင် ပုံမှန်မော်ဒယ်ကို `phi-4-mini` သို့ အဆင့်မြှင့်ထားပြီး `phi-3.5` ကို ဖျက်သိမ်းထားသည်
+### ပြင်ဆင်ချက်များ
+- Module 08 စာတမ်းများနှင့် နမူနာများတွင် Default model ကို `phi-4-mini` သို့ အဆင့်မြှင့်ပြီး Module 08 တွင် ကျန်ရှိသည့် `phi-3.5` ကို ဖယ်ရှားပြီးဖြစ်သည်
 - Router (`Module08/samples/06/router.py`) တိုးတက်မှုများ:
-  - `foundry service status` မှ regex ဖြင့် endpoint ရှာဖွေမှု
-  - စတင်မှုတွင် `/v1/models` ကျန်းမာရေး စစ်ဆေးမှု
-  - ပတ်ဝန်းကျင်-ဖွဲ့စည်းနိုင်သော မော်ဒယ် မှတ်ပုံတင်မှု (`GENERAL_MODEL`, `REASONING_MODEL`, `CODE_MODEL`, `TOOL_REGISTRY` JSON)
-- Requirements အဆင့်မြှင့်ထားသည်: `Module08/requirements.txt` တွင် `openai` ကို ထည့်သွင်းထားပြီး (`requests`, `chainlit` နှင့်အတူ)
-- Chainlit နမူနာ လမ်းညွှန်မှုကို ရှင်းလင်းစွာ ဖော်ပြထားပြီး ပြဿနာများကို ဖြေရှင်းထားသည်; workspace settings မှတဆင့် import ဖြေရှင်းမှု
+  - `foundry service status` ဖြင့် endpoint ရှာဖွေရန် regex သုံးပြီး စစ်ဆေးခြင်း
+  - စတင်အသုံးပြုစဉ် `/v1/models` အကဲဖြတ်ခြင်း
+  - ပတ်ဝန်းကျင်ပြင်ဆင်နိုင်သော model စာရင်း (`GENERAL_MODEL`, `REASONING_MODEL`, `CODE_MODEL`, `TOOL_REGISTRY` JSON)
+- လိုအပ်ချက်များ ပြုပြင်မွမ်းမံခြင်း - `Module08/requirements.txt` တွင် `openai` (requests, chainlit နှင့်အတူ) ပါရှိသည်
+- Chainlit နမူနာအကြံပြုချက် ပိုမိုရှင်းလင်းပြီး ပြဿနာဖြေရှင်းခြင်း ထည့်သွင်းဖြစ်ပေါ်; workspace settings ဖြင့် import ဖြေရှင်းခြင်း
 
-### ပြုပြင်မှုများ
-- Import ပြဿနာများကို ဖြေရှင်းထားသည်:
-  - Router သည် မရှိသော `utils` module ကို မူတည်မထားတော့ဘဲ function များကို အတွင်းထည့်ထားသည်
-  - Coordinator သည် relative import ကို အသုံးပြုထားပြီး (`from .specialists import ...`) module path မှတဆင့် ခေါ်ယူထားသည်
-  - VS Code/Pylance configuration သည် `chainlit` နှင့် package imports ကို ဖြေရှင်းထားသည်
-- `STUDY_GUIDE.md` တွင် အနည်းငယ်သော စာလုံးပေါင်းအမှားကို ပြင်ဆင်ထားပြီး Module 08 ကို ထည့်သွင်းဖော်ပြထားသည်
+### တည်ကြည့်ပြုပြင်ချက်များ
+- Import ပြဿနာများ ဖြေရှင်းပြီး:
+  - Router သည် မရှိတော့သော `utils` module ကို မူကားမထားတော့ဘဲ function များကို inlined တာဝန်ယူ
+  - Coordinator သည် relative import (`from .specialists import ...`) ဖေါ်ပြပြီး module path ဖြင့်ခေါ်ယူ
+  - VS Code/Pylance ပြင်ဆင်မှုဖြင့် `chainlit` နှင့် package import များ ဖြေရှင်းခြင်း
+- `STUDY_GUIDE.md` တွင် သေးငယ်သော အမှားစစ်ဆေးပြီး Module 08 အထောက်အပံ့များ ထပ်မံဖြည့်စွက်
 
-### ဖျက်သိမ်းမှုများ
-- အသုံးမပြုသော `Module08/infra/obs.py` ကို ဖျက်သိမ်းထားပြီး `infra/` ဖိုလ်ဒါကို ဖျက်သိမ်းထားသည်; observability patterns များကို စာရွက်စာတမ်းများတွင် ရွေးချယ်နိုင်သောအနေဖြင့် ထားရှိထားသည်
+### ဖယ်ရှားခဲ့သည်
+- မသုံးတော့သော `Module08/infra/obs.py` ဖျက်ပြီး `infra/` အားလုံး ဖျက်ပစ်; စောင့်ကြည့်နည်းပညာ pattern များကိုစာတမ်းတွင် ရွေးချယ် ဝါရင့်အဖြစ် ထိန်းသိမ်းထား
 
-### ရွှေ့ပြောင်းမှုများ
-- Module 08 နမူနာများကို `Module08/samples` အောက်တွင် session-numbered folders ဖြင့် စုစည်းထားသည်
-  - Chainlit app ကို `samples/04` သို့ ရွှေ့ထားသည်
-  - Agents ကို `samples/05` သို့ ရွှေ့ထားပြီး package resolution အတွက် `__init__.py` ဖိုင်များ ထည့်သွင်းထားသည်
+### ရွှေ့ပြောင်းခဲ့သည်
+- Module 08 demonstration များအားလုံး `Module08/samples` အောက်သို့ session အမှတ်ပါ folder များဖြင့် စုပေါင်း
+  - Chainlit app ကို `samples/04` သို့ရွှေ့ပြောင်း
+  - agent များကို `samples/05` သို့ရွှေ့ပြီး package resolution အတွက် `__init__.py` ဖိုင်များ ထည့်သွင်း
 
-### စာရွက်စာတမ်းများ
-- Module 08 session စာရွက်စာတမ်းများနှင့် နမူနာများ၏ README များကို Microsoft Learn နှင့် ယုံကြည်ရသော vendor references ဖြင့် တိုးတက်စေထားသည်
-- `Module08/README.md` ကို Samples Overview, router configuration, validation tips ဖြင့် အဆင့်မြှင့်ထားသည်
-- `Module07/README.md` Windows Foundry Local အပိုင်းကို Learn စာရွက်စာတမ်းများနှင့် အတည်ပြုထားသည်
-- `STUDY_GUIDE.md` ကို အဆင့်မြှင့်ထားသည်:
-  - Module 08 ကို overview, schedules, progress tracker တွင် ထည့်သွင်းထားသည်
-  - Foundry Local, Azure AI, Olive, ONNX Runtime, OpenVINO, MLX, Llama.cpp, vLLM, Ollama, AI Toolkit, Windows ML စသည်တို့ကို Comprehensive References အပိုင်းတွင် ထည့်သွင်းထားသည်
-
----
-
-## သမိုင်းကြောင်း (အကျဉ်းချုပ်)
-- သင်တန်းဖွဲ့စည်းမှုနှင့် module များကို (Modules 01–07) တည်ဆောက်ထားသည်
-- အဆင့်မြှင့်မှုများ၊ ဖော်ပြမှုစံနှုန်းများနှင့် case studies များ ထည့်သွင်းထားသည်
-- Optimization frameworks coverage (Llama.cpp, Olive, OpenVINO, Apple MLX) တိုးချဲ့ထားသည်
-
-## မထုတ်ဝေသေး / Backlog (အကြံပြုချက်များ)
-- Foundry Local ရရှိနိုင်မှုကို အတည်ပြုရန် နမူနာတစ်ခုချင်း smoke tests ကို ရွေးချယ်နိုင်သောအနေဖြင့် ထည့်သွင်းရန်
-- မော်ဒယ်အညွှန်းများကို (ဥပမာ `phi-4-mini`) အညီတန်းဖြစ်စေရန် ဘာသာပြန်မှုများကို ပြန်လည်သုံးသပ်ရန်
-- အဖွဲ့များ workspace-wide strictness ကို သဘောတူလျှင် pyright config အနည်းငယ် ထည့်သွင်းရန်
+### စာတမ်းများ
+- Module 08 session စာတမ်းများနှင့် sample README ဖိုင်များအားလုံး Microsoft Learn နှင့် ယုံကြည်စိတ်ချရသော vendor reference များဖြင့် ပြည့်စုံစွာ တိုးချဲ့
+- `Module08/README.md` ကို Samples အနှစ်ချုပ်၊ router ပြင်ဆင်မှု၊ စစ်ဆေးမည့် အချက်အလက်များဖြင့် update ပြုလုပ်
+- `Module07/README.md` Windows Foundry Local အပိုင်းကို Learn စာတမ်းများနှင့် အတူခံယူ စစ်ဆေးပြီး
+- `STUDY_GUIDE.md` ကို update ပြုလုပ်:
+  - Module 08 ကို အနှစ်ချုပ်၊ အစီအစဉ်၊ တိုးတက်မှု စောင့်ကြည့်ရေး ထည့်သွင်း
+  - သိပ္ပံ References အပိုင်း ပြည့်စုံစွာ ထည့်သွင်း (Foundry Local, Azure AI, Olive, ONNX Runtime, OpenVINO, MLX, Llama.cpp, vLLM, Ollama, AI Toolkit, Windows ML)
 
 ---
 
-**အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူသားပညာရှင်များမှ ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွတ်များ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+## သမိုင်းစုချက် (အနှစ်ချုပ်)
+- သင်တန်း ဖွဲ့စည်းမှုနှင့် module များ တည်ဆောက်ပြီး (Modules 01–07)
+- အကြောင်းအရာအသစ်ထည့်သွင်းခြင်း၊ ပုံစံစံချိန်ညှိနှိုင်းခြင်းနှင့် case study များ ထည့်သွင်းခြင်း
+- optimization framework များအတွက် နာမည်ကျော် အဖွဲ့အစည်းများ (Llama.cpp, Olive, OpenVINO, Apple MLX) ကိုလည်း ပိုမိုတိုးချဲ့
+
+## မထုတ်ဝေသေး / မျှော်မှန်းထားသောအရာများ (အကြံပြုချက်များ)
+- Foundry Local ရနိုင်မှုကို စစ်ဆေးရန် optional per-sample smoke test များ ထည့်သွင်းရန်
+- model reference များ (ဥပမာ `phi-4-mini`) အတွက် ဘာသာပြန်ချက်များကို ပြန်လည်စစ်ဆေးရန်
+- အဖွဲ့အစည်းအားလုံးအတွက် strict workspace-wide strictness ကို နှစ်သက်လျှင် minimal pyright configuration ထည့်သွင်းရန်
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ပြောကြားချက်**
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးပမ်းနေသော်လည်း၊ စက်ကိရိယာဘာသာပြန်ခြင်းများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် လိုအပ်ပါသည်။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ ယုံကြည်စိတ်ချရသော အချက်အလက်အဖြစ် သတ်မှတ်သင့်သည်။ အရေးကြီးသည့် သတင်းအချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူသားဘာသာပြန်သူဝန်ဆောင်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုကွာခြားမှုများ သို့မဟုတ် မမှန်ကန်သော အသုံးပြုမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မခံပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

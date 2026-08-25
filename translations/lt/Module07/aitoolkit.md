@@ -1,349 +1,415 @@
-# AI įrankių rinkinys Visual Studio Code - Edge AI kūrimo vadovas
+# AI įrankių rinkinys Visual Studio Code – Edge AI plėtros vadovas
 
 ## Įvadas
 
-Sveiki atvykę į išsamų vadovą, kaip naudoti AI įrankių rinkinį Visual Studio Code aplinkoje Edge AI kūrimui. Kadangi dirbtinis intelektas pereina nuo centralizuoto debesų kompiuterijos prie paskirstytų kraštinių įrenginių, kūrėjams reikia galingų, integruotų įrankių, kurie galėtų spręsti unikalius kraštinių diegimo iššūkius - nuo išteklių apribojimų iki reikalavimų veikti neprisijungus.
+Sveiki atvykę į išsamų vadovą, kaip naudotis AI įrankių rinkiniu Visual Studio Code Edge AI plėtroje. Kai dirbtinis intelektas pereina nuo centralizuoto debesų skaičiavimo prie paskirstytų edge įrenginių, kūrėjams reikia galingų, integruotų įrankių, kurie galėtų spręsti unikalius edge diegimo iššūkius – nuo išteklių apribojimų iki neprisijungimo veikimo reikalavimų.
 
-AI įrankių rinkinys Visual Studio Code aplinkoje užpildo šį spragą, suteikdamas pilną kūrimo aplinką, specialiai sukurtą kurti, testuoti ir optimizuoti AI programas, kurios efektyviai veikia kraštiniuose įrenginiuose. Nesvarbu, ar kuriate IoT jutikliams, mobiliesiems įrenginiams, įterptinėms sistemoms ar kraštiniams serveriams, šis įrankių rinkinys supaprastina visą jūsų kūrimo procesą pažįstamoje VS Code aplinkoje.
+AI įrankių rinkinys Visual Studio Code užpildo šią spragą, suteikdamas pilną kūrimo aplinką, skirtą AI programų kūrimui, testavimui ir optimizavimui, kurios efektyviai veikia edge įrenginiuose. Nesvarbu, ar kuriate IoT jutikliams, mobiliems įrenginiams, įterptoms sistemoms ar edge serveriams, šis įrankių rinkinys supaprastina visą kūrimo procesą įprastoje VS Code aplinkoje.
 
-Šis vadovas padės jums suprasti pagrindines sąvokas, įrankius ir geriausią praktiką, kaip naudoti AI įrankių rinkinį jūsų Edge AI projektuose - nuo pradinio modelio pasirinkimo iki diegimo gamyboje.
+Šiame vadove bus aptariamos pagrindinės sąvokos, įrankiai ir geriausios praktikos, kaip pasinaudoti AI įrankių rinkiniu savo Edge AI projektuose – nuo pirminio modelio pasirinkimo iki gamybos diegimo.
 
 ## Apžvalga
 
-AI įrankių rinkinys Visual Studio Code yra galingas plėtinys, kuris supaprastina agentų kūrimą ir AI programų kūrimą. Įrankių rinkinys suteikia išsamias galimybes tyrinėti, vertinti ir diegti AI modelius iš įvairių tiekėjų, įskaitant Anthropic, OpenAI, GitHub, Google, tuo pačiu palaikant vietinį modelių vykdymą naudojant ONNX ir Ollama.
+AI įrankių rinkinys Visual Studio Code yra galinga plėtinys, supaprastinantis agentų kūrimą ir AI programų kūrimą. Šis įrankių rinkinys suteikia išsamių galimybių tyrinėti, vertinti ir diegti AI modelius iš daugybės teikėjų – įskaitant Anthropic, OpenAI, GitHub, Google – ir palaiko vietinį modelių vykdymą naudojant ONNX ir Ollama.
 
-Kas išskiria AI įrankių rinkinį, tai jo išsamus požiūris į visą AI kūrimo ciklą. Skirtingai nuo tradicinių AI kūrimo įrankių, kurie orientuojasi į vieną aspektą, AI įrankių rinkinys suteikia integruotą aplinką, apimančią modelių atradimą, eksperimentavimą, agentų kūrimą, vertinimą ir diegimą - visa tai pažįstamoje VS Code aplinkoje.
+Kas išskiria AI įrankių rinkinį, tai jo išsamus požiūris į visą AI kūrimo ciklą. Skirtingai nuo tradicinių AI kūrimo įrankių, kurie fokusuoja į atskirus aspektus, AI įrankių rinkinys suteikia integruotą aplinką, apimančią modelių paiešką, eksperimentavimą, agentų kūrimą, vertinimą ir diegimą – visa tai vyksta įprastoje VS Code aplinkoje.
 
-Platforma specialiai sukurta greitam prototipų kūrimui ir diegimui gamyboje, su funkcijomis, tokiomis kaip užklausų generavimas, greiti startai, sklandžios MCP (Model Context Protocol) įrankių integracijos ir išsamios vertinimo galimybės. Edge AI kūrimui tai reiškia, kad galite efektyviai kurti, testuoti ir optimizuoti AI programas kraštinio diegimo scenarijams, tuo pačiu išlaikydami visą kūrimo procesą VS Code aplinkoje.
+Platforma sukurta sparčiam prototipavimui ir gamybos diegimui, su tokiomis funkcijomis kaip greitas užklausų generavimas, pradedančiųjų įrankiai, sklandžios MCP (Model Context Protocol) įrankių integracijos ir plati vertinimo funkcionalumas. Edge AI plėtroje tai reiškia, kad galite efektyviai kurti, testuoti ir optimizuoti AI programas edge įrenginiams, išlaikant pilną kūrimo srautą VS Code.
 
 ## Mokymosi tikslai
 
-Pasibaigus šiam vadovui, jūs galėsite:
+Baigę šį vadovą galėsite:
 
-### Pagrindinės kompetencijos
-- **Įdiegti ir sukonfigūruoti** AI įrankių rinkinį Visual Studio Code Edge AI kūrimo procesams
-- **Naršyti ir naudoti** AI įrankių rinkinio sąsają, įskaitant Modelių katalogą, Žaidimų aikštelę ir Agentų kūrimo įrankį
-- **Pasirinkti ir vertinti** AI modelius, tinkamus kraštiniam diegimui, atsižvelgiant į našumą ir išteklių apribojimus
-- **Konvertuoti ir optimizuoti** modelius naudojant ONNX formatą ir kvantavimo technikas kraštiniams įrenginiams
+### Pagrindiniai gebėjimai
+- **Įdiegti ir konfigūruoti** AI įrankių rinkinį Visual Studio Code Edge AI plėtros darbų srautams
+- **Naršyti ir naudotis** AI įrankių rinkinio vartotojo sąsaja, įskaitant Modelių katalogą, Playground ir Agentų kūrėją
+- **Pasirinkti ir įvertinti** AI modelius, tinkamus edge diegimui, atsižvelgiant į našumą ir išteklių apribojimus
+- **Konvertuoti ir optimizuoti** modelius, naudojant ONNX formatą ir kvantizacijos metodus edge įrenginiams
 
-### Edge AI kūrimo įgūdžiai
-- **Sukurti ir įgyvendinti** Edge AI programas naudojant integruotą kūrimo aplinką
-- **Atlikti modelių testavimą** kraštinėmis sąlygomis naudojant vietinį įžvalgą ir išteklių stebėjimą
-- **Kurti ir pritaikyti** AI agentus, optimizuotus kraštinio diegimo scenarijams
-- **Vertinti modelių našumą** naudojant metrikas, svarbias kraštiniam kompiuterijos procesui (vėlavimas, atminties naudojimas, tikslumas)
+### Edge AI plėtros įgūdžiai
+- **Projektuoti ir įgyvendinti** Edge AI programas naudojant integruotą kūrimo aplinką
+- **Atlikti modelių testavimą** edge sąlygoms panašiose aplinkose, naudojant vietinį inferencijos ir išteklių stebėjimą
+- **Kurti ir pritaikyti** AI agentus, optimizuotus edge diegimo scenarijams
+- **Vertinti modelių našumą** naudojant edge skaičiavimams būdingus rodiklius (atidėjimas, atminties naudojimas, tikslumas)
 
 ### Optimizavimas ir diegimas
-- **Taikyti kvantavimo ir genėjimo** technikas, kad sumažintumėte modelio dydį, išlaikant priimtiną našumą
-- **Optimizuoti modelius** konkrečioms kraštinio kompiuterio platformoms, įskaitant CPU, GPU ir NPU pagreitį
-- **Įgyvendinti geriausią praktiką** Edge AI kūrimui, įskaitant išteklių valdymą ir atsargines strategijas
-- **Paruošti modelius ir programas** diegimui gamyboje kraštiniuose įrenginiuose
+- **Taikyti kvantizavimo ir apkarpymo** metodus, siekiant sumažinti modelio dydį, išlaikant priimtiną našumą
+- **Optimizuoti modelius** konkrečiai edge aparatinei įrangai, įskaitant CPU, GPU ir NPU pagreitintuvus
+- **Įgyvendinti geriausias praktikas** Edge AI plėtroje, įskaitant išteklių valdymą ir atsarginių strategijų taikymą
+- **Paruošti modelius ir programas** gamybos diegimui edge įrenginiuose
 
-### Pažangios Edge AI sąvokos
-- **Integruoti su kraštinėmis AI sistemomis** įskaitant ONNX Runtime, Windows ML ir TensorFlow Lite
-- **Įgyvendinti daugiamodelines architektūras** ir federuoto mokymosi scenarijus kraštinėms aplinkoms
-- **Spręsti dažnas Edge AI problemas** įskaitant atminties apribojimus, įžvalgos greitį ir aparatūros suderinamumą
-- **Sukurti stebėjimo ir registravimo** strategijas Edge AI programoms gamyboje
+### Pažengusios Edge AI sąvokos
+- **Integruotis su edge AI sistemomis** įskaitant ONNX Runtime, Windows ML ir TensorFlow Lite
+- **Įgyvendinti daugiamodelių architektūras** ir federuotą mokymą edge aplinkose
+- **Spręsti dažniausias edge AI problemas** įskaitant atminties apribojimus, inferencijos greitį ir aparatūros suderinamumą
+- **Projektuoti stebėjimo ir žurnalo** strategijas Edge AI programoms gamybos aplinkoje
 
-### Praktinis pritaikymas
-- **Sukurti pilnus Edge AI sprendimus** nuo modelio pasirinkimo iki diegimo
-- **Demonstruoti įgūdžius** kraštiniams kūrimo procesams ir optimizavimo technikoms
-- **Taikyti išmoktas sąvokas** realaus pasaulio Edge AI naudojimo atvejams, įskaitant IoT, mobilias ir įterptines programas
-- **Vertinti ir palyginti** skirtingas Edge AI diegimo strategijas ir jų kompromisus
+### Praktinis taikymas
+- **Kurti pilnas Edge AI sprendimų grandines** nuo modelio pasirinkimo iki diegimo
+- **Demonstracija įgūdžių** edge specifiniuose kūrimo projektuose ir optimizavimo metodose
+- **Taikyti įgytas žinias** realaus pasaulio edge AI panaudojimuose, įskaitant IoT, mobiliąsias ir įterptąsias programas
+- **Vertinti ir palyginti** skirtingas edge AI diegimo strategijas ir jų kompromisus
 
-## Pagrindinės funkcijos Edge AI kūrimui
+## Pagrindinės Edge AI kūrimo funkcijos
 
-### 1. Modelių katalogas ir atradimas
-- **Daugiatiekėjų palaikymas**: Naršykite ir pasiekite AI modelius iš Anthropic, OpenAI, GitHub, Google ir kitų tiekėjų
-- **Vietinių modelių integracija**: Supaprastintas ONNX ir Ollama modelių atradimas kraštiniam diegimui
-- **GitHub modeliai**: Tiesioginė integracija su GitHub modelių talpinimu, kad būtų lengviau pasiekti
-- **Modelių palyginimas**: Palyginkite modelius vienas šalia kito, kad rastumėte optimalų balansą kraštinių įrenginių apribojimams
+### 1. Modelių katalogas ir paieška
+- **Daugiaprotektorių palaikymas**: Naršykite ir pasiekite AI modelius iš Anthropic, OpenAI, GitHub, Google ir kitų teikėjų
+- **Vietinė modelių integracija**: Supaprastinta ONNX ir Ollama modelių paieška edge diegimui
+- **GitHub modeliai**: Tiesioginė integracija su GitHub modelių talpinimu sklandžiai prieigai
+- **Modelių palyginimas**: Lyginkite modelius šalia vienas kito, kad rastumėte optimalią pusiausvyrą edge įrenginių apribojimams
 
-### 2. Interaktyvi žaidimų aikštelė
-- **Interaktyvi testavimo aplinka**: Greitas eksperimentavimas su modelių galimybėmis kontroliuojamoje aplinkoje
-- **Daugiarūšis palaikymas**: Testavimas su vaizdais, tekstu ir kitais įvesties tipais, būdingais kraštinėms situacijoms
-- **Eksperimentavimas realiu laiku**: Momentinis grįžtamasis ryšys apie modelio atsakymus ir našumą
-- **Parametrų optimizavimas**: Modelio parametrų pritaikymas kraštinio diegimo reikalavimams
+### 2. Interaktyvus Playground
+- **Interaktyvi bandymų aplinka**: Greitas eksperimentavimas su modelių galimybėmis kontroliuojamoje aplinkoje
+- **Daugiamodalinis palaikymas**: Testuokite su vaizdais, tekstu ir kitais įvedimais, būdingais edge scenarijams
+- **Realaus laiko eksperimentavimas**: Akimirksniu gaukite atsiliepimus apie modelio atsakus ir našumą
+- **Parametrų optimizavimas**: Koreguokite modelio parametrus edge diegimo reikalavimams
 
-### 3. Užklausų (agentų) kūrimo įrankis
-- **Natūralios kalbos generavimas**: Sukurkite pradinius užklausas naudodami natūralios kalbos aprašymus
-- **Iteratyvus tobulinimas**: Tobulinkite užklausas pagal modelio atsakymus ir našumą
-- **Užduočių skaidymas**: Suskaidykite sudėtingas užduotis naudojant užklausų grandines ir struktūrizuotus rezultatus
+### 3. Užklausų (Agentų) kūrėjas
+- **Natūralios kalbos generavimas**: Generuokite pradines užklausas naudodami natūralių kalbų aprašymus
+- **Iteratyvus tobulinimas**: Tobulinkite užklausas pagal modelio atsakus ir našumą
+- **Užduočių suskaidymas**: Sudėtingas užduotis suskaidykite su užklausų grandiniais ir struktūruotais atsakymais
 - **Kintamųjų palaikymas**: Naudokite kintamuosius užklausose dinamiškam agentų elgesiui
-- **Gamybos kodo generavimas**: Generuokite gamybai paruoštą kodą greitam programų kūrimui
+- **Gamybinio kodo generavimas**: Sugeneruokite gamybai paruoštą kodą greitam programų kūrimui
 
-### 4. Masinis vykdymas ir vertinimas
-- **Daugiamodelinis testavimas**: Vykdykite kelias užklausas per pasirinktus modelius vienu metu
-- **Efektyvus testavimas mastu**: Testuokite įvairias įvestis ir konfigūracijas efektyviai
-- **Individualūs testavimo atvejai**: Vykdykite agentus su testavimo atvejais, kad patikrintumėte funkcionalumą
-- **Našumo palyginimas**: Palyginkite rezultatus tarp skirtingų modelių ir konfigūracijų
+### 4. Kiekybinis vykdymas ir vertinimas
+- **Daugiamodelių testavimas**: Vykdykite kelias užklausas iš karto su pasirinktais modeliais
+- **Efektyvus testavimas mastu**: Greitai išbandykite įvairius įvedimus ir konfigūracijas
+- **Individualūs bandymo atvejai**: Vykdykite agentus su testinėmis situacijomis funkcionalumui patikrinti
+- **Našumo palyginimas**: Lyginkite rezultatus tarp skirtingų modelių ir konfigūracijų
 
 ### 5. Modelių vertinimas su duomenų rinkiniais
-- **Standartinės metrikos**: Testuokite AI modelius naudodami įmontuotus vertintojus (F1 balas, aktualumas, panašumas, nuoseklumas)
-- **Individualūs vertintojai**: Sukurkite savo vertinimo metrikas specifiniams naudojimo atvejams
+- **Standartiniai matavimai**: Testuokite AI modelius su integruotais vertintojais (F1 balas, aktualumas, panašumas, nuoseklumas)
+- **Individualūs vertintojai**: Kurkite savo vertinimo metrikas specifinėms panaudojimo situacijoms
 - **Duomenų rinkinių integracija**: Testuokite modelius su išsamiais duomenų rinkiniais
-- **Našumo matavimas**: Kiekybiškai įvertinkite modelio našumą kraštinio diegimo sprendimams
+- **Našumo matavimas**: Kiekybiškai įvertinkite modelių našumą edge diegimo sprendimams
 
-### 6. Modelių pritaikymo galimybės
-- **Modelių pritaikymas**: Pritaikykite modelius specifiniams naudojimo atvejams ir sritims
-- **Specializuotas pritaikymas**: Pritaikykite modelius specializuotoms sritims ir reikalavimams
-- **Edge optimizavimas**: Pritaikykite modelius specialiai kraštinio diegimo apribojimams
-- **Srities specifinis mokymas**: Sukurkite modelius, pritaikytus specifiniams kraštinio naudojimo atvejams
+### 6. Tolimesnis modelių derinimas
+- **Modelių pritaikymas**: Pritaikykite modelius specifinėms panaudojimo sritims ir domenams
+- **Specializuotas adaptavimas**: Adaptuokite modelius specializuotiems domenams ir reikalavimams
+- **Edge optimizacija**: Koreguokite modelius specialiai edge diegimo apribojimams
+- **Domenui specifiškas mokymas**: Kurkite modelius, pritaikytus konkrečioms edge panaudojimo atvejams
 
 ### 7. MCP įrankių integracija
-- **Išorinių įrankių jungtys**: Jungkite agentus su išoriniais įrankiais per Model Context Protocol serverius
-- **Veiksmai realiame pasaulyje**: Leiskite agentams užklausyti duomenų bazes, pasiekti API ar vykdyti individualią logiką
-- **Esami MCP serveriai**: Naudokite įrankius iš komandų (stdio) arba HTTP (server-sent event) protokolų
-- **Individualus MCP kūrimas**: Kurkite ir struktūrizuokite naujus MCP serverius su testavimu Agentų kūrimo įrankyje
+- **Išorinių įrankių jungtis**: Prisijunkite prie agentų per Model Context Protocol serverius
+- **Realaus pasaulio veiksmai**: Leiskite agentams užklausti duomenų bazes, pasiekti API ar vykdyti kitą logiką
+- **Esami MCP serveriai**: Naudokite įrankius per komandų (stdio) arba HTTP (serverio įvykiai) protokolus
+- **Individuali MCP kūrimas**: Kurkite ir modeliuokite naujus MCP serverius su testavimu Agentų kūrėjo aplinkoje
 
 ### 8. Agentų kūrimas ir testavimas
-- **Funkcijų kvietimo palaikymas**: Leiskite agentams dinamiškai kviesti išorines funkcijas
-- **Testavimas realiu laiku**: Testuokite integracijas su realiu laiku vykdomais testais ir įrankių naudojimu
-- **Agentų versijavimas**: Agentų versijų kontrolė su palyginimo galimybėmis vertinimo rezultatams
-- **Debugging ir sekimas**: Vietinis sekimas ir klaidų taisymas agentų kūrimui
+- **Funkcijų iškvietimų palaikymas**: Leiskite agentams dinamiškai kviesti išorines funkcijas
+- **Realaus laiko integracijos testavimas**: Testuokite integracijas su realaus laiko paleidimais ir įrankių naudojimu
+- **Agentų versijavimas**: Valdykite agentų versijas su galimybėmis palyginti vertinimo rezultatus
+- **Derinimas ir sekimas**: Vietiniai įrankiai agentų kūrimui derinti ir stebėti
 
-## Edge AI kūrimo procesas
+## Edge AI kūrimo darbo eiga
 
-### 1 etapas: Modelių atradimas ir pasirinkimas
-1. **Naršykite modelių katalogą**: Naudokite modelių katalogą, kad rastumėte modelius, tinkamus kraštiniam diegimui
-2. **Palyginkite našumą**: Vertinkite modelius pagal dydį, tikslumą ir įžvalgos greitį
-3. **Testuokite vietoje**: Naudokite Ollama arba ONNX modelius testavimui vietoje prieš kraštinį diegimą
-4. **Įvertinkite išteklių reikalavimus**: Nustatykite atminties ir skaičiavimo poreikius tiksliniams kraštiniams įrenginiams
+### 1 etapas: modelių paieška ir pasirinkimas
+1. **Naršykite modelių katalogą**: Naudokite modelių katalogą, kad rastumėte modelius, tinkamus edge diegimui
+2. **Palyginkite našumą**: Įvertinkite modelius pagal dydį, tikslumą ir inferencijos greitį
+3. **Testuokite vietoje**: Naudodami Ollama arba ONNX modelius išbandykite vietoje prieš edge diegimą
+4. **Įvertinkite išteklių poreikius**: Nustatykite atminties ir skaičiavimo reikalavimus tiksliniams edge įrenginiams
 
-### 2 etapas: Modelių optimizavimas
-1. **Konvertuokite į ONNX**: Konvertuokite pasirinktus modelius į ONNX formatą kraštiniam suderinamumui
-2. **Taikykite kvantavimą**: Sumažinkite modelio dydį naudodami INT8 arba INT4 kvantavimą
-3. **Aparatūros optimizavimas**: Optimizuokite tiksliniams kraštiniams įrenginiams (ARM, x86, specializuoti pagreičiai)
-4. **Našumo patvirtinimas**: Patvirtinkite, kad optimizuoti modeliai išlaiko priimtiną tikslumą
+### 2 etapas: modelių optimizavimas
+1. **Konvertuokite į ONNX**: Pasirinktus modelius konvertuokite į ONNX formatą, suderinamą su edge įrenginiais
+2. **Taikykite kvantizavimą**: Sumažinkite modelio dydį naudodami INT8 arba INT4 kvantizaciją
+3. **Optimizuokite aparatūrai**: Optimizuokite modeliui pagal tikslinį edge aparatūros tipą (ARM, x86, specializuoti pagreitintuvai)
+4. **Patvirtinkite našumą**: Įsitikinkite, kad optimizuoti modeliai išlaiko priimtiną tikslumą
 
-### 3 etapas: Programų kūrimas
-1. **Agentų dizainas**: Naudokite Agentų kūrimo įrankį, kad sukurtumėte kraštiniams optimizuotus AI agentus
-2. **Užklausų inžinerija**: Sukurkite užklausas, kurios efektyviai veikia su mažesniais kraštiniais modeliais
-3. **Integracijos testavimas**: Testuokite agentus simuliuotomis kraštinėmis sąlygomis
-4. **Kodo generavimas**: Generuokite gamybai optimizuotą kodą kraštiniam diegimui
+### 3 etapas: programos kūrimas
+1. **Agentų projektavimas**: Naudokite Agentų kūrėją, kad sukurtumėte edge optimizuotus AI agentus
+2. **Užklausų kūrimas**: Kurkite užklausas, kurios efektyviai veiktų su mažesniais edge modeliais
+3. **Integracijos testavimas**: Testuokite agentų veikimą simuliuotomis edge sąlygomis
+4. **Kodo generavimas**: Generuokite gamybai optimizuotą kodą edge diegimui
 
-### 4 etapas: Vertinimas ir testavimas
-1. **Masinis vertinimas**: Testuokite kelias konfigūracijas, kad rastumėte optimalias kraštines sąlygas
-2. **Našumo profilavimas**: Analizuokite įžvalgos greitį, atminties naudojimą ir tikslumą
-3. **Kraštinė simuliacija**: Testuokite sąlygomis, panašiomis į tikslinį kraštinį diegimo aplinką
-4. **Streso testavimas**: Vertinkite našumą įvairiomis apkrovos sąlygomis
+### 4 etapas: vertinimas ir testavimas
+1. **Kiekybinis vertinimas**: Testuokite kelias konfigūracijas, kad surastumėte optimalias edge nustatymus
+2. **Našumo profilavimas**: Analizuokite inferencijos greitį, atminties naudojimą ir tikslumą
+3. **Edge simuliacija**: Testuokite sąlygose, panašiomis į tikslinę edge diegimo aplinką
+4. **Streso testavimas**: Vertinkite našumą esant įvairioms apkrovos sąlygoms
 
-### 5 etapas: Diegimo paruošimas
-1. **Galutinis optimizavimas**: Taikykite galutines optimizacijas pagal testavimo rezultatus
-2. **Diegimo paketavimas**: Supakuokite modelius ir kodą kraštiniam diegimui
-3. **Dokumentacija**: Dokumentuokite diegimo reikalavimus ir konfigūraciją
-4. **Stebėjimo nustatymas**: Paruoškite stebėjimą ir registravimą kraštiniam diegimui
+### 5 etapas: diegimo paruošimas
+1. **Galutinė optimizacija**: Pritaikykite galutines optimizacijas pagal testavimo rezultatus
+2. **Diegimo paketavimas**: Supakuokite modelius ir kodą edge diegimui
+3. **Dokumentacija**: Paruoškite diegimo reikalavimų ir konfigūracijos dokumentaciją
+4. **Stebėjimo paruošimas**: Pasiruoškite stebėjimui ir žurnalų fiksavimui edge diegime
 
-## Tikslinė auditorija Edge AI kūrimui
+## Tikslinė auditorija Edge AI kūrėjams
 
 ### Edge AI kūrėjai
-- Programų kūrėjai, kuriantys AI pagrįstus kraštinius įrenginius ir IoT sprendimus
-- Įterptinių sistemų kūrėjai, integruojantys AI galimybes į išteklių apribotus įrenginius
-- Mobilieji kūrėjai, kuriantys AI programas įrenginiuose, tokiuose kaip išmanieji telefonai ir planšetės
+- Programėlių kūrėjai, kuriantys AI valdomus edge įrenginius ir IoT sprendimus
+- Įterptų sistemų kūrėjai, įdiegiantys AI galimybes į ribotų išteklių įrenginius
+- Mobilieji kūrėjai, kuriantys įrenginiuose veikiančias AI programas telefonams ir planšetėms
 
 ### Edge AI inžinieriai
-- AI inžinieriai, optimizuojantys modelius kraštiniam diegimui ir valdantys įžvalgos procesus
-- DevOps inžinieriai, diegiantys ir valdantys AI modelius paskirstytoje kraštinėje infrastruktūroje
-- Našumo inžinieriai, optimizuojantys AI darbo krūvius kraštinės aparatūros apribojimams
+- AI inžinieriai, optimizuojantys modelius edge diegimui ir valdantys inferencijos grandinės procesus
+- DevOps inžinieriai, diegiantys ir valdantys AI modelius paskirstytoje edge infrastruktūroje
+- Našumo inžinieriai, optimizuojantys AI darbo krūvius pagal edge aparatūros apribojimus
 
 ### Tyrėjai ir pedagogai
-- AI tyrėjai, kuriantys efektyvius modelius ir algoritmus kraštiniam kompiuterijos procesui
-- Pedagogai, mokantys Edge AI sąvokų ir demonstruojantys optimizavimo technikas
-- Studentai, besimokantys apie iššūkius ir sprendimus kraštinio AI diegimo srityje
+- AI tyrėjai, kuriantys efektyvius modelius ir algoritmus edge skaičiavimams
+- Pedagogai, mokantys Edge AI sąvokų ir demonstruojantys optimizavimo metodus
+- Studentai, besimokantys apie iššūkius ir sprendimus edge AI diegime
 
-## Edge AI naudojimo atvejai
+## Edge AI panaudojimo atvejai
 
 ### Išmanieji IoT įrenginiai
-- **Vaizdų atpažinimas realiu laiku**: Diegti kompiuterinės vizijos modelius IoT kamerose ir jutikliuose
-- **Balso apdorojimas**: Įgyvendinti kalbos atpažinimą ir natūralios kalbos apdorojimą išmaniuose garsiakalbiuose
-- **Prognozuojama priežiūra**: Vykdyti anomalijų aptikimo modelius pramoniniuose kraštiniuose įrenginiuose
-- **Aplinkos stebėjimas**: Diegti jutiklių duomenų analizės modelius aplinkos programoms
+- **Realaus laiko vaizdų atpažinimas**: Diegti kompiuterinės regos modelius IoT kameroms ir jutikliams
+- **Balso apdorojimas**: Įgyvendinti kalbos atpažinimą ir natūralios kalbos apdorojimą išmaniuosiuose garsiakalbiuose
+- **Prognozuojamoji priežiūra**: Vykdyti anomalijų aptikimo modelius pramonės edge įrenginiuose
+- **Aplinkos stebėjimas**: Diegti jutiklių duomenų analizės modelius aplinkos taikymams
 
-### Mobiliosios ir įterptinės programos
-- **Vertimas įrenginyje**: Įgyvendinti kalbos vertimo modelius, kurie veikia neprisijungus
-- **Papildyta realybė**: Diegti realaus laiko objektų atpažinimą ir sekimą AR programoms
-- **Sveikatos stebėjimas**: Vykdyti sveikatos analizės modelius
-2. Sukurkite pradinius raginimus naudodami natūralios kalbos aprašymus  
-3. Kartokite ir tobulinkite raginimus pagal modelio atsakymus  
-4. Integruokite MCP įrankius, kad pagerintumėte agentų galimybes  
+### Mobiliosios ir įterptosios programos
+- **Įrenginio vertimas**: Įgyvendinti kalbų vertimo modelius veikiančius neprisijungus
+- **Papildyta realybė**: Diegti realaus laiko objektų atpažinimą ir sekimą AR programose
+- **Sveikatos stebėjimas**: Vykdyti sveikatos analizės modelius dėvimose įrangoje ir medicininėje įrangoje
+- **Autonominės sistemos**: Įgyvendinti sprendimų priėmimo modelius dronams, robotams ir transporto priemonėms
 
-#### 3 žingsnis: Testavimas ir vertinimas  
-1. Naudokite **Bulk Run**, kad išbandytumėte kelis raginimus skirtinguose modeliuose  
-2. Paleiskite agentus su testavimo atvejais, kad patikrintumėte funkcionalumą  
-3. Įvertinkite tikslumą ir našumą naudodami įmontuotus arba pasirinktinius metrikos įrankius  
-4. Palyginkite skirtingus modelius ir konfigūracijas  
+### Edge skaičiavimo infrastruktūra
+- **Edge duomenų centrai**: Diegti AI modelius edge duomenų centruose mažo delsos taikymams
+- **CDN integracija**: Integruoti AI apdorojimo galimybes turinio pristatymo tinkluose
+- **5G Edge**: Pasinaudoti 5G edge skaičiavimu AI valdomoms programoms
+- **Rūko skaičiavimas**: Įgyvendinti AI apdorojimą rūko skaičiavimo aplinkose
 
-#### 4 žingsnis: Tobulinimas ir optimizavimas  
-1. Pritaikykite modelius specifiniams kraštutiniams naudojimo atvejams  
-2. Taikykite specifinį domeno tobulinimą  
-3. Optimizuokite pagal kraštutinius diegimo apribojimus  
-4. Versijuokite ir palyginkite skirtingas agentų konfigūracijas  
+## Diegimas ir nustatymas
 
-#### 5 žingsnis: Paruošimas diegimui  
-1. Sukurkite gamybai paruoštą kodą naudodami Agent Builder  
-2. Nustatykite MCP serverio ryšius gamybos naudojimui  
-3. Paruoškite diegimo paketus kraštutiniams įrenginiams  
-4. Konfigūruokite stebėjimo ir vertinimo metrikas  
+### Plėtinio diegimas
+Įdiekite AI įrankių rinkinio plėtinį tiesiogiai iš Visual Studio Code Marketplace:
 
-## AI įrankių rinkinio pavyzdžiai  
+**Plėtinio ID**: `ms-windows-ai-studio.windows-ai-studio`
 
-Išbandykite mūsų pavyzdžius  
-[AI Toolkit pavyzdžiai](https://github.com/Azure-Samples/AI_Toolkit_Samples) sukurti tam, kad padėtų kūrėjams ir tyrėjams efektyviai tyrinėti ir įgyvendinti AI sprendimus.  
+**Diegimo būdai**:
+1. **VS Code Marketplace**: Ieškokite „AI Toolkit“ Extensions peržiūros skiltyje
+2. **Komandinė eilutė**: `code --install-extension ms-windows-ai-studio.windows-ai-studio`
+3. **Tiesioginis diegimas**: Atsisiųskite iš [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-Mūsų pavyzdžiai apima:  
+### Būtini reikalavimai Edge AI plėtrai
+- **Visual Studio Code**: Rekomenduojama naujausia versija
+- **Python aplinka**: Python 3.8+ su reikiamomis AI bibliotekomis
+- **ONNX Runtime** (pasirinktinai): ONNX modelio inferencijai
+- **Ollama** (pasirinktinai): Vietiniam modelių aptarnavimui
+- **Aparatūros pagreitinimo įrankiai**: CUDA, OpenVINO arba platformai specifiški pagreitintuvai
 
-Pavyzdinis kodas: Iš anksto sukurti pavyzdžiai, demonstruojantys AI funkcionalumą, pvz., modelių mokymą, diegimą ar integravimą į programas.  
-Dokumentacija: Vadovai ir pamokos, padedančios suprasti AI Toolkit funkcijas ir kaip jas naudoti.  
-Reikalavimai  
+### Pirminiai nustatymai
+1. **Plėtinio aktyvavimas**: Atidarykite VS Code ir patikrinkite, ar AI įrankių rinkinys matomas veiksmo juostoje
+2. **Modelių teikėjo nustatymai**: Sujunkite prie GitHub, OpenAI, Anthropic ar kitų modelių teikėjų
+3. **Vietinė aplinka**: Paruoškite Python aplinką ir įdiekite reikiamus paketus
+4. **Aparatūros pagreitinimas**: Jei įmanoma, konfigūruokite GPU/NPU pagreitinimą
+5. **MCP integracija**: Prireikus nustatykite Model Context Protocol serverius
 
-- Visual Studio Code  
-- AI Toolkit for Visual Studio Code  
-- GitHub smulkiai apibrėžtas asmeninis prieigos raktas (PAT)  
-- Foundry Local  
+### Pirmojo naudojimo patikrinimo sąrašas
+- [ ] AI įrankių rinkinio plėtinys įdiegtas ir aktyvuotas
+- [ ] Modelių katalogas pasiekiamas ir modeliai randami
+- [ ] Playground veikia modelių testavimui
+- [ ] Agentų kūrėjas pasiekiamas užklausų kūrimui
+- [ ] Vietinė kūrimo aplinka paruošta
+- [ ] Aparatūros pagreitinimas (jei taikoma) tinkamai sukonfigūruotas
 
-## Geriausia praktika kraštutiniam AI vystymui  
+## Pradžia su AI įrankių rinkiniu
 
-### Modelio pasirinkimas  
-- **Dydžio apribojimai**: Pasirinkite modelius, kurie atitinka tikslinių įrenginių atminties apribojimus  
-- **Įžvalgų greitis**: Pirmenybę teikite modeliams su greitu įžvalgų laiku realaus laiko programoms  
-- **Tikslumo kompromisai**: Subalansuokite modelio tikslumą su resursų apribojimais  
-- **Formatų suderinamumas**: Pirmenybę teikite ONNX arba aparatūros optimizuotiems formatams kraštutiniam diegimui  
+### Greito paleidimo vadovas
 
-### Optimizavimo technikos  
-- **Kvantizacija**: Naudokite INT8 arba INT4 kvantizaciją, kad sumažintumėte modelio dydį ir pagerintumėte greitį  
-- **Genėjimas**: Pašalinkite nereikalingus modelio parametrus, kad sumažintumėte skaičiavimo reikalavimus  
-- **Žinių distiliacija**: Sukurkite mažesnius modelius, kurie išlaiko didesnių modelių našumą  
-- **Aparatūros pagreitinimas**: Naudokite NPUs, GPUs arba specializuotus akceleratorius, kai jie yra prieinami  
+Rekomenduojame pradėti nuo GitHub talpinamų modelių, kad patirtis būtų kuo sklandesnė:
 
-### Vystymo procesas  
-- **Iteratyvus testavimas**: Dažnai testuokite kraštutiniam naudojimui panašiomis sąlygomis vystymo metu  
-- **Našumo stebėjimas**: Nuolat stebėkite resursų naudojimą ir įžvalgų greitį  
-- **Versijų kontrolė**: Sekite modelio versijas ir optimizavimo nustatymus  
-- **Dokumentacija**: Dokumentuokite visus optimizavimo sprendimus ir našumo kompromisus  
+1. **Įdiegimas**: Vadovaukitės [įdiegimo vadovu](https://code.visualstudio.com/docs/intelligentapps/overview#_install-and-setup), kad pasiruoštumėte AI įrankių rinkinį savo įrenginyje
+2. **Modelių paieška**: Iš plėtinio medžio peržiūros skiltyje pasirinkite **CATALOG > Models** norėdami tyrinėti turimus modelius
+3. **GitHub modeliai**: Pradėkite nuo GitHub talpinamų modelių, kad būtų užtikrinta optimaliausia integracija
+4. **Playground testavimas**: Iš bet kurios modelio kortelės pasirinkite **Try in Playground**, kad pradėtumėte eksperimentuoti su modelio galimybėmis
 
-### Diegimo aspektai  
-- **Resursų stebėjimas**: Stebėkite atminties, CPU ir energijos naudojimą gamyboje  
-- **Atsarginės strategijos**: Įgyvendinkite atsargines mechanizmus modelio gedimams  
-- **Atnaujinimo mechanizmai**: Planuokite modelio atnaujinimus ir versijų valdymą  
-- **Saugumas**: Įgyvendinkite tinkamas saugumo priemones kraštutiniam AI programoms  
+### Žingsnis po žingsnio Edge AI plėtra
 
-## Integracija su kraštutiniais AI rėmais  
+#### 1 žingsnis: modelių tyrinėjimas ir pasirinkimas
+1. Atidarykite AI įrankių rinkinio peržiūrą VS Code Veiksmo juostoje
+2. Naršykite Modelių katalogą, kad rastumėte modelius, tinkamus edge diegimui
+3. Filtruokite pagal teikėją (GitHub, ONNX, Ollama), atsižvelgdami į savo edge reikalavimus
+4. Naudokite **Try in Playground** norėdami iš karto išbandyti modelio galimybes
 
-### ONNX Runtime  
-- **Kryžminė platforma**: Diegkite ONNX modelius skirtingose kraštutinėse platformose  
-- **Aparatūros optimizavimas**: Pasinaudokite ONNX Runtime aparatūros specifinėmis optimizacijomis  
-- **Mobilus palaikymas**: Naudokite ONNX Runtime Mobile išmaniesiems telefonams ir planšetėms  
-- **IoT integracija**: Diegkite IoT įrenginiuose naudodami ONNX Runtime lengvas distribucijas  
+#### 2 žingsnis: agentų kūrimas
+1. Naudokite **Užklausų (Agentų) kūrėją**, kad sukurtumėte edge optimizuotus AI agentus
+2. Generuokite pradines užklausas naudodami natūralių kalbų aprašymus
+3. Iteratyviai tobulinkite užklausas pagal modelio atsakus
+4. Integruokite MCP įrankius, kad pagerintumėte agentų galimybes
 
-### Windows ML  
-- **Windows įrenginiai**: Optimizuokite Windows pagrindu veikiančius kraštutinius įrenginius ir kompiuterius  
-- **NPU pagreitinimas**: Pasinaudokite Neural Processing Units Windows įrenginiuose  
-- **DirectML**: Naudokite DirectML GPU pagreitinimui Windows platformose  
-- **UWP integracija**: Integruokite su Universal Windows Platform programomis  
 
-### TensorFlow Lite  
-- **Mobilus optimizavimas**: Diegkite TensorFlow Lite modelius mobiliuose ir įterptiniuose įrenginiuose  
-- **Aparatūros delegatai**: Naudokite specializuotus aparatūros delegatus pagreitinimui  
-- **Mikro kontroleriai**: Diegkite mikro kontroleriuose naudodami TensorFlow Lite Micro  
-- **Kryžminė platforma**: Diegkite Android, iOS ir įterptiniuose Linux sistemose  
+#### 3 žingsnis: Testavimas ir vertinimas
+1. Naudokite **Bulk Run**, kad išbandytumėte kelis užklausimus skirtingose pasirinktuose modeliuose
+2. Paleiskite agentus su testavimo atvejais, kad patvirtintumėte funkcionalumą
+3. Įvertinkite tikslumą ir našumą naudodami įmontuotus arba pasirinktinius metrikus
+4. Palyginkite skirtingus modelius ir konfigūracijas
 
-### Azure IoT Edge  
-- **Debesų-krašto hibridas**: Derinkite debesų mokymą su krašto įžvalgomis  
-- **Modulių diegimas**: Diegkite AI modelius kaip IoT Edge modulius  
-- **Įrenginių valdymas**: Nuotoliniu būdu valdykite kraštutinius įrenginius ir modelio atnaujinimus  
-- **Telemetrija**: Rinkite našumo duomenis ir modelio metrikas iš kraštutinių diegimų  
+#### 4 žingsnis: Smulkus reguliavimas ir optimizavimas
+1. Pritaikykite modelius specifiniams kraštinių naudotojų atvejams
+2. Taikykite srities specifinį smulkų reguliavimą
+3. Optimizuokite kraštinių įrenginių diegimo apribojimams
+4. Versijuokite ir palyginkite skirtingas agentų konfigūracijas
 
-## Pažangūs kraštutinio AI scenarijai  
+#### 5 žingsnis: Paruošimas diegimui
+1. Generuokite gamybos kodą naudodami Agent Builder
+2. Nustatykite MCP serverio jungtis gamybiniam naudojimui
+3. Paruoškite diegimo paketus kraštinių įrenginiams
+4. Konfigūruokite stebėjimo ir vertinimo metrikas
 
-### Daugelio modelių diegimas  
-- **Modelių ansambliai**: Diegkite kelis modelius, kad pagerintumėte tikslumą arba užtikrintumėte atsarginį variantą  
-- **A/B testavimas**: Testuokite skirtingus modelius vienu metu kraštutiniuose įrenginiuose  
-- **Dinaminis pasirinkimas**: Pasirinkite modelius pagal dabartines įrenginio sąlygas  
-- **Resursų dalijimasis**: Optimizuokite resursų naudojimą tarp kelių diegtų modelių  
+## Pavyzdžiai AI įrankių rinkiniui 
 
-### Federuotas mokymasis  
-- **Distribuotas mokymas**: Mokykite modelius keliuose kraštutiniuose įrenginiuose  
-- **Privatumo išsaugojimas**: Laikykite mokymo duomenis vietoje, dalindamiesi modelio patobulinimais  
-- **Bendradarbiavimo mokymasis**: Leiskite įrenginiams mokytis iš kolektyvinės patirties  
-- **Krašto-debesų koordinacija**: Koordinuokite mokymą tarp kraštutinių įrenginių ir debesų infrastruktūros  
+Išbandykite mūsų pavyzdžius
+[AI įrankių rinkinio pavyzdžiai](https://github.com/Azure-Samples/AI_Toolkit_Samples) skirti padėti kūrėjams ir tyrėjams efektyviai tirti ir įgyvendinti AI sprendimus.
 
-### Realiojo laiko apdorojimas  
-- **Srautinis apdorojimas**: Apdorokite nuolatinius duomenų srautus kraštutiniuose įrenginiuose  
-- **Mažos vėlavimo įžvalgos**: Optimizuokite minimaliai įžvalgų vėlavimui  
-- **Partinis apdorojimas**: Efektyviai apdorokite duomenų partijas kraštutiniuose įrenginiuose  
-- **Adaptacinis apdorojimas**: Koreguokite apdorojimą pagal dabartines įrenginio galimybes  
+Mūsų pavyzdžiai apima:
 
-## Kraštutinio AI vystymo trikčių šalinimas  
+Pavyzdinis kodas: Paruošti pavyzdžiai, demonstruojantys AI funkcionalumą, pvz., mokymas, diegimas ar modelių integracija į programas.
+Dokumentacija: Vadovai ir pamokos, padedančios vartotojams suprasti AI įrankių rinkinio funkcijas ir jų naudojimą.
+Išankstinės sąlygos
 
-### Dažnos problemos  
-- **Atminties apribojimai**: Modelis per didelis tikslinio įrenginio atminčiai  
-- **Įžvalgų greitis**: Modelio įžvalgos per lėtos realaus laiko reikalavimams  
-- **Tikslumo degradacija**: Optimizavimas nepriimtinai sumažina modelio tikslumą  
-- **Aparatūros suderinamumas**: Modelis nesuderinamas su tiksline aparatūra  
+- Visual Studio Code
+- AI įrankių rinkinys Visual Studio Code
+- GitHub smulkiai valdomas asmeninis prieigos raktas (PAT)
+- Foundry Local
 
-### Derinimo strategijos  
-- **Našumo profilavimas**: Naudokite AI Toolkit sekimo funkcijas, kad identifikuotumėte kliūtis  
-- **Resursų stebėjimas**: Stebėkite atminties ir CPU naudojimą vystymo metu  
-- **Inkrementinis testavimas**: Testuokite optimizacijas palaipsniui, kad izoliuotumėte problemas  
-- **Aparatūros simuliacija**: Naudokite vystymo įrankius, kad simuliuotumėte tikslinę aparatūrą  
+## Geriausios praktikos kraštinių AI plėtrai
 
-### Optimizavimo sprendimai  
-- **Tolimesnė kvantizacija**: Taikykite agresyvesnes kvantizacijos technikas  
-- **Modelio architektūra**: Apsvarstykite skirtingas modelio architektūras, optimizuotas kraštui  
-- **Išankstinio apdorojimo optimizavimas**: Optimizuokite duomenų išankstinį apdorojimą kraštutiniams apribojimams  
-- **Įžvalgų optimizavimas**: Naudokite aparatūros specifines įžvalgų optimizacijas  
+### Modelių pasirinkimas
+- **Dydžio apribojimai**: Pasirinkite modelius, kurie tilptų į tikslo įrenginių atminties ribas
+- **Atpažeistumo greitis**: Prioritetu teikite modeliams, kurie greitai apdoroja duomenis realaus laiko programoms
+- **Tikslumo kompromisai**: Subalansuokite modelio tikslumą ir resursų apribojimus
+- **Formato suderinamumas**: Rinkitės ONNX arba aparatine įranga optimizuotus formatus kraštinių diegimui
 
-## Ištekliai ir tolesni žingsniai  
+### Optimizavimo metodai
+- **Kvantizavimas**: Naudokite INT8 arba INT4 kvantizavimą, kad sumažintumėte modelio dydį ir pagerintumėte greitį
+- **Pruning**: Pašalinkite nereikalingus modelio parametrus, kad sumažintumėte skaičiavimo reikalavimus
+- **Žinių distiliacija**: Sukurkite mažesnius modelius, kurie išlaiko didesnių našumą
+- **Aparatinė pagreitinimas**: Naudokite NPU, GPU arba specialius pagreitintuvus, kai jie prieinami
 
-### Oficialios dokumentacijos  
-- [AI Toolkit kūrėjų dokumentacija](https://aka.ms/AIToolkit/doc)  
-- [Diegimo ir nustatymo vadovas](https://code.visualstudio.com/docs/intelligentapps/overview#_install-and-setup)  
-- [VS Code Intelligent Apps dokumentacija](https://code.visualstudio.com/docs/intelligentapps)  
-- [Model Context Protocol (MCP) dokumentacija](https://modelcontextprotocol.io/)  
+### Plėtros darbo eiga
+- **Iteratyvus testavimas**: Reguliariai testuokite kraštinių sąlygų aplinkoje kūrimo metu
+- **Veiklos stebėjimas**: Nuolat stebėkite resursų naudojimą ir atpažeistumo greitį
+- **Versijų valdymas**: Sekite modelių versijas ir optimizavimo nustatymus
+- **Dokumentavimas**: Dokumentuokite visas optimizavimo sprendimus ir veiklos kompromisus
 
-### Bendruomenė ir palaikymas  
-- [AI Toolkit GitHub saugykla](https://github.com/microsoft/vscode-ai-toolkit)  
-- [GitHub problemos ir funkcijų užklausos](https://aka.ms/AIToolkit/feedback)  
-- [Azure AI Foundry Discord bendruomenė](https://aka.ms/azureaifoundry/discord)  
-- [VS Code plėtinių rinka](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)  
+### Diegimo svarstymai
+- **Resursų stebėjimas**: Stebėkite atminties, CPU ir energijos sunaudojimą gamyboje
+- **Atsarginės strategijos**: Įgyvendinkite atsarginius mechanizmus modelių gedimams
+- **Atnaujinimų mechanizmai**: Planuokite modelių atnaujinimus ir versijų valdymą
+- **Saugumas**: Įgyvendinkite tinkamas saugumo priemones kraštinių AI programoms
 
-### Techniniai ištekliai  
-- [ONNX Runtime dokumentacija](https://onnxruntime.ai/)  
-- [Ollama dokumentacija](https://ollama.ai/)  
-- [Windows ML dokumentacija](https://docs.microsoft.com/en-us/windows/ai/)  
-- [Azure AI Foundry dokumentacija](https://learn.microsoft.com/en-us/azure/ai-foundry/)  
+## Integracija su kraštinių AI sistemomis
 
-### Mokymosi keliai  
-- [Kraštutinio AI pagrindų kursas](../Module01/README.md)  
-- [Mažų kalbos modelių vadovas](../Module02/README.md)  
-- [Kraštutinio diegimo strategijos](../Module03/README.md)  
-- [Windows kraštutinio AI vystymas](./windowdeveloper.md)  
+### ONNX Runtime
+- **Kryžminis platformų diegimas**: Diegkite ONNX modelius skirtingose kraštinių platformose
+- **Aparatinės įrangos optimizavimas**: Naudokite ONNX Runtime aparatine įranga pagrįstą optimizavimą
+- **Mobilioji palaikymas**: Naudokite ONNX Runtime Mobile išmaniesiems telefonams ir planšetėms
+- **IoT integracija**: Diegimas IoT įrenginiuose su ONNX Runtime lengvomis versijomis
 
-### Papildomi ištekliai  
-- **Saugyklos statistika**: 1.8k+ žvaigždžių, 150+ šakų, 18+ bendradarbių  
-- **Licencija**: MIT licencija  
-- **Saugumas**: Taikomos Microsoft saugumo politikos  
-- **Telemetrija**: Gerbia VS Code telemetrijos nustatymus  
+### Windows ML
+- **Windows įrenginiai**: Optimizavimas Windows pagrindu veikiantiems kraštinių įrenginiams ir PC
+- **NPU pagreitinimas**: Naudokite neuroninius apdorojimo vienetus Windows įrenginiuose
+- **DirectML**: Naudokite DirectML GPU pagreitinimui Windows platformose
+- **UWP integracija**: Integruokite su Universal Windows Platform programomis
 
-## Išvada  
+### TensorFlow Lite
+- **Mobilioji optimizacija**: Diegkite TensorFlow Lite modelius mobiliuosiuose ir įterptuose įrenginiuose
+- **Aparatinės įrangos delegatai**: Naudokite specialius aparatinės įrangos delegatus pagreitinimui
+- **Mikrokontroleriai**: Diegimas mikrokontroleriuose su TensorFlow Lite Micro
+- **Kryžminis palaikymas**: Diegimas Android, iOS ir įterptose Linux sistemose
 
-AI Toolkit for Visual Studio Code yra išsamus modernios AI vystymo platformos pavyzdys, suteikiantis supaprastintas agentų vystymo galimybes, kurios ypač vertingos kraštutiniam AI pritaikymui. Su plačiu modelių katalogu, palaikančiu tiekėjų, tokių kaip Anthropic, OpenAI, GitHub ir Google, kartu su vietiniu vykdymu per ONNX ir Ollama, įrankių rinkinys siūlo lankstumą, reikalingą įvairiems kraštutiniams diegimo scenarijams.  
+### Azure IoT Edge
+- **Debesijos ir kraštinių hibridas**: Apmokymas debesyje ir spėjimas kraštuose
+- **Modulių diegimas**: Diegti AI modelius kaip IoT Edge modulius
+- **Įrenginių valdymas**: Nuotolinis kraštinių įrenginių ir modelių atnaujinimų valdymas
+- **Telemetrija**: Rinkti veiklos duomenis ir modelių metriką iš kraštinių diegimų
 
-Įrankių rinkinio stiprybė slypi integruotame požiūryje – nuo modelių atradimo ir eksperimentavimo Playground iki sudėtingo agentų vystymo su Prompt Builder, išsamių vertinimo galimybių ir sklandžios MCP įrankių integracijos. Kraštutiniams AI kūrėjams tai reiškia greitą AI agentų prototipų kūrimą ir testavimą prieš kraštutinį diegimą, su galimybe greitai iteruoti ir optimizuoti resursų apribotoms aplinkoms.  
+## Pažangios kraštinių AI scenarijai
 
-Pagrindiniai privalumai kraštutiniam AI vystymui apima:  
-- **Greitas eksperimentavimas**: Greitai testuokite modelius ir agentus prieš įsipareigojant kraštutiniam diegimui  
-- **Daugelio tiekėjų lankstumas**: Pasiekite modelius iš įvairių šaltinių, kad rastumėte optimalų kraštutinį sprendimą  
-- **Vietinis vystymas**: Testuokite su ONNX ir Ollama neprisijungus ir privatumo išsaugojimui  
-- **Gamybos pasirengimas**: Generuokite gamybai paruoštą kodą ir integruokite su išoriniais įrankiais per MCP  
-- **Išsamus vertinimas**: Naudokite įmontuotas ir pasirinktines metrikas, kad patikrintumėte kraštutinio AI našumą  
+### Daugiamodelių diegimas
+- **Modelių ansambliai**: Diegti kelis modelius, kad pagerintumėte tikslumą arba padidintumėte patikimumą
+- **A/B testavimas**: Tuo pačiu metu testuoti skirtingus modelius kraštiniuose įrenginiuose
+- **Dinaminis pasirinkimas**: Pasirinkti modelius pagal dabartines įrenginio sąlygas
+- **Resursų dalijimasis**: Optimizuokite resursų naudojimą keliuose diegiamuose modeliuose
 
-Kadangi AI vis labiau pereina prie kraštutinių diegimo scenarijų, AI Toolkit for VS Code suteikia vystymo aplinką ir darbo eigą, reikalingą kurti, testuoti ir optimizuoti intelektualias programas resursų apribotoms aplinkoms. Nesvarbu, ar kuriate IoT sprendimus, mobiliąsias AI programas, ar įterptines intelektualias sistemas, įrankių rinkinio išsamus funkcijų rinkinys ir integruota darbo eiga palaiko visą kraštutinio AI vystymo ciklą.  
+### Federuotas mokymasis
+- **Paskirstytas mokymas**: Mokykite modelius keliuose kraštiniuose įrenginiuose
+- **Privatumo išsaugojimas**: Laikykite mokymo duomenis lokaliai, dalindamiesi modelio patobulinimais
+- **Bendradarbiaujantis mokymasis**: Leidžia įrenginiams mokytis iš bendrų patirčių
+- **Kraštinių ir debesies koordinavimas**: Koordinuokite mokymą tarp kraštinių įrenginių ir debesijos infrastruktūros
 
-Su nuolatiniu vystymu ir aktyvia bendruomene (1.8k+ GitHub žvaigždžių), AI Toolkit išlieka AI vystymo įrankių priešakyje, nuolat tobulėdamas, kad atitiktų modernių AI kūrėjų poreikius, kuriančių kraštutiniam diegimui.  
+### Realaus laiko apdorojimas
+- **Srauto apdorojimas**: Apdorokite nuolatinius duomenų srautus kraštiniuose įrenginiuose
+- **Mažas vėlinimas spėjimuose**: Optimizuokite minimalų spėjimo vėlinimą
+- **Dėjinių apdorojimas**: Efektyviai apdorokite duomenų dėjinius kraštiniuose įrenginiuose
+- **Adaptuojamas apdorojimas**: Koreguokite apdorojimą pagal dabartines įrenginio galimybes
 
-[Next Foundry Local](./foundrylocal.md)  
+## Kraštinių AI plėtros trikčių šalinimas
+
+### Dažnos problemos
+- **Atminties apribojimai**: Modelis per didelis tikslo įrenginio atminčiai
+- **Spėjimo greitis**: Modelio spėjimas per lėtas realaus laiko reikalavimams
+- **Tikslumo prastėjimas**: Optimizavimas nepriimtina forma sumažina modelio tikslumą
+- **Aparatinės įrangos suderinamumas**: Modelis nesuderinamas su tikslo aparatine įranga
+
+### Derinimo strategijos
+- **Veiklos profiliavimas**: Naudokite AI įrankių rinkinio sekimo funkcijas, kad nustatytumėte kliūtis
+- **Resursų stebėjimas**: Stebėkite atminties ir CPU naudojimą kūrimo metu
+- **Inkrementinis testavimas**: Testuokite optimizacijas palaipsniui, kad izoliavusite problemas
+- **Aparatinės įrangos simuliacija**: Naudokite kūrimo įrankius tikslinės aparatinės įrangos simuliacijai
+
+### Optimizavimo sprendimai
+- **Tolesnis kvantizavimas**: Taikykite agresyvesnes kvantizavimo technikas
+- **Modelio architektūra**: Apsvarstykite skirtingas modelių architektūras, optimizuotas kraštinėms
+- **Išankstinis apdorojimas optimizavimas**: Optimizuokite duomenų išankstinį apdorojimą kraštinių apribojimams
+- **Spėjimo optimizavimas**: Naudokite aparatinei įrangai specifinius spėjimo optimizavimus
+
+## Ištekliai ir tolesni žingsniai
+
+### Oficialioji dokumentacija
+- [AI įrankių rinkinio kūrėjo dokumentacija](https://aka.ms/AIToolkit/doc)
+- [Įdiegimo ir sąrankos vadovas](https://code.visualstudio.com/docs/intelligentapps/overview#_install-and-setup)
+- [VS Code Išmaniųjų programų dokumentacija](https://code.visualstudio.com/docs/intelligentapps)
+- [Model Context Protocol (MCP) dokumentacija](https://modelcontextprotocol.io/)
+
+### Bendruomenė ir palaikymas
+- [AI įrankių rinkinio GitHub saugykla](https://github.com/microsoft/vscode-ai-toolkit)
+- [GitHub klausimai ir funkcijų užklausos](https://aka.ms/AIToolkit/feedback)
+- [Azure AI Foundry Discord bendruomenė](https://aka.ms/azureaifoundry/discord)
+- [VS Code plėtinių turgus](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+
+### Techniniai ištekliai
+- [ONNX Runtime dokumentacija](https://onnxruntime.ai/)
+- [Ollama dokumentacija](https://ollama.ai/)
+- [Windows ML dokumentacija](https://docs.microsoft.com/en-us/windows/ai/)
+- [Azure AI Foundry dokumentacija](https://learn.microsoft.com/en-us/azure/ai-foundry/)
+
+### Mokymosi keliai
+- [Kraštinių AI pagrindai kursas](../Module01/README.md)
+- [Mažų kalbos modelių vadovas](../Module02/README.md)
+- [Kraštinių diegimo strategijos](../Module03/README.md)
+- [Windows kraštinių AI plėtra](./windowdeveloper.md)
+
+### Papildomi ištekliai
+- **Saugyklos statistika**: 1.8k+ žvaigždžių, 150+ šakų, 18+ dėstytojų
+- **Licencija**: MIT licencija
+- **Saugumas**: Taikomos Microsoft saugumo politikos
+- **Telemetrija**: Gerbiamos VS Code telemetrijos nustatymai
+
+## Išvada
+
+AI įrankių rinkinys Visual Studio Code yra visapusiška platforma šiuolaikinei AI plėtrai, siūlanti sklandų agentų kūrimo procesą, itin vertingą kraštinių AI programoms. Su plačiu modelių katalogu, palaikančiu tiekėjus tokius kaip Anthropic, OpenAI, GitHub ir Google, kartu su vietiniu ONNX ir Ollama vykdymu, įrankių rinkinys suteikia reikalingą lankstumą įvairiems kraštinių diegimo scenarijams.
+
+Šio rinkinio stiprybė yra integruotas požiūris – nuo modelių atradimo ir eksperimentavimo Playground iki sudėtingo agentų kūrimo su Prompt Builder, įvairesnio vertinimo galimybių ir sklandžios MCP įrankių integracijos. Kraštinių AI kūrėjams tai reiškia greitą AI agentų prototipų kūrimą ir testavimą prieš diegiant kraštuose, su galimybe greitai iteruoti ir optimizuoti išteklius ribojančiose aplinkose.
+
+Pagrindiniai pranašumai kraštinių AI plėtrai apima:
+- **Greita eksperimentacija**: Greitai išbandykite modelius ir agentus prieš pereidami prie kraštinių diegimų
+- **Daug tiekėjų lankstumas**: Pasiekite modelius iš įvairių šaltinių, kad rastumėte optimalų kraštinių sprendimą
+- **Vietinė plėtra**: Testuokite su ONNX ir Ollama neprisijungę ir išlaikydami privatumą
+- **Gamybai paruošimas**: Generuokite gamybai tinkamą kodą ir integruokite su išoriniais įrankiais per MCP
+- **Išsamus vertinimas**: Naudokite įmontuotas ir pasirinktines metrikas kraštinių AI našumui patikrinti
+
+Kai AI vis labiau juda link kraštinių diegimo scenarijų, AI įrankių rinkinys VS Code suteikia vystymo aplinką ir darbo eigą, reikalingą kuriant, testuojant ir optimizuojant intelektualias programas ribotose išteklių aplinkose. Nesvarbu, ar vystote IoT sprendimus, mobiliąsias AI programas ar įterptus intelektualius sprendimus, įrankių rinkinio platus funkcionalumas ir integruota darbo eiga palaiko visą kraštinių AI plėtros ciklą.
+
+Su nuolatiniu vystymu ir aktyvia bendruomene (1.8k+ GitHub žvaigždžių), AI įrankių rinkinys išlieka AI kūrimo įrankių priekvoje, nuolat tobulėdamas, kad atitiktų šiuolaikinių AI kūrėjų, dirbančių kraštinių diegimo scenarijose, poreikius.
+
+[Kitas Foundry Local](./foundrylocal.md)
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, kylančius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojama naudoti profesionalų žmogiškąjį vertimą. Mes neatsakome už jokius nesusipratimus ar neteisingą interpretaciją, kilusią naudojantis šiuo vertimu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

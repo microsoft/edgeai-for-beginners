@@ -7,7 +7,7 @@
   },
   "CHANGELOG.md": {
     "original_hash": "78ca68df03ae43371b203ea43d346dec",
-    "translation_date": "2025-10-30T15:11:30+00:00",
+    "translation_date": "2026-08-25T06:14:19+00:00",
     "source_file": "CHANGELOG.md",
     "language_code": "uk"
   },
@@ -19,7 +19,7 @@
   },
   "Module01/01.EdgeAIFundamentals.md": {
     "original_hash": "be25052ac4c842765e7f6f7eb4d7dcc5",
-    "translation_date": "2025-10-20T10:04:15+00:00",
+    "translation_date": "2026-08-25T06:26:52+00:00",
     "source_file": "Module01/01.EdgeAIFundamentals.md",
     "language_code": "uk"
   },
@@ -49,31 +49,31 @@
   },
   "Module02/01.PhiFamily.md": {
     "original_hash": "20892f7994d9e5d2473ad19dfa93cf6d",
-    "translation_date": "2025-09-18T22:50:17+00:00",
+    "translation_date": "2026-08-25T06:40:28+00:00",
     "source_file": "Module02/01.PhiFamily.md",
     "language_code": "uk"
   },
   "Module02/02.QwenFamily.md": {
     "original_hash": "1c8c05964be6fb235b026feed0bf066e",
-    "translation_date": "2025-10-01T22:01:33+00:00",
+    "translation_date": "2026-08-25T06:43:18+00:00",
     "source_file": "Module02/02.QwenFamily.md",
     "language_code": "uk"
   },
   "Module02/03.GemmaFamily.md": {
     "original_hash": "c6ab7eb1b8009ae984eaf6b85568f77a",
-    "translation_date": "2025-09-18T23:09:44+00:00",
+    "translation_date": "2026-08-25T06:48:00+00:00",
     "source_file": "Module02/03.GemmaFamily.md",
     "language_code": "uk"
   },
   "Module02/04.BitNETFamily.md": {
     "original_hash": "a56a3241aec9dc147b111ec10a2b3f2a",
-    "translation_date": "2025-09-18T22:10:58+00:00",
+    "translation_date": "2026-08-25T06:52:07+00:00",
     "source_file": "Module02/04.BitNETFamily.md",
     "language_code": "uk"
   },
   "Module02/05.mumodel.md": {
     "original_hash": "e6f3e5aa0ea2aa936a8631279e4c192f",
-    "translation_date": "2025-09-18T23:18:13+00:00",
+    "translation_date": "2026-08-25T06:44:24+00:00",
     "source_file": "Module02/05.mumodel.md",
     "language_code": "uk"
   },
@@ -91,13 +91,13 @@
   },
   "Module03/01.SLMAdvancedLearning.md": {
     "original_hash": "38b68a204a9621126d056b0e5b51ab7c",
-    "translation_date": "2025-10-09T20:56:41+00:00",
+    "translation_date": "2026-08-25T06:36:49+00:00",
     "source_file": "Module03/01.SLMAdvancedLearning.md",
     "language_code": "uk"
   },
   "Module03/02.DeployingSLMinLocalEnv.md": {
     "original_hash": "0d9a6cd24a08aeac1328626abcc18ba8",
-    "translation_date": "2025-10-24T10:09:14+00:00",
+    "translation_date": "2026-08-25T06:38:29+00:00",
     "source_file": "Module03/02.DeployingSLMinLocalEnv.md",
     "language_code": "uk"
   },
@@ -115,7 +115,7 @@
   },
   "Module04/01.Introduce.md": {
     "original_hash": "49e18143f97a802a8647f4be28355348",
-    "translation_date": "2025-09-19T01:00:20+00:00",
+    "translation_date": "2026-08-25T06:25:27+00:00",
     "source_file": "Module04/01.Introduce.md",
     "language_code": "uk"
   },
@@ -145,7 +145,7 @@
   },
   "Module04/06.workflow-synthesis.md": {
     "original_hash": "6fbccc3e9d5911e3df32090724daac13",
-    "translation_date": "2025-10-30T15:17:32+00:00",
+    "translation_date": "2026-08-25T06:24:27+00:00",
     "source_file": "Module04/06.workflow-synthesis.md",
     "language_code": "uk"
   },
@@ -193,19 +193,19 @@
   },
   "Module06/01.IntroduceAgent.md": {
     "original_hash": "44bc28c27b993c5fb988791b7a115705",
-    "translation_date": "2025-10-30T15:14:13+00:00",
+    "translation_date": "2026-08-25T06:35:29+00:00",
     "source_file": "Module06/01.IntroduceAgent.md",
     "language_code": "uk"
   },
   "Module06/02.FunctionCalling.md": {
     "original_hash": "8b05633cf46af274b3724ee2f7140100",
-    "translation_date": "2025-09-18T23:34:02+00:00",
+    "translation_date": "2026-08-25T06:30:20+00:00",
     "source_file": "Module06/02.FunctionCalling.md",
     "language_code": "uk"
   },
   "Module06/03.IntroduceMCP.md": {
     "original_hash": "8a7765b85f123e8a62aa3847141ca072",
-    "translation_date": "2025-10-30T15:15:30+00:00",
+    "translation_date": "2026-08-25T06:28:31+00:00",
     "source_file": "Module06/03.IntroduceMCP.md",
     "language_code": "uk"
   },
@@ -223,7 +223,7 @@
   },
   "Module07/aitoolkit.md": {
     "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-    "translation_date": "2025-10-21T07:44:50+00:00",
+    "translation_date": "2026-08-25T06:22:32+00:00",
     "source_file": "Module07/aitoolkit.md",
     "language_code": "uk"
   },
@@ -235,7 +235,7 @@
   },
   "Module07/windowdeveloper.md": {
     "original_hash": "2305e750e93ad4bd79898cf149e01b49",
-    "translation_date": "2025-10-03T07:14:13+00:00",
+    "translation_date": "2026-08-25T06:20:37+00:00",
     "source_file": "Module07/windowdeveloper.md",
     "language_code": "uk"
   },
@@ -277,7 +277,7 @@
   },
   "Module08/README.md": {
     "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-    "translation_date": "2025-10-01T01:52:52+00:00",
+    "translation_date": "2026-08-25T06:18:00+00:00",
     "source_file": "Module08/README.md",
     "language_code": "uk"
   },
@@ -385,7 +385,7 @@
   },
   "STUDY_GUIDE.md": {
     "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-    "translation_date": "2025-10-08T11:48:52+00:00",
+    "translation_date": "2026-08-25T06:13:04+00:00",
     "source_file": "STUDY_GUIDE.md",
     "language_code": "uk"
   },
@@ -463,7 +463,7 @@
   },
   "Workshop/notebooks/README.md": {
     "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-    "translation_date": "2025-10-08T12:25:28+00:00",
+    "translation_date": "2026-08-25T06:54:17+00:00",
     "source_file": "Workshop/notebooks/README.md",
     "language_code": "uk"
   },

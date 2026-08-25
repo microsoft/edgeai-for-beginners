@@ -1,367 +1,415 @@
-# Visual Studio Code အတွက် AI Toolkit - Edge AI ဖွံ့ဖြိုးတိုးတက်မှုလမ်းညွှန်
+# Visual Studio Code အတွက် AI Toolkit - Edge AI ဖွံ့ဖြိုးမှု လမ်းညွှန်
 
-## အကျဉ်းချုပ်
+## အားလုံးသိစေရန်
 
-Visual Studio Code အတွက် AI Toolkit ကို Edge AI ဖွံ့ဖြိုးတိုးတက်မှုအတွက် အသုံးပြုရန် လမ်းညွှန်ချက်များကို ကြိုဆိုပါသည်။ အတုအကျတုအာရုံစူးစိုက်မှုသည် အလယ်ဗဟို Cloud Computing မှ ဖြန့်ဖြူးထားသော Edge Devices များသို့ ရွှေ့ပြောင်းနေသောအခါတွင် Developer များအနေဖြင့် Edge Deployment ၏ Resource ကန့်သတ်ချက်များနှင့် Offline Operation လိုအပ်ချက်များကို ကိုင်တွယ်နိုင်သော Integrated Tools များလိုအပ်ပါသည်။
+Edge AI ဖွံ့ဖြိုးမူတွင် Visual Studio Code အတွက် AI Toolkit ကို အသုံးပြုရန် အပြည့်အစုံ လမ်းညွှန်စာအုပ်သို့ လှမ်းကြိုဆိုပါသည်။ လူဆောင်ရိုက်ဂျီနည်းပညာသည် ဗဟိုချုပ်ထားသော Cloud computing မှ ဖြန့်ဝေထားသော edge ပစ္စည်းများသို့ ရွှေ့ပြောင်းလာသဖြင့်၊ developer များသည် edge deployment ၏ ထူးခြားသော စိန်ခေါ်မှုများကို ဖြေရှင်းနိုင်သော အင်အားကြီး၊ ပေါင်းစည်းထားသောကိရိယာများလိုအပ်သည်။
 
-Visual Studio Code အတွက် AI Toolkit သည် Edge Devices များတွင် ထိရောက်စွာ လည်ပတ်နိုင်သော AI Applications များကို တည်ဆောက်ခြင်း၊ စမ်းသပ်ခြင်းနှင့် အကောင်းဆုံးအခြေအနေသို့ ရောက်ရှိစေရန် အထူးသင့်လျော်သော Development Environment ကို ပေးဆောင်ခြင်းဖြင့် အဆိုပါကွက်လပ်ကို ဖြည့်ဆည်းပေးပါသည်။ သင်သည် IoT Sensors, Mobile Devices, Embedded Systems, သို့မဟုတ် Edge Servers များအတွက် ဖွံ့ဖြိုးတိုးတက်မှုလုပ်ငန်းစဉ်များကို VS Code ပတ်ဝန်းကျင်တွင် အလွယ်တကူ စီမံနိုင်ပါသည်။
+Visual Studio Code အတွက် AI Toolkit သည် edge ပစ္စည်းများပေါ်တွင် ထိရောက်စွာ ပြေးဆွဲနိုင်သော AI application များကို တည်ဆောက်ခြင်း၊ စမ်းသပ်ခြင်းနှင့် တိုးတက်မှုလုပ်ငန်းများအတွက် အထူးပြုဖန်တီးထားသော အပြည့်အစုံ ဖွံ့ဖြိုးမှု ပတ်ဝန်းကျင်ကို ပံ့ပိုးပေး၍ ဤ အားလုံးဖြတ်သန်းမှုကို VS Code ၏ မျှော်မှန်းသကဲ့သို့ ပြုလုပ်နိုင်ပါသည်။ သင်သည် IoT sensors, မိုဘိုင်းစက်ပစ္စည်းများ၊ embedded system များ သို့မဟုတ် edge server များအတွက် ဖန်တီးနေခြင်း ဖြစ်ပါစေ၊ ဤ toolkit သည် သင်၏ ဖွံ့ဖြိုးမှုလုပ်ငန်းစဉ်အားလုံးကို စနစ်တကျလုပ်ဆောင်နိုင်စေပါသည်။
 
-ဤလမ်းညွှန်သည် AI Toolkit ကို သင့် Edge AI Project များတွင် အသုံးချရန် အဓိကအကြောင်းအရာများ၊ Tools များနှင့် အကောင်းဆုံးအလေ့အကျင့်များကို လမ်းညွှန်ပေးမည်ဖြစ်ပြီး၊ မော်ဒယ်ရွေးချယ်မှုမှ စ၍ ထုတ်လုပ်မှု Deployment အထိ လမ်းညွှန်ပေးပါမည်။
+ဤလမ်းညွှန်တွင် သင်သည် AI Toolkit ကို အသုံးပြုပြီး Edge AI ပရောဂျက်များတွင် အစမှစပြီး မော်ဒယ် ရွေးချယ်မှုမှ ထုတ်လုပ်မှုအထိ အရေးပါတဲ့ အယူအဆများ၊ ကိရိယာများနှင့် အကောင်းဆုံး လေ့လာနည်းများအား လေ့လာသွားမှာ ဖြစ်သည်။
 
-## အကျိုးကျေးဇူးများ
+## အနှစ်ချုပ်
 
-Visual Studio Code အတွက် AI Toolkit သည် Agent Development နှင့် AI Application ဖန်တီးမှုကို လွယ်ကူစေသော Extension တစ်ခုဖြစ်သည်။ ဤ Toolkit သည် Anthropic, OpenAI, GitHub, Google စသည်တို့မှ AI Models များကို ရှာဖွေခြင်း၊ အကဲဖြတ်ခြင်းနှင့် Deployment လုပ်ခြင်းအတွက် Comprehensive Capabilities များကို ပေးဆောင်ပြီး ONNX နှင့် Ollama ကို အသုံးပြု၍ Local Model Execution ကိုလည်း ပံ့ပိုးပေးပါသည်။
+Visual Studio Code အတွက် AI Toolkit သည် အင်အားမြင့် extension ဖြစ်ပြီး agent ဖန်တီးခြင်းနှင့် AI application ဖန်တီးမှုများကို တိုးမြှင့်ပေးသည်။ Toolkit သည် Anthropic, OpenAI, GitHub, Google များကဲ့သို့သော provider များမှ AI မော်ဒယ်များကို ရှာဖွေ၊ ဆန်းစစ်၊ တပ်ဆင်နိုင်ရန် ပြည့်စုံသော အင်အားများပေးပြီး ONNX နှင့် Ollama အသုံးပြုပြီး ဒေသိယ မော်ဒယ်အသုံးပြုမှုကို ပံ့ပိုးသည်။
 
-AI Toolkit ၏ ထူးခြားချက်မှာ AI Development Lifecycle အားလုံးကို Comprehensive Approach ဖြင့် ကိုင်တွယ်ပေးခြင်းဖြစ်သည်။ Traditional AI Development Tools များသည် တစ်ခုတည်းသော Aspect များကို အာရုံစိုက်သော်လည်း AI Toolkit သည် Model Discovery, Experimentation, Agent Development, Evaluation နှင့် Deployment အားလုံးကို VS Code ပတ်ဝန်းကျင်တွင် အလွယ်တကူ စီမံနိုင်စေရန် Integrated Environment ကို ပေးဆောင်ပါသည်။
+AI Toolkit ရဲ့ ထူးခြားချက်မှာ AI ဖွံ့ဖြိုးမှု၏ ဘဝစက်ဝန်းအားလုံးကို ဖုံးကိုင်ထားခြင်းဖြစ်သည်။ ယခင် AI ဖွံ့ဖြိုးရေးကိရိယာများသည် တစ်ခုချင်းဆိုင်ရာသာ ရွေးချယ်ခြင်းကို ဦးတည်ခဲ့သော်လည်း၊ AI Toolkit သည် မော်ဒယ် ရှာဖွေမှု၊ စမ်းသပ်၊ agent ဖန်တီးမှု၊ ဆန်းစစ်မှုနှင့် တပ်ဆင်မှုအားလုံးကို VS Code ၏ မျှော်မှန်းသကဲ့သို့ပေါင်းစည်းထားသည်။
 
-ဤ Platform သည် Rapid Prototyping နှင့် Production Deployment အတွက် အထူးသင့်လျော်ပြီး Prompt Generation, Quick Starters, Seamless MCP Tool Integration များနှင့် Extensive Evaluation Capabilities များကို ပံ့ပိုးပေးပါသည်။ Edge AI Development အတွက်ဆိုလျှင် သင်သည် Edge Deployment Scenarios များအတွက် AI Applications များကို ထိရောက်စွာ ဖွံ့ဖြိုးတိုးတက်မှု၊ စမ်းသပ်မှုနှင့် Optimize လုပ်နိုင်ပြီး VS Code ပတ်ဝန်းကျင်တွင် အပြည့်အစုံသော Development Workflow ကို ထိန်းသိမ်းနိုင်ပါသည်။
+ဤပလက်ဖောင်းသည် prompt ဖန်တီးခြင်း၊ quick starters၊ MCP (Model Context Protocol) tool ပေါင်းစည်းမှုများနှင့် အပြည့်အစုံသော ဆန်းစစ်မှုများ ပါရှိ၍ မြန်ဆန်စွာ ပုံစံဖန်တီးခြင်းနှင့် ထုတ်လုပ်မှုတပ်ဆင်မှုများအတွက် ရည်ရွယ်ထားသည်။ Edge AI ဖွံ့ဖြိုးမှုအတွက် VS Code ထဲတွင် တာဝန်ခံမှုအပြည့်အစုံစတင်၍ AI application များကို ထိရောက်စေရန် ဖန်တီး၊ စမ်းသပ်၊ တိုးတက်စေသည်။
 
-## သင်ယူရမည့်အရာများ
+## သင်ယူရမည့် ရည်မှန်းချက်များ
 
-ဤလမ်းညွှန်၏ အဆုံးတွင် သင်သည် အောက်ပါအရာများကို လုပ်ဆောင်နိုင်မည်ဖြစ်သည်-
+ဤလမ်းညွှန်ပြီးဆုံးချိန်တွင် သင်အောက်ပါအရာများကို ကျွမ်းကျင်ခြင်းရရှိပါမည်-
 
-### အဓိကကျွမ်းကျင်မှုများ
-- Visual Studio Code အတွက် AI Toolkit ကို Edge AI Development Workflow များအတွက် **Install နှင့် Configure** လုပ်ခြင်း
-- AI Toolkit Interface (Model Catalog, Playground, Agent Builder) ကို **Navigate နှင့် Utilize** လုပ်ခြင်း
-- Edge Deployment အတွက် Performance နှင့် Resource Constraints များအပေါ် အခြေခံ၍ AI Models များကို **Select နှင့် Evaluate** လုပ်ခြင်း
-- ONNX Format နှင့် Quantization Techniques များကို အသုံးပြု၍ Models များကို **Convert နှင့် Optimize** လုပ်ခြင်း
+### အခြေခံကျွမ်းကျင်မှုများ
+- **Visual Studio Code အတွက် AI Toolkit ကို Edge AI ဖွံ့ဖြိုးမှု အလုပ်လုပ်စဉ်များအတွက် ထည့်သွင်းပြင်ဆင်ခြင်း**
+- **AI Toolkit အင်တာဖေ့စ်များ၊ Model Catalog, Playground နှင့် Agent Builder စသည်တို့ကို လမ်းညွှန်၍ အသုံးပြုနိုင်ခြင်း**
+- **Edge deployment အတွက် အသင့်တော်သော AI မော်ဒယ်များ ရွေးချယ်ပြီး စမ်းသပ်ခွင့်ရှိခြင်း**
+- **ONNX နဲ့ quantization နည်းများ အသုံးပြုပြီး မော်ဒယ်များ ပြောင်းလဲသိမ်းဆည်းခြင်းနှင့် အမြှင့်တင်ခြင်း**
 
-### Edge AI Development ကျွမ်းကျင်မှုများ
-- Integrated Development Environment ကို အသုံးပြု၍ Edge AI Applications များကို **Design နှင့် Implement** လုပ်ခြင်း
-- Local Inference နှင့် Resource Monitoring ကို အသုံးပြု၍ Edge-like Conditions တွင် **Model Testing** လုပ်ခြင်း
-- Edge Deployment Scenarios များအတွက် Optimize လုပ်ထားသော AI Agents များကို **Create နှင့် Customize** လုပ်ခြင်း
-- Edge Computing အတွက် သက်ဆိုင်သော Metrics များကို အသုံးပြု၍ **Model Performance** ကို အကဲဖြတ်ခြင်း
+### Edge AI ဖွံ့ဖြိုးမှု ကျွမ်းကျင်မှုများ
+- **ပေါင်းစည်းထားသော ဖွံ့ဖြိုးမှု ပတ်ဝန်းကျင်ကို အသုံးပြုပြီး Edge AI application များကို ဒီဇိုင်းဆွဲနှင့် ဖန်တီးခြင်း**
+- **ဒေသိယ စမ်းသပ်မှုနှင့် အရင်းအမြစ် စောင့်ကြည့်ခြင်းဖြင့် မော်ဒယ် စမ်းသပ်နိုင်မှု**
+- **Edge deployment အတွက် အထူးပြု AI agent များ ဖန်တီးခြင်းနှင့် စိတ်ကြိုက် ပြင်ဆင်ခြင်း**
+- **Edge computing တွင် အရေးကြီးသည့် ရည်မှန်းချက်များဖြင့် မော်ဒယ် ဆန်းစစ်ခြင်း (နောက်ကျောကြာမြင့်ချိန်၊ မှတ်ဉာဏ်သုံးစွဲမှု၊ ချောမွေ့မှု)**
 
-### Optimization နှင့် Deployment
-- Model Size ကို လျှော့ချရန် Quantization နှင့် Pruning Techniques များကို **Apply** လုပ်ခြင်း
-- CPU, GPU, NPU Acceleration အပါအဝင် Edge Hardware Platforms များအတွက် **Optimize** လုပ်ခြင်း
-- Resource Management နှင့် Fallback Strategies အပါအဝင် Edge AI Development အတွက် **Best Practices** ကို အကောင်အထည်ဖော်ခြင်း
-- Edge Devices များတွင် Production Deployment အတွက် Models နှင့် Applications များကို **Prepare** လုပ်ခြင်း
+### တိုးတက်မှုနှင့် တပ်ဆင်မှု
+- **quantization နှင့် pruning နည်းများကို အသုံးပြု၍ မော်ဒယ် အရွယ်အစား သက်သာစေပြီး စွမ်းဆောင်ရည် ထိန်းသိမ်းခြင်း**
+- **CPU, GPU, NPU acceleration အပါအဝင် အထူးပြု လက်ကိုင် ပစ္စည်းများအတွက် မော်ဒယ်များ တိုးတက်စေခြင်း**
+- **ရင်းမြစ် စီမံခန့်ခွဲမှု၊ fallback များ အပါအဝင် Edge AI ဖွံ့ဖြိုးမှု အကောင်းဆုံး လေ့လာနည်းများကို ဆောင်ရွက်ခြင်း**
+- **Edge device များတွင် ထုတ်လုပ်မှုတပ်ဆင်မှုအတွက် မော်ဒယ်များနှင့် application များ ပြင်ဆင်ခြင်း**
 
-### အဆင့်မြင့် Edge AI Concepts
-- ONNX Runtime, Windows ML, TensorFlow Lite အပါအဝင် Edge AI Frameworks များနှင့် **Integrate** လုပ်ခြင်း
-- Edge Environments များအတွက် Multi-model Architectures နှင့် Federated Learning Scenarios များကို **Implement** လုပ်ခြင်း
-- Memory Constraints, Inference Speed, Hardware Compatibility စသည်တို့အပါအဝင် Edge AI Issues များကို **Troubleshoot** လုပ်ခြင်း
-- Production Edge AI Applications များအတွက် Monitoring နှင့် Logging Strategies များကို **Design** လုပ်ခြင်း
+### အဆင့်မြင့် Edge AI အယူအဆများ
+- **ONNX Runtime, Windows ML, TensorFlow Lite အပါအဝင် Edge AI framework များနှင့် ပေါင်းစည်းခြင်း**
+- **Edge ပတ်ဝန်းကျင်များအတွက် multi-model architecture များနှင့် federated learning စုံတွေ့ခြင်း**
+- **မှတ်ဉာဏ် ကန့်သတ်ချက်များ၊ မှန်ကန်မှုနှုန်းနှင့် hardware ကိုက်ညီမှုများ အပါအဝင် ပုံမှန် Edge AI ပြဿနာများ ဖြေရှင်းခြင်း**
+- **ထုတ်လုပ်မှုရှိ Edge AI application များအတွက် ကြည့်ရှုစောင့်ကြည့်ခြင်းနှင့် မှတ်တမ်းတင်ခြင်း မဟာဗျူဟာများ ဒီဇိုင်းဆွဲခြင်း**
 
 ### လက်တွေ့အသုံးချမှု
-- Model Selection မှ Deployment အထိ **End-to-End Edge AI Solutions** များကို တည်ဆောက်ခြင်း
-- Edge-specific Development Workflows နှင့် Optimization Techniques များတွင် **ကျွမ်းကျင်မှု** ပြသခြင်း
-- IoT, Mobile, Embedded Applications အပါအဝင် **Real-world Edge AI Use Cases** များတွင် သင်ယူထားသော Concepts များကို အသုံးချခြင်း
-- Edge AI Deployment Strategies များနှင့် ၎င်းတို့၏ Trade-offs များကို **Evaluate နှင့် Compare** လုပ်ခြင်း
+- **မော်ဒယ် ရွေးချယ်မှုမှ ထပ်တူတန်ဆောင်မှုအထိ အဆုံးသတ် Edge AI ဖြေရှင်းချက်များ ဖန်တီးခြင်း**
+- **Edge-specific ဖွံ့ဖြိုးမှု လုပ်ငန်းစဉ်နှင့် တိုးတက်မှုနည်းဗျူဟာများ၌ ကျွမ်းကျင်မှု ပြသခြင်း**
+- **ရရှိပြီးသော အယူအဆများကို IoT, မိုဘိုင်း၊ embedded application များတွင် အသုံးချမှု**
+- **Edge AI deployment နည်းလမ်းအမျိုးအစားများကို တန်ဖိုးထား စိစစ်ခြင်းနှင့် နှိုင်းယှဉ်ခြင်း**
 
-## Edge AI Development အတွက် Key Features
+## Edge AI ဖွံ့ဖြိုးမှုအတွက် အဓိက အင်္ဂါရပ်များ
 
-### 1. Model Catalog နှင့် Discovery
-- **Multi-Provider Support**: Anthropic, OpenAI, GitHub, Google စသည်တို့မှ AI Models များကို Browse နှင့် Access လုပ်နိုင်ခြင်း
-- **Local Model Integration**: ONNX နှင့် Ollama Models များကို Edge Deployment အတွက် ရှာဖွေခြင်း
-- **GitHub Models**: GitHub ၏ Model Hosting နှင့် Direct Integration
-- **Model Comparison**: Edge Device Constraints များအတွက် အကောင်းဆုံး Balance ရှာဖွေရန် Models များကို Side-by-side Compare လုပ်ခြင်း
+### ၁။ မော်ဒယ် Catalog နှင့် ရှာဖွေရေး
+- **ပြိုင်ပွဲများစွာလက်ခံမှု**: Anthropic, OpenAI, GitHub, Google နှင့် အခြား provider များမှ AI မော်ဒယ်များ ကြည့်ရှုဝင်ရောက်နိုင်ခြင်း
+- **ဒေသိယ မော်ဒယ် ပေါင်းစည်းမှု**: ONNX နှင့် Ollama မော်ဒယ်များကို အလွယ်တကူ ရှာဖွေခြင်း၊ edge deployment အတွက် စစ်တွေ့ခြင်း
+- **GitHub မော်ဒယ်များ**: GitHub ၏ model hosting နောက်ခံနှင့် တိုက်ရိုက် ပေါင်းစည်းခြင်း
+- **မော်ဒယ် နှိုင်းယှဥ်မှု**: edge device ကန့်သတ်ချက်များအတွက် ကိုက်ညီမှုအချက်များနှင့် မော်ဒယ်များကို နှိုင်းယှဥ်ခြင်း
 
-### 2. Interactive Playground
-- **Interactive Testing Environment**: Controlled Environment တွင် Model Capabilities များကို စမ်းသပ်ခြင်း
-- **Multi-modal Support**: Edge Scenarios တွင် Image, Text နှင့် အခြား Input များကို စမ်းသပ်ခြင်း
-- **Real-time Experimentation**: Model Responses နှင့် Performance အပေါ် ချက်ချင်း Feedback ရရှိခြင်း
-- **Parameter Optimization**: Edge Deployment Requirements များအတွက် Model Parameters များကို Fine-tune လုပ်ခြင်း
+### ၂။ အပြန်အလှန်ပါသော Playground
+- **ပြုလုပ်မှု စမ်းသပ်ရေး ပတ်ဝန်းကျင်**: မော်ဒယ် ရွေ့လျားမှုများကို ထိန်းချုပ်ပြီး စမ်းသပ်နိုင်ခြင်း
+- **မီဒီယာအမျိုးမျိုး ရှိမှု**: ပုံများ၊ စာသားများ နှင့် edge အခြေအနေများအတွက် Input များဖြင့် စမ်းသပ်နိုင်ခြင်း
+- **ဖြေကြားမှုအချိန်မှန် စမ်းသပ်**: မော်ဒယ် တုံ့ပြန်မှုများနှင့် စွမ်းဆောင်ရည် အချက်အလက်များကို ချက်ချင်းခံယူနိုင်ခြင်း
+- **ပါရာမီတာ တိုးတက်အောင် ပြုပြင်ခြင်း**: edge deployment အတွက် မော်ဒယ်ပါရာမီတာများကို ချိန်ညှိနိုင်ခြင်း
 
-### 3. Prompt (Agent) Builder
-- **Natural Language Generation**: Natural Language Descriptions အသုံးပြု၍ Starter Prompts များ Generate လုပ်ခြင်း
-- **Iterative Refinement**: Model Responses နှင့် Performance အပေါ် အခြေခံ၍ Prompts များကို တိုးတက်အောင် ပြုပြင်ခြင်း
-- **Task Decomposition**: Prompt Chaining နှင့် Structured Outputs အသုံးပြု၍ ရှုပ်ထွေးသော Tasks များကို ခွဲခြားခြင်း
-- **Variable Support**: Dynamic Agent Behavior အတွက် Prompts တွင် Variables များ အသုံးပြုခြင်း
-- **Production Code Generation**: Rapid App Development အတွက် Production-ready Code များ Generate လုပ်ခြင်း
+### ၃။ Prompt (Agent) Builder
+- **သဘာဝဘာသာစကားဖန်တီးမှု**: သဘာဝဘာသာစကားဖြင့် စတင် prompt များ ဖန်တီးနိုင်ခြင်း
+- **အခြေအနေပမာဏ တိုးတက် စွာ ပြင်ဆင်ခြင်း**: မော်ဒယ် တုံ့ပြန်မှုနှင့် စွမ်းဆောင်ရည်အရ prompt များ ဒုတိယတိုးတက်နိုင်ခြင်း
+- **တာဝန်များခွဲခြမ်းခြင်း**: prompt chaining နှင့် ဖွဲ့စည်းထားသော အထုတ်အပိုးများဖြင့် ရှုပ်ထွေးသောအလုပ်များ ခွဲခြမ်းရေးနိုင်ခြင်း
+- **ပြောင်းလဲနိုင်သော သွင်ပြင်များ**: agent ၏ ယိုယွင်းမှုများအတွက် variable များ အသုံးပြုနိုင်ခြင်း
+- **ထုတ်လုပ်မှုကုဒ် ဖန်တီးမှု**: အမြန် app ဖန်တီးခြင်းအတွက် ထုတ်လုပ်မှုသင့်ကုဒ်များ ဖန်တီးပေးခြင်း
 
-### 4. Bulk Run နှင့် Evaluation
-- **Multi-Model Testing**: Selected Models များတွင် Prompts များကို တစ်ပြိုင်တည်း Execute လုပ်ခြင်း
-- **Efficient Testing at Scale**: Inputs နှင့် Configurations များကို အလွယ်တကူ စမ်းသပ်ခြင်း
-- **Custom Test Cases**: Functionality ကို Validate လုပ်ရန် Test Cases များဖြင့် Agents များကို Run လုပ်ခြင်း
-- **Performance Comparison**: Models နှင့် Configurations များအကြား Results များကို Compare လုပ်ခြင်း
+### ၄။ Bulk Run နှင့် ဆန်းစစ်ခြင်း
+- **မော်ဒယ် မျိုးစုံ စမ်းသပ်မှု**: ရွေးချယ်ထားသော မော်ဒယ်များ အများကြီးတွင် prompt များ ယူဆောင် ဆောင်ရွက်နိုင်ခြင်း
+- **ကောင်းမွန်စွာ စမ်းသပ်မှု**: အမျိုးမျိုးသော input များနှင့် configuration များကို ထိရောက်စွာ စမ်းသပ်နိုင်ခြင်း
+- **စိတ်ကြိုက် စမ်းသပ်မှု များ**: agent များကို စမ်းသပ်မှုများဖြင့် စစ်ဆေးခြင်း
+- **စွမ်းဆောင်ရည် နှိုင်းယှဥ်ခြင်း**: မော်ဒယ်နှင့် configuration များ အမျိုးမျိုး အတွင်းတွင် ရလဒ်များ နှိုင်းယှဥ်စစ်ဆေးခြင်း
 
-### 5. Model Evaluation with Datasets
-- **Standard Metrics**: Built-in Evaluators (F1 Score, Relevance, Similarity, Coherence) အသုံးပြု၍ AI Models များကို စမ်းသပ်ခြင်း
-- **Custom Evaluators**: Specific Use Cases များအတွက် Evaluation Metrics များကို ဖန်တီးခြင်း
-- **Dataset Integration**: Comprehensive Datasets များနှင့် Models များကို စမ်းသပ်ခြင်း
-- **Performance Measurement**: Edge Deployment Decisions အတွက် Model Performance ကို Quantify လုပ်ခြင်း
+### ၅။ Dataset များဖြင့် မော်ဒယ် ဆန်းစစ်ခြင်း
+- **စံနမူနာ အတိုင်းအတာများ**: ဖန်တီးထားသော evaluator များဖြင့် AI မော်ဒယ်တုံ့ပြန်မှုများ စမ်းသပ်ခြင်း (F1 score, relevance, similarity, coherence)
+- **စိတ်ကြိုက် Evaluator များ**: မိမိတို့ အသုံးအဆောင်အတွက် တီထွင်ထားသော စစ်ဆေးမှုများ ဖန်တီးခြင်း
+- **Dataset ပေါင်းစည်းမှု**: ပိုပြီး စုံလင်သော dataset များအား မော်ဒယ် စမ်းသပ်ခြင်း
+- **စွမ်းဆောင်ရည် တိုင်းတာမှု**: edge deployment ဆုံးဖြတ်ချက်များအတွက် မော်ဒယ် စွမ်းဆောင်ရည်များ အတိုင်းအတာများ ကြေညာခြင်း
 
-### 6. Fine-tuning Capabilities
-- **Model Customization**: Specific Use Cases နှင့် Domains များအတွက် Models များကို Customize လုပ်ခြင်း
-- **Specialized Adaptation**: Specialized Domains နှင့် Requirements များအတွက် Models များကို Adapt လုပ်ခြင်း
-- **Edge Optimization**: Edge Deployment Constraints များအတွက် Models များကို Fine-tune လုပ်ခြင်း
-- **Domain-Specific Training**: Specific Edge Use Cases များအတွက် Models များကို Training လုပ်ခြင်း
+### ၆။ Fine-tuning စွမ်းဆောင်ရည်များ
+- **မော်ဒယ် စိတ်ကြိုက်ပြင်ဆင်ခြင်း**: အသုံးအဆောင်နှင့် domain အတွက် မော်ဒယ်များကို ပြင်ဆင်နိုင်ခြင်း
+- **အထူးပြု အညွှန်းအချက်အလက် ပေးခြင်း**: အထူးပြု domain သို့မဟုတ် လိုအပ်ချက်များအတွက် မော်ဒယ်များကို ချိန်ညှိခြင်း
+- **Edge အတွက် တိုးတက်စေခြင်း**: Edge deployment ကန့်သတ်ချက်များအတွက် စိတ်ကြိုက် မော်ဒယ်များ တိုးတက်စေခြင်း
+- **Domain စိတ်ကြိုက် လေ့ကျင့်ခြင်း**: အထူးပြု edge အသုံးအဆောင် များအတွက် မော်ဒယ် စိတ်ကြိုက်ပြင်ဆင်ခြင်း
 
-### 7. MCP Tool Integration
-- **External Tool Connectivity**: Model Context Protocol Servers များမှ Agents များကို External Tools များနှင့် ချိတ်ဆက်ခြင်း
-- **Real-world Actions**: Databases ကို Query လုပ်ခြင်း၊ APIs ကို Access လုပ်ခြင်း သို့မဟုတ် Custom Logic ကို Execute လုပ်ခြင်း
-- **Existing MCP Servers**: Command (stdio) သို့မဟုတ် HTTP (server-sent event) Protocols မှ Tools များကို အသုံးပြုခြင်း
-- **Custom MCP Development**: Agent Builder တွင် Testing လုပ်ပြီး New MCP Servers များကို Build နှင့် Scaffold လုပ်ခြင်း
+### ၇။ MCP Tool ပေါင်းစည်းမှု
+- **ပြင်ပ ကိရိယာချိတ်ဆက်မှု**: Model Context Protocol server များမှတဆင့် agent များကို ပြင်ပကိရိယာများနှင့် ချိတ်ဆက်နိုင်ခြင်း
+- **လက်တွေ့ လုပ်ဆောင်ချက်များ**: agent များကို ဒေတာဘေ့စ် စုံစမ်းရန်၊ API မှတဆင့် ဝင်ရောက်မှု ရယူရန် သို့မဟုတ် စိတ်ကြိုက် မှတ်သားမှု ပြုလုပ်ရန် ခွင့်ပြုခြင်း
+- **ကြိုတင် ရှိပြီးသား MCP Server များ**: command (stdio) သို့မဟုတ် HTTP (server-sent event) protocol များမှ tools များ အသုံးပြုခြင်း
+- **စိတ်ကြိုက် MCP ဖန်တီးမှု**: Agent Builder တွင် စမ်းသပ်မှုနှင့် MCP server အသစ်များကို ဖန်တီးခြင်းနှင့် scaffolding ပြုလုပ်ခြင်း
 
-### 8. Agent Development နှင့် Testing
-- **Function Calling Support**: External Functions များကို Dynamic အနေဖြင့် Invoke လုပ်ရန် Agents များကို Enable လုပ်ခြင်း
-- **Real-time Integration Testing**: Real-time Runs နှင့် Tool Use များဖြင့် Integration များကို စမ်းသပ်ခြင်း
-- **Agent Versioning**: Evaluation Results များအတွက် Comparison Capabilities ဖြင့် Agents များကို Version Control လုပ်ခြင်း
-- **Debugging နှင့် Tracing**: Agent Development အတွက် Local Tracing နှင့် Debugging Capabilities များ
+### ၈။ Agent ဖွံ့ဖြိုးမှုနှင့် စမ်းသပ်မှု
+- **function call ခွင့်ပြုမှု**: Agent များကို ပြင်ပ function များ သုံးနိုင်ခြင်း
+- **အချိန်မှန် ပေါင်းစည်း စမ်းသပ်မှု**: အချိန်မှန် အလှည့်အပြောင်း run များနှင့် tool အသုံးပြုမှု စမ်းသပ်ခြင်း
+- **Agent version များ ထိန်းသိမ်းမှု**: Evaluation ရလဒ်များနှင့် နှိုင်းယှဉ်မှုဖြင့် agent version များ ထိန်းသိမ်းခြင်း
+- **Debugging နှင့် tracing**: agent ဖွံ့ဖြိုးမှုအတွက် ဒေသိယ tracing နှင့် debugging စွမ်းရည်များ
 
-## Edge AI Development Workflow
+## Edge AI ဖွံ့ဖြိုးမှု လုပ်ငန်းစဉ်
 
-### အဆင့် ၁: Model Discovery နှင့် Selection
-1. **Explore Model Catalog**: Edge Deployment အတွက် သင့်လျော်သော Models များကို Model Catalog တွင် ရှာဖွေပါ
-2. **Compare Performance**: Size, Accuracy, Inference Speed အပေါ် အခြေခံ၍ Models များကို အကဲဖြတ်ပါ
-3. **Test Locally**: Edge Deployment မပြုလုပ်မီ Ollama သို့မဟုတ် ONNX Models များကို Local တွင် စမ်းသပ်ပါ
-4. **Assess Resource Requirements**: Target Edge Devices များအတွက် Memory နှင့် Computational Needs များကို သတ်မှတ်ပါ
+### အဆင့် ၁: မော်ဒယ် ရှာဖွေရေးနှင့် ရွေးချယ်မှု
+1. **မော်ဒယ် Catalog ကို ရှာဖွေခြင်း**: Edge deployment အတွက် သင့်တော်သော မော်ဒယ်များကို ရှာရန် မော်ဒယ် catalog ကို အသုံးပြုပါ
+2. **စွမ်းဆောင်ရည် နှိုင်းယှဉ်ခြင်း**: အရွယ်အစား၊ တိကျမှုနှင့် inference အရှိန်များအရ မော်ဒယ်များ စမ်းသပ်ပါ
+3. **ဒေသိယ စမ်းသပ်ခြင်း**: Ollama သို့မဟုတ် ONNX မော်ဒယ်များကို အသုံးပြုပြီး ဒေသ၌ စမ်းသပ်ပါ
+4. **resource လိုအပ်ချက် ဆန်းစစ်ခြင်း**: သတ်မှတ်ထားသော edge device များအတွက် မှတ်ဉာဏ်နှင့် တွက်ချက်မှု လိုအပ်ချက်များကို သတ်မှတ်ပါ
 
-### အဆင့် ၂: Model Optimization
-1. **Convert to ONNX**: Edge Compatibility အတွက် ရွေးချယ်ထားသော Models များကို ONNX Format သို့ Convert လုပ်ပါ
-2. **Apply Quantization**: INT8 သို့မဟုတ် INT4 Quantization ဖြင့် Model Size ကို လျှော့ချပါ
-3. **Hardware Optimization**: Target Edge Hardware (ARM, x86, Specialized Accelerators) အတွက် Optimize လုပ်ပါ
-4. **Performance Validation**: Optimized Models များသည် Acceptable Accuracy ကို ထိန်းသိမ်းထားနိုင်ကြောင်း Validate လုပ်ပါ
+### အဆင့် ၂: မော်ဒယ် တိုးတက်မှုလုပ်ငန်း
+1. **ONNX သို့ ပြောင်းလဲခြင်း**: ရွေးချယ်ထားသော မော်ဒယ်များကို ONNX format သို့ ပြောင်းပါ
+2. **Quantization ချမှတ်ခြင်း**: INT8 သို့မဟုတ် INT4 quantization ဖြင့် မော်ဒယ် အရွယ်အစား လျော့နည်းစေခြင်း
+3. **Hardware အတွက် တိုးတက်အောင် ပြုလုပ်ခြင်း**: ARM, x86, အထူး ပြဿနာဆိုင်ရာ accelerator များအတွက် optimize လုပ်ခြင်း
+4. **စွမ်းဆောင်ရည် အတည်ပြုခြင်း**: တိုးတက်ထားသော မော်ဒယ်များသည် လက်ခံနိုင်လောက်သော တိကျမှုရှိမှသာ စစ်ဆေးခြင်း
 
-### အဆင့် ၃: Application Development
-1. **Agent Design**: Agent Builder ကို အသုံးပြု၍ Edge-optimized AI Agents များကို ဖန်တီးပါ
-2. **Prompt Engineering**: Smaller Edge Models များနှင့် ထိရောက်စွာ လုပ်ဆောင်နိုင်သော Prompts များကို Develop လုပ်ပါ
-3. **Integration Testing**: Simulated Edge Conditions တွင် Agents များကို စမ်းသပ်ပါ
-4. **Code Generation**: Edge Deployment အတွက် Optimize လုပ်ထားသော Production Code များကို Generate လုပ်ပါ
+### အဆင့် ၃: Application ဖွံ့ဖြိုးမှု
+1. **Agent ဒီဇိုင်း**: Agent Builder ကို အသုံးပြု၍ edge သင့်လျော်သော AI agent များ ဖန်တီးပါ
+2. **Prompt Engineering**: အရွယ်သေးသော edge မော်ဒယ်များနှင့် အထူးအသုံးပြု ပြောင်းလဲထားသော prompt များ ဖန်တီးပါ
+3. **ပေါင်းစည်း စမ်းသပ်မှု**: edge အခြေအနေသို့ အတူတူ မျှလောက်ပုံ စမ်းသပ်ပါ
+4. **ကုဒ်ထုတ်လုပ်မှု**: Edge deployment အတွက် သင့်လျော်အောင် ထုတ်လုပ်မှုကုဒ်များ ဖန်တီးပါ
 
-### အဆင့် ၄: Evaluation နှင့် Testing
-1. **Batch Evaluation**: Edge Settings အတွက် Optimal Configuration ကို ရှာဖွေရန် Multiple Configurations များကို စမ်းသပ်ပါ
-2. **Performance Profiling**: Inference Speed, Memory Usage, Accuracy များကို Analysis လုပ်ပါ
-3. **Edge Simulation**: Target Edge Deployment Environment နှင့် ဆင်တူသော အခြေအနေများတွင် စမ်းသပ်ပါ
-4. **Stress Testing**: အမျိုးမျိုးသော Load Conditions များအောက်တွင် Performance ကို အကဲဖြတ်ပါ
+### အဆင့် ၄: ဆန်းစစ်ခြင်းနှင့် စမ်းသပ်မှု
+1. **အစုလိုက် စမ်းသပ်မှု**: အမျိုးမျိုးသော configuration များကို စမ်းသပ်၍ အကောင်းဆုံး edge ပြင်ဆင်မှုကို ရှာဖွေပါ
+2. **စွမ်းဆောင်ရည် profile ပြုလုပ်မှု**: inference အရှိန်၊ မှတ်ဉာဏ်သုံးစွဲမှု၊ တိကျမှုများကို လေ့လာပါ
+3. **Edge simulation စမ်းသပ်မှု**: ပစ်မှတ်ထားသော edge deployment အခြေအနေများနှင့် တူညီသော စမ်းသပ်မှု
+4. **ဖိအား စမ်းသပ်မှု**: မတူညီသော ထိခိုက်မှုအခြေအနေများအောက် နေရာတင် စွမ်းဆောင်ရည် နှိုင်းယှဉ်စစ်ဆေးပါ
 
-### အဆင့် ၅: Deployment Preparation
-1. **Final Optimization**: Testing Results အပေါ် အခြေခံ၍ Final Optimizations များကို Apply လုပ်ပါ
-2. **Deployment Packaging**: Edge Deployment အတွက် Models နှင့် Code များကို Package လုပ်ပါ
-3. **Documentation**: Deployment Requirements နှင့် Configuration များကို Document လုပ်ပါ
-4. **Monitoring Setup**: Edge Deployment အတွက် Monitoring နှင့် Logging ကို Prepare လုပ်ပါ
+### အဆင့် ၅: တပ်ဆင်ရေးပြင်ဆင်မှု
+1. **နောက်ဆုံး optimization**: စမ်းသပ်မှုအရလဒ်များကို အခြေခံ၍ နောက်ဆုံးတိုးတက်မှုလုပ်ဆောင်ပါ
+2. **တပ်ဆင်မှု အထုပ်စု**: မော်ဒယ်နှင့်ကုဒ်များကို edge deployment အတွက် ထုပ်ပိုးပါ
+3. **စာရွက်စာတမ်းဆွဲခြင်း**: တပ်ဆင်မှုလိုအပ်ချက်များနှင့် ဖောင်ဖွဲ့ခြင်းအား စာတမ်းပြုလုပ်ပါ
+4. **ကြည့်ရှုစောင့်ကြည့်မှု ပြင်ဆင်မှု**: edge deployment အတွက် ကြည့်ရှုစောင့်ကြည့်နှင့် မှတ်တမ်းတင်ရေး ပြုလုပ်မှုများ ပြင်ဆင်ပါ
 
-## Edge AI Development အတွက် Target Audience
+## Edge AI ဖွံ့ဖြိုးမှုအတွက် ပစ်မှတ်လူ့အဖွဲ့
 
-### Edge AI Developers
-- AI-powered Edge Devices နှင့် IoT Solutions များကို တည်ဆောက်နေသော Application Developers
-- Resource-constrained Devices များတွင် AI Capabilities များကို ပေါင်းစပ်နေသော Embedded Systems Developers
-- Smartphones နှင့် Tablets အတွက် On-device AI Applications များကို ဖန်တီးနေသော Mobile Developers
+### Edge AI Developer များ
+- AI ပါဝင်သော edge device နှင့် IoT ဖြေရှင်းချက်များ ဖန်တီးသူ application developer များ
+- အင်အားသိပ္ပံကန့်သတ်ထားသော device များထဲ AI စွမ်းရည်ချိတ်ဆက်သူ embedded system developer များ
+- စမတ်ဖုန်းများနှင့် tablet များအတွက် device-based AI application ဖန်တီးသူ mobile developer များ
 
-### Edge AI Engineers
-- Edge Deployment အတွက် Models များကို Optimize လုပ်ခြင်းနှင့် Inference Pipelines များကို စီမံနေသော AI Engineers
-- Distributed Edge Infrastructure များတွင် AI Models များကို Deploy နှင့် စီမံနေသော DevOps Engineers
-- Edge Hardware Constraints များအတွက် AI Workloads များကို Optimize လုပ်နေသော Performance Engineers
+### Edge AI Engineer များ
+- မော်ဒယ်များကို edge deployment အတွက် optimize ပြုလုပ်ခြင်းနှင့် inference လမ်းကြောင်းများ စီမံခန့်ခွဲခြင်းလုပ်ငန်းနယ်ပယ် AI engineer များ
+- ဖြန့်ဖြူးထားသော edge အခြေခံပရိုတိုကောသိုလှောင်မှု ပတ်ဝန်းကျင်တွင် AI မော်ဒယ်များ တပ်ဆင်၊ စီမံခန့်ခွဲသူ DevOps engineer များ
+- AI အလုပ်နဲ့ပတ်သက်သော edge hardware ကန့်သတ်ချက်များအတွက် စွမ်းဆောင်ရည် တိုးတက်စေသူ performance engineer များ
 
-### Researchers နှင့် Educators
-- Edge Computing အတွက် ထိရောက်သော Models နှင့် Algorithms များကို ဖွံ့ဖြိုးတိုးတက်နေသော AI Researchers
-- Edge AI Concepts များကို သင်ကြားခြင်းနှင့် Optimization Techniques များကို ပြသနေသော Educators
-- Edge AI Deployment ၏ စိန်ခေါ်မှုများနှင့် ဖြေရှင်းနည်းများကို လေ့လာနေသော Students
+### သုတေသနနှင့် လေ့ကျင့်ရေး ဆရာ/ဆရာမများ
+- Edge computing အတွက် ထိရောက်သော မော်ဒယ်များနှင့် algorithm များ ဖန်တီးသူ AI researcher များ
+- Edge AI အယူအဆများ သင်ကြားပေးသူနှင့် တိုးတက်မှု နည်းဗျူဟာများ ပြသသူ educator များ
+- Edge AI တပ်ဆင်မှုတွင် ကြုံတွေ့မည့် စိန်ခေါ်မှုများနှင့် ဖြေရှင်းနည်းများ လေ့လာသင်ယူသူ ကျောင်းသား/ကျောင်းသူများ
 
-## Edge AI Use Cases
+## Edge AI အသုံးပြုမှု ကိစ္စရပ်များ
 
-### Smart IoT Devices
-- **Real-time Image Recognition**: IoT Cameras နှင့် Sensors များတွင် Computer Vision Models များကို Deploy လုပ်ခြင်း
-- **Voice Processing**: Smart Speakers တွင် Speech Recognition နှင့် Natural Language Processing ကို Implement လုပ်ခြင်း
-- **Predictive Maintenance**: Industrial Edge Devices များတွင် Anomaly Detection Models များကို Run လုပ်ခြင်း
-- **Environmental Monitoring**: Sensor Data Analysis Models များကို Environmental Applications များအတွက် Deploy လုပ်ခြင်း
+### စမတ် IoT ပစ္စည်းများ
+- **အချိန်မှန် ပုံများ မှတ်သားမှု**: IoT ကင်မရာနှင့် sensor များပေါ်တွင် computer vision မော်ဒယ်များ တပ်ဆင်ခြင်း
+- **အသံ ဖြေရှင်းမှု**: smart speaker များအတွက် စကားပြော အသိအမှတ်ပြုမှုနှင့် သဘာဝဘာသာစကား ဖြေရှင်းမှု တပ်ဆင်ခြင်း
+- **ခန့်မှန်း ပြုပြင်ထိန်းသိမ်းမှု**: စက်မှုလုပ်ငန်း edge device များပေါ်တွင် anomaly detection မော်ဒယ်များ ပြေးဆွဲခြင်း
+- **ပတ်ဝန်းကျင် စောင့်ကြည့်မှု**: ပတ်ဝန်းကျင်ဆိုင်ရာ အခြေအနေနှင့် သိပ်သည်းမှု စက်နင်းကို စစ်ဆေးရန် sensor data တွေ့ချက် မော်ဒယ်များ တပ်ဆင်ခြင်း
 
-### Mobile နှင့် Embedded Applications
-- **On-device Translation**: Offline အနေဖြင့် လည်ပတ်နိုင်သော Language Translation Models များကို Implement လုပ်ခြင်း
-- **Augmented Reality**: AR Applications များအတွက် Real-time Object Recognition နှင့် Tracking ကို Deploy လုပ်ခြင်း
-- **Health Monitoring**: Wearable Devices နှင့် Medical Equipment များတွင် Health Analysis Models များကို Run လုပ်ခြင်း
-- **Autonomous Systems**: Drones, Robots, Vehicles များအတွက် Decision-making Models များကို Implement လုပ်ခြင်း
+### မိုဘိုင်းနှင့် Embedded application များ
+- **ဒေသိယ ဘာသာပြန်ခြင်း**: အော့ဖ်လိုင်းလုပ်ကိုင်နိုင်သော ဘာသာပြန် မော်ဒယ်များ တပ်ဆင်ခြင်း
+- **Augmented Reality**: AR application များအတွက် အချိန်မှန် အရာဝတ္ထု သတ်မှတ်ခြင်းနှင့် လိုက်လံခြင်း ဆိုက်ဆိုင်မှု
+- **ကျန်းမာရေး စောင့်ကြည့်မှု**: စွဲဆွဲထားသော ပစ္စည်းများနှင့် ဆေးပစ္စည်းပေါ်တွင် ကျန်းမာရေးမှတ်ချက် မော်ဒယ်များ ပြေးဆွဲခြင်း
+- **လူမောင်းမရှိသော စနစ်များ**: drone, robot နှင့် ယာဉ်များအတွက် ဆုံးဖြတ်ချက်ချ မော်ဒယ်များ တပ်ဆင်ခြင်း
 
-### Edge Computing Infrastructure
-- **Edge Data Centers**: Low-latency Applications များအတွက် Edge Data Centers တွင် AI Models များကို Deploy လုပ်ခြင်း
-- **CDN Integration**: Content Delivery Networks တွင် AI Processing Capabilities များကို ပေါင်းစပ်ခြင်း
-- **5G Edge**: 5G Edge Computing ကို အသုံးပြု၍ AI-powered Applications များကို Leverage လုပ်ခြင်း
-- **Fog Computing**: Fog Computing Environments တွင် AI Processing ကို Implement လုပ်ခြင်း
+### Edge Computing အခြေခံသော ပတ်ဝန်းကျင်
+- **Edge Data Center များ**: အချိန်လျှော့လျော့ထားသော application များအတွက် AI မော်ဒယ်များကို edge data center များတွင် တပ်ဆင်ခြင်း
+- **CDN ပေါင်းစည်းမှု**: content delivery network များတွင် AI ပြန်လည်လုပ်ဆောင်မှု အင်အားကို ပေါင်းစည်းခြင်း
+- **5G Edge**: AI ပါဝင်သော application များအတွက် 5G Edge computing ကို အသုံးချခြင်း
+- **Fog Computing**: Fog computing ပတ်ဝန်းကျင်များတွင် AI ပြန်လည်လုပ်ဆောင်မှု တပ်ဆင်ခြင်း
 
-## Installation နှင့် Setup
+## တပ်ဆင်ခြင်းနှင့် စီစဉ်ခြင်း
 
-### Extension Installation
-Visual Studio Code Marketplace မှ AI Toolkit Extension ကို တိုက်ရိုက် Install လုပ်ပါ:
+### Extension တပ်ဆင်ခြင်း
+Visual Studio Code Marketplace မှ AI Toolkit extension ကို တိုက်ရိုက် တပ်ဆင်ပါ-
 
 **Extension ID**: `ms-windows-ai-studio.windows-ai-studio`
 
-**Installation Methods**:
-1. **VS Code Marketplace**: Extensions View တွင် "AI Toolkit" ကို ရှာဖွေပါ
-2. **Command Line**: `code --
-2. သဘာဝဘာသာစကားဖော်ပြချက်များကို အသုံးပြု၍ စတင်ရန်အကြံပြုချက်များ ဖန်တီးပါ  
-3. မော်ဒယ်၏တုံ့ပြန်မှုများအပေါ် အခြေခံ၍ အကြံပြုချက်များကို ပြန်လည်တိုးတက်အောင်လုပ်ပါ  
-4. Agent ၏စွမ်းရည်များကို မြှင့်တင်ရန် MCP tools ကို ပေါင်းစည်းပါ  
+**တပ်ဆင်မှုနည်းလမ်းများ**:
+1. **VS Code Marketplace**: Extensions view တွင် "AI Toolkit" ဟု ရှာဖွေပါ
+2. **Command Line**: `code --install-extension ms-windows-ai-studio.windows-ai-studio`
+3. **တိုက်ရိုက် တပ်ဆင်ခြင်း**: [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) မှ ဒေါင်းလုပ်လုပ်ပါ
 
-#### အဆင့် ၃: စမ်းသပ်ခြင်းနှင့် အကဲဖြတ်ခြင်း  
-1. **Bulk Run** ကို အသုံးပြု၍ ရွေးချယ်ထားသော မော်ဒယ်များအတွက် အကြံပြုချက်များစွာကို စမ်းသပ်ပါ  
-2. Test cases များနှင့်အတူ agents များကို လုပ်ဆောင်ပြီး လုပ်ဆောင်နိုင်မှုကို အတည်ပြုပါ  
-3. Built-in metrics သို့မဟုတ် အတိအကျ metrics များကို အသုံးပြု၍ တိကျမှုနှင့် စွမ်းဆောင်ရည်ကို အကဲဖြတ်ပါ  
-4. မော်ဒယ်များနှင့် configuration များကို နှိုင်းယှဉ်ပါ  
+### Edge AI ဖွံ့ဖြိုးမှုအတွက် မလိုအပ်ချက်များ
+- **Visual Studio Code**: နောက်ဆုံးထွက် ဗားရှင်း အကြံပြုသည်
+- **Python ပတ်ဝန်းကျင်**: Python 3.8+ နှင့် လိုအပ်သော AI library များ
+- **ONNX Runtime** (ရွေးချယ်အသုံးပြု): ONNX မော်ဒယ် inference အတွက်
+- **Ollama** (ရွေးချယ်အသုံးပြု): ဒေသိယ မော်ဒယ် ဝန်ဆောင်မှု အတွက်
+- **Hardware acceleration tool များ**: CUDA, OpenVINO သို့မဟုတ် platform-specific accelerator များ
 
-#### အဆင့် ၄: Fine-tuning နှင့် Optimization  
-1. အထူး edge use cases များအတွက် မော်ဒယ်များကို Customize လုပ်ပါ  
-2. Domain-specific fine-tuning ကို အသုံးပြုပါ  
-3. Edge deployment အကန့်အသတ်များအတွက် Optimize လုပ်ပါ  
-4. Agent configuration များကို Version လုပ်ပြီး နှိုင်းယှဉ်ပါ  
+### စတင် ပြင်ဆင်မှု
+1. **Extension အသက်သွင်းခြင်း**: VS Code ဖွင့်၍ AI Toolkit သည် Activity Bar တွင် ဖော်ပြမှုရှိမှု စစ်ဆေးပါ
+2. **Model Provider ပြင်ဆင်မှု**: GitHub, OpenAI, Anthropic သို့မဟုတ် အခြား မော်ဒယ် provider များ ဝင်ရောက်ခွင့် ပြင်ဆင်ပါ
+3. **ဒေသိယ ပတ်ဝန်းကျင်**: Python ပတ်ဝန်းကျင် တပ်ဆင်ပြီး လိုအပ်သော package များ ထည့်သွင်းပါ
+4. **Hardware acceleration**: GPU/NPU acceleration ရှိပါက ပြင်ဆင်ပါ
+5. **MCP ပေါင်းစည်းမှု**: Model Context Protocol server များ ပြင်ဆင်ပါ (လိုအပ်ပါက)
 
-#### အဆင့် ၅: Deployment ပြင်ဆင်မှု  
-1. Agent Builder ကို အသုံးပြု၍ ထုတ်လုပ်မှုအဆင့် code ကို ဖန်တီးပါ  
-2. ထုတ်လုပ်မှုအတွက် MCP server connection များကို စတင်ပြင်ဆင်ပါ  
-3. Edge devices များအတွက် deployment packages များကို ပြင်ဆင်ပါ  
-4. Monitoring နှင့် evaluation metrics များကို Configure လုပ်ပါ  
+### ပထမဆုံး စတင်လုပ်ဆောင်မည့် စစ်ဆေးစာရင်း
+- [ ] AI Toolkit extension တပ်ဆင်ပြီး အသက်သွင်းခြင်း ဖြစ်စေ
+- [ ] မော်ဒယ် catalog သို့ ဝင်ရောက်နိုင်ပြီး မော်ဒယ်များ ရှာဖွေရှင်မြင်နိုင်ခြင်း ပိုင်ဆိုင်
+- [ ] Playground စမ်းသပ်မှု လုပ်ဆောင်နိုင်ခြင်း ရှိ
+- [ ] Agent Builder ကို prompt ဖန်တီးမှုအတွက် သုံးနိုင်ခြင်း ရှိ
+- [ ] ဒေသိယ ဖွံ့ဖြိုးမှု ပတ်ဝန်းကျင် ပြင်ဆင်ပြီး
+- [ ] Hardware acceleration တွင် (ရှိပါက) ပြင်ဆင်မှု အတိအကျ ပြုလုပ်ထား
 
-## AI Toolkit အတွက် နမူနာများ  
+## AI Toolkit ဖြင့် စတင်အသုံးပြုခြင်း
 
-ကျွန်ုပ်တို့၏ နမူနာများကို စမ်းသပ်ပါ  
-[AI Toolkit samples](https://github.com/Azure-Samples/AI_Toolkit_Samples) များကို Developer များနှင့် Researcher များအတွက် AI ဖြေရှင်းချက်များကို ထိရောက်စွာ လေ့လာရန်နှင့် အကောင်အထည်ဖော်ရန် ရည်ရွယ်၍ ဖန်တီးထားပါသည်။  
+### အရှိန်မြန်စတင်ခြင်း လမ်းညွှန်
 
-ကျွန်ုပ်တို့၏ နမူနာများတွင် ပါဝင်သည်-  
+GitHub တွင် ထားရှိသော မော်ဒယ်များနှင့် စတင်အသုံးပြုရန် အကြံပြုပေးပါသည်-
 
-နမူနာ Code: မော်ဒယ်များကို training, deploying သို့မဟုတ် application များတွင် ပေါင်းစည်းခြင်းစသည့် AI လုပ်ဆောင်ချက်များကို ပြသရန်အတွက် ကြိုတင်ဖန်တီးထားသော နမူနာများ  
-Documentation: AI Toolkit ၏ features များနှင့် အသုံးပြုနည်းကို နားလည်ရန်အတွက် လမ်းညွှန်များနှင့် သင်ခန်းစာများ  
+1. **တပ်ဆင်ခြင်း**: ဤ [တပ်ဆင်ခြင်း လမ်းညွှန်](https://code.visualstudio.com/docs/intelligentapps/overview#_install-and-setup) အတိုင်း သင်၏ စက်၏ AI Toolkit တပ်ဆင်ပါ
+2. **မော်ဒယ် ရှာဖွေမှု**: extension tree view မှ **CATALOG > Models** ကို ရွေး၍မော်ဒယ်တွေ ကြည့်ရှုပါ
+3. **GitHub မော်ဒယ်များ**: ပေါင်းစည်းမှုအတွက် GitHub တွင် host လုပ်ထားသော မော်ဒယ်ပေါ် နေရာပြောင်းပါ
+4. **Playground စမ်းသပ်မှု**: မော်ဒယ်ကတ်များမှ **Try in Playground** ကို ရွေးပြီး မော်ဒယ် စွမ်းရည်များကို စမ်းသပ်ပါ
 
-လိုအပ်ချက်များ  
-- Visual Studio Code  
-- Visual Studio Code အတွက် AI Toolkit  
-- GitHub Fine-grained personal access token (PAT)  
-- Foundry Local  
+### အဆင့်ဆင့် Edge AI ဖွံ့ဖြိုးမှု လုပ်ငန်းစဉ်
 
-## Edge AI Development အတွက် အကောင်းဆုံး လုပ်ဆောင်မှုများ  
+#### အဆင့် ၁: မော်ဒယ် ရှာဖွေရေးနှင့် ရွေးချယ်မှု
+1. VS Code Activity Bar ထဲရှိ AI Toolkit ကို ဖွင့်ပါ
+2. Edge deployment အတွက် သင့်တော်သော မော်ဒယ်များ ရှာဖွေရန် Model Catalog ကို ကြည့်ရှုပါ
+3. သင့် edge အလိုအလျောက် GitHub, ONNX, Ollama အဖြစ် provider နှင့် စီစစ်ပါ
+4. မော်ဒယ် စွမ်းရည်ကို ချက်ချင်းစမ်းသပ်ရန် **Try in Playground** ကို အသုံးပြုပါ
 
-### မော်ဒယ် ရွေးချယ်မှု  
-- **Size Constraints**: ရည်ရွယ်ထားသော device များ၏ memory အကန့်အသတ်များအတွင်း မော်ဒယ်များကို ရွေးချယ်ပါ  
-- **Inference Speed**: အချိန်နှင့်တပြေးညီ လုပ်ဆောင်မှုများအတွက် အမြန်ဆုံး inference ရရှိနိုင်သော မော်ဒယ်များကို ဦးစားပေးပါ  
-- **Accuracy Trade-offs**: မော်ဒယ်တိကျမှုနှင့် အရင်းအမြစ်အကန့်အသတ်များကို ချိန်ညှိပါ  
-- **Format Compatibility**: Edge deployment အတွက် ONNX သို့မဟုတ် hardware-optimized formats များကို ဦးစားပေးပါ  
+#### အဆင့် ၂: Agent ဖွံ့ဖြိုးမှု
+1. Edge သင့်လျော်သော AI agent များ ဖန်တီးရန် **Prompt (Agent) Builder** ကို အသုံးပြုပါ
+2. သဘာဝဘာသာစကား ဖေါ်ပြချက်များကို အသုံးပြု၍ စတင် prompt များ ဖန်တီးပါ
+3. မော်ဒယ် တုံ့ပြန်မှုအရ prompt များအား တိုးတက်စွာ ပြင်ဆင်ပါ
+4. Agent ၏ လုပ်ဆောင်ချက် မြှင့်တင်ရန် MCP tool များ ပေါင်းစည်းပါ
 
-### Optimization နည်းလမ်းများ  
-- **Quantization**: မော်ဒယ်အရွယ်အစားကို လျှော့ချပြီး အမြန်နှုန်းကို တိုးတက်စေရန် INT8 သို့မဟုတ် INT4 quantization ကို အသုံးပြုပါ  
-- **Pruning**: မလိုအပ်သော မော်ဒယ် parameters များကို ဖယ်ရှားပြီး လုပ်ဆောင်မှုလိုအပ်ချက်များကို လျှော့ချပါ  
-- **Knowledge Distillation**: ကြီးမားသော မော်ဒယ်များ၏ စွမ်းဆောင်ရည်ကို ထိန်းသိမ်းထားသော သေးငယ်သော မော်ဒယ်များကို ဖန်တီးပါ  
-- **Hardware Acceleration**: NPU, GPU သို့မဟုတ် အထူး accelerator များကို ရရှိနိုင်ပါက အသုံးပြုပါ  
 
-### Development Workflow  
-- **Iterative Testing**: Development အတွင်း edge-like အခြေအနေများတွင် မကြာခဏ စမ်းသပ်ပါ  
-- **Performance Monitoring**: အရင်းအမြစ်အသုံးပြုမှုနှင့် inference အမြန်နှုန်းကို ဆက်လက်ကြည့်ရှုပါ  
-- **Version Control**: မော်ဒယ် version များနှင့် optimization settings များကို ထိန်းသိမ်းပါ  
-- **Documentation**: Optimization ဆုံးဖြတ်ချက်များနှင့် စွမ်းဆောင်ရည် trade-offs များကို မှတ်တမ်းတင်ပါ  
+#### အဆင့် ၃: စမ်းသပ်ခြင်းနှင့် အကဲဖြတ်ခြင်း
+၁။ **Bulk Run** ကို အသုံးပြု၍ ရွေးချယ်ထားသည့် မော်ဒယ်များတွင် မတူညီသော prompt များစစ်ဆေးပါ
+၂။ လုပ်ဆောင်မှုကို အတည်ပြုရန် အေးဂျင့်များအား စမ်းသပ်မှု အနေဖြင့် လည်ပတ်ပါ
+၃။ တွဲဖက်ပါဝင်ထားသော သို့မဟုတ် စိတ်ကြိုက် ဂဏန်းခွဲများကို အသုံးပြု၍ တိကျမှုနှင့် စွမ်းဆောင်ရည်ကို အကဲဖြတ်ပါ
+၄။ မတူညီသော မော်ဒယ်များနှင့် ဖွဲ့စည်းမှုများကို နှိုင်းယှဉ်ပါ
 
-### Deployment အတွက် စဉ်းစားရန်  
-- **Resource Monitoring**: ထုတ်လုပ်မှုတွင် memory, CPU, နှင့် power အသုံးပြုမှုကို ကြည့်ရှုပါ  
-- **Fallback Strategies**: မော်ဒယ် fail ဖြစ်ပါက fallback mechanism များကို အကောင်အထည်ဖော်ပါ  
-- **Update Mechanisms**: မော်ဒယ် update များနှင့် version management အတွက် အစီအစဉ်ရေးဆွဲပါ  
-- **Security**: Edge AI application များအတွက် သင့်လျော်သော လုံခြုံရေးအတိုင်းအတာများကို အကောင်အထည်ဖော်ပါ  
+#### အဆင့် ၄: ပြုပြင်မွမ်းမံခြင်းနှင့် မောင်းနှင်မှုတိုးတက်မှု
+၁။ အထူးသီးသန့် အသုံးပြုမှုအတွက် မော်ဒယ်များကို ကိုယ်ပိုင်ပြုပြင်ထိန်းသိမ်းပါ
+၂။ နယ်ပယ်အထူး ပြုပြင်မွမ်းမံမှု အသုံးချပါ
+၃။ အခြေစိုက် ထည့်သွင်းအသုံးပြုမှု ကန့်သတ်ချက်အတွက် တိုးတက်မှုလုပ်ဆောင်ပါ
+၄။ မတူညီသော အေးဂျင့်ဖွဲ့စည်းမှုများ၏ ဗားရှင်းများ ထုတ်လုပ်နှင့် နှိုင်းယှဉ်ပါ
 
-## Edge AI Frameworks နှင့် ပေါင်းစည်းမှု  
+#### အဆင့် ၅: ထည့်သွင်းအသုံးပြုမှု ပြင်ဆင်ခြင်း
+၁။ Agent Builder ကို အသုံးပြု၍ ထုတ်လုပ်စရာ ကုဒ် ပြုလုပ်ပါ
+၂။ ထုတ်လုပ်မှုအတွက် MCP ဆာဗာ ချိတ်ဆက်မှုများ သတ်မှတ်ပါ
+၃။ အစွမ်းအင် အိပ်စက်ပစ္စည်းများအတွက် ထည့်သွင်းအသုံးပြုမှု အထုပ်များ ပြင်ဆင်ပါ
+၄။ စောင့်ကြည့်ခြင်းနှင့် အကဲဖြတ်မှု ဂဏန်းများကို ဖွဲ့စည်းပါ
 
-### ONNX Runtime  
-- **Cross-platform Deployment**: မော်ဒယ်များကို အမျိုးမျိုးသော edge platform များတွင် deploy လုပ်ပါ  
-- **Hardware Optimization**: ONNX Runtime ၏ hardware-specific optimizations ကို အသုံးပြုပါ  
-- **Mobile Support**: ONNX Runtime Mobile ကို smartphone နှင့် tablet application များအတွက် အသုံးပြုပါ  
-- **IoT Integration**: ONNX Runtime ၏ lightweight distributions ကို အသုံးပြု၍ IoT devices များတွင် deploy လုပ်ပါ  
+## AI Toolkit အတွက် စမ်းသပ်မှုနမူနာများ
 
-### Windows ML  
-- **Windows Devices**: Windows-based edge devices နှင့် PCs အတွက် optimize လုပ်ပါ  
-- **NPU Acceleration**: Windows devices တွင် Neural Processing Units ကို အသုံးပြုပါ  
-- **DirectML**: Windows platform များတွင် GPU acceleration အတွက် DirectML ကို အသုံးပြုပါ  
-- **UWP Integration**: Universal Windows Platform application များနှင့် ပေါင်းစည်းပါ  
+ကျွန်ုပ်တို့၏ စမ်းသပ်မှုများကို ကြိုးစားကြည့်ပါ
+[AI Toolkit samples](https://github.com/Azure-Samples/AI_Toolkit_Samples) များသည် အထောက်အကူပြုရန် အတွက် Developer များနှင့် သုတေသနရှင်များ AI ဖြေရှင်းချက်များ ထိရောက်စွာ စမ်းသပ်ရန်နှင့် ကိရိယာများဖြင့် တည်ဆောက်ရန် တီထွင်ထားသည်။
 
-### TensorFlow Lite  
-- **Mobile Optimization**: TensorFlow Lite မော်ဒယ်များကို mobile နှင့် embedded devices များတွင် deploy လုပ်ပါ  
-- **Hardware Delegates**: Acceleration အတွက် အထူး hardware delegates များကို အသုံးပြုပါ  
-- **Micro Controllers**: TensorFlow Lite Micro ကို အသုံးပြု၍ microcontrollers များတွင် deploy လုပ်ပါ  
-- **Cross-platform Support**: Android, iOS, နှင့် embedded Linux systems များတွင် deploy လုပ်ပါ  
+ကျွန်ုပ်တို့၏ စမ်းသပ်မှု ထဲတွင် ပါဝင်သည် -
 
-### Azure IoT Edge  
-- **Cloud-Edge Hybrid**: Cloud training နှင့် edge inference ကို ပေါင်းစည်းပါ  
-- **Module Deployment**: AI မော်ဒယ်များကို IoT Edge modules အဖြစ် deploy လုပ်ပါ  
-- **Device Management**: Edge devices များနှင့် မော်ဒယ် update များကို အဝေးမှ စီမံခန့်ခွဲပါ  
-- **Telemetry**: Edge deployment များမှ စွမ်းဆောင်ရည် data နှင့် မော်ဒယ် metrics များကို စုဆောင်းပါ  
+စမ်းသပ်ကုဒ်: AI လုပ်ဆောင်ချက်များကို ရှင်းပြသည့် ရေးသားထားသော ဥပမာများ၊ သင်ကြားခြင်း၊ ထည့်သွင်းအသုံးပြုမှုသို့မဟုတ် application များတွင် မော်ဒယ်ပြုစုပြီး ပေါင်းစပ်ခြင်း။
+စာရွက်စာတမ်းများ: အသုံးပြုသူများအတွက် AI Toolkit လုပ်ဆောင်ချက်များကို နားလည်ရန် လမ်းညွှန်ချက်များနှင့် သင်ခန်းစာများ။
+လိုအပ်သောအချက်များ
 
-## အဆင့်မြင့် Edge AI အခြေအနေများ  
+- Visual Studio Code
+- AI Toolkit for Visual Studio Code
+- GitHub Fine-grained personal access token (PAT)
+- Foundry Local
 
-### Multi-Model Deployment  
-- **Model Ensembles**: တိကျမှုတိုးတက်မှု သို့မဟုတ် redundancy အတွက် မော်ဒယ်များစွာကို deploy လုပ်ပါ  
-- **A/B Testing**: Edge devices များတွင် မော်ဒယ်များကို တစ်ချိန်တည်း စမ်းသပ်ပါ  
-- **Dynamic Selection**: လက်ရှိ device အခြေအနေများအပေါ် မော်ဒယ်များကို ရွေးချယ်ပါ  
-- **Resource Sharing**: Deploy လုပ်ထားသော မော်ဒယ်များအကြား အရင်းအမြစ်အသုံးပြုမှုကို optimize လုပ်ပါ  
+## Edge AI ဖန်တီးမှုအတွက် အကောင်းဆုံးလေ့လာမှုများ
 
-### Federated Learning  
-- **Distributed Training**: Edge devices များစွာတွင် မော်ဒယ်များကို training လုပ်ပါ  
-- **Privacy Preservation**: Training data ကို local တွင်ထားပြီး မော်ဒယ်တိုးတက်မှုများကို မျှဝေပါ  
-- **Collaborative Learning**: Devices များအကြား အတွေ့အကြုံများကို မျှဝေခြင်းအားဖြင့် သင်ယူမှုကို အကောင်အထည်ဖော်ပါ  
-- **Edge-Cloud Coordination**: Edge devices နှင့် cloud infrastructure အကြား သင်ယူမှုကို စီမံခန့်ခွဲပါ  
+### မော်ဒယ် ရွေးချယ်ခြင်း
+- **အရွယ်အစား ကန့်သတ်ချက်များ**: ရည်ရွယ်ထားသော စက်ပစ္စည်းများ၏ မှတ်ဉာဏ် အကန့်အသတ်အတွင်း ထည့်သွင်းနိုင်သည့် မော်ဒယ်များကိုရွေးချယ်ပါ
+- **ခန့်မှန်းရုန်းအား မြန်နှုန်း**: အချိန်နှုန်းကို ရှောင်းရှုမည့် အမှုရည်ရွယ်ချက်များအတွက် မြန်ဆန်သော မော်ဒယ်များကို ဦးစားပေးပါ
+- **တိကျမှုနှင့် စွမ်းအင် ကန့်သတ်ချက်များ၏ လက်တွေ့ညီညာမှု**: မော်ဒယ် တိကျမှုနှင့် ရင်းမြစ် ကန့်သတ်ချက်များအား ချိန်ညှိပါ
+- **ဖော်แมတ်အမျိုးအစား အဆင်ပြေမှု**: Edge ထည့်သွင်းအသုံးပြုမှုအတွက် ONNX သို့မဟုတ် hardware အထူးပြု format များကို ဦးစားပေးပါ
 
-### Real-time Processing  
-- **Stream Processing**: Edge devices တွင် အဆက်မပြတ် data stream များကို လုပ်ဆောင်ပါ  
-- **Low-latency Inference**: အနိမ့်ဆုံး inference latency ရရှိရန် optimize လုပ်ပါ  
-- **Batch Processing**: Edge devices တွင် data batch များကို ထိရောက်စွာ လုပ်ဆောင်ပါ  
-- **Adaptive Processing**: လက်ရှိ device စွမ်းရည်များအပေါ် Processing ကို ချိန်ညှိပါ  
+### တိုးတက်မှု နည်းပညာများ
+- **ချုပ်ကိုင်ခြင်း (Quantization)**: မော်ဒယ်အရွယ်အစား လျော့ချပြီး မြန်ဆန်အောင် INT8 သို့မဟုတ် INT4 ချုပ်ကိုင်မှုများကို အသုံးပြုပါ
+- **စီစစ်ခြင်း (Pruning)**: မလိုအပ်သော မော်ဒယ်ပါရာမီတာများ ဖယ်ရှား၍ တွက်ချက်မှု လိုအပ်ချက်ကို လျော့နည်းစေပါ
+- **အသိပညာခွဲခြမ်းခြင်း (Knowledge Distillation)**: ကြီးမားသော မော်ဒယ်၏ စွမ်းဆောင်ရည် ကိုသိမ်းဆည်းထားသော ဆူငယ်သော မော်ဒယ်များကို ဖန်တီးပါ
+- **hardware မြန်ဆန်မှု (Hardware Acceleration)**: တွေအား NPUs, GPUs သို့မဟုတ် အထူးပြု လျှပ်စစ်ကိရိယာများကိုစွဲ သုံးပါ
 
-## Edge AI Development Troubleshooting  
+### ဖန်တီးမှု လည်ပတ်မှုစနစ်
+- **ကျယ်ပြန့်စွာ စမ်းသပ်ခြင်း**: ဖန်တီးမှုကာလအတွင်း Edge ဖော်မြူလာများကဲ့သို့ အခြေအနေများတွင် မကြာခဏ စမ်းသပ်ပါ
+- **စွမ်းဆောင်ရည် စောင့်ကြည့်ခြင်း**: စွမ်းအင်အသုံးပြုမှုနှင့် ခန့်မှန်းမှု မြန်နှုန်းကို ဆက်တိုက်စောင့်ကြည့်ပါ
+- **ဗားရှင်း ထိန်းချုပ်မှု**: မော်ဒယ်ဗားရှင်းများနှင့် တိုးတက်မှု အစီအစဉ်များကို အတင်းပေါင်းစံထားပါ
+- **စာရွက်စာတမ်းများ**: တိုးတက်မှု ဆိုင်ရာ ဆုံးဖြတ်ချက်များနှင့် စွမ်းဆောင်ရည် ညှိနှိုင်းမှုများအား စာတမ်းရေးပါ
 
-### အများဆုံးတွေ့ရသော ပြဿနာများ  
-- **Memory Constraints**: မော်ဒယ်သည် ရည်ရွယ်ထားသော device memory အတွက် အလွန်ကြီးမားနေသည်  
-- **Inference Speed**: မော်ဒယ် inference သည် အချိန်နှင့်တပြေးညီ လုပ်ဆောင်မှုအတွက် အလွန်နှေးကွေးနေသည်  
-- **Accuracy Degradation**: Optimization ကြောင့် မော်ဒယ်တိကျမှု အလွန်နိမ့်ကျနေသည်  
-- **Hardware Compatibility**: မော်ဒယ်သည် ရည်ရွယ်ထားသော hardware နှင့် မကိုက်ညီပါ  
+### ထည့်သွင်းစဉ်းစားမှုများ
+- **ရင်းမြစ် စောင့်ကြည့်ခြင်း**: ထုတ်လုပ်မှုတွင် မှတ်ဉာဏ်, CPU နှင့် စွမ်းအင် အသုံးပြုမှုကို စောင့်ကြည့်ပါ
+- **နောက်ဆုံးဖြစ်မှ ဟန့်ကြားမှုများ (Fallback Strategies)**: မော်ဒယ် ကြေးငွေ ကန့်သတ်ချက်များအတွက် လှည့်ကြိုး စနစ်များ တပ်ဆင်ပါ
+- **နောက်ဆုံးပြင်ဆင်မှုစနစ်များ**: မော်ဒယ် အပ်ဒိတ်များနှင့် ဗားရှင်းစီမံခန့်ခွဲမှုများအတွက် စီစဉ်ပါ
+- **လုံခြုံရေး**: Edge AI အက်ပလီကေးရှင်းများအတွက် သင့်တော်သော လုံခြုံရေး စီမံချက်များ တပ်ဆင်ပါ
 
-### Debugging Strategies  
-- **Performance Profiling**: Bottlenecks များကို ရှာဖွေရန် AI Toolkit ၏ tracing features ကို အသုံးပြုပါ  
-- **Resource Monitoring**: Development အတွင်း memory နှင့် CPU အသုံးပြုမှုကို ကြည့်ရှုပါ  
-- **Incremental Testing**: ပြဿနာများကို သီးခြားစစ်ဆေးရန် optimization များကို အဆင့်ဆင့် စမ်းသပ်ပါ  
-- **Hardware Simulation**: ရည်ရွယ်ထားသော hardware ကို simulation လုပ်ရန် development tools များကို အသုံးပြုပါ  
+## Edge AI ဖရိမ်းဝတ်နှင့် ပေါင်းစပ်သုံးမှု
 
-### Optimization Solutions  
-- **Further Quantization**: Quantization နည်းလမ်းများကို ပိုမိုတိုးတက်စွာ အသုံးပြုပါ  
-- **Model Architecture**: Edge အတွက် optimize လုပ်ထားသော မော်ဒယ် architecture များကို စဉ်းစားပါ  
-- **Preprocessing Optimization**: Edge အကန့်အသတ်များအတွက် data preprocessing ကို optimize လုပ်ပါ  
-- **Inference Optimization**: Hardware-specific inference optimizations ကို အသုံးပြုပါ  
+### ONNX Runtime
+- **ကြီးလွှမ်းသော ပလက်ဖောင်းများဝန်းကျင်တွင် ထည့်သွင်းမှု**: ONNX မော်ဒယ်များကို မတူညီသော Edge ပလက်ဖောင်းများတွင် ထည့်သွင်းပါ
+- **hardware အတိုးပြုမှုများ**: ONNX Runtime ၏ hardware အထူးပြု စနစ်များကို အသုံးပြုပါ
+- **မိုဘိုင်း စနစ်အတွက် ထောက်ခံမှု**: ဖုန်းနှင့် တက်ဘလက် အက်ပလီကေးရှင်းများအတွက် ONNX Runtime Mobile ကို အသုံးပြုပါ
+- **IoT ပေါင်းစပ်မှု**: ONNX Runtime ၏ ပေါ့ပါးသည့် ဖြန့်ဝေမှုများဖြင့် IoT စက်ပစ္စည်းများတွင် ထည့်သွင်းပါ
 
-## Resources နှင့် နောက်တစ်ဆင့်များ  
+### Windows ML
+- **Windows စက်ပစ္စည်းများ**: Windows အခြေပြု Edge စက်ပစ္စည်းများနှင့် PC များအတွက် အထူးပြု ပြုလုပ်ပါ
+- **NPU မြန်ဆန်မှု**: Windows စက်ပစ္စည်းများတွင် Neural Processing Units ကို အသုံးပြုပါ
+- **DirectML**: Windows ပလက်ဖောင်းများတွင် GPU မြန်ဆန်မှုအတွက် DirectML ကို အသုံးပြုပါ
+- **UWP ပေါင်းစပ်မှု**: Universal Windows Platform အက်ပလီကေးရှင်းများနှင့် ပေါင်းစပ်ပါ
 
-### Official Documentation  
-- [AI Toolkit Developer Documentation](https://aka.ms/AIToolkit/doc)  
-- [Installation and Setup Guide](https://code.visualstudio.com/docs/intelligentapps/overview#_install-and-setup)  
-- [VS Code Intelligent Apps Documentation](https://code.visualstudio.com/docs/intelligentapps)  
-- [Model Context Protocol (MCP) Documentation](https://modelcontextprotocol.io/)  
+### TensorFlow Lite
+- **မိုဘိုင်း အထူးပြုမှု**: မိုဘိုင်းနှင့် ထည့်သွင်းထားသော စက်ပစ္စည်းများတွင် TensorFlow Lite မော်ဒယ်များ ထည့်သွင်းပါ
+- **Hardware Delegate များ**: မြန်ဆန်စေရန် အထူးပြု hardware delegate များကို အသုံးပြုပါ
+- **Micro Controllers**: TensorFlow Lite Micro ဖြင့် မိုက်ခရိုကွန်ထရိုလာများတွင် ထည့်သွင်းပါ
+- **ကြီးလွှမ်းသော ပလက်ဖောင်း စနစ်များထောက်ခံမှု**: Android, iOS နှင့် Linux ထည့်သွင်းထားသော စနစ်များတွင် ထည့်သွင်းပါ
 
-### Community နှင့် Support  
-- [AI Toolkit GitHub Repository](https://github.com/microsoft/vscode-ai-toolkit)  
-- [GitHub Issues and Feature Requests](https://aka.ms/AIToolkit/feedback)  
-- [Azure AI Foundry Discord Community](https://aka.ms/azureaifoundry/discord)  
-- [VS Code Extension Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)  
+### Azure IoT Edge
+- **တိမ်မှတက်-Edge သွယ်ဝိုက်မှု**: တိမ်မှတက် သင်ကြားမှုနှင့် Edge ခန့်မှန်းမှုကို ပေါင်းစပ်ပါ
+- **Module ထည့်သွင်းမှု**: AI မော်ဒယ်များကို IoT Edge module အဖြစ် ထည့်သွင်းပါ
+- **စက်ပစ္စည်းစီမံခန့်ခွဲမှု**: Edge စက်ပစ္စည်းများနှင့် မော်ဒယ်များကို ဝေးလံမှ စီမံပါ
+- **တယ်လီမီထရီ**: Edge ထည့်သွင်းမှုများမှ စွမ်းဆောင်ရည်ဒေတာနှင့် မော်ဒယ်ဂဏန်းဖတ်ဆီးမှုများ စုဆောင်းပါ
 
-### Technical Resources  
-- [ONNX Runtime Documentation](https://onnxruntime.ai/)  
-- [Ollama Documentation](https://ollama.ai/)  
-- [Windows ML Documentation](https://docs.microsoft.com/en-us/windows/ai/)  
-- [Azure AI Foundry Documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/)  
+## ထူးခြားသော Edge AI အခြေအနေများ
 
-### Learning Pathways  
-- [Edge AI Fundamentals Course](../Module01/README.md)  
-- [Small Language Models Guide](../Module02/README.md)  
-- [Edge Deployment Strategies](../Module03/README.md)  
-- [Windows Edge AI Development](./windowdeveloper.md)  
+### မော်ဒယ်များ များစွာ ထည့်သွင်းခြင်း
+- **မော်ဒယ်စုစည်းမှုများ**: တိကျမှန်ကန်မှု တိုးတက်စေရန် သို့မဟုတ် ထပ်တလဲလဲမှု ရှိစေရန် မော်ဒယ်များ များစွာ ထည့်သွင်းပါ
+- **A/B စမ်းသပ်မှု**: မတူညီသော မော်ဒယ်များကို Edge စက်ပစ္စည်းအသီးသီးပြင်ဆင်၍ တစ်ပြိုင်နက်စမ်းသပ်ပါ
+- **ရရှိနိုင်မှု လိုက်လျောညီထွေမှု**: လက်ရှိ စက်ပစ္စည်း အခြေအနေအပေါ် မော်ဒယ်များ ရွေးချယ်ပါ
+- **ရင်းမြစ်မျှဝေမှု**: များစွာ ထည့်သွင်းထားသော မော်ဒယ်များအတွင်း ရင်းမြစ် အသုံးပြုမှုကို တိုးတက်စွာ ပြုလုပ်ပါ
 
-### Additional Resources  
-- **Repository Stats**: 1.8k+ stars, 150+ forks, 18+ contributors  
-- **License**: MIT License  
-- **Security**: Microsoft security policies apply  
-- **Telemetry**: Respects VS Code telemetry settings  
+### ဖက်ဒရေးတက် သင်ယူမှု
+- **ဖြန့်ဝေပေးသင်ကြားမှု**: မော်ဒယ်များကို များစွာသော Edge စက်ပစ္စည်းများ ပေါ်တွင် သင်ကြားပါ
+- **ကိုယ်ပိုင်ရေးရာ ထိန်းသိမ်းခြင်း**: သင်ကြားမှု ဒေတာကို ဒေသခံထား၍ မော်ဒယ်တိုးတက်မှုများကို မျှဝေပါ
+- **ပူးပေါင်းသင်ယူမှု**: စက်ပစ္စည်းများကို ညှိနှိုင်းထားသည့် အတွေ့အကြုံများမှ သင်ယူနိုင်အောင် ပြုလုပ်ပါ
+- **Edge-Cloud ပေါင်းစည်းမှု**: Edge စက်ပစ္စည်းနှင့် တိမ်မှတက် အဆောက်အအုံများအကြောင်း သင်ကြားမှုကို ကိုက်ညီစေရန် ညှိနှိုင်းပါ
 
-## နိဂုံး  
+### အချိန်နှင့်တပြေးညီ ပြုလုပ်ခြင်း
+- **စီးဆင်းနေသော ဒေတာများ ကိုင်တွယ်မှု**: Edge စက်ပစ္စည်းများပေါ်တွင် ဆက်တိုက် ဒေတာ စီးဆင်းမှုများ ကိုင်တွယ်ပါ
+- **နိမ့်သော နက်စွန်းခြင်း ခန့်မှန်းမှု**: ခန့်မှန်းမှု အချိန်ကို နည်းဆုံးဖြစ်အောင် ထိန်းချုပ်ပါ
+- **အစုလိုက် ဒေတာ ပြုလုပ်မှု**: Edge စက်ပစ္စည်းများတွင် ဒေတာ အစုများ ကို ထိရောက်စွာ ကိုင်တွယ်ပါ
+- **သင့်တော်မှု ပြုလုပ်မှု**: လက်ရှိ စက်ပစ္စည်း စွမ်းဆောင်ရည်အရ ပြုလုပ်မှုကို ကိုက်ညီစေပါ
 
-Visual Studio Code အတွက် AI Toolkit သည် အခေတ်မီ AI ဖွံ့ဖြိုးတိုးတက်မှုအတွက် အကျိုးရှိသော platform တစ်ခုဖြစ်ပြီး Edge AI application များအတွက် အထူးအသုံးဝင်သော agent ဖွံ့ဖြိုးတိုးတက်မှုစွမ်းရည်များကို ပေးစွမ်းပါသည်။ Anthropic, OpenAI, GitHub, Google စသည့် provider များကို ထောက်ခံသော မော်ဒယ် catalog အကျယ်အဝန်းနှင့် ONNX နှင့် Ollama ကို အသုံးပြု၍ local execution ကို ပေါင်းစည်းထားသောအတွက် Edge deployment အခြေအနေများအတွက် လိုအပ်သော flexibility ကို ပေးစွမ်းပါသည်။  
+## Edge AI ဖန်တီးမှု၌ ပြဿနာများ ဖြေရှင်းခြင်း
 
-Toolkit ၏ အားသာချက်မှာ model discovery နှင့် Playground တွင် စမ်းသပ်မှုမှ စ၍ Prompt Builder ဖြင့် agent ဖွံ့ဖြိုးတိုးတက်မှု, စုံလင်သော အကဲဖြတ်မှုစွမ်းရည်များနှင့် MCP tools ပေါင်းစည်းမှုအထိ အစုံအလင်သော လုပ်ဆောင်မှုများကို ပေးစွမ်းနိုင်ခြင်းဖြစ်သည်။ Edge AI developer များအတွက် resource-constrained အခြေအနေများအတွက် agent များကို prototype နှင့် စမ်းသပ်ခြင်း, အမြန်တိုးတက်မှုနှင့် optimization လုပ်ဆောင်မှုများကို အကောင်အထည်ဖော်နိုင်သည်။  
+### ရိုးရှင်းသော ပြဿနာများ
+- **မှတ်ဉာဏ် ကန့်သတ်မှုများ**: မော်ဒယ်သည် ရည်ရွယ်သော စက်ပစ္စည်း မှတ်ဉာဏ်အတွက် မကြီးလွန်းပါ
+- **ခန့်မှန်းမှု မြန်နှုန်း**: မော်ဒယ် ခန့်မှန်းမှုသည် အချိန်နှုန်းလိုအပ်ချက်များအတွက် မလျင်မြန်ပါ
+- **တိကျမှုကျဆင်းမှု**: တိုးတက်မှုကြောင့် မော်ဒယ် တိကျမှု မလုံလောက်အောင် ကျဆင်းသည်
+- **hardware ကိုက်ညီမှု မရှိခြင်း**: မော်ဒယ်သည် ရည်ရွယ် hardware နှင့် ကိုက်ညီမှု မရှိပါ
 
-Edge AI development အတွက် အဓိကအားသာချက်များမှာ-  
-- **Rapid Experimentation**: Edge deployment မလုပ်မီ မော်ဒယ်များနှင့် agent များကို အမြန်စမ်းသပ်နိုင်ခြင်း  
-- **Multi-Provider Flexibility**: Edge solution အတွက် အကောင်းဆုံး မော်ဒယ်များကို ရှာဖွေနိုင်ရန် provider များစွာမှ မော်ဒယ်များကို access လုပ်နိုင်ခြင်း  
-- **Local Development**: Offline နှင့် privacy-preserving development အတွက် ONNX နှင့် Ollama ကို အသုံးပြုနိုင်ခြင်း  
-- **Production Readiness**: ထုတ်လုပ်မှုအဆင့် code ကို ဖန်တီးပြီး MCP tools ဖြင့် ပေါင်းစည်းနိုင်ခြင်း  
-- **Comprehensive Evaluation**: Edge AI စွမ်းဆောင်ရည်ကို အတည်ပြုရန် built-in နှင့် custom metrics များကို အသုံးပြုနိုင်ခြင်း  
+### ပြဿနာရှာဖွေ နည်းလမ်းများ
+- **စွမ်းဆောင်ရည် စစ်တမ်း**: AI Toolkit ၏ သွေးကြောခြင်းလုပ်ဆောင်ချက်များကို အသုံးပြု၍ ကျဉ်းနပ်ချက်များ ရှာဖွေပါ
+- **ရင်းမြစ် စောင့်ကြည့်ခြင်း**: ဖန်တီးမှုအားဖြင့် မှတ်ဉာဏ်နှင့် CPU အသုံးပြုမှုကို စောင့်ကြည့်ပါ
+- **တိုးတက်မှု စမ်းသပ်မှု ဆက်တိုက်လုပ်ခြင်း**: ပြဿနာများ ကျယ်ပြန့်မှု ပြောကြားရန် တိုးတက်မှုအား အပိုင်းပိုင်း စမ်းသပ်ပါ
+- **hardware အတုလုပ်ခြင်း**: ရည်ရွယ် hardware ကို အတုဖန်တီးရန် ဖန်တီးမှုကိရိယာများကို အသုံးပြုပါ
 
-AI သည် Edge deployment အခြေအနေများသို့ ရွှေ့ပြောင်းနေသည့်အခါ Visual Studio Code အတွက် AI Toolkit သည် resource-constrained အခြေအနေများအတွက် intelligent applications များကို ဖန်တီး, စမ်းသပ်, optimize လုပ်ရန် လိုအပ်သော development environment နှင့် workflow ကို ပေးစွမ်းပါသည်။ IoT solution များ, mobile AI application များ သို့မဟုတ် embedded intelligence system များကို ဖန်တီးနေသော developer များအတွက် toolkit ၏ feature အစုံအလင်နှင့် ပေါင်းစည်းထားသော workflow သည် Edge AI development lifecycle အားလုံးကို ထောက်ခံပေးပါသည်။  
+### တိုးတက်မှုဖြေရှင်းချက်များ
+- **ပိုမိုပြင်းထန်သည့် ချုပ်ကိုင်မှု**: နည်းလမ်းများပို မကြီးမြှင့် ချုပ်ကိုင်မှုကို စိတ်ကြိုက်အသုံးပြုပါ
+- **မော်ဒယ်ဖွဲ့စည်းတည်ဆောက်မှု**: Edge အတွက် ပြုလုပ်ထားသည့် မတူညီသော မော်ဒယ်ဖွဲ့စည်းမှုများကို ထင်မှတ်ပါ
+- **ဒေတာကြိုပြင် ဆန်းစစ်မှု တိုးတက်အောင်ပြုလုပ်မှု**: Edge ကန့်သတ်ချက်များအတွက် ဒေတာ ကြိုပြင်ဆန်းစစ်မှုကို တိုးတက်အောင် ပြုလုပ်ပါ
+- **ခန့်မှန်းမှု တိုးတက်မှု**: hardware အထူးပြု ခန့်မှန်းမှု အဆင့်မြှင့်မှုများကို အသုံးပြုပါ
 
-GitHub တွင် 1.8k+ stars ရရှိထားသော active community နှင့်အတူ AI Toolkit သည် Edge deployment အခြေအနေများအတွက် modern AI developer များ၏ လိုအပ်ချက်များကို ဖြည့်ဆည်းရန် အဆက်မပြတ် တိုးတက်နေသော AI development tools များ၏ ရှေ့ဆောင်နေထိုင်မှုကို ဆက်လက်ထိန်းသိမ်းထားပါသည်။  
+## အရင်းအမြစ်များနှင့် နောက်တစ်ဆင့်အနေအထားများ
+
+### တရားဝင် စာရွက်စာတမ်းများ
+- [AI Toolkit Developer Documentation](https://aka.ms/AIToolkit/doc)
+- [Installation and Setup Guide](https://code.visualstudio.com/docs/intelligentapps/overview#_install-and-setup)
+- [VS Code Intelligent Apps Documentation](https://code.visualstudio.com/docs/intelligentapps)
+- [Model Context Protocol (MCP) Documentation](https://modelcontextprotocol.io/)
+
+### အသိုင်းအဝိုင်းနှင့် အထောက်အပံ့
+- [AI Toolkit GitHub Repository](https://github.com/microsoft/vscode-ai-toolkit)
+- [GitHub Issues and Feature Requests](https://aka.ms/AIToolkit/feedback)
+- [Azure AI Foundry Discord Community](https://aka.ms/azureaifoundry/discord)
+- [VS Code Extension Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+
+### နည်းပညာဆိုင်ရာ အရင်းအမြစ်များ
+- [ONNX Runtime Documentation](https://onnxruntime.ai/)
+- [Ollama Documentation](https://ollama.ai/)
+- [Windows ML Documentation](https://docs.microsoft.com/en-us/windows/ai/)
+- [Azure AI Foundry Documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/)
+
+### သင်ယူမှု လမ်းကြောင်းများ
+- [Edge AI Fundamentals Course](../Module01/README.md)
+- [Small Language Models Guide](../Module02/README.md)
+- [Edge Deployment Strategies](../Module03/README.md)
+- [Windows Edge AI Development](./windowdeveloper.md)
+
+### ထပ်မံ အရင်းအမြစ်များ
+- **Repository အချက်အလက်**: ကြယ် ၁.၈၃၆+, ရှစ်ချစ် ၁၅၀+, ဆောင်ရွက်သူ ၁၈+ 
+- **လိုင်စင်**: MIT License
+- **လုံခြုံရေး**: Microsoft လုံခြုံရေး ကန့်သတ်ချက်များ လိုက်နာသည်
+- **တယ်လီမီထရီ**: VS Code တယ်လီမီထရီ ဆက်တင်များကို လိုက်နာသည်
+
+## နိဂုံးချုပ်
+
+Visual Studio Code အတွက် AI Toolkit သည် ခေတ်မီ AI ဖန်တီးမှုအတွက် ပြည့်စုံသော ပလက်ဖောင်းတစ်ခုဖြစ်ပြီး Edge AI အသုံးပြုချက်များအတွက် အထူးတန်ဖိုးရှိသော အေးဂျင့်ဖန်တီးမှု လုပ်ဆောင်ချက်များကို ပေးစွမ်းသည်။ Anthropic, OpenAI, GitHub, Google စသည့် ပံ့ပိုးသူများကို ထောက်ပံ့ပေးသည့် ကျယ်ပြန့်သော မော်ဒယ် စာရင်းနှင့် ONNX နှင့် Ollama အစမ်းတင် တည်ဆောက်ချက်များအား ဖြောင့်မတ်စွာ စီမံခန့်ခွဲနိုင်စွမ်းရှိသည်။
+
+ဤကိရိယာ၏အားသာချက်မှာ Playground တွင် မော်ဒယ် ရှာဖွေမှုနှင့် စမ်းသပ်မှု၊ Prompt Builder ဖြင့် ကျယ်ပြန့်သော အေးဂျင့်ဖန်တီးမှုများ၊ ပေါင်းသင်းသော အကဲဖြတ်မှု စွမ်းဆောင်ရည်နှင့် MCP ကိရိယာ ပေါင်းစပ်မှုတို့ကို တစ်နေရာတည်းတွင် ပေါင်းစပ်ထားသော ကွဲပြားမှုရှိမှုဖြစ်သည်။ Edge AI ဖန်တီးသူများအတွက်သည် Edge ထည့်သွင်းထည့်သွင်းပြီးမတိုင်မီ AI အေးဂျင့်များကို အလျင်အမြန် စမ်းသပ်နှင့် ထုတ်လုပ်နိုင်ပြီး ရင်းနှီးမြှုပ်နှံမှုကန့်သတ်ချက်များအတွက် ညှိနှိုင်းတိုးတက်စေရန် အခွင့်အရေးရှိသည်။
+
+Edge AI ဖန်တီးမှုအတွက် အဓိကအားသာချက်များမှာ -
+- **အလျင်အမြန် စမ်းသပ်မှု**: Edge ထည့်သွင်းမှုမတိုင်မီ မော်ဒယ်များနှင့် အေးဂျင့်များကို မြန်ဆန်စွာ စမ်းသပ်နိုင်ခြင်း
+- **ပံ့ပိုးသူများ အများအပြား ရရှိနိုင်မှု**: အကောင်းဆုံး Edge ဖြေရှင်းချက်များ ရှာဖွေရန် မတူညီသော တိုးပွားမှု ပံ့ပိုးသူများမှ မော်ဒယ်များ ရယူနိုင်ခြင်း
+- **ဒေသခံ ဖန်တီးမှု**: အွန်လိုင်း-အော့ဖ်လိုင်း အဆင့်ကို ONNX နှင့် Ollama ဖြင့် စမ်းသပ်၍ ကိုယ်ပိုင်လုံခြုံမှု ကာကွယ်မှုရှိစေခြင်း
+- **ထုတ်လုပ်မှုထောက်စရာ အသင့်ဖြစ်မှု**: ထုတ်လုပ်ရန်အသင့်ကုဒ်ကို ထုတ်လုပ်ပြီး MCP ဖြင့် အပြင်ကိရိယာများနှင့် ပေါင်းစပ်မှုရှိခြင်း
+- **ပြည့်စုံသော အကဲဖြတ်မှု**: Edge AI စွမ်းဆောင်ရည်ကို အတွင်းပါသောနှင့် စိတ်ကြိုက် ဂဏန်းခွဲများ ဖြင့် အတည်ပြုရန် အသုံးပြုနိုင်ခြင်း
+
+AI သည် Edge ထည့်သွင်းမှု သို့ ဆက်လက်ရွေးချယ်သွားသည့်အခါ Visual Studio Code အတွက် AI Toolkit သည် စွမ်းအင်ကုန်သက်သာသော ပတ်ဝန်းကျင်များအတွက် ကြံ့ခိုင်သော application များကို ဖန်တီး၊ စမ်းသပ်၊ တိုးတက်အောင် ဆောင်ရွက်ရန် ဖန်တီးမှု ပတ်ဝန်းကျင် သို့ workflow များကို ပံ့ပိုးပေးသည်။ IoT ဖြေရှင်းချက်များ၊ မိုဘိုင်း AI အက်ပလီကေးရှင်းများ သို့မဟုတ် ထည့်သွင်းထားသော တုရိစ္ဆာန်စနစ်များ ဖန်တီးရာတွင် Toolkit ၏ ပြည့်စုံသော လုပ်ဆောင်ချက်များနှင့် ပေါင်းစပ်ခြင်းသည် Edge AI ဖန်တီးမှု စဉ်ဆက်လက်ကို ထောက်ပံ့ပေးသည်။
+
+ဆက်လက်တိုးတက်မှုများနှင့် လှုပ်ရှားနေသည့် အသိုင်းအဝိုင်း (GitHub ကြယ် ၁.၈ သောင်းကျော်) ဖြင့် AI Toolkit သည် ဤအခွင့်အလမ်းများကို တွန်းအားပေးနေ၍ ခေတ်မီ AI ဖန်တီးသူများ အတွက် Edge ထည့်သွင်းမှုအခြေအနေများဆိုင်ရာ လိုအပ်ချက်များကို မပြတ် မပြတ် ဖြည့်ဆည်းမှု ရှိနေသည်။
 
 [Next Foundry Local](./foundrylocal.md)
 
 ---
 
-**အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူသားမှ ပရော်ဖက်ရှင်နယ် ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ပြောကြားချက်**
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးပမ်းနေသော်လည်း၊ စက်ကိရိယာဘာသာပြန်ခြင်းများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် လိုအပ်ပါသည်။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ ယုံကြည်စိတ်ချရသော အချက်အလက်အဖြစ် သတ်မှတ်သင့်သည်။ အရေးကြီးသည့် သတင်းအချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူသားဘာသာပြန်သူဝန်ဆောင်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုကွာခြားမှုများ သို့မဟုတ် မမှန်ကန်သော အသုံးပြုမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မခံပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
