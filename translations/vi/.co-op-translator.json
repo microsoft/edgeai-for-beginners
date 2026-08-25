@@ -55,19 +55,19 @@
   },
   "Module02/02.QwenFamily.md": {
     "original_hash": "1c8c05964be6fb235b026feed0bf066e",
-    "translation_date": "2025-10-01T21:24:31+00:00",
+    "translation_date": "2026-08-24T17:19:48+00:00",
     "source_file": "Module02/02.QwenFamily.md",
     "language_code": "vi"
   },
   "Module02/03.GemmaFamily.md": {
     "original_hash": "c6ab7eb1b8009ae984eaf6b85568f77a",
-    "translation_date": "2025-09-18T12:17:29+00:00",
+    "translation_date": "2026-08-24T17:23:11+00:00",
     "source_file": "Module02/03.GemmaFamily.md",
     "language_code": "vi"
   },
   "Module02/04.BitNETFamily.md": {
     "original_hash": "a56a3241aec9dc147b111ec10a2b3f2a",
-    "translation_date": "2025-09-18T11:57:23+00:00",
+    "translation_date": "2026-08-24T17:26:58+00:00",
     "source_file": "Module02/04.BitNETFamily.md",
     "language_code": "vi"
   },
@@ -97,7 +97,7 @@
   },
   "Module03/02.DeployingSLMinLocalEnv.md": {
     "original_hash": "0d9a6cd24a08aeac1328626abcc18ba8",
-    "translation_date": "2025-10-24T09:46:45+00:00",
+    "translation_date": "2026-08-24T17:16:49+00:00",
     "source_file": "Module03/02.DeployingSLMinLocalEnv.md",
     "language_code": "vi"
   },
@@ -193,7 +193,7 @@
   },
   "Module06/01.IntroduceAgent.md": {
     "original_hash": "44bc28c27b993c5fb988791b7a115705",
-    "translation_date": "2025-10-30T13:35:46+00:00",
+    "translation_date": "2026-08-24T17:15:09+00:00",
     "source_file": "Module06/01.IntroduceAgent.md",
     "language_code": "vi"
   },
@@ -223,7 +223,7 @@
   },
   "Module07/aitoolkit.md": {
     "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-    "translation_date": "2025-10-21T07:23:11+00:00",
+    "translation_date": "2026-08-24T17:09:34+00:00",
     "source_file": "Module07/aitoolkit.md",
     "language_code": "vi"
   },
@@ -235,7 +235,7 @@
   },
   "Module07/windowdeveloper.md": {
     "original_hash": "2305e750e93ad4bd79898cf149e01b49",
-    "translation_date": "2025-10-03T06:33:18+00:00",
+    "translation_date": "2026-08-24T17:07:32+00:00",
     "source_file": "Module07/windowdeveloper.md",
     "language_code": "vi"
   },
@@ -253,7 +253,7 @@
   },
   "Module08/03.OpenSourceModels.md": {
     "original_hash": "e3d7e45c04a9946ff6f9a3358db9ba74",
-    "translation_date": "2025-10-01T00:54:21+00:00",
+    "translation_date": "2026-08-24T17:04:49+00:00",
     "source_file": "Module08/03.OpenSourceModels.md",
     "language_code": "vi"
   },
@@ -457,7 +457,7 @@
   },
   "Workshop/Session06-ModelsAsTools.md": {
     "original_hash": "66985bbc1a3f888335c827173a58bc5e",
-    "translation_date": "2025-10-28T22:34:43+00:00",
+    "translation_date": "2026-08-24T17:10:13+00:00",
     "source_file": "Workshop/Session06-ModelsAsTools.md",
     "language_code": "vi"
   },

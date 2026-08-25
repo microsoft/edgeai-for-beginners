@@ -1,95 +1,95 @@
-# Workshop Jegyzetek
+# Műhely Jegyzetfüzetek
 
-> **Interaktív Jupyter Jegyzetek a Gyakorlati Edge AI Tanuláshoz**
+> **Interaktív Jupyter Jegyzetfüzetek Gyakorlati Edge MI Tanuláshoz**
 >
-> Fokozatos, önállóan végezhető oktatóanyagok, amelyek az alapvető chat-kompletálástól a fejlett többügynökös rendszerekig építkeznek a Microsoft Foundry Local és Kis Nyelvi Modellek használatával.
+> Fokozatos, önállóan haladható oktatóanyagok, amelyek az alapvető chat kitöltésektől az előrehaladott többügynökös rendszerekig terjednek a Microsoft Foundry Local és Kis Nyelvi Modellek használatával.
 
 ---
 
 ## 📖 Bevezetés
 
-Üdvözlünk az **EdgeAI Kezdőknek Workshop Jegyzetek** gyűjteményében. Ezek az interaktív Jupyter jegyzetek gyakorlati tanulási élményt nyújtanak, ahol valós időben írhatsz, futtathatsz és kísérletezhetsz Edge AI kóddal.
+Üdvözlünk a **EdgeAI Kezdőknek Műhely Jegyzetfüzetek** gyűjteményben. Ezek az interaktív Jupyter jegyzetfüzetek kézzelfogható tanulási élményt nyújtanak, ahol valós időben írhatsz, futtathatsz és kísérletezhetsz Edge MI kóddal.
 
-### Miért Jupyter Jegyzetek?
+### Miért Jupyter Jegyzetfüzetek?
 
-A hagyományos oktatóanyagokkal szemben ezek a jegyzetek az alábbiakat kínálják:
+A hagyományos oktatóanyagoktól eltérően ezek a jegyzetfüzetek a következőket kínálják:
 
-- **Interaktív Tanulás**: Futtasd a kódcellákat és azonnal láthatod az eredményeket
-- **Kísérletezés**: Módosítsd a paramétereket és figyeld meg a változásokat valós időben
-- **Dokumentáció**: Beágyazott magyarázatok és markdown cellák segítenek megérteni a fogalmakat
-- **Reprodukálhatóság**: Teljesen működő példák, amelyeket referenciaként használhatsz és újrahasznosíthatsz
-- **Vizualizáció**: Teljesítménymutatók, beágyazások és eredmények megtekintése közvetlenül a jegyzetekben
+- **Interaktív Tanulás**: Kód cellák futtatása és azonnali eredmények megtekintése
+- **Kísérletezés**: Paraméterek módosítása és változások valós idejű megfigyelése
+- **Dokumentáció**: Beépített magyarázatok és markdown cellák, amelyek végigvezetnek a fogalmakon
+- **Reprodukálhatóság**: Teljes működő példák, amelyeket hivatkozhatsz és újra felhasználhatsz
+- **Vizualizáció**: Teljesítménymutatók, beágyazások és eredmények megtekintése inline
 
-### Miért Különlegesek Ezek a Jegyzetek?
+### Mi Teszi Különlegessé Ezeket a Jegyzetfüzeteket?
 
-Minden jegyzetet **gyártásra kész legjobb gyakorlatok** alapján terveztünk:
+Minden jegyzetfüzetet a **termelésre kész legjobb gyakorlatok** alapján terveztek:
 
-✅ **Átfogó Hibakezelés** - Zökkenőmentes működés és informatív hibaüzenetek  
-✅ **Típusjelzések és Dokumentáció** - Egyértelmű függvényaláírások és docstringek  
-✅ **Teljesítményfigyelés** - Tokenhasználat követése és késleltetés mérése  
-✅ **Moduláris Tervezés** - Újrahasznosítható minták, amelyeket saját projektjeidhez igazíthatsz  
-✅ **Fokozatos Komplexitás** - Rendszeresen építkezik az előző szekciókra
+✅ **Átfogó Hibakezelés** - Fokozatos leépülés és tájékoztató hibaüzenetek  
+✅ **Típus Segédletek & Dokumentáció** - Egyértelmű függvényaláírások és docstringek  
+✅ **Teljesítmény Monitorozás** - Token használat és késleltetés mérése  
+✅ **Moduláris Dizájn** - Újrafelhasználható minták, amelyeket alkalmazhatsz projektjeidben  
+✅ **Fokozatos Komplexitás** - Rendszeresen épít az előző szekciókra
 
 ---
 
 ## 🎯 Tanulási Célok
 
-### Fejlesztendő Alapkészségek
+### Fő Készségek, Amiket Fejleszteni Fogsz
 
-A jegyzetek feldolgozása során elsajátítod:
+Ezeket a jegyzetfüzeteket végigcsinálva elsajátítod:
 
-1. **Helyi AI Szolgáltatáskezelés**
+1. **Helyi MI Szolgáltatás Menedzsment**
    - Microsoft Foundry Local szolgáltatások konfigurálása és kezelése
-   - Megfelelő modellek kiválasztása és betöltése a hardveredhez
-   - Erőforrás-használat figyelése és teljesítmény optimalizálása
-   - Szolgáltatáskeresés és állapotellenőrzés kezelése
+   - Az adott hardverhez megfelelő modellek kiválasztása és betöltése
+   - Erőforrások használatának monitorozása és teljesítményoptimalizálás
+   - Szolgáltatás felfedezés és állapotellenőrzés kezelése
 
-2. **AI Alkalmazásfejlesztés**
-   - OpenAI-kompatibilis chat-kompletálások megvalósítása helyben
-   - Streaming interfészek építése a jobb felhasználói élmény érdekében
+2. **MI Alkalmazásfejlesztés**
+   - OpenAI-kompatibilis chat kitöltések helyi megvalósítása
+   - Streaming interfészek építése jobb felhasználói élményért
    - Hatékony promptok tervezése Kis Nyelvi Modellekhez
    - Helyi modellek integrálása alkalmazásokba
 
-3. **Visszakeresésen Alapuló Generálás (RAG)**
-   - Szemantikus keresés létrehozása vektorbeágyazásokkal
-   - LLM válaszok megalapozása specifikus dokumentumokban
-   - RAG minőségének értékelése RAGAS mutatókkal
-   - Prototípustól a gyártásig történő skálázás
+3. **Retrieval Augmented Generation (RAG)**
+   - Szemantikus keresés létrehozása vektor beágyazásokkal
+   - LLM válaszok alapozása domain-specifikus dokumentumokra
+   - RAG minőség értékelése RAGAS metrikákkal
+   - Prototípustól a termelésig skálázás
 
-4. **Teljesítményoptimalizálás**
-   - Több modell szisztematikus összehasonlítása
+4. **Teljesítmény Optimalizálás**
+   - Több modell összehasonlító mérésének megvalósítása rendszerezetten
    - Késleltetés, áteresztőképesség és első token idő mérése
-   - Kis Nyelvi Modellek és Nagy Nyelvi Modellek összehasonlítása
-   - Optimális modellek kiválasztása teljesítmény/minőség kompromisszumok alapján
+   - Kis Nyelvi Modellek vs Nagy Nyelvi Modellek összehasonlítása
+   - Optimális modellek kiválasztása teljesítmény/minőség kompromisszum alapján
 
 5. **Többügynökös Orkesztráció**
-   - Speciális ügynökök tervezése különböző feladatokra
+   - Különleges ügynökök tervezése különféle feladatokra
    - Ügynök memória és kontextuskezelés megvalósítása
-   - Több ügynök koordinálása összetett munkafolyamatokban
-   - Koordinátor minták építése ügynökök együttműködéséhez
+   - Több ügynök koordinálása komplex munkafolyamatokban
+   - Koordinátor minták építése ügynök együttműködéshez
 
 6. **Intelligens Modellirányítás**
-   - Szándékfelismerés és mintázatillesztés megvalósítása
+   - Szándék felismerés és mintázat illesztés megvalósítása
    - Lekérdezések automatikus irányítása megfelelő modellekhez
-   - Többlépcsős csővezetékek építése (tervezés → végrehajtás → finomítás)
-   - Skálázható modell-eszköz architektúrák tervezése
+   - Többlépéses pipeline-ok építése (tervezés → végrehajtás → finomítás)
+   - Skálázható modell mint eszköz architektúrák tervezése
 
 ---
 
 ## 🎓 Tanulási Eredmények
 
-### Amit Felépítesz
+### Amit Meg Fogsz Építeni
 
-| Jegyzet | Eredmény | Bemutatott Készségek | Nehézség |
-|---------|----------|-----------------------|----------|
-| **1. Szekció** | Chat alkalmazás streaminggel | Szolgáltatás beállítása, alapvető kompletálások, streaming UX | ⭐ Kezdő |
-| **2. Szekció (RAG)** | RAG csővezeték értékeléssel | Beágyazások, szemantikus keresés, minőségi mutatók | ⭐⭐ Középhaladó |
-| **2. Szekció (Értékelés)** | RAG minőségértékelő | RAGAS mutatók, szisztematikus értékelés | ⭐⭐ Középhaladó |
-| **3. Szekció** | Többmodell benchmark | Teljesítménymérés, modell összehasonlítás | ⭐⭐ Középhaladó |
-| **4. Szekció** | SLM vs LLM összehasonlító | Kompromisszum elemzés, optimalizálási stratégiák | ⭐⭐⭐ Haladó |
-| **5. Szekció** | Többügynökös orkesztrátor | Ügynök tervezés, memória, koordináció | ⭐⭐⭐ Haladó |
-| **6. Szekció (Router)** | Intelligens irányítórendszer | Szándékfelismerés, modell kiválasztás | ⭐⭐⭐ Haladó |
-| **6. Szekció (Pipeline)** | Többlépcsős csővezeték | Tervezés/végrehajtás/finomítás munkafolyamatok | ⭐⭐⭐ Haladó |
+| Jegyzetfüzet | Kézbesíthető | Bemutatott készségek | Nehézség |
+|----------|-------------|---------------------|------------|
+| **1. Foglalkozás** | Streaming chat alkalmazás | Szolgáltatás beállítás, alap chat kitöltések, streaming UX | ⭐ Kezdő |
+| **2. Foglalkozás (RAG)** | RAG pipeline értékeléssel | Beágyazások, szemantikus keresés, minőségi mutatók | ⭐⭐ Középhaladó |
+| **2. Foglalkozás (Értékelés)** | RAG minőség értékelő | RAGAS metrikák, rendszerszerű értékelés | ⭐⭐ Középhaladó |
+| **3. Foglalkozás** | Több-modelles benchmark | Teljesítmény mérés, modell összehasonlítás | ⭐⭐ Középhaladó |
+| **4. Foglalkozás** | SLM vs LLM összehasonlító | Kompromisszum elemzés, optimalizálási stratégiák | ⭐⭐⭐ Haladó |
+| **5. Foglalkozás** | Több-ügynökös orkesztrátor | Ügynök tervezés, memória, koordináció | ⭐⭐⭐ Haladó |
+| **6. Foglalkozás (Router)** | Intelligens irányító rendszer | Szándék felismerés, modell kiválasztás | ⭐⭐⭐ Haladó |
+| **6. Foglalkozás (Pipeline)** | Többlépéses pipeline | Tervezés/végrehajtás/finomítás munkafolyamatok | ⭐⭐⭐ Haladó |
 
 ### Kompetencia Fejlődés
 
@@ -104,168 +104,225 @@ Foundation    │   Intermediate   │   Advanced       │   Expert
 
 ---
 
-## 📅 Workshop Ütemezés
+## 📅 Műhely Ütemterv
 
-### 🚀 Fél Napos Workshop (3,5 óra)
+### 🚀 Fél Napos Műhely (3,5 óra)
 
-**Ideális: Csapatképzések, hackathonok, konferencia workshopok**
+**Tökéletes: Csapatképzésekhez, hackathonokhoz, konferencia műhelyekhez**
 
-| Idő | Időtartam | Szekció | Témák | Tevékenységek |
-|-----|-----------|---------|-------|---------------|
-| **0:00** | 30 perc | Beállítás és Bevezetés | Környezet beállítása, Foundry Local telepítése | Függőségek telepítése, beállítás ellenőrzése |
-| **0:30** | 30 perc | 1. Szekció | Alapvető chat-kompletálások, streaming | Jegyzet futtatása, promptok módosítása |
-| **1:00** | 45 perc | 2. Szekció | RAG csővezeték, beágyazások, értékelés | RAG rendszer építése, lekérdezések tesztelése |
-| **1:45** | 15 perc | Szünet | ☕ Kávé és kérdések | — |
-| **2:00** | 30 perc | 3. Szekció | Többmodell benchmark | 3+ modell összehasonlítása |
-| **2:30** | 30 perc | 4. Szekció | SLM vs LLM kompromisszumok | Teljesítmény/minőség elemzése |
-| **3:00** | 30 perc | 5-6. Szekció | Többügynökös rendszerek és irányítás | Fejlett minták felfedezése |
+| Időpont | Időtartam | Foglalkozás | Témakörök | Tevékenységek |
+|------|----------|---------|--------|------------|
+| **0:00** | 30 perc | Beállítás & Bevezetés | Környezet beállítása, Foundry Local telepítése | Függőségek telepítése, beállítás ellenőrzése |
+| **0:30** | 30 perc | 1. Foglalkozás | Alap chat kitöltések, streaming | Jegyzetfüzet futtatása, promptok módosítása |
+| **1:00** | 45 perc | 2. Foglalkozás | RAG pipeline, beágyazások, értékelés | RAG rendszer építése, lekérdezések tesztelése |
+| **1:45** | 15 perc | Szünet | ☕ Kávé & kérdések | — |
+| **2:00** | 30 perc | 3. Foglalkozás | Több-modeles benchmarking | 3+ modell összehasonlítása |
+| **2:30** | 30 perc | 4. Foglalkozás | SLM vs LLM kompromisszumok | Teljesítmény/minőség elemzés |
+| **3:00** | 30 perc | 5-6. Foglalkozás | Több-ügynökös rendszerek & irányítás | Haladó minták felfedezése |
 
-**Eredmény**: A résztvevők 6 működő Edge AI alkalmazással és gyártásra kész kódmintákkal távoznak.
+**Eredmény**: A résztvevők 6 működő Edge MI alkalmazással és termelésre kész kódmintákkal távoznak.
 
 ---
 
-### 🎓 Egész Napos Workshop (6 óra)
+### 🎓 Egész Napos Műhely (6 óra)
 
-**Ideális: Mélyreható képzések, bootcamp-ek, egyetemi kurzusok**
+**Tökéletes: Mélyreható képzésekhez, bootcamp-ekhez, egyetemi kurzusokhoz**
 
-| Idő | Időtartam | Szekció | Témák | Tevékenységek |
-|-----|-----------|---------|-------|---------------|
-| **0:00** | 45 perc | Beállítás és Elmélet | Környezet beállítása, Edge AI alapok | Telepítés, ellenőrzés, esettanulmányok megvitatása |
-| **0:45** | 45 perc | 1. Szekció | Chat-kompletálások mélyrehatóan | Alapvető és streaming chat megvalósítása |
-| **1:30** | 30 perc | Szünet | ☕ Kávé és kapcsolatépítés | — |
-| **2:00** | 60 perc | 2. Szekció (Mindkettő) | RAG csővezeték + RAGAS értékelés | Teljes RAG rendszer építése |
-| **3:00** | 30 perc | Gyakorlati Labor 1 | Egyedi RAG a saját területeden | Saját dokumentumok alkalmazása |
+| Időpont | Időtartam | Foglalkozás | Témakörök | Tevékenységek |
+|------|----------|---------|--------|------------|
+| **0:00** | 45 perc | Beállítás & Elmélet | Környezet beállítása, Edge MI alapok | Telepítés, ellenőrzés, használati esetek megvitatása |
+| **0:45** | 45 perc | 1. Foglalkozás | Chat kitöltések mélyrehatóan | Alap és streaming chat implementálása |
+| **1:30** | 30 perc | Szünet | ☕ Kávé & hálózatépítés | — |
+| **2:00** | 60 perc | 2. Foglalkozás (Mindkettő) | RAG pipeline + RAGAS értékelés | Teljes RAG rendszer építése |
+| **3:00** | 30 perc | Gyakorlati Lab 1 | Egyedi RAG a saját domainodra | Saját dokumentumokra alkalmazás |
 | **3:30** | 30 perc | Ebéd | 🍽️ | — |
-| **4:00** | 45 perc | 3. Szekció | Benchmarking módszertan | Szisztematikus modell összehasonlítás |
-| **4:45** | 45 perc | 4. Szekció | Optimalizálási stratégiák | SLM vs LLM elemzés |
-| **5:30** | 60 perc | 5-6. Szekció | Fejlett orkesztráció | Többügynökös rendszerek, irányítás |
-| **6:30** | 30 perc | Gyakorlati Labor 2 | Egyedi ügynökrendszer építése | Saját orkesztrátor tervezése |
+| **4:00** | 45 perc | 3. Foglalkozás | Benchmarking módszertan | Rendszerszerű modell összehasonlítás |
+| **4:45** | 45 perc | 4. Foglalkozás | Optimalizálási stratégiák | SLM vs LLM elemzés |
+| **5:30** | 60 perc | 5-6. Foglalkozás | Haladó orkesztráció | Több-ügynökös rendszerek, irányítás |
+| **6:30** | 30 perc | Gyakorlati Lab 2 | Egyedi ügynök rendszer építése | Saját orkesztrátor tervezése |
 
-**Eredmény**: Mélyreható Edge AI minták megértése és 2 egyedi projekt.
+**Eredmény**: Mély Edge MI minták megértése és 2 egyedi projekt.
 
 ---
 
 ### 📚 Önálló Tanulás (2 hét)
 
-**Ideális: Egyéni tanulók, online kurzusok, önálló tanulás**
+**Tökéletes: Egyéni tanulóknak, online kurzusokhoz, önképzéshez**
 
-#### 1. Hét: Alapok (6 óra)
+#### 1. hét: Alapok (6 óra)
 
-| Nap | Fókusz | Időtartam | Jegyzetek | Házi feladat |
-|-----|--------|-----------|-----------|-------------|
-| **Hétfő** | Beállítás és Alapok | 1,5 óra | 1. Szekció | Promptok módosítása, streaming tesztelése |
-| **Szerda** | RAG Alapok | 2 óra | 2. Szekció (mindkettő) | Saját dokumentumok hozzáadása |
-| **Péntek** | Benchmarking | 1,5 óra | 3. Szekció | További modellek összehasonlítása |
-| **Szombat** | Áttekintés és Gyakorlás | 1 óra | 1. hét összes | Feladatok befejezése, hibakeresés |
+| Nap | Fókusz | Időtartam | Jegyzetfüzetek | Házi Feladat |
+|-----|-------|----------|-----------|----------|
+| **Hétfő** | Beállítás & Alapok | 1,5 óra | 1. Foglalkozás | Promptok módosítása, streaming teszt |
+| **Szerda** | RAG Alapok | 2 óra | 2. Foglalkozás (mindkettő) | Saját dokumentumok hozzáadása |
+| **Péntek** | Benchmarking | 1,5 óra | 3. Foglalkozás | További modellek összehasonlítása |
+| **Szombat** | Áttekintés & Gyakorlás | 1 óra | Az egész 1. hét | Gyakorlatok befejezése, hibakeresés |
 
-#### 2. Hét: Haladó (5 óra)
+#### 2. hét: Haladó (5 óra)
 
-| Nap | Fókusz | Időtartam | Jegyzetek | Házi feladat |
-|-----|--------|-----------|-----------|-------------|
-| **Hétfő** | Optimalizálás | 1,5 óra | 4. Szekció | Kompromisszumok dokumentálása |
-| **Szerda** | Többügynökös Rendszerek | 2 óra | 5. Szekció | Egyedi ügynökök tervezése |
-| **Péntek** | Intelligens Irányítás | 1,5 óra | 6. Szekció (mindkettő) | Irányítási logika építése |
+| Nap | Fókusz | Időtartam | Jegyzetfüzetek | Házi Feladat |
+|-----|-------|----------|-----------|----------|
+| **Hétfő** | Optimalizálás | 1,5 óra | 4. Foglalkozás | Kompromisszumok dokumentálása |
+| **Szerda** | Több-ügynökös rendszerek | 2 óra | 5. Foglalkozás | Egyedi ügynökök tervezése |
+| **Péntek** | Intelligens Iránymutatás | 1,5 óra | 6. Foglalkozás (mindkettő) | Iránymutatási logika megépítése |
 | **Szombat** | Záró Projekt | 2 óra | Integráció | Több minta kombinálása |
 
-**Eredmény**: Edge AI minták elsajátítása és portfólió projekt.
+**Eredmény**: Edge MI minták elsajátítása és portfólió projekt.
 
 ---
 
-## 📔 Jegyzet Leírások
+## 📔 Jegyzetfüzet Leírások
 
-### 📘 1. Szekció: Chat Bootstrap
+### 📘 1. Foglalkozás: Chat Indító
 **Fájl**: `session01_chat_bootstrap.ipynb`  
 **Időtartam**: 20-30 perc  
 **Előfeltételek**: Nincs  
 **Nehézség**: ⭐ Kezdő
 
-**Amit Megtanulsz**:
+**Amit Meg Fogsz Tanulni**:
 - Foundry Local Python SDK telepítése és konfigurálása
-- `FoundryLocalManager` használata automatikus szolgáltatáskereséshez
-- Alapvető chat-kompletálások megvalósítása OpenAI-kompatibilis API-val
-- Streaming válaszok építése a jobb felhasználói élmény érdekében
-- Hibák és szolgáltatáselérhetetlenség kezelése zökkenőmentesen
+- `FoundryLocalManager` használata automatikus szolgáltatás felfedezéshez
+- Alap chat kitöltések megvalósítása OpenAI-kompatibilis API-val
+- Streaming válaszok építése jobb felhasználói élményért
+- Hibák és szolgáltatás elérhetetlenség kezelésének finomhangolása
 
-**Kulcsfogalmak**: Szolgáltatáskezelés, chat-kompletálások, streaming, hibakezelés
+**Kulcsfogalmak**: Szolgáltatás kezelés, chat kitöltések, streaming, hibakezelés
 
-**Amit Felépítesz**: Interaktív chat alkalmazás streaming támogatással
+**Amit Meg Fogsz Építeni**: Interaktív chat alkalmazás streaming támogatással
 
 ---
 
-### 📗 2. Szekció: RAG Csővezeték
+### 📗 2. Foglalkozás: RAG Pipeline
 **Fájl**: `session02_rag_pipeline.ipynb`  
 **Időtartam**: 30-45 perc  
-**Előfeltételek**: 1. Szekció  
+**Előfeltételek**: 1. Foglalkozás  
 **Nehézség**: ⭐⭐ Középhaladó
 
-**Amit Megtanulsz**:
-- Visszakeresésen Alapuló Generálás (RAG) minta megvalósítása
-- Vektorbeágyazások létrehozása mondat-transzformátorokkal
+**Amit Meg Fogsz Tanulni**:
+- Retrieval Augmented Generation (RAG) minta megvalósítása
+- Vektor beágyazások létrehozása sentence-transformers segítségével
 - Szemantikus keresés építése koszinusz hasonlósággal
-- LLM válaszok megalapozása specifikus dokumentumokban
-- Opcionális függőségek kezelése importőrök segítségével
+- LLM válaszok alapozása domain-specifikus dokumentumokra
+- Opcionális függőségek kezelése import őrökön keresztül
 
-**Kulcsfogalmak**: RAG architektúra, beágyazások, szemantikus keresés, vektorhasonlóság
+**Kulcsfogalmak**: RAG architektúra, beágyazások, szemantikus keresés, vektorszerűség
 
-**Amit Felépítesz**: Dokumentum-alapú kérdés-válasz rendszer
+**Amit Meg Fogsz Építeni**: Dokumentum-alapú kérdés-válasz rendszert
 
 ---
 
-### 📗 2. Szekció: RAG Értékelés RAGAS-szal
+### 📗 2. Foglalkozás: RAG Értékelés RAGAS-szal
 **Fájl**: `session02_rag_eval_ragas.ipynb`  
 **Időtartam**: 30-45 perc  
-**Előfeltételek**: 2. Szekció RAG Csővezeték  
+**Előfeltételek**: 2. Foglalkozás RAG Pipeline  
 **Nehézség**: ⭐⭐ Középhaladó
 
-**Amit Megtanulsz**:
-- RAG minőség értékelése iparági szabvány mutatókkal
-- Kontextus relevancia, válasz relevancia, hitelesség mérése
-- RAGAS keretrendszer használata szisztematikus értékeléshez
-- RAG minőségi problémák azonosítása és javítása
-- Értékelési adathalmazok építése saját területedhez
+**Amit Meg Fogsz Tanulni**:
+- Iparági szabvány szerinti mérésekkel RAG minőség értékelése
+- Kontextus relevancia, válasz relevancia, hűség mérés
+- RAGAS keretrendszer használata rendszerszintű értékeléshez
+- RAG minőség problémák azonosítása és javítása
+- Értékelési adatkészletek építése a saját domainodhoz
 
-**Kulcsfogalmak**: RAG értékelés, RAGAS mutatók, minőségmérés, szisztematikus tesztelés
+**Kulcsfogalmak**: RAG értékelés, RAGAS metrikák, minőség mérés, rendszerszintű tesztelés
 
-**Amit Felépítesz**: RAG minőségértékelési keretrendszer
+**Amit Meg Fogsz Építeni**: RAG minőség értékelő keretrendszert
 
 ---
 
-### 📙 3. Szekció: OSS Modellek Benchmarkja
+### 📙 3. Foglalkozás: OSS Modellek Benchmarkolása
 **Fájl**: `session03_benchmark_oss_models.ipynb`  
 **Időtartam**: 30-45 perc  
-**Előfeltételek**: 1. Szekció  
+**Előfeltételek**: 1. Foglalkozás  
 **Nehézség**: ⭐⭐ Középhaladó
 
-**Amit Megtanulsz**:
-- Több modell szisztematikus benchmarkolása
+**Amit Meg Fogsz Tanulni**:
+- Több modell rendszerszerű összehasonlító mérésének megvalósítása
 - Késleltetés, áteresztőképesség, első token idő mérése
-- Modellhibák zökkenőmentes kezelése
-- Teljesítmény összehasonlítása modellcsaládok között
+- Finom hibaleépülési viselkedés implementálása modelleknél
+- Teljesítmény összehasonlító elemzés model családok között
 - Benchmark eredmények vizualizálása és elemzése
 
-**Kulcsfogalmak**: Teljesítmény benchmarkolás, késleltetés mérése, modell összehasonlítás, statisztikai elemzés
+**Kulcsfogalmak**: Teljesítmény mérés, késleltetés mérése, modell összehasonlítás, statisztikai elemzés
 
-**Amit Felépítesz**: Többmodell benchmark eszköz
+**Amit Meg Fogsz Építeni**: Több-modelles benchmark csomagot
 
 ---
 
-### 📙 4. Szekció: Modell Összehasonlítás (SLM vs LLM)
+### 📙 4. Foglalkozás: Modell Összehasonlítás (SLM vs LLM)
 **Fájl**: `session04_model_compare.ipynb`  
 **Időtartam**: 30-45 perc  
-**Előfeltételek**: 1., 3. Szekció  
+**Előfeltételek**: 1. és 3. Foglalkozás  
 **Nehézség**: ⭐⭐⭐ Haladó
 
-**Amit Megtanulsz**:
+**Amit Meg Fogsz Tanulni**:
 - Kis Nyelvi Modellek és Nagy Nyelvi Modellek összehasonlítása
-- Teljesítmény és minőség kompromisszumok elemzése
-- Edge-alkalmassági mutatók mérése
-- Optimális modellek kiválasztása telepítési korlátok alapján
-- Modellválasztási döntési kritérium
-- Tervezzen skálázható modellek-eszközök architektúrákat
+- Teljesítmény és minőség kompromisszum elemzése
+- Edge-kompatibilitási mutatók mérése
+- Optimális modellek kiválasztása üzembe helyezési korlátok alapján
+- Modell kiválasztási döntési kritériumok dokumentálása
 
-**Kulcsfogalmak**: Pipeline architektúra, többlépcsős feldolgozás, hibakezelés, skálázhatósági minták
+**Kulcsfogalmak**: Modell választás, kompromisszum elemzés, optimalizálási stratégiák, üzembe helyezési tervezés
 
-**Amit építeni fog**: Többlépcsős intelligens pipeline útvonalvezérléssel
+**Amit Meg Fogsz Építeni**: SLM vs LLM összehasonlító keretrendszer
+
+---
+
+### 📕 5. Foglalkozás: Több-Ügynökös Orkesztrátor
+**Fájl**: `session05_agents_orchestrator.ipynb`  
+**Időtartam**: 45-60 perc  
+**Előfeltételek**: 1-2. Foglalkozás  
+**Nehézség**: ⭐⭐⭐ Haladó
+
+**Amit Meg Fogsz Tanulni**:
+- Különböző feladatokra specializált ügynökök tervezése
+- Ügynök memória és kontextus kezelés megvalósítása
+- Koordinátor minták építése az ügynök együttműködéshez
+- Ügynök kommunikáció és átadások kezelése
+- Több-ügynökös rendszer teljesítményének monitorozása
+
+**Kulcsfogalmak**: Ügynök architektúra, koordinátor minták, memória kezelés, ügynök orkesztráció
+
+**Amit Meg Fogsz Építeni**: Több-ügynökös rendszer koordinátorral és szakértőkkel
+
+---
+
+### 📕 6. Foglalkozás: Modell Irányító
+**Fájl**: `session06_models_router.ipynb`  
+**Időtartam**: 30-45 perc  
+**Előfeltételek**: 1. és 3. Foglalkozás  
+**Nehézség**: ⭐⭐⭐ Haladó
+
+**Amit Meg Fogsz Tanulni**:
+- Szándék felismerés és mintázat illesztés megvalósítása
+- Kulcsszavas alapú modellirányítás építése
+- Lekérdezések automatikus irányítása megfelelő modellekhez
+- Több-modelles regisztrációk konfigurálása
+- Irányítási döntések és teljesítmény monitorozása
+
+**Kulcsfogalmak**: Szándék felismerés, modellirányítás, mintázat illesztés, intelligens kiválasztás
+
+**Amit Meg Fogsz Építeni**: Intelligens modellirányító rendszert
+
+---
+
+### 📕 6. Foglalkozás: Többlépéses Pipeline
+**Fájl**: `session06_models_pipeline.ipynb`  
+**Időtartam**: 30-45 perc  
+**Előfeltételek**: 1. és 6. Router Foglalkozás  
+**Nehézség**: ⭐⭐⭐ Haladó
+
+**Amit Meg Fogsz Tanulni**:
+- Többlépéses MI pipeline-ok építése (tervezés → végrehajtás → finomítás)
+- Router integrálása intelligens modell kiválasztáshoz
+- Pipeline hibakezelés és helyreállítás megvalósítása
+- Pipeline teljesítményének és szakaszainak monitorozása
+- Skálázható modell-mint eszköz architektúrák tervezése
+
+
+**Kulcsfogalmak**: Csővezeték-architektúra, többlépcsős feldolgozás, hibajavítás, skálázhatósági minták
+
+**Amit építesz**: Többlépéses intelligens csővezeték irányítással
 
 ---
 
@@ -275,15 +332,15 @@ Foundation    │   Intermediate   │   Advanced       │   Expert
 
 **Rendszerkövetelmények**:
 - **Operációs rendszer**: Windows 10/11, macOS 11+, vagy Linux (Ubuntu 20.04+)
-- **RAM**: Minimum 8GB, ajánlott 16GB+
-- **Tárhely**: Legalább 10GB szabad hely a modellek számára
-- **Hardver**: CPU AVX2 támogatással; GPU (CUDA, Qualcomm NPU) opcionális
+- **RAM**: Minimum 8GB, javasolt 16GB+
+- **Tárhely**: 10GB+ szabad hely modelleknek
+- **Hardver**: AVX2 támogatású CPU; GPU (CUDA, Qualcomm NPU) opcionális
 
 **Szoftverkövetelmények**:
-- **Python 3.8+** pip csomagkezelővel
-- **Jupyter Notebook** vagy **VS Code** Jupyter kiegészítővel
-- **Microsoft Foundry Local** telepítve és konfigurálva
-- **Git** (a repository klónozásához)
+- **Python 3.8+** pip-pel
+- **Jupyter Notebook** vagy **VS Code** Jupyter kiterjesztéssel
+- Telepített és konfigurált **Microsoft Foundry Local**
+- **Git** (a tároló klónozásához)
 
 ### Telepítési lépések
 
@@ -308,60 +365,60 @@ foundry --version
 #### 2. Python környezet beállítása
 
 ```bash
-# Navigate to Workshop directory
+# Navigáljon a Workshop könyvtárba
 cd Workshop
 
-# Create virtual environment
+# Hozzon létre virtuális környezetet
 python -m venv .venv
 
-# Activate virtual environment
+# Aktiválja a virtuális környezetet
 # Windows
 .venv\Scripts\activate
 # macOS/Linux
 source .venv/bin/activate
 
-# Install dependencies
+# Telepítse a függőségeket
 pip install -r requirements.txt
 ```
 
 #### 3. Foundry Local indítása
 
 ```bash
-# Load a model (auto-downloads if needed)
+# Modell betöltése (szükség esetén automatikus letöltés)
 foundry model run phi-4-mini
 
-# Verify service is running
+# Ellenőrizze, hogy a szolgáltatás fut-e
 foundry service status
 ```
 
-#### 4. Jupyter elindítása
+#### 4. Jupyter indítása
 
 ```bash
-# Start Jupyter Notebook
+# Indítsa el a Jupyter Notebookot
 jupyter notebook notebooks/
 
-# Or use VS Code with Jupyter extension
+# Vagy használja a VS Code-ot a Jupyter kiterjesztéssel
 code notebooks/
 ```
 
 ### Gyors ellenőrzés
 
-Futtassa ezt egy Python cellában a beállítás ellenőrzéséhez:
+Futtasd ezt egy Python cellában a beállítás ellenőrzéséhez:
 
 ```python
 from foundry_local import FoundryLocalManager
 import openai
 
-# Initialize manager (auto-discovers service)
+# Inicializálja a kezelőt (automatikusan felfedezi a szolgáltatást)
 manager = FoundryLocalManager("phi-4-mini")
 
-# Configure OpenAI client
+# Konfigurálja az OpenAI klienset
 client = openai.OpenAI(
     base_url=manager.endpoint,
     api_key=manager.api_key
 )
 
-# Test chat completion
+# Tesztelje a csevegés kiegészítést
 response = client.chat.completions.create(
     model=manager.get_model_info("phi-4-mini").id,
     messages=[{"role": "user", "content": "Hello!"}]
@@ -370,7 +427,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-**Várható kimenet**: Üdvözlő válasz a helyi modellből.
+**Várt eredmény**: Üdvözlő válasz a helyi modelltől.
 
 ---
 
@@ -378,48 +435,48 @@ print(response.choices[0].message.content)
 
 ### Oktatóknak
 
-**A workshop előtt**:
-- ✅ Küldje el a telepítési útmutatót 1 héttel korábban
-- ✅ Tesztelje az összes notebookot a célhardveren
-- ✅ Készítsen hibaelhárítási útmutatót gyakori problémákhoz
-- ✅ Tartson készenlétben tartalék modelleket (phi-3.5-mini, ha a phi-4-mini nem működik)
-- ✅ Hozzon létre közös chat csatornát a kérdésekhez
+**Workshop előtt**:
+- ✅ Küldj telepítési utasításokat 1 héttel előre
+- ✅ Teszteld az összes jegyzetfüzetet céleszközön
+- ✅ Készíts hibakeresési útmutatót gyakori problémákra
+- ✅ Legyenek tartalék modellek kéznél (phi-3.5-mini, ha phi-4-mini nem működik)
+- ✅ Állíts be közös chat csatornát kérdésekhez
 
 **A workshop alatt**:
-- ✅ Kezdje gyors környezetellenőrzéssel (5 perc)
-- ✅ Ossza meg azonnal a hibaelhárítási forrásokat
-- ✅ Bátorítsa a kísérletezést és módosításokat
-- ✅ Stratégiailag használja a szüneteket (minden 2 session után)
-- ✅ Legyenek TAs elérhetők személyes segítségnyújtásra
+- ✅ Kezdj gyors környezeti ellenőrzéssel (5 perc)
+- ✅ Oszd meg azonnal a hibakeresési forrásokat
+- ✅ Bátorítsd a kísérletezést és módosításokat
+- ✅ Használj szüneteket stratégiával (minden 2 szekció után)
+- ✅ Legyenek TÁ-k elérhetők egyéni segítségre
 
 **A workshop után**:
-- ✅ Ossza meg a teljes működő notebookokat és megoldásokat
-- ✅ Adjon linkeket további forrásokhoz
-- ✅ Készítsen visszajelzési kérdőívet a fejlesztéshez
-- ✅ Ajánljon konzultációs órákat utólagos kérdésekhez
+- ✅ Oszd meg a teljes működő jegyzetfüzeteket és megoldásokat
+- ✅ Adj linkeket további forrásokhoz
+- ✅ Készíts visszajelzési felmérést a fejlődéshez
+- ✅ Ajánlj konzultációs időpontokat további kérdésekhez
 
-### Résztvevőknek
+### Tanulóknak
 
-**Hozza ki a legtöbbet a tanulásból**:
-- ✅ Végezze el a beállítást a workshop kezdete előtt
-- ✅ Futtassa az összes kódcellát saját maga (ne csak olvassa)
-- ✅ Kísérletezzen paraméterekkel és promptokkal
-- ✅ Jegyzeteljen az észrevételekről és buktatókról
-- ✅ Tegyen fel kérdéseket, ha elakad (valószínűleg másoknak is ugyanaz a kérdésük)
+**Maximalizáld a tanulásod**:
+- ✅ Készítsd el a beállítást a workshop kezdete előtt
+- ✅ Futtasd le minden kódcellát magad (ne csak olvasd)
+- ✅ Kísérletezz paraméterekkel és promptokkal
+- ✅ Jegyzetelj az észrevételekről és buktatókról
+- ✅ Tegyél fel kérdéseket, ha elakadsz (másoknak is lehet ugyanez a kérdésük)
 
-**Gyakori hibák, amelyeket el kell kerülni**:
-- ❌ A cellák végrehajtási sorrendjének kihagyása (futtassa sorban)
-- ❌ Hibaüzenetek figyelmen kívül hagyása
-- ❌ Túl gyors haladás anélkül, hogy megértené
-- ❌ Markdown magyarázatok figyelmen kívül hagyása
-- ❌ Saját módosított notebookok el nem mentése
+**Gyakori hibák, amelyeket kerülj**:
+- ❌ Nem sorrendben futtatni a cellákat
+- ❌ Nem figyelni figyelmesen a hibaüzeneteket
+- ❌ Türelmetlenül haladni megértés nélkül
+- ❌ Figyelmen kívül hagyni a markdown magyarázatokat
+- ❌ Nem menteni a módosított jegyzetfüzeteket
 
-**Hibaelhárítási tippek**:
-1. **Szolgáltatás nem fut**: Ellenőrizze `foundry service status`
-2. **Importálási hibák**: Győződjön meg róla, hogy a virtuális környezet aktiválva van
-3. **Modell nem található**: Futtassa `foundry model ls` a betöltött modellek listázásához
-4. **Lassú teljesítmény**: Ellenőrizze a RAM használatot, zárja be a többi alkalmazást
-5. **Váratlan eredmények**: Indítsa újra a kernelt, és futtassa az összes cellát felülről
+**Hibakeresési tippek**:
+1. **Szolgáltatás nem fut**: Ellenőrizd a `foundry service status` parancsot
+2. **Import hibák**: Győződj meg, hogy a virtuális környezet aktív
+3. **Modell nem található**: Futtasd a `foundry model ls` -t a betöltött modellek listázásához
+4. **Lassú teljesítmény**: Ellenőrizd a RAM használatot, zárd be a többi alkalmazást
+5. **Váratlan eredmények**: Indítsd újra a kernelt és futtasd le az összes cellát felülről
 
 ---
 
@@ -427,107 +484,107 @@ print(response.choices[0].message.content)
 
 ### Workshop anyagok
 
-- **[Workshop fő útmutató](../Readme.md)** - Áttekintés, tanulási célok, karrierlehetőségek
-- **[Python példák](../../../../Workshop/samples)** - Python szkriptek minden session-hez
-- **[Session útmutatók](../../../../Workshop)** - Részletes markdown útmutatók (Session01-06)
-- **[Szkriptek](../../../../Workshop/scripts)** - Validációs és tesztelési eszközök
-- **[Hibaelhárítás](./TROUBLESHOOTING.md)** - Gyakori problémák és megoldások
-- **[Gyors kezdés](./quickstart.md)** - Gyors bevezető útmutató
+- **[Workshop fő útmutató](../Readme.md)** - Áttekintés, tanulási célok, karrier eredmények
+- **[Python minták](../../../../Workshop/samples)** - Minden szekcióhoz kapcsolódó Python szkriptek
+- **[Szekció útmutatók](../../../../Workshop)** - Részletes markdown útmutatók (Session01-06)
+- **[Szkriptek](../../../../Workshop/scripts)** - Ellenőrző és tesztelő eszközök
+- **[Hibajavítás](./TROUBLESHOOTING.md)** - Gyakori problémák és megoldások
+- **[Gyors kezdés](./quickstart.md)** - Gyorsított kezdő útmutató
 
 ### Dokumentáció
 
-- **[Foundry Local Docs](https://learn.microsoft.com/azure/ai-foundry/foundry-local/)** - Hivatalos Microsoft dokumentáció
+- **[Foundry Local dokumentáció](https://learn.microsoft.com/azure/ai-foundry/foundry-local/)** - Hivatalos Microsoft dokumentáció
 - **[OpenAI Python SDK](https://github.com/openai/openai-python)** - OpenAI SDK referencia
-- **[Sentence Transformers](https://www.sbert.net/)** - Beágyazási modellek dokumentációja
+- **[Sentence Transformers](https://www.sbert.net/)** - Beágyazó modellek dokumentációja
 - **[RAGAS Framework](https://docs.ragas.io/)** - RAG értékelési metrikák
 
 ### Közösség
 
-- **[GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions)** - Kérdések, projektek megosztása
+- **[GitHub Beszélgetések](https://github.com/microsoft/edgeai-for-beginners/discussions)** - Kérdések, projektmegosztás
 - **[Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4)** - Valós idejű közösségi támogatás
-- **[Stack Overflow](https://stackoverflow.com/questions/tagged/foundry-local)** - Technikai kérdések és válaszok
+- **[Stack Overflow](https://stackoverflow.com/questions/tagged/foundry-local)** - Technikai kérdések-válaszok
 
 ---
 
-## 🎯 Tanulási útvonal ajánlások
+## 🎯 Tanulási út javaslatok
 
-### Kezdő szint (Induljon innen)
+### Kezdő tanfolyam (innen indulj)
 
-1. **Session 01** - Chat Bootstrap
-2. **Session 02** - RAG Pipeline
-3. **Session 03** - Modellek benchmarkolása
+1. **Szekció 01** - Chat Bootstrap
+2. **Szekció 02** - RAG Pipeline
+3. **Szekció 03** - Modell mérési alapok
 
-**Idő**: ~2 óra | **Fókusz**: Alapvető minták
-
----
-
-### Középhaladó szint
-
-1. Fejezze be a kezdő szintet
-2. **Session 02** - RAG értékelés
-3. **Session 04** - Modell összehasonlítás
-
-**Idő**: ~4 óra | **Fókusz**: Minőség és optimalizálás
+**Időtartam**: ~2 óra | **Fókusz**: Alapvető minták
 
 ---
 
-### Haladó szint (Teljes workshop)
+### Haladó közép szint
 
-1. Fejezze be a középhaladó szintet
-2. **Session 05** - Multi-Agent Orchestrator
-3. **Session 06** - Modell útválasztó
-4. **Session 06** - Többlépcsős pipeline
+1. Befejezni a kezdő tanfolyamot
+2. **Szekció 02** - RAG értékelés
+3. **Szekció 04** - Modell összehasonlítás
 
-**Idő**: ~6 óra | **Fókusz**: Produkciós minták
-
----
-
-### Egyedi projekt szint
-
-1. Fejezze be a kezdő szintet (Session 01-03)
-2. Válasszon EGY haladó session-t a célja alapján:
-   - **RAG alkalmazás építése?** → Session 02 értékelés
-   - **Teljesítmény optimalizálása?** → Session 04 összehasonlítás
-   - **Komplex munkafolyamatok?** → Session 05 Orchestrator
-   - **Skálázható architektúra?** → Session 06 Router + Pipeline
-
-**Idő**: ~3 óra | **Fókusz**: Projekt-specifikus készségek
+**Időtartam**: ~4 óra | **Fókusz**: Minőség és optimalizáció
 
 ---
 
-## 📊 Sikerességi mutatók
+### Haladó tanfolyam (teljes workshop)
 
-Kövesse nyomon a haladását ezekkel a mérföldkövekkel:
+1. Befejezni a haladó közép szintet
+2. **Szekció 05** - Többügynökös kezelő
+3. **Szekció 06** - Modell irányító
+4. **Szekció 06** - Többlépéses csővezeték
+
+**Időtartam**: ~6 óra | **Fókusz**: Termelési minták
+
+---
+
+### Egyedi projekt sáv
+
+1. Befejezni a kezdő tanfolyamot (Szekciók 01-03)
+2. Válassz EGY fejlett szekciót a célod alapján:
+   - **RAG alkalmazást építesz?** → Szekció 02 Értékelés
+   - **Teljesítmény optimalizálás?** → Szekció 04 Összehasonlítás
+   - **Összetett munkafolyamatok?** → Szekció 05 Kezelő
+   - **Skálázható architektúrát?** → Szekció 06 Irányító + Csővezeték
+
+**Időtartam**: ~3 óra | **Fókusz**: Projekt-specifikus készségek
+
+---
+
+## 📊 Sikermutatók
+
+Kövesd nyomon előrehaladásodat ezekkel a mérföldkövekkel:
 
 - [ ] **Beállítás kész** - Foundry Local fut, minden függőség telepítve
-- [ ] **Első chat** - Session 01 befejezve, streaming chat működik
-- [ ] **RAG elkészült** - Session 02 befejezve, dokumentum QA rendszer működik
-- [ ] **Modellek benchmarkolva** - Session 03 befejezve, teljesítményadatok gyűjtve
-- [ ] **Kompromisszumok elemzése** - Session 04 befejezve, modellválasztási kritériumok dokumentálva
-- [ ] **Ügynökök összehangolva** - Session 05 befejezve, multi-agent rendszer működik
-- [ ] **Útválasztás megvalósítva** - Session 06 befejezve, intelligens modellválasztás működik
-- [ ] **Egyedi projekt** - Workshop minták alkalmazva saját felhasználási esetére
+- [ ] **Első chat** - Szekció 01 teljesítve, folyamatos chat működik
+- [ ] **RAG elkészült** - Szekció 02 kész, dokumentum QA rendszer működik
+- [ ] **Modellek mérve** - Szekció 03 kész, teljesítményadatok gyűjtve
+- [ ] **Kompromisszumok elemzve** - Szekció 04 kész, modellválasztási kritériumok dokumentálva
+- [ ] **Ügynökök kezelve** - Szekció 05 kész, többügynökös rendszer működik
+- [ ] **Irányítás megvalósítva** - Szekció 06 kész, intelligens modellválasztás működik
+- [ ] **Egyedi projekt** - Workshop minták alkalmazva saját esethez
 
 ---
 
-## 🤝 Hozzájárulás
+## 🤝 Közreműködés
 
-Talált egy problémát vagy van javaslata? Örömmel fogadjuk a hozzájárulásokat!
+Találtál hibát vagy van javaslatod? Szívesen fogadjuk a hozzájárulásokat!
 
 - **Hibák jelentése**: [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues)
-- **Javaslatok**: [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions)
-- **PR beküldése**: Kövesse a [Hozzájárulási irányelveket](../../AGENTS.md)
+- **Javítási javaslatok**: [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **PR beküldése**: Kövesd a [Hozzájárulási irányelveket](../../AGENTS.md)
 
 ---
 
 ## 📄 Licenc
 
-Ez a workshop az [EdgeAI for Beginners](https://github.com/microsoft/edgeai-for-beginners) repository része, és az [MIT Licenc](../../../../LICENSE) alatt van licencelve.
+Ez a workshop a [EdgeAI for Beginners](https://github.com/microsoft/edgeai-for-beginners) tároló része, és az [MIT License](../../../../LICENSE) licenc alatt áll.
 
 ---
 
-**Készen áll produkcióra kész Edge AI alkalmazások építésére?**  
-**Kezdje a [Session 01: Chat Bootstrap](./session01_chat_bootstrap.ipynb) →**
+**Készen állsz gyártásra kész Edge AI alkalmazások építésére?**  
+**Kezdd a [Szekció 01: Chat Bootstrap](./session01_chat_bootstrap.ipynb)-pal →**
 
 ---
 
@@ -535,5 +592,7 @@ Ez a workshop az [EdgeAI for Beginners](https://github.com/microsoft/edgeai-for-
 
 ---
 
-**Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével került lefordításra. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Jogi nyilatkozat**:
+Ez a dokumentum az AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javasolunk. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely ebből a fordításból ered.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

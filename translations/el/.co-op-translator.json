@@ -1,13 +1,13 @@
 {
   "AGENTS.md": {
     "original_hash": "58a69ffb43295827eb8cf45c0617a245",
-    "translation_date": "2025-10-30T12:44:18+00:00",
+    "translation_date": "2026-08-25T08:30:10+00:00",
     "source_file": "AGENTS.md",
     "language_code": "el"
   },
   "CHANGELOG.md": {
     "original_hash": "78ca68df03ae43371b203ea43d346dec",
-    "translation_date": "2025-10-30T12:42:50+00:00",
+    "translation_date": "2026-08-25T08:32:40+00:00",
     "source_file": "CHANGELOG.md",
     "language_code": "el"
   },
@@ -19,7 +19,7 @@
   },
   "Module01/01.EdgeAIFundamentals.md": {
     "original_hash": "be25052ac4c842765e7f6f7eb4d7dcc5",
-    "translation_date": "2025-10-20T09:47:03+00:00",
+    "translation_date": "2026-08-25T08:57:19+00:00",
     "source_file": "Module01/01.EdgeAIFundamentals.md",
     "language_code": "el"
   },
@@ -49,37 +49,37 @@
   },
   "Module02/01.PhiFamily.md": {
     "original_hash": "20892f7994d9e5d2473ad19dfa93cf6d",
-    "translation_date": "2025-09-18T06:53:16+00:00",
+    "translation_date": "2026-08-25T09:31:27+00:00",
     "source_file": "Module02/01.PhiFamily.md",
     "language_code": "el"
   },
   "Module02/02.QwenFamily.md": {
     "original_hash": "1c8c05964be6fb235b026feed0bf066e",
-    "translation_date": "2025-10-01T21:04:21+00:00",
+    "translation_date": "2026-08-25T09:36:06+00:00",
     "source_file": "Module02/02.QwenFamily.md",
     "language_code": "el"
   },
   "Module02/03.GemmaFamily.md": {
     "original_hash": "c6ab7eb1b8009ae984eaf6b85568f77a",
-    "translation_date": "2025-09-18T07:00:19+00:00",
+    "translation_date": "2026-08-25T09:45:28+00:00",
     "source_file": "Module02/03.GemmaFamily.md",
     "language_code": "el"
   },
   "Module02/04.BitNETFamily.md": {
     "original_hash": "a56a3241aec9dc147b111ec10a2b3f2a",
-    "translation_date": "2025-09-18T06:31:03+00:00",
+    "translation_date": "2026-08-25T09:52:43+00:00",
     "source_file": "Module02/04.BitNETFamily.md",
     "language_code": "el"
   },
   "Module02/05.mumodel.md": {
     "original_hash": "e6f3e5aa0ea2aa936a8631279e4c192f",
-    "translation_date": "2025-09-18T07:09:51+00:00",
+    "translation_date": "2026-08-25T09:38:16+00:00",
     "source_file": "Module02/05.mumodel.md",
     "language_code": "el"
   },
   "Module02/06.phisilica.md": {
     "original_hash": "cb61871a6c3c38a50c2854b7f3c7bdad",
-    "translation_date": "2025-09-18T06:49:12+00:00",
+    "translation_date": "2026-08-25T09:54:57+00:00",
     "source_file": "Module02/06.phisilica.md",
     "language_code": "el"
   },
@@ -91,13 +91,13 @@
   },
   "Module03/01.SLMAdvancedLearning.md": {
     "original_hash": "38b68a204a9621126d056b0e5b51ab7c",
-    "translation_date": "2025-10-09T12:33:32+00:00",
+    "translation_date": "2026-08-25T09:24:42+00:00",
     "source_file": "Module03/01.SLMAdvancedLearning.md",
     "language_code": "el"
   },
   "Module03/02.DeployingSLMinLocalEnv.md": {
     "original_hash": "0d9a6cd24a08aeac1328626abcc18ba8",
-    "translation_date": "2025-10-24T09:35:53+00:00",
+    "translation_date": "2026-08-25T09:27:40+00:00",
     "source_file": "Module03/02.DeployingSLMinLocalEnv.md",
     "language_code": "el"
   },
@@ -115,7 +115,7 @@
   },
   "Module04/01.Introduce.md": {
     "original_hash": "49e18143f97a802a8647f4be28355348",
-    "translation_date": "2025-09-18T08:03:55+00:00",
+    "translation_date": "2026-08-25T08:55:16+00:00",
     "source_file": "Module04/01.Introduce.md",
     "language_code": "el"
   },
@@ -127,7 +127,7 @@
   },
   "Module04/03.MicrosoftOlive.md": {
     "original_hash": "1d2f37246d3818c5a66b951850225082",
-    "translation_date": "2025-10-30T12:49:41+00:00",
+    "translation_date": "2026-08-25T08:53:21+00:00",
     "source_file": "Module04/03.MicrosoftOlive.md",
     "language_code": "el"
   },
@@ -145,7 +145,7 @@
   },
   "Module04/06.workflow-synthesis.md": {
     "original_hash": "6fbccc3e9d5911e3df32090724daac13",
-    "translation_date": "2025-10-30T12:51:12+00:00",
+    "translation_date": "2026-08-25T08:51:22+00:00",
     "source_file": "Module04/06.workflow-synthesis.md",
     "language_code": "el"
   },
@@ -175,7 +175,7 @@
   },
   "Module05/03.SLMOps-Finetuing.md": {
     "original_hash": "6485323e2963241723d26eb0e0e9a492",
-    "translation_date": "2025-09-18T08:12:42+00:00",
+    "translation_date": "2026-08-25T09:03:02+00:00",
     "source_file": "Module05/03.SLMOps-Finetuing.md",
     "language_code": "el"
   },
@@ -193,19 +193,19 @@
   },
   "Module06/01.IntroduceAgent.md": {
     "original_hash": "44bc28c27b993c5fb988791b7a115705",
-    "translation_date": "2025-10-30T12:46:34+00:00",
+    "translation_date": "2026-08-25T09:22:25+00:00",
     "source_file": "Module06/01.IntroduceAgent.md",
     "language_code": "el"
   },
   "Module06/02.FunctionCalling.md": {
     "original_hash": "8b05633cf46af274b3724ee2f7140100",
-    "translation_date": "2025-09-18T07:14:45+00:00",
+    "translation_date": "2026-08-25T09:13:56+00:00",
     "source_file": "Module06/02.FunctionCalling.md",
     "language_code": "el"
   },
   "Module06/03.IntroduceMCP.md": {
     "original_hash": "8a7765b85f123e8a62aa3847141ca072",
-    "translation_date": "2025-10-30T12:48:37+00:00",
+    "translation_date": "2026-08-25T09:10:32+00:00",
     "source_file": "Module06/03.IntroduceMCP.md",
     "language_code": "el"
   },
@@ -223,7 +223,7 @@
   },
   "Module07/aitoolkit.md": {
     "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-    "translation_date": "2025-10-21T07:14:00+00:00",
+    "translation_date": "2026-08-25T08:48:23+00:00",
     "source_file": "Module07/aitoolkit.md",
     "language_code": "el"
   },
@@ -235,7 +235,7 @@
   },
   "Module07/windowdeveloper.md": {
     "original_hash": "2305e750e93ad4bd79898cf149e01b49",
-    "translation_date": "2025-10-03T06:13:47+00:00",
+    "translation_date": "2026-08-25T08:44:48+00:00",
     "source_file": "Module07/windowdeveloper.md",
     "language_code": "el"
   },
@@ -253,7 +253,7 @@
   },
   "Module08/03.OpenSourceModels.md": {
     "original_hash": "e3d7e45c04a9946ff6f9a3358db9ba74",
-    "translation_date": "2025-10-01T00:24:23+00:00",
+    "translation_date": "2026-08-25T08:34:03+00:00",
     "source_file": "Module08/03.OpenSourceModels.md",
     "language_code": "el"
   },
@@ -277,7 +277,7 @@
   },
   "Module08/README.md": {
     "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-    "translation_date": "2025-10-01T00:22:47+00:00",
+    "translation_date": "2026-08-25T08:40:17+00:00",
     "source_file": "Module08/README.md",
     "language_code": "el"
   },
@@ -385,7 +385,7 @@
   },
   "STUDY_GUIDE.md": {
     "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-    "translation_date": "2025-10-09T12:29:38+00:00",
+    "translation_date": "2026-08-25T08:27:13+00:00",
     "source_file": "STUDY_GUIDE.md",
     "language_code": "el"
   },
@@ -421,7 +421,7 @@
   },
   "Workshop/Readme.md": {
     "original_hash": "04951692a100dcd716df01efca2d3f0d",
-    "translation_date": "2025-11-11T23:04:46+00:00",
+    "translation_date": "2026-08-25T09:06:30+00:00",
     "source_file": "Workshop/Readme.md",
     "language_code": "el"
   },
@@ -451,7 +451,7 @@
   },
   "Workshop/Session05-AIPoweredAgents.md": {
     "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-    "translation_date": "2025-10-28T21:52:38+00:00",
+    "translation_date": "2026-08-25T09:07:43+00:00",
     "source_file": "Workshop/Session05-AIPoweredAgents.md",
     "language_code": "el"
   },
@@ -463,7 +463,7 @@
   },
   "Workshop/notebooks/README.md": {
     "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-    "translation_date": "2025-10-09T13:15:58+00:00",
+    "translation_date": "2026-08-25T09:59:03+00:00",
     "source_file": "Workshop/notebooks/README.md",
     "language_code": "el"
   },
@@ -544,6 +544,19 @@
     "translation_date": "2026-01-05T17:41:21+00:00",
     "source_file": "WorkshopForAgentic/translation/zh-cn/README.md",
     "language_code": "el"
+  },
+  "__translation_failures__": {
+    "Module01/04.EdgeDeployment.md": {
+      "original_hash": "b1f5ed7b55962c3dccafd3da6f9ec252",
+      "source_file": "Module01/04.EdgeDeployment.md",
+      "language_code": "el",
+      "failure_date": "2026-08-25T09:00:26+00:00",
+      "status": "failed",
+      "error_type": "TranslationIncompleteError",
+      "error_message": "Markdown translation remained incomplete for chunk 2 of '04.EdgeDeployment.md', and the chunk could not be split further.",
+      "translator_version": "0.20.0",
+      "failure_policy_version": 1
+    }
   },
   "introduction.md": {
     "original_hash": "22c6dae04591abc5f0d80f944ed663d5",

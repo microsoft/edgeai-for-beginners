@@ -1,770 +1,792 @@
-# EdgeAI za začetnike: Učne poti in urnik študija
+# EdgeAI za začetnike: učne poti in študijski načrt
 
-### Intenzivna učna pot (1 teden)
+### Koncentrirana učna pot (1 teden)
 
-| Dan | Fokus | Ocenjene ure |
+| Dan | Osredotočenost | Ocenjene ure |
 |------|-------|------------------|
 | Dan 0 | Modul 0: Uvod v EdgeAI | 1-2 uri |
 | Dan 1 | Modul 1: Osnove EdgeAI | 3 ure |
 | Dan 2 | Modul 2: Osnove SLM | 3 ure |
-| Dan 3 | Modul 3: Uvajanje SLM | 2 uri |
+| Dan 3 | Modul 3: Implementacija SLM | 2 uri |
 | Dan 4-5 | Modul 4: Optimizacija modelov (6 ogrodij) | 4 ure |
 | Dan 6 | Modul 5: SLMOps | 3 ure |
-| Dan 7 | Modula 6-7: AI agenti in razvojna orodja | 4 ure |
+| Dan 7 | Modul 6-7: AI agenti in razvojna orodja | 4 ure |
 | Dan 8 | Modul 8: Foundry Local Toolkit (sodobna implementacija) | 1 ura |
 
-### Intenzivna učna pot (2 tedna)
+### Koncentrirana učna pot (2 tedna)
 
-| Dan | Fokus | Ocenjene ure |
+| Dan | Osredotočenost | Ocenjene ure |
 |------|-------|------------------|
 | Dan 1-2 | Modul 1: Osnove EdgeAI | 3 ure |
 | Dan 3-4 | Modul 2: Osnove SLM | 3 ure |
-| Dan 5-6 | Modul 3: Uvajanje SLM | 2 uri |
+| Dan 5-6 | Modul 3: Implementacija SLM | 2 uri |
 | Dan 7-8 | Modul 4: Optimizacija modelov | 4 ure |
 | Dan 9-10 | Modul 5: SLMOps | 3 ure |
 | Dan 11-12 | Modul 6: AI agenti | 2 uri |
 | Dan 13-14 | Modul 7: Razvojna orodja | 3 ure |
 
-### Študij s krajšim delovnim časom (4 tedni)
+### Delo s krajšim delovnim časom (4 tedne)
 
-| Teden | Fokus | Ocenjene ure |
+| Teden | Osredotočenost | Ocenjene ure |
 |------|-------|------------------|
-| Teden 1 | Modula 1-2: Osnove in osnove SLM | 6 ur |
-| Teden 2 | Modula 3-4: Uvajanje in optimizacija | 6 ur |
-| Teden 3 | Modula 5-6: SLMOps in AI agenti | 5 ur |
+| Teden 1 | Modul 1-2: Osnove in osnove SLM | 6 ur |
+| Teden 2 | Modul 3-4: Implementacija in optimizacija | 6 ur |
+| Teden 3 | Modul 5-6: SLMOps in AI agenti | 5 ur |
 | Teden 4 | Modul 7: Razvojna orodja in integracija | 3 ure |
 
-| Dan | Fokus | Ocenjene ure |
+| Dan | Osredotočenost | Ocenjene ure |
 |------|-------|------------------|
 | Dan 0 | Modul 0: Uvod v EdgeAI | 1-2 uri |
 | Dan 1-2 | Modul 1: Osnove EdgeAI | 3 ure |
 | Dan 3-4 | Modul 2: Osnove SLM | 3 ure |
-| Dan 5-6 | Modul 3: Uvajanje SLM | 2 uri |
+| Dan 5-6 | Modul 3: Implementacija SLM | 2 uri |
 | Dan 7-8 | Modul 4: Optimizacija modelov | 4 ure |
 | Dan 9-10 | Modul 5: SLMOps | 3 ure |
-| Dan 11-12 | Modul 6: Sistemi SLM agentov | 2 uri |
-| Dan 13-14 | Modul 7: Primeri implementacije EdgeAI | 2 uri |
+| Dan 11-12 | Modul 6: SLM agentski sistemi | 2 uri |
+| Dan 13-14 | Modul 7: Vzorci implementacije EdgeAI | 2 uri |
 
-| Modul | Datum zaključka | Porabljene ure | Ključne ugotovitve |
+| Modul | Datum dokončanja | Porabljene ure | Ključne ugotovitve |
 |--------|----------------|-------------|--------------|
 | Modul 0: Uvod v EdgeAI | | | |
 | Modul 1: Osnove EdgeAI | | | |
 | Modul 2: Osnove SLM | | | |
-| Modul 3: Uvajanje SLM | | | |
+| Modul 3: Implementacija SLM | | | |
 | Modul 4: Optimizacija modelov (6 ogrodij) | | | |
 | Modul 5: SLMOps | | | |
-| Modul 6: Sistemi SLM agentov | | | |
-| Modul 7: Primeri implementacije EdgeAI | | | |
+| Modul 6: SLM agentski sistemi | | | |
+| Modul 7: Vzorci implementacije EdgeAI | | | |
 | Praktične vaje | | | |
-| Mini-projekt | | | |
+| Mini projekt | | | |
 
-### Študij s krajšim delovnim časom (4 tedni)
+### Delo s krajšim delovnim časom (4 tedne)
 
-| Teden | Fokus | Ocenjene ure |
+| Teden | Osredotočenost | Ocenjene ure |
 |------|-------|------------------|
-| Teden 1 | Modula 1-2: Osnove in osnove SLM | 6 ur |
-| Teden 2 | Modula 3-4: Uvajanje in optimizacija | 6 ur |
-| Teden 3 | Modula 5-6: SLMOps in AI agenti | 5 ur |
+| Teden 1 | Modul 1-2: Osnove in osnove SLM | 6 ur |
+| Teden 2 | Modul 3-4: Implementacija in optimizacija | 6 ur |
+| Teden 3 | Modul 5-6: SLMOps in AI agenti | 5 ur |
 | Teden 4 | Modul 7: Razvojna orodja in integracija | 3 ure |
 
 ## Uvod
 
-Dobrodošli v študijskem vodniku EdgeAI za začetnike! Ta dokument je zasnovan tako, da vam pomaga učinkovito krmariti po učnih gradivih in kar najbolje izkoristiti vašo učno izkušnjo. Ponuja strukturirane učne poti, predlagane urnike študija, povzetke ključnih konceptov in dodatne vire za poglobitev razumevanja tehnologij Edge AI.
+Dobrodošli v študijskem vodniku EdgeAI za začetnike! Ta dokument je zasnovan, da vam pomaga učinkovito raziskati učna gradiva in maksimalno izkoristiti vašo izkušnjo učenja. Ponuja strukturirane učne poti, predlagane študijske urnike, povzetke ključnih pojmov in dodatne vire za poglobitev vašega razumevanja tehnologij Edge AI.
 
-To je jedrnat 20-urni tečaj, ki zagotavlja osnovno znanje o EdgeAI v časovno učinkovitem formatu, kar je idealno za zaposlene strokovnjake in študente, ki želijo hitro pridobiti praktične veščine na tem hitro razvijajočem se področju.
+Gre za jedrnat 20-urni tečaj, ki podaja osnovno znanje o EdgeAI v časovno učinkoviti obliki, zaradi česar je popoln za zaposlene strokovnjake in študente, ki želijo hitro pridobiti praktične veščine na tem novem področju.
 
 ## Pregled tečaja
 
-Tečaj je organiziran v osem celovitih modulov:
+Ta tečaj je organiziran v osem obsežnih modulov:
 
-0. **Uvod v EdgeAI** - Osnove in postavitev konteksta z industrijskimi aplikacijami in učnimi cilji  
-1. **Osnove in transformacija EdgeAI** - Razumevanje osnovnih konceptov in tehnoloških sprememb  
-2. **Osnove majhnih jezikovnih modelov (SLM)** - Raziskovanje različnih družin SLM in njihovih arhitektur  
-3. **Uvajanje majhnih jezikovnih modelov** - Implementacija praktičnih strategij uvajanja  
-4. **Pretvorba in kvantizacija modelov** - Napredna optimizacija s 6 ogrodji, vključno z OpenVINO  
-5. **SLMOps - Operacije majhnih jezikovnih modelov** - Upravljanje življenjskega cikla in uvajanje v produkcijo  
-6. **Sistemi SLM agentov** - AI agenti, klicanje funkcij in protokol konteksta modela  
-7. **Primeri implementacije EdgeAI** - AI orodja, razvoj za Windows in platformno specifične implementacije  
-8. **Microsoft Foundry Local – celovit razvojni komplet** - Lokalno usmerjen razvoj s hibridno integracijo Azure (Modul 08)
+0. **Uvod v EdgeAI** - Osnove in postavitev konteksta z industrijskimi primeri in učnimi cilji
+1. **Osnove in transformacija EdgeAI** - Razumevanje osnovnih pojmov in tehnoloških premikov
+2. **Osnove majhnih jezikovnih modelov** - Raziskovanje različnih družin SLM in njihove arhitekture
+3. **Implementacija majhnih jezikovnih modelov** - Uporaba praktičnih strategij za implementacijo
+4. **Pretvorba formatov modelov in kvantizacija** - Napredna optimizacija s 6 ogrodji, vključno z OpenVINO
+5. **SLMOps - Operacije majhnih jezikovnih modelov** - Upravljanje življenjskega cikla proizvodnje in implementacije
+6. **SLM agentski sistemi** - AI agenti, klic funkcij in protokol modelnega konteksta
+7. **Vzorci implementacije EdgeAI** - AI orodja, razvoj na Windows ter platformno specifične implementacije
+8. **Microsoft Foundry Local – popoln nabor orodij za razvijalce** - Lokalni razvoj s hibridno Azure integracijo (Modul 08)
 
 ## Kako uporabljati ta študijski vodnik
 
-- **Postopen študij**: Sledite modulom po vrsti za najbolj smiselno učno izkušnjo  
-- **Preverjanje znanja**: Uporabite vprašanja za samooceno po vsakem poglavju  
-- **Praktične vaje**: Izvedite predlagane vaje za utrditev teoretičnih konceptov  
-- **Dodatni viri**: Raziščite dodatna gradiva za teme, ki vas najbolj zanimajo  
+- **Postopno učenje**: Spremljajte module v zaporedju za najbolj celovito učno izkušnjo
+- **Kontrolne točke znanja**: Uporabite vprašanja za samopreizkus po vsakem poglavju
+- **Praktične vaje**: Izvedite predlagane vaje za utrditev teoretičnih konceptov
+- **Dodatni viri**: Raziskujte dodatne materiale za teme, ki vas najbolj zanimajo
 
-## Priporočila za urnik študija
+## Priporočila za študijski načrt
 
-### Intenzivna učna pot (1 teden)
+### Koncentrirana učna pot (1 teden)
 
-| Dan | Fokus | Ocenjene ure |
+| Dan | Osredotočenost | Ocenjene ure |
 |------|-------|------------------|
 | Dan 0 | Modul 0: Uvod v EdgeAI | 1-2 uri |
 | Dan 1-2 | Modul 1: Osnove EdgeAI | 6 ur |
 | Dan 3-4 | Modul 2: Osnove SLM | 8 ur |
-| Dan 5 | Modul 3: Uvajanje SLM | 3 ure |
+| Dan 5 | Modul 3: Implementacija SLM | 3 ure |
 | Dan 6 | Modul 8: Foundry Local Toolkit | 3 ure |
 
-### Študij s krajšim delovnim časom (3 tedni)
+### Delo s krajšim delovnim časom (3 tedne)
 
-| Teden | Fokus | Ocenjene ure |
+| Teden | Osredotočenost | Ocenjene ure |
 |------|-------|------------------|
 | Teden 1 | Modul 0: Uvod + Modul 1: Osnove EdgeAI | 7-9 ur |
 | Teden 2 | Modul 2: Osnove SLM | 7-8 ur |
-| Teden 3 | Modul 3: Uvajanje SLM (3h) + Modul 8: Foundry Local Toolkit (2-3h) | 5-6 ur |
+| Teden 3 | Modul 3: Implementacija SLM (3h) + Modul 8: Foundry Local Toolkit (2-3h) | 5-6 ur |
 
 ## Modul 0: Uvod v EdgeAI
 
 ### Ključni učni cilji
 
-- Razumeti, kaj je Edge AI in zakaj je pomemben v današnjem tehnološkem okolju  
-- Prepoznati glavne industrije, ki jih je Edge AI preoblikoval, in njihove specifične primere uporabe  
-- Razumeti prednosti majhnih jezikovnih modelov (SLM) za uvajanje na robu  
-- Določiti jasna učna pričakovanja in cilje za celoten tečaj  
-- Prepoznati karierne priložnosti in potrebne veščine na področju Edge AI  
+- Razumeti, kaj je Edge AI in zakaj je pomemben v današnjem tehnološkem okolju
+- Prepoznati glavne industrije, ki jih je Edge AI transformiral, in njihove posebne primere uporabe
+- Razumeti prednosti malih jezikovnih modelov (SLM) za implementacijo na robu
+- Postaviti jasna pričakovanja in rezultate učenja za celoten tečaj
+- Prepoznati karierne priložnosti in zahteve glede veščin na področju Edge AI
 
-### Področja študija
+### Osredotočena področja študija
 
 #### Poglavje 1: Paradigma in definicija Edge AI
-- **Prednostni koncepti**:  
-  - Edge AI v primerjavi s tradicionalno obdelavo v oblaku  
-  - Konvergenca strojne opreme, optimizacije modelov in poslovnih zahtev  
-  - Uvajanje AI v realnem času, z ohranjanjem zasebnosti in stroškovno učinkovitostjo  
+- **Prioritetni koncepti**: 
+  - Edge AI v primerjavi s tradicionalnim AI v oblaku
+  - Konvergenca strojne opreme, optimizacije modelov in poslovnih potreb
+  - Implementacija AI v realnem času, z varstvom zasebnosti in stroškovno učinkovitostjo
 
 #### Poglavje 2: Industrijske aplikacije
-- **Prednostni koncepti**:  
-  - Proizvodnja in industrija 4.0: Prediktivno vzdrževanje in nadzor kakovosti  
-  - Zdravstvo: Diagnostično slikanje in spremljanje pacientov  
-  - Avtonomni sistemi: Samovozeča vozila in transport  
-  - Pametna mesta: Upravljanje prometa in javna varnost  
-  - Potrošniška tehnologija: Pametni telefoni, nosljive naprave in pametni domovi  
+- **Prioritetni koncepti**: 
+  - Proizvodnja in Industrija 4.0: napovedno vzdrževanje in nadzor kakovosti
+  - Zdravstvo: diagnostično slikanje in spremljanje pacientov
+  - Avtonomni sistemi: samovozeča vozila in promet
+  - Pametna mesta: upravljanje prometa in javna varnost
+  - Potrošniška tehnologija: pametni telefoni, nosljive naprave in pametne hiše
 
 #### Poglavje 3: Osnove majhnih jezikovnih modelov
-- **Prednostni koncepti**:  
-  - Značilnosti in primerjave zmogljivosti SLM  
-  - Kompromisi med učinkovitostjo parametrov in zmogljivostjo  
-  - Omejitve uvajanja na robu in strategije optimizacije  
+- **Prioritetni koncepti**: 
+  - Značilnosti SLM in primerjave zmogljivosti
+  - Izmenjava učinkovitosti parametrov in zmogljivosti
+  - Omejitve implementacije na robu in strategije optimizacije
 
-#### Poglavje 4: Učni okvir in karierna pot
-- **Prednostni koncepti**:  
-  - Struktura tečaja in pristop k postopnemu obvladovanju  
-  - Tehnične veščine in cilji praktične implementacije  
-  - Priložnosti za karierni napredek in industrijske aplikacije  
+#### Poglavje 4: Okvir učenja in karierna pot
+- **Prioritetni koncepti**: 
+  - Arhitektura tečaja in pristop postopnega obvladovanja
+  - Tehnične veščine in cilji praktične izvedbe
+  - Priložnosti za karierni razvoj in industrijske aplikacije
 
-### Vprašanja za samooceno
+### Vprašanja za samopreizkus
 
-1. Katere so tri glavne tehnološke smernice, ki so omogočile Edge AI?  
-2. Primerjajte prednosti in izzive Edge AI v primerjavi z AI, ki temelji na oblaku.  
-3. Naštejte tri industrije, kjer Edge AI prinaša ključno poslovno vrednost, in pojasnite zakaj.  
-4. Kako majhni jezikovni modeli omogočajo praktično uvajanje Edge AI v resničnem svetu?  
-5. Katere ključne tehnične veščine boste razvili skozi ta tečaj?  
-6. Opišite štirifazni učni pristop, uporabljen v tem tečaju.  
+1. Katere so tri glavne tehnološke smernice, ki so omogočile Edge AI?
+2. Primerjajte prednosti in izzive Edge AI v primerjavi z AI v oblaku.
+3. Navedite tri industrije, kjer Edge AI zagotavlja ključno poslovno vrednost in pojasnite zakaj.
+4. Kako majhni jezikovni modeli omogočajo praktično uporabo Edge AI v resničnem svetu?
+5. Katere ključne tehnične veščine boste razvili skozi ta tečaj?
+6. Opišite štiristopenjski pristop učenja, ki se uporablja v tem tečaju.
 
 ### Praktične vaje
 
-1. **Raziskava industrije**: Izberite eno industrijsko aplikacijo in raziščite resnično implementacijo Edge AI (30 minut)  
-2. **Raziskovanje modelov**: Prebrskajte razpoložljive majhne jezikovne modele na Hugging Face in primerjajte njihove število parametrov in zmogljivosti (30 minut)  
-3. **Načrtovanje učenja**: Preglejte celotno strukturo tečaja in ustvarite svoj osebni urnik študija (15 minut)  
+1. **Industrijska raziskava**: Izberite eno industrijsko aplikacijo in raziskujte resnično implementacijo Edge AI (30 minut)
+2. **Raziskovanje modelov**: Prebrskajte dosegljive majhne jezikovne modele na Hugging Face in primerjajte njihovo število parametrov in zmogljivosti (30 minut)
+3. **Načrtovanje učenja**: Preglejte celotno strukturo tečaja in ustvarite svoj osebni študijski načrt (15 minut)
 
-### Dodatna gradiva
+### Dodatni materiali
 
-- [Pregled trga Edge AI - McKinsey](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-age-of-ai)  
-- [Pregled majhnih jezikovnih modelov - Hugging Face](https://huggingface.co/blog/small-language-models)  
-- [Osnove Edge Computing](https://www.edgecomputing.org/)  
+- [Pregled trga Edge AI - McKinsey](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-age-of-ai)
+- [Pregled majhnih jezikovnih modelov - Hugging Face](https://huggingface.co/blog/small-language-models)
+- [Edge Computing Foundation](https://www.edgecomputing.org/)
 
 ## Modul 1: Osnove in transformacija EdgeAI
 
 ### Ključni učni cilji
 
-- Razumeti razlike med AI, ki temelji na oblaku, in AI na robu  
-- Obvladati osnovne tehnike optimizacije za okolja z omejenimi viri  
-- Analizirati resnične primere uporabe tehnologij EdgeAI  
-- Nastaviti razvojno okolje za projekte EdgeAI  
+- Razumeti razlike med AI v oblaku in na robu
+- Usvojiti osnovne tehnike optimizacije za okolja z omejenimi viri
+- Analizirati resnične aplikacije tehnologij EdgeAI
+- Nastaviti razvojno okolje za projekte EdgeAI
 
-### Področja študija
+### Osredotočena področja študija
 
 #### Poglavje 1: Osnove EdgeAI
-- **Prednostni koncepti**:  
-  - Paradigme računalništva na robu v primerjavi z oblačnim računalništvom  
-  - Tehnike kvantizacije modelov  
-  - Možnosti strojne pospešitve (NPU, GPU, CPU)  
-  - Prednosti zasebnosti in varnosti  
+- **Prioritetni koncepti**: 
+  - Paradigme Edge in Cloud računalništva
+  - Tehnike kvantizacije modelov
+  - Možnosti strojne pospešitve (NPU, GPU, CPU)
+  - Prednosti glede zasebnosti in varnosti
 
-- **Dodatna gradiva**:  
-  - [Dokumentacija TensorFlow Lite](https://www.tensorflow.org/lite)  
-  - [GitHub ONNX Runtime](https://github.com/microsoft/onnxruntime)  
-  - [Dokumentacija Edge Impulse](https://docs.edgeimpulse.com)  
+- **Dodatni materiali**:
+  - [Dokumentacija TensorFlow Lite](https://www.tensorflow.org/lite)
+  - [GitHub ONNX Runtime](https://github.com/microsoft/onnxruntime)
+  - [Dokumentacija Edge Impulse](https://docs.edgeimpulse.com)
 
-#### Poglavje 2: Resnični primeri uporabe
-- **Prednostni koncepti**:  
-  - Ekosistem modelov Microsoft Phi & Mu  
-  - Praktične implementacije v različnih industrijah  
-  - Premisleki pri uvajanju  
+#### Poglavje 2: Resnične študije primerov
+- **Prioritetni koncepti**: 
+  - Ecosistem Microsoft Phi in Mu modelov
+  - Praktične implementacije v različnih industrijah
+  - Premisleki glede implementacije
 
 #### Poglavje 3: Vodnik za praktično implementacijo
-- **Prednostni koncepti**:  
-  - Nastavitev razvojnega okolja  
-  - Orodja za kvantizacijo in optimizacijo  
-  - Metode ocenjevanja za implementacije EdgeAI  
+- **Prioritetni koncepti**: 
+  - Nastavitev razvojnega okolja
+  - Orodja za kvantizacijo in optimizacijo
+  - Metode ocenjevanja implementacij EdgeAI
 
-#### Poglavje 4: Strojna oprema za uvajanje na robu
-- **Prednostni koncepti**:  
-  - Primerjave platform strojne opreme  
-  - Strategije optimizacije za specifično strojno opremo  
-  - Premisleki pri uvajanju  
+#### Poglavje 4: Strojna oprema za implementacijo na robu
+- **Prioritetni koncepti**: 
+  - Primerjave strojnih platform
+  - Strategije optimizacije za specifično strojno opremo
+  - Premisleki glede implementacije
 
-### Vprašanja za samooceno
+### Vprašanja za samopreizkus
 
-1. Primerjajte in kontrastirajte AI, ki temelji na oblaku, z AI na robu.  
-2. Pojasnite tri ključne tehnike za optimizacijo modelov za uvajanje na robu.  
-3. Katere so glavne prednosti izvajanja AI modelov na robu?  
-4. Opišite postopek kvantizacije modela in kako vpliva na zmogljivost.  
-5. Pojasnite, kako različni strojni pospeševalniki (NPU, GPU, CPU) vplivajo na uvajanje EdgeAI.  
+1. Primerjajte in kontrastirajte implementacije AI v oblaku in na robu.
+2. Razložite tri ključne tehnike za optimizacijo modelov za implementacijo na robu.
+3. Katere so glavne prednosti izvajanja AI modelov na robu?
+4. Opišite postopek kvantizacije modela in njegov vpliv na zmogljivost.
+5. Razložite, kako različni strojni pospeševalniki (NPU, GPU, CPU) vplivajo na implementacijo EdgeAI.
 
 ### Praktične vaje
 
-1. **Hitro nastavljanje okolja**: Konfigurirajte minimalno razvojno okolje z osnovnimi paketi (30 minut)  
-2. **Raziskovanje modelov**: Prenesite in preglejte predhodno usposobljen majhen jezikovni model (1 ura)  
-3. **Osnovna kvantizacija**: Preizkusite preprosto kvantizacijo na majhnem modelu (1 ura)  
+1. **Hitro nastavitev okolja**: Konfigurirajte minimalno razvojno okolje z osnovnimi paketi (30 minut)
+2. **Raziskovanje modela**: Prenesite in preglejte vnaprej usposobljen mali jezikovni model (1 ura)
+3. **Osnovna kvantizacija**: Poskusite osnovno kvantizacijo na majhnem modelu (1 ura)
 
 ## Modul 2: Osnove majhnih jezikovnih modelov
 
 ### Ključni učni cilji
 
-- Razumeti arhitekturna načela različnih družin SLM  
-- Primerjati zmogljivosti modelov glede na različne obsege parametrov  
-- Oceniti modele glede na učinkovitost, zmogljivost in zahteve za uvajanje  
-- Prepoznati ustrezne primere uporabe za različne družine modelov  
+- Razumeti arhitekturna načela različnih družin SLM
+- Primerjati zmogljivosti modelov na različnih ravneh parametrizacije
+- Oceniti modele na podlagi učinkovitosti, zmogljivosti in zahtev za implementacijo
+- Prepoznati primerne primere uporabe različnih družin modelov
+
+### Osredotočena področja študija
+
+#### Poglavje 1: Microsoft Phi družina modelov
+- **Prioritetni koncepti**: 
+  - Evolucija oblikovne filozofije
+  - Arhitektura, ki daje prednost učinkovitosti
+  - Specializirane zmogljivosti
+
+#### Poglavje 2: Družina Qwen
+- **Prioritetni koncepti**: 
+  - Prispevki odprte kode
+  - Možnosti skalabilne implementacije
+  - Napredna arhitektura za sklepanje
+
+#### Poglavje 3: Družina Gemma
+- **Prioritetni koncepti**: 
+  - Raziskovalno usmerjene inovacije
+  - Multimodalne zmogljivosti
+  - Optimizacija za mobilne naprave
+
+#### Poglavje 4: Družina BitNET
+- **Prioritetni koncepti**: 
+  - Tehnologija 1-bitne kvantizacije
+  - Okvir optimizacije inferenc
+  - Premisleki o trajnosti
+
+#### Poglavje 5: Microsoft Mu model
+- **Prioritetni koncepti**: 
+  - Arhitektura osredotočena na napravo
+  - Integracija s sistemom Windows
+  - Operacije z varstvom zasebnosti
+
+#### Poglavje 6: Phi-Silica
+- **Prioritetni koncepti**: 
+  - Arhitektura optimizirana za NPU
+  - Merila zmogljivosti
+  - Integracija za razvijalce
+
+### Vprašanja za samopreizkus
+
+1. Primerjajte arhitekturne pristope družin modelov Phi in Qwen.
+2. Pojasnite, kako se tehnologija kvantizacije BitNET razlikuje od tradicionalne kvantizacije.
+3. Katere so edinstvene prednosti modela Mu za integracijo z Windows?
+4. Opišite, kako Phi-Silica izkorišča strojno opremo NPU za optimizacijo zmogljivosti.
+
+5. Za mobilno aplikacijo z omejeno povezljivostjo, katera družina modelov bi bila najprimernejša in zakaj?
+
+### Praktične vaje
+
+1. **Primerjava modelov**: Hitri primerjalni test dveh različnih SLM modelov (1 ura)
+2. **Enostavna generacija besedila**: Osnovna implementacija generacije besedila z majhnim modelom (1 ura)
+3. **Hitro optimiziranje**: Uporabi eno tehniko optimizacije za izboljšanje hitrosti inferenciranja (1 ura)
+
+## Modul 3: Implementacija Small Language Model
+
+### Ključni cilji učenja
+
+- Izberite primerne modele glede na omejitve nameščanja
+- Obvladajte tehnike optimizacije za različne scenarije nameščanja
+- Implementirajte SLM modele tako v lokalnem kot oblaku okolju
+- Oblikujte produkcijsko pripravljene konfiguracije za EdgeAI aplikacije
 
 ### Področja študija
 
-#### Poglavje 1: Družina modelov Microsoft Phi
-- **Prednostni koncepti**:  
-  - Razvojna filozofija  
-  - Arhitektura, usmerjena v učinkovitost  
-  - Specializirane zmogljivosti  
-
-#### Poglavje 2: Družina Qwen
-- **Prednostni koncepti**:  
-  - Prispevki odprtokodne skupnosti  
-  - Možnosti skalabilnega uvajanja  
-  - Napredna arhitektura za razumevanje  
-
-#### Poglavje 3: Družina Gemma
-- **Prednostni koncepti**:  
-  - Inovacije, ki temeljijo na raziskavah  
-  - Multimodalne zmogljivosti  
-  - Optimizacija za mobilne naprave  
-
-#### Poglavje 4: Družina BitNET
-- **Prednostni koncepti**:  
-  - Tehnologija 1-bitne kvantizacije  
-  - Okvir za optimizacijo inferenc  
-  - Trajnostni vidiki  
-
-#### Poglavje 5: Model Microsoft Mu
-- **Prednostni koncepti**:  
-  - Arhitektura, usmerjena v naprave  
-  - Sistemska integracija z Windows  
-  - Delovanje z ohranjanjem zasebnosti  
-
-#### Poglavje 6: Phi-Silica
-- **Prednostni koncepti**:  
-  - Arhitektura, optimizirana za NPU  
-  - Meritve zmogljivosti  
-  - Integracija za razvijalce  
-
-### Vprašanja za samooceno
-
-1. Primerjajte arhitekturne pristope družin modelov Phi in Qwen.  
-2. Pojasnite, kako se tehnologija kvantizacije BitNET razlikuje od tradicionalne kvantizacije.  
-3. Katere edinstvene prednosti ponuja model Mu za integracijo z Windows?
-4. Opišite, kako Phi-Silica izkorišča strojno opremo NPU za optimizacijo zmogljivosti.
-5. Za mobilno aplikacijo z omejeno povezljivostjo, katera družina modelov bi bila najbolj primerna in zakaj?
-
-### Praktične vaje
-
-1. **Primerjava modelov**: Hitro primerjanje dveh različnih SLM modelov (1 ura)
-2. **Preprosto generiranje besedila**: Osnovna implementacija generiranja besedila z majhnim modelom (1 ura)
-3. **Hitra optimizacija**: Uporaba ene tehnike optimizacije za izboljšanje hitrosti sklepanja (1 ura)
-
-## Modul 3: Uporaba majhnih jezikovnih modelov
-
-### Ključni cilji učenja
-
-- Izbira ustreznih modelov glede na omejitve pri uporabi
-- Obvladovanje tehnik optimizacije za različne scenarije uporabe
-- Implementacija SLM-jev v lokalnih in oblačnih okoljih
-- Oblikovanje konfiguracij, pripravljenih za proizvodnjo, za aplikacije EdgeAI
-
-### Osrednja področja študija
-
-#### Oddelek 1: Napredno učenje SLM
-- **Prednostni koncepti**: 
-  - Okvir za razvrščanje parametrov
+#### Razdelek 1: Napredno učenje SLM
+- **Prednostne vsebine**: 
+  - Okvir za klasifikacijo parametrov
   - Napredne tehnike optimizacije
   - Strategije pridobivanja modelov
 
-#### Oddelek 2: Uporaba v lokalnem okolju
-- **Prednostni koncepti**: 
-  - Uporaba platforme Ollama
-  - Lokalna rešitev Microsoft Foundry
+#### Razdelek 2: Lokalno nameščanje
+- **Prednostne vsebine**: 
+  - Implementacija na platformi Ollama
+  - Microsoft Foundry lokalne rešitve
   - Primerjalna analiza okvirov
 
-#### Oddelek 3: Kontejnerska oblačna uporaba
-- **Prednostni koncepti**: 
-  - vLLM za visokozmogljivo sklepanje
-  - Orkestracija kontejnerjev
-  - Implementacija ONNX Runtime
+#### Razdelek 3: Namestitev v oblak z vsebniki
+- **Prednostne vsebine**: 
+  - Visoko zmogljivo inferenciranje v vLLM
+  - Orkestracija vsebnikov
+  - Implementacija v ONNX Runtime
 
-### Samoevalvacija
+### Vprašanja za samoevalvacijo
 
-1. Katere dejavnike je treba upoštevati pri izbiri med lokalno in oblačno uporabo?
-2. Primerjajte Ollama in Microsoft Foundry Local kot možnosti uporabe.
-3. Pojasnite prednosti kontejnerizacije za uporabo SLM.
-4. Katere ključne meritve zmogljivosti je treba spremljati pri SLM, nameščenem na robu?
-5. Opišite celoten potek uporabe od izbire modela do implementacije v proizvodnjo.
+1. Katere dejavnike je potrebno upoštevati pri izbiri med lokalno in oblačno namestitvijo?
+2. Primerjajte Ollama in Microsoft Foundry Local kot možnosti namestitve.
+3. Pojasnite prednosti vsebničenja pri implementaciji SLM.
+4. Katere ključne metrike zmogljivosti je treba spremljati za SLM na robu omrežja?
+5. Opišite celoten postopek nameščanja od izbire modela do uvedbe v produkcijo.
 
 ### Praktične vaje
 
-1. **Osnovna lokalna uporaba**: Namestite preprost SLM z uporabo Ollama (1 ura)
-2. **Preverjanje zmogljivosti**: Izvedite hitro primerjanje na nameščenem modelu (30 minut)
-3. **Preprosta integracija**: Ustvarite minimalno aplikacijo, ki uporablja nameščen model (1 ura)
+1. **Osnovna lokalna namestitev**: Namestite enostaven SLM z uporabo Ollama (1 ura)
+2. **Preverjanje zmogljivosti**: Izvedite kratek test zmogljivosti vašega nameščenega modela (30 minut)
+3. **Enostavna integracija**: Ustvarite minimalno aplikacijo, ki uporablja vaš nameščeni model (1 ura)
 
-## Modul 4: Pretvorba in kvantizacija modelov
+## Modul 4: Pretvorba formatov in kvantizacija modelov
 
 ### Ključni cilji učenja
 
-- Obvladovanje naprednih tehnik kvantizacije od 1-bitne do 8-bitne natančnosti
-- Razumevanje strategij pretvorbe formatov (GGUF, ONNX)
-- Implementacija optimizacije v šestih okoljih (Llama.cpp, Olive, OpenVINO, MLX, sinteza delovnih tokov)
-- Uporaba optimiziranih modelov za proizvodna okolja na robu na Intel, Apple in večplatformski strojni opremi
+- Obvladajte napredne metode kvantizacije od 1-bit do 8-bit natančnosti
+- Razumite strategije pretvorbe formatov (GGUF, ONNX)
+- Implementirajte optimizacijo prek šestih okvirjev (Llama.cpp, Olive, OpenVINO, MLX, sinteza delovnega toka)
+- Namestite optimizirane modele za produkcijska edge okolja na Intel, Apple in križno platformno strojno opremo
 
-### Osrednja področja študija
+### Področja študija
 
-#### Oddelek 1: Osnove kvantizacije
-- **Prednostni koncepti**: 
-  - Okvir za razvrščanje natančnosti
+#### Razdelek 1: Osnove kvantizacije
+- **Prednostne vsebine**: 
+  - Okvir za klasifikacijo natančnosti
   - Kompromisi med zmogljivostjo in natančnostjo
-  - Optimizacija pomnilniškega odtisa
+  - Optimizacija pomnilniške zasedbe
 
-#### Oddelek 2: Implementacija Llama.cpp
-- **Prednostni koncepti**: 
-  - Uporaba na več platformah
+#### Razdelek 2: Implementacija Llama.cpp
+- **Prednostne vsebine**: 
+  - Križna platforma za nameščanje
   - Optimizacija formata GGUF
-  - Tehnike pospeševanja strojne opreme
+  - Tehnike pospeševanja na strojni opremi
 
-#### Oddelek 3: Microsoft Olive Suite
-- **Prednostni koncepti**: 
-  - Optimizacija, prilagojena strojni opremi
-  - Uporaba na ravni podjetja
-  - Avtomatizirani delovni tokovi optimizacije
+#### Razdelek 3: Microsoft Olive Suite
+- **Prednostne vsebine**: 
+  - Optimizacija s poznavanjem strojne opreme
+  - Namestitev na podjetniški ravni
+  - Avtomatizirani delovni tokovi za optimizacijo
 
-#### Oddelek 4: Orodje OpenVINO
-- **Prednostni koncepti**: 
-  - Optimizacija strojne opreme Intel
+#### Razdelek 4: Orodja OpenVINO
+- **Prednostne vsebine**: 
+  - Intel optimizacija strojne opreme
   - Okvir za stiskanje nevronskih mrež (NNCF)
-  - Uporaba na več platformah
-  - OpenVINO GenAI za uporabo LLM
+  - Implementacija inferenciranja prek platform
+  - OpenVINO GenAI za namestitev LLM
 
-#### Oddelek 5: Apple MLX Framework
-- **Prednostni koncepti**: 
+#### Razdelek 5: Apple MLX okvir
+- **Prednostne vsebine**: 
   - Optimizacija za Apple Silicon
-  - Arhitektura enotnega pomnilnika
-  - Zmožnosti fine-tuninga LoRA
+  - Enotna arhitektura pomnilnika
+  - Možnosti LoRA fine-tuninga
 
-#### Oddelek 6: Sinteza delovnega toka za razvoj Edge AI
-- **Prednostni koncepti**: 
-  - Arhitektura enotnega delovnega toka
-  - Odločitvena drevesa za izbiro okvirov
-  - Validacija pripravljenosti za proizvodnjo
-  - Strategije za prihodnost
+#### Razdelek 6: Sinteza razvojnega delovnega toka Edge AI
+- **Prednostne vsebine**: 
+  - Enotna arhitektura delovnih tokov
+  - Odločitvena drevesa za izbiro okvira
+  - Validacija pripravljenosti za produkcijo
+  - Strategije za prihodnjo vzdržnost
 
-### Samoevalvacija
+### Vprašanja za samoevalvacijo
 
-1. Primerjajte strategije kvantizacije na različnih ravneh natančnosti (1-bitna do 8-bitna).
-2. Pojasnite prednosti formata GGUF za uporabo na robu.
-3. Kako optimizacija, prilagojena strojni opremi, v Microsoft Olive izboljša učinkovitost uporabe?
-4. Katere so ključne prednosti NNCF v OpenVINO za stiskanje modelov?
-5. Opišite, kako Apple MLX izkorišča arhitekturo enotnega pomnilnika za optimizacijo.
-6. Kako sinteza delovnega toka pomaga pri izbiri optimalnih okvirov za optimizacijo?
+1. Primerjajte strategije kvantizacije na različnih ravneh natančnosti (1-bit do 8-bit).
+2. Pojasnite prednosti formata GGUF za edge namestitev.
+3. Kako optimizacija s poznavanjem strojne opreme v Microsoft Olive izboljšuje učinkovitost namestitve?
+4. Katere so ključne prednosti NNCF od OpenVINO za stiskanje modelov?
+5. Opišite, kako Apple MLX uporablja enotno arhitekturo pomnilnika za optimizacijo.
+6. Kako sinteza delovnega toka pomaga pri izbiri optimalnih optimizacijskih okvirjev?
 
 ### Praktične vaje
 
 1. **Kvantizacija modela**: Uporabite različne ravni kvantizacije na modelu in primerjajte rezultate (1 ura)
-2. **Optimizacija OpenVINO**: Uporabite NNCF za stiskanje modela za strojno opremo Intel (1 ura)
-3. **Primerjava okvirov**: Preizkusite isti model v treh različnih okoljih za optimizacijo (1 ura)
-4. **Primerjanje zmogljivosti**: Izmerite vpliv optimizacije na hitrost sklepanja in uporabo pomnilnika (1 ura)
+2. **Optimizacija OpenVINO**: Uporabite NNCF za stiskanje modela za Intel strojno opremo (1 ura)
+3. **Primerjava okvirov**: Testirajte isti model prek treh različnih optimizacijskih okvirjev (1 ura)
+4. **Merjenje zmogljivosti**: Izmerite vpliv optimizacije na hitrost inferenciranja in uporabo pomnilnika (1 ura)
 
-## Modul 5: SLMOps - Operacije majhnih jezikovnih modelov
+## Modul 5: SLMOps - Operacije Small Language Model
 
 ### Ključni cilji učenja
 
-- Razumevanje načel upravljanja življenjskega cikla SLMOps
-- Obvladovanje tehnik distilacije in fine-tuninga za uporabo na robu
-- Implementacija strategij za proizvodno uporabo z nadzorom
-- Gradnja delovnih tokov za operacije in vzdrževanje SLM na ravni podjetja
+- Razumeti načela upravljanja življenjskega cikla SLMOps
+- Obvladati tehnike distilacije in fine-tuninga za edge nameščanje
+- Implementirati strategije produkcijske namestitve z nadzorom
+- Zgraditi podjetniške delovne tokove upravljanja in vzdrževanja SLM
 
-### Osrednja področja študija
+### Področja študija
 
-#### Oddelek 1: Uvod v SLMOps
-- **Prednostni koncepti**: 
-  - Paradigmatski premik SLMOps v AI operacijah
-  - Stroškovna učinkovitost in arhitektura, osredotočena na zasebnost
+#### Razdelek 1: Uvod v SLMOps
+- **Prednostne vsebine**: 
+  - Paradigmatska sprememba SLMOps v AI operacijah
+  - Stroškovna učinkovitost in arhitektura z upoštevanjem zasebnosti
   - Strateški poslovni vpliv in konkurenčne prednosti
 
-#### Oddelek 2: Distilacija modelov
-- **Prednostni koncepti**: 
+#### Razdelek 2: Distilacija modelov
+- **Prednostne vsebine**: 
   - Tehnike prenosa znanja
   - Implementacija dvostopenjskega procesa distilacije
-  - Delovni tokovi distilacije v Azure ML
+  - Azure ML delovni tokovi distilacije
 
-#### Oddelek 3: Strategije fine-tuninga
-- **Prednostni koncepti**: 
-  - Fine-tuning, učinkovit glede na parametre (PEFT)
+#### Razdelek 3: Strategije fine-tuninga
+- **Prednostne vsebine**: 
+  - Parametru učinkovita prilagoditev (PEFT)
   - Napredne metode LoRA in QLoRA
-  - Večadapterno učenje in optimizacija hiperparametrov
+  - Večadapterska usposabljanja in optimizacija hiperparametrov
 
-#### Oddelek 4: Proizvodna uporaba
-- **Prednostni koncepti**: 
-  - Pretvorba in kvantizacija modelov za proizvodnjo
-  - Konfiguracija za uporabo Foundry Local
-  - Primerjanje zmogljivosti in validacija kakovosti
+#### Razdelek 4: Produkcijska namestitev
+- **Prednostne vsebine**: 
+  - Pretvorba modelov in kvantizacija za produkcijo
+  - Konfiguracija Foundry Local namestitve
+  - Benchmarking zmogljivosti in validacija kakovosti
 
-### Samoevalvacija
+### Vprašanja za samoevalvacijo
 
 1. Kako se SLMOps razlikuje od tradicionalnih MLOps?
-2. Pojasnite prednosti distilacije modelov za uporabo na robu.
-3. Katere so ključne zahteve za fine-tuning SLM v okolju z omejenimi viri?
-4. Opišite celoten potek uporabe za aplikacije Edge AI.
+2. Razložite prednosti distilacije modelov za edge namestitve.
+3. Katere so ključne premisleke za fine-tuning SLM v okoljih z omejenimi viri?
+4. Opišite celoten produkcijski postopek namestitve za edge AI aplikacije.
 
 ### Praktične vaje
 
-1. **Osnovna distilacija**: Ustvarite manjši model iz večjega učitelja (1 ura)
-2. **Eksperiment fine-tuninga**: Fine-tuning modela za specifično področje (1 ura)
-3. **Pipeline za uporabo**: Nastavite osnovni CI/CD pipeline za uporabo modela (1 ura)
+1. **Osnovna distilacija**: Ustvarite manjši model iz večjega učiteljskega modela (1 ura)
+2. **Eksperiment fine-tuninga**: Prilagodite model za specifično področje (1 ura)
+3. **Pipeline za namestitev**: Nastavite osnovni CI/CD pipeline za namestitev modela (1 ura)
 
-## Modul 6: Agentni sistemi SLM - AI agenti in klicanje funkcij
+## Modul 6: SLM Agentni sistemi - AI agenti in klic funkcij
 
 ### Ključni cilji učenja
 
-- Gradnja inteligentnih AI agentov za okolja na robu z uporabo majhnih jezikovnih modelov
-- Implementacija zmožnosti klicanja funkcij z sistematičnimi delovnimi tokovi
-- Obvladovanje integracije Model Context Protocol (MCP) za standardizirano interakcijo z orodji
-- Ustvarjanje sofisticiranih agentnih sistemov z minimalnim človeškim posredovanjem
+- Zgradite inteligentne AI agente za edge okolja z uporabo Small Language Modelov
+- Implementirajte možnosti klica funkcij s sistematičnimi delovnimi tokovi
+- Obvladajte integracijo Model Context Protocol (MCP) za standardizirano interakcijo orodij
+- Ustvarite sofisticirane agentne sisteme z minimalnim človeškim posegom
 
-### Osrednja področja študija
+### Področja študija
 
-#### Oddelek 1: AI agenti in osnove SLM
-- **Prednostni koncepti**: 
-  - Okvir za razvrščanje agentov (refleksni, na modelu temelječi, ciljno usmerjeni, učni agenti)
+#### Razdelek 1: AI agenti in osnove SLM
+- **Prednostne vsebine**: 
+  - Okvir za klasifikacijo agentov (refleksni, modelni, ciljno usmerjeni, učni agenti)
   - Analiza kompromisov med SLM in LLM
-  - Vzorci oblikovanja agentov, specifični za rob
+  - Vzorec oblikovanja agentov za edge okolja
   - Optimizacija virov za agente
 
-#### Oddelek 2: Klicanje funkcij v majhnih jezikovnih modelih
-- **Prednostni koncepti**: 
-  - Implementacija sistematičnih delovnih tokov (zaznavanje namena, JSON izhod, zunanja izvedba)
-  - Implementacije, specifične za platformo (Phi-4-mini, izbrani modeli Qwen, Microsoft Foundry Local)
-  - Napredni primeri (sodelovanje več agentov, dinamična izbira orodij)
-  - Proizvodni vidiki (omejevanje hitrosti, beleženje revizij, varnostni ukrepi)
+#### Razdelek 2: Klic funkcij v Small Language Modelih
+- **Prednostne vsebine**: 
+  - Sistematična implementacija delovnih tokov (detekcija namena, JSON izhod, zunanji izvedbeni postopki)
+  - Platformno specifične implementacije (Phi-4-mini, izbrani Qwen modeli, Microsoft Foundry Local)
+  - Napredni primeri (multi-agent sodelovanje, dinamična izbira orodij)
+  - Produkcijske zadeve (omejevanje hitrosti, dnevnik revizij, varnostni ukrepi)
 
-#### Oddelek 3: Integracija Model Context Protocol (MCP)
-- **Prednostni koncepti**: 
-  - Arhitektura protokola in zasnova slojevitih sistemov
-  - Podpora za več zaledij (Ollama za razvoj, vLLM za proizvodnjo)
-  - Povezovalni protokoli (STDIO in SSE načini)
-  - Resnične aplikacije (spletna avtomatizacija, obdelava podatkov, integracija API)
+#### Razdelek 3: Integracija Model Context Protocol (MCP)
+- **Prednostne vsebine**: 
+  - Arhitektura protokola in sistemska večplastna zasnova
+  - Podpora več backendom (Ollama za razvoj, vLLM za produkcijo)
+  - Protokoli povezav (STDIO in SSE načini)
+  - Resnični primeri uporabe (spletna avtomatizacija, obdelava podatkov, API integracija)
 
-### Samoevalvacija
+### Vprašanja za samoevalvacijo
 
-1. Katere so ključne arhitekturne zahteve za AI agente na robu?
-2. Kako klicanje funkcij izboljša zmožnosti agentov?
-3. Pojasnite vlogo Model Context Protocol pri komunikaciji agentov.
+1. Katere so ključne arhitekturne zahteve za edge AI agente?
+2. Kako klic funkcij izboljšuje sposobnosti agentov?
+3. Pojasnite vlogo Model Context Protocol v komunikaciji agentov.
 
 ### Praktične vaje
 
-1. **Preprost agent**: Ustvarite osnovnega AI agenta s klicanjem funkcij (1 ura)
-2. **Integracija MCP**: Implementirajte MCP v aplikaciji agenta (30 minut)
+1. **Enostaven agent**: Zgradite osnovnega AI agenta s klicem funkcij (1 ura)
+2. **Integracija MCP**: Implementirajte MCP v aplikacijo agenta (30 minut)
 
-## Delavnica: Potek učenja skozi prakso
+## Delo v delavnici: Praktična učna pot
 
 ### Ključni cilji učenja
 
-- Gradnja aplikacij AI, pripravljenih za proizvodnjo, z uporabo Foundry Local SDK in najboljših praks
-- Implementacija celovitega obravnavanja napak in vzorcev povratnih informacij uporabnikov
-- Ustvarjanje RAG pipeline z ocenjevanjem kakovosti in spremljanjem zmogljivosti
-- Razvoj večagentnih sistemov z vzorcem koordinatorja
-- Obvladovanje inteligentnega usmerjanja modelov za izbiro modelov glede na naloge
-- Uporaba lokalno usmerjenih AI rešitev z arhitekturami, ki ohranjajo zasebnost
+- Zgradite produkcijsko pripravljene AI aplikacije z Foundry Local SDK in najboljšimi praksami
+- Implementirajte celovite vzorce za obravnavo napak in povratne informacije uporabnikom
+- Ustvarite RAG pipeline s kvalitativno oceno in nadzorom zmogljivosti
+- Razvijte večagentne sisteme s koordinatorskimi vzorci
+- Obvladajte inteligentno usmerjanje modelov za izbiro modelov na podlagi nalog
+- Namestite lokalno-privzete AI rešitve z arhitekturami, ki varujejo zasebnost
 
-### Osrednja področja študija
+### Področja študija
 
-#### Seansa 01: Začetek z Foundry Local
-- **Prednostni koncepti**:
-  - Integracija FoundryLocalManager SDK in samodejno odkrivanje storitev
-  - Osnovne in pretočne implementacije klepeta
-  - Vzorci obravnavanja napak in povratnih informacij uporabnikov
-  - Konfiguracija glede na okolje
+#### Seja 01: Začetek z Foundry Local
+- **Prednostne vsebine**:
+  - Integracija FoundryLocalManager SDK in samodejna detekcija storitev
+  - Osnovna in streaming klepet implementacije
+  - Vzorce ravnanja z napakami in povratne informacije uporabnikom
+  - Konfiguracija na osnovi okolja
 
-#### Seansa 02: Gradnja AI rešitev z RAG
-- **Prednostni koncepti**:
-  - Vgrajene vektorske vdelave s sentence-transformers
-  - Implementacija RAG pipeline (pridobivanje → generiranje)
-  - Ocenjevanje kakovosti z metrikami RAGAS
-  - Varnost pri uvozu za opcijske odvisnosti
+#### Seja 02: Izgradnja AI rešitev z RAG
+- **Prednostne vsebine**:
+  - Vektorske vdelave v pomnilniku s sentence-transformers
+  - Implementacija RAG pipeline (pridobi → generiraj)
+  - Kvalitativna ocena z metrikami RAGAS
+  - Varno uvažanje za neobvezne odvisnosti
 
-#### Seansa 03: Odprtokodni modeli
-- **Prednostni koncepti**:
-  - Strategije primerjanja več modelov
+#### Seja 03: Odprtokodni modeli
+- **Prednostne vsebine**:
+  - Strategije benchmarking več modelov
   - Meritve zakasnitve in prepustnosti
-  - Postopno poslabšanje in obnova napak
+  - Nežno degradiranje in okrevanje po napakah
   - Primerjava zmogljivosti med družinami modelov
 
-#### Seansa 04: Najsodobnejši modeli
-- **Prednostni koncepti**:
-  - Metodologija primerjanja SLM in LLM
-  - Namigi za tipe in celovito oblikovanje izhodov
-  - Obravnava napak za posamezne modele
+#### Seja 04: Najmodernejši modeli
+- **Prednostne vsebine**:
+  - Metodologija primerjave SLM in LLM
+  - Namigi tipov in celovito oblikovanje izhodov
+  - Ravnanje z napakami za posamezne modele
   - Strukturirani rezultati za analizo
 
-#### Seansa 05: Agenti, ki jih poganja AI
-- **Prednostni koncepti**:
-  - Orkestracija več agentov z vzorcem koordinatorja
-  - Upravljanje spomina agentov in sledenje stanju
-  - Obravnava napak v pipeline in beleženje stopenj
-  - Spremljanje zmogljivosti in statistika
+#### Seja 05: Agenti z AI močjo
+- **Prednostne vsebine**:
+  - Orkestracija več agentov s koordinatorkim vzorcem
+  - Upravljanje beleženja in sledenje stanja agentov
+  - Ravnanje z napakami v pipeline in beleženje stopenj
+  - Nadzor zmogljivosti in statistika
 
-#### Seansa 06: Modeli kot orodja
-- **Prednostni koncepti**:
-  - Zaznavanje namena in ujemanje vzorcev
-  - Algoritmi za usmerjanje modelov na podlagi ključnih besed
-  - Večstopenjski pipeline (načrt → izvedba → izboljšava)
+#### Seja 06: Modeli kot orodja
+- **Prednostne vsebine**:
+  - Detekcija namena in primerjanje vzorcev
+  - Algoritmi usmerjanja modelov na osnovi ključnih besed
+  - Večstopenjski pipeline (načrtuj → izvedi → izboljšaj)
   - Celovita dokumentacija funkcij
 
-### Samoevalvacija
+### Vprašanja za samoevalvacijo
 
 1. Kako FoundryLocalManager poenostavi upravljanje storitev v primerjavi z ročnimi REST klici?
-2. Pojasnite pomen varnostnih ukrepov pri uvozu za opcijske odvisnosti, kot je sentence-transformers.
-3. Katere strategije zagotavljajo postopno poslabšanje v primerjanju več modelov?
-4. Kako vzorec koordinatorja orkestrira več specialističnih agentov?
-5. Opišite komponente inteligentnega usmerjevalnika modelov.
-6. Katere so ključne sestavine obravnavanja napak, pripravljenega za proizvodnjo?
+2. Pojasnite pomen zaščitnih mehanizmov uvoza za neobvezne odvisnosti, kot je sentence-transformers.
+3. Katere strategije zagotavljajo nežno degradiranje pri večmodelnem benchmarking-u?
+4. Kako koordinatorski vzorec orkestrira več specialističnih agentov?
+5. Opišite sestavne dele inteligentnega preusmerjevalnika modelov.
+6. Katere so ključne sestavine produkcijsko pripravljenega ravnanja z napakami?
 
 ### Praktične vaje
 
-1. **Aplikacija za klepet**: Implementirajte pretočni klepet z obravnavanjem napak (45 minut)
-2. **RAG pipeline**: Zgradite minimalni RAG z ocenjevanjem kakovosti (1 ura)
-3. **Primerjanje modelov**: Primerjajte 3+ modele glede na zmogljivost (1 ura)
-4. **Večagentni sistem**: Ustvarite koordinatorja z 2 specialističnima agentoma (1,5 ure)
-5. **Inteligentni usmerjevalnik**: Zgradite izbiro modelov glede na naloge (1 ura)
-6. **Proizvodna uporaba**: Dodajte spremljanje in celovito obravnavanje napak (45 minut)
+1. **Klepetalna aplikacija**: Implementirajte streaming klepet z ravnanjem z napakami (45 minut)
+2. **RAG pipeline**: Zgradite minimalen RAG s kvalitativno oceno (1 ura)
+3. **Benchmarking modelov**: Primerjajte 3+ modele glede na zmogljivost (1 ura)
+4. **Večagentski sistem**: Ustvarite koordinatorja z 2 specializiranima agentoma (1,5 ure)
+5. **Inteligentni usmerjevalnik**: Zgradite izbiro modelov na podlagi nalog (1 ura)
+6. **Produkcijska namestitev**: Dodajte nadzor in celovito ravnanje z napakami (45 minut)
 
 ### Časovna razporeditev
 
-**Intenzivno učenje (1 teden)**:
-- 1. dan: Seansa 01-02 (Klepet + RAG) - 3 ure
-- 2. dan: Seansa 03-04 (Primerjanje + Primerjava) - 3 ure
-- 3. dan: Seansa 05-06 (Agenti + Usmerjanje) - 3 ure
-- 4. dan: Praktične vaje in validacija - 2 uri
+**Konscentrirano učenje (1 teden)**:
+- Dan 1: Seja 01-02 (Klepet + RAG) - 3 ure
+- Dan 2: Seja 03-04 (Benchmarking + primerjava) - 3 ure
+- Dan 3: Seja 05-06 (Agenti + usmerjanje) - 3 ure
+- Dan 4: Praktične vaje in validacija - 2 uri
 
-**Študij ob delu (2 tedna)**:
-- 1. teden: Seanse 01-03 (skupaj 6 ur)
-- 2. teden: Seanse 04-06 + vaje (skupaj 5 ur)
+**Delo ob delu (2 tedna)**:
+- Teden 1: Seje 01-03 (skupaj 6 ur)
+- Teden 2: Seje 04-06 + vaje (skupaj 5 ur)
 
 ## Modul 7: Primeri implementacije EdgeAI
 
 ### Ključni cilji učenja
 
-- Obvladovanje AI Toolkit za Visual Studio Code za celovite delovne tokove razvoja EdgeAI
-- Pridobitev strokovnega znanja o platformi Windows AI Foundry in strategijah optimizacije NPU
-- Implementacija EdgeAI na več strojnih platformah in scenarijih uporabe
-- Gradnja aplikacij EdgeAI, pripravljenih za proizvodnjo, z optimizacijami, specifičnimi za platformo
+- Obvladajte AI Toolkit za Visual Studio Code za celovite razvojne delovne tokove EdgeAI
+- Pridobite strokovno znanje o platformi Windows AI Foundry in strategijah optimizacije NPU
+- Implementirajte EdgeAI na različnih strojnih platformah in scenarijih nameščanja
+- Zgradite produkcijsko pripravljene EdgeAI aplikacije s platformno specifičnimi optimizacijami
 
-### Osrednja področja študija
+### Področja študija
 
-#### Oddelek 1: AI Toolkit za Visual Studio Code
-- **Prednostni koncepti**: 
+#### Razdelek 1: AI Toolkit za Visual Studio Code
+- **Prednostne vsebine**: 
   - Celovito razvojno okolje Edge AI znotraj VS Code
-  - Katalog modelov in odkrivanje za uporabo na robu
-  - Lokalno testiranje, optimizacija in delovni tokovi razvoja agentov
-  - Spremljanje zmogljivosti in ocenjevanje za scenarije na robu
+  - Katalog modelov in odkrivanje za edge nameščanje
+  - Lokalno testiranje, optimizacija in razvoj agentov
+  - Spremljanje in ocenjevanje zmogljivosti za edge scenarije
 
-####
-4. Pojasnite vlogo optimizacije NPU v sodobnih aplikacijah za robno umetno inteligenco.
-5. Kako API Phi Silica izkorišča strojno opremo NPU za optimizacijo zmogljivosti?
-6. Primerjajte prednosti lokalne in oblačne namestitve za aplikacije, občutljive na zasebnost.
+#### Razdelek 2: Vodnik za razvoj Windows EdgeAI
+- **Prednostne vsebine**: 
+  - Celovit pregled platforme Windows AI Foundry
+  - Phi Silica API za učinkovito inferenciranje NPU
+  - Računalniški vid API za obdelavo slik in OCR
+  - Foundry Local CLI za lokalni razvoj in testiranje
+
+#### Razdelek 3: Platformno specifične implementacije
+- **Prednostne vsebine**: 
+  - NVIDIA Jetson Orin Nano implementacija (67 TOPS AI zmogljivost)
+  - Mobilne aplikacije z .NET MAUI in ONNX Runtime GenAI
+  - Azure EdgeAI rešitve s hibridno arhitekturo oblak-rob
+  - Windows ML optimizacija z univerzalno podporo strojni opremi
+  - Foundry Local aplikacije z zasebnostjo usmerjeno RAG implementacijo
+
+### Vprašanja za samoevalvacijo
+
+1. Kako AI Toolkit poenostavi razvojni delovni tok EdgeAI?
+2. Primerjajte strategije nameščanja na različnih strojnih platformah.
+3. Katere so prednosti platforme Windows AI Foundry za edge razvoj?
+4. Pojasnite vlogo optimizacije NPU v sodobnih edge AI aplikacijah.
+5. Kako Phi Silica API izkorišča NPU strojno opremo za optimizacijo zmogljivosti?
+6. Primerjajte prednosti lokalne proti oblačni namestitvi za aplikacije z občutljivostjo na zasebnost.
 
 ### Praktične vaje
 
-1. **Namestitev AI orodij**: Konfigurirajte AI orodja in optimizirajte model (1 ura)
-2. **Windows AI Foundry**: Ustvarite preprosto Windows AI aplikacijo z uporabo API Phi Silica (1 ura)
-3. **Navzkrižna platformna namestitev**: Namestite isti model na dveh različnih platformah (1 ura)
-4. **Optimizacija NPU**: Preizkusite zmogljivost NPU z orodji Windows AI Foundry (30 minut)
+1. **Nastavitev AI Toolkit**: Konfigurirajte AI Toolkit in optimizirajte model (1 ura)
 
-## Modul 8: Microsoft Foundry Local – Celovit razvojni komplet (posodobljen)
+2. **Windows AI Foundry**: Ustvarite preprosto Windows AI aplikacijo z uporabo Phi Silica API (1 ura)
+3. **Večplatformska namestitev**: Namestite isti model na dveh različnih platformah (1 ura)
+4. **Optimizacija NPU**: Testirajte zmogljivost NPU s pomočjo orodij Windows AI Foundry (30 minut)
 
-### Ključni učni cilji
+## Modul 8: Microsoft Foundry Local – Popoln razvojni komplet orodij (moderniziran)
 
-- Namestite in konfigurirajte Foundry Local z integracijo sodobnega SDK
-- Implementirajte napredne sisteme z več agenti z vzorcem koordinatorja
-- Zgradite inteligentne usmerjevalnike modelov z avtomatsko izbiro na podlagi nalog
-- Namestite produkcijske AI rešitve z obsežnim spremljanjem
+### Ključni cilji učenja
+
+- Namestite in konfigurirajte Foundry Local z moderno integracijo SDK
+- Implementirajte napredne sisteme z več agenti s koordinatorskimi vzorci
+- Ustvarite inteligentne usmerjevalnike modelov z avtomatsko izbiro na podlagi nalog
+- Namestite proizvodno pripravljene AI rešitve s celovitim nadzorom
 - Integrirajte z Azure AI Foundry za hibridne scenarije namestitve
-- Obvladajte sodobne vzorce SDK z FoundryLocalManager in OpenAI odjemalcem
+- Obladujte moderne vzorce SDK s FoundryLocalManager in OpenAI odjemalcem
 
-### Osrednja področja študija
+### Področja študija
 
-#### Oddelek 1: Sodobna namestitev in konfiguracija
-- **Prednostne teme**: 
-  - Integracija SDK FoundryLocalManager
-  - Samodejno odkrivanje storitev in spremljanje zdravja
-  - Vzorci konfiguracije na podlagi okolja
-  - Premisleki za produkcijsko namestitev
+#### Razdelek 1: Moderna namestitev in konfiguracija
+- **Prioritetni koncepti**:
+  - Integracija FoundryLocalManager SDK
+  - Avtomatsko odkrivanje storitev in spremljanje zdravja
+  - Vzorce konfiguracije, odvisne od okolja
+  - Premisleki za proizvodno namestitev
 
-#### Oddelek 2: Napredni sistemi z več agenti
-- **Prednostne teme**: 
-  - Vzorec koordinatorja s specializiranimi agenti
-  - Specializacija agentov za pridobivanje, razmišljanje in izvajanje
+#### Razdelek 2: Napredni sistemi z več agenti
+- **Prioritetni koncepti**:
+  - Koordinatorski vzorec s specialističnimi agenti
+  - Specializacija agentov za pridobivanje, sklepanje in izvajanje
   - Mehanizmi povratne zanke za izboljšave
-  - Spremljanje zmogljivosti in sledenje statistiki
+  - Spremljanje zmogljivosti in sledenje statistikam
 
-#### Oddelek 3: Inteligentno usmerjanje modelov
-- **Prednostne teme**: 
-  - Algoritmi za izbiro modelov na podlagi ključnih besed
-  - Podpora za več modelov (splošni, razmišljanje, kodiranje, ustvarjalni)
-  - Konfiguracija spremenljivk okolja za prilagodljivost
+#### Razdelek 3: Inteligentno usmerjanje modelov
+- **Prioritetni koncepti**:
+  - Algoritmi izbire modela na podlagi ključnih besed
+  - Podpora za več modelov (splošni, sklepanje, koda, ustvarjalni)
+  - Konfiguracija z okolijskimi spremenljivkami za prilagodljivost
   - Preverjanje zdravja storitev in obravnava napak
 
-#### Oddelek 4: Implementacija pripravljena za produkcijo
-- **Prednostne teme**: 
-  - Obsežno obravnavanje napak in mehanizmi za nadomestne rešitve
+#### Razdelek 4: Proizvodno pripravljena implementacija
+- **Prioritetni koncepti**:
+  - Celovita obravnava napak in mehanizmi zasilnega načrta
   - Spremljanje zahtev in sledenje zmogljivosti
-  - Interaktivni primeri v Jupyter zvezkih z merili uspešnosti
-  - Vzorci integracije z obstoječimi aplikacijami
+  - Interaktivni primeri v Jupyter zvezkih z merili
+  - Vzorce integracije z obstoječimi aplikacijami
 
-### Samoevalvacija
+### Vprašanja za samopresojo
 
-1. Kako se sodoben pristop FoundryLocalManager razlikuje od ročnih REST klicev?
-2. Pojasnite vzorec koordinatorja in kako usklajuje specializirane agente.
-3. Kako inteligentni usmerjevalnik izbere ustrezne modele na podlagi vsebine poizvedbe?
-4. Kateri so ključni sestavni deli sistema AI agentov, pripravljenega za produkcijo?
-5. Kako implementirate obsežno spremljanje zdravja za storitve Foundry Local?
-6. Primerjajte prednosti posodobljenega pristopa v primerjavi s tradicionalnimi vzorci implementacije.
+1. Kako se moderni pristop FoundryLocalManager razlikuje od ročnih REST klicev?
+2. Pojasnite koordinatorski vzorec in kako orkestrira specialistične agente.
+3. Kako inteligentni usmerjevalnik izbere ustrezne modele glede na vsebino poizvedbe?
+4. Kateri so ključni sestavni deli sistema AI agenta za proizvodnjo?
+5. Kako izvedete celovito spremljanje zdravja storitev Foundry Local?
+6. Primerjajte prednosti moderniziranega pristopa in tradicionalnih vzorcev implementacije.
 
-### Praktične vaje
+### Vaje za prakso
 
-1. **Namestitev sodobnega SDK**: Konfigurirajte FoundryLocalManager s samodejnim odkrivanjem storitev (30 minut)
-2. **Sistem z več agenti**: Zaženite napredni koordinator s specializiranimi agenti (30 minut)
-3. **Inteligentno usmerjanje**: Preizkusite usmerjevalnik modelov z različnimi vrstami poizvedb (30 minut)
-4. **Interaktivno raziskovanje**: Uporabite Jupyter zvezke za raziskovanje naprednih funkcij (45 minut)
-5. **Produkcijska namestitev**: Implementirajte vzorce spremljanja in obravnave napak (30 minut)
-6. **Hibridna integracija**: Konfigurirajte scenarije nadomestnih rešitev z Azure AI Foundry (30 minut)
+1. **Nastavitev modernih SDK**: Konfigurirajte FoundryLocalManager z avtomatskim odkrivanjem storitev (30 minut)
+2. **Sistem z več agenti**: Zaženite naprednega koordinatorja s specialističnimi agenti (30 minut)
+3. **Inteligentno usmerjanje**: Testirajte usmerjevalnik modelov z različnimi vrstami poizvedb (30 minut)
+4. **Interaktivna raziskava**: Uporabite Jupyter zvezke za raziskovanje naprednih funkcij (45 minut)
+5. **Proizvodna namestitev**: Implementirajte vzorce za spremljanje in obravnavo napak (30 minut)
+6. **Hibridna integracija**: Konfigurirajte scenarije zasilnega preklopa Azure AI Foundry (30 minut)
+
 
 ## Vodnik za razporeditev časa
 
-Da bi kar najbolje izkoristili razširjen 30-urni časovni okvir tečaja (vključno z delavnico), je tukaj predlagana razporeditev časa:
+Za lažjo organizacijo razširjenega 30-urnega časovnega okvira tečaja (vključno z delavnico) predlagamo naslednjo porazdelitev časa:
 
-| Aktivnost | Razporeditev časa | Opis |
-|-----------|------------------|------|
-| Branje osnovnih gradiv | 12 ur | Osredotočanje na ključne koncepte v vsakem modulu |
-| Praktične vaje | 10 ur | Praktična implementacija ključnih tehnik (vključno z delavnico) |
-| Samoevalvacija | 3 ure | Preverjanje razumevanja skozi vprašanja in razmislek |
-| Mini projekt | 5 ur | Uporaba znanja v majhni praktični implementaciji |
+| Aktivnost | Poraba časa | Opis |
+|----------|----------------|-------------|
+| Branje osnovnih gradiv | 12 ur | Osredotočeno na ključne koncepte v vsakem modulu |
+| Praktične vaje | 10 ur | Praktična izvedba ključnih tehnik (vključujoč delavnico) |
+| Samopresoja | 3 ure | Preizkušanje razumevanja s pomočjo vprašanj in refleksije |
+| Mini projekt | 5 ur | Uporaba znanja na manjši praktični izvedbi |
 
-### Ključna področja osredotočenosti glede na časovne omejitve
+### Ključna področja glede na časovne omejitve
 
 **Če imate na voljo le 10 ur:**
-- Zaključite Modul 0 (Uvod) ter Module 1, 2 in 3 (osnovni koncepti EdgeAI)
-- Izvedite vsaj eno praktično vajo na modul
-- Osredotočite se na razumevanje osnovnih konceptov namesto podrobnosti implementacije
+- Dokončajte modul 0 (Uvod) in module 1, 2 ter 3 (osnovni koncepti EdgeAI)
+- Naredite vsaj eno praktično vajo na modul
+- Osredotočite se na razumevanje osnovnih konceptov in ne na podrobnosti implementacije
 
 **Če lahko namenite celih 20 ur:**
-- Zaključite vseh osem modulov (vključno z Uvodom)
+- Dokončajte vseh osem modulov (vključno z uvodom)
 - Izvedite ključne praktične vaje iz vsakega modula
-- Zaključite en mini projekt iz Modula 7
-- Raziščite vsaj 2-3 dodatne vire
+- Dokončajte en mini projekt iz modula 7
+- Raziskujte vsaj 2–3 dodatne vire
 
 **Če imate več kot 20 ur:**
-- Zaključite vse module (vključno z Uvodom) z natančnimi vajami
-- Zgradite več mini projektov
-- Raziščite napredne tehnike optimizacije v Modulu 4
-- Implementirajte produkcijsko namestitev iz Modula 5
+- Dokončajte vse module (vključno z uvodom) z obsežnimi vajami
+- Ustvarite več mini projektov
+- Raziskujte napredne tehnike optimizacije v modulu 4
+- Izvedite proizvodno namestitev iz modula 5
 
 ## Ključni viri
 
-Ti skrbno izbrani viri zagotavljajo največjo vrednost za vaš omejen čas študija:
+Ti skrbno izbrani viri vam bodo zagotovili največjo vrednost za omejen čas učenja:
 
 ### Obvezna dokumentacija
 - [ONNX Runtime Getting Started](https://onnxruntime.ai/docs/get-started/with-python.html) - Najbolj učinkovito orodje za optimizacijo modelov
-- [Ollama Quick Start](https://github.com/ollama/ollama#get-started) - Najhitrejši način za lokalno namestitev SLM-jev
-- [Microsoft Phi Model Card](https://huggingface.co/microsoft/phi-2) - Referenca za vodilni model, optimiziran za rob
-- [OpenVINO Documentation](https://docs.openvino.ai/2025/index.html) - Intelov celovit komplet za optimizacijo
-- [AI Toolkit for VS Code](https://code.visualstudio.com/docs/intelligentapps/overview) - Integrirano razvojno okolje za EdgeAI
-- [Windows AI Foundry](https://docs.microsoft.com/en-us/windows/ai/) - Windows-specifična platforma za razvoj EdgeAI
+- [Ollama Quick Start](https://github.com/ollama/ollama#get-started) - Najhitrejši način lokalne namestitve SLM
+- [Microsoft Phi Model Card](https://huggingface.co/microsoft/phi-2) - Referenca za vodilni model, optimiziran za edge
+- [OpenVINO Documentation](https://docs.openvino.ai/2025/index.html) - Intelov celovit komplet orodij za optimizacijo
+- [AI Toolkit for VS Code](https://code.visualstudio.com/docs/intelligentapps/overview) - Integrirano razvojno okolje EdgeAI
+- [Windows AI Foundry](https://docs.microsoft.com/en-us/windows/ai/) - Razvojna platforma EdgeAI, specifična za Windows
 
 ### Orodja za prihranek časa
-- [Hugging Face Transformers](https://huggingface.co/docs/transformers/index) - Hiter dostop do modelov in njihova namestitev
-- [Gradio](https://www.gradio.app/docs/interface) - Hiter razvoj uporabniških vmesnikov za AI demonstracije
+- [Hugging Face Transformers](https://huggingface.co/docs/transformers/index) - Hiter dostop in namestitev modelov
+- [Gradio](https://www.gradio.app/docs/interface) - Hitri razvoj UI za AI demonstracije
 - [Microsoft Olive](https://github.com/microsoft/Olive) - Poenostavljena optimizacija modelov
-- [Llama.cpp](https://github.com/ggml-ai/llama.cpp) - Učinkovito sklepanje na CPU
+- [Llama.cpp](https://github.com/ggml-ai/llama.cpp) - Učinkovita inferenca na CPU
 - [OpenVINO NNCF](https://github.com/openvinotoolkit/nncf) - Okvir za stiskanje nevronskih mrež
-- [OpenVINO GenAI](https://github.com/openvinotoolkit/openvino.genai) - Orodje za namestitev velikih jezikovnih modelov
+- [OpenVINO GenAI](https://github.com/openvinotoolkit/openvino.genai) - Komplet orodij za namestitev velikih jezikovnih modelov
 
 ## Predloga za sledenje napredku
 
-Uporabite to poenostavljeno predlogo za sledenje vašemu napredku pri 20-urnem tečaju:
+Uporabite to poenostavljeno predlogo za sledenje vašemu napredku pri učenju skozi 20-urni tečaj:
 
-| Modul | Datum zaključka | Porabljen čas | Ključni poudarki |
-|-------|-----------------|---------------|------------------|
+| Modul | Datum zaključka | Porabljene ure | Ključni vpogledi |
+|--------|----------------|-------------|---------------|
 | Modul 0: Uvod v EdgeAI | | | |
 | Modul 1: Osnove EdgeAI | | | |
 | Modul 2: Osnove SLM | | | |
-| Modul 3: Namestitev SLM | | | |
+| Modul 3: Namenitev SLM | | | |
 | Modul 4: Optimizacija modelov | | | |
 | Modul 5: SLMOps | | | |
 | Modul 6: AI agenti | | | |
 | Modul 7: Razvojna orodja | | | |
 | Delavnica: Praktično učenje | | | |
-| Modul 8: Orodje Foundry Local | | | |
+| Modul 8: Foundry Local komplet orodij | | | |
 | Praktične vaje | | | |
 | Mini projekt | | | |
 
 ## Ideje za mini projekte
 
-Razmislite o zaključku enega od teh projektov za vadbo konceptov EdgeAI (vsak je zasnovan za 2-4 ure):
+Razmislite o dokončanju enega od teh projektov za vadbo konceptov EdgeAI (vsak je zasnovan za 2-4 ure):
 
-### Projekti za začetnike (2-3 ure vsak)
-1. **Besedilni pomočnik na robu**: Ustvarite preprosto orodje za dopolnjevanje besedila brez povezave z majhnim jezikovnim modelom
-2. **Nadzorna plošča za primerjavo modelov**: Zgradite osnovno vizualizacijo meritev zmogljivosti različnih SLM-jev
+### Začetni projekti (2–3 ure vsak)
+1. **Edge Text Assistant**: Ustvarite preprosto orodje za dokončanje besedila brez povezave z majhnim jezikovnim modelom
+2. **Nadzorna plošča primerjave modelov**: Ustvarite osnovno vizualizacijo meril zmogljivosti različnih SLM
 3. **Eksperiment optimizacije**: Izmerite vpliv različnih stopenj kvantizacije na isti osnovni model
 
-### Projekti za srednje napredne (3-4 ure vsak)
-4. **Delovni tok AI orodij**: Uporabite AI Toolkit v VS Code za optimizacijo in namestitev modela od začetka do konca
-5. **Windows AI Foundry aplikacija**: Ustvarite Windows aplikacijo z uporabo API Phi Silica in optimizacije NPU
-6. **Navzkrižna platformna namestitev**: Namestite isti optimiziran model na Windows (OpenVINO) in mobilne naprave (.NET MAUI)
-7. **Agent za klic funkcij**: Zgradite AI agenta s sposobnostjo klicanja funkcij za robne scenarije
+### Vmesni projekti (3–4 ure vsak)
+4. **Potek dela AI kompleta orodij**: Uporabite VS Code AI Toolkit za optimizacijo in namestitev modela od začetka do konca
+5. **Windows AI Foundry aplikacija**: Ustvarite Windows aplikacijo z uporabo Phi Silica API in optimizacije NPU
+6. **Večplatformska namestitev**: Namestite isti optimizirani model na Windows (OpenVINO) in mobilne naprave (.NET MAUI)
+7. **Agent za klice funkcij**: Ustvarite AI agenta s funkcionalnostjo klicev funkcij za edge scenarije
 
-### Projekti za napredno integracijo (4-5 ur vsak)
-8. **Optimizacijski cevovod OpenVINO**: Implementirajte celovito optimizacijo modela z uporabo NNCF in GenAI orodja
-9. **Cevovod SLMOps**: Implementirajte celoten življenjski cikel modela od učenja do namestitve na robu
-10. **Sistem z več modeli na robu**: Namestite več specializiranih modelov, ki delujejo skupaj na robni strojni opremi
-11. **Sistem za integracijo MCP**: Zgradite agentni sistem z uporabo Model Context Protocol za interakcijo z orodji
+### Napredni integracijski projekti (4–5 ur vsak)
+8. **OpenVINO optimizacijska linija**: Implementirajte popolno optimizacijo modela z uporabo NNCF in GenAI kompleta orodij
+9. **SLMOps linija**: Izvedite popolno življenjsko dobo modela od usposabljanja do edge namestitve
+10. **Sistem z več modeli za edge**: Namestite več specializiranih modelov, ki delujejo skupaj na edge strojni opremi
+11. **Sistem integracije MCP**: Ustvarite agentski sistem z uporabo protokola Model Context za interakcijo orodij
 
 ## Reference
 
 - Microsoft Learn (Foundry Local)
   - Pregled: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/
   - Začetek: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/get-started
-  - Referenca CLI: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-cli
-  - Integracija z SDK za sklepanje: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-integrate-with-inference-sdks
-  - Navodila za Open WebUI: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-chat-application-with-open-web-ui
-  - Kompilacija modelov Hugging Face: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-compile-hugging-face-models
+  - CLI referenca: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-cli
+  - Integracija z inference SDK-ji: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-integrate-with-inference-sdks
+  - Kako narediti Open WebUI klepetalnik: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-chat-application-with-open-web-ui
+  - Prevedite Hugging Face modele: https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/how-to/how-to-compile-hugging-face-models
 - Azure AI Foundry
   - Pregled: https://learn.microsoft.com/en-us/azure/ai-foundry/
   - Agenti (pregled): https://learn.microsoft.com/en-us/azure/ai-services/agents/overview
-- Orodja za optimizacijo in sklepanje
+- Orodja za optimizacijo in inferenco
   - Microsoft Olive (dokumentacija): https://microsoft.github.io/Olive/
   - Microsoft Olive (GitHub): https://github.com/microsoft/Olive
   - ONNX Runtime (začetek): https://onnxruntime.ai/docs/get-started/with-python.html
@@ -777,25 +799,27 @@ Razmislite o zaključku enega od teh projektov za vadbo konceptov EdgeAI (vsak j
   - vLLM (dokumentacija): https://docs.vllm.ai/
   - Ollama (hitri začetek): https://github.com/ollama/ollama#get-started
 - Razvojna orodja (Windows in VS Code)
-  - AI Toolkit za VS Code: https://learn.microsoft.com/en-us/azure/ai-toolkit/overview
+  - AI Toolkit for VS Code: https://learn.microsoft.com/en-us/azure/ai-toolkit/overview
   - Windows ML (pregled): https://learn.microsoft.com/en-us/windows/ai/new-windows-ml/overview
 
 ## Učna skupnost
 
-Pridružite se razpravi in povežite se z drugimi učenci:
-- GitHub razprave na [EdgeAI for Beginners repository](https://github.com/microsoft/edgeai-for-beginners/discussions)
+Pridružite se razpravi in povežite z drugimi učenci:
+- GitHub razprave na [EdgeAI for Beginners repozitoriju](https://github.com/microsoft/edgeai-for-beginners/discussions)
 - [Microsoft Tech Community](https://techcommunity.microsoft.com/)
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/edge-ai)
 
 ## Zaključek
 
-EdgeAI predstavlja mejo implementacije umetne inteligence, saj prinaša zmogljive sposobnosti neposredno na naprave, hkrati pa obravnava ključne skrbi glede zasebnosti, zakasnitve in povezljivosti. Ta 20-urni tečaj vam zagotavlja osnovno znanje in praktične veščine za takojšnje delo s tehnologijami EdgeAI.
+EdgeAI predstavlja mejo izvajanja umetne inteligence, saj prinaša zmogljive zmogljivosti neposredno na naprave in hkrati naslavlja ključne skrbi glede zasebnosti, zakasnitve in povezljivosti. Ta 20-urni tečaj vam zagotavlja bistveno znanje in praktične spretnosti za takojšnje delo z EdgeAI tehnologijami.
 
-Tečaj je namerno jedrnat in osredotočen na najpomembnejše koncepte, kar vam omogoča hitro pridobivanje dragocenega znanja brez prevelike časovne obremenitve. Ne pozabite, da je praktična vadba, tudi s preprostimi primeri, ključna za utrjevanje naučenega.
+Tečaj je namerno kratek in osredotočen na najpomembnejše koncepte, kar vam omogoča hitro pridobivanje dragocenih znanj brez preobremenitve s časom. Ne pozabite, da je praktična vaja, tudi s preprostimi primeri, ključ do utrditve naučenega.
 
-Srečno pri učenju!
+Srečno učenje!
 
 ---
 
-**Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Omejitev odgovornosti**:
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za kritične informacije je priporočljiv strokovni človeški prevod. Ne odgovarjamo za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
