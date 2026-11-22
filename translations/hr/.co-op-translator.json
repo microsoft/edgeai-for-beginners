@@ -7,7 +7,7 @@
   },
   "CHANGELOG.md": {
     "original_hash": "78ca68df03ae43371b203ea43d346dec",
-    "translation_date": "2025-10-30T14:49:33+00:00",
+    "translation_date": "2026-08-25T00:41:53+00:00",
     "source_file": "CHANGELOG.md",
     "language_code": "hr"
   },
@@ -19,7 +19,7 @@
   },
   "Module01/01.EdgeAIFundamentals.md": {
     "original_hash": "be25052ac4c842765e7f6f7eb4d7dcc5",
-    "translation_date": "2025-10-20T10:01:18+00:00",
+    "translation_date": "2026-08-25T00:46:11+00:00",
     "source_file": "Module01/01.EdgeAIFundamentals.md",
     "language_code": "hr"
   },
@@ -49,25 +49,25 @@
   },
   "Module02/01.PhiFamily.md": {
     "original_hash": "20892f7994d9e5d2473ad19dfa93cf6d",
-    "translation_date": "2025-09-18T22:44:59+00:00",
+    "translation_date": "2026-08-25T00:54:58+00:00",
     "source_file": "Module02/01.PhiFamily.md",
     "language_code": "hr"
   },
   "Module02/02.QwenFamily.md": {
     "original_hash": "1c8c05964be6fb235b026feed0bf066e",
-    "translation_date": "2025-10-01T21:53:08+00:00",
+    "translation_date": "2026-08-25T00:56:51+00:00",
     "source_file": "Module02/02.QwenFamily.md",
     "language_code": "hr"
   },
   "Module02/03.GemmaFamily.md": {
     "original_hash": "c6ab7eb1b8009ae984eaf6b85568f77a",
-    "translation_date": "2025-09-18T23:01:38+00:00",
+    "translation_date": "2026-08-25T00:59:14+00:00",
     "source_file": "Module02/03.GemmaFamily.md",
     "language_code": "hr"
   },
   "Module02/04.BitNETFamily.md": {
     "original_hash": "a56a3241aec9dc147b111ec10a2b3f2a",
-    "translation_date": "2025-09-18T21:59:28+00:00",
+    "translation_date": "2026-08-25T01:02:07+00:00",
     "source_file": "Module02/04.BitNETFamily.md",
     "language_code": "hr"
   },
@@ -97,7 +97,7 @@
   },
   "Module03/02.DeployingSLMinLocalEnv.md": {
     "original_hash": "0d9a6cd24a08aeac1328626abcc18ba8",
-    "translation_date": "2025-10-24T10:03:37+00:00",
+    "translation_date": "2026-08-25T00:53:32+00:00",
     "source_file": "Module03/02.DeployingSLMinLocalEnv.md",
     "language_code": "hr"
   },
@@ -193,13 +193,13 @@
   },
   "Module06/01.IntroduceAgent.md": {
     "original_hash": "44bc28c27b993c5fb988791b7a115705",
-    "translation_date": "2025-10-30T14:52:27+00:00",
+    "translation_date": "2026-08-25T00:51:29+00:00",
     "source_file": "Module06/01.IntroduceAgent.md",
     "language_code": "hr"
   },
   "Module06/02.FunctionCalling.md": {
     "original_hash": "8b05633cf46af274b3724ee2f7140100",
-    "translation_date": "2025-09-18T23:26:48+00:00",
+    "translation_date": "2026-08-25T00:47:58+00:00",
     "source_file": "Module06/02.FunctionCalling.md",
     "language_code": "hr"
   },
@@ -223,7 +223,7 @@
   },
   "Module07/aitoolkit.md": {
     "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-    "translation_date": "2025-10-21T07:39:13+00:00",
+    "translation_date": "2026-08-25T00:45:14+00:00",
     "source_file": "Module07/aitoolkit.md",
     "language_code": "hr"
   },
@@ -235,7 +235,7 @@
   },
   "Module07/windowdeveloper.md": {
     "original_hash": "2305e750e93ad4bd79898cf149e01b49",
-    "translation_date": "2025-10-03T07:03:23+00:00",
+    "translation_date": "2026-08-25T00:43:53+00:00",
     "source_file": "Module07/windowdeveloper.md",
     "language_code": "hr"
   },
@@ -451,7 +451,7 @@
   },
   "Workshop/Session05-AIPoweredAgents.md": {
     "original_hash": "6588aabccabec8ef9b85eb92f3e7143d",
-    "translation_date": "2025-10-28T23:25:39+00:00",
+    "translation_date": "2026-08-25T00:46:39+00:00",
     "source_file": "Workshop/Session05-AIPoweredAgents.md",
     "language_code": "hr"
   },

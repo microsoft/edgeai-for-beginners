@@ -2,123 +2,124 @@
 
 ## Giriş
 
-Windows Edge AI Geliştirme'ye hoş geldiniz - Microsoft'un Windows AI Foundry platformunu kullanarak cihaz üzerinde yapay zeka gücünden yararlanan akıllı uygulamalar oluşturmak için kapsamlı rehberiniz. Bu rehber, Windows geliştiricilerinin uygulamalarına en son Edge AI özelliklerini entegre ederken Windows donanım hızlandırmasının tüm yelpazesinden faydalanmalarını sağlamak için özel olarak tasarlanmıştır.
+Windows Edge AI Geliştirmeye hoş geldiniz - Microsoft'un Windows AI Foundry platformunu kullanarak cihaz üzerindeki yapay zekanın gücünü kullanan akıllı uygulamalar oluşturmanız için kapsamlı rehberiniz. Bu rehber, uygulamalarına en yeni Edge AI yeteneklerini entegre etmek isteyen ve Windows donanım hızlandırmasının tüm yelpazesinden yararlanmak isteyen Windows geliştiricileri için özel olarak tasarlanmıştır.
 
 ### Windows AI Avantajı
 
-Windows AI Foundry, model seçimi ve ince ayar yapmaktan optimizasyon ve CPU, GPU, NPU ve hibrit bulut mimarileri arasında dağıtıma kadar tam bir yapay zeka geliştirici yaşam döngüsünü destekleyen birleşik, güvenilir ve güvenli bir platform sunar. Bu platform, aşağıdaki özelliklerle yapay zeka geliştirmeyi demokratikleştirir:
+Windows AI Foundry, model seçimi ve ince ayardan CPU, GPU, NPU ve hibrit bulut mimarileri arasında optimizasyon ve dağıtıma kadar tam AI geliştirici yaşam döngüsünü destekleyen birleşik, güvenilir ve güvenli bir platformu temsil eder. Bu platform, AI geliştirmeyi demokratikleştirir ve şunları sağlar:
 
 - **Donanım Soyutlama**: AMD, Intel, NVIDIA ve Qualcomm silikonları arasında sorunsuz dağıtım
-- **Cihaz Üzerinde Zeka**: Tamamen yerel donanımda çalışan, gizliliği koruyan yapay zeka
+- **Cihaz Üzerinde Zekâ**: Gizliliği koruyan, tamamen yerel donanım üzerinde çalışan AI
 - **Optimize Edilmiş Performans**: Windows donanım yapılandırmaları için önceden optimize edilmiş modeller
-- **Kurumsal Hazır**: Üretim seviyesinde güvenlik ve uyumluluk özellikleri
+- **Kurumsal Hazır**: Üretim düzeyi güvenlik ve uyumluluk özellikleri
 
 ### Windows ML 
-Windows Machine Learning (ML), C#, C++ ve Python geliştiricilerinin ONNX AI modellerini Windows PC'lerde yerel olarak ONNX Runtime üzerinden çalıştırmasını sağlar ve farklı donanımlar (CPU, GPU, NPU) için otomatik yürütme sağlayıcı yönetimi sunar. [ONNX Runtime](https://onnxruntime.ai/docs/) PyTorch, Tensorflow/Keras, TFLite, scikit-learn ve diğer çerçevelerden gelen modellerle kullanılabilir.
+Windows Makine Öğrenimi (ML), C#, C++ ve Python geliştiricilerinin, farklı donanımlar (CPU'lar, GPU'lar, NPU'lar) için otomatik yürütücü yönetimi ile ONNX Runtime aracılığıyla Windows PC'lerde yerel olarak ONNX AI modellerini çalıştırmalarını sağlar. [ONNX Runtime](https://onnxruntime.ai/docs/) PyTorch, Tensorflow/Keras, TFLite, scikit-learn ve diğer çerçevelerden modellerle kullanılabilir.
 
-![WindowsML ONNX modelinin Windows ML üzerinden NPU, GPU ve CPU'ya ulaşmasını gösteren bir diyagram.](https://learn.microsoft.com/en-us/windows/ai/images/winml-diagram.png)
 
-Windows ML, Windows genelinde paylaşılan bir ONNX Runtime kopyası ve yürütme sağlayıcılarını (EP'ler) dinamik olarak indirme yeteneği sunar.
+![WindowsML Cihaz üzerinde çalışan bir ONNX modelinin Windows ML aracılığıyla NPU'lara, GPU'lara ve CPU'lara ulaştığını gösteren bir diyagram.](https://learn.microsoft.com/en-us/windows/ai/images/winml-diagram.png)
 
-### Edge AI için Neden Windows?
+Windows ML, ONNX Runtime'ın Windows çapında paylaşılan bir kopyasını ve yürütücü sağlayıcıları (EP'ler) dinamik olarak indirme yeteneğini sağlar.
 
-**Evrensel Donanım Desteği**  
-Windows ML, tüm Windows ekosistemi genelinde otomatik donanım optimizasyonu sağlar ve yapay zeka uygulamalarınızın temel silikon mimarisinden bağımsız olarak en iyi şekilde performans göstermesini garanti eder.
+### Neden Edge AI için Windows?
 
-**Entegre AI Çalışma Zamanı**  
-Yerleşik Windows ML çıkarım motoru, karmaşık kurulum gereksinimlerini ortadan kaldırır ve geliştiricilerin altyapı endişeleri yerine uygulama mantığına odaklanmasını sağlar.
+**Evrensel Donanım Desteği**
+Windows ML, tüm Windows ekosisteminde otomatik donanım optimizasyonu sunar, böylece AI uygulamalarınız altta yatan silikon mimarisinden bağımsız olarak en iyi performansı gösterir.
 
-**Copilot+ PC Optimizasyonu**  
-Özel Neural Processing Unit'lere (NPU) sahip yeni nesil Windows cihazları için tasarlanmış API'ler, watt başına olağanüstü performans sunar.
+**Entegre AI Çalışma Zamanı**
+Yerleşik Windows ML çıkarım motoru, karmaşık kurulum gereksinimlerini ortadan kaldırır ve geliştiricilerin altyapı kaygıları yerine uygulama mantığına odaklanmasını sağlar.
 
-**Geliştirici Ekosistemi**  
-Visual Studio entegrasyonu, kapsamlı belgeler ve geliştirme döngülerini hızlandıran örnek uygulamalar gibi zengin araçlar.
+**Copilot+ PC Optimizasyonu**
+Özel olarak Sinirsel İşleme Birimleri (NPU'lar) ile donatılmış yeni nesil Windows cihazları için tasarlanmış özel API'ler, watt başına olağanüstü performans sunar.
+
+**Geliştirici Ekosistemi**
+Visual Studio entegrasyonu, kapsamlı dokümantasyon ve geliştirme döngülerini hızlandıran örnek uygulamalar dahil zengin araçlar.
 
 ## Öğrenme Hedefleri
 
-Bu Windows Edge AI geliştirme rehberini tamamlayarak, Windows platformunda üretime hazır yapay zeka uygulamaları oluşturmak için gerekli temel becerileri öğreneceksiniz.
+Bu Windows Edge AI geliştirme rehberini tamamlayarak, Windows platformunda üretime hazır AI uygulamaları oluşturmak için temel becerilere hakim olacaksınız.
 
-### Temel Teknik Yetkinlikler
+### Temel Teknik Yeterlilikler
 
-**Windows AI Foundry Uzmanlığı**
+**Windows AI Foundry Ustalığı**
 - Windows AI Foundry platformunun mimarisini ve bileşenlerini anlayın
-- Windows ekosisteminde tam yapay zeka geliştirme yaşam döngüsünü yönetin
-- Cihaz üzerinde yapay zeka uygulamaları için güvenlik en iyi uygulamalarını uygulayın
-- Farklı Windows donanım yapılandırmaları için uygulamaları optimize edin
+- Windows ekosistemindeki tam AI geliştirme yaşam döngüsünde gezinme
+- Cihaz üzerindeki AI uygulamaları için güvenlik en iyi uygulamalarını uygulama
+- Farklı Windows donanım yapılandırmaları için uygulamaları optimize etme
 
 **API Entegrasyonu Uzmanlığı**
-- Metin, görsel ve çok modlu uygulamalar için Windows AI API'lerini öğrenin
-- Phi Silica dil modeli entegrasyonunu metin üretimi ve akıl yürütme için uygulayın
-- Yerleşik görüntü işleme API'lerini kullanarak bilgisayar görme yeteneklerini dağıtın
-- LoRA (Low-Rank Adaptation) tekniklerini kullanarak önceden eğitilmiş modelleri özelleştirin
+- Metin, görsel ve multimodal uygulamalar için Windows AI API'lerini ustaca kullanma
+- Metin üretimi ve muhakeme için Phi Silica dil modeli entegrasyonunu uygulama
+- Yerleşik görüntü işleme API'leriyle bilgisayarla görme yetenekleri dağıtma
+- LoRA (Düşük Dereceli Uyarlama) teknikleriyle önceden eğitilmiş modelleri özelleştirme
 
-**Foundry Local Uygulaması**
-- Foundry Local CLI kullanarak açık kaynaklı dil modellerini gözden geçirin, değerlendirin ve dağıtın
-- Yerel dağıtım için model optimizasyonunu ve kuantizasyonu anlayın
-- İnternet bağlantısı olmadan çalışan çevrimdışı yapay zeka yeteneklerini uygulayın
+**Foundry Yerel Uygulama**
+- Foundry Local CLI kullanarak açık kaynak dil modellerini inceleyin, değerlendirin ve dağıtın
+- Yerel dağıtım için model optimizasyonu ve kantlaştırmayı anlayın
+- İnternet bağlantısı olmadan çalışan çevrimdışı AI özelliklerini uygulayın
 - Üretim ortamlarında model yaşam döngülerini ve güncellemelerini yönetin
 
 **Windows ML Dağıtımı**
-- Özel ONNX modellerini Windows ML kullanarak Windows uygulamalarına getirin
+- Özel ONNX modellerini Windows uygulamalarına Windows ML kullanarak getirin
 - CPU, GPU ve NPU mimarileri arasında otomatik donanım hızlandırmasından yararlanın
-- Optimal kaynak kullanımı ile gerçek zamanlı çıkarım uygulayın
-- Çeşitli Windows cihaz kategorileri için ölçeklenebilir yapay zeka uygulamaları tasarlayın
+- Optimal kaynak kullanımıyla gerçek zamanlı çıkarım uygulayın
+- Çeşitli Windows cihaz kategorileri için ölçeklenebilir AI uygulamaları tasarlayın
 
 ### Uygulama Geliştirme Becerileri
 
 **Çapraz Platform Windows Geliştirme**
-- Evrensel Windows dağıtımı için .NET MAUI kullanarak yapay zeka destekli uygulamalar oluşturun
-- Yapay zeka yeteneklerini Win32, UWP ve İlerici Web Uygulamalarına entegre edin
-- Yapay zeka işlem durumlarına uyum sağlayan duyarlı UI tasarımları uygulayın
-- Asenkron yapay zeka işlemlerini uygun kullanıcı deneyimi desenleriyle yönetin
+- Evrensel Windows dağıtımı için .NET MAUI kullanarak AI destekli uygulamalar oluşturun
+- Win32, UWP ve İlerleyen Web Uygulamalarına AI yetenekleri entegre edin
+- AI işlem durumlarına uyum sağlayan duyarlı kullanıcı arayüzü tasarımları uygulayın
+- Asenkron AI işlemlerini uygun kullanıcı deneyimi desenleri ile yönetin
 
 **Performans Optimizasyonu**
-- Farklı donanım yapılandırmaları arasında yapay zeka çıkarım performansını profil oluşturun ve optimize edin
+- Farklı donanım yapılandırmalarında AI çıkarım performansını profilleyin ve optimize edin
 - Büyük dil modelleri için verimli bellek yönetimi uygulayın
-- Mevcut donanım yeteneklerine göre zarif bir şekilde azalan uygulamalar tasarlayın
-- Sık kullanılan yapay zeka işlemleri için önbellek stratejileri uygulayın
+- Mevcut donanım yeteneklerine göre düzgün şekilde düşen uygulamalar tasarlayın
+- Sık kullanılan AI işlemleri için önbellekleme stratejileri uygulayın
 
-**Üretim Hazırlığı**
-- Kapsamlı hata işleme ve geri dönüş mekanizmaları uygulayın
-- Yapay zeka uygulama performansı için telemetri ve izleme tasarlayın
-- Yerel yapay zeka model depolama ve çalıştırma için güvenlik en iyi uygulamalarını uygulayın
+**Üretime Hazırlık**
+- Kapsamlı hata işleme ve yedekleme mekanizmaları uygulayın
+- AI uygulama performansı için telemetri ve izleme tasarlayın
+- Yerel AI model depolama ve yürütme için güvenlik en iyi uygulamalarını uygulayın
 - Kurumsal ve tüketici uygulamaları için dağıtım stratejileri planlayın
 
 ### İş ve Stratejik Anlayış
 
-**Yapay Zeka Uygulama Mimarisi**
-- Yerel ve bulut yapay zeka işlemleri arasında optimize eden hibrit mimariler tasarlayın
-- Model boyutu, doğruluk ve çıkarım hızı arasındaki ödünleşimleri değerlendirin
-- Gizliliği korurken zekayı mümkün kılan veri akışı mimarileri planlayın
-- Kullanıcı talepleriyle ölçeklenen maliyet etkin yapay zeka çözümleri uygulayın
+**AI Uygulama Mimarisi**
+- Yerel ve bulut AI işlemleri arasında optimizasyon sağlayan hibrit mimariler tasarlayın
+- Model boyutu, doğruluk ve çıkarım hızı arasında ticari kararları değerlendirin
+- Gizliliği korurken zekâ sağlayan veri akış mimarilerini planlayın
+- Kullanıcı talepleriyle ölçeklenen maliyet-etkin AI çözümleri uygulayın
 
 **Pazar Konumlandırması**
-- Windows'a özgü yapay zeka uygulamalarının rekabet avantajlarını anlayın
-- Cihaz üzerinde yapay zekanın üstün kullanıcı deneyimleri sağladığı kullanım durumlarını belirleyin
-- Yapay zeka destekli Windows uygulamaları için pazara giriş stratejileri geliştirin
-- Uygulamaları Windows ekosisteminin avantajlarından yararlanacak şekilde konumlandırın
+- Windows'a özgü AI uygulamalarının rekabet avantajlarını anlayın
+- Cihaz üzerindeki AI'nın üstün kullanıcı deneyimleri sunduğu kullanım durumlarını belirleyin
+- AI geliştirilmiş Windows uygulamaları için pazara giriş stratejileri geliştirin
+- Uygulamaları Windows ekosistemi avantajlarından yararlanacak şekilde konumlandırın
 
 ## Windows App SDK AI Örnekleri
 
-Windows App SDK, birden fazla çerçeve ve dağıtım senaryosu genelinde yapay zeka entegrasyonunu gösteren kapsamlı örnekler sunar. Bu örnekler, Windows AI geliştirme desenlerini anlamak için temel referanslardır.
+Windows App SDK, AI entegrasyonunu çoklu çerçeveler ve dağıtım senaryoları üzerinden gösteren kapsamlı örnekler sunar. Bu örnekler, Windows AI geliştirme kalıplarını anlamak için temel referanslardır.
 
 ### Windows AI Foundry Örnekleri
 
 | Örnek | Çerçeve | Odak Alanı | Ana Özellikler |
-|-------|---------|------------|----------------|
-| [cs-winui](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsAIFoundry/cs-winui) | C# WinUI 3 | Windows AI API'leri Entegrasyonu | Windows AI API'lerini, ARM64 optimizasyonunu, paketlenmiş dağıtımı gösteren tam bir WinUI uygulaması |
+|--------|-----------|------------|-------------|
+| [cs-winui](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsAIFoundry/cs-winui) | C# WinUI 3 | Windows AI API Entegrasyonu | Windows AI API'lerini gösteren tam WinUI uygulaması, ARM64 optimizasyonu, paketlenmiş dağıtım |
 
-**Ana Teknolojiler:**
+**Temel Teknolojiler:**
 - Windows AI API'leri
 - WinUI 3 çerçevesi
 - ARM64 platform optimizasyonu
 - Copilot+ PC uyumluluğu
 - Paketlenmiş uygulama dağıtımı
 
-**Ön Koşullar:**
-- Windows 11, Copilot+ PC önerilir
+**Ön Gereksinimler:**
+- Copilot+ PC ile Windows 11 önerilir
 - Visual Studio 2022
-- ARM64 yapılandırması
+- ARM64 derleme yapılandırması
 - Windows App SDK 1.8.1+
 
 ### Windows ML Örnekleri
@@ -126,26 +127,26 @@ Windows App SDK, birden fazla çerçeve ve dağıtım senaryosu genelinde yapay 
 #### C++ Örnekleri
 
 | Örnek | Tür | Odak Alanı | Ana Özellikler |
-|-------|-----|------------|----------------|
+|--------|------|------------|-------------|
 | [CppConsoleDesktop](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Konsol Uygulaması | Temel Windows ML | EP keşfi, komut satırı seçenekleri, model derleme |
 | [CppConsoleDesktop.FrameworkDependent](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Konsol Uygulaması | Çerçeve Dağıtımı | Paylaşılan çalışma zamanı, daha küçük dağıtım boyutu |
-| [CppConsoleDesktop.SelfContained](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Konsol Uygulaması | Bağımsız Dağıtım | Bağımsız dağıtım, çalışma zamanı bağımlılıkları yok |
+| [CppConsoleDesktop.SelfContained](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Konsol Uygulaması | Tam Bağımsız Dağıtım | Bağımsız dağıtım, çalışma zamanı bağımlılığı yok |
 | [CppConsoleDll](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | DLL | Kütüphane Kullanımı | Paylaşılan kütüphanede WindowsML, bellek yönetimi |
-| [CppResnetBuildDemo](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Demo | ResNet Eğitimi | Model dönüşümü, EP derleme, Build 2025 eğitimi |
+| [CppResnetBuildDemo](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cpp) | Demo | ResNet Eğitimi | Model dönüşümü, EP derlemesi, Build 2025 eğitimi |
 
 #### C# Örnekleri
 
 **Konsol Uygulamaları**
 
 | Örnek | Tür | Odak Alanı | Ana Özellikler |
-|-------|-----|------------|----------------|
+|--------|------|------------|-------------|
 | [CSharpConsoleDesktop](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs) | Konsol Uygulaması | Temel C# Entegrasyonu | Paylaşılan yardımcı kullanım, komut satırı arayüzü |
-| [ResnetBuildDemoCS](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs) | Demo | ResNet Eğitimi | Model dönüşümü, EP derleme, Build 2025 eğitimi |
+| [ResnetBuildDemoCS](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs) | Demo | ResNet Eğitimi | Model dönüşümü, EP derlemesi, Build 2025 eğitimi |
 
 **GUI Uygulamaları**
 
 | Örnek | Çerçeve | Odak Alanı | Ana Özellikler |
-|-------|---------|------------|----------------|
+|--------|-----------|------------|-------------|
 | [cs-wpf](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs-wpf) | WPF | Masaüstü GUI | WPF arayüzü ile görüntü sınıflandırma |
 | [cs-winforms](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs-winforms) | Windows Forms | Geleneksel GUI | Windows Forms ile görüntü sınıflandırma |
 | [cs-winui](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/cs-winui) | WinUI 3 | Modern GUI | WinUI 3 arayüzü ile görüntü sınıflandırma |
@@ -153,107 +154,108 @@ Windows App SDK, birden fazla çerçeve ve dağıtım senaryosu genelinde yapay 
 #### Python Örnekleri
 
 | Örnek | Dil | Odak Alanı | Ana Özellikler |
-|-------|-----|------------|----------------|
-| [SqueezeNetPython](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/python) | Python | Görüntü Sınıflandırma | WinML Python bağlamaları, toplu görüntü işleme |
+|--------|----------|------------|-------------|
+| [SqueezeNetPython](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML/python) | Python | Görüntü Sınıflandırma | WinML Python bağlayıcıları, toplu görüntü işleme |
 
-### Örnek Ön Koşulları
+### Örnek Ön Gereksinimleri
 
 **Sistem Gereksinimleri:**
-- Windows 11 PC, sürüm 24H2 (yapı 26100) veya daha yüksek
+- Sürüm 24H2 (yapı 26100) veya üstü çalışan Windows 11 PC
 - C++ ve .NET iş yükleri ile Visual Studio 2022
-- Windows App SDK 1.8.1 veya daha yeni
-- Python örnekleri için x64 ve ARM64 cihazlarda Python 3.10-3.13
+- Windows App SDK 1.8.1 veya üstü
+- x64 ve ARM64 cihazlarda Python 3.10-3.13 (Python örnekleri için)
 
 **Windows AI Foundry Özel:**
 - Optimal performans için Copilot+ PC önerilir
-- Windows AI örnekleri için ARM64 yapılandırması
-- Paket kimliği gerekli (paketlenmemiş uygulamalar artık desteklenmiyor)
+- Windows AI örnekleri için ARM64 derleme yapılandırması
+- Paket kimliği gereklidir (paketsiz uygulamalar artık desteklenmemektedir)
 
-### Ortak Örnek İş Akışı
+### Yaygın Örnek İş Akışı
 
-Çoğu Windows ML örneği şu standart deseni takip eder:
+Çoğu Windows ML örneği aşağıdaki standart kalıbı izler:
 
 1. **Ortamı Başlat** - ONNX Runtime ortamı oluşturun
-2. **Yürütme Sağlayıcılarını Kaydedin** - Mevcut donanım hızlandırıcılarını (CPU, GPU, NPU) keşfedin ve kaydedin
+2. **Yürütme Sağlayıcıları Kaydet** - Mevcut donanım hızlandırıcılarını (CPU, GPU, NPU) keşfedin ve kaydedin
 3. **Modeli Yükle** - ONNX modelini yükleyin, isteğe bağlı olarak hedef donanım için derleyin
-4. **Girdi Ön İşleme** - Görüntüleri/verileri model giriş formatına dönüştürün
-5. **Çıkarım Çalıştır** - Modeli çalıştırın ve tahminler alın
-6. **Sonuçları İşleyin** - Softmax uygulayın ve en iyi tahminleri görüntüleyin
+4. **Girdiyi Önişleme** - Görüntüleri/verileri modele uygun formata dönüştürün
+5. **Çıkarımı Çalıştır** - Modeli çalıştırın ve tahminleri alın
+6. **Sonuçları İşle** - softmax uygulayın ve üst tahminleri gösterin
 
 ### Kullanılan Model Dosyaları
 
-| Model | Amaç | Dahil | Notlar |
-|-------|------|-------|-------|
+| Model | Amaç | Dahil Edildi | Notlar |
+|-------|---------|----------|-------|
 | SqueezeNet | Hafif görüntü sınıflandırma | ✅ Dahil | Önceden eğitilmiş, kullanıma hazır |
-| ResNet-50 | Yüksek doğrulukta görüntü sınıflandırma | ❌ Dönüşüm gerekli | Dönüşüm için [AI Toolkit](https://code.visualstudio.com/docs/intelligentapps/modelconversion) kullanın |
+| ResNet-50 | Yüksek doğruluklu görüntü sınıflandırma | ❌ Dönüşüm gerektirir | Dönüşüm için [AI Toolkit](https://code.visualstudio.com/docs/intelligentapps/modelconversion) kullanın |
 
 ### Donanım Desteği
 
 Tüm örnekler mevcut donanımı otomatik olarak algılar ve kullanır:
 - **CPU** - Tüm Windows cihazlarında evrensel destek
 - **GPU** - Mevcut grafik donanımı için otomatik algılama ve optimizasyon
-- **NPU** - Desteklenen cihazlarda Neural Processing Unit'lerden yararlanır (Copilot+ PC'ler)
+- **NPU** - Desteklenen cihazlarda Sinirsel İşleme Birimlerinden yararlanır (Copilot+ PC'ler)
 
 ## Windows AI Foundry Platform Bileşenleri
 
 ### 1. Windows AI API'leri
 
-Windows AI API'leri, cihaz üzerinde modeller tarafından desteklenen, Copilot+ PC cihazlarında verimlilik ve performans için optimize edilmiş, kullanıma hazır yapay zeka yetenekleri sağlar.
+Windows AI API'leri, minimal kurulumla Copilot+ PC cihazlarında verimlilik ve performans için optimize edilmiş, cihaz üzeri modellerle çalışan kullanıma hazır AI özellikleri sağlar.
 
 #### Temel API Kategorileri
 
 **Phi Silica Dil Modeli**
-- Metin üretimi ve akıl yürütme için küçük ama güçlü dil modeli
-- Minimum güç tüketimi ile gerçek zamanlı çıkarım için optimize edilmiş
-- LoRA tekniklerini kullanarak özel ince ayar desteği
-- Windows semantik arama ve bilgi alma ile entegrasyon
+- Metin üretimi ve muhakeme için küçük ama güçlü dil modeli
+- Minimal güç tüketimiyle gerçek zamanlı çıkarım için optimize edilmiş
+- LoRA teknikleri kullanılarak özel ince ayar desteği
+- Windows anlamsal arama ve bilgi getirimi ile entegrasyon
 
-**Bilgisayar Görme API'leri**
-- **Metin Tanıma (OCR)**: Görüntülerden yüksek doğrulukla metin çıkarma
-- **Görüntü Süper Çözünürlük**: Yerel yapay zeka modelleri kullanarak görüntüleri büyütme
-- **Görüntü Segmentasyonu**: Görüntülerdeki belirli nesneleri tanımlama ve ayırma
-- **Görüntü Açıklaması**: Görsel içerik için ayrıntılı metin açıklamaları oluşturma
-- **Nesne Silme**: Görüntülerden istenmeyen nesneleri yapay zeka destekli boyama ile kaldırma
+**Bilgisayarla Görme API’leri**
+- **Metin Tanıma (OCR)**: Görüntülerden yüksek doğrulukta metin çıkarma
+- **Görüntü Yüksek Çözünürlük**: Yerel AI modelleri kullanarak görüntüleri büyütme
+- **Görüntü Segmentasyonu**: Görüntülerde belirli nesneleri tanımlama ve izole etme
+- **Görüntü Açıklaması**: Görsel içerik için ayrıntılı metinsel açıklamalar oluşturma
+- **Nesne Silme**: AI destekli boyama ile istenmeyen nesneleri görüntülerden kaldırma
 
-**Çok Modlu Yetkinlikler**
-- **Görsel-Metin Entegrasyonu**: Metin ve görüntü anlayışını birleştirme
-- **Semantik Arama**: Multimedya içerik üzerinde doğal dil sorguları etkinleştirme
-- **Bilgi Alma**: Yerel verilerle akıllı arama deneyimleri oluşturma
+**Multimodal Yetenekler**
+- **Görsel-Dil Entegrasyonu**: Metin ve görüntü anlayışını birleştirme
+- **Anlamsal Arama**: Multimedya içeriklerinde doğal dil sorguları etkinleştirme
+- **Bilgi Getirimi**: Yerel verilerle akıllı arama deneyimleri oluşturma
 
 ### 2. Foundry Local
 
-Foundry Local, geliştiricilere Windows Silicon üzerinde kullanıma hazır açık kaynaklı dil modellerine hızlı erişim sağlar ve yerel uygulamalarda modelleri gözden geçirme, test etme, etkileşim kurma ve dağıtma yeteneği sunar.
+Foundry Local, geliştiricilere Windows Silikon üzerinde kullanıma hazır açık kaynak dil modellerine hızlı erişim sağlar; modelleri inceleme, test etme, etkileşimde bulunma ve yerel uygulamalarda dağıtma olanağı sunar.
 
 #### Foundry Local Örnek Uygulamaları
 
-[Foundry Local deposu](https://github.com/microsoft/Foundry-Local/tree/main/samples), çeşitli entegrasyon desenlerini ve kullanım durumlarını gösteren birden fazla programlama dili ve çerçeve genelinde kapsamlı örnekler sunar.
+[Foundry Local deposu](https://github.com/microsoft/Foundry-Local/tree/main/samples), çeşitli programlama dillerinde ve çerçevelerde kapsamlı örnekler sunar; çeşitli entegrasyon kalıplarını ve kullanım durumlarını gösterir.
 
 | Örnek | Dil/Çerçeve | Odak Alanı | Ana Özellikler |
-|-------|-------------|------------|----------------|
-| [dotNET/rag](https://github.com/microsoft/Foundry-Local/tree/main/samples/dotNET/rag) | C# / .NET | RAG Uygulaması | Semantik Kernel entegrasyonu, Qdrant vektör deposu, JINA gömümleri, belge alımı, akışlı sohbet |
-| [electron/foundry-chat](https://github.com/microsoft/Foundry-Local/tree/main/samples/electron/foundry-chat) | JavaScript / Electron | Masaüstü Sohbet Uygulaması | Çapraz platform sohbet, yerel/bulut model geçişi, OpenAI SDK entegrasyonu, gerçek zamanlı akış |
-| [js/hello-foundry-local](https://github.com/microsoft/Foundry-Local/tree/main/samples/js/hello-foundry-local) | JavaScript / Node.js | Temel Entegrasyon | Basit SDK kullanımı, model başlatma, temel sohbet işlevselliği |
-| [python/hello-foundry-local](https://github.com/microsoft/Foundry-Local/tree/main/samples/python/hello-foundry-local) | Python | Temel Entegrasyon | Python SDK kullanımı, akışlı yanıtlar, OpenAI uyumlu API |
-| [rust/hello-foundry-local](https://github.com/microsoft/Foundry-Local/tree/main/samples/rust/hello-foundry-local) | Rust | Sistem Entegrasyonu | Düşük seviyeli SDK kullanımı, asenkron işlemler, reqwest HTTP istemcisi |
+|--------|-------------------|------------|-------------|
+| [dotNET/rag](https://github.com/microsoft/Foundry-Local/tree/main/samples/dotNET/rag) | C# / .NET | RAG Uygulaması | Anlamsal Kernel entegrasyonu, Qdrant vektör deposu, JINA gömme, belge alma, akış sohbeti |
+| [electron/foundry-chat](https://github.com/microsoft/Foundry-Local/tree/main/samples/electron/foundry-chat) | JavaScript / Electron | Masaüstü Sohbet Uygulaması | Çok platformlu sohbet, yerel/bulut model geçişi, OpenAI SDK entegrasyonu, gerçek zamanlı akış |
+| [js/hello-foundry-local](https://github.com/microsoft/Foundry-Local/tree/main/samples/js/hello-foundry-local) | JavaScript / Node.js | Temel Entegrasyon | Basit SDK kullanımı, model başlatma, temel sohbet işlevi |
+| [python/hello-foundry-local](https://github.com/microsoft/Foundry-Local/tree/main/samples/python/hello-foundry-local) | Python | Temel Entegrasyon | Python SDK kullanımı, akış yanıtları, OpenAI uyumlu API |
 
-#### Kullanım Durumlarına Göre Örnek Kategorileri
+| [rust/hello-foundry-local](https://github.com/microsoft/Foundry-Local/tree/main/samples/rust/hello-foundry-local) | Rust | Sistem Entegrasyonu | Düşük seviyeli SDK kullanımı, eşzamansız işlemler, reqwest HTTP istemcisi |
+
+#### Kullanım Amacına Göre Örnek Kategorileri
 
 **RAG (Retrieval-Augmented Generation)**
-- **dotNET/rag**: Semantic Kernel, Qdrant vektör veritabanı ve JINA gömüleri kullanılarak tam bir RAG uygulaması
-- **Mimari**: Belge alımı → Metin parçalama → Vektör gömüleri → Benzerlik araması → Bağlama duyarlı yanıtlar
-- **Teknolojiler**: Microsoft.SemanticKernel, Qdrant.Client, BERT ONNX gömüleri, akışlı sohbet tamamlama
+- **dotNET/rag**: Semantic Kernel, Qdrant vektör veritabanı ve JINA gömme teknikleri kullanılarak tam RAG uygulaması
+- **Mimari**: Belge alımı → Metin parçalama → Vektör gömmeleri → Benzerlik araması → Bağlama duyarlı yanıtlar
+- **Teknolojiler**: Microsoft.SemanticKernel, Qdrant.Client, BERT ONNX gömmeleri, akışlı sohbet tamamlama
 
 **Masaüstü Uygulamaları**
-- **electron/foundry-chat**: Yerel/bulut model geçişi ile üretime hazır sohbet uygulaması
-- **Özellikler**: Model seçici, akışlı yanıtlar, hata yönetimi, platformlar arası dağıtım
-- **Mimari**: Electron ana işlem, IPC iletişimi, güvenli ön yükleme betikleri
+- **electron/foundry-chat**: Yerel/bulut model geçişi ile üretim hazır sohbet uygulaması
+- **Özellikler**: Model seçici, akışlı yanıtlar, hata yönetimi, çapraz platform dağıtımı
+- **Mimari**: Electron ana işlemi, IPC iletişimi, güvenli preload betikleri
 
 **SDK Entegrasyon Örnekleri**
 - **JavaScript (Node.js)**: Temel model etkileşimi ve akışlı yanıtlar
-- **Python**: Asenkron akışlı yanıtlarla OpenAI uyumlu API kullanımı
-- **Rust**: Asenkron işlemler için reqwest ve tokio ile düşük seviyeli entegrasyon
+- **Python**: OpenAI uyumlu API kullanımı ve eşzamansız akış
+- **Rust**: reqwest ve tokio ile düşük seviyeli entegrasyon ve eşzamansız işlemler
 
-#### Foundry Local Örnekleri için Ön Koşullar
+#### Foundry Local Örnekleri için Önkoşullar
 
 **Sistem Gereksinimleri:**
 - Foundry Local yüklü Windows 11
@@ -264,48 +266,48 @@ Foundry Local, geliştiricilere Windows Silicon üzerinde kullanıma hazır aç�
 
 **Kurulum:**
 ```powershell
-# Install Foundry Local
+# Foundry Local'ı kur
 winget install Microsoft.FoundryLocal
 
-# Verify installation
+# Kurulumu doğrula
 foundry --version
 foundry model list
 ```
 
-#### Örnek Bazlı Kurulum
+#### Örneklere Özel Kurulum
 
 **dotNET RAG Örneği:**
 ```powershell
-# Install required packages via NuGet
+# Gerekli paketleri NuGet üzerinden yükleyin
 # Microsoft.SemanticKernel.Connectors.Onnx
 # Microsoft.SemanticKernel.Connectors.Qdrant
 # Qdrant.Client
 
-# Start Qdrant vector database
+# Qdrant vektör veritabanını başlat
 docker run -p 6333:6333 qdrant/qdrant
 
-# Run Jupyter notebook
+# Jupyter defterini çalıştır
 jupyter notebook rag_foundrylocal_demo.ipynb
 ```
 
-**Electron Sohbet Örneği:**
+**Electron Chat Örneği:**
 ```powershell
-# Set environment variables for cloud fallback
+# Bulut yedekleme için ortam değişkenlerini ayarla
 $env:YOUR_API_KEY="your-cloud-api-key"
 $env:YOUR_ENDPOINT="your-cloud-endpoint"
 $env:YOUR_MODEL_NAME="your-cloud-model"
 
-# Install dependencies and run
+# Bağımlılıkları yükle ve çalıştır
 npm install
 npm start
 ```
 
 **JavaScript/Python/Rust Örnekleri:**
 ```powershell
-# Download model (example with phi-3.5-mini)
+# Modeli indir (phi-3.5-mini örneği)
 foundry model run phi-3.5-mini
 
-# Run respective sample
+# İlgili örneği çalıştır
 node src/app.js          # JavaScript
 python src/app.py        # Python
 cargo run               # Rust
@@ -314,9 +316,9 @@ cargo run               # Rust
 #### Temel Özellikler
 
 **Model Kataloğu**
-- Önceden optimize edilmiş açık kaynaklı modellerin kapsamlı koleksiyonu
-- CPU, GPU ve NPU'lar arasında optimize edilmiş modellerle anında dağıtım
-- Llama, Mistral, Phi ve özel alan modelleri gibi popüler model ailelerini destekler
+- Önceden optimize edilmiş açık kaynak modellerin kapsamlı koleksiyonu
+- CPU, GPU ve NPU'larda hemen dağıtım için optimize edilmiş modeller
+- Llama, Mistral, Phi ve özel alan modelleri dahil popüler model aileleri desteği
 
 **CLI Entegrasyonu**
 - Model yönetimi ve dağıtımı için komut satırı arayüzü
@@ -324,181 +326,181 @@ cargo run               # Rust
 - Popüler geliştirme ortamları ve CI/CD boru hatları ile entegrasyon
 
 **Yerel Dağıtım**
-- Bulut bağımlılığı olmadan tamamen çevrimdışı çalışma
-- Özel model formatları ve yapılandırmalarını destekler
-- Otomatik donanım optimizasyonu ile verimli model sunumu
+- Bulut bağımlılığı olmayan tam çevrimdışı operasyon
+- Özelleştirilmiş model formatları ve yapılandırmalar için destek
+- Otomatik donanım optimizasyonlu verimli model servisi
 
 ### 3. Windows ML
 
-Windows ML, Windows üzerinde özel modellerin geniş donanım ekosistemi boyunca verimli bir şekilde dağıtılmasını sağlayan temel AI platformu ve entegre çıkarım çalıştırma ortamı olarak hizmet verir.
+Windows ML, Windows üzerinde çekirdek AI platformu ve entegre çıkarım çalışma zamanı olarak hizmet vererek, geliştiricilerin özel modelleri geniş Windows donanım ekosistemi genelinde verimli şekilde dağıtmasını sağlar.
 
 #### Mimari Avantajlar
 
 **Evrensel Donanım Desteği**
-- AMD, Intel, NVIDIA ve Qualcomm silikon için otomatik optimizasyon
-- CPU, GPU ve NPU yürütme desteği ile şeffaf geçiş
-- Platforma özgü optimizasyon çalışmalarını ortadan kaldıran donanım soyutlama
+- AMD, Intel, NVIDIA ve Qualcomm silikonları için otomatik optimizasyon
+- CPU, GPU ve NPU çalıştırma desteği ve şeffaf geçiş
+- Platforma özgü optimizasyon çalışmalarını ortadan kaldıran donanım soyutlaması
 
 **Model Esnekliği**
-- Popüler çerçevelerden otomatik dönüşüm ile ONNX model formatını destekler
-- Üretim düzeyinde performansla özel model dağıtımı
-- Mevcut Windows uygulama mimarileri ile entegrasyon
+- Popüler frameworklerden otomatik dönüşüm ile ONNX model formatı desteği
+- Üretim kalitesinde performansla özel model dağıtımı
+- Mevcut Windows uygulama mimarileriyle entegrasyon
 
 **Kurumsal Entegrasyon**
-- Windows güvenlik ve uyumluluk çerçeveleri ile uyumlu
-- Kurumsal dağıtım ve yönetim araçlarını destekler
-- Windows cihaz yönetimi ve izleme sistemleri ile entegrasyon
+- Windows güvenlik ve uyumluluk çerçeveleriyle uyumlu
+- Kurumsal dağıtım ve yönetim araçları desteği
+- Windows cihaz yönetimi ve izleme sistemleriyle entegrasyon
 
 ## Geliştirme İş Akışı
 
 ### Aşama 1: Ortam Kurulumu ve Araç Yapılandırması
 
 **Geliştirme Ortamı Hazırlığı**
-1. C++ ve .NET iş yükleri ile Visual Studio 2022'yi yükleyin
-2. Windows App SDK 1.8.1 veya daha yenisini yükleyin
+1. C++ ve .NET iş yükleri ile Visual Studio 2022'yi kurun
+2. Windows App SDK 1.8.1 veya sonrasını kurun
 3. Windows AI Foundry CLI araçlarını yapılandırın
-4. Visual Studio Code için AI Toolkit uzantısını ayarlayın
-5. Performans profilleme ve izleme araçlarını kurun
+4. Visual Studio Code için AI Toolkit eklentisini kurun
+5. Performans profil oluşturma ve izleme araçlarını kurun
 6. Copilot+ PC optimizasyonu için ARM64 yapı yapılandırmasını sağlayın
 
 **Örnek Depo Kurulumu**
-1. [Windows App SDK Samples deposunu](https://github.com/microsoft/WindowsAppSDK-Samples) klonlayın
+1. [Windows App SDK Örnekleri deposunu](https://github.com/microsoft/WindowsAppSDK-Samples) klonlayın
 2. Windows AI API örnekleri için `Samples/WindowsAIFoundry/cs-winui` dizinine gidin
 3. Kapsamlı Windows ML örnekleri için `Samples/WindowsML` dizinine gidin
-4. Hedef platformlarınız için [yapı gereksinimlerini](https://learn.microsoft.com/windows/apps/windows-app-sdk/system-requirements) inceleyin
+4. Hedef platformlar için [derleme gereksinimlerini](https://learn.microsoft.com/windows/apps/windows-app-sdk/system-requirements) inceleyin
 
-**AI Geliştirme Galerisi Keşfi**
-- Örnek uygulamaları ve referans uygulamaları keşfedin
-- Windows AI API'lerini etkileşimli demolarla test edin
-- En iyi uygulamalar ve desenler için kaynak kodunu inceleyin
-- Belirli kullanım durumunuz için ilgili örnekleri belirleyin
+**AI Dev Galeri Keşfi**
+- Örnek uygulamalar ve referans uygulamaları keşfedin
+- Etkileşimli demolarla Windows AI API'lerini test edin
+- Kaynak kodu en iyi uygulamalar ve desenler açısından inceleyin
+- Özel kullanım senaryolarınız için ilgili örnekleri belirleyin
 
-### Aşama 2: Model Seçimi ve Entegrasyonu
+### Aşama 2: Model Seçimi ve Entegrasyon
 
 **Gereksinim Analizi**
-- AI yetenekleri için işlevsel gereksinimleri tanımlayın
-- Performans kısıtlamalarını ve optimizasyon hedeflerini belirleyin
+- AI yetenekleri için fonksiyonel gereksinimleri tanımlayın
+- Performans kısıtlamaları ve optimizasyon hedeflerini belirleyin
 - Gizlilik ve güvenlik gereksinimlerini değerlendirin
-- Dağıtım mimarisi ve ölçekleme stratejilerini planlayın
+- Dağıtım mimarisi ve ölçeklendirme stratejilerini planlayın
 
-**Model Değerlendirme**
-- Kullanım durumunuz için açık kaynaklı modelleri test etmek için Foundry Local'ı kullanın
-- Özel model gereksinimlerine karşı Windows AI API'lerini karşılaştırın
-- Model boyutu, doğruluk ve çıkarım hızı arasındaki ödünleşimleri değerlendirin
-- Seçilen modellerle entegrasyon yaklaşımlarını prototipleyin
+**Model Değerlendirmesi**
+- Kullanım durumunuz için açık kaynak modelleri Foundry Local ile test edin
+- Windows AI API'lerini özel model gereksinimleriyle karşılaştırın
+- Model boyutu, doğruluk ve çıkarım hızı arasındaki dengeyi değerlendirin
+- Seçilen modeller ile entegrasyon prototipleri oluşturun
 
 ### Aşama 3: Uygulama Geliştirme
 
-**Temel Entegrasyon**
-- Uygun hata yönetimi ile Windows AI API entegrasyonunu uygulayın
-- AI işleme iş akışlarını destekleyen kullanıcı arayüzleri tasarlayın
+**Çekirdek Entegrasyon**
+- Windows AI API entegrasyonunu uygun hata yönetimi ile uygulayın
+- AI işlem iş akışlarını destekleyen kullanıcı arayüzleri tasarlayın
 - Model çıkarımı için önbellekleme ve optimizasyon stratejileri uygulayın
 - AI işlem performansı için telemetri ve izleme ekleyin
 
 **Test ve Doğrulama**
-- Uygulamaları farklı Windows donanım yapılandırmalarında test edin
-- Çeşitli yük koşulları altında performans ölçütlerini doğrulayın
-- AI işlevselliği güvenilirliği için otomatik testler uygulayın
-- AI destekli özelliklerle kullanıcı deneyimi testleri gerçekleştirin
+- Farklı Windows donanım yapılandırmalarında uygulamaları test edin
+- Çeşitli yük koşullarında performans metriklerini doğrulayın
+- AI fonksiyon güvenilirliği için otomatik testler uygulayın
+- AI destekli özelliklerle kullanıcı deneyimi testleri yapın
 
 ### Aşama 4: Optimizasyon ve Dağıtım
 
 **Performans Optimizasyonu**
-- Hedef donanım yapılandırmaları arasında uygulama performansını profilleyin
+- Hedef donanım yapılandırmaları için uygulama performans profili oluşturun
 - Bellek kullanımı ve model yükleme stratejilerini optimize edin
-- Mevcut donanım yeteneklerine dayalı uyarlanabilir davranışlar uygulayın
-- Farklı performans senaryoları için kullanıcı deneyimini ince ayar yapın
+- Mevcut donanım özelliklerine göre uyarlanabilir davranışlar uygulayın
+- Farklı performans senaryoları için kullanıcı deneyimini iyileştirin
 
 **Üretim Dağıtımı**
-- Uygulamaları uygun AI model bağımlılıkları ile paketleyin
-- Modeller ve uygulama mantığı için güncelleme mekanizmaları uygulayın
+- AI model bağımlılıklarıyla birlikte uygulamaları paketleyin
+- Model ve uygulama mantığı için güncelleme mekanizmalarını uygulayın
 - Üretim ortamları için izleme ve analiz yapılandırın
-- Kurumsal ve tüketici dağıtımları için yayılma stratejileri planlayın
+- Kurumsal ve tüketici dağıtımları için yaygınlaştırma stratejileri planlayın
 
 ## Pratik Uygulama Örnekleri
 
 ### Örnek 1: Akıllı Belge İşleme Uygulaması
 
-Birden fazla AI yeteneği kullanarak belgeleri işleyen bir Windows uygulaması oluşturun:
+Bir Windows uygulaması oluşturun; belgeleri birden çok AI yeteneğiyle işlesin:
 
 **Kullanılan Teknolojiler:**
 - Belge özetleme ve soru yanıtlama için Phi Silica
-- Tarama belgelerinden metin çıkarımı için OCR API'leri
-- Grafik ve diyagram analizi için Görüntü Açıklama API'leri
+- Tarama belgelerden metin çıkarmak için OCR API'leri
+- Grafik ve diyagram analizi için Görüntü Tanımlama API'leri
 - Belge sınıflandırması için özel ONNX modelleri
 
 **Uygulama Yaklaşımı:**
-- Modüler AI bileşenleri ile tasarım mimarisi oluşturun
-- Büyük belge grupları için asenkron işleme uygulayın
-- Uzun süreli işlemler için ilerleme göstergeleri ve iptal desteği ekleyin
-- Hassas belge işleme için çevrimdışı yetenekler dahil edin
+- Tak-çıkar AI bileşenleri ile modüler mimari tasarlayın
+- Büyük belge grupları için eşzamansız işlem uygulayın
+- Uzun süren işlemler için ilerleme göstergeleri ve iptal desteği ekleyin
+- Hassas belge işleme için çevrimdışı yetenek dahil edin
 
-### Örnek 2: Perakende Envanter Yönetim Sistemi
+### Örnek 2: Perakende Stok Yönetim Sistemi
 
-Perakende uygulamaları için AI destekli bir envanter sistemi oluşturun:
+Perakende uygulamaları için AI destekli stok sistemi oluşturun:
 
 **Kullanılan Teknolojiler:**
-- Ürün tanımlama için Görüntü Segmentasyonu
+- Ürün tanımlama için Görüntü Bölütleme
 - Marka ve kategori sınıflandırması için özel görsel modeller
-- Özel perakende dil modellerinin Foundry Local dağıtımı
-- Mevcut POS ve envanter sistemleri ile entegrasyon
+- Foundry Local ile özel perakende dil modelleri dağıtımı
+- Mevcut POS ve stok sistemleri ile entegrasyon
 
 **Uygulama Yaklaşımı:**
 - Gerçek zamanlı ürün taraması için kamera entegrasyonu oluşturun
 - Barkod ve görsel ürün tanıma uygulayın
-- Yerel dil modelleri kullanarak doğal dil envanter sorguları ekleyin
-- Çok mağazalı dağıtım için ölçeklenebilir mimari tasarlayın
+- Yerel dil modelleri ile doğal dil stok sorguları ekleyin
+- Çoklu mağaza dağıtımı için ölçeklenebilir mimari tasarlayın
 
-### Örnek 3: Sağlık Belgeleri Yardımcısı
+### Örnek 3: Sağlık Belgeleri Asistanı
 
-Gizliliği koruyan bir sağlık belgeleri aracı geliştirin:
+Gizliliği koruyan sağlık dokümantasyon aracı geliştirin:
 
 **Kullanılan Teknolojiler:**
 - Tıbbi not oluşturma ve klinik karar desteği için Phi Silica
 - El yazısı tıbbi kayıtları dijitalleştirmek için OCR
-- Windows ML aracılığıyla dağıtılan özel tıbbi dil modelleri
-- Tıbbi bilgi alımı için yerel vektör depolama
+- Windows ML ile dağıtılmış özel tıbbi dil modelleri
+- Tıbbi bilgi erişimi için yerel vektör depolama
 
 **Uygulama Yaklaşımı:**
-- Hasta gizliliği için tamamen çevrimdışı çalışma sağlayın
-- Tıbbi terminoloji doğrulama ve öneri uygulayın
-- Düzenleyici uyumluluk için denetim kaydı ekleyin
-- Mevcut Elektronik Sağlık Kaydı sistemleri ile entegrasyon tasarlayın
+- Hasta gizliliği için tam çevrimdışı çalışmayı sağlayın
+- Tıbbi terminoloji doğrulama ve öneriler uygulayın
+- Düzenleyici uyumluluk için denetim günlüğü ekleyin
+- Mevcut Elektronik Sağlık Kayıt sistemleri ile entegrasyon tasarlayın
 
 ## Performans Optimizasyon Stratejileri
 
-### Donanım Bilinçli Geliştirme
+### Donanım Farkındalıklı Geliştirme
 
 **NPU Optimizasyonu**
-- Copilot+ PC'lerde NPU yeteneklerinden yararlanacak uygulamalar tasarlayın
-- NPU olmayan cihazlarda GPU/CPU'ya zarif bir şekilde geçiş yapın
+- Copilot+ PC'lerde NPU yeteneklerini kullanacak uygulamalar tasarlayın
+- NPU olmayan cihazlarda GPU/CPU'ya yumuşak geçiş uygulayın
 - NPU'ya özgü hızlandırma için model formatlarını optimize edin
-- NPU kullanımını ve termal özelliklerini izleyin
+- NPU kullanım ve termal özelliklerini izleyin
 
 **Bellek Yönetimi**
 - Verimli model yükleme ve önbellekleme stratejileri uygulayın
-- Başlangıç süresini azaltmak için büyük modeller için bellek eşleme kullanın
-- Kaynak kısıtlı cihazlar için bellek bilinci uygulamalar tasarlayın
+- Başlangıç süresini azaltmak için büyük modeller için bellek eşlemeyi kullanın
+- Kaynak kısıtlı cihazlar için bellek dostu uygulamalar tasarlayın
 - Bellek optimizasyonu için model kuantizasyonu uygulayın
 
 **Pil Verimliliği**
 - Minimum güç tüketimi için AI işlemlerini optimize edin
 - Pil durumuna göre uyarlanabilir işlem uygulayın
-- Sürekli AI işlemleri için verimli arka plan işleme tasarlayın
-- Enerji kullanımını optimize etmek için güç profilleme araçlarını kullanın
+- Sürekli AI işlemleri için verimli arka plan işlemi tasarlayın
+- Enerji kullanımını optimize etmek için güç profil araçlarını kullanın
 
-### Ölçeklenebilirlik Düşünceleri
+### Ölçeklenebilirlik Dikkatleri
 
 **Çoklu İş Parçacığı**
-- Eşzamanlı işleme için iş parçacığı güvenli AI işlemleri tasarlayın
-- Mevcut çekirdekler arasında verimli iş dağıtımı uygulayın
+- Eşzamanlı işlem için iş parçacığı güvenli AI işlemleri tasarlayın
+- Mevcut çekirdekler arasında verimli iş dağılımı uygulayın
 - Engellemeyen AI işlemleri için async/await desenlerini kullanın
-- Farklı donanım yapılandırmaları için iş parçacığı havuzu optimizasyonunu planlayın
+- Farklı donanım yapılandırmaları için iş parçacığı havuzu optimizasyonu planlayın
 
 **Önbellekleme Stratejileri**
 - Sık kullanılan AI işlemleri için akıllı önbellekleme uygulayın
 - Model güncellemeleri için önbellek geçersiz kılma stratejileri tasarlayın
-- Pahalı ön işleme işlemleri için kalıcı önbellekleme kullanın
+- Maliyetli ön işleme işlemleri için kalıcı önbellekleme kullanın
 - Çok kullanıcılı senaryolar için dağıtılmış önbellekleme uygulayın
 
 ## Güvenlik ve Gizlilik En İyi Uygulamaları
@@ -506,112 +508,136 @@ Gizliliği koruyan bir sağlık belgeleri aracı geliştirin:
 ### Veri Koruma
 
 **Yerel İşleme**
-- Hassas verilerin yerel cihazdan asla ayrılmadığından emin olun
+- Hassas verilerin asla yerel cihaz dışına çıkmamasını sağlayın
 - AI modelleri ve geçici veriler için güvenli depolama uygulayın
 - Uygulama sandboxing için Windows güvenlik özelliklerini kullanın
-- Depolanan modeller ve ara işleme sonuçları için şifreleme uygulayın
+- Saklanan modeller ve ara işlem sonuçları için şifreleme uygulayın
 
 **Model Güvenliği**
-- Yükleme ve yürütmeden önce model bütünlüğünü doğrulayın
+- Yükleme ve yürütme öncesi model bütünlüğünü doğrulayın
 - Güvenli model güncelleme mekanizmaları uygulayın
-- Kurcalamayı önlemek için imzalı modeller kullanın
+- Müdahaleyi önlemek için imzalı modeller kullanın
 - Model dosyaları ve yapılandırma için erişim kontrolleri uygulayın
 
-### Uyumluluk Düşünceleri
+### Uyumluluk Dikkatleri
 
 **Düzenleyici Uyum**
-- Uygulamaları GDPR, HIPAA ve diğer düzenleyici gereksinimlere uygun şekilde tasarlayın
-- AI karar verme süreçleri için denetim kaydı uygulayın
-- AI tarafından oluşturulan sonuçlar için şeffaflık özellikleri sağlayın
-- AI veri işleme üzerinde kullanıcı kontrolü etkinleştirin
+- GDPR, HIPAA ve diğer düzenleyici gereksinimlere uygun uygulamalar tasarlayın
+- AI karar süreçleri için denetim kaydı ekleyin
+- AI tarafından üretilen sonuçlar için şeffaflık özellikleri sağlayın
+- AI veri işleme üzerinde kullanıcı kontrolü mümkün kılın
 
 **Kurumsal Güvenlik**
-- Windows kurumsal güvenlik politikaları ile entegrasyon
-- Kurumsal yönetim araçları aracılığıyla yönetilen dağıtımı destekleyin
+- Windows kurumsal güvenlik politikalarıyla entegrasyon sağlayın
+- Kurumsal yönetim araçları ile yönetilen dağıtımı destekleyin
 - AI özellikleri için rol tabanlı erişim kontrolleri uygulayın
-- AI işlevselliği için yönetim kontrolleri sağlayın
+- AI işlevselliği için yönetim kontrolü sağlayın
 
 ## Sorun Giderme ve Hata Ayıklama
 
 ### Yaygın Geliştirme Zorlukları
 
-**Yapılandırma Sorunları**
+**Derleme Yapılandırması Sorunları**
 - Windows AI API örnekleri için ARM64 platform yapılandırmasını sağlayın
 - Windows App SDK sürüm uyumluluğunu doğrulayın (1.8.1+ gerekli)
-- Paket kimliğinin düzgün yapılandırıldığını kontrol edin (Windows AI API'leri için gerekli)
-- Hedef çerçeve sürümünü destekleyen yapı araçlarını doğrulayın
+- Paket kimliğinin Windows AI API'leri için uygun yapılandırıldığını kontrol edin
+- Hedef framework sürümünü destekleyen yapı araçlarını doğrulayın
 
 **Model Yükleme Sorunları**
-- ONNX model uyumluluğunu Windows ML ile doğrulayın
-- Model dosyası bütünlüğünü ve format gereksinimlerini kontrol edin
+- Windows ML ile ONNX model uyumluluğunu doğrulayın
+- Model dosyası bütünlüğü ve format gereksinimlerini kontrol edin
 - Belirli modeller için donanım yetenek gereksinimlerini doğrulayın
-- Model yükleme sırasında bellek tahsisi sorunlarını hata ayıklayın
-- Donanım hızlandırma için yürütme sağlayıcı kaydını sağlayın
+- Model yükleme sırasında bellek tahsis sorunlarını hata ayıklayın
+- Donanım hızlandırması için yürütme sağlayıcı kaydını sağlayın
 
-**Dağıtım Modu Düşünceleri**
-- **Kendi Kendine İçerik Modu**: Daha büyük dağıtım boyutuyla tamamen desteklenir
-- **Çerçeveye Bağımlı Mod**: Daha küçük ayak izi ancak paylaşılan çalışma zamanı gerektirir
-- **Paketlenmemiş Uygulamalar**: Windows AI API'leri için artık desteklenmiyor
-- Kendi kendine içerik ARM64 dağıtımı için `dotnet run -p:Platform=ARM64 -p:SelfContained=true` kullanın
+**Dağıtım Modu Dikkatleri**
+- **Self-Contained Mode**: Tam desteklenir; daha büyük dağıtım boyutu ile
+- **Framework-Dependent Mode**: Daha küçük boyut ama paylaşılan çalışma zamanı gerektirir
+- **Paketlenmemiş Uygulamalar**: Windows AI API'leri için artık desteklenmemektedir
+- Self-contained ARM64 dağıtımı için `dotnet run -p:Platform=ARM64 -p:SelfContained=true` kullanın
 
 **Performans Sorunları**
-- Farklı donanım yapılandırmaları arasında uygulama performansını profilleyin
+- Farklı donanım yapılandırmaları için uygulama performansı profili oluşturun
 - AI işleme boru hatlarındaki darboğazları belirleyin
 - Veri ön işleme ve son işleme işlemlerini optimize edin
-- Performans izleme ve uyarı uygulayın
+- Performans izleme ve uyarı sistemleri uygulayın
 
 **Entegrasyon Zorlukları**
-- Uygun hata yönetimi ile API entegrasyon sorunlarını hata ayıklayın
-- Giriş veri formatlarını ve ön işleme gereksinimlerini doğrulayın
-- Kenar durumları ve hata koşullarını kapsamlı bir şekilde test edin
-- Üretim sorunlarını hata ayıklamak için kapsamlı günlük kaydı uygulayın
+- Doğru hata yönetimi ile API entegrasyon sorunlarını hata ayıklayın
+- Girdi veri formatları ve ön işleme gereksinimlerini doğrulayın
+- Uç durumlar ve hata koşullarını kapsamlı test edin
+- Üretim sorunları için kapsamlı günlükleme uygulayın
 
 ### Hata Ayıklama Araçları ve Teknikleri
 
 **Visual Studio Entegrasyonu**
-- Model yürütme analizi için AI Toolkit hata ayıklayıcıyı kullanın
-- AI işlemleri için performans profilleme uygulayın
-- Uygun istisna yönetimi ile asenkron AI işlemlerini hata ayıklayın
-- Optimizasyon için bellek profilleme araçlarını kullanın
+- Model yürütme analizi için AI Toolkit hata ayıklayıcısını kullanın
+- AI işlemleri için performans profil oluşturun
+- Eşzamansız AI işlemlerini uygun istisna yönetimi ile hata ayıklayın
+- Optimizasyon için bellek profil araçlarını kullanın
 
 **Windows AI Foundry Araçları**
-- Model testi ve doğrulama için Foundry Local CLI'den yararlanın
+- Model testi ve doğrulama için Foundry Local CLI'dan faydalanın
 - Entegrasyon doğrulaması için Windows AI API test araçlarını kullanın
-- AI işlem izleme için özel günlük kaydı uygulayın
-- AI işlevselliği güvenilirliği için otomatik testler oluşturun
+- AI işlem izleme için özel günlükleme uygulayın
+- AI fonksiyon güvenliği için otomatik testler oluşturun
 
-## Uygulamalarınızı Geleceğe Hazırlama
+## Uygulamalarınız İçin Geleceğe Hazırlık
 
 ### Gelişen Teknolojiler
 
 **Yeni Nesil Donanım**
-- Gelecekteki NPU yeteneklerinden yararlanacak uygulamalar tasarlayın
-- Artan model boyutları ve karmaşıklığı için plan yapın
-- Gelişen donanım için uyarlanabilir mimariler uygulayın
-- Gelecekteki uyumluluk için kuantum hazır algoritmaları düşünün
+- Geleceğin NPU yeteneklerini kullanacak uygulamalar tasarlayın
+- Artan model boyutları ve karmaşıklığını planlayın
+- Gelişen donanımlara uyumlu uyarlanabilir mimariler uygulayın
+- Geleceğe uyum için kuantum hazır algoritmaları göz önünde bulundurun
 
 **Gelişmiş AI Yetenekleri**
-- Daha fazla veri türü arasında çok modlu AI entegrasyonu için hazırlanın
-- Birden fazla cihaz arasında gerçek zamanlı işbirlikçi AI planlayın
+- Daha fazla veri türü için çok modlu AI entegrasyonuna hazırlanın
+- Çoklu cihazlar arasında gerçek zamanlı işbirlikçi AI planlayın
 - Federated learning yetenekleri için tasarım yapın
-- Edge-bulut hibrit zeka mimarilerini düşünün
+- Kenar-bulut hibrit zeka mimarilerini değerlendirin
 
 ### Sürekli Öğrenme ve Uyarlama
 
 **Model Güncellemeleri**
-- Sorunsuz model güncelleme mekanizmaları uygulayın
-- Geliştirilmiş model yeteneklerine uyum sağlayacak uygulamalar tasarlayın
-- Mevcut modellerle geriye dönük uyumluluk
+- Kesintisiz model güncelleme mekanizmaları uygulayın
+- İyileşmiş model yeteneklerine uyum sağlamak için uygulamalar tasarlayın
+- Mevcut modellerle geriye dönük uyumluluğu planlayın
+- Model performans değerlendirmesi için A/B testleri uygulayın
+
+**Özellik Gelişimi**
+- Yeni AI yeteneklerini karşılayacak modüler mimariler tasarlayın
+- Gelişmekte olan Windows AI API entegrasyonunu planlayın
+- Kademeli yetenek yayılımı için özellik bayrakları uygulayın
+- Gelişmiş AI özelliklerine uyumlu kullanıcı arayüzleri tasarlayın
+
+## Sonuç
+
+Windows Edge AI geliştirme, güçlü AI yeteneklerinin sağlam, güvenli ve ölçeklenebilir Windows platformu ile birleşmesini temsil eder. Windows AI Foundry ekosistemini ustalıkla kullanarak geliştiriciler, en yüksek gizlilik, güvenlik ve performans standartlarını korurken olağanüstü kullanıcı deneyimleri sunan akıllı uygulamalar yaratabilirler.
+
+Windows AI API'leri, Foundry Local ve Windows ML birleşimi, bir sonraki nesil akıllı Windows uygulamalarını oluşturmak için eşsiz bir temel sağlar. AI geliştikçe, Windows platformu, uygulamalarınızın gelişen teknolojilere uyum sağlamasını ve çeşitli Windows donanım ekosisteminde uyumluluk ve performansı sürdürmesini garanti eder.
+
+Tüketici uygulamaları, kurumsal çözümler veya özel sektör araçları geliştiriyor olun, Windows Edge AI geliştirme, modern Windows cihazlarının tam potansiyelini kullanarak akıllı, duyarlı ve derinlemesine entegre deneyimler yaratmanızı sağlar.
+
+## Ek Kaynaklar
+
+### Dokümantasyon ve Öğrenme
+- [Windows AI Foundry Dokümantasyonu](https://learn.microsoft.com/windows/ai/)
+- [Windows AI API'leri Referansı](https://learn.microsoft.com/windows/ai/apis/)
+- [Windows AI API'leriyle uygulama oluşturma başlangıcı](https://learn.microsoft.com/windows/ai/apis/model-setup)
+- [Foundry Local Başlarken](https://learn.microsoft.com/windows/ai/foundry-local/get-started/)
 - [Windows ML Genel Bakış](https://learn.microsoft.com/windows/ai/new-windows-ml/overview/)
 - [Windows App SDK Sistem Gereksinimleri](https://docs.microsoft.com/windows/apps/windows-app-sdk/system-requirements)
-- [Windows App SDK Geliştirme Ortamı Kurulumu](https://docs.microsoft.com/windows/apps/windows-app-sdk/set-up-your-development-environment)
+
+- [Windows Uygulama SDK Geliştirme Ortamı Kurulumu](https://docs.microsoft.com/windows/apps/windows-app-sdk/set-up-your-development-environment)
 - 
 
-### Örnek Depolar ve Kod
-- [Windows App SDK Örnekleri - Windows AI Foundry](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsAIFoundry)
-- [Windows App SDK Örnekleri - Windows ML](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML)
+### Örnek Depolar ve Kodlar
+- [Windows Uygulama SDK Örnekleri - Windows AI Foundry](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsAIFoundry)
+- [Windows Uygulama SDK Örnekleri - Windows ML](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML)
 - [ONNX Runtime Çıkarım Örnekleri](https://github.com/microsoft/onnxruntime-inference-examples)
-- [Windows App SDK Örnekleri Deposu](https://github.com/microsoft/WindowsAppSDK-Samples)
+- [Windows Uygulama SDK Örnek Deposu](https://github.com/microsoft/WindowsAppSDK-Samples)
 
 ### Geliştirme Araçları
 - [Visual Studio Code için AI Araç Seti](https://learn.microsoft.com/windows/ai/toolkit/)
@@ -620,10 +646,10 @@ Gizliliği koruyan bir sağlık belgeleri aracı geliştirin:
 - [Model Dönüştürme Araçları](https://code.visualstudio.com/docs/intelligentapps/modelconversion)
 
 ### Teknik Destek
-- [Windows ML Belgeleri](https://learn.microsoft.com/windows/ai/new-windows-ml/overview)
-- [ONNX Runtime Belgeleri](https://onnxruntime.ai/docs/)
-- [Windows App SDK Belgeleri](https://docs.microsoft.com/windows/apps/windows-app-sdk/)
-- [Sorun Bildir - Windows App SDK Örnekleri](https://github.com/microsoft/WindowsAppSDK-Samples/issues)
+- [Windows ML Dokümantasyonu](https://learn.microsoft.com/windows/ai/new-windows-ml/overview)
+- [ONNX Runtime Dokümantasyonu](https://onnxruntime.ai/docs/)
+- [Windows Uygulama SDK Dokümantasyonu](https://docs.microsoft.com/windows/apps/windows-app-sdk/)
+- [Sorun Bildir - Windows Uygulama SDK Örnekleri](https://github.com/microsoft/WindowsAppSDK-Samples/issues)
 
 ### Topluluk ve Destek
 - [Windows Geliştirici Topluluğu](https://developer.microsoft.com/en-us/windows/)
@@ -632,11 +658,13 @@ Gizliliği koruyan bir sağlık belgeleri aracı geliştirin:
 
 ---
 
-*Bu rehber, hızla gelişen Windows AI ekosistemine uyum sağlamak için tasarlanmıştır. Düzenli güncellemeler, en son platform yetenekleri ve geliştirme en iyi uygulamalarıyla uyumu garanti eder.*
+*Bu rehber, hızla gelişen Windows AI ekosistemi ile birlikte evrimleşecek şekilde tasarlanmıştır. Düzenli güncellemeler, en son platform yetenekleri ve geliştirme en iyi uygulamaları ile uyumluluğu sağlar.*
 
 [08. Microsoft Foundry Local ile Pratik - Tam Geliştirici Araç Seti](../Module08/README.md)
 
 ---
 
-**Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul edilmez.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Feragatname**:
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalardan veya yanlış yorumlamalardan sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

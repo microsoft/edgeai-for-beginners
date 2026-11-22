@@ -1,274 +1,317 @@
-# Zmeny
+# Zoznam zmien
 
-Všetky významné zmeny v EdgeAI pre začiatočníkov sú zdokumentované tu. Tento projekt používa záznamy založené na dátume a štýl Keep a Changelog (Pridané, Zmenené, Opravené, Odstránené, Dokumentácia, Presunuté).
+Všetky významné zmeny v EdgeAI pre Začiatočníkov sú tu zdokumentované. Tento projekt používa zápisy založené na dátume a štýl Keep a Changelog (Pridané, Zmenené, Opravené, Odstránené, Dokumentácia, Presunuté).
 
 ## 2025-10-30
 
-### Pridané - Modul06 Komplexné vylepšenie AI agentov
+### Pridané - Modul06 AI Agentov komplexné vylepšenie
 - **Integrácia Microsoft Agent Framework** (`Module06/01.IntroduceAgent.md`):
-  - Kompletná sekcia o Microsoft Agent Framework pre vývoj agentov pripravených na produkciu
-  - Podrobné vzory integrácie s Foundry Local pre nasadenie na okraji
-  - Príklady orchestrácie viacerých agentov so špecializovanými SLM modelmi
-  - Vzory nasadenia v podnikoch s riadením zdrojov a monitorovaním
-  - Funkcie zabezpečenia a súladu pre systémy agentov na okraji
-  - Príklady z reálneho sveta (maloobchod, zdravotníctvo, zákaznícky servis)
+  - Kompletná sekcia o Microsoft Agent Framework pre produkčne pripravený vývoj agentov
+  - Podrobné integračné vzory s Foundry Local pre edge nasadenie
+  - Príklady multi-agent orchestrácie so špecializovanými SLM modelmi
+  - Podnikové vzory nasadenia s manažmentom zdrojov a monitorovaním
+  - Funkcie zabezpečenia a dodržiavania predpisov pre edge agent systémy
+  - Reálne príklady implementácie (retail, zdravotníctvo, zákaznícky servis)
 
-- **Stratégie nasadenia produkčných SLM agentov**:
-  - **Foundry Local**: Kompletná dokumentácia pre podnikové AI runtime na okraji s inštaláciou, konfiguráciou a vzormi pre produkciu
-  - **Ollama**: Rozšírené nasadenie zamerané na komunitu s komplexným monitorovaním a správou modelov
-  - **VLLM**: Výkonný inferenčný engine s pokročilými optimalizačnými technikami a podnikovými funkciami
-  - Kontrolné zoznamy pre nasadenie v produkcii a porovnávacie tabuľky pre všetky tri platformy
+- **Stratégie produkčného nasadenia SLM agentov**:
+  - **Foundry Local**: Kompletná dokumentácia podnikovej úrovne edge AI runtime s inštaláciou, konfiguráciou a produkčnými vzormi
+  - **Ollama**: Vylepšené komunitné nasadenie s komplexným monitorovaním a správou modelov
+  - **VLLM**: Výkonný inference engine s pokročilými optimalizačnými technikami a podnikateľskými funkciami
+  - Kontrolné zoznamy nasadenia a porovnávacie tabuľky pre všetky tri platformy
 
-- **Vylepšenie rámcov SLM optimalizovaných pre okraj**:
-  - **ONNX Runtime**: Nová komplexná sekcia pre nasadenie SLM agentov na rôznych platformách
-  - Univerzálne vzory nasadenia na Windows, Linux, macOS, iOS a Android
+- **Vylepšenie edge-optimalizovaných SLM frameworkov**:
+  - **ONNX Runtime**: Nová komplexná sekcia pre multiplatformové nasadenie SLM agentov
+  - Univerzálne nasadzovacie vzory pre Windows, Linux, macOS, iOS a Android
   - Možnosti hardvérovej akcelerácie (CPU, GPU, NPU) s automatickou detekciou
-  - Funkcie pripravené na produkciu a optimalizácie špecifické pre agentov
-  - Kompletné implementačné príklady s integráciou Microsoft Agent Framework
+  - Produkčne pripravené funkcie a agent-specifické optimalizácie
+  - Kompletné príklady implementácie s integráciou Microsoft Agent Framework
 
 - **Referencie a ďalšie čítanie**:
-  - Rozsiahla knižnica zdrojov s viac ako 100 autoritatívnymi zdrojmi
-  - Základné výskumné práce o AI agentoch a malých jazykových modeloch
-  - Oficiálna dokumentácia pre všetky hlavné rámce a nástroje
+  - Komplexná knižnica zdrojov s viac než 100 autoritatívnymi zdrojmi
+  - Kľúčové výskumné články o AI agentoch a malých jazykových modeloch
+  - Oficiálna dokumentácia všetkých veľkých frameworkov a nástrojov
   - Priemyselné správy, analýzy trhu a technické benchmarky
   - Vzdelávacie zdroje, konferencie a komunitné fóra
-  - Normy, špecifikácie a rámce súladu
+  - Štandardy, špecifikácie a rámce dodržiavania predpisov
 
-### Zmenené - Modernizácia obsahu Modul06
-- **Vylepšené vzdelávacie ciele**: Pridané zvládnutie Microsoft Agent Framework a schopnosti nasadenia na okraji
-- **Zameranie na produkciu**: Posun od konceptuálneho k implementačne pripravenému sprievodcovi s príkladmi z produkcie
-- **Príklady kódu**: Aktualizované všetky príklady na používanie moderných SDK vzorov a najlepších praktík
-- **Architektonické vzory**: Pridané hierarchické architektúry agentov a koordinácia okraj-cloud
-- **Optimalizácia výkonu**: Vylepšené odporúčaniami pre riadenie zdrojov a automatické škálovanie
+### Zmenené - Modernizácia obsahu Modulu06
+- **Vylepšené vzdelávacie ciele**: Pridaná majstrovská znalosť Microsoft Agent Framework a schopnosti edge nasadenia
+- **Produkčné zameranie**: Posun od konceptuálneho k implementačne pripravenému s produkčnými príkladmi
+- **Príklady kódu**: Aktualizované všetky príklady na moderné vzory SDK a najlepšie praktiky
+- **Architektonické vzory**: Pridané hierarchické agentové architektúry a koordinácia edge-to-cloud
+- **Optimalizácia výkonu**: Vylepšené o manažment zdrojov a odporúčania pre automatické škálovanie
 
-### Dokumentácia - Vylepšenie štruktúry Modul06
-- **Komplexné pokrytie rámca agentov**: Od základných konceptov po nasadenie v podnikoch
-- **Stratégie nasadenia v produkcii**: Kompletné sprievodce pre Foundry Local, Ollama a VLLM
-- **Optimalizácia na rôznych platformách**: Pridaný ONNX Runtime pre univerzálne nasadenie
-- **Knižnica zdrojov**: Rozsiahle referencie pre ďalšie vzdelávanie a implementáciu
+### Dokumentácia - Vylepšenie štruktúry Modulu06
+- **Komplexné pokrytie Agent Frameworku**: Od základných konceptov po podnikové nasadenie
+- **Stratégie produkčného nasadenia**: Kompletné návody pre Foundry Local, Ollama a VLLM
+- **Optimalizácia naprieč platformami**: Pridaný ONNX Runtime pre univerzálne nasadenie
+- **Knižnica zdrojov**: Rozsiahle odkazy pre pokračujúce učenie a implementáciu
 
-### Pridané - Aktualizácia dokumentácie Model Context Protocol (MCP) v Modul06
+### Pridané - Aktualizácia dokumentácie protokolu Model Context Protocol (MCP) v Module06
 - **Modernizácia úvodu MCP** (`Module06/03.IntroduceMCP.md`):
-  - Aktualizované najnovšími špecifikáciami MCP z modelcontextprotocol.io (verzia 2025-06-18)
-  - Pridaná oficiálna analógia USB-C pre štandardizované AI aplikácie
+  - Aktualizované podľa najnovších špecifikácií MCP z modelcontextprotocol.io (verzia 2025-06-18)
+  - Pridaná oficiálna USB-C analógia pre štandardizované AI aplikácie
   - Aktualizovaná sekcia architektúry s oficiálnym dvojvrstvovým dizajnom (Data Layer + Transport Layer)
-  - Vylepšená dokumentácia základných primitív so serverovými primitívami (Nástroje, Zdroje, Výzvy) a klientskými primitívami (Sampling, Elicitation, Logging)
+  - Vylepšená dokumentácia základných primitív so serverovými primitívmi (Nástroje, Zdroje, Výzvy) a klientskými primitívmi (Sampling, Elicitation, Logging)
 
-- **Komplexné referencie a zdroje MCP**:
-  - Pridaný odkaz **MCP pre začiatočníkov** (https://aka.ms/mcp-for-beginners)
-  - Oficiálna dokumentácia MCP a špecifikácie (modelcontextprotocol.io)
+- **Komplexné MCP referencie a zdroje**:
+  - Pridaný odkaz na **MCP pre začiatočníkov** (https://aka.ms/mcp-for-beginners) 
+  - Oficiálna MCP dokumentácia a špecifikácie (modelcontextprotocol.io)
   - Vývojové zdroje vrátane MCP Inspector a referenčných implementácií
-  - Technické normy (JSON-RPC 2.0, JSON Schema, OpenAPI, Server-Sent Events)
+  - Technické štandardy (JSON-RPC 2.0, JSON Schema, OpenAPI, Server-Sent Events)
 
-### Pridané - Modul04 Integrácia Qualcomm QNN
-- **Nová sekcia 7: Qualcomm QNN Optimalizačný balík** (`Module04/05.QualcommQNN.md`):
-  - Komplexný 400+ riadkový sprievodca pokrývajúci jednotný AI inferenčný rámec Qualcommu
-  - Podrobné pokrytie heterogénneho výpočtu (Hexagon NPU, Adreno GPU, Kryo CPU)
-  - Optimalizácia zohľadňujúca hardvér pre platformy Snapdragon s inteligentným rozdelením záťaže
-  - Pokročilé techniky kvantizácie (INT8, INT16, zmiešaná presnosť) pre mobilné nasadenie
-  - Energeticky efektívna optimalizácia inferencie pre zariadenia na batérie a aplikácie v reálnom čase
-  - Kompletný sprievodca inštaláciou s nastavením QNN SDK a konfiguráciou prostredia
-  - Praktické príklady: Konverzia PyTorch na QNN, optimalizácia viacerých backendov, generovanie binárneho kontextu
-  - Pokročilé vzory použitia: konfigurácia vlastného backendu, dynamická kvantizácia, profilovanie výkonu
+
+### Pridané - Integrácia Qualcomm QNN v Module04
+- **Nová Sekcia 7: Qualcomm QNN Optimalizačný balík** (`Module04/05.QualcommQNN.md`):
+  - Kompletný 400+ riadkový návod pokrývajúci Qualcomm unified AI inference framework
+  - Podrobný prehľad heterogénneho výpočtu (Hexagon NPU, Adreno GPU, Kryo CPU)
+  - Hardvérový-aware optimalizácie pre Snapdragon platformy s inteligentným rozdelením záťaže
+  - Pokročilé kvantizačné techniky (INT8, INT16, mixed-precision) pre mobilné nasadenie
+  - Energeticky efektívna optimalizácia inferencie pre batériou napájané zariadenia a realtime aplikácie
+  - Kompletný inštalačný návod s nastavením QNN SDK a konfiguráciou prostredia
+  - Praktické príklady: konverzia PyTorch na QNN, multi-backend optimalizácia, generovanie kontextového binárneho súboru
+  - Pokročilé vzory použitia: vlastná konfigurácia backendu, dynamická kvantizácia, profilovanie výkonu
   - Komplexná sekcia riešenia problémov a komunitné zdroje
 
-- **Vylepšená štruktúra Modul04**:
-  - Aktualizovaný README.md na zahrnutie 7 progresívnych sekcií (predtým 6)
-  - Pridaný Qualcomm QNN do tabuľky benchmarkov výkonu (zlepšenie rýchlosti o 5-15x, zníženie pamäte o 50-80%)
-  - Komplexné vzdelávacie výstupy pre mobilné AI nasadenie a optimalizáciu energie
+- **Vylepšená štruktúra Modulu04**:
+  - Aktualizovaný README.md s 7 progresívnymi sekciami (predtým 6)
+  - Pridaný Qualcomm QNN do tabuľky benchmarkov výkonu (5-15x zrýchlenie, 50-80% zníženie pamäte)
+  - Komplexné vzdelávacie výsledky pre mobilné AI nasadenie a optimalizáciu spotreby energie
 
-### Zmenené - Aktualizácie dokumentácie Modul04
+### Zmenené - Aktualizácie dokumentácie Modulu04
 - **Vylepšenie dokumentácie Microsoft Olive** (`Module04/03.MicrosoftOlive.md`):
-  - Pridaná komplexná sekcia "Olive Recipes Repository" pokrývajúca viac ako 100 predpripravených optimalizačných receptov
-  - Podrobné pokrytie podporovaných rodín modelov (Phi, Llama, Qwen, Gemma, Mistral, DeepSeek)
-  - Praktické príklady použitia pre prispôsobenie receptov a príspevky komunity
-  - Vylepšené benchmarky výkonu a pokyny na integráciu
+  - Pridaná kompletná sekcia "Olive Recipes Repository" s viac než 100 predpripravenými optimalizačnými receptami
+  - Podrobný prehľad podporovaných rodín modelov (Phi, Llama, Qwen, Gemma, Mistral, DeepSeek)
+  - Praktické príklady použitia na prispôsobovanie receptov a komunitné príspevky
+  - Vylepšené benchmarky výkonu a integračné návody
 
-- **Preusporiadanie sekcií v Modul04**:
-  - Apple MLX presunuté na sekciu 5 (predtým sekcia 6)
-  - Workflow Synthesis presunuté na sekciu 6 (predtým sekcia 7)
-  - Qualcomm QNN umiestnené ako sekcia 7 (špecializované na mobilné/okrajové zameranie)
-  - Aktualizované všetky referencie súborov a navigačné odkazy
+- **Premiestnenie sekcií v Module04**:
+  - Apple MLX presunutý na Sekciu 5 (predtým Sekcia 6)
+  - Workflow Synthesis presunutý na Sekciu 6 (predtým Sekcia 7)  
+  - Qualcomm QNN zaradený ako Sekcia 7 (špecializované zameranie na mobilné/edge)
+  - Aktualizované všetky odkazy na súbory a navigačné linky podľa zmien
 
-### Opravené - Validácia vzoriek workshopu
+### Opravené - Validácia vzoriek Workshopu
 - **Validácia a oprava chat_bootstrap.py**:
   - Opravený poškodený import (`util.util.workshop_utils` → `util.workshop_utils`)
-  - Vytvorený chýbajúci `__init__.py` v balíku util pre správne rozpoznanie modulu Python
-  - Nainštalované požadované závislosti (openai, foundry-local-sdk) v conda prostredí
-  - Úspešne validované spustenie vzorky s predvolenými aj vlastnými výzvami
+  - Vytvorený chýbajúci `__init__.py` v balíku util pre správne rozpoznanie Python modulu
+  - Nainštalované potrebné závislosti (openai, foundry-local-sdk) v conda prostredí
+  - Úspešná validácia spustenia vzorky s použitím predvolených aj vlastných promptov
   - Potvrdená integrácia so službou Foundry Local a načítanie modelu (phi-4-mini s CUDA optimalizáciou)
 
-### Dokumentácia - Aktualizácie komplexného sprievodcu
-- **Kompletná reštrukturalizácia README.md Modul04**:
-  - Pridaný Qualcomm QNN ako hlavný optimalizačný rámec vedľa OpenVINO, Olive, MLX
-  - Aktualizované vzdelávacie výstupy kapitoly na zahrnutie mobilného AI nasadenia a optimalizácie energie
-  - Vylepšená porovnávacia tabuľka výkonu s metrikami QNN a prípadmi použitia mobilného/okrajového nasadenia
-  - Zachovaná logická postupnosť od podnikových riešení po optimalizácie špecifické pre platformu
+### Dokumentácia - Komplexné aktualizácie navigácie
+- **Kompletná rekonštrukcia README.md Modulu04**:
+  - Pridaný Qualcomm QNN ako hlavný optimalizačný framework vedľa OpenVINO, Olive, MLX
+  - Aktualizované výukové výsledky kapitol s mobilným AI nasadením a optimalizáciou spotreby
+  - Vylepšená tabuľka porovnania výkonu s metrikami QNN a prípadmi použitia na mobilné/edge
+  - Zachovaná logická postupnosť od podnikových riešení po platformovo špecifické optimalizácie
 
 - **Krížové odkazy a navigácia**:
-  - Aktualizované všetky interné odkazy a referencie súborov pre nové číslovanie sekcií
-  - Vylepšený popis Workflow Synthesis na zahrnutie mobilných, desktopových a cloudových prostredí
-  - Pridané rozsiahle odkazy na zdroje pre ekosystém vývojárov Qualcomm
+  - Aktualizované všetky interné odkazy a referencie súborov na nové číslovanie sekcií
+  - Rozšírený popis workflow synthesis o mobilné, desktopové a cloudové prostredia
+  - Pridané komplexné odkazy na Qualcomm developerský ekosystém
 
 ## 2025-10-08
 
-### Pridané - Komplexná aktualizácia workshopu
-- **Kompletné prepracovanie README.md workshopu**:
-  - Pridaný komplexný úvod vysvetľujúci hodnotu Edge AI (súkromie, výkon, náklady)
-  - Vytvorených 6 hlavných vzdelávacích cieľov s podrobnými kompetenciami
-  - Pridaná tabuľka vzdelávacích výstupov s dodávkami a maticou kompetencií
-  - Zahrnuté zručnosti pripravené na kariéru pre relevantnosť v priemysle
-  - Pridaný rýchly sprievodca s predpokladmi a 3-krokovým nastavením
+### Pridané - Komplexná aktualizácia Workshopu
+- **Kompletné prepísanie README.md Workshopu**:
+  - Pridané komplexné predstavenie vysvetľujúce hodnotovú ponuku Edge AI (súkromie, výkon, náklady)
+  - Vytvorených 6 základných vzdelávacích cieľov s detailnými kompetenciami
+  - Pridaná tabuľka výsledkov učenia s výstupmi a maticou kompetencií
+  - Zaradená sekcia zručností pripravených na kariéru pre priemyselnú relevantnosť
+  - Pridaný rýchly úvod s predpokladmi a nastavením v 3 krokoch
   - Vytvorené tabuľky zdrojov pre Python vzorky (8 súborov s časmi spustenia)
-  - Pridaná tabuľka Jupyter notebookov (8 notebookov s hodnotením obtiažnosti)
-  - Vytvorená tabuľka dokumentácie (7 kľúčových dokumentov s "Použiť kedy" odporúčaniami)
-  - Pridané odporúčania pre vzdelávaciu cestu pre rôzne úrovne zručností
+  - Pridaná tabuľka Jupyter notebookov (8 notebookov s hodnoteniami náročnosti)
+  - Vytvorená tabuľka dokumentácie (7 kľúčových dokumentov s "Použiť keď" odporúčaniami)
+  - Pridané odporúčania študijných ciest pre rozličné úrovne zručností
 
-- **Validácia a testovacia infraštruktúra workshopu**:
-  - Vytvorený `scripts/validate_samples.py` - Komplexný validačný nástroj pre syntax, importy a najlepšie praktiky
-  - Vytvorený `scripts/test_samples.py` - Nástroj na rýchle testovanie všetkých Python vzoriek
+- **Validácia a testovacia infraštruktúra Workshopu**:
+  - Vytvorený `scripts/validate_samples.py` - Komplexný nástroj na validáciu syntaxe, importov a najlepších praktík
+  - Vytvorený `scripts/test_samples.py` - Smoke test pre všetky Python vzorky
   - Pridaná dokumentácia validácie do `scripts/README.md`
 
 - **Komplexná dokumentácia**:
-  - Vytvorený `SAMPLES_UPDATE_SUMMARY.md` - 400+ riadkový podrobný sprievodca pokrývajúci všetky vylepšenia
+  - Vytvorený `SAMPLES_UPDATE_SUMMARY.md` - 400+ riadkový detailný návod pokrývajúci všetky vylepšenia
   - Vytvorený `UPDATE_COMPLETE.md` - Výkonný súhrn dokončenia aktualizácie
-  - Vytvorený `QUICK_REFERENCE.md` - Rýchla referenčná karta pre workshop
+  - Vytvorený `QUICK_REFERENCE.md` - Rýchla referenčná karta Workshopu
 
-### Zmenené - Modernizácia Python vzoriek workshopu
-- **Všetkých 8 Python vzoriek aktualizovaných s najlepšími praktikami**:
-  - Vylepšené spracovanie chýb s blokmi try-except okolo všetkých I/O operácií
-  - Pridané typové náznaky a komplexné docstringy
+### Zmenené - Modernizácia Python vzoriek Workshopu
+- **Aktualizované všetky 8 Python vzoriek podľa najlepších praktík**:
+  - Vylepšené zachytávanie chýb pomocou try-except blokov okolo všetkých I/O operácií
+  - Pridané typové anotácie a komplexné docstringy
   - Implementovaný konzistentný vzor logovania [INFO]/[ERROR]/[RESULT]
-  - Chránené voliteľné importy s náznakmi inštalácie
+  - Ochrana voliteľných importov s inštalačnými nápovedami
   - Zlepšená spätná väzba používateľovi vo všetkých vzorkách
 
 - **session01/chat_bootstrap.py**:
   - Vylepšená inicializácia klienta s komplexnými chybovými správami
-  - Zlepšené spracovanie chýb pri streamovaní s validáciou blokov
-  - Pridané lepšie spracovanie výnimiek pre nedostupnosť služby
+  - Vylepšené zachytávanie chýb pri streamovaní s validáciou chunkov
+  - Pridané lepšie spracovanie výnimiek pri nedostupnosti služby
 
 - **session02/rag_pipeline.py**:
-  - Pridané ochranné importy pre sentence-transformers s náznakmi inštalácie
-  - Vylepšené spracovanie chýb pre operácie vkladania a generovania
+  - Pridané obmedzenia importu pre sentence-transformers s inštalačnými nápovedami
+  - Vylepšené zachytávanie chýb pre embedding a generovanie
   - Zlepšené formátovanie výstupu so štruktúrovanými výsledkami
 
 - **session02/rag_eval_ragas.py**:
-  - Chránené voliteľné importy (ragas, datasets) s priateľskými chybovými správami
-  - Pridané spracovanie chýb pre hodnotiace metriky
-  - Vylepšené formátovanie výstupu pre hodnotiace výsledky
+  - Ochrana voliteľných importov (ragas, datasets) s užívateľsky prívetivými chybovými správami
+  - Pridané spracovanie chýb pri vyhodnocovacích metriách
+  - Vylepšené formátovanie výstupu hodnotiacich výsledkov
 
 - **session03/benchmark_oss_models.py**:
-  - Implementovaná elegantná degradácia (pokračuje pri zlyhaní modelov)
-  - Pridané podrobné hlásenie pokroku a spracovanie chýb pre každý model
-  - Vylepšený výpočet štatistík s komplexným zotavením po chybách
+  - Implementované elegantné zlyhanie (pokračovanie napriek chybám modelu)
+  - Pridané detailné reportovanie priebehu a spracovanie chýb na model
+  - Vylepšený výpočet štatistík s komplexným zotavením z chýb
 
 - **session04/model_compare.py**:
-  - Pridané typové náznaky (návratové typy Tuple)
+  - Pridané typové hinty (návratové typy Tuple)
   - Vylepšené formátovanie výstupu so štruktúrovanými JSON výsledkami
-  - Implementované spracovanie chýb pre každý model so zotavením
+  - Implementované spracovanie chýb na model s obnovou
 
 - **session05/agents_orchestrator.py**:
-  - Vylepšené Agent.act() s komplexnými docstringami
-  - Pridané spracovanie chýb v pipeline s logovaním po jednotlivých etapách
-  - Zlepšené riadenie pamäte a sledovanie stavu
+  - Vylepšená metóda Agent.act() s komplexnými docstringami
+  - Pridané spracovanie chýb pipeline s logovaním na jednotlivých fázach
+  - Zlepšená správa pamäte a sledovanie stavu
 
 - **session06/models_router.py**:
-  - Vylepšená dokumentácia funkcií pre všetky komponenty smerovania
-  - Pridané podrobné logovanie vo funkcii route()
+  - Vylepšená dokumentácia funkcií pre všetky komponenty routovania
+  - Pridané detailné logovanie vo funkcii route()
   - Zlepšený testovací výstup so štruktúrovanými výsledkami
 
 - **session06/models_pipeline.py**:
   - Pridané spracovanie chýb do pomocnej funkcie chat()
-  - Vylepšené pipeline() s logovaním etáp a hlásením pokroku
-  - Zlepšené main() s komplexným zotavením po chybách
+  - Vylepšená pipeline() s logovaním fáz a reportovaním priebehu
+  - Zlepšená main() s komplexným zotavením z chýb
 
-### Dokumentácia - Vylepšenie dokumentácie workshopu
-- Aktualizovaný hlavný README.md s sekciou workshopu zdôrazňujúcou praktickú vzdelávaciu cestu
-- Vylepšený STUDY_GUIDE.md s komplexnou sekciou workshopu vrátane:
-  - Vzdelávacích cieľov a oblastí zamerania štúdia
-  - Otázok na sebahodnotenie
-  - Praktických cvičení s odhadmi času
-  - Časového rozvrhu pre koncentrované a čiastočné štúdium
-  - Pridaný workshop do šablóny sledovania pokroku
-- Aktualizovaný časový rozvrh z 20 hodín na 30 hodín (vrátane workshopu)
-- Pridané popisy vzoriek workshopu a vzdelávacie výstupy do README
+### Dokumentácia - Vylepšenie Workshop dokumentácie
+- Aktualizovaný hlavný README.md so sekciou Workshop zdôrazňujúcou praktickú študijnú cestu
+- Vylepšený STUDY_GUIDE.md s komplexnou sekciou Workshop vrátane:
+  - vzdelávacích cieľov a zameraných oblastí štúdia
+  - otázok na sebahodnotenie
+  - praktických cvičení s odhadmi času
+  - časového rozvrhnutia pre intenzívne a čiastočné štúdium
+  - Pridaný Workshop do šablóny sledovania pokroku
+- Aktualizovaný návod na rozdelenie času z 20 hodín na 30 hodín (vrátane Workshopu)
+- Pridané popisy vzoriek Workshopu a vzdelávacie výsledky do README
 
 ### Opravené
-- Vyriešené nekonzistentné vzory spracovania chýb vo vzorkách workshopu
-- Opravené chyby voliteľných importov s správnymi ochrannými mechanizmami
-- Opravené chýbajúce typové náznaky v kritických funkciách
-- Riešené nedostatočné spätné väzby používateľovi v scenároch chýb
+- Riešenie nekonzistentných vzorov spracovania chýb vo vzorkách Workshopu
+- Opravené chyby s voliteľnými závislosťami importu s adekvátnymi ochranami
+- Opravené chýbajúce typové hinty v kritických funkciách
+- Vylepšená spätná väzba používateľovi pri chybových scenároch
 - Opravené problémy validácie s komplexnou testovacou infraštruktúrou
 
 ---
 
 ## 2025-09-23
 
-### Zmenené - Hlavná modernizácia Modul 08
-- **Komplexné zosúladenie so vzormi úložiska Microsoft Foundry-Local**
-  - Aktualizované všetky príklady kódu na používanie moderného `FoundryLocalManager` a integrácie OpenAI SDK
-  - Nahradené zastarané manuálne volania `requests` správnym používaním SDK
-  - Zosúladené implementačné vzory s oficiálnou dokumentáciou a vzorkami Microsoftu
+### Zmenené - Veľká modernizácia Modulu 08
+- **Komplexné zosúladenie s repozitárom Microsoft Foundry-Local**
+  - Aktualizované všetky príklady kódu na použitie moderného `FoundryLocalManager` a integrácie OpenAI SDK
+  - Nahradené zastarané manuálne volania `requests` správnym použitím SDK
+  - Zosúladené implementačné vzory s oficiálnou Microsoft dokumentáciou a príkladmi
 
 - **Modernizácia 05.AIPoweredAgents.md**:
-  - Aktualizovaná orchestrácia viacerých agentov na používanie moderných SDK vzorov
-  - Vylep
-  - Spustiteľné ukážky v `Module08/samples/01`–`06` s inštrukciami pre Windows cmd
-    - `01` REST rýchly chat (`chat_quickstart.py`)
-    - `02` SDK rýchly štart s podporou OpenAI/Foundry Local a Azure OpenAI (`sdk_quickstart.py`)
-    - `03` CLI zoznam a testovanie (`list_and_bench.cmd`)
-    - `04` Chainlit demo (`app.py`)
-    - `05` Orchestrácia viacerých agentov (`python -m samples.05.agents.coordinator`)
-    - `06` Router Models-as-Tools (`router.py`)
-- Podpora Azure OpenAI v SDK ukážke Session 2 s konfiguráciou environmentálnych premenných
-- `.vscode/settings.json` nastavené na `Module08/.venv` pre zlepšenie analýzy Pythonu
-- `.env` s nápovedou `PYTHONPATH` pre lepšiu orientáciu VS Code/Pylance
+  - Aktualizovaná multi-agent orchestrácia na použitie moderných SDK vzorov
+  - Vylepšená implementácia koordinátora s pokročilými funkciami (smyčky spätnej väzby, monitorovanie výkonu)
+  - Pridané komplexné spracovanie chýb a kontrola stavu služieb
+  - Integrované správne odkazy na lokálne vzorky (`samples/05/multi_agent_orchestration.ipynb`)
+  - Aktualizované príklady volania funkcií na použitie moderného parametra `tools` namiesto zastaraného `functions`
+  - Pridané produkčne pripravené vzory s monitorovaním a sledovaním štatistík
 
-### Zmenené
-- Predvolený model aktualizovaný na `phi-4-mini` v dokumentácii a ukážkach Module 08; odstránené zmienky o `phi-3.5` v Module 08
-- Vylepšenia routera (`Module08/samples/06/router.py`):
-  - Zisťovanie endpointov cez `foundry service status` s regex analýzou
-  - Kontrola zdravia `/v1/models` pri štarte
-  - Konfigurovateľný registrátor modelov cez environmentálne premenné (`GENERAL_MODEL`, `REASONING_MODEL`, `CODE_MODEL`, `TOOL_REGISTRY` JSON)
-- Aktualizované požiadavky: `Module08/requirements.txt` teraz zahŕňa `openai` (spolu s `requests`, `chainlit`)
-- Ujasnené pokyny k ukážke Chainlit a pridané riešenie problémov; vyriešenie importov cez nastavenia pracovného priestoru
+- **Kompletné prepísanie 06.ModelsAsTools.md**:
+  - Nahradený základný registrovací nástroj inteligentnou implementáciou routera modelov
+  - Pridaný výber modelu na základe kľúčových slov pre rôzne typy úloh (všeobecné, odôvodňovanie, kód, kreativita)
+  - Integrovaná konfigurácia založená na prostredí s flexibilným priraďovaním modelov
+  - Vylepšené o komplexné monitorovanie stavu služieb a spracovanie chýb
+  - Pridané produkčné vzory nasadenia s monitorovaním požiadaviek a sledovaním výkonu
+  - Zosúladené s lokálnou implementáciou v `samples/06/router.py` a `samples/06/model_router.ipynb`
+
+- **Zlepšenia štruktúry dokumentácie**:
+  - Pridané prehľadové sekcie zdôrazňujúce modernizáciu a zosúladenie so SDK
+  - Vylepšené pomocou emotikonov a lepšieho formátovania pre lepšiu čitateľnosť
+  - Pridané správne odkazy na lokálne vzorky v celej dokumentácii
+  - Zahrnuté pokyny pre produkčne pripravené implementácie a najlepšie praktiky
+
+### Pridané
+- Komplexné prehľadové sekcie v súboroch Modulu 08 zdôrazňujúce modernú integráciu SDK
+- Architektonické zvýraznenie pokročilých funkcií (multi-agent systémy, inteligentné routovanie)
+- Priame odkazy na lokálne implementácie vzorov pre praktickú skúsenosť
+- Pokyny pre produkčné nasadenie s monitorovaním a vzormi spracovania chýb
+- Interaktívne Jupyter notebook príklady s pokročilými funkciami a benchmarkami
 
 ### Opravené
-- Vyriešené problémy s importom:
-  - Router už nezávisí na neexistujúcom module `utils`; funkcie sú vložené
-  - Koordinátor používa relatívny import (`from .specialists import ...`) a je spustený cez cestu modulu
-  - Konfigurácia VS Code/Pylance na vyriešenie importov `chainlit` a balíkov
-- Opravená drobná chyba v `STUDY_GUIDE.md` a pridané pokrytie Module 08
+- Nesúlady medzi dokumentáciou a skutočnými implementáciami vzoriek
+- Zastaralé vzory používania SDK v celom Module 08
+- Chýbajúce odkazy na komplexnú miestnu knižnicu vzoriek
+- Nekonzistentné prístupy v implementácii v rôznych sekciách
+
+---
+
+## 2025-09-18
+
+### Pridané
+- Modul 08: Microsoft Foundry Local – Kompletný vývojársky toolkit
+  - Šesť sekcií: nastavenie, integrácia Azure AI Foundry, open-source modely, moderné demo, agenti a modely ako nástroje
+  - Spustiteľné vzorky pod `Module08/samples/01`–`06` s inštrukciami pre Windows cmd
+    - `01` Rýchly REST chat (`chat_quickstart.py`)
+
+    - `02` Rýchly štart SDK s podporou OpenAI/Foundry Local a Azure OpenAI (`sdk_quickstart.py`)
+    - `03` CLI list-and-bench (`list_and_bench.cmd`)
+    - `04` Demo Chainlit (`app.py`)
+    - `05` Orchestrácia viacerých agentov (`python -m samples.05.agents.coordinator`)
+    - `06` Router typu Models-as-Tools (`router.py`)
+- Podpora Azure OpenAI v ukážke Session 2 SDK s konfiguráciou cez premenné prostredia
+- `.vscode/settings.json` nasmerované na `Module08/.venv` pre lepšie vyhodnocovanie Python analyzátorom
+- `.env` s náznakom `PYTHONPATH` pre podporu vo VS Code/Pylance
+
+### Zmenené
+- Predvolený model aktualizovaný na `phi-4-mini` v dokumentácii a ukážkach Modulu 08; odstránené posledné zmienky o `phi-3.5` v rámci Modulu 08
+- Vylepšenia routera (`Module08/samples/06/router.py`):
+  - Objavovanie endpointov cez `foundry service status` s regex parsovaním
+  - Kontrola zdravia `/v1/models` pri štarte
+  - Registrácia modelov konfigurovateľná cez prostredie (`GENERAL_MODEL`, `REASONING_MODEL`, `CODE_MODEL`, `TOOL_REGISTRY` JSON)
+- Aktualizované požiadavky: `Module08/requirements.txt` teraz obsahuje `openai` (spolu s `requests`, `chainlit`)
+- Upravené usmernenie pre Chainlit ukážku a pridané riešenie problémov; vyriešenie importov cez nastavenia pracovného priestoru
+
+### Opravené
+- Riešené problémy s importmi:
+  - Router už nezávisí na neexistujúcom module `utils`; funkcie sú vložené priamo
+  - Koordinátor používa relatívny import (`from .specialists import ...`) a je spúšťaný cez cestu modulu
+  - Konfigurácia VS Code/Pylance pre vyriešenie importov `chainlit` a balíčkov
+- Opravená drobná preklep v `STUDY_GUIDE.md` a pridané pokrytie Modulu 08
 
 ### Odstránené
-- Vymazaný nepoužívaný `Module08/infra/obs.py` a odstránený prázdny adresár `infra/`; vzory pozorovateľnosti ponechané ako voliteľné v dokumentácii
+- Vymazaný nepoužívaný súbor `Module08/infra/obs.py` a odstránený prázdny adresár `infra/`; vzory sledovania zostávajú voliteľné v dokumentácii
 
 ### Presunuté
-- Konsolidované ukážky Module 08 pod `Module08/samples` s priečinkami očíslovanými podľa relácií
+- Demo ukážky Modulu 08 zlúčené pod `Module08/samples` zoradené podľa čísla session
   - Chainlit aplikácia presunutá do `samples/04`
   - Agenti presunutí do `samples/05` a pridané súbory `__init__.py` pre vyriešenie balíkov
 
 ### Dokumentácia
-- Dokumentácia relácií Module 08 a všetky README ukážok obohatené o odkazy na Microsoft Learn a dôveryhodných dodávateľov
-- `Module08/README.md` aktualizované s prehľadom ukážok, konfiguráciou routera a tipmi na validáciu
-- `Module07/README.md` sekcia Windows Foundry Local overená voči dokumentácii Learn
-- `STUDY_GUIDE.md` aktualizované:
-  - Pridaný Module 08 do prehľadu, rozvrhov, sledovača pokroku
+- Dokumenty Modulu 08 a všetky sample README rozšírené o odkazy na Microsoft Learn a dôveryhodných dodávateľov
+- `Module08/README.md` aktualizované s prehľadom sample, konfiguráciou routera a tipmi na validáciu
+- Sekcia Windows Foundry Local v `Module07/README.md` overená podľa Learn dokumentácie
+- `STUDY_GUIDE.md` aktualizovaný:
+  - Pridaný Modul 08 do prehľadu, harmonogramov, sledovača pokroku
   - Pridaná komplexná sekcia Referencie (Foundry Local, Azure AI, Olive, ONNX Runtime, OpenVINO, MLX, Llama.cpp, vLLM, Ollama, AI Toolkit, Windows ML)
 
 ---
 
-## Historické (zhrnutie)
-- Založená architektúra kurzu a moduly (Moduly 01–07)
+## História (zhrnutie)
+- Stanovená architektúra kurzu a moduly (Moduly 01–07)
 - Iteratívna modernizácia obsahu, štandardizácia formátovania a pridanie prípadových štúdií
 - Rozšírené pokrytie optimalizačných rámcov (Llama.cpp, Olive, OpenVINO, Apple MLX)
 
-## Nezverejnené / Zásobník (návrhy)
-- Voliteľné testy funkčnosti pre každú ukážku na overenie dostupnosti Foundry Local
-- Preskúmanie prekladov na zosúladenie referencií modelov (napr. `phi-4-mini`) kde je to vhodné
-- Pridanie minimálnej konfigurácie pyright, ak tímy preferujú prísnosť na úrovni pracovného priestoru
+## Nezverejnené / backlog (návrhy)
+- Voliteľné základné testy pre každý sample na overenie dostupnosti Foundry Local
+- Prekontrolovať preklady na zladenie odkazov na modely (napr. `phi-4-mini`), kde je to vhodné
+- Pridať minimálnu pyright konfiguráciu, ak tímy uprednostnia prísnosť v celom pracovnom priestore
 
 ---
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vyhlásenie o zodpovednosti**:
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, vezmite prosím na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho natívnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

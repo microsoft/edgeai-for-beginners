@@ -1,97 +1,97 @@
-# Seminarų užrašai
+# Dirbtuvės užrašų knygelės
 
-> **Interaktyvūs Jupyter užrašai praktiniam Edge AI mokymuisi**
+> **Interaktyvios Jupyter užrašų knygelės praktiniam Edge AI mokymuisi**
 >
-> Nuoseklūs, savarankiški mokymai, pradedant nuo paprastų pokalbių užbaigimų iki sudėtingų daugiaveiksnių sistemų, naudojant Microsoft Foundry Local ir mažus kalbos modelius.
+> Progresyvios, savarankiško tempo pamokos, kurios aprėpia nuo pagrindinių pokalbių pabaigų iki pažangių daugiaagentinių sistemų naudojant Microsoft Foundry Local ir mažus kalbinius modelius.
 
 ---
 
 ## 📖 Įvadas
 
-Sveiki atvykę į **EdgeAI pradedantiesiems seminarų užrašų** kolekciją. Šie interaktyvūs Jupyter užrašai suteikia praktinę mokymosi patirtį, kurioje galėsite rašyti, vykdyti ir eksperimentuoti su Edge AI kodu realiuoju laiku.
+Sveiki atvykę į **EdgeAI pradedantiesiems dirbtuvių užrašų knygelių** rinkinį. Šios interaktyvios Jupyter užrašų knygelės suteikia praktinę mokymosi patirtį, kurioje rašysite, vykdysite ir eksperimentuosite su Edge AI kodu realiu laiku.
 
-### Kodėl Jupyter užrašai?
+### Kodėl Jupyter užrašų knygelės?
 
-Skirtingai nuo tradicinių mokymų, šie užrašai siūlo:
+Skirtingai nei tradicinės pamokos, šios knygelės siūlo:
 
-- **Interaktyvų mokymąsi**: Vykdykite kodo langelius ir iškart matykite rezultatus
-- **Eksperimentavimą**: Keiskite parametrus ir stebėkite pokyčius realiuoju laiku
-- **Dokumentaciją**: Įterptos paaiškinimo ir žymėjimo langeliai padeda suprasti koncepcijas
-- **Atkartojamumą**: Pilnai veikiantys pavyzdžiai, kuriuos galite naudoti ir pritaikyti
-- **Vizualizaciją**: Peržiūrėkite našumo rodiklius, įterpimus ir rezultatus tiesiogiai
+- **Interaktyvų mokymąsi**: vykdykite kodo langelius ir matykite akimirksniu rezultatus
+- **Eksperimentavimą**: keiskite parametrus ir stebėkite pokyčius realiu laiku
+- **Dokumentaciją**: įterptos paaiškinamosios ir markdown ląstelės, padedančios suprasti sąvokas
+- **Atkuriamumą**: pilni veikiantys pavyzdžiai, kuriuos galite naudoti ir pakartotinai taikyti
+- **Vizualizaciją**: žiūrėkite našumo rodiklius, įterpimus ir rezultatus tiesiogiai
 
-### Kas daro šiuos užrašus ypatingais?
+### Kas daro šias užrašų knygeles ypatingomis?
 
-Kiekvienas užrašas sukurtas laikantis **produkcijai paruoštų geriausių praktikų**:
+Kiekviena užrašų knygelė sukurta laikantis **produkcinio lygio geriausių praktikų**:
 
-✅ **Išsamus klaidų valdymas** - Sklandus veikimas ir informatyvūs klaidų pranešimai  
-✅ **Tipų užuominos ir dokumentacija** - Aiškios funkcijų parašai ir dokumentacijos  
-✅ **Našumo stebėjimas** - Žetonų naudojimo stebėjimas ir vėlavimo matavimai  
-✅ **Modulinis dizainas** - Pakartotiniai šablonai, kuriuos galite pritaikyti savo projektams  
-✅ **Nuoseklus sudėtingumas** - Sistemingai remiasi ankstesnėmis sesijomis
+✅ **Išsamus Klaidos Tvarkymas** – sklandus gedimų valdymas ir informatyvūs klaidų pranešimai  
+✅ **Tipų Pažymėjimai & Dokumentacija** – aiškūs funkcijų parašai ir docstring'ai  
+✅ **Našumo Stebėsena** – sekamas simbolių naudojimas ir vėlavimo matavimai  
+✅ **Modulinis Dizainas** – pakartotinai naudojami šablonai, kuriuos galite pritaikyti savo projektams  
+✅ **Progresyvi Sudėtingumo Didėjimas** – sistemingai statoma ant ankstesnių sesijų
 
 ---
 
 ## 🎯 Mokymosi tikslai
 
-### Pagrindiniai įgūdžiai, kuriuos įgysite
+### Pagrindiniai įgūdžiai, kurių išmoksite
 
-Dirbdami su šiais užrašais, išmoksite:
+Naudodamiesi šiomis užrašų knygelėmis, įvaldysite:
 
 1. **Vietinių AI paslaugų valdymas**
    - Konfigūruoti ir valdyti Microsoft Foundry Local paslaugas
-   - Pasirinkti ir įkelti tinkamus modelius pagal jūsų techninę įrangą
+   - Pasirinkti ir įkelti tinkamus modelius jūsų aparatinei įrangai
    - Stebėti resursų naudojimą ir optimizuoti našumą
-   - Tvarkyti paslaugų aptikimą ir sveikatos patikrinimą
+   - Tvarkyti paslaugų aptikimą ir sveikatos patikrą
 
 2. **AI programų kūrimas**
-   - Įgyvendinti OpenAI suderinamus pokalbių užbaigimus vietoje
-   - Kurti srautinio perdavimo sąsajas geresnei vartotojo patirčiai
-   - Kurti efektyvius raginimus mažiems kalbos modeliams
+   - Įgyvendinti OpenAI suderinamas pokalbių pabaigas lokaliai
+   - Kurti srautinio perdavimo sąsajas geresnei naudotojo patirčiai
+   - Kurti veiksmingus prašymus Mažiesiems kalbiniams modeliams
    - Integruoti vietinius modelius į programas
 
-3. **Paieška su papildoma generacija (RAG)**
+3. **Retrieval Augmented Generation (RAG)**
    - Kurti semantinę paiešką su vektoriniais įterpimais
-   - Pagrįsti LLM atsakymus specifiniais dokumentais
+   - Pagrįsti LLM atsakymus domeno dokumentais
    - Vertinti RAG kokybę naudojant RAGAS metrikas
-   - Skalė nuo prototipo iki produkcijos
+   - Skalė nuo prototipo iki gamybos
 
 4. **Našumo optimizavimas**
-   - Sistemingai lyginti kelis modelius
-   - Matyti vėlavimą, pralaidumą ir pirmojo žetono laiką
-   - Lyginti mažus kalbos modelius su dideliais kalbos modeliais
-   - Pasirinkti optimalius modelius pagal našumo/kokybės kompromisus
+   - Sistemingai atlikti daugelio modelių palyginimus
+   - Matavimas vėlavimų, pralaidumo ir pirmo simbolio laiko
+   - Lyginti Mažuosius kalbinius modelius su Didžiaisiais kalbiniais modeliais
+   - Pasirinkti optimaliausius modelius pagal našumo/kokybės kompromisus
 
-5. **Daugiaveiksnių sistemų koordinavimas**
+5. **Daugiaagentinis orkestravimas**
    - Kurti specializuotus agentus skirtingoms užduotims
    - Įgyvendinti agentų atmintį ir konteksto valdymą
    - Koordinuoti kelis agentus sudėtinguose darbo procesuose
-   - Kurti koordinatorių šablonus agentų bendradarbiavimui
+   - Kurti koordinatoriaus šablonus agentų bendradarbiavimui
 
-6. **Protingas modelių maršrutizavimas**
-   - Įgyvendinti ketinimų aptikimą ir šablonų atpažinimą
-   - Automatiškai nukreipti užklausas į tinkamus modelius
-   - Kurti daugiapakopius procesus (planuoti → vykdyti → tobulinti)
-   - Kurti mastelio modelių kaip įrankių architektūras
+6. **Išmanus modelių maršrutizavimas**
+   - Įgyvendinti ketinimų aptikimą ir šablonų atitikimą
+   - Automatiškai nukreipti užklausas tinkamiems modeliams
+   - Kurti daugiasluoksnes linijas (planavimas → vykdymas → tobulinimas)
+   - Kurti išplečiamas modelių kaip įrankių architektūras
 
 ---
 
-## 🎓 Mokymosi rezultatai
+## 🎓 Įgyti rezultatai
 
 ### Ką sukursite
 
-| Užrašas | Rezultatas | Demonstruojami įgūdžiai | Sudėtingumas |
-|---------|------------|-------------------------|--------------|
-| **Sesija 01** | Pokalbių programa su srautu | Paslaugų nustatymas, pagrindiniai užbaigimai, srautinė UX | ⭐ Pradedantysis |
-| **Sesija 02 (RAG)** | RAG procesas su vertinimu | Įterpimai, semantinė paieška, kokybės metrikos | ⭐⭐ Vidutinis |
-| **Sesija 02 (Vertinimas)** | RAG kokybės vertintojas | RAGAS metrikos, sistemingas vertinimas | ⭐⭐ Vidutinis |
-| **Sesija 03** | Daugiamodelinis palyginimas | Našumo matavimas, modelių palyginimas | ⭐⭐ Vidutinis |
-| **Sesija 04** | SLM vs LLM palyginimas | Kompromisų analizė, optimizavimo strategijos | ⭐⭐⭐ Pažengęs |
-| **Sesija 05** | Daugiaveiksnių sistemų koordinavimas | Agentų dizainas, atmintis, koordinavimas | ⭐⭐⭐ Pažengęs |
-| **Sesija 06 (Maršrutizatorius)** | Protinga maršrutizavimo sistema | Ketinimų aptikimas, modelių pasirinkimas | ⭐⭐⭐ Pažengęs |
-| **Sesija 06 (Procesas)** | Daugiapakopis procesas | Planuoti/vykdyti/tobulinti darbo procesus | ⭐⭐⭐ Pažengęs |
+| Užrašų knygelė | Rezultatas | Demonstruojami įgūdžiai | Sudėtingumas |
+|----------|-------------|---------------------|------------|
+| **Sesija 01** | Pokalbių programa su srautiniu perdavimu | Paslaugos nustatymas, pagrindinės pabaigos, srautinis UX | ⭐ Pradedantysis |
+| **Sesija 02 (RAG)** | RAG linija su vertinimu | Įterpimai, semantinė paieška, kokybės metrikos | ⭐⭐ Vidutinis |
+| **Sesija 02 (Vertinimas)** | RAG kokybės vertintojas | RAGAS metrikos, sisteminis vertinimas | ⭐⭐ Vidutinis |
+| **Sesija 03** | Daugybinis modelių palyginimas | Našumo matavimas, modelių lyginimas | ⭐⭐ Vidutinis |
+| **Sesija 04** | SLM prieš LLM palyginimas | Kompromisų analizė, optimizavimo strategijos | ⭐⭐⭐ Pažengęs |
+| **Sesija 05** | Daugiaagentinis orkestratorius | Agentų dizainas, atmintis, koordinavimas | ⭐⭐⭐ Pažengęs |
+| **Sesija 06 (Maršrutizatorius)** | Išmanus maršruto sistema | Ketinimų aptikimas, modelių pasirinkimas | ⭐⭐⭐ Pažengęs |
+| **Sesija 06 (Linija)** | Daugiažingsnė linija | Planavimas/įgyvendinimas/tobulinimas | ⭐⭐⭐ Pažengęs |
 
-### Kompetencijos progresija
+### Įgūdžių pažanga
 
 ```
 Session 01 ────► Session 02 ────► Session 03 ────► Session 04 ────► Session 05-06
@@ -104,198 +104,243 @@ Foundation    │   Intermediate   │   Advanced       │   Expert
 
 ---
 
-## 📅 Seminaro tvarkaraštis
+## 📅 Dirbtuvių tvarkaraštis
 
-### 🚀 Pusės dienos seminaras (3,5 valandos)
+### 🚀 Pusdienio dirbtuvės (3,5 valandos)
 
-**Puikiai tinka: Komandų mokymams, hakatonams, konferencijų seminarams**
+**Puikiai tinka: komandos mokymų sesijoms, hakatonams, konferencijų dirbtuvėms**
 
 | Laikas | Trukmė | Sesija | Temos | Veiklos |
-|--------|--------|--------|-------|---------|
-| **0:00** | 30 min | Nustatymas ir įvadas | Aplinkos nustatymas, Foundry Local diegimas | Įdiegti priklausomybes, patikrinti nustatymą |
-| **0:30** | 30 min | Sesija 01 | Pagrindiniai pokalbių užbaigimai, srautas | Vykdyti užrašą, keisti raginimus |
-| **1:00** | 45 min | Sesija 02 | RAG procesas, įterpimai, vertinimas | Kurti RAG sistemą, testuoti užklausas |
+|------|----------|---------|--------|------------|
+| **0:00** | 30 min | Nustatymas & Įvadas | Aplinkos paruošimas, Foundry Local diegimas | Įdiegti priklausomybes, patikrinti nustatymus |
+| **0:30** | 30 min | Sesija 01 | Pagrindinės pokalbių pabaigos, srautinis perdavimas | Vykdyti užrašų knygelę, keisti prašymus |
+| **1:00** | 45 min | Sesija 02 | RAG linija, įterpimai, vertinimas | Kurti RAG sistemą, testuoti užklausas |
 | **1:45** | 15 min | Pertrauka | ☕ Kava ir klausimai | — |
-| **2:00** | 30 min | Sesija 03 | Daugiamodelinis palyginimas | Lyginti 3+ modelius |
-| **2:30** | 30 min | Sesija 04 | SLM vs LLM kompromisai | Analizuoti našumą/kokybę |
-| **3:00** | 30 min | Sesija 05-06 | Daugiaveiksnės sistemos ir maršrutizavimas | Tyrinėti pažangius šablonus |
+| **2:00** | 30 min | Sesija 03 | Daugiamodelių palyginimas | Palyginti 3+ modelius |
+| **2:30** | 30 min | Sesija 04 | SLM prieš LLM kompromisai | Analizuoti našumą/kokybę |
+| **3:00** | 30 min | Sesijos 05-06 | Daugiaagentinės sistemos ir maršrutizavimas | Tyrinėti pažangius šablonus |
 
-**Rezultatas**: Dalyviai išeina su 6 veikiančiomis Edge AI programomis ir produkcijai paruoštais kodų šablonais.
+**Rezultatas**: Dalyviai išeina su 6 veikianciomis Edge AI aplikacijomis ir produkcijai paruoštais kodo šablonais.
 
 ---
 
-### 🎓 Visos dienos seminaras (6 valandos)
+### 🎓 Visos dienos dirbtuvės (6 valandos)
 
-**Puikiai tinka: Išsamiems mokymams, stovykloms, universitetų kursams**
+**Puikiai tinka: išsamiems mokymams, stovyklose, universitetų kursams**
 
 | Laikas | Trukmė | Sesija | Temos | Veiklos |
-|--------|--------|--------|-------|---------|
-| **0:00** | 45 min | Nustatymas ir teorija | Aplinkos nustatymas, Edge AI pagrindai | Įdiegti, patikrinti, aptarti naudojimo atvejus |
-| **0:45** | 45 min | Sesija 01 | Pokalbių užbaigimų gilinimasis | Įgyvendinti pagrindinius ir srautinius pokalbius |
-| **1:30** | 30 min | Pertrauka | ☕ Kava ir tinklų kūrimas | — |
-| **2:00** | 60 min | Sesija 02 (Abi) | RAG procesas + RAGAS vertinimas | Kurti pilną RAG sistemą |
-| **3:00** | 30 min | Praktinis užsiėmimas 1 | Individualus RAG jūsų sričiai | Taikyti savo dokumentams |
+|------|----------|---------|--------|------------|
+| **0:00** | 45 min | Nustatymas & Teorija | Aplinkos paruošimas, Edge AI pagrindai | Įdiegti, patikrinti, aptarti panaudojimo atvejus |
+| **0:45** | 45 min | Sesija 01 | Gili apžvalga apie pokalbių pabaigas | Įgyvendinti pagrindinį ir srautinių pokalbių sąsają |
+| **1:30** | 30 min | Pertrauka | ☕ Kava ir bendravimas | — |
+| **2:00** | 60 min | Sesija 02 (Abi) | RAG linija + RAGAS vertinimas | Kurti pilną RAG sistemą |
+| **3:00** | 30 min | Praktinė laboratorija 1 | Pasirinktinė RAG jūsų sričiai | Taikyti savo dokumentams |
 | **3:30** | 30 min | Pietūs | 🍽️ | — |
-| **4:00** | 45 min | Sesija 03 | Lyginimo metodologija | Sistemingas modelių palyginimas |
-| **4:45** | 45 min | Sesija 04 | Optimizavimo strategijos | SLM vs LLM analizė |
-| **5:30** | 60 min | Sesija 05-06 | Pažangus koordinavimas | Daugiaveiksnės sistemos, maršrutizavimas |
-| **6:30** | 30 min | Praktinis užsiėmimas 2 | Kurti individualią agentų sistemą | Kurti savo koordinatorių |
+| **4:00** | 45 min | Sesija 03 | Palyginimo metodika | Sistemingas modelių lyginimas |
+| **4:45** | 45 min | Sesija 04 | Optimizavimo strategijos | SLM prieš LLM analizė |
+| **5:30** | 60 min | Sesijos 05-06 | Pažangus orkestravimas | Daugiaagentinės sistemos, maršrutizavimas |
+| **6:30** | 30 min | Praktinė laboratorija 2 | Kurti pasirinktinę agentų sistemą | Sukurti savo orkestratorių |
 
-**Rezultatas**: Gilus Edge AI šablonų supratimas ir 2 individualūs projektai.
+**Rezultatas**: Gilus supratimas apie Edge AI šablonus ir 2 pasirinktini projektai.
 
 ---
 
 ### 📚 Savarankiškas mokymasis (2 savaitės)
 
-**Puikiai tinka: Individualiems mokiniams, internetiniams kursams, savarankiškam mokymuisi**
+**Puikiai tinka: individualiems besimokantiesiems, internetiniams kursams, savarankiškam studijavimui**
 
 #### 1 savaitė: Pagrindai (6 valandos)
 
-| Diena | Dėmesys | Trukmė | Užrašai | Namų darbai |
-|-------|---------|--------|---------|------------|
-| **Pirmadienis** | Nustatymas ir pagrindai | 1,5 val. | Sesija 01 | Keisti raginimus, testuoti srautą |
-| **Trečiadienis** | RAG pagrindai | 2 val. | Sesija 02 (abi) | Pridėti savo dokumentus |
-| **Penktadienis** | Lyginimas | 1,5 val. | Sesija 03 | Lyginti papildomus modelius |
-| **Šeštadienis** | Peržiūra ir praktika | 1 val. | Visa 1 savaitė | Užbaigti užduotis, šalinti klaidas |
+| Diena | Fokusas | Trukmė | Užrašų knygelės | Namų darbai |
+|-----|-------|----------|-----------|----------|
+| **Pr** | Nustatymas & Pagrindai | 1,5 val | Sesija 01 | Keisti prašymus, testuoti srautą |
+| **Tr** | RAG pagrindai | 2 valandos | Sesija 02 (abi) | Pridėti savo dokumentus |
+| **Pn** | Palyginimo metodika | 1,5 val | Sesija 03 | Palyginti papildomus modelius |
+| **Št** | Peržiūra & Praktika | 1 val | Visa 1 savaitė | Atlikti pratimus, derinti klaidas |
 
-#### 2 savaitė: Pažangūs įgūdžiai (5 valandos)
+#### 2 savaitė: Pažangus lygis (5 valandos)
 
-| Diena | Dėmesys | Trukmė | Užrašai | Namų darbai |
-|-------|---------|--------|---------|------------|
-| **Pirmadienis** | Optimizavimas | 1,5 val. | Sesija 04 | Dokumentuoti kompromisus |
-| **Trečiadienis** | Daugiaveiksnės sistemos | 2 val. | Sesija 05 | Kurti individualius agentus |
-| **Penktadienis** | Protingas maršrutizavimas | 1,5 val. | Sesija 06 (abi) | Kurti maršrutizavimo logiką |
-| **Šeštadienis** | Galutinis projektas | 2 val. | Integracija | Sujungti kelis šablonus |
+| Diena | Fokusas | Trukmė | Užrašų knygelės | Namų darbai |
+|-----|-------|----------|-----------|----------|
+| **Pr** | Optimizavimas | 1,5 val | Sesija 04 | Dokumentuoti kompromisus |
+| **Tr** | Daugiaagentinės sistemos | 2 valandos | Sesija 05 | Kurti pasirinktinius agentus |
+| **Pn** | Išmanus maršrutizavimas | 1,5 val | Sesija 06 (abi) | Kurti maršrutizavimo logiką |
+| **Št** | Baigiamasis projektas | 2 valandos | Integracija | Derinti kelis šablonus |
 
-**Rezultatas**: Edge AI šablonų įvaldymas ir portfelio projektas.
+**Rezultatas**: Edge AI šablonų išmanymas plius portfelio projektas.
 
 ---
 
-## 📔 Užrašų aprašymai
+## 📔 Užrašų knygelių aprašymai
 
-### 📘 Sesija 01: Pokalbių pradžia
+### 📘 Sesija 01: Pokalbio paleidimas
 **Failas**: `session01_chat_bootstrap.ipynb`  
 **Trukmė**: 20-30 minučių  
-**Reikalavimai**: Nėra  
+**Išankstiniai reikalavimai**: Nėra  
 **Sudėtingumas**: ⭐ Pradedantysis
 
 **Ką išmoksite**:
-- Įdiegti ir konfigūruoti Foundry Local Python SDK
-- Naudoti `FoundryLocalManager` automatinio paslaugų aptikimo funkcijai
-- Įgyvendinti pagrindinius pokalbių užbaigimus su OpenAI suderinama API
-- Kurti srautinius atsakymus geresnei vartotojo patirčiai
-- Tvarkyti klaidas ir paslaugų nepasiekiamumą sklandžiai
+- Įdiegti ir sukonfigūruoti Foundry Local Python SDK
+- Naudoti `FoundryLocalManager` automatiškai aptikti paslaugą
+- Įgyvendinti pagrindines pokalbių pabaigas su OpenAI suderinamu API
+- Kurti srautinio perdavimo atsakymus geresnei naudotojo patirčiai
+- Sklandžiai tvarkyti klaidas ir paslaugų neprieinamumą
 
-**Pagrindinės sąvokos**: Paslaugų valdymas, pokalbių užbaigimai, srautas, klaidų valdymas
+**Pagrindinės sąvokos**: paslaugų valdymas, pokalbių pabaigos, srautinimas, klaidų valdymas
 
-**Ką sukursite**: Interaktyvi pokalbių programa su srauto palaikymu
+**Ką kursite**: Interaktyvi pokalbių programa su srautinio perdavimo palaikymu
 
 ---
 
-### 📗 Sesija 02: RAG procesas
+### 📗 Sesija 02: RAG linija
 **Failas**: `session02_rag_pipeline.ipynb`  
 **Trukmė**: 30-45 minutės  
-**Reikalavimai**: Sesija 01  
+**Išankstiniai reikalavimai**: Sesija 01  
 **Sudėtingumas**: ⭐⭐ Vidutinis
 
 **Ką išmoksite**:
-- Įgyvendinti paieškos su papildoma generacija (RAG) šabloną
-- Kurti vektorinius įterpimus naudojant sentence-transformers
-- Kurti semantinę paiešką su kosine panašumu
-- Pagrįsti LLM atsakymus specifiniais dokumentais
-- Tvarkyti pasirenkamas priklausomybes su importo apsaugomis
+- Įgyvendinti Retrieval Augmented Generation (RAG) šabloną
+- Kurti vektorinius įterpimus su sentence-transformers
+- Kurti semantinę paiešką su kosinuso panašumu
+- Pagrįsti LLM atsakymus domeno dokumentais
+- Tvarkyti pasirinktines priklausomybes importo apsaugomis
 
-**Pagrindinės sąvokos**: RAG architektūra, įterpimai, semantinė paieška, vektorinė panašumas
+**Pagrindinės sąvokos**: RAG architektūra, įterpimai, semantinė paieška, vektorinė panašumo analizė
 
-**Ką sukursite**: Dokumentais pagrįsta klausimų-atsakymų sistema
+**Ką kursite**: Dokumentais pagrįstą klausimų-atsakymų sistemą
 
 ---
 
 ### 📗 Sesija 02: RAG vertinimas su RAGAS
 **Failas**: `session02_rag_eval_ragas.ipynb`  
 **Trukmė**: 30-45 minutės  
-**Reikalavimai**: Sesija 02 RAG procesas  
+**Išankstiniai reikalavimai**: Sesija 02 RAG linija  
 **Sudėtingumas**: ⭐⭐ Vidutinis
 
 **Ką išmoksite**:
-- Vertinti RAG kokybę naudojant pramonės standartines metrikas
-- Matyti konteksto aktualumą, atsakymo aktualumą, patikimumą
-- Naudoti RAGAS sistemą sistemingam vertinimui
+- Vertinti RAG kokybę pagal industrinius standartus
+- Matyti konteksto atitiktį, atsakymo atitiktį ir tikrumą
+- Naudoti RAGAS struktūrą sisteminiam vertinimui
 - Identifikuoti ir taisyti RAG kokybės problemas
 - Kurti vertinimo duomenų rinkinius savo sričiai
 
-**Pagrindinės sąvokos**: RAG vertinimas, RAGAS metrikos, kokybės matavimas, sistemingas testavimas
+**Pagrindinės sąvokos**: RAG vertinimas, RAGAS metrikos, kokybės matavimas, sisteminis testavimas
 
-**Ką sukursite**: RAG kokybės vertinimo sistema
+**Ką kursite**: RAG kokybės vertinimo sistemą
 
 ---
 
-### 📙 Sesija 03: Atvirojo kodo modelių palyginimas
+### 📙 Sesija 03: Atviro kodo modelių palyginimas
 **Failas**: `session03_benchmark_oss_models.ipynb`  
 **Trukmė**: 30-45 minutės  
-**Reikalavimai**: Sesija 01  
+**Išankstiniai reikalavimai**: Sesija 01  
 **Sudėtingumas**: ⭐⭐ Vidutinis
 
 **Ką išmoksite**:
-- Sistemingai lyginti kelis modelius
-- Matyti vėlavimą, pralaidumą, pirmojo žetono laiką
-- Įgyvendinti sklandų veikimą modelių gedimų atveju
-- Lyginti našumą tarp modelių šeimų
-- Vizualizuoti ir analizuoti lyginimo rezultatus
+- Sistemingai atlikti daugelio modelių palyginimus
+- Matyti vėlavimą, pralaidumą, pirmo simbolio laiką
+- Įgyvendinti sklandų gedimų tvarkymą
+- Palyginti našumą tarp modelių šeimų
+- Vizualizuoti ir analizuoti palyginimo rezultatus
 
-**Pagrindinės sąvokos**: Našumo lyginimas, vėlavimo matavimas, modelių palyginimas, statistinė analizė
+**Pagrindinės sąvokos**: našumo palyginimas, vėlavimo matavimas, modelių lyginimas, statistinė analizė
 
-**Ką sukursite**: Daugiamodelinis lyginimo rinkinys
+**Ką kursite**: Daugiamodelių palyginimo rinkinį
 
 ---
 
-### 📙 Sesija 04: Modelių palyginimas (SLM vs LLM)
+### 📙 Sesija 04: Modelių palyginimas (SLM prieš LLM)
 **Failas**: `session04_model_compare.ipynb`  
 **Trukmė**: 30-45 minutės  
-**Reikalavimai**: Sesijos 01, 03  
+**Išankstiniai reikalavimai**: Sesijos 01, 03  
 **Sudėtingumas**: ⭐⭐⭐ Pažengęs
 
 **Ką išmoksite**:
-- Lyginti mažus kalbos modelius su dideliais kalbos modeliais
+- Palyginti Mažuosius kalbinius modelius su Didžiaisiais kalbiniais modeliais
 - Analizuoti našumo ir kokybės kompromisus
-- Matyti tinkamumo kraštui metrikas
-- Pasirinkti optimalius modelius pagal diegimo apribojimus
+- Matyti krašto tinkamumo metrikas
+- Pasirinkti optimaliausius modelius diegimo ribojimams
 - Dokumentuoti sprendimų kriterijus modelių pasirinkimui
 
-**Pagrindinės sąvokos**: Modelių pasirinkimas, kompromisų analizė, optimizavimo strategijos, diegimo planavimas
+**Pagrindinės sąvokos**: modelių pasirinkimas, kompromisų analizė, optimizavimo strategijos, diegimo planavimas
 
-**Ką sukursite**: SLM vs LLM palyginimo sistema
+**Ką kursite**: SLM prieš LLM palyginimo sistemą
 
 ---
 
-### 📕 Sesija 05: Daugiaveiksnių sistemų koordinavimas
+### 📕 Sesija 05: Daugiaagentinis orkestratorius
 **Failas**: `session05_agents_orchestrator.ipynb`  
-**Trukmė**: 45-60 minutės  
-**Reikalavimai**: Sesijos 01-02  
+**Trukmė**: 45-60 minučių  
+**Išankstiniai reikalavimai**: Sesijos 01-02  
 **Sudėtingumas**: ⭐⭐⭐ Pažengęs
-- Sukurkite mastelio keičiamas modelių kaip įrankių architektūras
 
-**Pagrindinės sąvokos**: Vamzdynų architektūra, daugiapakopis apdorojimas, klaidų atkūrimas, mastelio keitimo modeliai
+**Ką išmoksite**:
+- Kurti specializuotus agentus skirtingoms užduotims
+- Įgyvendinti agentų atmintį ir konteksto valdymą
+- Kurti koordinatoriaus šablonus agentų bendradarbiavimui
+- Tvarkyti agentų ryšį ir perdavimus
+- Stebėti daugiaagentinės sistemos našumą
 
-**Ką sukursite**: Daugiapakopį intelektualų vamzdyną su maršrutizavimu
+**Pagrindinės sąvokos**: agentų architektūra, koordinatoriaus šablonai, atminties valdymas, agentų orkestravimas
+
+**Ką kursite**: daugiaagentinę sistemą su koordinatoriumi ir specialistais
+
+---
+
+### 📕 Sesija 06: Modelių maršrutizatorius
+**Failas**: `session06_models_router.ipynb`  
+**Trukmė**: 30-45 minutės  
+**Išankstiniai reikalavimai**: Sesijos 01, 03  
+**Sudėtingumas**: ⭐⭐⭐ Pažengęs
+
+**Ką išmoksite**:
+- Įgyvendinti ketinimų aptikimą ir šablonų atitikimą
+- Kurti raktinių žodžių pagrindu veikiančią modelių maršrutizaciją
+- Automatiškai nukreipti užklausas tinkamiems modeliams
+- Konfigūruoti daugiamodelių registrus
+- Stebėti maršrutizavimo sprendimus ir našumą
+
+**Pagrindinės sąvokos**: ketinimų aptikimas, modelių maršrutizacija, šablonų atitikimas, išmanus pasirinkimas
+
+**Ką kursite**: išmanią modelių maršrutizavimo sistemą
+
+---
+
+### 📕 Sesija 06: Daugiažingsnė linija
+**Failas**: `session06_models_pipeline.ipynb`  
+**Trukmė**: 30-45 minutės  
+**Išankstiniai reikalavimai**: Sesijos 01, 06 Maršrutizatorius  
+**Sudėtingumas**: ⭐⭐⭐ Pažengęs
+
+**Ką išmoksite**:
+- Kurti daugiažingsnes AI linijas (planavimas → vykdymas → tobulinimas)
+- Integruoti maršrutizatorių išmaniajam modelių pasirinkimui
+- Įgyvendinti linijos klaidų valdymą ir atstatymą
+- Stebėti linijos našumą ir etapus
+- Kurti išplečiamas modelių kaip įrankių architektūras
+
+
+**Pagrindinės sąvokos**: vamzdyno architektūra, daugiapakopis apdorojimas, klaidų atkūrimas, mastelio keitimo modeliai
+
+**Jūs sukursite**: daugiažingsnį intelektinį vamzdyną su maršrutizavimu
 
 ---
 
 ## 🚀 Pradžia
 
-### Būtinos sąlygos
+### Reikalavimai
 
 **Sistemos reikalavimai**:
-- **OS**: Windows 10/11, macOS 11+ arba Linux (Ubuntu 20.04+)
-- **RAM**: Mažiausiai 8GB, rekomenduojama 16GB+
-- **Saugykla**: Mažiausiai 10GB laisvos vietos modeliams
-- **Aparatūra**: CPU su AVX2; GPU (CUDA, Qualcomm NPU) neprivaloma
+- **OS**: Windows 10/11, macOS 11+, arba Linux (Ubuntu 20.04+)
+- **RAM**: minimaliai 8 GB, rekomenduojama 16 GB+
+- **Saugykla**: 10 GB+ laisvos vietos modeliams
+- **Techninė įranga**: CPU su AVX2; GPU (CUDA, Qualcomm NPU) neprivalomas
 
 **Programinės įrangos reikalavimai**:
 - **Python 3.8+** su pip
 - **Jupyter Notebook** arba **VS Code** su Jupyter plėtiniu
-- **Microsoft Foundry Local** įdiegta ir sukonfigūruota
-- **Git** (repozitorijos klonavimui)
+- Įdiegta ir sukonfigūruota **Microsoft Foundry Local**
+- **Git** (klaidų klonavimui)
 
 ### Diegimo žingsniai
 
@@ -317,63 +362,63 @@ brew install foundrylocal
 foundry --version
 ```
 
-#### 2. Sukurkite Python aplinką
+#### 2. Paruoškite Python aplinką
 
 ```bash
-# Navigate to Workshop directory
+# Pereiti į Workshop katalogą
 cd Workshop
 
-# Create virtual environment
+# Sukurti virtualią aplinką
 python -m venv .venv
 
-# Activate virtual environment
+# Aktyvuoti virtualią aplinką
 # Windows
 .venv\Scripts\activate
 # macOS/Linux
 source .venv/bin/activate
 
-# Install dependencies
+# Įdiegti priklausomybes
 pip install -r requirements.txt
 ```
 
 #### 3. Paleiskite Foundry Local
 
 ```bash
-# Load a model (auto-downloads if needed)
+# Įkelti modelį (automatiškai atsisiunčiama, jei reikia)
 foundry model run phi-4-mini
 
-# Verify service is running
+# Patikrinti, ar paslauga veikia
 foundry service status
 ```
 
 #### 4. Paleiskite Jupyter
 
 ```bash
-# Start Jupyter Notebook
+# Paleiskite Jupyter Notebook
 jupyter notebook notebooks/
 
-# Or use VS Code with Jupyter extension
+# Arba naudokite VS Code su Jupyter plėtiniu
 code notebooks/
 ```
 
-### Greitas patikrinimas
+### Greita patikra
 
-Paleiskite šį kodą Python langelyje, kad patikrintumėte nustatymus:
+Paleiskite tai Python lange, kad patikrintumėte paruošimą:
 
 ```python
 from foundry_local import FoundryLocalManager
 import openai
 
-# Initialize manager (auto-discovers service)
+# Inicializuoti tvarkyklę (automatiškai aptinka paslaugą)
 manager = FoundryLocalManager("phi-4-mini")
 
-# Configure OpenAI client
+# Konfigūruoti OpenAI klientą
 client = openai.OpenAI(
     base_url=manager.endpoint,
     api_key=manager.api_key
 )
 
-# Test chat completion
+# Išbandyti pokalbio užbaigimą
 response = client.chat.completions.create(
     model=manager.get_model_info("phi-4-mini").id,
     messages=[{"role": "user", "content": "Hello!"}]
@@ -382,56 +427,56 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-**Tikėtinas rezultatas**: Sveikinimo atsakymas iš vietinio modelio.
+**Tikėtinas rezultatas**: pasisveikinimo atsakymas iš vietinio modelio.
 
 ---
 
-## 📝 Seminaro geriausios praktikos
+## 📝 Geriausios darbo su seminaru praktikos
 
 ### Instruktoriams
 
 **Prieš seminarą**:
-- ✅ Išsiųskite diegimo instrukcijas prieš 1 savaitę
-- ✅ Išbandykite visus užrašų knygeles tikslinėje aparatūroje
-- ✅ Paruoškite trikčių šalinimo vadovą dažniausioms problemoms
-- ✅ Turėkite atsarginius modelius (phi-3.5-mini, jei phi-4-mini neveikia)
+- ✅ Išsiųskite diegimo instrukcijas likus savaitei
+- ✅ Išbandykite visas užrašų knygeles taikiniame įrenginyje
+- ✅ Paruoškite dažniausiai pasitaikančių problemų sprendimo vadovą
+- ✅ Turėkite atsarginius modelius (phi-3.5-mini, jei phi-4-mini nepavyksta)
 - ✅ Sukurkite bendrą pokalbių kanalą klausimams
 
 **Seminaro metu**:
-- ✅ Pradėkite nuo greito aplinkos patikrinimo (5 minutės)
-- ✅ Nedelsiant dalinkitės trikčių šalinimo ištekliais
+- ✅ Pradėkite nuo greitos aplinkos patikros (5 minutės)
+- ✅ Iš karto dalinkitės trikčių šalinimo ištekliais
 - ✅ Skatinkite eksperimentavimą ir modifikacijas
-- ✅ Strategiškai planuokite pertraukas (po kiekvienos 2 sesijos)
-- ✅ Turėkite asistentus, kurie padės individualiai
+- ✅ Tikslingai organizuokite pertraukas (po kiekvienų 2 sesijų)
+- ✅ Turėkite asistentus 1:1 pagalbai
 
 **Po seminaro**:
-- ✅ Pasidalinkite pilnai veikiančiomis užrašų knygelėmis ir sprendimais
+- ✅ Pasidalykite visomis veikiančiomis užrašų knygelėmis ir sprendimais
 - ✅ Pateikite nuorodas į papildomus išteklius
-- ✅ Sukurkite grįžtamojo ryšio apklausą tobulinimui
-- ✅ Pasiūlykite konsultacijų valandas papildomiems klausimams
+- ✅ Sukurkite atsiliepimų anketą patobulinimams
+- ✅ Siūlykite konsultacijų valandas papildomiems klausimams
 
-### Dalyviams
+### Mokymosi dalyviams
 
-**Maksimaliai išnaudokite mokymąsi**:
-- ✅ Užbaikite nustatymus prieš seminaro pradžią
-- ✅ Paleiskite kiekvieną kodo langelį patys (ne tik skaitykite)
+**Maksimizuokite savo mokymąsi**:
+- ✅ Baikite paruošimus prieš seminaro pradžią
+- ✅ Paleiskite kiekvieną kodo langelį patys (neskaitykite tik)
 - ✅ Eksperimentuokite su parametrais ir užklausomis
 - ✅ Užsirašykite įžvalgas ir pastebėjimus
-- ✅ Klauskite, jei kažkas neaišku (kiti gali turėti tą patį klausimą)
+- ✅ Užduokite klausimus, kai užstringate (kiti taip pat gali turėti tokių klausimų)
 
-**Dažniausios klaidos, kurių reikia vengti**:
-- ❌ Praleisti langelių vykdymo tvarką (vykdykite iš eilės)
-- ❌ Neatidžiai skaityti klaidų pranešimus
-- ❌ Skubėti nesuprantant
-- ❌ Ignoruoti markdown paaiškinimus
-- ❌ Neišsaugoti modifikuotų užrašų knygelių
+**Dažnos klaidos, kurių reikia vengti**:
+- ❌ Nepraleiskite langelių vykdymo eiliškumo (vykdykite paeiliui)
+- ❌ Neskaitykite klaidų pranešimų atidžiai
+- ❌ Nepaleiskite skubėdami nesuprasdami
+- ❌ Nepaisyti Markdown paaiškinimų
+- ❌ Nesaugokite savo pakeistų užrašų knygelių
 
-**Trikčių šalinimo patarimai**:
-1. **Paslauga neveikia**: Patikrinkite `foundry service status`
-2. **Importavimo klaidos**: Įsitikinkite, kad aktyvuota virtuali aplinka
-3. **Modelis nerastas**: Paleiskite `foundry model ls`, kad pamatytumėte įkeltus modelius
-4. **Lėtas veikimas**: Patikrinkite RAM naudojimą, uždarykite kitas programas
-5. **Netikėti rezultatai**: Perkraukite branduolį ir paleiskite visus langelius iš viršaus
+**Derinimo patarimai**:
+1. **Paslauga neveikia**: patikrinkite `foundry service status`
+2. **Importo klaidos**: įsitikinkite, kad virtuali aplinka aktyvuota
+3. **Modelis nerastas**: paleiskite `foundry model ls`, kad pamatytumėte įkrautus modelius
+4. **Lėtas veikimas**: patikrinkite RAM naudojimą, uždarykite kitas programas
+5. **Nenumatyti rezultatai**: paleiskite iš naujo branduolį ir vykdykite visus langelius nuo pradžios
 
 ---
 
@@ -439,113 +484,115 @@ print(response.choices[0].message.content)
 
 ### Seminaro medžiaga
 
-- **[Pagrindinis seminaro vadovas](../Readme.md)** - Apžvalga, mokymosi tikslai, karjeros perspektyvos
-- **[Python pavyzdžiai](../../../../Workshop/samples)** - Atitinkami Python skriptai kiekvienai sesijai
-- **[Sesijų vadovai](../../../../Workshop)** - Išsamūs markdown vadovai (Session01-06)
-- **[Skriptai](../../../../Workshop/scripts)** - Validacijos ir testavimo įrankiai
-- **[Trikčių šalinimas](./TROUBLESHOOTING.md)** - Dažniausios problemos ir sprendimai
-- **[Greito starto vadovas](./quickstart.md)** - Greito pradžios vadovas
+- **[Pagrindinė seminaro vadovas](../Readme.md)** - apžvalga, mokymosi tikslai, karjeros galimybės
+- **[Python pavyzdžiai](../../../../Workshop/samples)** - atitinkami Python scenarijai kiekvienai sesijai
+- **[Sesijų vadovai](../../../../Workshop)** - Detalūs Markdown vadovai (Session01-06)
+- **[Scenarijai](../../../../Workshop/scripts)** - tikrinimo ir testavimo įrankiai
+- **[Trikčių šalinimas](./TROUBLESHOOTING.md)** - dažnos problemos ir sprendimai
+- **[Greita pradžia](./quickstart.md)** - spartus pradžios vadovas
 
 ### Dokumentacija
 
 - **[Foundry Local dokumentacija](https://learn.microsoft.com/azure/ai-foundry/foundry-local/)** - Oficialūs Microsoft dokumentai
-- **[OpenAI Python SDK](https://github.com/openai/openai-python)** - OpenAI SDK nuoroda
-- **[Sentence Transformers](https://www.sbert.net/)** - Modelių įterpimo dokumentacija
+- **[OpenAI Python SDK](https://github.com/openai/openai-python)** - OpenAI SDK nuorodos
+- **[Sentence Transformers](https://www.sbert.net/)** - įterpimų modelių dokumentacija
 - **[RAGAS Framework](https://docs.ragas.io/)** - RAG vertinimo metrika
 
 ### Bendruomenė
 
-- **[GitHub diskusijos](https://github.com/microsoft/edgeai-for-beginners/discussions)** - Užduokite klausimus, dalinkitės projektais
-- **[Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4)** - Bendruomenės palaikymas realiu laiku
-- **[Stack Overflow](https://stackoverflow.com/questions/tagged/foundry-local)** - Techniniai klausimai ir atsakymai
+- **[GitHub diskusijos](https://github.com/microsoft/edgeai-for-beginners/discussions)** - užduokite klausimus, dalinkitės projektais
+- **[Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4)** - bendruomenės pokalbių pagalba realiu laiku
+- **[Stack Overflow](https://stackoverflow.com/questions/tagged/foundry-local)** - techniniai klausimai ir atsakymai
 
 ---
 
 ## 🎯 Mokymosi kelio rekomendacijos
 
-### Pradedančiųjų kelias (Pradėkite čia)
+### Pradedančiųjų kelias (pradėkite čia)
 
-1. **Sesija 01** - Pokalbių paleidimas
-2. **Sesija 02** - RAG vamzdynas
+1. **Sesija 01** - Pokalbio paleidimas
+2. **Sesija 02** - RAG vamzdis
 3. **Sesija 03** - Modelių palyginimas
 
-**Laikas**: ~2 valandos | **Fokusas**: Pagrindiniai modeliai
+**Laikas**: ~2 valandos | **Dėmesys**: pagrindiniai modeliai
 
 ---
 
-### Vidutinis kelias
+### Tarpinis kelias
 
-1. Užbaikite pradedančiųjų kelią
+1. Baigti pradedančiųjų kelią
 2. **Sesija 02** - RAG vertinimas
 3. **Sesija 04** - Modelių palyginimas
 
-**Laikas**: ~4 valandos | **Fokusas**: Kokybė ir optimizavimas
+**Laikas**: ~4 valandos | **Dėmesys**: kokybė ir optimizavimas
 
 ---
 
-### Pažengusiųjų kelias (Pilnas seminaras)
+### Pažengusiųjų kelias (visas seminaras)
 
-1. Užbaikite vidutinį kelią
-2. **Sesija 05** - Daugiaveiksmis orkestratorius
-3. **Sesija 06** - Modelių maršrutizatorius
-4. **Sesija 06** - Daugiapakopis vamzdynas
+1. Baigti tarpinį kelią
+2. **Sesija 05** - daugiaagentinis orkestratorius
+3. **Sesija 06** - modelių maršrutizatorius
+4. **Sesija 06** - daugiažingsnis vamzdis
 
-**Laikas**: ~6 valandos | **Fokusas**: Produkcijos modeliai
+**Laikas**: ~6 valandos | **Dėmesys**: gamybos modeliai
 
 ---
 
-### Individualaus projekto kelias
+### Pasirinktinio projekto kelias
 
-1. Užbaikite pradedančiųjų kelią (Sesijos 01-03)
-2. Pasirinkite VIENĄ pažengusiųjų sesiją pagal savo tikslą:
-   - **RAG programos kūrimas?** → Sesija 02 vertinimas
-   - **Veikimo optimizavimas?** → Sesija 04 palyginimas
-   - **Sudėtingi darbo procesai?** → Sesija 05 orkestratorius
-   - **Mastelio keitimo architektūra?** → Sesija 06 maršrutizatorius + vamzdynas
+1. Baigti pradedančiųjų kelią (Sesijos 01-03)
+2. Pasirinkite VIENĄ pažangią sesiją pagal savo tikslą:
+   - **Kursiate RAG programą?** → Sesija 02 Vertinimas
+   - **Optimizuojate našumą?** → Sesija 04 Palyginimas
+   - **Sudėtingi darbo srautai?** → Sesija 05 Orkestratorius
+   - **Mastelio keičiamoji architektūra?** → Sesija 06 Maršrutizatorius + Vamzdis
 
-**Laikas**: ~3 valandos | **Fokusas**: Projekto specifiniai įgūdžiai
+**Laikas**: ~3 valandos | **Dėmesys**: projektui specifiniai įgūdžiai
 
 ---
 
 ## 📊 Sėkmės rodikliai
 
-Sekite savo pažangą pagal šiuos etapus:
+Sekite savo progresą pagal šiuos etapus:
 
-- [ ] **Nustatymai baigti** - Foundry Local veikia, visos priklausomybės įdiegtos
-- [ ] **Pirmas pokalbis** - Baigta sesija 01, veikia pokalbių transliacija
-- [ ] **RAG sukurtas** - Baigta sesija 02, dokumentų QA sistema veikia
-- [ ] **Modeliai palyginti** - Baigta sesija 03, surinkti veikimo duomenys
-- [ ] **Kompromisai analizuoti** - Baigta sesija 04, dokumentuoti modelių pasirinkimo kriterijai
-- [ ] **Agentai orkestruoti** - Baigta sesija 05, veikia daugiaveiksmė sistema
-- [ ] **Maršrutizavimas įgyvendintas** - Baigta sesija 06, veikia intelektualus modelių pasirinkimas
-- [ ] **Individualus projektas** - Seminaro modeliai pritaikyti jūsų atvejui
+- [ ] **Įdiegta sėkmingai** - Foundry Local veikia, visos priklausomybės įdiegtos
+- [ ] **Pirmas pokalbis** - Sesija 01 baigta, pokalbio transliacija veikia
+- [ ] **RAG sukurta** - Sesija 02 baigta, dokumentų klausimų-atsakymų sistema veikia
+- [ ] **Modeliai įvertinti** - Sesija 03 baigta, surinkti našumo duomenys
+- [ ] **Pritraukimo analizė** - Sesija 04 baigta, dokumentuoti modelio parinkimo kriterijai
+- [ ] **Agentai suderinti** - Sesija 05 baigta, daugiaagentinė sistema veikia
+- [ ] **Maršrutizavimas įdiegtas** - Sesija 06 baigta, intelektinis modelių pasirinkimas veikia
+- [ ] **Pasirinktinis projektas** - pritaikyti seminaro modeliai savo atvejui
 
 ---
 
-## 🤝 Prisidėjimas
+## 🤝 Prisidėkite
 
-Radote problemą ar turite pasiūlymą? Laukiame jūsų indėlio!
+Radote problemą ar turite pasiūlymą? Laukiame prisidėjimų!
 
 - **Praneškite apie problemas**: [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues)
-- **Pasiūlykite patobulinimus**: [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions)
-- **Pateikite PR**: Sekite [Prisidėjimo gaires](../../AGENTS.md)
+- **Siūlykite patobulinimus**: [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **Siųskite PR**: vadovaukitės [Prisidėjimo gairėmis](../../AGENTS.md)
 
 ---
 
 ## 📄 Licencija
 
-Šis seminaras yra [EdgeAI for Beginners](https://github.com/microsoft/edgeai-for-beginners) repo dalis ir licencijuotas pagal [MIT licenciją](../../../../LICENSE).
+Šis seminaras yra [EdgeAI for Beginners](https://github.com/microsoft/edgeai-for-beginners) saugyklos dalis ir licencijuotas pagal [MIT licenciją](../../../../LICENSE).
 
 ---
 
-**Pasiruošę kurti produkcijai paruoštas Edge AI programas?**  
-**Pradėkite nuo [Sesija 01: Pokalbių paleidimas](./session01_chat_bootstrap.ipynb) →**
+**Pasiruošę kurti gamybai paruoštas Edge AI programas?**  
+**Pradėkite nuo [Sesijos 01: Pokalbio paleidimas](./session01_chat_bootstrap.ipynb) →**
 
 ---
 
-*Paskutinį kartą atnaujinta: 2025 m. spalio 8 d. | Seminaro versija: 2.0*
+*Paskutinį kartą atnaujinta: 2025 m. spalio 8 d. | Seminars Versija: 2.0*
 
 ---
 
-**Atsakomybės atsisakymas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus aiškinimus, kylančius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojama naudoti profesionalų žmogiškąjį vertimą. Mes neatsakome už jokius nesusipratimus ar neteisingą interpretaciją, kilusią naudojantis šiuo vertimu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

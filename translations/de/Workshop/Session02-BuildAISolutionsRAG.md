@@ -1,27 +1,27 @@
-# Sitzung 2: KI-Lösungen mit Azure AI Foundry entwickeln
+# Sitzung 2: KI-Lösungen mit Azure AI Foundry erstellen
 
 ## Zusammenfassung
 
-Erfahren Sie, wie Sie umsetzbare GenAI-Workflows mit Foundry Local und Azure AI Foundry erstellen. Lernen Sie fortgeschrittenes Prompt Engineering, die Integration strukturierter Daten und die Orchestrierung von Aufgaben mit reproduzierbaren Pipelines. Der Schwerpunkt liegt auf Retrieval-Augmented Generation (RAG) für Dokument- und Daten-Q&A, wobei die Muster auf die allgemeine Gestaltung von GenAI-Lösungen übertragbar sind.
+Erfahren Sie, wie Sie umsetzbare GenAI-Workflows mit Foundry Local und Azure AI Foundry erstellen. Lernen Sie fortgeschrittene Prompt-Programmierung, integrieren Sie strukturierte Daten und orchestrieren Sie Aufgaben mit reproduzierbaren Pipelines. Während der Fokus auf Retrieval-Augmented Generation (RAG) für Dokumenten- und Daten-Q&A liegt, verallgemeinern sich die Muster auf das breitere Design von GenAI-Lösungen.
 
 ## Lernziele
 
 Am Ende dieser Sitzung werden Sie:
 
-- **Prompt Engineering meistern**: Effektive System-Prompts und Grounding-Strategien entwerfen
-- **RAG-Muster implementieren**: Dokumentbasierte Q&A-Systeme mit Vektorsuche erstellen
+- **Prompt-Programmierung meistern**: Effektive System-Prompts und Grounding-Strategien entwerfen
+- **RAG-Muster implementieren**: Dokumentenbasierte Q&A-Systeme mit Vektorsuche aufbauen
 - **Strukturierte Daten integrieren**: Mit CSV-, JSON- und tabellarischen Daten in KI-Workflows arbeiten
-- **Produktions-RAG erstellen**: Skalierbare RAG-Anwendungen mit Chainlit entwickeln
-- **Von lokal zu Cloud überbrücken**: Migrationspfade von Foundry Local zu Azure AI Foundry verstehen
+- **Produktionsreifes RAG entwickeln**: Skalierbare RAG-Anwendungen mit Chainlit erstellen
+- **Brücke von Lokal zu Cloud schlagen**: Migrationspfade von Foundry Local zu Azure AI Foundry verstehen
 
 ## Voraussetzungen
 
-- Abschluss von Sitzung 1 (Foundry Local Setup)
-- Grundlegendes Verständnis von Vektordatenbanken und Embeddings
-- Erfahrung in Python-Programmierung
-- Vertrautheit mit Konzepten der Dokumentenverarbeitung
-
-### Schnellstart für plattformübergreifende Umgebungen (Windows & macOS)
+- Abgeschlossene Sitzung 1 (Foundry Local Einrichtung)
+- Grundkenntnisse zu Vektordatenbanken und Embeddings
+- Programmiererfahrung in Python
+- Vertrautheit mit Dokumentenverarbeitungskonzepten
+ 
+### Cross-Plattform Umgebung Schnellstart (Windows & macOS)
 
 Windows PowerShell:
 ```powershell
@@ -39,30 +39,29 @@ python -m pip install --upgrade pip
 pip install foundry-local-sdk openai sentence-transformers ragas datasets scikit-learn
 ```
 
-Falls Foundry Local macOS-Binaries in Ihrer Umgebung noch nicht verfügbar sind, führen Sie den Dienst auf einer Windows-VM oder einem Container aus und setzen Sie:
+Wenn Foundry Local macOS-Binärdateien in Ihrer Umgebung noch nicht verfügbar sind, führen Sie den Dienst auf einer Windows-VM oder einem Container aus und setzen Sie:
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
 
+## Validierung: Foundry Local Umgebungsprüfung
 
-## Validierung: Überprüfung der Foundry Local Umgebung
-
-Bevor Sie mit den Demos beginnen, überprüfen Sie Ihre lokale Umgebung:
+Validieren Sie vor Beginn der Demos Ihre lokale Umgebung:
 
 ```powershell
-foundry --version              # Ensure CLI is installed
-foundry status                 # Service status
-foundry model run phi-4-mini   # Start baseline SLM
-curl http://localhost:5273/v1/models  # Validate API (should list running model)
+foundry --version              # Stellen Sie sicher, dass die CLI installiert ist
+foundry status                 # Dienststatus
+foundry model run phi-4-mini   # Basis-SLM starten
+curl http://localhost:5273/v1/models  # API validieren (sollte das laufende Modell auflisten)
 ```
 
-Falls der letzte Befehl fehlschlägt, starten Sie den Dienst neu: `foundry service start`.
+Wenn der letzte Befehl fehlschlägt, starten (oder starten Sie den Dienst neu): `foundry service start`.
 
 ## Demo-Ablauf (30 Minuten)
 
 ### 1. System-Prompts und Grounding-Strategien (10 Minuten)
 
-#### Schritt 1.1: Fortgeschrittenes Prompt Engineering
+#### Schritt 1.1: Fortgeschrittene Prompt-Programmierung
 
 Erstellen Sie `samples/02-rag-solutions/prompt_engineering.py`:
 
@@ -133,7 +132,7 @@ class PromptEngineer:
                 model=model,
                 messages=messages,
                 max_tokens=1000,
-                temperature=0.3,  # Lower temperature for more consistent responses
+                temperature=0.3,  # Senken Sie die Temperatur für konsistentere Antworten
                 top_p=0.9
             )
             
@@ -153,7 +152,7 @@ def demo_grounding_strategies():
     
     engineer = PromptEngineer()
     
-    # Sample contexts for different domains
+    # Beispiele für Kontexte aus verschiedenen Bereichen
     contexts = {
         "technical": """
         Microsoft Foundry Local is a development platform that enables running AI models locally on Windows devices. 
@@ -197,19 +196,17 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-
 #### Schritt 1.2: Grounding-Strategien testen
 
 ```powershell
-# Ensure phi-4-mini is running
+# Stellen Sie sicher, dass phi-4-mini läuft
 foundry model run phi-4-mini
 
-# Run the prompt engineering demo
+# Führen Sie die Prompt-Engineering-Demo aus
 python samples/02-rag-solutions/prompt_engineering.py
 ```
 
-
-### 2. Tabellendaten mit Prompts integrieren (CSV Q&A) (10 Minuten)
+### 2. Tabellarische Daten mit Prompts integrieren (CSV Q&A) (10 Minuten)
 
 #### Schritt 2.1: CSV-Datenintegration
 
@@ -261,12 +258,12 @@ class CSVQASystem:
             "sample_rows": self.data.head(3).to_dict('records')
         }
         
-        # Add numerical statistics for numeric columns
+        # Fügen Sie numerische Statistiken für numerische Spalten hinzu
         numeric_cols = self.data.select_dtypes(include=['number']).columns
         if len(numeric_cols) > 0:
             stats["numeric_summary"] = self.data[numeric_cols].describe().to_dict()
         
-        # Add categorical summaries
+        # Fügen Sie kategoriale Zusammenfassungen hinzu
         categorical_cols = self.data.select_dtypes(include=['object']).columns
         if len(categorical_cols) > 0:
             stats["categorical_summary"] = {}
@@ -286,12 +283,12 @@ class CSVQASystem:
             f"- Columns: {', '.join(self.summary_stats['columns'])}"
         ]
         
-        # Add sample data
+        # Fügen Sie Beispieldaten hinzu
         context_parts.append("\nSample Data:")
         for i, row in enumerate(self.summary_stats['sample_rows'][:3]):
             context_parts.append(f"Row {i+1}: {json.dumps(row, default=str)}")
         
-        # Add relevant statistics based on question content
+        # Fügen Sie relevante Statistiken basierend auf dem Frageinhalt hinzu
         question_lower = question.lower()
         
         if any(word in question_lower for word in ['average', 'mean', 'sum', 'count', 'max', 'min', 'statistics']):
@@ -344,7 +341,7 @@ class CSVQASystem:
                 model=model,
                 messages=messages,
                 max_tokens=800,
-                temperature=0.2  # Low temperature for factual data analysis
+                temperature=0.2  # Niedrige Temperatur für faktische Datenanalyse
             )
             
             return {
@@ -360,7 +357,7 @@ class CSVQASystem:
 def create_sample_dataset():
     """Create a sample dataset for demonstration"""
     
-    # Create sample sales data
+    # Erstellen Sie Beispiel-Verkaufsdaten
     sales_data = {
         'Date': ['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-04', '2024-01-05',
                  '2024-01-06', '2024-01-07', '2024-01-08', '2024-01-09', '2024-01-10'],
@@ -377,7 +374,7 @@ def create_sample_dataset():
     df = pd.DataFrame(sales_data)
     csv_path = "samples/02-rag-solutions/sample_sales_data.csv"
     
-    # Ensure directory exists
+    # Stellen Sie sicher, dass das Verzeichnis existiert
     os.makedirs(os.path.dirname(csv_path), exist_ok=True)
     
     df.to_csv(csv_path, index=False)
@@ -386,21 +383,21 @@ def create_sample_dataset():
 def demo_csv_qa():
     """Demonstrate CSV Q&A capabilities"""
     
-    # Create sample dataset
+    # Erstellen Sie ein Beispieldatensatz
     csv_path = create_sample_dataset()
     print(f"Created sample dataset: {csv_path}")
     
-    # Initialize Q&A system
+    # Initialisieren Sie das Frage-Antwort-System
     qa_system = CSVQASystem()
     
-    # Load data
+    # Daten laden
     if not qa_system.load_csv_data(csv_path):
         print("Failed to load CSV data")
         return
     
     print(f"\nLoaded dataset with shape: {qa_system.data.shape}")
     
-    # Example questions
+    # Beispiel-Fragen
     questions = [
         "What is the total sales amount?",
         "Which product has the highest average sales amount?",
@@ -426,18 +423,16 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-
-#### Schritt 2.2: CSV-Q&A-System testen
+#### Schritt 2.2: CSV Q&A-System testen
 
 ```powershell
-# Run the CSV Q&A demo
+# Führe die CSV Q&A-Demo aus
 python samples/02-rag-solutions/csv_qa_system.py
 ```
 
+### 3. Starter-Projekt: Anpassen von 02-grounding-data (5 Minuten)
 
-### 3. Starter-Projekt: 02-grounding-data anpassen (5 Minuten)
-
-#### Schritt 3.1: Verbesserte Dokument-RAG-Systeme
+#### Schritt 3.1: Verbessertes Dokumenten-RAG-System
 
 Erstellen Sie `samples/02-rag-solutions/document_rag.py`:
 
@@ -493,18 +488,18 @@ class SimpleRAGSystem:
         if not self.documents or self.vectorizer is None:
             return []
         
-        # Vectorize query
+        # Abfrage vektorisieren
         query_vector = self.vectorizer.transform([query])
         
-        # Calculate similarities
+        # Ähnlichkeiten berechnen
         similarities = cosine_similarity(query_vector, self.doc_vectors).flatten()
         
-        # Get top-k documents
+        # Top-k Dokumente abrufen
         top_indices = np.argsort(similarities)[::-1][:top_k]
         
         results = []
         for idx in top_indices:
-            if similarities[idx] > 0.1:  # Minimum similarity threshold
+            if similarities[idx] > 0.1:  # Mindestähnlichkeitsschwelle
                 results.append({
                     "content": self.documents[idx],
                     "similarity": float(similarities[idx]),
@@ -519,7 +514,7 @@ class SimpleRAGSystem:
                        max_context_docs: int = 3) -> Dict[str, Any]:
         """Generate answer using retrieved documents"""
         
-        # Retrieve relevant documents
+        # Relevante Dokumente abrufen
         relevant_docs = self.retrieve_relevant_docs(question, max_context_docs)
         
         if not relevant_docs:
@@ -618,16 +613,16 @@ def create_sample_knowledge_base() -> List[str]:
 def demo_document_rag():
     """Demonstrate document RAG capabilities"""
     
-    # Create RAG system
+    # RAG-System erstellen
     rag_system = SimpleRAGSystem()
     
-    # Add sample knowledge base
+    # Beispiel-Wissensdatenbank hinzufügen
     documents = create_sample_knowledge_base()
     rag_system.add_documents(documents)
     
     print(f"Loaded {len(documents)} documents into knowledge base")
     
-    # Example questions
+    # Beispielhafte Fragen
     questions = [
         "What is Microsoft Foundry Local and what are its key features?",
         "How do Small Language Models differ from regular language models?",
@@ -654,10 +649,9 @@ if __name__ == "__main__":
     demo_document_rag()
 ```
 
+### 4. CLI-zu-Azure Migrationspfad zeigen (5 Minuten)
 
-### 4. CLI-zu-Azure-Migrationspfad zeigen (5 Minuten)
-
-#### Schritt 4.1: Überblick über die Migrationsstrategie
+#### Schritt 4.1: Überblick zur Migrationsstrategie
 
 Erstellen Sie `samples/02-rag-solutions/migration_guide.py`:
 
@@ -685,7 +679,7 @@ class UnifiedAIClient:
         self.environment = environment
         
         if environment == "local":
-            # Foundry Local configuration
+            # Foundry Lokale Konfiguration
             self.client = OpenAI(
                 base_url="http://localhost:5273/v1",
                 api_key="not-needed"
@@ -693,7 +687,7 @@ class UnifiedAIClient:
             self.default_model = "phi-4-mini"
             
         elif environment == "azure":
-            # Azure AI Foundry configuration
+            # Azure AI Foundry Konfiguration
             if not azure_endpoint or not azure_api_key:
                 raise ValueError("Azure endpoint and API key required for Azure environment")
             
@@ -702,7 +696,7 @@ class UnifiedAIClient:
                 api_key=azure_api_key,
                 default_headers={"api-version": azure_api_version}
             )
-            self.default_model = "gpt-4"  # Or your Azure deployment name
+            self.default_model = "gpt-4"  # Oder Ihr Azure-Bereitstellungsname
             
         else:
             raise ValueError("Environment must be 'local' or 'azure'")
@@ -742,15 +736,15 @@ class UnifiedAIClient:
         
         try:
             if self.environment == "local":
-                # For Foundry Local, we'd typically use the CLI
-                # This is a simplified example
+                # Für Foundry Local würden wir normalerweise die CLI verwenden
+                # Dies ist ein vereinfachtes Beispiel
                 return {
                     "success": True,
                     "models": ["phi-4-mini", "qwen2.5-0.5b", "deepseek-coder-1.3b"],
                     "environment": "local"
                 }
             else:
-                # For Azure, you might query the deployments endpoint
+                # Für Azure könnten Sie den Endpunkt für Bereitstellungen abfragen
                 models_response = self.client.models.list()
                 return {
                     "success": True,
@@ -771,7 +765,7 @@ def demo_migration_patterns():
     print("Foundry Local to Azure AI Foundry Migration Demo")
     print("=" * 60)
     
-    # Test message
+    # Testnachricht
     test_messages = [
         {
             "role": "system",
@@ -783,7 +777,7 @@ def demo_migration_patterns():
         }
     ]
     
-    # Test with Foundry Local
+    # Test mit Foundry Local
     print("\n1. Testing with Foundry Local:")
     print("-" * 40)
     
@@ -805,11 +799,11 @@ def demo_migration_patterns():
     except Exception as e:
         print(f"✗ Local Setup Error: {e}")
     
-    # Show Azure configuration (commented out as it requires credentials)
+    # Azure-Konfiguration anzeigen (auskommentiert, da Anmeldeinformationen erforderlich sind)
     print("\n2. Azure AI Foundry Configuration:")
     print("-" * 40)
     print("""
-    # To migrate to Azure AI Foundry, configure as follows:
+    # Um auf Azure AI Foundry zu migrieren, konfigurieren Sie wie folgt:
     
     azure_client = UnifiedAIClient(
         environment="azure",
@@ -818,7 +812,7 @@ def demo_migration_patterns():
         azure_api_version="2024-08-01-preview"
     )
     
-    # Same API calls work in both environments!
+    # Dieselben API-Aufrufe funktionieren in beiden Umgebungen!
     azure_result = azure_client.chat_completion(
         messages=test_messages,
         max_tokens=200,
@@ -826,7 +820,7 @@ def demo_migration_patterns():
     )
     """)
     
-    # Migration strategy
+    # Migrationsstrategie
     print("\n3. Migration Strategy:")
     print("-" * 40)
     print("""
@@ -842,16 +836,16 @@ def demo_migration_patterns():
     ✓ Easy scaling to production (same API)
     """)
     
-    # Configuration examples
+    # Konfigurationsbeispiele
     print("\n4. Environment-based Configuration:")
     print("-" * 40)
     print("""
-    # .env file for development
+    # .env-Datei für die Entwicklung
     AI_ENVIRONMENT=local
     FOUNDRY_LOCAL_URL=http://localhost:5273/v1
     DEFAULT_MODEL=phi-4-mini
     
-    # .env file for production
+    # .env-Datei für die Produktion
     AI_ENVIRONMENT=azure
     AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com
     AZURE_OPENAI_API_KEY=your-api-key
@@ -863,23 +857,21 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-
 #### Schritt 4.2: Migrationsmuster testen
 
 ```powershell
-# Run the migration demo
+# Führen Sie die Migration-Demo durch
 python samples/02-rag-solutions/migration_guide.py
 ```
 
-
 ## Wichtige behandelte Konzepte
 
-### 1. Fortgeschrittenes Prompt Engineering
+### 1. Fortgeschrittene Prompt-Programmierung
 
 - **System-Prompts**: Domänenspezifische Experten-Personas
 - **Grounding-Strategien**: Techniken zur Kontextintegration
-- **Temperaturkontrolle**: Balance zwischen Kreativität und Konsistenz
-- **Token-Management**: Effiziente Nutzung des Kontexts
+- **Temperatur-Steuerung**: Balance zwischen Kreativität und Konsistenz
+- **Token-Verwaltung**: Effiziente Kontextnutzung
 
 ### 2. Integration strukturierter Daten
 
@@ -892,22 +884,22 @@ python samples/02-rag-solutions/migration_guide.py
 
 - **Vektorsuche**: TF-IDF und Kosinus-Ähnlichkeit
 - **Dokumentenabruf**: Relevanzbewertung und Ranking
-- **Kontextkombination**: Synthese aus mehreren Dokumenten
-- **Antwortgenerierung**: Erstellung fundierter Antworten
+- **Kontext-Kombination**: Synthese mehrerer Dokumente
+- **Antwortgenerierung**: Grounded Antworterstellung
 
 ### 4. Cloud-Migrationsstrategien
 
-- **Einheitliche APIs**: Einheitlicher Code für lokal und Cloud
-- **Umgebungsabstraktion**: Konfigurationsgesteuerte Bereitstellung
+- **Vereinheitlichte APIs**: Ein Codebase für lokal und Cloud
+- **Umgebungsabstraktion**: Konfigurationsgetriebene Bereitstellung
 - **Entwicklungs-Workflow**: Lokal → Staging → Produktion
-- **Kostenoptimierung**: Lokale Entwicklung, Cloud-Produktion
+- **Kostenoptimierung**: Lokale Entwicklung, Produktionsbetrieb in der Cloud
 
 ## Produktionsüberlegungen
 
 ### 1. Leistungsoptimierung
 
 ```python
-# Optimize for production RAG
+# Für die Produktion RAG optimieren
 rag_config = {
     "max_context_docs": 5,
     "similarity_threshold": 0.15,
@@ -918,29 +910,27 @@ rag_config = {
 }
 ```
 
-
 ### 2. Fehlerbehandlung
 
 ```python
-# Robust error handling
+# Robuste Fehlerbehandlung
 try:
     result = rag_system.generate_answer(question)
     if "error" in result:
-        # Fallback to general knowledge
+        # Rückgriff auf allgemeines Wissen
         fallback_result = client.chat.completions.create(
             model="phi-4-mini",
             messages=[{"role": "user", "content": question}]
         )
 except Exception as e:
-    # Log error and provide graceful degradation
+    # Fehler protokollieren und sanften Abbau ermöglichen
     logger.error(f"RAG system error: {e}")
 ```
 
-
-### 3. Überwachung und Beobachtbarkeit
+### 3. Monitoring und Beobachtbarkeit
 
 ```python
-# Track RAG performance
+# Verfolge die RAG-Leistung
 metrics = {
     "retrieval_time": time.time() - start_time,
     "context_relevance": avg_similarity_score,
@@ -949,33 +939,32 @@ metrics = {
 }
 ```
 
-
 ## Nächste Schritte
 
 Nach Abschluss dieser Sitzung:
 
 1. **Sitzung 3 erkunden**: Open-Source-Modelle in Foundry Local
-2. **Produktions-RAG erstellen**: Implementierung mit Chainlit (Beispiel 04)
+2. **Produktionsreifes RAG bauen**: Mit Chainlit implementieren (Beispiel 04)
 3. **Fortgeschrittene Vektorsuche**: Integration mit Chroma oder Pinecone
 4. **Cloud-Migration**: Bereitstellung in Azure AI Foundry
-5. **RAG-Qualität bewerten**: Führen Sie `cd Workshop/samples;python -m session02.rag_eval_ragas` aus, um Antwortrelevanz, Glaubwürdigkeit und Kontextpräzision mit ragas zu messen
+5. **RAG-Qualität bewerten**: Führen Sie `cd Workshop/samples;python -m session02.rag_eval_ragas` aus, um answer_relevancy, faithfulness und context_precision mit ragas zu messen
 
-### Optionale Verbesserungen
+### Optionale Erweiterungen
 
-| Kategorie | Verbesserung | Begründung | Richtung |
+| Kategorie | Erweiterung | Begründung | Richtung |
 |----------|-------------|-----------|-----------|
-| Abruf | TF-IDF durch Vektorspeicher (FAISS / Chroma) ersetzen | Bessere semantische Genauigkeit & Skalierbarkeit | Dokumente in Abschnitte (500–800 Zeichen) teilen, einbetten, Index speichern |
-| Hybrid-Index | Duale semantische + Schlüsselwortfilterung | Verbessert Präzision bei numerischen / Code-Anfragen | Nach Schlüsselwort filtern, dann nach Kosinus-Ähnlichkeit ranken |
-| Embeddings | Mehrere Einbettungsmodelle evaluieren | Relevanz vs Geschwindigkeit optimieren | A/B: MiniLM vs E5-small vs lokal gehosteter Encoder |
-| Caching | Einbettungen & Abrufergebnisse zwischenspeichern | Niedrigere Latenz bei wiederholten Anfragen | Einfaches On-Disk-Pickle / SQLite mit Hash-Schlüssel |
-| Bewertung | Ragas-Datensatz erweitern | Statistisch aussagekräftige Qualität | 50–100 Q/A + Kontexte kuratieren; nach Thema stratifizieren |
-| Metriken | Abruf- & Generierungszeiten verfolgen | Leistungsprofilierung | `retrieval_ms`, `gen_ms`, `tokens` pro Aufruf erfassen |
-| Schutzmaßnahmen | Halluzinations-Fallback hinzufügen | Sicherere Antworten | Wenn Glaubwürdigkeit < Schwellenwert → Antwort: "Unzureichender Kontext." |
-| Fallback | Lokales → Azure-Modell kaskadieren | Hybrid-Qualitätssteigerung | Bei geringer Sicherheit an Cloud weiterleiten über dieselbe OpenAI-API |
-| Determinismus | Stabile Vergleichsläufe | Wiederholbare Evaluationssätze | Seed fixieren, `temperature=0`, Zufälligkeit des Samplers deaktivieren |
-| Überwachung | Evaluationslaufhistorie speichern | Regressionserkennung | JSON-Zeilen mit Zeitstempel + Metrik-Deltas anhängen |
+| Retrieval | TF-IDF durch Vektorspeicher ersetzen (FAISS / Chroma) | Bessere semantische Erfassung & Skalierbarkeit | Dokumente in Abschnitte (500–800 Zeichen) teilen, einbetten, Index speichern |
+| Hybrid-Index | Doppelte semantische + Schlüsselwort-Filterung | Verbessert Präzision bei numerischen/Code-Anfragen | Erst Schlüsselwort filtern, dann nach Kosinus-Ähnlichkeit sortieren |
+| Embeddings | Verschiedene Embedding-Modelle evaluieren | Relevanz vs Geschwindigkeit optimieren | A/B: MiniLM vs E5-small vs lokal gehosteter Encoder |
+| Caching | Embeddings & Abruf-Ergebnisse cachen | Niedrigere Latenz bei wiederholten Anfragen | Einfaches On-Disk Pickle / sqlite mit Hash-Schlüssel |
+| Evaluation | Ragas-Datensatz erweitern | Statistisch aussagekräftige Qualität | 50–100 Q/A + Kontexte kuratieren; nach Thema schichten |
+| Metriken | Abruf- & Generierungszeiten verfolgen | Performance-Profiling | Erfassen von `retrieval_ms`, `gen_ms`, `tokens` pro Aufruf |
+| Guardrails | Halluzinations-Fallback hinzufügen | Sicherere Antworten | Wenn Faithfulness < Schwelle → Antwort: "Unzureichender Kontext." |
+| Fallback | Kaskadierung lokal → Azure-Modell | Hybride Qualitätssteigerung | Bei geringer Sicherheit Route über denselben OpenAI API-Cloudservice |
+| Determinismus | Stabile Vergleichsläufe | Wiederholbare Evaluierungssätze | Fixierter Seed, `temperature=0`, Sampler-Zufall deaktivieren |
+| Monitoring | Evaluierungsläufe protokollieren | Regressionserkennung | JSON-Zeilen mit Zeitstempel + Metrikdifferenzen anhängen |
 
-#### Beispiel: Abrufzeiten hinzufügen
+#### Beispiel: Abruf-Zeitmessung hinzufügen
 
 ```python
 import time
@@ -988,26 +977,25 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
+#### Skalierung der Evaluation mit ragas
 
-#### Skalierung der Bewertung mit ragas
-
-1. Erstellen Sie eine JSONL mit Feldern: `question`, `answer`, `contexts`, `ground_truths` (Liste)
+1. Erstellen Sie eine JSONL mit den Feldern: `question`, `answer`, `contexts`, `ground_truths` (Liste)
 2. Konvertieren Sie in `Dataset.from_list(list_of_dicts)`
 3. Führen Sie `evaluate(dataset, metrics=[...])` aus
-4. Speichern Sie Metriken (CSV/JSON) für Trendanalysen.
+4. Speichern Sie Metriken (CSV/JSON) für Trendanalyse.
 
-#### Vektorspeicher-Schnellstart (FAISS)
+#### Vektorspeicher Schnellstart (FAISS)
 
 ```python
 import faiss, numpy as np
 index = faiss.IndexFlatIP(embeddings.shape[1])
-index.add(embeddings)  # embeddings = np.array([...]) normalized
+index.add(embeddings)  # embeddings = np.array([...]) normalisiert
 D, I = index.search(query_vec, k)
 ```
 
-Für die Persistenz auf der Festplatte verwenden Sie `faiss.write_index(index, "kb.index")`.
+Für Persistenz auf der Festplatte verwenden Sie `faiss.write_index(index, "kb.index")`.
 
-## Zusätzliche Ressourcen
+## Weitere Ressourcen
 
 ### Dokumentation
 - [Foundry Local Python SDK](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/reference/reference-sdk?pivots=programming-language-python)
@@ -1016,28 +1004,28 @@ Für die Persistenz auf der Festplatte verwenden Sie `faiss.write_index(index, "
 - [Ragas Evaluation Docs](https://docs.ragas.io)
 
 ### Beispielcode
-- [Module08 Sample 04](./samples/04/README.md) - Chainlit RAG-Anwendung
-- [Fortgeschrittenes Multi-Agent-System](./samples/09/README.md) - Muster zur Agentenkoordination
+- [Modul08 Beispiel 04](./samples/04/README.md) - Chainlit RAG-Anwendung
+- [Fortgeschrittenes Multi-Agenten-System](./samples/09/README.md) - Agenten-Koordinationsmuster
 
 ---
 
-**Dauer der Sitzung**: 30 Minuten Praxis + 15 Minuten Q&A  
-**Schwierigkeitsgrad**: Mittel  
+**Sitzungsdauer**: 30 Minuten Praxis + 15 Minuten Q&A
+**Schwierigkeitsgrad**: Mittelstufe
 **Voraussetzungen**: Sitzung 1 abgeschlossen, Grundkenntnisse in Python
 
 ## Beispiel-Szenario & Workshop-Zuordnung
 
 | Workshop-Skript / Notebook | Szenario | Ziel | Kern-Datensatz / Quelle | Beispiel-Frage |
 |----------------------------|----------|------|-----------------------|------------------|
-| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Internes Support-Wissensdatenbank, die FAQs zu Datenschutz + Leistung beantwortet | Minimaler In-Memory-RAG mit Embeddings | `DOCS` Liste im Skript (5 kurze Passagen) | Warum RAG mit lokaler Inferenz verwenden? |
-| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Qualitätsanalyst, der Basismetriken zur Abruf-Glaubwürdigkeit erstellt | Ragas-Metriken auf kleinem synthetischen Datensatz berechnen | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` Arrays | Welchen Vorteil bietet lokale Inferenz? |
-| `prompt_engineering.py` (fortgeschritten) | Domänen-SME, der fundierte Prompts für mehrere Branchen erstellt | Vergleich von Domänen-System-Prompts & Token-Auswirkungen | Inline `contexts` dict | Wie handhabt Foundry Local das Modell-Caching? |
-| `csv_qa_system.py` | Vertriebs-Operations, die interaktive Analysen über Exporte erkunden | Kleine Vertriebsscheibe zusammenfassen & abfragen | Generierte `sample_sales_data.csv` (10 Zeilen) | Welches Produkt hat den höchsten durchschnittlichen Verkaufsbetrag? |
-| `document_rag.py` | Produktteam, das Dokument-RAG für internes Wiki erkundet | Relevante Dokumente abrufen + zitieren | `create_sample_knowledge_base()` Liste | Was sind die Vorteile von Edge AI? |
-| `migration_guide.py` | Architekt, der einen Cloud-Migrationsplan vorbereitet | Lokale → Azure API-Parität demonstrieren | Statische Test-Prompts | Erklären Sie die Vorteile von Edge AI in 2–3 Sätzen. |
+| `samples/session02/rag_pipeline.py` / `notebooks/session02_rag_pipeline.ipynb` | Interne Support-Wissensdatenbank beantwortet Datenschutz- & Leistungs-FAQs | Minimales In-Memory-RAG mit Embeddings | `DOCS` Liste im Skript (5 kurze Passagen) | Warum RAG mit lokaler Inferenz nutzen? |
+| `samples/session02/rag_eval_ragas.py` / `notebooks/session02_rag_eval_ragas.ipynb` | Qualitätsanalyst erstellt Basislinien-Metriken zur Retrieval-Genauigkeit | Ermittlung der ragas-Metriken an kleinem synthetischem Datensatz | `DOCS`, `QUESTIONS`, `GROUND_TRUTH` Arrays | Welchen Vorteil bietet lokale Inferenz? |
+| `prompt_engineering.py` (fortgeschritten) | Domain-Experte erstellt fundierte Prompts für mehrere Verticals | Vergleich von domänenspezifischen System-Prompts & Token-Auswirkungen | Inline `contexts` Dict | Wie handhabt Foundry Local Modell-Caching? |
+| `csv_qa_system.py` | Sales-Operations erkunden interaktive Analysen über Exporte | Zusammenfassen & Abfragen kleiner Verkaufsabschnitte | Generierte `sample_sales_data.csv` (10 Zeilen) | Welches Produkt hat den höchsten Durchschnittsumsatz? |
+| `document_rag.py` | Produktteam erprobt Dokumenten-RAG für interne Wiki | Relevante Dokumente abrufen + zitieren | `create_sample_knowledge_base()` Liste | Was sind die Vorteile von Edge AI? |
+| `migration_guide.py` | Architekt bereitet Cloud-Migrationsplan vor | Demonstriert lokale zu Azure API Parität | Statische Test-Prompts | Erklären Sie die Vorteile von Edge AI in 2–3 Sätzen. |
 
-### Datensatz-Schnipsel
-Inline RAG-Pipeline-Dokumentliste:
+### Datensatz-Auszüge
+Inline-Dokumentenliste der RAG-Pipeline:
 ```python
 DOCS = [
     "Foundry Local provides an OpenAI-compatible local inference endpoint.",
@@ -1048,8 +1036,7 @@ DOCS = [
 ]
 ```
 
-
-Ragas-Bewertung Wahrheits-Tupel:
+Ragas Evaluations-Truth-Tupel:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
 GROUND_TRUTH = [
@@ -1058,16 +1045,15 @@ GROUND_TRUTH = [
 ]
 ```
 
-
 ### Szenario-Erzählung
-Die Support-Engineering-Gruppe möchte einen schnellen Prototyp erstellen, um interne FAQs zu beantworten, ohne Kundendaten extern offenzulegen. Die Artefakte aus Sitzung 2 entwickeln sich von einem minimalen ephemeren RAG (keine Persistenz) → strukturiertes CSV-Q&A → Dokumentenabruf mit Zitation → objektive Qualitätsbewertung (ragas) → eine Migrationsstrategie, die für Azure-Staging bereit ist.
+Die Support-Engineering-Gruppe möchte einen schnellen Prototyp für interne FAQs entwickeln, ohne Kundendaten extern preiszugeben. Die Artefakte aus Sitzung 2 reichen von minimalem flüchtigen RAG (ohne Persistenz) → strukturierte CSV-Q&A → Dokumentenabruf mit Zitierung → objektiver Qualitätsbewertung (ragas) → einer Migrationsstrategie für Azure Staging.
 
 ### Erweiterungspfade
-Verwenden Sie die Tabelle "Optionale Verbesserungen", um sich weiterzuentwickeln: TF-IDF durch FAISS/Chroma ersetzen, den Evaluationskorpus vergrößern (50–100 Q/A), Fallback-Eskalation zu einem größeren Modell hinzufügen, wenn Glaubwürdigkeit < Schwellenwert.
+Verwenden Sie die Tabelle Optionale Erweiterungen für Weiterentwicklungen: Tauschen Sie TF-IDF gegen FAISS/Chroma aus, vergrößern Sie das Evaluationskorpus (50–100 Q/A), fügen Sie eine Eskalation an ein größeres Modell bei Faithfulness < Schwelle hinzu.
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+**Haftungsausschluss**:
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Bei kritischen Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

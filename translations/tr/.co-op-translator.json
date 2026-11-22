@@ -55,19 +55,19 @@
   },
   "Module02/02.QwenFamily.md": {
     "original_hash": "1c8c05964be6fb235b026feed0bf066e",
-    "translation_date": "2025-10-01T21:01:44+00:00",
+    "translation_date": "2026-08-24T23:59:25+00:00",
     "source_file": "Module02/02.QwenFamily.md",
     "language_code": "tr"
   },
   "Module02/03.GemmaFamily.md": {
     "original_hash": "c6ab7eb1b8009ae984eaf6b85568f77a",
-    "translation_date": "2025-09-17T22:52:38+00:00",
+    "translation_date": "2026-08-25T00:01:42+00:00",
     "source_file": "Module02/03.GemmaFamily.md",
     "language_code": "tr"
   },
   "Module02/04.BitNETFamily.md": {
     "original_hash": "a56a3241aec9dc147b111ec10a2b3f2a",
-    "translation_date": "2025-09-17T22:28:34+00:00",
+    "translation_date": "2026-08-25T00:04:33+00:00",
     "source_file": "Module02/04.BitNETFamily.md",
     "language_code": "tr"
   },
@@ -97,7 +97,7 @@
   },
   "Module03/02.DeployingSLMinLocalEnv.md": {
     "original_hash": "0d9a6cd24a08aeac1328626abcc18ba8",
-    "translation_date": "2025-10-24T09:34:01+00:00",
+    "translation_date": "2026-08-24T23:57:37+00:00",
     "source_file": "Module03/02.DeployingSLMinLocalEnv.md",
     "language_code": "tr"
   },
@@ -193,13 +193,13 @@
   },
   "Module06/01.IntroduceAgent.md": {
     "original_hash": "44bc28c27b993c5fb988791b7a115705",
-    "translation_date": "2025-10-30T12:38:53+00:00",
+    "translation_date": "2026-08-24T23:56:33+00:00",
     "source_file": "Module06/01.IntroduceAgent.md",
     "language_code": "tr"
   },
   "Module06/02.FunctionCalling.md": {
     "original_hash": "8b05633cf46af274b3724ee2f7140100",
-    "translation_date": "2025-09-17T23:05:31+00:00",
+    "translation_date": "2026-08-24T23:53:16+00:00",
     "source_file": "Module06/02.FunctionCalling.md",
     "language_code": "tr"
   },
@@ -235,7 +235,7 @@
   },
   "Module07/windowdeveloper.md": {
     "original_hash": "2305e750e93ad4bd79898cf149e01b49",
-    "translation_date": "2025-10-03T06:09:52+00:00",
+    "translation_date": "2026-08-24T23:51:53+00:00",
     "source_file": "Module07/windowdeveloper.md",
     "language_code": "tr"
   },

@@ -1,34 +1,34 @@
-# Workshop-muistikirjat
+# Työpajan muistikirjat
 
 > **Interaktiiviset Jupyter-muistikirjat käytännön Edge AI -oppimiseen**
 >
-> Edistykselliset, omaan tahtiin etenevät opetusmateriaalit, jotka siirtyvät perus chat-vastauksista kehittyneisiin monen agentin järjestelmiin Microsoft Foundry Localin ja Small Language Models -mallien avulla.
+> Progressiiviset, omaan tahtiin etenevät opastusohjelmat, jotka rakentuvat peruschatin täydennyksistä kehittyneisiin moniedustusjärjestelmiin käyttäen Microsoft Foundry Local- ja pieniä kielimalleja.
 
 ---
 
 ## 📖 Johdanto
 
-Tervetuloa **EdgeAI for Beginners Workshop Notebooks** -kokoelmaan. Nämä interaktiiviset Jupyter-muistikirjat tarjoavat käytännönläheisen oppimiskokemuksen, jossa voit kirjoittaa, suorittaa ja kokeilla Edge AI -koodia reaaliajassa.
+Tervetuloa **EdgeAI aloittelijoille -työpajan muistikirjat** -kokoelmaan. Nämä interaktiiviset Jupyter-muistikirjat tarjoavat käytännön oppimiskokemuksen, jossa kirjoitat, suoritat ja kokeilet Edge AI -koodia reaaliajassa.
 
 ### Miksi Jupyter-muistikirjat?
 
-Perinteisistä opetusmateriaaleista poiketen nämä muistikirjat tarjoavat:
+Perinteisiin opastusohjelmiin verrattuna nämä muistikirjat tarjoavat:
 
-- **Interaktiivista oppimista**: Suorita koodisoluja ja näe tulokset heti
-- **Kokeilua**: Muokkaa parametreja ja tarkkaile muutoksia reaaliajassa
-- **Dokumentaatiota**: Sisäiset selitykset ja markdown-solut ohjaavat sinua käsitteiden läpi
-- **Toistettavuutta**: Täydellisiä toimivia esimerkkejä, joita voit käyttää uudelleen
-- **Visualisointia**: Näe suorituskykymittarit, upotukset ja tulokset suoraan muistikirjassa
+- **Interaktiivinen oppiminen**: Suorita koodisoluja ja näe tulokset välittömästi
+- **Kokeilu**: Muokkaa parametreja ja seuraa muutoksia reaaliajassa
+- **Dokumentointi**: Riviselitteiset selitykset ja markdown-solut ohjaavat sinua konseptien läpi
+- **Toistettavuus**: Täydelliset toimintavalmiit esimerkit, joita voit käyttää ja hyödyntää uudelleen
+- **Visualisointi**: Näe suorituskykymittarit, upotukset ja tulokset sisällä
 
 ### Mikä tekee näistä muistikirjoista erityisiä?
 
-Jokainen muistikirja on suunniteltu **tuotantovalmiiden parhaiden käytäntöjen** mukaisesti:
+Jokainen muistikirja on suunniteltu noudattaen **tuotantovalmiita parhaita käytäntöjä**:
 
-✅ **Kattava virheenkäsittely** - Sulava toiminta ja informatiiviset virheilmoitukset  
-✅ **Tyyppivihjeet ja dokumentaatio** - Selkeät funktiosignatuurit ja docstringit  
-✅ **Suorituskyvyn seuranta** - Tokenien käytön seuranta ja viiveen mittaus  
-✅ **Modulaarinen suunnittelu** - Uudelleenkäytettäviä malleja, joita voit mukauttaa projekteihisi  
-✅ **Progressiivinen monimutkaisuus** - Rakentuu systemaattisesti aiempien sessioiden pohjalta  
+✅ **Laaja virheiden käsittely** - Sileä alasajo ja informatiiviset virheilmoitukset  
+✅ **Tyyppi- vihjeet & dokumentaatio** - Selkeät funktiosignatuurit ja docstringit  
+✅ **Suorituskyvyn seuranta** - Token-käytön seuranta ja viiveen mittaukset  
+✅ **Modulaarinen suunnittelu** - Uudelleenkäytettävät mallit, joita voit soveltaa projekteihisi  
+✅ **Progressiivinen monimutkaisuus** - Rakentuu aiemmille istunnoille järjestelmällisesti
 
 ---
 
@@ -36,43 +36,43 @@ Jokainen muistikirja on suunniteltu **tuotantovalmiiden parhaiden käytäntöjen
 
 ### Keskeiset taidot, joita kehität
 
-Työskennellessäsi näiden muistikirjojen parissa opit hallitsemaan:
+Näiden muistikirjojen avulla hallitset:
 
-1. **Paikallisen AI-palvelun hallinta**
-   - Konfiguroi ja hallitse Microsoft Foundry Local -palveluita
-   - Valitse ja lataa sopivat mallit laitteistosi mukaan
+1. **Paikallisten AI-palveluiden hallinta**
+   - Määritä ja hallitse Microsoft Foundry Local -palveluita
+   - Valitse ja lataa sopivat mallit laitteistollesi
    - Seuraa resurssien käyttöä ja optimoi suorituskykyä
-   - Käsittele palveluiden etsintää ja tilan tarkistusta
+   - Hallitse palveluiden löytämistä ja tilan tarkistusta
 
-2. **AI-sovellusten kehittäminen**
-   - Toteuta OpenAI-yhteensopivia chat-vastauksia paikallisesti
-   - Rakenna suoratoistokäyttöliittymiä paremman käyttäjäkokemuksen saavuttamiseksi
-   - Suunnittele tehokkaita kehotteita Small Language Models -malleille
+2. **AI-sovellusten kehitys**
+   - Toteuta OpenAI-yhteensopivia chat-täydennyksiä paikallisesti
+   - Rakenna suoratoistoliittymiä paremman käyttäjäkokemuksen saavuttamiseksi
+   - Suunnittele tehokkaita kehotteita pienille kielimalleille
    - Integroi paikalliset mallit sovelluksiin
 
-3. **Hakupohjainen generointi (RAG)**
+3. **Hakuavusteinen generaation (RAG)**
    - Luo semanttinen haku vektoriupotuksilla
-   - Perusta LLM-vastaukset alakohtaisiin dokumentteihin
-   - Arvioi RAG:n laatua RAGAS-mittareilla
+   - Perusta LLM-vastaukset omakohtaisiin asiakirjoihin
+   - Arvioi RAG-laatua RAGAS-mittareilla
    - Skaalaa prototyypistä tuotantoon
 
 4. **Suorituskyvyn optimointi**
-   - Vertaa useita malleja systemaattisesti
-   - Mittaa viive, läpäisykyky ja ensimmäisen tokenin aika
-   - Vertaa Small Language Models -malleja Large Language Models -malleihin
-   - Valitse optimaaliset mallit suorituskyvyn/laadun kompromissien perusteella
+   - Vertaa useita malleja järjestelmällisesti
+   - Mittaa viivettä, läpimenonopeutta ja ensimmäisen tokenin aikaa
+   - Vertaa pieniä kielimalleja suuriin kielimalleihin
+   - Valitse optimaaliset mallit suorituskyvyn/laadun kompromisseihin perustuen
 
-5. **Monen agentin orkestrointi**
-   - Suunnittele erikoistuneita agentteja eri tehtäviin
+5. **Moniagenttien orkestrointi**
+   - Suunnittele erikoistuneita agenteja eri tehtäviin
    - Toteuta agenttimuisti ja kontekstinhallinta
-   - Koordinoi useita agentteja monimutkaisissa työnkuluissa
-   - Rakenna koordinaattorimalleja agenttien yhteistyöhön
+   - Koordinoi useita agenteja monimutkaisissa työtavoissa
+   - Rakenna koordinaattorimalleja agenttiyhteistyöhön
 
-6. **Älykäs mallien reititys**
-   - Toteuta tarkoituksen tunnistus ja mallien sovittaminen
-   - Reititä kyselyt automaattisesti sopiville malleille
-   - Rakenna monivaiheisia putkistoja (suunnittele → suorita → tarkenna)
-   - Suunnittele skaalautuvia malli-työkalu-arkkitehtuureja
+6. **Älykäs mallin reititys**
+   - Toteuta intentioiden tunnistus ja kaavojen sovitus
+   - Reititä kyselyt automaattisesti oikeille malleille
+   - Rakenna monivaihepipeliet (suunnittele → suorita → hioa)
+   - Suunnittele skaalautuvia malli-työkaluina -arkkitehtuureja
 
 ---
 
@@ -80,16 +80,16 @@ Työskennellessäsi näiden muistikirjojen parissa opit hallitsemaan:
 
 ### Mitä rakennat
 
-| Muistikirja | Lopputulos | Osoitetut taidot | Vaikeusaste |
-|-------------|------------|------------------|-------------|
-| **Session 01** | Chat-sovellus suoratoistolla | Palvelun asennus, perusvastaukset, suoratoistokäyttöliittymä | ⭐ Aloittelija |
-| **Session 02 (RAG)** | RAG-putkisto arvioinnilla | Upotukset, semanttinen haku, laatumittarit | ⭐⭐ Keskitaso |
-| **Session 02 (Eval)** | RAG-laadun arvioija | RAGAS-mittarit, systemaattinen arviointi | ⭐⭐ Keskitaso |
-| **Session 03** | Monimallivertailu | Suorituskyvyn mittaus, mallien vertailu | ⭐⭐ Keskitaso |
-| **Session 04** | SLM vs LLM vertailija | Kompromissianalyysi, optimointistrategiat | ⭐⭐⭐ Edistynyt |
-| **Session 05** | Monen agentin orkestroija | Agenttisuunnittelu, muisti, koordinointi | ⭐⭐⭐ Edistynyt |
-| **Session 06 (Router)** | Älykäs reititysjärjestelmä | Tarkoituksen tunnistus, mallivalinta | ⭐⭐⭐ Edistynyt |
-| **Session 06 (Pipeline)** | Monivaiheinen putkisto | Suunnittele/suorita/tarkenna työnkulut | ⭐⭐⭐ Edistynyt |
+| Muistikirja | Tuotos | Osoitetut taidot | Vaikeustaso |
+|----------|-------------|---------------------|------------|
+| **Istunto 01** | Chat-sovellus suoratoistolla | Palvelun pystytys, perus täydennykset, suoratoisto UX | ⭐ Aloittelija |
+| **Istunto 02 (RAG)** | RAG-pipeline arvioinnilla | Upotukset, semanttinen haku, laatumittarit | ⭐⭐ Keskitaso |
+| **Istunto 02 (Eval)** | RAG-laadun arvioija | RAGAS-mittarit, järjestelmällinen arviointi | ⭐⭐ Keskitaso |
+| **Istunto 03** | Monimallivertailu | Suorituskyvyn mittaaminen, mallien vertailu | ⭐⭐ Keskitaso |
+| **Istunto 04** | SLM vs LLM vertailu | Kompromissianalyysi, optimointistrategiat | ⭐⭐⭐ Edistynyt |
+| **Istunto 05** | Moniagenttien orkestroija | Agenttisuunnittelu, muisti, koordinointi | ⭐⭐⭐ Edistynyt |
+| **Istunto 06 (Reititin)** | Älykäs reititysjärjestelmä | Intentiotunnistus, mallin valinta | ⭐⭐⭐ Edistynyt |
+| **Istunto 06 (Pipeline)** | Monivaihepipelniit | Suunnittelu/suoritus/hionta-työt | ⭐⭐⭐ Edistynyt |
 
 ### Osaamisen eteneminen
 
@@ -104,218 +104,245 @@ Foundation    │   Intermediate   │   Advanced       │   Expert
 
 ---
 
-## 📅 Workshop-aikataulu
+## 📅 Työpajan aikataulu
 
-### 🚀 Puolen päivän workshop (3,5 tuntia)
+### 🚀 Puolipäivän työpaja (3,5 tuntia)
 
-**Sopii: Tiimikoulutuksiin, hackathoneihin, konferenssityöpajoihin**
+**Täydellinen: Tiimikoulutukset, hackathonit, konferenssityöpajat**
 
-| Aika | Kesto | Sessio | Aiheet | Aktiviteetit |
-|------|-------|--------|-------|-------------|
-| **0:00** | 30 min | Asennus & Johdanto | Ympäristön asennus, Foundry Local -asennus | Asenna riippuvuudet, varmista asennus |
-| **0:30** | 30 min | Session 01 | Perus chat-vastaukset, suoratoisto | Suorita muistikirja, muokkaa kehotteita |
-| **1:00** | 45 min | Session 02 | RAG-putkisto, upotukset, arviointi | Rakenna RAG-järjestelmä, testaa kyselyitä |
-| **1:45** | 15 min | Tauko | ☕ Kahvia & kysymyksiä | — |
-| **2:00** | 30 min | Session 03 | Monimallivertailu | Vertaa 3+ mallia |
-| **2:30** | 30 min | Session 04 | SLM vs LLM kompromissit | Analysoi suorituskyky/laatu |
-| **3:00** | 30 min | Session 05-06 | Monen agentin järjestelmät & reititys | Tutki edistyneitä malleja |
+| Aika | Kesto | Istunto | Aiheet | Aktiviteetit |
+|------|----------|---------|--------|------------|
+| **0:00** | 30 min | Asennus & Johdanto | Ympäristön asennus, Foundry Local -asennus | Asenna riippuvuudet, tarkista asennus |
+| **0:30** | 30 min | Istunto 01 | Perus chat-täydennykset, suoratoisto | Suorita muistikirja, muokkaa kehotteita |
+| **1:00** | 45 min | Istunto 02 | RAG-pipeline, upotukset, arviointi | Rakenna RAG-järjestelmä, testaa kyselyjä |
+| **1:45** | 15 min | Tauko | ☕ Kahvi & kysymykset | — |
+| **2:00** | 30 min | Istunto 03 | Monimallien vertailu | Vertaa 3+ mallia |
+| **2:30** | 30 min | Istunto 04 | SLM vs LLM kompromissit | Analysoi suorituskyky/laatu |
+| **3:00** | 30 min | Istunnot 05-06 | Moniagenttijärjestelmät & reititys | Tutki edistyneitä rakenteita |
 
-**Lopputulos**: Osallistujat lähtevät 6 toimivan Edge AI -sovelluksen ja tuotantovalmiiden koodimallien kanssa.
+**Tuloste**: Osallistujat saavat 6 toimivaa Edge AI -sovellusta ja tuotantovalmiita koodimalleja.
 
 ---
 
-### 🎓 Koko päivän workshop (6 tuntia)
+### 🎓 Koko päivän työpaja (6 tuntia)
 
-**Sopii: Syvälliseen koulutukseen, bootcampiin, yliopistokursseihin**
+**Täydellinen: Syvälliseen koulutukseen, bootcampeihin, yliopistokursseille**
 
-| Aika | Kesto | Sessio | Aiheet | Aktiviteetit |
-|------|-------|--------|-------|-------------|
-| **0:00** | 45 min | Asennus & Teoria | Ympäristön asennus, Edge AI perusteet | Asenna, varmista, keskustele käyttötapauksista |
-| **0:45** | 45 min | Session 01 | Chat-vastausten syväluotaus | Toteuta perus- ja suoratoistochat |
-| **1:30** | 30 min | Tauko | ☕ Kahvia & verkostoitumista | — |
-| **2:00** | 60 min | Session 02 (Molemmat) | RAG-putkisto + RAGAS-arviointi | Rakenna täydellinen RAG-järjestelmä |
-| **3:00** | 30 min | Käytännön harjoitus 1 | Mukautettu RAG omalle alallesi | Sovella omiin dokumentteihin |
+| Aika | Kesto | Istunto | Aiheet | Aktiviteetit |
+|------|----------|---------|--------|------------|
+| **0:00** | 45 min | Asennus & Teoria | Ympäristön asennus, Edge AI perusteet | Asenna, tarkista, keskustele käyttötapauksista |
+| **0:45** | 45 min | Istunto 01 | Chat-täydennysten syväsukellus | Toteuta perus- ja suoratoistochat |
+| **1:30** | 30 min | Tauko | ☕ Kahvi & verkostoituminen | — |
+| **2:00** | 60 min | Istunto 02 (molemmat) | RAG-pipeline + RAGAS-arviointi | Rakenna kokonainen RAG-järjestelmä |
+| **3:00** | 30 min | Käytännön harjoitus 1 | Räätälöity RAG omalle alalle | Sovella omiin asiakirjoihin |
 | **3:30** | 30 min | Lounas | 🍽️ | — |
-| **4:00** | 45 min | Session 03 | Vertailumenetelmät | Systemaattinen mallivertailu |
-| **4:45** | 45 min | Session 04 | Optimointistrategiat | SLM vs LLM analyysi |
-| **5:30** | 60 min | Session 05-06 | Edistynyt orkestrointi | Monen agentin järjestelmät, reititys |
-| **6:30** | 30 min | Käytännön harjoitus 2 | Rakenna mukautettu agenttijärjestelmä | Suunnittele oma orkestroija |
+| **4:00** | 45 min | Istunto 03 | Vertailumenetelmät | Järjestelmällinen mallien vertailu |
+| **4:45** | 45 min | Istunto 04 | Optimointistrategiat | SLM vs LLM analyysi |
+| **5:30** | 60 min | Istunnot 05-06 | Edistynyt orkestrointi | Moniagenttijärjestelmät, reititys |
+| **6:30** | 30 min | Käytännön harjoitus 2 | Rakenna räätälöity agenttijärjestelmä | Suunnittele oma orkestroijasi |
 
-**Lopputulos**: Syvällinen ymmärrys Edge AI -malleista sekä 2 mukautettua projektia.
+**Tuloste**: Syvällinen ymmärrys Edge AI -malleista ja 2 räätälöityä projektia.
 
 ---
 
 ### 📚 Omaehtoinen oppiminen (2 viikkoa)
 
-**Sopii: Yksilöoppijoille, verkkokursseille, itseopiskeluun**
+**Täydellinen: Yksittäisille oppijoille, verkkokursseille, itseopiskeluun**
 
-#### Viikko 1: Perusteet (6 tuntia)
-
-| Päivä | Painopiste | Kesto | Muistikirjat | Kotitehtävät |
-|-------|------------|-------|--------------|-------------|
-| **Ma** | Asennus & Perusteet | 1,5 h | Session 01 | Muokkaa kehotteita, testaa suoratoistoa |
-| **Ke** | RAG-perusteet | 2 h | Session 02 (molemmat) | Lisää omia dokumentteja |
-| **Pe** | Vertailu | 1,5 h | Session 03 | Vertaa lisämalleja |
-| **La** | Kertaus & Harjoittelu | 1 h | Kaikki Viikko 1 | Tee harjoituksia, korjaa virheitä |
-
-#### Viikko 2: Edistynyt (5 tuntia)
+#### 1. viikko: Perusteet (6 tuntia)
 
 | Päivä | Painopiste | Kesto | Muistikirjat | Kotitehtävät |
-|-------|------------|-------|--------------|-------------|
-| **Ma** | Optimointi | 1,5 h | Session 04 | Dokumentoi kompromissit |
-| **Ke** | Monen agentin järjestelmät | 2 h | Session 05 | Suunnittele mukautettuja agentteja |
-| **Pe** | Älykäs reititys | 1,5 h | Session 06 (molemmat) | Rakenna reitityslogiikka |
-| **La** | Lopullinen projekti | 2 h | Integraatio | Yhdistä useita malleja |
+|-----|-------|----------|-----------|----------|
+| **Ma** | Asennus & Perusteet | 1,5 h | Istunto 01 | Muokkaa kehotteita, testaa suoratoistoa |
+| **Ke** | RAG perusteet | 2 h | Istunto 02 (molemmat) | Lisää omat asiakirjasi |
+| **Pe** | Vertailu | 1,5 h | Istunto 03 | Vertaa lisämalleja |
+| **La** | Kertaus & Harjoittelu | 1 h | Kaikki 1. viikon | Suorita harjoituksia, korjaa virheitä |
 
-**Lopputulos**: Edge AI -mallien hallinta sekä portfolioprojekti.
+#### 2. viikko: Edistynyt (5 tuntia)
+
+| Päivä | Painopiste | Kesto | Muistikirjat | Kotitehtävät |
+|-----|-------|----------|-----------|----------|
+| **Ma** | Optimointi | 1,5 h | Istunto 04 | Dokumentoi kompromissit |
+| **Ke** | Moniagenttijärjestelmät | 2 h | Istunto 05 | Suunnittele räätälöityjä agenteja |
+| **Pe** | Älykäs reititys | 1,5 h | Istunto 06 (molemmat) | Rakenna reitityslogiikka |
+| **La** | Lopputyö | 2 h | Integraatio | Yhdistä useita malleja |
+
+**Tuloste**: Edge AI -mallien hallinta ja portfolioprojekti.
 
 ---
 
 ## 📔 Muistikirjojen kuvaukset
 
-### 📘 Session 01: Chat Bootstrap
+### 📘 Istunto 01: Chat käynnistys
 **Tiedosto**: `session01_chat_bootstrap.ipynb`  
 **Kesto**: 20-30 minuuttia  
-**Edellytykset**: Ei mitään  
+**Esitiedot**: Ei mitään  
 **Vaikeusaste**: ⭐ Aloittelija
 
 **Mitä opit**:
-- Asenna ja konfiguroi Foundry Local Python SDK
-- Käytä `FoundryLocalManager`-työkalua automaattiseen palvelun etsintään
-- Toteuta perus chat-vastaukset OpenAI-yhteensopivalla API:lla
+- Asenna ja määritä Foundry Local Python SDK
+- Käytä `FoundryLocalManager` -luokkaa automaattiseen palveluiden löytämiseen
+- Toteuta perus chat-täydennyksiä OpenAI-yhteensopivalla API:lla
 - Rakenna suoratoistovastauksia paremman käyttäjäkokemuksen saavuttamiseksi
-- Käsittele virheitä ja palvelun saatavuusongelmia sulavasti
+- Käsittele virheitä ja palvelun poissaoloja hienovaraisesti
 
-**Keskeiset käsitteet**: Palvelun hallinta, chat-vastaukset, suoratoisto, virheenkäsittely
+**Keskeiset konseptit**: Palvelun hallinta, chat-täydennykset, suoratoisto, virheiden käsittely
 
-**Mitä rakennat**: Interaktiivinen chat-sovellus suoratoistotuella
+**Rakennat**: Interaktiivisen chat-sovelluksen suoratoistolla
 
 ---
 
-### 📗 Session 02: RAG-putkisto
+### 📗 Istunto 02: RAG-pipeline
 **Tiedosto**: `session02_rag_pipeline.ipynb`  
 **Kesto**: 30-45 minuuttia  
-**Edellytykset**: Session 01  
+**Esitiedot**: Istunto 01  
 **Vaikeusaste**: ⭐⭐ Keskitaso
 
 **Mitä opit**:
 - Toteuta Retrieval Augmented Generation (RAG) -malli
-- Luo vektoriupotuksia sentence-transformers-kirjastolla
-- Rakenna semanttinen haku kosinisimilaarisuudella
-- Perusta LLM-vastaukset alakohtaisiin dokumentteihin
-- Käsittele valinnaisia riippuvuuksia import guards -menetelmällä
+- Luo vektoriupotuksia käyttäen lauseiden muuntajia
+- Rakenna semanttinen haku kosinietäisyydellä
+- Perusta LLM-vastaukset toimialakohtaisiin asiakirjoihin
+- Käsittele valinnaiset riippuvuudet import-tauluilla
 
-**Keskeiset käsitteet**: RAG-arkkitehtuuri, upotukset, semanttinen haku, vektorisimilaarisuus
+**Keskeiset konseptit**: RAG-arkkitehtuuri, upotukset, semanttinen haku, vektorietäisyys
 
-**Mitä rakennat**: Dokumenttipohjainen kysymys-vastausjärjestelmä
+**Rakennat**: Asiakirjoihin perustuvan kysymys-vastausjärjestelmän
 
 ---
 
-### 📗 Session 02: RAG-arviointi RAGAS:lla
+### 📗 Istunto 02: RAG arviointi RAGAS:lla
 **Tiedosto**: `session02_rag_eval_ragas.ipynb`  
 **Kesto**: 30-45 minuuttia  
-**Edellytykset**: Session 02 RAG-putkisto  
+**Esitiedot**: Istunto 02 RAG-pipeline  
 **Vaikeusaste**: ⭐⭐ Keskitaso
 
 **Mitä opit**:
-- Arvioi RAG:n laatua alan standardimittareilla
-- Mittaa kontekstin relevanssia, vastauksen relevanssia, uskottavuutta
-- Käytä RAGAS-kehystä systemaattiseen arviointiin
-- Tunnista ja korjaa RAG:n laatuongelmat
-- Rakenna arviointidatasetit omalle alallesi
+- Arvioi RAG-laatu alan standardeilla
+- Mittaa kontekstin relevanssia, vastauksen relevanssia, uskollisuutta
+- Käytä RAGAS-kehystä järjestelmälliseen arviointiin
+- Tunnista ja korjaa RAG-laadun ongelmia
+- Rakenna arviointiaineistot omalle toimialallesi
 
-**Keskeiset käsitteet**: RAG-arviointi, RAGAS-mittarit, laadun mittaus, systemaattinen testaus
+**Keskeiset konseptit**: RAG-arviointi, RAGAS-mittarit, laadun mittaus, järjestelmällinen testaus
 
-**Mitä rakennat**: RAG-laadun arviointikehys
+**Rakennat**: RAG-laadunarviointikehyksen
 
 ---
 
-### 📙 Session 03: OSS-mallien vertailu
+### 📙 Istunto 03: OSS-mallien vertailu
 **Tiedosto**: `session03_benchmark_oss_models.ipynb`  
 **Kesto**: 30-45 minuuttia  
-**Edellytykset**: Session 01  
+**Esitiedot**: Istunto 01  
 **Vaikeusaste**: ⭐⭐ Keskitaso
 
 **Mitä opit**:
-- Vertaa useita malleja systemaattisesti
-- Mittaa viive, läpäisykyky, ensimmäisen tokenin aika
-- Toteuta sulava toiminta mallien epäonnistuessa
-- Vertaa suorituskykyä eri malliperheiden välillä
+- Järjestelmällisesti vertaa useita malleja
+- Mittaa viivettä, läpimenoaikaa, ensimmäisen tokenin aikaa
+- Toteuta maltillinen virheensietomekanismi mallivirheille
+- Vertaa suorituskykyä malliperheiden välillä
 - Visualisoi ja analysoi vertailutuloksia
 
-**Keskeiset käsitteet**: Suorituskyvyn vertailu, viiveen mittaus, mallien vertailu, tilastollinen analyysi
+**Keskeiset konseptit**: Suorituskyvyn vertailu, viiveen mittaus, mallien vertailu, tilastollinen analyysi
 
-**Mitä rakennat**: Monimallivertailuohjelmisto
+**Rakennat**: Monimallien vertailutyökalun
 
 ---
 
-### 📙 Session 04: Mallivertailu (SLM vs LLM)
+### 📙 Istunto 04: Mallien vertailu (SLM vs LLM)
 **Tiedosto**: `session04_model_compare.ipynb`  
 **Kesto**: 30-45 minuuttia  
-**Edellytykset**: Session 01, 03  
+**Esitiedot**: Istunnot 01, 03  
 **Vaikeusaste**: ⭐⭐⭐ Edistynyt
 
 **Mitä opit**:
-- Vertaa Small Language Models -malleja Large Language Models -malleihin
-- Analysoi suorituskyvyn ja laadun kompromisseja
-- Mittaa edge-soveltuvuuden mittareita
-- Valitse optimaaliset mallit käyttöönoton rajoitteiden mukaan
-- Dokumentoi päätöskriteerit mallivalinnalle
+- Vertaa pieniä kielimalleja suuriin kielimalleihin
+- Analysoi suorituskyvyn ja laadun välisiä kompromisseja
+- Mittaa reunaolosuhteisiin sopivuuden mittareita
+- Valitse optimaaliset mallit käyttöönoton vaatimusten mukaan
+- Dokumentoi mallivalinnan päätöskriteerit
 
-**Keskeiset käsitteet**: Mallivalinta, kompromissianalyysi, optimointistrategiat, käyttöönoton suunnittelu
+**Keskeiset konseptit**: Mallin valinta, kompromissianalyysi, optimointistrategiat, käyttöönoton suunnittelu
 
-**Mitä rakennat**: SLM vs LLM vertailukehys
+**Rakennat**: SLM vs LLM vertailukehyksen
 
 ---
 
-### 📕 Session 05: Monen agentin orkestroija
+### 📕 Istunto 05: Moniagenttien orkestroija
 **Tiedosto**: `session05_agents_orchestrator.ipynb`  
 **Kesto**: 45-60 minuuttia  
-**Edellytykset**: Session 01-02  
+**Esitiedot**: Istunnot 01-02  
 **Vaikeusaste**: ⭐⭐⭐ Edistynyt
 
 **Mitä opit**:
-- Suunnittele erikoistuneita agentteja eri tehtäviin
-- Toteuta agenttimuisti ja kontekstinhallinta
-- Rakenna koordinaattorimalleja agenttien yhteistyöhön
-- Käsittele agenttien välistä viestintää ja siirtoja
-- Seuraa monen agentin järjestelmän suorituskykyä
+- Suunnittele erikoistuneita agenteja eri tehtäviin
+- Toteuta agentin muisti ja kontekstinhallinta
+- Rakenna koordinaattorimalleja agenttiyhteistyöhön
+- Käsittele agenttien välistä viestintää ja tehtävien siirtoja
+- Seuraa moniagenttijärjestelmän suorituskykyä
 
-**Keskeiset käsitteet**: Agenttiarkkitehtuuri, koordinaattorimallit, muistinhallinta, agenttien orkestrointi
+**Keskeiset konseptit**: Agenttiarkkitehtuuri, koordinaattorimallit, muistin hallinta, agenttien orkestrointi
 
-**Mitä rakennat**: Monen agentin järjestelmä koordinaattorilla ja erikoistuneilla agenteilla
+**Rakennat**: Moniagenttijärjestelmän koordinaattorilla ja erikoisasiantuntijoilla
 
 ---
 
-### 📕 Session 06: Mallien reititys
+### 📕 Istunto 06: Mallin reititin
 **Tiedosto**: `session06_models_router.ipynb`  
 **Kesto**: 30-45 minuuttia  
-**Edellytykset**:
-- Suunnittele skaalautuvia mallityökaluarkkitehtuureja
+**Esitiedot**: Istunnot 01, 03  
+**Vaikeusaste**: ⭐⭐⭐ Edistynyt
 
-**Keskeiset käsitteet**: Putkistoarkkitehtuuri, monivaiheinen käsittely, virheiden korjaus, skaalautuvuuden mallit
+**Mitä opit**:
+- Toteuta intentiotunnistus ja kaavojen sovitus
+- Rakenna avainsanoihin perustuva mallin reititys
+- Reititä kyselyt automaattisesti sopiville malleille
+- Määritä monimallirekisterit
+- Seuraa reitityspäätöksiä ja suorituskykyä
+
+**Keskeiset konseptit**: Intentiotunnistus, mallin reititys, kaavojen sovitus, älykäs valinta
+
+**Rakennat**: Älykkään mallin reititysjärjestelmän
+
+---
+
+### 📕 Istunto 06: Monivaihepipeline
+**Tiedosto**: `session06_models_pipeline.ipynb`  
+**Kesto**: 30-45 minuuttia  
+**Esitiedot**: Istunnot 01, 06 Reititin  
+**Vaikeusaste**: ⭐⭐⭐ Edistynyt
+
+**Mitä opit**:
+- Rakenna monivaiheisia AI-pipelineja (suunnittele → suorita → hio)
+- Integroi reititin älykkääseen mallin valintaan
+- Toteuta pipeline-virheiden käsittely ja palautuminen
+- Seuraa pipelinen suorituskykyä ja vaiheita
+- Suunnittele skaalautuvia malli-työkaluina -arkkitehtuureja
+
+
+**Keskeiset käsitteet**: Putkistoarkkitehtuuri, monivaiheinen käsittely, virheiden korjaus, skaalautuvuusmallit
 
 **Rakennat**: Monivaiheinen älykäs putkisto reitityksellä
 
 ---
 
-## 🚀 Aloitus
+## 🚀 Aloittaminen
 
-### Esivaatimukset
+### Vaatimukset
 
 **Järjestelmävaatimukset**:
 - **Käyttöjärjestelmä**: Windows 10/11, macOS 11+ tai Linux (Ubuntu 20.04+)
-- **RAM**: Vähintään 8GB, suositus 16GB+
-- **Tallennustila**: Vähintään 10GB vapaata tilaa malleille
+- **RAM-muisti**: Vähintään 8GB, suositus 16GB+
+- **Tallennustila**: 10GB+ vapaata tilaa malleille
 - **Laitteisto**: CPU, jossa AVX2; GPU (CUDA, Qualcomm NPU) valinnainen
 
 **Ohjelmistovaatimukset**:
-- **Python 3.8+** ja pip
+- **Python 3.8+** pipillä
 - **Jupyter Notebook** tai **VS Code** Jupyter-laajennuksella
 - **Microsoft Foundry Local** asennettuna ja konfiguroituna
-- **Git** (repositoryn kloonaamiseen)
+- **Git** (repositoriokloonausta varten)
 
-### Asennusohjeet
+### Asennusvaiheet
 
 #### 1. Asenna Foundry Local
 
@@ -330,7 +357,7 @@ brew tap microsoft/foundrylocal
 brew install foundrylocal
 ```
 
-**Varmista asennus**:
+**Tarkista asennus**:
 ```bash
 foundry --version
 ```
@@ -338,60 +365,60 @@ foundry --version
 #### 2. Määritä Python-ympäristö
 
 ```bash
-# Navigate to Workshop directory
+# Siirry Workshop-hakemistoon
 cd Workshop
 
-# Create virtual environment
+# Luo virtuaaliympäristö
 python -m venv .venv
 
-# Activate virtual environment
+# Aktivoi virtuaaliympäristö
 # Windows
 .venv\Scripts\activate
 # macOS/Linux
 source .venv/bin/activate
 
-# Install dependencies
+# Asenna riippuvuudet
 pip install -r requirements.txt
 ```
 
 #### 3. Käynnistä Foundry Local
 
 ```bash
-# Load a model (auto-downloads if needed)
+# Lataa malli (lataa automaattisesti tarvittaessa)
 foundry model run phi-4-mini
 
-# Verify service is running
+# Varmista, että palvelu on käynnissä
 foundry service status
 ```
 
 #### 4. Käynnistä Jupyter
 
 ```bash
-# Start Jupyter Notebook
+# Käynnistä Jupyter Notebook
 jupyter notebook notebooks/
 
-# Or use VS Code with Jupyter extension
+# Tai käytä VS Codea Jupyter-laajennuksella
 code notebooks/
 ```
 
-### Nopea tarkistus
+### Pikainen tarkistus
 
-Suorita tämä Python-solussa varmistaaksesi asennuksen:
+Suorita tämä Python-solu varmistaaksesi asetukset:
 
 ```python
 from foundry_local import FoundryLocalManager
 import openai
 
-# Initialize manager (auto-discovers service)
+# Alusta hallinnoija (löytää palvelun automaattisesti)
 manager = FoundryLocalManager("phi-4-mini")
 
-# Configure OpenAI client
+# Määritä OpenAI-asiakas
 client = openai.OpenAI(
     base_url=manager.endpoint,
     api_key=manager.api_key
 )
 
-# Test chat completion
+# Testaa chatin täydennys
 response = client.chat.completions.create(
     model=manager.get_model_info("phi-4-mini").id,
     messages=[{"role": "user", "content": "Hello!"}]
@@ -400,7 +427,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-**Odotettu tulos**: Tervehdysviesti paikalliselta mallilta.
+**Odotettu tulos**: Tervehdysvastaus paikalliselta mallilta.
 
 ---
 
@@ -409,47 +436,47 @@ print(response.choices[0].message.content)
 ### Ohjaajille
 
 **Ennen työpajaa**:
-- ✅ Lähetä asennusohjeet viikkoa etukäteen
+- ✅ Lähetä asennusohjeet 1 viikkoa etukäteen
 - ✅ Testaa kaikki notebookit kohdelaitteistolla
-- ✅ Valmistele vianetsintäopas yleisille ongelmille
-- ✅ Pidä varamallit valmiina (phi-3.5-mini, jos phi-4-mini epäonnistuu)
-- ✅ Perusta yhteinen keskustelukanava kysymyksille
+- ✅ Valmistele vianmääritysohje yleisiin ongelmiin
+- ✅ Varaa varamalleja valmiiksi (phi-3.5-mini, jos phi-4-mini epäonnistuu)
+- ✅ Perusta yhteinen chat-kanava kysymyksiä varten
 
 **Työpajan aikana**:
-- ✅ Aloita nopealla ympäristön tarkistuksella (5 minuuttia)
-- ✅ Jaa vianetsintäresurssit heti
-- ✅ Kannusta kokeiluun ja muokkauksiin
-- ✅ Hyödynnä taukoja strategisesti (joka toinen sessio)
-- ✅ Pidä apuohjaajia saatavilla henkilökohtaiseen tukeen
+- ✅ Aloita nopealla ympäristötarkistuksella (5 minuuttia)
+- ✅ Jaa vianmääritysmateriaalit heti
+- ✅ Kannusta kokeiluihin ja muokkauksiin
+- ✅ Käytä taukoja strategisesti (jokaisen kahden istunnon jälkeen)
+- ✅ TAs (oppaiden avustajat) valmiina yksilöapuun
 
 **Työpajan jälkeen**:
-- ✅ Jaa täydelliset toimivat notebookit ja ratkaisut
+- ✅ Jaa valmiit notebookit ja ratkaisut
 - ✅ Tarjoa linkkejä lisäresursseihin
-- ✅ Luo palautekysely parannuksia varten
-- ✅ Tarjoa toimistoaikoja jatkokysymyksille
+- ✅ Luo palaute-kysely parannuksia varten
+- ✅ Tarjoa toimistoaikoja jatkokysymyksiä varten
 
 ### Oppijoille
 
-**Maksimoi oppimisesi**:
-- ✅ Suorita asennus ennen työpajan alkua
-- ✅ Suorita jokainen koodisolu itse (älä vain lue)
+**Optimoi oppimisesi**:
+- ✅ Suorita asennus valmiiksi ennen työpajan alkua
+- ✅ Suorita jokainen koodisolu itse (älä pelkästään lue)
 - ✅ Kokeile parametreja ja kehotteita
-- ✅ Kirjaa ylös oivallukset ja haasteet
-- ✅ Kysy kysymyksiä, kun jäät jumiin (muillakin voi olla sama kysymys)
+- ✅ Tee muistiinpanoja oivalluksista ja huomioista
+- ✅ Kysy apua, jos jumitut (muutkin voivat olla samassa tilanteessa)
 
-**Vältä yleisiä virheitä**:
-- ❌ Solujen suoritusjärjestyksen ohittaminen (suorita järjestyksessä)
-- ❌ Virheilmoitusten huomiotta jättäminen
-- ❌ Kiirehtiminen ilman ymmärrystä
-- ❌ Markdown-selitysten sivuuttaminen
-- ❌ Muokattujen notebookien tallentamatta jättäminen
+**Yleiset sudenkuopat**:
+- ❌ Ohita solujen suoritusjärjestys (suorita järjestyksessä)
+- ❌ Älä jätä virheilmoituksia huomiotta
+- ❌ Älä kiirehdi ymmärtämättä
+- ❌ Älä jätä markdown-selityksiä lukematta
+- ❌ Älä unohda tallentaa muokattuja notebookejasi
 
-**Vianetsintävinkit**:
+**Virheenkorjausvinkkejä**:
 1. **Palvelu ei käynnissä**: Tarkista `foundry service status`
 2. **Tuontivirheet**: Varmista, että virtuaaliympäristö on aktivoitu
 3. **Mallia ei löydy**: Suorita `foundry model ls` ladattujen mallien listaamiseksi
-4. **Hidas suorituskyky**: Tarkista RAM-käyttö, sulje muita sovelluksia
-5. **Odottamattomat tulokset**: Käynnistä kernel uudelleen ja suorita kaikki solut alusta
+4. **Hidas suorituskyky**: Tarkista RAM-käyttö, sulje muut sovellukset
+5. **Odottamattomat tulokset**: Käynnistä kernel uudelleen ja suorita kaikki solut alusta alkaen
 
 ---
 
@@ -458,22 +485,22 @@ print(response.choices[0].message.content)
 ### Työpajamateriaalit
 
 - **[Työpajan pääopas](../Readme.md)** - Yleiskatsaus, oppimistavoitteet, uratulokset
-- **[Python-esimerkit](../../../../Workshop/samples)** - Vastaavat Python-skriptit jokaiselle sessiolle
-- **[Sessio-oppaat](../../../../Workshop)** - Yksityiskohtaiset markdown-oppaat (Session01-06)
-- **[Skriptit](../../../../Workshop/scripts)** - Validointi- ja testausapuvälineet
-- **[Vianetsintä](./TROUBLESHOOTING.md)** - Yleiset ongelmat ja ratkaisut
-- **[Pikaopas](./quickstart.md)** - Nopean aloituksen opas
+- **[Python-esimerkit](../../../../Workshop/samples)** - Vastaavat Python-skriptit kuhunkin istuntoon
+- **[Istunto-oppaat](../../../../Workshop)** - Yksityiskohtaiset markdown-oppaat (Session01-06)
+- **[Skriptit](../../../../Workshop/scripts)** - Vahvistus- ja testausvälineet
+- **[Vianmääritys](./TROUBLESHOOTING.md)** - Yleiset ongelmat ja ratkaisut
+- **[Pika-aloitus](./quickstart.md)** - Nopeutettu aloitusopas
 
 ### Dokumentaatio
 
-- **[Foundry Local -dokumentaatio](https://learn.microsoft.com/azure/ai-foundry/foundry-local/)** - Microsoftin virallinen dokumentaatio
-- **[OpenAI Python SDK](https://github.com/openai/openai-python)** - OpenAI SDK:n viite
-- **[Sentence Transformers](https://www.sbert.net/)** - Upotusmallien dokumentaatio
-- **[RAGAS Framework](https://docs.ragas.io/)** - RAG-arviointimetriikat
+- **[Foundry Local Docs](https://learn.microsoft.com/azure/ai-foundry/foundry-local/)** - Virallinen Microsoftin dokumentaatio
+- **[OpenAI Python SDK](https://github.com/openai/openai-python)** - OpenAI SDK -viite
+- **[Sentence Transformers](https://www.sbert.net/)** - Upotemallien dokumentaatio
+- **[RAGAS Framework](https://docs.ragas.io/)** - RAG-arviointimittarit
 
 ### Yhteisö
 
-- **[GitHub-keskustelut](https://github.com/microsoft/edgeai-for-beginners/discussions)** - Kysy kysymyksiä, jaa projekteja
+- **[GitHub Keskustelut](https://github.com/microsoft/edgeai-for-beginners/discussions)** - Kysy kysymyksiä, jaa projekteja
 - **[Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4)** - Reaaliaikainen yhteisötuki
 - **[Stack Overflow](https://stackoverflow.com/questions/tagged/foundry-local)** - Tekninen Q&A
 
@@ -481,83 +508,83 @@ print(response.choices[0].message.content)
 
 ## 🎯 Oppimispolun suositukset
 
-### Aloittelijapolku (Aloita tästä)
+### Aloittelijan polku (aloita tästä)
 
-1. **Sessio 01** - Chat Bootstrap
-2. **Sessio 02** - RAG-putkisto
-3. **Sessio 03** - Mallien vertailu
+1. **Istunto 01** - Chat Bootstrap
+2. **Istunto 02** - RAG-putkisto
+3. **Istunto 03** - Vertailumallit
 
-**Aika**: ~2 tuntia | **Painopiste**: Perusmallit
-
----
-
-### Keskitaso
-
-1. Suorita aloittelijapolku
-2. **Sessio 02** - RAG-arviointi
-3. **Sessio 04** - Mallien vertailu
-
-**Aika**: ~4 tuntia | **Painopiste**: Laatu ja optimointi
+**Aika**: ~2 tuntia | **Painotus**: Peruskuviot
 
 ---
 
-### Edistynyt polku (Koko työpaja)
+### Keskitaso-polku
 
-1. Suorita keskitaso
-2. **Sessio 05** - Multi-Agent Orchestrator
-3. **Sessio 06** - Mallireititin
-4. **Sessio 06** - Monivaiheinen putkisto
+1. Suorita aloittelijan polku
+2. **Istunto 02** - RAG-arviointi
+3. **Istunto 04** - Mallien vertailu
 
-**Aika**: ~6 tuntia | **Painopiste**: Tuotantomallit
+**Aika**: ~4 tuntia | **Painotus**: Laatu ja optimointi
+
+---
+
+### Edistynyt polku (kokonainen työpaja)
+
+1. Suorita keskitason polku
+2. **Istunto 05** - Moni-agenttien orkestroija
+3. **Istunto 06** - Mallien reititin
+4. **Istunto 06** - Monivaiheinen putkisto
+
+**Aika**: ~6 tuntia | **Painotus**: Tuotantokuviot
 
 ---
 
 ### Räätälöity projektipolku
 
-1. Suorita aloittelijapolku (Sessionit 01-03)
-2. Valitse YKSI edistynyt sessio tavoitteesi mukaan:
-   - **RAG-sovelluksen rakentaminen?** → Sessio 02 Arviointi
-   - **Suorituskyvyn optimointi?** → Sessio 04 Vertailu
-   - **Monimutkaiset työnkulut?** → Sessio 05 Orchestrator
-   - **Skaalautuva arkkitehtuuri?** → Sessio 06 Reititin + Putkisto
+1. Suorita aloittelijan polku (Istunnot 01-03)
+2. Valitse YKSI edistynyt istunto tavoitteesi mukaan:
+   - **RAG-sovelluksen rakentaminen?** → Istunto 02 Arviointi
+   - **Suorituskyvyn optimointi?** → Istunto 04 Vertailu
+   - **Monimutkaiset työnkulut?** → Istunto 05 Orkestroija
+   - **Skaalautuva arkkitehtuuri?** → Istunto 06 Reititin + Putkisto
 
-**Aika**: ~3 tuntia | **Painopiste**: Projektikohtaiset taidot
+**Aika**: ~3 tuntia | **Painotus**: Projektikohtaiset taidot
 
 ---
 
-## 📊 Menestysmittarit
+## 📊 Menestyksen mittarit
 
-Seuraa edistymistäsi näillä virstanpylväillä:
+Seuraa etenemistäsi näillä virstanpylväillä:
 
 - [ ] **Asennus valmis** - Foundry Local käynnissä, kaikki riippuvuudet asennettu
-- [ ] **Ensimmäinen chat** - Sessio 01 suoritettu, chat-virtaus toimii
-- [ ] **RAG rakennettu** - Sessio 02 suoritettu, dokumentti-QA-järjestelmä toiminnassa
-- [ ] **Mallit vertailtu** - Sessio 03 suoritettu, suorituskykytiedot kerätty
-- [ ] **Kaupan analysointi** - Sessio 04 suoritettu, mallin valintakriteerit dokumentoitu
-- [ ] **Agentit orkestroitu** - Sessio 05 suoritettu, monen agentin järjestelmä toimii
-- [ ] **Reititys toteutettu** - Sessio 06 suoritettu, älykäs mallin valinta toiminnassa
-- [ ] **Räätälöity projekti** - Työpajan mallit sovellettu omaan käyttötapaukseen
+- [ ] **Ensimmäinen chat** - Istunto 01 suoritettu, suoratoistokeskustelu toimii
+- [ ] **RAG rakennettu** - Istunto 02 suoritettu, dokumenttien QA-järjestelmä toiminnassa
+- [ ] **Mallit vertailtu** - Istunto 03 suoritettu, suorituskykytiedot kerätty
+- [ ] **Kompromissit analysoitu** - Istunto 04 suoritettu, mallien valintakriteerit dokumentoitu
+- [ ] **Agentit orkestroitu** - Istunto 05 suoritettu, moni-agenttijärjestelmä toimii
+- [ ] **Reititys toteutettu** - Istunto 06 suoritettu, älykäs mallinvalinta toiminnassa
+- [ ] **Räätälöity projekti** - Sovellettu työpajan kuviot omaan käyttötapaukseen
 
 ---
 
 ## 🤝 Osallistuminen
 
-Huomasitko ongelman tai sinulla on ehdotus? Otamme mielellämme vastaan parannuksia!
+Löysitkö ongelman tai onko sinulla ehdotus? Otamme mielellämme vastaan osallistumisia!
 
-- **Ilmoita ongelmista**: [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **Raportoi ongelmista**: [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues)
 - **Ehdota parannuksia**: [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions)
-- **Lähetä PR:t**: Noudata [Osallistumisohjeita](../../AGENTS.md)
+- **Lähetä PR:itä**: Noudata [Osallistumisohjeita](../../AGENTS.md)
 
 ---
 
 ## 📄 Lisenssi
 
-Tämä työpaja on osa [EdgeAI for Beginners](https://github.com/microsoft/edgeai-for-beginners) -repositorya ja lisensoitu [MIT-lisenssillä](../../../../LICENSE).
+Tämä työpaja on osa [EdgeAI for Beginners](https://github.com/microsoft/edgeai-for-beginners) -repositorion kokonaisuutta ja on lisensoitu [MIT-lisenssillä](../../../../LICENSE).
 
 ---
 
-**Valmis rakentamaan tuotantovalmiita Edge AI -sovelluksia?**  
-**Aloita [Sessio 01: Chat Bootstrap](./session01_chat_bootstrap.ipynb) →**
+**Valmis rakentamaan tuotantovalmiita reunalaskenta-AI-sovelluksia?**  
+**Aloita [Istunnosta 01: Chat Bootstrap](./session01_chat_bootstrap.ipynb) →**
 
 ---
 
@@ -565,5 +592,7 @@ Tämä työpaja on osa [EdgeAI for Beginners](https://github.com/microsoft/edgea
 
 ---
 
-**Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastuuvapauslauseke**:
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on virallinen lähde. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

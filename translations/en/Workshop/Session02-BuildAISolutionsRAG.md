@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Learn how to create actionable GenAI workflows using Foundry Local and Azure AI Foundry. This session covers advanced prompt engineering, integrating structured data, and orchestrating tasks with reproducible pipelines. While the focus is on Retrieval-Augmented Generation (RAG) for document and data Q&A, the patterns can be applied to broader GenAI solution design.
+Explore how to build actionable GenAI workflows using Foundry Local and Azure AI Foundry. Learn advanced prompt engineering, integrate structured data, and orchestrate tasks with reproducible pipelines. While the focus is on Retrieval-Augmented Generation (RAG) for document & data Q&A, the patterns generalize to broader GenAI solution design.
 
 ## Learning Objectives
 
@@ -16,11 +16,11 @@ By the end of this session, you will:
 
 ## Prerequisites
 
-- Completion of Session 1 (Foundry Local setup)
+- Completed Session 1 (Foundry Local setup)
 - Basic understanding of vector databases and embeddings
 - Python programming experience
 - Familiarity with document processing concepts
-
+ 
 ### Cross-Platform Environment Quick Start (Windows & macOS)
 
 Windows PowerShell:
@@ -43,7 +43,6 @@ If Foundry Local macOS binaries are not yet available in your environment, run t
 ```bash
 export FOUNDRY_LOCAL_ENDPOINT=http://<windows-host>:5273/v1
 ```
-
 
 ## Validation: Foundry Local Environment Check
 
@@ -197,7 +196,6 @@ if __name__ == "__main__":
     demo_grounding_strategies()
 ```
 
-
 #### Step 1.2: Test Grounding Strategies
 
 ```powershell
@@ -207,7 +205,6 @@ foundry model run phi-4-mini
 # Run the prompt engineering demo
 python samples/02-rag-solutions/prompt_engineering.py
 ```
-
 
 ### 2. Integrate Tabular Data with Prompts (CSV Q&A) (10 minutes)
 
@@ -426,14 +423,12 @@ if __name__ == "__main__":
     demo_csv_qa()
 ```
 
-
 #### Step 2.2: Test CSV Q&A System
 
 ```powershell
 # Run the CSV Q&A demo
 python samples/02-rag-solutions/csv_qa_system.py
 ```
-
 
 ### 3. Starter Project: Adapt 02-grounding-data (5 minutes)
 
@@ -654,7 +649,6 @@ if __name__ == "__main__":
     demo_document_rag()
 ```
 
-
 ### 4. Show CLI-to-Azure Migration Path (5 minutes)
 
 #### Step 4.1: Migration Strategy Overview
@@ -863,14 +857,12 @@ if __name__ == "__main__":
     demo_migration_patterns()
 ```
 
-
 #### Step 4.2: Test Migration Patterns
 
 ```powershell
 # Run the migration demo
 python samples/02-rag-solutions/migration_guide.py
 ```
-
 
 ## Key Concepts Covered
 
@@ -918,7 +910,6 @@ rag_config = {
 }
 ```
 
-
 ### 2. Error Handling
 
 ```python
@@ -936,7 +927,6 @@ except Exception as e:
     logger.error(f"RAG system error: {e}")
 ```
 
-
 ### 3. Monitoring and Observability
 
 ```python
@@ -948,7 +938,6 @@ metrics = {
     "user_satisfaction": feedback_score
 }
 ```
-
 
 ## Next Steps
 
@@ -988,7 +977,6 @@ gen_ms = (time.time() - start_gen) * 1000
 record = {"retrieval_ms": retrieval_ms, "gen_ms": gen_ms, "tokens": getattr(usage,'total_tokens',None)}
 ```
 
-
 #### Scaling Evaluation With ragas
 
 1. Assemble a JSONL with fields: `question`, `answer`, `contexts`, `ground_truths` (list)
@@ -1021,9 +1009,9 @@ For disk persistence use `faiss.write_index(index, "kb.index")`.
 
 ---
 
-**Session Duration**: 30 minutes hands-on + 15 minutes Q&A  
-**Difficulty Level**: Intermediate  
-**Prerequisites**: Session 1 completed, Basic Python knowledge  
+**Session Duration**: 30 minutes hands-on + 15 minutes Q&A
+**Difficulty Level**: Intermediate
+**Prerequisites**: Session 1 completed, Basic Python knowledge
 
 ## Sample Scenario & Workshop Mapping
 
@@ -1048,7 +1036,6 @@ DOCS = [
 ]
 ```
 
-
 Ragas evaluation truth tuples:
 ```python
 QUESTIONS = ["What advantage does local inference offer?", "How does RAG improve answer grounding?"]
@@ -1057,7 +1044,6 @@ GROUND_TRUTH = [
     "RAG adds retrieved context snippets to improve factual grounding."
 ]
 ```
-
 
 ### Scenario Narrative
 The support engineering group wants a rapid prototype to answer internal FAQs without exposing customer data externally. Session 2 artifacts progress from a minimal ephemeral RAG (no persistence) → structured CSV Q&A → document retrieval with citation → objective quality evaluation (ragas) → a migration strategy ready for Azure staging.
@@ -1068,6 +1054,6 @@ Use the Optional Enhancements table to evolve: swap TF‑IDF for FAISS/Chroma, e
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+**Disclaimer**:
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

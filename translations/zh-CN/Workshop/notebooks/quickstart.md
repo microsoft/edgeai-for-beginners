@@ -1,18 +1,18 @@
-# 工作坊笔记本 - 快速入门指南
+# 研讨会笔记本 - 快速入门指南
 
 ## 目录
 
-- [前置条件](../../../../Workshop/notebooks)
-- [初始设置](../../../../Workshop/notebooks)
-- [第04节：模型比较](../../../../Workshop/notebooks)
-- [第05节：多代理协调器](../../../../Workshop/notebooks)
-- [第06节：基于意图的模型路由](../../../../Workshop/notebooks)
-- [环境变量](../../../../Workshop/notebooks)
-- [常用命令](../../../../Workshop/notebooks)
+- [先决条件](#先决条件)
+- [初始设置](#codeblock3-或者单独安装：-codeblock4)
+- [第四课：模型比较](#验证设置)
+- [第五课：多智能体协调器](#验证检查表)
+- [第六课：基于意图的模型路由](#拓展)
+- [环境变量](#切换至-gpu-模型)
+- [常用命令](#全局配置)
 
 ---
 
-## 前置条件
+## 先决条件
 
 ### 1. 安装 Foundry Local
 
@@ -27,13 +27,12 @@ brew tap microsoft/foundrylocal
 brew install foundrylocal
 ```
 
-**验证安装:**
+**验证安装：**
 ```bash
 foundry --version
 ```
 
-
-### 2. 安装 Python 依赖项
+### 2. 安装 Python 依赖
 
 ```bash
 cd Workshop
@@ -45,20 +44,19 @@ pip install -r requirements.txt
 pip install foundry-local-sdk openai numpy requests
 ```
 
-
 ---
 
 ## 初始设置
 
 ### 启动 Foundry Local 服务
 
-**运行任何笔记本之前必须启动：**
+**在运行任何笔记本之前必须执行：**
 
 ```bash
-# Start the service
+# 启动服务
 foundry service start
 
-# Verify it's running
+# 验证它是否在运行
 foundry service status
 ```
 
@@ -68,39 +66,36 @@ foundry service status
 Endpoint: http://localhost:59959
 ```
 
-
 ### 下载并加载模型
 
-笔记本默认使用以下模型：
+笔记本默认使用这些模型：
 
 ```bash
-# Download models (first time only - may take several minutes)
+# 下载模型（仅限首次 - 可能需要几分钟）
 foundry model download phi-4-mini
 foundry model download qwen2.5-3b
 foundry model download phi-3.5-mini
 foundry model download qwen2.5-0.5b
 
-# Load models into memory
+# 将模型加载到内存中
 foundry model run phi-4-mini
 foundry model run qwen2.5-3b
 foundry model run phi-3.5-mini
 ```
 
-
 ### 验证设置
 
 ```bash
-# List loaded models
+# 列出已加载的模型
 foundry model ls
 
-# Check service health
+# 检查服务健康状态
 curl http://localhost:59959/v1/models
 ```
 
-
 ---
 
-## 第04节：模型比较
+## 第四课：模型比较
 
 ### 目的
 比较小型语言模型（SLM）和大型语言模型（LLM）的性能。
@@ -108,26 +103,25 @@ curl http://localhost:59959/v1/models
 ### 快速设置
 
 ```bash
-# Start service (if not already running)
+# 启动服务（如果尚未运行）
 foundry service start
 
-# Load required models
+# 加载所需模型
 foundry model run phi-4-mini
 foundry model run qwen2.5-3b
 ```
 
-
 ### 运行笔记本
 
-1. **打开** `session04_model_compare.ipynb`（在 VS Code 或 Jupyter 中）
-2. **重启内核**（内核 → 重启内核）
-3. **按顺序运行所有单元格**
+1. <strong>打开</strong> `session04_model_compare.ipynb` 在 VS Code 或 Jupyter 中
+2. <strong>重启内核</strong>（Kernel → Restart Kernel）
+3. <strong>按顺序运行所有单元格</strong>
 
 ### 关键配置
 
 **默认模型：**
-- **SLM:** `phi-4-mini`（约4GB RAM，速度更快）
-- **LLM:** `qwen2.5-3b`（约3GB RAM，内存优化）
+- **SLM:** `phi-4-mini` （约4GB内存，更快）
+- **LLM:** `qwen2.5-3b` （约3GB内存，内存优化）
 
 **环境变量（可选）：**
 ```python
@@ -136,7 +130,6 @@ os.environ['SLM_ALIAS'] = 'phi-4-mini'
 os.environ['LLM_ALIAS'] = 'qwen2.5-3b'
 os.environ['FOUNDRY_LOCAL_ENDPOINT'] = 'http://localhost:59959/v1'
 ```
-
 
 ### 预期输出
 
@@ -153,7 +146,6 @@ qwen2.5-3b           2.456           180        chat.completions
 💡 SLM is 1.99x faster than LLM for this prompt
 ```
 
-
 ### 自定义
 
 **使用不同模型：**
@@ -167,60 +159,57 @@ os.environ['LLM_ALIAS'] = 'qwen2.5-1.5b'
 os.environ['COMPARE_PROMPT'] = 'Explain quantum computing in simple terms'
 ```
 
+### 验证检查表
 
-### 验证清单
-
-- [ ] 单元格12显示正确的模型（phi-4-mini, qwen2.5-3b）
-- [ ] 单元格12显示正确的端点（端口59959）
+- [ ] 单元格12显示正确模型（phi-4-mini, qwen2.5-3b）
+- [ ] 单元格12显示正确端口（端口59959）
 - [ ] 单元格16诊断通过（✅ 服务正在运行）
-- [ ] 单元格20预检通过（两个模型正常）
-- [ ] 单元格22比较完成并显示延迟值
-- [ ] 单元格24验证显示 🎉 所有检查通过！
+- [ ] 单元格20预检通过（两个模型均正常）
+- [ ] 单元格22比较完成并显示延迟数值
+- [ ] 单元格24验证显示 🎉 全部检查通过！
 
-### 时间估计
-- **首次运行：** 5-10分钟（包括模型下载）
+### 时间预估
+- **首次运行：** 5-10分钟（包含模型下载）
 - **后续运行：** 1-2分钟
 
 ---
 
-## 第05节：多代理协调器
+## 第五课：多智能体协调器
 
 ### 目的
-使用 Foundry Local SDK 展示多代理协作，代理共同工作以生成优化输出。
+演示使用 Foundry Local SDK 的多智能体协作—多个智能体协同工作以生成优化输出。
 
 ### 快速设置
 
 ```bash
-# Start service
+# 启动服务
 foundry service start
 
-# Load models
-foundry model run phi-4-mini  # Primary model
-foundry model run qwen2.5-7b  # Optional: higher quality editor
+# 加载模型
+foundry model run phi-4-mini  # 主要模型
+foundry model run qwen2.5-7b  # 可选：更高质量的编辑器
 ```
-
 
 ### 运行笔记本
 
-1. **打开** `session05_agents_orchestrator.ipynb`
-2. **重启内核**
-3. **按顺序运行所有单元格**
+1. <strong>打开</strong> `session05_agents_orchestrator.ipynb`
+2. <strong>重启内核</strong>
+3. <strong>按顺序运行所有单元格</strong>
 
 ### 关键配置
 
-**默认设置（两个代理使用相同模型）：**
+**默认设置（两个智能体使用相同模型）：**
 ```python
 PRIMARY_ALIAS = 'phi-4-mini'
-EDITOR_ALIAS = 'phi-4-mini'  # Uses same model
+EDITOR_ALIAS = 'phi-4-mini'  # 使用相同的模型
 ```
 
 **高级设置（不同模型）：**
 ```python
 import os
-os.environ['AGENT_MODEL_PRIMARY'] = 'phi-4-mini'     # Fast for research
-os.environ['AGENT_MODEL_EDITOR'] = 'qwen2.5-7b'      # High quality for editing
+os.environ['AGENT_MODEL_PRIMARY'] = 'phi-4-mini'     # 适合研究
+os.environ['AGENT_MODEL_EDITOR'] = 'qwen2.5-7b'      # 适合编辑的高质量
 ```
-
 
 ### 架构
 
@@ -235,7 +224,6 @@ Editor Agent (phi-4-mini or qwen2.5-7b)
     ↓
 Final Output
 ```
-
 
 ### 预期输出
 
@@ -258,10 +246,9 @@ on-premises and reduces latency through local processing.
 Models used: {'researcher': 'phi-4-mini', 'editor': 'phi-4-mini'}
 ```
 
+### 拓展
 
-### 扩展
-
-**添加更多代理：**
+**添加更多智能体：**
 ```python
 critic = Agent(
     name='Critic',
@@ -283,41 +270,40 @@ for q in test_questions:
     print(result['final'])
 ```
 
-
-### 时间估计
+### 时间预估
 - **首次运行：** 3-5分钟
 - **后续运行：** 每个问题1-2分钟
 
 ---
 
-## 第06节：基于意图的模型路由
+## 第六课：基于意图的模型路由
 
 ### 目的
-根据检测到的意图智能地将提示路由到专用模型。
+根据检测到的意图智能地将提示路由到专门模型。
 
 ### 快速设置
 
 ```bash
-# Start service
+# 启动服务
 foundry service start
 
-# Load all routing models (CPU variants recommended)
+# 加载所有路由模型（推荐使用CPU版本）
 foundry model run phi-4-mini-cpu
 foundry model run qwen2.5-0.5b-cpu
 foundry model run phi-3.5-mini-cpu
 ```
 
-**注意：** 第06节默认使用CPU模型以确保最大兼容性。
+**注意：** 第六课默认使用 CPU 模型以获得最大兼容性。
 
 ### 运行笔记本
 
-1. **打开** `session06_models_router.ipynb`
-2. **重启内核**
-3. **按顺序运行所有单元格**
+1. <strong>打开</strong> `session06_models_router.ipynb`
+2. <strong>重启内核</strong>
+3. <strong>按顺序运行所有单元格</strong>
 
 ### 关键配置
 
-**默认目录（CPU模型）：**
+**默认目录（CPU 模型）：**
 ```python
 CATALOG = {
     'phi-4-mini-cpu': {'capabilities':['general','summarize'],'priority':2},
@@ -326,9 +312,9 @@ CATALOG = {
 }
 ```
 
-**替代目录（GPU模型）：**
+**备用方案（GPU 模型）：**
 ```python
-# Uncomment GPU catalog in Cell #6 if you have sufficient VRAM (8GB+)
+# 如果您的显存充足（8GB以上），请取消注释第6单元格中的GPU目录
 CATALOG = {
     'phi-4-mini': {'capabilities':['general','summarize'],'priority':2},
     'qwen2.5-0.5b': {'capabilities':['classification','fast'],'priority':1},
@@ -336,17 +322,16 @@ CATALOG = {
 }
 ```
 
-
 ### 意图检测
 
-路由器使用正则表达式模式检测意图：
+路由器使用正则表达式检测意图：
 
-| 意图 | 模式示例 | 路由到 |
-|------|----------|--------|
+| 意图 | 示例匹配 | 路由至 |
+|--------|-----------------|-----------|
 | `code` | "重构", "实现函数" | phi-3.5-mini-cpu |
-| `classification` | "分类", "对这个进行分类" | qwen2.5-0.5b-cpu |
+| `classification` | "分类", "给它分类" | qwen2.5-0.5b-cpu |
 | `summarize` | "总结", "tl;dr" | phi-4-mini-cpu |
-| `general` | 其他所有内容 | phi-4-mini-cpu |
+| `general` | 其他所有情况 | phi-4-mini-cpu |
 
 ### 预期输出
 
@@ -370,17 +355,16 @@ Prompt: Categorize this email as urgent or normal
 ✓ Success! All prompts routed correctly.
 ```
 
-
 ### 自定义
 
 **添加自定义意图：**
 ```python
 import re
 
-# Add to RULES
+# 添加到规则
 RULES.append((re.compile('translate|翻译', re.I), 'translation'))
 
-# Add capability to catalog
+# 添加编目功能
 CATALOG['phi-4-mini-cpu']['capabilities'].append('translation')
 ```
 
@@ -390,24 +374,22 @@ import os
 os.environ['SHOW_USAGE'] = '1'
 ```
 
+### 切换至 GPU 模型
 
-### 切换到GPU模型
+如果你有8GB以上的显存：
 
-如果您有8GB以上的显存：
-
-1. 在 **单元格#6** 中，注释掉CPU目录
-2. 取消注释GPU目录
-3. 加载GPU模型：
+1. 在 **单元格#6** 中注释掉 CPU 目录
+2. 取消注释 GPU 目录
+3. 加载 GPU 模型：
    ```bash
    foundry model run phi-4-mini
    foundry model run qwen2.5-0.5b
    foundry model run phi-3.5-mini
    ```
-
 4. 重启内核并重新运行笔记本
 
-### 时间估计
-- **首次运行：** 5-10分钟（加载模型）
+### 时间预估
+- **首次运行：** 5-10分钟（模型加载）
 - **后续运行：** 每次测试30-60秒
 
 ---
@@ -416,7 +398,7 @@ os.environ['SHOW_USAGE'] = '1'
 
 ### 全局配置
 
-在启动 Jupyter/VS Code 之前设置：
+在启动 Jupyter/VS Code 前设置：
 
 **Windows（命令提示符）：**
 ```cmd
@@ -439,31 +421,29 @@ export SHOW_USAGE=1
 export RETRY_ON_FAIL=1
 ```
 
-
 ### 笔记本内配置
 
-在任何笔记本开始时设置：
+在任何笔记本开头设置：
 
 ```python
 import os
 
-# Foundry Local configuration
+# Foundry 本地配置
 os.environ['FOUNDRY_LOCAL_ENDPOINT'] = 'http://localhost:59959/v1'
 
-# Model selection
+# 模型选择
 os.environ['SLM_ALIAS'] = 'phi-4-mini'
 os.environ['LLM_ALIAS'] = 'qwen2.5-3b'
 
-# Agent models
+# 代理模型
 os.environ['AGENT_MODEL_PRIMARY'] = 'phi-4-mini'
 os.environ['AGENT_MODEL_EDITOR'] = 'qwen2.5-7b'
 
-# Debugging
-os.environ['SHOW_USAGE'] = '1'       # Show token usage
-os.environ['RETRY_ON_FAIL'] = '1'    # Enable retries
-os.environ['RETRY_BACKOFF'] = '2.0'  # Retry delay
+# 调试
+os.environ['SHOW_USAGE'] = '1'       # 显示令牌使用情况
+os.environ['RETRY_ON_FAIL'] = '1'    # 启用重试
+os.environ['RETRY_BACKOFF'] = '2.0'  # 重试延迟
 ```
-
 
 ---
 
@@ -472,56 +452,54 @@ os.environ['RETRY_BACKOFF'] = '2.0'  # Retry delay
 ### 服务管理
 
 ```bash
-# Start service
+# 启动服务
 foundry service start
 
-# Check status
+# 检查状态
 foundry service status
 
-# Stop service
+# 停止服务
 foundry service stop
 
-# View logs
+# 查看日志
 foundry service logs
 ```
-
 
 ### 模型管理
 
 ```bash
-# List all available models in catalog
+# 列出目录中所有可用的模型
 foundry model catalog
 
-# List loaded models
+# 列出已加载的模型
 foundry model ls
 
-# Download a model
+# 下载一个模型
 foundry model download phi-4-mini
 
-# Load a model
+# 加载一个模型
 foundry model run phi-4-mini
 
-# Unload a model
+# 卸载一个模型
 foundry model unload phi-4-mini
 
-# Remove a model
+# 删除一个模型
 foundry model remove phi-4-mini
 
-# Get model info
+# 获取模型信息
 foundry model info phi-4-mini
 ```
-
 
 ### 测试端点
 
 ```bash
-# Check service health
+# 检查服务健康状况
 curl http://localhost:59959/health
 
-# List available models via API
+# 通过API列出可用模型
 curl http://localhost:59959/v1/models
 
-# Test model completion
+# 测试模型完成情况
 curl http://localhost:59959/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
@@ -531,59 +509,57 @@ curl http://localhost:59959/v1/chat/completions \
   }'
 ```
 
-
 ### 诊断命令
 
 ```bash
-# Check everything
+# 检查所有内容
 foundry --version
 foundry service status
 foundry model ls
 foundry device info
 
-# GPU status (NVIDIA)
+# GPU 状态（NVIDIA）
 nvidia-smi
 
-# NPU status (Qualcomm)
+# NPU 状态（高通）
 foundry device info
 ```
-
 
 ---
 
 ## 最佳实践
 
-### 开始任何笔记本之前
+### 启动任何笔记本前
 
 1. **检查服务是否运行：**
    ```bash
    foundry service status
    ```
 
-2. **验证模型是否已加载：**
+2. **验证模型已加载：**
    ```bash
    foundry model ls
    ```
 
 3. **如果重新运行，重启笔记本内核**
 
-4. **清除所有输出**以确保干净运行
+4. <strong>清除所有输出</strong> 以获得干净运行
 
 ### 资源管理
 
-1. **默认使用CPU模型**以确保兼容性
-2. **仅在显存8GB以上时切换到GPU模型**
-3. **运行前关闭其他GPU应用程序**
-4. **在笔记本会话之间保持服务运行**
-5. **使用任务管理器或 nvidia-smi 监控资源使用情况**
+1. **默认使用 CPU 模型** 以保证兼容性
+2. **仅在拥有 8GB+ 显存时切换到 GPU 模型**
+3. **运行前关闭其他 GPU 应用**
+4. <strong>保持服务运行</strong> 以便多次使用
+5. **使用任务管理器 / nvidia-smi 监控资源使用**
 
 ### 故障排除
 
-1. **在调试代码之前始终检查服务状态**
-2. **如果看到过时配置，重启内核**
-3. **在任何更改后重新运行诊断单元格**
-4. **检查模型名称是否与加载的模型匹配**
-5. **验证端点端口是否与服务状态匹配**
+1. <strong>调试代码前先检查服务</strong>
+2. <strong>见到过期配置时重启内核</strong>
+3. <strong>更改后重新运行诊断单元格</strong>
+4. <strong>确认模型名称与已加载匹配</strong>
+5. <strong>确认端点端口与服务状态一致</strong>
 
 ---
 
@@ -591,56 +567,58 @@ foundry device info
 
 ### 常用模型
 
-| 别名 | 大小 | 最适合 | RAM/VRAM | 变体 |
-|------|------|--------|----------|------|
-| `phi-4-mini` | ~4B | 通用聊天、总结 | 4-6GB | `-cpu`, `-cuda-gpu`, `-npu` |
-| `phi-3.5-mini` | ~3.5B | 代码生成、重构 | 3-5GB | `-cpu`, `-cuda-gpu`, `-npu` |
-| `qwen2.5-3b` | ~3B | 通用任务、高效 | 3-4GB | `-cpu`, `-cuda-gpu` |
-| `qwen2.5-1.5b` | ~1.5B | 快速、低资源 | 2-3GB | `-cpu`, `-cuda-gpu` |
-| `qwen2.5-0.5b` | ~0.5B | 分类、资源最少 | 1-2GB | `-cpu`, `-cuda-gpu` |
+| 别名 | 大小 | 最适用 | RAM/显存 | 变体 |
+|-------|------|----------|----------|----------|
+| `phi-4-mini` | ~4B | 通用聊天，摘要 | 4-6GB | `-cpu`, `-cuda-gpu`, `-npu` |
+| `phi-3.5-mini` | ~3.5B | 代码生成，重构 | 3-5GB | `-cpu`, `-cuda-gpu`, `-npu` |
+| `qwen2.5-3b` | ~3B | 通用任务，高效 | 3-4GB | `-cpu`, `-cuda-gpu` |
+| `qwen2.5-1.5b` | ~1.5B | 快速，低资源 | 2-3GB | `-cpu`, `-cuda-gpu` |
+| `qwen2.5-0.5b` | ~0.5B | 分类，极少资源 | 1-2GB | `-cpu`, `-cuda-gpu` |
 
 ### 变体命名
 
-- **基础名称**（例如，`phi-4-mini`）：自动选择最适合硬件的变体
-- **`-cpu`**：CPU优化，适用于所有环境
-- **`-cuda-gpu`**：NVIDIA GPU优化，需8GB以上显存
-- **`-npu`**：Qualcomm NPU优化，需安装NPU驱动
+- <strong>基础名称</strong>（如 `phi-4-mini`）：根据硬件自动选择最佳变体
+- **`-cpu`**：CPU 优化，适用于所有环境
+- **`-cuda-gpu`**：NVIDIA GPU 优化，要求 8GB+ 显存
+- **`-npu`**：高通 NPU 优化，要求安装 NPU 驱动
 
-**推荐：** 使用基础名称（不带后缀），让 Foundry Local 自动选择最佳变体。
+**推荐：** 使用基础名称（无后缀），让 Foundry Local 自动选择最佳变体。
 
 ---
 
 ## 成功指标
 
-当您看到以下内容时，说明准备就绪：
+当你看到以下内容，即表示准备就绪：
 
-✅ `foundry service status` 显示“运行中”  
-✅ `foundry model ls` 显示所需模型  
-✅ 服务可在正确的端点访问  
-✅ 健康检查返回200 OK  
-✅ 笔记本诊断单元格通过  
-✅ 输出中无连接错误  
+✅ `foundry service status` 显示“running”
+✅ `foundry model ls` 显示所需模型
+✅ 服务可通过正确端点访问
+✅ 健康检查返回 200 OK
+✅ 笔记本诊断单元格通过
+✅ 输出中无连接错误
 
 ---
 
 ## 获取帮助
 
 ### 文档
-- **主仓库：** https://github.com/microsoft/Foundry-Local
-- **Python SDK：** https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
-- **CLI参考：** https://github.com/microsoft/Foundry-Local/blob/main/docs/reference/reference-cli.md
-- **故障排除：** 请参阅本目录中的 `troubleshooting.md`
+- <strong>主仓库</strong>: https://github.com/microsoft/Foundry-Local
+- **Python SDK**: https://github.com/microsoft/Foundry-Local/tree/main/sdk/python
+- **CLI 参考**: https://github.com/microsoft/Foundry-Local/blob/main/docs/reference/reference-cli.md
+- <strong>故障排除</strong>: 参见本目录中的 `troubleshooting.md`
 
-### GitHub问题
+### GitHub Issues
 - https://github.com/microsoft/Foundry-Local/issues
 - https://github.com/microsoft/edgeai-for-beginners/issues
 
 ---
 
-**最后更新：** 2025年10月8日  
-**版本：** Workshop Notebooks 2.0
+**最后更新：** 2025年10月8日
+**版本：** 研讨会笔记本 2.0
 
 ---
 
-**免责声明**：  
-本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**免责声明**：
+本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译完成。尽管我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始语言版文件应视为权威来源。对于重要信息，建议使用专业人工翻译。我们对因使用本翻译而产生的任何误解或误释不承担责任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

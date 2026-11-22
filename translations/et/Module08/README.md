@@ -1,123 +1,123 @@
-# Moodul 08: Praktiline kogemus Microsoft Foundry Localiga - Täielik arendaja tööriistakomplekt
+# Moodul 08: Käed külge Microsoft Foundry Localiga - Täielik arendaja tööriistakast
 
 ## Ülevaade
 
-[Microsoft Foundry Local](https://learn.microsoft.com/azure/ai-foundry/foundry-local/) esindab järgmise põlvkonna serva AI arendust, pakkudes arendajatele võimsaid tööriistu AI rakenduste loomiseks, juurutamiseks ja skaleerimiseks kohapeal, säilitades samal ajal sujuva integreerimise Azure AI Foundryga. See moodul hõlmab Foundry Locali täielikult alates paigaldamisest kuni arenenud agentide arendamiseni.
+[Microsoft Foundry Local](https://learn.microsoft.com/azure/ai-foundry/foundry-local/) esindab järgmise põlvkonna serva AI arendust, pakkudes arendajatele võimsaid tööriistu AI rakenduste kohalikuks loomiseks, juurutamiseks ja skaleerimiseks, säilitades samal ajal sujuva integreerimise Azure AI Foundryga. See moodul hõlmab Foundry Locali kõikehõlmavalt alates installatsioonist kuni täiustatud agentide arenduseni.
 
-**Peamised tehnoloogiad:**
+**Põhitehnoloogiad:**
 - Microsoft Foundry Local CLI ja SDK
-- Azure AI Foundry integreerimine
-- Mudeli järeldamine seadmes
+- Azure AI Foundry integratsioon
+- Mudeli järeldus seadmes
 - Kohalik mudeli vahemälu ja optimeerimine
-- Agentipõhised arhitektuurid
+- Agentidel põhinevad arhitektuurid
 
 ## Õpieesmärgid
 
-Selle mooduli läbimisel õpid:
+Selle mooduli lõpetamisel:
 
-- **Foundry Locali valdamine**: Paigaldamine, konfigureerimine ja optimeerimine Windows 11 arenduseks
-- **Erinevate mudelite juurutamine**: Phi, Qwen, Deepseek ja GPT mudelite käivitamine kohapeal CLI käskudega
-- **Tootmislahenduste loomine**: AI rakenduste loomine arenenud promptide inseneri ja andmete integreerimisega
-- **Avatud lähtekoodiga ökosüsteemi kasutamine**: Hugging Face mudelite ja kogukonna panuste integreerimine
-- **AI agentide arendamine**: Intelligentsete agentide loomine maandamise ja orkestreerimise võimekustega
-- **Ettevõtte mustrite rakendamine**: Modulaarsete ja skaleeritavate AI lahenduste loomine tootmiskeskkonna jaoks
+- **Valdad Foundry Locali**: Installi, konfigureeri ja optimeeri Windows 11 arenduseks
+- **Juuruta erinevaid mudeleid**: Käivita phi, qwen, deepseek ja GPT mudeleid kohapeal CLI käskude abil
+- **Ehita tootmislahendusi**: Loo AI rakendusi arenenud promptide insenertehnika ja andmete integreerimisega
+- **Kasuta avatud lähtekoodiga ökosüsteemi**: Integreeri Hugging Face mudeleid ja kogukonna panuseid
+- **Arenda AI agente**: Loo intelligentseid agente maandamise ja orkestreerimise võimetega
+- **Rakenda ettevõtte mustreid**: Loo modulaarseid, skaleeritavaid AI lahendusi tootmisse viimiseks
 
 ## Sessiooni struktuur
 
 ### [1: Foundry Localiga alustamine](./01.FoundryLocalSetup.md)
-**Fookus**: Paigaldamine, CLI seadistamine, mudelite juurutamine ja riistvara optimeerimine
+**Fookus**: Installatsioon, CLI seadistamine, mudeli juurutus ja riistvara optimeerimine
 
-**Peamised teemad**: Täielik paigaldamine • CLI käsud • Mudeli vahemälu • Riistvara kiirendus • Mitme mudeli juurutamine
+**Põhiteemad**: Täielik installatsioon • CLI käsud • Mudeli vahemälu • Riistvara kiirendus • Mitme mudeli juurutus
 
-**Näidis**: [REST Chat Quickstart](./samples/01/README.md) • [OpenAI SDK integreerimine](./samples/02/README.md) • [Mudelite avastamine ja võrdlusuuringud](./samples/03/README.md)
+**Näited**: [REST Chat Quickstart](./samples/01/README.md) • [OpenAI SDK integratsioon](./samples/02/README.md) • [Mudeli avastamine ja võrdlus](./samples/03/README.md)
 
 **Kestus**: 2-3 tundi | **Tase**: Algaja
 
 ---
 
 ### [2: AI lahenduste loomine Azure AI Foundryga](./02.AzureAIFoundryIntegration.md)
-**Fookus**: Arenenud promptide insener, andmete integreerimine ja pilveühenduvus
+**Fookus**: Arenenud promptide insenertehnika, andmete integreerimine ja pilveühendus
 
-**Peamised teemad**: Promptide insener • Andmete integreerimine • Azure töövood • Jõudluse optimeerimine • Jälgimine
+**Põhiteemad**: Promptide insenertehnika • Andmete integreerimine • Azure töövood • Tulemuste optimeerimine • Jälgimine
 
-**Näidis**: [Chainlit RAG rakendus](./samples/04/README.md)
+**Näide**: [Chainlit RAG rakendus](./samples/04/README.md)
 
 **Kestus**: 2-3 tundi | **Tase**: Kesktase
 
 ---
 
 ### [3: Avatud lähtekoodiga mudelid Foundry Localis](./03.OpenSourceModels.md)
-**Fookus**: Hugging Face integreerimine, BYOM strateegiad ja kogukonna mudelid
+**Fookus**: Hugging Face integratsioon, BYOM strateegiad ja kogukonna mudelid
 
-**Peamised teemad**: Hugging Face integreerimine • Oma mudeli kasutamine • Model Mondays ülevaated • Kogukonna panused • Mudeli valik
+**Põhiteemad**: HuggingFace integratsioon • Too-enda-mudel (BYOM) • Mudeliteesmaspäevade teadmised • Kogukonna panused • Mudelivalik
 
-**Näidis**: [Mitme agendi orkestreerimine](./samples/05/README.md)
+**Näide**: [Mitmeagendi orkestreerimine](./samples/05/README.md)
 
 **Kestus**: 2-3 tundi | **Tase**: Kesktase
 
 ---
 
-### [4: Tipptasemel mudelite uurimine](./04.CuttingEdgeModels.md)
-**Fookus**: LLM vs SLM, EdgeAI rakendamine ja arenenud demod
+### [4: Tippmudelite uurimine](./04.CuttingEdgeModels.md)
+**Fookus**: LLMid vs SLMid, EdgeAI rakendused ja arenenud demo näited
 
-**Peamised teemad**: Mudelite võrdlus • Serva vs pilve järeldamine • Phi + ONNX Runtime • Chainlit RAG rakendus • WebGPU optimeerimine
+**Põhiteemad**: Mudelite võrdlus • Serva- vs pilvepõhine järeldus • Phi + ONNX Runtime • Chainlit RAG rakendus • WebGPU optimeerimine
 
-**Näidis**: [Mudelite tööriistade ruuter](./samples/06/README.md)
-
-**Kestus**: 3-4 tundi | **Tase**: Edasijõudnud
-
----
-
-### [5: AI-põhiste agentide kiire loomine](./05.AIPoweredAgents.md)
-**Fookus**: Agendi arhitektuurid, süsteemi promptid, maandamine ja orkestreerimine
-
-**Peamised teemad**: Agendi disainimustrid • Süsteemi promptide insener • Maandamistehnikad • Mitme agendi süsteemid • Tootmiskeskkonna juurutamine
-
-**Näidis**: [Mitme agendi orkestreerimine](./samples/05/README.md) • [Arenenud mitme agendi süsteem](./samples/09/README.md)
+**Näide**: [Mudelitööriistade marsruuter](./samples/06/README.md)
 
 **Kestus**: 3-4 tundi | **Tase**: Edasijõudnud
 
 ---
 
-### [6: Foundry Local - mudelid kui tööriistad](./06.ModelsAsTools.md)
-**Fookus**: Modulaarsete AI lahenduste loomine, ettevõtte skaleerimine ja tootmismustrid
+### [5: Kiire AI-agentide loomine](./05.AIPoweredAgents.md)
+**Fookus**: Agendi arhitektuurid, süsteemipromptid, maandamine ja orkestreerimine
 
-**Peamised teemad**: Mudelid kui tööriistad • Kohapealne juurutamine • SDK/API integreerimine • Ettevõtte arhitektuurid • Skaleerimisstrateegiad
+**Põhiteemad**: Agendi disainimustrid • Süsteemipromptide insenertehnika • Maandamistehnikad • Mitmeagendi süsteemid • Tootmisse viimine
 
-**Näidis**: [Mudelite tööriistade ruuter](./samples/06/README.md) • [Foundry tööriistade raamistik](./samples/10/README.md)
+**Näited**: [Mitmeagendi orkestreerimine](./samples/05/README.md) • [Täiustatud mitmeagendi süsteem](./samples/09/README.md)
+
+**Kestus**: 3-4 tundi | **Tase**: Edasijõudnud
+
+---
+
+### [6: Foundry Local - mudelid tööriistadena](./06.ModelsAsTools.md)
+**Fookus**: Modulaarsetel AI lahendustel, ettevõtte skaleerimisel ja tootmismustritel
+
+**Põhiteemad**: Mudelid tööriistadena • Seadmel juurutamine • SDK/API integratsioon • Ettevõtte arhitektuurid • Skaleerimisstrateegiad
+
+**Näited**: [Mudelitööriistade marsruuter](./samples/06/README.md) • [Foundry tööriistade raamistik](./samples/10/README.md)
 
 **Kestus**: 3-4 tundi | **Tase**: Ekspert
 
 ---
 
-### [7: Otsese API integreerimise mustrid](./samples/07/README.md)
-**Fookus**: REST API integreerimine ilma SDK sõltuvusteta maksimaalse kontrolli saavutamiseks
+### [7: Otsene API integratsiooni mustrid](./samples/07/README.md)
+**Fookus**: Puhtalt REST API integratsioon ilma SDK-de sõltuvusteta maksimaalse kontrolli saavutamiseks
 
-**Peamised teemad**: HTTP kliendi rakendamine • Kohandatud autentimine • Mudeli tervise jälgimine • Voogesituse vastused • Tootmise veakäsitlus
+**Põhiteemad**: HTTP kliendi implementeerimine • Kohandatud autentimine • Mudeli tervise jälgimine • Voogedastuse vastused • Tootmises vigade käitlemine
 
-**Näidis**: [Otsese API klient](./samples/07/README.md)
+**Näide**: [Otsene API klient](./samples/07/README.md)
 
 **Kestus**: 2-3 tundi | **Tase**: Kesktase
 
 ---
 
-### [8: Windows 11 kohalik vestlusrakendus](./samples/08/README.md)
-**Fookus**: Kaasaegsete kohalike vestlusrakenduste loomine Foundry Locali integreerimisega
+### [8: Windows 11 natiivse vestlusrakenduse loomine](./samples/08/README.md)
+**Fookus**: Kaasaegsete natiivsete vestlusrakenduste loomine Foundry Locali integreerimisega
 
-**Peamised teemad**: Electron arendus • Fluent Design System • Kohalik Windowsi integreerimine • Reaalajas voogesitus • Vestlusliidese disain
+**Põhiteemad**: Elektroon arendus • Fluent Designi süsteem • Natiivne Windowsi integreerimine • Reaalaegne voogedastus • Vestluse liidese disain
 
-**Näidis**: [Windows 11 vestlusrakendus](./samples/08/README.md)
+**Näide**: [Windows 11 vestlusrakendus](./samples/08/README.md)
 
 **Kestus**: 3-4 tundi | **Tase**: Edasijõudnud
 
 ---
 
-### [9: Arenenud mitme agendi orkestreerimine](./samples/09/README.md)
-**Fookus**: Täiustatud agentide koordineerimine, spetsialiseeritud ülesannete jaotus ja koostööl põhinevad AI töövood
+### [9: Täiustatud mitmeagendi orkestreerimine](./samples/09/README.md)
+**Fookus**: Peenetundeline agentide koordineerimine, spetsialiseerunud ülesannete jagamine ja koostöö AI töövood
 
-**Peamised teemad**: Intelligentne agentide koordineerimine • Funktsioonide kutsumise mustrid • Agentidevaheline suhtlus • Töövoo orkestreerimine • Kvaliteedi tagamise mehhanismid
+**Põhiteemad**: Intelligente agentide koordineerimine • Funktsioonikutsumise mustrid • Agendidevaheline suhtlus • Töövoo orkestreerimine • Kvaliteedi tagamise mehhanismid
 
-**Näidis**: [Arenenud mitme agendi süsteem](./samples/09/README.md)
+**Näide**: [Täiustatud mitmeagendi süsteem](./samples/09/README.md)
 
 **Kestus**: 4-5 tundi | **Tase**: Ekspert
 
@@ -126,9 +126,9 @@ Selle mooduli läbimisel õpid:
 ### [10: Foundry Local kui tööriistade raamistik](./samples/10/README.md)
 **Fookus**: Tööriistakeskne arhitektuur Foundry Locali integreerimiseks olemasolevatesse rakendustesse ja raamistikesse
 
-**Peamised teemad**: LangChain integreerimine • Semantilise tuuma funktsioonid • REST API raamistikud • CLI tööriistad • Jupyter integreerimine • Tootmiskeskkonna juurutamise mustrid
+**Põhiteemad**: LangChain integratsioon • Semantiline Kernel funktsioonid • REST API raamistikud • CLI tööriistad • Jupyter integratsioon • Tootmis juurutuse mustrid
 
-**Näidis**: [Foundry tööriistade raamistik](./samples/10/README.md)
+**Näide**: [Foundry tööriistade raamistik](./samples/10/README.md)
 
 **Kestus**: 4-5 tundi | **Tase**: Ekspert
 
@@ -137,161 +137,162 @@ Selle mooduli läbimisel õpid:
 ### Süsteeminõuded
 - **Operatsioonisüsteem**: Windows 11 (22H2 või uuem)
 - **Mälu**: 16GB RAM (32GB soovitatav suuremate mudelite jaoks)
-- **Salvestusruum**: 50GB vaba ruumi mudeli vahemälu jaoks
-- **Riistvara**: NPU-toega seade soovitatav (Copilot+ PC), GPU valikuline
-- **Võrk**: Kiire internet esialgsete mudelite allalaadimiseks
+- **Salvestusruum**: 50GB vaba ruumi mudeli vahemäluks
+- **Riistvara**: Soovitatav NPU-toega seade (Copilot+ PC), GPU valikuline
+- **Võrk**: Kiire internet esialgseks mudelite allalaadimiseks
 
 ### Arenduskeskkond
-- Visual Studio Code koos AI Toolkit laiendiga
+
+- Visual Studio Code koos AI tööriistakomplektiga laiendusega
 - Python 3.10+ ja pip
 - Git versioonihalduseks
 - PowerShell või käsuviip
-- Azure CLI (valikuline pilve integreerimiseks)
+- Azure CLI (pilveintegratsiooni jaoks valikuline)
 
 ### Teadmiste eeltingimused
-- AI/ML põhimõtete põhiteadmised
-- Käsurea kasutamise oskus
+- AI/ML kontseptsioonide põhitõdede mõistmine
+- Käsurea tutvumine
 - Python programmeerimise alused
 - REST API kontseptsioonid
-- Promptide ja mudeli järeldamise põhiteadmised
+- Põhilised teadmised käsuandmisest ja mudelite ennustusest
 
 ## Mooduli ajakava
 
-**Kogu hinnanguline aeg**: 30-38 tundi
+**Kokku hinnatud aeg**: 30-38 tundi
 
-| Sessioon | Fookusala | Näidised | Aeg | Keerukus |
+| Sessioon | Fookusala | Näited | Aeg | Komplekssus |
 |---------|------------|---------|------|------------|
-|  1 | Seadistamine ja põhialused | 01, 02, 03 | 2-3 tundi | Algaja |
+|  1 | Seadistamine & Alused | 01, 02, 03 | 2-3 tundi | Algaja |
 |  2 | AI lahendused | 04 | 2-3 tundi | Kesktase |
 |  3 | Avatud lähtekood | 05 | 2-3 tundi | Kesktase |
-|  4 | Arenenud mudelid | 06 | 3-4 tundi | Edasijõudnud |
-|  5 | AI agendid | 05, 09 | 3-4 tundi | Edasijõudnud |
+|  4 | Täiustatud mudelid | 06 | 3-4 tundi | Edasijõudnu |
+|  5 | AI agendid | 05, 09 | 3-4 tundi | Edasijõudnu |
 |  6 | Ettevõtte tööriistad | 06, 10 | 3-4 tundi | Ekspert |
-|  7 | Otsene API integreerimine | 07 | 2-3 tundi | Kesktase |
-|  8 | Windows 11 vestlusrakendus | 08 | 3-4 tundi | Edasijõudnud |
-|  9 | Arenenud mitme agendi süsteem | 09 | 4-5 tundi | Ekspert |
+|  7 | Otsene API integratsioon | 07 | 2-3 tundi | Kesktase |
+|  8 | Windows 11 juturakendus | 08 | 3-4 tundi | Edasijõudnu |
+|  9 | Täiustatud mitmeagendi süsteem | 09 | 4-5 tundi | Ekspert |
 | 10 | Tööriistade raamistik | 10 | 4-5 tundi | Ekspert |
 
 ## Peamised ressursid
 
 **Ametlik dokumentatsioon:**
-- [Microsoft Foundry Local GitHub](https://github.com/microsoft/Foundry-Local) - Lähtekood ja ametlikud näidised
-- [Azure AI Foundry dokumentatsioon](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/) - Täielik seadistamise ja kasutamise juhend
-- [Model Mondays sari](https://aka.ms/model-mondays) - Igakuised mudelite ülevaated ja õpetused
+- [Microsoft Foundry Local GitHub](https://github.com/microsoft/Foundry-Local) - Lähtekood ja ametlikud näited
+- [Azure AI Foundry dokumentatsioon](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/) - Täielik seadistus- ja kasutusjuhend
+- [Model Mondays seeria](https://aka.ms/model-mondays) - Igapäevased mudelite tutvustused ja õpetused
 
-**Kogukond ja tugi:**
-- [Foundry Local arutelud](https://github.com/microsoft/Foundry-Local/discussions) - Kogukonna küsimused ja funktsioonide taotlused
+**Kogukond & Tugi:**
+- [Foundry Local arutelud](https://github.com/microsoft/Foundry-Local/discussions) - Kogukonna K&V ning funktsioonisoovid
 - [Microsoft AI arendajate kogukond](https://techcommunity.microsoft.com/category/artificialintelligence) - Viimased uudised ja parimad praktikad
 
 ## Õpitulemused
 
-Selle mooduli läbimisel oled valmis:
+Pärast selle mooduli lõpetamist oskad sa:
 
-### Tehniline meisterlikkus
-- **Paigaldamine ja haldamine**: Foundry Locali paigaldamine ja haldamine arendus- ja tootmiskeskkondades
-- **Mudelite integreerimine**: Töö mitmekesiste mudeliperekondadega Microsoftilt, Hugging Face'ilt ja kogukonnast
-- **Rakenduste loomine**: Tootmiskõlblike AI rakenduste loomine arenenud funktsioonide ja optimeerimistega
-- **Agentide arendamine**: Täiustatud AI agentide rakendamine maandamise, põhjendamise ja tööriistade integreerimisega
+### Tehniline oskus
+- **Paigalda ja halda**: Foundry Local paigaldusi nii arendus- kui ka tootmiskeskkondades
+- **Integreeri mudeleid**: Töötada sujuvalt erinevate Microsofti, Hugging Face’i ja kogukonna mudelitega
+- **Arenda rakendusi**: Loo tootmiskõlblikke AI rakendusi keerukate funktsioonide ja optimeeringutega
+- **Arenda agente**: Rakenda keerukaid AI agente koos taustteadmiste, järelduste ja tööriistade integratsiooniga
 
-### Strateegiline arusaam
-- **Arhitektuuri otsused**: Teadlik valik kohapealse ja pilve juurutamise vahel
-- **Jõudluse optimeerimine**: Järeldamise jõudluse optimeerimine erinevates riistvarakonfiguratsioonides
-- **Ettevõtte skaleerimine**: Rakenduste disain, mis skaleerub kohalikest prototüüpidest ettevõtte juurutusteni
-- **Privaatsus ja turvalisus**: Privaatsust säilitavate AI lahenduste rakendamine kohapealse järeldamisega
+### Strateegiline mõistmine
+- **Arhitektuurilised otsused**: Tee teadlikke valikuid lokaalse vs pilvepõhise juurutuse vahel
+- **Jõudluse optimeerimine**: Optimeeri ennustusprotsessi jõudlust erinevatel riistvarasätetel
+- **Ettevõtte skaala**: Kujunda rakendused, mis skaleeruvad lokaalsetest prototüüpidest ettevõttetasemele
+- **Privaatsus ja turvalisus**: Rakenda privaatsust säilitavaid AI lahendusi lokaalse ennustamisega
 
 ### Innovatsioonivõimekus
-- **Kiire prototüüpimine**: AI rakenduste kontseptsioonide kiire loomine ja testimine kõigi 10 näidismustri abil
-- **Kogukonna integreerimine**: Avatud lähtekoodiga mudelite kasutamine ja panustamine ökosüsteemi
-- **Arenenud mustrid**: Tipptasemel AI mustrite rakendamine, sealhulgas RAG, agendid ja tööriistade integreerimine
-- **Raamistiku valdamine**: Ekspertide tasemel integreerimine LangChaini, Semantilise tuuma, Chainliti ja Electroniga
-- **Tootmiskeskkonna juurutamine**: Skaleeritavate AI lahenduste juurutamine kohalikest prototüüpidest ettevõtte süsteemideni
-- **Tulevikukindel arendus**: Rakenduste loomine, mis on valmis uute AI tehnoloogiate ja mustrite jaoks
+- **Kiire prototüüpimine**: Ehita ja testi kiiresti AI rakenduste kontseptsioone kõigis 10 näidismustris
+- **Kogukonna integratsioon**: Kasuta avatud lähtekoodiga mudeleid ja panusta ökosüsteemi
+- **Täpsemad mustrid**: Rakenda tipptasemel AI mustreid, sealhulgas RAG, agente ja tööriistade integratsiooni
+- **Raamistiku valdamine**: Eksperditase integratsioon LangChaini, Semantic Kernel’i, Chainliti ja Electroniga
+- **Tootmisse juurutamine**: Juuruta skaleeritavaid AI lahendusi lokaalsetest prototüüpidest ettevõttesüsteemideni
+- **Tulevikuks valmis arendus**: Loo rakendusi, mis on valmis uusimate AI tehnoloogiate ja mustrite jaoks
 
 ## Alustamine
 
-1. **Keskkonna seadistamine**: Veendu, et Windows 11 vastab soovitatud riistvaranõuetele (vt eeltingimused)
-2. **Foundry Locali paigaldamine**: Järgi sessiooni 1 juhiseid täielikuks paigaldamiseks ja konfigureerimiseks
-3. **Näidise 01 käivitamine**: Alusta REST API integreerimisega, et seadistust kontrollida
-4. **Näidiste läbimine**: Täida näidised 01-10, et saavutada täielik meisterlikkus
+1. **Keskkonna seadistamine**: Veendu, et on olemas Windows 11 soovitatud riistvaraga (vt eeltingimusi)
+2. **Installi Foundry Local**: Järgi sessiooni 1 juhiseid paigalduseks ja seadistuseks
+3. **Käivita näidis 01**: Alusta põhilise REST API integratsiooniga setup’i kontrollimiseks
+4. **Edasi näidistega**: Läbi kõik näited 01-10 põhjalikuks oskuste omandamiseks
 
 ## Edu mõõdikud
 
-Jälgi oma edusamme kõigi 10 näidise läbimisel:
+Jälgi oma edenemist kõigi 10 põhjalikult läbi töötatud näidise kaudu:
 
-### Põhitaseme näidised (01-03)
-- [ ] Foundry Locali edukas paigaldamine ja konfigureerimine
-- [ ] REST API integreerimise lõpetamine (Näidis 01)
-- [ ] OpenAI SDK ühilduvuse rakendamine (Näidis 02)
-- [ ] Mudelite avastamine ja võrdlusuuringute läbiviimine (Näidis 03)
+### Põhitaseme näited (01-03)
+- [ ] Edukas Foundry Local paigaldus ja seadistus
+- [ ] Täielik REST API integratsioon (näidis 01)
+- [ ] OpenAI SDK ühilduvuse rakendamine (näidis 02)
+- [ ] Mudeli avastamine ja võrdlus (näidis 03)
 
-### Rakendustase (04-06)
-- [ ] Vähemalt 4 erineva mudeliperekonna juurutamine ja käivitamine
-- [ ] Funktsionaalse RAG vestlusrakenduse loomine (Näidis 04)
-- [ ] Mitme agendi orkestreerimissüsteemi loomine (Näidis 05)
-- [ ] Intelligentse mudelite ruuteri rakendamine (Näidis 06)
+### Rakendusetase (04-06)
+- [ ] Juhi ja käivita vähemalt 4 erinevat mudeliperet
+- [ ] Loo funktsionaalne RAG vestlusrakendus (näidis 04)
+- [ ] Loo mitmeagendi orkestreerimissüsteem (näidis 05)
+- [ ] Rakenda intelligentne mudelite marsruutimine (näidis 06)
 
-### Arenenud integreerimise tase (07-10)
-- [ ] Tootmiskõlbliku API kliendi loomine (Näidis 07)
-- [ ] Windows 11 kohalik vestlusrakendus (Näidis 08)
-- [ ] Arenenud mitme agendi süsteemi rakendamine (Näidis 09)
-- [ ] Tööriistade raamistik (Näidis 10)
+### Täiustatud integratsioonitase (07-10)
+- [ ] Loo tootmiskõlblik API klient (näidis 07)
+- [ ] Arenda Windows 11 natiivne juturakendus (näidis 08)
+- [ ] Rakenda täiustatud mitmeagendi süsteem (näidis 09)
+- [ ] Loo põhjalik tööriistade raamistik (näidis 10)
 
-### Meisterlikkuse näitajad
-- [ ] Kõigi 10 näidise edukas käivitamine ilma vigadeta
-- [ ] Vähemalt 3 näidise kohandamine konkreetsete kasutusjuhtude jaoks
-- [ ] 2+ näidise juurutamine tootmiskeskkonnas
-- [ ] Panustamine näidiskoodi täiustamisse või laiendamisse
-- [ ] Foundry Locali mustrite integreerimine isiklikesse/professionaalsetesse projektidesse
+### Oskuse märgid
+- [ ] Käivita edukalt kõik 10 näidist ilma vigadeta
+- [ ] Kohanda vähemalt 3 näidet spetsiifilisteks kasutusjuhtudeks
+- [ ] Juuruta 2+ näidist tootmislaadsetes keskkondades
+- [ ] Panusta näidiskoodi täiustustesse või laiendustesse
+- [ ] Integreeri Foundry Local mustreid isiklikes/professionaalsetes projektides
 
-## Kiire alustamise juhend - Kõik 10 näidist
+## Kiire stardi juhend - kõik 10 näidet
 
 ### Keskkonna seadistamine (nõutav kõigi näidiste jaoks)
 
 ```powershell
-# 1. Clone and navigate to Module08
+# 1. Klooni ja liigu kataloogi Module08
 cd Module08
 
-# 2. Create Python virtual environment
+# 2. Loo Python virtuaalne keskkond
 py -m venv .venv
 .\.venv\Scripts\activate
 
-# 3. Install base dependencies
+# 3. Paigalda põhisisendid
 pip install -r requirements.txt
 
-# 4. Install Foundry Local (if not already installed)
+# 4. Paigalda Foundry Local (kui pole veel paigaldatud)
 winget install Microsoft.FoundryLocal
 
-# 5. Verify Foundry Local installation
+# 5. Kontrolli Foundry Local paigaldust
 foundry --version
 foundry model list
 ```
 
-### Põhitaseme näidised (01-06)
+### Põhinäited (01-06)
 
-**Näidis 01: REST vestluse kiirstart**
+**Näidis 01: REST Chat kiire käivitus**
 ```powershell
-# Start Foundry Local service
+# Käivita Foundry Local teenus
 foundry model run phi-4-mini
 
-# Run REST chat demo
+# Käivita REST vestluse demo
 python samples/01/chat_quickstart.py
 ```
 
-**Näidis 02: OpenAI SDK integreerimine**
+**Näidis 02: OpenAI SDK integratsioon**
 ```powershell
-# Ensure model is running
+# Veenduge, et mudel töötab
 foundry status
 
-# Run SDK demo
+# Käivitage SDK demo
 python samples/02/sdk_quickstart.py
 ```
 
-**Näidis 03: Mudelite avastamine ja võrdlusuuringud**
+**Näidis 03: Mudeli avastamine ja võrdlus**
 ```powershell
-# Run comprehensive model testing
+# Käivita ulatuslik mudelitestimine
 samples/03/list_and_bench.cmd
 
-# Or run individual components
+# Või käivita üksikud komponendid
 foundry model list --available
 foundry model download qwen2.5-0.5b
 foundry model benchmark phi-4-mini
@@ -299,80 +300,166 @@ foundry model benchmark phi-4-mini
 
 **Näidis 04: Chainlit RAG rakendus**
 ```powershell
-# Install Chainlit dependencies
+# Paigalda Chainlit sõltuvused
 pip install chainlit langchain chromadb
 
-# Start RAG chat application
+# Käivita RAG vestlusrakendus
 chainlit run samples/04/app.py -w
-# Opens browser at http://localhost:8000
+# Avab brauseri aadressil http://localhost:8000
 ```
 
-**Näidis 05: Mitme agendi orkestreerimine**
+**Näidis 05: Mitmeagendi orkestreerimine**
 ```powershell
-# Run agent coordinator demo
+# Käivita agendi koordinaatori demo
 python -m samples.05.agents.coordinator
 
-# Run specific agent examples
+# Käivita spetsiifiliste agendinäidete näited
 python samples/05/examples/specialists_demo.py
 ```
 
-**Näidis 06: Mudelite tööriistade ruuter**
+**Näidis 06: Mudelid-tööriistadena marsruutimine**
 ```powershell
-# Configure environment
+# Konfigureeri keskkond
 set BASE_URL=http://localhost:8000
 set GENERAL_MODEL=phi-4-mini
 set CODE_MODEL=qwen2.5-7b
 
-# Run intelligent router
+# Käivita intelligentne ruuter
 python samples/06/router.py "Analyze this Python code for performance issues"
 ```
 
-### Arenenud integreerimise näidised (07-10)
+### Täiustatud integratsiooninäited (07-10)
 
-**Näidis 07: Otsese API klient**
+**Näidis 07: Otsene API klient**
 ```powershell
-# Navigate to sample directory
+# Navigeeri näidiskausta
 cd samples/07
 
-# Install additional dependencies
+# Paigalda täiendavad sõltuvused
 pip install -r requirements.txt
 
-# Run basic API examples
+# Käivita põhilised API näited
 python examples/basic_usage.py
 
-# Try streaming responses
+# Proovi voogedastatud vastuseid
 python examples/streaming.py
 
-# Test production patterns
+# Testi tootmismustreid
 python examples/production.py
 ```
 
-**Näidis 08: Windows 11 vestlusrakendus**
+**Näidis 08: Windows 11 juturakendus**
 ```powershell
-# Navigate to sample directory
+# Liigu näidiskataloogi
 cd samples/08
 
-# Install Node.js dependencies
+# Paigalda Node.js sõltuvused
 npm install
 
-# Start Electron application
+# Käivita Electroni rakendus
 npm start
 
-# Or build for production
+# Või ehita tootmiseks
 npm run build
 ```
 
+**Näidis 09: Täiustatud mitmeagendi süsteem**
+```powershell
+# Liikuge proovikausta
+cd samples/09
 
-See moodul esindab tipptasemel serva-AI arendust, ühendades Microsofti ettevõtte tasemel tööriistad avatud lähtekoodiga ökosüsteemi paindlikkuse ja innovatsiooniga. Valdades Foundry Locali kõigi 10 põhjaliku näidise kaudu, asetate end AI-rakenduste arenduse esirinda.
+# Paigaldage agendi süsteemi sõltuvused
+pip install -r requirements.txt
 
-**Täielik õpiteekond:**
-- **Alused** (Näidised 01-03): API integreerimine ja mudelite haldamine
-- **Rakendused** (Näidised 04-06): RAG, agendid ja intelligentne suunamine
-- **Edasijõudnud** (Näidised 07-10): Tootmisraamistikud ja ettevõtte integratsioon
+# Käivitage põhiline koordineerimise näide
+python examples/basic_coordination.py
 
-Azure OpenAI integreerimise kohta (Sessioon 2) vaadake üksikute näidiste README-faile, kus on toodud vajalikud keskkonnamuutujad ja API versiooni seaded.
+# Proovige keerukat töövoogu
+python examples/complex_workflow.py
+
+# Interaktiivne agendi demonstratsioon
+python examples/interactive_demo.py
+```
+
+**Näidis 10: Foundry tööriistade raamistik**
+```powershell
+# Liigu proovidirektoriumi
+cd samples/10
+
+# Paigalda raamistikusõltuvused
+pip install -r requirements.txt
+
+# Käivita põhivahendite demo
+python examples/basic_tools.py
+
+# Käivita REST API server
+python examples/rest_api_server.py
+# API saadaval aadressil http://localhost:8080
+
+# Proovi käsurea rakendust
+python examples/cli_application.py --help
+
+# Käivita Jupyteri märkmik
+jupyter notebook examples/jupyter_notebook.ipynb
+
+# Testi LangChaini integratsiooni
+python examples/langchain_demo.py
+```
+
+### Levinud probleemide tõrkeotsing
+
+**Foundry Local ühenduse vead**
+```powershell
+# Kontrolli teenuse olekut
+foundry status
+
+# Taaskäivita vajadusel
+foundry restart
+
+# Kontrolli lõpp-punkti kättesaadavust
+curl http://localhost:5273/v1/models
+```
+
+**Mudelite laadimise probleemid**
+```powershell
+# Kontrolli saadaolevaid mudeleid
+foundry model list --cached
+
+# Laadi puuduvad mudelid alla
+foundry model download phi-4-mini
+foundry model download qwen2.5-0.5b
+
+# Vajadusel sundlaadi uuesti
+foundry model unload --all
+foundry model run phi-4-mini
+```
+
+**Sõltuvusprobleemid**
+```powershell
+# Uuenda pipi ja paigalda uuesti
+python -m pip install --upgrade pip
+pip install -r requirements.txt --force-reinstall
+
+# Node.js näidete jaoks
+npm cache clean --force
+npm install
+```
+
+## Kokkuvõte
+
+
+See moodul esindab serva-AI arenduse tipptaset, ühendades Microsofti ettevõtetele mõeldud tööriistad avatud lähtekoodiga ökosüsteemi paindlikkuse ja innovatsiooniga. Õppides põhjalikult Foundry Locali kõiki 10 näidist, asetute AI rakenduste arenduse esiritta.
+
+**Täielik õpitee:**
+- **Alused** (näidised 01-03): API integratsioon ja mudelite haldamine
+- **Rakendused** (näidised 04-06): RAG, agendid ja intelligentne marsruutimine
+- **Täiustatud** (näidised 07-10): Tootmise raamistikud ja ettevõtte integratsioon
+
+Azure OpenAI integratsiooni jaoks (seanss 2) vaadake üksikute näidiste README-faile, kus on toodud vajalikud keskkonnamuutujad ja API versiooni sätted.
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Lahtiütlus**:
+See dokument on tõlgitud kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi me püüdleme täpsuse poole, palun pange tähele, et automatiseeritud tõlgetes võib esineda vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta selle tõlkega seotud eksimustest või valesti mõistmistest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

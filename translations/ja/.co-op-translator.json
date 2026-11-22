@@ -7,7 +7,7 @@
   },
   "CHANGELOG.md": {
     "original_hash": "78ca68df03ae43371b203ea43d346dec",
-    "translation_date": "2025-10-30T11:24:51+00:00",
+    "translation_date": "2026-08-24T20:12:05+00:00",
     "source_file": "CHANGELOG.md",
     "language_code": "ja"
   },
@@ -19,7 +19,7 @@
   },
   "Module01/01.EdgeAIFundamentals.md": {
     "original_hash": "be25052ac4c842765e7f6f7eb4d7dcc5",
-    "translation_date": "2025-10-20T09:36:52+00:00",
+    "translation_date": "2026-08-24T20:25:44+00:00",
     "source_file": "Module01/01.EdgeAIFundamentals.md",
     "language_code": "ja"
   },
@@ -49,25 +49,25 @@
   },
   "Module02/01.PhiFamily.md": {
     "original_hash": "20892f7994d9e5d2473ad19dfa93cf6d",
-    "translation_date": "2025-07-22T03:53:06+00:00",
+    "translation_date": "2026-08-24T20:38:39+00:00",
     "source_file": "Module02/01.PhiFamily.md",
     "language_code": "ja"
   },
   "Module02/02.QwenFamily.md": {
     "original_hash": "1c8c05964be6fb235b026feed0bf066e",
-    "translation_date": "2025-10-01T20:35:08+00:00",
+    "translation_date": "2026-08-24T20:41:20+00:00",
     "source_file": "Module02/02.QwenFamily.md",
     "language_code": "ja"
   },
   "Module02/03.GemmaFamily.md": {
     "original_hash": "c6ab7eb1b8009ae984eaf6b85568f77a",
-    "translation_date": "2025-07-22T04:08:10+00:00",
+    "translation_date": "2026-08-24T20:44:46+00:00",
     "source_file": "Module02/03.GemmaFamily.md",
     "language_code": "ja"
   },
   "Module02/04.BitNETFamily.md": {
     "original_hash": "a56a3241aec9dc147b111ec10a2b3f2a",
-    "translation_date": "2025-07-22T06:01:14+00:00",
+    "translation_date": "2026-08-24T20:48:30+00:00",
     "source_file": "Module02/04.BitNETFamily.md",
     "language_code": "ja"
   },
@@ -97,7 +97,7 @@
   },
   "Module03/02.DeployingSLMinLocalEnv.md": {
     "original_hash": "0d9a6cd24a08aeac1328626abcc18ba8",
-    "translation_date": "2025-10-24T09:18:09+00:00",
+    "translation_date": "2026-08-24T20:36:37+00:00",
     "source_file": "Module03/02.DeployingSLMinLocalEnv.md",
     "language_code": "ja"
   },
@@ -115,7 +115,7 @@
   },
   "Module04/01.Introduce.md": {
     "original_hash": "49e18143f97a802a8647f4be28355348",
-    "translation_date": "2025-07-22T05:17:20+00:00",
+    "translation_date": "2026-08-24T20:24:19+00:00",
     "source_file": "Module04/01.Introduce.md",
     "language_code": "ja"
   },
@@ -145,7 +145,7 @@
   },
   "Module04/06.workflow-synthesis.md": {
     "original_hash": "6fbccc3e9d5911e3df32090724daac13",
-    "translation_date": "2025-10-30T11:30:37+00:00",
+    "translation_date": "2026-08-24T20:23:07+00:00",
     "source_file": "Module04/06.workflow-synthesis.md",
     "language_code": "ja"
   },
@@ -193,19 +193,19 @@
   },
   "Module06/01.IntroduceAgent.md": {
     "original_hash": "44bc28c27b993c5fb988791b7a115705",
-    "translation_date": "2025-10-30T11:27:20+00:00",
+    "translation_date": "2026-08-24T20:34:53+00:00",
     "source_file": "Module06/01.IntroduceAgent.md",
     "language_code": "ja"
   },
   "Module06/02.FunctionCalling.md": {
     "original_hash": "8b05633cf46af274b3724ee2f7140100",
-    "translation_date": "2025-07-22T04:37:25+00:00",
+    "translation_date": "2026-08-24T20:29:27+00:00",
     "source_file": "Module06/02.FunctionCalling.md",
     "language_code": "ja"
   },
   "Module06/03.IntroduceMCP.md": {
     "original_hash": "8a7765b85f123e8a62aa3847141ca072",
-    "translation_date": "2025-10-30T11:28:43+00:00",
+    "translation_date": "2026-08-24T20:27:32+00:00",
     "source_file": "Module06/03.IntroduceMCP.md",
     "language_code": "ja"
   },
@@ -223,7 +223,7 @@
   },
   "Module07/aitoolkit.md": {
     "original_hash": "efb0e70d6e87d0795f4d381c3bc99074",
-    "translation_date": "2025-10-21T06:57:19+00:00",
+    "translation_date": "2026-08-24T20:21:01+00:00",
     "source_file": "Module07/aitoolkit.md",
     "language_code": "ja"
   },
@@ -235,7 +235,7 @@
   },
   "Module07/windowdeveloper.md": {
     "original_hash": "2305e750e93ad4bd79898cf149e01b49",
-    "translation_date": "2025-10-03T05:42:19+00:00",
+    "translation_date": "2026-08-24T20:19:00+00:00",
     "source_file": "Module07/windowdeveloper.md",
     "language_code": "ja"
   },
@@ -277,7 +277,7 @@
   },
   "Module08/README.md": {
     "original_hash": "8d9324f9751f93e152a2f706afe8de99",
-    "translation_date": "2025-09-30T23:31:44+00:00",
+    "translation_date": "2026-08-24T20:16:04+00:00",
     "source_file": "Module08/README.md",
     "language_code": "ja"
   },
@@ -385,7 +385,7 @@
   },
   "STUDY_GUIDE.md": {
     "original_hash": "f86e720f67bb196e2fb6625b2338a1fb",
-    "translation_date": "2025-10-08T18:59:22+00:00",
+    "translation_date": "2026-08-24T20:10:33+00:00",
     "source_file": "STUDY_GUIDE.md",
     "language_code": "ja"
   },
@@ -463,7 +463,7 @@
   },
   "Workshop/notebooks/README.md": {
     "original_hash": "6329a09f540b8c37fde11ff6c3ef8c9b",
-    "translation_date": "2025-10-08T19:33:17+00:00",
+    "translation_date": "2026-08-24T20:50:22+00:00",
     "source_file": "Workshop/notebooks/README.md",
     "language_code": "ja"
   },

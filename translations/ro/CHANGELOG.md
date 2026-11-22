@@ -1,280 +1,317 @@
 # Jurnal de modificări
 
-Toate modificările notabile ale EdgeAI pentru Începători sunt documentate aici. Acest proiect utilizează intrări bazate pe date și stilul Keep a Changelog (Adăugat, Modificat, Reparat, Eliminat, Documentație, Mutat).
+Toate modificările notabile pentru EdgeAI pentru Începători sunt documentate aici. Acest proiect folosește înregistrări bazate pe dată și stilul Keep a Changelog (Adăugat, Modificat, Reparat, Eliminat, Documentație, Mutat).
 
 ## 2025-10-30
 
-### Adăugat - Îmbunătățire cuprinzătoare a Module06 AI Agents
+### Adăugat - Modul06 Îmbunătățirea cuprinzătoare a Agenților AI
 - **Integrarea Microsoft Agent Framework** (`Module06/01.IntroduceAgent.md`):
-  - Secțiune completă despre Microsoft Agent Framework pentru dezvoltarea agenților gata de producție
-  - Modele detaliate de integrare cu Foundry Local pentru implementarea la margine
+  - Secțiune completă despre Microsoft Agent Framework pentru dezvoltarea de agenți pregătiți pentru producție
+  - Modele detaliate de integrare cu Foundry Local pentru implementare la margine
   - Exemple de orchestrare multi-agent cu modele SLM specializate
-  - Modele de implementare în întreprinderi cu gestionarea resurselor și monitorizare
-  - Funcții de securitate și conformitate pentru sistemele de agenți la margine
-  - Exemple de implementare în lumea reală (retail, sănătate, servicii pentru clienți)
+  - Modele de implementare enterprise cu gestionarea și monitorizarea resurselor
+  - Funcționalități de securitate și conformitate pentru sistemele de agenți la margine
+  - Exemple reale de implementare (retail, sănătate, servicii pentru clienți)
 
-- **Strategii de implementare a agenților SLM în producție**:
-  - **Foundry Local**: Documentație completă pentru runtime AI la margine de nivel enterprise, cu instalare, configurare și modele de producție
-  - **Ollama**: Implementare îmbunătățită orientată spre comunitate, cu monitorizare cuprinzătoare și gestionarea modelelor
-  - **VLLM**: Motor de inferență de înaltă performanță cu tehnici avansate de optimizare și funcții pentru întreprinderi
-  - Liste de verificare pentru implementare în producție și tabele comparative pentru toate cele trei platforme
+- **Strategii de implementare SLM în producție**:
+  - **Foundry Local**: Documentație completă de nivel enterprise pentru runtime AI la margine cu instalare, configurare și modele de producție
+  - **Ollama**: Implementare îmbunătățită, orientată spre comunitate, cu monitorizare cuprinzătoare și gestionare a modelelor
+  - **VLLM**: Motor de inferență performant cu tehnici avansate de optimizare și caracteristici enterprise
+  - Liste de verificare pentru implementare în producție și tabele de comparație pentru toate cele trei platforme
 
 - **Îmbunătățiri ale cadrelor SLM optimizate pentru margine**:
-  - **ONNX Runtime**: Secțiune nouă cuprinzătoare pentru implementarea agenților SLM pe mai multe platforme
+  - **ONNX Runtime**: Nouă secțiune cuprinzătoare pentru implementarea agenților SLM cross-platform
   - Modele universale de implementare pe Windows, Linux, macOS, iOS și Android
   - Opțiuni de accelerare hardware (CPU, GPU, NPU) cu detectare automată
-  - Funcții gata de producție și optimizări specifice agenților
+  - Funcții pregătite pentru producție și optimizări specifice agenților
   - Exemple complete de implementare cu integrarea Microsoft Agent Framework
 
-- **Referințe și lecturi suplimentare**:
-  - Bibliotecă cuprinzătoare de resurse cu peste 100 de surse autoritare
-  - Lucrări de cercetare de bază despre agenți AI și modele de limbaj mici
-  - Documentația oficială pentru toate cadrele și instrumentele majore
-  - Rapoarte de industrie, analize de piață și repere tehnice
-  - Resurse educaționale, conferințe și forumuri comunitare
+- **Referințe și resurse suplimentare**:
+  - Bibliotecă de resurse cuprinzătoare cu peste 100 de surse autorizate
+  - Articole de cercetare esențiale despre agenții AI și Modele de Limbaj Mici
+  - Documentație oficială pentru toate cadrele și uneltele majore
+  - Rapoarte din industrie, analize de piață și benchmark-uri tehnice
+  - Resurse educaționale, conferințe și forumuri ale comunității
   - Standarde, specificații și cadre de conformitate
 
-### Modificat - Modernizarea conținutului Module06
-- **Obiective de învățare îmbunătățite**: Adăugarea stăpânirii Microsoft Agent Framework și a capacităților de implementare la margine
-- **Focalizare pe producție**: Trecerea de la ghiduri conceptuale la exemple gata de implementare
-- **Exemple de cod**: Actualizarea tuturor exemplelor pentru a utiliza modele SDK moderne și cele mai bune practici
-- **Modele de arhitectură**: Adăugarea arhitecturilor ierarhice de agenți și coordonarea margine-cloud
-- **Optimizare a performanței**: Îmbunătățiri cu recomandări pentru gestionarea resurselor și scalare automată
+### Modificat - Modernizarea conținutului Modul06
+- **Obiective de învățare îmbunătățite**: Adăugat stăpânirea Microsoft Agent Framework și capabilități de implementare la margine
+- **Focus pe producție**: Deplasat de la concepte către ghidare pregătită pentru implementare cu exemple de producție
+- **Exemple de cod**: Actualizat toate exemplele utilizând modele SDK moderne și bune practici
+- **Modele de arhitectură**: Adăugat arhitecturi ierarhice ale agenților și coordonare edge-to-cloud
+- **Optimizare performanță**: Îmbunătățit cu gestionarea resurselor și recomandări de scalare automată
 
-### Documentație - Îmbunătățirea structurii Module06
-- **Acoperire cuprinzătoare a cadrelor de agenți**: De la concepte de bază la implementare în întreprinderi
+### Documentație - Îmbunătățirea structurii Modul06
+- **Acoperire cuprinzătoare a Agent Framework**: De la concepte de bază la implementare enterprise
 - **Strategii de implementare în producție**: Ghiduri complete pentru Foundry Local, Ollama și VLLM
-- **Optimizare pe mai multe platforme**: Adăugarea ONNX Runtime pentru implementare universală
-- **Bibliotecă de resurse**: Referințe extinse pentru învățare continuă și implementare
+- **Optimizare cross-platform**: Adăugat ONNX Runtime pentru implementare universală
+- **Bibliotecă de resurse**: Referințe extinse pentru învățare și implementare continuă
 
-### Adăugat - Actualizare documentație Protocol Context Model (MCP) Module06
+### Adăugat - Actualizare Documentație Model Context Protocol (MCP) Modul06
 - **Modernizarea introducerii MCP** (`Module06/03.IntroduceMCP.md`):
-  - Actualizat cu cele mai recente specificații MCP de pe modelcontextprotocol.io (versiunea 2025-06-18)
-  - Adăugarea analogiei oficiale USB-C pentru conexiuni standardizate ale aplicațiilor AI
-  - Secțiunea de arhitectură actualizată cu designul oficial pe două straturi (Stratul de Date + Stratul de Transport)
-  - Documentație îmbunătățită pentru primitivele de bază cu primitivele serverului (Instrumente, Resurse, Prompts) și primitivele clientului (Sampling, Elicitation, Logging)
+  - Actualizat cu cele mai recente specificații MCP de la modelcontextprotocol.io (versiunea 2025-06-18)
+  - Adăugată analogia oficială USB-C pentru conexiuni AI standardizate
+  - Secțiunea de arhitectură actualizată cu design oficial în două niveluri (Layer Date + Layer Transport)
+  - Documentație îmbunătățită a primitivelor de bază cu primitive server (Unelte, Resurse, Prompts) și primitive client (Eșantionare, Elicitație, Logare)
 
 - **Referințe și resurse cuprinzătoare MCP**:
-  - Adăugat linkul **MCP pentru Începători** (https://aka.ms/mcp-for-beginners)
+  - Adăugat linkul **MCP pentru Începători** (https://aka.ms/mcp-for-beginners) 
   - Documentația oficială MCP și specificațiile (modelcontextprotocol.io)
-  - Resurse de dezvoltare, inclusiv MCP Inspector și implementări de referință
+  - Resurse de dezvoltare incluzând MCP Inspector și implementări de referință
   - Standarde tehnice (JSON-RPC 2.0, JSON Schema, OpenAPI, Server-Sent Events)
 
-### Adăugat - Integrarea Qualcomm QNN Module04
-- **Secțiunea nouă 7: Suita de optimizare Qualcomm QNN** (`Module04/05.QualcommQNN.md`):
-  - Ghid cuprinzător de peste 400 de linii care acoperă cadrul unificat de inferență AI al Qualcomm
-  - Acoperire detaliată a calculului heterogen (Hexagon NPU, Adreno GPU, Kryo CPU)
+
+### Adăugat - Integrarea Qualcomm QNN Modul04
+- **Noua Secțiune 7: Suita de Optimizare Qualcomm QNN** (`Module04/05.QualcommQNN.md`):
+  - Ghid complet de peste 400 de linii acoperind cadrul unificat Qualcomm pentru inferență AI
+  - Acoperire detaliată a calculului eterogen (Hexagon NPU, Adreno GPU, Kryo CPU)
   - Optimizare conștientă de hardware pentru platformele Snapdragon cu distribuție inteligentă a sarcinilor
   - Tehnici avansate de cuantizare (INT8, INT16, precizie mixtă) pentru implementare mobilă
-  - Optimizare eficientă din punct de vedere energetic pentru dispozitive alimentate cu baterii și aplicații în timp real
-  - Ghid complet de instalare cu configurarea SDK QNN și configurarea mediului
-  - Exemple practice: conversia PyTorch în QNN, optimizarea multi-backend, generarea de binare contextuale
-  - Modele avansate de utilizare: configurare backend personalizată, cuantizare dinamică, profilare performanță
+  - Optimizare eficientă a consumului energetic pentru dispozitive pe baterie și aplicații în timp real
+  - Ghid complet de instalare cu configurare QNN SDK și mediu
+  - Exemple practice: conversia PyTorch la QNN, optimizare multi-backend, generare binară a contextului
+  - Modele avansate de utilizare: configurare backend personalizat, cuantizare dinamică, profilare performanță
   - Secțiune cuprinzătoare de depanare și resurse comunitare
 
-- **Structura îmbunătățită Module04**:
-  - README.md actualizat pentru a include 7 secțiuni progresive (anterior 6)
-  - Adăugarea Qualcomm QNN la tabelul de repere de performanță (îmbunătățire de 5-15x viteză, reducere de 50-80% memorie)
-  - Rezultate de învățare cuprinzătoare pentru implementarea AI mobilă și optimizarea energiei
+- **Structură îmbunătățită Modul04**:
+  - Actualizat README.md pentru a include 7 secțiuni progresive (era 6)
+  - Adăugat Qualcomm QNN în tabelul benchmark-urilor de performanță (îmbunătățire viteză 5-15x, reducere memorie 50-80%)
+  - Rezultate de învățare cuprinzătoare pentru implementare AI mobilă și optimizare energetică
 
-### Modificat - Actualizări documentație Module04
-- **Îmbunătățirea documentației Microsoft Olive** (`Module04/03.MicrosoftOlive.md`):
-  - Adăugarea secțiunii cuprinzătoare "Olive Recipes Repository" care acoperă peste 100 de rețete de optimizare predefinite
+### Modificat - Actualizări Documentație Modul04
+- **Îmbunătățire documentație Microsoft Olive** (`Module04/03.MicrosoftOlive.md`):
+  - Adăugată secțiune cuprinzătoare „Olive Recipes Repository” acoperind 100+ rețete de optimizare predefinite
   - Acoperire detaliată a familiilor de modele suportate (Phi, Llama, Qwen, Gemma, Mistral, DeepSeek)
   - Exemple practice de personalizare a rețetelor și contribuții comunitare
-  - Îmbunătățit cu repere de performanță și ghiduri de integrare
+  - Îmbunătățit cu benchmark-uri de performanță și ghid de integrare
 
-- **Reordonarea secțiunilor în Module04**:
-  - Apple MLX mutat la Secțiunea 5 (anterior Secțiunea 6)
-  - Workflow Synthesis mutat la Secțiunea 6 (anterior Secțiunea 7)
-  - Qualcomm QNN poziționat ca Secțiunea 7 (focalizare mobilă/margine specializată)
-  - Actualizate toate referințele fișierelor și linkurile de navigare în consecință
+- **Reordonarea secțiunilor în Modul04**:
+  - Apple MLX mutat în Secțiunea 5 (era Secțiunea 6)
+  - Workflow Synthesis mutat în Secțiunea 6 (era Secțiunea 7)  
+  - Qualcomm QNN poziționat ca Secțiunea 7 (focus specializat mobil/margine)
+  - Actualizate toate referințele de fișiere și linkurile de navigare corespunzător
 
-### Reparat - Validarea exemplelor din workshop
-- **Validarea și repararea chat_bootstrap.py**:
-  - Reparat declarația de import coruptă (`util.util.workshop_utils` → `util.workshop_utils`)
-  - Creat `__init__.py` lipsă în pachetul util pentru rezolvarea corectă a modulelor Python
+### Reparat - Validarea mostrelor din Workshop
+- **Validare și reparare chat_bootstrap.py**:
+  - Reparată instrucțiunea de import coruptă (`util.util.workshop_utils` → `util.workshop_utils`)
+  - Creat fișierul `__init__.py` lipsă în pachetul util pentru rezoluția corectă a modulului Python
   - Instalate dependențele necesare (openai, foundry-local-sdk) în mediul conda
-  - Validat cu succes execuția exemplului cu prompts implicite și personalizate
+  - Validată cu succes executarea mostrei cu prompturi implicite și personalizate
   - Confirmată integrarea cu serviciul Foundry Local și încărcarea modelului (phi-4-mini cu optimizare CUDA)
 
-### Documentație - Actualizări ghiduri cuprinzătoare
-- **Restructurare completă README.md Module04**:
-  - Adăugarea Qualcomm QNN ca cadru major de optimizare alături de OpenVINO, Olive, MLX
-  - Actualizarea rezultatelor capitolului pentru a include implementarea AI mobilă și optimizarea energiei
-  - Îmbunătățirea tabelului de comparație a performanței cu metrici QNN și cazuri de utilizare mobilă/margine
-  - Menținerea progresiei logice de la soluții enterprise la optimizări specifice platformei
+### Documentație - Actualizări Ghid cuprinzător
+- **Restructurare completă README.md Modul04**:
+  - Adăugat Qualcomm QNN ca cadru principal de optimizare alături de OpenVINO, Olive, MLX
+  - Actualizate rezultatele de învățare din capitole pentru includerea implementării AI mobile și optimizării energetice
+  - Tabel de comparație a performanțelor îmbunătățit cu metrici QNN și cazuri de utilizare mobil/margine
+  - Menținută progresia logică de la soluții enterprise la optimizări specifice platformei
 
-- **Referințe încrucișate și navigare**:
-  - Actualizarea tuturor linkurilor interne și referințelor fișierelor pentru noua numerotare a secțiunilor
-  - Îmbunătățirea descrierii sintezei fluxului de lucru pentru a include medii mobile, desktop și cloud
-  - Adăugarea linkurilor de resurse cuprinzătoare pentru ecosistemul de dezvoltatori Qualcomm
+- **Coreferințe și navigare**:
+  - Actualizate toate linkurile interne și referințele de fișiere pentru noua numerotare a secțiunilor
+  - Descrierea workflow synthesis extinsă pentru a include medii mobile, desktop și cloud
+  - Adăugate linkuri cuprinzătoare către ecosistemul de dezvoltatori Qualcomm
 
 ## 2025-10-08
 
 ### Adăugat - Actualizare cuprinzătoare Workshop
 - **Rescriere completă README.md Workshop**:
-  - Adăugarea unei introduceri cuprinzătoare care explică valoarea Edge AI (confidențialitate, performanță, cost)
-  - Crearea a 6 obiective de învățare de bază cu competențe detaliate
-  - Adăugarea unui tabel de rezultate ale învățării cu livrabile și matrice de competențe
-  - Inclusiv secțiunea de abilități pregătite pentru carieră pentru relevanța în industrie
-  - Adăugarea unui ghid de pornire rapidă cu cerințe preliminare și configurare în 3 pași
-  - Crearea tabelelor de resurse pentru exemple Python (8 fișiere cu timpi de rulare)
-  - Adăugarea tabelului de notebook-uri Jupyter (8 notebook-uri cu evaluări de dificultate)
-  - Crearea tabelului de documentație (7 documente cheie cu ghid "Când să folosești")
-  - Adăugarea recomandărilor de parcurs de învățare pentru diferite niveluri de competență
+  - Adăugată introducere cuprinzătoare explicând propunerea de valoare Edge AI (confidențialitate, performanță, cost)
+  - Creat 6 obiective de învățare de bază cu competențe detaliate
+  - Adăugată tabel cu rezultate de învățare cu livrabile și matricea competențelor
+  - Inclusă secțiune de abilități gata de carieră pentru relevanța în industrie
+  - Adăugat ghid rapid de pornire cu prerechizite și configurare în 3 pași
+  - Creat tabele de resurse pentru mostre Python (8 fișiere cu timpi de rulare)
+  - Adăugat tabel cu caiete Jupyter (8 caiete cu niveluri de dificultate)
+  - Creat tabel de documentație (7 documente cheie cu ghid „Folosește când”)
+  - Adăugate recomandări de traseu de învățare pentru diferite niveluri de competență
 
-- **Infrastructura de validare și testare Workshop**:
-  - Creat `scripts/validate_samples.py` - Instrument de validare cuprinzător pentru sintaxă, importuri și cele mai bune practici
-  - Creat `scripts/test_samples.py` - Runner de testare rapidă pentru toate exemplele Python
-  - Adăugarea documentației de validare la `scripts/README.md`
+- **Infrastructură de validare și testare Workshop**:
+  - Creat `scripts/validate_samples.py` - Instrument cuprinzător de validare pentru sintaxă, importuri și bune practici
+  - Creat `scripts/test_samples.py` - Rulare teste fum pentru toate mostrele Python
+  - Adăugată documentație de validare în `scripts/README.md`
 
 - **Documentație cuprinzătoare**:
-  - Creat `SAMPLES_UPDATE_SUMMARY.md` - Ghid detaliat de peste 400 de linii care acoperă toate îmbunătățirile
+  - Creat `SAMPLES_UPDATE_SUMMARY.md` - Ghid detaliat de peste 400 de linii acoperind toate îmbunătățirile
   - Creat `UPDATE_COMPLETE.md` - Rezumat executiv al finalizării actualizării
-  - Creat `QUICK_REFERENCE.md` - Card de referință rapidă pentru Workshop
+  - Creat `QUICK_REFERENCE.md` - Foaie de referință rapidă pentru Workshop
 
-### Modificat - Modernizarea exemplelor Python din Workshop
-- **Toate cele 8 exemple Python actualizate cu cele mai bune practici**:
-  - Îmbunătățirea gestionării erorilor cu blocuri try-except în jurul tuturor operațiunilor I/O
-  - Adăugarea de indicii de tip și docstrings cuprinzătoare
-  - Implementarea unui model consistent de logare [INFO]/[ERROR]/[RESULT]
-  - Protejarea importurilor opționale cu sugestii de instalare
-  - Îmbunătățirea feedback-ului utilizatorului în toate exemplele
+### Modificat - Modernizarea mostrelor Python Workshop
+- **Toate cele 8 mostre Python actualizate cu bune practici**:
+  - Gestionare îmbunătățită a erorilor cu blocuri try-except în jurul tuturor operațiunilor I/O
+  - Adăugate indicații de tip și docstring-uri cuprinzătoare
+  - Implementat model constant de logare [INFO]/[ERROR]/[RESULT]
+  - Importuri opționale protejate cu indicații de instalare
+  - Feedback îmbunătățit pentru utilizator în toate mostrele
 
 - **session01/chat_bootstrap.py**:
-  - Îmbunătățirea inițializării clientului cu mesaje de eroare cuprinzătoare
-  - Îmbunătățirea gestionării erorilor de streaming cu validarea fragmentelor
-  - Adăugarea unei gestionări mai bune a excepțiilor pentru indisponibilitatea serviciului
+  - Inițializare client îmbunătățită cu mesaje detaliate de eroare
+  - Gestionare îmbunătățită a erorilor de streaming cu validarea secvențelor
+  - Gestionare mai bună a excepțiilor pentru indisponibilitatea serviciului
 
 - **session02/rag_pipeline.py**:
-  - Adăugarea protecțiilor de import pentru sentence-transformers cu sugestii de instalare
-  - Îmbunătățirea gestionării erorilor pentru operațiunile de încorporare și generare
-  - Îmbunătățirea formatării ieșirii cu rezultate structurate
+  - Adăugate protecții la importul sentence-transformers cu indicații de instalare
+  - Gestionare îmbunătățită a erorilor pentru operațiunile de embedding și generare
+  - Format de ieșire îmbunătățit cu rezultate structurate
 
 - **session02/rag_eval_ragas.py**:
-  - Protejarea importurilor opționale (ragas, datasets) cu mesaje de eroare prietenoase
-  - Adăugarea gestionării erorilor pentru metricile de evaluare
-  - Îmbunătățirea formatării ieșirii pentru rezultatele evaluării
+  - Importuri opționale protejate (ragas, datasets) cu mesaje prietenoase de eroare
+  - Adăugată gestionare a erorilor pentru metricile de evaluare
+  - Format de ieșire îmbunătățit pentru rezultatele de evaluare
 
 - **session03/benchmark_oss_models.py**:
-  - Implementarea degradării grațioase (continuă în cazul eșecului modelelor)
-  - Adăugarea raportării detaliate a progresului și gestionarea erorilor pe model
-  - Îmbunătățirea calculului statisticilor cu recuperare cuprinzătoare a erorilor
+  - Implementată degradare grațioasă (continuă la eșecuri ale modelului)
+  - Adăugat raport de progres detaliat și gestionare erori per model
+  - Calcul statistici îmbunătățit cu recuperare cuprinzătoare a erorilor
 
 - **session04/model_compare.py**:
-  - Adăugarea de indicii de tip (tipuri de returnare Tuple)
-  - Îmbunătățirea formatării ieșirii cu rezultate JSON structurate
-  - Implementarea gestionării erorilor pe model cu recuperare
+  - Adăugate indicații de tip (tuple ca tipuri de retur)
+  - Format de ieșire îmbunătățit cu rezultate JSON structurate
+  - Implementată gestionare erori per model cu recuperare
 
 - **session05/agents_orchestrator.py**:
-  - Îmbunătățirea Agent.act() cu docstrings cuprinzătoare
-  - Adăugarea gestionării erorilor pipeline cu logare etapă cu etapă
-  - Îmbunătățirea gestionării memoriei și urmărirea stării
+  - Agent.act() îmbunătățit cu docstring-uri cuprinzătoare
+  - Gestionare a erorilor în pipeline adăugată cu logare etapizată
+  - Gestionare îmbunătățită a memoriei și urmărirea stării
 
 - **session06/models_router.py**:
-  - Îmbunătățirea documentației funcțiilor pentru toate componentele de rutare
-  - Adăugarea logării detaliate în funcția route()
-  - Îmbunătățirea ieșirii testului cu rezultate structurate
+  - Documentația funcțiilor îmbunătățită pentru toate componentele de rutare
+  - Logare detaliată adăugată în funcția route()
+  - Ieșire de test îmbunătățită cu rezultate structurate
 
 - **session06/models_pipeline.py**:
-  - Adăugarea gestionării erorilor la funcția helper chat()
-  - Îmbunătățirea pipeline() cu logare etapă cu etapă și raportare a progresului
-  - Îmbunătățirea main() cu recuperare cuprinzătoare a erorilor
+  - Gestionare erori adăugată la funcția helper chat()
+  - pipeline() îmbunătățit cu logare etapizată și raportare progres
+  - main() îmbunătățit cu recuperare completă la erori
 
-### Documentație - Îmbunătățirea documentației Workshop
-- Actualizarea README.md principal cu secțiunea Workshop care evidențiază parcursul de învățare practică
-- Îmbunătățirea STUDY_GUIDE.md cu secțiunea Workshop cuprinzătoare, incluzând:
-  - Obiective de învățare și zone de focalizare pentru studiu
+### Documentație - Îmbunătățire Documentație Workshop
+- Actualizat README.md principal cu secțiunea Workshop evidențiind traseul de învățare practică
+- Îmbunătățit STUDY_GUIDE.md cu secțiunea cuprinzătoare Workshop incluzând:
+  - Obiective de învățare și domenii de concentrare
   - Întrebări de autoevaluare
   - Exerciții practice cu estimări de timp
   - Alocare de timp pentru studiu concentrat și part-time
-  - Adăugarea Workshop-ului la șablonul de urmărire a progresului
-- Actualizarea ghidului de alocare a timpului de la 20 de ore la 30 de ore (inclusiv Workshop-ul)
-- Adăugarea descrierilor exemplelor din Workshop și rezultatelor învățării la README
+  - Adăugat Workshop la șablonul de urmărit progresul
+- Ghidul de alocare a timpului actualizat de la 20 ore la 30 ore (inclusiv Workshop)
+- Adăugate descrieri mostre Workshop și rezultate de învățare în README
 
 ### Reparat
-- Rezolvarea modelelor inconsistente de gestionare a erorilor în exemplele din Workshop
-- Repararea erorilor de import ale dependențelor opționale cu protecții adecvate
-- Corectarea lipsei indicilor de tip în funcțiile critice
-- Abordarea feedback-ului insuficient al utilizatorului în scenarii de eroare
-- Repararea problemelor de validare cu infrastructura de testare cuprinzătoare
+- Rezolvat tipare inconsistente de gestionare a erorilor în mostrele Workshop
+- Reparat erori la importuri dependențe opționale cu protecții adecvate
+- Corectat lipsa indicațiilor de tip în funcții critice
+- Îmbunătățit feedback-ul utilizatorului în scenarii de eroare
+- Rezolvat probleme de validare cu infrastructură cuprinzătoare de testare
 
 ---
 
 ## 2025-09-23
 
-### Modificat - Modernizarea majoră a Module 08
-- **Aliniere cuprinzătoare cu modelele de implementare ale depozitului Microsoft Foundry-Local**
-  - Actualizarea tuturor exemplelor de cod pentru a utiliza modelele moderne `FoundryLocalManager` și integrarea SDK OpenAI
-  - Înlocuirea apelurilor manuale `requests` învechite cu utilizarea corectă a SDK-ului
-  - Alinierea modelelor de implementare cu documentația oficială Microsoft și exemplele
+### Modificat - Modernizare majoră Modul 08
+- **Aliniere cuprinzătoare cu modelele de depozit Foundry-Local Microsoft**
+  - Actualizate toate exemplele de cod pentru a folosi integrarea modernă `FoundryLocalManager` și SDK OpenAI
+  - Înlocuite apeluri manuale `requests` învechite cu utilizare adecvată a SDK-ului
+  - Alinieri ale modelelor de implementare cu documentația și mostrele oficiale Microsoft
 
 - **Modernizarea 05.AIPoweredAgents.md**:
-  - Actualizarea orchestrării multi-agent pentru a utiliza modelele SDK moderne
-  - Îmbunătățirea implementării coordonatorului cu funcții avansate (buclă de feedback, monitorizarea performanței)
-  - Adăugarea gestionării cuprinzătoare a erorilor și verificarea sănătății serviciului
-  - Integrarea referințelor adecvate la exemplele locale (`samples/05/multi_agent_orchestration.ipynb`)
-  - Actualizarea exemplelor de apelare a funcțiilor pentru a utiliza parametrul modern `tools` în locul `functions` învechit
-  - Adăugarea modelelor gata de producție cu monitorizare și urmărirea statisticilor
+  - Actualizată orchestrarea multi-agent pentru a folosi modele SDK moderne
+  - Îmbunătățită implementarea coordonatorului cu funcții avansate (buclă de feedback, monitorizare performanță)
+  - Adăugată gestionare cuprinzătoare a erorilor și verificare stare serviciu
+  - Integrare referințe corecte către mostre locale (`samples/05/multi_agent_orchestration.ipynb`)
+  - Actualizate exemplele de apelare funcții pentru a folosi parametrul modern `tools` în loc de `functions` învechit
+  - Adăugate modele pregătite pentru producție cu monitorizare și urmărire statistică
 
-- **Rescriere completă 06.ModelsAsTools
-  - Exemple funcționale sub `Module08/samples/01`–`06` cu instrucțiuni cmd Windows
-    - `01` REST chat rapid (`chat_quickstart.py`)
-    - `02` SDK rapid cu suport OpenAI/Foundry Local și Azure OpenAI (`sdk_quickstart.py`)
-    - `03` CLI listare și testare (`list_and_bench.cmd`)
+- **Rescriere completă 06.ModelsAsTools.md**:
+  - Înlocuit registrul de unelte de bază cu implementarea unui router inteligent de modele
+  - Adăugată selecție bazată pe cuvinte cheie pentru diferite tipuri de sarcini (general, raționament, cod, creativ)
+  - Integrată configurarea bazată pe mediu cu alocare flexibilă a modelelor
+  - Îmbunătățit cu monitorizare cuprinzătoare a stării serviciului și gestionare a erorilor
+  - Adăugate modele de implementare pentru producție cu monitorizarea cererilor și urmărirea performanței
+  - Aliniat cu implementarea locală în `samples/06/router.py` și `samples/06/model_router.ipynb`
+
+- **Îmbunătățiri structură documentație**:
+  - Adăugate secțiuni de prezentare evidențiind modernizarea și alinierea SDK
+  - Îmbunătățit cu emoji-uri și formatare mai bună pentru lizibilitate
+  - Adăugate referințe corecte către fișierele locale de mostre în documentație
+  - Inclus ghidare pentru implementare pregătită pentru producție și bune practici
+
+### Adăugat
+- Secțiuni cuprinzătoare de prezentare în fișierele Modul 08 evidențiind integrarea SDK modernă
+- Aspecte arhitecturale care prezintă caracteristici avansate (sisteme multi-agent, rutare inteligentă)
+- Referințe directe către implementările mostrelor locale pentru experiență practică
+- Ghiduri de implementare în producție cu modele de monitorizare și gestionare a erorilor
+- Exemple interactive în caiete Jupyter cu funcții avansate și benchmark-uri
+
+### Reparat
+- Discrepanțe de aliniere între documentație și implementările reale de mostre
+- Modele SDK învechite utilizate încă în Modul 08
+- Lipsa referințelor la biblioteca cuprinzătoare locală de mostre
+- Abordări inconsistente de implementare între secțiuni diferite
+
+---
+
+## 2025-09-18
+
+### Adăugat
+- Modul 08: Microsoft Foundry Local – Trusă completă pentru dezvoltatori
+  - Șase sesiuni: configurare, integrare Azure AI Foundry, modele open-source, demo-uri avansate, agenți și modele ca unelte
+  - Mostre funcționale sub `Module08/samples/01`–`06` cu instrucțiuni Windows cmd
+    - `01` chat rapid REST (`chat_quickstart.py`)
+
+    - `02` SDK quickstart cu suport OpenAI/Foundry Local și Azure OpenAI (`sdk_quickstart.py`)
+    - `03` CLI listare și benchmark (`list_and_bench.cmd`)
     - `04` Demo Chainlit (`app.py`)
     - `05` Orchestrare multi-agent (`python -m samples.05.agents.coordinator`)
-    - `06` Router Models-as-Tools (`router.py`)
-- Suport Azure OpenAI în exemplul SDK din Sesiunea 2 cu configurare variabilă de mediu
-- `.vscode/settings.json` indică spre `Module08/.venv` pentru îmbunătățirea rezoluției analizei Python
-- `.env` cu sugestie `PYTHONPATH` pentru conștientizarea VS Code/Pylance
+    - `06` Router modele ca unelte (`router.py`)
+- Suport Azure OpenAI în exemplul Session 2 SDK cu configurare prin variabile de mediu
+- `.vscode/settings.json` actualizat pentru a indica `Module08/.venv` și a îmbunătăți analiza Python
+- `.env` cu sugestie `PYTHONPATH` pentru recunoașterea în VS Code/Pylance
 
 ### Modificat
-- Modelul implicit actualizat la `phi-4-mini` în documentația și exemplele Module 08; eliminat mențiunile rămase despre `phi-3.5` în Module 08
-- Îmbunătățiri la Router (`Module08/samples/06/router.py`):
-  - Descoperirea endpoint-urilor prin `foundry service status` cu analiză regex
-  - Verificare sănătate `/v1/models` la pornire
-  - Registru de modele configurabil prin mediu (`GENERAL_MODEL`, `REASONING_MODEL`, `CODE_MODEL`, `TOOL_REGISTRY` JSON)
+- Modelul implicit actualizat la `phi-4-mini` în documentația și exemplele din Modul 08; eliminate mențiuni rămase cu `phi-3.5` în Modul 08
+- Îmbunătățiri router (`Module08/samples/06/router.py`):
+  - Descoperire endpoint prin `foundry service status` cu parcurgere regex
+  - Verificare stare `/v1/models` la pornire
+  - Registru modele configurabil prin mediu (`GENERAL_MODEL`, `REASONING_MODEL`, `CODE_MODEL`, `TOOL_REGISTRY` JSON)
 - Cerințe actualizate: `Module08/requirements.txt` include acum `openai` (alături de `requests`, `chainlit`)
-- Ghid clarificat pentru exemplul Chainlit și adăugate soluții pentru probleme; rezolvarea importurilor prin setările workspace-ului
+- Ghid pentru exemplul Chainlit clarificat și adăugat depanare; rezolvarea importurilor prin setările de workspace
 
-### Rezolvat
+### Remediat
 - Probleme de import rezolvate:
-  - Routerul nu mai depinde de un modul `utils` inexistent; funcțiile sunt integrate
-  - Coordinator folosește import relativ (`from .specialists import ...`) și este apelat prin calea modulului
-  - Configurația VS Code/Pylance pentru rezolvarea importurilor `chainlit` și ale pachetelor
-- Corectat o eroare minoră de tipar în `STUDY_GUIDE.md` și adăugată acoperirea Module 08
+  - Router nu mai depinde de modulul inexistent `utils`; funcțiile sunt încorporate
+  - Coordinator folosește import relativ (`from .specialists import ...`) și se apelează via cale modulului
+  - Configurație VS Code/Pylance pentru rezolvarea importurilor `chainlit` și pachete
+- Corectat o mică greșeală în `STUDY_GUIDE.md` și adăugat acoperire Modul 08
 
 ### Eliminat
-- Șters `Module08/infra/obs.py` neutilizat și eliminat directorul gol `infra/`; modelele de observabilitate păstrate ca opționale în documentație
+- Șters fișierul neutilizat `Module08/infra/obs.py` și eliminat directorul gol `infra/`; modelele de observabilitate păstrate opțional în documentație
 
 ### Mutat
-- Consolidat demo-urile Module 08 sub `Module08/samples` cu foldere numerotate pe sesiuni
-  - Mutat aplicația Chainlit la `samples/04`
-  - Mutat agenții la `samples/05` și adăugat fișiere `__init__.py` pentru rezolvarea pachetelor
+- Consolidate demo-urile Modul 08 sub `Module08/samples` cu foldere numerotate după sesiuni
+  - Aplicația Chainlit mutată în `samples/04`
+  - Agenții mutați în `samples/05` și adăugate fișiere `__init__.py` pentru rezolvarea pachetului
 
 ### Documentație
-- Documentația sesiunii Module 08 și toate README-urile exemplelor îmbogățite cu referințe Microsoft Learn și furnizori de încredere
-- `Module08/README.md` actualizat cu Prezentare generală a exemplelor, configurarea routerului și sfaturi de validare
-- `Module07/README.md` secțiunea Windows Foundry Local validată conform documentației Learn
-- `STUDY_GUIDE.md` actualizat:
-  - Adăugat Module 08 la prezentare generală, programe, tracker de progres
-  - Adăugat secțiune cuprinzătoare de Referințe (Foundry Local, Azure AI, Olive, ONNX Runtime, OpenVINO, MLX, Llama.cpp, vLLM, Ollama, AI Toolkit, Windows ML)
+- Documentația Modul 08 și toate README-urile exemplelor îmbogățite cu referințe Microsoft Learn și vânzători de încredere
+- Actualizare `Module08/README.md` cu Prezentarea Exemples, configurarea router-ului și sfaturi de validare
+- Secțiunea Windows Foundry Local din `Module07/README.md` validată cu documentația Learn
+- Actualizat `STUDY_GUIDE.md`:
+  - Adăugat Modul 08 în prezentare, programe, tracker de progres
+  - Adăugată secțiune cuprinzătoare de Referințe (Foundry Local, Azure AI, Olive, ONNX Runtime, OpenVINO, MLX Apple, Llama.cpp, vLLM, Ollama, AI Toolkit, Windows ML)
 
 ---
 
 ## Istoric (rezumat)
-- Arhitectura cursului și modulele stabilite (Module 01–07)
-- Modernizare iterativă a conținutului, standardizare format și adăugare studii de caz
-- Extinderea acoperirii cadrelor de optimizare (Llama.cpp, Olive, OpenVINO, Apple MLX)
+- Arhitectura cursului și module stabilite (Module 01–07)
+- Modernizare iterativă conținut, standardizare formatare și adăugare studii de caz
+- Extindere acoperire framework-uri optimizare (Llama.cpp, Olive, OpenVINO, Apple MLX)
 
-## Nerelease / Backlog (propuneri)
-- Teste opționale per-exemplu pentru validarea disponibilității Foundry Local
-- Revizuirea traducerilor pentru alinierea referințelor la modele (ex. `phi-4-mini`) unde este cazul
-- Adăugarea unei configurații minimale pyright dacă echipele preferă strictețe la nivel de workspace
+## Nepublicate / În așteptare (propuneri)
+- Teste opționale de fum per exemplu pentru validarea disponibilității Foundry Local
+- Revizuire traduceri pentru alinierea referințelor modelelor (ex: `phi-4-mini`) acolo unde este cazul
+- Adăugare config pyright minimal pentru echipele care preferă strictețe la nivel de workspace
 
 ---
 
-**Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de oameni. Nu ne asumăm responsabilitatea pentru neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Declinare a responsabilității**:
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). În timp ce ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un om. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care decurg din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

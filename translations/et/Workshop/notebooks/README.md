@@ -1,34 +1,34 @@
-# Töötuba Märkmikud
+# Töötubade märkmikud
 
-> **Interaktiivsed Jupyter Notebookid praktiliseks Edge AI õppimiseks**
+> **Interaktiivsed Jupyteri märkmikud praktiliseks Edge AI õppimiseks**
 >
-> Järjestikused, iseseisvalt läbitavad juhendid, mis arenevad lihtsatest vestluslahendustest kuni keerukate multi-agent süsteemideni, kasutades Microsoft Foundry Locali ja väikeseid keelemudeleid.
+> Progressiivsed, iseseisvas tempos juhendatud õppetunnid, mis arenevad lihtsatest jutukompleti näidetest kuni keerukate mitmeagendiliste süsteemideni, kasutades Microsoft Foundry Locali ja väikeseid keelemudeleid.
 
 ---
 
 ## 📖 Sissejuhatus
 
-Tere tulemast **EdgeAI algajatele mõeldud töötuba märkmike** kogusse. Need interaktiivsed Jupyter Notebookid pakuvad praktilist õppimiskogemust, kus saate reaalajas kirjutada, käivitada ja katsetada Edge AI koodi.
+Tere tulemast **EdgeAI algajate töötubade märkmike** kogumikku. Need interaktiivsed Jupyteri märkmikud pakuvad praktilist õppimiskogemust, kus kirjutate, käivitate ja katsetate Edge AI koodi reaalajas.
 
-### Miks Jupyter Notebookid?
+### Miks Jupyteri märkmikud?
 
 Erinevalt traditsioonilistest juhenditest pakuvad need märkmikud:
 
-- **Interaktiivne õppimine**: Käivitage koodirakke ja näete tulemusi kohe
+- **Interaktiivne õppimine**: Käivitage koodiblokke ja näete koheseid tulemusi
 - **Katsetamine**: Muutke parameetreid ja jälgige muudatusi reaalajas
-- **Dokumentatsioon**: Sisseehitatud selgitused ja markdown-rakud juhendavad teid kontseptsioonide kaudu
-- **Reprodutseeritavus**: Täielikud töötavad näited, mida saate viidata ja uuesti kasutada
-- **Visualiseerimine**: Vaadake jõudlusmõõdikuid, vektorite paigutusi ja tulemusi otse märkmikus
+- **Dokumentatsioon**: Selgitused ja markdown-rakud juhendavad teid kontseptsioonide kaudu
+- **Taaskäivitatavus**: Töökindlad näited, mida saate uuesti kasutada ja viidata
+- **Visualiseerimine**: Vaadake jõudlusmõõdikuid, manustusi ja tulemusi otse märkmikus
 
 ### Mis teeb need märkmikud eriliseks?
 
-Iga märkmik on loodud järgides **tootmisvalmis parimaid praktikaid**:
+Iga märkmik on loodud järgides **tootmisvalmis parimaid tavasid**:
 
-✅ **Põhjalik veakäsitlus** - Sujuv degradeerumine ja informatiivsed veateated  
-✅ **Tüübiviited ja dokumentatsioon** - Selged funktsioonide signatuurid ja dokumendijuhised  
-✅ **Jõudluse jälgimine** - Tokenite kasutuse jälgimine ja latentsuse mõõtmine  
-✅ **Modulaarne disain** - Taaskasutatavad mustrid, mida saate oma projektides kohandada  
-✅ **Järjestikune keerukus** - Süsteemne ülesehitus eelnevate sessioonide põhjal
+✅ **Täpne vigade käsitlemine** - Delikaatne katkestamine ja informatiivsed veateated  
+✅ **Tüübi vihjed & dokumentatsioon** - Selged funktsioonide signatuurid ja dokumentatsioonitekstid  
+✅ **Jõudluse jälgimine** - Tokeni kasutuse jälgimine ja latentsuse mõõtmised  
+✅ **Mooduldisain** - Taaskasutatavad mustrid, mida saate oma projektides kohandada  
+✅ **Järk-järguline keerukus** - Süsteemne ehitamine varasemate õppesessioonide põhjal
 
 ---
 
@@ -36,43 +36,43 @@ Iga märkmik on loodud järgides **tootmisvalmis parimaid praktikaid**:
 
 ### Põhioskused, mida arendate
 
-Töötades läbi need märkmikud, omandate:
+Nende märkmike läbimisega omandate:
 
-1. **Kohaliku AI teenuse haldamine**
-   - Konfigureerige ja hallake Microsoft Foundry Local teenuseid
-   - Valige ja laadige oma riistvarale sobivad mudelid
+1. **Kohaliku AI-teenuse haldamine**
+   - Konfigureerige ja haldage Microsoft Foundry Local teenuseid
+   - Valige ja laadige sobivad mudelid vastavalt riistvarale
    - Jälgige ressursikasutust ja optimeerige jõudlust
-   - Käsitlege teenuste avastamist ja tervisekontrolli
+   - Halduge teenuse leidmise ja tervisekontrolliga
 
-2. **AI rakenduste arendamine**
-   - Rakendage OpenAI-ga ühilduvaid vestluslahendusi kohapeal
-   - Looge voogesituse liidesed parema kasutajakogemuse jaoks
-   - Kujundage tõhusad juhised väikestele keelemudelitele
+2. **AI rakenduste arendus**
+   - Rakendage kohalikus keskkonnas OpenAI-ühilduvaid jutukomplekte
+   - Looge voogedastuse liidesed parema kasutajakogemuse jaoks
+   - Kujundage tõhusaid sisendeid väikestele keelemudelitele
    - Integreerige kohalikud mudelid rakendustesse
 
-3. **Retrieval Augmented Generation (RAG)**
-   - Looge semantiline otsing vektorite paigutustega
-   - Siduge LLM-i vastused valdkonnaspetsiifiliste dokumentidega
+3. **Taastekstimislaiendatud genereerimine (RAG)**
+   - Looge semantiline otsing vektorimanustustega
+   - Põhjendage LLM vastuseid domeenispetsiifiliste dokumentidega
    - Hinnake RAG kvaliteeti RAGAS mõõdikutega
-   - Laiendage prototüübist tootmiseni
+   - Skaalake prototüübist tootmiseni
 
 4. **Jõudluse optimeerimine**
-   - Võrdlege süsteemselt mitut mudelit
+   - Võrrelge systemaalselt mitut mudelit
    - Mõõtke latentsust, läbilaskevõimet ja esimese tokeni aega
-   - Võrrelge väikeseid keelemudeleid suurte keelemudelitega
-   - Valige optimaalsed mudelid jõudluse/kvaliteedi kompromisside põhjal
+   - Võrrelge väikesi ja suuri keelemudeleid
+   - Valige optimaalne mudel jõudluse ja kvaliteedi kompromisside põhjal
 
-5. **Multi-agent orkestreerimine**
-   - Kujundage spetsialiseeritud agendid erinevate ülesannete jaoks
-   - Rakendage agentide mälu ja konteksti haldamist
-   - Koordineerige mitut agenti keerukates töövoogudes
-   - Looge koordinaatori mustrid agentide koostööks
+5. **Mitme agendi orkestreerimine**
+   - Kujundage spetsialiseeritud agendid eri ülesannete jaoks
+   - Rakendage agendi mälu ja konteksti haldust
+   - Koordineerige mitut agenti keerulistes töövoogudes
+   - Looge koordinaatorite mustrid agendite koostööks
 
-6. **Intelligentne mudelite suunamine**
-   - Rakendage kavatsuste tuvastamist ja mustrite sobitamist
-   - Suunake päringud automaatselt sobivatele mudelitele
-   - Looge mitmeastmelised torud (plaan → teostus → täpsustus)
-   - Kujundage skaleeritavad mudelid-tööriistad arhitektuurid
+6. **Intelligentne mudelite marsruutimine**
+   - Rakendage kavatsuste tuvastamist ja mustrimatchimist
+   - Marsruutige päringud sobivatele mudelitele automaatselt
+   - Koostage mitmeastmelised töövood (planeeri → käivita → täienda)
+   - Kujundage skaleeritavaid mudelitööriistade arhitektuure
 
 ---
 
@@ -80,16 +80,16 @@ Töötades läbi need märkmikud, omandate:
 
 ### Mida te ehitate
 
-| Märkmik | Tulemus | Näidatud oskused | Raskusaste |
-|---------|---------|------------------|------------|
-| **Sessioon 01** | Vestlusrakendus voogesitusega | Teenuse seadistamine, põhilised vestlused, voogesituse UX | ⭐ Algaja |
-| **Sessioon 02 (RAG)** | RAG toru koos hindamisega | Vektorite paigutused, semantiline otsing, kvaliteedimõõdikud | ⭐⭐ Keskmine |
-| **Sessioon 02 (Hindamine)** | RAG kvaliteedi hindaja | RAGAS mõõdikud, süsteemne hindamine | ⭐⭐ Keskmine |
-| **Sessioon 03** | Multi-mudeli võrdlus | Jõudluse mõõtmine, mudelite võrdlus | ⭐⭐ Keskmine |
+| Märkmik | Toodang | Nähtavad oskused | Raskusaste |
+|----------|-------------|---------------------|------------|
+| **Sessioon 01** | Vestlusrakendus voogedastusega | Teenuse seadistamine, põhilised kompletid, voogedastus UX | ⭐ Algaja |
+| **Sessioon 02 (RAG)** | RAG töövoog koos hindamisega | Manustused, semantiline otsing, kvaliteedimõõdikud | ⭐⭐ Kesktase |
+| **Sessioon 02 (Hindamine)** | RAG kvaliteedihindaja | RAGAS mõõdikud, süstemaatiline hindamine | ⭐⭐ Kesktase |
+| **Sessioon 03** | Mitmemudeline võrdlus | Jõudluse mõõtmine, mudelite võrdlus | ⭐⭐ Kesktase |
 | **Sessioon 04** | SLM vs LLM võrdleja | Kompromisside analüüs, optimeerimisstrateegiad | ⭐⭐⭐ Edasijõudnud |
-| **Sessioon 05** | Multi-agent orkestreerija | Agentide disain, mälu, koordineerimine | ⭐⭐⭐ Edasijõudnud |
-| **Sessioon 06 (Router)** | Intelligentne suunamissüsteem | Kavatsuste tuvastamine, mudelite valik | ⭐⭐⭐ Edasijõudnud |
-| **Sessioon 06 (Toru)** | Mitmeastmeline toru | Plaan/teostus/täpsustus töövood | ⭐⭐⭐ Edasijõudnud |
+| **Sessioon 05** | Mitmeagendi orkestreerija | Agendi kujundus, mälu, koordineerimine | ⭐⭐⭐ Edasijõudnud |
+| **Sessioon 06 (Marsruutija)** | Intelligentsed marsruutimissüsteemid | Kavatsuste tuvastamine, mudelivalik | ⭐⭐⭐ Edasijõudnud |
+| **Sessioon 06 (Töövoog)** | Mitmeastmeline töövoog | Planeeri/käivita/täienda töövood | ⭐⭐⭐ Edasijõudnud |
 
 ### Kompetentsuse areng
 
@@ -108,17 +108,17 @@ Foundation    │   Intermediate   │   Advanced       │   Expert
 
 ### 🚀 Poolpäevane töötuba (3,5 tundi)
 
-**Sobib: Meeskonna koolitused, häkatonid, konverentsi töötoad**
+**Sobib ideaalselt: meeskonnatöö koolitused, hackathonid, konverentsi töötubadeks**
 
-| Aeg | Kestus | Sessioon | Teemad | Tegevused |
-|-----|--------|----------|--------|-----------|
-| **0:00** | 30 min | Seadistamine ja sissejuhatus | Keskkonna seadistamine, Foundry Locali paigaldamine | Paigaldage sõltuvused, kontrollige seadistust |
-| **0:30** | 30 min | Sessioon 01 | Põhilised vestlused, voogesitus | Käivitage märkmik, muutke juhiseid |
-| **1:00** | 45 min | Sessioon 02 | RAG toru, vektorid, hindamine | Ehitage RAG süsteem, testige päringuid |
+| Kellaaeg | Kestus | Sessioon | Teemad | Tegevused |
+|------|----------|---------|--------|------------|
+| **0:00** | 30 min | Seadistus & Sissejuhatus | Keskkonna seadistamine, Foundry Local paigaldus | Paigalda sõltuvused, kontrolli seadistust |
+| **0:30** | 30 min | Sessioon 01 | Põhilised jutukompletid, voogedastus | Käivita märkmik, muuda sisendeid |
+| **1:00** | 45 min | Sessioon 02 | RAG töövoog, manustused, hindamine | Ehita RAG süsteem, testi päringuid |
 | **1:45** | 15 min | Paus | ☕ Kohv ja küsimused | — |
-| **2:00** | 30 min | Sessioon 03 | Multi-mudeli võrdlus | Võrrelge 3+ mudelit |
-| **2:30** | 30 min | Sessioon 04 | SLM vs LLM kompromissid | Analüüsige jõudlust/kvaliteeti |
-| **3:00** | 30 min | Sessioon 05-06 | Multi-agent süsteemid ja suunamine | Uurige keerukaid mustreid |
+| **2:00** | 30 min | Sessioon 03 | Mitmemudeline võrdlus | Võrdle 3+ mudelit |
+| **2:30** | 30 min | Sessioon 04 | SLM vs LLM kompromissid | Analüüsi jõudlus/kvaliteet |
+| **3:00** | 30 min | Sessioon 05-06 | Mitmeagendilised süsteemid & marsruutimine | Uuri edasiarendatud mustreid |
 
 **Tulemus**: Osalejad lahkuvad 6 töötava Edge AI rakenduse ja tootmisvalmis koodimustritega.
 
@@ -126,197 +126,223 @@ Foundation    │   Intermediate   │   Advanced       │   Expert
 
 ### 🎓 Täispäevane töötuba (6 tundi)
 
-**Sobib: Süvitsi minev koolitus, bootcampid, ülikoolikursused**
+**Sobib ideaalselt: põhjalik koolitus, bootcampid, ülikoolikursused**
 
-| Aeg | Kestus | Sessioon | Teemad | Tegevused |
-|-----|--------|----------|--------|-----------|
-| **0:00** | 45 min | Seadistamine ja teooria | Keskkonna seadistamine, Edge AI põhialused | Paigaldage, kontrollige, arutage kasutusjuhtumeid |
-| **0:45** | 45 min | Sessioon 01 | Vestluste süvitsi uurimine | Rakendage põhilised ja voogesituse vestlused |
-| **1:30** | 30 min | Paus | ☕ Kohv ja võrgustumine | — |
-| **2:00** | 60 min | Sessioon 02 (Mõlemad) | RAG toru + RAGAS hindamine | Ehitage täielik RAG süsteem |
-| **3:00** | 30 min | Praktiline labor 1 | Kohandatud RAG teie valdkonnale | Rakendage oma dokumentidele |
-| **3:30** | 30 min | Lõuna | 🍽️ | — |
+| Kellaaeg | Kestus | Sessioon | Teemad | Tegevused |
+|------|----------|---------|--------|------------|
+| **0:00** | 45 min | Seadistus & Teooria | Keskkonna seadistamine, Edge AI põhialused | Paigalda, kontrolli, arutle kasutusjuhtumite üle |
+| **0:45** | 45 min | Sessioon 01 | Sügav pilguheit jutukomplektidele | Rakenda põhilisi ja voogedastuse vestlusi |
+| **1:30** | 30 min | Paus | ☕ Kohv ja võrgustiku loomine | — |
+| **2:00** | 60 min | Sessioon 02 (mõlemad) | RAG töövoog + RAGAS hindamine | Ehita täielik RAG süsteem |
+| **3:00** | 30 min | Praktiline labor 1 | Kohandatud RAG oma domeenile | Rakenda oma dokumentidele |
+| **3:30** | 30 min | Lõunapaus | 🍽️ | — |
 | **4:00** | 45 min | Sessioon 03 | Võrdlusmetoodika | Süsteemne mudelite võrdlus |
 | **4:45** | 45 min | Sessioon 04 | Optimeerimisstrateegiad | SLM vs LLM analüüs |
-| **5:30** | 60 min | Sessioon 05-06 | Täiustatud orkestreerimine | Multi-agent süsteemid, suunamine |
-| **6:30** | 30 min | Praktiline labor 2 | Ehitage kohandatud agentide süsteem | Kujundage oma orkestreerija |
+| **5:30** | 60 min | Sessioon 05-06 | Edasijõudnud orkestreerimine | Mitmeagendilised süsteemid, marsruutimine |
+| **6:30** | 30 min | Praktiline labor 2 | Ehita kohandatud agendisüsteem | Kujunda oma orkestreerija |
 
-**Tulemus**: Sügav arusaam Edge AI mustritest pluss 2 kohandatud projekti.
+**Tulemus**: Sügav Edge AI mustrite mõistmine pluss 2 kohandatud projekti.
 
 ---
 
 ### 📚 Iseseisev õppimine (2 nädalat)
 
-**Sobib: Individuaalsed õppijad, veebikursused, iseseisev õpe**
+**Sobib ideaalselt: iseseisvad õppijad, veebikursused, iseseisev õpe**
 
-#### 1. nädal: Põhitõed (6 tundi)
-
-| Päev | Fookus | Kestus | Märkmikud | Kodutöö |
-|------|-------|--------|-----------|---------|
-| **Esm** | Seadistamine ja põhialused | 1,5 tundi | Sessioon 01 | Muutke juhiseid, testige voogesitust |
-| **Kolm** | RAG põhialused | 2 tundi | Sessioon 02 (mõlemad) | Lisage oma dokumendid |
-| **Reed** | Võrdlus | 1,5 tundi | Sessioon 03 | Võrrelge täiendavaid mudeleid |
-| **Laup** | Ülevaade ja praktika | 1 tund | Kõik 1. nädala | Täitke harjutused, siluge |
-
-#### 2. nädal: Täiustatud (5 tundi)
+#### 1. nädal: Alused (6 tundi)
 
 | Päev | Fookus | Kestus | Märkmikud | Kodutöö |
-|------|-------|--------|-----------|---------|
-| **Esm** | Optimeerimine | 1,5 tundi | Sessioon 04 | Dokumenteerige kompromissid |
-| **Kolm** | Multi-agent süsteemid | 2 tundi | Sessioon 05 | Kujundage kohandatud agendid |
-| **Reed** | Intelligentne suunamine | 1,5 tundi | Sessioon 06 (mõlemad) | Ehitage suunamisloogika |
-| **Laup** | Lõppprojekt | 2 tundi | Integratsioon | Kombineerige mitu mustrit |
+|-----|-------|----------|-----------|----------|
+| **Esmaspäev** | Seadistus & Alused | 1,5 tundi | Sessioon 01 | Muutke sisendeid, testige voogedastust |
+| **Kolmapäev** | RAG alused | 2 tundi | Sessioon 02 (mõlemad) | Lisage oma dokumendid |
+| **Reede** | Võrdlus | 1,5 tundi | Sessioon 03 | Võrrelge täiendavaid mudeleid |
+| **Laupäev** | Kordamine & Praktika | 1 tund | Kõik 1. nädalast | Täitke harjutusi, siluge vigu |
 
-**Tulemus**: Edge AI mustrite valdamine pluss portfoolio projekt.
+#### 2. nädal: Edasijõudnud (5 tundi)
+
+| Päev | Fookus | Kestus | Märkmikud | Kodutöö |
+|-----|-------|----------|-----------|----------|
+| **Esmaspäev** | Optimeerimine | 1,5 tundi | Sessioon 04 | Dokumenteerige kompromissid |
+| **Kolmapäev** | Mitmeagendilised süsteemid | 2 tundi | Sessioon 05 | Kujundage kohandatud agendid |
+| **Reede** | Intelligentsed marsruudid | 1,5 tundi | Sessioon 06 (mõlemad) | Looge marsruutimise loogika |
+| **Laupäev** | Lõppprojekt | 2 tundi | Integreerimine | Kombineerige mitu mustrit |
+
+**Tulemus**: Edge AI mustrite valdamine ja portfoolioprojekt.
 
 ---
 
 ## 📔 Märkmike kirjeldused
 
-### 📘 Sessioon 01: Vestluse algus
+### 📘 Sessioon 01: Jutuka algus
 **Fail**: `session01_chat_bootstrap.ipynb`  
 **Kestus**: 20-30 minutit  
-**Eeltingimused**: Puuduvad  
+**Eeldused**: Puuduvad  
 **Raskusaste**: ⭐ Algaja
 
 **Mida õpite**:
 - Paigaldage ja konfigureerige Foundry Local Python SDK
-- Kasutage `FoundryLocalManager` automaatseks teenuste avastamiseks
-- Rakendage põhilised vestlused OpenAI-ga ühilduva API-ga
-- Looge voogesituse vastused parema kasutajakogemuse jaoks
-- Käsitlege vigu ja teenuse kättesaamatust sujuvalt
+- Kasutage `FoundryLocalManager` automaatseks teenuste leidmiseks
+- Rakendage põhilised vestluskõnede lõpetused OpenAI-ühilduva API-ga
+- Looge voogedastuse vastused parema kasutajakogemuse tagamiseks
+- Haldage vigu ja teenuse kättesaamatusi ladusalt
 
-**Põhikontseptsioonid**: Teenuse haldamine, vestlused, voogesitus, veakäsitlus
+**Põhikontseptsioonid**: Teenuse haldus, jutukompletid, voogedastus, vigade käsitlemine
 
-**Mida ehitate**: Interaktiivne vestlusrakendus voogesituse toega
+**Te ehitate**: Interaktiivne juturakendus koos voogedastuse toega
 
 ---
 
-### 📗 Sessioon 02: RAG toru
+### 📗 Sessioon 02: RAG töövoog
 **Fail**: `session02_rag_pipeline.ipynb`  
 **Kestus**: 30-45 minutit  
-**Eeltingimused**: Sessioon 01  
-**Raskusaste**: ⭐⭐ Keskmine
+**Eeldused**: Sessioon 01  
+**Raskusaste**: ⭐⭐ Kesktase
 
 **Mida õpite**:
-- Rakendage Retrieval Augmented Generation (RAG) mustrit
-- Looge vektorite paigutused lause-transformeritega
-- Ehitage semantiline otsing koos kosinuse sarnasusega
-- Siduge LLM-i vastused valdkonna dokumentidega
-- Käsitlege valikulisi sõltuvusi importimise kaitsetega
+- Rakendage Taastekstimislaiendatud genereerimise (RAG) mustrit
+- Looge vektorimanustusi kasutades sentence-transformers raamistiku
+- Looge semantiline otsing kas kooskõlapõhise lähendusega
+- Põhjendage LLM vastuseid domeenidokumentidega
+- Kasutage valikuliste sõltuvuste kontrollimiseks importi kaitseid
 
-**Põhikontseptsioonid**: RAG arhitektuur, vektorite paigutused, semantiline otsing, vektorite sarnasus
+**Põhikontseptsioonid**: RAG arhitektuur, manustused, semantiline otsing, vektorsarnasus
 
-**Mida ehitate**: Dokumentidega seotud küsimuste-vastuste süsteem
+**Te ehitate**: Dokumentidel põhinev küsimuste-vastuste süsteem
 
 ---
 
 ### 📗 Sessioon 02: RAG hindamine RAGAS-iga
 **Fail**: `session02_rag_eval_ragas.ipynb`  
 **Kestus**: 30-45 minutit  
-**Eeltingimused**: Sessioon 02 RAG toru  
-**Raskusaste**: ⭐⭐ Keskmine
+**Eeldused**: Sessioon 02 RAG töövoog  
+**Raskusaste**: ⭐⭐ Kesktase
 
 **Mida õpite**:
-- Hinnake RAG kvaliteeti tööstusharu standardsete mõõdikutega
-- Mõõtke konteksti asjakohasust, vastuse asjakohasust, usaldusväärsust
-- Kasutage RAGAS raamistikku süsteemseks hindamiseks
+- Hinnake RAG kvaliteeti tööstuslike standardite mõõdikute alusel
+- Mõõtke konteksti asjakohasust, vastuseks asjakohasust, usaldusväärsust
+- Kasutage RAGAS raamistiku süstemaatiliseks hindamiseks
 - Tuvastage ja parandage RAG kvaliteediprobleeme
-- Looge hindamisandmestikud oma valdkonnale
+- Looge hindamisdomeenid oma domeeni jaoks
 
-**Põhikontseptsioonid**: RAG hindamine, RAGAS mõõdikud, kvaliteedi mõõtmine, süsteemne testimine
+**Põhikontseptsioonid**: RAG hindamine, RAGAS mõõdikud, kvaliteedi mõõtmine, süstemaatiline testimine
 
-**Mida ehitate**: RAG kvaliteedi hindamise raamistik
+**Te ehitate**: RAG kvaliteedihindamise raamistik
 
 ---
 
 ### 📙 Sessioon 03: OSS mudelite võrdlus
 **Fail**: `session03_benchmark_oss_models.ipynb`  
 **Kestus**: 30-45 minutit  
-**Eeltingimused**: Sessioon 01  
-**Raskusaste**: ⭐⭐ Keskmine
+**Eeldused**: Sessioon 01  
+**Raskusaste**: ⭐⭐ Kesktase
 
 **Mida õpite**:
-- Süsteemselt võrrelge mitut mudelit
-- Mõõtke latentsust, läbilaskevõimet, esimese tokeni aega
-- Rakendage sujuvat degradeerumist mudelite rikete korral
-- Võrrelge jõudlust mudelite perekondade vahel
-- Visualiseerige ja analüüsige võrdlustulemusi
+- Süsteemselt võrdle mitut mudelit
+- Mõõda latentsust, läbilaskevõimet, esimese tokeni aega
+- Rakenda ladusat katkestamist mudelirikkete korral
+- Võrdle jõudlust mudelseeriate kaupa
+- Visualiseeri ja analüüsi võrdluse tulemusi
 
 **Põhikontseptsioonid**: Jõudluse võrdlus, latentsuse mõõtmine, mudelite võrdlus, statistiline analüüs
 
-**Mida ehitate**: Multi-mudeli võrdluskomplekt
+**Te ehitate**: Mitme mudeli võrdluse paket
 
 ---
 
 ### 📙 Sessioon 04: Mudelite võrdlus (SLM vs LLM)
 **Fail**: `session04_model_compare.ipynb`  
 **Kestus**: 30-45 minutit  
-**Eeltingimused**: Sessioonid 01, 03  
+**Eeldused**: Sessioonid 01, 03  
 **Raskusaste**: ⭐⭐⭐ Edasijõudnud
 
 **Mida õpite**:
-- Võrrelge väikeseid keelemudeleid suurte keelemudelitega
+- Võrrelge väikeseid ja suuri keelemudeleid
 - Analüüsige jõudluse ja kvaliteedi kompromisse
-- Mõõtke serva-sobivuse mõõdikuid
-- Valige optimaalsed mudelid juurutuspiirangute põhjal
-- Dokumenteerige mudelite valiku otsustuskriteeriumid
+- Mõõtke edge-seadmete sobivuse mõõdikuid
+- Valige optimaalsed mudelid juurutuse piirangute jaoks
+- Dokumenteerige mudelivaliku otsustuskriteeriumid
 
-**Põhikontseptsioonid**: Mudelite valik, kompromisside analüüs, optimeerimisstrateegiad, juurutusplaneerimine
+**Põhikontseptsioonid**: Mudeli valik, kompromisside analüüs, optimeerimisstrateegiad, juurutuse planeerimine
 
-**Mida ehitate**: SLM vs LLM võrdlusraamistik
+**Te ehitate**: SLM vs LLM võrdlusraamistik
 
 ---
 
-### 📕 Sessioon 05: Multi-agent orkestreerija
+### 📕 Sessioon 05: Mitme agendi orkestreerija
 **Fail**: `session05_agents_orchestrator.ipynb`  
 **Kestus**: 45-60 minutit  
-**Eeltingimused**: Sessioonid 01-02  
+**Eeldused**: Sessioonid 01-02  
 **Raskusaste**: ⭐⭐⭐ Edasijõudnud
 
 **Mida õpite**:
-- Kujundage spetsialiseeritud agendid erinevate ülesannete jaoks
-- Rakendage agentide mälu ja konteksti haldamist
-- Looge koordinaatori mustrid agentide koostööks
-- Käsitlege agentide suhtlust ja üleandmisi
-- Jälgige multi-agent süsteemi jõudlust
+- Kujundage spetsialiseeritud agendid erinevateks ülesanneteks
+- Rakendage agendi mälu ja konteksti haldus
+- Looge koordinaatormustrid agentide koostöö jaoks
+- Haldage agentide suhtlust ja tööülekandeid
+- Jälgige mitme agendi süsteemi jõudlust
 
-**Põhikontseptsioonid**: Agentide arhitektuur, koordinaatori mustrid, mälu haldamine, agentide orkestreerimine
+**Põhikontseptsioonid**: Agendi arhitektuur, koordinaatori mustrid, mälu haldus, agentide orkestreerimine
 
-**Mida ehitate**: Multi-agent süsteem koos koordinaatori ja spetsialistidega
+**Te ehitate**: Mitmeagendilise süsteemi koos koordinaatori ja spetsialistidega
 
 ---
 
-### 📕 Sessioon 06: Mudelite suunaja
+### 📕 Sessioon 06: Mudelite marsruutija
 **Fail**: `session06_models_router.ipynb`  
 **Kestus**: 30-45 minutit  
-**Eeltingimused**: Sessioonid 01, 03  
+**Eeldused**: Sessioonid 01, 03  
 **Raskusaste**: ⭐⭐⭐ Edasijõudnud
-- Kujunda skaleeritavaid mudel-tööriistade arhitektuure
 
-**Põhimõisted**: Toru arhitektuur, mitmeastmeline töötlemine, vigade taastamine, skaleeritavuse mustrid
+**Mida õpite**:
+- Rakendage kavatsuste tuvastamist ja mustrimatchimist
+- Looge märksõnapõhised mudelite marsruutimised
+- Marsruutige päringud sobivatele mudelitele automaatselt
+- Konfigureerige mitme mudeli registrid
+- Jälgige marsruutimisotsuseid ja jõudlust
 
-**Sa lood**: Mitmeastmeline intelligentne toru koos suunamisega
+**Põhikontseptsioonid**: Kavatsuste tuvastamine, mudeli marsruutimine, mustri sobitamine, intelligentne valik
+
+**Te ehitate**: Intelligentsed mudelite marsruutimissüsteem
+
+---
+
+### 📕 Sessioon 06: Mitmeastmeline töövoog
+**Fail**: `session06_models_pipeline.ipynb`  
+**Kestus**: 30-45 minutit  
+**Eeldused**: Sessioonid 01, 06 marsruutija  
+**Raskusaste**: ⭐⭐⭐ Edasijõudnud
+
+**Mida õpite**:
+- Looge mitmeastmelised AI töövood (planeeri → käivita → täienda)
+- Integreerige marsruutija intelligentseks mudelivalikuks
+- Rakendage töövoogude vigade käsitlemine ja taastumine
+- Jälgige töövoo jõudlust ja etappe
+- Kujundage skaleeritavad mudel-tööriistade arhitektuurid
+
+
+**Põhimõisted**: Torujuhtme arhitektuur, mitmeastmeline töötlemine, vigade taastumine, skaleeritavuse mustrid
+
+**Sa ehitad**: Mitmeastmeline intelligentne torujuhe koos marsruutimisega
 
 ---
 
 ## 🚀 Alustamine
 
-### Eeltingimused
+### Nõuded
 
 **Süsteeminõuded**:
 - **OS**: Windows 10/11, macOS 11+ või Linux (Ubuntu 20.04+)
-- **RAM**: Minimaalselt 8GB, soovitatavalt 16GB+
-- **Salvestusruum**: Vaba ruumi vähemalt 10GB mudelite jaoks
-- **Riistvara**: CPU koos AVX2; GPU (CUDA, Qualcomm NPU) valikuline
+- **RAM**: vähemalt 8GB, soovitatav 16GB+
+- **Salvestusruum**: mudelite jaoks vähemalt 10GB vaba ruumi
+- **Riistvara**: CPU AVX2-ga; GPU (CUDA, Qualcomm NPU) valikuline
 
 **Tarkvaranõuded**:
-- **Python 3.8+** koos pip-iga
-- **Jupyter Notebook** või **VS Code** Jupyter laiendiga
-- **Microsoft Foundry Local** paigaldatud ja seadistatud
+- **Python 3.8+** koos pipiga
+- **Jupyter Notebook** või **VS Code** koos Jupyteri laiendiga
+- **Microsoft Foundry Local** installitud ja konfigureeritud
 - **Git** (hoidla kloonimiseks)
 
-### Paigaldamise sammud
+### Paigaldusjuhised
 
 #### 1. Paigalda Foundry Local
 
@@ -331,68 +357,68 @@ brew tap microsoft/foundrylocal
 brew install foundrylocal
 ```
 
-**Paigaldamise kontroll**:
+**Paigalduse kontrollimine**:
 ```bash
 foundry --version
 ```
 
-#### 2. Seadista Python keskkond
+#### 2. Loo Python keskkond
 
 ```bash
-# Navigate to Workshop directory
+# Liigu kausta Workshop
 cd Workshop
 
-# Create virtual environment
+# Loo virtuaalne keskkond
 python -m venv .venv
 
-# Activate virtual environment
+# Aktiveeri virtuaalne keskkond
 # Windows
 .venv\Scripts\activate
 # macOS/Linux
 source .venv/bin/activate
 
-# Install dependencies
+# Paigalda sõltuvused
 pip install -r requirements.txt
 ```
 
 #### 3. Käivita Foundry Local
 
 ```bash
-# Load a model (auto-downloads if needed)
+# Lae mudel (vajadusel laeb automaatselt alla)
 foundry model run phi-4-mini
 
-# Verify service is running
+# Kontrolli, kas teenus töötab
 foundry service status
 ```
 
 #### 4. Ava Jupyter
 
 ```bash
-# Start Jupyter Notebook
+# Käivita Jupyter Notebook
 jupyter notebook notebooks/
 
-# Or use VS Code with Jupyter extension
+# Või kasuta VS Code'i koos Jupyter laiendiga
 code notebooks/
 ```
 
 ### Kiire kontroll
 
-Käivita see Python-i lahtris, et kontrollida seadistust:
+Käivita see Python rakus seadistuse kontrollimiseks:
 
 ```python
 from foundry_local import FoundryLocalManager
 import openai
 
-# Initialize manager (auto-discovers service)
+# Initsialiseeri haldur (leiab teenuse automaatselt)
 manager = FoundryLocalManager("phi-4-mini")
 
-# Configure OpenAI client
+# Sea OpenAI klient
 client = openai.OpenAI(
     base_url=manager.endpoint,
     api_key=manager.api_key
 )
 
-# Test chat completion
+# Testi vestluse lõpetamist
 response = client.chat.completions.create(
     model=manager.get_model_info("phi-4-mini").id,
     messages=[{"role": "user", "content": "Hello!"}]
@@ -401,76 +427,76 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-**Oodatav väljund**: Tervitussõnum kohalikult mudelilt.
+**Oodatav väljund**: Tervituse vastus kohalikust mudelist.
 
 ---
 
-## 📝 Töötoa parimad praktikad
+## 📝 Töötuba: parimad tavad
 
 ### Juhendajatele
 
 **Enne töötuba**:
-- ✅ Saada paigaldusjuhised 1 nädal enne
-- ✅ Testi kõik märkmikud sihtseadmel
-- ✅ Valmista ette tõrkeotsingu juhend levinud probleemide jaoks
-- ✅ Hoia varumudelid valmis (phi-3.5-mini, kui phi-4-mini ebaõnnestub)
-- ✅ Loo jagatud vestluskanal küsimuste jaoks
+- ✅ Saada paigaldusjuhised 1 nädal ette
+- ✅ Testi kõiki märkmikke sihtseadmel
+- ✅ Valmista ette tõrkeotsingu juhend tavapäraste probleemide jaoks
+- ✅ Hoia varumudeleid valmis (phi-3.5-mini, kui phi-4-mini ebaõnnestub)
+- ✅ Loo ühine vestluskanal küsimusteks
 
 **Töötoa ajal**:
 - ✅ Alusta kiire keskkonna kontrolliga (5 minutit)
 - ✅ Jaga tõrkeotsingu ressursse kohe
-- ✅ Julgusta katsetamist ja muudatusi
-- ✅ Kasuta pause strateegiliselt (pärast iga 2 sessiooni)
-- ✅ Hoia TAsid saadaval 1-1 abi jaoks
+- ✅ Julgusta eksperimenteerimist ja muudatusi
+- ✅ Kasuta pauside strateegilist paigutamist (iga kahe seansi järel)
+- ✅ Hoia assistendid saadaval individuaalseks abiks
 
 **Pärast töötuba**:
-- ✅ Jaga täielikult töötavaid märkmikke ja lahendusi
+- ✅ Jaga terveid töömärkmikke ja lahendusi
 - ✅ Paku linke lisamaterjalidele
-- ✅ Loo tagasisideküsitlus parendamiseks
-- ✅ Paku järelküsimuste jaoks konsultatsiooniaegu
+- ✅ Koosta tagasiside küsitlus parenduseks
+- ✅ Paku järelkordamiste tunde küsimusteks
 
 ### Õppijatele
 
-**Maksimeeri oma õppimist**:
-- ✅ Lõpeta seadistamine enne töötoa algust
-- ✅ Käivita iga koodilahter ise (ära lihtsalt loe)
-- ✅ Katseta parameetrite ja käskudega
-- ✅ Tee märkmeid tähelepanekute ja probleemide kohta
-- ✅ Küsi küsimusi, kui jääd hätta (teistel võib olla sama küsimus)
+**Maksimeeri õppimist**:
+- ✅ Lõpeta seadistamine enne töötuba
+- ✅ Käivita ise iga koodirakk (ära ainult loe)
+- ✅ Katseta parameetreid ja küsimusi
+- ✅ Tee märkmeid tähelepanekute ja raskuste kohta
+- ✅ Küsi abi takistuste korral (kaasalased võivad sama küsimusega)
 
-**Levinud vead, mida vältida**:
-- ❌ Lahtrite käivitamise järjekorra vahelejätmine (käivita järjestikku)
-- ❌ Vigade sõnumite hoolimatu lugemine
-- ❌ Kiirustamine ilma mõistmata
+**Tavalised vead, mida vältida**:
+- ❌ Järjekorrast mööda hiilimine (käivita järjestikku)
+- ❌ Vigade sõnumite tähelepanuta jätmine
+- ❌ Kiirustamine arusaamata sisu
 - ❌ Markdown selgituste ignoreerimine
 - ❌ Muudetud märkmike salvestamata jätmine
 
-**Tõrkeotsingu näpunäited**:
-1. **Teenust ei käivitu**: Kontrolli `foundry service status`
-2. **Importimise vead**: Veendu, et virtuaalne keskkond on aktiveeritud
-3. **Mudel puudub**: Käivita `foundry model ls`, et näha laaditud mudeleid
-4. **Aeglane jõudlus**: Kontrolli RAM-i kasutust, sulge teised rakendused
-5. **Ootamatud tulemused**: Taaskäivita kernel ja käivita kõik lahtrid algusest
+**Silumise nipid**:
+1. **Teenust ei käivitata**: Kontrolli `foundry service status`
+2. **Importimisvead**: Veendu, et virtuaalne keskkond on aktiivne
+3. **Mudelit ei leitud**: Käivita `foundry model ls` laetud mudelite loendamiseks
+4. **Aeglane töö**: Kontrolli RAMi kasutust, sulge muud rakendused
+5. **Ebakorrektsed tulemused**: Taaskäivita kernel ja käivita kõik rakud algusest peale
 
 ---
 
 ## 🔗 Lisamaterjalid
 
-### Töötoa materjalid
+### Töötuba materjalid
 
-- **[Töötoa põhijuhend](../Readme.md)** - Ülevaade, õpieesmärgid, karjäärivõimalused
-- **[Python näited](../../../../Workshop/samples)** - Vastavad Python skriptid iga sessiooni jaoks
-- **[Sessiooni juhendid](../../../../Workshop)** - Üksikasjalikud markdown juhendid (Session01-06)
-- **[Skriptid](../../../../Workshop/scripts)** - Valideerimise ja testimise tööriistad
-- **[Tõrkeotsing](./TROUBLESHOOTING.md)** - Levinud probleemid ja lahendused
-- **[Kiire algus](./quickstart.md)** - Kiire alustamise juhend
+- **[Töötoa peamine juhend](../Readme.md)** - Ülevaade, õppimise eesmärgid, karjäärivõimalused
+- **[Python näited](../../../../Workshop/samples)** - Vastavad Python skriptid igale sessioonile
+- **[Sessioonijuhendid](../../../../Workshop)** - Üksikasjalikud markdown juhendid (Sessioon01-06)
+- **[Skriptid](../../../../Workshop/scripts)** - Kontrolli- ja testimisriistad
+- **[Tõrkeotsing](./TROUBLESHOOTING.md)** - Tavapärased probleemid ja lahendused
+- **[Kiire algus](./quickstart.md)** - Kiiresti otsast alustamise juhend
 
 ### Dokumentatsioon
 
 - **[Foundry Local Docs](https://learn.microsoft.com/azure/ai-foundry/foundry-local/)** - Microsofti ametlik dokumentatsioon
 - **[OpenAI Python SDK](https://github.com/openai/openai-python)** - OpenAI SDK viide
-- **[Sentence Transformers](https://www.sbert.net/)** - Embedding mudelite dokumentatsioon
-- **[RAGAS Framework](https://docs.ragas.io/)** - RAG hindamismõõdikud
+- **[Sentence Transformers](https://www.sbert.net/)** - Sisutamise mudelite dokumentatsioon
+- **[RAGAS raamistik](https://docs.ragas.io/)** - RAG hindamismõõdikud
 
 ### Kogukond
 
@@ -480,34 +506,34 @@ print(response.choices[0].message.content)
 
 ---
 
-## 🎯 Õppimise teekonna soovitused
+## 🎯 Õppeteekonna soovitused
 
-### Algajate rada (alusta siit)
+### Algajate rada (Alusta siit)
 
-1. **Sessioon 01** - Vestluse algus
-2. **Sessioon 02** - RAG toru
+1. **Sessioon 01** - Vestluse alustus
+2. **Sessioon 02** - RAG torujuhe
 3. **Sessioon 03** - Mudelite võrdlus
 
 **Aeg**: ~2 tundi | **Fookus**: Põhimustrid
 
 ---
 
-### Kesktase
+### Kesktaseme rada
 
 1. Lõpeta algajate rada
 2. **Sessioon 02** - RAG hindamine
-3. **Sessioon 04** - Mudelite võrdlus
+3. **Sessioon 04** - Mudelite võrdlemine
 
 **Aeg**: ~4 tundi | **Fookus**: Kvaliteet ja optimeerimine
 
 ---
 
-### Edasijõudnute rada (täielik töötuba)
+### Edasijõudnute rada (Täispikk töötuba)
 
-1. Lõpeta kesktase
-2. **Sessioon 05** - Multi-agent orkestreerija
-3. **Sessioon 06** - Mudelite suunaja
-4. **Sessioon 06** - Mitmeastmeline toru
+1. Lõpeta kesktaseme rada
+2. **Sessioon 05** - Mitme agendi orkestreerija
+3. **Sessioon 06** - Mudelite marsruutija
+4. **Sessioon 06** - Mitmeastmeline torujuhe
 
 **Aeg**: ~6 tundi | **Fookus**: Tootmismustrid
 
@@ -515,50 +541,50 @@ print(response.choices[0].message.content)
 
 ### Kohandatud projekti rada
 
-1. Lõpeta algajate rada (Sessioonid 01-03)
-2. Vali ÜKS edasijõudnud sessioon vastavalt oma eesmärgile:
-   - **RAG rakenduse loomine?** → Sessioon 02 hindamine
-   - **Jõudluse optimeerimine?** → Sessioon 04 võrdlus
-   - **Komplekssed töövood?** → Sessioon 05 orkestreerija
-   - **Skaleeritav arhitektuur?** → Sessioon 06 suunaja + toru
+1. Lõpeta algajate rada (sessioonid 01-03)
+2. Vali ÜKS edasijõudnud sessioon eesmärgipõhiselt:
+   - **RAG rakenduse ehitus?** → Sessioon 02 hindamine
+   - **Töökiiruse optimeerimine?** → Sessioon 04 võrdlus
+   - **Kompleksne töövoog?** → Sessioon 05 orkestreerija
+   - **Skaleeritav arhitektuur?** → Sessioon 06 marsruutija + torujuhe
 
-**Aeg**: ~3 tundi | **Fookus**: Projekti-spetsiifilised oskused
+**Aeg**: ~3 tundi | **Fookus**: Projekti spetsiifilised oskused
 
 ---
 
 ## 📊 Edu mõõdikud
 
-Jälgi oma edusamme nende verstapostidega:
+Jälgi oma edenemist nende verstapostidega:
 
 - [ ] **Seadistamine lõpetatud** - Foundry Local töötab, kõik sõltuvused paigaldatud
-- [ ] **Esimene vestlus** - Sessioon 01 lõpetatud, voogvestlus töötab
-- [ ] **RAG loodud** - Sessioon 02 lõpetatud, dokumendi QA süsteem funktsionaalne
-- [ ] **Mudelid võrreldud** - Sessioon 03 lõpetatud, jõudlusandmed kogutud
-- [ ] **Kompromissid analüüsitud** - Sessioon 04 lõpetatud, mudeli valikukriteeriumid dokumenteeritud
-- [ ] **Agentide orkestreerimine** - Sessioon 05 lõpetatud, multi-agent süsteem töötab
-- [ ] **Suunamine rakendatud** - Sessioon 06 lõpetatud, intelligentne mudeli valik funktsionaalne
-- [ ] **Kohandatud projekt** - Töötoa mustrid rakendatud oma kasutusjuhtumile
+- [ ] **Esimene vestlus** - Sessioon 01 lõpetatud, voogedastus töötab
+- [ ] **RAG ehitatud** - Sessioon 02 lõpetatud, dokumentide KKV süsteem toimib
+- [ ] **Mudelite võrdlus tehtud** - Sessioon 03 lõpetatud, soorituse andmed kogutud
+- [ ] **Kompromissid analüüsitud** - Sessioon 04 lõpetatud, mudeli valiku kriteeriumid dokumenteeritud
+- [ ] **Agendid orkestreeritud** - Sessioon 05 lõpetatud, mitmeagendisüsteem töötab
+- [ ] **Marsruutimine rakendatud** - Sessioon 06 lõpetatud, intelligentne mudelivalik toimib
+- [ ] **Kohandatud projekt** - Töötoa mustrite rakendamine oma juhtumil
 
 ---
 
-## 🤝 Kaasautoriks saamine
+## 🤝 Panustamine
 
-Leidsid probleemi või sul on ettepanek? Ootame panustamist!
+Leidsid vea või on ettepanek? Ootame panuseid!
 
-- **Teata probleemidest**: [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues)
-- **Tee ettepanekuid**: [GitHub Arutelud](https://github.com/microsoft/edgeai-for-beginners/discussions)
-- **Esita PR-id**: Järgi [Kaasautorluse juhiseid](../../AGENTS.md)
+- **Teata vigadest**: [GitHub Issues](https://github.com/microsoft/edgeai-for-beginners/issues)
+- **Pane etteparandusi**: [GitHub Discussions](https://github.com/microsoft/edgeai-for-beginners/discussions)
+- **Esita PR-e**: Järgi [panustamisjuhiseid](../../AGENTS.md)
 
 ---
 
 ## 📄 Litsents
 
-See töötuba on osa [EdgeAI for Beginners](https://github.com/microsoft/edgeai-for-beginners) hoidlast ja litsentseeritud [MIT litsentsi](../../../../LICENSE) alusel.
+See töötuba on osa [EdgeAI for Beginners](https://github.com/microsoft/edgeai-for-beginners) hoidlast ja on litsentseeritud all [MIT litsentsi](../../../../LICENSE) alusel.
 
 ---
 
-**Valmis looma tootmiskõlblikke Edge AI rakendusi?**  
-**Alusta [Sessioon 01: Vestluse algus](./session01_chat_bootstrap.ipynb) →**
+**Valmis tootmiskõlblike Edge AI rakenduste ehitamiseks?**  
+**Alusta [sessioonist 01: Vestluse alustus](./session01_chat_bootstrap.ipynb) →**
 
 ---
 
@@ -566,5 +592,7 @@ See töötuba on osa [EdgeAI for Beginners](https://github.com/microsoft/edgeai-
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud, kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi püüame tagada täpsust, palun arvestage, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algkeeles tuleks lugeda autoriteetseks allikaks. Olulise teabe puhul on soovitatav kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valede tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Lahtiütlus**:
+See dokument on tõlgitud kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi me püüdleme täpsuse poole, palun pange tähele, et automatiseeritud tõlgetes võib esineda vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta selle tõlkega seotud eksimustest või valesti mõistmistest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
