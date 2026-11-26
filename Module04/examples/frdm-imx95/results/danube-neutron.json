@@ -1,0 +1,34 @@
+{
+    "NXP FRDM-IMX95 rev2.0": [
+        {
+            "Configuration": {
+                "LLM": "danube-500M-q8",
+                "RAG": "OFF",
+                "TTS": "OFF",
+                "STT": "OFF",
+                "NPU": "ON",
+                "Linux_Version": "6.18.37-2.1.0-g6e694eda40aa",
+                "Git_SHA": "Not a git repository and git_sha.txt not found"
+            },
+            "Metrics": {
+                "ttfa_avg": "0.00",
+                "time_avg": "7.03",
+                "cpu_avg": "21.97",
+                "mem_avg": "4118.57",
+                "stt_init_time": "0.00",
+                "stt_avg_time": "0.00",
+                "stt_wer": "N/A",
+                "rag_init_time": "0.00",
+                "rag_avg_time": "0.00",
+                "llm_init_time": "221.14",
+                "llm_avg_time": "6.95",
+                "llm_tts_avg_time": "6.95",
+                "llm_avg_ttft": "0.19",
+                "llm_avg_tps": "14.08",
+                "tts_init_time": "0.00",
+                "tts_avg_time": "0.00",
+                "tts_avg_rtf": "0.00"
+            }
+        }
+    ]
+}

@@ -160,6 +160,10 @@ Upon completing this comprehensive chapter, readers will achieve:
 
 ## 🚀 Next Steps and Advanced Applications
 
+- [Optional lab: Run quantized language models on the NXP FRDM-i.MX95](./examples/frdm-imx95/README.md)
+  Run a quantized GGUF model on the ARM64 CPU with llama.cpp and try a
+  separate ONNX benchmark with the CPU and Neutron provider settings.
+
 This chapter provides a complete foundation for:
 - Custom model development for specific domains
 - Research in edge AI optimization

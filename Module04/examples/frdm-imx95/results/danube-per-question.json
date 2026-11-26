@@ -1,0 +1,306 @@
+{
+  "model": "danube-500M-q8",
+  "source": "Per-question measurements transcribed from the two eIQ GenAI Flow benchmark logs",
+  "questions": [
+    {
+      "question_number": 1,
+      "input_tokens": 26,
+      "generated_tokens": 23,
+      "cpu": {
+        "llm_time_s": 2.51,
+        "tokens_per_second": 10.67,
+        "ttft_s": 0.35
+      },
+      "neutron": {
+        "llm_time_s": 1.76,
+        "tokens_per_second": 14.81,
+        "ttft_s": 0.21
+      }
+    },
+    {
+      "question_number": 2,
+      "input_tokens": 35,
+      "generated_tokens": 126,
+      "cpu": {
+        "llm_time_s": 12.47,
+        "tokens_per_second": 10.45,
+        "ttft_s": 0.4
+      },
+      "neutron": {
+        "llm_time_s": 9.34,
+        "tokens_per_second": 13.78,
+        "ttft_s": 0.2
+      }
+    },
+    {
+      "question_number": 3,
+      "input_tokens": 31,
+      "generated_tokens": 113,
+      "cpu": {
+        "llm_time_s": 10.96,
+        "tokens_per_second": 10.65,
+        "ttft_s": 0.35
+      },
+      "neutron": {
+        "llm_time_s": 8.25,
+        "tokens_per_second": 13.99,
+        "ttft_s": 0.18
+      }
+    },
+    {
+      "question_number": 4,
+      "input_tokens": 34,
+      "generated_tokens": 95,
+      "cpu": {
+        "llm_time_s": 9.54,
+        "tokens_per_second": 10.39,
+        "ttft_s": 0.4
+      },
+      "neutron": {
+        "llm_time_s": 7.01,
+        "tokens_per_second": 13.94,
+        "ttft_s": 0.19
+      }
+    },
+    {
+      "question_number": 5,
+      "input_tokens": 32,
+      "generated_tokens": 128,
+      "cpu": {
+        "llm_time_s": 12.72,
+        "tokens_per_second": 10.34,
+        "ttft_s": 0.35
+      },
+      "neutron": {
+        "llm_time_s": 9.46,
+        "tokens_per_second": 13.8,
+        "ttft_s": 0.18
+      }
+    },
+    {
+      "question_number": 6,
+      "input_tokens": 33,
+      "generated_tokens": 128,
+      "cpu": {
+        "llm_time_s": 12.6,
+        "tokens_per_second": 10.46,
+        "ttft_s": 0.36
+      },
+      "neutron": {
+        "llm_time_s": 9.45,
+        "tokens_per_second": 13.82,
+        "ttft_s": 0.19
+      }
+    },
+    {
+      "question_number": 7,
+      "input_tokens": 39,
+      "generated_tokens": 114,
+      "cpu": {
+        "llm_time_s": 11.29,
+        "tokens_per_second": 10.5,
+        "ttft_s": 0.43
+      },
+      "neutron": {
+        "llm_time_s": 8.44,
+        "tokens_per_second": 13.86,
+        "ttft_s": 0.21
+      }
+    },
+    {
+      "question_number": 8,
+      "input_tokens": 39,
+      "generated_tokens": 89,
+      "cpu": {
+        "llm_time_s": 8.97,
+        "tokens_per_second": 10.42,
+        "ttft_s": 0.43
+      },
+      "neutron": {
+        "llm_time_s": 6.6,
+        "tokens_per_second": 13.93,
+        "ttft_s": 0.21
+      }
+    },
+    {
+      "question_number": 9,
+      "input_tokens": 34,
+      "generated_tokens": 62,
+      "cpu": {
+        "llm_time_s": 6.2,
+        "tokens_per_second": 10.67,
+        "ttft_s": 0.39
+      },
+      "neutron": {
+        "llm_time_s": 4.53,
+        "tokens_per_second": 14.28,
+        "ttft_s": 0.19
+      }
+    },
+    {
+      "question_number": 10,
+      "input_tokens": 36,
+      "generated_tokens": 128,
+      "cpu": {
+        "llm_time_s": 12.8,
+        "tokens_per_second": 10.33,
+        "ttft_s": 0.4
+      },
+      "neutron": {
+        "llm_time_s": 9.49,
+        "tokens_per_second": 13.77,
+        "ttft_s": 0.2
+      }
+    },
+    {
+      "question_number": 11,
+      "input_tokens": 39,
+      "generated_tokens": 110,
+      "cpu": {
+        "llm_time_s": 10.88,
+        "tokens_per_second": 10.54,
+        "ttft_s": 0.44
+      },
+      "neutron": {
+        "llm_time_s": 8.11,
+        "tokens_per_second": 13.92,
+        "ttft_s": 0.21
+      }
+    },
+    {
+      "question_number": 12,
+      "input_tokens": 34,
+      "generated_tokens": 101,
+      "cpu": {
+        "llm_time_s": 10.08,
+        "tokens_per_second": 10.4,
+        "ttft_s": 0.37
+      },
+      "neutron": {
+        "llm_time_s": 7.43,
+        "tokens_per_second": 13.95,
+        "ttft_s": 0.19
+      }
+    },
+    {
+      "question_number": 13,
+      "input_tokens": 30,
+      "generated_tokens": 36,
+      "cpu": {
+        "llm_time_s": 3.7,
+        "tokens_per_second": 10.73,
+        "ttft_s": 0.34
+      },
+      "neutron": {
+        "llm_time_s": 2.64,
+        "tokens_per_second": 14.6,
+        "ttft_s": 0.17
+      }
+    },
+    {
+      "question_number": 14,
+      "input_tokens": 35,
+      "generated_tokens": 128,
+      "cpu": {
+        "llm_time_s": 12.72,
+        "tokens_per_second": 10.38,
+        "ttft_s": 0.39
+      },
+      "neutron": {
+        "llm_time_s": 9.48,
+        "tokens_per_second": 13.79,
+        "ttft_s": 0.19
+      }
+    },
+    {
+      "question_number": 15,
+      "input_tokens": 29,
+      "generated_tokens": 114,
+      "cpu": {
+        "llm_time_s": 11.12,
+        "tokens_per_second": 10.57,
+        "ttft_s": 0.33
+      },
+      "neutron": {
+        "llm_time_s": 8.29,
+        "tokens_per_second": 14.05,
+        "ttft_s": 0.17
+      }
+    },
+    {
+      "question_number": 16,
+      "input_tokens": 35,
+      "generated_tokens": 128,
+      "cpu": {
+        "llm_time_s": 12.75,
+        "tokens_per_second": 10.36,
+        "ttft_s": 0.39
+      },
+      "neutron": {
+        "llm_time_s": 9.46,
+        "tokens_per_second": 13.81,
+        "ttft_s": 0.19
+      }
+    },
+    {
+      "question_number": 17,
+      "input_tokens": 31,
+      "generated_tokens": 56,
+      "cpu": {
+        "llm_time_s": 5.62,
+        "tokens_per_second": 10.63,
+        "ttft_s": 0.36
+      },
+      "neutron": {
+        "llm_time_s": 4.07,
+        "tokens_per_second": 14.4,
+        "ttft_s": 0.18
+      }
+    },
+    {
+      "question_number": 18,
+      "input_tokens": 27,
+      "generated_tokens": 47,
+      "cpu": {
+        "llm_time_s": 4.68,
+        "tokens_per_second": 10.76,
+        "ttft_s": 0.31
+      },
+      "neutron": {
+        "llm_time_s": 3.4,
+        "tokens_per_second": 14.54,
+        "ttft_s": 0.16
+      }
+    },
+    {
+      "question_number": 19,
+      "input_tokens": 26,
+      "generated_tokens": 108,
+      "cpu": {
+        "llm_time_s": 10.39,
+        "tokens_per_second": 10.7,
+        "ttft_s": 0.29
+      },
+      "neutron": {
+        "llm_time_s": 7.81,
+        "tokens_per_second": 14.12,
+        "ttft_s": 0.16
+      }
+    },
+    {
+      "question_number": 20,
+      "input_tokens": 26,
+      "generated_tokens": 55,
+      "cpu": {
+        "llm_time_s": 5.36,
+        "tokens_per_second": 10.86,
+        "ttft_s": 0.3
+      },
+      "neutron": {
+        "llm_time_s": 3.95,
+        "tokens_per_second": 14.5,
+        "ttft_s": 0.16
+      }
+    }
+  ]
+}
